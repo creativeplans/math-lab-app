@@ -50,6 +50,10 @@
         <label>To
           <input type="date" id="f-to">
         </label>
+        <label class="checkbox-field">
+          <input type="checkbox" id="f-show-all">
+          Show all (including non-official)
+        </label>
         <button type="button" id="apply-filters">Apply</button>
         <button type="button" id="clear-filters" class="secondary">Clear</button>
       </div>
@@ -68,7 +72,10 @@
               <th>Number</th>
               <th>Video</th>
               <th>Understand</th>
-              <th>Answer</th>
+              <th>Main Answer</th>
+              <th>Basics Answer</th>
+              <th>Official</th>
+              <th>School Year</th>
             </tr>
           </thead>
           <tbody id="responses-body"></tbody>

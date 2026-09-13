@@ -12,13 +12,17 @@
       <h1>Math Lab</h1>
       <p class="subtitle">Enter your name and period to begin.</p>
       <form id="gate-form">
-        <label>First Name
-          <input type="text" id="gate-firstName" required autocomplete="off">
+        <label>First Name &amp; Last Initial
+          <input type="text" id="gate-firstName" placeholder="e.g. Alex R" required autocomplete="off">
         </label>
         <label>Period
           <select id="gate-period" required>
             <option value="" disabled selected>Choose your period</option>
           </select>
+        </label>
+        <input type="text" id="gate-period-other" placeholder="Type your period" autocomplete="off" hidden>
+        <label>Class Passcode <span class="optional-tag">(optional)</span>
+          <input type="text" id="gate-passcode" autocomplete="off">
         </label>
         <button type="submit">Continue</button>
       </form>
@@ -71,17 +75,18 @@
       <p id="watch-hint" class="hint">Watch the whole video to unlock your response.</p>
 
       <form id="response-form" class="response-form" hidden>
-        <div id="understand-block" hidden>
-          <label class="checkbox-label">
-            <input type="checkbox" id="understand-check" required>
-            I understand this video's content.
-          </label>
-        </div>
-        <div id="answer-block" hidden>
-          <label>Your Answer
-            <input type="text" id="main-answer" autocomplete="off">
-          </label>
-        </div>
+        <!--
+          understand-block / answer-block start empty on purpose: their actual
+          form controls are created by StudentClient.html only for the field(s)
+          that apply to the current video's type. A control that doesn't apply
+          (e.g. the Teach-only "I understand" checkbox on a Do/Home/MAP video)
+          must not exist in the DOM at all here - a `required` control that's
+          merely hidden via CSS still blocks native form submission with a
+          console error ("An invalid form control ... is not focusable"),
+          which is the bug this structure fixes.
+        -->
+        <div id="understand-block" hidden></div>
+        <div id="answer-block" hidden></div>
         <button type="submit">Submit</button>
       </form>
       <p id="already-done" class="hint success" hidden>&#10003; Completed</p>

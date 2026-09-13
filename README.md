@@ -22,9 +22,10 @@ apps-script/           The actual application (push/copy this into Apps Script)
   SheetService.js         Videos/Responses sheet schema, current-work grouping, completion lookups
   Ingestion.js            YouTube polling + title parsing (the "never touch it again" engine)
   Dashboard.js            Teacher dashboard passcode gate + filtered response queries
+  Utils.js                School-year labeling shared by ingestion and responses
   StudentApp.html/.js/.css   Student-facing SPA (grade -> current work -> watch -> respond)
   DashboardApp.html/.js/.css Teacher dashboard SPA
-test/                   Node-runnable unit tests for the pure title-parsing logic
+test/                   Node-runnable unit tests for the pure title-parsing and school-year logic
 docs/
   DEPLOYMENT.md            Step-by-step non-programmer setup
   ARCHITECTURE.md          Core engine vs. branches, data flow, why Apps Script
@@ -61,10 +62,22 @@ deployment, since they depend on Apps Script services (`SpreadsheetApp`,
   any seek attempt beyond it; a refresh resets progress (deliberately - see
   `docs/OPEN_ITEMS.md` item 7). The server never re-verifies playback, same
   trust model as the Google Form it replaces.
-- **No login system.** Students identify with First Name + Period, exactly
-  like the old Form; teachers use a single shared dashboard passcode. This
-  matches the brief's "no accounts, no public profiles" school-safe
-  philosophy. See `docs/OPEN_ITEMS.md` items 4–5 for the tradeoffs.
+- **No login system.** Students identify with First Name + Last Initial and a
+  period, exactly in spirit to the old Form; teachers use a single shared
+  dashboard passcode. This matches the brief's "no accounts, no public
+  profiles" school-safe philosophy. See `docs/OPEN_ITEMS.md` items 4–5 for
+  the tradeoffs.
+- **Soft "official" tagging, not hard access control.** The app stays public
+  (one deployment, no split into class-only vs. public versions yet). An
+  optional shared `STUDENT_PASSCODE` lets real students self-identify without
+  blocking anyone else from using the app; every response is tagged
+  `Official: TRUE/FALSE` server-side based on whether it matched, and the
+  dashboard defaults to official-only with a toggle to see everything. See
+  `docs/OPEN_ITEMS.md` for why this is soft by design.
+- **Every video and response is tagged with a school year** (e.g.
+  `2025-2026`), derived automatically from its date — never entered by hand —
+  so a repeated student name in a future year can never inherit a prior
+  year's completion status.
 - **"Current work" window is configurable, not hard-coded** — edit the
   `Config` sheet's `CURRENT_PROBLEM_WINDOW` / `CURRENT_MAP_WINDOW` rows any
   time, no code change needed.

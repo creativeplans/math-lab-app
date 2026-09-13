@@ -10,12 +10,19 @@
  */
 
 var VIDEOS_HEADERS = [
-  'VideoId', 'Kind', 'Grade', 'Type', 'Number', 'Title', 'PublishedAt', 'IngestedAt'
+  'VideoId', 'Kind', 'Grade', 'Type', 'Number', 'Title', 'PublishedAt', 'IngestedAt',
+  'SchoolYear'
 ];
 
+// New columns (BasicsAnswer, Official, SchoolYear) are appended at the END,
+// never inserted in the middle - this sheet may already hold live student
+// data from before these columns existed, and inserting mid-row would shift
+// every existing row's values out from under their original header. See
+// ensureHeaders_() below, which extends an existing header row in place.
 var RESPONSES_HEADERS = [
   'Timestamp', 'FirstName', 'Period', 'Grade', 'VideoType', 'VideoNumber',
-  'VideoTitle', 'VideoId', 'MainAnswer', 'UnderstandConfirmation', 'Completed'
+  'VideoTitle', 'VideoId', 'MainAnswer', 'UnderstandConfirmation', 'Completed',
+  'BasicsAnswer', 'Official', 'SchoolYear'
 ];
 
 // Teach/Do/Home should always group and display in this order under a problem number.
@@ -28,8 +35,26 @@ function getOrCreateSheet_(name, headers) {
     sheet = ss.insertSheet(name);
     sheet.appendRow(headers);
     sheet.setFrozenRows(1);
+  } else {
+    ensureHeaders_(sheet, headers);
   }
   return sheet;
+}
+
+/**
+ * Backward-compatible schema migration: if this sheet was created by an
+ * older version of the app with fewer columns, extend the existing header
+ * row with the new trailing column names. Never touches existing header
+ * cells or any data rows, so already-collected responses/videos stay
+ * exactly where they are.
+ */
+function ensureHeaders_(sheet, headers) {
+  var currentWidth = Math.max(sheet.getLastColumn(), 1);
+  var current = sheet.getRange(1, 1, 1, currentWidth).getValues()[0];
+  if (current.length < headers.length) {
+    var missing = headers.slice(current.length);
+    sheet.getRange(1, current.length + 1, 1, missing.length).setValues([missing]);
+  }
 }
 
 function getVideosSheet_() {
@@ -82,7 +107,8 @@ function appendVideos_(records) {
       rec.number,
       rec.title,
       rec.publishedAt,
-      now
+      now,
+      getSchoolYearLabel_(rec.publishedAt)
     ]);
   });
   if (rows.length) {
@@ -196,8 +222,10 @@ function normalizeKey_(s) {
 
 /**
  * Which of this student's currently-visible videos already have a submitted response.
- * Matched by (FirstName, Period, VideoId) - the same identity the original
- * Google Form relied on (no login system in v1).
+ * Matched by (FirstName, Period, VideoId) within the CURRENT school year only -
+ * a repeated name in a future year must never inherit a prior year's completion.
+ * Identity is otherwise the same as the original Google Form relied on (no
+ * login system in v1).
  */
 function getCompletionSet(firstName, period) {
   var sheet = getResponsesSheet_();
@@ -207,14 +235,32 @@ function getCompletionSet(firstName, period) {
   var values = sheet.getRange(2, 1, lastRow - 1, RESPONSES_HEADERS.length).getValues();
   var fnKey = normalizeKey_(firstName);
   var pKey = normalizeKey_(period);
+  var currentYear = getCurrentSchoolYear_();
   values.forEach(function (row) {
-    var rowFn = normalizeKey_(row[1]);
-    var rowP = normalizeKey_(row[2]);
-    if (rowFn === fnKey && rowP === pKey) {
-      result[row[7]] = true; // VideoId column
+    var obj = {};
+    RESPONSES_HEADERS.forEach(function (h, i) { obj[h] = row[i]; });
+    if (normalizeKey_(obj.FirstName) !== fnKey || normalizeKey_(obj.Period) !== pKey) return;
+    // Rows written before the SchoolYear column existed predate this feature
+    // entirely and are, as of today, still from the current year - treat them
+    // as current rather than silently dropping a student's real completions.
+    var rowYear = obj.SchoolYear || currentYear;
+    if (rowYear === currentYear) {
+      result[obj.VideoId] = true;
     }
   });
   return result;
+}
+
+/**
+ * True only if the passcode the student entered on the gate screen matches
+ * the configured STUDENT_PASSCODE. Checked server-side so the real value is
+ * never exposed to the client; no passcode configured means nothing can be
+ * tagged official yet (fails closed, not open).
+ */
+function computeOfficial_(providedPasscode) {
+  var expected = getConfig().STUDENT_PASSCODE;
+  if (!expected) return false;
+  return String(providedPasscode || '') === String(expected);
 }
 
 /**
@@ -238,7 +284,10 @@ function submitResponse(payload) {
     payload.videoId,
     payload.mainAnswer || '',
     payload.understandConfirmation || '',
-    'Yes'
+    'Yes',
+    payload.basicsAnswer || '',
+    computeOfficial_(payload.passcode),
+    getCurrentSchoolYear_()
   ]);
   return { ok: true };
 }

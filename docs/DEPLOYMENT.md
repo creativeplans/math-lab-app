@@ -1,6 +1,48 @@
 # Deployment Guide (No Programming Required)
 
-Follow these steps in order, exactly as written. You will be copying and pasting
+## Updating an already-deployed app (Fix Round 1)
+
+If you've already deployed this app once and just want this round of fixes
+live, you don't need to redo the whole guide below — just this:
+
+1. Open your existing Apps Script project at **script.google.com**.
+2. Add one new file: click **+** next to "Files" → **Script**, name it
+   `Utils` (no `.gs`), and paste in `apps-script/Utils.js` from this repo.
+3. For each of these existing files, open it, select all, delete, and paste
+   in the new contents from the matching file in this repo's `apps-script/`
+   folder (same filenames as before, nothing to rename):
+   - `Config`
+   - `SheetService`
+   - `Dashboard`
+   - `StudentApp` / `StudentStyles` / `StudentClient`
+   - `DashboardApp` / `DashboardStyles` / `DashboardClient`
+   (`Code`, `Ingestion`, and `appsscript.json` did not change this round —
+   leave them as-is.)
+4. Save (Ctrl/Cmd+S).
+5. **Optional but needed for the new "official response" tagging**: click the
+   gear icon (**Project Settings**) → **Script Properties** → **Add script
+   property** → key `STUDENT_PASSCODE`, value = whatever word/phrase you want
+   your real students to type (share it with your class directly - e.g. write
+   it on the board). Leave this unset if you're not ready to use that feature
+   yet; nothing else breaks either way.
+6. Click **Deploy → Manage deployments**, click the pencil (edit) icon on
+   your existing deployment, change **Version** to **New version**, click
+   **Deploy**. This is the step that actually makes the fixes live at your
+   existing URL — editing files alone does not.
+7. Open your existing student link and confirm a Do/Home/MAP video's response
+   now submits correctly (this was the main bug). Check the dashboard link
+   too — it now defaults to showing only "official" responses, with a "Show
+   all" checkbox to see everything (this will show everything until you set
+   `STUDENT_PASSCODE` and start collecting new responses with it).
+
+Nothing about your existing spreadsheet, video catalog, or past responses
+changes or needs migrating — the new columns (Official, Basics Answer, School
+Year) are added automatically the next time the app touches those sheets.
+
+---
+
+Follow the steps below in order, exactly as written, only if you're setting
+this up **from scratch** for the first time. You will be copying and pasting
 files into a Google Apps Script project, clicking a few buttons in Google Cloud
 and YouTube, and pasting one embed link into your Google Site.
 
@@ -34,6 +76,7 @@ from this repo's `apps-script/` folder:
 - `SheetService` ← `apps-script/SheetService.js`
 - `Ingestion` ← `apps-script/Ingestion.js`
 - `Dashboard` ← `apps-script/Dashboard.js`
+- `Utils` ← `apps-script/Utils.js`
 
 (The very first file, `Code`, already exists — just paste into it instead of
 creating a new one.)
@@ -85,12 +128,20 @@ Back in the Apps Script editor:
 
 1. Click **Project Settings** (gear icon).
 2. Scroll to **Script Properties** → **Add script property**.
-3. Add these two properties:
+3. Add these properties:
    - `YOUTUBE_API_KEY` → paste the API key from Part 2.
    - `DASHBOARD_PASSCODE` → make up a passcode teachers will use to open the
      results dashboard (e.g. a short phrase). Anyone with this passcode can
      view student names and answers, so don't publish it — share it directly
      with teachers who need it.
+   - `STUDENT_PASSCODE` (optional) → a word/phrase you give only to your real
+     students (e.g. write it on the board). Responses submitted with it are
+     tagged "official" and shown by default on the dashboard; anyone using
+     the app without it (or with the wrong word) still gets the full app, but
+     their response is tagged non-official and hidden from the dashboard's
+     default view (there's a "Show all" checkbox to see it anyway). Leave
+     this blank if you don't need to tell real students apart from other
+     visitors yet — the app works the same either way.
 4. Click **Save script properties**.
 
 ---
@@ -135,7 +186,10 @@ It has three tabs:
 - **Videos** — auto-filled by ingestion. Don't edit this by hand.
 - **Responses** — auto-filled by student submissions. This is what the
   dashboard reads. You can review it directly here too, or filter/sort with
-  Sheets' own tools if you prefer that to the dashboard.
+  Sheets' own tools if you prefer that to the dashboard. Includes a
+  `SchoolYear` column (e.g. `2025-2026`, auto-derived from the submission
+  date) and an `Official` column (`TRUE`/`FALSE`, based on whether the
+  student's typed passcode matched `STUDENT_PASSCODE` when they submitted).
 - **Config** — a few settings you're welcome to tweak any time, no code
   required:
   - `CURRENT_PROBLEM_WINDOW` — how many of the most recent problem numbers
@@ -201,7 +255,9 @@ directly when you want to review responses.
    https://www.youtube.com/@developingeducators.
 2. Within `INGEST_POLL_MINUTES` (default 15), it appears automatically for
    students — nothing else to do.
-3. Open the dashboard link, enter the passcode, review answers.
+3. Open the dashboard link, enter the passcode, review answers (it shows
+   "official" responses by default — check "Show all" if you want to see
+   ones submitted without the class passcode too).
 
 ---
 

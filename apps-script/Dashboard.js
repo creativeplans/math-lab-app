@@ -30,6 +30,14 @@ function getFilteredResponses(passcode, filters) {
   filters = filters || {};
   var rows = getAllResponses();
 
+  // Default view is "official" responses only (passcode matched at submit time).
+  // Rows recorded before the Official column existed have no explicit value
+  // and are treated as official too, so existing data doesn't vanish from the
+  // dashboard the moment this feature ships. Pass filters.showAll to see everything.
+  if (!filters.showAll) {
+    rows = rows.filter(function (r) { return r.Official !== false; });
+  }
+
   if (filters.grade) {
     rows = rows.filter(function (r) { return String(r.Grade) === String(filters.grade); });
   }

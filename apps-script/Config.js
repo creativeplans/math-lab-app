@@ -3,7 +3,7 @@
  *
  * Two layers of configuration:
  *  - Script Properties: secrets / deployment-specific values (API key, channel handle,
- *    dashboard passcode). Set once in the Apps Script editor under
+ *    dashboard passcode, optional student passcode). Set once in the Apps Script editor under
  *    Project Settings > Script Properties. Never stored in the spreadsheet.
  *  - "Config" sheet: tunable behavior a teacher might reasonably want to change
  *    without touching code (e.g. how many problem numbers count as "current").
@@ -18,7 +18,8 @@ var CONFIG_DEFAULTS = {
   MAP_SHARED_ACROSS_GRADES: 'true', // MAP naming has no grade token; see docs/OPEN_ITEMS.md
   INGEST_POLL_MINUTES: '15',
   DASHBOARD_PASSCODE: '',          // blank = dashboard prompts to set one on first visit
-  PERIODS: 'Period 2 Even,Period 3 Even' // edit the Config sheet row to match your actual schedule
+  PERIODS: 'Period 2 Even,Period 3 Even', // edit the Config sheet row to match your actual schedule
+  STUDENT_PASSCODE: ''             // optional; blank = no response can be tagged "official" yet
 };
 
 function getScriptProp_(key) {
@@ -53,6 +54,9 @@ function getConfig() {
 
   var passcode = getScriptProp_('DASHBOARD_PASSCODE');
   if (passcode) config.DASHBOARD_PASSCODE = passcode;
+
+  var studentPasscode = getScriptProp_('STUDENT_PASSCODE');
+  if (studentPasscode) config.STUDENT_PASSCODE = studentPasscode;
 
   var channelId = getScriptProp_('YOUTUBE_CHANNEL_ID');
   if (channelId) config.YOUTUBE_CHANNEL_ID = channelId;

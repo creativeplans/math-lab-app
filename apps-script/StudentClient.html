@@ -4,9 +4,12 @@
 
   var STORAGE_KEY = 'mathlab_student_v1';
 
+  var OTHER_PERIOD_VALUE = '__other__';
+
   var state = {
     firstName: null,
     period: null,
+    passcode: '',
     grade: null,
     completion: {},     // videoId -> true
     currentVideo: null,  // the video object currently open in the player
@@ -30,9 +33,9 @@
       return raw ? JSON.parse(raw) : null;
     } catch (e) { return null; }
   }
-  function saveStudent(firstName, period) {
+  function saveStudent(firstName, period, passcode) {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ firstName: firstName, period: period }));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ firstName: firstName, period: period, passcode: passcode }));
     } catch (e) { /* private browsing etc - degrade gracefully, just re-ask next time */ }
   }
   function clearStudent() {
@@ -48,6 +51,23 @@
   }
 
   // ---- boot -----------------------------------------------------------------
+  function setOtherPeriodVisible(show) {
+    var input = document.getElementById('gate-period-other');
+    input.hidden = !show;
+    // A hidden-but-required control blocks native form submission entirely
+    // (see the response-form fix above) - keep required in lockstep with visibility.
+    input.required = show;
+    if (!show) input.value = '';
+  }
+
+  function resolvePeriodValue() {
+    var select = document.getElementById('gate-period');
+    if (select.value === OTHER_PERIOD_VALUE) {
+      return document.getElementById('gate-period-other').value.trim();
+    }
+    return select.value;
+  }
+
   function init() {
     run('api_getPeriods').then(function (periods) {
       var select = document.getElementById('gate-period');
@@ -56,12 +76,21 @@
         opt.value = p; opt.textContent = p;
         select.appendChild(opt);
       });
+      var otherOpt = document.createElement('option');
+      otherOpt.value = OTHER_PERIOD_VALUE;
+      otherOpt.textContent = 'Other (type your own)';
+      select.appendChild(otherOpt);
+    });
+
+    document.getElementById('gate-period').addEventListener('change', function () {
+      setOtherPeriodVisible(this.value === OTHER_PERIOD_VALUE);
     });
 
     var saved = loadStudent();
     if (saved && saved.firstName && saved.period) {
       state.firstName = saved.firstName;
       state.period = saved.period;
+      state.passcode = saved.passcode || '';
       showScreen('grade-select');
     } else {
       showScreen('gate');
@@ -70,11 +99,13 @@
     document.getElementById('gate-form').addEventListener('submit', function (e) {
       e.preventDefault();
       var firstName = document.getElementById('gate-firstName').value.trim();
-      var period = document.getElementById('gate-period').value;
+      var period = resolvePeriodValue();
+      var passcode = document.getElementById('gate-passcode').value.trim();
       if (!firstName || !period) return;
       state.firstName = firstName;
       state.period = period;
-      saveStudent(firstName, period);
+      state.passcode = passcode;
+      saveStudent(firstName, period, passcode);
       showScreen('grade-select');
     });
 
@@ -82,7 +113,9 @@
       clearStudent();
       state.firstName = null;
       state.period = null;
+      state.passcode = '';
       document.getElementById('gate-form').reset();
+      setOtherPeriodVisible(false);
       showScreen('gate');
     });
 
@@ -217,10 +250,14 @@
     document.getElementById('watch-hint').hidden = alreadyDone;
     document.getElementById('response-form').hidden = true;
     document.getElementById('already-done').hidden = !alreadyDone;
-    document.getElementById('understand-block').hidden = true;
-    document.getElementById('answer-block').hidden = true;
-    document.getElementById('understand-check').checked = false;
-    document.getElementById('main-answer').value = '';
+    // Clear out any fields built for the previous video - see unlockResponse()
+    // for why these are only ever created, not just hidden, per video type.
+    var understandBlock = document.getElementById('understand-block');
+    var answerBlock = document.getElementById('answer-block');
+    understandBlock.innerHTML = '';
+    answerBlock.innerHTML = '';
+    understandBlock.hidden = true;
+    answerBlock.hidden = true;
 
     showScreen('player-screen');
 
@@ -318,16 +355,38 @@
     }
   }
 
+  var ANSWER_HINT = 'If there are multiple parts, separate your answers with a comma.';
+
   function unlockResponse() {
     if (state.unlocked) return;
     state.unlocked = true;
     if (state.completion[state.currentVideo.videoId]) return; // already recorded, nothing more to do
     document.getElementById('watch-hint').hidden = true;
     document.getElementById('response-form').hidden = false;
+
+    // Built fresh here (never left in the DOM hidden) so a required control
+    // that doesn't apply to this video's type is simply never present -
+    // a hidden-but-required control otherwise silently blocks form submission.
     if (state.currentVideo.type === 'Teach') {
-      document.getElementById('understand-block').hidden = false;
+      var understandBlock = document.getElementById('understand-block');
+      understandBlock.innerHTML =
+        '<label class="checkbox-label">' +
+        '<input type="checkbox" id="understand-check" required>' +
+        "I understand this video's content." +
+        '</label>';
+      understandBlock.hidden = false;
     } else {
-      document.getElementById('answer-block').hidden = false;
+      var answerBlock = document.getElementById('answer-block');
+      answerBlock.innerHTML =
+        '<label>Main Answer' +
+        '<span class="field-hint">' + ANSWER_HINT + '</span>' +
+        '<input type="text" id="main-answer" required autocomplete="off">' +
+        '</label>' +
+        '<label>Basics Answer' +
+        '<span class="field-hint">' + ANSWER_HINT + '</span>' +
+        '<input type="text" id="basics-answer" required autocomplete="off">' +
+        '</label>';
+      answerBlock.hidden = false;
     }
   }
 
@@ -338,23 +397,28 @@
     var video = state.currentVideo;
     var isTeach = video.type === 'Teach';
 
-    if (isTeach && !document.getElementById('understand-check').checked) {
-      return;
-    }
-    var mainAnswer = document.getElementById('main-answer').value.trim();
-    if (!isTeach && !mainAnswer) {
-      return;
+    var mainAnswer = '';
+    var basicsAnswer = '';
+    if (isTeach) {
+      var checkEl = document.getElementById('understand-check');
+      if (!checkEl || !checkEl.checked) return;
+    } else {
+      mainAnswer = document.getElementById('main-answer').value.trim();
+      basicsAnswer = document.getElementById('basics-answer').value.trim();
+      if (!mainAnswer || !basicsAnswer) return;
     }
 
     var payload = {
       firstName: state.firstName,
       period: state.period,
+      passcode: state.passcode,
       grade: video.grade || state.grade,
       videoType: video.type,
       videoNumber: video.number,
       videoTitle: video.title,
       videoId: video.videoId,
-      mainAnswer: isTeach ? '' : mainAnswer,
+      mainAnswer: mainAnswer,
+      basicsAnswer: basicsAnswer,
       understandConfirmation: isTeach ? 'I understand' : ''
     };
 

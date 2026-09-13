@@ -49,13 +49,16 @@
    allowlist) — straightforward to add later, not built now since it wasn't
    requested.
 
-5. **Student identity is First Name + Period only**, exactly like the
-   original Google Form. This means two students with the same first name in
-   the same period are indistinguishable to the completion-tracking and
-   dashboard views — a limitation inherited from the existing workflow, not
-   introduced by this build. If that's a real collision in practice, the
-   fix is adding a Last Initial or student ID field, which would need one
-   small addition to the gate screen and the Responses sheet schema.
+5. **Student identity is First Name + Last Initial + Period** (updated in Fix
+   Round 1 from First Name alone, matching the wording already used
+   elsewhere on the Developing Educators site). This reduces, but by design
+   doesn't eliminate, collisions — two students who'd type the exact same
+   "First Name + Last Initial" in the same period are still indistinguishable
+   to completion-tracking and the dashboard, and nothing is validated about
+   the format of what a student types here. There is intentionally no roster
+   to maintain. If a real collision comes up, the next step up would be a
+   short student ID field, which would need one more addition to the gate
+   screen and the Responses sheet schema.
 
 6. **Shorts/unrelated-video filtering** is implemented purely via strict
    title matching (per the brief: "including anything that doesn't match the
@@ -75,3 +78,28 @@
    state, just not skip-ahead state," which would need small changes to
    persist an "already reached end once" flag separately from watch
    position.
+
+## Assumptions made in Fix Round 1
+
+8. **Official-tagging defaults old data to visible.** The dashboard's default
+   "official only" filter treats a response as official unless it is
+   explicitly tagged `Official: FALSE` server-side. Responses recorded before
+   this feature existed have no `Official` value at all and are shown by
+   default rather than hidden, so existing data doesn't disappear from the
+   dashboard the moment this ships. If you'd rather those older rows be
+   treated as non-official until reviewed, that's a one-line change in
+   `Dashboard.js` (`getFilteredResponses`) — ask and it's a quick flip.
+
+9. **The class passcode is a soft, shared secret, not real access control** —
+   by design, per the request: the app stays public and single-deployment for
+   now. It's checked server-side (the actual value is never sent to the
+   browser), but it's the same word for every student, typically written on a
+   board, so treat it as a way to *tag* trustworthy responses rather than to
+   *secure* anything. It's also remembered in the browser's local storage
+   alongside the student's name/period for convenience, the same as those
+   fields already were.
+
+10. **Main Answer and Basics Answer are both required** on Do/Home/MAP videos
+    (matching the old single "Your Answer" field having been required). The
+    comma-separated-parts hint above each is, per the request, only a
+    suggestion — not validated or enforced in any format.

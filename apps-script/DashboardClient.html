@@ -46,7 +46,8 @@
       videoType: document.getElementById('f-type').value,
       student: document.getElementById('f-student').value.trim(),
       dateFrom: document.getElementById('f-from').value,
-      dateTo: document.getElementById('f-to').value
+      dateTo: document.getElementById('f-to').value,
+      showAll: document.getElementById('f-show-all').checked
     };
   }
 
@@ -63,6 +64,7 @@
     rows.forEach(function (r) {
       var tr = document.createElement('tr');
       var when = r.Timestamp ? new Date(r.Timestamp).toLocaleString() : '';
+      var officialLabel = r.Official === false ? 'No' : 'Yes';
       tr.innerHTML =
         '<td>' + escapeHtml(when) + '</td>' +
         '<td>' + escapeHtml(r.FirstName) + '</td>' +
@@ -72,7 +74,10 @@
         '<td>' + escapeHtml(r.VideoNumber) + '</td>' +
         '<td class="wrap">' + escapeHtml(r.VideoTitle) + '</td>' +
         '<td>' + escapeHtml(r.UnderstandConfirmation) + '</td>' +
-        '<td class="wrap">' + escapeHtml(r.MainAnswer) + '</td>';
+        '<td class="wrap">' + escapeHtml(r.MainAnswer) + '</td>' +
+        '<td class="wrap">' + escapeHtml(r.BasicsAnswer) + '</td>' +
+        '<td>' + escapeHtml(officialLabel) + '</td>' +
+        '<td>' + escapeHtml(r.SchoolYear) + '</td>';
       body.appendChild(tr);
     });
   }
@@ -94,6 +99,7 @@
     ['f-grade', 'f-period', 'f-type', 'f-student', 'f-from', 'f-to'].forEach(function (id) {
       document.getElementById(id).value = '';
     });
+    document.getElementById('f-show-all').checked = false;
     loadResponses();
   });
 
