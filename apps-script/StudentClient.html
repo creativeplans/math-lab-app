@@ -1,0 +1,377 @@
+<script>
+(function () {
+  'use strict';
+
+  var STORAGE_KEY = 'mathlab_student_v1';
+
+  var state = {
+    firstName: null,
+    period: null,
+    grade: null,
+    completion: {},     // videoId -> true
+    currentVideo: null,  // the video object currently open in the player
+    player: null,
+    maxWatched: 0,
+    unlocked: false,
+    watchPoll: null
+  };
+
+  // ---- tiny screen router --------------------------------------------------
+  var screens = ['gate', 'grade-select', 'home', 'past', 'player-screen'];
+  function showScreen(id) {
+    screens.forEach(function (s) {
+      document.getElementById(s).hidden = (s !== id);
+    });
+  }
+
+  function loadStudent() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) { return null; }
+  }
+  function saveStudent(firstName, period) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ firstName: firstName, period: period }));
+    } catch (e) { /* private browsing etc - degrade gracefully, just re-ask next time */ }
+  }
+  function clearStudent() {
+    try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+  }
+
+  function run(fnName) {
+    var args = Array.prototype.slice.call(arguments, 1);
+    return new Promise(function (resolve, reject) {
+      var caller = google.script.run.withSuccessHandler(resolve).withFailureHandler(reject);
+      caller[fnName].apply(caller, args);
+    });
+  }
+
+  // ---- boot -----------------------------------------------------------------
+  function init() {
+    run('api_getPeriods').then(function (periods) {
+      var select = document.getElementById('gate-period');
+      periods.forEach(function (p) {
+        var opt = document.createElement('option');
+        opt.value = p; opt.textContent = p;
+        select.appendChild(opt);
+      });
+    });
+
+    var saved = loadStudent();
+    if (saved && saved.firstName && saved.period) {
+      state.firstName = saved.firstName;
+      state.period = saved.period;
+      showScreen('grade-select');
+    } else {
+      showScreen('gate');
+    }
+
+    document.getElementById('gate-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var firstName = document.getElementById('gate-firstName').value.trim();
+      var period = document.getElementById('gate-period').value;
+      if (!firstName || !period) return;
+      state.firstName = firstName;
+      state.period = period;
+      saveStudent(firstName, period);
+      showScreen('grade-select');
+    });
+
+    document.getElementById('change-student').addEventListener('click', function () {
+      clearStudent();
+      state.firstName = null;
+      state.period = null;
+      document.getElementById('gate-form').reset();
+      showScreen('gate');
+    });
+
+    Array.prototype.forEach.call(document.querySelectorAll('.grade-btn'), function (btn) {
+      btn.addEventListener('click', function () {
+        openGrade(Number(btn.getAttribute('data-grade')));
+      });
+    });
+
+    document.getElementById('home-back').addEventListener('click', function () { showScreen('grade-select'); });
+    document.getElementById('player-back').addEventListener('click', function () { closePlayer(); showScreen('home'); });
+    document.getElementById('past-back').addEventListener('click', function () { showScreen('home'); });
+
+    document.getElementById('show-past').addEventListener('click', function () { openPast(); });
+
+    document.getElementById('past-search').addEventListener('input', function () {
+      renderPastList(filterPast(document.getElementById('past-search').value));
+    });
+
+    document.getElementById('response-form').addEventListener('submit', onSubmitResponse);
+  }
+
+  // ---- grade home -------------------------------------------------------
+  function openGrade(grade) {
+    state.grade = grade;
+    document.getElementById('home-title').textContent = grade + 'th Grade — Current Math Lab';
+    showScreen('home');
+    document.getElementById('problems-list').innerHTML = '<p class="hint">Loading...</p>';
+
+    Promise.all([
+      run('api_getGradeHome', grade),
+      run('api_getCompletionSet', state.firstName, state.period)
+    ]).then(function (results) {
+      var home = results[0];
+      state.completion = results[1] || {};
+      renderHome(home);
+    });
+  }
+
+  function renderHome(home) {
+    var list = document.getElementById('problems-list');
+    list.innerHTML = '';
+    if (!home.problems.length) {
+      list.innerHTML = '<p class="hint">No current videos yet - check back soon.</p>';
+    }
+    home.problems.forEach(function (problem) {
+      var card = document.createElement('div');
+      card.className = 'problem-card';
+      var h3 = document.createElement('h3');
+      h3.textContent = 'Problem ' + problem.number;
+      card.appendChild(h3);
+      var row = document.createElement('div');
+      row.className = 'video-row';
+      problem.videos.forEach(function (v) { row.appendChild(videoChip(v)); });
+      card.appendChild(row);
+      list.appendChild(card);
+    });
+
+    var mapSection = document.getElementById('map-section');
+    var mapList = document.getElementById('map-list');
+    mapList.innerHTML = '';
+    if (home.mapPractice.length) {
+      mapSection.hidden = false;
+      home.mapPractice.forEach(function (v) { mapList.appendChild(videoChip(v)); });
+    } else {
+      mapSection.hidden = true;
+    }
+  }
+
+  function videoChip(video) {
+    var chip = document.createElement('button');
+    chip.className = 'video-chip';
+    chip.type = 'button';
+    var label = video.kind === 'map' ? ('MAP ' + video.number) : video.type;
+    chip.innerHTML = '<span>' + label + '</span>' +
+      (state.completion[video.videoId] ? '<span class="done-mark">&#10003; Completed</span>' : '');
+    chip.addEventListener('click', function () { openPlayer(video); });
+    return chip;
+  }
+
+  // ---- past / search ------------------------------------------------------
+  var pastCache = [];
+  function openPast() {
+    showScreen('past');
+    document.getElementById('past-search').value = '';
+    document.getElementById('past-list').innerHTML = '<p class="hint">Loading...</p>';
+    run('api_getPastVideos', state.grade).then(function (videos) {
+      pastCache = videos;
+      renderPastList(videos);
+    });
+  }
+  function filterPast(query) {
+    query = (query || '').trim().toLowerCase();
+    if (!query) return pastCache;
+    return pastCache.filter(function (v) {
+      var haystack = [v.title, v.type, v.number, v.kind].join(' ').toLowerCase();
+      return haystack.indexOf(query) !== -1;
+    });
+  }
+  function renderPastList(videos) {
+    var list = document.getElementById('past-list');
+    list.innerHTML = '';
+    if (!videos.length) {
+      list.innerHTML = '<p class="hint">No matching videos.</p>';
+      return;
+    }
+    videos.forEach(function (v) {
+      var item = document.createElement('div');
+      item.className = 'video-list-item';
+      var label = v.kind === 'map' ? ('MAP Practice ' + v.number) : ('Problem ' + v.number + ' — ' + v.type);
+      item.innerHTML = '<span>' + label + '</span>' +
+        (state.completion[v.videoId] ? '<span class="done-mark">&#10003;</span>' : '');
+      item.addEventListener('click', function () { openPlayer(v); });
+      list.appendChild(item);
+    });
+  }
+
+  // ---- player + watch enforcement -----------------------------------------
+  var ytApiReady = false;
+  window.onYouTubeIframeAPIReady = function () { ytApiReady = true; };
+
+  function openPlayer(video) {
+    state.currentVideo = video;
+    state.maxWatched = 0;
+    state.unlocked = false;
+
+    document.getElementById('player-title').textContent = video.kind === 'map'
+      ? ('MAP Practice ' + video.number)
+      : ('Problem ' + video.number + ' — ' + video.type);
+
+    var alreadyDone = !!state.completion[video.videoId];
+    document.getElementById('watch-hint').hidden = alreadyDone;
+    document.getElementById('response-form').hidden = true;
+    document.getElementById('already-done').hidden = !alreadyDone;
+    document.getElementById('understand-block').hidden = true;
+    document.getElementById('answer-block').hidden = true;
+    document.getElementById('understand-check').checked = false;
+    document.getElementById('main-answer').value = '';
+
+    showScreen('player-screen');
+
+    function createPlayer() {
+      if (state.player) {
+        state.player.loadVideoById(video.videoId);
+        state.player.pauseVideo();
+      } else {
+        state.player = new YT.Player('yt-player', {
+          videoId: video.videoId,
+          playerVars: {
+            autoplay: 0,
+            controls: 1,
+            rel: 0,
+            modestbranding: 1,
+            playsinline: 1
+          },
+          events: {
+            onStateChange: onPlayerStateChange,
+            onPlaybackRateChange: onPlaybackRateChange
+          }
+        });
+      }
+      var container = document.getElementById('yt-player');
+      container.oncontextmenu = function (e) { e.preventDefault(); return false; };
+    }
+
+    if (ytApiReady && window.YT && YT.Player) {
+      createPlayer();
+    } else {
+      var check = setInterval(function () {
+        if (ytApiReady && window.YT && YT.Player) {
+          clearInterval(check);
+          createPlayer();
+        }
+      }, 150);
+    }
+  }
+
+  function closePlayer() {
+    stopWatchPoll();
+    if (state.player && state.player.pauseVideo) {
+      try { state.player.pauseVideo(); } catch (e) {}
+    }
+    state.currentVideo = null;
+  }
+
+  function onPlaybackRateChange() {
+    // Playback speed is locked at normal speed - snap back immediately if changed.
+    if (state.player && state.player.getPlaybackRate && state.player.getPlaybackRate() !== 1) {
+      state.player.setPlaybackRate(1);
+    }
+  }
+
+  function onPlayerStateChange(event) {
+    if (event.data === YT.PlayerState.PLAYING) {
+      startWatchPoll();
+    } else if (event.data === YT.PlayerState.PAUSED) {
+      // keep polling paused state is fine; interval checks currentTime regardless
+    } else if (event.data === YT.PlayerState.ENDED) {
+      stopWatchPoll();
+      state.maxWatched = state.player.getDuration();
+      unlockResponse();
+    }
+  }
+
+  var SEEK_TOLERANCE_SECONDS = 1.5;
+
+  function startWatchPoll() {
+    stopWatchPoll();
+    state.watchPoll = setInterval(function () {
+      if (!state.player || !state.player.getCurrentTime) return;
+      var current = state.player.getCurrentTime();
+      var duration = state.player.getDuration();
+
+      if (current > state.maxWatched + SEEK_TOLERANCE_SECONDS) {
+        // Seeked ahead of the furthest legitimately-watched point - snap back.
+        state.player.seekTo(state.maxWatched, true);
+      } else if (current > state.maxWatched) {
+        state.maxWatched = current;
+      }
+
+      if (duration && current >= duration - 0.5) {
+        stopWatchPoll();
+        state.maxWatched = duration;
+        unlockResponse();
+      }
+    }, 250);
+  }
+
+  function stopWatchPoll() {
+    if (state.watchPoll) {
+      clearInterval(state.watchPoll);
+      state.watchPoll = null;
+    }
+  }
+
+  function unlockResponse() {
+    if (state.unlocked) return;
+    state.unlocked = true;
+    if (state.completion[state.currentVideo.videoId]) return; // already recorded, nothing more to do
+    document.getElementById('watch-hint').hidden = true;
+    document.getElementById('response-form').hidden = false;
+    if (state.currentVideo.type === 'Teach') {
+      document.getElementById('understand-block').hidden = false;
+    } else {
+      document.getElementById('answer-block').hidden = false;
+    }
+  }
+
+  function onSubmitResponse(e) {
+    e.preventDefault();
+    if (!state.unlocked || !state.currentVideo) return;
+
+    var video = state.currentVideo;
+    var isTeach = video.type === 'Teach';
+
+    if (isTeach && !document.getElementById('understand-check').checked) {
+      return;
+    }
+    var mainAnswer = document.getElementById('main-answer').value.trim();
+    if (!isTeach && !mainAnswer) {
+      return;
+    }
+
+    var payload = {
+      firstName: state.firstName,
+      period: state.period,
+      grade: video.grade || state.grade,
+      videoType: video.type,
+      videoNumber: video.number,
+      videoTitle: video.title,
+      videoId: video.videoId,
+      mainAnswer: isTeach ? '' : mainAnswer,
+      understandConfirmation: isTeach ? 'I understand' : ''
+    };
+
+    var submitBtn = e.target.querySelector('button[type=submit]');
+    submitBtn.disabled = true;
+
+    run('api_submitResponse', payload).then(function () {
+      state.completion[video.videoId] = true;
+      document.getElementById('response-form').hidden = true;
+      document.getElementById('already-done').hidden = false;
+      submitBtn.disabled = false;
+    }).catch(function (err) {
+      submitBtn.disabled = false;
+      alert('Could not submit your response. Please try again. (' + err + ')');
+    });
+  }
+
+  init();
+})();
+</script>

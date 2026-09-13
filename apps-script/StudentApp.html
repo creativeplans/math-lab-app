@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <?!= include('StudentStyles'); ?>
+</head>
+<body>
+  <div id="app" class="app">
+
+    <!-- Step 0: who are you (name + period), asked once and remembered on this device -->
+    <section id="gate" class="screen">
+      <h1>Math Lab</h1>
+      <p class="subtitle">Enter your name and period to begin.</p>
+      <form id="gate-form">
+        <label>First Name
+          <input type="text" id="gate-firstName" required autocomplete="off">
+        </label>
+        <label>Period
+          <select id="gate-period" required>
+            <option value="" disabled selected>Choose your period</option>
+          </select>
+        </label>
+        <button type="submit">Continue</button>
+      </form>
+    </section>
+
+    <!-- Step 1: grade choice -->
+    <section id="grade-select" class="screen" hidden>
+      <h1>Math Lab</h1>
+      <p class="subtitle">Choose your grade</p>
+      <div class="grade-buttons">
+        <button class="grade-btn" data-grade="6">6th Grade</button>
+        <button class="grade-btn" data-grade="7">7th Grade</button>
+      </div>
+      <button class="link-btn" id="change-student">Not you? Change name/period</button>
+    </section>
+
+    <!-- Step 2: current work for the chosen grade -->
+    <section id="home" class="screen" hidden>
+      <div class="home-header">
+        <button class="back-btn" id="home-back">&larr; Grade</button>
+        <h1 id="home-title">Current Math Lab</h1>
+        <button class="link-btn" id="show-past">Past Videos / Search</button>
+      </div>
+      <div id="problems-list"></div>
+      <div id="map-section" hidden>
+        <h2>MAP Practice</h2>
+        <div id="map-list" class="video-row"></div>
+      </div>
+    </section>
+
+    <!-- Step 2b: past videos / search -->
+    <section id="past" class="screen" hidden>
+      <div class="home-header">
+        <button class="back-btn" id="past-back">&larr; Current Work</button>
+        <h1>Past Videos</h1>
+      </div>
+      <input type="search" id="past-search" placeholder="Search by number, type, or title...">
+      <div id="past-list" class="video-list"></div>
+    </section>
+
+    <!-- Step 3: player + response -->
+    <section id="player-screen" class="screen" hidden>
+      <div class="home-header">
+        <button class="back-btn" id="player-back">&larr; Back</button>
+        <h1 id="player-title"></h1>
+      </div>
+      <div class="player-wrap">
+        <div id="yt-player"></div>
+      </div>
+      <p id="watch-hint" class="hint">Watch the whole video to unlock your response.</p>
+
+      <form id="response-form" class="response-form" hidden>
+        <div id="understand-block" hidden>
+          <label class="checkbox-label">
+            <input type="checkbox" id="understand-check" required>
+            I understand this video's content.
+          </label>
+        </div>
+        <div id="answer-block" hidden>
+          <label>Your Answer
+            <input type="text" id="main-answer" autocomplete="off">
+          </label>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+      <p id="already-done" class="hint success" hidden>&#10003; Completed</p>
+    </section>
+
+  </div>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <?!= include('StudentClient'); ?>
+</body>
+</html>

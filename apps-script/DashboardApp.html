@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <?!= include('DashboardStyles'); ?>
+</head>
+<body>
+  <div id="app" class="app">
+
+    <section id="passcode-gate" class="screen">
+      <h1>Math Lab Dashboard</h1>
+      <p class="subtitle">Enter the teacher passcode to view student responses.</p>
+      <form id="passcode-form">
+        <label>Passcode
+          <input type="password" id="passcode-input" autocomplete="off" required>
+        </label>
+        <button type="submit">Enter</button>
+      </form>
+      <p id="passcode-error" class="error" hidden></p>
+      <p id="not-configured" class="hint" hidden>
+        No dashboard passcode is set yet. Set the <code>DASHBOARD_PASSCODE</code> script property -
+        see docs/DEPLOYMENT.md.
+      </p>
+    </section>
+
+    <section id="dashboard" class="screen" hidden>
+      <h1>Math Lab Dashboard</h1>
+      <div class="filters">
+        <label>Grade
+          <select id="f-grade"><option value="">All</option><option value="6">6</option><option value="7">7</option></select>
+        </label>
+        <label>Period
+          <input type="text" id="f-period" placeholder="Any">
+        </label>
+        <label>Video Type
+          <select id="f-type">
+            <option value="">All</option>
+            <option value="Teach">Teach</option>
+            <option value="Do">Do</option>
+            <option value="Home">Home</option>
+            <option value="MAP">MAP</option>
+          </select>
+        </label>
+        <label>Student
+          <input type="text" id="f-student" placeholder="Search name">
+        </label>
+        <label>From
+          <input type="date" id="f-from">
+        </label>
+        <label>To
+          <input type="date" id="f-to">
+        </label>
+        <button type="button" id="apply-filters">Apply</button>
+        <button type="button" id="clear-filters" class="secondary">Clear</button>
+      </div>
+
+      <p id="row-count" class="hint"></p>
+
+      <div class="table-wrap">
+        <table id="responses-table">
+          <thead>
+            <tr>
+              <th>Date/Time</th>
+              <th>Student</th>
+              <th>Period</th>
+              <th>Grade</th>
+              <th>Type</th>
+              <th>Number</th>
+              <th>Video</th>
+              <th>Understand</th>
+              <th>Answer</th>
+            </tr>
+          </thead>
+          <tbody id="responses-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <?!= include('DashboardClient'); ?>
+</body>
+</html>

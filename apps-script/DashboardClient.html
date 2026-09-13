@@ -1,0 +1,106 @@
+<script>
+(function () {
+  'use strict';
+
+  var STORAGE_KEY = 'mathlab_dashboard_passcode_v1';
+  var passcode = null;
+
+  function run(fnName) {
+    var args = Array.prototype.slice.call(arguments, 1);
+    return new Promise(function (resolve, reject) {
+      var caller = google.script.run.withSuccessHandler(resolve).withFailureHandler(reject);
+      caller[fnName].apply(caller, args);
+    });
+  }
+
+  function showScreen(id) {
+    ['passcode-gate', 'dashboard'].forEach(function (s) {
+      document.getElementById(s).hidden = (s !== id);
+    });
+  }
+
+  function tryEnter(code) {
+    return run('api_checkDashboardPasscode', code).then(function (result) {
+      if (result.reason === 'NOT_CONFIGURED') {
+        document.getElementById('not-configured').hidden = false;
+        document.getElementById('passcode-error').hidden = true;
+        return false;
+      }
+      if (result.ok) {
+        passcode = code;
+        try { sessionStorage.setItem(STORAGE_KEY, code); } catch (e) {}
+        showScreen('dashboard');
+        loadResponses();
+        return true;
+      }
+      document.getElementById('passcode-error').textContent = 'Incorrect passcode.';
+      document.getElementById('passcode-error').hidden = false;
+      return false;
+    });
+  }
+
+  function currentFilters() {
+    return {
+      grade: document.getElementById('f-grade').value,
+      period: document.getElementById('f-period').value.trim(),
+      videoType: document.getElementById('f-type').value,
+      student: document.getElementById('f-student').value.trim(),
+      dateFrom: document.getElementById('f-from').value,
+      dateTo: document.getElementById('f-to').value
+    };
+  }
+
+  function loadResponses() {
+    run('api_getResponses', passcode, currentFilters()).then(renderRows).catch(function (err) {
+      alert('Could not load responses: ' + err);
+    });
+  }
+
+  function renderRows(rows) {
+    var body = document.getElementById('responses-body');
+    body.innerHTML = '';
+    document.getElementById('row-count').textContent = rows.length + ' response' + (rows.length === 1 ? '' : 's');
+    rows.forEach(function (r) {
+      var tr = document.createElement('tr');
+      var when = r.Timestamp ? new Date(r.Timestamp).toLocaleString() : '';
+      tr.innerHTML =
+        '<td>' + escapeHtml(when) + '</td>' +
+        '<td>' + escapeHtml(r.FirstName) + '</td>' +
+        '<td>' + escapeHtml(r.Period) + '</td>' +
+        '<td>' + escapeHtml(r.Grade) + '</td>' +
+        '<td>' + escapeHtml(r.VideoType) + '</td>' +
+        '<td>' + escapeHtml(r.VideoNumber) + '</td>' +
+        '<td class="wrap">' + escapeHtml(r.VideoTitle) + '</td>' +
+        '<td>' + escapeHtml(r.UnderstandConfirmation) + '</td>' +
+        '<td class="wrap">' + escapeHtml(r.MainAnswer) + '</td>';
+      body.appendChild(tr);
+    });
+  }
+
+  function escapeHtml(value) {
+    var div = document.createElement('div');
+    div.textContent = value == null ? '' : String(value);
+    return div.innerHTML;
+  }
+
+  document.getElementById('passcode-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var code = document.getElementById('passcode-input').value;
+    tryEnter(code);
+  });
+
+  document.getElementById('apply-filters').addEventListener('click', loadResponses);
+  document.getElementById('clear-filters').addEventListener('click', function () {
+    ['f-grade', 'f-period', 'f-type', 'f-student', 'f-from', 'f-to'].forEach(function (id) {
+      document.getElementById(id).value = '';
+    });
+    loadResponses();
+  });
+
+  // Reuse a passcode already entered this browser tab session, if any.
+  try {
+    var remembered = sessionStorage.getItem(STORAGE_KEY);
+    if (remembered) tryEnter(remembered);
+  } catch (e) {}
+})();
+</script>
