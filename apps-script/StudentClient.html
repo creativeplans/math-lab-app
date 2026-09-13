@@ -126,7 +126,13 @@
     });
 
     document.getElementById('home-back').addEventListener('click', function () { showScreen('grade-select'); });
-    document.getElementById('player-back').addEventListener('click', function () { closePlayer(); showScreen('home'); });
+    document.getElementById('player-back').addEventListener('click', function () {
+      closePlayer();
+      // Re-fetch rather than just showScreen('home') - the completion status
+      // shown here may be stale if a response was just submitted, and the
+      // video list itself may have changed (new upload ingested) meanwhile.
+      openGrade(state.grade);
+    });
     document.getElementById('past-back').addEventListener('click', function () { showScreen('home'); });
 
     document.getElementById('show-past').addEventListener('click', function () { openPast(); });
@@ -260,27 +266,23 @@
     answerBlock.hidden = true;
 
     showScreen('player-screen');
+    destroyPlayer(); // always start this video from a clean, freshly-mounted player
 
     function createPlayer() {
-      if (state.player) {
-        state.player.loadVideoById(video.videoId);
-        state.player.pauseVideo();
-      } else {
-        state.player = new YT.Player('yt-player', {
-          videoId: video.videoId,
-          playerVars: {
-            autoplay: 0,
-            controls: 1,
-            rel: 0,
-            modestbranding: 1,
-            playsinline: 1
-          },
-          events: {
-            onStateChange: onPlayerStateChange,
-            onPlaybackRateChange: onPlaybackRateChange
-          }
-        });
-      }
+      state.player = new YT.Player('yt-player', {
+        videoId: video.videoId,
+        playerVars: {
+          autoplay: 0,
+          controls: 1,
+          rel: 0,
+          modestbranding: 1,
+          playsinline: 1
+        },
+        events: {
+          onStateChange: onPlayerStateChange,
+          onPlaybackRateChange: onPlaybackRateChange
+        }
+      });
       var container = document.getElementById('yt-player');
       container.oncontextmenu = function (e) { e.preventDefault(); return false; };
     }
@@ -297,11 +299,29 @@
     }
   }
 
-  function closePlayer() {
+  /**
+   * Fully tears down the current player (rather than reusing it via
+   * loadVideoById) and rebuilds a fresh mount point. Reusing a single
+   * long-lived player instance across videos was the cause of the
+   * blank/black player after navigating back and opening a different
+   * video - loadVideoById could be called on an instance that wasn't
+   * actually ready yet. Recreating from scratch every time is slightly more
+   * work per video open but is bulletproof against that class of bug.
+   */
+  function destroyPlayer() {
     stopWatchPoll();
-    if (state.player && state.player.pauseVideo) {
-      try { state.player.pauseVideo(); } catch (e) {}
+    if (state.player) {
+      try { state.player.destroy(); } catch (e) {}
+      state.player = null;
     }
+    // destroy() removes the <iframe> entirely, so the next YT.Player() call
+    // needs a real target element to mount into.
+    var wrap = document.querySelector('.player-wrap');
+    if (wrap) wrap.innerHTML = '<div id="yt-player"></div>';
+  }
+
+  function closePlayer() {
+    destroyPlayer();
     state.currentVideo = null;
   }
 
