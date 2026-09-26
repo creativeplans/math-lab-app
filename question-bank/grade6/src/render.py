@@ -43,7 +43,7 @@ def fix_minus(s):
     for i, ch in enumerate(s):
         if ch == '-':
             prev = s[i - 1] if i > 0 else ' '
-            if not prev.isalnum():
+            if not prev.isalnum() and prev != '}':
                 ch = '−'
         out.append(ch)
     return ''.join(out)
@@ -515,6 +515,9 @@ def fig_hist(c, f, x, y, w, h, s):
     bw = gw / n
     for i, (b, k) in enumerate(zip(bins, counts)):
         bx = x0 + i * bw + gap * bw / 2
+        if k == 0:
+            draw_label(c, b, x0 + i * bw + bw / 2, y0 - 12, fs)
+            continue
         c.setFillColor(SHADE)
         c.setStrokeColor(POINT)
         c.setLineWidth(1.3)

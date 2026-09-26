@@ -1,15 +1,16 @@
-from qb import S, B, sa, mc, tf, nl, coord, q1, table
+from qb import S, B, sa, mc, tf, nl, coord, q1, table, plot
 
 LET = ['Point A', 'Point B', 'Point C', 'Point D']
+SOL = ['One solution', 'No solution', 'Infinitely many solutions']
 
 SETS = [
-    # ------------------------------------------------------------------ 6.EE.A.1
-    S('6.EE.A.1', 'Write and evaluate numerical expressions with whole-number exponents',
+    # ------------------------------------------------------------------ 6.EE.A.1 evaluate
+    S('6.EE.A.1', 'Evaluate numerical expressions with whole-number exponents',
       main=[
           sa('Evaluate.\n2⁴ + 3²', 'Value:'),
           sa('Evaluate.\n3 × 2³', 'Value:'),
           sa('Evaluate.\n(5 - 2)³ ÷ 9', 'Value:'),
-          mc('Which expression is equal to 4³?', ['4 × 4 × 4', '4 × 3', '3 × 3 × 3 × 3', '4 + 4 + 4']),
+          mc('Evaluate.\n5² - 4 × 2', ['17', '42', '-3', '21']),
           sa('Evaluate.\n({2/3})²', 'Value:'),
       ],
       back=[
@@ -42,18 +43,58 @@ SETS = [
           mc('(-1)⁵ = ?', ['-1', '1', '-5', '5']),
           sa('Evaluate.\n(-{1/2})²', 'Value:'),
       ]),
-      f2=B('Properties of integer exponents', '8.EE.A.1', [
-          sa('Write as a single power.\n3² × 3⁻⁵', 'Single power:'),
+      f2=B('Evaluate expressions with integer exponents', '8.EE.A.1', [
           sa('Evaluate.\n2⁻³', 'Value:'),
-          mc('(5²)³ = ?', ['5⁶', '5⁵', '5⁸', '5⁹']),
+          sa('Evaluate.\n5⁻² × 5⁴', 'Value:'),
+          mc('10⁻² = ?', ['{1/100}', '-100', '-20', '0.1']),
           sa('Evaluate.\n{4⁵/4³}', 'Value:'),
           tf('7⁰ = 1'),
+      ])),
+
+    # ------------------------------------------------------------------ 6.EE.A.1 write
+    S('6.EE.A.1', 'Write numerical expressions with whole-number exponents',
+      main=[
+          sa('Write using an exponent.\n7 × 7 × 7 × 7', 'Expression:'),
+          mc('Which expression is equal to 3 × 3 × 3 × 3 × 3?', ['3⁵', '5³', '3 × 5', '15']),
+          sa('Write using an exponent.\n{1/2} × {1/2} × {1/2}', 'Expression:'),
+          sa('Write using an exponent.\n0.4 × 0.4', 'Expression:'),
+          sa('Write using exponents.\n2 × 2 × 2 × 5 × 5', 'Expression:'),
+      ],
+      back=[
+          B('Powers of 10 with exponents', '5.NBT.A.2', [
+              sa('Write 10 × 10 × 10 as a power of 10.', 'Power of 10:'),
+              tf('10 × 10 × 10 × 10 = 10⁴'),
+              mc('Which is equal to 10⁵?', ['10 × 10 × 10 × 10 × 10', '10 × 5', '5 × 5 × 5 × 5 × 5 × 5 × 5 × 5 × 5 × 5', '100,000,000']),
+              sa('How many factors of 10 are in 10⁶?', 'Factors:'),
+              tf('10² = 10 × 2'),
+          ]),
+          B('Multiplying with repeated factors', '3.OA.C.7', [
+              sa('Multiply.\n2 × 2 × 2 × 2', 'Product:'),
+              sa('Multiply.\n3 × 3', 'Product:'),
+              tf('5 × 5 × 5 = 15'),
+              mc('How many times is 7 used as a factor in 7 × 7 × 7?', ['3', '7', '21', '1']),
+              sa('Multiply.\n4 × 4', 'Product:'),
+          ]),
+      ],
+      f1=B('Powers of negative numbers', '7.NS.A.2.a', [
+          sa('Write using an exponent.\n(-3)(-3)(-3)(-3)', 'Expression:'),
+          sa('Write (-2)(-2)(-2) using an exponent. Is its value positive or negative?', ['Expression:', 'Sign:']),
+          mc('Which expression is equal to (-5)²?', ['(-5)(-5)', '-5 × 5', '-(5 × 5)', '-5 × 2']),
+          tf('(-1)⁶ is positive.'),
+          sa('Write using an exponent.\n(-{2/3})(-{2/3})', 'Expression:'),
+      ]),
+      f2=B('Write expressions as a single power', '8.EE.A.1', [
+          sa('Write as a single power.\n4³ × 4⁵', 'Single power:'),
+          sa('Write as a single power.\n(2³)⁴', 'Single power:'),
+          mc('Which is equal to {6⁷/6²}?', ['6⁵', '6⁹', '6¹⁴', '1⁵']),
+          sa('Write as a single power.\n3⁴ × 3⁻⁶', 'Single power:'),
+          tf('5² × 5³ = 5⁶'),
       ])),
 
     # ------------------------------------------------------------------ 6.EE.A.2.a
     S('6.EE.A.2.a', 'Write expressions in which letters stand for numbers',
       main=[
-          sa('Write an expression for "subtract y from 5."', 'Expression:'),
+          sa('Write an expression for "subtract m from 12."', 'Expression:'),
           sa('Write an expression for "5 more than twice a number n."', 'Expression:'),
           mc('Which expression means "the quotient of x and 4"?', ['{x/4}', '{4/x}', 'x - 4', '4x']),
           sa('Write an expression for "3 less than the product of 7 and a number m."', 'Expression:'),
@@ -61,7 +102,7 @@ SETS = [
       ],
       back=[
           B('Words for operations', '5.OA.A.2', [
-              mc('Which expression shows "add 8 and 7, then multiply by 2"?', ['2 × (8 + 7)', '2 × 8 + 7', '8 + 7 × 2', '(2 + 8) × 7']),
+              mc('Which expression shows "add 6 and 9, then multiply by 4"?', ['4 × (6 + 9)', '4 × 6 + 9', '6 + 9 × 4', '(4 + 6) × 9']),
               sa('Write an expression for "subtract 4 from 10, then divide by 2."', 'Expression:'),
               tf('"The product of 6 and 9" means 6 × 9.'),
               mc('Which word describes the answer to a subtraction problem?', ['Difference', 'Sum', 'Product', 'Quotient']),
@@ -69,7 +110,7 @@ SETS = [
           ]),
           B('A symbol for an unknown number', '3.OA.A.4', [
               sa('What number goes in the box?\n□ + 7 = 12', '□ ='),
-              tf('In 8 × □ = 48, the box stands for 6.'),
+              tf('In 7 × □ = 42, the box stands for 6.'),
               mc('□ - 5 = 9\nWhat number goes in the box?', ['14', '4', '45', '9']),
               sa('What number goes in the box?\n20 ÷ □ = 4', '□ ='),
               sa('What number goes in the box?\n□ × 3 = 27', '□ ='),
@@ -83,7 +124,7 @@ SETS = [
           ]),
       ],
       f1=B('Write and solve equations of the form px + q = r', '7.EE.B.4.a', [
-          sa('The perimeter of a rectangle is 54 cm. Its length is 6 cm.\nWrite and solve an equation to find its width.', 'Width:'),
+          sa('A rectangle has a perimeter of 46 inches. Its width is 8 inches.\nWrite and solve an equation to find its length.', 'Length:'),
           sa('Jo has $40. She buys 3 shirts that cost the same amount and has $4 left.\nHow much does each shirt cost?', 'Cost:'),
           mc('Which equation represents "5 more than 3 times a number is 26"?', ['3n + 5 = 26', '5n + 3 = 26', '3(n + 5) = 26', '3n - 5 = 26']),
           sa('Twice a number minus 7 is 15.\nWrite and solve an equation to find the number.', 'Number:'),
@@ -100,10 +141,10 @@ SETS = [
     # ------------------------------------------------------------------ 6.EE.A.2.b
     S('6.EE.A.2.b', 'Identify parts of an expression: term, sum, product, factor, quotient, coefficient',
       main=[
-          mc('In the expression 2(8 + 7), how can the 2 be described?', ['A factor', 'A sum', 'A quotient', 'A term of 8 + 7']),
+          mc('In the expression 4(9 + 3), how can the 4 be described?', ['A factor', 'A sum', 'A quotient', 'A term of 9 + 3']),
           sa('How many terms are in the expression 3x + 5y - 2?', 'Terms:'),
           sa('What is the coefficient of y in 4x + 9y?', 'Coefficient:'),
-          tf('In 6(a + b), the quantity (a + b) is a single factor and also a sum of two terms.'),
+          tf('In 5(m + n), the quantity (m + n) is a single factor and also a sum of two terms.'),
           mc('In the expression 7m + 3, which part is the constant term?', ['3', '7', 'm', '7m']),
       ],
       back=[
@@ -122,7 +163,7 @@ SETS = [
               sa('Write one factor pair of 18.', 'Factor pair:'),
           ]),
           B('Interpreting expressions without evaluating', '5.OA.A.2', [
-              tf('3 × (18,932 + 921) is three times as large as 18,932 + 921.'),
+              tf('4 × (2,365 + 718) is four times as large as 2,365 + 718.'),
               mc('How does 5 × (26 + 4) compare to 26 + 4?', ['It is 5 times as large.', 'It is 5 more.', 'It is 5 less.', 'It is the same.']),
               tf('(9 + 4) × 2 is 2 more than 9 + 4.'),
               mc('Which expression is 4 times as large as 125 - 25?', ['4 × (125 - 25)', '4 + (125 - 25)', '125 - 25 × 4', '(125 - 25) ÷ 4']),
@@ -140,8 +181,7 @@ SETS = [
           sa('The cost to bowl is C = 4.5n + 12, where n is the number of games.\nWhat does 12 represent?', 'Meaning:'),
           mc('In y = -3x + 7, what is the rate of change?', ['-3', '7', 'x', '3']),
           sa('The gas left in a car\'s tank is G = 14 - 0.04m, where m is miles driven.\nWhat is the initial value?', 'Initial value:'),
-          mc('A car\'s distance from home is d = 60t + 25, where t is hours.\nWhat does 60 represent?',
-             ['The speed in miles per hour', 'The starting distance', 'The total time', 'The total distance']),
+          mc('A car\'s distance from home is d = 60t + 25, where t is hours.\nWhat does 60 represent?', ['The speed in miles per hour', 'The starting distance', 'The total time', 'The total distance']),
           tf('In y = 8x, the initial value is 0.'),
       ])),
 
@@ -149,8 +189,8 @@ SETS = [
     S('6.EE.A.2.c', 'Evaluate expressions and formulas for given values',
       main=[
           sa('Evaluate 3x² + 2 when x = 4.', 'Value:'),
-          sa('The volume of a cube is V = s³.\nFind V when s = {1/2} inch.', 'V ='),
-          sa('The surface area of a cube is A = 6s².\nFind A when s = 3 cm.', 'A ='),
+          sa('The volume of a cube is V = s³.\nFind V when s = {2/3} foot.', 'V ='),
+          sa('The perimeter of a rectangle is P = 2l + 2w.\nFind P when l = 7.5 cm and w = 4 cm.', 'P ='),
           mc('Evaluate 2(a + b) when a = 3.5 and b = 4.', ['15', '11.5', '9.5', '7.5']),
           sa('Evaluate {x/4} + 5y when x = 12 and y = 2.', 'Value:'),
       ],
@@ -177,7 +217,7 @@ SETS = [
               sa('If t = 3, what is 4 × t + 2?', 'Value:'),
           ]),
           B('Multiplying fractions', '5.NF.B.4.a', [
-              sa('Multiply.\n{1/2} × {1/2} × {1/2}', 'Product:'),
+              sa('Multiply.\n{2/3} × {2/3} × {2/3}', 'Product:'),
               sa('Multiply.\n6 × {1/3}', 'Product:'),
               tf('{2/3} × {2/3} = {4/6}'),
               mc('{3/4} × 8 = ?', ['6', '{3/32}', '24', '2']),
@@ -199,14 +239,14 @@ SETS = [
           tf('A cylinder with a radius of 2 and a height of 5 has a volume of 20π.'),
       ])),
 
-    # ------------------------------------------------------------------ 6.EE.A.3
-    S('6.EE.A.3', 'Apply properties of operations to generate equivalent expressions',
+    # ------------------------------------------------------------------ 6.EE.A.3 expand
+    S('6.EE.A.3', 'Use the distributive property to expand expressions',
       main=[
-          sa('Expand.\n3(2 + x)', 'Expression:'),
-          sa('Factor using the greatest common factor.\n24x + 18y', 'Expression:'),
-          sa('Simplify.\ny + y + y', 'Expression:'),
-          mc('Which expression is equivalent to 6(4x + 3y)?', ['24x + 18y', '24x + 3y', '10x + 9y', '4x + 18y']),
+          sa('Expand.\n3(4 + x)', 'Expression:'),
           sa('Expand.\n5(3a - 2)', 'Expression:'),
+          mc('Which expression is equivalent to 7(2m + 5)?', ['14m + 35', '14m + 5', '9m + 35', '2m + 35']),
+          sa('Expand.\n2(x + 3y + 4)', 'Expression:'),
+          sa('Expand.\n4(0.5y + 3)', 'Expression:'),
       ],
       back=[
           B('Distributive property with numbers', '3.OA.B.5', [
@@ -216,27 +256,27 @@ SETS = [
               tf('7 × 12 = 7 × 10 + 2'),
               sa('Fill in the blank.\n8 × (5 + 1) = 8 × 5 + ___', 'Blank:'),
           ]),
-          B('Greatest common factor', '6.NS.B.4', [
-              sa('Find the greatest common factor of 24 and 18.', 'GCF:'),
-              sa('Find the greatest common factor of 15 and 25.', 'GCF:'),
-              tf('The greatest common factor of 12 and 20 is 4.'),
-              mc('What is the greatest common factor of 16 and 40?', ['8', '4', '2', '16']),
-              sa('Find the greatest common factor of 9 and 21.', 'GCF:'),
+          B('Equal groups', '3.OA.A.1', [
+              tf('3 × (4 + 2) means 3 groups of (4 + 2).'),
+              mc('Which means 4 groups of (5 + 1)?', ['4 × (5 + 1)', '4 + (5 + 1)', '4 × 5 + 1', '(4 + 5) × 1']),
+              sa('How many groups of (2 + 6) are in 5 × (2 + 6)?', 'Groups:'),
+              tf('2 × (3 + 4) = (3 + 4) + (3 + 4)'),
+              sa('Write 6 × 3 as a sum of equal groups.', 'Sum:'),
           ]),
-          B('Repeated addition as multiplication', '3.OA.A.1', [
-              tf('4 + 4 + 4 = 3 × 4'),
-              sa('Write 7 + 7 + 7 + 7 as a multiplication expression.', 'Expression:'),
-              mc('What does 5 × 6 mean?', ['5 groups of 6', '5 more than 6', '6 minus 5', 'The number 56']),
-              tf('2 + 2 + 2 + 2 + 2 = 2 × 2'),
-              sa('Write 9 + 9 as a multiplication expression.', 'Expression:'),
+          B('Multiplying a decimal by a whole number', '5.NBT.B.7', [
+              sa('Multiply.\n4 × 0.5', 'Product:'),
+              sa('Multiply.\n3 × 1.2', 'Product:'),
+              tf('6 × 0.25 = 1.5'),
+              mc('5 × 0.4 = ?', ['2', '20', '0.2', '5.4']),
+              sa('Multiply.\n8 × 0.75', 'Product:'),
           ]),
       ],
-      f1=B('Expand and factor with rational coefficients', '7.EE.A.1', [
+      f1=B('Expand linear expressions with rational coefficients', '7.EE.A.1', [
           sa('Expand.\n{1/2}(8x - 6)', 'Expression:'),
-          sa('Factor.\n2.5x + 10', 'Expression:'),
-          mc('-4(2y - 3) = ?', ['-8y + 12', '-8y - 12', '8y - 12', '-8y - 3']),
-          sa('Simplify.\n3(x + 4) - 2(x - 1)', 'Expression:'),
-          tf('0.2(5a + 10) = a + 2'),
+          sa('Expand.\n-4(2y - 3)', 'Expression:'),
+          mc('Which is equivalent to 0.5(6a + 10)?', ['3a + 5', '3a + 10', '6a + 5', '3.5a + 5']),
+          sa('Expand.\n-{2/3}(9m + 3)', 'Expression:'),
+          tf('-2(x - 7) = -2x + 14'),
       ]),
       f2=B('Solve equations by expanding and collecting like terms', '8.EE.C.7.b', [
           sa('Solve for x.\n3(x + 2) = 5x - 4', 'x ='),
@@ -246,16 +286,101 @@ SETS = [
           sa('Solve for x.\n5(2x + 1) = 3(3x + 4)', 'x ='),
       ])),
 
+    # ------------------------------------------------------------------ 6.EE.A.3 factor
+    S('6.EE.A.3', 'Use the distributive property to factor expressions',
+      main=[
+          sa('Factor using the greatest common factor.\n24x + 16', 'Expression:'),
+          sa('Factor using the greatest common factor.\n18y + 30', 'Expression:'),
+          mc('Which shows 15a + 25b factored using the greatest common factor?', ['5(3a + 5b)', '3(5a + 25b)', '15(a + 10b)', '5(3a + 25b)']),
+          sa('Factor using the greatest common factor.\n36m + 27n', 'Expression:'),
+          sa('Factor using the greatest common factor.\n14x + 21', 'Expression:'),
+      ],
+      back=[
+          B('Greatest common factor', '6.NS.B.4', [
+              sa('Find the greatest common factor of 24 and 16.', 'GCF:'),
+              sa('Find the greatest common factor of 18 and 30.', 'GCF:'),
+              tf('The greatest common factor of 15 and 25 is 5.'),
+              mc('What is the greatest common factor of 36 and 27?', ['9', '3', '6', '12']),
+              sa('Find the greatest common factor of 14 and 21.', 'GCF:'),
+          ]),
+          B('Distributive property with numbers', '3.OA.B.5', [
+              tf('8 × 3 + 8 × 2 = 8 × (3 + 2)'),
+              sa('Fill in the blank.\n6 × 4 + 6 × 5 = 6 × (4 + ___)', 'Blank:'),
+              mc('Which is equal to 7 × 2 + 7 × 9?', ['7 × (2 + 9)', '7 × 2 × 9', '14 + 9', '7 + 2 + 9']),
+              tf('5 × 6 + 3 × 6 = 6 × (5 + 3)'),
+              sa('Fill in the blank.\n9 × 7 + 9 × 3 = ___ × (7 + 3)', 'Blank:'),
+          ]),
+          B('Factors', '4.OA.B.4', [
+              sa('List all the factors of 16.', 'Factors:'),
+              tf('6 is a factor of 30.'),
+              mc('Which number is a factor of 27?', ['9', '6', '4', '12']),
+              sa('List all the factors of 21.', 'Factors:'),
+              tf('8 is a factor of 36.'),
+          ]),
+      ],
+      f1=B('Factor linear expressions with rational coefficients', '7.EE.A.1', [
+          sa('Factor out 2.5.\n2.5x + 10', 'Expression:'),
+          sa('Factor out -4.\n-4x + 12', 'Expression:'),
+          mc('Which is equivalent to {1/2}x + 3?', ['{1/2}(x + 6)', '{1/2}(x + 3)', '2(x + 6)', '{1/2}(x + {3/2})']),
+          sa('Factor out 0.6.\n0.6y - 1.8', 'Expression:'),
+          tf('-5a - 15 = -5(a + 3)'),
+      ]),
+      f2=B('Use factoring to decide how many solutions an equation has', '8.EE.C.7.a', [
+          mc('Factor the left side to decide. How many solutions does the equation have?\n6x + 9 = 3(2x + 3)', SOL),
+          mc('How many solutions does the equation have?\n12x + 8 = 4(3x + 1)', SOL),
+          mc('How many solutions does the equation have?\n10x - 15 = 5(2x - 3)', SOL),
+          mc('How many solutions does the equation have?\n8x + 4 = 4(x + 1)', SOL),
+          sa('What number goes in the box so that the equation has infinitely many solutions?\n14x + 21 = 7(2x + □)', '□ ='),
+      ])),
+
+    # ------------------------------------------------------------------ 6.EE.A.3 like terms
+    S('6.EE.A.3', 'Combine like terms to write equivalent expressions',
+      main=[
+          sa('Write an equivalent expression with one term.\ny + y + y + y', 'Expression:'),
+          sa('Simplify.\n5x + 3x', 'Expression:'),
+          mc('Which expression is equivalent to 7a + 2 + 3a?', ['10a + 2', '12a', '7a + 5a', '10a + 5']),
+          sa('Simplify.\n4m + 6 + 2m + 1', 'Expression:'),
+          sa('Simplify.\n9n - 4n + 3', 'Expression:'),
+      ],
+      back=[
+          B('Repeated addition as multiplication', '3.OA.A.1', [
+              tf('4 + 4 + 4 = 3 × 4'),
+              sa('Write 7 + 7 + 7 + 7 as a multiplication expression.', 'Expression:'),
+              mc('What does 4 × 9 mean?', ['4 groups of 9', '4 more than 9', '9 minus 4', 'The number 49']),
+              tf('2 + 2 + 2 + 2 + 2 = 2 × 2'),
+              sa('Write 9 + 9 as a multiplication expression.', 'Expression:'),
+          ]),
+          B('Changing the order and grouping of addends', '3.OA.B.5', [
+              tf('4 + 6 + 2 = 4 + 2 + 6'),
+              sa('Fill in the blank.\n7 + 5 + 3 = 7 + 3 + ___', 'Blank:'),
+              mc('Which is equal to (8 + 2) + 5?', ['8 + (2 + 5)', '8 × (2 + 5)', '(8 - 2) + 5', '8 + 2 × 5']),
+              tf('9 + 1 + 9 = 9 + 9 + 1'),
+              sa('Fill in the blank.\n6 + 3 + 4 = 6 + 4 + ___', 'Blank:'),
+          ]),
+      ],
+      f1=B('Combine like terms with rational coefficients', '7.EE.A.1', [
+          sa('Simplify.\n2.25y + 0.75y', 'Expression:'),
+          sa('Simplify.\n{1/2}x + {1/4}x', 'Expression:'),
+          sa('Simplify.\n6x - 2 + 3x + 7', 'Expression:'),
+          mc('Simplify.\n-3a + 7a - 2', ['4a - 2', '-10a - 2', '4a + 2', '2a']),
+          tf('2.5m - m = 1.5m'),
+      ]),
+      f2=B('Solve equations by collecting like terms', '8.EE.C.7.b', [
+          sa('Solve for x.\n3x + 5x - 4 = 20', 'x ='),
+          sa('Solve for y.\n7y - 2y + 3 = 2y + 18', 'y ='),
+          mc('Solve for a.\n4a + 6 - a = 2a + 10', ['4', '-4', '16', '{16/5}']),
+          sa('Solve for n.\n0.5n + 1.5n - 3 = n + 5', 'n ='),
+          sa('Solve for k.\n6k - 2k + 1 = 3k - 4', 'k ='),
+      ])),
+
     # ------------------------------------------------------------------ 6.EE.A.4
     S('6.EE.A.4', 'Identify when two expressions are equivalent',
       main=[
-          tf('y + y + y and 3y are equivalent expressions.'),
+          tf('m + m + m + m and 4m are equivalent expressions.'),
           mc('Which expression is equivalent to 2(x + 4)?', ['2x + 8', '2x + 4', 'x + 8', '2x + 6']),
           tf('3(x + 2) and 3x + 2 are equivalent expressions.'),
-          mc('Nia substitutes x = 5 into 4x + 2x and into 6x. Both equal 30.\nWhich statement is true?',
-             ['This supports that the expressions are equivalent, since they can be rewritten as the same expression.',
-              'This proves the expressions are equal only when x = 5.', 'The expressions are not equivalent.', 'Only 6x equals 30.']),
-          sa('Write an expression without parentheses that is equivalent to 5(a + 3).', 'Expression:'),
+          mc('Which expression is equivalent to 6a + 4a?', ['10a', '24a', '10a²', '6a + 4']),
+          mc('Which pair of expressions is equivalent?', ['5(a + 3) and 5a + 15', '5(a + 3) and 5a + 3', '5(a + 3) and 8a', '5(a + 3) and a + 15']),
       ],
       back=[
           B('Commutative and associative properties', '3.OA.B.5', [
@@ -281,16 +406,16 @@ SETS = [
           ]),
       ],
       f1=B('Rewrite expressions to show how quantities are related', '7.EE.A.2', [
-          mc('A price p increased by 5% can be written as p + 0.05p.\nWhich expression is equivalent?', ['1.05p', '0.05p', '5.05p', '1.5p']),
+          mc('A price c plus an 8% tax can be written as c + 0.08c.\nWhich expression is equivalent?', ['1.08c', '0.08c', '8.08c', '1.8c']),
           tf('a - 0.2a = 0.8a'),
-          sa('Write an expression equivalent to x + 0.15x.', 'Expression:'),
+          sa('Write an expression with one term that is equivalent to n - 0.25n.', 'Expression:'),
           mc('Which expression shows the price p after a 30% discount?', ['0.7p', '0.3p', 'p - 30', '1.3p']),
           sa('The perimeter of a square is s + s + s + s.\nWrite an equivalent expression with one term.', 'Expression:'),
       ]),
       f2=B('One, none, or infinitely many solutions', '8.EE.C.7.a', [
           tf('The equation 2(x + 3) = 2x + 6 has infinitely many solutions.'),
-          mc('How many solutions does the equation have?\n5x - 3 = 5x + 1', ['No solution', 'One solution', 'Infinitely many solutions']),
-          mc('How many solutions does the equation have?\n3(2x + 4) = 6x + 12', ['No solution', 'One solution', 'Infinitely many solutions']),
+          mc('How many solutions does the equation have?\n5x - 3 = 5x + 1', SOL),
+          mc('How many solutions does the equation have?\n3(2x + 4) = 6x + 12', SOL),
           sa('Write a number in the box so the equation has no solution.\n4x + 7 = 4x + □', '□ ='),
           mc('Which equation has exactly one solution?', ['3x + 1 = 2x + 1', '3x + 1 = 3x + 1', '3x + 1 = 3x + 2', '3(x + 1) = 3x + 3']),
       ])),
@@ -302,7 +427,7 @@ SETS = [
           tf('x = 5 is a solution of 2x - 3 > 8.'),
           sa('Which numbers from the set {1, 3, 5, 7} make x + 4 < 10 true?', 'Numbers:'),
           mc('Is y = 2.5 a solution of 4y = 10?', ['Yes', 'No']),
-          sa('Which value from the set {12, 15, 18} makes {n/3} = 6 true?', 'n ='),
+          sa('Which value from the set {12, 15, 18} makes n ÷ 3 = 6 true?', 'n ='),
       ],
       back=[
           B('Evaluate an expression', '6.EE.A.2.c', [
@@ -310,7 +435,7 @@ SETS = [
               sa('Evaluate 2x - 3 when x = 5.', 'Value:'),
               tf('When y = 4, the value of 5y is 20.'),
               mc('Evaluate x + 4 when x = 7.', ['11', '3', '28', '47']),
-              sa('Evaluate {n/3} when n = 15.', 'Value:'),
+              sa('Evaluate n ÷ 3 when n = 15.', 'Value:'),
           ]),
           B('Comparing numbers', '2.NBT.A.4', [
               sa('Write >, <, or = to compare.\n19 ___ 21', 'Symbol:'),
@@ -320,11 +445,11 @@ SETS = [
               sa('Write >, <, or = to compare.\n105 ___ 150', 'Symbol:'),
           ]),
           B('Meaning of the equal sign', '1.OA.D.7', [
-              tf('6 = 6'),
-              tf('7 = 8 - 1'),
-              tf('5 + 2 = 2 + 4'),
+              tf('4 + 5 = 9 + 0'),
+              tf('12 = 15 - 3'),
+              tf('3 + 6 = 5 + 3'),
               mc('Which equation is true?', ['4 + 3 = 5 + 2', '4 + 3 = 8', '4 + 3 = 5 + 3', '7 = 4 - 3']),
-              tf('9 - 1 = 8'),
+              tf('10 - 2 = 7'),
           ]),
       ],
       f1=B('Solve equations of the form px + q = r and p(x + q) = r', '7.EE.B.4.a', [
@@ -386,20 +511,19 @@ SETS = [
           sa('A plant is 4 cm tall. It grows 1.5 cm each week.\nWrite a function for its height h after w weeks.', 'h ='),
           mc('Which situation matches y = 2x + 10, where y is dollars in savings after x weeks?',
              ['Start with $10 and save $2 each week.', 'Start with $2 and save $10 each week.', 'Save $12 each week.', 'Start with $10 and spend $2 each week.']),
-          sa('The table shows savings over time.\nWrite a function for the savings y after x weeks.', 'y =',
-             fig=table([['Weeks (x)', '0', '1', '2'], ['Savings (y)', '30', '45', '60']])),
+          sa('The table shows savings over time.\nWrite a function for the savings y after x weeks.', 'y =', fig=table([['Weeks (x)', '0', '1', '2'], ['Savings (y)', '30', '45', '60']])),
           sa('A rental truck costs $50 plus $0.25 per mile.\nWrite a function for the cost C of driving m miles.', 'C ='),
           tf('A line through (0, 5) and (2, 9) has an initial value of 5 and a rate of change of 2.'),
       ])),
 
-    # ------------------------------------------------------------------ 6.EE.B.7
-    S('6.EE.B.7', 'Solve one-step equations of the form x + p = q and px = q',
+    # ------------------------------------------------------------------ 6.EE.B.7 x + p = q
+    S('6.EE.B.7', 'Solve one-step equations of the form x + p = q',
       main=[
           sa('Solve for x.\nx + 7.5 = 12', 'x ='),
-          sa('Solve for x.\n4x = 30', 'x ='),
-          sa('Solve for y.\n{2/3}y = 12', 'y ='),
           mc('Solve for n.\nn - {3/4} = 5{1/2}', ['6{1/4}', '4{3/4}', '6{3/4}', '5{1/4}']),
-          sa('A pack of 6 pens costs $4.50.\nWrite and solve an equation to find the cost p of one pen.', 'p ='),
+          sa('Solve for y.\ny + 2{1/3} = 6', 'y ='),
+          sa('Solve for m.\n18.25 + m = 30', 'm ='),
+          sa('Solve for k.\nk - 4.8 = 9.2', 'k ='),
       ],
       back=[
           B('Subtraction as an unknown-addend problem', '1.OA.B.4', [
@@ -407,28 +531,21 @@ SETS = [
               sa('What number goes in the box?\n7 + □ = 15', '□ ='),
               mc('To find 16 - 9, think 9 + □ = 16.\nWhat number goes in the box?', ['7', '25', '8', '6']),
               sa('What number goes in the box?\n□ + 8 = 13', '□ ='),
-              tf('To solve 10 - 4, you can think 4 + 6 = 10.'),
+              tf('To find 11 - 5, you can think 5 + 6 = 11.'),
           ]),
-          B('Division as an unknown-factor problem', '3.OA.B.6', [
-              sa('Find 32 ÷ 8 by thinking 8 × □ = 32.', '□ ='),
-              tf('56 ÷ 7 = 8 because 7 × 8 = 56.'),
-              mc('Which fact helps you find 45 ÷ 5?', ['5 × 9 = 45', '5 + 40 = 45', '45 × 5 = 225', '9 - 5 = 4']),
-              sa('What number goes in the box?\n□ × 6 = 42', '□ ='),
-              tf('24 ÷ 4 = 5 because 4 × 5 = 24.'),
-          ]),
-          B('Decimal operations', '5.NBT.B.7', [
+          B('Adding and subtracting decimals', '5.NBT.B.7', [
               sa('Subtract.\n12 - 7.5', 'Difference:'),
-              sa('Divide.\n30 ÷ 4', 'Quotient:'),
-              tf('8.2 - 3.7 = 4.5'),
-              mc('4.50 ÷ 6 = ?', ['0.75', '0.70', '1.33', '7.5']),
-              sa('Add.\n6.25 + 2.8', 'Sum:'),
+              sa('Subtract.\n30 - 18.25', 'Difference:'),
+              tf('9.2 + 4.8 = 14'),
+              mc('6.25 + 2.8 = ?', ['9.05', '8.33', '9.5', '6.53']),
+              sa('Add.\n3.7 + 5.45', 'Sum:'),
           ]),
-          B('Dividing by a fraction', '6.NS.A.1', [
-              sa('Divide.\n12 ÷ {2/3}', 'Quotient:'),
-              sa('Divide.\n{3/4} ÷ {1/2}', 'Quotient:'),
-              tf('5 ÷ {5/8} = 8'),
-              mc('{9/10} ÷ {3/5} = ?', ['1{1/2}', '{27/50}', '{2/3}', '1{1/3}']),
-              sa('Divide.\n6 ÷ {3/4}', 'Quotient:'),
+          B('Adding and subtracting fractions and mixed numbers', '5.NF.A.1', [
+              sa('Subtract.\n6 - 2{1/3}', 'Difference:'),
+              sa('Add.\n5{1/2} + {3/4}', 'Sum:'),
+              tf('{2/3} + {1/6} = {5/6}'),
+              mc('{7/8} - {1/4} = ?', ['{5/8}', '{6/4}', '{3/4}', '{1/2}']),
+              sa('Add.\n1{2/5} + {1/2}', 'Sum:'),
           ]),
       ],
       f1=B('Solve two-step equations', '7.EE.B.4.a', [
@@ -446,14 +563,108 @@ SETS = [
           sa('Solve for x.\n3(2x - 5) = 4x + 1', 'x ='),
       ])),
 
-    # ------------------------------------------------------------------ 6.EE.B.8
-    S('6.EE.B.8', 'Write inequalities x > c or x < c and graph their solutions',
+    # ------------------------------------------------------------------ 6.EE.B.7 px = q
+    S('6.EE.B.7', 'Solve one-step equations of the form px = q',
+      main=[
+          sa('Solve for x.\n4x = 30', 'x ='),
+          sa('Solve for y.\n{2/3}y = 12', 'y ='),
+          sa('Solve for m.\n0.6m = 4.2', 'm ='),
+          mc('Solve for n.\n5n = 3.5', ['0.7', '17.5', '1.43', '-1.5']),
+          sa('Solve for k.\n{3/4}k = {9/10}', 'k ='),
+      ],
+      back=[
+          B('Division as an unknown-factor problem', '3.OA.B.6', [
+              sa('Find 48 ÷ 6 by thinking 6 × □ = 48.', '□ ='),
+              tf('63 ÷ 7 = 9 because 7 × 9 = 63.'),
+              mc('Which fact helps you find 45 ÷ 5?', ['5 × 9 = 45', '5 + 40 = 45', '45 × 5 = 225', '9 - 5 = 4']),
+              sa('What number goes in the box?\n□ × 6 = 42', '□ ='),
+              tf('24 ÷ 4 = 5 because 4 × 5 = 24.'),
+          ]),
+          B('Dividing by a fraction', '6.NS.A.1', [
+              sa('Divide.\n12 ÷ {2/3}', 'Quotient:'),
+              sa('Divide.\n{9/10} ÷ {3/4}', 'Quotient:'),
+              tf('5 ÷ {5/8} = 8'),
+              mc('{9/10} ÷ {3/5} = ?', ['1{1/2}', '{27/50}', '{2/3}', '1{1/3}']),
+              sa('Divide.\n6 ÷ {3/4}', 'Quotient:'),
+          ]),
+          B('Dividing decimals', '5.NBT.B.7', [
+              sa('Divide.\n4.2 ÷ 0.6', 'Quotient:'),
+              sa('Divide.\n30 ÷ 4', 'Quotient:'),
+              tf('3.5 ÷ 5 = 0.7'),
+              mc('2.4 ÷ 0.3 = ?', ['8', '0.8', '80', '7']),
+              sa('Divide.\n7.2 ÷ 9', 'Quotient:'),
+          ]),
+      ],
+      f1=B('Solve equations of the form p(x + q) = r', '7.EE.B.4.a', [
+          sa('Solve for x.\n3(x - 4) = 21', 'x ='),
+          sa('Solve for x.\n{1/2}(x + 6) = 9', 'x ='),
+          mc('Solve for x.\n3(x + 1.5) = 12', ['2.5', '5.5', '4', '2']),
+          sa('Solve for x.\n-2(x - 3) = 14', 'x ='),
+          sa('Solve for x.\n0.5(x + 8) = 7', 'x ='),
+      ]),
+      f2=B('Solve multi-step linear equations', '8.EE.C.7.b', [
+          sa('Solve for x.\n3(2x - 1) = 4x + 7', 'x ='),
+          sa('Solve for x.\n{2/3}(x + 3) = x - 1', 'x ='),
+          mc('Solve for x.\n5x - 2(x + 1) = 10', ['4', '{8/3}', '2', '12']),
+          sa('Solve for x.\n0.4(10x - 5) = 2x + 4', 'x ='),
+          sa('Solve for x.\n6x = 2(x + 8)', 'x ='),
+      ])),
+
+    # ------------------------------------------------------------------ 6.EE.B.7 context
+    S('6.EE.B.7', 'Write and solve one-step equations for real-world problems',
+      main=[
+          sa('A pack of 6 pens costs $4.50.\nWrite and solve an equation to find the cost p of one pen.', ['Equation:', 'p =']),
+          sa('After spending $12.75, Sam has $30.25 left.\nWrite and solve an equation to find how much money m Sam started with.', ['Equation:', 'm =']),
+          sa('A board is cut into 5 equal pieces. Each piece is 1.8 meters long.\nWrite and solve an equation to find the length L of the board.', ['Equation:', 'L =']),
+          mc('Maya is 1.35 m tall. She is 0.4 m taller than her brother.\nWhich equation can be used to find her brother\'s height b?', ['b + 0.4 = 1.35', '0.4b = 1.35', 'b - 0.4 = 1.35', '1.35 + 0.4 = b']),
+          sa('A recipe uses {3/4} cup of sugar per batch. Kim used 6 cups of sugar.\nWrite and solve an equation to find the number of batches b.', ['Equation:', 'b =']),
+      ],
+      back=[
+          B('Word problems with an unknown factor', '3.OA.A.3', [
+              sa('4 friends share some grapes equally. Each gets 9 grapes.\nHow many grapes were there?', 'Grapes:'),
+              mc('There are 7 teams with □ players each. There are 56 players in all.\nWhich equation matches?', ['7 × □ = 56', '7 + □ = 56', '56 × 7 = □', '□ - 7 = 56']),
+              tf('If 3 × □ = 24, then □ = 8.'),
+              sa('A teacher puts 40 books into 5 equal stacks.\nHow many books are in each stack?', 'Books:'),
+              sa('Each box holds 6 eggs. There are 54 eggs.\nHow many boxes are there?', 'Boxes:'),
+          ]),
+          B('Word problems with an unknown addend', '2.OA.A.1', [
+              sa('Lin had some stickers. She got 15 more. Now she has 42.\nHow many did she have at first?', 'Stickers:'),
+              mc('A plant grew 8 cm and is now 35 cm tall.\nWhich equation finds the starting height h?', ['h + 8 = 35', 'h - 8 = 35', '8h = 35', 'h + 35 = 8']),
+              tf('Tom spent $17 and has $26 left, so he started with $43.'),
+              sa('A bus had 30 people. Some got off. Now there are 18.\nHow many got off?', 'People:'),
+              sa('Ada read 24 pages on Monday and some more on Tuesday. She read 61 pages in all.\nHow many pages did she read on Tuesday?', 'Pages:'),
+          ]),
+          B('A letter stands for an unknown quantity', '3.OA.D.8', [
+              tf('In 5 × n = 40, the letter n stands for 8.'),
+              sa('In the equation p + 9 = 20, what number is p?', 'p ='),
+              mc('Which equation matches "a number plus 6 is 15"?', ['n + 6 = 15', '6n = 15', 'n - 6 = 15', 'n + 15 = 6']),
+              sa('In the equation 3 × k = 27, what number is k?', 'k ='),
+              tf('In m - 4 = 10, the letter m stands for 6.'),
+          ]),
+      ],
+      f1=B('Write and solve two-step equations for word problems', '7.EE.B.4.a', [
+          sa('A gym charges a $25 fee plus $15 per month. Jen paid $130.\nWrite and solve an equation to find the number of months m.', 'm ='),
+          sa('A plumber charges $45 plus $60 per hour. A bill is $225.\nHow many hours did the plumber work?', 'Hours:'),
+          mc('A class buys 12 tickets and pays a $15 group fee. The total is $159.\nWhich equation finds the cost t of one ticket?', ['12t + 15 = 159', '15t + 12 = 159', '12(t + 15) = 159', '12t - 15 = 159']),
+          sa('Mo saves $18 per week and already has $54. He wants $180.\nHow many weeks w will it take?', 'w ='),
+          tf('A $6 pizza plus 3 toppings costs $10.50. Each topping costs $1.50.'),
+      ]),
+      f2=B('Solve real-world problems with variables on both sides', '8.EE.C.7.b', [
+          sa('Store A charges $20 plus $3 per shirt. Store B charges $5 per shirt.\nWrite and solve an equation to find when the costs are equal.', 'Shirts:'),
+          sa('Ana has $120 and spends $8 per week. Ben has $40 and saves $12 per week.\nAfter how many weeks will they have the same amount?', 'Weeks:'),
+          mc('Taxi A charges $4 plus $2.50 per mile. Taxi B charges $1 plus $3 per mile.\nFor how many miles do the rides cost the same?', ['6', '5', '3', '10']),
+          sa('A candle 30 cm tall burns 1.5 cm per hour. Another candle 20 cm tall burns 0.5 cm per hour.\nAfter how many hours are they the same height?', 'Hours:'),
+          sa('Plan A: $15 per month plus $0.10 per text. Plan B: $0.25 per text.\nFor how many texts do the plans cost the same?', 'Texts:'),
+      ])),
+
+    # ------------------------------------------------------------------ 6.EE.B.8 write
+    S('6.EE.B.8', 'Write an inequality x > c or x < c for a real-world condition',
       main=[
           sa('Riders must be at least 48 inches tall.\nWrite an inequality for the height h of a rider.', 'Inequality:'),
-          mc('Which inequality does the graph show?', ['x < -2', 'x ≤ -2', 'x > -2', 'x ≥ -2'], fig=nl(-5, 5, 1, ray=(-2, 'left', True))),
-          tf('The inequality x > 5 has infinitely many solutions.'),
           mc('A bag can hold at most 20 pounds.\nWhich inequality describes the weight w the bag can hold?', ['w ≤ 20', 'w < 20', 'w ≥ 20', 'w > 20']),
-          sa('The temperature must stay below -3°C.\nWrite an inequality for the temperature t, then graph it.', 'Inequality:', fig=nl(-6, 2, 1)),
+          sa('The temperature must stay below -3°C.\nWrite an inequality for the temperature t.', 'Inequality:'),
+          sa('More than 25 people must sign up for a trip to happen.\nWrite an inequality for the number of people p.', 'Inequality:'),
+          sa('Children 12 years old and younger get a discount.\nWrite an inequality for the age a of a child who gets the discount.', 'Inequality:'),
       ],
       back=[
           B('Inequality symbols', '1.NBT.B.3', [
@@ -463,13 +674,6 @@ SETS = [
               mc('Which symbol means "is greater than"?', ['>', '<', '=']),
               tf('17 < 12'),
           ]),
-          B('Locating numbers on a number line', '6.NS.C.6.c', [
-              sa('What number is at point A?', 'A =', fig=nl(-5, 5, 1, pts=[(-2, 'A')])),
-              mc('Which point is at 3.5?', LET, fig=nl(0, 5, 0.5, labels=[0, 1, 2, 3, 4, 5], pts=[(3.5, 'A'), (2.5, 'B'), (4.5, 'C'), (3, 'D')])),
-              tf('Point B is at -1.5.', fig=nl(-3, 3, 0.5, labels=[-3, -2, -1, 0, 1, 2, 3], pts=[(-1.5, 'B')])),
-              sa('What number is at point C?', 'C =', fig=nl(-6, 2, 1, pts=[(-4, 'C')])),
-              mc('Which point is at -{1/2}?', LET, fig=nl(-2, 2, 0.5, labels=[-2, -1, 0, 1, 2], pts=[(-0.5, 'A'), (0.5, 'B'), (-1.5, 'C'), (-1, 'D')])),
-          ]),
           B('Meaning of "at least," "at most," "more than," and "fewer than"', '6.NS.C.7.b', [
               tf('"At least 10" includes the number 10.'),
               mc('What does "at most 6" mean?', ['6 or less', 'More than 6', '6 or more', 'Less than 6']),
@@ -477,33 +681,93 @@ SETS = [
               mc('Which number is NOT "at least 12"?', ['11', '12', '13', '20']),
               tf('9 is "more than 7."'),
           ]),
+          B('Negative numbers in context', '6.NS.C.5', [
+              sa('Write an integer for 3 degrees below zero.', 'Integer:'),
+              tf('-10°C is colder than -3°C.'),
+              mc('Which number represents 15 feet below sea level?', ['-15', '15', '0', '-1.5']),
+              sa('Write an integer for a temperature of 7 degrees below zero.', 'Integer:'),
+              tf('"Below -3°C" includes -5°C.'),
+          ]),
       ],
-      f1=B('Write, solve, and graph two-step inequalities', '7.EE.B.4.b', [
-          sa('You have $50. Each ride costs $6.\nWrite and solve an inequality to find how many rides r you can afford.', 'Inequality:'),
-          sa('Solve the inequality.\n3x - 4 > 11', 'Solution:'),
-          tf('The graph shows the solutions of 2x + 3 ≥ 7.', fig=nl(-5, 5, 1, ray=(2, 'right', False))),
-          mc('Solve the inequality.\n-2x < 8', ['x > -4', 'x < -4', 'x > 4', 'x < 4']),
+      f1=B('Write and solve inequalities for real-world problems', '7.EE.B.4.b', [
+          sa('You have $50. Each ride costs $6.\nWrite and solve an inequality to find how many rides r you can afford.', 'Solution:'),
           sa('A salesperson earns $80 plus $12 for each sale.\nWrite and solve an inequality for the number of sales s needed to earn more than $200.', 'Solution:'),
+          mc('A phone has 75% battery and uses 5% per hour. It must stay above 20%.\nWhich inequality gives the hours h?', ['75 - 5h > 20', '75 + 5h > 20', '5h - 75 > 20', '75 - 5h < 20']),
+          sa('A van can carry at most 1,200 pounds. The driver weighs 180 pounds. Each box weighs 60 pounds.\nWrite and solve an inequality for the number of boxes b.', 'Solution:'),
+          tf('The solution of 3x + 2 ≥ 17 is x ≥ 5.'),
       ]),
-      f2=B('One, none, or infinitely many solutions', '8.EE.C.7.a', [
-          tf('x + 3 = x + 3 has infinitely many solutions.'),
-          mc('How many solutions does the equation have?\n2x + 5 = 2x - 1', ['No solution', 'One solution', 'Infinitely many solutions']),
-          mc('Which equation has infinitely many solutions?', ['4(x - 1) = 4x - 4', '4(x - 1) = 4x - 1', '4x - 1 = x', '4x = 0']),
-          sa('How many solutions does the equation have?\n3x - 7 = 3x - 7', 'Answer:'),
-          mc('How many solutions does the equation have?\n6x - 2 = 4x + 8', ['One solution', 'No solution', 'Infinitely many solutions']),
+      f2=B('Use two linear equations to decide when one quantity is greater', '8.EE.C.8.c', [
+          sa('Plan A costs $20 plus $5 per month. Plan B costs $35 plus $2 per month.\nAfter how many months does Plan A cost more than Plan B?', 'Months:'),
+          sa('Tank A has 100 gallons and drains 6 gallons per minute. Tank B has 40 gallons and fills 4 gallons per minute.\nAfter how many minutes does Tank B hold more water?', 'Minutes:'),
+          mc('Sara has $50 and saves $8 per week. Tom has $90 and saves $3 per week.\nWhen will Sara have more money than Tom?', ['After 8 weeks', 'After 5 weeks', 'After 3 weeks', 'Never']),
+          sa('Gym X charges $60 plus $4 per class. Gym Y charges $12 per class.\nFor how many classes is Gym X cheaper?', 'Classes:'),
+          tf('y = 3x + 2 and y = x + 10 are equal when x = 4. For x > 4, 3x + 2 is greater.'),
       ])),
 
-    # ------------------------------------------------------------------ 6.EE.C.9
-    S('6.EE.C.9', 'Dependent and independent variables: tables, graphs, and equations',
+    # ------------------------------------------------------------------ 6.EE.B.8 graph
+    S('6.EE.B.8', 'Represent solutions of x > c or x < c on a number line',
       main=[
-          mc('A car travels at 65 miles per hour. The equation d = 65t gives the distance d after t hours.\nWhich is the independent variable?', ['t (time)', 'd (distance)', '65', 'There is none.']),
-          sa('Write an equation that shows how y depends on x.', 'y =', fig=table([['x', '1', '2', '3', '4'], ['y', '6', '12', '18', '24']])),
-          sa('A plant is 5 cm tall. It grows 2 cm each week.\nWrite an equation for its height h after w weeks.', 'h ='),
-          mc('Which set of ordered pairs matches y = x + 3?', ['(1, 4), (2, 5), (3, 6)', '(1, 3), (2, 6), (3, 9)', '(4, 1), (5, 2), (6, 3)', '(0, 0), (1, 3), (2, 6)']),
-          sa('The graph shows y dollars earned for x hours worked.\nWrite an equation for the relationship.', 'y =',
-             fig=q1(5, 15, ystep=3, square=False, xlabel='Hours (x)', ylabel='Dollars (y)', pts=[(1, 3), (2, 6), (3, 9), (4, 12)])),
+          plot('Graph the solutions of x > 3 on the number line.', nl(-5, 5, 1)),
+          plot('Graph the solutions of x ≤ -1 on the number line.', nl(-5, 5, 1)),
+          plot('Graph the solutions of x < 2.5 on the number line.', nl(-5, 5, 0.5, labels=[-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5])),
+          plot('Graph the solutions of x ≥ -4 on the number line.', nl(-6, 4, 1)),
+          plot('Graph the solutions of x > -1.5 on the number line.', nl(-4, 4, 0.5, labels=[-4, -3, -2, -1, 0, 1, 2, 3, 4])),
       ],
       back=[
+          B('Locating numbers on a number line', '6.NS.C.6.c', [
+              sa('What number is at point A?', 'A =', fig=nl(-5, 5, 1, pts=[(-2, 'A')])),
+              mc('Which point is at 3.5?', LET, fig=nl(0, 5, 0.5, labels=[0, 1, 2, 3, 4, 5], pts=[(3.5, 'A'), (2.5, 'B'), (4.5, 'C'), (3, 'D')])),
+              tf('Point B is at -1.5.', fig=nl(-3, 3, 0.5, labels=[-3, -2, -1, 0, 1, 2, 3], pts=[(-1.5, 'B')])),
+              sa('What number is at point C?', 'C =', fig=nl(-6, 2, 1, pts=[(-4, 'C')])),
+              mc('Which point is at -{1/2}?', LET, fig=nl(-2, 2, 0.5, labels=[-2, -1, 0, 1, 2], pts=[(-0.5, 'A'), (0.5, 'B'), (-1.5, 'C'), (-1, 'D')])),
+          ]),
+          B('Greater numbers are to the right', '6.NS.C.7.a', [
+              tf('Every number to the right of 3 on a number line is greater than 3.'),
+              mc('Which numbers are less than -1?', ['Numbers to the left of -1', 'Numbers to the right of -1', 'Only -2', 'Only 0']),
+              tf('-3 is greater than -1.'),
+              sa('Is 2.5 to the left or the right of 2 on a number line?', 'Answer:'),
+              mc('Which number is greater than -4?', ['-3', '-5', '-6', '-4.5']),
+          ]),
+          B('Meaning of inequality symbols', '1.NBT.B.3', [
+              mc('What does the symbol > mean?', ['Is greater than', 'Is less than', 'Is equal to']),
+              tf('The symbol < means "is less than."'),
+              mc('Which statement is true?', ['8 > 5', '8 < 5', '8 = 5']),
+              sa('Write the symbol for "is less than."', 'Symbol:'),
+              tf('12 > 21'),
+          ]),
+      ],
+      f1=B('Solve and graph two-step inequalities', '7.EE.B.4.b', [
+          sa('Solve 2x + 1 > 7. Then graph the solutions.', 'Solution:', fig=nl(-5, 5, 1)),
+          sa('Solve 4x - 3 ≤ 5. Then graph the solutions.', 'Solution:', fig=nl(-5, 5, 1)),
+          sa('Solve -2x + 4 < 10. Then graph the solutions.', 'Solution:', fig=nl(-5, 5, 1)),
+          mc('Which inequality does the graph show?', ['x ≤ -2', 'x < -2', 'x ≥ -2', 'x > -2'], fig=nl(-5, 5, 1, ray=(-2, 'left', False))),
+          tf('The graph shows the solutions of 3x + 2 > 5.', fig=nl(-5, 5, 1, ray=(1, 'right', True))),
+      ]),
+      f2=B('Linear equations with one, no, or infinitely many solutions', '8.EE.C.7.a', [
+          tf('x + 3 = x + 3 has infinitely many solutions.'),
+          mc('How many solutions does the equation have?\n2x + 5 = 2x - 1', SOL),
+          mc('Which equation has infinitely many solutions?', ['4(x - 1) = 4x - 4', '4(x - 1) = 4x - 1', '4x - 1 = x', '4x = 0']),
+          mc('How many solutions does the equation have?\n3x - 7 = 3x - 7', SOL),
+          mc('How many solutions does the equation have?\n6x - 2 = 4x + 8', SOL),
+      ])),
+
+    # ------------------------------------------------------------------ 6.EE.C.9 variables
+    S('6.EE.C.9', 'Identify the independent and dependent variables',
+      main=[
+          mc('The equation c = 2.5p gives the cost c of p pounds of grapes.\nWhich is the independent variable?', ['p (pounds)', 'c (cost)', '2.5', 'There is none.']),
+          sa('Money earned m depends on the number of hours worked h.\nWhich is the dependent variable?', 'Dependent variable:'),
+          mc('A plant\'s height depends on the number of days it grows.\nWhich is the independent variable?', ['The number of days', 'The plant\'s height', 'Neither', 'Both']),
+          sa('In y = 4x + 3, which variable is the dependent variable?', 'Dependent variable:'),
+          tf('Ice cream sales s depend on the temperature t. So t is the independent variable.'),
+      ],
+      back=[
+          B('Input-output rules', '4.OA.C.5', [
+              sa('The rule is "multiply by 3."\nWhat is the output when the input is 7?', 'Output:'),
+              tf('The rule is "add 6." When the input is 4, the output is 10.'),
+              mc('What is the rule?', ['Add 4', 'Multiply by 3', 'Add 2', 'Multiply by 2'], fig=table([['In', '2', '4', '6'], ['Out', '6', '8', '10']])),
+              sa('The rule is "subtract 2."\nWhat is the output when the input is 15?', 'Output:'),
+              tf('In an input-output table, the output depends on the input.'),
+          ]),
           B('Two related number patterns', '5.OA.B.3', [
               tf('Pattern A: 0, 2, 4, 6\nPattern B: 0, 6, 12, 18\nEach number in Pattern B is 3 times the matching number in Pattern A.'),
               sa('The rule is "add 5," starting at 0.\nWhat number comes next? 0, 5, 10, ___', 'Number:'),
@@ -511,36 +775,69 @@ SETS = [
               mc('Pattern A starts at 0 and adds 1. Pattern B starts at 0 and adds 4.\nWhich ordered pairs come from the patterns?', ['(0, 0), (1, 4), (2, 8)', '(0, 0), (4, 1), (8, 2)', '(1, 4), (2, 5), (3, 6)', '(0, 4), (1, 5), (2, 6)']),
               tf('Pattern A: 0, 1, 2, 3\nPattern B: 0, 5, 10, 15\nEach number in Pattern B is 5 more than the matching number in Pattern A.'),
           ]),
-          B('Plotting and reading points in the first quadrant', '5.G.A.2', [
-              mc('Which point is at (3, 6)?', LET, fig=q1(8, 8, pts=[(3, 6, 'A'), (6, 3, 'B'), (3, 3, 'C'), (6, 6, 'D')])),
-              sa('What are the coordinates of point M?', 'M =', fig=q1(8, 8, pts=[(5, 7, 'M')])),
-              tf('To plot (2, 8), move 2 units right and 8 units up from the origin.'),
-              sa('The graph shows dollars earned after working some hours.\nHow many dollars were earned after 3 hours?', 'Dollars:',
-                 fig=q1(6, 30, ystep=5, square=False, xlabel='Hours', ylabel='Dollars', pts=[(3, 15, 'A')])),
-              mc('Which ordered pair names point R?', ['(4, 1)', '(1, 4)', '(4, 4)', '(1, 1)'], fig=q1(6, 6, pts=[(4, 1, 'R')])),
-          ]),
-          B('Input-output rules', '4.OA.C.5', [
-              sa('What is the rule?', 'Rule:', fig=table([['In', '1', '2', '3', '4'], ['Out', '5', '10', '15', '20']])),
-              sa('The rule is "multiply by 3."\nWhat is the output when the input is 7?', 'Output:'),
-              tf('The rule is "add 6." When the input is 4, the output is 10.'),
-              mc('What is the rule?', ['Add 4', 'Multiply by 3', 'Add 2', 'Multiply by 2'], fig=table([['In', '2', '4', '6'], ['Out', '6', '8', '10']])),
-              sa('The rule is "subtract 2."\nWhat is the output when the input is 15?', 'Output:'),
-          ]),
       ],
-      f1=B('Equations for proportional relationships', '7.RP.A.2.c', [
+      f1=B('Write an equation for a proportional relationship', '7.RP.A.2.c', [
           sa('Tomatoes cost $3.20 per pound.\nWrite an equation for the cost c of p pounds.', 'Equation:'),
           sa('The table shows a proportional relationship.\nWrite an equation for the cost c of n ounces.', 'Equation:', fig=table([['Ounces (n)', '4', '10'], ['Cost (c)', '$1.20', '$3.00']])),
           mc('Which equation represents a proportional relationship?', ['y = 4.5x', 'y = 4.5x + 1', 'y = x + 4.5', 'y = 4.5']),
           sa('A car uses 3 gallons of gas to travel 84 miles.\nWrite an equation for the miles m traveled on g gallons.', 'Equation:'),
           tf('y = {2/3}x represents a proportional relationship.'),
       ]),
-      f2=B('Compare functions represented in different ways', '8.F.A.2', [
-          mc('Function A is y = 2x + 5. Function B is shown in the table.\nWhich function has the greater rate of change?', ['Function B', 'Function A', 'They are the same.'],
-             fig=table([['x', '0', '1', '2'], ['y', '1', '4', '7']])),
-          sa('Function A is a line through (0, 3) and (2, 7). Function B is y = 3x - 1.\nWhich function has the greater initial value?', 'Answer:'),
-          mc('Plan A costs $5 plus $2 per hour. Plan B is shown in the graph.\nWhich plan has the greater rate of change?', ['Plan B', 'Plan A', 'They are the same.'],
-             fig=q1(4, 12, ystep=2, square=False, xlabel='Hours', ylabel='Cost ($)', pts=[(2, 6), (4, 12)], lines=[((0, 0), (4, 12))])),
-          sa('Function A is y = -x + 10. Function B is shown in the table.\nWhich function decreases faster?', 'Answer:', fig=table([['x', '0', '2', '4'], ['y', '10', '6', '2']])),
-          tf('y = 4x + 1 has a greater rate of change than the function in the table.', fig=table([['x', '0', '1', '2'], ['y', '0', '5', '10']])),
+      f2=B('Functions: each input has exactly one output', '8.F.A.1', [
+          tf('A function assigns exactly one output to each input.'),
+          mc('Which table does NOT represent a function?', ['x: 1, 1, 2  y: 3, 5, 7', 'x: 1, 2, 3  y: 4, 4, 4', 'x: 0, 1, 2  y: 0, 2, 4', 'x: 2, 3, 4  y: 5, 6, 7']),
+          sa('In the function C = 12t, which variable is the input?', 'Input:'),
+          tf('The set of ordered pairs (1, 2), (2, 3), (1, 4) represents a function.'),
+          mc('A function gives the height of a ball after t seconds. What is the input?', ['The time t', 'The height', 'The ball', 'The speed']),
+      ])),
+
+    # ------------------------------------------------------------------ 6.EE.C.9 equations
+    S('6.EE.C.9', 'Write an equation for the relationship shown in a table or graph',
+      main=[
+          sa('Write an equation that shows how y depends on x.', 'y =', fig=table([['x', '1', '2', '3', '4'], ['y', '6', '12', '18', '24']])),
+          sa('The graph shows y dollars earned for x hours worked.\nWrite an equation for the relationship.', 'y =',
+             fig=q1(5, 15, ystep=3, square=False, xlabel='Hours (x)', ylabel='Dollars (y)', pts=[(1, 3), (2, 6), (3, 9), (4, 12)])),
+          sa('The table shows a plant\'s height h after w weeks.\nWrite an equation for h in terms of w.', 'h =', fig=table([['Weeks (w)', '0', '1', '2', '3'], ['Height (h)', '5', '7', '9', '11']])),
+          mc('Which equation matches the table?', ['y = x + 3', 'y = 3x', 'y = 4x', 'y = x + 4'], fig=table([['x', '1', '2', '3'], ['y', '4', '5', '6']])),
+          sa('The table shows the cost c of n bags of popcorn.\nWrite an equation for c in terms of n.', 'c =', fig=table([['Bags (n)', '2', '4', '6'], ['Cost (c)', '7', '14', '21']])),
+      ],
+      back=[
+          B('Finding a rule from a table', '4.OA.C.5', [
+              sa('What is the rule?', 'Rule:', fig=table([['In', '1', '2', '3', '4'], ['Out', '5', '10', '15', '20']])),
+              sa('What is the rule?', 'Rule:', fig=table([['In', '3', '5', '7'], ['Out', '7', '9', '11']])),
+              tf('The rule for the table is "multiply by 4."', fig=table([['In', '1', '2', '3'], ['Out', '4', '8', '12']])),
+              mc('What is the rule?', ['Divide by 3', 'Subtract 2', 'Multiply by 3', 'Add 3'], fig=table([['In', '3', '6', '9'], ['Out', '1', '2', '3']])),
+              sa('The rule is "multiply by 6." What is the output when the input is 5?', 'Output:'),
+          ]),
+          B('Reading points on a graph', '5.G.A.2', [
+              mc('Which point is at (3, 6)?', LET, fig=q1(8, 8, pts=[(3, 6, 'A'), (6, 3, 'B'), (3, 3, 'C'), (6, 6, 'D')])),
+              sa('What are the coordinates of point M?', 'M =', fig=q1(8, 8, pts=[(5, 7, 'M')])),
+              tf('The point (2, 8) is 2 units right and 8 units up from the origin.'),
+              sa('The graph shows dollars earned after working some hours.\nHow many dollars were earned after 3 hours?', 'Dollars:',
+                 fig=q1(6, 30, ystep=5, square=False, xlabel='Hours', ylabel='Dollars', pts=[(3, 15, 'A')])),
+              mc('Which ordered pair names point R?', ['(4, 1)', '(1, 4)', '(4, 4)', '(1, 1)'], fig=q1(6, 6, pts=[(4, 1, 'R')])),
+          ]),
+          B('Ordered pairs from two patterns', '5.OA.B.3', [
+              sa('Pattern A: 0, 1, 2, 3\nPattern B: 0, 5, 10, 15\nWrite the ordered pair formed by the 4th numbers.', 'Ordered pair:'),
+              tf('The pairs (1, 3), (2, 6), (3, 9) show that each y-value is 3 times the x-value.'),
+              mc('Pattern A adds 2. Pattern B adds 6. Both start at 0.\nHow does each B number compare to its A number?', ['3 times as large', '4 more', '6 times as large', '2 more']),
+              sa('Pattern A: 0, 2, 4\nPattern B: 0, 14, 28\nWhat is the rule that changes each A number into its B number?', 'Rule:'),
+              tf('The pairs (0, 0), (1, 4), (2, 8) come from Pattern A "add 4" and Pattern B "add 1."'),
+          ]),
+      ],
+      f1=B('Equations for proportional relationships from tables and graphs', '7.RP.A.2.c', [
+          sa('Write an equation for the proportional relationship in the table.', 'y =', fig=table([['x', '2', '5', '8'], ['y', '7', '17.5', '28']])),
+          sa('Write an equation for the proportional relationship in the graph.', 'y =',
+             fig=q1(6, 15, ystep=3, square=False, pts=[(2, 5), (4, 10)], lines=[((0, 0), (6, 15))])),
+          mc('The table shows a proportional relationship.\nWhich equation matches?', ['y = 0.75x', 'y = 1.33x', 'y = x - 1', 'y = 3x'], fig=table([['x', '4', '8', '12'], ['y', '3', '6', '9']])),
+          sa('Write an equation for the cost c of p pounds.', 'c =', fig=table([['Pounds (p)', '3', '6', '9'], ['Cost (c)', '7.50', '15.00', '22.50']])),
+          tf('The table shows the equation y = 6x.', fig=table([['x', '1', '2', '4'], ['y', '6', '12', '24']])),
+      ]),
+      f2=B('Write a linear function from a table or graph', '8.F.B.4', [
+          sa('Write a function for the table.', 'y =', fig=table([['x', '0', '1', '2', '3'], ['y', '4', '7', '10', '13']])),
+          sa('Write a function for the line in the graph.', 'y =', fig=q1(5, 12, ystep=2, square=False, pts=[(0, 2), (2, 6), (4, 10)], lines=[((0, 2), (5, 12))])),
+          mc('Which function matches the table?', ['y = -2x + 10', 'y = 2x + 10', 'y = -2x', 'y = 10x - 2'], fig=table([['x', '0', '1', '2'], ['y', '10', '8', '6']])),
+          sa('Write a function for the table.', 'y =', fig=table([['x', '1', '2', '3', '4'], ['y', '9', '13', '17', '21']])),
+          tf('The line through (0, 1) and (3, 7) has the equation y = 2x + 1.'),
       ])),
 ]

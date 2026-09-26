@@ -1,5 +1,5 @@
 from qb import (S, B, sa, mc, tf, coord, q1, shape, poly, rect, tri, para, trap, prism,
-                net_prism, net_pyramid)
+                net_prism, net_pyramid, net_triprism, net_tetra, plot)
 
 
 def L(pts, labels, **kw):
@@ -20,7 +20,7 @@ SETS = [
           sa('Find the area of the triangle.', 'Area:', fig=tri(6, 5, 9, '6 m', '5 m')),
           mc('A triangle has a base of 12 feet and a height of 7 feet.\nWhat is its area?',
              ['42 square feet', '84 square feet', '19 square feet', '38 square feet']),
-          sa('A triangular sail has an area of 36 square meters. Its base is 8 meters.\nWhat is its height?', 'Height:'),
+          sa('A triangular sign has a base of 3.5 feet and a height of 2 feet.\nWhat is its area?', 'Area:'),
       ],
       back=[
           B('Area of rectangles', '3.MD.C.7.b', [
@@ -71,7 +71,7 @@ SETS = [
           mc('A parallelogram has a base of 9 feet and a height of 5 feet.\nWhat is its area?',
              ['45 square feet', '22.5 square feet', '14 square feet', '28 square feet']),
           sa('A trapezoid has bases of 7 inches and 11 inches. Its height is 4 inches.\nWhat is its area?', 'Area:'),
-          sa('A parallelogram has an area of 72 square centimeters and a base of 12 centimeters.\nWhat is its height?', 'Height:'),
+          sa('A parallelogram has a base of 12.5 meters and a height of 4 meters.\nWhat is its area?', 'Area:'),
       ],
       back=[
           B('Area of rectangles', '3.MD.C.7.b', [
@@ -103,21 +103,20 @@ SETS = [
               sa('What is the measure of the angle between a base and its height?', 'Angle:'),
           ]),
       ],
-      f1=B('Actual areas from scale drawings', '7.G.A.1', [
-          sa('A scale drawing uses 1 cm : 3 m. A rectangle on the drawing is 4 cm by 2 cm.\nWhat is the actual area?', 'Area:'),
-          sa('A scale drawing uses 1 in. : 5 ft. A parallelogram on the drawing has a base of 3 in. and a height of 2 in.\nWhat is the actual area?', 'Area:'),
-          mc('A drawing uses 1 cm : 10 m. A trapezoid on the drawing has bases of 2 cm and 4 cm and a height of 3 cm.\nWhat is the actual area?',
-             ['900 square meters', '90 square meters', '9 square meters', '9,000 square meters']),
-          sa('A park is 400 m by 300 m. A scale drawing uses 1 cm : 100 m.\nWhat are the dimensions of the park in the drawing?', 'Dimensions:'),
-          tf('A scale drawing uses 1 in. : 2 ft. A 3 in. by 4 in. rectangle on the drawing represents 24 square feet.'),
+      f1=B('Area of figures made of quadrilaterals in real-world problems', '7.G.B.6', [
+          sa('A patio is made of a rectangle that is 10 ft by 6 ft and a trapezoid with bases of 6 ft and 4 ft and a height of 3 ft.\nWhat is the area of the patio?', 'Area:'),
+          sa('A wall is 12 ft by 8 ft. It has a window shaped like a parallelogram with a base of 3 ft and a height of 2 ft.\nWhat is the area of the wall that is not window?', 'Area:'),
+          mc('A sign is a trapezoid with bases of 1.5 m and 2.5 m and a height of 1.2 m.\nWhat is its area?', ['2.4 square meters', '4.8 square meters', '5.2 square meters', '3.6 square meters']),
+          sa('A garden is made of two parallelograms that do not overlap. Each has a base of 7 m and a height of 4 m.\nWhat is the total area?', 'Area:'),
+          tf('A trapezoid with bases of 6 and 10 and a height of 5 has the same area as a rectangle that is 8 by 5.'),
       ]),
-      f2=B('Similar figures and dilations', '8.G.A.4', [
-          sa('Rectangle A is 3 by 5. Rectangle B is 9 by 15. Rectangle B is a dilation of Rectangle A.\nWhat is the scale factor?', 'Scale factor:'),
-          mc('Which rectangle is similar to a 4-by-6 rectangle?', ['6 by 9', '5 by 7', '8 by 10', '4 by 8']),
-          tf('Two parallelograms have matching angles that are equal. One has sides 2 and 5, and the other has sides 6 and 15. The parallelograms are similar.'),
-          sa('The smaller rectangle is dilated with the center at the origin to form the larger rectangle.\nWhat is the scale factor?', 'Scale factor:',
-             fig=q1(7, 5, polys=[[(1, 1), (3, 1), (3, 2), (1, 2)], [(2, 2), (6, 2), (6, 4), (2, 4)]])),
-          sa('Triangle PQR is similar to triangle STU. The scale factor from PQR to STU is {1/2}.\nPQ = 10. What is ST?', 'ST ='),
+      f2=B('Use the Pythagorean Theorem to find a missing height', '8.G.B.7', [
+          sa('A parallelogram has a slanted side of 5 cm. The slanted side, the height, and a 3 cm piece of the base form a right triangle.\nWhat is the height?', 'Height:'),
+          sa('Find the height h of the trapezoid.', 'h =', fig=shape([poly([(0, 0), (14, 0), (11, 4), (3, 4)], ['14 in.', '5 in.', '8 in.', '5 in.'])],
+                                                                  segs=[dict(a=(3, 4), b=(3, 0), label='h', off=(10, 0))], ra=[((3, 0), (3, 4), (14, 0))])),
+          mc('A ramp forms a right triangle. The ramp is 13 ft long and its base is 12 ft long.\nHow tall is the ramp?', ['5 ft', '25 ft', '17.7 ft', '1 ft']),
+          sa('A parallelogram has a slanted side of 10 m. The slanted side, the height, and a 6 m piece of the base form a right triangle.\nWhat is the height?', 'Height:'),
+          tf('A trapezoid has a slanted side of 10 in. The slanted side, the height, and a 6 in. piece of the base form a right triangle. The height is 8 in.'),
       ])),
 
     # ------------------------------------------------------------------ 6.G.A.1 composite polygons
@@ -169,14 +168,14 @@ SETS = [
           tf('A sphere with a radius of 3 has the same volume as a cylinder with a radius of 3 and a height of 4.'),
       ])),
 
-    # ------------------------------------------------------------------ 6.G.A.2
-    S('6.G.A.2', 'Volume of right rectangular prisms with fractional edge lengths',
+    # ------------------------------------------------------------------ 6.G.A.2 packing
+    S('6.G.A.2', 'Find volume by packing a prism with unit-fraction cubes',
       main=[
-          sa('Find the volume of the rectangular prism.', 'Volume:', fig=prism(2.5, 3, 4.5, ('2{1/2} ft', '3 ft', '4{1/2} ft'))),
           sa('How many cubes with {1/2}-inch edges fill a box that is 2 in. by 1{1/2} in. by 1 in.?', 'Cubes:'),
-          mc('A box is 1{1/2} ft long, 2 ft wide, and {3/4} ft tall.\nWhat is its volume?', ['2{1/4} cubic feet', '4{1/4} cubic feet', '3 cubic feet', '2{3/4} cubic feet']),
-          sa('Use V = l × w × h to find the volume of a prism with l = 5 cm, w = 2{1/2} cm, and h = 1{1/5} cm.', 'V ='),
+          sa('A box is 3 in. by 2 in. by 1{1/2} in.\nHow many cubes with {1/2}-inch edges fill the box?', 'Cubes:'),
           tf('A prism is packed with 48 cubes that each have {1/2}-unit edges. Its volume is 6 cubic units.'),
+          mc('A prism is packed with 64 cubes that each have {1/4}-inch edges.\nWhat is the volume of the prism?', ['1 cubic inch', '16 cubic inches', '4 cubic inches', '{1/4} cubic inch']),
+          sa('The prism is packed with cubes that have {1/2}-cm edges. It is 5 cubes long, 4 cubes wide, and 3 cubes tall.\nWhat is its volume?', 'Volume:', fig=prism(5, 4, 3, grid=True)),
       ],
       back=[
           B('Volume by counting unit cubes', '5.MD.C.4', [
@@ -186,19 +185,19 @@ SETS = [
               mc('A box holds 3 layers with 5 unit cubes in each layer.\nWhat is its volume?', ['15 cubic units', '8 cubic units', '35 cubic units', '53 cubic units']),
               sa('Each cube is 1 cubic unit.\nWhat is the volume of the prism?', 'Volume:', fig=prism(2, 2, 2, grid=True)),
           ]),
-          B('Volume formula with whole numbers', '5.MD.C.5.b', [
-              sa('Find the volume of the prism.', 'Volume:', fig=prism(6, 4, 3, ('6 cm', '4 cm', '3 cm'))),
-              sa('A prism has a length of 10 m, a width of 2 m, and a height of 5 m.\nWhat is its volume?', 'Volume:'),
-              tf('A cube with 3-inch edges has a volume of 27 cubic inches.'),
-              mc('A box is 8 in. by 5 in. by 2 in.\nWhat is its volume?', ['80 cubic inches', '15 cubic inches', '40 cubic inches', '160 cubic inches']),
-              sa('A prism has a base area of 20 square cm and a height of 6 cm.\nWhat is its volume?', 'Volume:'),
+          B('The volume of one small cube', '5.NF.B.4.a', [
+              sa('Multiply.\n{1/2} × {1/2} × {1/2}', 'Product:'),
+              sa('Multiply.\n{1/4} × {1/4} × {1/4}', 'Product:'),
+              tf('{1/3} × {1/3} × {1/3} = {1/9}'),
+              mc('Multiply.\n24 × {1/8}', ['3', '{1/3}', '192', '32']),
+              sa('Multiply.\n64 × {1/64}', 'Product:'),
           ]),
-          B('Multiplying mixed numbers', '5.NF.B.6', [
-              sa('Multiply.\n2{1/2} × 3', 'Product:'),
-              sa('Multiply.\n1{1/2} × {3/4}', 'Product:'),
-              tf('2{1/2} × 2 = 5'),
-              mc('3 × 4{1/2} = ?', ['13{1/2}', '12{1/2}', '7{1/2}', '12{1/6}']),
-              sa('Multiply.\n1{1/3} × 1{1/2}', 'Product:'),
+          B('Volume as the number of unit cubes', '5.MD.C.3.b', [
+              tf('A solid that can be packed with 20 unit cubes with no gaps has a volume of 20 cubic units.'),
+              mc('A box is filled with 36 unit cubes with no gaps or overlaps.\nWhat is its volume?', ['36 cubic units', '36 square units', '6 cubic units', '12 cubic units']),
+              sa('A box is filled with 45 unit cubes with no gaps.\nWhat is its volume?', 'Volume:'),
+              tf('Volume is measured in square units.'),
+              mc('Which unit could be used to measure volume?', ['Cubic centimeters', 'Square centimeters', 'Centimeters', 'Kilograms']),
           ]),
       ],
       f1=B('Volume of prisms in real-world problems', '7.G.B.6', [
@@ -216,30 +215,124 @@ SETS = [
           tf('A cylinder has a greater volume than a cone with the same radius and height.'),
       ])),
 
-    # ------------------------------------------------------------------ 6.G.A.3
-    S('6.G.A.3', 'Polygons in the coordinate plane; side lengths from coordinates',
+    # ------------------------------------------------------------------ 6.G.A.2 formula
+    S('6.G.A.2', 'Apply V = l w h and V = b h with fractional edge lengths',
       main=[
-          sa('A rectangle has vertices at (-3, 2), (4, 2), (4, -5), and (-3, -5).\nWhat is its perimeter?', 'Perimeter:'),
-          sa('Points A, B, and C are three vertices of rectangle ABCD.\nWhat are the coordinates of point D?', 'D =',
-             fig=coord(pts=[(-4, 3, 'A', 'nw'), (2, 3, 'B', 'ne'), (2, -2, 'C', 'se')])),
-          sa('One side of a polygon goes from (-2, -3) to (-2, 5).\nHow long is this side?', 'Length:'),
-          mc('A triangle has vertices at (0, 0), (6, 0), and (0, 4).\nWhat is its area?', ['12 square units', '24 square units', '10 square units', '20 square units']),
-          sa('Find the area of the trapezoid.', 'Area:', fig=coord(polys=[[(-4, -3), (4, -3), (2, 2), (-2, 2)]], pts=[(-4, -3, '(-4, -3)', 'sw'), (4, -3, '(4, -3)', 'se'), (2, 2, '(2, 2)', 'ne'), (-2, 2, '(-2, 2)', 'nw')], fs=0.8)),
+          sa('Find the volume of the rectangular prism.', 'Volume:', fig=prism(2.5, 3, 4.5, ('2{1/2} ft', '3 ft', '4{1/2} ft'))),
+          mc('A box is 1{1/2} ft long, 2 ft wide, and {3/4} ft tall.\nWhat is its volume?', ['2{1/4} cubic feet', '4{1/4} cubic feet', '3 cubic feet', '2{3/4} cubic feet']),
+          sa('Use V = l × w × h to find the volume of a prism with l = 5 cm, w = 2{1/2} cm, and h = 1{1/5} cm.', 'V ='),
+          sa('A cube has edges of 1{1/2} feet.\nWhat is its volume?', 'Volume:'),
+          sa('A prism has a base area of 4{1/2} square inches and a height of 2{2/3} inches.\nUse V = b × h to find its volume.', 'V ='),
       ],
       back=[
-          B('Naming points in all four quadrants', '6.NS.C.6.c', [
-              sa('What are the coordinates of point A?', 'A =', fig=coord(pts=[(-2, 5, 'A')])),
-              sa('What are the coordinates of point B?', 'B =', fig=coord(pts=[(4, -3, 'B')])),
-              mc('Which point is at (-5, -1)?', ['Point A', 'Point B', 'Point C', 'Point D'], fig=coord(pts=[(-5, -1, 'A'), (-1, -5, 'B'), (5, 1, 'C'), (1, 5, 'D')])),
-              tf('Point C is at (-3, 0).', fig=coord(pts=[(-3, 0, 'C', 'n')])),
-              sa('What are the coordinates of point E?', 'E =', fig=coord(pts=[(3, 4, 'E')])),
+          B('Volume formula with whole numbers', '5.MD.C.5.b', [
+              sa('Find the volume of the prism.', 'Volume:', fig=prism(6, 4, 3, ('6 cm', '4 cm', '3 cm'))),
+              sa('A prism has a length of 10 m, a width of 2 m, and a height of 5 m.\nWhat is its volume?', 'Volume:'),
+              tf('A cube with 3-inch edges has a volume of 27 cubic inches.'),
+              mc('A box is 8 in. by 5 in. by 2 in.\nWhat is its volume?', ['80 cubic inches', '15 cubic inches', '40 cubic inches', '160 cubic inches']),
+              sa('A prism has a base area of 20 square cm and a height of 6 cm.\nWhat is its volume?', 'Volume:'),
           ]),
+          B('Multiplying mixed numbers', '5.NF.B.6', [
+              sa('Multiply.\n2{1/2} × 3', 'Product:'),
+              sa('Multiply.\n1{1/2} × {3/4}', 'Product:'),
+              tf('2{1/2} × 2 = 5'),
+              mc('3 × 4{1/2} = ?', ['13{1/2}', '12{1/2}', '7{1/2}', '12{1/6}']),
+              sa('Multiply.\n1{1/3} × 1{1/2}', 'Product:'),
+          ]),
+          B('Multiplying fractions', '5.NF.B.4.a', [
+              sa('Multiply.\n{3/4} × {2/3}', 'Product:'),
+              sa('Multiply.\n{5/2} × {9/2}', 'Product:'),
+              tf('{3/2} × {3/2} = {9/4}'),
+              mc('{1/2} × {4/5} = ?', ['{2/5}', '{5/7}', '{4/7}', '{8/5}']),
+              sa('Multiply.\n{6/5} × 5', 'Product:'),
+          ]),
+      ],
+      f1=B('Volume of triangular and rectangular prisms', '7.G.B.6', [
+          sa('A triangular prism has triangle bases with a base of 6 cm and a height of 4 cm. The prism is 9 cm long.\nWhat is its volume?', 'Volume:'),
+          sa('A tent is a triangular prism. Its triangle has a base of 2.4 m and a height of 1.5 m. The tent is 3 m long.\nWhat is its volume?', 'Volume:'),
+          mc('A prism has a base area of 7.5 square feet and a height of 2.4 feet.\nWhat is its volume?', ['18 cubic feet', '9.9 cubic feet', '15 cubic feet', '180 cubic feet']),
+          sa('A box is 4.5 cm by 2 cm by 3.2 cm.\nWhat is its volume?', 'Volume:'),
+          tf('A triangular prism with a triangle area of 10 square inches and a length of 7 inches has a volume of 70 cubic inches.'),
+      ]),
+      f2=B('Volume of cylinders using V = Bh', '8.G.C.9', [
+          sa('A cylinder has a base area of 12π square cm and a height of 5 cm.\nWhat is its volume in terms of π?', 'Volume:'),
+          sa('A can has a radius of 3 in. and a height of 8 in.\nWhat is its volume in terms of π?', 'Volume:'),
+          mc('A cylinder has a radius of 1.5 m and a height of 4 m.\nWhat is its volume?', ['9π cubic meters', '6π cubic meters', '12π cubic meters', '3π cubic meters']),
+          sa('Find the volume of the cylinder in terms of π.', 'Volume:', fig=dict(k='cyl', r=5, h=2, rlab='5 ft', hlab='2 ft')),
+          tf('Doubling the height of a cylinder doubles its volume.'),
+      ])),
+
+    # ------------------------------------------------------------------ 6.G.A.3 draw
+    S('6.G.A.3', 'Draw polygons in the coordinate plane from the coordinates of their vertices',
+      main=[
+          sa('Plot A(-3, 2), B(4, 2), C(4, -3), and D(-3, -3). Connect them in order.\nWhat polygon did you draw?', 'Polygon:', fig=coord()),
+          sa('Plot P(0, 4), Q(3, -2), and R(-3, -2). Connect them in order.\nWhat polygon did you draw?', 'Polygon:', fig=coord()),
+          sa('Plot E(-2, 1), F(2, 1), G(4, -3), and H(-4, -3). Connect them in order.\nWhat polygon did you draw?', 'Polygon:', fig=coord()),
+          sa('Plot J(-1, 3), K(3, 3), L(3, -1), and M(-1, -1). Connect them in order.\nWhat polygon did you draw?', 'Polygon:', fig=coord()),
+          sa('Plot W(-5, -2), X(-2, 3), Y(4, 3), and Z(1, -2). Connect them in order.\nWhat polygon did you draw?', 'Polygon:', fig=coord()),
+      ],
+      back=[
+          B('Plotting points in all four quadrants', '6.NS.C.6.c', [
+              plot('Plot and label point A(-3, 2).', coord()),
+              plot('Plot and label point B(4, -3).', coord()),
+              mc('Which point is at (-2, -4)?', ['Point A', 'Point B', 'Point C', 'Point D'], fig=coord(pts=[(-2, -4, 'A'), (-4, -2, 'B'), (2, 4, 'C'), (2, -4, 'D')])),
+              plot('Plot and label point C(0, 4).', coord()),
+              tf('Point D is at (-3, -3).', fig=coord(pts=[(-3, -3, 'D')])),
+          ]),
+          B('Attributes of quadrilaterals', '3.G.A.1', [
+              tf('A rectangle has 4 right angles.'),
+              tf('Opposite sides of a rectangle have the same length.'),
+              mc('Which shape always has 4 sides of equal length and 4 right angles?', ['Square', 'Rectangle', 'Trapezoid', 'Rhombus']),
+              tf('Every quadrilateral has 4 right angles.'),
+              sa('How many sides does a quadrilateral have?', 'Sides:'),
+          ]),
+          B('Naming shapes by sides and angles', '2.G.A.1', [
+              sa('A shape has 3 sides and 3 angles.\nWhat is it called?', 'Shape:'),
+              mc('How many sides does a pentagon have?', ['5', '4', '6', '8']),
+              tf('A hexagon has 6 sides.'),
+              sa('A shape has 4 sides and 4 angles.\nWhat is it called?', 'Shape:'),
+              mc('Which shape has the most sides?', ['Hexagon', 'Pentagon', 'Triangle', 'Quadrilateral']),
+          ]),
+      ],
+      f1=B('Draw shapes with given conditions', '7.G.A.2', [
+          plot('Draw a rectangle with an area of 12 square units. One vertex is at the origin.', coord()),
+          plot('Draw a right triangle with legs of 4 units and 3 units. One vertex is at (-2, -2).', coord()),
+          sa('Can a triangle have side lengths of 2 cm, 3 cm, and 6 cm? Write yes or no.', 'Answer:'),
+          mc('A triangle has angles of 90° and 45°.\nWhat is the third angle?', ['45°', '90°', '135°', '55°']),
+          plot('Draw a square with a side length of 5 units. One vertex is at (-3, 1).', coord()),
+      ]),
+      f2=B('Draw images of polygons under transformations', '8.G.A.3', [
+          plot('Triangle ABC has vertices A(1, 1), B(4, 1), and C(1, 3).\nDraw its image after a translation 5 units left and 2 units down.', coord()),
+          plot('Rectangle PQRS has vertices P(1, 2), Q(4, 2), R(4, 4), and S(1, 4).\nDraw its image after a reflection across the x-axis.', coord()),
+          sa('Triangle ABC has vertices A(2, 1), B(4, 3), and C(2, 3). It is rotated 180° about the origin.\nWhat are the coordinates of B′?', 'B′ ='),
+          plot('Square EFGH has vertices E(1, 1), F(2, 1), G(2, 2), and H(1, 2).\nDraw its image after a dilation by a scale factor of 3 centered at the origin.', coord()),
+          tf('A rectangle with vertices (1, 1), (3, 1), (3, 2), (1, 2) is reflected across the y-axis. One image vertex is (-3, 2).'),
+      ])),
+
+    # ------------------------------------------------------------------ 6.G.A.3 side lengths
+    S('6.G.A.3', 'Use coordinates to find side lengths and perimeters of polygons',
+      main=[
+          sa('A rectangle has vertices at (-3, 2), (4, 2), (4, -5), and (-3, -5).\nWhat is its perimeter?', 'Perimeter:'),
+          sa('One side of a polygon goes from (-2, -3) to (-2, 5).\nHow long is this side?', 'Length:'),
+          sa('What is the length of side AB?', 'AB =', fig=coord(pts=[(-5, 3, 'A', 'nw'), (2, 3, 'B', 'ne'), (2, -4, 'C', 'se'), (-5, -4, 'D', 'sw')],
+                                                           polys=[[(-5, 3), (2, 3), (2, -4), (-5, -4)]])),
+          mc('A triangle has vertices at (-4, 1), (2, 1), and (2, -7).\nHow long is the horizontal side?', ['6 units', '8 units', '2 units', '10 units']),
+          sa('A rectangle has vertices at (-5, -2), (1, -2), (1, 3), and (-5, 3).\nWhat is its perimeter?', 'Perimeter:'),
+      ],
+      back=[
           B('Distance between points with the same x or y', '6.NS.C.8', [
               sa('Find the distance between (-3, 2) and (4, 2).', 'Distance:'),
               sa('Find the distance between (1, -4) and (1, 6).', 'Distance:'),
               tf('The distance between (-5, 0) and (5, 0) is 10.'),
               mc('What is the distance between (2, -3) and (2, -8)?', ['5', '11', '-5', '-11']),
               sa('Find the distance between (-6, -1) and (-2, -1).', 'Distance:'),
+          ]),
+          B('Absolute value', '6.NS.C.7.c', [
+              sa('Find the value.\n|-5| + |2|', 'Value:'),
+              tf('|-7| = 7'),
+              mc('|-3| + |4| = ?', ['7', '1', '-7', '-1']),
+              sa('Find the value.\n|-6|', 'Value:'),
+              tf('|-2| + |-2| = 0'),
           ]),
           B('Perimeter of polygons', '3.MD.D.8', [
               sa('Find the perimeter of the rectangle.', 'Perimeter:', fig=rect(7, 3, '7 cm', '3 cm')),
@@ -248,38 +341,70 @@ SETS = [
               mc('A triangle has sides of 5 cm, 6 cm, and 7 cm.\nWhat is its perimeter?', ['18 cm', '30 cm', '11 cm', '210 cm']),
               sa('A rectangle is 12 ft long and 5 ft wide.\nWhat is its perimeter?', 'Perimeter:'),
           ]),
-          B('Properties of rectangles', '3.G.A.1', [
-              tf('Opposite sides of a rectangle have the same length.'),
-              tf('A rectangle has 4 right angles.'),
-              mc('Which shape always has 4 sides of equal length?', ['Rhombus', 'Rectangle', 'Trapezoid', 'Parallelogram']),
-              tf('Every quadrilateral has 4 right angles.'),
-              sa('How many sides does a quadrilateral have?', 'Sides:'),
-          ]),
       ],
-      f1=B('Scale drawings on a grid', '7.G.A.1', [
-          sa('A rectangle that is 3 units by 2 units is redrawn with a scale factor of 2.\nWhat are the new dimensions?', 'Dimensions:'),
-          sa('On a floor plan, each grid unit is 5 feet. A room has corners at (1, 1), (5, 1), (5, 4), and (1, 4).\nWhat are the actual length and width of the room?', 'Length and width:'),
-          mc('A triangle on a grid has a base of 4 units and a height of 3 units. It is enlarged by a scale factor of 3.\nWhat is the area of the new triangle?', ['54 square units', '18 square units', '36 square units', '6 square units']),
-          sa('On a map grid, 1 unit represents 2 km. A park is a rectangle 3 units by 5 units.\nWhat is the actual area of the park?', 'Area:'),
-          tf('When a scale drawing is enlarged by a scale factor of 2, its area doubles.'),
+      f1=B('Lengths between points with rational coordinates', '7.NS.A.1.c', [
+          sa('A side of a polygon goes from (-2.5, 3) to (4, 3).\nHow long is the side?', 'Length:'),
+          sa('A rectangle has vertices at (-1.5, 2), (3.5, 2), (3.5, -1), and (-1.5, -1).\nWhat is its perimeter?', 'Perimeter:'),
+          mc('How long is the segment from (0, -3{1/2}) to (0, 1{1/4})?', ['4{3/4}', '2{1/4}', '-4{3/4}', '5{1/4}']),
+          sa('A square has vertices at (-2.5, -2.5), (2.5, -2.5), (2.5, 2.5), and (-2.5, 2.5).\nWhat is the length of one side?', 'Length:'),
+          tf('The segment from (-4.2, 1) to (1.8, 1) is 6 units long.'),
       ]),
-      f2=B('Transform polygons using coordinates', '8.G.A.3', [
-          sa('A rectangle has vertices (1, 2), (4, 2), (4, 5), and (1, 5). It is translated 3 units left and 4 units down.\nWhat are the new vertices?', 'Vertices:'),
-          mc('A triangle has vertices (2, 1), (5, 1), and (2, 4). It is dilated by a scale factor of 2 with the center at the origin.\nWhat is the image of (5, 1)?', ['(10, 2)', '(7, 3)', '(5, 2)', '(2.5, 0.5)']),
-          sa('A square has vertices (1, 1), (3, 1), (3, 3), and (1, 3). It is reflected across the x-axis.\nWhat is the image of (3, 3)?', 'Image:'),
-          sa('Triangle ABC is rotated 90° clockwise about the origin.\nWhat are the coordinates of A′?', 'A′ =',
-             fig=coord(pts=[(2, 4, 'A'), (4, 1, 'B', 'e'), (1, 1, 'C', 'sw')], polys=[[(2, 4), (4, 1), (1, 1)]])),
-          tf('Translating a polygon changes its side lengths.'),
+      f2=B('Find slanted side lengths with the Pythagorean Theorem', '8.G.B.8', [
+          sa('A triangle has vertices at (0, 0), (6, 0), and (6, 8).\nHow long is the slanted side?', 'Length:'),
+          sa('Find the length of side AC.', 'AC =', fig=coord(pts=[(-3, -2, 'A', 'sw'), (1, -2, 'B', 'se'), (1, 1, 'C', 'ne')], polys=[[(-3, -2), (1, -2), (1, 1)]])),
+          mc('A parallelogram has a side from (1, 1) to (4, 5).\nHow long is that side?', ['5', '7', '25', '3']),
+          sa('Find the perimeter of the triangle with vertices (0, 0), (5, 0), and (0, 12).', 'Perimeter:'),
+          tf('The side from (-2, 3) to (4, -5) is 10 units long.'),
       ])),
 
-    # ------------------------------------------------------------------ 6.G.A.4
-    S('6.G.A.4', 'Nets of three-dimensional figures and surface area',
+    # ------------------------------------------------------------------ 6.G.A.4 nets
+    S('6.G.A.4', 'Represent three-dimensional figures using nets',
+      main=[
+          mc('What three-dimensional figure does the net form?', ['Rectangular prism', 'Cube', 'Triangular prism', 'Square pyramid'], fig=net_prism(4, 3, 2)),
+          mc('What three-dimensional figure does the net form?', ['Square pyramid', 'Triangular pyramid', 'Cube', 'Triangular prism'], fig=net_pyramid(6, 5)),
+          mc('What three-dimensional figure does the net form?', ['Cube', 'Rectangular prism', 'Square pyramid', 'Triangular prism'], fig=net_prism(3, 3, 3)),
+          mc('What three-dimensional figure does the net form?', ['Triangular prism', 'Rectangular prism', 'Triangular pyramid', 'Square pyramid'], fig=net_triprism(3, 4, 5, 6)),
+          mc('What three-dimensional figure does the net form?', ['Triangular pyramid', 'Square pyramid', 'Triangular prism', 'Cube'], fig=net_tetra()),
+      ],
+      back=[
+          B('Faces of three-dimensional shapes', '2.G.A.1', [
+              sa('How many faces does a cube have?', 'Faces:'),
+              mc('How many faces does a rectangular prism have?', ['6', '4', '8', '12']),
+              tf('A square pyramid has 5 faces.'),
+              sa('How many faces does a triangular prism have?', 'Faces:'),
+              mc('How many triangular faces does a square pyramid have?', ['4', '1', '5', '3']),
+          ]),
+          B('Shapes of faces', '3.G.A.1', [
+              mc('What shape are the faces of a cube?', ['Squares', 'Triangles', 'Circles', 'Pentagons']),
+              tf('Every square is also a rectangle.'),
+              mc('What shape is the base of a square pyramid?', ['Square', 'Triangle', 'Circle', 'Rectangle that is not a square']),
+              tf('The two ends of a triangular prism are triangles.'),
+              sa('What shape are the side faces of a triangular prism?', 'Shape:'),
+          ]),
+      ],
+      f1=B('Cross sections of three-dimensional figures', '7.G.A.3', [
+          mc('A rectangular prism is sliced parallel to its base.\nWhat shape is the cross section?', ['Rectangle', 'Triangle', 'Circle', 'Pentagon']),
+          mc('A square pyramid is sliced parallel to its base.\nWhat shape is the cross section?', ['Square', 'Triangle', 'Rectangle that is not a square', 'Circle']),
+          sa('A cube is sliced through the middle, parallel to one face.\nWhat shape is the cross section?', 'Shape:'),
+          mc('A square pyramid is sliced vertically through its top vertex.\nWhat shape is the cross section?', ['Triangle', 'Square', 'Rectangle', 'Pentagon']),
+          tf('A triangular prism sliced parallel to its triangular bases makes a triangle cross section.'),
+      ]),
+      f2=B('Volume of a cylinder described by its net', '8.G.C.9', [
+          sa('A net of a cylinder has two circles with a radius of 3 cm and a rectangle that is 8 cm tall.\nWhat is the volume of the cylinder in terms of π?', 'Volume:'),
+          sa('A net of a cylinder has two circles with a radius of 5 in. and a rectangle that is 4 in. tall.\nWhat is the volume in terms of π?', 'Volume:'),
+          mc('A net of a cylinder has circles with a diameter of 6 m. The rectangle is 10 m tall.\nWhat is the volume?', ['90π cubic meters', '360π cubic meters', '60π cubic meters', '30π cubic meters']),
+          sa('A net of a cylinder has two circles with a radius of 2 ft and a rectangle that is 7 ft tall.\nWhat is the volume? Use 3.14 for π.', 'Volume:'),
+          tf('In the net of a cylinder, the height of the rectangle is the height of the cylinder.'),
+      ])),
+
+    # ------------------------------------------------------------------ 6.G.A.4 surface area
+    S('6.G.A.4', 'Use nets to find surface area',
       main=[
           sa('The net folds into a rectangular prism.\nWhat is the surface area of the prism?', 'Surface area:', fig=net_prism(4, 3, 2, '4 cm', '3 cm', '2 cm')),
-          sa('A cube has edges of 5 inches.\nWhat is its surface area?', 'Surface area:'),
-          mc('A rectangular prism is 6 ft by 2 ft by 3 ft.\nWhat is its surface area?', ['72 square feet', '36 square feet', '66 square feet', '11 square feet']),
           sa('The net folds into a square pyramid.\nWhat is the surface area of the pyramid?', 'Surface area:', fig=net_pyramid(6, 5, '6 m', '5 m')),
-          sa('A box with no lid is 10 in. long, 4 in. wide, and 3 in. tall.\nHow much cardboard is needed to make its 5 faces?', 'Cardboard:'),
+          sa('The net folds into a cube.\nWhat is the surface area of the cube?', 'Surface area:', fig=net_prism(5, 5, 5, '5 in.', '5 in.', '5 in.')),
+          sa('The net folds into a triangular prism.\nWhat is the surface area of the prism?', 'Surface area:', fig=net_triprism(3, 4, 5, 10, ('3 cm', '4 cm', '5 cm', '10 cm'))),
+          sa('The net folds into a rectangular prism.\nWhat is the surface area of the prism?', 'Surface area:', fig=net_prism(6, 2, 3, '6 ft', '2 ft', '3 ft')),
       ],
       back=[
           B('Area of rectangles', '3.MD.C.7.b', [
@@ -293,22 +418,22 @@ SETS = [
               sa('Find the area of the triangle.', 'Area:', fig=tri(6, 5, 2, '6 m', '5 m')),
               sa('A triangle has a base of 8 cm and a height of 3 cm.\nWhat is its area?', 'Area:'),
               tf('A triangle with a base of 10 and a height of 4 has an area of 40 square units.'),
-              mc('A triangle has a base of 7 in. and a height of 6 in.\nWhat is its area?', ['21 square inches', '42 square inches', '13 square inches', '26 square inches']),
+              mc('A right triangle has legs of 3 cm and 4 cm.\nWhat is its area?', ['6 square cm', '12 square cm', '7 square cm', '10 square cm']),
               sa('Four triangles each have a base of 6 m and a height of 5 m.\nWhat is their total area?', 'Total area:'),
           ]),
-          B('Faces of three-dimensional shapes', '2.G.A.1', [
-              sa('How many faces does a cube have?', 'Faces:'),
-              mc('How many faces does a rectangular prism have?', ['6', '4', '8', '12']),
-              tf('A square pyramid has 5 faces.'),
-              mc('What shape are the faces of a cube?', ['Squares', 'Triangles', 'Circles', 'Pentagons']),
-              sa('How many triangular faces does a square pyramid have?', 'Faces:'),
+          B('Adding the areas of parts', '3.MD.C.7.d', [
+              sa('A figure is made of a 4-by-3 rectangle and a 4-by-2 rectangle that do not overlap.\nWhat is its total area?', 'Area:'),
+              tf('A figure made of two 5-by-5 squares has an area of 50 square units.'),
+              mc('A figure is made of rectangles with areas of 12, 8, and 6 square units.\nWhat is its total area?', ['26 square units', '576 square units', '20 square units', '14 square units']),
+              sa('Six squares each have an area of 9 square inches.\nWhat is their total area?', 'Area:'),
+              sa('A figure is made of rectangles that are 2 by 6, 2 by 6, and 3 by 6.\nWhat is its total area?', 'Area:'),
           ]),
       ],
-      f1=B('Surface area of prisms', '7.G.B.6', [
-          sa('A triangular prism has right-triangle bases with sides 3 cm, 4 cm, and 5 cm. The prism is 10 cm long.\nWhat is its surface area?', 'Surface area:'),
+      f1=B('Surface area of prisms in real-world problems', '7.G.B.6', [
           sa('A cube has edges of 2.5 cm.\nWhat is its surface area?', 'Surface area:'),
           mc('A rectangular prism is 5 in. by 4 in. by 2.5 in.\nWhat is its surface area?', ['85 square inches', '50 square inches', '42.5 square inches', '65 square inches']),
           sa('A gift box is 8 in. by 6 in. by 4 in.\nHow much wrapping paper covers the box exactly?', 'Paper:'),
+          sa('A box with no lid is 10 in. long, 4 in. wide, and 3 in. tall.\nHow much cardboard is needed to make its 5 faces?', 'Cardboard:'),
           tf('The surface area of a prism is the sum of the areas of all of its faces.'),
       ]),
       f2=B('Pythagorean Theorem in three dimensions', '8.G.B.7', [

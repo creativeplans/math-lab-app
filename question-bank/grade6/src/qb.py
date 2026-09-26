@@ -180,3 +180,30 @@ def net_pyramid(b, s, bl=None, sl=None):
              poly([(0, b), (-s, b / 2), (0, 0)])]
     segs = [dict(a=(b / 2, b), b=(b / 2, b + s), label=sl, off=(10, 0))] if sl else []
     return shape(polys, segs=segs, fs=0.9)
+
+
+def net_triprism(a, b, c, L, labels=(None, None, None, None)):
+    """Net of a right triangular prism: legs a, b, hypotenuse c, length L."""
+    polys = [poly([(0, 0), (a, 0), (a, L), (0, L)], [None, None, None, labels[3]]),
+             poly([(a, 0), (a + b, 0), (a + b, L), (a, L)]),
+             poly([(a + b, 0), (a + b + c, 0), (a + b + c, L), (a + b, L)]),
+             poly([(0, L), (a, L), (0, L + b)]),
+             poly([(0, 0), (0, -b), (a, 0)])]
+    texts = [(x, L * 0.12, t) for x, t in ((a / 2, labels[0]), (a + b / 2, labels[1]), (a + b + c / 2, labels[2])) if t]
+    return shape(polys, texts=texts, fs=0.9)
+
+
+def net_tetra():
+    h = 3 ** 0.5 / 2
+    polys = [poly([(0, 0), (1, 0), (0.5, h)]), poly([(1, 0), (2, 0), (1.5, h)]),
+             poly([(0.5, h), (1.5, h), (1, 2 * h)]), poly([(1, 0), (1.5, h), (0.5, h)])]
+    return shape(polys)
+
+
+def hrow(*figs, h=240):
+    return dict(k='hrow', figs=list(figs), h=h)
+
+
+def plot(stem, fig, **kw):
+    """A question the student answers by drawing on the figure (no answer line)."""
+    return dict(t='sa', stem=stem, ans=None, fig=fig, **kw)
