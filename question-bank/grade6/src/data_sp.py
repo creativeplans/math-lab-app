@@ -41,6 +41,7 @@ RANGE = dot(10, 20, {11: 1, 12: 2, 14: 3, 15: 2, 18: 1}, lstep=2, xlabel='Minute
 CLUST = dot(0, 10, {2: 1, 7: 3, 8: 5, 9: 3}, xlabel='Hours of sleep')
 OBS = dot(0, 8, {1: 2, 2: 4, 3: 5, 4: 3, 5: 2, 7: 1}, xlabel='Books borrowed')
 JUMP = dot(50, 70, {54: 1, 56: 2, 58: 3, 60: 4, 62: 2, 66: 1}, step=2, xlabel='Jump length (?)')
+JUMP_IN = dict(JUMP, xlabel='Jump length (inches)')
 TEAMA = dot(58, 72, {60: 1, 61: 2, 62: 3, 63: 2, 64: 1}, lstep=2, xlabel='Heights (inches)')
 DOTMEAN = dot(0, 10, {2: 2, 4: 3, 6: 1, 8: 2}, xlabel='Goals scored')
 BELL = hist(['0–9', '10–19', '20–29', '30–39', '40–49'], [1, 4, 7, 4, 1], ymax=8, ystep=1,
@@ -252,7 +253,7 @@ SETS = [
           sa('What is the range of the data?', 'Range:', fig=RANGE),
           sa('What is the range of the data?', 'Range:', fig=SKEWR),
           mc('Which data set has the greater spread?', ['Data set B', 'Data set A', 'They have the same spread.'], fig=SPREAD2),
-          sa('What is the range of the jump lengths?', 'Range:', fig=JUMP),
+          sa('What is the range of the jump lengths?', 'Range:', fig=JUMP_IN),
           tf('Data set A has a range of 2.', fig=SPREAD2),
       ],
       back=[
@@ -352,14 +353,14 @@ SETS = [
       ],
       back=[
           B('Line plots of whole-number measurements', '2.MD.D.9', [
-              sa('Lengths (inches): 3, 4, 4, 5, 4\nIn a line plot, how many marks go above 4?', 'Marks:'),
+              sa('Lengths (inches): 3, 4, 4, 5, 4\nIn a line plot, how many marks are drawn at 4?', 'Marks:'),
               plot('Lengths (cm): 2, 3, 3, 5\nMake a line plot of the lengths.', nl(0, 6, 1, h=130)),
               tf('In a line plot of 6, 6, 7, 9, there are two marks above 6.'),
               mc('Which number line is best for a line plot of 12, 14, 15, 15?', ['A number line from 10 to 16', 'A number line from 0 to 5', 'A number line from 20 to 30', 'A number line from 0 to 100 by tens']),
               sa('Lengths (feet): 8, 9, 9, 9, 11\nWhich value gets the most marks?', 'Value:'),
           ]),
           B('Line plots with fractional measurements', '4.MD.B.4', [
-              sa('Lengths (inches): {1/2}, 1, 1, 1{1/2}, 1, {1/2}\nIn a line plot, how many X\'s go above 1?', 'X\'s:'),
+              sa('Lengths (inches): {1/2}, 1, 1, 1{1/2}, 1, {1/2}\nIn a line plot, how many X\'s are drawn at 1?', 'X\'s:'),
               tf('In a line plot of 2, 2{1/2}, 2{1/2}, 3, there are two X\'s above 2{1/2}.'),
               mc('Which number line would you use for these lengths?\n{1/4}, {1/2}, {3/4}, {1/2}', ['A number line from 0 to 1 marked in fourths', 'A number line from 0 to 10 marked in ones', 'A number line from 0 to 100 marked in tens', 'A number line from 1 to 2 marked in halves']),
               plot('Lengths (inches): {1/4}, {1/2}, {1/2}, {3/4}\nMake a line plot of the lengths.', nl(0, 1, 0.25, labels=fracs(0, 1, 4), h=130)),
@@ -512,7 +513,7 @@ SETS = [
               sa('The line plot shows pencil lengths.\nHow many pencils were measured?', 'Pencils:', fig=PENCILS),
               tf('Two pencils are 4{1/2} inches long.', fig=PENCILS),
               mc('How many pencils are longer than 4 inches?', ['3', '4', '2', '7'], fig=PENCILS),
-              sa('How many X\'s are above 4{1/2}?', 'X\'s:', fig=PENCILS),
+              sa('How many pencils are 5 inches long?', 'Pencils:', fig=PENCILS),
           ]),
           B('Totals from a bar graph', '3.MD.B.3', [
               sa('How many pets are at the shelter in all?', 'Pets:', fig=PETS5),
@@ -871,7 +872,7 @@ SETS = [
           tf('When two samples are symmetric with no outliers, comparing their means is appropriate.'),
           sa('Sample A: median 30, IQR 6. Sample B: median 45, IQR 6.\nThe difference in medians is how many times the IQR?', 'Times:'),
           mc('Class A test scores have mean 78 and MAD 5. Class B test scores have mean 78 and MAD 12.\nWhich statement is true?', ['Class B\'s scores vary more.', 'Class A\'s scores vary more.', 'Class B scored higher.', 'Class A scored higher.']),
-          sa('In random samples, the median commute is 25 minutes in Town X and 18 minutes in Town Y. Both have similar IQRs.\nIn which town are commutes typically longer?', 'Town:'),
+          sa('Random samples of puzzle times are both skewed right. Group X has a median of 14 minutes, and Group Y has a median of 20 minutes. Their IQRs are similar.\nWhich group typically takes longer?', 'Group:'),
       ]),
       f2=B('Judge how well a line fits the data', '8.SP.A.2', nearest=True, qs=[
           tf('The line is a good fit for the data.', fig=GOOD2),
