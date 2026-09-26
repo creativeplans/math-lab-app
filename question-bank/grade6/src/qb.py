@@ -31,10 +31,15 @@ def tf(stem, fig=None, **kw):
     return dict(t='tf', stem=stem, fig=fig, **kw)
 
 
-def B(title, std, qs):
+NEAREST_NOTE = ('No Grade 8 standard directly continues this skill. '
+                'This branch uses the nearest related Grade 8 standard.')
+
+
+def B(title, std, qs, nearest=False):
+    """nearest=True flags a forward branch with no direct next-grade continuation."""
     assert len(qs) == 5, (title, len(qs))
     std_info(std)
-    return dict(title=title, std=std, qs=qs)
+    return dict(title=title, std=std, qs=qs, nearest=nearest)
 
 
 def S(std, title, main, back, f1, f2):

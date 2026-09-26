@@ -696,7 +696,7 @@ SETS = [
           sa('A van can carry at most 1,200 pounds. The driver weighs 180 pounds. Each box weighs 60 pounds.\nWrite and solve an inequality for the number of boxes b.', 'Solution:'),
           tf('The solution of 3x + 2 ≥ 17 is x ≥ 5.'),
       ]),
-      f2=B('Use two linear equations to decide when one quantity is greater', '8.EE.C.8.c', [
+      f2=B('Use two linear equations to decide when one quantity is greater', '8.EE.C.8.c', nearest=True, qs=[
           sa('Plan A costs $20 plus $5 per month. Plan B costs $35 plus $2 per month.\nAfter how many months does Plan A cost more than Plan B?', 'Months:'),
           sa('Tank A has 100 gallons and drains 6 gallons per minute. Tank B has 40 gallons and fills 4 gallons per minute.\nAfter how many minutes does Tank B hold more water?', 'Minutes:'),
           mc('Sara has $50 and saves $8 per week. Tom has $90 and saves $3 per week.\nWhen will Sara have more money than Tom?', ['After 8 weeks', 'After 5 weeks', 'After 3 weeks', 'Never']),
@@ -743,7 +743,7 @@ SETS = [
           mc('Which inequality does the graph show?', ['x ≤ -2', 'x < -2', 'x ≥ -2', 'x > -2'], fig=nl(-5, 5, 1, ray=(-2, 'left', False))),
           tf('The graph shows the solutions of 3x + 2 > 5.', fig=nl(-5, 5, 1, ray=(1, 'right', True))),
       ]),
-      f2=B('Linear equations with one, no, or infinitely many solutions', '8.EE.C.7.a', [
+      f2=B('Linear equations with one, no, or infinitely many solutions', '8.EE.C.7.a', nearest=True, qs=[
           tf('x + 3 = x + 3 has infinitely many solutions.'),
           mc('How many solutions does the equation have?\n2x + 5 = 2x - 1', SOL),
           mc('Which equation has infinitely many solutions?', ['4(x - 1) = 4x - 4', '4(x - 1) = 4x - 1', '4x - 1 = x', '4x = 0']),

@@ -9,7 +9,7 @@ from reportlab.pdfgen import canvas
 
 sys.path.insert(0, os.path.dirname(__file__))
 import render as R  # noqa: E402
-from qb import std_info  # noqa: E402
+from qb import std_info, NEAREST_NOTE  # noqa: E402
 import data_rp, data_ns, data_ee, data_g, data_sp  # noqa: E402,E401
 
 DOMAIN_ORDER = [
@@ -22,11 +22,12 @@ DOMAIN_ORDER = [
 
 
 def sections(st):
-    out = [('MAIN', 'Grade 6 main question', st['std'], st['main'])]
+    """(key, name, std, questions, nearest) for each section of a set."""
+    out = [('MAIN', 'Grade 6 main question', st['std'], st['main'], False)]
     for i, b in enumerate(st['back'], 1):
-        out.append(('BACKWARD %d' % i, b['title'], b['std'], b['qs']))
-    out.append(('FORWARD 1', st['f1']['title'], st['f1']['std'], st['f1']['qs']))
-    out.append(('FORWARD 2', st['f2']['title'], st['f2']['std'], st['f2']['qs']))
+        out.append(('BACKWARD %d' % i, b['title'], b['std'], b['qs'], False))
+    for key, b in (('FORWARD 1', st['f1']), ('FORWARD 2', st['f2'])):
+        out.append((key, b['title'], b['std'], b['qs'], b.get('nearest', False)))
     return out
 
 
@@ -144,17 +145,19 @@ def build(out):
             c.addOutlineEntry(cur_std, 'set%d' % st['num'], 1, closed=True)
         pageno += 1
         secs = sections(st)
-        rows = [(s[0], s[1], s[2]) for s in secs]
+        rows = [(s[0], s[1] + (' \u2014 nearest related (no direct Grade 8 step)' if s[4] else ''), s[2]) for s in secs]
         heading_page(c, 'SET %d  •  %s  •  %s' % (st['num'], st['std'], st['domain'].upper()),
                      st['title'], None, rows, pageno)
         c.bookmarkPage('set%d' % st['num'])
         c.addOutlineEntry('Set %d — %s' % (st['num'], st['title']), 'set%d' % st['num'], 2, closed=True)
         c.showPage()
-        for key, name, std, qs in secs:
+        for key, name, std, qs, nearest in secs:
             grade, dom = std_info(std)
             pageno += 1
-            heading_page(c, 'SET %d  •  %s' % (st['num'], st['std']), key,
-                         '%s  •  %s  •  %s  •  %s' % (name, grade, dom, std), None, pageno)
+            sub = '%s  •  %s  •  %s  •  %s' % (name, grade, dom, std)
+            if nearest:
+                sub += '\n⚑ ' + NEAREST_NOTE
+            heading_page(c, 'SET %d  •  %s' % (st['num'], st['std']), key, sub, None, pageno)
             anchor = 'set%d_%s' % (st['num'], key.replace(' ', ''))
             c.bookmarkPage(anchor)
             c.addOutlineEntry('%s — %s' % (key, std), anchor, 3)
@@ -164,6 +167,8 @@ def build(out):
                 label = '%s  •  %s  •  %s  •  Set %d  •  %s  •  Q%d/%d' % (
                     grade, dom, std, st['num'], key.title().replace('Main', 'MAIN'), i, len(qs))
                 label = label.replace('Backward', 'BACKWARD').replace('Forward', 'FORWARD')
+                if nearest:
+                    label += '  \u2022  NEAREST RELATED'
                 try:
                     R.render_question(c, q, label, pageno)
                 except Exception as e:

@@ -51,6 +51,12 @@ LEAVES = dot(2, 4, {2: 1, 2.5: 3, 3: 2, 3.5: 4, 4: 1}, step=0.5, labels=fracs(2,
 CLASSES = dict(k='vstack', h=215, figs=[
     dot(2, 10, {6: 1, 7: 3, 8: 4, 9: 2}, title='Class A quiz scores'),
     dot(2, 10, {3: 1, 4: 2, 5: 4, 6: 3}, title='Class B quiz scores')])
+SLEEP = dot(3, 10, {4: 1, 7: 2, 8: 6, 9: 5, 10: 1}, xlabel='Hours of sleep last night')
+WALKT = dot(0, 30, {5: 2, 6: 3, 7: 3, 8: 2, 10: 2, 25: 1, 28: 1, 30: 1}, lstep=5, xlabel='Minutes to walk home')
+AGES = hist(['0\u20139', '10\u201319', '20\u201329', '30\u201339', '40\u201349'], [6, 9, 0, 3, 1], ymax=10, ystep=2,
+            xlabel='Ages of people at a youth soccer game', ylabel='People', h=200)
+SCORES = dot(10, 100, {20: 1, 70: 1, 75: 2, 80: 3, 85: 3, 90: 2, 95: 1}, step=5, lstep=10, xlabel='Test scores')
+TEMPS = dot(55, 90, {60: 1, 62: 2, 64: 3, 65: 4, 66: 3, 68: 2, 70: 1, 88: 1}, lstep=5, xlabel='Daily high temperature (°F)')
 TEAMS = dict(k='vstack', h=215, figs=[
     dot(58, 72, {60: 1, 61: 2, 62: 3, 63: 2, 64: 1}, lstep=2, title='Garden A: plant heights (cm)'),
     dot(58, 72, {66: 1, 67: 2, 68: 3, 69: 2, 70: 1}, lstep=2, title='Garden B: plant heights (cm)')])
@@ -232,7 +238,7 @@ SETS = [
           mc('Sample A has a mean of 12 and Sample B has a mean of 15. The samples have similar variability.\nWhich conclusion is best?', ['Values in population B tend to be greater.', 'Values in population A tend to be greater.', 'The populations are the same.', 'No conclusion is possible.']),
           tf('To compare the centers of two populations, you can compare the medians of random samples.'),
       ]),
-      f2=B('Use a line of best fit to make predictions', '8.SP.A.2', [
+      f2=B('Use a line of best fit to make predictions', '8.SP.A.2', nearest=True, qs=[
           sa('Use the line of best fit to predict y when x = 6.', 'y =', fig=FIT),
           sa('Use the line of best fit to predict y when x = 2.', 'y =', fig=FIT),
           sa('Use the line of best fit to predict y when x = 4.', 'y =', fig=FITD),
@@ -327,7 +333,7 @@ SETS = [
           sa('Sample A: mean 40, MAD 2. Sample B: mean 40, MAD 7.\nWhich sample has values that vary more?', 'Sample:'),
           sa('Store A\'s daily sales have a median of $520. Store B\'s have a median of $610. Their IQRs are similar.\nWhich store typically has greater daily sales?', 'Store:'),
       ]),
-      f2=B('Interpret the slope and intercept of a linear model', '8.SP.A.3', [
+      f2=B('Interpret the slope and intercept of a linear model', '8.SP.A.3', nearest=True, qs=[
           sa('The model y = 2.5x + 40 predicts a test score y after x hours of study.\nWhat does the slope 2.5 mean?', 'Meaning:'),
           mc('The model y = 3x + 12 gives a plant\'s height y (cm) after x weeks.\nWhat does 12 represent?', ['The height at week 0', 'The growth per week', 'The number of weeks', 'The height after 12 weeks']),
           tf('In the model y = -0.5x + 30, y decreases by 0.5 for each increase of 1 in x.'),
@@ -424,13 +430,17 @@ SETS = [
           tf('Sample B has more values from 15 to 19 than Sample A.', fig=TWOHIST),
           mc('In which interval is the median of Sample B?', ['10–14', '5–9', '15–19', '0–4'], fig=TWOHIST),
       ]),
-      f2=B('Construct a two-way frequency table', '8.SP.A.4', [
-          sa('Of 30 seventh graders, 18 have a pet. Of 20 eighth graders, 8 have a pet.\nComplete the two-way table. How many students have no pet?', 'No pet:', fig=two_way('Grade 7', 'Grade 8', 'Pet', 'No pet')),
-          sa('40 students were surveyed. 25 play sports. 15 of the students who play sports also play an instrument. 5 students do neither.\nComplete the table. How many students play an instrument but not sports?', 'Answer:',
-             fig=two_way('Instrument', 'No instrument', 'Sports', 'No sports')),
-          mc('A table shows 12 boys and 18 girls who like math, and 8 boys and 12 girls who do not.\nHow many students were surveyed in all?', ['50', '30', '20', '40']),
-          sa('Of 25 adults, 15 drink coffee. Of 25 teens, 5 drink coffee.\nComplete the table. How many people do not drink coffee?', 'Answer:', fig=two_way('Adults', 'Teens', 'Coffee', 'No coffee')),
-          tf('In a two-way table, the grand total equals the sum of the row totals.'),
+      f2=B('Display numerical data for two variables in a scatter plot', '8.SP.A.1', nearest=True, qs=[
+          sa('Make a scatter plot of the data.\nDescribe the association between temperature and drinks sold.', 'Association:',
+             fig=hrow(table([['Temp (°F)', '60', '70', '75', '85', '90'], ['Drinks sold', '20', '35', '40', '55', '65']], fs=0.8),
+                      q1(100, 70, xstep=10, ystep=10, square=False, xlabel='Temperature (°F)', ylabel='Drinks sold'), h=245)),
+          plot('Make a scatter plot of the data.', hrow(table([['Height (in.)', '50', '54', '58', '62'], ['Arm span (in.)', '49', '55', '57', '63']], fs=0.8),
+                                                        q1(70, 70, xstep=10, ystep=10, square=False, xlabel='Height (in.)', ylabel='Arm span (in.)'), h=245)),
+          mc('A data set gives the height and the shoe size of 20 students.\nWhich display shows how the two variables are related?', ['Scatter plot', 'Histogram', 'Box plot', 'Dot plot']),
+          tf('A histogram displays one numerical variable, while a scatter plot displays two numerical variables for each person or object.'),
+          sa('Make a scatter plot of the data.\nWhich point does not fit the pattern?', 'Point:',
+             fig=hrow(table([['Hours', '1', '2', '3', '4', '5'], ['Score', '62', '68', '40', '80', '86']], fs=0.8),
+                      q1(6, 100, ystep=10, square=False, xlabel='Hours', ylabel='Score'), h=245)),
       ])),
 
     # ------------------------------------------------------------------ 6.SP.B.4 box plots
@@ -479,7 +489,7 @@ SETS = [
           tf('At least half of Class A scored 78 or higher.', fig=TWOBOX),
           sa('Which class had the highest single score?', 'Class:', fig=TWOBOX),
       ]),
-      f2=B('Spread and outliers in scatter plots', '8.SP.A.1', [
+      f2=B('Spread and outliers in scatter plots', '8.SP.A.1', nearest=True, qs=[
           sa('Which point is an outlier?\nWrite its coordinates.', 'Outlier:', fig=OUT3),
           sa('Which point is an outlier?\nWrite its coordinates.', 'Outlier:', fig=OUT2),
           mc('Which describes the scatter plot?', ['Two clusters', 'A strong positive association', 'No pattern', 'A single outlier'], fig=CLUS),
@@ -620,7 +630,7 @@ SETS = [
           sa('Sample A: mean 15.2 minutes. Sample B: mean 18.7 minutes.\nWhich population probably has greater values?', 'Population:'),
           mc('Ten random samples of 20 students gave these mean hours of sleep: 8.1, 8.3, 7.9, 8.0, 8.2, 8.1, 8.4, 7.8, 8.0, 8.2.\nWhat is a good estimate of the population mean?', ['About 8.1 hours', 'About 7 hours', 'About 9 hours', 'About 20 hours']),
       ]),
-      f2=B('Use a linear model to make predictions', '8.SP.A.3', [
+      f2=B('Use a linear model to make predictions', '8.SP.A.3', nearest=True, qs=[
           sa('The equation y = 2.5x + 40 models test score y after x hours of study.\nPredict the score for 8 hours of study.', 'Score:'),
           sa('The model y = 15x + 100 gives the cost y of x tickets.\nPredict the cost of 20 tickets.', 'Cost:'),
           mc('The model y = 3x + 12 gives a plant\'s height y (cm) after x weeks.\nWhat height does the model predict after 5 weeks?', ['27 cm', '15 cm', '60 cm', '36 cm']),
@@ -667,7 +677,7 @@ SETS = [
           tf('When data are skewed, comparing medians is often better than comparing means.'),
           mc('Sample X has a median of 7.5 hours of sleep. Sample Y has a median of 8.5 hours. Both IQRs are 1 hour.\nWhich statement is best?', ['Population Y probably sleeps more.', 'Population X probably sleeps more.', 'They sleep the same amount.', 'Nothing can be said.']),
       ]),
-      f2=B('Draw and use a line of best fit', '8.SP.A.2', [
+      f2=B('Draw and use a line of best fit', '8.SP.A.2', nearest=True, qs=[
           plot('Draw a line of best fit for the data.', POS),
           plot('Draw a line of best fit for the data.', NEG),
           mc('A line of best fit should have ___.', ['about the same number of points above and below it', 'all points above it', 'all points below it', 'no points near it']),
@@ -714,7 +724,7 @@ SETS = [
           sa('Class A\'s median is 72 and Class B\'s median is 84. Each class has an IQR of 12.\nThe difference in medians is how many times the IQR?', 'Times:'),
           mc('Which pair of data sets has the LEAST overlap?', ['Medians 10 and 30, each IQR 4', 'Medians 10 and 12, each IQR 4', 'Medians 10 and 14, each IQR 8', 'Medians 10 and 11, each IQR 3']),
       ]),
-      f2=B('Outliers and clusters in scatter plots', '8.SP.A.1', [
+      f2=B('Outliers and clusters in scatter plots', '8.SP.A.1', nearest=True, qs=[
           sa('Which point is an outlier?\nWrite its coordinates.', 'Outlier:', fig=OUT4),
           mc('Which point would be an outlier if it were added to the scatter plot?', ['(7, 50)', '(7, 85)', '(3, 63)', '(5, 73)'], fig=POS),
           mc('Which describes the association in the scatter plot?', ['Negative linear', 'Positive linear', 'Nonlinear', 'No association'], fig=NEG),
@@ -769,6 +779,61 @@ SETS = [
           sa('For the point (4, 10), the line gives y = 6.\nHow far is the point from the line, measured vertically?', 'Distance:', fig=FITOUT),
       ])),
 
+    # ------------------------------------------------------------------ 6.SP.B.5.c pattern and deviations
+    S('6.SP.B.5.c', 'Describe the overall pattern and striking deviations in the context of the data',
+      main=[
+          sa('The dot plot shows how many hours students slept last night.\nDescribe the overall pattern. Which value stands apart, and what might explain it?', ['Overall pattern:', 'Value that stands apart:'], fig=SLEEP),
+          mc('The dot plot shows how long students take to walk home.\nWhich description best fits the data in context?',
+             ['Most students take 5 to 10 minutes; a few who live farther away take 25 to 30 minutes.', 'All students take about the same amount of time.',
+              'Most students take 25 to 30 minutes.', 'The times are spread evenly from 5 to 30 minutes.'], fig=WALKT),
+          sa('The histogram shows the ages of people at a youth soccer game.\nDescribe the overall pattern. Which ages stand apart, and who might they be?', ['Overall pattern:', 'Ages that stand apart:'], fig=AGES),
+          mc('The dot plot shows the scores on a class test.\nWhich statement describes a striking deviation in context?',
+             ['One student scored 20, far below the others, who scored from 70 to 95.', 'The scores are spread evenly from 20 to 95.',
+              'Most students scored below 50.', 'There are no unusual scores.'], fig=SCORES),
+          tf('The daily high temperatures cluster from 60°F to 70°F, with one unusually hot day at 88°F.', fig=TEMPS),
+      ],
+      back=[
+          B('Where data cluster and where there are gaps', '6.SP.A.2', [
+              sa('Between which two values do most of the data cluster?', 'Between:', fig=SLEEP),
+              tf('There is a gap in the data between 10 and 25 minutes.', fig=WALKT),
+              mc('Where is there a gap in the data?', ['Between 20 and 70', 'Between 70 and 80', 'Between 85 and 95', 'There is no gap.'], fig=SCORES),
+              sa('Between which two temperatures do most of the data cluster?', 'Between:', fig=TEMPS),
+              tf('The data have no gaps.', fig=SYM),
+          ]),
+          B('Reading a dot plot in context', '4.MD.B.4', [
+              sa('How many students slept 8 hours last night?', 'Students:', fig=SLEEP),
+              sa('How many students take 7 minutes to walk home?', 'Students:', fig=WALKT),
+              tf('Three students scored 85 on the test.', fig=SCORES),
+              mc('How many days had a high temperature of 65°F?', ['4', '3', '5', '65'], fig=TEMPS),
+              sa('What does each dot in the dot plot represent?', 'Each dot:', fig=SLEEP),
+          ]),
+          B('Greatest and least values', '2.NBT.A.4', [
+              sa('What is the least value in the data?', 'Least:', fig=SCORES),
+              sa('What is the greatest value in the data?', 'Greatest:', fig=TEMPS),
+              tf('The greatest walking time is 30 minutes.', fig=WALKT),
+              mc('Which number is least?', ['20', '70', '75', '95']),
+              sa('What is the least number of hours of sleep shown?', 'Least:', fig=SLEEP),
+          ]),
+      ],
+      f1=B('Compare the patterns of two distributions', '7.SP.B.3', [
+          sa('Describe how the two distributions differ in context.', 'Comparison:', fig=CLASSES),
+          mc('Which statement describes both gardens?', ['Both cluster tightly, and Garden B\'s plants are about 6 cm taller.', 'Garden A\'s plants are taller.',
+                                                        'Garden B is much more spread out.', 'The gardens have the same center.'], fig=TEAMS),
+          tf('Data set B is more spread out than data set A.', fig=SPREAD2),
+          sa('Class A\'s quiz scores cluster from 7 to 9, with one score of 2. Class B\'s scores cluster from 4 to 6 with no unusual values.\nWhich class has a striking deviation?', 'Class:'),
+          mc('Which statement about the middle halves of the two box plots is true?', ['They overlap from 70 to 76.', 'They do not overlap.', 'They overlap from 55 to 95.', 'They are the same.'], fig=TWOBOX),
+      ]),
+      f2=B('Describe patterns and deviations in scatter plots in context', '8.SP.A.1', [
+          sa('The scatter plot shows savings over several weeks.\nDescribe the overall pattern and the point that does not fit.', ['Pattern:', 'Point that does not fit:'], fig=OUT3),
+          mc('The scatter plot shows the age of cars and the number of repairs.\nWhich description fits the data in context?',
+             ['Newer cars have few repairs and older cars have many repairs, forming two groups.', 'All cars have the same number of repairs.',
+              'Older cars have fewer repairs.', 'There is no pattern.'], fig=CLUS),
+          mc('Which statement describes the association in context?', ['As hours of TV increase, test scores tend to decrease.', 'As hours of TV increase, test scores tend to increase.',
+                                                                         'Hours of TV and test scores are not related.', 'Every student scored the same.'], fig=NEG),
+          sa('The scatter plot shows the price of an item and the number sold.\nWhich point does not fit the pattern? What might explain it?', ['Point:', 'Possible reason:'], fig=OUT4),
+          tf('The plant grows faster each week, so the pattern in the scatter plot is nonlinear.', fig=NONLIN),
+      ])),
+
     # ------------------------------------------------------------------ 6.SP.B.5.d
     S('6.SP.B.5.d', 'Choose measures of center and variability based on the shape of the data',
       main=[
@@ -808,7 +873,7 @@ SETS = [
           mc('Class A test scores have mean 78 and MAD 5. Class B test scores have mean 78 and MAD 12.\nWhich statement is true?', ['Class B\'s scores vary more.', 'Class A\'s scores vary more.', 'Class B scored higher.', 'Class A scored higher.']),
           sa('In random samples, the median commute is 25 minutes in Town X and 18 minutes in Town Y. Both have similar IQRs.\nIn which town are commutes typically longer?', 'Town:'),
       ]),
-      f2=B('Judge how well a line fits the data', '8.SP.A.2', [
+      f2=B('Judge how well a line fits the data', '8.SP.A.2', nearest=True, qs=[
           tf('The line is a good fit for the data.', fig=GOOD2),
           tf('The line is a good fit for the data.', fig=BAD3),
           mc('A line of best fit should show ___.', ['the overall trend of the data', 'only the largest value', 'only the smallest value', 'only the first point']),
