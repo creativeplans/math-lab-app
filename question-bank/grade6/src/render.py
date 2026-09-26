@@ -1049,7 +1049,7 @@ def fig_pref_h(f, w):
 
 # ---------------------------------------------------------------- page
 
-def draw_label_box(c, label):
+def draw_label_box(c, label, qid=None):
     c.setStrokeColor(RULE)
     c.setLineWidth(1.2)
     c.line(ML - 5, 84, PW - MR + 5, 84)
@@ -1058,6 +1058,9 @@ def draw_label_box(c, label):
     c.setFillColor(BLUE)
     c.setFont(FB, 7.6)
     c.drawString(ML + 8, 55, 'REFERENCE LABEL — NOT PART OF THE STUDENT QUESTION')
+    if qid:
+        c.setFont(FB, 9)
+        c.drawRightString(PW - MR - 3, 55, 'ID ' + qid)
     size = 11.5
     while sw(label, FB, size) > CW - 20 and size > 7:
         size -= 0.25
@@ -1227,8 +1230,8 @@ def layout(q, s):
     return fits, draw
 
 
-def render_question(c, q, label, pageno):
-    draw_label_box(c, label)
+def render_question(c, q, label, pageno, qid=None):
+    draw_label_box(c, label, qid)
     drawer = None
     for s in [1.0, 0.94, 0.88, 0.82, 0.76, 0.7, 0.65, 0.6, 0.55, 0.5, 0.45]:
         fits, drawer = layout(q, s)

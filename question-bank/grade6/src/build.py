@@ -1,7 +1,15 @@
-"""Builds the Grade 6 question collection PDF.
+"""Builds the Grade 6 question collection PDF and its matching answer key.
 
-    python3 question-bank/grade6/src/build.py [out.pdf]
+    python3 question-bank/grade6/src/build.py
+
+writes, next to src/:
+    Grade6_Question_Collection.pdf   the questions
+    Grade6_Answer_Key.pdf            same page numbers; each question page shows a
+                                     reduced copy of the question plus its answer
+    Grade6_Answer_Key.json / .csv    machine-readable key, one record per question ID
 """
+import csv
+import json
 import os
 import sys
 
@@ -9,6 +17,8 @@ from reportlab.pdfgen import canvas
 
 sys.path.insert(0, os.path.dirname(__file__))
 import render as R  # noqa: E402
+import answers as A  # noqa: E402
+import keycard  # noqa: E402
 from qb import std_info, NEAREST_NOTE  # noqa: E402
 import data_rp, data_ns, data_ee, data_g, data_sp  # noqa: E402,E401
 
@@ -75,7 +85,11 @@ def heading_page(c, kicker, title, subtitle=None, rows=None, pageno=None):
         R.page_number(c, pageno)
 
 
-def build(out):
+def build(out, mode='questions'):
+    """mode is 'questions' or 'key'. Returns (sets, questions, pages, records)."""
+    is_key = mode == 'key'
+    akey = A.load_key()
+    records = []
     sets = list(all_sets())
     ntoc = (len(sets) + TOC_PER_PAGE - 1) // TOC_PER_PAGE
     # page map
@@ -88,7 +102,7 @@ def build(out):
     total_pages = page
 
     c = canvas.Canvas(out, pagesize=(R.PW, R.PH))
-    c.setTitle('Grade 6 Common Core Math — Question Collection')
+    c.setTitle('Grade 6 Common Core Math — ' + ('Answer Key' if is_key else 'Question Collection'))
     c.setAuthor('Math Lab')
 
     # cover
@@ -99,11 +113,14 @@ def build(out):
     c.drawString(R.ML, 330, 'GRADE 6 COMMON CORE MATH')
     c.setFillColor(R.INK)
     c.setFont(R.FB, 40)
-    c.drawString(R.ML, 280, 'Question Collection')
+    c.drawString(R.ML, 280, 'Answer Key' if is_key else 'Question Collection')
     c.setFont(R.F, 18)
     c.setFillColor(R.MUTED)
     c.drawString(R.ML, 245, 'Main • Backward Branches • Forward 1 (Grade 7) • Forward 2 (Grade 8)')
     c.drawString(R.ML, 218, '%d question sets • %d questions' % (len(sets), nq))
+    if is_key:
+        c.drawString(R.ML, 191, 'Page numbers match the Question Collection.')
+        c.drawString(R.ML, 166, 'Every page shows its question ID (for example S40-F2-Q3).')
     c.bookmarkPage('cover')
     c.addOutlineEntry('Cover', 'cover', 0)
     c.showPage()
@@ -162,24 +179,84 @@ def build(out):
             c.bookmarkPage(anchor)
             c.addOutlineEntry('%s — %s' % (key, std), anchor, 3)
             c.showPage()
+            raws = akey['S%d-%s' % (st['num'], A.section_code(key))]
             for i, q in enumerate(qs, 1):
                 pageno += 1
+                qid = A.qid(st['num'], key, i)
+                raw = raws[i - 1]
+                err = A.validate(q, raw)
+                if err:
+                    raise ValueError('%s: %s' % (qid, err))
+                qd, letter = A.present(q, qid, A.split_note(raw)[0])
                 label = '%s  •  %s  •  %s  •  Set %d  •  %s  •  Q%d/%d' % (
                     grade, dom, std, st['num'], key.title().replace('Main', 'MAIN'), i, len(qs))
                 label = label.replace('Backward', 'BACKWARD').replace('Forward', 'FORWARD')
                 if nearest:
                     label += '  \u2022  NEAREST RELATED'
+                rec = A.answer_record(q, qd, raw, letter)
                 try:
-                    R.render_question(c, q, label, pageno)
+                    if is_key:
+                        keycard.render_answer(c, qd, label, pageno, qid, rec)
+                    else:
+                        R.render_question(c, qd, label, pageno, qid)
                 except Exception as e:
                     raise RuntimeError('Set %d %s Q%d: %s' % (st['num'], key, i, e))
                 c.showPage()
+                records.append(dict(
+                    id=qid, page=pageno, set=st['num'], set_title=st['title'], set_standard=st['std'],
+                    section=key, section_title=name, standard=std, grade=grade, domain=dom,
+                    number=i, of=len(qs), nearest_related=bool(nearest), type=rec['type'],
+                    question=A.plain(qd['stem']).replace('\n', ' '),
+                    has_figure=bool(qd.get('fig') or qd.get('cfigs')),
+                    choices=([dict(letter=A.LETTERS[j], text=A.plain(ch)) for j, ch in enumerate(qd['ch'])]
+                             if rec['type'] == 'mc' and not qd.get('cfigs') else
+                             [dict(letter=A.LETTERS[j], text='(picture)') for j in range(len(qd['cfigs']))]
+                             if qd.get('cfigs') else
+                             [dict(letter='A', text='True'), dict(letter='B', text='False')]
+                             if rec['type'] == 'tf' else []),
+                    answer_lines=([] if rec['type'] in ('mc', 'tf', 'plot') else
+                                  (qd.get('ans') if isinstance(qd.get('ans'), list) else [qd.get('ans') or ''])),
+                    correct_letter=rec['letter'], correct_answer=rec['answer'], grading_note=rec['note']))
     assert pageno == total_pages, (pageno, total_pages)
     c.save()
-    return len(sets), nq, total_pages
+    return len(sets), nq, total_pages, records
+
+
+GRADING_RULES = [
+    'Match each student response to its key record by the question ID printed on the question page '
+    '(for example S40-F2-Q3). The page number is the same in the Question Collection and the Answer Key.',
+    'Multiple choice and true/false: the response is correct when the chosen letter equals correct_letter, '
+    'or when the student wrote the text of the correct choice.',
+    'Short answer: accept any mathematically equivalent form unless the question asks for a specific form '
+    '(equivalent fractions, decimals, and mixed numbers; a ratio written as a : b, a to b, or a/b; '
+    '"x = 5" or "5"; terms of an expression in any order). Units are not required unless the question asks for them.',
+    'When an answer has several parts (separated by semicolons, or with labels such as "Rate of change:"), '
+    'every part must be correct.',
+    'Drawing / plotting questions: correct_answer describes what a correct drawing shows. Judge the student\'s drawing against it.',
+    'Explain / describe questions: grading_note says what a correct response must include; accept any reasonable wording.',
+    'grading_note also lists other accepted answers and the work behind an answer. It is guidance for the grader, not for students.',
+]
+
+
+def write_data(records, base):
+    with open(base + '.json', 'w', encoding='utf-8') as f:
+        json.dump(dict(title='Grade 6 Common Core Math — Answer Key', question_count=len(records),
+                       id_format='S<set>-<section>-Q<number>; section is M (main), B1, B2, ... (backward), F1 or F2 (forward)',
+                       grading_rules=GRADING_RULES, questions=records), f, ensure_ascii=False, indent=1)
+    cols = ['id', 'page', 'set', 'section', 'number', 'standard', 'type', 'question', 'choices',
+            'correct_letter', 'correct_answer', 'grading_note']
+    with open(base + '.csv', 'w', encoding='utf-8-sig', newline='') as f:
+        w = csv.writer(f)
+        w.writerow(cols)
+        for r in records:
+            row = dict(r, choices=' | '.join('%s. %s' % (ch['letter'], ch['text']) for ch in r['choices']))
+            w.writerow([row[k] if row[k] is not None else '' for k in cols])
 
 
 if __name__ == '__main__':
-    out = sys.argv[1] if len(sys.argv) > 1 else os.path.join(
-        os.path.dirname(__file__), '..', 'Grade6_Question_Collection.pdf')
-    print(build(out))
+    here = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+    qs = build(os.path.join(here, 'Grade6_Question_Collection.pdf'), 'questions')
+    ks = build(os.path.join(here, 'Grade6_Answer_Key.pdf'), 'key')
+    assert qs[:3] == ks[:3]
+    write_data(ks[3], os.path.join(here, 'Grade6_Answer_Key'))
+    print('sets %d, questions %d, pages %d' % qs[:3])
