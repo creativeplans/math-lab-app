@@ -1,4 +1,4 @@
-from qb import S, B, sa, mc, tf, table, rect, tri, prism
+from qb import S, B, sa, mc, tf, table, rect, tri, prism, tape, draw_write
 from common import bar
 
 SETS = [
@@ -29,13 +29,14 @@ SETS = [
               mc('A rectangle is 15 cm long and 4 cm wide.\nWhat is its area?', ['60 square cm', '38 square cm', '19 square cm', '45 square cm']),
               sa('Find the area of the rectangle.', 'Area:', key='40 square inches', fig=rect(8, 5, '8 in.', '5 in.')),
           ]),
-          B('Multiplying fractions', '5.NF.B.4.a', [
-              sa('Multiply.\n{5/6} × {3/5}', 'Product:', key='1/2'),
-              sa('Multiply.\n{5/2} × {4/5}', 'Product:', key='2'),
-              tf('{2/3} × {3/4} = {6/12}', key=True),
-              mc('{3/2} × {7/8} = ?', ['{21/16}', '{10/10}', '{21/8}', '{3/7}']),
-              sa('Multiply.\n{1/2} × {1/2}', 'Product:', key='1/4'),
-          ]),
+          B('Multiply a whole number by a fraction', '4.NF.B.4.b', [
+              sa('A rectangle is 3 units long and {2/5} unit wide.\nWrite its area as a fraction.', 'Area:', key='6/5 square units',
+                 note='1 1/5 square units is also correct.'),
+              tf('4 × {3/8} = {12/8}', key=True),
+              mc('5 × {2/3} = ?', ['{10/3}', '{10/15}', '{7/3}', '{2/15}']),
+              sa('Multiply.\n6 × {3/4}', 'Product:', key='18/4', note='4 1/2 and 9/2 are also correct.'),
+              tf('2 × {5/6} = {10/12}', key=False),
+          ], num=4),
       ],
       f1=B('Area of triangles and other polygons with fractional measures', '6.G.A.1', [
           sa('A triangle has a base of 4{1/2} inches and a height of 2 inches.\nWhat is its area?', 'Area:', key='4 1/2 square inches'),
@@ -56,6 +57,64 @@ SETS = [
              'Area:', key='28 square inches'),
           tf('A figure made of two {1/2}-by-3 rectangles that do not overlap has an area of 6 square units.', key=False),
       ])),
+
+    # ------------------------------------------------------------------ 5.NF.B.4.b (tiling)
+    S('5.NF.B.4.b', 'Tile a rectangle with unit-fraction squares and connect the tiling to the area',
+      main=[
+          draw_write('The rectangle is {3/4} unit long and {1/2} unit wide.\nDraw lines to tile it with squares that are {1/4} unit on each side.\nHow many squares fit, and what is the area?',
+                     rect(3, 2, '{3/4} unit', '{1/2} unit'), ['Squares:', 'Area:'],
+                     draw='Lines that split the rectangle into 3 columns and 2 rows of 1/4-unit squares (6 squares)',
+                     key='6 squares; 6/16 = 3/8 square unit',
+                     note='Grade both: the tiling (3 by 2 squares, no gaps or overlaps) and the area 6/16 or 3/8 square unit. '
+                          'Each square is 1/4 × 1/4 = 1/16 square unit, and 3/4 × 1/2 = 3/8.'),
+          sa('The rectangle is tiled with squares that are {1/3} unit on each side.\nWhat is its area? Explain how the tiling shows it.',
+             ['Area:', 'Explanation:'], key='8/9 square unit',
+             note='Each square is 1/3 × 1/3 = 1/9 square unit, and there are 8 squares, so the area is 8/9. '
+                  'This matches 4/3 × 2/3 = 8/9.',
+             fig=dict(k='grid', rows=2, cols=4, shade=8, h=150, maxcell=48,
+                      desc='A rectangle tiled with 2 rows of 4 equal squares, with no gaps. Each square has sides 1/3 unit long.')),
+          mc('How many squares with {1/6}-unit sides tile a rectangle that is {5/6} unit by {1/2} unit?', ['15', '8', '5', '30']),
+          tf('Tiling a square with {2/3}-unit sides takes 4 squares with {1/3}-unit sides, so its area is {4/9} square unit.', key=True),
+          sa('A rectangle is tiled with 3 rows of 4 squares. Each square has {1/4}-unit sides.\nWhat are the rectangle\'s side lengths and its area? Show that multiplying the side lengths gives the same area.',
+             ['Side lengths:', 'Area:'], key='1 unit by 3/4 unit; 3/4 square unit',
+             note='4 × 1/4 = 1 and 3 × 1/4 = 3/4. The tiling gives 12 × 1/16 = 12/16 = 3/4, and 1 × 3/4 = 3/4. Both parts are required.'),
+      ],
+      back=[
+          B('Measure area by counting unit squares', '3.MD.C.6', [
+              sa('Each small square is 1 square unit.\nWhat is the area of the rectangle?', 'Area:', key='15 square units',
+                 fig=dict(k='grid', rows=3, cols=5, shade=15, h=150, maxcell=40,
+                          desc='A rectangle covered by 3 rows of 5 unit squares, all shaded.')),
+              tf('A shape covered by 9 unit squares with no gaps or overlaps has an area of 9 square units.', key=True),
+              mc('A rectangle is covered by 2 rows of 6 unit squares.\nWhat is its area?', ['12 square units', '8 square units', '6 square units', '16 square units']),
+              sa('Each small square is 1 square inch.\nWhat is the area of the shaded part?', 'Area:', key='10 square inches',
+                 fig=dict(k='grid', rows=4, cols=4, shade=10, h=170, maxcell=40)),
+              tf('If the unit squares overlap, counting them still gives the exact area.', key=False),
+          ]),
+          B('Unit fractions of a length', '3.NF.A.1', [
+              sa('A 1-unit side is split into 3 equal parts.\nHow long is each part?', 'Length:', key='1/3 unit'),
+              tf('Four lengths of {1/4} unit make 1 unit.', key=True),
+              mc('How many lengths of {1/6} unit make {5/6} unit?', ['5', '6', '1', '11']),
+              sa('A side is made of 3 lengths of {1/4} unit.\nHow long is the side?', 'Length:', key='3/4 unit'),
+              tf('Two lengths of {1/8} unit make {2/16} unit.', key=False),
+          ]),
+      ],
+      f1=B('Pack a prism with unit-fraction cubes to find its volume', '6.G.A.2', [
+          sa('A prism is 1 unit by {1/2} unit by {1/2} unit.\nHow many cubes with edges {1/2} unit long pack it?', 'Cubes:', key='4'),
+          tf('A cube with edges {1/2} unit long has a volume of {1/8} cubic unit.', key=True),
+          mc('A box is packed with 24 cubes that each have edges {1/2} unit long.\nWhat is its volume?',
+             ['3 cubic units', '12 cubic units', '24 cubic units', '6 cubic units']),
+          sa('Find the volume of a prism that is {3/2} units by 1 unit by {1/2} unit.', 'Volume:', key='3/4 cubic unit'),
+          tf('Packing a 1-by-1-by-1 cube with cubes that have edges {1/3} unit long takes 9 cubes.', key=False),
+      ]),
+      f2=B('Area of composite figures with fractional measures', '7.G.B.6', [
+          sa('A {1/4}-m by {1/3}-m rectangle is cut out of a {3/4}-m by {2/3}-m rectangle.\nWhat area is left?', 'Area:', key='5/12 square meter'),
+          tf('Two rectangles that do not overlap, {1/2} ft by 3 ft and {1/2} ft by 1 ft, have a total area of 2 square feet.', key=True),
+          mc('A square with sides of {5/2} units has a square with sides of {1/2} unit removed.\nWhat is the area of the figure?',
+             ['6 square units', '6{1/4} square units', '2 square units', '5 square units']),
+          sa('A rug is 2{1/2} ft by 4 ft. A square corner with sides of 1{1/2} ft is cut off.\nWhat is the area of the rug that is left?', 'Area:',
+             key='7 3/4 square feet', note='10 - 2 1/4 = 7 3/4; 7.75 is also correct.'),
+          tf('A triangle with a base of {3/4} unit and a height of {2/3} unit has an area of {1/2} square unit.', key=False),
+      ]), num=67),
 
     # ------------------------------------------------------------------ 5.NF.B.5.a
     S('5.NF.B.5.a', 'Compare the size of a product to the size of one factor without multiplying',
@@ -106,28 +165,28 @@ SETS = [
           tf('Multiplying 12 by {7/6} gives a product greater than 12.', key=True),
           mc('Which statement explains why {4/5} × 30 is less than 30?',
              ['{4/5} is less than 1.', '{4/5} is greater than 1.', '30 is greater than 1.', 'The product is a fraction.']),
-          sa('Use the fact that {4/4} = 1 to explain why {2/3} = {8/12}.', 'Explanation:',
-             key='2/3 × 4/4 = 8/12, and 4/4 = 1, so multiplying by 4/4 does not change the value.',
-             note='The response must connect the equivalent fraction to multiplying by a fraction equal to 1.'),
+          sa('Explain why multiplying 24 by {5/8} gives a product less than 24.', 'Explanation:',
+             key='5/8 is less than 1, so 5/8 × 24 is only part of 24 (5 of 8 equal parts of 24, which is 15).',
+             note='Must say the factor 5/8 is less than 1, so the product is a fraction of 24 and smaller than 24. Computing 15 alone is not an explanation.'),
           mc('Which expression has a value equal to 9?', ['{5/5} × 9', '{5/6} × 9', '{6/5} × 9', '{1/5} × 9']),
           sa('Without multiplying, order the products from least to greatest.\n{3/4} × 10, {4/3} × 10, {4/4} × 10', 'Order:',
              key='3/4 × 10, 4/4 × 10, 4/3 × 10'),
       ],
       back=[
-          B('Equivalent fractions', '4.NF.A.1', [
-              tf('To write a fraction equal to {3/5}, you can multiply its numerator and denominator by the same number.', key=True),
-              sa('Find the missing number.\n{3/5} = {?/20}', 'Missing number:', key='12'),
-              mc('Which fraction is equivalent to {7/8}?', ['{21/24}', '{14/24}', '{7/16}', '{8/7}']),
-              sa('Find the missing number.\n{1/3} = {4/?}', 'Missing number:', key='12'),
-              tf('{2/9} = {4/27}', key=False),
-          ]),
           B('Fractions equal to 1', '3.NF.A.3.c', [
               tf('{4/4} = 4', key=False),
               sa('Write 1 as a fraction with a denominator of 6.', 'Fraction:', key='6/6'),
-              mc('Which fraction is equal to 1?', ['{9/9}', '{9/1}', '{1/9}', '{0/9}']),
-              tf('{5/5} is greater than 1.', key=False),
+              mc('Which fraction is equal to 1?', ['{8/8}', '{8/1}', '{1/8}', '{0/8}']),
+              tf('{6/6} is greater than 1.', key=False),
               sa('How many eighths make 1 whole?', 'Eighths:', key='8'),
-          ]),
+          ], num=2),
+          B('Multiply a whole number by a fraction', '4.NF.B.4.b', [
+              tf('3 × {2/3} = 2', key=True),
+              sa('Multiply.\n4 × {3/4}', 'Product:', key='3', note='12/4 is also correct.'),
+              mc('6 × {3/2} = ?', ['9', '{18/12}', '4', '{9/2}']),
+              sa('Multiply.\n5 × {2/5}', 'Product:', key='2', note='10/5 is also correct.'),
+              tf('2 × {7/8} = {14/16}', key=False),
+          ], num=3),
       ],
       f1=B('Percents greater than and less than 100%', '6.RP.A.3.c', [
           tf('150% of 40 is less than 40.', key=False),
@@ -143,6 +202,50 @@ SETS = [
           sa('A population of 2,000 grows by 5%.\nWhat is the new population?', 'Population:', key='2,100'),
           mc('Which multiplier shows a 40% decrease?', ['0.6', '0.4', '1.4', '1.04']),
       ])),
+
+    # ------------------------------------------------------------------ 5.NF.B.5.b (equivalence as multiplying by 1)
+    S('5.NF.B.5.b', 'Explain equivalent fractions as multiplying by a fraction equal to 1',
+      main=[
+          sa('Use the fact that {4/4} = 1 to explain why {2/3} = {8/12}.', 'Explanation:',
+             key='2/3 × 4/4 = 8/12, and 4/4 = 1, so multiplying by 4/4 does not change the value.',
+             note='The response must connect the equivalent fraction to multiplying by a fraction equal to 1.'),
+          mc('Which fraction equal to 1 turns {3/5} into {9/15}?', ['{3/3}', '{9/9}', '{5/5}', '{15/15}']),
+          tf('{5/6} × {2/2} = {10/12}, and {10/12} = {5/6} because {2/2} = 1.', key=True),
+          sa('What fraction equal to 1 can you multiply {7/10} by to get {28/40}?', 'Fraction:', key='4/4'),
+          tf('{3/4} × {2/3} = {6/12} shows that {3/4} = {6/12}.', key=False),
+      ],
+      back=[
+          B('Equivalent fractions', '4.NF.A.1', [
+              tf('To write a fraction equal to {3/5}, you can multiply its numerator and denominator by the same nonzero whole number.', key=True),
+              sa('Find the missing number.\n{3/5} = {?/20}', 'Missing number:', key='12'),
+              mc('Which fraction is equivalent to {7/8}?', ['{21/24}', '{14/24}', '{7/16}', '{8/7}']),
+              sa('Find the missing number.\n{1/3} = {4/?}', 'Missing number:', key='12'),
+              tf('{2/9} = {4/27}', key=False),
+          ]),
+          B('Equivalent fractions with a model', '3.NF.A.3.b', [
+              tf('{1/2} = {2/4}', key=True),
+              sa('Find the missing number.\n{2/3} = {?/6}', 'Missing number:', key='4'),
+              mc('Which fraction is equal to {3/4}?', ['{6/8}', '{3/8}', '{4/6}', '{4/3}']),
+              sa('The bar shows {1/3} shaded. Each part is cut in half.\nHow many sixths are shaded?', 'Sixths:', key='2', fig=bar(3, 1)),
+              tf('{2/4} = {2/8}', key=False),
+          ]),
+      ],
+      f1=B('Find equivalent ratios', '6.RP.A.3.a', [
+          sa('Write a ratio equivalent to 3 : 5 by multiplying both numbers by 4.', 'Ratio:', key='12 : 20'),
+          tf('6 : 8 and 9 : 12 are equivalent ratios.', key=True),
+          mc('Which ratio is equivalent to 2 : 7?', ['6 : 21', '4 : 9', '7 : 2', '2 : 14']),
+          sa('Find the missing value.\n5 : 6 = 20 : ?', 'Missing value:', key='24'),
+          tf('4 : 10 and 6 : 12 are equivalent ratios.', key=False),
+      ]),
+      f2=B('Test for a proportional relationship with equivalent ratios', '7.RP.A.2.a', [
+          tf('The table shows a proportional relationship.', key=True, fig=table([['x', '2', '4', '6'], ['y', '5', '10', '15']])),
+          mc('Which table shows a proportional relationship?',
+             ['x: 1, 2, 3 and y: 4, 8, 12', 'x: 1, 2, 3 and y: 4, 6, 8', 'x: 1, 2, 3 and y: 5, 6, 7', 'x: 1, 2, 3 and y: 3, 5, 7']),
+          sa('Are 3 : 4 and 12 : 16 equivalent ratios? Explain using a fraction equal to 1.', ['Answer:', 'Explanation:'], key='Yes',
+             note='3/4 × 4/4 = 12/16; multiplying by 4/4 = 1 does not change the value.'),
+          tf('3 : 5 and 9 : 20 are equivalent ratios.', key=False),
+          sa('The ratios 2 : 9 and 8 : y are equivalent.\nFind y.', 'y =', key='36'),
+      ]), num=68),
 
     # ------------------------------------------------------------------ 5.NF.B.6 (real-world)
     S('5.NF.B.6', 'Solve real-world problems by multiplying fractions and mixed numbers',
@@ -169,13 +272,14 @@ SETS = [
               mc('Which fraction is equal to 4{2/5}?', ['{22/5}', '{42/5}', '{11/5}', '{24/5}']),
               sa('Write {15/8} as a mixed number.', 'Mixed number:', key='1 7/8'),
           ]),
-          B('Multiplying fractions', '5.NF.B.4.a', [
-              sa('Multiply.\n{3/4} × {5/2}', 'Product:', key='15/8', note='1 7/8 is also correct.'),
-              sa('Multiply.\n{2/3} × {3/2}', 'Product:', key='1'),
-              tf('{10/3} × {3/5} = 2', key=True),
-              mc('{3/2} × {2/3} = ?', ['1', '{6/5}', '{5/6}', '{9/4}']),
-              sa('Multiply.\n{5/8} × 4', 'Product:', key='2 1/2', note='20/8 or 5/2 is also correct.'),
-          ]),
+          B('Word problems that add fractions with like denominators', '4.NF.B.3.d', [
+              sa('A recipe uses {3/4} cup of oats. Ann makes the recipe twice.\nHow many cups of oats does she use? Write a fraction.', 'Cups:',
+                 key='6/4 cups', note='1 2/4, 1 1/2, and 3/2 cups are also correct.'),
+              tf('{2/5} + {2/5} + {2/5} = {6/5}', key=True),
+              mc('Ty walks {3/8} mile to school and {3/8} mile home.\nHow far does he walk in all?', ['{6/8} mile', '{6/16} mile', '{3/8} mile', '{9/8} mile']),
+              sa('A plant grew {1/6} inch on Monday and {4/6} inch on Tuesday.\nHow much did it grow in all?', 'Growth:', key='5/6 inch'),
+              tf('{5/12} + {5/12} = {10/24}', key=False),
+          ], num=4),
       ],
       f1=B('Word problems with division of fractions', '6.NS.A.1', [
           sa('How many {3/4}-cup servings are in 6 cups of soup?', 'Servings:', key='8'),
@@ -191,18 +295,18 @@ SETS = [
           sa('The temperature was 2°F. It dropped {1/2}°F each hour for 9 hours.\nWhat was the final temperature?', 'Temperature:', key='-2 1/2°F'),
           mc('A stock loses {3/8} dollar each day for 4 days.\nWhat is the total change in value?',
              ['-1{1/2} dollars', '1{1/2} dollars', '-{3/32} dollar', '-4{3/8} dollars']),
-          sa('A tank holds 12{1/2} gallons. {2/5} of the water drains out.\nHow many gallons drain out?', 'Gallons:', key='5 gallons'),
+          sa('A tank contains 12{1/2} gallons of water. {2/5} of the water drains out.\nHow many gallons drain out?', 'Gallons:', key='5 gallons'),
           tf('-{2/3} × 4{1/2} = -3', key=True),
       ])),
 
     # ------------------------------------------------------------------ 5.NF.B.6 (mixed numbers)
-    S('5.NF.B.6', 'Multiply mixed numbers',
+    S('5.NF.B.6', 'Solve real-world problems by multiplying mixed numbers',
       main=[
-          sa('Multiply.\n2{1/2} × 3', 'Product:', key='7 1/2'),
-          sa('Multiply.\n1{1/3} × 1{1/2}', 'Product:', key='2'),
-          mc('Multiply.\n2{1/4} × 1{2/3}', ['3{3/4}', '2{2/12}', '3{1/6}', '4{1/2}']),
-          sa('Multiply.\n3{1/5} × 2{1/2}', 'Product:', key='8'),
-          tf('1{1/2} × 1{1/2} = 1{1/4}', key=False),
+          sa('A bag of flour weighs 2{1/2} pounds.\nHow much do 3 bags weigh?', 'Weight:', key='7 1/2 pounds'),
+          sa('A garden bed is 1{1/3} yards long and 1{1/2} yards wide.\nWhat is its area?', 'Area:', key='2 square yards'),
+          mc('A hiker walks 2{1/4} miles each hour.\nHow far does she walk in 1{2/3} hours?', ['3{3/4} miles', '2{2/12} miles', '3{1/6} miles', '4{1/2} miles']),
+          sa('A poster is 3{1/5} feet long. A copy is made 2{1/2} times as long.\nHow long is the copy?', 'Length:', key='8 feet'),
+          tf('A recipe uses 1{1/2} cups of milk. Making 1{1/2} times the recipe uses 1{1/4} cups of milk.', key=False),
       ],
       back=[
           B('Mixed numbers and fractions greater than 1', '4.NF.B.3.b', [
@@ -212,20 +316,20 @@ SETS = [
               mc('Which mixed number is equal to {9/2}?', ['4{1/2}', '9{1/2}', '2{1/9}', '4{1/9}']),
               sa('Write 5{1/2} as a fraction.', 'Fraction:', key='11/2'),
           ]),
-          B('Multiplying fractions', '5.NF.B.4.a', [
-              sa('Multiply.\n{7/4} × {2/3}', 'Product:', key='7/6', note='14/12 or 1 1/6 is also correct.'),
-              tf('{5/2} × {3/2} = {15/2}', key=False),
-              mc('{4/3} × {9/4} = ?', ['3', '{13/7}', '{36/7}', '2']),
-              sa('Multiply.\n{5/3} × 6', 'Product:', key='10'),
-              sa('Multiply.\n{3/2} × {3/2}', 'Product:', key='9/4', note='2 1/4 is also correct.'),
-          ]),
           B('Breaking apart a factor to multiply', '3.OA.B.5', [
               tf('4 × (5 + 2) = 4 × 5 + 4 × 2', key=True),
               sa('Fill in the blank.\n6 × 12 = 6 × 10 + 6 × ___', 'Blank:', key='2'),
               mc('Which expression is equal to 3 × 15?', ['3 × 10 + 3 × 5', '3 × 10 + 5', '3 + 10 × 5', '3 × 10 × 5']),
               tf('7 × 13 = 7 × 10 + 3', key=False),
               sa('Fill in the blank.\n8 × (4 + 1) = 8 × 4 + 8 × ___', 'Blank:', key='1'),
-          ]),
+          ], num=3),
+          B('Measurement word problems with fractions', '4.MD.A.2', [
+              sa('A ribbon is {3/4} yard long.\nHow long are 4 ribbons in all?', 'Length:', key='3 yards', note='12/4 yards is also correct.'),
+              tf('Each lap is {1/2} mile. 6 laps is 3 miles.', key=True),
+              mc('A jug holds 2 liters.\nHow many milliliters are in 3 jugs?', ['6,000 mL', '600 mL', '5,000 mL', '2,003 mL']),
+              sa('Each box weighs 1{1/4} pounds.\nHow much do 2 boxes weigh?', 'Weight:', key='2 1/2 pounds', note='2 2/4 pounds is also correct.'),
+              tf('3 pieces of wood, each {2/5} meter long, make 1 meter in all.', key=False),
+          ], num=4),
       ],
       f1=B('Volume of prisms with fractional edge lengths', '6.G.A.2', [
           sa('A box is 2{1/2} ft by 2 ft by 1{1/2} ft.\nWhat is its volume?', 'Volume:', key='7 1/2 cubic feet'),
@@ -236,19 +340,19 @@ SETS = [
           sa('Find the volume of the prism.', 'Volume:', key='3 cubic feet', fig=prism(4, 1, 3, labels=('4 ft', '{1/2} ft', '1{1/2} ft'))),
           tf('A box that is {1/2} m by {1/2} m by {1/2} m has a volume of {1/8} cubic meter.', key=True),
       ]),
-      f2=B('Surface area and volume of prisms', '7.G.B.6', [
+      f2=B('Surface area of prisms with fractional edge lengths', '7.G.B.6', [
           sa('A rectangular prism is 4 cm by 3 cm by 2{1/2} cm.\nWhat is its surface area?', 'Surface area:', key='59 square cm'),
-          sa('A triangular prism has triangle bases with a base of 3 in. and a height of 2{1/2} in. The prism is 6 in. long.\nWhat is its volume?',
-             'Volume:', key='22 1/2 cubic inches', note='22.5 is also correct.'),
-          mc('A box is 5 in. by 4 in. by 1{1/2} in.\nWhat is its volume?', ['30 cubic inches', '20 cubic inches', '10{1/2} cubic inches', '300 cubic inches']),
+          sa('A cube has edges that are 2{1/2} inches long.\nWhat is its surface area?', 'Surface area:', key='37 1/2 square inches',
+             note='37.5 is also correct.'),
+          mc('A box is 5 in. by 4 in. by 1{1/2} in.\nWhat is its surface area?', ['67 square inches', '30 square inches', '40 square inches', '33{1/2} square inches']),
           sa('A cube has edges that are 1{1/2} m long.\nWhat is its surface area?', 'Surface area:', key='13 1/2 square meters'),
-          tf('A prism with a base area of 7{1/2} square feet and a height of 4 feet has a volume of 11{1/2} cubic feet.', key=False),
+          tf('A prism that is 2 ft by 1{1/2} ft by 1 ft has a surface area of 13 square feet.', key=True),
       ])),
 
     # ------------------------------------------------------------------ 5.NF.B.7.a
     S('5.NF.B.7.a', 'Divide a unit fraction by a whole number',
       main=[
-          sa('Divide.\n{1/3} ÷ 4', 'Quotient:', key='1/12'),
+          sa('Divide.\n{1/7} ÷ 2', 'Quotient:', key='1/14'),
           sa('Divide.\n{1/2} ÷ 5', 'Quotient:', key='1/10'),
           mc('{1/4} ÷ 2 = ?', ['{1/8}', '{1/2}', '8', '{2/4}']),
           sa('{1/5} of a pan of brownies is shared equally by 3 friends.\nWhat fraction of the whole pan does each friend get?', 'Fraction:', key='1/15'),
@@ -257,7 +361,7 @@ SETS = [
       back=[
           B('Unit fractions get smaller as the number of parts grows', '3.NF.A.1', [
               tf('When a whole is cut into more equal parts, each part is smaller.', key=True),
-              mc('Which unit fraction is the smallest?', ['{1/12}', '{1/2}', '{1/5}', '{1/8}']),
+              mc('Which unit fraction is the smallest?', ['{1/8}', '{1/2}', '{1/3}', '{1/6}']),
               sa('A bar is cut into 6 equal parts.\nWhat fraction of the bar is one part?', 'Fraction:', key='1/6'),
               tf('{1/3} < {1/4}', key=False),
               sa('What fraction of the bar is shaded?', 'Fraction:', key='1/4', fig=bar(4, 1)),
@@ -269,13 +373,13 @@ SETS = [
               sa('Divide.\n16 ÷ 4', 'Quotient:', key='4'),
               sa('36 is shared equally among 6 people.\nHow much does each person get?', 'Answer:', key='6'),
           ]),
-          B('Multiplying unit fractions', '5.NF.B.4.a', [
-              sa('Multiply.\n{1/3} × {1/4}', 'Product:', key='1/12'),
-              tf('{1/2} × {1/5} = {1/10}', key=True),
-              mc('{1/6} × {1/2} = ?', ['{1/12}', '{1/8}', '{2/6}', '{1/3}']),
-              sa('Multiply.\n{1/4} × {1/4}', 'Product:', key='1/16'),
-              tf('{1/2} × {1/3} = {2/5}', key=False),
-          ]),
+          B('Equivalent fractions', '4.NF.A.1', [
+              sa('Find the missing number.\n{1/3} = {?/12}', 'Missing number:', key='4'),
+              tf('{1/2} = {5/10}', key=True),
+              mc('Which fraction is equal to {1/4}?', ['{2/8}', '{2/4}', '{4/1}', '{1/8}']),
+              sa('Find the missing number.\n{1/5} = {3/?}', 'Missing number:', key='15'),
+              tf('{1/6} = {3/12}', key=False),
+          ], num=4),
       ],
       f1=B('Divide fractions', '6.NS.A.1', [
           sa('Divide.\n{3/4} ÷ 3', 'Quotient:', key='1/4'),
@@ -292,10 +396,57 @@ SETS = [
           tf('-({1/2} ÷ 5) = (-{1/2}) ÷ 5', key=True),
       ])),
 
+    # ------------------------------------------------------------------ 5.NF.B.7.a (models and checking)
+    S('5.NF.B.7.a', 'Use models to divide a unit fraction by a whole number and check with multiplication',
+      main=[
+          draw_write('The bar shows {1/3} shaded.\nSplit every third into 2 equal parts to find {1/3} ÷ 2. Then write the quotient.', bar(3, 1), 'Quotient:',
+                     draw='Each of the 3 parts split into 2 equal parts (6 small parts in all); the shaded third is now 2 small parts',
+                     key='1/6', note='Grade both: all 3 parts split in half, and the quotient 1/6 (one small part is 1/6 of the whole bar).'),
+          sa('Explain how you can use multiplication to check that {1/4} ÷ 3 = {1/12}.', ['Explanation:', ''],
+             key='Multiply the quotient by the divisor: 1/12 × 3 = 3/12 = 1/4, which is the number that was divided, so the quotient is correct.',
+             note='Must multiply 1/12 by 3 (or 3 × 1/12) and get back 1/4.'),
+          mc('Which equation checks {1/5} ÷ 4 = {1/20}?', ['{1/20} × 4 = {1/5}', '{1/5} × 4 = {4/5}', '{1/20} ÷ 4 = {1/80}', '{1/5} + 4 = 4{1/5}']),
+          tf('{1/2} ÷ 3 = {1/6} because 3 groups of {1/6} make {1/2}.', key=True),
+          sa('4 friends share {1/2} of a pizza equally.\nHow much of the whole pizza does each friend get? Describe a model that shows it.',
+             ['Share:', 'Model:'], key='1/8 of the pizza',
+             note='Model: the half is split into 4 equal parts; the whole pizza then has 8 such parts, so each part is 1/8. Both parts are required.'),
+      ],
+      back=[
+          B('Unit fractions', '3.NF.A.1', [
+              sa('A bar is cut into 8 equal parts.\nWhat fraction of the bar is one part?', 'Fraction:', key='1/8'),
+              tf('2 parts of size {1/6} make {2/6}.', key=True),
+              mc('What fraction of the bar is shaded?', ['{1/6}', '{1/5}', '{6/1}', '{5/6}'], fig=bar(6, 1)),
+              sa('A whole is cut into 3 equal parts.\nWhat fraction of the whole is one part?', 'Fraction:', key='1/3'),
+              tf('{1/4} is one of 3 equal parts of a whole.', key=False),
+          ]),
+          B('A fraction as a multiple of a unit fraction', '4.NF.B.4.a', [
+              sa('Write {3/12} as a whole number times {1/12}.', 'Expression:', key='3 × 1/12'),
+              tf('4 × {1/8} = {4/8}', key=True),
+              mc('Which fraction equals 6 × {1/10}?', ['{6/10}', '{6/60}', '{1/60}', '{10/6}']),
+              sa('Multiply.\n2 × {1/6}', 'Product:', key='2/6', note='1/3 is also correct.'),
+              tf('3 × {1/9} = {3/27}', key=False),
+          ]),
+      ],
+      f1=B('Divide fractions and check with multiplication', '6.NS.A.1', [
+          sa('Divide.\n{2/3} ÷ 4', 'Quotient:', key='1/6', note='2/12 is also correct.'),
+          tf('{3/4} ÷ {1/4} = 3 because 3 × {1/4} = {3/4}.', key=True),
+          mc('Which equation checks {2/3} ÷ {3/4} = {8/9}?',
+             ['{8/9} × {3/4} = {2/3}', '{2/3} × {3/4} = {1/2}', '{8/9} × {2/3} = {16/27}', '{3/4} ÷ {8/9} = {27/32}']),
+          sa('Divide.\n{4/5} ÷ 2', 'Quotient:', key='2/5'),
+          tf('{1/2} ÷ {1/3} = {1/6}', key=False),
+      ]),
+      f2=B('Divide rational numbers', '7.NS.A.2.b', [
+          sa('Find the quotient.\n-{1/4} ÷ 2', 'Quotient:', key='-1/8'),
+          tf('-{1/3} ÷ 5 = -{1/15}', key=True),
+          mc('Find the quotient.\n{1/6} ÷ (-3)', ['-{1/18}', '{1/18}', '-{1/2}', '-18']),
+          sa('Find the quotient.\n(-{1/2}) ÷ (-4)', 'Quotient:', key='1/8'),
+          tf('(-{1/5}) ÷ 2 = {1/10}', key=False),
+      ]), num=69),
+
     # ------------------------------------------------------------------ 5.NF.B.7.b
     S('5.NF.B.7.b', 'Divide a whole number by a unit fraction',
       main=[
-          sa('Divide.\n4 ÷ {1/5}', 'Quotient:', key='20'),
+          sa('Divide.\n6 ÷ {1/5}', 'Quotient:', key='30'),
           sa('Divide.\n3 ÷ {1/6}', 'Quotient:', key='18'),
           mc('How many {1/3}s are in 7?', ['21', '{7/3}', '{1/21}', '10']),
           sa('Divide.\n9 ÷ {1/4}', 'Quotient:', key='36'),
@@ -312,7 +463,7 @@ SETS = [
           B('Unit fractions that make a whole', '3.NF.A.1', [
               sa('How many {1/4}s make 1 whole?', 'Answer:', key='4'),
               tf('There are 3 thirds in 2 wholes.', key=False),
-              mc('How many {1/5}s make 2 wholes?', ['10', '5', '2', '7']),
+              mc('How many {1/6}s make 2 wholes?', ['12', '6', '2', '8']),
               sa('How many {1/8}s make 1 whole?', 'Answer:', key='8'),
               tf('There are 2 halves in 2 wholes.', key=False),
           ]),
@@ -332,11 +483,59 @@ SETS = [
           tf('Walking 3 miles in {3/4} hour is a speed of 4 miles per hour.', key=True),
       ])),
 
+    # ------------------------------------------------------------------ 5.NF.B.7.b (models and checking)
+    S('5.NF.B.7.b', 'Use models to divide a whole number by a unit fraction and check with multiplication',
+      main=[
+          draw_write('Each bar is 1 whole.\nSplit each whole into fourths to find 2 ÷ {1/4}. Then write the quotient.',
+                     tape(dict(n=1, name='1 whole'), dict(n=1, name='1 whole'), maxunit=300, bh=44), 'Quotient:',
+                     draw='Each of the 2 bars split into 4 equal parts (8 fourths in all)', key='8',
+                     note='Grade both: both wholes split into fourths, and the quotient 8.'),
+          sa('Explain how to use multiplication to check that 5 ÷ {1/3} = 15.', ['Explanation:', ''],
+             key='15 × 1/3 = 15/3 = 5, which is the number that was divided, so 15 is correct.',
+             note='Must multiply 15 by 1/3 (or 1/3 × 15) and get back 5.'),
+          mc('Which equation checks 6 ÷ {1/2} = 12?', ['12 × {1/2} = 6', '6 × {1/2} = 3', '12 ÷ {1/2} = 24', '6 × 12 = 72']),
+          tf('3 ÷ {1/5} = 15 because each of the 3 wholes has 5 fifths.', key=True),
+          sa('Write a story problem for 4 ÷ {1/2} and solve it. Describe a model that shows the answer.', ['Story and answer:', 'Model:'],
+             key='Answer 8. Example story: How many 1/2-cup scoops are in 4 cups?',
+             note='The story must ask how many groups of 1/2 are in 4 (a story about sharing 4 between 2 people gives 2 and is not correct). '
+                  'Model: 4 wholes, each split into 2 halves, make 8 halves.'),
+      ],
+      back=[
+          B('Write whole numbers as sums of unit fractions', '4.NF.B.3.b', [
+              sa('Write 1 as a sum of thirds.', 'Sum:', key='1/3 + 1/3 + 1/3'),
+              tf('2 = {5/5} + {5/5}', key=True),
+              mc('Which sum equals 1?', ['{1/4} + {1/4} + {1/4} + {1/4}', '{1/4} + {1/4}', '{1/4} + {1/4} + {1/4}', '{1/2} + {1/4}']),
+              sa('Write 2 as a fraction with a denominator of 6.', 'Fraction:', key='12/6'),
+              tf('3 = {3/3}', key=False),
+          ]),
+          B('A fraction as a multiple of a unit fraction', '4.NF.B.4.a', [
+              sa('Write {8/4} as a whole number times {1/4}.', 'Expression:', key='8 × 1/4'),
+              tf('15 × {1/3} = 5', key=True),
+              mc('What is 10 × {1/5}?', ['2', '{1/50}', '50', '{10/50}']),
+              sa('Multiply.\n6 × {1/2}', 'Product:', key='3', note='6/2 is also correct.'),
+              tf('12 × {1/4} = 48', key=False),
+          ]),
+      ],
+      f1=B('Divide whole numbers by fractions and check with multiplication', '6.NS.A.1', [
+          sa('Divide.\n3 ÷ {3/5}', 'Quotient:', key='5'),
+          tf('2 ÷ {2/3} = 3 because 3 × {2/3} = 2.', key=True),
+          mc('Which equation checks 4 ÷ {2/7} = 14?', ['14 × {2/7} = 4', '4 × {2/7} = {8/7}', '14 ÷ {2/7} = 49', '4 × 14 = 56']),
+          sa('How many {3/4}-foot pieces can be cut from a 9-foot board?', 'Pieces:', key='12'),
+          tf('6 ÷ {3/4} = {9/2}', key=False),
+      ]),
+      f2=B('Divide rational numbers', '7.NS.A.2.b', [
+          sa('Find the quotient.\n-3 ÷ {1/4}', 'Quotient:', key='-12'),
+          tf('4 ÷ (-{1/2}) = -8', key=True),
+          mc('Find the quotient.\n(-5) ÷ (-{1/3})', ['15', '-15', '{5/3}', '-{5/3}']),
+          sa('Find the quotient.\n-2 ÷ {1/6}', 'Quotient:', key='-12'),
+          tf('(-6) ÷ {1/2} = -3', key=False),
+      ]), num=70),
+
     # ------------------------------------------------------------------ 5.NF.B.7.c
     S('5.NF.B.7.c', 'Solve word problems that divide unit fractions and whole numbers',
       main=[
-          sa('How many {1/3}-cup servings of raisins are in 2 cups?', 'Servings:', key='6'),
-          sa('3 friends share {1/2} pound of chocolate equally.\nHow much chocolate does each friend get?', 'Pounds:', key='1/6 pound'),
+          sa('How many {1/4}-cup scoops of birdseed are in 3 cups?', 'Scoops:', key='12'),
+          sa('4 students share {1/3} liter of paint equally.\nHow much paint does each student get?', 'Liters:', key='1/12 liter'),
           mc('A 5-meter rope is cut into pieces that are {1/4} meter long.\nHow many pieces are there?', ['20', '{5/4}', '{1/20}', '9']),
           sa('{1/8} of a pizza is shared equally by 2 people.\nWhat fraction of the whole pizza does each person get?', 'Fraction:', key='1/16'),
           tf('A 6-mile trail is split into {1/2}-mile sections. There are 12 sections.', key=True),
@@ -349,13 +548,13 @@ SETS = [
               sa('A 27-foot fence is split into 9 equal sections.\nHow long is each section?', 'Length:', key='3 feet'),
               sa('48 eggs are packed 6 to a carton.\nHow many cartons are filled?', 'Cartons:', key='8'),
           ]),
-          B('A fraction as division', '5.NF.B.3', [
-              sa('Write 1 ÷ 4 as a fraction.', 'Fraction:', key='1/4'),
-              tf('2 ÷ 3 = {2/3}', key=True),
-              mc('4 people share 1 pie equally.\nHow much pie does each person get?', ['{1/4} pie', '4 pies', '{4/1} pies', '{3/4} pie']),
-              sa('Write {1/6} as a division expression.', 'Expression:', key='1 ÷ 6'),
-              tf('5 people share 2 sandwiches equally, so each person gets {5/2} sandwiches.', key=False),
-          ]),
+          B('Word problems: a whole number times a unit fraction', '4.NF.B.4.c', [
+              sa('Each scoop holds {1/4} cup.\nHow many cups are in 8 scoops?', 'Cups:', key='2 cups', note='8/4 cups is also correct.'),
+              tf('5 servings of {1/3} pound each weigh {5/3} pounds in all.', key=True),
+              mc('Each piece of ribbon is {1/2} meter long.\nHow long are 6 pieces in all?', ['3 meters', '{1/12} meter', '6{1/2} meters', '12 meters']),
+              sa('Each lap is {1/8} mile.\nHow far are 16 laps?', 'Distance:', key='2 miles', note='16/8 miles is also correct.'),
+              tf('4 cups that each hold {1/3} liter hold {4/12} liter in all.', key=False),
+          ], num=3),
       ],
       f1=B('Word problems that divide fractions by fractions', '6.NS.A.1', [
           sa('How many {3/8}-pound bags can be filled from 3 pounds of rice?', 'Bags:', key='8'),

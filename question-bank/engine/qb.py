@@ -1,6 +1,8 @@
 """Constructors for question sets."""
 
 GRADE = 6  # set by build.load_grade() before the data modules are imported
+STRICT_BACKWARD = False  # set from the grade's STRICT_BACKWARD; when False, same-grade branches are only listed
+SAME_GRADE_BACKWARD = []
 
 DOMAINS = {
     'RP': 'Ratios & Proportional Relationships',
@@ -34,23 +36,39 @@ def tf(stem, fig=None, **kw):
     return dict(t='tf', stem=stem, fig=fig, **kw)
 
 
-NEAREST_NOTE = ('No Grade 8 standard directly continues this skill. '
-                'This branch uses the nearest related Grade 8 standard.')
+def nearest_note():
+    g = GRADE + 2
+    return ('No Grade %d standard directly continues this skill. '
+            'This branch uses the nearest related Grade %d standard.' % (g, g))
 
 
-def B(title, std, qs, nearest=False):
-    """nearest=True flags a forward branch with no direct next-grade continuation."""
+def B(title, std, qs, nearest=False, num=None):
+    """nearest=True flags a forward branch with no direct next-grade continuation.
+    num fixes a backward branch's number (its ID code B<num>); by default branches count 1, 2, 3."""
     assert len(qs) == 5, (title, len(qs))
     std_info(std)
-    return dict(title=title, std=std, qs=qs, nearest=nearest)
+    d = dict(title=title, std=std, qs=qs, nearest=nearest)
+    if num:
+        d['fixed_num'] = num
+    return d
 
 
-def S(std, title, main, back, f1, f2):
+def S(std, title, main, back, f1, f2, num=None):
+    """num fixes the set number (IDs S<num>-...). Sets added after a collection is published take
+    the next free number so earlier IDs never move; unnumbered sets count up in collection order."""
     assert len(main) == 5, (std, title)
     assert std.startswith('%d.' % GRADE), std
+    for b in back:
+        g = b['std'].split('.')[0]
+        if not (g == 'K' or int(g) < GRADE):  # a backward branch must use an earlier grade
+            SAME_GRADE_BACKWARD.append((title, b['title'], b['std']))
+            assert not STRICT_BACKWARD, (title, b['std'])
     assert f1['std'].startswith('%d.' % (GRADE + 1)), f1['std']
     assert f2['std'].startswith('%d.' % (GRADE + 2)), f2['std']
-    return dict(std=std, title=title, main=main, back=back, f1=f1, f2=f2)
+    d = dict(std=std, title=title, main=main, back=back, f1=f1, f2=f2)
+    if num:
+        d['fixed_num'] = num
+    return d
 
 
 # ------------------------------------------------------------ figure helpers
@@ -215,3 +233,22 @@ def hrow(*figs, h=240):
 def plot(stem, fig, **kw):
     """A question the student answers by drawing on the figure (no answer line)."""
     return dict(t='sa', stem=stem, ans=None, fig=fig, **kw)
+
+
+def draw_write(stem, fig, ans, draw, **kw):
+    """Drawing + written response: the student draws on the figure AND writes an answer.
+    draw= describes the correct drawing; key= is the correct written answer. Both are graded."""
+    return dict(t='sa', stem=stem, ans=ans, fig=fig, draw=draw, **kw)
+
+
+LONG_DIVISION = ('Long division of the numerator by the denominator, shown step by step, until the remainder is 0 '
+                 'or the digits start to repeat. A correct decimal without the division earns partial credit.')
+DIVISION_ALGORITHM = ('The standard division algorithm with every step shown (divide, multiply, subtract, bring down). '
+                      'A correct quotient without the algorithm earns partial credit.')
+
+
+def work(stem, ans='', method='', fig=None, **kw):
+    """Answer with required work: method= says what the shown work must use or contain.
+    A correct final answer without the required work is not full credit."""
+    assert method
+    return dict(t='sa', stem=stem, ans=ans, fig=fig, method=method, **kw)

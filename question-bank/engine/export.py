@@ -28,6 +28,13 @@ sys.path.insert(0, ENGINE)
 import build  # noqa: E402
 import render as R  # noqa: E402
 import answers as A  # noqa: E402
+import revisions  # noqa: E402
+
+
+def r_for_snap(r):
+    """Key record fields in the form the history snapshot stores them."""
+    return dict(type=r['type'], correct_letter=r['correct_letter'], correct_answer=r['correct_answer'],
+                grading_note=r['grading_note'])
 
 FORMAT_VERSION = 1
 PDF_PART = 800
@@ -186,8 +193,9 @@ def describe(f):
             out.append(s)
         return 'Tape diagram. ' + '. '.join(out) + '.'
     if k == 'stack':
+        rules = f.get('rules') or ([f['rule']] if f.get('rule') else [])
         return 'Vertical arithmetic, digits right-aligned: ' + ' / '.join(f['lines']) + (
-            ' (a line is drawn under row %d)' % f['rule'] if f.get('rule') else '') + '.'
+            ' (a line is drawn under row %s)' % ' and row '.join(str(r) for r in rules) if rules else '') + '.'
     if k == 'cyl':
         return 'Cylinder with radius labeled "%s" and height labeled "%s".' % (f.get('rlab', ''), f.get('hlab', ''))
     if k == 'cone':
@@ -199,10 +207,23 @@ def describe(f):
             f.get('blab', ''), f.get('hlab', ''), f.get('slant', ''))
     if k in ('vstack', 'hrow'):
         return ' '.join('[%d] %s' % (i, describe(g)) for i, g in enumerate(f['figs'], 1))
+    if k == 'grid' and (f.get('cshade') is not None or f.get('rshade') is not None):
+        R_, C_ = f.get('rows', 10), f.get('cols', 10)
+        return ('Rectangle divided into %d rows and %d columns of equal parts. The first %d columns are shaded and the '
+                'first %d rows are shaded; %d parts where they overlap are shaded darker.' % (
+                    R_, C_, f.get('cshade') or 0, f.get('rshade') or 0, (f.get('cshade') or 0) * (f.get('rshade') or 0)))
     if k == 'grid':
         return 'Grid of %d by %d squares with %d squares shaded.' % (f.get('rows', 10), f.get('cols', 10), f['shade'])
     if k == 'text':
         return A.plain(f.get('text', ''))
+    if k == 'rays':
+        d = 'Rays drawn from one point, in the directions %s degrees (0 = right, measured counterclockwise)' % ', '.join(
+            str(r) for r in f['rays'])
+        if f.get('labels'):
+            d += '. Angle labels: ' + '; '.join('"%s" in the angle around %s degrees' % (A.plain(l[1]), l[0]) for l in f['labels'])
+        if f.get('ra'):
+            d += '. A right-angle mark is shown'
+        return d + '.'
     return k
 
 
@@ -268,6 +289,7 @@ def export(out_dir):
     os.remove(os.path.join(out_dir, 'tmp_key.pdf'))
     by_id = {r['id']: r for r in records}
     akey = A.load_key()
+    tracker = revisions.Tracker(build.GRADE_DIR, build.COLLECTION)
 
     index_sets = []
     nfig = 0
@@ -287,24 +309,28 @@ def export(out_dir):
                 qd, _letter = A.present(q, qid, A.split_note(raw)[0])
                 r = by_id[qid]
                 rec = dict(
-                    id=qid, set=st['num'], section=key, section_code=code,
+                    id=qid, uid=r['uid'], collection=build.COLLECTION['id'], set=st['num'], section=key, section_code=code,
                     relation=RELATION.get(code, 'backward'), number=i, of=len(qs),
                     standard=std, standard_grade=int(std.split('.')[0]) if std[0].isdigit() else std.split('.')[0],
                     domain=r['domain'], skill=name, nearest_related=bool(nearest),
                     type=r['type'],
                     response={'mc': 'select one', 'tf': 'select true or false', 'sa': 'write',
-                              'plot': 'draw on the figure'}[r['type']],
+                              'plot': 'draw on the figure',
+                              'plot_text': 'draw on the figure and write an answer',
+                              'work': 'write the answer and show the required work'}[r['type']],
                     prompt=r['question'], prompt_markup=qd['stem'],
                     choices=r['choices'], answer_lines=r['answer_lines'],
                     correct_letter=r['correct_letter'], correct_answer=r['correct_answer'],
-                    grading_note=r['grading_note'], figure=None, page=r['page'])
+                    drawing_answer=r['drawing_answer'], required_method=r['required_method'],
+                    grading_note=r['grading_note'], figure=None, page=r['page'],
+                    revision=None)
                 if qd.get('fig'):
                     base = os.path.join(out_dir, 'assets', qid)
                     write_figure(qd['fig'], base)
                     nfig += 1
                     rec['figure'] = dict(svg='assets/%s.svg' % qid, png='assets/%s.png' % qid,
                                          kind=qd['fig']['k'], description=describe(qd['fig']),
-                                         blank_for_drawing=r['type'] == 'plot', data=jsonable(qd['fig']))
+                                         blank_for_drawing=r['type'] in ('plot', 'plot_text'), data=jsonable(qd['fig']))
                 if qd.get('cfigs'):
                     for j, g in enumerate(qd['cfigs']):
                         letter = A.LETTERS[j]
@@ -313,10 +339,14 @@ def export(out_dir):
                         rec['choices'][j] = dict(letter=letter, text=describe(g),
                                                  svg='assets/%s-%s.svg' % (qid, letter),
                                                  png='assets/%s-%s.png' % (qid, letter), data=jsonable(g))
+                snap = dict(r_for_snap(r), choices=rec['choices'])
+                rev = tracker.check(qid, revisions.snapshot(dict(qd, fig=jsonable(qd['fig']) if qd.get('fig') else None),
+                                                            snap, std, name))
+                rec['revision'] = rev['status']
                 qrecs.append(rec)
             sections.append(dict(section=key, section_code=code, relation=RELATION.get(code, 'backward'),
                                  skill=name, standard=std, nearest_related=bool(nearest), questions=qrecs))
-        set_doc = dict(format_version=FORMAT_VERSION, grade=build.GRADE, set=st['num'], set_id=sid,
+        set_doc = dict(format_version=FORMAT_VERSION, collection=build.COLLECTION, grade=build.GRADE, set=st['num'], set_id=sid,
                        standard=st['std'], title=st['title'], domain=st['domain'], sections=sections)
         with open(os.path.join(out_dir, fname), 'w', encoding='utf-8') as fh:
             json.dump(set_doc, fh, ensure_ascii=False, indent=1)
@@ -327,12 +357,18 @@ def export(out_dir):
                            question_ids=[q['id'] for q in s['questions']]) for s in sections]))
 
     index = dict(
-        format_version=FORMAT_VERSION, grade=build.GRADE,
+        format_version=FORMAT_VERSION, collection=build.COLLECTION, grade=build.GRADE,
         title='Grade %d Common Core Math — Question Sets' % build.GRADE,
         set_count=len(index_sets), question_count=nq, figure_count=nfig,
         id_format='S<set>-<section>-Q<number>. Section codes: M = MAIN (Grade %d), B1, B2, ... = BACKWARD '
-                  'branches (earlier grades), F1 = FORWARD 1 (Grade %d), F2 = FORWARD 2 (Grade %d).'
-                  % (build.GRADE, build.GRADE + 1, build.GRADE + 2),
+                  'branches (earlier grades), F1 = FORWARD 1 (Grade %d), F2 = FORWARD 2 (Grade %d). '
+                  'id is unique within this collection; uid = "%s:" + id is unique across all grade collections '
+                  '(the collection, not a question\'s standard grade, is the namespace: this bank also holds '
+                  'Grade %d and %d forward questions). Set and branch numbers are fixed: they need not be '
+                  'consecutive, and an ID is never reused for a different skill (see revisions.json).'
+                  % (build.GRADE, build.GRADE + 1, build.GRADE + 2, build.COLLECTION['id'],
+                     build.GRADE + 1, build.GRADE + 2),
+        revisions_file='revisions.json' if tracker.active else None,
         relations=dict(main='the Grade %d skill the set is built around' % build.GRADE,
                        backward='a prerequisite skill to check when a student misses MAIN questions',
                        forward1='the directly connected Grade %d skill' % (build.GRADE + 1),
@@ -343,6 +379,16 @@ def export(out_dir):
         sets=index_sets)
     with open(os.path.join(out_dir, 'index.json'), 'w', encoding='utf-8') as fh:
         json.dump(index, fh, ensure_ascii=False, indent=1)
+    rev_doc = tracker.document()
+    if rev_doc:
+        index['revision_summary'] = rev_doc['summary']
+        with open(os.path.join(out_dir, 'index.json'), 'w', encoding='utf-8') as fh:
+            json.dump(index, fh, ensure_ascii=False, indent=1)
+        with open(os.path.join(out_dir, 'revisions.json'), 'w', encoding='utf-8') as fh:
+            json.dump(rev_doc, fh, ensure_ascii=False, indent=1)
+        title = 'Grade %d question collection' % build.GRADE
+        revisions.write_changelog(rev_doc, os.path.join(out_dir, 'CHANGELOG.md'), title)
+        revisions.write_changelog(rev_doc, os.path.join(build.GRADE_DIR, 'CHANGELOG.md'), title)
 
     # PDFs in parts
     for kind, src in (('questions', paths['questions']), ('answers', paths['key'])):
@@ -354,58 +400,94 @@ def export(out_dir):
             part.save(os.path.join(out_dir, 'pdf', 'Grade %d - Part %d of %s.pdf' % (build.GRADE, p + 1, kind)),
                       garbage=3, deflate=True)
     write_readme(out_dir, index, npages)
+    write_manifest(out_dir)
     return index
+
+
+def write_manifest(out_dir):
+    import hashlib
+    files = []
+    for root, _, names in os.walk(out_dir):
+        for n in sorted(names):
+            p = os.path.join(root, n)
+            rel = os.path.relpath(p, out_dir).replace(os.sep, '/')
+            if rel == 'MANIFEST.json':
+                continue
+            data = open(p, 'rb').read()
+            files.append(dict(path=rel, bytes=len(data), sha256=hashlib.sha256(data).hexdigest()))
+    files.sort(key=lambda f: f['path'])
+    with open(os.path.join(out_dir, 'MANIFEST.json'), 'w', encoding='utf-8') as fh:
+        json.dump(dict(collection=build.COLLECTION, file_count=len(files), files=files), fh, indent=1)
 
 
 def write_readme(out_dir, index, npages):
     g = index['grade']
     first = index['sets'][0]
     ex = first['sections'][0]['question_ids'][0]
+    col = index['collection']
+    rev = index.get('revision_summary')
+    revline = ''
+    if rev:
+        revline = ('\nThis is version {v}. Compared with the previous version: {u} questions unchanged, {r} revised, {n} new, '
+                   '{t} retired. `CHANGELOG.md` lists every change by question ID; `revisions.json` has the full map.\n').format(
+            v=col['version'], u=rev.get('unchanged', 0), r=rev.get('revised', 0), n=rev.get('new', 0), t=rev.get('retired', 0))
     text = '''# Grade {g} — Untangle The Nexus import package
 
-{sets} question sets, {nq} questions, {nfig} figure files. Generated by `question-bank/engine/export.py`
-in the math-lab-app repository; regenerate there rather than editing these files by hand.
-
+Collection `{cid}`, version {ver}. {sets} question sets, {nq} questions, {nfig} figure files. Generated by
+`question-bank/engine/export.py` in the math-lab-app repository; regenerate there rather than editing these files by hand.
+{revline}
 ## Files
 
 | Path | Contents |
 |---|---|
-| `index.json` | Every set: its file, Common Core standard, and each section's relation and question IDs. Also the ID format and grading rules. |
-| `sets/S01.json` … | One file per question set. Each question is a complete record (see below). |
+| `index.json` | The collection (`id`, `version`), every set with its file, standard, and each section's relation and question IDs, the ID format and the grading rules. |
+| `sets/Sxx.json` | One file per question set. Each question is a complete record (see below). |
 | `assets/<ID>.svg` / `.png` | The figure for that question (SVG preferred, PNG fallback). Picture choices are `<ID>-A.svg`, `<ID>-B.svg`. |
+| `revisions.json`, `CHANGELOG.md` | Changes since the previous version, keyed by question ID (only after a revision). |
+| `MANIFEST.json` | Every file in the package with its size and SHA-256, for checking that nothing was lost. |
 | `pdf/` | The printable question collection and answer key in {part}-page parts. Page numbers match the `page` field. Not needed for import. |
 
 ## Importing
 
-1. Read `index.json`. For each entry in `sets`, load its `file`.
-2. Each set file has `sections` in order: MAIN, BACKWARD 1…n, FORWARD 1, FORWARD 2. `relation` is
+1. Read `index.json`. For each entry in `sets`, load its `file`. Set numbers are fixed and need not be consecutive
+   (sets added in a revision take the next free number, and appear next to their related sets).
+2. Each set file has `sections` in order: MAIN, BACKWARD branches, FORWARD 1, FORWARD 2. `relation` is
    `main`, `backward`, `forward1` or `forward2`. A section's questions all test the same skill and standard.
-3. Store each question by its `id` (for example `{ex}`). IDs never change between rebuilds unless questions are
-   added or removed.
+   Backward branch numbers are also fixed (B1, B3, B4 is possible when a branch was retired).
+3. Store each question by `uid` (for example `{cid}:{ex}`), which is unique across all grade collections. `id`
+   is unique only within this collection. An ID is never reused for a different skill: when content moves or is
+   retired, `revisions.json` says where it went.
 4. Copy `assets/` as is and resolve `figure.svg` / `figure.png` (and picture choices' `svg` / `png`) relative to this folder.
+5. Optional: check every file against `MANIFEST.json`.
 
 ## Question record
 
 | Field | Meaning |
 |---|---|
-| `id`, `set`, `section`, `section_code`, `relation`, `number` | Where the question sits |
+| `uid`, `collection`, `id` | Identity: `uid` = collection + `:` + `id` |
+| `set`, `section`, `section_code`, `relation`, `number` | Where the question sits |
 | `standard`, `standard_grade`, `domain`, `skill`, `nearest_related` | What it tests |
-| `type`, `response` | `mc` (select one), `tf` (true or false), `sa` (write an answer), `plot` (draw on the figure) |
+| `type`, `response` | `mc` (select one), `tf` (true or false), `sa` (write an answer), `plot` (draw on the figure), `plot_text` (draw on the figure AND write an answer), `work` (write the answer and show the required work) |
 | `prompt`, `prompt_markup` | Question text: plain, and with `{{a/b}}` fraction markup |
 | `choices` | `[{{letter, text}}]` in the order students see; true/false is A. True, B. False. Picture choices add `svg`, `png`, `data` |
 | `answer_lines` | Labels of the student's answer blanks, for written answers |
-| `correct_letter`, `correct_answer` | The answer. For drawing questions `correct_answer` describes a correct drawing |
+| `correct_letter`, `correct_answer` | The answer. For `plot`, `correct_answer` describes a correct drawing; for `plot_text` it is the written answer |
+| `drawing_answer` | `plot_text` only: what a correct drawing shows |
+| `required_method` | `work` only: what the shown work must use; the final answer alone is partial credit |
 | `grading_note` | Accepted alternatives and what an explanation must include |
 | `figure` | `svg`, `png`, `kind`, `description` (plain text), `blank_for_drawing`, and `data` (the values the figure is drawn from) |
+| `revision` | `unchanged`, `revised` or `new` compared with the previous version |
 | `page` | Page in the PDFs |
 
 ## Grading
 
 `grading_rules` in `index.json` applies to every question. Multiple choice and true/false compare letters.
-Written answers accept any mathematically equivalent form unless the question asks for a specific form. A drawing is
-judged against `correct_answer`. Explanations must include what `grading_note` lists.
+Written answers accept any mathematically equivalent form unless the question asks for a specific form. A `plot`
+drawing is judged against `correct_answer`; a `plot_text` response needs both the drawing (`drawing_answer`) and the
+written answer (`correct_answer`). A `work` response needs the method in `required_method`. Explanations must include
+what `grading_note` lists.
 '''.format(g=g, sets=index['set_count'], nq=index['question_count'], nfig=index['figure_count'],
-           part=PDF_PART, ex=ex)
+           part=PDF_PART, ex=ex, cid=col['id'], ver=col['version'], revline=revline)
     with open(os.path.join(out_dir, 'README.md'), 'w', encoding='utf-8') as fh:
         fh.write(text)
 

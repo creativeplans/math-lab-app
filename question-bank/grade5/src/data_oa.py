@@ -1,5 +1,10 @@
-from qb import S, B, sa, mc, tf, table, plot
+from qb import S, B, sa, mc, tf, table, plot, nl, hist, draw_write
 from common import grid, tplot
+
+BOOKS = hist(['Mon', 'Tue', 'Wed', 'Thu'], [6, 10, 4, 8], gap=0.35, ymax=12, ystep=2,
+             xlabel='Day', ylabel='Books read')
+VOTES = hist(['Red', 'Blue', 'Green', 'Yellow'], [15, 30, 25, 10], gap=0.35, ymax=40, ystep=10,
+             xlabel='Color', ylabel='Votes')
 
 SETS = [
     # ------------------------------------------------------------------ 5.OA.A.1 (parentheses)
@@ -252,8 +257,8 @@ SETS = [
     # ------------------------------------------------------------------ 5.OA.B.3 (patterns)
     S('5.OA.B.3', 'Generate two numerical patterns and compare their terms',
       main=[
-          sa('Pattern A starts at 0 and adds 3.\nPattern B starts at 0 and adds 6.\nWrite the first 5 terms of each pattern.',
-             ['Pattern A:', 'Pattern B:'], key='Pattern A: 0, 3, 6, 9, 12; Pattern B: 0, 6, 12, 18, 24'),
+          sa('Pattern A starts at 0 and adds 6.\nPattern B starts at 0 and adds 18.\nWrite the first 5 terms of each pattern.',
+             ['Pattern A:', 'Pattern B:'], key='Pattern A: 0, 6, 12, 18, 24; Pattern B: 0, 18, 36, 54, 72'),
           mc('Pattern A: 0, 4, 8, 12, 16\nPattern B: 0, 12, 24, 36, 48\nHow does each term in Pattern B compare to the matching term in Pattern A?',
              ['3 times as large', '8 more', '4 times as large', '12 more']),
           sa('Pattern A starts at 0 and adds 5. Pattern B starts at 0 and adds 10.\nWhat is the 6th term of each pattern?',
@@ -295,6 +300,65 @@ SETS = [
           tf('y = {3/4}x represents a proportional relationship.', key=True),
       ])),
 
+    # ------------------------------------------------------------------ 5.OA.B.3 (explain the relationship)
+    S('5.OA.B.3', 'Explain why two patterns have the relationship they do',
+      main=[
+          sa('Pattern A starts at 0 and adds 4. Pattern B starts at 0 and adds 8.\nEach term in Pattern B is twice the matching term in Pattern A.\nExplain why.',
+             ['Explanation:', ''],
+             key='Both patterns start at 0 and take the same number of steps, and B adds 8, which is 2 × 4, at every step, so B has always added twice as much as A.',
+             note='Must connect the rule amounts (8 is twice 4) to the same start (0) and the same number of steps. '
+                  'Only restating "B is double A" or checking a few terms is not a full explanation.'),
+          mc('Pattern A starts at 0 and adds 3. Pattern B starts at 0 and adds 15.\nWhy is each term in Pattern B 5 times the matching term in Pattern A?',
+             ['Both start at 0, and B adds 5 times as much as A at every step.', 'Pattern B has 5 more terms than Pattern A.',
+              'Each term in B is 12 more than the matching term in A.', 'Pattern B starts 5 higher than Pattern A.']),
+          tf('Pattern A starts at 0 and adds 2. Pattern B starts at 0 and adds 6. Each term in B is 3 times the matching term in A because B adds 3 times as much at every step.', key=True),
+          tf('Pattern A starts at 1 and adds 2. Pattern B starts at 1 and adds 4. Each term in Pattern B is twice the matching term in Pattern A.', key=False),
+          sa('Pattern A starts at 0 and adds 5. Pattern B starts at 0 and adds 20.\nWithout listing the terms, how does the 10th term of B compare with the 10th term of A? Explain.',
+             ['Comparison:', 'Explanation:'],
+             key="B's 10th term is 4 times A's 10th term (180 and 45).",
+             note='Explanation: both start at 0 and reach the 10th term after the same 9 steps; B adds 20 and A adds 5 each step, '
+                  'and 20 is 4 × 5, so B has added 4 times as much. The values 180 and 45 are not required.'),
+      ],
+      back=[
+          B('Notice features of a pattern that the rule does not state', '4.OA.C.5', [
+              tf('The rule is "add 2," starting at 1. Every term is odd.', key=True),
+              mc('The rule is "add 4," starting at 0. Which is true of every term?',
+                 ['It is a multiple of 4.', 'It is odd.', 'It ends in 4.', 'It is a multiple of 8.']),
+              sa('The rule is "add 10," starting at 5.\nWhat do you notice about the ones digit of every term?', 'Answer:',
+                 key='The ones digit is always 5.', note='Accept any statement that every term ends in 5.'),
+              tf('The rule is "add 5," starting at 0. The terms alternate between ending in 0 and ending in 5.', key=True),
+              mc('The rule is "add 3," starting at 1: 1, 4, 7, 10, 13.\nWhich describes the terms?',
+                 ['They alternate odd, even, odd, even.', 'They are all odd.', 'They are all even.', 'They are all multiples of 3.']),
+          ]),
+          B('Explain patterns in the multiplication table', '3.OA.D.9', [
+              tf('Every product in the 4s row of the multiplication table is even.', key=True),
+              mc('Why is each product in the 6s row twice the product in the 3s row, in the same column?',
+                 ['6 is 2 × 3, so 6 × n is 2 × (3 × n).', '6 is 3 more than 3.', 'The 6s row has twice as many products.',
+                  'Products in later rows are always even.']),
+              tf('Every product in the 5s row ends in 5.', key=False),
+              sa('The 2s row is 2, 4, 6, 8, 10, ...\nWhat is the same about every product?', 'Answer:', key='They are all even.',
+                 note='Accept "even", "multiples of 2", or "end in 0, 2, 4, 6 or 8".'),
+              tf('In the 9s row, 9 × 4 is 9 more than 9 × 3.', key=True),
+          ]),
+      ],
+      f1=B('Use an equation to describe how two quantities change together', '6.EE.C.9', [
+          sa('Write an equation for y in terms of x.\nExplain how the table shows it.', ['Equation:', 'Explanation:'], key='y = 7x',
+             note='Explanation: each y-value is 7 times its x-value (or y increases by 7 when x increases by 1, starting from 0).',
+             fig=table([['x', '1', '2', '3', '4'], ['y', '7', '14', '21', '28']])),
+          mc('Each time x increases by 1, y increases by 5, and y is 0 when x is 0.\nWhich equation fits?', ['y = 5x', 'y = x + 5', 'x = 5y', 'y = 5']),
+          tf('In y = x + 3, each y-value is 3 times its x-value.', key=False),
+          sa('A gym charges $9 for each class.\nWrite an equation for the cost c of n classes.', 'Equation:', key='c = 9n'),
+          tf('For y = 4x, when x doubles, y also doubles.', key=True),
+      ]),
+      f2=B('Identify the constant of proportionality', '7.RP.A.2.b', [
+          sa('The table shows a proportional relationship.\nWhat is the constant of proportionality?', 'Constant:', key='3',
+             fig=table([['x', '2', '5', '8'], ['y', '6', '15', '24']])),
+          mc('What is the constant of proportionality in y = 0.6x?', ['0.6', '6', '1.6', '0']),
+          tf('In the table x: 4, 6, 10 and y: 2, 3, 5, the constant of proportionality is 2.', key=False),
+          sa('A car travels 50 miles on every 2 gallons of gas.\nWhat is the constant of proportionality, in miles per gallon?', 'Constant:', key='25'),
+          tf('A proportional relationship graphs as a line through (0, 0) and (1, 7). Its constant of proportionality is 7.', key=True),
+      ]), num=58),
+
     # ------------------------------------------------------------------ 5.OA.B.3 (graph)
     S('5.OA.B.3', 'Form ordered pairs from two patterns and graph them',
       main=[
@@ -320,20 +384,20 @@ SETS = [
               sa('What is the rule for the pattern?\n0, 8, 16, 24', 'Rule:', key='Add 8'),
               sa('The rule is "add 10." The pattern starts at 0.\nWhat is the 6th term?', 'Term:', key='50'),
           ]),
-          B('Ordered pairs and the coordinate plane', '5.G.A.1', [
-              tf('In (3, 6), the 3 tells how far to move along the x-axis.', key=True),
-              mc('In the ordered pair (4, 9), which number is the y-coordinate?', ['9', '4', '13', '5']),
-              sa('Which ordered pair names the origin?', 'Ordered pair:', key='(0, 0)'),
-              tf('(2, 5) and (5, 2) name the same point.', key=False),
-              sa('What are the coordinates of point P?', 'P =', key='(6, 3)', fig=grid(8, 8, pts=[(6, 3, 'P')])),
-          ]),
-          B('Reading the scale on an axis', '3.MD.B.3', [
-              mc('An axis is numbered 0, 2, 4, 6, 8.\nHow much does each grid line stand for?', ['2', '1', '4', '8']),
-              tf('On an axis numbered 0, 4, 8, 12, the value 10 is halfway between 4 and 8.', key=False),
-              sa('An axis is numbered 0, 5, 10, 15.\nWhere does 20 go?', 'Answer:', key='One grid line above 15'),
-              mc('On an axis numbered by 3s, which value is two grid lines above 0?', ['6', '2', '3', '9']),
-              tf('On an axis numbered by 10s, the value 25 is on a grid line.', key=False),
-          ]),
+          B('Read a scaled bar graph', '3.MD.B.3', [
+              mc('How many books does each grid line on the scale stand for?', ['2', '1', '4', '12'], fig=BOOKS),
+              sa('How many books were read on Tuesday?', 'Books:', key='10', fig=BOOKS),
+              sa('How many votes did Green get?', 'Votes:', key='25', fig=VOTES),
+              sa('How many more books were read on Tuesday than on Wednesday?', 'Books:', key='6', fig=BOOKS),
+              tf('Red got 5 more votes than Yellow.', key=True, fig=VOTES),
+          ], num=3),
+          B('Whole numbers on a number line', '2.MD.B.6', [
+              sa('What number is at point A?', 'A =', key='6', fig=nl(0, 10, 1, labels={0: '0', 5: '5', 10: '10'}, pts=[(6, 'A')])),
+              tf('From 0 to 4 on this number line there are 4 equal spaces.', key=True, fig=nl(0, 8, 1)),
+              mc('The spaces on a number line are equal and each stands for 1.\nWhich number is 3 spaces to the right of 5?', ['8', '2', '15', '53']),
+              sa('What number is at point B?', 'B =', key='14', fig=nl(10, 20, 1, labels={10: '10', 15: '15', 20: '20'}, pts=[(14, 'B')])),
+              tf('On a number line, 9 is to the left of 6.', key=False),
+          ], num=4),
       ],
       f1=B('Plot pairs of values from a ratio table', '6.RP.A.3.a', [
           plot('Plot the pairs of values from the ratio table on the coordinate plane.',
@@ -355,8 +419,12 @@ SETS = [
              ['It is not proportional because the line does not pass through (0, 0).', 'It is proportional because the points are on a line.',
               'It is proportional because y increases by 2.', 'It is not proportional because the points are not on a line.'],
              fig=grid(5, 10, ystep=2, pts=[(0, 1), (1, 3), (2, 5), (3, 7)], lines=[((0, 1), (4.5, 10))])),
-          sa('Graph the pairs (1, 4), (2, 8), and (3, 12).\nIs the relationship proportional?', 'Answer:', key='Yes',
-             note='The points lie on a straight line through (0, 0).', fig=grid(4, 14, ystep=2)),
+          draw_write('Graph the pairs (1, 4), (2, 8), and (3, 12).\nIs the relationship proportional? Explain using your graph.',
+                     grid(4, 14, ystep=2), ['Answer:', 'Reason:'],
+                     draw='Points plotted at (1, 4), (2, 8) and (3, 12)', key='Yes; the points lie on a straight line through (0, 0)',
+                     note='Grade the drawing and the written answer. Drawing: all three points at the correct places. '
+                          'Written: "yes" (proportional) with a reason from the graph: the points are on a straight line '
+                          'that passes through the origin (or each y is 4 times its x).'),
           tf('The points (1, 2), (2, 5), and (3, 8) show a proportional relationship.', key=False),
           mc('Which set of points shows a proportional relationship?',
              ['(2, 5), (4, 10), (6, 15)', '(1, 2), (2, 3), (3, 4)', '(0, 3), (1, 6), (2, 9)', '(1, 1), (2, 4), (3, 9)']),

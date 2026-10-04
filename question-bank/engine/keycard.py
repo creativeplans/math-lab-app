@@ -7,7 +7,8 @@ GREEN = HexColor('#1d7a46')
 GBG = HexColor('#eaf6ef')
 MINI = 0.56
 TYPE_NAMES = {'mc': 'Multiple choice', 'tf': 'True or false', 'sa': 'Short answer',
-              'plot': 'Drawing / plotting'}
+              'plot': 'Drawing / plotting', 'plot_text': 'Drawing + written answer',
+              'work': 'Answer with required work'}
 
 
 def fit_lines(text, font, size, width, max_h, min_size=8):
@@ -73,16 +74,21 @@ def render_answer(c, q, label, pageno, qid, rec):
     c.drawString(ix, y, 'CORRECT ANSWER')
     y -= 8
     text = ('%s.  %s' % (rec['letter'], rec['answer'])) if rec['letter'] else rec['answer']
+    if rec.get('drawing'):
+        text = 'Drawing: %s\nWritten: %s' % (rec['drawing'], rec['answer'])
     lines, size = fit_lines(text, R.FB, 17, iw, y - bottom - 10)
     R.draw_lines(c, lines, ix, y, R.FB, size, GREEN)
 
-    # grading note
-    if rec['note']:
+    # grading note (and required work)
+    note = rec['note']
+    if rec.get('method'):
+        note = 'REQUIRED WORK: %s' % rec['method'] + ('\n' + note if note else '')
+    if note:
         ny = bottom - 8
         c.setFillColor(R.MUTED)
         c.setFont(R.FB, 8)
         c.drawString(R.ML - 5, ny - 6, 'GRADING NOTE')
-        lines, size = fit_lines(rec['note'], R.F, 10.5, R.CW + 10 - 78, ny - 90, 7)
+        lines, size = fit_lines(note, R.F, 10.5, R.CW + 10 - 78, ny - 90, 7)
         R.draw_lines(c, lines, R.ML + 73, ny + 2, R.F, size, R.INK)
 
     R.draw_label_box(c, label, qid)

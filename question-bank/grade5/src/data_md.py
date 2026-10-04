@@ -5,6 +5,9 @@ BEAKERS = fdot(0, 0.625, {0.125: 2, 0.25: 3, 0.375: 1, 0.5: 2}, 8, 'Water in eac
 RIBBONS = fdot(0, 1, {0.25: 2, 0.5: 1, 0.75: 4, 1: 1}, 4, 'Ribbon length (yards)')
 INSECTS = fdot(0, 1, {0.25: 1, 0.5: 3, 0.75: 2}, 4, 'Insect length (inches)')
 GOALS = dot(0, 6, {1: 2, 2: 1, 3: 2, 5: 1}, xlabel='Goals scored')
+PLANTS3 = dict(k='vstack', h=215, figs=[
+    dot(2, 11, {3: 1, 4: 2, 5: 2, 6: 2, 7: 1}, xlabel='Plot A: plant heights (inches)'),
+    dot(2, 11, {6: 1, 7: 2, 8: 2, 9: 2, 10: 1}, xlabel='Plot B: plant heights (inches)')])
 PLANTS2 = dict(k='vstack', h=215, figs=[
     dot(2, 11, {3: 1, 4: 2, 5: 3, 6: 2, 7: 1}, xlabel='Plot A: plant heights (inches)'),
     dot(2, 11, {6: 1, 7: 2, 8: 3, 9: 2, 10: 1}, xlabel='Plot B: plant heights (inches)')])
@@ -40,13 +43,13 @@ SETS = [
               mc('12 × 9 = ?', ['108', '96', '118', '21']),
               sa('Multiply.\n60 × 5', 'Product:', key='300'),
           ]),
-          B('Multiplying decimals by powers of 10', '5.NBT.A.2', [
-              sa('Multiply.\n2.5 × 1,000', 'Product:', key='2,500'),
-              tf('0.75 × 100 = 7.5', key=False),
-              mc('4.2 × 10 = ?', ['42', '420', '0.42', '4.12']),
-              sa('Multiply.\n1.6 × 1,000', 'Product:', key='1,600'),
-              sa('Multiply.\n0.3 × 100', 'Product:', key='30'),
-          ]),
+          B('Multiply whole numbers by 10, 100, and 1,000', '4.NBT.A.1', [
+              sa('Multiply.\n25 × 100', 'Product:', key='2,500'),
+              tf('7 × 1,000 = 700', key=False),
+              mc('42 × 10 = ?', ['420', '4,200', '42', '4.2']),
+              sa('Multiply.\n16 × 1,000', 'Product:', key='16,000'),
+              tf('3 × 100 is 10 times as much as 3 × 10.', key=True),
+          ], num=4),
       ],
       f1=B('Use ratio reasoning to convert measurement units', '6.RP.A.3.d', [
           sa('There are 2.54 centimeters in 1 inch.\nHow many centimeters are in 5 inches?', 'Centimeters:', key='12.7'),
@@ -88,13 +91,13 @@ SETS = [
               mc('90 ÷ 3 = ?', ['30', '27', '33', '300']),
               sa('Divide.\n5,000 ÷ 5', 'Quotient:', key='1,000'),
           ]),
-          B('Dividing by powers of 10', '5.NBT.A.2', [
-              sa('Divide.\n750 ÷ 1,000', 'Quotient:', key='0.75'),
-              tf('1,350 ÷ 1,000 = 13.5', key=False),
-              mc('45 ÷ 100 = ?', ['0.45', '4.5', '0.045', '4,500']),
-              sa('Divide.\n2,600 ÷ 1,000', 'Quotient:', key='2.6'),
-              sa('Divide.\n80 ÷ 100', 'Quotient:', key='0.8'),
-          ]),
+          B('Write tenths and hundredths as decimals', '4.NF.C.6', [
+              sa('Write {75/100} as a decimal.', 'Decimal:', key='0.75'),
+              tf('{5/10} = 0.5', key=True),
+              mc('Which decimal is equal to {45/100}?', ['0.45', '4.5', '0.045', '45']),
+              sa('Write 2{6/10} as a decimal.', 'Decimal:', key='2.6'),
+              tf('{8/10} = 0.08', key=False),
+          ], num=4),
       ],
       f1=B('Use ratio reasoning to convert measurement units', '6.RP.A.3.d', [
           sa('There are 12 inches in 1 foot.\nHow many feet are in 102 inches?', 'Feet:', key='8.5', note='8 1/2 is also correct.'),
@@ -143,7 +146,7 @@ SETS = [
              key='8 miles per quart'),
           sa('Mo walks 3 kilometers in 40 minutes.\nAt this rate, how many meters does he walk per minute?', 'Meters per minute:', key='75'),
           mc('Fabric costs $6 per yard.\nHow much do 12 feet of fabric cost?', ['$24', '$72', '$18', '$2']),
-          sa('A 24-ounce jar of juice costs $3. There are 16 ounces in 1 pound.\nWhat is the cost per pound?', 'Cost per pound:', key='$2'),
+          sa('A 24-ounce bag of rice costs $3. There are 16 ounces in 1 pound.\nWhat is the cost per pound?', 'Cost per pound:', key='$2'),
           tf('60 miles per hour is the same speed as 1 mile per minute.', key=True),
       ]),
       f2=B('Multistep ratio problems', '7.RP.A.3', [
@@ -206,13 +209,18 @@ SETS = [
           sa('Data: 4, 6, 6, 6, 7, 9\nIn a dot plot, how many dots go at 6?', 'Dots:', key='3'),
           tf('A dot plot shows every value in a data set.', key=True),
       ]),
-      f2=B('Compare two distributions shown in dot plots', '7.SP.B.3', [
-          sa('About how many inches greater is the center of Plot B than the center of Plot A?', 'Inches:', key='3', fig=PLANTS2),
-          tf('The two plots have about the same spread.', key=True, fig=PLANTS2),
-          mc('Which statement is true?', ['Plants in Plot B are typically taller.', 'Plants in Plot A are typically taller.',
-                                          'The centers are equal.', 'Plot A has much more spread.'], fig=PLANTS2),
-          sa('What is the range of the heights in Plot A?', 'Range:', key='4 inches', fig=PLANTS2),
-          tf('The two dot plots overlap.', key=True, fig=PLANTS2),
+      f2=B('Compare the difference in centers with the variability', '7.SP.B.3', [
+          sa('Plot A has a mean of 5 inches and Plot B has a mean of 8 inches. Each plot has a mean absolute deviation (MAD) of 1 inch.\nThe difference in the means is how many times the MAD?',
+             'Times the MAD:', key='3', fig=PLANTS3),
+          tf('The difference in the means (3 inches) is 3 times the MAD, so the two distributions overlap only a little.', key=True, fig=PLANTS3),
+          mc('Which statement compares the two plots correctly?',
+             ['The centers differ by 3 times the MAD, so Plot B plants are noticeably taller.',
+              'The centers differ by less than 1 MAD, so the plots are about the same.',
+              'The plots cannot be compared because they show different plants.',
+              'Plot A has much more variation than Plot B.'], fig=PLANTS3),
+          sa('Two teams have mean heights of 150 cm and 156 cm. Each team has a MAD of 3 cm.\nThe difference in the means is how many times the MAD?',
+             'Times the MAD:', key='2'),
+          tf('Two data sets have means of 20 and 21, and each has a MAD of 4. The difference in the means is large compared with the variability.', key=False),
       ])),
 
     # ------------------------------------------------------------------ 5.MD.B.2 (operations on line plot data)
@@ -234,21 +242,20 @@ SETS = [
               mc('How many insects were measured?', ['6', '3', '5', '4'], fig=INSECTS),
               sa('What is the total length of the {1/2}-inch insects?', 'Total:', key='1 1/2 inches', fig=INSECTS),
           ]),
-          B('Adding and subtracting fractions with unlike denominators', '5.NF.A.1', [
-              sa('Add.\n{1/8} + {1/4}', 'Sum:', key='3/8'),
-              sa('Add.\n{3/8} + {1/2}', 'Sum:', key='7/8'),
-              tf('{1/4} + {1/4} + {1/8} = {3/16}', key=False),
-              mc('{1/2} + {3/8} + {1/4} = ?', ['1{1/8}', '{5/14}', '{7/8}', '1{3/8}']),
-              sa('Subtract.\n{1/2} - {1/8}', 'Difference:', key='3/8'),
-          ]),
-          B('Sharing a total equally', '5.NF.B.3', [
-              sa('3 liters of water are shared equally among 8 beakers.\nHow much water does each beaker get?', 'Liters:', key='3/8 liter'),
-              tf('5 cups shared equally among 4 jars gives {4/5} cup per jar.', key=False),
-              mc('2 pounds of clay are shared equally by 6 students.\nHow much clay does each student get?',
-                 ['{1/3} pound', '3 pounds', '{2/3} pound', '{1/6} pound']),
-              sa('7 meters of rope are cut into 4 equal pieces.\nHow long is each piece?', 'Length:', key='1 3/4 meters'),
-              sa('Write 9 ÷ 4 as a mixed number.', 'Mixed number:', key='2 1/4'),
-          ]),
+          B('Rename halves and fourths as eighths', '4.NF.A.1', [
+              sa('Write {1/4} as eighths.', 'Fraction:', key='2/8'),
+              tf('{1/2} = {4/8}', key=True),
+              mc('Which fraction is equal to {3/4}?', ['{6/8}', '{3/8}', '{4/8}', '{7/8}']),
+              sa('Find the missing number.\n{1/2} = {?/8}', 'Missing number:', key='4'),
+              tf('{3/8} = {3/4}', key=False),
+          ], num=4),
+          B('Add fractions with like denominators', '4.NF.B.3.a', [
+              sa('Add.\n{1/8} + {2/8}', 'Sum:', key='3/8'),
+              tf('{3/8} + {3/8} = {6/16}', key=False),
+              mc('{2/8} + {4/8} + {1/8} = ?', ['{7/8}', '{7/24}', '{6/8}', '1']),
+              sa('Add.\n{5/8} + {3/8}', 'Sum:', key='1', note='8/8 is also correct.'),
+              tf('{1/8} + {1/8} + {1/8} = {3/8}', key=True),
+          ], num=5),
       ],
       f1=B('Find the mean of a data set', '6.SP.B.5.c', [
           sa('Find the mean.\n3, 5, 6, 8, 8', 'Mean:', key='6'),
@@ -267,8 +274,10 @@ SETS = [
           tf('Comparing the means of random samples is one way to compare two populations.', key=True),
           sa('In random samples, Class X sleeps a mean of 7.5 hours and Class Y sleeps a mean of 8.25 hours.\nWhich class probably sleeps more?',
              'Class:', key='Class Y'),
-          sa('Sample A has a mean of 40 and a MAD of 5. Sample B has a mean of 50 and a MAD of 5.\nThe difference in means is how many times the MAD?',
-             'Times the MAD:', key='2'),
+          sa('A random sample of 30 students from School A spends a mean of 40 minutes on homework. A random sample of 30 students from School B spends a mean of 50 minutes. The samples have similar variability.\nWhat can you infer about all the students at the two schools?',
+             'Inference:', key='Students at School B probably tend to spend more time on homework than students at School A.',
+             note='Must draw a conclusion about the populations (all students at each school), for example that School B students typically spend '
+                  'about 10 minutes more. Comparing only the two sample means, without a conclusion about the schools, is not enough.'),
       ])),
 
     # ------------------------------------------------------------------ 5.MD.C.3.a
@@ -333,8 +342,8 @@ SETS = [
           ]),
           B('Arrays and repeated addition', '2.OA.C.4', [
               sa('An array has 4 rows with 5 in each row.\nHow many are there in all?', 'Total:', key='20'),
-              tf('3 rows of 6 make 9.', key=False),
-              mc('Which equation matches an array with 2 rows of 7?', ['7 + 7 = 14', '2 + 7 = 9', '7 - 2 = 5', '2 + 2 = 4']),
+              tf('3 rows of 5 make 8.', key=False),
+              mc('Which equation matches an array with 2 rows of 5?', ['5 + 5 = 10', '2 + 5 = 7', '5 - 2 = 3', '2 + 2 = 4']),
               sa('An array has 5 rows with 3 in each row.\nHow many are there in all?', 'Total:', key='15'),
               sa('Write an addition equation for 3 rows of 4.', 'Equation:', key='4 + 4 + 4 = 12'),
           ]),
@@ -432,7 +441,7 @@ SETS = [
       f1=B('Apply the volume formulas with fractional edge lengths', '6.G.A.2', [
           sa('Use V = l × w × h to find V when l = 3{1/2} in., w = 2 in., and h = 1{1/2} in.', 'Volume:', key='10 1/2 cubic inches'),
           sa('Use V = b × h to find the volume of a prism with b = 6{1/4} square cm and h = 4 cm.', 'Volume:', key='25 cubic cm'),
-          mc('A prism is packed with {1/2}-unit cubes: 6 cubes long, 4 cubes wide, and 2 cubes tall.\nWhich shows its volume?',
+          mc('A prism is packed with cubes that have edges {1/2} unit long: 6 cubes long, 4 cubes wide, and 2 cubes tall.\nWhich shows its volume?',
              ['3 × 2 × 1 = 6 cubic units', '6 × 4 × 2 = 48 cubic units', '6 + 4 + 2 = 12 cubic units', '{1/2} × 48 = 24 cubic units']),
           sa('A cube has edges that are {3/4} foot long.\nWhat is its volume?', 'Volume:', key='27/64 cubic foot'),
           tf('For a rectangular prism, V = l × w × h and V = b × h give the same volume.', key=True),
@@ -480,13 +489,13 @@ SETS = [
           sa('A drawer is 2 ft by 1{1/2} ft by {1/2} ft.\nWhat is its volume?', 'Volume:', key='1 1/2 cubic feet'),
           tf('A box that is 3 by {1/2} by 4 has a volume of 12 cubic units.', key=False),
       ]),
-      f2=B('Real-world problems with volume and surface area', '7.G.B.6', [
+      f2=B('Real-world volume problems with right prisms', '7.G.B.6', [
           sa('A tent is a triangular prism. Its triangle has a base of 2 m and a height of 1.5 m. The tent is 3 m long.\nWhat is its volume?',
              'Volume:', key='4.5 cubic meters'),
           sa('A pool is 10 m long, 5 m wide, and 2 m deep. It is filled to {3/4} of its depth.\nHow much water is in the pool?', 'Volume:',
              key='75 cubic meters'),
           mc('A box has a volume of 360 cubic inches. Its base is 12 in. by 6 in.\nWhat is its height?', ['5 inches', '30 inches', '60 inches', '3 inches']),
-          sa('A rectangular prism is 4.5 cm by 2 cm by 3 cm.\nWhat is its surface area?', 'Surface area:', key='57 square cm'),
+          sa('A rectangular prism is 4.5 cm by 2 cm by 3 cm.\nWhat is its volume?', 'Volume:', key='27 cubic cm'),
           tf('A triangular prism with a base area of 8 square feet and a length of 5 feet holds 40 cubic feet.', key=True),
       ])),
 
@@ -548,22 +557,23 @@ SETS = [
       ],
       back=[
           B('Area of figures made of rectangles', '3.MD.C.7.d', [
-              sa('A figure is made of a 5-by-3 rectangle and a 2-by-4 rectangle that do not overlap.\nWhat is its area?', 'Area:',
+              sa('A figure is split into two rectangles that do not overlap. Their areas are 15 square units and 8 square units.\nWhat is the area of the figure?', 'Area:',
                  key='23 square units'),
               tf('The area of a figure made of two non-overlapping parts is the sum of the areas of the parts.', key=True),
-              mc('What is the area of the figure?', ['18 square units', '30 square units', '22 square units', '12 square units'],
+              mc('The figure is split into a 6-by-2 rectangle along the bottom and a rectangle above it.\nWhat is the area of the 6-by-2 rectangle?',
+                 ['12 square units', '8 square units', '16 square units', '6 square units'],
                  fig=shape([poly([(0, 0), (6, 0), (6, 2), (2, 2), (2, 5), (0, 5)], ['6', '2', '4', '3', '2', '5'])])),
-              sa('A figure is made of two squares that do not overlap. Their sides are 3 units and 5 units long.\nWhat is the total area?', 'Area:',
-                 key='34 square units'),
-              sa('A 2-by-2 square is cut out of an 8-by-6 rectangle.\nWhat is the area of the part that is left?', 'Area:', key='44 square units'),
+              mc('A figure is made of two squares that do not overlap. Their areas are 9 square units and 25 square units.\nTo find the area of the figure, what do you do with the two areas?',
+                 ['Add them', 'Subtract them', 'Multiply them', 'Divide them']),
+              sa('A square with an area of 4 square units is cut out of a rectangle with an area of 48 square units.\nWhat is the area of the part that is left?', 'Area:', key='44 square units'),
           ]),
-          B('Volume of one rectangular prism', '5.MD.C.5.b', [
-              sa('What is the volume of a prism that is 6 by 4 by 3?', 'Volume:', key='72 cubic units'),
-              sa('What is the volume of a prism that is 2 by 4 by 5?', 'Volume:', key='40 cubic units'),
-              tf('A prism with a base area of 32 square units and a height of 3 units has a volume of 35 cubic units.', key=False),
-              mc('What is the volume of a prism that is 4 by 8 by 3?', ['96 cubic units', '15 cubic units', '32 cubic units', '120 cubic units']),
-              sa('A cube has edges that are 5 units long.\nWhat is its volume?', 'Volume:', key='125 cubic units'),
-          ]),
+          B('The area formula for rectangles', '4.MD.A.3', [
+              sa('A rectangle is 6 units by 4 units.\nWhat is its area?', 'Area:', key='24 square units'),
+              tf('A rectangle with an area of 32 square units and a length of 8 units has a width of 4 units.', key=True),
+              mc('A rectangle is 10 m by 8 m.\nWhat is its area?', ['80 square meters', '18 square meters', '36 square meters', '800 square meters']),
+              sa('A rectangle has an area of 45 square feet and a width of 5 feet.\nWhat is its length?', 'Length:', key='9 feet'),
+              tf('A 4-by-8 rectangle has an area of 24 square units.', key=False),
+          ], num=3),
       ],
       f1=B('Volume of composite figures with fractional edge lengths', '6.G.A.2', [
           sa('A figure is made of two prisms that do not overlap: 2{1/2} ft by 2 ft by 1 ft, and 1 ft by 2 ft by {1/2} ft.\nWhat is the total volume?',

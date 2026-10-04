@@ -1,5 +1,20 @@
-from qb import S, B, sa, mc, tf, nl, coord, table, tri, plot
+from qb import S, B, sa, mc, tf, nl, coord, table, tri, plot, hist, draw_write
 from common import grid, tplot
+
+FRUIT = hist(['Apples', 'Pears', 'Plums', 'Kiwis'], [20, 35, 10, 25], gap=0.35, ymax=40, ystep=5,
+             xlabel='Fruit', ylabel='Number sold')
+WALKS = hist(['Mon', 'Tue', 'Wed', 'Thu', 'Fri'], [4, 8, 6, 10, 2], gap=0.35, ymax=10, ystep=2,
+             xlabel='Day', ylabel='Miles walked')
+DRAW = dict(k='grid', rows=9, cols=12, shade=0, h=230, maxcell=24,
+            desc='Blank grid for drawing. Each small square is 1 unit by 1 unit.')
+
+
+def angles(rays, labels, ra=(), desc=None, h=230):
+    d = dict(k='rays', rays=list(rays), labels=list(labels), ra=list(ra), h=h, fs=1.05, lr=0.62)
+    if desc:
+        d['desc'] = desc
+    return d
+
 
 PEARS = grid(5, 10, ystep=2, xlabel='Pounds', ylabel='Cost ($)', pts=[(1, 2), (2, 4), (3, 6)], lines=[((0, 0), (5, 10))])
 
@@ -44,7 +59,7 @@ SETS = [
              ['1 pound costs $2.', '2 pounds cost $1.', 'The cost starts at $2.', '$1 buys 2 pounds.'], fig=PEARS),
           tf('On the graph of a proportional relationship between pounds and cost, the point (0, 0) means 0 pounds cost $0.', key=True),
           sa('The graph of a proportional relationship passes through (1, r) and (4, 20).\nWhat is r?', 'r =', key='5'),
-          mc('A graph shows the distance y in miles after x hours. It passes through (2, 90).\nWhat does this point mean?',
+          mc('A graph shows a proportional relationship between the time x, in hours, that a bus drives and the distance y, in miles. It passes through (2, 90).\nWhat does this point mean?',
              ['In 2 hours, the distance is 90 miles.', 'In 90 hours, the distance is 2 miles.', 'The speed is 2 miles per hour.', 'The speed is 90 miles per hour.']),
       ])),
 
@@ -59,45 +74,52 @@ SETS = [
                key='Points plotted at (1, 3), (2, 6), (3, 9), (4, 12)'),
           plot('Plot and label the points G(3, 2{1/2}) and H(5{1/2}, 4).', grid(8, 8),
                key='G plotted at (3, 2 1/2), halfway between 2 and 3 on the y-axis scale; H plotted at (5 1/2, 4); each labeled'),
-          sa('Plot P(2, 3) and Q(2, 7).\nHow far apart are the two points?', 'Distance:', key='4 units',
-             note='Points plotted at (2, 3) and (2, 7).', fig=grid(8, 8)),
+          draw_write('Plot P(2, 3) and Q(2, 7).\nHow far apart are the two points?', grid(8, 8), 'Distance:',
+                     draw='P plotted at (2, 3) and Q plotted at (2, 7)', key='4 units',
+                     note='Grade both: both points at the correct places, and the distance 4 units.'),
       ],
       back=[
-          B('Reading coordinates', '5.G.A.1', [
-              sa('What are the coordinates of point K?', 'K =', key='(4, 6)', fig=grid(8, 8, pts=[(4, 6, 'K')])),
-              tf('To plot (3, 8), you move up 3 units.', key=False),
-              mc('Which point is at (6, 2)?', ['Point A', 'Point B', 'Point C', 'Point D'],
-                 fig=grid(8, 8, pts=[(6, 2, 'A'), (2, 6, 'B'), (6, 6, 'C'), (2, 2, 'D')])),
-              sa('What are the coordinates of point M?', 'M =', key='(0, 4)', fig=grid(8, 8, pts=[(0, 4, 'M')])),
-              tf('The point (5, 0) is on the y-axis.', key=False),
-          ]),
-          B('Reading the scale on an axis', '3.MD.B.3', [
-              mc('An axis is numbered by 5s: 0, 5, 10, 15, ...\nWhat value is 4 grid lines above 0?', ['20', '4', '15', '25']),
-              tf('On an axis numbered by 2s, the value 7 is halfway between 6 and 8.', key=True),
-              sa('An axis is numbered by 10s.\nWhat value is at the 3rd grid line above 0?', 'Value:', key='30'),
-              mc('An axis is numbered by 3s.\nWhere is the value 12?', ['At the 4th grid line', 'At the 12th grid line', 'At the 3rd grid line',
-                                                                     'Between the 3rd and 4th grid lines']),
-              tf('On an axis numbered by 5s, the value 12 is on a grid line.', key=False),
-          ]),
+          B('Read a scaled bar graph', '3.MD.B.3', [
+              mc('What does each grid line on the scale stand for?', ['5', '1', '10', '20'], fig=FRUIT),
+              sa('How many pears were sold?', 'Pears:', key='35', fig=FRUIT),
+              tf('More kiwis than apples were sold.', key=True, fig=FRUIT),
+              sa('How many fewer plums than pears were sold?', 'Plums:', key='25', fig=FRUIT),
+              sa('How many apples and kiwis were sold in all?', 'Fruit:', key='45', fig=FRUIT),
+          ], num=2),
+          B('Fractions and whole numbers on a number line', '3.NF.A.2', [
+              sa('What number is at point A?', 'A =', key='2 1/2', note='5/2 is also correct.',
+                 fig=nl(0, 4, 0.5, labels={0: '0', 1: '1', 2: '2', 3: '3', 4: '4'}, pts=[(2.5, 'A')])),
+              tf('2{1/2} is halfway between 2 and 3 on a number line.', key=True),
+              mc('Which point is at 1{1/2}?', ['Point A', 'Point B', 'Point C', 'Point D'],
+                 fig=nl(0, 4, 0.5, labels={0: '0', 1: '1', 2: '2', 3: '3', 4: '4'}, pts=[(1.5, 'A'), (2.5, 'B'), (0.5, 'C'), (3.5, 'D')])),
+              sa('What number is at point B?', 'B =', key='4', fig=nl(0, 6, 1, labels={0: '0', 3: '3', 6: '6'}, pts=[(4, 'B')])),
+              tf('On a number line, 5{1/2} is between 6 and 7.', key=False),
+          ], num=3),
       ],
-      f1=B('Plot and reflect points in all four quadrants', '6.NS.C.6.b', [
-          plot('Plot and label the points P(-3, 4) and Q(3, -4).', coord(), key='P plotted at (-3, 4) and Q at (3, -4), each labeled'),
+      f1=B('Reflect points across the axes', '6.NS.C.6.b', [
+          plot('Plot and label A(2, 4). Then plot its reflection across the x-axis and label it B.', coord(),
+               key='A plotted at (2, 4) and B at (2, -4), each labeled'),
           sa('The point (5, 2) is reflected across the x-axis.\nWhat are the coordinates of its image?', 'Image:', key='(5, -2)'),
-          mc('In which quadrant is the point (-2, -6)?', ['Quadrant III', 'Quadrant I', 'Quadrant II', 'Quadrant IV']),
+          mc('The point (-3, 5) is reflected across the x-axis.\nWhat are the coordinates of its image?', ['(-3, -5)', '(3, 5)', '(3, -5)', '(5, -3)']),
           sa('The point (-4, 1) is reflected across the y-axis.\nWhat are the coordinates of its image?', 'Image:', key='(4, 1)'),
           tf('The points (3, 5) and (-3, 5) are reflections of each other across the x-axis.', key=False),
       ]),
       f2=B('Graph pairs to decide whether a relationship is proportional', '7.RP.A.2.a', [
-          sa('Graph the pairs (1, 3), (2, 6), and (4, 12).\nIs the relationship proportional?', 'Answer:', key='Yes',
-             note='The points lie on a straight line through (0, 0).', fig=grid(5, 14, ystep=2)),
-          sa('Graph the pairs (0, 2), (1, 4), and (2, 6).\nIs the relationship proportional?', 'Answer:', key='No',
-             note='The points are on a line, but the line does not pass through (0, 0).', fig=grid(4, 8)),
+          draw_write('Graph the pairs (1, 3), (2, 6), and (4, 12).\nIs the relationship proportional? Explain using your graph.', grid(5, 14, ystep=2),
+                     ['Answer:', 'Reason:'], draw='Points plotted at (1, 3), (2, 6) and (4, 12)',
+                     key='Yes; the points lie on a straight line through (0, 0)',
+                     note='Grade both: all three points at the correct places, and "yes" with the reason (a straight line through the origin, or y = 3x for every point).'),
+          draw_write('Graph the pairs (0, 2), (1, 4), and (2, 6).\nIs the relationship proportional? Explain using your graph.', grid(4, 8),
+                     ['Answer:', 'Reason:'], draw='Points plotted at (0, 2), (1, 4) and (2, 6)',
+                     key='No; the points are on a line, but the line does not pass through (0, 0)',
+                     note='Grade both: all three points at the correct places, and "no" with the reason (the line does not go through the origin; when x is 0, y is 2).'),
           mc('Which graph shows a proportional relationship?', ['A straight line through (0, 0)', 'A straight line through (0, 3)',
                                                                'A curve through (0, 0)', 'Points that are not on a line']),
           tf('The points (2, 1), (4, 2), and (6, 3) show a proportional relationship.', key=True),
-          sa('Graph the pairs from the table.\nIs the relationship proportional?', 'Answer:', key='Yes',
-             note='Points (1, 4), (2, 8), (3, 12) lie on a line through (0, 0).',
-             fig=tplot([['x', '1', '2', '3'], ['y', '4', '8', '12']], 4, 14, ystep=2)),
+          draw_write('Graph the pairs from the table.\nIs the relationship proportional? Explain using your graph.',
+                     tplot([['x', '1', '2', '3'], ['y', '4', '8', '12']], 4, 14, ystep=2), ['Answer:', 'Reason:'],
+                     draw='Points plotted at (1, 4), (2, 8) and (3, 12)', key='Yes; the points lie on a straight line through (0, 0)',
+                     note='Grade both: all three points at the correct places, and "yes" with the reason (a straight line through the origin, or y = 4x).'),
       ])),
 
     # ------------------------------------------------------------------ 5.G.A.2 (real-world)
@@ -115,20 +137,20 @@ SETS = [
              'Distance:', key='600 meters'),
       ],
       back=[
-          B('The coordinate system', '5.G.A.1', [
-              sa('What are the coordinates of the origin?', 'Origin:', key='(0, 0)'),
-              tf('The first number in an ordered pair tells how far to move along the x-axis.', key=True),
-              mc('Point R is 4 units to the right of the origin and 1 unit up.\nWhat are its coordinates?', ['(4, 1)', '(1, 4)', '(4, 4)', '(5, 0)']),
-              sa('What are the coordinates of point T?', 'T =', key='(7, 3)', fig=grid(8, 8, pts=[(7, 3, 'T')])),
-              tf('(0, 2) and (2, 0) name the same point.', key=False),
-          ]),
           B('Distance between whole numbers on a number line', '2.MD.B.6', [
               sa('What is the distance from 2 to 7 on a number line?', 'Distance:', key='5 units'),
               tf('The distance from 3 to 10 is 13 units.', key=False),
               mc('How many units apart are 1 and 8 on a number line?', ['7', '9', '8', '1']),
               sa('What is the distance from 6 to 6 on a number line?', 'Distance:', key='0'),
               sa('How many units apart are points A and B?', 'Units:', key='7', fig=nl(0, 10, 1, pts=[(2, 'A'), (9, 'B')])),
-          ]),
+          ], num=2),
+          B('Solve problems with a scaled bar graph', '3.MD.B.3', [
+              sa('How many miles were walked on Thursday?', 'Miles:', key='10', fig=WALKS),
+              tf('The same number of miles were walked on Monday and Wednesday.', key=False, fig=WALKS),
+              mc('On which day were 8 miles walked?', ['Tuesday', 'Monday', 'Thursday', 'Friday'], fig=WALKS),
+              sa('How many more miles were walked on Thursday than on Friday?', 'Miles:', key='8', fig=WALKS),
+              tf('Each grid line on the scale stands for 2 miles.', key=True, fig=WALKS),
+          ], num=3),
       ],
       f1=B('Find distances in all four quadrants', '6.NS.C.8', [
           sa('Find the distance between (-4, 2) and (5, 2).', 'Distance:', key='9 units'),
@@ -150,7 +172,7 @@ SETS = [
     # ------------------------------------------------------------------ 5.G.B.3
     S('5.G.B.3', 'Attributes of a category belong to all of its subcategories',
       main=[
-          tf('All rectangles have four right angles. Squares are rectangles, so all squares have four right angles.', key=True),
+          tf('Every parallelogram has opposite sides of equal length. A rhombus is a parallelogram, so every rhombus has opposite sides of equal length.', key=True),
           mc('All parallelograms have two pairs of parallel sides.\nWhich shape must also have two pairs of parallel sides?',
              ['Rhombus', 'Kite', 'Triangle', 'Pentagon']),
           sa('A rhombus is a quadrilateral with 4 sides of equal length.\nIs every square a rhombus? Explain.', ['Answer:', 'Explanation:'],
@@ -183,22 +205,36 @@ SETS = [
           ]),
       ],
       f1=B('Draw polygons in the coordinate plane', '6.G.A.3', [
-          sa('Plot A(-2, 1), B(3, 1), C(3, -3), and D(-2, -3). Connect them in order.\nWhat polygon did you draw?', 'Polygon:', key='A rectangle',
-             note='The sides are 5 units and 4 units long.', fig=coord()),
-          sa('Plot E(0, 3), F(3, 0), G(0, -3), and H(-3, 0). Connect them in order.\nWhat polygon did you draw?', 'Polygon:', key='A square',
-             note='"Rhombus" is also correct, since a square is a rhombus.', fig=coord()),
+          draw_write('Plot A(-2, 1), B(3, 1), C(3, -3), and D(-2, -3). Connect them in order.\nWhat is the most specific name for the polygon?', coord(),
+                     'Most specific name:', draw='A, B, C and D plotted and joined in order A-B-C-D-A',
+                     key='Rectangle',
+                     note='Grade both: the four points and the four connecting segments, and the name. The sides are 5 and 4 units with four right angles, '
+                          'so "rectangle" is the most specific name. "Parallelogram" or "quadrilateral" are true but not the most specific; "square" is wrong.'),
+          draw_write('Plot E(0, 3), F(3, 0), G(0, -3), and H(-3, 0). Connect them in order.\nWhat is the most specific name for the polygon?', coord(),
+                     'Most specific name:', draw='E, F, G and H plotted and joined in order E-F-G-H-E',
+                     key='Square',
+                     note='Grade both: the four points and the four connecting segments, and the name. All four sides are equal and all four angles are right angles, '
+                          'so "square" is the most specific name. "Rhombus", "rectangle", "parallelogram" and "quadrilateral" are true but not the most specific.'),
           mc('The points (-1, 2), (4, 2), and (4, -1) are three vertices of a rectangle.\nWhat is the fourth vertex?',
              ['(-1, -1)', '(4, 2)', '(-1, 4)', '(1, -1)']),
           sa('What is the length of the side from (-2, 5) to (4, 5)?', 'Length:', key='6 units'),
           tf('The points (0, 0), (4, 0), (4, 2), and (0, 2) are the vertices of a square.', key=False),
       ]),
-      f2=B('Decide whether shapes with given conditions are possible', '7.G.A.2', [
-          tf('A triangle can have side lengths of 3 cm, 4 cm, and 5 cm.', key=True),
-          mc('Which three lengths can form a triangle?', ['4, 5, 7', '2, 3, 6', '1, 1, 3', '5, 5, 10']),
-          sa('Can a triangle have side lengths of 2 cm, 2 cm, and 5 cm? Write yes or no.', 'Answer:', key='No'),
-          tf('A triangle can have two right angles.', key=False),
-          sa('Can a quadrilateral have exactly 3 right angles? Write yes or no.', 'Answer:', key='No',
-             note='If 3 angles are right angles, the 4th must be a right angle too.'),
+      f2=B('Draw shapes with given conditions', '7.G.A.2', [
+          draw_write('Draw a triangle with sides of 3 units, 4 units, and 5 units. Put the 3-unit and 4-unit sides along grid lines.\nClassify the triangle by its angles.',
+                     DRAW, 'Kind of triangle:', draw='A triangle with a 3-unit side and a 4-unit side along grid lines meeting at a right angle, and the third side (5 units) joining their ends',
+                     key='Right triangle', note='Grade both: the drawn side lengths 3 and 4 along grid lines with the third side joining them, and "right triangle".'),
+          sa('Can a triangle have sides of 2 cm, 2 cm, and 5 cm? Explain.', ['Answer:', 'Explanation:'], key='No',
+             note='2 + 2 = 4 is less than 5, so the two short sides cannot meet to close the triangle.'),
+          draw_write('Draw a triangle with angles of 90°, 45°, and 45°. Make its two shorter sides 4 units long, along grid lines.\nCould a triangle with these same angles be drawn in a different size?',
+                     DRAW, 'Answer:', draw='A right triangle with two 4-unit legs along grid lines meeting at a right angle, and the third side joining their ends',
+                     key='Yes', note='Grade both: the drawing (two 4-unit legs at a right angle) and "yes": three angles do not fix the size, '
+                                     'so larger or smaller triangles with the same angles can be drawn.'),
+          sa('Can a triangle have angles of 100°, 50°, and 40°? Explain.', ['Answer:', 'Explanation:'], key='No',
+             note='The angles of a triangle add to 180°, but 100 + 50 + 40 = 190.'),
+          draw_write('Draw a quadrilateral that has exactly one pair of parallel sides.\nWhat is the name of this kind of quadrilateral?', DRAW, 'Name:',
+                     draw='A quadrilateral with one pair of parallel sides (for example a horizontal top and bottom of different lengths) and one pair of sides that are not parallel',
+                     key='Trapezoid', note='Grade both: exactly one pair of parallel sides in the drawing, and the name "trapezoid".'),
       ])),
 
     # ------------------------------------------------------------------ 5.G.B.4 (quadrilaterals)
@@ -219,8 +255,9 @@ SETS = [
               mc('Which shape always has 4 sides of equal length?', ['Rhombus', 'Rectangle', 'Kite', 'Triangle']),
               sa('How many angles does a quadrilateral have?', 'Angles:', key='4'),
               tf('Every quadrilateral is a square.', key=False),
-              sa('Name a shape that is a quadrilateral but is not a parallelogram.', 'Shape:', key='A kite',
-                 note='Any quadrilateral without two pairs of parallel sides is correct, such as a kite or a trapezoid with one pair of parallel sides.'),
+              sa('Name a shape that is a quadrilateral but is not a parallelogram.', 'Shape:', key='A trapezoid with exactly one pair of parallel sides',
+                 note='Any quadrilateral with fewer than two pairs of parallel sides is correct, for example a trapezoid with exactly one pair of parallel sides '
+                      'or a kite with no parallel sides. A rhombus, rectangle or square is wrong because each is a parallelogram.'),
           ]),
           B('Classifying by parallel sides and right angles', '4.G.A.2', [
               tf('A quadrilateral with 2 pairs of parallel sides is a parallelogram.', key=True),
@@ -233,18 +270,28 @@ SETS = [
       f1=B('Area of parallelograms, rhombuses, and trapezoids', '6.G.A.1', [
           sa('A parallelogram has a base of 10 cm and a height of 6 cm.\nWhat is its area?', 'Area:', key='60 square cm'),
           sa('A rhombus has a base of 7 in. and a height of 5 in.\nWhat is its area?', 'Area:', key='35 square inches'),
-          mc('A square has sides that are 9 m long.\nWhat is its area?', ['81 square meters', '36 square meters', '18 square meters', '90 square meters']),
+          mc('A trapezoid has bases of 4 m and 10 m and a height of 6 m. It is cut into a 4-m by 6-m rectangle and two triangles, each with a base of 3 m and a height of 6 m.\nWhat is the area of the trapezoid?',
+             ['42 square meters', '84 square meters', '24 square meters', '60 square meters']),
           sa('A trapezoid has bases of 6 ft and 10 ft and a height of 4 ft.\nWhat is its area?', 'Area:', key='32 square feet'),
           tf('A parallelogram has a greater area than a rectangle with the same base and the same height.', key=False),
       ]),
-      f2=B('Shapes with given conditions', '7.G.A.2', [
-          sa('Can you draw a rectangle that is not a square? Write yes or no.', 'Answer:', key='Yes'),
-          mc('A quadrilateral has 4 sides of equal length but no right angles.\nWhat is it?',
-             ['A rhombus that is not a square', 'A square', 'A rectangle', 'A trapezoid']),
-          tf('Only one triangle can be drawn with angles of 40°, 60°, and 80°.', key=False),
-          sa('Is there more than one triangle shape with sides of 6 cm, 6 cm, and 6 cm? Write yes or no.', 'Answer:', key='No',
-             note='Three side lengths determine one unique triangle.'),
-          tf('A triangle with three sides of 5 cm also has three equal angles.', key=True),
+      f2=B('Draw quadrilaterals and triangles with given conditions', '7.G.A.2', [
+          draw_write('Draw a rectangle that is not a square.\nWrite its side lengths.', DRAW, 'Side lengths:',
+                     draw='A rectangle drawn along grid lines with two different side lengths',
+                     key='Two different lengths that match the drawing, for example 6 units by 3 units',
+                     note='Grade both: four right angles with unequal adjacent sides in the drawing, and side lengths that match it.'),
+          draw_write('Draw a rhombus that is not a square, with every side 5 units long.\n(Hint: a side can go 3 units across and 4 units up.)\nHow do you know it is not a square?',
+                     DRAW, 'Reason:', draw='A quadrilateral with four 5-unit sides whose angles are not right angles, for example with vertices (0, 0), (5, 0), (8, 4) and (3, 4)',
+                     key='Its angles are not right angles.',
+                     note='Grade both: four equal sides that are not perpendicular, and a reason that names the angles (not right angles).'),
+          sa('Can a quadrilateral have exactly 3 right angles? Explain.', ['Answer:', 'Explanation:'], key='No',
+             note='The angles of a quadrilateral add to 360°. If three are 90°, the fourth is 360 - 270 = 90°, so it has 4 right angles.'),
+          draw_write('Draw a parallelogram that is not a rectangle, with a base of 6 units and a height of 3 units.\nWhat is its area?', DRAW, 'Area:',
+                     draw='A parallelogram with a 6-unit base along a grid line and the opposite side 3 units above it, shifted sideways so the angles are not right angles',
+                     key='18 square units', note='Grade both: the drawing meets all three conditions, and the area 18 square units.'),
+          sa('A triangle has sides of 6 cm, 6 cm, and 6 cm. Can triangles of different shapes be drawn with these sides? Explain.',
+             ['Answer:', 'Explanation:'], key='No',
+             note='Three side lengths determine one unique triangle (here an equilateral triangle); every copy is the same shape and size.'),
       ])),
 
     # ------------------------------------------------------------------ 5.G.B.4 (triangles)
@@ -252,7 +299,7 @@ SETS = [
       main=[
           mc('A triangle has sides of 6 cm, 6 cm, and 6 cm.\nWhich name fits it?', ['Equilateral', 'Scalene', 'Right', 'Obtuse']),
           sa('A triangle has angles of 90°, 50°, and 40°.\nClassify it by its angles.', 'Classification:', key='Right triangle'),
-          tf('Every equilateral triangle is also an isosceles triangle.', key=True),
+          tf('An isosceles triangle has at least two sides of equal length. Every equilateral triangle is also an isosceles triangle.', key=True),
           mc('A triangle has sides of 3, 5, and 7 units and an angle of 120°.\nWhich name fits it?',
              ['Obtuse scalene', 'Right isosceles', 'Acute equilateral', 'Right scalene']),
           sa('A triangle has angles of 70°, 70°, and 40°.\nClassify it by its angles and by its sides.', ['By angles:', 'By sides:'],
@@ -289,11 +336,79 @@ SETS = [
           sa('Find the area of the triangle.', 'Area:', key='20 square feet', fig=tri(8, 5, 3, '8 ft', '5 ft')),
           tf('Two triangles with the same base and the same height have the same area.', key=True),
       ]),
-      f2=B('Complementary, supplementary, and vertical angles', '7.G.B.5', [
-          sa('Two angles are complementary. One measures 35°.\nWhat is the measure of the other angle?', 'Angle:', key='55°'),
-          sa('Two angles are supplementary. One measures 110°.\nWhat is the measure of the other angle?', 'Angle:', key='70°'),
-          mc('Vertical angles are always ___.', ['equal', 'supplementary', 'complementary', 'right angles']),
-          sa('An angle and a 72° angle together form a straight line.\nWhat is the measure of the angle?', 'Angle:', key='108°'),
-          tf('Two adjacent angles that together form a right angle are complementary.', key=True),
+      f2=B('Write and solve equations for unknown angles', '7.G.B.5', [
+          sa('The two angles form a straight line.\nWrite an equation and solve for x.', ['Equation:', 'x ='], key='(3x + 20) + 64 = 180; x = 32',
+             note='Any equivalent equation is correct (for example 3x + 84 = 180). Both the equation and x = 32 are required.',
+             fig=angles([0, 116, 180], [(58, '(3x + 20)°'), (148, '64°')],
+                        desc='A straight line with a ray from a point on it. The angle on the right is labeled (3x + 20)° and the angle on the left is labeled 64°.')),
+          sa('The two angles together form a right angle.\nWrite an equation and solve for x.', ['Equation:', 'x ='], key='(2x + 15) + 35 = 90; x = 20',
+             note='Any equivalent equation is correct (for example 2x + 50 = 90). Both the equation and x = 20 are required.',
+             fig=angles([0, 55, 90], [(22, '(2x + 15)°', 0.98), (73, '35°', 0.6)], ra=[0],
+                        desc='A right angle split by a ray into two angles: (2x + 15)° (lower) and 35° (upper). A right-angle mark is shown.')),
+          sa('Two lines cross. The marked angles are vertical angles.\nWrite an equation and solve for x.', ['Equation:', 'x ='], key='4x - 10 = 50; x = 15',
+             note='Vertical angles are equal. Any equivalent equation is correct. Both the equation and x = 15 are required.',
+             fig=angles([0, 50, 180, 230], [(20, '(4x − 10)°', 0.95), (205, '50°', 0.7)],
+                        desc='Two lines cross at a point. One angle is labeled (4x − 10)°; the angle vertical to it is labeled 50°.')),
+          mc('Three angles together form a straight line.\nWhich equation can be used to find x?',
+             ['40 + x + 70 = 180', '40 + x + 70 = 90', 'x = 40 × 70', '40 + x = 70'], cols=1,
+             fig=angles([0, 40, 110, 180], [(20, '40°'), (75, 'x°'), (145, '70°')],
+                        desc='A straight line with two rays from one point on it, making three angles: 40°, x°, and 70°.')),
+          sa('Angle ABC and angle CBD together form a straight line. Angle ABC is (5x)° and angle CBD is (x + 30)°.\nWrite an equation, solve for x, and find both angles.',
+             ['Equation:', 'x =', 'Angles:'], key='5x + (x + 30) = 180; x = 25; angle ABC = 125°, angle CBD = 55°',
+             note='Any equivalent equation is correct (6x + 30 = 180). All three parts are required.',
+             fig=angles([0, 55, 180], [(27, '(x + 30)°'), (117, '(5x)°')],
+                        desc='A straight line with a ray from a point on it. The angle on the right is labeled (x + 30)° and the angle on the left is labeled (5x)°.', h=190)),
       ])),
+
+    # ------------------------------------------------------------------ 5.G.B.4 (triangle hierarchy)
+    S('5.G.B.4', 'Place triangles in a hierarchy of categories and subcategories',
+      main=[
+          mc('Which list goes from the most general category to the most specific?',
+             ['Triangle, isosceles triangle, equilateral triangle', 'Equilateral triangle, isosceles triangle, triangle',
+              'Isosceles triangle, triangle, equilateral triangle', 'Triangle, equilateral triangle, isosceles triangle']),
+          tf('Every right isosceles triangle belongs to both the category of right triangles and the category of isosceles triangles.', key=True),
+          sa('Isosceles means at least two sides of equal length.\nA triangle has sides of 7, 7, and 7 units. Which of these categories does it belong to?\ntriangle, isosceles, equilateral, scalene',
+             'Categories:', key='Triangle, isosceles, and equilateral',
+             note='All three are required. Scalene is wrong because a scalene triangle has no sides of equal length.'),
+          mc('Isosceles means at least two sides of equal length.\nWhich statement is true?',
+             ['Some isosceles triangles are equilateral.', 'Every isosceles triangle is equilateral.',
+              'Some scalene triangles are isosceles.', 'No right triangle is isosceles.']),
+          sa('Explain why a triangle cannot be both a right triangle and an obtuse triangle.', ['Explanation:', ''],
+             key='A right triangle has a 90° angle and an obtuse triangle has an angle greater than 90°. The three angles of a triangle add to 180°, so these two angles together would already be more than 180°.',
+             note='Accept the 180° angle-sum reason, or that a triangle can have only one angle of 90° or more because the two sides would '
+                  'never meet. The categories "right" and "obtuse" do not overlap.'),
+      ],
+      back=[
+          B('Classify triangles by their angles', '4.G.A.2', [
+              tf('A triangle with angles of 30°, 60°, and 90° is a right triangle.', key=True),
+              mc('A triangle has angles of 110°, 40°, and 30°.\nWhat kind of triangle is it?', ['Obtuse', 'Right', 'Acute', 'Equilateral']),
+              sa('A triangle has angles of 50°, 60°, and 70°.\nIs it acute, right, or obtuse?', 'Answer:', key='Acute'),
+              tf('A triangle can have two obtuse angles.', key=False),
+              mc('Which three angles could be the angles of an acute triangle?', ['80°, 60°, 40°', '90°, 45°, 45°', '100°, 50°, 30°', '120°, 30°, 30°']),
+          ]),
+          B('Shapes in different categories share attributes', '3.G.A.1', [
+              tf('Rhombuses, rectangles, and squares are all quadrilaterals.', key=True),
+              mc('What do all quadrilaterals have in common?', ['4 sides', '4 right angles', '4 sides of equal length', '2 pairs of parallel sides']),
+              sa('Name a quadrilateral that is not a rectangle.', 'Shape:', key='A rhombus that is not a square',
+                 note='Any quadrilateral that is not a rectangle is correct, for example a trapezoid or a rhombus that is not a square.'),
+              tf('Every quadrilateral is a rhombus.', key=False),
+              mc('A square is also a ___.', ['rectangle', 'triangle', 'pentagon', 'hexagon']),
+          ]),
+      ],
+      f1=B('Area of special triangles', '6.G.A.1', [
+          sa('A right isosceles triangle has legs that are 6 cm long.\nWhat is its area?', 'Area:', key='18 square cm'),
+          tf('A triangle with a base of 4 in. and a height of 3{1/2} in. has an area of 7 square inches.', key=True),
+          mc('A square with sides of 8 m is cut along a diagonal into two triangles.\nWhat is the area of each triangle?',
+             ['32 square meters', '64 square meters', '16 square meters', '8 square meters']),
+          sa('An isosceles triangle has a base of 10 ft and a height of 12 ft.\nWhat is its area?', 'Area:', key='60 square feet'),
+          tf('A right triangle with legs of 5 units and 9 units has an area of 45 square units.', key=False),
+      ]),
+      f2=B('Decide whether conditions give one triangle, more than one, or none', '7.G.A.2', [
+          mc('How many differently shaped triangles can be drawn with sides of 5 cm, 5 cm, and 8 cm?', ['Exactly one', 'More than one', 'None', 'Exactly two']),
+          tf('Triangles of many different sizes can be drawn with angles of 60°, 60°, and 60°.', key=True),
+          sa('Can a triangle have sides of 3 m, 4 m, and 8 m? Explain.', ['Answer:', 'Explanation:'], key='No',
+             note='3 + 4 = 7 is less than 8, so the two shorter sides cannot meet.'),
+          tf('A triangle can have angles of 90°, 60°, and 40°.', key=False),
+          sa('Can a right triangle also be isosceles? If it can, give its angle measures.', ['Answer:', 'Angles:'], key='Yes; 90°, 45°, 45°'),
+      ]), num=71),
 ]

@@ -1,4 +1,4 @@
-from qb import S, B, sa, mc, tf, nl
+from qb import S, B, sa, mc, tf, nl, tape, draw_write, work, LONG_DIVISION
 from common import bar, fracs
 
 SETS = [
@@ -27,11 +27,11 @@ SETS = [
               tf('{2/5} + {3/5} = 1', key=True),
           ]),
           B('Common multiples', '4.OA.B.4', [
-              sa('List the first five multiples of 4.', 'Multiples:', key='4, 8, 12, 16, 20'),
+              sa('List the first five positive multiples of 4.', 'Multiples:', key='4, 8, 12, 16, 20'),
               tf('10 is a multiple of both 3 and 4.', key=False),
               mc('Which number is a multiple of both 6 and 8?', ['24', '14', '16', '30']),
-              sa('Name a number that is a multiple of both 5 and 10.', 'Number:', key='10',
-                 note='Any multiple of 10 (10, 20, 30, ...) is correct.'),
+              sa('Name a positive number that is a multiple of both 5 and 10.', 'Number:', key='10',
+                 note='Any positive multiple of 10 (10, 20, 30, ...) is correct.'),
               tf('18 is a multiple of both 4 and 6.', key=False),
           ]),
       ],
@@ -75,11 +75,11 @@ SETS = [
               tf('{9/10} - {4/10} = {5/20}', key=False),
           ]),
           B('Common multiples', '4.OA.B.4', [
-              sa('List the first four multiples of 6.', 'Multiples:', key='6, 12, 18, 24'),
+              sa('List the first four positive multiples of 6.', 'Multiples:', key='6, 12, 18, 24'),
               tf('15 is a multiple of both 3 and 5.', key=True),
               mc('Which number is a multiple of both 4 and 5?', ['20', '9', '15', '25']),
-              sa('Name a number that is a multiple of both 3 and 8.', 'Number:', key='24',
-                 note='Any multiple of 24 (24, 48, 72, ...) is correct.'),
+              sa('Name a positive number that is a multiple of both 3 and 8.', 'Number:', key='24',
+                 note='Any positive multiple of 24 (24, 48, 72, ...) is correct.'),
               tf('16 is a multiple of both 4 and 6.', key=False),
           ]),
       ],
@@ -99,20 +99,20 @@ SETS = [
       ])),
 
     # ------------------------------------------------------------------ 5.NF.A.1 (mixed numbers)
-    S('5.NF.A.1', 'Add and subtract mixed numbers with unlike denominators',
+    S('5.NF.A.1', 'Add mixed numbers with unlike denominators',
       main=[
           sa('Add.\n2{1/3} + 1{1/2}', 'Sum:', key='3 5/6'),
-          sa('Subtract.\n5{3/4} - 2{1/6}', 'Difference:', key='3 7/12'),
-          mc('Subtract.\n4{1/5} - 1{1/2}', ['2{7/10}', '3{3/10}', '3{7/10}', '2{3/10}']),
+          sa('Add.\n4{3/4} + 2{1/6}', 'Sum:', key='6 11/12'),
+          mc('Add.\n1{2/5} + 3{1/2}', ['4{9/10}', '4{3/7}', '5{1/10}', '4{3/10}']),
           sa('Add.\n3{5/8} + 2{3/4}', 'Sum:', key='6 3/8'),
-          sa('Subtract.\n6 - 2{2/3}', 'Difference:', key='3 1/3'),
+          sa('Add.\n5{2/3} + 1{5/9}', 'Sum:', key='7 2/9'),
       ],
       back=[
-          B('Adding and subtracting mixed numbers with like denominators', '4.NF.B.3.c', [
+          B('Adding mixed numbers with like denominators', '4.NF.B.3.c', [
               sa('Add.\n1{2/5} + 2{1/5}', 'Sum:', key='3 3/5'),
-              sa('Subtract.\n4{5/6} - 1{4/6}', 'Difference:', key='3 1/6'),
+              sa('Add.\n4{1/6} + 1{4/6}', 'Sum:', key='5 5/6'),
               tf('2{3/4} + 1{3/4} = 3{6/8}', key=False),
-              mc('5{1/3} - 2{2/3} = ?', ['2{2/3}', '3{1/3}', '3{2/3}', '2{1/3}']),
+              mc('2{2/3} + 1{2/3} = ?', ['4{1/3}', '3{1/3}', '4{2/3}', '3{2/3}']),
               sa('Add.\n3{7/8} + {3/8}', 'Sum:', key='4 2/8', note='4 1/4 is also correct.'),
           ]),
           B('Mixed numbers and fractions greater than 1', '4.NF.B.3.b', [
@@ -147,6 +147,47 @@ SETS = [
           tf('The solution of {1/2}(x + 3) = 4 is x = 5.', key=True),
       ])),
 
+    # ------------------------------------------------------------------ 5.NF.A.1 (subtract mixed numbers)
+    S('5.NF.A.1', 'Subtract mixed numbers with unlike denominators',
+      main=[
+          sa('Subtract.\n5{3/4} - 2{1/6}', 'Difference:', key='3 7/12'),
+          mc('Subtract.\n4{1/5} - 1{1/2}', ['2{7/10}', '3{3/10}', '3{7/10}', '2{3/10}']),
+          sa('Subtract.\n6 - 2{2/3}', 'Difference:', key='3 1/3'),
+          sa('Subtract.\n7{1/4} - 3{5/6}', 'Difference:', key='3 5/12'),
+          tf('3{1/2} - 1{2/3} = 1{5/6}', key=True),
+      ],
+      back=[
+          B('Subtracting mixed numbers with like denominators', '4.NF.B.3.c', [
+              sa('Subtract.\n4{5/6} - 1{4/6}', 'Difference:', key='3 1/6'),
+              mc('5{1/3} - 2{2/3} = ?', ['2{2/3}', '3{1/3}', '3{2/3}', '2{1/3}']),
+              sa('Subtract.\n6{1/4} - 3{3/4}', 'Difference:', key='2 2/4', note='2 1/2 is also correct.'),
+              tf('7{2/5} - 4{4/5} = 3{2/5}', key=False),
+              sa('Subtract.\n5 - 1{3/8}', 'Difference:', key='3 5/8'),
+          ]),
+          B('Rename a mixed number by decomposing a whole', '4.NF.B.3.b', [
+              sa('Fill in the blank.\n3{1/4} = 2{?/4}', 'Blank:', key='5'),
+              tf('5{2/3} = 4{5/3}', key=True),
+              mc('Which is equal to 4{1/8}?', ['3{9/8}', '4{9/8}', '3{1/8}', '5{1/8}']),
+              sa('Fill in the blank.\n6 = 5{?/5}', 'Blank:', key='5'),
+              tf('2{3/10} = 1{3/10}', key=False),
+          ]),
+      ],
+      f1=B('Solve equations of the form x + p = q with mixed numbers', '6.EE.B.7', [
+          sa('Solve for x.\nx + 3{2/3} = 7{1/4}', 'x =', key='3 7/12'),
+          sa('Solve for y.\n9{1/2} - y = 4{5/6}', 'y =', key='4 2/3'),
+          mc('Solve for n.\nn + 1{5/8} = 4{1/4}', ['2{5/8}', '3{5/8}', '5{7/8}', '2{3/8}']),
+          sa('A tank had 10{1/4} gallons of water. After some water was used, 6{2/3} gallons were left.\nWrite and solve an equation to find the amount w used.',
+             'Equation and solution:', key='10 1/4 - w = 6 2/3; w = 3 7/12 gallons', note='Any equivalent equation is correct.'),
+          tf('The solution of x + 2{3/4} = 5 is x = 2{1/4}.', key=True),
+      ]),
+      f2=B('Subtract rational numbers', '7.NS.A.1.c', [
+          sa('Find the value.\n2{1/4} - 5{1/2}', 'Value:', key='-3 1/4'),
+          sa('Find the value.\n-1{2/3} - 2{1/6}', 'Value:', key='-3 5/6'),
+          mc('Find the value.\n3{1/2} - (-1{3/4})', ['5{1/4}', '1{3/4}', '-1{3/4}', '-5{1/4}']),
+          sa('Find the value.\n-4{1/3} - (-1{5/6})', 'Value:', key='-2 1/2'),
+          tf('1{1/4} - 3 = -1{3/4}', key=True),
+      ]), num=65),
+
     # ------------------------------------------------------------------ 5.NF.A.2 (word problems)
     S('5.NF.A.2', 'Solve word problems by adding and subtracting fractions',
       main=[
@@ -178,13 +219,13 @@ SETS = [
                  ['35 - 18 = □', '35 + 18 = □', '18 - 35 = □', '35 × 18 = □']),
               sa('Liz has 26 stickers. She gets 17 more.\nHow many stickers does she have now?', 'Stickers:', key='43'),
           ]),
-          B('Adding and subtracting fractions with unlike denominators', '5.NF.A.1', [
-              sa('Add.\n{1/3} + {1/2}', 'Sum:', key='5/6'),
-              sa('Subtract.\n{3/4} - {1/3}', 'Difference:', key='5/12'),
-              tf('{1/2} + {1/4} = {2/6}', key=False),
-              mc('{5/6} - {1/2} = ?', ['{1/3}', '{4/4}', '{2/3}', '{1/6}']),
-              sa('Add.\n{2/5} + {1/2}', 'Sum:', key='9/10'),
-          ]),
+          B('Equivalent fractions', '4.NF.A.1', [
+              sa('Find the missing number.\n{3/4} = {?/12}', 'Missing number:', key='9'),
+              tf('{2/3} = {8/12}', key=True),
+              mc('Which fraction is equivalent to {5/6}?', ['{10/12}', '{5/12}', '{6/5}', '{15/16}']),
+              sa('Rewrite {1/2} and {1/3} as fractions with the denominator 6.', ['{1/2} =', '{1/3} ='], key='3/6 and 2/6'),
+              tf('{3/8} = {6/24}', key=False),
+          ], num=4),
       ],
       f1=B('Write and solve equations of the form x + p = q', '6.EE.B.7', [
           sa('After using {2/3} cup of oil, Ray has {3/4} cup left.\nWrite and solve an equation to find how much oil c he started with.',
@@ -209,7 +250,7 @@ SETS = [
     # ------------------------------------------------------------------ 5.NF.A.2 (benchmarks)
     S('5.NF.A.2', 'Use benchmark fractions to estimate and to check answers',
       main=[
-          tf('{2/5} + {1/2} = {3/7} must be wrong, because {3/7} is less than {1/2}.', key=True),
+          tf('Ella says {3/4} + {1/6} = {4/10}. Her answer must be wrong, because {4/10} is less than {3/4}, one of the fractions she added.', key=True),
           mc('Which is the best estimate of {7/8} + {5/12}?', ['About 1{1/2}', 'About {1/2}', 'About 2{1/2}', 'About 3']),
           sa('Is {3/5} + {4/9} more or less than 1?\nUse benchmark fractions to explain.', ['Answer:', 'Explanation:'], key='More than 1',
              note='3/5 is more than 1/2 by 1/10, and 4/9 is less than 1/2 by only 1/18, so the sum is a little more than 1/2 + 1/2 = 1.'),
@@ -246,14 +287,17 @@ SETS = [
           tf('{1/2} ÷ 4 is greater than {1/2}.', key=False),
       ]),
       f2=B('Use estimation to judge whether an answer is reasonable', '7.EE.B.3', [
-          sa('A board 9{7/8} feet long is cut into 3 equal pieces.\nEstimate the length of each piece.', 'Estimate:', key='About 3 1/3 feet',
-             note='About 10 ÷ 3; any estimate from 3 to 3 1/2 feet is correct.'),
+          sa('A board 9{7/8} feet long is cut into 3 equal pieces.\nRound the length of the board to the nearest whole foot. Then use it to estimate the length of each piece.',
+             ['Rounded length:', 'Estimate:'], key='10 feet; about 3 1/3 feet',
+             note='10 ÷ 3 = 3 1/3 feet. Both parts are required. The exact length, 3 7/24 feet, is not the estimate asked for.'),
           mc('Ann earns $11.85 per hour and works 7{3/4} hours.\nWhich is the best estimate of her pay?', ['$96', '$84', '$77', '$120']),
           tf('{3/4} of $79.95 is about $60.', key=True),
-          sa('Kai says 4{5/6} + 3{1/8} is about 9.\nIs this reasonable? Give a better estimate.', ['Reasonable?', 'Better estimate:'],
-             key='No; about 8', note='5 + 3 = 8'),
-          sa('A recipe needs 2{1/3} cups of flour per batch.\nEstimate the flour needed for 4 batches.', 'Estimate:', key='About 9 cups',
-             note='The exact amount is 9 1/3 cups; any estimate from 8 to 10 cups is correct.'),
+          sa('Kai says 4{5/6} + 3{1/8} is about 9.\nRound each mixed number to the nearest whole number and estimate the sum. Is the exact sum more or less than 9?',
+             ['Your estimate:', 'More or less than 9?'], key='8; less',
+             note='5 + 3 = 8. The exact sum, 7 23/24, is less than 9. Both parts are required.'),
+          sa('A recipe needs 2{1/3} cups of flour per batch.\nRound 2{1/3} to the nearest whole number. Then estimate the flour needed for 4 batches.',
+             ['Rounded amount:', 'Estimate:'], key='2 cups; 8 cups',
+             note='2 × 4 = 8 cups. Both parts are required. The exact amount, 9 1/3 cups, is not the estimate asked for.'),
       ])),
 
     # ------------------------------------------------------------------ 5.NF.B.3 (fraction as division)
@@ -270,7 +314,7 @@ SETS = [
           B('Unit fractions', '3.NF.A.1', [
               tf('{1/4} is one of 4 equal parts of a whole.', key=True),
               sa('A sandwich is cut into 3 equal parts.\nWhat fraction of the sandwich is one part?', 'Fraction:', key='1/3'),
-              mc('What fraction of the bar is shaded?', ['{3/5}', '{2/5}', '{5/3}', '{3/2}'], fig=bar(5, 3)),
+              mc('What fraction of the bar is shaded?', ['{3/8}', '{5/8}', '{8/3}', '{3/5}'], fig=bar(8, 3)),
               sa('How many {1/6}s make {5/6}?', 'Answer:', key='5'),
               tf('{3/8} is 3 parts of size {1/8}.', key=True),
           ]),
@@ -298,7 +342,7 @@ SETS = [
       ]),
       f2=B('Write fractions as decimals using division', '7.NS.A.2.d', [
           sa('Write 5 ÷ 8 as a decimal.', 'Decimal:', key='0.625'),
-          sa('Use long division to write {7/12} as a decimal.', 'Decimal:', key='0.58333... (the 3 repeats)'),
+          work('Use long division to write {7/12} as a decimal. Show your work.', 'Decimal:', method=LONG_DIVISION, key='0.58333... (the 3 repeats)'),
           mc('Which fraction has a decimal form that repeats?', ['{5/6}', '{3/8}', '{7/20}', '{9/25}']),
           sa('Write 11 ÷ 4 as a decimal.', 'Decimal:', key='2.75'),
           tf('{1/3} = 0.3', key=False),
@@ -326,7 +370,7 @@ SETS = [
           B('Whole numbers as fractions', '3.NF.A.3.c', [
               tf('{6/3} = 3', key=False),
               sa('Write 4 as a fraction with a denominator of 1.', 'Fraction:', key='4/1'),
-              mc('Which fraction is equal to 3?', ['{12/4}', '{3/4}', '{4/12}', '{3/3}']),
+              mc('Which fraction is equal to 3?', ['{6/2}', '{2/6}', '{3/2}', '{3/3}']),
               sa('How many halves are in 5 wholes?', 'Halves:', key='10'),
               tf('{8/8} = 8', key=False),
           ]),
@@ -370,7 +414,7 @@ SETS = [
               sa('What fraction of the bar is shaded?', 'Fraction:', key='3/8', fig=bar(8, 3)),
               mc('What fraction is 2 parts of size {1/3}?', ['{2/3}', '{1/6}', '{3/2}', '{1/3}']),
               sa('How many {1/8}s are in {5/8}?', 'Answer:', key='5'),
-              tf('{3/5} means 3 parts of size {1/5}.', key=True),
+              tf('{3/4} means 3 parts of size {1/4}.', key=True),
           ]),
           B('Splitting a number into equal parts', '3.OA.A.2', [
               sa('12 is split into 4 equal parts.\nHow much is in each part?', 'Answer:', key='3'),
@@ -398,7 +442,7 @@ SETS = [
     # ------------------------------------------------------------------ 5.NF.B.4.a (fraction × fraction)
     S('5.NF.B.4.a', 'Multiply a fraction by a fraction',
       main=[
-          sa('Multiply.\n{2/3} × {4/5}', 'Product:', key='8/15'),
+          sa('Multiply.\n{3/4} × {2/7}', 'Product:', key='3/14', note='6/28 is also correct.'),
           sa('Multiply.\n{3/4} × {1/6}', 'Product:', key='1/8', note='3/24 is also correct.'),
           mc('Multiply.\n{5/6} × {3/10}', ['{1/4}', '{8/16}', '{15/6}', '{1/2}']),
           sa('What is {1/2} of {3/8}?', 'Answer:', key='3/16'),
@@ -434,4 +478,57 @@ SETS = [
           sa('Find the product.\n(-{1/2}) × (-{1/2}) × (-{1/2})', 'Product:', key='-1/8'),
           tf('(-{2/5}) × {5/2} = 1', key=False),
       ])),
+
+    # ------------------------------------------------------------------ 5.NF.B.4.a (visual models)
+    S('5.NF.B.4.a', 'Interpret fraction products with tape diagrams and area models',
+      main=[
+          mc('The tape diagram shows 12 split into 4 equal parts, with 3 parts shaded.\nWhich product does the shaded part show?',
+             ['{3/4} × 12', '{4/3} × 12', '3 × 12', '{1/4} × 3'], fig=tape(dict(n=4, shade=3, seg='3', brace='12'))),
+          draw_write('Shade the tape diagram to show {2/5} × 15.\nThen write the product.', tape(dict(n=5, brace='15')), 'Product:',
+                     draw='2 of the 5 equal parts shaded (each part is 3)', key='6',
+                     note='Grade both: exactly 2 of the 5 parts shaded, and the product 6.'),
+          mc('In the model, the darker part shows a product of two fractions.\nWhich equation does the model show?',
+             ['{2/3} × {3/4} = {6/12}', '{2/3} × {3/4} = {5/7}', '{2/3} + {3/4} = {5/7}', '{1/3} × {1/4} = {1/12}'],
+             fig=dict(k='grid', rows=3, cols=4, rshade=2, cshade=3, h=200, maxcell=44)),
+          draw_write('Shade 3 of the 5 columns. Then shade 1 of the 2 rows.\nWhat product of fractions does the part shaded twice show, and what is it?',
+                     dict(k='grid', rows=2, cols=5, rshade=0, cshade=0, h=180, maxcell=50,
+                          desc='Blank rectangle divided into 2 rows and 5 columns of equal parts.'),
+                     ['Product:', 'Value:'],
+                     draw='3 of the 5 columns shaded and 1 of the 2 rows shaded; 3 parts are shaded twice', key='1/2 × 3/5; 3/10',
+                     note='Grade both: the shading (3 columns, 1 row, 3 parts overlap) and the written product 1/2 × 3/5 = 3/10 '
+                          '(3/5 × 1/2 is also correct).'),
+          tf('In a model of {3/4} × 8, 8 is split into 4 equal parts and 3 of the parts are taken, so the product is 6.', key=True),
+      ],
+      back=[
+          B('Fractions of a whole in a model', '3.NF.A.1', [
+              sa('What fraction of the bar is shaded?', 'Fraction:', key='3/4', fig=bar(4, 3)),
+              tf('{2/3} of a bar means 2 of 3 equal parts.', key=True),
+              mc('A bar is split into 6 equal parts and 4 parts are shaded.\nWhat fraction is shaded?', ['{4/6}', '{6/4}', '{4/10}', '{2/6}']),
+              sa('How many {1/3}s make {2/3}?', 'Answer:', key='2'),
+              tf('A bar split into 8 equal parts with 3 parts shaded shows {3/5}.', key=False),
+          ]),
+          B('Split a whole number into equal parts', '3.OA.A.2', [
+              sa('15 is split into 5 equal parts.\nHow much is in each part?', 'Answer:', key='3'),
+              tf('21 split into 3 equal parts gives 7 in each part.', key=True),
+              mc('Which expression shows 32 split into 4 equal parts?', ['32 ÷ 4', '32 × 4', '32 - 4', '4 ÷ 32']),
+              sa('The tape diagram shows 16 split into 8 equal parts.\nWhat number goes in each part?', 'Answer:', key='2',
+                 fig=tape(dict(n=8, brace='16'))),
+              tf('36 split into 6 equal parts gives 5 in each part.', key=False),
+          ]),
+      ],
+      f1=B('Use visual models to divide fractions by fractions', '6.NS.A.1', [
+          sa('How many {1/6}s are in {2/3}?', 'Answer:', key='4'),
+          tf('{3/4} ÷ {1/8} = 6 because there are 6 eighths in {3/4}.', key=True),
+          mc('A model shows 2 wholes, each cut into thirds.\nHow many {1/3}s are in 2?', ['6', '{2/3}', '5', '{1/6}']),
+          sa('Divide.\n{5/6} ÷ {1/12}', 'Quotient:', key='10'),
+          tf('{2/5} ÷ {1/10} = {2/50}', key=False),
+      ]),
+      f2=B('Multiply rational numbers', '7.NS.A.2.c', [
+          sa('Find the product.\n{3/4} × (-8)', 'Product:', key='-6'),
+          tf('-{2/3} × {3/4} = -{1/2}', key=True),
+          mc('Find the product.\n(-{1/2}) × (-{3/5})', ['{3/10}', '-{3/10}', '{4/7}', '-{4/7}']),
+          sa('Find the product.\n-{2/5} × 15', 'Product:', key='-6'),
+          tf('(-1) × (-{5/6}) = -{5/6}', key=False),
+      ]), num=66),
+
 ]

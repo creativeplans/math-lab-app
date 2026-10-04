@@ -25,11 +25,12 @@ import render as R  # noqa: E402
 import answers as A  # noqa: E402
 import keycard  # noqa: E402
 import qb  # noqa: E402
-from qb import std_info, NEAREST_NOTE  # noqa: E402
+from qb import std_info  # noqa: E402
 
 GRADE = None
 GRADE_DIR = None
 DOMAIN_ORDER = []
+COLLECTION = {}  # id (namespace for question IDs, e.g. G5), version, date: from src/grade.py
 
 
 def load_grade(name):
@@ -40,6 +41,10 @@ def load_grade(name):
     cfg = importlib.import_module('grade')
     GRADE = cfg.GRADE
     qb.GRADE = GRADE
+    qb.STRICT_BACKWARD = getattr(cfg, 'STRICT_BACKWARD', False)
+    COLLECTION.clear()
+    COLLECTION.update(id='G%d' % GRADE, grade=GRADE, version=getattr(cfg, 'VERSION', '1.0.0'),
+                      date=getattr(cfg, 'VERSION_DATE', None))
     A.KEY_DIR = os.path.join(GRADE_DIR, 'src', 'answers')
     DOMAIN_ORDER = [(dom, importlib.import_module(mod).SETS) for dom, mod in cfg.DOMAINS]
     A.PLAN.clear()
@@ -52,26 +57,39 @@ def load_grade(name):
                 for i, q in enumerate(qs, 1):
                     if A.balanced(q):
                         items.append(A.qid(st['num'], key, i))
-        A.make_plan(items, GRADE)
+        frozen = {}
+        plan_file = os.path.join(GRADE_DIR, 'src', 'choice_plan.json')
+        if os.path.exists(plan_file):
+            frozen = json.load(open(plan_file))
+        A.make_plan(items, GRADE, frozen)
     return GRADE
 
 
 def sections(st):
     """(key, name, std, questions, nearest) for each section of a set."""
     out = [('MAIN', 'Grade %d main question' % GRADE, st['std'], st['main'], False)]
-    for i, b in enumerate(st['back'], 1):
-        out.append(('BACKWARD %d' % i, b['title'], b['std'], b['qs'], False))
+    nums = [b.get('fixed_num', i) for i, b in enumerate(st['back'], 1)]
+    assert len(set(nums)) == len(nums), (st['title'], nums)
+    for n, b in zip(nums, st['back']):
+        out.append(('BACKWARD %d' % n, b['title'], b['std'], b['qs'], False))
     for key, b in (('FORWARD 1', st['f1']), ('FORWARD 2', st['f2'])):
         out.append((key, b['title'], b['std'], b['qs'], b.get('nearest', False)))
     return out
 
 
 def all_sets():
+    """Sets in collection order. A set's number is fixed_num when given, else the next count."""
     n = 0
+    seen = set()
     for dom, sets in DOMAIN_ORDER:
         for st in sets:
-            n += 1
-            st['num'] = n
+            if 'fixed_num' in st:
+                st['num'] = st['fixed_num']
+            else:
+                n += 1
+                st['num'] = n
+            assert st['num'] not in seen, 'duplicate set number %d' % st['num']
+            seen.add(st['num'])
             st['domain'] = dom
             yield st
 
@@ -187,7 +205,7 @@ def build(out, mode='questions'):
             c.addOutlineEntry(cur_std, 'set%d' % st['num'], 1, closed=True)
         pageno += 1
         secs = sections(st)
-        rows = [(s[0], s[1] + (' \u2014 nearest related (no direct Grade 8 step)' if s[4] else ''), s[2]) for s in secs]
+        rows = [(s[0], s[1] + (' \u2014 nearest related (no direct Grade %d step)' % (GRADE + 2) if s[4] else ''), s[2]) for s in secs]
         heading_page(c, 'SET %d  •  %s  •  %s' % (st['num'], st['std'], st['domain'].upper()),
                      st['title'], None, rows, pageno)
         c.bookmarkPage('set%d' % st['num'])
@@ -198,7 +216,7 @@ def build(out, mode='questions'):
             pageno += 1
             sub = '%s  •  %s  •  %s  •  %s' % (name, grade, dom, std)
             if nearest:
-                sub += '\n⚑ ' + NEAREST_NOTE
+                sub += '\n⚑ ' + qb.nearest_note()
             heading_page(c, 'SET %d  •  %s' % (st['num'], st['std']), key, sub, None, pageno)
             anchor = 'set%d_%s' % (st['num'], key.replace(' ', ''))
             c.bookmarkPage(anchor)
@@ -228,7 +246,7 @@ def build(out, mode='questions'):
                     raise RuntimeError('Set %d %s Q%d: %s' % (st['num'], key, i, e))
                 c.showPage()
                 records.append(dict(
-                    id=qid, page=pageno, set=st['num'], set_title=st['title'], set_standard=st['std'],
+                    id=qid, uid='%s:%s' % (COLLECTION['id'], qid), page=pageno, set=st['num'], set_title=st['title'], set_standard=st['std'],
                     section=key, section_title=name, standard=std, grade=grade, domain=dom,
                     number=i, of=len(qs), nearest_related=bool(nearest), type=rec['type'],
                     question=A.plain(qd['stem']).replace('\n', ' '),
@@ -241,7 +259,9 @@ def build(out, mode='questions'):
                              if rec['type'] == 'tf' else []),
                     answer_lines=([] if rec['type'] in ('mc', 'tf', 'plot') else
                                   (qd.get('ans') if isinstance(qd.get('ans'), list) else [qd.get('ans') or ''])),
-                    correct_letter=rec['letter'], correct_answer=rec['answer'], grading_note=rec['note']))
+                    correct_letter=rec['letter'], correct_answer=rec['answer'],
+                    drawing_answer=rec.get('drawing'), required_method=rec.get('method'),
+                    grading_note=rec['note']))
     assert pageno == total_pages, (pageno, total_pages)
     c.save()
     return len(sets), nq, total_pages, records
@@ -249,7 +269,8 @@ def build(out, mode='questions'):
 
 GRADING_RULES = [
     'Match each student response to its key record by the question ID printed on the question page '
-    '(for example S40-F2-Q3). The page number is the same in the Question Collection and the Answer Key.',
+    '(for example S40-F2-Q3). The page number is the same in the Question Collection and the Answer Key. '
+    'IDs are unique within one grade\'s collection; across collections use uid (for example G5:S40-F2-Q3).',
     'Multiple choice and true/false: the response is correct when the chosen letter equals correct_letter, '
     'or when the student wrote the text of the correct choice.',
     'Short answer: accept any mathematically equivalent form unless the question asks for a specific form '
@@ -257,7 +278,12 @@ GRADING_RULES = [
     '"x = 5" or "5"; terms of an expression in any order). Units are not required unless the question asks for them.',
     'When an answer has several parts (separated by semicolons, or with labels such as "Rate of change:"), '
     'every part must be correct.',
-    'Drawing / plotting questions: correct_answer describes what a correct drawing shows. Judge the student\'s drawing against it.',
+    'Drawing / plotting questions (type plot): correct_answer describes what a correct drawing shows. Judge the student\'s drawing against it.',
+    'Drawing + written questions (type plot_text): the student draws on the figure AND writes an answer. drawing_answer '
+    'describes the correct drawing and correct_answer the written answer. Both must be correct: every requested point, '
+    'segment or shape in the drawing, and the written conclusion.',
+    'Answer with required work (type work): required_method says what the shown work must use. A correct final answer '
+    'without that work earns partial credit only; correct work with a slip in the final answer is also partial.',
     'Explain / describe questions: grading_note says what a correct response must include; accept any reasonable wording.',
     'grading_note also lists other accepted answers and the work behind an answer. It is guidance for the grader, not for students.',
 ]
@@ -265,11 +291,12 @@ GRADING_RULES = [
 
 def write_data(records, base):
     with open(base + '.json', 'w', encoding='utf-8') as f:
-        json.dump(dict(title='Grade %d Common Core Math — Answer Key' % GRADE, question_count=len(records),
+        json.dump(dict(title='Grade %d Common Core Math — Answer Key' % GRADE, collection=COLLECTION,
+                       question_count=len(records),
                        id_format='S<set>-<section>-Q<number>; section is M (main), B1, B2, ... (backward), F1 or F2 (forward)',
                        grading_rules=GRADING_RULES, questions=records), f, ensure_ascii=False, indent=1)
-    cols = ['id', 'page', 'set', 'section', 'number', 'standard', 'type', 'question', 'choices',
-            'correct_letter', 'correct_answer', 'grading_note']
+    cols = ['uid', 'id', 'page', 'set', 'section', 'number', 'standard', 'type', 'question', 'choices',
+            'correct_letter', 'correct_answer', 'drawing_answer', 'required_method', 'grading_note']
     with open(base + '.csv', 'w', encoding='utf-8-sig', newline='') as f:
         w = csv.writer(f)
         w.writerow(cols)
@@ -293,3 +320,7 @@ if __name__ == '__main__':
     assert qs[:3] == ks[:3]
     write_data(ks[3], p['data'])
     print('grade %d: sets %d, questions %d, pages %d' % ((GRADE,) + qs[:3]))
+    if qb.SAME_GRADE_BACKWARD:
+        print('warning: %d backward branches use a Grade %d standard:' % (len(qb.SAME_GRADE_BACKWARD), GRADE))
+        for t in qb.SAME_GRADE_BACKWARD:
+            print('   %s | %s | %s' % t)

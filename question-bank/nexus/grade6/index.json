@@ -1,11 +1,18 @@
 {
  "format_version": 1,
+ "collection": {
+  "id": "G6",
+  "grade": 6,
+  "version": "1.0.0",
+  "date": null
+ },
  "grade": 6,
  "title": "Grade 6 Common Core Math — Question Sets",
  "set_count": 82,
  "question_count": 2465,
  "figure_count": 545,
- "id_format": "S<set>-<section>-Q<number>. Section codes: M = MAIN (Grade 6), B1, B2, ... = BACKWARD branches (earlier grades), F1 = FORWARD 1 (Grade 7), F2 = FORWARD 2 (Grade 8).",
+ "id_format": "S<set>-<section>-Q<number>. Section codes: M = MAIN (Grade 6), B1, B2, ... = BACKWARD branches (earlier grades), F1 = FORWARD 1 (Grade 7), F2 = FORWARD 2 (Grade 8). id is unique within this collection; uid = \"G6:\" + id is unique across all grade collections (the collection, not a question's standard grade, is the namespace: this bank also holds Grade 7 and 8 forward questions). Set and branch numbers are fixed: they need not be consecutive, and an ID is never reused for a different skill (see revisions.json).",
+ "revisions_file": null,
  "relations": {
   "main": "the Grade 6 skill the set is built around",
   "backward": "a prerequisite skill to check when a student misses MAIN questions",
@@ -13,11 +20,13 @@
   "forward2": "the next connected Grade 8 skill; nearest_related = true marks a branch with no direct Grade 8 continuation"
  },
  "grading_rules": [
-  "Match each student response to its key record by the question ID printed on the question page (for example S40-F2-Q3). The page number is the same in the Question Collection and the Answer Key.",
+  "Match each student response to its key record by the question ID printed on the question page (for example S40-F2-Q3). The page number is the same in the Question Collection and the Answer Key. IDs are unique within one grade's collection; across collections use uid (for example G5:S40-F2-Q3).",
   "Multiple choice and true/false: the response is correct when the chosen letter equals correct_letter, or when the student wrote the text of the correct choice.",
   "Short answer: accept any mathematically equivalent form unless the question asks for a specific form (equivalent fractions, decimals, and mixed numbers; a ratio written as a : b, a to b, or a/b; \"x = 5\" or \"5\"; terms of an expression in any order). Units are not required unless the question asks for them.",
   "When an answer has several parts (separated by semicolons, or with labels such as \"Rate of change:\"), every part must be correct.",
-  "Drawing / plotting questions: correct_answer describes what a correct drawing shows. Judge the student's drawing against it.",
+  "Drawing / plotting questions (type plot): correct_answer describes what a correct drawing shows. Judge the student's drawing against it.",
+  "Drawing + written questions (type plot_text): the student draws on the figure AND writes an answer. drawing_answer describes the correct drawing and correct_answer the written answer. Both must be correct: every requested point, segment or shape in the drawing, and the written conclusion.",
+  "Answer with required work (type work): required_method says what the shown work must use. A correct final answer without that work earns partial credit only; correct work with a slip in the final answer is also partial.",
   "Explain / describe questions: grading_note says what a correct response must include; accept any reasonable wording.",
   "grading_note also lists other accepted answers and the work behind an answer. It is guidance for the grader, not for students."
  ],

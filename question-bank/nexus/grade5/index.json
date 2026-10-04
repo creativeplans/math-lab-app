@@ -1,11 +1,18 @@
 {
  "format_version": 1,
+ "collection": {
+  "id": "G5",
+  "grade": 5,
+  "version": "2.0.0",
+  "date": "2026-10-04"
+ },
  "grade": 5,
  "title": "Grade 5 Common Core Math — Question Sets",
- "set_count": 57,
- "question_count": 1580,
- "figure_count": 117,
- "id_format": "S<set>-<section>-Q<number>. Section codes: M = MAIN (Grade 5), B1, B2, ... = BACKWARD branches (earlier grades), F1 = FORWARD 1 (Grade 6), F2 = FORWARD 2 (Grade 7).",
+ "set_count": 71,
+ "question_count": 1930,
+ "figure_count": 165,
+ "id_format": "S<set>-<section>-Q<number>. Section codes: M = MAIN (Grade 5), B1, B2, ... = BACKWARD branches (earlier grades), F1 = FORWARD 1 (Grade 6), F2 = FORWARD 2 (Grade 7). id is unique within this collection; uid = \"G5:\" + id is unique across all grade collections (the collection, not a question's standard grade, is the namespace: this bank also holds Grade 6 and 7 forward questions). Set and branch numbers are fixed: they need not be consecutive, and an ID is never reused for a different skill (see revisions.json).",
+ "revisions_file": "revisions.json",
  "relations": {
   "main": "the Grade 5 skill the set is built around",
   "backward": "a prerequisite skill to check when a student misses MAIN questions",
@@ -13,11 +20,13 @@
   "forward2": "the next connected Grade 7 skill; nearest_related = true marks a branch with no direct Grade 7 continuation"
  },
  "grading_rules": [
-  "Match each student response to its key record by the question ID printed on the question page (for example S40-F2-Q3). The page number is the same in the Question Collection and the Answer Key.",
+  "Match each student response to its key record by the question ID printed on the question page (for example S40-F2-Q3). The page number is the same in the Question Collection and the Answer Key. IDs are unique within one grade's collection; across collections use uid (for example G5:S40-F2-Q3).",
   "Multiple choice and true/false: the response is correct when the chosen letter equals correct_letter, or when the student wrote the text of the correct choice.",
   "Short answer: accept any mathematically equivalent form unless the question asks for a specific form (equivalent fractions, decimals, and mixed numbers; a ratio written as a : b, a to b, or a/b; \"x = 5\" or \"5\"; terms of an expression in any order). Units are not required unless the question asks for them.",
   "When an answer has several parts (separated by semicolons, or with labels such as \"Rate of change:\"), every part must be correct.",
-  "Drawing / plotting questions: correct_answer describes what a correct drawing shows. Judge the student's drawing against it.",
+  "Drawing / plotting questions (type plot): correct_answer describes what a correct drawing shows. Judge the student's drawing against it.",
+  "Drawing + written questions (type plot_text): the student draws on the figure AND writes an answer. drawing_answer describes the correct drawing and correct_answer the written answer. Both must be correct: every requested point, segment or shape in the drawing, and the written conclusion.",
+  "Answer with required work (type work): required_method says what the shown work must use. A correct final answer without that work earns partial credit only; correct work with a slip in the final answer is also partial.",
   "Explain / describe questions: grading_note says what a correct response must include; accept any reasonable wording.",
   "grading_note also lists other accepted answers and the work behind an answer. It is guidance for the grader, not for students."
  ],
@@ -609,6 +618,91 @@
    ]
   },
   {
+   "set": 58,
+   "set_id": "S58",
+   "file": "sets/S58.json",
+   "standard": "5.OA.B.3",
+   "title": "Explain why two patterns have the relationship they do",
+   "domain": "Operations & Algebraic Thinking",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Explain why two patterns have the relationship they do",
+     "standard": "5.OA.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S58-M-Q1",
+      "S58-M-Q2",
+      "S58-M-Q3",
+      "S58-M-Q4",
+      "S58-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Notice features of a pattern that the rule does not state",
+     "standard": "4.OA.C.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S58-B1-Q1",
+      "S58-B1-Q2",
+      "S58-B1-Q3",
+      "S58-B1-Q4",
+      "S58-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Explain patterns in the multiplication table",
+     "standard": "3.OA.D.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S58-B2-Q1",
+      "S58-B2-Q2",
+      "S58-B2-Q3",
+      "S58-B2-Q4",
+      "S58-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use an equation to describe how two quantities change together",
+     "standard": "6.EE.C.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S58-F1-Q1",
+      "S58-F1-Q2",
+      "S58-F1-Q3",
+      "S58-F1-Q4",
+      "S58-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Identify the constant of proportionality",
+     "standard": "7.RP.A.2.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S58-F2-Q1",
+      "S58-F2-Q2",
+      "S58-F2-Q3",
+      "S58-F2-Q4",
+      "S58-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
    "set": 7,
    "set_id": "S7",
    "file": "sets/S07.json",
@@ -647,25 +741,10 @@
      ]
     },
     {
-     "section": "BACKWARD 2",
-     "section_code": "B2",
-     "relation": "backward",
-     "skill": "Ordered pairs and the coordinate plane",
-     "standard": "5.G.A.1",
-     "nearest_related": false,
-     "question_ids": [
-      "S7-B2-Q1",
-      "S7-B2-Q2",
-      "S7-B2-Q3",
-      "S7-B2-Q4",
-      "S7-B2-Q5"
-     ]
-    },
-    {
      "section": "BACKWARD 3",
      "section_code": "B3",
      "relation": "backward",
-     "skill": "Reading the scale on an axis",
+     "skill": "Read a scaled bar graph",
      "standard": "3.MD.B.3",
      "nearest_related": false,
      "question_ids": [
@@ -674,6 +753,21 @@
       "S7-B3-Q3",
       "S7-B3-Q4",
       "S7-B3-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 4",
+     "section_code": "B4",
+     "relation": "backward",
+     "skill": "Whole numbers on a number line",
+     "standard": "2.MD.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S7-B4-Q1",
+      "S7-B4-Q2",
+      "S7-B4-Q3",
+      "S7-B4-Q4",
+      "S7-B4-Q5"
      ]
     },
     {
@@ -850,7 +944,7 @@
      "section": "BACKWARD 2",
      "section_code": "B2",
      "relation": "backward",
-     "skill": "The unit fraction 1/10",
+     "skill": "Unit fractions",
      "standard": "3.NF.A.1",
      "nearest_related": false,
      "question_ids": [
@@ -1074,6 +1168,91 @@
       "S11-F2-Q3",
       "S11-F2-Q4",
       "S11-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 59,
+   "set_id": "S59",
+   "file": "sets/S59.json",
+   "standard": "5.NBT.A.2",
+   "title": "Explain patterns in the number of zeros and the placement of the decimal point",
+   "domain": "Number & Operations in Base Ten",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Explain patterns in the number of zeros and the placement of the decimal point",
+     "standard": "5.NBT.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S59-M-Q1",
+      "S59-M-Q2",
+      "S59-M-Q3",
+      "S59-M-Q4",
+      "S59-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "A digit is worth 10 times as much as in the place to its right",
+     "standard": "4.NBT.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S59-B1-Q1",
+      "S59-B1-Q2",
+      "S59-B1-Q3",
+      "S59-B1-Q4",
+      "S59-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Tenths as hundredths",
+     "standard": "4.NF.C.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S59-B2-Q1",
+      "S59-B2-Q2",
+      "S59-B2-Q3",
+      "S59-B2-Q4",
+      "S59-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Explain decimal placement when multiplying and dividing decimals",
+     "standard": "6.NS.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S59-F1-Q1",
+      "S59-F1-Q2",
+      "S59-F1-Q3",
+      "S59-F1-Q4",
+      "S59-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Write fractions as decimals and explain why they terminate or repeat",
+     "standard": "7.NS.A.2.d",
+     "nearest_related": true,
+     "question_ids": [
+      "S59-F2-Q1",
+      "S59-F2-Q2",
+      "S59-F2-Q3",
+      "S59-F2-Q4",
+      "S59-F2-Q5"
      ]
     }
    ]
@@ -1734,18 +1913,103 @@
    ]
   },
   {
-   "set": 19,
-   "set_id": "S19",
-   "file": "sets/S19.json",
-   "standard": "5.NBT.B.7",
-   "title": "Add and subtract decimals to hundredths",
+   "set": 60,
+   "set_id": "S60",
+   "file": "sets/S60.json",
+   "standard": "5.NBT.B.6",
+   "title": "Draw division models and explain the strategy",
    "domain": "Number & Operations in Base Ten",
    "sections": [
     {
      "section": "MAIN",
      "section_code": "M",
      "relation": "main",
-     "skill": "Add and subtract decimals to hundredths",
+     "skill": "Draw division models and explain the strategy",
+     "standard": "5.NBT.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S60-M-Q1",
+      "S60-M-Q2",
+      "S60-M-Q3",
+      "S60-M-Q4",
+      "S60-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Area models for dividing by a one-digit number",
+     "standard": "4.NBT.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S60-B1-Q1",
+      "S60-B1-Q2",
+      "S60-B1-Q3",
+      "S60-B1-Q4",
+      "S60-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Division as an unknown-factor problem",
+     "standard": "3.OA.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S60-B2-Q1",
+      "S60-B2-Q2",
+      "S60-B2-Q3",
+      "S60-B2-Q4",
+      "S60-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Connect the standard division algorithm to partial quotients",
+     "standard": "6.NS.B.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S60-F1-Q1",
+      "S60-F1-Q2",
+      "S60-F1-Q3",
+      "S60-F1-Q4",
+      "S60-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Solve real-world problems by dividing rational numbers",
+     "standard": "7.NS.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S60-F2-Q1",
+      "S60-F2-Q2",
+      "S60-F2-Q3",
+      "S60-F2-Q4",
+      "S60-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 19,
+   "set_id": "S19",
+   "file": "sets/S19.json",
+   "standard": "5.NBT.B.7",
+   "title": "Add decimals to hundredths",
+   "domain": "Number & Operations in Base Ten",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Add decimals to hundredths",
      "standard": "5.NBT.B.7",
      "nearest_related": false,
      "question_ids": [
@@ -1760,7 +2024,7 @@
      "section": "BACKWARD 1",
      "section_code": "B1",
      "relation": "backward",
-     "skill": "Adding and subtracting multi-digit whole numbers",
+     "skill": "Adding multi-digit whole numbers",
      "standard": "4.NBT.B.4",
      "nearest_related": false,
      "question_ids": [
@@ -1805,7 +2069,7 @@
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Add and subtract multi-digit decimals",
+     "skill": "Add multi-digit decimals",
      "standard": "6.NS.B.3",
      "nearest_related": false,
      "question_ids": [
@@ -1820,7 +2084,7 @@
      "section": "FORWARD 2",
      "section_code": "F2",
      "relation": "forward2",
-     "skill": "Add and subtract rational numbers",
+     "skill": "Add rational numbers",
      "standard": "7.NS.A.1.d",
      "nearest_related": false,
      "question_ids": [
@@ -1829,6 +2093,176 @@
       "S19-F2-Q3",
       "S19-F2-Q4",
       "S19-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 61,
+   "set_id": "S61",
+   "file": "sets/S61.json",
+   "standard": "5.NBT.B.7",
+   "title": "Subtract decimals to hundredths",
+   "domain": "Number & Operations in Base Ten",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Subtract decimals to hundredths",
+     "standard": "5.NBT.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S61-M-Q1",
+      "S61-M-Q2",
+      "S61-M-Q3",
+      "S61-M-Q4",
+      "S61-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Subtracting multi-digit whole numbers",
+     "standard": "4.NBT.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S61-B1-Q1",
+      "S61-B1-Q2",
+      "S61-B1-Q3",
+      "S61-B1-Q4",
+      "S61-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Subtracting mixed numbers in tenths and hundredths",
+     "standard": "4.NF.B.3.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S61-B2-Q1",
+      "S61-B2-Q2",
+      "S61-B2-Q3",
+      "S61-B2-Q4",
+      "S61-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Subtract multi-digit decimals",
+     "standard": "6.NS.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S61-F1-Q1",
+      "S61-F1-Q2",
+      "S61-F1-Q3",
+      "S61-F1-Q4",
+      "S61-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Subtract rational numbers",
+     "standard": "7.NS.A.1.d",
+     "nearest_related": false,
+     "question_ids": [
+      "S61-F2-Q1",
+      "S61-F2-Q2",
+      "S61-F2-Q3",
+      "S61-F2-Q4",
+      "S61-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 62,
+   "set_id": "S62",
+   "file": "sets/S62.json",
+   "standard": "5.NBT.B.7",
+   "title": "Use place-value models to add and subtract decimals and explain the method",
+   "domain": "Number & Operations in Base Ten",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Use place-value models to add and subtract decimals and explain the method",
+     "standard": "5.NBT.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S62-M-Q1",
+      "S62-M-Q2",
+      "S62-M-Q3",
+      "S62-M-Q4",
+      "S62-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Add tenths and hundredths",
+     "standard": "4.NF.C.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S62-B1-Q1",
+      "S62-B1-Q2",
+      "S62-B1-Q3",
+      "S62-B1-Q4",
+      "S62-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Rename a unit as ten of the next smaller unit",
+     "standard": "4.NBT.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S62-B2-Q1",
+      "S62-B2-Q2",
+      "S62-B2-Q3",
+      "S62-B2-Q4",
+      "S62-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Add and subtract multi-digit decimals with the standard algorithm",
+     "standard": "6.NS.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S62-F1-Q1",
+      "S62-F1-Q2",
+      "S62-F1-Q3",
+      "S62-F1-Q4",
+      "S62-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Add and subtract rational numbers",
+     "standard": "7.NS.A.1.d",
+     "nearest_related": false,
+     "question_ids": [
+      "S62-F2-Q1",
+      "S62-F2-Q2",
+      "S62-F2-Q3",
+      "S62-F2-Q4",
+      "S62-F2-Q5"
      ]
     }
    ]
@@ -1887,18 +2321,18 @@
      ]
     },
     {
-     "section": "BACKWARD 3",
-     "section_code": "B3",
+     "section": "BACKWARD 4",
+     "section_code": "B4",
      "relation": "backward",
-     "skill": "Dividing by 10 and 100 to place the decimal point",
-     "standard": "5.NBT.A.2",
+     "skill": "Multiply a whole number by tenths or hundredths",
+     "standard": "4.NF.B.4.b",
      "nearest_related": false,
      "question_ids": [
-      "S20-B3-Q1",
-      "S20-B3-Q2",
-      "S20-B3-Q3",
-      "S20-B3-Q4",
-      "S20-B3-Q5"
+      "S20-B4-Q1",
+      "S20-B4-Q2",
+      "S20-B4-Q3",
+      "S20-B4-Q4",
+      "S20-B4-Q5"
      ]
     },
     {
@@ -1929,6 +2363,91 @@
       "S20-F2-Q3",
       "S20-F2-Q4",
       "S20-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 63,
+   "set_id": "S63",
+   "file": "sets/S63.json",
+   "standard": "5.NBT.B.7",
+   "title": "Use models and place value to multiply decimals and explain the method",
+   "domain": "Number & Operations in Base Ten",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Use models and place value to multiply decimals and explain the method",
+     "standard": "5.NBT.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S63-M-Q1",
+      "S63-M-Q2",
+      "S63-M-Q3",
+      "S63-M-Q4",
+      "S63-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Multiply a fraction in tenths or hundredths by a whole number",
+     "standard": "4.NF.B.4.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S63-B1-Q1",
+      "S63-B1-Q2",
+      "S63-B1-Q3",
+      "S63-B1-Q4",
+      "S63-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Multiplication as equal groups",
+     "standard": "3.OA.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S63-B2-Q1",
+      "S63-B2-Q2",
+      "S63-B2-Q3",
+      "S63-B2-Q4",
+      "S63-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Multiply multi-digit decimals",
+     "standard": "6.NS.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S63-F1-Q1",
+      "S63-F1-Q2",
+      "S63-F1-Q3",
+      "S63-F1-Q4",
+      "S63-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Multiply rational numbers",
+     "standard": "7.NS.A.2.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S63-F2-Q1",
+      "S63-F2-Q2",
+      "S63-F2-Q3",
+      "S63-F2-Q4",
+      "S63-F2-Q5"
      ]
     }
    ]
@@ -1987,18 +2506,18 @@
      ]
     },
     {
-     "section": "BACKWARD 3",
-     "section_code": "B3",
+     "section": "BACKWARD 4",
+     "section_code": "B4",
      "relation": "backward",
-     "skill": "Multiplying both numbers by a power of 10 keeps the quotient",
-     "standard": "5.NBT.A.2",
+     "skill": "Rename decimals as tenths or hundredths",
+     "standard": "4.NF.C.6",
      "nearest_related": false,
      "question_ids": [
-      "S21-B3-Q1",
-      "S21-B3-Q2",
-      "S21-B3-Q3",
-      "S21-B3-Q4",
-      "S21-B3-Q5"
+      "S21-B4-Q1",
+      "S21-B4-Q2",
+      "S21-B4-Q3",
+      "S21-B4-Q4",
+      "S21-B4-Q5"
      ]
     },
     {
@@ -2029,6 +2548,91 @@
       "S21-F2-Q3",
       "S21-F2-Q4",
       "S21-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 64,
+   "set_id": "S64",
+   "file": "sets/S64.json",
+   "standard": "5.NBT.B.7",
+   "title": "Use models and place value to divide decimals and explain the method",
+   "domain": "Number & Operations in Base Ten",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Use models and place value to divide decimals and explain the method",
+     "standard": "5.NBT.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S64-M-Q1",
+      "S64-M-Q2",
+      "S64-M-Q3",
+      "S64-M-Q4",
+      "S64-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Division as the number of equal groups",
+     "standard": "3.OA.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S64-B1-Q1",
+      "S64-B1-Q2",
+      "S64-B1-Q3",
+      "S64-B1-Q4",
+      "S64-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Decimals as tenths and hundredths",
+     "standard": "4.NF.C.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S64-B2-Q1",
+      "S64-B2-Q2",
+      "S64-B2-Q3",
+      "S64-B2-Q4",
+      "S64-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Divide multi-digit decimals",
+     "standard": "6.NS.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S64-F1-Q1",
+      "S64-F1-Q2",
+      "S64-F1-Q3",
+      "S64-F1-Q4",
+      "S64-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Divide rational numbers",
+     "standard": "7.NS.A.2.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S64-F2-Q1",
+      "S64-F2-Q2",
+      "S64-F2-Q3",
+      "S64-F2-Q4",
+      "S64-F2-Q5"
      ]
     }
    ]
@@ -2323,14 +2927,14 @@
    "set_id": "S25",
    "file": "sets/S25.json",
    "standard": "5.NF.A.1",
-   "title": "Add and subtract mixed numbers with unlike denominators",
+   "title": "Add mixed numbers with unlike denominators",
    "domain": "Number & Operations–Fractions",
    "sections": [
     {
      "section": "MAIN",
      "section_code": "M",
      "relation": "main",
-     "skill": "Add and subtract mixed numbers with unlike denominators",
+     "skill": "Add mixed numbers with unlike denominators",
      "standard": "5.NF.A.1",
      "nearest_related": false,
      "question_ids": [
@@ -2345,7 +2949,7 @@
      "section": "BACKWARD 1",
      "section_code": "B1",
      "relation": "backward",
-     "skill": "Adding and subtracting mixed numbers with like denominators",
+     "skill": "Adding mixed numbers with like denominators",
      "standard": "4.NF.B.3.c",
      "nearest_related": false,
      "question_ids": [
@@ -2419,6 +3023,91 @@
    ]
   },
   {
+   "set": 65,
+   "set_id": "S65",
+   "file": "sets/S65.json",
+   "standard": "5.NF.A.1",
+   "title": "Subtract mixed numbers with unlike denominators",
+   "domain": "Number & Operations–Fractions",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Subtract mixed numbers with unlike denominators",
+     "standard": "5.NF.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S65-M-Q1",
+      "S65-M-Q2",
+      "S65-M-Q3",
+      "S65-M-Q4",
+      "S65-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Subtracting mixed numbers with like denominators",
+     "standard": "4.NF.B.3.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S65-B1-Q1",
+      "S65-B1-Q2",
+      "S65-B1-Q3",
+      "S65-B1-Q4",
+      "S65-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Rename a mixed number by decomposing a whole",
+     "standard": "4.NF.B.3.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S65-B2-Q1",
+      "S65-B2-Q2",
+      "S65-B2-Q3",
+      "S65-B2-Q4",
+      "S65-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Solve equations of the form x + p = q with mixed numbers",
+     "standard": "6.EE.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S65-F1-Q1",
+      "S65-F1-Q2",
+      "S65-F1-Q3",
+      "S65-F1-Q4",
+      "S65-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Subtract rational numbers",
+     "standard": "7.NS.A.1.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S65-F2-Q1",
+      "S65-F2-Q2",
+      "S65-F2-Q3",
+      "S65-F2-Q4",
+      "S65-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
    "set": 26,
    "set_id": "S26",
    "file": "sets/S26.json",
@@ -2472,18 +3161,18 @@
      ]
     },
     {
-     "section": "BACKWARD 3",
-     "section_code": "B3",
+     "section": "BACKWARD 4",
+     "section_code": "B4",
      "relation": "backward",
-     "skill": "Adding and subtracting fractions with unlike denominators",
-     "standard": "5.NF.A.1",
+     "skill": "Equivalent fractions",
+     "standard": "4.NF.A.1",
      "nearest_related": false,
      "question_ids": [
-      "S26-B3-Q1",
-      "S26-B3-Q2",
-      "S26-B3-Q3",
-      "S26-B3-Q4",
-      "S26-B3-Q5"
+      "S26-B4-Q1",
+      "S26-B4-Q2",
+      "S26-B4-Q3",
+      "S26-B4-Q4",
+      "S26-B4-Q5"
      ]
     },
     {
@@ -2974,6 +3663,91 @@
    ]
   },
   {
+   "set": 66,
+   "set_id": "S66",
+   "file": "sets/S66.json",
+   "standard": "5.NF.B.4.a",
+   "title": "Interpret fraction products with tape diagrams and area models",
+   "domain": "Number & Operations–Fractions",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Interpret fraction products with tape diagrams and area models",
+     "standard": "5.NF.B.4.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S66-M-Q1",
+      "S66-M-Q2",
+      "S66-M-Q3",
+      "S66-M-Q4",
+      "S66-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Fractions of a whole in a model",
+     "standard": "3.NF.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S66-B1-Q1",
+      "S66-B1-Q2",
+      "S66-B1-Q3",
+      "S66-B1-Q4",
+      "S66-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Split a whole number into equal parts",
+     "standard": "3.OA.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S66-B2-Q1",
+      "S66-B2-Q2",
+      "S66-B2-Q3",
+      "S66-B2-Q4",
+      "S66-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use visual models to divide fractions by fractions",
+     "standard": "6.NS.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S66-F1-Q1",
+      "S66-F1-Q2",
+      "S66-F1-Q3",
+      "S66-F1-Q4",
+      "S66-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Multiply rational numbers",
+     "standard": "7.NS.A.2.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S66-F2-Q1",
+      "S66-F2-Q2",
+      "S66-F2-Q3",
+      "S66-F2-Q4",
+      "S66-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
    "set": 32,
    "set_id": "S32",
    "file": "sets/S32.json",
@@ -3027,18 +3801,18 @@
      ]
     },
     {
-     "section": "BACKWARD 3",
-     "section_code": "B3",
+     "section": "BACKWARD 4",
+     "section_code": "B4",
      "relation": "backward",
-     "skill": "Multiplying fractions",
-     "standard": "5.NF.B.4.a",
+     "skill": "Multiply a whole number by a fraction",
+     "standard": "4.NF.B.4.b",
      "nearest_related": false,
      "question_ids": [
-      "S32-B3-Q1",
-      "S32-B3-Q2",
-      "S32-B3-Q3",
-      "S32-B3-Q4",
-      "S32-B3-Q5"
+      "S32-B4-Q1",
+      "S32-B4-Q2",
+      "S32-B4-Q3",
+      "S32-B4-Q4",
+      "S32-B4-Q5"
      ]
     },
     {
@@ -3069,6 +3843,91 @@
       "S32-F2-Q3",
       "S32-F2-Q4",
       "S32-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 67,
+   "set_id": "S67",
+   "file": "sets/S67.json",
+   "standard": "5.NF.B.4.b",
+   "title": "Tile a rectangle with unit-fraction squares and connect the tiling to the area",
+   "domain": "Number & Operations–Fractions",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Tile a rectangle with unit-fraction squares and connect the tiling to the area",
+     "standard": "5.NF.B.4.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S67-M-Q1",
+      "S67-M-Q2",
+      "S67-M-Q3",
+      "S67-M-Q4",
+      "S67-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Measure area by counting unit squares",
+     "standard": "3.MD.C.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S67-B1-Q1",
+      "S67-B1-Q2",
+      "S67-B1-Q3",
+      "S67-B1-Q4",
+      "S67-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Unit fractions of a length",
+     "standard": "3.NF.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S67-B2-Q1",
+      "S67-B2-Q2",
+      "S67-B2-Q3",
+      "S67-B2-Q4",
+      "S67-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Pack a prism with unit-fraction cubes to find its volume",
+     "standard": "6.G.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S67-F1-Q1",
+      "S67-F1-Q2",
+      "S67-F1-Q3",
+      "S67-F1-Q4",
+      "S67-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Area of composite figures with fractional measures",
+     "standard": "7.G.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S67-F2-Q1",
+      "S67-F2-Q2",
+      "S67-F2-Q3",
+      "S67-F2-Q4",
+      "S67-F2-Q5"
      ]
     }
    ]
@@ -3182,21 +4041,6 @@
      ]
     },
     {
-     "section": "BACKWARD 1",
-     "section_code": "B1",
-     "relation": "backward",
-     "skill": "Equivalent fractions",
-     "standard": "4.NF.A.1",
-     "nearest_related": false,
-     "question_ids": [
-      "S34-B1-Q1",
-      "S34-B1-Q2",
-      "S34-B1-Q3",
-      "S34-B1-Q4",
-      "S34-B1-Q5"
-     ]
-    },
-    {
      "section": "BACKWARD 2",
      "section_code": "B2",
      "relation": "backward",
@@ -3209,6 +4053,21 @@
       "S34-B2-Q3",
       "S34-B2-Q4",
       "S34-B2-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 3",
+     "section_code": "B3",
+     "relation": "backward",
+     "skill": "Multiply a whole number by a fraction",
+     "standard": "4.NF.B.4.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S34-B3-Q1",
+      "S34-B3-Q2",
+      "S34-B3-Q3",
+      "S34-B3-Q4",
+      "S34-B3-Q5"
      ]
     },
     {
@@ -3239,6 +4098,91 @@
       "S34-F2-Q3",
       "S34-F2-Q4",
       "S34-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 68,
+   "set_id": "S68",
+   "file": "sets/S68.json",
+   "standard": "5.NF.B.5.b",
+   "title": "Explain equivalent fractions as multiplying by a fraction equal to 1",
+   "domain": "Number & Operations–Fractions",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Explain equivalent fractions as multiplying by a fraction equal to 1",
+     "standard": "5.NF.B.5.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S68-M-Q1",
+      "S68-M-Q2",
+      "S68-M-Q3",
+      "S68-M-Q4",
+      "S68-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Equivalent fractions",
+     "standard": "4.NF.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S68-B1-Q1",
+      "S68-B1-Q2",
+      "S68-B1-Q3",
+      "S68-B1-Q4",
+      "S68-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Equivalent fractions with a model",
+     "standard": "3.NF.A.3.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S68-B2-Q1",
+      "S68-B2-Q2",
+      "S68-B2-Q3",
+      "S68-B2-Q4",
+      "S68-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find equivalent ratios",
+     "standard": "6.RP.A.3.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S68-F1-Q1",
+      "S68-F1-Q2",
+      "S68-F1-Q3",
+      "S68-F1-Q4",
+      "S68-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Test for a proportional relationship with equivalent ratios",
+     "standard": "7.RP.A.2.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S68-F2-Q1",
+      "S68-F2-Q2",
+      "S68-F2-Q3",
+      "S68-F2-Q4",
+      "S68-F2-Q5"
      ]
     }
    ]
@@ -3297,18 +4241,18 @@
      ]
     },
     {
-     "section": "BACKWARD 3",
-     "section_code": "B3",
+     "section": "BACKWARD 4",
+     "section_code": "B4",
      "relation": "backward",
-     "skill": "Multiplying fractions",
-     "standard": "5.NF.B.4.a",
+     "skill": "Word problems that add fractions with like denominators",
+     "standard": "4.NF.B.3.d",
      "nearest_related": false,
      "question_ids": [
-      "S35-B3-Q1",
-      "S35-B3-Q2",
-      "S35-B3-Q3",
-      "S35-B3-Q4",
-      "S35-B3-Q5"
+      "S35-B4-Q1",
+      "S35-B4-Q2",
+      "S35-B4-Q3",
+      "S35-B4-Q4",
+      "S35-B4-Q5"
      ]
     },
     {
@@ -3348,14 +4292,14 @@
    "set_id": "S36",
    "file": "sets/S36.json",
    "standard": "5.NF.B.6",
-   "title": "Multiply mixed numbers",
+   "title": "Solve real-world problems by multiplying mixed numbers",
    "domain": "Number & Operations–Fractions",
    "sections": [
     {
      "section": "MAIN",
      "section_code": "M",
      "relation": "main",
-     "skill": "Multiply mixed numbers",
+     "skill": "Solve real-world problems by multiplying mixed numbers",
      "standard": "5.NF.B.6",
      "nearest_related": false,
      "question_ids": [
@@ -3382,21 +4326,6 @@
      ]
     },
     {
-     "section": "BACKWARD 2",
-     "section_code": "B2",
-     "relation": "backward",
-     "skill": "Multiplying fractions",
-     "standard": "5.NF.B.4.a",
-     "nearest_related": false,
-     "question_ids": [
-      "S36-B2-Q1",
-      "S36-B2-Q2",
-      "S36-B2-Q3",
-      "S36-B2-Q4",
-      "S36-B2-Q5"
-     ]
-    },
-    {
      "section": "BACKWARD 3",
      "section_code": "B3",
      "relation": "backward",
@@ -3409,6 +4338,21 @@
       "S36-B3-Q3",
       "S36-B3-Q4",
       "S36-B3-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 4",
+     "section_code": "B4",
+     "relation": "backward",
+     "skill": "Measurement word problems with fractions",
+     "standard": "4.MD.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S36-B4-Q1",
+      "S36-B4-Q2",
+      "S36-B4-Q3",
+      "S36-B4-Q4",
+      "S36-B4-Q5"
      ]
     },
     {
@@ -3430,7 +4374,7 @@
      "section": "FORWARD 2",
      "section_code": "F2",
      "relation": "forward2",
-     "skill": "Surface area and volume of prisms",
+     "skill": "Surface area of prisms with fractional edge lengths",
      "standard": "7.G.B.6",
      "nearest_related": false,
      "question_ids": [
@@ -3497,18 +4441,18 @@
      ]
     },
     {
-     "section": "BACKWARD 3",
-     "section_code": "B3",
+     "section": "BACKWARD 4",
+     "section_code": "B4",
      "relation": "backward",
-     "skill": "Multiplying unit fractions",
-     "standard": "5.NF.B.4.a",
+     "skill": "Equivalent fractions",
+     "standard": "4.NF.A.1",
      "nearest_related": false,
      "question_ids": [
-      "S37-B3-Q1",
-      "S37-B3-Q2",
-      "S37-B3-Q3",
-      "S37-B3-Q4",
-      "S37-B3-Q5"
+      "S37-B4-Q1",
+      "S37-B4-Q2",
+      "S37-B4-Q3",
+      "S37-B4-Q4",
+      "S37-B4-Q5"
      ]
     },
     {
@@ -3539,6 +4483,91 @@
       "S37-F2-Q3",
       "S37-F2-Q4",
       "S37-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 69,
+   "set_id": "S69",
+   "file": "sets/S69.json",
+   "standard": "5.NF.B.7.a",
+   "title": "Use models to divide a unit fraction by a whole number and check with multiplication",
+   "domain": "Number & Operations–Fractions",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Use models to divide a unit fraction by a whole number and check with multiplication",
+     "standard": "5.NF.B.7.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S69-M-Q1",
+      "S69-M-Q2",
+      "S69-M-Q3",
+      "S69-M-Q4",
+      "S69-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Unit fractions",
+     "standard": "3.NF.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S69-B1-Q1",
+      "S69-B1-Q2",
+      "S69-B1-Q3",
+      "S69-B1-Q4",
+      "S69-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "A fraction as a multiple of a unit fraction",
+     "standard": "4.NF.B.4.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S69-B2-Q1",
+      "S69-B2-Q2",
+      "S69-B2-Q3",
+      "S69-B2-Q4",
+      "S69-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Divide fractions and check with multiplication",
+     "standard": "6.NS.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S69-F1-Q1",
+      "S69-F1-Q2",
+      "S69-F1-Q3",
+      "S69-F1-Q4",
+      "S69-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Divide rational numbers",
+     "standard": "7.NS.A.2.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S69-F2-Q1",
+      "S69-F2-Q2",
+      "S69-F2-Q3",
+      "S69-F2-Q4",
+      "S69-F2-Q5"
      ]
     }
    ]
@@ -3629,6 +4658,91 @@
    ]
   },
   {
+   "set": 70,
+   "set_id": "S70",
+   "file": "sets/S70.json",
+   "standard": "5.NF.B.7.b",
+   "title": "Use models to divide a whole number by a unit fraction and check with multiplication",
+   "domain": "Number & Operations–Fractions",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Use models to divide a whole number by a unit fraction and check with multiplication",
+     "standard": "5.NF.B.7.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S70-M-Q1",
+      "S70-M-Q2",
+      "S70-M-Q3",
+      "S70-M-Q4",
+      "S70-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Write whole numbers as sums of unit fractions",
+     "standard": "4.NF.B.3.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S70-B1-Q1",
+      "S70-B1-Q2",
+      "S70-B1-Q3",
+      "S70-B1-Q4",
+      "S70-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "A fraction as a multiple of a unit fraction",
+     "standard": "4.NF.B.4.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S70-B2-Q1",
+      "S70-B2-Q2",
+      "S70-B2-Q3",
+      "S70-B2-Q4",
+      "S70-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Divide whole numbers by fractions and check with multiplication",
+     "standard": "6.NS.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S70-F1-Q1",
+      "S70-F1-Q2",
+      "S70-F1-Q3",
+      "S70-F1-Q4",
+      "S70-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Divide rational numbers",
+     "standard": "7.NS.A.2.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S70-F2-Q1",
+      "S70-F2-Q2",
+      "S70-F2-Q3",
+      "S70-F2-Q4",
+      "S70-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
    "set": 39,
    "set_id": "S39",
    "file": "sets/S39.json",
@@ -3667,18 +4781,18 @@
      ]
     },
     {
-     "section": "BACKWARD 2",
-     "section_code": "B2",
+     "section": "BACKWARD 3",
+     "section_code": "B3",
      "relation": "backward",
-     "skill": "A fraction as division",
-     "standard": "5.NF.B.3",
+     "skill": "Word problems: a whole number times a unit fraction",
+     "standard": "4.NF.B.4.c",
      "nearest_related": false,
      "question_ids": [
-      "S39-B2-Q1",
-      "S39-B2-Q2",
-      "S39-B2-Q3",
-      "S39-B2-Q4",
-      "S39-B2-Q5"
+      "S39-B3-Q1",
+      "S39-B3-Q2",
+      "S39-B3-Q3",
+      "S39-B3-Q4",
+      "S39-B3-Q5"
      ]
     },
     {
@@ -3767,18 +4881,18 @@
      ]
     },
     {
-     "section": "BACKWARD 3",
-     "section_code": "B3",
+     "section": "BACKWARD 4",
+     "section_code": "B4",
      "relation": "backward",
-     "skill": "Multiplying decimals by powers of 10",
-     "standard": "5.NBT.A.2",
+     "skill": "Multiply whole numbers by 10, 100, and 1,000",
+     "standard": "4.NBT.A.1",
      "nearest_related": false,
      "question_ids": [
-      "S40-B3-Q1",
-      "S40-B3-Q2",
-      "S40-B3-Q3",
-      "S40-B3-Q4",
-      "S40-B3-Q5"
+      "S40-B4-Q1",
+      "S40-B4-Q2",
+      "S40-B4-Q3",
+      "S40-B4-Q4",
+      "S40-B4-Q5"
      ]
     },
     {
@@ -3867,18 +4981,18 @@
      ]
     },
     {
-     "section": "BACKWARD 3",
-     "section_code": "B3",
+     "section": "BACKWARD 4",
+     "section_code": "B4",
      "relation": "backward",
-     "skill": "Dividing by powers of 10",
-     "standard": "5.NBT.A.2",
+     "skill": "Write tenths and hundredths as decimals",
+     "standard": "4.NF.C.6",
      "nearest_related": false,
      "question_ids": [
-      "S41-B3-Q1",
-      "S41-B3-Q2",
-      "S41-B3-Q3",
-      "S41-B3-Q4",
-      "S41-B3-Q5"
+      "S41-B4-Q1",
+      "S41-B4-Q2",
+      "S41-B4-Q3",
+      "S41-B4-Q4",
+      "S41-B4-Q5"
      ]
     },
     {
@@ -4085,7 +5199,7 @@
      "section": "FORWARD 2",
      "section_code": "F2",
      "relation": "forward2",
-     "skill": "Compare two distributions shown in dot plots",
+     "skill": "Compare the difference in centers with the variability",
      "standard": "7.SP.B.3",
      "nearest_related": false,
      "question_ids": [
@@ -4137,33 +5251,33 @@
      ]
     },
     {
-     "section": "BACKWARD 2",
-     "section_code": "B2",
+     "section": "BACKWARD 4",
+     "section_code": "B4",
      "relation": "backward",
-     "skill": "Adding and subtracting fractions with unlike denominators",
-     "standard": "5.NF.A.1",
+     "skill": "Rename halves and fourths as eighths",
+     "standard": "4.NF.A.1",
      "nearest_related": false,
      "question_ids": [
-      "S44-B2-Q1",
-      "S44-B2-Q2",
-      "S44-B2-Q3",
-      "S44-B2-Q4",
-      "S44-B2-Q5"
+      "S44-B4-Q1",
+      "S44-B4-Q2",
+      "S44-B4-Q3",
+      "S44-B4-Q4",
+      "S44-B4-Q5"
      ]
     },
     {
-     "section": "BACKWARD 3",
-     "section_code": "B3",
+     "section": "BACKWARD 5",
+     "section_code": "B5",
      "relation": "backward",
-     "skill": "Sharing a total equally",
-     "standard": "5.NF.B.3",
+     "skill": "Add fractions with like denominators",
+     "standard": "4.NF.B.3.a",
      "nearest_related": false,
      "question_ids": [
-      "S44-B3-Q1",
-      "S44-B3-Q2",
-      "S44-B3-Q3",
-      "S44-B3-Q4",
-      "S44-B3-Q5"
+      "S44-B5-Q1",
+      "S44-B5-Q2",
+      "S44-B5-Q3",
+      "S44-B5-Q4",
+      "S44-B5-Q5"
      ]
     },
     {
@@ -4610,7 +5724,7 @@
      "section": "FORWARD 2",
      "section_code": "F2",
      "relation": "forward2",
-     "skill": "Real-world problems with volume and surface area",
+     "skill": "Real-world volume problems with right prisms",
      "standard": "7.G.B.6",
      "nearest_related": false,
      "question_ids": [
@@ -4747,18 +5861,18 @@
      ]
     },
     {
-     "section": "BACKWARD 2",
-     "section_code": "B2",
+     "section": "BACKWARD 3",
+     "section_code": "B3",
      "relation": "backward",
-     "skill": "Volume of one rectangular prism",
-     "standard": "5.MD.C.5.b",
+     "skill": "The area formula for rectangles",
+     "standard": "4.MD.A.3",
      "nearest_related": false,
      "question_ids": [
-      "S51-B2-Q1",
-      "S51-B2-Q2",
-      "S51-B2-Q3",
-      "S51-B2-Q4",
-      "S51-B2-Q5"
+      "S51-B3-Q1",
+      "S51-B3-Q2",
+      "S51-B3-Q3",
+      "S51-B3-Q4",
+      "S51-B3-Q5"
      ]
     },
     {
@@ -4902,25 +6016,10 @@
      ]
     },
     {
-     "section": "BACKWARD 1",
-     "section_code": "B1",
-     "relation": "backward",
-     "skill": "Reading coordinates",
-     "standard": "5.G.A.1",
-     "nearest_related": false,
-     "question_ids": [
-      "S53-B1-Q1",
-      "S53-B1-Q2",
-      "S53-B1-Q3",
-      "S53-B1-Q4",
-      "S53-B1-Q5"
-     ]
-    },
-    {
      "section": "BACKWARD 2",
      "section_code": "B2",
      "relation": "backward",
-     "skill": "Reading the scale on an axis",
+     "skill": "Read a scaled bar graph",
      "standard": "3.MD.B.3",
      "nearest_related": false,
      "question_ids": [
@@ -4932,10 +6031,25 @@
      ]
     },
     {
+     "section": "BACKWARD 3",
+     "section_code": "B3",
+     "relation": "backward",
+     "skill": "Fractions and whole numbers on a number line",
+     "standard": "3.NF.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S53-B3-Q1",
+      "S53-B3-Q2",
+      "S53-B3-Q3",
+      "S53-B3-Q4",
+      "S53-B3-Q5"
+     ]
+    },
+    {
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Plot and reflect points in all four quadrants",
+     "skill": "Reflect points across the axes",
      "standard": "6.NS.C.6.b",
      "nearest_related": false,
      "question_ids": [
@@ -4987,21 +6101,6 @@
      ]
     },
     {
-     "section": "BACKWARD 1",
-     "section_code": "B1",
-     "relation": "backward",
-     "skill": "The coordinate system",
-     "standard": "5.G.A.1",
-     "nearest_related": false,
-     "question_ids": [
-      "S54-B1-Q1",
-      "S54-B1-Q2",
-      "S54-B1-Q3",
-      "S54-B1-Q4",
-      "S54-B1-Q5"
-     ]
-    },
-    {
      "section": "BACKWARD 2",
      "section_code": "B2",
      "relation": "backward",
@@ -5014,6 +6113,21 @@
       "S54-B2-Q3",
       "S54-B2-Q4",
       "S54-B2-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 3",
+     "section_code": "B3",
+     "relation": "backward",
+     "skill": "Solve problems with a scaled bar graph",
+     "standard": "3.MD.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S54-B3-Q1",
+      "S54-B3-Q2",
+      "S54-B3-Q3",
+      "S54-B3-Q4",
+      "S54-B3-Q5"
      ]
     },
     {
@@ -5135,7 +6249,7 @@
      "section": "FORWARD 2",
      "section_code": "F2",
      "relation": "forward2",
-     "skill": "Decide whether shapes with given conditions are possible",
+     "skill": "Draw shapes with given conditions",
      "standard": "7.G.A.2",
      "nearest_related": false,
      "question_ids": [
@@ -5220,7 +6334,7 @@
      "section": "FORWARD 2",
      "section_code": "F2",
      "relation": "forward2",
-     "skill": "Shapes with given conditions",
+     "skill": "Draw quadrilaterals and triangles with given conditions",
      "standard": "7.G.A.2",
      "nearest_related": false,
      "question_ids": [
@@ -5320,7 +6434,7 @@
      "section": "FORWARD 2",
      "section_code": "F2",
      "relation": "forward2",
-     "skill": "Complementary, supplementary, and vertical angles",
+     "skill": "Write and solve equations for unknown angles",
      "standard": "7.G.B.5",
      "nearest_related": false,
      "question_ids": [
@@ -5332,6 +6446,97 @@
      ]
     }
    ]
+  },
+  {
+   "set": 71,
+   "set_id": "S71",
+   "file": "sets/S71.json",
+   "standard": "5.G.B.4",
+   "title": "Place triangles in a hierarchy of categories and subcategories",
+   "domain": "Geometry",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Place triangles in a hierarchy of categories and subcategories",
+     "standard": "5.G.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S71-M-Q1",
+      "S71-M-Q2",
+      "S71-M-Q3",
+      "S71-M-Q4",
+      "S71-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Classify triangles by their angles",
+     "standard": "4.G.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S71-B1-Q1",
+      "S71-B1-Q2",
+      "S71-B1-Q3",
+      "S71-B1-Q4",
+      "S71-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Shapes in different categories share attributes",
+     "standard": "3.G.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S71-B2-Q1",
+      "S71-B2-Q2",
+      "S71-B2-Q3",
+      "S71-B2-Q4",
+      "S71-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Area of special triangles",
+     "standard": "6.G.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S71-F1-Q1",
+      "S71-F1-Q2",
+      "S71-F1-Q3",
+      "S71-F1-Q4",
+      "S71-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Decide whether conditions give one triangle, more than one, or none",
+     "standard": "7.G.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S71-F2-Q1",
+      "S71-F2-Q2",
+      "S71-F2-Q3",
+      "S71-F2-Q4",
+      "S71-F2-Q5"
+     ]
+    }
+   ]
   }
- ]
+ ],
+ "revision_summary": {
+  "unchanged": 1329,
+  "revised": 166,
+  "retired": 85,
+  "new": 435
+ }
 }

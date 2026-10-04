@@ -26,7 +26,8 @@ def bar(n, shade=0, **kw):
     return tape(d)
 
 
-def grid(xmax, ymax, ystep=1, xlabel=None, ylabel=None, **kw):
+def grid(xmax, ymax, ystep=1, xlabel='x', ylabel='y', **kw):
+    """First-quadrant grid. A generic grid names its axes x and y; a situation graph passes its own names."""
     return q1(xmax, ymax, ystep=ystep, square=False, xlabel=xlabel, ylabel=ylabel, **kw)
 
 

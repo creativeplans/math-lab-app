@@ -36,6 +36,10 @@ def qid(set_num, key, i):
 def qtype(q):
     if q['t'] == 'sa' and q.get('ans', '') is None:
         return 'plot'
+    if q['t'] == 'sa' and q.get('draw'):
+        return 'plot_text'
+    if q['t'] == 'sa' and q.get('method'):
+        return 'work'
     return q['t']
 
 
@@ -172,12 +176,30 @@ def balanced(q):
     return True
 
 
-def make_plan(items, seed):
-    """items: qids of balanced questions, in collection order. Deal positions A-D evenly, in a seeded order."""
-    pos = [i % 4 for i in range(len(items))]
-    random.Random(seed).shuffle(pos)
+def make_plan(items, seed, frozen=None):
+    """items: qids of balanced questions, in collection order. Deal positions A-D evenly, in a seeded order.
+
+    frozen (qid -> position) keeps the letters of an already published collection: those questions keep
+    their position, and new questions fill whichever letters are least used, so the totals stay even."""
     PLAN.clear()
-    PLAN.update(zip(items, pos))
+    frozen = {k: v for k, v in (frozen or {}).items() if k in set(items)}
+    if not frozen:
+        pos = [i % 4 for i in range(len(items))]
+        random.Random(seed).shuffle(pos)
+        PLAN.update(zip(items, pos))
+        return
+    PLAN.update(frozen)
+    count = [0, 0, 0, 0]
+    for v in frozen.values():
+        count[v] += 1
+    rng = random.Random(seed)
+    for q in items:
+        if q in PLAN:
+            continue
+        low = min(count)
+        p = rng.choice([i for i in range(4) if count[i] == low])
+        PLAN[q] = p
+        count[p] += 1
 
 
 def present(q, qid_, answer):
@@ -215,6 +237,7 @@ def _grp(t):
 
 def plain(s):
     s = re.sub(r'(\d)\{(\d+)/(\d+)\}', r'\1 \2/\3', s)
+    s = re.sub(r'(× ?)\{([^{}/]+)/([^{}]+)\}', lambda m: '%s(%s/%s)' % (m.group(1), _grp(m.group(2)), _grp(m.group(3))), s)
     s = re.sub(r'\{([^{}/]+)/([^{}]+)\}(?=[A-Za-z(])', lambda m: '(%s/%s)' % (_grp(m.group(1)), _grp(m.group(2))), s)
     s = re.sub(r'\{([^{}/]+)/([^{}]+)\}', lambda m: '%s/%s' % (_grp(m.group(1)), _grp(m.group(2))), s)
     return s.replace(' ', ' ')
@@ -248,4 +271,8 @@ def answer_record(q, qdisp, raw, letter):
             rec.update(letter=letter, answer=plain(qdisp['ch'][LETTERS.index(letter)]))
     else:
         rec.update(letter=None, answer=a)
+    if t == 'plot_text':
+        rec['drawing'] = q['draw']
+    if t == 'work':
+        rec['method'] = q['method']
     return rec

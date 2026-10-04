@@ -25,6 +25,7 @@ LBG = HexColor('#eef4fb')
 GRID = HexColor('#d3dce7')
 AXIS = HexColor('#18212f')
 SHADE = HexColor('#b9d5f0')
+DARKSHADE = HexColor('#5b7fa8')
 MUTED = HexColor('#5b6778')
 LINE = HexColor('#1c222b')
 POINT = HexColor('#155a9c')
@@ -95,7 +96,26 @@ def wrap(text, font, size, width):
     for pi, para in enumerate(paras):
         if pi:
             lines.append(None)
-        words = [parse_word(w) for w in para.split(' ') if w != '']
+        words = []
+        for tok in para.split(' '):
+            if tok == '':
+                continue
+            if '\u00a0' in tok and word_w(parse_word(tok), font, size) > width:
+                # an expression joined around its operators is too wide: break it before a + or −
+                # (or before any operator if a single term is still too wide)
+                parts = re.split('(\u00a0[+\u2212=]\u00a0)', tok)
+                terms = [parts[0]] + [parts[i] + parts[i + 1] for i in range(1, len(parts) - 1, 2)]
+                chunk = ''
+                for term in terms:
+                    trial = chunk + ('\u00a0' if chunk else '') + term.lstrip('\u00a0') if chunk else term
+                    if chunk and word_w(parse_word(trial), font, size) > width:
+                        words.append(parse_word(chunk))
+                        chunk = term.lstrip('\u00a0')
+                    else:
+                        chunk = trial
+                words.append(parse_word(chunk))
+            else:
+                words.append(parse_word(tok))
         cur, cw = [], 0
         for w in words:
             ww = word_w(w, font, size)
@@ -364,9 +384,10 @@ def fig_coord(c, f, x, y, w, h, s):
     xs, ys = f.get('xstep', 1), f.get('ystep', 1)
     xl, yl = f.get('xlab', xs), f.get('ylab', ys)
     fs = 12.5 * s * f.get('fs', 1)
-    padl = 30 + (16 if f.get('ylabel') else 0)
-    padb = 22 + (16 if f.get('xlabel') else 0)
-    padr, padt = 16, 14
+    plain_xy = f.get('xlabel') == 'x' and f.get('ylabel') == 'y'   # generic axes: names at the axis ends
+    padl = 30 + (16 if f.get('ylabel') and not plain_xy else 0)
+    padb = 22 + (16 if f.get('xlabel') and not plain_xy else 0)
+    padr, padt = (26, 22) if plain_xy else (16, 14)
     nx = (xmax - xmin) / xs
     ny = (ymax - ymin) / ys
     aw, ah = w - padl - padr, h - padb - padt
@@ -426,12 +447,15 @@ def fig_coord(c, f, x, y, w, h, s):
                     _, py = P(0, v)
                     draw_label(c, fmt(v), ax0 - 5, py, fs, anchor='r', color=MUTED)
             v += ys
-    if f.get('axisnames', True) and xmin < 0:
+    if plain_xy:
+        draw_label(c, 'x', ox + gw + 8, oy, fs * 1.25, FB, anchor='l')
+        draw_label(c, 'y', ox + 9, oy + gh + 6, fs * 1.25, FB, anchor='l')
+    elif f.get('axisnames', True) and xmin < 0:
         draw_label(c, 'x', ox + gw + 6, ay0 + 10, fs * 1.2, anchor='l')
         draw_label(c, 'y', ax0 + 8, oy + gh + 4, fs * 1.2, anchor='l')
-    if f.get('xlabel'):
+    if f.get('xlabel') and not plain_xy:
         draw_label(c, f['xlabel'], ox + gw / 2, oy - padb + 8, fs * 1.1, FB)
-    if f.get('ylabel'):
+    if f.get('ylabel') and not plain_xy:
         c.saveState()
         c.translate(ox - padl + 8, oy + gh / 2)
         c.rotate(90)
@@ -816,7 +840,7 @@ def fig_stack(c, f, x, y, w, h, s):
     fs = 34 * s * f.get('fs', 1)
     lh = fs * 1.2
     n = len(lines)
-    rule = f.get('rule', n - 1)
+    rules = f.get('rules') or [f.get('rule', n - 1)]
     tot = n * lh + 10
     if tot > h:
         fs *= h / tot
@@ -830,7 +854,7 @@ def fig_stack(c, f, x, y, w, h, s):
         yy -= lh
         c.setFont(FM, fs)
         c.drawRightString(xr, yy + fs * 0.22, t)
-        if i == rule - 1:
+        if i + 1 in rules:
             c.setStrokeColor(INK)
             c.setLineWidth(1.8)
             c.line(xr - maxw - 8, yy - fs * 0.08, xr + 10, yy - fs * 0.08)
@@ -839,14 +863,21 @@ def fig_stack(c, f, x, y, w, h, s):
 
 def fig_grid(c, f, x, y, w, h, s):
     R, C = f.get('rows', 10), f.get('cols', 10)
-    n = f['shade']
-    cell = min((w - 20) / C, (h - 20) / R, 22)
+    n = f.get('shade', 0)
+    cell = min((w - 20) / C, (h - 20) / R, f.get('maxcell', 22))
     gx = x + (w - cell * C) / 2
     gy = y + (h - cell * R) / 2
+    # area model for a fraction product: the first `cshade` columns and the first `rshade` rows are
+    # shaded; where they overlap is shaded darker
+    cs, rs = f.get('cshade'), f.get('rshade')
     for i in range(R):
         for j in range(C):
             idx = i * C + j
-            c.setFillColor(SHADE if idx < n else white)
+            if cs is not None or rs is not None:
+                lvl = (j < (cs or 0)) + (i < (rs or 0))
+                c.setFillColor([white, SHADE, DARKSHADE][lvl])
+            else:
+                c.setFillColor(SHADE if idx < n else white)
             c.setStrokeColor(HexColor('#6c7f95'))
             c.setLineWidth(0.8)
             c.rect(gx + j * cell, gy + (R - 1 - i) * cell, cell, cell, fill=1, stroke=1)
@@ -1004,14 +1035,47 @@ def fig_text(c, f, x, y, w, h, s):
     draw_lines(c, lines, x, y + (h + th) / 2, FM if f.get('mono') else F, fs, width=w, align=f.get('align', 'c'))
 
 
+def fig_rays(c, f, x, y, w, h, s):
+    """Rays from one vertex. rays: directions in degrees (0 = right, counterclockwise); labels:
+    (direction, text) placed inside an angle; ra: directions where a right-angle mark starts."""
+    import math
+    fs = 15 * s * f.get('fs', 1)
+    below = any(180 < (r % 360) < 360 for r in f['rays'])
+    cx = x + w / 2
+    cy = y + (h / 2 if below else h * 0.18)
+    L = min(w / 2 - 20, (h / 2 if below else h * 0.78)) * 0.95
+    c.setStrokeColor(INK)
+    c.setLineWidth(1.8)
+    for r in f['rays']:
+        a = math.radians(r)
+        c.line(cx, cy, cx + L * math.cos(a), cy + L * math.sin(a))
+        arrow_head(c, cx + L * math.cos(a), cy + L * math.sin(a), math.cos(a), math.sin(a), 8)
+    c.setFillColor(INK)
+    c.circle(cx, cy, 3, fill=1, stroke=0)
+    for r in f.get('ra', []):
+        a, b = math.radians(r), math.radians(r + 90)
+        d = 14
+        p1 = (cx + d * math.cos(a), cy + d * math.sin(a))
+        p3 = (cx + d * math.cos(b), cy + d * math.sin(b))
+        p2 = (p1[0] + p3[0] - cx, p1[1] + p3[1] - cy)
+        c.setLineWidth(1.2)
+        c.line(p1[0], p1[1], p2[0], p2[1])
+        c.line(p2[0], p2[1], p3[0], p3[1])
+    for lab in f.get('labels', []):
+        r, text = lab[0], lab[1]
+        a = math.radians(r)
+        rr = L * (lab[2] if len(lab) > 2 else f.get('lr', 0.42))
+        draw_label(c, text, cx + rr * math.cos(a), cy + rr * math.sin(a), fs, FB)
+
+
 FIGS = {
     'nl': fig_numberline, 'coord': fig_coord, 'dot': fig_dot, 'hist': fig_hist, 'box': fig_box,
     'table': fig_table, 'shape': fig_shape, 'prism': fig_prism, 'tape': fig_tape, 'stack': fig_stack,
     'grid': fig_grid, 'cyl': fig_cyl, 'cone': fig_cyl, 'sphere': fig_cyl, 'pyramid': fig_pyramid,
-    'vstack': fig_vstack, 'hrow': fig_hrow, 'text': fig_text,
+    'vstack': fig_vstack, 'hrow': fig_hrow, 'text': fig_text, 'rays': fig_rays,
 }
 
-RIGHT_KINDS = {'coord', 'shape', 'prism', 'grid', 'cyl', 'cone', 'sphere', 'pyramid'}
+RIGHT_KINDS = {'coord', 'shape', 'prism', 'grid', 'cyl', 'cone', 'sphere', 'pyramid', 'rays'}
 
 
 def draw_fig(c, f, x, y, w, h, s=1.0):
