@@ -28,18 +28,20 @@ explanation must include. The file's `grading_rules` explain how to grade equiva
 drawings, and explanations.
 
 Answers are kept in `src/answers/key_*.txt`, one line per section. Multiple-choice answers there refer to the
-authored choice order; `src/answers.py` sets the order students see (numbers ascending, short lists in a natural
+authored choice order; `engine/answers.py` sets the order students see (numbers ascending, short lists in a natural
 order, other lists in a fixed shuffle seeded by the question ID) and converts each answer to its displayed letter.
 The build stops if any answer does not fit its question type.
 
 ## Rebuild
 
 ```
-pip install reportlab
-python3 question-bank/grade6/src/build.py
+pip install reportlab pymupdf
+python3 question-bank/engine/build.py grade6
+python3 question-bank/engine/export.py grade6     # Untangle The Nexus package in question-bank/nexus/grade6/
 ```
 
-Question content lives in `src/data_rp.py`, `data_ns.py`, `data_ee.py`, `data_g.py`, `data_sp.py`.
+Question content lives in `src/data_rp.py`, `data_ns.py`, `data_ee.py`, `data_g.py`, `data_sp.py`; the shared
+builder is in `question-bank/engine/`.
 Text markup: `{a/b}` renders a stacked fraction.
 
 Forward 2 branches marked "NEAREST RELATED" (on the set overview, the branch divider page, and each card's
