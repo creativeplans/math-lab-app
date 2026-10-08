@@ -666,6 +666,8 @@ def fig_shape(c, f, x, y, w, h, s):
     def P(p):
         return ox + (p[0] - minx) * k, oy + (p[1] - miny) * k
     for pl in f.get('polys', []):
+        if pl.get('hidden'):
+            continue  # reserves space (for the student to draw in) without drawing anything
         pts = [P(p) for p in pl['pts']]
         path = c.beginPath()
         path.moveTo(*pts[0])
@@ -681,6 +683,8 @@ def fig_shape(c, f, x, y, w, h, s):
         c.drawPath(path, fill=1 if pl.get('closed', True) and pl.get('fill', '#e6eff9') != 'none' else 0, stroke=1)
         c.setDash()
     for pl in f.get('polys', []):
+        if pl.get('hidden'):
+            continue  # reserves space (for the student to draw in) without drawing anything
         pts = [P(p) for p in pl['pts']]
         el = pl.get('el')
         if not el:
@@ -1068,14 +1072,137 @@ def fig_rays(c, f, x, y, w, h, s):
         draw_label(c, text, cx + rr * math.cos(a), cy + rr * math.sin(a), fs, FB)
 
 
+def fig_array(c, f, x, y, w, h, s):
+    """rows x cols dots; split: draw a dashed line after that many columns (to show a broken-apart array)."""
+    R, C = f['rows'], f['cols']
+    gap = min((w - 40) / max(C, 1), (h - 30) / max(R, 1), f.get('maxgap', 34))
+    r = gap * 0.28
+    x0 = x + (w - gap * (C - 1)) / 2
+    y0 = y + (h - gap * (R - 1)) / 2
+    c.setFillColor(POINT)
+    for i in range(R):
+        for j in range(C):
+            c.circle(x0 + j * gap, y0 + (R - 1 - i) * gap, r, fill=1, stroke=0)
+    sp = f.get('split')
+    if sp:
+        c.setStrokeColor(INK)
+        c.setLineWidth(1.4)
+        c.setDash(5, 4)
+        xs = x0 + (sp - 0.5) * gap
+        c.line(xs, y0 - gap * 0.6, xs, y0 + gap * (R - 1) + gap * 0.6)
+        c.setDash()
+
+
+def fig_protractor(c, f, x, y, w, h, s):
+    """A protractor (0 at the right, 180 at the left, counterclockwise) with rays from its center.
+    rays: directions in degrees; inner=True adds the inner scale that reads from the left."""
+    import math
+    R = min(w / 2 - 14, h - 60)
+    cx, cy = x + w / 2, y + (h - R) / 2
+    fs = max(8.5, 11 * min(R / 150, 1.2)) * f.get('fs', 1)
+    fs = min(fs, (R - 22) * 0.1745 / 1.9)  # a three-digit label fits in the 10-degree gap
+    c.setStrokeColor(HexColor('#6c7f95'))
+    c.setFillColor(HexColor('#f3f7fc'))
+    c.setLineWidth(1)
+    p = c.beginPath()
+    p.moveTo(cx - R, cy)
+    p.arcTo(cx - R, cy - R, cx + R, cy + R, 0, 180)
+    p.close()
+    c.drawPath(p, fill=1, stroke=1)
+    for d in range(0, 181, 5 if f.get('fives', True) else 10):
+        a = math.radians(d)
+        L = 12 if d % 10 == 0 else 6
+        c.line(cx + R * math.cos(a), cy + R * math.sin(a), cx + (R - L) * math.cos(a), cy + (R - L) * math.sin(a))
+        if d % 10 == 0:
+            if f.get('inner') and d % 20:
+                continue  # with two scales, label every 20 degrees so the numbers do not crowd
+            draw_label(c, str(d), cx + (R - 22) * math.cos(a), cy + (R - 22) * math.sin(a), fs, color=MUTED)
+            if f.get('inner'):
+                draw_label(c, str(180 - d), cx + (R - 44) * math.cos(a), cy + (R - 44) * math.sin(a), fs * 0.85, color=MUTED)
+    c.setStrokeColor(INK)
+    c.setLineWidth(2)
+    for d in f.get('rays', []):
+        a = math.radians(d)
+        L = R + 12
+        c.line(cx, cy, cx + L * math.cos(a), cy + L * math.sin(a))
+        arrow_head(c, cx + L * math.cos(a), cy + L * math.sin(a), math.cos(a), math.sin(a), 8)
+    c.setFillColor(INK)
+    c.circle(cx, cy, 3, fill=1, stroke=0)
+    for d, text in f.get('labels', []):
+        a = math.radians(d)
+        draw_label(c, text, cx + (R + 24) * math.cos(a), cy + (R + 24) * math.sin(a) + 4, 13 * s, FB)
+
+
+def fig_geo(c, f, x, y, w, h, s):
+    """Points, segments, rays and lines. items: ('point', p, name), ('segment', p, q), ('ray', p, q),
+    ('line', p, q), ('ra', vertex, p1, p2) right-angle mark, ('text', p, text)."""
+    import math
+    pts = []
+    for it in f['items']:
+        pts += [v for v in it[1:] if isinstance(v, tuple)]
+    xs, ys = [p[0] for p in pts], [p[1] for p in pts]
+    minx, maxx, miny, maxy = min(xs), max(xs), min(ys), max(ys)
+    pad = f.get('pad', 34)
+    k = min((w - 2 * pad) / max(maxx - minx, 1e-6), (h - 2 * pad) / max(maxy - miny, 1e-6), f.get('maxk', 60))
+    ox = x + (w - (maxx - minx) * k) / 2
+    oy = y + (h - (maxy - miny) * k) / 2
+
+    def P(p):
+        return ox + (p[0] - minx) * k, oy + (p[1] - miny) * k
+    fs = 14 * s * f.get('fs', 1)
+    c.setStrokeColor(INK)
+    c.setFillColor(INK)
+    c.setLineWidth(2)
+    for it in f['items']:
+        kind = it[0]
+        if kind in ('segment', 'ray', 'line'):
+            a, b = P(it[1]), P(it[2])
+            dx, dy = b[0] - a[0], b[1] - a[1]
+            L = math.hypot(dx, dy)
+            ux, uy = dx / L, dy / L
+            ext = 16
+            a2 = (a[0] - ux * ext, a[1] - uy * ext) if kind == 'line' else a
+            b2 = (b[0] + ux * ext, b[1] + uy * ext) if kind in ('ray', 'line') else b
+            c.line(a2[0], a2[1], b2[0], b2[1])
+            if kind in ('ray', 'line'):
+                arrow_head(c, b2[0], b2[1], ux, uy, 9)
+            if kind == 'line':
+                arrow_head(c, a2[0], a2[1], -ux, -uy, 9)
+        elif kind == 'ra':
+            v, p1, p2 = P(it[1]), P(it[2]), P(it[3])
+            d = 12
+            u1 = ((p1[0] - v[0]), (p1[1] - v[1]))
+            u2 = ((p2[0] - v[0]), (p2[1] - v[1]))
+            n1, n2 = math.hypot(*u1), math.hypot(*u2)
+            a1 = (v[0] + u1[0] / n1 * d, v[1] + u1[1] / n1 * d)
+            a3 = (v[0] + u2[0] / n2 * d, v[1] + u2[1] / n2 * d)
+            a2 = (a1[0] + a3[0] - v[0], a1[1] + a3[1] - v[1])
+            c.setLineWidth(1.2)
+            c.line(a1[0], a1[1], a2[0], a2[1])
+            c.line(a2[0], a2[1], a3[0], a3[1])
+            c.setLineWidth(2)
+    for it in f['items']:
+        if it[0] == 'point':
+            px, py = P(it[1])
+            c.setFillColor(POINT)
+            c.circle(px, py, 4.2, fill=1, stroke=0)
+            if len(it) > 2 and it[2]:
+                off = it[3] if len(it) > 3 else (10, 10)
+                draw_label(c, it[2], px + off[0], py + off[1], fs, FB)
+        elif it[0] == 'text':
+            px, py = P(it[1])
+            draw_label(c, it[2], px, py, fs, FB)
+
+
 FIGS = {
     'nl': fig_numberline, 'coord': fig_coord, 'dot': fig_dot, 'hist': fig_hist, 'box': fig_box,
     'table': fig_table, 'shape': fig_shape, 'prism': fig_prism, 'tape': fig_tape, 'stack': fig_stack,
     'grid': fig_grid, 'cyl': fig_cyl, 'cone': fig_cyl, 'sphere': fig_cyl, 'pyramid': fig_pyramid,
     'vstack': fig_vstack, 'hrow': fig_hrow, 'text': fig_text, 'rays': fig_rays,
+    'array': fig_array, 'protractor': fig_protractor, 'geo': fig_geo,
 }
 
-RIGHT_KINDS = {'coord', 'shape', 'prism', 'grid', 'cyl', 'cone', 'sphere', 'pyramid', 'rays'}
+RIGHT_KINDS = {'coord', 'shape', 'prism', 'grid', 'cyl', 'cone', 'sphere', 'pyramid', 'rays', 'array', 'geo', 'protractor'}
 
 
 def draw_fig(c, f, x, y, w, h, s=1.0):

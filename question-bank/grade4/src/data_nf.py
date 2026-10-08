@@ -1,0 +1,395 @@
+from qb import S, B, sa, mc, tf, nl, table, draw_write
+from common import bar, bars, fline
+
+SETS = [
+    # ------------------------------------------------------------------ 4.NF.A.1 (explain with models)
+    S('4.NF.A.1', 'Explain why fractions are equivalent using visual fraction models',
+      main=[
+          sa('The bars show {2/3} and {8/12} of the same whole.\nExplain how the model shows that {2/3} = {8/12}.', ['Explanation:', ''],
+             key='Each third is split into 4 equal parts, so there are 4 times as many parts (12) and 4 times as many shaded parts (8); the shaded amount stays the same.',
+             note='Must say that the number of parts and the number of shaded parts are both multiplied by the same number (4) while the whole '
+                  'and the shaded amount stay the same.', fig=bars((3, 2), (12, 8))),
+          mc('A bar shows {3/5} shaded. Each fifth is cut into 2 equal parts.\nWhich fraction now names the shaded part?', ['{6/10}', '{3/10}', '{6/5}', '{5/10}']),
+          tf('{3/4} = {9/12} because the numerator and the denominator were both multiplied by 3.', key=True),
+          draw_write('The bar shows {1/2} shaded.\nDraw lines to split each part into 3 equal parts. Then write the equivalent fraction.', bar(2, 1),
+                     'Equivalent fraction:', draw='Each half split into 3 equal parts (6 parts in all), with 3 of them shaded', key='3/6',
+                     note='Grade both: each half split into 3 equal parts, and the fraction 3/6.'),
+          tf('{2/5} = {4/5} because the numerator was multiplied by 2.', key=False),
+      ],
+      back=[
+          B('Recognize equivalent fractions with a visual model', '3.NF.A.3.b', [
+              tf('{1/2} = {2/4}', key=True),
+              sa('The bars show the same whole.\nWhat fraction of the second bar names the same amount as {1/3}?', 'Fraction:', key='2/6', fig=bars((3, 1), (6, 2))),
+              mc('Which fraction is equivalent to {3/4}?', ['{6/8}', '{3/8}', '{4/3}', '{4/6}']),
+              sa('Find the missing number.\n{1/4} = {?/8}', 'Missing number:', key='2'),
+              tf('{2/3} = {2/6}', key=False),
+          ]),
+          B('Equivalent fractions are at the same point on a number line', '3.NF.A.3.a', [
+              tf('{1/2} and {2/4} are at the same point on a number line.', key=True),
+              mc('Which fraction is at the same point on the number line as {3/4}?', ['{6/8}', '{3/8}', '{4/8}', '{7/8}'], fig=fline(0, 1, 8)),
+              sa('Name a fraction in eighths that is at the same point as {1/2}.', 'Fraction:', key='4/8'),
+              tf('{1/3} and {2/6} are at different points on a number line.', key=False),
+              sa('What fraction in sixths is at the same point as {2/3}?', 'Fraction:', key='4/6'),
+          ]),
+      ],
+      f1=B('Use equivalent fractions to add and subtract with unlike denominators', '5.NF.A.1', [
+          sa('Add.\n{1/3} + {1/4}', 'Sum:', key='7/12'),
+          tf('{2/5} + {3/10} = {7/10}', key=True),
+          mc('Add.\n{1/2} + {3/8}', ['{7/8}', '{4/10}', '{4/8}', '{3/16}']),
+          sa('Subtract.\n{5/6} - {1/4}', 'Difference:', key='7/12'),
+          tf('{1/2} + {1/3} = {2/5}', key=False),
+      ]),
+      f2=B('Find equivalent ratios', '6.RP.A.3.a', [
+          sa('Find the missing value.\n2 : 3 = 8 : ?', 'Missing value:', key='12'),
+          tf('3 : 4 and 9 : 12 are equivalent ratios.', key=True),
+          mc('Which ratio is equivalent to 5 : 2?', ['15 : 6', '10 : 2', '5 : 4', '7 : 4']),
+          sa('The table shows equivalent ratios.\nFind the missing value.', 'Missing value:', key='9',
+             fig=table([['Cups of flour', '2', '4', '6'], ['Cups of milk', '3', '6', '?']])),
+          tf('4 : 6 and 6 : 8 are equivalent ratios.', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 4.NF.A.1 (generate)
+    S('4.NF.A.1', 'Generate equivalent fractions',
+      main=[
+          sa('Find the missing number.\n{3/5} = {?/10}', 'Missing number:', key='6'),
+          sa('Find the missing number.\n{8/12} = {2/?}', 'Missing number:', key='3'),
+          mc('Which fraction is equivalent to {4/6}?', ['{8/12}', '{6/8}', '{4/12}', '{2/6}']),
+          tf('{30/100} = {3/100}', key=False),
+          sa('Write two fractions that are equivalent to {1/4}.', 'Fractions:', key='2/8 and 3/12',
+             note='Any two fractions equal to 1/4 are correct, for example 2/8, 3/12, or 25/100.'),
+      ],
+      back=[
+          B('Generate simple equivalent fractions', '3.NF.A.3.b', [
+              sa('Find the missing number.\n{1/3} = {?/6}', 'Missing number:', key='2'),
+              tf('{3/6} = {1/2}', key=True),
+              mc('Which fraction is equal to {1/4}?', ['{2/8}', '{2/4}', '{4/1}', '{1/8}']),
+              sa('Find the missing number.\n{2/4} = {?/8}', 'Missing number:', key='4'),
+              tf('{3/8} = {3/4}', key=False),
+          ]),
+          B('Whole numbers written as fractions', '3.NF.A.3.c', [
+              sa('Write 3 as a fraction with a denominator of 1.', 'Fraction:', key='3/1'),
+              tf('{4/4} = 1', key=True),
+              mc('Which fraction is equal to 2?', ['{6/3}', '{3/6}', '{2/3}', '{2/2}']),
+              sa('Write 1 as a fraction with a denominator of 8.', 'Fraction:', key='8/8'),
+              tf('{6/6} = 6', key=False),
+          ]),
+      ],
+      f1=B('Explain equivalent fractions as multiplying by a fraction equal to 1', '5.NF.B.5.b', [
+          tf('{3/4} × {2/2} = {6/8}, and {6/8} = {3/4} because {2/2} = 1.', key=True),
+          mc('Which fraction equal to 1 turns {2/5} into {6/15}?', ['{3/3}', '{6/6}', '{5/5}', '{15/15}']),
+          sa('What fraction equal to 1 can you multiply {5/8} by to get {20/32}?', 'Fraction:', key='4/4'),
+          tf('{1/2} × {3/4} = {3/8} shows that {1/2} = {3/8}.', key=False),
+          sa('Explain why multiplying a fraction by {5/5} does not change its value.', 'Explanation:',
+             key='5/5 = 1, and multiplying a number by 1 does not change it.'),
+      ]),
+      f2=B('Write fractions as percents', '6.RP.A.3.c', [
+          sa('Write {3/4} as a percent.', 'Percent:', key='75%'),
+          tf('{2/5} = 40%', key=True),
+          mc('Which percent is equal to {7/10}?', ['70%', '7%', '0.7%', '17%']),
+          sa('Write 35% as a fraction with a denominator of 100.', 'Fraction:', key='35/100', note='7/20 is also correct.'),
+          tf('{1/8} = 18%', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 4.NF.A.2 (common denominator or numerator)
+    S('4.NF.A.2', 'Compare two fractions by finding a common denominator or a common numerator',
+      main=[
+          sa('Write >, =, or <.\n{3/4} ___ {5/8}', 'Symbol:', key='>'),
+          sa('Write >, =, or <.\n{2/5} ___ {3/10}', 'Symbol:', key='>'),
+          mc('Which comparison is true?', ['{3/5} > {3/8}', '{3/5} < {3/8}', '{3/5} = {3/8}', '{3/8} > {3/5}']),
+          sa('Compare {5/6} and {7/12}. Write >, =, or <, and explain how you know.', ['Comparison:', 'Explanation:'], key='5/6 > 7/12',
+             note='5/6 = 10/12, and 10/12 > 7/12 because they have the same denominator and 10 parts are more than 7. Both parts are required.'),
+          tf('{4/10} < {35/100}', key=False),
+      ],
+      back=[
+          B('Compare fractions with the same numerator or the same denominator', '3.NF.A.3.d', [
+              sa('Write >, =, or <.\n{3/8} ___ {5/8}', 'Symbol:', key='<'),
+              tf('{1/3} > {1/6}', key=True),
+              mc('Which fraction is greatest?', ['{2/3}', '{2/4}', '{2/6}', '{2/8}']),
+              sa('Write >, =, or <.\n{4/6} ___ {4/8}', 'Symbol:', key='>'),
+              tf('{3/4} < {2/4}', key=False),
+          ]),
+          B('Fractions on a number line', '3.NF.A.2', [
+              sa('What fraction is at point A?', 'A =', key='3/4', fig=nl(0, 1, 0.25, labels={0: '0', 1: '1'}, pts=[(0.75, 'A')])),
+              tf('On a number line, {5/6} is closer to 1 than {1/6} is.', key=True),
+              mc('Into how many equal parts is the space from 0 to 1 divided?', ['8', '7', '9', '4'], fig=nl(0, 1, 0.125, labels={0: '0', 1: '1'})),
+              sa('What fraction is at point B?', 'B =', key='1/3', fig=nl(0, 1, 1 / 3, labels={0: '0', 1: '1'}, pts=[(1 / 3, 'B')])),
+              tf('{2/2} is at the same point as 2 on a number line.', key=False),
+          ]),
+      ],
+      f1=B('Compare the size of a product to the size of one factor', '5.NF.B.5.a', [
+          tf('{3/4} × 9 is less than 9.', key=True),
+          mc('Which product is greater than 12?', ['{5/4} × 12', '{3/4} × 12', '{1/2} × 12', '1 × 12']),
+          sa('Without multiplying, is {7/8} × 20 greater than, less than, or equal to 20?', 'Answer:', key='Less than 20'),
+          tf('{6/6} × 15 is greater than 15.', key=False),
+          sa('Without multiplying, which is greater: {2/3} × 30 or {4/3} × 30?', 'Answer:', key='4/3 × 30'),
+      ]),
+      f2=B('Compare and order rational numbers', '6.NS.C.7.a', [
+          sa('Write >, =, or <.\n-{1/2} ___ -{3/4}', 'Symbol:', key='>'),
+          tf('-{2/3} < {1/3}', key=True),
+          mc('Which number is least?', ['-{5/6}', '-{1/2}', '{1/4}', '0']),
+          sa('Order from least to greatest.\n{1/2}, -{3/4}, -{1/4}', 'Order:', key='-3/4, -1/4, 1/2'),
+          tf('-{1/4} < -{1/2}', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 4.NF.A.2 (benchmarks and the same whole)
+    S('4.NF.A.2', 'Compare fractions using the benchmark 1/2, and only when they refer to the same whole',
+      main=[
+          mc('Which fraction is greater than {1/2}?', ['{5/8}', '{2/5}', '{3/8}', '{4/10}']),
+          sa('Compare {3/8} and {4/6} by comparing each one to {1/2}. Write >, =, or <.', ['Comparison:', 'Reason:'], key='3/8 < 4/6',
+             note='3/8 is less than 1/2 (which is 4/8) and 4/6 is more than 1/2 (which is 3/6), so 3/8 < 4/6. Both parts are required.'),
+          tf('{5/12} < {1/2}', key=True),
+          tf('Ben ate {1/2} of a small pizza and Kim ate {1/2} of a large pizza. They ate the same amount of pizza.', key=False),
+          sa('Explain why {2/3} of a small cake and {2/3} of a large cake are not the same amount of cake.', ['Explanation:', ''],
+             key='The two wholes are different sizes, so 2/3 of the large cake is more cake.',
+             note='Must say that fractions can be compared only when they refer to the same whole (wholes of the same size).'),
+      ],
+      back=[
+          B('Compare fractions of the same whole', '3.NF.A.3.d', [
+              tf('{1/4} of a pizza is less than {1/2} of the same pizza.', key=True),
+              sa('Write >, =, or <.\n{2/6} ___ {5/6}', 'Symbol:', key='<'),
+              mc('Which fraction of the same bar is greatest?', ['{1/2}', '{1/3}', '{1/4}', '{1/8}']),
+              sa('Write >, =, or <.\n{3/4} ___ {3/6}', 'Symbol:', key='>'),
+              tf('{1/8} of a ribbon is more than {1/3} of the same ribbon.', key=False),
+          ]),
+          B('Equal parts of a shape', '3.G.A.2', [
+              sa('A square is split into 4 equal parts.\nWhat fraction of its area is each part?', 'Fraction:', key='1/4'),
+              tf('A rectangle cut into 6 equal parts has parts that are each {1/6} of its area.', key=True),
+              mc('A circle is cut into 8 equal parts.\nWhat fraction of the area is 1 part?', ['{1/8}', '{8/1}', '{1/4}', '{7/8}']),
+              sa('What fraction of the shape is shaded?', 'Fraction:', key='1/3', fig=bar(3, 1)),
+              tf('A shape cut into 2 parts of different sizes is cut into halves.', key=False),
+          ]),
+      ],
+      f1=B('Use benchmark fractions to estimate and check sums and differences', '5.NF.A.2', [
+          tf('{3/5} + {4/7} is greater than 1, because each fraction is greater than {1/2}.', key=True),
+          mc('Which is the best estimate of {7/8} + {1/12}?', ['About 1', 'About {1/2}', 'About 2', 'About 0']),
+          sa('Use benchmark fractions to decide whether {2/5} + {3/8} is more or less than 1.', ['Answer:', 'Reason:'], key='Less than 1',
+             note='Both fractions are less than 1/2, so their sum is less than 1/2 + 1/2 = 1.'),
+          tf('{5/6} - {1/4} is about 1, because both fractions are close to 1.', key=False),
+          sa('Use the benchmarks 0, {1/2}, and 1 to estimate {9/10} + {5/12}.', 'Estimate:', key='About 1 1/2',
+             note='9/10 is close to 1 and 5/12 is close to 1/2.'),
+      ]),
+      f2=B('Write and interpret statements of order for rational numbers in context', '6.NS.C.7.b', [
+          sa('Write an inequality that compares -{3/4}°C and -{1/2}°C.', 'Inequality:', key='-3/4 < -1/2', note='-1/2 > -3/4 is also correct.'),
+          tf('A temperature of -{1/4}°F is warmer than -{3/4}°F.', key=True),
+          mc('Which statement is true?', ['-{2/3} < -{1/3}', '-{2/3} > -{1/3}', '-{1/3} < -{2/3}', '{1/3} < -{2/3}']),
+          sa('A diver at -2{1/2} m is deeper than a diver at -1{1/2} m.\nWrite an inequality for the two positions.', 'Inequality:',
+             key='-2 1/2 < -1 1/2', note='-1 1/2 > -2 1/2 is also correct.'),
+          tf('-{1/8} < -{7/8}', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 4.NF.B.3.a
+    S('4.NF.B.3.a', 'Understand adding and subtracting fractions as joining and separating parts of the same whole',
+      main=[
+          sa('A pizza is cut into 8 equal slices. Jo eats 3 slices and Al eats 2 slices.\nWhat fraction of the pizza did they eat in all?', 'Fraction:', key='5/8'),
+          tf('{2/5} + {1/5} means joining 2 fifths and 1 fifth of the same whole, which makes {3/5}.', key=True),
+          mc('A ribbon is cut into 10 equal pieces. 3 pieces are used and 7 are left.\nWhich equation shows this?',
+             ['{10/10} - {3/10} = {7/10}', '{10/10} - {3/10} = {7/0}', '{10/10} - {3/10} = {7/20}', '{3/10} - {10/10} = {7/10}']),
+          tf('{3/4} + {1/4} = {4/8}, because you add the numerators and add the denominators.', key=False),
+          draw_write('Shade the bar to show {2/6} + {3/6}.\nThen write the sum.', bar(6), 'Sum:', draw='5 of the 6 parts shaded', key='5/6',
+                     note='Grade both: 5 of the 6 parts shaded (2 parts and 3 parts), and the sum 5/6.'),
+      ],
+      back=[
+          B('A fraction is a number of unit-fraction parts', '3.NF.A.1', [
+              tf('{3/8} is 3 parts of size {1/8}.', key=True),
+              sa('How many {1/6}s make {5/6}?', 'Answer:', key='5'),
+              mc('What fraction is 2 parts of size {1/3}?', ['{2/3}', '{1/6}', '{3/2}', '{2/6}']),
+              sa('What fraction of the bar is shaded?', 'Fraction:', key='3/4', fig=bar(4, 3)),
+              tf('{4/6} means 6 parts of size {1/4}.', key=False),
+          ]),
+          B('Add to, take from, put together, and take apart within 20', '1.OA.A.1', [
+              sa('Sam has 7 marbles. He gets 6 more.\nHow many marbles does he have?', 'Marbles:', key='13'),
+              tf('There are 15 birds. 8 fly away. 7 birds are left.', key=True),
+              mc('9 red apples and 5 green apples are put together.\nHow many apples are there?', ['14', '4', '13', '45']),
+              sa('A box has 12 crayons. 4 are taken out.\nHow many crayons are left?', 'Crayons:', key='8'),
+              tf('6 cats and 7 dogs make 12 pets.', key=False),
+          ]),
+      ],
+      f1=B('Add and subtract fractions with unlike denominators', '5.NF.A.1', [
+          sa('Add.\n{1/4} + {2/3}', 'Sum:', key='11/12'),
+          sa('Subtract.\n{7/10} - {1/2}', 'Difference:', key='1/5', note='2/10 is also correct.'),
+          mc('Add.\n{3/8} + {1/2}', ['{7/8}', '{4/10}', '{4/8}', '1{1/8}']),
+          tf('{5/6} - {1/3} = {1/2}', key=True),
+          tf('{1/5} + {1/2} = {2/7}', key=False),
+      ]),
+      f2=B('Solve equations of the form x + p = q with fractions', '6.EE.B.7', [
+          sa('Solve for x.\nx + {1/4} = {3/4}', 'x =', key='1/2', note='2/4 is also correct.'),
+          tf('The solution of y - {2/5} = {1/5} is y = {3/5}.', key=True),
+          mc('Solve for n.\nn + {3/8} = 1', ['{5/8}', '{3/8}', '1{3/8}', '{8/5}']),
+          sa('Solve for m.\n{5/6} = m + {1/6}', 'm =', key='4/6', note='2/3 is also correct.'),
+          tf('The solution of x + {1/3} = {2/3} is x = 1.', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 4.NF.B.3.b
+    S('4.NF.B.3.b', 'Decompose a fraction into a sum of fractions with the same denominator, and justify it with a model',
+      main=[
+          sa('Write {4/5} as a sum of unit fractions.', 'Sum:', key='1/5 + 1/5 + 1/5 + 1/5'),
+          sa('Write {7/10} as a sum of two fractions with a denominator of 10, in two different ways.', ['Way 1:', 'Way 2:'],
+             key='3/10 + 4/10; 5/10 + 2/10',
+             note='Any two different pairs of tenths that add to 7/10 are correct (for example 1/10 + 6/10 and 2/10 + 5/10).'),
+          mc('Which sum is equal to {5/6}?', ['{2/6} + {3/6}', '{2/3} + {3/3}', '{1/6} + {5/6}', '{4/6} + {2/6}']),
+          tf('1{2/3} = {3/3} + {2/3}', key=True),
+          draw_write('The bar shows {6/8} shaded.\nCircle a group of 2 eighths and a group of 4 eighths to show {6/8} = {2/8} + {4/8}. Then write another way to decompose {6/8}.',
+                     bar(8, 6), 'Another way:', draw='The 6 shaded eighths circled as a group of 2 and a group of 4', key='3/8 + 3/8',
+                     note='Grade both: the two circled groups (2 and 4 eighths), and any other correct sum of eighths equal to 6/8, '
+                          'such as 1/8 + 5/8 or 1/8 + 1/8 + 4/8.'),
+      ],
+      back=[
+          B('Unit fractions build a fraction', '3.NF.A.1', [
+              sa('How many {1/8}s make {7/8}?', 'Answer:', key='7'),
+              tf('{1/4} + {1/4} + {1/4} = {3/4}', key=True),
+              mc('What fraction is 5 parts of size {1/6}?', ['{5/6}', '{1/30}', '{6/5}', '{5/1}']),
+              sa('Write {2/3} as a sum of unit fractions.', 'Sum:', key='1/3 + 1/3'),
+              tf('{1/2} + {1/2} = {2/4}', key=False),
+          ]),
+          B('Break apart numbers to 10 into pairs in more than one way', 'K.OA.A.3', [
+              sa('Write 7 as the sum of two numbers in two different ways.', ['Way 1:', 'Way 2:'], key='3 + 4; 5 + 2',
+                 note='Any two different pairs that add to 7 are correct.'),
+              tf('6 = 2 + 4', key=True),
+              mc('Which pair of numbers makes 9?', ['5 and 4', '5 and 3', '6 and 4', '7 and 3']),
+              sa('Fill in the blank.\n8 = 5 + ___', 'Blank:', key='3'),
+              tf('10 = 6 + 3', key=False),
+          ]),
+      ],
+      f1=B('Add and subtract mixed numbers with unlike denominators', '5.NF.A.1', [
+          sa('Add.\n1{1/2} + 2{1/3}', 'Sum:', key='3 5/6'),
+          sa('Subtract.\n3{3/4} - 1{1/6}', 'Difference:', key='2 7/12'),
+          mc('Add.\n2{2/5} + 1{1/2}', ['3{9/10}', '3{3/7}', '4{1/10}', '3{3/10}']),
+          tf('4{1/2} - 1{3/4} = 2{3/4}', key=True),
+          tf('1{2/3} + 1{1/6} = 2{3/9}', key=False),
+      ]),
+      f2=B('Divide fractions by thinking "how many parts of this size?"', '6.NS.A.1', [
+          sa('How many {1/8}s are in {3/4}?', 'Answer:', key='6'),
+          tf('{2/3} ÷ {1/6} = 4', key=True),
+          mc('Divide.\n{5/6} ÷ {5/12}', ['2', '{1/2}', '{25/72}', '10']),
+          sa('Divide.\n{9/10} ÷ {3/10}', 'Quotient:', key='3'),
+          tf('{1/2} ÷ {1/4} = {1/8}', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 4.NF.B.3.c (add mixed numbers)
+    S('4.NF.B.3.c', 'Add mixed numbers with like denominators',
+      main=[
+          sa('Add.\n2{3/8} + 1{4/8}', 'Sum:', key='3 7/8'),
+          sa('Add.\n3{4/5} + 2{3/5}', 'Sum:', key='6 2/5', note='32/5 is also correct.'),
+          mc('Add.\n1{5/6} + 4{2/6}', ['6{1/6}', '5{1/6}', '6{7/12}', '5{7/12}']),
+          tf('2{1/4} + 1{3/4} = 3{4/8}', key=False),
+          sa('A plant grew 1{7/10} inches in May and 2{6/10} inches in June.\nHow much did it grow in all?', 'Growth:', key='4 3/10 inches',
+             note='43/10 inches is also correct.'),
+      ],
+      back=[
+          B('Whole numbers written as fractions', '3.NF.A.3.c', [
+              sa('Write 2 as a fraction with a denominator of 4.', 'Fraction:', key='8/4'),
+              tf('{3/3} = 1', key=True),
+              mc('Which fraction is equal to 1?', ['{6/6}', '{6/1}', '{1/6}', '{0/6}']),
+              sa('How many halves are in 3 wholes?', 'Halves:', key='6'),
+              tf('{8/4} = 4', key=False),
+          ]),
+          B('Fractions greater than 1 on a number line', '3.NF.A.2', [
+              sa('What number is at point A? Write a fraction.', 'A =', key='5/4', note='1 1/4 is also correct.',
+                 fig=nl(0, 2, 0.25, labels={0: '0', 1: '1', 2: '2'}, pts=[(1.25, 'A')])),
+              tf('{3/2} is between 1 and 2 on a number line.', key=True),
+              mc('Which fraction is at the same point as 1 on a number line?', ['{4/4}', '{1/4}', '{4/1}', '{3/4}']),
+              sa('What number is at point B? Write a fraction.', 'B =', key='5/3', note='1 2/3 is also correct.',
+                 fig=nl(0, 2, 1 / 3, labels={0: '0', 1: '1', 2: '2'}, pts=[(5 / 3, 'B')])),
+              tf('{7/8} is greater than 1.', key=False),
+          ]),
+      ],
+      f1=B('Add mixed numbers with unlike denominators', '5.NF.A.1', [
+          sa('Add.\n3{1/4} + 1{2/3}', 'Sum:', key='4 11/12'),
+          sa('Add.\n2{5/6} + 1{1/2}', 'Sum:', key='4 1/3', note='4 2/6 is also correct.'),
+          mc('Add.\n1{3/10} + 2{1/2}', ['3{4/5}', '3{4/12}', '3{2/5}', '4{4/5}']),
+          tf('4{3/8} + 2{1/4} = 6{5/8}', key=True),
+          tf('1{1/2} + 1{1/3} = 2{2/5}', key=False),
+      ]),
+      f2=B('Solve equations of the form x + p = q with mixed numbers', '6.EE.B.7', [
+          sa('Solve for x.\nx + 1{1/2} = 4{1/4}', 'x =', key='2 3/4'),
+          tf('The solution of y - 2{1/3} = 1{2/3} is y = 4.', key=True),
+          mc('Solve for n.\nn + 3{3/8} = 6', ['2{5/8}', '3{5/8}', '9{3/8}', '2{3/8}']),
+          sa('A board was 6{1/2} feet long. After a piece was cut off, 4{3/4} feet were left.\nWrite and solve an equation for the length p of the piece.',
+             ['Equation:', 'p ='], key='6 1/2 - p = 4 3/4; p = 1 3/4 feet', note='Any equivalent equation is correct. Both parts are required.'),
+          tf('The solution of x + 2{1/2} = 5 is x = 3{1/2}.', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 4.NF.B.3.c (subtract mixed numbers)
+    S('4.NF.B.3.c', 'Subtract mixed numbers with like denominators',
+      main=[
+          sa('Subtract.\n5{7/8} - 2{3/8}', 'Difference:', key='3 4/8', note='3 1/2 is also correct.'),
+          sa('Subtract.\n4{1/5} - 1{3/5}', 'Difference:', key='2 3/5'),
+          mc('Subtract.\n6 - 2{5/6}', ['3{1/6}', '4{1/6}', '3{5/6}', '4{5/6}']),
+          tf('3{2/10} - 1{7/10} = 1{5/10}', key=True),
+          sa('A jug had 3{1/4} liters of water. Lee poured out 1{3/4} liters.\nHow much water is left?', 'Water left:', key='1 2/4 liters',
+             note='1 1/2 liters is also correct.'),
+      ],
+      back=[
+          B('Whole numbers written as fractions', '3.NF.A.3.c', [
+              sa('Write 1 as a fraction with a denominator of 6.', 'Fraction:', key='6/6'),
+              tf('{4/4} = 1', key=True),
+              mc('Which fraction is equal to 3?', ['{12/4}', '{4/12}', '{3/4}', '{4/4}']),
+              sa('How many thirds are in 2 wholes?', 'Thirds:', key='6'),
+              tf('{2/2} = 2', key=False),
+          ]),
+          B('Subtract within 100', '2.NBT.B.5', [
+              sa('Subtract.\n62 - 37', 'Difference:', key='25'),
+              tf('80 - 26 = 54', key=True),
+              mc('71 - 48 = ?', ['23', '33', '27', '119']),
+              sa('Subtract.\n95 - 59', 'Difference:', key='36'),
+              tf('43 - 18 = 35', key=False),
+          ]),
+      ],
+      f1=B('Subtract mixed numbers with unlike denominators', '5.NF.A.1', [
+          sa('Subtract.\n5{1/2} - 2{1/3}', 'Difference:', key='3 1/6'),
+          sa('Subtract.\n4 - 1{3/8}', 'Difference:', key='2 5/8'),
+          mc('Subtract.\n3{1/4} - 1{2/3}', ['1{7/12}', '2{7/12}', '1{5/12}', '2{1/12}']),
+          tf('6{1/2} - 3{3/4} = 2{3/4}', key=True),
+          tf('2{5/6} - 1{1/2} = 1{4/4}', key=False),
+      ]),
+      f2=B('Solve equations with subtraction and mixed numbers', '6.EE.B.7', [
+          sa('Solve for x.\nx - 2{1/4} = 3{1/2}', 'x =', key='5 3/4'),
+          tf('The solution of y + 1{5/6} = 4 is y = 2{1/6}.', key=True),
+          mc('Solve for n.\n7{1/3} - n = 2{2/3}', ['4{2/3}', '5{1/3}', '4{1/3}', '10']),
+          sa('A tank had some water. After 3{1/2} gallons were used, 5{1/4} gallons were left.\nWrite and solve an equation for the starting amount w.',
+             ['Equation:', 'w ='], key='w - 3 1/2 = 5 1/4; w = 8 3/4 gallons', note='Any equivalent equation is correct. Both parts are required.'),
+          tf('The solution of x - 1{1/2} = 1{1/2} is x = 0.', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 4.NF.B.3.d
+    S('4.NF.B.3.d', 'Solve word problems by adding and subtracting fractions with like denominators',
+      main=[
+          sa('Mia ran {3/10} mile in the morning and {5/10} mile in the afternoon.\nHow far did she run in all?', 'Distance:', key='8/10 mile',
+             note='4/5 mile is also correct.'),
+          sa('A jug had {11/12} liter of juice. Tom drank {4/12} liter.\nHow much juice is left?', 'Juice left:', key='7/12 liter'),
+          mc('Ty used 1{2/4} cups of rice on Monday and 2{3/4} cups on Tuesday.\nHow many cups did he use in all?',
+             ['4{1/4} cups', '3{1/4} cups', '4{5/8} cups', '3{5/8} cups']),
+          tf('A ribbon is {7/8} yard long. Ann cuts off {3/8} yard. {4/8} yard is left.', key=True),
+          sa('A painter used {2/6} of a can of paint on a door and {3/6} of the can on a fence.\nWhat fraction of the can is left?', 'Fraction:', key='1/6'),
+      ],
+      back=[
+          B('One- and two-step word problems within 100', '2.OA.A.1', [
+              sa('A shelf has 46 books. 18 are taken.\nHow many books are left?', 'Books:', key='28'),
+              tf('Kim had 25 stickers and got 17 more. She has 42 stickers.', key=True),
+              mc('A class has 14 boys and 15 girls.\nHow many students are in the class?', ['29', '1', '19', '39']),
+              sa('Jo had 50 cents. She spent 23 cents.\nHow much money is left?', 'Money left:', key='27 cents'),
+              tf('A bus had 36 people. 9 got off. 25 people are still on the bus.', key=False),
+          ]),
+          B('Fractions of a whole', '3.NF.A.1', [
+              sa('A pie is cut into 6 equal pieces. 5 pieces are eaten.\nWhat fraction of the pie is eaten?', 'Fraction:', key='5/6'),
+              tf('A pizza is cut into 8 equal slices and 3 are left. {3/8} of the pizza is left.', key=True),
+              mc('A bar is cut into 4 equal parts.\nWhat fraction of the bar is 1 part?', ['{1/4}', '{4/1}', '{1/3}', '{3/4}']),
+              sa('A garden has 3 equal sections. Beans fill 2 of them.\nWhat fraction of the garden is beans?', 'Fraction:', key='2/3'),
+              tf('A board cut into 2 equal pieces has pieces that are each {1/3} of the board.', key=False),
+          ]),
+      ],
+      f1=B('Solve word problems by adding and subtracting fractions with unlike denominators', '5.NF.A.2', [
+          sa('Ana walked {1/2} mile and then {1/3} mile.\nHow far did she walk in all?', 'Distance:', key='5/6 mile'),
+          sa('A jug had {3/4} gallon of milk. Ben used {2/3} gallon.\nHow much milk is left?', 'Milk left:', key='1/12 gallon'),
+          mc('Lu read {1/4} of a book on Monday and {3/8} of it on Tuesday.\nWhat fraction of the book did she read?', ['{5/8}', '{4/12}', '{4/8}', '{3/32}']),
+          tf('A board is {5/6} meter long. {1/2} meter is cut off. {1/3} meter is left.', key=True),
+          tf('Sam ate {1/2} of a pizza and Lee ate {1/3} of it. They ate {2/5} of the pizza.', key=False),
+      ]),
+      f2=B('Solve word problems by dividing fractions', '6.NS.A.1', [
+          sa('How many {1/4}-cup servings are in {3/4} cup?', 'Servings:', key='3'),
+          tf('A {9/10}-mile path is split into {3/10}-mile sections. There are 3 sections.', key=True),
+          mc('How many {2/3}-foot pieces can be cut from 4 feet of ribbon?', ['6', '{8/3}', '{1/6}', '8']),
+          sa('{3/4} pound of nuts is shared equally among 3 bags.\nHow much is in each bag?', 'Pounds:', key='1/4 pound'),
+          tf('{1/2} cup of oats fills a {1/6}-cup scoop exactly 2 times.', key=False),
+      ])),
+]

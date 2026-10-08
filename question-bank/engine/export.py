@@ -151,6 +151,8 @@ def describe(f):
     if k == 'shape':
         parts = []
         for p in f['polys']:
+            if p.get('hidden'):
+                continue
             pts = p['pts']
             labs = []
             for i, lab in enumerate(p.get('el') or []):
@@ -169,7 +171,7 @@ def describe(f):
             parts.append('Text "%s" at %s' % (A.plain(t[2]), pt(t)))
         if f.get('ra'):
             parts.append('Right-angle marks are shown')
-        n = len(f['polys'])
+        n = len([p for p in f['polys'] if not p.get('hidden')])
         head = 'Figure made of %d connected shapes (a net or composite figure). ' % n if n > 1 else ''
         return head + '. '.join(parts) + '.'
     if k == 'prism':
@@ -216,6 +218,32 @@ def describe(f):
         return 'Grid of %d by %d squares with %d squares shaded.' % (f.get('rows', 10), f.get('cols', 10), f['shade'])
     if k == 'text':
         return A.plain(f.get('text', ''))
+    if k == 'array':
+        d = 'Array of dots: %d rows of %d' % (f['rows'], f['cols'])
+        if f.get('split'):
+            d += ', with a dashed line after the first %d columns' % f['split']
+        return d + '.'
+    if k == 'protractor':
+        d = 'Protractor marked from 0 at the right to 180 at the left'
+        if f.get('inner'):
+            d += ', with a second (inner) scale from 0 at the left to 180 at the right'
+        if f.get('rays'):
+            d += '. Rays from its center at %s degrees' % ' and '.join(str(r) for r in f['rays'])
+        else:
+            d += '. No rays are drawn; the student draws them'
+        return d + '.'
+    if k == 'geo':
+        parts = []
+        for it in f['items']:
+            if it[0] == 'point':
+                parts.append('point %s at %s' % (it[2] or '', pt(it[1])))
+            elif it[0] in ('segment', 'ray', 'line'):
+                parts.append('%s from %s %s %s' % (it[0], pt(it[1]), 'toward' if it[0] != 'segment' else 'to', pt(it[2])))
+            elif it[0] == 'ra':
+                parts.append('right-angle mark at %s' % pt(it[1]))
+            elif it[0] == 'text':
+                parts.append('text "%s" at %s' % (A.plain(it[2]), pt(it[1])))
+        return 'Geometry drawing: ' + '; '.join(parts) + '.'
     if k == 'rays':
         d = 'Rays drawn from one point, in the directions %s degrees (0 = right, measured counterclockwise)' % ', '.join(
             str(r) for r in f['rays'])
