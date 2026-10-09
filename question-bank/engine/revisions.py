@@ -28,13 +28,18 @@ import os
 import answers as A
 
 
-def snapshot(qd, rec, std, skill):
+def snapshot(qd, rec, std, skill, nearest=False):
     """The comparable content of one question, in the shape of the history files."""
     fig = qd.get('fig')
     return dict(standard=std, skill=skill, type=rec['type'], prompt=qd['stem'],
                 choices=[c['text'] for c in rec['choices']], correct_letter=rec['correct_letter'],
                 correct_answer=rec['correct_answer'], grading_note=rec['grading_note'],
-                figure=fig)
+                figure=fig, drawing_answer=rec.get('drawing_answer'), required_method=rec.get('required_method'),
+                nearest_related=bool(nearest))
+
+
+# compared only when the history file records them (older snapshots predate these fields)
+OPTIONAL = ('drawing_answer', 'required_method', 'nearest_related')
 
 
 def _norm(v):
@@ -51,6 +56,9 @@ def differences(old, new):
         out.append('figure')
     if 'skill' in old and old['skill'] != new['skill'] and 'standard' not in out:
         out.append('skill')
+    for k in OPTIONAL:
+        if k in old and _norm(old[k]) != _norm(new.get(k)):
+            out.append(k)
     return out
 
 

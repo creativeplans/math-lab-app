@@ -3,21 +3,22 @@
  "collection": {
   "id": "G4",
   "grade": 4,
-  "version": "1.0.0",
-  "date": "2026-10-08"
+  "version": "2.0.0",
+  "date": "2026-10-09"
  },
  "grade": 4,
  "title": "Grade 4 Common Core Math — Question Sets",
- "set_count": 64,
- "question_count": 1600,
- "figure_count": 124,
+ "set_count": 73,
+ "question_count": 1825,
+ "figure_count": 169,
  "id_format": "S<set>-<section>-Q<number>. Section codes: M = MAIN (Grade 4), B1, B2, ... = BACKWARD branches (earlier grades), F1 = FORWARD 1 (Grade 5), F2 = FORWARD 2 (Grade 6). id is unique within this collection; uid = \"G4:\" + id is unique across all grade collections (the collection, not a question's standard grade, is the namespace: this bank also holds Grade 5 and 6 forward questions). Set and branch numbers are fixed: they need not be consecutive, and an ID is never reused for a different skill (see revisions.json).",
- "revisions_file": null,
+ "revisions_file": "revisions.json",
  "relations": {
   "main": "the Grade 4 skill the set is built around",
   "backward": "a prerequisite skill to check when a student misses MAIN questions",
   "forward1": "the directly connected Grade 5 skill",
-  "forward2": "the next connected Grade 6 skill; nearest_related = true marks a branch with no direct Grade 6 continuation"
+  "forward2": "the next connected Grade 6 skill",
+  "nearest_related": "true marks a forward branch whose grade has no direct continuation of the skill; it uses the nearest related standard of that grade"
  },
  "grading_rules": [
   "Match each student response to its key record by the question ID printed on the question page (for example S40-F2-Q3). The page number is the same in the Question Collection and the Answer Key. IDs are unique within one grade's collection; across collections use uid (for example G5:S40-F2-Q3).",
@@ -229,7 +230,7 @@
      "section": "BACKWARD 1",
      "section_code": "B1",
      "relation": "backward",
-     "skill": "Multiplication and division word problems within 100",
+     "skill": "Multiplication word problems within 100",
      "standard": "3.OA.A.3",
      "nearest_related": false,
      "question_ids": [
@@ -481,25 +482,10 @@
      ]
     },
     {
-     "section": "BACKWARD 1",
-     "section_code": "B1",
-     "relation": "backward",
-     "skill": "Two-step word problems",
-     "standard": "3.OA.D.8",
-     "nearest_related": false,
-     "question_ids": [
-      "S6-B1-Q1",
-      "S6-B1-Q2",
-      "S6-B1-Q3",
-      "S6-B1-Q4",
-      "S6-B1-Q5"
-     ]
-    },
-    {
      "section": "BACKWARD 2",
      "section_code": "B2",
      "relation": "backward",
-     "skill": "Add and subtract within 1000",
+     "skill": "Subtract within 1000",
      "standard": "3.NBT.A.2",
      "nearest_related": false,
      "question_ids": [
@@ -508,6 +494,21 @@
       "S6-B2-Q3",
       "S6-B2-Q4",
       "S6-B2-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 3",
+     "section_code": "B3",
+     "relation": "backward",
+     "skill": "One-step equal-groups problems with a symbol for the unknown",
+     "standard": "3.OA.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S6-B3-Q1",
+      "S6-B3-Q2",
+      "S6-B3-Q3",
+      "S6-B3-Q4",
+      "S6-B3-Q5"
      ]
     },
     {
@@ -628,6 +629,91 @@
    ]
   },
   {
+   "set": 65,
+   "set_id": "S65",
+   "file": "sets/S65.json",
+   "standard": "4.OA.A.3",
+   "title": "Solve multistep word problems in which a remainder must be interpreted",
+   "domain": "Operations & Algebraic Thinking",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Solve multistep word problems in which a remainder must be interpreted",
+     "standard": "4.OA.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S65-M-Q1",
+      "S65-M-Q2",
+      "S65-M-Q3",
+      "S65-M-Q4",
+      "S65-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Division word problems within 100",
+     "standard": "3.OA.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S65-B1-Q1",
+      "S65-B1-Q2",
+      "S65-B1-Q3",
+      "S65-B1-Q4",
+      "S65-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Subtract within 1000",
+     "standard": "3.NBT.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S65-B2-Q1",
+      "S65-B2-Q2",
+      "S65-B2-Q3",
+      "S65-B2-Q4",
+      "S65-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Interpret the quotient in multistep problems with two-digit divisors",
+     "standard": "5.NBT.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S65-F1-Q1",
+      "S65-F1-Q2",
+      "S65-F1-Q3",
+      "S65-F1-Q4",
+      "S65-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Divide multi-digit numbers to solve multistep problems",
+     "standard": "6.NS.B.2",
+     "nearest_related": true,
+     "question_ids": [
+      "S65-F2-Q1",
+      "S65-F2-Q2",
+      "S65-F2-Q3",
+      "S65-F2-Q4",
+      "S65-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
    "set": 8,
    "set_id": "S8",
    "file": "sets/S08.json",
@@ -739,7 +825,7 @@
      "section": "BACKWARD 1",
      "section_code": "B1",
      "relation": "backward",
-     "skill": "Find an unknown factor",
+     "skill": "Solve a division problem by finding an unknown factor",
      "standard": "3.OA.B.6",
      "nearest_related": false,
      "question_ids": [
@@ -2299,7 +2385,7 @@
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Use equivalent fractions to add and subtract with unlike denominators",
+     "skill": "Use equivalent fractions to add fractions with unlike denominators",
      "standard": "5.NF.A.1",
      "nearest_related": false,
      "question_ids": [
@@ -2639,7 +2725,7 @@
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Add and subtract fractions with unlike denominators",
+     "skill": "Add fractions with unlike denominators",
      "standard": "5.NF.A.1",
      "nearest_related": false,
      "question_ids": [
@@ -2724,7 +2810,7 @@
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Add and subtract mixed numbers with unlike denominators",
+     "skill": "Add mixed numbers with unlike denominators",
      "standard": "5.NF.A.1",
      "nearest_related": false,
      "question_ids": [
@@ -2927,14 +3013,14 @@
    "set_id": "S35",
    "file": "sets/S35.json",
    "standard": "4.NF.B.3.d",
-   "title": "Solve word problems by adding and subtracting fractions with like denominators",
+   "title": "Solve word problems by adding fractions and mixed numbers with like denominators",
    "domain": "Number & Operations–Fractions",
    "sections": [
     {
      "section": "MAIN",
      "section_code": "M",
      "relation": "main",
-     "skill": "Solve word problems by adding and subtracting fractions with like denominators",
+     "skill": "Solve word problems by adding fractions and mixed numbers with like denominators",
      "standard": "4.NF.B.3.d",
      "nearest_related": false,
      "question_ids": [
@@ -2949,7 +3035,7 @@
      "section": "BACKWARD 1",
      "section_code": "B1",
      "relation": "backward",
-     "skill": "One- and two-step word problems within 100",
+     "skill": "Addition word problems within 100",
      "standard": "2.OA.A.1",
      "nearest_related": false,
      "question_ids": [
@@ -2979,7 +3065,7 @@
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Solve word problems by adding and subtracting fractions with unlike denominators",
+     "skill": "Solve word problems by adding fractions with unlike denominators",
      "standard": "5.NF.A.2",
      "nearest_related": false,
      "question_ids": [
@@ -3003,6 +3089,91 @@
       "S35-F2-Q3",
       "S35-F2-Q4",
       "S35-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 66,
+   "set_id": "S66",
+   "file": "sets/S66.json",
+   "standard": "4.NF.B.3.d",
+   "title": "Solve word problems by subtracting fractions and mixed numbers with like denominators",
+   "domain": "Number & Operations–Fractions",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Solve word problems by subtracting fractions and mixed numbers with like denominators",
+     "standard": "4.NF.B.3.d",
+     "nearest_related": false,
+     "question_ids": [
+      "S66-M-Q1",
+      "S66-M-Q2",
+      "S66-M-Q3",
+      "S66-M-Q4",
+      "S66-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Subtraction word problems within 100",
+     "standard": "2.OA.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S66-B1-Q1",
+      "S66-B1-Q2",
+      "S66-B1-Q3",
+      "S66-B1-Q4",
+      "S66-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Whole numbers written as fractions",
+     "standard": "3.NF.A.3.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S66-B2-Q1",
+      "S66-B2-Q2",
+      "S66-B2-Q3",
+      "S66-B2-Q4",
+      "S66-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Solve word problems by subtracting fractions with unlike denominators",
+     "standard": "5.NF.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S66-F1-Q1",
+      "S66-F1-Q2",
+      "S66-F1-Q3",
+      "S66-F1-Q4",
+      "S66-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Write and solve equations of the form x + p = q for fraction word problems",
+     "standard": "6.EE.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S66-F2-Q1",
+      "S66-F2-Q2",
+      "S66-F2-Q3",
+      "S66-F2-Q4",
+      "S66-F2-Q5"
      ]
     }
    ]
@@ -3064,7 +3235,7 @@
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Multiply a fraction by a whole number as a part of a whole number",
+     "skill": "Find a fraction of a fractional amount",
      "standard": "5.NF.B.4.a",
      "nearest_related": false,
      "question_ids": [
@@ -3267,14 +3438,14 @@
    "set_id": "S39",
    "file": "sets/S39.json",
    "standard": "4.NF.C.5",
-   "title": "Write tenths as hundredths and add fractions with denominators 10 and 100",
+   "title": "Write a fraction with denominator 10 as an equivalent fraction with denominator 100",
    "domain": "Number & Operations–Fractions",
    "sections": [
     {
      "section": "MAIN",
      "section_code": "M",
      "relation": "main",
-     "skill": "Write tenths as hundredths and add fractions with denominators 10 and 100",
+     "skill": "Write a fraction with denominator 10 as an equivalent fraction with denominator 100",
      "standard": "4.NF.C.5",
      "nearest_related": false,
      "question_ids": [
@@ -3343,6 +3514,91 @@
       "S39-F2-Q3",
       "S39-F2-Q4",
       "S39-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 67,
+   "set_id": "S67",
+   "file": "sets/S67.json",
+   "standard": "4.NF.C.5",
+   "title": "Add two fractions with denominators 10 and 100",
+   "domain": "Number & Operations–Fractions",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Add two fractions with denominators 10 and 100",
+     "standard": "4.NF.C.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S67-M-Q1",
+      "S67-M-Q2",
+      "S67-M-Q3",
+      "S67-M-Q4",
+      "S67-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Add tens and ones within 100",
+     "standard": "2.NBT.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S67-B1-Q1",
+      "S67-B1-Q2",
+      "S67-B1-Q3",
+      "S67-B1-Q4",
+      "S67-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Simple equivalent fractions",
+     "standard": "3.NF.A.3.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S67-B2-Q1",
+      "S67-B2-Q2",
+      "S67-B2-Q3",
+      "S67-B2-Q4",
+      "S67-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Add decimals with tenths and hundredths in context",
+     "standard": "5.NBT.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S67-F1-Q1",
+      "S67-F1-Q2",
+      "S67-F1-Q3",
+      "S67-F1-Q4",
+      "S67-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Add multi-digit decimals with the standard algorithm",
+     "standard": "6.NS.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S67-F2-Q1",
+      "S67-F2-Q2",
+      "S67-F2-Q3",
+      "S67-F2-Q4",
+      "S67-F2-Q5"
      ]
     }
    ]
@@ -4032,14 +4288,14 @@
    "set_id": "S48",
    "file": "sets/S48.json",
    "standard": "4.MD.A.3",
-   "title": "Apply the area and perimeter formulas for rectangles",
+   "title": "Apply the area formula for rectangles",
    "domain": "Measurement & Data",
    "sections": [
     {
      "section": "MAIN",
      "section_code": "M",
      "relation": "main",
-     "skill": "Apply the area and perimeter formulas for rectangles",
+     "skill": "Apply the area formula for rectangles",
      "standard": "4.MD.A.3",
      "nearest_related": false,
      "question_ids": [
@@ -4066,18 +4322,18 @@
      ]
     },
     {
-     "section": "BACKWARD 2",
-     "section_code": "B2",
+     "section": "BACKWARD 3",
+     "section_code": "B3",
      "relation": "backward",
-     "skill": "Perimeter of polygons",
-     "standard": "3.MD.D.8",
+     "skill": "Find area by tiling a rectangle with unit squares",
+     "standard": "3.MD.C.7.a",
      "nearest_related": false,
      "question_ids": [
-      "S48-B2-Q1",
-      "S48-B2-Q2",
-      "S48-B2-Q3",
-      "S48-B2-Q4",
-      "S48-B2-Q5"
+      "S48-B3-Q1",
+      "S48-B3-Q2",
+      "S48-B3-Q3",
+      "S48-B3-Q4",
+      "S48-B3-Q5"
      ]
     },
     {
@@ -4113,18 +4369,103 @@
    ]
   },
   {
-   "set": 49,
-   "set_id": "S49",
-   "file": "sets/S49.json",
+   "set": 68,
+   "set_id": "S68",
+   "file": "sets/S68.json",
    "standard": "4.MD.A.3",
-   "title": "Find an unknown side length from the area or the perimeter of a rectangle",
+   "title": "Apply the perimeter formula for rectangles",
    "domain": "Measurement & Data",
    "sections": [
     {
      "section": "MAIN",
      "section_code": "M",
      "relation": "main",
-     "skill": "Find an unknown side length from the area or the perimeter of a rectangle",
+     "skill": "Apply the perimeter formula for rectangles",
+     "standard": "4.MD.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S68-M-Q1",
+      "S68-M-Q2",
+      "S68-M-Q3",
+      "S68-M-Q4",
+      "S68-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Perimeter of polygons",
+     "standard": "3.MD.D.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S68-B1-Q1",
+      "S68-B1-Q2",
+      "S68-B1-Q3",
+      "S68-B1-Q4",
+      "S68-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Add up to four two-digit numbers",
+     "standard": "2.NBT.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S68-B2-Q1",
+      "S68-B2-Q2",
+      "S68-B2-Q3",
+      "S68-B2-Q4",
+      "S68-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find the perimeter of shapes with fractional side lengths",
+     "standard": "5.NF.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S68-F1-Q1",
+      "S68-F1-Q2",
+      "S68-F1-Q3",
+      "S68-F1-Q4",
+      "S68-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Evaluate perimeter formulas for given side lengths",
+     "standard": "6.EE.A.2.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S68-F2-Q1",
+      "S68-F2-Q2",
+      "S68-F2-Q3",
+      "S68-F2-Q4",
+      "S68-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 49,
+   "set_id": "S49",
+   "file": "sets/S49.json",
+   "standard": "4.MD.A.3",
+   "title": "Find an unknown side length from the area of a rectangle",
+   "domain": "Measurement & Data",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Find an unknown side length from the area of a rectangle",
      "standard": "4.MD.A.3",
      "nearest_related": false,
      "question_ids": [
@@ -4133,21 +4474,6 @@
       "S49-M-Q3",
       "S49-M-Q4",
       "S49-M-Q5"
-     ]
-    },
-    {
-     "section": "BACKWARD 1",
-     "section_code": "B1",
-     "relation": "backward",
-     "skill": "Find an unknown side from the perimeter",
-     "standard": "3.MD.D.8",
-     "nearest_related": false,
-     "question_ids": [
-      "S49-B1-Q1",
-      "S49-B1-Q2",
-      "S49-B1-Q3",
-      "S49-B1-Q4",
-      "S49-B1-Q5"
      ]
     },
     {
@@ -4163,6 +4489,21 @@
       "S49-B2-Q3",
       "S49-B2-Q4",
       "S49-B2-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 3",
+     "section_code": "B3",
+     "relation": "backward",
+     "skill": "Find the area of a rectangle by multiplying its side lengths",
+     "standard": "3.MD.C.7.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S49-B3-Q1",
+      "S49-B3-Q2",
+      "S49-B3-Q3",
+      "S49-B3-Q4",
+      "S49-B3-Q5"
      ]
     },
     {
@@ -4193,6 +4534,91 @@
       "S49-F2-Q3",
       "S49-F2-Q4",
       "S49-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 69,
+   "set_id": "S69",
+   "file": "sets/S69.json",
+   "standard": "4.MD.A.3",
+   "title": "Find an unknown side length from the perimeter of a rectangle",
+   "domain": "Measurement & Data",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Find an unknown side length from the perimeter of a rectangle",
+     "standard": "4.MD.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S69-M-Q1",
+      "S69-M-Q2",
+      "S69-M-Q3",
+      "S69-M-Q4",
+      "S69-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find an unknown side from the perimeter",
+     "standard": "3.MD.D.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S69-B1-Q1",
+      "S69-B1-Q2",
+      "S69-B1-Q3",
+      "S69-B1-Q4",
+      "S69-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Find an unknown addend within 100",
+     "standard": "2.NBT.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S69-B2-Q1",
+      "S69-B2-Q2",
+      "S69-B2-Q3",
+      "S69-B2-Q4",
+      "S69-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find an unknown side length from a perimeter with fractions",
+     "standard": "5.NF.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S69-F1-Q1",
+      "S69-F1-Q2",
+      "S69-F1-Q3",
+      "S69-F1-Q4",
+      "S69-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Write and solve one-step equations for a missing side length",
+     "standard": "6.EE.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S69-F2-Q1",
+      "S69-F2-Q2",
+      "S69-F2-Q3",
+      "S69-F2-Q4",
+      "S69-F2-Q5"
      ]
     }
    ]
@@ -4254,7 +4680,7 @@
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Make line plots and use operations on the data",
+     "skill": "Make line plots of data given in halves, fourths, and eighths together",
      "standard": "5.MD.B.2",
      "nearest_related": false,
      "question_ids": [
@@ -4511,7 +4937,7 @@
      "relation": "forward1",
      "skill": "A solid packed with n unit cubes has a volume of n cubic units",
      "standard": "5.MD.C.3.b",
-     "nearest_related": false,
+     "nearest_related": true,
      "question_ids": [
       "S53-F1-Q1",
       "S53-F1-Q2",
@@ -4526,7 +4952,7 @@
      "relation": "forward2",
      "skill": "Find volume by packing with unit-fraction cubes",
      "standard": "6.G.A.2",
-     "nearest_related": false,
+     "nearest_related": true,
      "question_ids": [
       "S53-F2-Q1",
       "S53-F2-Q2",
@@ -4679,7 +5105,7 @@
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Graph points in the first quadrant",
+     "skill": "Graph points in the first quadrant to solve problems",
      "standard": "5.G.A.2",
      "nearest_related": false,
      "question_ids": [
@@ -4766,7 +5192,7 @@
      "relation": "forward1",
      "skill": "Volume is additive",
      "standard": "5.MD.C.5.c",
-     "nearest_related": false,
+     "nearest_related": true,
      "question_ids": [
       "S56-F1-Q1",
       "S56-F1-Q2",
@@ -4819,7 +5245,7 @@
      "section": "BACKWARD 1",
      "section_code": "B1",
      "relation": "backward",
-     "skill": "Find an unknown in an addition or subtraction equation",
+     "skill": "Solve one-step word problems with an unknown in any position",
      "standard": "2.OA.A.1",
      "nearest_related": false,
      "question_ids": [
@@ -4882,14 +5308,14 @@
    "set_id": "S58",
    "file": "sets/S58.json",
    "standard": "4.G.A.1",
-   "title": "Draw and identify points, lines, line segments, and rays",
+   "title": "Identify points, lines, line segments, and rays",
    "domain": "Geometry",
    "sections": [
     {
      "section": "MAIN",
      "section_code": "M",
      "relation": "main",
-     "skill": "Draw and identify points, lines, line segments, and rays",
+     "skill": "Identify points, lines, line segments, and rays",
      "standard": "4.G.A.1",
      "nearest_related": false,
      "question_ids": [
@@ -4967,14 +5393,14 @@
    "set_id": "S59",
    "file": "sets/S59.json",
    "standard": "4.G.A.1",
-   "title": "Draw and identify right, acute, and obtuse angles",
+   "title": "Identify right, acute, and obtuse angles",
    "domain": "Geometry",
    "sections": [
     {
      "section": "MAIN",
      "section_code": "M",
      "relation": "main",
-     "skill": "Draw and identify right, acute, and obtuse angles",
+     "skill": "Identify right, acute, and obtuse angles",
      "standard": "4.G.A.1",
      "nearest_related": false,
      "question_ids": [
@@ -5052,14 +5478,14 @@
    "set_id": "S60",
    "file": "sets/S60.json",
    "standard": "4.G.A.1",
-   "title": "Draw and identify perpendicular and parallel lines",
+   "title": "Identify perpendicular and parallel lines",
    "domain": "Geometry",
    "sections": [
     {
      "section": "MAIN",
      "section_code": "M",
      "relation": "main",
-     "skill": "Draw and identify perpendicular and parallel lines",
+     "skill": "Identify perpendicular and parallel lines",
      "standard": "4.G.A.1",
      "nearest_related": false,
      "question_ids": [
@@ -5068,21 +5494,6 @@
       "S60-M-Q3",
       "S60-M-Q4",
       "S60-M-Q5"
-     ]
-    },
-    {
-     "section": "BACKWARD 1",
-     "section_code": "B1",
-     "relation": "backward",
-     "skill": "Split a rectangle into rows and columns of squares",
-     "standard": "2.G.A.2",
-     "nearest_related": false,
-     "question_ids": [
-      "S60-B1-Q1",
-      "S60-B1-Q2",
-      "S60-B1-Q3",
-      "S60-B1-Q4",
-      "S60-B1-Q5"
      ]
     },
     {
@@ -5098,6 +5509,21 @@
       "S60-B2-Q3",
       "S60-B2-Q4",
       "S60-B2-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 3",
+     "section_code": "B3",
+     "relation": "backward",
+     "skill": "Square corners and sides that run the same way in a rectangle",
+     "standard": "3.G.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S60-B3-Q1",
+      "S60-B3-Q2",
+      "S60-B3-Q3",
+      "S60-B3-Q4",
+      "S60-B3-Q5"
      ]
     },
     {
@@ -5128,6 +5554,346 @@
       "S60-F2-Q3",
       "S60-F2-Q4",
       "S60-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 70,
+   "set_id": "S70",
+   "file": "sets/S70.json",
+   "standard": "4.G.A.1",
+   "title": "Draw points, lines, line segments, and rays",
+   "domain": "Geometry",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Draw points, lines, line segments, and rays",
+     "standard": "4.G.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S70-M-Q1",
+      "S70-M-Q2",
+      "S70-M-Q3",
+      "S70-M-Q4",
+      "S70-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Draw shapes with straight sides",
+     "standard": "2.G.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S70-B1-Q1",
+      "S70-B1-Q2",
+      "S70-B1-Q3",
+      "S70-B1-Q4",
+      "S70-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Measure the length of a drawn segment",
+     "standard": "2.MD.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S70-B2-Q1",
+      "S70-B2-Q2",
+      "S70-B2-Q3",
+      "S70-B2-Q4",
+      "S70-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Locate and draw points and segments on a coordinate grid",
+     "standard": "5.G.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S70-F1-Q1",
+      "S70-F1-Q2",
+      "S70-F1-Q3",
+      "S70-F1-Q4",
+      "S70-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Draw points and segments in all four quadrants",
+     "standard": "6.NS.C.6.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S70-F2-Q1",
+      "S70-F2-Q2",
+      "S70-F2-Q3",
+      "S70-F2-Q4",
+      "S70-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 71,
+   "set_id": "S71",
+   "file": "sets/S71.json",
+   "standard": "4.G.A.1",
+   "title": "Draw right, acute, and obtuse angles",
+   "domain": "Geometry",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Draw right, acute, and obtuse angles",
+     "standard": "4.G.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S71-M-Q1",
+      "S71-M-Q2",
+      "S71-M-Q3",
+      "S71-M-Q4",
+      "S71-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Square corners",
+     "standard": "3.G.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S71-B1-Q1",
+      "S71-B1-Q2",
+      "S71-B1-Q3",
+      "S71-B1-Q4",
+      "S71-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Draw shapes with a given number of angles",
+     "standard": "2.G.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S71-B2-Q1",
+      "S71-B2-Q2",
+      "S71-B2-Q3",
+      "S71-B2-Q4",
+      "S71-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Draw and classify triangles by their angles",
+     "standard": "5.G.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S71-F1-Q1",
+      "S71-F1-Q2",
+      "S71-F1-Q3",
+      "S71-F1-Q4",
+      "S71-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Draw polygons with right angles in the coordinate plane",
+     "standard": "6.G.A.3",
+     "nearest_related": true,
+     "question_ids": [
+      "S71-F2-Q1",
+      "S71-F2-Q2",
+      "S71-F2-Q3",
+      "S71-F2-Q4",
+      "S71-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 72,
+   "set_id": "S72",
+   "file": "sets/S72.json",
+   "standard": "4.G.A.1",
+   "title": "Draw perpendicular and parallel lines",
+   "domain": "Geometry",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Draw perpendicular and parallel lines",
+     "standard": "4.G.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S72-M-Q1",
+      "S72-M-Q2",
+      "S72-M-Q3",
+      "S72-M-Q4",
+      "S72-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Draw shapes with square corners and opposite sides that run the same way",
+     "standard": "3.G.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S72-B1-Q1",
+      "S72-B1-Q2",
+      "S72-B1-Q3",
+      "S72-B1-Q4",
+      "S72-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Draw lines to split a rectangle into rows and columns of squares",
+     "standard": "2.G.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S72-B2-Q1",
+      "S72-B2-Q2",
+      "S72-B2-Q3",
+      "S72-B2-Q4",
+      "S72-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Draw quadrilaterals with given parallel and perpendicular sides",
+     "standard": "5.G.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S72-F1-Q1",
+      "S72-F1-Q2",
+      "S72-F1-Q3",
+      "S72-F1-Q4",
+      "S72-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Draw parallel and perpendicular segments in the coordinate plane",
+     "standard": "6.G.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S72-F2-Q1",
+      "S72-F2-Q2",
+      "S72-F2-Q3",
+      "S72-F2-Q4",
+      "S72-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 73,
+   "set_id": "S73",
+   "file": "sets/S73.json",
+   "standard": "4.G.A.1",
+   "title": "Identify segments, angles, and perpendicular and parallel sides in two-dimensional figures",
+   "domain": "Geometry",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Identify segments, angles, and perpendicular and parallel sides in two-dimensional figures",
+     "standard": "4.G.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S73-M-Q1",
+      "S73-M-Q2",
+      "S73-M-Q3",
+      "S73-M-Q4",
+      "S73-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Count sides and angles of shapes",
+     "standard": "2.G.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S73-B1-Q1",
+      "S73-B1-Q2",
+      "S73-B1-Q3",
+      "S73-B1-Q4",
+      "S73-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Find square corners in shapes",
+     "standard": "3.G.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S73-B2-Q1",
+      "S73-B2-Q2",
+      "S73-B2-Q3",
+      "S73-B2-Q4",
+      "S73-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use the attributes of a category to find sides and angles in figures",
+     "standard": "5.G.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S73-F1-Q1",
+      "S73-F1-Q2",
+      "S73-F1-Q3",
+      "S73-F1-Q4",
+      "S73-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Identify parallel and perpendicular sides of polygons in the coordinate plane",
+     "standard": "6.G.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S73-F2-Q1",
+      "S73-F2-Q2",
+      "S73-F2-Q3",
+      "S73-F2-Q4",
+      "S73-F2-Q5"
      ]
     }
    ]
@@ -5459,7 +6225,7 @@
      "section": "FORWARD 2",
      "section_code": "F2",
      "relation": "forward2",
-     "skill": "Draw polygons in the coordinate plane and reflect them across an axis",
+     "skill": "Draw polygons in the coordinate plane from their vertices and find side lengths",
      "standard": "6.G.A.3",
      "nearest_related": false,
      "question_ids": [
@@ -5472,5 +6238,11 @@
     }
    ]
   }
- ]
+ ],
+ "revision_summary": {
+  "unchanged": 1419,
+  "revised": 161,
+  "retired": 20,
+  "new": 245
+ }
 }

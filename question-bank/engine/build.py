@@ -205,7 +205,8 @@ def build(out, mode='questions'):
             c.addOutlineEntry(cur_std, 'set%d' % st['num'], 1, closed=True)
         pageno += 1
         secs = sections(st)
-        rows = [(s[0], s[1] + (' \u2014 nearest related (no direct Grade %d step)' % (GRADE + 2) if s[4] else ''), s[2]) for s in secs]
+        rows = [(s[0], s[1] + (' \u2014 nearest related (no direct Grade %s step)' % s[2].split('.')[0] if s[4] else ''), s[2])
+                for s in secs]
         heading_page(c, 'SET %d  •  %s  •  %s' % (st['num'], st['std'], st['domain'].upper()),
                      st['title'], None, rows, pageno)
         c.bookmarkPage('set%d' % st['num'])
@@ -216,7 +217,7 @@ def build(out, mode='questions'):
             pageno += 1
             sub = '%s  •  %s  •  %s  •  %s' % (name, grade, dom, std)
             if nearest:
-                sub += '\n⚑ ' + qb.nearest_note()
+                sub += '\n⚑ ' + qb.nearest_note(std)
             heading_page(c, 'SET %d  •  %s' % (st['num'], st['std']), key, sub, None, pageno)
             anchor = 'set%d_%s' % (st['num'], key.replace(' ', ''))
             c.bookmarkPage(anchor)

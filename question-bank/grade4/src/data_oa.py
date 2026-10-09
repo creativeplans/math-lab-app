@@ -33,7 +33,10 @@ SETS = [
           mc('Without multiplying, how does 3 × 25 compare with 25?',
              ['It is 3 times as large.', 'It is 3 more.', 'It is smaller than 25.', 'It is equal to 25.']),
           tf('{1/2} × 40 is less than 40.', key=True),
-          sa('A rope is 12 feet long. A second rope is 4 times as long.\nHow long is the second rope?', 'Length:', key='48 feet'),
+          sa('A rope is 12 feet long. A second rope is 2{1/2} times as long.\nWithout multiplying, is the second rope longer or shorter than the first rope? Explain.',
+             ['Answer:', 'Explanation:'], key='Longer',
+             note='Explanation: 2 1/2 is greater than 1, so 2 1/2 times 12 feet is more than 12 feet. The comparison and this reason are both '
+                  'required; computing 30 feet without comparing the scale factor with 1 is not full credit.'),
           tf('5 × 18 is less than 18.', key=False),
           mc('Which product is greater than 30?', ['2 × 30', '{1/3} × 30', '{3/4} × 30', '{1/2} × 30']),
       ]),
@@ -103,12 +106,12 @@ SETS = [
           tf('A bike costs $80. A used car costs 100 times as much. The car costs $800.', key=False),
       ],
       back=[
-          B('Multiplication and division word problems within 100', '3.OA.A.3', [
+          B('Multiplication word problems within 100', '3.OA.A.3', [
               sa('7 vans each carry 8 students.\nHow many students are there in all?', 'Students:', key='56'),
-              sa('36 crayons are shared equally by 4 children.\nHow many crayons does each child get?', 'Crayons:', key='9'),
+              sa('4 children each have 9 crayons.\nHow many crayons are there in all?', 'Crayons:', key='36'),
               tf('6 rows of 6 chairs make 36 chairs.', key=True),
               mc('A book has 9 chapters with 9 pages in each chapter.\nHow many pages does it have?', ['81', '18', '72', '90']),
-              tf('40 cards in 5 equal piles makes 9 cards in each pile.', key=False),
+              tf('5 piles with 8 cards in each pile make 45 cards.', key=False),
           ]),
           B('Multiply in either order', '3.OA.B.5', [
               tf('6 × 8 = 8 × 6', key=True),
@@ -239,19 +242,21 @@ SETS = [
           tf('A baker makes 128 rolls and puts them in bags of 8. She sells 11 bags. The equation b = 128 ÷ 8 - 11 gives the bags left, and b = 5.', key=True),
       ],
       back=[
-          B('Two-step word problems', '3.OA.D.8', [
-              sa('Ann had 45 beads. She bought 3 packs with 8 beads in each pack.\nHow many beads does she have now?', 'Beads:', key='69'),
-              tf('Jo has 50 cents. She spends 4 groups of 5 cents. She has 30 cents left.', key=True),
-              mc('There are 7 rows of 6 chairs. 15 chairs are taken.\nHow many chairs are empty?', ['27', '57', '42', '13']),
-              sa('Leo has 3 boxes of 9 markers. He gives away 8 markers.\nHow many markers does he have left?', 'Markers:', key='19'),
-              tf('6 bags of 9 oranges, with 10 oranges eaten, leaves 50 oranges.', key=False),
-          ]),
-          B('Add and subtract within 1000', '3.NBT.A.2', [
-              sa('Add.\n468 + 257', 'Sum:', key='725'),
+          B('Subtract within 1000', '3.NBT.A.2', num=2, qs=[
+              sa('Subtract.\n725 - 257', 'Difference:', key='468'),
               sa('Subtract.\n803 - 469', 'Difference:', key='334'),
-              tf('350 + 475 = 825', key=True),
+              tf('825 - 475 = 350', key=True),
               mc('612 - 238 = ?', ['374', '484', '386', '850']),
               tf('900 - 345 = 665', key=False),
+          ]),
+          B('One-step equal-groups problems with a symbol for the unknown', '3.OA.A.3', num=3, qs=[
+              sa('There are 8 packs with 6 pencils in each pack.\nWrite an equation with a symbol for the total number of pencils. Then find the total.',
+                 ['Equation:', 'Pencils:'], key='8 × 6 = p; p = 48',
+                 note='Any equation with a symbol for the total (such as 8 × 6 = ? or p = 6 × 8) is correct. Both parts are required.'),
+              tf('Ann buys 3 packs with 8 beads in each pack. The equation 3 × 8 = b gives the number of beads she buys, and b = 24.', key=True),
+              mc('There are 7 rows with 6 chairs in each row.\nWhich equation gives the number of chairs, c?', ['7 × 6 = c', '7 + 6 = c', '7 - 6 = c', '7 ÷ 6 = c']),
+              sa('Leo has 3 boxes with 9 markers in each box.\nHow many markers does he have?', 'Markers:', key='27'),
+              tf('6 bags with 9 oranges in each bag hold 15 oranges.', key=False),
           ]),
       ],
       f1=B('Evaluate expressions with parentheses, brackets, and braces', '5.OA.A.1', [
@@ -314,6 +319,69 @@ SETS = [
           tf('3,240 ÷ 45 = 72', key=True),
       ])),
 
+    # ------------------------------------------------------------------ 4.OA.A.3 (multistep with a remainder) — added in 2.0.0
+    S('4.OA.A.3', 'Solve multistep word problems in which a remainder must be interpreted', num=65,
+      main=[
+          sa('32 students are going on a trip, but 3 students stay home. The rest ride in cars that hold 4 students each.\n'
+             'Write an equation with a letter for the number of students who ride. Then find how many cars are needed.',
+             ['Equation:', 'Cars needed:'], key='s = 32 - 3, so s = 29; 8 cars',
+             note='Any equivalent equation with a letter is correct. 29 ÷ 4 = 7 R 1, and the 1 extra student needs another car, '
+                  'so 8 cars (not 7, and not 7 R 1). Both parts are required.'),
+          sa('A baker makes 4 trays of 15 muffins. She packs all the muffins in boxes that hold 8 muffins each.\n'
+             'How many boxes can she fill completely? How many muffins are left over?', ['Full boxes:', 'Left over:'],
+             key='7 full boxes; 4 muffins left over', note='4 × 15 = 60 and 60 ÷ 8 = 7 R 4. Both parts are required.'),
+          mc('A class has $100. It buys a game for $30, then spends the rest on puzzles that cost $9 each.\nHow many puzzles can it buy?',
+             ['7', '8', '11', '9']),
+          sa('Ms. Ruiz has 3 bags with 18 apples in each bag. She puts all the apples in baskets that hold 5 apples each.\n'
+             'Write an equation with a letter for the number of apples. Then find the fewest baskets she needs.',
+             ['Equation:', 'Baskets:'], key='a = 3 × 18, so a = 54; 11 baskets',
+             note='Any equivalent equation with a letter is correct. 54 ÷ 5 = 10 R 4, and the 4 extra apples need an 11th basket. '
+                  'Both parts are required.'),
+          tf('Ty has 50 feet of ribbon. He uses 8 feet for a bow and cuts the rest into 5-foot pieces. He gets 8 full pieces, and 2 feet are left over.',
+             key=True),
+      ],
+      back=[
+          B('Division word problems within 100', '3.OA.A.3', [
+              sa('28 students ride in 4 cars with the same number of students in each car.\nHow many students ride in each car?', 'Students:', key='7'),
+              tf('48 muffins packed 8 to a box fill 6 boxes.', key=True),
+              mc('A coach puts 45 balls into 5 bins with the same number in each bin.\nHow many balls are in each bin?', ['9', '8', '40', '50']),
+              sa('Ty cuts 36 feet of rope into 4-foot pieces.\nHow many pieces does he get?', 'Pieces:', key='9'),
+              tf('63 apples shared equally by 9 baskets puts 8 apples in each basket.', key=False),
+          ]),
+          B('Subtract within 1000', '3.NBT.A.2', [
+              sa('Subtract.\n100 - 28', 'Difference:', key='72'),
+              tf('250 - 76 = 174', key=True),
+              mc('512 - 145 = ?', ['367', '433', '377', '657']),
+              sa('Subtract.\n403 - 167', 'Difference:', key='236'),
+              tf('600 - 254 = 356', key=False),
+          ]),
+      ],
+      f1=B('Interpret the quotient in multistep problems with two-digit divisors', '5.NBT.B.6', [
+          sa('A school has 412 students, and 20 are absent. The rest ride buses that hold 48 students each.\nHow many buses are needed?',
+             'Buses:', key='9', note='412 - 20 = 392 and 392 ÷ 48 = 8 R 8. The 8 extra students need another bus, so 9 buses.'),
+          tf('A farm packs 4 crates of 96 eggs into cartons of 12. It fills exactly 32 cartons.', key=True),
+          mc('A club has $500. It spends $86 on snacks and the rest on tickets that cost $25 each.\nHow many tickets can it buy?',
+             ['16', '17', '20', '414']),
+          sa('A printer makes 3 boxes of 250 cards. The cards are tied in stacks of 35.\nHow many full stacks are there? How many cards are left over?',
+             ['Full stacks:', 'Left over:'], key='21 full stacks; 15 cards left over',
+             note='3 × 250 = 750 and 750 ÷ 35 = 21 R 15. Both parts are required.'),
+          tf('A hall has 340 seats, and 15 are closed. The open seats are split into rows of 26. There are 13 full rows.', key=False),
+      ]),
+      f2=B('Divide multi-digit numbers to solve multistep problems', '6.NS.B.2', nearest=True, qs=[
+          work('A theater has 2,450 seats, and 90 are closed for repairs. The open seats are sold in blocks of 24.\n'
+               'Use the standard algorithm to find how many full blocks can be sold. Show your work.', 'Full blocks:',
+               method=DIVISION_ALGORITHM, key='98',
+               note='2,450 - 90 = 2,360 and 2,360 ÷ 24 = 98 R 8, so 98 full blocks.'),
+          sa('A factory makes 6 batches of 1,250 bolts. It packs them in boxes that hold 144 bolts each.\nHow many boxes are needed to pack every bolt?',
+             'Boxes:', key='53', note='6 × 1,250 = 7,500 and 7,500 ÷ 144 = 52 R 12. The 12 extra bolts need another box, so 53 boxes.'),
+          mc('A charity has $5,000. It spends $310 on shipping and the rest on blankets that cost $45 each.\nHow many blankets can it buy?',
+             ['104', '105', '111', '4,690']),
+          sa('1,000 runners sign up for a race, and 64 do not start. The starters run in waves of 36.\nHow many waves are needed so every starter runs?',
+             'Waves:', key='26', note='1,000 - 64 = 936 and 936 ÷ 36 = 26 with no remainder, so 26 waves.'),
+          tf('A school orders 3 cases of 1,200 pencils and shares them equally among 28 classes. Each class gets 128 pencils, and 16 pencils are left over.',
+             key=True),
+      ])),
+
     # ------------------------------------------------------------------ 4.OA.A.3 (estimation)
     S('4.OA.A.3', 'Use rounding and mental math to check whether an answer is reasonable',
       main=[
@@ -354,7 +422,7 @@ SETS = [
           sa('Round each number to the nearest whole number. Use your estimate to decide whether 18.75 + 6.4 = 25.15 is reasonable.',
              ['Estimate:', 'Reasonable?'], key='25; yes', note='19 + 6 = 25. Both parts are required.'),
           tf('Rounding each number to the nearest whole number, 3.9 × 5.2 is about 20, so a product of 202.8 is not reasonable.', key=True),
-          mc('Ann computed 45.6 ÷ 3.8 = 1.2. Rounding each number to the nearest whole number gives 46 ÷ 4, which is about 11.\nWhat does this show?',
+          mc('Ann computed 45.6 ÷ 3.8 = 1.2. Rounding each number to the nearest whole number gives 46 ÷ 4, which equals 11.5.\nWhat does this show?',
              ['Her answer is far too small.', 'Her answer is correct.', 'Her answer is too large.', 'The estimate cannot be used.']),
           sa('Multiply.\n12.4 × 3.5', 'Product:', key='43.4'),
           tf('Rounding each number to the nearest whole number, 7.1 × 2.9 is about 21, so a product of 2.059 is reasonable.', key=False),
@@ -371,12 +439,13 @@ SETS = [
           sa('How many factors does 18 have? List them.', ['How many:', 'Factors:'], key='6; 1, 2, 3, 6, 9, 18'),
       ],
       back=[
-          B('Find an unknown factor', '3.OA.B.6', [
-              sa('Find the unknown factor.\n4 × ? = 24', 'Factor:', key='6'),
-              tf('3 × 8 = 24, so 3 and 8 are a factor pair of 24.', key=True),
-              mc('Which number times 5 equals 45?', ['9', '8', '40', '50']),
-              sa('Find the unknown factor.\n? × 7 = 28', 'Factor:', key='4'),
-              tf('6 × 7 = 48', key=False),
+          B('Solve a division problem by finding an unknown factor', '3.OA.B.6', [
+              sa('Find 24 ÷ 4 by finding the unknown factor.\n4 × ? = 24', 'Quotient:', key='6'),
+              tf('32 ÷ 8 = 4 because 8 × 4 = 32.', key=True),
+              mc('Which unknown-factor equation helps you find 45 ÷ 5?', ['5 × ? = 45', '45 × 5 = ?', '45 + ? = 5', '5 - ? = 45']),
+              sa('Write the unknown-factor equation for 28 ÷ 7. Then find the quotient.', ['Equation:', 'Quotient:'], key='7 × ? = 28; 4',
+                 note='? × 7 = 28 is also correct. Both parts are required.'),
+              tf('48 ÷ 6 = 7 because 6 × 7 = 48.', key=False),
           ]),
           B('Arrays with up to 5 rows and 5 columns', '2.OA.C.4', [
               sa('How many dots are in the array?', 'Dots:', key='15', fig=arr(3, 5)),
@@ -390,7 +459,8 @@ SETS = [
           sa('Find the least common denominator of {1/4} and {1/6}.', 'Denominator:', key='12'),
           tf('{2/3} and {3/4} can both be written with a denominator of 12.', key=True),
           mc('Which is a common denominator of {1/3} and {2/5}?', ['15', '8', '10', '3']),
-          sa('Add.\n{1/2} + {1/3}', 'Sum:', key='5/6'),
+          sa('Rewrite {1/2} and {1/3} as fractions with a common denominator.', 'Fractions:', key='3/6 and 2/6',
+             note='Any common denominator is correct (for example, 6/12 and 4/12).'),
           tf('A common denominator of {1/4} and {1/10} is 14.', key=False),
       ]),
       f2=B('Find the greatest common factor', '6.NS.B.4', [
@@ -421,8 +491,8 @@ SETS = [
           ]),
           B('Odd and even numbers', '2.OA.C.3', [
               tf('16 is even.', key=True),
-              sa('Is 23 odd or even?', 'Answer:', key='Odd'),
-              mc('Which number is even?', ['38', '27', '15', '41']),
+              sa('Is 13 odd or even?', 'Answer:', key='Odd'),
+              mc('Which number is even?', ['18', '7', '11', '15']),
               sa('Write 14 as the sum of two equal addends.', 'Sum:', key='7 + 7'),
               tf('An even number of objects cannot be put into two equal groups.', key=False),
           ]),
@@ -446,7 +516,7 @@ SETS = [
     # ------------------------------------------------------------------ 4.OA.B.4 (prime or composite)
     S('4.OA.B.4', 'Decide whether a whole number from 1 to 100 is prime or composite',
       main=[
-          mc('Which number is prime?', ['29', '27', '33', '49']),
+          mc('Which number is neither prime nor composite?', ['1', '2', '9', '29']),
           tf('51 is a prime number.', key=False),
           sa('Is 39 prime or composite? Explain.', ['Answer:', 'Explanation:'], key='Composite',
              note='39 = 3 × 13, so 39 has factors other than 1 and itself.'),
@@ -553,9 +623,9 @@ SETS = [
               sa('Is the sum of two odd numbers odd or even?', 'Answer:', key='Even'),
           ]),
           B('Odd and even numbers', '2.OA.C.3', [
-              tf('31 is odd.', key=True),
-              sa('Is 46 odd or even?', 'Answer:', key='Even'),
-              mc('Which number is odd?', ['27', '14', '30', '8']),
+              tf('11 is odd.', key=True),
+              sa('Is 16 odd or even?', 'Answer:', key='Even'),
+              mc('Which number is odd?', ['17', '8', '14', '10']),
               sa('Write 18 as the sum of two equal addends.', 'Sum:', key='9 + 9'),
               tf('Adding two even numbers can give an odd number.', key=False),
           ]),

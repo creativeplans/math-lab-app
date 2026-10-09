@@ -36,8 +36,9 @@ def tf(stem, fig=None, **kw):
     return dict(t='tf', stem=stem, fig=fig, **kw)
 
 
-def nearest_note():
-    g = GRADE + 2
+def nearest_note(std=None):
+    """Note for a nearest-related forward branch, naming the branch's own grade (from its standard)."""
+    g = int(std.split('.')[0]) if std else GRADE + 2
     return ('No Grade %d standard directly continues this skill. '
             'This branch uses the nearest related Grade %d standard.' % (g, g))
 

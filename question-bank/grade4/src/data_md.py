@@ -11,7 +11,7 @@ SETS = [
       main=[
           mc('Which unit is best for measuring the length of a river?', ['Kilometers', 'Centimeters', 'Grams', 'Liters']),
           tf('1 kilogram is 1,000 times as heavy as 1 gram.', key=True),
-          sa('How many ounces are in 1 pound?', 'Ounces:', key='16'),
+          sa('Convert.\n5 kilometers = ___ meters', 'Meters:', key='5,000'),
           mc('Which is heaviest?', ['1 kilogram', '1 gram', '100 grams', '500 grams']),
           tf('1 liter is less than 1 milliliter.', key=False),
       ],
@@ -42,7 +42,7 @@ SETS = [
           sa('There are 12 inches in 1 foot.\nHow many feet are in 54 inches?', 'Feet:', key='4 1/2', note='4.5 is also correct.'),
           tf('If 1 mile is about 1.6 km, then 5 miles is about 8 km.', key=True),
           mc('There are 4 quarts in 1 gallon.\nHow many gallons are in 26 quarts?', ['6{1/2}', '104', '22', '30']),
-          sa('A recipe uses 3 cups of milk for every 2 batches.\nHow many cups of milk are needed for 7 batches?', 'Cups:', key='10 1/2', note='10.5 is also correct.'),
+          sa('There are 2 cups in 1 pint.\nHow many pints are in 15 cups?', 'Pints:', key='7 1/2', note='7.5 is also correct.'),
           tf('If 1 inch = 2.54 cm, then 10 inches = 2.54 cm.', key=False),
       ])),
 
@@ -51,9 +51,10 @@ SETS = [
       main=[
           sa('Complete the table.', 'Missing values:', key='300; 400', fig=table([['Meters', '1', '2', '3', '4'], ['Centimeters', '100', '200', '?', '?']])),
           sa('How many ounces are in 5 pounds?', 'Ounces:', key='80'),
-          mc('A movie is 2 hours long.\nHow many minutes is that?', ['120', '200', '60', '24']),
-          tf('7 kilograms = 700 grams', key=False),
-          sa('Complete the table.', 'Missing values:', key='120; 240', fig=table([['Hours', '1', '2', '3', '4'], ['Minutes', '60', '?', '180', '?']])),
+          mc('A song is 3 minutes long.\nHow many seconds is that?', ['180', '300', '30', '63']),
+          tf('4 liters = 400 milliliters', key=False),
+          sa('Complete the table.', 'Missing values:', key='2,000; 4,000',
+             fig=table([['Liters', '1', '2', '3', '4'], ['Milliliters', '1,000', '?', '3,000', '?']])),
       ],
       back=[
           B('Multiply one-digit numbers by multiples of 10', '3.NBT.A.3', [
@@ -95,7 +96,7 @@ SETS = [
           mc('A race is 3 km long. Ana has run 1,850 m.\nHow many more meters must she run?', ['1,150 m', '1,250 m', '4,850 m', '2,150 m']),
           tf('Soccer practice starts at 4:30 p.m. and lasts 1 hour 15 minutes. It ends at 5:45 p.m.', key=True),
           sa('A bus trip takes 45 minutes each way.\nHow long does a round trip take? Write the answer in hours and minutes.', 'Time:', key='1 hour 30 minutes',
-             note='90 minutes is also correct.'),
+             note='The answer must be in hours and minutes, as the question asks; 90 minutes alone is not the form asked for.'),
       ],
       back=[
           B('Time intervals in minutes', '3.MD.A.1', [
@@ -179,8 +180,11 @@ SETS = [
           tf('A jug has 2 liters of water. Lee pours out {1/4} liter. 1{3/4} liters are left.', key=True),
           draw_write('A rope is 3 meters long. Use the number line to show {1/2} meter being cut off.\nHow much rope is left?',
                      nl(0, 3, 0.5, labels=fracs(0, 3, 2)), 'Rope left:',
-                     draw='A jump from 3 back to 2 1/2 (or a bar from 0 to 2 1/2) shown on the number line', key='2 1/2 meters',
-                     note='Grade both: the number line shows the 1/2-meter cut from 3, and the answer 2 1/2 meters.'),
+                     draw='The 1/2 meter that is cut off is shown: a jump from 3 back to 2 1/2, or the interval from 2 1/2 to 3 marked and '
+                          'labeled as the 1/2 meter cut off, with the remaining 2 1/2 meters shown',
+                     key='2 1/2 meters',
+                     note='Grade both: the number line shows the removed 1/2 meter (a jump from 3 to 2 1/2, or the interval from 2 1/2 to 3 '
+                          'marked as cut off), and the answer 2 1/2 meters. A bar from 0 to 2 1/2 alone does not show the cut.'),
       ],
       back=[
           B('Solve time problems with a number line', '3.MD.A.1', [
@@ -215,13 +219,13 @@ SETS = [
       ])),
 
     # ------------------------------------------------------------------ 4.MD.A.3 (formulas)
-    S('4.MD.A.3', 'Apply the area and perimeter formulas for rectangles',
+    S('4.MD.A.3', 'Apply the area formula for rectangles',
       main=[
           sa('Find the area of the rectangle.', 'Area:', key='36 square meters', fig=rect(9, 4, '9 m', '4 m')),
-          sa('Find the perimeter of the rectangle.', 'Perimeter:', key='34 inches', fig=rect(12, 5, '12 in.', '5 in.')),
+          sa('Find the area of the rectangle.', 'Area:', key='60 square inches', fig=rect(12, 5, '12 in.', '5 in.')),
           mc('A rectangular rug is 8 feet by 6 feet.\nWhat is its area?', ['48 square feet', '28 square feet', '14 square feet', '96 square feet']),
-          tf('A square with sides of 7 cm has a perimeter of 49 cm.', key=False),
-          sa('A garden is 15 m long and 8 m wide.\nWhat are its area and its perimeter?', ['Area:', 'Perimeter:'], key='120 square meters; 46 meters'),
+          tf('A square with sides of 7 cm has an area of 28 square cm.', key=False),
+          sa('A garden is 15 m long and 8 m wide.\nWhat is its area?', 'Area:', key='120 square meters'),
       ],
       back=[
           B('Area as length times width', '3.MD.C.7.b', [
@@ -231,12 +235,13 @@ SETS = [
               sa('Find the area of the rectangle.', 'Area:', key='30 square cm', fig=rect(10, 3, '10 cm', '3 cm')),
               tf('A 3-by-9 rectangle has an area of 12 square units.', key=False),
           ]),
-          B('Perimeter of polygons', '3.MD.D.8', [
-              sa('A triangle has sides of 5 cm, 7 cm, and 9 cm.\nWhat is its perimeter?', 'Perimeter:', key='21 cm'),
-              tf('A square with sides of 4 m has a perimeter of 16 m.', key=True),
-              mc('What is the perimeter of a rectangle that is 6 ft by 2 ft?', ['16 feet', '12 feet', '8 feet', '14 feet']),
-              sa('A pentagon has five sides that are each 3 inches long.\nWhat is its perimeter?', 'Perimeter:', key='15 inches'),
-              tf('A rectangle that is 5 units by 3 units has a perimeter of 15 units.', key=False),
+          B('Find area by tiling a rectangle with unit squares', '3.MD.C.7.a', num=3, qs=[
+              sa('A rectangle is covered by 4 rows of 6 unit squares with no gaps or overlaps.\nWhat is its area?', 'Area:', key='24 square units'),
+              tf('A rectangle covered by 3 rows of 5 square centimeters has an area of 15 square centimeters.', key=True),
+              mc('Each small square is 1 square unit.\nWhat is the area of the rectangle?', ['12 square units', '7 square units', '14 square units', '24 square units'],
+                 fig=dict(k='grid', rows=3, cols=4, shade=0, h=150, maxcell=36, desc='A rectangle made of 3 rows of 4 unit squares.')),
+              sa('A rug is covered by 2 rows of 9 one-foot squares.\nWhat is its area?', 'Area:', key='18 square feet'),
+              tf('A rectangle covered by 5 rows of 5 unit squares has an area of 10 square units.', key=False),
           ]),
       ],
       f1=B('Find the area of rectangles with fractional side lengths', '5.NF.B.4.b', [
@@ -254,30 +259,73 @@ SETS = [
           tf('A triangle with a base of 6 units and a height of 4 units has an area of 24 square units.', key=False),
       ])),
 
+    # ------------------------------------------------------------------ 4.MD.A.3 (perimeter formula) — added in 2.0.0
+    S('4.MD.A.3', 'Apply the perimeter formula for rectangles', num=68,
+      main=[
+          sa('Find the perimeter of the rectangle.', 'Perimeter:', key='34 inches', fig=rect(12, 5, '12 in.', '5 in.')),
+          tf('A square with sides of 7 cm has a perimeter of 49 cm.', key=False),
+          sa('A garden is 15 m long and 8 m wide.\nWhat is its perimeter?', 'Perimeter:', key='46 meters'),
+          mc('A rectangular field is 40 yards long and 25 yards wide.\nWhat is its perimeter?', ['130 yards', '65 yards', '1,000 yards', '105 yards']),
+          sa('Write a formula for the perimeter P of a rectangle with length l and width w. Then use it to find the perimeter of a rectangle that is 11 cm by 6 cm.',
+             ['Formula:', 'Perimeter:'], key='P = 2 × l + 2 × w; 34 cm',
+             note='P = 2 × (l + w) and P = l + w + l + w are also correct. Both parts are required.'),
+      ],
+      back=[
+          B('Perimeter of polygons', '3.MD.D.8', [
+              sa('A triangle has sides of 5 cm, 7 cm, and 9 cm.\nWhat is its perimeter?', 'Perimeter:', key='21 cm'),
+              tf('A square with sides of 4 m has a perimeter of 16 m.', key=True),
+              mc('What is the perimeter of a rectangle that is 6 ft by 2 ft?', ['16 feet', '12 feet', '8 feet', '14 feet']),
+              sa('A pentagon has five sides that are each 3 inches long.\nWhat is its perimeter?', 'Perimeter:', key='15 inches'),
+              tf('A rectangle that is 5 units by 3 units has a perimeter of 15 units.', key=False),
+          ]),
+          B('Add up to four two-digit numbers', '2.NBT.B.6', [
+              sa('Add.\n12 + 5 + 12 + 5', 'Sum:', key='34'),
+              tf('25 + 40 + 25 + 40 = 130', key=True),
+              mc('9 + 9 + 3 + 3 = ?', ['24', '12', '81', '21']),
+              sa('Add.\n15 + 8 + 15 + 8', 'Sum:', key='46'),
+              tf('14 + 6 + 14 + 6 = 30', key=False),
+          ]),
+      ],
+      f1=B('Find the perimeter of shapes with fractional side lengths', '5.NF.A.2', [
+          sa('A rectangle is {3/4} m long and {1/2} m wide.\nWhat is its perimeter?', 'Perimeter:', key='2 1/2 m', note='5/2 m is also correct.'),
+          tf('A square with sides of {2/3} foot has a perimeter of 2{2/3} feet.', key=True),
+          mc('A rectangular card is 2{1/2} inches long and 1{1/4} inches wide.\nWhat is its perimeter?',
+             ['7{1/2} inches', '3{3/4} inches', '3{1/8} inches', '6{1/2} inches']),
+          sa('A triangle has sides of {1/2} yd, {2/3} yd, and {5/6} yd.\nWhat is its perimeter?', 'Perimeter:', key='2 yards'),
+          tf('A rectangle that is {1/3} m by {1/4} m has a perimeter of {7/12} m.', key=False),
+      ]),
+      f2=B('Evaluate perimeter formulas for given side lengths', '6.EE.A.2.c', [
+          sa('Use P = 2l + 2w to find the perimeter when l = 8.5 cm and w = 4 cm.', 'Perimeter:', key='25 cm'),
+          tf('For a square, P = 4s. When s = 2.25 m, P = 9 m.', key=True),
+          mc('Use P = 2(l + w).\nWhat is P when l = 12 and w = 7.5?', ['39', '19.5', '90', '29']),
+          sa('Evaluate 2l + 2w when l = {3/4} and w = {1/2}.', 'Value:', key='2 1/2', note='5/2 and 2.5 are also correct.'),
+          tf('When l = 10 and w = 3, 2l + 2w = 23.', key=False),
+      ])),
+
     # ------------------------------------------------------------------ 4.MD.A.3 (unknown side)
-    S('4.MD.A.3', 'Find an unknown side length from the area or the perimeter of a rectangle',
+    S('4.MD.A.3', 'Find an unknown side length from the area of a rectangle',
       main=[
           sa('A rectangle has an area of 72 square feet and a length of 9 feet.\nWhat is its width?', 'Width:', key='8 feet'),
-          sa('A rectangle has a perimeter of 30 cm and a length of 10 cm.\nWhat is its width?', 'Width:', key='5 cm'),
+          sa('A rectangle has an area of 63 square cm and a length of 9 cm.\nWhat is its width?', 'Width:', key='7 cm'),
           mc('A rectangular patio has an area of 96 square meters. One side is 12 m long.\nHow long is the other side?', ['8 m', '84 m', '108 m', '36 m']),
-          tf('A square has a perimeter of 36 inches, so each side is 9 inches long.', key=True),
+          tf('A square has an area of 36 square inches, so each side is 6 inches long.', key=True),
           sa('A rectangle has an area of 54 square units and a width of 6 units.\nWrite an equation with a letter for the length. Then solve it.',
              ['Equation:', 'Length:'], key='6 × l = 54; l = 9 units', note='Any equivalent equation (for example 54 ÷ 6 = l) is correct. Both parts are required.'),
       ],
       back=[
-          B('Find an unknown side from the perimeter', '3.MD.D.8', [
-              sa('A triangle has a perimeter of 20 cm. Two sides are 6 cm and 8 cm long.\nHow long is the third side?', 'Length:', key='6 cm'),
-              tf('A square with a perimeter of 12 m has sides that are 3 m long.', key=True),
-              mc('A rectangle has a perimeter of 14 ft and a length of 5 ft.\nWhat is its width?', ['2 ft', '9 ft', '4 ft', '7 ft']),
-              sa('A rectangle has a perimeter of 18 in. and a width of 4 in.\nWhat is its length?', 'Length:', key='5 inches'),
-              tf('A square with a perimeter of 20 units has sides that are 10 units long.', key=False),
-          ]),
-          B('Find the unknown factor', '3.OA.A.4', [
+          B('Find the unknown factor', '3.OA.A.4', num=2, qs=[
               sa('Find the unknown number.\n8 × ? = 64', 'Unknown:', key='8'),
               tf('If 9 × w = 45, then w = 5.', key=True),
               mc('? × 7 = 56', ['8', '7', '49', '63']),
               sa('Find the unknown number.\n6 × ? = 42', 'Unknown:', key='7'),
               tf('If 4 × n = 28, then n = 6.', key=False),
+          ]),
+          B('Find the area of a rectangle by multiplying its side lengths', '3.MD.C.7.b', num=3, qs=[
+              sa('A rectangle is 8 cm long and 7 cm wide.\nWhat is its area?', 'Area:', key='56 square cm'),
+              tf('A 9-by-6 rectangle has an area of 54 square units.', key=True),
+              mc('A rug is 5 feet by 8 feet.\nWhat is its area?', ['40 square feet', '13 square feet', '26 square feet', '45 square feet']),
+              sa('A garden is 9 m long and 4 m wide.\nWhat is its area?', 'Area:', key='36 square meters'),
+              tf('A 7-by-7 square has an area of 14 square units.', key=False),
           ]),
       ],
       f1=B('Find a missing dimension when the volume is known', '5.MD.C.5.b', [
@@ -294,6 +342,54 @@ SETS = [
           mc('Solve for b.\n12b = 84', ['7', '72', '96', '1,008']),
           sa('Solve for x.\n{1/2}x = 9', 'x =', key='18'),
           tf('The solution of 4w = 30 is w = 26.', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 4.MD.A.3 (unknown side from perimeter) — added in 2.0.0
+    S('4.MD.A.3', 'Find an unknown side length from the perimeter of a rectangle', num=69,
+      main=[
+          sa('A rectangle has a perimeter of 30 cm and a length of 10 cm.\nWhat is its width?', 'Width:', key='5 cm'),
+          tf('A square has a perimeter of 36 inches, so each side is 9 inches long.', key=True),
+          mc('A rectangular garden has a perimeter of 50 m. Its length is 15 m.\nWhat is its width?', ['10 m', '35 m', '20 m', '25 m']),
+          sa('A rectangle has a perimeter of 64 inches and a width of 12 inches.\nWrite an equation with a letter for the length. Then solve it.',
+             ['Equation:', 'Length:'], key='2 × l + 2 × 12 = 64; l = 20 inches',
+             note='Any equivalent equation with a letter (for example 64 = 2 × (l + 12)) is correct. Both parts are required.'),
+          tf('A rectangle has a perimeter of 26 feet and a length of 8 feet, so its width is 18 feet.', key=False),
+      ],
+      back=[
+          B('Find an unknown side from the perimeter', '3.MD.D.8', [
+              sa('A triangle has a perimeter of 20 cm. Its two known sides add to 14 cm.\nHow long is the third side?', 'Length:', key='6 cm'),
+              tf('A square with a perimeter of 12 m has sides that are 3 m long.', key=True),
+              mc('A rectangle has a perimeter of 14 ft. Its two lengths and one width add to 12 ft.\nHow long is the other width?',
+                 ['2 ft', '9 ft', '4 ft', '7 ft']),
+              sa('A rectangle has a perimeter of 18 in. Its two widths and one length add to 13 in.\nHow long is the other length?', 'Length:',
+                 key='5 inches'),
+              tf('A square with a perimeter of 20 units has sides that are 10 units long.', key=False),
+          ]),
+          B('Find an unknown addend within 100', '2.NBT.B.5', [
+              sa('Find the unknown number.\n20 + ? = 30', 'Unknown:', key='10'),
+              tf('If 24 + n = 64, then n = 40.', key=True),
+              mc('? + 30 = 50', ['20', '80', '30', '25']),
+              sa('Find the unknown number.\n? + 16 = 26', 'Unknown:', key='10'),
+              tf('If 36 + n = 50, then n = 24.', key=False),
+          ]),
+      ],
+      f1=B('Find an unknown side length from a perimeter with fractions', '5.NF.A.2', [
+          sa('A rectangle has a perimeter of 5 m. Its length is 1{1/2} m.\nWhat is its width?', 'Width:', key='1 m'),
+          tf('A square has a perimeter of 3 feet, so each side is {3/4} foot long.', key=True),
+          mc('A rectangle has a perimeter of 7 inches. Its width is 1{1/4} inches.\nWhat is its length?',
+             ['2{1/4} inches', '4{1/2} inches', '5{3/4} inches', '1{1/4} inches']),
+          sa('A triangle has a perimeter of 2 yd. Two of its sides are {1/2} yd and {2/3} yd long.\nHow long is the third side?', 'Length:',
+             key='5/6 yard'),
+          tf('A rectangle has a perimeter of 4 m and a length of {3/4} m, so its width is 1{1/2} m.', key=False),
+      ]),
+      f2=B('Write and solve one-step equations for a missing side length', '6.EE.B.7', [
+          sa('A square has a perimeter of 18.4 cm.\nWrite and solve an equation for its side length s.', ['Equation:', 's ='],
+             key='4s = 18.4; s = 4.6 cm', note='Any equivalent equation is correct. Both parts are required.'),
+          tf('A rectangle has a perimeter of 30 m, and its two widths total 12 m. Solving 2w = 12 gives w = 6 m.', key=True),
+          mc('A triangle has a perimeter of 15.5 in., and two of its sides total 9.25 in.\nSolve x + 9.25 = 15.5 for the third side x.',
+             ['6.25 in.', '24.75 in.', '6.75 in.', '5.25 in.']),
+          sa('Solve for w.\n2w = 13', 'w =', key='6.5', note='6 1/2 is also correct.'),
+          tf('A regular hexagon has a perimeter of 27 feet. Solving 6s = 27 gives s = 21 feet.', key=False),
       ])),
 
     # ------------------------------------------------------------------ 4.MD.B.4 (make a line plot)
@@ -327,15 +423,14 @@ SETS = [
               tf('A line plot of 1, 2, 2, 2 has 2 X\'s above 2.', key=False),
           ]),
       ],
-      f1=B('Make line plots and use operations on the data', '5.MD.B.2', [
-          sa('Water in 4 cups (liters): {1/4}, {1/2}, {1/2}, {3/4}\nIf the water were shared equally among the cups, how much would each cup hold?',
-             'Liters:', key='1/2 liter'),
-          tf('The total of {1/8}, {3/8}, and {1/2} inch is 1 inch.', key=True),
-          mc('A line plot shows 3 X\'s at {1/4} pound and 2 X\'s at {1/2} pound.\nWhat is the total weight?',
-             ['1{3/4} pounds', '{3/4} pound', '5 pounds', '1{1/4} pounds']),
+      f1=B('Make line plots of data given in halves, fourths, and eighths together', '5.MD.B.2', [
+          plot('Bead lengths (inches): {1/2}, {3/8}, {3/4}, {3/8}, {1/2}, {7/8}\nMake a line plot of the data.', fline(0, 1, 8),
+               key='Line plot: 2 X\'s at 3/8, 2 X\'s at 1/2, 1 X at 3/4, 1 X at 7/8'),
+          tf('A number line marked in eighths can show {1/2}, {1/4}, and {3/8} inch on one line plot.', key=True),
+          mc('Data (pounds): {1/4}, {5/8}, {1/2}, {1/4}\nIn a line plot marked in eighths, how many X\'s go above {2/8}?', ['2', '1', '0', '4']),
           plot('Rain (inches): {1/8}, {1/4}, {1/4}, {3/8}, {1/2}\nMake a line plot of the data.', fline(0, 1, 8),
                key='Line plot: 1 X at 1/8, 2 X\'s at 1/4, 1 X at 3/8, 1 X at 1/2'),
-          tf('The difference between the largest and smallest of {1/8}, {3/8}, and {7/8} is {5/8}.', key=False),
+          tf('In a line plot of {1/2}, {2/4}, and {4/8} cup, the three X\'s go above three different marks.', key=False),
       ]),
       f2=B('Display numerical data in dot plots', '6.SP.B.4', [
           plot('Number of pets: 0, 1, 1, 2, 2, 2, 3, 5\nMake a dot plot of the data.', nl(0, 6, 1),

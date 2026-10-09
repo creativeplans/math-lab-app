@@ -16,7 +16,7 @@ SETS = [
           B('A fraction is a number of unit-fraction parts', '3.NF.A.1', [
               sa('How many {1/4}s make {3/4}?', 'Answer:', key='3'),
               tf('{5/8} is 5 parts of size {1/8}.', key=True),
-              mc('What fraction is 4 parts of size {1/6}?', ['{4/6}', '{6/4}', '{1/24}', '{4/24}']),
+              mc('What fraction is 4 parts of size {1/6}?', ['{4/6}', '{6/4}', '{1/6}', '{4/8}']),
               sa('What fraction of the bar is shaded?', 'Fraction:', key='5/8', fig=bar(8, 5)),
               tf('{2/3} is 3 parts of size {1/2}.', key=False),
           ]),
@@ -28,12 +28,13 @@ SETS = [
               tf('6 × 3 means 6 + 3.', key=False),
           ]),
       ],
-      f1=B('Multiply a fraction by a whole number as a part of a whole number', '5.NF.B.4.a', [
-          sa('Multiply.\n{2/3} × 6', 'Product:', key='4'),
-          tf('{3/4} × 8 = 6', key=True),
-          mc('What is {2/5} of 15?', ['6', '3', '10', '30']),
-          sa('Multiply.\n{5/6} × 4', 'Product:', key='3 1/3', note='20/6 and 10/3 are also correct.'),
-          tf('{1/2} × 10 = 20', key=False),
+      f1=B('Find a fraction of a fractional amount', '5.NF.B.4.a', [
+          sa('Multiply.\n{2/3} × {3/4}', 'Product:', key='6/12', note='1/2 is also correct.'),
+          tf('{1/4} of {4/5} is {1/5}.', key=True),
+          mc('What is {2/5} of {5/6}?', ['{1/3}', '{7/11}', '{12/25}', '{25/12}']),
+          sa('What is {1/3} of {3/4} yard? Think of {3/4} as 3 parts of size {1/4}.', 'Answer:', key='1/4 yard',
+             note='3/12 yard is also correct. Splitting 3/4 into 3 equal parts gives parts of 1/4.'),
+          tf('{1/2} × {2/3} = {3/5}', key=False),
       ]),
       f2=B('Divide a fraction by a unit fraction', '6.NS.A.1', [
           sa('How many {1/5}s are in {4/5}?', 'Answer:', key='4'),
@@ -65,7 +66,7 @@ SETS = [
           B('A fraction is a number of unit-fraction parts', '3.NF.A.1', [
               sa('How many {1/3}s make {2/3}?', 'Answer:', key='2'),
               tf('{6/8} is 6 parts of size {1/8}.', key=True),
-              mc('What fraction is 3 parts of size {1/4}?', ['{3/4}', '{4/3}', '{1/12}', '{3/12}']),
+              mc('What fraction is 3 parts of size {1/4}?', ['{3/4}', '{4/3}', '{1/4}', '{3/8}']),
               sa('What fraction is 5 parts of size {1/6}?', 'Fraction:', key='5/6'),
               tf('{3/6} is 6 parts of size {1/3}.', key=False),
           ]),
@@ -114,10 +115,11 @@ SETS = [
       ],
       f1=B('Solve real-world problems by multiplying fractions and mixed numbers', '5.NF.B.6', [
           sa('A recipe uses {3/4} cup of oats per batch.\nHow many cups of oats are in 2{1/2} batches?', 'Cups:', key='1 7/8 cups'),
-          sa('A garden is 10 m long. {3/5} of its length is planted.\nHow many meters are planted?', 'Meters:', key='6 m'),
+          sa('A garden is 7{1/2} m long. {3/5} of its length is planted.\nHow many meters are planted?', 'Meters:', key='4 1/2 m',
+             note='9/2 m and 4.5 m are also correct.'),
           mc('A bottle holds 1{1/2} liters. It is {2/3} full.\nHow many liters are in the bottle?', ['1 liter', '{3/4} liter', '2{1/6} liters', '{1/2} liter']),
           tf('A board is 4{1/2} feet long. Half of the board is 2{1/4} feet long.', key=True),
-          tf('{2/3} of a 9-mile trail is 3 miles.', key=False),
+          tf('{2/3} of a 4{1/2}-mile trail is 2 miles.', key=False),
       ]),
       f2=B('Find a percent of a quantity', '6.RP.A.3.c', [
           sa('What is 25% of 36?', 'Answer:', key='9'),
@@ -128,13 +130,13 @@ SETS = [
       ])),
 
     # ------------------------------------------------------------------ 4.NF.C.5
-    S('4.NF.C.5', 'Write tenths as hundredths and add fractions with denominators 10 and 100',
+    S('4.NF.C.5', 'Write a fraction with denominator 10 as an equivalent fraction with denominator 100',
       main=[
           sa('Write {6/10} as an equivalent fraction with a denominator of 100.', 'Fraction:', key='60/100'),
-          sa('Add.\n{2/10} + {45/100}', 'Sum:', key='65/100'),
-          mc('{7/10} + {9/100} = ?', ['{79/100}', '{16/100}', '{16/110}', '{79/10}']),
+          sa('Find the missing number.\n{4/10} = {?/100}', 'Missing number:', key='40'),
+          mc('Which fraction is equivalent to {9/10}?', ['{90/100}', '{9/100}', '{19/100}', '{99/100}']),
           tf('{50/100} = {5/100}', key=False),
-          sa('Add.\n{8/10} + {15/100}', 'Sum:', key='95/100'),
+          sa('Write {70/100} as an equivalent fraction with a denominator of 10.', 'Fraction:', key='7/10'),
       ],
       back=[
           B('Simple equivalent fractions', '3.NF.A.3.b', [
@@ -146,9 +148,9 @@ SETS = [
           ]),
           B('A hundred is ten tens', '2.NBT.A.1.a', [
               sa('How many tens are in 100?', 'Tens:', key='10'),
-              tf('7 tens is 70.', key=True),
-              mc('How many ones are in 4 tens?', ['40', '4', '400', '14']),
-              sa('How many tens are in 90?', 'Tens:', key='9'),
+              tf('10 tens make 1 hundred.', key=True),
+              mc('A hundred flat is cut into rods of ten. How many rods are there?', ['10', '100', '1', '20']),
+              sa('Mia has 9 bundles of ten straws.\nHow many more bundles of ten does she need to make 1 hundred?', 'Bundles:', key='1'),
               tf('10 tens make 1,000.', key=False),
           ]),
       ],
@@ -162,9 +164,51 @@ SETS = [
       f2=B('Write tenths and hundredths as percents', '6.RP.A.3.c', [
           sa('Write {6/10} as a percent.', 'Percent:', key='60%'),
           tf('{45/100} = 45%', key=True),
-          mc('{3/10} + {12/100} is equal to which percent?', ['42%', '15%', '312%', '33%']),
+          mc('Which percent is equal to {3/10}?', ['30%', '3%', '0.3%', '13%']),
           sa('Write 8% as a fraction with a denominator of 100.', 'Fraction:', key='8/100'),
           tf('{9/10} = 9%', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 4.NF.C.5 (add) — added in 2.0.0
+    S('4.NF.C.5', 'Add two fractions with denominators 10 and 100', num=67,
+      main=[
+          sa('Add.\n{2/10} + {45/100}', 'Sum:', key='65/100'),
+          mc('{7/10} + {9/100} = ?', ['{79/100}', '{16/100}', '{16/110}', '{79/10}']),
+          sa('Add.\n{8/10} + {15/100}', 'Sum:', key='95/100'),
+          tf('{3/10} + {4/100} = {34/100}', key=True),
+          sa('A jar is {4/10} full of sand. Ali pours in another {35/100} of a jar.\nWhat fraction of the jar is full now?', 'Fraction:', key='75/100',
+             note='3/4 is also correct.'),
+      ],
+      back=[
+          B('Add tens and ones within 100', '2.NBT.B.5', [
+              sa('Add.\n20 + 45', 'Sum:', key='65'),
+              tf('70 + 9 = 79', key=True),
+              mc('80 + 15 = ?', ['95', '23', '815', '85']),
+              sa('Add.\n30 + 34', 'Sum:', key='64'),
+              tf('40 + 35 = 85', key=False),
+          ]),
+          B('Simple equivalent fractions', '3.NF.A.3.b', [
+              sa('Find the missing number.\n{1/2} = {?/4}', 'Missing number:', key='2'),
+              tf('{3/6} = {1/2}', key=True),
+              mc('Which fraction is equal to {1/4}?', ['{2/8}', '{1/8}', '{4/1}', '{2/4}']),
+              sa('Find the missing number.\n{2/3} = {?/6}', 'Missing number:', key='4'),
+              tf('{2/8} = {1/2}', key=False),
+          ]),
+      ],
+      f1=B('Add decimals with tenths and hundredths in context', '5.NBT.B.7', [
+          sa('A beetle crawls 0.4 meter and then 0.35 meter.\nHow far does it crawl in all?', 'Distance:', key='0.75 meter'),
+          tf('0.8 + 0.12 = 0.92', key=True),
+          mc('A cup holds 0.25 liter of water. Ty pours in 0.5 liter more.\nHow much water is in the cup now?',
+             ['0.75 liter', '0.30 liter', '0.075 liter', '7.5 liters']),
+          sa('Add.\n2.6 + 0.08', 'Sum:', key='2.68'),
+          tf('0.9 + 0.09 = 0.18', key=False),
+      ]),
+      f2=B('Add multi-digit decimals with the standard algorithm', '6.NS.B.3', [
+          sa('Add.\n12.6 + 3.45', 'Sum:', key='16.05'),
+          tf('7.08 + 2.9 = 9.98', key=True),
+          mc('Add.\n0.75 + 18.3', ['19.05', '18.105', '19.8', '0.933']),
+          sa('Add.\n45.2 + 6.875', 'Sum:', key='52.075'),
+          tf('3.4 + 1.25 = 4.59', key=False),
       ])),
 
     # ------------------------------------------------------------------ 4.NF.C.6 (notation)

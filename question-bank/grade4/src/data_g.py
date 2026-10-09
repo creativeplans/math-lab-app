@@ -2,18 +2,32 @@ from qb import S, B, sa, mc, tf, plot, coord, shape, poly, draw_write
 from common import geo, angles, grid, DRAW
 
 SQUARE_CORNERS = [((0, 0), (6, 0), (0, 3)), ((0, 3), (0, 0), (4, 3))]
+# figures for S73 (identify in two-dimensional figures)
+HOUSE = shape([poly([(0, 0), (4, 0), (4, 3), (2, 5), (0, 3)])],
+              desc='A five-sided figure shaped like a house: a rectangular base with corners (0, 0), (4, 0), (4, 3) and (0, 3), '
+                   'and a roof that meets at the top point (2, 5).')
+RIGHT_TRAP = shape([poly([(0, 0), (6, 0), (4, 3), (0, 3)])],
+                   desc='A quadrilateral with corners (0, 0), (6, 0), (4, 3) and (0, 3): the top and bottom sides are horizontal, '
+                        'the left side is vertical, and the right side slants.')
+RECT_ABCD = shape([poly([(0, 0), (6, 0), (6, 3), (0, 3)])], texts=[(-0.35, -0.35, 'A'), (6.35, -0.35, 'B'), (6.35, 3.35, 'C'), (-0.35, 3.35, 'D')],
+                  desc='Rectangle ABCD: A at the bottom left, B at the bottom right, C at the top right, D at the top left. AB is 6 units long and BC is 3 units.')
+TRI_PQR = shape([poly([(0, 0), (3, 1), (6, 0)])], texts=[(-0.35, -0.3, 'P'), (3, 1.45, 'Q'), (6.35, -0.3, 'R')],
+                desc='Triangle PQR with P at (0, 0), Q at (3, 1) and R at (6, 0). The angle at Q is wide (about 143°).')
+PARA = shape([poly([(0, 0), (5, 0), (7, 3), (2, 3)])],
+             desc='A parallelogram with corners (0, 0), (5, 0), (7, 3) and (2, 3); the left and right sides slant to the right.')
+HEXAGON = shape([poly([(1, 0), (3, 0), (4, 1.7), (3, 3.4), (1, 3.4), (0, 1.7)])], desc='A six-sided figure (hexagon).')
 
 SETS = [
     # ------------------------------------------------------------------ 4.G.A.1 (points, lines, segments, rays)
-    S('4.G.A.1', 'Draw and identify points, lines, line segments, and rays',
+    S('4.G.A.1', 'Identify points, lines, line segments, and rays',
       main=[
           mc('What is the figure called?', ['Ray', 'Line', 'Line segment', 'Point'],
              fig=geo(('ray', (0, 0), (4, 1)), ('point', (0, 0), 'A'), ('point', (2, 0.5), 'B'))),
           mc('What is the figure called?', ['Line segment', 'Ray', 'Line', 'Angle'],
              fig=geo(('segment', (0, 0), (4, 0)), ('point', (0, 0), 'C'), ('point', (4, 0), 'D'))),
           tf('A line goes on without end in both directions.', key=True),
-          plot('Draw ray PQ. It starts at point P and goes through point Q.', geo(('point', (0, 0), 'P'), ('point', (4, 2), 'Q')),
-               key='A ray that starts at P, passes through Q, and has an arrow past Q'),
+          mc('What is the figure called?', ['Line', 'Ray', 'Line segment', 'Point'],
+             fig=geo(('line', (0, 0), (4, 1)), ('point', (1, 0.25), 'E'), ('point', (3, 0.75), 'F'))),
           tf('A line segment has an arrow at each end.', key=False),
       ],
       back=[
@@ -49,14 +63,15 @@ SETS = [
       ])),
 
     # ------------------------------------------------------------------ 4.G.A.1 (angles)
-    S('4.G.A.1', 'Draw and identify right, acute, and obtuse angles',
+    S('4.G.A.1', 'Identify right, acute, and obtuse angles',
       main=[
           mc('What kind of angle is shown?', ['Obtuse', 'Acute', 'Right', 'Straight'],
              fig=angles([0, 130], [], desc='Two rays from one point forming an angle of about 130°.')),
           mc('What kind of angle is shown?', ['Acute', 'Obtuse', 'Right', 'Straight'],
              fig=angles([0, 40], [], desc='Two rays from one point forming an angle of about 40°.')),
           tf('A right angle measures exactly 180°.', key=False),
-          plot('Draw an obtuse angle.', DRAW, key='Two rays from one point that form an angle greater than 90° and less than 180°'),
+          mc('What kind of angle is shown?', ['Right', 'Acute', 'Obtuse', 'Straight'],
+             fig=angles([0, 90], [], desc='Two rays from one point forming an angle of 90°.')),
           sa('Classify each angle as acute, right, or obtuse.\n15°     90°     165°', 'Answers:', key='acute; right; obtuse'),
       ],
       back=[
@@ -72,7 +87,8 @@ SETS = [
               mc('Which shape always has 4 square corners?', ['Square', 'Rhombus', 'Triangle', 'Trapezoid']),
               sa('How many square corners does a square have?', 'Square corners:', key='4'),
               tf('Every quadrilateral has 4 square corners.', key=False),
-              sa('Name a quadrilateral that has 4 square corners but is not a square.', 'Shape:', key='Rectangle'),
+              sa('Name a quadrilateral that has 4 square corners but is not a square.', 'Shape:', key='A rectangle whose length and width are different',
+                 note='Equivalent wording, or a drawing of a rectangle with two different side lengths, is correct. A square is not correct.'),
           ]),
       ],
       f1=B('Classify triangles by their angles', '5.G.B.4', [
@@ -92,32 +108,33 @@ SETS = [
       ])),
 
     # ------------------------------------------------------------------ 4.G.A.1 (perpendicular and parallel)
-    S('4.G.A.1', 'Draw and identify perpendicular and parallel lines',
+    S('4.G.A.1', 'Identify perpendicular and parallel lines',
       main=[
           mc('How are the two lines related?', ['Perpendicular', 'Parallel', 'Neither', 'They are the same line'],
              fig=geo(('line', (0, 1), (4, 1)), ('line', (2, -0.5), (2, 2.5)), ('ra', (2, 1), (4, 1), (2, 2.5)))),
           mc('How are the two lines related?', ['Parallel', 'Perpendicular', 'Neither', 'They are the same line'],
              fig=geo(('line', (0, 0), (4, 1)), ('line', (0, 1.5), (4, 2.5)))),
           tf('Parallel lines never meet.', key=True),
-          plot('Draw a line through point P that is parallel to line m.', geo(('line', (0, 0), (5, 0)), ('text', (5.4, 0.3), 'm'), ('point', (2, 2), 'P')),
-               key='A line through P that never meets line m (a line through P going the same direction as m), with arrows at both ends'),
+          sa('Lines a and b meet to form a right angle.\nAre they parallel or perpendicular?', 'Answer:', key='Perpendicular'),
           tf('Perpendicular lines meet to form four obtuse angles.', key=False),
       ],
       back=[
-          B('Split a rectangle into rows and columns of squares', '2.G.A.2', [
-              sa('A rectangle is split into 2 rows of 3 same-size squares.\nHow many squares are there?', 'Squares:', key='6'),
-              tf('A rectangle split into 3 rows of 4 same-size squares has 12 squares.', key=True),
-              mc('A rectangle has 2 rows of 4 same-size squares.\nHow many squares are there?', ['8', '6', '4', '2']),
-              sa('How many squares are in 5 rows of 2 squares?', 'Squares:', key='10'),
-              tf('A rectangle split into 2 rows and 2 columns of squares has 2 squares.', key=False),
-          ]),
-          B('Quadrilaterals share attributes', '3.G.A.1', [
+          B('Quadrilaterals share attributes', '3.G.A.1', num=2, qs=[
               tf('A rhombus, a rectangle, and a square are all quadrilaterals.', key=True),
               mc('Which shape is a quadrilateral?', ['Rhombus', 'Triangle', 'Pentagon', 'Circle']),
               sa('How many sides does every quadrilateral have?', 'Sides:', key='4'),
               tf('A triangle is a quadrilateral.', key=False),
-              sa('Name a quadrilateral that is not a rectangle.', 'Shape:', key='A rhombus',
-                 note='Any quadrilateral that is not a rectangle (for example a trapezoid or a kite) is correct.'),
+              sa('Name a quadrilateral that is not a rectangle.', 'Shape:', key='A rhombus that is not a square',
+                 note='Any clearly described or drawn quadrilateral that is not a rectangle is correct (for example a trapezoid with exactly '
+                      'one pair of parallel sides, or a kite). A square is a rectangle, so a square is not correct.'),
+          ]),
+          B('Square corners and sides that run the same way in a rectangle', '3.G.A.1', num=3, qs=[
+              tf('In a rectangle, the two sides that meet at a corner make a square corner.', key=True),
+              mc('In a rectangle, which sides run the same way and never meet?',
+                 ['The two opposite sides', 'Two sides that meet at a corner', 'All four sides', 'No sides']),
+              sa('How many pairs of opposite sides that run the same way does a rectangle have?', 'Pairs:', key='2'),
+              tf('Two sides of a rectangle that meet at a corner run the same way.', key=False),
+              mc('Which shape has 4 square corners and opposite sides that run the same way?', ['Rectangle', 'Triangle', 'Hexagon', 'Circle']),
           ]),
       ],
       f1=B('Attributes of a category belong to all its subcategories', '5.G.B.3', [
@@ -137,6 +154,212 @@ SETS = [
                      'Pairs:', draw='The four points plotted and joined in order', key='2',
                      note='Grade both: the four points joined in order, and the answer 2.'),
           tf('The segment from (0, 1) to (3, 1) is perpendicular to the segment from (0, 4) to (3, 4).', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 4.G.A.1 (draw points, lines, segments, rays) — added in 2.0.0
+    S('4.G.A.1', 'Draw points, lines, line segments, and rays', num=70,
+      main=[
+          plot('Draw ray PQ. It starts at point P and goes through point Q.', geo(('point', (0, 0), 'P'), ('point', (4, 2), 'Q')),
+               key='A ray that starts at P, passes through Q, and has an arrow past Q'),
+          plot('Draw line segment AB.', geo(('point', (0, 0), 'A'), ('point', (4, 1), 'B')),
+               key='A straight segment from A to B that stops at both endpoints (no arrows)'),
+          plot('Draw line CD through points C and D.', geo(('point', (1, 0), 'C'), ('point', (3, 2), 'D')),
+               key='A straight line through C and D that goes past both points, with an arrow at each end'),
+          plot('Draw a point that is not on line m, and label it E.', geo(('line', (0, 0), (5, 0)), ('text', (5.4, 0.3), 'm'), h=220),
+               key='A dot drawn off line m and labeled E'),
+          draw_write('Draw ray ST. It starts at point S and goes through point T.\nHow is a ray different from a line segment?',
+                     geo(('point', (0, 1), 'S'), ('point', (3, 0), 'T')), 'Difference:',
+                     draw='A ray that starts at S, passes through T, and has one arrow past T (no arrow at S)',
+                     key='A ray has one endpoint and goes on without end in one direction; a line segment has two endpoints.',
+                     note='Grade both: the ray drawn from S through T with one arrow, and the difference (one endpoint and no end, versus two endpoints).'),
+      ],
+      back=[
+          B('Draw shapes with straight sides', '2.G.A.1', [
+              plot('Draw a closed shape with 4 straight sides.', DRAW, key='Any closed shape with 4 straight sides (a quadrilateral)'),
+              tf('A closed shape drawn with 3 straight sides that meet at 3 corners is a triangle.', key=True),
+              mc('Which shape has only straight sides?', ['Pentagon', 'Circle', 'Oval', 'Half-circle']),
+              sa('How many straight sides do you draw to make a hexagon?', 'Sides:', key='6'),
+              tf('A circle is drawn with straight sides.', key=False),
+          ]),
+          B('Measure the length of a drawn segment', '2.MD.A.1', [
+              sa('A segment starts at 0 and ends at 5 on a centimeter ruler.\nHow long is it?', 'Length:', key='5 cm'),
+              tf('To draw a segment 6 cm long, you can start at 0 on the ruler and stop at 6.', key=True),
+              mc('A segment is drawn from 2 to 9 on an inch ruler.\nHow long is it?', ['7 inches', '9 inches', '11 inches', '2 inches']),
+              sa('Ben draws a segment from 0 to 4 on an inch ruler.\nHow long is his segment?', 'Length:', key='4 inches'),
+              tf('A segment drawn from 1 cm to 5 cm on a ruler is 5 cm long.', key=False),
+          ]),
+      ],
+      f1=B('Locate and draw points and segments on a coordinate grid', '5.G.A.1', [
+          plot('Plot the point (3, 5) and label it P.', grid(8, 8), key='A point at (3, 5) labeled P'),
+          tf('To locate (4, 2), start at the origin, move 4 units along the x-axis, then move 2 units up.', key=True),
+          mc('Which point is on the y-axis?', ['(0, 6)', '(6, 0)', '(6, 6)', '(1, 6)']),
+          plot('Draw the line segment from (1, 1) to (6, 1).', grid(8, 8), key='A segment with endpoints at (1, 1) and (6, 1)'),
+          tf('The origin is the point (1, 1).', key=False),
+      ]),
+      f2=B('Draw points and segments in all four quadrants', '6.NS.C.6.c', [
+          plot('Plot and label the points A(-3, 2) and B(4, -1).', coord(), key='A plotted at (-3, 2) and B at (4, -1), each labeled'),
+          tf('The point (-5, 0) is on the x-axis.', key=True),
+          mc('Which point is in Quadrant III?', ['(-2, -4)', '(2, -4)', '(-2, 4)', '(2, 4)']),
+          plot('Draw the segment from (-4, -3) to (2, -3).', coord(), key='A segment with endpoints at (-4, -3) and (2, -3)'),
+          tf('The point (3, -2) is in Quadrant II.', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 4.G.A.1 (draw angles) — added in 2.0.0
+    S('4.G.A.1', 'Draw right, acute, and obtuse angles', num=71,
+      main=[
+          plot('Draw an obtuse angle.', DRAW, key='Two rays from one point that form an angle greater than 90° and less than 180°'),
+          plot('Draw an acute angle.', DRAW, key='Two rays from one common endpoint (the vertex) that form an angle greater than 0° and less than 90°'),
+          plot('Draw a right angle. Mark it with a right-angle mark.', DRAW,
+               key='Two rays from one common endpoint that meet at a square corner (90°), with a right-angle mark at the vertex'),
+          draw_write('Point A is the vertex. Draw ray AB and ray AC so that angle BAC is obtuse.\nIs angle BAC greater or less than a right angle?',
+                     geo(('point', (2, 0), 'A'), h=220), 'Answer:',
+                     draw='Two rays from A, labeled B and C, that form an angle greater than 90° and less than 180°',
+                     key='Greater than a right angle', note='Grade both: the obtuse angle with vertex A, and "greater than a right angle".'),
+          draw_write('Draw an acute angle with its vertex at point V.\nHow do you know your angle is acute?', geo(('point', (1, 0), 'V'), h=220),
+                     'Explanation:', draw='Two rays from V that form an angle less than 90°',
+                     key='It is smaller than a right angle (less than 90°).',
+                     note='Grade both: an acute angle with vertex V, and the reason that it is less than a right angle.'),
+      ],
+      back=[
+          B('Square corners', '3.G.A.1', [
+              tf('The corner of a sheet of paper is a square corner.', key=True),
+              plot('Draw a shape that has 4 square corners.', DRAW, key='A rectangle or a square (a closed 4-sided shape with 4 square corners)'),
+              mc('Which shape always has 4 square corners?', ['Rectangle', 'Rhombus', 'Trapezoid', 'Pentagon']),
+              sa('A rectangle is cut into 2 smaller rectangles by one straight cut from one side to the opposite side.\n'
+                 'How many square corners does each smaller rectangle have?', 'Square corners:', key='4'),
+              tf('Every triangle has a square corner.', key=False),
+          ]),
+          B('Draw shapes with a given number of angles', '2.G.A.1', [
+              plot('Draw a shape with 3 angles.', DRAW, key='Any closed shape with 3 straight sides and 3 angles (a triangle)'),
+              tf('A closed shape with 5 angles is a pentagon.', key=True),
+              mc('How many angles does a hexagon have?', ['6', '5', '8', '4']),
+              sa('How many angles do you draw when you draw a quadrilateral?', 'Angles:', key='4'),
+              tf('A closed shape with 4 angles has 3 sides.', key=False),
+          ]),
+      ],
+      f1=B('Draw and classify triangles by their angles', '5.G.B.4', [
+          draw_write('Draw a triangle with one obtuse angle.\nWhat kind of triangle is it?', DRAW, 'Kind of triangle:',
+                     draw='A triangle with one angle greater than 90°', key='Obtuse triangle',
+                     note='Grade both: a triangle with one obtuse angle, and "obtuse triangle".'),
+          tf('A triangle can have one right angle and two acute angles.', key=True),
+          mc('A triangle has angles of 30°, 60°, and 90°.\nWhat kind of triangle is it?', ['Right', 'Acute', 'Obtuse', 'Equilateral']),
+          draw_write('Draw a triangle with three acute angles.\nWhat kind of triangle is it?', DRAW, 'Kind of triangle:',
+                     draw='A triangle whose three angles are each less than 90°', key='Acute triangle',
+                     note='Grade both: a triangle with three acute angles, and "acute triangle".'),
+          tf('A triangle can have two obtuse angles.', key=False),
+      ]),
+      f2=B('Draw polygons with right angles in the coordinate plane', '6.G.A.3', nearest=True, qs=[
+          draw_write('Plot (-3, -2), (-3, 3), and (2, -2), and connect them.\nWhat kind of angle is at (-3, -2)?', coord(), 'Kind of angle:',
+                     draw='The three points joined to make a triangle', key='Right angle',
+                     note='Grade both: the triangle drawn, and "right angle" (one side is vertical and the other is horizontal).'),
+          tf('The segments from (0, 0) to (0, 4) and from (0, 0) to (5, 0) form a right angle.', key=True),
+          mc('The segment from (1, 1) to (1, 5) is drawn.\nWhich point makes a right angle at (1, 1) when it is joined to (1, 1)?',
+             ['(4, 1)', '(4, 5)', '(4, 4)', '(0, 5)']),
+          sa('A rectangle has vertices (-2, 1), (3, 1), and (3, -4).\nWhat is the fourth vertex?', 'Vertex:', key='(-2, -4)'),
+          tf('The segments from (0, 0) to (3, 3) and from (0, 0) to (4, 0) form a right angle.', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 4.G.A.1 (draw perpendicular and parallel lines) — added in 2.0.0
+    S('4.G.A.1', 'Draw perpendicular and parallel lines', num=72,
+      main=[
+          plot('Draw a line through point P that is parallel to line m.', geo(('line', (0, 0), (5, 0)), ('text', (5.4, 0.3), 'm'), ('point', (2, 2), 'P')),
+               key='A line through P that never meets line m (a line through P going the same direction as m), with arrows at both ends'),
+          plot('Draw a line through point P that is perpendicular to line n.', geo(('line', (0, 0), (5, 0)), ('text', (5.4, 0.3), 'n'), ('point', (2, 2), 'P')),
+               key='A line through P that meets line n at a right angle (a vertical line through P), with arrows at both ends'),
+          plot('Draw two lines that are perpendicular to each other. Mark one of the right angles.', DRAW,
+               key='Two straight lines that cross (or meet) at a right angle, with a right-angle mark'),
+          plot('Draw two parallel line segments that are each 4 units long.', DRAW,
+               key='Two segments, each 4 units long, that go the same direction and never meet (for example, both along horizontal grid lines)'),
+          draw_write('Draw a line through point Q that is perpendicular to line k.\nHow many right angles do the two lines make where they cross?',
+                     geo(('line', (4, -0.5), (4, 3)), ('text', (4.35, 3.2), 'k'), ('point', (1, 1.5), 'Q'), ('text', (7, 1.5), ' '),
+                         desc='A vertical line k with arrows at both ends, and a point Q to its left; there is room on both sides of k for drawing.'),
+                     'Right angles:',
+                     draw='A horizontal line through Q that crosses line k at a right angle', key='4',
+                     note='Grade both: a line through Q that is perpendicular to k, and the answer 4.'),
+      ],
+      back=[
+          B('Draw shapes with square corners and opposite sides that run the same way', '3.G.A.1', [
+              plot('Draw a rectangle on the grid.', DRAW, key='A closed 4-sided shape with 4 square corners and opposite sides of equal length'),
+              tf('Every rectangle has 2 pairs of opposite sides that run the same way.', key=True),
+              mc('Ann draws a shape with 4 square corners and 4 equal sides.\nWhat shape did she draw?', ['Square', 'Triangle', 'Trapezoid', 'Hexagon']),
+              sa('How many square corners must you draw to make a rectangle?', 'Square corners:', key='4'),
+              tf('A shape drawn with 4 square corners can have 5 sides.', key=False),
+          ]),
+          B('Draw lines to split a rectangle into rows and columns of squares', '2.G.A.2', [
+              plot('Draw lines to split the rectangle into 2 rows of 3 same-size squares.', shape([poly([(0, 0), (3, 0), (3, 2), (0, 2)])]),
+                   key='One line across the middle and two lines from top to bottom, making 2 rows of 3 same-size squares'),
+              tf('To split a rectangle into 3 rows, you can draw 2 lines across it that run the same way.', key=True),
+              mc('A rectangle is split into 2 rows of 4 same-size squares.\nHow many squares are there?', ['8', '6', '4', '2']),
+              sa('How many lines across do you draw to split a rectangle into 4 rows?', 'Lines:', key='3'),
+              tf('A rectangle split into 2 rows and 2 columns of squares has 2 squares.', key=False),
+          ]),
+      ],
+      f1=B('Draw quadrilaterals with given parallel and perpendicular sides', '5.G.B.3', [
+          draw_write('Draw a quadrilateral with two pairs of parallel sides and no right angles.\nWhat is it called?', DRAW, 'Name:',
+                     draw='A parallelogram that is not a rectangle', key='Parallelogram',
+                     note='Grade both: a parallelogram with no right angles, and its name. "Rhombus" is also correct if all four sides are equal.'),
+          tf('Every square has two pairs of parallel sides and four right angles.', key=True),
+          mc('Which shape must have perpendicular sides?', ['Rectangle', 'Rhombus', 'Parallelogram', 'Trapezoid']),
+          draw_write('Draw a trapezoid with exactly one pair of parallel sides and two right angles.\nHow many pairs of perpendicular sides does it have?',
+                     DRAW, 'Pairs:', draw='A right trapezoid: one pair of parallel sides, and one side that meets both of them at right angles', key='2',
+                     note='Grade both: the right trapezoid, and the answer 2 (the side that meets both parallel sides is perpendicular to each of them).'),
+          tf('Every parallelogram has perpendicular sides.', key=False),
+      ]),
+      f2=B('Draw parallel and perpendicular segments in the coordinate plane', '6.G.A.3', [
+          plot('Draw the segment from (-3, 2) to (3, 2). Then draw a segment parallel to it that starts at (-3, -2).', coord(),
+               key='The segment from (-3, 2) to (3, 2), and a horizontal segment that starts at (-3, -2) (for example, to (3, -2))'),
+          tf('The segment from (2, -4) to (2, 3) is perpendicular to the x-axis.', key=True),
+          mc('Which segment is parallel to the segment from (-4, 1) to (4, 1)?',
+             ['From (-4, -3) to (4, -3)', 'From (1, -4) to (1, 4)', 'From (-4, 1) to (4, 5)', 'From (0, 0) to (4, 4)']),
+          sa('A segment goes from (-1, -2) to (-1, 5). A segment perpendicular to it starts at (-1, 0).\nGive one possible other endpoint.', 'Endpoint:',
+             key='(4, 0)', note='Any point with y-coordinate 0 other than (-1, 0) is correct, for example (3, 0) or (-5, 0).'),
+          tf('The segment from (0, 2) to (5, 2) is perpendicular to the segment from (0, -1) to (5, -1).', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 4.G.A.1 (identify in figures) — added in 2.0.0
+    S('4.G.A.1', 'Identify segments, angles, and perpendicular and parallel sides in two-dimensional figures', num=73,
+      main=[
+          mc('How many right angles does the figure have?', ['3', '2', '1', '5'], fig=HOUSE),
+          sa('How many pairs of parallel sides does the figure have?', 'Pairs:', key='1', fig=RIGHT_TRAP),
+          mc('Which sides of rectangle ABCD are perpendicular to side AB?', ['AD and BC', 'CD only', 'AD only', 'CD and AD'], fig=RECT_ABCD),
+          tf('In triangle PQR, angle Q is obtuse.', key=True, fig=TRI_PQR),
+          sa('How many line segments make up the sides of the figure? How many of its angles are acute?', ['Segments:', 'Acute angles:'],
+             key='4; 2', fig=PARA),
+      ],
+      back=[
+          B('Count sides and angles of shapes', '2.G.A.1', [
+              sa('How many sides and how many angles does the shape have?', ['Sides:', 'Angles:'], key='5; 5', fig=HOUSE),
+              tf('A quadrilateral has 4 sides and 4 angles.', key=True),
+              mc('What is the shape called?', ['Hexagon', 'Pentagon', 'Quadrilateral', 'Triangle'], fig=HEXAGON),
+              sa('How many corners does a triangle have?', 'Corners:', key='3'),
+              tf('A pentagon has 4 angles.', key=False),
+          ]),
+          B('Find square corners in shapes', '3.G.A.1', [
+              sa('How many square corners does the shape have?', 'Square corners:', key='4', fig=RECT_ABCD),
+              tf('A square has 4 square corners.', key=True),
+              mc('Which shape can have exactly one square corner?', ['Triangle', 'Rectangle', 'Square', 'Circle']),
+              sa('How many square corners does the shape have?', 'Square corners:', key='2', fig=RIGHT_TRAP),
+              tf('A triangle can have 2 square corners.', key=False),
+          ]),
+      ],
+      f1=B('Use the attributes of a category to find sides and angles in figures', '5.G.B.3', [
+          tf('Every rectangle has 4 right angles. A square is a rectangle, so every square has 4 right angles.', key=True),
+          sa('A figure is a rhombus.\nHow many pairs of parallel sides must it have?', 'Pairs:', key='2'),
+          mc('A parallelogram has one right angle.\nHow many right angles must it have?', ['4', '1', '2', '3']),
+          sa('ABCD is a rectangle.\nWhich side is parallel to side AB?', 'Side:', key='CD', note='DC is also correct.', fig=RECT_ABCD),
+          tf('Every trapezoid has a pair of perpendicular sides.', key=False),
+      ]),
+      f2=B('Identify parallel and perpendicular sides of polygons in the coordinate plane', '6.G.A.3', [
+          tf('In the polygon with vertices (0, 0), (6, 0), (6, 4), and (0, 4), the side from (0, 0) to (6, 0) is parallel to the side from (0, 4) to (6, 4).',
+             key=True),
+          sa('A triangle has vertices (1, 1), (1, 6), and (5, 1).\nAt which vertex is the right angle?', 'Vertex:', key='(1, 1)'),
+          mc('A quadrilateral has vertices (-3, 0), (3, 0), (1, 4), and (-1, 4).\nWhich two sides are parallel?',
+             ['From (-3, 0) to (3, 0) and from (-1, 4) to (1, 4)', 'From (3, 0) to (1, 4) and from (-1, 4) to (-3, 0)',
+              'No two sides are parallel', 'Every pair of sides is parallel']),
+          draw_write('Plot (-4, -1), (2, -1), (2, 3), and (-4, 3), and connect them in order.\nHow many right angles does the polygon have?', coord(),
+                     'Right angles:', draw='The four points joined in order to make a rectangle', key='4',
+                     note='Grade both: the four points joined in order, and the answer 4.'),
+          tf('The triangle with vertices (0, 0), (4, 0), and (2, 3) has a right angle.', key=False),
       ])),
 
     # ------------------------------------------------------------------ 4.G.A.2 (classify figures)
@@ -196,8 +419,10 @@ SETS = [
           mc('Which could be the angles of a right triangle?', ['90°, 60°, 30°', '80°, 60°, 40°', '100°, 50°, 30°', '70°, 70°, 40°']),
           tf('A right triangle can have two right angles.', key=False),
           draw_write('Draw a right triangle on the grid and mark its right angle.\nHow many right angles does your triangle have?', DRAW, 'Right angles:',
-                     draw='A triangle with two sides along grid lines that meet at a square corner, with the right angle marked', key='1',
-                     note='Grade both: a right triangle with its right angle marked, and the answer 1.'),
+                     draw='Any triangle with one 90° angle, in any position or orientation, with the right angle marked '
+                          '(for example, two sides along grid lines that meet at a square corner)', key='1',
+                     note='Grade both: a right triangle with its right angle correctly marked, and the answer 1. The sides that form the '
+                          'right angle do not have to follow the grid lines; a rotated right triangle is correct.'),
       ],
       back=[
           B('Triangles', '2.G.A.1', [
@@ -283,7 +508,8 @@ SETS = [
           draw_write('Draw all the lines of symmetry of the square.\nHow many are there?', shape([poly([(0, 0), (4, 0), (4, 4), (0, 4)])]), 'Lines:',
                      draw='Four lines: vertical, horizontal, and both diagonals, each through the center', key='4',
                      note='Grade both: all four lines drawn, and the answer 4.'),
-          draw_write('Draw the line of symmetry of the triangle, which has two sides of equal length.\nHow many lines of symmetry does it have?',
+          draw_write('Draw the line of symmetry of the triangle. The triangle has exactly two sides of equal length; its base has a different length.\n'
+                     'How many lines of symmetry does it have?',
                      shape([poly([(0, 0), (4, 0), (2, 4)])]), 'Lines:',
                      draw='A line from the top vertex straight down to the middle of the base', key='1',
                      note='Grade both: the line from the top vertex to the middle of the base, and the answer 1.'),
@@ -323,12 +549,12 @@ SETS = [
                key='Points plotted at (2, 2), (2, 5), (6, 2) and (6, 5)'),
           tf('The points (1, 4) and (7, 4) match across the line through (3, 0) and (3, 6).', key=False),
       ]),
-      f2=B('Draw polygons in the coordinate plane and reflect them across an axis', '6.G.A.3', [
-          plot('Plot (2, 3), (5, 3), and (5, 1). Then reflect each point across the y-axis and plot the images.', coord(),
-               key='Points plotted at (2, 3), (5, 3), (5, 1) and their images at (-2, 3), (-5, 3), (-5, 1)'),
-          tf('The rectangle with vertices (-3, 2), (3, 2), (3, -2), and (-3, -2) is symmetric about the y-axis.', key=True),
+      f2=B('Draw polygons in the coordinate plane from their vertices and find side lengths', '6.G.A.3', [
+          plot('Plot (2, 3), (5, 3), (5, -1), and (2, -1). Connect them in order to draw the polygon.', coord(),
+               key='Points plotted at (2, 3), (5, 3), (5, -1) and (2, -1) and joined in order to make a rectangle'),
+          tf('The polygon with vertices (-3, 2), (3, 2), (3, -2), and (-3, -2) has a side that is 6 units long.', key=True),
           mc('A square has vertices (-2, -2), (2, -2), and (2, 2).\nWhat is the fourth vertex?', ['(-2, 2)', '(2, -4)', '(-2, 4)', '(0, 2)']),
-          sa('A polygon has vertices (1, 4), (4, 4), and (4, 1).\nWhat is the image of (4, 1) when it is reflected across the x-axis?', 'Image:', key='(4, -1)'),
+          sa('A polygon has vertices (1, 4), (4, 4), and (4, -2).\nWhat is the length of the side from (4, 4) to (4, -2)?', 'Length:', key='6 units'),
           tf('The segment from (-4, 1) to (4, 1) is 4 units long.', key=False),
       ])),
 ]

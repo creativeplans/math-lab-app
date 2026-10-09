@@ -1041,13 +1041,32 @@ def fig_text(c, f, x, y, w, h, s):
 
 def fig_rays(c, f, x, y, w, h, s):
     """Rays from one vertex. rays: directions in degrees (0 = right, counterclockwise); labels:
-    (direction, text) placed inside an angle; ra: directions where a right-angle mark starts."""
+    (direction, text) placed inside an angle; ra: directions where a right-angle mark starts.
+    circle: dict(r=radius as a fraction of the ray length, parts=n equal arcs marked by ticks,
+    arc=(from, to) directions of an arc drawn thick) for a circle centered at the vertex."""
     import math
     fs = 15 * s * f.get('fs', 1)
-    below = any(180 < (r % 360) < 360 for r in f['rays'])
+    below = bool(f.get('circle')) or any(180 < (r % 360) < 360 for r in f['rays'])
     cx = x + w / 2
     cy = y + (h / 2 if below else h * 0.18)
     L = min(w / 2 - 20, (h / 2 if below else h * 0.78)) * 0.95
+    circ = f.get('circle')
+    if circ:
+        cr = L * circ.get('r', 0.6)
+        c.setStrokeColor(MUTED)
+        c.setLineWidth(1.2)
+        c.circle(cx, cy, cr, fill=0, stroke=1)
+        n = circ.get('parts', 0)
+        for i in range(n):
+            a = math.radians(360 * i / n)
+            c.line(cx + (cr - 6) * math.cos(a), cy + (cr - 6) * math.sin(a), cx + (cr + 6) * math.cos(a), cy + (cr + 6) * math.sin(a))
+        if circ.get('arc'):
+            a0, a1 = circ['arc']
+            c.setStrokeColor(BLUE)
+            c.setLineWidth(4)
+            p = c.beginPath()
+            p.arc(cx - cr, cy - cr, cx + cr, cy + cr, startAng=a0, extent=a1 - a0)
+            c.drawPath(p, stroke=1, fill=0)
     c.setStrokeColor(INK)
     c.setLineWidth(1.8)
     for r in f['rays']:

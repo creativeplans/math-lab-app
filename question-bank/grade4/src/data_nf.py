@@ -6,9 +6,11 @@ SETS = [
     S('4.NF.A.1', 'Explain why fractions are equivalent using visual fraction models',
       main=[
           sa('The bars show {2/3} and {8/12} of the same whole.\nExplain how the model shows that {2/3} = {8/12}.', ['Explanation:', ''],
-             key='Each third is split into 4 equal parts, so there are 4 times as many parts (12) and 4 times as many shaded parts (8); the shaded amount stays the same.',
-             note='Must say that the number of parts and the number of shaded parts are both multiplied by the same number (4) while the whole '
-                  'and the shaded amount stay the same.', fig=bars((3, 2), (12, 8))),
+             key='Each third is split into 4 equal parts, so each new part is 1/4 the size of a third. There are 4 times as many parts (12) '
+                 'and 4 times as many shaded parts (8), and the whole and the shaded amount stay the same.',
+             note='Must connect both the number and the size of the parts: the number of parts and the number of shaded parts are both '
+                  'multiplied by 4, each new part is 1/4 the size of an original third, and the whole and the shaded amount stay the same. '
+                  'Any equivalent visual explanation that connects number and size of parts is correct.', fig=bars((3, 2), (12, 8))),
           mc('A bar shows {3/5} shaded. Each fifth is cut into 2 equal parts.\nWhich fraction now names the shaded part?', ['{6/10}', '{3/10}', '{6/5}', '{5/10}']),
           tf('{3/4} = {9/12} because the numerator and the denominator were both multiplied by 3.', key=True),
           draw_write('The bar shows {1/2} shaded.\nDraw lines to split each part into 3 equal parts. Then write the equivalent fraction.', bar(2, 1),
@@ -32,11 +34,11 @@ SETS = [
               sa('What fraction in sixths is at the same point as {2/3}?', 'Fraction:', key='4/6'),
           ]),
       ],
-      f1=B('Use equivalent fractions to add and subtract with unlike denominators', '5.NF.A.1', [
+      f1=B('Use equivalent fractions to add fractions with unlike denominators', '5.NF.A.1', [
           sa('Add.\n{1/3} + {1/4}', 'Sum:', key='7/12'),
           tf('{2/5} + {3/10} = {7/10}', key=True),
           mc('Add.\n{1/2} + {3/8}', ['{7/8}', '{4/10}', '{4/8}', '{3/16}']),
-          sa('Subtract.\n{5/6} - {1/4}', 'Difference:', key='7/12'),
+          sa('Add.\n{5/6} + {1/12}', 'Sum:', key='11/12'),
           tf('{1/2} + {1/3} = {2/5}', key=False),
       ]),
       f2=B('Find equivalent ratios', '6.RP.A.3.a', [
@@ -76,8 +78,10 @@ SETS = [
       ],
       f1=B('Explain equivalent fractions as multiplying by a fraction equal to 1', '5.NF.B.5.b', [
           tf('{3/4} × {2/2} = {6/8}, and {6/8} = {3/4} because {2/2} = 1.', key=True),
-          mc('Which fraction equal to 1 turns {2/5} into {6/15}?', ['{3/3}', '{6/6}', '{5/5}', '{15/15}']),
-          sa('What fraction equal to 1 can you multiply {5/8} by to get {20/32}?', 'Fraction:', key='4/4'),
+          mc('To rewrite {2/5} as {6/15}, by which whole number must you multiply BOTH its numerator and its denominator?',
+             ['3', '5', '15', '6'], note='Multiplying the numerator and the denominator by 3 is multiplying by 3/3, which equals 1, so the value stays the same.'),
+          sa('By which whole number must you multiply BOTH the numerator and the denominator of {5/8} to write {20/32}?', 'Whole number:', key='4',
+             note='Multiplying by 4/4, which equals 1, keeps the value the same: 5 × 4 = 20 and 8 × 4 = 32.'),
           tf('{1/2} × {3/4} = {3/8} shows that {1/2} = {3/8}.', key=False),
           sa('Explain why multiplying a fraction by {5/5} does not change its value.', 'Explanation:',
              key='5/5 = 1, and multiplying a number by 1 does not change it.'),
@@ -86,7 +90,8 @@ SETS = [
           sa('Write {3/4} as a percent.', 'Percent:', key='75%'),
           tf('{2/5} = 40%', key=True),
           mc('Which percent is equal to {7/10}?', ['70%', '7%', '0.7%', '17%']),
-          sa('Write 35% as a fraction with a denominator of 100.', 'Fraction:', key='35/100', note='7/20 is also correct.'),
+          sa('Write 35% as a fraction with a denominator of 100.', 'Fraction:', key='35/100',
+             note='The denominator must be 100. An equal fraction with another denominator (such as 7/20) is not the form asked for.'),
           tf('{1/8} = 18%', key=False),
       ])),
 
@@ -204,11 +209,11 @@ SETS = [
               tf('6 cats and 7 dogs make 12 pets.', key=False),
           ]),
       ],
-      f1=B('Add and subtract fractions with unlike denominators', '5.NF.A.1', [
+      f1=B('Add fractions with unlike denominators', '5.NF.A.1', [
           sa('Add.\n{1/4} + {2/3}', 'Sum:', key='11/12'),
-          sa('Subtract.\n{7/10} - {1/2}', 'Difference:', key='1/5', note='2/10 is also correct.'),
+          sa('Add.\n{3/10} + {1/2}', 'Sum:', key='4/5', note='8/10 is also correct.'),
           mc('Add.\n{3/8} + {1/2}', ['{7/8}', '{4/10}', '{4/8}', '1{1/8}']),
-          tf('{5/6} - {1/3} = {1/2}', key=True),
+          tf('{1/6} + {1/3} = {1/2}', key=True),
           tf('{1/5} + {1/2} = {2/7}', key=False),
       ]),
       f2=B('Solve equations of the form x + p = q with fractions', '6.EE.B.7', [
@@ -237,7 +242,7 @@ SETS = [
           B('Unit fractions build a fraction', '3.NF.A.1', [
               sa('How many {1/8}s make {7/8}?', 'Answer:', key='7'),
               tf('{1/4} + {1/4} + {1/4} = {3/4}', key=True),
-              mc('What fraction is 5 parts of size {1/6}?', ['{5/6}', '{1/30}', '{6/5}', '{5/1}']),
+              mc('What fraction is 5 parts of size {1/6}?', ['{5/6}', '{1/6}', '{6/6}', '{5/1}']),
               sa('Write {2/3} as a sum of unit fractions.', 'Sum:', key='1/3 + 1/3'),
               tf('{1/2} + {1/2} = {2/4}', key=False),
           ]),
@@ -250,11 +255,11 @@ SETS = [
               tf('10 = 6 + 3', key=False),
           ]),
       ],
-      f1=B('Add and subtract mixed numbers with unlike denominators', '5.NF.A.1', [
+      f1=B('Add mixed numbers with unlike denominators', '5.NF.A.1', [
           sa('Add.\n1{1/2} + 2{1/3}', 'Sum:', key='3 5/6'),
-          sa('Subtract.\n3{3/4} - 1{1/6}', 'Difference:', key='2 7/12'),
+          sa('Add.\n3{3/4} + 1{1/6}', 'Sum:', key='4 11/12'),
           mc('Add.\n2{2/5} + 1{1/2}', ['3{9/10}', '3{3/7}', '4{1/10}', '3{3/10}']),
-          tf('4{1/2} - 1{3/4} = 2{3/4}', key=True),
+          tf('2{1/2} + 1{3/4} = 4{1/4}', key=True),
           tf('1{2/3} + 1{1/6} = 2{3/9}', key=False),
       ]),
       f2=B('Divide fractions by thinking "how many parts of this size?"', '6.NS.A.1', [
@@ -284,11 +289,11 @@ SETS = [
               tf('{8/4} = 4', key=False),
           ]),
           B('Fractions greater than 1 on a number line', '3.NF.A.2', [
-              sa('What number is at point A? Write a fraction.', 'A =', key='5/4', note='1 1/4 is also correct.',
+              sa('What number is at point A? Write it as a fraction or a mixed number.', 'A =', key='5/4', note='1 1/4 is also correct.',
                  fig=nl(0, 2, 0.25, labels={0: '0', 1: '1', 2: '2'}, pts=[(1.25, 'A')])),
               tf('{3/2} is between 1 and 2 on a number line.', key=True),
               mc('Which fraction is at the same point as 1 on a number line?', ['{4/4}', '{1/4}', '{4/1}', '{3/4}']),
-              sa('What number is at point B? Write a fraction.', 'B =', key='5/3', note='1 2/3 is also correct.',
+              sa('What number is at point B? Write it as a fraction or a mixed number.', 'B =', key='5/3', note='1 2/3 is also correct.',
                  fig=nl(0, 2, 1 / 3, labels={0: '0', 1: '1', 2: '2'}, pts=[(5 / 3, 'B')])),
               tf('{7/8} is greater than 1.', key=False),
           ]),
@@ -323,7 +328,7 @@ SETS = [
           B('Whole numbers written as fractions', '3.NF.A.3.c', [
               sa('Write 1 as a fraction with a denominator of 6.', 'Fraction:', key='6/6'),
               tf('{4/4} = 1', key=True),
-              mc('Which fraction is equal to 3?', ['{12/4}', '{4/12}', '{3/4}', '{4/4}']),
+              mc('Which fraction is equal to 3?', ['{12/4}', '{4/3}', '{3/4}', '{4/4}']),
               sa('How many thirds are in 2 wholes?', 'Thirds:', key='6'),
               tf('{2/2} = 2', key=False),
           ]),
@@ -352,23 +357,25 @@ SETS = [
       ])),
 
     # ------------------------------------------------------------------ 4.NF.B.3.d
-    S('4.NF.B.3.d', 'Solve word problems by adding and subtracting fractions with like denominators',
+    S('4.NF.B.3.d', 'Solve word problems by adding fractions and mixed numbers with like denominators',
       main=[
           sa('Mia ran {3/10} mile in the morning and {5/10} mile in the afternoon.\nHow far did she run in all?', 'Distance:', key='8/10 mile',
              note='4/5 mile is also correct.'),
-          sa('A jug had {11/12} liter of juice. Tom drank {4/12} liter.\nHow much juice is left?', 'Juice left:', key='7/12 liter'),
+          sa('A jug had {4/12} liter of juice. Tom poured in {5/12} liter more.\nHow much juice is in the jug now?', 'Juice:', key='9/12 liter',
+             note='3/4 liter is also correct.'),
           mc('Ty used 1{2/4} cups of rice on Monday and 2{3/4} cups on Tuesday.\nHow many cups did he use in all?',
              ['4{1/4} cups', '3{1/4} cups', '4{5/8} cups', '3{5/8} cups']),
-          tf('A ribbon is {7/8} yard long. Ann cuts off {3/8} yard. {4/8} yard is left.', key=True),
-          sa('A painter used {2/6} of a can of paint on a door and {3/6} of the can on a fence.\nWhat fraction of the can is left?', 'Fraction:', key='1/6'),
+          tf('Ann sews a {3/8}-yard ribbon to a {4/8}-yard ribbon, end to end. The new ribbon is {7/8} yard long.', key=True),
+          sa('A painter used {2/6} of a can of paint on a door and {3/6} of the can on a fence.\nWhat fraction of the can did the painter use in all?',
+             'Fraction:', key='5/6'),
       ],
       back=[
-          B('One- and two-step word problems within 100', '2.OA.A.1', [
-              sa('A shelf has 46 books. 18 are taken.\nHow many books are left?', 'Books:', key='28'),
+          B('Addition word problems within 100', '2.OA.A.1', [
+              sa('A shelf has 46 books. 18 more books are put on it.\nHow many books are on the shelf now?', 'Books:', key='64'),
               tf('Kim had 25 stickers and got 17 more. She has 42 stickers.', key=True),
               mc('A class has 14 boys and 15 girls.\nHow many students are in the class?', ['29', '1', '19', '39']),
-              sa('Jo had 50 cents. She spent 23 cents.\nHow much money is left?', 'Money left:', key='27 cents'),
-              tf('A bus had 36 people. 9 got off. 25 people are still on the bus.', key=False),
+              sa('Jo had 50 cents. She found 23 more cents.\nHow much money does she have now?', 'Money:', key='73 cents'),
+              tf('A bus had 36 people. 9 more got on. Now 44 people are on the bus.', key=False),
           ]),
           B('Fractions of a whole', '3.NF.A.1', [
               sa('A pie is cut into 6 equal pieces. 5 pieces are eaten.\nWhat fraction of the pie is eaten?', 'Fraction:', key='5/6'),
@@ -378,11 +385,11 @@ SETS = [
               tf('A board cut into 2 equal pieces has pieces that are each {1/3} of the board.', key=False),
           ]),
       ],
-      f1=B('Solve word problems by adding and subtracting fractions with unlike denominators', '5.NF.A.2', [
+      f1=B('Solve word problems by adding fractions with unlike denominators', '5.NF.A.2', [
           sa('Ana walked {1/2} mile and then {1/3} mile.\nHow far did she walk in all?', 'Distance:', key='5/6 mile'),
-          sa('A jug had {3/4} gallon of milk. Ben used {2/3} gallon.\nHow much milk is left?', 'Milk left:', key='1/12 gallon'),
+          sa('Ben drank {2/3} cup of milk and then {1/4} cup more.\nHow much milk did he drink in all?', 'Milk:', key='11/12 cup'),
           mc('Lu read {1/4} of a book on Monday and {3/8} of it on Tuesday.\nWhat fraction of the book did she read?', ['{5/8}', '{4/12}', '{4/8}', '{3/32}']),
-          tf('A board is {5/6} meter long. {1/2} meter is cut off. {1/3} meter is left.', key=True),
+          tf('A {1/2}-meter board and a {1/3}-meter board laid end to end are {5/6} meter long.', key=True),
           tf('Sam ate {1/2} of a pizza and Lee ate {1/3} of it. They ate {2/5} of the pizza.', key=False),
       ]),
       f2=B('Solve word problems by dividing fractions', '6.NS.A.1', [
@@ -391,5 +398,51 @@ SETS = [
           mc('How many {2/3}-foot pieces can be cut from 4 feet of ribbon?', ['6', '{8/3}', '{1/6}', '8']),
           sa('{3/4} pound of nuts is shared equally among 3 bags.\nHow much is in each bag?', 'Pounds:', key='1/4 pound'),
           tf('{1/2} cup of oats fills a {1/6}-cup scoop exactly 2 times.', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 4.NF.B.3.d (subtract) — added in 2.0.0
+    S('4.NF.B.3.d', 'Solve word problems by subtracting fractions and mixed numbers with like denominators', num=66,
+      main=[
+          sa('A jug had {11/12} liter of juice. Tom drank {4/12} liter.\nHow much juice is left?', 'Juice left:', key='7/12 liter'),
+          tf('A ribbon is {7/8} yard long. Ann cuts off {3/8} yard. {4/8} yard is left.', key=True),
+          sa('A painter used {2/6} of a can of paint on a door and {3/6} of the can on a fence.\nWhat fraction of the can is left?', 'Fraction:', key='1/6'),
+          mc('A trail is 3{1/4} miles long. Rosa has hiked 1{3/4} miles.\nHow much farther does she have to hike?',
+             ['1{2/4} miles', '2{2/4} miles', '1{1/4} miles', '5 miles']),
+          sa('A bag held 2{1/8} pounds of flour. Dee used {5/8} pound.\nHow much flour is left?', 'Flour left:', key='1 4/8 pounds',
+             note='1 1/2 pounds and 12/8 pounds are also correct.'),
+      ],
+      back=[
+          B('Subtraction word problems within 100', '2.OA.A.1', [
+              sa('A shelf has 46 books. 18 are taken.\nHow many books are left?', 'Books:', key='28'),
+              sa('Jo had 50 cents. She spent 23 cents.\nHow much money is left?', 'Money left:', key='27 cents'),
+              tf('A bus had 36 people. 9 got off. 25 people are still on the bus.', key=False),
+              mc('A tree had 72 apples. 35 apples fell.\nHow many apples are still on the tree?', ['37', '47', '107', '43']),
+              tf('Lee had 64 cards and gave away 27. He has 37 cards left.', key=True),
+          ]),
+          B('Whole numbers written as fractions', '3.NF.A.3.c', [
+              sa('Write 1 as a fraction with a denominator of 8.', 'Fraction:', key='8/8'),
+              tf('{6/6} = 1', key=True),
+              mc('Which fraction is equal to 2?', ['{8/4}', '{4/8}', '{2/4}', '{4/4}']),
+              sa('How many fourths are in 1 whole?', 'Fourths:', key='4'),
+              tf('{3/3} = 3', key=False),
+          ]),
+      ],
+      f1=B('Solve word problems by subtracting fractions with unlike denominators', '5.NF.A.2', [
+          sa('A jug had {3/4} gallon of milk. Ben used {2/3} gallon.\nHow much milk is left?', 'Milk left:', key='1/12 gallon'),
+          tf('A board is {5/6} meter long. {1/2} meter is cut off. {1/3} meter is left.', key=True),
+          mc('A pitcher holds {7/8} quart of lemonade. Kai pours out {1/2} quart.\nHow much lemonade is left?',
+             ['{3/8} quart', '{6/8} quart', '{1/8} quart', '{5/8} quart']),
+          sa('Ari has {5/6} hour to practice. He has practiced for {1/4} hour.\nHow much longer does he have to practice?', 'Time:', key='7/12 hour'),
+          tf('A rope is {9/10} meter long. {2/5} meter is cut off. {7/10} meter is left.', key=False),
+      ]),
+      f2=B('Write and solve equations of the form x + p = q for fraction word problems', '6.EE.B.7', [
+          sa('A jug had {11/12} liter of juice. After Tom drank some, {4/12} liter was left.\nWrite and solve an equation for the amount j that Tom drank.',
+             ['Equation:', 'j ='], key='11/12 - j = 4/12; j = 7/12 liter',
+             note='Any equivalent equation (such as j + 4/12 = 11/12) is correct. Both parts are required.'),
+          tf('The solution of x + {2/5} = {9/10} is x = {1/2}.', key=True),
+          mc('A trail is 4{1/2} miles long. After hiking h miles, Rosa has 1{3/4} miles left.\nWhich value of h solves h + 1{3/4} = 4{1/2}?',
+             ['2{3/4}', '3{1/4}', '6{1/4}', '2{1/4}']),
+          sa('Solve for y.\ny + {3/8} = 2', 'y =', key='1 5/8', note='13/8 is also correct.'),
+          tf('The solution of n + {1/6} = {2/3} is n = {1/3}.', key=False),
       ])),
 ]

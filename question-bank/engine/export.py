@@ -34,7 +34,7 @@ import revisions  # noqa: E402
 def r_for_snap(r):
     """Key record fields in the form the history snapshot stores them."""
     return dict(type=r['type'], correct_letter=r['correct_letter'], correct_answer=r['correct_answer'],
-                grading_note=r['grading_note'])
+                grading_note=r['grading_note'], drawing_answer=r['drawing_answer'], required_method=r['required_method'])
 
 FORMAT_VERSION = 1
 PDF_PART = 800
@@ -369,7 +369,7 @@ def export(out_dir):
                                                  png='assets/%s-%s.png' % (qid, letter), data=jsonable(g))
                 snap = dict(r_for_snap(r), choices=rec['choices'])
                 rev = tracker.check(qid, revisions.snapshot(dict(qd, fig=jsonable(qd['fig']) if qd.get('fig') else None),
-                                                            snap, std, name))
+                                                            snap, std, name, nearest))
                 rec['revision'] = rev['status']
                 qrecs.append(rec)
             sections.append(dict(section=key, section_code=code, relation=RELATION.get(code, 'backward'),
@@ -400,8 +400,9 @@ def export(out_dir):
         relations=dict(main='the Grade %d skill the set is built around' % build.GRADE,
                        backward='a prerequisite skill to check when a student misses MAIN questions',
                        forward1='the directly connected Grade %d skill' % (build.GRADE + 1),
-                       forward2='the next connected Grade %d skill; nearest_related = true marks a branch '
-                                'with no direct Grade %d continuation' % (build.GRADE + 2, build.GRADE + 2)),
+                       forward2='the next connected Grade %d skill' % (build.GRADE + 2),
+                       nearest_related='true marks a forward branch whose grade has no direct continuation of '
+                                       'the skill; it uses the nearest related standard of that grade'),
         grading_rules=build.GRADING_RULES,
         markup='prompt is plain text. prompt_markup uses {a/b} for a stacked fraction and 2{1/2} for a mixed number.',
         sets=index_sets)

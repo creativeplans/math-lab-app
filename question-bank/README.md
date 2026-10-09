@@ -2,10 +2,10 @@
 
 | Folder | Contents |
 |---|---|
-| `grade4/` | Grade 4 collection, version 1.0.0: 64 question sets, 1,600 questions (see its COVERAGE) |
+| `grade4/` | Grade 4 collection, version 2.0.0: 73 question sets, 1,825 questions (see its CHANGELOG and COVERAGE) |
 | `grade5/` | Grade 5 collection, version 2.0.0: 71 question sets, 1,930 questions (see its CHANGELOG and COVERAGE) |
 | `grade6/` | Grade 6 collection: 82 question sets, 2,465 questions |
-| `nexus/grade4/`, `nexus/grade5/`, `nexus/grade6/` | Import packages for Untangle The Nexus (JSON per set, index, figure files, PDFs, manifest). Each has its own README. `nexus/Grade4_Nexus_Import_v1.0.0.zip` and `nexus/Grade5_Nexus_Import_v2.0.0.zip` are the packages zipped. |
+| `nexus/grade4/`, `nexus/grade5/`, `nexus/grade6/` | Import packages for Untangle The Nexus (JSON per set, index, figure files, PDFs, manifest). Each has its own README. `nexus/Grade4_Nexus_Import_v2.0.0.zip` and `nexus/Grade5_Nexus_Import_v2.0.0.zip` are the packages zipped. |
 | `engine/` | Shared code that builds the PDFs, answer keys, and Nexus packages |
 
 Every set has a MAIN section (5 questions at the set's grade), BACKWARD branches (prerequisite skills from

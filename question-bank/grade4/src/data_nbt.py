@@ -64,10 +64,10 @@ SETS = [
       back=[
           B('A hundred is a bundle of ten tens', '2.NBT.A.1.a', [
               tf('100 can be thought of as a bundle of 10 tens.', key=True),
-              sa('How many tens are in 300?', 'Tens:', key='30'),
-              mc('How many hundreds are in 800?', ['8', '80', '800', '18']),
-              sa('How many tens are in 50?', 'Tens:', key='5'),
-              tf('400 is 4 tens.', key=False),
+              sa('How many tens make 1 hundred?', 'Tens:', key='10'),
+              mc('Which shows the same amount as 1 hundred?', ['10 tens', '10 ones', '1 ten', '100 tens']),
+              sa('Fill in the blank.\n10 tens = ___ hundred', 'Blank:', key='1'),
+              tf('A bundle of 10 tens is the same amount as 1,000.', key=False),
           ]),
           B('Multiply one-digit numbers by multiples of 10', '3.NBT.A.3', [
               sa('Multiply.\n4 × 90', 'Product:', key='360'),
@@ -249,7 +249,7 @@ SETS = [
       ]),
       f2=B('Compute with decimals and round the result', '6.NS.B.3', nearest=True, qs=[
           sa('Divide. Round the quotient to the nearest tenth.\n10 ÷ 3', 'Quotient:', key='3.3'),
-          tf('7.25 × 4 = 29', key=True),
+          tf('7.25 × 4.2, rounded to the nearest whole number, is 30.', key=True),
           mc('Divide. Round the quotient to the nearest hundredth.\n2 ÷ 7', ['0.29', '0.28', '0.3', '0.27']),
           sa('Multiply. Round the product to the nearest whole number.\n3.6 × 2.4', 'Product:', key='9'),
           tf('15 ÷ 4, rounded to the nearest whole number, is 3.', key=False),
@@ -432,8 +432,9 @@ SETS = [
              ['6 × 453 = 2,400 + 300 + 18', '6 × 453 = 2,400 + 50 + 3', '6 + 453 = 2,718', '6 × 453 = 6 × 400 + 53'],
              fig=amodel('6', [(400, '400', '2,400'), (50, '50', '300'), (3, '3', '18')])),
           work('Use an area model or equations to multiply. Show your model or equations.\n9 × 2,146', 'Product:', key='19,314',
-               method='An area model or equations that break 2,146 into place-value parts, for example 9 × 2,000 = 18,000, '
-                      '9 × 100 = 900, 9 × 40 = 360 and 9 × 6 = 54, then 18,000 + 900 + 360 + 54 = 19,314. '
+               method='Any valid area model or chain of equations that shows how the product is found. Examples: place-value parts '
+                      '9 × 2,000 = 18,000, 9 × 100 = 900, 9 × 40 = 360 and 9 × 6 = 54, then 18,000 + 900 + 360 + 54 = 19,314; '
+                      'or (10 - 1) × 2,146 = 21,460 - 2,146 = 19,314. '
                       'The answer without a valid model or equations earns partial credit.'),
           sa('Explain why 15 × 12 = 15 × 10 + 15 × 2.', ['Explanation:', ''],
              key='12 = 10 + 2, so 15 groups of 12 are 15 groups of 10 plus 15 groups of 2; 150 + 30 = 180.',
@@ -526,8 +527,10 @@ SETS = [
              note='Explanation: 852 is split into 800 and 52; 4 goes into them 200 times and 13 times, so 4 goes into 852 a total of 213 times.'),
           mc('Ana finds 3,515 ÷ 5 by thinking 3,500 ÷ 5 = 700 and 15 ÷ 5 = 3.\nWhat is the quotient?', ['703', '730', '7,003', '73']),
           work('Use an area model or equations to divide. Show your model or equations.\n1,792 ÷ 8', 'Quotient:', key='224',
-               method='An area model or equations that split 1,792 into parts that 8 divides, for example 8 × 200 = 1,600 and 8 × 24 = 192, '
-                      'with 1,600 + 192 = 1,792, so the quotient is 224. The answer without a valid model or equations earns partial credit.'),
+               method='Any valid area model or chain of equations that shows how the quotient is found. Examples: split 1,792 into parts '
+                      'that 8 divides, 8 × 200 = 1,600 and 8 × 24 = 192, with 1,600 + 192 = 1,792, so the quotient is 224; '
+                      'or divide by 2 three times, 1,792 ÷ 2 = 896, 896 ÷ 2 = 448, 448 ÷ 2 = 224. '
+                      'The answer without a valid model or equations earns partial credit.'),
           tf('To find 636 ÷ 3, you can divide each place: 600 ÷ 3 = 200, 30 ÷ 3 = 10, and 6 ÷ 3 = 2. The quotient is 212.', key=True),
       ],
       back=[

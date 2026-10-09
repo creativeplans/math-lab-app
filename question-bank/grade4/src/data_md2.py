@@ -5,10 +5,21 @@ SETS = [
     # ------------------------------------------------------------------ 4.MD.C.5.a
     S('4.MD.C.5.a', 'An angle is measured as a fraction of a full circle; a one-degree angle is 1/360 of a circle',
       main=[
-          sa('How many one-degree angles make a full circle?', 'Answer:', key='360'),
+          sa('The circle is centered where the rays meet. The thick arc is {1/6} of the circle.\n'
+             'What is the angle\'s measure? Explain. What angle has an arc of {1/360}?', ['Measure:', 'Explanation:', 'Arc of {1/360}:'], key='60°; 1°',
+             note='Explanation: a full circle is 360°, and the angle turns through 1/6 of the circle, so it measures 1/6 of 360°, which is 60°. '
+                  'An arc of 1/360 of the circle gives a one-degree angle (1°). All three parts are required.',
+             fig=dict(k='rays', rays=[0, 60], labels=[], ra=[], h=260, fs=1.05, circle=dict(r=0.6, parts=6, arc=(0, 60)),
+                      desc='Two rays from one point, at 0 and 60 degrees. A circle is centered at the point and divided by tick marks into '
+                           '6 equal arcs; the arc between the two rays is drawn thick.')),
           tf('An angle that turns through {1/4} of a full circle measures 90°.', key=True),
           mc('What fraction of a full circle does a 180° angle turn through?', ['{1/2}', '{1/4}', '{1/3}', '{1/180}']),
-          sa('An angle turns through {1/6} of a full circle.\nWhat is its measure?', 'Measure:', key='60°'),
+          sa('The circle is centered at the common endpoint of the two rays and is divided into 8 equal arcs.\n'
+             'What fraction of the circle is the thick arc between the rays? What is the measure of the angle?', ['Fraction:', 'Measure:'],
+             key='3/8; 135°', note='3/8 of 360° = 135°. Both parts are required.',
+             fig=dict(k='rays', rays=[0, 135], labels=[], ra=[], h=260, fs=1.05, circle=dict(r=0.6, parts=8, arc=(0, 135)),
+                      desc='Two rays from one point, at 0 and 135 degrees. A circle is centered at the point and divided by tick marks into '
+                           '8 equal arcs; the arc between the two rays is drawn thick.')),
           tf('An angle that turns through {1/3} of a full circle measures 30°.', key=False),
       ],
       back=[
@@ -67,14 +78,14 @@ SETS = [
               tf('If the cubes overlap when you measure, the count is still correct.', key=False),
           ]),
       ],
-      f1=B('A solid packed with n unit cubes has a volume of n cubic units', '5.MD.C.3.b', [
+      f1=B('A solid packed with n unit cubes has a volume of n cubic units', '5.MD.C.3.b', nearest=True, qs=[
           sa('A box is filled with 24 unit cubes with no gaps or overlaps.\nWhat is its volume?', 'Volume:', key='24 cubic units'),
           tf('A solid built from 15 unit cubes has a volume of 15 cubic units.', key=True),
           mc('A prism has 3 layers with 8 unit cubes in each layer.\nWhat is its volume?', ['24 cubic units', '11 cubic units', '24 square units', '38 cubic units']),
           sa('How many unit cubes fill a box with a volume of 40 cubic units?', 'Unit cubes:', key='40'),
           tf('A cube with edges 1 unit long has a volume of 6 cubic units.', key=False),
       ]),
-      f2=B('Find volume by packing with unit-fraction cubes', '6.G.A.2', [
+      f2=B('Find volume by packing with unit-fraction cubes', '6.G.A.2', nearest=True, qs=[
           sa('How many cubes with edges {1/2} unit long fill a cube with edges 1 unit long?', 'Cubes:', key='8'),
           tf('A cube with edges {1/2} unit long has a volume of {1/8} cubic unit.', key=True),
           mc('A box is packed with 16 cubes that each have edges {1/2} unit long.\nWhat is its volume?',
@@ -162,14 +173,18 @@ SETS = [
               sa('A closed shape has 3 straight sides.\nWhat is it called?', 'Name:', key='Triangle'),
           ]),
       ],
-      f1=B('Graph points in the first quadrant', '5.G.A.2', [
-          plot('Plot and label the points A(2, 6), B(5, 1), and C(0, 4).', grid(8, 8), key='A plotted at (2, 6), B at (5, 1), C at (0, 4), each labeled'),
-          tf('The point (4, 0) is on the x-axis.', key=True),
-          mc('Which point is 3 units to the right of the origin and 5 units up?', ['(3, 5)', '(5, 3)', '(3, 3)', '(5, 5)']),
+      f1=B('Graph points in the first quadrant to solve problems', '5.G.A.2', [
+          draw_write('On a map grid, Ana\'s house is at (1, 2) and the park is at (1, 7). Each unit is 1 block.\n'
+                     'Plot and label both points. How many blocks apart are they?', grid(8, 8), 'Blocks:',
+                     draw='Points plotted at (1, 2) and (1, 7), each labeled', key='5 blocks',
+                     note='Grade both: the two points plotted and labeled, and the distance 5 blocks (7 - 2 = 5).'),
+          tf('A plant is 4 cm tall on day 0 and grows 2 cm each day. The point (3, 10) shows its height on day 3.', key=True),
+          mc('A tank holds 2 liters at minute 0 and fills 3 liters each minute.\nWhich point (minutes, liters) shows the amount after 4 minutes?',
+             ['(4, 14)', '(14, 4)', '(4, 12)', '(3, 4)']),
           draw_write('Plot (1, 1), (5, 1), and (1, 4), and connect them.\nWhat kind of angle is at (1, 1)?', grid(6, 6), 'Kind of angle:',
                      draw='Points plotted at (1, 1), (5, 1) and (1, 4) and joined to make a triangle', key='Right angle',
                      note='Grade both: the three points joined, and "right angle".'),
-          tf('The point (0, 3) is on the x-axis.', key=False),
+          tf('On a map grid, a store is at (6, 3) and a bank is at (2, 3). They are 8 units apart.', key=False),
       ]),
       f2=B('Draw polygons in the coordinate plane', '6.G.A.3', [
           draw_write('Plot A(-3, 2), B(3, 2), C(3, -2), and D(-3, -2). Connect them in order.\nWhat is the most specific name for the polygon?', coord(),
@@ -204,13 +219,13 @@ SETS = [
               sa('A figure is made of two rectangles that do not overlap. Their areas are 12 and 15 square units.\nWhat is the area of the figure?', 'Area:',
                  key='27 square units'),
               tf('The area of a figure made of parts that do not overlap is the sum of the areas of the parts.', key=True),
-              mc('A 4-by-3 rectangle and a 2-by-3 rectangle are joined without overlapping.\nWhat is the total area?',
-                 ['18 square units', '12 square units', '24 square units', '9 square units']),
+              mc('A figure is made of two rectangles that do not overlap. Their areas are 12 and 6 square units.\nWhat is the area of the figure?',
+                 ['18 square units', '12 square units', '72 square units', '6 square units']),
               sa('Two squares that do not overlap have areas of 9 and 16 square units.\nWhat is their total area?', 'Area:', key='25 square units'),
               tf('Two rectangles of 10 and 6 square units that do not overlap have a total area of 60 square units.', key=False),
           ]),
       ],
-      f1=B('Volume is additive', '5.MD.C.5.c', [
+      f1=B('Volume is additive', '5.MD.C.5.c', nearest=True, qs=[
           sa('Two prisms that do not overlap have volumes of 24 and 36 cubic units.\nWhat is their total volume?', 'Volume:', key='60 cubic units'),
           tf('A figure made of a 2-by-3-by-4 prism and a 1-by-3-by-4 prism has a volume of 36 cubic units.', key=True),
           mc('A figure is made of a 5-by-2-by-2 prism and a 3-by-2-by-1 prism that do not overlap.\nWhat is its volume?',
@@ -246,12 +261,14 @@ SETS = [
              ['Total turn:', 'More to a full turn:'], key='225°; 135°'),
       ],
       back=[
-          B('Find an unknown in an addition or subtraction equation', '2.OA.A.1', [
-              sa('Find the unknown number.\n28 + ? = 90', 'Unknown:', key='62'),
-              tf('If 45 + n = 80, then n = 35.', key=True),
-              mc('? + 37 = 60', ['23', '97', '33', '27']),
-              sa('Find the unknown number.\n100 - ? = 64', 'Unknown:', key='36'),
-              tf('If m + 19 = 50, then m = 41.', key=False),
+          B('Solve one-step word problems with an unknown in any position', '2.OA.A.1', [
+              sa('A box had some crayons. After 28 more crayons were put in, it had 90 crayons.\nHow many crayons were in the box at first?', 'Crayons:',
+                 key='62'),
+              tf('Kim had 45 stickers. She got some more, and now she has 80. She got 35 stickers.', key=True),
+              mc('Some birds were on a fence. 37 more birds came, and then there were 60 birds.\nHow many birds were on the fence at first?',
+                 ['23', '97', '33', '27']),
+              sa('Ty had 100 cards. He gave some away and has 64 left.\nHow many cards did he give away?', 'Cards:', key='36'),
+              tf('A shelf had some books. 19 more books were added, making 50 books. There were 41 books at first.', key=False),
           ]),
           B('Find an unknown in an equation within 20', '1.OA.D.8', [
               sa('Find the unknown number.\n8 + ? = 15', 'Unknown:', key='7'),
