@@ -130,6 +130,26 @@ def describe(f):
         items = ['%s: %d' % (label_of(f, v), n) for v, n in sorted(f['data'].items())]
         return 'Dot plot%s, number line from %s to %s. Dots per value: %s.' % (
             (' titled "%s"' % title) if title else '', label_of(f, f['min']), label_of(f, f['max']), ', '.join(items))
+    if k == 'clock':
+        if not f.get('hands', True):
+            return 'Analog clock face with the numbers 1 to 12 and minute marks, with no hands; the student draws the hands.'
+        return 'Analog clock with an hour hand and a minute hand showing %d:%02d.' % (f['hour'], f['minute'])
+    if k == 'picgraph':
+        if not any(n for _, n in f['rows']):
+            return 'Blank picture graph "%s" with rows for %s and the key ● = %s; the student draws the symbols.' % (
+                f['title'], ', '.join(r[0] for r in f['rows']), f['key'])
+        return 'Picture graph "%s". Key: each ● = %s. %s.' % (
+            f['title'], f['key'], '; '.join('%s: %d symbols' % (r[0], r[1]) for r in f['rows']))
+    if k == 'ruler':
+        d = 'Inch ruler from 0 to %d inches with marks every 1/%d inch' % (f['max'], f.get('div', 4))
+        if f.get('obj'):
+            d += '. %s lies above the ruler from %s to %s inches' % (
+                f.get('name') or 'An object', num(f['obj'][0]), num(f['obj'][1]))
+        return d + '.'
+    if k == 'beaker':
+        u = f.get('unit', 'L')
+        return 'Measuring container marked from 0 to %s %s, with marks every %s %s, filled to %s %s.' % (
+            num(f['max']), u, num(f['step']), u, num(f.get('fill', 0)), u)
     if k == 'hist':
         kind = 'Histogram' if any('–' in str(b) for b in f['bins']) else 'Bar graph'
         lab = ''

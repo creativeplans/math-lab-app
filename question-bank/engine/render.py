@@ -1091,6 +1091,127 @@ def fig_rays(c, f, x, y, w, h, s):
         draw_label(c, text, cx + rr * math.cos(a), cy + rr * math.sin(a), fs, FB)
 
 
+def fig_clock(c, f, x, y, w, h, s):
+    """Analog clock. hour, minute: the time shown; hands=False draws a clock face with no hands (for drawing)."""
+    import math
+    R = min(w / 2, h / 2) - 12
+    cx, cy = x + w / 2, y + h / 2
+    c.setFillColor(white)
+    c.setStrokeColor(INK)
+    c.setLineWidth(2.2)
+    c.circle(cx, cy, R, fill=1, stroke=1)
+    for i in range(60):
+        a = math.radians(90 - 6 * i)
+        L = R * (0.12 if i % 5 == 0 else 0.05)
+        c.setLineWidth(1.6 if i % 5 == 0 else 0.7)
+        c.line(cx + (R - L) * math.cos(a), cy + (R - L) * math.sin(a), cx + R * math.cos(a), cy + R * math.sin(a))
+    fs = max(9, R * 0.17) * s
+    for n in range(1, 13):
+        a = math.radians(90 - 30 * n)
+        draw_label(c, str(n), cx + R * 0.74 * math.cos(a), cy + R * 0.74 * math.sin(a), fs, FB)
+    if f.get('hands', True):
+        hr, mn = f['hour'], f['minute']
+        for ang, L, lw in ((90 - 30 * ((hr % 12) + mn / 60), R * 0.48, 4.2), (90 - 6 * mn, R * 0.8, 2.4)):
+            a = math.radians(ang)
+            c.setStrokeColor(POINT)
+            c.setLineWidth(lw)
+            c.setLineCap(1)
+            c.line(cx, cy, cx + L * math.cos(a), cy + L * math.sin(a))
+            c.setLineCap(0)
+    c.setFillColor(INK)
+    c.circle(cx, cy, 4, fill=1, stroke=0)
+
+
+def fig_ruler(c, f, x, y, w, h, s):
+    """Inch ruler from 0 to max, ticks every 1/div inch. obj=(start, end) draws an object above the ruler."""
+    n, d = f['max'], f.get('div', 4)
+    unit = (w - 50) / n
+    x0 = x + 25
+    ry = y + 20
+    rh = 46
+    c.setFillColor(HexColor('#f6edd6'))
+    c.setStrokeColor(INK)
+    c.setLineWidth(1.2)
+    c.rect(x0 - 12, ry, n * unit + 24, rh, fill=1, stroke=1)
+    fs = 12 * s
+    for i in range(n * d + 1):
+        xx = x0 + i * unit / d
+        if i % d == 0:
+            L = 22
+        elif d % 2 == 0 and i % (d // 2) == 0:
+            L = 15
+        else:
+            L = 9
+        c.setLineWidth(1.2 if i % d == 0 else 0.8)
+        c.line(xx, ry + rh, xx, ry + rh - L)
+        if i % d == 0:
+            draw_label(c, str(i // d), xx, ry + rh - 31, fs, FB)
+    draw_label(c, f.get('unit', 'inches'), x0 + n * unit / 2, ry - 10, 10 * s, F, color=MUTED)
+    if f.get('obj'):
+        a, b = f['obj']
+        c.setFillColor(SHADE)
+        c.setStrokeColor(POINT)
+        c.setLineWidth(1.4)
+        c.roundRect(x0 + a * unit, ry + rh + 12, (b - a) * unit, 22, 6, fill=1, stroke=1)
+        if f.get('name'):
+            draw_label(c, f['name'], x0 + (a + b) / 2 * unit, ry + rh + 23, 11 * s, FB)
+
+
+def fig_beaker(c, f, x, y, w, h, s):
+    """Measuring container marked from 0 to max every step (labeled every label_step), filled to fill."""
+    mx, st = f['max'], f['step']
+    lst = f.get('label_step', st)
+    bw = min(120, w * 0.4)
+    bx = x + w / 2 - bw / 2 - 20
+    by, bh = y + 14, h - 40
+    lvl = f.get('fill', 0) / mx * bh
+    c.setFillColor(SHADE)
+    c.rect(bx, by, bw, lvl, fill=1, stroke=0)
+    c.setStrokeColor(INK)
+    c.setLineWidth(2)
+    c.line(bx, by + bh + 14, bx, by)
+    c.line(bx, by, bx + bw, by)
+    c.line(bx + bw, by, bx + bw, by + bh + 14)
+    fs = 12 * s
+    v = 0
+    k = 0
+    while v <= mx + 1e-9:
+        yy = by + v / mx * bh
+        major = abs(v / lst - round(v / lst)) < 1e-9
+        c.setLineWidth(1.3 if major else 0.8)
+        c.line(bx + bw - (18 if major else 10), yy, bx + bw, yy)
+        if major and v > 0:
+            draw_label(c, fmt(v) + ' ' + f.get('unit', 'L'), bx + bw + 8, yy, fs, F, anchor='l')
+        k += 1
+        v = k * st
+
+
+def fig_picgraph(c, f, x, y, w, h, s):
+    """Picture graph: title, one row per category with n symbols (none when the student draws them), and a key."""
+    rows = f['rows']
+    fs = 15 * s
+    rh = min(40, (h - 50) / (len(rows) + 1))
+    lw = max(sw(r[0], FB, fs) for r in rows + [(f['title'], 0)]) + 24
+    gw = min(w - 10, lw + 330)
+    x0 = x + (w - gw) / 2
+    top = y + h - 4
+    c.setStrokeColor(HexColor('#6c7f95'))
+    c.setLineWidth(1)
+    c.setFillColor(LBG)
+    c.rect(x0, top - rh, gw, rh, fill=1, stroke=1)
+    draw_label(c, f['title'], x0 + gw / 2, top - rh / 2, fs, FB)
+    for i, (name, n) in enumerate(rows):
+        yy = top - rh * (i + 2)
+        c.setFillColor(white)
+        c.rect(x0, yy, lw, rh, fill=1, stroke=1)
+        c.rect(x0 + lw, yy, gw - lw, rh, fill=1, stroke=1)
+        draw_label(c, name, x0 + lw / 2, yy + rh / 2, fs, FB)
+        c.setFillColor(INK)
+        for j in range(n):
+            c.circle(x0 + lw + 22 + j * 30, yy + rh / 2, 9, fill=1, stroke=0)
+    draw_label(c, 'Key: ● = ' + f['key'], x0 + gw / 2, top - rh * (len(rows) + 1) - 22, fs)
+
+
 def fig_array(c, f, x, y, w, h, s):
     """rows x cols dots; split: draw a dashed line after that many columns (to show a broken-apart array)."""
     R, C = f['rows'], f['cols']
@@ -1219,9 +1340,11 @@ FIGS = {
     'grid': fig_grid, 'cyl': fig_cyl, 'cone': fig_cyl, 'sphere': fig_cyl, 'pyramid': fig_pyramid,
     'vstack': fig_vstack, 'hrow': fig_hrow, 'text': fig_text, 'rays': fig_rays,
     'array': fig_array, 'protractor': fig_protractor, 'geo': fig_geo,
+    'clock': fig_clock, 'ruler': fig_ruler, 'beaker': fig_beaker, 'picgraph': fig_picgraph,
 }
 
-RIGHT_KINDS = {'coord', 'shape', 'prism', 'grid', 'cyl', 'cone', 'sphere', 'pyramid', 'rays', 'array', 'geo', 'protractor'}
+RIGHT_KINDS = {'coord', 'shape', 'prism', 'grid', 'cyl', 'cone', 'sphere', 'pyramid', 'rays', 'array', 'geo', 'protractor',
+               'clock', 'beaker'}
 
 
 def draw_fig(c, f, x, y, w, h, s=1.0):
