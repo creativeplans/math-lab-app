@@ -54,7 +54,7 @@ def grade_num(code):
 def std_info(code):
     if code.startswith('HS'):
         dom = code[2:].split('.')[0]
-        return 'Grade 9 (High School)', HS_DOMAINS[dom]
+        return 'High School (Grade 9 in this bank)', HS_DOMAINS[dom]
     grade, dom = code.split('.')[:2]
     return 'Grade ' + grade, DOMAINS[dom]
 

@@ -44,26 +44,30 @@ SETS = [
           tf('10⁻² = {1/100}', key=True),
           tf('3⁻² = -9', key=False, note='3⁻² = 1/9.'),
       ]),
-      f2=B('Explain the steps used to solve an equation', 'HSA-REI.A.1', [
-          sa('To solve x - 9 = 4, Lia adds 9 to both sides.\nWhat property of equality justifies this step?', 'Property:',
-             key='The addition property of equality', note='Any answer saying that adding the same number to both sides keeps the equation true.'),
-          sa('Solve x + 15 = 6.\nWhat number do you add to both sides, and what is x?', 'Answer:', key='Add -15 to both sides; x = -9'),
-          mc('Which step removes the 5 when solving 3x + 5 = 20?',
-             ['Add -5 to both sides.', 'Add 5 to both sides.', 'Multiply both sides by -5.', 'Divide both sides by 5.']),
-          tf('Adding -4 to both sides of x + 4 = 10 gives x = 6.', key=True),
-          tf('Adding 8 to both sides of x - 8 = 3 gives x = -5.', key=False, note='It gives x = 11.'),
+      f2=B('Justify each step in solving an equation and find steps that change the solution', 'HSA-REI.A.1', [
+          work('Solve {1/2}(x - 6) = 4 + x. Write each step and the reason for it.', 'x =',
+               method='Every step with a valid reason. Example: distributive property ({1/2}x - 3 = 4 + x); subtract x from both sides '
+                      '(-{1/2}x - 3 = 4); add 3 to both sides (-{1/2}x = 7); multiply both sides by -2 (x = -14). Other valid orders are accepted. '
+                      'A correct answer without reasons is not full credit.',
+               key='-14'),
+          sa('Lia solved 3(x - 4) = 2x + 5 like this:\nStep 1: 3x - 4 = 2x + 5\nStep 2: x = 9\nWhich step is wrong? Give the correct solution.', 'Answer:',
+             key='Step 1 is wrong: 3(x - 4) = 3x - 12. The correct solution is x = 17.', note='Grade both: Step 1 identified with the reason, and x = 17.'),
+          mc('Which step can change the solutions of an equation?',
+             ['Multiplying both sides of 2x = 6 by 0', 'Adding -7 to both sides of x + 7 = 3', 'Dividing both sides of -4x = 12 by -4', 'Multiplying both sides of {x/3} = 5 by 3']),
+          tf('Adding 2x to both sides of 5 - 2x = x + 11 gives 5 = 3x + 11, which has the same solution as the original equation.', key=True),
+          tf('Squaring both sides of x = 3 gives x² = 9, which has the same solutions as x = 3.', key=False, note='x² = 9 also has the solution x = -3.'),
       ])),
 
     # ------------------------------------------------------------------ 7.NS.A.1.b (number line)
     S('7.NS.A.1.b', 'Add rational numbers on a number line',
       main=[
           sa('Use the number line to add.\n-3 + 7', 'Sum:', fig=ints(-8, 8), key='4'),
-          sa('Add.\n-6 + (-4)', 'Sum:', key='-10'),
+          sa('Use the number line to add.\n-{3/4} + 1{1/2}', 'Sum:', fig=halves(-2, 2), key='3/4', note='0.75 is also correct.'),
           mc('Start at 2 on a number line and move 5 units to the left.\nWhich sum does this show?', ['2 + (-5)', '2 + 5', '-2 + 5', '-5 + (-2)']),
           draw_write('Show -2 + 6 on the number line. Start at -2 and draw an arrow 6 units long.\nWhat is the sum?', ints(-8, 8), 'Sum:',
                      draw='An arrow that starts at -2 and ends at 4 (6 units to the right)', key='4',
                      note='Grade both: the arrow from -2 to 4, and the sum 4.'),
-          tf('-4.5 + 2 = -2.5', key=True),
+          tf('-{3/4} + {5/6} = {1/12}', key=True),
       ],
       back=[
           B('Find and position integers on a number line', '6.NS.C.6.c', [
@@ -128,21 +132,22 @@ SETS = [
           tf('x + 6 = x - 6 has no solution.', key=True),
           tf('5x - 5x = 0 has no solution.', key=False, note='It is true for every x, so it has infinitely many solutions.'),
       ]),
-      f2=B('Solve linear equations in one variable', 'HSA-REI.B.3', [
-          sa('Solve for x.\n4x - 7 = -2x + 11', 'x =', key='3'),
-          sa('Solve for x.\n-3(x - 2) = 15', 'x =', key='-3'),
-          mc('Solve for x.\n{x/5} + 3 = -1', ['x = -20', 'x = 10', 'x = -4', 'x = 20']),
-          tf('x = -2 is the solution of 6 + 2x = 2.', key=True),
-          tf('x = 4 is the solution of 7 - x = 11.', key=False, note='The solution is x = -4.'),
+      f2=B('Solve linear equations with letter coefficients or fraction coefficients', 'HSA-REI.B.3', [
+          sa('Solve for x. Assume a ≠ 0.\nax + 5 = 2', 'x =', key='-3/a', note='{-3/a} written in any equivalent form is correct.'),
+          sa('Solve for x. Assume a ≠ b.\nax + c = bx', 'x =', key='-c/(a - b)', note='c/(b - a) is also correct.'),
+          mc('Solve for x.\n{2/3}(x - 4) = {1/4}x + 1', ['x = {44/5}', 'x = {20/3}', 'x = 12', 'x = {11/5}']),
+          tf('If k ≠ 0, the solution of k(x - 2) = 3k is x = 5.', key=True),
+          tf('The solution of mx + 4 = 4 is x = 1 for every nonzero value of m.', key=False, note='The solution is x = 0.'),
       ])),
 
     # ------------------------------------------------------------------ 7.NS.A.1.b (context)
     S('7.NS.A.1.b', 'Interpret sums of rational numbers in real-world situations',
       main=[
           sa('The temperature was -5°F at dawn. It rose 12°F by noon.\nWhat was the temperature at noon?', 'Temperature:', key='7°F'),
-          sa('A submarine is at -240 feet. It rises 85 feet.\nWhat is its new position?', 'Position:', key='-155 feet', note='"155 feet below sea level" is also correct.'),
+          sa('A stock\'s price changed by -1{1/4} dollars on Monday and by +2{3/4} dollars on Tuesday.\nWhat was the total change over the two days?', 'Total change:',
+             key='+1 1/2 dollars', note='+$1.50 or 3/2 dollars is also correct.'),
           mc('Jo\'s account balance is -$18. She deposits $25.\nWhich sum gives her new balance?', ['-18 + 25 = 7', '18 + 25 = 43', '-18 + (-25) = -43', '18 + (-25) = -7']),
-          tf('A football team loses 6 yards, then gains 4 yards. The total change is -2 yards.', key=True),
+          tf('A pond\'s water level changed by -{2/3} foot one day and by +{1/2} foot the next day. The total change was -{1/6} foot.', key=True),
           tf('A hiker 350 feet below sea level climbs 400 feet. She ends 50 feet below sea level.', key=False, note='She ends 50 feet above sea level.'),
       ],
       back=[
@@ -262,7 +267,10 @@ SETS = [
           work('Find the sum by grouping numbers to make the work easier. Show your work.\n-8 + 13.5 + 8', 'Sum:',
                method='Any grouping that uses the commutative and associative properties correctly. Example: (-8 + 8) + 13.5 = 0 + 13.5. Other valid groupings are also correct.',
                key='13.5'),
-          sa('Find the sum.\n{3/4} + (-2) + {1/4}', 'Sum:', key='-1'),
+          work('Rewrite each subtraction as adding the opposite. Then use properties to find the value. Show your work.\n5.6 - 8 - 3.6 + 8', 'Value:',
+               method='Subtraction rewritten as adding the opposite, then any valid regrouping. Example: 5.6 + (-8) + (-3.6) + 8 = (5.6 + (-3.6)) + (-8 + 8) = 2 + 0. '
+                      'Other valid groupings are accepted; subtraction itself is not reordered.',
+               key='2'),
           mc('Which property is shown?\n-5 + 2.7 = 2.7 + (-5)', ['Commutative property of addition', 'Associative property of addition', 'Additive identity property', 'Additive inverse property']),
           tf('-6 + (4 + 6) = (-6 + 6) + 4', key=True),
           tf('7 - 3 = 3 - 7', key=False, note='Subtraction is not commutative: 4 ≠ -4.'),
@@ -281,6 +289,13 @@ SETS = [
               mc('Add.\n9.08 + 2.5', ['11.58', '9.33', '11.13', '34.08']),
               tf('2.25 + 3.75 = 6', key=True),
               tf('4.5 + 0.55 = 5.5', key=False),
+          ]),
+          B('Reorder and regroup addends to add within 100', '2.NBT.B.5', [
+              sa('Add by first adding the two numbers that make a ten.\n28 + 17 + 2', 'Sum:', key='47'),
+              sa('Add by first adding the two numbers that make a ten.\n36 + 25 + 4', 'Sum:', key='65'),
+              mc('Which grouping makes 46 + 19 + 4 easier to add?', ['(46 + 4) + 19', '(46 - 4) + 19', '46 + 19 - 4', '(46 + 19) - 4']),
+              tf('27 + 18 + 3 = 27 + 3 + 18', key=True),
+              tf('(35 + 15) + 9 = 35 + (15 + 8)', key=False),
           ]),
       ],
       f1=B('Solve equations by collecting like terms', '8.EE.C.7.b', [
@@ -323,12 +338,12 @@ SETS = [
               tf('4.2 × 10 = 4.20', key=False),
           ]),
       ],
-      f1=B('Find powers of negative numbers', '8.EE.A.1', [
-          sa('Find the value.\n(-2)⁵', 'Value:', key='-32'),
-          sa('Find the value.\n(-3)² × (-3)', 'Value:', key='-27'),
-          mc('Which expression has a positive value?', ['(-4)⁴', '(-4)³', '-4⁴', '(-4)⁵']),
-          tf('(-5)² = 25', key=True),
-          tf('-2⁴ = 16', key=False, note='-2⁴ = -(2⁴) = -16.'),
+      f1=B('Apply the properties of integer exponents with negative bases', '8.EE.A.1', [
+          sa('Write as a single power of -2. Then find its value.\n(-2)⁵ ÷ (-2)³', 'Answer:', key='(-2)² = 4'),
+          sa('Write as a single power of -3. Then find its value.\n(-3)⁴ × (-3)⁻¹', 'Answer:', key='(-3)³ = -27'),
+          mc('Which expression is equal to {1/16}?', ['(-4)⁻²', '(-4)²', '-4⁻²', '(-4)⁻¹ × 4']),
+          tf('((-5)²)³ = (-5)⁶ = 15,625', key=True),
+          tf('(-7)⁰ = -1', key=False, note='Any nonzero number to the 0 power is 1, so (-7)⁰ = 1.'),
       ]),
       f2=B('Multiply polynomials', 'HSA-APR.A.1', [
           sa('Multiply.\n-3x(2x - 5)', 'Product:', key='-6x² + 15x'),
@@ -364,18 +379,20 @@ SETS = [
               tf('On a horizontal number line, positive numbers are to the left of 0.', key=False),
           ]),
       ],
-      f1=B('Solve real-world equations with negative rates', '8.EE.C.7.b', [
-          sa('A balloon at 300 m descends 12.5 m each minute. Solve 300 - 12.5t = 175 to find when it is at 175 m.', 't =', key='10 minutes'),
-          sa('A diver at -8 feet descends 1.5 feet each second. Solve -8 - 1.5t = -26 to find when she is at -26 feet.', 't =', key='12 seconds'),
-          mc('Solve for x.\n-4x + 10 = -14', ['x = 6', 'x = -6', 'x = 1.5', 'x = -1']),
-          tf('t = 5 is the solution of 20 - 3t = 5.', key=True),
-          tf('x = -3 is the solution of -2x - 7 = 13.', key=False, note='The solution is x = -10.'),
+      f1=B('Solve equations that compare two quantities changing at negative rates', '8.EE.C.7.b', [
+          sa('Diver A starts at -10 m and rises 0.5 m each second. Diver B starts at -22 m and rises 1.25 m each second.\nSolve -10 + 0.5t = -22 + 1.25t to find when they are at the same depth.', 't =', key='16 seconds'),
+          sa('Tank A has 50 liters and drains 2.5 liters each minute. Tank B has 20 liters and drains 1 liter each minute.\nSolve 50 - 2.5t = 20 - t to find when they hold the same amount.', 't =', key='20 minutes'),
+          mc('Solve for x.\n-3(x + 4) = 2(x - 1) - 5', ['x = -1', 'x = 1', 'x = -3.4', 'x = 3']),
+          tf('t = 8 is the solution of 300 - 12.5t = 180 + 2.5t.', key=True),
+          tf('x = -2 is the solution of -1.5x + 4 = 2(x + 5).', key=False, note='The solution is x = -12/7.'),
       ]),
       f2=B('Create a one-variable equation for a situation with a negative rate', 'HSA-CED.A.1', [
-          sa('A phone battery is at 90% and drops 6% each hour.\nWrite and solve an equation to find when it reaches 30%.', 'Answer:',
-             key='90 - 6h = 30; h = 10 hours', note='Any correct equation earns credit.'),
-          sa('A submarine at -50 m dives 20 m each minute.\nWrite and solve an equation to find when it reaches -170 m.', 'Answer:',
-             key='-50 - 20t = -170; t = 6 minutes', note='Any correct equation earns credit.'),
+          sa('A phone battery is at 90% of its full charge. It drops by 6 percentage points of its full capacity each hour.\nWrite and solve an equation to find when it reaches 30%.', 'Equation and answer:',
+             key='The equation 90 - 6h = 30 and the answer h = 10 hours',
+             note='Both parts are required: a valid equation (for example 90 - 6h = 30) and the correct answer, 10 hours. Any valid equation is accepted, but the solution must also be correct.'),
+          sa('A submarine at -50 m dives 20 m each minute.\nWrite and solve an equation to find when it reaches -170 m.', 'Equation and answer:',
+             key='The equation -50 - 20t = -170 and the answer t = 6 minutes',
+             note='Both parts are required: a valid equation (for example -50 - 20t = -170) and the correct answer, 6 minutes. Any valid equation is accepted, but the solution must also be correct.'),
           mc('A store\'s profit was -$400 and goes up $125 each month.\nWhich equation finds the month m when the profit is $600?',
              ['-400 + 125m = 600', '400 + 125m = 600', '-400 - 125m = 600', '125 - 400m = 600']),
           tf('A 72°F room cools 4°F each hour. The equation 72 - 4t = 40 finds when the room is 40°F.', key=True),
@@ -425,11 +442,12 @@ SETS = [
     # ------------------------------------------------------------------ 7.NS.A.2.b (context)
     S('7.NS.A.2.b', 'Interpret quotients of rational numbers in real-world situations',
       main=[
-          sa('A stock lost $18 in value over 6 days at a steady rate.\nWhat was the change in value per day?', 'Change per day:', key='-$3'),
+          sa('A snail\'s position changed by -{3/4} meter in {1/2} minute at a steady rate.\nWhat was the change in position per minute?', 'Change per minute:',
+             key='-3/2 meters per minute', note='-1 1/2 or -1.5 meters per minute is also correct.'),
           sa('A diver\'s position changed by -45 feet in 9 seconds at a steady rate.\nWhat was the change in position per second?', 'Change per second:', key='-5 feet'),
-          mc('The temperature changed by -14°F over 4 hours at a steady rate.\nWhat was the change per hour?', ['-3.5°F', '3.5°F', '-56°F', '-10°F']),
+          mc('The temperature changed by -4{1/2}°F over 1{1/2} hours at a steady rate.\nWhat was the change per hour?', ['-3°F', '3°F', '-6{3/4}°F', '-{1/3}°F']),
           tf('A balance changes by -$120 over 8 weeks at a steady rate. The change is -$15 per week.', key=True),
-          tf('A hiker descends 600 feet in 4 hours at a steady rate. Her change in elevation is 150 feet per hour.', key=False, note='The change is -150 feet per hour.'),
+          tf('A water level changed by -2{2/5} inches over 4 days at a steady rate. The change was {3/5} inch per day.', key=False, note='The change was -3/5 inch per day.'),
       ],
       back=[
           B('Divide fractions in word problems', '6.NS.A.1', [
@@ -444,8 +462,8 @@ SETS = [
               sa('3 friends share {1/2} pound of grapes equally.\nHow much does each friend get?', 'Amount:', key='1/6 pound'),
               mc('2 people share {1/3} of a pizza equally.\nHow much of the whole pizza does each person get?',
                  ['{1/6} of the pizza', '{2/3} of the pizza', '6 pizzas', '{3/2} of the pizza']),
-              tf('4 ÷ {1/5} = 20', key=True),
-              tf('{1/8} ÷ 2 = {1/4}', key=False),
+              tf('4 pounds of rice is packed into bags that each hold {1/5} pound. There are 20 bags.', key=True),
+              tf('2 people share {1/8} pound of nuts equally. Each person gets {1/4} pound.', key=False, note='Each person gets 1/16 pound.'),
           ]),
       ],
       f1=B('Find a rate of change from a description', '8.F.B.4', [
@@ -471,11 +489,14 @@ SETS = [
           work('Use properties to multiply. Show how you grouped or ordered the factors.\n-4 × 7.3 × 25', 'Product:',
                method='Any correct use of the commutative and associative properties. Example: (-4 × 25) × 7.3 = -100 × 7.3. Other valid groupings are also correct.',
                key='-730'),
-          sa('Multiply.\n{3/5} × (-12) × {5/3}', 'Product:', key='-12'),
+          work('Rewrite the division as multiplication by a reciprocal. Then use properties to find the value. Show your work.\n-18 ÷ {3/4} × {1/6}', 'Value:',
+               method='Division rewritten as multiplying by {4/3}, then any valid regrouping. Example: -18 × {4/3} × {1/6} = (-18 × {1/6}) × {4/3} = -3 × {4/3}. '
+                      'Other valid groupings are accepted; division itself is not reordered.',
+               key='-4'),
           mc('Which property is shown?\n-2 × (5 × 3.1) = (-2 × 5) × 3.1',
              ['Associative property of multiplication', 'Commutative property of multiplication', 'Distributive property', 'Multiplicative identity property']),
           tf('-6 × (10 + {1/2}) = -60 + (-3)', key=True),
-          tf('-8 × {1/8} = 1', key=False, note='The product is -1.'),
+          tf('-24 ÷ 6 ÷ 2 = -24 ÷ (6 ÷ 2)', key=False, note='Division is not associative: -24 ÷ 6 ÷ 2 = -2, but -24 ÷ 3 = -8.'),
       ],
       back=[
           B('Apply the distributive property', '6.EE.A.3', [
@@ -493,16 +514,16 @@ SETS = [
               tf('(2 × 3) × 5 = 2 × 3 + 5', key=False),
           ]),
       ],
-      f1=B('Solve equations by multiplying by a reciprocal', '8.EE.C.7.b', [
-          sa('Solve for x.\n-{3/4}x = 18', 'x =', key='-24'),
-          sa('Solve for x.\n-0.6x = -4.2', 'x =', key='7'),
-          mc('Solve for x.\n{2/5}(x - 10) = -6', ['x = -5', 'x = -25', 'x = 25', 'x = 5']),
-          tf('x = -10 is the solution of -{1/2}x = 5.', key=True),
-          tf('x = 3 is the solution of -1.5x = 4.5.', key=False, note='The solution is x = -3.'),
+      f1=B('Solve equations with fraction coefficients on both sides', '8.EE.C.7.b', [
+          sa('Solve for x.\n{3/4}x - 2 = {1/2}x + 3', 'x =', key='20'),
+          sa('Solve for x.\n-{2/3}(x + 6) = {1/3}x - 1', 'x =', key='-3'),
+          mc('Solve for x.\n{x/4} + {x/6} = 5', ['x = 12', 'x = 50', 'x = 6', 'x = 2']),
+          tf('x = -10 is the solution of -{1/2}x + 1 = {1/5}x + 8.', key=True),
+          tf('x = 3 is the solution of {5/6}x - 1 = {1/2}x + 1.', key=False, note='The solution is x = 6.'),
       ]),
       f2=B('Rewrite expressions with rational exponents', 'HSN-RN.A.2', [
           sa('Find the value.\n27^(1/3)', 'Value:', key='3'),
-          sa('Write √x using a rational exponent.', 'Answer:', key='x^(1/2)'),
+          sa('For a real number x ≥ 0, write √x using a rational exponent.', 'Answer:', key='x^(1/2)'),
           mc('Which number is equal to 16^(1/2)?', ['4', '8', '2', '32']),
           tf('(x³)^(1/3) = x', key=True),
           tf('25^(1/2) = 12.5', key=False, note='25^(1/2) = 5.'),
@@ -582,9 +603,11 @@ SETS = [
           tf('(9 × 10⁶) ÷ (3 × 10²) = 3 × 10³', key=False, note='The quotient is 3 × 10⁴.'),
       ]),
       f2=B('Use units to solve multistep problems', 'HSN-Q.A.1', [
-          sa('A car uses 0.04 gallon of gas per mile. Gas costs $3.50 per gallon.\nHow much does the gas cost for a 250-mile trip?', 'Cost:', key='$35'),
-          sa('A faucet leaks 0.2 liter per hour.\nHow many liters leak in 1 week?', 'Liters:', key='33.6'),
-          mc('A worker earns $18.50 per hour. She works 7.5 hours per day for 4 days.\nHow much does she earn?', ['$555', '$138.75', '$74', '$540']),
+          sa('A car gets 32 miles per gallon. Gas costs $3.60 per gallon.\nUse units to find the gas cost per mile. Then find the cost of a 400-mile trip.', 'Answer:',
+             key='$0.1125 per mile; $45 for 400 miles', note='Grade both: $0.1125 (about 11.25 cents) per mile, and $45.'),
+          sa('A faucet leaks 12 milliliters per minute.\nHow many liters leak in 1 day? Show the unit conversions.', 'Liters:', key='17.28 liters',
+             note='12 mL/min × 60 min/h × 24 h/day = 17,280 mL = 17.28 L.'),
+          mc('A printer uses 0.8 mL of ink per page. A 30 mL ink cartridge costs $24.\nWhat is the cost of ink per page?', ['$0.64', '$0.80', '$1.25', '$0.32']),
           tf('A speed of 12 meters per second is 43.2 kilometers per hour.', key=True),
           tf('Walking 3 miles per hour for 45 minutes covers 2.5 miles.', key=False, note='It covers 2.25 miles.'),
       ])),

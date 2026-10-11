@@ -1441,6 +1441,132 @@ def fig_geo(c, f, x, y, w, h, s):
             draw_label(c, it[2], px, py, fs, FB)
 
 
+def fig_extrude(c, f, x, y, w, h, s):
+    """Right prism whose front face is the polygon pts (counterclockwise, in units), extended straight back by depth d.
+    labels: one per front edge (pts[i] to pts[i+1]) or None; dlabel: the depth label; seams: front-face segments drawn
+    dashed where two prisms are joined."""
+    import math
+    pts, d = f['pts'], f['d']
+    ang = math.radians(35)
+    dep = 0.55
+    ddx, ddy = d * dep * math.cos(ang), d * dep * math.sin(ang)
+    xs = [p[0] for p in pts] + [p[0] + ddx for p in pts]
+    ys = [p[1] for p in pts] + [p[1] + ddy for p in pts]
+    minx, maxx, miny, maxy = min(xs), max(xs), min(ys), max(ys)
+    pad = 46
+    k = min((w - 2 * pad) / (maxx - minx), (h - 2 * pad) / (maxy - miny))
+    ox = x + (w - (maxx - minx) * k) / 2
+    oy = y + (h - (maxy - miny) * k) / 2
+
+    def P(p, back=False):
+        return (ox + (p[0] + (ddx if back else 0) - minx) * k, oy + (p[1] + (ddy if back else 0) - miny) * k)
+    fs = 14 * s
+    n = len(pts)
+    c.setStrokeColor(INK)
+    c.setLineWidth(1.6)
+    sides = []
+    for i in range(n):
+        a, b = pts[i], pts[(i + 1) % n]
+        ex, ey = b[0] - a[0], b[1] - a[1]
+        nx, ny = ey, -ex          # outward normal of a counterclockwise polygon
+        facing = nx * math.cos(ang) + ny * math.sin(ang) > 1e-9
+        if facing:
+            sides.append((-(a[0] + b[0]) - (a[1] + b[1]), a, b, ny > 1e-9))
+    for _, a, b, top in sorted(sides):
+        quad = [P(a), P(b), P(b, True), P(a, True)]
+        path = c.beginPath()
+        path.moveTo(*quad[0])
+        for q in quad[1:]:
+            path.lineTo(*q)
+        path.close()
+        c.setFillColor(HexColor('#d2e2f3') if top else HexColor('#c0d6ee'))
+        c.drawPath(path, fill=1, stroke=1)
+    path = c.beginPath()
+    path.moveTo(*P(pts[0]))
+    for p in pts[1:]:
+        path.lineTo(*P(p))
+    path.close()
+    c.setFillColor(HexColor('#e6eff9'))
+    c.drawPath(path, fill=1, stroke=1)
+    c.setDash(4, 4)
+    c.setLineWidth(1.1)
+    for a, b in f.get('seams', []):
+        c.line(*P(a), *P(b))
+    c.setDash()
+    cx = sum(p[0] for p in pts) / n
+    cy = sum(p[1] for p in pts) / n
+    for i, lab in enumerate(f.get('labels', [])):
+        if not lab:
+            continue
+        a, b = pts[i], pts[(i + 1) % n]
+        mx, my = P(((a[0] + b[0]) / 2, (a[1] + b[1]) / 2))
+        ex, ey = b[0] - a[0], b[1] - a[1]
+        L = math.hypot(ex, ey)
+        nx, ny = ey / L, -ex / L
+        if nx * math.cos(ang) + ny * math.sin(ang) > 1e-9:   # a side face is drawn there
+            if abs(nx) > abs(ny):                             # right-facing edge: label beyond the side face
+                bx, by = P(((a[0] + b[0]) / 2, (a[1] + b[1]) / 2), True)
+                draw_label(c, lab, bx + 8, by, fs, anchor='l')
+                continue
+            nx, ny = -nx, -ny                                 # top-facing edge: label inside the front face
+        if abs(ny) > abs(nx):
+            draw_label(c, lab, mx, my + (14 if ny > 0 else -15), fs)
+        else:
+            draw_label(c, lab, mx + (8 if nx > 0 else -8), my, fs, anchor='l' if nx > 0 else 'r')
+    if f.get('dlabel'):
+        i = max(range(n), key=lambda j: pts[j][0] - pts[j][1])     # the lower-right front corner
+        a = P(pts[i])
+        b = P(pts[i], True)
+        draw_label(c, f['dlabel'], (a[0] + b[0]) / 2 + 10, (a[1] + b[1]) / 2 - 6, fs, anchor='l')
+
+
+def fig_wedges(c, f, x, y, w, h, s):
+    """A circle cut into n equal wedges (left) and the same wedges laid alternately point-up and point-down (right),
+    which makes a shape close to a parallelogram: base about half the circumference, height about the radius."""
+    import math
+    n = f.get('n', 12)
+    fs = 14 * s
+    gap = 64
+    hf = math.pi / n
+    R = min((h - 70) / 2, (w - gap - 70) / (2 + n * math.sin(hf) + math.sin(hf)))
+    cx, cy = x + 20 + R, y + h / 2 + 6
+
+    def wedge(ax, ay, a0, fill):
+        p = c.beginPath()
+        p.moveTo(ax, ay)
+        p.arcTo(ax - R, ay - R, ax + R, ay + R, startAng=a0, extent=math.degrees(2 * hf))
+        p.close()
+        c.setFillColor(fill)
+        c.drawPath(p, fill=1, stroke=1)
+    light, dark = HexColor('#f3f7fc'), HexColor('#dce9f7')
+    c.setStrokeColor(INK)
+    c.setLineWidth(1.2)
+    for i in range(n):
+        wedge(cx, cy, math.degrees(2 * hf * i), dark if i % 2 == 0 else light)
+    c.setStrokeColor(POINT)
+    c.setLineWidth(2)
+    c.line(cx, cy, cx + R, cy)
+    draw_label(c, f.get('rlabel', 'r'), cx + R / 2, cy + 11, fs, FB, color=POINT)
+    ax = cx + R + 14
+    c.line(ax, cy, ax + gap - 34, cy)
+    arrow_head(c, ax + gap - 28, cy, 1, 0, 9)
+    c.setStrokeColor(INK)
+    c.setLineWidth(1.2)
+    sh, ch = R * math.sin(hf), R * math.cos(hf)
+    x0 = ax + gap - 10
+    yT = cy + ch / 2
+    yB = yT - ch
+    for i in range(n):
+        j = i // 2
+        if i % 2 == 0:
+            wedge(x0 + sh + 2 * sh * j, yT, 270 - math.degrees(hf), dark)
+        else:
+            wedge(x0 + 2 * sh + 2 * sh * j, yB, 90 - math.degrees(hf), light)
+    xr = x0 + n * sh + sh
+    drop = R * (1 - math.cos(hf))
+    draw_label(c, f.get('blabel', 'about half of the circumference'), (x0 + xr) / 2, yB - drop - 14, fs)
+    draw_label(c, f.get('hlabel', 'about r'), xr + 8, (yT + yB) / 2, fs, FB, anchor='l')
+
 FIGS = {
     'nl': fig_numberline, 'coord': fig_coord, 'dot': fig_dot, 'hist': fig_hist, 'box': fig_box,
     'table': fig_table, 'shape': fig_shape, 'prism': fig_prism, 'tape': fig_tape, 'stack': fig_stack,
@@ -1448,11 +1574,11 @@ FIGS = {
     'vstack': fig_vstack, 'hrow': fig_hrow, 'text': fig_text, 'rays': fig_rays,
     'array': fig_array, 'protractor': fig_protractor, 'geo': fig_geo,
     'clock': fig_clock, 'ruler': fig_ruler, 'beaker': fig_beaker, 'picgraph': fig_picgraph, 'scale': fig_scale,
-    'circle': fig_circle, 'spinner': fig_spinner,
+    'circle': fig_circle, 'spinner': fig_spinner, 'extrude': fig_extrude, 'wedges': fig_wedges,
 }
 
 RIGHT_KINDS = {'coord', 'shape', 'prism', 'grid', 'cyl', 'cone', 'sphere', 'pyramid', 'rays', 'array', 'geo', 'protractor',
-               'clock', 'beaker', 'scale', 'circle', 'spinner'}
+               'clock', 'beaker', 'scale', 'circle', 'spinner', 'extrude'}
 
 
 def draw_fig(c, f, x, y, w, h, s=1.0):

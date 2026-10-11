@@ -1,10 +1,14 @@
-from qb import S, B, sa, mc, tf, plot, draw_write, nl, coord
+from qb import S, B, sa, mc, tf, plot, draw_write, work, nl, coord
 from common import ints, grid
 
 
 def ray(v, d, op):
     """Integer number line from -6 to 6 with a solution ray: d = 'right' or 'left'; op = open circle."""
     return ints(-6, 6, ray=(v, d, op))
+
+
+COMPARE = ('Grade all three parts: (a) a correct arithmetic solution, (b) a correct equation with an algebraic solution, and (c) a comparison '
+           'that matches each arithmetic operation to the algebra step that does the same thing in the same order. ')
 
 
 SETS = [
@@ -40,12 +44,14 @@ SETS = [
           tf('x = 5 is the solution of 3(x - 2) = 2x - 1.', key=True),
           tf('x = 1 is the solution of 4x - (x + 2) = 4.', key=False, note='The solution is x = 2.'),
       ]),
-      f2=B('Interpret the terms, factors, and coefficients of an expression', 'HSA-SSE.A.1.a', [
-          sa('What is the coefficient of x in 5x² - 3x + 8?', 'Coefficient:', key='-3'),
-          sa('How many terms are in 4a³ - 2a + 7?', 'Terms:', key='3'),
-          mc('Which is a factor of 7(x + 2)²?', ['(x + 2)²', 'x²', '14', '7x']),
-          tf('In -6y + 9, the constant term is 9.', key=True),
-          tf('In 3x² + x, the coefficient of x is 0.', key=False, note='The coefficient of x is 1.'),
+      f2=B('Interpret the terms, factors, and coefficients of an expression in context', 'HSA-SSE.A.1.a', [
+          sa('A phone plan costs 0.1m + 25 dollars for m minutes in a month.\nWhat do the terms 0.1m and 25 represent?', 'Meaning:',
+             key='0.1m is the cost of the minutes at $0.10 per minute; 25 is a fixed monthly charge of $25.', note='Grade both terms.'),
+          sa('The perimeter of a rectangle is 2(l + 4) centimeters, where l is its length.\nWhat does the factor (l + 4) represent?', 'Meaning:',
+             key='The length plus the width (the width is 4 cm), which is half of the perimeter.'),
+          mc('A ride costs 2.5 + 1.75d dollars for d miles.\nWhat does 1.75 represent?', ['The cost per mile', 'The starting fee', 'The total cost of a 1-mile ride', 'The number of miles']),
+          tf('A repair costs 40 + 15h dollars for h hours of work. The term 15h is the labor cost for h hours.', key=True),
+          tf('A savings account holds 500 - 20w dollars after w weeks. The coefficient -20 means $20 is added each week.', key=False, note='-20 means $20 is taken out each week.'),
       ])),
 
     # ------------------------------------------------------------------ 7.EE.A.1 (factor/expand)
@@ -121,12 +127,13 @@ SETS = [
           tf('7⁰ = 1', key=True),
           tf('3² × 3³ = 9⁵', key=False, note='3² × 3³ = 3⁵.'),
       ]),
-      f2=B('Choose an equivalent form of an expression to reveal a property', 'HSA-SSE.B.3', [
-          sa('Factor f(x) = x² - 6x + 8 to find the values of x where f(x) = 0.', 'x =', key='2 and 4'),
+      f2=B('Rewrite percent-growth expressions to reveal the growth factor', 'HSA-SSE.B.3', [
+          sa('A town\'s population after t years is P(1.02)^t.\nRewrite the expression to show the growth factor for each 10 years, rounded to the nearest hundredth.', 'Expression:',
+             key='P(1.22)^(t/10); about 22% growth every 10 years', note='P((1.02)^10)^(t/10) with (1.02)^10 ≈ 1.22 is also correct.'),
           sa('A price p is raised 10%, and then the new price is raised 10% again: p(1.1)(1.1).\nWrite this as a single factor times p, and give the total percent increase.', 'Answer:',
              key='1.21p; a 21% increase'),
           mc('A value after t years is 50(1.03)^t.\nWhat is the yearly percent increase?', ['3%', '103%', '50%', '0.3%']),
-          tf('Writing x² - 9 as (x - 3)(x + 3) shows that the expression equals 0 when x = 3 or x = -3.', key=True),
+          tf('The expression 1,000(0.97)^t shows a value that decreases by 3% each year.', key=True),
           tf('A 10% increase followed by a 10% decrease leaves a price unchanged.', key=False, note='The final price is 0.99 times the original price.'),
       ])),
 
@@ -135,7 +142,7 @@ SETS = [
       main=[
           sa('Jon earns $16.50 per hour. He gets a raise of {1/5} of his wage. Then he works 30 hours.\nHow much does he earn for the 30 hours?', 'Earnings:', key='$594'),
           sa('A board is 8{1/4} feet long. Ana cuts off 2.5 feet. She cuts the rest into 3 equal pieces.\nHow long is each piece?', 'Length:',
-             key='1 11/12 feet', note='23/12 feet, or about 1.92 feet, is also correct.'),
+             key='1 11/12 feet', note='23/12 feet is also correct. The question asks for an exact length, so a rounded decimal is not full credit.'),
           mc('A 60-gallon tank is {3/4} full. Then 12.5 gallons are used.\nHow many gallons are left?', ['32.5', '47.5', '45', '57.5']),
           tf('A $40 sweater is 25% off. Mia pays with a $50 bill. Her change is $20.', key=True),
           tf('Leo runs 2{1/2} miles on Monday and 3.4 miles on Tuesday. He runs 6.4 miles in all.', key=False, note='He runs 5.9 miles.'),
@@ -190,13 +197,15 @@ SETS = [
               tf('3.97 rounded to the nearest tenth is 4.0.', key=True),
               tf('15.52 rounded to the nearest whole number is 15.', key=False),
           ]),
-          B('Use rounding to check whether an answer is reasonable', '4.OA.A.3', [
-              sa('Estimate 398 + 211 by rounding each number to the nearest hundred.', 'Estimate:', key='600'),
-              sa('Lia says 52 × 4 = 2,008.\nRound 52 to the nearest ten to decide whether her answer is reasonable.', 'Answer:',
-                 key='Not reasonable. 50 × 4 = 200, so the answer should be about 200.'),
-              mc('Round each number to the nearest hundred.\nWhat is the best estimate of 689 - 312?', ['400', '300', '1,000', '500']),
-              tf('Rounding 49 to the nearest ten gives an estimate of 300 for 49 × 6.', key=True),
-              tf('Rounding each number to the nearest hundred gives an estimate of 1,200 for 812 - 397.', key=False, note='The estimate is 800 - 400 = 400.'),
+          B('Use rounding to check the answer to a two-step word problem', '4.OA.A.3', [
+              sa('A store sells 4 packs of cards for $52 each and charges $11 for shipping.\nRound 52 to the nearest ten, and keep 4 and 11 unchanged, to estimate the total cost.', 'Estimate:',
+                 key='$211', note='4 × 50 + 11 = 211.'),
+              sa('A store sells 4 packs of cards for $52 each and charges $11 for shipping. Ty says the total is $2,019.\nRound 52 to the nearest ten to decide whether his answer is reasonable.', 'Answer:',
+                 key='Not reasonable. 4 × 50 + 11 = 211, so the total should be about $211.'),
+              mc('A school buys 6 boxes of 48 pencils and gives away 95 pencils.\nRound 48 and 95 to the nearest ten, and keep 6 unchanged. What is the best estimate of the pencils left?', ['200', '300', '100', '400']),
+              tf('A farm picks 312 apples on Monday and 289 apples on Tuesday, then sells 198 apples. Rounding each number to the nearest hundred gives an estimate of 400 apples left.', key=True),
+              tf('A bus carries 38 riders on each of 7 trips and 21 riders on one more trip. Rounding 38 and 21 to the nearest ten, and keeping 7 unchanged, gives an estimate of 220 riders.', key=False,
+                 note='The estimate is 7 × 40 + 20 = 300 riders.'),
           ]),
       ],
       f1=B('Estimate very large or very small quantities with powers of 10', '8.EE.A.3', [
@@ -207,8 +216,11 @@ SETS = [
           tf('6 × 10⁻³ is about 6,000.', key=False, note='6 × 10⁻³ = 0.006.'),
       ]),
       f2=B('Define appropriate quantities and units for a model', 'HSN-Q.A.2', [
-          sa('A heart beats about 70 times per minute.\nAbout how many times does it beat in 1 day? Round to the nearest ten thousand.', 'Estimate:', key='100,000', note='70 × 1,440 = 100,800.'),
-          sa('Which unit best describes the distance between two cities: millimeters, meters, or kilometers?', 'Unit:', key='Kilometers'),
+          sa('You want to estimate how many times a heart beats in one day.\nWhich two quantities do you need, and what are their units?', 'Quantities:',
+             key='The heart rate (beats per minute) and the number of minutes in a day (minutes per day).'),
+          sa('You want to model the cost of gas for a car trip to another city.\nName three quantities you would define, with their units.', 'Quantities:',
+             key='The distance (miles), the car\'s fuel efficiency (miles per gallon), and the gas price (dollars per gallon).',
+             note='Any three relevant quantities with sensible units are correct; for example, kilometers and liters may be used instead.'),
           mc('Which quantity is most useful for estimating the cost to paint the walls of a room?',
              ['The area of the walls', 'The volume of the room', 'The height of the door', 'The number of windows']),
           tf('Gallons of water used per day is a reasonable quantity for modeling a family\'s water use.', key=True),
@@ -219,7 +231,8 @@ SETS = [
     S('7.EE.B.4.a', 'Solve word problems that lead to equations of the form px + q = r',
       main=[
           sa('A gym charges a $25 sign-up fee plus $18 per month. Ty has paid $151 in all.\nWrite and solve an equation to find the number of months m.', 'Answer:',
-             key='18m + 25 = 151; m = 7', note='Any correct equation earns credit.'),
+             key='The equation 18m + 25 = 151 and the answer m = 7 months',
+             note='Both parts are required: a valid equation (for example 18m + 25 = 151) and the correct answer, 7 months. Any valid equation is accepted, but the solution must also be correct.'),
           sa('Solve for x.\n4x + 9 = -11', 'x =', key='-5'),
           mc('Ava has $60. She buys movie tickets for $7.50 each and has $15 left.\nWhich equation finds the number of tickets t?', ['60 - 7.5t = 15', '7.5t + 60 = 15', '60t - 7.5 = 15', '7.5 - 60t = 15']),
           tf('x = 6 is the solution of {1/2}x + 3 = 6.', key=True),
@@ -250,9 +263,9 @@ SETS = [
       ]),
       f2=B('Rearrange a formula to solve for a chosen quantity', 'HSA-CED.A.4', [
           sa('Solve P = 2l + 2w for l.', 'l =', key='(P - 2w)/2', note='l = P/2 - w is also correct.'),
-          sa('Solve y = mx + b for x.', 'x =', key='(y - b)/m'),
-          mc('Solve A = {1/2}bh for h.', ['h = {2A/b}', 'h = {A/2b}', 'h = 2Ab', 'h = {b/2A}']),
-          tf('Solving d = rt for t gives t = {d/r}.', key=True),
+          sa('Solve y = mx + b for x. Assume m ≠ 0.', 'x =', key='(y - b)/m'),
+          mc('Solve A = {1/2}bh for h, where the base b > 0.', ['h = {2A/b}', 'h = {A/2b}', 'h = 2Ab', 'h = {b/2A}']),
+          tf('For a speed r > 0, solving d = rt for t gives t = {d/r}.', key=True),
           tf('Solving C = 5n + 20 for n gives n = 5C - 20.', key=False, note='n = (C - 20)/5.'),
       ])),
 
@@ -260,7 +273,8 @@ SETS = [
     S('7.EE.B.4.a', 'Solve word problems that lead to equations of the form p(x + q) = r',
       main=[
           sa('A rectangle is 7 cm wide and (x + 3) cm long. Its area is 63 cm².\nWrite and solve an equation to find x.', 'Answer:',
-             key='7(x + 3) = 63; x = 6', note='Any correct equation earns credit.'),
+             key='The equation 7(x + 3) = 63 and the answer x = 6',
+             note='Both parts are required: a valid equation (for example 7(x + 3) = 63) and the correct answer, x = 6. Any valid equation is accepted, but the solution must also be correct.'),
           sa('Solve for x.\n-3(x - 4) = 27', 'x =', key='-5'),
           mc('5 friends each buy a $4 snack and a drink that costs d dollars. They spend $32.50 in all.\nWhich equation finds d?', ['5(d + 4) = 32.5', '5d + 4 = 32.5', 'd + 5(4) = 32.5', '4(d + 5) = 32.5']),
           tf('x = 2.5 is the solution of 2(x + 1.5) = 8.', key=True),
@@ -290,8 +304,10 @@ SETS = [
           tf('x = 3 is the solution of 2(x + 6) = 4(x - 1).', key=False, note='The solution is x = 8.'),
       ]),
       f2=B('Solve quadratic equations by square roots or factoring', 'HSA-REI.B.4.b', [
-          sa('Solve for x.\n(x + 3)² = 49', 'x =', key='4 or -10'),
-          sa('Solve for x.\nx² = 81', 'x =', key='9 or -9'),
+          sa('Solve for x. Give all solutions.\n(x + 3)² = 49', 'x =', key='x = 4 and x = -10',
+             note='Both solutions are required. Either order and set notation, such as {4, -10}, are accepted.'),
+          sa('Solve for x. Give all solutions.\nx² = 81', 'x =', key='x = 9 and x = -9',
+             note='Both solutions are required; x = ±9 and set notation are accepted.'),
           mc('Solve for x.\n(x - 2)(x + 5) = 0', ['x = 2 or x = -5', 'x = -2 or x = 5', 'x = 2 only', 'x = -5 only']),
           tf('The solutions of 2(x - 1)² = 18 are x = 4 and x = -2.', key=True),
           tf('x² = 16 has only one solution, x = 4.', key=False, note='x = 4 or x = -4.'),
@@ -300,13 +316,20 @@ SETS = [
     # ------------------------------------------------------------------ 7.EE.B.4.a (compare solutions)
     S('7.EE.B.4.a', 'Compare an algebraic solution with an arithmetic solution',
       main=[
-          sa('Ron has $50. He buys 3 books that cost the same amount and has $14 left.\nArithmetic: (50 - 14) ÷ 3. Algebra: 3b + 14 = 50.\nWhat is the price of one book?', 'Price:', key='$12'),
-          sa('An arithmetic solution to 4(x + 2) = 36 is 36 ÷ 4 - 2.\nDescribe the operations in order, and give x.', 'Answer:', key='Divide 36 by 4, then subtract 2; x = 7.'),
-          mc('Which arithmetic steps solve 5x - 8 = 27?',
+          work('A gym charges $15 to join plus $8 for each class. Max paid $79 in all.\n(a) Solve with arithmetic. (b) Write and solve an equation. (c) Compare the steps of the two solutions.', 'Classes:',
+               method=COMPARE + 'Example: (a) 79 - 15 = 64, 64 ÷ 8 = 8; (b) 8c + 15 = 79, subtract 15 from both sides, then divide both sides by 8; '
+                      '(c) both subtract 15 first and then divide by 8. Any valid equation is accepted.',
+               key='8 classes'),
+          work('Four friends each buy a ticket and a $3 popcorn. They pay $46 in all.\n(a) Solve with arithmetic. (b) Write and solve an equation. (c) Compare the steps of the two solutions.', 'Ticket price:',
+               method=COMPARE + 'Example: (a) 46 ÷ 4 = 11.50, 11.50 - 3 = 8.50; (b) 4(t + 3) = 46, divide both sides by 4, then subtract 3; '
+                      '(c) both divide by 4 first and then subtract 3. An equation such as 4t + 12 = 46 is also accepted, with the matching comparison.',
+               key='$8.50'),
+          mc('An algebraic solution of 5x - 8 = 27 adds 8 to both sides and then divides both sides by 5.\nWhich arithmetic steps match it?',
              ['Add 8 to 27, then divide by 5.', 'Subtract 8 from 27, then divide by 5.', 'Divide 27 by 5, then add 8.', 'Multiply 27 by 5, then add 8.']),
-          tf('Solving 2x + 6 = 20 with algebra and computing (20 - 6) ÷ 2 both give 7.', key=True),
-          tf('The arithmetic steps "subtract 4 from 15, then divide by 3" solve 3(x - 4) = 15.', key=False,
-             note='The correct steps are to divide 15 by 3, then add 4, so x = 9.'),
+          sa('An arithmetic solution of 3(x + 4) = 33 is 33 ÷ 3 - 4.\nFor each arithmetic operation, name the algebra step that matches it. Then give x.', 'Answer:',
+             key='Dividing 33 by 3 matches dividing both sides by 3; subtracting 4 matches subtracting 4 from both sides; x = 7.',
+             note='Grade both matches and the value x = 7.'),
+          tf('An equation multiplies x by 2 and then adds 6: 2x + 6 = 20. The arithmetic (20 - 6) ÷ 2 undoes those operations in reverse order, just as the algebra steps do.', key=True),
       ],
       back=[
           B('Solve two-step word problems', '3.OA.D.8', [
@@ -331,23 +354,33 @@ SETS = [
           tf('The system y = 4x and y = 4x + 1 has no solution.', key=True),
           tf('x = 4 and y = 6 is the solution of the system x + y = 10 and x - y = 2.', key=False, note='The solution is x = 6, y = 4.'),
       ]),
-      f2=B('Explain each step in solving an equation', 'HSA-REI.A.1', [
-          sa('In solving an equation, 5(x - 2) = 30 is rewritten as 5x - 10 = 30.\nWhich property is used?', 'Property:', key='The distributive property'),
-          sa('In solving an equation, 5x - 10 = 30 is rewritten as 5x = 40.\nExplain this step.', 'Explanation:', key='10 is added to both sides (addition property of equality).'),
-          mc('Which step changes 5x = 40 into x = 8?', ['Divide both sides by 5.', 'Subtract 5 from both sides.', 'Multiply both sides by 5.', 'Add 5 to both sides.']),
-          tf('Each step in solving a linear equation should give an equation with the same solution.', key=True),
-          tf('Subtracting 3 from only one side of an equation keeps the equation true.', key=False),
+      f2=B('Justify a complete solution and find an invalid step', 'HSA-REI.A.1', [
+          work('Solve 2(x + 3) = {1/2}(4x - 6) + x. Write each step and the reason for it.', 'x =',
+               method='Every step with a valid reason. Example: distributive property on both sides (2x + 6 = 2x - 3 + x); combine like terms (2x + 6 = 3x - 3); '
+                      'subtract 2x from both sides (6 = x - 3); add 3 to both sides (x = 9). Other valid orders are accepted. A correct answer without reasons is not full credit.',
+               key='9'),
+          sa('Mo solved {x/2} + 3 = x - 1 like this:\nStep 1: x + 3 = 2x - 1\nStep 2: x = 4\nWhich step is invalid? Correct it and give the solution.', 'Answer:',
+             key='Step 1: multiplying both sides by 2 gives x + 6 = 2x - 2, so x = 8.', note='Grade both: Step 1 with the correction, and x = 8.'),
+          mc('Which reason justifies rewriting 4x - 7 = 2x + 5 as 2x - 7 = 5?',
+             ['Subtraction property of equality (subtract 2x from both sides)', 'Distributive property', 'Division property of equality', 'Commutative property of multiplication']),
+          tf('Dividing both sides of 3(x - 2) = 3x - 6 by 3 gives x - 2 = x - 2, so every number is a solution of the original equation.', key=True),
+          tf('Dividing both sides of x² = 5x by x keeps every solution of the equation.', key=False, note='It loses the solution x = 0.'),
       ])),
 
     # ------------------------------------------------------------------ 7.EE.B.4.b (solve)
     S('7.EE.B.4.b', 'Solve word problems that lead to inequalities of the form px + q > r or px + q < r',
       main=[
-          sa('Sam has $40. He buys a $12 shirt and some pairs of socks that cost $3.50 each.\nWrite and solve an inequality for the number of pairs of socks p he can buy.', 'Answer:',
-             key='3.5p + 12 ≤ 40; p ≤ 8', note='He can buy at most 8 pairs. Any correct inequality earns credit.'),
-          sa('Solve.\n-2x + 5 > 13', 'Solution:', key='x < -4'),
-          mc('Solve.\n3x - 7 ≥ 11', ['x ≥ 6', 'x ≤ 6', 'x ≥ {4/3}', 'x ≤ {4/3}']),
-          tf('Dividing both sides of -4x < 20 by -4 gives x > -5.', key=True),
-          tf('The solution of 5x + 2 < 17 is x > 3.', key=False, note='The solution is x < 3.'),
+          sa('Sam has $40. He buys a $12 shirt and some pairs of socks that cost $3.50 each.\nWrite and solve an inequality for the number of pairs of socks p he can buy.', 'Inequality and answer:',
+             key='The inequality 3.5p + 12 ≤ 40 and the solution p ≤ 8: he can buy 0 to 8 pairs (whole numbers).',
+             note='Both parts are required: a valid inequality and its solution, stated as whole numbers of pairs from 0 to 8. Any valid inequality is accepted.'),
+          sa('A plumber charges $55 plus $40 per hour. Ana can spend no more than $255.\nWrite and solve an inequality for the number of hours h.', 'Inequality and answer:',
+             key='The inequality 40h + 55 ≤ 255 and the solution h ≤ 5: at most 5 hours.',
+             note='Both parts are required. Time can be any amount from 0 to 5 hours. Any valid inequality is accepted.'),
+          mc('A club has $120 and earns $15 for each car it washes. It needs more than $300.\nWhich inequality and solution fit the problem?',
+             ['15c + 120 > 300; c > 12', '15c + 120 < 300; c < 12', '120c + 15 > 300; c > 2.375', '15c > 300 + 120; c > 28']),
+          tf('A tank holds 500 liters and drains 25 liters per minute. The water stays above 200 liters while 500 - 25t > 200, which is while t < 12 minutes.', key=True),
+          tf('Kim has $20 and saves $6 each week. To have at least $80, she solves 6w + 20 ≥ 80, so she needs at most 10 weeks.', key=False,
+             note='w ≥ 10: she needs at least 10 weeks.'),
       ],
       back=[
           B('Write an inequality for a situation', '6.EE.B.8', [
@@ -383,14 +416,24 @@ SETS = [
     # ------------------------------------------------------------------ 7.EE.B.4.b (graph)
     S('7.EE.B.4.b', 'Graph the solution set of an inequality and interpret it in context',
       main=[
-          plot('Graph the solution set of x > -3 on the number line.', ints(-6, 6), key='An open circle at -3 with an arrow or shading to the right'),
-          draw_write('Solve 2x + 1 ≤ 9. Then graph the solution set on the number line.', ints(-6, 6), 'Solution:',
-                     draw='A closed circle at 4 with an arrow or shading to the left', key='x ≤ 4',
-                     note='Grade both: the solution x ≤ 4, and the graph with a closed circle at 4 shaded to the left.'),
-          mc('Which inequality does the graph show?', ['x ≥ 2', 'x > 2', 'x ≤ 2', 'x < 2'], fig=ray(2, 'right', False)),
-          sa('A club has $30. It earns $5 for each ticket it sells. It needs more than $230.\nSolve 5t + 30 > 230 and describe the solution in context.', 'Answer:',
-             key='t > 40. The club must sell more than 40 tickets (at least 41).'),
-          tf('The graph shows the solution set of -x < 2.', fig=ray(-2, 'right', True), key=True),
+          draw_write('A taxi charges $3 plus $2 per mile. Ty can spend at most $15.\nSolve 2m + 3 ≤ 15 for the miles m. Then graph the possible distances on the number line. (Distances cannot be negative.)',
+                     ints(0, 10), 'Solution:',
+                     draw='A closed circle at 6 and the line shaded from 0 to 6 (a closed circle or the end of the shading at 0)', key='m ≤ 6, so 0 ≤ m ≤ 6 miles',
+                     note='Grade both: the solution 0 ≤ m ≤ 6 (m ≤ 6 with distances not negative), and the graph from 0 to 6 with a closed circle at 6.'),
+          draw_write('A freezer is at 2°C and cools 1.5°C each hour.\nSolve 2 - 1.5t < -4 to find when it is colder than -4°C. Then graph the solution on the number line.',
+                     ints(0, 10), 'Solution:',
+                     draw='An open circle at 4 with an arrow or shading to the right', key='t > 4: after more than 4 hours',
+                     note='Grade both: t > 4 and the graph with an open circle at 4 shaded to the right.'),
+          mc('Tickets cost $6 each. Jo has $40 and must keep at least $10, so 6t ≤ 30. The graph shows the solution as whole numbers.\nWhich description fits the graph?',
+             ['Jo can buy 0, 1, 2, 3, 4, or 5 tickets.', 'Jo can buy any number of tickets greater than 5.', 'Jo can buy exactly 5 tickets.', 'Jo can buy 2.5 tickets.'],
+             fig=ints(0, 8, pts=[(v, None) for v in range(6)])),
+          draw_write('A club has $30 and earns $5 for each ticket it sells. It needs more than $230.\nSolve 5t + 30 > 230. Then graph the possible numbers of tickets (whole numbers) on the number line.',
+                     ints(30, 50, every=5), 'Solution:',
+                     draw='Dots at the whole numbers 41, 42, 43, ... to the end of the line, with an arrow or "..." to show the pattern continues; no dot at 40',
+                     key='t > 40: the club must sell at least 41 tickets.',
+                     note='Grade both: the solution with the context (at least 41 tickets), and the graph of whole numbers greater than 40.'),
+          tf('A plant is 5 cm tall and grows 2 cm per week. The graph shows the weeks w when the plant is taller than 11 cm, the solution of 2w + 5 > 11.',
+             fig=ints(0, 10, ray=(3, 'right', True)), key=True),
       ],
       back=[
           B('Graph an inequality on a number line', '6.EE.B.8', [

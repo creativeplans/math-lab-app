@@ -63,8 +63,10 @@ SETS = [
           sa('The table shows the cost of renting a bike.\nIs the cost proportional to the number of hours? Explain.', 'Answer:',
              fig=tbl('Hours', [1, 2, 3], 'Cost ($)', [4, 9, 14]),
              key='No. The ratios 4/1, 9/2, and 14/3 are not equal.', note='Any explanation showing the cost-to-hours ratios are not all equal.'),
-          sa('Gallons of water and minutes are in a proportional relationship.\nFind the two missing values in the table.', 'Missing values:',
-             fig=tbl('Minutes', [2, 4, 6, '?'], 'Gallons', [5, 10, '?', 25]), key='15 gallons for 6 minutes; 10 minutes for 25 gallons'),
+          sa('The table shows the gallons of water in a tank after some minutes.\nIs the number of gallons proportional to the number of minutes? Use the ratios to explain.', 'Answer:',
+             fig=tbl('Minutes', [2, 4, 6, 8], 'Gallons', [5, 10, 15, 21]),
+             key='No. The ratios gallons ÷ minutes are 2.5, 2.5, 2.5, and 21 ÷ 8 = 2.625, so they are not all equal.',
+             note='Grade both: "no", and evidence that one ratio (21 to 8) differs from the others.'),
           tf('The table shows a proportional relationship between x and y.', fig=tbl('x', [1, 2, 4], 'y', [3, 6, 10]), key=False),
       ],
       back=[
@@ -93,14 +95,17 @@ SETS = [
           tf('A table with x-values 0, 1, 2 and y-values 7, 9, 11 shows a proportional relationship.', key=False,
              note='It is linear, but y is not 0 when x is 0.'),
       ]),
-      f2=B('Recognize a quantity that changes at a constant rate per unit interval', 'HSF-LE.A.1.b', [
-          tf('In the table, y grows by equal differences over equal intervals of x.', fig=tbl('x', [0, 2, 4, 6], 'y', [5, 11, 17, 23]), key=True),
-          sa('A tank holds 80 gallons and drains 6 gallons every minute.\nWhat is the change in the amount of water per minute?', 'Change per minute:',
-             key='-6 gallons per minute', note='"It decreases by 6 gallons each minute" is also correct.'),
-          mc('Which quantity changes at a constant rate per unit interval?',
-             ['A plant grows 2 cm every week.', 'A population doubles every year.', 'A price increases 5% each year.', 'A bacteria count triples each hour.']),
-          sa('The table shows a linear function.\nBy how much does y change for each increase of 1 in x?', 'Change in y:', fig=tbl('x', [0, 3, 6, 9], 'y', [10, 16, 22, 28]), key='2'),
-          tf('An account that earns 4% of its current balance each year grows by the same number of dollars each year.', key=False),
+      f2=B('Tell equal differences (linear) from equal factors (exponential) over equal intervals', 'HSF-LE.A.1.b', [
+          sa('Does y grow by equal differences or by equal factors over equal intervals of x? Give evidence from the table.', 'Answer:',
+             fig=tbl('x', [0, 1, 2, 3], 'y', [3, 6, 12, 24]),
+             key='Equal factors: each y-value is 2 times the one before. The differences 3, 6, and 12 are not equal.'),
+          sa('By how much does y change over each interval of 2 in x? Is the growth linear or exponential?', 'Answer:',
+             fig=tbl('x', [0, 2, 4, 6], 'y', [4, 10, 16, 22]), key='y increases by 6 over each interval of 2, so the growth is linear (equal differences).'),
+          mc('Each table has x-values 0, 1, 2, 3.\nWhich y-values change by equal differences over equal intervals?',
+             ['y: 7, 4, 1, -2', 'y: 1, 3, 9, 27', 'y: 2, 4, 8, 16', 'y: 1, 2, 4, 7']),
+          tf('A table with x-values 0, 1, 2, 3 and y-values 80, 40, 20, 10 shows y decreasing by equal factors over equal intervals.', key=True),
+          tf('A table with x-values 0, 1, 2, 3 and y-values 2, 6, 18, 54 shows equal differences over equal intervals.', key=False,
+             note='The differences are 4, 12, and 36; the y-values have an equal factor of 3.'),
       ])),
 
     # ------------------------------------------------------------------ 7.RP.A.2.a (graph)
@@ -188,12 +193,14 @@ SETS = [
           tf('The slope of the graph of y = 0.8x is 0.8.', key=True),
           tf('A line through the origin and (2, 9) has a slope of {2/9}.', key=False, note='The slope is 9/2.'),
       ]),
-      f2=B('Write a linear function from two points or a description', 'HSF-LE.A.2', [
-          sa('A linear function passes through (1, 5) and (3, 11).\nWrite the function.', 'f(x) =', key='3x + 2'),
-          sa('A gym charges a $20 joining fee plus $15 each month.\nWrite a function for the total cost C after m months.', 'C(m) =', key='15m + 20'),
-          mc('Which linear function passes through (0, -4) and (2, 2)?', ['f(x) = 3x - 4', 'f(x) = -4x + 3', 'f(x) = 2x - 4', 'f(x) = 3x + 2']),
-          tf('The linear function through (2, 7) and (4, 11) is f(x) = 2x + 3.', key=True),
-          tf('The linear function through (0, 1) and (5, 11) is f(x) = 5x + 1.', key=False, note='The slope is 2, so f(x) = 2x + 1.'),
+      f2=B('Construct a linear or exponential function from two input-output pairs, a sequence, or a description', 'HSF-LE.A.2', [
+          sa('A linear function has f(2) = 7 and f(6) = 19.\nWrite f(x).', 'f(x) =', key='3x + 1'),
+          sa('An arithmetic sequence is 11, 15, 19, 23, ...\nWrite a function a(n) for the nth term, starting with n = 1.', 'a(n) =', key='4n + 7'),
+          mc('A tank drains at a constant rate. It holds 500 gallons after 4 minutes and 380 gallons after 10 minutes.\nWhich function gives the gallons g(t) after t minutes?',
+             ['g(t) = -20t + 580', 'g(t) = 20t + 420', 'g(t) = -12t + 548', 'g(t) = -20t + 500']),
+          tf('The sequence 2, 6, 18, 54, ... is given by f(n) = 2 · 3^(n - 1) for n = 1, 2, 3, ...', key=True),
+          tf('A gym\'s total cost grows at a constant monthly rate. It is $35 after 1 month and $95 after 5 months. The function is C(m) = 15m + 35.', key=False,
+             note='The rate is $15 per month, so C(m) = 15m + 20.'),
       ])),
 
     # ------------------------------------------------------------------ 7.RP.A.2.c
@@ -288,10 +295,12 @@ SETS = [
     # ------------------------------------------------------------------ 7.RP.A.3 (multistep ratio)
     S('7.RP.A.3', 'Solve multistep ratio problems',
       main=[
-          sa('A recipe uses flour and sugar in a ratio of 3 : 2. Lee uses 7{1/2} cups of flour.\nHow many cups of sugar does she need?', 'Cups of sugar:', key='5'),
+          sa('Trail mix uses peanuts, raisins, and almonds in a ratio of 5 : 3 : 2. Kai makes 4{1/2} cups of trail mix.\nHow many more cups of peanuts than almonds does he use?', 'Cups:',
+             key='1.35 cups', note='1 7/20 cups or 27/20 cups is also correct.'),
           sa('A club has boys and girls in a ratio of 4 : 5. There are 36 members.\nHow many girls are in the club?', 'Girls:', key='20'),
           mc('Ali mixes blue and yellow paint in a ratio of 2 : 3. He makes 15 liters of paint.\nHow many liters are blue?', ['6 liters', '10 liters', '9 liters', '7.5 liters']),
-          tf('On a map, 2 cm represents 15 km. A distance of 7 cm on the map represents 52.5 km.', key=True),
+          tf('On a map, 2 cm represents 15 km. Two towns are 7 cm apart on the map. A car drives between them at 60 km per hour. The trip takes less than 1 hour.', key=True,
+             note='The towns are 52.5 km apart, so the trip takes 52.5 ÷ 60 = 0.875 hour.'),
           tf('Juice concentrate and water are mixed in a ratio of 1 : 4. To make 6 liters of juice, you need 6 liters of water.', key=False,
              note='You need 4.8 liters of water.'),
       ],
@@ -319,10 +328,12 @@ SETS = [
           tf('x = 4 is the solution of 2(x + 3) = 5x - 4.', key=False),
       ]),
       f2=B('Create one-variable equations to solve ratio problems', 'HSA-CED.A.1', [
-          sa('The ratio of red marbles to green marbles is 3 : 5. There are 14 more green marbles than red marbles.\nWrite and solve an equation to find the number of red marbles.', 'Red marbles:',
-             key='21', note='Example equation: 5x - 3x = 14, so x = 7 and there are 3(7) = 21 red marbles. Any correct equation earns credit.'),
-          sa('A 60-meter rope is cut into two pieces in a ratio of 2 : 3.\nWrite and solve an equation to find the length of the longer piece.', 'Longer piece:',
-             key='36 meters', note='Example equation: 2x + 3x = 60, so x = 12. Any correct equation earns credit.'),
+          sa('The ratio of red marbles to green marbles is 3 : 5. There are 14 more green marbles than red marbles.\nWrite and solve an equation to find the number of red marbles.', 'Equation and answer:',
+             key='An equation such as 5x - 3x = 14 (x = 7), and the answer 21 red marbles',
+             note='Both parts are required: a valid equation, such as 5x - 3x = 14 or (5/3)r - r = 14 for r red marbles, and the correct answer, 21 red marbles. Any valid equation is accepted, but the solution must also be correct.'),
+          sa('A 60-meter rope is cut into two pieces in a ratio of 2 : 3.\nWrite and solve an equation to find the length of the longer piece.', 'Equation and answer:',
+             key='An equation such as 2x + 3x = 60 (x = 12), and the answer 36 meters',
+             note='Both parts are required: a valid equation, such as 2x + 3x = 60 or (2/3)L + L = 60 for the longer piece L, and the correct answer, 36 meters. Any valid equation is accepted, but the solution must also be correct.'),
           mc('The ages of two cousins are in a ratio of 4 : 7. The sum of their ages is 66.\nWhich equation can find x, where the ages are 4x and 7x?', ['4x + 7x = 66', '4 + 7x = 66', '7x - 4x = 66', '4x · 7x = 66']),
           tf('The ratio of a to b is 2 : 5, and a + b = 35. Then a = 10.', key=True),
           tf('The ratio of a to b is 1 : 3, and b - a = 12. Then a = 4.', key=False, note='a = 6.'),
@@ -370,13 +381,14 @@ SETS = [
       ])),
 
     # ------------------------------------------------------------------ 7.RP.A.3 (markups, discounts, tax, tips)
-    S('7.RP.A.3', 'Solve problems with markups, discounts, sales tax, and tips',
+    S('7.RP.A.3', 'Find a price after a markup or a markdown (discount)',
       main=[
-          sa('A meal costs $45. Kai leaves a 20% tip.\nWhat is the total cost of the meal with the tip?', 'Total:', key='$54'),
-          sa('A bike costs $120. It is on sale for 25% off. Then 8% sales tax is added to the sale price.\nWhat is the final cost?', 'Final cost:', key='$97.20'),
+          sa('A store pays $25 for a backpack and marks the price up by 40%.\nWhat is the selling price?', 'Selling price:', key='$35'),
+          sa('A $120 bike is marked down 25%.\nWhat is the sale price?', 'Sale price:', key='$90'),
           mc('A store buys a lamp for $30 and marks the price up by 60%.\nWhat is the selling price?', ['$48', '$18', '$90', '$36']),
           tf('A pair of shoes costs $64. At 15% off, the sale price is $54.40.', key=True),
-          tf('A shirt costs $35. With 6% sales tax, the total is $37.20.', key=False, note='The total is $37.10.'),
+          tf('A $50 jacket is marked up 20%. Then the new price is marked down 20%. The final price is $50.', key=False,
+             note='$50 × 1.2 = $60, and $60 × 0.8 = $48.'),
       ],
       back=[
           B('Multiply decimals', '6.NS.B.3', [
@@ -394,12 +406,12 @@ SETS = [
               tf('5% of $60 is $30.', key=False),
           ]),
       ],
-      f1=B('Solve equations to find an original price', '8.EE.C.7.b', [
-          sa('After a 20% discount, a game costs $36. The equation 0.8p = 36 models this.\nWhat was the original price p?', 'p =', key='$45'),
-          sa('A meal plus a 15% tip cost $46. The equation 1.15m = 46 models this.\nWhat was the cost m of the meal?', 'm =', key='$40'),
-          mc('Solve for x.\n1.06x = 53', ['x = 50', 'x = 56.18', 'x = 51.94', 'x = 5']),
-          tf('If 0.75p = 30, then p = 40.', key=True),
-          tf('If 1.25p = 50, then p = 62.5.', key=False, note='p = 40.'),
+      f1=B('Solve percent equations with the variable on both sides', '8.EE.C.7.b', [
+          sa('Store A sells a game for 20% off its price p plus a $6 shipping fee. Store B sells it for the full price p with free shipping.\nSolve 0.8p + 6 = p to find the price at which both stores charge the same.', 'p =', key='$30'),
+          sa('Solve for p.\n0.75p + 12 = 0.9p', 'p =', key='80'),
+          mc('Solve for x.\n1.08(x - 5) = 0.08x + 50', ['x = 55.4', 'x = 55', 'x = 50.6', 'x = 45']),
+          tf('p = 40 is the solution of 0.85p + 9 = p + 3.', key=True),
+          tf('p = 60 is the solution of 1.1(p + 10) = p + 20.', key=False, note='The solution is p = 90.'),
       ]),
       f2=B('Interpret the parts of an expression in context', 'HSA-SSE.A.1.a', [
           sa('A price p is discounted 10%. Then 7% sales tax is added. The final cost is 1.07(0.9p).\nWhat does 0.9p represent?', 'Meaning:',
@@ -413,13 +425,13 @@ SETS = [
       ])),
 
     # ------------------------------------------------------------------ 7.RP.A.3 (interest, commission, fees)
-    S('7.RP.A.3', 'Solve problems with simple interest, commissions, and fees',
+    S('7.RP.A.3', 'Find simple interest',
       main=[
           sa('Ella deposits $800 in an account that earns 3% simple interest per year.\nHow much interest does she earn in 4 years?', 'Interest:', key='$96'),
-          sa('A salesperson earns a 6% commission. She sells $2,450 of products.\nWhat is her commission?', 'Commission:', key='$147'),
-          mc('A ticket website charges a 2.5% fee on a $600 order.\nWhat is the fee?', ['$15', '$150', '$1.50', '$25']),
+          sa('Leo borrows $2,400 at 5% simple interest per year.\nHow much interest does he owe after 3 years?', 'Interest:', key='$360'),
+          mc('An account earns 4% simple interest per year.\nHow many years does it take $500 to earn $100 in interest?', ['5 years', '4 years', '20 years', '2 years']),
           tf('$1,500 borrowed at 5% simple interest per year for 2 years has $150 in interest.', key=True),
-          tf('A 4% fee on $250 is $1.', key=False, note='The fee is $10.'),
+          tf('$600 earns 2.5% simple interest per year. The balance after 3 years is $660.', key=False, note='The interest is $45, so the balance is $645.'),
       ],
       back=[
           B('Evaluate a formula', '6.EE.A.2.c', [
@@ -439,10 +451,10 @@ SETS = [
       ],
       f1=B('Model a growing balance with a linear function', '8.F.B.4', [
           sa('An account starts with $500 and earns $20 in simple interest each year.\nWrite a function for the balance B after t years.', 'B =', key='20t + 500'),
-          sa('A salesperson earns $300 a week plus a 5% commission on sales s.\nWrite a function for the weekly pay P.', 'P =', key='0.05s + 300'),
+          sa('A $1,000 loan charges $45 in simple interest each year.\nWrite a function for the amount A owed after t years.', 'A =', key='45t + 1,000', note='A = 45t + 1000 without the comma is also correct.'),
           mc('A loan balance after t years is B = 1,200 + 36t.\nWhat is the rate of change?', ['$36 per year', '$1,200 per year', '$1,236 per year', '3% per year']),
           tf('For B = 20t + 500, the balance after 3 years is $560.', key=True),
-          tf('For P = 0.05s + 300, the initial value is 0.05.', key=False, note='The initial value is 300.'),
+          tf('For A = 45t + 1,000, the initial value is 45.', key=False, note='The initial value is 1,000.'),
       ]),
       f2=B('Compare simple interest with compound interest', 'HSF-LE.A.1.a', [
           sa('$1,000 earns 5% simple interest per year.\nWhat is the balance after 2 years?', 'Balance:', key='$1,100'),
@@ -451,6 +463,208 @@ SETS = [
           tf('With compound interest, a balance grows by equal factors over equal time intervals.', key=True),
           tf('After 1 year, $500 at 4% compound interest (compounded yearly) earns more than $500 at 4% simple interest.', key=False,
              note='After 1 year, both earn $20.'),
+      ])),
+
+    # ------------------------------------------------------------------ 7.RP.A.3 (tips) -- added in 2.0.0
+    S('7.RP.A.3', 'Find a tip and the total cost with the tip', num=62,
+      main=[
+          sa('A meal costs $45. Kai leaves a 20% tip.\nWhat is the total cost of the meal with the tip?', 'Total:', key='$54'),
+          sa('A haircut costs $28. Mia leaves a 15% tip.\nHow much is the tip?', 'Tip:', key='$4.20'),
+          mc('A restaurant bill is $64. A group adds an 18% tip.\nWhat is the total?', ['$75.52', '$11.52', '$82', '$66.88']),
+          tf('A 20% tip on a $36.50 meal is $7.30.', key=True),
+          tf('A 15% tip on a $40 meal makes the total $55.', key=False, note='The tip is $6, so the total is $46.'),
+      ],
+      back=[
+          B('Find 5%, 10%, and 20% of an amount of money', '6.RP.A.3.c', [
+              sa('What is 10% of $42?', 'Answer:', key='$4.20'),
+              sa('What is 5% of $42?', 'Answer:', key='$2.10'),
+              mc('What is 20% of $55?', ['$11', '$5.50', '$1.10', '$20']),
+              tf('15% of $20 is $3.', key=True),
+              tf('20% of $30 is $3.', key=False, note='20% of $30 is $6.'),
+          ]),
+          B('Add amounts of money', '6.NS.B.3', [
+              sa('Add.\n$45.80 + $9.16', 'Sum:', key='$54.96'),
+              sa('Add.\n$23.45 + $4.69', 'Sum:', key='$28.14'),
+              mc('Add.\n$18.75 + $3.75', ['$22.50', '$21.50', '$22.40', '$15.00']),
+              tf('$9.99 + $1.50 = $11.49', key=True),
+              tf('$12.60 + $2.52 = $14.12', key=False),
+          ]),
+      ],
+      f1=B('Solve tip equations with the variable on both sides', '8.EE.C.7.b', [
+          sa('Two friends split a meal that costs m dollars. Ana pays half of m plus a $5 tip. Ben pays 40% of m plus a $9 tip. They pay the same amount.\nSolve 0.5m + 5 = 0.4m + 9.', 'm =', key='$40'),
+          sa('Solve for m.\n1.2(m + 10) = 1.15m + 14.5', 'm =', key='50'),
+          mc('Solve for x.\n0.15x + 0.85x = 2(x - 20)', ['x = 40', 'x = 20', 'x = -40', 'x = 80']),
+          tf('x = 30 is the solution of 1.2x - 6 = x.', key=True),
+          tf('x = 25 is the solution of 0.18x + 2 = 0.1x + 6.', key=False, note='The solution is x = 50.'),
+      ]),
+      f2=B('Write a function for a total that combines a tip and a fixed fee', 'HSF-BF.A.1', [
+          sa('A delivery app adds a 15% tip and a $4 fee to the price m of a meal.\nWrite a function T(m) for the total.', 'T(m) =', key='1.15m + 4', note='m + 0.15m + 4 is also correct.'),
+          sa('A delivery total is T(m) = 1.15m + 4, where m is the meal price in dollars.\nFind T(30).', 'T(30) =', key='$38.50'),
+          mc('A 20% tip is added to a meal price m. Then 8% tax is added to that amount.\nWhich function gives the total?',
+             ['T(m) = 1.08(1.2m)', 'T(m) = 1.28m', 'T(m) = m + 1.2 + 0.08', 'T(m) = 0.2m + 0.08m']),
+          tf('Adding a fixed $5 fee to a meal price m with a 20% tip gives the function T(m) = 1.2m + 5.', key=True),
+          tf('For T(m) = 1.15m + 4, doubling the meal price doubles the total.', key=False, note='The $4 fee does not double: T(20) = 27, but T(40) = 50.'),
+      ])),
+
+    # ------------------------------------------------------------------ 7.RP.A.3 (sales tax) -- added in 2.0.0
+    S('7.RP.A.3', 'Find sales tax and the final cost with tax', num=63,
+      main=[
+          sa('A jacket costs $80. The sales tax is 6%.\nHow much is the tax?', 'Tax:', key='$4.80'),
+          sa('A book costs $24.50. The sales tax is 8%.\nWhat is the total cost?', 'Total:', key='$26.46'),
+          mc('A TV costs $350. The sales tax is 7.5%.\nWhat is the final cost?', ['$376.25', '$26.25', '$357.50', '$425']),
+          tf('A $12 item with 5% sales tax costs $12.60 in all.', key=True),
+          tf('A shirt costs $35. With 6% sales tax, the total is $37.20.', key=False, note='The total is $37.10.'),
+      ],
+      back=[
+          B('Find a percent of an amount of money', '6.RP.A.3.c', [
+              sa('What is 6% of $45?', 'Answer:', key='$2.70'),
+              sa('What is 8% of $15?', 'Answer:', key='$1.20'),
+              mc('What is 5% of $64?', ['$3.20', '$32', '$0.32', '$6.40']),
+              tf('7% of $200 is $14.', key=True),
+              tf('4% of $75 is $30.', key=False, note='4% of $75 is $3.'),
+          ]),
+          B('Multiply by a decimal', '6.NS.B.3', [
+              sa('Multiply.\n1.06 × 50', 'Product:', key='53'),
+              sa('Multiply.\n0.08 × 32.5', 'Product:', key='2.6'),
+              mc('Multiply.\n1.05 × 18', ['18.9', '19.8', '1.89', '18.05']),
+              tf('0.07 × 300 = 21', key=True),
+              tf('1.08 × 25 = 25.08', key=False),
+          ]),
+      ],
+      f1=B('Compare tax and flat charges with equations that have the variable on both sides', '8.EE.C.7.b', [
+          sa('Store A charges the price p plus 8% tax. Store B charges the price p plus a flat $6 with no tax.\nSolve 1.08p = p + 6 to find when they charge the same.', 'p =', key='$75'),
+          sa('Solve for p.\n1.05(p + 20) = p + 24', 'p =', key='60'),
+          mc('Solve for x.\n1.1x - 4 = 0.9x + 6', ['x = 50', 'x = 10', 'x = 5', 'x = 20']),
+          tf('p = 100 is the solution of 1.06p = p + 6.', key=True),
+          tf('p = 40 is the solution of 1.07p - 2 = p + 1.', key=False, note='1.07(40) - 2 = 40.8, but 40 + 1 = 41.'),
+      ]),
+      f2=B('Interpret a tax expression by seeing its parts as single quantities', 'HSA-SSE.A.1.b', [
+          sa('n items each cost p dollars. With 6% sales tax, the total is 1.06(np).\nWhat does np represent?', 'Meaning:', key='The cost of the items before tax.'),
+          sa('A total with tax is (1 + r)p, where r is the tax rate as a decimal and p is the price.\nFind the total when r = 0.075 and p = 40.', 'Total:', key='$43'),
+          mc('An order costs p dollars plus s dollars of shipping, and 8% tax is charged on both. The total is 1.08(p + s).\nWhich part is the amount being taxed?', ['p + s', '1.08', 'p', 's']),
+          tf('1.06p and p + 0.06p are equivalent expressions for a price p with 6% tax.', key=True),
+          tf('In 1.08(p + 5), the tax is charged only on p.', key=False, note='The tax is charged on p + 5.'),
+      ])),
+
+    # ------------------------------------------------------------------ 7.RP.A.3 (commissions) -- added in 2.0.0
+    S('7.RP.A.3', 'Find a commission and pay that includes a commission', num=64,
+      main=[
+          sa('A salesperson earns a 6% commission. She sells $2,450 of products.\nWhat is her commission?', 'Commission:', key='$147'),
+          sa('A real estate agent earns a 3% commission on a $280,000 home sale.\nWhat is the commission?', 'Commission:', key='$8,400'),
+          mc('Jo earns $400 per week plus a 5% commission on her sales. She sells $3,600 in one week.\nWhat is her pay for the week?', ['$580', '$180', '$4,000', '$418']),
+          tf('A 12% commission on $750 in sales is $90.', key=True),
+          tf('An agent earns a $240 commission on $4,000 in sales. The commission rate is 4%.', key=False, note='The rate is 240 ÷ 4,000 = 6%.'),
+      ],
+      back=[
+          B('Find a percent of a quantity', '6.RP.A.3.c', [
+              sa('What is 3% of 2,000?', 'Answer:', key='60'),
+              sa('What is 12% of 150?', 'Answer:', key='18'),
+              mc('What is 5% of 3,600?', ['180', '18', '1,800', '720']),
+              tf('8% of 500 is 40.', key=True),
+              tf('2% of 900 is 180.', key=False, note='2% of 900 is 18.'),
+          ]),
+          B('Find what percent a part is of a whole', '6.RP.A.3.c', [
+              sa('240 is what percent of 4,000?', 'Percent:', key='6%'),
+              sa('What percent of 800 is 32?', 'Percent:', key='4%'),
+              mc('45 out of 300 is what percent?', ['15%', '45%', '6.67%', '30%']),
+              tf('90 is 12% of 750.', key=True),
+              tf('25 is 5% of 250.', key=False, note='25 is 10% of 250.'),
+          ]),
+      ],
+      f1=B('Model pay with a base salary plus a commission', '8.F.B.4', [
+          sa('A job pays $350 per week plus 4% of sales s.\nWrite a function for the weekly pay P.', 'P =', key='0.04s + 350'),
+          sa('Job A pays $500 per week plus 2% of sales. Job B pays $300 per week plus 6% of sales.\nFor what weekly sales do the two jobs pay the same?', 'Sales:', key='$5,000'),
+          mc('A line through (0, 200) and (10,000, 900) models weekly pay (y) against sales (x).\nWhat is the commission rate?', ['7%', '9%', '70%', '0.07%']),
+          tf('For P = 0.05s + 250, the pay with no sales is $250.', key=True),
+          tf('For P = 0.03s + 400, each $100 in sales adds $30 in pay.', key=False, note='Each $100 adds $3.'),
+      ]),
+      f2=B('Write and solve an inequality to meet an earnings goal', 'HSA-CED.A.3', [
+          sa('Pay is $300 plus 5% of sales s.\nWrite an inequality for earning at least $800 in a week.', 'Inequality:', key='300 + 0.05s ≥ 800'),
+          sa('Solve 300 + 0.05s ≥ 800, where s is weekly sales in dollars. Explain what the solution means.', 'Answer:', key='s ≥ 10,000; weekly sales must be at least $10,000.'),
+          mc('Pay is 250 + 0.08s dollars for sales of s dollars.\nWhich amount of sales meets the goal 250 + 0.08s ≥ 650?', ['$5,500', '$4,500', '$4,000', '$3,000']),
+          tf('With pay of 200 + 0.1s dollars, sales of $6,000 meet a goal of at least $750.', key=True),
+          tf('With pay of 400 + 0.04s dollars, sales of $5,000 meet a goal of at least $650.', key=False, note='The pay is $600.'),
+      ])),
+
+    # ------------------------------------------------------------------ 7.RP.A.3 (fees) -- added in 2.0.0
+    S('7.RP.A.3', 'Find a percent fee and the total with the fee', num=65,
+      main=[
+          mc('A ticket website charges a 2.5% fee on a $600 order.\nWhat is the fee?', ['$15', '$150', '$1.50', '$25']),
+          sa('A bank charges a 3% fee to transfer $1,250.\nWhat is the fee?', 'Fee:', key='$37.50'),
+          sa('A concert ticket costs $85 plus a 12% service fee.\nWhat is the total cost?', 'Total:', key='$95.20'),
+          tf('A 1.5% card fee on a $400 payment is $6.', key=True),
+          tf('A 4% fee on $250 is $1.', key=False, note='The fee is $10.'),
+      ],
+      back=[
+          B('Write a percent as a decimal', '6.RP.A.3.c', [
+              sa('Write 1.5% as a decimal.', 'Decimal:', key='0.015'),
+              sa('Write 12% as a decimal.', 'Decimal:', key='0.12'),
+              mc('Which decimal is equal to 3%?', ['0.03', '0.3', '3.0', '0.003']),
+              tf('0.5% = 0.005', key=True),
+              tf('0.4% = 0.4', key=False, note='0.4% = 0.004.'),
+          ]),
+          B('Multiply decimals', '6.NS.B.3', [
+              sa('Multiply.\n0.03 × 1,250', 'Product:', key='37.5'),
+              sa('Multiply.\n1.12 × 85', 'Product:', key='95.2'),
+              mc('Multiply.\n0.015 × 400', ['6', '60', '0.6', '4.15']),
+              tf('0.025 × 80 = 2', key=True),
+              tf('0.12 × 50 = 60', key=False),
+          ]),
+      ],
+      f1=B('Compare fee plans with equations that have the variable on both sides', '8.EE.C.7.b', [
+          sa('Site A charges a $3 fee plus 1% of the amount a. Site B charges 2.5% of the amount a.\nSolve 3 + 0.01a = 0.025a to find when the fees are equal.', 'a =', key='$200'),
+          sa('Solve for a.\n0.04(a + 50) = 0.03a + 5', 'a =', key='300'),
+          mc('Solve for x.\n1.12x = x + 18', ['x = 150', 'x = 16.07', 'x = 1.5', 'x = 18']),
+          tf('a = 500 is the solution of 2 + 0.02a = 0.024a.', key=True),
+          tf('a = 200 is the solution of 5 + 0.03a = 0.08a.', key=False, note='The solution is a = 100.'),
+      ]),
+      f2=B('Write a function for a total that includes a percent fee and a fixed charge', 'HSF-BF.A.1', [
+          sa('A ticket site adds a 10% fee and a $2.50 processing charge to a ticket price t.\nWrite a function T(t) for the total.', 'T(t) =', key='1.1t + 2.5', note='t + 0.1t + 2.50 is also correct.'),
+          sa('A ticket total is T(t) = 1.1t + 2.5.\nWhat ticket price t gives a total of $68.50?', 't =', key='$60'),
+          mc('A bank fee is 2% of the amount, but never less than $5.\nWhat is the fee on $150?', ['$5', '$3', '$7', '$2']),
+          tf('T(t) = 1.05t + 1 and T(t) = t + 0.05t + 1 are the same function.', key=True),
+          tf('For T(t) = 1.08t + 3, the fee part of the total is 1.08t.', key=False, note='The fee part is 0.08t + 3.'),
+      ])),
+
+    # ------------------------------------------------------------------ 7.RP.A.3 (combined) -- added in 2.0.0
+    S('7.RP.A.3', 'Solve multistep percent problems that combine a discount with tax or a tip', num=66,
+      main=[
+          sa('A bike costs $120. It is on sale for 25% off. Then 8% sales tax is added to the sale price.\nWhat is the final cost?', 'Final cost:', key='$97.20'),
+          sa('A meal costs $60. A $5 coupon is taken off the bill. Then a 20% tip on the $60 price is added.\nWhat is the final amount paid?', 'Amount:', key='$67'),
+          mc('A $250 phone is 20% off. Then 6% sales tax is added to the sale price.\nWhat is the final cost?', ['$212', '$215', '$200', '$265']),
+          tf('A $40 shirt is marked down 10%. Then the sale price is marked down another 10%. The final price is $32.40.', key=True),
+          tf('A 30% discount followed by 8% tax on the sale price is the same as a 22% discount.', key=False,
+             note='0.7 × 1.08 = 0.756, which is a 24.4% decrease.'),
+      ],
+      back=[
+          B('Find a percent of an amount of money', '6.RP.A.3.c', [
+              sa('What is 25% of $120?', 'Answer:', key='$30'),
+              sa('What is 80% of $45?', 'Answer:', key='$36'),
+              mc('What is 6% of $200?', ['$12', '$120', '$1.20', '$6']),
+              tf('20% of $250 is $50.', key=True),
+              tf('30% of $90 is $30.', key=False, note='30% of $90 is $27.'),
+          ]),
+          B('Subtract amounts of money', '6.NS.B.3', [
+              sa('Subtract.\n$84.50 - $12.68', 'Difference:', key='$71.82'),
+              sa('Subtract.\n$65.00 - $9.75', 'Difference:', key='$55.25'),
+              mc('Subtract.\n$100 - $37.45', ['$62.55', '$63.55', '$137.45', '$62.45']),
+              tf('$50.00 - $12.50 = $37.50', key=True),
+              tf('$75.20 - $8.40 = $67.20', key=False),
+          ]),
+      ],
+      f1=B('Solve multistep percent equations with the variable on both sides', '8.EE.C.7.b', [
+          sa('Store A sells an item for 20% off its price p plus $10 shipping. Store B sells it for 10% off with free shipping.\nSolve 0.8p + 10 = 0.9p to find when the stores charge the same.', 'p =', key='$100'),
+          sa('Solve for p.\n1.08(0.75p) = 0.75p + 4.5', 'p =', key='75'),
+          mc('Solve for p.\n1.06(0.9p) = 0.9p + 5.4', ['p = 100', 'p = 90', 'p = 6', 'p = 54']),
+          tf('p = 200 is the solution of 0.7p + 15 = 0.75p + 5.', key=True),
+          tf('p = 50 is the solution of 1.1(0.8p) = p - 8.', key=False, note='1.1(0.8)(50) = 44, but 50 - 8 = 42.'),
+      ]),
+      f2=B('Construct an exponential function for repeated percent changes', 'HSF-LE.A.2', [
+          sa('A $200 price is marked down 10% each week.\nWrite a function P(w) for the price after w weeks.', 'P(w) =', key='200(0.9)^w'),
+          sa('The price after w weeks is P(w) = 200(0.9)^w dollars.\nFind the price after 2 weeks.', 'Price:', key='$162'),
+          mc('A $500 item increases in price by 4% each year.\nWhich function gives its price after t years?', ['P(t) = 500(1.04)^t', 'P(t) = 500 + 1.04t', 'P(t) = 500(0.04)^t', 'P(t) = 500 + 20t']),
+          tf('A 20% discount followed by a 10% discount multiplies the price by 0.72.', key=True),
+          tf('P(t) = 80(0.95)^t models a price that increases 95% each year.', key=False, note='It decreases 5% each year.'),
       ])),
 
     # ------------------------------------------------------------------ 7.RP.A.3 (percent error)
@@ -489,7 +703,7 @@ SETS = [
           sa('A ruler is marked in millimeters. A length is read as 12.4 cm.\nTo what place value is this measurement given?', 'Place:',
              key='Tenths of a centimeter (the nearest millimeter)'),
           mc('A scale measures mass to the nearest 0.1 kg.\nWhich reading is reported to an accuracy that fits this scale?', ['3.4 kg', '3.4172 kg', '3 kg', '3.41 kg']),
-          sa('A track is measured as 400 m. The measurement could be off by as much as 2 m.\nWhat is the greatest possible percent error?', 'Percent error:', key='0.5%'),
+          sa('The actual length of a track is 400 m. A measurement of it is off by at most 2 m.\nWhat is the greatest possible percent error?', 'Percent error:', key='0.5%'),
           tf('A length measured with a meter stick marked only in centimeters should not be reported as 1.2347 m.', key=True),
           tf('Writing more decimal places always makes a measurement more accurate.', key=False),
       ])),

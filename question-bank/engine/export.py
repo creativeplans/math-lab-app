@@ -285,6 +285,21 @@ def describe(f):
             elif it[0] == 'text':
                 parts.append('text "%s" at %s' % (A.plain(it[2]), pt(it[1])))
         return 'Geometry drawing: ' + '; '.join(parts) + '.'
+    if k == 'extrude':
+        d = 'Right prism drawn in 3-D. Front face: polygon with vertices %s, extended straight back %s' % (
+            ', '.join(pt(p) for p in f['pts']), A.plain(f.get('dlabel') or num(f['d'])))
+        labs = ['"%s" on the edge from %s to %s' % (A.plain(l), pt(f['pts'][i]), pt(f['pts'][(i + 1) % len(f['pts'])]))
+                for i, l in enumerate(f.get('labels', [])) if l]
+        if labs:
+            d += '. Labels: ' + '; '.join(labs)
+        if f.get('seams'):
+            d += '. Dashed lines on the front face show where the prisms are joined: ' + '; '.join(
+                '%s to %s' % (pt(a), pt(b)) for a, b in f['seams'])
+        return d + '.'
+    if k == 'wedges':
+        return ('A circle with radius r is cut into %d equal wedges. The wedges are laid side by side, alternately '
+                'point-up and point-down, making a shape close to a parallelogram whose base is about half of the '
+                'circumference and whose height is about r.' % f.get('n', 12))
     if k == 'rays':
         d = 'Rays drawn from one point, in the directions %s degrees (0 = right, measured counterclockwise)' % ', '.join(
             str(r) for r in f['rays'])
@@ -294,6 +309,10 @@ def describe(f):
             d += '. A right-angle mark is shown'
         return d + '.'
     return k
+
+
+HS_LEVEL = ('High school (Common Core high-school standard; this bank places it at Grade 9 as a second forward step. '
+            'This is an instructional choice, not an official grade assignment.)')
 
 
 def jsonable(f):
@@ -382,6 +401,7 @@ def export(out_dir):
                     relation=RELATION.get(code, 'backward'), number=i, of=len(qs),
                     standard=std, standard_grade=std.split('.')[0] if std.startswith('K') else qb.grade_num(std),
                     domain=r['domain'], skill=name, nearest_related=bool(nearest),
+                    **(dict(standard_level=HS_LEVEL) if std.startswith('HS') else {}),
                     type=r['type'],
                     response={'mc': 'select one', 'tf': 'select true or false', 'sa': 'write',
                               'plot': 'draw on the figure',
@@ -469,6 +489,9 @@ def export(out_dir):
             part.insert_pdf(doc, from_page=p * PDF_PART, to_page=min(len(doc), (p + 1) * PDF_PART) - 1)
             part.save(os.path.join(out_dir, 'pdf', 'Grade %d - Part %d of %s.pdf' % (build.GRADE, p + 1, kind)),
                       garbage=3, deflate=True)
+    for doc_name in ('CORRECTIONS.md', 'COVERAGE.md'):
+        if os.path.exists(os.path.join(build.GRADE_DIR, doc_name)):
+            shutil.copy(os.path.join(build.GRADE_DIR, doc_name), os.path.join(out_dir, doc_name))
     write_readme(out_dir, index, npages)
     write_manifest(out_dir)
     return index
@@ -514,6 +537,7 @@ Collection `{cid}`, version {ver}. {sets} question sets, {nq} questions, {nfig} 
 | `sets/Sxx.json` | One file per question set. Each question is a complete record (see below). |
 | `assets/<ID>.svg` / `.png` | The figure for that question (SVG preferred, PNG fallback). Picture choices are `<ID>-A.svg`, `<ID>-B.svg`. |
 | `revisions.json`, `CHANGELOG.md` | Changes since the previous version, keyed by question ID (only after a revision). |
+| `CORRECTIONS.md`, `COVERAGE.md` | When present: the finding-by-finding correction checklist for a review, and the coverage matrix of requirements and sets. |
 | `MANIFEST.json` | Every file in the package with its size and SHA-256, for checking that nothing was lost. |
 | `pdf/` | The printable question collection and answer key in {part}-page parts. Page numbers match the `page` field. Not needed for import. |
 
@@ -537,6 +561,7 @@ Collection `{cid}`, version {ver}. {sets} question sets, {nq} questions, {nfig} 
 | `uid`, `collection`, `id` | Identity: `uid` = collection + `:` + `id` |
 | `set`, `section`, `section_code`, `relation`, `number` | Where the question sits |
 | `standard`, `standard_grade`, `domain`, `skill`, `nearest_related` | What it tests |
+| `standard_level` | High-school standards only: says that Grade 9 is this bank's placement, not an official Common Core grade |
 | `type`, `response` | `mc` (select one), `tf` (true or false), `sa` (write an answer), `plot` (draw on the figure), `plot_text` (draw on the figure AND write an answer), `work` (write the answer and show the required work) |
 | `prompt`, `prompt_markup` | Question text: plain, and with `{{a/b}}` fraction markup |
 | `choices` | `[{{letter, text}}]` in the order students see; true/false is A. True, B. False. Picture choices add `svg`, `png`, `data` |

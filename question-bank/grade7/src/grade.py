@@ -1,7 +1,8 @@
 """Grade 7 configuration: grade number and domain modules in collection order.
-FORWARD 1 uses Grade 8 standards; FORWARD 2 uses Grade 9 high-school standards (Algebra I and Geometry, coded HS...)."""
+FORWARD 1 uses Grade 8 standards. FORWARD 2 uses Common Core high-school standards (coded HS...), which this bank
+places at Grade 9 as an instructional choice; Common Core itself does not assign high-school standards to a grade."""
 GRADE = 7
-VERSION = "1.0.0"
+VERSION = "2.0.0"
 VERSION_DATE = "2026-10-11"
 # Deal the correct letter of four-choice questions evenly across A-D.
 BALANCE_MC = True

@@ -21,10 +21,20 @@ def run(name):
     used = set()
     lines = ['# Grade %d coverage matrix' % build.GRADE, '',
              'Each row is one distinct Grade %d requirement and the set whose MAIN section (five variations) focuses on it. '
-             'Every set also has its backward (earlier-grade) branches and FORWARD 1 (Grade %d) and FORWARD 2 (Grade %d). '
-             'Page is the MAIN section\'s first question page in the question PDF.' % (build.GRADE, build.GRADE + 1, build.GRADE + 2), '',
-             '| Standard | Requirement | Set | MAIN IDs | Page | Backward branches | Forward 1 | Forward 2 |', '|---|---|---|---|---:|---|---|---|']
-    for std, req, nums in cov.REQUIREMENTS:
+             'Every set also has its backward (earlier-grade) branches and FORWARD 1 (Grade %d) and FORWARD 2 (%s). '
+             'Page is the MAIN section\'s first question page in the question PDF.' % (
+                 build.GRADE, build.GRADE + 1,
+                 'Grade %d' % (build.GRADE + 2) if build.GRADE + 2 < 9 else
+                 'Common Core high-school standards, which this bank places at Grade 9 as an instructional choice'), '']
+    perf = any(len(r) > 3 for r in cov.REQUIREMENTS)
+    if perf:
+        lines += ['"Performance tested" says what students actually do in the five MAIN questions.', '',
+                  '| Standard | Requirement | Performance tested | Set | MAIN IDs | Page | Backward branches | Forward 1 | Forward 2 |',
+                  '|---|---|---|---|---|---:|---|---|---|']
+    else:
+        lines += ['| Standard | Requirement | Set | MAIN IDs | Page | Backward branches | Forward 1 | Forward 2 |', '|---|---|---|---|---:|---|---|---|']
+    for row in cov.REQUIREMENTS:
+        std, req, nums = row[:3]
         for n in nums:
             st = sets[n]
             assert st['std'] == std, (n, st['std'], std)
@@ -33,10 +43,13 @@ def run(name):
             back = '; '.join('%s %s' % (A.section_code(k), s) for k, _, s, _, _ in secs if k.startswith('BACKWARD'))
             f1 = [s for k, _, s, _, _ in secs if k == 'FORWARD 1'][0]
             f2 = [s for k, _, s, _, _ in secs if k == 'FORWARD 2'][0]
-            lines.append('| %s | %s | S%d — %s | S%d-M-Q1 … Q5 | %d | %s | %s | %s |' % (
-                std, req, n, st['title'], n, pages['S%d-M-Q1' % n], back, f1, f2))
+            cells = [std, req] + ([row[3]] if perf else []) + [
+                'S%d — %s' % (n, st['title']), 'S%d-M-Q1 … Q5' % n, str(pages['S%d-M-Q1' % n]), back, f1, f2]
+            lines.append('| ' + ' | '.join(cells) + ' |')
     missing = sorted(set(sets) - used)
     assert not missing, 'sets without a requirement row: %s' % missing
+    if getattr(cov, 'NOTES', None):
+        lines += [''] + cov.NOTES
     path = os.path.join(build.GRADE_DIR, 'COVERAGE.md')
     open(path, 'w', encoding='utf-8').write('\n'.join(lines) + '\n')
     return path, len(cov.REQUIREMENTS)

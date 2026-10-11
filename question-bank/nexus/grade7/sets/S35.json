@@ -3,7 +3,7 @@
  "collection": {
   "id": "G7",
   "grade": 7,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "date": "2026-10-11"
  },
  "grade": 7,
@@ -36,48 +36,48 @@
      "domain": "Expressions & Equations",
      "skill": "Graph the solution set of an inequality and interpret it in context",
      "nearest_related": false,
-     "type": "plot",
-     "response": "draw on the figure",
-     "prompt": "Graph the solution set of x > -3 on the number line.",
-     "prompt_markup": "Graph the solution set of x > -3 on the number line.",
+     "type": "plot_text",
+     "response": "draw on the figure and write an answer",
+     "prompt": "A taxi charges $3 plus $2 per mile. Ty can spend at most $15. Solve 2m + 3 ≤ 15 for the miles m. Then graph the possible distances on the number line. (Distances cannot be negative.)",
+     "prompt_markup": "A taxi charges $3 plus $2 per mile. Ty can spend at most $15.\nSolve 2m + 3 ≤ 15 for the miles m. Then graph the possible distances on the number line. (Distances cannot be negative.)",
      "choices": [],
-     "answer_lines": [],
+     "answer_lines": [
+      "Solution:"
+     ],
      "correct_letter": null,
-     "correct_answer": "An open circle at -3 with an arrow or shading to the right",
-     "drawing_answer": null,
+     "correct_answer": "m ≤ 6, so 0 ≤ m ≤ 6 miles",
+     "drawing_answer": "A closed circle at 6 and the line shaded from 0 to 6 (a closed circle or the end of the shading at 0)",
      "required_method": null,
-     "grading_note": "",
+     "grading_note": "Grade both: the solution 0 ≤ m ≤ 6 (m ≤ 6 with distances not negative), and the graph from 0 to 6 with a closed circle at 6.",
      "figure": {
       "svg": "assets/S35-M-Q1.svg",
       "png": "assets/S35-M-Q1.png",
       "kind": "nl",
-      "description": "Horizontal number line from -6 to 6, tick marks every 1. Nothing is marked; the student draws on it.",
+      "description": "Horizontal number line from 0 to 10, tick marks every 1. Nothing is marked; the student draws on it.",
       "blank_for_drawing": true,
       "data": {
        "k": "nl",
-       "min": -6,
-       "max": 6,
+       "min": 0,
+       "max": 10,
        "step": 1,
        "labels": {
-        "-6": "−6",
-        "-5": "−5",
-        "-4": "−4",
-        "-3": "−3",
-        "-2": "−2",
-        "-1": "−1",
         "0": "0",
         "1": "1",
         "2": "2",
         "3": "3",
         "4": "4",
         "5": "5",
-        "6": "6"
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9",
+        "10": "10"
        },
        "pts": []
       }
      },
-     "page": 1062,
-     "revision": "unchanged"
+     "page": 1224,
+     "revision": "revised"
     },
     {
      "id": "S35-M-Q2",
@@ -96,48 +96,46 @@
      "nearest_related": false,
      "type": "plot_text",
      "response": "draw on the figure and write an answer",
-     "prompt": "Solve 2x + 1 ≤ 9. Then graph the solution set on the number line.",
-     "prompt_markup": "Solve 2x + 1 ≤ 9. Then graph the solution set on the number line.",
+     "prompt": "A freezer is at 2°C and cools 1.5°C each hour. Solve 2 - 1.5t < -4 to find when it is colder than -4°C. Then graph the solution on the number line.",
+     "prompt_markup": "A freezer is at 2°C and cools 1.5°C each hour.\nSolve 2 - 1.5t < -4 to find when it is colder than -4°C. Then graph the solution on the number line.",
      "choices": [],
      "answer_lines": [
       "Solution:"
      ],
      "correct_letter": null,
-     "correct_answer": "x ≤ 4",
-     "drawing_answer": "A closed circle at 4 with an arrow or shading to the left",
+     "correct_answer": "t > 4: after more than 4 hours",
+     "drawing_answer": "An open circle at 4 with an arrow or shading to the right",
      "required_method": null,
-     "grading_note": "Grade both: the solution x ≤ 4, and the graph with a closed circle at 4 shaded to the left.",
+     "grading_note": "Grade both: t > 4 and the graph with an open circle at 4 shaded to the right.",
      "figure": {
       "svg": "assets/S35-M-Q2.svg",
       "png": "assets/S35-M-Q2.png",
       "kind": "nl",
-      "description": "Horizontal number line from -6 to 6, tick marks every 1. Nothing is marked; the student draws on it.",
+      "description": "Horizontal number line from 0 to 10, tick marks every 1. Nothing is marked; the student draws on it.",
       "blank_for_drawing": true,
       "data": {
        "k": "nl",
-       "min": -6,
-       "max": 6,
+       "min": 0,
+       "max": 10,
        "step": 1,
        "labels": {
-        "-6": "−6",
-        "-5": "−5",
-        "-4": "−4",
-        "-3": "−3",
-        "-2": "−2",
-        "-1": "−1",
         "0": "0",
         "1": "1",
         "2": "2",
         "3": "3",
         "4": "4",
         "5": "5",
-        "6": "6"
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9",
+        "10": "10"
        },
        "pts": []
       }
      },
-     "page": 1063,
-     "revision": "unchanged"
+     "page": 1225,
+     "revision": "revised"
     },
     {
      "id": "S35-M-Q3",
@@ -156,29 +154,29 @@
      "nearest_related": false,
      "type": "mc",
      "response": "select one",
-     "prompt": "Which inequality does the graph show?",
-     "prompt_markup": "Which inequality does the graph show?",
+     "prompt": "Tickets cost $6 each. Jo has $40 and must keep at least $10, so 6t ≤ 30. The graph shows the solution as whole numbers. Which description fits the graph?",
+     "prompt_markup": "Tickets cost $6 each. Jo has $40 and must keep at least $10, so 6t ≤ 30. The graph shows the solution as whole numbers.\nWhich description fits the graph?",
      "choices": [
       {
        "letter": "A",
-       "text": "x > 2"
+       "text": "Jo can buy any number of tickets greater than 5."
       },
       {
        "letter": "B",
-       "text": "x < 2"
+       "text": "Jo can buy 2.5 tickets."
       },
       {
        "letter": "C",
-       "text": "x ≤ 2"
+       "text": "Jo can buy exactly 5 tickets."
       },
       {
        "letter": "D",
-       "text": "x ≥ 2"
+       "text": "Jo can buy 0, 1, 2, 3, 4, or 5 tickets."
       }
      ],
      "answer_lines": [],
      "correct_letter": "D",
-     "correct_answer": "x ≥ 2",
+     "correct_answer": "Jo can buy 0, 1, 2, 3, 4, or 5 tickets.",
      "drawing_answer": null,
      "required_method": null,
      "grading_note": "",
@@ -186,38 +184,54 @@
       "svg": "assets/S35-M-Q3.svg",
       "png": "assets/S35-M-Q3.png",
       "kind": "nl",
-      "description": "Horizontal number line from -6 to 6, tick marks every 1. Graph: closed (filled) circle at 2 with the line shaded to the right.",
+      "description": "Horizontal number line from 0 to 8, tick marks every 1. Points: a point at 0, a point at 1, a point at 2, a point at 3, a point at 4, a point at 5.",
       "blank_for_drawing": false,
       "data": {
        "k": "nl",
-       "min": -6,
-       "max": 6,
+       "min": 0,
+       "max": 8,
        "step": 1,
        "labels": {
-        "-6": "−6",
-        "-5": "−5",
-        "-4": "−4",
-        "-3": "−3",
-        "-2": "−2",
-        "-1": "−1",
         "0": "0",
         "1": "1",
         "2": "2",
         "3": "3",
         "4": "4",
         "5": "5",
-        "6": "6"
+        "6": "6",
+        "7": "7",
+        "8": "8"
        },
-       "pts": [],
-       "ray": [
-        2,
-        "right",
-        false
+       "pts": [
+        [
+         0,
+         null
+        ],
+        [
+         1,
+         null
+        ],
+        [
+         2,
+         null
+        ],
+        [
+         3,
+         null
+        ],
+        [
+         4,
+         null
+        ],
+        [
+         5,
+         null
+        ]
        ]
       }
      },
-     "page": 1064,
-     "revision": "unchanged"
+     "page": 1226,
+     "revision": "revised"
     },
     {
      "id": "S35-M-Q4",
@@ -234,22 +248,42 @@
      "domain": "Expressions & Equations",
      "skill": "Graph the solution set of an inequality and interpret it in context",
      "nearest_related": false,
-     "type": "sa",
-     "response": "write",
-     "prompt": "A club has $30. It earns $5 for each ticket it sells. It needs more than $230. Solve 5t + 30 > 230 and describe the solution in context.",
-     "prompt_markup": "A club has $30. It earns $5 for each ticket it sells. It needs more than $230.\nSolve 5t + 30 > 230 and describe the solution in context.",
+     "type": "plot_text",
+     "response": "draw on the figure and write an answer",
+     "prompt": "A club has $30 and earns $5 for each ticket it sells. It needs more than $230. Solve 5t + 30 > 230. Then graph the possible numbers of tickets (whole numbers) on the number line.",
+     "prompt_markup": "A club has $30 and earns $5 for each ticket it sells. It needs more than $230.\nSolve 5t + 30 > 230. Then graph the possible numbers of tickets (whole numbers) on the number line.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Solution:"
      ],
      "correct_letter": null,
-     "correct_answer": "t > 40. The club must sell more than 40 tickets (at least 41).",
-     "drawing_answer": null,
+     "correct_answer": "t > 40: the club must sell at least 41 tickets.",
+     "drawing_answer": "Dots at the whole numbers 41, 42, 43, ... to the end of the line, with an arrow or \"...\" to show the pattern continues; no dot at 40",
      "required_method": null,
-     "grading_note": "",
-     "figure": null,
-     "page": 1065,
-     "revision": "unchanged"
+     "grading_note": "Grade both: the solution with the context (at least 41 tickets), and the graph of whole numbers greater than 40.",
+     "figure": {
+      "svg": "assets/S35-M-Q4.svg",
+      "png": "assets/S35-M-Q4.png",
+      "kind": "nl",
+      "description": "Horizontal number line from 30 to 50, tick marks every 1. Nothing is marked; the student draws on it.",
+      "blank_for_drawing": true,
+      "data": {
+       "k": "nl",
+       "min": 30,
+       "max": 50,
+       "step": 1,
+       "labels": {
+        "30": "30",
+        "35": "35",
+        "40": "40",
+        "45": "45",
+        "50": "50"
+       },
+       "pts": []
+      }
+     },
+     "page": 1227,
+     "revision": "revised"
     },
     {
      "id": "S35-M-Q5",
@@ -268,8 +302,8 @@
      "nearest_related": false,
      "type": "tf",
      "response": "select true or false",
-     "prompt": "The graph shows the solution set of -x < 2.",
-     "prompt_markup": "The graph shows the solution set of -x < 2.",
+     "prompt": "A plant is 5 cm tall and grows 2 cm per week. The graph shows the weeks w when the plant is taller than 11 cm, the solution of 2w + 5 > 11.",
+     "prompt_markup": "A plant is 5 cm tall and grows 2 cm per week. The graph shows the weeks w when the plant is taller than 11 cm, the solution of 2w + 5 > 11.",
      "choices": [
       {
        "letter": "A",
@@ -290,38 +324,36 @@
       "svg": "assets/S35-M-Q5.svg",
       "png": "assets/S35-M-Q5.png",
       "kind": "nl",
-      "description": "Horizontal number line from -6 to 6, tick marks every 1. Graph: open circle at -2 with the line shaded to the right.",
+      "description": "Horizontal number line from 0 to 10, tick marks every 1. Graph: open circle at 3 with the line shaded to the right.",
       "blank_for_drawing": false,
       "data": {
        "k": "nl",
-       "min": -6,
-       "max": 6,
+       "min": 0,
+       "max": 10,
        "step": 1,
        "labels": {
-        "-6": "−6",
-        "-5": "−5",
-        "-4": "−4",
-        "-3": "−3",
-        "-2": "−2",
-        "-1": "−1",
         "0": "0",
         "1": "1",
         "2": "2",
         "3": "3",
         "4": "4",
         "5": "5",
-        "6": "6"
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9",
+        "10": "10"
        },
        "pts": [],
        "ray": [
-        -2,
+        3,
         "right",
         true
        ]
       }
      },
-     "page": 1066,
-     "revision": "unchanged"
+     "page": 1228,
+     "revision": "revised"
     }
    ]
   },
@@ -388,7 +420,7 @@
        "pts": []
       }
      },
-     "page": 1068,
+     "page": 1230,
      "revision": "unchanged"
     },
     {
@@ -446,7 +478,7 @@
        "pts": []
       }
      },
-     "page": 1069,
+     "page": 1231,
      "revision": "unchanged"
     },
     {
@@ -526,7 +558,7 @@
        ]
       }
      },
-     "page": 1070,
+     "page": 1232,
      "revision": "unchanged"
     },
     {
@@ -565,7 +597,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1071,
+     "page": 1233,
      "revision": "unchanged"
     },
     {
@@ -604,7 +636,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1072,
+     "page": 1234,
      "revision": "unchanged"
     }
    ]
@@ -646,7 +678,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1074,
+     "page": 1236,
      "revision": "unchanged"
     },
     {
@@ -693,7 +725,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1075,
+     "page": 1237,
      "revision": "unchanged"
     },
     {
@@ -725,7 +757,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1076,
+     "page": 1238,
      "revision": "unchanged"
     },
     {
@@ -764,7 +796,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1077,
+     "page": 1239,
      "revision": "unchanged"
     },
     {
@@ -803,7 +835,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1078,
+     "page": 1240,
      "revision": "unchanged"
     }
    ]
@@ -889,7 +921,7 @@
        ]
       }
      },
-     "page": 1080,
+     "page": 1242,
      "revision": "unchanged"
     },
     {
@@ -921,7 +953,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1081,
+     "page": 1243,
      "revision": "unchanged"
     },
     {
@@ -968,7 +1000,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1082,
+     "page": 1244,
      "revision": "unchanged"
     },
     {
@@ -1007,7 +1039,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1083,
+     "page": 1245,
      "revision": "unchanged"
     },
     {
@@ -1046,7 +1078,7 @@
      "required_method": null,
      "grading_note": "It has infinitely many solutions.",
      "figure": null,
-     "page": 1084,
+     "page": 1246,
      "revision": "unchanged"
     }
    ]
@@ -1074,6 +1106,7 @@
      "domain": "Algebra: Reasoning with Equations & Inequalities",
      "skill": "Graph the solutions of a linear inequality in two variables",
      "nearest_related": false,
+     "standard_level": "High school (Common Core high-school standard; this bank places it at Grade 9 as a second forward step. This is an instructional choice, not an official grade assignment.)",
      "type": "plot",
      "response": "draw on the figure",
      "prompt": "Graph y > x + 1 on the coordinate plane.",
@@ -1103,7 +1136,7 @@
        ]
       }
      },
-     "page": 1086,
+     "page": 1248,
      "revision": "unchanged"
     },
     {
@@ -1121,6 +1154,7 @@
      "domain": "Algebra: Reasoning with Equations & Inequalities",
      "skill": "Graph the solutions of a linear inequality in two variables",
      "nearest_related": false,
+     "standard_level": "High school (Common Core high-school standard; this bank places it at Grade 9 as a second forward step. This is an instructional choice, not an official grade assignment.)",
      "type": "sa",
      "response": "write",
      "prompt": "Is (2, 5) a solution of y ≥ 2x? Explain.",
@@ -1135,7 +1169,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1087,
+     "page": 1249,
      "revision": "unchanged"
     },
     {
@@ -1153,6 +1187,7 @@
      "domain": "Algebra: Reasoning with Equations & Inequalities",
      "skill": "Graph the solutions of a linear inequality in two variables",
      "nearest_related": false,
+     "standard_level": "High school (Common Core high-school standard; this bank places it at Grade 9 as a second forward step. This is an instructional choice, not an official grade assignment.)",
      "type": "mc",
      "response": "select one",
      "prompt": "Which point is in the solution set of y < -x + 3?",
@@ -1182,7 +1217,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1088,
+     "page": 1250,
      "revision": "unchanged"
     },
     {
@@ -1200,6 +1235,7 @@
      "domain": "Algebra: Reasoning with Equations & Inequalities",
      "skill": "Graph the solutions of a linear inequality in two variables",
      "nearest_related": false,
+     "standard_level": "High school (Common Core high-school standard; this bank places it at Grade 9 as a second forward step. This is an instructional choice, not an official grade assignment.)",
      "type": "tf",
      "response": "select true or false",
      "prompt": "The boundary line of the graph of y ≤ 3x - 2 is drawn solid.",
@@ -1221,7 +1257,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1089,
+     "page": 1251,
      "revision": "unchanged"
     },
     {
@@ -1239,6 +1275,7 @@
      "domain": "Algebra: Reasoning with Equations & Inequalities",
      "skill": "Graph the solutions of a linear inequality in two variables",
      "nearest_related": false,
+     "standard_level": "High school (Common Core high-school standard; this bank places it at Grade 9 as a second forward step. This is an instructional choice, not an official grade assignment.)",
      "type": "tf",
      "response": "select true or false",
      "prompt": "The solution set of y > 2 is the region below the line y = 2.",
@@ -1260,7 +1297,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1090,
+     "page": 1252,
      "revision": "unchanged"
     }
    ]

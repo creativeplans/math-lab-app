@@ -1,5 +1,5 @@
-from qb import S, B, sa, mc, tf, plot, table, dot, box, hist, hrow, nl
-from common import grid, spinner
+from qb import S, B, sa, mc, tf, plot, work, table, dot, box, hist, hrow, nl
+from common import grid, spinner, BLANK
 
 
 def tbl(xname, xs, yname, ys):
@@ -21,6 +21,23 @@ MUSIC = two_way([['', 'Plays music', 'No music', 'Total'], ['Grade 9', '18', '42
 TOWNS = box(20, 65, None, step=5, lstep=10, xlabel='Daily high temperature (°F)',
             boxes=[('Town A', (20, 30, 35, 40, 50)), ('Town B', (30, 40, 45, 52, 64))])
 BP = box(0, 20, (3, 6, 10, 14, 18), step=1, lstep=2)
+BASE = [-4, -2, -2, -2, 0, 0, 2, 2, 2, 4]   # mean 0, MAD 2
+
+
+def pair(c1, c2, n1, n2, lo, hi, xlabel):
+    """Two dot plots on the same scale; each data set is BASE shifted to center c (mean c, MAD 2)."""
+    return dict(k='vstack', figs=[dot(lo, hi, [c1 + b for b in BASE], lstep=2, title='%s (%s)' % (n1, xlabel), h=150),
+                                  dot(lo, hi, [c2 + b for b in BASE], lstep=2, title='%s (%s)' % (n2, xlabel), h=150)])
+
+
+def blank_tw(r1, r2, c1, c2):
+    e = ' ' * 10
+    return two_way([['', c1, c2, 'Total'], [r1, e, e, e], [r2, e, e, e], ['Total', e, e, e]])
+
+
+ART = two_way([['', 'Chose art', 'Did not', 'Total'], ['Grade 7 sample', '12', '18', '30'], ['Grade 8 sample', '9', '21', '30'], ['Total', '21', '39', '60']])
+COIN40 = two_way([['', 'Even', 'Odd', 'Total'], ['Heads', '11', '9', '20'], ['Tails', '8', '12', '20'], ['Total', '19', '21', '40']])
+SIM_REDS = dot(0, 12, {1: 1, 2: 3, 3: 6, 4: 9, 5: 11, 6: 9, 7: 6, 8: 3, 9: 1, 10: 1}, xlabel='Number of reds in 20 spins (50 simulations)')
 SPINS = hist(['Red', 'Blue', 'Green'], [9, 6, 5], gap=0.35, ymax=10, ystep=2, xlabel='Color', ylabel='Spins', h=200)
 
 SETS = [
@@ -156,15 +173,69 @@ SETS = [
           tf('A result that happens even once in 1,000 simulations is a common result.', key=False),
       ])),
 
+    # ------------------------------------------------------------------ 7.SP.A.2 (generate samples) -- added in 2.0.0
+    S('7.SP.A.2', 'Generate several same-size random samples with random digits and see how the estimates vary', num=69,
+      main=[
+          sa('A school has 100 students numbered 00 to 99. Students 00 to 39 chose art as their favorite class.\nUse these random two-digit numbers to choose a sample of 5 students:\n07  52  31  88  14\nWhat percent of the sample chose art?', 'Percent:',
+             key='60%', note='07, 31, and 14 chose art: 3 out of 5.'),
+          sa('A school has 100 students numbered 00 to 99. Students 00 to 39 chose art as their favorite class.\nUse these random two-digit numbers to choose a sample of 5 students:\n45  63  02  97  71\nWhat percent of the sample chose art?', 'Percent:',
+             key='20%', note='Only 02 chose art: 1 out of 5.'),
+          mc('Students 00 to 39 of a school of 100 chose art. Four random samples of 5 students were chosen with random digits:\nSample 1: 07 52 31 88 14\nSample 2: 45 63 02 97 71\nSample 3: 38 19 60 25 84\nSample 4: 50 11 76 93 66\nWhat is the range of the four sample percents?',
+             ['40 percentage points', '20 percentage points', '60 percentage points', '0 percentage points']),
+          sa('Students 00 to 39 of a school of 100 chose art, so the true percent is 40%. Four random samples of 5 students gave 60%, 20%, 60%, and 20%.\nWhat is the mean of the four sample percents? How does it compare with the true percent, and how much do single samples vary?', 'Answer:',
+             key='The mean is 40%, the same as the true percent, but single samples varied from 20% to 60%.', note='Grade both: the mean 40%, and the variation of single samples.'),
+          tf('Random samples of 5 students gave estimates from 20% to 60%. Random samples of 50 students from the same school would usually give estimates that are closer together.', key=True),
+      ],
+      back=[
+          B('Write a part of a small sample as a percent', '6.RP.A.3.c', [
+              sa('Write 3 out of 5 as a percent.', 'Percent:', key='60%'),
+              sa('Write 2 out of 5 as a percent.', 'Percent:', key='40%'),
+              mc('What percent is 4 out of 5?', ['80%', '45%', '4%', '20%']),
+              tf('1 out of 5 is 20%.', key=True),
+              tf('3 out of 5 is 35%.', key=False, note='3 out of 5 is 60%.'),
+          ]),
+          B('Find the mean of a small data set', '6.SP.B.5.c', [
+              sa('Find the mean.\n60, 20, 60, 20', 'Mean:', key='40'),
+              sa('Find the mean.\n30, 50, 40', 'Mean:', key='40'),
+              mc('What is the mean of 20, 40, 40, and 60?', ['40', '45', '50', '35']),
+              tf('The mean of 10, 30, and 50 is 30.', key=True),
+              tf('The mean of 20, 20, and 80 is 20.', key=False, note='The mean is 40.'),
+          ]),
+      ],
+      f1=B('Summarize categorical data from two random samples in a two-way table', '8.SP.A.4', nearest=True, qs=[
+          sa('The table shows random samples of 30 students from each grade.\nWhat percent of the Grade 7 sample chose art?', 'Percent:', fig=ART, key='40%', note='12/30 or 2/5 is also correct.'),
+          sa('The table shows random samples of 30 students from each grade.\nWhat percent of the Grade 8 sample chose art?', 'Percent:', fig=ART, key='30%'),
+          mc('The table shows random samples of 30 students from each grade.\nWhich conclusion do the samples best support?',
+             ['A greater share of Grade 7 students than Grade 8 students may prefer art.', 'Exactly 40% of all Grade 7 students prefer art.',
+              'No Grade 8 student prefers art.', 'Every Grade 7 student prefers art.'], fig=ART),
+          tf('In the table, the relative frequency of choosing art in the whole sample of 60 students is 0.35.', fig=ART, key=True),
+          tf('In the table, more Grade 8 students than Grade 7 students chose art.', fig=ART, key=False),
+      ]),
+      f2=B('Use the spread of simulated samples to give an interval for a population percent', 'HSS-IC.B.4', [
+          sa('Simulations show that the middle 95% of random samples of 50 students land within 10 percentage points of the true percent. A real random sample of 50 gives 44%.\nWhat interval is likely to contain the population percent?', 'Interval:', key='34% to 54%'),
+          sa('Simulations show that the middle 95% of random samples of 200 people land within 7 percentage points of the true percent. A real random sample of 200 gives 58%.\nWhat interval is likely to contain the population percent?', 'Interval:', key='51% to 65%'),
+          mc('In simulations, how does the spread of sample percents change as the samples get larger?', ['It gets smaller.', 'It gets larger.', 'It stays the same.', 'It becomes 0.']),
+          tf('An interval of 34% to 54% means the population percent is likely between those values, but it is not certain.', key=True),
+          tf('Simulated samples of 50 vary by about 10 percentage points. So one real sample of 50 always lands exactly on the population percent.', key=False),
+      ])),
+
     # ------------------------------------------------------------------ 7.SP.B.3
     S('7.SP.B.3', 'Describe how much two distributions overlap using the difference in means as a multiple of the MAD',
       main=[
-          sa('Team A\'s heights have a mean of 160 cm. Team B\'s heights have a mean of 172 cm. Both teams have a MAD of 4 cm.\nThe difference in the means is how many MADs?', 'MADs:', key='3'),
-          sa('Class 1 has a mean quiz score of 82. Class 2 has a mean of 76. Each class has a MAD of 3.\nWrite the difference in means as a multiple of the MAD.', 'Answer:', key='2 MADs'),
-          mc('Two data sets have means of 50 and 54. Each has a MAD of 8.\nHow much do the distributions overlap?',
-             ['A lot, because the difference is only half of a MAD', 'Not at all, because the means are different', 'Not at all, because the difference is 4 MADs', 'Very little, because the difference is 8 MADs']),
-          tf('When the difference in means is several MADs, the two distributions overlap very little.', key=True),
-          tf('Two data sets have means of 30 and 40 and a MAD of 10 each. The difference in means is 10 MADs.', key=False, note='It is 1 MAD.'),
+          sa('The dot plots show quiz scores for two classes. The means are 10 and 16, and each data set has a MAD of 2.\nWrite the difference in the means as a multiple of the MAD.', 'Answer:',
+             fig=pair(10, 16, 'Class A', 'Class B', 4, 22, 'Quiz score'), key='3 MADs'),
+          sa('The dot plots show the heights of two kinds of plants, in centimeters. The means are 10 and 11, and each data set has a MAD of 2.\nWrite the difference in the means as a multiple of the MAD, and describe how much the dot plots overlap.', 'Answer:',
+             fig=pair(10, 11, 'Plant A', 'Plant B', 4, 16, 'Height (cm)'),
+             key='0.5 MAD; the dot plots overlap a lot (most values of each set are inside the range of the other).', note='Grade both parts.'),
+          mc('The dot plots show the minutes two groups spent reading. The means are 10 and 14, and each data set has a MAD of 2.\nWhich statement describes the dot plots?',
+             ['The means differ by 2 MADs, and the plots overlap somewhat.', 'The means differ by 4 MADs, and the plots do not overlap.',
+              'The means are the same, so the plots overlap completely.', 'The means differ by 2 MADs, so the plots cannot share any values.'],
+             fig=pair(10, 14, 'Group A', 'Group B', 4, 20, 'Minutes')),
+          tf('The dot plots show two data sets with means of 10 and 12, and each has a MAD of 2. The means differ by 1 MAD, and the dot plots overlap a lot.',
+             fig=pair(10, 12, 'Set A', 'Set B', 4, 18, 'Value'), key=True),
+          tf('The dot plots show two data sets with means of 20 and 26, and each has a MAD of 2. The means differ by 3 MADs, and the two dot plots share no values.',
+             fig=pair(20, 26, 'Team A', 'Team B', 14, 32, 'Points'), key=False,
+             note='The values 22 and 24 appear in both data sets. For distributions of similar shape and spread, a difference of several MADs usually means little overlap, but not necessarily none.'),
       ],
       back=[
           B('Find the mean absolute deviation (MAD)', '6.SP.B.5.c', [
@@ -203,12 +274,17 @@ SETS = [
     # ------------------------------------------------------------------ 7.SP.B.4
     S('7.SP.B.4', 'Compare two populations using measures of center and variability from random samples',
       main=[
-          sa('Random samples of quiz scores: Class A has a median of 78 and an IQR of 10. Class B has a median of 70 and an IQR of 10.\nWhich class tends to score higher, and by how much (median)?', 'Answer:', key='Class A, by 8 points'),
-          sa('A random sample of 7th graders has a mean of 6.5 hours of screen time and a MAD of 1.2. A random sample of 8th graders has a mean of 7.7 hours and a MAD of 1.2.\nWrite the difference in means as a multiple of the MAD.', 'Answer:', key='1 MAD'),
+          sa('Random samples of quiz scores: Class A has a median of 78 and an IQR of 10. Class B has a median of 70 and an IQR of 10.\nWhat do the samples suggest about the two classes? Use both the center and the spread.', 'Answer:',
+             key='The samples suggest Class A tends to score higher, by about 8 points (median). The spreads are the same (IQR 10), so the scores overlap and some Class B students may score higher than some Class A students.',
+             note='Full credit uses both the centers and the spreads and states a tendency, not a certainty about every student.'),
+          sa('A random sample of 7th graders has a mean of 6.5 hours of screen time and a MAD of 1.2. A random sample of 8th graders has a mean of 7.7 hours and a MAD of 1.2.\nWrite the difference in means as a multiple of the MAD. What does this suggest about the two populations?', 'Answer:',
+             key='1 MAD. The samples suggest 8th graders tend to have more screen time, but the distributions overlap a lot, so the difference is modest.',
+             note='Grade both: 1 MAD, and an inference that uses the overlap.'),
           mc('The box plots show random samples of daily high temperatures in two towns.\nWhich statement is true?',
              ['The median for Town B is 10 degrees greater than the median for Town A.', 'Town A has the greater median.', 'The IQRs differ by 10 degrees.', 'The two towns have the same range.'], fig=TOWNS),
-          tf('Random samples are a good way to compare two populations.', key=True),
-          tf('Sample A has a greater mean than Sample B. So every value in Sample A is greater than every value in Sample B.', key=False),
+          tf('Random samples from two populations have means of 20 and 30, and each has a MAD of 2. The samples suggest that values in the second population tend to be greater.', key=True),
+          tf('A random sample from population A has a mean of 52 and one from population B has a mean of 48, each with a MAD of 10. The samples prove that every member of population A has a greater value than every member of population B.', key=False,
+             note='The difference is only 0.4 MAD, and samples can only suggest a tendency.'),
       ],
       back=[
           B('Find the interquartile range', '6.SP.B.5.c', [
@@ -235,7 +311,8 @@ SETS = [
       ]),
       f2=B('Interpret differences in center and spread, including the effect of outliers', 'HSS-ID.A.3', [
           sa('A data set is 4, 5, 5, 6, 7, 40.\nWhich better describes its center, the mean or the median? Explain.', 'Answer:', key='The median, because the outlier 40 pulls the mean up.'),
-          sa('A data set is 4, 5, 5, 6, 7, 40.\nWhat is the mean with the outlier, and what is the mean without it?', 'Answer:', key='About 11.2 with the outlier; 5.4 without it'),
+          sa('A data set is 4, 5, 5, 6, 7, 40.\nFind the mean with the outlier and the mean without it. Round a mean that does not end to the nearest tenth.', 'Answer:',
+             key='11.2 with the outlier; 5.4 without it', note='The exact values 67/6 and 27/5 are also correct.'),
           mc('Which measure is affected most by an outlier?', ['Mean', 'Median', 'IQR', 'Mode']),
           tf('The median is resistant to outliers.', key=True),
           tf('Removing a very large outlier makes the mean larger.', key=False),
@@ -274,13 +351,13 @@ SETS = [
           tf('In the table, Grade 9 students are more likely than Grade 10 students to play music, because 18 > 12.', fig=MUSIC, key=False,
              note='Both rates are 30%.'),
       ]),
-      f2=B('Describe events as subsets of a sample space', 'HSS-CP.A.1', [
-          sa('A number cube is rolled.\nList the outcomes in the event "an even number."', 'Outcomes:', key='2, 4, 6'),
-          sa('A number cube is rolled.\nList the outcomes in the complement of the event "a number greater than 4."', 'Outcomes:', key='1, 2, 3, 4'),
-          mc('A coin is flipped twice.\nWhat is the sample space?', ['HH, HT, TH, TT', 'HH, TT', 'H, T', 'HH, HT, TT']),
-          tf('The probability of an event plus the probability of its complement is 1.', key=True),
-          tf('When a number cube is rolled, the events "even number" and "odd number" together include no outcomes.', key=False,
-             note='Together they include all six outcomes.'),
+      f2=B('Describe unions, intersections, and complements of events as subsets of a sample space', 'HSS-CP.A.1', [
+          sa('A card is drawn at random from cards numbered 1 to 10. Event A is "an even number." Event B is "a number greater than 6."\nList the outcomes in "A and B" (the intersection).', 'Outcomes:', key='8, 10'),
+          sa('A card is drawn at random from cards numbered 1 to 10. Event A is "an even number." Event B is "a number greater than 6."\nList the outcomes in "A or B" (the union).', 'Outcomes:', key='2, 4, 6, 7, 8, 9, 10'),
+          mc('A card is drawn at random from cards numbered 1 to 10. Event A is "an even number."\nWhich set of outcomes is the complement of A ("not A")?',
+             ['1, 3, 5, 7, 9', '2, 4, 6, 8, 10', '1, 2, 3, 4, 5', '7, 8, 9, 10']),
+          tf('A card is drawn at random from cards numbered 1 to 10. Event A is "an even number" and event B is "a number greater than 6." Then P(A or B) = {7/10}.', key=True),
+          tf('A card is drawn at random from cards numbered 1 to 10. Event A is "an even number" and event B is "a number greater than 6." The intersection of A and B has more outcomes than their union.', key=False),
       ])),
 
     # ------------------------------------------------------------------ 7.SP.C.6
@@ -289,7 +366,7 @@ SETS = [
           sa('A spinner landed on green 36 times in 120 spins.\nEstimate the probability of landing on green.', 'Probability:', key='0.3', note='36/120 or 3/10 is also correct.'),
           sa('A basketball player made 42 of her last 60 free throws.\nPredict how many she will make in her next 150 free throws.', 'Free throws:', key='105'),
           mc('A coin was flipped 200 times and landed heads 94 times.\nWhat is the relative frequency of heads?', ['0.47', '0.94', '0.53', '0.5']),
-          tf('A number cube is rolled 300 times. About 50 of the rolls should be a 4.', key=True),
+          tf('A fair number cube (numbered 1 to 6) is rolled 300 times. About 50 of the rolls should be a 4.', key=True),
           tf('A spinner landed on red 9 out of 10 times. The probability of red must be exactly 0.9.', key=False,
              note='Relative frequency only estimates the probability, and 10 spins is a small number of trials.'),
       ],
@@ -324,10 +401,57 @@ SETS = [
           tf('In the table, P(Grade 9 | dog) = {25/40}.', fig=PETS, key=False, note='P(Grade 9 | dog) = 25/45 = 5/9.'),
       ])),
 
+    # ------------------------------------------------------------------ 7.SP.C.6 (collect data) -- added in 2.0.0
+    S('7.SP.C.6', 'Collect data from a chance process and use it to estimate a probability', num=70,
+      main=[
+          sa('Use these random digits as rolls of a fair number cube. Use only the digits 1 to 6, and skip 0, 7, 8, and 9.\n4 8 2 6 6 1 9 3 5 6 0 2 4 6 1 7 3 6 5 2\nRecord the first 15 rolls. What is the relative frequency of rolling a 6?', 'Answer:',
+             key='5 sixes in 15 rolls; 5/15 = 1/3', note='The first 15 rolls are 4, 2, 6, 6, 1, 3, 5, 6, 2, 4, 6, 1, 3, 6, 5. Grade both: the count 5 and the relative frequency 1/3.'),
+          sa('A student records 20 flips of a coin:\nH T T H H H T H T T H H T H H T H H T H\nWhat is the relative frequency of heads? Use it to predict the number of heads in 200 flips.', 'Answer:',
+             key='12/20 = 0.6; about 120 heads in 200 flips', note='Grade both parts.'),
+          work('Roll a number cube (or use a number-cube app) 30 times. Record each result in a tally table. Then find the relative frequency of rolling an even number.', 'Relative frequency:',
+               method='A tally table of 30 recorded results, a count of even results (2, 4, 6) that matches the tally, and that count divided by 30. '
+                      'Grade the recording and the calculation; the relative frequency does not have to equal 1/2.',
+               key='The number of even results ÷ 30 (answers vary)'),
+          mc('A student records 50 spins of a spinner: 18 red, 22 blue, and 10 green.\nWhat is the relative frequency of blue?', ['0.44', '0.22', '0.36', '0.5']),
+          tf('A student rolls a fair number cube 30 times. Her data must show exactly 5 threes, or she made a mistake.', key=False,
+             note='Results vary from the expected 5; any count can happen.'),
+      ],
+      back=[
+          B('Organize data with up to four categories', '2.MD.D.10', [
+              sa('A spinner gives these results: R, B, R, G, R, B, R, G, B, R.\nHow many times did it land on R?', 'Times:', key='5'),
+              sa('A spinner gives these results: R, B, R, G, R, B, R, G, B, R.\nHow many results are there in all?', 'Results:', key='10'),
+              mc('A tally chart shows red 4, blue 3, and green 3.\nHow many results are there in all?', ['10', '4', '7', '9']),
+              tf('A tally chart can be used to record results as they happen.', key=True),
+              tf('Red has 5 tally marks and blue has 3. Blue has 2 more than red.', key=False),
+          ]),
+          B('Write fractions with denominators of 10 or 100 as decimals', '4.NF.C.6', [
+              sa('Write {6/10} as a decimal.', 'Decimal:', key='0.6'),
+              sa('Write {44/100} as a decimal.', 'Decimal:', key='0.44'),
+              mc('Which decimal is equal to {35/100}?', ['0.35', '3.5', '0.035', '35']),
+              tf('{8/10} = 0.8', key=True),
+              tf('{5/100} = 0.5', key=False),
+          ]),
+      ],
+      f1=B('Record results of two chance processes in a two-way table', '8.SP.A.4', nearest=True, qs=[
+          sa('A coin was flipped and a number cube rolled 40 times. The table shows the results.\nWhat is the relative frequency of heads?', 'Relative frequency:', fig=COIN40, key='0.5', note='20/40 is also correct.'),
+          sa('A coin was flipped and a number cube rolled 40 times. The table shows the results.\nAmong the heads results, what is the relative frequency of an even number?', 'Relative frequency:', fig=COIN40, key='0.55', note='11/20 is also correct.'),
+          mc('A coin was flipped and a number cube rolled 40 times. The table shows the results.\nWhich result happened most often?', ['Tails and odd', 'Heads and even', 'Heads and odd', 'Tails and even'], fig=COIN40),
+          tf('In the table, the relative frequency of tails and odd is 0.3.', fig=COIN40, key=True),
+          tf('In the table, the relative frequencies of the four results add to more than 1.', fig=COIN40, key=False),
+      ]),
+      f2=B('Use collected data to judge whether two events seem independent', 'HSS-CP.A.2', [
+          sa('A coin was flipped and a number cube rolled 40 times. The table shows the results.\nEstimate P(heads), P(even), and P(heads and even).', 'Estimates:', fig=COIN40, key='0.5, 0.475, and 0.275'),
+          sa('A coin was flipped and a number cube rolled 40 times. The table shows the results.\nIs P(heads and even) close to P(heads) × P(even)? What does this suggest?', 'Answer:', fig=COIN40,
+             key='0.5 × 0.475 = 0.2375, which is fairly close to 0.275; the data are consistent with independence (small differences are expected by chance).'),
+          mc('Events A and B are independent.\nWhich statement must be true?', ['P(A and B) = P(A) × P(B)', 'P(A and B) = P(A) + P(B)', 'P(A) = P(B)', 'P(A or B) = 1']),
+          tf('A fair coin is flipped and a fair number cube numbered 1 to 6 is rolled. P(heads and 6) = {1/12}.', key=True),
+          tf('Events A and B are independent, with P(A) = 0.5 and P(B) = 0.4. Then P(A and B) = 0.9.', key=False, note='P(A and B) = 0.5 × 0.4 = 0.2.'),
+      ])),
+
     # ------------------------------------------------------------------ 7.SP.C.7.a
     S('7.SP.C.7.a', 'Develop a uniform probability model and use it to find probabilities',
       main=[
-          sa('A number cube has faces numbered 1 to 6.\nWhat is the probability of rolling a number greater than 4?', 'Probability:', key='1/3', note='2/6 is also correct.'),
+          sa('A fair number cube has faces numbered 1 to 6.\nWhat is the probability of rolling a number greater than 4?', 'Probability:', key='1/3', note='2/6 is also correct.'),
           sa('The spinner has 5 equal sections.\nWhat is the probability of landing on a vowel?', 'Probability:', fig=spinner('A', 'B', 'C', 'D', 'E'), key='2/5'),
           mc('A class has 12 girls and 18 boys. One student is chosen at random.\nWhat is the probability that a girl is chosen?', ['{2/5}', '{3/5}', '{2/3}', '{1/12}']),
           tf('In a uniform probability model, every outcome has the same probability.', key=True),
@@ -336,7 +460,7 @@ SETS = [
       back=[
           B('Write equivalent fractions', '4.NF.A.1', [
               sa('Write a fraction equivalent to {3/12} with a denominator of 4.', 'Fraction:', key='1/4'),
-              sa('Write a fraction equivalent to {10/15} with a denominator of 3.', 'Fraction:', key='2/3'),
+              sa('Write a fraction equivalent to {8/12} with a denominator of 3.', 'Fraction:', key='2/3'),
               mc('Which fraction is equivalent to {4/6}?', ['{2/3}', '{3/4}', '{4/12}', '{6/4}']),
               tf('{5/10} = {1/2}', key=True),
               tf('{2/8} = {1/3}', key=False),
@@ -344,22 +468,24 @@ SETS = [
           B('Write a fraction for part of a whole', '3.NF.A.1', [
               sa('A spinner has 8 equal parts. 3 of the parts are red.\nWhat fraction of the spinner is red?', 'Fraction:', key='3/8'),
               sa('A bag has 6 equal-size tiles. 1 tile is blue.\nWhat fraction of the tiles is blue?', 'Fraction:', key='1/6'),
-              mc('A pizza is cut into 4 equal slices. 3 slices are eaten.\nWhat fraction of the pizza is eaten?', ['{3/4}', '{1/4}', '{4/3}', '{3/7}']),
-              tf('One of 5 equal parts is {1/5} of the whole.', key=True),
+              mc('A pizza is cut into 4 equal slices. 3 slices are eaten.\nWhat fraction of the pizza is eaten?', ['{3/4}', '{1/4}', '{4/3}', '{3/6}']),
+              tf('One of 6 equal parts is {1/6} of the whole.', key=True),
               tf('Two of 6 equal parts is {2/4} of the whole.', key=False),
           ]),
       ],
-      f1=B('Understand a function as a rule that gives exactly one output for each input', '8.F.A.1', nearest=True, qs=[
-          sa('Is the set of pairs (1, 3), (2, 5), (3, 7) a function? Explain.', 'Answer:', key='Yes. Each input has exactly one output.'),
-          sa('Is the set of pairs (2, 4), (2, 6), (3, 8) a function? Explain.', 'Answer:', key='No. The input 2 has two different outputs.'),
-          mc('Which table shows a function?', ['x: 1, 2, 3 and y: 4, 4, 4', 'x: 1, 1, 2 and y: 3, 5, 7', 'x: 5, 5, 5 and y: 1, 2, 3', 'x: 0, 0, 1 and y: 0, 1, 1']),
+      f1=B('Use a function that assigns a probability to each outcome', '8.F.A.1', nearest=True, qs=[
+          sa('A spinner has 4 equal sections, A, B, C, and D, and a fair pointer. A probability model assigns a probability to each outcome.\nWrite the model as pairs (outcome, probability). Is it a function? Explain.', 'Answer:',
+             key='(A, 1/4), (B, 1/4), (C, 1/4), (D, 1/4). Yes: each outcome is assigned exactly one probability.'),
+          sa('A rule assigns (red, 0.5), (blue, 0.3), and (red, 0.2).\nIs this rule a function from outcomes to probabilities? Explain.', 'Answer:',
+             key='No. The outcome red is assigned two different probabilities.'),
+          mc('A fair number cube numbered 1 to 6 is rolled. The function P gives the probability of each outcome.\nWhat is P(4)?', ['{1/6}', '{4/6}', '4', '{1/4}']),
           tf('A probability model gives exactly one probability to each outcome, just as a function gives exactly one output to each input.', key=True),
           tf('In a function, one input can have two different outputs.', key=False),
       ]),
       f2=B('Use the addition rule for probability', 'HSS-CP.B.7', [
           sa('A card is chosen at random from cards numbered 1 to 10.\nFind P(even or greater than 7).', 'Probability:', key='3/5', note='6/10 or 0.6 is also correct.'),
           sa('P(A) = 0.4, P(B) = 0.5, and P(A and B) = 0.2.\nFind P(A or B).', 'Probability:', key='0.7'),
-          mc('A number cube is rolled.\nWhat is P(less than 3 or odd)?', ['{2/3}', '{5/6}', '{1/2}', '{1/3}']),
+          mc('A fair number cube numbered 1 to 6 is rolled.\nWhat is P(less than 3 or odd)?', ['{2/3}', '{5/6}', '{1/2}', '{1/3}']),
           tf('If A and B cannot both happen, then P(A or B) = P(A) + P(B).', key=True),
           tf('P(A or B) is always equal to P(A) + P(B).', key=False, note='You subtract P(A and B) when A and B can happen together.'),
       ])),
@@ -390,12 +516,22 @@ SETS = [
               tf('14 out of 40 is 14%.', key=False, note='14 out of 40 is 35%.'),
           ]),
       ],
-      f1=B('Construct a two-way table from collected data', '8.SP.A.4', nearest=True, qs=[
-          sa('50 students were surveyed. 30 have a phone. 18 of the students with a phone also have a tablet. 8 of the students without a phone have a tablet.\nHow many students have neither a phone nor a tablet?', 'Students:', key='12'),
-          sa('50 students were surveyed. 30 have a phone. 18 of the students with a phone also have a tablet. 8 of the students without a phone have a tablet.\nHow many students have a tablet?', 'Students:', key='26'),
-          mc('A two-way table has the rows "Phone" and "No phone" and the columns "Tablet" and "No tablet."\nHow many cells show counts for both variables (not totals)?', ['4', '2', '6', '9']),
-          tf('A two-way table shows how often each combination of two categories happens.', key=True),
-          tf('In a two-way table, the row totals and the column totals add to different grand totals.', key=False),
+      f1=B('Construct a two-way table from survey counts', '8.SP.A.4', nearest=True, qs=[
+          plot('50 students were surveyed. 30 have a phone. 18 of the students with a phone also have a tablet. 8 of the students without a phone have a tablet.\nComplete the two-way table.',
+               blank_tw('Phone', 'No phone', 'Tablet', 'No tablet'),
+               key='Phone: 18 tablet, 12 no tablet, 30 total. No phone: 8 tablet, 12 no tablet, 20 total. Totals: 26 tablet, 24 no tablet, 50 in all.'),
+          plot('40 people were surveyed. 15 have a dog. 6 of the dog owners also have a cat. 10 of the people without a dog have a cat.\nComplete the two-way table.',
+               blank_tw('Dog', 'No dog', 'Cat', 'No cat'),
+               key='Dog: 6 cat, 9 no cat, 15 total. No dog: 10 cat, 15 no cat, 25 total. Totals: 16 cat, 24 no cat, 40 in all.'),
+          plot('60 students were surveyed. 35 play a sport. 20 of the sport players also play an instrument. 30 of the students play an instrument.\nComplete the two-way table.',
+               blank_tw('Sport', 'No sport', 'Instrument', 'No instrument'),
+               key='Sport: 20 instrument, 15 no instrument, 35 total. No sport: 10 instrument, 15 no instrument, 25 total. Totals: 30 instrument, 30 no instrument, 60 in all.'),
+          plot('80 adults were surveyed. 48 drink coffee. 12 of the coffee drinkers also drink tea. 20 adults drink neither coffee nor tea.\nComplete the two-way table.',
+               blank_tw('Coffee', 'No coffee', 'Tea', 'No tea'),
+               key='Coffee: 12 tea, 36 no tea, 48 total. No coffee: 12 tea, 20 no tea, 32 total. Totals: 24 tea, 56 no tea, 80 in all.'),
+          plot('100 students were surveyed: 45 in Grade 7 and 55 in Grade 8. 27 of the Grade 7 students and 22 of the Grade 8 students ride the bus.\nComplete the two-way table.',
+               blank_tw('Grade 7', 'Grade 8', 'Bus', 'No bus'),
+               key='Grade 7: 27 bus, 18 no bus, 45 total. Grade 8: 22 bus, 33 no bus, 55 total. Totals: 49 bus, 51 no bus, 100 in all.'),
       ]),
       f2=B('Summarize categorical data with relative frequencies', 'HSS-ID.B.5', [
           sa('The table shows the results of a survey.\nWhat is the joint relative frequency of Grade 9 students who play music?', 'Relative frequency:', fig=MUSIC, key='0.18', note='18/100 or 18% is also correct.'),
@@ -408,8 +544,9 @@ SETS = [
     # ------------------------------------------------------------------ 7.SP.C.7 (compare model and data)
     S('7.SP.C.7', 'Compare probabilities from a model with observed frequencies and explain any differences',
       main=[
-          sa('A fair number cube is rolled 60 times.\nHow many times would you expect to roll a 5?', 'Times:', key='10'),
-          sa('A fair coin is flipped 100 times and lands heads 61 times.\nCompare this with the model. Give a possible reason for the difference.', 'Answer:',
+          sa('A fair number cube is rolled 60 times, and a 5 comes up 14 times.\nHow many 5s does the model predict? How does the observed count compare?', 'Answer:',
+             key='The model predicts 10 fives; the observed 14 is 4 more than expected.', note='Grade both: 10 expected, and the comparison with 14.'),
+          sa('A coin is claimed to be fair. It is flipped 100 times and lands heads 61 times.\nCompare this with the model. Give a possible reason for the difference.', 'Answer:',
              key='The model predicts about 50 heads. Random variation can explain some of the difference, but 61 heads might also mean the coin is not fair.',
              note='Any answer that compares with the expected 50 and gives a reasonable cause (chance variation or an unfair coin).'),
           mc('A spinner has 4 equal sections, one of them yellow. In 80 spins, it lands on yellow 35 times.\nWhich conclusion is best?',
@@ -441,22 +578,26 @@ SETS = [
           tf('A linear model can be useful even when the data points do not all lie on the line.', key=True),
           tf('If one data point is far from the line of fit, the model must be thrown out.', key=False),
       ]),
-      f2=B('Decide whether observed results are consistent with a model', 'HSS-IC.A.2', [
-          sa('A spinner is claimed to land on red 25% of the time. In 200 spins it lands on red 52 times.\nIs this consistent with the claim? Explain.', 'Answer:', key='Yes. 52 is close to the expected 50.'),
-          sa('A number cube is claimed to be fair. In 300 rolls, 6 comes up 120 times.\nIs this consistent with the claim? Explain.', 'Answer:', key='No. The expected number is about 50, and 120 is far more than that.'),
-          mc('A model says P(win) = 0.1. Which number of wins in 50 games would cast the most doubt on the model?', ['20', '5', '4', '6']),
-          tf('A simulation can show the range of results that a model usually produces.', key=True),
-          tf('Any difference between observed and expected results proves that a model is wrong.', key=False),
+      f2=B('Judge whether a result is consistent with a model by using a simulation', 'HSS-IC.A.2', [
+          sa('A spinner is claimed to land on red 25% of the time. The dot plot shows the number of reds in each of 50 simulated sets of 20 spins under that model. A real spinner lands on red 11 times in 20 spins.\nIs the result consistent with the model? Use the simulation.', 'Answer:',
+             fig=SIM_REDS, key='No. 11 or more reds never happened in the 50 simulations, so the result casts doubt on the 25% model.'),
+          sa('A spinner is claimed to land on red 25% of the time. The dot plot shows the number of reds in each of 50 simulated sets of 20 spins under that model. A real spinner lands on red 6 times in 20 spins.\nIs the result consistent with the model? Use the simulation.', 'Answer:',
+             fig=SIM_REDS, key='Yes. 6 or more reds happened in 20 of the 50 simulations (40%), so 6 reds is not unusual.'),
+          mc('The dot plot shows the number of reds in each of 50 simulated sets of 20 spins of a spinner that lands on red 25% of the time.\nWhich real result would be the most surprising under this model?',
+             ['10 reds', '6 reds', '4 reds', '5 reds'], fig=SIM_REDS),
+          tf('In the simulation shown, 9 or more reds happened in 2 of the 50 sets, about 4% of the time.', fig=SIM_REDS, key=True),
+          tf('A real spinner gives 8 reds in 20 spins. Because 8 is more than the expected 5, the simulation shown proves the 25% model is wrong.', fig=SIM_REDS, key=False,
+             note='8 or more reds happened in 5 of the 50 simulations (10%), so the result is not very unusual.'),
       ])),
 
     # ------------------------------------------------------------------ 7.SP.C.8.a
     S('7.SP.C.8.a', 'Find the probability of a compound event as the fraction of outcomes in the sample space',
       main=[
-          sa('A coin is flipped and a number cube is rolled.\nWhat is the probability of getting heads and a 6?', 'Probability:', key='1/12'),
-          sa('Two coins are flipped.\nWhat is the probability that both land tails?', 'Probability:', key='1/4'),
-          mc('The spinner has 3 equal sections. It is spun twice.\nWhat is the probability of landing on A both times?', ['{1/9}', '{1/3}', '{2/3}', '{1/6}'], fig=spinner('A', 'B', 'C')),
-          tf('Two number cubes are rolled. The probability that the sum is 7 is {6/36} = {1/6}.', key=True),
-          tf('Two coins are flipped. The probability of getting one head and one tail is {1/4}.', key=False, note='The probability is 2/4 = 1/2.'),
+          sa('A fair coin is flipped and a fair number cube numbered 1 to 6 is rolled.\nWhat is the probability of getting heads and a 6?', 'Probability:', key='1/12'),
+          sa('Two fair coins are flipped.\nWhat is the probability that both land tails?', 'Probability:', key='1/4'),
+          mc('The spinner has 3 equal sections and a fair pointer. It is spun twice, and the spins do not affect each other.\nWhat is the probability of landing on A both times?', ['{1/9}', '{1/3}', '{2/3}', '{1/6}'], fig=spinner('A', 'B', 'C')),
+          tf('Two fair number cubes numbered 1 to 6 are rolled. The probability that the sum is 7 is {6/36} = {1/6}.', key=True),
+          tf('Two fair coins are flipped. The probability of getting one head and one tail is {1/4}.', key=False, note='The probability is 2/4 = 1/2.'),
       ],
       back=[
           B('Multiply fractions', '5.NF.B.4.a', [
@@ -466,13 +607,15 @@ SETS = [
               tf('{1/3} × {1/2} = {1/6}', key=True),
               tf('{1/5} × {1/5} = {2/5}', key=False),
           ]),
-          B('Use multiplication to count combinations in equal groups', '3.OA.A.3', [
-              sa('A café has 3 kinds of sandwiches and 4 kinds of drinks.\nHow many different sandwich-and-drink pairs can be made?', 'Pairs:', key='12'),
-              sa('Ty has 4 shirts and 5 pairs of pants.\nHow many different shirt-and-pants outfits can he make?', 'Outfits:', key='20'),
-              mc('A shop has 6 ice cream flavors and 2 kinds of cones.\nHow many different flavor-and-cone choices are there?', ['12', '8', '6', '3']),
-              tf('3 rows of 7 chairs is 21 chairs.', key=True),
-              tf('5 hats and 3 scarves make 8 different hat-and-scarf pairs.', key=False, note='They make 15 pairs.'),
-          ]),
+          B('Count pairs with an array: one row for each first choice', '3.OA.A.3', [
+          sa('A café has 3 kinds of sandwiches and 4 kinds of drinks. The array has one row for each sandwich and one column for each drink; each dot is one sandwich-and-drink pair.\nHow many pairs are there?', 'Pairs:',
+             fig=dict(k='array', rows=3, cols=4, h=170), key='12'),
+          sa('Ty has 4 shirts and 5 pairs of pants. The array has one row for each shirt and one column for each pair of pants; each dot is one outfit.\nHow many outfits are there?', 'Outfits:',
+             fig=dict(k='array', rows=4, cols=5, h=190), key='20'),
+          mc('A shop has 6 ice cream flavors and 2 kinds of cones. Each flavor can go with each cone, so there are 6 rows with 2 choices in each row.\nHow many flavor-and-cone choices are there?', ['12', '8', '6', '3']),
+          tf('3 rows of 7 chairs is 21 chairs.', key=True),
+          tf('An array has one row for each of 5 hats and one column for each of 3 scarves. It shows 8 hat-and-scarf pairs.', key=False, note='5 rows of 3 is 15 pairs.'),
+      ]),
       ],
       f1=B('Find joint relative frequencies in a two-way table', '8.SP.A.4', nearest=True, qs=[
           sa('The table shows 100 trials of flipping a coin and rolling a number cube.\nWhat is the relative frequency of an even number and heads?', 'Relative frequency:', fig=COINDIE, key='0.24'),
@@ -483,8 +626,8 @@ SETS = [
       ]),
       f2=B('Use the multiplication rule for independent events', 'HSS-CP.A.2', [
           sa('Events A and B are independent. P(A) = 0.3 and P(B) = 0.5.\nFind P(A and B).', 'Probability:', key='0.15'),
-          sa('A fair coin is flipped 3 times.\nWhat is the probability that all 3 flips are heads?', 'Probability:', key='1/8'),
-          mc('A fair number cube is rolled twice.\nWhat is the probability of rolling two 6s?', ['{1/36}', '{1/6}', '{1/12}', '{2/6}']),
+          sa('A fair coin is flipped 3 times, and the flips are independent.\nWhat is the probability that all 3 flips are heads?', 'Probability:', key='1/8'),
+          mc('A fair number cube numbered 1 to 6 is rolled twice, and the rolls are independent.\nWhat is the probability of rolling two 6s?', ['{1/36}', '{1/6}', '{1/12}', '{2/6}']),
           tf('Events A and B are independent when P(A and B) = P(A) × P(B).', key=True),
           tf('Drawing two cards from a deck without putting the first card back are independent events.', key=False),
       ])),
@@ -493,10 +636,15 @@ SETS = [
     S('7.SP.C.8.b', 'Represent the sample space of a compound event with a list, a table, or a tree diagram',
       main=[
           sa('A coin is flipped and a spinner with sections 1, 2, and 3 is spun.\nList the sample space.', 'Sample space:', key='H1, H2, H3, T1, T2, T3'),
-          sa('A café has 3 sandwiches and 4 drinks.\nHow many outcomes are in the sample space for choosing one sandwich and one drink?', 'Outcomes:', key='12'),
-          mc('A tree diagram shows choosing a shirt (red or blue) and then pants (black, tan, or gray).\nHow many branches are at the end of the tree?', ['6', '5', '3', '2']),
-          tf('"Roll a 3 and get tails" is one outcome in the sample space for rolling a number cube and flipping a coin.', key=True),
-          tf('The sample space for flipping two coins is HH, HT, TT.', key=False, note='TH is missing.'),
+          sa('A café offers 3 sandwiches (ham, egg, tuna) and 2 drinks (milk, juice).\nMake an organized list of every sandwich-and-drink pair.', 'Sample space:',
+             key='ham-milk, ham-juice, egg-milk, egg-juice, tuna-milk, tuna-juice', note='All 6 pairs are required, in any order or format.'),
+          plot('Draw a tree diagram for choosing a shirt (red or blue) and then pants (black, tan, or gray). Write the outcome at the end of each branch.', BLANK,
+               key='A tree with 2 first branches (red, blue), each splitting into 3 branches (black, tan, gray), ending in 6 outcomes: red-black, red-tan, red-gray, blue-black, blue-tan, blue-gray.'),
+          plot('Complete the table to show the sample space for flipping a coin and then rolling a number cube numbered 1 to 6.',
+               table([['', '1', '2', '3', '4', '5', '6'], ['H', '', '', '', '', '', ''], ['T', '', '', '', '', '', '']], header='both'),
+               key='Row H: H1, H2, H3, H4, H5, H6. Row T: T1, T2, T3, T4, T5, T6 (12 outcomes).'),
+          sa('A first coin and a second coin are flipped.\nMake an organized list of the sample space. Then list the outcomes in the event "exactly one head."', 'Answer:',
+             key='HH, HT, TH, TT; the event "exactly one head" is HT and TH.', note='Grade both: all 4 outcomes (HT and TH listed separately), and the event HT, TH.'),
       ],
       back=[
           B('Use repeated addition to find the total in an array', '2.OA.C.4', [
@@ -514,32 +662,44 @@ SETS = [
               tf('The patterns A: 0, 2, 4 and B: 0, 3, 6 make the ordered pair (4, 3).', key=False, note='They make the pair (4, 6).'),
           ]),
       ],
-      f1=B('Organize the outcomes of two categorical variables in a two-way table', '8.SP.A.4', nearest=True, qs=[
-          sa('In a class, 14 students have a sibling and 10 do not. 8 of the students with a sibling have a pet. 3 of the students without a sibling have a pet.\nHow many students have a sibling but no pet?', 'Students:', key='6'),
-          sa('In a class, 14 students have a sibling and 10 do not. 8 of the students with a sibling have a pet. 3 of the students without a sibling have a pet.\nHow many students have a pet?', 'Students:', key='11'),
-          mc('A two-way table has the rows "Sibling" and "No sibling" and the columns "Pet" and "No pet."\nHow many outcome cells (not totals) does it have?', ['4', '2', '6', '9']),
-          tf('A two-way table can show the counts for two categorical variables at the same time.', key=True),
-          tf('A two-way table with 3 rows and 2 columns of outcomes has 5 outcome cells.', key=False, note='It has 3 × 2 = 6 outcome cells.'),
+      f1=B('Organize two categorical variables in a two-way table', '8.SP.A.4', nearest=True, qs=[
+          plot('In a class, 14 students have a sibling and 10 do not. 8 of the students with a sibling have a pet. 3 of the students without a sibling have a pet.\nComplete the two-way table.',
+               blank_tw('Sibling', 'No sibling', 'Pet', 'No pet'),
+               key='Sibling: 8 pet, 6 no pet, 14 total. No sibling: 3 pet, 7 no pet, 10 total. Totals: 11 pet, 13 no pet, 24 in all.'),
+          plot('A class has 30 students. 18 like soccer. 12 of the soccer fans also like basketball. 4 of the students who do not like soccer like basketball.\nComplete the two-way table.',
+               blank_tw('Soccer', 'No soccer', 'Basketball', 'No basketball'),
+               key='Soccer: 12 basketball, 6 no basketball, 18 total. No soccer: 4 basketball, 8 no basketball, 12 total. Totals: 16 basketball, 14 no basketball, 30 in all.'),
+          plot('50 shoppers were counted. 20 used a coupon. 15 of the coupon users paid by card. 25 of the shoppers paid by card.\nComplete the two-way table.',
+               blank_tw('Coupon', 'No coupon', 'Card', 'Cash'),
+               key='Coupon: 15 card, 5 cash, 20 total. No coupon: 10 card, 20 cash, 30 total. Totals: 25 card, 25 cash, 50 in all.'),
+          plot('A team played 36 games. It played 20 at home and won 14 of them. It won 22 games in all.\nComplete the two-way table.',
+               blank_tw('Home', 'Away', 'Won', 'Lost'),
+               key='Home: 14 won, 6 lost, 20 total. Away: 8 won, 8 lost, 16 total. Totals: 22 won, 14 lost, 36 in all.'),
+          plot('90 students were surveyed. 40 walk to school, and 25 of them eat breakfast at home. 30 of the students who do not walk eat breakfast at home.\nComplete the two-way table.',
+               blank_tw('Walk', 'Do not walk', 'Breakfast', 'No breakfast'),
+               key='Walk: 25 breakfast, 15 no breakfast, 40 total. Do not walk: 30 breakfast, 20 no breakfast, 50 total. Totals: 55 breakfast, 35 no breakfast, 90 in all.'),
       ]),
       f2=B('Find a conditional probability as P(A and B) ÷ P(B)', 'HSS-CP.A.3', [
           sa('P(A and B) = 0.12 and P(B) = 0.4.\nFind P(A | B).', 'Probability:', key='0.3'),
-          sa('Two coins are flipped. At least one landed heads.\nWhat is the probability that both landed heads?', 'Probability:', key='1/3'),
-          mc('A number cube is rolled, and the result is even.\nWhat is the probability that it is a 6?', ['{1/3}', '{1/6}', '{1/2}', '{2/3}']),
-          tf('If A and B are independent, then P(A | B) = P(A).', key=True),
+          sa('Two fair coins are flipped. At least one landed heads.\nWhat is the probability that both landed heads?', 'Probability:', key='1/3'),
+          mc('A fair number cube numbered 1 to 6 is rolled, and the result is even.\nWhat is the probability that it is a 6?', ['{1/3}', '{1/6}', '{1/2}', '{2/3}']),
+          tf('If A and B are independent and P(B) > 0, then P(A | B) = P(A).', key=True),
           tf('P(A | B) is always equal to P(B | A).', key=False),
       ])),
 
     # ------------------------------------------------------------------ 7.SP.C.8.c
     S('7.SP.C.8.c', 'Design and use a simulation to estimate the probability of a compound event',
       main=[
-          sa('A player makes 60% of her free throws.\nDescribe how to use random digits 0 to 9 to simulate one trial of 2 free throws.', 'Answer:',
+          sa('A player makes 60% of her free throws, and each shot is independent of the others.\nDescribe how to use random digits 0 to 9 to simulate one trial of 2 free throws.', 'Answer:',
              key='Let the digits 0 to 5 stand for a make and 6 to 9 stand for a miss. Choose 2 random digits; each pair of digits is one trial.',
              note='Any plan where 6 of the 10 digits stand for a make, and each trial uses 2 digits, is correct.'),
-          sa('In a simulation with 50 trials, 18 trials showed both free throws made.\nEstimate the probability that both are made.', 'Probability:', key='0.36', note='18/50 or 9/25 is also correct.'),
-          mc('Each of 3 children is equally likely to be a boy or a girl.\nWhich tool can simulate the 3 children?', ['Flip a coin 3 times', 'Roll one number cube once', 'Spin a spinner with 3 unequal parts once', 'Draw one card from a deck']),
-          tf('Running more trials of a simulation usually gives a better estimate of a probability.', key=True),
-          tf('A single spin of a spinner with 4 equal sections can simulate an event with a probability of {1/3}.', key=False,
-             note='Four equal sections give probabilities in fourths; use 3 equal sections instead.'),
+          sa('A player makes 60% of her free throws; each shot is independent. In the simulation, the digits 0 to 5 mean a make and 6 to 9 mean a miss. Each pair of digits is one trial of 2 shots:\n32  70  15  86  41  09  55  63  27  84\nIn how many trials are both shots made? Estimate the probability that both shots are made.', 'Answer:',
+             key='4 trials (32, 15, 41, 55); about 4/10 = 0.4', note='Grade both: the count 4 and the estimate 0.4.'),
+          mc('Each of 3 children is equally likely to be a boy or a girl, and the children are independent.\nWhich tool can simulate the 3 children?', ['Flip a fair coin 3 times', 'Roll one number cube once', 'Spin a spinner with 3 unequal parts once', 'Draw one card from a deck']),
+          sa('Each of 3 children is independently equally likely to be a boy or a girl. In the simulation, an even digit means a girl and an odd digit means a boy. Each group of 3 digits is one family:\n204  317  856  993  120  448  715  362  091  574\nEstimate the probability that a family has at least 2 girls.', 'Answer:',
+             key='5 of the 10 families (204, 856, 120, 448, 362); about 5/10 = 0.5', note='Grade both: the count 5 and the estimate 0.5.'),
+          tf('A simulation of 3 children uses even digits for girls and odd digits for boys. Its trials are 246, 135, and 802. Exactly 1 of these 3 trials shows at least 2 girls.', key=False,
+             note='246 and 802 each show 3 girls, so 2 trials show at least 2 girls.'),
       ],
       back=[
           B('Display data in a dot plot', '6.SP.B.4', [
@@ -555,7 +715,7 @@ SETS = [
               sa('Write >, <, or =.\n{2/3} ___ {2/6}', 'Symbol:', key='>'),
               mc('Which fraction is less than {4/6}?', ['{3/6}', '{5/6}', '{6/6}', '{4/4}']),
               tf('{1/4} < {1/2}', key=True),
-              tf('{3/5} > {4/5}', key=False),
+              tf('{3/8} > {4/8}', key=False),
           ]),
       ],
       f1=B('Construct and interpret a scatter plot', '8.SP.A.1', nearest=True, qs=[
@@ -567,9 +727,10 @@ SETS = [
           tf('All the points in a scatter plot must lie on a straight line.', key=False),
       ]),
       f2=B('Use a simulation to decide whether a difference between treatments is significant', 'HSS-IC.B.5', [
-          sa('Plants in Group A grew a mean of 12 cm and plants in Group B grew a mean of 9 cm. In 100 re-randomizations of the data, a difference of 3 cm or more happened 2 times.\nIs the difference likely due to the treatment? Explain.', 'Answer:',
-             key='Yes. A difference that large happened by chance only about 2% of the time.'),
-          sa('In 100 re-randomizations of the data, a difference of 3 cm or more happened 40 times.\nWhat does this suggest?', 'Answer:', key='The difference could easily be due to chance.'),
+          sa('In an experiment, 40 similar plants were randomly assigned: 20 got a new plant food (Group A) and 20 got none (Group B). Group A grew a mean of 12 cm and Group B a mean of 9 cm. The data were re-randomized 100 times to simulate no treatment effect; a difference of 3 cm or more happened 2 times.\nIs there evidence that the plant food made a difference? Explain.', 'Answer:',
+             key='Yes. With random assignment, a difference that large happened by chance only about 2% of the time, so the results give evidence of a treatment effect (but do not prove it).'),
+          sa('In the same kind of randomized experiment (plants randomly assigned to plant food or none), the data were re-randomized 100 times to simulate no treatment effect. A difference of 3 cm or more happened 40 times.\nWhat does this suggest about the plant food?', 'Answer:',
+             key='The difference could easily be due to chance, so the experiment does not give evidence that the plant food made a difference.'),
           mc('Why are the data re-randomized many times in the simulation?', ['To see what differences happen by chance alone', 'To make the treatment work better', 'To make the mean larger', 'To remove outliers']),
           tf('Random assignment helps make two treatment groups alike before an experiment begins.', key=True),
           tf('A difference between two groups in one experiment is always caused by the treatment.', key=False),

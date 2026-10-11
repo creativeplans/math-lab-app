@@ -3,7 +3,7 @@
  "collection": {
   "id": "G7",
   "grade": 7,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "date": "2026-10-11"
  },
  "grade": 7,
@@ -38,8 +38,8 @@
      "nearest_related": false,
      "type": "sa",
      "response": "write",
-     "prompt": "A circle with radius r is cut into many equal wedges. The wedges are rearranged into a shape close to a parallelogram. Its base is half the circumference. Write the base in terms of r.",
-     "prompt_markup": "A circle with radius r is cut into many equal wedges. The wedges are rearranged into a shape close to a parallelogram. Its base is half the circumference.\nWrite the base in terms of r.",
+     "prompt": "The circle with radius r is cut into equal wedges and rearranged into a shape close to a parallelogram. Its base is half the circumference. Write the base in terms of r.",
+     "prompt_markup": "The circle with radius r is cut into equal wedges and rearranged into a shape close to a parallelogram. Its base is half the circumference.\nWrite the base in terms of r.",
      "choices": [],
      "answer_lines": [
       "Base:"
@@ -49,9 +49,20 @@
      "drawing_answer": null,
      "required_method": null,
      "grading_note": "Half of 2πr.",
-     "figure": null,
-     "page": 1310,
-     "revision": "unchanged"
+     "figure": {
+      "svg": "assets/S43-M-Q1.svg",
+      "png": "assets/S43-M-Q1.png",
+      "kind": "wedges",
+      "description": "A circle with radius r is cut into 12 equal wedges. The wedges are laid side by side, alternately point-up and point-down, making a shape close to a parallelogram whose base is about half of the circumference and whose height is about r.",
+      "blank_for_drawing": false,
+      "data": {
+       "k": "wedges",
+       "n": 12,
+       "h": 330
+      }
+     },
+     "page": 1472,
+     "revision": "revised"
     },
     {
      "id": "S43-M-Q2",
@@ -68,22 +79,33 @@
      "domain": "Geometry",
      "skill": "Explain the relationship between the circumference and the area of a circle",
      "nearest_related": false,
-     "type": "sa",
-     "response": "write",
-     "prompt": "A circle with radius r is cut into many equal wedges and rearranged into a shape close to a parallelogram. What is the height of the parallelogram in terms of r?",
-     "prompt_markup": "A circle with radius r is cut into many equal wedges and rearranged into a shape close to a parallelogram.\nWhat is the height of the parallelogram in terms of r?",
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "The circle with radius r is cut into equal wedges and rearranged as shown. Explain how this shows that the area of a circle is πr².",
+     "prompt_markup": "The circle with radius r is cut into equal wedges and rearranged as shown.\nExplain how this shows that the area of a circle is πr².",
      "choices": [],
      "answer_lines": [
-      "Height:"
+      "Area:"
      ],
      "correct_letter": null,
-     "correct_answer": "r",
+     "correct_answer": "πr²",
      "drawing_answer": null,
-     "required_method": null,
+     "required_method": "A complete argument: the rearranged shape is close to a parallelogram (a rectangle with more wedges); its base is half the circumference, {1/2} × 2πr = πr; its height is the radius r; so its area is πr × r = πr², and the circle has the same area because it is made of the same wedges. Any equivalent wording is accepted.",
      "grading_note": "",
-     "figure": null,
-     "page": 1311,
-     "revision": "unchanged"
+     "figure": {
+      "svg": "assets/S43-M-Q2.svg",
+      "png": "assets/S43-M-Q2.png",
+      "kind": "wedges",
+      "description": "A circle with radius r is cut into 12 equal wedges. The wedges are laid side by side, alternately point-up and point-down, making a shape close to a parallelogram whose base is about half of the circumference and whose height is about r.",
+      "blank_for_drawing": false,
+      "data": {
+       "k": "wedges",
+       "n": 12,
+       "h": 330
+      }
+     },
+     "page": 1473,
+     "revision": "revised"
     },
     {
      "id": "S43-M-Q3",
@@ -129,7 +151,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1312,
+     "page": 1474,
      "revision": "unchanged"
     },
     {
@@ -168,7 +190,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1313,
+     "page": 1475,
      "revision": "unchanged"
     },
     {
@@ -207,7 +229,7 @@
      "required_method": null,
      "grading_note": "Its radius is 5, so its area is 25π.",
      "figure": null,
-     "page": 1314,
+     "page": 1476,
      "revision": "unchanged"
     }
    ]
@@ -249,7 +271,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1316,
+     "page": 1478,
      "revision": "unchanged"
     },
     {
@@ -281,7 +303,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1317,
+     "page": 1479,
      "revision": "unchanged"
     },
     {
@@ -301,8 +323,8 @@
      "nearest_related": false,
      "type": "mc",
      "response": "select one",
-     "prompt": "A triangle is cut off one end of a parallelogram and moved to the other end to make a new shape. What shape does it make?",
-     "prompt_markup": "A triangle is cut off one end of a parallelogram and moved to the other end to make a new shape.\nWhat shape does it make?",
+     "prompt": "A parallelogram is cut along a segment from one top corner straight down to the base, at a right angle to the base. The triangle that is cut off is slid to the other end, so its slanted side lines up with the other slanted side. What shape is made?",
+     "prompt_markup": "A parallelogram is cut along a segment from one top corner straight down to the base, at a right angle to the base. The triangle that is cut off is slid to the other end, so its slanted side lines up with the other slanted side.\nWhat shape is made?",
      "choices": [
       {
        "letter": "A",
@@ -328,8 +350,8 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1318,
-     "revision": "unchanged"
+     "page": 1480,
+     "revision": "revised"
     },
     {
      "id": "S43-B1-Q4",
@@ -367,7 +389,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1319,
+     "page": 1481,
      "revision": "unchanged"
     },
     {
@@ -406,7 +428,7 @@
      "required_method": null,
      "grading_note": "The area uses the height, not the slanted side, so it is less than 60.",
      "figure": null,
-     "page": 1320,
+     "page": 1482,
      "revision": "unchanged"
     }
    ]
@@ -448,7 +470,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1322,
+     "page": 1484,
      "revision": "unchanged"
     },
     {
@@ -495,7 +517,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1323,
+     "page": 1485,
      "revision": "unchanged"
     },
     {
@@ -527,7 +549,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1324,
+     "page": 1486,
      "revision": "unchanged"
     },
     {
@@ -566,7 +588,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1325,
+     "page": 1487,
      "revision": "unchanged"
     },
     {
@@ -605,7 +627,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1326,
+     "page": 1488,
      "revision": "unchanged"
     }
    ]
@@ -635,20 +657,20 @@
      "nearest_related": false,
      "type": "sa",
      "response": "write",
-     "prompt": "Solve for x. x² = 64",
-     "prompt_markup": "Solve for x.\nx² = 64",
+     "prompt": "Solve for x. Give all solutions. x² = 64",
+     "prompt_markup": "Solve for x. Give all solutions.\nx² = 64",
      "choices": [],
      "answer_lines": [
       "x ="
      ],
      "correct_letter": null,
-     "correct_answer": "8 or -8",
+     "correct_answer": "x = 8 and x = -8",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "",
+     "grading_note": "Both solutions are required; x = ±8 and set notation are accepted.",
      "figure": null,
-     "page": 1328,
-     "revision": "unchanged"
+     "page": 1490,
+     "revision": "revised"
     },
     {
      "id": "S43-F1-Q2",
@@ -679,7 +701,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1329,
+     "page": 1491,
      "revision": "unchanged"
     },
     {
@@ -726,7 +748,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1330,
+     "page": 1492,
      "revision": "unchanged"
     },
     {
@@ -765,7 +787,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1331,
+     "page": 1493,
      "revision": "unchanged"
     },
     {
@@ -804,7 +826,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1332,
+     "page": 1494,
      "revision": "unchanged"
     }
    ]
@@ -832,6 +854,7 @@
      "domain": "Geometry: Geometric Measurement & Dimension",
      "skill": "Give an informal argument for circle and volume formulas",
      "nearest_related": false,
+     "standard_level": "High school (Common Core high-school standard; this bank places it at Grade 9 as a second forward step. This is an instructional choice, not an official grade assignment.)",
      "type": "sa",
      "response": "write",
      "prompt": "Use the wedge argument to explain why the area of a circle is πr².",
@@ -846,7 +869,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1334,
+     "page": 1496,
      "revision": "unchanged"
     },
     {
@@ -864,6 +887,7 @@
      "domain": "Geometry: Geometric Measurement & Dimension",
      "skill": "Give an informal argument for circle and volume formulas",
      "nearest_related": false,
+     "standard_level": "High school (Common Core high-school standard; this bank places it at Grade 9 as a second forward step. This is an instructional choice, not an official grade assignment.)",
      "type": "sa",
      "response": "write",
      "prompt": "Two stacks of 20 identical coins have the same height. One stack is straight and one is slanted. Do they have the same volume? Explain.",
@@ -878,7 +902,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1335,
+     "page": 1497,
      "revision": "unchanged"
     },
     {
@@ -896,6 +920,7 @@
      "domain": "Geometry: Geometric Measurement & Dimension",
      "skill": "Give an informal argument for circle and volume formulas",
      "nearest_related": false,
+     "standard_level": "High school (Common Core high-school standard; this bank places it at Grade 9 as a second forward step. This is an instructional choice, not an official grade assignment.)",
      "type": "mc",
      "response": "select one",
      "prompt": "The circumference of a circle is C = πd. What is the ratio of C to d?",
@@ -925,7 +950,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1336,
+     "page": 1498,
      "revision": "unchanged"
     },
     {
@@ -943,6 +968,7 @@
      "domain": "Geometry: Geometric Measurement & Dimension",
      "skill": "Give an informal argument for circle and volume formulas",
      "nearest_related": false,
+     "standard_level": "High school (Common Core high-school standard; this bank places it at Grade 9 as a second forward step. This is an instructional choice, not an official grade assignment.)",
      "type": "tf",
      "response": "select true or false",
      "prompt": "As a circle is cut into more and more wedges, the rearranged shape gets closer to a parallelogram.",
@@ -964,7 +990,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1337,
+     "page": 1499,
      "revision": "unchanged"
     },
     {
@@ -982,6 +1008,7 @@
      "domain": "Geometry: Geometric Measurement & Dimension",
      "skill": "Give an informal argument for circle and volume formulas",
      "nearest_related": false,
+     "standard_level": "High school (Common Core high-school standard; this bank places it at Grade 9 as a second forward step. This is an instructional choice, not an official grade assignment.)",
      "type": "tf",
      "response": "select true or false",
      "prompt": "Cavalieri's principle says that any two solids with the same height have the same volume.",
@@ -1003,7 +1030,7 @@
      "required_method": null,
      "grading_note": "The cross sections must also have equal areas at every height.",
      "figure": null,
-     "page": 1338,
+     "page": 1500,
      "revision": "unchanged"
     }
    ]
