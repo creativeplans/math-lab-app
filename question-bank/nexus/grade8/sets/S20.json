@@ -3,7 +3,7 @@
  "collection": {
   "id": "G8",
   "grade": 8,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "date": "2026-10-11"
  },
  "grade": 8,
@@ -50,7 +50,7 @@
      "required_method": "Any valid method (substitution, elimination, or another), with the steps shown. Example: substitute y = 3x - 2 into 2x + y = 13 to get 5x - 2 = 13, so x = 3 and y = 7.",
      "grading_note": "",
      "figure": null,
-     "page": 597,
+     "page": 721,
      "revision": "unchanged"
     },
     {
@@ -82,7 +82,7 @@
      "required_method": "Any valid method, with the steps shown. Example: add the equations to get 4x = 16, so x = 4; then 4 + 2y = 10, so y = 3.",
      "grading_note": "",
      "figure": null,
-     "page": 598,
+     "page": 722,
      "revision": "unchanged"
     },
     {
@@ -129,7 +129,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 599,
+     "page": 723,
      "revision": "unchanged"
     },
     {
@@ -161,7 +161,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 600,
+     "page": 724,
      "revision": "unchanged"
     },
     {
@@ -200,7 +200,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 601,
+     "page": 725,
      "revision": "unchanged"
     }
    ]
@@ -242,7 +242,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 603,
+     "page": 727,
      "revision": "unchanged"
     },
     {
@@ -274,7 +274,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 604,
+     "page": 728,
      "revision": "unchanged"
     },
     {
@@ -321,7 +321,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 605,
+     "page": 729,
      "revision": "unchanged"
     },
     {
@@ -360,7 +360,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 606,
+     "page": 730,
      "revision": "unchanged"
     },
     {
@@ -399,7 +399,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 607,
+     "page": 731,
      "revision": "unchanged"
     }
    ]
@@ -441,7 +441,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 609,
+     "page": 733,
      "revision": "unchanged"
     },
     {
@@ -473,7 +473,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 610,
+     "page": 734,
      "revision": "unchanged"
     },
     {
@@ -520,7 +520,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 611,
+     "page": 735,
      "revision": "unchanged"
     },
     {
@@ -559,7 +559,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 612,
+     "page": 736,
      "revision": "unchanged"
     },
     {
@@ -598,7 +598,7 @@
      "required_method": null,
      "grading_note": "The solution is x = -2.",
      "figure": null,
-     "page": 613,
+     "page": 737,
      "revision": "unchanged"
     }
    ]
@@ -607,7 +607,7 @@
    "section": "FORWARD 1",
    "section_code": "F1",
    "relation": "forward1",
-   "skill": "Explain why adding equations (elimination) keeps the same solutions",
+   "skill": "Prove that the elimination step keeps the same solutions",
    "standard": "HSA-REI.C.5",
    "nearest_related": false,
    "questions": [
@@ -624,25 +624,25 @@
      "standard": "HSA-REI.C.5",
      "standard_grade": 9,
      "domain": "Algebra: Reasoning with Equations & Inequalities",
-     "skill": "Explain why adding equations (elimination) keeps the same solutions",
+     "skill": "Prove that the elimination step keeps the same solutions",
      "nearest_related": false,
      "standard_level": "High school (Common Core high-school standard; this bank places it at Grade 9 as a first forward step. This is an instructional choice, not an official grade assignment.)",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Add the equations x + y = 9 and x - y = 3. What new equation do you get, and what is x?",
-     "prompt_markup": "Add the equations x + y = 9 and x - y = 3.\nWhat new equation do you get, and what is x?",
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "System A: x + y = 9 and x - y = 3. System B: x + y = 9 and 2x = 12 (its second equation is the sum of the two equations of A). Show that every solution of A is a solution of B, and every solution of B is a solution of A.",
+     "prompt_markup": "System A: x + y = 9 and x - y = 3.\nSystem B: x + y = 9 and 2x = 12 (its second equation is the sum of the two equations of A).\nShow that every solution of A is a solution of B, and every solution of B is a solution of A.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Conclusion:"
      ],
      "correct_letter": null,
-     "correct_answer": "2x = 12; x = 6",
+     "correct_answer": "The systems have the same solutions; both have only (6, 3).",
      "drawing_answer": null,
-     "required_method": null,
+     "required_method": "Both directions are required. A to B: if (x, y) makes both equations of A true, adding them gives 2x = 12, so (x, y) solves B. B to A: if (x, y) solves B, subtracting x + y = 9 from 2x = 12 gives x - y = 3, so (x, y) solves A.",
      "grading_note": "",
      "figure": null,
-     "page": 615,
-     "revision": "unchanged"
+     "page": 739,
+     "revision": "revised"
     },
     {
      "id": "S20-F1-Q2",
@@ -657,25 +657,25 @@
      "standard": "HSA-REI.C.5",
      "standard_grade": 9,
      "domain": "Algebra: Reasoning with Equations & Inequalities",
-     "skill": "Explain why adding equations (elimination) keeps the same solutions",
+     "skill": "Prove that the elimination step keeps the same solutions",
      "nearest_related": false,
      "standard_level": "High school (Common Core high-school standard; this bank places it at Grade 9 as a first forward step. This is an instructional choice, not an official grade assignment.)",
      "type": "sa",
      "response": "write",
-     "prompt": "Multiply x + 2y = 7 by 3, then add the result to -3x + y = 0. What equation results?",
-     "prompt_markup": "Multiply x + 2y = 7 by 3, then add the result to -3x + y = 0.\nWhat equation results?",
+     "prompt": "System A: x + 2y = 7 and -3x + y = 0. Replace the second equation by its sum with 3 times the first equation. Write the new system, and show how to get the original second equation back from it.",
+     "prompt_markup": "System A: x + 2y = 7 and -3x + y = 0. Replace the second equation by its sum with 3 times the first equation.\nWrite the new system, and show how to get the original second equation back from it.",
      "choices": [],
      "answer_lines": [
-      "Equation:"
+      "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "7y = 21 (so y = 3)",
+     "correct_answer": "New system: x + 2y = 7 and 7y = 21. Subtracting 3(x + 2y) = 21 from 7y = 21 gives -3x + y = 0 again.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "",
+     "grading_note": "Grade both: the new system and the reverse step.",
      "figure": null,
-     "page": 616,
-     "revision": "unchanged"
+     "page": 740,
+     "revision": "revised"
     },
     {
      "id": "S20-F1-Q3",
@@ -690,40 +690,40 @@
      "standard": "HSA-REI.C.5",
      "standard_grade": 9,
      "domain": "Algebra: Reasoning with Equations & Inequalities",
-     "skill": "Explain why adding equations (elimination) keeps the same solutions",
+     "skill": "Prove that the elimination step keeps the same solutions",
      "nearest_related": false,
      "standard_level": "High school (Common Core high-school standard; this bank places it at Grade 9 as a first forward step. This is an instructional choice, not an official grade assignment.)",
      "type": "mc",
      "response": "select one",
-     "prompt": "In a system, one equation is replaced by its sum with a multiple of the other equation. What happens to the solutions?",
-     "prompt_markup": "In a system, one equation is replaced by its sum with a multiple of the other equation.\nWhat happens to the solutions?",
+     "prompt": "Why does replacing one equation by its sum with a multiple of the other keep the same solutions?",
+     "prompt_markup": "Why does replacing one equation by its sum with a multiple of the other keep the same solutions?",
      "choices": [
       {
        "letter": "A",
-       "text": "The solutions always change."
+       "text": "Adding equations always gives the solution directly."
       },
       {
        "letter": "B",
-       "text": "The number of solutions doubles."
+       "text": "The new equation always describes the same line as the old one."
       },
       {
        "letter": "C",
-       "text": "All solutions are removed."
+       "text": "Multiplying an equation by a number changes its graph."
       },
       {
        "letter": "D",
-       "text": "The solutions stay the same."
+       "text": "The step can be undone by subtracting the same multiple, so no solution is gained or lost."
       }
      ],
      "answer_lines": [],
      "correct_letter": "D",
-     "correct_answer": "The solutions stay the same.",
+     "correct_answer": "The step can be undone by subtracting the same multiple, so no solution is gained or lost.",
      "drawing_answer": null,
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 617,
-     "revision": "unchanged"
+     "page": 741,
+     "revision": "revised"
     },
     {
      "id": "S20-F1-Q4",
@@ -738,13 +738,13 @@
      "standard": "HSA-REI.C.5",
      "standard_grade": 9,
      "domain": "Algebra: Reasoning with Equations & Inequalities",
-     "skill": "Explain why adding equations (elimination) keeps the same solutions",
+     "skill": "Prove that the elimination step keeps the same solutions",
      "nearest_related": false,
      "standard_level": "High school (Common Core high-school standard; this bank places it at Grade 9 as a first forward step. This is an instructional choice, not an official grade assignment.)",
      "type": "tf",
      "response": "select true or false",
-     "prompt": "The system x + y = 5 and x - y = 1 has the same solution as the system x + y = 5 and 2x = 6.",
-     "prompt_markup": "The system x + y = 5 and x - y = 1 has the same solution as the system x + y = 5 and 2x = 6.",
+     "prompt": "The system x + y = 5 and x - y = 1 has the same solutions as the system x + y = 5 and 2x = 6.",
+     "prompt_markup": "The system x + y = 5 and x - y = 1 has the same solutions as the system x + y = 5 and 2x = 6.",
      "choices": [
       {
        "letter": "A",
@@ -762,8 +762,8 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 618,
-     "revision": "unchanged"
+     "page": 742,
+     "revision": "revised"
     },
     {
      "id": "S20-F1-Q5",
@@ -778,13 +778,13 @@
      "standard": "HSA-REI.C.5",
      "standard_grade": 9,
      "domain": "Algebra: Reasoning with Equations & Inequalities",
-     "skill": "Explain why adding equations (elimination) keeps the same solutions",
+     "skill": "Prove that the elimination step keeps the same solutions",
      "nearest_related": false,
      "standard_level": "High school (Common Core high-school standard; this bank places it at Grade 9 as a first forward step. This is an instructional choice, not an official grade assignment.)",
      "type": "tf",
      "response": "select true or false",
-     "prompt": "Multiplying one equation of a system by 0 keeps the same solutions.",
-     "prompt_markup": "Multiplying one equation of a system by 0 keeps the same solutions.",
+     "prompt": "The system x + y = 5 and x - y = 1 has the same solutions as the single equation 2x = 6.",
+     "prompt_markup": "The system x + y = 5 and x - y = 1 has the same solutions as the single equation 2x = 6.",
      "choices": [
       {
        "letter": "A",
@@ -800,10 +800,10 @@
      "correct_answer": "False",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "",
+     "grading_note": "2x = 6 alone is true for (3, y) with any y; the system has only (3, 2).",
      "figure": null,
-     "page": 619,
-     "revision": "unchanged"
+     "page": 743,
+     "revision": "revised"
     }
    ]
   },
@@ -811,7 +811,7 @@
    "section": "FORWARD 2",
    "section_code": "F2",
    "relation": "forward2",
-   "skill": "Solve a system of a linear equation and a quadratic equation",
+   "skill": "Solve a system of a linear equation and a quadratic equation by graphing and algebraically",
    "standard": "HSA-REI.C.7",
    "nearest_related": false,
    "questions": [
@@ -828,7 +828,7 @@
      "standard": "HSA-REI.C.7",
      "standard_grade": 10,
      "domain": "Algebra: Reasoning with Equations & Inequalities",
-     "skill": "Solve a system of a linear equation and a quadratic equation",
+     "skill": "Solve a system of a linear equation and a quadratic equation by graphing and algebraically",
      "nearest_related": false,
      "standard_level": "High school (Common Core high-school standard; this bank places it at Grade 10 as a second forward step. This is an instructional choice, not an official grade assignment.)",
      "type": "sa",
@@ -845,8 +845,8 @@
      "required_method": null,
      "grading_note": "Both solutions are required.",
      "figure": null,
-     "page": 621,
-     "revision": "unchanged"
+     "page": 745,
+     "revision": "revised"
     },
     {
      "id": "S20-F2-Q2",
@@ -861,25 +861,42 @@
      "standard": "HSA-REI.C.7",
      "standard_grade": 10,
      "domain": "Algebra: Reasoning with Equations & Inequalities",
-     "skill": "Solve a system of a linear equation and a quadratic equation",
+     "skill": "Solve a system of a linear equation and a quadratic equation by graphing and algebraically",
      "nearest_related": false,
      "standard_level": "High school (Common Core high-school standard; this bank places it at Grade 10 as a second forward step. This is an instructional choice, not an official grade assignment.)",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Solve the system. Give all solutions. y = x² - 1 y = x + 1",
-     "prompt_markup": "Solve the system. Give all solutions.\ny = x² - 1\ny = x + 1",
+     "type": "plot_text",
+     "response": "draw on the figure and write an answer",
+     "prompt": "Graph y = x² - 1 and y = x + 1 on the coordinate plane. Mark every intersection point, then check each one in both equations.",
+     "prompt_markup": "Graph y = x² - 1 and y = x + 1 on the coordinate plane. Mark every intersection point, then check each one in both equations.",
      "choices": [],
      "answer_lines": [
-      "Solutions:"
+      "Solutions and check:"
      ],
      "correct_letter": null,
-     "correct_answer": "(2, 3) and (-1, 0)",
-     "drawing_answer": null,
+     "correct_answer": "(2, 3) and (-1, 0): 3 = 2² - 1 = 2 + 1 and 0 = (-1)² - 1 = -1 + 1.",
+     "drawing_answer": "The parabola y = x² - 1 through (-2, 3), (-1, 0), (0, -1), (1, 0), (2, 3), and the line y = x + 1, crossing at (-1, 0) and (2, 3)",
      "required_method": null,
-     "grading_note": "Both solutions are required.",
-     "figure": null,
-     "page": 622,
-     "revision": "unchanged"
+     "grading_note": "Grade all three: both graphs, both intersection points, and the algebraic check.",
+     "figure": {
+      "svg": "assets/S20-F2-Q2.svg",
+      "png": "assets/S20-F2-Q2.png",
+      "kind": "coord",
+      "description": "Coordinate grid with x from -6 to 6 and y from -6 to 6. Nothing is plotted; the student draws on it.",
+      "blank_for_drawing": true,
+      "data": {
+       "k": "coord",
+       "x": [
+        -6,
+        6
+       ],
+       "y": [
+        -6,
+        6
+       ]
+      }
+     },
+     "page": 746,
+     "revision": "revised"
     },
     {
      "id": "S20-F2-Q3",
@@ -894,7 +911,7 @@
      "standard": "HSA-REI.C.7",
      "standard_grade": 10,
      "domain": "Algebra: Reasoning with Equations & Inequalities",
-     "skill": "Solve a system of a linear equation and a quadratic equation",
+     "skill": "Solve a system of a linear equation and a quadratic equation by graphing and algebraically",
      "nearest_related": false,
      "standard_level": "High school (Common Core high-school standard; this bank places it at Grade 10 as a second forward step. This is an instructional choice, not an official grade assignment.)",
      "type": "mc",
@@ -926,8 +943,8 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 623,
-     "revision": "unchanged"
+     "page": 747,
+     "revision": "revised"
     },
     {
      "id": "S20-F2-Q4",
@@ -942,7 +959,7 @@
      "standard": "HSA-REI.C.7",
      "standard_grade": 10,
      "domain": "Algebra: Reasoning with Equations & Inequalities",
-     "skill": "Solve a system of a linear equation and a quadratic equation",
+     "skill": "Solve a system of a linear equation and a quadratic equation by graphing and algebraically",
      "nearest_related": false,
      "standard_level": "High school (Common Core high-school standard; this bank places it at Grade 10 as a second forward step. This is an instructional choice, not an official grade assignment.)",
      "type": "tf",
@@ -966,8 +983,8 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 624,
-     "revision": "unchanged"
+     "page": 748,
+     "revision": "revised"
     },
     {
      "id": "S20-F2-Q5",
@@ -982,7 +999,7 @@
      "standard": "HSA-REI.C.7",
      "standard_grade": 10,
      "domain": "Algebra: Reasoning with Equations & Inequalities",
-     "skill": "Solve a system of a linear equation and a quadratic equation",
+     "skill": "Solve a system of a linear equation and a quadratic equation by graphing and algebraically",
      "nearest_related": false,
      "standard_level": "High school (Common Core high-school standard; this bank places it at Grade 10 as a second forward step. This is an instructional choice, not an official grade assignment.)",
      "type": "tf",
@@ -1006,8 +1023,8 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 625,
-     "revision": "unchanged"
+     "page": 749,
+     "revision": "revised"
     }
    ]
   }

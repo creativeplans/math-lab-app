@@ -400,25 +400,29 @@ def fig_coord(c, f, x, y, w, h, s):
 
     def P(px, py):
         return ox + (px - xmin) / xs * cwid, oy + (py - ymin) / ys * chei
-    c.setStrokeColor(GRID)
-    c.setLineWidth(0.7)
-    for i in range(int(round(nx)) + 1):
-        c.line(ox + i * cwid, oy, ox + i * cwid, oy + gh)
-    for j in range(int(round(ny)) + 1):
-        c.line(ox, oy + j * chei, ox + gw, oy + j * chei)
-    for poly in f.get('polys', []):
+    def poly_path(poly):
         pts = [P(*p) for p in poly]
         path = c.beginPath()
         path.moveTo(*pts[0])
         for p in pts[1:]:
             path.lineTo(*p)
         path.close()
-        c.setStrokeColor(POINT)
-        c.setFillColor(HexColor('#dce9f7'))
-        c.setFillAlpha(0.6)
-        c.setLineWidth(2)
-        c.drawPath(path, fill=1, stroke=1)
-    c.setFillAlpha(1)
+        return path
+    # Polygon shading is opaque and drawn under the grid lines (no transparency: answer-key pages reuse
+    # the question page as a form XObject, and ReportLab forms do not carry transparency resources).
+    c.setFillColor(HexColor('#eaf2fa'))
+    for poly in f.get('polys', []):
+        c.drawPath(poly_path(poly), fill=1, stroke=0)
+    c.setStrokeColor(GRID)
+    c.setLineWidth(0.7)
+    for i in range(int(round(nx)) + 1):
+        c.line(ox + i * cwid, oy, ox + i * cwid, oy + gh)
+    for j in range(int(round(ny)) + 1):
+        c.line(ox, oy + j * chei, ox + gw, oy + j * chei)
+    c.setStrokeColor(POINT)
+    c.setLineWidth(2)
+    for poly in f.get('polys', []):
+        c.drawPath(poly_path(poly), fill=0, stroke=1)
     c.setStrokeColor(AXIS)
     c.setFillColor(AXIS)
     c.setLineWidth(1.5)

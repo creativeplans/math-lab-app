@@ -3,7 +3,7 @@ Both forward branches use Common Core high-school standards (coded HS...). Commo
 standards to a grade; this bank places FORWARD 1 at Grade 9 (a first high-school step, mostly Algebra I and introductory
 Geometry) and FORWARD 2 at Grade 10 (a further step in Geometry, Algebra, Functions, or Statistics)."""
 GRADE = 8
-VERSION = "1.0.0"
+VERSION = '2.0.0'
 VERSION_DATE = "2026-10-11"
 # Deal the correct letter of four-choice questions evenly across A-D.
 BALANCE_MC = True

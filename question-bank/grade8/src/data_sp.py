@@ -1,4 +1,4 @@
-from qb import S, B, sa, mc, tf, plot, draw_write, table, dot
+from qb import S, B, sa, mc, tf, plot, draw_write, table, dot, coord
 from common import grid, ints
 
 
@@ -71,17 +71,14 @@ SETS = [
               tf('A dot plot shows two different measurements for each student.', key=False, note='A dot plot shows one variable.'),
           ]),
       ],
-      f1=B('Represent two-variable data on a scatter plot and describe how the variables are related', 'HSS-ID.B.6', [
-          draw_write('Six used bikes have these (age in years, value in tens of dollars):\n(1, 20), (2, 17), (3, 15), (4, 12), (5, 10), (6, 8)\nMake a scatter plot of the data. Then describe how age and value are related.',
-                     grid(7, 22, ystep=2, xlabel='Age (years)', ylabel='Value ($10s)'),
-                     'Relationship:', draw='Points at (1, 20), (2, 17), (3, 15), (4, 12), (5, 10), and (6, 8)',
-                     key='As age increases, value decreases: a negative linear association.'),
-          sa('A scatter plot of hours of sleep and reaction time shows points falling from left to right.\nDescribe how the variables are related.', 'Answer:',
-             key='As sleep increases, reaction time tends to decrease (a negative association).'),
-          mc('Which pair of variables would most likely show a positive association on a scatter plot?',
-             ['Height and arm span of adults', 'Shoe size and test score', 'Outside temperature and heating bill', 'Age of a car and its value']),
-          tf('A scatter plot whose points rise from left to right shows a positive association.', key=True),
-          tf('If two variables have no association, their scatter plot points lie on a horizontal line.', key=False, note='With no association, the points are scattered with no trend.'),
+      f1=B('Compare linear, quadratic, and exponential models for two-variable data, using technology', 'HSS-ID.B.6', [
+          sa('Data: (0, 3), (1, 6), (2, 12), (3, 24).\nDoes a linear or an exponential model fit these data better? Explain using differences and ratios, and give the model.', 'Answer:',
+             key='Exponential: the differences (3, 6, 12) are not equal, but each y-value is 2 times the one before, so y = 3 · 2^x.', note='Both the reason and the model are required.'),
+          sa('Use a calculator or spreadsheet to find the least-squares line for the data (1, 2), (2, 3), (3, 5), (4, 6). Round the slope and the y-intercept to the nearest tenth.', 'Line:',
+             key='y = 1.4x + 0.5'),
+          mc('Which model fits the data (1, 1), (2, 4), (3, 9), (4, 16) exactly?', ['y = x²', 'y = 5x - 5', 'y = 2^x', 'y = 4x']),
+          tf('A scatter plot that curves upward more and more steeply may be fit better by an exponential or quadratic function than by a line.', key=True),
+          tf('A line with residuals 0, 3, -5, and 4 fits the same data better than a curve with residuals 0, 0.1, -0.2, and 0.1.', key=False, note='The curve\'s residuals are much smaller.'),
       ]),
       f2=B('Fit an exponential or quadratic function to data and use it to make predictions', 'HSS-ID.B.6.a', [
           sa('A bacteria count is 100 at hour 0, 200 at hour 1, 400 at hour 2, and 800 at hour 3.\nWrite a function that fits the data.', 'y =', key='100 · 2^x'),
@@ -120,8 +117,8 @@ SETS = [
           ]),
       ],
       f1=B('Distinguish between correlation and causation', 'HSS-ID.C.9', [
-          sa('Cities with more ice-cream sales also have more sunburns.\nDoes buying ice cream cause sunburns? Explain.', 'Answer:',
-             key='No. Both go up in hot, sunny weather; a third variable explains the association.'),
+          sa('Data show that cities with more ice-cream sales also have more sunburns.\nDo these data show that buying ice cream causes sunburns? Explain.', 'Answer:',
+             key='No. The data show an association, not a cause. Something else, such as hot, sunny weather, could explain both.', note='Any reason that separates association from cause is accepted.'),
           sa('A study finds that students who sleep more tend to have higher grades.\nCan you conclude that more sleep causes higher grades? Explain.', 'Answer:',
              key='No. The data show an association, not a cause; a randomized experiment is needed to show cause.'),
           mc('Which kind of study can show that one variable causes a change in another?', ['A randomized experiment', 'An observational study', 'A scatter plot of survey data', 'A survey of volunteers']),
@@ -129,7 +126,8 @@ SETS = [
           tf('A strong correlation shows that one variable causes the other.', key=False),
       ]),
       f2=B('Interpret the correlation coefficient of a linear fit', 'HSS-ID.C.8', [
-          sa('The correlation coefficient of a data set is r = -0.92.\nDescribe the association.', 'Answer:', key='A strong negative linear association'),
+          sa('Use a calculator or spreadsheet to find the correlation coefficient r for the data (1, 2), (2, 4), (3, 5), (4, 4), (5, 6). Round to the nearest hundredth, and describe the association.', 'Answer:',
+             key='r ≈ 0.85: a fairly strong positive linear association.', note='Both the value and the description are required.'),
           sa('Which shows the stronger linear association, r = 0.45 or r = -0.81? Explain.', 'Answer:', key='r = -0.81, because its absolute value is closer to 1.'),
           mc('Points lie almost exactly on a line that rises from left to right.\nWhich value of r fits?', ['0.98', '-0.98', '0.10', '0']),
           tf('The correlation coefficient r is always between -1 and 1.', key=True),
@@ -170,20 +168,23 @@ SETS = [
               tf('The points (0, 1), (1, 2), and (2, 3) fit y = 2x.', key=False, note='They fit y = x + 1.'),
           ]),
       ],
-      f1=B('Fit a linear function to data that suggest a linear association', 'HSS-ID.B.6.c', [
-          draw_write('The data are (1, 3), (2, 5), (3, 6), (4, 8), (5, 10), and (6, 11).\nMake a scatter plot, draw a line that fits the data, and write an equation of your line.',
-                     grid(7, 12), 'Equation:',
-                     draw='Points at (1, 3), (2, 5), (3, 6), (4, 8), (5, 10), and (6, 11), and a straight line close to them with points on both sides',
-                     key='The equation of the line drawn, about y = 1.6x + 1.5', note='Slopes from about 1.4 to 1.8 are accepted when they match the line drawn.'),
-          sa('A line of fit passes through (2, 5) and (6, 13).\nWrite its equation.', 'y =', key='2x + 1'),
-          mc('A line of fit for (hours, dollars) data is y = 12x + 8.\nWhat does it predict for 5 hours?', ['$68', '$60', '$25', '$100']),
-          tf('A line of fit through (0, 4) and (4, 12) has a slope of 2.', key=True),
+      f1=B('Fit a least-squares line with technology and compare candidate lines', 'HSS-ID.B.6.c', [
+          sa('Use a calculator or spreadsheet to find the least-squares line for the data (1, 3), (2, 5), (3, 6), (4, 8), (5, 10), (6, 11). Round the slope and the y-intercept to the nearest tenth.', 'Line:',
+             key='y = 1.6x + 1.5'),
+          sa('Two lines are proposed for the data (1, 3), (2, 5), (3, 6), (4, 8): y = 2x + 1 and y = 1.6x + 1.5.\nFind the sum of the squared residuals for each line. Which line fits better?', 'Answer:',
+             key='y = 2x + 1: 0 + 0 + 1 + 1 = 2. y = 1.6x + 1.5: 0.01 + 0.09 + 0.09 + 0.01 = 0.2. So y = 1.6x + 1.5 fits better.', note='Both sums and the conclusion are required.'),
+          mc('A least-squares line for hours studied x and test score y is y = 4.2x + 61. A student who studied 0 hours scored 70.\nWhat is that student\'s residual?', ['9', '-9', '61', '70']),
+          tf('The least-squares line makes the sum of the squared residuals as small as possible.', key=True),
           tf('A line of fit should always be drawn through the first and last data points.', key=False, note='It should follow the whole trend, not just two points.'),
       ]),
       f2=B('Judge the fit of a line by finding and plotting residuals', 'HSS-ID.B.6.b', [
           sa('A line of fit is y = 2x + 1. A data point is (3, 8).\nFind the residual (actual y minus predicted y).', 'Residual:', key='1'),
-          sa('A line of fit is y = 2x + 1. A data point is (5, 9).\nFind the residual (actual y minus predicted y).', 'Residual:', key='-2'),
-          mc('A residual plot shows points scattered above and below 0 with no pattern.\nWhat does this suggest?', ['The line is a good fit.', 'The line is a poor fit.', 'A curve must be used.', 'Every prediction is exact.']),
+          draw_write('A line of fit is y = 2x + 1 for the data (1, 4), (2, 4), (3, 8), and (4, 9).\nFind each residual (actual y minus predicted y) and plot the residuals against x on the grid.',
+                     coord(x=(0, 5), y=(-3, 3), xlabel='x', ylabel='Residual'), 'Residuals:',
+                     draw='Points at (1, 1), (2, -1), (3, 1), and (4, 0)', key='1, -1, 1, and 0',
+                     note='Grade both: the four residuals and the four plotted points.'),
+          mc('A residual plot shows small residuals scattered above and below 0 with no pattern.\nWhat does this suggest?',
+             ['A linear model is appropriate for the data.', 'A linear model is a poor choice.', 'A curve must be used.', 'Every prediction is exact.']),
           tf('A residual of 0 means the data point lies on the line of fit.', key=True),
           tf('A residual plot with a clear U shape shows that a linear model fits well.', key=False, note='A U shape suggests a curve fits better.'),
       ])),
@@ -205,7 +206,7 @@ SETS = [
               sa('A proportional graph of miles against hours passes through (0, 0).\nWhat does (0, 0) mean?', 'Meaning:', key='In 0 hours, 0 miles are traveled.'),
               mc('A proportional graph of (gallons, cost) passes through (1, 4).\nWhat is the unit rate?', ['$4 per gallon', '$1 per gallon', '$0.25 per gallon', '$5 per gallon']),
               tf('On a proportional graph of (hours, pages), the point (1, 20) means 20 pages are read per hour.', key=True),
-              tf('On a proportional graph of (tickets, cost), the point (2, 18) shows the unit rate.', key=False, note='The unit rate is shown at x = 1: (1, 9).'),
+              tf('On a proportional graph of (tickets, cost), the point (2, 18) means that one ticket costs $18.', key=False, note='2 tickets cost $18, so one ticket costs 18 ÷ 2 = $9.'),
           ]),
           B('Evaluate a formula for given values of its variable', '6.EE.A.2.c', [
               sa('Evaluate 1.5w + 4 when w = 6.', 'Value:', key='13'),
@@ -228,8 +229,8 @@ SETS = [
       f2=B('Evaluate reports and predictions based on data', 'HSS-IC.B.6', [
           sa('A model of children\'s heights for ages 2 to 10 is h = 2.5a + 31 inches at age a.\nA report uses it to predict the height of a 40-year-old. Is that reasonable? Explain.', 'Answer:',
              key='No. It predicts 131 inches (about 11 feet). The model fits only ages 2 to 10, so using it far outside the data is not reliable.'),
-          sa('A line of fit was made from data collected between 60 °F and 90 °F.\nA report uses it to predict sales at 70 °F. Is that reasonable? Explain.', 'Answer:',
-             key='Yes. 70 °F is inside the range of the data.'),
+          sa('A line of fit was made from data collected between 60 °F and 90 °F, and the data points lie close to the line.\nA report uses it to predict sales at 70 °F. Is that reasonable? Explain.', 'Answer:',
+             key='Yes. 70 °F is inside the range of the data, and the line fits the data closely.', note='A reason about the data range is required; noting how well the line fits is also expected.'),
           mc('A report says: "People who own more books live longer, so buying books makes you live longer."\nWhat is the main flaw?',
              ['It treats an association as a cause.', 'It counts too few books.', 'It uses a line of fit.', 'It reports a positive association.']),
           tf('Predictions far outside the range of the data are less reliable than predictions inside it.', key=True),
@@ -251,7 +252,8 @@ SETS = [
           plot('Ten students answered two questions: "Do you have a pet?" and "Do you have a sibling?" Their answers (pet, sibling) are:\nyes–yes, yes–no, no–no, yes–yes, no–yes, yes–yes, no–no, no–yes, yes–no, no–no\nComplete the two-way table.',
                blank_tw('Pet', 'No pet', 'Sibling', 'No sibling'),
                key='Pet: 3 sibling, 2 no sibling, 5 total. No pet: 2 sibling, 3 no sibling, 5 total. Totals: 5 sibling, 5 no sibling, 10 in all.'),
-          tf('A completed two-way table for 60 students can have row totals of 36 and 20.', key=False, note='The row totals must add to 60.'),
+          tf('A completed two-way table for 60 students has exactly two rows, Curfew and No curfew, and every student is in one of them. Its row totals can be 36 and 20.', key=False,
+             note='Every student is in exactly one of the two rows, so the row totals must add to 60.'),
       ],
       back=[
           B('Report the number of observations in a data set', '6.SP.B.5.a', [

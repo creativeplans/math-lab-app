@@ -3,16 +3,16 @@
  "collection": {
   "id": "G8",
   "grade": 8,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "date": "2026-10-11"
  },
  "grade": 8,
  "title": "Grade 8 Common Core Math — Question Sets",
- "set_count": 58,
- "question_count": 1450,
- "figure_count": 155,
+ "set_count": 65,
+ "question_count": 1625,
+ "figure_count": 169,
  "id_format": "S<set>-<section>-Q<number>. Section codes: M = MAIN (Grade 8), B1, B2, ... = BACKWARD branches (earlier grades), F1 = FORWARD 1 (Grade 9), F2 = FORWARD 2 (Grade 10). id is unique within this collection; uid = \"G8:\" + id is unique across all grade collections (the collection, not a question's standard grade, is the namespace: this bank also holds Grade 9 and 10 forward questions). Set and branch numbers are fixed: they need not be consecutive, and an ID is never reused for a different skill (see revisions.json).",
- "revisions_file": null,
+ "revisions_file": "revisions.json",
  "relations": {
   "main": "the Grade 8 skill the set is built around",
   "backward": "a prerequisite skill to check when a student misses MAIN questions",
@@ -175,7 +175,7 @@
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Solve linear equations whose solutions are fractions",
+     "skill": "Solve linear equations with letter coefficients that come from repeating decimals",
      "standard": "HSA-REI.B.3",
      "nearest_related": false,
      "question_ids": [
@@ -277,7 +277,7 @@
      "relation": "forward2",
      "skill": "Find arc lengths and sector areas exactly in terms of π and approximately",
      "standard": "HSG-C.B.5",
-     "nearest_related": false,
+     "nearest_related": true,
      "question_ids": [
       "S3-F2-Q1",
       "S3-F2-Q2",
@@ -369,6 +369,91 @@
       "S4-F2-Q3",
       "S4-F2-Q4",
       "S4-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 59,
+   "set_id": "S59",
+   "file": "sets/S59.json",
+   "standard": "8.NS.A.2",
+   "title": "Estimate the values of expressions that contain irrational numbers",
+   "domain": "The Number System",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Estimate the values of expressions that contain irrational numbers",
+     "standard": "8.NS.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S59-M-Q1",
+      "S59-M-Q2",
+      "S59-M-Q3",
+      "S59-M-Q4",
+      "S59-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Evaluate expressions with decimal values",
+     "standard": "6.EE.A.2.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S59-B1-Q1",
+      "S59-B1-Q2",
+      "S59-B1-Q3",
+      "S59-B1-Q4",
+      "S59-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Add, subtract, and multiply multi-digit decimals",
+     "standard": "6.NS.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S59-B2-Q1",
+      "S59-B2-Q2",
+      "S59-B2-Q3",
+      "S59-B2-Q4",
+      "S59-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Solve quadratic equations and estimate their irrational solutions",
+     "standard": "HSA-REI.B.4.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S59-F1-Q1",
+      "S59-F1-Q2",
+      "S59-F1-Q3",
+      "S59-F1-Q4",
+      "S59-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Derive the quadratic formula by completing the square",
+     "standard": "HSA-REI.B.4.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S59-F2-Q1",
+      "S59-F2-Q2",
+      "S59-F2-Q3",
+      "S59-F2-Q4",
+      "S59-F2-Q5"
      ]
     }
    ]
@@ -515,7 +600,7 @@
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Explain rational exponents with the properties of exponents",
+     "skill": "Explain why rational exponents are defined so the properties of exponents still hold",
      "standard": "HSN-RN.A.1",
      "nearest_related": false,
      "question_ids": [
@@ -785,7 +870,7 @@
      "section": "FORWARD 2",
      "section_code": "F2",
      "relation": "forward2",
-     "skill": "Use base-10 logarithms to describe orders of magnitude",
+     "skill": "Use base-10 logarithms to solve exponential equations",
      "standard": "HSF-LE.A.4",
      "nearest_related": false,
      "question_ids": [
@@ -957,7 +1042,7 @@
      "relation": "forward2",
      "skill": "Add and subtract functions",
      "standard": "HSF-BF.A.1.b",
-     "nearest_related": false,
+     "nearest_related": true,
      "question_ids": [
       "S11-F2-Q1",
       "S11-F2-Q2",
@@ -1195,7 +1280,7 @@
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Create and compare linear equations in two variables",
+     "skill": "Create linear and quadratic equations in two variables and graph them with labels and scales",
      "standard": "HSA-CED.A.2",
      "nearest_related": false,
      "question_ids": [
@@ -1228,14 +1313,14 @@
    "set_id": "S15",
    "file": "sets/S15.json",
    "standard": "8.EE.B.6",
-   "title": "Use similar triangles to explain slope and derive y = mx and y = mx + b",
+   "title": "Use similar triangles to explain why the slope is the same between any two points on a line",
    "domain": "Expressions & Equations",
    "sections": [
     {
      "section": "MAIN",
      "section_code": "M",
      "relation": "main",
-     "skill": "Use similar triangles to explain slope and derive y = mx and y = mx + b",
+     "skill": "Use similar triangles to explain why the slope is the same between any two points on a line",
      "standard": "8.EE.B.6",
      "nearest_related": false,
      "question_ids": [
@@ -1309,6 +1394,176 @@
    ]
   },
   {
+   "set": 60,
+   "set_id": "S60",
+   "file": "sets/S60.json",
+   "standard": "8.EE.B.6",
+   "title": "Use similar triangles to derive y = mx for a line through the origin",
+   "domain": "Expressions & Equations",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Use similar triangles to derive y = mx for a line through the origin",
+     "standard": "8.EE.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S60-M-Q1",
+      "S60-M-Q2",
+      "S60-M-Q3",
+      "S60-M-Q4",
+      "S60-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Represent a proportional relationship with an equation",
+     "standard": "7.RP.A.2.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S60-B1-Q1",
+      "S60-B1-Q2",
+      "S60-B1-Q3",
+      "S60-B1-Q4",
+      "S60-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Find the constant of proportionality from a point or a table",
+     "standard": "7.RP.A.2.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S60-B2-Q1",
+      "S60-B2-Q2",
+      "S60-B2-Q3",
+      "S60-B2-Q4",
+      "S60-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Show that a dilation centered at the origin maps a line through the origin onto itself",
+     "standard": "HSG-SRT.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S60-F1-Q1",
+      "S60-F1-Q2",
+      "S60-F1-Q3",
+      "S60-F1-Q4",
+      "S60-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use rotated slope triangles to explain the slopes of parallel and perpendicular lines",
+     "standard": "HSG-GPE.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S60-F2-Q1",
+      "S60-F2-Q2",
+      "S60-F2-Q3",
+      "S60-F2-Q4",
+      "S60-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 61,
+   "set_id": "S61",
+   "file": "sets/S61.json",
+   "standard": "8.EE.B.6",
+   "title": "Use similar triangles to derive y = mx + b for a line that crosses the y-axis at b",
+   "domain": "Expressions & Equations",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Use similar triangles to derive y = mx + b for a line that crosses the y-axis at b",
+     "standard": "8.EE.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S61-M-Q1",
+      "S61-M-Q2",
+      "S61-M-Q3",
+      "S61-M-Q4",
+      "S61-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find horizontal and vertical distances between points",
+     "standard": "6.NS.C.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S61-B1-Q1",
+      "S61-B1-Q2",
+      "S61-B1-Q3",
+      "S61-B1-Q4",
+      "S61-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Solve equations of the form px + q = r",
+     "standard": "7.EE.B.4.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S61-B2-Q1",
+      "S61-B2-Q2",
+      "S61-B2-Q3",
+      "S61-B2-Q4",
+      "S61-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Construct linear functions from a point and a slope or from two points",
+     "standard": "HSF-LE.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S61-F1-Q1",
+      "S61-F1-Q2",
+      "S61-F1-Q3",
+      "S61-F1-Q4",
+      "S61-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Describe vertical and horizontal translations of linear functions",
+     "standard": "HSF-BF.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S61-F2-Q1",
+      "S61-F2-Q2",
+      "S61-F2-Q3",
+      "S61-F2-Q4",
+      "S61-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
    "set": 16,
    "set_id": "S16",
    "file": "sets/S16.json",
@@ -1365,7 +1620,7 @@
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Solve systems and recognize when they have no solution or infinitely many",
+     "skill": "Find parameter values that give a system one solution, no solution, or infinitely many",
      "standard": "HSA-REI.C.6",
      "nearest_related": false,
      "question_ids": [
@@ -1389,6 +1644,91 @@
       "S16-F2-Q3",
       "S16-F2-Q4",
       "S16-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 62,
+   "set_id": "S62",
+   "file": "sets/S62.json",
+   "standard": "8.EE.C.7.a",
+   "title": "Give examples of linear equations with one, no, or infinitely many solutions and show which by transforming them",
+   "domain": "Expressions & Equations",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Give examples of linear equations with one, no, or infinitely many solutions and show which by transforming them",
+     "standard": "8.EE.C.7.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S62-M-Q1",
+      "S62-M-Q2",
+      "S62-M-Q3",
+      "S62-M-Q4",
+      "S62-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Simplify expressions with the distributive property",
+     "standard": "7.EE.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S62-B1-Q1",
+      "S62-B1-Q2",
+      "S62-B1-Q3",
+      "S62-B1-Q4",
+      "S62-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Decide whether a value makes an equation true",
+     "standard": "6.EE.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S62-B2-Q1",
+      "S62-B2-Q2",
+      "S62-B2-Q3",
+      "S62-B2-Q4",
+      "S62-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find the parameter values that give a linear equation one, no, or infinitely many solutions",
+     "standard": "HSA-REI.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S62-F1-Q1",
+      "S62-F1-Q2",
+      "S62-F1-Q3",
+      "S62-F1-Q4",
+      "S62-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Justify each step and state the solution set of an equation",
+     "standard": "HSA-REI.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S62-F2-Q1",
+      "S62-F2-Q2",
+      "S62-F2-Q3",
+      "S62-F2-Q4",
+      "S62-F2-Q5"
      ]
     }
    ]
@@ -1535,7 +1875,7 @@
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Solve systems of linear equations from real-world problems",
+     "skill": "Solve real-world systems, including mixtures and rates, and judge whether a solution makes sense",
      "standard": "HSA-REI.C.6",
      "nearest_related": false,
      "question_ids": [
@@ -1705,7 +2045,7 @@
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Explain why adding equations (elimination) keeps the same solutions",
+     "skill": "Prove that the elimination step keeps the same solutions",
      "standard": "HSA-REI.C.5",
      "nearest_related": false,
      "question_ids": [
@@ -1720,7 +2060,7 @@
      "section": "FORWARD 2",
      "section_code": "F2",
      "relation": "forward2",
-     "skill": "Solve a system of a linear equation and a quadratic equation",
+     "skill": "Solve a system of a linear equation and a quadratic equation by graphing and algebraically",
      "standard": "HSA-REI.C.7",
      "nearest_related": false,
      "question_ids": [
@@ -1790,7 +2130,7 @@
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Solve or classify systems of linear equations",
+     "skill": "Use elimination to confirm the number of solutions and solve systems with letter coefficients",
      "standard": "HSA-REI.C.6",
      "nearest_related": false,
      "question_ids": [
@@ -1875,7 +2215,7 @@
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Create equations in two variables to model and solve problems",
+     "skill": "Create cost, revenue, and profit equations in two variables and graph them",
      "standard": "HSA-CED.A.2",
      "nearest_related": false,
      "question_ids": [
@@ -2385,7 +2725,7 @@
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Write a function for a situation and use it to answer a question",
+     "skill": "Write functions for situations with fees, thresholds, and restricted domains",
      "standard": "HSF-BF.A.1.a",
      "nearest_related": false,
      "question_ids": [
@@ -2470,7 +2810,7 @@
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Interpret the slope and intercept of a linear model of data",
+     "skill": "Interpret the slope and intercept of a linear model when the units or the starting point change",
      "standard": "HSS-ID.C.7",
      "nearest_related": false,
      "question_ids": [
@@ -2555,7 +2895,7 @@
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Interpret the key features of a graph in context",
+     "skill": "Interpret the key features of a nonlinear graph in context",
      "standard": "HSF-IF.B.4",
      "nearest_related": false,
      "question_ids": [
@@ -2827,7 +3167,7 @@
      "relation": "forward2",
      "skill": "Prove theorems about parallelograms",
      "standard": "HSG-CO.C.11",
-     "nearest_related": false,
+     "nearest_related": true,
      "question_ids": [
       "S33-F2-Q1",
       "S33-F2-Q2",
@@ -2995,7 +3335,7 @@
      "section": "FORWARD 2",
      "section_code": "F2",
      "relation": "forward2",
-     "skill": "Use triangle congruence criteria",
+     "skill": "Explain the SAS, ASA, and SSS criteria with rigid motions",
      "standard": "HSG-CO.B.8",
      "nearest_related": false,
      "question_ids": [
@@ -3082,7 +3422,7 @@
      "relation": "forward2",
      "skill": "Find the point that divides a segment in a given ratio",
      "standard": "HSG-GPE.B.6",
-     "nearest_related": false,
+     "nearest_related": true,
      "question_ids": [
       "S36-F2-Q1",
       "S36-F2-Q2",
@@ -3252,7 +3592,7 @@
      "relation": "forward2",
      "skill": "Use relationships among central angles, inscribed angles, and radii",
      "standard": "HSG-C.A.2",
-     "nearest_related": false,
+     "nearest_related": true,
      "question_ids": [
       "S38-F2-Q1",
       "S38-F2-Q2",
@@ -3390,7 +3730,7 @@
      "section": "BACKWARD 2",
      "section_code": "B2",
      "relation": "backward",
-     "skill": "Decide whether two ratios are equivalent",
+     "skill": "Decide from a table whether two quantities are in a constant ratio",
      "standard": "7.RP.A.2.a",
      "nearest_related": false,
      "question_ids": [
@@ -3405,7 +3745,7 @@
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Use similarity transformations to decide whether triangles are similar",
+     "skill": "Use the definition of similarity transformations to prove equal angles and proportional sides",
      "standard": "HSG-SRT.A.2",
      "nearest_related": false,
      "question_ids": [
@@ -3507,13 +3847,98 @@
      "relation": "forward2",
      "skill": "Define trigonometric ratios from similar right triangles",
      "standard": "HSG-SRT.C.6",
-     "nearest_related": false,
+     "nearest_related": true,
      "question_ids": [
       "S41-F2-Q1",
       "S41-F2-Q2",
       "S41-F2-Q3",
       "S41-F2-Q4",
       "S41-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 63,
+   "set_id": "S63",
+   "file": "sets/S63.json",
+   "standard": "8.G.A.5",
+   "title": "Give informal arguments for the triangle angle sum and the exterior angle of a triangle",
+   "domain": "Geometry",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Give informal arguments for the triangle angle sum and the exterior angle of a triangle",
+     "standard": "8.G.A.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S63-M-Q1",
+      "S63-M-Q2",
+      "S63-M-Q3",
+      "S63-M-Q4",
+      "S63-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Use linear pairs and straight angles to find unknown angles",
+     "standard": "7.G.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S63-B1-Q1",
+      "S63-B1-Q2",
+      "S63-B1-Q3",
+      "S63-B1-Q4",
+      "S63-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Find an unknown part of an angle that is split into parts",
+     "standard": "4.MD.C.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S63-B2-Q1",
+      "S63-B2-Q2",
+      "S63-B2-Q3",
+      "S63-B2-Q4",
+      "S63-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Prove theorems about isosceles and right triangles",
+     "standard": "HSG-CO.C.10",
+     "nearest_related": false,
+     "question_ids": [
+      "S63-F1-Q1",
+      "S63-F1-Q2",
+      "S63-F1-Q3",
+      "S63-F1-Q4",
+      "S63-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use the triangle angle sum to prove angle facts about parallelograms",
+     "standard": "HSG-CO.C.11",
+     "nearest_related": false,
+     "question_ids": [
+      "S63-F2-Q1",
+      "S63-F2-Q2",
+      "S63-F2-Q3",
+      "S63-F2-Q4",
+      "S63-F2-Q5"
      ]
     }
    ]
@@ -3604,6 +4029,91 @@
    ]
   },
   {
+   "set": 64,
+   "set_id": "S64",
+   "file": "sets/S64.json",
+   "standard": "8.G.A.5",
+   "title": "Give informal arguments for the angles formed when parallel lines are cut by a transversal",
+   "domain": "Geometry",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Give informal arguments for the angles formed when parallel lines are cut by a transversal",
+     "standard": "8.G.A.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S64-M-Q1",
+      "S64-M-Q2",
+      "S64-M-Q3",
+      "S64-M-Q4",
+      "S64-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Use vertical angles and linear pairs to find unknown angles",
+     "standard": "7.G.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S64-B1-Q1",
+      "S64-B1-Q2",
+      "S64-B1-Q3",
+      "S64-B1-Q4",
+      "S64-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Recognize parallel and perpendicular lines",
+     "standard": "4.G.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S64-B2-Q1",
+      "S64-B2-Q2",
+      "S64-B2-Q3",
+      "S64-B2-Q4",
+      "S64-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Prove that lines are parallel from congruent angles",
+     "standard": "HSG-CO.C.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S64-F1-Q1",
+      "S64-F1-Q2",
+      "S64-F1-Q3",
+      "S64-F1-Q4",
+      "S64-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Construct a line through a point parallel to a given line",
+     "standard": "HSG-CO.D.12",
+     "nearest_related": false,
+     "question_ids": [
+      "S64-F2-Q1",
+      "S64-F2-Q2",
+      "S64-F2-Q3",
+      "S64-F2-Q4",
+      "S64-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
    "set": 43,
    "set_id": "S43",
    "file": "sets/S43.json",
@@ -3642,18 +4152,18 @@
      ]
     },
     {
-     "section": "BACKWARD 2",
-     "section_code": "B2",
+     "section": "BACKWARD 3",
+     "section_code": "B3",
      "relation": "backward",
-     "skill": "Use the triangle angle sum to find a missing angle",
-     "standard": "7.G.B.5",
+     "skill": "Decide whether three angle measures can make a triangle and whether they determine one triangle",
+     "standard": "7.G.A.2",
      "nearest_related": false,
      "question_ids": [
-      "S43-B2-Q1",
-      "S43-B2-Q2",
-      "S43-B2-Q3",
-      "S43-B2-Q4",
-      "S43-B2-Q5"
+      "S43-B3-Q1",
+      "S43-B3-Q2",
+      "S43-B3-Q3",
+      "S43-B3-Q4",
+      "S43-B3-Q5"
      ]
     },
     {
@@ -3675,7 +4185,7 @@
      "section": "FORWARD 2",
      "section_code": "F2",
      "relation": "forward2",
-     "skill": "Use similar triangles to solve problems",
+     "skill": "Use similar triangles to solve multistep problems, including altitudes and parallel segments",
      "standard": "HSG-SRT.B.5",
      "nearest_related": false,
      "question_ids": [
@@ -3684,6 +4194,91 @@
       "S43-F2-Q3",
       "S43-F2-Q4",
       "S43-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 65,
+   "set_id": "S65",
+   "file": "sets/S65.json",
+   "standard": "8.G.A.5",
+   "title": "Give an informal argument for the angle-angle criterion for similar triangles",
+   "domain": "Geometry",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Give an informal argument for the angle-angle criterion for similar triangles",
+     "standard": "8.G.A.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S65-M-Q1",
+      "S65-M-Q2",
+      "S65-M-Q3",
+      "S65-M-Q4",
+      "S65-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Use scale drawings: lengths change, angles stay the same",
+     "standard": "7.G.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S65-B1-Q1",
+      "S65-B1-Q2",
+      "S65-B1-Q3",
+      "S65-B1-Q4",
+      "S65-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Use tables of equivalent ratios",
+     "standard": "6.RP.A.3.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S65-B2-Q1",
+      "S65-B2-Q2",
+      "S65-B2-Q3",
+      "S65-B2-Q4",
+      "S65-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Prove the triangle proportionality theorem with similar triangles",
+     "standard": "HSG-SRT.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S65-F1-Q1",
+      "S65-F1-Q2",
+      "S65-F1-Q3",
+      "S65-F1-Q4",
+      "S65-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Explain why trigonometric ratios depend only on the angle (similar right triangles)",
+     "standard": "HSG-SRT.C.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S65-F2-Q1",
+      "S65-F2-Q2",
+      "S65-F2-Q3",
+      "S65-F2-Q4",
+      "S65-F2-Q5"
      ]
     }
    ]
@@ -3830,7 +4425,7 @@
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Classify a triangle as acute, right, or obtuse from its side lengths",
+     "skill": "Prove the converse of the Pythagorean theorem with congruent triangles",
      "standard": "HSG-CO.C.10",
      "nearest_related": false,
      "question_ids": [
@@ -3930,7 +4525,7 @@
      "section": "FORWARD 2",
      "section_code": "F2",
      "relation": "forward2",
-     "skill": "Apply geometric methods to solve design problems",
+     "skill": "Use right-triangle reasoning to make design decisions under constraints",
      "standard": "HSG-MG.A.3",
      "nearest_related": false,
      "question_ids": [
@@ -4000,7 +4595,7 @@
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Use the Pythagorean theorem to solve problems in three dimensions",
+     "skill": "Use trigonometric ratios and the Pythagorean theorem to solve right-triangle problems in three dimensions",
      "standard": "HSG-SRT.C.8",
      "nearest_related": false,
      "question_ids": [
@@ -4017,7 +4612,7 @@
      "relation": "forward2",
      "skill": "Identify solids made by rotating two-dimensional figures",
      "standard": "HSG-GMD.B.4",
-     "nearest_related": false,
+     "nearest_related": true,
      "question_ids": [
       "S47-F2-Q1",
       "S47-F2-Q2",
@@ -4085,7 +4680,7 @@
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Use the Pythagorean theorem with coordinates to solve problems",
+     "skill": "Use the Pythagorean theorem and trigonometric ratios with coordinates and distances",
      "standard": "HSG-SRT.C.8",
      "nearest_related": false,
      "question_ids": [
@@ -4510,7 +5105,7 @@
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Represent two-variable data on a scatter plot and describe how the variables are related",
+     "skill": "Compare linear, quadratic, and exponential models for two-variable data, using technology",
      "standard": "HSS-ID.B.6",
      "nearest_related": false,
      "question_ids": [
@@ -4680,7 +5275,7 @@
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Fit a linear function to data that suggest a linear association",
+     "skill": "Fit a least-squares line with technology and compare candidate lines",
      "standard": "HSS-ID.B.6.c",
      "nearest_related": false,
      "question_ids": [
@@ -4963,5 +5558,11 @@
     }
    ]
   }
- ]
+ ],
+ "revision_summary": {
+  "unchanged": 1226,
+  "revised": 219,
+  "retired": 5,
+  "new": 180
+ }
 }

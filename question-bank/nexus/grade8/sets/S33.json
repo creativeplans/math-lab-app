@@ -3,7 +3,7 @@
  "collection": {
   "id": "G8",
   "grade": 8,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "date": "2026-10-11"
  },
  "grade": 8,
@@ -38,20 +38,20 @@
      "nearest_related": false,
      "type": "sa",
      "response": "write",
-     "prompt": "Angle ABC measures 65°. It is reflected across a line. What is the measure of its image?",
-     "prompt_markup": "Angle ABC measures 65°. It is reflected across a line.\nWhat is the measure of its image?",
+     "prompt": "Angle ABC has A(4, 0), B(0, 0), and C(3, 3). It is reflected across the y-axis. Find A', B', and C', and explain why angle A'B'C' has the same measure as angle ABC.",
+     "prompt_markup": "Angle ABC has A(4, 0), B(0, 0), and C(3, 3). It is reflected across the y-axis.\nFind A', B', and C', and explain why angle A'B'C' has the same measure as angle ABC.",
      "choices": [],
      "answer_lines": [
-      "Measure:"
+      "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "65°",
+     "correct_answer": "A'(-4, 0), B'(0, 0), C'(-3, 3). Ray BC and ray B'C' each run along a diagonal of the grid squares, so each angle is half of a right angle: both measure 45°.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "",
+     "grading_note": "Grade both: the three image points, and a check that both angles measure 45°.",
      "figure": null,
-     "page": 1000,
-     "revision": "unchanged"
+     "page": 1124,
+     "revision": "revised"
     },
     {
      "id": "S33-M-Q2",
@@ -70,20 +70,20 @@
      "nearest_related": false,
      "type": "sa",
      "response": "write",
-     "prompt": "Triangle PQR has angles of 40°, 60°, and 80°. It is rotated 180° about the origin. What are the angle measures of the image?",
-     "prompt_markup": "Triangle PQR has angles of 40°, 60°, and 80°. It is rotated 180° about the origin.\nWhat are the angle measures of the image?",
+     "prompt": "The right triangle with vertices (0, 0), (4, 0), and (0, 4) is translated 2 units right and 1 unit up. Find the image vertices, and explain why the angle at the image of (0, 0) is still a right angle.",
+     "prompt_markup": "The right triangle with vertices (0, 0), (4, 0), and (0, 4) is translated 2 units right and 1 unit up.\nFind the image vertices, and explain why the angle at the image of (0, 0) is still a right angle.",
      "choices": [],
      "answer_lines": [
-      "Measures:"
+      "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "40°, 60°, and 80°",
+     "correct_answer": "(2, 1), (6, 1), and (2, 5). The sides from (2, 1) are horizontal and vertical, so they are perpendicular: the angle is 90°.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "",
+     "grading_note": "Grade both: the vertices and the reason.",
      "figure": null,
-     "page": 1001,
-     "revision": "unchanged"
+     "page": 1125,
+     "revision": "revised"
     },
     {
      "id": "S33-M-Q3",
@@ -102,35 +102,35 @@
      "nearest_related": false,
      "type": "mc",
      "response": "select one",
-     "prompt": "A right angle is translated 5 units up. What is its image?",
-     "prompt_markup": "A right angle is translated 5 units up.\nWhat is its image?",
+     "prompt": "Angle DEF has D(0, 3), E(0, 0), and F(3, 0). It is reflected across the line y = x. What does the image angle measure?",
+     "prompt_markup": "Angle DEF has D(0, 3), E(0, 0), and F(3, 0). It is reflected across the line y = x.\nWhat does the image angle measure?",
      "choices": [
       {
        "letter": "A",
-       "text": "A right angle"
+       "text": "90°"
       },
       {
        "letter": "B",
-       "text": "A straight angle"
+       "text": "30°"
       },
       {
        "letter": "C",
-       "text": "An obtuse angle"
+       "text": "180°"
       },
       {
        "letter": "D",
-       "text": "An acute angle"
+       "text": "45°"
       }
      ],
      "answer_lines": [],
      "correct_letter": "A",
-     "correct_answer": "A right angle",
+     "correct_answer": "90°",
      "drawing_answer": null,
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1002,
-     "revision": "unchanged"
+     "page": 1126,
+     "revision": "revised"
     },
     {
      "id": "S33-M-Q4",
@@ -147,17 +147,19 @@
      "domain": "Geometry",
      "skill": "Verify that rigid motions take angles to angles of the same measure",
      "nearest_related": false,
-     "type": "plot",
-     "response": "draw on the figure",
-     "prompt": "The angle has its vertex at the origin. Rotate it 90° counterclockwise about the origin and draw the image.",
-     "prompt_markup": "The angle has its vertex at the origin. Rotate it 90° counterclockwise about the origin and draw the image.",
+     "type": "plot_text",
+     "response": "draw on the figure and write an answer",
+     "prompt": "The angle has its vertex at the origin. Rotate it 90° counterclockwise about the origin and draw the image. Then compare the measures of the two angles.",
+     "prompt_markup": "The angle has its vertex at the origin. Rotate it 90° counterclockwise about the origin and draw the image. Then compare the measures of the two angles.",
      "choices": [],
-     "answer_lines": [],
+     "answer_lines": [
+      "Measures:"
+     ],
      "correct_letter": null,
-     "correct_answer": "An angle with its vertex at the origin and rays through (0, 4) and (-3, 3); it still measures 45°",
-     "drawing_answer": null,
+     "correct_answer": "Both angles measure 45°.",
+     "drawing_answer": "An angle with its vertex at the origin and rays through (0, 4) and (-3, 3)",
      "required_method": null,
-     "grading_note": "",
+     "grading_note": "Grade both: the rotated angle, and the two equal measures (from a protractor or the grid diagonals).",
      "figure": {
       "svg": "assets/S33-M-Q4.svg",
       "png": "assets/S33-M-Q4.png",
@@ -200,8 +202,8 @@
        ]
       }
      },
-     "page": 1003,
-     "revision": "unchanged"
+     "page": 1127,
+     "revision": "revised"
     },
     {
      "id": "S33-M-Q5",
@@ -220,8 +222,8 @@
      "nearest_related": false,
      "type": "tf",
      "response": "select true or false",
-     "prompt": "A rotation can map a 30° angle onto a 60° angle.",
-     "prompt_markup": "A rotation can map a 30° angle onto a 60° angle.",
+     "prompt": "Angle ABC with A(2, 0), B(0, 0), and C(0, 2) is translated 4 units right. The image angle measures 45°.",
+     "prompt_markup": "Angle ABC with A(2, 0), B(0, 0), and C(0, 2) is translated 4 units right. The image angle measures 45°.",
      "choices": [
       {
        "letter": "A",
@@ -237,10 +239,10 @@
      "correct_answer": "False",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Rotations keep angle measures the same.",
+     "grading_note": "The image is still a right angle (90°).",
      "figure": null,
-     "page": 1004,
-     "revision": "unchanged"
+     "page": 1128,
+     "revision": "revised"
     }
    ]
   },
@@ -281,7 +283,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1006,
+     "page": 1130,
      "revision": "unchanged"
     },
     {
@@ -313,7 +315,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1007,
+     "page": 1131,
      "revision": "unchanged"
     },
     {
@@ -360,7 +362,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1008,
+     "page": 1132,
      "revision": "unchanged"
     },
     {
@@ -399,7 +401,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1009,
+     "page": 1133,
      "revision": "unchanged"
     },
     {
@@ -438,7 +440,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1010,
+     "page": 1134,
      "revision": "unchanged"
     }
    ]
@@ -480,7 +482,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1012,
+     "page": 1136,
      "revision": "unchanged"
     },
     {
@@ -512,7 +514,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1013,
+     "page": 1137,
      "revision": "unchanged"
     },
     {
@@ -559,7 +561,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1014,
+     "page": 1138,
      "revision": "unchanged"
     },
     {
@@ -598,7 +600,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1015,
+     "page": 1139,
      "revision": "unchanged"
     },
     {
@@ -637,7 +639,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1016,
+     "page": 1140,
      "revision": "unchanged"
     }
    ]
@@ -680,7 +682,7 @@
      "required_method": null,
      "grading_note": "A reflection across the x-axis followed by a reflection across the y-axis (or the reverse) is also correct.",
      "figure": null,
-     "page": 1018,
+     "page": 1142,
      "revision": "unchanged"
     },
     {
@@ -713,7 +715,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1019,
+     "page": 1143,
      "revision": "unchanged"
     },
     {
@@ -761,7 +763,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1020,
+     "page": 1144,
      "revision": "unchanged"
     },
     {
@@ -801,7 +803,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1021,
+     "page": 1145,
      "revision": "unchanged"
     },
     {
@@ -841,7 +843,7 @@
      "required_method": null,
      "grading_note": "The figure returns to where it started.",
      "figure": null,
-     "page": 1022,
+     "page": 1146,
      "revision": "unchanged"
     }
    ]
@@ -852,7 +854,7 @@
    "relation": "forward2",
    "skill": "Prove theorems about parallelograms",
    "standard": "HSG-CO.C.11",
-   "nearest_related": false,
+   "nearest_related": true,
    "questions": [
     {
      "id": "S33-F2-Q1",
@@ -868,7 +870,7 @@
      "standard_grade": 10,
      "domain": "Geometry: Congruence",
      "skill": "Prove theorems about parallelograms",
-     "nearest_related": false,
+     "nearest_related": true,
      "standard_level": "High school (Common Core high-school standard; this bank places it at Grade 10 as a second forward step. This is an instructional choice, not an official grade assignment.)",
      "type": "work",
      "response": "write the answer and show the required work",
@@ -884,8 +886,8 @@
      "required_method": "A valid chain of reasons. Other valid orders are accepted. A conclusion without reasons is not full credit. Example: AD ∥ BC (definition of a parallelogram), and AB is a transversal; angles A and B are same-side interior angles, so they are supplementary.",
      "grading_note": "",
      "figure": null,
-     "page": 1024,
-     "revision": "unchanged"
+     "page": 1148,
+     "revision": "revised"
     },
     {
      "id": "S33-F2-Q2",
@@ -901,7 +903,7 @@
      "standard_grade": 10,
      "domain": "Geometry: Congruence",
      "skill": "Prove theorems about parallelograms",
-     "nearest_related": false,
+     "nearest_related": true,
      "standard_level": "High school (Common Core high-school standard; this bank places it at Grade 10 as a second forward step. This is an instructional choice, not an official grade assignment.)",
      "type": "sa",
      "response": "write",
@@ -917,8 +919,8 @@
      "required_method": null,
      "grading_note": "Grade the angles and the reasons.",
      "figure": null,
-     "page": 1025,
-     "revision": "unchanged"
+     "page": 1149,
+     "revision": "revised"
     },
     {
      "id": "S33-F2-Q3",
@@ -934,7 +936,7 @@
      "standard_grade": 10,
      "domain": "Geometry: Congruence",
      "skill": "Prove theorems about parallelograms",
-     "nearest_related": false,
+     "nearest_related": true,
      "standard_level": "High school (Common Core high-school standard; this bank places it at Grade 10 as a second forward step. This is an instructional choice, not an official grade assignment.)",
      "type": "mc",
      "response": "select one",
@@ -965,8 +967,8 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1026,
-     "revision": "unchanged"
+     "page": 1150,
+     "revision": "revised"
     },
     {
      "id": "S33-F2-Q4",
@@ -982,7 +984,7 @@
      "standard_grade": 10,
      "domain": "Geometry: Congruence",
      "skill": "Prove theorems about parallelograms",
-     "nearest_related": false,
+     "nearest_related": true,
      "standard_level": "High school (Common Core high-school standard; this bank places it at Grade 10 as a second forward step. This is an instructional choice, not an official grade assignment.)",
      "type": "tf",
      "response": "select true or false",
@@ -1005,8 +1007,8 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1027,
-     "revision": "unchanged"
+     "page": 1151,
+     "revision": "revised"
     },
     {
      "id": "S33-F2-Q5",
@@ -1022,7 +1024,7 @@
      "standard_grade": 10,
      "domain": "Geometry: Congruence",
      "skill": "Prove theorems about parallelograms",
-     "nearest_related": false,
+     "nearest_related": true,
      "standard_level": "High school (Common Core high-school standard; this bank places it at Grade 10 as a second forward step. This is an instructional choice, not an official grade assignment.)",
      "type": "tf",
      "response": "select true or false",
@@ -1045,8 +1047,8 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1028,
-     "revision": "unchanged"
+     "page": 1152,
+     "revision": "revised"
     }
    ]
   }

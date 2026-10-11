@@ -14,6 +14,11 @@ CAR = grid(6, 50, ystep=10, xlabel='Minutes', ylabel='Speed (mph)', lines=[((0, 
 TEMP = grid(12, 30, ystep=5, xlabel='Hours after 6 a.m.', ylabel='Temperature (°C)', lines=[((0, 10), (9, 28)), ((9, 28), (12, 22))],
             desc='The temperature rises in a straight line from 10°C at 0 hours to 28°C at 9 hours, then falls to 22°C at 12 hours.')
 TANK = grid(6, 60, ystep=10, xlabel='Minutes', ylabel='Gallons', lines=[((0, 60), (6, 0))])
+_BT = [i / 4 for i in range(17)] + [2 + 5 ** 0.5]
+_BP = [(t, max(0.0, -5 * t * t + 20 * t + 5)) for t in _BT]
+BALL = grid(5, 30, ystep=5, xlabel='Seconds', ylabel='Height (m)', lines=list(zip(_BP, _BP[1:])),
+            desc='A ball\'s height h = -5t² + 20t + 5 meters after t seconds: the curve starts at 5 m when t = 0, rises to a highest point of 25 m at t = 2, '
+                 'and falls back to the ground a little after t = 4.')
 
 
 def sketch(xlabel, ylabel):
@@ -30,8 +35,8 @@ SETS = [
           mc('Which set of ordered pairs is a function?', ['(1, 4), (2, 4), (3, 4)', '(1, 2), (1, 3), (2, 4)', '(0, 0), (0, 1), (1, 1)', '(5, 1), (6, 2), (5, 3)']),
           sa('Do the points on the graph show y as a function of x? Explain.', 'Answer:', fig=grid(5, 6, pts=[(1, 1), (2, 3), (2, 5), (4, 2)]),
              key='No. The input x = 2 has two outputs (3 and 5).'),
-          tf('A rule assigns each month of the year to the students in a class born in that month. This rule is a function.', key=False,
-             note='One month can be paired with several students, so an input has more than one output.'),
+          tf('A rule takes a birth month as its input and gives one student born in that month as its output. Ana and Ben were both born in January. This rule is a function.', key=False,
+             note='The input January is paired with two different outputs, Ana and Ben, so the rule is not a function.'),
       ],
       back=[
           B('Find the output of a rule', '6.EE.C.9', [
@@ -159,8 +164,8 @@ SETS = [
           mc('Which equation is a linear function?', ['y = 4x - 7', 'y = x² + 1', 'y = {3/x}', 'y = 2^x']),
           sa('Is the function in the table linear? Explain.', 'Answer:', fig=tbl('x', [0, 1, 2, 3], 'y', [1, 2, 5, 10]),
              key='No. y increases by 1, then 3, then 5, so the rate of change is not constant.'),
-          sa('A = s² gives the area of a square with side length s.\nIs A a linear function of s? Use three points to support your answer.', 'Answer:',
-             key='No. (1, 1), (2, 4), and (3, 9) are not on one line: the area increases by 3, then by 5.'),
+          sa('When n people each shake hands once with every other person, the number of handshakes is h = n(n - 1) ÷ 2.\nIs h a linear function of n? Use the values for n = 2, 3, and 4 to support your answer.', 'Answer:',
+             key='No. The values are 1, 3, and 6, which increase by 2 and then by 3, so the rate of change is not constant.'),
           sa('Is the function in the table linear? Explain.', 'Answer:', fig=tbl('x', [0, 2, 4, 6], 'y', [7, 4, 1, -2]),
              key='Yes. y decreases by 3 each time x increases by 2, a constant rate of change of -1.5.'),
           tf('y = 3(x + 2) is a linear function.', key=True),
@@ -265,14 +270,15 @@ SETS = [
               tf('h = 5 is the solution of 12h + 8 = 50.', key=False, note='The solution is h = 3.5.'),
           ]),
       ],
-      f1=B('Write a function for a situation and use it to answer a question', 'HSF-BF.A.1.a', [
-          sa('A gym charges $25 per month, but the first month is free.\nWrite a function for the total cost C after m months, where m ≥ 1.', 'C(m) =', key='25(m - 1)', note='25m - 25 is also correct.'),
-          sa('A savings account starts with $300, and $40 is added each week.\nWrite a function S(w), then find when the balance reaches $700.', 'Function and answer:',
-             key='S(w) = 40w + 300; 10 weeks', note='Grade both: the function and 10 weeks.'),
-          mc('A pool is 4 feet deep and drains 0.25 foot each hour.\nWhich function gives the depth after t hours, and when is the pool empty?',
-             ['d(t) = 4 - 0.25t; after 16 hours', 'd(t) = 0.25t + 4; after 16 hours', 'd(t) = 4t - 0.25; after 1 hour', 'd(t) = 4 - 0.25t; after 4 hours']),
-          tf('A rental costs $30 plus $0.20 per mile. The function C(m) = 0.2m + 30 gives the cost for m miles.', key=True),
-          tf('A balance of $200 decreases by $15 each month. The function B(m) = 15m + 200 gives the balance after m months.', key=False, note='The function is B(m) = 200 - 15m.'),
+      f1=B('Write functions for situations with fees, thresholds, and restricted domains', 'HSF-BF.A.1.a', [
+          sa('A phone plan costs $30 per month for up to 5 GB of data, plus $8 for each GB over 5.\nWrite a function C(g) for the monthly cost when g > 5 GB, and find C(9).', 'Answer:',
+             key='C(g) = 30 + 8(g - 5); C(9) = $62', note='Equivalent forms such as C(g) = 8g - 10 are correct. Both parts are required.'),
+          sa('A pool holds 12,000 gallons and drains at 400 gallons per hour.\nWrite a function V(t) for the water left after t hours, and give the domain that makes sense.', 'Answer:',
+             key='V(t) = 12,000 - 400t, for 0 ≤ t ≤ 30', note='Both the function and the domain are required.'),
+          mc('A taxi charges $3 for the first mile and $2 for each mile after the first.\nWhich function gives the cost for m miles, where m ≥ 1?',
+             ['C(m) = 3 + 2(m - 1)', 'C(m) = 3 + 2m', 'C(m) = 5m', 'C(m) = 2 + 3(m - 1)']),
+          tf('A gym charges a $50 fee and then $20 per month. For C(m) = 50 + 20m, C(m + 1) - C(m) = 20 for every m.', key=True),
+          tf('A store takes $10 off any purchase over $50. For a purchase of p dollars, where p > 50, the cost is c(p) = 10 - p.', key=False, note='The cost is c(p) = p - 10.'),
       ]),
       f2=B('Rearrange a formula to solve for a chosen quantity', 'HSA-CED.A.4', [
           sa('Solve C = 40h + 65 for h.', 'h =', key='(C - 65)/40'),
@@ -309,13 +315,16 @@ SETS = [
               tf('In y = 3x + 2, x depends on y.', key=False),
           ]),
       ],
-      f1=B('Interpret the slope and intercept of a linear model of data', 'HSS-ID.C.7', [
-          sa('A line of fit predicts a test score y = 4.5x + 60 for x hours of study.\nWhat does 4.5 mean?', 'Meaning:', key='Each extra hour of study goes with about 4.5 more points.'),
-          sa('A line of fit predicts a test score y = 4.5x + 60 for x hours of study.\nWhat does 60 mean?', 'Meaning:', key='The predicted score for 0 hours of study.'),
-          mc('A model gives a used car\'s value as y = 18,000 - 1,500x dollars after x years.\nWhat does -1,500 mean?',
-             ['The value drops about $1,500 each year.', 'The car costs $1,500.', 'The value rises $1,500 each year.', 'The car is 1,500 years old.']),
-          tf('A model gives a child\'s height as y = 2.1x + 30 cm at age x months. The intercept 30 is the predicted height at 0 months.', key=True),
-          tf('A slope of -3 in a linear model means y increases by 3 for each unit of x.', key=False),
+      f1=B('Interpret the slope and intercept of a linear model when the units or the starting point change', 'HSS-ID.C.7', [
+          sa('A model gives a city\'s population, in thousands, as P = 2.4t + 85, where t is the number of years after 2010.\nWhat do 2.4 and 85 mean? Include units.', 'Answer:',
+             key='2.4: the population grows by about 2,400 people per year. 85: the model gives about 85,000 people in 2010.', note='Both meanings, with units, are required.'),
+          sa('A phone plan is modeled by C = 0.05m + 20 dollars for m minutes of calls.\nRewrite the model for h hours of calls, and say what the new slope means.', 'Answer:',
+             key='C = 3h + 20; the plan costs $3 for each hour of calls.', note='Both parts are required.'),
+          mc('A model gives the air temperature as T = -6.5h + 15 °C at a height of h kilometers.\nWhat does -6.5 mean?',
+             ['The temperature drops about 6.5°C for each kilometer of height.', 'The temperature at the ground is -6.5°C.', 'The temperature rises 6.5°C for each kilometer.', 'The air is 6.5 km high.']),
+          tf('In the model y = 4(x - 2000) + 150 for the sales y in year x, 150 is the predicted sales in the year 2000.', key=True),
+          tf('A model for x years since 2000 has the intercept 40. This means the model predicts 40 in the year 0.', key=False,
+             note='x = 0 is the year 2000, so 40 is the prediction for 2000.'),
       ]),
       f2=B('Interpret the parameters of linear and exponential functions', 'HSF-LE.B.5', [
           sa('P(t) = 2,000(1.05)^t gives an account balance after t years.\nWhat do 2,000 and 1.05 mean?', 'Meaning:', key='2,000 is the starting amount; 1.05 means the balance grows 5% each year.', note='Grade both.'),
@@ -353,12 +362,14 @@ SETS = [
               tf('Running 8 km in 40 minutes is the same rate as running 2 km in 20 minutes.', key=False),
           ]),
       ],
-      f1=B('Interpret the key features of a graph in context', 'HSF-IF.B.4', [
-          sa('The graph shows the temperature during a day.\nWhen is the temperature highest, and what is it?', 'Answer:', fig=TEMP, key='9 hours after 6 a.m. (3 p.m.); 28°C'),
-          sa('The graph shows the temperature during a day.\nOn what interval is the temperature increasing?', 'Interval:', fig=TEMP, key='From 0 to 9 hours after 6 a.m.'),
-          mc('The graph shows the temperature during a day.\nWhat does the y-intercept mean?', ['It was 10°C at 6 a.m.', 'It was 28°C at 3 p.m.', 'The temperature rose for 9 hours.', 'It was 22°C at 6 p.m.'], fig=TEMP),
-          tf('In the graph, the temperature is decreasing from 9 to 12 hours after 6 a.m.', fig=TEMP, key=True),
-          tf('The graph shows that the temperature never dropped below 22°C.', fig=TEMP, key=False, note='It started at 10°C.'),
+      f1=B('Interpret the key features of a nonlinear graph in context', 'HSF-IF.B.4', [
+          sa('The graph shows a ball\'s height after it is thrown.\nWhat is the greatest height, and when does it happen?', 'Answer:', fig=BALL, key='25 m, at 2 seconds', note='Both parts are required.'),
+          sa('The graph shows a ball\'s height after it is thrown.\nOn what interval is the height increasing, and on what interval is it decreasing?', 'Answer:', fig=BALL,
+             key='Increasing from 0 to 2 seconds; decreasing from 2 seconds until it lands (a little after 4 seconds).', note='Both intervals are required.'),
+          mc('The graph shows a ball\'s height after it is thrown.\nWhat does the point where the graph meets the vertical axis mean?',
+             ['The ball was 5 m above the ground when it was thrown.', 'The ball lands after 5 seconds.', 'The ball\'s greatest height is 5 m.', 'The ball rises 5 m each second.'], fig=BALL),
+          tf('In the graph, the ball hits the ground a little after 4 seconds.', fig=BALL, key=True),
+          tf('In the graph, the ball\'s height changes by the same amount each second.', fig=BALL, key=False, note='The graph is curved, so the rate of change is not constant.'),
       ]),
       f2=B('Graph and evaluate piecewise-defined functions', 'HSF-IF.C.7.b', [
           plot('Graph the function on the coordinate plane.\nf(x) = x + 2 for x < 0\nf(x) = 2 for x ≥ 0', plane(),
@@ -382,12 +393,12 @@ SETS = [
                key='A curve that rises, levels off at one highest point, and falls back to height 0, like an upside-down U. Starting at ground level or at the throwing height is accepted.'),
           plot('Sketch the number of people in a theater from 6:00 to 10:00. It fills quickly before a 7:00 show, stays full, and empties after the show ends at 9:30.',
                sketch('Time', 'People in the theater'),
-               key='A steep rise before 7:00, a horizontal segment from about 7:00 to 9:30, then a steep fall after 9:30 back to about 0. Exact times are not required if the order is right.'),
-          draw_write('Sketch a graph of a hike: the hiker climbs a steep trail for 2 hours, then a gentle slope for 1 hour, then rests for 1 hour.\nIs elevation a linear function of time for the whole hike? Explain.',
-                     sketch('Hours', 'Elevation'), 'Answer:',
-                     draw='A steeper rising segment from 0 to 2 hours, a less steep rising segment from 2 to 3 hours, and a horizontal segment from 3 to 4 hours',
-                     key='No. The rate of change is different on each part (steep, gentle, then zero), so the whole graph is not one line.',
-                     note='Grade both: the three-part graph in the right order and steepness, and "no" with a reason.'),
+               key='A steep rise ending at about 7:00, a horizontal segment from 7:00 to 9:30, then a steep fall after 9:30 back to about 0 by 10:00. The rise, level part, and fall must be placed at these clock times; exact heights are not required.'),
+          draw_write('Sketch a graph of a hiker\'s elevation gain over time: she gains elevation at a steady 200 meters per hour for 2 hours, then at a steady 80 meters per hour for 1 hour, then rests for 1 hour.\nIs elevation gain a linear function of time for the whole hike? Explain.',
+                     sketch('Hours', 'Elevation gain (100 m)'), 'Answer:',
+                     draw='A rising segment from (0, 0) to (2, 4) (400 m), a less steep rising segment to (3, 4.8) (480 m), and a horizontal segment to (4, 4.8)',
+                     key='No. The rate of change is different on each part (200, then 80, then 0 meters per hour), so the whole graph is not one line.',
+                     note='Grade both: the three-part graph with the right order and steepness, and "no" with a reason.'),
       ],
       back=[
           B('Graph a relationship from a table', '6.EE.C.9', [
@@ -414,7 +425,7 @@ SETS = [
           plot('Sketch a function whose graph crosses the y-axis at 2 and that increases for all x shown.', plane(),
                key='Any always-increasing graph through (0, 2); a line or a curve is accepted'),
           mc('Which description matches y = -(x - 2)² + 4?', ['A maximum of 4 at x = 2; increasing for x < 2', 'A minimum of 4 at x = 2', 'A maximum of 2 at x = 4', 'Increasing for every x']),
-          tf('A graph with a maximum at x = 3 decreases for some x-values greater than 3.', key=True),
+          tf('The function f(x) = -(x - 3)² + 5 has its maximum at x = 3 and decreases for every x greater than 3.', key=True),
           tf('A function that is always decreasing can have its maximum in the middle of its domain.', key=False),
       ]),
       f2=B('Graph exponential functions and describe their end behavior', 'HSF-IF.C.7.e', [

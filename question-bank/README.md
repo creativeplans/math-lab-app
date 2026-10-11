@@ -7,8 +7,8 @@
 | `grade5/` | Grade 5 collection, version 2.0.0: 71 question sets, 1,930 questions (see its CHANGELOG and COVERAGE) |
 | `grade6/` | Grade 6 collection: 82 question sets, 2,465 questions |
 | `grade7/` | Grade 7 collection, version 2.0.0: 70 question sets, 1,755 questions; FORWARD 2 uses Common Core high-school standards, which this bank places at Grade 9 (see its CHANGELOG, CORRECTIONS, and COVERAGE) |
-| `grade8/` | Grade 8 collection, version 1.0.0: 58 question sets, 1,450 questions; both forward branches use Common Core high-school standards, which this bank places at Grade 9 (FORWARD 1) and Grade 10 (FORWARD 2) (see its COVERAGE) |
-| `nexus/grade3/`, `nexus/grade4/`, `nexus/grade5/`, `nexus/grade6/`, `nexus/grade7/`, `nexus/grade8/` | Import packages for Untangle The Nexus (JSON per set, index, figure files, PDFs, manifest). Each has its own README. `nexus/Grade3_Nexus_Import_v2.0.0.zip`, `nexus/Grade4_Nexus_Import_v2.0.0.zip`, `nexus/Grade5_Nexus_Import_v2.0.0.zip`, `nexus/Grade7_Nexus_Import_v2.0.0.zip`, and `nexus/Grade8_Nexus_Import_v1.0.0.zip` are the packages zipped. |
+| `grade8/` | Grade 8 collection, version 2.0.0: 65 question sets, 1,625 questions; both forward branches use Common Core high-school standards, which this bank places at Grade 9 (FORWARD 1) and Grade 10 (FORWARD 2) (see its CHANGELOG, CORRECTIONS, and COVERAGE) |
+| `nexus/grade3/`, `nexus/grade4/`, `nexus/grade5/`, `nexus/grade6/`, `nexus/grade7/`, `nexus/grade8/` | Import packages for Untangle The Nexus (JSON per set, index, figure files, PDFs, manifest). Each has its own README. `nexus/Grade3_Nexus_Import_v2.0.0.zip`, `nexus/Grade4_Nexus_Import_v2.0.0.zip`, `nexus/Grade5_Nexus_Import_v2.0.0.zip`, `nexus/Grade7_Nexus_Import_v2.0.0.zip`, and `nexus/Grade8_Nexus_Import_v2.0.0.zip` are the packages zipped. |
 | `engine/` | Shared code that builds the PDFs, answer keys, and Nexus packages |
 
 Every set has a MAIN section (5 questions at the set's grade), BACKWARD branches (prerequisite skills from

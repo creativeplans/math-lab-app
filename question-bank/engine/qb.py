@@ -85,6 +85,9 @@ def tf(stem, fig=None, **kw):
 def nearest_note(std=None, key=None):
     """Note for a nearest-related forward branch, naming the branch's own grade (from its standard and slot)."""
     g = grade_num(std, key) if std else GRADE + 2
+    if std and std.startswith('HS'):
+        return ('No high-school standard directly continues this skill at this step. This branch uses the nearest related '
+                'high-school standard (placed at Grade %d in this bank).' % g)
     return ('No Grade %d standard directly continues this skill. '
             'This branch uses the nearest related Grade %d standard.' % (g, g))
 

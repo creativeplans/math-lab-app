@@ -35,7 +35,9 @@ SETS = [
           ]),
       ],
       f1=B('Decide whether sums and products are rational or irrational', 'HSN-RN.B.3', [
-          sa('Is 4 + √3 rational or irrational? Explain.', 'Answer:', key='Irrational. A rational number plus an irrational number is irrational.'),
+          work('Explain why 4 + √3 is irrational. (Suppose 4 + √3 = r for some rational number r, and see what that would say about √3.)', 'Conclusion:',
+               method='An argument like this: if 4 + √3 = r with r rational, then √3 = r - 4, a difference of two rational numbers, which is rational. But √3 is irrational, so 4 + √3 cannot be rational.',
+               key='4 + √3 is irrational.'),
           sa('Is √8 × √2 rational or irrational? Give its value.', 'Answer:', key='Rational; √16 = 4.'),
           mc('Which product is irrational?', ['3√5', '√3 × √12', '0 × √7', '{2/3} × 6']),
           tf('The sum of two rational numbers is always rational.', key=True),
@@ -76,12 +78,12 @@ SETS = [
               tf('0.36 × 10 = 36', key=False),
           ]),
       ],
-      f1=B('Solve linear equations whose solutions are fractions', 'HSA-REI.B.3', [
-          sa('Solve for x. Write the answer as a fraction in simplest form.\n100x - x = 45', 'x =', key='5/11'),
-          sa('Solve for x.\n10x = x + 6.3', 'x =', key='0.7', note='7/10 is also correct.'),
-          mc('Solve for x.\n1,000x - 10x = 270', ['x = {3/11}', 'x = {27/100}', 'x = 27', 'x = {1/37}']),
-          tf('x = {4/9} is the solution of 10x - x = 4.', key=True),
-          tf('x = 0.12 is the solution of 100x - x = 12.', key=False, note='The solution is 12/99 = 4/33.'),
+      f1=B('Solve linear equations with letter coefficients that come from repeating decimals', 'HSA-REI.B.3', [
+          sa('Let x = 0.ddd..., where the digit d (from 1 to 9) repeats. Then 10x = d + x.\nSolve for x in terms of d.', 'x =', key='d/9'),
+          sa('Let x = 0.ababab..., where the two digits ab repeat, and let n be the two-digit number ab. Then 100x = n + x.\nSolve for x in terms of n.', 'x =', key='n/99'),
+          mc('Solve for x in terms of k. Assume k ≠ 1.\nkx = x + 5', ['x = 5 ÷ (k - 1)', 'x = 5 ÷ k', 'x = 5k - 1', 'x = 5 - k']),
+          tf('If 1,000x = 123 + x, then x = {123/999} = {41/333}.', key=True),
+          tf('For every number m, the equation mx = 2x + 3 has exactly one solution.', key=False, note='When m = 2, it becomes 0 = 3, which has no solution.'),
       ]),
       f2=B('Write a geometric sequence from a repeating decimal', 'HSF-BF.A.2', [
           sa('0.333... = 0.3 + 0.03 + 0.003 + ... The terms 0.3, 0.03, 0.003, ... form a geometric sequence.\nWhat is the common ratio?', 'Ratio:', key='0.1', note='1/10 is also correct.'),
@@ -126,7 +128,7 @@ SETS = [
           tf('The solutions of x² = 12 are x = 2√3 and x = -2√3.', key=True),
           tf('x² = -9 has the real solutions 3 and -3.', key=False, note='No real number squared is negative, so there is no real solution.'),
       ]),
-      f2=B('Find arc lengths and sector areas exactly in terms of π and approximately', 'HSG-C.B.5', [
+      f2=B('Find arc lengths and sector areas exactly in terms of π and approximately', 'HSG-C.B.5', nearest=True, qs=[
           sa('A circle has a radius of 6 cm.\nFind the length of a 90° arc exactly in terms of π, then to the nearest tenth.', 'Arc length:',
              key='3π cm, about 9.4 cm', note='Both the exact and the rounded value are required.'),
           sa('A circle has a radius of 4 inches.\nFind the area of a 45° sector exactly in terms of π, then to the nearest tenth.', 'Sector area:',
@@ -170,10 +172,58 @@ SETS = [
           tf('Writing more digits of √5 always makes a measured length more accurate.', key=False, note='A reported length cannot be more accurate than the measuring tool.'),
       ]),
       f2=B('Use coordinates to find exact lengths and perimeters with radicals', 'HSG-GPE.B.7', [
-          sa('Find the exact perimeter of the triangle with vertices (0, 0), (2, 0), and (0, 2).', 'Perimeter:', key='4 + 2√2 units', note='About 6.8 units.'),
+          sa('Find the exact perimeter of the triangle with vertices (0, 0), (2, 0), and (0, 2).', 'Perimeter:', key='4 + 2√2 units', note='The exact form is required; a decimal approximation alone is not accepted.'),
           sa('Find the exact length of the segment from (1, 1) to (4, 3).', 'Length:', key='√13 units'),
           mc('A square has vertices (0, 0), (1, 2), (-1, 3), and (-2, 1).\nWhat is its perimeter?', ['4√5 units', '20 units', '4√3 units', '2√5 units']),
           tf('The distance from (-1, -1) to (2, 3) is 5 units.', key=True),
           tf('A rectangle with vertices (0, 0), (3, 0), (3, 1), and (0, 1) has a diagonal 4 units long.', key=False, note='The diagonal is √10 units.'),
+      ])),
+
+    # ------------------------------------------------------------------ 8.NS.A.2 (expressions) -- added in 2.0.0
+    S('8.NS.A.2', 'Estimate the values of expressions that contain irrational numbers', num=59,
+      main=[
+          sa('Estimate 2√5 + 1 to the nearest tenth. Show how you estimated √5.', 'Answer:',
+             key='About 5.5. √5 ≈ 2.24 (2.2² = 4.84 and 2.3² = 5.29; 2.24² ≈ 5.02), so 2√5 + 1 ≈ 4.48 + 1 = 5.48 ≈ 5.5.', note='Grade both: 5.5, and an estimate of √5 between 2.2 and 2.3.'),
+          sa('Estimate π² to the nearest whole number.', 'Estimate:', key='10', note='π ≈ 3.14, and 3.14² ≈ 9.86.'),
+          mc('Which is the best estimate of √2 + √3 to the nearest tenth?', ['3.1', '2.2', '5.0', '3.6']),
+          sa('Between which two whole numbers is 3√7? Explain.', 'Answer:', key='7 and 8. 3√7 = √63, and 7² = 49 < 63 < 64 = 8².',
+             note='Any correct reasoning is accepted, for example √7 ≈ 2.65 so 3√7 ≈ 7.9.'),
+          tf('5 - √2 is greater than 4.', key=False, note='√2 ≈ 1.41, so 5 - √2 ≈ 3.59.'),
+      ],
+      back=[
+          B('Evaluate expressions with decimal values', '6.EE.A.2.c', [
+              sa('Evaluate 2x + 1 when x = 2.24.', 'Value:', key='5.48'),
+              sa('Evaluate x² when x = 3.14.', 'Value:', key='9.8596'),
+              mc('Evaluate 3x - 1 when x = 1.7.', ['4.1', '5.1', '3.1', '2.4']),
+              tf('When x = 1.4, x + 1.7 = 3.1.', key=True),
+              tf('When x = 2.6, 3x = 6.8.', key=False, note='3 × 2.6 = 7.8.'),
+          ]),
+          B('Add, subtract, and multiply multi-digit decimals', '6.NS.B.3', [
+              sa('Add.\n1.414 + 1.732', 'Sum:', key='3.146'),
+              sa('Multiply.\n2 × 2.236', 'Product:', key='4.472'),
+              mc('Subtract.\n3.162 - 1', ['2.162', '2.062', '3.062', '4.162']),
+              tf('9.86 + 0.14 = 10', key=True),
+              tf('3 × 2.65 = 7.65', key=False, note='3 × 2.65 = 7.95.'),
+          ]),
+      ],
+      f1=B('Solve quadratic equations and estimate their irrational solutions', 'HSA-REI.B.4.b', [
+          sa('Solve x² - 4x + 1 = 0. Give the exact solutions, then estimate each to the nearest tenth.', 'Solutions:',
+             key='x = 2 + √3 ≈ 3.7 and x = 2 - √3 ≈ 0.3', note='Both solutions are required, exact and estimated.'),
+          sa('Solve (x + 1)² = 8. Give the exact solutions, then estimate each to the nearest tenth.', 'Solutions:',
+             key='x = -1 + 2√2 ≈ 1.8 and x = -1 - 2√2 ≈ -3.8', note='Both solutions are required, exact and estimated. -1 ± √8 is also correct.'),
+          mc('Which is the best estimate of the positive solution of x² + 2x - 4 = 0?', ['1.2', '3.2', '-3.2', '2.2']),
+          tf('The solutions of x² = 2x + 2 are 1 + √3 and 1 - √3.', key=True),
+          tf('The positive solution of x² = 6 is about 3.', key=False, note='√6 ≈ 2.4.'),
+      ]),
+      f2=B('Derive the quadratic formula by completing the square', 'HSA-REI.B.4.a', [
+          work('Complete the square to solve x² + 6x + c = 0 for x in terms of c. Assume c ≤ 9.', 'x =',
+               method='The completed square must be shown: x² + 6x + 9 = 9 - c, so (x + 3)² = 9 - c; then x + 3 = ±√(9 - c).',
+               key='x = -3 + √(9 - c) and x = -3 - √(9 - c)'),
+          sa('Start with ax² + bx + c = 0 (a ≠ 0). Divide by a, subtract c/a, and add (b/(2a))² to both sides.\nWhat equation do you get?', 'Equation:',
+             key='(x + b/(2a))² = (b² - 4ac)/(4a²)'),
+          mc('Which is the quadratic formula for ax² + bx + c = 0 (a ≠ 0)?',
+             ['x = (-b ± √(b² - 4ac)) ÷ (2a)', 'x = (b ± √(b² - 4ac)) ÷ (2a)', 'x = (-b ± √(b² + 4ac)) ÷ (2a)', 'x = -b ± √(b² - 4ac) ÷ 2']),
+          tf('For x² - 2x - 1 = 0, the quadratic formula gives x = 1 ± √2.', key=True),
+          tf('Completing the square on x² + 10x = 3 gives (x + 5)² = 8.', key=False, note='It gives (x + 5)² = 28.'),
       ])),
 ]
