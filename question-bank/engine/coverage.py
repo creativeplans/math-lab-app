@@ -13,6 +13,13 @@ import build  # noqa: E402
 import answers as A  # noqa: E402
 
 
+def fwd_level(n):
+    """How the coverage header names a forward branch's level."""
+    if n < 9:
+        return 'Grade %d' % n
+    return 'Common Core high-school standards, which this bank places at Grade %d as an instructional choice' % n
+
+
 def run(name):
     build.load_grade(name)
     cov = importlib.import_module('coverage_reqs')
@@ -21,11 +28,9 @@ def run(name):
     used = set()
     lines = ['# Grade %d coverage matrix' % build.GRADE, '',
              'Each row is one distinct Grade %d requirement and the set whose MAIN section (five variations) focuses on it. '
-             'Every set also has its backward (earlier-grade) branches and FORWARD 1 (Grade %d) and FORWARD 2 (%s). '
+             'Every set also has its backward (earlier-grade) branches and FORWARD 1 (%s) and FORWARD 2 (%s). '
              'Page is the MAIN section\'s first question page in the question PDF.' % (
-                 build.GRADE, build.GRADE + 1,
-                 'Grade %d' % (build.GRADE + 2) if build.GRADE + 2 < 9 else
-                 'Common Core high-school standards, which this bank places at Grade 9 as an instructional choice'), '']
+                 build.GRADE, fwd_level(build.GRADE + 1), fwd_level(build.GRADE + 2)), '']
     perf = any(len(r) > 3 for r in cov.REQUIREMENTS)
     if perf:
         lines += ['"Performance tested" says what students actually do in the five MAIN questions.', '',

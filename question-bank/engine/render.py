@@ -889,7 +889,7 @@ def fig_grid(c, f, x, y, w, h, s):
 
 def fig_cyl(c, f, x, y, w, h, s):
     kind = f['k']
-    r, hh = f['r'], f.get('h', f['r'])
+    r, hh = f['r'], f.get('ht', f.get('h', f['r']))  # 'ht' avoids the figure-height key 'h'
     fs = 15 * s
     pad = 46
     if kind == 'sphere':

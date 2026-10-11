@@ -7,12 +7,15 @@
 | `grade5/` | Grade 5 collection, version 2.0.0: 71 question sets, 1,930 questions (see its CHANGELOG and COVERAGE) |
 | `grade6/` | Grade 6 collection: 82 question sets, 2,465 questions |
 | `grade7/` | Grade 7 collection, version 2.0.0: 70 question sets, 1,755 questions; FORWARD 2 uses Common Core high-school standards, which this bank places at Grade 9 (see its CHANGELOG, CORRECTIONS, and COVERAGE) |
-| `nexus/grade3/`, `nexus/grade4/`, `nexus/grade5/`, `nexus/grade6/`, `nexus/grade7/` | Import packages for Untangle The Nexus (JSON per set, index, figure files, PDFs, manifest). Each has its own README. `nexus/Grade3_Nexus_Import_v2.0.0.zip`, `nexus/Grade4_Nexus_Import_v2.0.0.zip`, `nexus/Grade5_Nexus_Import_v2.0.0.zip`, and `nexus/Grade7_Nexus_Import_v2.0.0.zip` are the packages zipped. |
+| `grade8/` | Grade 8 collection, version 1.0.0: 58 question sets, 1,450 questions; both forward branches use Common Core high-school standards, which this bank places at Grade 9 (FORWARD 1) and Grade 10 (FORWARD 2) (see its COVERAGE) |
+| `nexus/grade3/`, `nexus/grade4/`, `nexus/grade5/`, `nexus/grade6/`, `nexus/grade7/`, `nexus/grade8/` | Import packages for Untangle The Nexus (JSON per set, index, figure files, PDFs, manifest). Each has its own README. `nexus/Grade3_Nexus_Import_v2.0.0.zip`, `nexus/Grade4_Nexus_Import_v2.0.0.zip`, `nexus/Grade5_Nexus_Import_v2.0.0.zip`, `nexus/Grade7_Nexus_Import_v2.0.0.zip`, and `nexus/Grade8_Nexus_Import_v1.0.0.zip` are the packages zipped. |
 | `engine/` | Shared code that builds the PDFs, answer keys, and Nexus packages |
 
 Every set has a MAIN section (5 questions at the set's grade), BACKWARD branches (prerequisite skills from
 earlier grades, 5 quick questions each), FORWARD 1 (5 questions, next grade), and FORWARD 2 (5 questions,
-two grades up; for Grade 7 these are high-school standards such as `HSA-REI.B.3`, which this bank places at Grade 9). Every question has an ID such as `S40-F2-Q3` that is printed on its page and used in all keys;
+two grades up). Common Core does not assign high-school standards to a grade, so this bank places them: for Grade 7,
+FORWARD 2 uses high-school standards such as `HSA-REI.B.3` placed at Grade 9; for Grade 8, FORWARD 1 uses high-school
+standards placed at Grade 9 and FORWARD 2 uses high-school standards placed at Grade 10. Every question has an ID such as `S40-F2-Q3` that is printed on its page and used in all keys;
 across grades use `uid`, which adds the collection (`G5:S40-F2-Q3`).
 
 ## Build
@@ -26,7 +29,7 @@ python3 question-bank/engine/coverage.py grade5   # COVERAGE.md
 python3 question-bank/engine/verify_package.py question-bank/nexus/grade5   # check the package
 ```
 
-Replace `grade5` with `grade3`, `grade4`, `grade6`, or `grade7` for the other grades. Run `build.py` before `export.py`.
+Replace `grade5` with `grade3`, `grade4`, `grade6`, `grade7`, or `grade8` for the other grades. Run `build.py` before `export.py`.
 
 ## Adding a grade
 

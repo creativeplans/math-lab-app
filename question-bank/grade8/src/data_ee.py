@@ -1,0 +1,781 @@
+from qb import S, B, sa, mc, tf, plot, draw_write, work, table
+from common import grid, plane
+
+EQ = 'Both parts are required: a valid equation (or system) and the correct solution. Any valid model is accepted, but the solution must also be correct.'
+STEPS = 'Every step with a valid reason. Other valid orders of steps are accepted. A correct answer without reasons is not full credit.'
+SLOPE_TRI = grid(6, 6, lines=[((0, 1), (6, 5)), ((0, 1), (3, 1)), ((3, 1), (3, 3)), ((3, 3), (6, 3)), ((6, 3), (6, 5))],
+                 pts=[(0, 1), (3, 3), (6, 5)],
+                 desc='A line through (0, 1), (3, 3), and (6, 5). Two slope triangles are drawn under it: one from (0, 1) right 3 and up 2 to (3, 3), '
+                      'and one from (3, 3) right 3 and up 2 to (6, 5).')
+
+
+def tbl(xname, xs, yname, ys):
+    return table([[xname] + [str(v) for v in xs], [yname] + [str(v) for v in ys]], header='col')
+
+
+SETS = [
+    # ------------------------------------------------------------------ 8.EE.A.1 (product and quotient)
+    S('8.EE.A.1', 'Use the product and quotient properties of integer exponents',
+      main=[
+          sa('Write as a single power.\n3⁴ × 3⁵', 'Power:', key='3⁹'),
+          sa('Write as a single power.\n7¹⁰ ÷ 7⁴', 'Power:', key='7⁶'),
+          mc('Which expression is equal to 2⁶?', ['2² × 2⁴', '2² × 2³', '2¹² ÷ 2²', '2 × 6']),
+          tf('5³ × 5² = 5⁵', key=True),
+          tf('4⁸ ÷ 4² = 4⁴', key=False, note='4⁸ ÷ 4² = 4⁶.'),
+      ],
+      back=[
+          B('Evaluate whole-number exponents', '6.EE.A.1', [
+              sa('Find the value.\n2⁵', 'Value:', key='32'),
+              sa('Find the value.\n10⁴', 'Value:', key='10,000'),
+              mc('Find the value.\n3⁴', ['81', '12', '64', '7']),
+              tf('6² = 36', key=True),
+              tf('2³ = 6', key=False),
+          ]),
+          B('Write powers of 10 with whole-number exponents', '5.NBT.A.2', [
+              sa('Write 10 × 10 × 10 × 10 as a power of 10.', 'Power:', key='10⁴'),
+              sa('Write 1,000,000 as a power of 10.', 'Power:', key='10⁶'),
+              mc('What is the value of 10⁵?', ['100,000', '50', '10,000', '1,000,000']),
+              tf('10³ = 1,000', key=True),
+              tf('10² × 10 = 10²', key=False, note='10² × 10 = 1,000 = 10³.'),
+          ]),
+      ],
+      f1=B('Multiply and divide monomials using exponent properties', 'HSA-SSE.A.2', [
+          sa('Simplify.\n(3x⁴)(5x²)', 'Simplified:', key='15x⁶'),
+          sa('Simplify. Assume x ≠ 0.\n{12x⁷/4x³}', 'Simplified:', key='3x⁴'),
+          mc('Simplify.\nx⁵ · x · x²', ['x⁸', 'x⁷', 'x¹⁰', '3x⁸']),
+          tf('(2a³)(4a²) = 8a⁵', key=True),
+          tf('Assume y ≠ 0. {y⁹/y³} = y³', key=False, note='y⁹ ÷ y³ = y⁶.'),
+      ]),
+      f2=B('Use exponent properties to rewrite and interpret exponential functions', 'HSF-IF.C.8.b', [
+          sa('f(t) = 2^(t + 3)\nUse a property of exponents to write f(t) in the form a · 2^t.', 'f(t) =', key='8 · 2^t'),
+          sa('A population is P(t) = 200 · 2^t after t years.\nBy what factor does the population grow each year, and what is P(5)?', 'Answer:',
+             key='It doubles (factor 2) each year; P(5) = 6,400', note='Both parts are required.'),
+          mc('g(t) = 5^(t - 1)\nWhich expression is equal to g(t)?', ['5^t ÷ 5', '5^t - 5', '5^t - 1', '5 ÷ 5^t']),
+          tf('If f(x) = 5 · 2^x, then f(x + 1) = 2 · f(x).', key=True),
+          tf('If f(x) = 2^x, then f(3) · f(4) = f(12).', key=False, note='f(3) · f(4) = 2³ · 2⁴ = 2⁷ = f(7).'),
+      ])),
+
+    # ------------------------------------------------------------------ 8.EE.A.1 (power, zero, negative)
+    S('8.EE.A.1', 'Use the power-of-a-power property and zero and negative exponents',
+      main=[
+          sa('Write as a single power.\n(5²)³', 'Power:', key='5⁶'),
+          sa('Find the value.\n4⁻²', 'Value:', key='1/16'),
+          mc('Which expression is equal to 1?', ['9⁰', '0⁹', '9⁻¹', '1⁻⁹ × 9']),
+          tf('3⁻² × 3⁵ = 27', key=True),
+          tf('(2³)² = 2⁵', key=False, note='(2³)² = 2⁶.'),
+      ],
+      back=[
+          B('Find powers of fractions and decimals', '6.EE.A.1', [
+              sa('Find the value.\n({1/2})³', 'Value:', key='1/8'),
+              sa('Find the value.\n0.3²', 'Value:', key='0.09'),
+              mc('Find the value.\n({2/3})²', ['{4/9}', '{4/6}', '{2/9}', '{4/3}']),
+              tf('0.1³ = 0.001', key=True),
+              tf('({3/4})² = {6/8}', key=False, note='(3/4)² = 9/16.'),
+          ]),
+          B('Multiply signed numbers', '7.NS.A.2.a', [
+              sa('Multiply.\n(-2)(-2)(-2)', 'Product:', key='-8'),
+              sa('Multiply.\n(-3)(-3)', 'Product:', key='9'),
+              mc('Multiply.\n(-1)(-1)(-1)(-1)', ['1', '-1', '4', '-4']),
+              tf('(-5)(-5) = 25', key=True),
+              tf('(-2)(-2)(-2)(-2) = -16', key=False),
+          ]),
+      ],
+      f1=B('Explain rational exponents with the properties of exponents', 'HSN-RN.A.1', [
+          sa('(5^(1/2))² = 5^((1/2) · 2) = 5.\nWhich radical is equal to 5^(1/2)?', 'Radical:', key='√5'),
+          sa('Write 7^(1/3) as a radical.', 'Radical:', key='∛7'),
+          mc('Which number is equal to 9^(3/2)?', ['27', '6', '13.5', '81']),
+          tf('Because (8^(1/3))³ = 8, 8^(1/3) = 2.', key=True),
+          tf('x^(1/2) means x ÷ 2.', key=False, note='x^(1/2) is the square root of x.'),
+      ]),
+      f2=B('Rewrite exponential expressions with the properties of exponents', 'HSA-SSE.B.3.c', [
+          sa('Rewrite 1.21^t as a power of 1.1.', 'Expression:', key='1.1^(2t)'),
+          sa('A value grows by a factor of 1.04 each month, so after t years it has grown by (1.04^12)^t.\nWrite the yearly growth factor, rounded to the nearest hundredth.', 'Factor:',
+             key='1.60', note='1.04^12 ≈ 1.601, about 60% growth per year.'),
+          mc('Which expression is equivalent to 8^x?', ['2^(3x)', '2^(x + 3)', '3^(2x)', '2^x ÷ 3']),
+          tf('(0.5)^(-t) = 2^t', key=True),
+          tf('4^x × 4^x = 16^(2x)', key=False, note='4^x × 4^x = 4^(2x) = 16^x.'),
+      ])),
+
+    # ------------------------------------------------------------------ 8.EE.A.2 (solve)
+    S('8.EE.A.2', 'Solve equations of the form x² = p and x³ = p',
+      main=[
+          sa('Solve for x. Give all solutions.\nx² = 49', 'x =', key='x = 7 and x = -7', note='Both solutions are required; x = ±7 is accepted.'),
+          sa('Solve for x.\nx³ = 64', 'x =', key='4'),
+          mc('Solve for x.\nx² = {9/16}', ['x = {3/4} or x = -{3/4}', 'x = {3/4} only', 'x = {9/32}', 'x = {81/256}']),
+          sa('Solve for x.\nx³ = -27', 'x =', key='-3'),
+          tf('x² = 10 has the two solutions x = √10 and x = -√10.', key=True),
+      ],
+      back=[
+          B('Solve one-step multiplication equations', '6.EE.B.7', [
+              sa('Solve for x.\n4x = 64', 'x =', key='16'),
+              sa('Solve for x.\n{x/3} = 9', 'x =', key='27'),
+              mc('Solve for x.\n9x = 45', ['x = 5', 'x = 36', 'x = 54', 'x = 405']),
+              tf('x = 12 is the solution of 3x = 36.', key=True),
+              tf('x = 5 is the solution of 7x = 42.', key=False),
+          ]),
+          B('Find squares and cubes of whole numbers', '6.EE.A.1', [
+              sa('Find the value.\n9²', 'Value:', key='81'),
+              sa('Find the value.\n5³', 'Value:', key='125'),
+              mc('Which whole number cubed is 8?', ['2', '4', '8', '3']),
+              tf('10⁴ = 10,000', key=True),
+              tf('4² = 8', key=False),
+          ]),
+      ],
+      f1=B('Solve quadratic equations by taking square roots', 'HSA-REI.B.4.b', [
+          sa('Solve for x. Give all solutions.\n2x² = 50', 'x =', key='x = 5 and x = -5', note='Both solutions are required.'),
+          sa('Solve for x. Give all solutions.\n(x + 2)² = 36', 'x =', key='x = 4 and x = -8', note='Both solutions are required.'),
+          mc('Solve for x.\nx² - 9 = 0', ['x = 3 or x = -3', 'x = 3 only', 'x = 9 or x = -9', 'x = 4.5']),
+          tf('The solutions of 3x² = 27 are 3 and -3.', key=True),
+          tf('The solutions of (x - 1)² = 16 are 5 and 3.', key=False, note='The solutions are 5 and -3.'),
+      ]),
+      f2=B('Find a dimension from a volume with square and cube roots', 'HSG-GMD.A.3', [
+          sa('A cube has a volume of 343 cubic centimeters.\nHow long is each edge?', 'Edge:', key='7 cm'),
+          sa('A sphere has a volume of 36π cubic centimeters. (V = {4/3}πr³)\nWhat is its radius?', 'Radius:', key='3 cm'),
+          mc('A cylinder has a volume of 200π cubic units and a height of 8 units.\nWhat is its radius?', ['5 units', '25 units', '√200 units', '10 units']),
+          tf('A cone with a volume of 12π cubic units and a height of 4 units has a radius of 3 units.', key=True),
+          tf('A cube with a volume of 1,000 cubic centimeters has edges 100 cm long.', key=False, note='Each edge is 10 cm.'),
+      ])),
+
+    # ------------------------------------------------------------------ 8.EE.A.2 (evaluate roots)
+    S('8.EE.A.2', 'Evaluate square roots and cube roots and recognize irrational roots',
+      main=[
+          sa('Find the value.\n√144', 'Value:', key='12'),
+          sa('Find the value.\n∛125', 'Value:', key='5'),
+          mc('Which square root is irrational?', ['√20', '√36', '√{1/4}', '√0.09']),
+          tf('∛(-8) = -2', key=True),
+          tf('√2 can be written as a fraction of two whole numbers.', key=False, note='√2 is irrational.'),
+      ],
+      back=[
+          B('Find factor pairs and square numbers', '4.OA.B.4', [
+              sa('List all the factor pairs of 16.', 'Factor pairs:', key='1 × 16, 2 × 8, and 4 × 4'),
+              sa('What whole number times itself is 49?', 'Number:', key='7'),
+              mc('Which number has a factor pair made of two equal factors?', ['25', '24', '18', '30']),
+              tf('81 has a factor pair made of two equal factors.', key=True),
+              tf('12 has a factor pair made of two equal factors.', key=False),
+          ]),
+          B('Find the volume of a cube', '5.MD.C.5.b', [
+              sa('A cube has edges 3 units long.\nWhat is its volume?', 'Volume:', key='27 cubic units'),
+              sa('A cube has edges 5 cm long.\nWhat is its volume?', 'Volume:', key='125 cubic centimeters'),
+              mc('Which cube has a volume of 64 cubic units?', ['A cube with 4-unit edges', 'A cube with 8-unit edges', 'A cube with 16-unit edges', 'A cube with 32-unit edges']),
+              tf('A cube with 2-unit edges has a volume of 8 cubic units.', key=True),
+              tf('A cube with 10-unit edges has a volume of 30 cubic units.', key=False),
+          ]),
+      ],
+      f1=B('Simplify square roots by factoring out perfect squares', 'HSN-RN.A.2', [
+          sa('Simplify.\n√48', 'Simplified:', key='4√3'),
+          sa('Simplify.\n√200', 'Simplified:', key='10√2'),
+          mc('Which expression is equal to √18?', ['3√2', '2√3', '9√2', '6√3']),
+          tf('√50 = 5√2', key=True),
+          tf('√27 = 9√3', key=False, note='√27 = 3√3.'),
+      ]),
+      f2=B('Solve quadratic equations by completing the square', 'HSA-REI.B.4.a', [
+          sa('What number goes in the blank?\nx² + 6x + 9 = (x + ___)²', 'Blank:', key='3'),
+          sa('Solve by completing the square. Give exact solutions.\nx² + 4x = 1', 'Solutions:', key='x = -2 + √5 and x = -2 - √5', note='Both solutions are required.'),
+          mc('Which number completes the square?\nx² - 10x + ___', ['25', '100', '5', '-25']),
+          tf('x² + 8x + 16 = (x + 4)²', key=True),
+          tf('Completing the square on x² + 2x = 3 gives (x + 1)² = 3.', key=False, note='It gives (x + 1)² = 4.'),
+      ])),
+
+    # ------------------------------------------------------------------ 8.EE.A.3
+    S('8.EE.A.3', 'Estimate very large and very small quantities as a single digit times a power of 10',
+      main=[
+          sa('Estimate 412,000,000 as a single digit times a power of 10.', 'Estimate:', key='4 × 10⁸'),
+          sa('Estimate 0.00079 as a single digit times a power of 10.', 'Estimate:', key='8 × 10⁻⁴'),
+          mc('A country has about 3 × 10⁸ people. A city has about 6 × 10⁵ people.\nAbout how many times as many people live in the country?', ['500', '50', '5,000', '2']),
+          sa('A whale has a mass of about 2 × 10⁵ kg. A mouse has a mass of about 2 × 10⁻² kg.\nAbout how many times as large is the whale\'s mass?', 'Times as large:', key='10,000,000', note='10⁷ is also correct.'),
+          tf('6 × 10⁻³ is greater than 9 × 10⁻⁴.', key=True),
+      ],
+      back=[
+          B('Multiply and divide by powers of 10', '5.NBT.A.2', [
+              sa('Multiply.\n4 × 10³', 'Product:', key='4,000'),
+              sa('Divide.\n7 ÷ 10²', 'Quotient:', key='0.07'),
+              mc('What is the value of 3 × 10⁵?', ['300,000', '30,000', '3,000,000', '15']),
+              tf('6 ÷ 10³ = 0.006', key=True),
+              tf('8 × 10² = 8,000', key=False),
+          ]),
+          B('Round whole numbers to any place', '4.NBT.A.3', [
+              sa('Round 412,000,000 to the nearest hundred million.', 'Rounded:', key='400,000,000'),
+              sa('Round 6,750 to the nearest thousand.', 'Rounded:', key='7,000'),
+              mc('Round 58,300 to the nearest ten thousand.', ['60,000', '58,000', '50,000', '59,000']),
+              tf('245,000 rounded to the nearest hundred thousand is 200,000.', key=True),
+              tf('8,500 rounded to the nearest thousand is 8,000.', key=False),
+          ]),
+      ],
+      f1=B('Choose a level of accuracy for very large and very small quantities', 'HSN-Q.A.3', [
+          sa('Earth\'s mean radius is about 6,371 km.\nWrite it to one significant digit as a single digit times a power of 10.', 'Estimate:', key='6 × 10³ km'),
+          sa('A bacterium is 0.0000023 m long.\nWrite its length in micrometers. (1 μm = 10⁻⁶ m)', 'Length:', key='2.3 μm'),
+          mc('A sheet of paper is about 0.0001 m thick.\nWhich unit best expresses this thickness?', ['Millimeters (0.1 mm)', 'Kilometers', 'Meters', 'Megameters']),
+          tf('Reporting 7,900,000,000 people as 8 × 10⁹ is accurate to one significant digit.', key=True),
+          tf('A distance known to be about 3 × 10⁸ m is reported more accurately as 300,000,000.0 m.', key=False,
+             note='Writing more digits does not make an estimate more accurate.'),
+      ]),
+      f2=B('Use base-10 logarithms to describe orders of magnitude', 'HSF-LE.A.4', [
+          sa('Find the value.\nlog₁₀(1,000,000)', 'Value:', key='6'),
+          sa('Solve for x.\n10^x = 0.001', 'x =', key='-3'),
+          mc('Between which two whole numbers is log₁₀(4,500)?', ['3 and 4', '4 and 5', '2 and 3', '45 and 46']),
+          tf('log₁₀(10⁻⁵) = -5', key=True),
+          tf('log₁₀(50) is between 5 and 6.', key=False, note='10¹ = 10 and 10² = 100, so log₁₀(50) is between 1 and 2.'),
+      ])),
+
+    # ------------------------------------------------------------------ 8.EE.A.4 (multiply and divide)
+    S('8.EE.A.4', 'Multiply and divide numbers written in scientific notation',
+      main=[
+          sa('Multiply. Write the answer in scientific notation.\n(4 × 10⁶)(2.5 × 10³)', 'Product:', key='1 × 10¹⁰'),
+          sa('Divide. Write the answer in scientific notation.\n(6.3 × 10⁸) ÷ (9 × 10²)', 'Quotient:', key='7 × 10⁵'),
+          mc('Light travels about 3 × 10⁵ km per second.\nHow far does it travel in 5 × 10² seconds?', ['1.5 × 10⁸ km', '1.5 × 10⁷ km', '8 × 10⁷ km', '6 × 10² km']),
+          tf('(2 × 10⁻³)(3 × 10⁻⁴) = 6 × 10⁻⁷', key=True),
+          tf('(8 × 10⁹) ÷ (4 × 10³) = 2 × 10³', key=False, note='The quotient is 2 × 10⁶.'),
+      ],
+      back=[
+          B('Multiply decimals', '5.NBT.B.7', [
+              sa('Multiply.\n2.5 × 4', 'Product:', key='10'),
+              sa('Multiply.\n1.2 × 3.5', 'Product:', key='4.2'),
+              mc('Multiply.\n6 × 0.5', ['3', '30', '0.3', '6.5']),
+              tf('2.4 × 0.5 = 1.2', key=True),
+              tf('3.5 × 2 = 6', key=False),
+          ]),
+          B('Multiply by powers of 10', '5.NBT.A.2', [
+              sa('Multiply.\n2.5 × 10⁴', 'Product:', key='25,000'),
+              sa('Multiply.\n3.1 × 10²', 'Product:', key='310'),
+              mc('Multiply.\n0.6 × 10³', ['600', '60', '6,000', '0.0006']),
+              tf('7 × 10³ = 7,000', key=True),
+              tf('4.2 × 10 = 4.20', key=False),
+          ]),
+      ],
+      f1=B('Use units to guide multistep calculations in scientific notation', 'HSN-Q.A.1', [
+          sa('A drive transfers 2 × 10⁸ bytes per second.\nHow many seconds does it take to transfer 6 × 10¹⁰ bytes?', 'Seconds:', key='300'),
+          sa('Light travels 3 × 10⁸ meters per second.\nHow many meters does it travel in 1 hour (3.6 × 10³ seconds)? Use scientific notation.', 'Meters:', key='1.08 × 10¹² m'),
+          mc('The Sun is about 1.5 × 10¹¹ m from Earth. Light travels 3 × 10⁸ m per second.\nAbout how long does sunlight take to reach Earth?', ['500 seconds', '5 × 10¹⁹ seconds', '4.5 × 10¹⁹ seconds', '50 seconds']),
+          tf('A flow of 5 × 10³ liters per minute is 3 × 10⁵ liters per hour.', key=True),
+          tf('6 × 10⁻³ km is equal to 6 × 10⁻⁶ m.', key=False, note='6 × 10⁻³ km = 6 m.'),
+      ]),
+      f2=B('Model exponential growth and decay with scientific notation', 'HSF-LE.A.1.c', [
+          sa('A colony of 2 × 10³ bacteria triples every hour.\nHow many bacteria are there after 4 hours? Use scientific notation.', 'Bacteria:', key='1.62 × 10⁵'),
+          sa('A quantity of 5 × 10⁹ is cut in half each year.\nWhat is it after 3 years? Use scientific notation.', 'Amount:', key='6.25 × 10⁸'),
+          mc('A population of 4 × 10⁶ grows by 10% each year.\nWhat is the population after 2 years?', ['4.84 × 10⁶', '4.8 × 10⁶', '4.4 × 10⁶', '8 × 10⁶']),
+          tf('Doubling 3 × 10⁵ ten times gives about 3.07 × 10⁸.', key=True),
+          tf('A quantity that grows by a constant percent rate increases by the same amount each year.', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 8.EE.A.4 (add and subtract)
+    S('8.EE.A.4', 'Add and subtract numbers written in scientific notation',
+      main=[
+          sa('Add. Write the answer in scientific notation.\n(3.2 × 10⁵) + (4.5 × 10⁴)', 'Sum:', key='3.65 × 10⁵'),
+          sa('Subtract. Write the answer in scientific notation.\n(9 × 10⁷) - (6 × 10⁶)', 'Difference:', key='8.4 × 10⁷'),
+          mc('Add. Write the answer in scientific notation.\n(1.5 × 10⁻³) + (2 × 10⁻⁴)', ['1.7 × 10⁻³', '3.5 × 10⁻⁷', '3.5 × 10⁻³', '1.7 × 10⁻⁴']),
+          tf('(5 × 10⁸) + (5 × 10⁸) = 1 × 10⁹', key=True),
+          tf('(4 × 10⁶) - (3 × 10⁵) = 1 × 10¹', key=False, note='The difference is 3.7 × 10⁶.'),
+      ],
+      back=[
+          B('Add decimals', '5.NBT.B.7', [
+              sa('Add.\n3.2 + 0.45', 'Sum:', key='3.65'),
+              sa('Add.\n8.4 + 1.6', 'Sum:', key='10'),
+              mc('Add.\n1.5 + 0.2', ['1.7', '3.5', '0.17', '1.52']),
+              tf('2.75 + 0.25 = 3', key=True),
+              tf('4.6 + 0.04 = 5', key=False),
+          ]),
+          B('Write a number times a power of 10 in standard form', '5.NBT.A.2', [
+              sa('Write 6 × 10⁶ in standard form.', 'Number:', key='6,000,000'),
+              sa('Write 0.6 × 10⁷ in standard form.', 'Number:', key='6,000,000'),
+              mc('Which number is equal to 45 × 10⁴?', ['450,000', '45,000', '4,500,000', '4,500']),
+              tf('3.2 × 10² = 320', key=True),
+              tf('0.5 × 10³ = 50', key=False),
+          ]),
+      ],
+      f1=B('Add and subtract polynomials', 'HSA-APR.A.1', [
+          sa('Add.\n(3x² + 5x) + (4x² - 2x)', 'Sum:', key='7x² + 3x'),
+          sa('Subtract.\n(6a³ - 2a + 1) - (2a³ + 5a - 4)', 'Difference:', key='4a³ - 7a + 5'),
+          mc('Add.\n(x² - 4) + (3x² + x)', ['4x² + x - 4', '4x² + x + 4', '3x⁴ + x - 4', '4x² - 3']),
+          tf('(2y² + 3) - (y² - 3) = y² + 6', key=True),
+          tf('(5n - 2) - (3n - 4) = 2n - 6', key=False, note='The difference is 2n + 2.'),
+      ]),
+      f2=B('Add and subtract functions', 'HSF-BF.A.1.b', [
+          sa('Revenue is R(x) = 25x and cost is C(x) = 4,000 + 9x for x items.\nWrite the profit function P(x) = R(x) - C(x).', 'P(x) =', key='16x - 4,000'),
+          sa('The profit function is P(x) = 16x - 4,000.\nFind P(1,000).', 'P(1,000) =', key='12,000'),
+          mc('f(x) = 3x² and g(x) = x² - 5.\nWhich expression is (f + g)(x)?', ['4x² - 5', '3x⁴ - 5', '4x² + 5', '2x² + 5']),
+          tf('If f(x) = 2x and g(x) = x + 1, then (f - g)(3) = 2.', key=True),
+          tf('If f(x) = x + 4 and g(x) = 2x, then (f + g)(x) = 2x² + 4.', key=False, note='(f + g)(x) = 3x + 4.'),
+      ])),
+
+    # ------------------------------------------------------------------ 8.EE.A.4 (units and technology)
+    S('8.EE.A.4', 'Choose units for scientific notation and read calculator notation',
+      main=[
+          sa('A calculator shows 4.7E8.\nWrite the number in scientific notation and in standard form.', 'Answer:', key='4.7 × 10⁸ = 470,000,000', note='Grade both forms.'),
+          sa('A calculator shows 2.05E-6.\nWrite the number in standard form.', 'Number:', key='0.00000205'),
+          mc('The distance from Earth to the Moon is about 3.84 × 10⁸ m.\nWhich unit is the most sensible for this distance?', ['Kilometers', 'Millimeters', 'Centimeters', 'Micrometers']),
+          sa('A dust particle has a mass of 7.53 × 10⁻¹⁰ kg.\nWrite the mass in micrograms. (1 μg = 10⁻⁹ kg)', 'Mass:', key='0.753 μg'),
+          tf('A calculator display of 3E-4 means -30,000.', key=False, note='3E-4 means 3 × 10⁻⁴ = 0.0003.'),
+      ],
+      back=[
+          B('Convert metric units', '5.MD.A.1', [
+              sa('How many grams are in 3.5 kilograms?', 'Grams:', key='3,500'),
+              sa('How many meters are in 4,200 millimeters?', 'Meters:', key='4.2'),
+              mc('How many centimeters are in 6 meters?', ['600', '60', '6,000', '0.06']),
+              tf('5 km = 5,000 m', key=True),
+              tf('250 cm = 25 m', key=False),
+          ]),
+          B('Divide by powers of 10', '5.NBT.A.2', [
+              sa('Divide.\n3,840 ÷ 10³', 'Quotient:', key='3.84'),
+              sa('Divide.\n75 ÷ 10²', 'Quotient:', key='0.75'),
+              mc('Divide.\n6 ÷ 10⁴', ['0.0006', '0.006', '60,000', '0.00006']),
+              tf('520 ÷ 10 = 52', key=True),
+              tf('9 ÷ 10³ = 0.09', key=False),
+          ]),
+      ],
+      f1=B('Convert units of very large and very small quantities', 'HSN-Q.A.1', [
+          sa('Convert 3.6 × 10⁶ mm to kilometers.', 'Kilometers:', key='3.6 km'),
+          sa('A server sends 4.5 × 10⁹ bytes per minute.\nWrite this rate in gigabytes per second. (1 GB = 10⁹ bytes)', 'Rate:', key='0.075 GB per second'),
+          mc('A virus is 1.2 × 10⁻⁷ m wide.\nWhat is its width in nanometers? (1 nm = 10⁻⁹ m)', ['120 nm', '12 nm', '1,200 nm', '0.12 nm']),
+          tf('7 × 10⁵ g = 700 kg', key=True),
+          tf('2.5 × 10⁻³ km = 2.5 cm', key=False, note='2.5 × 10⁻³ km = 2.5 m.'),
+      ]),
+      f2=B('Define the quantities and units a model needs', 'HSN-Q.A.2', [
+          sa('You want to estimate how much water a city of 2 × 10⁶ people uses each day.\nWhich quantities do you need, and with what units?', 'Quantities:',
+             key='The number of people and the water used per person per day (liters per person per day).'),
+          sa('2 × 10⁶ people each use about 3 × 10² liters of water per day.\nAbout how many liters does the city use per day? Use scientific notation.', 'Liters:', key='6 × 10⁸ liters per day'),
+          mc('Which unit is the best choice for the mass of a large ship?', ['Metric tons', 'Milligrams', 'Grams', 'Ounces']),
+          tf('Choosing units that keep numbers between about 1 and 1,000 can make a model easier to read.', key=True),
+          tf('Kilometers are the best unit for the width of a cell.', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 8.EE.B.5 (graph)
+    S('8.EE.B.5', 'Graph a proportional relationship and interpret the unit rate as the slope',
+      main=[
+          draw_write('A car uses gas at a constant rate: 3 gallons for every 90 miles.\nGraph the relationship between gallons (x) and miles (y). What is the slope, and what does it mean?',
+                     grid(6, 180, ystep=30, xlabel='Gallons', ylabel='Miles'), 'Slope and meaning:',
+                     draw='A straight line through (0, 0) and points such as (1, 30) and (3, 90)', key='30; the car travels 30 miles per gallon.',
+                     note='Grade both: the line through the origin with slope 30, and the slope with its meaning.'),
+          plot('Graph y = 1.5x on the grid for x from 0 to 6.', grid(6, 10), key='A straight line through (0, 0), (2, 3), (4, 6), and (6, 9)'),
+          sa('The graph shows the cost of apples.\nWhat is the slope, and what does it represent?', 'Slope and meaning:',
+             fig=grid(5, 10, xlabel='Pounds', ylabel='Cost (dollars)', lines=[((0, 0), (5, 10))], pts=[(1, 2), (3, 6)]),
+             key='2; the apples cost $2 per pound.'),
+          mc('The graph of a proportional relationship passes through (4, 10).\nWhat is the unit rate?', ['2.5', '0.4', '14', '40']),
+          tf('On graphs of distance (y) against time (x) that pass through the origin, a steeper line means a greater speed.', key=True),
+      ],
+      back=[
+          B('Explain points on the graph of a proportional relationship', '7.RP.A.2.d', [
+              sa('A proportional graph of hours (x) and pay in dollars (y) passes through (1, 15).\nWhat does this point mean?', 'Meaning:', key='The pay is $15 for 1 hour (the unit rate).'),
+              mc('A proportional graph shows cups of flour (x) and cookies (y).\nWhat does the point (0, 0) mean?',
+                 ['0 cups of flour make 0 cookies.', 'Each cup makes 0 cookies.', 'The recipe starts with some cookies.', 'There is no graph.']),
+              sa('A proportional graph of minutes (x) and pages read (y) passes through (5, 20).\nWhat does this point mean?', 'Meaning:', key='20 pages are read in 5 minutes.'),
+              tf('On the graph of a proportional relationship, the point (1, r) tells you the unit rate is r.', key=True),
+              tf('On a graph of hours (x) and miles (y), the point (3, 12) means 3 miles in 12 hours.', key=False, note='It means 12 miles in 3 hours.'),
+          ]),
+          B('Find the constant of proportionality from a graph', '7.RP.A.2.b', [
+              sa('A proportional graph passes through (0, 0) and (5, 20).\nWhat is the constant of proportionality?', 'k =', key='4'),
+              mc('Which point shows k = 3 on the graph of a proportional relationship?', ['(2, 6)', '(6, 2)', '(3, 1)', '(3, 6)']),
+              sa('A proportional graph passes through (8, 2).\nWhat is the constant of proportionality?', 'k =', key='0.25', note='1/4 is also correct.'),
+              tf('A line through (0, 0) and (10, 25) has a constant of proportionality of 2.5.', key=True),
+              tf('A line through (0, 0) and (6, 3) has a constant of proportionality of 2.', key=False, note='k = 3 ÷ 6 = 0.5.'),
+          ]),
+      ],
+      f1=B('Calculate and interpret an average rate of change', 'HSF-IF.B.6', [
+          sa('f(x) = 3x + 2\nWhat is the average rate of change of f from x = 1 to x = 5?', 'Rate:', key='3'),
+          sa('The table shows a trip.\nWhat is the average rate of change from 2 hours to 5 hours?', 'Rate:', fig=tbl('Hours', [0, 2, 5], 'Miles', [0, 110, 260]), key='50 miles per hour'),
+          mc('h(t) = t²\nWhat is the average rate of change of h from t = 1 to t = 4?', ['5', '15', '3', '16']),
+          tf('For a linear function, the average rate of change is the same over every interval.', key=True),
+          tf('For f(x) = x², the average rate of change from x = 0 to x = 2 is 4.', key=False, note='It is (4 - 0) ÷ 2 = 2.'),
+      ]),
+      f2=B('Compare properties of functions represented in different ways', 'HSF-IF.C.9', [
+          sa('f(x) = 2.5x. The graph of g is a line through (0, 0) and (4, 12).\nWhich function has the greater rate of change?', 'Answer:', key='g (its rate is 3, and f\'s is 2.5)'),
+          sa('f(x) = 40 + 5x. The table shows g.\nWhich function has the greater initial value, and which has the greater rate of change?', 'Answer:',
+             fig=tbl('x', [0, 1, 2], 'g(x)', [30, 37, 44]), key='f has the greater initial value (40 > 30); g has the greater rate of change (7 > 5).'),
+          mc('f(x) = 2^x and g(x) = 10x.\nFor which x-value is f(x) > g(x)?', ['x = 6', 'x = 3', 'x = 4', 'x = 5']),
+          tf('A linear function with a slope of 4 eventually grows more slowly than f(x) = 2^x.', key=True),
+          tf('Two functions with the same y-intercept must be the same function.', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 8.EE.B.5 (compare)
+    S('8.EE.B.5', 'Compare two proportional relationships represented in different ways',
+      main=[
+          mc('Runner A\'s distance is d = 6.2t (miles, hours). Runner B\'s graph is a line through (0, 0) and (2, 13).\nWhich runner is faster?', ['Runner B', 'Runner A', 'They run at the same speed.']),
+          sa('Plan A costs c = 0.12m dollars for m minutes. The table shows Plan B.\nWhich plan costs less per minute, and by how much?', 'Answer:',
+             fig=tbl('Minutes', [100, 250, 400], 'Cost ($)', [15, 37.5, 60]), key='Plan A, by $0.03 per minute'),
+          sa('Pump A fills 45 gallons in 3 minutes at a constant rate. Pump B fills according to g = 14m.\nWhich pump is faster, and by how much?', 'Answer:', key='Pump A, by 1 gallon per minute'),
+          tf('The graph of y = 0.8x is less steep than the graph of a proportional relationship through (5, 5).', key=True),
+          tf('A proportional relationship through (3, 7) has a greater unit rate than y = 2.5x.', key=False, note='7 ÷ 3 ≈ 2.33, which is less than 2.5.'),
+      ],
+      back=[
+          B('Write an equation for a proportional relationship', '7.RP.A.2.c', [
+              sa('Pencils cost $0.45 each.\nWrite an equation for the cost c of n pencils.', 'Equation:', key='c = 0.45n'),
+              sa('The table shows a proportional relationship.\nWrite an equation for y in terms of x.', 'Equation:', fig=tbl('x', [2, 4, 6], 'y', [7, 14, 21]), key='y = 3.5x'),
+              mc('A car travels 55 miles per hour.\nWhich equation gives the distance d after t hours?', ['d = 55t', 't = 55d', 'd = t + 55', 'd = {t/55}']),
+              tf('A recipe uses 6 cups of water for every cup of rice. The equation y = 6x gives the cups of water y for x cups of rice.', key=True),
+              tf('A printer prints 30 pages in 2 minutes. The equation p = 30m gives the pages p printed in m minutes.', key=False, note='The equation is p = 15m.'),
+          ]),
+          B('Compute unit rates with fractions', '7.RP.A.1', [
+              sa('Ty walks {3/4} mile in {1/4} hour.\nHow many miles per hour is this?', 'Miles per hour:', key='3'),
+              sa('{2/5} pound of nuts costs $2.\nWhat is the price per pound?', 'Price:', key='$5'),
+              mc('A hose fills {1/2} gallon in {1/6} minute.\nHow many gallons per minute is this?', ['3', '{1/12}', '{1/3}', '6']),
+              tf('Walking {1/3} mile in {1/6} hour is a speed of 2 miles per hour.', key=True),
+              tf('A drink uses {3/4} cup of juice for every {1/2} cup of water. That is {3/8} cup of juice per cup of water.', key=False, note='It is 3/2 cups of juice per cup of water.'),
+          ]),
+      ],
+      f1=B('Create and compare linear equations in two variables', 'HSA-CED.A.2', [
+          sa('Tank A has 20 gallons and gains 5 gallons per minute. Tank B starts empty and gains 7 gallons per minute.\nWrite an equation for each tank, with y gallons after x minutes.', 'Equations:',
+             key='Tank A: y = 5x + 20; Tank B: y = 7x'),
+          sa('Tank A holds y = 5x + 20 gallons and Tank B holds y = 7x gallons after x minutes.\nWhen do they hold the same amount?', 'Answer:', key='After 10 minutes (70 gallons each)'),
+          mc('A car starts 30 miles from home and drives away at 50 miles per hour.\nWhich equation gives its distance d from home after t hours?', ['d = 50t + 30', 'd = 30t + 50', 'd = 80t', 'd = 50t - 30']),
+          tf('The graphs of y = 5x + 20 and y = 7x intersect at (10, 70).', key=True),
+          tf('y = 3x + 4 and y = 3x - 2 have different rates of change.', key=False, note='Both have a rate of change of 3.'),
+      ]),
+      f2=B('Compare linear and exponential growth', 'HSF-LE.A.3', [
+          sa('f(x) = 100 + 50x and g(x) = 100(1.5)^x.\nWhich is greater at x = 5? Give both values.', 'Answer:', key='g: g(5) ≈ 759.4, while f(5) = 350'),
+          mc('Which function eventually has the greater values: y = 1,000x or y = 2^x?', ['y = 2^x', 'y = 1,000x', 'Neither; they are always equal', 'It depends only on the y-intercepts']),
+          sa('Which function in the table is exponential? Explain.', 'Answer:', fig=table([['x', '0', '1', '2', '3'], ['f(x)', '2', '4', '8', '16'], ['g(x)', '2', '4', '6', '8']], header='col'),
+             key='f, because it doubles each time x increases by 1 (g increases by 2 each time).'),
+          tf('A quantity that increases exponentially eventually exceeds a quantity that increases linearly.', key=True),
+          tf('At x = 2, 3^x is greater than 10x.', key=False, note='3² = 9, which is less than 20.'),
+      ])),
+
+    # ------------------------------------------------------------------ 8.EE.B.6
+    S('8.EE.B.6', 'Use similar triangles to explain slope and derive y = mx and y = mx + b',
+      main=[
+          sa('Two slope triangles are drawn under the line. Explain why they give the same slope.', 'Explanation:', fig=SLOPE_TRI,
+             key='The triangles are similar (they have the same angles), so their rise-to-run ratios are equal: 2/3 = 2/3.'),
+          sa('A line passes through the origin and (4, 6). By similar triangles, any point (x, y) on the line has y ÷ x = 6 ÷ 4.\nWrite the equation of the line.', 'Equation:',
+             key='y = 1.5x', note='y = (3/2)x is also correct.'),
+          mc('A line has a slope of 2 and crosses the y-axis at (0, 3).\nWhich equation describes it?', ['y = 2x + 3', 'y = 3x + 2', 'y = 2x', 'y = x + 3']),
+          sa('A line crosses the y-axis at (0, -2) and passes through (5, 8).\nWrite its equation in the form y = mx + b.', 'Equation:', key='y = 2x - 2'),
+          tf('Any two slope triangles drawn on the same non-vertical line are similar.', key=True),
+      ],
+      back=[
+          B('Use a scale factor to find a length in a scaled copy', '7.G.A.1', [
+              sa('A right triangle has legs of 2 and 3. In a scaled copy, the leg of 2 becomes 8.\nHow long is the other leg in the copy?', 'Length:', key='12'),
+              sa('A right triangle has legs of 4 and 6. A scaled copy has a leg of 6 matching the leg of 4.\nHow long is the other leg in the copy?', 'Length:', key='9'),
+              mc('Which pair of right triangles are scaled copies of each other (matching the shorter legs)?',
+                 ['Legs 2 and 5; legs 4 and 10', 'Legs 2 and 5; legs 3 and 6', 'Legs 2 and 5; legs 4 and 7', 'Legs 2 and 5; legs 6 and 12']),
+              tf('A scaled copy with a scale factor of 3 has every length 3 times as long.', key=True),
+              tf('Right triangles with legs 3 and 4 and legs 6 and 9 are scaled copies of each other.', key=False),
+          ]),
+          B('Write an equation from a table of values', '6.EE.C.9', [
+              sa('Write an equation for y in terms of x.', 'Equation:', fig=tbl('x', [1, 2, 3], 'y', [6, 7, 8]), key='y = x + 5'),
+              sa('Write an equation for y in terms of x.', 'Equation:', fig=tbl('x', [1, 2, 3], 'y', [3, 6, 9]), key='y = 3x'),
+              mc('Which equation matches the table?', ['y = 2x + 1', 'y = x + 1', 'y = 3x', 'y = 2x'], fig=tbl('x', [0, 1, 2], 'y', [1, 3, 5])),
+              tf('For y = 2x + 4, y = 10 when x = 3.', key=True),
+              tf('For y = x + 7, y = 14 when x = 2.', key=False),
+          ]),
+      ],
+      f1=B('Use similarity transformations to decide whether triangles are similar', 'HSG-SRT.A.2', [
+          sa('Triangle ABC has sides 3, 4, and 5. Triangle DEF has sides 6, 8, and 10.\nAre the triangles similar? If so, what is the scale factor from ABC to DEF?', 'Answer:', key='Yes; the scale factor is 2.'),
+          sa('Explain how a dilation shows that two slope triangles on the same line are similar.', 'Explanation:',
+             key='A dilation centered at a point on the line maps one triangle onto the other. Dilations keep angle measures, so the triangles are similar.'),
+          mc('Which information is enough to show that two triangles are similar?', ['Two pairs of equal angles', 'One pair of equal sides', 'One pair of equal angles', 'Equal perimeters']),
+          tf('If one triangle is a dilation of another, their corresponding sides are proportional.', key=True),
+          tf('Any two right triangles are similar.', key=False),
+      ]),
+      f2=B('Use slopes of parallel and perpendicular lines', 'HSG-GPE.B.5', [
+          sa('Line p has a slope of {3/4}.\nWhat is the slope of a line perpendicular to p?', 'Slope:', key='-4/3'),
+          sa('Write an equation of the line through (0, 2) that is parallel to y = -3x + 7.', 'Equation:', key='y = -3x + 2'),
+          mc('Which line is perpendicular to y = 2x - 5?', ['y = -{1/2}x + 1', 'y = 2x + 1', 'y = -2x - 5', 'y = {1/2}x']),
+          tf('Parallel lines that are not vertical have equal slopes.', key=True),
+          tf('Lines with slopes 3 and -3 are perpendicular.', key=False, note='Perpendicular slopes multiply to -1; 3 × (-3) = -9.'),
+      ])),
+
+    # ------------------------------------------------------------------ 8.EE.C.7.a
+    S('8.EE.C.7.a', 'Decide whether a linear equation has one solution, no solution, or infinitely many',
+      main=[
+          sa('How many solutions does this equation have?\n4(x + 3) = 4x + 12', 'Answer:', key='Infinitely many solutions'),
+          sa('How many solutions does this equation have?\n5x - 2 = 5x + 7', 'Answer:', key='No solution'),
+          mc('Which equation has exactly one solution?', ['3x + 1 = 2x + 9', '3x + 1 = 3x + 9', '3(x + 1) = 3x + 3', '2x - 2x = 0']),
+          sa('What number in the blank makes the equation have no solution?\n6x + 5 = ___x + 1', 'Number:', key='6'),
+          tf('2(x - 4) = 2x - 4 has infinitely many solutions.', key=False, note='It simplifies to -8 = -4, so it has no solution.'),
+      ],
+      back=[
+          B('Expand linear expressions', '7.EE.A.1', [
+              sa('Expand.\n4(x + 3)', 'Expression:', key='4x + 12'),
+              sa('Expand.\n-2(3x - 5)', 'Expression:', key='-6x + 10'),
+              mc('Which expression is equal to 5(2x - 1)?', ['10x - 5', '10x - 1', '7x - 5', '10x + 5']),
+              tf('3(x + 2) = 3x + 6', key=True),
+              tf('-(x - 4) = -x - 4', key=False),
+          ]),
+          B('Solve two-step equations', '7.EE.B.4.a', [
+              sa('Solve for x.\n3x + 7 = 22', 'x =', key='5'),
+              sa('Solve for x.\n-2x + 4 = 10', 'x =', key='-3'),
+              mc('Solve for x.\n5x - 6 = 19', ['x = 5', 'x = {13/5}', 'x = 25', 'x = -5']),
+              tf('x = 2 is the solution of 4x + 1 = 9.', key=True),
+              tf('x = 3 is the solution of 2x - 5 = 3.', key=False),
+          ]),
+      ],
+      f1=B('Solve systems and recognize when they have no solution or infinitely many', 'HSA-REI.C.6', [
+          sa('How many solutions does the system have?\ny = 2x + 3\ny = 2x - 1', 'Answer:', key='No solution'),
+          sa('Solve the system.\nx + y = 7\nx - y = 1', 'Solution:', key='x = 4, y = 3'),
+          mc('How many solutions does the system have?\n2x + 4y = 8\nx + 2y = 4', ['Infinitely many', 'One', 'None', 'Two']),
+          tf('A system of two different parallel lines has no solution.', key=True),
+          tf('The system y = x + 1 and y = -x + 1 has no solution.', key=False, note='The lines meet at (0, 1).'),
+      ]),
+      f2=B('Use the form (x - p)² = q to find how many real solutions a quadratic equation has', 'HSA-REI.B.4.a', [
+          sa('How many real solutions does (x - 3)² = 0 have? Give any solutions.', 'Answer:', key='One: x = 3'),
+          sa('How many real solutions does (x + 1)² = -4 have? Explain.', 'Answer:', key='None. A square of a real number cannot be negative.'),
+          mc('Completing the square on x² + 6x + 13 = 0 gives (x + 3)² = q.\nWhat is q, and how many real solutions are there?',
+             ['q = -4; no real solutions', 'q = 4; two real solutions', 'q = 13; two real solutions', 'q = -4; one real solution']),
+          tf('(x - 2)² = 9 has two real solutions.', key=True, note='x = 5 and x = -1.'),
+          tf('x² - 6x + 9 = 0 has two different real solutions.', key=False, note='It is (x - 3)² = 0, so x = 3 is the only solution.'),
+      ])),
+
+    # ------------------------------------------------------------------ 8.EE.C.7.b (multistep)
+    S('8.EE.C.7.b', 'Solve multistep linear equations by expanding and collecting like terms',
+      main=[
+          sa('Solve for x.\n3(2x - 4) = 4x + 6', 'x =', key='9'),
+          sa('Solve for x.\n5 - 2(x + 1) = 3x - 7', 'x =', key='2'),
+          mc('Solve for x.\n4(x - 1) - (x + 2) = 2x + 3', ['x = 9', 'x = 1', 'x = -9', 'x = 5']),
+          work('Solve. Show each step.\n-3(x + 5) + 2x = 4(x - 10)', 'x =',
+               method='Any valid sequence of steps. Example: -3x - 15 + 2x = 4x - 40; -x - 15 = 4x - 40; 25 = 5x; x = 5.', key='5'),
+          tf('x = -1 is the solution of 2(3x + 1) = 4x.', key=True),
+      ],
+      back=[
+          B('Combine like terms', '7.EE.A.1', [
+              sa('Simplify.\n6x - 4 + 2x + 9', 'Expression:', key='8x + 5'),
+              sa('Simplify.\n-3a + 7 - a', 'Expression:', key='-4a + 7'),
+              mc('Simplify.\n2(x + 3) + 5x', ['7x + 6', '7x + 3', '10x + 6', '2x + 11']),
+              tf('4y - y = 3y', key=True),
+              tf('5n + 2 - 2n = 3n', key=False, note='5n + 2 - 2n = 3n + 2.'),
+          ]),
+          B('Solve two-step equations with rational numbers', '7.EE.B.4.a', [
+              sa('Solve for x.\n6x - 5 = 31', 'x =', key='6'),
+              sa('Solve for x.\n{x/4} + 3 = 7', 'x =', key='16'),
+              mc('Solve for x.\n-3x + 8 = -10', ['x = 6', 'x = -6', 'x = {2/3}', 'x = -{2/3}']),
+              tf('x = -2 is the solution of 5x + 12 = 2.', key=True),
+              tf('x = 4 is the solution of 3x - 2 = 14.', key=False),
+          ]),
+      ],
+      f1=B('Solve linear equations with letter coefficients', 'HSA-REI.B.3', [
+          sa('Solve for x. Assume a ≠ 3.\nax + 2 = 3x + 8', 'x =', key='6/(a - 3)'),
+          sa('Solve for x. Assume k ≠ 0.\nk(x - 4) = 2k', 'x =', key='6'),
+          mc('Solve for x. Assume b ≠ 0.\nbx - 5b = 2b', ['x = 7', 'x = 3', 'x = 7b', 'x = {7/b}']),
+          tf('If c ≠ 1, the solution of cx + 1 = x + 1 is x = 0.', key=True),
+          tf('The solution of mx = m + 4 is x = 5 for every nonzero value of m.', key=False, note='x = (m + 4)/m, which is 5 only when m = 1.'),
+      ]),
+      f2=B('Justify each step of a solution and find an invalid step', 'HSA-REI.A.1', [
+          work('Solve 2(x - 3) + 4 = 5x - 11. Give a reason for each step.', 'x =',
+               method=STEPS + ' Example: distributive property (2x - 6 + 4 = 5x - 11); combine like terms (2x - 2 = 5x - 11); subtract 2x and add 11 to both sides (9 = 3x); divide both sides by 3 (x = 3).',
+               key='3'),
+          sa('Dee solved 4 - 2(x - 1) = 8 like this:\nStep 1: 4 - 2x - 2 = 8\nStep 2: 2 - 2x = 8\nStep 3: x = -3\nWhich step is wrong? Correct it and give the solution.', 'Answer:',
+             key='Step 1: -2(x - 1) = -2x + 2, so 6 - 2x = 8 and x = -1.', note='Grade both: Step 1 with the correction, and x = -1.'),
+          mc('Which reason justifies rewriting 3x - 5 = 7 as 3x = 12?', ['Addition property of equality', 'Distributive property', 'Multiplication property of equality', 'Commutative property of addition']),
+          tf('Each step of a valid solution gives an equation with the same solutions as the original equation.', key=True),
+          tf('Multiplying both sides of an equation by 0 keeps the same solutions.', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 8.EE.C.7.b (context)
+    S('8.EE.C.7.b', 'Write and solve linear equations with rational coefficients for real-world problems',
+      main=[
+          sa('Gym A charges $30 to join plus $12.50 per month. Gym B charges $55 to join plus $10 per month.\nWrite and solve an equation to find when the total costs are equal.', 'Equation and answer:',
+             key='The equation 30 + 12.5m = 55 + 10m and the answer m = 10 months', note=EQ),
+          sa('Plant A is 6{1/2} inches tall and grows {3/4} inch per week. Plant B is 10 inches tall and grows {1/4} inch per week.\nWrite and solve an equation to find when they are the same height.', 'Equation and answer:',
+             key='The equation 6.5 + 0.75w = 10 + 0.25w and the answer w = 7 weeks', note=EQ),
+          mc('Solve for x.\n{2/3}x - 4 = {1/2}x + 1', ['x = 30', 'x = 18', 'x = 6', 'x = {30/7}']),
+          sa('Solve for x.\n0.4(x + 15) = 0.25x + 9', 'x =', key='20'),
+          tf('x = 12 is the solution of {3/4}x + 2 = {1/2}x + 5.', key=True),
+      ],
+      back=[
+          B('Solve word problems that lead to px + q = r', '7.EE.B.4.a', [
+              sa('Ana has $40. She buys some $6.50 tickets and has $1 left.\nHow many tickets did she buy?', 'Tickets:', key='6'),
+              sa('A rental costs $20 plus $8 per hour. The total is $68.\nFor how many hours was it rented?', 'Hours:', key='6'),
+              mc('Solve for x.\n0.5x + 3 = 11', ['x = 16', 'x = 4', 'x = 28', 'x = 7']),
+              tf('x = 9 is the solution of {1/3}x + 2 = 5.', key=True),
+              tf('x = 4 is the solution of 2.5x - 1 = 11.', key=False, note='The solution is x = 4.8.'),
+          ]),
+          B('Multiply rational numbers in context', '7.NS.A.3', [
+              sa('A plant grows {3/4} inch per week.\nHow much does it grow in 8 weeks?', 'Growth:', key='6 inches'),
+              sa('A gym charges $12.50 per month.\nHow much do 10 months cost?', 'Cost:', key='$125'),
+              mc('A cyclist rides 0.4 mile per minute for 15 minutes.\nHow far does she ride?', ['6 miles', '4 miles', '15.4 miles', '60 miles']),
+              tf('{2/3} of 9 feet is 6 feet.', key=True),
+              tf('0.25 of a 12-hour day is 4 hours.', key=False, note='0.25 × 12 = 3 hours.'),
+          ]),
+      ],
+      f2=B('Create equations and inequalities in one variable to solve problems', 'HSA-CED.A.1', [
+          sa('Plan A costs $25 plus $0.15 per text. Plan B costs $40 with unlimited texts.\nWrite and solve an inequality to find when Plan A costs less.', 'Inequality and answer:',
+             key='The inequality 25 + 0.15t < 40 and the answer t < 100 texts (0 to 99 texts)', note=EQ.replace('equation (or system)', 'inequality')),
+          sa('Two trains leave a station at the same time in opposite directions, at 55 and 65 miles per hour.\nWrite and solve an equation to find when they are 300 miles apart.', 'Equation and answer:',
+             key='The equation 55t + 65t = 300 and the answer t = 2.5 hours', note=EQ),
+          mc('A rectangle\'s length is 3 more than twice its width w. Its perimeter is 54.\nWhich equation can find w?', ['2w + 2(2w + 3) = 54', 'w + 2w + 3 = 54', '2(2w) + 3 = 54', 'w(2w + 3) = 54']),
+          tf('A rectangle has a length of 2w + 3 and a perimeter of 54. Its width w is 8.', key=True),
+          tf('The inequality 25 + 0.15t < 40 is true when t = 120.', key=False, note='25 + 18 = 43, which is not less than 40.'),
+      ]),
+      f1=B('Solve systems of linear equations from real-world problems', 'HSA-REI.C.6', [
+          sa('Solve the system.\ny = 12.5x + 30\ny = 10x + 55', 'Solution:', key='x = 10, y = 155'),
+          sa('Adult tickets cost $8 and student tickets cost $5. 120 tickets were sold for $750.\nHow many adult tickets were sold?', 'Adult tickets:', key='50'),
+          mc('Solve the system.\n2x + 3y = 12\nx - y = 1', ['x = 3, y = 2', 'x = 2, y = 3', 'x = 4, y = 3', 'x = 1, y = 0']),
+          tf('x = 2, y = 5 is a solution of both y = 3x - 1 and y = x + 3.', key=True),
+          tf('The system x + y = 10 and 2x + 2y = 15 has exactly one solution.', key=False, note='The lines are parallel, so there is no solution.'),
+      ])),
+
+    # ------------------------------------------------------------------ 8.EE.C.8.a
+    S('8.EE.C.8.a', 'Solve a system of two linear equations by graphing',
+      main=[
+          draw_write('Graph y = x + 1 and y = -x + 5 on the grid.\nWhat is the solution of the system?', grid(6, 6), 'Solution:',
+                     draw='The line y = x + 1 through (0, 1) and (4, 5), and the line y = -x + 5 through (0, 5) and (5, 0), crossing at (2, 3)', key='(2, 3)',
+                     note='Grade both: the two lines drawn correctly, and the solution (2, 3).'),
+          draw_write('Graph y = 0.5x + 1 and y = -x + 7 on the grid.\nWhat is the solution of the system?', grid(8, 8), 'Solution:',
+                     draw='The line y = 0.5x + 1 through (0, 1) and (6, 4), and the line y = -x + 7 through (0, 7) and (7, 0), crossing at (4, 3)', key='(4, 3)',
+                     note='Grade both: the two lines drawn correctly, and the solution (4, 3).'),
+          sa('The graph shows the lines y = -x + 4 and y = 2x - 2.\nWhat is the solution of the system? Check it in both equations.', 'Answer:',
+             fig=grid(5, 6, lines=[((0, 4), (4, 0)), ((1, 0), (4, 6))]), key='(2, 2): 2 = -2 + 4 and 2 = 2(2) - 2.', note='Grade both: (2, 2) and the check in both equations.'),
+          mc('The graphs of the two equations in a system are parallel lines.\nWhat does this tell you about the system?', ['It has no solution.', 'It has one solution.', 'It has infinitely many solutions.', 'Its solution is the origin.']),
+          tf('When the graphs of two linear equations are two different lines that cross, the crossing point is the only solution of the system.', key=True),
+      ],
+      back=[
+          B('Make a table and graph an equation', '6.EE.C.9', [
+              plot('Make a table for y = x + 2 with x = 0, 1, 2, and 3. Graph the points on the grid.', grid(5, 6), key='Points at (0, 2), (1, 3), (2, 4), and (3, 5)'),
+              sa('What is the value of y when x = 4 in y = 3x?', 'y =', key='12'),
+              mc('Which point is on the graph of y = x + 3?', ['(2, 5)', '(5, 2)', '(3, 0)', '(1, 3)']),
+              tf('(4, 8) is on the graph of y = 2x.', key=True),
+              tf('(0, 1) is on the graph of y = x + 2.', key=False),
+          ]),
+          B('Graph points in all four quadrants', '6.NS.C.8', [
+              plot('Plot A(2, -3) and B(-4, 1) on the coordinate plane.', plane(), key='Point A at (2, -3) and point B at (-4, 1)'),
+              sa('What are the coordinates of point P?', 'Coordinates:', fig=plane(pts=[(-2, -5, 'P')]), key='(-2, -5)'),
+              mc('Which point is in Quadrant II?', ['(-3, 4)', '(3, -4)', '(-3, -4)', '(3, 4)']),
+              tf('(0, -2) is on the y-axis.', key=True),
+              tf('(5, -1) is in Quadrant III.', key=False, note='(5, -1) is in Quadrant IV.'),
+          ]),
+      ],
+      f1=B('Solve f(x) = g(x) from the intersection of two graphs', 'HSA-REI.D.11', [
+          sa('The graphs of f(x) = x + 1 and g(x) = 7 - x intersect at (3, 4).\nWhat is the solution of x + 1 = 7 - x?', 'x =', key='3'),
+          sa('Use a table of values for x = 0, 1, 2, and 3 to solve 2x + 1 = 7 - x.', 'Answer:', key='x = 2 (both sides equal 5)'),
+          mc('The graphs of f(x) = x² and g(x) = x + 2 intersect at (2, 4) and (-1, 1).\nWhat are the solutions of x² = x + 2?', ['x = 2 and x = -1', 'x = 4 and x = 1', 'x = 2 only', 'x = -1 only']),
+          tf('If the graphs of y = f(x) and y = g(x) intersect at (5, 9), then f(5) = g(5) = 9.', key=True),
+          tf('If the graphs of f and g never meet, then f(x) = g(x) has exactly one solution.', key=False, note='It has no solution.'),
+      ]),
+      f2=B('Graph the solution set of a system of linear inequalities', 'HSA-REI.D.12', [
+          plot('Graph the system on the coordinate plane.\ny ≥ x\ny < 4', plane(),
+               key='A solid line y = x and a dashed line y = 4, with the region above or on y = x and below y = 4 shaded'),
+          sa('Is (1, 3) a solution of the system y > 2x and y < x + 3? Explain.', 'Answer:', key='Yes. 3 > 2(1) and 3 < 1 + 3.'),
+          mc('Which point is a solution of the system y ≤ -x + 4 and y > 1?', ['(1, 2)', '(3, 2)', '(0, 0)', '(4, 3)']),
+          tf('The boundary line of y < 2x + 1 is drawn dashed.', key=True),
+          tf('The solution set of a system of two inequalities is every point that satisfies at least one of them.', key=False,
+             note='A solution must satisfy both inequalities (the overlap of the two regions).'),
+      ])),
+
+    # ------------------------------------------------------------------ 8.EE.C.8.b (algebraically)
+    S('8.EE.C.8.b', 'Solve a system of two linear equations algebraically',
+      main=[
+          work('Solve the system. Show your work.\ny = 3x - 2\n2x + y = 13', 'Solution:',
+               method='Any valid method (substitution, elimination, or another), with the steps shown. Example: substitute y = 3x - 2 into 2x + y = 13 to get 5x - 2 = 13, so x = 3 and y = 7.',
+               key='x = 3, y = 7'),
+          work('Solve the system. Show your work.\nx + 2y = 10\n3x - 2y = 6', 'Solution:',
+               method='Any valid method, with the steps shown. Example: add the equations to get 4x = 16, so x = 4; then 4 + 2y = 10, so y = 3.',
+               key='x = 4, y = 3'),
+          mc('Solve the system.\ny = x + 4\ny = -2x + 1', ['x = -1, y = 3', 'x = 1, y = 5', 'x = -1, y = 5', 'x = 3, y = 7']),
+          sa('Solve the system.\n4x + 3y = 18\n2x - y = 4', 'Solution:', key='x = 3, y = 2'),
+          tf('x = 2, y = -1 is a solution of both 3x + y = 5 and x - y = 3.', key=True),
+      ],
+      back=[
+          B('Evaluate expressions for given values', '6.EE.A.2.c', [
+              sa('Evaluate 2x + y when x = 3 and y = 7.', 'Value:', key='13'),
+              sa('Evaluate 3x - 2 when x = 4.', 'Value:', key='10'),
+              mc('Evaluate x + 2y when x = 4 and y = 3.', ['10', '11', '9', '14']),
+              tf('When x = 2, the value of 5x - 1 is 9.', key=True),
+              tf('When y = 3, the value of 2y + 4 is 9.', key=False),
+          ]),
+          B('Solve equations with the distributive property', '7.EE.B.4.a', [
+              sa('Solve for x.\n5x - 2 = 13', 'x =', key='3'),
+              sa('Solve for x.\n2x + 3(x - 2) = 9', 'x =', key='3'),
+              mc('Solve for x.\n4x + 2 = -10', ['x = -3', 'x = -2', 'x = 3', 'x = 2']),
+              tf('x = 4 is the solution of 3x - 5 = 7.', key=True),
+              tf('x = -1 is the solution of 2x + 9 = 5.', key=False, note='The solution is x = -2.'),
+          ]),
+      ],
+      f1=B('Explain why adding equations (elimination) keeps the same solutions', 'HSA-REI.C.5', [
+          sa('Add the equations x + y = 9 and x - y = 3.\nWhat new equation do you get, and what is x?', 'Answer:', key='2x = 12; x = 6'),
+          sa('Multiply x + 2y = 7 by 3, then add the result to -3x + y = 0.\nWhat equation results?', 'Equation:', key='7y = 21 (so y = 3)'),
+          mc('In a system, one equation is replaced by its sum with a multiple of the other equation.\nWhat happens to the solutions?',
+             ['The solutions stay the same.', 'The solutions always change.', 'All solutions are removed.', 'The number of solutions doubles.']),
+          tf('The system x + y = 5 and x - y = 1 has the same solution as the system x + y = 5 and 2x = 6.', key=True),
+          tf('Multiplying one equation of a system by 0 keeps the same solutions.', key=False),
+      ]),
+      f2=B('Solve a system of a linear equation and a quadratic equation', 'HSA-REI.C.7', [
+          sa('Solve the system. Give all solutions.\ny = x²\ny = 4', 'Solutions:', key='(2, 4) and (-2, 4)', note='Both solutions are required.'),
+          sa('Solve the system. Give all solutions.\ny = x² - 1\ny = x + 1', 'Solutions:', key='(2, 3) and (-1, 0)', note='Both solutions are required.'),
+          mc('How many solutions does the system have?\ny = x² + 3\ny = 1', ['None', 'One', 'Two', 'Infinitely many']),
+          tf('The line y = 2x and the parabola y = x² meet at (0, 0) and (2, 4).', key=True),
+          tf('A line and a parabola always meet at exactly two points.', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 8.EE.C.8.b (inspection)
+    S('8.EE.C.8.b', 'Solve simple systems by inspection',
+      main=[
+          sa('Without solving, explain why this system has no solution.\n3x + 2y = 5\n3x + 2y = 6', 'Explanation:', key='The same expression, 3x + 2y, cannot equal both 5 and 6.'),
+          sa('Without solving, how many solutions does this system have? Explain.\ny = 4x - 1\ny = 4x + 3', 'Answer:', key='None. The lines have the same slope and different y-intercepts, so they are parallel.'),
+          mc('Which system has infinitely many solutions?', ['x + y = 4 and 2x + 2y = 8', 'x + y = 4 and x + y = 8', 'x + y = 4 and x - y = 4', 'y = x and y = -x']),
+          sa('Without solving, how many solutions does this system have? Explain.\ny = -2x + 5\ny = 3x + 5', 'Answer:', key='One. The slopes are different, so the lines cross once (at (0, 5)).'),
+          tf('The system 2x - y = 7 and 6x - 3y = 21 has no solution.', key=False, note='The second equation is 3 times the first, so there are infinitely many solutions.'),
+      ],
+      back=[
+          B('Recognize equivalent expressions', '7.EE.A.1', [
+              sa('Is 2x + 2y equivalent to 2(x + y)? Explain.', 'Answer:', key='Yes. By the distributive property, 2(x + y) = 2x + 2y.'),
+              sa('Write 3(2x + y) without parentheses.', 'Expression:', key='6x + 3y'),
+              mc('Which expression is equivalent to 4x + 6y?', ['2(2x + 3y)', '4(x + 6y)', '2(4x + 6y)', '6(4x + y)']),
+              tf('5x - 5y = 5(x - y)', key=True),
+              tf('2(x + 3) = 2x + 3', key=False),
+          ]),
+          B('Decide whether a value makes two equations true', '6.EE.B.5', [
+              sa('Is x = 2 a solution of both x + 3 = 5 and 2x = 4?', 'Answer:', key='Yes'),
+              sa('Which of the values 1, 2, and 3 makes both 2x = 6 and x + 1 = 4 true?', 'Value:', key='3'),
+              mc('Which value makes both x + 2 = 7 and 3x = 15 true?', ['5', '7', '2', '3']),
+              tf('No value of x makes both x + 1 = 3 and x + 1 = 4 true.', key=True),
+              tf('x = 4 makes both x - 1 = 3 and 2x = 6 true.', key=False),
+          ]),
+      ],
+      f1=B('Solve or classify systems of linear equations', 'HSA-REI.C.6', [
+          sa('Solve the system, or say that it has no solution or infinitely many.\n2x + y = 3\n4x + 2y = 6', 'Answer:', key='Infinitely many solutions (the second equation is 2 times the first)'),
+          sa('Solve the system.\n3x - y = 5\nx + y = 7', 'Solution:', key='x = 3, y = 4'),
+          mc('Which value of k makes the system have infinitely many solutions?\nx + ky = 4\n2x + 6y = 8', ['3', '6', '2', '4']),
+          tf('If the two equations of a system describe the same line, every point on the line is a solution.', key=True),
+          tf('The system y = 3x + 1 and y = 3x + 1 has no solution.', key=False, note='It has infinitely many solutions.'),
+      ]),
+      f2=B('Classify lines as parallel, perpendicular, or neither from their equations', 'HSG-GPE.B.5', [
+          sa('Are the lines y = 2x + 1 and 4x - 2y = 6 parallel, perpendicular, or neither? Explain.', 'Answer:', key='Parallel; both have slope 2 (and different y-intercepts).'),
+          sa('Are the lines 3x + y = 2 and x - 3y = 9 parallel, perpendicular, or neither? Explain.', 'Answer:', key='Perpendicular; the slopes are -3 and 1/3, and their product is -1.'),
+          mc('One line passes through (0, 0) and (2, 4). Another passes through (1, 1) and (3, 5).\nHow are the lines related?', ['Parallel', 'Perpendicular', 'The same line', 'Neither']),
+          tf('Lines with slopes {2/3} and -{3/2} are perpendicular.', key=True),
+          tf('The lines y = x and y = -x are parallel.', key=False, note='They are perpendicular.'),
+      ])),
+
+    # ------------------------------------------------------------------ 8.EE.C.8.c
+    S('8.EE.C.8.c', 'Write and solve systems of linear equations for real-world problems',
+      main=[
+          sa('A school sells 200 tickets. Adult tickets cost $6 and student tickets cost $4. The sales total $940.\nWrite a system and solve it to find how many of each ticket were sold.', 'System and answer:',
+             key='The system a + s = 200 and 6a + 4s = 940, and the answer 70 adult and 130 student tickets', note=EQ),
+          sa('Plan A costs $15 plus $0.05 per minute. Plan B costs $0.10 per minute.\nWrite a system and solve it to find when the plans cost the same.', 'System and answer:',
+             key='The system c = 15 + 0.05m and c = 0.10m, and the answer 300 minutes (both cost $30)', note=EQ),
+          mc('Jo has 25 coins, all dimes and quarters, worth $4.00 in all.\nWhich system models this?',
+             ['d + q = 25 and 0.10d + 0.25q = 4', 'd + q = 4 and 0.10d + 0.25q = 25', 'd + q = 25 and 0.25d + 0.10q = 4', 'd - q = 25 and 0.10d + 0.25q = 4']),
+          sa('Jo has 25 coins, all dimes and quarters, worth $4.00 in all: d + q = 25 and 0.10d + 0.25q = 4.\nHow many of each coin does Jo have?', 'Answer:', key='15 dimes and 10 quarters'),
+          tf('Two numbers have a sum of 40 and a difference of 12. The larger number is 26.', key=True),
+      ],
+      back=[
+          B('Solve word problems with one unknown', '7.EE.B.4.a', [
+              sa('A taxi charges $3 plus $2 per mile. A ride costs $19.\nHow many miles long was the ride?', 'Miles:', key='8'),
+              sa('Concert tickets cost $9 each, plus a $5 fee for the whole order. An order costs $50.\nHow many tickets were bought?', 'Tickets:', key='5'),
+              mc('The sum of a number and 3 times the number is 48.\nWhat is the number?', ['12', '16', '45', '9']),
+              tf('If 2x + 7 = 25, then x = 9.', key=True),
+              tf('Items cost $4 each, and shipping is $6. A $30 order has 7 items.', key=False, note='4n + 6 = 30 gives n = 6 items.'),
+          ]),
+          B('Use variables to represent quantities in a situation', '6.EE.B.6', [
+              sa('Write an expression for the value, in dollars, of d dimes.', 'Expression:', key='0.10d', note='0.1d is also correct.'),
+              sa('Adult tickets cost $6.\nWrite an expression for the cost of a adult tickets.', 'Expression:', key='6a'),
+              mc('There are 25 coins: d dimes and the rest quarters.\nWhich expression gives the number of quarters?', ['25 - d', 'd - 25', '25d', 'd + 25']),
+              tf('q quarters are worth 0.25q dollars.', key=True),
+              tf('There are s students and 3 more teachers than students. There are 3s teachers.', key=False, note='There are s + 3 teachers.'),
+          ]),
+      ],
+      f2=B('Represent constraints with a system of inequalities', 'HSA-CED.A.3', [
+          sa('A bakery has 30 pounds of flour. Each batch of bread uses 2 pounds and each batch of muffins uses 0.5 pound.\nWrite an inequality for b batches of bread and m batches of muffins.', 'Inequality:', key='2b + 0.5m ≤ 30'),
+          sa('A bakery has at most 20 hours of oven time. Each batch of bread takes 1 hour and each batch of muffins takes 2 hours.\nWrite an inequality for b batches of bread and m batches of muffins.', 'Inequality:', key='b + 2m ≤ 20'),
+          mc('A bakery\'s limits are 2b + 0.5m ≤ 30 (flour) and b + 2m ≤ 20 (oven hours).\nCan it make 10 batches of bread and 5 batches of muffins?',
+             ['Yes; both limits are met.', 'No; the flour runs out.', 'No; the oven time runs out.', 'No; both limits are broken.']),
+          tf('In a model of batches of bread b and muffins m, the constraints b ≥ 0 and m ≥ 0 make sense because batches cannot be negative.', key=True),
+          tf('The point (12, 6) meets both limits 2b + 0.5m ≤ 30 and b + 2m ≤ 20.', key=False, note='12 + 2(6) = 24, which is more than 20.'),
+      ]),
+      f1=B('Create equations in two variables to model and solve problems', 'HSA-CED.A.2', [
+          sa('A company\'s cost is C = 2,000 + 15x and its revenue is R = 40x for x items.\nWrite and solve an equation to find the break-even number of items.', 'Equation and answer:',
+             key='The equation 2,000 + 15x = 40x and the answer x = 80 items', note=EQ),
+          sa('A boat travels 24 miles downstream in 2 hours and 24 miles back upstream in 3 hours. Let b be the boat\'s speed in still water and c the speed of the current.\nWrite a system of two equations.', 'System:',
+             key='2(b + c) = 24 and 3(b - c) = 24'),
+          mc('A boat\'s trips give the system 2(b + c) = 24 and 3(b - c) = 24.\nWhat is the boat\'s speed b in still water?', ['10 miles per hour', '12 miles per hour', '8 miles per hour', '2 miles per hour']),
+          tf('For the system 2(b + c) = 24 and 3(b - c) = 24, the current\'s speed c is 2 miles per hour.', key=True),
+          tf('The break-even point is where revenue is twice the cost.', key=False, note='At break-even, revenue equals cost.'),
+      ])),
+]

@@ -311,8 +311,9 @@ def describe(f):
     return k
 
 
-HS_LEVEL = ('High school (Common Core high-school standard; this bank places it at Grade 9 as a second forward step. '
-            'This is an instructional choice, not an official grade assignment.)')
+def hs_level(key):
+    return ('High school (Common Core high-school standard; this bank places it at Grade %d as a %s forward step. '
+            'This is an instructional choice, not an official grade assignment.)' % (qb.hs_place(key), 'first' if key == 'FORWARD 1' else 'second'))
 
 
 def jsonable(f):
@@ -399,9 +400,9 @@ def export(out_dir):
                 rec = dict(
                     id=qid, uid=r['uid'], collection=build.COLLECTION['id'], set=st['num'], section=key, section_code=code,
                     relation=RELATION.get(code, 'backward'), number=i, of=len(qs),
-                    standard=std, standard_grade=std.split('.')[0] if std.startswith('K') else qb.grade_num(std),
+                    standard=std, standard_grade=std.split('.')[0] if std.startswith('K') else qb.grade_num(std, key),
                     domain=r['domain'], skill=name, nearest_related=bool(nearest),
-                    **(dict(standard_level=HS_LEVEL) if std.startswith('HS') else {}),
+                    **(dict(standard_level=hs_level(key)) if std.startswith('HS') else {}),
                     type=r['type'],
                     response={'mc': 'select one', 'tf': 'select true or false', 'sa': 'write',
                               'plot': 'draw on the figure',
@@ -561,7 +562,7 @@ Collection `{cid}`, version {ver}. {sets} question sets, {nq} questions, {nfig} 
 | `uid`, `collection`, `id` | Identity: `uid` = collection + `:` + `id` |
 | `set`, `section`, `section_code`, `relation`, `number` | Where the question sits |
 | `standard`, `standard_grade`, `domain`, `skill`, `nearest_related` | What it tests |
-| `standard_level` | High-school standards only: says that Grade 9 is this bank's placement, not an official Common Core grade |
+| `standard_level` | High-school standards only: says that {hsgrades} is this bank's placement, not an official Common Core grade |
 | `type`, `response` | `mc` (select one), `tf` (true or false), `sa` (write an answer), `plot` (draw on the figure), `plot_text` (draw on the figure AND write an answer), `work` (write the answer and show the required work) |
 | `prompt`, `prompt_markup` | Question text: plain, and with `{{a/b}}` fraction markup |
 | `choices` | `[{{letter, text}}]` in the order students see; true/false is A. True, B. False. Picture choices add `svg`, `png`, `data` |
@@ -582,7 +583,9 @@ drawing is judged against `correct_answer`; a `plot_text` response needs both th
 written answer (`correct_answer`). A `work` response needs the method in `required_method`. Explanations must include
 what `grading_note` lists.
 '''.format(g=g, sets=index['set_count'], nq=index['question_count'], nfig=index['figure_count'],
-           part=PDF_PART, ex=ex, cid=col['id'], ver=col['version'], revline=revline)
+           part=PDF_PART, ex=ex, cid=col['id'], ver=col['version'], revline=revline,
+           hsgrades=' or '.join('Grade %d' % n for n in sorted({qb.hs_place(k) for k in ('FORWARD 1', 'FORWARD 2')
+                                                                if build.GRADE + int(k[-1]) >= qb.HS_GRADE})) or 'Grade 9')
     with open(os.path.join(out_dir, 'README.md'), 'w', encoding='utf-8') as fh:
         fh.write(text)
 

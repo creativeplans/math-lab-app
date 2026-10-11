@@ -1,0 +1,956 @@
+from qb import S, B, sa, mc, tf, plot, draw_write, work, shape, poly, tri, prism
+from common import grid, plane, geo, angles, solid, BLANK
+
+EQ = 'Both parts are required: a valid equation and the correct solution. Any valid equation is accepted, but the solution must also be correct.'
+STEPS = 'A valid chain of reasons. Other valid orders are accepted. A conclusion without reasons is not full credit.'
+
+
+def fig(*shapes, names=(), lines=(), lo=-6, hi=6):
+    """Coordinate plane with polygons and labeled vertices."""
+    return plane(lo, hi, polys=[list(s) for s in shapes], pts=[(x, y, n) for x, y, n in names], lines=list(lines))
+
+
+# parallel lines m and n cut by transversal t; angles 1-4 at line n, 5-8 at line m
+# (1 above-left, 2 above-right, 3 below-left, 4 below-right, and the same order for 5-8)
+PARALLEL = geo(('line', (0, 0), (8, 0)), ('line', (0, 3), (8, 3)), ('line', (2, -1), (6, 4)),
+               ('text', (9.2, 0), 'n'), ('text', (9.2, 3), 'm'), ('text', (6.5, 4.3), 't'),
+               ('text', (2.25, 0.45), '1'), ('text', (3.6, 0.3), '2'), ('text', (2.0, -0.3), '3'), ('text', (3.35, -0.45), '4'),
+               ('text', (4.65, 3.45), '5'), ('text', (6.0, 3.3), '6'), ('text', (4.4, 2.7), '7'), ('text', (5.75, 2.55), '8'), h=260,
+               desc='Parallel lines m (top) and n (bottom) are cut by transversal t, which slants up to the right. At line n the angles are numbered '
+                    '1 (above, left of t), 2 (above, right of t), 3 (below, left of t), and 4 (below, right of t). At line m the angles are '
+                    'numbered 5, 6, 7, and 8 in the same positions.')
+EXTERIOR = geo(('segment', (0, 0), (7, 0)), ('segment', (0, 0), (2, 3)), ('segment', (2, 3), (5, 0)),
+               ('text', (0.75, 0.3), '70°'), ('text', (2.05, 2.35), 'x°'), ('text', (5.7, 0.35), '125°'), h=220,
+               desc='A triangle with its base extended to the right. The interior angle at the left vertex is 70°, the angle at the top vertex is x°, '
+                    'and the exterior angle at the right vertex is 125°.')
+PARALLEL_TRI = geo(('segment', (0, 0), (8, 0)), ('segment', (0, 0), (4, 6)), ('segment', (4, 6), (8, 0)), ('segment', (2, 3), (6, 3)),
+                   ('point', (4, 6), 'A'), ('point', (0, 0), 'B'), ('point', (8, 0), 'C'), ('point', (2, 3), 'D'), ('point', (6, 3), 'E'), h=240,
+                   desc='Triangle ABC with A at the top. Segment DE joins a point D on AB to a point E on AC and is parallel to BC.')
+PROOF_SQ = shape([poly([(0, 0), (7, 0), (7, 7), (0, 7)]), poly([(3, 0), (7, 3), (4, 7), (0, 4)])],
+                 texts=[(1.5, -0.45, 'a'), (5, -0.45, 'b'), (7.45, 1.5, 'a'), (7.45, 5, 'b'), (5.5, 7.45, 'a'), (2, 7.45, 'b'),
+                        (-0.45, 5.5, 'a'), (-0.45, 2, 'b'), (5.3, 1.3, 'c'), (3.5, 3.5, 'c²')], h=260,
+                 desc='A large square with sides a + b. Inside it, a tilted square with side c touches each side of the large square, '
+                      'leaving four right triangles with legs a and b in the corners.')
+
+
+SETS = [
+    # ------------------------------------------------------------------ 8.G.A.1.a
+    S('8.G.A.1.a', 'Verify that rigid motions take lines to lines and segments to segments of the same length',
+      main=[
+          sa('Segment AB has endpoints A(1, 2) and B(5, 2). It is translated 3 units down.\nWhat are the endpoints of the image, and how long is the image?', 'Answer:',
+             key='A\'(1, -1) and B\'(5, -1); it is 4 units long, the same as AB.', note='Grade both the endpoints and the length.'),
+          plot('Reflect segment AB across the y-axis. Draw the image A\'B\'.', fig(lines=[((1, 1), (4, 3))], names=[(1, 1, 'A'), (4, 3, 'B')]),
+               key='The segment from A\'(-1, 1) to B\'(-4, 3)'),
+          mc('A segment 7 cm long is rotated 90° about a point.\nHow long is its image?', ['7 cm', '14 cm', '3.5 cm', 'It depends on the center of rotation.']),
+          tf('The image of a straight line under a translation is a straight line.', key=True),
+          tf('A reflection can map a segment 5 units long to a segment 10 units long.', key=False, note='Reflections keep lengths the same.'),
+      ],
+      back=[
+          B('Reflect points across the axes', '6.NS.C.6.b', [
+              sa('The point (3, -4) is reflected across the x-axis.\nWhat are the coordinates of the image?', 'Image:', key='(3, 4)'),
+              sa('The point (-2, 5) is reflected across the y-axis.\nWhat are the coordinates of the image?', 'Image:', key='(2, 5)'),
+              mc('Which point is the reflection of (6, 1) across the y-axis?', ['(-6, 1)', '(6, -1)', '(-6, -1)', '(1, 6)']),
+              tf('The reflection of (-3, -3) across the x-axis is (-3, 3).', key=True),
+              tf('The reflection of (4, 2) across the x-axis is (-4, 2).', key=False),
+          ]),
+          B('Find the distance between points with the same x- or y-coordinate', '6.NS.C.8', [
+              sa('Find the distance between (1, 2) and (5, 2).', 'Distance:', key='4 units'),
+              sa('Find the distance between (1, -1) and (5, -1).', 'Distance:', key='4 units'),
+              mc('Which two points are 6 units apart?', ['(-2, 3) and (4, 3)', '(-2, 3) and (2, 3)', '(3, -2) and (3, 2)', '(0, 1) and (0, 5)']),
+              tf('(0, -3) and (0, 4) are 7 units apart.', key=True),
+              tf('(-5, 1) and (2, 1) are 3 units apart.', key=False, note='They are 7 units apart.'),
+          ]),
+      ],
+      f1=B('Define rotations, reflections, and translations precisely', 'HSG-CO.A.4', [
+          sa('A reflection across line m maps point P to point P\'.\nHow is line m related to segment PP\'?', 'Answer:', key='Line m is the perpendicular bisector of PP\'.'),
+          sa('A rotation of 90° about point O maps P to P\'.\nWhat is true about OP, OP\', and angle POP\'?', 'Answer:', key='OP = OP\', and angle POP\' measures 90°.'),
+          mc('In a translation, the segments that join each point to its image are...', ['parallel and the same length', 'perpendicular to each other', 'all through one point', 'different lengths']),
+          tf('A rotation keeps every point the same distance from the center of rotation.', key=True),
+          tf('In a reflection, a point (not on the line) and its image are on the same side of the line of reflection.', key=False),
+      ]),
+      f2=B('Use rigid motions to decide whether figures are congruent', 'HSG-CO.B.6', [
+          sa('Triangle ABC is mapped onto triangle DEF by a rotation followed by a translation.\nWhat can you conclude about the triangles?', 'Conclusion:',
+             key='They are congruent; their corresponding sides and angles are equal.'),
+          sa('Explain why two figures are congruent when a sequence of rigid motions maps one onto the other.', 'Explanation:',
+             key='Rigid motions keep all lengths and angle measures, so every part of one figure matches the corresponding part of the other.'),
+          mc('Which transformation does NOT always map a figure onto a congruent figure?', ['A dilation with a scale factor of 2', 'A reflection', 'A rotation', 'A translation']),
+          tf('If a translation maps segment AB onto segment CD, then AB = CD.', key=True),
+          tf('Two triangles with the same area must be congruent.', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 8.G.A.1.b
+    S('8.G.A.1.b', 'Verify that rigid motions take angles to angles of the same measure',
+      main=[
+          sa('Angle ABC measures 65°. It is reflected across a line.\nWhat is the measure of its image?', 'Measure:', key='65°'),
+          sa('Triangle PQR has angles of 40°, 60°, and 80°. It is rotated 180° about the origin.\nWhat are the angle measures of the image?', 'Measures:', key='40°, 60°, and 80°'),
+          mc('A right angle is translated 5 units up.\nWhat is its image?', ['A right angle', 'An acute angle', 'An obtuse angle', 'A straight angle']),
+          plot('The angle has its vertex at the origin. Rotate it 90° counterclockwise about the origin and draw the image.',
+               fig(lines=[((0, 0), (4, 0)), ((0, 0), (3, 3))]),
+               key='An angle with its vertex at the origin and rays through (0, 4) and (-3, 3); it still measures 45°'),
+          tf('A rotation can map a 30° angle onto a 60° angle.', key=False, note='Rotations keep angle measures the same.'),
+      ],
+      back=[
+          B('Find unknown angles with supplementary, complementary, and vertical angles', '7.G.B.5', [
+              sa('Two angles form a straight line. One measures 65°.\nWhat does the other measure?', 'Measure:', key='115°'),
+              sa('Two lines intersect. One angle measures 40°.\nWhat does the vertical angle measure?', 'Measure:', key='40°'),
+              mc('What is the complement of a 25° angle?', ['65°', '155°', '25°', '75°']),
+              tf('Vertical angles have equal measures.', key=True),
+              tf('Supplementary angles add to 90°.', key=False),
+          ]),
+          B('Classify triangles by their angles', '4.G.A.2', [
+              sa('A triangle has angles of 40°, 60°, and 80°.\nClassify it by its angles.', 'Answer:', key='Acute triangle'),
+              sa('A triangle has a 90° angle.\nClassify it by its angles.', 'Answer:', key='Right triangle'),
+              mc('Which angle measures make an obtuse triangle?', ['30°, 40°, 110°', '60°, 60°, 60°', '45°, 45°, 90°', '50°, 60°, 70°']),
+              tf('An acute triangle has three angles that each measure less than 90°.', key=True),
+              tf('A right triangle can have an obtuse angle.', key=False),
+          ]),
+      ],
+      f1=B('Specify a sequence of transformations that maps a figure onto another', 'HSG-CO.A.5', [
+          sa('Triangle A(1, 1), B(3, 1), C(1, 4) is mapped onto A\'(-1, -1), B\'(-3, -1), C\'(-1, -4).\nDescribe a transformation or sequence of transformations that does this.', 'Answer:',
+             key='A 180° rotation about the origin.', note='A reflection across the x-axis followed by a reflection across the y-axis (or the reverse) is also correct.'),
+          sa('Which single transformation maps (2, 3) to (2, -3) and (5, 1) to (5, -1)?', 'Answer:', key='A reflection across the x-axis'),
+          mc('Which rotation about the origin maps (4, 0) to (0, 4)?', ['90° counterclockwise', '90° clockwise', '180°', '270° counterclockwise']),
+          tf('Reflecting a figure across a line and then reflecting the image across the same line gives back the original figure.', key=True),
+          tf('A translation 3 units right followed by a translation 3 units left moves the figure.', key=False, note='The figure returns to where it started.'),
+      ]),
+      f2=B('Prove theorems about parallelograms', 'HSG-CO.C.11', [
+          work('ABCD is a parallelogram. Prove that angle A and angle B are supplementary. Give a reason for each step.', 'Conclusion:',
+               method=STEPS + ' Example: AD ∥ BC (definition of a parallelogram), and AB is a transversal; angles A and B are same-side interior angles, so they are supplementary.',
+               key='Angle A + angle B = 180°'),
+          sa('In parallelogram ABCD, angle A = 70°.\nFind the other three angles and give a reason for each.', 'Answer:',
+             key='Angle B = 110° and angle D = 110° (consecutive angles are supplementary); angle C = 70° (opposite angles are congruent).', note='Grade the angles and the reasons.'),
+          mc('Which statement about every parallelogram can be proved?', ['Its diagonals bisect each other.', 'Its diagonals are congruent.', 'Its diagonals are perpendicular.', 'All of its angles are right angles.']),
+          tf('Opposite sides of a parallelogram are congruent.', key=True),
+          tf('A quadrilateral with one pair of parallel sides must be a parallelogram.', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 8.G.A.1.c
+    S('8.G.A.1.c', 'Verify that rigid motions take parallel lines to parallel lines',
+      main=[
+          sa('Lines p and q are parallel. Both are rotated 90° about the same point.\nAre the images parallel? Explain.', 'Answer:',
+             key='Yes. Rigid motions take parallel lines to parallel lines; both lines turn by the same angle, so the images never meet.'),
+          plot('The two segments are parallel. Translate both segments 4 units to the left and draw the images.',
+               fig(lines=[((1, 1), (4, 3)), ((1, -2), (4, 0))]),
+               key='Segments from (-3, 1) to (0, 3) and from (-3, -2) to (0, 0); the images are still parallel'),
+          mc('A parallelogram is reflected across a line.\nWhat is its image?', ['A parallelogram congruent to the original', 'A trapezoid with only one pair of parallel sides',
+                                                                                'A rectangle, in every case', 'A figure with no parallel sides']),
+          sa('The line y = 2x + 1 is translated 3 units up.\nWhat is the equation of the image? Is the image parallel to the original line?', 'Answer:', key='y = 2x + 4; yes, the slope is still 2.'),
+          tf('A rigid motion can map two parallel lines onto two lines that intersect.', key=False),
+      ],
+      back=[
+          B('Identify parallel lines and segments', '4.G.A.1', [
+              sa('Name a quadrilateral that has two pairs of parallel sides.', 'Answer:', key='A rectangle', note='Any parallelogram (square, rhombus, rectangle) is correct.'),
+              sa('How many pairs of parallel sides does a trapezoid that is not a parallelogram have?', 'Pairs:', key='1'),
+              mc('Which capital letter contains a pair of parallel segments?', ['H', 'V', 'T', 'L']),
+              tf('Parallel lines never meet.', key=True),
+              tf('Perpendicular lines are parallel.', key=False),
+          ]),
+          B('Draw polygons in the coordinate plane and find side lengths', '6.G.A.3', [
+              plot('Draw the quadrilateral with vertices (1, 1), (5, 1), (6, 4), and (2, 4).', grid(7, 5), key='The quadrilateral with those four vertices (a parallelogram)'),
+              sa('A quadrilateral has vertices (1, 1), (5, 1), (6, 4), and (2, 4).\nHow long is the side from (1, 1) to (5, 1)?', 'Length:', key='4 units'),
+              mc('A quadrilateral has vertices (1, 1), (5, 1), (6, 4), and (2, 4).\nWhich side is parallel to the side from (1, 1) to (5, 1)?',
+                 ['From (2, 4) to (6, 4)', 'From (1, 1) to (2, 4)', 'From (5, 1) to (6, 4)', 'From (1, 1) to (6, 4)']),
+              tf('The side from (2, 4) to (6, 4) is 4 units long.', key=True),
+              tf('The segment from (1, 1) to (1, 4) is 4 units long.', key=False, note='It is 3 units long.'),
+          ]),
+      ],
+      f1=B('Prove theorems about angles formed by parallel lines', 'HSG-CO.C.9', [
+          work('In the figure, lines m and n are parallel. Prove that angle 2 = angle 7. Give a reason for each step.', 'Conclusion:', fig=PARALLEL,
+               method=STEPS + ' Example: angle 2 = angle 6 (corresponding angles, m ∥ n); angle 6 = angle 7 (vertical angles); so angle 2 = angle 7.',
+               key='Angle 2 = angle 7'),
+          sa('Two parallel lines are cut by a transversal. One angle measures 72°.\nWhat does the same-side interior angle measure? Give the reason.', 'Answer:', key='108°; same-side interior angles are supplementary.'),
+          mc('Which statement can be proved from "corresponding angles formed by parallel lines are congruent" and "vertical angles are congruent"?',
+             ['Alternate interior angles are congruent.', 'All the angles are right angles.', 'The lines are perpendicular.', 'The transversal is parallel to the lines.']),
+          tf('If alternate interior angles formed by a transversal are congruent, then the two lines are parallel.', key=True),
+          tf('Same-side interior angles formed by parallel lines are always congruent.', key=False, note='They are supplementary.'),
+      ]),
+      f2=B('Use coordinates to prove simple geometric theorems', 'HSG-GPE.B.4', [
+          sa('Show that the quadrilateral with vertices (0, 0), (4, 0), (5, 3), and (1, 3) is a parallelogram.', 'Answer:',
+             key='The sides from (0, 0) to (4, 0) and from (1, 3) to (5, 3) both have slope 0; the sides from (0, 0) to (1, 3) and from (4, 0) to (5, 3) both have slope 3. Both pairs of opposite sides are parallel.'),
+          sa('Is the triangle with vertices (0, 0), (4, 0), and (0, 3) a right triangle? Explain.', 'Answer:', key='Yes. One side is horizontal and one is vertical, so they are perpendicular.'),
+          mc('In order, (0, 0), (2, 0), (3, 2), and a fourth point form a parallelogram.\nWhich is the fourth point?', ['(1, 2)', '(2, 3)', '(3, 0)', '(0, 3)']),
+          tf('A quadrilateral whose opposite sides have equal slopes is a parallelogram.', key=True),
+          tf('The points (0, 0), (1, 1), and (2, 3) lie on one line.', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 8.G.A.2
+    S('8.G.A.2', 'Describe a sequence of rigid motions that shows two figures are congruent',
+      main=[
+          sa('Describe a rigid motion that maps triangle ABC onto triangle DEF.', 'Answer:',
+             fig=fig([(2, 1), (5, 1), (2, 4)], [(-2, 1), (-5, 1), (-2, 4)], names=[(2, 1, 'A'), (5, 1, 'B'), (2, 4, 'C'), (-2, 1, 'D'), (-5, 1, 'E'), (-2, 4, 'F')]),
+             key='A reflection across the y-axis'),
+          sa('Describe a rigid motion that maps triangle ABC onto triangle A\'B\'C\'.', 'Answer:',
+             fig=fig([(1, 2), (3, 2), (1, 5)], [(3, -2), (5, -2), (3, 1)], names=[(1, 2, 'A'), (3, 2, 'B'), (1, 5, 'C'), (3, -2, "A'"), (5, -2, "B'"), (3, 1, "C'")]),
+             key='A translation 2 units right and 4 units down'),
+          mc('Figure P is mapped onto figure Q by a 90° rotation followed by a translation.\nWhich statement is true?',
+             ['P and Q are congruent.', 'Q is larger than P.', 'P and Q have different angle measures.', 'P and Q are not congruent because they face different directions.']),
+          sa('Explain why a triangle and its image after a dilation with a scale factor of 2 are not congruent.', 'Explanation:',
+             key='The dilation doubles every side length, but rigid motions (which show congruence) keep lengths the same.'),
+          tf('Two figures are congruent if a sequence of rotations, reflections, and translations maps one onto the other.', key=True),
+      ],
+      back=[
+          B('Draw a polygon from its vertices', '6.G.A.3', [
+              plot('Draw the triangle with vertices (1, 1), (4, 1), and (1, 3).', grid(5, 4), key='The triangle with those three vertices'),
+              sa('A triangle has vertices (1, 1), (4, 1), and (1, 3).\nHow long is the side from (1, 1) to (4, 1)?', 'Length:', key='3 units'),
+              mc('A rectangle has vertices (0, 0), (5, 0), and (5, 2).\nWhat is the fourth vertex?', ['(0, 2)', '(2, 5)', '(5, 5)', '(2, 0)']),
+              tf('The side from (1, 1) to (1, 3) is 2 units long.', key=True),
+              tf('The points (2, 1), (2, 5), and (6, 1) form a triangle with a side 3 units long.', key=False, note='Its sides along the grid lines are 4 units long.'),
+          ]),
+          B('Use signs to locate points across the axes', '6.NS.C.6.b', [
+              sa('The point (5, 2) is reflected across the y-axis.\nWhat is its image?', 'Image:', key='(-5, 2)'),
+              sa('The point (-1, -4) is reflected across the x-axis.\nWhat is its image?', 'Image:', key='(-1, 4)'),
+              mc('Points (3, 2) and (3, -2) differ only in the sign of the y-coordinate.\nHow are they related?', ['They are reflections across the x-axis.', 'They are reflections across the y-axis.', 'They are the same point.', 'They are 3 units apart.']),
+              tf('(-4, 1) and (4, 1) are reflections of each other across the y-axis.', key=True),
+              tf('(2, -6) and (-2, 6) are reflections of each other across the x-axis.', key=False),
+          ]),
+      ],
+      f1=B('Use corresponding parts to explain triangle congruence', 'HSG-CO.B.7', [
+          sa('Triangle ABC is congruent to triangle DEF, with AB = 5 and angle B = 40°.\nWhich side and which angle of DEF must equal these?', 'Answer:', key='DE = 5 and angle E = 40°'),
+          sa('Two triangles have all corresponding sides and all corresponding angles congruent.\nWhat can you conclude? Explain with rigid motions.', 'Answer:',
+             key='The triangles are congruent; a sequence of rigid motions maps one onto the other.'),
+          mc('Triangle PQR is congruent to triangle XYZ.\nWhich statement must be true?', ['QR = YZ', 'PQ = YZ', 'Angle P = angle Z', 'PR = XY']),
+          tf('Corresponding parts of congruent triangles are congruent.', key=True),
+          tf('If triangle ABC is congruent to triangle DEF, then AC = EF.', key=False, note='AC = DF.'),
+      ]),
+      f2=B('Use triangle congruence criteria', 'HSG-CO.B.8', [
+          sa('Two triangles have AB = DE, angle A = angle D, and AC = DF.\nWhich criterion shows that they are congruent?', 'Criterion:', key='SAS'),
+          sa('Two triangles have angle A = angle D, AB = DE, and angle B = angle E.\nWhich criterion shows that they are congruent?', 'Criterion:', key='ASA'),
+          mc('Which is NOT a valid congruence criterion for triangles?', ['AAA', 'SSS', 'SAS', 'ASA']),
+          tf('SSS means that three pairs of equal sides show two triangles are congruent.', key=True),
+          tf('Two sides and an angle that is not between them (SSA) always prove two triangles congruent.', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 8.G.A.3 (translations)
+    S('8.G.A.3', 'Translate figures on the coordinate plane',
+      main=[
+          plot('Translate triangle ABC 4 units right and 2 units down. Draw the image.',
+               fig([(-5, 1), (-2, 1), (-4, 4)], names=[(-5, 1, 'A'), (-2, 1, 'B'), (-4, 4, 'C')]), key='The triangle with vertices A\'(-1, -1), B\'(2, -1), and C\'(0, 2)'),
+          sa('The point P(3, -2) is translated 5 units left and 4 units up.\nWhat are the coordinates of the image?', 'Image:', key='(-2, 2)'),
+          mc('Which rule describes a translation 6 units down?', ['(x, y) → (x, y - 6)', '(x, y) → (x - 6, y)', '(x, y) → (x, y + 6)', '(x, y) → (x + 6, y)']),
+          sa('A translation maps A(2, 5) to A\'(-1, 7).\nWhere does it map B(4, 0)?', 'Image:', key='(1, 2)'),
+          tf('The rule (x, y) → (x + 3, y - 1) moves every point 3 units right and 1 unit down.', key=True),
+      ],
+      back=[
+          B('Find and plot points in all four quadrants', '6.NS.C.6.c', [
+              plot('Plot the points (-3, 2) and (4, -5).', fig(), key='Points at (-3, 2) and (4, -5)'),
+              sa('What are the coordinates of point R?', 'Coordinates:', fig=fig(names=[(5, -3, 'R')]), key='(5, -3)'),
+              mc('Which point is 2 units to the left of (1, 4)?', ['(-1, 4)', '(3, 4)', '(1, 2)', '(1, 6)']),
+              tf('Moving 3 units up from (2, -1) gives (2, 2).', key=True),
+              tf('Moving 4 units left from (0, 0) gives (0, -4).', key=False),
+          ]),
+          B('Add integers', '7.NS.A.1.b', [
+              sa('Add.\n-4 + 4', 'Sum:', key='0'),
+              sa('Add.\n3 + (-5)', 'Sum:', key='-2'),
+              mc('Add.\n-1 + 6', ['5', '-7', '7', '-5']),
+              tf('-2 + (-3) = -5', key=True),
+              tf('5 + (-8) = 3', key=False),
+          ]),
+      ],
+      f1=B('Describe transformations as functions and decide which preserve distance', 'HSG-CO.A.2', [
+          sa('Write the rule for a translation 2 units left and 7 units up.', 'Rule:', key='(x, y) → (x - 2, y + 7)'),
+          sa('Does the rule (x, y) → (2x, y) keep distances the same? Explain.', 'Answer:', key='No. It doubles horizontal distances; the segment from (0, 0) to (1, 0) becomes 2 units long.'),
+          mc('Which transformation keeps all distances and angles the same?', ['(x, y) → (x + 4, y - 1)', '(x, y) → (3x, 3y)', '(x, y) → (x, 2y)', '(x, y) → (x², y)']),
+          tf('A translation is a function whose inputs and outputs are points of the plane.', key=True),
+          tf('The rule (x, y) → (x + 1, y + 1) changes the length of every segment.', key=False),
+      ]),
+      f2=B('Find the point that divides a segment in a given ratio', 'HSG-GPE.B.6', [
+          sa('Find the midpoint of the segment from (2, 4) to (8, 10).', 'Midpoint:', key='(5, 7)'),
+          sa('Find the point that is {1/3} of the way from A(0, 0) to B(9, 6).', 'Point:', key='(3, 2)'),
+          mc('Point P is on segment AB from A(1, 1) to B(7, 4), with AP : PB = 2 : 1.\nWhat are the coordinates of P?', ['(5, 3)', '(3, 2)', '(4, 2.5)', '(6, 3)']),
+          tf('The midpoint of the segment from (-4, 2) to (6, -2) is (1, 0).', key=True),
+          tf('The point halfway from (0, 0) to (10, 4) is (10, 2).', key=False, note='The midpoint is (5, 2).'),
+      ])),
+
+    # ------------------------------------------------------------------ 8.G.A.3 (reflections)
+    S('8.G.A.3', 'Reflect figures across the x-axis and the y-axis',
+      main=[
+          plot('Reflect triangle ABC across the x-axis. Draw the image.', fig([(1, 1), (5, 2), (2, 4)], names=[(1, 1, 'A'), (5, 2, 'B'), (2, 4, 'C')]),
+               key='The triangle with vertices A\'(1, -1), B\'(5, -2), and C\'(2, -4)'),
+          sa('The point (-3, 5) is reflected across the y-axis.\nWhat are the coordinates of the image?', 'Image:', key='(3, 5)'),
+          mc('Which rule describes a reflection across the x-axis?', ['(x, y) → (x, -y)', '(x, y) → (-x, y)', '(x, y) → (y, x)', '(x, y) → (-x, -y)']),
+          sa('A segment has endpoints (2, 3) and (5, 1). It is reflected across the y-axis.\nWhat are the endpoints of the image?', 'Endpoints:', key='(-2, 3) and (-5, 1)'),
+          tf('Reflecting (4, -6) across the x-axis gives (-4, -6).', key=False, note='The image is (4, 6).'),
+      ],
+      back=[
+          B('Locate points that are reflections across the axes', '6.NS.C.6.b', [
+              sa('The point (7, -2) is reflected across the x-axis.\nWhat is its image?', 'Image:', key='(7, 2)'),
+              sa('The point (-6, -3) is reflected across the y-axis.\nWhat is its image?', 'Image:', key='(6, -3)'),
+              mc('Reflecting a point across the y-axis changes...', ['the sign of the x-coordinate', 'the sign of the y-coordinate', 'both signs', 'neither sign']),
+              tf('(0, 5) is its own reflection across the y-axis.', key=True),
+              tf('The reflection of (-1, 8) across the y-axis is (-1, -8).', key=False),
+          ]),
+          B('Find the opposite of a number', '6.NS.C.6.a', [
+              sa('What is the opposite of -7?', 'Opposite:', key='7'),
+              sa('What is the opposite of 2.5?', 'Opposite:', key='-2.5'),
+              mc('Which pair are opposites?', ['-4 and 4', '-4 and -4', '4 and {1/4}', '0 and 1']),
+              tf('The opposite of the opposite of 3 is 3.', key=True),
+              tf('The opposite of 0 is -1.', key=False),
+          ]),
+      ],
+      f1=B('Describe the rotations and reflections that carry a polygon onto itself', 'HSG-CO.A.3', [
+          sa('How many lines of symmetry does a square have?', 'Lines:', key='4'),
+          sa('Which rotations (between 0° and 360°) about its center carry a regular hexagon onto itself?', 'Rotations:', key='60°, 120°, 180°, 240°, and 300°'),
+          mc('Which figure is carried onto itself by a 180° rotation but has no line of symmetry?',
+             ['A parallelogram that is not a rectangle or a rhombus', 'A square', 'An isosceles trapezoid', 'An equilateral triangle']),
+          tf('A rectangle that is not a square has exactly 2 lines of symmetry.', key=True),
+          tf('An isosceles trapezoid is carried onto itself by a 90° rotation.', key=False),
+      ]),
+      f2=B('Draw the image of a figure after a sequence of transformations', 'HSG-CO.B.6', [
+          plot('Reflect triangle ABC across the x-axis, then reflect that image across the y-axis. Draw the final image.',
+               fig([(1, 2), (4, 2), (2, 5)], names=[(1, 2, 'A'), (4, 2, 'B'), (2, 5, 'C')]), key='The triangle with vertices A\'\'(-1, -2), B\'\'(-4, -2), and C\'\'(-2, -5)'),
+          sa('What single transformation has the same effect as a reflection across the x-axis followed by a reflection across the y-axis?', 'Answer:', key='A 180° rotation about the origin'),
+          mc('The point (3, 1) is reflected across the line y = x.\nWhat is its image?', ['(1, 3)', '(-3, 1)', '(3, -1)', '(-1, -3)']),
+          tf('Reflecting a figure across one line and then across a parallel line has the same effect as a translation.', key=True),
+          tf('Doing a translation and a reflection in the other order always gives the same image.', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 8.G.A.3 (rotations)
+    S('8.G.A.3', 'Rotate figures 90° and 180° about the origin',
+      main=[
+          plot('Rotate triangle ABC 90° counterclockwise about the origin. Draw the image.', fig([(1, 1), (4, 1), (1, 3)], names=[(1, 1, 'A'), (4, 1, 'B'), (1, 3, 'C')]),
+               key='The triangle with vertices A\'(-1, 1), B\'(-1, 4), and C\'(-3, 1)'),
+          sa('The point (5, -2) is rotated 180° about the origin.\nWhat are the coordinates of the image?', 'Image:', key='(-5, 2)'),
+          mc('Which rule describes a 90° clockwise rotation about the origin?', ['(x, y) → (y, -x)', '(x, y) → (-y, x)', '(x, y) → (-x, -y)', '(x, y) → (y, x)']),
+          sa('The point (2, 3) is rotated 90° counterclockwise about the origin.\nWhat are the coordinates of the image?', 'Image:', key='(-3, 2)'),
+          tf('Rotating (-4, 1) by 180° about the origin gives (4, -1).', key=True),
+      ],
+      back=[
+          B('Relate turns to angle measures', '4.MD.C.5.a', [
+              sa('How many degrees are in a quarter turn?', 'Degrees:', key='90°'),
+              sa('How many degrees are in a half turn?', 'Degrees:', key='180°'),
+              mc('How many degrees are in a three-quarter turn?', ['270°', '90°', '180°', '360°']),
+              tf('A full turn is 360°.', key=True),
+              tf('A half turn is 90°.', key=False),
+          ]),
+          B('Locate a point reflected across both axes', '6.NS.C.6.b', [
+              sa('The point (3, 4) is reflected across the x-axis and then across the y-axis.\nWhat is the final image?', 'Image:', key='(-3, -4)'),
+              sa('The point (-2, 5) is reflected across both axes.\nWhat is the final image?', 'Image:', key='(2, -5)'),
+              mc('Reflecting a point across both axes changes...', ['the signs of both coordinates', 'only the x-coordinate', 'only the y-coordinate', 'neither coordinate']),
+              tf('Reflecting (1, -6) across both axes gives (-1, 6).', key=True),
+              tf('Reflecting (4, 4) across both axes gives (4, 4).', key=False),
+          ]),
+      ],
+      f1=B('Describe a rotation in terms of distance and angle', 'HSG-CO.A.4', [
+          sa('A rotation of 120° about point O maps A to A\'.\nWhich lengths and which angle are determined by the rotation?', 'Answer:', key='OA = OA\', and angle AOA\' = 120°.'),
+          sa('P(6, 0) is rotated 60° counterclockwise about the origin.\nHow far is the image from the origin?', 'Distance:', key='6 units'),
+          mc('A rotation about point O maps every point P to a point P\' so that...',
+             ['OP = OP\' and angle POP\' is the angle of rotation', 'PP\' is parallel to one fixed line', 'P\' is twice as far from O as P', 'P\' is on the line of reflection']),
+          tf('In a rotation by a nonzero angle less than 360°, the center is the only point that does not move.', key=True),
+          tf('A 90° rotation maps every horizontal segment to another horizontal segment.', key=False, note='It maps horizontal segments to vertical segments.'),
+      ]),
+      f2=B('Use relationships among central angles, inscribed angles, and radii', 'HSG-C.A.2', [
+          sa('A central angle of a circle measures 80°.\nWhat does an inscribed angle that intercepts the same arc measure?', 'Measure:', key='40°'),
+          sa('An inscribed angle intercepts a semicircle.\nWhat is its measure?', 'Measure:', key='90°'),
+          mc('A radius is drawn to the point where a tangent line touches a circle.\nWhat angle do the radius and the tangent line form?', ['90°', '45°', '180°', '60°']),
+          tf('Rotating a circle about its center by any angle carries the circle onto itself.', key=True),
+          tf('An inscribed angle measures twice its intercepted arc.', key=False, note='It measures half of its intercepted arc.'),
+      ])),
+
+    # ------------------------------------------------------------------ 8.G.A.3 (dilations)
+    S('8.G.A.3', 'Dilate figures on the coordinate plane with the origin as the center',
+      main=[
+          plot('Dilate triangle ABC by a scale factor of 2 with the origin as the center. Draw the image.', fig([(1, 1), (3, 1), (1, 2)], names=[(1, 1, 'A'), (3, 1, 'B'), (1, 2, 'C')]),
+               key='The triangle with vertices A\'(2, 2), B\'(6, 2), and C\'(2, 4)'),
+          sa('The point (6, -4) is dilated by a scale factor of {1/2} with the origin as the center.\nWhat are the coordinates of the image?', 'Image:', key='(3, -2)'),
+          mc('Which rule describes a dilation with a scale factor of 3 and the origin as the center?', ['(x, y) → (3x, 3y)', '(x, y) → (x + 3, y + 3)', '(x, y) → (3x, y)', '(x, y) → ({x/3}, {y/3})']),
+          sa('A dilation with the origin as the center maps (4, 2) to (10, 5).\nWhat is the scale factor?', 'Scale factor:', key='2.5', note='5/2 is also correct.'),
+          tf('A dilation with a scale factor of {1/3} and the origin as the center maps (9, 6) to (3, 2).', key=True),
+      ],
+      back=[
+          B('Use a scale factor to find lengths in a scale drawing', '7.G.A.1', [
+              sa('A 4 cm segment is enlarged by a scale factor of 3.\nHow long is the new segment?', 'Length:', key='12 cm'),
+              sa('A 10 cm segment is reduced by a scale factor of {1/2}.\nHow long is the new segment?', 'Length:', key='5 cm'),
+              mc('A rectangle 2 cm by 5 cm is enlarged by a scale factor of 4.\nWhat are the new dimensions?', ['8 cm by 20 cm', '6 cm by 9 cm', '2 cm by 20 cm', '8 cm by 5 cm']),
+              tf('A scale factor greater than 1 makes a figure larger.', key=True),
+              tf('A scale factor of {1/4} makes each length 4 times as long.', key=False),
+          ]),
+          B('Multiply rational numbers', '7.NS.A.2.a', [
+              sa('Multiply.\n2 × (-4)', 'Product:', key='-8'),
+              sa('Multiply.\n{1/2} × (-6)', 'Product:', key='-3'),
+              mc('Multiply.\n3.5 × 4', ['14', '7.5', '12', '0.875']),
+              tf('3 × (-2) = -6', key=True),
+              tf('{1/3} × 9 = 27', key=False),
+          ]),
+      ],
+      f1=B('Verify the properties of dilations', 'HSG-SRT.A.1', [
+          sa('A dilation with the origin as the center and a scale factor of 3 is applied to the line y = x + 1.\nWhat is the equation of the image?', 'Equation:', key='y = x + 3 (a line parallel to the original)'),
+          sa('A segment 4 units long is dilated by a scale factor of 2.5.\nHow long is the image?', 'Length:', key='10 units'),
+          mc('A dilation is applied to a line that passes through the center of dilation.\nWhat is the image?', ['The same line', 'A parallel line', 'A perpendicular line', 'A single point']),
+          tf('A dilation maps a line that does not pass through the center to a parallel line.', key=True),
+          tf('A dilation with a scale factor of 2 doubles every angle.', key=False, note='Dilations keep angle measures the same.'),
+      ]),
+      f2=B('Use similar triangles to solve problems', 'HSG-SRT.B.5', [
+          sa('A 6-foot person casts a 4-foot shadow. At the same time, a tree casts a 22-foot shadow.\nHow tall is the tree?', 'Height:', key='33 feet'),
+          sa('Triangle ABC is similar to triangle DEF, with AB = 8, DE = 12, and BC = 10.\nFind EF.', 'EF =', key='15'),
+          mc('A segment parallel to one side of a triangle splits a second side into parts of 3 and 6. It splits the third side into a first part of 4 and a second part.\nHow long is the second part?', ['8', '2', '4.5', '12']),
+          tf('In similar triangles, the ratio of the perimeters equals the scale factor.', key=True),
+          tf('Triangles with sides 3, 4, 5 and 6, 8, 12 are similar.', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 8.G.A.4
+    S('8.G.A.4', 'Describe a sequence of transformations that shows two figures are similar',
+      main=[
+          sa('Describe a sequence of transformations that maps triangle ABC onto triangle DEF.', 'Answer:',
+             fig=fig([(1, 1), (3, 1), (1, 2)], [(-2, -2), (-6, -2), (-2, -4)], names=[(1, 1, 'A'), (3, 1, 'B'), (1, 2, 'C'), (-2, -2, 'D'), (-6, -2, 'E'), (-2, -4, 'F')]),
+             key='A dilation with a scale factor of 2 and the origin as the center, followed by a 180° rotation about the origin.',
+             note='Any correct sequence is accepted, for example the rotation first, then the dilation.'),
+          sa('Explain why a 2-by-3 rectangle and a 4-by-6 rectangle are similar.', 'Explanation:',
+             key='A dilation with a scale factor of 2 (followed by rigid motions to move it into place) maps the first rectangle onto the second.'),
+          mc('Which sequence of transformations maps a figure onto a figure that is similar but not congruent?',
+             ['A dilation with a scale factor of 3, then a translation', 'A rotation, then a translation', 'Two reflections', 'A translation only']),
+          sa('Are a 3-4-5 triangle and a 5-12-13 triangle similar? Explain.', 'Answer:',
+             key='No. The ratios of corresponding sides (3/5, 4/12, 5/13) are not equal, so no dilation and rigid motions can map one onto the other.'),
+          tf('Two figures are similar if a sequence of rotations, reflections, translations, and dilations maps one onto the other.', key=True),
+      ],
+      back=[
+          B('Find a scale factor between scale copies', '7.G.A.1', [
+              sa('A 3 cm side becomes 12 cm in a scale copy.\nWhat is the scale factor?', 'Scale factor:', key='4'),
+              sa('A 15 m side becomes 5 m in a scale copy.\nWhat is the scale factor?', 'Scale factor:', key='1/3'),
+              mc('A triangle\'s sides are 2, 3, and 4. Which side lengths are a scale copy?', ['6, 9, 12', '4, 5, 6', '3, 4, 5', '2, 6, 8']),
+              tf('A scale copy with a scale factor of 1 is the same size as the original.', key=True),
+              tf('A rectangle 2 by 3 and a rectangle 3 by 4 are scale copies of each other.', key=False),
+          ]),
+          B('Decide whether two ratios are equivalent', '7.RP.A.2.a', [
+              sa('Are 4 : 6 and 10 : 15 equivalent ratios?', 'Answer:', key='Yes; both equal 2 : 3.'),
+              sa('Are 3 : 5 and 9 : 12 equivalent ratios?', 'Answer:', key='No; 3/5 = 0.6 and 9/12 = 0.75.'),
+              mc('Which ratio is equivalent to 5 : 8?', ['15 : 24', '10 : 13', '8 : 5', '25 : 48']),
+              tf('2 : 7 and 6 : 21 are equivalent ratios.', key=True),
+              tf('4 : 5 and 5 : 6 are equivalent ratios.', key=False),
+          ]),
+      ],
+      f1=B('Use similarity transformations to decide whether triangles are similar', 'HSG-SRT.A.2', [
+          sa('Triangle ABC has sides 5, 7, and 9. Triangle DEF has sides 10, 14, and 18.\nAre they similar? If so, what is the scale factor from ABC to DEF?', 'Answer:', key='Yes; the scale factor is 2.'),
+          sa('Two triangles are similar. Explain what is true about their corresponding angles and sides.', 'Answer:', key='Corresponding angles are equal, and corresponding sides are proportional.'),
+          mc('Triangle PQR is similar to triangle STU with a scale factor of 3. PQ = 4.\nWhat is ST?', ['12', '4', '7', '{4/3}']),
+          tf('If a dilation followed by a rotation maps one triangle onto another, the triangles are similar.', key=True),
+          tf('Any two rectangles are similar.', key=False),
+      ]),
+      f2=B('Use a translation and a dilation to show that any two circles are similar', 'HSG-C.A.1', [
+          sa('Circle A has center (0, 0) and radius 2. Circle B has center (5, 1) and radius 6.\nDescribe a translation followed by a dilation that maps circle A onto circle B.', 'Answer:',
+             key='Translate 5 units right and 1 unit up, then dilate about (5, 1) with a scale factor of 3.',
+             note='Any correct sequence is accepted, for example a dilation about (0, 0) with scale factor 3 followed by a translation 5 units right and 1 unit up.'),
+          sa('What scale factor of a dilation about the center maps a circle with a radius of 4 onto a circle with the same center and a radius of 10?', 'Scale factor:', key='2.5', note='{5/2} is also correct.'),
+          mc('Which statement explains why any two circles are similar?',
+             ['A translation moves one center onto the other, and then a dilation about that center makes the radii equal.', 'All circles have the same area.',
+              'All circles have the same radius.', 'A rotation alone maps any circle onto any other circle.']),
+          tf('Any two circles are similar.', key=True),
+          tf('A circle with a radius of 3 can be mapped onto a circle with a radius of 6 by a translation alone.', key=False, note='A translation keeps the radius 3; a dilation is also needed.'),
+      ])),
+
+    # ------------------------------------------------------------------ 8.G.A.5 (triangle angle sum)
+    S('8.G.A.5', 'Use the angle sum and exterior angles of a triangle',
+      main=[
+          sa('Two angles of a triangle measure 52° and 71°.\nWhat does the third angle measure?', 'Measure:', key='57°'),
+          sa('The angles of a triangle measure x°, (x + 10)°, and (2x - 30)°.\nWrite and solve an equation to find x.', 'Equation and answer:',
+             key='The equation x + (x + 10) + (2x - 30) = 180 and the answer x = 50', note=EQ),
+          mc('In the figure, what is the value of x?', ['55', '125', '35', '70'], fig=EXTERIOR),
+          work('Explain why an exterior angle of a triangle equals the sum of the two remote interior angles. Give a reason for each step.', 'Conclusion:',
+               method=STEPS + ' Example: the exterior angle and the adjacent interior angle form a linear pair, so they add to 180°; the three interior angles also add to 180°; '
+                              'so the exterior angle equals the sum of the other two interior angles.',
+               key='The exterior angle = the sum of the two remote interior angles'),
+          tf('A triangle can have two obtuse angles.', key=False, note='Two obtuse angles alone add to more than 180°.'),
+      ],
+      back=[
+          B('Write and solve equations for supplementary and complementary angles', '7.G.B.5', [
+              sa('Two supplementary angles measure x° and 130°.\nWhat is x?', 'x =', key='50'),
+              sa('Two complementary angles measure 2x° and 40°.\nWhat is x?', 'x =', key='25'),
+              mc('Angles of x° and (x + 30)° are supplementary.\nWhat is x?', ['75', '60', '105', '150']),
+              tf('Angles of 47° and 43° are complementary.', key=True),
+              tf('Angles of 100° and 90° are supplementary.', key=False),
+          ]),
+          B('Find an unknown angle in a sum of angles', '4.MD.C.7', [
+              sa('A 90° angle is split into two angles. One is 35°.\nWhat is the other?', 'Measure:', key='55°'),
+              sa('A straight angle (180°) is split into two angles. One is 110°.\nWhat is the other?', 'Measure:', key='70°'),
+              mc('An angle of 120° is split into angles of 75° and x°.\nWhat is x?', ['45', '195', '55', '35']),
+              tf('Angles of 30° and 60° together make a 90° angle.', key=True),
+              tf('Angles of 80° and 80° together make a 180° angle.', key=False),
+          ]),
+      ],
+      f1=B('Prove theorems about triangles', 'HSG-CO.C.10', [
+          work('Prove that the angles of triangle ABC add to 180°. Use a line through C that is parallel to AB. Give a reason for each step.', 'Conclusion:',
+               method=STEPS + ' Example: draw line l through C parallel to AB. The angles at C along l add to 180° (straight angle). The two outer ones equal angles A and B '
+                              '(alternate interior angles, l ∥ AB). So angle A + angle B + angle C = 180°.',
+               key='Angle A + angle B + angle C = 180°'),
+          sa('The angles of a triangle are 2x°, 3x°, and 4x°.\nWhat is x?', 'x =', key='20'),
+          mc('An isosceles triangle has base angles of 40°.\nWhat does its third angle measure?', ['100°', '40°', '80°', '140°']),
+          tf('The base angles of an isosceles triangle are congruent.', key=True),
+          tf('An exterior angle of a triangle equals the sum of all three interior angles.', key=False),
+      ]),
+      f2=B('Define trigonometric ratios from similar right triangles', 'HSG-SRT.C.6', [
+          sa('A right triangle has a leg of 3 opposite angle A, a leg of 4 next to angle A, and a hypotenuse of 5.\nWhat is sin A?', 'sin A =', key='3/5'),
+          sa('A right triangle has a leg of 3 opposite angle A, a leg of 4 next to angle A, and a hypotenuse of 5.\nWhat is tan A?', 'tan A =', key='3/4'),
+          mc('A right triangle has a leg of 3 opposite angle A, a leg of 4 next to angle A, and a hypotenuse of 5.\nWhat is cos A?', ['{4/5}', '{3/5}', '{3/4}', '{5/4}']),
+          tf('In every right triangle with a 30° angle, the side opposite the 30° angle is half the hypotenuse, so sin 30° = {1/2}.', key=True),
+          tf('sin A changes when a right triangle is enlarged but its angles stay the same.', key=False, note='Similar right triangles have equal ratios.'),
+      ])),
+
+    # ------------------------------------------------------------------ 8.G.A.5 (parallel lines)
+    S('8.G.A.5', 'Write and solve equations for angles formed by parallel lines cut by a transversal',
+      main=[
+          sa('In the figure, lines m and n are parallel and angle 2 = 52°.\nWhat does angle 6 measure? Give the reason.', 'Answer:', fig=PARALLEL, key='52°; corresponding angles are congruent.'),
+          sa('In the figure, lines m and n are parallel. Angle 1 = (3x + 10)° and angle 8 = 115°.\nWrite and solve an equation for x.', 'Equation and answer:', fig=PARALLEL,
+             key='The equation 3x + 10 = 115 (alternate interior angles are congruent) and the answer x = 35', note=EQ),
+          mc('In the figure, lines m and n are parallel. Angle 2 = (2x + 4)° and angle 8 = (4x - 10)°.\nWhat is x?', ['31', '7', '43', '93'], fig=PARALLEL),
+          sa('In the figure, lines m and n are parallel and angle 4 = 128°.\nWhat does angle 5 measure? Give the reasons.', 'Answer:', fig=PARALLEL,
+             key='128°: angle 1 = angle 4 (vertical angles), and angle 5 = angle 1 (corresponding angles).'),
+          tf('In the figure, angles 3 and 6 are alternate exterior angles, so they are congruent when m and n are parallel.', fig=PARALLEL, key=True),
+      ],
+      back=[
+          B('Write and solve equations for vertical and adjacent angles', '7.G.B.5', [
+              sa('Two lines intersect. Vertical angles measure (2x + 20)° and 80°.\nWhat is x?', 'x =', key='30'),
+              sa('Two lines intersect. Adjacent angles measure x° and 3x°.\nWhat is x?', 'x =', key='45'),
+              mc('Two lines intersect. Adjacent angles measure (x + 40)° and 2x°.\nWhat is x?', ['{140/3}', '40', '70', '50']),
+              tf('Vertical angles of 5x° and 75° give x = 15.', key=True),
+              tf('Adjacent angles that form a straight line measure (x + 10)° and x°. Then x = 90.', key=False, note='x = 85.'),
+          ]),
+          B('Solve two-step equations', '7.EE.B.4.a', [
+              sa('Solve for x.\n3x + 10 = 115', 'x =', key='35'),
+              sa('Solve for x.\n2x - 15 = 75', 'x =', key='45'),
+              mc('Solve for x.\n6x - 6 = 180', ['x = 31', 'x = 29', 'x = 174', 'x = 30']),
+              tf('x = 20 is the solution of 4x + 20 = 100.', key=True),
+              tf('x = 25 is the solution of 5x - 5 = 115.', key=False, note='The solution is x = 24.'),
+          ]),
+      ],
+      f1=B('Prove that alternate interior angles are congruent', 'HSG-CO.C.9', [
+          work('In the figure, lines m and n are parallel. Prove that angle 1 = angle 8. Give a reason for each step.', 'Conclusion:', fig=PARALLEL,
+               method=STEPS + ' Example: angle 1 = angle 5 (corresponding angles, m ∥ n); angle 5 = angle 8 (vertical angles); so angle 1 = angle 8.',
+               key='Angle 1 = angle 8'),
+          work('In the figure, lines m and n are parallel. Prove that angle 2 + angle 8 = 180°. Give a reason for each step.', 'Conclusion:', fig=PARALLEL,
+               method=STEPS + ' Example: angle 6 + angle 8 = 180° (linear pair); angle 2 = angle 6 (corresponding angles); so angle 2 + angle 8 = 180°.',
+               key='Angle 2 + angle 8 = 180°'),
+          mc('A proof says: angle 1 = angle 5 (corresponding angles). Angle 5 = angle 8 (?). So angle 1 = angle 8.\nWhat is the missing reason?',
+             ['Vertical angles are congruent.', 'Linear pairs are supplementary.', 'Alternate interior angles are congruent.', 'The triangle angle sum is 180°.'], fig=PARALLEL),
+          tf('If corresponding angles formed by a transversal are congruent, then the two lines are parallel.', key=True),
+          tf('"The angles look equal in the figure" is a valid reason in a proof.', key=False),
+      ]),
+      f2=B('Use slopes to show that lines are parallel or perpendicular', 'HSG-GPE.B.5', [
+          sa('A transversal crosses the lines y = 2x + 1 and y = 2x - 3.\nAre the two lines parallel? Explain with slopes.', 'Answer:', key='Yes; both lines have slope 2 and different y-intercepts.'),
+          sa('Write an equation of the line through (1, 4) that is perpendicular to y = -{1/2}x + 3.', 'Equation:', key='y = 2x + 2'),
+          mc('Which pair of lines is perpendicular?', ['y = 3x + 1 and y = -{1/3}x', 'y = 3x + 1 and y = 3x - 1', 'y = 3x and y = -3x', 'y = x and y = x + 2']),
+          tf('Two non-vertical lines are parallel exactly when their slopes are equal.', key=True),
+          tf('The lines y = {2/5}x and y = {5/2}x are perpendicular.', key=False, note='Perpendicular slopes multiply to -1.'),
+      ])),
+
+    # ------------------------------------------------------------------ 8.G.A.5 (angle-angle)
+    S('8.G.A.5', 'Use the angle-angle criterion to show that triangles are similar',
+      main=[
+          sa('Triangle ABC has angles of 35° and 85°. Triangle DEF has angles of 35° and 60°.\nAre the triangles similar? Explain.', 'Answer:',
+             key='Yes. The third angle of DEF is 180° - 35° - 60° = 85°, so two pairs of angles are equal (AA).'),
+          sa('A 5-foot post casts a 3-foot shadow. At the same time, a tree casts a 12-foot shadow.\nExplain why the two triangles are similar, and find the height of the tree.', 'Answer:',
+             key='Both triangles have a right angle and the same angle of the sun\'s rays, so they are similar by AA. The tree is 20 feet tall.', note='Grade both: the AA reason and 20 feet.'),
+          mc('Which information shows that two triangles are similar by the angle-angle criterion?',
+             ['Two pairs of corresponding angles are equal.', 'One pair of corresponding angles is equal.', 'All the sides are equal.', 'One pair of sides is proportional.']),
+          sa('In the figure, segment DE is parallel to BC.\nExplain why triangle ADE is similar to triangle ABC.', 'Explanation:', fig=PARALLEL_TRI,
+             key='The triangles share angle A, and angle ADE = angle ABC (corresponding angles, because DE ∥ BC). So they are similar by AA.'),
+          tf('Two triangles that each have a 90° angle and a 40° angle are similar.', key=True),
+      ],
+      back=[
+          B('Find a missing length in a scale copy', '7.G.A.1', [
+              sa('A triangle has sides 4, 6, and 8. In a scale copy, the side of 4 becomes 10.\nWhat does the side of 6 become?', 'Length:', key='15'),
+              sa('A drawing with a scale factor of 3 shows a 2 cm side.\nHow long is that side in the scale copy?', 'Length:', key='6 cm'),
+              mc('A 5-by-8 rectangle is scaled so the 5 becomes 15.\nWhat does the 8 become?', ['24', '18', '13', '40']),
+              tf('In a scale copy, every length is multiplied by the same scale factor.', key=True),
+              tf('In a scale copy with a scale factor of 2, every angle is doubled.', key=False),
+          ]),
+          B('Use the triangle angle sum to find a missing angle', '7.G.B.5', [
+              sa('A triangle has angles of 35° and 60°.\nWhat is the third angle?', 'Measure:', key='85°'),
+              sa('A right triangle has a 40° angle.\nWhat is the third angle?', 'Measure:', key='50°'),
+              mc('A triangle has angles of 90° and 25°.\nWhat is the third angle?', ['65°', '75°', '115°', '55°']),
+              tf('A triangle with angles of 50° and 60° has a third angle of 70°.', key=True),
+              tf('A triangle with angles of 45° and 45° has a third angle of 45°.', key=False),
+          ]),
+      ],
+      f1=B('Establish the angle-angle criterion with similarity transformations', 'HSG-SRT.A.3', [
+          sa('Triangles ABC and DEF have angle A = angle D and angle B = angle E.\nWhich transformations show that the triangles are similar?', 'Answer:',
+             key='A dilation that makes AB the same length as DE, followed by rigid motions that move the image onto DEF; the equal angles make the third vertices match.'),
+          sa('Why is it enough to know two pairs of equal angles to show triangles are similar?', 'Answer:', key='The third angles must also be equal, because each triangle\'s angles add to 180°.'),
+          mc('Triangles with angles 30°, 70°, 80° and 70°, 30°, 80° are...', ['similar', 'congruent in every case', 'not similar', 'impossible to compare']),
+          tf('Two equilateral triangles are always similar.', key=True),
+          tf('Two isosceles triangles are always similar.', key=False),
+      ]),
+      f2=B('Use similar triangles to solve problems', 'HSG-SRT.B.5', [
+          sa('A 1.5 m stick casts a 2 m shadow. A building casts a 36 m shadow at the same time.\nHow tall is the building?', 'Height:', key='27 m'),
+          sa('Triangle PQR is similar to triangle XYZ with PQ = 6, XY = 9, and QR = 8.\nFind YZ.', 'YZ =', key='12'),
+          mc('Two similar triangles have a scale factor of 3. The smaller one has a perimeter of 14.\nWhat is the larger one\'s perimeter?', ['42', '17', '126', '14']),
+          tf('A mirror can be used with similar triangles to find the height of a tall object.', key=True),
+          tf('If two triangles are similar with a scale factor of 2, their areas are also in the ratio 2 : 1.', key=False, note='Their areas are in the ratio 4 : 1.'),
+      ])),
+
+    # ------------------------------------------------------------------ 8.G.B.6 (proof)
+    S('8.G.B.6', 'Explain a proof of the Pythagorean theorem and its converse',
+      main=[
+          work('The figure shows a square with sides a + b, made of four right triangles and a tilted square with side c.\nExplain how the figure proves that a² + b² = c².', 'Conclusion:', fig=PROOF_SQ,
+               method='A complete argument: the large square\'s area is (a + b)² = a² + 2ab + b²; it is also 4 triangles (4 · {1/2}ab = 2ab) plus the inner square c²; '
+                      'so a² + 2ab + b² = 2ab + c², and subtracting 2ab gives a² + b² = c². Any equivalent wording is accepted.',
+               key='a² + b² = c²'),
+          sa('In the figure, write the area of the large square as the sum of the areas of the four triangles and the inner square.', 'Area:', fig=PROOF_SQ, key='4 · {1/2}ab + c² = 2ab + c²'),
+          mc('In the proof with the figure, which step comes after writing (a + b)² = 2ab + c²?',
+             ['Expand to a² + 2ab + b² = 2ab + c², then subtract 2ab from both sides', 'Divide both sides by c', 'Add 2ab to both sides', 'Take the square root of each term'], fig=PROOF_SQ),
+          sa('A triangle has sides a, b, and c with a² + b² = c². Explain why it must be a right triangle.', 'Explanation:',
+             key='A right triangle with legs a and b has a hypotenuse of √(a² + b²) = c. So the two triangles have the same three sides and are congruent (SSS), and the given triangle has a right angle too.'),
+          tf('The Pythagorean theorem a² + b² = c² is true for every triangle.', key=False, note='It is true only for right triangles.'),
+      ],
+      back=[
+          B('Find the area of a right triangle', '6.G.A.1', [
+              sa('A right triangle has legs of 3 and 4.\nWhat is its area?', 'Area:', key='6 square units'),
+              sa('A right triangle has legs of 5 and 12.\nWhat is its area?', 'Area:', key='30 square units'),
+              mc('What is the total area of four right triangles that each have legs of 2 and 6?', ['24', '12', '48', '6']),
+              tf('A right triangle with legs of 8 and 3 has an area of 12 square units.', key=True),
+              tf('A right triangle with legs of 6 and 6 has an area of 36 square units.', key=False),
+          ]),
+          B('Find the area of a square', '3.MD.C.7.b', [
+              sa('A square has sides of 7 units.\nWhat is its area?', 'Area:', key='49 square units'),
+              sa('A square has sides of 9 units.\nWhat is its area?', 'Area:', key='81 square units'),
+              mc('A square has sides of 5 units.\nWhat is its area?', ['25 square units', '20 square units', '10 square units', '15 square units']),
+              tf('A square with 4-unit sides has an area of 16 square units.', key=True),
+              tf('A square with 6-unit sides has an area of 24 square units.', key=False),
+          ]),
+      ],
+      f1=B('Prove the Pythagorean theorem with similar triangles', 'HSG-SRT.B.4', [
+          sa('In right triangle ABC with the right angle at C, altitude CD is drawn to hypotenuse AB.\nWhy is AC² = AD · AB?', 'Answer:',
+             key='Triangle ACD is similar to triangle ABC (AA), so AC/AB = AD/AC, which gives AC² = AD · AB.'),
+          sa('In the same triangle, BC² = BD · AB. Add this to AC² = AD · AB. What do you get?', 'Answer:',
+             key='AC² + BC² = AD · AB + BD · AB = AB(AD + BD) = AB · AB = AB².'),
+          mc('Which criterion shows that triangle ACD is similar to triangle ABC?', ['AA', 'SSS', 'SAS', 'ASA']),
+          tf('The altitude to the hypotenuse divides a right triangle into two triangles similar to it.', key=True),
+          tf('The altitude to the hypotenuse always cuts the hypotenuse into two equal parts.', key=False),
+      ]),
+      f2=B('Derive the equation of a circle from the Pythagorean theorem', 'HSG-GPE.A.1', [
+          sa('Write the equation of the circle with center (0, 0) and radius 5.', 'Equation:', key='x² + y² = 25'),
+          sa('Write the equation of the circle with center (2, -1) and radius 3.', 'Equation:', key='(x - 2)² + (y + 1)² = 9'),
+          mc('Which point is on the circle x² + y² = 100?', ['(6, 8)', '(10, 10)', '(5, 5)', '(6, 6)']),
+          tf('The equation (x - h)² + (y - k)² = r² comes from the Pythagorean theorem.', key=True),
+          tf('The circle x² + y² = 16 has a radius of 16.', key=False, note='Its radius is 4.'),
+      ])),
+
+    # ------------------------------------------------------------------ 8.G.B.6 (converse)
+    S('8.G.B.6', 'Use the converse of the Pythagorean theorem to decide whether a triangle is a right triangle',
+      main=[
+          sa('Is a triangle with sides 9, 12, and 15 a right triangle? Show your check.', 'Answer:', key='Yes. 9² + 12² = 81 + 144 = 225 = 15².'),
+          sa('Is a triangle with sides 7, 8, and 11 a right triangle? Show your check.', 'Answer:', key='No. 7² + 8² = 49 + 64 = 113, but 11² = 121.'),
+          mc('Which side lengths form a right triangle?', ['20, 21, 29', '5, 7, 9', '6, 8, 12', '10, 12, 15']),
+          sa('A carpenter checks a corner. Points 3 feet and 4 feet from the corner along the two edges are 5 feet apart.\nIs the corner a right angle? Explain.', 'Answer:', key='Yes. 3² + 4² = 5², so the angle is 90°.'),
+          tf('A triangle with sides 2, 3, and 4 is a right triangle.', key=False, note='4 + 9 = 13, but 4² = 16.'),
+      ],
+      back=[
+          B('Find the squares of whole numbers', '6.EE.A.1', [
+              sa('Find the value.\n15²', 'Value:', key='225'),
+              sa('Find the value.\n11²', 'Value:', key='121'),
+              mc('Find the value.\n13²', ['169', '26', '139', '196']),
+              tf('20² = 400', key=True),
+              tf('9² = 18', key=False),
+          ]),
+          B('Evaluate an expression with exponents', '6.EE.A.2.c', [
+              sa('Evaluate a² + b² when a = 6 and b = 8.', 'Value:', key='100'),
+              sa('Evaluate a² + b² when a = 5 and b = 12.', 'Value:', key='169'),
+              mc('Evaluate c² - a² when c = 10 and a = 6.', ['64', '16', '4', '136']),
+              tf('When a = 3 and b = 4, a² + b² = 25.', key=True),
+              tf('When a = 2 and b = 3, a² + b² = 25.', key=False),
+          ]),
+      ],
+      f1=B('Classify a triangle as acute, right, or obtuse from its side lengths', 'HSG-CO.C.10', [
+          sa('Is a triangle with sides 5, 6, and 8 acute, right, or obtuse? Explain.', 'Answer:', key='Obtuse; 5² + 6² = 61, which is less than 8² = 64.'),
+          sa('Is a triangle with sides 6, 7, and 8 acute, right, or obtuse? Explain.', 'Answer:', key='Acute; 6² + 7² = 85, which is greater than 8² = 64.'),
+          mc('A triangle has sides 8, 15, and 17.\nWhat kind of triangle is it?', ['Right', 'Acute', 'Obtuse', 'Not a triangle']),
+          tf('If a² + b² < c² for the longest side c, the triangle is obtuse.', key=True),
+          tf('A triangle with sides 4, 4, and 7 is acute.', key=False, note='4² + 4² = 32 < 49, so it is obtuse.'),
+      ]),
+      f2=B('Use coordinates to show that a triangle is a right triangle', 'HSG-GPE.B.4', [
+          sa('Is the triangle with vertices (1, 1), (4, 1), and (4, 5) a right triangle? Use side lengths.', 'Answer:', key='Yes. The sides are 3, 4, and 5, and 3² + 4² = 5².'),
+          sa('Use slopes to decide whether the triangle with vertices (0, 0), (2, 4), and (6, 2) has a right angle at (2, 4).', 'Answer:',
+             key='Yes. The slope from (2, 4) to (0, 0) is 2 and the slope from (2, 4) to (6, 2) is -1/2; their product is -1.'),
+          mc('Which triangle is a right triangle?', ['(0, 0), (3, 0), (0, 4)', '(0, 0), (3, 1), (1, 3)', '(0, 0), (2, 2), (4, 1)', '(1, 1), (2, 3), (3, 1)']),
+          tf('The triangle with vertices (0, 0), (5, 0), and (0, 5) is a right triangle.', key=True),
+          tf('The triangle with vertices (0, 0), (4, 0), and (2, 1) is a right triangle.', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 8.G.B.7 (2-D)
+    S('8.G.B.7', 'Use the Pythagorean theorem to find unknown lengths in two dimensions',
+      main=[
+          sa('Find the length of the hypotenuse.', 'Hypotenuse:', fig=tri(12, 9, 0, bl='12 cm', hl='9 cm'), key='15 cm'),
+          sa('A 13-foot ladder leans against a wall. Its base is 5 feet from the wall.\nHow high up the wall does it reach?', 'Height:', key='12 feet'),
+          mc('A rectangular screen is 48 inches wide and 36 inches tall.\nHow long is its diagonal?', ['60 inches', '84 inches', '42 inches', '72 inches']),
+          sa('A right triangle has a hypotenuse of 17 and a leg of 8.\nHow long is the other leg?', 'Leg:', key='15'),
+          tf('A square with 10 cm sides has a diagonal of about 14.1 cm.', key=True),
+      ],
+      back=[
+          B('Find the squares of decimals and whole numbers', '6.EE.A.1', [
+              sa('Find the value.\n14²', 'Value:', key='196'),
+              sa('Find the value.\n2.5²', 'Value:', key='6.25'),
+              mc('Find the value.\n17²', ['289', '34', '189', '279']),
+              tf('9² = 81', key=True),
+              tf('1.5² = 3', key=False),
+          ]),
+          B('Solve one-step equations', '6.EE.B.7', [
+              sa('Solve for x.\nx + 64 = 289', 'x =', key='225'),
+              sa('Solve for x.\n25 + x = 169', 'x =', key='144'),
+              mc('Solve for x.\n81 + x = 100', ['x = 19', 'x = 181', 'x = 9', 'x = 10']),
+              tf('x = 15 is the solution of x + 49 = 64.', key=True),
+              tf('x = 46 is the solution of 64 + x = 100.', key=False, note='The solution is x = 36.'),
+          ]),
+      ],
+      f1=B('Solve right triangles with the Pythagorean theorem and trigonometric ratios', 'HSG-SRT.C.8', [
+          sa('A right triangle has a hypotenuse of 10 and a 30° angle. sin 30° = 0.5.\nHow long is the side opposite the 30° angle?', 'Length:', key='5'),
+          sa('A ramp rises 3 feet over a horizontal distance of 4 feet.\nHow long is the ramp?', 'Length:', key='5 feet'),
+          mc('A kite string is 50 m long and makes a right triangle with the ground. The kite is 30 m above the ground.\nHow far is the kite horizontally from the person?', ['40 m', '20 m', '80 m', '58.3 m']),
+          tf('A right triangle with two 45° angles and legs of 7 has a hypotenuse of 7√2.', key=True),
+          tf('tan 45° = 2', key=False, note='tan 45° = 1.'),
+      ]),
+      f2=B('Apply geometric methods to solve design problems', 'HSG-MG.A.3', [
+          sa('A rectangular field is 120 m by 50 m.\nHow much shorter is walking along the diagonal than walking along two sides?', 'Answer:', key='40 m (170 m compared with 130 m)'),
+          sa('A TV is sold as a 50-inch TV (its diagonal). It is 40 inches wide.\nHow tall is it?', 'Height:', key='30 inches'),
+          mc('A cable runs from the top of a 12 m pole to a stake 5 m from the base of the pole.\nHow long is the cable?', ['13 m', '17 m', '7 m', '√119 m']),
+          tf('A 10-foot ladder whose base is 6 feet from a wall reaches 8 feet up the wall.', key=True),
+          tf('The diagonal of a 9-by-12 rectangle is 21.', key=False, note='The diagonal is 15.'),
+      ])),
+
+    # ------------------------------------------------------------------ 8.G.B.7 (3-D)
+    S('8.G.B.7', 'Use the Pythagorean theorem to find unknown lengths in three dimensions',
+      main=[
+          sa('A box is 4 inches long, 3 inches wide, and 12 inches tall.\nHow long is the diagonal from a bottom corner to the opposite top corner?', 'Length:',
+             fig=prism(4, 3, 12, ('4 in', '3 in', '12 in')), key='13 inches'),
+          sa('A cube has 6 cm edges.\nFind the diagonal of one face, and then the diagonal from one corner of the cube to the opposite corner. Give exact values.', 'Answer:',
+             key='Face diagonal 6√2 cm; cube diagonal 6√3 cm', note='Grade both values.'),
+          mc('Will a 26-inch stick fit inside a box that is 24 by 6 by 8 inches, from one corner to the opposite corner?',
+             ['Yes; the corner-to-corner diagonal is exactly 26 inches.', 'No; the diagonal is only 24 inches.', 'No; the box is too short.', 'Yes; the face diagonal is 30 inches.']),
+          sa('A right square pyramid has its top directly above the center of its base. Its base edges are 10 m and its height is 12 m.\nWhat is the slant height (from the top to the midpoint of a base edge)?', 'Slant height:', key='13 m'),
+          tf('The corner-to-corner diagonal of a 2 by 3 by 6 box is 7.', key=True),
+      ],
+      back=[
+          B('Identify the faces, edges, and vertices of a prism', '6.G.A.4', [
+              sa('How many faces does a rectangular prism have?', 'Faces:', key='6'),
+              sa('How many edges does a rectangular prism have?', 'Edges:', key='12'),
+              mc('How many vertices does a cube have?', ['8', '6', '12', '4']),
+              tf('Each face of a rectangular prism is a rectangle.', key=True),
+              tf('A triangular prism has 6 faces.', key=False, note='It has 5 faces.'),
+          ]),
+          B('Describe cross sections of right prisms', '7.G.A.3', [
+              sa('A right rectangular prism is sliced by a plane through two opposite vertical edges.\nWhat is the shape of the cross section?', 'Shape:', key='A rectangle'),
+              sa('A cube is sliced by a plane parallel to one face, through its interior.\nWhat is the shape of the cross section?', 'Shape:', key='A square'),
+              mc('A right rectangular prism is sliced parallel to its base, through its interior.\nWhat is the cross section?', ['A rectangle the same size as the base', 'A triangle', 'A circle', 'A pentagon']),
+              tf('A diagonal slice through a box can make a rectangle.', key=True),
+              tf('A slice of a cube parallel to a face can be a triangle.', key=False),
+          ]),
+      ],
+      f1=B('Use the Pythagorean theorem to solve problems in three dimensions', 'HSG-SRT.C.8', [
+          sa('A room is 12 ft long, 9 ft wide, and 8 ft high.\nHow long is the diagonal of the floor?', 'Length:', key='15 feet'),
+          sa('A room is 12 ft long, 9 ft wide, and 8 ft high.\nHow long is the diagonal from a floor corner to the opposite ceiling corner?', 'Length:', key='17 feet'),
+          mc('A box is 1 by 2 by 2.\nHow long is its corner-to-corner diagonal?', ['3', '5', '√5', '9']),
+          tf('The corner-to-corner diagonal of a cube with edge s is s√3.', key=True),
+          tf('A box 3 by 4 by 5 has a corner-to-corner diagonal of 12.', key=False, note='It is √50 = 5√2.'),
+      ]),
+      f2=B('Identify solids made by rotating two-dimensional figures', 'HSG-GMD.B.4', [
+          sa('A right triangle with legs 3 and 4 is rotated around the leg of length 4.\nWhat solid does it make, and what is its slant height?', 'Answer:', key='A cone with radius 3 and height 4; its slant height is 5.'),
+          sa('A 2-by-5 rectangle is rotated around one of its 5-unit sides.\nWhat solid does it make?', 'Solid:', key='A cylinder with radius 2 and height 5'),
+          mc('A sphere is sliced by a plane through its center.\nWhat is the cross section?', ['A circle with the same radius as the sphere', 'A smaller circle', 'An oval that is not a circle', 'A square']),
+          tf('Rotating a semicircle about its diameter makes a sphere.', key=True),
+          tf('A cube can never have a triangular cross section.', key=False, note='A slice through three corners next to one vertex is a triangle.'),
+      ])),
+
+    # ------------------------------------------------------------------ 8.G.B.8
+    S('8.G.B.8', 'Find the distance between two points on the coordinate plane',
+      main=[
+          sa('Find the distance between (1, 2) and (7, 10).', 'Distance:', key='10 units'),
+          sa('Find the distance between (-3, 4) and (2, -8).', 'Distance:', key='13 units'),
+          mc('What is the distance between (0, 0) and (4, 4), to the nearest tenth?', ['5.7 units', '8.0 units', '4.0 units', '16.0 units']),
+          draw_write('Plot A(-2, -1) and B(4, 7). Draw a right triangle with AB as its hypotenuse, and find AB.', fig(lo=-4, hi=8), 'AB =',
+                     draw='Points A and B, joined by the hypotenuse, with a horizontal leg of 6 units and a vertical leg of 8 units', key='10 units',
+                     note='Grade both: the right triangle with legs 6 and 8, and AB = 10 units.'),
+          tf('The distance between (-1, -1) and (2, 3) is 5 units.', key=True),
+      ],
+      back=[
+          B('Find distances along grid lines', '6.NS.C.8', [
+              sa('Find the distance between (-4, 2) and (5, 2).', 'Distance:', key='9 units'),
+              sa('Find the distance between (3, -6) and (3, 1).', 'Distance:', key='7 units'),
+              mc('Which two points are 8 units apart?', ['(-3, 0) and (5, 0)', '(-3, 0) and (3, 0)', '(0, -4) and (0, 3)', '(1, 1) and (1, 8)']),
+              tf('(2, -5) and (2, 5) are 10 units apart.', key=True),
+              tf('(-6, 3) and (-1, 3) are 7 units apart.', key=False),
+          ]),
+          B('Find a distance as the absolute value of a difference', '7.NS.A.1.c', [
+              sa('Find |7 - (-2)|.', 'Value:', key='9'),
+              sa('How far apart are -4 and 6 on a number line?', 'Distance:', key='10'),
+              mc('Which expression gives the distance between -8 and -3?', ['|-8 - (-3)|', '-8 - 3', '|-8 + 3| - 1', '-8 + (-3)']),
+              tf('The distance between -5 and 1 is 6.', key=True),
+              tf('The distance between -7 and -2 is 9.', key=False),
+          ]),
+      ],
+      f1=B('Use the Pythagorean theorem with coordinates to solve problems', 'HSG-SRT.C.8', [
+          sa('On a map grid, a park is at (2, 3) and a school is at (10, 9). Each unit is 1 km.\nHow far apart are they in a straight line?', 'Distance:', key='10 km'),
+          sa('A drone flies from (0, 0) to (12, 5) on a grid in meters.\nHow far does it fly in a straight line?', 'Distance:', key='13 m'),
+          mc('Which point is exactly 5 units from (1, 1)?', ['(4, 5)', '(5, 5)', '(6, 1)', '(1, 7)']),
+          tf('Every point that is 5 units from the origin lies on a circle with radius 5.', key=True),
+          tf('The points (0, 0) and (3, 3) are 6 units apart.', key=False),
+      ]),
+      f2=B('Use coordinates to find perimeters and areas of polygons', 'HSG-GPE.B.7', [
+          sa('Find the perimeter of the triangle with vertices (0, 0), (6, 0), and (6, 8).', 'Perimeter:', key='24 units'),
+          sa('Find the area of the triangle with vertices (0, 0), (6, 0), and (6, 8).', 'Area:', key='24 square units'),
+          mc('A rhombus has vertices (0, 0), (3, 4), (8, 4), and (5, 0).\nWhat is its perimeter?', ['20 units', '16 units', '25 units', '18 units']),
+          tf('A square with vertices (0, 0), (3, 1), (2, 4), and (-1, 3) has an area of 10 square units.', key=True),
+          tf('The rectangle with vertices (0, 0), (4, 0), (4, 3), and (0, 3) has a perimeter of 12 units.', key=False, note='Its perimeter is 14 units.'),
+      ])),
+
+    # ------------------------------------------------------------------ 8.G.C.9 (cylinder)
+    S('8.G.C.9', 'Find the volume of a cylinder',
+      main=[
+          sa('Find the volume of the cylinder in terms of π.', 'Volume:', fig=solid('cyl', 3, 8, '3 cm', '8 cm'), key='72π cubic centimeters'),
+          sa('A cylinder has a diameter of 10 inches and a height of 6 inches.\nFind its volume. Use 3.14 for π.', 'Volume:', key='471 cubic inches'),
+          mc('A can holds 128π cubic centimeters and has a radius of 4 cm.\nWhat is its height?', ['8 cm', '32 cm', '16 cm', '2 cm']),
+          sa('A cylinder-shaped tank has a radius of 2 m and a height of 5 m.\nHow many liters does it hold? Use 3.14 for π. (1 cubic meter = 1,000 liters)', 'Liters:', key='62,800 liters'),
+          tf('Doubling the radius of a cylinder doubles its volume.', key=False, note='It multiplies the volume by 4.'),
+      ],
+      back=[
+          B('Find the area of a circle', '7.G.B.4', [
+              sa('A circle has a radius of 3.\nWhat is its area in terms of π?', 'Area:', key='9π square units'),
+              sa('A circle has a diameter of 10 cm.\nWhat is its area? Use 3.14 for π.', 'Area:', key='78.5 square centimeters'),
+              mc('A circle has a radius of 4 m.\nWhat is its area in terms of π?', ['16π square meters', '8π square meters', '4π square meters', '64π square meters']),
+              tf('A circle with a radius of 1 has an area of π.', key=True),
+              tf('A circle with a diameter of 6 has an area of 36π.', key=False, note='The radius is 3, so the area is 9π.'),
+          ]),
+          B('Find the volume of a right prism as base area times height', '7.G.B.6', [
+              sa('A right prism has a base area of 20 square cm and a height of 7 cm.\nWhat is its volume?', 'Volume:', key='140 cubic centimeters'),
+              sa('A right triangular prism has a triangle base with area 6 square inches and a length of 10 inches.\nWhat is its volume?', 'Volume:', key='60 cubic inches'),
+              mc('A right prism has a base area of 15 square m and a height of 4 m.\nWhat is its volume?', ['60 cubic meters', '19 cubic meters', '30 cubic meters', '225 cubic meters']),
+              tf('The volume of any right prism is the area of its base times its height.', key=True),
+              tf('A prism with a base area of 9 and a height of 2 has a volume of 11.', key=False),
+          ]),
+      ],
+      f1=B('Give an informal argument for volume formulas', 'HSG-GMD.A.1', [
+          sa('Explain why the volume of a cylinder is the area of its base times its height.', 'Explanation:',
+             key='The cylinder is a stack of equal circles (cross sections) with area πr²; stacking them to height h gives πr² · h.'),
+          sa('A straight stack of coins and a slanted stack have the same coins and the same height.\nDo they have the same volume? Explain.', 'Answer:',
+             key='Yes. At every height the cross sections have the same area (Cavalieri\'s principle).'),
+          mc('An oblique cylinder and a right cylinder have the same radius and height.\nHow do their volumes compare?', ['They are equal.', 'The oblique one is larger.', 'The right one is larger.', 'It cannot be known.']),
+          tf('Cavalieri\'s principle compares the areas of cross sections at every height.', key=True),
+          tf('Leaning a stack of paper to one side increases its volume.', key=False),
+      ]),
+      f2=B('Use density with volume in a model', 'HSG-MG.A.2', [
+          sa('An aluminum cylinder has a radius of 2 cm and a height of 10 cm. Aluminum has a density of 2.7 grams per cubic centimeter.\nWhat is its mass? Use 3.14 for π.', 'Mass:', key='339.12 grams'),
+          sa('A town has 12,000 people and covers 30 square miles.\nWhat is its population density?', 'Density:', key='400 people per square mile'),
+          mc('A 500 cubic-centimeter block has a mass of 4,000 grams.\nWhat is its density?', ['8 grams per cubic centimeter', '0.125 gram per cubic centimeter', '4,500 grams', '2 grams per cubic centimeter']),
+          tf('If two objects have the same volume, the one with the greater density has the greater mass.', key=True),
+          tf('Density is volume divided by mass.', key=False, note='Density is mass divided by volume.'),
+      ])),
+
+    # ------------------------------------------------------------------ 8.G.C.9 (cone)
+    S('8.G.C.9', 'Find the volume of a cone',
+      main=[
+          sa('Find the volume of the cone in terms of π.', 'Volume:', fig=solid('cone', 3, 4, '3 in', '4 in'), key='12π cubic inches'),
+          sa('A cone has a diameter of 12 feet and a height of 10 feet.\nFind its volume. Use 3.14 for π.', 'Volume:', key='376.8 cubic feet'),
+          mc('A cone and a cylinder have the same base and the same height. The cylinder holds 90 cubic cm.\nHow much does the cone hold?', ['30 cubic cm', '270 cubic cm', '45 cubic cm', '90 cubic cm']),
+          sa('A cone has a volume of 50π cubic units and a radius of 5 units.\nWhat is its height?', 'Height:', key='6 units'),
+          tf('A cone with a radius of 6 and a height of 2 has a volume of 24π.', key=True),
+      ],
+      back=[
+          B('Find the area of a circle from its radius or diameter', '7.G.B.4', [
+              sa('A circle has a radius of 6.\nWhat is its area in terms of π?', 'Area:', key='36π square units'),
+              sa('A circle has a diameter of 4 m.\nWhat is its area in terms of π?', 'Area:', key='4π square meters'),
+              mc('A circle has a radius of 10 cm.\nWhat is its area? Use 3.14 for π.', ['314 square cm', '31.4 square cm', '62.8 square cm', '628 square cm']),
+              tf('A circle with a radius of 2 has an area of 4π.', key=True),
+              tf('A circle with a radius of 5 has an area of 10π.', key=False),
+          ]),
+          B('Multiply a fraction by a whole number', '5.NF.B.4.a', [
+              sa('Multiply.\n{1/3} × 36', 'Product:', key='12'),
+              sa('Multiply.\n{1/3} × 90', 'Product:', key='30'),
+              mc('Multiply.\n{1/3} × 48', ['16', '144', '12', '24']),
+              tf('{1/3} × 27 = 9', key=True),
+              tf('{1/3} × 15 = 45', key=False),
+          ]),
+      ],
+      f1=B('Explain why a cone\'s volume is one-third of a cylinder\'s', 'HSG-GMD.A.1', [
+          sa('A cone and a cylinder have the same base and height. Water from 3 full cones exactly fills the cylinder.\nWhat formula does this suggest for the cone\'s volume?', 'Formula:',
+             key='V = {1/3}πr²h'),
+          sa('Explain why an oblique cone and a right cone with the same base and height have the same volume.', 'Explanation:',
+             key='At every height their cross sections are circles with the same area (Cavalieri\'s principle).'),
+          mc('A pyramid and a prism have the same base and height.\nHow do their volumes compare?', ['The pyramid\'s is {1/3} of the prism\'s.', 'They are equal.', 'The pyramid\'s is {1/2} of the prism\'s.', 'The prism\'s is {1/3} of the pyramid\'s.']),
+          tf('A cone\'s volume formula has the same form as a pyramid\'s: {1/3} × base area × height.', key=True),
+          tf('A cone has half the volume of a cylinder with the same base and height.', key=False),
+      ]),
+      f2=B('Use volume formulas to solve problems', 'HSG-GMD.A.3', [
+          sa('A paper cone cup has a radius of 4 cm and a height of 9 cm.\nHow many full cups fill a cylinder-shaped jug with a radius of 8 cm and a height of 18 cm?', 'Cups:', key='24'),
+          sa('A cone-shaped pile of sand has a radius of 3 m and holds 30π cubic meters.\nHow tall is the pile?', 'Height:', key='10 m'),
+          mc('A cone has a radius of 6 and a height of 8.\nWhat is its slant height?', ['10', '14', '√28', '48']),
+          tf('Doubling the height of a cone doubles its volume.', key=True),
+          tf('Doubling the radius of a cone doubles its volume.', key=False, note='It multiplies the volume by 4.'),
+      ])),
+
+    # ------------------------------------------------------------------ 8.G.C.9 (sphere)
+    S('8.G.C.9', 'Find the volume of a sphere',
+      main=[
+          sa('Find the volume of the sphere in terms of π.', 'Volume:', fig=solid('sphere', 6, rlab='6 cm'), key='288π cubic centimeters'),
+          sa('A ball has a diameter of 10 cm.\nFind its volume to the nearest tenth. Use 3.14 for π.', 'Volume:', key='523.3 cubic centimeters'),
+          mc('A hemisphere (half of a sphere) has a radius of 3.\nWhat is its volume in terms of π?', ['18π', '36π', '9π', '27π']),
+          sa('A sphere has a volume of 36π cubic units.\nWhat is its radius?', 'Radius:', key='3 units'),
+          tf('A sphere with a radius of 1 has a volume of {4/3}π.', key=True),
+      ],
+      back=[
+          B('Find the volume of a cube', '6.G.A.2', [
+              sa('A cube has edges of 3 units.\nWhat is its volume?', 'Volume:', key='27 cubic units'),
+              sa('A cube has edges of {1/2} foot.\nWhat is its volume?', 'Volume:', key='1/8 cubic foot'),
+              mc('A cube has edges of 6 cm.\nWhat is its volume?', ['216 cubic cm', '36 cubic cm', '18 cubic cm', '72 cubic cm']),
+              tf('A cube with 4-inch edges has a volume of 64 cubic inches.', key=True),
+              tf('A cube with 5-meter edges has a volume of 15 cubic meters.', key=False),
+          ]),
+          B('Evaluate a formula with a fraction and an exponent', '6.EE.A.2.c', [
+              sa('Use V = {4/3}r³. Find V when r = 3.', 'V =', key='36'),
+              sa('Use V = {4/3}r³. Find V when r = 6.', 'V =', key='288'),
+              mc('Use V = {1/2}r³. Find V when r = 2.', ['4', '8', '3', '6']),
+              tf('When r = 1, {4/3}r³ = {4/3}.', key=True),
+              tf('When r = 2, {4/3}r³ = 8.', key=False, note='It is 32/3.'),
+          ]),
+      ],
+      f1=B('Model objects with spheres, cylinders, and cones', 'HSG-MG.A.1', [
+          sa('An orange is modeled as a sphere with a diameter of 8 cm.\nEstimate its volume in terms of π.', 'Volume:', key='{256/3}π cubic centimeters', note='About 268 cubic centimeters is also correct.'),
+          sa('A tennis ball can holds 3 balls in a cylinder whose radius equals the ball\'s radius r and whose height is 6r.\nWhat fraction of the can is filled by the balls?', 'Fraction:', key='2/3'),
+          mc('Which shape is the best model for a scoop of ice cream?', ['A sphere', 'A cube', 'A cone', 'A cylinder']),
+          tf('Modeling Earth as a sphere is a useful approximation even though Earth is slightly flattened.', key=True),
+          tf('A soccer ball is best modeled by a cylinder.', key=False),
+      ]),
+      f2=B('Use volume formulas to solve problems with spheres', 'HSG-GMD.A.3', [
+          sa('A spherical tank has a radius of 3 m.\nHow many liters does it hold? Use 3.14 for π. (1 cubic meter = 1,000 liters)', 'Liters:', key='113,040 liters'),
+          sa('A sphere and a cylinder have the same radius r, and the cylinder\'s height is 2r.\nWhat is the ratio of the sphere\'s volume to the cylinder\'s volume?', 'Ratio:', key='2 : 3'),
+          mc('Doubling a sphere\'s radius multiplies its volume by...', ['8', '2', '4', '6']),
+          tf('A sphere with volume 288π has a radius of 6.', key=True),
+          tf('A hemisphere with radius 6 has a volume of 288π.', key=False, note='It has a volume of 144π.'),
+      ])),
+
+    # ------------------------------------------------------------------ 8.G.C.9 (composite)
+    S('8.G.C.9', 'Solve real-world problems with the volumes of cylinders, cones, and spheres',
+      main=[
+          sa('A grain silo is a cylinder with a radius of 6 m and a height of 10 m, topped with half of a sphere with a radius of 6 m.\nFind its volume in terms of π.', 'Volume:', key='504π cubic meters'),
+          sa('An ice cream cone (radius 3 cm, height 10 cm) is filled and topped with half of a sphere of ice cream with a radius of 3 cm.\nFind the total volume of ice cream in terms of π.', 'Volume:', key='48π cubic centimeters'),
+          mc('A cone and a cylinder each have a radius of 2 and a height of 6.\nHow many full cones of water fill the cylinder?', ['3', '2', '6', '1']),
+          sa('A cylinder with a radius of 5 cm holds water. A ball with a radius of 3 cm is dropped in and sinks completely.\nHow many centimeters does the water level rise?', 'Rise:', key='1.44 cm'),
+          tf('A sphere with radius r fits exactly in a cylinder with radius r and height 2r. The sphere\'s volume is {2/3} of the cylinder\'s.', key=True),
+      ],
+      back=[
+          B('Find the volume of a solid made of two prisms', '5.MD.C.5.c', [
+              sa('A 4 by 3 by 2 prism and a 2 by 3 by 2 prism are joined with no overlap.\nWhat is the total volume?', 'Volume:', key='36 cubic units'),
+              sa('Two cubes with 2-unit edges are joined face to face.\nWhat is the total volume?', 'Volume:', key='16 cubic units'),
+              mc('A 5 by 2 by 1 prism and a 1 by 2 by 1 prism are joined with no overlap.\nWhat is the total volume?', ['12 cubic units', '10 cubic units', '7 cubic units', '20 cubic units']),
+              tf('Volumes of parts that do not overlap can be added to find a total volume.', key=True),
+              tf('A 3 by 3 by 3 cube and a 1 by 1 by 1 cube joined with no overlap have a volume of 30 cubic units.', key=False, note='27 + 1 = 28.'),
+          ]),
+          B('Find the volume of a right prism', '7.G.B.6', [
+              sa('A right rectangular prism is 6 cm by 4 cm by 5 cm.\nWhat is its volume?', 'Volume:', key='120 cubic centimeters'),
+              sa('A right prism has a base area of 12 square feet and a height of 3 feet.\nWhat is its volume?', 'Volume:', key='36 cubic feet'),
+              mc('A right triangular prism has a base area of 10 square inches and a length of 8 inches.\nWhat is its volume?', ['80 cubic inches', '18 cubic inches', '40 cubic inches', '800 cubic inches']),
+              tf('A cube with edges of 10 m has a volume of 1,000 cubic meters.', key=True),
+              tf('A 2 by 5 by 10 box has a volume of 17 cubic units.', key=False),
+          ]),
+      ],
+      f1=B('Model real objects with combinations of solids', 'HSG-MG.A.1', [
+          sa('A capsule-shaped vitamin is a cylinder 1 cm long with a radius of 0.3 cm, with half of a sphere of radius 0.3 cm on each end.\nWhat solids make up the model?', 'Answer:',
+             key='A cylinder and two half-spheres (together, one whole sphere)'),
+          sa('A pencil is modeled as a cylinder with a cone at one end.\nWhich measurements are needed to find its volume?', 'Answer:', key='The radius, the length of the cylinder part, and the height of the cone part.'),
+          mc('Which solids best model a traffic cone sitting on a square base?', ['A cone on a square prism', 'A sphere on a cylinder', 'Two cylinders', 'A cube on a pyramid']),
+          tf('A model can use simpler shapes even when the real object is not exactly that shape.', key=True),
+          tf('A water bottle is best modeled as one sphere.', key=False),
+      ]),
+      f2=B('Apply volume to design and capacity problems', 'HSG-MG.A.3', [
+          sa('A company wants a cylinder-shaped can that holds 500π cubic cm with a radius of 5 cm.\nHow tall must the can be?', 'Height:', key='20 cm'),
+          sa('A cone-shaped funnel has a radius of 6 cm and a height of 10 cm. Water drains at 6π cubic cm per second.\nHow long does a full funnel take to drain?', 'Time:', key='20 seconds'),
+          mc('Each can is a cylinder holding the same volume.\nWhich design uses the most metal for the curved side?', ['Radius 2 cm, height 25 cm', 'Radius 5 cm, height 4 cm', 'Radius 4 cm, height 6.25 cm', 'Radius 2.5 cm, height 16 cm']),
+          tf('Two cans with the same volume can have different surface areas.', key=True),
+          tf('A taller can always holds more than a shorter can.', key=False),
+      ])),
+]
