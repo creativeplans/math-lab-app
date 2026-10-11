@@ -29,6 +29,7 @@ import build  # noqa: E402
 import render as R  # noqa: E402
 import answers as A  # noqa: E402
 import revisions  # noqa: E402
+import qb  # noqa: E402
 
 
 def r_for_snap(r):
@@ -127,13 +128,25 @@ def describe(f):
         return '. '.join(parts) + '.'
     if k == 'dot':
         title = f.get('title') or f.get('xlabel') or ''
-        items = ['%s: %d' % (label_of(f, v), n) for v, n in sorted(f['data'].items())]
+        data = f['data']
+        if isinstance(data, (list, tuple)):  # a list of values, as the renderer accepts
+            data = {v: data.count(v) for v in set(data)}
+        items = ['%s: %d' % (label_of(f, v), n) for v, n in sorted(data.items())]
+        if not items:
+            return 'Dot plot%s, number line from %s to %s, with no dots; the student draws the dots.' % (
+                (' titled "%s"' % title) if title else '', label_of(f, f['min']), label_of(f, f['max']))
         return 'Dot plot%s, number line from %s to %s. Dots per value: %s.' % (
             (' titled "%s"' % title) if title else '', label_of(f, f['min']), label_of(f, f['max']), ', '.join(items))
     if k == 'clock':
         if not f.get('hands', True):
             return 'Analog clock face with the numbers 1 to 12 and minute marks, with no hands; the student draws the hands.'
         return 'Analog clock with an hour hand and a minute hand showing %d:%02d.' % (f['hour'], f['minute'])
+    if k == 'circle':
+        part = {'r': ' A radius is drawn and labeled "%s".', 'd': ' A diameter is drawn and labeled "%s".'}.get(f.get('seg'), '')
+        return 'A circle with its center marked.' + (part % A.plain(f.get('label', '')) if part else '')
+    if k == 'spinner':
+        return 'A spinner divided into %d equal sections labeled %s, with an arrow from the center.' % (
+            len(f['labels']), ', '.join(A.plain(l) for l in f['labels']))
     if k == 'picgraph':
         if not any(n for _, n in f['rows']):
             return 'Blank picture graph "%s" with rows for %s and the key ● = %s; the student draws the symbols.' % (
@@ -205,6 +218,8 @@ def describe(f):
         if f.get('grid'):
             return 'Rectangular prism built from unit cubes: %s cubes long, %s cubes wide, %s cubes tall.' % (
                 num(f['l']), num(f['w']), num(f['h']))
+        if not labs:
+            return 'Rectangular prism with no edge lengths labeled.'
         return 'Rectangular prism with edges labeled %s (length, width, height).' % ', '.join(A.plain(l) for l in labs)
     if k == 'tape':
         out = []
@@ -365,7 +380,7 @@ def export(out_dir):
                 rec = dict(
                     id=qid, uid=r['uid'], collection=build.COLLECTION['id'], set=st['num'], section=key, section_code=code,
                     relation=RELATION.get(code, 'backward'), number=i, of=len(qs),
-                    standard=std, standard_grade=int(std.split('.')[0]) if std[0].isdigit() else std.split('.')[0],
+                    standard=std, standard_grade=std.split('.')[0] if std.startswith('K') else qb.grade_num(std),
                     domain=r['domain'], skill=name, nearest_related=bool(nearest),
                     type=r['type'],
                     response={'mc': 'select one', 'tf': 'select true or false', 'sa': 'write',

@@ -205,7 +205,7 @@ def build(out, mode='questions'):
             c.addOutlineEntry(cur_std, 'set%d' % st['num'], 1, closed=True)
         pageno += 1
         secs = sections(st)
-        rows = [(s[0], s[1] + (' \u2014 nearest related (no direct Grade %s step)' % s[2].split('.')[0] if s[4] else ''), s[2])
+        rows = [(s[0], s[1] + (' \u2014 nearest related (no direct Grade %s step)' % qb.grade_num(s[2]) if s[4] else ''), s[2])
                 for s in secs]
         heading_page(c, 'SET %d  •  %s  •  %s' % (st['num'], st['std'], st['domain'].upper()),
                      st['title'], None, rows, pageno)

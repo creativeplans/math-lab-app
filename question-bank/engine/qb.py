@@ -19,7 +19,42 @@ DOMAINS = {
 }
 
 
+# High-school standards (used as Grade 9 forward branches: Algebra I and Geometry), coded like HSA-REI.B.3.
+HS_DOMAINS = {
+    'N-RN': 'Number & Quantity: The Real Number System',
+    'N-Q': 'Number & Quantity: Quantities',
+    'A-SSE': 'Algebra: Seeing Structure in Expressions',
+    'A-APR': 'Algebra: Arithmetic with Polynomials & Rational Expressions',
+    'A-CED': 'Algebra: Creating Equations',
+    'A-REI': 'Algebra: Reasoning with Equations & Inequalities',
+    'F-IF': 'Functions: Interpreting Functions',
+    'F-BF': 'Functions: Building Functions',
+    'F-LE': 'Functions: Linear, Quadratic & Exponential Models',
+    'G-CO': 'Geometry: Congruence',
+    'G-SRT': 'Geometry: Similarity, Right Triangles & Trigonometry',
+    'G-C': 'Geometry: Circles',
+    'G-GPE': 'Geometry: Expressing Geometric Properties with Equations',
+    'G-GMD': 'Geometry: Geometric Measurement & Dimension',
+    'G-MG': 'Geometry: Modeling with Geometry',
+    'S-ID': 'Statistics & Probability: Interpreting Categorical & Quantitative Data',
+    'S-IC': 'Statistics & Probability: Making Inferences & Justifying Conclusions',
+    'S-CP': 'Statistics & Probability: Conditional Probability & the Rules of Probability',
+}
+HS_GRADE = 9  # high-school standards are labeled as Grade 9 (Algebra I / Geometry)
+
+
+def grade_num(code):
+    """Grade of a standard code as a number: K -> 0, high school (HS...) -> 9."""
+    if code.startswith('HS'):
+        return HS_GRADE
+    g = code.split('.')[0]
+    return 0 if g == 'K' else int(g)
+
+
 def std_info(code):
+    if code.startswith('HS'):
+        dom = code[2:].split('.')[0]
+        return 'Grade 9 (High School)', HS_DOMAINS[dom]
     grade, dom = code.split('.')[:2]
     return 'Grade ' + grade, DOMAINS[dom]
 
@@ -38,7 +73,7 @@ def tf(stem, fig=None, **kw):
 
 def nearest_note(std=None):
     """Note for a nearest-related forward branch, naming the branch's own grade (from its standard)."""
-    g = int(std.split('.')[0]) if std else GRADE + 2
+    g = grade_num(std) if std else GRADE + 2
     return ('No Grade %d standard directly continues this skill. '
             'This branch uses the nearest related Grade %d standard.' % (g, g))
 
@@ -60,12 +95,11 @@ def S(std, title, main, back, f1, f2, num=None):
     assert len(main) == 5, (std, title)
     assert std.startswith('%d.' % GRADE), std
     for b in back:
-        g = b['std'].split('.')[0]
-        if not (g == 'K' or int(g) < GRADE):  # a backward branch must use an earlier grade
+        if not grade_num(b['std']) < GRADE:  # a backward branch must use an earlier grade
             SAME_GRADE_BACKWARD.append((title, b['title'], b['std']))
             assert not STRICT_BACKWARD, (title, b['std'])
-    assert f1['std'].startswith('%d.' % (GRADE + 1)), f1['std']
-    assert f2['std'].startswith('%d.' % (GRADE + 2)), f2['std']
+    assert grade_num(f1['std']) == GRADE + 1, f1['std']
+    assert grade_num(f2['std']) == GRADE + 2, f2['std']  # Grade 9 forward branches use high-school (HS...) standards
     d = dict(std=std, title=title, main=main, back=back, f1=f1, f2=f2)
     if num:
         d['fixed_num'] = num

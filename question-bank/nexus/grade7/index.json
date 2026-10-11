@@ -1,0 +1,5222 @@
+{
+ "format_version": 1,
+ "collection": {
+  "id": "G7",
+  "grade": 7,
+  "version": "1.0.0",
+  "date": "2026-10-11"
+ },
+ "grade": 7,
+ "title": "Grade 7 Common Core Math — Question Sets",
+ "set_count": 61,
+ "question_count": 1525,
+ "figure_count": 122,
+ "id_format": "S<set>-<section>-Q<number>. Section codes: M = MAIN (Grade 7), B1, B2, ... = BACKWARD branches (earlier grades), F1 = FORWARD 1 (Grade 8), F2 = FORWARD 2 (Grade 9). id is unique within this collection; uid = \"G7:\" + id is unique across all grade collections (the collection, not a question's standard grade, is the namespace: this bank also holds Grade 8 and 9 forward questions). Set and branch numbers are fixed: they need not be consecutive, and an ID is never reused for a different skill (see revisions.json).",
+ "revisions_file": null,
+ "relations": {
+  "main": "the Grade 7 skill the set is built around",
+  "backward": "a prerequisite skill to check when a student misses MAIN questions",
+  "forward1": "the directly connected Grade 8 skill",
+  "forward2": "the next connected Grade 9 skill",
+  "nearest_related": "true marks a forward branch whose grade has no direct continuation of the skill; it uses the nearest related standard of that grade"
+ },
+ "grading_rules": [
+  "Match each student response to its key record by the question ID printed on the question page (for example S40-F2-Q3). The page number is the same in the Question Collection and the Answer Key. IDs are unique within one grade's collection; across collections use uid (for example G5:S40-F2-Q3).",
+  "Multiple choice and true/false: the response is correct when the chosen letter equals correct_letter, or when the student wrote the text of the correct choice.",
+  "Short answer: accept any mathematically equivalent form unless the question asks for a specific form (equivalent fractions, decimals, and mixed numbers; a ratio written as a : b, a to b, or a/b; \"x = 5\" or \"5\"; terms of an expression in any order). Units are not required unless the question asks for them.",
+  "When an answer has several parts (separated by semicolons, or with labels such as \"Rate of change:\"), every part must be correct.",
+  "Drawing / plotting questions (type plot): correct_answer describes what a correct drawing shows. Judge the student's drawing against it.",
+  "Drawing + written questions (type plot_text): the student draws on the figure AND writes an answer. drawing_answer describes the correct drawing and correct_answer the written answer. Both must be correct: every requested point, segment or shape in the drawing, and the written conclusion.",
+  "Answer with required work (type work): required_method says what the shown work must use. A correct final answer without that work earns partial credit only; correct work with a slip in the final answer is also partial.",
+  "Explain / describe questions: grading_note says what a correct response must include; accept any reasonable wording.",
+  "grading_note also lists other accepted answers and the work behind an answer. It is guidance for the grader, not for students."
+ ],
+ "markup": "prompt is plain text. prompt_markup uses {a/b} for a stacked fraction and 2{1/2} for a mixed number.",
+ "sets": [
+  {
+   "set": 1,
+   "set_id": "S1",
+   "file": "sets/S01.json",
+   "standard": "7.RP.A.1",
+   "title": "Compute unit rates associated with ratios of fractions",
+   "domain": "Ratios & Proportional Relationships",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Compute unit rates associated with ratios of fractions",
+     "standard": "7.RP.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S1-M-Q1",
+      "S1-M-Q2",
+      "S1-M-Q3",
+      "S1-M-Q4",
+      "S1-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find a unit rate from whole-number quantities",
+     "standard": "6.RP.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S1-B1-Q1",
+      "S1-B1-Q2",
+      "S1-B1-Q3",
+      "S1-B1-Q4",
+      "S1-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Divide a fraction by a fraction",
+     "standard": "6.NS.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S1-B2-Q1",
+      "S1-B2-Q2",
+      "S1-B2-Q3",
+      "S1-B2-Q4",
+      "S1-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Compare unit rates shown in different representations",
+     "standard": "8.EE.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S1-F1-Q1",
+      "S1-F1-Q2",
+      "S1-F1-Q3",
+      "S1-F1-Q4",
+      "S1-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Convert rates from one unit to another",
+     "standard": "HSN-Q.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S1-F2-Q1",
+      "S1-F2-Q2",
+      "S1-F2-Q3",
+      "S1-F2-Q4",
+      "S1-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 2,
+   "set_id": "S2",
+   "file": "sets/S02.json",
+   "standard": "7.RP.A.2.a",
+   "title": "Decide whether two quantities in a table are in a proportional relationship",
+   "domain": "Ratios & Proportional Relationships",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Decide whether two quantities in a table are in a proportional relationship",
+     "standard": "7.RP.A.2.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S2-M-Q1",
+      "S2-M-Q2",
+      "S2-M-Q3",
+      "S2-M-Q4",
+      "S2-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Complete a table of equivalent ratios",
+     "standard": "6.RP.A.3.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S2-B1-Q1",
+      "S2-B1-Q2",
+      "S2-B1-Q3",
+      "S2-B1-Q4",
+      "S2-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Divide multi-digit decimals",
+     "standard": "6.NS.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S2-B2-Q1",
+      "S2-B2-Q2",
+      "S2-B2-Q3",
+      "S2-B2-Q4",
+      "S2-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Decide whether a table shows a linear function",
+     "standard": "8.F.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S2-F1-Q1",
+      "S2-F1-Q2",
+      "S2-F1-Q3",
+      "S2-F1-Q4",
+      "S2-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Recognize a quantity that changes at a constant rate per unit interval",
+     "standard": "HSF-LE.A.1.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S2-F2-Q1",
+      "S2-F2-Q2",
+      "S2-F2-Q3",
+      "S2-F2-Q4",
+      "S2-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 3,
+   "set_id": "S3",
+   "file": "sets/S03.json",
+   "standard": "7.RP.A.2.a",
+   "title": "Decide whether a graph shows a proportional relationship",
+   "domain": "Ratios & Proportional Relationships",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Decide whether a graph shows a proportional relationship",
+     "standard": "7.RP.A.2.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S3-M-Q1",
+      "S3-M-Q2",
+      "S3-M-Q3",
+      "S3-M-Q4",
+      "S3-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Plot the pairs from a ratio table",
+     "standard": "6.RP.A.3.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S3-B1-Q1",
+      "S3-B1-Q2",
+      "S3-B1-Q3",
+      "S3-B1-Q4",
+      "S3-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Find the coordinates of points in all four quadrants",
+     "standard": "6.NS.C.6.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S3-B2-Q1",
+      "S3-B2-Q2",
+      "S3-B2-Q3",
+      "S3-B2-Q4",
+      "S3-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Recognize linear functions whose graphs do not pass through the origin",
+     "standard": "8.F.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S3-F1-Q1",
+      "S3-F1-Q2",
+      "S3-F1-Q3",
+      "S3-F1-Q4",
+      "S3-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Interpret the intercepts of a graph in context",
+     "standard": "HSF-IF.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S3-F2-Q1",
+      "S3-F2-Q2",
+      "S3-F2-Q3",
+      "S3-F2-Q4",
+      "S3-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 4,
+   "set_id": "S4",
+   "file": "sets/S04.json",
+   "standard": "7.RP.A.2.b",
+   "title": "Identify the constant of proportionality in tables, graphs, equations, and descriptions",
+   "domain": "Ratios & Proportional Relationships",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Identify the constant of proportionality in tables, graphs, equations, and descriptions",
+     "standard": "7.RP.A.2.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S4-M-Q1",
+      "S4-M-Q2",
+      "S4-M-Q3",
+      "S4-M-Q4",
+      "S4-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Describe a unit rate",
+     "standard": "6.RP.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S4-B1-Q1",
+      "S4-B1-Q2",
+      "S4-B1-Q3",
+      "S4-B1-Q4",
+      "S4-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Write an equation from a table of values",
+     "standard": "6.EE.C.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S4-B2-Q1",
+      "S4-B2-Q2",
+      "S4-B2-Q3",
+      "S4-B2-Q4",
+      "S4-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Interpret the unit rate as the slope of a graph",
+     "standard": "8.EE.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S4-F1-Q1",
+      "S4-F1-Q2",
+      "S4-F1-Q3",
+      "S4-F1-Q4",
+      "S4-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Write a linear function from two points or a description",
+     "standard": "HSF-LE.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S4-F2-Q1",
+      "S4-F2-Q2",
+      "S4-F2-Q3",
+      "S4-F2-Q4",
+      "S4-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 5,
+   "set_id": "S5",
+   "file": "sets/S05.json",
+   "standard": "7.RP.A.2.c",
+   "title": "Represent a proportional relationship with an equation",
+   "domain": "Ratios & Proportional Relationships",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Represent a proportional relationship with an equation",
+     "standard": "7.RP.A.2.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S5-M-Q1",
+      "S5-M-Q2",
+      "S5-M-Q3",
+      "S5-M-Q4",
+      "S5-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Write an equation for a dependent variable",
+     "standard": "6.EE.C.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S5-B1-Q1",
+      "S5-B1-Q2",
+      "S5-B1-Q3",
+      "S5-B1-Q4",
+      "S5-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Solve unit rate problems",
+     "standard": "6.RP.A.3.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S5-B2-Q1",
+      "S5-B2-Q2",
+      "S5-B2-Q3",
+      "S5-B2-Q4",
+      "S5-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Construct a linear function y = mx + b from a situation",
+     "standard": "8.F.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S5-F1-Q1",
+      "S5-F1-Q2",
+      "S5-F1-Q3",
+      "S5-F1-Q4",
+      "S5-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Write an equation in two variables for a situation",
+     "standard": "HSA-CED.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S5-F2-Q1",
+      "S5-F2-Q2",
+      "S5-F2-Q3",
+      "S5-F2-Q4",
+      "S5-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 6,
+   "set_id": "S6",
+   "file": "sets/S06.json",
+   "standard": "7.RP.A.2.d",
+   "title": "Explain what a point on the graph of a proportional relationship means",
+   "domain": "Ratios & Proportional Relationships",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Explain what a point on the graph of a proportional relationship means",
+     "standard": "7.RP.A.2.d",
+     "nearest_related": false,
+     "question_ids": [
+      "S6-M-Q1",
+      "S6-M-Q2",
+      "S6-M-Q3",
+      "S6-M-Q4",
+      "S6-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Explain a pair in a table of equivalent ratios",
+     "standard": "6.RP.A.3.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S6-B1-Q1",
+      "S6-B1-Q2",
+      "S6-B1-Q3",
+      "S6-B1-Q4",
+      "S6-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Read values from the graph of an equation",
+     "standard": "6.EE.C.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S6-B2-Q1",
+      "S6-B2-Q2",
+      "S6-B2-Q3",
+      "S6-B2-Q4",
+      "S6-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Interpret the rate of change and initial value of a linear function",
+     "standard": "8.F.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S6-F1-Q1",
+      "S6-F1-Q2",
+      "S6-F1-Q3",
+      "S6-F1-Q4",
+      "S6-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Calculate the average rate of change over an interval",
+     "standard": "HSF-IF.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S6-F2-Q1",
+      "S6-F2-Q2",
+      "S6-F2-Q3",
+      "S6-F2-Q4",
+      "S6-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 7,
+   "set_id": "S7",
+   "file": "sets/S07.json",
+   "standard": "7.RP.A.3",
+   "title": "Solve multistep ratio problems",
+   "domain": "Ratios & Proportional Relationships",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Solve multistep ratio problems",
+     "standard": "7.RP.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S7-M-Q1",
+      "S7-M-Q2",
+      "S7-M-Q3",
+      "S7-M-Q4",
+      "S7-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Use ratio language to describe two quantities",
+     "standard": "6.RP.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S7-B1-Q1",
+      "S7-B1-Q2",
+      "S7-B1-Q3",
+      "S7-B1-Q4",
+      "S7-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Use a table of equivalent ratios to solve a problem",
+     "standard": "6.RP.A.3.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S7-B2-Q1",
+      "S7-B2-Q2",
+      "S7-B2-Q3",
+      "S7-B2-Q4",
+      "S7-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Solve linear equations with rational coefficients",
+     "standard": "8.EE.C.7.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S7-F1-Q1",
+      "S7-F1-Q2",
+      "S7-F1-Q3",
+      "S7-F1-Q4",
+      "S7-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Create one-variable equations to solve ratio problems",
+     "standard": "HSA-CED.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S7-F2-Q1",
+      "S7-F2-Q2",
+      "S7-F2-Q3",
+      "S7-F2-Q4",
+      "S7-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 8,
+   "set_id": "S8",
+   "file": "sets/S08.json",
+   "standard": "7.RP.A.3",
+   "title": "Find a percent increase or a percent decrease",
+   "domain": "Ratios & Proportional Relationships",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Find a percent increase or a percent decrease",
+     "standard": "7.RP.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S8-M-Q1",
+      "S8-M-Q2",
+      "S8-M-Q3",
+      "S8-M-Q4",
+      "S8-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find a percent of a quantity",
+     "standard": "6.RP.A.3.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S8-B1-Q1",
+      "S8-B1-Q2",
+      "S8-B1-Q3",
+      "S8-B1-Q4",
+      "S8-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Find the whole from a part and a percent",
+     "standard": "6.RP.A.3.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S8-B2-Q1",
+      "S8-B2-Q2",
+      "S8-B2-Q3",
+      "S8-B2-Q4",
+      "S8-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Compare quantities written in scientific notation",
+     "standard": "8.EE.A.3",
+     "nearest_related": true,
+     "question_ids": [
+      "S8-F1-Q1",
+      "S8-F1-Q2",
+      "S8-F1-Q3",
+      "S8-F1-Q4",
+      "S8-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Model a quantity that changes by a constant percent rate",
+     "standard": "HSF-LE.A.1.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S8-F2-Q1",
+      "S8-F2-Q2",
+      "S8-F2-Q3",
+      "S8-F2-Q4",
+      "S8-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 9,
+   "set_id": "S9",
+   "file": "sets/S09.json",
+   "standard": "7.RP.A.3",
+   "title": "Solve problems with markups, discounts, sales tax, and tips",
+   "domain": "Ratios & Proportional Relationships",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Solve problems with markups, discounts, sales tax, and tips",
+     "standard": "7.RP.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S9-M-Q1",
+      "S9-M-Q2",
+      "S9-M-Q3",
+      "S9-M-Q4",
+      "S9-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Multiply decimals",
+     "standard": "6.NS.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S9-B1-Q1",
+      "S9-B1-Q2",
+      "S9-B1-Q3",
+      "S9-B1-Q4",
+      "S9-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Find a percent of an amount of money",
+     "standard": "6.RP.A.3.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S9-B2-Q1",
+      "S9-B2-Q2",
+      "S9-B2-Q3",
+      "S9-B2-Q4",
+      "S9-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Solve equations to find an original price",
+     "standard": "8.EE.C.7.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S9-F1-Q1",
+      "S9-F1-Q2",
+      "S9-F1-Q3",
+      "S9-F1-Q4",
+      "S9-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Interpret the parts of an expression in context",
+     "standard": "HSA-SSE.A.1.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S9-F2-Q1",
+      "S9-F2-Q2",
+      "S9-F2-Q3",
+      "S9-F2-Q4",
+      "S9-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 10,
+   "set_id": "S10",
+   "file": "sets/S10.json",
+   "standard": "7.RP.A.3",
+   "title": "Solve problems with simple interest, commissions, and fees",
+   "domain": "Ratios & Proportional Relationships",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Solve problems with simple interest, commissions, and fees",
+     "standard": "7.RP.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S10-M-Q1",
+      "S10-M-Q2",
+      "S10-M-Q3",
+      "S10-M-Q4",
+      "S10-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Evaluate a formula",
+     "standard": "6.EE.A.2.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S10-B1-Q1",
+      "S10-B1-Q2",
+      "S10-B1-Q3",
+      "S10-B1-Q4",
+      "S10-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Write a percent as a rate per 100 and as a decimal",
+     "standard": "6.RP.A.3.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S10-B2-Q1",
+      "S10-B2-Q2",
+      "S10-B2-Q3",
+      "S10-B2-Q4",
+      "S10-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Model a growing balance with a linear function",
+     "standard": "8.F.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S10-F1-Q1",
+      "S10-F1-Q2",
+      "S10-F1-Q3",
+      "S10-F1-Q4",
+      "S10-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Compare simple interest with compound interest",
+     "standard": "HSF-LE.A.1.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S10-F2-Q1",
+      "S10-F2-Q2",
+      "S10-F2-Q3",
+      "S10-F2-Q4",
+      "S10-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 11,
+   "set_id": "S11",
+   "file": "sets/S11.json",
+   "standard": "7.RP.A.3",
+   "title": "Find the percent error of an estimate or a measurement",
+   "domain": "Ratios & Proportional Relationships",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Find the percent error of an estimate or a measurement",
+     "standard": "7.RP.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S11-M-Q1",
+      "S11-M-Q2",
+      "S11-M-Q3",
+      "S11-M-Q4",
+      "S11-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find the absolute value of a number",
+     "standard": "6.NS.C.7.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S11-B1-Q1",
+      "S11-B1-Q2",
+      "S11-B1-Q3",
+      "S11-B1-Q4",
+      "S11-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Write a fraction as a percent",
+     "standard": "6.RP.A.3.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S11-B2-Q1",
+      "S11-B2-Q2",
+      "S11-B2-Q3",
+      "S11-B2-Q4",
+      "S11-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Compute with numbers in scientific notation",
+     "standard": "8.EE.A.4",
+     "nearest_related": true,
+     "question_ids": [
+      "S11-F1-Q1",
+      "S11-F1-Q2",
+      "S11-F1-Q3",
+      "S11-F1-Q4",
+      "S11-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Choose a level of accuracy that fits a measurement",
+     "standard": "HSN-Q.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S11-F2-Q1",
+      "S11-F2-Q2",
+      "S11-F2-Q3",
+      "S11-F2-Q4",
+      "S11-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 12,
+   "set_id": "S12",
+   "file": "sets/S12.json",
+   "standard": "7.NS.A.1.a",
+   "title": "Describe situations in which opposite quantities combine to make 0",
+   "domain": "The Number System",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Describe situations in which opposite quantities combine to make 0",
+     "standard": "7.NS.A.1.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S12-M-Q1",
+      "S12-M-Q2",
+      "S12-M-Q3",
+      "S12-M-Q4",
+      "S12-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Use positive and negative numbers to represent quantities",
+     "standard": "6.NS.C.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S12-B1-Q1",
+      "S12-B1-Q2",
+      "S12-B1-Q3",
+      "S12-B1-Q4",
+      "S12-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Recognize opposite numbers",
+     "standard": "6.NS.C.6.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S12-B2-Q1",
+      "S12-B2-Q2",
+      "S12-B2-Q3",
+      "S12-B2-Q4",
+      "S12-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use opposite exponents with the properties of integer exponents",
+     "standard": "8.EE.A.1",
+     "nearest_related": true,
+     "question_ids": [
+      "S12-F1-Q1",
+      "S12-F1-Q2",
+      "S12-F1-Q3",
+      "S12-F1-Q4",
+      "S12-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Explain the steps used to solve an equation",
+     "standard": "HSA-REI.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S12-F2-Q1",
+      "S12-F2-Q2",
+      "S12-F2-Q3",
+      "S12-F2-Q4",
+      "S12-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 13,
+   "set_id": "S13",
+   "file": "sets/S13.json",
+   "standard": "7.NS.A.1.b",
+   "title": "Add rational numbers on a number line",
+   "domain": "The Number System",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Add rational numbers on a number line",
+     "standard": "7.NS.A.1.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S13-M-Q1",
+      "S13-M-Q2",
+      "S13-M-Q3",
+      "S13-M-Q4",
+      "S13-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find and position integers on a number line",
+     "standard": "6.NS.C.6.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S13-B1-Q1",
+      "S13-B1-Q2",
+      "S13-B1-Q3",
+      "S13-B1-Q4",
+      "S13-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Add decimals",
+     "standard": "5.NBT.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S13-B2-Q1",
+      "S13-B2-Q2",
+      "S13-B2-Q3",
+      "S13-B2-Q4",
+      "S13-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Locate irrational numbers on a number line",
+     "standard": "8.NS.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S13-F1-Q1",
+      "S13-F1-Q2",
+      "S13-F1-Q3",
+      "S13-F1-Q4",
+      "S13-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Decide whether a sum is rational or irrational",
+     "standard": "HSN-RN.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S13-F2-Q1",
+      "S13-F2-Q2",
+      "S13-F2-Q3",
+      "S13-F2-Q4",
+      "S13-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 14,
+   "set_id": "S14",
+   "file": "sets/S14.json",
+   "standard": "7.NS.A.1.b",
+   "title": "Use additive inverses: a number plus its opposite is 0",
+   "domain": "The Number System",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Use additive inverses: a number plus its opposite is 0",
+     "standard": "7.NS.A.1.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S14-M-Q1",
+      "S14-M-Q2",
+      "S14-M-Q3",
+      "S14-M-Q4",
+      "S14-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Opposites are the same distance from 0",
+     "standard": "6.NS.C.6.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S14-B1-Q1",
+      "S14-B1-Q2",
+      "S14-B1-Q3",
+      "S14-B1-Q4",
+      "S14-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Interpret absolute value as distance from 0",
+     "standard": "6.NS.C.7.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S14-B2-Q1",
+      "S14-B2-Q2",
+      "S14-B2-Q3",
+      "S14-B2-Q4",
+      "S14-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Tell whether a linear equation has one, no, or infinitely many solutions",
+     "standard": "8.EE.C.7.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S14-F1-Q1",
+      "S14-F1-Q2",
+      "S14-F1-Q3",
+      "S14-F1-Q4",
+      "S14-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Solve linear equations in one variable",
+     "standard": "HSA-REI.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S14-F2-Q1",
+      "S14-F2-Q2",
+      "S14-F2-Q3",
+      "S14-F2-Q4",
+      "S14-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 15,
+   "set_id": "S15",
+   "file": "sets/S15.json",
+   "standard": "7.NS.A.1.b",
+   "title": "Interpret sums of rational numbers in real-world situations",
+   "domain": "The Number System",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Interpret sums of rational numbers in real-world situations",
+     "standard": "7.NS.A.1.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S15-M-Q1",
+      "S15-M-Q2",
+      "S15-M-Q3",
+      "S15-M-Q4",
+      "S15-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Use signed numbers in a real-world situation",
+     "standard": "6.NS.C.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S15-B1-Q1",
+      "S15-B1-Q2",
+      "S15-B1-Q3",
+      "S15-B1-Q4",
+      "S15-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Compare signed numbers in a real-world situation",
+     "standard": "6.NS.C.7.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S15-B2-Q1",
+      "S15-B2-Q2",
+      "S15-B2-Q3",
+      "S15-B2-Q4",
+      "S15-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Model a changing quantity with a linear function",
+     "standard": "8.F.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S15-F1-Q1",
+      "S15-F1-Q2",
+      "S15-F1-Q3",
+      "S15-F1-Q4",
+      "S15-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Evaluate a function and interpret the value in context",
+     "standard": "HSF-IF.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S15-F2-Q1",
+      "S15-F2-Q2",
+      "S15-F2-Q3",
+      "S15-F2-Q4",
+      "S15-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 16,
+   "set_id": "S16",
+   "file": "sets/S16.json",
+   "standard": "7.NS.A.1.c",
+   "title": "Subtract rational numbers by adding the additive inverse",
+   "domain": "The Number System",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Subtract rational numbers by adding the additive inverse",
+     "standard": "7.NS.A.1.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S16-M-Q1",
+      "S16-M-Q2",
+      "S16-M-Q3",
+      "S16-M-Q4",
+      "S16-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Subtract decimals",
+     "standard": "5.NBT.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S16-B1-Q1",
+      "S16-B1-Q2",
+      "S16-B1-Q3",
+      "S16-B1-Q4",
+      "S16-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Subtract fractions with unlike denominators",
+     "standard": "5.NF.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S16-B2-Q1",
+      "S16-B2-Q2",
+      "S16-B2-Q3",
+      "S16-B2-Q4",
+      "S16-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find a rate of change from two points with negative coordinates",
+     "standard": "8.F.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S16-F1-Q1",
+      "S16-F1-Q2",
+      "S16-F1-Q3",
+      "S16-F1-Q4",
+      "S16-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Subtract polynomials",
+     "standard": "HSA-APR.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S16-F2-Q1",
+      "S16-F2-Q2",
+      "S16-F2-Q3",
+      "S16-F2-Q4",
+      "S16-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 17,
+   "set_id": "S17",
+   "file": "sets/S17.json",
+   "standard": "7.NS.A.1.c",
+   "title": "Find the distance between two rational numbers as the absolute value of their difference",
+   "domain": "The Number System",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Find the distance between two rational numbers as the absolute value of their difference",
+     "standard": "7.NS.A.1.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S17-M-Q1",
+      "S17-M-Q2",
+      "S17-M-Q3",
+      "S17-M-Q4",
+      "S17-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find the distance between points with the same x- or y-coordinate",
+     "standard": "6.NS.C.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S17-B1-Q1",
+      "S17-B1-Q2",
+      "S17-B1-Q3",
+      "S17-B1-Q4",
+      "S17-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Position fractions and decimals on a number line",
+     "standard": "6.NS.C.6.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S17-B2-Q1",
+      "S17-B2-Q2",
+      "S17-B2-Q3",
+      "S17-B2-Q4",
+      "S17-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use the Pythagorean theorem to find the distance between two points",
+     "standard": "8.G.B.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S17-F1-Q1",
+      "S17-F1-Q2",
+      "S17-F1-Q3",
+      "S17-F1-Q4",
+      "S17-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use coordinates to find the perimeter of a polygon",
+     "standard": "HSG-GPE.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S17-F2-Q1",
+      "S17-F2-Q2",
+      "S17-F2-Q3",
+      "S17-F2-Q4",
+      "S17-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 18,
+   "set_id": "S18",
+   "file": "sets/S18.json",
+   "standard": "7.NS.A.1.d",
+   "title": "Use properties of operations to add and subtract rational numbers",
+   "domain": "The Number System",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Use properties of operations to add and subtract rational numbers",
+     "standard": "7.NS.A.1.d",
+     "nearest_related": false,
+     "question_ids": [
+      "S18-M-Q1",
+      "S18-M-Q2",
+      "S18-M-Q3",
+      "S18-M-Q4",
+      "S18-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Apply properties to write equivalent expressions",
+     "standard": "6.EE.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S18-B1-Q1",
+      "S18-B1-Q2",
+      "S18-B1-Q3",
+      "S18-B1-Q4",
+      "S18-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Add multi-digit decimals",
+     "standard": "6.NS.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S18-B2-Q1",
+      "S18-B2-Q2",
+      "S18-B2-Q3",
+      "S18-B2-Q4",
+      "S18-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Solve equations by collecting like terms",
+     "standard": "8.EE.C.7.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S18-F1-Q1",
+      "S18-F1-Q2",
+      "S18-F1-Q3",
+      "S18-F1-Q4",
+      "S18-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use the structure of an expression to rewrite it",
+     "standard": "HSA-SSE.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S18-F2-Q1",
+      "S18-F2-Q2",
+      "S18-F2-Q3",
+      "S18-F2-Q4",
+      "S18-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 19,
+   "set_id": "S19",
+   "file": "sets/S19.json",
+   "standard": "7.NS.A.2.a",
+   "title": "Multiply rational numbers using the rules for signs",
+   "domain": "The Number System",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Multiply rational numbers using the rules for signs",
+     "standard": "7.NS.A.2.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S19-M-Q1",
+      "S19-M-Q2",
+      "S19-M-Q3",
+      "S19-M-Q4",
+      "S19-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Multiply fractions",
+     "standard": "5.NF.B.4.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S19-B1-Q1",
+      "S19-B1-Q2",
+      "S19-B1-Q3",
+      "S19-B1-Q4",
+      "S19-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Multiply decimals",
+     "standard": "5.NBT.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S19-B2-Q1",
+      "S19-B2-Q2",
+      "S19-B2-Q3",
+      "S19-B2-Q4",
+      "S19-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find powers of negative numbers",
+     "standard": "8.EE.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S19-F1-Q1",
+      "S19-F1-Q2",
+      "S19-F1-Q3",
+      "S19-F1-Q4",
+      "S19-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Multiply polynomials",
+     "standard": "HSA-APR.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S19-F2-Q1",
+      "S19-F2-Q2",
+      "S19-F2-Q3",
+      "S19-F2-Q4",
+      "S19-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 20,
+   "set_id": "S20",
+   "file": "sets/S20.json",
+   "standard": "7.NS.A.2.a",
+   "title": "Interpret products of rational numbers in real-world situations",
+   "domain": "The Number System",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Interpret products of rational numbers in real-world situations",
+     "standard": "7.NS.A.2.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S20-M-Q1",
+      "S20-M-Q2",
+      "S20-M-Q3",
+      "S20-M-Q4",
+      "S20-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Multiply fractions and mixed numbers in word problems",
+     "standard": "5.NF.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S20-B1-Q1",
+      "S20-B1-Q2",
+      "S20-B1-Q3",
+      "S20-B1-Q4",
+      "S20-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Explain the meaning of signed numbers and 0",
+     "standard": "6.NS.C.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S20-B2-Q1",
+      "S20-B2-Q2",
+      "S20-B2-Q3",
+      "S20-B2-Q4",
+      "S20-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Solve real-world equations with negative rates",
+     "standard": "8.EE.C.7.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S20-F1-Q1",
+      "S20-F1-Q2",
+      "S20-F1-Q3",
+      "S20-F1-Q4",
+      "S20-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Create a one-variable equation for a situation with a negative rate",
+     "standard": "HSA-CED.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S20-F2-Q1",
+      "S20-F2-Q2",
+      "S20-F2-Q3",
+      "S20-F2-Q4",
+      "S20-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 21,
+   "set_id": "S21",
+   "file": "sets/S21.json",
+   "standard": "7.NS.A.2.b",
+   "title": "Divide integers and explain the sign of a quotient",
+   "domain": "The Number System",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Divide integers and explain the sign of a quotient",
+     "standard": "7.NS.A.2.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S21-M-Q1",
+      "S21-M-Q2",
+      "S21-M-Q3",
+      "S21-M-Q4",
+      "S21-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Divide multi-digit whole numbers",
+     "standard": "6.NS.B.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S21-B1-Q1",
+      "S21-B1-Q2",
+      "S21-B1-Q3",
+      "S21-B1-Q4",
+      "S21-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Divide fractions",
+     "standard": "6.NS.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S21-B2-Q1",
+      "S21-B2-Q2",
+      "S21-B2-Q3",
+      "S21-B2-Q4",
+      "S21-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Classify numbers as rational or irrational",
+     "standard": "8.NS.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S21-F1-Q1",
+      "S21-F1-Q2",
+      "S21-F1-Q3",
+      "S21-F1-Q4",
+      "S21-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Decide whether a product is rational or irrational",
+     "standard": "HSN-RN.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S21-F2-Q1",
+      "S21-F2-Q2",
+      "S21-F2-Q3",
+      "S21-F2-Q4",
+      "S21-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 22,
+   "set_id": "S22",
+   "file": "sets/S22.json",
+   "standard": "7.NS.A.2.b",
+   "title": "Interpret quotients of rational numbers in real-world situations",
+   "domain": "The Number System",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Interpret quotients of rational numbers in real-world situations",
+     "standard": "7.NS.A.2.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S22-M-Q1",
+      "S22-M-Q2",
+      "S22-M-Q3",
+      "S22-M-Q4",
+      "S22-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Divide fractions in word problems",
+     "standard": "6.NS.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S22-B1-Q1",
+      "S22-B1-Q2",
+      "S22-B1-Q3",
+      "S22-B1-Q4",
+      "S22-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Divide unit fractions and whole numbers in word problems",
+     "standard": "5.NF.B.7.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S22-B2-Q1",
+      "S22-B2-Q2",
+      "S22-B2-Q3",
+      "S22-B2-Q4",
+      "S22-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find a rate of change from a description",
+     "standard": "8.F.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S22-F1-Q1",
+      "S22-F1-Q2",
+      "S22-F1-Q3",
+      "S22-F1-Q4",
+      "S22-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Calculate and interpret a negative average rate of change",
+     "standard": "HSF-IF.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S22-F2-Q1",
+      "S22-F2-Q2",
+      "S22-F2-Q3",
+      "S22-F2-Q4",
+      "S22-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 23,
+   "set_id": "S23",
+   "file": "sets/S23.json",
+   "standard": "7.NS.A.2.c",
+   "title": "Use properties of operations to multiply and divide rational numbers",
+   "domain": "The Number System",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Use properties of operations to multiply and divide rational numbers",
+     "standard": "7.NS.A.2.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S23-M-Q1",
+      "S23-M-Q2",
+      "S23-M-Q3",
+      "S23-M-Q4",
+      "S23-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Apply the distributive property",
+     "standard": "6.EE.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S23-B1-Q1",
+      "S23-B1-Q2",
+      "S23-B1-Q3",
+      "S23-B1-Q4",
+      "S23-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Use the commutative and associative properties of multiplication",
+     "standard": "3.OA.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S23-B2-Q1",
+      "S23-B2-Q2",
+      "S23-B2-Q3",
+      "S23-B2-Q4",
+      "S23-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Solve equations by multiplying by a reciprocal",
+     "standard": "8.EE.C.7.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S23-F1-Q1",
+      "S23-F1-Q2",
+      "S23-F1-Q3",
+      "S23-F1-Q4",
+      "S23-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Rewrite expressions with rational exponents",
+     "standard": "HSN-RN.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S23-F2-Q1",
+      "S23-F2-Q2",
+      "S23-F2-Q3",
+      "S23-F2-Q4",
+      "S23-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 24,
+   "set_id": "S24",
+   "file": "sets/S24.json",
+   "standard": "7.NS.A.2.d",
+   "title": "Use long division to write a rational number as a terminating or repeating decimal",
+   "domain": "The Number System",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Use long division to write a rational number as a terminating or repeating decimal",
+     "standard": "7.NS.A.2.d",
+     "nearest_related": false,
+     "question_ids": [
+      "S24-M-Q1",
+      "S24-M-Q2",
+      "S24-M-Q3",
+      "S24-M-Q4",
+      "S24-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Write fractions with denominators of 10 or 100 as decimals",
+     "standard": "4.NF.C.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S24-B1-Q1",
+      "S24-B1-Q2",
+      "S24-B1-Q3",
+      "S24-B1-Q4",
+      "S24-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Divide multi-digit whole numbers",
+     "standard": "6.NS.B.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S24-B2-Q1",
+      "S24-B2-Q2",
+      "S24-B2-Q3",
+      "S24-B2-Q4",
+      "S24-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Write a repeating decimal as a fraction",
+     "standard": "8.NS.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S24-F1-Q1",
+      "S24-F1-Q2",
+      "S24-F1-Q3",
+      "S24-F1-Q4",
+      "S24-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Report a decimal result to a sensible level of accuracy",
+     "standard": "HSN-Q.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S24-F2-Q1",
+      "S24-F2-Q2",
+      "S24-F2-Q3",
+      "S24-F2-Q4",
+      "S24-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 25,
+   "set_id": "S25",
+   "file": "sets/S25.json",
+   "standard": "7.NS.A.3",
+   "title": "Solve real-world problems with the four operations on rational numbers",
+   "domain": "The Number System",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Solve real-world problems with the four operations on rational numbers",
+     "standard": "7.NS.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S25-M-Q1",
+      "S25-M-Q2",
+      "S25-M-Q3",
+      "S25-M-Q4",
+      "S25-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Multiply and divide decimals in word problems",
+     "standard": "6.NS.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S25-B1-Q1",
+      "S25-B1-Q2",
+      "S25-B1-Q3",
+      "S25-B1-Q4",
+      "S25-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Solve one-step equations",
+     "standard": "6.EE.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S25-B2-Q1",
+      "S25-B2-Q2",
+      "S25-B2-Q3",
+      "S25-B2-Q4",
+      "S25-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Solve real-world problems with scientific notation",
+     "standard": "8.EE.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S25-F1-Q1",
+      "S25-F1-Q2",
+      "S25-F1-Q3",
+      "S25-F1-Q4",
+      "S25-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use units to solve multistep problems",
+     "standard": "HSN-Q.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S25-F2-Q1",
+      "S25-F2-Q2",
+      "S25-F2-Q3",
+      "S25-F2-Q4",
+      "S25-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 26,
+   "set_id": "S26",
+   "file": "sets/S26.json",
+   "standard": "7.EE.A.1",
+   "title": "Add and subtract linear expressions with rational coefficients",
+   "domain": "Expressions & Equations",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Add and subtract linear expressions with rational coefficients",
+     "standard": "7.EE.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S26-M-Q1",
+      "S26-M-Q2",
+      "S26-M-Q3",
+      "S26-M-Q4",
+      "S26-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Combine like terms",
+     "standard": "6.EE.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S26-B1-Q1",
+      "S26-B1-Q2",
+      "S26-B1-Q3",
+      "S26-B1-Q4",
+      "S26-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Identify equivalent expressions",
+     "standard": "6.EE.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S26-B2-Q1",
+      "S26-B2-Q2",
+      "S26-B2-Q3",
+      "S26-B2-Q4",
+      "S26-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Solve equations by expanding and collecting like terms",
+     "standard": "8.EE.C.7.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S26-F1-Q1",
+      "S26-F1-Q2",
+      "S26-F1-Q3",
+      "S26-F1-Q4",
+      "S26-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Interpret the terms, factors, and coefficients of an expression",
+     "standard": "HSA-SSE.A.1.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S26-F2-Q1",
+      "S26-F2-Q2",
+      "S26-F2-Q3",
+      "S26-F2-Q4",
+      "S26-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 27,
+   "set_id": "S27",
+   "file": "sets/S27.json",
+   "standard": "7.EE.A.1",
+   "title": "Factor and expand linear expressions with rational coefficients",
+   "domain": "Expressions & Equations",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Factor and expand linear expressions with rational coefficients",
+     "standard": "7.EE.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S27-M-Q1",
+      "S27-M-Q2",
+      "S27-M-Q3",
+      "S27-M-Q4",
+      "S27-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Use the greatest common factor and the distributive property",
+     "standard": "6.NS.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S27-B1-Q1",
+      "S27-B1-Q2",
+      "S27-B1-Q3",
+      "S27-B1-Q4",
+      "S27-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Identify the parts of an expression",
+     "standard": "6.EE.A.2.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S27-B2-Q1",
+      "S27-B2-Q2",
+      "S27-B2-Q3",
+      "S27-B2-Q4",
+      "S27-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Expand to decide how many solutions an equation has",
+     "standard": "8.EE.C.7.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S27-F1-Q1",
+      "S27-F1-Q2",
+      "S27-F1-Q3",
+      "S27-F1-Q4",
+      "S27-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Factor quadratic expressions",
+     "standard": "HSA-SSE.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S27-F2-Q1",
+      "S27-F2-Q2",
+      "S27-F2-Q3",
+      "S27-F2-Q4",
+      "S27-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 28,
+   "set_id": "S28",
+   "file": "sets/S28.json",
+   "standard": "7.EE.A.2",
+   "title": "Rewrite an expression to show how the quantities in a problem are related",
+   "domain": "Expressions & Equations",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Rewrite an expression to show how the quantities in a problem are related",
+     "standard": "7.EE.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S28-M-Q1",
+      "S28-M-Q2",
+      "S28-M-Q3",
+      "S28-M-Q4",
+      "S28-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Write expressions from words",
+     "standard": "6.EE.A.2.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S28-B1-Q1",
+      "S28-B1-Q2",
+      "S28-B1-Q3",
+      "S28-B1-Q4",
+      "S28-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Write and interpret numerical expressions",
+     "standard": "5.OA.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S28-B2-Q1",
+      "S28-B2-Q2",
+      "S28-B2-Q3",
+      "S28-B2-Q4",
+      "S28-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Write equivalent expressions with the properties of integer exponents",
+     "standard": "8.EE.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S28-F1-Q1",
+      "S28-F1-Q2",
+      "S28-F1-Q3",
+      "S28-F1-Q4",
+      "S28-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Choose an equivalent form of an expression to reveal a property",
+     "standard": "HSA-SSE.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S28-F2-Q1",
+      "S28-F2-Q2",
+      "S28-F2-Q3",
+      "S28-F2-Q4",
+      "S28-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 29,
+   "set_id": "S29",
+   "file": "sets/S29.json",
+   "standard": "7.EE.B.3",
+   "title": "Solve multistep problems with positive and negative rational numbers in any form",
+   "domain": "Expressions & Equations",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Solve multistep problems with positive and negative rational numbers in any form",
+     "standard": "7.EE.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S29-M-Q1",
+      "S29-M-Q2",
+      "S29-M-Q3",
+      "S29-M-Q4",
+      "S29-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Interpret a fraction as division",
+     "standard": "5.NF.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S29-B1-Q1",
+      "S29-B1-Q2",
+      "S29-B1-Q3",
+      "S29-B1-Q4",
+      "S29-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Find a percent of a quantity",
+     "standard": "6.RP.A.3.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S29-B2-Q1",
+      "S29-B2-Q2",
+      "S29-B2-Q3",
+      "S29-B2-Q4",
+      "S29-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Solve real-world problems with two linear equations",
+     "standard": "8.EE.C.8.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S29-F1-Q1",
+      "S29-F1-Q2",
+      "S29-F1-Q3",
+      "S29-F1-Q4",
+      "S29-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Represent constraints with equations or inequalities",
+     "standard": "HSA-CED.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S29-F2-Q1",
+      "S29-F2-Q2",
+      "S29-F2-Q3",
+      "S29-F2-Q4",
+      "S29-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 30,
+   "set_id": "S30",
+   "file": "sets/S30.json",
+   "standard": "7.EE.B.3",
+   "title": "Use estimation to judge whether an answer is reasonable",
+   "domain": "Expressions & Equations",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Use estimation to judge whether an answer is reasonable",
+     "standard": "7.EE.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S30-M-Q1",
+      "S30-M-Q2",
+      "S30-M-Q3",
+      "S30-M-Q4",
+      "S30-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Round decimals",
+     "standard": "5.NBT.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S30-B1-Q1",
+      "S30-B1-Q2",
+      "S30-B1-Q3",
+      "S30-B1-Q4",
+      "S30-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Use rounding to check whether an answer is reasonable",
+     "standard": "4.OA.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S30-B2-Q1",
+      "S30-B2-Q2",
+      "S30-B2-Q3",
+      "S30-B2-Q4",
+      "S30-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Estimate very large or very small quantities with powers of 10",
+     "standard": "8.EE.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S30-F1-Q1",
+      "S30-F1-Q2",
+      "S30-F1-Q3",
+      "S30-F1-Q4",
+      "S30-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Define appropriate quantities and units for a model",
+     "standard": "HSN-Q.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S30-F2-Q1",
+      "S30-F2-Q2",
+      "S30-F2-Q3",
+      "S30-F2-Q4",
+      "S30-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 31,
+   "set_id": "S31",
+   "file": "sets/S31.json",
+   "standard": "7.EE.B.4.a",
+   "title": "Solve word problems that lead to equations of the form px + q = r",
+   "domain": "Expressions & Equations",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Solve word problems that lead to equations of the form px + q = r",
+     "standard": "7.EE.B.4.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S31-M-Q1",
+      "S31-M-Q2",
+      "S31-M-Q3",
+      "S31-M-Q4",
+      "S31-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Solve one-step equations",
+     "standard": "6.EE.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S31-B1-Q1",
+      "S31-B1-Q2",
+      "S31-B1-Q3",
+      "S31-B1-Q4",
+      "S31-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Write an expression with a variable for a situation",
+     "standard": "6.EE.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S31-B2-Q1",
+      "S31-B2-Q2",
+      "S31-B2-Q3",
+      "S31-B2-Q4",
+      "S31-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Solve equations with the variable on both sides",
+     "standard": "8.EE.C.7.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S31-F1-Q1",
+      "S31-F1-Q2",
+      "S31-F1-Q3",
+      "S31-F1-Q4",
+      "S31-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Rearrange a formula to solve for a chosen quantity",
+     "standard": "HSA-CED.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S31-F2-Q1",
+      "S31-F2-Q2",
+      "S31-F2-Q3",
+      "S31-F2-Q4",
+      "S31-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 32,
+   "set_id": "S32",
+   "file": "sets/S32.json",
+   "standard": "7.EE.B.4.a",
+   "title": "Solve word problems that lead to equations of the form p(x + q) = r",
+   "domain": "Expressions & Equations",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Solve word problems that lead to equations of the form p(x + q) = r",
+     "standard": "7.EE.B.4.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S32-M-Q1",
+      "S32-M-Q2",
+      "S32-M-Q3",
+      "S32-M-Q4",
+      "S32-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Evaluate expressions with parentheses",
+     "standard": "5.OA.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S32-B1-Q1",
+      "S32-B1-Q2",
+      "S32-B1-Q3",
+      "S32-B1-Q4",
+      "S32-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Use the distributive property to expand an expression",
+     "standard": "6.EE.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S32-B2-Q1",
+      "S32-B2-Q2",
+      "S32-B2-Q3",
+      "S32-B2-Q4",
+      "S32-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Solve equations with the distributive property on both sides",
+     "standard": "8.EE.C.7.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S32-F1-Q1",
+      "S32-F1-Q2",
+      "S32-F1-Q3",
+      "S32-F1-Q4",
+      "S32-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Solve quadratic equations by square roots or factoring",
+     "standard": "HSA-REI.B.4.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S32-F2-Q1",
+      "S32-F2-Q2",
+      "S32-F2-Q3",
+      "S32-F2-Q4",
+      "S32-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 33,
+   "set_id": "S33",
+   "file": "sets/S33.json",
+   "standard": "7.EE.B.4.a",
+   "title": "Compare an algebraic solution with an arithmetic solution",
+   "domain": "Expressions & Equations",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Compare an algebraic solution with an arithmetic solution",
+     "standard": "7.EE.B.4.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S33-M-Q1",
+      "S33-M-Q2",
+      "S33-M-Q3",
+      "S33-M-Q4",
+      "S33-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Solve two-step word problems",
+     "standard": "3.OA.D.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S33-B1-Q1",
+      "S33-B1-Q2",
+      "S33-B1-Q3",
+      "S33-B1-Q4",
+      "S33-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Decide whether a value makes an equation true",
+     "standard": "6.EE.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S33-B2-Q1",
+      "S33-B2-Q2",
+      "S33-B2-Q3",
+      "S33-B2-Q4",
+      "S33-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Solve systems of two linear equations algebraically and by inspection",
+     "standard": "8.EE.C.8.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S33-F1-Q1",
+      "S33-F1-Q2",
+      "S33-F1-Q3",
+      "S33-F1-Q4",
+      "S33-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Explain each step in solving an equation",
+     "standard": "HSA-REI.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S33-F2-Q1",
+      "S33-F2-Q2",
+      "S33-F2-Q3",
+      "S33-F2-Q4",
+      "S33-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 34,
+   "set_id": "S34",
+   "file": "sets/S34.json",
+   "standard": "7.EE.B.4.b",
+   "title": "Solve word problems that lead to inequalities of the form px + q > r or px + q < r",
+   "domain": "Expressions & Equations",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Solve word problems that lead to inequalities of the form px + q > r or px + q < r",
+     "standard": "7.EE.B.4.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S34-M-Q1",
+      "S34-M-Q2",
+      "S34-M-Q3",
+      "S34-M-Q4",
+      "S34-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Write an inequality for a situation",
+     "standard": "6.EE.B.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S34-B1-Q1",
+      "S34-B1-Q2",
+      "S34-B1-Q3",
+      "S34-B1-Q4",
+      "S34-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Decide whether a value makes an inequality true",
+     "standard": "6.EE.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S34-B2-Q1",
+      "S34-B2-Q2",
+      "S34-B2-Q3",
+      "S34-B2-Q4",
+      "S34-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Solve multistep equations with the variable on both sides",
+     "standard": "8.EE.C.7.b",
+     "nearest_related": true,
+     "question_ids": [
+      "S34-F1-Q1",
+      "S34-F1-Q2",
+      "S34-F1-Q3",
+      "S34-F1-Q4",
+      "S34-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Solve linear inequalities with the variable on both sides",
+     "standard": "HSA-REI.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S34-F2-Q1",
+      "S34-F2-Q2",
+      "S34-F2-Q3",
+      "S34-F2-Q4",
+      "S34-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 35,
+   "set_id": "S35",
+   "file": "sets/S35.json",
+   "standard": "7.EE.B.4.b",
+   "title": "Graph the solution set of an inequality and interpret it in context",
+   "domain": "Expressions & Equations",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Graph the solution set of an inequality and interpret it in context",
+     "standard": "7.EE.B.4.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S35-M-Q1",
+      "S35-M-Q2",
+      "S35-M-Q3",
+      "S35-M-Q4",
+      "S35-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Graph an inequality on a number line",
+     "standard": "6.EE.B.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S35-B1-Q1",
+      "S35-B1-Q2",
+      "S35-B1-Q3",
+      "S35-B1-Q4",
+      "S35-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Read an inequality as positions on a number line",
+     "standard": "6.NS.C.7.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S35-B2-Q1",
+      "S35-B2-Q2",
+      "S35-B2-Q3",
+      "S35-B2-Q4",
+      "S35-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find the solution of a system of equations from its graph",
+     "standard": "8.EE.C.8.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S35-F1-Q1",
+      "S35-F1-Q2",
+      "S35-F1-Q3",
+      "S35-F1-Q4",
+      "S35-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Graph the solutions of a linear inequality in two variables",
+     "standard": "HSA-REI.D.12",
+     "nearest_related": false,
+     "question_ids": [
+      "S35-F2-Q1",
+      "S35-F2-Q2",
+      "S35-F2-Q3",
+      "S35-F2-Q4",
+      "S35-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 36,
+   "set_id": "S36",
+   "file": "sets/S36.json",
+   "standard": "7.G.A.1",
+   "title": "Find actual lengths and areas from a scale drawing",
+   "domain": "Geometry",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Find actual lengths and areas from a scale drawing",
+     "standard": "7.G.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S36-M-Q1",
+      "S36-M-Q2",
+      "S36-M-Q3",
+      "S36-M-Q4",
+      "S36-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Convert measurement units",
+     "standard": "6.RP.A.3.d",
+     "nearest_related": false,
+     "question_ids": [
+      "S36-B1-Q1",
+      "S36-B1-Q2",
+      "S36-B1-Q3",
+      "S36-B1-Q4",
+      "S36-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Find the area of a rectangle",
+     "standard": "4.MD.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S36-B2-Q1",
+      "S36-B2-Q2",
+      "S36-B2-Q3",
+      "S36-B2-Q4",
+      "S36-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Describe similar figures with dilations",
+     "standard": "8.G.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S36-F1-Q1",
+      "S36-F1-Q2",
+      "S36-F1-Q3",
+      "S36-F1-Q4",
+      "S36-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Decide whether two triangles are similar",
+     "standard": "HSG-SRT.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S36-F2-Q1",
+      "S36-F2-Q2",
+      "S36-F2-Q3",
+      "S36-F2-Q4",
+      "S36-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 37,
+   "set_id": "S37",
+   "file": "sets/S37.json",
+   "standard": "7.G.A.1",
+   "title": "Reproduce a scale drawing at a different scale",
+   "domain": "Geometry",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Reproduce a scale drawing at a different scale",
+     "standard": "7.G.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S37-M-Q1",
+      "S37-M-Q2",
+      "S37-M-Q3",
+      "S37-M-Q4",
+      "S37-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Draw a polygon on the coordinate plane",
+     "standard": "6.G.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S37-B1-Q1",
+      "S37-B1-Q2",
+      "S37-B1-Q3",
+      "S37-B1-Q4",
+      "S37-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Compare the size of a product to the size of one factor",
+     "standard": "5.NF.B.5.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S37-B2-Q1",
+      "S37-B2-Q2",
+      "S37-B2-Q3",
+      "S37-B2-Q4",
+      "S37-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Describe the effect of a dilation on coordinates",
+     "standard": "8.G.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S37-F1-Q1",
+      "S37-F1-Q2",
+      "S37-F1-Q3",
+      "S37-F1-Q4",
+      "S37-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Verify the properties of dilations",
+     "standard": "HSG-SRT.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S37-F2-Q1",
+      "S37-F2-Q2",
+      "S37-F2-Q3",
+      "S37-F2-Q4",
+      "S37-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 38,
+   "set_id": "S38",
+   "file": "sets/S38.json",
+   "standard": "7.G.A.2",
+   "title": "Draw triangles from given conditions",
+   "domain": "Geometry",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Draw triangles from given conditions",
+     "standard": "7.G.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S38-M-Q1",
+      "S38-M-Q2",
+      "S38-M-Q3",
+      "S38-M-Q4",
+      "S38-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Measure and draw angles with a protractor",
+     "standard": "4.MD.C.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S38-B1-Q1",
+      "S38-B1-Q2",
+      "S38-B1-Q3",
+      "S38-B1-Q4",
+      "S38-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Classify triangles by their angles",
+     "standard": "4.G.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S38-B2-Q1",
+      "S38-B2-Q2",
+      "S38-B2-Q3",
+      "S38-B2-Q4",
+      "S38-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use the Pythagorean theorem to find an unknown side length",
+     "standard": "8.G.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S38-F1-Q1",
+      "S38-F1-Q2",
+      "S38-F1-Q3",
+      "S38-F1-Q4",
+      "S38-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Make formal constructions with a compass and straightedge",
+     "standard": "HSG-CO.D.12",
+     "nearest_related": false,
+     "question_ids": [
+      "S38-F2-Q1",
+      "S38-F2-Q2",
+      "S38-F2-Q3",
+      "S38-F2-Q4",
+      "S38-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 39,
+   "set_id": "S39",
+   "file": "sets/S39.json",
+   "standard": "7.G.A.2",
+   "title": "Decide whether given conditions make one triangle, more than one triangle, or no triangle",
+   "domain": "Geometry",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Decide whether given conditions make one triangle, more than one triangle, or no triangle",
+     "standard": "7.G.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S39-M-Q1",
+      "S39-M-Q2",
+      "S39-M-Q3",
+      "S39-M-Q4",
+      "S39-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find an unknown angle when angles are joined",
+     "standard": "4.MD.C.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S39-B1-Q1",
+      "S39-B1-Q2",
+      "S39-B1-Q3",
+      "S39-B1-Q4",
+      "S39-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Find the perimeter of a polygon from its side lengths",
+     "standard": "3.MD.D.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S39-B2-Q1",
+      "S39-B2-Q2",
+      "S39-B2-Q3",
+      "S39-B2-Q4",
+      "S39-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use the converse of the Pythagorean theorem to test for a right triangle",
+     "standard": "8.G.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S39-F1-Q1",
+      "S39-F1-Q2",
+      "S39-F1-Q3",
+      "S39-F1-Q4",
+      "S39-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use triangle congruence criteria",
+     "standard": "HSG-CO.B.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S39-F2-Q1",
+      "S39-F2-Q2",
+      "S39-F2-Q3",
+      "S39-F2-Q4",
+      "S39-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 40,
+   "set_id": "S40",
+   "file": "sets/S40.json",
+   "standard": "7.G.A.3",
+   "title": "Describe the cross sections made by slicing right prisms and pyramids",
+   "domain": "Geometry",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Describe the cross sections made by slicing right prisms and pyramids",
+     "standard": "7.G.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S40-M-Q1",
+      "S40-M-Q2",
+      "S40-M-Q3",
+      "S40-M-Q4",
+      "S40-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Identify the faces of solids from their nets",
+     "standard": "6.G.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S40-B1-Q1",
+      "S40-B1-Q2",
+      "S40-B1-Q3",
+      "S40-B1-Q4",
+      "S40-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Name shapes by their number of sides and faces",
+     "standard": "2.G.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S40-B2-Q1",
+      "S40-B2-Q2",
+      "S40-B2-Q3",
+      "S40-B2-Q4",
+      "S40-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find the volumes of cylinders, cones, and spheres",
+     "standard": "8.G.C.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S40-F1-Q1",
+      "S40-F1-Q2",
+      "S40-F1-Q3",
+      "S40-F1-Q4",
+      "S40-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Identify cross sections of three-dimensional objects",
+     "standard": "HSG-GMD.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S40-F2-Q1",
+      "S40-F2-Q2",
+      "S40-F2-Q3",
+      "S40-F2-Q4",
+      "S40-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 41,
+   "set_id": "S41",
+   "file": "sets/S41.json",
+   "standard": "7.G.B.4",
+   "title": "Find the circumference of a circle",
+   "domain": "Geometry",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Find the circumference of a circle",
+     "standard": "7.G.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S41-M-Q1",
+      "S41-M-Q2",
+      "S41-M-Q3",
+      "S41-M-Q4",
+      "S41-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find the perimeter of a rectangle",
+     "standard": "4.MD.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S41-B1-Q1",
+      "S41-B1-Q2",
+      "S41-B1-Q3",
+      "S41-B1-Q4",
+      "S41-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Multiply decimals",
+     "standard": "5.NBT.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S41-B2-Q1",
+      "S41-B2-Q2",
+      "S41-B2-Q3",
+      "S41-B2-Q4",
+      "S41-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find the volume of a cylinder",
+     "standard": "8.G.C.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S41-F1-Q1",
+      "S41-F1-Q2",
+      "S41-F1-Q3",
+      "S41-F1-Q4",
+      "S41-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Find the length of an arc of a circle",
+     "standard": "HSG-C.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S41-F2-Q1",
+      "S41-F2-Q2",
+      "S41-F2-Q3",
+      "S41-F2-Q4",
+      "S41-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 42,
+   "set_id": "S42",
+   "file": "sets/S42.json",
+   "standard": "7.G.B.4",
+   "title": "Find the area of a circle",
+   "domain": "Geometry",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Find the area of a circle",
+     "standard": "7.G.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S42-M-Q1",
+      "S42-M-Q2",
+      "S42-M-Q3",
+      "S42-M-Q4",
+      "S42-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Evaluate powers with whole-number exponents",
+     "standard": "6.EE.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S42-B1-Q1",
+      "S42-B1-Q2",
+      "S42-B1-Q3",
+      "S42-B1-Q4",
+      "S42-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Evaluate a formula",
+     "standard": "6.EE.A.2.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S42-B2-Q1",
+      "S42-B2-Q2",
+      "S42-B2-Q3",
+      "S42-B2-Q4",
+      "S42-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find the volume of a cone",
+     "standard": "8.G.C.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S42-F1-Q1",
+      "S42-F1-Q2",
+      "S42-F1-Q3",
+      "S42-F1-Q4",
+      "S42-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Find the area of a sector of a circle",
+     "standard": "HSG-C.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S42-F2-Q1",
+      "S42-F2-Q2",
+      "S42-F2-Q3",
+      "S42-F2-Q4",
+      "S42-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 43,
+   "set_id": "S43",
+   "file": "sets/S43.json",
+   "standard": "7.G.B.4",
+   "title": "Explain the relationship between the circumference and the area of a circle",
+   "domain": "Geometry",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Explain the relationship between the circumference and the area of a circle",
+     "standard": "7.G.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S43-M-Q1",
+      "S43-M-Q2",
+      "S43-M-Q3",
+      "S43-M-Q4",
+      "S43-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find the area of a parallelogram",
+     "standard": "6.G.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S43-B1-Q1",
+      "S43-B1-Q2",
+      "S43-B1-Q3",
+      "S43-B1-Q4",
+      "S43-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Identify equivalent expressions",
+     "standard": "6.EE.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S43-B2-Q1",
+      "S43-B2-Q2",
+      "S43-B2-Q3",
+      "S43-B2-Q4",
+      "S43-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use square roots to solve equations of the form x² = p",
+     "standard": "8.EE.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S43-F1-Q1",
+      "S43-F1-Q2",
+      "S43-F1-Q3",
+      "S43-F1-Q4",
+      "S43-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Give an informal argument for circle and volume formulas",
+     "standard": "HSG-GMD.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S43-F2-Q1",
+      "S43-F2-Q2",
+      "S43-F2-Q3",
+      "S43-F2-Q4",
+      "S43-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 44,
+   "set_id": "S44",
+   "file": "sets/S44.json",
+   "standard": "7.G.B.5",
+   "title": "Write and solve equations for supplementary and complementary angles",
+   "domain": "Geometry",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Write and solve equations for supplementary and complementary angles",
+     "standard": "7.G.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S44-M-Q1",
+      "S44-M-Q2",
+      "S44-M-Q3",
+      "S44-M-Q4",
+      "S44-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find an unknown part of a right angle or a straight angle",
+     "standard": "4.MD.C.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S44-B1-Q1",
+      "S44-B1-Q2",
+      "S44-B1-Q3",
+      "S44-B1-Q4",
+      "S44-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Solve one-step equations",
+     "standard": "6.EE.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S44-B2-Q1",
+      "S44-B2-Q2",
+      "S44-B2-Q3",
+      "S44-B2-Q4",
+      "S44-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use the angle sum and exterior angles of triangles",
+     "standard": "8.G.A.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S44-F1-Q1",
+      "S44-F1-Q2",
+      "S44-F1-Q3",
+      "S44-F1-Q4",
+      "S44-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Prove theorems about angles formed by parallel lines",
+     "standard": "HSG-CO.C.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S44-F2-Q1",
+      "S44-F2-Q2",
+      "S44-F2-Q3",
+      "S44-F2-Q4",
+      "S44-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 45,
+   "set_id": "S45",
+   "file": "sets/S45.json",
+   "standard": "7.G.B.5",
+   "title": "Use vertical and adjacent angles to find unknown angles",
+   "domain": "Geometry",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Use vertical and adjacent angles to find unknown angles",
+     "standard": "7.G.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S45-M-Q1",
+      "S45-M-Q2",
+      "S45-M-Q3",
+      "S45-M-Q4",
+      "S45-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Identify lines, rays, segments, and angles",
+     "standard": "4.G.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S45-B1-Q1",
+      "S45-B1-Q2",
+      "S45-B1-Q3",
+      "S45-B1-Q4",
+      "S45-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Understand angle measure as a fraction of a full turn",
+     "standard": "4.MD.C.5.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S45-B2-Q1",
+      "S45-B2-Q2",
+      "S45-B2-Q3",
+      "S45-B2-Q4",
+      "S45-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find angles formed by parallel lines cut by a transversal",
+     "standard": "8.G.A.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S45-F1-Q1",
+      "S45-F1-Q2",
+      "S45-F1-Q3",
+      "S45-F1-Q4",
+      "S45-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Prove that vertical angles are congruent",
+     "standard": "HSG-CO.C.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S45-F2-Q1",
+      "S45-F2-Q2",
+      "S45-F2-Q3",
+      "S45-F2-Q4",
+      "S45-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 46,
+   "set_id": "S46",
+   "file": "sets/S46.json",
+   "standard": "7.G.B.6",
+   "title": "Find the area of composite figures made of triangles and quadrilaterals",
+   "domain": "Geometry",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Find the area of composite figures made of triangles and quadrilaterals",
+     "standard": "7.G.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S46-M-Q1",
+      "S46-M-Q2",
+      "S46-M-Q3",
+      "S46-M-Q4",
+      "S46-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find the area of a triangle",
+     "standard": "6.G.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S46-B1-Q1",
+      "S46-B1-Q2",
+      "S46-B1-Q3",
+      "S46-B1-Q4",
+      "S46-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Find areas of rectilinear figures by breaking them into rectangles",
+     "standard": "3.MD.C.7.d",
+     "nearest_related": false,
+     "question_ids": [
+      "S46-B2-Q1",
+      "S46-B2-Q2",
+      "S46-B2-Q3",
+      "S46-B2-Q4",
+      "S46-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find the volume of a solid made of cylinders, cones, and spheres",
+     "standard": "8.G.C.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S46-F1-Q1",
+      "S46-F1-Q2",
+      "S46-F1-Q3",
+      "S46-F1-Q4",
+      "S46-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use geometric shapes to model real objects",
+     "standard": "HSG-MG.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S46-F2-Q1",
+      "S46-F2-Q2",
+      "S46-F2-Q3",
+      "S46-F2-Q4",
+      "S46-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 47,
+   "set_id": "S47",
+   "file": "sets/S47.json",
+   "standard": "7.G.B.6",
+   "title": "Find the volume of right prisms",
+   "domain": "Geometry",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Find the volume of right prisms",
+     "standard": "7.G.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S47-M-Q1",
+      "S47-M-Q2",
+      "S47-M-Q3",
+      "S47-M-Q4",
+      "S47-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find the volume of a rectangular prism with fractional edges",
+     "standard": "6.G.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S47-B1-Q1",
+      "S47-B1-Q2",
+      "S47-B1-Q3",
+      "S47-B1-Q4",
+      "S47-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Find volume with V = l × w × h",
+     "standard": "5.MD.C.5.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S47-B2-Q1",
+      "S47-B2-Q2",
+      "S47-B2-Q3",
+      "S47-B2-Q4",
+      "S47-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Compare the volumes of cylinders and prisms",
+     "standard": "8.G.C.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S47-F1-Q1",
+      "S47-F1-Q2",
+      "S47-F1-Q3",
+      "S47-F1-Q4",
+      "S47-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use volume formulas to solve problems",
+     "standard": "HSG-GMD.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S47-F2-Q1",
+      "S47-F2-Q2",
+      "S47-F2-Q3",
+      "S47-F2-Q4",
+      "S47-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 48,
+   "set_id": "S48",
+   "file": "sets/S48.json",
+   "standard": "7.G.B.6",
+   "title": "Find the surface area of right prisms",
+   "domain": "Geometry",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Find the surface area of right prisms",
+     "standard": "7.G.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S48-M-Q1",
+      "S48-M-Q2",
+      "S48-M-Q3",
+      "S48-M-Q4",
+      "S48-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Use a net to find surface area",
+     "standard": "6.G.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S48-B1-Q1",
+      "S48-B1-Q2",
+      "S48-B1-Q3",
+      "S48-B1-Q4",
+      "S48-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Find the area of a rectangle",
+     "standard": "4.MD.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S48-B2-Q1",
+      "S48-B2-Q2",
+      "S48-B2-Q3",
+      "S48-B2-Q4",
+      "S48-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use the Pythagorean theorem in three-dimensional figures",
+     "standard": "8.G.B.7",
+     "nearest_related": true,
+     "question_ids": [
+      "S48-F1-Q1",
+      "S48-F1-Q2",
+      "S48-F1-Q3",
+      "S48-F1-Q4",
+      "S48-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Apply geometric methods to solve design problems",
+     "standard": "HSG-MG.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S48-F2-Q1",
+      "S48-F2-Q2",
+      "S48-F2-Q3",
+      "S48-F2-Q4",
+      "S48-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 49,
+   "set_id": "S49",
+   "file": "sets/S49.json",
+   "standard": "7.SP.A.1",
+   "title": "Understand random sampling and representative samples",
+   "domain": "Statistics & Probability",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Understand random sampling and representative samples",
+     "standard": "7.SP.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S49-M-Q1",
+      "S49-M-Q2",
+      "S49-M-Q3",
+      "S49-M-Q4",
+      "S49-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Recognize a statistical question",
+     "standard": "6.SP.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S49-B1-Q1",
+      "S49-B1-Q2",
+      "S49-B1-Q3",
+      "S49-B1-Q4",
+      "S49-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Report the number of observations",
+     "standard": "6.SP.B.5.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S49-B2-Q1",
+      "S49-B2-Q2",
+      "S49-B2-Q3",
+      "S49-B2-Q4",
+      "S49-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Summarize survey data in a two-way table",
+     "standard": "8.SP.A.4",
+     "nearest_related": true,
+     "question_ids": [
+      "S49-F1-Q1",
+      "S49-F1-Q2",
+      "S49-F1-Q3",
+      "S49-F1-Q4",
+      "S49-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Recognize surveys, experiments, and observational studies",
+     "standard": "HSS-IC.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S49-F2-Q1",
+      "S49-F2-Q2",
+      "S49-F2-Q3",
+      "S49-F2-Q4",
+      "S49-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 50,
+   "set_id": "S50",
+   "file": "sets/S50.json",
+   "standard": "7.SP.A.2",
+   "title": "Use data from a random sample to draw inferences about a population",
+   "domain": "Statistics & Probability",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Use data from a random sample to draw inferences about a population",
+     "standard": "7.SP.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S50-M-Q1",
+      "S50-M-Q2",
+      "S50-M-Q3",
+      "S50-M-Q4",
+      "S50-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find what percent a part is of a whole",
+     "standard": "6.RP.A.3.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S50-B1-Q1",
+      "S50-B1-Q2",
+      "S50-B1-Q3",
+      "S50-B1-Q4",
+      "S50-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Find a missing value in equivalent ratios",
+     "standard": "6.RP.A.3.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S50-B2-Q1",
+      "S50-B2-Q2",
+      "S50-B2-Q3",
+      "S50-B2-Q4",
+      "S50-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use a linear model to make a prediction",
+     "standard": "8.SP.A.3",
+     "nearest_related": true,
+     "question_ids": [
+      "S50-F1-Q1",
+      "S50-F1-Q2",
+      "S50-F1-Q3",
+      "S50-F1-Q4",
+      "S50-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use a margin of error to describe a population estimate",
+     "standard": "HSS-IC.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S50-F2-Q1",
+      "S50-F2-Q2",
+      "S50-F2-Q3",
+      "S50-F2-Q4",
+      "S50-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 51,
+   "set_id": "S51",
+   "file": "sets/S51.json",
+   "standard": "7.SP.A.2",
+   "title": "Use several random samples to judge how much estimates vary",
+   "domain": "Statistics & Probability",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Use several random samples to judge how much estimates vary",
+     "standard": "7.SP.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S51-M-Q1",
+      "S51-M-Q2",
+      "S51-M-Q3",
+      "S51-M-Q4",
+      "S51-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find the mean of a data set",
+     "standard": "6.SP.B.5.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S51-B1-Q1",
+      "S51-B1-Q2",
+      "S51-B1-Q3",
+      "S51-B1-Q4",
+      "S51-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Find the range as a measure of variation",
+     "standard": "6.SP.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S51-B2-Q1",
+      "S51-B2-Q2",
+      "S51-B2-Q3",
+      "S51-B2-Q4",
+      "S51-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Describe the association shown in a scatter plot",
+     "standard": "8.SP.A.1",
+     "nearest_related": true,
+     "question_ids": [
+      "S51-F1-Q1",
+      "S51-F1-Q2",
+      "S51-F1-Q3",
+      "S51-F1-Q4",
+      "S51-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Decide whether a result is consistent with a model by simulation",
+     "standard": "HSS-IC.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S51-F2-Q1",
+      "S51-F2-Q2",
+      "S51-F2-Q3",
+      "S51-F2-Q4",
+      "S51-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 52,
+   "set_id": "S52",
+   "file": "sets/S52.json",
+   "standard": "7.SP.B.3",
+   "title": "Describe how much two distributions overlap using the difference in means as a multiple of the MAD",
+   "domain": "Statistics & Probability",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Describe how much two distributions overlap using the difference in means as a multiple of the MAD",
+     "standard": "7.SP.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S52-M-Q1",
+      "S52-M-Q2",
+      "S52-M-Q3",
+      "S52-M-Q4",
+      "S52-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find the mean absolute deviation (MAD)",
+     "standard": "6.SP.B.5.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S52-B1-Q1",
+      "S52-B1-Q2",
+      "S52-B1-Q3",
+      "S52-B1-Q4",
+      "S52-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Describe the shape of a distribution",
+     "standard": "6.SP.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S52-B2-Q1",
+      "S52-B2-Q2",
+      "S52-B2-Q3",
+      "S52-B2-Q4",
+      "S52-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Compare groups using relative frequencies in a two-way table",
+     "standard": "8.SP.A.4",
+     "nearest_related": true,
+     "question_ids": [
+      "S52-F1-Q1",
+      "S52-F1-Q2",
+      "S52-F1-Q3",
+      "S52-F1-Q4",
+      "S52-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Compare the center and spread of two data sets",
+     "standard": "HSS-ID.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S52-F2-Q1",
+      "S52-F2-Q2",
+      "S52-F2-Q3",
+      "S52-F2-Q4",
+      "S52-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 53,
+   "set_id": "S53",
+   "file": "sets/S53.json",
+   "standard": "7.SP.B.4",
+   "title": "Compare two populations using measures of center and variability from random samples",
+   "domain": "Statistics & Probability",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Compare two populations using measures of center and variability from random samples",
+     "standard": "7.SP.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S53-M-Q1",
+      "S53-M-Q2",
+      "S53-M-Q3",
+      "S53-M-Q4",
+      "S53-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find the interquartile range",
+     "standard": "6.SP.B.5.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S53-B1-Q1",
+      "S53-B1-Q2",
+      "S53-B1-Q3",
+      "S53-B1-Q4",
+      "S53-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Read a box plot",
+     "standard": "6.SP.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S53-B2-Q1",
+      "S53-B2-Q2",
+      "S53-B2-Q3",
+      "S53-B2-Q4",
+      "S53-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Identify clusters and outliers in a scatter plot",
+     "standard": "8.SP.A.1",
+     "nearest_related": true,
+     "question_ids": [
+      "S53-F1-Q1",
+      "S53-F1-Q2",
+      "S53-F1-Q3",
+      "S53-F1-Q4",
+      "S53-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Interpret differences in center and spread, including the effect of outliers",
+     "standard": "HSS-ID.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S53-F2-Q1",
+      "S53-F2-Q2",
+      "S53-F2-Q3",
+      "S53-F2-Q4",
+      "S53-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 54,
+   "set_id": "S54",
+   "file": "sets/S54.json",
+   "standard": "7.SP.C.5",
+   "title": "Understand probability as a number from 0 to 1 that shows how likely an event is",
+   "domain": "Statistics & Probability",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Understand probability as a number from 0 to 1 that shows how likely an event is",
+     "standard": "7.SP.C.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S54-M-Q1",
+      "S54-M-Q2",
+      "S54-M-Q3",
+      "S54-M-Q4",
+      "S54-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Compare two fractions",
+     "standard": "4.NF.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S54-B1-Q1",
+      "S54-B1-Q2",
+      "S54-B1-Q3",
+      "S54-B1-Q4",
+      "S54-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Place fractions on a number line from 0 to 1",
+     "standard": "3.NF.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S54-B2-Q1",
+      "S54-B2-Q2",
+      "S54-B2-Q3",
+      "S54-B2-Q4",
+      "S54-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find relative frequencies in a two-way table",
+     "standard": "8.SP.A.4",
+     "nearest_related": true,
+     "question_ids": [
+      "S54-F1-Q1",
+      "S54-F1-Q2",
+      "S54-F1-Q3",
+      "S54-F1-Q4",
+      "S54-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Describe events as subsets of a sample space",
+     "standard": "HSS-CP.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S54-F2-Q1",
+      "S54-F2-Q2",
+      "S54-F2-Q3",
+      "S54-F2-Q4",
+      "S54-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 55,
+   "set_id": "S55",
+   "file": "sets/S55.json",
+   "standard": "7.SP.C.6",
+   "title": "Estimate a probability from relative frequency and make predictions",
+   "domain": "Statistics & Probability",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Estimate a probability from relative frequency and make predictions",
+     "standard": "7.SP.C.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S55-M-Q1",
+      "S55-M-Q2",
+      "S55-M-Q3",
+      "S55-M-Q4",
+      "S55-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Use a rate to make a prediction",
+     "standard": "6.RP.A.3.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S55-B1-Q1",
+      "S55-B1-Q2",
+      "S55-B1-Q3",
+      "S55-B1-Q4",
+      "S55-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Compare decimals to thousandths",
+     "standard": "5.NBT.A.3.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S55-B2-Q1",
+      "S55-B2-Q2",
+      "S55-B2-Q3",
+      "S55-B2-Q4",
+      "S55-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use relative frequencies in a two-way table to make predictions",
+     "standard": "8.SP.A.4",
+     "nearest_related": true,
+     "question_ids": [
+      "S55-F1-Q1",
+      "S55-F1-Q2",
+      "S55-F1-Q3",
+      "S55-F1-Q4",
+      "S55-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Find conditional probabilities from a two-way table",
+     "standard": "HSS-CP.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S55-F2-Q1",
+      "S55-F2-Q2",
+      "S55-F2-Q3",
+      "S55-F2-Q4",
+      "S55-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 56,
+   "set_id": "S56",
+   "file": "sets/S56.json",
+   "standard": "7.SP.C.7.a",
+   "title": "Develop a uniform probability model and use it to find probabilities",
+   "domain": "Statistics & Probability",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Develop a uniform probability model and use it to find probabilities",
+     "standard": "7.SP.C.7.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S56-M-Q1",
+      "S56-M-Q2",
+      "S56-M-Q3",
+      "S56-M-Q4",
+      "S56-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Write equivalent fractions",
+     "standard": "4.NF.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S56-B1-Q1",
+      "S56-B1-Q2",
+      "S56-B1-Q3",
+      "S56-B1-Q4",
+      "S56-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Write a fraction for part of a whole",
+     "standard": "3.NF.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S56-B2-Q1",
+      "S56-B2-Q2",
+      "S56-B2-Q3",
+      "S56-B2-Q4",
+      "S56-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Understand a function as a rule that gives exactly one output for each input",
+     "standard": "8.F.A.1",
+     "nearest_related": true,
+     "question_ids": [
+      "S56-F1-Q1",
+      "S56-F1-Q2",
+      "S56-F1-Q3",
+      "S56-F1-Q4",
+      "S56-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use the addition rule for probability",
+     "standard": "HSS-CP.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S56-F2-Q1",
+      "S56-F2-Q2",
+      "S56-F2-Q3",
+      "S56-F2-Q4",
+      "S56-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 57,
+   "set_id": "S57",
+   "file": "sets/S57.json",
+   "standard": "7.SP.C.7.b",
+   "title": "Develop a probability model from observed frequencies",
+   "domain": "Statistics & Probability",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Develop a probability model from observed frequencies",
+     "standard": "7.SP.C.7.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S57-M-Q1",
+      "S57-M-Q2",
+      "S57-M-Q3",
+      "S57-M-Q4",
+      "S57-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Read a scaled bar graph",
+     "standard": "3.MD.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S57-B1-Q1",
+      "S57-B1-Q2",
+      "S57-B1-Q3",
+      "S57-B1-Q4",
+      "S57-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Write a part of a whole as a percent",
+     "standard": "6.RP.A.3.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S57-B2-Q1",
+      "S57-B2-Q2",
+      "S57-B2-Q3",
+      "S57-B2-Q4",
+      "S57-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Construct a two-way table from collected data",
+     "standard": "8.SP.A.4",
+     "nearest_related": true,
+     "question_ids": [
+      "S57-F1-Q1",
+      "S57-F1-Q2",
+      "S57-F1-Q3",
+      "S57-F1-Q4",
+      "S57-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Summarize categorical data with relative frequencies",
+     "standard": "HSS-ID.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S57-F2-Q1",
+      "S57-F2-Q2",
+      "S57-F2-Q3",
+      "S57-F2-Q4",
+      "S57-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 58,
+   "set_id": "S58",
+   "file": "sets/S58.json",
+   "standard": "7.SP.C.7",
+   "title": "Compare probabilities from a model with observed frequencies and explain any differences",
+   "domain": "Statistics & Probability",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Compare probabilities from a model with observed frequencies and explain any differences",
+     "standard": "7.SP.C.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S58-M-Q1",
+      "S58-M-Q2",
+      "S58-M-Q3",
+      "S58-M-Q4",
+      "S58-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find a fraction of a whole number",
+     "standard": "5.NF.B.4.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S58-B1-Q1",
+      "S58-B1-Q2",
+      "S58-B1-Q3",
+      "S58-B1-Q4",
+      "S58-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Divide whole numbers to find equal shares",
+     "standard": "4.NBT.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S58-B2-Q1",
+      "S58-B2-Q2",
+      "S58-B2-Q3",
+      "S58-B2-Q4",
+      "S58-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Compare a linear model's predictions with observed data",
+     "standard": "8.SP.A.3",
+     "nearest_related": true,
+     "question_ids": [
+      "S58-F1-Q1",
+      "S58-F1-Q2",
+      "S58-F1-Q3",
+      "S58-F1-Q4",
+      "S58-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Decide whether observed results are consistent with a model",
+     "standard": "HSS-IC.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S58-F2-Q1",
+      "S58-F2-Q2",
+      "S58-F2-Q3",
+      "S58-F2-Q4",
+      "S58-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 59,
+   "set_id": "S59",
+   "file": "sets/S59.json",
+   "standard": "7.SP.C.8.a",
+   "title": "Find the probability of a compound event as the fraction of outcomes in the sample space",
+   "domain": "Statistics & Probability",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Find the probability of a compound event as the fraction of outcomes in the sample space",
+     "standard": "7.SP.C.8.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S59-M-Q1",
+      "S59-M-Q2",
+      "S59-M-Q3",
+      "S59-M-Q4",
+      "S59-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Multiply fractions",
+     "standard": "5.NF.B.4.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S59-B1-Q1",
+      "S59-B1-Q2",
+      "S59-B1-Q3",
+      "S59-B1-Q4",
+      "S59-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Use multiplication to count combinations in equal groups",
+     "standard": "3.OA.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S59-B2-Q1",
+      "S59-B2-Q2",
+      "S59-B2-Q3",
+      "S59-B2-Q4",
+      "S59-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find joint relative frequencies in a two-way table",
+     "standard": "8.SP.A.4",
+     "nearest_related": true,
+     "question_ids": [
+      "S59-F1-Q1",
+      "S59-F1-Q2",
+      "S59-F1-Q3",
+      "S59-F1-Q4",
+      "S59-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use the multiplication rule for independent events",
+     "standard": "HSS-CP.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S59-F2-Q1",
+      "S59-F2-Q2",
+      "S59-F2-Q3",
+      "S59-F2-Q4",
+      "S59-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 60,
+   "set_id": "S60",
+   "file": "sets/S60.json",
+   "standard": "7.SP.C.8.b",
+   "title": "Represent the sample space of a compound event with a list, a table, or a tree diagram",
+   "domain": "Statistics & Probability",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Represent the sample space of a compound event with a list, a table, or a tree diagram",
+     "standard": "7.SP.C.8.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S60-M-Q1",
+      "S60-M-Q2",
+      "S60-M-Q3",
+      "S60-M-Q4",
+      "S60-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Use repeated addition to find the total in an array",
+     "standard": "2.OA.C.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S60-B1-Q1",
+      "S60-B1-Q2",
+      "S60-B1-Q3",
+      "S60-B1-Q4",
+      "S60-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Form ordered pairs from two numerical patterns",
+     "standard": "5.OA.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S60-B2-Q1",
+      "S60-B2-Q2",
+      "S60-B2-Q3",
+      "S60-B2-Q4",
+      "S60-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Organize the outcomes of two categorical variables in a two-way table",
+     "standard": "8.SP.A.4",
+     "nearest_related": true,
+     "question_ids": [
+      "S60-F1-Q1",
+      "S60-F1-Q2",
+      "S60-F1-Q3",
+      "S60-F1-Q4",
+      "S60-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Find a conditional probability as P(A and B) ÷ P(B)",
+     "standard": "HSS-CP.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S60-F2-Q1",
+      "S60-F2-Q2",
+      "S60-F2-Q3",
+      "S60-F2-Q4",
+      "S60-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 61,
+   "set_id": "S61",
+   "file": "sets/S61.json",
+   "standard": "7.SP.C.8.c",
+   "title": "Design and use a simulation to estimate the probability of a compound event",
+   "domain": "Statistics & Probability",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Design and use a simulation to estimate the probability of a compound event",
+     "standard": "7.SP.C.8.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S61-M-Q1",
+      "S61-M-Q2",
+      "S61-M-Q3",
+      "S61-M-Q4",
+      "S61-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Display data in a dot plot",
+     "standard": "6.SP.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S61-B1-Q1",
+      "S61-B1-Q2",
+      "S61-B1-Q3",
+      "S61-B1-Q4",
+      "S61-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Compare fractions with the same numerator or the same denominator",
+     "standard": "3.NF.A.3.d",
+     "nearest_related": false,
+     "question_ids": [
+      "S61-B2-Q1",
+      "S61-B2-Q2",
+      "S61-B2-Q3",
+      "S61-B2-Q4",
+      "S61-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Construct and interpret a scatter plot",
+     "standard": "8.SP.A.1",
+     "nearest_related": true,
+     "question_ids": [
+      "S61-F1-Q1",
+      "S61-F1-Q2",
+      "S61-F1-Q3",
+      "S61-F1-Q4",
+      "S61-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use a simulation to decide whether a difference between treatments is significant",
+     "standard": "HSS-IC.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S61-F2-Q1",
+      "S61-F2-Q2",
+      "S61-F2-Q3",
+      "S61-F2-Q4",
+      "S61-F2-Q5"
+     ]
+    }
+   ]
+  }
+ ]
+}

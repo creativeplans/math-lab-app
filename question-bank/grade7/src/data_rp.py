@@ -1,0 +1,496 @@
+from qb import S, B, sa, mc, tf, plot, draw_write, table, coord, hrow
+from common import grid
+
+
+def tbl(xname, xs, yname, ys):
+    return table([[xname] + [str(v) for v in xs], [yname] + [str(v) for v in ys]], header='col')
+
+
+EARN = grid(6, 30, ystep=5, xlabel='Hours', ylabel='Dollars earned', lines=[((0, 0), (6, 30))], pts=[(1, 5), (4, 20)])
+
+SETS = [
+    # ------------------------------------------------------------------ 7.RP.A.1
+    S('7.RP.A.1', 'Compute unit rates associated with ratios of fractions',
+      main=[
+          sa('Ana walks {3/4} mile in {1/3} hour at a steady pace.\nHow many miles does she walk per hour?', 'Miles per hour:',
+             key='2 1/4 miles per hour', note='9/4 or 2.25 miles per hour is also correct.'),
+          sa('A recipe uses {2/3} cup of sugar for every {1/2} cup of flour.\nHow many cups of sugar are used per cup of flour?', 'Cups of sugar:',
+             key='1 1/3 cups', note='4/3 cups is also correct.'),
+          mc('Leo paints {5/6} of a wall in {1/2} hour.\nHow many walls does he paint per hour?', ['1{2/3} walls', '{5/12} wall', '{3/5} wall', '2{1/2} walls']),
+          tf('A snail crawls {1/8} meter in {1/4} minute. Its speed is {1/2} meter per minute.', key=True),
+          tf('{2/5} pound of cheese costs $3. The price is $1.20 per pound.', key=False, note='The price is $3 ÷ 2/5 = $7.50 per pound.'),
+      ],
+      back=[
+          B('Find a unit rate from whole-number quantities', '6.RP.A.2', [
+              sa('A car travels 180 miles in 3 hours at a steady speed.\nWhat is its speed in miles per hour?', 'Miles per hour:', key='60'),
+              sa('6 notebooks cost $9.\nWhat is the cost per notebook?', 'Cost:', key='$1.50'),
+              mc('A printer prints 120 pages in 8 minutes.\nHow many pages does it print per minute?', ['15', '960', '112', '128']),
+              tf('Jo reads 90 pages in 5 days at the same rate each day. That is 18 pages per day.', key=True),
+              tf('4 pounds of grapes cost $24. The price is $8 per pound.', key=False, note='The price is $6 per pound.'),
+          ]),
+          B('Divide a fraction by a fraction', '6.NS.A.1', [
+              sa('Divide.\n{3/4} ÷ {1/2}', 'Quotient:', key='3/2 = 1 1/2'),
+              sa('Divide.\n{5/6} ÷ {1/3}', 'Quotient:', key='5/2 = 2 1/2'),
+              mc('Divide.\n{5/8} ÷ {1/4}', ['2{1/2}', '{5/32}', '{2/5}', '1{1/4}']),
+              tf('{1/2} ÷ {1/4} = 2', key=True),
+              tf('{2/3} ÷ {1/3} = {2/9}', key=False),
+          ]),
+      ],
+      f1=B('Compare unit rates shown in different representations', '8.EE.B.5', [
+          mc('Which relationship has the greatest unit rate?',
+             ['y = 4.2x', 'A table with the pairs (2, 8) and (5, 20)', 'A line through (0, 0) and (3, 12.3)', 'y = 3.9x']),
+          sa('Runner A: a graph of meters (y) against seconds (x) is a line through (0, 0) and (10, 45).\nRunner B: d = 4.8t, where d is meters and t is seconds.\nWhich runner is faster, and by how many meters per second?', 'Answer:',
+             key='Runner B, by 0.3 meter per second'),
+          sa('Plan A charges $0.15 per text message. The cost for Plan B is shown by a line through (0, 0) and (40, 5), where x is texts and y is dollars.\nWhich plan costs less per text?', 'Plan:',
+             key='Plan B', note='Plan B costs $0.125 per text, which is less than $0.15.'),
+          tf('The graph of y = 2.5x is steeper than the graph of a proportional relationship that passes through (4, 9).', key=True),
+          tf('A proportional relationship that passes through (6, 15) has a greater unit rate than y = 2.6x.', key=False),
+      ]),
+      f2=B('Convert rates from one unit to another', 'HSN-Q.A.1', [
+          sa('A cheetah runs 66 feet per second.\nHow many miles per hour is this? (1 mile = 5,280 feet)', 'Miles per hour:', key='45'),
+          tf('Walking {1/2} mile in {1/10} hour is a speed of 440 feet per minute. (1 mile = 5,280 feet)', key=True),
+          sa('A pump moves 3 gallons every {1/4} minute.\nHow many gallons per hour is this?', 'Gallons per hour:', key='720'),
+          mc('A runner covers 400 meters in 80 seconds at a steady pace.\nWhat is the speed in kilometers per hour?', ['18', '5', '0.3', '300']),
+          tf('60 miles per hour is the same speed as 1 mile per second.', key=False, note='60 miles per hour is 1 mile per minute.'),
+      ])),
+
+    # ------------------------------------------------------------------ 7.RP.A.2.a (table)
+    S('7.RP.A.2.a', 'Decide whether two quantities in a table are in a proportional relationship',
+      main=[
+          tf('The table shows a proportional relationship between x and y.', fig=tbl('x', [2, 5, 8], 'y', [7, 17.5, 28]), key=True),
+          mc('Which table shows a proportional relationship?',
+             ['x: 3, 6, 9 and y: 12, 24, 36', 'x: 1, 2, 3 and y: 5, 6, 7', 'x: 2, 4, 6 and y: 3, 5, 7', 'x: 1, 3, 5 and y: 4, 12, 15']),
+          sa('The table shows the cost of renting a bike.\nIs the cost proportional to the number of hours? Explain.', 'Answer:',
+             fig=tbl('Hours', [1, 2, 3], 'Cost ($)', [4, 9, 14]),
+             key='No. The ratios 4/1, 9/2, and 14/3 are not equal.', note='Any explanation showing the cost-to-hours ratios are not all equal.'),
+          sa('Gallons of water and minutes are in a proportional relationship.\nFind the two missing values in the table.', 'Missing values:',
+             fig=tbl('Minutes', [2, 4, 6, '?'], 'Gallons', [5, 10, '?', 25]), key='15 gallons for 6 minutes; 10 minutes for 25 gallons'),
+          tf('The table shows a proportional relationship between x and y.', fig=tbl('x', [1, 2, 4], 'y', [3, 6, 10]), key=False),
+      ],
+      back=[
+          B('Complete a table of equivalent ratios', '6.RP.A.3.a', [
+              sa('The table shows equivalent ratios.\nWhat is the missing value?', 'Missing value:', fig=tbl('Cups of flour', [2, 4, 6], 'Cups of milk', [3, '?', 9]), key='6'),
+              sa('The table shows equivalent ratios.\nWhat is the missing value?', 'Missing value:', fig=tbl('Boys', [5, 10, 15], 'Girls', [4, 8, '?']), key='12'),
+              mc('Which ratio is equivalent to 3 : 5?', ['9 : 15', '5 : 3', '6 : 8', '3 : 15']),
+              tf('2 : 7 and 6 : 21 are equivalent ratios.', key=True),
+              tf('4 : 6 and 6 : 8 are equivalent ratios.', key=False),
+          ]),
+          B('Divide multi-digit decimals', '6.NS.B.3', [
+              sa('Divide.\n17.5 ÷ 5', 'Quotient:', key='3.5'),
+              sa('Divide.\n8.4 ÷ 2.4', 'Quotient:', key='3.5'),
+              mc('Divide.\n9.6 ÷ 3', ['3.2', '0.32', '32', '3.02']),
+              tf('28 ÷ 3.5 = 8', key=True),
+              tf('4.5 ÷ 1.5 = 0.3', key=False),
+          ]),
+      ],
+      f1=B('Decide whether a table shows a linear function', '8.F.A.3', [
+          tf('The table shows a linear function.', fig=tbl('x', [0, 1, 2, 3], 'y', [4, 9, 14, 19]), key=True),
+          mc('Which table shows a linear function that is NOT proportional?',
+             ['x: 0, 1, 2 and y: 3, 5, 7', 'x: 0, 1, 2 and y: 0, 4, 8', 'x: 0, 1, 2 and y: 1, 2, 4', 'x: 0, 1, 2 and y: 0, 1, 4']),
+          sa('The table shows a linear function.\nWhat is its rate of change?', 'Rate of change:', fig=tbl('x', [1, 2, 3, 4], 'y', [2, 5, 8, 11]), key='3'),
+          sa('Is the function in the table linear? Explain.', 'Answer:', fig=tbl('x', [1, 2, 3, 4], 'y', [1, 4, 9, 16]),
+             key='No. y increases by 3, then 5, then 7, so the rate of change is not constant.'),
+          tf('A table with x-values 0, 1, 2 and y-values 7, 9, 11 shows a proportional relationship.', key=False,
+             note='It is linear, but y is not 0 when x is 0.'),
+      ]),
+      f2=B('Recognize a quantity that changes at a constant rate per unit interval', 'HSF-LE.A.1.b', [
+          tf('In the table, y grows by equal differences over equal intervals of x.', fig=tbl('x', [0, 2, 4, 6], 'y', [5, 11, 17, 23]), key=True),
+          sa('A tank holds 80 gallons and drains 6 gallons every minute.\nWhat is the change in the amount of water per minute?', 'Change per minute:',
+             key='-6 gallons per minute', note='"It decreases by 6 gallons each minute" is also correct.'),
+          mc('Which quantity changes at a constant rate per unit interval?',
+             ['A plant grows 2 cm every week.', 'A population doubles every year.', 'A price increases 5% each year.', 'A bacteria count triples each hour.']),
+          sa('The table shows a linear function.\nBy how much does y change for each increase of 1 in x?', 'Change in y:', fig=tbl('x', [0, 3, 6, 9], 'y', [10, 16, 22, 28]), key='2'),
+          tf('An account that earns 4% of its current balance each year grows by the same number of dollars each year.', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 7.RP.A.2.a (graph)
+    S('7.RP.A.2.a', 'Decide whether a graph shows a proportional relationship',
+      main=[
+          tf('The graph shows a proportional relationship between x and y.', fig=grid(6, 12, ystep=2, lines=[((0, 0), (6, 12))]), key=True),
+          sa('Is the relationship in the graph proportional? Explain.', 'Answer:', fig=grid(6, 10, lines=[((0, 2), (6, 8))]),
+             key='No. The line does not pass through the origin (0, 0).'),
+          mc('Which graph shows a proportional relationship?',
+             ['A straight line through the origin', 'A straight line that crosses the y-axis at 3', 'A curve through the origin', 'Points that do not lie on one line']),
+          draw_write('Plot the points (1, 2.5), (2, 5), and (4, 10).\nDo the points show a proportional relationship? Explain.', grid(5, 12), 'Answer:',
+                     draw='Points at (1, 2.5), (2, 5), and (4, 10)',
+                     key='Yes. The points lie on a straight line through the origin; y ÷ x = 2.5 for every point.',
+                     note='Grade both: the three points plotted correctly, and "yes" with a reason (same ratio, or a line through the origin).'),
+          tf('The points in the graph show a proportional relationship.', fig=grid(5, 10, pts=[(1, 2), (2, 4), (3, 7), (4, 8)]), key=False),
+      ],
+      back=[
+          B('Plot the pairs from a ratio table', '6.RP.A.3.a', [
+              plot('The table shows equivalent ratios.\nPlot each pair (x, y) on the grid.', hrow(tbl('x', [1, 2, 3], 'y', [3, 6, 9]), grid(4, 10)),
+                   key='Points at (1, 3), (2, 6), and (3, 9)'),
+              sa('A ratio table has the pairs (2, 5), (4, 10), and (6, ?).\nWhat is the missing y-value?', 'y =', key='15'),
+              mc('Which pair belongs in the same ratio table as (3, 4)?', ['(6, 8)', '(4, 5)', '(6, 7)', '(9, 10)']),
+              tf('The pairs (2, 6), (4, 12), and (5, 15) can all come from the same ratio table.', key=True),
+              tf('To plot the pair (3, 7), you start at the origin, move 7 units right, and then move 3 units up.', key=False),
+          ]),
+          B('Find the coordinates of points in all four quadrants', '6.NS.C.6.c', [
+              sa('What are the coordinates of point A?', 'Coordinates:', fig=coord(pts=[(-3, 2, 'A')]), key='(-3, 2)'),
+              sa('What are the coordinates of point B?', 'Coordinates:', fig=coord(pts=[(4, -5, 'B')]), key='(4, -5)'),
+              mc('Which point is at the origin?', ['(0, 0)', '(1, 1)', '(0, 1)', '(1, 0)']),
+              tf('The point (3, 0) lies on the x-axis.', key=True),
+              tf('The point (0, 5) lies on the x-axis.', key=False),
+          ]),
+      ],
+      f1=B('Recognize linear functions whose graphs do not pass through the origin', '8.F.A.3', [
+          sa('The graph shows a line.\nWrite its equation in the form y = mx + b.', 'Equation:', fig=grid(6, 10, lines=[((0, 2), (6, 8))]), key='y = x + 2'),
+          mc('Which equation is linear but NOT proportional?', ['y = 3x + 1', 'y = 3x', 'y = x²', 'y = {3/x}']),
+          tf('The graph of y = 4x is a line through the origin.', key=True),
+          sa('A line passes through (0, 3) and (2, 7).\nIs the relationship proportional? Explain.', 'Answer:',
+             key='No. The line is linear, but it crosses the y-axis at 3, not at the origin.'),
+          tf('Every linear function is a proportional relationship.', key=False),
+      ]),
+      f2=B('Interpret the intercepts of a graph in context', 'HSF-IF.B.4', [
+          sa('The graph shows the cost of renting a kayak.\nWhat does the point where the line meets the vertical axis mean?', 'Meaning:',
+             fig=grid(6, 40, ystep=5, xlabel='Hours', ylabel='Cost (dollars)', lines=[((0, 10), (6, 40))]),
+             key='There is a $10 cost at 0 hours (a starting fee).'),
+          sa('The height of a candle after t hours is h = 24 - 3t centimeters.\nAfter how many hours does the candle burn out (h = 0)?', 'Hours:', key='8'),
+          mc('The water in a tank after m minutes is w = 50 - 5m gallons.\nWhat does the w-intercept, 50, mean?',
+             ['The tank starts with 50 gallons.', 'The tank drains 50 gallons per minute.', 'The tank is empty after 50 minutes.', 'The tank drains 5 gallons in 50 minutes.']),
+          tf('The cost of a rental is C = 15 + 2h dollars for h hours. The C-intercept, 15, is the cost when h = 0.', key=True),
+          tf('For h = 24 - 3t, the h-intercept is 3.', key=False, note='The h-intercept is 24.'),
+      ])),
+
+    # ------------------------------------------------------------------ 7.RP.A.2.b
+    S('7.RP.A.2.b', 'Identify the constant of proportionality in tables, graphs, equations, and descriptions',
+      main=[
+          sa('The table shows a proportional relationship.\nWhat is the constant of proportionality (y per x)?', 'k =', fig=tbl('x', [2, 4, 6], 'y', [5, 10, 15]), key='2.5'),
+          sa('The graph shows a proportional relationship.\nWhat is the constant of proportionality?', 'k =',
+             fig=grid(6, 18, ystep=3, lines=[((0, 0), (6, 18))], pts=[(5, 15)]), key='3'),
+          mc('What is the constant of proportionality in y = {2/3}x?', ['{2/3}', '{3/2}', '2', '3']),
+          tf('6 pencils cost $2.10. The constant of proportionality, in dollars per pencil, is 0.35.', key=True),
+          sa('Kim types 216 words in 4 minutes at a steady rate.\nWhat is the constant of proportionality in words per minute?', 'k =', key='54'),
+      ],
+      back=[
+          B('Describe a unit rate', '6.RP.A.2', [
+              sa('A pack of 8 juice boxes costs $6.\nWhat is the cost per juice box?', 'Cost:', key='$0.75'),
+              mc('A recipe uses 4 cups of flour for 2 loaves.\nWhich is the unit rate?',
+                 ['2 cups of flour per loaf', '{1/2} cup of flour per loaf', '8 cups of flour per loaf', '6 cups of flour per loaf']),
+              sa('Lena swims 600 meters in 12 minutes at a steady pace.\nHow many meters does she swim per minute?', 'Meters per minute:', key='50'),
+              tf('"$3 per pound" is a unit rate.', key=True),
+              tf('5 apples cost $4. The unit rate is $1.25 per apple.', key=False, note='The unit rate is $0.80 per apple.'),
+          ]),
+          B('Write an equation from a table of values', '6.EE.C.9', [
+              sa('In the table, y is always 4 times x.\nWrite an equation for y in terms of x.', 'Equation:', fig=tbl('x', [1, 2, 3], 'y', [4, 8, 12]), key='y = 4x'),
+              mc('Each ticket costs $7.\nWhich equation gives the cost c of t tickets?', ['c = 7t', 't = 7c', 'c = t + 7', 'c = {t/7}']),
+              sa('Write an equation for y in terms of x.', 'Equation:', fig=tbl('x', [2, 3, 5], 'y', [10, 15, 25]), key='y = 5x'),
+              tf('For y = 6x, when x = 3, y = 18.', key=True),
+              tf('In d = 50t, d is the independent variable.', key=False, note='t is the independent variable; d depends on t.'),
+          ]),
+      ],
+      f1=B('Interpret the unit rate as the slope of a graph', '8.EE.B.5', [
+          sa('The graph shows a proportional relationship between minutes and pages read.\nWhat is the slope of the line?', 'Slope:',
+             fig=grid(5, 20, ystep=4, xlabel='Minutes', ylabel='Pages', lines=[((0, 0), (5, 20))], pts=[(3, 12)]), key='4'),
+          sa('A line passes through (0, 0) and (8, 6).\nWhat is its slope?', 'Slope:', key='3/4', note='0.75 is also correct.'),
+          mc('The graph of a proportional relationship has a slope of 1.5 liters per minute.\nWhich point is on the graph?', ['(4, 6)', '(6, 4)', '(1.5, 1)', '(4, 5.5)']),
+          tf('The slope of the graph of y = 0.8x is 0.8.', key=True),
+          tf('A line through the origin and (2, 9) has a slope of {2/9}.', key=False, note='The slope is 9/2.'),
+      ]),
+      f2=B('Write a linear function from two points or a description', 'HSF-LE.A.2', [
+          sa('A linear function passes through (1, 5) and (3, 11).\nWrite the function.', 'f(x) =', key='3x + 2'),
+          sa('A gym charges a $20 joining fee plus $15 each month.\nWrite a function for the total cost C after m months.', 'C(m) =', key='15m + 20'),
+          mc('Which linear function passes through (0, -4) and (2, 2)?', ['f(x) = 3x - 4', 'f(x) = -4x + 3', 'f(x) = 2x - 4', 'f(x) = 3x + 2']),
+          tf('The linear function through (2, 7) and (4, 11) is f(x) = 2x + 3.', key=True),
+          tf('The linear function through (0, 1) and (5, 11) is f(x) = 5x + 1.', key=False, note='The slope is 2, so f(x) = 2x + 1.'),
+      ])),
+
+    # ------------------------------------------------------------------ 7.RP.A.2.c
+    S('7.RP.A.2.c', 'Represent a proportional relationship with an equation',
+      main=[
+          sa('Peaches cost $2.40 per pound.\nWrite an equation for the cost c of p pounds.', 'Equation:', key='c = 2.4p', note='c = 2.40p is also correct.'),
+          mc('A car travels 29 miles per gallon of gas.\nWhich equation gives the miles m for g gallons?', ['m = 29g', 'g = 29m', 'm = g + 29', 'm = {g/29}']),
+          sa('The table shows a proportional relationship.\nWrite an equation for y in terms of x.', 'Equation:', fig=tbl('x', [4, 8, 12], 'y', [3, 6, 9]),
+             key='y = 0.75x', note='y = (3/4)x is also correct.'),
+          tf('Notebooks cost $1.75 each. The equation c = 1.75n gives the cost c of n notebooks.', key=True),
+          tf('A printer prints 12 pages every 3 minutes. The equation p = 12m gives the pages p printed in m minutes.', key=False, note='The equation is p = 4m.'),
+      ],
+      back=[
+          B('Write an equation for a dependent variable', '6.EE.C.9', [
+              sa('A worker earns $18 per hour.\nWrite an equation for the earnings e after h hours.', 'Equation:', key='e = 18h'),
+              mc('Which equation matches the table?', ['y = 9x', 'y = x + 8', 'x = 9y', 'y = 3x'], fig=tbl('x', [1, 2, 3], 'y', [9, 18, 27])),
+              sa('Water fills a tank at 6 liters per minute.\nWrite an equation for the liters L after t minutes.', 'Equation:', key='L = 6t'),
+              tf('In e = 18h, the value of e depends on the value of h.', key=True),
+              tf('The point (2, 7) is on the graph of y = 5x.', key=False),
+          ]),
+          B('Solve unit rate problems', '6.RP.A.3.b', [
+              sa('5 bags of rice cost $15.\nAt the same rate, how much do 8 bags cost?', 'Cost:', key='$24'),
+              sa('A machine makes 140 parts in 7 hours.\nAt the same rate, how many parts does it make in 10 hours?', 'Parts:', key='200'),
+              mc('A bus travels at 45 miles per hour.\nHow long does it take to travel 135 miles?', ['3 hours', '4 hours', '2 hours', '6 hours']),
+              tf('At $4 per pound, 6 pounds cost $24.', key=True),
+              tf('A printer prints 12 pages per minute. It takes 6 minutes to print 60 pages.', key=False, note='It takes 5 minutes.'),
+          ]),
+      ],
+      f1=B('Construct a linear function y = mx + b from a situation', '8.F.B.4', [
+          sa('A plumber charges $60 for a visit plus $45 per hour.\nWrite an equation for the cost y after x hours.', 'Equation:', key='y = 45x + 60'),
+          sa('The table shows a linear function.\nWrite its equation in the form y = mx + b.', 'Equation:', fig=tbl('x', [0, 1, 2], 'y', [7, 10, 13]), key='y = 3x + 7'),
+          mc('A line has a slope of 2 and passes through (0, -5).\nWhich is its equation?', ['y = 2x - 5', 'y = -5x + 2', 'y = 2x + 5', 'y = -2x - 5']),
+          tf('A pool has 300 gallons and fills at 20 gallons per minute. The equation y = 20x + 300 gives the gallons y after x minutes.', key=True),
+          tf('A candle 15 cm tall burns 2 cm per hour. Its height after x hours is y = 15x - 2.', key=False, note='The height is y = -2x + 15.'),
+      ]),
+      f2=B('Write an equation in two variables for a situation', 'HSA-CED.A.2', [
+          sa('Pens cost $2 each and markers cost $3 each. Kai spends exactly $30.\nWrite an equation using p for pens and m for markers.', 'Equation:', key='2p + 3m = 30'),
+          sa('Adult tickets cost $12 and child tickets cost $8. A group pays $96.\nWrite an equation using a for adult tickets and c for child tickets.', 'Equation:', key='12a + 8c = 96'),
+          mc('A farm has 40 animals. Every animal is a chicken or a goat.\nWhich equation relates the number of chickens c and goats g?', ['c + g = 40', 'cg = 40', 'c = 40g', '2c + 4g = 40']),
+          tf('The equation 5x + 2y = 50 can describe buying x items at $5 each and y items at $2 each for a total of $50.', key=True),
+          tf('p = 6 and m = 4 is a solution of 2p + 3m = 30.', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 7.RP.A.2.d
+    S('7.RP.A.2.d', 'Explain what a point on the graph of a proportional relationship means',
+      main=[
+          sa('The graph shows the money Raj earns.\nWhat does the point (4, 20) mean in this situation?', 'Meaning:', fig=EARN, key='Raj earns $20 for working 4 hours.'),
+          sa('The graph shows the money Raj earns.\nWhat does the point (1, 5) tell you?', 'Meaning:', fig=EARN,
+             key='Raj earns $5 per hour. This is the unit rate.'),
+          mc('The graph shows the money Raj earns.\nWhat does the point (0, 0) mean?',
+             ['Raj earns $0 when he works 0 hours.', 'Raj earns $5 per hour.', 'Raj starts with $5.', 'Raj works 0 hours to earn $5.'], fig=EARN),
+          tf('A proportional graph shows cups of rice (x) and cups of water (y). The point (1, 3.5) means 3.5 cups of water are used for each cup of rice.', key=True),
+          tf('A car\'s distance graph passes through (2, 110), where x is hours and y is miles. This means the car travels 110 miles per hour.', key=False,
+             note='It means 110 miles in 2 hours, or 55 miles per hour.'),
+      ],
+      back=[
+          B('Explain a pair in a table of equivalent ratios', '6.RP.A.3.a', [
+              sa('The table shows the cost of apples.\nWhat does the pair (2, 6) mean?', 'Meaning:', fig=tbl('Pounds', [1, 2, 3], 'Cost ($)', [3, 6, 9]), key='2 pounds of apples cost $6.'),
+              mc('The table shows the time a swimmer takes.\nWhat does the pair (4, 10) mean?',
+                 ['4 laps take 10 minutes.', '10 laps take 4 minutes.', 'Each lap takes 4 minutes.', 'Each lap takes 10 minutes.'],
+                 fig=tbl('Laps', [2, 4, 6], 'Minutes', [5, 10, 15])),
+              tf('A table shows hours (x) and miles walked (y). The pair (3, 12) means 12 miles are walked in 3 hours.', key=True),
+              sa('One ticket costs $8.\nWhat pair (tickets, cost) shows the cost of 5 tickets?', 'Pair:', key='(5, 40)'),
+              tf('A table shows boxes (x) and pencils (y). The pair (2, 24) means each box holds 2 pencils.', key=False, note='It means 2 boxes hold 24 pencils.'),
+          ]),
+          B('Read values from the graph of an equation', '6.EE.C.9', [
+              sa('The graph shows y = 3x.\nWhat is y when x = 4?', 'y =', fig=grid(5, 15, ystep=3, lines=[((0, 0), (5, 15))]), key='12'),
+              sa('The graph shows y = 3x.\nWhat is x when y = 6?', 'x =', fig=grid(5, 15, ystep=3, lines=[((0, 0), (5, 15))]), key='2'),
+              mc('Which point is on the graph of y = 2x?', ['(3, 6)', '(6, 3)', '(2, 2)', '(4, 6)']),
+              tf('The point (5, 15) is on the graph of y = 3x.', key=True),
+              tf('The point (1, 4) is on the graph of y = 3x.', key=False),
+          ]),
+      ],
+      f1=B('Interpret the rate of change and initial value of a linear function', '8.F.B.4', [
+          sa('A taxi ride costs y = 2.5x + 4 dollars for x miles.\nWhat does the 4 mean?', 'Meaning:', key='A $4 starting fee (the cost at 0 miles).'),
+          sa('A taxi ride costs y = 2.5x + 4 dollars for x miles.\nWhat does the 2.5 mean?', 'Meaning:', key='The cost increases by $2.50 for each mile.'),
+          mc('A tank holds y = 200 - 8x gallons after x minutes.\nWhat is the rate of change?', ['-8 gallons per minute', '200 gallons per minute', '8 gallons', '-200 gallons']),
+          tf('A plant\'s height after x weeks is y = 0.5x + 3 centimeters. The plant was 3 cm tall at the start.', key=True),
+          tf('In y = 12x + 30, the initial value is 12.', key=False, note='The initial value is 30.'),
+      ]),
+      f2=B('Calculate the average rate of change over an interval', 'HSF-IF.B.6', [
+          sa('f(x) = x²\nWhat is the average rate of change of f from x = 1 to x = 3?', 'Average rate:', key='4'),
+          sa('The table shows the height of a balloon.\nWhat is the average rate of change from 2 seconds to 4 seconds?', 'Average rate:',
+             fig=tbl('Time (s)', [0, 2, 4], 'Height (m)', [0, 40, 60]), key='10 meters per second'),
+          mc('A car is 30 miles from home at 1 p.m. and 150 miles from home at 3 p.m.\nWhat is its average rate of change in distance?',
+             ['60 miles per hour', '120 miles per hour', '50 miles per hour', '75 miles per hour']),
+          tf('For f(x) = 2x + 1, the average rate of change over any interval is 2.', key=True),
+          tf('For f(x) = x², the average rate of change from x = 0 to x = 2 equals the average rate of change from x = 2 to x = 4.', key=False,
+             note='They are 2 and 6.'),
+      ])),
+
+    # ------------------------------------------------------------------ 7.RP.A.3 (multistep ratio)
+    S('7.RP.A.3', 'Solve multistep ratio problems',
+      main=[
+          sa('A recipe uses flour and sugar in a ratio of 3 : 2. Lee uses 7{1/2} cups of flour.\nHow many cups of sugar does she need?', 'Cups of sugar:', key='5'),
+          sa('A club has boys and girls in a ratio of 4 : 5. There are 36 members.\nHow many girls are in the club?', 'Girls:', key='20'),
+          mc('Ali mixes blue and yellow paint in a ratio of 2 : 3. He makes 15 liters of paint.\nHow many liters are blue?', ['6 liters', '10 liters', '9 liters', '7.5 liters']),
+          tf('On a map, 2 cm represents 15 km. A distance of 7 cm on the map represents 52.5 km.', key=True),
+          tf('Juice concentrate and water are mixed in a ratio of 1 : 4. To make 6 liters of juice, you need 6 liters of water.', key=False,
+             note='You need 4.8 liters of water.'),
+      ],
+      back=[
+          B('Use ratio language to describe two quantities', '6.RP.A.1', [
+              sa('A class has 12 girls and 15 boys.\nWrite the ratio of boys to girls.', 'Ratio:', key='15 : 12', note='5 : 4 is also correct.'),
+              mc('For every 3 red tiles, there are 5 blue tiles.\nWhat is the ratio of blue tiles to all tiles?', ['5 : 8', '5 : 3', '3 : 8', '8 : 5']),
+              sa('A team won 9 games and lost 6 games. There were no ties.\nWrite the ratio of wins to games played.', 'Ratio:', key='9 : 15', note='3 : 5 is also correct.'),
+              tf('There are 2 cats for every 7 dogs. The ratio of dogs to cats is 7 : 2.', key=True),
+              tf('A bowl has 4 apples and 9 oranges and no other fruit. The ratio of apples to all the fruit is 4 : 9.', key=False, note='The ratio is 4 : 13.'),
+          ]),
+          B('Use a table of equivalent ratios to solve a problem', '6.RP.A.3.a', [
+              sa('Lemonade uses 2 cups of mix for every 5 cups of water.\nHow many cups of water are needed for 8 cups of mix?', 'Cups of water:', key='20'),
+              sa('A store sells 3 notebooks for $4.\nAt the same rate, how much do 12 notebooks cost?', 'Cost:', key='$16'),
+              mc('Which pair belongs in a table of ratios equivalent to 3 : 4?', ['15 : 20', '12 : 15', '6 : 7', '9 : 16']),
+              tf('A table of ratios equivalent to 5 : 2 can include 20 : 8.', key=True),
+              tf('A table of ratios equivalent to 2 : 3 can include 8 : 10.', key=False),
+          ]),
+      ],
+      f1=B('Solve linear equations with rational coefficients', '8.EE.C.7.b', [
+          sa('Solve for b.\n5b = 3(b + 6)', 'b =', key='9'),
+          sa('Solve for x.\n{2/3}x + 4 = 10', 'x =', key='9'),
+          mc('Solve for x.\n0.4(x - 5) = 2', ['x = 10', 'x = 3', 'x = 0.5', 'x = 5.8']),
+          tf('x = 12 is the solution of {3/4}x - 2 = 7.', key=True),
+          tf('x = 4 is the solution of 2(x + 3) = 5x - 4.', key=False),
+      ]),
+      f2=B('Create one-variable equations to solve ratio problems', 'HSA-CED.A.1', [
+          sa('The ratio of red marbles to green marbles is 3 : 5. There are 14 more green marbles than red marbles.\nWrite and solve an equation to find the number of red marbles.', 'Red marbles:',
+             key='21', note='Example equation: 5x - 3x = 14, so x = 7 and there are 3(7) = 21 red marbles. Any correct equation earns credit.'),
+          sa('A 60-meter rope is cut into two pieces in a ratio of 2 : 3.\nWrite and solve an equation to find the length of the longer piece.', 'Longer piece:',
+             key='36 meters', note='Example equation: 2x + 3x = 60, so x = 12. Any correct equation earns credit.'),
+          mc('The ages of two cousins are in a ratio of 4 : 7. The sum of their ages is 66.\nWhich equation can find x, where the ages are 4x and 7x?', ['4x + 7x = 66', '4 + 7x = 66', '7x - 4x = 66', '4x · 7x = 66']),
+          tf('The ratio of a to b is 2 : 5, and a + b = 35. Then a = 10.', key=True),
+          tf('The ratio of a to b is 1 : 3, and b - a = 12. Then a = 4.', key=False, note='a = 6.'),
+      ])),
+
+    # ------------------------------------------------------------------ 7.RP.A.3 (percent change)
+    S('7.RP.A.3', 'Find a percent increase or a percent decrease',
+      main=[
+          sa('A town\'s population grew from 2,500 to 3,000.\nWhat is the percent increase?', 'Percent increase:', key='20%'),
+          sa('The price of a jacket dropped from $80 to $60.\nWhat is the percent decrease?', 'Percent decrease:', key='25%'),
+          mc('A plant grew from 40 cm to 46 cm tall.\nWhat is the percent increase?', ['15%', '6%', '13%', '87%']),
+          tf('A score that falls from 50 to 40 is a 20% decrease.', key=True),
+          tf('A price that rises from $60 to $75 is a 15% increase.', key=False, note='It is a 25% increase.'),
+      ],
+      back=[
+          B('Find a percent of a quantity', '6.RP.A.3.c', [
+              sa('What is 30% of 70?', 'Answer:', key='21'),
+              sa('What is 15% of $80?', 'Answer:', key='$12'),
+              mc('What is 4% of 250?', ['10', '100', '1', '40']),
+              tf('75% of 40 is 30.', key=True),
+              tf('20% of 45 is 8.', key=False, note='20% of 45 is 9.'),
+          ]),
+          B('Find the whole from a part and a percent', '6.RP.A.3.c', [
+              sa('12 is 40% of what number?', 'Number:', key='30'),
+              sa('9 students in a class walk to school. That is 25% of the class.\nHow many students are in the class?', 'Students:', key='36'),
+              mc('18 is 60% of what number?', ['30', '10.8', '12', '48']),
+              tf('15 is 50% of 30.', key=True),
+              tf('8 is 20% of 16.', key=False, note='8 is 50% of 16.'),
+          ]),
+      ],
+      f1=B('Compare quantities written in scientific notation', '8.EE.A.3', nearest=True, qs=[
+          sa('City A has about 3 × 10⁶ people. Town B has about 6 × 10⁴ people.\nHow many times as many people live in City A as in Town B?', 'Times as many:', key='50'),
+          sa('Write 4,500,000 in scientific notation.', 'Answer:', key='4.5 × 10⁶'),
+          mc('Which number is the greatest?', ['2 × 10⁷', '9 × 10⁶', '8 × 10⁵', '1 × 10⁶']),
+          tf('8 × 10⁸ is 100 times as large as 8 × 10⁶.', key=True),
+          tf('3 × 10⁻² is greater than 3 × 10⁻¹.', key=False),
+      ]),
+      f2=B('Model a quantity that changes by a constant percent rate', 'HSF-LE.A.1.c', [
+          sa('A town of 10,000 people grows by 5% each year.\nWhat is the population after 2 years?', 'Population:', key='11,025'),
+          mc('Which situation shows growth by a constant percent rate?',
+             ['An account earns 3% of its current balance each year.', 'A plant grows 2 cm each week.', 'A worker earns $15 more each year.', 'A tank fills 4 gallons each minute.']),
+          sa('A car worth $20,000 loses 10% of its value each year.\nWhat is it worth after 2 years?', 'Value:', key='$16,200'),
+          tf('A quantity that is multiplied by 1.08 each year grows by 8% per year.', key=True),
+          tf('A quantity that decreases by 10% each year loses the same number of units each year.', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 7.RP.A.3 (markups, discounts, tax, tips)
+    S('7.RP.A.3', 'Solve problems with markups, discounts, sales tax, and tips',
+      main=[
+          sa('A meal costs $45. Kai leaves a 20% tip.\nWhat is the total cost of the meal with the tip?', 'Total:', key='$54'),
+          sa('A bike costs $120. It is on sale for 25% off. Then 8% sales tax is added to the sale price.\nWhat is the final cost?', 'Final cost:', key='$97.20'),
+          mc('A store buys a lamp for $30 and marks the price up by 60%.\nWhat is the selling price?', ['$48', '$18', '$90', '$36']),
+          tf('A pair of shoes costs $64. At 15% off, the sale price is $54.40.', key=True),
+          tf('A shirt costs $35. With 6% sales tax, the total is $37.20.', key=False, note='The total is $37.10.'),
+      ],
+      back=[
+          B('Multiply decimals', '6.NS.B.3', [
+              sa('Multiply.\n0.15 × 80', 'Product:', key='12'),
+              sa('Multiply.\n1.08 × 25', 'Product:', key='27'),
+              mc('Multiply.\n0.06 × 45', ['2.7', '27', '0.27', '270']),
+              tf('0.2 × 36.5 = 7.3', key=True),
+              tf('1.5 × 4.2 = 6.2', key=False),
+          ]),
+          B('Find a percent of an amount of money', '6.RP.A.3.c', [
+              sa('What is 10% of $56?', 'Answer:', key='$5.60'),
+              sa('What is 25% of $48?', 'Answer:', key='$12'),
+              mc('What is 8% of $50?', ['$4', '$40', '$0.40', '$8']),
+              tf('20% of $35 is $7.', key=True),
+              tf('5% of $60 is $30.', key=False),
+          ]),
+      ],
+      f1=B('Solve equations to find an original price', '8.EE.C.7.b', [
+          sa('After a 20% discount, a game costs $36. The equation 0.8p = 36 models this.\nWhat was the original price p?', 'p =', key='$45'),
+          sa('A meal plus a 15% tip cost $46. The equation 1.15m = 46 models this.\nWhat was the cost m of the meal?', 'm =', key='$40'),
+          mc('Solve for x.\n1.06x = 53', ['x = 50', 'x = 56.18', 'x = 51.94', 'x = 5']),
+          tf('If 0.75p = 30, then p = 40.', key=True),
+          tf('If 1.25p = 50, then p = 62.5.', key=False, note='p = 40.'),
+      ]),
+      f2=B('Interpret the parts of an expression in context', 'HSA-SSE.A.1.a', [
+          sa('A price p is discounted 10%. Then 7% sales tax is added. The final cost is 1.07(0.9p).\nWhat does 0.9p represent?', 'Meaning:',
+             key='The price after the 10% discount (90% of p).'),
+          sa('The final cost of an item is 1.07(0.9p).\nWhat does the factor 1.07 represent?', 'Meaning:',
+             key='Adding 7% sales tax (paying 107% of the discounted price).'),
+          mc('A store\'s selling price is p + 0.4p, where p is what the store paid.\nWhat does 0.4p represent?',
+             ['The amount of the 40% markup', 'The price the store paid', 'The selling price', 'The amount of a 40% discount']),
+          tf('The expression 0.85p gives the price after a 15% discount on price p.', key=True),
+          tf('The expression 1.2p gives the price after a 20% discount on price p.', key=False, note='1.2p is a 20% increase.'),
+      ])),
+
+    # ------------------------------------------------------------------ 7.RP.A.3 (interest, commission, fees)
+    S('7.RP.A.3', 'Solve problems with simple interest, commissions, and fees',
+      main=[
+          sa('Ella deposits $800 in an account that earns 3% simple interest per year.\nHow much interest does she earn in 4 years?', 'Interest:', key='$96'),
+          sa('A salesperson earns a 6% commission. She sells $2,450 of products.\nWhat is her commission?', 'Commission:', key='$147'),
+          mc('A ticket website charges a 2.5% fee on a $600 order.\nWhat is the fee?', ['$15', '$150', '$1.50', '$25']),
+          tf('$1,500 borrowed at 5% simple interest per year for 2 years has $150 in interest.', key=True),
+          tf('A 4% fee on $250 is $1.', key=False, note='The fee is $10.'),
+      ],
+      back=[
+          B('Evaluate a formula', '6.EE.A.2.c', [
+              sa('Use I = prt.\nFind I when p = 200, r = 0.05, and t = 3.', 'I =', key='30'),
+              sa('Use A = lw.\nFind A when l = 12 and w = 7.5.', 'A =', key='90'),
+              mc('Use d = rt.\nFind d when r = 55 and t = 4.', ['220', '59', '51', '13.75']),
+              tf('For P = 2l + 2w, when l = 6 and w = 4, P = 20.', key=True),
+              tf('For C = 5n + 3, when n = 4, C = 32.', key=False, note='C = 23.'),
+          ]),
+          B('Write a percent as a rate per 100 and as a decimal', '6.RP.A.3.c', [
+              sa('Write 6% as a decimal.', 'Decimal:', key='0.06'),
+              sa('Write 2.5% as a decimal.', 'Decimal:', key='0.025'),
+              mc('Which decimal is equal to 45%?', ['0.45', '4.5', '0.045', '45']),
+              tf('3% = {3/100} = 0.03', key=True),
+              tf('8% = 0.8', key=False),
+          ]),
+      ],
+      f1=B('Model a growing balance with a linear function', '8.F.B.4', [
+          sa('An account starts with $500 and earns $20 in simple interest each year.\nWrite a function for the balance B after t years.', 'B =', key='20t + 500'),
+          sa('A salesperson earns $300 a week plus a 5% commission on sales s.\nWrite a function for the weekly pay P.', 'P =', key='0.05s + 300'),
+          mc('A loan balance after t years is B = 1,200 + 36t.\nWhat is the rate of change?', ['$36 per year', '$1,200 per year', '$1,236 per year', '3% per year']),
+          tf('For B = 20t + 500, the balance after 3 years is $560.', key=True),
+          tf('For P = 0.05s + 300, the initial value is 0.05.', key=False, note='The initial value is 300.'),
+      ]),
+      f2=B('Compare simple interest with compound interest', 'HSF-LE.A.1.a', [
+          sa('$1,000 earns 5% simple interest per year.\nWhat is the balance after 2 years?', 'Balance:', key='$1,100'),
+          sa('$1,000 earns 5% interest compounded once each year.\nWhat is the balance after 2 years?', 'Balance:', key='$1,102.50'),
+          mc('Which kind of interest makes a balance grow by equal differences over equal time intervals?', ['Simple interest', 'Compound interest', 'Both kinds', 'Neither kind']),
+          tf('With compound interest, a balance grows by equal factors over equal time intervals.', key=True),
+          tf('After 1 year, $500 at 4% compound interest (compounded yearly) earns more than $500 at 4% simple interest.', key=False,
+             note='After 1 year, both earn $20.'),
+      ])),
+
+    # ------------------------------------------------------------------ 7.RP.A.3 (percent error)
+    S('7.RP.A.3', 'Find the percent error of an estimate or a measurement',
+      main=[
+          sa('Ty estimates that 50 people are at a meeting. The actual number is 40.\nWhat is the percent error?', 'Percent error:', key='25%'),
+          sa('A scale shows 4.8 kg for a bag whose actual mass is 5 kg.\nWhat is the percent error?', 'Percent error:', key='4%'),
+          mc('A student measures a line that is actually 20 cm long as 19 cm.\nWhat is the percent error?', ['5%', '1%', '5.3%', '95%']),
+          tf('A guess of 90 for an actual value of 100 has a percent error of 10%.', key=True),
+          tf('To find percent error, you divide the size of the error by the estimate.', key=False, note='You divide by the actual value.'),
+      ],
+      back=[
+          B('Find the absolute value of a number', '6.NS.C.7.c', [
+              sa('Find the value.\n|-12|', 'Value:', key='12'),
+              sa('Find the value.\n|-4.5|', 'Value:', key='4.5'),
+              mc('Which number has the greatest absolute value?', ['-9', '6', '-3', '8']),
+              tf('|-15| = 15', key=True),
+              tf('|-2| < |1|', key=False),
+          ]),
+          B('Write a fraction as a percent', '6.RP.A.3.c', [
+              sa('Write {3/20} as a percent.', 'Percent:', key='15%'),
+              sa('Write {7/25} as a percent.', 'Percent:', key='28%'),
+              mc('Which percent is equal to {9/12}?', ['75%', '9%', '12%', '80%']),
+              tf('{1/8} = 12.5%', key=True),
+              tf('{2/5} = 25%', key=False),
+          ]),
+      ],
+      f1=B('Compute with numbers in scientific notation', '8.EE.A.4', nearest=True, qs=[
+          sa('Multiply. Write the answer in scientific notation.\n(3 × 10⁴) × (2 × 10³)', 'Product:', key='6 × 10⁷'),
+          sa('Divide. Write the answer in scientific notation.\n(8 × 10⁹) ÷ (4 × 10³)', 'Quotient:', key='2 × 10⁶'),
+          mc('Add.\n(2.5 × 10⁵) + (4 × 10⁴)', ['2.9 × 10⁵', '6.5 × 10⁹', '6.5 × 10⁵', '2.9 × 10⁴']),
+          tf('(5 × 10³) × (3 × 10²) = 1.5 × 10⁶', key=True),
+          tf('(6 × 10⁸) ÷ (2 × 10²) = 3 × 10⁴', key=False, note='The quotient is 3 × 10⁶.'),
+      ]),
+      f2=B('Choose a level of accuracy that fits a measurement', 'HSN-Q.A.3', [
+          sa('A ruler is marked in millimeters. A length is read as 12.4 cm.\nTo what place value is this measurement given?', 'Place:',
+             key='Tenths of a centimeter (the nearest millimeter)'),
+          mc('A scale measures mass to the nearest 0.1 kg.\nWhich reading is reported to an accuracy that fits this scale?', ['3.4 kg', '3.4172 kg', '3 kg', '3.41 kg']),
+          sa('A track is measured as 400 m. The measurement could be off by as much as 2 m.\nWhat is the greatest possible percent error?', 'Percent error:', key='0.5%'),
+          tf('A length measured with a meter stick marked only in centimeters should not be reported as 1.2347 m.', key=True),
+          tf('Writing more decimal places always makes a measurement more accurate.', key=False),
+      ])),
+]

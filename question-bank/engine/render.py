@@ -1271,6 +1271,54 @@ def fig_picgraph(c, f, x, y, w, h, s):
     draw_label(c, 'Key: ● = ' + f['key'], x0 + gw / 2, top - rh * (len(rows) + 1) - 22, fs)
 
 
+def fig_circle(c, f, x, y, w, h, s):
+    """Circle with its center marked; seg='r' draws a labeled radius, seg='d' a labeled diameter."""
+    R = min(w, h) / 2 - 16
+    cx, cy = x + w / 2, y + h / 2
+    c.setFillColor(LBG)
+    c.setStrokeColor(INK)
+    c.setLineWidth(1.8)
+    c.circle(cx, cy, R, fill=1, stroke=1)
+    c.setFillColor(INK)
+    c.circle(cx, cy, 3, fill=1, stroke=0)
+    c.setStrokeColor(POINT)
+    c.setLineWidth(2)
+    fs = 14 * s
+    if f.get('seg') == 'd':
+        c.line(cx - R, cy, cx + R, cy)
+        draw_label(c, f.get('label', ''), cx, cy + 14, fs, FB, color=POINT)
+    elif f.get('seg') == 'r':
+        c.line(cx, cy, cx + R, cy)
+        draw_label(c, f.get('label', ''), cx + R / 2, cy + 14, fs, FB, color=POINT)
+
+
+def fig_spinner(c, f, x, y, w, h, s):
+    """Spinner with equal sections labeled in order (clockwise from the top) and an arrow from the center."""
+    import math
+    labs = f['labels']
+    n = len(labs)
+    R = min(w, h) / 2 - 14
+    cx, cy = x + w / 2, y + h / 2
+    c.setFillColor(white)
+    c.setStrokeColor(INK)
+    c.setLineWidth(1.8)
+    c.circle(cx, cy, R, fill=1, stroke=1)
+    for i in range(n):
+        a = math.radians(90 - 360 * i / n)
+        c.line(cx, cy, cx + R * math.cos(a), cy + R * math.sin(a))
+    fs = max(10, 16 - n) * s
+    for i, lab in enumerate(labs):
+        a = math.radians(90 - 360 * (i + 0.5) / n)
+        draw_label(c, lab, cx + R * 0.66 * math.cos(a), cy + R * 0.66 * math.sin(a), fs, FB)
+    a = math.radians(f.get('arrow', 30))
+    c.setStrokeColor(POINT)
+    c.setLineWidth(2.4)
+    c.line(cx, cy, cx + R * 0.45 * math.cos(a), cy + R * 0.45 * math.sin(a))
+    arrow_head(c, cx + R * 0.45 * math.cos(a), cy + R * 0.45 * math.sin(a), math.cos(a), math.sin(a), 8)
+    c.setFillColor(INK)
+    c.circle(cx, cy, 4, fill=1, stroke=0)
+
+
 def fig_array(c, f, x, y, w, h, s):
     """rows x cols dots; split: draw a dashed line after that many columns (to show a broken-apart array)."""
     R, C = f['rows'], f['cols']
@@ -1400,10 +1448,11 @@ FIGS = {
     'vstack': fig_vstack, 'hrow': fig_hrow, 'text': fig_text, 'rays': fig_rays,
     'array': fig_array, 'protractor': fig_protractor, 'geo': fig_geo,
     'clock': fig_clock, 'ruler': fig_ruler, 'beaker': fig_beaker, 'picgraph': fig_picgraph, 'scale': fig_scale,
+    'circle': fig_circle, 'spinner': fig_spinner,
 }
 
 RIGHT_KINDS = {'coord', 'shape', 'prism', 'grid', 'cyl', 'cone', 'sphere', 'pyramid', 'rays', 'array', 'geo', 'protractor',
-               'clock', 'beaker', 'scale'}
+               'clock', 'beaker', 'scale', 'circle', 'spinner'}
 
 
 def draw_fig(c, f, x, y, w, h, s=1.0):
