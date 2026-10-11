@@ -12,7 +12,7 @@ SETS = [
     S('3.NF.A.1', 'Understand a unit fraction as one part of a whole split into equal parts',
       main=[
           sa('The bar is split into 6 equal parts. One part is shaded.\nWhat fraction of the bar is shaded?', 'Fraction:', key='1/6', fig=bar(6, 1)),
-          mc('A pizza is cut into 8 equal slices.\nWhat fraction of the pizza is one slice?', ['{1/8}', '{8/1}', '{1/7}', '{7/8}']),
+          mc('A pizza is cut into 8 equal slices.\nWhat fraction of the pizza is one slice?', ['{1/8}', '{8/1}', '{1/6}', '{7/8}']),
           tf('{1/3} is one part when a whole is split into 3 equal parts.', key=True),
           draw_write('Shade {1/4} of the bar. Then explain why the part you shaded is {1/4} of the bar.', bar(4), 'Explanation:',
                      draw='Exactly 1 of the 4 equal parts shaded', key='The bar has 4 equal parts, and I shaded 1 of them.',
@@ -39,8 +39,7 @@ SETS = [
           sa('Write {5/6} as a sum of unit fractions.', 'Sum:', key='1/6 + 1/6 + 1/6 + 1/6 + 1/6'),
           tf('{3/4} = {1/4} + {1/4} + {1/4}', key=True),
           mc('Which sum is equal to {4/5}?', ['{1/5} + {1/5} + {1/5} + {1/5}', '{1/4} + {1/4} + {1/4} + {1/4}', '{4/5} + {1/5}', '{2/5} + {1/5}']),
-          sa('Write {7/8} as a sum of two fractions with a denominator of 8.', 'Sum:', key='3/8 + 4/8',
-             note='Any two eighths that add to 7/8 are correct, for example 1/8 + 6/8.'),
+          sa('Write {4/6} as a sum of unit fractions.', 'Sum:', key='1/6 + 1/6 + 1/6 + 1/6'),
           tf('{2/3} = {1/3} + {1/2}', key=False),
       ]),
       f2=B('Find a unit fraction of a unit fraction', '5.NF.B.4.a', [
@@ -59,7 +58,7 @@ SETS = [
           tf('{4/6} is 4 parts of size {1/6}.', key=True),
           draw_write('Shade {3/8} of the bar.\nHow many parts of size {1/8} did you shade?', bar(8), 'Parts:',
                      draw='Any 3 of the 8 equal parts shaded', key='3', note='Grade both: 3 of the 8 parts shaded, and the answer 3.'),
-          tf('{5/6} is 6 parts of size {1/5}.', key=False),
+          tf('{5/6} is 6 parts of size {1/6}.', key=False),
       ],
       back=[
           B('Count halves, thirds, and fourths of a shape', '2.G.A.3', [
@@ -84,12 +83,12 @@ SETS = [
           sa('Fill in the blank.\n{9/10} = ___ × {1/10}', 'Blank:', key='9'),
           tf('{4/5} = 5 × {1/4}', key=False),
       ]),
-      f2=B('Find a fraction of a quantity by first finding the unit fraction of it', '5.NF.B.4.a', [
-          sa('Find {3/5} of 20 by first finding {1/5} of 20.', ['{1/5} of 20:', '{3/5} of 20:'], key='4; 12', note='Both parts are required.'),
-          tf('{2/3} of 9 is 2 parts of size 3, which is 6.', key=True),
-          mc('What is {5/8} of 16?', ['10', '2', '8', '80']),
-          sa('Multiply.\n{4/7} × 14', 'Product:', key='8'),
-          tf('{3/4} of 20 is 3 parts of size 4, which is 12.', key=False),
+      f2=B('Find a fraction of a fractional quantity by first finding the unit fraction of it', '5.NF.B.4.a', [
+          sa('Find {2/3} of {3/5} by first finding {1/3} of {3/5}.', ['{1/3} of {3/5}:', '{2/3} of {3/5}:'], key='1/5; 2/5', note='Both parts are required.'),
+          tf('{3/4} of {4/5} is 3 parts of size {1/5}, which is {3/5}.', key=True),
+          mc('What is {5/6} of {3/4}?', ['{5/8}', '{8/10}', '{15/4}', '{2/3}']),
+          sa('Multiply.\n{2/5} × {5/8}', 'Product:', key='1/4', note='10/40 is also correct.'),
+          tf('{2/3} of {3/8} is 2 parts of size {1/4}, which is {1/2}.', key=False),
       ])),
 
     # ------------------------------------------------------------------ 3.NF.A.2.a
@@ -100,7 +99,7 @@ SETS = [
                key='A point at the first tick mark after 0 (one of the 3 equal parts from 0 to 1), labeled 1/3'),
           mc('Into how many equal parts must the space from 0 to 1 be split to show {1/6}?', ['6', '1', '5', '7']),
           tf('On a number line, {1/2} is halfway between 0 and 1.', key=True),
-          tf('On a number line from 0 to 1 split into 8 equal parts, the first tick mark after 0 is {1/7}.', key=False),
+          tf('On a number line from 0 to 1 split into 8 equal parts, the first tick mark after 0 is {1/6}.', key=False),
       ],
       back=[
           B('Whole numbers as lengths from 0 on a number line', '2.MD.B.6', [
@@ -164,7 +163,7 @@ SETS = [
       f1=B('Multiply a fraction by a whole number with jumps on a number line', '4.NF.B.4.b', [
           sa('Start at 0 and make 4 jumps of {2/3} on a number line.\nWhere do you land?', 'Number:', key='8/3', note='2 2/3 is also correct.'),
           tf('3 jumps of {3/4} from 0 land on {9/4}.', key=True),
-          mc('5 × {2/6} = ?', ['{10/6}', '{7/6}', '{10/30}', '{2/30}']),
+          mc('5 × {2/6} = ?', ['{10/6}', '{7/6}', '{10/12}', '{2/6}']),
           sa('Multiply.\n6 × {3/8}', 'Product:', key='18/8', note='2 2/8, 2 1/4, and 9/4 are also correct.'),
           tf('2 jumps of {5/6} from 0 land on {10/12}.', key=False),
       ]),
@@ -238,7 +237,8 @@ SETS = [
           tf('{2/6} = {1/3}', key=True),
           sa('Explain why {2/8} = {1/4}. You may use a model.', ['Explanation:', ''],
              key='Each fourth of a whole is made of 2 eighths, so 2 eighths cover the same amount as 1 fourth.',
-             note='Any correct explanation with a visual model or number line that shows the same size or the same point is correct.'),
+             note='A sound verbal explanation (each fourth is 2 eighths of the same whole), a labeled visual model, or a number-line explanation is correct. '
+                  'The explanation must show that 2/8 and 1/4 are the same amount of the same whole. A drawing is not required.'),
       ],
       back=[
           B('Halves, thirds, and fourths that make a whole', '2.G.A.3', [
@@ -257,11 +257,11 @@ SETS = [
           ]),
       ],
       f1=B('Generate equivalent fractions by multiplying the numerator and the denominator by the same number', '4.NF.A.1', [
-          sa('Find the missing number.\n{3/5} = {?/15}', 'Missing number:', key='9'),
+          sa('Find the missing number.\n{3/5} = {?/10}', 'Missing number:', key='6'),
           tf('{4/6} = {8/12}', key=True),
           mc('Which fraction is equivalent to {2/5}?', ['{4/10}', '{2/10}', '{5/2}', '{3/6}']),
           sa('Write two fractions that are equivalent to {3/4}.', 'Fractions:', key='6/8 and 9/12', note='Any two fractions equal to 3/4 are correct.'),
-          tf('{5/8} = {10/24}', key=False),
+          tf('{5/8} = {10/12}', key=False),
       ]),
       f2=B('Explain equivalent fractions as multiplying by a fraction equal to 1', '5.NF.B.5.b', [
           tf('{2/3} × {4/4} = {8/12}, and {8/12} = {2/3} because {4/4} = 1.', key=True),
@@ -348,7 +348,7 @@ SETS = [
           sa('Write >, =, or <.\n{2/3} ___ {5/8}', 'Symbol:', key='>'),
           tf('{3/5} > {1/2}', key=True),
           mc('Which comparison is true?', ['{3/4} > {7/10}', '{3/4} < {7/10}', '{3/4} = {7/10}', '{7/10} > {3/4}']),
-          sa('Compare {5/6} and {7/9}. Write >, =, or <.', 'Comparison:', key='5/6 > 7/9'),
+          sa('Compare {5/6} and {7/10}. Write >, =, or <.', 'Comparison:', key='5/6 > 7/10'),
           tf('{2/5} > {1/2}', key=False),
       ]),
       f2=B('Use benchmark fractions to estimate sums of fractions', '5.NF.A.2', [
@@ -392,32 +392,33 @@ SETS = [
       f1=B('Compare fractions by finding a common numerator or a common denominator', '4.NF.A.2', [
           sa('Rewrite {3/5} with a numerator of 6. Then compare it with {6/12} using >, =, or <.', ['Rewritten:', 'Comparison:'],
              key='6/10; 3/5 > 6/12', note='Both parts are required.'),
-          tf('{4/7} > {4/9}', key=True),
+          tf('{4/5} > {4/8}', key=True),
           mc('Which comparison is true?', ['{2/3} > {4/10}', '{2/3} < {4/10}', '{2/3} = {4/10}', '{4/10} > {2/3}']),
-          sa('Write >, =, or <.\n{5/12} ___ {5/9}', 'Symbol:', key='<'),
+          sa('Write >, =, or <.\n{5/12} ___ {5/10}', 'Symbol:', key='<'),
           tf('{3/10} > {3/5}', key=False),
       ]),
       f2=B('Compare the size of a product with the size of one factor without multiplying', '5.NF.B.5.a', [
           tf('{3/4} × 10 is less than 10.', key=True),
           sa('Without multiplying, is {5/3} × 12 greater than, less than, or equal to 12?', 'Answer:', key='Greater than 12'),
           mc('Which product is less than 8?', ['{2/3} × 8', '{3/2} × 8', '{4/4} × 8', '2 × 8']),
-          sa('Without multiplying, which is greater: {1/3} × 9 or {1/6} × 9?', 'Answer:', key='1/3 × 9'),
+          sa('Without multiplying, is {1/3} × 9 greater than, less than, or equal to 9?', 'Answer:', key='Less than 9'),
           tf('{7/8} × 5 is greater than 5.', key=False),
       ])),
 
     # ------------------------------------------------------------------ 3.NF.A.3.d (same whole)
-    S('3.NF.A.3.d', 'Compare fractions only when they refer to the same whole, and justify the comparison with a model',
+    S('3.NF.A.3.d', 'Compare the amounts that fractions name when the wholes may be different sizes',
       main=[
           tf('Ana ate {1/2} of a small pizza. Ben ate {1/2} of a large pizza. They ate the same amount of pizza.', key=False),
           sa('Explain why {1/4} of a large cake can be more cake than {1/2} of a small cake.', ['Explanation:', ''],
-             key='The wholes are different sizes, so a fourth of the large cake can be bigger than a half of the small cake.',
-             note='Must say that fractions can be compared only when they refer to the same whole (or wholes of the same size).'),
-          mc('The two bars are the same size.\nWhich comparison do they show?', ['{2/3} > {2/4}', '{2/3} < {2/4}', '{2/3} = {2/4}', '{2/4} > {2/3}'],
-             fig=bars((3, 2), (4, 2))),
-          draw_write('The bars are the same size. Shade {3/4} of the top bar and {3/8} of the bottom bar.\nThen write >, =, or < to compare {3/4} and {3/8}.',
-                     bars((4, 0), (8, 0)), 'Comparison:',
-                     draw='3 of the 4 parts of the top bar shaded, and 3 of the 8 parts of the bottom bar shaded', key='3/4 > 3/8',
-                     note='Grade both: the shading of both bars, and 3/4 > 3/8.'),
+             key='The cakes are different sizes. If the large cake is big enough, a fourth of it is more cake than half of the small cake.',
+             note='Accept any explanation that the amount of cake depends on the size of each whole: a fourth of a much larger cake can be more '
+                  'than half of a small cake. A blanket rule about comparing fractions is not required.'),
+          mc('Ali ate {1/2} of a small pizza. Bea ate {1/3} of a larger pizza.\nWhich statement must be true?',
+             ['You cannot tell who ate more without knowing the sizes of the pizzas.', 'Ali ate more pizza.', 'Bea ate more pizza.',
+              'They ate the same amount of pizza.']),
+          sa('Two ribbons are the same length. Kim uses {3/4} of one ribbon, and Lu uses {2/4} of the other.\nWho uses more ribbon? Explain.',
+             ['Answer:', 'Explanation:'], key='Kim',
+             note='The wholes are the same length, so 3 fourths of one is more than 2 fourths of the other. Both parts are required.'),
           tf('To compare {2/6} and {5/6} with models, both models must show the same whole.', key=True),
       ],
       back=[
@@ -442,9 +443,9 @@ SETS = [
           sa('Compare {2/5} and {5/8} by comparing each one with {1/2}. Write >, =, or <.', ['Comparison:', 'Reason:'], key='2/5 < 5/8',
              note='2/5 is less than 1/2 and 5/8 is more than 1/2, so 2/5 < 5/8. Both parts are required.'),
           tf('{7/12} > {1/2}', key=True),
-          mc('Which fraction is less than {1/2}?', ['{3/7}', '{5/8}', '{4/6}', '{6/10}']),
-          sa('Explain why {3/4} of a 1-meter rope is longer than {3/4} of a 1-foot rope.', ['Explanation:', ''],
-             key='The wholes are different lengths: 1 meter is longer than 1 foot.', note='Must refer to the different-size wholes.'),
+          mc('Which fraction is less than {1/2}?', ['{2/5}', '{5/8}', '{4/6}', '{6/10}']),
+          sa('Is {5/8} greater than or less than {1/2}? Explain using {1/2} = {4/8}.', ['Answer:', 'Explanation:'], key='Greater than 1/2',
+             note='5/8 > 4/8, and 4/8 = 1/2. Both parts are required.'),
           tf('{5/12} > {1/2}', key=False),
       ]),
       f2=B('Explain why multiplying by a fraction greater or less than 1 makes a product larger or smaller', '5.NF.B.5.b', [
@@ -453,5 +454,58 @@ SETS = [
           mc('Which product is greater than 20?', ['{6/5} × 20', '{4/5} × 20', '{1/2} × 20', '{5/5} × 20']),
           sa('Explain why {4/4} × 7 = 7.', ['Explanation:', ''], key='4/4 = 1, and multiplying a number by 1 does not change it.'),
           tf('Multiplying 9 by {3/8} gives a number greater than 9.', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 3.NF.A.3.d (justify with a model) — added in 2.0.0
+    S('3.NF.A.3.d', 'Justify a comparison of two fractions of the same whole with a visual model', num=68,
+      main=[
+          mc('The two bars are the same size.\nWhich comparison do they show?', ['{2/3} > {2/4}', '{2/3} < {2/4}', '{2/3} = {2/4}', '{2/4} > {2/3}'],
+             fig=bars((3, 2), (4, 2))),
+          draw_write('The bars are the same size. Shade {3/4} of the top bar and {3/8} of the bottom bar.\nThen write >, =, or < to compare {3/4} and {3/8}.',
+                     bars((4, 0), (8, 0)), 'Comparison:',
+                     draw='3 of the 4 parts of the top bar shaded, and 3 of the 8 parts of the bottom bar shaded', key='3/4 > 3/8',
+                     note='Grade both: the shading of both bars, and 3/4 > 3/8.'),
+          draw_write('The number lines are the same length. Mark {2/3} on the top line and {5/6} on the bottom line.\nThen write >, =, or < to compare them.',
+                     two_lines(3, 6), 'Comparison:', draw='A point at 2/3 on the line marked in thirds and a point at 5/6 on the line marked in sixths',
+                     key='2/3 < 5/6', note='Grade both: the two points, and 2/3 < 5/6.'),
+          sa('The bars are the same size. Use them to explain which is greater, {3/8} or {3/4}.', ['Greater:', 'Explanation:'], key='3/4',
+             note='The bars show the same whole; fourths are larger parts than eighths, so 3 fourths cover more than 3 eighths. Both parts are required.',
+             fig=bars((4, 3), (8, 3))),
+          tf('The bars are the same size. They show that {1/2} = {2/4}.', key=True, fig=bars((2, 1), (4, 2))),
+      ],
+      back=[
+          B('Compare equal shares of the same shape', '2.G.A.3', [
+              sa('Which is larger: a half or a fourth of the same rectangle?', 'Answer:', key='A half'),
+              tf('A third of a circle is larger than a fourth of the same circle.', key=True),
+              mc('Which share of the same rectangle is largest?', ['A half', 'A third', 'A fourth', 'They are all the same size.']),
+              sa('Two sandwiches are the same size. One is cut into halves and the other into thirds.\nWhich pieces are bigger?', 'Answer:', key='The halves'),
+              tf('A fourth of a square is larger than a third of the same square.', key=False),
+          ]),
+          B('Cutting a shape into more equal shares makes smaller shares', '1.G.A.3', [
+              tf('Cutting a cake into more equal pieces makes each piece smaller.', key=True),
+              sa('A pizza is cut into 2 equal parts. A pizza of the same size is cut into 4 equal parts.\nWhich parts are bigger?', 'Answer:',
+                 key='The 2 parts (the halves)'),
+              mc('Which is smaller: a half or a quarter of the same circle?', ['A quarter', 'A half', 'They are the same size.', 'You cannot tell.']),
+              sa('A square is cut into 4 equal parts.\nHow many parts make the whole square?', 'Parts:', key='4'),
+              tf('Halves of a pie are smaller than quarters of the same pie.', key=False),
+          ]),
+      ],
+      f1=B('Justify a fraction comparison with a model or with common denominators', '4.NF.A.2', [
+          sa('Use a model or common denominators to compare {2/3} and {3/4}. Write >, =, or <, and explain.', ['Comparison:', 'Explanation:'],
+             key='2/3 < 3/4', note='2/3 = 8/12 and 3/4 = 9/12, or an equivalent model of the same whole. Both parts are required.'),
+          tf('The bars are the same size. They show that {3/5} > {1/2}.', key=True, fig=bars((5, 3), (2, 1))),
+          mc('The bars are the same size.\nWhich comparison do they show?', ['{4/5} > {7/10}', '{4/5} < {7/10}', '{4/5} = {7/10}', '{7/10} > {4/5}'],
+             fig=bars((5, 4), (10, 7))),
+          sa('Explain why {5/6} > {3/4}.', ['Explanation:', ''], key='5/6 = 10/12 and 3/4 = 9/12, and 10/12 > 9/12.',
+             note='Any valid model of the same whole or common-denominator reasoning is correct.'),
+          tf('{2/8} > {1/3}', key=False),
+      ]),
+      f2=B('Use benchmark fractions to compare sums of fractions with 1', '5.NF.A.2', [
+          sa('Is {3/8} + {1/3} greater than or less than 1? Explain.', ['Answer:', 'Reason:'], key='Less than 1',
+             note='Both fractions are less than 1/2, so their sum is less than 1. Both parts are required.'),
+          tf('{5/6} + {4/7} > 1, because both fractions are greater than {1/2}.', key=True),
+          mc('Which sum is greater than 1?', ['{2/3} + {3/5}', '{1/4} + {1/3}', '{1/8} + {2/5}', '{1/6} + {1/2}']),
+          sa('Without finding the exact sums, which is greater: {1/2} + {3/8} or {1/2} + {5/8}?', 'Answer:', key='1/2 + 5/8'),
+          tf('{1/10} + {1/9} > 1', key=False),
       ])),
 ]

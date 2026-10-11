@@ -145,19 +145,20 @@ SETS = [
           tf('42 ÷ 6 = 8', key=False),
       ],
       back=[
-          B('Subtract within 100', '2.NBT.B.5', [
-              sa('Subtract.\n63 - 27', 'Difference:', key='36'),
-              tf('80 - 35 = 45', key=True),
-              mc('72 - 18 = ?', ['54', '64', '56', '90']),
-              sa('Subtract.\n91 - 46', 'Difference:', key='45'),
-              tf('50 - 22 = 38', key=False),
-          ]),
-          B('Split up to 20 objects into two equal groups', '2.OA.C.3', [
+          B('Split up to 20 objects into two equal groups', '2.OA.C.3', num=2, qs=[
               sa('16 counters are split into 2 equal groups.\nHow many counters are in each group?', 'Counters:', key='8'),
               tf('20 objects make 2 equal groups of 10.', key=True),
               mc('14 objects are split into 2 equal groups.\nHow many objects are in each group?', ['7', '6', '12', '28']),
               sa('12 objects are split into 2 equal groups.\nHow many objects are in each group?', 'Objects:', key='6'),
               tf('18 objects make 2 equal groups of 8.', key=False),
+          ]),
+          B('Equal rows in arrays up to 5 by 5', '2.OA.C.4', num=3, qs=[
+              sa('Write an addition equation with equal addends for the array.', 'Equation:', key='5 + 5 + 5 = 15', fig=arr(3, 5),
+                 note='3 + 3 + 3 + 3 + 3 = 15 (adding the columns) is also correct.'),
+              tf('5 + 5 + 5 + 5 = 20 matches an array of 4 rows with 5 dots in each row.', key=True),
+              mc('How many dots are in each row of the array?', ['4', '3', '12', '7'], fig=arr(3, 4)),
+              sa('How many dots are in an array of 5 rows with 2 dots in each row?', 'Dots:', key='10'),
+              tf('An array of 4 rows with 3 dots in each row has 7 dots.', key=False),
           ]),
       ],
       f1=B('Divide by a one-digit number, with remainders', '4.NBT.B.6', [
@@ -231,8 +232,8 @@ SETS = [
              'Students:', key='6 students', note='27 + 3 = 30 and 30 ÷ 5 = 6.'),
           mc('Pens cost $3 each. Leo buys 7 pens and pays with a $50 bill.\nHow much change does he get?', ['$29', '$21', '$47', '$53']),
           tf('A farmer has 32 eggs. He packs them 8 to a carton and sells 2 cartons. He has 2 cartons left.', key=True),
-          sa('Ana read 8 pages on Monday and 4 times as many pages on Tuesday.\nHow many pages did she read on the two days?', 'Pages:', key='40 pages',
-             note='4 × 8 = 32 and 8 + 32 = 40.'),
+          sa('Ana read 8 pages on Monday. On Tuesday she read 4 sections of 8 pages each.\nHow many pages did she read on the two days?', 'Pages:',
+             key='40 pages', note='4 × 8 = 32 and 8 + 32 = 40.'),
       ],
       back=[
           B('One-step take-from word problems within 100', '2.OA.A.1', [
@@ -264,8 +265,9 @@ SETS = [
           mc('27 students are joined by 3 more, and then they are split into 5 equal teams.\nWhich expression matches?',
              ['(27 + 3) ÷ 5', '27 + 3 ÷ 5', '27 + (3 ÷ 5)', '5 ÷ (27 + 3)']),
           tf('The expression 50 - 3 × 7 gives the change from $50 after buying 7 pens that cost $3 each.', key=True),
-          sa('Evaluate.\n(18 + 6) ÷ 4 × 3', 'Value:', key='18'),
-          tf('The expression 8 + 4 × 8 has a value of 96.', key=False),
+          sa('Write an expression for: add 18 and 6, divide the sum by 4, and then multiply by 3.', 'Expression:', key='(18 + 6) ÷ 4 × 3',
+             note='((18 + 6) ÷ 4) × 3 is also correct.'),
+          tf('"Read 8 pages, then read 4 more sections of 8 pages" is matched by the expression (8 + 4) × 8.', key=False),
       ])),
 
     # ------------------------------------------------------------------ 3.OA.D.8 (represent)
@@ -324,16 +326,19 @@ SETS = [
       ])),
 
     # ------------------------------------------------------------------ 3.OA.D.8 (reasonableness)
-    S('3.OA.D.8', 'Check whether answers are reasonable using mental computation and rounding',
+    S('3.OA.D.8', 'Check whether answers to two-step word problems are reasonable, using mental computation and rounding',
       main=[
-          sa('Round each number to the nearest ten to estimate 48 + 31.\nThen tell whether a sum of 79 is reasonable.', ['Estimate:', 'Reasonable?'],
-             key='80; yes', note='50 + 30 = 80, which is close to 79. Both parts are required.'),
-          sa('Leo says 412 - 189 = 323.\nRound each number to the nearest hundred to estimate. Is his answer reasonable?', ['Estimate:', 'Reasonable?'],
-             key='200; no', note='400 - 200 = 200, which is far from 323 (the exact difference is 223). Both parts are required.'),
-          mc('A store sold 296 shirts on Monday and 404 shirts on Tuesday.\nRounding each number to the nearest hundred, which is the estimate of the total?',
-             ['700', '600', '800', '900']),
-          tf('Rounding each number to the nearest ten, 62 + 27 is about 90.', key=True),
-          tf('Rounding each number to the nearest hundred, 589 - 312 is about 200.', key=False),
+          sa('A store had 512 apples. It sold 189 in the morning and 207 in the afternoon. Lee says 116 apples are left.\n'
+             'Round each number to the nearest hundred to estimate. Is his answer reasonable?', ['Estimate:', 'Reasonable?'],
+             key='100; yes', note='500 - 200 - 200 = 100, which is close to 116 (the exact answer is 116). Both parts are required.'),
+          sa('A class collected 238 cans on Monday and 315 cans on Tuesday. Then it gave away 146 cans. Ana says 707 cans are left.\n'
+             'Round each number to the nearest hundred to estimate. Is her answer reasonable?', ['Estimate:', 'Reasonable?'],
+             key='400; no', note='200 + 300 - 100 = 400, which is far from 707 (the exact answer is 407). Both parts are required.'),
+          mc('Ben buys 4 packs of 9 stickers. Then he gets 38 more stickers.\nKeep 4 × 9 as it is and round 38 to the nearest ten. Which is the estimate of his total?',
+             ['76', '80', '36', '120']),
+          tf('A farmer picks 391 apples and 412 pears, then sells 298 pieces of fruit. Rounding each number to the nearest hundred, about 500 pieces of fruit are left.',
+             key=True),
+          tf('Kim had 85 cents. She spent 38 cents and then found 21 cents. Rounding each amount to the nearest ten, she has about 50 cents.', key=False),
       ],
       back=[
           B('Add or subtract 10 or 100 mentally', '2.NBT.B.8', [
@@ -351,15 +356,20 @@ SETS = [
               tf('298 > 302', key=False),
           ]),
       ],
-      f1=B('Use rounding to check answers to multistep problems', '4.OA.A.3', [
-          sa('Ty says 6 × 48 - 95 = 193.\nRound 48 and 95 to the nearest ten. Estimate, then tell whether his answer is reasonable.',
+      f1=B('Use rounding to check answers to multistep word problems', '4.OA.A.3', [
+          sa('Ty buys 6 boxes of 48 pens and gives away 95 pens. He says he has 193 pens left.\n'
+             'Keep 6 unchanged. Round 48 and 95 to the nearest ten. Estimate, then tell whether his answer is reasonable.',
              ['Estimate:', 'Reasonable?'], key='200; yes',
-             note='6 × 50 - 100 = 200, which is close to 193 (the exact value is 193). Both parts are required.'),
-          tf('Rounding each number to the nearest hundred, 1,212 + 389 is about 1,600.', key=True),
-          mc('Rounding each number to the nearest ten, which is the estimate of 4 × 39 + 52?', ['210', '200', '160', '190']),
-          sa('Round each number to the nearest thousand to estimate 6,814 - 2,390.', 'Estimate:', key='5,000',
-             note='7,000 - 2,000 = 5,000. The exact difference, 4,424, is not the estimate asked for.'),
-          tf('Rounding 21 to the nearest ten, 8 × 21 is about 240.', key=False),
+             note='6 × 50 - 100 = 200, which is close to 193 (the exact answer is 193). Both parts are required.'),
+          tf('A farm has 1,212 chickens. It buys 389 more and then sells 498. Rounding each number to the nearest hundred, about 1,100 chickens are left.',
+             key=True),
+          mc('A coach buys 4 boxes of 39 balls and then 52 more balls.\nKeep 4 unchanged. Round 39 and 52 to the nearest ten. Which is the estimate of 4 × 39 + 52?',
+             ['210', '200', '160', '190']),
+          sa('A theater sold 6,814 tickets on Friday and 2,390 on Saturday. Then 1,975 tickets were refunded.\n'
+             'Round each number to the nearest thousand to estimate the tickets kept. Is an answer of 7,229 reasonable?', ['Estimate:', 'Reasonable?'],
+             key='7,000; yes', note='7,000 + 2,000 - 2,000 = 7,000, which is close to 7,229 (the exact answer). Both parts are required.'),
+          tf('Leo says 8 boxes of 21 pens plus 37 more pens is 405 pens. Keeping 8 unchanged and rounding 21 and 37 to the nearest ten, '
+             'the estimate shows that his answer is reasonable.', key=False),
       ]),
       f2=B('Round decimals to estimate sums, differences, and products', '5.NBT.A.4', [
           sa('Round each number to the nearest whole number. Then estimate.\n3.8 + 6.4', 'Estimate:', key='10'),

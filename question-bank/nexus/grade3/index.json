@@ -3,16 +3,16 @@
  "collection": {
   "id": "G3",
   "grade": 3,
-  "version": "1.0.0",
-  "date": "2026-10-09"
+  "version": "2.0.0",
+  "date": "2026-10-11"
  },
  "grade": 3,
  "title": "Grade 3 Common Core Math — Question Sets",
- "set_count": 61,
- "question_count": 1525,
- "figure_count": 179,
+ "set_count": 69,
+ "question_count": 1725,
+ "figure_count": 297,
  "id_format": "S<set>-<section>-Q<number>. Section codes: M = MAIN (Grade 3), B1, B2, ... = BACKWARD branches (earlier grades), F1 = FORWARD 1 (Grade 4), F2 = FORWARD 2 (Grade 5). id is unique within this collection; uid = \"G3:\" + id is unique across all grade collections (the collection, not a question's standard grade, is the namespace: this bank also holds Grade 4 and 5 forward questions). Set and branch numbers are fixed: they need not be consecutive, and an ID is never reused for a different skill (see revisions.json).",
- "revisions_file": null,
+ "revisions_file": "revisions.json",
  "relations": {
   "main": "the Grade 3 skill the set is built around",
   "backward": "a prerequisite skill to check when a student misses MAIN questions",
@@ -105,7 +105,7 @@
      "section": "FORWARD 2",
      "section_code": "F2",
      "relation": "forward2",
-     "skill": "Interpret a fraction times a whole number as equal parts of a quantity",
+     "skill": "Interpret a fraction times a fractional quantity as equal parts of that quantity",
      "standard": "5.NF.B.4.a",
      "nearest_related": false,
      "question_ids": [
@@ -345,7 +345,7 @@
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Interpret remainders when dividing into groups",
+     "skill": "Solve multistep word problems that require interpreting a remainder",
      "standard": "4.OA.A.3",
      "nearest_related": false,
      "question_ids": [
@@ -615,7 +615,7 @@
      "section": "FORWARD 2",
      "section_code": "F2",
      "relation": "forward2",
-     "skill": "Use a tape diagram to find a fraction of a whole number in context",
+     "skill": "Use a tape diagram to find a fraction of a fractional or mixed-number quantity in context",
      "standard": "5.NF.B.6",
      "nearest_related": false,
      "question_ids": [
@@ -870,7 +870,7 @@
      "section": "FORWARD 2",
      "section_code": "F2",
      "relation": "forward2",
-     "skill": "Multiply a fraction and a whole number in either order",
+     "skill": "Multiply two fractions in either order",
      "standard": "5.NF.B.4.a",
      "nearest_related": false,
      "question_ids": [
@@ -1247,21 +1247,6 @@
      ]
     },
     {
-     "section": "BACKWARD 1",
-     "section_code": "B1",
-     "relation": "backward",
-     "skill": "Subtract within 100",
-     "standard": "2.NBT.B.5",
-     "nearest_related": false,
-     "question_ids": [
-      "S15-B1-Q1",
-      "S15-B1-Q2",
-      "S15-B1-Q3",
-      "S15-B1-Q4",
-      "S15-B1-Q5"
-     ]
-    },
-    {
      "section": "BACKWARD 2",
      "section_code": "B2",
      "relation": "backward",
@@ -1274,6 +1259,21 @@
       "S15-B2-Q3",
       "S15-B2-Q4",
       "S15-B2-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 3",
+     "section_code": "B3",
+     "relation": "backward",
+     "skill": "Equal rows in arrays up to 5 by 5",
+     "standard": "2.OA.C.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S15-B3-Q1",
+      "S15-B3-Q2",
+      "S15-B3-Q3",
+      "S15-B3-Q4",
+      "S15-B3-Q5"
      ]
     },
     {
@@ -1568,14 +1568,14 @@
    "set_id": "S19",
    "file": "sets/S19.json",
    "standard": "3.OA.D.8",
-   "title": "Check whether answers are reasonable using mental computation and rounding",
+   "title": "Check whether answers to two-step word problems are reasonable, using mental computation and rounding",
    "domain": "Operations & Algebraic Thinking",
    "sections": [
     {
      "section": "MAIN",
      "section_code": "M",
      "relation": "main",
-     "skill": "Check whether answers are reasonable using mental computation and rounding",
+     "skill": "Check whether answers to two-step word problems are reasonable, using mental computation and rounding",
      "standard": "3.OA.D.8",
      "nearest_related": false,
      "question_ids": [
@@ -1620,7 +1620,7 @@
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Use rounding to check answers to multistep problems",
+     "skill": "Use rounding to check answers to multistep word problems",
      "standard": "4.OA.A.3",
      "nearest_related": false,
      "question_ids": [
@@ -2485,7 +2485,7 @@
      "section": "FORWARD 2",
      "section_code": "F2",
      "relation": "forward2",
-     "skill": "Find a fraction of a quantity by first finding the unit fraction of it",
+     "skill": "Find a fraction of a fractional quantity by first finding the unit fraction of it",
      "standard": "5.NF.B.4.a",
      "nearest_related": false,
      "question_ids": [
@@ -3098,14 +3098,14 @@
    "set_id": "S37",
    "file": "sets/S37.json",
    "standard": "3.NF.A.3.d",
-   "title": "Compare fractions only when they refer to the same whole, and justify the comparison with a model",
+   "title": "Compare the amounts that fractions name when the wholes may be different sizes",
    "domain": "Number & Operations–Fractions",
    "sections": [
     {
      "section": "MAIN",
      "section_code": "M",
      "relation": "main",
-     "skill": "Compare fractions only when they refer to the same whole, and justify the comparison with a model",
+     "skill": "Compare the amounts that fractions name when the wholes may be different sizes",
      "standard": "3.NF.A.3.d",
      "nearest_related": false,
      "question_ids": [
@@ -3174,6 +3174,91 @@
       "S37-F2-Q3",
       "S37-F2-Q4",
       "S37-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 68,
+   "set_id": "S68",
+   "file": "sets/S68.json",
+   "standard": "3.NF.A.3.d",
+   "title": "Justify a comparison of two fractions of the same whole with a visual model",
+   "domain": "Number & Operations–Fractions",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Justify a comparison of two fractions of the same whole with a visual model",
+     "standard": "3.NF.A.3.d",
+     "nearest_related": false,
+     "question_ids": [
+      "S68-M-Q1",
+      "S68-M-Q2",
+      "S68-M-Q3",
+      "S68-M-Q4",
+      "S68-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Compare equal shares of the same shape",
+     "standard": "2.G.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S68-B1-Q1",
+      "S68-B1-Q2",
+      "S68-B1-Q3",
+      "S68-B1-Q4",
+      "S68-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Cutting a shape into more equal shares makes smaller shares",
+     "standard": "1.G.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S68-B2-Q1",
+      "S68-B2-Q2",
+      "S68-B2-Q3",
+      "S68-B2-Q4",
+      "S68-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Justify a fraction comparison with a model or with common denominators",
+     "standard": "4.NF.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S68-F1-Q1",
+      "S68-F1-Q2",
+      "S68-F1-Q3",
+      "S68-F1-Q4",
+      "S68-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use benchmark fractions to compare sums of fractions with 1",
+     "standard": "5.NF.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S68-F2-Q1",
+      "S68-F2-Q2",
+      "S68-F2-Q3",
+      "S68-F2-Q4",
+      "S68-F2-Q5"
      ]
     }
    ]
@@ -3438,14 +3523,14 @@
    "set_id": "S41",
    "file": "sets/S41.json",
    "standard": "3.MD.A.2",
-   "title": "Measure and estimate liquid volumes and masses in liters, grams, and kilograms",
+   "title": "Estimate liquid volumes and masses in liters, grams, and kilograms",
    "domain": "Measurement & Data",
    "sections": [
     {
      "section": "MAIN",
      "section_code": "M",
      "relation": "main",
-     "skill": "Measure and estimate liquid volumes and masses in liters, grams, and kilograms",
+     "skill": "Estimate liquid volumes and masses in liters, grams, and kilograms",
      "standard": "3.MD.A.2",
      "nearest_related": false,
      "question_ids": [
@@ -3604,6 +3689,176 @@
    ]
   },
   {
+   "set": 63,
+   "set_id": "S63",
+   "file": "sets/S63.json",
+   "standard": "3.MD.A.2",
+   "title": "Measure mass in grams and kilograms with a scale",
+   "domain": "Measurement & Data",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Measure mass in grams and kilograms with a scale",
+     "standard": "3.MD.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S63-M-Q1",
+      "S63-M-Q2",
+      "S63-M-Q3",
+      "S63-M-Q4",
+      "S63-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Read a length on a ruler",
+     "standard": "2.MD.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S63-B1-Q1",
+      "S63-B1-Q2",
+      "S63-B1-Q3",
+      "S63-B1-Q4",
+      "S63-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Read numbers on a scale that counts by 10s or 100s",
+     "standard": "2.MD.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S63-B2-Q1",
+      "S63-B2-Q2",
+      "S63-B2-Q3",
+      "S63-B2-Q4",
+      "S63-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Express masses in kilograms as grams",
+     "standard": "4.MD.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S63-F1-Q1",
+      "S63-F1-Q2",
+      "S63-F1-Q3",
+      "S63-F1-Q4",
+      "S63-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Convert masses between kilograms and grams with decimals",
+     "standard": "5.MD.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S63-F2-Q1",
+      "S63-F2-Q2",
+      "S63-F2-Q3",
+      "S63-F2-Q4",
+      "S63-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 64,
+   "set_id": "S64",
+   "file": "sets/S64.json",
+   "standard": "3.MD.A.2",
+   "title": "Measure liquid volume in liters with a marked container",
+   "domain": "Measurement & Data",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Measure liquid volume in liters with a marked container",
+     "standard": "3.MD.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S64-M-Q1",
+      "S64-M-Q2",
+      "S64-M-Q3",
+      "S64-M-Q4",
+      "S64-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Read whole numbers on a vertical number line",
+     "standard": "2.MD.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S64-B1-Q1",
+      "S64-B1-Q2",
+      "S64-B1-Q3",
+      "S64-B1-Q4",
+      "S64-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Skip-count by 5s, 10s, and 100s",
+     "standard": "2.NBT.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S64-B2-Q1",
+      "S64-B2-Q2",
+      "S64-B2-Q3",
+      "S64-B2-Q4",
+      "S64-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Express liters as milliliters",
+     "standard": "4.MD.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S64-F1-Q1",
+      "S64-F1-Q2",
+      "S64-F1-Q3",
+      "S64-F1-Q4",
+      "S64-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Convert between liters and milliliters with decimals",
+     "standard": "5.MD.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S64-F2-Q1",
+      "S64-F2-Q2",
+      "S64-F2-Q3",
+      "S64-F2-Q4",
+      "S64-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
    "set": 43,
    "set_id": "S43",
    "file": "sets/S43.json",
@@ -3630,7 +3885,7 @@
      "section": "BACKWARD 1",
      "section_code": "B1",
      "relation": "backward",
-     "skill": "Draw and read a picture graph with a single-unit scale",
+     "skill": "Draw a picture graph with a single-unit scale",
      "standard": "2.MD.D.10",
      "nearest_related": false,
      "question_ids": [
@@ -3689,6 +3944,91 @@
    ]
   },
   {
+   "set": 65,
+   "set_id": "S65",
+   "file": "sets/S65.json",
+   "standard": "3.MD.B.3",
+   "title": "Use the key of a scaled picture graph to find amounts and numbers of symbols",
+   "domain": "Measurement & Data",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Use the key of a scaled picture graph to find amounts and numbers of symbols",
+     "standard": "3.MD.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S65-M-Q1",
+      "S65-M-Q2",
+      "S65-M-Q3",
+      "S65-M-Q4",
+      "S65-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Read a picture graph with a single-unit scale",
+     "standard": "2.MD.D.10",
+     "nearest_related": false,
+     "question_ids": [
+      "S65-B1-Q1",
+      "S65-B1-Q2",
+      "S65-B1-Q3",
+      "S65-B1-Q4",
+      "S65-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Add equal addends",
+     "standard": "2.OA.C.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S65-B2-Q1",
+      "S65-B2-Q2",
+      "S65-B2-Q3",
+      "S65-B2-Q4",
+      "S65-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use a picture graph to solve multiplicative comparison problems",
+     "standard": "4.OA.A.2",
+     "nearest_related": true,
+     "question_ids": [
+      "S65-F1-Q1",
+      "S65-F1-Q2",
+      "S65-F1-Q3",
+      "S65-F1-Q4",
+      "S65-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use operations on fractions to solve problems with line plot data",
+     "standard": "5.MD.B.2",
+     "nearest_related": true,
+     "question_ids": [
+      "S65-F2-Q1",
+      "S65-F2-Q2",
+      "S65-F2-Q3",
+      "S65-F2-Q4",
+      "S65-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
    "set": 44,
    "set_id": "S44",
    "file": "sets/S44.json",
@@ -3715,7 +4055,7 @@
      "section": "BACKWARD 1",
      "section_code": "B1",
      "relation": "backward",
-     "skill": "Draw and read a bar graph with a single-unit scale",
+     "skill": "Draw a bar graph with a single-unit scale",
      "standard": "2.MD.D.10",
      "nearest_related": false,
      "question_ids": [
@@ -3769,6 +4109,91 @@
       "S44-F2-Q3",
       "S44-F2-Q4",
       "S44-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 66,
+   "set_id": "S66",
+   "file": "sets/S66.json",
+   "standard": "3.MD.B.3",
+   "title": "Read the scale of a scaled bar graph and choose a scale",
+   "domain": "Measurement & Data",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Read the scale of a scaled bar graph and choose a scale",
+     "standard": "3.MD.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S66-M-Q1",
+      "S66-M-Q2",
+      "S66-M-Q3",
+      "S66-M-Q4",
+      "S66-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Read a bar graph with a single-unit scale",
+     "standard": "2.MD.D.10",
+     "nearest_related": false,
+     "question_ids": [
+      "S66-B1-Q1",
+      "S66-B1-Q2",
+      "S66-B1-Q3",
+      "S66-B1-Q4",
+      "S66-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Skip-count by 5s, 10s, and 100s along a scale",
+     "standard": "2.NBT.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S66-B2-Q1",
+      "S66-B2-Q2",
+      "S66-B2-Q3",
+      "S66-B2-Q4",
+      "S66-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Read a line plot whose scale is marked in eighths",
+     "standard": "4.MD.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S66-F1-Q1",
+      "S66-F1-Q2",
+      "S66-F1-Q3",
+      "S66-F1-Q4",
+      "S66-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Read and interpret points on a graph with a scale",
+     "standard": "5.G.A.2",
+     "nearest_related": true,
+     "question_ids": [
+      "S66-F2-Q1",
+      "S66-F2-Q2",
+      "S66-F2-Q3",
+      "S66-F2-Q4",
+      "S66-F2-Q5"
      ]
     }
    ]
@@ -3854,6 +4279,91 @@
       "S45-F2-Q3",
       "S45-F2-Q4",
       "S45-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 62,
+   "set_id": "S62",
+   "file": "sets/S62.json",
+   "standard": "3.MD.B.3",
+   "title": "Solve two-step \"how many more\" and \"how many fewer\" problems using scaled bar graphs",
+   "domain": "Measurement & Data",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Solve two-step \"how many more\" and \"how many fewer\" problems using scaled bar graphs",
+     "standard": "3.MD.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S62-M-Q1",
+      "S62-M-Q2",
+      "S62-M-Q3",
+      "S62-M-Q4",
+      "S62-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Solve compare problems with a single-unit bar graph",
+     "standard": "2.MD.D.10",
+     "nearest_related": false,
+     "question_ids": [
+      "S62-B1-Q1",
+      "S62-B1-Q2",
+      "S62-B1-Q3",
+      "S62-B1-Q4",
+      "S62-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Solve two-step addition and subtraction word problems within 100",
+     "standard": "2.OA.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S62-B2-Q1",
+      "S62-B2-Q2",
+      "S62-B2-Q3",
+      "S62-B2-Q4",
+      "S62-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Solve two-step problems with fractional data in a line plot",
+     "standard": "4.MD.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S62-F1-Q1",
+      "S62-F1-Q2",
+      "S62-F1-Q3",
+      "S62-F1-Q4",
+      "S62-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Solve multistep problems with fractional data in a line plot",
+     "standard": "5.MD.B.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S62-F2-Q1",
+      "S62-F2-Q2",
+      "S62-F2-Q3",
+      "S62-F2-Q4",
+      "S62-F2-Q5"
      ]
     }
    ]
@@ -4024,6 +4534,91 @@
       "S47-F2-Q3",
       "S47-F2-Q4",
       "S47-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 69,
+   "set_id": "S69",
+   "file": "sets/S69.json",
+   "standard": "3.MD.B.4",
+   "title": "Measure several objects to the nearest half or quarter inch and make a line plot of the measurements",
+   "domain": "Measurement & Data",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Measure several objects to the nearest half or quarter inch and make a line plot of the measurements",
+     "standard": "3.MD.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S69-M-Q1",
+      "S69-M-Q2",
+      "S69-M-Q3",
+      "S69-M-Q4",
+      "S69-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Measure objects in whole inches and make a line plot",
+     "standard": "2.MD.D.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S69-B1-Q1",
+      "S69-B1-Q2",
+      "S69-B1-Q3",
+      "S69-B1-Q4",
+      "S69-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Measure lengths in whole inches",
+     "standard": "2.MD.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S69-B2-Q1",
+      "S69-B2-Q2",
+      "S69-B2-Q3",
+      "S69-B2-Q4",
+      "S69-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Make a line plot of eighth-inch data and find the difference between the longest and shortest",
+     "standard": "4.MD.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S69-F1-Q1",
+      "S69-F1-Q2",
+      "S69-F1-Q3",
+      "S69-F1-Q4",
+      "S69-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Make a line plot of fractional data and find the total",
+     "standard": "5.MD.B.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S69-F2-Q1",
+      "S69-F2-Q2",
+      "S69-F2-Q3",
+      "S69-F2-Q4",
+      "S69-F2-Q5"
      ]
     }
    ]
@@ -4525,7 +5120,7 @@
      "section": "FORWARD 2",
      "section_code": "F2",
      "relation": "forward2",
-     "skill": "Multiply two-digit numbers with partial products and the standard algorithm",
+     "skill": "Multiply multi-digit whole numbers with the standard algorithm",
      "standard": "5.NBT.B.5",
      "nearest_related": false,
      "question_ids": [
@@ -4798,14 +5393,14 @@
    "set_id": "S57",
    "file": "sets/S57.json",
    "standard": "3.MD.D.8",
-   "title": "Show rectangles with the same perimeter and different areas, or the same area and different perimeters",
+   "title": "Show rectangles with the same perimeter and different areas",
    "domain": "Measurement & Data",
    "sections": [
     {
      "section": "MAIN",
      "section_code": "M",
      "relation": "main",
-     "skill": "Show rectangles with the same perimeter and different areas, or the same area and different perimeters",
+     "skill": "Show rectangles with the same perimeter and different areas",
      "standard": "3.MD.D.8",
      "nearest_related": false,
      "question_ids": [
@@ -4832,25 +5427,25 @@
      ]
     },
     {
-     "section": "BACKWARD 2",
-     "section_code": "B2",
+     "section": "BACKWARD 3",
+     "section_code": "B3",
      "relation": "backward",
-     "skill": "Arrays with the same total",
-     "standard": "2.OA.C.4",
+     "skill": "Add the side lengths of a rectangle",
+     "standard": "2.NBT.B.6",
      "nearest_related": false,
      "question_ids": [
-      "S57-B2-Q1",
-      "S57-B2-Q2",
-      "S57-B2-Q3",
-      "S57-B2-Q4",
-      "S57-B2-Q5"
+      "S57-B3-Q1",
+      "S57-B3-Q2",
+      "S57-B3-Q3",
+      "S57-B3-Q4",
+      "S57-B3-Q5"
      ]
     },
     {
      "section": "FORWARD 1",
      "section_code": "F1",
      "relation": "forward1",
-     "skill": "Compare the areas and perimeters of rectangles with the formulas",
+     "skill": "Compare the areas of rectangles with the same perimeter",
      "standard": "4.MD.A.3",
      "nearest_related": false,
      "question_ids": [
@@ -4874,6 +5469,91 @@
       "S57-F2-Q3",
       "S57-F2-Q4",
       "S57-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 67,
+   "set_id": "S67",
+   "file": "sets/S67.json",
+   "standard": "3.MD.D.8",
+   "title": "Show rectangles with the same area and different perimeters",
+   "domain": "Measurement & Data",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Show rectangles with the same area and different perimeters",
+     "standard": "3.MD.D.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S67-M-Q1",
+      "S67-M-Q2",
+      "S67-M-Q3",
+      "S67-M-Q4",
+      "S67-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Arrays with the same total",
+     "standard": "2.OA.C.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S67-B1-Q1",
+      "S67-B1-Q2",
+      "S67-B1-Q3",
+      "S67-B1-Q4",
+      "S67-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Count the same-size squares in rectangles of different shapes",
+     "standard": "2.G.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S67-B2-Q1",
+      "S67-B2-Q2",
+      "S67-B2-Q3",
+      "S67-B2-Q4",
+      "S67-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Compare the perimeters of rectangles with the same area",
+     "standard": "4.MD.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S67-F1-Q1",
+      "S67-F1-Q2",
+      "S67-F1-Q3",
+      "S67-F1-Q4",
+      "S67-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Compare rectangles with fractional side lengths that have the same area",
+     "standard": "5.NF.B.4.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S67-F2-Q1",
+      "S67-F2-Q2",
+      "S67-F2-Q3",
+      "S67-F2-Q4",
+      "S67-F2-Q5"
      ]
     }
    ]
@@ -5218,5 +5898,11 @@
     }
    ]
   }
- ]
+ ],
+ "revision_summary": {
+  "unchanged": 1372,
+  "revised": 143,
+  "retired": 10,
+  "new": 210
+ }
 }

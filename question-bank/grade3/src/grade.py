@@ -1,7 +1,7 @@
 """Grade 3 configuration: grade number and domain modules in collection order."""
 GRADE = 3
-VERSION = "1.0.0"
-VERSION_DATE = "2026-10-09"
+VERSION = "2.0.0"
+VERSION_DATE = "2026-10-11"
 # Deal the correct letter of four-choice questions evenly across A-D.
 BALANCE_MC = True
 # Every backward branch must use a Grade 2-or-earlier standard (the build stops otherwise).

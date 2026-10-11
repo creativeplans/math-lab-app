@@ -40,13 +40,13 @@ SETS = [
           sa('Write an equation for "40 is 5 times as many as 8."', 'Equation:', key='40 = 5 × 8', note='40 = 8 × 5 is also correct.'),
           tf('15 = 3 × 5 means that 15 is 3 more than 5.', key=False),
       ]),
-      f2=B('Interpret a fraction times a whole number as equal parts of a quantity', '5.NF.B.4.a', [
-          mc('Which describes {2/3} × 12?', ['Split 12 into 3 equal parts and take 2 of them', 'Split 12 into 2 equal parts and take 3 of them',
-                                            'Add {2/3} and 12', 'Make 12 groups of 3']),
-          sa('Find {3/4} × 8 by splitting 8 into 4 equal parts and taking 3 of them.', 'Product:', key='6'),
-          tf('{1/5} × 20 is the size of one part when 20 is split into 5 equal parts.', key=True),
-          sa('Multiply.\n{2/5} × 15', 'Product:', key='6'),
-          tf('{3/4} × 12 = 16', key=False),
+      f2=B('Interpret a fraction times a fractional quantity as equal parts of that quantity', '5.NF.B.4.a', [
+          mc('Which describes {2/3} × {3/4}?', ['Split {3/4} into 3 equal parts and take 2 of them', 'Split {3/4} into 2 equal parts and take 3 of them',
+                                               'Add {2/3} and {3/4}', 'Subtract {2/3} from {3/4}']),
+          sa('Find {1/2} of {4/5} by splitting {4/5} into 2 equal parts.', 'Answer:', key='2/5'),
+          tf('{1/3} × {3/8} is the size of one part when {3/8} is split into 3 equal parts.', key=True),
+          sa('Multiply.\n{3/4} × {2/3}', 'Product:', key='1/2', note='6/12 is also correct.'),
+          tf('{2/5} × {5/6} = {10/11}', key=False),
       ])),
 
     # ------------------------------------------------------------------ 3.OA.A.1 (write equations)
@@ -170,21 +170,24 @@ SETS = [
               tf('The array has 5 rows.', key=False, fig=arr(4, 2)),
           ]),
       ],
-      f1=B('Interpret remainders when dividing into groups', '4.OA.A.3', [
-          sa('A teacher puts 26 students in groups of 4.\nHow many full groups are there, and how many students are left over?',
-             ['Full groups:', 'Left over:'], key='6 groups; 2 students'),
-          sa('29 people ride in boats that hold 6 people each.\nHow many boats are needed so everyone can ride?', 'Boats:', key='5 boats',
-             note='29 ÷ 6 = 4 R 5. The 5 extra people need another boat, so 5 boats.'),
-          mc('A baker puts 50 rolls in bags of 8.\nHow many bags can she fill completely?', ['6', '7', '8', '2']),
-          tf('43 cards put in piles of 5 make 8 full piles with 3 cards left over.', key=True),
-          tf('38 markers put in boxes of 6 fill 7 boxes.', key=False),
+      f1=B('Solve multistep word problems that require interpreting a remainder', '4.OA.A.3', [
+          sa('45 students are going on a trip, but 2 are absent. The rest ride in vans that hold 6 students each.\nHow many vans are needed?', 'Vans:',
+             key='8 vans', note='45 - 2 = 43 and 43 ÷ 6 = 7 R 1. The 1 extra student needs another van, so 8 vans (not 7, and not 7 R 1).'),
+          sa('A baker makes 3 trays of 18 cookies. She packs them in bags of 8.\nHow many full bags can she make? How many cookies are left over?',
+             ['Full bags:', 'Left over:'], key='6 full bags; 6 cookies', note='3 × 18 = 54 and 54 ÷ 8 = 6 R 6. Both parts are required.'),
+          mc('A club has $90. It spends $20 on snacks and the rest on tickets that cost $8 each.\nHow many tickets can it buy?', ['8', '9', '11', '70']),
+          sa('A farmer has 4 crates of 25 apples. He puts all the apples in boxes that hold 6 apples each.\n'
+             'Write an equation with a letter for the number of apples. Then find the fewest boxes he needs.', ['Equation:', 'Boxes:'],
+             key='a = 4 × 25, so a = 100; 17 boxes',
+             note='Any equivalent equation with a letter is correct. 100 ÷ 6 = 16 R 4, and the 4 extra apples need another box. Both parts are required.'),
+          tf('Ana has 60 feet of ribbon. She uses 7 feet and cuts the rest into 6-foot pieces. She gets 8 full pieces, and 5 feet are left over.', key=True),
       ]),
       f2=B('Divide a whole number by a unit fraction to find the number of equal shares', '5.NF.B.7.c', [
           sa('How many {1/3}-cup servings are in 4 cups?', 'Servings:', key='12'),
-          tf('6 ÷ {1/2} = 12', key=True),
+          tf('A 6-foot board is cut into pieces that are each {1/2} foot long. There are 12 pieces.', key=True),
           mc('A 5-foot board is cut into pieces that are each {1/4} foot long.\nHow many pieces are there?', ['20', '{5/4}', '9', '{1/20}']),
-          sa('Divide.\n3 ÷ {1/5}', 'Quotient:', key='15'),
-          tf('2 ÷ {1/4} = {1/8}', key=False),
+          sa('How many {1/5}-pound bags can be filled from 3 pounds of trail mix?', 'Bags:', key='15 bags'),
+          tf('2 liters of juice exactly fill 6 glasses that each hold {1/4} liter.', key=False),
       ])),
 
     # ------------------------------------------------------------------ 3.OA.A.3 (multiply)
@@ -287,7 +290,8 @@ SETS = [
           mc('A drawing shows 3 rows with 6 stars in each row.\nWhich equation matches the drawing?', ['3 × 6 = ?', '3 + 6 = ?', '6 ÷ 3 = ?', '6 - 3 = ?']),
           draw_write('A 20-foot board is cut into pieces that are each 4 feet long.\nDraw a diagram. Then write an equation with a symbol for the unknown and solve it.',
                      DRAW, ['Equation:', 'Pieces:'],
-                     draw='A bar or number line 20 units long marked into 4-unit parts, showing 5 parts',
+                     draw='Any diagram that shows a total length of 20 feet made of 5 equal 4-foot pieces: for example a bar or number line '
+                          'marked in 4-unit parts, or 5 pieces each labeled 4 ft with the total of 20 ft shown',
                      key='20 ÷ 4 = p; 5 pieces',
                      note='Any equation with a symbol for the unknown (such as p × 4 = 20) is correct. Grade both the diagram and the equation with its solution.'),
           tf('A drawing of 5 groups with 3 dots in each group matches the equation 5 + 3 = 8.', key=False),
@@ -328,14 +332,14 @@ SETS = [
              note='Any equivalent equation (such as a = 30 ÷ 6) is correct. Both parts are required.'),
           tf('"21 is 3 times as many as 7" can be written as 21 = 3 + 7.', key=False),
       ]),
-      f2=B('Use a tape diagram to find a fraction of a whole number in context', '5.NF.B.6', [
-          draw_write('A path is 6 miles long. Kai walked {2/3} of it.\nDraw a tape diagram. Then find how far Kai walked.', DRAW, 'Distance:',
-                     draw='A tape for 6 miles split into 3 equal parts of 2 miles, with 2 parts marked', key='4 miles',
-                     note='Grade both: the tape in 3 equal parts with 2 parts marked, and 4 miles.'),
-          tf('{3/4} of a 12-pound bag of rice is 9 pounds.', key=True),
-          mc('A recipe uses 2 cups of milk. Leo makes {1/2} of the recipe.\nHow much milk does he use?', ['1 cup', '4 cups', '{1/4} cup', '2{1/2} cups']),
-          sa('A rope is 10 feet long. {3/5} of it is red.\nHow many feet of the rope are red?', 'Feet:', key='6 feet'),
-          tf('{2/5} of 20 students is 5 students.', key=False),
+      f2=B('Use a tape diagram to find a fraction of a fractional or mixed-number quantity in context', '5.NF.B.6', [
+          draw_write('A path is {3/4} mile long. Kai walked {2/3} of it.\nDraw a tape diagram. Then find how far Kai walked.', DRAW, 'Distance:',
+                     draw='A tape for 3/4 mile split into 3 equal parts of 1/4 mile, with 2 parts marked (or another diagram showing 2/3 of 3/4)',
+                     key='1/2 mile', note='2/4 mile is also correct. Grade both: the diagram, and the distance.'),
+          tf('{3/4} of a {2/3}-pound bag of rice is {1/2} pound.', key=True),
+          mc('A recipe uses 1{1/2} cups of milk. Leo makes {1/2} of the recipe.\nHow much milk does he use?', ['{3/4} cup', '3 cups', '1 cup', '2 cups']),
+          sa('A rope is 2{1/2} feet long. {3/5} of it is red.\nHow many feet of the rope are red?', 'Feet:', key='1 1/2 feet', note='3/2 feet is also correct.'),
+          tf('{2/5} of a {5/6}-liter bottle of juice is {1/2} liter.', key=False),
       ])),
 
     # ------------------------------------------------------------------ 3.OA.A.4 (multiplication)
@@ -454,12 +458,12 @@ SETS = [
           sa('Is 19 × 6 equal to 6 × 19? Find the product.', ['Equal?', 'Product:'], key='Yes; 114', note='Both parts are required.'),
           tf('125 × 8 = 8 × 152', key=False),
       ]),
-      f2=B('Multiply a fraction and a whole number in either order', '5.NF.B.4.a', [
-          tf('{2/3} × 6 = 6 × {2/3}', key=True),
-          sa('Multiply.\n8 × {3/4}', 'Product:', key='6'),
-          mc('Which is equal to {5/6} × 12?', ['12 × {5/6}', '{6/5} × 12', '{5/6} + 12', '12 × {6/5}']),
-          sa('{3/5} × 10 = 6.\nWhat is 10 × {3/5}?', 'Product:', key='6'),
-          tf('{1/2} × 14 = 14 × 2', key=False),
+      f2=B('Multiply two fractions in either order', '5.NF.B.4.a', [
+          tf('{2/3} × {4/5} = {4/5} × {2/3}', key=True),
+          sa('Multiply.\n{3/4} × {2/5}', 'Product:', key='3/10', note='6/20 is also correct.'),
+          mc('Which is equal to {5/6} × {3/8}?', ['{3/8} × {5/6}', '{6/5} × {3/8}', '{5/6} + {3/8}', '{8/3} × {5/6}']),
+          sa('{3/5} × {5/6} = {1/2}.\nWhat is {5/6} × {3/5}?', 'Product:', key='1/2'),
+          tf('{1/2} × {3/4} = {3/4} × 2', key=False),
       ])),
 
     # ------------------------------------------------------------------ 3.OA.B.5 (associative)

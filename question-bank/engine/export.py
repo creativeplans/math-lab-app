@@ -145,7 +145,13 @@ def describe(f):
         if f.get('obj'):
             d += '. %s lies above the ruler from %s to %s inches' % (
                 f.get('name') or 'An object', num(f['obj'][0]), num(f['obj'][1]))
+        for a, b, nm in f.get('objs', []):
+            d += '. Object %s lies above the ruler from %s to %s inches' % (nm, num(a), num(b))
         return d + '.'
+    if k == 'scale':
+        return 'Dial scale marked from 0 to %s %s, with marks every %s and labels every %s. The %s is on the scale, and the needle points to %s %s.' % (
+            num(f['max']), f.get('unit_name', f.get('unit', '')), num(f['step']), num(f.get('label_step', f['step'])),
+            f.get('name', 'object'), num(f['value']), f.get('unit_name', f.get('unit', '')))
     if k == 'beaker':
         u = f.get('unit', 'L')
         return 'Measuring container marked from 0 to %s %s, with marks every %s %s, filled to %s %s.' % (

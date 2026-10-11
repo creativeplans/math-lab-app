@@ -86,13 +86,23 @@ def clock(hour, minute):
 BLANK_CLOCK = dict(k='clock', hands=False, h=230)
 
 
-def ruler(n, obj=None, name=None, div=4):
+def ruler(n, obj=None, name=None, div=4, objs=None):
+    """Inch ruler; obj=(start, end) with name draws one object, objs=[(start, end, name), ...] draws several, stacked."""
     d = dict(k='ruler', max=n, div=div, h=120)
     if obj:
         d['obj'] = obj
     if name:
         d['name'] = name
+    if objs:
+        d['objs'] = [list(o) for o in objs]
+        d['h'] = 120 + 30 * (len(objs) - 1)
     return d
+
+
+def scale(mx, step, value, unit, name, label_step=None):
+    """Dial scale for mass in grams (unit 'g') or kilograms ('kg')."""
+    return dict(k='scale', max=mx, step=step, value=value, unit=unit, unit_name={'g': 'grams', 'kg': 'kilograms'}[unit],
+                name=name, label_step=label_step or step, h=250)
 
 
 def beaker(mx, step, fill, unit='L', label_step=None):

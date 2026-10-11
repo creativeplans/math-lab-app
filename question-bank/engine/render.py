@@ -1017,6 +1017,14 @@ def fig_pyramid(c, f, x, y, w, h, s):
 
 def fig_vstack(c, f, x, y, w, h, s):
     figs = f['figs']
+    if f.get('prop'):  # split the height in proportion to each part's preferred height
+        hs = [fig_pref_h(g, w) for g in figs]
+        top = y + h
+        for sub, hh in zip(figs, hs):
+            hh = h * hh / sum(hs)
+            top -= hh
+            draw_fig(c, sub, x, top, w, hh, s)
+        return
     n = len(figs)
     slot = h / n
     for i, sub in enumerate(figs):
@@ -1127,8 +1135,8 @@ def fig_ruler(c, f, x, y, w, h, s):
     n, d = f['max'], f.get('div', 4)
     unit = (w - 50) / n
     x0 = x + 25
-    ry = y + 20
-    rh = 46
+    ry = y + 20 * s
+    rh = 46 * s
     c.setFillColor(HexColor('#f6edd6'))
     c.setStrokeColor(INK)
     c.setLineWidth(1.2)
@@ -1143,18 +1151,69 @@ def fig_ruler(c, f, x, y, w, h, s):
         else:
             L = 9
         c.setLineWidth(1.2 if i % d == 0 else 0.8)
-        c.line(xx, ry + rh, xx, ry + rh - L)
+        c.line(xx, ry + rh, xx, ry + rh - L * s)
         if i % d == 0:
-            draw_label(c, str(i // d), xx, ry + rh - 31, fs, FB)
-    draw_label(c, f.get('unit', 'inches'), x0 + n * unit / 2, ry - 10, 10 * s, F, color=MUTED)
+            draw_label(c, str(i // d), xx, ry + rh - 31 * s, fs, FB)
+    draw_label(c, f.get('unit', 'inches'), x0 + n * unit / 2, ry - 10 * s, 10 * s, F, color=MUTED)
+    objs = f.get('objs', [])
+    gap = min(30 * s, (h - 20 * s - rh - 8) / max(len(objs), 1))
+    for i, (a, b, nm) in enumerate(objs):
+        oy = ry + rh + 8 * s + gap * i
+        c.setFillColor(SHADE)
+        c.setStrokeColor(POINT)
+        c.setLineWidth(1.4)
+        c.roundRect(x0 + a * unit, oy, (b - a) * unit, gap * 0.75, 5, fill=1, stroke=1)
+        draw_label(c, nm, x0 + a * unit - 8, oy + gap * 0.375, 12 * s, FB, anchor='r')
     if f.get('obj'):
         a, b = f['obj']
         c.setFillColor(SHADE)
         c.setStrokeColor(POINT)
         c.setLineWidth(1.4)
-        c.roundRect(x0 + a * unit, ry + rh + 12, (b - a) * unit, 22, 6, fill=1, stroke=1)
+        c.roundRect(x0 + a * unit, ry + rh + 12 * s, (b - a) * unit, 22 * s, 6, fill=1, stroke=1)
         if f.get('name'):
-            draw_label(c, f['name'], x0 + (a + b) / 2 * unit, ry + rh + 23, 11 * s, FB)
+            draw_label(c, f['name'], x0 + (a + b) / 2 * unit, ry + rh + 23 * s, 11 * s, FB)
+
+
+def fig_scale(c, f, x, y, w, h, s):
+    """Dial scale for mass: a half-circle dial from 0 (left) to max (right), ticks every step, labels every label_step,
+    a needle pointing at value, and the object being weighed in a box above the dial."""
+    import math
+    mx, st = f['max'], f['step']
+    lst = f.get('label_step', st)
+    R = min(w / 2 - 40, h - 90)
+    cx, cy = x + w / 2, y + 26
+    c.setFillColor(white)
+    c.setStrokeColor(INK)
+    c.setLineWidth(2)
+    p = c.beginPath()
+    p.arc(cx - R, cy - R, cx + R, cy + R, startAng=0, extent=180)
+    p.close()
+    c.drawPath(p, fill=1, stroke=1)
+    fs = 12 * s
+    k = 0
+    while k * st <= mx + 1e-9:
+        v = k * st
+        a = math.radians(180 - 180 * v / mx)
+        major = abs(v / lst - round(v / lst)) < 1e-9
+        L = 16 if major else 9
+        c.setLineWidth(1.4 if major else 0.8)
+        c.line(cx + (R - L) * math.cos(a), cy + (R - L) * math.sin(a), cx + R * math.cos(a), cy + R * math.sin(a))
+        if major:
+            draw_label(c, fmt(v), cx + (R - 30) * math.cos(a), cy + (R - 30) * math.sin(a), fs, FB)
+        k += 1
+    a = math.radians(180 - 180 * f['value'] / mx)
+    c.setStrokeColor(POINT)
+    c.setLineWidth(2.6)
+    c.line(cx, cy, cx + (R - 12) * math.cos(a), cy + (R - 12) * math.sin(a))
+    c.setFillColor(INK)
+    c.circle(cx, cy, 4, fill=1, stroke=0)
+    draw_label(c, f.get('unit_name', f.get('unit', '')), cx, cy - 14, fs, F, color=MUTED)
+    bw = max(90, sw(f.get('name', ''), FB, fs) + 30)
+    c.setFillColor(SHADE)
+    c.setStrokeColor(POINT)
+    c.setLineWidth(1.4)
+    c.roundRect(cx - bw / 2, cy + R + 10, bw, 30, 6, fill=1, stroke=1)
+    draw_label(c, f.get('name', ''), cx, cy + R + 25, fs, FB)
 
 
 def fig_beaker(c, f, x, y, w, h, s):
@@ -1340,11 +1399,11 @@ FIGS = {
     'grid': fig_grid, 'cyl': fig_cyl, 'cone': fig_cyl, 'sphere': fig_cyl, 'pyramid': fig_pyramid,
     'vstack': fig_vstack, 'hrow': fig_hrow, 'text': fig_text, 'rays': fig_rays,
     'array': fig_array, 'protractor': fig_protractor, 'geo': fig_geo,
-    'clock': fig_clock, 'ruler': fig_ruler, 'beaker': fig_beaker, 'picgraph': fig_picgraph,
+    'clock': fig_clock, 'ruler': fig_ruler, 'beaker': fig_beaker, 'picgraph': fig_picgraph, 'scale': fig_scale,
 }
 
 RIGHT_KINDS = {'coord', 'shape', 'prism', 'grid', 'cyl', 'cone', 'sphere', 'pyramid', 'rays', 'array', 'geo', 'protractor',
-               'clock', 'beaker'}
+               'clock', 'beaker', 'scale'}
 
 
 def draw_fig(c, f, x, y, w, h, s=1.0):

@@ -59,7 +59,8 @@ SETS = [
       ]),
       f2=B('Understand a unit cube and that it is used to measure volume', '5.MD.C.3.a', nearest=True, qs=[
           tf('A cube with edges 1 unit long is a unit cube, and its volume is 1 cubic unit.', key=True),
-          mc('Which can be used to measure volume?', ['A unit cube', 'A unit square', 'A ruler', 'A clock']),
+          mc('Which object has a volume of exactly 1 cubic unit?',
+             ['A cube with edges 1 unit long', 'A square with sides 1 unit long', 'A ruler 1 unit long', 'A cube with edges 2 units long']),
           sa('What is the volume of a cube with edges 1 cm long?', 'Volume:', key='1 cubic centimeter'),
           sa('How is a unit cube like a unit square?', ['Answer:', ''],
              key='A unit square measures area (1 square unit), and a unit cube measures volume (1 cubic unit).',
@@ -85,7 +86,8 @@ SETS = [
               tf('Length units laid end to end must have no gaps or overlaps.', key=True),
               mc('Which shows the correct way to measure with paper clips?',
                  ['Clips end to end with no gaps', 'Clips with spaces between them', 'Clips that overlap', 'Clips in a pile']),
-              sa('A desk is 9 hands long. A table is 4 hands longer.\nHow many hands long is the table?', 'Hands:', key='13'),
+              sa('Same-size crayons are laid end to end along a desk with no gaps or overlaps. 8 crayons fit exactly.\nHow many crayons long is the desk?',
+                 'Crayons:', key='8'),
               tf('If the cubes overlap when you measure, the count is still correct.', key=False),
           ]),
           B('Count the same-size squares that fill a rectangle', '2.G.A.2', [
@@ -129,11 +131,11 @@ SETS = [
               tf('When you count objects, you may count one object twice.', key=False),
           ]),
           B('Estimate lengths in inches, feet, centimeters, and meters', '2.MD.A.3', [
-              sa('Would you measure the length of a classroom in meters or in centimeters?', 'Unit:', key='Meters'),
-              tf('A centimeter is shorter than a meter.', key=True),
-              mc('Which unit is best for the length of a bug?', ['Centimeters', 'Meters', 'Feet', 'Yards']),
-              sa('Would you measure a book in inches or in feet?', 'Unit:', key='Inches'),
-              tf('A foot is shorter than an inch.', key=False),
+              sa('About how long is a ladybug: 1 centimeter or 1 meter?', 'Estimate:', key='About 1 centimeter'),
+              tf('A bed is about 2 meters long.', key=True),
+              mc('Which is the best estimate of the height of a basketball hoop?', ['3 meters', '3 centimeters', '30 meters', '3 inches']),
+              sa('About how long is a new crayon: 3 inches or 3 feet?', 'Estimate:', key='About 3 inches'),
+              tf('A pencil eraser is about 1 foot long.', key=False),
           ]),
       ],
       f1=B('Find areas of rectangles in real-world problems with the area formula', '4.MD.A.3', [
@@ -193,7 +195,8 @@ SETS = [
              ['Count:', 'Multiply:', 'Same?'], key='24; 3 × 2 × 4 = 24; yes', note='All three parts are required.'),
           tf('A prism 5 units by 2 units by 3 units can be packed with 30 unit cubes.', key=True),
           mc('Which equation gives the volume of a prism 4 by 3 by 2?', ['4 × 3 × 2 = 24', '4 + 3 + 2 = 9', '4 × 3 = 12', '2 × 4 + 3 = 11']),
-          sa('A prism has a base area of 6 square units and a height of 5 units.\nWhat is its volume?', 'Volume:', key='30 cubic units'),
+          sa('A box is packed with 2 layers of unit cubes. Each layer is 3 cubes long and 2 cubes wide.\nHow many cubes are in each layer? What is the volume?',
+             ['Cubes in each layer:', 'Volume:'], key='6; 12 cubic units', note='Both parts are required.'),
           tf('A 2-by-2-by-2 cube can be packed with 6 unit cubes.', key=False),
       ])),
 
@@ -279,13 +282,12 @@ SETS = [
                       'The product without a model or equations earns partial credit.'),
           tf('5 × 64 = 5 × 60 + 4', key=False),
       ]),
-      f2=B('Multiply two-digit numbers with partial products and the standard algorithm', '5.NBT.B.5', [
-          sa('Use partial products to find 34 × 26.', 'Product:', key='884',
-             note='30 × 20 + 30 × 6 + 4 × 20 + 4 × 6 = 600 + 180 + 80 + 24 = 884.'),
-          tf('25 × 43 = 25 × 40 + 25 × 3', key=True),
-          mc('Which partial products give 12 × 35?', ['10 × 35 + 2 × 35', '10 × 30 + 2 × 5', '12 × 30 + 5', '10 × 35 + 2']),
+      f2=B('Multiply multi-digit whole numbers with the standard algorithm', '5.NBT.B.5', [
+          work('Use the standard algorithm to multiply. Show your work.\n34 × 26', 'Product:', method=MUL_ALG, key='884'),
+          sa('Multiply.\n125 × 43', 'Product:', key='5,375'),
+          mc('Multiply.\n208 × 35', ['7,280', '7,180', '1,664', '7,380']),
           work('Use the standard algorithm to multiply. Show your work.\n48 × 27', 'Product:', method=MUL_ALG, key='1,296'),
-          tf('16 × 25 = 16 × 20 + 5', key=False),
+          tf('56 × 34 = 1,804', key=False),
       ])),
 
     # ------------------------------------------------------------------ 3.MD.C.7.d
@@ -318,19 +320,22 @@ SETS = [
           ]),
       ],
       f1=B('Find areas of figures made of rectangles in real-world problems', '4.MD.A.3', [
-          sa('A room is made of a 12-ft by 10-ft rectangle and a 5-ft by 4-ft rectangle.\nWhat is its total area?', 'Area:', key='140 square feet'),
-          tf('A garden made of a 15-m by 6-m bed and a 6-m by 6-m bed has an area of 126 square meters.', key=True),
+          sa('A room is made of a 12-ft by 10-ft rectangle and a 5-ft by 4-ft rectangle that are joined without overlapping.\nWhat is its total area?',
+             'Area:', key='140 square feet'),
+          tf('A garden is made of a 15-m by 6-m bed and a 6-m by 6-m bed placed side by side without overlapping. Its area is 126 square meters.', key=True),
           mc('A deck is a 20-ft by 8-ft rectangle with a 6-ft by 5-ft hole cut out for a tree.\nWhat is the area of the deck?',
              ['130 square feet', '160 square feet', '190 square feet', '30 square feet']),
-          sa('A parking lot is made of a 30-m by 15-m part and a 10-m by 15-m part.\nWhat is its area?', 'Area:', key='600 square meters'),
-          tf('A figure made of a 9-by-7 rectangle and a 3-by-4 rectangle has an area of 23 square units.', key=False),
+          sa('A parking lot is made of a 30-m by 15-m part and a 10-m by 15-m part that do not overlap.\nWhat is its area?', 'Area:', key='600 square meters'),
+          tf('A figure made of a 9-by-7 rectangle and a 3-by-4 rectangle that do not overlap has an area of 23 square units.', key=False),
       ]),
       f2=B('Find the volume of a solid made of two prisms by adding their volumes', '5.MD.C.5.c', nearest=True, qs=[
           sa('Two prisms that do not overlap have volumes of 20 and 18 cubic units.\nWhat is their total volume?', 'Volume:', key='38 cubic units'),
-          tf('A 2-by-3-by-4 prism and a 2-by-3-by-1 prism together have a volume of 30 cubic units.', key=True),
-          mc('A solid is a 4-by-2-by-3 prism joined to a 2-by-2-by-3 prism.\nWhat is its volume?',
+          tf('A 2-by-3-by-4 prism and a 2-by-3-by-1 prism are joined face to face without overlapping. Together they have a volume of 30 cubic units.',
+             key=True),
+          mc('A solid is a 4-by-2-by-3 prism joined face to face to a 2-by-2-by-3 prism, without overlapping.\nWhat is its volume?',
              ['36 cubic units', '24 cubic units', '12 cubic units', '288 cubic units']),
-          sa('A building is a 10-by-6-by-3 prism with a 4-by-6-by-3 prism attached.\nWhat is its total volume?', 'Volume:', key='252 cubic units'),
+          sa('A building is a 10-by-6-by-3 prism with a 4-by-6-by-3 prism attached face to face (they do not overlap).\nWhat is its total volume?',
+             'Volume:', key='252 cubic units'),
           tf('The volume of two joined prisms is the product of their volumes.', key=False),
       ])),
 
@@ -368,7 +373,7 @@ SETS = [
       ]),
       f2=B('Find perimeters of shapes with fractional side lengths', '5.NF.A.2', [
           sa('A rectangle is {3/4} ft by {1/2} ft.\nWhat is its perimeter?', 'Perimeter:', key='2 1/2 feet', note='5/2 feet is also correct.'),
-          tf('A triangle with sides of {1/2} m, {1/3} m, and {1/6} m has a perimeter of 1 m.', key=True),
+          tf('A triangle with sides of {1/2} m, {1/3} m, and {1/4} m has a perimeter of 1{1/12} m.', key=True),
           mc('A square has sides that are {5/8} inch long.\nWhat is its perimeter?', ['2{1/2} inches', '{20/32} inch', '1{1/4} inches', '{5/32} inch']),
           sa('A rectangle is 2{1/4} yd by 1{1/2} yd.\nWhat is its perimeter?', 'Perimeter:', key='7 1/2 yards'),
           tf('A rectangle {2/3} m by {1/6} m has a perimeter of {5/6} m.', key=False),
@@ -417,16 +422,19 @@ SETS = [
       ])),
 
     # ------------------------------------------------------------------ 3.MD.D.8 (same perimeter or area)
-    S('3.MD.D.8', 'Show rectangles with the same perimeter and different areas, or the same area and different perimeters',
+    S('3.MD.D.8', 'Show rectangles with the same perimeter and different areas',
       main=[
-          draw_write('Draw two different rectangles on the grid that each have a perimeter of 12 units.\nWhat is the area of each rectangle?', DRAW, 'Areas:',
-                     draw='Two different rectangles with a perimeter of 12 units each (from 1 by 5, 2 by 4, and 3 by 3)',
+          draw_write('Draw two rectangles along the grid lines with whole-number side lengths and different length-and-width pairs. '
+                     'Each must have a perimeter of 12 units.\nWhat is the area of each rectangle?', DRAW, 'Areas:',
+                     draw='Two rectangles drawn on grid lines with perimeter 12 and different side pairs, chosen from 1 by 5, 2 by 4, and 3 by 3 '
+                          '(a square is a rectangle; a rotated copy is not a different pair)',
                      key='For example, 2 by 4: 8 square units; 1 by 5: 5 square units',
-                     note='Grade both: two different rectangles with perimeter 12, and their correct areas (1 by 5 = 5, 2 by 4 = 8, 3 by 3 = 9 square units).'),
-          mc('Which rectangle has the same area as a 4-by-6 rectangle but a different perimeter?', ['3 by 8', '5 by 5', '4 by 5', '2 by 10']),
-          tf('A 2-by-6 rectangle and a 3-by-4 rectangle have the same area but different perimeters.', key=True),
-          sa('A 1-by-8 rectangle and a 2-by-4 rectangle both have an area of 8 square units.\nFind the perimeter of each.', ['1 by 8:', '2 by 4:'],
-             key='18 units; 12 units', note='Both parts are required.'),
+                     note='Grade both: two rectangles with perimeter 12 and different side pairs, and their correct areas '
+                          '(1 by 5 = 5, 2 by 4 = 8, 3 by 3 = 9 square units).'),
+          mc('Which rectangle has the same perimeter as a 2-by-6 rectangle but a different area?', ['3 by 5', '2 by 5', '4 by 5', '1 by 6']),
+          tf('A 1-by-7 rectangle and a 3-by-5 rectangle have the same perimeter but different areas.', key=True),
+          sa('A 2-by-8 rectangle and a 4-by-6 rectangle both have a perimeter of 20 units.\nFind the area of each.', ['2 by 8:', '4 by 6:'],
+             key='16 square units; 24 square units', note='Both parts are required.'),
           tf('Two rectangles with the same perimeter always have the same area.', key=False),
       ],
       back=[
@@ -437,29 +445,83 @@ SETS = [
               sa('How many sides does a rectangle have?', 'Sides:', key='4'),
               tf('A rectangle has 3 corners.', key=False),
           ]),
-          B('Arrays with the same total', '2.OA.C.4', [
-              sa('An array has 2 rows of 6 dots. Another array has 3 rows of 4 dots.\nHow many dots does each array have?', ['2 rows of 6:', '3 rows of 4:'],
-                 key='12; 12', note='Both parts are required.'),
-              tf('An array of 4 rows of 5 and an array of 5 rows of 4 have the same number of dots.', key=True),
-              mc('Which array has 10 dots?', ['2 rows of 5', '3 rows of 3', '2 rows of 4', '4 rows of 3']),
-              sa('How many dots are in 3 rows of 5?', 'Dots:', key='15'),
-              tf('An array of 2 rows of 3 and an array of 3 rows of 3 have the same number of dots.', key=False),
+          B('Add the side lengths of a rectangle', '2.NBT.B.6', num=3, qs=[
+              sa('Add the side lengths of a rectangle.\n12 + 7 + 12 + 7', 'Sum:', key='38'),
+              tf('15 + 10 + 15 + 10 = 50', key=True),
+              mc('Add.\n9 + 14 + 9 + 14', ['46', '23', '36', '56']),
+              sa('Add.\n25 + 5 + 25 + 5', 'Sum:', key='60'),
+              tf('11 + 20 + 11 + 20 = 52', key=False),
           ]),
       ],
-      f1=B('Compare the areas and perimeters of rectangles with the formulas', '4.MD.A.3', [
-          sa('A rectangle is 10 m by 6 m.\nFind its area and its perimeter.', ['Area:', 'Perimeter:'], key='60 square meters; 32 m', note='Both parts are required.'),
-          tf('A 9-by-4 rectangle and a 12-by-3 rectangle have the same area.', key=True),
+      f1=B('Compare the areas of rectangles with the same perimeter', '4.MD.A.3', [
+          sa('A 12-m by 3-m rectangle and a 9-m by 6-m rectangle both have a perimeter of 30 m.\nFind the area of each.', ['12 by 3:', '9 by 6:'],
+             key='36 square meters; 54 square meters', note='Both parts are required.'),
+          tf('A 10-ft by 2-ft rectangle and a 7-ft by 5-ft rectangle have the same perimeter.', key=True),
           mc('Which rectangle has a perimeter of 30 ft and an area of 50 square feet?', ['10 ft by 5 ft', '15 ft by 2 ft', '6 ft by 9 ft', '25 ft by 2 ft']),
           sa('A 2-by-10 rectangle and a 6-by-6 square both have a perimeter of 24 cm.\nWhich has the greater area?', 'Answer:',
              key='The 6-by-6 square', note='6 by 6 has an area of 36 square cm and 2 by 10 has 20 square cm.'),
           tf('A 7-by-7 square and an 8-by-6 rectangle have the same perimeter and the same area.', key=False),
       ]),
       f2=B('Find different prisms with the same volume', '5.MD.C.5.b', nearest=True, qs=[
-          sa('Give the dimensions of two different prisms that each have a volume of 24 cubic units.', ['Prism 1:', 'Prism 2:'],
-             key='2 by 3 by 4; 1 by 4 by 6', note='Any two different sets of whole-number dimensions with a product of 24 are correct.'),
+          sa('Give the edge lengths of two noncongruent rectangular prisms with positive whole-number edge lengths, each with a volume of 24 cubic units.',
+             ['Prism 1:', 'Prism 2:'], key='2 by 3 by 4; 1 by 4 by 6',
+             note='Any two sets of whole-number edge lengths with a product of 24 are correct, as long as they are not the same three numbers in a '
+                  'different order (for example 2 by 3 by 4 and 1 by 4 by 6, or 1 by 1 by 24 and 2 by 2 by 6).'),
           tf('A 2-by-2-by-6 prism and a 3-by-4-by-2 prism have the same volume.', key=True),
           mc('Which prism has a volume of 36 cubic units?', ['3 by 3 by 4', '3 by 4 by 4', '2 by 2 by 8', '6 by 6 by 2']),
           sa('A box is 5 by 2 by 3. Another box is 3 by 2 by ? and has the same volume.\nWhat is the missing dimension?', 'Missing dimension:', key='5'),
           tf('A 1-by-1-by-10 prism and a 2-by-2-by-2 prism have the same volume.', key=False),
+      ])),
+
+    # ------------------------------------------------------------------ 3.MD.D.8 (same area) — added in 2.0.0
+    S('3.MD.D.8', 'Show rectangles with the same area and different perimeters', num=67,
+      main=[
+          mc('Which rectangle has the same area as a 4-by-6 rectangle but a different perimeter?', ['3 by 8', '5 by 5', '4 by 5', '2 by 10']),
+          tf('A 2-by-6 rectangle and a 3-by-4 rectangle have the same area but different perimeters.', key=True),
+          sa('A 1-by-8 rectangle and a 2-by-4 rectangle both have an area of 8 square units.\nFind the perimeter of each.', ['1 by 8:', '2 by 4:'],
+             key='18 units; 12 units', note='Both parts are required.'),
+          draw_write('Draw two rectangles along the grid lines with whole-number side lengths and different length-and-width pairs. '
+                     'Each must have an area of 12 square units.\nWhat is the perimeter of each rectangle?', DRAW, 'Perimeters:',
+                     draw='Two rectangles drawn on grid lines with area 12 and different side pairs, chosen from 1 by 12, 2 by 6, and 3 by 4 '
+                          '(a rotated copy is not a different pair)',
+                     key='For example, 2 by 6: 16 units; 3 by 4: 14 units',
+                     note='Grade both: two rectangles with area 12 and different side pairs, and their correct perimeters '
+                          '(1 by 12 = 26, 2 by 6 = 16, 3 by 4 = 14 units).'),
+          tf('Two rectangles with the same area always have the same perimeter.', key=False),
+      ],
+      back=[
+          B('Arrays with the same total', '2.OA.C.4', [
+              sa('An array has 2 rows of 5 dots. Another array has 5 rows of 2 dots.\nHow many dots does each array have?', ['2 rows of 5:', '5 rows of 2:'],
+                 key='10; 10', note='Both parts are required.'),
+              tf('An array of 4 rows of 5 and an array of 5 rows of 4 have the same number of dots.', key=True),
+              mc('Which array has 10 dots?', ['2 rows of 5', '3 rows of 3', '2 rows of 4', '4 rows of 3']),
+              sa('How many dots are in 3 rows of 5?', 'Dots:', key='15'),
+              tf('An array of 2 rows of 3 and an array of 3 rows of 3 have the same number of dots.', key=False),
+          ]),
+          B('Count the same-size squares in rectangles of different shapes', '2.G.A.2', [
+              sa('How many same-size squares make up the rectangle?', 'Squares:', key='12', fig=area_grid(2, 6)),
+              tf('A rectangle of 3 rows of 4 squares and a rectangle of 2 rows of 6 squares have the same number of squares.', key=True),
+              mc('How many same-size squares make up the rectangle?', ['8', '6', '10', '4'], fig=area_grid(1, 8, h=110, maxcell=40)),
+              sa('A rectangle has 4 rows of 3 same-size squares.\nHow many squares is that?', 'Squares:', key='12'),
+              tf('A rectangle of 1 row of 9 squares and a rectangle of 3 rows of 3 squares have different numbers of squares.', key=False),
+          ]),
+      ],
+      f1=B('Compare the perimeters of rectangles with the same area', '4.MD.A.3', [
+          sa('A 4-ft by 9-ft rectangle and a 6-ft by 6-ft square both have an area of 36 square feet.\nWhich has the greater perimeter?', 'Answer:',
+             key='The 4-by-9 rectangle', note='4 by 9: 26 ft; 6 by 6: 24 ft.'),
+          tf('A 2-by-18 rectangle and a 4-by-9 rectangle have the same area.', key=True),
+          mc('Which rectangle has an area of 48 square meters and a perimeter of 28 meters?', ['6 m by 8 m', '4 m by 12 m', '3 m by 16 m', '2 m by 24 m']),
+          sa('A 5-cm by 20-cm rectangle and a 10-cm by 10-cm square both have an area of 100 square cm.\nFind the perimeter of each.',
+             ['5 by 20:', '10 by 10:'], key='50 cm; 40 cm', note='Both parts are required.'),
+          tf('A 3-by-12 rectangle has a smaller perimeter than a 6-by-6 square.', key=False),
+      ]),
+      f2=B('Compare rectangles with fractional side lengths that have the same area', '5.NF.B.4.b', [
+          sa('Find the area of a {1/2}-ft by 4-ft rectangle and of a 1-ft by 2-ft rectangle.', ['{1/2} by 4:', '1 by 2:'],
+             key='2 square feet; 2 square feet', note='Both parts are required.'),
+          tf('A {3/4}-m by 2-m rectangle has an area of 1{1/2} square meters.', key=True),
+          mc('Which rectangle has the same area as a 2-yd by 3-yd rectangle?', ['{1/2} yd by 12 yd', '{1/2} yd by 6 yd', '1{1/2} yd by 3 yd', '2{1/2} yd by 2 yd']),
+          sa('A {2/3}-ft by 6-ft rectangle and a 2-ft by 2-ft square have the same area.\nWhich has the greater perimeter?', 'Answer:',
+             key='The 2/3-ft by 6-ft rectangle', note='Both areas are 4 square feet; the perimeters are 13 1/3 ft and 8 ft.'),
+          tf('A {1/2}-m by 8-m rectangle and a 2-m by 2-m square have the same perimeter.', key=False),
       ])),
 ]

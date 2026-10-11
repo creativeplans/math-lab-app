@@ -6,6 +6,12 @@ def box(w, h):
     return shape([poly([(0, 0), (w, 0), (w, h), (0, h)])])
 
 
+TRAP_ABCD = shape([poly([(0, 0), (6, 0), (4, 3), (0, 3)])], texts=[(-0.35, -0.35, 'A'), (6.35, -0.35, 'B'), (4.35, 3.35, 'C'), (-0.35, 3.35, 'D')],
+                  desc='Quadrilateral ABCD: A at (0, 0), B at (6, 0), C at (4, 3), D at (0, 3). AB and DC are horizontal, AD is vertical, and BC slants.')
+PARA_PQRS = shape([poly([(0, 0), (5, 0), (7, 3), (2, 3)])], texts=[(-0.35, -0.35, 'P'), (5.35, -0.35, 'Q'), (7.35, 3.35, 'R'), (1.65, 3.35, 'S')],
+                  desc='Parallelogram PQRS: P at (0, 0), Q at (5, 0), R at (7, 3), S at (2, 3). PQ and SR are horizontal; QR and PS slant.')
+
+
 SETS = [
     # ------------------------------------------------------------------ 3.G.A.1 (shared attributes)
     S('3.G.A.1', 'Understand that shapes in different categories can share attributes, and that quadrilaterals form a category',
@@ -93,10 +99,9 @@ SETS = [
                      draw='A quadrilateral with exactly one pair of parallel sides', key='Trapezoid',
                      note='Grade both: the quadrilateral with exactly one pair of parallel sides, and its name.'),
           tf('A rectangle has 4 right angles, so the sides that meet at each corner are perpendicular.', key=True),
-          mc('Which quadrilateral always has perpendicular sides?',
-             ['A rectangle', 'A rhombus that is not a square', 'A trapezoid with no right angles', 'A parallelogram with no right angles']),
-          sa('How many pairs of parallel sides does a square have?', 'Pairs:', key='2'),
-          tf('A rhombus that is not a square has perpendicular sides.', key=False),
+          mc('Which side of quadrilateral ABCD is parallel to side AB?', ['DC', 'BC', 'AD', 'AC'], fig=TRAP_ABCD),
+          sa('Name the side of quadrilateral ABCD that is perpendicular to side AB.', 'Side:', key='AD', note='DA is also correct.', fig=TRAP_ABCD),
+          tf('In parallelogram PQRS, side PQ is perpendicular to side QR.', key=False, fig=PARA_PQRS),
       ]),
       f2=B('Classify quadrilaterals in a hierarchy', '5.G.B.4', [
           mc('Which list goes from the most general category to the most specific?',
@@ -113,10 +118,10 @@ SETS = [
     S('3.G.A.2', 'Split shapes into parts with equal areas',
       main=[
           plot('Draw lines to split the rectangle into 4 parts with equal areas.', box(8, 4),
-               key='Lines that split the rectangle into 4 parts of equal area (for example 3 lines from top to bottom 2 units apart, '
+               key='Any split of the rectangle into 4 parts with equal areas (for example 3 lines from top to bottom 2 units apart, '
                    'or one line across and one line down through the middle)'),
           plot('Draw lines to split the square into 3 parts with equal areas.', box(6, 6),
-               key='Two lines that split the square into 3 parts of equal area (for example 2 lines from top to bottom, 2 units apart)'),
+               key='Any split of the square into 3 parts with equal areas (for example 2 lines from top to bottom, 2 units apart)'),
           mc('Which line always splits a rectangle into 2 parts with equal areas?',
              ['A line through the middle from one long side to the opposite long side, parallel to the short sides', 'A line close to one end',
               'A line from a corner to the middle of the opposite side', 'Any line that crosses the rectangle']),
@@ -148,13 +153,14 @@ SETS = [
           tf('Every line that splits a rectangle into two parts with equal areas is a line of symmetry.', key=False),
       ]),
       f2=B('Tile a rectangle with unit-fraction squares or rectangles to find its area', '5.NF.B.4.b', [
-          sa('A square with an area of 1 square unit is split into 4 equal small squares.\nWhat is the area of each small square?', 'Area:', key='1/4 square unit'),
+          sa('A rectangle is {1/2} unit wide and 1 unit long. It is tiled with squares that are {1/2} unit on each side.\nHow many tiles fit? What is the area?',
+             ['Tiles:', 'Area:'], key='2; 1/2 square unit', note='Each tile has an area of 1/4 square unit. Both parts are required.'),
           tf('A rectangle {1/2} unit by {1/3} unit has an area of {1/6} square unit.', key=True),
-          mc('A unit square is split into 3 equal columns and 2 equal rows.\nWhat is the area of each small rectangle?',
-             ['{1/6} square unit', '{1/5} square unit', '{1/3} square unit', '6 square units']),
+          mc('A rectangle {2/3} unit by {1/2} unit is tiled with rectangles that are {1/3} unit by {1/2} unit.\nWhat is its area?',
+             ['{1/3} square unit', '{1/6} square unit', '{2/5} square unit', '{3/5} square unit']),
           sa('A rectangle {3/4} unit by {1/2} unit is tiled with rectangles that are {1/4} unit by {1/2} unit.\nHow many tiles fit? What is the area of the rectangle?',
              ['Tiles:', 'Area:'], key='3; 3/8 square unit', note='Both parts are required.'),
-          tf('A unit square split into 8 equal parts has parts with an area of {1/4} square unit each.', key=False),
+          tf('A rectangle {3/4} unit by {3/4} unit is tiled with squares that are {1/4} unit on each side. It takes 6 tiles.', key=False),
       ])),
 
     # ------------------------------------------------------------------ 3.G.A.2 (unit fraction of the area)
@@ -164,7 +170,7 @@ SETS = [
           mc('A circle is split into 8 parts with equal areas.\nWhat fraction of the area is one part?', ['{1/8}', '{8/1}', '{1/7}', '{7/8}']),
           tf('If a hexagon is split into 6 parts with equal areas, each part is {1/6} of the area of the hexagon.', key=True),
           draw_write('Split the square into 2 parts with equal areas.\nWhat fraction of the area of the square is each part?', box(4, 4), 'Fraction:',
-                     draw='One line that splits the square into 2 parts with equal areas', key='1/2',
+                     draw='Any split of the square into 2 parts with equal areas (for example one straight line through the middle)', key='1/2',
                      note='Grade both: a split into 2 equal-area parts, and 1/2.'),
           tf('A rectangle split into 3 parts with equal areas has parts that are each {1/4} of the area.', key=False),
       ],
@@ -189,7 +195,7 @@ SETS = [
           tf('{2/8} + {3/8} means joining 2 eighths and 3 eighths of the same whole.', key=True),
           mc('A square is split into 4 equal parts. 1 part is shaded, and then 2 more parts are shaded.\nWhich equation shows the shaded fraction?',
              ['{1/4} + {2/4} = {3/4}', '{1/4} + {2/4} = {3/8}', '{1/4} + {2/4} = {2/4}', '{1/2} + {2/4} = {3/4}']),
-          sa('A pie is cut into 8 equal pieces. 3 pieces are eaten.\nWhat fraction of the pie is left?', 'Fraction:', key='5/8'),
+          sa('A pie is cut into 8 equal pieces. Jo eats 2 pieces and Al eats 3 pieces.\nWhat fraction of the pie did they eat in all?', 'Fraction:', key='5/8'),
           tf('{1/3} + {1/3} = {2/6}', key=False),
       ]),
       f2=B('Add fractions with unlike denominators in word problems about parts of a whole', '5.NF.A.2', [
@@ -197,6 +203,6 @@ SETS = [
           tf('{1/4} of a field is grass and {1/2} is dirt. Together they are {3/4} of the field.', key=True),
           mc('A flag is {1/3} red and {1/6} white.\nWhat fraction of the flag is red or white?', ['{1/2}', '{2/9}', '{2/6}', '{1/18}']),
           sa('A cake is {3/8} chocolate and {1/4} vanilla.\nWhat fraction of the cake is chocolate or vanilla?', 'Fraction:', key='5/8'),
-          tf('{1/2} of a wall is blue and {1/3} is green. The rest of the wall is {1/5} of it.', key=False),
+          tf('{1/2} of a wall is blue and {1/3} is green. Together, blue and green cover {2/5} of the wall.', key=False),
       ])),
 ]

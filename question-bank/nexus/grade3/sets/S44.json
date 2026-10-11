@@ -3,8 +3,8 @@
  "collection": {
   "id": "G3",
   "grade": 3,
-  "version": "1.0.0",
-  "date": "2026-10-09"
+  "version": "2.0.0",
+  "date": "2026-10-11"
  },
  "grade": 3,
  "set": 44,
@@ -74,7 +74,7 @@
        "h": 230
       }
      },
-     "page": 1341,
+     "page": 1466,
      "revision": "unchanged"
     },
     {
@@ -92,37 +92,44 @@
      "domain": "Measurement & Data",
      "skill": "Draw a scaled bar graph to represent data",
      "nearest_related": false,
-     "type": "mc",
-     "response": "select one",
-     "prompt": "A bar graph has a scale that counts by 2s. A bar ends halfway between 6 and 8. What number does the bar show?",
-     "prompt_markup": "A bar graph has a scale that counts by 2s. A bar ends halfway between 6 and 8.\nWhat number does the bar show?",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "14"
-      },
-      {
-       "letter": "B",
-       "text": "7"
-      },
-      {
-       "letter": "C",
-       "text": "8"
-      },
-      {
-       "letter": "D",
-       "text": "6"
-      }
-     ],
+     "type": "plot",
+     "response": "draw on the figure",
+     "prompt": "Make a bar graph of the data. The scale counts by 5s. Apples: 15, Pears: 25, Plums: 10",
+     "prompt_markup": "Make a bar graph of the data. The scale counts by 5s.\nApples: 15, Pears: 25, Plums: 10",
+     "choices": [],
      "answer_lines": [],
-     "correct_letter": "B",
-     "correct_answer": "7",
+     "correct_letter": null,
+     "correct_answer": "Bars that reach 15 for Apples, 25 for Pears, and 10 for Plums",
      "drawing_answer": null,
      "required_method": null,
      "grading_note": "",
-     "figure": null,
-     "page": 1342,
-     "revision": "unchanged"
+     "figure": {
+      "svg": "assets/S44-M-Q2.svg",
+      "png": "assets/S44-M-Q2.png",
+      "kind": "hist",
+      "description": "Blank bar graph grid (x-axis \"\", y-axis \"Number of fruits\") with categories Apples, Pears, Plums; the student draws the bars.",
+      "blank_for_drawing": true,
+      "data": {
+       "k": "hist",
+       "bins": [
+        "Apples",
+        "Pears",
+        "Plums"
+       ],
+       "counts": [
+        0,
+        0,
+        0
+       ],
+       "gap": 0.35,
+       "ystep": 5,
+       "ymax": 30,
+       "ylabel": "Number of fruits",
+       "h": 230
+      }
+     },
+     "page": 1467,
+     "revision": "revised"
     },
     {
      "id": "S44-M-Q3",
@@ -139,29 +146,46 @@
      "domain": "Measurement & Data",
      "skill": "Draw a scaled bar graph to represent data",
      "nearest_related": false,
-     "type": "tf",
-     "response": "select true or false",
-     "prompt": "On a bar graph with a scale that counts by 10s, a bar for 40 ends on the fourth line above 0.",
-     "prompt_markup": "On a bar graph with a scale that counts by 10s, a bar for 40 ends on the fourth line above 0.",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "True"
-      },
-      {
-       "letter": "B",
-       "text": "False"
-      }
-     ],
+     "type": "plot",
+     "response": "draw on the figure",
+     "prompt": "Make a bar graph of the data. The scale counts by 10s. Mon: 30, Tue: 50, Wed: 20, Thu: 40",
+     "prompt_markup": "Make a bar graph of the data. The scale counts by 10s.\nMon: 30, Tue: 50, Wed: 20, Thu: 40",
+     "choices": [],
      "answer_lines": [],
-     "correct_letter": "A",
-     "correct_answer": "True",
+     "correct_letter": null,
+     "correct_answer": "Bars that reach 30 for Mon, 50 for Tue, 20 for Wed, and 40 for Thu",
      "drawing_answer": null,
      "required_method": null,
      "grading_note": "",
-     "figure": null,
-     "page": 1343,
-     "revision": "unchanged"
+     "figure": {
+      "svg": "assets/S44-M-Q3.svg",
+      "png": "assets/S44-M-Q3.png",
+      "kind": "hist",
+      "description": "Blank bar graph grid (x-axis \"\", y-axis \"Number of visitors\") with categories Mon, Tue, Wed, Thu; the student draws the bars.",
+      "blank_for_drawing": true,
+      "data": {
+       "k": "hist",
+       "bins": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu"
+       ],
+       "counts": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "gap": 0.35,
+       "ystep": 10,
+       "ymax": 60,
+       "ylabel": "Number of visitors",
+       "h": 230
+      }
+     },
+     "page": 1468,
+     "revision": "revised"
     },
     {
      "id": "S44-M-Q4",
@@ -178,23 +202,46 @@
      "domain": "Measurement & Data",
      "skill": "Draw a scaled bar graph to represent data",
      "nearest_related": false,
-     "type": "sa",
-     "response": "write",
-     "prompt": "Which scale is better for a bar graph of 10, 25, 40, and 35: counting by 1s or counting by 5s? Explain.",
-     "prompt_markup": "Which scale is better for a bar graph of 10, 25, 40, and 35: counting by 1s or counting by 5s? Explain.",
+     "type": "plot",
+     "response": "draw on the figure",
+     "prompt": "Make a bar graph of the data. The scale counts by 2s. Soccer: 6, Tennis: 4, Swim: 10, Golf: 2",
+     "prompt_markup": "Make a bar graph of the data. The scale counts by 2s.\nSoccer: 6, Tennis: 4, Swim: 10, Golf: 2",
      "choices": [],
-     "answer_lines": [
-      "Scale:",
-      "Explanation:"
-     ],
+     "answer_lines": [],
      "correct_letter": null,
-     "correct_answer": "Counting by 5s",
+     "correct_answer": "Bars that reach 6 for Soccer, 4 for Tennis, 10 for Swim, and 2 for Golf",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "All the numbers are multiples of 5 and go up to 40, so counting by 5s fits them with fewer lines. Both parts are required.",
-     "figure": null,
-     "page": 1344,
-     "revision": "unchanged"
+     "grading_note": "",
+     "figure": {
+      "svg": "assets/S44-M-Q4.svg",
+      "png": "assets/S44-M-Q4.png",
+      "kind": "hist",
+      "description": "Blank bar graph grid (x-axis \"\", y-axis \"Number of students\") with categories Soccer, Tennis, Swim, Golf; the student draws the bars.",
+      "blank_for_drawing": true,
+      "data": {
+       "k": "hist",
+       "bins": [
+        "Soccer",
+        "Tennis",
+        "Swim",
+        "Golf"
+       ],
+       "counts": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "gap": 0.35,
+       "ystep": 2,
+       "ymax": 12,
+       "ylabel": "Number of students",
+       "h": 230
+      }
+     },
+     "page": 1469,
+     "revision": "revised"
     },
     {
      "id": "S44-M-Q5",
@@ -211,29 +258,44 @@
      "domain": "Measurement & Data",
      "skill": "Draw a scaled bar graph to represent data",
      "nearest_related": false,
-     "type": "tf",
-     "response": "select true or false",
-     "prompt": "On a bar graph with a scale that counts by 2s, a bar for 9 ends exactly on a labeled line.",
-     "prompt_markup": "On a bar graph with a scale that counts by 2s, a bar for 9 ends exactly on a labeled line.",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "True"
-      },
-      {
-       "letter": "B",
-       "text": "False"
-      }
-     ],
+     "type": "plot",
+     "response": "draw on the figure",
+     "prompt": "Make a bar graph of the data. The scale counts by 5s. Cats: 20, Dogs: 35, Birds: 15",
+     "prompt_markup": "Make a bar graph of the data. The scale counts by 5s.\nCats: 20, Dogs: 35, Birds: 15",
+     "choices": [],
      "answer_lines": [],
-     "correct_letter": "B",
-     "correct_answer": "False",
+     "correct_letter": null,
+     "correct_answer": "Bars that reach 20 for Cats, 35 for Dogs, and 15 for Birds",
      "drawing_answer": null,
      "required_method": null,
      "grading_note": "",
-     "figure": null,
-     "page": 1345,
-     "revision": "unchanged"
+     "figure": {
+      "svg": "assets/S44-M-Q5.svg",
+      "png": "assets/S44-M-Q5.png",
+      "kind": "hist",
+      "description": "Blank bar graph grid (x-axis \"\", y-axis \"Number of votes\") with categories Cats, Dogs, Birds; the student draws the bars.",
+      "blank_for_drawing": true,
+      "data": {
+       "k": "hist",
+       "bins": [
+        "Cats",
+        "Dogs",
+        "Birds"
+       ],
+       "counts": [
+        0,
+        0,
+        0
+       ],
+       "gap": 0.35,
+       "ystep": 5,
+       "ymax": 40,
+       "ylabel": "Number of votes",
+       "h": 230
+      }
+     },
+     "page": 1470,
+     "revision": "revised"
     }
    ]
   },
@@ -241,7 +303,7 @@
    "section": "BACKWARD 1",
    "section_code": "B1",
    "relation": "backward",
-   "skill": "Draw and read a bar graph with a single-unit scale",
+   "skill": "Draw a bar graph with a single-unit scale",
    "standard": "2.MD.D.10",
    "nearest_related": false,
    "questions": [
@@ -258,7 +320,7 @@
      "standard": "2.MD.D.10",
      "standard_grade": 2,
      "domain": "Measurement & Data",
-     "skill": "Draw and read a bar graph with a single-unit scale",
+     "skill": "Draw a bar graph with a single-unit scale",
      "nearest_related": false,
      "type": "plot",
      "response": "draw on the figure",
@@ -296,8 +358,8 @@
        "h": 230
       }
      },
-     "page": 1347,
-     "revision": "unchanged"
+     "page": 1472,
+     "revision": "revised"
     },
     {
      "id": "S44-B1-Q2",
@@ -312,31 +374,46 @@
      "standard": "2.MD.D.10",
      "standard_grade": 2,
      "domain": "Measurement & Data",
-     "skill": "Draw and read a bar graph with a single-unit scale",
+     "skill": "Draw a bar graph with a single-unit scale",
      "nearest_related": false,
-     "type": "tf",
-     "response": "select true or false",
-     "prompt": "In a bar graph, a taller bar shows a greater number.",
-     "prompt_markup": "In a bar graph, a taller bar shows a greater number.",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "True"
-      },
-      {
-       "letter": "B",
-       "text": "False"
-      }
-     ],
+     "type": "plot",
+     "response": "draw on the figure",
+     "prompt": "Make a bar graph. Cats: 3, Dogs: 5, Fish: 2",
+     "prompt_markup": "Make a bar graph.\nCats: 3, Dogs: 5, Fish: 2",
+     "choices": [],
      "answer_lines": [],
-     "correct_letter": "A",
-     "correct_answer": "True",
+     "correct_letter": null,
+     "correct_answer": "Bars that reach 3 for Cats, 5 for Dogs, and 2 for Fish",
      "drawing_answer": null,
      "required_method": null,
      "grading_note": "",
-     "figure": null,
-     "page": 1348,
-     "revision": "unchanged"
+     "figure": {
+      "svg": "assets/S44-B1-Q2.svg",
+      "png": "assets/S44-B1-Q2.png",
+      "kind": "hist",
+      "description": "Blank bar graph grid (x-axis \"\", y-axis \"Number of pets\") with categories Cats, Dogs, Fish; the student draws the bars.",
+      "blank_for_drawing": true,
+      "data": {
+       "k": "hist",
+       "bins": [
+        "Cats",
+        "Dogs",
+        "Fish"
+       ],
+       "counts": [
+        0,
+        0,
+        0
+       ],
+       "gap": 0.35,
+       "ystep": 1,
+       "ymax": 6,
+       "ylabel": "Number of pets",
+       "h": 230
+      }
+     },
+     "page": 1473,
+     "revision": "revised"
     },
     {
      "id": "S44-B1-Q3",
@@ -351,33 +428,16 @@
      "standard": "2.MD.D.10",
      "standard_grade": 2,
      "domain": "Measurement & Data",
-     "skill": "Draw and read a bar graph with a single-unit scale",
+     "skill": "Draw a bar graph with a single-unit scale",
      "nearest_related": false,
-     "type": "mc",
-     "response": "select one",
-     "prompt": "Use the bar graph. How many children chose red?",
-     "prompt_markup": "Use the bar graph.\nHow many children chose red?",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "4"
-      },
-      {
-       "letter": "B",
-       "text": "5"
-      },
-      {
-       "letter": "C",
-       "text": "3"
-      },
-      {
-       "letter": "D",
-       "text": "6"
-      }
-     ],
+     "type": "plot",
+     "response": "draw on the figure",
+     "prompt": "Make a bar graph. Apples: 2, Bananas: 4, Pears: 1, Plums: 3",
+     "prompt_markup": "Make a bar graph.\nApples: 2, Bananas: 4, Pears: 1, Plums: 3",
+     "choices": [],
      "answer_lines": [],
-     "correct_letter": "B",
-     "correct_answer": "5",
+     "correct_letter": null,
+     "correct_answer": "Bars that reach 2 for Apples, 4 for Bananas, 1 for Pears, and 3 for Plums",
      "drawing_answer": null,
      "required_method": null,
      "grading_note": "",
@@ -385,29 +445,31 @@
       "svg": "assets/S44-B1-Q3.svg",
       "png": "assets/S44-B1-Q3.png",
       "kind": "hist",
-      "description": "Bar graph (x-axis \"\", y-axis \"Number of children\"). Red: 5, Blue: 3, Green: 4.",
-      "blank_for_drawing": false,
+      "description": "Blank bar graph grid (x-axis \"\", y-axis \"Number of children\") with categories Apples, Bananas, Pears, Plums; the student draws the bars.",
+      "blank_for_drawing": true,
       "data": {
        "k": "hist",
        "bins": [
-        "Red",
-        "Blue",
-        "Green"
+        "Apples",
+        "Bananas",
+        "Pears",
+        "Plums"
        ],
        "counts": [
-        5,
-        3,
-        4
+        0,
+        0,
+        0,
+        0
        ],
        "gap": 0.35,
        "ystep": 1,
-       "ymax": 6,
+       "ymax": 5,
        "ylabel": "Number of children",
        "h": 230
       }
      },
-     "page": 1349,
-     "revision": "unchanged"
+     "page": 1474,
+     "revision": "revised"
     },
     {
      "id": "S44-B1-Q4",
@@ -422,18 +484,16 @@
      "standard": "2.MD.D.10",
      "standard_grade": 2,
      "domain": "Measurement & Data",
-     "skill": "Draw and read a bar graph with a single-unit scale",
+     "skill": "Draw a bar graph with a single-unit scale",
      "nearest_related": false,
-     "type": "sa",
-     "response": "write",
-     "prompt": "Use the bar graph. How many more children chose red than blue?",
-     "prompt_markup": "Use the bar graph.\nHow many more children chose red than blue?",
+     "type": "plot",
+     "response": "draw on the figure",
+     "prompt": "Make a bar graph. Mon: 4, Tue: 6, Wed: 3",
+     "prompt_markup": "Make a bar graph.\nMon: 4, Tue: 6, Wed: 3",
      "choices": [],
-     "answer_lines": [
-      "More:"
-     ],
+     "answer_lines": [],
      "correct_letter": null,
-     "correct_answer": "2",
+     "correct_answer": "Bars that reach 4 for Mon, 6 for Tue, and 3 for Wed",
      "drawing_answer": null,
      "required_method": null,
      "grading_note": "",
@@ -441,29 +501,29 @@
       "svg": "assets/S44-B1-Q4.svg",
       "png": "assets/S44-B1-Q4.png",
       "kind": "hist",
-      "description": "Bar graph (x-axis \"\", y-axis \"Number of children\"). Red: 5, Blue: 3, Green: 4.",
-      "blank_for_drawing": false,
+      "description": "Blank bar graph grid (x-axis \"\", y-axis \"Books read\") with categories Mon, Tue, Wed; the student draws the bars.",
+      "blank_for_drawing": true,
       "data": {
        "k": "hist",
        "bins": [
-        "Red",
-        "Blue",
-        "Green"
+        "Mon",
+        "Tue",
+        "Wed"
        ],
        "counts": [
-        5,
-        3,
-        4
+        0,
+        0,
+        0
        ],
        "gap": 0.35,
        "ystep": 1,
        "ymax": 6,
-       "ylabel": "Number of children",
+       "ylabel": "Books read",
        "h": 230
       }
      },
-     "page": 1350,
-     "revision": "unchanged"
+     "page": 1475,
+     "revision": "revised"
     },
     {
      "id": "S44-B1-Q5",
@@ -478,25 +538,16 @@
      "standard": "2.MD.D.10",
      "standard_grade": 2,
      "domain": "Measurement & Data",
-     "skill": "Draw and read a bar graph with a single-unit scale",
+     "skill": "Draw a bar graph with a single-unit scale",
      "nearest_related": false,
-     "type": "tf",
-     "response": "select true or false",
-     "prompt": "In the bar graph, green has the most votes.",
-     "prompt_markup": "In the bar graph, green has the most votes.",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "True"
-      },
-      {
-       "letter": "B",
-       "text": "False"
-      }
-     ],
+     "type": "plot",
+     "response": "draw on the figure",
+     "prompt": "Make a bar graph. Week 1: 2, Week 2: 5, Week 3: 3, Week 4: 1",
+     "prompt_markup": "Make a bar graph.\nWeek 1: 2, Week 2: 5, Week 3: 3, Week 4: 1",
+     "choices": [],
      "answer_lines": [],
-     "correct_letter": "B",
-     "correct_answer": "False",
+     "correct_letter": null,
+     "correct_answer": "Bars that reach 2 for Week 1, 5 for Week 2, 3 for Week 3, and 1 for Week 4",
      "drawing_answer": null,
      "required_method": null,
      "grading_note": "",
@@ -504,29 +555,31 @@
       "svg": "assets/S44-B1-Q5.svg",
       "png": "assets/S44-B1-Q5.png",
       "kind": "hist",
-      "description": "Bar graph (x-axis \"\", y-axis \"Number of children\"). Red: 5, Blue: 3, Green: 4.",
-      "blank_for_drawing": false,
+      "description": "Blank bar graph grid (x-axis \"\", y-axis \"Rainy days\") with categories Week 1, Week 2, Week 3, Week 4; the student draws the bars.",
+      "blank_for_drawing": true,
       "data": {
        "k": "hist",
        "bins": [
-        "Red",
-        "Blue",
-        "Green"
+        "Week 1",
+        "Week 2",
+        "Week 3",
+        "Week 4"
        ],
        "counts": [
-        5,
-        3,
-        4
+        0,
+        0,
+        0,
+        0
        ],
        "gap": 0.35,
        "ystep": 1,
        "ymax": 6,
-       "ylabel": "Number of children",
+       "ylabel": "Rainy days",
        "h": 230
       }
      },
-     "page": 1351,
-     "revision": "unchanged"
+     "page": 1476,
+     "revision": "revised"
     }
    ]
   },
@@ -590,7 +643,7 @@
        ]
       }
      },
-     "page": 1353,
+     "page": 1478,
      "revision": "unchanged"
     },
     {
@@ -629,7 +682,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1354,
+     "page": 1479,
      "revision": "unchanged"
     },
     {
@@ -676,7 +729,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1355,
+     "page": 1480,
      "revision": "unchanged"
     },
     {
@@ -730,7 +783,7 @@
        ]
       }
      },
-     "page": 1356,
+     "page": 1481,
      "revision": "unchanged"
     },
     {
@@ -769,7 +822,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1357,
+     "page": 1482,
      "revision": "unchanged"
     }
    ]
@@ -837,7 +890,7 @@
        "h": 230
       }
      },
-     "page": 1359,
+     "page": 1484,
      "revision": "unchanged"
     },
     {
@@ -902,7 +955,7 @@
        "h": 230
       }
      },
-     "page": 1360,
+     "page": 1485,
      "revision": "unchanged"
     },
     {
@@ -975,7 +1028,7 @@
        "h": 230
       }
      },
-     "page": 1361,
+     "page": 1486,
      "revision": "unchanged"
     },
     {
@@ -1033,7 +1086,7 @@
        "h": 230
       }
      },
-     "page": 1362,
+     "page": 1487,
      "revision": "unchanged"
     },
     {
@@ -1098,7 +1151,7 @@
        "h": 230
       }
      },
-     "page": 1363,
+     "page": 1488,
      "revision": "unchanged"
     }
    ]
@@ -1160,7 +1213,7 @@
        "ylabel": "Height (cm)"
       }
      },
-     "page": 1365,
+     "page": 1490,
      "revision": "unchanged"
     },
     {
@@ -1227,7 +1280,7 @@
        ]
       }
      },
-     "page": 1366,
+     "page": 1491,
      "revision": "unchanged"
     },
     {
@@ -1274,7 +1327,7 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1367,
+     "page": 1492,
      "revision": "unchanged"
     },
     {
@@ -1342,7 +1395,7 @@
        ]
       }
      },
-     "page": 1368,
+     "page": 1493,
      "revision": "unchanged"
     },
     {
@@ -1362,8 +1415,8 @@
      "nearest_related": true,
      "type": "tf",
      "response": "select true or false",
-     "prompt": "The point (4, 0) is on the y-axis.",
-     "prompt_markup": "The point (4, 0) is on the y-axis.",
+     "prompt": "On a graph with x = days and y = hats sold, the point (4, 0) means 0 days and 4 hats sold.",
+     "prompt_markup": "On a graph with x = days and y = hats sold, the point (4, 0) means 0 days and 4 hats sold.",
      "choices": [
       {
        "letter": "A",
@@ -1381,8 +1434,8 @@
      "required_method": null,
      "grading_note": "",
      "figure": null,
-     "page": 1369,
-     "revision": "unchanged"
+     "page": 1494,
+     "revision": "revised"
     }
    ]
   }
