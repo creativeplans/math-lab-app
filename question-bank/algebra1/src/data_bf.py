@@ -1,4 +1,4 @@
-from qb import S, B, sa, mc, tf, work, plot, draw_write
+from qb import S, B, sa, mc, tf, work, plot, draw_write, hist, table, coord
 from common import ints, plane, graph, grid
 
 SHIFT = graph([lambda x: x * x, lambda x: (x - 2) ** 2 - 3], lo=-4, hi=6, ylo=-4, yhi=6,
@@ -57,6 +57,57 @@ SETS = [
           tf('The inverse of f(x) = 2x is f⁻¹(x) = -2x.', key=False, note='f⁻¹(x) = x ÷ 2.'),
       ])),
 
+    # ------------------------------------------------------------------ F-BF.A.1.a (quadratic models, new in 2.0.0)
+    S('HSF-BF.A.1.a', 'Build quadratic functions that model situations', num=80,
+      main=[
+          sa('A farmer has 100 m of fence for three sides of a rectangular pen; a barn wall forms the fourth side. Each side perpendicular to the wall is x m long.\nWrite the area A(x) of the pen.', 'A(x) =',
+             key='x(100 - 2x)', note='Any equivalent form, such as 100x - 2x². The side parallel to the wall uses the remaining 100 - 2x meters.'),
+          sa('A theater sells 300 tickets at $20 each. For each $1 increase in price, it sells 10 fewer tickets.\nWrite the revenue R(n) after n price increases of $1.', 'R(n) =',
+             key='(20 + n)(300 - 10n)', note='Any equivalent form, such as -10n² + 100n + 6,000. Revenue = price × tickets sold.'),
+          sa('A stone is thrown upward at 20 m/s from the top of a 5-m wall. Using h(t) = -4.9t² + v₀t + h₀, where v₀ is the starting upward speed and h₀ is the starting height, write the stone\'s height h(t).', 'h(t) =',
+             key='-4.9t² + 20t + 5', note='Any equivalent form. v₀ = 20 and h₀ = 5.'),
+          mc('A table has x = 0, 1, 2, 3 and y = 3, 5, 11, 21.\nWhich function fits the table?', ['y = 2x² + 3', 'y = x² + 3', 'y = 2x + 3', 'y = 3(2)^x'],
+             note='The second differences are all 4, so the x² coefficient is 2; y(0) = 3. Check: 2(9) + 3 = 21.'),
+          tf('If each of n people shakes hands once with every other person, the number of handshakes is h(n) = n(n - 1).', key=False,
+             note='Each handshake is counted twice in n(n - 1), so h(n) = n(n - 1) ÷ 2 (still a quadratic function).'),
+      ],
+      back=[
+          B('Write equations in two variables for areas and perimeters', 'HSA-CED.A.2', [
+              sa('A rectangle has length 2w and width w. Write an equation for its perimeter P.', 'P =', key='6w', note='Any equivalent form, such as 2(2w) + 2w.'),
+              sa('A triangle has base b and height 2b. Write an equation for its area A.', 'A =', key='b²', note='Any equivalent form, such as {1/2}(b)(2b).'),
+              mc('A rectangle has perimeter 40 and width w. Which equation gives its area A?', ['A = w(20 - w)', 'A = w(40 - w)', 'A = 20w', 'A = w² + 20'], note='The length is 20 - w.'),
+              tf('The area of a circle as a function of its radius is A = πr².', key=True, note='This is the area formula.'),
+              tf('If a rectangle\'s length is its width w plus 2, then its area is w + 2.', key=False, note='Its area is w(w + 2).'),
+          ]),
+          B('Interpret the parts of an expression in context', 'HSA-SSE.A.1.a', [
+              sa('In R = (20 + n)(300 - 10n), what does the factor 300 - 10n represent?', 'Answer:', key='The number of tickets sold after n price increases of $1.', note='Any equivalent wording.'),
+              sa('In A = x(100 - 2x) for a pen against a wall, what does 100 - 2x represent?', 'Answer:', key='The length of the side parallel to the wall, in meters.', note='Any equivalent wording.'),
+              mc('In h = -4.9t² + 20t + 5, what does 5 represent?', ['The starting height', 'The starting upward speed', 'The effect of gravity', 'The time in the air'],
+                 note='At t = 0, h = 5.'),
+              tf('In -4.9t² + 20t + 5, the coefficient of t is 20.', key=True, note='The term is 20t.'),
+              tf('The constant term of 2w² + 3w is 3.', key=False, note='There is no constant term (it is 0); 3 is the coefficient of w.'),
+          ]),
+      ],
+      f1=B('Use quadratic models to make the best design choice', 'HSG-MG.A.3', [
+          sa('For a pen with area A(x) = x(100 - 2x), which x gives the greatest area, and what is that area?', 'Answer:', key='x = 25 m; 1,250 m²',
+             note='Form required: x and the area. The zeros are 0 and 50, so the vertex is at x = 25; A(25) = 25 · 50.'),
+          sa('For R(n) = (20 + n)(300 - 10n), which number of $1 increases gives the most revenue? What are the ticket price and the revenue?', 'Answer:',
+             key='n = 5: a price of $25 and revenue of $6,250', note='Form required: n, the price, and the revenue. The zeros are -20 and 30, so the vertex is at n = 5.'),
+          mc('A 24-m rope is laid out as a rectangle. Which dimensions give the greatest area?', ['6 m by 6 m', '4 m by 8 m', '2 m by 10 m', '12 m by 12 m'],
+             note='Area = w(12 - w) is greatest at w = 6 (36 m²). A 12 m by 12 m rectangle would need 48 m.'),
+          tf('Of all rectangles with perimeter 40, the square has the greatest area.', key=True, note='A = w(20 - w) is greatest at w = 10.'),
+          tf('For A(x) = x(100 - 2x), the area is greatest when x = 50.', key=False, note='A(50) = 0; the greatest area is at x = 25.'),
+      ]),
+      f2=B('Compose functions to build quadratic models', 'HSF-BF.A.1.c', [
+          sa('Ticket demand is q(p) = 500 - 10p tickets at a price of p dollars, and the price after n increases is p(n) = 20 + n.\nWrite q(p(n)) and say what it gives.', 'Answer:',
+             key='q(p(n)) = 300 - 10n: the number of tickets sold after n price increases.', note='Form required: the simplified composite and its meaning. 500 - 10(20 + n).'),
+          sa('A square\'s area is A(s) = s², and its side grows with time: s(t) = 2 + 0.5t.\nWrite A(s(t)) in standard form.', 'A(s(t)) =', key='0.25t² + 2t + 4',
+             note='Form required: standard form. (2 + 0.5t)² = 4 + 2t + 0.25t².'),
+          mc('f(x) = x² and g(x) = x + 3. Which is f(g(x)) in standard form?', ['x² + 6x + 9', 'x² + 3', 'x² + 9', 'x² + 3x'], note='(x + 3)² = x² + 6x + 9.'),
+          tf('If f(x) = x² and g(x) = 2x, then g(f(3)) = 18.', key=True, note='f(3) = 9 and g(9) = 18.'),
+          tf('If f(x) = x² and g(x) = 2x, then f(g(3)) = 18.', key=False, note='g(3) = 6 and f(6) = 36.'),
+      ])),
+
     # ------------------------------------------------------------------ F-BF.A.1.b
     S('HSF-BF.A.1.b', 'Combine standard function types using arithmetic operations',
       main=[
@@ -104,7 +155,7 @@ SETS = [
           sa('A(x) = 9 + 400 ÷ x is the average cost per item, in dollars, for x items.\nFind A(100).', 'A(100) =', key='13', note='Any equivalent form. 9 + 4.'),
           mc('What is the vertical asymptote of y = 400 ÷ x + 9?', ['x = 0', 'x = 9', 'y = 9', 'x = 400'], note='The function is undefined at x = 0.'),
           tf('As x increases, 9 + 400 ÷ x decreases toward 9.', key=True, note='400 ÷ x shrinks toward 0.'),
-          plot('A(x) = 9 + 400 ÷ x is the average cost per item, in dollars, for x items. Graph A for 20 ≤ x ≤ 200, and draw its horizontal asymptote.', grid(200, 30, xstep=20, ystep=5, xlabel='Items (x)', ylabel='Average cost ($)'),
+          plot('A(x) = 9 + 400 ÷ x is the average cost per item, in dollars, for x items. Graph A for 20 ≤ x ≤ 200, and draw its horizontal asymptote.', grid(200, 30, xstep=20, xlab=40, ystep=5, xlabel='Items (x)', ylabel='Average cost ($)'),
                key='A decreasing curve through (20, 29), (40, 19), (50, 17), (100, 13), and (200, 11), approaching the line y = 9 from above',
                note='Any correct graph with the asymptote y = 9 drawn.'),
       ])),
@@ -156,6 +207,55 @@ SETS = [
           tf('If 3^n = 30, then n = 10.', key=False, note='3¹⁰ is much larger than 30; n = log 30 ÷ log 3 ≈ 3.10.'),
       ])),
 
+    # ------------------------------------------------------------------ F-BF.A.2 (situations and translating forms, new in 2.0.0)
+    S('HSF-BF.A.2', 'Model situations with arithmetic and geometric sequences and translate between recursive and explicit forms', num=81,
+      main=[
+          sa('A gym charges $50 to join and $30 each month. a(n) is the total paid after n months, with a(1) = 80.\nWrite a recursive rule and an explicit rule for a(n).', 'Answer:',
+             key='a(1) = 80 and a(n) = a(n - 1) + 30 for n ≥ 2; a(n) = 50 + 30n', note='Form required: both rules. The explicit rule may be written 80 + 30(n - 1).'),
+          sa('A ball bounces to 80% of its previous height. Its first bounce reaches 5 m.\nWrite an explicit rule and a recursive rule for the height h(n) of the nth bounce.', 'Answer:',
+             key='h(n) = 5(0.8)^(n-1); h(1) = 5 and h(n) = 0.8h(n - 1) for n ≥ 2', note='Form required: both rules.'),
+          sa('Translate the explicit rule a(n) = 7 + 4(n - 1), for n ≥ 1, into a recursive rule.', 'Answer:', key='a(1) = 7 and a(n) = a(n - 1) + 4 for n ≥ 2',
+             note='Form required: the starting value and the recursion with its condition.'),
+          mc('Which explicit rule matches a(1) = 3 and a(n) = 2a(n - 1) for n ≥ 2?', ['a(n) = 3 · 2^(n-1)', 'a(n) = 2 · 3^(n-1)', 'a(n) = 3 + 2(n - 1)', 'a(n) = 3 · 2^n'],
+             note='Each term doubles, starting from 3: 3, 6, 12, ... 3 · 2^n gives 6 for n = 1.'),
+          tf('The recursive rule a(n) = a(n - 1) - 6 needs a starting value, such as a(1) = 50, to define a sequence.', key=True, note='Without a starting value, many sequences fit the rule.'),
+      ],
+      back=[
+          B('Evaluate sequences from recursive and explicit rules', 'HSF-IF.A.3', [
+              sa('f(1) = 50 and f(n) = f(n - 1) - 6 for n ≥ 2.\nFind f(4).', 'f(4) =', key='32', note='Any equivalent form. 50, 44, 38, 32.'),
+              sa('f(n) = 5(0.8)^(n-1).\nFind f(3).', 'f(3) =', key='3.2', note='Any equivalent form. 5(0.64).'),
+              mc('f(1) = 2 and f(n) = 3f(n - 1) + 1 for n ≥ 2.\nWhat is f(3)?', ['22', '19', '7', '21'], note='f(2) = 7 and f(3) = 22.'),
+              tf('The domain of the sequence a(n) = 2n + 1, n ≥ 1, is the positive integers.', key=True, note='A sequence is defined at term numbers.'),
+              tf('f(n) = n² gives the sequence 1, 3, 5, 7.', key=False, note='It gives 1, 4, 9, 16.'),
+          ]),
+          B('Write a function or a recursive process from a situation', 'HSF-BF.A.1.a', [
+              sa('A savings jar starts with $20 and gains $5 each week.\nWrite a function for the amount A after w weeks.', 'A =', key='20 + 5w', note='Any equivalent form.'),
+              sa('A culture of 100 cells triples every day.\nWrite a function for the number of cells N after d days.', 'N =', key='100 · 3^d', note='Any equivalent form.'),
+              mc('Which recursive process means "start at 10 and multiply by 1.1 each year"?', ['a(0) = 10, a(n) = 1.1a(n - 1)', 'a(0) = 10, a(n) = a(n - 1) + 1.1', 'a(n) = 10 + 1.1n',
+                 'a(0) = 1.1, a(n) = 10a(n - 1)'], note='Each year\'s amount is 1.1 times the year before.'),
+              tf('Adding the same amount at each step gives a linear function of the step number.', key=True, note='Equal differences mean linear growth.'),
+              tf('Multiplying by 2 at each step, starting at 1, gives f(n) = 2n.', key=False, note='It gives f(n) = 2^n: 1, 2, 4, 8, ...'),
+          ]),
+      ],
+      f1=B('Sum geometric sequences that model situations', 'HSA-SSE.B.4', [
+          sa('A ball\'s bounce heights are 5, 4, 3.2, ... meters (each 80% of the one before). Find the total of the first 5 bounce heights, to the nearest hundredth.', 'Total:', key='16.81 m',
+             note='Form required: rounded to the nearest hundredth. 5(1 - 0.8⁵) ÷ (1 - 0.8) = 25(0.67232) = 16.808.'),
+          sa('You deposit $100 the first month and 3% more each month after that. Find the total deposited in 12 months, to the nearest cent.', 'Total:', key='$1,419.20',
+             note='Form required: to the nearest cent. 100(1.03¹² - 1) ÷ 0.03 ≈ 1,419.20.'),
+          mc('Which expression is the sum of the first 10 terms of 5(0.8)^(n-1)?', ['5(1 - 0.8¹⁰) ÷ 0.2', '5(0.8)¹⁰', '5 ÷ 0.2', '10(5)(0.8)'], note='a(1 - r^n) ÷ (1 - r) with a = 5 and r = 0.8.'),
+          tf('The sum of the first n bounce heights 5, 4, 3.2, ... is always less than 25.', key=True, note='The sum is 25(1 - 0.8^n), which is less than 25.'),
+          tf('For a geometric series with ratio 2, adding one more term always doubles the sum.', key=False, note='1 + 2 = 3, but 1 + 2 + 4 = 7, not 6.'),
+      ]),
+      f2=B('Use logarithms to find when a sequence reaches a value', 'HSF-LE.A.4', [
+          sa('h(n) = 5(0.8)^(n-1) is the height of the nth bounce, in meters. Which bounce is the first below 1 m? (log means base 10.)', 'n =', key='9',
+             note='Any equivalent form. 0.8^(n-1) < 0.2 gives n - 1 > log 0.2 ÷ log 0.8 ≈ 7.2. Check: h(8) ≈ 1.05 and h(9) ≈ 0.84.'),
+          sa('a(n) = 1,000(1.05)^n is a savings balance after n years. After how many whole years does it first exceed $2,000? (log means base 10.)', 'Years:', key='15',
+             note='Any equivalent form. n > log 2 ÷ log 1.05 ≈ 14.2.'),
+          mc('Solve 3^n = 50. (log means base 10.)', ['n = log 50 ÷ log 3 ≈ 3.56', 'n = 50 ÷ 3', 'n = log 3 ÷ log 50', 'n = 16'], note='Take the logarithm of both sides: n log 3 = log 50.'),
+          tf('log(0.8^n) = n log 0.8, and log 0.8 is negative. (log means base 10.)', key=True, note='0.8 < 1, so its logarithm is negative.'),
+          tf('If 2^n = 10, then n is a whole number.', key=False, note='2³ = 8 and 2⁴ = 16, so n ≈ 3.32.'),
+      ])),
+
     # ------------------------------------------------------------------ F-BF.B.3
     S('HSF-BF.B.3', 'Identify the effect of replacing f(x) by f(x) + k, kf(x), f(kx), and f(x + k), and recognize even and odd functions',
       main=[
@@ -204,6 +304,59 @@ SETS = [
              note='Every output is multiplied by 4.'),
           tf('y = -sin x is the reflection of y = sin x across the x-axis.', key=True, note='Every output changes sign.'),
           tf('y = sin x - 2 has midline y = 2.', key=False, note='Its midline is y = -2.'),
+      ])),
+
+    # ------------------------------------------------------------------ F-BF.B.3 (graphs and experiments, new in 2.0.0)
+    S('HSF-BF.B.3', 'Experiment with transformations of graphs and recognize even and odd functions from graphs and equations', num=82,
+      main=[
+          plot('Graph f(x) = x² and g(x) = (x - 3)² - 2 on the same grid. Label both, and describe how g is related to f.', plane(),
+               key='Both parabolas; g has vertex (3, -2): it is f shifted 3 units right and 2 units down',
+               note='Any correct graphs with the shift described.'),
+          draw_write('f(x) = |x|. Graph g(x) = 2f(x) and h(x) = f(2x) for -3 ≤ x ≤ 3, using a table or graphing technology. Are g and h the same function?', plane(), 'Answer:',
+                     draw='One V-shape with vertex (0, 0) and slopes 2 and -2 (both g and h)',
+                     key='Yes. |2x| = 2|x| for every x, so g and h have the same graph.', note='Form required: the answer with a reason or table. Both the graph and the answer are graded.'),
+          sa('Use a table or graphing technology to compare f(x) = √x with g(x) = √(x - 4) + 1 at x = 4, 5, and 8. Describe the transformation.', 'Answer:',
+             key='g(4) = 1, g(5) = 2, g(8) = 3, which match f(0) = 0, f(1) = 1, f(4) = 2 moved 4 right and 1 up: g is f shifted 4 units right and 1 unit up.',
+             note='Form required: the values and the transformation.'),
+          mc('The graph of f is shown.\nIs f even, odd, or neither?', ['Even', 'Odd', 'Neither', 'Both even and odd'],
+             fig=graph([lambda x: x ** 4 - 4 * x * x], lo=-6, hi=6, desc='The graph of a W-shaped function that is symmetric about the y-axis, through (0, 0), (-2, 0), and (2, 0), with low points near (-1.4, -4) and (1.4, -4).'),
+             note='The graph is symmetric about the y-axis, so f(-x) = f(x).'),
+          tf('f(x) = x³ + x is an odd function, because f(-x) = -f(x).', key=True, note='(-x)³ + (-x) = -(x³ + x).'),
+      ],
+      back=[
+          B('Graph quadratic functions', 'HSF-IF.C.7.a', [
+              plot('Graph y = x² - 4, and mark its vertex and x-intercepts.', plane(), key='A parabola opening up with vertex (0, -4), crossing the x-axis at (-2, 0) and (2, 0)', note='Any correct graph.'),
+              sa('What is the vertex of y = (x + 1)² + 2?', 'Vertex:', key='(-1, 2)', note='Any equivalent form.'),
+              mc('What is the axis of symmetry of y = x² - 6x + 1?', ['x = 3', 'x = -3', 'x = 6', 'x = 1'], note='x = -b ÷ (2a) = 6 ÷ 2.'),
+              tf('y = -x² + 1 has a maximum value of 1.', key=True, note='-x² ≤ 0.'),
+              tf('The x-intercepts of y = x² + 1 are 1 and -1.', key=False, note='x² + 1 is never 0, so there are no x-intercepts.'),
+          ]),
+          B('Graph absolute value and root functions', 'HSF-IF.C.7.b', [
+              sa('What is the vertex of y = |x - 4| + 1?', 'Vertex:', key='(4, 1)', note='Any equivalent form.'),
+              sa('Where does the graph of y = √(x + 2) - 3 start?', 'Point:', key='(-2, -3)', note='Any equivalent form.'),
+              mc('Which function\'s graph is V-shaped?', ['y = |x + 1|', 'y = √(x + 1)', 'y = ∛(x + 1)', 'y = (x + 1)³'], note='Absolute value graphs are V-shaped.'),
+              tf('The graph of y = ∛x passes through (-1, -1).', key=True, note='(-1)³ = -1.'),
+              tf('The graph of y = |x| - 2 has vertex (2, 0).', key=False, note='Its vertex is (0, -2).'),
+          ]),
+      ],
+      f1=B('Draw rigid transformations of figures', 'HSG-CO.A.5', [
+          plot('Translate triangle A(0, 0), B(2, 0), C(0, 3) by (x, y) → (x - 3, y + 1). Draw and label the image.', plane(),
+               key="The triangle A'(-3, 1), B'(-1, 1), C'(-3, 4)", note='Any correct drawing with labels.'),
+          sa('The point (4, -1) is rotated 90° counterclockwise about the origin. Where does it go?', 'Image:', key='(1, 4)', note='Any equivalent form. (x, y) → (-y, x).'),
+          mc('Which sequence of transformations maps (x, y) to (-x, y - 2)?', ['Reflect across the y-axis, then translate 2 units down', 'Reflect across the x-axis, then translate 2 units down',
+             'Rotate 180°, then translate 2 units up', 'Translate 2 units left, then reflect across the y-axis'], note='-x comes from the reflection, and y - 2 from the translation.'),
+          tf('A translation followed by another translation is a translation.', key=True, note='The two shifts add.'),
+          tf('Reflecting a figure across the same line twice moves it to a new position.', key=False, note='The second reflection undoes the first.'),
+      ]),
+      f2=B('Transform sine and cosine graphs and recognize their symmetry', 'HSF-TF.B.5', [
+          plot('Sketch y = 2sin x + 1 for 0 ≤ x ≤ 2π (about 6.28).', coord(x=(0, 7), y=(-2, 4), desc='Blank coordinate grid, x from 0 to 7 and y from -2 to 4.'),
+               key='A wave starting at (0, 1), rising to 3 near x = 1.57, back to 1 near 3.14, down to -1 near 4.71, and back to 1 near 6.28',
+               note='Any correct sketch with midline 1, amplitude 2, and period 2π.'),
+          sa('Describe how the graph of y = sin(x - π ÷ 2) is related to the graph of y = sin x.', 'Answer:', key='It is the graph of y = sin x shifted π ÷ 2 units to the right.',
+             note='Any equivalent description (it is also the graph of y = -cos x).'),
+          mc('Which function has period π?', ['y = sin(2x)', 'y = 2sin x', 'y = sin x + 2', 'y = sin(x + 2)'], note='2π ÷ 2 = π.'),
+          tf('y = -cos x is the reflection of y = cos x across the x-axis.', key=True, note='Every output changes sign.'),
+          tf('y = cos x is an odd function.', key=False, note='cos(-x) = cos x, so cos is even.'),
       ])),
 
     # ------------------------------------------------------------------ F-BF.B.4.a
@@ -434,7 +587,7 @@ SETS = [
           tf('A sinusoidal model with maximum 8 and minimum 0 has amplitude 4.', key=True, note='(8 - 0) ÷ 2.'),
           tf('y = 3cos(2t) has period 2.', key=False, note='The period is 2π ÷ 2 = π.'),
       ]),
-      f2=B('Find a quadratic through three points with a system', 'HSA-REI.C.8', [
+      f2=B('Find a quadratic through three points with a matrix equation', 'HSA-REI.C.8', [
           sa('y = ax² + bx + c passes through (0, 1), (1, 2), and (2, 7).\nWrite the system for a, b, and c as a matrix equation AX = B, with X the column [a, b, c]. Give A and B.', 'Answer:',
              key='A has rows [0 0 1], [1 1 1], and [4 2 1]; B is the column [1, 2, 7].', note='Form required: A and B. Each point (x, y) gives the row [x² x 1] and the constant y.'),
           sa('A has rows [0 0 1], [1 1 1], and [4 2 1], X is the column [a, b, c], and B is the column [1, 2, 7]. Solve AX = B to find the parabola y = ax² + bx + c.', 'Answer:',

@@ -1,4 +1,4 @@
-from qb import S, B, sa, mc, tf, work, plot, draw_write
+from qb import S, B, sa, mc, tf, work, plot, draw_write, hist, table, coord
 from common import ints, plane, graph, grid
 
 SETS = [
@@ -164,7 +164,7 @@ SETS = [
       ],
       back=[
           B('Classify numbers as rational or irrational', '8.NS.A.1', [
-              sa('Is √49 rational or irrational? Explain.', 'Answer:', key='Rational: √49 = 7.', note='Any equivalent explanation.'),
+              sa('Is √64 rational or irrational? Explain.', 'Answer:', key='Rational: √64 = 8.', note='Any equivalent explanation.'),
               sa('The decimal 0.1010010001... has one more 0 between the 1s each time. Is it rational or irrational? Explain.', 'Answer:',
                  key='Irrational: it never ends and never repeats.', note='Any equivalent explanation.'),
               mc('Which of these numbers is irrational?', ['√10', '√100', '0.333...', '-{4/7}'], note='10 is not a perfect square. √100 = 10, 0.333... = {1/3}, and -{4/7} are rational.'),

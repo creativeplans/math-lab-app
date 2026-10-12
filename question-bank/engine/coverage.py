@@ -67,10 +67,10 @@ def run_course(name):
             assert st['std'] == std, (n, st['std'], std)
             secs = build.sections(st)
             back = '; '.join('%s %s' % (A.section_code(k), sc) for k, _, sc, _, _ in secs if k.startswith('BACKWARD'))
-            f1 = [sc for k, _, sc, _, _ in secs if k == 'FORWARD 1'][0]
-            f2 = [sc for k, _, sc, _, _ in secs if k == 'FORWARD 2'][0]
-            L.append('| %s | %s | %s | S%d | %d | %s | %s (%s) | %s (%s) |' % (
-                std, req, perf, n, pages['S%d-M-Q1' % n], back, f1, hs_courses.course_of(f1), f2, hs_courses.course_of(f2)))
+            fw = {k: (sc, nm, nr) for k, nm, sc, _, nr in secs if k.startswith('FORWARD')}
+            cell = lambda k: '%s (%s): %s%s' % (fw[k][0], hs_courses.course_of(fw[k][0]), fw[k][1], ' — NEAREST RELATED' if fw[k][2] else '')
+            L.append('| %s | %s | %s | S%d | %d | %s | %s | %s |' % (
+                std, req, perf, n, pages['S%d-M-Q1' % n], back, cell('FORWARD 1'), cell('FORWARD 2')))
     L += ['', '## 3. Difficulty distribution', '',
           'The collection has no separate difficulty field (none of the Grade 3-8 collections do). Difficulty is carried by the '
           'section: backward branches review prerequisites, MAIN is on-level %s work, FORWARD 1 and FORWARD 2 extend into later '
@@ -100,6 +100,14 @@ def run_course(name):
         f2 = [st for st in sets.values() if hs_courses.course_of(st['f2']['std']) == c]
         codes = {st['f1']['std'] for st in f1} | {st['f2']['std'] for st in f2}
         L.append('| %s | %d | %d | %d |' % (c, len(f1), len(f2), len(codes)))
+    near = [(st['num'], key, st[k]['std'], st[k]['title'], st[k]['nearest']) for st in sets.values()
+            for k, key in (('f1', 'FORWARD 1'), ('f2', 'FORWARD 2')) if st[k].get('nearest')]
+    if near:
+        L += ['', 'Branches marked NEAREST RELATED (no later-course standard directly continues the MAIN skill at that step); '
+              'the connection is printed on the branch page and exported as `nearest_connection`:', '',
+              '| Set | Branch | Standard | Skill | Connection to the MAIN skill |', '|---|---|---|---|---|']
+        for n, key, sc, title, conn in sorted(near):
+            L.append('| S%d | %s | %s | %s | %s |' % (n, key, sc, title, conn if isinstance(conn, str) else ''))
     L += ['', '## 6. Questions that need visual or specialized answer support', '']
     for t, desc in SPECIAL.items():
         ids = [r['id'] for r in recs if r['type'] == t]

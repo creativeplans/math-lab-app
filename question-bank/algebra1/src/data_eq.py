@@ -1,6 +1,5 @@
-from qb import S, B, sa, mc, tf, work, plot, draw_write
+from qb import S, B, sa, mc, tf, work, plot, draw_write, hist, table, coord
 from common import ints, plane, graph, grid
-from qb import table
 
 PARAB = graph([lambda x: x * x - 2 * x - 3], lo=-3, hi=5, ylo=-5, yhi=5,
               desc='The graph of y = x² - 2x - 3, a parabola opening up with lowest point (1, -4), crossing the x-axis at -1 and 3 and the y-axis at -3.')
@@ -585,7 +584,7 @@ SETS = [
               tf('(1, 1) is a solution of the system y = 2x and y = x.', key=False, note='2(1) = 2, not 1.'),
           ]),
       ],
-      f1=B('Represent a system as a matrix and use row operations', 'HSA-REI.C.8', [
+      f1=B('Write a system as a matrix equation AX = B and use row operations', 'HSA-REI.C.8', [
           sa('Write the system 2x + y = 7 and x - 3y = 0 as a matrix equation AX = B. Give A, X, and B.', 'Answer:',
              key='A has rows [2 1] and [1 -3]; X is the column [x, y]; B is the column [7, 0]; and AX = B.', note='Form required: A, X, and B, in this order of rows.'),
           sa('In the matrix equation AX = B, A has rows [1 2] and [3 -1], X is the column [x, y], and B is the column [5, 1].\nWrite the system it represents.', 'System:',

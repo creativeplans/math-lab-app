@@ -1,4 +1,4 @@
-from qb import S, B, sa, mc, tf, work, plot, draw_write, hist, coord, table
+from qb import S, B, sa, mc, tf, work, plot, draw_write, hist, table, coord
 from common import ints, plane, graph, grid
 
 PLANTS = hist(['0–10', '10–20', '20–30', '30–40'], [4, 9, 12, 5], ymax=14, ystep=2, xlabel='Height (cm)', ylabel='Number of plants')
@@ -60,6 +60,109 @@ SETS = [
           tf('A result that rarely happens in simulations of a model is evidence against the model.', key=True, note='It suggests the model may be wrong.'),
           tf('If a coin lands heads 6 times in 10 flips, the coin must be unfair.', key=False, note='6 of 10 happens often with a fair coin.'),
       ], nearest='Simulation results are summarized with the data displays of the MAIN set and then compared with a model.')),
+
+    # ------------------------------------------------------------------ S-ID.A.1 (histograms, new in 2.0.0)
+    S('HSS-ID.A.1', 'Make histograms from data', num=76,
+      main=[
+          plot('Make a histogram of these 20 test scores. Use the intervals 50–59, 60–69, 70–79, 80–89, and 90–99.\n52, 58, 61, 64, 67, 69, 70, 72, 74, 75, 77, 78, 81, 83, 85, 86, 88, 91, 94, 97',
+               hist(['50–59', '60–69', '70–79', '80–89', '90–99'], [0, 0, 0, 0, 0], ymax=7, ystep=1, xlabel='Score', ylabel='Number of students'),
+               key='Bars of heights 2, 4, 6, 5, and 3', note='Any correct histogram; the bar heights must add to 20.'),
+          sa('Using the intervals 50–59, 60–69, 70–79, 80–89, and 90–99 for the scores 52, 58, 61, 64, 67, 69, 70, 72, 74, 75, 77, 78, 81, 83, 85, 86, 88, 91, 94, 97:\nhow many scores are in the 70–79 interval, and which interval has the tallest bar?', 'Answer:',
+             key='6 scores; the 70–79 interval is tallest.', note='Form required: both parts.'),
+          plot('Make a histogram of these 16 commute times, in minutes. Use the intervals 0–9, 10–19, 20–29, and 30–39.\n4, 8, 12, 14, 15, 18, 19, 21, 22, 22, 25, 28, 29, 33, 36, 38',
+               hist(['0–9', '10–19', '20–29', '30–39'], [0, 0, 0, 0], ymax=7, ystep=1, xlabel='Commute time (minutes)', ylabel='Number of people'),
+               key='Bars of heights 2, 5, 6, and 3', note='Any correct histogram; the bar heights must add to 16.'),
+          mc('A histogram uses the intervals 10–19 and 20–29 for whole-number data.\nIn which bar is the value 20 counted?', ['20–29', '10–19', 'Both', 'Neither'], note='Each value belongs to exactly one interval.'),
+          tf('Using wider intervals for the same data gives a histogram with more bars.', key=False, note='Each wider interval covers more values, so fewer bars are needed.'),
+      ],
+      back=[
+          B('Display data in a histogram', '6.SP.B.4', [
+              plot('Make a histogram of 1, 3, 4, 6, 7, 8, 9, 12 with the intervals 0–4, 5–9, and 10–14.', hist(['0–4', '5–9', '10–14'], [0, 0, 0], ymax=5, ystep=1, xlabel='Value', ylabel='Count'),
+                   key='Bars of heights 3, 4, and 1', note='Any correct histogram.'),
+              sa('A histogram has bars of heights 3, 5, and 2. How many data values does it show?', 'Values:', key='10', note='Any equivalent form.'),
+              mc('Which data are best shown in a histogram?', ['The heights of 200 students', 'Each student\'s favorite color', 'The names of 5 cities', 'One test score'],
+                 note='A histogram shows numerical data grouped into intervals.'),
+              tf('In a histogram, the height of a bar shows how many values are in that interval.', key=True, note='Bar heights are counts (frequencies).'),
+              tf('A histogram is the best display for categories such as favorite colors.', key=False, note='Categories are shown with a bar graph, which has gaps between bars.'),
+          ]),
+          B('Report the number of observations', '6.SP.B.5.a', [
+              sa('How many observations are in the data set 4, 7, 7, 9, 10, 12?', 'Observations:', key='6', note='Any equivalent form.'),
+              sa('A histogram has bars of heights 2, 4, 6, 5, and 3. How many observations does it show?', 'Observations:', key='20', note='Any equivalent form.'),
+              mc('A survey recorded the number of pets owned by each of 25 students. How many observations are there?', ['25', '1', 'The total number of pets', '100'], note='One observation per student.'),
+              tf('The number of observations is the number of data values.', key=True, note='Each value is one observation.'),
+              tf('If 8 students each report 2 siblings, there are 16 observations.', key=False, note='There are 8 observations (each is the value 2).'),
+          ]),
+      ],
+      f1=B('Use a histogram\'s shape to decide whether a normal model fits', 'HSS-ID.A.4', [
+          sa('A histogram of 1,000 adult heights is single-peaked and symmetric, with mean 170 cm and standard deviation 8 cm. About how many heights are between 162 cm and 178 cm?', 'Answer:',
+             key='About 680', note='Any equivalent form. That interval is within 1 standard deviation of the mean: about 68% of 1,000.'),
+          sa('A histogram of household incomes is strongly skewed right. Would a normal model give good estimates of percents? Explain.', 'Answer:',
+             key='No. A normal model is symmetric, and the data are strongly skewed.', note='Form required: the answer and the reason.'),
+          mc('Which histogram shape suggests that a normal model may fit?', ['Single-peaked and symmetric', 'Strongly skewed to the left', 'Two separate peaks', 'Flat (uniform)'],
+             note='A normal curve is one symmetric bell.'),
+          tf('In a normal model, about 95% of values are within 2 standard deviations of the mean.', key=True, note='This is part of the 68-95-99.7 rule.'),
+          tf('Any histogram with one peak is normal.', key=False, note='A single peak can still be skewed.'),
+      ]),
+      f2=B('Use a histogram of simulated results to judge a model', 'HSS-IC.A.2', [
+          sa('100 simulated trials of 20 fair coin flips give a histogram of the number of heads centered near 10. What does the histogram show?', 'Answer:',
+             key='The distribution of the number of heads when the coin is fair: which counts are typical and which are rare.', note='Any equivalent explanation.'),
+          sa('In that simulation, 2 of the 100 trials had 15 or more heads. Estimate the probability of 15 or more heads in 20 fair flips.', 'Estimate:', key='0.02', note='Any equivalent form, such as 2%.'),
+          mc('A spinner is claimed to land on blue 50% of the time. In 50 spins it landed on blue 12 times. In 200 simulated sets of 50 spins with a 50% chance, 12 or fewer blue never happened.\nWhat do you conclude?',
+             ['The result is not consistent with the 50% claim.', 'The result supports the 50% claim.', 'The spinner lands on blue exactly 24% of the time.', 'Nothing can be concluded.'],
+             note='The observed result is far outside what the model usually produces.'),
+          tf('A simulation repeats a random process many times to show which results are typical under a model.', key=True, note='That is the purpose of the simulation.'),
+          tf('If a result never happens in 200 simulated trials, it is impossible under the model.', key=False, note='It is rare, not impossible; more trials might produce it.'),
+      ])),
+
+    # ------------------------------------------------------------------ S-ID.A.1 (box plots, new in 2.0.0)
+    S('HSS-ID.A.1', 'Make box plots from data', num=77,
+      main=[
+          plot('Make a box plot of 3, 5, 6, 7, 8, 9, 10, 12, 15. (Use the median of each half, not counting the middle value, as Q1 and Q3.)', ints(0, 16, every=2),
+               key='Whiskers from 3 to 5.5 and from 11 to 15; a box from Q1 = 5.5 to Q3 = 11 with the median line at 8',
+               note='Any correct box plot. Lower half 3, 5, 6, 7 gives Q1 = 5.5; upper half 9, 10, 12, 15 gives Q3 = 11.'),
+          sa('Find the five-number summary of 12, 15, 15, 18, 20, 22, 25, 30. (Q1 and Q3 are the medians of the lower four and upper four values.)', 'Summary:',
+             key='Minimum 12, Q1 15, median 19, Q3 23.5, maximum 30', note='Form required: all five values.'),
+          plot('Make a box plot of 12, 15, 15, 18, 20, 22, 25, 30. (Q1 and Q3 are the medians of the lower four and upper four values.)', ints(10, 32, every=2),
+               key='Whiskers from 12 to 15 and from 23.5 to 30; a box from 15 to 23.5 with the median line at 19', note='Any correct box plot.'),
+          mc('In a box plot, what does the length of the box show?', ['The interquartile range', 'The range', 'The median', 'The mean'], note='The box runs from Q1 to Q3.'),
+          tf('In a box plot whose whiskers reach the minimum and maximum, each whisker covers about a quarter of the data values.', key=True,
+             note='The quartiles split the ordered data into four parts of about equal size.'),
+      ],
+      back=[
+          B('Draw and read box plots', '6.SP.B.4', [
+              plot('Draw a box plot with minimum 2, Q1 4, median 5, Q3 8, and maximum 10.', ints(0, 12), key='Whiskers from 2 to 4 and from 8 to 10; a box from 4 to 8 with a line at 5', note='Any correct box plot.'),
+              sa('A box plot has Q1 = 20 and Q3 = 35. What is the interquartile range?', 'IQR:', key='15', note='Any equivalent form.'),
+              mc('Which part of a box plot marks the median?', ['The line inside the box', 'The left end of the box', 'The right whisker', 'The left whisker'], note='The median divides the box.'),
+              tf('A box plot shows the minimum and the maximum.', key=True, note='They are the ends of the whiskers.'),
+              tf('A box plot shows how many data values there are.', key=False, note='It shows the five-number summary, not the count.'),
+          ]),
+          B('Find medians, quartiles, and ranges', '6.SP.B.5.c', [
+              sa('Find the median of 4, 9, 2, 7, 5, 8.', 'Median:', key='6', note='Any equivalent form. In order: 2, 4, 5, 7, 8, 9; (5 + 7) ÷ 2.'),
+              sa('The ordered data are 2, 4, 5, 7, 8, 9. Find Q1, the median of the lower half 2, 4, 5.', 'Q1 =', key='4', note='Any equivalent form.'),
+              mc('What is the range of 14, 3, 9, 21?', ['18', '21', '11', '7'], note='21 - 3 = 18.'),
+              tf('The interquartile range is Q3 - Q1.', key=True, note='This is the definition.'),
+              tf('The median of 1, 3, 100 is 34.', key=False, note='The median is the middle value, 3; 34 is the mean.'),
+          ]),
+      ],
+      f1=B('Estimate the quartiles of a normal distribution', 'HSS-ID.A.4', [
+          sa('For a normal distribution, the quartiles are about μ - 0.67σ and μ + 0.67σ. Estimate Q1 and Q3 for mean 100 and standard deviation 15.', 'Answer:',
+             key='Q1 ≈ 90 and Q3 ≈ 110', note='Form required: both values (about 89.95 and 110.05 are also accepted). 0.67 × 15 ≈ 10.'),
+          sa('Using those quartiles, estimate the interquartile range of that normal distribution.', 'IQR:', key='About 20', note='Any equivalent form. 110 - 90.'),
+          mc('In a normal distribution, about what percent of values are between Q1 and Q3?', ['50%', '68%', '25%', '95%'], note='Q1 to Q3 always holds the middle half.'),
+          tf('A box plot of data from a normal distribution is roughly symmetric about the median.', key=True, note='A normal distribution is symmetric.'),
+          tf('For normal data, the median is far from the mean.', key=False, note='For a normal distribution they are equal.'),
+      ]),
+      f2=B('Compare two treatments with box plots and a randomization test', 'HSS-IC.B.5', [
+          sa('Students were randomly assigned to a new study method (group A) or the usual method (group B). Box plots show a median of 78 for A and 70 for B, with similar spreads. In 1,000 random regroupings, a difference in means at least as large as observed happened 30 times.\nUsing a 5% threshold, is the difference significant?', 'Answer:',
+             key='Yes. 30 ÷ 1,000 = 3%, which is below 5%.', note='Form required: the decision with the proportion compared with 5%.'),
+          sa('Why is it useful to draw side-by-side box plots of the two groups before running the test?', 'Answer:',
+             key='They show the centers, spreads, overlap, and any outliers of the two groups at a glance.', note='Any equivalent explanation.'),
+          mc('In another randomized comparison, random regroupings matched or beat the observed difference 22% of the time.\nUsing a 5% threshold, what is the conclusion?',
+             ['The difference is not significant.', 'The difference is significant.', 'The new method is proved to work.', 'The methods are proved to have the same effect.'],
+             note='22% is above 5%, so chance could easily explain the difference.'),
+          tf('In a randomized comparison, a difference that rarely appears in random regroupings is evidence of a treatment effect.', key=True, note='Chance alone rarely produces it.'),
+          tf('Overlapping box plots prove that two treatments have the same effect.', key=False, note='Overlap shows variation; it does not prove the effects are equal.'),
+      ])),
 
     # ------------------------------------------------------------------ S-ID.A.2
     S('HSS-ID.A.2', 'Compare the center and spread of two or more data sets',
@@ -264,6 +367,60 @@ SETS = [
                                                                                 'A quadratic model with vertex at month 12'], note='The pattern repeats each year.'),
           tf('A repeating pattern in data suggests a sinusoidal model.', key=True, note='Sinusoids are periodic.'),
           tf('Data that vary between 9 and 15 have amplitude 6.', key=False, note='The amplitude is half the distance: 3.'),
+      ])),
+
+    # ------------------------------------------------------------------ S-ID.B.6.a (scatter plots, new in 2.0.0)
+    S('HSS-ID.B.6.a', 'Construct scatter plots from paired data and describe how the variables are related', num=83,
+      main=[
+          plot('Make a scatter plot of hours of sleep (x) and reaction time in milliseconds (y):\n(5, 320), (6, 300), (6.5, 290), (7, 280), (8, 260), (9, 255)',
+               coord(x=(4, 10), y=(240, 340), ystep=20, xstep=1, square=False, xlabel='Hours of sleep', ylabel='Reaction time (ms)', desc='Blank grid: x from 4 to 10, y from 240 to 340.'),
+               key='Six points plotted at the given pairs, falling from left to right', note='Any correct scatter plot with all six points.'),
+          sa('Describe the association between hours of sleep and reaction time in the data (5, 320), (6, 300), (6.5, 290), (7, 280), (8, 260), (9, 255): its direction, form, and strength.', 'Answer:',
+             key='Negative, roughly linear, and strong: more sleep goes with shorter reaction times.', note='Form required: direction, form, and strength.'),
+          draw_write('Make a scatter plot of years since 2000 (x) and phones in millions (y):\n(0, 1), (2, 1.5), (4, 2.3), (6, 3.4), (8, 5.1), (10, 7.6)\nWhich type of model does the plot suggest?',
+                     grid(10, 8, xlabel='Years since 2000', ylabel='Phones (millions)'), 'Model:',
+                     draw='Six points rising from left to right and curving upward', key='Exponential: the points curve upward, growing by about 1.5 times every 2 years.',
+                     note='Form required: the model type with a reason. Both the plot and the answer are graded.'),
+          mc('When you make a scatter plot to see whether one variable helps explain another, which variable usually goes on the horizontal axis?',
+             ['The explanatory variable (the one that may explain the other)', 'The response variable', 'Whichever variable has larger numbers', 'Whichever variable has fewer values'],
+             note='By convention the explanatory variable is x and the response variable is y.'),
+          tf('Both axes of a scatter plot must start at 0.', key=False, note='Axes can start near the data, as long as the scales are labeled.'),
+      ],
+      back=[
+          B('Make and describe scatter plots', '8.SP.A.1', [
+              plot('Plot (1, 2), (2, 3), (3, 5), (4, 6), and (5, 8) as a scatter plot.', grid(6, 10), key='Five points rising from left to right', note='Any correct plot.'),
+              sa('Points rise from left to right but curve upward. Describe the association.', 'Answer:', key='Positive and nonlinear', note='Any equivalent description.'),
+              mc('Which describes a scatter plot whose points show no trend?', ['No association', 'Strong positive association', 'Strong negative association', 'Linear association'],
+                 note='No trend means no association.'),
+              tf('Each point in a scatter plot represents one pair of values.', key=True, note='One point per pair.'),
+              tf('A cluster in a scatter plot is the same thing as an outlier.', key=False, note='A cluster is a group of points; an outlier is a single point far from the pattern.'),
+          ]),
+          B('Plot points and find distances on the coordinate plane', '6.NS.C.8', [
+              plot('Plot the points (2, 5), (-3, 1), and (0, -4).', plane(), key='Three points at (2, 5), (-3, 1), and (0, -4)', note='Any correct plot.'),
+              sa('Find the distance between (-3, 2) and (5, 2).', 'Distance:', key='8 units', note='Any equivalent form. |5 - (-3)| = 8.'),
+              mc('Which point lies on the y-axis?', ['(0, -4)', '(-4, 0)', '(4, 4)', '(1, -1)'], note='Points on the y-axis have x = 0.'),
+              tf('The point (-2, 6) is in Quadrant II.', key=True, note='Quadrant II has x < 0 and y > 0.'),
+              tf('The distance between (1, -3) and (1, 4) is 1.', key=False, note='|4 - (-3)| = 7.'),
+          ]),
+      ],
+      f1=B('Choose an exponential model from a scatter plot and solve it with logarithms', 'HSF-LE.A.4', [
+          sa('A model for the phone data is y = 1(1.22)^x, where x is years since 2000 and y is millions of phones. When does it predict 20 million? Round to the nearest tenth. (log means base 10.)', 'x ≈',
+             key='15.1 years after 2000', note='Form required: rounded to the nearest tenth. x = log 20 ÷ log 1.22 ≈ 15.07.'),
+          sa('Using y = 1(1.22)^x, how many years does it take the number of phones to double? Round to the nearest tenth. (log means base 10.)', 'Years:', key='3.5',
+             note='Form required: rounded to the nearest tenth. log 2 ÷ log 1.22 ≈ 3.49.'),
+          mc('Solve 4(1.25)^x = 20. (log means base 10.)', ['x = log 5 ÷ log 1.25 ≈ 7.21', 'x = 4', 'x = log 20 ÷ log 1.25 ≈ 13.43', 'x = 5 ÷ 1.25'], note='1.25^x = 5.'),
+          tf('If y = a · b^x with a > 0 and b > 1, then y doubles every log 2 ÷ log b units of x.', key=True, note='b^d = 2 gives d = log 2 ÷ log b.'),
+          tf('The model y = 1(1.22)^x predicts 0 phones in 2000.', key=False, note='At x = 0, y = 1 (million).'),
+      ]),
+      f2=B('Evaluate claims based on scatter plots', 'HSS-IC.B.6', [
+          sa('A website plots shoe size against reading score for students in Grades 1 to 8, finds a strong positive association, and claims that bigger feet improve reading. What is wrong?', 'Answer:',
+             key='Age (grade) is a lurking variable: older students have bigger feet and read better. Observational data do not show cause.', note='Any equivalent explanation.'),
+          sa('A scatter plot of 6 students from one class shows a strong trend. Why should you be careful applying it to all students?', 'Answer:',
+             key='The sample is small and was not randomly selected, so it may not represent all students.', note='Any equivalent explanation.'),
+          mc('Which detail would make a claim based on a scatter plot more trustworthy?', ['The data come from a large random sample.', 'The plot uses bright colors.',
+             'Both axes start at 0.', 'There are only 5 points.'], note='Large random samples represent the population better.'),
+          tf('Extrapolating a trend far beyond the plotted data can give misleading predictions.', key=True, note='The pattern may not continue outside the data.'),
+          tf('If a scatter plot shows a strong trend, one variable causes the other.', key=False, note='Association does not show causation.'),
       ])),
 
     # ------------------------------------------------------------------ S-ID.B.6.b

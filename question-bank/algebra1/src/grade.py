@@ -5,8 +5,8 @@ Backward branches use Grade K-8 standards or an Algebra I standard that is the M
 Forward branches use standards of later courses (Geometry, Algebra II, Probability & Statistics, Precalculus).
 """
 COURSE = dict(id='ALG1', name='Algebra I', file='Algebra1', seed=101)
-VERSION = '1.0.0'
-VERSION_DATE = "2026-10-11"
+VERSION = '2.0.0'
+VERSION_DATE = "2026-10-12"
 # Deal the correct letter of four-choice questions evenly across A-D.
 BALANCE_MC = True
 STRICT_BACKWARD = True

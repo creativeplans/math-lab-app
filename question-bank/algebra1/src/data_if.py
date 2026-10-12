@@ -1,4 +1,4 @@
-from qb import S, B, sa, mc, tf, work, plot, draw_write, table, coord
+from qb import S, B, sa, mc, tf, work, plot, draw_write, hist, table, coord
 from common import ints, plane, graph, grid
 
 BALL = graph([lambda t: -5 * t * t + 20 * t + 25], lo=0, hi=6, ylo=0, yhi=50, ystep=5, ylab=10, square=False,
@@ -12,6 +12,16 @@ EXP = coord(x=(-3, 3), y=(0, 12), square=False, desc='Blank coordinate grid, x f
 DIST = table([['t (seconds)', '0', '2', '4', '6'], ['d (meters)', '0', '30', '100', '150']], header='col')
 G_TABLE = table([['x', '0', '1', '2', '3'], ['g(x)', '1', '4', '9', '16']], header='col')
 Q_TABLE = table([['x', '0', '1', '2'], ['Q(x)', '1', '1.1', '1.21']], header='col')
+
+CART = graph([lambda t: t * t], lo=0, hi=6, ylo=0, yhi=36, ystep=2, ylab=4, square=False, xlabel='Time (seconds)', ylabel='Distance (meters)',
+             desc='The graph of a cart\'s distance d in meters against time t in seconds, a curve rising faster and faster through (1, 1), (3, 9), (5, 25), and (6, 36).')
+COOL = graph([lambda t: 20 + 60 * 0.8 ** t], lo=0, hi=10, ylo=0, yhi=80, ystep=10, square=False, xlabel='Time (minutes)', ylabel='Temperature (°C)',
+             desc='The graph of a cup of coffee\'s temperature, starting at 80 °C and falling more and more slowly toward 20 °C over 10 minutes; it is near 40 °C at 5 minutes.')
+CUBIC = graph([lambda x: x ** 3 - 3 * x], lo=-3, hi=3, ylo=-4, yhi=4,
+              desc='The graph of f(x) = x³ - 3x for x from about -2.2 to 2.2, through (-2, -2), (-1, 2), (0, 0), (1, -2), and (2, 2).')
+RECIP = graph([lambda x: 6 / x if x > 0.2 else 1e9], lo=0, hi=7, ylo=0, yhi=7,
+              desc='The graph of f(x) = 6 ÷ x for x > 0, through (1, 6), (2, 3), (3, 2), and (6, 1), getting closer to the x-axis.')
+CBRT = coord(x=(-8, 8), y=(-4, 4), xlab=2, desc='Blank coordinate grid, x from -8 to 8 and y from -4 to 4.')
 
 SETS = [
     # ------------------------------------------------------------------ F-IF.A.1
@@ -213,6 +223,72 @@ SETS = [
           tf('The function y = sin x has period π.', key=False, note='The period is 2π.'),
       ])),
 
+    # ------------------------------------------------------------------ F-IF.B.4 (sketch from a description, new in 2.0.0)
+    S('HSF-IF.B.4', 'Sketch graphs that show key features given in a verbal description', num=78,
+      main=[
+          plot('A ball is thrown up from a 2-m platform. It reaches its highest point, 7 m, after 1 second, and it lands on the ground after about 2.2 seconds.\nSketch its height against time. Label the starting point, the maximum, and the landing time.',
+               grid(3, 8, xlabel='Time (seconds)', ylabel='Height (meters)'),
+               key='A curve starting at (0, 2), rising to a peak at (1, 7), and falling to the t-axis near (2.2, 0), with those points labeled',
+               note='Any correct sketch: the intercept 2, the maximum (1, 7), increasing then decreasing, and the landing time near 2.2.'),
+          plot('A car is worth $20,000 when new, and it loses 15% of its value each year, never reaching $0.\nSketch its value for 0 to 10 years. Show the starting value and what happens as time goes on.',
+               grid(10, 20, ystep=2, xlabel='Years', ylabel='Value (thousands of dollars)'),
+               key='A decreasing curve from (0, 20) that falls more slowly each year and stays above 0 (about 4 at 10 years)',
+               note='Any correct sketch: intercept 20, always decreasing, curving toward but never reaching 0. 20(0.85)¹⁰ ≈ 3.9.'),
+          plot('A 50-liter tank drains at a constant rate until it is empty after 5 minutes, stays empty for 2 minutes, and then refills at a constant rate to 30 liters in 3 minutes.\nSketch the volume over the 10 minutes.',
+               grid(10, 50, ystep=10, xlabel='Time (minutes)', ylabel='Volume (liters)'),
+               key='A segment from (0, 50) to (5, 0), a horizontal segment from (5, 0) to (7, 0), and a segment from (7, 0) to (10, 30)',
+               note='Any correct sketch with the three pieces and their intervals of decrease, constancy, and increase.'),
+          mc('A town\'s population grew slowly at first and then faster and faster.\nWhich graph shape fits?', ['Increasing and curving upward', 'Increasing and leveling off',
+             'Decreasing', 'A horizontal line'], note='Growth that keeps speeding up gives an increasing graph that gets steeper.'),
+          tf('A graph of the temperature of a cup of coffee left on a table falls at a constant rate until it reaches 0 °C.', key=False,
+             note='The coffee cools quickly at first and then more slowly, leveling off near room temperature, not 0 °C.'),
+      ],
+      back=[
+          B('Sketch a graph from a description', '8.F.B.5', [
+              plot('You walk away from home at a steady pace for 10 minutes, rest for 5 minutes, then walk home faster in 10 minutes.\nSketch your distance from home over 25 minutes.',
+                   grid(25, 10, xstep=5, xlabel='Time (minutes)', ylabel='Distance (blocks)'),
+                   key='A rising segment for 0 to 10 minutes, a horizontal segment for 10 to 15, and a steeper falling segment back to 0 at 25',
+                   note='Any correct qualitative sketch with the three pieces in order.'),
+              sa('A graph of a plant\'s height rises steeply and then levels off. Describe what happened to the plant.', 'Answer:',
+                 key='It grew quickly at first, then its growth slowed until its height stayed about the same.', note='Any equivalent description.'),
+              mc('Which situation has a graph that stays constant (horizontal) for a while?', ['A parked car\'s distance from home', 'A falling ball\'s height', 'A burning candle\'s height',
+                 'A rising balloon\'s height'], note='A parked car does not move.'),
+              tf('A graph that rises and then falls has a highest point.', key=True, note='It changes from increasing to decreasing at a maximum.'),
+              tf('A horizontal segment on a speed-time graph means the car is stopped.', key=False, note='It means the speed is constant, which may not be 0.'),
+          ]),
+          B('Write and graph equations on labeled axes', 'HSA-CED.A.2', [
+              sa('Write an equation for the area A of a square with side s. What kind of graph does it have for s ≥ 0?', 'Answer:',
+                 key='A = s²; half of a parabola, starting at (0, 0) and curving upward', note='Form required: the equation and the shape.'),
+              plot('Graph C = 5 + 2n, the cost in dollars of a ride with n stops, for n = 0 to 5.', grid(5, 15, xlabel='Stops (n)', ylabel='Cost (C, dollars)'),
+                   key='Points (or a line) from (0, 5) to (5, 15), rising by 2 for each stop', note='Any correct graph; separate points are expected because n is a whole number.'),
+              mc('A $1,200 laptop loses $200 of value each year. Which equation gives its value V after t years?', ['V = 1,200 - 200t', 'V = 200 - 1,200t', 'V = 1,200(0.8)^t', 'V = 1,200 + 200t'],
+                 note='Start at 1,200 and subtract 200 per year.'),
+              tf('An equation in two variables can be graphed on a coordinate plane.', key=True, note='Each solution is a point (x, y).'),
+              tf('The graph of d = 50t is a curve.', key=False, note='It is a straight line through the origin with slope 50.'),
+          ]),
+      ],
+      f1=B('Sketch polynomial graphs from a description of their features', 'HSF-IF.C.7.c', [
+          plot('Sketch a cubic function that falls to the left, rises to the right, and has zeros at -2, 1, and 4. (The y-scale is up to you.)', plane(),
+               key='A curve crossing the x-axis at -2, 1, and 4, falling to the left and rising to the right, with one turn between -2 and 1 and one between 1 and 4',
+               note='Any correct sketch, for example of y = (x + 2)(x - 1)(x - 4).'),
+          sa('A polynomial graph touches the x-axis at x = 3 and turns around there. What can you say about the factor x - 3?', 'Answer:',
+             key='It appears an even number of times, for example (x - 3)².', note='Any equivalent explanation (even multiplicity).'),
+          mc('Which polynomial function has a graph that falls on both ends?', ['y = -x⁴ + 3x', 'y = x⁴ - 3x', 'y = x³', 'y = -x³'], note='Even degree with a negative leading coefficient.'),
+          tf('The graph of a degree-5 polynomial with a positive leading coefficient rises to the right.', key=True, note='Odd degree, positive leading coefficient: falls left, rises right.'),
+          tf('The graph of a cubic function can rise on both ends.', key=False, note='A cubic rises on one end and falls on the other.'),
+      ]),
+      f2=B('Sketch periodic graphs from a description', 'HSF-TF.B.5', [
+          plot('A Ferris wheel seat starts at its lowest height, 2 m, reaches its highest height, 42 m, after 5 minutes, and repeats every 10 minutes.\nSketch its height over 20 minutes.',
+               grid(20, 45, ystep=5, xlabel='Time (minutes)', ylabel='Height (meters)'),
+               key='A smooth wave starting at (0, 2), up to (5, 42), down to (10, 2), up to (15, 42), down to (20, 2), with midline 22',
+               note='Any correct sketch with the minimum 2, maximum 42, period 10, and starting point.'),
+          sa('Daylight lasts 15 hours in late June and 9 hours in late December. Describe a graph of daylight hours over a year.', 'Answer:',
+             key='A wave with maximum 15 (June), minimum 9 (December), midline 12, and period 12 months.', note='Form required: the maximum, minimum, midline, and period.'),
+          mc('Which feature of a periodic graph is the time for one full cycle?', ['The period', 'The amplitude', 'The midline', 'The maximum'], note='The period is the length of one cycle.'),
+          tf('The midline of a periodic graph is halfway between its maximum and minimum values.', key=True, note='Midline = (maximum + minimum) ÷ 2.'),
+          tf('A tide graph that repeats every 12.4 hours has amplitude 12.4.', key=False, note='12.4 hours is the period; the amplitude is a height.'),
+      ])),
+
     # ------------------------------------------------------------------ F-IF.B.5
     S('HSF-IF.B.5', 'Relate the domain of a function to the quantity it describes',
       main=[
@@ -310,6 +386,54 @@ SETS = [
           plot('Graph f(x) = 1 ÷ (x - 2) + 1. Draw both asymptotes as lines and mark the intercepts.', plane(),
                key='Vertical asymptote x = 2 and horizontal asymptote y = 1; the curve passes through the x-intercept (1, 0) and the y-intercept (0, 0.5), with one branch below and left of (2, 1) and one above and right',
                note='Any correct graph. 1 ÷ (x - 2) = -1 gives x = 1; f(0) = -0.5 + 1 = 0.5.'),
+      ])),
+
+    # ------------------------------------------------------------------ F-IF.B.6 (estimate from a graph, new in 2.0.0)
+    S('HSF-IF.B.6', 'Estimate the average rate of change of a function from its graph', num=79,
+      main=[
+          sa('The graph shows the distance d, in meters, that a cart has rolled after t seconds.\nEstimate the average rate of change from t = 1 to t = 3, with units.', 'Rate:', fig=CART,
+             key='About 4 meters per second', note='Form required: an estimate with units. Accept 3.5 to 4.5 m/s: the graph passes about (1, 1) and (3, 9), and (9 - 1) ÷ 2 = 4.'),
+          sa('The graph shows the distance d, in meters, that a cart has rolled after t seconds.\nEstimate the average rate of change from t = 3 to t = 5. Is the cart speeding up?', 'Answer:', fig=CART,
+             key='About 8 meters per second; yes, the rate is greater than on earlier intervals.', note='Form required: an estimate (7 to 9 m/s) and the conclusion. (25 - 9) ÷ 2 = 8.'),
+          sa('The graph shows the temperature of a cup of coffee.\nEstimate the average rate of change of the temperature over the first 5 minutes, with units.', 'Rate:', fig=COOL,
+             key='About -8 °C per minute', note='Form required: an estimate with units. Accept -7 to -9 °C per minute: from about 80 °C to about 40 °C in 5 minutes.'),
+          mc('The graph shows the temperature of a cup of coffee.\nOver which 2-minute interval is the coffee cooling fastest on average?', ['0 to 2 minutes', '4 to 6 minutes', '6 to 8 minutes', '8 to 10 minutes'],
+             fig=COOL, note='The graph is steepest at the start; it flattens as the coffee nears room temperature.'),
+          tf('The average rate of change of d from t = 0 to t = 6 equals the slope of the segment joining (0, 0) and (6, 36) on the graph.', fig=CART, key=True,
+             note='The average rate of change is the slope of the secant line: 36 ÷ 6 = 6 m/s.'),
+      ],
+      back=[
+          B('Find a rate of change from two points', '8.F.B.4', [
+              sa('A line passes through (2, 10) and (6, 30). Find its rate of change.', 'Rate:', key='5', note='Any equivalent form. 20 ÷ 4.'),
+              sa('A straight-line graph of a hike shows 3 km at 1 hour and 9 km at 3 hours. What is the rate of change, with units?', 'Rate:', key='3 km per hour', note='Any equivalent form. 6 ÷ 2.'),
+              mc('What is the slope of the line through (0, 50) and (5, 25)?', ['-5', '5', '-25', '0.2'], note='(25 - 50) ÷ 5 = -5.'),
+              tf('The slope between two points on a line is (change in y) ÷ (change in x).', key=True, note='This is the definition of slope.'),
+              tf('The line through (1, 4) and (3, 4) has rate of change 4.', key=False, note='(4 - 4) ÷ 2 = 0.'),
+          ]),
+          B('Read a unit rate from a graph', '7.RP.A.2.b', [
+              sa('The graph of a proportional relationship passes through (4, 12). What is the unit rate?', 'Unit rate:', key='3', note='Any equivalent form. 12 ÷ 4.'),
+              sa('A proportional cost graph passes through (0, 0) and (5, 7.5). What is the cost per item?', 'Cost:', key='$1.50', note='Any equivalent form.'),
+              mc('A proportional graph of miles against gallons passes through (3, 90). What is the unit rate?', ['30 miles per gallon', '90 miles per gallon', '3 miles per gallon', '270 miles per gallon'],
+                 note='90 ÷ 3 = 30.'),
+              tf('On a proportional graph, the point (1, r) shows the unit rate r.', key=True, note='At 1 unit of x, y equals the unit rate.'),
+              tf('A proportional graph passes through (2, 5), so its unit rate is 10.', key=False, note='5 ÷ 2 = 2.5.'),
+          ]),
+      ],
+      f1=B('Estimate average rates of change from a polynomial graph', 'HSF-IF.C.7.c', [
+          sa('The graph shows f(x) = x³ - 3x.\nEstimate the average rate of change from x = -1 to x = 1.', 'Rate:', fig=CUBIC, key='-2', note='Any equivalent form. (f(1) - f(-1)) ÷ 2 = (-2 - 2) ÷ 2.'),
+          sa('The graph shows f(x) = x³ - 3x.\nEstimate the average rate of change from x = 1 to x = 2.', 'Rate:', fig=CUBIC, key='4', note='Any equivalent form. (2 - (-2)) ÷ 1.'),
+          mc('The graph shows f(x) = x³ - 3x.\nOn which interval is f increasing?', ['1 < x < 2', '-1 < x < 1', '0 < x < 1', '-1 < x < 0'], fig=CUBIC, note='f falls between its turning points at x = -1 and x = 1.'),
+          tf('The average rate of change of f(x) = x³ - 3x from x = -2 to x = 2 is 1.', fig=CUBIC, key=True, note='(2 - (-2)) ÷ 4 = 1.'),
+          tf('A positive average rate of change on an interval means the function increases at every point of the interval.', key=False,
+             note='For f(x) = x³ - 3x on -2 ≤ x ≤ 2 the average rate is positive, but f decreases between -1 and 1.'),
+      ]),
+      f2=B('Estimate average rates of change from a rational-function graph', 'HSF-IF.C.7.d', [
+          sa('The graph shows f(x) = 6 ÷ x.\nEstimate the average rate of change from x = 1 to x = 3.', 'Rate:', fig=RECIP, key='-2', note='Any equivalent form. (2 - 6) ÷ 2.'),
+          sa('The graph shows f(x) = 6 ÷ x.\nEstimate the average rate of change from x = 3 to x = 6.', 'Rate:', fig=RECIP, key='-1/3', note='Any equivalent form (about -0.33). (1 - 2) ÷ 3.'),
+          mc('The graph shows f(x) = 6 ÷ x.\nWhat happens to its average rate of change on intervals farther to the right?', ['It gets closer to 0.', 'It gets more negative.', 'It becomes positive.', 'It stays -2.'],
+             fig=RECIP, note='The graph flattens toward its horizontal asymptote.'),
+          tf('The graph of y = 6 ÷ x has the horizontal asymptote y = 0.', key=True, note='6 ÷ x approaches 0 as x grows.'),
+          tf('The graph of y = 6 ÷ x passes through (0, 6).', key=False, note='6 ÷ 0 is undefined.'),
       ])),
 
     # ------------------------------------------------------------------ F-IF.C.7.a (linear)
@@ -462,6 +586,107 @@ SETS = [
           tf('The inverse of f(x) = x³ is f⁻¹(x) = ∛x.', key=True, note='Cubing and taking the cube root undo each other.'),
           tf('f is a one-to-one function. If (3, 10) is on the graph of f, then (3, 10) must be on the graph of f⁻¹.', key=False,
              note='(10, 3) must be on the graph of f⁻¹, but (3, 10) need not be: for f(x) = x + 7, f⁻¹(3) = -4.'),
+      ])),
+
+    # ------------------------------------------------------------------ F-IF.C.7.b (square and cube roots, new in 2.0.0)
+    S('HSF-IF.C.7.b', 'Graph square root and cube root functions', num=74,
+      main=[
+          draw_write('Graph f(x) = √(x + 4).\nGive its domain and range.', plane(), 'Answer:',
+                     draw='A curve starting at (-4, 0) and rising to the right through (-3, 1), (0, 2), and (5, 3)',
+                     key='Domain x ≥ -4; range y ≥ 0', note='Form required: the domain and the range. Both the graph and the answer are graded.'),
+          plot('Graph g(x) = ∛x for -8 ≤ x ≤ 8. Plot the points where x is a perfect cube, then draw the curve.', CBRT,
+               key='A curve through (-8, -2), (-1, -1), (0, 0), (1, 1), and (8, 2), increasing everywhere and flattest away from the origin',
+               note='Any correct graph through these five points.'),
+          draw_write('Graph h(x) = -√x + 3.\nGive its starting point and its range.', plane(), 'Answer:',
+                     draw='A curve starting at (0, 3) and falling to the right through (1, 2) and (4, 1)',
+                     key='Starting point (0, 3); range y ≤ 3', note='Form required: the starting point and the range. Both the graph and the answer are graded.'),
+          mc('Which describes the graph of y = ∛x?', ['It passes through (-8, -2), (0, 0), and (8, 2).', 'It starts at (0, 0) and goes only to the right.',
+                                                     'It is V-shaped with vertex (0, 0).', 'It has the horizontal asymptote y = 0.'],
+             note='Cube roots of negative numbers are negative, so the graph extends in both directions.'),
+          tf('The graph of y = √(x - 1) starts at (-1, 0).', key=False, note='√(x - 1) is defined for x ≥ 1, so the graph starts at (1, 0).'),
+      ],
+      back=[
+          B('Find domains and ranges of root functions', 'HSF-IF.A.1', [
+              sa('Over the real numbers, what is the domain of g(x) = √(2x - 6)?', 'Domain:', key='x ≥ 3', note='Form required: an inequality (or interval). 2x - 6 ≥ 0.'),
+              sa('What is the range of h(x) = √x + 2?', 'Range:', key='y ≥ 2', note='Form required: an inequality (or interval).'),
+              mc('What is the domain of y = ∛(x - 5)?', ['All real numbers', 'x ≥ 5', 'x > 5', 'x ≤ 5'], note='Every real number has a real cube root.'),
+              tf('The range of y = -√x is y ≤ 0.', key=True, note='√x ≥ 0, so -√x ≤ 0.'),
+              tf('x = -1 is in the domain of y = √x over the real numbers.', key=False, note='√(-1) is not a real number.'),
+          ]),
+          B('Evaluate square roots and cube roots', '8.EE.A.2', [
+              sa('Evaluate √81 and ∛(-27).', 'Answer:', key='9 and -3', note='Form required: both values.'),
+              sa('Solve x³ = 125.', 'x =', key='5', note='Any equivalent form.'),
+              mc('What is ∛8 + √4?', ['4', '6', '3', '12'], note='2 + 2 = 4.'),
+              tf('√0.25 = 0.5', key=True, note='0.5² = 0.25.'),
+              tf('∛(-8) is not a real number.', key=False, note='∛(-8) = -2.'),
+          ]),
+      ],
+      f1=B('Solve radical equations and check the solutions', 'HSA-REI.A.2', [
+          sa('Solve √(x + 4) = 3.', 'x =', key='5', note='Any equivalent form. x + 4 = 9. Check: √9 = 3.'),
+          sa('Solve ∛(2x) = -2.', 'x =', key='-4', note='Any equivalent form. 2x = -8.'),
+          mc('Solve √(x + 2) = x.', ['x = 2 only', 'x = 2 or x = -1', 'x = -1 only', 'No solution'], note='x² - x - 2 = 0 gives 2 or -1; x = -1 is extraneous because √1 = 1, not -1.'),
+          tf('√(x - 3) = -2 has no real solution.', key=True, note='A principal square root is never negative.'),
+          tf('Cubing both sides of ∛x = 4 gives x = 12.', key=False, note='x = 4³ = 64.'),
+      ]),
+      f2=B('Find inverses of square root and cube root functions', 'HSF-BF.B.4.c', [
+          sa('f(x) = √x for x ≥ 0. Find f⁻¹(5).', 'f⁻¹(5) =', key='25', note='Any equivalent form. √25 = 5.'),
+          sa('g(x) = ∛x. Find g⁻¹(-2).', 'g⁻¹(-2) =', key='-8', note='Any equivalent form. ∛(-8) = -2.'),
+          mc('Which is the inverse of f(x) = √(x - 1), for x ≥ 1?', ['f⁻¹(x) = x² + 1, for x ≥ 0', 'f⁻¹(x) = x² - 1', 'f⁻¹(x) = √(x + 1)', 'f⁻¹(x) = (x + 1)²'],
+             note='y = √(x - 1) gives x = y² + 1 with y ≥ 0.'),
+          tf('The graph of y = √x (x ≥ 0) is the reflection of the graph of y = x² (x ≥ 0) across the line y = x.', key=True, note='They are inverse functions.'),
+          tf('g(x) = ∛x has no inverse function.', key=False, note='Its inverse is g⁻¹(x) = x³.'),
+      ])),
+
+    # ------------------------------------------------------------------ F-IF.C.7.b (piecewise and step, new in 2.0.0)
+    S('HSF-IF.C.7.b', 'Graph piecewise-defined and step functions', num=75,
+      main=[
+          draw_write('f(x) = x + 1 for x < 2, and f(x) = 5 - x for x ≥ 2.\nGraph f. Then find f(0), f(2), and f(4).', plane(), 'Answer:',
+                     draw='A line rising to (2, 3) from the left, joined at (2, 3) to a line falling to the right through (4, 1); (2, 3) is a filled point',
+                     key='f(0) = 1, f(2) = 3, f(4) = 1', note='Form required: all three values. Both the graph and the values are graded. x = 2 belongs to the second piece.'),
+          plot('g(x) = -1 for x < 0, g(x) = 2 for 0 ≤ x < 3, and g(x) = x - 1 for x ≥ 3.\nGraph g. Use open and closed dots at the breaks.', plane(),
+               key='A horizontal ray at y = -1 for x < 0 with an open dot at (0, -1); a segment at y = 2 from a closed dot at (0, 2) to an open dot at (3, 2); a ray from a closed dot at (3, 2) rising with slope 1',
+               note='Any correct graph with the correct open and closed dots.'),
+          plot('Graph the greatest integer function y = ⌊x⌋ (the greatest integer less than or equal to x) for -2 ≤ x < 3.', plane(),
+               key='Horizontal steps of length 1: y = -2 for -2 ≤ x < -1, y = -1 for -1 ≤ x < 0, y = 0 for 0 ≤ x < 1, y = 1 for 1 ≤ x < 2, y = 2 for 2 ≤ x < 3; each step has a closed left end and an open right end',
+               note='Any correct graph with the closed and open ends.'),
+          mc('A parking garage charges $3 for each hour or part of an hour.\nWhat is the charge for 2.25 hours?', ['$9', '$6.75', '$6', '$7.50'], note='2.25 hours is 3 started hours: 3 × $3 = $9.'),
+          tf('For the greatest integer function, ⌊2.7⌋ = 3.', key=False, note='⌊2.7⌋ is the greatest integer less than or equal to 2.7, which is 2.'),
+      ],
+      back=[
+          B('Evaluate piecewise-defined functions', 'HSF-IF.A.2', [
+              sa('f(x) = 2x - 1 for x < 3, and f(x) = 8 for x ≥ 3.\nFind f(3) and f(1).', 'Answer:', key='f(3) = 8 and f(1) = 1', note='Form required: both values. x = 3 uses the second piece.'),
+              sa('g(x) = |x| for x ≤ 0, and g(x) = x² for x > 0.\nFind g(-4) and g(4).', 'Answer:', key='g(-4) = 4 and g(4) = 16', note='Form required: both values.'),
+              mc('h(x) = 3 for x < 1, and h(x) = 2x for x ≥ 1. What is h(1)?', ['2', '3', '5', '1'], note='x = 1 uses the second piece: 2(1) = 2.'),
+              tf('p(x) = 5 for x ≤ 2, and p(x) = x for x > 2. Then p(2) = 5.', key=True, note='x = 2 uses the first piece.'),
+              tf('⌊-1.5⌋ = -1', key=False, note='The greatest integer less than or equal to -1.5 is -2.'),
+          ]),
+          B('Order numbers and describe intervals on a number line', '6.NS.C.7.a', [
+              sa('Is -3 to the left or to the right of -1 on a number line? Which number is greater?', 'Answer:', key='To the left; -1 is greater.', note='Form required: both parts.'),
+              sa('Write an inequality for "x is at least 0 and less than 3".', 'Inequality:', key='0 ≤ x < 3', note='Form required: a compound inequality.'),
+              mc('Which statement is true?', ['-4 < -2', '-4 > -2', '-2 < -4', '0 < -1'], note='-4 is to the left of -2.'),
+              tf('-5 is less than -2.', key=True, note='-5 is to the left of -2.'),
+              tf('On a number line, 2 is to the left of -3.', key=False, note='2 is to the right of -3.'),
+          ]),
+      ],
+      f1=B('Graph the probability distribution of a discrete random variable', 'HSS-MD.A.1', [
+          sa('A fair coin is flipped twice, and X is the number of heads. Give P(X = 0), P(X = 1), and P(X = 2).', 'Answer:', key='1/4, 1/2, 1/4',
+             note='Form required: all three. The outcomes HH, HT, TH, TT are equally likely.'),
+          plot('A fair coin is flipped twice, and X is the number of heads. Graph the probability distribution of X as a bar graph.',
+               hist(['0', '1', '2'], [0, 0, 0], ymax=1, ystep=0.25, xlabel='Number of heads (X)', ylabel='Probability'),
+               key='Bars of height 0.25 at X = 0, 0.5 at X = 1, and 0.25 at X = 2', note='Any correct bar graph.'),
+          mc('X is the result of one roll of a fair number cube numbered 1 to 6. What is P(X ≥ 5)?', ['{1/3}', '{1/6}', '{1/2}', '{5/6}'], note='5 and 6: 2 of 6 outcomes.'),
+          tf('The probabilities of a probability distribution add to 1.', key=True, note='The outcomes cover every possibility.'),
+          tf('For X = the number of heads in 2 fair coin flips, P(X = 1) = {1/3}.', key=False, note='HT and TH are 2 of 4 equally likely outcomes, so P(X = 1) = {1/2}.'),
+      ], nearest='A probability distribution assigns a value to each separate outcome, like a function defined piece by piece, and its bar graph is read the same way.'),
+      f2=B('Read inverse values of piecewise and step functions', 'HSF-BF.B.4.c', [
+          sa('f(x) = 2x for x < 0, and f(x) = x² for x ≥ 0. This f is one-to-one. Find f⁻¹(9) and f⁻¹(-4).', 'Answer:', key='f⁻¹(9) = 3 and f⁻¹(-4) = -2',
+             note='Form required: both values. 3² = 9 with 3 ≥ 0, and 2(-2) = -4 with -2 < 0.'),
+          sa('g(x) = x + 1 for x < 2, and g(x) = 2x - 1 for x ≥ 2. This g is one-to-one. Find g⁻¹(7).', 'g⁻¹(7) =', key='4',
+             note='Any equivalent form. x + 1 = 7 gives 6, which is not less than 2; 2x - 1 = 7 gives 4, which is at least 2.'),
+          mc('Why does the greatest integer function y = ⌊x⌋ have no inverse function?', ['Many inputs share each output, such as ⌊2.1⌋ = ⌊2.9⌋ = 2.', 'It is not defined for negative x.',
+             'Its outputs are not integers.', 'It is a linear function.'], note='A function needs to be one-to-one to have an inverse.'),
+          tf('A piecewise function whose pieces are increasing and whose output ranges do not overlap can have an inverse.', key=True, note='Then every output comes from exactly one input.'),
+          tf('If f is one-to-one and f(3) = 5, then f⁻¹(3) = 5.', key=False, note='f⁻¹(5) = 3; f⁻¹(3) need not be 5.'),
       ])),
 
     # ------------------------------------------------------------------ F-IF.C.7.e

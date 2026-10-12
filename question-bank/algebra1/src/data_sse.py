@@ -1,4 +1,4 @@
-from qb import S, B, sa, mc, tf, work, plot, draw_write
+from qb import S, B, sa, mc, tf, work, plot, draw_write, hist, table, coord
 from common import ints, plane, graph, grid
 
 UP_DOWN = graph([lambda x: -(x - 3) ** 2 + 5], lo=0, hi=6, ylo=-4, yhi=6, xlabel='x', ylabel='y',

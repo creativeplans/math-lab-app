@@ -3,7 +3,7 @@ The requirement text is the set title; the performance says what students actual
 _P = {
     1: 'Explain rational exponents from the power-of-a-power property; evaluate and rewrite x^(m/n)',
     2: 'Convert between radicals and rational exponents; simplify products of radicals; recognize √(x²) = |x|',
-    3: 'Write proofs by contradiction that 5 + √2 and 3√7 are irrational; prove closure of rational sums',
+    3: 'Prove that a rational number plus an irrational number is irrational: specific cases and the general proof by contradiction',
     4: 'Convert units in multistep problems (dimensional analysis) and choose graph scales',
     5: 'Name the quantities and units a model needs and define a rate for a comparison',
     6: 'Report measured results to a precision the measuring tool supports',
@@ -43,7 +43,7 @@ _P = {
     40: 'Compute and interpret average rates of change with units, from formulas and tables',
     41: 'Graph linear functions with intercepts and write slope-intercept form from two points',
     42: 'Graph quadratics with vertex and intercepts; find axis, maximum, or minimum',
-    43: 'Graph and evaluate absolute value, square root, cube root, step, and piecewise functions',
+    43: 'Graph absolute value functions with their vertex and intercepts; describe shifts, reflections, and stretches',
     44: 'Graph exponential functions and give intercepts, asymptotes, and growth or decay',
     45: 'Use factored and vertex forms to find zeros, extreme values, and symmetry, including profit and height models',
     46: 'Rewrite exponential functions to find yearly, monthly, and multi-year rates of growth or decay',
@@ -69,6 +69,22 @@ _P = {
     66: 'Interpret slope and intercept in context and judge whether the intercept is meaningful',
     67: 'Compute r with technology and interpret it; know its range and limits',
     68: 'Separate correlation from causation, name lurking variables, and design an experiment',
+    69: 'Prove that 3√7 and ax (a nonzero rational, x irrational) are irrational; explain why a ≠ 0 is needed',
+    70: 'Prove that the rational numbers are closed under addition and multiplication, with nonzero denominators',
+    71: 'Derive the quadratic formula by completing the square, showing every step',
+    72: 'Prove both directions of the elimination equivalence and explain why one equation is kept',
+    73: 'Graph line-parabola and line-circle systems, read the intersections, and check them algebraically',
+    74: 'Graph square root and cube root functions; give starting points, domains, and ranges',
+    75: 'Graph piecewise-defined and step functions with open and closed endpoints, and evaluate them',
+    76: 'Make histograms from raw data with given intervals, and read them',
+    77: 'Find five-number summaries and draw box plots from raw data',
+    78: 'Sketch graphs in context from verbal descriptions of intercepts, maxima, intervals, and end behavior',
+    79: 'Estimate average rates of change from graphs, with units and stated tolerances',
+    80: 'Write quadratic models for area, revenue, and projectile situations',
+    81: 'Write recursive and explicit rules for situations and translate between the two forms',
+    82: 'Graph transformations, compare them with tables or technology, and identify even and odd functions',
+    83: 'Construct scatter plots from paired data and describe the association and the model type',
+    84: 'Solve linear systems by graphing, including approximate solutions checked against exact ones',
 }
 
 
@@ -90,8 +106,8 @@ NOTES = [
     '- **A-REI.D.11** names linear, polynomial, rational, absolute value, exponential, and logarithmic functions. The MAIN '
     'questions use quadratic, linear, absolute value, and exponential functions; logarithmic and rational cases are left to '
     'the forward branches (Algebra II and Precalculus).',
-    '- **F-IF.C.7.b** step functions have one MAIN question (the greatest integer function); the other four cover absolute '
-    'value, piecewise, square root, and cube root functions.',
+    '- **F-IF.C.7.b** names several function families. Each has graphing work in a focused set: absolute value (S43), square and cube '
+    'roots (S74), and piecewise-defined and step functions (S75).',
     '- **N-Q.A.1-3** are modeling standards that apply throughout the course. They have one focused set each, and many other '
     'questions state units and rounding.',
     '- **No difficulty or hint fields.** As in Grades 3-8, difficulty is carried by the section (Section 3), and each '
@@ -102,6 +118,9 @@ NOTES = [
     '- **Drawing and figures.** Graphing questions (`plot`, `plot_text`) need a drawing surface or teacher grading. The '
     'figure renderer draws solid lines only, so no figure shows a dashed boundary: inequality graphs are drawn by students, '
     'and one question describes a boundary line in words.',
+    '- **Forward branches.** FORWARD 2 is never in an earlier course than FORWARD 1 (the build checks the course order). Within a '
+    'course, the branch titles in Section 2 state the demand each branch adds. Branches that do not directly continue the MAIN skill '
+    'are marked NEAREST RELATED and state their connection (Section 5).',
     '- **Technology.** Questions that ask for a correlation coefficient, logarithm values, or rounded roots expect a '
     'calculator (listed in Section 6).',
 ]
