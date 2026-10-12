@@ -60,12 +60,12 @@ SETS = [
     # ------------------------------------------------------------------ F-BF.A.1.b
     S('HSF-BF.A.1.b', 'Combine standard function types using arithmetic operations',
       main=[
-          sa('Revenue is R(x) = 25x and cost is C(x) = 400 + 9x dollars for x items.\nWrite the profit function P(x) and find P(50).', 'Answer:',
+          sa('Revenue is R(x) = 25x and cost is C(x) = 400 + 9x dollars for x items.\nWrite the profit function P(x) in simplest form and find P(50).', 'Answer:',
              key='P(x) = 16x - 400; P(50) = 400', note='Form required: P(x) simplified and the value. P = R - C.'),
           sa('A ball\'s height is h(t) = -4.9t² + 30t + 2 meters after t seconds.\nName the three simple functions added together, and what each one describes.', 'Answer:',
              key='The constant 2 (the starting height), the linear 30t (height gained from the upward speed), and the quadratic -4.9t² (the pull of gravity).',
              note='Any equivalent description of the three parts.'),
-          sa('f(x) = x² + 1 and g(x) = 2x - 3.\nFind (f - g)(x) and (f · g)(2).', 'Answer:', key='(f - g)(x) = x² - 2x + 4; (f · g)(2) = 5',
+          sa('f(x) = x² + 1 and g(x) = 2x - 3.\nFind (f - g)(x) in simplest form, and find (f · g)(2).', 'Answer:', key='(f - g)(x) = x² - 2x + 4; (f · g)(2) = 5',
              note='Form required: the simplified difference and the value. f(2) = 5 and g(2) = 1.'),
           mc('The temperature of tea is T(t) = 20 + 70(0.9)^t °C after t minutes.\nWhich description fits this combination of functions?',
              ['A constant room temperature of 20 °C plus a difference of 70(0.9)^t that decays', 'A linear function with slope 0.9',
@@ -225,7 +225,7 @@ SETS = [
               sa('Evaluate ∛125.', 'Value:', key='5', note='Any equivalent form. 5³ = 125.'),
               mc('What is ∛64?', ['4', '8', '21.3', '16'], note='4³ = 64.'),
               tf('∛(-27) = -3', key=True, note='(-3)³ = -27.'),
-              tf('√16 = 8', key=False, note='√16 = 4.'),
+              tf('√16 = 4', key=True, note='4² = 16, and √ means the nonnegative root.'),
           ]),
       ],
       f1=B('Verify inverses by composition', 'HSF-BF.B.4.b', [
@@ -249,10 +249,10 @@ SETS = [
     # ------------------------------------------------------------------ F-LE.A.1.a
     S('HSF-LE.A.1.a', 'Prove that linear functions grow by equal differences and exponential functions grow by equal factors over equal intervals',
       main=[
-          work('f(x) = 3x + 5. Show that f grows by equal differences over equal intervals: find f(x + h) - f(x), and explain why it does not depend on x.', 'f(x + h) - f(x) =',
+          work('f(x) = 3x + 5. Show that f grows by equal differences over equal intervals: find f(x + h) - f(x) in simplest form, and explain why it does not depend on x.', 'f(x + h) - f(x) =',
                method='Algebra showing f(x + h) - f(x) = 3(x + h) + 5 - (3x + 5) = 3h, and the statement that 3h depends only on the interval length h.',
                key='3h', note='Form required: the simplified difference and the explanation.'),
-          work('g(x) = 4 · 2^x. Show that g grows by equal factors over equal intervals: find g(x + h) ÷ g(x), and explain why it does not depend on x.', 'g(x + h) ÷ g(x) =',
+          work('g(x) = 4 · 2^x. Show that g grows by equal factors over equal intervals: find g(x + h) ÷ g(x) in simplest form, and explain why it does not depend on x.', 'g(x + h) ÷ g(x) =',
                method='Algebra showing 4 · 2^(x+h) ÷ (4 · 2^x) = 2^h, and the statement that 2^h depends only on h.',
                key='2^h', note='Form required: the simplified ratio and the explanation.'),
           sa('A table shows x = 0, 2, 4, 6 and y = 5, 11, 17, 23.\nIs the relationship linear or exponential? Explain using equal intervals.', 'Answer:',

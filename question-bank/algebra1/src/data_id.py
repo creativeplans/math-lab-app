@@ -470,7 +470,7 @@ SETS = [
           sa('Ice cream sales and sunburn rates are strongly correlated.\nName a lurking variable.', 'Answer:', key='Hot, sunny weather', note='Any reasonable lurking variable.'),
           sa('How could you test whether a new study app causes higher test scores?', 'Answer:',
              key='Run a randomized experiment: randomly assign students to use the app or not, then compare the groups\' scores.', note='Any design that uses random assignment and a comparison group.'),
-          mc('Which kind of study can show cause and effect?', ['A randomized experiment', 'An observational study', 'A survey of volunteers', 'A scatter plot of existing data'],
+          mc('Which study design can show that one variable causes changes in another?', ['A randomized experiment', 'An observational study', 'A survey of volunteers', 'A scatter plot of existing data'],
              note='Random assignment balances other variables.'),
           tf('A strong correlation between two variables proves that one causes the other.', key=False, note='Correlation alone never proves causation.'),
       ],

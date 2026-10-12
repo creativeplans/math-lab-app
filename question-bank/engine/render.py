@@ -1685,6 +1685,17 @@ def draw_label_box(c, label, qid=None):
     while sw(label, FB, size) > CW - 20 and size > 7:
         size -= 0.25
     c.setFillColor(INK)
+    if sw(label, FB, size) > CW - 20:
+        # too long for one line (long course-placement labels): break after the domain onto a second line
+        parts = label.split('  •  ')
+        lines = ['  •  '.join(parts[:2]), '  •  '.join(parts[2:])]
+        size = 9.5
+        while max(sw(t, FB, size) for t in lines) > CW - 20 and size > 6:
+            size -= 0.25
+        c.setFont(FB, size)
+        c.drawString(ML + 8, 38, lines[0])
+        c.drawString(ML + 8, 25, lines[1])
+        return
     c.setFont(FB, size)
     c.drawString(ML + 8, 33, label)
 

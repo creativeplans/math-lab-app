@@ -86,8 +86,8 @@ SETS = [
           tf('x = -4 is a solution of √(x + 8) = x + 2.', key=False, note='√4 = 2, but -4 + 2 = -2, so the equation is false at x = -4.'),
       ]),
       f2=B('Add, subtract, and multiply complex numbers', 'HSN-CN.A.2', [
-          sa('Add.\n(3 + 2i) + (1 - 5i)', 'Sum:', key='4 - 3i', note='Form required: a + bi. Add real parts (3 + 1) and imaginary parts (2 - 5).'),
-          sa('Multiply.\n(2 + i)(3 - i)', 'Product:', key='7 + i', note='Form required: a + bi. 6 - 2i + 3i - i² = 6 + i + 1 = 7 + i, because i² = -1.'),
+          sa('Add. Write the answer in the form a + bi.\n(3 + 2i) + (1 - 5i)', 'Sum:', key='4 - 3i', note='Form required: a + bi. Add real parts (3 + 1) and imaginary parts (2 - 5).'),
+          sa('Multiply. Write the answer in the form a + bi.\n(2 + i)(3 - i)', 'Product:', key='7 + i', note='Form required: a + bi. 6 - 2i + 3i - i² = 6 + i + 1 = 7 + i, because i² = -1.'),
           mc('Simplify.\ni² · i', ['-i', 'i', '1', '-1'], note='i² = -1, so i² · i = -i.'),
           tf('(1 + i)² = 2i', key=True, note='(1 + i)² = 1 + 2i + i² = 1 + 2i - 1 = 2i.'),
           tf('i · i = 1', key=False, note='i · i = i² = -1.'),
@@ -138,7 +138,7 @@ SETS = [
       ]),
       f2=B('Write numbers in the complex number system as a + bi', 'HSN-CN.A.1', [
           sa('Write √-49 in the form bi.', 'Answer:', key='7i', note='Form required: bi. √-49 = √49 · √-1 = 7i.'),
-          sa('Name the real part and the imaginary part of 4 - 3i.', 'Answer:', key='Real part 4; imaginary part -3', note='Both parts are required.'),
+          sa('Name the real part and the imaginary part of 4 - 3i.', 'Answer:', key='Real part 4; imaginary part -3', note='Any equivalent wording. Both parts are required.'),
           mc('Which of these is a real number?', ['i²', 'i', '2i', '1 + i'], note='i² = -1, which is real.'),
           tf('Every real number is a complex number.', key=True, note='A real number a is a + 0i.'),
           tf('i² = 1', key=False, note='i is defined so that i² = -1.'),
@@ -233,7 +233,7 @@ SETS = [
       ],
       f1=B('Use geometric quantities to make design decisions', 'HSG-MG.A.3', [
           sa('A rectangular garden needs an area of at least 200 square feet and can use at most 60 feet of fence.\nDoes a 10 ft by 20 ft garden meet both requirements? Explain.', 'Answer:',
-             key='Yes. Its area is 200 square feet and its perimeter is 60 feet.', note='Both checks are required.'),
+             key='Yes. Its area is 200 square feet and its perimeter is 60 feet.', note='Any equivalent wording. Both checks are required.'),
           sa('A box with a square base 10 cm on each side must hold 1,000 cubic centimeters.\nHow tall must it be?', 'Height:', key='10 cm', note='Any equivalent form. 10 × 10 × h = 1,000.'),
           mc('A rectangular pen must have an area of 100 square meters.\nWhich dimensions use the least fence?', ['10 m by 10 m', '5 m by 20 m', '4 m by 25 m', '2 m by 50 m'],
              note='The perimeters are 40, 50, 58, and 104 meters.'),
@@ -242,9 +242,9 @@ SETS = [
       ]),
       f2=B('Recognize surveys, experiments, and observational studies and the variables they measure', 'HSS-IC.B.3', [
           sa('A researcher randomly assigns 40 plants to two fertilizers and measures each plant\'s growth in centimeters.\nWhat kind of study is this, and what is the response variable (with units)?', 'Answer:',
-             key='An experiment; the response is growth in centimeters.', note='Both parts are required.'),
+             key='An experiment; the response is growth in centimeters.', note='Any equivalent wording. Both parts are required.'),
           sa('A survey asks 200 randomly chosen students how many hours they sleep on a school night.\nWhat kind of study is this, and what variable does it measure?', 'Answer:',
-             key='A survey (sample survey); hours of sleep per school night.', note='Both parts are required.'),
+             key='A survey (sample survey); hours of sleep per school night.', note='Any equivalent wording. Both parts are required.'),
           mc('Which kind of study can show cause and effect?', ['A randomized experiment', 'An observational study', 'A survey', 'A poll of volunteers'],
              note='Only random assignment of treatments controls for other variables.'),
           tf('In an observational study, the researchers do not assign treatments.', key=True, note='They observe groups that already exist.'),

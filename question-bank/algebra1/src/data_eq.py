@@ -318,7 +318,7 @@ SETS = [
       f1=B('Complete the square to find the center and radius of a circle', 'HSG-GPE.A.1', [
           sa('Find the center and radius of the circle x² + y² - 6x + 4y - 12 = 0.', 'Answer:', key='Center (3, -2), radius 5',
              note='Form required: the center and the radius. (x - 3)² + (y + 2)² = 12 + 9 + 4 = 25.'),
-          sa('Write an equation of the circle with center (-1, 4) and radius 3.', 'Equation:', key='(x + 1)² + (y - 4)² = 9',
+          sa('Write an equation of the circle with center (2, -5) and radius 6 in standard form.', 'Equation:', key='(x - 2)² + (y + 5)² = 36',
              note='Form required: standard form (x - h)² + (y - k)² = r².'),
           mc('What is the center of the circle x² + 8x + y² = 9?', ['(-4, 0)', '(4, 0)', '(0, -4)', '(-8, 0)'], note='(x + 4)² + y² = 25.'),
           tf('The circle (x - 2)² + y² = 16 has radius 4.', key=True, note='r² = 16.'),
@@ -360,7 +360,7 @@ SETS = [
               sa('Solve 3x - 4 = 0.', 'x =', key='4/3', note='Any equivalent form, such as 1{1/3}. A rounded decimal is not exact.'),
               mc('Solve 5 - 2x = 0.', ['x = 2.5', 'x = -2.5', 'x = 5', 'x = 3'], note='-2x = -5, so x = 2.5.'),
               tf('If x - 6 = 0, then x = 6.', key=True, note='Add 6.'),
-              tf('If 4x = 0, then x = 4.', key=False, note='x = 0.'),
+              tf('If 4x = 0, then x = 0.', key=True, note='Divide both sides by 4: 0 ÷ 4 = 0.'),
           ]),
       ],
       f1=B('Find the zeros of a polynomial from its factors', 'HSA-APR.B.3', [
@@ -466,7 +466,7 @@ SETS = [
               sa('Simplify 2³ · 2⁴. Write the answer as a power of 2.', 'Answer:', key='2⁷', note='Form required: a power of 2. Add the exponents.'),
               mc('Which power of 2 equals 64?', ['2⁶', '2⁸', '2³²', '2⁵'], note='2⁶ = 64.'),
               tf('3⁴ = 81', key=True, note='3 · 3 · 3 · 3 = 81.'),
-              tf('2⁻³ = -8', key=False, note='2⁻³ = 1 ÷ 2³ = {1/8}.'),
+              tf('2⁻³ = {1/8}', key=True, note='2⁻³ = 1 ÷ 2³ = 1 ÷ 8. A negative exponent does not make the value negative.'),
           ]),
       ],
       f1=B('Use volume formulas to write and solve equations for a dimension', 'HSG-GMD.A.3', [
@@ -714,7 +714,7 @@ SETS = [
           mc('Solve x² - 6x + 10 = 0.', ['3 + i and 3 - i', '-3 + i and -3 - i', '3 + 2i and 3 - 2i', '6 + i and 6 - i'], note='(x - 3)² = -1.'),
           tf('When a line and a parabola do not intersect, the equation from substitution has no real solutions.', key=True,
              note='A real solution x would give a common point.'),
-          tf('i² = 1', key=False, note='i² = -1.'),
+          tf('i³ = i', key=False, note='i³ = i² · i = -i.'),
       ])),
 
     # ------------------------------------------------------------------ A-REI.D.10
@@ -807,7 +807,7 @@ SETS = [
           tf('The solution of 10^x = 0.01 is x = 2.', key=False, note='0.01 = 10⁻², so x = -2.'),
       ]),
       f2=B('Solve trigonometric equations with graphs and technology', 'HSF-TF.B.7', [
-          sa('Solve sin x = {1/2} for 0 ≤ x ≤ π.', 'Solutions:', key='x = π ÷ 6 or x = 5π ÷ 6', note='Form required: exact, both solutions.'),
+          sa('Solve sin x = {1/2} for 0 ≤ x ≤ π. Give exact answers.', 'Solutions:', key='x = π ÷ 6 or x = 5π ÷ 6', note='Form required: exact, both solutions.'),
           sa('Use a calculator to solve cos x = 0.3 for 0 ≤ x ≤ π, to the nearest hundredth of a radian.', 'x ≈', key='1.27',
              note='Form required: rounded to the nearest hundredth. x = cos⁻¹(0.3) ≈ 1.266.'),
           mc('How many solutions does sin x = 2 have?', ['None', 'One', 'Two', 'Infinitely many'], note='The values of sin x are between -1 and 1.'),
@@ -900,7 +900,7 @@ SETS = [
           ]),
       ],
       f1=B('Write the equation of a circle from a situation', 'HSG-GPE.A.1', [
-          sa('A sprinkler at (3, -2) waters everything within 4 meters.\nWrite an equation of the boundary of the watered region.', 'Equation:', key='(x - 3)² + (y + 2)² = 16',
+          sa('A sprinkler at (3, -2) waters everything within 4 meters.\nWrite an equation of the boundary of the watered region in standard form.', 'Equation:', key='(x - 3)² + (y + 2)² = 16',
              note='Form required: the standard form of a circle.'),
           sa('A cell tower at the origin reaches 10 km. Is a phone at (6, 7) within range? Explain.', 'Answer:', key='Yes. 6² + 7² = 85 < 100, so it is about 9.2 km away.',
              note='Any equivalent explanation using distance.'),

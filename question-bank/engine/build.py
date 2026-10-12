@@ -127,7 +127,10 @@ TOC_PER_PAGE = 17
 
 def heading_page(c, kicker, title, subtitle=None, rows=None, pageno=None):
     c.setFillColor(R.BLUE)
-    c.setFont(R.FB, 13)
+    ks = 13
+    while R.sw(kicker, R.FB, ks) > R.CW and ks > 9:  # long course domain names shrink to fit
+        ks -= 0.25
+    c.setFont(R.FB, ks)
     c.drawString(R.ML, 380, kicker)
     size = 30
     lines = R.wrap(title, R.FB, size, R.CW)

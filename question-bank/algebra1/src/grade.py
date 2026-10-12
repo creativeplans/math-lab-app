@@ -19,7 +19,8 @@ DOMAINS = [
     ('Interpreting Categorical & Quantitative Data', 'data_id'),
 ]
 EXTRA_GRADING_RULES = [
-    'Algebra I answer forms: the grading_note of every written answer begins with "Form required:" or "Any equivalent form". '
+    'Algebra I answer forms: the grading_note of every written answer begins with "Form required:" or with "Any" '
+    '(for example "Any equivalent form", "Any equivalent wording", or "Any correct graph"), which says what else is accepted. '
     'When a form is required (for example expanded, factored completely, simplest radical form, slope-intercept form, '
     'vertex form, exact value, or a stated rounding), an answer in another form is not full credit even if it is equivalent.',
     'Equations, inequalities, and systems: "x = 3" and "3" are the same answer; a solution set must contain every solution '

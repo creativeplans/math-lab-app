@@ -1,0 +1,5821 @@
+{
+ "format_version": 1,
+ "collection": {
+  "id": "ALG1",
+  "grade": null,
+  "course": "Algebra I",
+  "version": "1.0.0",
+  "date": "2026-10-11"
+ },
+ "grade": null,
+ "title": "Algebra I — Common Core High School Math — Question Sets",
+ "set_count": 68,
+ "question_count": 1700,
+ "figure_count": 44,
+ "id_format": "S<set>-<section>-Q<number>. Section codes: M = MAIN (the course's own standard), B1, B2, ... = BACKWARD branches (a Grade K-8 standard, or a course standard that is the MAIN standard of an earlier set), F1 = FORWARD 1 and F2 = FORWARD 2 (standards of later courses; standard_course names the course). id is unique within this collection; uid = \"ALG1:\" + id is unique across all collections. Forward branches name standards only, never question IDs of other collections. Set and branch numbers are fixed: they need not be consecutive, and an ID is never reused for a different skill (see revisions.json).",
+ "revisions_file": null,
+ "relations": {
+  "main": "the course skill the set is built around",
+  "backward": "a prerequisite skill to check when a student misses MAIN questions (an earlier grade, or an earlier set of this course)",
+  "forward1": "a directly connected skill in a later course (standard_course names it)",
+  "forward2": "a further connected skill in a later course, at least as advanced as FORWARD 1",
+  "nearest_related": "true marks a forward branch that no later-course standard directly continues; it uses the nearest related standard"
+ },
+ "grading_rules": [
+  "Match each student response to its key record by the question ID printed on the question page (for example S40-F2-Q3). The page number is the same in the Question Collection and the Answer Key. IDs are unique within one grade's collection; across collections use uid (for example G5:S40-F2-Q3).",
+  "Multiple choice and true/false: the response is correct when the chosen letter equals correct_letter, or when the student wrote the text of the correct choice.",
+  "Short answer: accept any mathematically equivalent form unless the question asks for a specific form (equivalent fractions, decimals, and mixed numbers; a ratio written as a : b, a to b, or a/b; \"x = 5\" or \"5\"; terms of an expression in any order). Units are not required unless the question asks for them.",
+  "When an answer has several parts (separated by semicolons, or with labels such as \"Rate of change:\"), every part must be correct.",
+  "Drawing / plotting questions (type plot): correct_answer describes what a correct drawing shows. Judge the student's drawing against it.",
+  "Drawing + written questions (type plot_text): the student draws on the figure AND writes an answer. drawing_answer describes the correct drawing and correct_answer the written answer. Both must be correct: every requested point, segment or shape in the drawing, and the written conclusion.",
+  "Answer with required work (type work): required_method says what the shown work must use. A correct final answer without that work earns partial credit only; correct work with a slip in the final answer is also partial.",
+  "Explain / describe questions: grading_note says what a correct response must include; accept any reasonable wording.",
+  "grading_note also lists other accepted answers and the work behind an answer. It is guidance for the grader, not for students.",
+  "Algebra I answer forms: the grading_note of every written answer begins with \"Form required:\" or with \"Any\" (for example \"Any equivalent form\", \"Any equivalent wording\", or \"Any correct graph\"), which says what else is accepted. When a form is required (for example expanded, factored completely, simplest radical form, slope-intercept form, vertex form, exact value, or a stated rounding), an answer in another form is not full credit even if it is equivalent.",
+  "Equations, inequalities, and systems: \"x = 3\" and \"3\" are the same answer; a solution set must contain every solution (both roots of a quadratic, in any order); \"no solution\" and \"all real numbers\" are answers when the key says so; an inequality may be written either way round (x > 2 or 2 < x) unless a notation is asked for; a solution of a system may be written as an ordered pair or as x = ..., y = ....",
+  "Every question has an explanation in its grading_note, after the form rule. It shows why the key is correct and can be shown to the student as feedback after grading."
+ ],
+ "markup": "prompt is plain text. prompt_markup uses {a/b} for a stacked fraction and 2{1/2} for a mixed number.",
+ "sets": [
+  {
+   "set": 1,
+   "set_id": "S1",
+   "file": "sets/S01.json",
+   "standard": "HSN-RN.A.1",
+   "title": "Explain the meaning of rational exponents from the properties of integer exponents",
+   "domain": "Number & Quantity",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Explain the meaning of rational exponents from the properties of integer exponents",
+     "standard": "HSN-RN.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S1-M-Q1",
+      "S1-M-Q2",
+      "S1-M-Q3",
+      "S1-M-Q4",
+      "S1-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Apply the properties of integer exponents",
+     "standard": "8.EE.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S1-B1-Q1",
+      "S1-B1-Q2",
+      "S1-B1-Q3",
+      "S1-B1-Q4",
+      "S1-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Evaluate square roots and cube roots",
+     "standard": "8.EE.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S1-B2-Q1",
+      "S1-B2-Q2",
+      "S1-B2-Q3",
+      "S1-B2-Q4",
+      "S1-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Express the solution of an exponential equation as a logarithm",
+     "standard": "HSF-LE.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S1-F1-Q1",
+      "S1-F1-Q2",
+      "S1-F1-Q3",
+      "S1-F1-Q4",
+      "S1-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use the inverse relationship between exponents and logarithms",
+     "standard": "HSF-BF.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S1-F2-Q1",
+      "S1-F2-Q2",
+      "S1-F2-Q3",
+      "S1-F2-Q4",
+      "S1-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 2,
+   "set_id": "S2",
+   "file": "sets/S02.json",
+   "standard": "HSN-RN.A.2",
+   "title": "Rewrite expressions with radicals and rational exponents",
+   "domain": "Number & Quantity",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Rewrite expressions with radicals and rational exponents",
+     "standard": "HSN-RN.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S2-M-Q1",
+      "S2-M-Q2",
+      "S2-M-Q3",
+      "S2-M-Q4",
+      "S2-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Solve equations of the form x² = p and x³ = p",
+     "standard": "8.EE.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S2-B1-Q1",
+      "S2-B1-Q2",
+      "S2-B1-Q3",
+      "S2-B1-Q4",
+      "S2-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Use the meaning of rational exponents",
+     "standard": "HSN-RN.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S2-B2-Q1",
+      "S2-B2-Q2",
+      "S2-B2-Q3",
+      "S2-B2-Q4",
+      "S2-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Solve radical equations and identify extraneous solutions",
+     "standard": "HSA-REI.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S2-F1-Q1",
+      "S2-F1-Q2",
+      "S2-F1-Q3",
+      "S2-F1-Q4",
+      "S2-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Add, subtract, and multiply complex numbers",
+     "standard": "HSN-CN.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S2-F2-Q1",
+      "S2-F2-Q2",
+      "S2-F2-Q3",
+      "S2-F2-Q4",
+      "S2-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 3,
+   "set_id": "S3",
+   "file": "sets/S03.json",
+   "standard": "HSN-RN.B.3",
+   "title": "Explain why sums and products of rational and irrational numbers are rational or irrational",
+   "domain": "Number & Quantity",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Explain why sums and products of rational and irrational numbers are rational or irrational",
+     "standard": "HSN-RN.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S3-M-Q1",
+      "S3-M-Q2",
+      "S3-M-Q3",
+      "S3-M-Q4",
+      "S3-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Classify numbers as rational or irrational",
+     "standard": "8.NS.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S3-B1-Q1",
+      "S3-B1-Q2",
+      "S3-B1-Q3",
+      "S3-B1-Q4",
+      "S3-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Write rational numbers as quotients of integers",
+     "standard": "7.NS.A.2.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S3-B2-Q1",
+      "S3-B2-Q2",
+      "S3-B2-Q3",
+      "S3-B2-Q4",
+      "S3-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find exact lengths and perimeters on the coordinate plane",
+     "standard": "HSG-GPE.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S3-F1-Q1",
+      "S3-F1-Q2",
+      "S3-F1-Q3",
+      "S3-F1-Q4",
+      "S3-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Write numbers in the complex number system as a + bi",
+     "standard": "HSN-CN.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S3-F2-Q1",
+      "S3-F2-Q2",
+      "S3-F2-Q3",
+      "S3-F2-Q4",
+      "S3-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 4,
+   "set_id": "S4",
+   "file": "sets/S04.json",
+   "standard": "HSN-Q.A.1",
+   "title": "Use units to guide multistep solutions and to choose scales for graphs",
+   "domain": "Number & Quantity",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Use units to guide multistep solutions and to choose scales for graphs",
+     "standard": "HSN-Q.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S4-M-Q1",
+      "S4-M-Q2",
+      "S4-M-Q3",
+      "S4-M-Q4",
+      "S4-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Convert measurement units with ratio reasoning",
+     "standard": "6.RP.A.3.d",
+     "nearest_related": false,
+     "question_ids": [
+      "S4-B1-Q1",
+      "S4-B1-Q2",
+      "S4-B1-Q3",
+      "S4-B1-Q4",
+      "S4-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Compute unit rates with fractions",
+     "standard": "7.RP.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S4-B2-Q1",
+      "S4-B2-Q2",
+      "S4-B2-Q3",
+      "S4-B2-Q4",
+      "S4-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use density in a model",
+     "standard": "HSG-MG.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S4-F1-Q1",
+      "S4-F1-Q2",
+      "S4-F1-Q3",
+      "S4-F1-Q4",
+      "S4-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Solve problems with velocity vectors",
+     "standard": "HSN-VM.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S4-F2-Q1",
+      "S4-F2-Q2",
+      "S4-F2-Q3",
+      "S4-F2-Q4",
+      "S4-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 5,
+   "set_id": "S5",
+   "file": "sets/S05.json",
+   "standard": "HSN-Q.A.2",
+   "title": "Define appropriate quantities for descriptive modeling",
+   "domain": "Number & Quantity",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Define appropriate quantities for descriptive modeling",
+     "standard": "HSN-Q.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S5-M-Q1",
+      "S5-M-Q2",
+      "S5-M-Q3",
+      "S5-M-Q4",
+      "S5-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Use variables to represent quantities in a situation",
+     "standard": "6.EE.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S5-B1-Q1",
+      "S5-B1-Q2",
+      "S5-B1-Q3",
+      "S5-B1-Q4",
+      "S5-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Write and solve px + q = r from a word problem",
+     "standard": "7.EE.B.4.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S5-B2-Q1",
+      "S5-B2-Q2",
+      "S5-B2-Q3",
+      "S5-B2-Q4",
+      "S5-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use geometric quantities to make design decisions",
+     "standard": "HSG-MG.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S5-F1-Q1",
+      "S5-F1-Q2",
+      "S5-F1-Q3",
+      "S5-F1-Q4",
+      "S5-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Recognize surveys, experiments, and observational studies and the variables they measure",
+     "standard": "HSS-IC.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S5-F2-Q1",
+      "S5-F2-Q2",
+      "S5-F2-Q3",
+      "S5-F2-Q4",
+      "S5-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 6,
+   "set_id": "S6",
+   "file": "sets/S06.json",
+   "standard": "HSN-Q.A.3",
+   "title": "Choose a level of accuracy that fits the limits of measurement",
+   "domain": "Number & Quantity",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Choose a level of accuracy that fits the limits of measurement",
+     "standard": "HSN-Q.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S6-M-Q1",
+      "S6-M-Q2",
+      "S6-M-Q3",
+      "S6-M-Q4",
+      "S6-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Estimate to check whether an answer is reasonable",
+     "standard": "7.EE.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S6-B1-Q1",
+      "S6-B1-Q2",
+      "S6-B1-Q3",
+      "S6-B1-Q4",
+      "S6-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Round decimals to any place",
+     "standard": "5.NBT.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S6-B2-Q1",
+      "S6-B2-Q2",
+      "S6-B2-Q3",
+      "S6-B2-Q4",
+      "S6-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use volume formulas and report results to a sensible accuracy",
+     "standard": "HSG-GMD.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S6-F1-Q1",
+      "S6-F1-Q2",
+      "S6-F1-Q3",
+      "S6-F1-Q4",
+      "S6-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use the margin of error of a sample survey",
+     "standard": "HSS-IC.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S6-F2-Q1",
+      "S6-F2-Q2",
+      "S6-F2-Q3",
+      "S6-F2-Q4",
+      "S6-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 7,
+   "set_id": "S7",
+   "file": "sets/S07.json",
+   "standard": "HSA-SSE.A.1.a",
+   "title": "Interpret the terms, factors, and coefficients of an expression in context",
+   "domain": "Seeing Structure in Expressions & Arithmetic with Polynomials",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Interpret the terms, factors, and coefficients of an expression in context",
+     "standard": "HSA-SSE.A.1.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S7-M-Q1",
+      "S7-M-Q2",
+      "S7-M-Q3",
+      "S7-M-Q4",
+      "S7-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Identify the parts of an expression",
+     "standard": "6.EE.A.2.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S7-B1-Q1",
+      "S7-B1-Q2",
+      "S7-B1-Q3",
+      "S7-B1-Q4",
+      "S7-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Rewrite an expression to show how quantities are related",
+     "standard": "7.EE.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S7-B2-Q1",
+      "S7-B2-Q2",
+      "S7-B2-Q3",
+      "S7-B2-Q4",
+      "S7-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Rewrite a rational expression and interpret its parts",
+     "standard": "HSA-APR.D.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S7-F1-Q1",
+      "S7-F1-Q2",
+      "S7-F1-Q3",
+      "S7-F1-Q4",
+      "S7-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Compose functions and interpret the composite in context",
+     "standard": "HSF-BF.A.1.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S7-F2-Q1",
+      "S7-F2-Q2",
+      "S7-F2-Q3",
+      "S7-F2-Q4",
+      "S7-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 8,
+   "set_id": "S8",
+   "file": "sets/S08.json",
+   "standard": "HSA-SSE.A.1.b",
+   "title": "Interpret complicated expressions by viewing one or more of their parts as a single quantity",
+   "domain": "Seeing Structure in Expressions & Arithmetic with Polynomials",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Interpret complicated expressions by viewing one or more of their parts as a single quantity",
+     "standard": "HSA-SSE.A.1.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S8-M-Q1",
+      "S8-M-Q2",
+      "S8-M-Q3",
+      "S8-M-Q4",
+      "S8-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Apply the distributive property to write equivalent expressions",
+     "standard": "6.EE.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S8-B1-Q1",
+      "S8-B1-Q2",
+      "S8-B1-Q3",
+      "S8-B1-Q4",
+      "S8-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Evaluate expressions for given values",
+     "standard": "6.EE.A.2.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S8-B2-Q1",
+      "S8-B2-Q2",
+      "S8-B2-Q3",
+      "S8-B2-Q4",
+      "S8-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use the formula for the sum of a finite geometric series",
+     "standard": "HSA-SSE.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S8-F1-Q1",
+      "S8-F1-Q2",
+      "S8-F1-Q3",
+      "S8-F1-Q4",
+      "S8-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Solve exponential growth models with logarithms",
+     "standard": "HSF-LE.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S8-F2-Q1",
+      "S8-F2-Q2",
+      "S8-F2-Q3",
+      "S8-F2-Q4",
+      "S8-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 9,
+   "set_id": "S9",
+   "file": "sets/S09.json",
+   "standard": "HSA-APR.A.1",
+   "title": "Add and subtract polynomials and explain why the result is a polynomial",
+   "domain": "Seeing Structure in Expressions & Arithmetic with Polynomials",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Add and subtract polynomials and explain why the result is a polynomial",
+     "standard": "HSA-APR.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S9-M-Q1",
+      "S9-M-Q2",
+      "S9-M-Q3",
+      "S9-M-Q4",
+      "S9-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Add and subtract linear expressions",
+     "standard": "7.EE.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S9-B1-Q1",
+      "S9-B1-Q2",
+      "S9-B1-Q3",
+      "S9-B1-Q4",
+      "S9-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Combine like terms to write equivalent expressions",
+     "standard": "6.EE.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S9-B2-Q1",
+      "S9-B2-Q2",
+      "S9-B2-Q3",
+      "S9-B2-Q4",
+      "S9-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use the Remainder Theorem",
+     "standard": "HSA-APR.B.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S9-F1-Q1",
+      "S9-F1-Q2",
+      "S9-F1-Q3",
+      "S9-F1-Q4",
+      "S9-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Rewrite a quotient of polynomials as q(x) + r(x)/b(x)",
+     "standard": "HSA-APR.D.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S9-F2-Q1",
+      "S9-F2-Q2",
+      "S9-F2-Q3",
+      "S9-F2-Q4",
+      "S9-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 10,
+   "set_id": "S10",
+   "file": "sets/S10.json",
+   "standard": "HSA-APR.A.1",
+   "title": "Multiply polynomials",
+   "domain": "Seeing Structure in Expressions & Arithmetic with Polynomials",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Multiply polynomials",
+     "standard": "HSA-APR.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S10-M-Q1",
+      "S10-M-Q2",
+      "S10-M-Q3",
+      "S10-M-Q4",
+      "S10-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Apply the distributive property to linear expressions",
+     "standard": "6.EE.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S10-B1-Q1",
+      "S10-B1-Q2",
+      "S10-B1-Q3",
+      "S10-B1-Q4",
+      "S10-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Multiply powers with the same base",
+     "standard": "8.EE.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S10-B2-Q1",
+      "S10-B2-Q2",
+      "S10-B2-Q3",
+      "S10-B2-Q4",
+      "S10-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Prove polynomial identities",
+     "standard": "HSA-APR.C.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S10-F1-Q1",
+      "S10-F1-Q2",
+      "S10-F1-Q3",
+      "S10-F1-Q4",
+      "S10-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Expand powers of binomials with the binomial theorem",
+     "standard": "HSA-APR.C.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S10-F2-Q1",
+      "S10-F2-Q2",
+      "S10-F2-Q3",
+      "S10-F2-Q4",
+      "S10-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 11,
+   "set_id": "S11",
+   "file": "sets/S11.json",
+   "standard": "HSA-SSE.A.2",
+   "title": "Use structure to factor with a greatest common factor and the difference of squares",
+   "domain": "Seeing Structure in Expressions & Arithmetic with Polynomials",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Use structure to factor with a greatest common factor and the difference of squares",
+     "standard": "HSA-SSE.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S11-M-Q1",
+      "S11-M-Q2",
+      "S11-M-Q3",
+      "S11-M-Q4",
+      "S11-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Use the greatest common factor and the distributive property",
+     "standard": "6.NS.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S11-B1-Q1",
+      "S11-B1-Q2",
+      "S11-B1-Q3",
+      "S11-B1-Q4",
+      "S11-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Multiply a sum and a difference",
+     "standard": "HSA-APR.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S11-B2-Q1",
+      "S11-B2-Q2",
+      "S11-B2-Q3",
+      "S11-B2-Q4",
+      "S11-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find the zeros of a polynomial from its factors",
+     "standard": "HSA-APR.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S11-F1-Q1",
+      "S11-F1-Q2",
+      "S11-F1-Q3",
+      "S11-F1-Q4",
+      "S11-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Factor sums of squares with complex numbers",
+     "standard": "HSN-CN.C.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S11-F2-Q1",
+      "S11-F2-Q2",
+      "S11-F2-Q3",
+      "S11-F2-Q4",
+      "S11-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 12,
+   "set_id": "S12",
+   "file": "sets/S12.json",
+   "standard": "HSA-SSE.A.2",
+   "title": "Factor quadratic trinomials",
+   "domain": "Seeing Structure in Expressions & Arithmetic with Polynomials",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Factor quadratic trinomials",
+     "standard": "HSA-SSE.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S12-M-Q1",
+      "S12-M-Q2",
+      "S12-M-Q3",
+      "S12-M-Q4",
+      "S12-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find factor pairs of a whole number",
+     "standard": "4.OA.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S12-B1-Q1",
+      "S12-B1-Q2",
+      "S12-B1-Q3",
+      "S12-B1-Q4",
+      "S12-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Multiply two binomials",
+     "standard": "HSA-APR.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S12-B2-Q1",
+      "S12-B2-Q2",
+      "S12-B2-Q3",
+      "S12-B2-Q4",
+      "S12-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use factored form to describe the graph of a polynomial function",
+     "standard": "HSF-IF.C.7.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S12-F1-Q1",
+      "S12-F1-Q2",
+      "S12-F1-Q3",
+      "S12-F1-Q4",
+      "S12-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Write a polynomial from its zeros and find zeros by factoring",
+     "standard": "HSA-APR.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S12-F2-Q1",
+      "S12-F2-Q2",
+      "S12-F2-Q3",
+      "S12-F2-Q4",
+      "S12-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 13,
+   "set_id": "S13",
+   "file": "sets/S13.json",
+   "standard": "HSA-SSE.A.2",
+   "title": "Use structure to factor perfect squares and expressions in quadratic form",
+   "domain": "Seeing Structure in Expressions & Arithmetic with Polynomials",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Use structure to factor perfect squares and expressions in quadratic form",
+     "standard": "HSA-SSE.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S13-M-Q1",
+      "S13-M-Q2",
+      "S13-M-Q3",
+      "S13-M-Q4",
+      "S13-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find squares of whole numbers and decimals",
+     "standard": "6.EE.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S13-B1-Q1",
+      "S13-B1-Q2",
+      "S13-B1-Q3",
+      "S13-B1-Q4",
+      "S13-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Square a binomial",
+     "standard": "HSA-APR.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S13-B2-Q1",
+      "S13-B2-Q2",
+      "S13-B2-Q3",
+      "S13-B2-Q4",
+      "S13-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find the zeros of polynomial functions in quadratic form",
+     "standard": "HSF-IF.C.7.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S13-F1-Q1",
+      "S13-F1-Q2",
+      "S13-F1-Q3",
+      "S13-F1-Q4",
+      "S13-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Factor quadratic expressions with complex numbers",
+     "standard": "HSN-CN.C.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S13-F2-Q1",
+      "S13-F2-Q2",
+      "S13-F2-Q3",
+      "S13-F2-Q4",
+      "S13-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 14,
+   "set_id": "S14",
+   "file": "sets/S14.json",
+   "standard": "HSA-SSE.B.3.a",
+   "title": "Factor a quadratic expression to reveal the zeros of the function it defines",
+   "domain": "Seeing Structure in Expressions & Arithmetic with Polynomials",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Factor a quadratic expression to reveal the zeros of the function it defines",
+     "standard": "HSA-SSE.B.3.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S14-M-Q1",
+      "S14-M-Q2",
+      "S14-M-Q3",
+      "S14-M-Q4",
+      "S14-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Factor trinomials with a leading coefficient of 1",
+     "standard": "HSA-SSE.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S14-B1-Q1",
+      "S14-B1-Q2",
+      "S14-B1-Q3",
+      "S14-B1-Q4",
+      "S14-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Use substitution to decide which values make an equation true",
+     "standard": "6.EE.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S14-B2-Q1",
+      "S14-B2-Q2",
+      "S14-B2-Q3",
+      "S14-B2-Q4",
+      "S14-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find zeros of cubic functions by factoring",
+     "standard": "HSA-APR.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S14-F1-Q1",
+      "S14-F1-Q2",
+      "S14-F1-Q3",
+      "S14-F1-Q4",
+      "S14-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Sketch polynomial graphs from their zeros",
+     "standard": "HSF-IF.C.7.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S14-F2-Q1",
+      "S14-F2-Q2",
+      "S14-F2-Q3",
+      "S14-F2-Q4",
+      "S14-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 15,
+   "set_id": "S15",
+   "file": "sets/S15.json",
+   "standard": "HSA-SSE.B.3.b",
+   "title": "Complete the square to reveal the maximum or minimum value of a quadratic function",
+   "domain": "Seeing Structure in Expressions & Arithmetic with Polynomials",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Complete the square to reveal the maximum or minimum value of a quadratic function",
+     "standard": "HSA-SSE.B.3.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S15-M-Q1",
+      "S15-M-Q2",
+      "S15-M-Q3",
+      "S15-M-Q4",
+      "S15-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Recognize and complete perfect square trinomials",
+     "standard": "HSA-SSE.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S15-B1-Q1",
+      "S15-B1-Q2",
+      "S15-B1-Q3",
+      "S15-B1-Q4",
+      "S15-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Describe where a graph rises, falls, and reaches its highest point",
+     "standard": "8.F.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S15-B2-Q1",
+      "S15-B2-Q2",
+      "S15-B2-Q3",
+      "S15-B2-Q4",
+      "S15-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Complete the square to find the center and radius of a circle",
+     "standard": "HSG-GPE.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S15-F1-Q1",
+      "S15-F1-Q2",
+      "S15-F1-Q3",
+      "S15-F1-Q4",
+      "S15-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Derive the equations of ellipses and hyperbolas from their foci",
+     "standard": "HSG-GPE.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S15-F2-Q1",
+      "S15-F2-Q2",
+      "S15-F2-Q3",
+      "S15-F2-Q4",
+      "S15-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 16,
+   "set_id": "S16",
+   "file": "sets/S16.json",
+   "standard": "HSA-SSE.B.3.c",
+   "title": "Use the properties of exponents to transform exponential expressions",
+   "domain": "Seeing Structure in Expressions & Arithmetic with Polynomials",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Use the properties of exponents to transform exponential expressions",
+     "standard": "HSA-SSE.B.3.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S16-M-Q1",
+      "S16-M-Q2",
+      "S16-M-Q3",
+      "S16-M-Q4",
+      "S16-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Use the meaning of rational exponents and the power-of-a-power property",
+     "standard": "HSN-RN.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S16-B1-Q1",
+      "S16-B1-Q2",
+      "S16-B1-Q3",
+      "S16-B1-Q4",
+      "S16-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Solve percent increase and decrease problems",
+     "standard": "7.RP.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S16-B2-Q1",
+      "S16-B2-Q2",
+      "S16-B2-Q3",
+      "S16-B2-Q4",
+      "S16-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Solve exponential equations with logarithms",
+     "standard": "HSF-LE.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S16-F1-Q1",
+      "S16-F1-Q2",
+      "S16-F1-Q3",
+      "S16-F1-Q4",
+      "S16-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use the sum of a geometric series in a growth model",
+     "standard": "HSA-SSE.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S16-F2-Q1",
+      "S16-F2-Q2",
+      "S16-F2-Q3",
+      "S16-F2-Q4",
+      "S16-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 17,
+   "set_id": "S17",
+   "file": "sets/S17.json",
+   "standard": "HSA-REI.A.1",
+   "title": "Explain each step in solving an equation and justify the solution method",
+   "domain": "Creating Equations & Reasoning with Equations and Inequalities",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Explain each step in solving an equation and justify the solution method",
+     "standard": "HSA-REI.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S17-M-Q1",
+      "S17-M-Q2",
+      "S17-M-Q3",
+      "S17-M-Q4",
+      "S17-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Use substitution to decide whether a number makes an equation true",
+     "standard": "6.EE.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S17-B1-Q1",
+      "S17-B1-Q2",
+      "S17-B1-Q3",
+      "S17-B1-Q4",
+      "S17-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Solve linear equations by expanding and collecting like terms",
+     "standard": "8.EE.C.7.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S17-B2-Q1",
+      "S17-B2-Q2",
+      "S17-B2-Q3",
+      "S17-B2-Q4",
+      "S17-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Justify the steps of a proof about lines and angles",
+     "standard": "HSG-CO.C.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S17-F1-Q1",
+      "S17-F1-Q2",
+      "S17-F1-Q3",
+      "S17-F1-Q4",
+      "S17-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Solve radical and rational equations and identify extraneous solutions",
+     "standard": "HSA-REI.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S17-F2-Q1",
+      "S17-F2-Q2",
+      "S17-F2-Q3",
+      "S17-F2-Q4",
+      "S17-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 18,
+   "set_id": "S18",
+   "file": "sets/S18.json",
+   "standard": "HSA-REI.B.3",
+   "title": "Solve linear equations in one variable, including equations with letter coefficients",
+   "domain": "Creating Equations & Reasoning with Equations and Inequalities",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Solve linear equations in one variable, including equations with letter coefficients",
+     "standard": "HSA-REI.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S18-M-Q1",
+      "S18-M-Q2",
+      "S18-M-Q3",
+      "S18-M-Q4",
+      "S18-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Name the property that justifies a step",
+     "standard": "HSA-REI.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S18-B1-Q1",
+      "S18-B1-Q2",
+      "S18-B1-Q3",
+      "S18-B1-Q4",
+      "S18-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Solve two-step equations from word problems",
+     "standard": "7.EE.B.4.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S18-B2-Q1",
+      "S18-B2-Q2",
+      "S18-B2-Q3",
+      "S18-B2-Q4",
+      "S18-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use triangle theorems to write and solve equations",
+     "standard": "HSG-CO.C.10",
+     "nearest_related": false,
+     "question_ids": [
+      "S18-F1-Q1",
+      "S18-F1-Q2",
+      "S18-F1-Q3",
+      "S18-F1-Q4",
+      "S18-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Solve rational equations that lead to linear equations",
+     "standard": "HSA-REI.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S18-F2-Q1",
+      "S18-F2-Q2",
+      "S18-F2-Q3",
+      "S18-F2-Q4",
+      "S18-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 19,
+   "set_id": "S19",
+   "file": "sets/S19.json",
+   "standard": "HSA-REI.B.3",
+   "title": "Solve linear inequalities and compound inequalities in one variable",
+   "domain": "Creating Equations & Reasoning with Equations and Inequalities",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Solve linear inequalities and compound inequalities in one variable",
+     "standard": "HSA-REI.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S19-M-Q1",
+      "S19-M-Q2",
+      "S19-M-Q3",
+      "S19-M-Q4",
+      "S19-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Solve two-step inequalities from word problems",
+     "standard": "7.EE.B.4.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S19-B1-Q1",
+      "S19-B1-Q2",
+      "S19-B1-Q3",
+      "S19-B1-Q4",
+      "S19-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Write and graph simple inequalities",
+     "standard": "6.EE.B.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S19-B2-Q1",
+      "S19-B2-Q2",
+      "S19-B2-Q3",
+      "S19-B2-Q4",
+      "S19-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use inequalities to meet constraints in a design problem",
+     "standard": "HSG-MG.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S19-F1-Q1",
+      "S19-F1-Q2",
+      "S19-F1-Q3",
+      "S19-F1-Q4",
+      "S19-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Write a margin-of-error interval as a compound inequality",
+     "standard": "HSS-IC.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S19-F2-Q1",
+      "S19-F2-Q2",
+      "S19-F2-Q3",
+      "S19-F2-Q4",
+      "S19-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 20,
+   "set_id": "S20",
+   "file": "sets/S20.json",
+   "standard": "HSA-CED.A.1",
+   "title": "Create linear equations and inequalities in one variable and use them to solve problems",
+   "domain": "Creating Equations & Reasoning with Equations and Inequalities",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Create linear equations and inequalities in one variable and use them to solve problems",
+     "standard": "HSA-CED.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S20-M-Q1",
+      "S20-M-Q2",
+      "S20-M-Q3",
+      "S20-M-Q4",
+      "S20-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Solve linear equations and inequalities",
+     "standard": "HSA-REI.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S20-B1-Q1",
+      "S20-B1-Q2",
+      "S20-B1-Q3",
+      "S20-B1-Q4",
+      "S20-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Write and solve one-step equations",
+     "standard": "6.EE.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S20-B2-Q1",
+      "S20-B2-Q2",
+      "S20-B2-Q3",
+      "S20-B2-Q4",
+      "S20-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Write and solve equations from similar triangles",
+     "standard": "HSG-SRT.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S20-F1-Q1",
+      "S20-F1-Q2",
+      "S20-F1-Q3",
+      "S20-F1-Q4",
+      "S20-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Write and solve an equation for an expected value",
+     "standard": "HSS-MD.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S20-F2-Q1",
+      "S20-F2-Q2",
+      "S20-F2-Q3",
+      "S20-F2-Q4",
+      "S20-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 21,
+   "set_id": "S21",
+   "file": "sets/S21.json",
+   "standard": "HSA-CED.A.4",
+   "title": "Rearrange formulas to highlight a quantity of interest",
+   "domain": "Creating Equations & Reasoning with Equations and Inequalities",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Rearrange formulas to highlight a quantity of interest",
+     "standard": "HSA-CED.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S21-M-Q1",
+      "S21-M-Q2",
+      "S21-M-Q3",
+      "S21-M-Q4",
+      "S21-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Solve linear equations with letter coefficients",
+     "standard": "HSA-REI.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S21-B1-Q1",
+      "S21-B1-Q2",
+      "S21-B1-Q3",
+      "S21-B1-Q4",
+      "S21-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Evaluate formulas for given values",
+     "standard": "6.EE.A.2.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S21-B2-Q1",
+      "S21-B2-Q2",
+      "S21-B2-Q3",
+      "S21-B2-Q4",
+      "S21-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Rearrange the arc-length formula s = rθ",
+     "standard": "HSG-C.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S21-F1-Q1",
+      "S21-F1-Q2",
+      "S21-F1-Q3",
+      "S21-F1-Q4",
+      "S21-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Solve exponential formulas for the exponent with logarithms",
+     "standard": "HSF-LE.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S21-F2-Q1",
+      "S21-F2-Q2",
+      "S21-F2-Q3",
+      "S21-F2-Q4",
+      "S21-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 22,
+   "set_id": "S22",
+   "file": "sets/S22.json",
+   "standard": "HSA-REI.B.4.a",
+   "title": "Complete the square to solve quadratic equations and derive the quadratic formula",
+   "domain": "Creating Equations & Reasoning with Equations and Inequalities",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Complete the square to solve quadratic equations and derive the quadratic formula",
+     "standard": "HSA-REI.B.4.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S22-M-Q1",
+      "S22-M-Q2",
+      "S22-M-Q3",
+      "S22-M-Q4",
+      "S22-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Complete the square to write a quadratic in vertex form",
+     "standard": "HSA-SSE.B.3.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S22-B1-Q1",
+      "S22-B1-Q2",
+      "S22-B1-Q3",
+      "S22-B1-Q4",
+      "S22-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Solve x² = p and x³ = p with square and cube roots",
+     "standard": "8.EE.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S22-B2-Q1",
+      "S22-B2-Q2",
+      "S22-B2-Q3",
+      "S22-B2-Q4",
+      "S22-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Complete the square to find the center and radius of a circle",
+     "standard": "HSG-GPE.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S22-F1-Q1",
+      "S22-F1-Q2",
+      "S22-F1-Q3",
+      "S22-F1-Q4",
+      "S22-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Complete the square to write the equation of an ellipse",
+     "standard": "HSG-GPE.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S22-F2-Q1",
+      "S22-F2-Q2",
+      "S22-F2-Q3",
+      "S22-F2-Q4",
+      "S22-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 23,
+   "set_id": "S23",
+   "file": "sets/S23.json",
+   "standard": "HSA-REI.B.4.b",
+   "title": "Solve quadratic equations by inspection, square roots, and factoring",
+   "domain": "Creating Equations & Reasoning with Equations and Inequalities",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Solve quadratic equations by inspection, square roots, and factoring",
+     "standard": "HSA-REI.B.4.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S23-M-Q1",
+      "S23-M-Q2",
+      "S23-M-Q3",
+      "S23-M-Q4",
+      "S23-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Factor quadratic expressions",
+     "standard": "HSA-SSE.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S23-B1-Q1",
+      "S23-B1-Q2",
+      "S23-B1-Q3",
+      "S23-B1-Q4",
+      "S23-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Solve the linear equations that come from each factor",
+     "standard": "HSA-REI.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S23-B2-Q1",
+      "S23-B2-Q2",
+      "S23-B2-Q3",
+      "S23-B2-Q4",
+      "S23-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find the zeros of a polynomial from its factors",
+     "standard": "HSA-APR.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S23-F1-Q1",
+      "S23-F1-Q2",
+      "S23-F1-Q3",
+      "S23-F1-Q4",
+      "S23-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use the Fundamental Theorem of Algebra to count complex zeros",
+     "standard": "HSN-CN.C.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S23-F2-Q1",
+      "S23-F2-Q2",
+      "S23-F2-Q3",
+      "S23-F2-Q4",
+      "S23-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 24,
+   "set_id": "S24",
+   "file": "sets/S24.json",
+   "standard": "HSA-REI.B.4.b",
+   "title": "Solve quadratic equations with the quadratic formula and use the discriminant",
+   "domain": "Creating Equations & Reasoning with Equations and Inequalities",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Solve quadratic equations with the quadratic formula and use the discriminant",
+     "standard": "HSA-REI.B.4.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S24-M-Q1",
+      "S24-M-Q2",
+      "S24-M-Q3",
+      "S24-M-Q4",
+      "S24-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Complete the square to solve a quadratic equation",
+     "standard": "HSA-REI.B.4.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S24-B1-Q1",
+      "S24-B1-Q2",
+      "S24-B1-Q3",
+      "S24-B1-Q4",
+      "S24-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Estimate square roots with rational approximations",
+     "standard": "8.NS.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S24-B2-Q1",
+      "S24-B2-Q2",
+      "S24-B2-Q3",
+      "S24-B2-Q4",
+      "S24-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Solve right-triangle problems that lead to quadratic equations",
+     "standard": "HSG-SRT.C.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S24-F1-Q1",
+      "S24-F1-Q2",
+      "S24-F1-Q3",
+      "S24-F1-Q4",
+      "S24-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Solve quadratic equations with complex solutions",
+     "standard": "HSN-CN.C.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S24-F2-Q1",
+      "S24-F2-Q2",
+      "S24-F2-Q3",
+      "S24-F2-Q4",
+      "S24-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 25,
+   "set_id": "S25",
+   "file": "sets/S25.json",
+   "standard": "HSA-CED.A.1",
+   "title": "Create quadratic and exponential equations in one variable and use them to solve problems",
+   "domain": "Creating Equations & Reasoning with Equations and Inequalities",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Create quadratic and exponential equations in one variable and use them to solve problems",
+     "standard": "HSA-CED.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S25-M-Q1",
+      "S25-M-Q2",
+      "S25-M-Q3",
+      "S25-M-Q4",
+      "S25-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Solve quadratic equations",
+     "standard": "HSA-REI.B.4.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S25-B1-Q1",
+      "S25-B1-Q2",
+      "S25-B1-Q3",
+      "S25-B1-Q4",
+      "S25-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Use properties of integer exponents",
+     "standard": "8.EE.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S25-B2-Q1",
+      "S25-B2-Q2",
+      "S25-B2-Q3",
+      "S25-B2-Q4",
+      "S25-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use volume formulas to write and solve equations for a dimension",
+     "standard": "HSG-GMD.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S25-F1-Q1",
+      "S25-F1-Q2",
+      "S25-F1-Q3",
+      "S25-F1-Q4",
+      "S25-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Solve exponential models with logarithms",
+     "standard": "HSF-LE.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S25-F2-Q1",
+      "S25-F2-Q2",
+      "S25-F2-Q3",
+      "S25-F2-Q4",
+      "S25-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 26,
+   "set_id": "S26",
+   "file": "sets/S26.json",
+   "standard": "HSA-REI.C.5",
+   "title": "Show that replacing an equation by its sum with a multiple of the other keeps the solutions of a system",
+   "domain": "Creating Equations & Reasoning with Equations and Inequalities",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Show that replacing an equation by its sum with a multiple of the other keeps the solutions of a system",
+     "standard": "HSA-REI.C.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S26-M-Q1",
+      "S26-M-Q2",
+      "S26-M-Q3",
+      "S26-M-Q4",
+      "S26-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Justify steps with the properties of equality",
+     "standard": "HSA-REI.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S26-B1-Q1",
+      "S26-B1-Q2",
+      "S26-B1-Q3",
+      "S26-B1-Q4",
+      "S26-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Recognize the solution of a system as a point on both lines",
+     "standard": "8.EE.C.8.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S26-B2-Q1",
+      "S26-B2-Q2",
+      "S26-B2-Q3",
+      "S26-B2-Q4",
+      "S26-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Represent a system as a matrix and use row operations",
+     "standard": "HSA-REI.C.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S26-F1-Q1",
+      "S26-F1-Q2",
+      "S26-F1-Q3",
+      "S26-F1-Q4",
+      "S26-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use determinants and inverse matrices",
+     "standard": "HSN-VM.C.10",
+     "nearest_related": false,
+     "question_ids": [
+      "S26-F2-Q1",
+      "S26-F2-Q2",
+      "S26-F2-Q3",
+      "S26-F2-Q4",
+      "S26-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 27,
+   "set_id": "S27",
+   "file": "sets/S27.json",
+   "standard": "HSA-REI.C.6",
+   "title": "Solve systems of linear equations exactly by substitution and elimination",
+   "domain": "Creating Equations & Reasoning with Equations and Inequalities",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Solve systems of linear equations exactly by substitution and elimination",
+     "standard": "HSA-REI.C.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S27-M-Q1",
+      "S27-M-Q2",
+      "S27-M-Q3",
+      "S27-M-Q4",
+      "S27-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Eliminate a variable by adding a multiple of an equation",
+     "standard": "HSA-REI.C.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S27-B1-Q1",
+      "S27-B1-Q2",
+      "S27-B1-Q3",
+      "S27-B1-Q4",
+      "S27-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Solve simple systems of linear equations algebraically",
+     "standard": "8.EE.C.8.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S27-B2-Q1",
+      "S27-B2-Q2",
+      "S27-B2-Q3",
+      "S27-B2-Q4",
+      "S27-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use slopes and systems to find where parallel or perpendicular lines meet",
+     "standard": "HSG-GPE.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S27-F1-Q1",
+      "S27-F1-Q2",
+      "S27-F1-Q3",
+      "S27-F1-Q4",
+      "S27-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Multiply a matrix by a column to check a solution",
+     "standard": "HSN-VM.C.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S27-F2-Q1",
+      "S27-F2-Q2",
+      "S27-F2-Q3",
+      "S27-F2-Q4",
+      "S27-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 28,
+   "set_id": "S28",
+   "file": "sets/S28.json",
+   "standard": "HSA-REI.C.6",
+   "title": "Solve systems of linear equations in context, including systems with no solution or infinitely many solutions",
+   "domain": "Creating Equations & Reasoning with Equations and Inequalities",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Solve systems of linear equations in context, including systems with no solution or infinitely many solutions",
+     "standard": "HSA-REI.C.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S28-M-Q1",
+      "S28-M-Q2",
+      "S28-M-Q3",
+      "S28-M-Q4",
+      "S28-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Write and solve an equation for one quantity in context",
+     "standard": "HSA-CED.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S28-B1-Q1",
+      "S28-B1-Q2",
+      "S28-B1-Q3",
+      "S28-B1-Q4",
+      "S28-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Solve real-world problems with two linear equations",
+     "standard": "8.EE.C.8.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S28-B2-Q1",
+      "S28-B2-Q2",
+      "S28-B2-Q3",
+      "S28-B2-Q4",
+      "S28-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use matrices to organize data in context",
+     "standard": "HSN-VM.C.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S28-F1-Q1",
+      "S28-F1-Q2",
+      "S28-F1-Q3",
+      "S28-F1-Q4",
+      "S28-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Solve a system in context with an inverse matrix",
+     "standard": "HSA-REI.C.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S28-F2-Q1",
+      "S28-F2-Q2",
+      "S28-F2-Q3",
+      "S28-F2-Q4",
+      "S28-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 29,
+   "set_id": "S29",
+   "file": "sets/S29.json",
+   "standard": "HSA-REI.C.7",
+   "title": "Solve a system of a linear equation and a quadratic equation algebraically",
+   "domain": "Creating Equations & Reasoning with Equations and Inequalities",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Solve a system of a linear equation and a quadratic equation algebraically",
+     "standard": "HSA-REI.C.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S29-M-Q1",
+      "S29-M-Q2",
+      "S29-M-Q3",
+      "S29-M-Q4",
+      "S29-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Solve quadratic equations by factoring",
+     "standard": "HSA-REI.B.4.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S29-B1-Q1",
+      "S29-B1-Q2",
+      "S29-B1-Q3",
+      "S29-B1-Q4",
+      "S29-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Solve systems of linear equations",
+     "standard": "HSA-REI.C.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S29-B2-Q1",
+      "S29-B2-Q2",
+      "S29-B2-Q3",
+      "S29-B2-Q4",
+      "S29-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Decide whether points lie on a circle",
+     "standard": "HSG-GPE.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S29-F1-Q1",
+      "S29-F1-Q2",
+      "S29-F1-Q3",
+      "S29-F1-Q4",
+      "S29-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Find complex solutions when a line and a parabola do not meet",
+     "standard": "HSN-CN.C.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S29-F2-Q1",
+      "S29-F2-Q2",
+      "S29-F2-Q3",
+      "S29-F2-Q4",
+      "S29-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 30,
+   "set_id": "S30",
+   "file": "sets/S30.json",
+   "standard": "HSA-REI.D.10",
+   "title": "Understand the graph of an equation as the set of all its solutions",
+   "domain": "Creating Equations & Reasoning with Equations and Inequalities",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Understand the graph of an equation as the set of all its solutions",
+     "standard": "HSA-REI.D.10",
+     "nearest_related": false,
+     "question_ids": [
+      "S30-M-Q1",
+      "S30-M-Q2",
+      "S30-M-Q3",
+      "S30-M-Q4",
+      "S30-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Use tables and graphs to relate two variables",
+     "standard": "6.EE.C.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S30-B1-Q1",
+      "S30-B1-Q2",
+      "S30-B1-Q3",
+      "S30-B1-Q4",
+      "S30-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Understand a function's graph as its input-output pairs",
+     "standard": "8.F.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S30-B2-Q1",
+      "S30-B2-Q2",
+      "S30-B2-Q3",
+      "S30-B2-Q4",
+      "S30-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Derive a parabola from its focus and directrix",
+     "standard": "HSG-GPE.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S30-F1-Q1",
+      "S30-F1-Q2",
+      "S30-F1-Q3",
+      "S30-F1-Q4",
+      "S30-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use the unit circle as the set of points (cos θ, sin θ)",
+     "standard": "HSF-TF.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S30-F2-Q1",
+      "S30-F2-Q2",
+      "S30-F2-Q3",
+      "S30-F2-Q4",
+      "S30-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 31,
+   "set_id": "S31",
+   "file": "sets/S31.json",
+   "standard": "HSA-REI.D.11",
+   "title": "Explain why intersections of y = f(x) and y = g(x) solve f(x) = g(x), and approximate solutions with graphs and tables",
+   "domain": "Creating Equations & Reasoning with Equations and Inequalities",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Explain why intersections of y = f(x) and y = g(x) solve f(x) = g(x), and approximate solutions with graphs and tables",
+     "standard": "HSA-REI.D.11",
+     "nearest_related": false,
+     "question_ids": [
+      "S31-M-Q1",
+      "S31-M-Q2",
+      "S31-M-Q3",
+      "S31-M-Q4",
+      "S31-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Check whether points are on a graph",
+     "standard": "HSA-REI.D.10",
+     "nearest_related": false,
+     "question_ids": [
+      "S31-B1-Q1",
+      "S31-B1-Q2",
+      "S31-B1-Q3",
+      "S31-B1-Q4",
+      "S31-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Read the solution of a system from the graphs of two lines",
+     "standard": "8.EE.C.8.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S31-B2-Q1",
+      "S31-B2-Q2",
+      "S31-B2-Q3",
+      "S31-B2-Q4",
+      "S31-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Solve exponential equations exactly with logarithms",
+     "standard": "HSF-LE.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S31-F1-Q1",
+      "S31-F1-Q2",
+      "S31-F1-Q3",
+      "S31-F1-Q4",
+      "S31-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Solve trigonometric equations with graphs and technology",
+     "standard": "HSF-TF.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S31-F2-Q1",
+      "S31-F2-Q2",
+      "S31-F2-Q3",
+      "S31-F2-Q4",
+      "S31-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 32,
+   "set_id": "S32",
+   "file": "sets/S32.json",
+   "standard": "HSA-REI.D.12",
+   "title": "Graph the solutions of linear inequalities and systems of linear inequalities in two variables as half-planes",
+   "domain": "Creating Equations & Reasoning with Equations and Inequalities",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Graph the solutions of linear inequalities and systems of linear inequalities in two variables as half-planes",
+     "standard": "HSA-REI.D.12",
+     "nearest_related": false,
+     "question_ids": [
+      "S32-M-Q1",
+      "S32-M-Q2",
+      "S32-M-Q3",
+      "S32-M-Q4",
+      "S32-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Solve an inequality in two variables for y",
+     "standard": "HSA-REI.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S32-B1-Q1",
+      "S32-B1-Q2",
+      "S32-B1-Q3",
+      "S32-B1-Q4",
+      "S32-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Plot points and find distances in the coordinate plane",
+     "standard": "6.NS.C.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S32-B2-Q1",
+      "S32-B2-Q2",
+      "S32-B2-Q3",
+      "S32-B2-Q4",
+      "S32-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find the area of a region described by inequalities",
+     "standard": "HSG-GPE.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S32-F1-Q1",
+      "S32-F1-Q2",
+      "S32-F1-Q3",
+      "S32-F1-Q4",
+      "S32-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use zeros to find where a polynomial is positive or negative",
+     "standard": "HSA-APR.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S32-F2-Q1",
+      "S32-F2-Q2",
+      "S32-F2-Q3",
+      "S32-F2-Q4",
+      "S32-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 33,
+   "set_id": "S33",
+   "file": "sets/S33.json",
+   "standard": "HSA-CED.A.2",
+   "title": "Create equations in two or more variables and graph them on labeled axes",
+   "domain": "Creating Equations & Reasoning with Equations and Inequalities",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Create equations in two or more variables and graph them on labeled axes",
+     "standard": "HSA-CED.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S33-M-Q1",
+      "S33-M-Q2",
+      "S33-M-Q3",
+      "S33-M-Q4",
+      "S33-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Write and solve an equation in one variable",
+     "standard": "HSA-CED.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S33-B1-Q1",
+      "S33-B1-Q2",
+      "S33-B1-Q3",
+      "S33-B1-Q4",
+      "S33-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Write the equation of a linear function",
+     "standard": "8.F.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S33-B2-Q1",
+      "S33-B2-Q2",
+      "S33-B2-Q3",
+      "S33-B2-Q4",
+      "S33-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Write the equation of a circle from a situation",
+     "standard": "HSG-GPE.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S33-F1-Q1",
+      "S33-F1-Q2",
+      "S33-F1-Q3",
+      "S33-F1-Q4",
+      "S33-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Write and interpret polynomial models",
+     "standard": "HSF-IF.C.7.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S33-F2-Q1",
+      "S33-F2-Q2",
+      "S33-F2-Q3",
+      "S33-F2-Q4",
+      "S33-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 34,
+   "set_id": "S34",
+   "file": "sets/S34.json",
+   "standard": "HSA-CED.A.3",
+   "title": "Represent constraints with equations and inequalities and decide whether solutions are viable",
+   "domain": "Creating Equations & Reasoning with Equations and Inequalities",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Represent constraints with equations and inequalities and decide whether solutions are viable",
+     "standard": "HSA-CED.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S34-M-Q1",
+      "S34-M-Q2",
+      "S34-M-Q3",
+      "S34-M-Q4",
+      "S34-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Test points in a system of inequalities",
+     "standard": "HSA-REI.D.12",
+     "nearest_related": false,
+     "question_ids": [
+      "S34-B1-Q1",
+      "S34-B1-Q2",
+      "S34-B1-Q3",
+      "S34-B1-Q4",
+      "S34-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Solve a system of linear equations",
+     "standard": "HSA-REI.C.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S34-B2-Q1",
+      "S34-B2-Q2",
+      "S34-B2-Q3",
+      "S34-B2-Q4",
+      "S34-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use constraints to optimize a design",
+     "standard": "HSG-MG.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S34-F1-Q1",
+      "S34-F1-Q2",
+      "S34-F1-Q3",
+      "S34-F1-Q4",
+      "S34-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use expected values to compare decisions",
+     "standard": "HSS-MD.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S34-F2-Q1",
+      "S34-F2-Q2",
+      "S34-F2-Q3",
+      "S34-F2-Q4",
+      "S34-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 35,
+   "set_id": "S35",
+   "file": "sets/S35.json",
+   "standard": "HSF-IF.A.1",
+   "title": "Understand a function as a rule that assigns exactly one output to each input, with a domain and a range",
+   "domain": "Interpreting Functions",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Understand a function as a rule that assigns exactly one output to each input, with a domain and a range",
+     "standard": "HSF-IF.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S35-M-Q1",
+      "S35-M-Q2",
+      "S35-M-Q3",
+      "S35-M-Q4",
+      "S35-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Decide whether a relation is a function",
+     "standard": "8.F.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S35-B1-Q1",
+      "S35-B1-Q2",
+      "S35-B1-Q3",
+      "S35-B1-Q4",
+      "S35-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Check whether points are on the graph of an equation",
+     "standard": "HSA-REI.D.10",
+     "nearest_related": false,
+     "question_ids": [
+      "S35-B2-Q1",
+      "S35-B2-Q2",
+      "S35-B2-Q3",
+      "S35-B2-Q4",
+      "S35-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Describe transformations of the plane as functions of points",
+     "standard": "HSG-CO.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S35-F1-Q1",
+      "S35-F1-Q2",
+      "S35-F1-Q3",
+      "S35-F1-Q4",
+      "S35-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Restrict a domain to make a function invertible",
+     "standard": "HSF-BF.B.4.d",
+     "nearest_related": false,
+     "question_ids": [
+      "S35-F2-Q1",
+      "S35-F2-Q2",
+      "S35-F2-Q3",
+      "S35-F2-Q4",
+      "S35-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 36,
+   "set_id": "S36",
+   "file": "sets/S36.json",
+   "standard": "HSF-IF.A.2",
+   "title": "Use function notation, evaluate functions, and interpret statements in function notation in context",
+   "domain": "Interpreting Functions",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Use function notation, evaluate functions, and interpret statements in function notation in context",
+     "standard": "HSF-IF.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S36-M-Q1",
+      "S36-M-Q2",
+      "S36-M-Q3",
+      "S36-M-Q4",
+      "S36-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Evaluate expressions for given values",
+     "standard": "6.EE.A.2.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S36-B1-Q1",
+      "S36-B1-Q2",
+      "S36-B1-Q3",
+      "S36-B1-Q4",
+      "S36-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Solve linear equations",
+     "standard": "HSA-REI.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S36-B2-Q1",
+      "S36-B2-Q2",
+      "S36-B2-Q3",
+      "S36-B2-Q4",
+      "S36-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Evaluate compositions of functions",
+     "standard": "HSF-BF.A.1.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S36-F1-Q1",
+      "S36-F1-Q2",
+      "S36-F1-Q3",
+      "S36-F1-Q4",
+      "S36-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Read values of an inverse function",
+     "standard": "HSF-BF.B.4.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S36-F2-Q1",
+      "S36-F2-Q2",
+      "S36-F2-Q3",
+      "S36-F2-Q4",
+      "S36-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 37,
+   "set_id": "S37",
+   "file": "sets/S37.json",
+   "standard": "HSF-IF.A.3",
+   "title": "Recognize that sequences are functions whose domain is a set of integers",
+   "domain": "Interpreting Functions",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Recognize that sequences are functions whose domain is a set of integers",
+     "standard": "HSF-IF.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S37-M-Q1",
+      "S37-M-Q2",
+      "S37-M-Q3",
+      "S37-M-Q4",
+      "S37-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Evaluate functions in function notation",
+     "standard": "HSF-IF.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S37-B1-Q1",
+      "S37-B1-Q2",
+      "S37-B1-Q3",
+      "S37-B1-Q4",
+      "S37-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Generate numerical patterns from rules",
+     "standard": "5.OA.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S37-B2-Q1",
+      "S37-B2-Q2",
+      "S37-B2-Q3",
+      "S37-B2-Q4",
+      "S37-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Repeat a dilation and describe the lengths",
+     "standard": "HSG-SRT.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S37-F1-Q1",
+      "S37-F1-Q2",
+      "S37-F1-Q3",
+      "S37-F1-Q4",
+      "S37-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Find the sum of a finite geometric series",
+     "standard": "HSA-SSE.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S37-F2-Q1",
+      "S37-F2-Q2",
+      "S37-F2-Q3",
+      "S37-F2-Q4",
+      "S37-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 38,
+   "set_id": "S38",
+   "file": "sets/S38.json",
+   "standard": "HSF-IF.B.4",
+   "title": "Interpret key features of graphs and tables of functions in context",
+   "domain": "Interpreting Functions",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Interpret key features of graphs and tables of functions in context",
+     "standard": "HSF-IF.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S38-M-Q1",
+      "S38-M-Q2",
+      "S38-M-Q3",
+      "S38-M-Q4",
+      "S38-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Describe a function qualitatively from a situation",
+     "standard": "8.F.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S38-B1-Q1",
+      "S38-B1-Q2",
+      "S38-B1-Q3",
+      "S38-B1-Q4",
+      "S38-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Use vertex form to find a maximum or minimum",
+     "standard": "HSA-SSE.B.3.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S38-B2-Q1",
+      "S38-B2-Q2",
+      "S38-B2-Q3",
+      "S38-B2-Q4",
+      "S38-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Identify key features of polynomial functions",
+     "standard": "HSF-IF.C.7.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S38-F1-Q1",
+      "S38-F1-Q2",
+      "S38-F1-Q3",
+      "S38-F1-Q4",
+      "S38-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Identify amplitude, midline, and period of a periodic model",
+     "standard": "HSF-TF.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S38-F2-Q1",
+      "S38-F2-Q2",
+      "S38-F2-Q3",
+      "S38-F2-Q4",
+      "S38-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 39,
+   "set_id": "S39",
+   "file": "sets/S39.json",
+   "standard": "HSF-IF.B.5",
+   "title": "Relate the domain of a function to the quantity it describes",
+   "domain": "Interpreting Functions",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Relate the domain of a function to the quantity it describes",
+     "standard": "HSF-IF.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S39-M-Q1",
+      "S39-M-Q2",
+      "S39-M-Q3",
+      "S39-M-Q4",
+      "S39-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Decide whether a solution is viable",
+     "standard": "HSA-CED.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S39-B1-Q1",
+      "S39-B1-Q2",
+      "S39-B1-Q3",
+      "S39-B1-Q4",
+      "S39-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Find where a quadratic model equals 0",
+     "standard": "HSA-REI.B.4.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S39-B2-Q1",
+      "S39-B2-Q2",
+      "S39-B2-Q3",
+      "S39-B2-Q4",
+      "S39-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use trigonometric ratios as functions of acute angles",
+     "standard": "HSG-SRT.C.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S39-F1-Q1",
+      "S39-F1-Q2",
+      "S39-F1-Q3",
+      "S39-F1-Q4",
+      "S39-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Extend trigonometric functions to all real numbers with the unit circle",
+     "standard": "HSF-TF.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S39-F2-Q1",
+      "S39-F2-Q2",
+      "S39-F2-Q3",
+      "S39-F2-Q4",
+      "S39-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 40,
+   "set_id": "S40",
+   "file": "sets/S40.json",
+   "standard": "HSF-IF.B.6",
+   "title": "Calculate, interpret, and estimate the average rate of change of a function over an interval",
+   "domain": "Interpreting Functions",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Calculate, interpret, and estimate the average rate of change of a function over an interval",
+     "standard": "HSF-IF.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S40-M-Q1",
+      "S40-M-Q2",
+      "S40-M-Q3",
+      "S40-M-Q4",
+      "S40-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find the rate of change of a linear function",
+     "standard": "8.F.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S40-B1-Q1",
+      "S40-B1-Q2",
+      "S40-B1-Q3",
+      "S40-B1-Q4",
+      "S40-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Compute unit rates with fractions",
+     "standard": "7.RP.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S40-B2-Q1",
+      "S40-B2-Q2",
+      "S40-B2-Q3",
+      "S40-B2-Q4",
+      "S40-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find average rates of change of periodic models",
+     "standard": "HSF-TF.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S40-F1-Q1",
+      "S40-F1-Q2",
+      "S40-F1-Q3",
+      "S40-F1-Q4",
+      "S40-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Analyze rational functions: rates of change and asymptotes",
+     "standard": "HSF-IF.C.7.d",
+     "nearest_related": false,
+     "question_ids": [
+      "S40-F2-Q1",
+      "S40-F2-Q2",
+      "S40-F2-Q3",
+      "S40-F2-Q4",
+      "S40-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 41,
+   "set_id": "S41",
+   "file": "sets/S41.json",
+   "standard": "HSF-IF.C.7.a",
+   "title": "Graph linear functions and show their intercepts",
+   "domain": "Interpreting Functions",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Graph linear functions and show their intercepts",
+     "standard": "HSF-IF.C.7.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S41-M-Q1",
+      "S41-M-Q2",
+      "S41-M-Q3",
+      "S41-M-Q4",
+      "S41-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find slope and write y = mx + b",
+     "standard": "8.EE.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S41-B1-Q1",
+      "S41-B1-Q2",
+      "S41-B1-Q3",
+      "S41-B1-Q4",
+      "S41-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Write linear equations in two variables from a situation",
+     "standard": "HSA-CED.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S41-B2-Q1",
+      "S41-B2-Q2",
+      "S41-B2-Q3",
+      "S41-B2-Q4",
+      "S41-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find a point that partitions a segment in a given ratio",
+     "standard": "HSG-GPE.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S41-F1-Q1",
+      "S41-F1-Q2",
+      "S41-F1-Q3",
+      "S41-F1-Q4",
+      "S41-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Find and verify inverses of linear functions",
+     "standard": "HSF-BF.B.4.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S41-F2-Q1",
+      "S41-F2-Q2",
+      "S41-F2-Q3",
+      "S41-F2-Q4",
+      "S41-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 42,
+   "set_id": "S42",
+   "file": "sets/S42.json",
+   "standard": "HSF-IF.C.7.a",
+   "title": "Graph quadratic functions and show intercepts, maxima, and minima",
+   "domain": "Interpreting Functions",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Graph quadratic functions and show intercepts, maxima, and minima",
+     "standard": "HSF-IF.C.7.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S42-M-Q1",
+      "S42-M-Q2",
+      "S42-M-Q3",
+      "S42-M-Q4",
+      "S42-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Factor to find the zeros of a quadratic",
+     "standard": "HSA-SSE.B.3.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S42-B1-Q1",
+      "S42-B1-Q2",
+      "S42-B1-Q3",
+      "S42-B1-Q4",
+      "S42-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Interpret key features of a function",
+     "standard": "HSF-IF.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S42-B2-Q1",
+      "S42-B2-Q2",
+      "S42-B2-Q3",
+      "S42-B2-Q4",
+      "S42-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Relate a parabola's equation to its focus and directrix",
+     "standard": "HSG-GPE.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S42-F1-Q1",
+      "S42-F1-Q2",
+      "S42-F1-Q3",
+      "S42-F1-Q4",
+      "S42-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use factors to describe the graph of a polynomial",
+     "standard": "HSF-IF.C.7.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S42-F2-Q1",
+      "S42-F2-Q2",
+      "S42-F2-Q3",
+      "S42-F2-Q4",
+      "S42-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 43,
+   "set_id": "S43",
+   "file": "sets/S43.json",
+   "standard": "HSF-IF.C.7.b",
+   "title": "Graph square root, cube root, absolute value, step, and piecewise-defined functions",
+   "domain": "Interpreting Functions",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Graph square root, cube root, absolute value, step, and piecewise-defined functions",
+     "standard": "HSF-IF.C.7.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S43-M-Q1",
+      "S43-M-Q2",
+      "S43-M-Q3",
+      "S43-M-Q4",
+      "S43-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find the domain and range of a function",
+     "standard": "HSF-IF.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S43-B1-Q1",
+      "S43-B1-Q2",
+      "S43-B1-Q3",
+      "S43-B1-Q4",
+      "S43-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Understand absolute value as distance from 0",
+     "standard": "6.NS.C.7.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S43-B2-Q1",
+      "S43-B2-Q2",
+      "S43-B2-Q3",
+      "S43-B2-Q4",
+      "S43-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Solve radical equations and check for extraneous solutions",
+     "standard": "HSA-REI.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S43-F1-Q1",
+      "S43-F1-Q2",
+      "S43-F1-Q3",
+      "S43-F1-Q4",
+      "S43-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Read values of inverses of power and root functions",
+     "standard": "HSF-BF.B.4.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S43-F2-Q1",
+      "S43-F2-Q2",
+      "S43-F2-Q3",
+      "S43-F2-Q4",
+      "S43-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 44,
+   "set_id": "S44",
+   "file": "sets/S44.json",
+   "standard": "HSF-IF.C.7.e",
+   "title": "Graph exponential functions and show intercepts and end behavior",
+   "domain": "Interpreting Functions",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Graph exponential functions and show intercepts and end behavior",
+     "standard": "HSF-IF.C.7.e",
+     "nearest_related": false,
+     "question_ids": [
+      "S44-M-Q1",
+      "S44-M-Q2",
+      "S44-M-Q3",
+      "S44-M-Q4",
+      "S44-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Evaluate integer exponents",
+     "standard": "8.EE.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S44-B1-Q1",
+      "S44-B1-Q2",
+      "S44-B1-Q3",
+      "S44-B1-Q4",
+      "S44-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Evaluate exponential functions",
+     "standard": "HSF-IF.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S44-B2-Q1",
+      "S44-B2-Q2",
+      "S44-B2-Q3",
+      "S44-B2-Q4",
+      "S44-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Solve exponential equations with logarithms",
+     "standard": "HSF-LE.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S44-F1-Q1",
+      "S44-F1-Q2",
+      "S44-F1-Q3",
+      "S44-F1-Q4",
+      "S44-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Understand logarithms as inverses of exponential functions",
+     "standard": "HSF-BF.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S44-F2-Q1",
+      "S44-F2-Q2",
+      "S44-F2-Q3",
+      "S44-F2-Q4",
+      "S44-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 45,
+   "set_id": "S45",
+   "file": "sets/S45.json",
+   "standard": "HSF-IF.C.8.a",
+   "title": "Factor and complete the square to show zeros, extreme values, and symmetry, and interpret them",
+   "domain": "Interpreting Functions",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Factor and complete the square to show zeros, extreme values, and symmetry, and interpret them",
+     "standard": "HSF-IF.C.8.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S45-M-Q1",
+      "S45-M-Q2",
+      "S45-M-Q3",
+      "S45-M-Q4",
+      "S45-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Complete the square",
+     "standard": "HSA-SSE.B.3.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S45-B1-Q1",
+      "S45-B1-Q2",
+      "S45-B1-Q3",
+      "S45-B1-Q4",
+      "S45-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Use the greatest common factor",
+     "standard": "6.NS.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S45-B2-Q1",
+      "S45-B2-Q2",
+      "S45-B2-Q3",
+      "S45-B2-Q4",
+      "S45-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Prove polynomial identities",
+     "standard": "HSA-APR.C.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S45-F1-Q1",
+      "S45-F1-Q2",
+      "S45-F1-Q3",
+      "S45-F1-Q4",
+      "S45-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Complete the square to find the center of a hyperbola",
+     "standard": "HSG-GPE.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S45-F2-Q1",
+      "S45-F2-Q2",
+      "S45-F2-Q3",
+      "S45-F2-Q4",
+      "S45-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 46,
+   "set_id": "S46",
+   "file": "sets/S46.json",
+   "standard": "HSF-IF.C.8.b",
+   "title": "Use the properties of exponents to interpret growth and decay rates",
+   "domain": "Interpreting Functions",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Use the properties of exponents to interpret growth and decay rates",
+     "standard": "HSF-IF.C.8.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S46-M-Q1",
+      "S46-M-Q2",
+      "S46-M-Q3",
+      "S46-M-Q4",
+      "S46-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Read growth and decay from an exponential function",
+     "standard": "HSF-IF.C.7.e",
+     "nearest_related": false,
+     "question_ids": [
+      "S46-B1-Q1",
+      "S46-B1-Q2",
+      "S46-B1-Q3",
+      "S46-B1-Q4",
+      "S46-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Solve percent increase and decrease problems",
+     "standard": "7.RP.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S46-B2-Q1",
+      "S46-B2-Q2",
+      "S46-B2-Q3",
+      "S46-B2-Q4",
+      "S46-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Sum a geometric series in a savings context",
+     "standard": "HSA-SSE.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S46-F1-Q1",
+      "S46-F1-Q2",
+      "S46-F1-Q3",
+      "S46-F1-Q4",
+      "S46-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Find times in exponential models with logarithms",
+     "standard": "HSF-LE.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S46-F2-Q1",
+      "S46-F2-Q2",
+      "S46-F2-Q3",
+      "S46-F2-Q4",
+      "S46-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 47,
+   "set_id": "S47",
+   "file": "sets/S47.json",
+   "standard": "HSF-IF.C.9",
+   "title": "Compare properties of two functions represented in different ways",
+   "domain": "Interpreting Functions",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Compare properties of two functions represented in different ways",
+     "standard": "HSF-IF.C.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S47-M-Q1",
+      "S47-M-Q2",
+      "S47-M-Q3",
+      "S47-M-Q4",
+      "S47-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Interpret key features in context",
+     "standard": "HSF-IF.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S47-B1-Q1",
+      "S47-B1-Q2",
+      "S47-B1-Q3",
+      "S47-B1-Q4",
+      "S47-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Compute average rates of change",
+     "standard": "HSF-IF.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S47-B2-Q1",
+      "S47-B2-Q2",
+      "S47-B2-Q3",
+      "S47-B2-Q4",
+      "S47-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Compare periodic functions given in different forms",
+     "standard": "HSF-TF.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S47-F1-Q1",
+      "S47-F1-Q2",
+      "S47-F1-Q3",
+      "S47-F1-Q4",
+      "S47-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Compare normal distributions by mean and standard deviation",
+     "standard": "HSS-ID.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S47-F2-Q1",
+      "S47-F2-Q2",
+      "S47-F2-Q3",
+      "S47-F2-Q4",
+      "S47-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 48,
+   "set_id": "S48",
+   "file": "sets/S48.json",
+   "standard": "HSF-BF.A.1.a",
+   "title": "Write an explicit expression or a recursive process for a function from a context",
+   "domain": "Building Functions & Linear, Quadratic, and Exponential Models",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Write an explicit expression or a recursive process for a function from a context",
+     "standard": "HSF-BF.A.1.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S48-M-Q1",
+      "S48-M-Q2",
+      "S48-M-Q3",
+      "S48-M-Q4",
+      "S48-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Evaluate a sequence from a recursive or explicit rule",
+     "standard": "HSF-IF.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S48-B1-Q1",
+      "S48-B1-Q2",
+      "S48-B1-Q3",
+      "S48-B1-Q4",
+      "S48-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Write equations in two or more variables",
+     "standard": "HSA-CED.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S48-B2-Q1",
+      "S48-B2-Q2",
+      "S48-B2-Q3",
+      "S48-B2-Q4",
+      "S48-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Build a composite function from a context",
+     "standard": "HSF-BF.A.1.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S48-F1-Q1",
+      "S48-F1-Q2",
+      "S48-F1-Q3",
+      "S48-F1-Q4",
+      "S48-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Find and interpret the inverse of a model",
+     "standard": "HSF-BF.B.4.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S48-F2-Q1",
+      "S48-F2-Q2",
+      "S48-F2-Q3",
+      "S48-F2-Q4",
+      "S48-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 49,
+   "set_id": "S49",
+   "file": "sets/S49.json",
+   "standard": "HSF-BF.A.1.b",
+   "title": "Combine standard function types using arithmetic operations",
+   "domain": "Building Functions & Linear, Quadratic, and Exponential Models",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Combine standard function types using arithmetic operations",
+     "standard": "HSF-BF.A.1.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S49-M-Q1",
+      "S49-M-Q2",
+      "S49-M-Q3",
+      "S49-M-Q4",
+      "S49-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Add, subtract, and multiply polynomials",
+     "standard": "HSA-APR.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S49-B1-Q1",
+      "S49-B1-Q2",
+      "S49-B1-Q3",
+      "S49-B1-Q4",
+      "S49-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Evaluate and interpret functions",
+     "standard": "HSF-IF.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S49-B2-Q1",
+      "S49-B2-Q2",
+      "S49-B2-Q3",
+      "S49-B2-Q4",
+      "S49-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Rewrite rational expressions such as average cost",
+     "standard": "HSA-APR.D.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S49-F1-Q1",
+      "S49-F1-Q2",
+      "S49-F1-Q3",
+      "S49-F1-Q4",
+      "S49-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Graph and interpret an average-cost rational function",
+     "standard": "HSF-IF.C.7.d",
+     "nearest_related": false,
+     "question_ids": [
+      "S49-F2-Q1",
+      "S49-F2-Q2",
+      "S49-F2-Q3",
+      "S49-F2-Q4",
+      "S49-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 50,
+   "set_id": "S50",
+   "file": "sets/S50.json",
+   "standard": "HSF-BF.A.2",
+   "title": "Write arithmetic and geometric sequences recursively and with an explicit formula",
+   "domain": "Building Functions & Linear, Quadratic, and Exponential Models",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Write arithmetic and geometric sequences recursively and with an explicit formula",
+     "standard": "HSF-BF.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S50-M-Q1",
+      "S50-M-Q2",
+      "S50-M-Q3",
+      "S50-M-Q4",
+      "S50-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Evaluate recursively defined sequences",
+     "standard": "HSF-IF.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S50-B1-Q1",
+      "S50-B1-Q2",
+      "S50-B1-Q3",
+      "S50-B1-Q4",
+      "S50-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Generate a pattern from a rule and describe its features",
+     "standard": "4.OA.C.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S50-B2-Q1",
+      "S50-B2-Q2",
+      "S50-B2-Q3",
+      "S50-B2-Q4",
+      "S50-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Sum geometric sequences",
+     "standard": "HSA-SSE.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S50-F1-Q1",
+      "S50-F1-Q2",
+      "S50-F1-Q3",
+      "S50-F1-Q4",
+      "S50-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use logarithms to find a term number",
+     "standard": "HSF-LE.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S50-F2-Q1",
+      "S50-F2-Q2",
+      "S50-F2-Q3",
+      "S50-F2-Q4",
+      "S50-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 51,
+   "set_id": "S51",
+   "file": "sets/S51.json",
+   "standard": "HSF-BF.B.3",
+   "title": "Identify the effect of replacing f(x) by f(x) + k, kf(x), f(kx), and f(x + k), and recognize even and odd functions",
+   "domain": "Building Functions & Linear, Quadratic, and Exponential Models",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Identify the effect of replacing f(x) by f(x) + k, kf(x), f(kx), and f(x + k), and recognize even and odd functions",
+     "standard": "HSF-BF.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S51-M-Q1",
+      "S51-M-Q2",
+      "S51-M-Q3",
+      "S51-M-Q4",
+      "S51-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Graph absolute value and square root functions",
+     "standard": "HSF-IF.C.7.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S51-B1-Q1",
+      "S51-B1-Q2",
+      "S51-B1-Q3",
+      "S51-B1-Q4",
+      "S51-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Read key features of quadratic graphs",
+     "standard": "HSF-IF.C.7.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S51-B2-Q1",
+      "S51-B2-Q2",
+      "S51-B2-Q3",
+      "S51-B2-Q4",
+      "S51-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Describe a sequence of rigid transformations",
+     "standard": "HSG-CO.A.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S51-F1-Q1",
+      "S51-F1-Q2",
+      "S51-F1-Q3",
+      "S51-F1-Q4",
+      "S51-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Transform sine and cosine graphs",
+     "standard": "HSF-TF.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S51-F2-Q1",
+      "S51-F2-Q2",
+      "S51-F2-Q3",
+      "S51-F2-Q4",
+      "S51-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 52,
+   "set_id": "S52",
+   "file": "sets/S52.json",
+   "standard": "HSF-BF.B.4.a",
+   "title": "Solve f(x) = c for a simple function f and write an expression for the inverse",
+   "domain": "Building Functions & Linear, Quadratic, and Exponential Models",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Solve f(x) = c for a simple function f and write an expression for the inverse",
+     "standard": "HSF-BF.B.4.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S52-M-Q1",
+      "S52-M-Q2",
+      "S52-M-Q3",
+      "S52-M-Q4",
+      "S52-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Rearrange a formula for another variable",
+     "standard": "HSA-CED.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S52-B1-Q1",
+      "S52-B1-Q2",
+      "S52-B1-Q3",
+      "S52-B1-Q4",
+      "S52-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Use cube roots to solve x³ = p",
+     "standard": "8.EE.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S52-B2-Q1",
+      "S52-B2-Q2",
+      "S52-B2-Q3",
+      "S52-B2-Q4",
+      "S52-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Verify inverses by composition",
+     "standard": "HSF-BF.B.4.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S52-F1-Q1",
+      "S52-F1-Q2",
+      "S52-F1-Q3",
+      "S52-F1-Q4",
+      "S52-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Restrict a domain to produce an inverse",
+     "standard": "HSF-BF.B.4.d",
+     "nearest_related": false,
+     "question_ids": [
+      "S52-F2-Q1",
+      "S52-F2-Q2",
+      "S52-F2-Q3",
+      "S52-F2-Q4",
+      "S52-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 53,
+   "set_id": "S53",
+   "file": "sets/S53.json",
+   "standard": "HSF-LE.A.1.a",
+   "title": "Prove that linear functions grow by equal differences and exponential functions grow by equal factors over equal intervals",
+   "domain": "Building Functions & Linear, Quadratic, and Exponential Models",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Prove that linear functions grow by equal differences and exponential functions grow by equal factors over equal intervals",
+     "standard": "HSF-LE.A.1.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S53-M-Q1",
+      "S53-M-Q2",
+      "S53-M-Q3",
+      "S53-M-Q4",
+      "S53-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Tell linear from nonlinear functions",
+     "standard": "8.F.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S53-B1-Q1",
+      "S53-B1-Q2",
+      "S53-B1-Q3",
+      "S53-B1-Q4",
+      "S53-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Compare average rates of change over intervals",
+     "standard": "HSF-IF.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S53-B2-Q1",
+      "S53-B2-Q2",
+      "S53-B2-Q3",
+      "S53-B2-Q4",
+      "S53-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Derive the formula for the sum of a finite geometric series",
+     "standard": "HSA-SSE.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S53-F1-Q1",
+      "S53-F1-Q2",
+      "S53-F1-Q3",
+      "S53-F1-Q4",
+      "S53-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use logarithms to turn equal factors into equal differences",
+     "standard": "HSF-BF.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S53-F2-Q1",
+      "S53-F2-Q2",
+      "S53-F2-Q3",
+      "S53-F2-Q4",
+      "S53-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 54,
+   "set_id": "S54",
+   "file": "sets/S54.json",
+   "standard": "HSF-LE.A.1.b",
+   "title": "Recognize situations in which a quantity changes at a constant rate per unit interval",
+   "domain": "Building Functions & Linear, Quadratic, and Exponential Models",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Recognize situations in which a quantity changes at a constant rate per unit interval",
+     "standard": "HSF-LE.A.1.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S54-M-Q1",
+      "S54-M-Q2",
+      "S54-M-Q3",
+      "S54-M-Q4",
+      "S54-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find the constant of proportionality",
+     "standard": "7.RP.A.2.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S54-B1-Q1",
+      "S54-B1-Q2",
+      "S54-B1-Q3",
+      "S54-B1-Q4",
+      "S54-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Write a linear function from a rate and an initial value",
+     "standard": "8.F.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S54-B2-Q1",
+      "S54-B2-Q2",
+      "S54-B2-Q3",
+      "S54-B2-Q4",
+      "S54-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Relate arc length and sector area to the central angle",
+     "standard": "HSG-C.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S54-F1-Q1",
+      "S54-F1-Q2",
+      "S54-F1-Q3",
+      "S54-F1-Q4",
+      "S54-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use radian measure as arc length on a circle",
+     "standard": "HSF-TF.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S54-F2-Q1",
+      "S54-F2-Q2",
+      "S54-F2-Q3",
+      "S54-F2-Q4",
+      "S54-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 55,
+   "set_id": "S55",
+   "file": "sets/S55.json",
+   "standard": "HSF-LE.A.1.c",
+   "title": "Recognize situations in which a quantity grows or decays by a constant percent rate per unit interval",
+   "domain": "Building Functions & Linear, Quadratic, and Exponential Models",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Recognize situations in which a quantity grows or decays by a constant percent rate per unit interval",
+     "standard": "HSF-LE.A.1.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S55-M-Q1",
+      "S55-M-Q2",
+      "S55-M-Q3",
+      "S55-M-Q4",
+      "S55-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Read growth and decay rates from exponential functions",
+     "standard": "HSF-IF.C.8.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S55-B1-Q1",
+      "S55-B1-Q2",
+      "S55-B1-Q3",
+      "S55-B1-Q4",
+      "S55-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Solve percent problems",
+     "standard": "7.RP.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S55-B2-Q1",
+      "S55-B2-Q2",
+      "S55-B2-Q3",
+      "S55-B2-Q4",
+      "S55-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find times in percent-rate models with logarithms",
+     "standard": "HSF-LE.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S55-F1-Q1",
+      "S55-F1-Q2",
+      "S55-F1-Q3",
+      "S55-F1-Q4",
+      "S55-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use natural logarithms with continuous growth",
+     "standard": "HSF-BF.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S55-F2-Q1",
+      "S55-F2-Q2",
+      "S55-F2-Q3",
+      "S55-F2-Q4",
+      "S55-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 56,
+   "set_id": "S56",
+   "file": "sets/S56.json",
+   "standard": "HSF-LE.A.2",
+   "title": "Construct linear and exponential functions from a graph, a description, two points, or a table",
+   "domain": "Building Functions & Linear, Quadratic, and Exponential Models",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Construct linear and exponential functions from a graph, a description, two points, or a table",
+     "standard": "HSF-LE.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S56-M-Q1",
+      "S56-M-Q2",
+      "S56-M-Q3",
+      "S56-M-Q4",
+      "S56-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Write a linear function from two points or a table",
+     "standard": "8.F.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S56-B1-Q1",
+      "S56-B1-Q2",
+      "S56-B1-Q3",
+      "S56-B1-Q4",
+      "S56-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Write formulas for arithmetic and geometric sequences",
+     "standard": "HSF-BF.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S56-B2-Q1",
+      "S56-B2-Q2",
+      "S56-B2-Q3",
+      "S56-B2-Q4",
+      "S56-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Build a sinusoidal model from a description",
+     "standard": "HSF-TF.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S56-F1-Q1",
+      "S56-F1-Q2",
+      "S56-F1-Q3",
+      "S56-F1-Q4",
+      "S56-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Find a quadratic through three points with a system",
+     "standard": "HSA-REI.C.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S56-F2-Q1",
+      "S56-F2-Q2",
+      "S56-F2-Q3",
+      "S56-F2-Q4",
+      "S56-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 57,
+   "set_id": "S57",
+   "file": "sets/S57.json",
+   "standard": "HSF-LE.A.3",
+   "title": "Observe that exponential growth eventually exceeds linear, quadratic, and polynomial growth",
+   "domain": "Building Functions & Linear, Quadratic, and Exponential Models",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Observe that exponential growth eventually exceeds linear, quadratic, and polynomial growth",
+     "standard": "HSF-LE.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S57-M-Q1",
+      "S57-M-Q2",
+      "S57-M-Q3",
+      "S57-M-Q4",
+      "S57-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Tell equal differences from equal factors",
+     "standard": "HSF-LE.A.1.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S57-B1-Q1",
+      "S57-B1-Q2",
+      "S57-B1-Q3",
+      "S57-B1-Q4",
+      "S57-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Compare two functions given in different forms",
+     "standard": "8.F.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S57-B2-Q1",
+      "S57-B2-Q2",
+      "S57-B2-Q3",
+      "S57-B2-Q4",
+      "S57-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Compare the growth of polynomial functions",
+     "standard": "HSF-IF.C.7.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S57-F1-Q1",
+      "S57-F1-Q2",
+      "S57-F1-Q3",
+      "S57-F1-Q4",
+      "S57-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Compare logarithmic growth with other growth",
+     "standard": "HSF-BF.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S57-F2-Q1",
+      "S57-F2-Q2",
+      "S57-F2-Q3",
+      "S57-F2-Q4",
+      "S57-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 58,
+   "set_id": "S58",
+   "file": "sets/S58.json",
+   "standard": "HSF-LE.B.5",
+   "title": "Interpret the parameters of a linear or exponential function in context",
+   "domain": "Building Functions & Linear, Quadratic, and Exponential Models",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Interpret the parameters of a linear or exponential function in context",
+     "standard": "HSF-LE.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S58-M-Q1",
+      "S58-M-Q2",
+      "S58-M-Q3",
+      "S58-M-Q4",
+      "S58-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Interpret the parts of an expression in context",
+     "standard": "HSA-SSE.A.1.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S58-B1-Q1",
+      "S58-B1-Q2",
+      "S58-B1-Q3",
+      "S58-B1-Q4",
+      "S58-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Interpret the rate and initial value of a linear function",
+     "standard": "8.F.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S58-B2-Q1",
+      "S58-B2-Q2",
+      "S58-B2-Q3",
+      "S58-B2-Q4",
+      "S58-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Interpret the parameters of a sinusoidal model",
+     "standard": "HSF-TF.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S58-F1-Q1",
+      "S58-F1-Q2",
+      "S58-F1-Q3",
+      "S58-F1-Q4",
+      "S58-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Interpret the mean and standard deviation of a normal model",
+     "standard": "HSS-ID.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S58-F2-Q1",
+      "S58-F2-Q2",
+      "S58-F2-Q3",
+      "S58-F2-Q4",
+      "S58-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 59,
+   "set_id": "S59",
+   "file": "sets/S59.json",
+   "standard": "HSS-ID.A.1",
+   "title": "Represent data with dot plots, histograms, and box plots",
+   "domain": "Interpreting Categorical & Quantitative Data",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Represent data with dot plots, histograms, and box plots",
+     "standard": "HSS-ID.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S59-M-Q1",
+      "S59-M-Q2",
+      "S59-M-Q3",
+      "S59-M-Q4",
+      "S59-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Display numerical data in plots",
+     "standard": "6.SP.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S59-B1-Q1",
+      "S59-B1-Q2",
+      "S59-B1-Q3",
+      "S59-B1-Q4",
+      "S59-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Compute measures of center and variation",
+     "standard": "6.SP.B.5.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S59-B2-Q1",
+      "S59-B2-Q2",
+      "S59-B2-Q3",
+      "S59-B2-Q4",
+      "S59-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Decide whether a normal model fits a distribution",
+     "standard": "HSS-ID.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S59-F1-Q1",
+      "S59-F1-Q2",
+      "S59-F1-Q3",
+      "S59-F1-Q4",
+      "S59-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Decide whether results are consistent with a model by simulation",
+     "standard": "HSS-IC.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S59-F2-Q1",
+      "S59-F2-Q2",
+      "S59-F2-Q3",
+      "S59-F2-Q4",
+      "S59-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 60,
+   "set_id": "S60",
+   "file": "sets/S60.json",
+   "standard": "HSS-ID.A.2",
+   "title": "Compare the center and spread of two or more data sets",
+   "domain": "Interpreting Categorical & Quantitative Data",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Compare the center and spread of two or more data sets",
+     "standard": "HSS-ID.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S60-M-Q1",
+      "S60-M-Q2",
+      "S60-M-Q3",
+      "S60-M-Q4",
+      "S60-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Tell measures of center from measures of variation",
+     "standard": "6.SP.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S60-B1-Q1",
+      "S60-B1-Q2",
+      "S60-B1-Q3",
+      "S60-B1-Q4",
+      "S60-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Compare two distributions using center and variability",
+     "standard": "7.SP.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S60-B2-Q1",
+      "S60-B2-Q2",
+      "S60-B2-Q3",
+      "S60-B2-Q4",
+      "S60-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use simulation to decide whether a difference between treatments is significant",
+     "standard": "HSS-IC.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S60-F1-Q1",
+      "S60-F1-Q2",
+      "S60-F1-Q3",
+      "S60-F1-Q4",
+      "S60-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Evaluate reports based on data",
+     "standard": "HSS-IC.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S60-F2-Q1",
+      "S60-F2-Q2",
+      "S60-F2-Q3",
+      "S60-F2-Q4",
+      "S60-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 61,
+   "set_id": "S61",
+   "file": "sets/S61.json",
+   "standard": "HSS-ID.A.3",
+   "title": "Interpret differences in shape, center, and spread, accounting for outliers",
+   "domain": "Interpreting Categorical & Quantitative Data",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Interpret differences in shape, center, and spread, accounting for outliers",
+     "standard": "HSS-ID.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S61-M-Q1",
+      "S61-M-Q2",
+      "S61-M-Q3",
+      "S61-M-Q4",
+      "S61-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Describe a distribution by its center, spread, and shape",
+     "standard": "6.SP.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S61-B1-Q1",
+      "S61-B1-Q2",
+      "S61-B1-Q3",
+      "S61-B1-Q4",
+      "S61-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Choose measures of center and spread that fit the data",
+     "standard": "6.SP.B.5.d",
+     "nearest_related": false,
+     "question_ids": [
+      "S61-B2-Q1",
+      "S61-B2-Q2",
+      "S61-B2-Q3",
+      "S61-B2-Q4",
+      "S61-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use z-scores to judge how unusual a value is",
+     "standard": "HSS-ID.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S61-F1-Q1",
+      "S61-F1-Q2",
+      "S61-F1-Q3",
+      "S61-F1-Q4",
+      "S61-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Distinguish a population parameter from a sample statistic",
+     "standard": "HSS-IC.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S61-F2-Q1",
+      "S61-F2-Q2",
+      "S61-F2-Q3",
+      "S61-F2-Q4",
+      "S61-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 62,
+   "set_id": "S62",
+   "file": "sets/S62.json",
+   "standard": "HSS-ID.B.5",
+   "title": "Summarize categorical data in two-way frequency tables and interpret relative frequencies",
+   "domain": "Interpreting Categorical & Quantitative Data",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Summarize categorical data in two-way frequency tables and interpret relative frequencies",
+     "standard": "HSS-ID.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S62-M-Q1",
+      "S62-M-Q2",
+      "S62-M-Q3",
+      "S62-M-Q4",
+      "S62-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Read two-way tables for association",
+     "standard": "8.SP.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S62-B1-Q1",
+      "S62-B1-Q2",
+      "S62-B1-Q3",
+      "S62-B1-Q4",
+      "S62-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Write a part of a whole as a percent",
+     "standard": "7.RP.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S62-B2-Q1",
+      "S62-B2-Q2",
+      "S62-B2-Q3",
+      "S62-B2-Q4",
+      "S62-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use a two-way table to find conditional probabilities and test independence",
+     "standard": "HSS-CP.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S62-F1-Q1",
+      "S62-F1-Q2",
+      "S62-F1-Q3",
+      "S62-F1-Q4",
+      "S62-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Explain conditional probability and independence in everyday language",
+     "standard": "HSS-CP.A.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S62-F2-Q1",
+      "S62-F2-Q2",
+      "S62-F2-Q3",
+      "S62-F2-Q4",
+      "S62-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 63,
+   "set_id": "S63",
+   "file": "sets/S63.json",
+   "standard": "HSS-ID.B.6.a",
+   "title": "Fit a linear, quadratic, or exponential function to data and use it to solve problems",
+   "domain": "Interpreting Categorical & Quantitative Data",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Fit a linear, quadratic, or exponential function to data and use it to solve problems",
+     "standard": "HSS-ID.B.6.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S63-M-Q1",
+      "S63-M-Q2",
+      "S63-M-Q3",
+      "S63-M-Q4",
+      "S63-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Describe patterns in scatter plots",
+     "standard": "8.SP.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S63-B1-Q1",
+      "S63-B1-Q2",
+      "S63-B1-Q3",
+      "S63-B1-Q4",
+      "S63-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Write linear and exponential functions through given points",
+     "standard": "HSF-LE.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S63-B2-Q1",
+      "S63-B2-Q2",
+      "S63-B2-Q3",
+      "S63-B2-Q4",
+      "S63-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use logarithms with an exponential model fitted to data",
+     "standard": "HSF-LE.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S63-F1-Q1",
+      "S63-F1-Q2",
+      "S63-F1-Q3",
+      "S63-F1-Q4",
+      "S63-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Fit a sinusoidal model to periodic data",
+     "standard": "HSF-TF.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S63-F2-Q1",
+      "S63-F2-Q2",
+      "S63-F2-Q3",
+      "S63-F2-Q4",
+      "S63-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 64,
+   "set_id": "S64",
+   "file": "sets/S64.json",
+   "standard": "HSS-ID.B.6.b",
+   "title": "Assess the fit of a function by plotting and analyzing residuals",
+   "domain": "Interpreting Categorical & Quantitative Data",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Assess the fit of a function by plotting and analyzing residuals",
+     "standard": "HSS-ID.B.6.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S64-M-Q1",
+      "S64-M-Q2",
+      "S64-M-Q3",
+      "S64-M-Q4",
+      "S64-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Use a fitted function to make predictions",
+     "standard": "HSS-ID.B.6.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S64-B1-Q1",
+      "S64-B1-Q2",
+      "S64-B1-Q3",
+      "S64-B1-Q4",
+      "S64-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Subtract rational numbers",
+     "standard": "7.NS.A.1.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S64-B2-Q1",
+      "S64-B2-Q2",
+      "S64-B2-Q3",
+      "S64-B2-Q4",
+      "S64-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use logarithms to straighten exponential data",
+     "standard": "HSF-LE.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S64-F1-Q1",
+      "S64-F1-Q2",
+      "S64-F1-Q3",
+      "S64-F1-Q4",
+      "S64-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Evaluate reports that use fitted models",
+     "standard": "HSS-IC.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S64-F2-Q1",
+      "S64-F2-Q2",
+      "S64-F2-Q3",
+      "S64-F2-Q4",
+      "S64-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 65,
+   "set_id": "S65",
+   "file": "sets/S65.json",
+   "standard": "HSS-ID.B.6.c",
+   "title": "Fit a linear function to a scatter plot that suggests a linear association",
+   "domain": "Interpreting Categorical & Quantitative Data",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Fit a linear function to a scatter plot that suggests a linear association",
+     "standard": "HSS-ID.B.6.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S65-M-Q1",
+      "S65-M-Q2",
+      "S65-M-Q3",
+      "S65-M-Q4",
+      "S65-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Judge a line of fit informally",
+     "standard": "8.SP.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S65-B1-Q1",
+      "S65-B1-Q2",
+      "S65-B1-Q3",
+      "S65-B1-Q4",
+      "S65-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Write a line through two points",
+     "standard": "HSF-LE.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S65-B2-Q1",
+      "S65-B2-Q2",
+      "S65-B2-Q3",
+      "S65-B2-Q4",
+      "S65-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Evaluate conclusions drawn from a line of fit",
+     "standard": "HSS-IC.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S65-F1-Q1",
+      "S65-F1-Q2",
+      "S65-F1-Q3",
+      "S65-F1-Q4",
+      "S65-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use simulation to judge whether an association could be due to chance",
+     "standard": "HSS-IC.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S65-F2-Q1",
+      "S65-F2-Q2",
+      "S65-F2-Q3",
+      "S65-F2-Q4",
+      "S65-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 66,
+   "set_id": "S66",
+   "file": "sets/S66.json",
+   "standard": "HSS-ID.C.7",
+   "title": "Interpret the slope and the intercept of a linear model in the context of the data",
+   "domain": "Interpreting Categorical & Quantitative Data",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Interpret the slope and the intercept of a linear model in the context of the data",
+     "standard": "HSS-ID.C.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S66-M-Q1",
+      "S66-M-Q2",
+      "S66-M-Q3",
+      "S66-M-Q4",
+      "S66-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Interpret the parameters of linear and exponential functions",
+     "standard": "HSF-LE.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S66-B1-Q1",
+      "S66-B1-Q2",
+      "S66-B1-Q3",
+      "S66-B1-Q4",
+      "S66-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Use a linear model to solve problems",
+     "standard": "8.SP.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S66-B2-Q1",
+      "S66-B2-Q2",
+      "S66-B2-Q3",
+      "S66-B2-Q4",
+      "S66-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Interpret the parameters of continuous exponential models",
+     "standard": "HSF-LE.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S66-F1-Q1",
+      "S66-F1-Q2",
+      "S66-F1-Q3",
+      "S66-F1-Q4",
+      "S66-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Understand a fitted slope as an estimate of a population value",
+     "standard": "HSS-IC.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S66-F2-Q1",
+      "S66-F2-Q2",
+      "S66-F2-Q3",
+      "S66-F2-Q4",
+      "S66-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 67,
+   "set_id": "S67",
+   "file": "sets/S67.json",
+   "standard": "HSS-ID.C.8",
+   "title": "Compute (using technology) and interpret the correlation coefficient of a linear fit",
+   "domain": "Interpreting Categorical & Quantitative Data",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Compute (using technology) and interpret the correlation coefficient of a linear fit",
+     "standard": "HSS-ID.C.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S67-M-Q1",
+      "S67-M-Q2",
+      "S67-M-Q3",
+      "S67-M-Q4",
+      "S67-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Describe the direction of an association",
+     "standard": "8.SP.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S67-B1-Q1",
+      "S67-B1-Q2",
+      "S67-B1-Q3",
+      "S67-B1-Q4",
+      "S67-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Fit and use a line for linear data",
+     "standard": "HSS-ID.B.6.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S67-B2-Q1",
+      "S67-B2-Q2",
+      "S67-B2-Q3",
+      "S67-B2-Q4",
+      "S67-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use simulation to judge whether a correlation could be due to chance",
+     "standard": "HSS-IC.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S67-F1-Q1",
+      "S67-F1-Q2",
+      "S67-F1-Q3",
+      "S67-F1-Q4",
+      "S67-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Evaluate claims based on a correlation",
+     "standard": "HSS-IC.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S67-F2-Q1",
+      "S67-F2-Q2",
+      "S67-F2-Q3",
+      "S67-F2-Q4",
+      "S67-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 68,
+   "set_id": "S68",
+   "file": "sets/S68.json",
+   "standard": "HSS-ID.C.9",
+   "title": "Distinguish between correlation and causation",
+   "domain": "Interpreting Categorical & Quantitative Data",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Distinguish between correlation and causation",
+     "standard": "HSS-ID.C.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S68-M-Q1",
+      "S68-M-Q2",
+      "S68-M-Q3",
+      "S68-M-Q4",
+      "S68-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Interpret the correlation coefficient",
+     "standard": "HSS-ID.C.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S68-B1-Q1",
+      "S68-B1-Q2",
+      "S68-B1-Q3",
+      "S68-B1-Q4",
+      "S68-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Use random samples to make valid generalizations",
+     "standard": "7.SP.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S68-B2-Q1",
+      "S68-B2-Q2",
+      "S68-B2-Q3",
+      "S68-B2-Q4",
+      "S68-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Distinguish surveys, experiments, and observational studies",
+     "standard": "HSS-IC.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S68-F1-Q1",
+      "S68-F1-Q2",
+      "S68-F1-Q3",
+      "S68-F1-Q4",
+      "S68-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use random methods to make fair decisions",
+     "standard": "HSS-MD.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S68-F2-Q1",
+      "S68-F2-Q2",
+      "S68-F2-Q3",
+      "S68-F2-Q4",
+      "S68-F2-Q5"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -5,7 +5,7 @@ BALL = graph([lambda t: -5 * t * t + 20 * t + 25], lo=0, hi=6, ylo=0, yhi=50, ys
              xlabel='Time (seconds)', ylabel='Height (meters)',
              desc='The graph of a ball\'s height h(t) in meters against time t in seconds. It starts at (0, 25), rises to its highest '
                   'point (2, 45), passes (4, 25), and reaches the ground at (5, 0).')
-PLANE8 = plane(-8, 8)
+PLANE8 = plane(-8, 8, xlab=2, ylab=2)
 PLANE = plane()
 QUAD = coord(x=(-4, 8), y=(-10, 6), desc='Blank coordinate grid, x from -4 to 8 and y from -10 to 6.')
 EXP = coord(x=(-3, 3), y=(0, 12), square=False, desc='Blank coordinate grid, x from -3 to 3 and y from 0 to 12.')
@@ -147,7 +147,7 @@ SETS = [
       f2=B('Find the sum of a finite geometric series', 'HSA-SSE.B.4', [
           sa('Find the sum of the first 5 terms of 2, 6, 18, ...', 'Sum:', key='242', note='Any equivalent form. 2(3⁵ - 1) ÷ (3 - 1) = 242.'),
           sa('Write a formula for the sum of the first n terms of 5, 10, 20, ...', 'Sum:', key='5(2^n - 1)', note='Any equivalent form. a = 5 and r = 2.'),
-          mc('What is 1 + 3 + 9 + 27 + 81?', ['121', '81', '243', '120'], note='(3⁵ - 1) ÷ 2 = 121.'),
+          mc('What is 1 + 4 + 16 + 64?', ['85', '64', '256', '84'], note='(4⁴ - 1) ÷ 3 = 85.'),
           tf('The sum of the first 4 terms of 1, 2, 4, 8, ... is 15.', key=True, note='1 + 2 + 4 + 8 = 15.'),
           tf('A geometric series with first term 4, ratio 1, and 5 terms has sum 4.', key=False, note='4 + 4 + 4 + 4 + 4 = 20.'),
       ])),
@@ -428,7 +428,7 @@ SETS = [
               sa('Which is farther from 0, -7 or 5? Explain with absolute value.', 'Answer:', key='-7, because |-7| = 7 and |5| = 5.', note='Any equivalent explanation.'),
               mc('Which value equals |3 - 8|?', ['5', '-5', '11', '-11'], note='|-5| = 5.'),
               tf('|-4| = 4', key=True, note='-4 is 4 units from 0.'),
-              tf('|0| = 1', key=False, note='|0| = 0.'),
+              tf('|0| = 0', key=True, note='0 is 0 units from 0.'),
           ]),
       ],
       f1=B('Solve radical equations and check for extraneous solutions', 'HSA-REI.A.2', [
@@ -467,7 +467,7 @@ SETS = [
               sa('Evaluate 3 · 2⁻¹.', 'Value:', key='1.5', note='Any equivalent form, such as 3/2.'),
               mc('Which number equals (0.5)⁻¹?', ['2', '-0.5', '0.5', '-2'], note='1 ÷ 0.5 = 2.'),
               tf('5⁰ = 1', key=True, note='Any nonzero number to the 0 power is 1.'),
-              tf('4⁻¹ = -4', key=False, note='4⁻¹ = {1/4}.'),
+              tf('4⁻¹ = {1/4}', key=True, note='4⁻¹ = 1 ÷ 4.'),
           ]),
           B('Evaluate exponential functions', 'HSF-IF.A.2', [
               sa('f(x) = 50(0.8)^x.\nFind f(2).', 'f(2) =', key='32', note='Any equivalent form. 50(0.64).'),
@@ -482,7 +482,7 @@ SETS = [
           sa('Solve 50(0.8)^x = 20. Round to the nearest tenth.', 'x ≈', key='4.1', note='Form required: rounded to the nearest tenth. x = log 0.4 ÷ log 0.8 ≈ 4.11.'),
           mc('Solve 2^x = 12.', ['x = log 12 ÷ log 2 ≈ 3.58', 'x = 6', 'x = 3.5', 'x = log 6'], note='Take the logarithm of both sides.'),
           tf('log 1 = 0', key=True, note='10⁰ = 1.'),
-          tf('log 100 = 10', key=False, note='10² = 100, so log 100 = 2.'),
+          tf('log 100 = 2', key=True, note='10² = 100.'),
       ]),
       f2=B('Understand logarithms as inverses of exponential functions', 'HSF-BF.B.5', [
           sa('Write the inverse of f(x) = 2^x.', 'f⁻¹(x) =', key='log₂ x', note='Any equivalent form, such as log x ÷ log 2.'),
@@ -523,10 +523,10 @@ SETS = [
           ]),
       ],
       f1=B('Prove polynomial identities', 'HSA-APR.C.4', [
-          sa('Show that (x² + y²)² = (x² - y²)² + (2xy)².', 'Answer:',
+          sa('Show that (x² + y²)² = (x² - y²)² + (2xy)² by expanding both sides.', 'Answer:',
              key='Left: x⁴ + 2x²y² + y⁴. Right: x⁴ - 2x²y² + y⁴ + 4x²y² = x⁴ + 2x²y² + y⁴. The two sides are equal.', note='Form required: both sides expanded.'),
           sa('Use x = 2 and y = 1 in x² - y², 2xy, and x² + y² to make a Pythagorean triple.', 'Triple:', key='3, 4, 5', note='Any order.'),
-          mc('Which identity is true for all numbers a and b?', ['a³ - b³ = (a - b)(a² + ab + b²)', 'a³ - b³ = (a - b)³', 'a³ + b³ = (a + b)³', 'a² + b² = (a + b)²'],
+          mc('Which equation is an identity (true for all numbers a and b)?', ['a³ - b³ = (a - b)(a² + ab + b²)', 'a³ - b³ = (a - b)³', 'a³ + b³ = (a + b)³', 'a² + b² = (a + b)²'],
              note='Expanding (a - b)(a² + ab + b²) gives a³ - b³. Each other choice fails for a = 2, b = 1.'),
           tf('(a + b)² - (a - b)² = 4ab', key=True, note='(a² + 2ab + b²) - (a² - 2ab + b²) = 4ab.'),
           tf('(x + 1)³ = x³ + 1', key=False, note='(x + 1)³ = x³ + 3x² + 3x + 1.'),
