@@ -1,6 +1,8 @@
 """Constructors for question sets."""
 
 GRADE = 6  # set by build.load_grade() before the data modules are imported
+COURSE = None  # a course collection (for example Algebra I) sets this dict instead of a grade; see engine/hs_courses.py
+MAIN_SEEN = []  # course mode: MAIN standards of the sets defined so far, in order
 STRICT_BACKWARD = False  # set from the grade's STRICT_BACKWARD; when False, same-grade branches are only listed
 SAME_GRADE_BACKWARD = []
 
@@ -40,6 +42,9 @@ HS_DOMAINS = {
     'S-ID': 'Statistics & Probability: Interpreting Categorical & Quantitative Data',
     'S-IC': 'Statistics & Probability: Making Inferences & Justifying Conclusions',
     'S-CP': 'Statistics & Probability: Conditional Probability & the Rules of Probability',
+    'S-MD': 'Statistics & Probability: Using Probability to Make Decisions',
+    'N-VM': 'Number & Quantity: Vector & Matrix Quantities',
+    'F-TF': 'Functions: Trigonometric Functions',
 }
 HS_GRADE = 9  # the earliest grade at which this bank places a high-school standard
 
@@ -63,6 +68,9 @@ def grade_num(code, key=None):
 
 
 def std_info(code, key=None):
+    if COURSE and code.startswith('HS'):
+        import hs_courses
+        return hs_courses.course_label(code, COURSE['name']), HS_DOMAINS[code[2:].split('.')[0]]
     if code.startswith('HS'):
         dom = code[2:].split('.')[0]
         return 'High School (Grade %d in this bank)' % hs_place(key), HS_DOMAINS[dom]
@@ -84,6 +92,10 @@ def tf(stem, fig=None, **kw):
 
 def nearest_note(std=None, key=None):
     """Note for a nearest-related forward branch, naming the branch's own grade (from its standard and slot)."""
+    if COURSE:
+        import hs_courses
+        return ('No standard in a later course directly continues this skill at this step. This branch uses the '
+                'nearest related %s standard.' % hs_courses.course_of(std))
     g = grade_num(std, key) if std else GRADE + 2
     if std and std.startswith('HS'):
         return ('No high-school standard directly continues this skill at this step. This branch uses the nearest related '
@@ -107,6 +119,12 @@ def S(std, title, main, back, f1, f2, num=None):
     """num fixes the set number (IDs S<num>-...). Sets added after a collection is published take
     the next free number so earlier IDs never move; unnumbered sets count up in collection order."""
     assert len(main) == 5, (std, title)
+    if COURSE:
+        _check_course_set(std, title, main, back, f1, f2)
+        d = dict(std=std, title=title, main=main, back=back, f1=f1, f2=f2)
+        if num:
+            d['fixed_num'] = num
+        return d
     assert std.startswith('%d.' % GRADE), std
     for b in back:
         if not grade_num(b['std']) < GRADE:  # a backward branch must use an earlier grade
@@ -118,6 +136,40 @@ def S(std, title, main, back, f1, f2, num=None):
     if num:
         d['fixed_num'] = num
     return d
+
+
+def _check_course_set(std, title, main, back, f1, f2):
+    """Course mode rules. MAIN uses a standard of the course. A backward branch uses a Grade K-8 standard, or a
+    course standard that is the MAIN standard of an earlier set (never the set's own standard). Each forward branch
+    uses a standard of a later course, never a code the course itself holds, and FORWARD 2 is in a course at least as
+    advanced as FORWARD 1. Every question carries an explanation (note=)."""
+    import hs_courses
+    assert std in COURSE['standards'], (title, std)
+    for b in back:
+        c = b['std']
+        if c.startswith('HS'):
+            assert c in COURSE['standards'] and c != std and c in MAIN_SEEN, (
+                'backward branch must use an earlier set\'s course standard or Grade K-8', title, c)
+        else:
+            assert grade_num(c) <= 8, (title, c)
+    r1, r2 = (hs_courses.RANK[hs_courses.course_of(f['std'])] for f in (f1, f2))
+    home = hs_courses.RANK[COURSE['name']]
+    assert r1 > home and r2 > home, ('forward branches use later courses', title, f1['std'], f2['std'])
+    assert r2 >= r1, ('FORWARD 2 is at least as advanced as FORWARD 1', title, f1['std'], f2['std'])
+    for q in main + [q for b in back + [f1, f2] for q in b['qs']]:
+        assert q.get('note'), ('every course question needs an explanation (note=)', title, q['stem'][:60])
+        for v in [q.get(k) for k in ('stem', 'key', 'note', 'draw', 'method', 'ans')] + list(q.get('ch') or []):
+            if isinstance(v, str):
+                for i in [m for m in range(len(v)) if v.startswith('^(', m)]:
+                    depth, j = 0, i + 1
+                    while j < len(v):
+                        depth += v[j] == '('
+                        depth -= v[j] == ')'
+                        j += 1
+                        if depth == 0:
+                            break
+                    assert ' ' not in v[i:j], ('write exponents without spaces so they typeset as superscripts', v[i:j], v[:60])
+    MAIN_SEEN.append(std)
 
 
 # ------------------------------------------------------------ figure helpers

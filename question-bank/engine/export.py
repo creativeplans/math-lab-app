@@ -311,7 +311,32 @@ def describe(f):
     return k
 
 
-def hs_level(key):
+def course_of(std):
+    import hs_courses
+    return hs_courses.course_of(std)
+
+
+COURSE_ID_FORMAT = (
+    'S<set>-<section>-Q<number>. Section codes: M = MAIN (the course\'s own standard), B1, B2, ... = BACKWARD branches '
+    '(a Grade K-8 standard, or a course standard that is the MAIN standard of an earlier set), F1 = FORWARD 1 and '
+    'F2 = FORWARD 2 (standards of later courses; standard_course names the course). id is unique within this collection; '
+    'uid = "%s:" + id is unique across all collections. Forward branches name standards only, never question IDs of other '
+    'collections. Set and branch numbers are fixed: they need not be consecutive, and an ID is never reused for a different '
+    'skill (see revisions.json).')
+COURSE_RELATIONS = dict(
+    main='the course skill the set is built around',
+    backward='a prerequisite skill to check when a student misses MAIN questions (an earlier grade, or an earlier set of this course)',
+    forward1='a directly connected skill in a later course (standard_course names it)',
+    forward2='a further connected skill in a later course, at least as advanced as FORWARD 1',
+    nearest_related='true marks a forward branch that no later-course standard directly continues; it uses the nearest related standard')
+
+
+def hs_level(key, std=None):
+    if qb.COURSE:
+        import hs_courses
+        c = hs_courses.course_of(std)
+        return ('%s. Common Core groups high-school standards by category, not by course; this bank places this one in '
+                '%s, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.' % (c, c))
     return ('High school (Common Core high-school standard; this bank places it at Grade %d as a %s forward step. '
             'This is an instructional choice, not an official grade assignment.)' % (qb.hs_place(key), 'first' if key == 'FORWARD 1' else 'second'))
 
@@ -400,9 +425,11 @@ def export(out_dir):
                 rec = dict(
                     id=qid, uid=r['uid'], collection=build.COLLECTION['id'], set=st['num'], section=key, section_code=code,
                     relation=RELATION.get(code, 'backward'), number=i, of=len(qs),
-                    standard=std, standard_grade=std.split('.')[0] if std.startswith('K') else qb.grade_num(std, key),
+                    standard=std, standard_grade=(std.split('.')[0] if std.startswith('K') else
+                                                  'HS' if qb.COURSE and std.startswith('HS') else qb.grade_num(std, key)),
                     domain=r['domain'], skill=name, nearest_related=bool(nearest),
-                    **(dict(standard_level=hs_level(key)) if std.startswith('HS') else {}),
+                    **(dict(standard_level=hs_level(key, std)) if std.startswith('HS') else {}),
+                    **(dict(standard_course=course_of(std)) if qb.COURSE and std.startswith('HS') else {}),
                     type=r['type'],
                     response={'mc': 'select one', 'tf': 'select true or false', 'sa': 'write',
                               'plot': 'draw on the figure',
@@ -448,9 +475,9 @@ def export(out_dir):
 
     index = dict(
         format_version=FORMAT_VERSION, collection=build.COLLECTION, grade=build.GRADE,
-        title='Grade %d Common Core Math — Question Sets' % build.GRADE,
+        title=build.series() + ' — Question Sets',
         set_count=len(index_sets), question_count=nq, figure_count=nfig,
-        id_format='S<set>-<section>-Q<number>. Section codes: M = MAIN (Grade %d), B1, B2, ... = BACKWARD '
+        id_format=COURSE_ID_FORMAT % build.COLLECTION['id'] if qb.COURSE else 'S<set>-<section>-Q<number>. Section codes: M = MAIN (Grade %d), B1, B2, ... = BACKWARD '
                   'branches (earlier grades), F1 = FORWARD 1 (Grade %d), F2 = FORWARD 2 (Grade %d). '
                   'id is unique within this collection; uid = "%s:" + id is unique across all grade collections '
                   '(the collection, not a question\'s standard grade, is the namespace: this bank also holds '
@@ -459,7 +486,7 @@ def export(out_dir):
                   % (build.GRADE, build.GRADE + 1, build.GRADE + 2, build.COLLECTION['id'],
                      build.GRADE + 1, build.GRADE + 2),
         revisions_file='revisions.json' if tracker.active else None,
-        relations=dict(main='the Grade %d skill the set is built around' % build.GRADE,
+        relations=COURSE_RELATIONS if qb.COURSE else dict(main='the Grade %d skill the set is built around' % build.GRADE,
                        backward='a prerequisite skill to check when a student misses MAIN questions',
                        forward1='the directly connected Grade %d skill' % (build.GRADE + 1),
                        forward2='the next connected Grade %d skill' % (build.GRADE + 2),
@@ -477,7 +504,7 @@ def export(out_dir):
             json.dump(index, fh, ensure_ascii=False, indent=1)
         with open(os.path.join(out_dir, 'revisions.json'), 'w', encoding='utf-8') as fh:
             json.dump(rev_doc, fh, ensure_ascii=False, indent=1)
-        title = 'Grade %d question collection' % build.GRADE
+        title = '%s question collection' % build.name()
         revisions.write_changelog(rev_doc, os.path.join(out_dir, 'CHANGELOG.md'), title)
         revisions.write_changelog(rev_doc, os.path.join(build.GRADE_DIR, 'CHANGELOG.md'), title)
 
@@ -488,7 +515,7 @@ def export(out_dir):
         for p in range(parts):
             part = pymupdf.open()
             part.insert_pdf(doc, from_page=p * PDF_PART, to_page=min(len(doc), (p + 1) * PDF_PART) - 1)
-            part.save(os.path.join(out_dir, 'pdf', 'Grade %d - Part %d of %s.pdf' % (build.GRADE, p + 1, kind)),
+            part.save(os.path.join(out_dir, 'pdf', '%s - Part %d of %s.pdf' % (build.name(), p + 1, kind)),
                       garbage=3, deflate=True)
     for doc_name in ('CORRECTIONS.md', 'COVERAGE.md'):
         if os.path.exists(os.path.join(build.GRADE_DIR, doc_name)):
@@ -514,6 +541,17 @@ def write_manifest(out_dir):
         json.dump(dict(collection=build.COLLECTION, file_count=len(files), files=files), fh, indent=1)
 
 
+def level_rows():
+    if qb.COURSE:
+        return ('| `standard_grade` | The grade of a Grade K-8 standard, or `"HS"` for a high-school standard (no grade is assigned) |\n'
+                '| `standard_course`, `standard_level` | High-school standards only: the course this bank places the standard in '
+                '(Algebra I, Geometry, Algebra II, Probability & Statistics, or Precalculus), and a sentence saying that this is '
+                'the bank\'s placement |\n')
+    return ('| `standard_level` | High-school standards only: says that %s is this bank\'s placement, not an official Common Core grade |\n'
+            % (' or '.join('Grade %d' % n for n in sorted({qb.hs_place(k) for k in ('FORWARD 1', 'FORWARD 2')
+                                                          if build.GRADE + int(k[-1]) >= qb.HS_GRADE})) or 'Grade 9'))
+
+
 def write_readme(out_dir, index, npages):
     g = index['grade']
     first = index['sets'][0]
@@ -525,7 +563,7 @@ def write_readme(out_dir, index, npages):
         revline = ('\nThis is version {v}. Compared with the previous version: {u} questions unchanged, {r} revised, {n} new, '
                    '{t} retired. `CHANGELOG.md` lists every change by question ID; `revisions.json` has the full map.\n').format(
             v=col['version'], u=rev.get('unchanged', 0), r=rev.get('revised', 0), n=rev.get('new', 0), t=rev.get('retired', 0))
-    text = '''# Grade {g} — Untangle The Nexus import package
+    text = '''# {gname} — Untangle The Nexus import package
 
 Collection `{cid}`, version {ver}. {sets} question sets, {nq} questions, {nfig} figure files. Generated by
 `question-bank/engine/export.py` in the math-lab-app repository; regenerate there rather than editing these files by hand.
@@ -562,8 +600,7 @@ Collection `{cid}`, version {ver}. {sets} question sets, {nq} questions, {nfig} 
 | `uid`, `collection`, `id` | Identity: `uid` = collection + `:` + `id` |
 | `set`, `section`, `section_code`, `relation`, `number` | Where the question sits |
 | `standard`, `standard_grade`, `domain`, `skill`, `nearest_related` | What it tests |
-| `standard_level` | High-school standards only: says that {hsgrades} is this bank's placement, not an official Common Core grade |
-| `type`, `response` | `mc` (select one), `tf` (true or false), `sa` (write an answer), `plot` (draw on the figure), `plot_text` (draw on the figure AND write an answer), `work` (write the answer and show the required work) |
+{levelrows}| `type`, `response` | `mc` (select one), `tf` (true or false), `sa` (write an answer), `plot` (draw on the figure), `plot_text` (draw on the figure AND write an answer), `work` (write the answer and show the required work) |
 | `prompt`, `prompt_markup` | Question text: plain, and with `{{a/b}}` fraction markup |
 | `choices` | `[{{letter, text}}]` in the order students see; true/false is A. True, B. False. Picture choices add `svg`, `png`, `data` |
 | `answer_lines` | Labels of the student's answer blanks, for written answers |
@@ -582,10 +619,9 @@ Written answers accept any mathematically equivalent form unless the question as
 drawing is judged against `correct_answer`; a `plot_text` response needs both the drawing (`drawing_answer`) and the
 written answer (`correct_answer`). A `work` response needs the method in `required_method`. Explanations must include
 what `grading_note` lists.
-'''.format(g=g, sets=index['set_count'], nq=index['question_count'], nfig=index['figure_count'],
+'''.format(gname=build.name(), sets=index['set_count'], nq=index['question_count'], nfig=index['figure_count'],
            part=PDF_PART, ex=ex, cid=col['id'], ver=col['version'], revline=revline,
-           hsgrades=' or '.join('Grade %d' % n for n in sorted({qb.hs_place(k) for k in ('FORWARD 1', 'FORWARD 2')
-                                                                if build.GRADE + int(k[-1]) >= qb.HS_GRADE})) or 'Grade 9')
+           levelrows=level_rows())
     with open(os.path.join(out_dir, 'README.md'), 'w', encoding='utf-8') as fh:
         fh.write(text)
 

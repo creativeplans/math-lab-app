@@ -53,6 +53,41 @@ def fix_minus(s):
 FRAC = re.compile(r'\{([^{}/\s]+)/([^{}\s]+)\}')
 
 
+SUPERSCRIPT = False  # course collections typeset a^b and a^(...) as raised exponents (set by build.load_grade)
+
+
+def _sup_split(t):
+    """Split text into ('t', ...) and ('s', exponent) segments: ^(...) with balanced parentheses, or ^ followed by a
+    run of letters, digits, and points. The plain text keeps the ^ notation."""
+    out, i, start = [], 0, 0
+    while i < len(t):
+        if t[i] == '^' and i + 1 < len(t):
+            j = i + 1
+            if t[j] == '(':
+                depth = 0
+                while j < len(t):
+                    depth += t[j] == '('
+                    depth -= t[j] == ')'
+                    j += 1
+                    if depth == 0:
+                        break
+                exp = t[i + 2:j - 1]
+            else:
+                while j < len(t) and (t[j].isalnum() or t[j] in '.−') and not (t[j] == '.' and j + 1 == len(t)):
+                    j += 1
+                exp = t[i + 1:j]
+            if exp:
+                if i > start:
+                    out.append(('t', t[start:i]))
+                out.append(('s', exp))
+                i = start = j
+                continue
+        i += 1
+    if start < len(t):
+        out.append(('t', t[start:]))
+    return out
+
+
 def parse_word(w):
     segs, pos = [], 0
     for m in FRAC.finditer(w):
@@ -62,12 +97,16 @@ def parse_word(w):
         pos = m.end()
     if pos < len(w):
         segs.append(('t', w[pos:]))
+    if SUPERSCRIPT:
+        segs = [x for sg in segs for x in (_sup_split(sg[1]) if sg[0] == 't' else [sg])]
     return segs
 
 
 def seg_w(seg, font, size):
     if seg[0] == 't':
         return sw(seg[1], font, size)
+    if seg[0] == 's':
+        return sw(seg[1], font, size * 0.68) + size * 0.04
     fs = size * 0.72
     return max(sw(seg[1], font, fs), sw(seg[2], font, fs)) + size * 0.3
 
@@ -80,7 +119,13 @@ def has_frac(words):
     return any(s[0] == 'f' for w in words for s in w)
 
 
+def has_sup(words):
+    return any(s[0] == 's' for w in words for s in w)
+
+
 def line_metrics(words, size):
+    if has_sup(words) and not has_frac(words):
+        return size * 1.14, size * 0.34
     if has_frac(words):
         return size * 1.22, size * 0.72
     return size * 0.98, size * 0.34
@@ -162,6 +207,10 @@ def draw_segs(c, words, x, base, font, size, color):
                 c.setFont(font, size)
                 c.drawString(x, base, s[1])
                 x += sw(s[1], font, size)
+            elif s[0] == 's':
+                c.setFont(font, size * 0.68)
+                c.drawString(x + size * 0.02, base + size * 0.42, s[1])
+                x += seg_w(s, font, size)
             else:
                 fs = size * 0.72
                 wd = seg_w(s, font, size)

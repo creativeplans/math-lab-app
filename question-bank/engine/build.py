@@ -39,12 +39,25 @@ def load_grade(name):
     GRADE_DIR = os.path.join(os.path.dirname(ENGINE), name)
     sys.path.insert(0, os.path.join(GRADE_DIR, 'src'))
     cfg = importlib.import_module('grade')
-    GRADE = cfg.GRADE
-    qb.GRADE = GRADE
-    qb.STRICT_BACKWARD = getattr(cfg, 'STRICT_BACKWARD', False)
+    course = getattr(cfg, 'COURSE', None)
+    qb.MAIN_SEEN.clear()
+    GRADING_RULES[:] = BASE_GRADING_RULES + list(getattr(cfg, 'EXTRA_GRADING_RULES', []))
     COLLECTION.clear()
-    COLLECTION.update(id='G%d' % GRADE, grade=GRADE, version=getattr(cfg, 'VERSION', '1.0.0'),
-                      date=getattr(cfg, 'VERSION_DATE', None))
+    if course:
+        import hs_courses
+        GRADE = None
+        qb.GRADE = None
+        qb.COURSE = dict(course, standards=hs_courses.STANDARDS[course['name']])
+        COLLECTION.update(id=course['id'], grade=None, course=course['name'], version=getattr(cfg, 'VERSION', '1.0.0'),
+                          date=getattr(cfg, 'VERSION_DATE', None))
+    else:
+        GRADE = cfg.GRADE
+        qb.GRADE = GRADE
+        qb.COURSE = None
+        COLLECTION.update(id='G%d' % GRADE, grade=GRADE, version=getattr(cfg, 'VERSION', '1.0.0'),
+                          date=getattr(cfg, 'VERSION_DATE', None))
+    qb.STRICT_BACKWARD = getattr(cfg, 'STRICT_BACKWARD', False)
+    R.SUPERSCRIPT = bool(course)
     A.KEY_DIR = os.path.join(GRADE_DIR, 'src', 'answers')
     DOMAIN_ORDER = [(dom, importlib.import_module(mod).SETS) for dom, mod in cfg.DOMAINS]
     A.PLAN.clear()
@@ -61,13 +74,28 @@ def load_grade(name):
         plan_file = os.path.join(GRADE_DIR, 'src', 'choice_plan.json')
         if os.path.exists(plan_file):
             frozen = json.load(open(plan_file))
-        A.make_plan(items, GRADE, frozen)
+        A.make_plan(items, qb.COURSE['seed'] if qb.COURSE else GRADE, frozen)
     return GRADE
+
+
+def name():
+    """The collection's name: 'Grade 7' or a course name such as 'Algebra I'."""
+    return qb.COURSE['name'] if qb.COURSE else 'Grade %d' % GRADE
+
+
+def stem():
+    """File-name stem: 'Grade7' or a course stem such as 'Algebra1'."""
+    return qb.COURSE['file'] if qb.COURSE else 'Grade%d' % GRADE
+
+
+def series():
+    """Series name on titles: 'Grade 7 Common Core Math' or 'Algebra I — Common Core High School Math'."""
+    return ('%s — Common Core High School Math' % qb.COURSE['name']) if qb.COURSE else 'Grade %d Common Core Math' % GRADE
 
 
 def sections(st):
     """(key, name, std, questions, nearest) for each section of a set."""
-    out = [('MAIN', 'Grade %d main question' % GRADE, st['std'], st['main'], False)]
+    out = [('MAIN', '%s main question' % name(), st['std'], st['main'], False)]
     nums = [b.get('fixed_num', i) for i, b in enumerate(st['back'], 1)]
     assert len(set(nums)) == len(nums), (st['title'], nums)
     for n, b in zip(nums, st['back']):
@@ -145,7 +173,7 @@ def build(out, mode='questions'):
     total_pages = page
 
     c = canvas.Canvas(out, pagesize=(R.PW, R.PH))
-    c.setTitle('Grade %d Common Core Math — ' % GRADE + ('Answer Key' if is_key else 'Question Collection'))
+    c.setTitle(series() + ' — ' + ('Answer Key' if is_key else 'Question Collection'))
     c.setAuthor('Math Lab')
 
     # cover
@@ -153,13 +181,14 @@ def build(out, mode='questions'):
     c.setFillColor(R.BLUE)
     c.rect(0, R.PH - 12, R.PW, 12, fill=1, stroke=0)
     c.setFont(R.FB, 14)
-    c.drawString(R.ML, 330, 'GRADE %d COMMON CORE MATH' % GRADE)
+    c.drawString(R.ML, 330, series().upper().replace(' — ', ' · ') if qb.COURSE else 'GRADE %d COMMON CORE MATH' % GRADE)
     c.setFillColor(R.INK)
     c.setFont(R.FB, 40)
     c.drawString(R.ML, 280, 'Answer Key' if is_key else 'Question Collection')
     c.setFont(R.F, 18)
     c.setFillColor(R.MUTED)
-    c.drawString(R.ML, 245, 'Main • Backward Branches • Forward 1 (Grade %d) • Forward 2 (Grade %d)' % (GRADE + 1, GRADE + 2))
+    c.drawString(R.ML, 245, ('Main • Backward Branches • Forward 1 • Forward 2 (later courses)' if qb.COURSE else
+                             'Main • Backward Branches • Forward 1 (Grade %d) • Forward 2 (Grade %d)' % (GRADE + 1, GRADE + 2)))
     c.drawString(R.ML, 218, '%d question sets • %d questions' % (len(sets), nq))
     if is_key:
         c.drawString(R.ML, 191, 'Page numbers match the Question Collection.')
@@ -205,7 +234,8 @@ def build(out, mode='questions'):
             c.addOutlineEntry(cur_std, 'set%d' % st['num'], 1, closed=True)
         pageno += 1
         secs = sections(st)
-        rows = [(s[0], s[1] + (' \u2014 nearest related (no direct Grade %s step)' % qb.grade_num(s[2], s[0]) if s[4] else ''), s[2])
+        rows = [(s[0], s[1] + ((' \u2014 nearest related' if qb.COURSE else
+                                ' \u2014 nearest related (no direct Grade %s step)' % qb.grade_num(s[2], s[0])) if s[4] else ''), s[2])
                 for s in secs]
         heading_page(c, 'SET %d  •  %s  •  %s' % (st['num'], st['std'], st['domain'].upper()),
                      st['title'], None, rows, pageno)
@@ -268,7 +298,7 @@ def build(out, mode='questions'):
     return len(sets), nq, total_pages, records
 
 
-GRADING_RULES = [
+BASE_GRADING_RULES = [
     'Match each student response to its key record by the question ID printed on the question page '
     '(for example S40-F2-Q3). The page number is the same in the Question Collection and the Answer Key. '
     'IDs are unique within one grade\'s collection; across collections use uid (for example G5:S40-F2-Q3).',
@@ -288,11 +318,12 @@ GRADING_RULES = [
     'Explain / describe questions: grading_note says what a correct response must include; accept any reasonable wording.',
     'grading_note also lists other accepted answers and the work behind an answer. It is guidance for the grader, not for students.',
 ]
+GRADING_RULES = list(BASE_GRADING_RULES)  # plus a collection's EXTRA_GRADING_RULES (set by load_grade)
 
 
 def write_data(records, base):
     with open(base + '.json', 'w', encoding='utf-8') as f:
-        json.dump(dict(title='Grade %d Common Core Math — Answer Key' % GRADE, collection=COLLECTION,
+        json.dump(dict(title=series() + ' — Answer Key', collection=COLLECTION,
                        question_count=len(records),
                        id_format='S<set>-<section>-Q<number>; section is M (main), B1, B2, ... (backward), F1 or F2 (forward)',
                        grading_rules=GRADING_RULES, questions=records), f, ensure_ascii=False, indent=1)
@@ -307,10 +338,10 @@ def write_data(records, base):
 
 
 def out_paths():
-    n = GRADE
-    return dict(questions=os.path.join(GRADE_DIR, 'Grade%d_Question_Collection.pdf' % n),
-                key=os.path.join(GRADE_DIR, 'Grade%d_Answer_Key.pdf' % n),
-                data=os.path.join(GRADE_DIR, 'Grade%d_Answer_Key' % n))
+    n = stem()
+    return dict(questions=os.path.join(GRADE_DIR, '%s_Question_Collection.pdf' % n),
+                key=os.path.join(GRADE_DIR, '%s_Answer_Key.pdf' % n),
+                data=os.path.join(GRADE_DIR, '%s_Answer_Key' % n))
 
 
 if __name__ == '__main__':
@@ -320,7 +351,7 @@ if __name__ == '__main__':
     ks = build(p['key'], 'key')
     assert qs[:3] == ks[:3]
     write_data(ks[3], p['data'])
-    print('grade %d: sets %d, questions %d, pages %d' % ((GRADE,) + qs[:3]))
+    print('%s: sets %d, questions %d, pages %d' % (((name() if qb.COURSE else name().lower()),) + qs[:3]))
     if qb.SAME_GRADE_BACKWARD:
         print('warning: %d backward branches use a Grade %d standard:' % (len(qb.SAME_GRADE_BACKWARD), GRADE))
         for t in qb.SAME_GRADE_BACKWARD:
