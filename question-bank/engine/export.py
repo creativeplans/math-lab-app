@@ -428,6 +428,7 @@ def export(out_dir):
                     standard=std, standard_grade=(std.split('.')[0] if std.startswith('K') else
                                                   'HS' if qb.COURSE and std.startswith('HS') else qb.grade_num(std, key)),
                     domain=r['domain'], skill=name, nearest_related=bool(nearest),
+                    **(dict(nearest_connection=nearest) if isinstance(nearest, str) else {}),
                     **(dict(standard_level=hs_level(key, std)) if std.startswith('HS') else {}),
                     **(dict(standard_course=course_of(std)) if qb.COURSE and std.startswith('HS') else {}),
                     type=r['type'],
@@ -462,7 +463,8 @@ def export(out_dir):
                 rec['revision'] = rev['status']
                 qrecs.append(rec)
             sections.append(dict(section=key, section_code=code, relation=RELATION.get(code, 'backward'),
-                                 skill=name, standard=std, nearest_related=bool(nearest), questions=qrecs))
+                                 skill=name, standard=std, nearest_related=bool(nearest),
+                                 **(dict(nearest_connection=nearest) if isinstance(nearest, str) else {}), questions=qrecs))
         set_doc = dict(format_version=FORMAT_VERSION, collection=build.COLLECTION, grade=build.GRADE, set=st['num'], set_id=sid,
                        standard=st['std'], title=st['title'], domain=st['domain'], sections=sections)
         with open(os.path.join(out_dir, fname), 'w', encoding='utf-8') as fh:
@@ -471,6 +473,7 @@ def export(out_dir):
             set=st['num'], set_id=sid, file=fname, standard=st['std'], title=st['title'], domain=st['domain'],
             sections=[dict(section=s['section'], section_code=s['section_code'], relation=s['relation'],
                            skill=s['skill'], standard=s['standard'], nearest_related=s['nearest_related'],
+                           **({'nearest_connection': s['nearest_connection']} if 'nearest_connection' in s else {}),
                            question_ids=[q['id'] for q in s['questions']]) for s in sections]))
 
     index = dict(
@@ -600,6 +603,7 @@ Collection `{cid}`, version {ver}. {sets} question sets, {nq} questions, {nfig} 
 | `uid`, `collection`, `id` | Identity: `uid` = collection + `:` + `id` |
 | `set`, `section`, `section_code`, `relation`, `number` | Where the question sits |
 | `standard`, `standard_grade`, `domain`, `skill`, `nearest_related` | What it tests |
+| `nearest_connection` | Course collections only, on nearest-related forward branches: how the branch connects to the set's MAIN skill |
 {levelrows}| `type`, `response` | `mc` (select one), `tf` (true or false), `sa` (write an answer), `plot` (draw on the figure), `plot_text` (draw on the figure AND write an answer), `work` (write the answer and show the required work) |
 | `prompt`, `prompt_markup` | Question text: plain, and with `{{a/b}}` fraction markup |
 | `choices` | `[{{letter, text}}]` in the order students see; true/false is A. True, B. False. Picture choices add `svg`, `png`, `data` |

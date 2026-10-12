@@ -105,7 +105,8 @@ def nearest_note(std=None, key=None):
 
 
 def B(title, std, qs, nearest=False, num=None):
-    """nearest=True flags a forward branch with no direct next-grade continuation.
+    """nearest=True flags a forward branch with no direct next-grade continuation. In course mode nearest may instead be
+    a sentence stating how the branch connects to the set's MAIN skill (shown on the branch page and exported).
     num fixes a backward branch's number (its ID code B<num>); by default branches count 1, 2, 3."""
     assert len(qs) == 5, (title, len(qs))
     std_info(std)

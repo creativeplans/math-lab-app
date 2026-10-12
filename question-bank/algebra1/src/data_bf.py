@@ -1,5 +1,5 @@
-from qb import S, B, sa, mc, tf, work
-from common import graph
+from qb import S, B, sa, mc, tf, work, plot, draw_write
+from common import ints, plane, graph, grid
 
 SHIFT = graph([lambda x: x * x, lambda x: (x - 2) ** 2 - 3], lo=-4, hi=6, ylo=-4, yhi=6,
               desc='The graph of y = x² and a second parabola of the same shape whose lowest point is at (2, -3).')
@@ -43,7 +43,7 @@ SETS = [
              key='A(r(t)) = 4πt²: the area of the spill after t hours.', note='Any equivalent form; the meaning is required.'),
           sa('A store takes 20% off and then $5 off: d(x) = 0.8x and c(x) = x - 5.\nFind c(d(50)).', 'c(d(50)) =', key='35', note='Any equivalent form. d(50) = 40, and c(40) = 35.'),
           mc('With d(x) = 0.8x and c(x) = x - 5, which expression is d(c(x))?', ['0.8x - 4', '0.8x - 5', '0.8x + 4', 'x - 4'], note='0.8(x - 5) = 0.8x - 4.'),
-          tf('With these functions, c(d(50)) and d(c(50)) are different.', key=True, note='c(d(50)) = 35 and d(c(50)) = 36.'),
+          tf('A store takes 20% off and then $5 off: d(x) = 0.8x and c(x) = x - 5. For these functions, c(d(50)) and d(c(50)) are different.', key=True, note='c(d(50)) = 35 and d(c(50)) = 36.'),
           tf('If f(x) = 3x and g(x) = x + 2, then f(g(x)) = 3x + 2.', key=False, note='f(g(x)) = 3(x + 2) = 3x + 6.'),
       ]),
       f2=B('Find and interpret the inverse of a model', 'HSF-BF.B.4.b', [
@@ -53,7 +53,7 @@ SETS = [
              note='Form required: both compositions.'),
           mc('F = 1.8C + 32 converts Celsius to Fahrenheit.\nWhich formula is its inverse?', ['C = (F - 32) ÷ 1.8', 'C = 1.8F + 32', 'C = (F + 32) ÷ 1.8', 'C = F ÷ 1.8 - 32'],
              note='Subtract 32, then divide by 1.8.'),
-          tf('If f(2) = 9, then f⁻¹(9) = 2.', key=True, note='The inverse reverses each pair.'),
+          tf('If f is invertible and f(2) = 9, then f⁻¹(9) = 2.', key=True, note='The inverse reverses each input-output pair.'),
           tf('The inverse of f(x) = 2x is f⁻¹(x) = -2x.', key=False, note='f⁻¹(x) = x ÷ 2.'),
       ])),
 
@@ -101,10 +101,12 @@ SETS = [
       f2=B('Graph and interpret an average-cost rational function', 'HSF-IF.C.7.d', [
           sa('A(x) = 9 + 400 ÷ x is the average cost per item, in dollars, for x items.\nGive its horizontal asymptote and what it means.', 'Answer:',
              key='y = 9: for very many items, the average cost gets close to $9.', note='Form required: the asymptote and its meaning.'),
-          sa('Find A(100).', 'A(100) =', key='13', note='Any equivalent form. 9 + 4.'),
+          sa('A(x) = 9 + 400 ÷ x is the average cost per item, in dollars, for x items.\nFind A(100).', 'A(100) =', key='13', note='Any equivalent form. 9 + 4.'),
           mc('What is the vertical asymptote of y = 400 ÷ x + 9?', ['x = 0', 'x = 9', 'y = 9', 'x = 400'], note='The function is undefined at x = 0.'),
           tf('As x increases, 9 + 400 ÷ x decreases toward 9.', key=True, note='400 ÷ x shrinks toward 0.'),
-          tf('The graph of y = 9 + 400 ÷ x crosses the line y = 9.', key=False, note='400 ÷ x is never 0.'),
+          plot('A(x) = 9 + 400 ÷ x is the average cost per item, in dollars, for x items. Graph A for 20 ≤ x ≤ 200, and draw its horizontal asymptote.', grid(200, 30, xstep=20, ystep=5, xlabel='Items (x)', ylabel='Average cost ($)'),
+               key='A decreasing curve through (20, 29), (40, 19), (50, 17), (100, 13), and (200, 11), approaching the line y = 9 from above',
+               note='Any correct graph with the asymptote y = 9 drawn.'),
       ])),
 
     # ------------------------------------------------------------------ F-BF.A.2
@@ -124,7 +126,8 @@ SETS = [
               sa('f(1) = 4 and f(n) = f(n - 1) + 6.\nFind f(4).', 'f(4) =', key='22', note='Any equivalent form. 4, 10, 16, 22.'),
               sa('f(1) = 1 and f(n) = 2f(n - 1) + 1.\nFind f(4).', 'f(4) =', key='15', note='Any equivalent form. 1, 3, 7, 15.'),
               mc('f(n) = 2n - 1.\nWhat is f(10)?', ['19', '20', '21', '9'], note='2(10) - 1.'),
-              tf('A recursive formula gives each term from the term before it.', key=True, note='That is what recursive means.'),
+              tf('A recursive formula defines each term after the starting term(s) using one or more earlier terms.', key=True,
+                 note='f(n) = f(n - 1) + 6 uses one earlier term; the rule f(n + 1) = f(n) + f(n - 1) uses two.'),
               tf('f(1) = 3 and f(n) = 2f(n - 1) give 3, 5, 7.', key=False, note='They give 3, 6, 12.'),
           ]),
           B('Generate a pattern from a rule and describe its features', '4.OA.C.5', [
@@ -146,8 +149,9 @@ SETS = [
       f2=B('Use logarithms to find a term number', 'HSF-LE.A.4', [
           sa('a(n) = 3 · 4^(n-1).\nWhat is the smallest n for which a(n) > 10,000?', 'n =', key='7',
              note='Any equivalent form. 4^(n-1) > 3,333.3... gives n - 1 > log 3,333.3 ÷ log 4 ≈ 5.85. Check: a(6) = 3,072 and a(7) = 12,288.'),
-          sa('Solve 2^(n-1) = 64.', 'n =', key='7', note='Any equivalent form. 64 = 2⁶.'),
-          mc('Solve 5 · 2^n = 640.', ['n = 7', 'n = 6', 'n = 64', 'n = 8'], note='2^n = 128 = 2⁷.'),
+          sa('A sequence starts at 5 and grows by 20% per term: a(n) = 5(1.2)^(n-1). Which term is the first to exceed 100? (log means base 10.)', 'n =',
+             key='18', note='Any equivalent form. 1.2^(n-1) > 20 gives n - 1 > log 20 ÷ log 1.2 ≈ 16.4. Check: a(17) ≈ 92.4 and a(18) ≈ 110.9.'),
+          mc('Solve 5 · 2^n = 600. (log means base 10.)', ['n = log 120 ÷ log 2 ≈ 6.91', 'n = 7', 'n = 120 ÷ 2 = 60', 'n = log 600 ÷ log 2 ≈ 9.23'], note='2^n = 120, so n = log 120 ÷ log 2.'),
           tf('If 4^k = 64, then k = 3.', key=True, note='4³ = 64.'),
           tf('If 3^n = 30, then n = 10.', key=False, note='3¹⁰ is much larger than 30; n = log 30 ÷ log 3 ≈ 3.10.'),
       ])),
@@ -187,13 +191,15 @@ SETS = [
           sa('The point (2, 5) is reflected across the x-axis and then translated 4 units left.\nWhere does it end up?', 'Point:', key='(-2, -5)', note='Any equivalent form. (2, 5) → (2, -5) → (-2, -5).'),
           mc('Which single transformation maps every (x, y) to (-x, -y)?', ['A rotation of 180° about the origin', 'A reflection across the x-axis',
                                                                            'A reflection across the y-axis', 'A translation'], note='Both coordinates change sign.'),
-          tf('Reflecting across the x-axis and then across the y-axis has the same effect as a 180° rotation about the origin.', key=True, note='(x, y) → (x, -y) → (-x, -y).'),
+          plot('Triangle ABC has A(1, 1), B(4, 1), and C(1, 3). Reflect it across the y-axis, then translate the image 2 units down. Draw the final image and label its vertices.', plane(),
+               key="The triangle with A'(-1, -1), B'(-4, -1), and C'(-1, 1)", note='Any correct drawing. Reflecting across the y-axis gives (-1, 1), (-4, 1), (-1, 3); then subtract 2 from each y-coordinate.'),
           tf('Translating and then reflecting always gives the same result as reflecting and then translating.', key=False,
              note='For (1, 0), translating right 1 then reflecting across the y-axis gives (-2, 0); reflecting first then translating gives (0, 0).'),
       ]),
       f2=B('Transform sine and cosine graphs', 'HSF-TF.B.5', [
           sa('How is the graph of y = sin x + 3 related to the graph of y = sin x?', 'Answer:', key='It is shifted 3 units up; its midline is y = 3.', note='Any equivalent description.'),
-          sa('Write a sine function with amplitude 2, midline y = 1, and period 2π.', 'y =', key='2sin x + 1', note='Any equivalent form.'),
+          sa('Write a sine function with amplitude 2, midline y = 1, and period 2π whose graph passes through (0, 1) and is rising there.', 'y =', key='2sin x + 1',
+             note='Any equivalent form, such as 2sin(x + 2π) + 1. The conditions at (0, 1) fix the phase.'),
           mc('How is y = 4sin x obtained from y = sin x?', ['A vertical stretch by a factor of 4', 'A horizontal stretch by a factor of 4', 'A shift 4 units up', 'A shift 4 units right'],
              note='Every output is multiplied by 4.'),
           tf('y = -sin x is the reflection of y = sin x across the x-axis.', key=True, note='Every output changes sign.'),
@@ -203,10 +209,10 @@ SETS = [
     # ------------------------------------------------------------------ F-BF.B.4.a
     S('HSF-BF.B.4.a', 'Solve f(x) = c for a simple function f and write an expression for the inverse',
       main=[
-          sa('f(x) = 2x³.\nSolve f(x) = 54, and write an expression for the inverse.', 'Answer:', key='x = 3; f⁻¹(x) = ∛(x ÷ 2)',
-             note='Form required: the solution and the inverse (any equivalent expression). x³ = 27.'),
-          sa('f(x) = (x + 1) ÷ (x - 1), for x ≠ 1.\nWrite an expression for the inverse.', 'f⁻¹(x) =', key='(x + 1) ÷ (x - 1), for x ≠ 1',
-             note='Any equivalent form. Solve y = (x + 1) ÷ (x - 1) for x: x(y - 1) = y + 1. This function is its own inverse.'),
+          sa('f(x) = 3x³ - 1. Solve f(x) = 80, and write an expression for the inverse.', 'Answer:', key='x = 3; f⁻¹(x) = ∛((x + 1) ÷ 3)',
+             note='Form required: the solution and the inverse (any equivalent expression). 3x³ = 81, so x³ = 27.'),
+          sa('f(x) = (2x + 3) ÷ (x - 4), for x ≠ 4. Write an expression for the inverse.', 'f⁻¹(x) =', key='(4x + 3) ÷ (x - 2), for x ≠ 2',
+             note='Any equivalent form. Solve y = (2x + 3) ÷ (x - 4) for x: xy - 4y = 2x + 3, so x(y - 2) = 4y + 3. Check: f(0) = -0.75 and f⁻¹(-0.75) = 0.'),
           sa('F(C) = 1.8C + 32 gives degrees Fahrenheit.\nWrite the inverse C(F), and find C when F = 77.', 'Answer:', key='C(F) = (F - 32) ÷ 1.8; 25 °C',
              note='Form required: the inverse (any equivalent form) and the value.'),
           mc('f(x) = 4x - 7.\nWhat is f⁻¹(x)?', ['(x + 7) ÷ 4', '(x - 7) ÷ 4', '4x + 7', 'x ÷ 4 + 7'], note='Solve y = 4x - 7 for x.'),
@@ -236,11 +242,11 @@ SETS = [
           tf('f(x) = x + 3 and g(x) = x - 3 are not inverses, because f(g(1)) = 7.', key=False, note='f(g(1)) = f(-2) = 1. They are inverses.'),
       ]),
       f2=B('Restrict a domain to produce an inverse', 'HSF-BF.B.4.d', [
-          sa('Restrict the domain of f(x) = x² + 2 so that f has an inverse, and give the inverse.', 'Answer:', key='x ≥ 0; f⁻¹(x) = √(x - 2)',
-             note='Form required: the restriction and the inverse. x ≤ 0 with f⁻¹(x) = -√(x - 2) is also correct.'),
+          sa('f(x) = x² + 2. Restrict f to the largest interval that contains x = 1 on which f is one-to-one, and give the inverse.', 'Answer:',
+             key='x ≥ 0; f⁻¹(x) = √(x - 2), for x ≥ 2', note='Form required: the interval and the inverse.'),
           sa('Explain why f(x) = |x| has no inverse on all real numbers.', 'Explanation:', key='f(3) = f(-3) = 3, so the input of 3 for an inverse would need two outputs.',
              note='Any equivalent explanation.'),
-          mc('f(x) = (x + 4)².\nWhat is the largest domain that contains x = 0 on which f is one-to-one?', ['x ≥ -4', 'x ≥ 0', 'All real numbers', '-8 ≤ x ≤ 0'],
+          mc('f(x) = (x + 4)².\nWhat is the largest interval containing x = 0 on which f is one-to-one?', ['x ≥ -4', 'x ≥ 0', 'All real numbers', '-8 ≤ x ≤ 0'],
              note='f is increasing for x ≥ -4. On -8 ≤ x ≤ 0, f(-8) = f(0) = 16.'),
           tf('f(x) = x² restricted to x ≤ 0 has the inverse f⁻¹(x) = -√x.', key=True, note='For x ≤ 0, -√(x²) = x.'),
           tf('f(x) = x² + 1 is one-to-one on all real numbers.', key=False, note='f(1) = f(-1) = 2.'),
@@ -292,11 +298,12 @@ SETS = [
       ]),
       f2=B('Use logarithms to turn equal factors into equal differences', 'HSF-BF.B.5', [
           sa('g(x) = 4 · 2^x.\nShow that log₂ g(x) = x + 2.', 'Answer:', key='log₂(4 · 2^x) = log₂ 4 + log₂ 2^x = 2 + x.', note='Form required: the steps.'),
-          sa('y = 10^x.\nWhat is log y?', 'log y =', key='x', note='Any equivalent form.'),
-          mc('The values y = 1, 10, 100, 1,000 occur at x = 0, 1, 2, 3.\nWhat are the values of log y?', ['0, 1, 2, 3', '1, 10, 100, 1,000', '0, 10, 20, 30', '1, 2, 3, 4'],
+          sa('y = 10^x.\nWhat is log y? (log means base 10.)', 'log y =', key='x', note='Any equivalent form.'),
+          mc('The values y = 1, 10, 100, 1,000 occur at x = 0, 1, 2, 3.\nWhat are the values of log y? (log means base 10.)', ['0, 1, 2, 3', '1, 10, 100, 1,000', '0, 10, 20, 30', '1, 2, 3, 4'],
              note='log 10^k = k.'),
-          tf('Taking the logarithm of an exponential function a · b^x gives a linear function of x.', key=True, note='log(a · b^x) = log a + x log b.'),
-          tf('log(100 · 10^x) = 100x', key=False, note='log(100 · 10^x) = 2 + x.'),
+          tf('For a > 0 and b > 0, taking the logarithm of a · b^x gives a linear function of x.', key=True,
+             note='log(a · b^x) = log a + x log b, a linear function of x. The logarithm needs a positive input, so a > 0 and b > 0 are required.'),
+          tf('log(100 · 10^x) = 100x (log means base 10.)', key=False, note='log(100 · 10^x) = 2 + x.'),
       ])),
 
     # ------------------------------------------------------------------ F-LE.A.1.b
@@ -335,14 +342,16 @@ SETS = [
           mc('The area of a sector is A = {1/2}r²θ, and r = 4.\nBy how much does A increase when θ increases by 1 radian?', ['8', '4', '16', '2'], note='{1/2}(16)(1) = 8.'),
           tf('For a fixed radius, arc length is a linear function of the central angle.', key=True, note='s = rθ has the constant rate r.'),
           tf('Doubling the radius while keeping the angle the same doubles the area of a sector.', key=False, note='The area depends on r², so it is multiplied by 4.'),
-      ]),
+      ], nearest='Arc length grows by a constant amount (the radius) for each radian, a constant-rate situation.'),
       f2=B('Use radian measure as arc length on a circle', 'HSF-TF.A.1', [
-          sa('Convert 180° to radians.', 'Radians:', key='π', note='Any equivalent form.'),
+          sa('A wheel of radius 0.3 m turns through 4π radians.\nHow far does a point on its rim travel? Give the exact distance and the distance to the nearest hundredth of a meter.', 'Distance:',
+             key='1.2π m, about 3.77 m', note='Form required: exact and rounded. Arc length = rθ = 0.3 × 4π.'),
           sa('A central angle cuts off an arc of length 6 on a circle of radius 2.\nWhat is its radian measure?', 'Radians:', key='3', note='Any equivalent form. 6 ÷ 2.'),
-          mc('Convert {π/3} radians to degrees.', ['60°', '30°', '120°', '90°'], note='{π/3} × 180 ÷ π = 60.'),
+          mc('A wheel turns at 3 radians per second.\nThrough about how many degrees does it turn in 2 seconds?', ['344°', '6°', '1,080°', '172°'],
+             note='6 radians × (180 ÷ π) ≈ 343.8°.'),
           tf('One radian is the angle that cuts off an arc as long as the radius.', key=True, note='This is the definition.'),
-          tf('2π radians equals 180°.', key=False, note='2π radians equals 360°.'),
-      ])),
+          tf('A rotation of -π ÷ 2 radians is a quarter turn counterclockwise.', key=False, note='Negative angles turn clockwise; -π ÷ 2 is a quarter turn clockwise.'),
+      ], nearest='Radian measure is arc length per unit of radius, continuing the constant-rate arc length of FORWARD 1.')),
 
     # ------------------------------------------------------------------ F-LE.A.1.c
     S('HSF-LE.A.1.c', 'Recognize situations in which a quantity grows or decays by a constant percent rate per unit interval',
@@ -376,16 +385,16 @@ SETS = [
       f1=B('Find times in percent-rate models with logarithms', 'HSF-LE.A.4', [
           sa('V(t) = 24,000(0.85)^t.\nWhen is V = 12,000? Round to the nearest tenth of a year.', 't ≈', key='4.3', note='Form required: rounded to the nearest tenth. t = log 0.5 ÷ log 0.85 ≈ 4.27.'),
           sa('Solve 1.025^t = 2. Round to the nearest tenth.', 't ≈', key='28.1', note='Form required: rounded to the nearest tenth. log 2 ÷ log 1.025 ≈ 28.07.'),
-          mc('Which expression gives the half-life of y = (0.9)^t?', ['log 0.5 ÷ log 0.9', 'log 0.9 ÷ log 0.5', '0.5 ÷ 0.9', '0.9 ÷ 2'], note='Solve 0.9^t = 0.5.'),
-          tf('log(0.85^t) = t log 0.85', key=True, note='The power property of logarithms.'),
+          mc('Which expression gives the half-life of y = (0.9)^t? (log means base 10.)', ['log 0.5 ÷ log 0.9', 'log 0.9 ÷ log 0.5', '0.5 ÷ 0.9', '0.9 ÷ 2'], note='Solve 0.9^t = 0.5.'),
+          tf('log(0.85^t) = t log 0.85 (log means base 10.)', key=True, note='The power property of logarithms.'),
           tf('If 2^t = 5, then t = 2.5.', key=False, note='2^2.5 ≈ 5.66. t = log 5 ÷ log 2 ≈ 2.32.'),
       ]),
       f2=B('Use natural logarithms with continuous growth', 'HSF-BF.B.5', [
           sa('Write the inverse of y = e^x.', 'Inverse:', key='y = ln x', note='Any equivalent form.'),
           sa('Solve e^(0.05t) = 3 exactly.', 't =', key='20 ln 3', note='Form required: exact. 0.05t = ln 3.'),
-          mc('What is ln(e⁴)?', ['4', 'e', '4e', '1'], note='ln and e^x are inverses.'),
-          tf('e raised to the power ln 7 equals 7.', key=True, note='e^x and ln x undo each other.'),
-          tf('ln 1 = 1', key=False, note='e⁰ = 1, so ln 1 = 0.'),
+          mc('What is ln(e⁴)? (ln means base e.)', ['4', 'e', '4e', '1'], note='ln and e^x are inverses.'),
+          tf('e raised to the power ln 7 equals 7. (ln means base e.)', key=True, note='e^x and ln x undo each other.'),
+          tf('ln 1 = 1 (ln means base e.)', key=False, note='e⁰ = 1, so ln 1 = 0.'),
       ])),
 
     # ------------------------------------------------------------------ F-LE.A.2
@@ -426,12 +435,15 @@ SETS = [
           tf('y = 3cos(2t) has period 2.', key=False, note='The period is 2π ÷ 2 = π.'),
       ]),
       f2=B('Find a quadratic through three points with a system', 'HSA-REI.C.8', [
-          sa('y = ax² + bx + c passes through (0, 1), (1, 2), and (2, 7).\nWrite the system of equations for a, b, and c.', 'System:',
-             key='c = 1; a + b + c = 2; 4a + 2b + c = 7', note='Any equivalent form. Substitute each point.'),
-          sa('Solve that system.', 'Answer:', key='a = 2, b = -1, c = 1', note='Form required: all three values. a + b = 1 and 4a + 2b = 6, so 2a = 4.'),
-          mc('Which row of the augmented matrix comes from the point (2, 7)?', ['[4 2 1 | 7]', '[2 4 1 | 7]', '[4 2 7 | 1]', '[2 2 1 | 7]'], note='4a + 2b + c = 7.'),
+          sa('y = ax² + bx + c passes through (0, 1), (1, 2), and (2, 7).\nWrite the system for a, b, and c as a matrix equation AX = B, with X the column [a, b, c]. Give A and B.', 'Answer:',
+             key='A has rows [0 0 1], [1 1 1], and [4 2 1]; B is the column [1, 2, 7].', note='Form required: A and B. Each point (x, y) gives the row [x² x 1] and the constant y.'),
+          sa('A has rows [0 0 1], [1 1 1], and [4 2 1], X is the column [a, b, c], and B is the column [1, 2, 7]. Solve AX = B to find the parabola y = ax² + bx + c.', 'Answer:',
+             key='a = 2, b = -1, c = 1, so y = 2x² - x + 1', note='Form required: all three values (or the equation). c = 1, a + b = 1, and 4a + 2b = 6, so 2a = 4.'),
+          mc('A parabola y = ax² + bx + c passes through (0, 1), (1, 2), and (2, 7). It is written as AX = B with X the column [a, b, c].\nWhich row of A comes from the point (2, 7)?',
+             ['[4 2 1]', '[2 4 1]', '[2 2 1]', '[4 2 7]'], note='4a + 2b + c = 7, so the row is [4 2 1] and the matching entry of B is 7.'),
           tf('Three points with different x-values that are not on one line determine exactly one parabola y = ax² + bx + c.', key=True, note='The 3-by-3 system has exactly one solution.'),
-          tf('The coefficient matrix of that system has 2 rows.', key=False, note='There are 3 equations, so it has 3 rows.'),
+          tf('A parabola y = ax² + bx + c through (0, 1), (1, 2), and (2, 7) gives a matrix equation AX = B in which A has 2 rows.', key=False,
+             note='Each of the 3 points gives one equation, so A has 3 rows (and 3 columns).'),
       ])),
 
     # ------------------------------------------------------------------ F-LE.A.3
@@ -475,14 +487,16 @@ SETS = [
           sa('Which grows faster for large x, x⁴ or 1,000x³? Explain.', 'Answer:', key='x⁴: x⁴ ÷ (1,000x³) = x ÷ 1,000, which is greater than 1 when x > 1,000.',
              note='Any equivalent explanation.'),
           mc('As x → ∞, what does f(x) = x⁴ - 50x³ do?', ['f(x) → ∞', 'f(x) → -∞', 'f(x) → 0', 'f(x) → -50'], note='The leading term x⁴ decides the end behavior.'),
-          tf('A polynomial of higher degree with a positive leading coefficient eventually exceeds any polynomial of lower degree.', key=True, note='The ratio grows without bound.'),
+          plot('Graph y = x² and y = 0.5x³ for 0 ≤ x ≤ 4 on the same grid. Mark where they meet.', grid(4, 16, ystep=2),
+               key='Both curves through (0, 0) and meeting again at (2, 4); y = 0.5x³ is below y = x² for 0 < x < 2 and above it for x > 2 (it leaves the grid near x = 3.2)',
+               note='Any correct graph with both meeting points. x² = 0.5x³ gives x = 0 or x = 2.'),
           tf('For every large x, 0.001x³ is less than 1,000x².', key=False, note='For x > 1,000,000, 0.001x³ is greater.'),
       ]),
       f2=B('Compare logarithmic growth with other growth', 'HSF-BF.B.5', [
           sa('Find log₂ 1,024.', 'Value:', key='10', note='Any equivalent form. 2¹⁰ = 1,024.'),
-          sa('By what factor must x be multiplied for log x to increase by 1?', 'Answer:', key='10', note='Any equivalent form. log(10x) = 1 + log x.'),
-          mc('Which is greatest when x = 1,000,000?', ['√x', 'log x', 'ln x', 'log₂ x'], note='√x = 1,000; log x = 6; ln x ≈ 13.8; log₂ x ≈ 19.9.'),
-          tf('Eventually, log x grows more slowly than any linear function with positive slope.', key=True, note='log x is the inverse of the fast-growing 10^x.'),
+          sa('By what factor must x be multiplied for log x to increase by 1? (log means base 10.)', 'Answer:', key='10', note='Any equivalent form. log(10x) = 1 + log x.'),
+          mc('Which is greatest when x = 1,000,000? (log means base 10; ln means base e.)', ['√x', 'log x', 'ln x', 'log₂ x'], note='√x = 1,000; log x = 6; ln x ≈ 13.8; log₂ x ≈ 19.9.'),
+          tf('Eventually, log x grows more slowly than any linear function with positive slope. (log means base 10.)', key=True, note='log x is the inverse of the fast-growing 10^x.'),
           tf('log₂ x = 100 when x = 200.', key=False, note='x = 2¹⁰⁰.'),
       ])),
 
@@ -522,19 +536,20 @@ SETS = [
       f1=B('Interpret the parameters of a sinusoidal model', 'HSF-TF.B.5', [
           sa('T(t) = 15 + 10sin(πt ÷ 12) is the temperature in °C t hours after 8 a.m.\nWhat do 15 and 10 mean?', 'Answer:',
              key='15 °C is the average (midline) temperature; the temperature rises and falls 10 °C above and below it.', note='Form required: both meanings.'),
-          sa('What is the period of T, and what does it mean?', 'Answer:', key='24 hours: the temperature pattern repeats every day.', note='Form required: the period and its meaning.'),
+          sa('T(t) = 15 + 10sin(πt ÷ 12) is the temperature in °C t hours after 8 a.m.\nWhat is the period of T, and what does it mean?', 'Answer:', key='24 hours: the temperature pattern repeats every day.', note='Form required: the period and its meaning.'),
           mc('h(t) = 1.5cos(πt ÷ 6) + 3 is the depth of water in meters.\nWhat is the greatest depth?', ['4.5 m', '3 m', '1.5 m', '6 m'], note='3 + 1.5.'),
           tf('In y = A sin(Bx) + D, D gives the midline.', key=True, note='The graph is centered on y = D.'),
           tf('The amplitude of y = 1.5cos(πt ÷ 6) + 3 is 3.', key=False, note='The amplitude is 1.5.'),
       ]),
       f2=B('Interpret the mean and standard deviation of a normal model', 'HSS-ID.A.4', [
           sa('Battery life is normal with mean 400 hours and standard deviation 20 hours.\nWhat does the 20 tell you?', 'Answer:',
-             key='A typical battery\'s life is about 20 hours from the mean.', note='Any equivalent wording about spread around the mean.'),
-          sa('With the same model, about what percent of batteries last between 360 and 440 hours?', 'Percent:', key='About 95%',
+             key='It measures spread: battery lives typically differ from the mean by roughly 20 hours (about 68% are within 20 hours of 400).',
+             note='Any equivalent description of the standard deviation as a typical (root-mean-square) distance from the mean.'),
+          sa('Battery life is normal with mean 400 hours and standard deviation 20 hours.\nAbout what percent of batteries last between 360 and 440 hours?', 'Percent:', key='About 95%',
              note='Any equivalent form. That is within 2 standard deviations of the mean.'),
           mc('Which change makes a normal curve wider?', ['Increasing the standard deviation', 'Increasing the mean', 'Decreasing the standard deviation', 'Decreasing the mean'],
              note='The standard deviation measures spread.'),
           tf('Changing the mean of a normal model shifts the curve left or right.', key=True, note='The mean is its center.'),
           tf('In a normal model with mean 50 and standard deviation 5, the value 60 is 10 standard deviations above the mean.', key=False, note='(60 - 50) ÷ 5 = 2.'),
-      ])),
+      ], nearest='Interpreting the parameters of a function in context leads to interpreting the parameters of a normal model.')),
 ]

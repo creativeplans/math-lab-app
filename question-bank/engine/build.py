@@ -251,6 +251,8 @@ def build(out, mode='questions'):
             sub = '%s  •  %s  •  %s  •  %s' % (name, grade, dom, std)
             if nearest:
                 sub += '\n⚑ ' + qb.nearest_note(std, key)
+                if isinstance(nearest, str):  # course mode: the stated connection to the MAIN skill
+                    sub += ' Connection: ' + nearest
             heading_page(c, 'SET %d  •  %s' % (st['num'], st['std']), key, sub, None, pageno)
             anchor = 'set%d_%s' % (st['num'], key.replace(' ', ''))
             c.bookmarkPage(anchor)

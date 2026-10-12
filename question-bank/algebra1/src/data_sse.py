@@ -1,9 +1,9 @@
-from qb import S, B, sa, mc, tf, work
-from common import graph
+from qb import S, B, sa, mc, tf, work, plot, draw_write
+from common import ints, plane, graph, grid
 
-UP_DOWN = graph([lambda x: -(x - 3) ** 2 + 5], lo=0, hi=6, ylo=0, yhi=6, xlabel='x', ylabel='y',
-                desc='The graph of a function on a grid from 0 to 6: it rises from (0, -4) off the bottom of the grid, '
-                     'reaches its highest point at (3, 5), and then falls, symmetric about x = 3.')
+UP_DOWN = graph([lambda x: -(x - 3) ** 2 + 5], lo=0, hi=6, ylo=-4, yhi=6, xlabel='x', ylabel='y',
+                desc='The graph of a function on a grid with x from 0 to 6 and y from -4 to 6: it starts at (0, -4), rises to its '
+                     'highest point (3, 5), and falls to (6, -4), symmetric about x = 3.')
 
 SETS = [
     # ------------------------------------------------------------------ A-SSE.A.1.a
@@ -48,7 +48,7 @@ SETS = [
       ]),
       f2=B('Compose functions and interpret the composite in context', 'HSF-BF.A.1.c', [
           sa('T(h) = 20 + 5h is a temperature in °C after h hours, and h(t) = t ÷ 60 converts t minutes to hours.\nWrite T(h(t)) in simplest form, and say what it gives.', 'Answer:',
-             key='T(h(t)) = 20 + t/12: the temperature after t minutes.', note='Any equivalent form, such as 20 + 5t/60. The meaning is required.'),
+             key='T(h(t)) = 20 + t/12: the temperature after t minutes.', note='Form required: simplest form, 20 + t/12 (or t/12 + 20); 20 + 5t/60 is equivalent but not simplified. The meaning is required.'),
           sa('f(x) = x + 3 and g(x) = 2x.\nFind f(g(4)).', 'f(g(4)) =', key='11', note='Any equivalent form. g(4) = 8, and f(8) = 11.'),
           mc('f(x) = x² and g(x) = x - 1.\nWhich expression is f(g(x))?', ['(x - 1)²', 'x² - 1', 'x² - x', 'x - 1²'], note='Put g(x) into f: f(x - 1) = (x - 1)².'),
           tf('If f(x) = 3x and g(x) = x + 2, then g(f(1)) = 5.', key=True, note='f(1) = 3, and g(3) = 5.'),
@@ -94,9 +94,11 @@ SETS = [
       f2=B('Solve exponential growth models with logarithms', 'HSF-LE.A.4', [
           sa('An investment is worth 1,000(1.05)^n dollars after n years.\nWrite the number of years to reach $2,000 as an expression with logarithms, then round it to the nearest tenth.', 'n =',
              key='n = log 2 ÷ log 1.05 ≈ 14.2 years', note='Form required: the logarithm expression and the rounded value. 1.05^n = 2.'),
-          sa('Solve 3^x = 81.', 'x =', key='4', note='Any equivalent form. 3⁴ = 81.'),
-          mc('Solve 5 · 2^t = 40.', ['t = 3', 't = 8', 't = 4', 't = 35'], note='Divide by 5: 2^t = 8, so t = 3.'),
-          tf('log(1.05^n) = n · log 1.05', key=True, note='The power property of logarithms.'),
+          sa('A town of 5,000 people grows 3% per year: P = 5,000(1.03)^t. When will it reach 8,000? Round to the nearest tenth of a year. (log means base 10.)', 't ≈',
+             key='15.9 years', note='Form required: rounded to the nearest tenth. 1.03^t = 1.6, so t = log 1.6 ÷ log 1.03 ≈ 15.90.'),
+          mc('Solve 5 · 2^t = 60. (log means base 10.)', ['t = log 12 ÷ log 2 ≈ 3.58', 't = 12 ÷ 2 = 6', 't = log 60 ÷ log 10 ≈ 1.78', 't = 3'],
+             note='2^t = 12, so t = log 12 ÷ log 2.'),
+          tf('log(1.05^n) = n · log 1.05 (log means base 10.)', key=True, note='The power property of logarithms.'),
           tf('The solution of 2^x = 10 is x = 5.', key=False, note='2⁵ = 32. The solution is x = log 10 ÷ log 2 ≈ 3.32.'),
       ])),
 
@@ -104,9 +106,9 @@ SETS = [
     S('HSA-APR.A.1', 'Add and subtract polynomials and explain why the result is a polynomial',
       main=[
           sa('Add. Write the answer in standard form.\n(4x² - 3x + 5) + (2x² + 7x - 9)', 'Sum:', key='6x² + 4x - 4',
-             note='Form required: simplified, in standard form (any order of terms is accepted if like terms are combined). Add like terms.'),
+             note='Form required: simplified, in standard form (terms in descending powers of x). Add like terms.'),
           sa('Subtract. Write the answer in standard form.\n(5y³ + 2y - 1) - (y³ - 4y² + 6y - 3)', 'Difference:', key='4y³ + 4y² - 4y + 2',
-             note='Form required: simplified. Subtracting changes the sign of every term of the second polynomial: 5y³ - y³ + 4y² + 2y - 6y - 1 + 3.'),
+             note='Form required: simplified, in standard form (descending powers of y). Subtracting changes the sign of every term of the second polynomial: 5y³ - y³ + 4y² + 2y - 6y - 1 + 3.'),
           mc('Which expression is equal to (3a² - 2ab) - (a² + 5ab)?', ['2a² - 7ab', '2a² + 3ab', '4a² + 3ab', '2a² - 3ab'], note='3a² - a² = 2a², and -2ab - 5ab = -7ab.'),
           sa('Explain why the sum of two polynomials is always a polynomial.', 'Explanation:',
              key='Adding combines like terms by adding their coefficients. The coefficients stay real numbers and the exponents stay whole numbers, so the result is a polynomial.',
@@ -149,10 +151,10 @@ SETS = [
     S('HSA-APR.A.1', 'Multiply polynomials',
       main=[
           sa('Multiply. Write the answer in standard form.\n(2x + 3)(x - 5)', 'Product:', key='2x² - 7x - 15',
-             note='Form required: expanded and simplified. 2x² - 10x + 3x - 15.'),
-          sa('Multiply. Write the answer in standard form.\n(x - 4)²', 'Product:', key='x² - 8x + 16', note='Form required: expanded. (x - 4)(x - 4) = x² - 4x - 4x + 16.'),
+             note='Form required: expanded, simplified, in standard form (descending powers). 2x² - 10x + 3x - 15.'),
+          sa('Multiply. Write the answer in standard form.\n(x - 4)²', 'Product:', key='x² - 8x + 16', note='Form required: expanded, simplified, in standard form (descending powers). (x - 4)(x - 4) = x² - 4x - 4x + 16.'),
           sa('Multiply. Write the answer in standard form.\n(y + 2)(y² - 3y + 1)', 'Product:', key='y³ - y² - 5y + 2',
-             note='Form required: expanded and simplified. y³ - 3y² + y + 2y² - 6y + 2.'),
+             note='Form required: expanded, simplified, in standard form (descending powers). y³ - 3y² + y + 2y² - 6y + 2.'),
           mc('Multiply.\n(3a - 1)(3a + 1)', ['9a² - 1', '9a² + 1', '9a² - 6a - 1', '6a - 1'], note='The middle terms cancel: 9a² + 3a - 3a - 1.'),
           tf('(x + 3)² = x² + 9', key=False, note='(x + 3)² = x² + 6x + 9; the middle term 6x comes from 3x + 3x.'),
       ],
@@ -167,7 +169,7 @@ SETS = [
           B('Multiply powers with the same base', '8.EE.A.1', [
               sa('Write as a single power.\n7² · 7³', 'Power:', key='7⁵', note='Form required: a single power. 2 + 3 = 5.'),
               sa('Write as a single power.\n10⁴ · 10', 'Power:', key='10⁵', note='Form required: a single power. 10 = 10¹, and 4 + 1 = 5.'),
-              mc('Write as a single power.\n6³ · 6³', ['6⁶', '6⁹', '36³', '12⁶'], note='Add the exponents: 3 + 3 = 6.'),
+              mc('Write as a single power.\n6³ · 6³', ['6⁶', '6⁹', '36⁶', '12⁶'], note='Add the exponents: 3 + 3 = 6.'),
               tf('9 · 9⁴ = 9⁵', key=True, note='9¹ · 9⁴ = 9⁵.'),
               tf('2³ · 2³ = 2⁹', key=False, note='2³ · 2³ = 2⁶; exponents are added, not multiplied.'),
           ]),
@@ -183,7 +185,7 @@ SETS = [
           tf('(x + 1)³ = x³ + 1 for all x.', key=False, note='(x + 1)³ = x³ + 3x² + 3x + 1.'),
       ]),
       f2=B('Expand powers of binomials with the binomial theorem', 'HSA-APR.C.5', [
-          sa('Expand. Write the answer in standard form.\n(2x - 1)³', 'Expression:', key='8x³ - 12x² + 6x - 1', note='Form required: expanded. Coefficients 1, 3, 3, 1 with (2x)^k and (-1)^(3-k).'),
+          sa('Expand. Write the answer in standard form.\n(2x - 1)³', 'Expression:', key='8x³ - 12x² + 6x - 1', note='Form required: expanded, in standard form (descending powers). Coefficients 1, 3, 3, 1 with (2x)^k and (-1)^(3-k).'),
           sa('What is the coefficient of the x³y² term in the expansion of (x + y)⁵?', 'Coefficient:', key='10', note='Any equivalent form. It is 5 choose 2 = 10.'),
           mc('How many terms does the expansion of (a + b)⁷ have?', ['8', '7', '14', '128'], note='(a + b)^n has n + 1 terms.'),
           tf('The number 5 choose 2 equals 10.', key=True, note='5 · 4 ÷ 2 = 10.'),
@@ -222,7 +224,9 @@ SETS = [
           sa('Factor x³ - 9x completely, then give all of its zeros.', 'Answer:', key='x(x - 3)(x + 3); zeros 0, 3, and -3', note='Form required: factored completely, and all three zeros.'),
           mc('Which polynomial has the zeros -1, 0, and 4?', ['x(x + 1)(x - 4)', 'x(x - 1)(x + 4)', '(x + 1)(x - 4)', 'x(x + 1)(x + 4)'],
              note='A zero r comes from the factor (x - r): x, (x + 1), and (x - 4).'),
-          tf('x⁴ - 16 has exactly two real zeros.', key=True, note='(x² + 4)(x - 2)(x + 2): only 2 and -2 are real.'),
+          plot('Sketch a rough graph of p(x) = x(x - 2)(x + 5). Mark the zeros and show the end behavior. (Use the grid for x; the y-scale is up to you.)', plane(),
+               key='A curve that crosses the x-axis at -5, 0, and 2, falls to the left and rises to the right, with one turn between -5 and 0 and one between 0 and 2',
+               note='Any correct sketch: crossings at -5, 0, and 2, and end behavior of a cubic with positive leading coefficient.'),
           tf('p(x) = (x - 3)²(x + 1) has three different zeros.', key=False, note='Its zeros are 3 (twice) and -1, only two different values.'),
       ]),
       f2=B('Factor sums of squares with complex numbers', 'HSN-CN.C.8', [
@@ -265,15 +269,20 @@ SETS = [
              note='Any equivalent wording (up to the right, down to the left). The leading term x³ decides.'),
           mc('Which describes the end behavior of y = -x³?', ['It rises to the left and falls to the right.', 'It falls to the left and rises to the right.', 'It rises on both ends.', 'It falls on both ends.'],
              note='For large positive x, -x³ is very negative; for large negative x, it is very positive.'),
-          tf('A cubic function can have three real zeros.', key=True, note='For example, x(x - 1)(x + 1) has zeros -1, 0, and 1.'),
+          plot('Graph p(x) = (x + 2)(x - 1)(x - 3). Mark the zeros and the y-intercept, and show the end behavior. (Use the grid for x; the y-scale is up to you.)', plane(),
+               key='A curve crossing the x-axis at -2, 1, and 3, through (0, 6), falling to the left and rising to the right',
+               note='Any correct graph. p(0) = (2)(-1)(-3) = 6.'),
           tf('The graph of y = (x - 1)² crosses the x-axis at x = 1.', key=False, note='It touches the x-axis at x = 1 and turns back; (x - 1)² is never negative.'),
       ]),
       f2=B('Write a polynomial from its zeros and find zeros by factoring', 'HSA-APR.B.3', [
-          sa('Write a polynomial function with the zeros 2, -3, and 5.', 'p(x) =', key='(x - 2)(x + 3)(x - 5)', note='Any equivalent form, or any nonzero constant multiple of it.'),
+          sa('Write a polynomial function of degree 3 whose only zeros are 2, -3, and 5.', 'p(x) =', key='(x - 2)(x + 3)(x - 5)',
+             note='Any equivalent form, or any nonzero constant multiple, such as 2(x - 2)(x + 3)(x - 5). A degree-3 polynomial with these three zeros has exactly these factors.'),
           sa('Factor x³ - x² - 6x completely, then give its zeros.', 'Answer:', key='x(x - 3)(x + 2); zeros 0, 3, and -2', note='Form required: factored completely, and all three zeros.'),
           mc('What are the zeros of p(x) = (2x - 1)(x + 4)?', ['{1/2} and -4', '-{1/2} and 4', '2 and -4', '1 and 4'], note='2x - 1 = 0 gives x = 1/2, and x + 4 = 0 gives x = -4.'),
           tf('If (x - 7) is a factor of p(x), then 7 is a zero of p.', key=True, note='p(7) has the factor 7 - 7 = 0.'),
-          tf('The zeros of p(x) = x² + 1 are 1 and -1.', key=False, note='p(1) = 2 and p(-1) = 2; x² + 1 has no real zeros.'),
+          plot('Sketch a rough graph of p(x) = (x - 1)²(x + 2)(x - 3). Show what the graph does at each zero and its end behavior. (Use the grid for x; the y-scale is up to you.)', plane(),
+               key='A curve rising on both ends, crossing the x-axis at -2 and 3 and touching it at 1 (double zero)',
+               note='Any correct sketch: degree 4 with positive leading coefficient, so it rises on both ends; even multiplicity at 1.'),
       ])),
 
     # ------------------------------------------------------------------ A-SSE.A.2 (perfect squares and quadratic form)
@@ -307,7 +316,9 @@ SETS = [
           sa('Find all real zeros of f(x) = x⁴ - 5x² + 4.', 'Zeros:', key='-2, -1, 1, and 2', note='Any order. All four are required. f(x) = (x² - 1)(x² - 4).'),
           sa('Find all real zeros of y = x⁴ - 9x².', 'Zeros:', key='0, 3, and -3', note='Any order. All three are required. x⁴ - 9x² = x²(x - 3)(x + 3); 0 is a double zero.'),
           mc('How many real zeros does y = x⁴ - 1 have?', ['2', '4', '1', '0'], note='x⁴ - 1 = (x² + 1)(x - 1)(x + 1): only 1 and -1 are real.'),
-          tf('The graph of y = x⁴ - 5x² + 4 crosses the x-axis four times.', key=True, note='It has four different real zeros: -2, -1, 1, and 2.'),
+          plot('Graph f(x) = x⁴ - 5x² + 4 = (x² - 1)(x² - 4). Mark the zeros and the y-intercept, and show the end behavior.', plane(),
+               key='A W-shaped curve crossing the x-axis at -2, -1, 1, and 2, with a high point at (0, 4), low points near (±1.6, -2.25), rising on both ends',
+               note='Any correct graph showing all four zeros, the y-intercept 4, and both ends rising.'),
           tf('y = x⁴ + 1 has a real zero.', key=False, note='x⁴ + 1 ≥ 1 for every real x.'),
       ]),
       f2=B('Factor quadratic expressions with complex numbers', 'HSN-CN.C.8', [
@@ -350,26 +361,33 @@ SETS = [
           sa('g(x) = (x - 1)(x² - 4).\nList all the zeros of g.', 'Zeros:', key='1, 2, and -2', note='Any order. All three are required.'),
           mc('Which function has a double zero at x = 2?', ['f(x) = (x - 2)²(x + 1)', 'f(x) = (x + 2)²(x - 1)', 'f(x) = (x - 2)(x + 2)', 'f(x) = 2x(x - 1)'], note='The factor (x - 2) appears twice.'),
           tf('f(x) = x³ - x has three real zeros.', key=True, note='x(x - 1)(x + 1) has zeros -1, 0, and 1.'),
-          tf('If f(4) = 10, then 4 is a zero of f.', key=False, note='A zero is an input whose output is 0.'),
+          plot('Sketch a rough graph of f(x) = (x - 2)²(x + 1). Mark the zeros and the y-intercept, and show what the graph does at each zero. (Use the grid for x; the y-scale is up to you.)', plane(),
+               key='A curve that crosses the x-axis at -1, touches it at 2 and turns back up (double zero), passes through (0, 4), falls to the left and rises to the right',
+               note='Any correct sketch: a crossing at -1, a touch at 2 (even multiplicity), y-intercept 4, and cubic end behavior.'),
       ]),
       f2=B('Sketch polynomial graphs from their zeros', 'HSF-IF.C.7.c', [
           sa('Describe where f(x) = (x + 1)(x - 2)(x - 4) is above the x-axis.', 'Answer:', key='For -1 < x < 2 and for x > 4.',
              note='Any equivalent form. Test a value in each interval: f(0) = 8 > 0, f(3) = -4 < 0, f(5) = 12 > 0, f(-2) = -24 < 0.'),
           sa('A cubic function has zeros -3, 0, and 3 and a positive leading coefficient.\nDescribe its end behavior.', 'Answer:', key='It falls to the left and rises to the right.', note='Any equivalent wording.'),
           mc('How many turning points can the graph of a cubic function have, at most?', ['2', '3', '1', '4'], note='A polynomial of degree n has at most n - 1 turning points.'),
-          tf('The graph of f(x) = x(x - 3) is a parabola that opens upward.', key=True, note='f(x) = x² - 3x has a positive leading coefficient.'),
+          plot('Graph f(x) = (x + 1)(x - 2)(x - 4). Mark the zeros and the y-intercept, and show the end behavior. (Use the grid for x; the y-scale is up to you.)', plane(),
+               key='A curve crossing the x-axis at -1, 2, and 4, through (0, 8), falling to the left and rising to the right; above the axis for -1 < x < 2 and x > 4',
+               note='Any correct graph. f(0) = (1)(-2)(-4) = 8.'),
           tf('A polynomial function with a negative leading coefficient always falls on both ends.', key=False, note='y = -x³ rises on the left and falls on the right.'),
       ])),
 
     # ------------------------------------------------------------------ A-SSE.B.3.b
     S('HSA-SSE.B.3.b', 'Complete the square to reveal the maximum or minimum value of a quadratic function',
       main=[
-          sa('Write f(x) = x² + 6x + 5 in vertex form by completing the square.', 'f(x) =', key='(x + 3)² - 4',
-             note='Form required: vertex form a(x - h)² + k. x² + 6x + 9 - 9 + 5 = (x + 3)² - 4.'),
-          sa('g(x) = x² - 10x + 30.\nComplete the square to write g in vertex form, then give the minimum value of g and where it happens.', 'Answer:', key='g(x) = (x - 5)² + 5; the minimum is 5, at x = 5.',
-             note='Form required: the vertex form, the minimum value, and the x-value.'),
-          sa('A ball\'s height is h(t) = -t² + 8t + 2 meters after t seconds.\nComplete the square (write h in vertex form) to find the greatest height and when it happens.', 'Answer:',
-             key='h(t) = -(t - 4)² + 18; the greatest height is 18 meters, at t = 4 seconds.', note='Form required: the vertex form, the height, and the time. -(t² - 8t + 16) + 16 + 2.'),
+          work('Write f(x) = x² + 6x + 5 in vertex form by completing the square. Show the steps.', 'f(x) =',
+               method='The completed square shown: x² + 6x + 9 - 9 + 5 (add and subtract (6 ÷ 2)² = 9), then (x + 3)² - 4.',
+               key='(x + 3)² - 4', note='Form required: vertex form a(x - h)² + k, with the completing-the-square steps. x² + 6x + 9 - 9 + 5 = (x + 3)² - 4.'),
+          work('g(x) = x² - 10x + 30.\nComplete the square to write g in vertex form, then give the minimum value of g and where it happens. Show the steps.', 'Answer:',
+               method='The completed square shown: x² - 10x + 25 - 25 + 30 = (x - 5)² + 5, and the minimum read from the vertex form.',
+               key='g(x) = (x - 5)² + 5; the minimum is 5, at x = 5.', note='Form required: the vertex form with its steps, the minimum value, and the x-value.'),
+          work('A ball\'s height is h(t) = -t² + 8t + 2 meters after t seconds.\nComplete the square (write h in vertex form) to find the greatest height and when it happens. Show the steps.', 'Answer:',
+               method='The completed square shown: -(t² - 8t) + 2 = -(t² - 8t + 16) + 16 + 2 = -(t - 4)² + 18, and the maximum read from it.',
+               key='h(t) = -(t - 4)² + 18; the greatest height is 18 meters, at t = 4 seconds.', note='Form required: the vertex form with its steps, the height, and the time.'),
           mc('Which is x² - 4x + 7 in vertex form?', ['(x - 2)² + 3', '(x - 4)² + 7', '(x + 2)² + 3', '(x - 2)² + 7'], note='x² - 4x + 4 + 3 = (x - 2)² + 3.'),
           tf('The minimum value of (x + 1)² - 6 is -6.', key=True, note='(x + 1)² ≥ 0, so the value is at least -6, reached at x = -1.'),
       ],
@@ -402,9 +420,11 @@ SETS = [
       f2=B('Derive the equations of ellipses and hyperbolas from their foci', 'HSG-GPE.A.3', [
           sa('An ellipse has foci (4, 0) and (-4, 0), and the sum of the distances from any point on it to the foci is 10.\nWrite its equation in standard form.', 'Equation:',
              key='x²/25 + y²/9 = 1', note='Form required: standard form. a = 5, c = 4, and b² = a² - c² = 9.'),
-          sa('A hyperbola has foci (5, 0) and (-5, 0), and the difference of the distances from any point on it to the foci is 8.\nWrite its equation in standard form.', 'Equation:',
+          sa('A hyperbola has foci (5, 0) and (-5, 0), and the absolute value of the difference of the distances from any point on it to the foci is 8.\nWrite its equation in standard form.', 'Equation:',
              key='x²/16 - y²/9 = 1', note='Form required: standard form. a = 4, c = 5, and b² = c² - a² = 9.'),
-          mc('What is the center of the ellipse (x - 2)²/9 + (y + 1)²/4 = 1?', ['(2, -1)', '(-2, 1)', '(9, 4)', '(3, 2)'], note='(x - h)² and (y - k)² give the center (h, k).'),
+          work('The ellipse x² ÷ 25 + y² ÷ 9 = 1 has foci (4, 0) and (-4, 0).\nShow that (3, 2.4) is on the ellipse and that its distances to the two foci add to 10.', 'Answer:',
+               method='9 ÷ 25 + 5.76 ÷ 9 = 0.36 + 0.64 = 1 shown; the distances √(1 + 5.76) = 2.6 and √(49 + 5.76) = 7.4 computed and added.',
+               key='It satisfies the equation, and 2.6 + 7.4 = 10.', note='Form required: the substitution and both distances.'),
           tf('x²/25 + y²/9 = 1 is the equation of an ellipse.', key=True, note='A sum of two squared terms with different denominators, equal to 1.'),
           tf('For every point on an ellipse, the difference of the distances to the two foci is constant.', key=False, note='For an ellipse the sum is constant; for a hyperbola the difference is.'),
       ])),
@@ -439,8 +459,9 @@ SETS = [
       ],
       f1=B('Solve exponential equations with logarithms', 'HSF-LE.A.4', [
           sa('Solve 500(1.06)^t = 800. Round t to the nearest tenth.', 't =', key='8.1', note='Form required: rounded to the nearest tenth. 1.06^t = 1.6, so t = log 1.6 ÷ log 1.06 ≈ 8.07.'),
-          sa('Solve 2^(t/5) = 8.', 't =', key='15', note='Any equivalent form. 8 = 2³, so t/5 = 3.'),
-          mc('Solve 10^(2x) = 1,000.', ['x = 1.5', 'x = 3', 'x = 500', 'x = 30'], note='1,000 = 10³, so 2x = 3.'),
+          sa('A population is P = 300 · 2^(t/5) after t years. When is P = 1,000? Round to the nearest tenth. (log means base 10.)', 't ≈',
+             key='8.7 years', note='Form required: rounded to the nearest tenth. 2^(t/5) = 10/3, so t = 5 · log(10/3) ÷ log 2 ≈ 8.68.'),
+          mc('Solve 10^(2x) = 50. (log means base 10.)', ['x = (log 50) ÷ 2 ≈ 0.85', 'x = 25', 'x = log 25 ≈ 1.40', 'x = 2.5'], note='2x = log 50 ≈ 1.699.'),
           tf('If 3^x = 3⁵, then x = 5.', key=True, note='Equal powers of the same base (other than 1) have equal exponents.'),
           tf('The solution of 1.06^t = 2 is t = 2 ÷ 1.06.', key=False, note='t = log 2 ÷ log 1.06 ≈ 11.9.'),
       ]),

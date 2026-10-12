@@ -1,12 +1,12 @@
-from qb import S, B, sa, mc, tf, work
+from qb import S, B, sa, mc, tf, work, plot, draw_write
+from common import ints, plane, graph, grid
 
 SETS = [
     # ------------------------------------------------------------------ N-RN.A.1
     S('HSN-RN.A.1', 'Explain the meaning of rational exponents from the properties of integer exponents',
       main=[
-          sa('For the power-of-a-power property to hold, (5^(1/3))³ must equal 5^((1/3)·3) = 5.\nWhat number must 5^(1/3) be? Explain.', 'Answer:',
-             key='∛5, the cube root of 5, because it is the number whose cube is 5.',
-             note='Any equivalent form: ∛5 or "the cube root of 5". The explanation must use the fact that (5^(1/3))³ = 5.'),
+          sa('For the power-of-a-power property to hold, (7^(1/4))⁴ must equal 7^((1/4)·4) = 7.\nWhat number must 7^(1/4) be? Explain.', 'Answer:',
+             key='⁴√7, the fourth root of 7 (the positive number whose fourth power is 7).', note='Any equivalent form, such as the fourth root of 7. The explanation must use the fact that (7^(1/4))⁴ = 7.'),
           sa('Use the properties of exponents to explain why 8^(2/3) = 4.', 'Explanation:',
              key='8^(2/3) = (8^(1/3))² = 2² = 4.',
              note='Any equivalent reasoning, such as 8^(2/3) = (8²)^(1/3) = ∛64 = 4. The explanation must use a property of exponents.'),
@@ -34,18 +34,22 @@ SETS = [
       f1=B('Express the solution of an exponential equation as a logarithm', 'HSF-LE.A.4', [
           sa('Solve 10^x = 500. Write the solution as a logarithm, then use a calculator to round it to the nearest hundredth.', 'x =',
              key='x = log 500 ≈ 2.70', note='Form required: the logarithm and the rounded value. log means log base 10; log 500 = 2.69897...'),
-          sa('Solve 2^x = 32.', 'x =', key='5', note='Any equivalent form (log₂ 32 = 5). 2⁵ = 32.'),
-          mc('Which expression is the solution of 3 · 10^x = 60?', ['x = log 20', 'x = log 60', 'x = 20', 'x = log 57'],
+          sa('A colony of 400 bacteria grows by a factor of 10 every hour: N = 400 · 10^t. Solve 400 · 10^t = 3,000. Give the exact logarithm and round to the nearest hundredth. (log means base 10.)', 't =',
+             key='log 7.5 ≈ 0.88 hour', note='Form required: the exact logarithm and the rounded value. 10^t = 7.5.'),
+          mc('Which expression is the solution of 3 · 10^x = 60? (log means base 10.)', ['x = log 20', 'x = log 60', 'x = 20', 'x = log 57'],
              note='Divide both sides by 3 first: 10^x = 20, so x = log 20.'),
-          tf('log 1,000 = 3', key=True, note='10³ = 1,000.'),
+          tf('The solution of 2 · 10^t = 1,000 is t = log 500 ≈ 2.70. (log means base 10.)', key=True, note='10^t = 500, and log 500 ≈ 2.699.'),
           tf('The solution of 10^x = -10 is x = -1.', key=False, note='10^x is positive for every real x, so 10^x = -10 has no real solution. (10⁻¹ = 0.1.)'),
       ]),
       f2=B('Use the inverse relationship between exponents and logarithms', 'HSF-BF.B.5', [
-          sa('Write log₂ 8 = 3 as an exponential equation.', 'Equation:', key='2³ = 8', note='Form required: exponential form. log_b a = c means b^c = a.'),
-          sa('f(x) = 10^x. Write the inverse function f⁻¹(x).', 'f⁻¹(x) =', key='log x (base 10), for x > 0', note='Any equivalent form: log₁₀ x. The inverse of 10^x is the base-10 logarithm.'),
-          mc('What is the value of log₅ 25?', ['2', '5', '125', '{1/2}'], note='5² = 25, so log₅ 25 = 2.'),
+          sa('f(x) = 10^x and g(x) = log x (log means base 10).\nFind f(g(100)) and g(f(2)), and say what they show.', 'Answer:',
+             key='f(g(100)) = 100 and g(f(2)) = 2: f and g undo each other, so they are inverse functions.', note='Form required: both values and the conclusion. g(100) = 2 and f(2) = 100.'),
+          sa('A sound level is L = 10 log(I ÷ I₀) decibels, where log means base 10.\nSolve for the intensity I in terms of L.', 'I =',
+             key='I₀ · 10^(L/10)', note='Any equivalent form. Divide by 10, then use 10 to the power of each side: I ÷ I₀ = 10^(L/10).'),
+          mc('Which function is the inverse of f(x) = 5^x?', ['f⁻¹(x) = log₅ x', 'f⁻¹(x) = x ÷ 5', 'f⁻¹(x) = x⁵', 'f⁻¹(x) = 5^(-x)'],
+             note='log₅ x undoes 5^x: log₅(5^x) = x and 5^(log₅x) = x for x > 0.'),
           tf('10^(log₁₀7) = 7', key=True, note='10^x and log x are inverse functions, so each undoes the other.'),
-          tf('log(10^x) = 10x', key=False, note='log(10^x) = x, because log undoes 10^x.'),
+          tf('log(10^x) = 10x (log means base 10.)', key=False, note='log(10^x) = x, because log undoes 10^x.'),
       ])),
 
     # ------------------------------------------------------------------ N-RN.A.2
@@ -94,19 +98,19 @@ SETS = [
       ])),
 
     # ------------------------------------------------------------------ N-RN.B.3
-    S('HSN-RN.B.3', 'Explain why sums and products of rational and irrational numbers are rational or irrational',
+    S('HSN-RN.B.3', 'Prove that the sum of a rational number and an irrational number is irrational',
       main=[
           work('Explain why 5 + √2 is irrational. (Suppose 5 + √2 = r for some rational number r.)', 'Conclusion:',
                method='An argument like this: if 5 + √2 = r with r rational, then √2 = r - 5, a difference of rational numbers, which is rational. But √2 is irrational, so 5 + √2 cannot be rational.',
                key='5 + √2 is irrational.', note='Any equivalent form of the argument. The key step is that rational numbers are closed under subtraction.'),
-          work('Explain why 3√7 is irrational. (Suppose 3√7 = r for some rational number r.)', 'Conclusion:',
-               method='An argument like this: if 3√7 = r, then √7 = r ÷ 3, a quotient of a rational number by a nonzero rational number, which is rational. But √7 is irrational, so 3√7 is irrational.',
-               key='3√7 is irrational.', note='Any equivalent form of the argument. It uses closure of the rational numbers under division by a nonzero number.'),
-          sa('Explain why the sum of two rational numbers a/b and c/d (with integers a, b, c, d, and b ≠ 0, d ≠ 0) is rational.', 'Explanation:',
-             key='a/b + c/d = (ad + bc)/(bd). ad + bc and bd are integers and bd ≠ 0, so the sum is a quotient of integers.',
-             note='Any equivalent explanation that writes the sum as a quotient of integers with a nonzero denominator.'),
-          mc('Which number is irrational?', ['√3 + 2', '√9 + 2', '√2 · √8', '0 · √5'],
-             note='√9 + 2 = 5, √2 · √8 = √16 = 4, and 0 · √5 = 0 are rational. √3 is irrational, so √3 + 2 is irrational.'),
+          work('Explain why √3 - 4 is irrational. (Suppose √3 - 4 = r for some rational number r.)', 'Conclusion:',
+               method='An argument like this: if √3 - 4 = r with r rational, then √3 = r + 4, a sum of rational numbers, which is rational. But √3 is irrational, so √3 - 4 cannot be rational.',
+               key='√3 - 4 is irrational.', note='Form required: the argument by contradiction. It must use the fact that a sum of rational numbers is rational.'),
+          work('Prove that if a is rational and x is irrational, then a + x is irrational.', 'Conclusion:',
+               method='Suppose a + x = r with r rational. Then x = r - a, a difference of rational numbers, which is rational. That contradicts x being irrational, so a + x is irrational.',
+               key='a + x is irrational.', note='Form required: the general argument by contradiction, using closure of the rational numbers under subtraction.'),
+          mc('Which sum is irrational?', ['√5 + 1.5', '√16 + 1.5', '0.25 + {3/4}', '√2 + (-√2)'],
+             note='√5 is irrational and 1.5 is rational, so their sum is irrational. √16 + 1.5 = 5.5, 0.25 + 0.75 = 1, and √2 + (-√2) = 0 are rational.'),
           tf('The sum of two irrational numbers is always irrational.', key=False, note='√2 + (-√2) = 0, which is rational.'),
       ],
       back=[
@@ -131,8 +135,7 @@ SETS = [
              note='Form required: exact form. The legs are 3 and 3, and the hypotenuse is √18 = 3√2.'),
           sa('A square has vertices (0, 0), (1, 1), (0, 2), and (-1, 1). Find its exact perimeter, and say whether it is rational or irrational.', 'Answer:',
              key='4√2 units; irrational', note='Form required: exact form. Each side is √(1² + 1²) = √2.'),
-          mc('How long is a diagonal of the rectangle with vertices (0, 0), (4, 0), (4, 3), and (0, 3)?', ['5', '7', '√7', '25'],
-             note='√(4² + 3²) = √25 = 5.'),
+          mc('What is the area of the triangle with vertices (0, 0), (4, 0), and (4, 3)?', ['6', '12', '7', '5'], note='It is a right triangle with legs 4 and 3: {1/2} · 4 · 3 = 6.'),
           tf('The triangle with vertices (0, 0), (1, 0), and (0, 1) has an irrational perimeter.', key=True, note='The perimeter is 2 + √2, a rational number plus an irrational number.'),
           tf('The triangle with vertices (0, 0), (6, 0), and (0, 8) has an irrational perimeter.', key=False, note='The sides are 6, 8, and 10, so the perimeter is 24.'),
       ]),
@@ -144,11 +147,112 @@ SETS = [
           tf('i² = 1', key=False, note='i is defined so that i² = -1.'),
       ])),
 
+    # ------------------------------------------------------------------ N-RN.B.3 (products, new in 2.0.0)
+    S('HSN-RN.B.3', 'Prove that the product of a nonzero rational number and an irrational number is irrational', num=69,
+      main=[
+          work('Explain why 3√7 is irrational. (Suppose 3√7 = r for some rational number r.)', 'Conclusion:',
+               method='An argument like this: if 3√7 = r, then √7 = r ÷ 3, a quotient of a rational number by a nonzero rational number, which is rational. But √7 is irrational, so 3√7 is irrational.',
+               key='3√7 is irrational.', note='Form required: the argument by contradiction. It must divide by the nonzero rational number 3.'),
+          work('Prove that if a is a nonzero rational number and x is irrational, then ax is irrational.', 'Conclusion:',
+               method='Suppose ax = r with r rational. Since a ≠ 0, x = r ÷ a, a quotient of rational numbers with a nonzero divisor, which is rational. That contradicts x being irrational.',
+               key='ax is irrational.', note='Form required: the general argument by contradiction, including where a ≠ 0 is used.'),
+          sa('Why does the statement "a rational number times an irrational number is irrational" need the rational number to be nonzero?', 'Answer:',
+             key='If a = 0, then ax = 0, which is rational. The proof also divides by a, which needs a ≠ 0.', note='Any equivalent explanation that gives the counterexample 0 · x = 0 or the division by a.'),
+          mc('Which product is irrational?', ['{2/3}√5', '0 · √5', '√5 · √5', '√2 · √8'],
+             note='{2/3} is a nonzero rational number and √5 is irrational. 0 · √5 = 0, √5 · √5 = 5, and √2 · √8 = 4 are rational.'),
+          tf('The product of two irrational numbers is always irrational.', key=False, note='√2 · √2 = 2, which is rational.'),
+      ],
+      back=[
+          B('Classify numbers as rational or irrational', '8.NS.A.1', [
+              sa('Is √49 rational or irrational? Explain.', 'Answer:', key='Rational: √49 = 7.', note='Any equivalent explanation.'),
+              sa('The decimal 0.1010010001... has one more 0 between the 1s each time. Is it rational or irrational? Explain.', 'Answer:',
+                 key='Irrational: it never ends and never repeats.', note='Any equivalent explanation.'),
+              mc('Which of these numbers is irrational?', ['√10', '√100', '0.333...', '-{4/7}'], note='10 is not a perfect square. √100 = 10, 0.333... = {1/3}, and -{4/7} are rational.'),
+              tf('Every terminating decimal is a rational number.', key=True, note='A terminating decimal is a fraction with a power of 10 in the denominator.'),
+              tf('π = {22/7}', key=False, note='π is irrational; {22/7} ≈ 3.142857 is only an approximation of π ≈ 3.141593.'),
+          ]),
+          B('Multiply and divide rational numbers', '7.NS.A.2.c', [
+              sa('Find (-{2/3}) · {9/4}.', 'Product:', key='-3/2', note='Any equivalent form, such as -1.5. -18/12 = -3/2.'),
+              sa('Find {5/6} ÷ (-{10/3}).', 'Quotient:', key='-1/4', note='Any equivalent form. {5/6} · (-{3/10}) = -{15/60}.'),
+              mc('Which product is positive?', ['(-0.5)(-8)', '(-0.5)(8)', '(0.5)(-8)', '0 · 8'], note='A negative times a negative is positive: 4.'),
+              tf('The quotient of two nonzero rational numbers is a rational number.', key=True, note='(a/b) ÷ (c/d) = ad/(bc), a quotient of integers with bc ≠ 0.'),
+              tf('{3/4} ÷ 0 = 0', key=False, note='Division by 0 is undefined.'),
+          ]),
+      ],
+      f1=B('Find exact lengths, perimeters, and areas with irrational side lengths', 'HSG-GPE.B.7', [
+          sa('A square has vertices (0, 0), (2, 1), (1, 3), and (-1, 2). Find its exact side length and its area.', 'Answer:', key='Side √5; area 5 square units',
+             note='Form required: the exact side and the area. Each side is √(2² + 1²) = √5, and (√5)² = 5.'),
+          sa('A rectangle has vertices (0, 0), (3, 3), (1, 5), and (-2, 2). Find its exact perimeter.', 'Perimeter:', key='10√2 units',
+             note='Form required: exact. The sides are √18 = 3√2 and √8 = 2√2, so the perimeter is 2(3√2 + 2√2).'),
+          mc('What is the exact perimeter of the triangle with vertices (0, 0), (4, 0), and (0, 4)?', ['8 + 4√2', '8 + 2√2', '16', '4√2'], note='The legs are 4 and 4, and the hypotenuse is √32 = 4√2.'),
+          tf('A square with side √5 has a rational area.', key=True, note='Its area is (√5)² = 5.'),
+          tf('A square with side √5 has a rational perimeter.', key=False, note='Its perimeter is 4√5, a nonzero rational number times an irrational number.'),
+      ]),
+      f2=B('Factor sums of squares over the complex numbers', 'HSN-CN.C.8', [
+          sa('Factor x² + 9 over the complex numbers.', 'Factored:', key='(x + 3i)(x - 3i)', note='Form required: factored with complex numbers.'),
+          sa('Expand (x + 2i)(x - 2i).', 'Product:', key='x² + 4', note='Form required: expanded. -(2i)² = -4i² = 4.'),
+          mc('Which is a factorization of x² + 25?', ['(x + 5i)(x - 5i)', '(x + 5)(x - 5)', '(x + 5i)²', '(x - 5i)²'], note='(x + 5i)(x - 5i) = x² - 25i² = x² + 25.'),
+          tf('x² + 16 = (x + 4i)(x - 4i)', key=True, note='-(4i)² = 16.'),
+          tf('x² + 4 cannot be factored, even with complex numbers.', key=False, note='x² + 4 = (x + 2i)(x - 2i).'),
+      ])),
+
+    # ------------------------------------------------------------------ N-RN.B.3 (closure of the rational numbers, new in 2.0.0)
+    S('HSN-RN.B.3', 'Prove that sums and products of two rational numbers are rational', num=70,
+      main=[
+          sa('Explain why the sum of two rational numbers a/b and c/d (with integers a, b, c, d, and b ≠ 0, d ≠ 0) is rational.', 'Explanation:',
+             key='a/b + c/d = (ad + bc)/(bd). ad + bc and bd are integers and bd ≠ 0, so the sum is a quotient of integers.',
+             note='Any equivalent explanation that writes the sum as a quotient of integers with a nonzero denominator.'),
+          work('Prove that the product of two rational numbers a/b and c/d (with integers a, b, c, d, and b ≠ 0, d ≠ 0) is rational.', 'Conclusion:',
+               method='(a/b)(c/d) = (ac)/(bd); ac and bd are integers, and bd ≠ 0 because b ≠ 0 and d ≠ 0, so the product is a quotient of integers.',
+               key='The product is rational.', note='Form required: the product written as a quotient of integers, with the reason the denominator is not 0.'),
+          sa('In the proof that (a/b)(c/d) is rational, why is bd ≠ 0?', 'Answer:', key='b ≠ 0 and d ≠ 0, and a product of two nonzero integers is not 0.',
+             note='Any equivalent explanation.'),
+          mc('Which statement shows that ({2/5})(-{15/4}) is rational?', ['It equals -30/20 = -3/2, a quotient of integers with a nonzero denominator.', 'It is negative.',
+                                                                        'It can be written as a decimal with a calculator.', 'Its first factor has an even numerator.'],
+             note='Rational means a quotient of integers with a nonzero denominator.'),
+          tf('The difference of two rational numbers is always rational.', key=True, note='a/b - c/d = (ad - bc)/(bd), a quotient of integers with bd ≠ 0.'),
+      ],
+      back=[
+          B('Write quotients of integers as rational numbers', '7.NS.A.2.b', [
+              sa('Write -{3/4} as a quotient of integers in two different ways.', 'Answer:', key='-3/4 and 3/(-4)', note='Any two correct quotients, such as -6/8.'),
+              sa('Is -12 ÷ 5 a rational number? Explain.', 'Answer:', key='Yes. It is a quotient of integers with a nonzero divisor.', note='Any equivalent explanation.'),
+              mc('Which quotient is undefined?', ['7 ÷ 0', '0 ÷ 7', '-7 ÷ 2', '7 ÷ (-1)'], note='Division by 0 is undefined; 0 ÷ 7 = 0.'),
+              tf('For integers p and q with q ≠ 0, -(p/q) = (-p)/q = p/(-q).', key=True, note='Each is the same negative number.'),
+              tf('Some integers are not rational numbers.', key=False, note='Every integer n equals n/1, so every integer is rational.'),
+          ]),
+          B('Divide fractions', '6.NS.A.1', [
+              sa('Find {3/4} ÷ {1/8}.', 'Quotient:', key='6', note='Any equivalent form. {3/4} · 8 = 6.'),
+              sa('Find {2/3} ÷ {5/6}.', 'Quotient:', key='4/5', note='Any equivalent form. {2/3} · {6/5} = {12/15}.'),
+              mc('Which number equals {5/2} ÷ {1/4}?', ['10', '{5/8}', '{1/10}', '2.5'], note='{5/2} · 4 = 10.'),
+              tf('{1/2} ÷ {1/4} = 2', key=True, note='There are two quarters in a half.'),
+              tf('{3/5} ÷ 3 = {9/5}', key=False, note='{3/5} ÷ 3 = {1/5}.'),
+          ]),
+      ],
+      f1=B('Show that sums and products of complex numbers are complex numbers', 'HSN-CN.A.2', [
+          sa('Add. Write the answer in the form a + bi.\n(3 - 2i) + (-1 + 6i)', 'Sum:', key='2 + 4i', note='Form required: a + bi. Add the real parts and the imaginary parts.'),
+          sa('Multiply. Write the answer in the form a + bi.\n(2 + i)(3 + 2i)', 'Product:', key='4 + 7i', note='Form required: a + bi. 6 + 4i + 3i + 2i² = 6 + 7i - 2.'),
+          mc('Which shows that the product of two complex numbers is a complex number?', ['(a + bi)(c + di) = (ac - bd) + (ad + bc)i, and ac - bd and ad + bc are real numbers',
+             '(a + bi)(c + di) = ac + bdi', 'The product of two complex numbers is always real', 'i² = 1'], note='Expanding and using i² = -1 gives a real part and an imaginary part.'),
+          tf('The sum of two complex numbers is a complex number.', key=True, note='(a + bi) + (c + di) = (a + c) + (b + d)i.'),
+          tf('(1 + i) + (1 - i) is not a complex number because it has no i.', key=False, note='The sum is 2 = 2 + 0i, a complex number (a real number).'),
+      ]),
+      f2=B('Show that rational expressions are closed under addition and multiplication', 'HSA-APR.D.7', [
+          sa('Assume x ≠ 0 and x ≠ -1. Write 1 ÷ x + 2 ÷ (x + 1) as one fraction.', 'Sum:', key='(3x + 1) ÷ (x(x + 1))',
+             note='Any equivalent form, such as (3x + 1)/(x² + x). The common denominator is x(x + 1): (x + 1 + 2x) ÷ (x(x + 1)).'),
+          sa('Assume x ≠ 2 and x ≠ -3. Multiply and simplify: (x ÷ (x - 2)) · ((x - 2) ÷ (x + 3)).', 'Product:', key='x ÷ (x + 3)', note='Form required: simplified. The factor x - 2 cancels.'),
+          mc('Why is the sum of two rational expressions a rational expression?', ['Over a common denominator, the sum is a polynomial divided by a nonzero polynomial.',
+             'Rational expressions are always integers.', 'The denominators always cancel.', 'Any sum of fractions equals 1.'],
+             note='This is the same argument as for rational numbers, with polynomials in place of integers.'),
+          tf('The quotient of two rational expressions, when the divisor is not 0, is a rational expression.', key=True, note='Dividing multiplies by the reciprocal, which is also a rational expression.'),
+          tf('1 ÷ x + 1 ÷ y = 2 ÷ (x + y) for all nonzero x and y with x + y ≠ 0.', key=False, note='For x = y = 1, the left side is 2 and the right side is 1.'),
+      ])),
+
     # ------------------------------------------------------------------ N-Q.A.1
     S('HSN-Q.A.1', 'Use units to guide multistep solutions and to choose scales for graphs',
       main=[
-          sa('A car goes 32 miles on each gallon of gas, and gas costs $3.60 per gallon.\nUse units to find the cost of gas for a 400-mile trip.', 'Cost:', key='$45',
-             note='Any equivalent form. 400 miles × (1 gallon ÷ 32 miles) × ($3.60 ÷ 1 gallon) = $45; the miles and gallons cancel.'),
+          work('A car goes 32 miles on each gallon of gas, and gas costs $3.60 per gallon.\nUse units to find the cost of gas for a 400-mile trip. Show how the units cancel.', 'Cost:',
+               method='A product of rates with units, such as 400 miles × (1 gallon ÷ 32 miles) × ($3.60 ÷ 1 gallon), with miles and gallons canceling to leave dollars.',
+               key='$45', note='Form required: the cost with the unit work shown. 400 ÷ 32 = 12.5 gallons, and 12.5 × $3.60 = $45.'),
           sa('Convert 72 kilometers per hour to meters per second.', 'Speed:', key='20 meters per second',
              note='Any equivalent form. 72 km/h × 1,000 m/km ÷ 3,600 s/h = 20 m/s.'),
           mc('The formula d = rt gives distance. A rate r is in meters per second and a time t is in minutes.\nWhat must be done before multiplying?',
@@ -195,7 +299,7 @@ SETS = [
           mc('Two velocities, (3, 4) and (5, -1), are added.\nWhat is the result?', ['(8, 3)', '(15, -4)', '(2, 5)', '(8, 5)'], note='Add the parts: (3 + 5, 4 + (-1)) = (8, 3).'),
           tf('An object with velocity (6, 8) meters per second has a speed of 10 meters per second.', key=True, note='√(6² + 8²) = 10.'),
           tf('Adding the velocities (3, 0) and (0, 4) gives a speed of 7.', key=False, note='The sum is (3, 4), whose speed is √(9 + 16) = 5.'),
-      ])),
+      ], nearest='Velocity vectors are rate quantities with units, like the unit rates of the MAIN set, with a direction added.')),
 
     # ------------------------------------------------------------------ N-Q.A.2
     S('HSN-Q.A.2', 'Define appropriate quantities for descriptive modeling',
@@ -246,10 +350,10 @@ SETS = [
           sa('A survey asks 200 randomly chosen students how many hours they sleep on a school night.\nWhat kind of study is this, and what variable does it measure?', 'Answer:',
              key='A survey (sample survey); hours of sleep per school night.', note='Any equivalent wording. Both parts are required.'),
           mc('Which kind of study can show cause and effect?', ['A randomized experiment', 'An observational study', 'A survey', 'A poll of volunteers'],
-             note='Only random assignment of treatments controls for other variables.'),
+             note='Random assignment tends to balance other variables between the groups, so a difference can be credited to the treatment.'),
           tf('In an observational study, the researchers do not assign treatments.', key=True, note='They observe groups that already exist.'),
           tf('A survey of volunteers who answer an online poll is a random sample.', key=False, note='Volunteers choose themselves, so the sample is not random.'),
-      ])),
+      ], nearest='Defining the quantities a model needs leads to deciding which variables a study measures and how they are collected.')),
 
     # ------------------------------------------------------------------ N-Q.A.3
     S('HSN-Q.A.3', 'Choose a level of accuracy that fits the limits of measurement',
@@ -287,7 +391,7 @@ SETS = [
           sa('A sphere has a radius of 5 m.\nFind its volume exactly in terms of π, then to the nearest cubic meter.', 'Volume:', key='{500/3}π cubic meters, about 524 cubic meters',
              note='Form required: both the exact and the rounded value. V = (4/3)π · 125.'),
           mc('A cone has a radius of 6 and a height of 4.\nWhat is its volume?', ['48π', '144π', '96π', '16π'], note='V = (1/3)π · 6² · 4 = 48π.'),
-          tf('A cube with 2 cm edges has a volume of 8 cubic centimeters.', key=True, note='2³ = 8.'),
+          tf('A cylinder with radius 2 cm and height 2 cm has a volume of 8π cm³, which is about 25 cm³ to the nearest cubic centimeter.', key=True, note='V = π · 2² · 2 = 8π ≈ 25.1.'),
           tf('Doubling the radius of a sphere doubles its volume.', key=False, note='Volume depends on r³, so it is multiplied by 8.'),
       ]),
       f2=B('Use the margin of error of a sample survey', 'HSS-IC.B.4', [
@@ -301,5 +405,5 @@ SETS = [
           tf('Larger random samples tend to have smaller margins of error.', key=True, note='More data gives less variation from sample to sample.'),
           tf('A margin of error of 3 percentage points means the poll is off by exactly 3 points.', key=False,
              note='It gives a range of plausible values, not the exact error.'),
-      ])),
+      ], nearest='The accuracy a measurement supports leads to the accuracy of an estimate from a sample, given by its margin of error.')),
 ]
