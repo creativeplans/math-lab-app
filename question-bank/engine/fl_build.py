@@ -38,10 +38,11 @@ def load():
     return D.SETS
 
 
-def num_of(text):
-    m = re.search(r'[−-]?\$?[−-]?(\d[\d,]*(?:\.\d+)?)', text)
-    if not m:
+def num_of(text, pick=0):
+    ms = list(re.finditer(r'[−-]?\$?[−-]?(\d[\d,]*(?:\.\d+)?)', text))
+    if not ms:
         return None, 0
+    m = ms[pick] if -len(ms) <= pick < len(ms) else ms[0]
     s = m.group(1).replace(',', '')
     v = float(s)
     if re.match(r'[−-]', m.group(0)) or '$-' in m.group(0) or '$−' in m.group(0):
@@ -60,15 +61,15 @@ PROBLEMS = []
 def check_calc(qid, qd):
     if qd['calc'] is None:
         return
-    rv, dp = num_of(qd['right'])
+    rv, dp = num_of(qd['right'], qd['pick'])
     if rv is None:
         PROBLEMS.append(f'{qid}: calc given but the correct choice shows no number')
         return
     tol = qd['tol'] if qd['tol'] is not None else 0.5 * 10 ** (-dp) + 1e-9
     if abs(qd['calc'] - rv) > tol:
         PROBLEMS.append(f'{qid}: correct choice {qd["right"]!r} does not match the recomputed value {qd["calc"]}')
-    for w, _ in qd['wrong']:
-        wv, wdp = num_of(w)
+    for w, _ in ([] if qd['shared'] else qd['wrong']):
+        wv, wdp = num_of(w, qd['pick'])
         if wv is not None and abs(qd['calc'] - wv) <= (qd['tol'] if qd['tol'] is not None else 0.5 * 10 ** (-wdp) + 1e-9):
             PROBLEMS.append(f'{qid}: wrong choice {w!r} also equals the recomputed value {qd["calc"]}')
 

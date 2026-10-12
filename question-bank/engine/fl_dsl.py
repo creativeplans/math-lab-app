@@ -32,9 +32,12 @@ def unit(code, title, area):
         UNITS.append(dict(UNIT))
 
 
-def q(stem, right, wrong, intro=None, fb=None, calc=None, sub=None, how=False, tol=None, keep_order=False, eff=None):
+def q(stem, right, wrong, intro=None, fb=None, calc=None, sub=None, how=False, tol=None, keep_order=False, eff=None,
+      pick=0, shared=False):
     """right: correct choice text. wrong: three (text, misconception) pairs.
-    how=True marks a practical how-to question. eff: effective date or tax year for a changing rule."""
+    how=True marks a practical how-to question. eff: effective date or tax year for a changing rule.
+    pick: which number in a choice is the answer (0 = first, -1 = last). shared=True: wrong choices may show the same
+    number with different words (comparisons such as "Job A, by $17.50" vs "Job B, by $17.50")."""
     assert isinstance(right, str) and right.strip(), stem
     assert len(wrong) == 3 and all(len(w) == 2 and w[0].strip() and w[1].strip() for w in wrong), (stem[:60], wrong)
     assert fb and fb.strip(), ('every question needs feedback', stem[:70])
@@ -46,7 +49,7 @@ def q(stem, right, wrong, intro=None, fb=None, calc=None, sub=None, how=False, t
         assert not re.search(r'\b(all|none|both) of (the|these)\b', t, re.I), ('avoid all/none of the above', t)
     return dict(stem=stem.strip(), right=right.strip(), wrong=[(a.strip(), b.strip()) for a, b in wrong],
                 intro=intro.strip() if intro else None, fb=fb.strip(), calc=calc, sub=sub, how=how, tol=tol,
-                keep_order=keep_order, eff=eff)
+                keep_order=keep_order, eff=eff, pick=pick, shared=shared)
 
 
 def concept(skill, why, qs):

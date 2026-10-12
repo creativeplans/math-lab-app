@@ -281,7 +281,7 @@ S(5, 'Overdrafts and bank fees', 'Explain overdrafts and compute the cost of ove
         fb='$200 × 0.18 × (1/12) = $3.', calc=200 * 0.18 / 12, sub='Overdraft line of credit'),
       q('Kim compares two ways to cover a $200 shortfall for one month: a $35 overdraft fee, or about $3 of interest plus a $5 transfer fee on her line of credit. Which costs less and by how much?', 'The line of credit, by $27',
         [('The overdraft fee, by $27', 'Reverses the comparison'), ('The line of credit, by $32', 'Forgets the transfer fee'), ('They cost the same', 'Does not compute')],
-        fb='Line of credit: $3 + $5 = $8. Overdraft: $35. Difference: $27.', sub='Comparing options'),
+        fb='Line of credit: $3 + $5 = $8. Overdraft: $35. Difference: $27.', calc=35 - 8, shared=True, sub='Comparing options'),
       q('Which risk applies to an overdraft line of credit but NOT to a savings-linked transfer?', 'Unpaid amounts keep collecting interest',
         [('It moves your own savings into checking', 'Describes the savings link'), ('It can never be used more than once', 'Invents a limit'), ('It requires keeping cash at home', 'Unrelated')],
         fb='A line of credit is a loan; a savings link moves your own money.', sub='Borrowing vs your own money'),
