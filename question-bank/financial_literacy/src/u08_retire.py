@@ -96,7 +96,7 @@ S(55, 'Why save for retirement', 'Explain why people save for retirement and how
         fb='Automation makes saving the default.', sub='Automation'),
       q('Raising a 401(k) contribution by 1% of pay each year until it reaches a target is called…', 'automatic escalation',
         [('a catch-up contribution', 'Confuses with extra contributions allowed at age 50+'), ('a rollover', 'Confuses with moving money between plans'), ('dollar-cost averaging', 'Confuses raising the rate with investing on a schedule')],
-        intro='Many plans offer automatic escalation: the contribution rate rises a little each year, often when raises arrive.',
+        intro='Plan features: auto-enrollment signs workers up by default; automatic escalation raises the contribution rate a little each year; catch-up contributions let workers 50 and older save extra.',
         fb='Auto-escalation gradually increases savings.', sub='Auto-escalation'),
     ]),
   ],

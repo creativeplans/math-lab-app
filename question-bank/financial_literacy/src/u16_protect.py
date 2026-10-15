@@ -189,10 +189,10 @@ S(100, 'Consumer rights and where to get help', 'Use federal and state consumer 
   ],
   go=[
     deeper('Using your rights', [
-      q('A credit card statement shows a $120 charge for an item never delivered. Under the Fair Credit Billing Act, how long does Rosa have to dispute it in writing?', '60 days after the statement',
-        [('6 days after the purchase', 'Too short'), ('6 years after the purchase', 'Too long'), ('Only before the seller ships the item', 'Misreads the rule')],
+      q('Rosa\'s credit card statement dated April 30 shows a $120 charge for an item never delivered. She mails a written dispute on June 15. Is it on time under the Fair Credit Billing Act?', 'Yes; it is within 60 days of the statement',
+        [('No; disputes must be made within 6 days of the purchase', 'Invents a short deadline'), ('No; disputes are allowed only before the item ships', 'Misreads the rule'), ('Yes, because there is no deadline for billing errors', 'Ignores the 60-day window')],
         intro='The Fair Credit Billing Act lets you dispute billing errors, including goods not delivered, in writing within 60 days after the statement with the error was sent.',
-        fb='Dispute in writing within 60 days of the statement.', calc=60, sub='Billing disputes', eff='FCBA as of 2026'),
+        fb='April 30 to June 15 is 46 days, inside the 60-day window.', sub='Billing disputes', eff='FCBA as of 2026', how=True),
       q('Within how many days of first contact can Rosa dispute a debt in writing and make the collector verify it?', '30',
         [('3', 'Confuses with the Cooling-Off Rule'), ('365', 'Too long'), ('60', 'Confuses with billing disputes')],
         intro='Collectors must send a validation notice. If you dispute in writing within 30 days, they must stop collecting until they verify the debt.',
