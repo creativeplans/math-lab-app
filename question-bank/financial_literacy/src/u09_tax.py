@@ -119,7 +119,7 @@ S(64, 'Tax forms: W-2, 1099s, and Form 1040', 'Identify the tax forms workers re
       [('Her total tax bill for the year, which she must pay again', 'Double counts'), ('Social Security tax only', 'Different box'), ('A refund already sent to her', 'Misreads')],
       intro='Form W-2 boxes: Box 1 shows taxable wages; Box 2 shows federal income tax withheld; other boxes show Social Security and Medicare wages and taxes, and state amounts.',
       fb='Box 2 is federal income tax withheld; it counts toward her tax when she files.', sub='Reading a W-2', how=True),
-    q('Kayla also earned $45 of interest from her savings account. Which form reports it?', 'Form 1099-INT',
+    q('Kayla earned $45 of interest from her savings account. Which form reports it?', 'Form 1099-INT',
       [('Form 1099-DIV', 'Dividends'), ('Form W-2', 'Wages'), ('Form 1099-NEC', 'Contractor pay')],
       fb='Bank interest is reported on Form 1099-INT.', sub='1099-INT'),
   ],

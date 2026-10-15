@@ -326,7 +326,7 @@ S(62, 'Social Security and retirement income', 'Explain how Social Security work
         [('$12.40', 'Uses 0.62%'), ('$1,240', 'Uses 62%'), ('$248', 'Doubles')],
         intro='Employee Social Security tax = wages × 6.2%.',
         fb='$2,000 × 0.062 = $124.', calc=124, sub='Computing the tax'),
-      q('How much does the employer pay in Social Security tax on the same $2,000?', '$124',
+      q('A worker earns $2,000, and 6.2% Social Security tax is withheld. How much does the employer pay in Social Security tax on that $2,000?', '$124',
         [('$0', 'Employers match'), ('$248', 'Doubles'), ('$62', 'Halves')],
         intro='Employers match the employee\'s 6.2% Social Security tax.',
         fb='The employer matches 6.2%: $124.', calc=124, sub='Employer match'),

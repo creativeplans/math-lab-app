@@ -123,7 +123,7 @@ S(68, 'Deductions and credits', 'Compare the value of tax deductions and tax cre
       [('−$700, paid to her as a refund', 'Treats it as refundable'), ('$300', 'Ignores the credit'), ('$700', 'Subtracts the wrong way')],
       intro='A nonrefundable credit can reduce your tax to zero but not below. A refundable credit can reduce tax below zero, and the extra is paid to you as a refund.',
       fb='A nonrefundable credit stops at $0; the unused $700 is lost.', calc=0, sub='Nonrefundable credits'),
-    q('With the same $300 tax, Tia instead qualifies for a $1,000 REFUNDABLE credit. What happens?', 'Her tax becomes $0 and she receives $700 more',
+    q('Tia owes $300 of tax before credits and qualifies for a $1,000 REFUNDABLE credit. What happens?', 'Her tax becomes $0 and she receives $700 more',
       [('Her tax becomes $0 and the extra $700 is lost', 'Treats it as nonrefundable'), ('Her tax rises to $1,300', 'Adds'), ('Nothing, because refundable credits need $1,000 of tax', 'Misunderstands')],
       intro='Refundable credits are paid out even when they exceed the tax owed.',
       fb='$300 − $1,000 = −$700, paid to her (plus any withholding refund).', sub='Refundable credits'),

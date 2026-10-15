@@ -34,7 +34,7 @@ S(24, 'Compound interest', 'Calculate compound interest and compare it with simp
         [('$10', 'Gives the interest only'), ('$100', 'Ignores the interest'), ('$1,000', 'Multiplies by 10')],
         intro='After interest is added, the balance = old balance + interest. That new balance is what earns interest next year when interest compounds.',
         fb='$100 + $10 = $110.', calc=110, sub='Adding interest'),
-      q('The $110 balance earns 10% again in year two. How much interest is earned in year two?', '$11',
+      q('$100 earns 10% interest and grows to $110 after year one. In year two, the $110 earns 10% again. How much interest is earned in year two?', '$11',
         [('$10', 'Uses the original $100'), ('$21', 'Adds both years\' interest'), ('$121', 'Gives the new balance')],
         intro='With compound interest, the rate applies to the whole current balance, including interest already earned.',
         fb='$110 × 0.10 = $11.', calc=11, sub='Interest on the new balance'),

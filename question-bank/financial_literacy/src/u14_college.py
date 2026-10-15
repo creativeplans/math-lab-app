@@ -30,6 +30,7 @@ S(91, 'Cost of attendance and net price', 'Calculate cost of attendance and net 
       fb='Net price calculators show likely cost after grants.', sub='Net price calculators', how=True),
     q('Which counts as gift aid?', 'A need-based grant',
       [('A federal Direct Unsubsidized Loan', 'Must be repaid'), ('A campus job through work-study', 'Earned by working'), ('A loan a parent takes out for the student', 'Must be repaid')],
+      intro='Gift aid (grants and scholarships) does not have to be repaid. Self-help aid (loans and work-study) must be repaid or earned.',
       fb='Grants and scholarships are gift aid; loans and work-study are self-help aid.', sub='Gift aid'),
   ],
   back=[
@@ -222,7 +223,7 @@ S(94, 'Repaying loans and return on investment', 'Estimate student loan payments
       [('$16,200.00', 'Uses 6% simple interest for 10 years'), ('$35,971.20', 'Gives the total paid'), ('$1,620.00', 'Uses 6% for one year')],
       intro='Most federal loans offer a standard 10-year plan. Total paid = payment × 120; interest = total paid − amount borrowed.',
       fb='$299.76 × 120 = $35,971.20; − $27,000 = $8,971.20.', calc=8971.20, sub='Total interest'),
-    q('Stretching the same $27,000 loan to 20 years lowers the payment to $193.44. How much interest is paid in total?', '$19,425.60',
+    q('Kira borrows $27,000 at 6% on a 20-year plan, with a payment of $193.44. How much interest is paid in total?', '$19,425.60',
       [('$8,971.20', 'Gives the 10-year interest'), ('$46,425.60', 'Gives the total paid'), ('$10,454.40', 'Gives the extra interest only')],
       fb='$193.44 × 240 = $46,425.60; − $27,000 = $19,425.60.', calc=19425.60, sub='Longer repayment'),
     q('A guideline says total student debt should not exceed the expected first-year salary. Kira expects $45,000. Which borrowing fits?', '$27,000',

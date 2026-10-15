@@ -85,6 +85,7 @@ S(103, 'Real returns and interest rates', 'Find real rates of return and explain
       fb='4.5% − 3% = 1.5%.', calc=1.5, sub='Real rate of return'),
     q('Rosa gets a 2% raise when inflation is 4%. What happens to her real pay?', 'It falls by about 2%',
       [('It rises by about 6%', 'Adds the rates'), ('It rises by about 2%', 'Ignores inflation'), ('It stays the same', 'Ignores the gap')],
+      intro='Real pay change ≈ raise − inflation. If prices rise faster than pay, the same paycheck buys less.',
       fb='2% − 4% ≈ −2%: her pay buys less.', sub='Real wages'),
     q('A savings account pays 0.5% while inflation is 3%. What is happening to the money\'s buying power?', 'It is shrinking',
       [('It is growing faster than prices', 'Reverses the gap'), ('It is growing at exactly 3%', 'Confuses the rates'), ('It cannot change in a bank', 'Ignores inflation')],

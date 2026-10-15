@@ -17,6 +17,7 @@ S(108, 'Net worth', 'Build a net worth statement and explain how decisions chang
       fb='Assets $15,700 − liabilities $11,800 = $3,900.', calc=3900, sub='Net worth'),
     q('Which item is a liability?', 'An unpaid credit card balance',
       [('Money in a savings account', 'Asset'), ('A car Nia owns', 'Asset'), ('Shares in an index fund she owns', 'Asset')],
+      intro='Assets are things you own that have value. Liabilities are debts you owe.',
       fb='Debts owed are liabilities.', sub='Assets vs liabilities'),
     q('Nia pays $500 from savings toward her credit card balance. What happens to her net worth?', 'It stays the same',
       [('It falls by $500', 'Counts only the lost savings'), ('It rises by $500', 'Counts only the lower debt'), ('It rises by $1,000', 'Double counts')],

@@ -151,7 +151,7 @@ S(100, 'Consumer rights and where to get help', 'Use federal and state consumer 
       [('$700', 'Ignores the rule'), ('$500', 'Uses the limit for later reporting'), ('$0 in every case', 'Overstates the federal rule')],
       intro='Federal rules (Regulation E) limit debit card losses: $50 if you report within 2 business days of learning of the loss; up to $500 if later; and possibly unlimited if not reported within 60 days after the statement. Many banks offer more protection.',
       fb='Reported within 2 business days, her liability is at most $50.', calc=50, sub='Debit card liability', eff='Regulation E as of 2026'),
-    q('Same theft, $700 spent, but Rosa waits 10 days to report it (still within 60 days of the statement). What is the most she could owe?', '$500',
+    q('Rosa\'s stolen debit card is used for $700, and she waits 10 days to report it (still within 60 days of the statement). What is the most she could owe?', '$500',
       [('$50', 'Applies the 2-day limit'), ('$700', 'Applies no limit'), ('$200', 'Subtracts the limit')],
       fb='After 2 business days, liability can rise to $500.', calc=500, sub='Late reporting', eff='Regulation E as of 2026'),
     q('Rosa\'s company will not fix a problem with her bank account. Where can she file a complaint?', 'The Consumer Financial Protection Bureau',

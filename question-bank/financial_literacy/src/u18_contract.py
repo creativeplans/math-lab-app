@@ -91,7 +91,7 @@ S(106, 'Subscriptions, free trials, and phone plans', 'Find the true cost of sub
       [('4.5 GB', 'Divides $45 by $10'), ('20 GB', 'Uses the $20 difference'), ('7 GB', 'Adds the plans')],
       intro='Set the costs equal: 25 + 10g = 45. Below that amount, Plan B is cheaper; above it, Plan A is.',
       fb='10g = 20, so g = 2 GB.', calc=2, sub='Comparing plans'),
-    q('Jamal uses about 6 GB a month. Using the plans above, which is cheaper and by how much?', 'Plan A, by $40 a month',
+    q('Plan A: $45 a month, unlimited data. Plan B: $25 a month plus $10 per GB. Jamal uses about 6 GB a month. Which is cheaper, and by how much?', 'Plan A, by $40 a month',
       [('Plan B, by $40 a month', 'Reverses the comparison'), ('Plan A, by $20 a month', 'Compares base prices'), ('Plan B, by $20 a month', 'Ignores data charges')],
       fb='Plan B: $25 + 6 × $10 = $85. Plan A: $45. A is $40 less.', calc=40, pick=0, shared=True, sub='Choosing a plan'),
     q('A phone sells for $0 down and $33.34 a month for 36 months on a plan. What is the phone\'s total cost?', '$1,200.24',

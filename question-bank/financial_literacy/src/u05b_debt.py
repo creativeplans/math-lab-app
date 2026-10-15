@@ -116,7 +116,7 @@ S(33, 'Debt-to-income and repayment strategies', 'Calculate debt-to-income ratio
       [('Card B (smallest balance)', 'Describes the snowball method'), ('Loan C (largest balance)', 'Targets the largest balance'), ('All three equally', 'No strategy')],
       intro='Two common payoff strategies: the avalanche method pays minimums on all debts and puts extra money toward the highest interest rate first (saving the most interest); the snowball method puts extra toward the smallest balance first (quick wins that build motivation).',
       fb='Avalanche targets the highest APR: Card A at 24%.', sub='Avalanche'),
-    q('Using the same three debts (Card A $1,200 at 24%; Card B $400 at 18%; Loan C $3,000 at 7%), which debt does the SNOWBALL method pay off first?', 'Card B (smallest balance)',
+    q('Three debts: (Card A $1,200 at 24%; Card B $400 at 18%; Loan C $3,000 at 7%), which debt does the SNOWBALL method pay off first?', 'Card B (smallest balance)',
       [('Card A (highest APR)', 'Describes the avalanche method'), ('Loan C (lowest APR)', 'Targets the lowest rate'), ('Loan C (largest balance)', 'Targets the largest balance')],
       intro='The snowball method pays minimums on all debts and puts every extra dollar toward the smallest balance first.',
       fb='The snowball method pays the smallest balance first: Card B ($400).', sub='Snowball'),
