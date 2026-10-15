@@ -14,7 +14,7 @@
    "learning_target": "Compare bonds with stocks and explain bond risks and returns",
    "grade_band": "9-12",
    "outcome_codes": [],
-   "outcome_code_status": "to verify against the official document"
+   "outcome_code_status": "topic-level only; no 12th-grade outcome code assigned yet"
   },
   "new_jersey": {
    "document": "NJSLS-CLKS 2020, Standard 9.1 Personal Financial Literacy (grade 12)",
@@ -23,7 +23,8 @@
    ],
    "performance_expectation_status": "strand-level alignment; individual 9.1.12 performance expectations to verify"
   },
-  "alignment": "supporting"
+  "local_identifier": "FL.INVEST.47 is a course identifier, not an official national or New Jersey code",
+  "claim": "Alignment shows what the set teaches toward; it does not claim full mastery of any standard."
  },
  "content_status": "stable",
  "sources": [
@@ -31,8 +32,10 @@
    "org": "SEC Investor.gov",
    "url": "https://www.investor.gov/introduction-investing/investing-basics/investment-products/bonds-or-fixed-income-products/bonds",
    "claim": "When interest rates rise, prices of existing bonds generally fall; bonds carry interest rate risk and credit (default) risk.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "jurisdiction": "US federal",
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
   }
  ],
  "practical_skills": [
@@ -47,6 +50,7 @@
    "skill": "Explain how bonds work and calculate bond interest",
    "standard": "FL.INVEST.47",
    "nearest_related": false,
+   "alignment_role": "direct",
    "questions": [
     {
      "id": "S47-M-Q1",
@@ -312,6 +316,7 @@
    "skill": "Borrowers, lenders, and interest",
    "standard": "FL.INVEST.47",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "concept",
    "relationship": "Bonds reverse the roles students know from loans: the investor is the lender.",
    "questions": [
@@ -577,6 +582,7 @@
    "skill": "Find a percent of a quantity",
    "standard": "FL.INVEST.47",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "Coupon interest is a percent of face value.",
    "ref": {
@@ -598,6 +604,7 @@
    "skill": "Types of bonds",
    "standard": "FL.INVEST.47",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 1",
    "difficulty": "deeper",
    "questions": [
@@ -815,7 +822,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Investing, Brokerage Accounts, and Investment Products",
-     "prompt": "A bond fund holds hundreds of bonds. What is one advantage over buying one bond?",
+     "prompt": "A bond fund holds bonds from hundreds of different companies and governments. What is one advantage over buying one bond?",
      "choices": [
       {
        "letter": "A",
@@ -839,8 +846,8 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "Bond funds pool money to buy many bonds. Their prices still change with interest rates.",
-     "feedback": "Owning many bonds spreads credit risk, though fund prices still move with rates.",
+     "intro": "Bond funds pool money to buy many bonds. Owning many issuers spreads credit risk (a fund of hundreds of Treasuries, by contrast, has one issuer). Fund prices still change with interest rates.",
+     "feedback": "Owning many issuers spreads credit risk, though fund prices still move with rates.",
      "question_type": "instruction",
      "topic": "Bonds: lending to governments and companies",
      "subtopic": "Bond funds",
@@ -865,6 +872,7 @@
    "skill": "Bond prices and interest rates",
    "standard": "FL.INVEST.47",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 2",
    "difficulty": "deeper",
    "questions": [
@@ -878,7 +886,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Investing, Brokerage Accounts, and Investment Products",
-     "prompt": "A 2% bond is selling for $900 per $1,000 of face value. If held to maturity, what does the investor receive at maturity?",
+     "prompt": "A 2% bond with a $1,000 face value is selling for $900. If held to maturity with no default, how much PRINCIPAL is repaid at maturity (not counting the final interest payment)?",
      "choices": [
       {
        "letter": "A",
@@ -902,15 +910,15 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "At maturity, a bond repays its face value, no matter what it was bought for.",
-     "feedback": "At maturity the issuer repays the full $1,000 face value.",
+     "intro": "At maturity, a bond repays its face value, no matter what it was bought for. The last interest payment is usually paid at the same time, separately from the principal.",
+     "feedback": "At maturity the issuer repays the full $1,000 face value as principal.",
      "question_type": "instruction",
      "topic": "Bonds: lending to governments and companies",
      "subtopic": "Face value at maturity",
      "misconceptions": {
       "A": "Uses the price",
-      "B": "Adds one year of interest",
-      "D": "Adds interest to face"
+      "B": "Adds one year of interest to the price",
+      "D": "Adds the final interest payment to principal"
      },
      "practical_how_to": false,
      "sources": [

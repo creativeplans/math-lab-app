@@ -14,7 +14,7 @@
    "learning_target": "Read a credit card statement and explain the cost of making only minimum payments",
    "grade_band": "9-12",
    "outcome_codes": [],
-   "outcome_code_status": "to verify against the official document"
+   "outcome_code_status": "topic-level only; no 12th-grade outcome code assigned yet"
   },
   "new_jersey": {
    "document": "NJSLS-CLKS 2020, Standard 9.1 Personal Financial Literacy (grade 12)",
@@ -23,16 +23,36 @@
    ],
    "performance_expectation_status": "strand-level alignment; individual 9.1.12 performance expectations to verify"
   },
-  "alignment": "supporting"
+  "local_identifier": "FL.CREDIT.36 is a course identifier, not an official national or New Jersey code",
+  "claim": "Alignment shows what the set teaches toward; it does not claim full mastery of any standard."
  },
  "content_status": "time_sensitive",
  "sources": [
   {
-   "org": "CFPB (Credit CARD Act / Regulation Z)",
+   "org": "CFPB (Credit card key terms)",
    "url": "https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/",
-   "claim": "Card issuers must mail statements at least 21 days before the due date; statements show the minimum payment warning; applicants under 21 need independent income or a cosigner.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "claim": "Explains APR, grace period, minimum payment, and other card terms; statements show a minimum payment warning.",
+   "jurisdiction": "US federal",
+   "section": "Key terms",
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
+  },
+  {
+   "org": "CFPB (Credit card grace period)",
+   "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-grace-period-for-a-credit-card-en-47/",
+   "claim": "A grace period, if the card offers one, lets you avoid interest on new purchases by paying the full statement balance by the due date; it usually does not apply to cash advances.",
+   "jurisdiction": "US federal",
+   "qids": [
+    "S35-M-Q3",
+    "S35-F1-Q3",
+    "S36-M-Q1",
+    "S36-F2-Q4",
+    "S42-F1-Q5"
+   ],
+   "verification": "reviewer-checked topic",
+   "verification_detail": "new or replaced URL in v1.1; not fetched by the reviewer; reviewer consulted this primary source for the specific corrected topic (A11)",
+   "verified_on": null
   }
  ],
  "practical_skills": [
@@ -48,6 +68,7 @@
    "skill": "Read a credit card statement and decide how much to pay and when",
    "standard": "FL.CREDIT.36",
    "nearest_related": false,
+   "alignment_role": "direct",
    "questions": [
     {
      "id": "S36-M-Q1",
@@ -59,7 +80,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Credit Cards and Credit Scores",
-     "prompt": "Credit card statement (closing date May 20): Previous balance $640.00 | Payments −$640.00 | Purchases +$412.75 | Fees $0.00 | Interest charged $0.00 | New balance $412.75 | Minimum payment due $25.00 | Payment due date June 15 | Purchase APR 22.99%\nHow much must Rosa pay by June 15 to avoid ANY interest on these purchases?",
+     "prompt": "Credit card statement (closing date May 20): Previous balance $640.00 | Payments −$640.00 | Purchases +$412.75 | Fees $0.00 | Interest charged $0.00 | New balance $412.75 (purchases only; no cash advances) | Minimum payment due $25.00 | Payment due date June 15 | Purchase APR 22.99% | Grace period on purchases: yes, when the statement balance is paid in full by the due date\nHow much must Rosa pay by June 15 to avoid ANY interest on these purchases?",
      "choices": [
       {
        "letter": "A",
@@ -95,9 +116,10 @@
      },
      "practical_how_to": true,
      "sources": [
-      "CFPB (Credit CARD Act / Regulation Z): Card issuers must mail statements at least 21 days before the due date; statements show the minimum payment warning; applicants under 21 need independent income or a cosigner. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)"
+      "CFPB (Credit card key terms): Explains APR, grace period, minimum payment, and other card terms; statements show a minimum payment warning. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)",
+      "CFPB (Credit card grace period): A grace period, if the card offers one, lets you avoid interest on new purchases by paying the full statement balance by the due date; it usually does not apply to cash advances. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-grace-period-for-a-credit-card-en-47/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 737
     },
     {
@@ -110,7 +132,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Credit Cards and Credit Scores",
-     "prompt": "Credit card statement (closing date May 20): Previous balance $640.00 | Payments −$640.00 | Purchases +$412.75 | Fees $0.00 | Interest charged $0.00 | New balance $412.75 | Minimum payment due $25.00 | Payment due date June 15 | Purchase APR 22.99%\nWhat is the LEAST Rosa can pay by June 15 and keep her account in good standing?",
+     "prompt": "Credit card statement (closing date May 20): Previous balance $640.00 | Payments −$640.00 | Purchases +$412.75 | Fees $0.00 | Interest charged $0.00 | New balance $412.75 (purchases only; no cash advances) | Minimum payment due $25.00 | Payment due date June 15 | Purchase APR 22.99% | Grace period on purchases: yes, when the statement balance is paid in full by the due date\nWhat is the LEAST Rosa can pay by June 15 and keep her account in good standing?",
      "choices": [
       {
        "letter": "A",
@@ -146,9 +168,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "CFPB (Credit CARD Act / Regulation Z): Card issuers must mail statements at least 21 days before the due date; statements show the minimum payment warning; applicants under 21 need independent income or a cosigner. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)"
+      "CFPB (Credit card key terms): Explains APR, grace period, minimum payment, and other card terms; statements show a minimum payment warning. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)",
+      "CFPB (Credit card grace period): A grace period, if the card offers one, lets you avoid interest on new purchases by paying the full statement balance by the due date; it usually does not apply to cash advances. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-grace-period-for-a-credit-card-en-47/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 738
     },
     {
@@ -161,7 +184,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Credit Cards and Credit Scores",
-     "prompt": "Credit card statement (closing date May 20): Previous balance $640.00 | Payments −$640.00 | Purchases +$412.75 | Fees $0.00 | Interest charged $0.00 | New balance $412.75 | Minimum payment due $25.00 | Payment due date June 15 | Purchase APR 22.99%\nIf Rosa pays only the $25 minimum, what balance carries into next month before interest?",
+     "prompt": "Credit card statement (closing date May 20): Previous balance $640.00 | Payments −$640.00 | Purchases +$412.75 | Fees $0.00 | Interest charged $0.00 | New balance $412.75 (purchases only; no cash advances) | Minimum payment due $25.00 | Payment due date June 15 | Purchase APR 22.99% | Grace period on purchases: yes, when the statement balance is paid in full by the due date\nIf Rosa pays only the $25 minimum, what balance carries into next month before interest?",
      "choices": [
       {
        "letter": "A",
@@ -196,9 +219,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "CFPB (Credit CARD Act / Regulation Z): Card issuers must mail statements at least 21 days before the due date; statements show the minimum payment warning; applicants under 21 need independent income or a cosigner. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)"
+      "CFPB (Credit card key terms): Explains APR, grace period, minimum payment, and other card terms; statements show a minimum payment warning. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)",
+      "CFPB (Credit card grace period): A grace period, if the card offers one, lets you avoid interest on new purchases by paying the full statement balance by the due date; it usually does not apply to cash advances. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-grace-period-for-a-credit-card-en-47/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 739
     },
     {
@@ -211,7 +235,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Credit Cards and Credit Scores",
-     "prompt": "Credit card statement (closing date May 20): Previous balance $640.00 | Payments −$640.00 | Purchases +$412.75 | Fees $0.00 | Interest charged $0.00 | New balance $412.75 | Minimum payment due $25.00 | Payment due date June 15 | Purchase APR 22.99%\nThe statement shows \"Interest charged $0.00.\" Why?",
+     "prompt": "Credit card statement (closing date May 20): Previous balance $640.00 | Payments −$640.00 | Purchases +$412.75 | Fees $0.00 | Interest charged $0.00 | New balance $412.75 (purchases only; no cash advances) | Minimum payment due $25.00 | Payment due date June 15 | Purchase APR 22.99% | Grace period on purchases: yes, when the statement balance is paid in full by the due date\nThe statement shows \"Interest charged $0.00.\" Why?",
      "choices": [
       {
        "letter": "A",
@@ -247,9 +271,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "CFPB (Credit CARD Act / Regulation Z): Card issuers must mail statements at least 21 days before the due date; statements show the minimum payment warning; applicants under 21 need independent income or a cosigner. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)"
+      "CFPB (Credit card key terms): Explains APR, grace period, minimum payment, and other card terms; statements show a minimum payment warning. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)",
+      "CFPB (Credit card grace period): A grace period, if the card offers one, lets you avoid interest on new purchases by paying the full statement balance by the due date; it usually does not apply to cash advances. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-grace-period-for-a-credit-card-en-47/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 740
     },
     {
@@ -298,9 +323,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "CFPB (Credit CARD Act / Regulation Z): Card issuers must mail statements at least 21 days before the due date; statements show the minimum payment warning; applicants under 21 need independent income or a cosigner. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)"
+      "CFPB (Credit card key terms): Explains APR, grace period, minimum payment, and other card terms; statements show a minimum payment warning. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)",
+      "CFPB (Credit card grace period): A grace period, if the card offers one, lets you avoid interest on new purchases by paying the full statement balance by the due date; it usually does not apply to cash advances. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-grace-period-for-a-credit-card-en-47/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 741
     }
    ]
@@ -312,6 +338,7 @@
    "skill": "Due dates, balances, and payments on a bill",
    "standard": "FL.CREDIT.36",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "concept",
    "relationship": "Reading a statement requires telling apart the balance, the minimum, and the due date.",
    "questions": [
@@ -361,9 +388,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "CFPB (Credit CARD Act / Regulation Z): Card issuers must mail statements at least 21 days before the due date; statements show the minimum payment warning; applicants under 21 need independent income or a cosigner. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)"
+      "CFPB (Credit card key terms): Explains APR, grace period, minimum payment, and other card terms; statements show a minimum payment warning. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)",
+      "CFPB (Credit card grace period): A grace period, if the card offers one, lets you avoid interest on new purchases by paying the full statement balance by the due date; it usually does not apply to cash advances. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-grace-period-for-a-credit-card-en-47/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 742
     },
     {
@@ -412,9 +440,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "CFPB (Credit CARD Act / Regulation Z): Card issuers must mail statements at least 21 days before the due date; statements show the minimum payment warning; applicants under 21 need independent income or a cosigner. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)"
+      "CFPB (Credit card key terms): Explains APR, grace period, minimum payment, and other card terms; statements show a minimum payment warning. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)",
+      "CFPB (Credit card grace period): A grace period, if the card offers one, lets you avoid interest on new purchases by paying the full statement balance by the due date; it usually does not apply to cash advances. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-grace-period-for-a-credit-card-en-47/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 743
     },
     {
@@ -463,9 +492,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "CFPB (Credit CARD Act / Regulation Z): Card issuers must mail statements at least 21 days before the due date; statements show the minimum payment warning; applicants under 21 need independent income or a cosigner. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)"
+      "CFPB (Credit card key terms): Explains APR, grace period, minimum payment, and other card terms; statements show a minimum payment warning. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)",
+      "CFPB (Credit card grace period): A grace period, if the card offers one, lets you avoid interest on new purchases by paying the full statement balance by the due date; it usually does not apply to cash advances. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-grace-period-for-a-credit-card-en-47/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 744
     },
     {
@@ -513,9 +543,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "CFPB (Credit CARD Act / Regulation Z): Card issuers must mail statements at least 21 days before the due date; statements show the minimum payment warning; applicants under 21 need independent income or a cosigner. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)"
+      "CFPB (Credit card key terms): Explains APR, grace period, minimum payment, and other card terms; statements show a minimum payment warning. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)",
+      "CFPB (Credit card grace period): A grace period, if the card offers one, lets you avoid interest on new purchases by paying the full statement balance by the due date; it usually does not apply to cash advances. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-grace-period-for-a-credit-card-en-47/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 745
     },
     {
@@ -563,9 +594,10 @@
      },
      "practical_how_to": true,
      "sources": [
-      "CFPB (Credit CARD Act / Regulation Z): Card issuers must mail statements at least 21 days before the due date; statements show the minimum payment warning; applicants under 21 need independent income or a cosigner. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)"
+      "CFPB (Credit card key terms): Explains APR, grace period, minimum payment, and other card terms; statements show a minimum payment warning. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)",
+      "CFPB (Credit card grace period): A grace period, if the card offers one, lets you avoid interest on new purchases by paying the full statement balance by the due date; it usually does not apply to cash advances. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-grace-period-for-a-credit-card-en-47/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 746
     }
    ]
@@ -577,6 +609,7 @@
    "skill": "Subtract multi-digit decimals",
    "standard": "FL.CREDIT.36",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "Carried balances subtract payments from the statement balance.",
    "ref": {
@@ -598,6 +631,7 @@
    "skill": "Disputing a credit card billing error",
    "standard": "FL.CREDIT.36",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 1",
    "difficulty": "deeper",
    "questions": [
@@ -647,7 +681,8 @@
      },
      "practical_how_to": false,
      "sources": [
-      "CFPB (Credit CARD Act / Regulation Z): Card issuers must mail statements at least 21 days before the due date; statements show the minimum payment warning; applicants under 21 need independent income or a cosigner. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)"
+      "CFPB (Credit card key terms): Explains APR, grace period, minimum payment, and other card terms; statements show a minimum payment warning. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)",
+      "CFPB (Credit card grace period): A grace period, if the card offers one, lets you avoid interest on new purchases by paying the full statement balance by the due date; it usually does not apply to cash advances. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-grace-period-for-a-credit-card-en-47/)"
      ],
      "effective_date": "FCBA as of 2026",
      "page": 747
@@ -698,9 +733,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "CFPB (Credit CARD Act / Regulation Z): Card issuers must mail statements at least 21 days before the due date; statements show the minimum payment warning; applicants under 21 need independent income or a cosigner. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)"
+      "CFPB (Credit card key terms): Explains APR, grace period, minimum payment, and other card terms; statements show a minimum payment warning. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)",
+      "CFPB (Credit card grace period): A grace period, if the card offers one, lets you avoid interest on new purchases by paying the full statement balance by the due date; it usually does not apply to cash advances. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-grace-period-for-a-credit-card-en-47/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 748
     },
     {
@@ -749,9 +785,10 @@
      },
      "practical_how_to": true,
      "sources": [
-      "CFPB (Credit CARD Act / Regulation Z): Card issuers must mail statements at least 21 days before the due date; statements show the minimum payment warning; applicants under 21 need independent income or a cosigner. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)"
+      "CFPB (Credit card key terms): Explains APR, grace period, minimum payment, and other card terms; statements show a minimum payment warning. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)",
+      "CFPB (Credit card grace period): A grace period, if the card offers one, lets you avoid interest on new purchases by paying the full statement balance by the due date; it usually does not apply to cash advances. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-grace-period-for-a-credit-card-en-47/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 749
     },
     {
@@ -799,9 +836,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "CFPB (Credit CARD Act / Regulation Z): Card issuers must mail statements at least 21 days before the due date; statements show the minimum payment warning; applicants under 21 need independent income or a cosigner. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)"
+      "CFPB (Credit card key terms): Explains APR, grace period, minimum payment, and other card terms; statements show a minimum payment warning. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)",
+      "CFPB (Credit card grace period): A grace period, if the card offers one, lets you avoid interest on new purchases by paying the full statement balance by the due date; it usually does not apply to cash advances. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-grace-period-for-a-credit-card-en-47/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 750
     },
     {
@@ -850,9 +888,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "CFPB (Credit CARD Act / Regulation Z): Card issuers must mail statements at least 21 days before the due date; statements show the minimum payment warning; applicants under 21 need independent income or a cosigner. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)"
+      "CFPB (Credit card key terms): Explains APR, grace period, minimum payment, and other card terms; statements show a minimum payment warning. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)",
+      "CFPB (Credit card grace period): A grace period, if the card offers one, lets you avoid interest on new purchases by paying the full statement balance by the due date; it usually does not apply to cash advances. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-grace-period-for-a-credit-card-en-47/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 751
     }
    ]
@@ -864,6 +903,7 @@
    "skill": "Statement dates and payment timing",
    "standard": "FL.CREDIT.36",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 2",
    "difficulty": "deeper",
    "questions": [
@@ -913,9 +953,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "CFPB (Credit CARD Act / Regulation Z): Card issuers must mail statements at least 21 days before the due date; statements show the minimum payment warning; applicants under 21 need independent income or a cosigner. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)"
+      "CFPB (Credit card key terms): Explains APR, grace period, minimum payment, and other card terms; statements show a minimum payment warning. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)",
+      "CFPB (Credit card grace period): A grace period, if the card offers one, lets you avoid interest on new purchases by paying the full statement balance by the due date; it usually does not apply to cash advances. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-grace-period-for-a-credit-card-en-47/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 752
     },
     {
@@ -964,9 +1005,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "CFPB (Credit CARD Act / Regulation Z): Card issuers must mail statements at least 21 days before the due date; statements show the minimum payment warning; applicants under 21 need independent income or a cosigner. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)"
+      "CFPB (Credit card key terms): Explains APR, grace period, minimum payment, and other card terms; statements show a minimum payment warning. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)",
+      "CFPB (Credit card grace period): A grace period, if the card offers one, lets you avoid interest on new purchases by paying the full statement balance by the due date; it usually does not apply to cash advances. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-grace-period-for-a-credit-card-en-47/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 753
     },
     {
@@ -1015,9 +1057,10 @@
      },
      "practical_how_to": true,
      "sources": [
-      "CFPB (Credit CARD Act / Regulation Z): Card issuers must mail statements at least 21 days before the due date; statements show the minimum payment warning; applicants under 21 need independent income or a cosigner. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)"
+      "CFPB (Credit card key terms): Explains APR, grace period, minimum payment, and other card terms; statements show a minimum payment warning. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)",
+      "CFPB (Credit card grace period): A grace period, if the card offers one, lets you avoid interest on new purchases by paying the full statement balance by the due date; it usually does not apply to cash advances. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-grace-period-for-a-credit-card-en-47/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 754
     },
     {
@@ -1030,7 +1073,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Credit Cards and Credit Scores",
-     "prompt": "Which autopay setting guarantees the account is never late and never charged purchase interest?",
+     "prompt": "Leo has enough money in checking each month and wants the best chance of never paying a late fee or purchase interest. Which autopay setting fits best?",
      "choices": [
       {
        "letter": "A",
@@ -1054,8 +1097,8 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "Most card issuers let you set autopay for the minimum, a fixed amount, or the full statement balance.",
-     "feedback": "Paying the full statement balance automatically avoids late fees and purchase interest.",
+     "intro": "Most card issuers let you set autopay for the minimum, a fixed amount, or the full statement balance. Autopay lowers the risk of a late payment, but it still depends on enough money in the account and the payment going through, so check statements each month.",
+     "feedback": "Autopaying the full statement balance, with enough money in the account, avoids late fees and keeps the purchase grace period. Still watch for a failed payment.",
      "question_type": "instruction",
      "topic": "Reading a credit card statement",
      "subtopic": "Autopay choices",
@@ -1066,9 +1109,10 @@
      },
      "practical_how_to": true,
      "sources": [
-      "CFPB (Credit CARD Act / Regulation Z): Card issuers must mail statements at least 21 days before the due date; statements show the minimum payment warning; applicants under 21 need independent income or a cosigner. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)"
+      "CFPB (Credit card key terms): Explains APR, grace period, minimum payment, and other card terms; statements show a minimum payment warning. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)",
+      "CFPB (Credit card grace period): A grace period, if the card offers one, lets you avoid interest on new purchases by paying the full statement balance by the due date; it usually does not apply to cash advances. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-grace-period-for-a-credit-card-en-47/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 755
     },
     {
@@ -1117,9 +1161,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "CFPB (Credit CARD Act / Regulation Z): Card issuers must mail statements at least 21 days before the due date; statements show the minimum payment warning; applicants under 21 need independent income or a cosigner. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)"
+      "CFPB (Credit card key terms): Explains APR, grace period, minimum payment, and other card terms; statements show a minimum payment warning. (https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/)",
+      "CFPB (Credit card grace period): A grace period, if the card offers one, lets you avoid interest on new purchases by paying the full statement balance by the due date; it usually does not apply to cash advances. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-grace-period-for-a-credit-card-en-47/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 756
     }
    ]

@@ -14,7 +14,7 @@
    "learning_target": "Explain the cost of paying only the minimum and plan to repay credit card debt",
    "grade_band": "9-12",
    "outcome_codes": [],
-   "outcome_code_status": "to verify against the official document"
+   "outcome_code_status": "topic-level only; no 12th-grade outcome code assigned yet"
   },
   "new_jersey": {
    "document": "NJSLS-CLKS 2020, Standard 9.1 Personal Financial Literacy (grade 12)",
@@ -23,7 +23,8 @@
    ],
    "performance_expectation_status": "strand-level alignment; individual 9.1.12 performance expectations to verify"
   },
-  "alignment": "supporting"
+  "local_identifier": "FL.CREDIT.38 is a course identifier, not an official national or New Jersey code",
+  "claim": "Alignment shows what the set teaches toward; it does not claim full mastery of any standard."
  },
  "content_status": "stable",
  "sources": [],
@@ -39,6 +40,7 @@
    "skill": "Compare the cost of paying the minimum with paying more each month",
    "standard": "FL.CREDIT.38",
    "nearest_related": false,
+   "alignment_role": "direct",
    "questions": [
     {
      "id": "S38-M-Q1",
@@ -50,39 +52,39 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Credit Cards and Credit Scores",
-     "prompt": "Kai owes $3,000 at 20% APR. His card's minimum payment is 1% of the balance plus that month's interest. What is his first minimum payment?",
+     "prompt": "Kai owes $3,000 at 20% APR. His card's minimum payment is the greater of $25 or 1% of the balance plus that month's interest. What is his first minimum payment?",
      "choices": [
       {
        "letter": "A",
-       "text": "$30"
+       "text": "$25"
       },
       {
        "letter": "B",
-       "text": "$50"
+       "text": "$30"
       },
       {
        "letter": "C",
-       "text": "$80"
+       "text": "$50"
       },
       {
        "letter": "D",
-       "text": "$600"
+       "text": "$80"
       }
      ],
-     "correct_letter": "C",
+     "correct_letter": "D",
      "correct_answer": "$80",
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "Many cards set the minimum payment as a small percent of the balance plus the month's interest (with a dollar floor, such as $25). A small minimum keeps the account current but pays off the balance very slowly.",
-     "feedback": "1% of $3,000 = $30; interest = $3,000 × 0.20 ÷ 12 = $50; minimum = $80.",
+     "intro": "Many cards set the minimum payment as a small percent of the balance plus the month's interest, with a dollar floor such as $25. A small minimum keeps the account current but pays off the balance very slowly.",
+     "feedback": "1% of $3,000 = $30; interest = $3,000 × 0.20 ÷ 12 = $50; $80 is more than $25, so the minimum is $80.",
      "question_type": "instruction",
      "topic": "The minimum payment trap",
      "subtopic": "Minimum payment formula",
      "misconceptions": {
-      "A": "Leaves out interest",
-      "B": "Leaves out the 1%",
-      "D": "Uses a full year of interest"
+      "B": "Leaves out interest",
+      "C": "Leaves out the 1%",
+      "A": "Uses only the dollar floor"
      },
      "practical_how_to": false,
      "sources": [
@@ -152,7 +154,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Credit Cards and Credit Scores",
-     "prompt": "Paying only that shrinking minimum each month, a computer model shows Kai's $3,000 takes 176 months and costs $6,983.44 in total. About how many years is that?",
+     "prompt": "Kai owes $3,000 at 20% APR (interest figured monthly). His minimum is the greater of $25 or 1% of the balance plus that month's interest, and the last payment just clears the balance. Paying only the minimum, a computer model shows payoff takes 176 months and costs $6,983.44 in total. About how many years is that?",
      "choices": [
       {
        "letter": "A",
@@ -176,7 +178,7 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "Because minimum payments shrink as the balance shrinks, paying only the minimum can take many years.",
+     "intro": "Because minimum payments shrink as the balance shrinks (until they reach the dollar floor), paying only the minimum can take many years.",
      "feedback": "176 ÷ 12 ≈ 14.7 years.",
      "question_type": "instruction",
      "topic": "The minimum payment trap",
@@ -203,7 +205,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Credit Cards and Credit Scores",
-     "prompt": "Paying only the minimum, Kai pays $6,983.44 in total for a $3,000 balance. Paying a fixed $150 a month instead, he pays $3,679.82. How much interest does the $150 plan save?",
+     "prompt": "Kai owes $3,000 at 20% APR (interest figured monthly). Paying only the minimum (the greater of $25 or 1% of the balance plus interest), he pays $6,983.44 in total. Paying a fixed $150 a month instead, he pays $3,679.82. How much interest does the $150 plan save?",
      "choices": [
       {
        "letter": "A",
@@ -303,6 +305,7 @@
    "skill": "A payment is split between interest and balance",
    "standard": "FL.CREDIT.38",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "concept",
    "relationship": "The trap makes sense only when students see how little of a minimum payment reduces the balance.",
    "questions": [
@@ -568,6 +571,7 @@
    "skill": "Solve multistep problems with rational numbers",
    "standard": "FL.CREDIT.38",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "Minimum payments combine percent, interest, and subtraction steps.",
    "ref": {
@@ -589,6 +593,7 @@
    "skill": "Find a percent of a quantity",
    "standard": "FL.CREDIT.38",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "Minimums and interest are percents of the balance.",
    "ref": {
@@ -610,6 +615,7 @@
    "skill": "Building a payoff plan",
    "standard": "FL.CREDIT.38",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 1",
    "difficulty": "deeper",
    "questions": [
@@ -875,6 +881,7 @@
    "skill": "Credit card statement detective",
    "standard": "FL.CREDIT.38",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 2",
    "difficulty": "deeper",
    "questions": [

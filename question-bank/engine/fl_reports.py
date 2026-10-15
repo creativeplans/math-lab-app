@@ -25,7 +25,8 @@ import fl_meta as META
 import fl_ledger as LEDGER
 
 REPORTS = ['COVERAGE.md', 'MATH_BRANCHES.md', 'CONCEPT_BRANCHES.md', 'GO_DEEPER.md', 'HOW_TO.md', 'QUALITY_AUDIT.md',
-           'SOURCE_LEDGER.md', 'SOURCE_LEDGER.json', 'RUNTIME_CHECK.json', 'MATH_REF_VALIDATION.json']
+           'SOURCE_LEDGER.md', 'SOURCE_LEDGER.json', 'RUNTIME_CHECK.json', 'MATH_REF_VALIDATION.json',
+           'REVIEW_RESPONSE.md', 'CHANGES.md', 'CHANGES.json', 'EXPORT_CROSSCHECK.json']
 ZIP_NAME = 'FinancialLiteracy_Nexus_Import_v%s.zip' % B.VERSION
 
 AREAS = ['Money, Banking, and Financial Institutions', 'Earning Income, Employment, and Paychecks',
@@ -273,7 +274,10 @@ def coverage(sets, recs):
 
 # ------------------------------------------------------------------ MATH
 def math_report(sets):
-    rows, by_course = [], collections.Counter()
+    val = json.load(open(os.path.join(B.COL, 'MATH_REF_VALIDATION.json')))
+    live = {(x['fl_set'], x['section']): x for x in val['rows']}
+    run = json.load(open(os.path.join(B.COL, 'RUNTIME_CHECK.json')))
+    rows, by_course, missing = [], collections.Counter(), []
     for s in sets:
         for i, b in enumerate(s['back'], 1):
             if b['kind'] != 'math':
@@ -282,17 +286,55 @@ def math_report(sets):
             sid = '%s-S%02d-M' % (B.COURSE_PREFIX[r['course']], r['set'])
             c = B.CATALOG[sid]
             by_course[r['course']] += 1
-            rows.append(['S%d' % s['num'], 'B%d' % i, '%s set %d' % (r['course'], r['set']), c['ccss'], c['name'], b['why']])
+            v = live.get((s['num'], 'B%d' % i))
+            if not v or v.get('skill_id') != sid:
+                missing.append('S%d B%d' % (s['num'], i))
+                check = 'NOT RE-CHECKED'
+            else:
+                check = '%s; %d of %d auto-checkable (%s)' % (v['status'], v['auto_checkable'], v['main_questions'],
+                                                             ', '.join('%s %d' % kv for kv in sorted(v['types'].items())))
+            rows.append(['S%d' % s['num'], 'B%d' % i, sid, c['ccss'], c['name'], b['why'], check])
+    few = val['targets_with_fewer_than_5_auto_checkable']
+    s24 = run['s24']
     L = ['# Financial Literacy — Math Prerequisite Branches', '',
          'A math branch is a backward section with `"kind": "math"` and a `ref` to a MAIN skill that is already in Untangle '
-         'The Nexus. It has no questions of its own; the game sends the student to that skill. Every ref was checked '
-         'against `engine/fl_math_catalog.json`, which is copied from the game\'s `content/*/curriculum.json` (Grades 3-8 '
-         'and Algebra I). No ref points to a course that is not installed, no set lists the same link twice, and no '
-         'link points back into Financial Literacy (the importer does not resolve links into the course\'s own folder).',
-         '', 'The branch fires only under the game\'s existing rule: **3 or fewer correct out of 5** on MAIN. The student '
-         'then works every backward section of the set in the order listed.', '',
-         '## Links by course', '', md_table(['Course', 'Links'], sorted(by_course.items())), '',
-         '## Every link', '', md_table(['Set', 'Section', 'Game skill', 'Standard', 'Skill name', 'Why it is needed'], rows)]
+         'The Nexus. It has no questions of its own; the game sends the student to that skill. The package writes the '
+         'section as `M`; the game\'s importer maps it to the skill ID `<course>-S<set>-M` (for example `G6-S40-M`), '
+         'which is the MAIN section that the math answer keys call `MAIN`.', '',
+         'The branch fires only under the game\'s existing rule: **3 or fewer correct out of 5** on MAIN '
+         '(`backwardWhenIncorrectAtLeast: 2`). The student then works every backward section of the set in order. '
+         'This package does not change that rule.', '',
+         '## 1. Checked against the installed game (not just the catalog)', '',
+         '- **Every link resolved in the live game content.** %d links to %d distinct skills were checked with the game\'s '
+         'own code (`COURSES`, `bankKey`, `isAutoCheckable`) against `untangle-the-nexus` commit %s: %s. %s' % (
+             val['links'], val['distinct_targets'], val['game_commit'],
+             ', '.join('%s: %d' % kv for kv in val['status'].items()),
+             'All links in this version were re-checked.' if not missing else 'Not re-checked: ' + ', '.join(missing)),
+         '- **The reviewer\'s "absent target" list.** Grade 7 sets 63, 65, and 66 exist in the installed Grade 7 bank '
+         '(bank version 2.0.0, standard 7.RP.A.3); the reviewer\'s copies were older uploads. The Algebra I set 75 link '
+         '(S67) was removed in v1.1 because a step function is not a real obstacle to the marginal-rate skill.',
+         '- **What the student sees.** In backward mode the game serves only auto-checkable questions from the target '
+         'skill (`requireAutoCheck`): multiple choice, true/false, and short typed numeric answers. It never asks for a '
+         'written or recorded explanation there (`requiresExplanation` is false for backward work). Short typed answers '
+         'are the target skill\'s own supported format; they are not multiple choice. **Owner decision needed:** accept '
+         'typed numeric answers inside math remediation, or ask the game team for a choice-only filter. This package does '
+         'not substitute unrelated multiple-choice questions.',
+         '- **Repeats.** %d target skills have fewer than 5 auto-checkable MAIN questions (%s). Because a branch needs 5 '
+         'correct in a row, the game repeats some of those items. This is existing game behavior.' % (
+             len(few), ', '.join('%s %d of %d' % (k, v['auto_checkable'], v['main']) for k, v in few)),
+         '- **Runtime test (real importer and game server, PostgreSQL).** The full package imported with %d sets, %d '
+         'questions, %d invalid, %d warnings. On S24, 3 of 5 correct sent the student through %s in that order (kinds %s), '
+         'matching the curriculum\'s backward edges, with no explanation required; afterwards the student returned to %s. '
+         'Then 5 of 5 recorded mastery (%d) with the normal reward of %d seconds, and Go Deeper %s became available; Go '
+         'Deeper questions showed their intro exactly when the bank has one. Details: `RUNTIME_CHECK.json`.' % (
+             run['import']['sets'], run['import']['questions'], len(run['import']['invalid']), len(run['import']['warnings']),
+             ' -> '.join(s24['seen']), ', '.join(s24['kinds']), s24['returnedTo'][1], run['mastery']['mastered'],
+             run['mastery']['award'], ', '.join(run['mastery']['forwardAvailable'])),
+         '- **Grade 6** was imported into the game from PDFs and has no bank version number, so its links are identified '
+         'by skill ID and a hash of its question file (in `MATH_REF_VALIDATION.json`).', '',
+         '## 2. Links by course', '', md_table(['Course', 'Links'], sorted(by_course.items())), '',
+         '## 3. Every link', '',
+         md_table(['Set', 'Section', 'Game skill', 'Standard', 'Skill name', 'Why it is needed', 'Live game check'], rows)]
     write('MATH_BRANCHES.md', '\n'.join(L))
 
 
@@ -348,6 +390,8 @@ def howto_report(sets, recs):
 # ------------------------------------------------------------------ QUALITY
 def quality_report(sets, recs):
     a = B.audit(recs)
+    global SIB
+    SIB = B.sibling_scan(recs)
     letters = collections.Counter(r['correct_letter'] for r in recs)
     L = ['# Financial Literacy — Question and Distractor Quality Audit', '',
          'Automatic checks run on every build (`engine/fl_build.py`). A build with any failure stops and writes nothing.', '',
@@ -357,12 +401,18 @@ def quality_report(sets, recs):
          '- Every wrong choice has a written misconception (%d notes in all).' % sum(len(r['misconceptions']) for r in recs),
          '- No "all of the above", "none of the above", "both of these", and no text naming a letter (the game shuffles '
          'choices, and such wording would switch shuffling off).',
-         '- Every question has feedback. Duplicate question stems are refused.',
-         '- Every computed answer (%d questions) has an independent recomputation (`calc`). The build checks that the '
-         'correct choice shows that value at the precision printed and that no wrong choice shows the same value '
-         '(except labeled comparisons such as "Job A, by $17.50").' % sum(1 for r in recs if r['calc'] is not None),
-         '- Every math link resolves to a real game skill; every set has at least one backward branch and one Go Deeper '
-         'section; time-sensitive sets cite sources.', '',
+         '- Every question has feedback. Exactly repeated question stems are refused. This is an exact-text check: it '
+         'does not prove that two differently worded questions test different things.',
+         '- Every computed answer (%d questions) has a recomputation (`calc`). The build checks that the correct choice '
+         'shows that value at the precision printed and that no wrong choice shows the same value (except labeled '
+         'comparisons such as "Job A, by $17.50"). This only proves the stored answer matches the stored formula. It does '
+         'not prove the question states every given a student needs, or that the formula models the situation correctly; '
+         'those were read by hand and by the independent reviewer.' % sum(1 for r in recs if r['calc'] is not None),
+         '- Every math link exists in `engine/fl_math_catalog.json`. A catalog match is not proof that the game can serve '
+         'it; the links were also checked in the installed game and in a real import and play-through (see '
+         '`MATH_BRANCHES.md`, `MATH_REF_VALIDATION.json`, `RUNTIME_CHECK.json`).',
+         '- Every set has at least one backward branch and one Go Deeper section; time-sensitive sets cite sources '
+         '(claim-level status in `SOURCE_LEDGER.md`).', '',
          '## Answer positions', '',
          md_table(['Letter', 'Correct answers'], sorted(letters.items())), '',
          'Numeric choices are listed in increasing order, so their letter follows from the value. Other questions put the '
@@ -390,10 +440,19 @@ def quality_report(sets, recs):
           'reviewed by hand and is a classification item, where the intro defines several terms and the student must '
           'match a scenario to one: %s.' % (len(echoed), ', '.join(echoed)),
           '- Unreviewed echoes: %s.' % (', '.join(sorted(set(echoed) - CLASSIFY_REVIEWED)) or 'none'), '',
-          '## Self-containment', '',
-          'The game serves the five questions of a section in shuffled order (least recently seen first). So every question '
-          'restates its own numbers, no question refers to "the same" account or "the plan above," and an idea taught only in '
-          'a sibling question\'s intro is taught again where it is needed.', '',
+          '## Self-containment (shuffled questions)', '',
+          'The game serves the five questions of a section in shuffled order, so every question must stand alone. The '
+          'v1.0.0 audit claimed this without a working check, and the reviewer found missing givens in the questions '
+          'listed under R18, R29, and R31. What was done for v1.1:', '',
+          '- Every question the reviewer listed was rewritten to restate its own numbers and conditions.',
+          '- A broader hand read of 127 candidate stems (those with he/she/her/his, "the", or a number that could come '
+          'from a sibling) during the v1.1 corrections.',
+          '- An automatic scan on every build (`sibling_scan` in `engine/fl_build.py`) for stems that point at another '
+          'question ("the same loan", "above", "as before") or use he/she/her/his with no named person. Result this '
+          'build: %d flagged, %d reviewed as fine (the comparison is inside the question), %d open.' % (
+              len(SIB['flagged']), len(SIB['flagged']) - len(SIB['open']), len(SIB['open'])),
+          '- Limits: the scan is a pattern search, not a reading test. It cannot catch a question that silently relies '
+          'on an idea defined only in a sibling\'s intro. That still needs a human spot-check.', '',
           '## Distractor review', '',
           'Wrong choices were rewritten so that each represents a real misunderstanding (for example: confusing a bank '
           'account with a brokerage account, funding with investing, simple with compound interest, APR with a monthly rate, '
@@ -406,9 +465,20 @@ def quality_report(sets, recs):
     rows = [['S%d' % s['num'], s['title'], '; '.join('%s (%s)' % (x['org'], x['url']) for x in s['sources'])]
             for s in sets if s['status'] == 'time_sensitive']
     L += [md_table(['Set', 'Title', 'Sources'], rows), '',
+          '## Checks that actually ran for v1.1', '',
+          '- Build validators above (every build).',
+          '- Game importer `--check` on the package and a full import into a test database (`RUNTIME_CHECK.json`).',
+          '- Math links re-checked against the installed game with its own code (`MATH_REF_VALIDATION.json`).',
+          '- Package check (`engine/verify_package.py`) and cross-export check (`engine/fl_crosscheck.py`, result in '
+          '`EXPORT_CROSSCHECK.json`): every question has the same ID, choices, key, and page in the package JSON, the '
+          'answer-key JSON and CSV, the full question and answer PDFs, and the split part PDFs.',
+          '- Sibling scan (above).', '',
           '## What still needs a human reviewer', '',
           '- Confirm national outcome codes and New Jersey performance expectations against the official documents.',
-          '- Confirm each source claim and effective date (the build environment could not open the official sites).',
+          '- Confirm each source claim and effective date: %d of %d claim rows in `SOURCE_LEDGER.md` are still '
+          '"unverified" (the build environment could not open the official sites).' % (
+              sum(1 for r in LEDGER.rows(sets) if r['verification_level'] == 'unverified'), len(LEDGER.rows(sets))),
+          '- Semantic duplicates: no automatic check finds two questions that test the same thing in different words.',
           '- Read the explanations for tone and reading level, and judge whether any distractor is still too easy.',
           '- Spot-check the knowledge checks for anything not yet taught at that point in the pathway.']
     write('QUALITY_AUDIT.md', '\n'.join(L))
@@ -420,9 +490,11 @@ def readme(sets, recs):
     n_math = sum(1 for s in sets for b in s['back'] if b['kind'] == 'math')
     n_f = sum(len(s['go']) for s in sets)
     L = ['# Untangle The Nexus — High School Financial Literacy (FL) v%s' % B.VERSION, '',
-         '**Review status: NOT APPROVED.** This collection was written and machine-checked by Claude. It must be '
-         'independently reviewed (the owner plans a ChatGPT audit) and approved by the owner before it is imported into '
-         'the live game. The game keeps the course "coming soon" until then.', '',
+         '**Review status: NOT APPROVED. Release pending recheck.** Version 1.0.0 was independently reviewed (ChatGPT). '
+         'This version 1.1.0 applies that review: every finding and its fix is in `REVIEW_RESPONSE.md`, and every changed '
+         'question is in `CHANGES.md`. Passing the build checks does not mean the content is fact-checked. The revised '
+         'package must be rechecked and approved by the owner before import; do not overwrite a live course with it. The '
+         'game keeps the course "coming soon" until then.', '',
          '## What is here', '',
          md_table(['#', 'Deliverable', 'File'], [
              [1, 'Question PDF', 'FinancialLiteracy_Question_Collection.pdf (and pdf/ parts in the package)'],
@@ -436,7 +508,13 @@ def readme(sets, recs):
              [9, 'Go Deeper report', 'GO_DEEPER.md'],
              [10, 'How-to coverage report', 'HOW_TO.md'],
              [11, 'Question and distractor quality audit', 'QUALITY_AUDIT.md'],
-             [12, 'This README', 'README.md']]), '',
+             [12, 'This README', 'README.md'],
+             [13, 'Response to the independent review (every R, C, P item)', 'REVIEW_RESPONSE.md'],
+             [14, 'Change log by question ID (old/new key, reason, source)', 'CHANGES.md, CHANGES.json'],
+             [15, 'Claim-level source ledger', 'SOURCE_LEDGER.md, SOURCE_LEDGER.json'],
+             [16, 'Math links checked in the installed game', 'MATH_REF_VALIDATION.json'],
+             [17, 'Import and play-through test in the real game server', 'RUNTIME_CHECK.json'],
+             [18, 'Cross-export consistency check', 'EXPORT_CROSSCHECK.json']]), '',
          '## Size', '',
          '%d units, %d sets, %d questions: %d MAIN sections, %d concept prerequisite branches, %d math prerequisite links, '
          'and %d Go Deeper sections.' % (len(D.UNITS), len(sets), len(recs), len(sets), n_concept, n_math, n_f), '',
@@ -473,7 +551,7 @@ def readme(sets, recs):
              ['question', 'practical_how_to', 'true for practical how-to questions'],
              ['question', 'sources, effective_date', 'Sources for changing rules and the date they are stated as of'],
              ['question', 'page', 'Page in the question and answer PDFs'],
-             ['set', 'alignment', 'National topic, learning target, verified outcome codes; NJ 9.1.12 strands'],
+             ['set', 'alignment', 'National topic, learning target, topic-qualified outcome codes with how each was checked; NJ 9.1.12 strands; local identifier note'],
              ['set', 'content_status', '"stable" or "time_sensitive"'],
              ['set', 'sources', 'Organization, URL, claim, effective date, and verification status'],
              ['set', 'practical_skills', 'Practical skills beyond the standards'],
@@ -491,12 +569,17 @@ def readme(sets, recs):
          'deductions, Roth income limits, mileage rates) are given as stated hypothetical amounts so the questions stay '
          'correct; real figures are stated "as of" a date.', '',
          '**Verification limit:** the authoring environment\'s network policy blocked the official sites (%s). Claims were '
-         'written from knowledge and checked against web search results only, so every source carries `checked: null` and '
-         'a note asking the reviewer to confirm it. To let a future session verify them, allow those hosts in the '
+         'written from knowledge and checked against web search results only. Each source in the package carries '
+         '`verification` (reviewer-checked topic, search-corroborated, or unverified), `verification_detail`, and '
+         '`verified_on: null`; the claim-level list is `SOURCE_LEDGER.md` / `.json`. To let a future session verify them, allow those hosts in the '
          'environment\'s network settings, or upload the official PDFs (the National Standards, NJSLS 9.1) to the '
          'repository.' % TIME_HOSTS, '',
          '## Known limitations', '',
-         '- National outcome codes are cited only where verified; NJ alignment is at the strand level.',
+         '- National outcome codes are assigned to a few sets only, written with their topic, and none was checked by the '
+         'author against the official PDF. NJ alignment is at the strand level, and known NJ gaps are listed in '
+         'COVERAGE.md section 3a. The course does not claim full mastery of either standard.',
+         '- Math remediation uses the target skill\'s own question types (multiple choice, true/false, typed numbers); '
+         'see MATH_BRANCHES.md.',
          '- Source claims and effective dates need a reviewer\'s confirmation (see above). Some federal rules changed in '
          '2025-2026 (for example, student loan repayment plans); those questions say to check the official site.',
          '- Real company names (Charles Schwab, Fidelity, E*TRADE, Vanguard, Experian, and others) appear as examples only, '
@@ -526,6 +609,7 @@ def write_all(sets, recs):
     bad = [(s['num'], q) for s in sets for x in s['sources'] for q in x.get('qids', []) if q not in by_id]
     assert not bad, ('source qids not found', bad)
     LEDGER.write(sets, B.COL, md_table)
+    review_and_changes(sets, recs)
     readme(sets, recs)
 
 
@@ -555,3 +639,126 @@ def finish_package(pkg):
             for n in sorted(names):
                 z.write(os.path.join(root, n), os.path.join(rel_root, n))
     print('wrote', zpath)
+
+
+# ------------------------------------------------------------------ REVIEW RESPONSE + CHANGES
+def _review():
+    import importlib.util
+    d = os.path.join(B.SRC, 'review')
+    spec = importlib.util.spec_from_file_location('response_v1_1', os.path.join(d, 'response_v1_1.py'))
+    resp = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(resp)
+    text = open(os.path.join(d, 'independent_review_v1.0.0.md'), encoding='utf-8').read()
+    named = collections.OrderedDict()
+    for m in re.finditer(r'^(?:### |\*\*)([RC]\d\d) — (.*)$', text, re.M):
+        named[m.group(1)] = re.findall(r'`(S\d+-[A-Z0-9]+-Q\d)`', m.group(2))
+    issues = {}
+    for m in re.finditer(r'^### (R\d\d) — .*\n\n\*\*Issue:\*\* (.*)$', text, re.M):
+        issues[m.group(1)] = m.group(2)
+    for m in re.finditer(r'^\*\*(C\d\d) — [^*]*\*\* ?(.*)$', text, re.M):
+        issues[m.group(1)] = m.group(2)
+    old = {r['id']: r for r in json.load(open(os.path.join(B.SRC, 'review', 'key_v1.0.0_full.json')))}
+    oldorder = json.load(open(os.path.join(B.SRC, 'review', 'choice_order_v1.0.0.json')))['order']
+    return resp, named, issues, old, oldorder
+
+
+def _diff(o, oo, n):
+    """Fields that changed between v1.0.0 (o: key record, oo: choice order) and v1.1.0 (n)."""
+    f = []
+    if o['question'] != n['question']:
+        f.append('question')
+    if sorted(oo) != sorted(c['text'] for c in n['choices']):
+        f.append('choices')
+    if o['correct_answer'] != n['correct_answer']:
+        f.append('correct answer')
+    if o['correct_letter'] != n['correct_letter']:
+        f.append('letter')
+    return f
+
+
+def review_and_changes(sets, recs):
+    resp, named, issues, old, oldorder = _review()
+    by_id = qmap(recs)
+    owner = collections.defaultdict(list)
+    for k, ids in named.items():
+        for q in ids:
+            owner[q].append(k)
+    for q, k in resp.EXTRA.items():
+        owner[q].append(k)
+    # fields beyond question/choices/answer come from comparing the full v1.0.0 key kept in git history
+    full_old = {r['id']: r for r in json.load(open(os.path.join(B.SRC, 'review', 'key_v1.0.0_full.json')))}
+    rows = []
+    for r in recs:
+        o, n = full_old[r['id']], r
+        f = _diff(old[r['id']], oldorder[r['id']], n)
+        for k, label in (('intro', 'intro'), ('feedback', 'feedback'), ('how_to', 'how-to flag'), ('misconceptions', 'misconception notes')):
+            if (o.get(k) or '') != (n.get(k) or ''):
+                f.append(label)
+        if not f:
+            continue
+        fnd = owner.get(r['id'], [])
+        assert fnd, ('changed question with no finding', r['id'], f)
+        answer_changed = o['correct_answer'] != n['correct_answer']
+        rows.append(dict(id=r['id'], findings=fnd, fields=f,
+                         old_key='%s: %s' % (o['correct_letter'], o['correct_answer']),
+                         new_key='%s: %s' % (n['correct_letter'], n['correct_answer']),
+                         change_type='answer changed' if answer_changed else
+                                     ('key letter moved (numeric choices re-sorted), same answer' if 'letter' in f else
+                                      'wording, givens, or teaching only; same answer'),
+                         reason='; '.join('%s: %s' % (k, (resp.R.get(k) or (resp.C[k][1] if k in resp.C else resp.P[k][1]))[:220]) for k in fnd),
+                         source=', '.join(resp.SOURCE_REF[k] for k in fnd if k in resp.SOURCE_REF) or None))
+    json.dump(dict(from_version='1.0.0', to_version=B.VERSION, question_ids_preserved=True, changed=len(rows),
+                   note='Unchanged questions keep their v1.0.0 choice order and answer letter.', changes=rows),
+              open(os.path.join(B.COL, 'CHANGES.json'), 'w'), indent=1, ensure_ascii=False)
+    cnt = collections.Counter(x['change_type'] for x in rows)
+    L = ['# Financial Literacy — Changes from v1.0.0 to v%s (by question ID)' % B.VERSION, '',
+         'Every question whose text, choices, key, intro, feedback, how-to flag, or misconception notes changed. Question '
+         'IDs are unchanged. Unchanged questions keep their v1.0.0 choice order and answer letter. Machine-readable: '
+         '`CHANGES.json`.', '',
+         '%d questions changed: %s.' % (len(rows), ', '.join('%s %d' % kv for kv in cnt.most_common())), '',
+         md_table(['Question', 'Finding', 'Changed', 'Old key', 'New key', 'Type', 'Source'],
+                  [[x['id'], ', '.join(x['findings']), ', '.join(x['fields']), x['old_key'], x['new_key'], x['change_type'],
+                    x['source'] or '—'] for x in rows]), '']
+    write('CHANGES.md', '\n'.join(L))
+    # response table
+    by_f = collections.defaultdict(list)
+    for x in rows:
+        for k in x['findings']:
+            by_f[k].append(x['id'])
+    L = ['# Financial Literacy v%s — Response to the Independent Review' % B.VERSION, '',
+         '**Release status: pending recheck.** Every R finding, C recommendation, and P requirement in '
+         '`independent_review_v1.0.0.md` is listed below with the questions affected and what was done. Per-question '
+         'detail (old and new key, fields changed) is in `CHANGES.md`. Nothing in this table claims the content is now '
+         'fact-checked; source status is in `SOURCE_LEDGER.md`.', '',
+         '## Summary', '',
+         '- R findings: %d of %d fixed (no finding rejected).' % (len(resp.R), len([k for k in named if k[0] == 'R'])),
+         '- C recommendations: %d of %d adopted.' % (sum(1 for v in resp.C.values() if v[0] == 'Adopted'),
+                                                    len([k for k in named if k[0] == 'C'])),
+         '- P requirements: all 6 addressed; limits are stated in each row.',
+         '- %d questions changed in all; %d of them have a different correct answer.' % (
+             len(rows), cnt['answer changed']), '',
+         '## R — required corrections', '',
+         md_table(['Finding', 'Questions named', 'Also changed', 'Reviewer issue (short)', 'What was done'],
+                  [[k, ', '.join(named[k]), ', '.join(q for q in by_f[k] if q not in named[k]) or '—',
+                    (issues.get(k, '')[:180] + ('…' if len(issues.get(k, '')) > 180 else '')), resp.R[k]]
+                   for k in named if k[0] == 'R']), '',
+         '## C — recommendations', '',
+         md_table(['Item', 'Questions', 'Decision', 'What was done'],
+                  [[k, ', '.join(named[k] + [q for q in by_f[k] if q not in named[k]]), resp.C[k][0], resp.C[k][1]]
+                   for k in named if k[0] == 'C']), '',
+         '## P — package, standards, and branch requirements', '',
+         md_table(['Item', 'Status', 'Response and evidence'],
+                  [[k, v[0], v[1]] for k, v in resp.P.items()]), '',
+         '## Questions the reviewer named that did not change', '']
+    unchanged = [q for k in named for q in named[k] if q not in {x['id'] for x in rows}]
+    L += [('- ' + ', '.join(unchanged)) if unchanged else '- None: every named question was revised.', '',
+          '## Return items requested by the reviewer', '',
+          md_table(['#', 'Item', 'Where'], [
+              [1, 'Revised complete package and matching standalone files', 'nexus/' + ZIP_NAME + '; PDFs, JSON, CSV in this folder'],
+              [2, 'Response table for every R finding and P requirement', 'this file'],
+              [3, 'Decision for every C recommendation', 'this file, section C'],
+              [4, 'Claim-level source ledger', 'SOURCE_LEDGER.md / SOURCE_LEDGER.json'],
+              [5, 'Importer, math-branch routing, rendering, remediation return, mastery, Go Deeper, reward checks',
+               'RUNTIME_CHECK.json, MATH_REF_VALIDATION.json, MATH_BRANCHES.md section 1']]), '']
+    write('REVIEW_RESPONSE.md', '\n'.join(L))
+    return rows

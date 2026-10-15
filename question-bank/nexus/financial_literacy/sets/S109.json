@@ -14,7 +14,7 @@
    "learning_target": "Plan charitable giving and evaluate charities, including tax treatment of donations",
    "grade_band": "9-12",
    "outcome_codes": [],
-   "outcome_code_status": "to verify against the official document"
+   "outcome_code_status": "topic-level only; no 12th-grade outcome code assigned yet"
   },
   "new_jersey": {
    "document": "NJSLS-CLKS 2020, Standard 9.1 Personal Financial Literacy (grade 12)",
@@ -24,7 +24,8 @@
    ],
    "performance_expectation_status": "strand-level alignment; individual 9.1.12 performance expectations to verify"
   },
-  "alignment": "integrating"
+  "local_identifier": "FL.LIFE.109 is a course identifier, not an official national or New Jersey code",
+  "claim": "Alignment shows what the set teaches toward; it does not claim full mastery of any standard."
  },
  "content_status": "time_sensitive",
  "sources": [
@@ -32,30 +33,52 @@
    "org": "IRS (Tax Exempt Organization Search)",
    "url": "https://apps.irs.gov/app/eos/",
    "claim": "Lists organizations eligible to receive tax-deductible charitable contributions.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "jurisdiction": "US federal",
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
   },
   {
-   "org": "IRS (Charitable contributions)",
+   "org": "IRS (Charitable contribution deductions)",
    "url": "https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions",
-   "claim": "Charitable contributions are generally deductible only for taxpayers who itemize deductions, and only to qualified organizations; rules can change by tax year.",
+   "claim": "Charitable contributions are deductible only to qualified organizations; itemizers deduct them on Schedule A.",
+   "jurisdiction": "US federal",
    "effective": "Tax year 2026",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
   },
   {
    "org": "New Jersey Division of Consumer Affairs (Charities Registration)",
    "url": "https://www.njconsumeraffairs.gov/charities/",
    "claim": "Most charities that solicit in New Jersey must register with the state, and residents can look up registration status.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "jurisdiction": "New Jersey",
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
   },
   {
-   "org": "FTC (Donating wisely)",
-   "url": "https://consumer.ftc.gov/articles/donating-wisely-avoiding-charity-scams",
+   "org": "FTC (How to donate wisely and avoid charity scams)",
+   "url": "https://consumer.ftc.gov/features/how-donate-wisely-and-avoid-charity-scams",
    "claim": "Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "jurisdiction": "US federal",
+   "verification": "search-corroborated",
+   "verification_detail": "new or replaced URL in v1.1; not fetched by the reviewer; author: search-corroborated on 2026-10-15: page exists (replacement URL found by search)",
+   "verified_on": null
+  },
+  {
+   "org": "IRS (Working Families Tax Cuts)",
+   "url": "https://www.irs.gov/newsroom/working-families-tax-cuts",
+   "claim": "Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities.",
+   "jurisdiction": "US federal",
+   "effective": "Tax year 2026",
+   "qids": [
+    "S109-M-Q4",
+    "S66-M-Q1"
+   ],
+   "verification": "reviewer-checked topic",
+   "verification_detail": "new or replaced URL in v1.1; not fetched by the reviewer; reviewer consulted this primary source for the specific corrected topic (A1); author: search-corroborated on 2026-10-15: 2026 nonitemizer deduction $1,000 / $2,000 MFJ; bronze and catastrophic plans HSA-compatible from 2026",
+   "verified_on": null
   }
  ],
  "practical_skills": [
@@ -70,6 +93,7 @@
    "skill": "Plan charitable giving, research charities, and understand the tax treatment of donations",
    "standard": "FL.LIFE.109",
    "nearest_related": false,
+   "alignment_role": "direct",
    "questions": [
     {
      "id": "S109-M-Q1",
@@ -118,11 +142,12 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Tax Exempt Organization Search): Lists organizations eligible to receive tax-deductible charitable contributions. (https://apps.irs.gov/app/eos/)",
-      "IRS (Charitable contributions): Charitable contributions are generally deductible only for taxpayers who itemize deductions, and only to qualified organizations; rules can change by tax year. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
+      "IRS (Charitable contribution deductions): Charitable contributions are deductible only to qualified organizations; itemizers deduct them on Schedule A. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
       "New Jersey Division of Consumer Affairs (Charities Registration): Most charities that solicit in New Jersey must register with the state, and residents can look up registration status. (https://www.njconsumeraffairs.gov/charities/)",
-      "FTC (Donating wisely): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/articles/donating-wisely-avoiding-charity-scams)"
+      "FTC (How to donate wisely and avoid charity scams): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/features/how-donate-wisely-and-avoid-charity-scams)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 2165
     },
     {
@@ -172,11 +197,12 @@
      "practical_how_to": true,
      "sources": [
       "IRS (Tax Exempt Organization Search): Lists organizations eligible to receive tax-deductible charitable contributions. (https://apps.irs.gov/app/eos/)",
-      "IRS (Charitable contributions): Charitable contributions are generally deductible only for taxpayers who itemize deductions, and only to qualified organizations; rules can change by tax year. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
+      "IRS (Charitable contribution deductions): Charitable contributions are deductible only to qualified organizations; itemizers deduct them on Schedule A. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
       "New Jersey Division of Consumer Affairs (Charities Registration): Most charities that solicit in New Jersey must register with the state, and residents can look up registration status. (https://www.njconsumeraffairs.gov/charities/)",
-      "FTC (Donating wisely): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/articles/donating-wisely-avoiding-charity-scams)"
+      "FTC (How to donate wisely and avoid charity scams): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/features/how-donate-wisely-and-avoid-charity-scams)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 2166
     },
     {
@@ -225,11 +251,12 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Tax Exempt Organization Search): Lists organizations eligible to receive tax-deductible charitable contributions. (https://apps.irs.gov/app/eos/)",
-      "IRS (Charitable contributions): Charitable contributions are generally deductible only for taxpayers who itemize deductions, and only to qualified organizations; rules can change by tax year. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
+      "IRS (Charitable contribution deductions): Charitable contributions are deductible only to qualified organizations; itemizers deduct them on Schedule A. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
       "New Jersey Division of Consumer Affairs (Charities Registration): Most charities that solicit in New Jersey must register with the state, and residents can look up registration status. (https://www.njconsumeraffairs.gov/charities/)",
-      "FTC (Donating wisely): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/articles/donating-wisely-avoiding-charity-scams)"
+      "FTC (How to donate wisely and avoid charity scams): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/features/how-donate-wisely-and-avoid-charity-scams)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 2167
     },
     {
@@ -242,48 +269,49 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Integrated Financial Decisions",
-     "prompt": "Nia takes the standard deduction. Can she generally deduct her $1,440 of yearly donations on her federal return?",
+     "prompt": "For tax year 2026, Nia files single and takes the standard deduction. She gave $1,440 in cash to qualified charities. Using the 2026 rule for people who do not itemize, how much can she deduct for those gifts?",
      "choices": [
       {
        "letter": "A",
-       "text": "Yes; every donation is fully deductible for everyone"
+       "text": "$0"
       },
       {
        "letter": "B",
-       "text": "No; donations generally require itemizing"
+       "text": "$1,000"
       },
       {
        "letter": "C",
-       "text": "Yes; she gets the $1,440 back as a refund"
+       "text": "$1,440"
       },
       {
        "letter": "D",
-       "text": "No; donations are taxed as income"
+       "text": "$2,000"
       }
      ],
      "correct_letter": "B",
-     "correct_answer": "No; donations generally require itemizing",
+     "correct_answer": "$1,000",
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "Charitable donations to qualified organizations are generally deductible only for taxpayers who itemize. A deduction lowers taxable income; it is not a dollar-for-dollar refund. Rules can change by tax year.",
-     "feedback": "With the standard deduction, donations generally are not deducted separately.",
+     "intro": "Starting with tax year 2026, people who take the standard deduction can also deduct cash gifts to qualified charities: up to $1,000 for single filers or $2,000 for married couples filing jointly. Itemizers deduct gifts under the itemized rules instead. A deduction lowers taxable income; it is not a dollar-for-dollar refund.",
+     "feedback": "Her $1,440 is above the $1,000 single cap, so $1,000 is deductible.",
      "question_type": "instruction",
      "topic": "Charitable giving and civic responsibility",
      "subtopic": "Taxes and giving",
      "misconceptions": {
-      "A": "Ignores itemizing rule",
-      "C": "Confuses deductions with credits",
-      "D": "Reverses the tax effect"
+      "C": "Ignores the $1,000 single-filer cap",
+      "A": "Uses the rule from before 2026, when non-itemizers got no charitable deduction",
+      "D": "Uses the married-filing-jointly cap"
      },
      "practical_how_to": false,
      "sources": [
       "IRS (Tax Exempt Organization Search): Lists organizations eligible to receive tax-deductible charitable contributions. (https://apps.irs.gov/app/eos/)",
-      "IRS (Charitable contributions): Charitable contributions are generally deductible only for taxpayers who itemize deductions, and only to qualified organizations; rules can change by tax year. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
+      "IRS (Charitable contribution deductions): Charitable contributions are deductible only to qualified organizations; itemizers deduct them on Schedule A. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
       "New Jersey Division of Consumer Affairs (Charities Registration): Most charities that solicit in New Jersey must register with the state, and residents can look up registration status. (https://www.njconsumeraffairs.gov/charities/)",
-      "FTC (Donating wisely): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/articles/donating-wisely-avoiding-charity-scams)"
+      "FTC (How to donate wisely and avoid charity scams): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/features/how-donate-wisely-and-avoid-charity-scams)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "Tax year 2026; verify current law",
+     "effective_date": "Tax year 2026 rule for non-itemizers",
      "page": 2168
     },
     {
@@ -332,11 +360,12 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Tax Exempt Organization Search): Lists organizations eligible to receive tax-deductible charitable contributions. (https://apps.irs.gov/app/eos/)",
-      "IRS (Charitable contributions): Charitable contributions are generally deductible only for taxpayers who itemize deductions, and only to qualified organizations; rules can change by tax year. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
+      "IRS (Charitable contribution deductions): Charitable contributions are deductible only to qualified organizations; itemizers deduct them on Schedule A. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
       "New Jersey Division of Consumer Affairs (Charities Registration): Most charities that solicit in New Jersey must register with the state, and residents can look up registration status. (https://www.njconsumeraffairs.gov/charities/)",
-      "FTC (Donating wisely): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/articles/donating-wisely-avoiding-charity-scams)"
+      "FTC (How to donate wisely and avoid charity scams): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/features/how-donate-wisely-and-avoid-charity-scams)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 2169
     }
    ]
@@ -348,6 +377,7 @@
    "skill": "Why and how people give",
    "standard": "FL.LIFE.109",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "concept",
    "relationship": "Planning giving uses percents and knowledge of how charities work.",
    "questions": [
@@ -397,11 +427,12 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Tax Exempt Organization Search): Lists organizations eligible to receive tax-deductible charitable contributions. (https://apps.irs.gov/app/eos/)",
-      "IRS (Charitable contributions): Charitable contributions are generally deductible only for taxpayers who itemize deductions, and only to qualified organizations; rules can change by tax year. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
+      "IRS (Charitable contribution deductions): Charitable contributions are deductible only to qualified organizations; itemizers deduct them on Schedule A. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
       "New Jersey Division of Consumer Affairs (Charities Registration): Most charities that solicit in New Jersey must register with the state, and residents can look up registration status. (https://www.njconsumeraffairs.gov/charities/)",
-      "FTC (Donating wisely): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/articles/donating-wisely-avoiding-charity-scams)"
+      "FTC (How to donate wisely and avoid charity scams): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/features/how-donate-wisely-and-avoid-charity-scams)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 2170
     },
     {
@@ -450,11 +481,12 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Tax Exempt Organization Search): Lists organizations eligible to receive tax-deductible charitable contributions. (https://apps.irs.gov/app/eos/)",
-      "IRS (Charitable contributions): Charitable contributions are generally deductible only for taxpayers who itemize deductions, and only to qualified organizations; rules can change by tax year. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
+      "IRS (Charitable contribution deductions): Charitable contributions are deductible only to qualified organizations; itemizers deduct them on Schedule A. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
       "New Jersey Division of Consumer Affairs (Charities Registration): Most charities that solicit in New Jersey must register with the state, and residents can look up registration status. (https://www.njconsumeraffairs.gov/charities/)",
-      "FTC (Donating wisely): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/articles/donating-wisely-avoiding-charity-scams)"
+      "FTC (How to donate wisely and avoid charity scams): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/features/how-donate-wisely-and-avoid-charity-scams)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 2171
     },
     {
@@ -503,11 +535,12 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Tax Exempt Organization Search): Lists organizations eligible to receive tax-deductible charitable contributions. (https://apps.irs.gov/app/eos/)",
-      "IRS (Charitable contributions): Charitable contributions are generally deductible only for taxpayers who itemize deductions, and only to qualified organizations; rules can change by tax year. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
+      "IRS (Charitable contribution deductions): Charitable contributions are deductible only to qualified organizations; itemizers deduct them on Schedule A. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
       "New Jersey Division of Consumer Affairs (Charities Registration): Most charities that solicit in New Jersey must register with the state, and residents can look up registration status. (https://www.njconsumeraffairs.gov/charities/)",
-      "FTC (Donating wisely): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/articles/donating-wisely-avoiding-charity-scams)"
+      "FTC (How to donate wisely and avoid charity scams): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/features/how-donate-wisely-and-avoid-charity-scams)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 2172
     },
     {
@@ -556,11 +589,12 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Tax Exempt Organization Search): Lists organizations eligible to receive tax-deductible charitable contributions. (https://apps.irs.gov/app/eos/)",
-      "IRS (Charitable contributions): Charitable contributions are generally deductible only for taxpayers who itemize deductions, and only to qualified organizations; rules can change by tax year. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
+      "IRS (Charitable contribution deductions): Charitable contributions are deductible only to qualified organizations; itemizers deduct them on Schedule A. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
       "New Jersey Division of Consumer Affairs (Charities Registration): Most charities that solicit in New Jersey must register with the state, and residents can look up registration status. (https://www.njconsumeraffairs.gov/charities/)",
-      "FTC (Donating wisely): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/articles/donating-wisely-avoiding-charity-scams)"
+      "FTC (How to donate wisely and avoid charity scams): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/features/how-donate-wisely-and-avoid-charity-scams)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 2173
     },
     {
@@ -610,11 +644,12 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Tax Exempt Organization Search): Lists organizations eligible to receive tax-deductible charitable contributions. (https://apps.irs.gov/app/eos/)",
-      "IRS (Charitable contributions): Charitable contributions are generally deductible only for taxpayers who itemize deductions, and only to qualified organizations; rules can change by tax year. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
+      "IRS (Charitable contribution deductions): Charitable contributions are deductible only to qualified organizations; itemizers deduct them on Schedule A. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
       "New Jersey Division of Consumer Affairs (Charities Registration): Most charities that solicit in New Jersey must register with the state, and residents can look up registration status. (https://www.njconsumeraffairs.gov/charities/)",
-      "FTC (Donating wisely): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/articles/donating-wisely-avoiding-charity-scams)"
+      "FTC (How to donate wisely and avoid charity scams): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/features/how-donate-wisely-and-avoid-charity-scams)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 2174
     }
    ]
@@ -626,6 +661,7 @@
    "skill": "Find a percent of a quantity",
    "standard": "FL.LIFE.109",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "Giving plans are often a percent of income.",
    "ref": {
@@ -647,6 +683,7 @@
    "skill": "Giving wisely",
    "standard": "FL.LIFE.109",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 1",
    "difficulty": "deeper",
    "questions": [
@@ -697,11 +734,12 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Tax Exempt Organization Search): Lists organizations eligible to receive tax-deductible charitable contributions. (https://apps.irs.gov/app/eos/)",
-      "IRS (Charitable contributions): Charitable contributions are generally deductible only for taxpayers who itemize deductions, and only to qualified organizations; rules can change by tax year. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
+      "IRS (Charitable contribution deductions): Charitable contributions are deductible only to qualified organizations; itemizers deduct them on Schedule A. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
       "New Jersey Division of Consumer Affairs (Charities Registration): Most charities that solicit in New Jersey must register with the state, and residents can look up registration status. (https://www.njconsumeraffairs.gov/charities/)",
-      "FTC (Donating wisely): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/articles/donating-wisely-avoiding-charity-scams)"
+      "FTC (How to donate wisely and avoid charity scams): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/features/how-donate-wisely-and-avoid-charity-scams)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 2175
     },
     {
@@ -750,11 +788,12 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Tax Exempt Organization Search): Lists organizations eligible to receive tax-deductible charitable contributions. (https://apps.irs.gov/app/eos/)",
-      "IRS (Charitable contributions): Charitable contributions are generally deductible only for taxpayers who itemize deductions, and only to qualified organizations; rules can change by tax year. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
+      "IRS (Charitable contribution deductions): Charitable contributions are deductible only to qualified organizations; itemizers deduct them on Schedule A. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
       "New Jersey Division of Consumer Affairs (Charities Registration): Most charities that solicit in New Jersey must register with the state, and residents can look up registration status. (https://www.njconsumeraffairs.gov/charities/)",
-      "FTC (Donating wisely): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/articles/donating-wisely-avoiding-charity-scams)"
+      "FTC (How to donate wisely and avoid charity scams): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/features/how-donate-wisely-and-avoid-charity-scams)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 2176
     },
     {
@@ -803,11 +842,12 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Tax Exempt Organization Search): Lists organizations eligible to receive tax-deductible charitable contributions. (https://apps.irs.gov/app/eos/)",
-      "IRS (Charitable contributions): Charitable contributions are generally deductible only for taxpayers who itemize deductions, and only to qualified organizations; rules can change by tax year. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
+      "IRS (Charitable contribution deductions): Charitable contributions are deductible only to qualified organizations; itemizers deduct them on Schedule A. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
       "New Jersey Division of Consumer Affairs (Charities Registration): Most charities that solicit in New Jersey must register with the state, and residents can look up registration status. (https://www.njconsumeraffairs.gov/charities/)",
-      "FTC (Donating wisely): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/articles/donating-wisely-avoiding-charity-scams)"
+      "FTC (How to donate wisely and avoid charity scams): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/features/how-donate-wisely-and-avoid-charity-scams)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 2177
     },
     {
@@ -856,11 +896,12 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Tax Exempt Organization Search): Lists organizations eligible to receive tax-deductible charitable contributions. (https://apps.irs.gov/app/eos/)",
-      "IRS (Charitable contributions): Charitable contributions are generally deductible only for taxpayers who itemize deductions, and only to qualified organizations; rules can change by tax year. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
+      "IRS (Charitable contribution deductions): Charitable contributions are deductible only to qualified organizations; itemizers deduct them on Schedule A. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
       "New Jersey Division of Consumer Affairs (Charities Registration): Most charities that solicit in New Jersey must register with the state, and residents can look up registration status. (https://www.njconsumeraffairs.gov/charities/)",
-      "FTC (Donating wisely): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/articles/donating-wisely-avoiding-charity-scams)"
+      "FTC (How to donate wisely and avoid charity scams): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/features/how-donate-wisely-and-avoid-charity-scams)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 2178
     },
     {
@@ -909,11 +950,12 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Tax Exempt Organization Search): Lists organizations eligible to receive tax-deductible charitable contributions. (https://apps.irs.gov/app/eos/)",
-      "IRS (Charitable contributions): Charitable contributions are generally deductible only for taxpayers who itemize deductions, and only to qualified organizations; rules can change by tax year. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
+      "IRS (Charitable contribution deductions): Charitable contributions are deductible only to qualified organizations; itemizers deduct them on Schedule A. (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions)",
       "New Jersey Division of Consumer Affairs (Charities Registration): Most charities that solicit in New Jersey must register with the state, and residents can look up registration status. (https://www.njconsumeraffairs.gov/charities/)",
-      "FTC (Donating wisely): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/articles/donating-wisely-avoiding-charity-scams)"
+      "FTC (How to donate wisely and avoid charity scams): Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters. (https://consumer.ftc.gov/features/how-donate-wisely-and-avoid-charity-scams)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 2179
     }
    ]

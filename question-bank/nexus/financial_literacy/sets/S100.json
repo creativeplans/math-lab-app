@@ -14,7 +14,7 @@
    "learning_target": "Describe consumer protection laws and how to file complaints",
    "grade_band": "9-12",
    "outcome_codes": [],
-   "outcome_code_status": "to verify against the official document"
+   "outcome_code_status": "topic-level only; no 12th-grade outcome code assigned yet"
   },
   "new_jersey": {
    "document": "NJSLS-CLKS 2020, Standard 9.1 Personal Financial Literacy (grade 12)",
@@ -24,45 +24,89 @@
    ],
    "performance_expectation_status": "strand-level alignment; individual 9.1.12 performance expectations to verify"
   },
-  "alignment": "supporting"
+  "local_identifier": "FL.PROTECT.100 is a course identifier, not an official national or New Jersey code",
+  "claim": "Alignment shows what the set teaches toward; it does not claim full mastery of any standard."
  },
  "content_status": "time_sensitive",
  "sources": [
   {
-   "org": "CFPB (Regulation E: lost or stolen debit cards)",
-   "url": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-get-my-money-back-after-a-debit-card-theft-en-1017/",
-   "claim": "Liability for unauthorized debit card use is limited to $50 if reported within 2 business days of learning of the loss, up to $500 if reported later, and can be unlimited if not reported within 60 days after the statement is sent.",
-   "effective": "Regulation E as of 2026",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "org": "CFPB (Regulation E, 12 CFR 1005.6)",
+   "url": "https://www.consumerfinance.gov/rules-policy/regulations/1005/6/",
+   "claim": "Liability for unauthorized debit card use is limited to $50 if reported within 2 business days after learning of the loss or theft, up to $500 if reported later, and can be unlimited for later transfers if not reported within 60 days after the statement is sent.",
+   "jurisdiction": "US federal",
+   "effective": "Regulation E as in force 2026",
+   "section": "1005.6(b)",
+   "qids": [
+    "S100-M-Q2"
+   ],
+   "verification": "reviewer-checked topic",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch); reviewer consulted this primary source for the specific corrected topic (A8)",
+   "verified_on": null
   },
   {
-   "org": "CFPB (Credit card fraud liability)",
-   "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/",
-   "claim": "Under federal law, liability for unauthorized credit card charges is at most $50.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "org": "CFPB (Lost or stolen credit cards)",
+   "url": "https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/",
+   "claim": "Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)).",
+   "jurisdiction": "US federal",
+   "verification": "search-corroborated",
+   "verification_detail": "new or replaced URL in v1.1; not fetched by the reviewer; author: search-corroborated on 2026-10-15: page exists; $50 maximum liability",
+   "verified_on": null
   },
   {
    "org": "CFPB (Submit a complaint)",
    "url": "https://www.consumerfinance.gov/complaint/",
    "claim": "Consumers can submit complaints about financial products; the CFPB forwards them to companies for a response.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "jurisdiction": "US federal",
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
   },
   {
    "org": "FTC (Cooling-Off Rule)",
    "url": "https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help",
-   "claim": "The Cooling-Off Rule gives buyers 3 days to cancel certain sales of $25 or more made at their home or at temporary locations.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "claim": "The Cooling-Off Rule lets buyers cancel covered sales of $25 or more at their home, or $130 or more at temporary locations, until midnight of the third business day (Saturday counts; Sundays and federal holidays do not); some sales are excluded.",
+   "jurisdiction": "US federal",
+   "qids": [
+    "S100-M-Q5"
+   ],
+   "verification": "reviewer-checked topic",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch); reviewer consulted this primary source for the specific corrected topic (A6); author: search-corroborated on 2026-10-15: $25 home / $130 temporary location; 3 business days; Saturday counts",
+   "verified_on": null
   },
   {
    "org": "New Jersey Division of Consumer Affairs",
    "url": "https://www.njconsumeraffairs.gov/",
    "claim": "New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "jurisdiction": "New Jersey",
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
+  },
+  {
+   "org": "CFPB (Regulation Z, 12 CFR 1026.13)",
+   "url": "https://www.consumerfinance.gov/rules-policy/regulations/1026/13/",
+   "claim": "A billing-error notice is timely when the creditor receives it in writing at its billing-inquiries address within 60 days after transmitting the statement that first shows the error.",
+   "jurisdiction": "US federal",
+   "section": "1026.13(b)",
+   "qids": [
+    "S100-F1-Q1"
+   ],
+   "verification": "reviewer-checked topic",
+   "verification_detail": "new or replaced URL in v1.1; not fetched by the reviewer; reviewer consulted this primary source for the specific corrected topic (A9)",
+   "verified_on": null
+  },
+  {
+   "org": "CFPB (Regulation F, 12 CFR 1006.34)",
+   "url": "https://www.consumerfinance.gov/rules-policy/regulations/1006/34/",
+   "claim": "The 30-day validation period starts when the consumer receives the validation information; a written dispute within it pauses collection until verification is sent.",
+   "jurisdiction": "US federal",
+   "section": "1006.34(b)(5)",
+   "qids": [
+    "S100-F1-Q2"
+   ],
+   "verification": "reviewer-checked topic",
+   "verification_detail": "new or replaced URL in v1.1; not fetched by the reviewer; reviewer consulted this primary source for the specific corrected topic (A7)",
+   "verified_on": null
   }
  ],
  "practical_skills": [
@@ -78,6 +122,7 @@
    "skill": "Use federal and state consumer protections and file a complaint",
    "standard": "FL.PROTECT.100",
    "nearest_related": false,
+   "alignment_role": "direct",
    "questions": [
     {
      "id": "S100-M-Q1",
@@ -125,11 +170,13 @@
      },
      "practical_how_to": false,
      "sources": [
-      "CFPB (Regulation E: lost or stolen debit cards): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days of learning of the loss, up to $500 if reported later, and can be unlimited if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/ask-cfpb/how-do-i-get-my-money-back-after-a-debit-card-theft-en-1017/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)",
+      "CFPB (Regulation E, 12 CFR 1005.6): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days after learning of the loss or theft, up to $500 if reported later, and can be unlimited for later transfers if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1005/6/)",
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)",
       "CFPB (Submit a complaint): Consumers can submit complaints about financial products; the CFPB forwards them to companies for a response. (https://www.consumerfinance.gov/complaint/)",
-      "FTC (Cooling-Off Rule): The Cooling-Off Rule gives buyers 3 days to cancel certain sales of $25 or more made at their home or at temporary locations. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
-      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)"
+      "FTC (Cooling-Off Rule): The Cooling-Off Rule lets buyers cancel covered sales of $25 or more at their home, or $130 or more at temporary locations, until midnight of the third business day (Saturday counts; Sundays and federal holidays do not); some sales are excluded. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
+      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)",
+      "CFPB (Regulation Z, 12 CFR 1026.13): A billing-error notice is timely when the creditor receives it in writing at its billing-inquiries address within 60 days after transmitting the statement that first shows the error. (https://www.consumerfinance.gov/rules-policy/regulations/1026/13/)",
+      "CFPB (Regulation F, 12 CFR 1006.34): The 30-day validation period starts when the consumer receives the validation information; a written dispute within it pauses collection until verification is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1006/34/)"
      ],
      "effective_date": "Regulation E as of 2026",
      "page": 2021
@@ -144,7 +191,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Consumer Protection, Fraud, and Digital Security",
-     "prompt": "Rosa's stolen debit card is used for $700, and she waits 10 days to report it (still within 60 days of the statement). What is the most she could owe?",
+     "prompt": "Rosa's debit card is stolen and used for $700. She reports it 10 days after she learned it was stolen, which is more than 2 business days later but before 60 days after her statement. What is the most she could owe?",
      "choices": [
       {
        "letter": "A",
@@ -168,22 +215,25 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "feedback": "After 2 business days, liability can rise to $500.",
-     "question_type": "knowledge_check",
+     "intro": "Federal rules (Regulation E) limit debit card losses, counted from when you learn of the loss: up to $50 if you report within 2 business days, and up to $500 if you report later. If you do not report unauthorized transfers within 60 days after the statement showing them, you can be liable for later transfers the bank could have stopped.",
+     "feedback": "Reporting more than 2 business days after learning of the theft raises the limit to $500.",
+     "question_type": "instruction",
      "topic": "Consumer rights and where to get help",
      "subtopic": "Late reporting",
      "misconceptions": {
-      "A": "Applies the 2-day limit",
+      "A": "Applies the limit for reporting within 2 business days",
       "D": "Applies no limit",
       "B": "Subtracts the limit"
      },
      "practical_how_to": false,
      "sources": [
-      "CFPB (Regulation E: lost or stolen debit cards): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days of learning of the loss, up to $500 if reported later, and can be unlimited if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/ask-cfpb/how-do-i-get-my-money-back-after-a-debit-card-theft-en-1017/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)",
+      "CFPB (Regulation E, 12 CFR 1005.6): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days after learning of the loss or theft, up to $500 if reported later, and can be unlimited for later transfers if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1005/6/)",
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)",
       "CFPB (Submit a complaint): Consumers can submit complaints about financial products; the CFPB forwards them to companies for a response. (https://www.consumerfinance.gov/complaint/)",
-      "FTC (Cooling-Off Rule): The Cooling-Off Rule gives buyers 3 days to cancel certain sales of $25 or more made at their home or at temporary locations. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
-      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)"
+      "FTC (Cooling-Off Rule): The Cooling-Off Rule lets buyers cancel covered sales of $25 or more at their home, or $130 or more at temporary locations, until midnight of the third business day (Saturday counts; Sundays and federal holidays do not); some sales are excluded. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
+      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)",
+      "CFPB (Regulation Z, 12 CFR 1026.13): A billing-error notice is timely when the creditor receives it in writing at its billing-inquiries address within 60 days after transmitting the statement that first shows the error. (https://www.consumerfinance.gov/rules-policy/regulations/1026/13/)",
+      "CFPB (Regulation F, 12 CFR 1006.34): The 30-day validation period starts when the consumer receives the validation information; a written dispute within it pauses collection until verification is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1006/34/)"
      ],
      "effective_date": "Regulation E as of 2026",
      "page": 2022
@@ -234,13 +284,15 @@
      },
      "practical_how_to": true,
      "sources": [
-      "CFPB (Regulation E: lost or stolen debit cards): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days of learning of the loss, up to $500 if reported later, and can be unlimited if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/ask-cfpb/how-do-i-get-my-money-back-after-a-debit-card-theft-en-1017/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)",
+      "CFPB (Regulation E, 12 CFR 1005.6): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days after learning of the loss or theft, up to $500 if reported later, and can be unlimited for later transfers if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1005/6/)",
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)",
       "CFPB (Submit a complaint): Consumers can submit complaints about financial products; the CFPB forwards them to companies for a response. (https://www.consumerfinance.gov/complaint/)",
-      "FTC (Cooling-Off Rule): The Cooling-Off Rule gives buyers 3 days to cancel certain sales of $25 or more made at their home or at temporary locations. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
-      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)"
+      "FTC (Cooling-Off Rule): The Cooling-Off Rule lets buyers cancel covered sales of $25 or more at their home, or $130 or more at temporary locations, until midnight of the third business day (Saturday counts; Sundays and federal holidays do not); some sales are excluded. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
+      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)",
+      "CFPB (Regulation Z, 12 CFR 1026.13): A billing-error notice is timely when the creditor receives it in writing at its billing-inquiries address within 60 days after transmitting the statement that first shows the error. (https://www.consumerfinance.gov/rules-policy/regulations/1026/13/)",
+      "CFPB (Regulation F, 12 CFR 1006.34): The 30-day validation period starts when the consumer receives the validation information; a written dispute within it pauses collection until verification is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1006/34/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 2023
     },
     {
@@ -289,13 +341,15 @@
      },
      "practical_how_to": false,
      "sources": [
-      "CFPB (Regulation E: lost or stolen debit cards): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days of learning of the loss, up to $500 if reported later, and can be unlimited if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/ask-cfpb/how-do-i-get-my-money-back-after-a-debit-card-theft-en-1017/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)",
+      "CFPB (Regulation E, 12 CFR 1005.6): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days after learning of the loss or theft, up to $500 if reported later, and can be unlimited for later transfers if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1005/6/)",
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)",
       "CFPB (Submit a complaint): Consumers can submit complaints about financial products; the CFPB forwards them to companies for a response. (https://www.consumerfinance.gov/complaint/)",
-      "FTC (Cooling-Off Rule): The Cooling-Off Rule gives buyers 3 days to cancel certain sales of $25 or more made at their home or at temporary locations. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
-      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)"
+      "FTC (Cooling-Off Rule): The Cooling-Off Rule lets buyers cancel covered sales of $25 or more at their home, or $130 or more at temporary locations, until midnight of the third business day (Saturday counts; Sundays and federal holidays do not); some sales are excluded. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
+      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)",
+      "CFPB (Regulation Z, 12 CFR 1026.13): A billing-error notice is timely when the creditor receives it in writing at its billing-inquiries address within 60 days after transmitting the statement that first shows the error. (https://www.consumerfinance.gov/rules-policy/regulations/1026/13/)",
+      "CFPB (Regulation F, 12 CFR 1006.34): The 30-day validation period starts when the consumer receives the validation information; a written dispute within it pauses collection until verification is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1006/34/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 2024
     },
     {
@@ -308,47 +362,49 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Consumer Protection, Fraud, and Digital Security",
-     "prompt": "A salesperson sells Rosa a $400 vacuum at her home. Under the FTC Cooling-Off Rule, how many days does she have to cancel?",
+     "prompt": "A salesperson sells Rosa a $400 vacuum at her home. Under the FTC Cooling-Off Rule, how long does she have to cancel?",
      "choices": [
       {
        "letter": "A",
-       "text": "0"
+       "text": "30 calendar days"
       },
       {
        "letter": "B",
-       "text": "1"
+       "text": "One day"
       },
       {
        "letter": "C",
-       "text": "3"
+       "text": "Three business days"
       },
       {
        "letter": "D",
-       "text": "30"
+       "text": "No time; home sales are final"
       }
      ],
      "correct_letter": "C",
-     "correct_answer": "3",
+     "correct_answer": "Three business days",
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "The FTC Cooling-Off Rule gives buyers 3 days to cancel many sales of $25 or more made at their home or at temporary locations, such as hotel ballrooms.",
-     "feedback": "Three days to cancel covered door-to-door sales.",
+     "intro": "The FTC Cooling-Off Rule lets buyers cancel many sales made at their home for $25 or more, or at temporary locations such as hotel rooms or fairgrounds for $130 or more, within three business days. Saturday counts as a business day; Sundays and federal holidays do not. Some sales, such as real estate, insurance, and emergency repairs, are excluded.",
+     "feedback": "A $400 sale at her home is covered: three business days to cancel.",
      "question_type": "instruction",
      "topic": "Consumer rights and where to get help",
      "subtopic": "Cooling-Off Rule",
      "misconceptions": {
-      "D": "Confuses with return policies",
+      "A": "Confuses with store return policies",
       "B": "Undercounts",
-      "A": "Ignores the rule"
+      "D": "Ignores the rule"
      },
      "practical_how_to": false,
      "sources": [
-      "CFPB (Regulation E: lost or stolen debit cards): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days of learning of the loss, up to $500 if reported later, and can be unlimited if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/ask-cfpb/how-do-i-get-my-money-back-after-a-debit-card-theft-en-1017/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)",
+      "CFPB (Regulation E, 12 CFR 1005.6): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days after learning of the loss or theft, up to $500 if reported later, and can be unlimited for later transfers if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1005/6/)",
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)",
       "CFPB (Submit a complaint): Consumers can submit complaints about financial products; the CFPB forwards them to companies for a response. (https://www.consumerfinance.gov/complaint/)",
-      "FTC (Cooling-Off Rule): The Cooling-Off Rule gives buyers 3 days to cancel certain sales of $25 or more made at their home or at temporary locations. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
-      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)"
+      "FTC (Cooling-Off Rule): The Cooling-Off Rule lets buyers cancel covered sales of $25 or more at their home, or $130 or more at temporary locations, until midnight of the third business day (Saturday counts; Sundays and federal holidays do not); some sales are excluded. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
+      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)",
+      "CFPB (Regulation Z, 12 CFR 1026.13): A billing-error notice is timely when the creditor receives it in writing at its billing-inquiries address within 60 days after transmitting the statement that first shows the error. (https://www.consumerfinance.gov/rules-policy/regulations/1026/13/)",
+      "CFPB (Regulation F, 12 CFR 1006.34): The 30-day validation period starts when the consumer receives the validation information; a written dispute within it pauses collection until verification is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1006/34/)"
      ],
      "effective_date": "FTC rule as of 2026",
      "page": 2025
@@ -362,6 +418,7 @@
    "skill": "What consumer protection laws do",
    "standard": "FL.PROTECT.100",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "concept",
    "relationship": "Each law protects a different kind of transaction.",
    "questions": [
@@ -410,13 +467,15 @@
      },
      "practical_how_to": false,
      "sources": [
-      "CFPB (Regulation E: lost or stolen debit cards): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days of learning of the loss, up to $500 if reported later, and can be unlimited if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/ask-cfpb/how-do-i-get-my-money-back-after-a-debit-card-theft-en-1017/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)",
+      "CFPB (Regulation E, 12 CFR 1005.6): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days after learning of the loss or theft, up to $500 if reported later, and can be unlimited for later transfers if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1005/6/)",
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)",
       "CFPB (Submit a complaint): Consumers can submit complaints about financial products; the CFPB forwards them to companies for a response. (https://www.consumerfinance.gov/complaint/)",
-      "FTC (Cooling-Off Rule): The Cooling-Off Rule gives buyers 3 days to cancel certain sales of $25 or more made at their home or at temporary locations. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
-      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)"
+      "FTC (Cooling-Off Rule): The Cooling-Off Rule lets buyers cancel covered sales of $25 or more at their home, or $130 or more at temporary locations, until midnight of the third business day (Saturday counts; Sundays and federal holidays do not); some sales are excluded. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
+      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)",
+      "CFPB (Regulation Z, 12 CFR 1026.13): A billing-error notice is timely when the creditor receives it in writing at its billing-inquiries address within 60 days after transmitting the statement that first shows the error. (https://www.consumerfinance.gov/rules-policy/regulations/1026/13/)",
+      "CFPB (Regulation F, 12 CFR 1006.34): The 30-day validation period starts when the consumer receives the validation information; a written dispute within it pauses collection until verification is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1006/34/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 2026
     },
     {
@@ -464,13 +523,15 @@
      },
      "practical_how_to": false,
      "sources": [
-      "CFPB (Regulation E: lost or stolen debit cards): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days of learning of the loss, up to $500 if reported later, and can be unlimited if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/ask-cfpb/how-do-i-get-my-money-back-after-a-debit-card-theft-en-1017/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)",
+      "CFPB (Regulation E, 12 CFR 1005.6): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days after learning of the loss or theft, up to $500 if reported later, and can be unlimited for later transfers if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1005/6/)",
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)",
       "CFPB (Submit a complaint): Consumers can submit complaints about financial products; the CFPB forwards them to companies for a response. (https://www.consumerfinance.gov/complaint/)",
-      "FTC (Cooling-Off Rule): The Cooling-Off Rule gives buyers 3 days to cancel certain sales of $25 or more made at their home or at temporary locations. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
-      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)"
+      "FTC (Cooling-Off Rule): The Cooling-Off Rule lets buyers cancel covered sales of $25 or more at their home, or $130 or more at temporary locations, until midnight of the third business day (Saturday counts; Sundays and federal holidays do not); some sales are excluded. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
+      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)",
+      "CFPB (Regulation Z, 12 CFR 1026.13): A billing-error notice is timely when the creditor receives it in writing at its billing-inquiries address within 60 days after transmitting the statement that first shows the error. (https://www.consumerfinance.gov/rules-policy/regulations/1026/13/)",
+      "CFPB (Regulation F, 12 CFR 1006.34): The 30-day validation period starts when the consumer receives the validation information; a written dispute within it pauses collection until verification is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1006/34/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 2027
     },
     {
@@ -518,13 +579,15 @@
      },
      "practical_how_to": false,
      "sources": [
-      "CFPB (Regulation E: lost or stolen debit cards): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days of learning of the loss, up to $500 if reported later, and can be unlimited if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/ask-cfpb/how-do-i-get-my-money-back-after-a-debit-card-theft-en-1017/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)",
+      "CFPB (Regulation E, 12 CFR 1005.6): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days after learning of the loss or theft, up to $500 if reported later, and can be unlimited for later transfers if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1005/6/)",
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)",
       "CFPB (Submit a complaint): Consumers can submit complaints about financial products; the CFPB forwards them to companies for a response. (https://www.consumerfinance.gov/complaint/)",
-      "FTC (Cooling-Off Rule): The Cooling-Off Rule gives buyers 3 days to cancel certain sales of $25 or more made at their home or at temporary locations. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
-      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)"
+      "FTC (Cooling-Off Rule): The Cooling-Off Rule lets buyers cancel covered sales of $25 or more at their home, or $130 or more at temporary locations, until midnight of the third business day (Saturday counts; Sundays and federal holidays do not); some sales are excluded. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
+      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)",
+      "CFPB (Regulation Z, 12 CFR 1026.13): A billing-error notice is timely when the creditor receives it in writing at its billing-inquiries address within 60 days after transmitting the statement that first shows the error. (https://www.consumerfinance.gov/rules-policy/regulations/1026/13/)",
+      "CFPB (Regulation F, 12 CFR 1006.34): The 30-day validation period starts when the consumer receives the validation information; a written dispute within it pauses collection until verification is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1006/34/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 2028
     },
     {
@@ -572,13 +635,15 @@
      },
      "practical_how_to": false,
      "sources": [
-      "CFPB (Regulation E: lost or stolen debit cards): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days of learning of the loss, up to $500 if reported later, and can be unlimited if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/ask-cfpb/how-do-i-get-my-money-back-after-a-debit-card-theft-en-1017/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)",
+      "CFPB (Regulation E, 12 CFR 1005.6): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days after learning of the loss or theft, up to $500 if reported later, and can be unlimited for later transfers if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1005/6/)",
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)",
       "CFPB (Submit a complaint): Consumers can submit complaints about financial products; the CFPB forwards them to companies for a response. (https://www.consumerfinance.gov/complaint/)",
-      "FTC (Cooling-Off Rule): The Cooling-Off Rule gives buyers 3 days to cancel certain sales of $25 or more made at their home or at temporary locations. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
-      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)"
+      "FTC (Cooling-Off Rule): The Cooling-Off Rule lets buyers cancel covered sales of $25 or more at their home, or $130 or more at temporary locations, until midnight of the third business day (Saturday counts; Sundays and federal holidays do not); some sales are excluded. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
+      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)",
+      "CFPB (Regulation Z, 12 CFR 1026.13): A billing-error notice is timely when the creditor receives it in writing at its billing-inquiries address within 60 days after transmitting the statement that first shows the error. (https://www.consumerfinance.gov/rules-policy/regulations/1026/13/)",
+      "CFPB (Regulation F, 12 CFR 1006.34): The 30-day validation period starts when the consumer receives the validation information; a written dispute within it pauses collection until verification is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1006/34/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 2029
     },
     {
@@ -626,13 +691,15 @@
      },
      "practical_how_to": false,
      "sources": [
-      "CFPB (Regulation E: lost or stolen debit cards): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days of learning of the loss, up to $500 if reported later, and can be unlimited if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/ask-cfpb/how-do-i-get-my-money-back-after-a-debit-card-theft-en-1017/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)",
+      "CFPB (Regulation E, 12 CFR 1005.6): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days after learning of the loss or theft, up to $500 if reported later, and can be unlimited for later transfers if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1005/6/)",
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)",
       "CFPB (Submit a complaint): Consumers can submit complaints about financial products; the CFPB forwards them to companies for a response. (https://www.consumerfinance.gov/complaint/)",
-      "FTC (Cooling-Off Rule): The Cooling-Off Rule gives buyers 3 days to cancel certain sales of $25 or more made at their home or at temporary locations. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
-      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)"
+      "FTC (Cooling-Off Rule): The Cooling-Off Rule lets buyers cancel covered sales of $25 or more at their home, or $130 or more at temporary locations, until midnight of the third business day (Saturday counts; Sundays and federal holidays do not); some sales are excluded. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
+      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)",
+      "CFPB (Regulation Z, 12 CFR 1026.13): A billing-error notice is timely when the creditor receives it in writing at its billing-inquiries address within 60 days after transmitting the statement that first shows the error. (https://www.consumerfinance.gov/rules-policy/regulations/1026/13/)",
+      "CFPB (Regulation F, 12 CFR 1006.34): The 30-day validation period starts when the consumer receives the validation information; a written dispute within it pauses collection until verification is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1006/34/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 2030
     }
    ]
@@ -644,6 +711,7 @@
    "skill": "Solve real-world problems with rational numbers",
    "standard": "FL.PROTECT.100",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "Liability questions compare a loss with a legal limit.",
    "ref": {
@@ -665,6 +733,7 @@
    "skill": "Using your rights",
    "standard": "FL.PROTECT.100",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 1",
    "difficulty": "deeper",
    "questions": [
@@ -678,7 +747,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Consumer Protection, Fraud, and Digital Security",
-     "prompt": "Rosa's credit card statement dated April 30 shows a $120 charge for an item never delivered. She mails a written dispute on June 15. Is it on time under the Fair Credit Billing Act?",
+     "prompt": "Rosa's credit card statement sent April 30 shows a $120 charge for an item never delivered. The issuer receives her written dispute at its billing-inquiries address on June 15. Is it on time under the Fair Credit Billing Act?",
      "choices": [
       {
        "letter": "A",
@@ -690,7 +759,7 @@
       },
       {
        "letter": "C",
-       "text": "Yes; it is within 60 days of the statement"
+       "text": "Yes; it arrived within 60 days of the statement"
       },
       {
        "letter": "D",
@@ -698,11 +767,11 @@
       }
      ],
      "correct_letter": "C",
-     "correct_answer": "Yes; it is within 60 days of the statement",
+     "correct_answer": "Yes; it arrived within 60 days of the statement",
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "The Fair Credit Billing Act lets you dispute billing errors, including goods not delivered, in writing within 60 days after the statement with the error was sent.",
+     "intro": "The Fair Credit Billing Act lets you dispute billing errors, including goods not delivered. The issuer must receive your written notice at the address it lists for billing inquiries within 60 days after it sent the statement with the error.",
      "feedback": "April 30 to June 15 is 46 days, inside the 60-day window.",
      "question_type": "instruction",
      "topic": "Consumer rights and where to get help",
@@ -714,11 +783,13 @@
      },
      "practical_how_to": true,
      "sources": [
-      "CFPB (Regulation E: lost or stolen debit cards): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days of learning of the loss, up to $500 if reported later, and can be unlimited if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/ask-cfpb/how-do-i-get-my-money-back-after-a-debit-card-theft-en-1017/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)",
+      "CFPB (Regulation E, 12 CFR 1005.6): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days after learning of the loss or theft, up to $500 if reported later, and can be unlimited for later transfers if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1005/6/)",
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)",
       "CFPB (Submit a complaint): Consumers can submit complaints about financial products; the CFPB forwards them to companies for a response. (https://www.consumerfinance.gov/complaint/)",
-      "FTC (Cooling-Off Rule): The Cooling-Off Rule gives buyers 3 days to cancel certain sales of $25 or more made at their home or at temporary locations. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
-      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)"
+      "FTC (Cooling-Off Rule): The Cooling-Off Rule lets buyers cancel covered sales of $25 or more at their home, or $130 or more at temporary locations, until midnight of the third business day (Saturday counts; Sundays and federal holidays do not); some sales are excluded. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
+      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)",
+      "CFPB (Regulation Z, 12 CFR 1026.13): A billing-error notice is timely when the creditor receives it in writing at its billing-inquiries address within 60 days after transmitting the statement that first shows the error. (https://www.consumerfinance.gov/rules-policy/regulations/1026/13/)",
+      "CFPB (Regulation F, 12 CFR 1006.34): The 30-day validation period starts when the consumer receives the validation information; a written dispute within it pauses collection until verification is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1006/34/)"
      ],
      "effective_date": "FCBA as of 2026",
      "page": 2031
@@ -733,7 +804,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Consumer Protection, Fraud, and Digital Security",
-     "prompt": "Within how many days of first contact can Rosa dispute a debt in writing and make the collector verify it?",
+     "prompt": "Rosa receives a collector's validation notice about a debt. Within how many days after receiving it can she dispute the debt in writing and make the collector verify it before continuing?",
      "choices": [
       {
        "letter": "A",
@@ -757,8 +828,8 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "Collectors must send a validation notice. If you dispute in writing within 30 days, they must stop collecting until they verify the debt.",
-     "feedback": "Dispute within 30 days to require verification.",
+     "intro": "A debt collector must give you validation information about the debt. If you dispute in writing within the 30-day validation period after receiving it, the collector must pause collection until it verifies the debt. You can still dispute later, but this pause right applies only within that window.",
+     "feedback": "Dispute in writing within about 30 days after receiving the validation information.",
      "question_type": "instruction",
      "topic": "Consumer rights and where to get help",
      "subtopic": "Debt validation",
@@ -769,13 +840,15 @@
      },
      "practical_how_to": false,
      "sources": [
-      "CFPB (Regulation E: lost or stolen debit cards): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days of learning of the loss, up to $500 if reported later, and can be unlimited if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/ask-cfpb/how-do-i-get-my-money-back-after-a-debit-card-theft-en-1017/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)",
+      "CFPB (Regulation E, 12 CFR 1005.6): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days after learning of the loss or theft, up to $500 if reported later, and can be unlimited for later transfers if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1005/6/)",
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)",
       "CFPB (Submit a complaint): Consumers can submit complaints about financial products; the CFPB forwards them to companies for a response. (https://www.consumerfinance.gov/complaint/)",
-      "FTC (Cooling-Off Rule): The Cooling-Off Rule gives buyers 3 days to cancel certain sales of $25 or more made at their home or at temporary locations. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
-      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)"
+      "FTC (Cooling-Off Rule): The Cooling-Off Rule lets buyers cancel covered sales of $25 or more at their home, or $130 or more at temporary locations, until midnight of the third business day (Saturday counts; Sundays and federal holidays do not); some sales are excluded. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
+      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)",
+      "CFPB (Regulation Z, 12 CFR 1026.13): A billing-error notice is timely when the creditor receives it in writing at its billing-inquiries address within 60 days after transmitting the statement that first shows the error. (https://www.consumerfinance.gov/rules-policy/regulations/1026/13/)",
+      "CFPB (Regulation F, 12 CFR 1006.34): The 30-day validation period starts when the consumer receives the validation information; a written dispute within it pauses collection until verification is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1006/34/)"
      ],
-     "effective_date": "FDCPA as of 2026",
+     "effective_date": "Regulation F as of 2026",
      "page": 2032
     },
     {
@@ -823,13 +896,15 @@
      },
      "practical_how_to": true,
      "sources": [
-      "CFPB (Regulation E: lost or stolen debit cards): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days of learning of the loss, up to $500 if reported later, and can be unlimited if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/ask-cfpb/how-do-i-get-my-money-back-after-a-debit-card-theft-en-1017/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)",
+      "CFPB (Regulation E, 12 CFR 1005.6): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days after learning of the loss or theft, up to $500 if reported later, and can be unlimited for later transfers if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1005/6/)",
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)",
       "CFPB (Submit a complaint): Consumers can submit complaints about financial products; the CFPB forwards them to companies for a response. (https://www.consumerfinance.gov/complaint/)",
-      "FTC (Cooling-Off Rule): The Cooling-Off Rule gives buyers 3 days to cancel certain sales of $25 or more made at their home or at temporary locations. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
-      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)"
+      "FTC (Cooling-Off Rule): The Cooling-Off Rule lets buyers cancel covered sales of $25 or more at their home, or $130 or more at temporary locations, until midnight of the third business day (Saturday counts; Sundays and federal holidays do not); some sales are excluded. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
+      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)",
+      "CFPB (Regulation Z, 12 CFR 1026.13): A billing-error notice is timely when the creditor receives it in writing at its billing-inquiries address within 60 days after transmitting the statement that first shows the error. (https://www.consumerfinance.gov/rules-policy/regulations/1026/13/)",
+      "CFPB (Regulation F, 12 CFR 1006.34): The 30-day validation period starts when the consumer receives the validation information; a written dispute within it pauses collection until verification is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1006/34/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 2033
     },
     {
@@ -877,13 +952,15 @@
      },
      "practical_how_to": false,
      "sources": [
-      "CFPB (Regulation E: lost or stolen debit cards): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days of learning of the loss, up to $500 if reported later, and can be unlimited if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/ask-cfpb/how-do-i-get-my-money-back-after-a-debit-card-theft-en-1017/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)",
+      "CFPB (Regulation E, 12 CFR 1005.6): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days after learning of the loss or theft, up to $500 if reported later, and can be unlimited for later transfers if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1005/6/)",
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)",
       "CFPB (Submit a complaint): Consumers can submit complaints about financial products; the CFPB forwards them to companies for a response. (https://www.consumerfinance.gov/complaint/)",
-      "FTC (Cooling-Off Rule): The Cooling-Off Rule gives buyers 3 days to cancel certain sales of $25 or more made at their home or at temporary locations. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
-      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)"
+      "FTC (Cooling-Off Rule): The Cooling-Off Rule lets buyers cancel covered sales of $25 or more at their home, or $130 or more at temporary locations, until midnight of the third business day (Saturday counts; Sundays and federal holidays do not); some sales are excluded. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
+      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)",
+      "CFPB (Regulation Z, 12 CFR 1026.13): A billing-error notice is timely when the creditor receives it in writing at its billing-inquiries address within 60 days after transmitting the statement that first shows the error. (https://www.consumerfinance.gov/rules-policy/regulations/1026/13/)",
+      "CFPB (Regulation F, 12 CFR 1006.34): The 30-day validation period starts when the consumer receives the validation information; a written dispute within it pauses collection until verification is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1006/34/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 2034
     },
     {
@@ -931,13 +1008,15 @@
      },
      "practical_how_to": true,
      "sources": [
-      "CFPB (Regulation E: lost or stolen debit cards): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days of learning of the loss, up to $500 if reported later, and can be unlimited if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/ask-cfpb/how-do-i-get-my-money-back-after-a-debit-card-theft-en-1017/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)",
+      "CFPB (Regulation E, 12 CFR 1005.6): Liability for unauthorized debit card use is limited to $50 if reported within 2 business days after learning of the loss or theft, up to $500 if reported later, and can be unlimited for later transfers if not reported within 60 days after the statement is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1005/6/)",
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)",
       "CFPB (Submit a complaint): Consumers can submit complaints about financial products; the CFPB forwards them to companies for a response. (https://www.consumerfinance.gov/complaint/)",
-      "FTC (Cooling-Off Rule): The Cooling-Off Rule gives buyers 3 days to cancel certain sales of $25 or more made at their home or at temporary locations. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
-      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)"
+      "FTC (Cooling-Off Rule): The Cooling-Off Rule lets buyers cancel covered sales of $25 or more at their home, or $130 or more at temporary locations, until midnight of the third business day (Saturday counts; Sundays and federal holidays do not); some sales are excluded. (https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help)",
+      "New Jersey Division of Consumer Affairs: New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act. (https://www.njconsumeraffairs.gov/)",
+      "CFPB (Regulation Z, 12 CFR 1026.13): A billing-error notice is timely when the creditor receives it in writing at its billing-inquiries address within 60 days after transmitting the statement that first shows the error. (https://www.consumerfinance.gov/rules-policy/regulations/1026/13/)",
+      "CFPB (Regulation F, 12 CFR 1006.34): The 30-day validation period starts when the consumer receives the validation information; a written dispute within it pauses collection until verification is sent. (https://www.consumerfinance.gov/rules-policy/regulations/1006/34/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 2035
     }
    ]

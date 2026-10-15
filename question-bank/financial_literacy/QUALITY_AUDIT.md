@@ -7,18 +7,19 @@ Automatic checks run on every build (`engine/fl_build.py`). A build with any fai
 - Four choices (A-D), exactly one correct; the three wrong choices are distinct from each other and from the correct one.
 - Every wrong choice has a written misconception (6390 notes in all).
 - No "all of the above", "none of the above", "both of these", and no text naming a letter (the game shuffles choices, and such wording would switch shuffling off).
-- Every question has feedback. Duplicate question stems are refused.
-- Every computed answer (871 questions) has an independent recomputation (`calc`). The build checks that the correct choice shows that value at the precision printed and that no wrong choice shows the same value (except labeled comparisons such as "Job A, by $17.50").
-- Every math link resolves to a real game skill; every set has at least one backward branch and one Go Deeper section; time-sensitive sets cite sources.
+- Every question has feedback. Exactly repeated question stems are refused. This is an exact-text check: it does not prove that two differently worded questions test different things.
+- Every computed answer (871 questions) has a recomputation (`calc`). The build checks that the correct choice shows that value at the precision printed and that no wrong choice shows the same value (except labeled comparisons such as "Job A, by $17.50"). This only proves the stored answer matches the stored formula. It does not prove the question states every given a student needs, or that the formula models the situation correctly; those were read by hand and by the independent reviewer.
+- Every math link exists in `engine/fl_math_catalog.json`. A catalog match is not proof that the game can serve it; the links were also checked in the installed game and in a real import and play-through (see `MATH_BRANCHES.md`, `MATH_REF_VALIDATION.json`, `RUNTIME_CHECK.json`).
+- Every set has at least one backward branch and one Go Deeper section; time-sensitive sets cite sources (claim-level status in `SOURCE_LEDGER.md`).
 
 ## Answer positions
 
 | Letter | Correct answers |
 |---|---|
-| A | 532 |
+| A | 530 |
 | B | 533 |
-| C | 533 |
-| D | 532 |
+| C | 534 |
+| D | 533 |
 
 Numeric choices are listed in increasing order, so their letter follows from the value. Other questions put the correct choice in the least-used letter so far, with ties broken by a hash of the ID.
 
@@ -60,9 +61,14 @@ By unit:
 - Intros never state the answer to a recall question. 15 intros contain the correct choice's wording; each was reviewed by hand and is a classification item, where the intro defines several terms and the student must match a scenario to one: S2-B1-Q1, S7-F1-Q1, S20-M-Q3, S25-F2-Q5, S27-F1-Q1, S41-M-Q1, S41-B1-Q5, S65-F1-Q1, S66-F1-Q2, S67-F1-Q4, S70-F1-Q1, S88-M-Q4, S93-F1-Q5, S97-M-Q1, S100-M-Q5.
 - Unreviewed echoes: S100-M-Q5.
 
-## Self-containment
+## Self-containment (shuffled questions)
 
-The game serves the five questions of a section in shuffled order (least recently seen first). So every question restates its own numbers, no question refers to "the same" account or "the plan above," and an idea taught only in a sibling question's intro is taught again where it is needed.
+The game serves the five questions of a section in shuffled order, so every question must stand alone. The v1.0.0 audit claimed this without a working check, and the reviewer found missing givens in the questions listed under R18, R29, and R31. What was done for v1.1:
+
+- Every question the reviewer listed was rewritten to restate its own numbers and conditions.
+- A broader hand read of 127 candidate stems (those with he/she/her/his, "the", or a number that could come from a sibling) during the v1.1 corrections.
+- An automatic scan on every build (`sibling_scan` in `engine/fl_build.py`) for stems that point at another question ("the same loan", "above", "as before") or use he/she/her/his with no named person. Result this build: 4 flagged, 4 reviewed as fine (the comparison is inside the question), 0 open.
+- Limits: the scan is a pattern search, not a reading test. It cannot catch a question that silently relies on an idea defined only in a sibling's intro. That still needs a human spot-check.
 
 ## Distractor review
 
@@ -142,9 +148,18 @@ Rules that change are stated as of a date or as a hypothetical amount (for examp
 | S109 | Charitable giving and civic responsibility | IRS (Tax Exempt Organization Search) (https://apps.irs.gov/app/eos/); IRS (Charitable contribution deductions) (https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions); New Jersey Division of Consumer Affairs (Charities Registration) (https://www.njconsumeraffairs.gov/charities/); FTC (How to donate wisely and avoid charity scams) (https://consumer.ftc.gov/features/how-donate-wisely-and-avoid-charity-scams); IRS (Working Families Tax Cuts) (https://www.irs.gov/newsroom/working-families-tax-cuts) |
 | S111 | Moving out: the first-apartment budget | New Jersey Department of Community Affairs (Truth in Renting) (https://www.nj.gov/dca/codes/publications/pdf_lti/t_i_r.pdf) |
 
+## Checks that actually ran for v1.1
+
+- Build validators above (every build).
+- Game importer `--check` on the package and a full import into a test database (`RUNTIME_CHECK.json`).
+- Math links re-checked against the installed game with its own code (`MATH_REF_VALIDATION.json`).
+- Package check (`engine/verify_package.py`) and cross-export check (`engine/fl_crosscheck.py`, result in `EXPORT_CROSSCHECK.json`): every question has the same ID, choices, key, and page in the package JSON, the answer-key JSON and CSV, the full question and answer PDFs, and the split part PDFs.
+- Sibling scan (above).
+
 ## What still needs a human reviewer
 
 - Confirm national outcome codes and New Jersey performance expectations against the official documents.
-- Confirm each source claim and effective date (the build environment could not open the official sites).
+- Confirm each source claim and effective date: 95 of 149 claim rows in `SOURCE_LEDGER.md` are still "unverified" (the build environment could not open the official sites).
+- Semantic duplicates: no automatic check finds two questions that test the same thing in different words.
 - Read the explanations for tone and reading level, and judge whether any distractor is still too easy.
 - Spot-check the knowledge checks for anything not yet taught at that point in the pathway.

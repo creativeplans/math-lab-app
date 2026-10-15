@@ -14,7 +14,7 @@
    "learning_target": "Calculate costs under health insurance plans and compare plans using premiums and cost sharing",
    "grade_band": "9-12",
    "outcome_codes": [],
-   "outcome_code_status": "to verify against the official document"
+   "outcome_code_status": "topic-level only; no 12th-grade outcome code assigned yet"
   },
   "new_jersey": {
    "document": "NJSLS-CLKS 2020, Standard 9.1 Personal Financial Literacy (grade 12)",
@@ -23,7 +23,8 @@
    ],
    "performance_expectation_status": "strand-level alignment; individual 9.1.12 performance expectations to verify"
   },
-  "alignment": "supporting"
+  "local_identifier": "FL.INS.87 is a course identifier, not an official national or New Jersey code",
+  "claim": "Alignment shows what the set teaches toward; it does not claim full mastery of any standard."
  },
  "content_status": "time_sensitive",
  "sources": [
@@ -31,22 +32,41 @@
    "org": "HealthCare.gov (Glossary)",
    "url": "https://www.healthcare.gov/glossary/",
    "claim": "Defines premium, deductible, copayment, coinsurance, and out-of-pocket maximum; after the out-of-pocket maximum, the plan pays 100% of covered in-network costs for the rest of the plan year.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "jurisdiction": "US federal",
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
   },
   {
    "org": "HealthCare.gov (Young adults)",
    "url": "https://www.healthcare.gov/young-adults/children-under-26/",
    "claim": "Young adults can generally stay on a parent's health plan until age 26.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "jurisdiction": "US federal",
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
   },
   {
    "org": "Get Covered New Jersey",
    "url": "https://nj.gov/getcoverednj/",
    "claim": "New Jersey runs its own health insurance marketplace for individual coverage and financial help.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "jurisdiction": "New Jersey",
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
+  },
+  {
+   "org": "IRS (Working Families Tax Cuts)",
+   "url": "https://www.irs.gov/newsroom/working-families-tax-cuts",
+   "claim": "Beginning in 2026, bronze and catastrophic marketplace plans are treated as HSA-compatible.",
+   "jurisdiction": "US federal",
+   "effective": "2026-01-01",
+   "qids": [
+    "S87-F1-Q4"
+   ],
+   "verification": "reviewer-checked topic",
+   "verification_detail": "new or replaced URL in v1.1; not fetched by the reviewer; reviewer consulted this primary source for the specific corrected topic (A1); author: search-corroborated on 2026-10-15: 2026 nonitemizer deduction $1,000 / $2,000 MFJ; bronze and catastrophic plans HSA-compatible from 2026",
+   "verified_on": null
   }
  ],
  "practical_skills": [
@@ -62,6 +82,7 @@
    "skill": "Calculate costs under a health plan and compare plans using premium, deductible, coinsurance, and out-of-pocket maximum",
    "standard": "FL.INS.87",
    "nearest_related": false,
+   "alignment_role": "direct",
    "questions": [
     {
      "id": "S87-M-Q1",
@@ -73,7 +94,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Managing Risk with Insurance",
-     "prompt": "Ana's plan has a $1,500 deductible and 20% coinsurance, with a $5,000 out-of-pocket maximum. She has a $10,000 covered hospital bill. How much does Ana pay?",
+     "prompt": "Ana's plan has a $1,500 deductible and 20% coinsurance after it, with a $5,000 out-of-pocket maximum. She has spent nothing yet this plan year. A hospital stay has an allowed in-network charge of $10,000 that follows these rules. How much does Ana pay?",
      "choices": [
       {
        "letter": "A",
@@ -97,7 +118,7 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "Health plans share costs. You pay the deductible first. After that, coinsurance means you pay a percent of each bill and the plan pays the rest, until you reach the out-of-pocket maximum. After that, the plan pays 100% of covered costs for the year.",
+     "intro": "Health plans share costs based on the allowed (negotiated) in-network amount. You pay the deductible first. After that, coinsurance means you pay a percent and the plan pays the rest, until you reach the out-of-pocket maximum; then the plan pays 100% of covered in-network costs for the rest of the plan year.",
      "feedback": "$1,500 + 20% × ($10,000 − $1,500) = $1,500 + $1,700 = $3,200, below the $5,000 maximum.",
      "question_type": "instruction",
      "topic": "Health insurance",
@@ -111,9 +132,10 @@
      "sources": [
       "HealthCare.gov (Glossary): Defines premium, deductible, copayment, coinsurance, and out-of-pocket maximum; after the out-of-pocket maximum, the plan pays 100% of covered in-network costs for the rest of the plan year. (https://www.healthcare.gov/glossary/)",
       "HealthCare.gov (Young adults): Young adults can generally stay on a parent's health plan until age 26. (https://www.healthcare.gov/young-adults/children-under-26/)",
-      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)"
+      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)",
+      "IRS (Working Families Tax Cuts): Beginning in 2026, bronze and catastrophic marketplace plans are treated as HSA-compatible. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1803
     },
     {
@@ -126,7 +148,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Managing Risk with Insurance",
-     "prompt": "Ana's plan: $1,500 deductible, 20% coinsurance, $5,000 out-of-pocket maximum. A $40,000 covered bill comes in. How much does Ana pay?",
+     "prompt": "Ana's plan: $1,500 deductible, 20% coinsurance, $5,000 out-of-pocket maximum. In a separate example, with no earlier spending this plan year, a covered in-network stay has an allowed charge of $40,000. How much does Ana pay?",
      "choices": [
       {
        "letter": "A",
@@ -164,9 +186,10 @@
      "sources": [
       "HealthCare.gov (Glossary): Defines premium, deductible, copayment, coinsurance, and out-of-pocket maximum; after the out-of-pocket maximum, the plan pays 100% of covered in-network costs for the rest of the plan year. (https://www.healthcare.gov/glossary/)",
       "HealthCare.gov (Young adults): Young adults can generally stay on a parent's health plan until age 26. (https://www.healthcare.gov/young-adults/children-under-26/)",
-      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)"
+      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)",
+      "IRS (Working Families Tax Cuts): Beginning in 2026, bronze and catastrophic marketplace plans are treated as HSA-compatible. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1804
     },
     {
@@ -217,9 +240,10 @@
      "sources": [
       "HealthCare.gov (Glossary): Defines premium, deductible, copayment, coinsurance, and out-of-pocket maximum; after the out-of-pocket maximum, the plan pays 100% of covered in-network costs for the rest of the plan year. (https://www.healthcare.gov/glossary/)",
       "HealthCare.gov (Young adults): Young adults can generally stay on a parent's health plan until age 26. (https://www.healthcare.gov/young-adults/children-under-26/)",
-      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)"
+      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)",
+      "IRS (Working Families Tax Cuts): Beginning in 2026, bronze and catastrophic marketplace plans are treated as HSA-compatible. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1805
     },
     {
@@ -270,7 +294,8 @@
      "sources": [
       "HealthCare.gov (Glossary): Defines premium, deductible, copayment, coinsurance, and out-of-pocket maximum; after the out-of-pocket maximum, the plan pays 100% of covered in-network costs for the rest of the plan year. (https://www.healthcare.gov/glossary/)",
       "HealthCare.gov (Young adults): Young adults can generally stay on a parent's health plan until age 26. (https://www.healthcare.gov/young-adults/children-under-26/)",
-      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)"
+      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)",
+      "IRS (Working Families Tax Cuts): Beginning in 2026, bronze and catastrophic marketplace plans are treated as HSA-compatible. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
      "effective_date": "ACA rule as of 2026",
      "page": 1806
@@ -319,13 +344,14 @@
       "C": "Deductibles still apply",
       "D": "Applies to medical plans too"
      },
-     "practical_how_to": true,
+     "practical_how_to": false,
      "sources": [
       "HealthCare.gov (Glossary): Defines premium, deductible, copayment, coinsurance, and out-of-pocket maximum; after the out-of-pocket maximum, the plan pays 100% of covered in-network costs for the rest of the plan year. (https://www.healthcare.gov/glossary/)",
       "HealthCare.gov (Young adults): Young adults can generally stay on a parent's health plan until age 26. (https://www.healthcare.gov/young-adults/children-under-26/)",
-      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)"
+      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)",
+      "IRS (Working Families Tax Cuts): Beginning in 2026, bronze and catastrophic marketplace plans are treated as HSA-compatible. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1807
     }
    ]
@@ -337,6 +363,7 @@
    "skill": "Health plan vocabulary",
    "standard": "FL.INS.87",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "concept",
    "relationship": "Plan costs depend on knowing which term means what.",
    "questions": [
@@ -387,9 +414,10 @@
      "sources": [
       "HealthCare.gov (Glossary): Defines premium, deductible, copayment, coinsurance, and out-of-pocket maximum; after the out-of-pocket maximum, the plan pays 100% of covered in-network costs for the rest of the plan year. (https://www.healthcare.gov/glossary/)",
       "HealthCare.gov (Young adults): Young adults can generally stay on a parent's health plan until age 26. (https://www.healthcare.gov/young-adults/children-under-26/)",
-      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)"
+      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)",
+      "IRS (Working Families Tax Cuts): Beginning in 2026, bronze and catastrophic marketplace plans are treated as HSA-compatible. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1808
     },
     {
@@ -439,9 +467,10 @@
      "sources": [
       "HealthCare.gov (Glossary): Defines premium, deductible, copayment, coinsurance, and out-of-pocket maximum; after the out-of-pocket maximum, the plan pays 100% of covered in-network costs for the rest of the plan year. (https://www.healthcare.gov/glossary/)",
       "HealthCare.gov (Young adults): Young adults can generally stay on a parent's health plan until age 26. (https://www.healthcare.gov/young-adults/children-under-26/)",
-      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)"
+      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)",
+      "IRS (Working Families Tax Cuts): Beginning in 2026, bronze and catastrophic marketplace plans are treated as HSA-compatible. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1809
     },
     {
@@ -491,9 +520,10 @@
      "sources": [
       "HealthCare.gov (Glossary): Defines premium, deductible, copayment, coinsurance, and out-of-pocket maximum; after the out-of-pocket maximum, the plan pays 100% of covered in-network costs for the rest of the plan year. (https://www.healthcare.gov/glossary/)",
       "HealthCare.gov (Young adults): Young adults can generally stay on a parent's health plan until age 26. (https://www.healthcare.gov/young-adults/children-under-26/)",
-      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)"
+      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)",
+      "IRS (Working Families Tax Cuts): Beginning in 2026, bronze and catastrophic marketplace plans are treated as HSA-compatible. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1810
     },
     {
@@ -544,9 +574,10 @@
      "sources": [
       "HealthCare.gov (Glossary): Defines premium, deductible, copayment, coinsurance, and out-of-pocket maximum; after the out-of-pocket maximum, the plan pays 100% of covered in-network costs for the rest of the plan year. (https://www.healthcare.gov/glossary/)",
       "HealthCare.gov (Young adults): Young adults can generally stay on a parent's health plan until age 26. (https://www.healthcare.gov/young-adults/children-under-26/)",
-      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)"
+      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)",
+      "IRS (Working Families Tax Cuts): Beginning in 2026, bronze and catastrophic marketplace plans are treated as HSA-compatible. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1811
     },
     {
@@ -596,9 +627,10 @@
      "sources": [
       "HealthCare.gov (Glossary): Defines premium, deductible, copayment, coinsurance, and out-of-pocket maximum; after the out-of-pocket maximum, the plan pays 100% of covered in-network costs for the rest of the plan year. (https://www.healthcare.gov/glossary/)",
       "HealthCare.gov (Young adults): Young adults can generally stay on a parent's health plan until age 26. (https://www.healthcare.gov/young-adults/children-under-26/)",
-      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)"
+      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)",
+      "IRS (Working Families Tax Cuts): Beginning in 2026, bronze and catastrophic marketplace plans are treated as HSA-compatible. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1812
     }
    ]
@@ -610,6 +642,7 @@
    "skill": "Find a percent of a quantity",
    "standard": "FL.INS.87",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "Coinsurance is a percent of the bill.",
    "ref": {
@@ -631,6 +664,7 @@
    "skill": "Solve multistep problems with rational numbers",
    "standard": "FL.INS.87",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "Out-of-pocket costs combine a deductible, a percent, and a cap.",
    "ref": {
@@ -652,6 +686,7 @@
    "skill": "Comparing health plans",
    "standard": "FL.INS.87",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 1",
    "difficulty": "deeper",
    "questions": [
@@ -703,9 +738,10 @@
      "sources": [
       "HealthCare.gov (Glossary): Defines premium, deductible, copayment, coinsurance, and out-of-pocket maximum; after the out-of-pocket maximum, the plan pays 100% of covered in-network costs for the rest of the plan year. (https://www.healthcare.gov/glossary/)",
       "HealthCare.gov (Young adults): Young adults can generally stay on a parent's health plan until age 26. (https://www.healthcare.gov/young-adults/children-under-26/)",
-      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)"
+      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)",
+      "IRS (Working Families Tax Cuts): Beginning in 2026, bronze and catastrophic marketplace plans are treated as HSA-compatible. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1813
     },
     {
@@ -718,7 +754,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Managing Risk with Insurance",
-     "prompt": "Plan A: $1,200 a year in premiums, $3,000 deductible. Plan B: $3,000 a year in premiums, $500 deductible, then 10% coinsurance. With $2,000 of bills, which costs less in total?",
+     "prompt": "Plan A: $1,200 a year in premiums, $3,000 deductible, then 20% coinsurance. Plan B: $3,000 a year in premiums, $500 deductible, then 10% coinsurance. Ana expects $2,000 of allowed in-network charges for the year, all subject to these rules (below both out-of-pocket maximums). Which costs less in total?",
      "choices": [
       {
        "letter": "A",
@@ -742,8 +778,9 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "feedback": "A: $1,200 + $2,000 = $3,200. B: $3,000 + $500 + 10% × $1,500 = $3,650. A is $450 less.",
-     "question_type": "knowledge_check",
+     "intro": "Compare plans by total yearly cost: premiums + what you pay toward allowed charges.",
+     "feedback": "A: $1,200 + $2,000 (all within the deductible) = $3,200. B: $3,000 + $500 + 10% × $1,500 = $3,650. A is $450 less.",
+     "question_type": "instruction",
      "topic": "Health insurance",
      "subtopic": "Low-use year",
      "misconceptions": {
@@ -755,9 +792,10 @@
      "sources": [
       "HealthCare.gov (Glossary): Defines premium, deductible, copayment, coinsurance, and out-of-pocket maximum; after the out-of-pocket maximum, the plan pays 100% of covered in-network costs for the rest of the plan year. (https://www.healthcare.gov/glossary/)",
       "HealthCare.gov (Young adults): Young adults can generally stay on a parent's health plan until age 26. (https://www.healthcare.gov/young-adults/children-under-26/)",
-      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)"
+      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)",
+      "IRS (Working Families Tax Cuts): Beginning in 2026, bronze and catastrophic marketplace plans are treated as HSA-compatible. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1814
     },
     {
@@ -770,7 +808,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Managing Risk with Insurance",
-     "prompt": "Plan A: $1,200 premiums, $3,000 deductible, then 20%. Plan B: $3,000 premiums, $500 deductible, then 10%. With $10,000 of bills (below both maximums), which costs less?",
+     "prompt": "Plan A: $1,200 premiums, $3,000 deductible, then 20%. Plan B: $3,000 premiums, $500 deductible, then 10%. Ana expects $10,000 of allowed in-network charges for the year, all subject to these rules and below both out-of-pocket maximums. Which costs less?",
      "choices": [
       {
        "letter": "A",
@@ -794,8 +832,9 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "feedback": "A: $1,200 + $3,000 + $1,400 = $5,600. B: $3,000 + $500 + $950 = $4,450. B is $1,150 less.",
-     "question_type": "knowledge_check",
+     "intro": "Compare plans by total yearly cost: premiums + what you pay toward allowed charges.",
+     "feedback": "A: $1,200 + $3,000 + 20% × $7,000 = $5,600. B: $3,000 + $500 + 10% × $9,500 = $4,450. B is $1,150 less.",
+     "question_type": "instruction",
      "topic": "Health insurance",
      "subtopic": "High-use year",
      "misconceptions": {
@@ -807,9 +846,10 @@
      "sources": [
       "HealthCare.gov (Glossary): Defines premium, deductible, copayment, coinsurance, and out-of-pocket maximum; after the out-of-pocket maximum, the plan pays 100% of covered in-network costs for the rest of the plan year. (https://www.healthcare.gov/glossary/)",
       "HealthCare.gov (Young adults): Young adults can generally stay on a parent's health plan until age 26. (https://www.healthcare.gov/young-adults/children-under-26/)",
-      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)"
+      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)",
+      "IRS (Working Families Tax Cuts): Beginning in 2026, bronze and catastrophic marketplace plans are treated as HSA-compatible. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1815
     },
     {
@@ -822,11 +862,11 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Managing Risk with Insurance",
-     "prompt": "Ana's health plan has a $500 deductible, below the minimum for a qualifying high-deductible plan. Can she open a new health savings account (HSA)?",
+     "prompt": "In 2026 Ana's health plan has a $500 deductible. It is not an HSA-compatible plan: it is not a qualifying high-deductible plan, a bronze plan, or a catastrophic plan. May she contribute to a health savings account (HSA) for that time?",
      "choices": [
       {
        "letter": "A",
-       "text": "Yes; any health plan qualifies"
+       "text": "Yes; anyone with any health plan may contribute"
       },
       {
        "letter": "B",
@@ -838,31 +878,32 @@
       },
       {
        "letter": "D",
-       "text": "No; her plan does not qualify"
+       "text": "No; her plan is not HSA-compatible"
       }
      ],
      "correct_letter": "D",
-     "correct_answer": "No; her plan does not qualify",
+     "correct_answer": "No; her plan is not HSA-compatible",
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "An HSA lets people covered by a qualifying high-deductible health plan save pre-tax money for medical costs. Unused money carries over year to year.",
-     "feedback": "HSAs require a qualifying high-deductible health plan; a $500 deductible is too low.",
+     "intro": "You can contribute to a health savings account (HSA) only while covered by an HSA-compatible plan. Traditionally that meant a qualifying high-deductible health plan; starting in 2026, bronze and catastrophic plans also count. Money in an HSA is pre-tax and carries over year to year.",
+     "feedback": "Her plan is none of the HSA-compatible types, so she cannot contribute for that time.",
      "question_type": "instruction",
      "topic": "Health insurance",
      "subtopic": "HSA",
      "misconceptions": {
-      "A": "HSAs need a qualifying plan",
-      "B": "Invents an age rule",
+      "A": "HSAs need an HSA-compatible plan",
+      "B": "Invents an age rule; Medicare enrollment actually ends contributions",
       "C": "Confuses plan types"
      },
      "practical_how_to": false,
      "sources": [
       "HealthCare.gov (Glossary): Defines premium, deductible, copayment, coinsurance, and out-of-pocket maximum; after the out-of-pocket maximum, the plan pays 100% of covered in-network costs for the rest of the plan year. (https://www.healthcare.gov/glossary/)",
       "HealthCare.gov (Young adults): Young adults can generally stay on a parent's health plan until age 26. (https://www.healthcare.gov/young-adults/children-under-26/)",
-      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)"
+      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)",
+      "IRS (Working Families Tax Cuts): Beginning in 2026, bronze and catastrophic marketplace plans are treated as HSA-compatible. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "IRS HSA rules as of 2026",
+     "effective_date": "HSA rules for 2026",
      "page": 1816
     },
     {
@@ -913,7 +954,8 @@
      "sources": [
       "HealthCare.gov (Glossary): Defines premium, deductible, copayment, coinsurance, and out-of-pocket maximum; after the out-of-pocket maximum, the plan pays 100% of covered in-network costs for the rest of the plan year. (https://www.healthcare.gov/glossary/)",
       "HealthCare.gov (Young adults): Young adults can generally stay on a parent's health plan until age 26. (https://www.healthcare.gov/young-adults/children-under-26/)",
-      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)"
+      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)",
+      "IRS (Working Families Tax Cuts): Beginning in 2026, bronze and catastrophic marketplace plans are treated as HSA-compatible. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
      "effective_date": "As of 2026",
      "page": 1817
@@ -927,6 +969,7 @@
    "skill": "Using health insurance well",
    "standard": "FL.INS.87",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 2",
    "difficulty": "deeper",
    "questions": [
@@ -940,7 +983,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Managing Risk with Insurance",
-     "prompt": "An Explanation of Benefits (EOB) says: billed $400; plan discount $150; plan paid $200; you may owe $50. What should Ana pay?",
+     "prompt": "An Explanation of Benefits (EOB) says: billed $400; plan discount $150; plan paid $200; patient responsibility $50. What amount does it show Ana is expected to owe the provider?",
      "choices": [
       {
        "letter": "A",
@@ -964,13 +1007,13 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "An EOB is not a bill; it explains what the plan paid. Compare it with the provider's bill before paying.",
-     "feedback": "$400 − $150 − $200 = $50.",
+     "intro": "An EOB is not a bill; it explains what the plan paid and what you may owe. Pay the provider's actual bill after checking that it matches the EOB.",
+     "feedback": "$400 − $150 − $200 = $50; pay when the provider's bill arrives and matches.",
      "question_type": "instruction",
      "topic": "Health insurance",
      "subtopic": "Reading an EOB",
      "misconceptions": {
-      "D": "Pays the billed amount",
+      "D": "Uses the billed amount",
       "C": "Subtracts only the discount",
       "B": "Gives the plan's payment"
      },
@@ -978,9 +1021,10 @@
      "sources": [
       "HealthCare.gov (Glossary): Defines premium, deductible, copayment, coinsurance, and out-of-pocket maximum; after the out-of-pocket maximum, the plan pays 100% of covered in-network costs for the rest of the plan year. (https://www.healthcare.gov/glossary/)",
       "HealthCare.gov (Young adults): Young adults can generally stay on a parent's health plan until age 26. (https://www.healthcare.gov/young-adults/children-under-26/)",
-      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)"
+      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)",
+      "IRS (Working Families Tax Cuts): Beginning in 2026, bronze and catastrophic marketplace plans are treated as HSA-compatible. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1818
     },
     {
@@ -1030,9 +1074,10 @@
      "sources": [
       "HealthCare.gov (Glossary): Defines premium, deductible, copayment, coinsurance, and out-of-pocket maximum; after the out-of-pocket maximum, the plan pays 100% of covered in-network costs for the rest of the plan year. (https://www.healthcare.gov/glossary/)",
       "HealthCare.gov (Young adults): Young adults can generally stay on a parent's health plan until age 26. (https://www.healthcare.gov/young-adults/children-under-26/)",
-      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)"
+      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)",
+      "IRS (Working Families Tax Cuts): Beginning in 2026, bronze and catastrophic marketplace plans are treated as HSA-compatible. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1819
     },
     {
@@ -1082,9 +1127,10 @@
      "sources": [
       "HealthCare.gov (Glossary): Defines premium, deductible, copayment, coinsurance, and out-of-pocket maximum; after the out-of-pocket maximum, the plan pays 100% of covered in-network costs for the rest of the plan year. (https://www.healthcare.gov/glossary/)",
       "HealthCare.gov (Young adults): Young adults can generally stay on a parent's health plan until age 26. (https://www.healthcare.gov/young-adults/children-under-26/)",
-      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)"
+      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)",
+      "IRS (Working Families Tax Cuts): Beginning in 2026, bronze and catastrophic marketplace plans are treated as HSA-compatible. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1820
     },
     {
@@ -1135,7 +1181,8 @@
      "sources": [
       "HealthCare.gov (Glossary): Defines premium, deductible, copayment, coinsurance, and out-of-pocket maximum; after the out-of-pocket maximum, the plan pays 100% of covered in-network costs for the rest of the plan year. (https://www.healthcare.gov/glossary/)",
       "HealthCare.gov (Young adults): Young adults can generally stay on a parent's health plan until age 26. (https://www.healthcare.gov/young-adults/children-under-26/)",
-      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)"
+      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)",
+      "IRS (Working Families Tax Cuts): Beginning in 2026, bronze and catastrophic marketplace plans are treated as HSA-compatible. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
      "effective_date": "ACA rule as of 2026",
      "page": 1821
@@ -1187,9 +1234,10 @@
      "sources": [
       "HealthCare.gov (Glossary): Defines premium, deductible, copayment, coinsurance, and out-of-pocket maximum; after the out-of-pocket maximum, the plan pays 100% of covered in-network costs for the rest of the plan year. (https://www.healthcare.gov/glossary/)",
       "HealthCare.gov (Young adults): Young adults can generally stay on a parent's health plan until age 26. (https://www.healthcare.gov/young-adults/children-under-26/)",
-      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)"
+      "Get Covered New Jersey: New Jersey runs its own health insurance marketplace for individual coverage and financial help. (https://nj.gov/getcoverednj/)",
+      "IRS (Working Families Tax Cuts): Beginning in 2026, bronze and catastrophic marketplace plans are treated as HSA-compatible. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1822
     }
    ]

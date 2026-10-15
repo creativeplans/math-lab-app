@@ -14,7 +14,7 @@
    "learning_target": "Identify ways to prevent identity theft and the steps to recover from it",
    "grade_band": "9-12",
    "outcome_codes": [],
-   "outcome_code_status": "to verify against the official document"
+   "outcome_code_status": "topic-level only; no 12th-grade outcome code assigned yet"
   },
   "new_jersey": {
    "document": "NJSLS-CLKS 2020, Standard 9.1 Personal Financial Literacy (grade 12)",
@@ -24,7 +24,8 @@
    ],
    "performance_expectation_status": "strand-level alignment; individual 9.1.12 performance expectations to verify"
   },
-  "alignment": "supporting"
+  "local_identifier": "FL.PROTECT.98 is a course identifier, not an official national or New Jersey code",
+  "claim": "Alignment shows what the set teaches toward; it does not claim full mastery of any standard."
  },
  "content_status": "time_sensitive",
  "sources": [
@@ -32,15 +33,19 @@
    "org": "FTC (IdentityTheft.gov)",
    "url": "https://www.identitytheft.gov/",
    "claim": "IdentityTheft.gov creates a personal recovery plan and an FTC Identity Theft Report.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "jurisdiction": "US federal",
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
   },
   {
-   "org": "CFPB (Credit card fraud liability)",
-   "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/",
-   "claim": "Under federal law, liability for unauthorized credit card charges is at most $50.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "org": "CFPB (Lost or stolen credit cards)",
+   "url": "https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/",
+   "claim": "Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)).",
+   "jurisdiction": "US federal",
+   "verification": "search-corroborated",
+   "verification_detail": "new or replaced URL in v1.1; not fetched by the reviewer; author: search-corroborated on 2026-10-15: page exists; $50 maximum liability",
+   "verified_on": null
   }
  ],
  "practical_skills": [
@@ -56,6 +61,7 @@
    "skill": "Recognize signs of identity theft and follow the steps to recover",
    "standard": "FL.PROTECT.98",
    "nearest_related": false,
+   "alignment_role": "direct",
    "questions": [
     {
      "id": "S98-M-Q1",
@@ -104,9 +110,9 @@
      "practical_how_to": false,
      "sources": [
       "FTC (IdentityTheft.gov): IdentityTheft.gov creates a personal recovery plan and an FTC Identity Theft Report. (https://www.identitytheft.gov/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)"
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1989
     },
     {
@@ -156,9 +162,9 @@
      "practical_how_to": true,
      "sources": [
       "FTC (IdentityTheft.gov): IdentityTheft.gov creates a personal recovery plan and an FTC Identity Theft Report. (https://www.identitytheft.gov/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)"
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1990
     },
     {
@@ -171,7 +177,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Consumer Protection, Fraud, and Digital Security",
-     "prompt": "After discovering the fake account, which step should Rosa take early?",
+     "prompt": "Rosa learns that someone opened a credit card account in her name. Which step should she take early to help prevent more new-credit fraud?",
      "choices": [
       {
        "letter": "A",
@@ -195,8 +201,8 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "A credit freeze blocks new credit in your name until you lift it. It is free at Equifax, Experian, and TransUnion. Also contact the business where the fraud happened and review your credit reports.",
-     "feedback": "A free freeze at each bureau stops new accounts.",
+     "intro": "A credit freeze limits access to your credit report, so most lenders that check it cannot approve new credit in your name until you lift the freeze. It is free at Equifax, Experian, and TransUnion. It does not stop misuse of existing accounts or every kind of identity theft, so also contact the business where the fraud happened and review your reports.",
+     "feedback": "Freezing all three reports helps block new credit accounts; it does not protect existing accounts.",
      "question_type": "instruction",
      "topic": "Identity theft: prevention and recovery",
      "subtopic": "Freezing credit",
@@ -208,9 +214,9 @@
      "practical_how_to": true,
      "sources": [
       "FTC (IdentityTheft.gov): IdentityTheft.gov creates a personal recovery plan and an FTC Identity Theft Report. (https://www.identitytheft.gov/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)"
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1991
     },
     {
@@ -259,9 +265,9 @@
      "practical_how_to": false,
      "sources": [
       "FTC (IdentityTheft.gov): IdentityTheft.gov creates a personal recovery plan and an FTC Identity Theft Report. (https://www.identitytheft.gov/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)"
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1992
     },
     {
@@ -310,9 +316,9 @@
      "practical_how_to": true,
      "sources": [
       "FTC (IdentityTheft.gov): IdentityTheft.gov creates a personal recovery plan and an FTC Identity Theft Report. (https://www.identitytheft.gov/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)"
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1993
     }
    ]
@@ -324,6 +330,7 @@
    "skill": "Personal information and why thieves want it",
    "standard": "FL.PROTECT.98",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "concept",
    "relationship": "Protecting identity starts with knowing which information is valuable.",
    "questions": [
@@ -373,9 +380,9 @@
      "practical_how_to": false,
      "sources": [
       "FTC (IdentityTheft.gov): IdentityTheft.gov creates a personal recovery plan and an FTC Identity Theft Report. (https://www.identitytheft.gov/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)"
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1994
     },
     {
@@ -424,9 +431,9 @@
      "practical_how_to": false,
      "sources": [
       "FTC (IdentityTheft.gov): IdentityTheft.gov creates a personal recovery plan and an FTC Identity Theft Report. (https://www.identitytheft.gov/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)"
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1995
     },
     {
@@ -475,9 +482,9 @@
      "practical_how_to": false,
      "sources": [
       "FTC (IdentityTheft.gov): IdentityTheft.gov creates a personal recovery plan and an FTC Identity Theft Report. (https://www.identitytheft.gov/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)"
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1996
     },
     {
@@ -526,9 +533,9 @@
      "practical_how_to": false,
      "sources": [
       "FTC (IdentityTheft.gov): IdentityTheft.gov creates a personal recovery plan and an FTC Identity Theft Report. (https://www.identitytheft.gov/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)"
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1997
     },
     {
@@ -577,9 +584,9 @@
      "practical_how_to": false,
      "sources": [
       "FTC (IdentityTheft.gov): IdentityTheft.gov creates a personal recovery plan and an FTC Identity Theft Report. (https://www.identitytheft.gov/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)"
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1998
     }
    ]
@@ -591,6 +598,7 @@
    "skill": "Solve multistep problems with rational numbers",
    "standard": "FL.PROTECT.98",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "Losses and liability limits compare amounts step by step.",
    "ref": {
@@ -612,6 +620,7 @@
    "skill": "Special cases of identity theft",
    "standard": "FL.PROTECT.98",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 1",
    "difficulty": "deeper",
    "questions": [
@@ -625,11 +634,11 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Consumer Protection, Fraud, and Digital Security",
-     "prompt": "The IRS rejects Rosa's tax return because one was already filed with her SSN. What happened?",
+     "prompt": "The IRS rejects Rosa's e-filed return because a return was already filed with her SSN. What may this indicate, and what should she do?",
      "choices": [
       {
        "letter": "A",
-       "text": "She filed twice by accident, which is normal"
+       "text": "She filed twice by accident, so she should ignore it"
       },
       {
        "letter": "B",
@@ -637,34 +646,34 @@
       },
       {
        "letter": "C",
-       "text": "Tax identity theft"
+       "text": "Possible tax identity theft; investigate with the IRS"
       },
       {
        "letter": "D",
-       "text": "The IRS lost her return"
+       "text": "The IRS lost her return, so nothing can be done"
       }
      ],
      "correct_letter": "C",
-     "correct_answer": "Tax identity theft",
+     "correct_answer": "Possible tax identity theft; investigate with the IRS",
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "In tax identity theft, a thief files a return to steal a refund. The IRS offers an Identity Protection PIN to prevent it.",
-     "feedback": "A rejected return because one was already filed signals tax identity theft.",
+     "intro": "In tax identity theft, a thief files a return with someone else's SSN to steal a refund. A rejection for a duplicate SSN can also come from a filing or data error, such as a dependent claimed on another return, so check before concluding. The IRS offers an Identity Protection PIN to help prevent it.",
+     "feedback": "A duplicate-SSN rejection may signal tax identity theft; she should check for errors and follow the IRS identity theft steps.",
      "question_type": "instruction",
      "topic": "Identity theft: prevention and recovery",
      "subtopic": "Tax identity theft",
      "misconceptions": {
-      "A": "Misreads the warning",
+      "A": "Assumes an error without checking",
       "B": "Employers do not file personal returns",
-      "D": "Not what the rejection means"
+      "D": "Misreads the rejection"
      },
      "practical_how_to": false,
      "sources": [
       "FTC (IdentityTheft.gov): IdentityTheft.gov creates a personal recovery plan and an FTC Identity Theft Report. (https://www.identitytheft.gov/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)"
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1999
     },
     {
@@ -714,9 +723,9 @@
      "practical_how_to": false,
      "sources": [
       "FTC (IdentityTheft.gov): IdentityTheft.gov creates a personal recovery plan and an FTC Identity Theft Report. (https://www.identitytheft.gov/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)"
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 2000
     },
     {
@@ -765,9 +774,9 @@
      "practical_how_to": false,
      "sources": [
       "FTC (IdentityTheft.gov): IdentityTheft.gov creates a personal recovery plan and an FTC Identity Theft Report. (https://www.identitytheft.gov/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)"
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 2001
     },
     {
@@ -817,7 +826,7 @@
      "practical_how_to": false,
      "sources": [
       "FTC (IdentityTheft.gov): IdentityTheft.gov creates a personal recovery plan and an FTC Identity Theft Report. (https://www.identitytheft.gov/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)"
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)"
      ],
      "effective_date": "Federal law as of 2026",
      "page": 2002
@@ -868,9 +877,9 @@
      "practical_how_to": true,
      "sources": [
       "FTC (IdentityTheft.gov): IdentityTheft.gov creates a personal recovery plan and an FTC Identity Theft Report. (https://www.identitytheft.gov/)",
-      "CFPB (Credit card fraud liability): Under federal law, liability for unauthorized credit card charges is at most $50. (https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/)"
+      "CFPB (Lost or stolen credit cards): Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)). (https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 2003
     }
    ]

@@ -14,7 +14,7 @@
    "learning_target": "Financial institutions and payment methods: choosing and opening a deposit account",
    "grade_band": "9-12",
    "outcome_codes": [],
-   "outcome_code_status": "to verify against the official document"
+   "outcome_code_status": "topic-level only; no 12th-grade outcome code assigned yet"
   },
   "new_jersey": {
    "document": "NJSLS-CLKS 2020, Standard 9.1 Personal Financial Literacy (grade 12)",
@@ -24,7 +24,8 @@
    ],
    "performance_expectation_status": "strand-level alignment; individual 9.1.12 performance expectations to verify"
   },
-  "alignment": "supporting"
+  "local_identifier": "FL.BANK.03 is a course identifier, not an official national or New Jersey code",
+  "claim": "Alignment shows what the set teaches toward; it does not claim full mastery of any standard."
  },
  "content_status": "time_sensitive",
  "sources": [
@@ -32,15 +33,19 @@
    "org": "FinCEN / federal banking agencies (Customer Identification Program rule, 31 CFR 1020.220)",
    "url": "https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1020/subpart-B/section-1020.220",
    "claim": "Banks must collect at least name, date of birth, address, and an identification number before opening an account.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "jurisdiction": "US federal",
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
   },
   {
    "org": "CFPB",
    "url": "https://www.consumerfinance.gov/ask-cfpb/what-is-a-checking-account-screening-company-en-1083/",
    "claim": "Checking account screening companies (such as ChexSystems) report past account problems; consumers can get a free copy of their report every 12 months.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "jurisdiction": "US federal",
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
   }
  ],
  "practical_skills": [
@@ -57,6 +62,7 @@
    "skill": "Compare checking accounts and complete the steps to open one",
    "standard": "FL.BANK.03",
    "nearest_related": false,
+   "alignment_role": "direct",
    "questions": [
     {
      "id": "S3-M-Q1",
@@ -107,7 +113,7 @@
       "FinCEN / federal banking agencies (Customer Identification Program rule, 31 CFR 1020.220): Banks must collect at least name, date of birth, address, and an identification number before opening an account. (https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1020/subpart-B/section-1020.220)",
       "CFPB: Checking account screening companies (such as ChexSystems) report past account problems; consumers can get a free copy of their report every 12 months. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-checking-account-screening-company-en-1083/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 44
     },
     {
@@ -159,7 +165,7 @@
       "FinCEN / federal banking agencies (Customer Identification Program rule, 31 CFR 1020.220): Banks must collect at least name, date of birth, address, and an identification number before opening an account. (https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1020/subpart-B/section-1020.220)",
       "CFPB: Checking account screening companies (such as ChexSystems) report past account problems; consumers can get a free copy of their report every 12 months. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-checking-account-screening-company-en-1083/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 45
     },
     {
@@ -211,7 +217,7 @@
       "FinCEN / federal banking agencies (Customer Identification Program rule, 31 CFR 1020.220): Banks must collect at least name, date of birth, address, and an identification number before opening an account. (https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1020/subpart-B/section-1020.220)",
       "CFPB: Checking account screening companies (such as ChexSystems) report past account problems; consumers can get a free copy of their report every 12 months. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-checking-account-screening-company-en-1083/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 46
     },
     {
@@ -263,7 +269,7 @@
       "FinCEN / federal banking agencies (Customer Identification Program rule, 31 CFR 1020.220): Banks must collect at least name, date of birth, address, and an identification number before opening an account. (https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1020/subpart-B/section-1020.220)",
       "CFPB: Checking account screening companies (such as ChexSystems) report past account problems; consumers can get a free copy of their report every 12 months. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-checking-account-screening-company-en-1083/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 47
     },
     {
@@ -276,7 +282,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Money, Banking, and Financial Institutions",
-     "prompt": "Ahmed's new account requires a $25 opening deposit and has a $6 monthly fee that is waived only when the balance stays at $300 or more. Ahmed's balance stays around $150. Assuming no other fees, how much will the account charge him in fees over 6 months?",
+     "prompt": "Ahmed's new account requires a $25 opening deposit and has a $6 monthly fee that is waived only when the balance stays at $300 or more. Ahmed's balance stays below $300 (around $150) every month. Assuming no other fees, how much will the account charge him in fees over 6 months?",
      "choices": [
       {
        "letter": "A",
@@ -300,7 +306,7 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "feedback": "The fee applies every month because $150 is below $300: $6 × 6 = $36. The $25 opening deposit is Ahmed's own money in the account, not a fee.",
+     "feedback": "The fee applies each of the 6 months because the balance never reaches $300: $6 × 6 = $36. The $25 opening deposit is Ahmed's own money in the account, not a fee.",
      "question_type": "knowledge_check",
      "topic": "Opening a checking account",
      "subtopic": "Fees vs opening deposit",
@@ -314,7 +320,7 @@
       "FinCEN / federal banking agencies (Customer Identification Program rule, 31 CFR 1020.220): Banks must collect at least name, date of birth, address, and an identification number before opening an account. (https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1020/subpart-B/section-1020.220)",
       "CFPB: Checking account screening companies (such as ChexSystems) report past account problems; consumers can get a free copy of their report every 12 months. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-checking-account-screening-company-en-1083/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 48
     }
    ]
@@ -326,6 +332,7 @@
    "skill": "Account fees and fee waivers",
    "standard": "FL.BANK.03",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "concept",
    "relationship": "Choosing and opening an account depends on understanding what a monthly fee and a waiver condition are.",
    "questions": [
@@ -378,7 +385,7 @@
       "FinCEN / federal banking agencies (Customer Identification Program rule, 31 CFR 1020.220): Banks must collect at least name, date of birth, address, and an identification number before opening an account. (https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1020/subpart-B/section-1020.220)",
       "CFPB: Checking account screening companies (such as ChexSystems) report past account problems; consumers can get a free copy of their report every 12 months. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-checking-account-screening-company-en-1083/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 49
     },
     {
@@ -430,7 +437,7 @@
       "FinCEN / federal banking agencies (Customer Identification Program rule, 31 CFR 1020.220): Banks must collect at least name, date of birth, address, and an identification number before opening an account. (https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1020/subpart-B/section-1020.220)",
       "CFPB: Checking account screening companies (such as ChexSystems) report past account problems; consumers can get a free copy of their report every 12 months. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-checking-account-screening-company-en-1083/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 50
     },
     {
@@ -482,7 +489,7 @@
       "FinCEN / federal banking agencies (Customer Identification Program rule, 31 CFR 1020.220): Banks must collect at least name, date of birth, address, and an identification number before opening an account. (https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1020/subpart-B/section-1020.220)",
       "CFPB: Checking account screening companies (such as ChexSystems) report past account problems; consumers can get a free copy of their report every 12 months. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-checking-account-screening-company-en-1083/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 51
     },
     {
@@ -533,7 +540,7 @@
       "FinCEN / federal banking agencies (Customer Identification Program rule, 31 CFR 1020.220): Banks must collect at least name, date of birth, address, and an identification number before opening an account. (https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1020/subpart-B/section-1020.220)",
       "CFPB: Checking account screening companies (such as ChexSystems) report past account problems; consumers can get a free copy of their report every 12 months. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-checking-account-screening-company-en-1083/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 52
     },
     {
@@ -584,7 +591,7 @@
       "FinCEN / federal banking agencies (Customer Identification Program rule, 31 CFR 1020.220): Banks must collect at least name, date of birth, address, and an identification number before opening an account. (https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1020/subpart-B/section-1020.220)",
       "CFPB: Checking account screening companies (such as ChexSystems) report past account problems; consumers can get a free copy of their report every 12 months. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-checking-account-screening-company-en-1083/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 53
     }
    ]
@@ -596,6 +603,7 @@
    "skill": "Solve real-world problems with decimal operations",
    "standard": "FL.BANK.03",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "Comparing accounts means multiplying monthly fees by months and comparing dollar totals.",
    "ref": {
@@ -617,6 +625,7 @@
    "skill": "Reading account disclosures and fee schedules",
    "standard": "FL.BANK.03",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 1",
    "difficulty": "deeper",
    "questions": [
@@ -669,7 +678,7 @@
       "FinCEN / federal banking agencies (Customer Identification Program rule, 31 CFR 1020.220): Banks must collect at least name, date of birth, address, and an identification number before opening an account. (https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1020/subpart-B/section-1020.220)",
       "CFPB: Checking account screening companies (such as ChexSystems) report past account problems; consumers can get a free copy of their report every 12 months. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-checking-account-screening-company-en-1083/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 54
     },
     {
@@ -721,7 +730,7 @@
       "FinCEN / federal banking agencies (Customer Identification Program rule, 31 CFR 1020.220): Banks must collect at least name, date of birth, address, and an identification number before opening an account. (https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1020/subpart-B/section-1020.220)",
       "CFPB: Checking account screening companies (such as ChexSystems) report past account problems; consumers can get a free copy of their report every 12 months. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-checking-account-screening-company-en-1083/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 55
     },
     {
@@ -772,7 +781,7 @@
       "FinCEN / federal banking agencies (Customer Identification Program rule, 31 CFR 1020.220): Banks must collect at least name, date of birth, address, and an identification number before opening an account. (https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1020/subpart-B/section-1020.220)",
       "CFPB: Checking account screening companies (such as ChexSystems) report past account problems; consumers can get a free copy of their report every 12 months. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-checking-account-screening-company-en-1083/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 56
     },
     {
@@ -824,7 +833,7 @@
       "FinCEN / federal banking agencies (Customer Identification Program rule, 31 CFR 1020.220): Banks must collect at least name, date of birth, address, and an identification number before opening an account. (https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1020/subpart-B/section-1020.220)",
       "CFPB: Checking account screening companies (such as ChexSystems) report past account problems; consumers can get a free copy of their report every 12 months. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-checking-account-screening-company-en-1083/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 57
     },
     {
@@ -875,7 +884,7 @@
       "FinCEN / federal banking agencies (Customer Identification Program rule, 31 CFR 1020.220): Banks must collect at least name, date of birth, address, and an identification number before opening an account. (https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1020/subpart-B/section-1020.220)",
       "CFPB: Checking account screening companies (such as ChexSystems) report past account problems; consumers can get a free copy of their report every 12 months. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-checking-account-screening-company-en-1083/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 58
     }
    ]
@@ -887,6 +896,7 @@
    "skill": "Account screening and second-chance accounts",
    "standard": "FL.BANK.03",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 2",
    "difficulty": "deeper",
    "questions": [
@@ -939,7 +949,7 @@
       "FinCEN / federal banking agencies (Customer Identification Program rule, 31 CFR 1020.220): Banks must collect at least name, date of birth, address, and an identification number before opening an account. (https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1020/subpart-B/section-1020.220)",
       "CFPB: Checking account screening companies (such as ChexSystems) report past account problems; consumers can get a free copy of their report every 12 months. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-checking-account-screening-company-en-1083/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 59
     },
     {
@@ -991,7 +1001,7 @@
       "FinCEN / federal banking agencies (Customer Identification Program rule, 31 CFR 1020.220): Banks must collect at least name, date of birth, address, and an identification number before opening an account. (https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1020/subpart-B/section-1020.220)",
       "CFPB: Checking account screening companies (such as ChexSystems) report past account problems; consumers can get a free copy of their report every 12 months. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-checking-account-screening-company-en-1083/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 60
     },
     {
@@ -1042,7 +1052,7 @@
       "FinCEN / federal banking agencies (Customer Identification Program rule, 31 CFR 1020.220): Banks must collect at least name, date of birth, address, and an identification number before opening an account. (https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1020/subpart-B/section-1020.220)",
       "CFPB: Checking account screening companies (such as ChexSystems) report past account problems; consumers can get a free copy of their report every 12 months. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-checking-account-screening-company-en-1083/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 61
     },
     {
@@ -1094,7 +1104,7 @@
       "FinCEN / federal banking agencies (Customer Identification Program rule, 31 CFR 1020.220): Banks must collect at least name, date of birth, address, and an identification number before opening an account. (https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1020/subpart-B/section-1020.220)",
       "CFPB: Checking account screening companies (such as ChexSystems) report past account problems; consumers can get a free copy of their report every 12 months. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-checking-account-screening-company-en-1083/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 62
     },
     {
@@ -1145,7 +1155,7 @@
       "FinCEN / federal banking agencies (Customer Identification Program rule, 31 CFR 1020.220): Banks must collect at least name, date of birth, address, and an identification number before opening an account. (https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1020/subpart-B/section-1020.220)",
       "CFPB: Checking account screening companies (such as ChexSystems) report past account problems; consumers can get a free copy of their report every 12 months. (https://www.consumerfinance.gov/ask-cfpb/what-is-a-checking-account-screening-company-en-1083/)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 63
     }
    ]

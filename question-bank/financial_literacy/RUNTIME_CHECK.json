@@ -1,4 +1,7 @@
 {
+ "description": "Real import and play-through of FinancialLiteracy_Nexus_Import_v1.1.0.zip in the game server (untangle-the-nexus commit 4b77e64, PostgreSQL 16 test database), using the game's importer, engine, and mastery code. Run by a temporary local test that was not committed to the game repo.",
+ "package": "FinancialLiteracy_Nexus_Import_v1.1.0.zip",
+ "game_commit": "4b77e64",
  "import": {
   "sets": 113,
   "questions": 2130,
@@ -41,7 +44,17 @@
  },
  "forward": {
   "mode": "forward",
-  "label": null,
-  "hasIntro": true
- }
+  "served_count": 5,
+  "served_with_intro": 2,
+  "expected_with_intro_in_S24_F1": 2,
+  "explanation_required": false,
+  "imported_questions": 2130,
+  "imported_with_intro": 1462
+ },
+ "notes": [
+  "S24 MAIN at 3 of 5 sent the student through every backward section in curriculum order; each served item had requiresExplanation=false; kinds are the target skills' own auto-checkable types.",
+  "After the backward chain the student returned to FL-S24-M (MAIN).",
+  "4 of 5 repeated MAIN; 5 of 5 recorded mastery and the normal main-skill reward (300 seconds in time_ledger).",
+  "Go Deeper F1 unlocked; the five served F1 questions showed an intro exactly when the bank has one (2 of 5, matching S24-F1-Q1 and Q2) and never required an explanation or recording."
+ ]
 }

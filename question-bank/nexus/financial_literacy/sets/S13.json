@@ -14,10 +14,13 @@
    "learning_target": "12-11a benefits and costs of gig employment; 12-8a earned income",
    "grade_band": "9-12",
    "outcome_codes": [
-    "12-8a",
-    "12-11a"
+    "Earning Income 12-11a",
+    "Earning Income 12-8a"
    ],
-   "outcome_code_status": "verified"
+   "outcome_code_status": [
+    "wording from search-indexed text of the official document; not re-checked against the PDF by the author",
+    "wording from search-indexed text of the official document; not re-checked against the PDF by the author"
+   ]
   },
   "new_jersey": {
    "document": "NJSLS-CLKS 2020, Standard 9.1 Personal Financial Literacy (grade 12)",
@@ -27,7 +30,8 @@
    ],
    "performance_expectation_status": "strand-level alignment; individual 9.1.12 performance expectations to verify"
   },
-  "alignment": "supporting"
+  "local_identifier": "FL.INCOME.13 is a course identifier, not an official national or New Jersey code",
+  "claim": "Alignment shows what the set teaches toward; it does not claim full mastery of any standard."
  },
  "content_status": "time_sensitive",
  "sources": [
@@ -35,15 +39,32 @@
    "org": "IRS (Self-Employment Tax, Topic 554)",
    "url": "https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes",
    "claim": "Self-employment tax is 15.3% (12.4% Social Security + 2.9% Medicare) on 92.35% of net earnings; a return is required when net self-employment earnings are $400 or more.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "jurisdiction": "US federal",
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
   },
   {
    "org": "IRS (Gig Economy Tax Center)",
    "url": "https://www.irs.gov/businesses/gig-economy-tax-center",
    "claim": "Gig income is taxable whether or not the worker receives a Form 1099.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "jurisdiction": "US federal",
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
+  },
+  {
+   "org": "IRS (Am I required to file a Form 1099?)",
+   "url": "https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return",
+   "claim": "For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued.",
+   "jurisdiction": "US federal",
+   "effective": "Payments in 2026",
+   "qids": [
+    "S96-B1-Q2"
+   ],
+   "verification": "reviewer-checked topic",
+   "verification_detail": "new or replaced URL in v1.1; not fetched by the reviewer; reviewer consulted this primary source for the specific corrected topic (A19); author: search-corroborated on 2026-10-15: 1099-NEC threshold $2,000 for payments after 2025",
+   "verified_on": null
   }
  ],
  "practical_skills": [
@@ -59,6 +80,7 @@
    "skill": "Compare employee and independent contractor work and estimate gig income after expenses and taxes",
    "standard": "FL.INCOME.13",
    "nearest_related": false,
+   "alignment_role": "direct",
    "questions": [
     {
      "id": "S13-M-Q1",
@@ -107,9 +129,10 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-Employment Tax, Topic 554): Self-employment tax is 15.3% (12.4% Social Security + 2.9% Medicare) on 92.35% of net earnings; a return is required when net self-employment earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)"
+      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 254
     },
     {
@@ -159,9 +182,10 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-Employment Tax, Topic 554): Self-employment tax is 15.3% (12.4% Social Security + 2.9% Medicare) on 92.35% of net earnings; a return is required when net self-employment earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)"
+      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 255
     },
     {
@@ -174,7 +198,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Earning Income, Employment, and Paychecks",
-     "prompt": "Self-employment tax is 15.3% of 92.35% of net earnings. Estimate Ravi's self-employment tax on $720 of net earnings (to the nearest cent).",
+     "prompt": "Self-employment tax is 15.3% of 92.35% of net earnings. Ravi has $720 of net self-employment profit, no wages anywhere else, and owes no Additional Medicare Tax. Estimate his self-employment tax (to the nearest cent).",
      "choices": [
       {
        "letter": "A",
@@ -198,20 +222,21 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "Self-employment tax is the self-employed person's Social Security and Medicare tax. Because there is no employer to pay half, the rate is 15.3% (12.4% + 2.9%), figured on 92.35% of net earnings. It applies in addition to income tax.",
+     "intro": "Self-employment tax is the self-employed person's Social Security and Medicare tax. With no employer to pay half, the rate is 15.3% (12.4% + 2.9%), figured on 92.35% of net profit. It is owed in addition to income tax. (Very high earners and people who also have wages can face other rules.)",
      "feedback": "$720 × 0.9235 = $664.92; × 0.153 = $101.73.",
      "question_type": "instruction",
      "topic": "Gig work and independent contractors",
      "subtopic": "Self-employment tax",
      "misconceptions": {
-      "C": "Applies 15.3% to all of the net earnings",
+      "C": "Applies 15.3% to all of the net profit",
       "D": "Applies 15.3% to income before expenses",
       "A": "Uses half the rate (7.65%)"
      },
      "practical_how_to": false,
      "sources": [
       "IRS (Self-Employment Tax, Topic 554): Self-employment tax is 15.3% (12.4% Social Security + 2.9% Medicare) on 92.35% of net earnings; a return is required when net self-employment earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)"
+      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
      "effective_date": "IRS rates as of 2026",
      "page": 256
@@ -263,9 +288,10 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-Employment Tax, Topic 554): Self-employment tax is 15.3% (12.4% Social Security + 2.9% Medicare) on 92.35% of net earnings; a return is required when net self-employment earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)"
+      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 257
     },
     {
@@ -314,9 +340,10 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-Employment Tax, Topic 554): Self-employment tax is 15.3% (12.4% Social Security + 2.9% Medicare) on 92.35% of net earnings; a return is required when net self-employment earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)"
+      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 258
     }
    ]
@@ -328,6 +355,7 @@
    "skill": "Employee or independent contractor?",
    "standard": "FL.INCOME.13",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "concept",
    "relationship": "Gig tax and income questions depend on knowing how contractors differ from employees.",
    "questions": [
@@ -378,9 +406,10 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-Employment Tax, Topic 554): Self-employment tax is 15.3% (12.4% Social Security + 2.9% Medicare) on 92.35% of net earnings; a return is required when net self-employment earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)"
+      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 259
     },
     {
@@ -430,9 +459,10 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-Employment Tax, Topic 554): Self-employment tax is 15.3% (12.4% Social Security + 2.9% Medicare) on 92.35% of net earnings; a return is required when net self-employment earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)"
+      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 260
     },
     {
@@ -482,9 +512,10 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-Employment Tax, Topic 554): Self-employment tax is 15.3% (12.4% Social Security + 2.9% Medicare) on 92.35% of net earnings; a return is required when net self-employment earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)"
+      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 261
     },
     {
@@ -534,9 +565,10 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-Employment Tax, Topic 554): Self-employment tax is 15.3% (12.4% Social Security + 2.9% Medicare) on 92.35% of net earnings; a return is required when net self-employment earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)"
+      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 262
     },
     {
@@ -585,9 +617,10 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-Employment Tax, Topic 554): Self-employment tax is 15.3% (12.4% Social Security + 2.9% Medicare) on 92.35% of net earnings; a return is required when net self-employment earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)"
+      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 263
     }
    ]
@@ -599,6 +632,7 @@
    "skill": "Find a percent of a quantity",
    "standard": "FL.INCOME.13",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "Self-employment tax and set-aside amounts are percents of earnings.",
    "ref": {
@@ -620,6 +654,7 @@
    "skill": "Find a percent fee and the total with the fee",
    "standard": "FL.INCOME.13",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "Gig platforms deduct percent-based fees from earnings.",
    "ref": {
@@ -641,6 +676,7 @@
    "skill": "True hourly earnings after expenses",
    "standard": "FL.INCOME.13",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 1",
    "difficulty": "deeper",
    "questions": [
@@ -691,9 +727,10 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-Employment Tax, Topic 554): Self-employment tax is 15.3% (12.4% Social Security + 2.9% Medicare) on 92.35% of net earnings; a return is required when net self-employment earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)"
+      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 264
     },
     {
@@ -742,9 +779,10 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-Employment Tax, Topic 554): Self-employment tax is 15.3% (12.4% Social Security + 2.9% Medicare) on 92.35% of net earnings; a return is required when net self-employment earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)"
+      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 265
     },
     {
@@ -793,9 +831,10 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-Employment Tax, Topic 554): Self-employment tax is 15.3% (12.4% Social Security + 2.9% Medicare) on 92.35% of net earnings; a return is required when net self-employment earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)"
+      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 266
     },
     {
@@ -844,9 +883,10 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-Employment Tax, Topic 554): Self-employment tax is 15.3% (12.4% Social Security + 2.9% Medicare) on 92.35% of net earnings; a return is required when net self-employment earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)"
+      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 267
     },
     {
@@ -895,9 +935,10 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-Employment Tax, Topic 554): Self-employment tax is 15.3% (12.4% Social Security + 2.9% Medicare) on 92.35% of net earnings; a return is required when net self-employment earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)"
+      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 268
     }
    ]
@@ -909,6 +950,7 @@
    "skill": "Records and taxes for gig workers",
    "standard": "FL.INCOME.13",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 2",
    "difficulty": "deeper",
    "questions": [
@@ -959,9 +1001,10 @@
      "practical_how_to": true,
      "sources": [
       "IRS (Self-Employment Tax, Topic 554): Self-employment tax is 15.3% (12.4% Social Security + 2.9% Medicare) on 92.35% of net earnings; a return is required when net self-employment earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)"
+      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 269
     },
     {
@@ -1011,7 +1054,8 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-Employment Tax, Topic 554): Self-employment tax is 15.3% (12.4% Social Security + 2.9% Medicare) on 92.35% of net earnings; a return is required when net self-employment earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)"
+      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
      "effective_date": "IRS rule as of 2026",
      "page": 270
@@ -1026,7 +1070,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Earning Income, Employment, and Paychecks",
-     "prompt": "A gig worker expects to owe $2,000 in tax for the year and pays nothing until April. What risk does this create?",
+     "prompt": "A gig worker has no withholding and expects to owe $2,000 in tax for the year. She paid no tax last year because she had no income, so no safe harbor protects her. She pays nothing until April. What risk does this create?",
      "choices": [
       {
        "letter": "A",
@@ -1050,8 +1094,8 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "Taxes are pay-as-you-go. People without withholding usually make quarterly estimated tax payments (Form 1040-ES) if they expect to owe $1,000 or more. Paying too little during the year can bring a penalty.",
-     "feedback": "Without withholding or estimated payments, she may owe an underpayment penalty.",
+     "intro": "Taxes are pay-as-you-go. People who expect to owe $1,000 or more after withholding and credits usually make quarterly estimated payments (Form 1040-ES). \"Safe harbor\" rules can prevent a penalty, for example by paying enough based on this year's or last year's tax.",
+     "feedback": "Without withholding, estimated payments, or a safe harbor, she may owe an underpayment penalty.",
      "question_type": "instruction",
      "topic": "Gig work and independent contractors",
      "subtopic": "Estimated taxes",
@@ -1063,9 +1107,10 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-Employment Tax, Topic 554): Self-employment tax is 15.3% (12.4% Social Security + 2.9% Medicare) on 92.35% of net earnings; a return is required when net self-employment earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)"
+      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 271
     },
     {
@@ -1111,12 +1156,13 @@
       "D": "Gives total net for the quarter",
       "B": "Gives one week's net"
      },
-     "practical_how_to": true,
+     "practical_how_to": false,
      "sources": [
       "IRS (Self-Employment Tax, Topic 554): Self-employment tax is 15.3% (12.4% Social Security + 2.9% Medicare) on 92.35% of net earnings; a return is required when net self-employment earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)"
+      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 272
     },
     {
@@ -1165,9 +1211,10 @@
      "practical_how_to": true,
      "sources": [
       "IRS (Self-Employment Tax, Topic 554): Self-employment tax is 15.3% (12.4% Social Security + 2.9% Medicare) on 92.35% of net earnings; a return is required when net self-employment earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)"
+      "IRS (Gig Economy Tax Center): Gig income is taxable whether or not the worker receives a Form 1099. (https://www.irs.gov/businesses/gig-economy-tax-center)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 273
     }
    ]

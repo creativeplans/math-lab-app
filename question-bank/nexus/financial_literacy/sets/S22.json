@@ -14,7 +14,7 @@
    "learning_target": "Emergency savings: purpose, size, and where to keep them",
    "grade_band": "9-12",
    "outcome_codes": [],
-   "outcome_code_status": "to verify against the official document"
+   "outcome_code_status": "topic-level only; no 12th-grade outcome code assigned yet"
   },
   "new_jersey": {
    "document": "NJSLS-CLKS 2020, Standard 9.1 Personal Financial Literacy (grade 12)",
@@ -24,7 +24,8 @@
    ],
    "performance_expectation_status": "strand-level alignment; individual 9.1.12 performance expectations to verify"
   },
-  "alignment": "supporting"
+  "local_identifier": "FL.SAVE.22 is a course identifier, not an official national or New Jersey code",
+  "claim": "Alignment shows what the set teaches toward; it does not claim full mastery of any standard."
  },
  "content_status": "stable",
  "sources": [
@@ -32,8 +33,10 @@
    "org": "CFPB",
    "url": "https://www.consumerfinance.gov/an-essential-guide-to-building-an-emergency-fund/",
    "claim": "An emergency fund is money set aside for unplanned expenses or financial emergencies; start small and build it over time.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "jurisdiction": "US federal",
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
   }
  ],
  "practical_skills": [
@@ -49,6 +52,7 @@
    "skill": "Size, build, and use an emergency fund",
    "standard": "FL.SAVE.22",
    "nearest_related": false,
+   "alignment_role": "direct",
    "questions": [
     {
      "id": "S22-M-Q1",
@@ -311,6 +315,7 @@
    "skill": "Expected and unexpected expenses",
    "standard": "FL.SAVE.22",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "concept",
    "relationship": "Knowing which costs are surprises explains why an emergency fund is separate from goal savings.",
    "questions": [
@@ -475,38 +480,39 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Saving, Emergency Funds, and Interest",
-     "prompt": "Paying a $500 repair with a credit card at 24% APR and taking a year to pay it off can cost about how much in interest (rough estimate, half the balance outstanding on average)?",
+     "prompt": "Mo has a $500 car repair and a $1,000 emergency fund. Which choice avoids paying interest on the repair?",
      "choices": [
       {
        "letter": "A",
-       "text": "$0"
+       "text": "Charging it to a credit card he cannot pay off for a year"
       },
       {
        "letter": "B",
-       "text": "$24"
+       "text": "Taking a payday loan"
       },
       {
        "letter": "C",
-       "text": "$60"
+       "text": "Paying the repair from his emergency fund"
       },
       {
        "letter": "D",
-       "text": "$120"
+       "text": "Skipping the repair and borrowing a car"
       }
      ],
      "correct_letter": "C",
-     "correct_answer": "$60",
+     "correct_answer": "Paying the repair from his emergency fund",
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "feedback": "Average balance ≈ $250; $250 × 0.24 = $60. An emergency fund avoids this cost.",
-     "question_type": "knowledge_check",
+     "intro": "An emergency fund is cash set aside for surprises, so you do not have to borrow when one happens.",
+     "feedback": "Using savings for the repair avoids interest; then he rebuilds the fund.",
+     "question_type": "instruction",
      "topic": "Emergency funds",
      "subtopic": "Cost of no fund",
      "misconceptions": {
-      "D": "Charges interest on the full balance all year",
-      "B": "Uses the rate as dollars",
-      "A": "Ignores interest"
+      "A": "Adds interest",
+      "B": "Very high cost",
+      "D": "Avoids the problem, not the cost"
      },
      "practical_how_to": false,
      "sources": [
@@ -574,6 +580,7 @@
    "skill": "Multiply multi-digit decimals",
    "standard": "FL.SAVE.22",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "Fund targets multiply monthly expenses by months.",
    "ref": {
@@ -595,6 +602,7 @@
    "skill": "Divide multi-digit decimals",
    "standard": "FL.SAVE.22",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "Months covered divides the fund by monthly expenses.",
    "ref": {
@@ -616,6 +624,7 @@
    "skill": "Building the fund over time",
    "standard": "FL.SAVE.22",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 1",
    "difficulty": "deeper",
    "questions": [
@@ -878,6 +887,7 @@
    "skill": "Emergency fund or debt payoff?",
    "standard": "FL.SAVE.22",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 2",
    "difficulty": "deeper",
    "questions": [

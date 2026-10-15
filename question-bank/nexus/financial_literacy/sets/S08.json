@@ -14,7 +14,7 @@
    "learning_target": "Calculate gross pay for hourly work; overtime and tipped wages",
    "grade_band": "9-12",
    "outcome_codes": [],
-   "outcome_code_status": "to verify against the official document"
+   "outcome_code_status": "topic-level only; no 12th-grade outcome code assigned yet"
   },
   "new_jersey": {
    "document": "NJSLS-CLKS 2020, Standard 9.1 Personal Financial Literacy (grade 12)",
@@ -23,23 +23,48 @@
    ],
    "performance_expectation_status": "strand-level alignment; individual 9.1.12 performance expectations to verify"
   },
-  "alignment": "supporting"
+  "local_identifier": "FL.INCOME.08 is a course identifier, not an official national or New Jersey code",
+  "claim": "Alignment shows what the set teaches toward; it does not claim full mastery of any standard."
  },
  "content_status": "time_sensitive",
  "sources": [
   {
    "org": "U.S. Department of Labor",
    "url": "https://www.dol.gov/agencies/whd/overtime",
-   "claim": "Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "claim": "Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek; some states set a higher minimum wage than the federal one.",
+   "jurisdiction": "US federal",
+   "section": "Overtime Pay",
+   "qids": [
+    "S8-M-Q2",
+    "S8-F1-Q3",
+    "S8-F2-Q4"
+   ],
+   "verification": "reviewer-checked topic",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch); reviewer consulted this primary source for the specific corrected topic (A12)",
+   "verified_on": null
   },
   {
    "org": "IRS (Publication 531)",
    "url": "https://www.irs.gov/publications/p531",
-   "claim": "Employees who receive $20 or more in tips in a month must report them to their employer; tips are taxable income.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "claim": "Employees who receive $20 or more in cash and charged tips in a month from one employer must report them to that employer; all tips, including noncash tips, are income.",
+   "jurisdiction": "US federal",
+   "section": "Reporting Tips to Your Employer",
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
+  },
+  {
+   "org": "IRS (No tax on tips deduction)",
+   "url": "https://www.irs.gov/newsroom/what-the-no-tax-on-tips-deduction-means-for-you",
+   "claim": "A new deduction for qualified tips (tax years 2025-2028, with limits) lowers income tax only; tips still must be reported, and Social Security and Medicare taxes still apply.",
+   "jurisdiction": "US federal",
+   "effective": "Tax years 2025-2028",
+   "qids": [
+    "S8-F2-Q3"
+   ],
+   "verification": "reviewer-checked topic",
+   "verification_detail": "new or replaced URL in v1.1; not fetched by the reviewer; reviewer consulted this primary source for the specific corrected topic (A18)",
+   "verified_on": null
   }
  ],
  "practical_skills": [
@@ -54,6 +79,7 @@
    "skill": "Calculate gross pay for hourly work, including overtime",
    "standard": "FL.INCOME.08",
    "nearest_related": false,
+   "alignment_role": "direct",
    "questions": [
     {
      "id": "S8-M-Q1",
@@ -101,10 +127,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek. (https://www.dol.gov/agencies/whd/overtime)",
-      "IRS (Publication 531): Employees who receive $20 or more in tips in a month must report them to their employer; tips are taxable income. (https://www.irs.gov/publications/p531)"
+      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek; some states set a higher minimum wage than the federal one. (https://www.dol.gov/agencies/whd/overtime)",
+      "IRS (Publication 531): Employees who receive $20 or more in cash and charged tips in a month from one employer must report them to that employer; all tips, including noncash tips, are income. (https://www.irs.gov/publications/p531)",
+      "IRS (No tax on tips deduction): A new deduction for qualified tips (tax years 2025-2028, with limits) lowers income tax only; tips still must be reported, and Social Security and Medicare taxes still apply. (https://www.irs.gov/newsroom/what-the-no-tax-on-tips-deduction-means-for-you)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 149
     },
     {
@@ -117,7 +144,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Earning Income, Employment, and Paychecks",
-     "prompt": "Malik is an hourly employee who earns $18 per hour. He works 46 hours in one workweek. Under the federal overtime rule, what is his gross pay?",
+     "prompt": "Malik is a covered, nonexempt hourly employee who earns $18 per hour. He works 46 hours in one workweek. Under the federal overtime rule, what is his gross pay?",
      "choices": [
       {
        "letter": "A",
@@ -141,7 +168,7 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "Federal law (the Fair Labor Standards Act) requires most hourly employees to be paid at least 1.5 times their regular rate for hours worked over 40 in a workweek. This is \"time and a half.\" Hours up to 40 are paid at the regular rate.",
+     "intro": "Federal law (the Fair Labor Standards Act) requires covered, nonexempt employees to be paid at least 1.5 times their regular rate for hours over 40 in a workweek: \"time and a half.\" Hours up to 40 are paid at the regular rate. Some jobs are exempt from overtime.",
      "feedback": "Regular: 40 × $18 = $720. Overtime rate: $18 × 1.5 = $27. Overtime: 6 × $27 = $162. Total: $882.",
      "question_type": "instruction",
      "topic": "Hourly wages and overtime",
@@ -153,10 +180,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek. (https://www.dol.gov/agencies/whd/overtime)",
-      "IRS (Publication 531): Employees who receive $20 or more in tips in a month must report them to their employer; tips are taxable income. (https://www.irs.gov/publications/p531)"
+      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek; some states set a higher minimum wage than the federal one. (https://www.dol.gov/agencies/whd/overtime)",
+      "IRS (Publication 531): Employees who receive $20 or more in cash and charged tips in a month from one employer must report them to that employer; all tips, including noncash tips, are income. (https://www.irs.gov/publications/p531)",
+      "IRS (No tax on tips deduction): A new deduction for qualified tips (tax years 2025-2028, with limits) lowers income tax only; tips still must be reported, and Social Security and Medicare taxes still apply. (https://www.irs.gov/newsroom/what-the-no-tax-on-tips-deduction-means-for-you)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 150
     },
     {
@@ -205,10 +233,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek. (https://www.dol.gov/agencies/whd/overtime)",
-      "IRS (Publication 531): Employees who receive $20 or more in tips in a month must report them to their employer; tips are taxable income. (https://www.irs.gov/publications/p531)"
+      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek; some states set a higher minimum wage than the federal one. (https://www.dol.gov/agencies/whd/overtime)",
+      "IRS (Publication 531): Employees who receive $20 or more in cash and charged tips in a month from one employer must report them to that employer; all tips, including noncash tips, are income. (https://www.irs.gov/publications/p531)",
+      "IRS (No tax on tips deduction): A new deduction for qualified tips (tax years 2025-2028, with limits) lowers income tax only; tips still must be reported, and Social Security and Medicare taxes still apply. (https://www.irs.gov/newsroom/what-the-no-tax-on-tips-deduction-means-for-you)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 151
     },
     {
@@ -257,10 +286,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek. (https://www.dol.gov/agencies/whd/overtime)",
-      "IRS (Publication 531): Employees who receive $20 or more in tips in a month must report them to their employer; tips are taxable income. (https://www.irs.gov/publications/p531)"
+      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek; some states set a higher minimum wage than the federal one. (https://www.dol.gov/agencies/whd/overtime)",
+      "IRS (Publication 531): Employees who receive $20 or more in cash and charged tips in a month from one employer must report them to that employer; all tips, including noncash tips, are income. (https://www.irs.gov/publications/p531)",
+      "IRS (No tax on tips deduction): A new deduction for qualified tips (tax years 2025-2028, with limits) lowers income tax only; tips still must be reported, and Social Security and Medicare taxes still apply. (https://www.irs.gov/newsroom/what-the-no-tax-on-tips-deduction-means-for-you)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 152
     },
     {
@@ -308,10 +338,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek. (https://www.dol.gov/agencies/whd/overtime)",
-      "IRS (Publication 531): Employees who receive $20 or more in tips in a month must report them to their employer; tips are taxable income. (https://www.irs.gov/publications/p531)"
+      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek; some states set a higher minimum wage than the federal one. (https://www.dol.gov/agencies/whd/overtime)",
+      "IRS (Publication 531): Employees who receive $20 or more in cash and charged tips in a month from one employer must report them to that employer; all tips, including noncash tips, are income. (https://www.irs.gov/publications/p531)",
+      "IRS (No tax on tips deduction): A new deduction for qualified tips (tax years 2025-2028, with limits) lowers income tax only; tips still must be reported, and Social Security and Medicare taxes still apply. (https://www.irs.gov/newsroom/what-the-no-tax-on-tips-deduction-means-for-you)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 153
     }
    ]
@@ -323,6 +354,7 @@
    "skill": "Wages, hours, and gross pay",
    "standard": "FL.INCOME.08",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "concept",
    "relationship": "Gross pay and overtime problems require knowing that a wage is pay per hour and how hours convert to decimals.",
    "questions": [
@@ -372,10 +404,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek. (https://www.dol.gov/agencies/whd/overtime)",
-      "IRS (Publication 531): Employees who receive $20 or more in tips in a month must report them to their employer; tips are taxable income. (https://www.irs.gov/publications/p531)"
+      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek; some states set a higher minimum wage than the federal one. (https://www.dol.gov/agencies/whd/overtime)",
+      "IRS (Publication 531): Employees who receive $20 or more in cash and charged tips in a month from one employer must report them to that employer; all tips, including noncash tips, are income. (https://www.irs.gov/publications/p531)",
+      "IRS (No tax on tips deduction): A new deduction for qualified tips (tax years 2025-2028, with limits) lowers income tax only; tips still must be reported, and Social Security and Medicare taxes still apply. (https://www.irs.gov/newsroom/what-the-no-tax-on-tips-deduction-means-for-you)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 154
     },
     {
@@ -424,10 +457,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek. (https://www.dol.gov/agencies/whd/overtime)",
-      "IRS (Publication 531): Employees who receive $20 or more in tips in a month must report them to their employer; tips are taxable income. (https://www.irs.gov/publications/p531)"
+      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek; some states set a higher minimum wage than the federal one. (https://www.dol.gov/agencies/whd/overtime)",
+      "IRS (Publication 531): Employees who receive $20 or more in cash and charged tips in a month from one employer must report them to that employer; all tips, including noncash tips, are income. (https://www.irs.gov/publications/p531)",
+      "IRS (No tax on tips deduction): A new deduction for qualified tips (tax years 2025-2028, with limits) lowers income tax only; tips still must be reported, and Social Security and Medicare taxes still apply. (https://www.irs.gov/newsroom/what-the-no-tax-on-tips-deduction-means-for-you)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 155
     },
     {
@@ -476,10 +510,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek. (https://www.dol.gov/agencies/whd/overtime)",
-      "IRS (Publication 531): Employees who receive $20 or more in tips in a month must report them to their employer; tips are taxable income. (https://www.irs.gov/publications/p531)"
+      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek; some states set a higher minimum wage than the federal one. (https://www.dol.gov/agencies/whd/overtime)",
+      "IRS (Publication 531): Employees who receive $20 or more in cash and charged tips in a month from one employer must report them to that employer; all tips, including noncash tips, are income. (https://www.irs.gov/publications/p531)",
+      "IRS (No tax on tips deduction): A new deduction for qualified tips (tax years 2025-2028, with limits) lowers income tax only; tips still must be reported, and Social Security and Medicare taxes still apply. (https://www.irs.gov/newsroom/what-the-no-tax-on-tips-deduction-means-for-you)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 156
     },
     {
@@ -528,10 +563,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek. (https://www.dol.gov/agencies/whd/overtime)",
-      "IRS (Publication 531): Employees who receive $20 or more in tips in a month must report them to their employer; tips are taxable income. (https://www.irs.gov/publications/p531)"
+      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek; some states set a higher minimum wage than the federal one. (https://www.dol.gov/agencies/whd/overtime)",
+      "IRS (Publication 531): Employees who receive $20 or more in cash and charged tips in a month from one employer must report them to that employer; all tips, including noncash tips, are income. (https://www.irs.gov/publications/p531)",
+      "IRS (No tax on tips deduction): A new deduction for qualified tips (tax years 2025-2028, with limits) lowers income tax only; tips still must be reported, and Social Security and Medicare taxes still apply. (https://www.irs.gov/newsroom/what-the-no-tax-on-tips-deduction-means-for-you)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 157
     },
     {
@@ -580,10 +616,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek. (https://www.dol.gov/agencies/whd/overtime)",
-      "IRS (Publication 531): Employees who receive $20 or more in tips in a month must report them to their employer; tips are taxable income. (https://www.irs.gov/publications/p531)"
+      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek; some states set a higher minimum wage than the federal one. (https://www.dol.gov/agencies/whd/overtime)",
+      "IRS (Publication 531): Employees who receive $20 or more in cash and charged tips in a month from one employer must report them to that employer; all tips, including noncash tips, are income. (https://www.irs.gov/publications/p531)",
+      "IRS (No tax on tips deduction): A new deduction for qualified tips (tax years 2025-2028, with limits) lowers income tax only; tips still must be reported, and Social Security and Medicare taxes still apply. (https://www.irs.gov/newsroom/what-the-no-tax-on-tips-deduction-means-for-you)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 158
     }
    ]
@@ -595,6 +632,7 @@
    "skill": "Multiply multi-digit decimals",
    "standard": "FL.INCOME.08",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "Gross pay multiplies a decimal wage by decimal hours.",
    "ref": {
@@ -616,6 +654,7 @@
    "skill": "Find and describe a unit rate",
    "standard": "FL.INCOME.08",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "An hourly wage is a unit rate (dollars per hour).",
    "ref": {
@@ -637,6 +676,7 @@
    "skill": "Overtime rules in detail",
    "standard": "FL.INCOME.08",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 1",
    "difficulty": "deeper",
    "questions": [
@@ -686,10 +726,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek. (https://www.dol.gov/agencies/whd/overtime)",
-      "IRS (Publication 531): Employees who receive $20 or more in tips in a month must report them to their employer; tips are taxable income. (https://www.irs.gov/publications/p531)"
+      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek; some states set a higher minimum wage than the federal one. (https://www.dol.gov/agencies/whd/overtime)",
+      "IRS (Publication 531): Employees who receive $20 or more in cash and charged tips in a month from one employer must report them to that employer; all tips, including noncash tips, are income. (https://www.irs.gov/publications/p531)",
+      "IRS (No tax on tips deduction): A new deduction for qualified tips (tax years 2025-2028, with limits) lowers income tax only; tips still must be reported, and Social Security and Medicare taxes still apply. (https://www.irs.gov/newsroom/what-the-no-tax-on-tips-deduction-means-for-you)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 159
     },
     {
@@ -738,10 +779,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek. (https://www.dol.gov/agencies/whd/overtime)",
-      "IRS (Publication 531): Employees who receive $20 or more in tips in a month must report them to their employer; tips are taxable income. (https://www.irs.gov/publications/p531)"
+      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek; some states set a higher minimum wage than the federal one. (https://www.dol.gov/agencies/whd/overtime)",
+      "IRS (Publication 531): Employees who receive $20 or more in cash and charged tips in a month from one employer must report them to that employer; all tips, including noncash tips, are income. (https://www.irs.gov/publications/p531)",
+      "IRS (No tax on tips deduction): A new deduction for qualified tips (tax years 2025-2028, with limits) lowers income tax only; tips still must be reported, and Social Security and Medicare taxes still apply. (https://www.irs.gov/newsroom/what-the-no-tax-on-tips-deduction-means-for-you)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 160
     },
     {
@@ -754,7 +796,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Earning Income, Employment, and Paychecks",
-     "prompt": "Pia earns $20 per hour and works 52 hours in a workweek. What is her gross pay?",
+     "prompt": "Pia is a covered, nonexempt employee who earns $20 per hour and works 52 hours in one workweek. Under the federal overtime rule, what is her gross pay?",
      "choices": [
       {
        "letter": "A",
@@ -789,10 +831,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek. (https://www.dol.gov/agencies/whd/overtime)",
-      "IRS (Publication 531): Employees who receive $20 or more in tips in a month must report them to their employer; tips are taxable income. (https://www.irs.gov/publications/p531)"
+      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek; some states set a higher minimum wage than the federal one. (https://www.dol.gov/agencies/whd/overtime)",
+      "IRS (Publication 531): Employees who receive $20 or more in cash and charged tips in a month from one employer must report them to that employer; all tips, including noncash tips, are income. (https://www.irs.gov/publications/p531)",
+      "IRS (No tax on tips deduction): A new deduction for qualified tips (tax years 2025-2028, with limits) lowers income tax only; tips still must be reported, and Social Security and Medicare taxes still apply. (https://www.irs.gov/newsroom/what-the-no-tax-on-tips-deduction-means-for-you)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 161
     },
     {
@@ -841,10 +884,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek. (https://www.dol.gov/agencies/whd/overtime)",
-      "IRS (Publication 531): Employees who receive $20 or more in tips in a month must report them to their employer; tips are taxable income. (https://www.irs.gov/publications/p531)"
+      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek; some states set a higher minimum wage than the federal one. (https://www.dol.gov/agencies/whd/overtime)",
+      "IRS (Publication 531): Employees who receive $20 or more in cash and charged tips in a month from one employer must report them to that employer; all tips, including noncash tips, are income. (https://www.irs.gov/publications/p531)",
+      "IRS (No tax on tips deduction): A new deduction for qualified tips (tax years 2025-2028, with limits) lowers income tax only; tips still must be reported, and Social Security and Medicare taxes still apply. (https://www.irs.gov/newsroom/what-the-no-tax-on-tips-deduction-means-for-you)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 162
     },
     {
@@ -892,10 +936,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek. (https://www.dol.gov/agencies/whd/overtime)",
-      "IRS (Publication 531): Employees who receive $20 or more in tips in a month must report them to their employer; tips are taxable income. (https://www.irs.gov/publications/p531)"
+      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek; some states set a higher minimum wage than the federal one. (https://www.dol.gov/agencies/whd/overtime)",
+      "IRS (Publication 531): Employees who receive $20 or more in cash and charged tips in a month from one employer must report them to that employer; all tips, including noncash tips, are income. (https://www.irs.gov/publications/p531)",
+      "IRS (No tax on tips deduction): A new deduction for qualified tips (tax years 2025-2028, with limits) lowers income tax only; tips still must be reported, and Social Security and Medicare taxes still apply. (https://www.irs.gov/newsroom/what-the-no-tax-on-tips-deduction-means-for-you)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 163
     }
    ]
@@ -907,6 +952,7 @@
    "skill": "Tips and tipped wages",
    "standard": "FL.INCOME.08",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 2",
    "difficulty": "deeper",
    "questions": [
@@ -956,10 +1002,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek. (https://www.dol.gov/agencies/whd/overtime)",
-      "IRS (Publication 531): Employees who receive $20 or more in tips in a month must report them to their employer; tips are taxable income. (https://www.irs.gov/publications/p531)"
+      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek; some states set a higher minimum wage than the federal one. (https://www.dol.gov/agencies/whd/overtime)",
+      "IRS (Publication 531): Employees who receive $20 or more in cash and charged tips in a month from one employer must report them to that employer; all tips, including noncash tips, are income. (https://www.irs.gov/publications/p531)",
+      "IRS (No tax on tips deduction): A new deduction for qualified tips (tax years 2025-2028, with limits) lowers income tax only; tips still must be reported, and Social Security and Medicare taxes still apply. (https://www.irs.gov/newsroom/what-the-no-tax-on-tips-deduction-means-for-you)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 164
     },
     {
@@ -1007,10 +1054,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek. (https://www.dol.gov/agencies/whd/overtime)",
-      "IRS (Publication 531): Employees who receive $20 or more in tips in a month must report them to their employer; tips are taxable income. (https://www.irs.gov/publications/p531)"
+      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek; some states set a higher minimum wage than the federal one. (https://www.dol.gov/agencies/whd/overtime)",
+      "IRS (Publication 531): Employees who receive $20 or more in cash and charged tips in a month from one employer must report them to that employer; all tips, including noncash tips, are income. (https://www.irs.gov/publications/p531)",
+      "IRS (No tax on tips deduction): A new deduction for qualified tips (tax years 2025-2028, with limits) lowers income tax only; tips still must be reported, and Social Security and Medicare taxes still apply. (https://www.irs.gov/newsroom/what-the-no-tax-on-tips-deduction-means-for-you)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 165
     },
     {
@@ -1023,7 +1071,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Earning Income, Employment, and Paychecks",
-     "prompt": "Kai received $410 in tips this month. What does the IRS require?",
+     "prompt": "Kai, a restaurant employee, received $410 in cash and card tips this month at one job. What does the IRS require?",
      "choices": [
       {
        "letter": "A",
@@ -1035,34 +1083,35 @@
       },
       {
        "letter": "C",
-       "text": "The customer reports the tips for him"
+       "text": "Nothing, because a tip deduction means tips are no longer reported"
       },
       {
        "letter": "D",
-       "text": "He reports them to his employer; they are taxable"
+       "text": "He reports them to his employer; they are taxable income"
       }
      ],
      "correct_letter": "D",
-     "correct_answer": "He reports them to his employer; they are taxable",
+     "correct_answer": "He reports them to his employer; they are taxable income",
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "Tips are taxable income. Employees who receive $20 or more in tips in a month must report them to their employer, who includes them in payroll records and withholding.",
-     "feedback": "Monthly tips of $20 or more must be reported to the employer, and tips are taxable.",
+     "intro": "Tips are taxable income. An employee who receives $20 or more in cash and charged (card) tips in a month at one job must report them to that employer, who includes them in payroll and withholding. Noncash tips (such as tickets) are not reported to the employer but are still income. A deduction for some qualified tips, available in recent tax years, can lower income tax, but tips must still be reported, and Social Security and Medicare taxes still apply.",
+     "feedback": "Monthly cash and card tips of $20 or more must be reported to the employer, and tips are taxable.",
      "question_type": "instruction",
      "topic": "Hourly wages and overtime",
      "subtopic": "Reporting tips",
      "misconceptions": {
       "A": "Thinks tips are tax-free gifts",
       "B": "Invents a threshold",
-      "C": "Thinks customers report tips"
+      "C": "Confuses a possible income tax deduction with reporting"
      },
      "practical_how_to": false,
      "sources": [
-      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek. (https://www.dol.gov/agencies/whd/overtime)",
-      "IRS (Publication 531): Employees who receive $20 or more in tips in a month must report them to their employer; tips are taxable income. (https://www.irs.gov/publications/p531)"
+      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek; some states set a higher minimum wage than the federal one. (https://www.dol.gov/agencies/whd/overtime)",
+      "IRS (Publication 531): Employees who receive $20 or more in cash and charged tips in a month from one employer must report them to that employer; all tips, including noncash tips, are income. (https://www.irs.gov/publications/p531)",
+      "IRS (No tax on tips deduction): A new deduction for qualified tips (tax years 2025-2028, with limits) lowers income tax only; tips still must be reported, and Social Security and Medicare taxes still apply. (https://www.irs.gov/newsroom/what-the-no-tax-on-tips-deduction-means-for-you)"
      ],
-     "effective_date": "IRS reporting rule as of 2026",
+     "effective_date": "IRS rules as of 2026",
      "page": 166
     },
     {
@@ -1075,7 +1124,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Earning Income, Employment, and Paychecks",
-     "prompt": "In a state where the minimum wage is $15.00 per hour and a tip credit is allowed, Lia works 20 hours at a $5.00 cash wage and earns $150 in tips. Federal rules require her total to reach at least minimum wage for those hours. How much must her employer add?",
+     "prompt": "Lia works in a state whose applicable minimum wage is $15.00 per hour and that allows a tip credit. She works 20 hours at a $5.00 cash wage and earns $150 in tips. Her wages plus tips must reach at least the minimum wage for those hours. How much must her employer add?",
      "choices": [
       {
        "letter": "A",
@@ -1099,7 +1148,7 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "When an employer pays a lower cash wage and counts tips toward the minimum wage, the employer must make up the difference if wages plus tips fall below the full minimum wage for the hours worked.",
+     "intro": "When an employer pays a lower cash wage and counts tips toward the minimum wage, the employer must make up the difference if wages plus tips fall below the applicable minimum wage for the hours worked. Minimum wages and tip-credit rules differ by state; the federal minimum is lower than many state minimums.",
      "feedback": "Required: 20 × $15 = $300. She received $100 + $150 = $250. The employer must add $50.",
      "question_type": "instruction",
      "topic": "Hourly wages and overtime",
@@ -1111,10 +1160,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek. (https://www.dol.gov/agencies/whd/overtime)",
-      "IRS (Publication 531): Employees who receive $20 or more in tips in a month must report them to their employer; tips are taxable income. (https://www.irs.gov/publications/p531)"
+      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek; some states set a higher minimum wage than the federal one. (https://www.dol.gov/agencies/whd/overtime)",
+      "IRS (Publication 531): Employees who receive $20 or more in cash and charged tips in a month from one employer must report them to that employer; all tips, including noncash tips, are income. (https://www.irs.gov/publications/p531)",
+      "IRS (No tax on tips deduction): A new deduction for qualified tips (tax years 2025-2028, with limits) lowers income tax only; tips still must be reported, and Social Security and Medicare taxes still apply. (https://www.irs.gov/newsroom/what-the-no-tax-on-tips-deduction-means-for-you)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 167
     },
     {
@@ -1162,10 +1212,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek. (https://www.dol.gov/agencies/whd/overtime)",
-      "IRS (Publication 531): Employees who receive $20 or more in tips in a month must report them to their employer; tips are taxable income. (https://www.irs.gov/publications/p531)"
+      "U.S. Department of Labor: Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek; some states set a higher minimum wage than the federal one. (https://www.dol.gov/agencies/whd/overtime)",
+      "IRS (Publication 531): Employees who receive $20 or more in cash and charged tips in a month from one employer must report them to that employer; all tips, including noncash tips, are income. (https://www.irs.gov/publications/p531)",
+      "IRS (No tax on tips deduction): A new deduction for qualified tips (tax years 2025-2028, with limits) lowers income tax only; tips still must be reported, and Social Security and Medicare taxes still apply. (https://www.irs.gov/newsroom/what-the-no-tax-on-tips-deduction-means-for-you)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 168
     }
    ]

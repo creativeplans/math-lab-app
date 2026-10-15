@@ -14,9 +14,11 @@
    "learning_target": "12-8a distinguish earned from unearned income; retirement account eligibility rules",
    "grade_band": "9-12",
    "outcome_codes": [
-    "12-8a"
+    "Earning Income 12-8a"
    ],
-   "outcome_code_status": "verified"
+   "outcome_code_status": [
+    "wording from search-indexed text of the official document; not re-checked against the PDF by the author"
+   ]
   },
   "new_jersey": {
    "document": "NJSLS-CLKS 2020, Standard 9.1 Personal Financial Literacy (grade 12)",
@@ -26,31 +28,50 @@
    ],
    "performance_expectation_status": "strand-level alignment; individual 9.1.12 performance expectations to verify"
   },
-  "alignment": "supporting"
+  "local_identifier": "FL.RETIRE.58 is a course identifier, not an official national or New Jersey code",
+  "claim": "Alignment shows what the set teaches toward; it does not claim full mastery of any standard."
  },
  "content_status": "time_sensitive",
  "sources": [
   {
-   "org": "IRS (Publication 590-A and 590-B)",
-   "url": "https://www.irs.gov/retirement-plans/individual-retirement-arrangements-iras",
-   "claim": "IRA contributions require taxable compensation (earned income) and are limited to the lesser of the annual limit or compensation; Roth contributions are not deductible; qualified Roth distributions are tax-free.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "org": "IRS (Publication 590-A)",
+   "url": "https://www.irs.gov/publications/p590a",
+   "claim": "IRA contributions require taxable compensation (a spousal IRA can use a working spouse's compensation on a joint return); one annual limit covers traditional and Roth IRAs combined, capped at compensation; Roth contributions are not deductible.",
+   "jurisdiction": "US federal",
+   "section": "Who Can Open a Traditional IRA; Kay Bailey Hutchison Spousal IRA; How Much Can Be Contributed",
+   "qids": [
+    "S58-M-Q1",
+    "S58-M-Q2",
+    "S58-F2-Q4",
+    "S61-F2-Q1",
+    "S61-F2-Q3"
+   ],
+   "verification": "reviewer-checked topic",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch); reviewer consulted this primary source for the specific corrected topic (A16)",
+   "verified_on": null
   },
   {
    "org": "IRS (Retirement topics: IRA contribution limits)",
    "url": "https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits",
    "claim": "The IRA contribution limit and Roth income limits change by tax year; this course uses stated hypothetical amounts.",
+   "jurisdiction": "US federal",
    "effective": "Check the current tax year",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
   },
   {
    "org": "IRS (Publication 590-A)",
    "url": "https://www.irs.gov/publications/p590a",
-   "claim": "Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; contributions for a year can be made until the tax return due date (not including extensions).",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "claim": "Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; regular contributions for a year are due by the return due date without extensions, while an excess and its earnings can be withdrawn tax-free by the due date including extensions.",
+   "jurisdiction": "US federal",
+   "section": "Excess Contributions",
+   "qids": [
+    "S58-F2-Q3"
+   ],
+   "verification": "reviewer-checked topic",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch); reviewer consulted this primary source for the specific corrected topic (A16)",
+   "verified_on": null
   }
  ],
  "practical_skills": [
@@ -66,6 +87,7 @@
    "skill": "Apply Roth IRA eligibility, earned-income, contribution-limit, and deadline rules",
    "standard": "FL.RETIRE.58",
    "nearest_related": false,
+   "alignment_role": "direct",
    "questions": [
     {
      "id": "S58-M-Q1",
@@ -77,7 +99,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Retirement Accounts: IRAs, Roth IRAs, 401(k)s, and 403(b)s",
-     "prompt": "Kai, 16, wants to contribute to a Roth IRA. Which of his income counts as earned income for IRA purposes?",
+     "prompt": "Kai, 16 and unmarried, wants to contribute to a Roth IRA. Which of his income counts as compensation (earned income) for IRA purposes?",
      "choices": [
       {
        "letter": "A",
@@ -101,8 +123,8 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "To contribute to an IRA, you must have earned income (taxable compensation), such as wages, salaries, tips, or net self-employment earnings. Gifts, allowances, interest, and dividends do not count. There is no minimum age.",
-     "feedback": "Wages are earned income; gifts, allowance, and interest are not.",
+     "intro": "To contribute to an IRA, you generally need taxable compensation (earned income): wages, salaries, tips, or net self-employment earnings. Gifts, allowances, interest, and dividends do not count. There is no minimum age. One exception: a married couple filing jointly can use the working spouse's compensation for a spousal IRA.",
+     "feedback": "Wages are compensation; gifts, allowance, and interest are not.",
      "question_type": "instruction",
      "topic": "Roth IRA eligibility and contribution rules",
      "subtopic": "Earned income",
@@ -113,11 +135,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-A and 590-B): IRA contributions require taxable compensation (earned income) and are limited to the lesser of the annual limit or compensation; Roth contributions are not deductible; qualified Roth distributions are tax-free. (https://www.irs.gov/retirement-plans/individual-retirement-arrangements-iras)",
+      "IRS (Publication 590-A): IRA contributions require taxable compensation (a spousal IRA can use a working spouse's compensation on a joint return); one annual limit covers traditional and Roth IRAs combined, capped at compensation; Roth contributions are not deductible. (https://www.irs.gov/publications/p590a)",
       "IRS (Retirement topics: IRA contribution limits): The IRA contribution limit and Roth income limits change by tax year; this course uses stated hypothetical amounts. (https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits)",
-      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; contributions for a year can be made until the tax return due date (not including extensions). (https://www.irs.gov/publications/p590a)"
+      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; regular contributions for a year are due by the return due date without extensions, while an excess and its earnings can be withdrawn tax-free by the due date including extensions. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1199
     },
     {
@@ -130,7 +152,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Retirement Accounts: IRAs, Roth IRAs, 401(k)s, and 403(b)s",
-     "prompt": "For this scenario, assume the annual IRA contribution limit is $7,000. Kai earned $3,200 from his job this year. What is the most he can contribute to a Roth IRA for the year?",
+     "prompt": "For this scenario, assume the annual IRA contribution limit is $7,000, counting traditional and Roth IRAs together. Kai is unmarried and earned $3,200 from his job this year. What is the most he can contribute to a Roth IRA for the year?",
      "choices": [
       {
        "letter": "A",
@@ -154,21 +176,21 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "The most you can contribute to IRAs for a year is the LESSER of the annual limit or your earned income for that year.",
+     "intro": "The most you can contribute to all your IRAs for a year (traditional and Roth combined, not per account) is the LESSER of the annual limit or your taxable compensation for that year.",
      "feedback": "$3,200 is less than $7,000, so his limit is $3,200.",
      "question_type": "instruction",
      "topic": "Roth IRA eligibility and contribution rules",
      "subtopic": "Lesser of limit or earnings",
      "misconceptions": {
-      "C": "Ignores the earned-income cap",
+      "C": "Ignores the compensation cap",
       "D": "Adds the limit and earnings",
       "A": "Thinks minors cannot contribute"
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-A and 590-B): IRA contributions require taxable compensation (earned income) and are limited to the lesser of the annual limit or compensation; Roth contributions are not deductible; qualified Roth distributions are tax-free. (https://www.irs.gov/retirement-plans/individual-retirement-arrangements-iras)",
+      "IRS (Publication 590-A): IRA contributions require taxable compensation (a spousal IRA can use a working spouse's compensation on a joint return); one annual limit covers traditional and Roth IRAs combined, capped at compensation; Roth contributions are not deductible. (https://www.irs.gov/publications/p590a)",
       "IRS (Retirement topics: IRA contribution limits): The IRA contribution limit and Roth income limits change by tax year; this course uses stated hypothetical amounts. (https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits)",
-      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; contributions for a year can be made until the tax return due date (not including extensions). (https://www.irs.gov/publications/p590a)"
+      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; regular contributions for a year are due by the return due date without extensions, while an excess and its earnings can be withdrawn tax-free by the due date including extensions. (https://www.irs.gov/publications/p590a)"
      ],
      "effective_date": "Hypothetical $7,000 limit for this scenario",
      "page": 1200
@@ -218,9 +240,9 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-A and 590-B): IRA contributions require taxable compensation (earned income) and are limited to the lesser of the annual limit or compensation; Roth contributions are not deductible; qualified Roth distributions are tax-free. (https://www.irs.gov/retirement-plans/individual-retirement-arrangements-iras)",
+      "IRS (Publication 590-A): IRA contributions require taxable compensation (a spousal IRA can use a working spouse's compensation on a joint return); one annual limit covers traditional and Roth IRAs combined, capped at compensation; Roth contributions are not deductible. (https://www.irs.gov/publications/p590a)",
       "IRS (Retirement topics: IRA contribution limits): The IRA contribution limit and Roth income limits change by tax year; this course uses stated hypothetical amounts. (https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits)",
-      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; contributions for a year can be made until the tax return due date (not including extensions). (https://www.irs.gov/publications/p590a)"
+      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; regular contributions for a year are due by the return due date without extensions, while an excess and its earnings can be withdrawn tax-free by the due date including extensions. (https://www.irs.gov/publications/p590a)"
      ],
      "effective_date": "Hypothetical $7,000 limit for this scenario",
      "page": 1201
@@ -271,9 +293,9 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-A and 590-B): IRA contributions require taxable compensation (earned income) and are limited to the lesser of the annual limit or compensation; Roth contributions are not deductible; qualified Roth distributions are tax-free. (https://www.irs.gov/retirement-plans/individual-retirement-arrangements-iras)",
+      "IRS (Publication 590-A): IRA contributions require taxable compensation (a spousal IRA can use a working spouse's compensation on a joint return); one annual limit covers traditional and Roth IRAs combined, capped at compensation; Roth contributions are not deductible. (https://www.irs.gov/publications/p590a)",
       "IRS (Retirement topics: IRA contribution limits): The IRA contribution limit and Roth income limits change by tax year; this course uses stated hypothetical amounts. (https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits)",
-      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; contributions for a year can be made until the tax return due date (not including extensions). (https://www.irs.gov/publications/p590a)"
+      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; regular contributions for a year are due by the return due date without extensions, while an excess and its earnings can be withdrawn tax-free by the due date including extensions. (https://www.irs.gov/publications/p590a)"
      ],
      "effective_date": "Hypothetical income limits for this scenario",
      "page": 1202
@@ -324,9 +346,9 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-A and 590-B): IRA contributions require taxable compensation (earned income) and are limited to the lesser of the annual limit or compensation; Roth contributions are not deductible; qualified Roth distributions are tax-free. (https://www.irs.gov/retirement-plans/individual-retirement-arrangements-iras)",
+      "IRS (Publication 590-A): IRA contributions require taxable compensation (a spousal IRA can use a working spouse's compensation on a joint return); one annual limit covers traditional and Roth IRAs combined, capped at compensation; Roth contributions are not deductible. (https://www.irs.gov/publications/p590a)",
       "IRS (Retirement topics: IRA contribution limits): The IRA contribution limit and Roth income limits change by tax year; this course uses stated hypothetical amounts. (https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits)",
-      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; contributions for a year can be made until the tax return due date (not including extensions). (https://www.irs.gov/publications/p590a)"
+      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; regular contributions for a year are due by the return due date without extensions, while an excess and its earnings can be withdrawn tax-free by the due date including extensions. (https://www.irs.gov/publications/p590a)"
      ],
      "effective_date": "IRS rule as of 2026",
      "page": 1203
@@ -340,6 +362,7 @@
    "skill": "Earned versus unearned income",
    "standard": "FL.RETIRE.58",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "concept",
    "relationship": "IRA eligibility depends on telling earned income apart from other money (national outcome 12-8a).",
    "questions": [
@@ -389,11 +412,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-A and 590-B): IRA contributions require taxable compensation (earned income) and are limited to the lesser of the annual limit or compensation; Roth contributions are not deductible; qualified Roth distributions are tax-free. (https://www.irs.gov/retirement-plans/individual-retirement-arrangements-iras)",
+      "IRS (Publication 590-A): IRA contributions require taxable compensation (a spousal IRA can use a working spouse's compensation on a joint return); one annual limit covers traditional and Roth IRAs combined, capped at compensation; Roth contributions are not deductible. (https://www.irs.gov/publications/p590a)",
       "IRS (Retirement topics: IRA contribution limits): The IRA contribution limit and Roth income limits change by tax year; this course uses stated hypothetical amounts. (https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits)",
-      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; contributions for a year can be made until the tax return due date (not including extensions). (https://www.irs.gov/publications/p590a)"
+      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; regular contributions for a year are due by the return due date without extensions, while an excess and its earnings can be withdrawn tax-free by the due date including extensions. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1204
     },
     {
@@ -442,11 +465,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-A and 590-B): IRA contributions require taxable compensation (earned income) and are limited to the lesser of the annual limit or compensation; Roth contributions are not deductible; qualified Roth distributions are tax-free. (https://www.irs.gov/retirement-plans/individual-retirement-arrangements-iras)",
+      "IRS (Publication 590-A): IRA contributions require taxable compensation (a spousal IRA can use a working spouse's compensation on a joint return); one annual limit covers traditional and Roth IRAs combined, capped at compensation; Roth contributions are not deductible. (https://www.irs.gov/publications/p590a)",
       "IRS (Retirement topics: IRA contribution limits): The IRA contribution limit and Roth income limits change by tax year; this course uses stated hypothetical amounts. (https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits)",
-      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; contributions for a year can be made until the tax return due date (not including extensions). (https://www.irs.gov/publications/p590a)"
+      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; regular contributions for a year are due by the return due date without extensions, while an excess and its earnings can be withdrawn tax-free by the due date including extensions. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1205
     },
     {
@@ -495,11 +518,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-A and 590-B): IRA contributions require taxable compensation (earned income) and are limited to the lesser of the annual limit or compensation; Roth contributions are not deductible; qualified Roth distributions are tax-free. (https://www.irs.gov/retirement-plans/individual-retirement-arrangements-iras)",
+      "IRS (Publication 590-A): IRA contributions require taxable compensation (a spousal IRA can use a working spouse's compensation on a joint return); one annual limit covers traditional and Roth IRAs combined, capped at compensation; Roth contributions are not deductible. (https://www.irs.gov/publications/p590a)",
       "IRS (Retirement topics: IRA contribution limits): The IRA contribution limit and Roth income limits change by tax year; this course uses stated hypothetical amounts. (https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits)",
-      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; contributions for a year can be made until the tax return due date (not including extensions). (https://www.irs.gov/publications/p590a)"
+      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; regular contributions for a year are due by the return due date without extensions, while an excess and its earnings can be withdrawn tax-free by the due date including extensions. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1206
     },
     {
@@ -548,11 +571,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-A and 590-B): IRA contributions require taxable compensation (earned income) and are limited to the lesser of the annual limit or compensation; Roth contributions are not deductible; qualified Roth distributions are tax-free. (https://www.irs.gov/retirement-plans/individual-retirement-arrangements-iras)",
+      "IRS (Publication 590-A): IRA contributions require taxable compensation (a spousal IRA can use a working spouse's compensation on a joint return); one annual limit covers traditional and Roth IRAs combined, capped at compensation; Roth contributions are not deductible. (https://www.irs.gov/publications/p590a)",
       "IRS (Retirement topics: IRA contribution limits): The IRA contribution limit and Roth income limits change by tax year; this course uses stated hypothetical amounts. (https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits)",
-      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; contributions for a year can be made until the tax return due date (not including extensions). (https://www.irs.gov/publications/p590a)"
+      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; regular contributions for a year are due by the return due date without extensions, while an excess and its earnings can be withdrawn tax-free by the due date including extensions. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1207
     },
     {
@@ -601,11 +624,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-A and 590-B): IRA contributions require taxable compensation (earned income) and are limited to the lesser of the annual limit or compensation; Roth contributions are not deductible; qualified Roth distributions are tax-free. (https://www.irs.gov/retirement-plans/individual-retirement-arrangements-iras)",
+      "IRS (Publication 590-A): IRA contributions require taxable compensation (a spousal IRA can use a working spouse's compensation on a joint return); one annual limit covers traditional and Roth IRAs combined, capped at compensation; Roth contributions are not deductible. (https://www.irs.gov/publications/p590a)",
       "IRS (Retirement topics: IRA contribution limits): The IRA contribution limit and Roth income limits change by tax year; this course uses stated hypothetical amounts. (https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits)",
-      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; contributions for a year can be made until the tax return due date (not including extensions). (https://www.irs.gov/publications/p590a)"
+      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; regular contributions for a year are due by the return due date without extensions, while an excess and its earnings can be withdrawn tax-free by the due date including extensions. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1208
     }
    ]
@@ -617,6 +640,7 @@
    "skill": "Solve word problems that lead to inequalities",
    "standard": "FL.RETIRE.58",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "Contribution rules are inequalities: contribution ≤ the limit and ≤ earned income.",
    "ref": {
@@ -638,6 +662,7 @@
    "skill": "Compare multi-digit whole numbers",
    "standard": "FL.RETIRE.58",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "\"The lesser of\" two amounts requires comparing numbers.",
    "ref": {
@@ -659,6 +684,7 @@
    "skill": "Custodial Roth IRAs for teens",
    "standard": "FL.RETIRE.58",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 1",
    "difficulty": "deeper",
    "questions": [
@@ -708,11 +734,11 @@
      },
      "practical_how_to": true,
      "sources": [
-      "IRS (Publication 590-A and 590-B): IRA contributions require taxable compensation (earned income) and are limited to the lesser of the annual limit or compensation; Roth contributions are not deductible; qualified Roth distributions are tax-free. (https://www.irs.gov/retirement-plans/individual-retirement-arrangements-iras)",
+      "IRS (Publication 590-A): IRA contributions require taxable compensation (a spousal IRA can use a working spouse's compensation on a joint return); one annual limit covers traditional and Roth IRAs combined, capped at compensation; Roth contributions are not deductible. (https://www.irs.gov/publications/p590a)",
       "IRS (Retirement topics: IRA contribution limits): The IRA contribution limit and Roth income limits change by tax year; this course uses stated hypothetical amounts. (https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits)",
-      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; contributions for a year can be made until the tax return due date (not including extensions). (https://www.irs.gov/publications/p590a)"
+      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; regular contributions for a year are due by the return due date without extensions, while an excess and its earnings can be withdrawn tax-free by the due date including extensions. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1209
     },
     {
@@ -761,11 +787,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-A and 590-B): IRA contributions require taxable compensation (earned income) and are limited to the lesser of the annual limit or compensation; Roth contributions are not deductible; qualified Roth distributions are tax-free. (https://www.irs.gov/retirement-plans/individual-retirement-arrangements-iras)",
+      "IRS (Publication 590-A): IRA contributions require taxable compensation (a spousal IRA can use a working spouse's compensation on a joint return); one annual limit covers traditional and Roth IRAs combined, capped at compensation; Roth contributions are not deductible. (https://www.irs.gov/publications/p590a)",
       "IRS (Retirement topics: IRA contribution limits): The IRA contribution limit and Roth income limits change by tax year; this course uses stated hypothetical amounts. (https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits)",
-      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; contributions for a year can be made until the tax return due date (not including extensions). (https://www.irs.gov/publications/p590a)"
+      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; regular contributions for a year are due by the return due date without extensions, while an excess and its earnings can be withdrawn tax-free by the due date including extensions. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1210
     },
     {
@@ -814,11 +840,11 @@
      },
      "practical_how_to": true,
      "sources": [
-      "IRS (Publication 590-A and 590-B): IRA contributions require taxable compensation (earned income) and are limited to the lesser of the annual limit or compensation; Roth contributions are not deductible; qualified Roth distributions are tax-free. (https://www.irs.gov/retirement-plans/individual-retirement-arrangements-iras)",
+      "IRS (Publication 590-A): IRA contributions require taxable compensation (a spousal IRA can use a working spouse's compensation on a joint return); one annual limit covers traditional and Roth IRAs combined, capped at compensation; Roth contributions are not deductible. (https://www.irs.gov/publications/p590a)",
       "IRS (Retirement topics: IRA contribution limits): The IRA contribution limit and Roth income limits change by tax year; this course uses stated hypothetical amounts. (https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits)",
-      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; contributions for a year can be made until the tax return due date (not including extensions). (https://www.irs.gov/publications/p590a)"
+      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; regular contributions for a year are due by the return due date without extensions, while an excess and its earnings can be withdrawn tax-free by the due date including extensions. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1211
     },
     {
@@ -867,11 +893,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-A and 590-B): IRA contributions require taxable compensation (earned income) and are limited to the lesser of the annual limit or compensation; Roth contributions are not deductible; qualified Roth distributions are tax-free. (https://www.irs.gov/retirement-plans/individual-retirement-arrangements-iras)",
+      "IRS (Publication 590-A): IRA contributions require taxable compensation (a spousal IRA can use a working spouse's compensation on a joint return); one annual limit covers traditional and Roth IRAs combined, capped at compensation; Roth contributions are not deductible. (https://www.irs.gov/publications/p590a)",
       "IRS (Retirement topics: IRA contribution limits): The IRA contribution limit and Roth income limits change by tax year; this course uses stated hypothetical amounts. (https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits)",
-      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; contributions for a year can be made until the tax return due date (not including extensions). (https://www.irs.gov/publications/p590a)"
+      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; regular contributions for a year are due by the return due date without extensions, while an excess and its earnings can be withdrawn tax-free by the due date including extensions. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1212
     },
     {
@@ -920,11 +946,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-A and 590-B): IRA contributions require taxable compensation (earned income) and are limited to the lesser of the annual limit or compensation; Roth contributions are not deductible; qualified Roth distributions are tax-free. (https://www.irs.gov/retirement-plans/individual-retirement-arrangements-iras)",
+      "IRS (Publication 590-A): IRA contributions require taxable compensation (a spousal IRA can use a working spouse's compensation on a joint return); one annual limit covers traditional and Roth IRAs combined, capped at compensation; Roth contributions are not deductible. (https://www.irs.gov/publications/p590a)",
       "IRS (Retirement topics: IRA contribution limits): The IRA contribution limit and Roth income limits change by tax year; this course uses stated hypothetical amounts. (https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits)",
-      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; contributions for a year can be made until the tax return due date (not including extensions). (https://www.irs.gov/publications/p590a)"
+      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; regular contributions for a year are due by the return due date without extensions, while an excess and its earnings can be withdrawn tax-free by the due date including extensions. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1213
     }
    ]
@@ -936,6 +962,7 @@
    "skill": "Contribution mistakes and fixes",
    "standard": "FL.RETIRE.58",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 2",
    "difficulty": "deeper",
    "questions": [
@@ -985,9 +1012,9 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-A and 590-B): IRA contributions require taxable compensation (earned income) and are limited to the lesser of the annual limit or compensation; Roth contributions are not deductible; qualified Roth distributions are tax-free. (https://www.irs.gov/retirement-plans/individual-retirement-arrangements-iras)",
+      "IRS (Publication 590-A): IRA contributions require taxable compensation (a spousal IRA can use a working spouse's compensation on a joint return); one annual limit covers traditional and Roth IRAs combined, capped at compensation; Roth contributions are not deductible. (https://www.irs.gov/publications/p590a)",
       "IRS (Retirement topics: IRA contribution limits): The IRA contribution limit and Roth income limits change by tax year; this course uses stated hypothetical amounts. (https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits)",
-      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; contributions for a year can be made until the tax return due date (not including extensions). (https://www.irs.gov/publications/p590a)"
+      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; regular contributions for a year are due by the return due date without extensions, while an excess and its earnings can be withdrawn tax-free by the due date including extensions. (https://www.irs.gov/publications/p590a)"
      ],
      "effective_date": "Hypothetical $7,000 limit for this scenario",
      "page": 1214
@@ -1038,11 +1065,11 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-A and 590-B): IRA contributions require taxable compensation (earned income) and are limited to the lesser of the annual limit or compensation; Roth contributions are not deductible; qualified Roth distributions are tax-free. (https://www.irs.gov/retirement-plans/individual-retirement-arrangements-iras)",
+      "IRS (Publication 590-A): IRA contributions require taxable compensation (a spousal IRA can use a working spouse's compensation on a joint return); one annual limit covers traditional and Roth IRAs combined, capped at compensation; Roth contributions are not deductible. (https://www.irs.gov/publications/p590a)",
       "IRS (Retirement topics: IRA contribution limits): The IRA contribution limit and Roth income limits change by tax year; this course uses stated hypothetical amounts. (https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits)",
-      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; contributions for a year can be made until the tax return due date (not including extensions). (https://www.irs.gov/publications/p590a)"
+      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; regular contributions for a year are due by the return due date without extensions, while an excess and its earnings can be withdrawn tax-free by the due date including extensions. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1215
     },
     {
@@ -1055,11 +1082,11 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Retirement Accounts: IRAs, Roth IRAs, 401(k)s, and 403(b)s",
-     "prompt": "How can Ana usually fix an excess contribution?",
+     "prompt": "How can Ana usually fix an excess IRA contribution?",
      "choices": [
       {
        "letter": "A",
-       "text": "Withdraw the excess (and its earnings) before the tax deadline"
+       "text": "Withdraw the excess (and its earnings) by the tax return due date, including extensions"
       },
       {
        "letter": "B",
@@ -1075,11 +1102,11 @@
       }
      ],
      "correct_letter": "A",
-     "correct_answer": "Withdraw the excess (and its earnings) before the tax deadline",
+     "correct_answer": "Withdraw the excess (and its earnings) by the tax return due date, including extensions",
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "Excess contributions can be corrected by withdrawing the excess and any earnings on it by the tax return due date.",
+     "intro": "An excess contribution can be corrected by withdrawing the excess and any earnings on it by the due date of the tax return, including extensions. This is different from the deadline for making a contribution for a year, which is usually the April filing date without extensions.",
      "feedback": "Removing the excess and its earnings in time avoids the 6% tax.",
      "question_type": "instruction",
      "topic": "Roth IRA eligibility and contribution rules",
@@ -1091,11 +1118,11 @@
      },
      "practical_how_to": true,
      "sources": [
-      "IRS (Publication 590-A and 590-B): IRA contributions require taxable compensation (earned income) and are limited to the lesser of the annual limit or compensation; Roth contributions are not deductible; qualified Roth distributions are tax-free. (https://www.irs.gov/retirement-plans/individual-retirement-arrangements-iras)",
+      "IRS (Publication 590-A): IRA contributions require taxable compensation (a spousal IRA can use a working spouse's compensation on a joint return); one annual limit covers traditional and Roth IRAs combined, capped at compensation; Roth contributions are not deductible. (https://www.irs.gov/publications/p590a)",
       "IRS (Retirement topics: IRA contribution limits): The IRA contribution limit and Roth income limits change by tax year; this course uses stated hypothetical amounts. (https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits)",
-      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; contributions for a year can be made until the tax return due date (not including extensions). (https://www.irs.gov/publications/p590a)"
+      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; regular contributions for a year are due by the return due date without extensions, while an excess and its earnings can be withdrawn tax-free by the due date including extensions. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1216
     },
     {
@@ -1108,7 +1135,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Retirement Accounts: IRAs, Roth IRAs, 401(k)s, and 403(b)s",
-     "prompt": "Leo has no job this year, only $200 of interest income. Can he contribute to an IRA?",
+     "prompt": "Leo is single, has no job this year, and has only $200 of interest income. Can he contribute to an IRA?",
      "choices": [
       {
        "letter": "A",
@@ -1120,7 +1147,7 @@
       },
       {
        "letter": "C",
-       "text": "No; he has no earned income"
+       "text": "No; he has no compensation"
       },
       {
        "letter": "D",
@@ -1128,27 +1155,27 @@
       }
      ],
      "correct_letter": "C",
-     "correct_answer": "No; he has no earned income",
+     "correct_answer": "No; he has no compensation",
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "IRA contributions require earned income (taxable compensation).",
-     "feedback": "Without earned income, he cannot contribute.",
+     "intro": "IRA contributions require taxable compensation (earned income). A spousal IRA can use a working spouse's compensation on a joint return, but Leo is single.",
+     "feedback": "Single with no compensation, he cannot contribute.",
      "question_type": "instruction",
      "topic": "Roth IRA eligibility and contribution rules",
      "subtopic": "No earned income",
      "misconceptions": {
-      "A": "Interest is not earned income",
+      "A": "Interest is not compensation",
       "B": "Ignores the rule",
       "D": "Believes timing changes eligibility"
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-A and 590-B): IRA contributions require taxable compensation (earned income) and are limited to the lesser of the annual limit or compensation; Roth contributions are not deductible; qualified Roth distributions are tax-free. (https://www.irs.gov/retirement-plans/individual-retirement-arrangements-iras)",
+      "IRS (Publication 590-A): IRA contributions require taxable compensation (a spousal IRA can use a working spouse's compensation on a joint return); one annual limit covers traditional and Roth IRAs combined, capped at compensation; Roth contributions are not deductible. (https://www.irs.gov/publications/p590a)",
       "IRS (Retirement topics: IRA contribution limits): The IRA contribution limit and Roth income limits change by tax year; this course uses stated hypothetical amounts. (https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits)",
-      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; contributions for a year can be made until the tax return due date (not including extensions). (https://www.irs.gov/publications/p590a)"
+      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; regular contributions for a year are due by the return due date without extensions, while an excess and its earnings can be withdrawn tax-free by the due date including extensions. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1217
     },
     {
@@ -1197,9 +1224,9 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-A and 590-B): IRA contributions require taxable compensation (earned income) and are limited to the lesser of the annual limit or compensation; Roth contributions are not deductible; qualified Roth distributions are tax-free. (https://www.irs.gov/retirement-plans/individual-retirement-arrangements-iras)",
+      "IRS (Publication 590-A): IRA contributions require taxable compensation (a spousal IRA can use a working spouse's compensation on a joint return); one annual limit covers traditional and Roth IRAs combined, capped at compensation; Roth contributions are not deductible. (https://www.irs.gov/publications/p590a)",
       "IRS (Retirement topics: IRA contribution limits): The IRA contribution limit and Roth income limits change by tax year; this course uses stated hypothetical amounts. (https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits)",
-      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; contributions for a year can be made until the tax return due date (not including extensions). (https://www.irs.gov/publications/p590a)"
+      "IRS (Publication 590-A): Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; regular contributions for a year are due by the return due date without extensions, while an excess and its earnings can be withdrawn tax-free by the due date including extensions. (https://www.irs.gov/publications/p590a)"
      ],
      "effective_date": "IRS rule as of 2026",
      "page": 1218

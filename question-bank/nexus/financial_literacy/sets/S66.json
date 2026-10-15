@@ -14,7 +14,7 @@
    "learning_target": "Calculate taxable income from gross income using adjustments and deductions",
    "grade_band": "9-12",
    "outcome_codes": [],
-   "outcome_code_status": "to verify against the official document"
+   "outcome_code_status": "topic-level only; no 12th-grade outcome code assigned yet"
   },
   "new_jersey": {
    "document": "NJSLS-CLKS 2020, Standard 9.1 Personal Financial Literacy (grade 12)",
@@ -23,7 +23,8 @@
    ],
    "performance_expectation_status": "strand-level alignment; individual 9.1.12 performance expectations to verify"
   },
-  "alignment": "supporting"
+  "local_identifier": "FL.TAX.66 is a course identifier, not an official national or New Jersey code",
+  "claim": "Alignment shows what the set teaches toward; it does not claim full mastery of any standard."
  },
  "content_status": "time_sensitive",
  "sources": [
@@ -31,9 +32,25 @@
    "org": "IRS (Federal income tax rates and brackets)",
    "url": "https://www.irs.gov/filing/federal-income-tax-rates-and-brackets",
    "claim": "The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts.",
+   "jurisdiction": "US federal",
    "effective": "Check the current tax year",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
+  },
+  {
+   "org": "IRS (Working Families Tax Cuts)",
+   "url": "https://www.irs.gov/newsroom/working-families-tax-cuts",
+   "claim": "Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities.",
+   "jurisdiction": "US federal",
+   "effective": "Tax year 2026",
+   "qids": [
+    "S66-M-Q1",
+    "S109-M-Q4"
+   ],
+   "verification": "reviewer-checked topic",
+   "verification_detail": "new or replaced URL in v1.1; not fetched by the reviewer; reviewer consulted this primary source for the specific corrected topic (A1); author: search-corroborated on 2026-10-15: 2026 nonitemizer deduction $1,000 / $2,000 MFJ; bronze and catastrophic plans HSA-compatible from 2026",
+   "verified_on": null
   }
  ],
  "practical_skills": [
@@ -48,6 +65,7 @@
    "skill": "Calculate adjusted gross income and taxable income using adjustments and deductions",
    "standard": "FL.TAX.66",
    "nearest_related": false,
+   "alignment_role": "direct",
    "questions": [
     {
      "id": "S66-M-Q1",
@@ -59,7 +77,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Taxes and Tax Filing",
-     "prompt": "For this scenario, assume the standard deduction for a single filer is $15,000. Omar's total income is $55,000, with no adjustments. What is his taxable income?",
+     "prompt": "For this scenario, assume the standard deduction for a single filer is $15,000, and Omar has no adjustments and no other deductions. His total income is $55,000. What is his taxable income?",
      "choices": [
       {
        "letter": "A",
@@ -83,7 +101,7 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "Taxable income is the income that tax rates are applied to. Steps: total (gross) income − adjustments (such as some retirement or student loan interest deductions) = adjusted gross income (AGI); AGI − deductions (the standard deduction or itemized deductions) = taxable income.",
+     "intro": "Taxable income is the income that tax rates are applied to. In simplified form: total (gross) income − adjustments = adjusted gross income (AGI); AGI − deductions = taxable income. Deductions are the standard deduction or itemized deductions, plus some newer deductions allowed without itemizing (such as, starting in 2026, a limited charitable deduction). This example has none of those extras.",
      "feedback": "$55,000 − $15,000 = $40,000.",
      "question_type": "instruction",
      "topic": "From gross income to taxable income",
@@ -95,7 +113,8 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)"
+      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
      "effective_date": "Hypothetical amounts for this scenario",
      "page": 1367
@@ -146,9 +165,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)"
+      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1368
     },
     {
@@ -196,7 +216,8 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)"
+      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
      "effective_date": "Hypothetical amounts for this scenario",
      "page": 1369
@@ -247,9 +268,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)"
+      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1370
     },
     {
@@ -297,9 +319,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)"
+      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1371
     }
    ]
@@ -311,6 +334,7 @@
    "skill": "Subtracting in steps",
    "standard": "FL.TAX.66",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "concept",
    "relationship": "Taxable income comes from a sequence of subtractions; students must apply them in order.",
    "questions": [
@@ -360,9 +384,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)"
+      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1372
     },
     {
@@ -411,9 +436,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)"
+      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1373
     },
     {
@@ -462,9 +488,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)"
+      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1374
     },
     {
@@ -512,9 +539,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)"
+      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1375
     },
     {
@@ -562,9 +590,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)"
+      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1376
     }
    ]
@@ -576,6 +605,7 @@
    "skill": "Subtract multi-digit decimals",
    "standard": "FL.TAX.66",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "AGI and taxable income come from subtracting adjustments and deductions.",
    "ref": {
@@ -597,6 +627,7 @@
    "skill": "Write and solve linear equations in context",
    "standard": "FL.TAX.66",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "Taxable income = income − adjustments − deduction is a linear relationship.",
    "ref": {
@@ -618,6 +649,7 @@
    "skill": "Itemized deductions",
    "standard": "FL.TAX.66",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 1",
    "difficulty": "deeper",
    "questions": [
@@ -667,9 +699,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)"
+      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1377
     },
     {
@@ -718,9 +751,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)"
+      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1378
     },
     {
@@ -733,7 +767,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Taxes and Tax Filing",
-     "prompt": "Sam gives $600 more to charity, raising itemized deductions to $15,300. How much more is deducted than with the standard deduction?",
+     "prompt": "Use pre-2026 rules for this scenario, when people taking the standard deduction could not also deduct charitable gifts. Sam's standard deduction would be $15,000. He gives $600 more to charity, raising his itemized deductions to $15,300. How much more is deducted by itemizing than with the standard deduction?",
      "choices": [
       {
        "letter": "A",
@@ -757,7 +791,7 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "Itemizing only helps by the amount it exceeds the standard deduction.",
+     "intro": "Itemizing only helps by the amount it exceeds the standard deduction. (Starting in 2026, people who do not itemize may also deduct up to $1,000 of cash gifts, or $2,000 married filing jointly, which can change this comparison.)",
      "feedback": "$15,300 − $15,000 = $300 more.",
      "question_type": "instruction",
      "topic": "From gross income to taxable income",
@@ -769,9 +803,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)"
+      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1379
     },
     {
@@ -820,9 +855,10 @@
      },
      "practical_how_to": true,
      "sources": [
-      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)"
+      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1380
     },
     {
@@ -870,9 +906,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)"
+      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1381
     }
    ]
@@ -884,6 +921,7 @@
    "skill": "Adjustments and AGI",
    "standard": "FL.TAX.66",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 2",
    "difficulty": "deeper",
    "questions": [
@@ -933,9 +971,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)"
+      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1382
     },
     {
@@ -984,9 +1023,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)"
+      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1383
     },
     {
@@ -1023,8 +1063,8 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "AGI is used to determine eligibility for many tax benefits, such as credits and Roth IRA contributions.",
-     "feedback": "AGI controls eligibility for many tax benefits.",
+     "intro": "AGI, or a modified version of it (MAGI), is used to decide eligibility for many tax benefits. For example, Roth IRA contribution limits use modified AGI, which adds back certain items.",
+     "feedback": "AGI or modified AGI controls eligibility for many tax benefits.",
      "question_type": "instruction",
      "topic": "From gross income to taxable income",
      "subtopic": "Why AGI matters",
@@ -1035,9 +1075,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)"
+      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1384
     },
     {
@@ -1086,7 +1127,8 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)"
+      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
      "effective_date": "Hypothetical amounts for this scenario",
      "page": 1385
@@ -1137,9 +1179,10 @@
      },
      "practical_how_to": true,
      "sources": [
-      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)"
+      "IRS (Federal income tax rates and brackets): The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts. (https://www.irs.gov/filing/federal-income-tax-rates-and-brackets)",
+      "IRS (Working Families Tax Cuts): Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities. (https://www.irs.gov/newsroom/working-families-tax-cuts)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1386
     }
    ]

@@ -14,7 +14,7 @@
    "learning_target": "Estimate taxes on self-employment income and plan estimated payments",
    "grade_band": "9-12",
    "outcome_codes": [],
-   "outcome_code_status": "to verify against the official document"
+   "outcome_code_status": "topic-level only; no 12th-grade outcome code assigned yet"
   },
   "new_jersey": {
    "document": "NJSLS-CLKS 2020, Standard 9.1 Personal Financial Literacy (grade 12)",
@@ -24,7 +24,8 @@
    ],
    "performance_expectation_status": "strand-level alignment; individual 9.1.12 performance expectations to verify"
   },
-  "alignment": "supporting"
+  "local_identifier": "FL.BIZ.96 is a course identifier, not an official national or New Jersey code",
+  "claim": "Alignment shows what the set teaches toward; it does not claim full mastery of any standard."
  },
  "content_status": "time_sensitive",
  "sources": [
@@ -32,17 +33,38 @@
    "org": "IRS (Self-employment tax)",
    "url": "https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes",
    "claim": "Self-employment tax is 15.3% (12.4% Social Security and 2.9% Medicare) and is figured on 92.35% of net earnings from self-employment; it applies when net earnings are $400 or more.",
+   "jurisdiction": "US federal",
    "effective": "Tax year 2026",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
   },
   {
    "org": "IRS (Estimated taxes)",
    "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes",
-   "claim": "People who expect to owe $1,000 or more when they file, such as many self-employed workers, generally must pay estimated tax quarterly.",
+   "claim": "People who expect to owe $1,000 or more after withholding and credits generally must pay estimated tax quarterly; safe harbors based on this year's or last year's tax can avoid the penalty.",
+   "jurisdiction": "US federal",
    "effective": "Tax year 2026",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "qids": [
+    "S13-F2-Q3",
+    "S96-M-Q3"
+   ],
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
+  },
+  {
+   "org": "IRS (Am I required to file a Form 1099?)",
+   "url": "https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return",
+   "claim": "For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued.",
+   "jurisdiction": "US federal",
+   "effective": "Payments in 2026",
+   "qids": [
+    "S96-B1-Q2"
+   ],
+   "verification": "reviewer-checked topic",
+   "verification_detail": "new or replaced URL in v1.1; not fetched by the reviewer; reviewer consulted this primary source for the specific corrected topic (A19); author: search-corroborated on 2026-10-15: 1099-NEC threshold $2,000 for payments after 2025",
+   "verified_on": null
   }
  ],
  "practical_skills": [
@@ -58,6 +80,7 @@
    "skill": "Estimate self-employment and income taxes for a small business and plan quarterly payments",
    "standard": "FL.BIZ.96",
    "nearest_related": false,
+   "alignment_role": "direct",
    "questions": [
     {
      "id": "S96-M-Q1",
@@ -106,9 +129,10 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-employment tax): Self-employment tax is 15.3% (12.4% Social Security and 2.9% Medicare) and is figured on 92.35% of net earnings from self-employment; it applies when net earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Estimated taxes): People who expect to owe $1,000 or more when they file, such as many self-employed workers, generally must pay estimated tax quarterly. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)"
+      "IRS (Estimated taxes): People who expect to owe $1,000 or more after withholding and credits generally must pay estimated tax quarterly; safe harbors based on this year's or last year's tax can avoid the penalty. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1957
     },
     {
@@ -121,7 +145,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Entrepreneurship and Self-Employment",
-     "prompt": "Self-employment tax is 15.3% of 92.35% of net profit. On $20,000 of net profit, what is it?",
+     "prompt": "Self-employment tax is 15.3% of 92.35% of net profit. Dev has $20,000 of net profit, no wages from other jobs, and owes no Additional Medicare Tax. What is his self-employment tax?",
      "choices": [
       {
        "letter": "A",
@@ -145,7 +169,7 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "Employees pay 7.65% for Social Security and Medicare, and employers pay another 7.65%. Self-employed people pay both halves: 15.3%, figured on 92.35% of net earnings.",
+     "intro": "Employees pay 7.65% for Social Security and Medicare, and employers pay another 7.65%. Self-employed people pay both halves: 15.3%, figured on 92.35% of net profit. (Wages from other jobs and very high income can change the calculation.)",
      "feedback": "$20,000 × 0.9235 = $18,470; × 0.153 = $2,825.91.",
      "question_type": "instruction",
      "topic": "Self-employment taxes",
@@ -158,7 +182,8 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-employment tax): Self-employment tax is 15.3% (12.4% Social Security and 2.9% Medicare) and is figured on 92.35% of net earnings from self-employment; it applies when net earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Estimated taxes): People who expect to owe $1,000 or more when they file, such as many self-employed workers, generally must pay estimated tax quarterly. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)"
+      "IRS (Estimated taxes): People who expect to owe $1,000 or more after withholding and credits generally must pay estimated tax quarterly; safe harbors based on this year's or last year's tax can avoid the penalty. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
      "effective_date": "Tax year 2026",
      "page": 1958
@@ -197,7 +222,7 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "If you expect to owe $1,000 or more when you file, the IRS generally requires quarterly estimated payments. Missing them can cause penalties.",
+     "intro": "If you expect to owe $1,000 or more after withholding and credits, the IRS generally expects quarterly estimated payments. Paying enough during the year, or meeting a safe harbor based on this year's or last year's tax, avoids an underpayment penalty.",
      "feedback": "Without withholding, self-employed people pay as they go through estimated taxes.",
      "question_type": "instruction",
      "topic": "Self-employment taxes",
@@ -210,7 +235,8 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-employment tax): Self-employment tax is 15.3% (12.4% Social Security and 2.9% Medicare) and is figured on 92.35% of net earnings from self-employment; it applies when net earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Estimated taxes): People who expect to owe $1,000 or more when they file, such as many self-employed workers, generally must pay estimated tax quarterly. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)"
+      "IRS (Estimated taxes): People who expect to owe $1,000 or more after withholding and credits generally must pay estimated tax quarterly; safe harbors based on this year's or last year's tax can avoid the penalty. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
      "effective_date": "Tax year 2026",
      "page": 1959
@@ -261,9 +287,10 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-employment tax): Self-employment tax is 15.3% (12.4% Social Security and 2.9% Medicare) and is figured on 92.35% of net earnings from self-employment; it applies when net earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Estimated taxes): People who expect to owe $1,000 or more when they file, such as many self-employed workers, generally must pay estimated tax quarterly. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)"
+      "IRS (Estimated taxes): People who expect to owe $1,000 or more after withholding and credits generally must pay estimated tax quarterly; safe harbors based on this year's or last year's tax can avoid the penalty. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1960
     },
     {
@@ -312,9 +339,10 @@
      "practical_how_to": true,
      "sources": [
       "IRS (Self-employment tax): Self-employment tax is 15.3% (12.4% Social Security and 2.9% Medicare) and is figured on 92.35% of net earnings from self-employment; it applies when net earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Estimated taxes): People who expect to owe $1,000 or more when they file, such as many self-employed workers, generally must pay estimated tax quarterly. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)"
+      "IRS (Estimated taxes): People who expect to owe $1,000 or more after withholding and credits generally must pay estimated tax quarterly; safe harbors based on this year's or last year's tax can avoid the penalty. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1961
     }
    ]
@@ -326,6 +354,7 @@
    "skill": "Business deductions and tax forms",
    "standard": "FL.BIZ.96",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "concept",
    "relationship": "Self-employment tax is charged on profit after deductible expenses.",
    "questions": [
@@ -376,9 +405,10 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-employment tax): Self-employment tax is 15.3% (12.4% Social Security and 2.9% Medicare) and is figured on 92.35% of net earnings from self-employment; it applies when net earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Estimated taxes): People who expect to owe $1,000 or more when they file, such as many self-employed workers, generally must pay estimated tax quarterly. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)"
+      "IRS (Estimated taxes): People who expect to owe $1,000 or more after withholding and credits generally must pay estimated tax quarterly; safe harbors based on this year's or last year's tax can avoid the penalty. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1962
     },
     {
@@ -391,7 +421,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Entrepreneurship and Self-Employment",
-     "prompt": "A client paid Dev $900 for design work. Which form might report this payment?",
+     "prompt": "In tax year 2026, a design business paid Dev, an independent contractor, $2,500 for his work. Which form might the business send to report this payment?",
      "choices": [
       {
        "letter": "A",
@@ -415,8 +445,8 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "Businesses report payments to independent contractors on Form 1099-NEC when rules require. Payment apps may send Form 1099-K.",
-     "feedback": "Contractor payments are reported on 1099-NEC.",
+     "intro": "Businesses report payments to independent contractors on Form 1099-NEC once payments reach the reporting threshold, which became $2,000 for payments made in 2026. Payment apps may send Form 1099-K. Income is taxable whether or not a form is sent.",
+     "feedback": "Contractor payments at or above the threshold are reported on 1099-NEC; smaller payments are still taxable income.",
      "question_type": "instruction",
      "topic": "Self-employment taxes",
      "subtopic": "1099 forms",
@@ -428,9 +458,10 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-employment tax): Self-employment tax is 15.3% (12.4% Social Security and 2.9% Medicare) and is figured on 92.35% of net earnings from self-employment; it applies when net earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Estimated taxes): People who expect to owe $1,000 or more when they file, such as many self-employed workers, generally must pay estimated tax quarterly. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)"
+      "IRS (Estimated taxes): People who expect to owe $1,000 or more after withholding and credits generally must pay estimated tax quarterly; safe harbors based on this year's or last year's tax can avoid the penalty. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "Tax year 2026",
+     "effective_date": "Tax year 2026 threshold",
      "page": 1963
     },
     {
@@ -479,9 +510,10 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-employment tax): Self-employment tax is 15.3% (12.4% Social Security and 2.9% Medicare) and is figured on 92.35% of net earnings from self-employment; it applies when net earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Estimated taxes): People who expect to owe $1,000 or more when they file, such as many self-employed workers, generally must pay estimated tax quarterly. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)"
+      "IRS (Estimated taxes): People who expect to owe $1,000 or more after withholding and credits generally must pay estimated tax quarterly; safe harbors based on this year's or last year's tax can avoid the penalty. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1964
     },
     {
@@ -530,9 +562,10 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-employment tax): Self-employment tax is 15.3% (12.4% Social Security and 2.9% Medicare) and is figured on 92.35% of net earnings from self-employment; it applies when net earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Estimated taxes): People who expect to owe $1,000 or more when they file, such as many self-employed workers, generally must pay estimated tax quarterly. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)"
+      "IRS (Estimated taxes): People who expect to owe $1,000 or more after withholding and credits generally must pay estimated tax quarterly; safe harbors based on this year's or last year's tax can avoid the penalty. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1965
     },
     {
@@ -581,9 +614,10 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-employment tax): Self-employment tax is 15.3% (12.4% Social Security and 2.9% Medicare) and is figured on 92.35% of net earnings from self-employment; it applies when net earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Estimated taxes): People who expect to owe $1,000 or more when they file, such as many self-employed workers, generally must pay estimated tax quarterly. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)"
+      "IRS (Estimated taxes): People who expect to owe $1,000 or more after withholding and credits generally must pay estimated tax quarterly; safe harbors based on this year's or last year's tax can avoid the penalty. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1966
     }
    ]
@@ -595,6 +629,7 @@
    "skill": "Find a percent of a quantity",
    "standard": "FL.BIZ.96",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "Self-employment tax is a percent of a percent of profit.",
    "ref": {
@@ -616,6 +651,7 @@
    "skill": "Keeping more of what you earn",
    "standard": "FL.BIZ.96",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 1",
    "difficulty": "deeper",
    "questions": [
@@ -666,7 +702,8 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-employment tax): Self-employment tax is 15.3% (12.4% Social Security and 2.9% Medicare) and is figured on 92.35% of net earnings from self-employment; it applies when net earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Estimated taxes): People who expect to owe $1,000 or more when they file, such as many self-employed workers, generally must pay estimated tax quarterly. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)"
+      "IRS (Estimated taxes): People who expect to owe $1,000 or more after withholding and credits generally must pay estimated tax quarterly; safe harbors based on this year's or last year's tax can avoid the penalty. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
      "effective_date": "Hypothetical rate; IRS sets it yearly",
      "page": 1967
@@ -717,9 +754,10 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-employment tax): Self-employment tax is 15.3% (12.4% Social Security and 2.9% Medicare) and is figured on 92.35% of net earnings from self-employment; it applies when net earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Estimated taxes): People who expect to owe $1,000 or more when they file, such as many self-employed workers, generally must pay estimated tax quarterly. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)"
+      "IRS (Estimated taxes): People who expect to owe $1,000 or more after withholding and credits generally must pay estimated tax quarterly; safe harbors based on this year's or last year's tax can avoid the penalty. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1968
     },
     {
@@ -768,9 +806,10 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-employment tax): Self-employment tax is 15.3% (12.4% Social Security and 2.9% Medicare) and is figured on 92.35% of net earnings from self-employment; it applies when net earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Estimated taxes): People who expect to owe $1,000 or more when they file, such as many self-employed workers, generally must pay estimated tax quarterly. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)"
+      "IRS (Estimated taxes): People who expect to owe $1,000 or more after withholding and credits generally must pay estimated tax quarterly; safe harbors based on this year's or last year's tax can avoid the penalty. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1969
     },
     {
@@ -819,9 +858,10 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Self-employment tax): Self-employment tax is 15.3% (12.4% Social Security and 2.9% Medicare) and is figured on 92.35% of net earnings from self-employment; it applies when net earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Estimated taxes): People who expect to owe $1,000 or more when they file, such as many self-employed workers, generally must pay estimated tax quarterly. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)"
+      "IRS (Estimated taxes): People who expect to owe $1,000 or more after withholding and credits generally must pay estimated tax quarterly; safe harbors based on this year's or last year's tax can avoid the penalty. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1970
     },
     {
@@ -867,12 +907,13 @@
       "C": "Invents a rule",
       "D": "Confuses records with credit"
      },
-     "practical_how_to": true,
+     "practical_how_to": false,
      "sources": [
       "IRS (Self-employment tax): Self-employment tax is 15.3% (12.4% Social Security and 2.9% Medicare) and is figured on 92.35% of net earnings from self-employment; it applies when net earnings are $400 or more. (https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes)",
-      "IRS (Estimated taxes): People who expect to owe $1,000 or more when they file, such as many self-employed workers, generally must pay estimated tax quarterly. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)"
+      "IRS (Estimated taxes): People who expect to owe $1,000 or more after withholding and credits generally must pay estimated tax quarterly; safe harbors based on this year's or last year's tax can avoid the penalty. (https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes)",
+      "IRS (Am I required to file a Form 1099?): For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued. (https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1971
     }
    ]

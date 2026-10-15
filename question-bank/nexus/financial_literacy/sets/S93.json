@@ -14,7 +14,7 @@
    "learning_target": "Compare federal and private student loans and calculate interest that accrues during school",
    "grade_band": "9-12",
    "outcome_codes": [],
-   "outcome_code_status": "to verify against the official document"
+   "outcome_code_status": "topic-level only; no 12th-grade outcome code assigned yet"
   },
   "new_jersey": {
    "document": "NJSLS-CLKS 2020, Standard 9.1 Personal Financial Literacy (grade 12)",
@@ -24,7 +24,8 @@
    ],
    "performance_expectation_status": "strand-level alignment; individual 9.1.12 performance expectations to verify"
   },
-  "alignment": "supporting"
+  "local_identifier": "FL.COLLEGE.93 is a course identifier, not an official national or New Jersey code",
+  "claim": "Alignment shows what the set teaches toward; it does not claim full mastery of any standard."
  },
  "content_status": "time_sensitive",
  "sources": [
@@ -32,15 +33,33 @@
    "org": "Federal Student Aid (Loan types)",
    "url": "https://studentaid.gov/understand-aid/types/loans",
    "claim": "Interest on Direct Subsidized Loans is paid by the government while the student is in school at least half-time; Direct Unsubsidized Loans accrue interest from disbursement. Federal loan rates are fixed for the life of each loan and set each year.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "jurisdiction": "US federal",
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
   },
   {
    "org": "CFPB (Private student loans)",
    "url": "https://www.consumerfinance.gov/consumer-tools/student-loans/",
    "claim": "Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "jurisdiction": "US federal",
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
+  },
+  {
+   "org": "U.S. Department of Education (2022 final rule, interest capitalization)",
+   "url": "https://fsapartners.ed.gov/fsa-print/publication/1004279",
+   "claim": "Since July 1, 2023, Direct Loans no longer capitalize interest when a borrower enters repayment (some events still capitalize interest); private loans follow their own contracts.",
+   "jurisdiction": "US federal",
+   "effective": "2023-07-01",
+   "qids": [
+    "S93-M-Q2",
+    "S93-F1-Q1"
+   ],
+   "verification": "reviewer-checked topic",
+   "verification_detail": "new or replaced URL in v1.1; not fetched by the reviewer; reviewer consulted this primary source for the specific corrected topic (A2); author: search-corroborated on 2026-10-15: no capitalization on entering repayment for Direct Loans since July 1, 2023",
+   "verified_on": null
   }
  ],
  "practical_skills": [
@@ -55,6 +74,7 @@
    "skill": "Compare federal and private student loans and calculate interest that accrues during school",
    "standard": "FL.COLLEGE.93",
    "nearest_related": false,
+   "alignment_role": "direct",
    "questions": [
     {
      "id": "S93-M-Q1",
@@ -103,9 +123,10 @@
      "practical_how_to": false,
      "sources": [
       "Federal Student Aid (Loan types): Interest on Direct Subsidized Loans is paid by the government while the student is in school at least half-time; Direct Unsubsidized Loans accrue interest from disbursement. Federal loan rates are fixed for the life of each loan and set each year. (https://studentaid.gov/understand-aid/types/loans)",
-      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)"
+      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)",
+      "U.S. Department of Education (2022 final rule, interest capitalization): Since July 1, 2023, Direct Loans no longer capitalize interest when a borrower enters repayment (some events still capitalize interest); private loans follow their own contracts. (https://fsapartners.ed.gov/fsa-print/publication/1004279)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1904
     },
     {
@@ -118,7 +139,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Paying for College and Training",
-     "prompt": "Kira's $5,500 loan has $1,320 of unpaid interest that is added to the balance when repayment begins. What is the new balance?",
+     "prompt": "Kira has a private student loan of $5,500. Its contract says unpaid interest is added to the balance when repayment begins. $1,320 of interest is unpaid at that time. What is the new balance?",
      "choices": [
       {
        "letter": "A",
@@ -142,8 +163,8 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "When unpaid interest is added to the principal, it is \"capitalized.\" Future interest is then charged on the larger balance.",
-     "feedback": "$5,500 + $1,320 = $6,820.",
+     "intro": "When unpaid interest is added to the principal, it is \"capitalized,\" and future interest is charged on the larger balance. Private loan contracts set their own capitalization rules. Federal Direct Loans no longer capitalize interest when repayment first begins; unpaid interest is still owed, but it stays separate from principal except at certain events.",
+     "feedback": "$5,500 + $1,320 = $6,820 under this private loan's contract.",
      "question_type": "instruction",
      "topic": "Student loans: federal, private, and interest",
      "subtopic": "Capitalization",
@@ -155,9 +176,10 @@
      "practical_how_to": false,
      "sources": [
       "Federal Student Aid (Loan types): Interest on Direct Subsidized Loans is paid by the government while the student is in school at least half-time; Direct Unsubsidized Loans accrue interest from disbursement. Federal loan rates are fixed for the life of each loan and set each year. (https://studentaid.gov/understand-aid/types/loans)",
-      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)"
+      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)",
+      "U.S. Department of Education (2022 final rule, interest capitalization): Since July 1, 2023, Direct Loans no longer capitalize interest when a borrower enters repayment (some events still capitalize interest); private loans follow their own contracts. (https://fsapartners.ed.gov/fsa-print/publication/1004279)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1905
     },
     {
@@ -207,9 +229,10 @@
      "practical_how_to": false,
      "sources": [
       "Federal Student Aid (Loan types): Interest on Direct Subsidized Loans is paid by the government while the student is in school at least half-time; Direct Unsubsidized Loans accrue interest from disbursement. Federal loan rates are fixed for the life of each loan and set each year. (https://studentaid.gov/understand-aid/types/loans)",
-      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)"
+      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)",
+      "U.S. Department of Education (2022 final rule, interest capitalization): Since July 1, 2023, Direct Loans no longer capitalize interest when a borrower enters repayment (some events still capitalize interest); private loans follow their own contracts. (https://fsapartners.ed.gov/fsa-print/publication/1004279)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1906
     },
     {
@@ -259,9 +282,10 @@
      "practical_how_to": false,
      "sources": [
       "Federal Student Aid (Loan types): Interest on Direct Subsidized Loans is paid by the government while the student is in school at least half-time; Direct Unsubsidized Loans accrue interest from disbursement. Federal loan rates are fixed for the life of each loan and set each year. (https://studentaid.gov/understand-aid/types/loans)",
-      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)"
+      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)",
+      "U.S. Department of Education (2022 final rule, interest capitalization): Since July 1, 2023, Direct Loans no longer capitalize interest when a borrower enters repayment (some events still capitalize interest); private loans follow their own contracts. (https://fsapartners.ed.gov/fsa-print/publication/1004279)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1907
     },
     {
@@ -310,9 +334,10 @@
      "practical_how_to": true,
      "sources": [
       "Federal Student Aid (Loan types): Interest on Direct Subsidized Loans is paid by the government while the student is in school at least half-time; Direct Unsubsidized Loans accrue interest from disbursement. Federal loan rates are fixed for the life of each loan and set each year. (https://studentaid.gov/understand-aid/types/loans)",
-      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)"
+      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)",
+      "U.S. Department of Education (2022 final rule, interest capitalization): Since July 1, 2023, Direct Loans no longer capitalize interest when a borrower enters repayment (some events still capitalize interest); private loans follow their own contracts. (https://fsapartners.ed.gov/fsa-print/publication/1004279)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1908
     }
    ]
@@ -324,6 +349,7 @@
    "skill": "Simple interest over time",
    "standard": "FL.COLLEGE.93",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "concept",
    "relationship": "Accrued interest on student loans uses I = P × r × t.",
    "questions": [
@@ -374,9 +400,10 @@
      "practical_how_to": false,
      "sources": [
       "Federal Student Aid (Loan types): Interest on Direct Subsidized Loans is paid by the government while the student is in school at least half-time; Direct Unsubsidized Loans accrue interest from disbursement. Federal loan rates are fixed for the life of each loan and set each year. (https://studentaid.gov/understand-aid/types/loans)",
-      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)"
+      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)",
+      "U.S. Department of Education (2022 final rule, interest capitalization): Since July 1, 2023, Direct Loans no longer capitalize interest when a borrower enters repayment (some events still capitalize interest); private loans follow their own contracts. (https://fsapartners.ed.gov/fsa-print/publication/1004279)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1909
     },
     {
@@ -425,9 +452,10 @@
      "practical_how_to": false,
      "sources": [
       "Federal Student Aid (Loan types): Interest on Direct Subsidized Loans is paid by the government while the student is in school at least half-time; Direct Unsubsidized Loans accrue interest from disbursement. Federal loan rates are fixed for the life of each loan and set each year. (https://studentaid.gov/understand-aid/types/loans)",
-      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)"
+      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)",
+      "U.S. Department of Education (2022 final rule, interest capitalization): Since July 1, 2023, Direct Loans no longer capitalize interest when a borrower enters repayment (some events still capitalize interest); private loans follow their own contracts. (https://fsapartners.ed.gov/fsa-print/publication/1004279)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1910
     },
     {
@@ -476,9 +504,10 @@
      "practical_how_to": false,
      "sources": [
       "Federal Student Aid (Loan types): Interest on Direct Subsidized Loans is paid by the government while the student is in school at least half-time; Direct Unsubsidized Loans accrue interest from disbursement. Federal loan rates are fixed for the life of each loan and set each year. (https://studentaid.gov/understand-aid/types/loans)",
-      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)"
+      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)",
+      "U.S. Department of Education (2022 final rule, interest capitalization): Since July 1, 2023, Direct Loans no longer capitalize interest when a borrower enters repayment (some events still capitalize interest); private loans follow their own contracts. (https://fsapartners.ed.gov/fsa-print/publication/1004279)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1911
     },
     {
@@ -527,9 +556,10 @@
      "practical_how_to": false,
      "sources": [
       "Federal Student Aid (Loan types): Interest on Direct Subsidized Loans is paid by the government while the student is in school at least half-time; Direct Unsubsidized Loans accrue interest from disbursement. Federal loan rates are fixed for the life of each loan and set each year. (https://studentaid.gov/understand-aid/types/loans)",
-      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)"
+      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)",
+      "U.S. Department of Education (2022 final rule, interest capitalization): Since July 1, 2023, Direct Loans no longer capitalize interest when a borrower enters repayment (some events still capitalize interest); private loans follow their own contracts. (https://fsapartners.ed.gov/fsa-print/publication/1004279)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1912
     },
     {
@@ -578,9 +608,10 @@
      "practical_how_to": false,
      "sources": [
       "Federal Student Aid (Loan types): Interest on Direct Subsidized Loans is paid by the government while the student is in school at least half-time; Direct Unsubsidized Loans accrue interest from disbursement. Federal loan rates are fixed for the life of each loan and set each year. (https://studentaid.gov/understand-aid/types/loans)",
-      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)"
+      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)",
+      "U.S. Department of Education (2022 final rule, interest capitalization): Since July 1, 2023, Direct Loans no longer capitalize interest when a borrower enters repayment (some events still capitalize interest); private loans follow their own contracts. (https://fsapartners.ed.gov/fsa-print/publication/1004279)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1913
     }
    ]
@@ -592,6 +623,7 @@
    "skill": "Find simple interest",
    "standard": "FL.COLLEGE.93",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "In-school interest on unsubsidized loans is simple interest.",
    "ref": {
@@ -613,6 +645,7 @@
    "skill": "Borrowing wisely",
    "standard": "FL.COLLEGE.93",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 1",
    "difficulty": "deeper",
    "questions": [
@@ -626,7 +659,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Paying for College and Training",
-     "prompt": "Paying the $27.50 monthly interest on a $5,500, 6% loan during school prevents capitalization. How much is paid over 48 months?",
+     "prompt": "Kira's $5,500 unsubsidized loan at 6% builds $27.50 of interest a month. If she pays that interest each month during 48 months of school, how much does she pay?",
      "choices": [
       {
        "letter": "A",
@@ -650,8 +683,8 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "Paying interest while in school keeps the balance from growing.",
-     "feedback": "$27.50 × 48 = $1,320, so the balance stays $5,500.",
+     "intro": "On an unsubsidized loan, interest builds during school. Paying it as it builds means no unpaid interest is left to grow the debt or to be capitalized later.",
+     "feedback": "$27.50 × 48 = $1,320, and she owes only the $5,500 principal when school ends.",
      "question_type": "instruction",
      "topic": "Student loans: federal, private, and interest",
      "subtopic": "Paying interest in school",
@@ -663,9 +696,10 @@
      "practical_how_to": false,
      "sources": [
       "Federal Student Aid (Loan types): Interest on Direct Subsidized Loans is paid by the government while the student is in school at least half-time; Direct Unsubsidized Loans accrue interest from disbursement. Federal loan rates are fixed for the life of each loan and set each year. (https://studentaid.gov/understand-aid/types/loans)",
-      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)"
+      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)",
+      "U.S. Department of Education (2022 final rule, interest capitalization): Since July 1, 2023, Direct Loans no longer capitalize interest when a borrower enters repayment (some events still capitalize interest); private loans follow their own contracts. (https://fsapartners.ed.gov/fsa-print/publication/1004279)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1914
     },
     {
@@ -714,9 +748,10 @@
      "practical_how_to": false,
      "sources": [
       "Federal Student Aid (Loan types): Interest on Direct Subsidized Loans is paid by the government while the student is in school at least half-time; Direct Unsubsidized Loans accrue interest from disbursement. Federal loan rates are fixed for the life of each loan and set each year. (https://studentaid.gov/understand-aid/types/loans)",
-      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)"
+      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)",
+      "U.S. Department of Education (2022 final rule, interest capitalization): Since July 1, 2023, Direct Loans no longer capitalize interest when a borrower enters repayment (some events still capitalize interest); private loans follow their own contracts. (https://fsapartners.ed.gov/fsa-print/publication/1004279)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1915
     },
     {
@@ -766,7 +801,8 @@
      "practical_how_to": false,
      "sources": [
       "Federal Student Aid (Loan types): Interest on Direct Subsidized Loans is paid by the government while the student is in school at least half-time; Direct Unsubsidized Loans accrue interest from disbursement. Federal loan rates are fixed for the life of each loan and set each year. (https://studentaid.gov/understand-aid/types/loans)",
-      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)"
+      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)",
+      "U.S. Department of Education (2022 final rule, interest capitalization): Since July 1, 2023, Direct Loans no longer capitalize interest when a borrower enters repayment (some events still capitalize interest); private loans follow their own contracts. (https://fsapartners.ed.gov/fsa-print/publication/1004279)"
      ],
      "effective_date": "Fee rates change each year",
      "page": 1916
@@ -817,9 +853,10 @@
      "practical_how_to": false,
      "sources": [
       "Federal Student Aid (Loan types): Interest on Direct Subsidized Loans is paid by the government while the student is in school at least half-time; Direct Unsubsidized Loans accrue interest from disbursement. Federal loan rates are fixed for the life of each loan and set each year. (https://studentaid.gov/understand-aid/types/loans)",
-      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)"
+      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)",
+      "U.S. Department of Education (2022 final rule, interest capitalization): Since July 1, 2023, Direct Loans no longer capitalize interest when a borrower enters repayment (some events still capitalize interest); private loans follow their own contracts. (https://fsapartners.ed.gov/fsa-print/publication/1004279)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1917
     },
     {
@@ -869,9 +906,10 @@
      "practical_how_to": true,
      "sources": [
       "Federal Student Aid (Loan types): Interest on Direct Subsidized Loans is paid by the government while the student is in school at least half-time; Direct Unsubsidized Loans accrue interest from disbursement. Federal loan rates are fixed for the life of each loan and set each year. (https://studentaid.gov/understand-aid/types/loans)",
-      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)"
+      "CFPB (Private student loans): Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment. (https://www.consumerfinance.gov/consumer-tools/student-loans/)",
+      "U.S. Department of Education (2022 final rule, interest capitalization): Since July 1, 2023, Direct Loans no longer capitalize interest when a borrower enters repayment (some events still capitalize interest); private loans follow their own contracts. (https://fsapartners.ed.gov/fsa-print/publication/1004279)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1918
     }
    ]

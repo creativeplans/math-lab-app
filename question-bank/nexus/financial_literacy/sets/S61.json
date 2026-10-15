@@ -14,7 +14,7 @@
    "learning_target": "Explain withdrawal rules and tax treatment of retirement accounts",
    "grade_band": "9-12",
    "outcome_codes": [],
-   "outcome_code_status": "to verify against the official document"
+   "outcome_code_status": "topic-level only; no 12th-grade outcome code assigned yet"
   },
   "new_jersey": {
    "document": "NJSLS-CLKS 2020, Standard 9.1 Personal Financial Literacy (grade 12)",
@@ -24,16 +24,38 @@
    ],
    "performance_expectation_status": "strand-level alignment; individual 9.1.12 performance expectations to verify"
   },
-  "alignment": "supporting"
+  "local_identifier": "FL.RETIRE.61 is a course identifier, not an official national or New Jersey code",
+  "claim": "Alignment shows what the set teaches toward; it does not claim full mastery of any standard."
  },
  "content_status": "time_sensitive",
  "sources": [
   {
    "org": "IRS (Publication 590-B)",
    "url": "https://www.irs.gov/publications/p590b",
-   "claim": "Roth IRA contributions can be withdrawn at any time; qualified distributions require a 5-year period and age 59½ (or death, disability, or first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "claim": "Roth IRA regular contributions can be withdrawn at any time; distributions come out in order: regular contributions, then conversions and rollovers, then earnings; qualified distributions need a 5-year period and age 59½ (or death, disability, or a first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax.",
+   "jurisdiction": "US federal",
+   "section": "Ordering Rules for Distributions",
+   "qids": [
+    "S61-M-Q1",
+    "S61-B1-Q4",
+    "S61-B1-Q5"
+   ],
+   "verification": "reviewer-checked topic",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch); reviewer consulted this primary source for the specific corrected topic (A15)",
+   "verified_on": null
+  },
+  {
+   "org": "IRS (Publication 590-A)",
+   "url": "https://www.irs.gov/publications/p590a",
+   "claim": "One annual contribution limit covers all of a person's traditional and Roth IRAs combined.",
+   "jurisdiction": "US federal",
+   "qids": [
+    "S61-F2-Q1",
+    "S61-F2-Q3"
+   ],
+   "verification": "reviewer-checked topic",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch); reviewer consulted this primary source for the specific corrected topic (A16)",
+   "verified_on": null
   }
  ],
  "practical_skills": [
@@ -48,6 +70,7 @@
    "skill": "Apply the rules for withdrawing Roth IRA contributions and earnings",
    "standard": "FL.RETIRE.61",
    "nearest_related": false,
+   "alignment_role": "direct",
    "questions": [
     {
      "id": "S61-M-Q1",
@@ -59,7 +82,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Retirement Accounts: IRAs, Roth IRAs, 401(k)s, and 403(b)s",
-     "prompt": "Mia, 30, contributed $8,000 to her Roth IRA over several years. It is worth $11,000. She withdraws $5,000. Under the ordering rules, what is taxed or penalized?",
+     "prompt": "Mia, 30, made $8,000 of regular contributions to her Roth IRA over several years, with no conversions, rollovers, or earlier withdrawals. It is worth $11,000. She withdraws $5,000. Under the ordering rules, what is taxed or penalized?",
      "choices": [
       {
        "letter": "A",
@@ -83,8 +106,8 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "Roth IRA withdrawals come out in a set order: contributions first, then earnings. Because contributions were made with after-tax money, they can be withdrawn at any time, at any age, without tax or penalty.",
-     "feedback": "The first $8,000 withdrawn counts as contributions, so $5,000 is tax- and penalty-free.",
+     "intro": "Roth IRA withdrawals come out in a set order: regular contributions first, then conversion and rollover amounts (which have their own rules), then earnings. Regular contributions were made with after-tax money, so they can be withdrawn at any time, at any age, without tax or penalty.",
+     "feedback": "Her first $8,000 withdrawn counts as regular contributions, so $5,000 is tax- and penalty-free.",
      "question_type": "instruction",
      "topic": "Roth IRA withdrawals and qualified distributions",
      "subtopic": "Ordering rules",
@@ -95,9 +118,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-B): Roth IRA contributions can be withdrawn at any time; qualified distributions require a 5-year period and age 59½ (or death, disability, or first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)"
+      "IRS (Publication 590-B): Roth IRA regular contributions can be withdrawn at any time; distributions come out in order: regular contributions, then conversions and rollovers, then earnings; qualified distributions need a 5-year period and age 59½ (or death, disability, or a first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)",
+      "IRS (Publication 590-A): One annual contribution limit covers all of a person's traditional and Roth IRAs combined. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1262
     },
     {
@@ -146,9 +170,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-B): Roth IRA contributions can be withdrawn at any time; qualified distributions require a 5-year period and age 59½ (or death, disability, or first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)"
+      "IRS (Publication 590-B): Roth IRA regular contributions can be withdrawn at any time; distributions come out in order: regular contributions, then conversions and rollovers, then earnings; qualified distributions need a 5-year period and age 59½ (or death, disability, or a first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)",
+      "IRS (Publication 590-A): One annual contribution limit covers all of a person's traditional and Roth IRAs combined. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1263
     },
     {
@@ -197,7 +222,8 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-B): Roth IRA contributions can be withdrawn at any time; qualified distributions require a 5-year period and age 59½ (or death, disability, or first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)"
+      "IRS (Publication 590-B): Roth IRA regular contributions can be withdrawn at any time; distributions come out in order: regular contributions, then conversions and rollovers, then earnings; qualified distributions need a 5-year period and age 59½ (or death, disability, or a first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)",
+      "IRS (Publication 590-A): One annual contribution limit covers all of a person's traditional and Roth IRAs combined. (https://www.irs.gov/publications/p590a)"
      ],
      "effective_date": "IRS rules as of 2026",
      "page": 1264
@@ -248,9 +274,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-B): Roth IRA contributions can be withdrawn at any time; qualified distributions require a 5-year period and age 59½ (or death, disability, or first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)"
+      "IRS (Publication 590-B): Roth IRA regular contributions can be withdrawn at any time; distributions come out in order: regular contributions, then conversions and rollovers, then earnings; qualified distributions need a 5-year period and age 59½ (or death, disability, or a first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)",
+      "IRS (Publication 590-A): One annual contribution limit covers all of a person's traditional and Roth IRAs combined. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1265
     },
     {
@@ -298,9 +325,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-B): Roth IRA contributions can be withdrawn at any time; qualified distributions require a 5-year period and age 59½ (or death, disability, or first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)"
+      "IRS (Publication 590-B): Roth IRA regular contributions can be withdrawn at any time; distributions come out in order: regular contributions, then conversions and rollovers, then earnings; qualified distributions need a 5-year period and age 59½ (or death, disability, or a first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)",
+      "IRS (Publication 590-A): One annual contribution limit covers all of a person's traditional and Roth IRAs combined. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1266
     }
    ]
@@ -312,6 +340,7 @@
    "skill": "Contributions versus earnings",
    "standard": "FL.RETIRE.61",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "concept",
    "relationship": "Withdrawal rules treat contributions and earnings differently; students must separate them first.",
    "questions": [
@@ -361,9 +390,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-B): Roth IRA contributions can be withdrawn at any time; qualified distributions require a 5-year period and age 59½ (or death, disability, or first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)"
+      "IRS (Publication 590-B): Roth IRA regular contributions can be withdrawn at any time; distributions come out in order: regular contributions, then conversions and rollovers, then earnings; qualified distributions need a 5-year period and age 59½ (or death, disability, or a first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)",
+      "IRS (Publication 590-A): One annual contribution limit covers all of a person's traditional and Roth IRAs combined. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1267
     },
     {
@@ -412,9 +442,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-B): Roth IRA contributions can be withdrawn at any time; qualified distributions require a 5-year period and age 59½ (or death, disability, or first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)"
+      "IRS (Publication 590-B): Roth IRA regular contributions can be withdrawn at any time; distributions come out in order: regular contributions, then conversions and rollovers, then earnings; qualified distributions need a 5-year period and age 59½ (or death, disability, or a first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)",
+      "IRS (Publication 590-A): One annual contribution limit covers all of a person's traditional and Roth IRAs combined. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1268
     },
     {
@@ -463,9 +494,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-B): Roth IRA contributions can be withdrawn at any time; qualified distributions require a 5-year period and age 59½ (or death, disability, or first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)"
+      "IRS (Publication 590-B): Roth IRA regular contributions can be withdrawn at any time; distributions come out in order: regular contributions, then conversions and rollovers, then earnings; qualified distributions need a 5-year period and age 59½ (or death, disability, or a first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)",
+      "IRS (Publication 590-A): One annual contribution limit covers all of a person's traditional and Roth IRAs combined. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1269
     },
     {
@@ -502,7 +534,7 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "Roth IRA withdrawals are treated as coming from contributions first, then earnings.",
+     "intro": "Roth IRA withdrawals are treated as coming from regular contributions first, then conversions and rollovers, then earnings. Ana has made only regular contributions.",
      "feedback": "Her $4,000 of contributions covers the whole $3,000, so it is all contributions: no tax or penalty.",
      "question_type": "instruction",
      "topic": "Roth IRA withdrawals and qualified distributions",
@@ -514,9 +546,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-B): Roth IRA contributions can be withdrawn at any time; qualified distributions require a 5-year period and age 59½ (or death, disability, or first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)"
+      "IRS (Publication 590-B): Roth IRA regular contributions can be withdrawn at any time; distributions come out in order: regular contributions, then conversions and rollovers, then earnings; qualified distributions need a 5-year period and age 59½ (or death, disability, or a first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)",
+      "IRS (Publication 590-A): One annual contribution limit covers all of a person's traditional and Roth IRAs combined. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1270
     },
     {
@@ -553,7 +586,7 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "The additional tax on early withdrawals is 10% of the taxable amount.",
+     "intro": "In the simple Roth examples here (regular contributions only, no conversions), the 10% additional tax on an early withdrawal applies to the taxable earnings withdrawn.",
      "feedback": "$3,000 × 0.10 = $300.",
      "question_type": "instruction",
      "topic": "Roth IRA withdrawals and qualified distributions",
@@ -565,9 +598,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-B): Roth IRA contributions can be withdrawn at any time; qualified distributions require a 5-year period and age 59½ (or death, disability, or first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)"
+      "IRS (Publication 590-B): Roth IRA regular contributions can be withdrawn at any time; distributions come out in order: regular contributions, then conversions and rollovers, then earnings; qualified distributions need a 5-year period and age 59½ (or death, disability, or a first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)",
+      "IRS (Publication 590-A): One annual contribution limit covers all of a person's traditional and Roth IRAs combined. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1271
     }
    ]
@@ -579,6 +613,7 @@
    "skill": "Subtract multi-digit decimals",
    "standard": "FL.RETIRE.61",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "Separating contributions from earnings subtracts amounts.",
    "ref": {
@@ -600,6 +635,7 @@
    "skill": "Find a percent of a quantity",
    "standard": "FL.RETIRE.61",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "Taxes and the additional tax are percents of a withdrawal.",
    "ref": {
@@ -621,6 +657,7 @@
    "skill": "Traditional IRA withdrawals",
    "standard": "FL.RETIRE.61",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 1",
    "difficulty": "deeper",
    "questions": [
@@ -634,7 +671,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Retirement Accounts: IRAs, Roth IRAs, 401(k)s, and 403(b)s",
-     "prompt": "Raj, 45, withdraws $5,000 from a traditional IRA with no exception. Assume a 22% tax rate. How much tax and additional tax is due?",
+     "prompt": "Raj, 45, withdraws $5,000 from a traditional IRA that holds only pre-tax money (no after-tax contributions), and no exception applies. Assume a 22% tax rate. How much tax and additional tax is due?",
      "choices": [
       {
        "letter": "A",
@@ -658,7 +695,7 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "Traditional IRA withdrawals are generally taxed as ordinary income (deductible contributions were never taxed). Before 59½, a 10% additional tax usually applies too, unless an exception applies.",
+     "intro": "Withdrawals of pre-tax money from a traditional IRA are taxed as ordinary income. Before 59½, a 10% additional tax usually applies too, unless an exception applies.",
      "feedback": "$5,000 × (0.22 + 0.10) = $1,600.",
      "question_type": "instruction",
      "topic": "Roth IRA withdrawals and qualified distributions",
@@ -670,9 +707,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-B): Roth IRA contributions can be withdrawn at any time; qualified distributions require a 5-year period and age 59½ (or death, disability, or first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)"
+      "IRS (Publication 590-B): Roth IRA regular contributions can be withdrawn at any time; distributions come out in order: regular contributions, then conversions and rollovers, then earnings; qualified distributions need a 5-year period and age 59½ (or death, disability, or a first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)",
+      "IRS (Publication 590-A): One annual contribution limit covers all of a person's traditional and Roth IRAs combined. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1272
     },
     {
@@ -685,7 +723,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Retirement Accounts: IRAs, Roth IRAs, 401(k)s, and 403(b)s",
-     "prompt": "At age 66, Raj withdraws $5,000 from his traditional IRA. Assume a 12% tax rate. What is owed?",
+     "prompt": "At age 66, Raj withdraws $5,000 from his traditional IRA, which holds only pre-tax money. Assume a 12% tax rate. What is owed?",
      "choices": [
       {
        "letter": "A",
@@ -709,7 +747,7 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "After 59½, the 10% additional tax no longer applies, but traditional IRA withdrawals are still taxed as income.",
+     "intro": "After 59½, the 10% additional tax no longer applies, but withdrawals of pre-tax money are still taxed as income.",
      "feedback": "$5,000 × 0.12 = $600; no additional tax after 59½.",
      "question_type": "instruction",
      "topic": "Roth IRA withdrawals and qualified distributions",
@@ -721,9 +759,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-B): Roth IRA contributions can be withdrawn at any time; qualified distributions require a 5-year period and age 59½ (or death, disability, or first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)"
+      "IRS (Publication 590-B): Roth IRA regular contributions can be withdrawn at any time; distributions come out in order: regular contributions, then conversions and rollovers, then earnings; qualified distributions need a 5-year period and age 59½ (or death, disability, or a first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)",
+      "IRS (Publication 590-A): One annual contribution limit covers all of a person's traditional and Roth IRAs combined. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1273
     },
     {
@@ -772,9 +811,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-B): Roth IRA contributions can be withdrawn at any time; qualified distributions require a 5-year period and age 59½ (or death, disability, or first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)"
+      "IRS (Publication 590-B): Roth IRA regular contributions can be withdrawn at any time; distributions come out in order: regular contributions, then conversions and rollovers, then earnings; qualified distributions need a 5-year period and age 59½ (or death, disability, or a first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)",
+      "IRS (Publication 590-A): One annual contribution limit covers all of a person's traditional and Roth IRAs combined. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1274
     },
     {
@@ -823,7 +863,8 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-B): Roth IRA contributions can be withdrawn at any time; qualified distributions require a 5-year period and age 59½ (or death, disability, or first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)"
+      "IRS (Publication 590-B): Roth IRA regular contributions can be withdrawn at any time; distributions come out in order: regular contributions, then conversions and rollovers, then earnings; qualified distributions need a 5-year period and age 59½ (or death, disability, or a first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)",
+      "IRS (Publication 590-A): One annual contribution limit covers all of a person's traditional and Roth IRAs combined. (https://www.irs.gov/publications/p590a)"
      ],
      "effective_date": "IRS rules as of 2026",
      "page": 1275
@@ -873,9 +914,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-B): Roth IRA contributions can be withdrawn at any time; qualified distributions require a 5-year period and age 59½ (or death, disability, or first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)"
+      "IRS (Publication 590-B): Roth IRA regular contributions can be withdrawn at any time; distributions come out in order: regular contributions, then conversions and rollovers, then earnings; qualified distributions need a 5-year period and age 59½ (or death, disability, or a first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)",
+      "IRS (Publication 590-A): One annual contribution limit covers all of a person's traditional and Roth IRAs combined. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1276
     }
    ]
@@ -887,6 +929,7 @@
    "skill": "Common Roth IRA mistakes and misconceptions",
    "standard": "FL.RETIRE.61",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 2",
    "difficulty": "deeper",
    "questions": [
@@ -908,7 +951,7 @@
       },
       {
        "letter": "B",
-       "text": "\"A Roth IRA needs earned income to contribute.\""
+       "text": "\"Contributing generally requires compensation (or a spouse's, on a joint return).\""
       },
       {
        "letter": "C",
@@ -936,9 +979,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-B): Roth IRA contributions can be withdrawn at any time; qualified distributions require a 5-year period and age 59½ (or death, disability, or first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)"
+      "IRS (Publication 590-B): Roth IRA regular contributions can be withdrawn at any time; distributions come out in order: regular contributions, then conversions and rollovers, then earnings; qualified distributions need a 5-year period and age 59½ (or death, disability, or a first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)",
+      "IRS (Publication 590-A): One annual contribution limit covers all of a person's traditional and Roth IRAs combined. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1277
     },
     {
@@ -987,9 +1031,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-B): Roth IRA contributions can be withdrawn at any time; qualified distributions require a 5-year period and age 59½ (or death, disability, or first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)"
+      "IRS (Publication 590-B): Roth IRA regular contributions can be withdrawn at any time; distributions come out in order: regular contributions, then conversions and rollovers, then earnings; qualified distributions need a 5-year period and age 59½ (or death, disability, or a first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)",
+      "IRS (Publication 590-A): One annual contribution limit covers all of a person's traditional and Roth IRAs combined. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1278
     },
     {
@@ -1002,11 +1047,11 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Retirement Accounts: IRAs, Roth IRAs, 401(k)s, and 403(b)s",
-     "prompt": "Sam contributed $6,000 to a Roth IRA this year but earned only $2,500. What mistake occurred?",
+     "prompt": "Sam is single and has no spouse's income to use. He contributed $6,000 to a Roth IRA this year but earned only $2,500. What mistake occurred?",
      "choices": [
       {
        "letter": "A",
-       "text": "He contributed more than his earned income"
+       "text": "He contributed more than his compensation"
       },
       {
        "letter": "B",
@@ -1022,12 +1067,12 @@
       }
      ],
      "correct_letter": "A",
-     "correct_answer": "He contributed more than his earned income",
+     "correct_answer": "He contributed more than his compensation",
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "IRA contributions cannot exceed earned income for the year.",
-     "feedback": "$6,000 − $2,500 = $3,500 excess, subject to a 6% tax per year until corrected.",
+     "intro": "Total IRA contributions for a year cannot exceed your taxable compensation (except spousal IRAs on a joint return).",
+     "feedback": "$6,000 − $2,500 = $3,500 excess, subject to a 6% tax for each year it stays uncorrected.",
      "question_type": "instruction",
      "topic": "Roth IRA withdrawals and qualified distributions",
      "subtopic": "Excess contributions",
@@ -1038,9 +1083,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-B): Roth IRA contributions can be withdrawn at any time; qualified distributions require a 5-year period and age 59½ (or death, disability, or first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)"
+      "IRS (Publication 590-B): Roth IRA regular contributions can be withdrawn at any time; distributions come out in order: regular contributions, then conversions and rollovers, then earnings; qualified distributions need a 5-year period and age 59½ (or death, disability, or a first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)",
+      "IRS (Publication 590-A): One annual contribution limit covers all of a person's traditional and Roth IRAs combined. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1279
     },
     {
@@ -1088,9 +1134,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-B): Roth IRA contributions can be withdrawn at any time; qualified distributions require a 5-year period and age 59½ (or death, disability, or first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)"
+      "IRS (Publication 590-B): Roth IRA regular contributions can be withdrawn at any time; distributions come out in order: regular contributions, then conversions and rollovers, then earnings; qualified distributions need a 5-year period and age 59½ (or death, disability, or a first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)",
+      "IRS (Publication 590-A): One annual contribution limit covers all of a person's traditional and Roth IRAs combined. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1280
     },
     {
@@ -1138,9 +1185,10 @@
      },
      "practical_how_to": false,
      "sources": [
-      "IRS (Publication 590-B): Roth IRA contributions can be withdrawn at any time; qualified distributions require a 5-year period and age 59½ (or death, disability, or first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)"
+      "IRS (Publication 590-B): Roth IRA regular contributions can be withdrawn at any time; distributions come out in order: regular contributions, then conversions and rollovers, then earnings; qualified distributions need a 5-year period and age 59½ (or death, disability, or a first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax. (https://www.irs.gov/publications/p590b)",
+      "IRS (Publication 590-A): One annual contribution limit covers all of a person's traditional and Roth IRAs combined. (https://www.irs.gov/publications/p590a)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 1281
     }
    ]

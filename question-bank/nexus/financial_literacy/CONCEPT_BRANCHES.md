@@ -73,7 +73,7 @@ A concept branch is a backward section with `"kind": "concept"`: five simpler qu
 | S67 | B1 | Taxing income in layers | Bracket tax works like tiered pricing: each tier is charged its own rate. | Tiered pricing; Income in a layer; Tax on a layer; Adding layers; Marginal |
 | S68 | B1 | Lowering income versus lowering tax | The deduction-versus-credit difference is about which number is reduced. | Deductions; Credits; Value of a deduction; Value of a credit; Vocabulary |
 | S69 | B1 | Tax owed versus tax paid | Refund problems depend on separating what was owed from what was already paid. | Liability; Refund; Balance due; Source of refunds; Payments line |
-| S70 | B1 | Deadlines and dates | Filing questions rely on reading deadlines and counting time. | Weekend rule; Counting months; Counting days; E-file; Fast refunds |
+| S70 | B1 | Deadlines and dates | Filing questions rely on reading deadlines and counting time. | Weekend and holiday rule; Counting months; Counting days; E-file; Fast refunds |
 | S71 | B1 | Renting basics: landlords, tenants, and leases | Students need the basic vocabulary of renting before evaluating listings. | Tenant; Lease; Rent for a year; Utilities; Applications |
 | S72 | B1 | Percents of income for housing | Affordability rules are percents and multiples of income. | Percent of income; Rent share; Yearly income; Using a multiple; Housing burden |
 | S73 | B1 | Reading contract terms | Lease questions require reading specific terms and applying them. | Lease term; Reading terms; Grace period; Multiplying by 1.5; Before signing |

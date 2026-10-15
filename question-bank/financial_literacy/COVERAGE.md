@@ -1,6 +1,6 @@
 # Financial Literacy — Coverage Report
 
-Version 1.0.0, 2026-10-12. 113 sets, 2130 questions. **Status: not yet approved; awaiting independent review.**
+Version 1.1.0, 2026-10-15. 113 sets, 2130 questions. **Status: not yet approved; awaiting independent review.**
 
 ## How alignment was done
 

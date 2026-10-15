@@ -110,6 +110,11 @@ def sections(s):
 
 
 # ------------------------------------------------------------------ answer letters
+_F = json.load(open(os.path.join(SRC, 'review', 'choice_order_v1.0.0.json')))
+FROZEN = _F['order']
+FROZEN_RIGHT = {r['id']: r['correct_answer'] for r in json.load(open(os.path.join(SRC, 'review', 'key_v1.0.0_full.json')))}
+
+
 def assign_letters(sets):
     """Numeric choices are shown in increasing order (their letter follows from the values). Other questions place
     the correct choice in the least-used letter so far (ties broken by a hash of the id), so the key is balanced."""
@@ -127,7 +132,15 @@ def assign_letters(sets):
         if qid in plan:
             continue
         wrongs = [w for w, _ in qd['wrong']]
-        if qd['keep_order']:
+        old = FROZEN.get(qid)
+        if old and not qd['keep_order']:
+            # Keep v1.0.0 positions: same choices -> same order; changed choices -> correct answer keeps its letter.
+            if sorted(old) == sorted([qd['right']] + wrongs):
+                order = old
+            else:
+                pos = next((i for i, t in enumerate(old) if t == FROZEN_RIGHT[qid]), 0)
+                order = wrongs[:pos] + [qd['right']] + wrongs[pos:]
+        elif qd['keep_order']:
             order = [qd['right']] + wrongs
         else:
             h = int(hashlib.md5(qid.encode()).hexdigest(), 16)
@@ -289,6 +302,34 @@ def audit(recs):
                 how_to=sum(1 for r in recs if r['how_to']))
 
 
+SIBLING_PHRASES = re.compile(r"\b(the same (?:account|loan|card|plan|bond|car|house|budget|job|policy|fund|student|person)|"
+                             r"(?:shown|listed|described) above|from above|previous question|earlier question|last question|"
+                             r"the plan above|this (?:plan|loan|card|account) again|as before)\b", re.I)
+# Reviewed by hand: the phrase compares two options inside the same question, so nothing is missing.
+SIBLING_OK = {'S30-B1-Q4', 'S76-B1-Q5', 'S85-F2-Q4',
+              'S56-F1-Q3'}  # "A worker ... she": the person is introduced in the stem
+NOT_NAMES = set('''A An The What Which How If In On At For After Before When Why Is Are Does Do Your You Federal New Jersey IRS
+Roth Social Security Medicare April January June May July Monday Tuesday Wednesday Thursday Friday Saturday Sunday Bank
+Card Job Option Plan Loan Store Fund Company True Under To By With Assume During Each Every One Two Three Four Five Over
+Year About Suppose Since As Its It This That These Those From Of Credit Form Treasury State Most Some Many Both'''.split())
+
+
+def sibling_scan(recs):
+    """Questions are shuffled, so each must stand alone. Flags stems that point at another question ("the same loan",
+    "above", "as before") and he/she/her/his with no named person in the stem or its intro."""
+    hits = []
+    for r in recs:
+        st = r['question']
+        m = SIBLING_PHRASES.search(st)
+        if m:
+            hits.append((r['id'], m.group(0)))
+        elif re.search(r"\b(she|he|her|his)\b", st, re.I):
+            names = [w for w in re.findall(r"\b[A-Z][a-z]+\b", st + ' ' + (r['intro'] or '')) if w not in NOT_NAMES]
+            if not names:
+                hits.append((r['id'], 'pronoun with no named person'))
+    return dict(flagged=hits, open=[h for h in hits if h[0] not in SIBLING_OK])
+
+
 def main():
     sets = load()
     validate(sets)
@@ -305,6 +346,8 @@ def main():
         import fl_reports
         fl_reports.write_all(sets, recs)
         fl_pdf.copy_into_package(OUT_PKG)
+        import subprocess
+        subprocess.run([sys.executable, os.path.join(ENGINE, 'fl_crosscheck.py')], check=True)
         fl_reports.finish_package(OUT_PKG)
     elif '--reports' in sys.argv:
         import fl_reports
@@ -315,6 +358,8 @@ def main():
           'correct choice: %d; intro words min/median/max %s; instruction %d, knowledge check %d, how-to %d'
           % (len(a['longest']), a['text_items'], 100 * len(a['longest']) / max(1, a['text_items']), len(a['shortest']),
              len(a['echoed']), a['intro_words'], a['instruction'], a['knowledge_check'], a['how_to']))
+    sib = sibling_scan(recs)
+    print('sibling scan: %d flagged, %d open %s' % (len(sib['flagged']), len(sib['open']), sib['open'] or ''))
     if '--show' in sys.argv:
         print('longest:', ' '.join(a['longest']))
         print('echoed:', ' '.join(a['echoed']))

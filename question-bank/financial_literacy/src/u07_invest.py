@@ -233,7 +233,7 @@ S(45, 'Opening and funding a brokerage account', 'Complete the steps to open and
       q('Ben moves $200 from checking into his brokerage account but buys nothing yet. Which step has he completed?', 'Funding the account',
         [('Buying an investment', 'Confuses funding with buying'), ('Opening a margin loan', 'Confuses depositing with borrowing'), ('Selling shares', 'Reverses the step')],
         intro='"Funding" an account means putting money into it. Buying an investment with that money is a separate step.',
-        fb='Depositing money is funding; nothing is invested until he places an order.', sub='Vocabulary'),
+        fb='Depositing money is funding. Nothing he chooses is bought until he places an order (some firms hold uninvested cash in a bank sweep or money market fund).', sub='Vocabulary'),
       q('What information links a bank account for transfers?', 'The bank\'s routing number and your account number',
         [('Your debit card PIN', 'A PIN is never needed to link accounts and should not be shared'), ('Your online banking password', 'Passwords are never shared to link accounts'), ('Your credit card number and expiration date', 'Card numbers do not identify a bank account for transfers')],
         intro='Electronic transfers use routing and account numbers, never PINs or passwords.',

@@ -14,7 +14,7 @@
    "learning_target": "Describe how investments are bought and sold, including order types and trading costs",
    "grade_band": "9-12",
    "outcome_codes": [],
-   "outcome_code_status": "to verify against the official document"
+   "outcome_code_status": "topic-level only; no 12th-grade outcome code assigned yet"
   },
   "new_jersey": {
    "document": "NJSLS-CLKS 2020, Standard 9.1 Personal Financial Literacy (grade 12)",
@@ -23,7 +23,8 @@
    ],
    "performance_expectation_status": "strand-level alignment; individual 9.1.12 performance expectations to verify"
   },
-  "alignment": "supporting"
+  "local_identifier": "FL.INVEST.50 is a course identifier, not an official national or New Jersey code",
+  "claim": "Alignment shows what the set teaches toward; it does not claim full mastery of any standard."
  },
  "content_status": "stable",
  "sources": [
@@ -31,8 +32,10 @@
    "org": "SEC Investor.gov",
    "url": "https://www.investor.gov/introduction-investing/investing-basics/how-stock-markets-work/types-orders",
    "claim": "A market order seeks immediate execution at the best available price, which is not guaranteed; a limit order sets a maximum purchase or minimum sale price and may not execute.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "jurisdiction": "US federal",
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
   }
  ],
  "practical_skills": [
@@ -47,6 +50,7 @@
    "skill": "Place basic investment orders and explain market orders, limit orders, and the bid-ask spread",
    "standard": "FL.INVEST.50",
    "nearest_related": false,
+   "alignment_role": "direct",
    "questions": [
     {
      "id": "S50-M-Q1",
@@ -311,6 +315,7 @@
    "skill": "Buying at a price",
    "standard": "FL.INVEST.50",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "concept",
    "relationship": "Orders make sense once students understand that buyers and sellers agree on a price.",
    "questions": [
@@ -577,6 +582,7 @@
    "skill": "Multiply multi-digit decimals",
    "standard": "FL.INVEST.50",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "Order costs multiply share prices by numbers of shares.",
    "ref": {
@@ -598,6 +604,7 @@
    "skill": "Subtract multi-digit decimals",
    "standard": "FL.INVEST.50",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "The spread is the difference between ask and bid.",
    "ref": {
@@ -619,6 +626,7 @@
    "skill": "Limit orders for selling and stop orders",
    "standard": "FL.INVEST.50",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 1",
    "difficulty": "deeper",
    "questions": [
@@ -843,15 +851,15 @@
       },
       {
        "letter": "B",
-       "text": "A stop-loss order far below the price"
-      },
-      {
-       "letter": "C",
        "text": "A stop order far below the price"
       },
       {
-       "letter": "D",
+       "letter": "C",
        "text": "A sell limit order"
+      },
+      {
+       "letter": "D",
+       "text": "A good-till-canceled limit far below the price"
       }
      ],
      "correct_letter": "A",
@@ -865,9 +873,9 @@
      "topic": "Placing an order: market and limit orders",
      "subtopic": "Practical choice",
      "misconceptions": {
-      "B": "Not a buying method",
-      "C": "Confuses a sell tool with buying",
-      "D": "Wrong direction"
+      "B": "Confuses a sell tool with buying",
+      "C": "Wrong direction",
+      "D": "May never fill"
      },
      "practical_how_to": true,
      "sources": [
@@ -885,6 +893,7 @@
    "skill": "Trading costs and practical tips",
    "standard": "FL.INVEST.50",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 2",
    "difficulty": "deeper",
    "questions": [

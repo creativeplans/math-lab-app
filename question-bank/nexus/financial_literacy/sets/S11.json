@@ -14,9 +14,11 @@
    "learning_target": "12-6a calculate taxes likely withheld; tax forms used by employees",
    "grade_band": "9-12",
    "outcome_codes": [
-    "12-6a"
+    "Earning Income 12-6a"
    ],
-   "outcome_code_status": "verified"
+   "outcome_code_status": [
+    "wording from search-indexed text of the official document; not re-checked against the PDF by the author"
+   ]
   },
   "new_jersey": {
    "document": "NJSLS-CLKS 2020, Standard 9.1 Personal Financial Literacy (grade 12)",
@@ -26,7 +28,8 @@
    ],
    "performance_expectation_status": "strand-level alignment; individual 9.1.12 performance expectations to verify"
   },
-  "alignment": "supporting"
+  "local_identifier": "FL.INCOME.11 is a course identifier, not an official national or New Jersey code",
+  "claim": "Alignment shows what the set teaches toward; it does not claim full mastery of any standard."
  },
  "content_status": "time_sensitive",
  "sources": [
@@ -34,15 +37,24 @@
    "org": "IRS (Form W-4)",
    "url": "https://www.irs.gov/forms-pubs/about-form-w-4",
    "claim": "Employees give Form W-4 to their employer to set federal income tax withholding; claiming exempt requires no tax liability last year and none expected this year.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "jurisdiction": "US federal",
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
   },
   {
    "org": "IRS (Form W-2)",
    "url": "https://www.irs.gov/forms-pubs/about-form-w-2",
-   "claim": "Employers furnish Form W-2 (wages and taxes withheld) to employees by January 31.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "claim": "Employers generally furnish Form W-2 (wages and taxes withheld) to employees by January 31, or the next business day if that date falls on a weekend or legal holiday.",
+   "jurisdiction": "US federal",
+   "section": "About Form W-2",
+   "qids": [
+    "S11-M-Q5",
+    "S64-B1-Q5"
+   ],
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
   }
  ],
  "practical_skills": [
@@ -58,6 +70,7 @@
    "skill": "Explain how Form W-4 sets withholding and what Form W-2 reports",
    "standard": "FL.INCOME.11",
    "nearest_related": false,
+   "alignment_role": "direct",
    "questions": [
     {
      "id": "S11-M-Q1",
@@ -106,9 +119,9 @@
      "practical_how_to": true,
      "sources": [
       "IRS (Form W-4): Employees give Form W-4 to their employer to set federal income tax withholding; claiming exempt requires no tax liability last year and none expected this year. (https://www.irs.gov/forms-pubs/about-form-w-4)",
-      "IRS (Form W-2): Employers furnish Form W-2 (wages and taxes withheld) to employees by January 31. (https://www.irs.gov/forms-pubs/about-form-w-2)"
+      "IRS (Form W-2): Employers generally furnish Form W-2 (wages and taxes withheld) to employees by January 31, or the next business day if that date falls on a weekend or legal holiday. (https://www.irs.gov/forms-pubs/about-form-w-2)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 212
     },
     {
@@ -158,9 +171,9 @@
      "practical_how_to": true,
      "sources": [
       "IRS (Form W-4): Employees give Form W-4 to their employer to set federal income tax withholding; claiming exempt requires no tax liability last year and none expected this year. (https://www.irs.gov/forms-pubs/about-form-w-4)",
-      "IRS (Form W-2): Employers furnish Form W-2 (wages and taxes withheld) to employees by January 31. (https://www.irs.gov/forms-pubs/about-form-w-2)"
+      "IRS (Form W-2): Employers generally furnish Form W-2 (wages and taxes withheld) to employees by January 31, or the next business day if that date falls on a weekend or legal holiday. (https://www.irs.gov/forms-pubs/about-form-w-2)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 213
     },
     {
@@ -210,9 +223,9 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Form W-4): Employees give Form W-4 to their employer to set federal income tax withholding; claiming exempt requires no tax liability last year and none expected this year. (https://www.irs.gov/forms-pubs/about-form-w-4)",
-      "IRS (Form W-2): Employers furnish Form W-2 (wages and taxes withheld) to employees by January 31. (https://www.irs.gov/forms-pubs/about-form-w-2)"
+      "IRS (Form W-2): Employers generally furnish Form W-2 (wages and taxes withheld) to employees by January 31, or the next business day if that date falls on a weekend or legal holiday. (https://www.irs.gov/forms-pubs/about-form-w-2)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 214
     },
     {
@@ -249,8 +262,8 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "Form W-2 (Wage and Tax Statement) reports a worker's wages for the year and the taxes withheld. Employers must send it by January 31, and employees use it to file their tax returns.",
-     "feedback": "W-2s are due by January 31, so a missing W-2 in mid-February is late; ask the employer, and the IRS can help if it still does not arrive.",
+     "intro": "Form W-2 (Wage and Tax Statement) reports a worker's wages for the year and the taxes withheld. Employers generally must send it by January 31 (or the next business day if that falls on a weekend or holiday), and employees use it to file their tax returns.",
+     "feedback": "W-2s are generally due by January 31, so a missing W-2 in mid-February is late; ask the employer, and the IRS can help if it still does not arrive.",
      "question_type": "instruction",
      "topic": "Form W-4, withholding, and Form W-2",
      "subtopic": "W-2 deadline",
@@ -262,7 +275,7 @@
      "practical_how_to": true,
      "sources": [
       "IRS (Form W-4): Employees give Form W-4 to their employer to set federal income tax withholding; claiming exempt requires no tax liability last year and none expected this year. (https://www.irs.gov/forms-pubs/about-form-w-4)",
-      "IRS (Form W-2): Employers furnish Form W-2 (wages and taxes withheld) to employees by January 31. (https://www.irs.gov/forms-pubs/about-form-w-2)"
+      "IRS (Form W-2): Employers generally furnish Form W-2 (wages and taxes withheld) to employees by January 31, or the next business day if that date falls on a weekend or legal holiday. (https://www.irs.gov/forms-pubs/about-form-w-2)"
      ],
      "effective_date": "IRS deadline as of 2026",
      "page": 215
@@ -313,9 +326,9 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Form W-4): Employees give Form W-4 to their employer to set federal income tax withholding; claiming exempt requires no tax liability last year and none expected this year. (https://www.irs.gov/forms-pubs/about-form-w-4)",
-      "IRS (Form W-2): Employers furnish Form W-2 (wages and taxes withheld) to employees by January 31. (https://www.irs.gov/forms-pubs/about-form-w-2)"
+      "IRS (Form W-2): Employers generally furnish Form W-2 (wages and taxes withheld) to employees by January 31, or the next business day if that date falls on a weekend or legal holiday. (https://www.irs.gov/forms-pubs/about-form-w-2)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 216
     }
    ]
@@ -327,6 +340,7 @@
    "skill": "Why taxes are withheld from pay",
    "standard": "FL.INCOME.11",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "concept",
    "relationship": "Understanding withholding as pay-as-you-go tax payment explains what the W-4 and W-2 do.",
    "questions": [
@@ -377,9 +391,9 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Form W-4): Employees give Form W-4 to their employer to set federal income tax withholding; claiming exempt requires no tax liability last year and none expected this year. (https://www.irs.gov/forms-pubs/about-form-w-4)",
-      "IRS (Form W-2): Employers furnish Form W-2 (wages and taxes withheld) to employees by January 31. (https://www.irs.gov/forms-pubs/about-form-w-2)"
+      "IRS (Form W-2): Employers generally furnish Form W-2 (wages and taxes withheld) to employees by January 31, or the next business day if that date falls on a weekend or legal holiday. (https://www.irs.gov/forms-pubs/about-form-w-2)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 217
     },
     {
@@ -429,9 +443,9 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Form W-4): Employees give Form W-4 to their employer to set federal income tax withholding; claiming exempt requires no tax liability last year and none expected this year. (https://www.irs.gov/forms-pubs/about-form-w-4)",
-      "IRS (Form W-2): Employers furnish Form W-2 (wages and taxes withheld) to employees by January 31. (https://www.irs.gov/forms-pubs/about-form-w-2)"
+      "IRS (Form W-2): Employers generally furnish Form W-2 (wages and taxes withheld) to employees by January 31, or the next business day if that date falls on a weekend or legal holiday. (https://www.irs.gov/forms-pubs/about-form-w-2)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 218
     },
     {
@@ -481,9 +495,9 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Form W-4): Employees give Form W-4 to their employer to set federal income tax withholding; claiming exempt requires no tax liability last year and none expected this year. (https://www.irs.gov/forms-pubs/about-form-w-4)",
-      "IRS (Form W-2): Employers furnish Form W-2 (wages and taxes withheld) to employees by January 31. (https://www.irs.gov/forms-pubs/about-form-w-2)"
+      "IRS (Form W-2): Employers generally furnish Form W-2 (wages and taxes withheld) to employees by January 31, or the next business day if that date falls on a weekend or legal holiday. (https://www.irs.gov/forms-pubs/about-form-w-2)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 219
     },
     {
@@ -532,9 +546,9 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Form W-4): Employees give Form W-4 to their employer to set federal income tax withholding; claiming exempt requires no tax liability last year and none expected this year. (https://www.irs.gov/forms-pubs/about-form-w-4)",
-      "IRS (Form W-2): Employers furnish Form W-2 (wages and taxes withheld) to employees by January 31. (https://www.irs.gov/forms-pubs/about-form-w-2)"
+      "IRS (Form W-2): Employers generally furnish Form W-2 (wages and taxes withheld) to employees by January 31, or the next business day if that date falls on a weekend or legal holiday. (https://www.irs.gov/forms-pubs/about-form-w-2)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 220
     },
     {
@@ -583,9 +597,9 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Form W-4): Employees give Form W-4 to their employer to set federal income tax withholding; claiming exempt requires no tax liability last year and none expected this year. (https://www.irs.gov/forms-pubs/about-form-w-4)",
-      "IRS (Form W-2): Employers furnish Form W-2 (wages and taxes withheld) to employees by January 31. (https://www.irs.gov/forms-pubs/about-form-w-2)"
+      "IRS (Form W-2): Employers generally furnish Form W-2 (wages and taxes withheld) to employees by January 31, or the next business day if that date falls on a weekend or legal holiday. (https://www.irs.gov/forms-pubs/about-form-w-2)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 221
     }
    ]
@@ -597,6 +611,7 @@
    "skill": "Solve real-world problems with decimal operations",
    "standard": "FL.INCOME.11",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "Yearly withholding totals multiply per-paycheck amounts by the number of pay periods.",
    "ref": {
@@ -618,6 +633,7 @@
    "skill": "Getting withholding about right",
    "standard": "FL.INCOME.11",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 1",
    "difficulty": "deeper",
    "questions": [
@@ -631,7 +647,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Earning Income, Employment, and Paychecks",
-     "prompt": "Last year Kayla received a $1,300 refund. What does that tell her?",
+     "prompt": "Last year Kayla received a $1,300 refund. She had no refundable credits or other tax payments; her refund came only from paycheck withholding. What does that tell her?",
      "choices": [
       {
        "letter": "A",
@@ -655,8 +671,8 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "A tax refund is your own overpaid tax coming back. It is not extra income. A large refund means you could have had more in each paycheck during the year.",
-     "feedback": "A refund is a return of overpaid tax, not a bonus.",
+     "intro": "A refund is the amount by which your payments and refundable credits are more than your tax. Payments include withholding and estimated tax. When a refund comes only from withholding, it is your own overpaid tax coming back, not extra income, and you could have had more in each paycheck.",
+     "feedback": "With no refundable credits or other payments, the refund is overpaid withholding being returned.",
      "question_type": "instruction",
      "topic": "Form W-4, withholding, and Form W-2",
      "subtopic": "Meaning of a refund",
@@ -668,9 +684,9 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Form W-4): Employees give Form W-4 to their employer to set federal income tax withholding; claiming exempt requires no tax liability last year and none expected this year. (https://www.irs.gov/forms-pubs/about-form-w-4)",
-      "IRS (Form W-2): Employers furnish Form W-2 (wages and taxes withheld) to employees by January 31. (https://www.irs.gov/forms-pubs/about-form-w-2)"
+      "IRS (Form W-2): Employers generally furnish Form W-2 (wages and taxes withheld) to employees by January 31, or the next business day if that date falls on a weekend or legal holiday. (https://www.irs.gov/forms-pubs/about-form-w-2)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 222
     },
     {
@@ -719,9 +735,9 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Form W-4): Employees give Form W-4 to their employer to set federal income tax withholding; claiming exempt requires no tax liability last year and none expected this year. (https://www.irs.gov/forms-pubs/about-form-w-4)",
-      "IRS (Form W-2): Employers furnish Form W-2 (wages and taxes withheld) to employees by January 31. (https://www.irs.gov/forms-pubs/about-form-w-2)"
+      "IRS (Form W-2): Employers generally furnish Form W-2 (wages and taxes withheld) to employees by January 31, or the next business day if that date falls on a weekend or legal holiday. (https://www.irs.gov/forms-pubs/about-form-w-2)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 223
     },
     {
@@ -771,9 +787,9 @@
      "practical_how_to": true,
      "sources": [
       "IRS (Form W-4): Employees give Form W-4 to their employer to set federal income tax withholding; claiming exempt requires no tax liability last year and none expected this year. (https://www.irs.gov/forms-pubs/about-form-w-4)",
-      "IRS (Form W-2): Employers furnish Form W-2 (wages and taxes withheld) to employees by January 31. (https://www.irs.gov/forms-pubs/about-form-w-2)"
+      "IRS (Form W-2): Employers generally furnish Form W-2 (wages and taxes withheld) to employees by January 31, or the next business day if that date falls on a weekend or legal holiday. (https://www.irs.gov/forms-pubs/about-form-w-2)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 224
     },
     {
@@ -823,9 +839,9 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Form W-4): Employees give Form W-4 to their employer to set federal income tax withholding; claiming exempt requires no tax liability last year and none expected this year. (https://www.irs.gov/forms-pubs/about-form-w-4)",
-      "IRS (Form W-2): Employers furnish Form W-2 (wages and taxes withheld) to employees by January 31. (https://www.irs.gov/forms-pubs/about-form-w-2)"
+      "IRS (Form W-2): Employers generally furnish Form W-2 (wages and taxes withheld) to employees by January 31, or the next business day if that date falls on a weekend or legal holiday. (https://www.irs.gov/forms-pubs/about-form-w-2)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 225
     },
     {
@@ -874,9 +890,9 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Form W-4): Employees give Form W-4 to their employer to set federal income tax withholding; claiming exempt requires no tax liability last year and none expected this year. (https://www.irs.gov/forms-pubs/about-form-w-4)",
-      "IRS (Form W-2): Employers furnish Form W-2 (wages and taxes withheld) to employees by January 31. (https://www.irs.gov/forms-pubs/about-form-w-2)"
+      "IRS (Form W-2): Employers generally furnish Form W-2 (wages and taxes withheld) to employees by January 31, or the next business day if that date falls on a weekend or legal holiday. (https://www.irs.gov/forms-pubs/about-form-w-2)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 226
     }
    ]
@@ -888,6 +904,7 @@
    "skill": "Claiming exemption from withholding",
    "standard": "FL.INCOME.11",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 2",
    "difficulty": "deeper",
    "questions": [
@@ -938,7 +955,7 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Form W-4): Employees give Form W-4 to their employer to set federal income tax withholding; claiming exempt requires no tax liability last year and none expected this year. (https://www.irs.gov/forms-pubs/about-form-w-4)",
-      "IRS (Form W-2): Employers furnish Form W-2 (wages and taxes withheld) to employees by January 31. (https://www.irs.gov/forms-pubs/about-form-w-2)"
+      "IRS (Form W-2): Employers generally furnish Form W-2 (wages and taxes withheld) to employees by January 31, or the next business day if that date falls on a weekend or legal holiday. (https://www.irs.gov/forms-pubs/about-form-w-2)"
      ],
      "effective_date": "IRS Form W-4 rules as of 2026",
      "page": 227
@@ -989,9 +1006,9 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Form W-4): Employees give Form W-4 to their employer to set federal income tax withholding; claiming exempt requires no tax liability last year and none expected this year. (https://www.irs.gov/forms-pubs/about-form-w-4)",
-      "IRS (Form W-2): Employers furnish Form W-2 (wages and taxes withheld) to employees by January 31. (https://www.irs.gov/forms-pubs/about-form-w-2)"
+      "IRS (Form W-2): Employers generally furnish Form W-2 (wages and taxes withheld) to employees by January 31, or the next business day if that date falls on a weekend or legal holiday. (https://www.irs.gov/forms-pubs/about-form-w-2)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 228
     },
     {
@@ -1040,9 +1057,9 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Form W-4): Employees give Form W-4 to their employer to set federal income tax withholding; claiming exempt requires no tax liability last year and none expected this year. (https://www.irs.gov/forms-pubs/about-form-w-4)",
-      "IRS (Form W-2): Employers furnish Form W-2 (wages and taxes withheld) to employees by January 31. (https://www.irs.gov/forms-pubs/about-form-w-2)"
+      "IRS (Form W-2): Employers generally furnish Form W-2 (wages and taxes withheld) to employees by January 31, or the next business day if that date falls on a weekend or legal holiday. (https://www.irs.gov/forms-pubs/about-form-w-2)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 229
     },
     {
@@ -1092,9 +1109,9 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Form W-4): Employees give Form W-4 to their employer to set federal income tax withholding; claiming exempt requires no tax liability last year and none expected this year. (https://www.irs.gov/forms-pubs/about-form-w-4)",
-      "IRS (Form W-2): Employers furnish Form W-2 (wages and taxes withheld) to employees by January 31. (https://www.irs.gov/forms-pubs/about-form-w-2)"
+      "IRS (Form W-2): Employers generally furnish Form W-2 (wages and taxes withheld) to employees by January 31, or the next business day if that date falls on a weekend or legal holiday. (https://www.irs.gov/forms-pubs/about-form-w-2)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 230
     },
     {
@@ -1107,7 +1124,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Earning Income, Employment, and Paychecks",
-     "prompt": "IRS rules allow claiming exempt only with no income tax liability last year and none expected this year. Jamal earned $3,000 last year and owed no federal income tax. This year he expects to earn $28,000 at a full-time job. Should he claim exempt?",
+     "prompt": "IRS rules allow claiming exempt only with no income tax liability last year and none expected this year. Jamal owed no federal income tax last year. This year, with a full-time job, he expects to have a positive federal income tax liability. Should he claim exempt?",
      "choices": [
       {
        "letter": "A",
@@ -1131,7 +1148,7 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "feedback": "Both conditions must hold. At $28,000 he would expect to owe tax, so exemption is not allowed.",
+     "feedback": "Both conditions must hold. He expects a tax liability this year, so he cannot claim exempt. (Liability is the tax itself, not the amount due when filing.)",
      "question_type": "knowledge_check",
      "topic": "Form W-4, withholding, and Form W-2",
      "subtopic": "Applying the rule",
@@ -1143,9 +1160,9 @@
      "practical_how_to": false,
      "sources": [
       "IRS (Form W-4): Employees give Form W-4 to their employer to set federal income tax withholding; claiming exempt requires no tax liability last year and none expected this year. (https://www.irs.gov/forms-pubs/about-form-w-4)",
-      "IRS (Form W-2): Employers furnish Form W-2 (wages and taxes withheld) to employees by January 31. (https://www.irs.gov/forms-pubs/about-form-w-2)"
+      "IRS (Form W-2): Employers generally furnish Form W-2 (wages and taxes withheld) to employees by January 31, or the next business day if that date falls on a weekend or legal holiday. (https://www.irs.gov/forms-pubs/about-form-w-2)"
      ],
-     "effective_date": "2026-10-12",
+     "effective_date": "2026-10-15",
      "page": 231
     }
    ]

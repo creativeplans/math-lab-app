@@ -14,7 +14,7 @@
    "learning_target": "Explain how time and compounding affect savings growth",
    "grade_band": "9-12",
    "outcome_codes": [],
-   "outcome_code_status": "to verify against the official document"
+   "outcome_code_status": "topic-level only; no 12th-grade outcome code assigned yet"
   },
   "new_jersey": {
    "document": "NJSLS-CLKS 2020, Standard 9.1 Personal Financial Literacy (grade 12)",
@@ -24,7 +24,8 @@
    ],
    "performance_expectation_status": "strand-level alignment; individual 9.1.12 performance expectations to verify"
   },
-  "alignment": "supporting"
+  "local_identifier": "FL.SAVE.26 is a course identifier, not an official national or New Jersey code",
+  "claim": "Alignment shows what the set teaches toward; it does not claim full mastery of any standard."
  },
  "content_status": "stable",
  "sources": [],
@@ -40,6 +41,7 @@
    "skill": "Estimate doubling time with the Rule of 72 and explain why starting early matters",
    "standard": "FL.SAVE.26",
    "nearest_related": false,
+   "alignment_role": "direct",
    "questions": [
     {
      "id": "S26-M-Q1",
@@ -304,6 +306,7 @@
    "skill": "Doubling and repeated doubling",
    "standard": "FL.SAVE.26",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "concept",
    "relationship": "Doubling-time reasoning depends on understanding repeated multiplication by 2.",
    "questions": [
@@ -567,20 +570,21 @@
    "section": "B2",
    "section_code": "B2",
    "relation": "backward",
-   "skill": "Write arithmetic and geometric sequences",
+   "skill": "Divide multi-digit decimals",
    "standard": "FL.SAVE.26",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
-   "relationship": "Repeated doubling is a geometric sequence.",
+   "relationship": "The Rule of 72 divides 72 by the rate (or by the years).",
    "ref": {
-    "course": "algebra_1",
-    "set": 50,
+    "course": "grade_6",
+    "set": 20,
     "section": "M"
    },
    "ref_skill": {
-    "skill_id": "ALG1-S50-M",
-    "standard": "HSF-BF.A.2",
-    "name": "Write arithmetic and geometric sequences recursively and with an explicit formula"
+    "skill_id": "G6-S20-M",
+    "standard": "6.NS.B.3",
+    "name": "Divide multi-digit decimals"
    },
    "questions": []
   },
@@ -588,20 +592,21 @@
    "section": "B3",
    "section_code": "B3",
    "relation": "backward",
-   "skill": "Observe that exponential growth eventually exceeds linear growth",
+   "skill": "Evaluate numerical expressions with whole-number exponents",
    "standard": "FL.SAVE.26",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
-   "relationship": "Compound growth eventually outpaces steady additions.",
+   "relationship": "Repeated doubling is a power of 2.",
    "ref": {
-    "course": "algebra_1",
-    "set": 57,
+    "course": "grade_6",
+    "set": 40,
     "section": "M"
    },
    "ref_skill": {
-    "skill_id": "ALG1-S57-M",
-    "standard": "HSF-LE.A.3",
-    "name": "Observe that exponential growth eventually exceeds linear, quadratic, and polynomial growth"
+    "skill_id": "G6-S40-M",
+    "standard": "6.EE.A.1",
+    "name": "Evaluate numerical expressions with whole-number exponents"
    },
    "questions": []
   },
@@ -612,6 +617,7 @@
    "skill": "Starting early",
    "standard": "FL.SAVE.26",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 1",
    "difficulty": "deeper",
    "questions": [
@@ -777,39 +783,39 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Saving, Emergency Funds, and Interest",
-     "prompt": "A 17-year-old with a summer job wonders whether saving $500 now matters. At 7% a year, about what does $500 grow to in 48 years (nearest hundred, using the Rule of 72)?",
+     "prompt": "A 17-year-old with a summer job wonders whether saving $500 now matters. Using the Rule of 72 at 7% a year, about what does $500 grow to in 48 years (nearest hundred)?",
      "choices": [
       {
        "letter": "A",
-       "text": "About $13,000"
+       "text": "$500"
       },
       {
        "letter": "B",
-       "text": "About $500"
+       "text": "$2,200"
       },
       {
        "letter": "C",
-       "text": "About $2,180"
+       "text": "$12,700"
       },
       {
        "letter": "D",
-       "text": "About $4,000"
+       "text": "$16,000"
       }
      ],
-     "correct_letter": "A",
-     "correct_answer": "About $13,000",
+     "correct_letter": "C",
+     "correct_answer": "$12,700",
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "At about 7%, money doubles roughly every 72 ÷ 7 ≈ 10.3 years.",
-     "feedback": "48 ÷ 10.3 ≈ 4.7 doublings; 2^4.7 ≈ 26, so about $500 × 26 ≈ $13,000. (Exact at 7%: 500 × 1.07^48 ≈ $12,800.)",
+     "intro": "At about 7%, money doubles roughly every 72 ÷ 7 ≈ 10.3 years. Number of doublings = years ÷ doubling time; growth factor = 2^(doublings). Keep the doublings unrounded until the end.",
+     "feedback": "48 × 7 ÷ 72 ≈ 4.667 doublings; 2^4.667 ≈ 25.40; $500 × 25.40 ≈ $12,699, about $12,700. (Exact annual compounding: $500 × 1.07^48 ≈ $12,864.45, about $12,900.)",
      "question_type": "instruction",
      "topic": "Time, doubling, and the Rule of 72",
      "subtopic": "Small amounts early",
      "misconceptions": {
-      "B": "Ignores growth",
-      "C": "Uses simple interest",
-      "D": "Counts too few doublings"
+      "B": "Uses simple interest: $500 + $500 × 0.07 × 48 = $2,180",
+      "D": "Rounds up to 5 whole doublings before multiplying",
+      "A": "Ignores growth"
      },
      "practical_how_to": false,
      "sources": [
@@ -877,6 +883,7 @@
    "skill": "The cost of waiting",
    "standard": "FL.SAVE.26",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 2",
    "difficulty": "deeper",
    "questions": [

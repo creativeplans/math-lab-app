@@ -14,7 +14,7 @@
    "learning_target": "Compare the costs and benefits of leasing and buying a vehicle",
    "grade_band": "9-12",
    "outcome_codes": [],
-   "outcome_code_status": "to verify against the official document"
+   "outcome_code_status": "topic-level only; no 12th-grade outcome code assigned yet"
   },
   "new_jersey": {
    "document": "NJSLS-CLKS 2020, Standard 9.1 Personal Financial Literacy (grade 12)",
@@ -24,7 +24,8 @@
    ],
    "performance_expectation_status": "strand-level alignment; individual 9.1.12 performance expectations to verify"
   },
-  "alignment": "supporting"
+  "local_identifier": "FL.CAR.85 is a course identifier, not an official national or New Jersey code",
+  "claim": "Alignment shows what the set teaches toward; it does not claim full mastery of any standard."
  },
  "content_status": "stable",
  "sources": [
@@ -32,8 +33,10 @@
    "org": "FTC (Financing or leasing a car)",
    "url": "https://consumer.ftc.gov/articles/financing-or-leasing-car",
    "claim": "A lease lets a consumer use a vehicle for a set term; leases have mileage limits, wear-and-tear charges, and early termination costs.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "jurisdiction": "US federal",
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
   }
  ],
  "practical_skills": [
@@ -49,6 +52,7 @@
    "skill": "Explain lease terms and compare the cost of leasing with buying",
    "standard": "FL.CAR.85",
    "nearest_related": false,
+   "alignment_role": "direct",
    "questions": [
     {
      "id": "S85-M-Q1",
@@ -213,7 +217,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Buying, Financing, and Owning a Vehicle",
-     "prompt": "A lease needs $2,000 at signing and 36 payments of $399. What is the total cost of the lease?",
+     "prompt": "A lease needs $2,000 at signing, an upfront charge separate from the payments, plus 36 monthly payments of $399. Counting only these amounts, what is the total cost of the lease?",
      "choices": [
       {
        "letter": "A",
@@ -237,8 +241,9 @@
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
+     "intro": "Total lease cost = amount due at signing + all monthly payments + any other charges. Check whether the amount due at signing already includes the first payment, so it is not counted twice.",
      "feedback": "$2,000 + 36 × $399 = $2,000 + $14,364 = $16,364.",
-     "question_type": "knowledge_check",
+     "question_type": "instruction",
      "topic": "Leasing vs buying a car",
      "subtopic": "Total lease cost",
      "misconceptions": {
@@ -313,6 +318,7 @@
    "skill": "Using vs owning",
    "standard": "FL.CAR.85",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "concept",
    "relationship": "A lease is paying to use; a loan is paying to own. The difference explains every lease term.",
    "questions": [
@@ -578,6 +584,7 @@
    "skill": "Solve multistep problems with rational numbers",
    "standard": "FL.CAR.85",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "Lease costs combine payments, fees, and charges.",
    "ref": {
@@ -599,6 +606,7 @@
    "skill": "Divide multi-digit decimals",
    "standard": "FL.CAR.85",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "Lease payments spread a dollar amount over months.",
    "ref": {
@@ -620,6 +628,7 @@
    "skill": "Inside the lease payment",
    "standard": "FL.CAR.85",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 1",
    "difficulty": "deeper",
    "questions": [
@@ -885,6 +894,7 @@
    "skill": "Lease or buy: the three-year comparison",
    "standard": "FL.CAR.85",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 2",
    "difficulty": "deeper",
    "questions": [
@@ -1062,7 +1072,7 @@
       },
       {
        "letter": "C",
-       "text": "You pay only for the expected depreciation"
+       "text": "You pay for expected depreciation plus a finance charge, not the full price"
       },
       {
        "letter": "D",
@@ -1070,16 +1080,17 @@
       }
      ],
      "correct_letter": "C",
-     "correct_answer": "You pay only for the expected depreciation",
+     "correct_answer": "You pay for expected depreciation plus a finance charge, not the full price",
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "feedback": "A lease covers the loss in value, not the whole price.",
-     "question_type": "knowledge_check",
+     "intro": "A lease payment covers the car's expected loss in value over the lease, a finance (rent) charge, and taxes and fees. A loan payment repays the full purchase price plus interest.",
+     "feedback": "A lease covers depreciation, a rent charge, and taxes and fees, not the whole price, so payments are often lower.",
+     "question_type": "instruction",
      "topic": "Leasing vs buying a car",
      "subtopic": "Why payments differ",
      "misconceptions": {
-      "A": "Leases have a finance charge",
+      "A": "Leases have a finance (rent) charge",
       "B": "Invents a tax rule",
       "D": "Usually the reverse"
      },

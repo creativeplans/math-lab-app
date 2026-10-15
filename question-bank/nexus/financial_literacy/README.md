@@ -1,6 +1,6 @@
-# Untangle The Nexus — High School Financial Literacy (FL) v1.0.0
+# Untangle The Nexus — High School Financial Literacy (FL) v1.1.0
 
-**Review status: NOT APPROVED.** This collection was written and machine-checked by Claude. It must be independently reviewed (the owner plans a ChatGPT audit) and approved by the owner before it is imported into the live game. The game keeps the course "coming soon" until then.
+**Review status: NOT APPROVED. Release pending recheck.** Version 1.0.0 was independently reviewed (ChatGPT). This version 1.1.0 applies that review: every finding and its fix is in `REVIEW_RESPONSE.md`, and every changed question is in `CHANGES.md`. Passing the build checks does not mean the content is fact-checked. The revised package must be rechecked and approved by the owner before import; do not overwrite a live course with it. The game keeps the course "coming soon" until then.
 
 ## What is here
 
@@ -10,7 +10,7 @@
 | 2 | Answer key PDF | FinancialLiteracy_Answer_Key.pdf |
 | 3 | JSON answer key | FinancialLiteracy_Answer_Key.json |
 | 4 | CSV answer key | FinancialLiteracy_Answer_Key.csv |
-| 5 | Nexus import ZIP | nexus/FinancialLiteracy_Nexus_Import_v1.0.0.zip |
+| 5 | Nexus import ZIP | nexus/FinancialLiteracy_Nexus_Import_v1.1.0.zip |
 | 6 | Standards coverage report | COVERAGE.md |
 | 7 | Math prerequisite branch report | MATH_BRANCHES.md |
 | 8 | Concept prerequisite branch report | CONCEPT_BRANCHES.md |
@@ -18,10 +18,16 @@
 | 10 | How-to coverage report | HOW_TO.md |
 | 11 | Question and distractor quality audit | QUALITY_AUDIT.md |
 | 12 | This README | README.md |
+| 13 | Response to the independent review (every R, C, P item) | REVIEW_RESPONSE.md |
+| 14 | Change log by question ID (old/new key, reason, source) | CHANGES.md, CHANGES.json |
+| 15 | Claim-level source ledger | SOURCE_LEDGER.md, SOURCE_LEDGER.json |
+| 16 | Math links checked in the installed game | MATH_REF_VALIDATION.json |
+| 17 | Import and play-through test in the real game server | RUNTIME_CHECK.json |
+| 18 | Cross-export consistency check | EXPORT_CROSSCHECK.json |
 
 ## Size
 
-19 units, 113 sets, 2130 questions: 113 MAIN sections, 113 concept prerequisite branches, 179 math prerequisite links, and 200 Go Deeper sections.
+19 units, 113 sets, 2130 questions: 113 MAIN sections, 113 concept prerequisite branches, 178 math prerequisite links, and 200 Go Deeper sections.
 
 | Unit | Title | Sets |
 |---|---|---|
@@ -73,7 +79,7 @@ Fields this package adds (all optional in the game, stored as-is):
 | question | practical_how_to | true for practical how-to questions |
 | question | sources, effective_date | Sources for changing rules and the date they are stated as of |
 | question | page | Page in the question and answer PDFs |
-| set | alignment | National topic, learning target, verified outcome codes; NJ 9.1.12 strands |
+| set | alignment | National topic, learning target, topic-qualified outcome codes with how each was checked; NJ 9.1.12 strands; local identifier note |
 | set | content_status | "stable" or "time_sensitive" |
 | set | sources | Organization, URL, claim, effective date, and verification status |
 | set | practical_skills | Practical skills beyond the standards |
@@ -85,17 +91,18 @@ Not supported by the importer, so not used: links from one Financial Literacy se
 
 ## Standards
 
-Alignment: 2021 National Standards for Personal Financial Education (topic level; 12th-grade outcome codes only where verified) and NJSLS-CLKS 2020 Standard 9.1 (grade-12 strand level). See COVERAGE.md. Details and the full matrix are in COVERAGE.md.
+Alignment: 2021 National Standards for Personal Financial Education (topic level; 12th-grade outcome codes, qualified by topic, only where assigned) and NJSLS-CLKS 2020 Standard 9.1 (grade-12 strand level, with known gaps listed in COVERAGE.md). Codes such as FL.SAVE.24 are local course identifiers, not official codes. Section roles: MAIN = direct alignment; backward = supporting prerequisite; Go Deeper = related enrichment. The package does not claim full mastery of either standard. Details and the full matrix are in COVERAGE.md.
 
 ## Sources and changing rules
 
 Sources are federal and state agencies and regulators: IRS, CFPB, FDIC, NCUA, SEC, FINRA, SIPC, Federal Student Aid, FTC, NHTSA, Social Security Administration, Federal Reserve, BLS, HealthCare.gov, and New Jersey agencies (Division of Taxation, Division of Consumer Affairs, DOBI, HESAA, Get Covered New Jersey). Each time-sensitive set lists its sources with the claim used. Amounts that change often (IRA and 401(k) limits, tax brackets, standard deductions, Roth income limits, mileage rates) are given as stated hypothetical amounts so the questions stay correct; real figures are stated "as of" a date.
 
-**Verification limit:** the authoring environment's network policy blocked the official sites (nj.gov, njconsumeraffairs.gov, jumpstart.org, councilforeconed.org, irs.gov, consumerfinance.gov, fdic.gov, econedlink.org and similar sites). Claims were written from knowledge and checked against web search results only, so every source carries `checked: null` and a note asking the reviewer to confirm it. To let a future session verify them, allow those hosts in the environment's network settings, or upload the official PDFs (the National Standards, NJSLS 9.1) to the repository.
+**Verification limit:** the authoring environment's network policy blocked the official sites (nj.gov, njconsumeraffairs.gov, jumpstart.org, councilforeconed.org, irs.gov, consumerfinance.gov, fdic.gov, econedlink.org and similar sites). Claims were written from knowledge and checked against web search results only. Each source in the package carries `verification` (reviewer-checked topic, search-corroborated, or unverified), `verification_detail`, and `verified_on: null`; the claim-level list is `SOURCE_LEDGER.md` / `.json`. To let a future session verify them, allow those hosts in the environment's network settings, or upload the official PDFs (the National Standards, NJSLS 9.1) to the repository.
 
 ## Known limitations
 
-- National outcome codes are cited only where verified; NJ alignment is at the strand level.
+- National outcome codes are assigned to a few sets only, written with their topic, and none was checked by the author against the official PDF. NJ alignment is at the strand level, and known NJ gaps are listed in COVERAGE.md section 3a. The course does not claim full mastery of either standard.
+- Math remediation uses the target skill's own question types (multiple choice, true/false, typed numbers); see MATH_BRANCHES.md.
 - Source claims and effective dates need a reviewer's confirmation (see above). Some federal rules changed in 2025-2026 (for example, student loan repayment plans); those questions say to check the official site.
 - Real company names (Charles Schwab, Fidelity, E*TRADE, Vanguard, Experian, and others) appear as examples only, never as endorsements.
 - Misconception notes are stored for future use; the game does not route by them today.

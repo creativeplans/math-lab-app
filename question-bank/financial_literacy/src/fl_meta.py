@@ -1,6 +1,6 @@
 """Collection-wide metadata for Financial Literacy: version, branching rules, standards references."""
-VERSION = '1.0.0'
-DATE = '2026-10-12'
+VERSION = '1.1.0'
+DATE = '2026-10-15'
 
 SOURCE_STATUS = ('Not re-verified online: the authoring environment could not open this site on 2026-10-12. '
                  'A reviewer must confirm the claim against the source before import.')

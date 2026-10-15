@@ -14,7 +14,7 @@
    "learning_target": "Explain how economic conditions such as unemployment and recessions affect income and financial decisions",
    "grade_band": "9-12",
    "outcome_codes": [],
-   "outcome_code_status": "to verify against the official document"
+   "outcome_code_status": "topic-level only; no 12th-grade outcome code assigned yet"
   },
   "new_jersey": {
    "document": "NJSLS-CLKS 2020, Standard 9.1 Personal Financial Literacy (grade 12)",
@@ -24,7 +24,8 @@
    ],
    "performance_expectation_status": "strand-level alignment; individual 9.1.12 performance expectations to verify"
   },
-  "alignment": "supporting"
+  "local_identifier": "FL.ECON.104 is a course identifier, not an official national or New Jersey code",
+  "claim": "Alignment shows what the set teaches toward; it does not claim full mastery of any standard."
  },
  "content_status": "stable",
  "sources": [
@@ -32,15 +33,19 @@
    "org": "U.S. Bureau of Labor Statistics (Unemployment)",
    "url": "https://www.bls.gov/cps/",
    "claim": "The unemployment rate is the share of the labor force that is jobless and looking for work.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "jurisdiction": "US federal",
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
   },
   {
    "org": "Federal Reserve (Monetary policy)",
    "url": "https://www.federalreserve.gov/monetarypolicy.htm",
    "claim": "The Federal Reserve sets a target range for the federal funds rate to pursue maximum employment and stable prices; it has a longer-run inflation goal of 2%.",
-   "checked": null,
-   "verification": "Not re-verified online: the authoring environment could not open this site on 2026-10-12. A reviewer must confirm the claim against the source before import."
+   "jurisdiction": "US federal",
+   "verification": "unverified",
+   "verification_detail": "reviewer fetch: HTTP 200 (link reachable; claim not confirmed by the fetch)",
+   "verified_on": null
   }
  ],
  "practical_skills": [
@@ -55,6 +60,7 @@
    "skill": "Explain how unemployment, recessions, and market changes affect personal financial decisions",
    "standard": "FL.ECON.104",
    "nearest_related": false,
+   "alignment_role": "direct",
    "questions": [
     {
      "id": "S104-M-Q1",
@@ -273,11 +279,11 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Inflation, Interest Rates, and the Economy",
-     "prompt": "During a downturn, Rosa's stock index fund drops 20%. She has 30 years until retirement. What does history suggest?",
+     "prompt": "During a downturn, Rosa's broadly diversified U.S. stock market index fund drops 20%. She has 30 years until retirement. What does past U.S. market history suggest?",
      "choices": [
       {
        "letter": "A",
-       "text": "Staying invested has usually recovered over time"
+       "text": "Broad markets have recovered from past drops, but not on any schedule"
       },
       {
        "letter": "B",
@@ -293,16 +299,17 @@
       }
      ],
      "correct_letter": "A",
-     "correct_answer": "Staying invested has usually recovered over time",
+     "correct_answer": "Broad markets have recovered from past drops, but not on any schedule",
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "feedback": "Long-term investors have historically recovered from downturns, though past results do not guarantee future ones.",
-     "question_type": "knowledge_check",
+     "intro": "In past U.S. history, broad stock market declines have eventually been followed by recoveries, but the timing has varied from months to many years. Past results do not guarantee future ones, and a single stock or narrow fund may never recover.",
+     "feedback": "Broad markets have historically recovered from downturns over long periods, but recovery is not guaranteed.",
+     "question_type": "instruction",
      "topic": "Economic conditions and personal finances",
      "subtopic": "Investing through cycles",
      "misconceptions": {
-      "B": "Untrue historically",
+      "B": "Contradicts past history",
       "C": "Locks in losses",
       "D": "Invents a rule"
      },
@@ -323,6 +330,7 @@
    "skill": "The business cycle",
    "standard": "FL.ECON.104",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "concept",
    "relationship": "Economic conditions follow cycles that affect jobs and prices.",
    "questions": [
@@ -590,6 +598,7 @@
    "skill": "Find a percent of a quantity",
    "standard": "FL.ECON.104",
    "nearest_related": false,
+   "alignment_role": "supporting prerequisite",
    "kind": "math",
    "relationship": "Unemployment and other rates are percents of a whole.",
    "ref": {
@@ -611,6 +620,7 @@
    "skill": "Taxes, government, and the economy",
    "standard": "FL.ECON.104",
    "nearest_related": false,
+   "alignment_role": "related enrichment",
    "display_label": "Go Deeper 1",
    "difficulty": "deeper",
    "questions": [
@@ -624,7 +634,7 @@
      "standard_grade": "HS",
      "standard_course": "Financial Literacy",
      "domain": "Inflation, Interest Rates, and the Economy",
-     "prompt": "Taxes pay for public goods. Which is a public good?",
+     "prompt": "Economists define a public good as something that one person's use does not use up and that people cannot easily be kept from using. Which is the clearest example?",
      "choices": [
       {
        "letter": "A",
@@ -640,23 +650,23 @@
       },
       {
        "letter": "D",
-       "text": "A public road"
+       "text": "National defense"
       }
      ],
      "correct_letter": "D",
-     "correct_answer": "A public road",
+     "correct_answer": "National defense",
      "answer_lines": [],
      "grading_note": "",
      "figure": null,
-     "intro": "Public goods, such as roads, parks, and national defense, are available to everyone and are paid for largely through taxes.",
-     "feedback": "Public roads are funded by taxes and open to all.",
+     "intro": "Taxes pay for many public services. In economics, a \"public good\" is nonrival (one person's use does not reduce another's) and nonexcludable (hard to keep people from using it). National defense is a classic example. Roads are tax-funded public services, but they can get crowded or charge tolls, so they are not always pure public goods.",
+     "feedback": "National defense protects everyone at once and cannot exclude anyone.",
      "question_type": "instruction",
      "topic": "Economic conditions and personal finances",
      "subtopic": "Public goods",
      "misconceptions": {
-      "A": "Private good",
-      "B": "Private good",
-      "C": "Private good"
+      "A": "People can be excluded",
+      "B": "Used up by the person who eats it",
+      "C": "People can be excluded"
      },
      "practical_how_to": false,
      "sources": [
