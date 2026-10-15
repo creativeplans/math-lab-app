@@ -285,7 +285,7 @@ S(37, 'How credit card interest is calculated', 'Calculate credit card interest 
         intro='Monthly interest on a carried balance ≈ balance × (APR ÷ 12).',
         fb='$500 × 0.22 ÷ 12 ≈ $9.17 per month.', calc=500 * 0.22 / 12, sub='Interest saved'),
       q('Which balance should a cardholder target first with extra payments, if allowed to choose?', 'The highest-APR balance',
-        [('The newest balance', 'Not necessarily costly'), ('The balance with the nicest name', 'Irrelevant'), ('The 0% balance', 'Costs nothing now')],
+        [('The newest balance', 'Not necessarily costly'), ('The balance that is oldest, regardless of rate', 'Ignores the cost of each balance'), ('The 0% balance', 'Costs nothing now')],
         fb='Highest APR first minimizes interest (the avalanche idea).', sub='Targeting'),
     ]),
   ],
