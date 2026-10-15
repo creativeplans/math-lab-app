@@ -3,9 +3,10 @@ from fl_dsl import unit, S, q, concept, math, deeper, src
 unit('TAX', 'Taxes and Tax Filing', ['10 Taxes and Tax Filing'])
 
 IRS_FORMS = src('IRS', 'https://www.irs.gov/forms-instructions', 'Form 1040 is the individual income tax return; employers issue Form W-2; payers issue Forms 1099 for other income.')
-FILE_REQ = src('IRS (Publication 501 / Do I need to file?)', 'https://www.irs.gov/filing/check-if-you-need-to-file-a-tax-return', 'Filing requirements depend on income, filing status, age, and dependency; people may file to get a refund of withheld tax even when not required.', eff='Check the current tax year')
+FILE_REQ = src('IRS (Interactive Tax Assistant: Do I need to file?)', 'https://www.irs.gov/help/ita/do-i-need-to-file-a-tax-return', 'Filing requirements depend on income, filing status, age, and dependency; people may file to get a refund of withheld tax even when not required.', eff='Check the current tax year')
 BRACKETS = src('IRS (Federal income tax rates and brackets)', 'https://www.irs.gov/filing/federal-income-tax-rates-and-brackets', 'The U.S. uses progressive marginal brackets; bracket thresholds and the standard deduction change every year. This course uses stated hypothetical amounts.', eff='Check the current tax year')
-NJ = src('New Jersey Division of Taxation', 'https://www.nj.gov/treasury/taxation/njit25.shtml', 'New Jersey has a state income tax (Form NJ-1040) with graduated rates; New Jersey does not tax most clothing and grocery food under the sales tax.')
+NJ = src('New Jersey Division of Taxation (Income tax)', 'https://www.nj.gov/treasury/taxation/njit25.shtml', 'New Jersey has a state income tax (Form NJ-1040) with graduated rates.', jur='New Jersey')
+WFTC = src('IRS (Working Families Tax Cuts)', 'https://www.irs.gov/newsroom/working-families-tax-cuts', 'Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities.', eff='Tax year 2026', qids=['S66-M-Q1', 'S109-M-Q4'])
 
 # ---------------------------------------------------------------- S63
 S(63, 'Types of taxes and how they work', 'Identify major taxes and classify taxes as progressive, regressive, or proportional',
@@ -98,7 +99,7 @@ S(63, 'Types of taxes and how they work', 'Identify major taxes and classify tax
         fb='Necessary goods have less flexible demand, so taxes pass through to buyers.', sub='Tax incidence'),
     ]),
   ],
-  nat=('Earning Income', '12-8b compare tax rates on different types of income; types of taxes and their purposes'), nj=['EG'],
+  nat=('Earning Income', '12-6b types of taxes; 12-6c purposes of taxes; 12-6a tax calculations'), nj=['EG'],
   status='time_sensitive', sources=[NJ], extra=['New Jersey state and sales tax basics'])
 
 # ---------------------------------------------------------------- S64
@@ -383,5 +384,5 @@ S(66, 'From gross income to taxable income', 'Calculate adjusted gross income an
     ]),
   ],
   nat=('Earning Income', 'Calculate taxable income from gross income using adjustments and deductions'), nj=['EG'],
-  status='time_sensitive', sources=[BRACKETS], extra=['Choosing standard vs itemized deductions'],
+  status='time_sensitive', sources=[BRACKETS, WFTC], extra=['Choosing standard vs itemized deductions'],
   note='Standard deduction and other amounts are hypothetical for each scenario; check irs.gov for the current year.')

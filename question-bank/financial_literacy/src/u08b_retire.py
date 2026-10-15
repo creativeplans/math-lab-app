@@ -2,8 +2,9 @@ from fl_dsl import unit, S, q, concept, math, deeper, src
 
 unit('RETIRE', 'Retirement Accounts: IRAs, Roth IRAs, 401(k)s, and 403(b)s', ['9 Retirement Accounts, Including Roth IRAs, Traditional IRAs, 401(k)s, and 403(b)s'])
 
-ROTHW = src('IRS (Publication 590-B)', 'https://www.irs.gov/publications/p590b', 'Roth IRA contributions can be withdrawn at any time; qualified distributions require a 5-year period and age 59½ (or death, disability, or first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax.')
+ROTHW = src('IRS (Publication 590-B)', 'https://www.irs.gov/publications/p590b', 'Roth IRA regular contributions can be withdrawn at any time; distributions come out in order: regular contributions, then conversions and rollovers, then earnings; qualified distributions need a 5-year period and age 59½ (or death, disability, or a first-time home purchase up to $10,000); nonqualified earnings may be taxed plus a 10% additional tax.', section='Ordering Rules for Distributions', qids=['S61-M-Q1', 'S61-B1-Q4', 'S61-B1-Q5'])
 SSA = src('Social Security Administration', 'https://www.ssa.gov/benefits/retirement/planner/agereduction.html', 'Full retirement age is 67 for people born in 1960 or later; claiming at 62 reduces the benefit by about 30%; delaying past full retirement age raises it 8% a year until 70; workers need 40 credits (up to 4 per year).')
+P590A_LIM = src('IRS (Publication 590-A)', 'https://www.irs.gov/publications/p590a', "One annual contribution limit covers all of a person's traditional and Roth IRAs combined.", qids=['S61-F2-Q1', 'S61-F2-Q3'])
 
 # ---------------------------------------------------------------- S59
 S(59, 'Opening a Roth IRA', 'Choose a provider and complete the steps to open a Roth IRA',
@@ -291,7 +292,7 @@ S(61, 'Roth IRA withdrawals and qualified distributions', 'Apply the rules for w
     ]),
   ],
   nat=('Investing', 'Explain withdrawal rules and tax treatment of retirement accounts'), nj=['PB', 'EG'],
-  status='time_sensitive', sources=[ROTHW], extra=['Applying Roth ordering rules'])
+  status='time_sensitive', sources=[ROTHW, P590A_LIM], extra=['Applying Roth ordering rules'])
 
 # ---------------------------------------------------------------- S62
 S(62, 'Social Security and retirement income', 'Explain how Social Security works and how claiming age changes benefits',

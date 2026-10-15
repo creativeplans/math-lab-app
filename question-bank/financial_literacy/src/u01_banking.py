@@ -2,10 +2,11 @@ from fl_dsl import unit, S, q, concept, math, deeper, src
 
 unit('BANK', 'Money, Banking, and Financial Institutions', ['1 Money, Banking, and Financial Institutions'])
 
-FDIC = src('FDIC', 'https://www.fdic.gov/resources/deposit-insurance', 'Deposit insurance covers up to $250,000 per depositor, per insured bank, for each account ownership category.')
-NCUA = src('NCUA', 'https://ncua.gov/consumers/share-insurance-coverage', 'Credit union share insurance covers up to $250,000 per member, per insured credit union, for each ownership category.')
-REGE = src('CFPB (Regulation E)', 'https://www.consumerfinance.gov/rules-policy/regulations/1005/6/', 'Liability limits for unauthorized electronic transfers: $50 if reported within 2 business days of learning of a lost card, up to $500 after that, and possibly more after 60 days from the statement.')
+FDIC = src('FDIC', 'https://www.fdic.gov/resources/deposit-insurance', 'Deposit insurance covers up to $250,000 per depositor, per insured bank, for each account ownership category. (This page supports the insurance limit only, not membership or other claims about how banks operate.)', section='Deposit Insurance overview')
+NCUA = src('NCUA', 'https://ncua.gov/consumers/share-insurance-coverage', 'Credit union share insurance covers up to $250,000 per member, per insured credit union, for each ownership category.', section='Share Insurance Coverage')
+REGE = src('CFPB (Regulation E, 12 CFR 1005.6)', 'https://www.consumerfinance.gov/rules-policy/regulations/1005/6/', 'Consumer liability for unauthorized electronic transfers: up to $50 if the institution is told within 2 business days after learning of a lost or stolen card; up to $500 if told later; transfers after the 60-day statement window that would have been prevented by timely notice can be unlimited (earlier protected amounts are not removed).', section='1005.6(b)(1)-(3)', eff='Regulation E as in force 2026')
 OD = src('CFPB', 'https://www.consumerfinance.gov/ask-cfpb/what-is-overdraft-coverage-en-1015/', 'Banks must get a customer\'s opt-in before charging overdraft fees on ATM withdrawals and one-time debit card purchases.')
+REGCC = src('CFPB (Regulation CC threshold adjustments)', 'https://www.consumerfinance.gov/rules-policy/final-rules/availability-funds-and-collection-checks-regulation-cc-threshold-adjustments/', 'For most check deposits, banks must make the first $275 available by the next business day (amount effective July 1, 2025); the rest generally follows the regular hold schedule, with exceptions such as new accounts and large deposits.', section='Threshold adjustments effective July 1, 2025', eff='2025-07-01', qids=['S2-F2-Q3'])
 
 # ---------------------------------------------------------------- S1
 S(1, 'Banks, credit unions, and what they do', 'Explain what banks and credit unions do with deposits and loans',
@@ -208,4 +209,4 @@ S(2, 'Checking accounts and debit cards', 'Use a checking account and debit card
     ]),
   ],
   nat=('Spending', 'Payment methods: compare debit cards, credit cards, and other payment methods'), nj=['FI', 'PB'],
-  status='time_sensitive', sources=[REGE], extra=['Holds, pending transactions, available balance'])
+  status='time_sensitive', sources=[REGE, REGCC], extra=['Holds, pending transactions, available balance'])

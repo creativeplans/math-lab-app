@@ -2,10 +2,10 @@ from fl_dsl import unit, S, q, concept, math, deeper, src
 
 unit('CONTRACT', 'Contracts, Subscriptions, and Fees', ['19 Contracts and Fees'])
 
-FTC_NEG = src('FTC (Negative option and automatic renewal offers)', 'https://consumer.ftc.gov/articles/automatic-renewals-and-subscriptions', 'Free trials and subscriptions often renew automatically and charge a card on file unless canceled; consumers should note renewal dates and how to cancel. Federal and state auto-renewal rules have changed in recent years.')
+FTC_NEG = src('FTC (Free trials, auto-renewals, and subscriptions)', 'https://consumer.ftc.gov/articles/getting-and-out-free-trials-auto-renewals-and-negative-option-subscriptions', 'Free trials and subscriptions often renew automatically and charge a card on file unless canceled; consumers should note renewal dates and how to cancel. Federal and state auto-renewal rules have changed in recent years.')
 FTC_WARR = src('FTC (Warranties)', 'https://consumer.ftc.gov/articles/warranties', 'Explains written warranties, implied warranties, and service contracts (often called extended warranties).')
-FTC_FEES = src('FTC (Unfair or deceptive fees rule)', 'https://www.ftc.gov/legal-library/browse/rules/rule-unfair-or-deceptive-fees', 'A federal rule effective May 2025 requires live-event ticket and short-term lodging sellers to show the total price, including mandatory fees, up front.', eff='2025-05-12')
-NJ_DCA = src('New Jersey Division of Consumer Affairs', 'https://www.njconsumeraffairs.gov/', 'New Jersey residents can file consumer complaints, including about contracts and refund policies, with the Division of Consumer Affairs.')
+FTC_FEES = src('FTC (Rule on Unfair or Deceptive Fees takes effect)', 'https://www.ftc.gov/news-events/news/press-releases/2025/05/ftc-rule-unfair-or-deceptive-fees-take-effect-may-12-2025', 'A federal rule effective May 12, 2025 requires live-event ticket and short-term lodging sellers to show the total price, including mandatory fees, up front.', eff='2025-05-12')
+NJ_DCA = src('New Jersey Division of Consumer Affairs', 'https://www.njconsumeraffairs.gov/', 'New Jersey residents can file consumer complaints, including about contracts and refund policies, with the Division of Consumer Affairs.', jur='New Jersey')
 CFPB_BNPL = src('CFPB (Buy now, pay later)', 'https://www.consumerfinance.gov/ask-cfpb/what-is-a-buy-now-pay-later-bnpl-loan-en-2108/', 'Buy now, pay later loans split a purchase into installments; missed payments can bring late fees.')
 
 # ---------------------------------------------------------------- S105

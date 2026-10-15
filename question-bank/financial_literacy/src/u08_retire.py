@@ -2,10 +2,12 @@ from fl_dsl import unit, S, q, concept, math, deeper, src
 
 unit('RETIRE', 'Retirement Accounts: IRAs, Roth IRAs, 401(k)s, and 403(b)s', ['9 Retirement Accounts, Including Roth IRAs, Traditional IRAs, 401(k)s, and 403(b)s'])
 
-IRA = src('IRS (Publication 590-A and 590-B)', 'https://www.irs.gov/retirement-plans/individual-retirement-arrangements-iras', 'IRA contributions require taxable compensation (earned income) and are limited to the lesser of the annual limit or compensation; Roth contributions are not deductible; qualified Roth distributions are tax-free.')
+IRA = src('IRS (Publication 590-A)', 'https://www.irs.gov/publications/p590a', "IRA contributions require taxable compensation (a spousal IRA can use a working spouse's compensation on a joint return); one annual limit covers traditional and Roth IRAs combined, capped at compensation; Roth contributions are not deductible.", section='Who Can Open a Traditional IRA; Kay Bailey Hutchison Spousal IRA; How Much Can Be Contributed', qids=['S58-M-Q1', 'S58-M-Q2', 'S58-F2-Q4', 'S61-F2-Q1', 'S61-F2-Q3'])
 LIMITS = src('IRS (Retirement topics: IRA contribution limits)', 'https://www.irs.gov/retirement-plans/plan-participant-employee/retirement-topics-ira-contribution-limits', 'The IRA contribution limit and Roth income limits change by tax year; this course uses stated hypothetical amounts.', eff='Check the current tax year')
-K401 = src('IRS (401(k) resource guide)', 'https://www.irs.gov/retirement-plans/401k-plans', '401(k) plans allow pre-tax or Roth employee deferrals and employer contributions; 403(b) plans are similar plans for public schools and certain nonprofits.')
-EXCESS = src('IRS (Publication 590-A)', 'https://www.irs.gov/publications/p590a', 'Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; contributions for a year can be made until the tax return due date (not including extensions).')
+K401 = src('IRS (401(k) resource guide)', 'https://www.irs.gov/retirement-plans/401k-plans', '401(k) plans allow pre-tax or Roth employee deferrals and employer contributions. (403(b) rules are on the IRS 403(b) page, cited separately.)')
+EXCESS = src('IRS (Publication 590-A)', 'https://www.irs.gov/publications/p590a', 'Excess IRA contributions are subject to a 6% excise tax for each year they remain in the account; regular contributions for a year are due by the return due date without extensions, while an excess and its earnings can be withdrawn tax-free by the due date including extensions.', section='Excess Contributions', qids=['S58-F2-Q3'])
+K403B = src('IRS (403(b) plans)', 'https://www.irs.gov/retirement-plans/irc-403b-tax-sheltered-annuity-plans', '403(b) plans are retirement plans for employees of public schools and certain tax-exempt organizations.')
+P590B = src('IRS (Publication 590-B)', 'https://www.irs.gov/publications/p590b', 'Distributions from a traditional IRA that holds only pre-tax money are fully taxable; after-tax basis is recovered under the pro-rata rule; Roth distributions come out in order: regular contributions, then conversions and rollovers, then earnings.', qids=['S56-M-Q5', 'S56-F1-Q1', 'S56-F1-Q3', 'S57-M-Q4', 'S61-F1-Q1', 'S61-F1-Q2', 'S61-M-Q1', 'S61-B1-Q4', 'S61-B1-Q5'])
 
 # ---------------------------------------------------------------- S55
 S(55, 'Why save for retirement', 'Explain why people save for retirement and how decades of compounding affect retirement savings',
@@ -198,7 +200,7 @@ S(56, '401(k) and 403(b) plans at work', 'Explain employer retirement plans, emp
     ]),
   ],
   nat=('Investing', 'Compare employer-sponsored retirement plans and explain employer matching and tax treatment'), nj=['PB', 'FI'],
-  status='time_sensitive', sources=[K401], extra=['Choosing a rollover when changing jobs'])
+  status='time_sensitive', sources=[K401, K403B, P590B], extra=['Choosing a rollover when changing jobs'])
 
 # ---------------------------------------------------------------- S57
 S(57, 'IRAs: traditional and Roth', 'Explain what an IRA is and compare traditional and Roth IRA tax treatment',
@@ -296,7 +298,7 @@ S(57, 'IRAs: traditional and Roth', 'Explain what an IRA is and compare traditio
     ]),
   ],
   nat=('Investing', 'Compare traditional and Roth retirement accounts and their tax treatment'), nj=['PB', 'EG'],
-  status='time_sensitive', sources=[IRA], extra=['Choosing between Roth and traditional accounts'])
+  status='time_sensitive', sources=[IRA, P590B], extra=['Choosing between Roth and traditional accounts'])
 
 # ---------------------------------------------------------------- S58
 S(58, 'Roth IRA eligibility and contribution rules', 'Apply Roth IRA eligibility, earned-income, contribution-limit, and deadline rules',

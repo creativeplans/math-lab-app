@@ -5,6 +5,7 @@ unit('INCOME', 'Earning Income, Employment, and Paychecks', ['2 Earning Income, 
 SE = src('IRS (Self-Employment Tax, Topic 554)', 'https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes', 'Self-employment tax is 15.3% (12.4% Social Security + 2.9% Medicare) on 92.35% of net earnings; a return is required when net self-employment earnings are $400 or more.')
 GIG = src('IRS (Gig Economy Tax Center)', 'https://www.irs.gov/businesses/gig-economy-tax-center', 'Gig income is taxable whether or not the worker receives a Form 1099.')
 BLS = src('U.S. Bureau of Labor Statistics (Employment Projections)', 'https://www.bls.gov/emp/chart-unemployment-earnings-education.htm', 'Median weekly earnings rise and unemployment rates fall with higher educational attainment (figures update yearly).')
+NEC = src('IRS (Am I required to file a Form 1099?)', 'https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return', 'For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued.', eff='Payments in 2026', qids=['S96-B1-Q2'])
 
 # ---------------------------------------------------------------- S12
 S(12, 'Employee benefits and comparing job offers', 'Value employee benefits and compare job offers by total compensation',
@@ -184,7 +185,7 @@ S(13, 'Gig work and independent contractors', 'Compare employee and independent 
     ]),
   ],
   nat=('Earning Income', '12-11a benefits and costs of gig employment; 12-8a earned income'), nj=['EG', 'PB'],
-  status='time_sensitive', sources=[SE, GIG], extra=['Mileage logs', 'Setting aside tax money'])
+  status='time_sensitive', sources=[SE, GIG, NEC], extra=['Mileage logs', 'Setting aside tax money'])
 
 # ---------------------------------------------------------------- S14
 S(14, 'Education, careers, and lifetime income', 'Evaluate how education, skills, and the labor market affect lifetime income',

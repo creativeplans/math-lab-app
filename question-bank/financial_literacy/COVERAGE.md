@@ -4,9 +4,11 @@ Version 1.0.0, 2026-10-12. 113 sets, 2130 questions. **Status: not yet approved;
 
 ## How alignment was done
 
-- **National:** 2021 National Standards for Personal Financial Education (Council for Economic Education and Jump$tart Coalition), six topics: Earning Income, Spending, Saving, Investing, Managing Credit, Managing Risk. Every set names its topic and a learning target. The official 12th-grade outcome codes are cited only where they were confirmed from search-indexed text of the official document: 12-11a, 12-1a, 12-5a, 12-5b, 12-6a, 12-8a, 12-8b. All other set-level outcome codes are marked "to verify against the official document".
-- **New Jersey:** NJSLS — Career Readiness, Life Literacies, and Key Skills (adopted June 3, 2020), Standard 9.1 Personal Financial Literacy, grade 12 (9.1.12). This is the version in force; a 2025 revision was proposed in November 2025, and its adoption could not be confirmed. Alignment is at the strand level (CFR Civic Financial Responsibility, CDM Credit and Debt Management, CP Credit Profile, EG Economic and Government Influences, FI Financial Institutions, FP Financial Psychology, PB Planning and Budgeting, RM Risk Management and Insurance); individual performance expectations are to verify.
-- **Verification limit:** the authoring environment could not open the official sites (nj.gov, njconsumeraffairs.gov, jumpstart.org, councilforeconed.org, irs.gov, consumerfinance.gov, fdic.gov, econedlink.org and similar sites); only web search results were available. A reviewer should confirm codes against the official PDFs.
+- **National:** 2021 National Standards for Personal Financial Education (Council for Economic Education and Jump$tart Coalition), six topics: Earning Income, Spending, Saving, Investing, Managing Credit, Managing Risk. Every set names its topic and a learning target. Outcome codes repeat across topics, so every code is written with its topic (for example "Earning Income 12-6a"). Codes are assigned only to the sets listed in the code table below; all other sets are aligned at topic level only. The author could not open the official PDF; each code says whether its wording came from search-indexed text or from the independent reviewer's reading of the PDF.
+- **New Jersey:** NJSLS — Career Readiness, Life Literacies, and Key Skills (adopted June 3, 2020), Standard 9.1 Personal Financial Literacy, grade 12 (9.1.12). Alignment is at the strand level (CFR Civic Financial Responsibility, CDM Credit and Debt Management, CP Credit Profile, EG Economic and Government Influences, FI Financial Institutions, FP Financial Psychology, PB Planning and Budgeting, RM Risk Management and Insurance). Strand tags do not show coverage of all 55 grade-12 performance expectations; known gaps are listed in section 3a.
+- **Local identifiers:** codes such as FL.SAVE.24 are course identifiers, not official national or New Jersey codes.
+- **Section roles:** MAIN sections are the direct alignment; backward sections (concept and math) are supporting prerequisites; Go Deeper sections are related enrichment. The package does not claim full mastery of either standard.
+- **Verification limit:** the authoring environment could not open the official sites (nj.gov, njconsumeraffairs.gov, jumpstart.org, councilforeconed.org, irs.gov, consumerfinance.gov, fdic.gov, econedlink.org and similar sites); only web search results were available.
 
 ## 1. The 20 required content areas
 
@@ -46,17 +48,19 @@ Areas 5 and 18 are also reinforced inside other units: interest calculations in 
 | Managing Credit | 24 | 470 | S28, S29, S30, S31, S32, S33, S34, S35, S36, S37, S38, S39, S40, S41, S42, S75, S76, S78, S79, S80, S81, S83, S93, S94 |
 | Managing Risk | 11 | 180 | S74, S77, S86, S87, S88, S89, S90, S98, S99, S100, S101 |
 
-Verified 12th-grade outcome codes:
+Assigned 12th-grade outcome codes (topic-qualified):
 
-| Code | Outcome (as verified) | Sets |
-|---|---|---|
-| 12-11a | Earning Income: benefits and costs of gig employment | S13 |
-| 12-1a | Earning Income: research potential income and employee benefit packages likely to be offered to new employees by various companies, government agencies, or not-for-profit organizations | S12 |
-| 12-5a | Earning Income: how labor market conditions affect income | S14 |
-| 12-5b | Earning Income: how technology affects employment and income | S14 |
-| 12-6a | Earning Income: calculate the taxes likely to be withheld from pay | S10, S11 |
-| 12-8a | Earning Income: distinguish earned from unearned income | S13, S58 |
-| 12-8b | Earning Income: compare tax rates on earned income, interest, and capital gains | S53, S63 |
+| Code | Outcome | How checked | Sets |
+|---|---|---|---|
+| Earning Income 12-11a | benefits and costs of gig employment | wording from search-indexed text of the official document; not re-checked against the PDF by the author | S13 |
+| Earning Income 12-1a | research potential income and employee benefit packages likely to be offered to new employees by various companies, government agencies, or not-for-profit organizations | wording from search-indexed text of the official document; not re-checked against the PDF by the author | S12 |
+| Earning Income 12-5a | how labor market conditions affect income | wording from search-indexed text of the official document; not re-checked against the PDF by the author | S14 |
+| Earning Income 12-5b | how technology affects employment and income | wording from search-indexed text of the official document; not re-checked against the PDF by the author | S14 |
+| Earning Income 12-6a | calculate the taxes likely to be withheld from pay | wording from search-indexed text of the official document; not re-checked against the PDF by the author | S10, S11, S63 |
+| Earning Income 12-6b | types of taxes (paraphrase) | code assigned by the independent reviewer from the official PDF (A20); wording paraphrased, not re-checked by the author | S63 |
+| Earning Income 12-6c | purposes of taxes and how government uses them (paraphrase) | code assigned by the independent reviewer from the official PDF (A20); wording paraphrased, not re-checked by the author | S63 |
+| Earning Income 12-8a | distinguish earned from unearned income | wording from search-indexed text of the official document; not re-checked against the PDF by the author | S13, S58 |
+| Investing 12-8b | tax-deferred versus taxable investing (paraphrase) | code assigned by the independent reviewer from the official PDF (A20); wording paraphrased, not re-checked by the author | S53 |
 
 ## 3. New Jersey 9.1.12 strand matrix
 
@@ -70,6 +74,20 @@ Verified 12th-grade outcome codes:
 | 9.1.12.FP | Financial Psychology | 13 | S14, S15, S20, S26, S54, S90, S99, S105, S106, S108, S110, S112, S113 |
 | 9.1.12.PB | Planning and Budgeting | 56 | S2, S3, S4, S5, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17, S18, S19, S20, S21, S22, S23, S24, S25, S26, S45, S55, S56, S57, S58, S59, S60, S61, S62, S69, S71, S72, S73, S74, S75, S81, S82, S84, S85, S91, S92, S94, S95, S96, S97, S106, S107, S108, S109, S110, S111, S112, S113 |
 | 9.1.12.RM | Risk Management and Insurance | 17 | S22, S43, S49, S71, S74, S77, S81, S86, S87, S88, S89, S90, S98, S99, S100, S101, S113 |
+
+### 3a. Known New Jersey gaps (disclosed)
+
+From the independent review of the official 9.1 PDF. These are outside or only partly inside this course; the course does not claim them.
+
+| Expectation | Topic | Coverage |
+|---|---|---|
+| 9.1.12.CFR.5 | Estate-planning documents (wills, powers of attorney, beneficiaries) | not covered |
+| 9.1.12.CFR.3 | Corporate governance, social responsibility, and human rights in financial decisions | not covered |
+| 9.1.12.CFR.4 / FP.6 | Cross-cultural and family financial patterns | not covered |
+| 9.1.12.FP.4 | Money scripts and personal beliefs about money | partial: behavioral biases in S20 and S55 only |
+| 9.1.12.EG.3 | How government policy influences the economy and personal finance | partial: S102-S104 cover inflation, Fed rates, and economic conditions |
+| 9.1.12.RM.4 | Government versus private insurance | partial: S89 touches Social Security disability; no full comparison |
+| 9.1.12.CDM.8 | Create an amortization table with business tools (spreadsheet) | partial: students read and calculate rows (S31, S80) but do not build a table |
 
 ## 4. Set-by-set alignment and counts
 
@@ -141,7 +159,7 @@ Verified 12th-grade outcome codes:
 | S64 | Tax forms: W-2, 1099s, and Form 1040 | Earning Income | EG | 1 | 1 | 2 | 20 | time-sensitive |
 | S65 | Filing requirements, filing status, and dependents | Earning Income | EG | 1 | 1 | 2 | 20 | time-sensitive |
 | S66 | From gross income to taxable income | Earning Income | EG | 1 | 2 | 2 | 20 | time-sensitive |
-| S67 | Marginal and effective tax rates | Earning Income | EG | 1 | 3 | 2 | 20 | time-sensitive |
+| S67 | Marginal and effective tax rates | Earning Income | EG | 1 | 2 | 2 | 20 | time-sensitive |
 | S68 | Deductions and credits | Earning Income | EG | 1 | 2 | 2 | 20 | time-sensitive |
 | S69 | Refund or balance due | Earning Income | EG, PB | 1 | 2 | 2 | 20 | time-sensitive |
 | S70 | Filing a return: methods, deadlines, and scams | Earning Income | EG, FI | 1 | 0 | 2 | 20 | time-sensitive |
@@ -208,12 +226,12 @@ Each step of the assignment's detailed progressions, with the question(s) that t
 | 9 | Deposit insurance vs brokerage customer protection (FDIC vs SIPC) | S44-M-Q5, S44-F2-Q1, S44-F2-Q5 | Ella's brokerage firm fails, and some customer securities are missing. Which protection may help her? |
 | 10 | Information required to open a brokerage account | S45-M-Q1 | Which information is generally required to open a brokerage account? |
 | 11 | Depositing money into a brokerage account | S45-B1-Q1, S45-B1-Q4 | What is an electronic transfer between your bank and your brokerage account? |
-| 12 | Funding the account vs buying an investment | S45-M-Q3, S45-B1-Q3 | Ana links her checking account and transfers $500 to her new brokerage account. What has she done? |
+| 12 | Funding the account vs buying an investment | S45-M-Q3, S45-B1-Q3 | Ana links her checking account and transfers $500 to her new brokerage account. The broker holds new deposits  |
 | 13 | What is a stock? | S46-M-Q1 | What does owning a share of stock mean? |
 | 14 | What is an ETF? | S48-M-Q2 | How is an ETF (exchange-traded fund) different from a traditional mutual fund? |
 | 15 | What is a mutual fund? | S48-M-Q1 | What is a mutual fund? |
 | 16 | What is an index fund? | S48-M-Q3 | What does an S&P 500 index fund try to do? |
-| 17 | Placing a basic investment order | S45-M-Q4 | Ana's brokerage account shows $500 in "cash" and $0 in investments. What should she do to invest? |
+| 17 | Placing a basic investment order | S45-M-Q4 | Ana's brokerage account shows $500 in uninvested cash (a bank sweep) and $0 in investments. What should she do |
 | 18 | What is a market order? | S50-M-Q1 | Kai places a MARKET order to buy 10 shares. What does this mean? |
 | 19 | What is a limit order? | S50-M-Q2 | Lia places a LIMIT order to buy at $50. The stock is trading at $52. What happens? |
 | 20 | How fees and investment risks affect decisions | S51-M-Q5, S43-M-Q3 | Which statement about investment fees is TRUE? |
@@ -228,7 +246,7 @@ Each step of the assignment's detailed progressions, with the question(s) that t
 | 4 | What a Roth IRA is | S57-M-Q3 | Which describes a ROTH IRA? |
 | 5 | What a traditional IRA is | S57-M-Q4 | Which describes a TRADITIONAL IRA? |
 | 6 | Differences in tax treatment | S57-B1-Q1, S57-B1-Q2 | With a Roth account, WHEN is income tax paid on the money you contribute? |
-| 7 | Earned income and eligibility | S58-M-Q1 | Kai, 16, wants to contribute to a Roth IRA. Which of his income counts as earned income for IRA purposes? |
+| 7 | Earned income and eligibility | S58-M-Q1 | Kai, 16 and unmarried, wants to contribute to a Roth IRA. Which of his income counts as compensation (earned i |
 | 8 | Contribution limits and income restrictions | S58-M-Q3, S58-M-Q4 | Assume a $7,000 limit. Ana earned $45,000 this year. What is the most she can put into her Roth IRA? |
 | 9 | Where someone can open a Roth IRA | S59-M-Q2 | Which type of institution commonly offers Roth IRAs with a wide choice of investments? |
 | 10 | Examples of providers | S59-M-Q2 | Which type of institution commonly offers Roth IRAs with a wide choice of investments? |
@@ -244,7 +262,7 @@ Each step of the assignment's detailed progressions, with the question(s) that t
 | 20 | How investment returns and losses work | S60-M-Q4 | Ana's $7,800 Roth IRA falls 10% in a market drop. What is it worth, and what are her total contributions? |
 | 21 | How compounding affects outcomes | S60-M-Q5 | Why does compounding work especially well in a Roth IRA? |
 | 22 | Contributions vs earnings | S60-M-Q3 | Over several years, Ana contributed $6,000 to her Roth IRA. It is now worth $7,800. How much are earnings? |
-| 23 | General withdrawal rules | S61-M-Q1 | Mia, 30, contributed $8,000 to her Roth IRA over several years. It is worth $11,000. She withdraws $5,000. Und |
+| 23 | General withdrawal rules | S61-M-Q1 | Mia, 30, made $8,000 of regular contributions to her Roth IRA over several years, with no conversions, rollove |
 | 24 | Qualified distributions | S61-M-Q3 | Which conditions make a Roth IRA distribution QUALIFIED (tax-free, including earnings)? |
 | 25 | Common misconceptions and mistakes | S61-M-Q5, S60-B1-Q5 | Which statement about Roth IRAs is a MISCONCEPTION? |
 
@@ -259,19 +277,19 @@ Each step of the assignment's detailed progressions, with the question(s) that t
 | 5 | Down payments | S75-M-Q2 | The Lees buy a $300,000 home with a 20% down payment. How much do they borrow? |
 | 6 | Loan terms | S76-M-Q3 | A $240,000 loan at 6.0% for 15 years has a $2,025.26 payment, totaling $364,546.80. Compared with the 30-year  |
 | 7 | Fixed versus adjustable rates | S81-M-Q1, S81-M-Q2 | Which statement describes a FIXED-rate mortgage? |
-| 8 | Monthly principal-and-interest payments | S76-F1-Q2 | Using the formula, what is the monthly payment on $240,000 at 5.5% for 30 years (nearest cent)? |
+| 8 | Monthly principal-and-interest payments | S76-F1-Q2 | Using the formula, what is the monthly principal-and-interest payment on $240,000 at a 5.5% interest rate for  |
 | 9 | Property taxes | S77-M-Q1 | A home's property tax is $6,000 a year. How much is that per month? |
 | 10 | Homeowners insurance | S77-M-Q2 | Principal and interest: $1,516.96. Property tax: $500 a month. Homeowners insurance: $150 a month. What is the |
 | 11 | Mortgage insurance | S77-M-Q3 | Lenders usually require private mortgage insurance (PMI) on a conventional loan when the down payment is under |
 | 12 | Closing costs | S78-M-Q1 | Closing costs often run about 2% to 5% of the loan amount. For a $240,000 loan, what is the range? |
 | 13 | Escrow | S77-M-Q5 | An escrow account is… |
-| 14 | Loan estimates | S78-M-Q2 | The Lees apply for a mortgage on a Monday, with no holidays that week. By about when must the lender give them |
+| 14 | Loan estimates | S78-M-Q2 | The Lees apply for a mortgage on a Monday. The lender's offices are open Monday through Friday, and there are  |
 | 15 | Preapproval | S79-M-Q1 | The Lees receive a mortgage preapproval letter. What does it mean? |
 | 16 | Creditworthiness | S79-M-Q4 | Which factor most improves the mortgage rate a borrower is offered? |
 | 17 | Debt-to-income ratios | S79-M-Q2, S79-M-Q3 | A lender uses a 28% guideline for housing costs. The Lees' gross monthly income is $8,000. What is the most ho |
 | 18 | Amortization | S80-M-Q1, S80-M-Q2 | On a $240,000 mortgage at 6.5%, how much of the FIRST monthly payment is interest? |
 | 19 | Total interest over the loan term | S76-M-Q2 | A $240,000 loan's 360 monthly payments total $546,105.60. How much interest is paid over 30 years? |
-| 20 | Additional principal payments | S80-M-Q3 | Paying an extra $200 a month on that $240,000, 6.5% mortgage pays it off in about 262 months instead of 360. A |
+| 20 | Additional principal payments | S80-M-Q3 | Paying an extra $200 a month on a $240,000, 6.5%, 30-year mortgage pays it off in about 262 months instead of  |
 | 21 | Refinancing | S80-M-Q4 | Refinancing means… |
 | 22 | Maintenance costs | S81-M-Q4 | A common guideline budgets 1% to 2% of a home's value each year for maintenance and repairs. For a $300,000 ho |
 | 23 | Affordability versus lender approval | S79-F1-Q4, S81-F2-Q4 | A lender approves the Lees for up to $350,000. Their own budget says about $286,000. Which is wiser? |
@@ -407,7 +425,7 @@ Each step of the assignment's detailed progressions, with the question(s) that t
 
 ## 7. Prerequisites and enrichment (summary)
 
-- Math prerequisite links: 179 (to 42 distinct game skills). See MATH_BRANCHES.md.
+- Math prerequisite links: 178 (to 38 distinct game skills). See MATH_BRANCHES.md.
 - Financial-concept prerequisite branches: 113. See CONCEPT_BRANCHES.md.
 - Go Deeper sections: 200 (chains of 1 to 2). See GO_DEEPER.md.
 
@@ -421,7 +439,7 @@ Each step of the assignment's detailed progressions, with the question(s) that t
 
 | Question type | Questions |
 |---|---|
-| Learn and Apply (intro + question) | 1440 |
-| Knowledge Check (no intro) | 690 |
-| Practical how-to (subset) | 258 |
-| Computed answers checked by the build (calc) | 869 |
+| Learn and Apply (intro + question) | 1462 |
+| Knowledge Check (no intro) | 668 |
+| Practical how-to (subset) | 240 |
+| Computed answers checked by the build (calc) | 871 |

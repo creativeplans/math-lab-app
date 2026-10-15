@@ -80,5 +80,14 @@ def S(num, title, skill, main, back, go, nat, nj, status='stable', sources=(), e
                      status=status, sources=list(sources), extra=list(extra), note=note, unit=dict(UNIT)))
 
 
-def src(org, url, claim, eff=None):
-    return dict(org=org, url=url, claim=claim, **({'effective': eff} if eff else {}))
+def src(org, url, claim, eff=None, section=None, jur='US federal', qids=()):
+    """One claim-level source record. section: heading or rule section that carries the claim.
+    jur: jurisdiction. qids: questions that depend on this exact claim (others in the set use it as background)."""
+    d = dict(org=org, url=url, claim=claim, jurisdiction=jur)
+    if eff:
+        d['effective'] = eff
+    if section:
+        d['section'] = section
+    if qids:
+        d['qids'] = list(qids)
+    return d

@@ -4,10 +4,11 @@ unit('INS', 'Managing Risk with Insurance', ['14 Insurance'])
 
 HC_GLOSS = src('HealthCare.gov (Glossary)', 'https://www.healthcare.gov/glossary/', 'Defines premium, deductible, copayment, coinsurance, and out-of-pocket maximum; after the out-of-pocket maximum, the plan pays 100% of covered in-network costs for the rest of the plan year.')
 HC_YA = src('HealthCare.gov (Young adults)', 'https://www.healthcare.gov/young-adults/children-under-26/', 'Young adults can generally stay on a parent\'s health plan until age 26.')
-NJ_GCNJ = src('Get Covered New Jersey', 'https://nj.gov/getcoverednj/', 'New Jersey runs its own health insurance marketplace for individual coverage and financial help.')
-NJ_DOBI = src('New Jersey Department of Banking and Insurance', 'https://www.nj.gov/dobi/', 'New Jersey requires auto liability coverage and personal injury protection (PIP); minimum required limits are set by state law and have changed in recent years.')
+NJ_GCNJ = src('Get Covered New Jersey', 'https://nj.gov/getcoverednj/', 'New Jersey runs its own health insurance marketplace for individual coverage and financial help.', jur='New Jersey')
+NJ_DOBI = src('New Jersey Department of Banking and Insurance', 'https://www.nj.gov/dobi/', 'New Jersey requires auto liability coverage and personal injury protection (PIP); minimum required limits are set by state law and have changed in recent years.', jur='New Jersey')
 NAIC = src('NAIC (Consumer insurance guides)', 'https://content.naic.org/consumer', 'Explains auto, home, renters, life, and disability insurance and how deductibles affect premiums.')
 SSA_DI = src('Social Security Administration (Disability benefits)', 'https://www.ssa.gov/disability', 'Social Security disability benefits have strict eligibility rules and a waiting period, so many workers also rely on private or employer disability insurance.')
+WFTC = src('IRS (Working Families Tax Cuts)', 'https://www.irs.gov/newsroom/working-families-tax-cuts', 'Beginning in 2026, bronze and catastrophic marketplace plans are treated as HSA-compatible.', eff='2026-01-01', qids=['S87-F1-Q4'])
 
 # ---------------------------------------------------------------- S86
 S(86, 'Risk and the purpose of insurance', 'Identify risk management strategies and explain how insurance transfers financial risk',
@@ -171,7 +172,7 @@ S(87, 'Health insurance', 'Calculate costs under a health plan and compare plans
     ]),
   ],
   nat=('Managing Risk', 'Calculate costs under health insurance plans and compare plans using premiums and cost sharing'), nj=['RM'],
-  status='time_sensitive', sources=[HC_GLOSS, HC_YA, NJ_GCNJ], extra=['Reading an Explanation of Benefits', 'Shopping on the state marketplace'])
+  status='time_sensitive', sources=[HC_GLOSS, HC_YA, NJ_GCNJ, WFTC], extra=['Reading an Explanation of Benefits', 'Shopping on the state marketplace'])
 
 # ---------------------------------------------------------------- S88
 S(88, 'Auto insurance', 'Explain auto coverages and calculate what liability limits pay',

@@ -2,10 +2,11 @@ from fl_dsl import unit, S, q, concept, math, deeper, src
 
 unit('CREDIT', 'Credit Cards and Credit Scores', ['6 Credit Cards and Credit Scores'])
 
-DEFER = src('CFPB', 'https://www.consumerfinance.gov/about-us/blog/cfpb-warns-consumers-about-deferred-interest-promotions/', 'With deferred interest, if the promotional balance is not paid in full by the end of the period, interest is charged back to the purchase date.')
+DEFER = src('CFPB (Understanding special promotional financing offers)', 'https://www.consumerfinance.gov/archive/blog/how-understand-special-promotional-financing-offers-credit-cards/', 'With deferred interest, if the promotional balance is not paid in full by the end of the period, interest is charged back to the purchase date.', section='Deferred interest (archived CFPB blog)')
 ACR = src('AnnualCreditReport.com (authorized by federal law) / FTC', 'https://www.annualcreditreport.com', 'Consumers can get free credit reports from Equifax, Experian, and TransUnion; free weekly reports have been made permanent.')
 FICO = src('myFICO (Fair Isaac Corporation)', 'https://www.myfico.com/credit-education/whats-in-your-credit-score', 'FICO score factor weights: payment history 35%, amounts owed 30%, length of credit history 15%, new credit 10%, credit mix 10%; scores range 300-850.')
 FREEZE = src('FTC', 'https://consumer.ftc.gov/articles/what-know-about-credit-freezes-fraud-alerts', 'Credit freezes are free at each of the three nationwide credit bureaus.')
+GRACE = src('CFPB (Credit card grace period)', 'https://www.consumerfinance.gov/ask-cfpb/what-is-a-grace-period-for-a-credit-card-en-47/', 'A grace period, if the card offers one, lets you avoid interest on new purchases by paying the full statement balance by the due date; it usually does not apply to cash advances.', qids=['S42-F1-Q5'])
 
 # ---------------------------------------------------------------- S39
 S(39, 'Card fees, balance transfers, and promotional offers', 'Calculate card fees and compare balance transfers, 0% APR offers, and deferred interest',
@@ -392,4 +393,4 @@ S(42, 'Building credit responsibly', 'Build a credit history with low utilizatio
     ]),
   ],
   nat=('Managing Credit', 'Build and maintain a positive credit history'), nj=['CP', 'CDM'],
-  status='time_sensitive', sources=[FICO, ACR], extra=['Secured cards and credit-builder loans', 'Paying before the statement closes'])
+  status='time_sensitive', sources=[FICO, ACR, GRACE], extra=['Secured cards and credit-builder loans', 'Paying before the statement closes'])

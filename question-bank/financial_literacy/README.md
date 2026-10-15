@@ -21,7 +21,7 @@
 
 ## Size
 
-19 units, 113 sets, 2130 questions: 113 MAIN sections, 113 concept prerequisite branches, 179 math prerequisite links, and 200 Go Deeper sections.
+19 units, 113 sets, 2130 questions: 113 MAIN sections, 113 concept prerequisite branches, 178 math prerequisite links, and 200 Go Deeper sections.
 
 | Unit | Title | Sets |
 |---|---|---|
@@ -85,7 +85,7 @@ Not supported by the importer, so not used: links from one Financial Literacy se
 
 ## Standards
 
-Alignment: 2021 National Standards for Personal Financial Education (topic level; 12th-grade outcome codes only where verified) and NJSLS-CLKS 2020 Standard 9.1 (grade-12 strand level). See COVERAGE.md. Details and the full matrix are in COVERAGE.md.
+Alignment: 2021 National Standards for Personal Financial Education (topic level; 12th-grade outcome codes, qualified by topic, only where assigned) and NJSLS-CLKS 2020 Standard 9.1 (grade-12 strand level, with known gaps listed in COVERAGE.md). Codes such as FL.SAVE.24 are local course identifiers, not official codes. Section roles: MAIN = direct alignment; backward = supporting prerequisite; Go Deeper = related enrichment. The package does not claim full mastery of either standard. Details and the full matrix are in COVERAGE.md.
 
 ## Sources and changing rules
 

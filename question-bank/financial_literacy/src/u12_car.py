@@ -6,7 +6,7 @@ FTC_USED = src('FTC (Buying a used car from a dealer)', 'https://consumer.ftc.go
 NHTSA = src('NHTSA (Recalls)', 'https://www.nhtsa.gov/recalls', 'Anyone can check a vehicle identification number (VIN) for open safety recalls for free.')
 CFPB_AUTO = src('CFPB (Auto loans)', 'https://www.consumerfinance.gov/consumer-tools/auto-loans/', 'Getting preapproved and comparing the total cost of loans helps borrowers; dealers may arrange financing and can add to the rate a lender offers.')
 FTC_LEASE = src('FTC (Financing or leasing a car)', 'https://consumer.ftc.gov/articles/financing-or-leasing-car', 'A lease lets a consumer use a vehicle for a set term; leases have mileage limits, wear-and-tear charges, and early termination costs.')
-NJ_TAX = src('New Jersey Division of Taxation', 'https://www.nj.gov/treasury/taxation/', 'The New Jersey sales tax rate has been 6.625% since January 1, 2018.', eff='2018-01-01')
+NJ_TAX = src('New Jersey Division of Taxation', 'https://www.nj.gov/treasury/taxation/', 'The New Jersey sales tax rate has been 6.625% since January 1, 2018.', eff='2018-01-01', jur='New Jersey')
 
 # ---------------------------------------------------------------- S82
 S(82, 'The total cost of buying a car', 'Find the out-the-door price of a vehicle and check a car before buying',

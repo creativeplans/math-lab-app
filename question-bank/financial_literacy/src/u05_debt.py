@@ -2,7 +2,8 @@ from fl_dsl import unit, S, q, concept, math, deeper, src
 
 unit('DEBT', 'Interest, Borrowing, and Debt', ['5 Interest, Borrowing, and Debt'])
 
-TILA = src('CFPB (Truth in Lending, Regulation Z)', 'https://www.consumerfinance.gov/rules-policy/regulations/1026/', 'Lenders must disclose the APR and finance charge; APR expresses the yearly cost of credit, including certain fees.')
+TILA = src('CFPB (Truth in Lending, Regulation Z)', 'https://www.consumerfinance.gov/rules-policy/regulations/1026/', 'Lenders must disclose the APR and finance charge; APR expresses the yearly cost of credit, including certain fees.', section='Regulation Z (overview)')
+RATEAPR = src('CFPB (Interest rate vs. APR)', 'https://www.consumerfinance.gov/ask-cfpb/what-is-the-difference-between-a-loan-interest-rate-and-the-apr-en-733/', 'The interest rate is the cost of borrowing the principal; the APR also includes certain fees, so payment math uses the note interest rate, and APR equals that rate only when there are no other finance charges.', qids=['S29-M-Q1', 'S29-F1-Q1', 'S29-F1-Q2', 'S29-F1-Q3', 'S76-F1-Q1', 'S76-F1-Q2'])
 
 # ---------------------------------------------------------------- S28
 S(28, 'Borrowing basics: principal, interest, term, and collateral', 'Explain the parts of a loan and compare secured and unsecured borrowing',
@@ -193,7 +194,7 @@ S(29, 'APR and periodic interest rates', 'Interpret APR and convert it to monthl
     ]),
   ],
   nat=('Managing Credit', 'Explain APR and how interest rates and fees affect the cost of credit'), nj=['CDM'],
-  status='time_sensitive', sources=[TILA], extra=['Reading a Truth in Lending disclosure'])
+  status='time_sensitive', sources=[TILA, RATEAPR], extra=['Reading a Truth in Lending disclosure'])
 
 # ---------------------------------------------------------------- S30
 S(30, 'Installment loans: payments and total cost', 'Use loan payments to find total cost, and compare loan terms',
@@ -288,7 +289,8 @@ S(30, 'Installment loans: payments and total cost', 'Use loan payments to find t
     ]),
   ],
   nat=('Managing Credit', 'Calculate the total cost of an installment loan and compare loan terms'), nj=['CDM'],
-  status='stable', extra=['Comparing dealer and credit union financing'])
+  status='stable', extra=['Comparing dealer and credit union financing'],
+  sources=[RATEAPR])
 
 # ---------------------------------------------------------------- S31
 S(31, 'How loan payments pay down a balance: amortization', 'Split a loan payment into interest and principal and follow the balance',
@@ -385,4 +387,5 @@ S(31, 'How loan payments pay down a balance: amortization', 'Split a loan paymen
     ]),
   ],
   nat=('Managing Credit', 'Explain how loan payments are applied to interest and principal (amortization)'), nj=['CDM'],
-  status='stable', extra=['Directing extra payments to principal'])
+  status='stable', extra=['Directing extra payments to principal'],
+  sources=[RATEAPR])

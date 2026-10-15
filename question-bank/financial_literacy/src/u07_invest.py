@@ -3,8 +3,8 @@ from fl_dsl import unit, S, q, concept, math, deeper, src
 unit('INVEST', 'Investing, Brokerage Accounts, and Investment Products', ['7 Investing and Brokerage Accounts', '8 Stocks, Bonds, Mutual Funds, ETFs, and Index Funds'])
 
 SIPC = src('SIPC', 'https://www.sipc.org/for-investors/what-sipc-protects', 'SIPC protects customers of failed member brokerage firms up to $500,000, including a $250,000 limit for cash; it does not protect against declines in investment value.')
-SEC_BASICS = src('SEC Investor.gov', 'https://www.investor.gov/introduction-investing/investing-basics/save-and-invest/saving-investing', 'Investments are not federally insured, can lose value, and generally carry more risk and more potential return than insured savings.')
-CUST = src('SEC Investor.gov', 'https://www.investor.gov/introduction-investing/getting-started/working-investment-professional/opening-brokerage-account', 'Opening a brokerage account requires personal information such as Social Security number, date of birth, address, employment, and investment objectives.')
+SEC_BASICS = src('SEC Investor.gov (Save and invest)', 'https://www.investor.gov/introduction-investing/investing-basics/save-and-invest', 'Investments are not federally insured, can lose value, and generally carry more risk and more potential return than insured savings.')
+CUST = src('SEC Investor.gov (Investor Bulletin: Opening a brokerage account)', 'https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-43', 'Opening a brokerage account requires personal information such as Social Security number, date of birth, address, employment, and investment objectives.')
 T1 = src('SEC', 'https://www.sec.gov/newsroom/press-releases/2023-29', 'The standard settlement cycle for most broker-dealer securities transactions is T+1 (effective May 28, 2024).')
 
 # ---------------------------------------------------------------- S43

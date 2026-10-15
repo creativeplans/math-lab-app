@@ -5,12 +5,14 @@ unit('PROTECT', 'Consumer Protection, Fraud, and Digital Security', ['17 Consume
 FTC_IDT = src('FTC (IdentityTheft.gov)', 'https://www.identitytheft.gov/', 'IdentityTheft.gov creates a personal recovery plan and an FTC Identity Theft Report.')
 FTC_SCAMS = src('FTC (Scams)', 'https://consumer.ftc.gov/features/scam-alerts', 'Scammers pretend to be from trusted organizations, create urgency, and ask for payment by gift card, wire, cryptocurrency, or payment app.')
 FTC_CHECK = src('FTC (Fake check scams)', 'https://consumer.ftc.gov/articles/how-spot-avoid-and-report-fake-check-scams', 'Banks must make deposited funds available quickly, but a fake check can bounce days later and the depositor must repay the bank.')
-CFPB_EFTA = src('CFPB (Regulation E: lost or stolen debit cards)', 'https://www.consumerfinance.gov/ask-cfpb/how-do-i-get-my-money-back-after-a-debit-card-theft-en-1017/', 'Liability for unauthorized debit card use is limited to $50 if reported within 2 business days of learning of the loss, up to $500 if reported later, and can be unlimited if not reported within 60 days after the statement is sent.', eff='Regulation E as of 2026')
-CFPB_CC = src('CFPB (Credit card fraud liability)', 'https://www.consumerfinance.gov/ask-cfpb/what-is-my-liability-for-unauthorized-credit-card-charges-en-24/', 'Under federal law, liability for unauthorized credit card charges is at most $50.')
+CFPB_EFTA = src('CFPB (Regulation E, 12 CFR 1005.6)', 'https://www.consumerfinance.gov/rules-policy/regulations/1005/6/', 'Liability for unauthorized debit card use is limited to $50 if reported within 2 business days after learning of the loss or theft, up to $500 if reported later, and can be unlimited for later transfers if not reported within 60 days after the statement is sent.', section='1005.6(b)', eff='Regulation E as in force 2026', qids=['S100-M-Q2'])
+CFPB_CC = src('CFPB (Lost or stolen credit cards)', 'https://www.consumerfinance.gov/ask-cfpb/am-i-responsible-for-unauthorized-charges-if-my-credit-cards-are-lost-or-stolen-en-29/', 'Under federal law, liability for unauthorized credit card charges is at most $50 (Regulation Z, 12 CFR 1026.12(b)).')
 CFPB_COMPLAINT = src('CFPB (Submit a complaint)', 'https://www.consumerfinance.gov/complaint/', 'Consumers can submit complaints about financial products; the CFPB forwards them to companies for a response.')
-FTC_COOL = src('FTC (Cooling-Off Rule)', 'https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help', 'The Cooling-Off Rule gives buyers 3 days to cancel certain sales of $25 or more made at their home or at temporary locations.')
-NJ_DCA = src('New Jersey Division of Consumer Affairs', 'https://www.njconsumeraffairs.gov/', 'New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act.')
-CISA = src('CISA (Secure Our World)', 'https://www.cisa.gov/secure-our-world', 'Recommends strong passwords or a password manager, multifactor authentication, software updates, and recognizing phishing.')
+FTC_COOL = src('FTC (Cooling-Off Rule)', 'https://consumer.ftc.gov/articles/buyers-remorse-ftcs-cooling-rule-may-help', 'The Cooling-Off Rule lets buyers cancel covered sales of $25 or more at their home, or $130 or more at temporary locations, until midnight of the third business day (Saturday counts; Sundays and federal holidays do not); some sales are excluded.', qids=['S100-M-Q5'])
+NJ_DCA = src('New Jersey Division of Consumer Affairs', 'https://www.njconsumeraffairs.gov/', 'New Jersey residents can file consumer complaints with the Division of Consumer Affairs, which enforces the New Jersey Consumer Fraud Act.', jur='New Jersey')
+CISA = src('CISA (Secure Our World: Use strong passwords)', 'https://www.cisa.gov/secure-our-world/use-strong-passwords', 'Recommends long, unique passwords or a password manager, and turning on multifactor authentication.')
+BILLERR = src('CFPB (Regulation Z, 12 CFR 1026.13)', 'https://www.consumerfinance.gov/rules-policy/regulations/1026/13/', 'A billing-error notice is timely when the creditor receives it in writing at its billing-inquiries address within 60 days after transmitting the statement that first shows the error.', section='1026.13(b)', qids=['S100-F1-Q1'])
+REGF = src('CFPB (Regulation F, 12 CFR 1006.34)', 'https://www.consumerfinance.gov/rules-policy/regulations/1006/34/', 'The 30-day validation period starts when the consumer receives the validation information; a written dispute within it pauses collection until verification is sent.', section='1006.34(b)(5)', qids=['S100-F1-Q2'])
 
 # ---------------------------------------------------------------- S98
 S(98, 'Identity theft: prevention and recovery', 'Recognize signs of identity theft and follow the steps to recover',
@@ -210,7 +212,7 @@ S(100, 'Consumer rights and where to get help', 'Use federal and state consumer 
     ]),
   ],
   nat=('Managing Risk', 'Describe consumer protection laws and how to file complaints'), nj=['RM', 'CFR'],
-  status='time_sensitive', sources=[CFPB_EFTA, CFPB_CC, CFPB_COMPLAINT, FTC_COOL, NJ_DCA], extra=['Filing a CFPB complaint', 'Disputing a debt'])
+  status='time_sensitive', sources=[CFPB_EFTA, CFPB_CC, CFPB_COMPLAINT, FTC_COOL, NJ_DCA, BILLERR, REGF], extra=['Filing a CFPB complaint', 'Disputing a debt'])
 
 # ---------------------------------------------------------------- S101
 S(101, 'Digital security for money', 'Protect financial accounts online with strong passwords, multifactor authentication, and safe habits',

@@ -5,6 +5,7 @@ unit('HOME', 'Mortgages and Homeownership', ['12 Mortgages and Homeownership'])
 CFPB_HOME = src('CFPB (Buying a House)', 'https://www.consumerfinance.gov/owning-a-home/', 'Mortgage payments often include principal, interest, property taxes, and homeowners insurance (PITI); private mortgage insurance is usually required with less than 20% down on a conventional loan.')
 LE = src('CFPB (Loan Estimate and Closing Disclosure)', 'https://www.consumerfinance.gov/owning-a-home/loan-estimate/', 'Lenders must provide a Loan Estimate within 3 business days of an application and a Closing Disclosure at least 3 business days before closing.')
 ARM = src('CFPB (Adjustable-rate mortgages)', 'https://www.consumerfinance.gov/ask-cfpb/what-is-an-adjustable-rate-mortgage-arm-en-100/', 'An ARM has an initial fixed period, after which the rate adjusts periodically based on an index plus a margin, subject to caps.')
+RATEAPR = src('CFPB (Interest rate vs. APR)', 'https://www.consumerfinance.gov/ask-cfpb/what-is-the-difference-between-a-loan-interest-rate-and-the-apr-en-733/', 'The interest rate is the cost of borrowing the principal; the APR also includes certain fees, so payment math uses the note interest rate, and APR equals that rate only when there are no other finance charges.', qids=['S76-F1-Q1', 'S76-F1-Q2'])
 
 # ---------------------------------------------------------------- S75
 S(75, 'Renting versus owning, and what a mortgage is', 'Compare renting and owning and explain the parts of a mortgage',
@@ -194,7 +195,8 @@ S(76, 'Mortgage payments and loan terms', 'Compare monthly payments and total in
     ]),
   ],
   nat=('Managing Credit', 'Compare mortgage terms, rates, and total costs'), nj=['CDM'],
-  status='stable', extra=['Comparing 15- and 30-year mortgages', 'Evaluating discount points'])
+  status='stable', extra=['Comparing 15- and 30-year mortgages', 'Evaluating discount points'],
+  sources=[RATEAPR])
 
 # ---------------------------------------------------------------- S77
 S(77, 'Property taxes, insurance, PMI, and escrow', 'Calculate a full monthly housing payment including taxes, insurance, and mortgage insurance',

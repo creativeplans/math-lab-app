@@ -23,6 +23,7 @@ sys.path[:0] = [ENGINE, SRC]
 
 import fl_dsl as D  # noqa: E402
 import fl_meta as META  # noqa: E402
+import fl_ledger as LEDGER  # noqa: E402
 
 VERSION = META.VERSION
 CATALOG = json.load(open(os.path.join(ENGINE, 'fl_math_catalog.json')))['skills']
@@ -212,7 +213,8 @@ def write_package(sets, recs, set_pages):
         secs = []
         for code, sec in sections(s):
             rel = 'main' if code == 'M' else 'backward' if code[0] == 'B' else 'forward%s' % code[1:]
-            base = dict(section=code, section_code=code, relation=rel, skill=sec['skill'], standard=std, nearest_related=False)
+            base = dict(section=code, section_code=code, relation=rel, skill=sec['skill'], standard=std, nearest_related=False,
+                        alignment_role=META.SECTION_ROLE[rel.rstrip('0123456789')])
             if sec.get('kind') == 'math':
                 r = sec['ref']
                 sid = '%s-S%02d-M' % (COURSE_PREFIX[r['course']], r['set'])
@@ -244,7 +246,7 @@ def write_package(sets, recs, set_pages):
         setfile = dict(format_version=1, set=s['num'], set_id='S%d' % s['num'], standard=std, title=s['title'],
                        domain=s['unit']['title'], unit=s['unit']['code'], unit_title=s['unit']['title'],
                        alignment=META.alignment(s), content_status=s['status'],
-                       sources=[dict(x, checked=None, verification=META.SOURCE_STATUS) for x in s['sources']],
+                       sources=[dict(x, **LEDGER.package_fields(x)) for x in s['sources']],
                        practical_skills=s['extra'], page=set_pages[s['num']], sections=secs)
         if s['note']:
             setfile['note'] = s['note']
@@ -304,6 +306,9 @@ def main():
         fl_reports.write_all(sets, recs)
         fl_pdf.copy_into_package(OUT_PKG)
         fl_reports.finish_package(OUT_PKG)
+    elif '--reports' in sys.argv:
+        import fl_reports
+        fl_reports.write_all(sets, recs)
     print('%d sets, %d questions, letters %s' % (len(sets), len(recs), counts))
     a = audit(recs)
     print('correct is the unique longest choice: %d of %d text items (%.0f%%); unique shortest %d; intro repeats the '

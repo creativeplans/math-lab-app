@@ -4,8 +4,9 @@ unit('DEBT', 'Interest, Borrowing, and Debt', ['5 Interest, Borrowing, and Debt'
 
 PAYDAY = src('CFPB', 'https://www.consumerfinance.gov/ask-cfpb/what-is-a-payday-loan-en-1567/', 'A typical two-week payday loan with a $15 per $100 fee equals an APR of almost 400%.')
 TITLE = src('CFPB', 'https://www.consumerfinance.gov/ask-cfpb/what-is-a-car-title-loan-en-831/', 'Car title loans use the vehicle as collateral; borrowers who cannot repay can lose the car.')
-FDCPA = src('CFPB (Fair Debt Collection Practices Act, Regulation F)', 'https://www.consumerfinance.gov/rules-policy/regulations/1006/', 'Debt collectors must send validation information; consumers can dispute a debt and can ask a collector to stop contacting them; harassment is prohibited.')
+FDCPA = src('CFPB (Regulation F, 12 CFR 1006.34)', 'https://www.consumerfinance.gov/rules-policy/regulations/1006/34/', 'Debt collectors must provide validation information; a consumer who disputes the debt in writing within the 30-day validation period (which starts on receipt of the validation information) can make the collector pause collection until it sends verification.', section='1006.34(b)(5) validation period', qids=['S100-F1-Q2'])
 FCRA7 = src('CFPB', 'https://www.consumerfinance.gov/ask-cfpb/how-long-does-negative-information-remain-on-my-credit-report-en-323/', 'Most negative information stays on credit reports for 7 years; some bankruptcies for up to 10 years.')
+LATEFEE = src('CFPB (Regulation Z, 12 CFR 1026.52(b))', 'https://www.consumerfinance.gov/rules-policy/regulations/1026/52/', 'A credit card late fee cannot exceed the minimum payment that was due.', section='1026.52(b)(2)(i)', qids=['S34-B1-Q4'])
 
 # ---------------------------------------------------------------- S32
 S(32, 'High-cost credit: payday loans, title loans, rent-to-own, and buy now, pay later', 'Calculate and compare the true cost of high-cost credit and identify safer alternatives',
@@ -296,4 +297,4 @@ S(34, 'When debt goes wrong: late payments, collections, and bankruptcy', 'Expla
     ]),
   ],
   nat=('Managing Credit', 'Consequences of not repaying debt; consumer protections in debt collection'), nj=['CDM', 'CP'],
-  status='time_sensitive', sources=[FDCPA, FCRA7], extra=['Responding to a debt collector', 'Recognizing credit repair scams'])
+  status='time_sensitive', sources=[FDCPA, FCRA7, LATEFEE], extra=['Responding to a debt collector', 'Recognizing credit repair scams'])

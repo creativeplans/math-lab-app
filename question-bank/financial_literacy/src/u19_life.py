@@ -3,10 +3,11 @@ from fl_dsl import unit, S, q, concept, math, deeper, src
 unit('LIFE', 'Integrated Financial Decisions', ['20 Integrated Decisions'])
 
 IRS_TEOS = src('IRS (Tax Exempt Organization Search)', 'https://apps.irs.gov/app/eos/', 'Lists organizations eligible to receive tax-deductible charitable contributions.')
-IRS_CHARITY = src('IRS (Charitable contributions)', 'https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions', 'Charitable contributions are generally deductible only for taxpayers who itemize deductions, and only to qualified organizations; rules can change by tax year.', eff='Tax year 2026')
-NJ_CHAR = src('New Jersey Division of Consumer Affairs (Charities Registration)', 'https://www.njconsumeraffairs.gov/charities/', 'Most charities that solicit in New Jersey must register with the state, and residents can look up registration status.')
-FTC_CHAR = src('FTC (Donating wisely)', 'https://consumer.ftc.gov/articles/donating-wisely-avoiding-charity-scams', 'Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters.')
-NJ_DEP = src('New Jersey Division of Consumer Affairs (Security deposits)', 'https://www.nj.gov/dca/codes/publications/', 'New Jersey limits residential security deposits to one and one-half months\' rent.')
+IRS_CHARITY = src('IRS (Charitable contribution deductions)', 'https://www.irs.gov/charities-non-profits/charitable-organizations/charitable-contribution-deductions', 'Charitable contributions are deductible only to qualified organizations; itemizers deduct them on Schedule A.', eff='Tax year 2026')
+NJ_CHAR = src('New Jersey Division of Consumer Affairs (Charities Registration)', 'https://www.njconsumeraffairs.gov/charities/', 'Most charities that solicit in New Jersey must register with the state, and residents can look up registration status.', jur='New Jersey')
+FTC_CHAR = src('FTC (How to donate wisely and avoid charity scams)', 'https://consumer.ftc.gov/features/how-donate-wisely-and-avoid-charity-scams', 'Research charities before giving, be wary of pressure and payment by gift card or wire, and watch for scams after disasters.')
+NJ_DEP = src('New Jersey Department of Community Affairs (Truth in Renting)', 'https://www.nj.gov/dca/codes/publications/pdf_lti/t_i_r.pdf', "New Jersey limits residential security deposits to one and one-half months' rent.", jur='New Jersey')
+WFTC = src('IRS (Working Families Tax Cuts)', 'https://www.irs.gov/newsroom/working-families-tax-cuts', 'Beginning in tax year 2026, taxpayers who do not itemize can deduct up to $1,000 ($2,000 married filing jointly) of eligible cash gifts to qualified charities.', eff='Tax year 2026', qids=['S109-M-Q4', 'S66-M-Q1'])
 
 # ---------------------------------------------------------------- S108
 S(108, 'Net worth', 'Build a net worth statement and explain how decisions change net worth over time',
@@ -138,7 +139,7 @@ S(109, 'Charitable giving and civic responsibility', 'Plan charitable giving, re
     ]),
   ],
   nat=('Spending', 'Plan charitable giving and evaluate charities, including tax treatment of donations'), nj=['CFR', 'PB'],
-  status='time_sensitive', sources=[IRS_TEOS, IRS_CHARITY, NJ_CHAR, FTC_CHAR], extra=['Researching a charity'])
+  status='time_sensitive', sources=[IRS_TEOS, IRS_CHARITY, NJ_CHAR, FTC_CHAR, WFTC], extra=['Researching a charity'])
 
 # ---------------------------------------------------------------- S110
 S(110, 'Your first full-time job: a money plan', 'Set priorities for a first paycheck: benefits, emergency savings, debt, and retirement',

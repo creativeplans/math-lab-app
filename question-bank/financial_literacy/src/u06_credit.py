@@ -2,7 +2,9 @@ from fl_dsl import unit, S, q, concept, math, deeper, src
 
 unit('CREDIT', 'Credit Cards and Credit Scores', ['6 Credit Cards and Credit Scores'])
 
-CARD = src('CFPB (Credit CARD Act / Regulation Z)', 'https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/', 'Card issuers must mail statements at least 21 days before the due date; statements show the minimum payment warning; applicants under 21 need independent income or a cosigner.')
+CARD = src('CFPB (Credit card key terms)', 'https://www.consumerfinance.gov/consumer-tools/credit-cards/answers/key-terms/', 'Explains APR, grace period, minimum payment, and other card terms; statements show a minimum payment warning.', section='Key terms')
+UNDER21 = src('CFPB (Regulation Z, 12 CFR 1026.51)', 'https://www.consumerfinance.gov/rules-policy/regulations/1026/51/', 'A card applicant under 21 must show independent income or assets enough to make the required payments, or have a cosigner or joint applicant who is 21 or older and able to pay (if the issuer allows it).', section='1026.51(b)', qids=['S35-M-Q5'])
+GRACE = src('CFPB (Credit card grace period)', 'https://www.consumerfinance.gov/ask-cfpb/what-is-a-grace-period-for-a-credit-card-en-47/', 'A grace period, if the card offers one, lets you avoid interest on new purchases by paying the full statement balance by the due date; it usually does not apply to cash advances.', qids=['S35-M-Q3', 'S35-F1-Q3', 'S36-M-Q1', 'S36-F2-Q4', 'S42-F1-Q5'])
 
 STMT = ('Credit card statement (closing date May 20): Previous balance $640.00 | Payments −$640.00 | Purchases +$412.75 | '
         'Fees $0.00 | Interest charged $0.00 | New balance $412.75 (purchases only; no cash advances) | Minimum payment due $25.00 | '
@@ -103,7 +105,7 @@ S(35, 'What a credit card is', 'Explain how a credit card works: credit limit, r
     ]),
   ],
   nat=('Managing Credit', 'Explain how credit cards work: credit limits, revolving balances, grace periods, and APR'), nj=['CDM'],
-  status='time_sensitive', sources=[CARD], extra=['Choosing a card by how you will use it'])
+  status='time_sensitive', sources=[CARD, UNDER21, GRACE], extra=['Choosing a card by how you will use it'])
 
 # ---------------------------------------------------------------- S36
 S(36, 'Reading a credit card statement', 'Read a credit card statement and decide how much to pay and when',
@@ -197,7 +199,7 @@ S(36, 'Reading a credit card statement', 'Read a credit card statement and decid
     ]),
   ],
   nat=('Managing Credit', 'Read a credit card statement and explain the cost of making only minimum payments'), nj=['CDM'],
-  status='time_sensitive', sources=[CARD], extra=['Reading a card statement line by line', 'Disputing a billing error'])
+  status='time_sensitive', sources=[CARD, GRACE], extra=['Reading a card statement line by line', 'Disputing a billing error'])
 
 # ---------------------------------------------------------------- S37
 S(37, 'How credit card interest is calculated', 'Calculate credit card interest using the daily periodic rate and the average daily balance',
@@ -291,7 +293,7 @@ S(37, 'How credit card interest is calculated', 'Calculate credit card interest 
     ]),
   ],
   nat=('Managing Credit', 'Calculate credit card interest and explain how payment timing affects it'), nj=['CDM'],
-  status='time_sensitive', sources=[CARD], extra=['Average daily balance calculation'])
+  status='time_sensitive', sources=[CARD, GRACE], extra=['Average daily balance calculation'])
 
 # ---------------------------------------------------------------- S38
 S(38, 'The minimum payment trap', 'Compare the cost of paying the minimum with paying more each month',

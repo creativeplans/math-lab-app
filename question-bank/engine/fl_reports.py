@@ -22,8 +22,10 @@ import zipfile
 import fl_build as B
 import fl_dsl as D
 import fl_meta as META
+import fl_ledger as LEDGER
 
-REPORTS = ['COVERAGE.md', 'MATH_BRANCHES.md', 'CONCEPT_BRANCHES.md', 'GO_DEEPER.md', 'HOW_TO.md', 'QUALITY_AUDIT.md']
+REPORTS = ['COVERAGE.md', 'MATH_BRANCHES.md', 'CONCEPT_BRANCHES.md', 'GO_DEEPER.md', 'HOW_TO.md', 'QUALITY_AUDIT.md',
+           'SOURCE_LEDGER.md', 'SOURCE_LEDGER.json', 'RUNTIME_CHECK.json', 'MATH_REF_VALIDATION.json']
 ZIP_NAME = 'FinancialLiteracy_Nexus_Import_v%s.zip' % B.VERSION
 
 AREAS = ['Money, Banking, and Financial Institutions', 'Earning Income, Employment, and Paychecks',
@@ -167,16 +169,19 @@ def coverage(sets, recs):
              B.VERSION, META.DATE, len(sets), len(recs)), '',
          '## How alignment was done', '',
          '- **National:** 2021 National Standards for Personal Financial Education (Council for Economic Education and '
-         'Jump$tart Coalition), six topics: %s. Every set names its topic and a learning target. The official 12th-grade '
-         'outcome codes are cited only where they were confirmed from search-indexed text of the official document: %s. '
-         'All other set-level outcome codes are marked "to verify against the official document".' % (
-             ', '.join(META.NATIONAL_TOPICS), ', '.join(sorted(META.VERIFIED_NATIONAL))),
+         'Jump$tart Coalition), six topics: %s. Every set names its topic and a learning target. Outcome codes repeat '
+         'across topics, so every code is written with its topic (for example "Earning Income 12-6a"). Codes are assigned '
+         'only to the sets listed in the code table below; all other sets are aligned at topic level only. The author '
+         'could not open the official PDF; each code says whether its wording came from search-indexed text or from the '
+         'independent reviewer\'s reading of the PDF.' % ', '.join(META.NATIONAL_TOPICS),
          '- **New Jersey:** NJSLS — Career Readiness, Life Literacies, and Key Skills (adopted June 3, 2020), Standard 9.1 '
-         'Personal Financial Literacy, grade 12 (9.1.12). This is the version in force; a 2025 revision was proposed in '
-         'November 2025, and its adoption could not be confirmed. Alignment is at the strand level (%s); individual '
-         'performance expectations are to verify.' % ', '.join('%s %s' % kv for kv in META.NJ_STRANDS.items()),
+         'Personal Financial Literacy, grade 12 (9.1.12). Alignment is at the strand level (%s). Strand tags do not show '
+         'coverage of all 55 grade-12 performance expectations; known gaps are listed in section 3a.' % ', '.join('%s %s' % kv for kv in META.NJ_STRANDS.items()),
+         '- **Local identifiers:** codes such as FL.SAVE.24 are course identifiers, not official national or New Jersey codes.',
+         '- **Section roles:** MAIN sections are the direct alignment; backward sections (concept and math) are supporting '
+         'prerequisites; Go Deeper sections are related enrichment. The package does not claim full mastery of either standard.',
          '- **Verification limit:** the authoring environment could not open the official sites (%s); only web search '
-         'results were available. A reviewer should confirm codes against the official PDFs.' % TIME_HOSTS, '']
+         'results were available.' % TIME_HOSTS, '']
     # content areas
     L += ['## 1. The 20 required content areas', '']
     rows = []
@@ -202,9 +207,10 @@ def coverage(sets, recs):
         ss = [s for s in sets if s['nat'][0] == t]
         rows.append([t, len(ss), sum(counts_for(s)['questions'] for s in ss), ', '.join('S%d' % s['num'] for s in ss)])
     L += [md_table(['Topic', 'Set count', 'Questions', 'Sets'], rows), '']
-    rows = [[c, d, ', '.join('S%d' % s['num'] for s in sets if c in s['nat'][1]) or 'learning targets in the set file']
-            for c, d in sorted(META.VERIFIED_NATIONAL.items())]
-    L += ['Verified 12th-grade outcome codes:', '', md_table(['Code', 'Outcome (as verified)', 'Sets'], rows), '']
+    rows = [['%s %s' % (tp, c), d, st, ', '.join('S%d' % s['num'] for s in sets if s['nat'][0] == tp and c in s['nat'][1]) or '—']
+            for (tp, c), (d, st) in sorted(META.NATIONAL_CODES.items())]
+    L += ['Assigned 12th-grade outcome codes (topic-qualified):', '',
+          md_table(['Code', 'Outcome', 'How checked', 'Sets'], rows), '']
     # NJ matrix
     L += ['## 3. New Jersey 9.1.12 strand matrix', '']
     rows = []
@@ -212,6 +218,10 @@ def coverage(sets, recs):
         ss = [s for s in sets if c in s['nj']]
         rows.append(['9.1.12.%s' % c, name, len(ss), ', '.join('S%d' % s['num'] for s in ss)])
     L += [md_table(['Strand', 'Name', 'Set count', 'Sets'], rows), '']
+    L += ['### 3a. Known New Jersey gaps (disclosed)', '',
+          'From the independent review of the official 9.1 PDF. These are outside or only partly inside this course; '
+          'the course does not claim them.', '',
+          md_table(['Expectation', 'Topic', 'Coverage'], [list(g) for g in META.NJ_GAPS]), '']
     # per set
     L += ['## 4. Set-by-set alignment and counts', '']
     rows = []
@@ -512,6 +522,10 @@ def write_all(sets, recs):
     deeper_report(sets)
     howto_report(sets, recs)
     quality_report(sets, recs)
+    by_id = qmap(recs)
+    bad = [(s['num'], q) for s in sets for x in s['sources'] for q in x.get('qids', []) if q not in by_id]
+    assert not bad, ('source qids not found', bad)
+    LEDGER.write(sets, B.COL, md_table)
     readme(sets, recs)
 
 

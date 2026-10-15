@@ -2,10 +2,10 @@ from fl_dsl import unit, S, q, concept, math, deeper, src
 
 unit('BANK', 'Money, Banking, and Financial Institutions', ['1 Money, Banking, and Financial Institutions'])
 
-FDIC = src('FDIC', 'https://www.fdic.gov/resources/deposit-insurance', 'Deposit insurance covers up to $250,000 per depositor, per insured bank, for each account ownership category; investment products are not deposits and are not FDIC insured.')
+FDIC = src('FDIC', 'https://www.fdic.gov/resources/deposit-insurance', 'Deposit insurance covers up to $250,000 per depositor, per insured bank, for each account ownership category; investment products are not deposits and are not FDIC insured.', section='Deposit Insurance overview; What is not insured')
 CIP = src('FinCEN / federal banking agencies (Customer Identification Program rule, 31 CFR 1020.220)', 'https://www.ecfr.gov/current/title-31/subtitle-B/chapter-X/part-1020/subpart-B/section-1020.220', 'Banks must collect at least name, date of birth, address, and an identification number before opening an account.')
 CHEX = src('CFPB', 'https://www.consumerfinance.gov/ask-cfpb/what-is-a-checking-account-screening-company-en-1083/', 'Checking account screening companies (such as ChexSystems) report past account problems; consumers can get a free copy of their report every 12 months.')
-REGE = src('CFPB (Regulation E)', 'https://www.consumerfinance.gov/rules-policy/regulations/1005/6/', 'Report unauthorized electronic transfers that appear on a statement within 60 days of the statement date to keep liability limits.')
+REGE = src('CFPB (Regulation E, 12 CFR 1005.6)', 'https://www.consumerfinance.gov/rules-policy/regulations/1005/6/', 'Report unauthorized electronic transfers within 60 days after the statement showing them is sent; after that, liability can be unlimited for later transfers that timely notice would have prevented.', section='1005.6(b)(3)', eff='Regulation E as in force 2026')
 OD = src('CFPB', 'https://www.consumerfinance.gov/ask-cfpb/what-is-overdraft-coverage-en-1015/', 'Banks must get the customer\'s opt-in before charging overdraft fees on ATM withdrawals and one-time debit card purchases; checks and recurring payments may be paid into overdraft without that opt-in.')
 
 # ---------------------------------------------------------------- S3

@@ -2,7 +2,7 @@ from fl_dsl import unit, S, q, concept, math, deeper, src
 
 unit('BUDGET', 'Budgeting and Managing Expenses', ['3 Budgeting and Managing Expenses', '18 Inflation, Purchasing Power, and Economic Decisions (decision-making)'])
 
-NJTAX = src('New Jersey Division of Taxation', 'https://www.nj.gov/treasury/taxation/su_over.shtml', 'New Jersey sales tax rate is 6.625%; most clothing and footwear and most food for home consumption are exempt.', eff='2026')
+NJTAX = src('New Jersey Division of Taxation (Sales and Use Tax)', 'https://www.nj.gov/treasury/taxation/businesses/salestax/index.shtml', 'New Jersey sales tax rate is 6.625%; most clothing and footwear and most food for home consumption are exempt.', eff='Rate since 2018-01-01', jur='New Jersey')
 
 # ---------------------------------------------------------------- S18
 S(18, 'Irregular expenses and sinking funds', 'Plan for periodic and irregular expenses with monthly set-asides',

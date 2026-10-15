@@ -3,9 +3,10 @@ from fl_dsl import unit, S, q, concept, math, deeper, src
 unit('BIZ', 'Entrepreneurship and Self-Employment', ['16 Entrepreneurship'])
 
 IRS_SE = src('IRS (Self-employment tax)', 'https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes', 'Self-employment tax is 15.3% (12.4% Social Security and 2.9% Medicare) and is figured on 92.35% of net earnings from self-employment; it applies when net earnings are $400 or more.', eff='Tax year 2026')
-IRS_EST = src('IRS (Estimated taxes)', 'https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes', 'People who expect to owe $1,000 or more when they file, such as many self-employed workers, generally must pay estimated tax quarterly.', eff='Tax year 2026')
+IRS_EST = src('IRS (Estimated taxes)', 'https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes', "People who expect to owe $1,000 or more after withholding and credits generally must pay estimated tax quarterly; safe harbors based on this year's or last year's tax can avoid the penalty.", eff='Tax year 2026', qids=['S13-F2-Q3', 'S96-M-Q3'])
 SBA = src('U.S. Small Business Administration (Choose a business structure)', 'https://www.sba.gov/business-guide/launch-your-business/choose-business-structure', 'Sole proprietorships offer no separation between owner and business liabilities; LLCs and corporations can limit personal liability.')
-NJ_BIZ = src('New Jersey Business Portal', 'https://business.nj.gov/', 'New Jersey explains how to register a business, collect sales tax, and get required licenses.')
+NJ_BIZ = src('New Jersey Business Portal', 'https://business.nj.gov/', 'New Jersey explains how to register a business, collect sales tax, and get required licenses.', jur='New Jersey')
+NEC = src('IRS (Am I required to file a Form 1099?)', 'https://www.irs.gov/businesses/small-businesses-self-employed/am-i-required-to-file-a-form-1099-or-other-information-return', 'For payments made after 2025, the general Form 1099-NEC reporting threshold for business payers is $2,000; income is taxable whether or not a form is issued.', eff='Payments in 2026', qids=['S96-B1-Q2'])
 
 # ---------------------------------------------------------------- S95
 S(95, 'Revenue, costs, profit, and break-even', 'Calculate profit and the break-even point for a small business',
@@ -159,7 +160,7 @@ S(96, 'Self-employment taxes', 'Estimate self-employment and income taxes for a 
     ]),
   ],
   nat=('Earning Income', 'Estimate taxes on self-employment income and plan estimated payments'), nj=['PB', 'CFR'],
-  status='time_sensitive', sources=[IRS_SE, IRS_EST], extra=['Setting aside money for taxes', 'Keeping a mileage log'])
+  status='time_sensitive', sources=[IRS_SE, IRS_EST, NEC], extra=['Setting aside money for taxes', 'Keeping a mileage log'])
 
 # ---------------------------------------------------------------- S97
 S(97, 'Business structures, pricing, and getting started', 'Compare business structures and set prices using costs and markup',

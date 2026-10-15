@@ -3,7 +3,8 @@ from fl_dsl import unit, S, q, concept, math, deeper, src
 unit('SAVE', 'Saving, Emergency Funds, and Interest', ['4 Saving and Emergency Funds', '5 Interest, Borrowing, and Debt (interest calculations)'])
 
 FDIC = src('FDIC', 'https://www.fdic.gov/resources/deposit-insurance/understanding-deposit-insurance', 'Deposit insurance covers deposit products such as CDs and money market deposit accounts; it does not cover money market mutual funds or other investments.')
-TD = src('TreasuryDirect (U.S. Department of the Treasury)', 'https://www.treasurydirect.gov/savings-bonds/i-bonds/', 'I bonds must be held at least 12 months; if cashed before 5 years, the last 3 months of interest are lost; Treasury bills are sold at a discount and pay face value at maturity.')
+TD = src('TreasuryDirect (I bonds)', 'https://www.treasurydirect.gov/savings-bonds/i-bonds/', 'I bonds must be held at least 12 months; if cashed before 5 years, the last 3 months of interest are lost. (This page does not cover Treasury bill rules.)', section='Cashing I bonds')
+TDBUY = src('TreasuryDirect (Buying savings bonds)', 'https://www.treasurydirect.gov/savings-bonds/buy-a-bond/', 'New electronic savings bonds (Series EE and I) are bought through TreasuryDirect; marketable Treasury bills, notes, and bonds can also be bought through banks and brokers.', qids=['S27-F2-Q5'])
 
 # ---------------------------------------------------------------- S24
 S(24, 'Compound interest', 'Calculate compound interest and compare it with simple interest',
@@ -380,4 +381,4 @@ S(27, 'Savings options: high-yield savings, CDs, and money market accounts', 'Ch
     ]),
   ],
   nat=('Saving', 'Compare savings products: CDs, money market accounts, and Treasury securities'), nj=['FI'],
-  status='time_sensitive', sources=[FDIC, TD], extra=['Building a CD ladder', 'Buying Treasuries on TreasuryDirect'])
+  status='time_sensitive', sources=[FDIC, TD, TDBUY], extra=['Building a CD ladder', 'Buying Treasuries on TreasuryDirect'])

@@ -8,12 +8,12 @@ The branch fires only under the game's existing rule: **3 or fewer correct out o
 
 | Course | Links |
 |---|---|
-| algebra_1 | 11 |
+| algebra_1 | 7 |
 | grade_4 | 1 |
 | grade_5 | 8 |
-| grade_6 | 96 |
-| grade_7 | 59 |
-| grade_8 | 4 |
+| grade_6 | 99 |
+| grade_7 | 60 |
+| grade_8 | 3 |
 
 ## Every link
 
@@ -41,7 +41,7 @@ The branch fires only under the game's existing rule: **3 or fewer correct out o
 | S12 | B3 | grade_7 set 7 | 7.RP.A.3 | Solve multistep ratio problems | Comparing offers combines monthly and yearly amounts and percents. |
 | S13 | B2 | grade_6 set 10 | 6.RP.A.3.c | Find a percent of a quantity as a rate per 100 | Self-employment tax and set-aside amounts are percents of earnings. |
 | S13 | B3 | grade_7 set 65 | 7.RP.A.3 | Find a percent fee and the total with the fee | Gig platforms deduct percent-based fees from earnings. |
-| S14 | B2 | grade_8 set 22 | 8.EE.C.8.c | Write and solve systems of linear equations for real-world problems | Finding when a higher-paying path catches up uses two linear expressions for total earnings. |
+| S14 | B2 | grade_7 set 29 | 7.EE.B.3 | Solve multistep problems with positive and negative rational numbers in any form | Comparing career paths multiplies yearly pay by years and subtracts totals. |
 | S14 | B3 | grade_6 set 19 | 6.NS.B.3 | Multiply multi-digit decimals | Multi-year earnings multiply yearly pay by years. |
 | S15 | B2 | grade_6 set 16 | 6.NS.B.3 | Add multi-digit decimals | Budget totals add many expenses. |
 | S15 | B3 | grade_6 set 17 | 6.NS.B.3 | Subtract multi-digit decimals | Money left subtracts total expenses from income. |
@@ -66,11 +66,11 @@ The branch fires only under the game's existing rule: **3 or fewer correct out o
 | S24 | B3 | grade_5 set 1 | 5.OA.A.1 | Evaluate expressions that use parentheses | The order of operations matters: compute 1 + r first, then the power, then multiply. |
 | S24 | B4 | algebra_1 set 55 | HSF-LE.A.1.c | Recognize situations in which a quantity grows or decays by a constant percent rate per unit interval | Compound interest is growth by a constant percent per year. |
 | S24 | B5 | grade_6 set 10 | 6.RP.A.3.c | Find a percent of a quantity as a rate per 100 | Each year's interest is a percent of the balance. |
-| S25 | B2 | algebra_1 set 16 | HSA-SSE.B.3.c | Use the properties of exponents to transform exponential expressions | Rewriting an annual rate as a monthly factor uses exponent properties. |
+| S25 | B2 | grade_6 set 40 | 6.EE.A.1 | Evaluate numerical expressions with whole-number exponents | Compound interest formulas raise a growth factor to a power. |
 | S25 | B3 | algebra_1 set 46 | HSF-IF.C.8.b | Use the properties of exponents to interpret growth and decay rates | APY compares yearly growth factors from different compounding periods. |
 | S25 | B4 | grade_6 set 20 | 6.NS.B.3 | Divide multi-digit decimals | Periodic rates divide the annual rate by the number of periods. |
-| S26 | B2 | algebra_1 set 50 | HSF-BF.A.2 | Write arithmetic and geometric sequences recursively and with an explicit formula | Repeated doubling is a geometric sequence. |
-| S26 | B3 | algebra_1 set 57 | HSF-LE.A.3 | Observe that exponential growth eventually exceeds linear, quadratic, and polynomial growth | Compound growth eventually outpaces steady additions. |
+| S26 | B2 | grade_6 set 20 | 6.NS.B.3 | Divide multi-digit decimals | The Rule of 72 divides 72 by the rate (or by the years). |
+| S26 | B3 | grade_6 set 40 | 6.EE.A.1 | Evaluate numerical expressions with whole-number exponents | Repeated doubling is a power of 2. |
 | S27 | B2 | grade_7 set 10 | 7.RP.A.3 | Find simple interest | CD interest and penalties use simple interest over part of a year. |
 | S28 | B2 | grade_6 set 17 | 6.NS.B.3 | Subtract multi-digit decimals | Interest is the difference between the total repaid and the principal. |
 | S29 | B2 | grade_6 set 20 | 6.NS.B.3 | Divide multi-digit decimals | Periodic rates divide the APR by 12 or 365. |
@@ -133,9 +133,8 @@ The branch fires only under the game's existing rule: **3 or fewer correct out o
 | S65 | B2 | grade_6 set 17 | 6.NS.B.3 | Subtract multi-digit decimals | Refunds and balances due compare amounts withheld and owed. |
 | S66 | B2 | grade_6 set 17 | 6.NS.B.3 | Subtract multi-digit decimals | AGI and taxable income come from subtracting adjustments and deductions. |
 | S66 | B3 | grade_8 set 18 | 8.EE.C.7.b | Write and solve linear equations with rational coefficients for real-world problems | Taxable income = income − adjustments − deduction is a linear relationship. |
-| S67 | B2 | algebra_1 set 75 | HSF-IF.C.7.b | Graph piecewise-defined and step functions | Bracket tax is a piecewise-defined function of income. |
-| S67 | B3 | grade_6 set 10 | 6.RP.A.3.c | Find a percent of a quantity as a rate per 100 | Each bracket's tax is a percent of the income in it. |
-| S67 | B4 | grade_7 set 29 | 7.EE.B.3 | Solve multistep problems with positive and negative rational numbers in any form | Bracket calculations combine several subtraction and percent steps. |
+| S67 | B2 | grade_6 set 10 | 6.RP.A.3.c | Find a percent of a quantity as a rate per 100 | Each bracket's tax is a percent of the income in it. |
+| S67 | B3 | grade_7 set 29 | 7.EE.B.3 | Solve multistep problems with positive and negative rational numbers in any form | Bracket calculations combine several subtraction and percent steps. |
 | S68 | B2 | grade_6 set 10 | 6.RP.A.3.c | Find a percent of a quantity as a rate per 100 | A deduction's value is the deduction times the tax rate. |
 | S68 | B3 | grade_7 set 15 | 7.NS.A.1.b | Interpret sums of rational numbers in real-world situations | Refundable credits can push tax below zero, producing a refund. |
 | S69 | B2 | grade_7 set 15 | 7.NS.A.1.b | Interpret sums of rational numbers in real-world situations | A refund is a positive result and a balance due a negative one. |

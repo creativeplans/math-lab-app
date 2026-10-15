@@ -2,8 +2,8 @@ from fl_dsl import unit, S, q, concept, math, deeper, src
 
 unit('INVEST', 'Investing, Brokerage Accounts, and Investment Products', ['7 Investing and Brokerage Accounts', '8 Stocks, Bonds, Mutual Funds, ETFs, and Index Funds'])
 
-FEES = src('SEC Investor.gov', 'https://www.investor.gov/introduction-investing/investing-basics/understanding-fees', 'Ongoing fees such as expense ratios reduce investment returns, and the effect compounds over time.')
-CG = src('IRS (Topic 409, Capital Gains and Losses)', 'https://www.irs.gov/taxtopics/tc409', 'Gains on assets held more than one year are long-term and taxed at lower rates; net capital losses can offset up to $3,000 of other income per year ($1,500 if married filing separately).')
+FEES = src('SEC Investor.gov (Mutual fund fees and expenses)', 'https://www.investor.gov/introduction-investing/investing-basics/glossary/mutual-fund-fees-and-expenses', 'Ongoing fees such as expense ratios reduce investment returns, and the effect compounds over time.')
+CG = src('IRS (Topic 409, Capital Gains and Losses)', 'https://www.irs.gov/taxtopics/tc409', 'Gains on assets held more than one year are generally long-term and taxed at lower rates (special rules apply to some assets); net capital losses can offset up to $3,000 of other income per year ($1,500 if married filing separately).', qids=['S53-M-Q2', 'S53-M-Q4'])
 FRAUD = src('SEC Investor.gov', 'https://www.investor.gov/protect-your-investments/fraud/types-fraud', 'Red flags of investment fraud include promises of guaranteed high returns, pressure to act quickly, and unregistered sellers; Ponzi schemes pay earlier investors with new investors\' money.')
 CRYPTO = src('SEC Investor.gov', 'https://www.investor.gov/additional-resources/spotlight/crypto-assets', 'Crypto asset investments are highly risky and volatile, and are not FDIC insured or SIPC protected in the same way as deposits and securities at member firms.')
 
@@ -292,7 +292,7 @@ S(53, 'Taxes on investments', 'Explain how investment gains and income are taxed
         fb='Purchase records determine the gain and whether it is short- or long-term.', sub='Recordkeeping', how=True),
     ]),
   ],
-  nat=('Investing', '12-8b compare tax rates on earned income, interest, and capital gains; taxable vs tax-advantaged accounts'), nj=['EG', 'FI'],
+  nat=('Investing', '12-8b tax-deferred versus taxable investing; capital gains on taxable investments'), nj=['EG', 'FI'],
   status='time_sensitive', sources=[CG], extra=['Reading Forms 1099-B, 1099-DIV, and 1099-INT'])
 
 # ---------------------------------------------------------------- S54

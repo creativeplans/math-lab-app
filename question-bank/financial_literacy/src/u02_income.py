@@ -2,11 +2,12 @@ from fl_dsl import unit, S, q, concept, math, deeper, src
 
 unit('INCOME', 'Earning Income, Employment, and Paychecks', ['2 Earning Income, Employment, and Paychecks'])
 
-FLSA = src('U.S. Department of Labor', 'https://www.dol.gov/agencies/whd/overtime', 'Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek.')
-TIPS = src('IRS (Publication 531)', 'https://www.irs.gov/publications/p531', 'Employees who receive $20 or more in tips in a month must report them to their employer; tips are taxable income.')
+FLSA = src('U.S. Department of Labor', 'https://www.dol.gov/agencies/whd/overtime', 'Under the FLSA, covered nonexempt employees receive overtime pay of at least 1.5 times the regular rate for hours over 40 in a workweek; some states set a higher minimum wage than the federal one.', section='Overtime Pay', qids=['S8-M-Q2', 'S8-F1-Q3', 'S8-F2-Q4'])
+TIPS = src('IRS (Publication 531)', 'https://www.irs.gov/publications/p531', 'Employees who receive $20 or more in cash and charged tips in a month from one employer must report them to that employer; all tips, including noncash tips, are income.', section='Reporting Tips to Your Employer')
 FICA = src('IRS (Topic 751)', 'https://www.irs.gov/taxtopics/tc751', 'Employee Social Security tax is 6.2% (up to the annual wage base) and Medicare tax is 1.45% of wages.')
 W4 = src('IRS (Form W-4)', 'https://www.irs.gov/forms-pubs/about-form-w-4', 'Employees give Form W-4 to their employer to set federal income tax withholding; claiming exempt requires no tax liability last year and none expected this year.')
-W2 = src('IRS (Form W-2)', 'https://www.irs.gov/forms-pubs/about-form-w-2', 'Employers furnish Form W-2 (wages and taxes withheld) to employees by January 31.')
+W2 = src('IRS (Form W-2)', 'https://www.irs.gov/forms-pubs/about-form-w-2', 'Employers generally furnish Form W-2 (wages and taxes withheld) to employees by January 31, or the next business day if that date falls on a weekend or legal holiday.', section='About Form W-2', qids=['S11-M-Q5', 'S64-B1-Q5'])
+TIPDED = src('IRS (No tax on tips deduction)', 'https://www.irs.gov/newsroom/what-the-no-tax-on-tips-deduction-means-for-you', 'A new deduction for qualified tips (tax years 2025-2028, with limits) lowers income tax only; tips still must be reported, and Social Security and Medicare taxes still apply.', eff='Tax years 2025-2028', qids=['S8-F2-Q3'])
 
 # ---------------------------------------------------------------- S8
 S(8, 'Hourly wages and overtime', 'Calculate gross pay for hourly work, including overtime',
@@ -100,7 +101,7 @@ S(8, 'Hourly wages and overtime', 'Calculate gross pay for hourly work, includin
     ]),
   ],
   nat=('Earning Income', 'Calculate gross pay for hourly work; overtime and tipped wages'), nj=['PB'],
-  status='time_sensitive', sources=[FLSA, TIPS], extra=['Reading a timecard'])
+  status='time_sensitive', sources=[FLSA, TIPS, TIPDED], extra=['Reading a timecard'])
 
 # ---------------------------------------------------------------- S9
 S(9, 'Salaries, hourly pay, and pay periods', 'Convert between annual salary, hourly pay, and pay per paycheck',

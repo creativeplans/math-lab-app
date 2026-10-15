@@ -3,7 +3,7 @@ from fl_dsl import unit, S, q, concept, math, deeper, src
 unit('INVEST', 'Investing, Brokerage Accounts, and Investment Products', ['7 Investing and Brokerage Accounts', '8 Stocks, Bonds, Mutual Funds, ETFs, and Index Funds'])
 
 BONDS = src('SEC Investor.gov', 'https://www.investor.gov/introduction-investing/investing-basics/investment-products/bonds-or-fixed-income-products/bonds', 'When interest rates rise, prices of existing bonds generally fall; bonds carry interest rate risk and credit (default) risk.')
-FUNDS = src('SEC Investor.gov', 'https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-funds-etfs', 'Mutual funds are priced once a day at net asset value; ETF shares trade on exchanges throughout the day at market prices.')
+FUNDS = src('SEC Investor.gov (Mutual funds)', 'https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-funds-etfs/mutual-funds', 'Mutual funds are priced once a day at net asset value; ETF shares trade on exchanges throughout the day at market prices.')
 ORDERS = src('SEC Investor.gov', 'https://www.investor.gov/introduction-investing/investing-basics/how-stock-markets-work/types-orders', 'A market order seeks immediate execution at the best available price, which is not guaranteed; a limit order sets a maximum purchase or minimum sale price and may not execute.')
 
 # ---------------------------------------------------------------- S47

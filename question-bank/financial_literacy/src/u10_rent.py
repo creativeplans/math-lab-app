@@ -3,7 +3,7 @@ from fl_dsl import unit, S, q, concept, math, deeper, src
 unit('RENT', 'Renting and Leasing a Home', ['11 Renting and Leasing'])
 
 FTC_RENT = src('FTC', 'https://consumer.ftc.gov/articles/rental-listing-scams', 'Rental listing scams include fake listings, requests to wire money or pay before seeing a unit, and owners who claim to be out of the country.')
-NJ_DEP = src('New Jersey Department of Community Affairs (Truth in Renting)', 'https://www.nj.gov/dca/codes/publications/pdf_lti/t_i_r.pdf', 'In New Jersey, a security deposit may not exceed 1.5 times one month\'s rent, and the landlord must return it with interest, less itemized charges, within 30 days after the tenancy ends.', eff='New Jersey rules as of 2026')
+NJ_DEP = src('New Jersey Department of Community Affairs (Truth in Renting)', 'https://www.nj.gov/dca/codes/publications/pdf_lti/t_i_r.pdf', 'In New Jersey, a security deposit may not exceed 1.5 times one month\'s rent, and the landlord must return it with interest, less itemized charges, within 30 days after the tenancy ends.', eff='New Jersey rules as of 2026', jur='New Jersey')
 HUD = src('HUD (Fair Housing Act)', 'https://www.hud.gov/program_offices/fair_housing_equal_opp/fair_housing_act_overview', 'The Fair Housing Act prohibits housing discrimination based on race, color, national origin, religion, sex, familial status, and disability.')
 
 # ---------------------------------------------------------------- S71

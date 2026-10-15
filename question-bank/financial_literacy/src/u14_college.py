@@ -6,8 +6,9 @@ FSA_FAFSA = src('Federal Student Aid (FAFSA)', 'https://studentaid.gov/h/apply-f
 FSA_LOANS = src('Federal Student Aid (Loan types)', 'https://studentaid.gov/understand-aid/types/loans', 'Interest on Direct Subsidized Loans is paid by the government while the student is in school at least half-time; Direct Unsubsidized Loans accrue interest from disbursement. Federal loan rates are fixed for the life of each loan and set each year.')
 FSA_REPAY = src('Federal Student Aid (Repayment)', 'https://studentaid.gov/manage-loans/repayment', 'Federal law changed student loan repayment options in 2025-2026; borrowers should check current plans, including income-driven options, at StudentAid.gov.')
 NETPRICE = src('U.S. Department of Education (College Navigator / net price calculators)', 'https://nces.ed.gov/collegenavigator/', 'Colleges must post a net price calculator that estimates cost of attendance minus grants and scholarships.')
-HESAA = src('New Jersey Higher Education Student Assistance Authority (HESAA)', 'https://www.hesaa.org/', 'New Jersey state aid programs, such as the Tuition Aid Grant (TAG), use the FAFSA or the New Jersey Alternative Financial Aid Application.')
+HESAA = src('New Jersey Higher Education Student Assistance Authority (HESAA)', 'https://www.hesaa.org/', 'New Jersey state aid programs, such as the Tuition Aid Grant (TAG), use the FAFSA or the New Jersey Alternative Financial Aid Application.', jur='New Jersey')
 CFPB_PRIV = src('CFPB (Private student loans)', 'https://www.consumerfinance.gov/consumer-tools/student-loans/', 'Private student loans may have variable rates, require a cosigner, and lack federal protections such as income-driven repayment.')
+CAPIT = src('U.S. Department of Education (2022 final rule, interest capitalization)', 'https://fsapartners.ed.gov/fsa-print/publication/1004279', 'Since July 1, 2023, Direct Loans no longer capitalize interest when a borrower enters repayment (some events still capitalize interest); private loans follow their own contracts.', eff='2023-07-01', qids=['S93-M-Q2', 'S93-F1-Q1'])
 
 # ---------------------------------------------------------------- S91
 S(91, 'Cost of attendance and net price', 'Calculate cost of attendance and net price, and compare colleges by what a family will actually pay',
@@ -214,7 +215,7 @@ S(93, 'Student loans: federal, private, and interest', 'Compare federal and priv
     ]),
   ],
   nat=('Managing Credit', 'Compare federal and private student loans and calculate interest that accrues during school'), nj=['CDM', 'FI'],
-  status='time_sensitive', sources=[FSA_LOANS, CFPB_PRIV], extra=['Reading a Master Promissory Note'])
+  status='time_sensitive', sources=[FSA_LOANS, CFPB_PRIV, CAPIT], extra=['Reading a Master Promissory Note'])
 
 # ---------------------------------------------------------------- S94
 S(94, 'Repaying loans and return on investment', 'Estimate student loan payments and judge borrowing against expected earnings',

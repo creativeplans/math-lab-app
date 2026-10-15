@@ -6,6 +6,7 @@ BRACKETS = src('IRS (Federal income tax rates and brackets)', 'https://www.irs.g
 CREDITS = src('IRS (Credits and deductions for individuals)', 'https://www.irs.gov/credits-deductions-for-individuals', 'Deductions reduce taxable income; credits reduce tax dollar for dollar; refundable credits can produce a refund beyond tax owed (for example, the Earned Income Tax Credit).')
 FILING = src('IRS', 'https://www.irs.gov/filing', 'Individual returns are generally due April 15 (next business day if on a weekend or holiday); an extension extends the time to file, not to pay; IRS Free File and VITA offer free filing help to eligible taxpayers.')
 SCAMS = src('IRS (Tax scams)', 'https://www.irs.gov/newsroom/tax-scams-consumer-alerts', 'The IRS does not demand immediate payment by gift card, wire, or cryptocurrency, or threaten arrest by phone.')
+EMANC = src('IRS (Notice 2011-17)', 'https://www.irs.gov/pub/irs-drop/n-11-17.pdf', 'Emancipation Day (April 16) is a legal holiday in the District of Columbia that can move the federal filing deadline when it falls on or next to April 15.', qids=['S70-B1-Q1'])
 
 BR = 'For this scenario, use these hypothetical single-filer brackets: 10% on taxable income up to $12,000; 12% on income from $12,000 to $48,000; 22% on income from $48,000 to $100,000.'
 
@@ -393,4 +394,4 @@ S(70, 'Filing a return: methods, deadlines, and scams', 'Choose a filing method,
     ]),
   ],
   nat=('Earning Income', 'Explain how to file taxes, filing deadlines, and how to avoid tax fraud'), nj=['EG', 'FI'],
-  status='time_sensitive', sources=[FILING, SCAMS], extra=['Free filing options (IRS Free File, VITA)', 'Getting an IRS Identity Protection PIN'])
+  status='time_sensitive', sources=[FILING, SCAMS, EMANC], extra=['Free filing options (IRS Free File, VITA)', 'Getting an IRS Identity Protection PIN'])
