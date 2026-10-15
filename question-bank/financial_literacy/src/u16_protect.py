@@ -56,10 +56,10 @@ S(98, 'Identity theft: prevention and recovery', 'Recognize signs of identity th
   ],
   go=[
     deeper('Special cases of identity theft', [
-      q('The IRS rejects Rosa\'s tax return because one was already filed with her SSN. What happened?', 'Tax identity theft',
-        [('She filed twice by accident, which is normal', 'Misreads the warning'), ('Her employer filed her return for her', 'Employers do not file personal returns'), ('The IRS lost her return', 'Not what the rejection means')],
-        intro='In tax identity theft, a thief files a return to steal a refund. The IRS offers an Identity Protection PIN to prevent it.',
-        fb='A rejected return because one was already filed signals tax identity theft.', sub='Tax identity theft'),
+      q('The IRS rejects Rosa\'s e-filed return because a return was already filed with her SSN. What may this indicate, and what should she do?', 'Possible tax identity theft; investigate with the IRS',
+        [('She filed twice by accident, so she should ignore it', 'Assumes an error without checking'), ('Her employer filed her return for her', 'Employers do not file personal returns'), ('The IRS lost her return, so nothing can be done', 'Misreads the rejection')],
+        intro='In tax identity theft, a thief files a return with someone else\'s SSN to steal a refund. A rejection for a duplicate SSN can also come from a filing or data error, such as a dependent claimed on another return, so check before concluding. The IRS offers an Identity Protection PIN to help prevent it.',
+        fb='A duplicate-SSN rejection may signal tax identity theft; she should check for errors and follow the IRS identity theft steps.', sub='Tax identity theft'),
       q('Why do thieves target children\'s identities?', 'Theft can go unnoticed for years',
         [('Children have high credit limits', 'They usually have no credit'), ('Children\'s SSNs expire at 18', 'Invents a rule'), ('Banks require children to have cards', 'Invents a rule')],
         intro='Parents can request a credit freeze for children under 16.',

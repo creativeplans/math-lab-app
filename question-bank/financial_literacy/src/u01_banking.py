@@ -92,10 +92,10 @@ S(1, 'Banks, credit unions, and what they do', 'Explain what banks and credit un
         fb='When a fintech company fails, its records of who owns what must be sorted out before customers can get their money, even if a partner bank is insured.', sub='Fintech risk'),
     ]),
     deeper('Comparing financial institutions', [
-      q('Two banks are similar except: Bank A charges a $12 monthly fee unless the balance stays above $1,500; Bank B charges no monthly fee. Kai usually keeps about $400 in checking. How much more would Bank A cost Kai per year?',
+      q('Two banks are similar except: Bank A charges a $12 monthly fee unless the balance stays above $1,500; Bank B charges no monthly fee. Kai\'s checking balance stays around $400, below $1,500, every month of the year. How much more would Bank A cost Kai per year?',
         '$144', [('$12', 'Uses one month instead of a year'), ('$48', 'Multiplies by 4 instead of 12'), ('$0', 'Assumes Kai meets the $1,500 minimum')],
         intro='Fees add up. A monthly fee costs 12 times that amount in a year. Many banks waive a monthly fee if you meet a condition, such as a minimum balance or a direct deposit. If you will not meet the condition, plan to pay the fee.',
-        fb='Kai\'s $400 balance is below $1,500, so the fee applies every month: $12 × 12 = $144.', calc=12 * 12, sub='Comparing fees'),
+        fb='Kai\'s balance is below $1,500 every month, so the fee applies all 12 months: $12 × 12 = $144.', calc=144, sub='Comparing fees'),
       q('Which comparison is MOST important for a student who will make frequent ATM withdrawals?', 'How many fee-free ATMs are near home and school',
         [('Whether the bank sponsors a local sports team or event', 'Uses advertising as a reason'), ('The color of the debit card', 'Uses appearance as a reason'), ('The bank\'s auto loan rate', 'Compares a product the student will not use now')],
         intro='When comparing institutions, start with how you will use the account: fees, ATM access, branch or app access, minimum balances, and the savings rate. A feature that matters to one person may not matter to another.',

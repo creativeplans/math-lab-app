@@ -39,9 +39,9 @@ S(3, 'Opening a checking account', 'Compare checking accounts and complete the s
        ('Only the name of her bank and the branch\'s street address', 'Thinks a bank name identifies a specific account')],
       intro='Direct deposit sends pay electronically into your account. Your employer needs two numbers: the routing number, a 9-digit number that identifies your bank, and your account number, which identifies your account at that bank. Both appear on checks and in the bank\'s app. Never share a PIN or password to set up a deposit.',
       fb='Routing number plus account number tells the payroll system exactly where to send the money. PINs and passwords are never needed.', sub='Direct deposit', how=True),
-    q('Ahmed\'s new account requires a $25 opening deposit and has a $6 monthly fee that is waived only when the balance stays at $300 or more. Ahmed\'s balance stays around $150. Assuming no other fees, how much will the account charge him in fees over 6 months?',
+    q('Ahmed\'s new account requires a $25 opening deposit and has a $6 monthly fee that is waived only when the balance stays at $300 or more. Ahmed\'s balance stays below $300 (around $150) every month. Assuming no other fees, how much will the account charge him in fees over 6 months?',
       '$36', [('$6', 'Counts one month only'), ('$61', 'Adds the opening deposit as if it were a fee'), ('$0', 'Assumes the waiver applies')],
-      fb='The fee applies every month because $150 is below $300: $6 × 6 = $36. The $25 opening deposit is Ahmed\'s own money in the account, not a fee.', calc=6 * 6, sub='Fees vs opening deposit'),
+      fb='The fee applies each of the 6 months because the balance never reaches $300: $6 × 6 = $36. The $25 opening deposit is Ahmed\'s own money in the account, not a fee.', calc=36, sub='Fees vs opening deposit'),
   ],
   back=[
     concept('Account fees and fee waivers', 'Choosing and opening an account depends on understanding what a monthly fee and a waiver condition are.', [
@@ -216,7 +216,7 @@ S(5, 'Overdrafts and bank fees', 'Explain overdrafts and compute the cost of ove
     q('Mason\'s balance is $30. His bank charges $35 per overdraft. He makes three debit card purchases: $12, then $25, then $8, and he has opted in to overdraft coverage. If each purchase that makes the balance negative (or more negative) gets a fee, how much will he pay in fees?',
       '$70', [('$35', 'Charges only the first overdraft'), ('$105', 'Charges a fee on every purchase'), ('$15', 'Uses the amount overdrawn as the fee')],
       intro='Each item paid while the account is overdrawn can trigger its own fee. Track the balance item by item. A small purchase can cost far more than its price once a fee is added.',
-      fb='$30 − $12 = $18 (no fee). $18 − $25 = −$7 (fee). −$7 − $8 = −$15 (fee). Two fees: 2 × $35 = $70.', calc=2 * 35, sub='Fees per item'),
+      fb='$30 − $12 = $18 (no fee). $18 − $25 = −$7 (fee). −$7 − $8 = −$15 (fee). Two fees: 2 × $35 = $70. Counting the fees, his balance ends at −$15 − $70 = −$85.', calc=70, sub='Fees per item'),
     q('Without opting in to overdraft coverage, what usually happens when Leah tries a one-time debit card purchase larger than her balance?', 'The purchase is declined, with no overdraft fee',
       [('The purchase is approved, and she pays a $35 fee', 'Assumes coverage applies without opt-in'), ('The store gives her the item for free', 'Thinks the store absorbs the shortfall'), ('Her account is closed immediately', 'Exaggerates the consequence')],
       intro='Federal rules say a bank must get your permission (your "opt-in") before charging overdraft fees on ATM withdrawals and one-time debit card purchases. If you do not opt in, those transactions are usually declined. Checks and automatic bill payments are treated differently and can still be overdrawn.',
@@ -257,10 +257,10 @@ S(5, 'Overdrafts and bank fees', 'Explain overdrafts and compute the cost of ove
   ],
   go=[
     deeper('The yearly cost of fee habits', [
-      q('Jae overdraws about once a month and pays a $34 fee each time. How much does that cost him in a year?', '$408',
+      q('Jae overdraws his account exactly once every month for a year and pays a $34 fee each time. How much do the fees cost him in that year?', '$408',
         [('$34', 'Counts one month only'), ('$136', 'Uses 4 months'), ('$340', 'Uses 10 months')],
         intro='A habit that causes a fee every month becomes a large yearly cost. Multiply the monthly cost by 12 to see the yearly impact.',
-        fb='$34 × 12 = $408.', calc=34 * 12, sub='Annualizing fees'),
+        fb='$34 × 12 = $408.', calc=408, sub='Annualizing fees'),
       q('Jae pays a $34 overdraft fee about once a month, each time on a $9 debit purchase. What does each of those purchases really cost?', '$43',
         [('$9', 'Ignores the fee'), ('$34', 'Counts only the fee'), ('$25', 'Subtracts the purchase from the fee')],
         intro='When a purchase overdraws the account, its true cost is the purchase price plus the overdraft fee.',

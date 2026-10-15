@@ -159,9 +159,10 @@ S(104, 'Economic conditions and personal finances', 'Explain how unemployment, r
       [('More supply with the same demand', 'Would lower prices'), ('Less demand with the same supply', 'Would lower prices'), ('Prices are set by law each day', 'Misunderstands markets')],
       intro='Prices respond to supply and demand: less supply or more demand pushes prices up.',
       fb='Reduced supply with steady demand raises prices.', sub='Supply and demand'),
-    q('During a downturn, Rosa\'s stock index fund drops 20%. She has 30 years until retirement. What does history suggest?', 'Staying invested has usually recovered over time',
-      [('Stocks never recover after a drop', 'Untrue historically'), ('She should move everything to cash at once', 'Locks in losses'), ('She must sell her shares immediately by federal law', 'Invents a rule')],
-      fb='Long-term investors have historically recovered from downturns, though past results do not guarantee future ones.', sub='Investing through cycles'),
+    q('During a downturn, Rosa\'s broadly diversified U.S. stock market index fund drops 20%. She has 30 years until retirement. What does past U.S. market history suggest?', 'Broad markets have recovered from past drops, but not on any schedule',
+      [('Stocks never recover after a drop', 'Contradicts past history'), ('She should move everything to cash at once', 'Locks in losses'), ('She must sell her shares immediately by federal law', 'Invents a rule')],
+      intro='In past U.S. history, broad stock market declines have eventually been followed by recoveries, but the timing has varied from months to many years. Past results do not guarantee future ones, and a single stock or narrow fund may never recover.',
+      fb='Broad markets have historically recovered from downturns over long periods, but recovery is not guaranteed.', sub='Investing through cycles'),
   ],
   back=[
     concept('The business cycle', 'Economic conditions follow cycles that affect jobs and prices.', [
@@ -185,10 +186,10 @@ S(104, 'Economic conditions and personal finances', 'Explain how unemployment, r
   ],
   go=[
     deeper('Taxes, government, and the economy', [
-      q('Taxes pay for public goods. Which is a public good?', 'A public road',
-        [('A private gym membership', 'Private good'), ('A restaurant meal', 'Private good'), ('A streaming subscription', 'Private good')],
-        intro='Public goods, such as roads, parks, and national defense, are available to everyone and are paid for largely through taxes.',
-        fb='Public roads are funded by taxes and open to all.', sub='Public goods'),
+      q('Economists define a public good as something that one person\'s use does not use up and that people cannot easily be kept from using. Which is the clearest example?', 'National defense',
+        [('A private gym membership', 'People can be excluded'), ('A restaurant meal', 'Used up by the person who eats it'), ('A streaming subscription', 'People can be excluded')],
+        intro='Taxes pay for many public services. In economics, a "public good" is nonrival (one person\'s use does not reduce another\'s) and nonexcludable (hard to keep people from using it). National defense is a classic example. Roads are tax-funded public services, but they can get crowded or charge tolls, so they are not always pure public goods.',
+        fb='National defense protects everyone at once and cannot exclude anyone.', sub='Public goods'),
       q('Unemployment insurance pays 50% of Rosa\'s $800 weekly wage, up to a $600 weekly maximum. What does she receive?', '$400',
         [('$600', 'Uses the maximum'), ('$800', 'Uses full pay'), ('$1,400', 'Adds')],
         intro='Unemployment insurance, run by states, replaces part of wages for eligible workers who lose jobs through no fault of their own. Benefit formulas and maximums differ by state and year.',

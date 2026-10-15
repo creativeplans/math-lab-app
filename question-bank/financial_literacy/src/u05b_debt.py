@@ -155,10 +155,10 @@ S(33, 'Debt-to-income and repayment strategies', 'Calculate debt-to-income ratio
   ],
   go=[
     deeper('Avalanche or snowball in practice', [
-      q('Lee has $300 a month for debts beyond minimums. Debts: $500 at 22%, $2,000 at 22%, $800 at 10%. Which method choice is the same under both avalanche and snowball for the first target?', 'Both pay the $500 debt at 22% first',
+      q('Lee has $300 a month for debts beyond minimums. Debts: $500 at 22%, $2,000 at 22%, $800 at 10%. His avalanche method breaks ties in rate by choosing the smaller balance. Which first target is the same under both avalanche and snowball?', 'Both pay the $500 debt at 22% first',
         [('Both pay the $2,000 debt at 22% first', 'Not smallest, ties on APR'), ('Both pay the $800 debt first', 'Not highest APR'), ('They disagree on every debt', 'Misses the overlap')],
-        intro='Sometimes the highest-rate debt is also the smallest balance, so both methods choose the same first target.',
-        fb='The $500 debt is the smallest AND tied for the highest rate.', sub='When methods agree'),
+        intro='Avalanche targets the highest rate first; snowball targets the smallest balance first. Sometimes the highest-rate debt is also the smallest, so both choose the same first target.',
+        fb='The $500 debt is the smallest AND tied for the highest rate; with ties broken by smaller balance, both methods start there.', sub='When methods agree'),
       q('Which reason might lead someone to choose the snowball method even though it can cost more interest?', 'Paying off small debts quickly keeps them motivated',
         [('It always saves the most interest', 'Confuses snowball with avalanche'), ('Lenders charge lower rates to people who use it', 'Believes payoff order changes lender rates'), ('It lowers the interest rates on the other debts automatically', 'Believes paying one debt changes others\' rates')],
         intro='Research on behavior suggests quick wins can help people stick with a plan. The best method is one you will actually follow.',
