@@ -37,7 +37,7 @@ S(98, 'Identity theft: prevention and recovery', 'Recognize signs of identity th
   back=[
     concept('Personal information and why thieves want it', 'Protecting identity starts with knowing which information is valuable.', [
       q('Which information is most valuable to an identity thief?', 'A Social Security number',
-        [('A favorite movie', 'Not identifying'), ('A shoe size', 'Not identifying'), ('A school mascot', 'Not identifying')],
+        [('A favorite movie', 'Not identifying'), ('A shoe size', 'Not identifying'), ('The name of a school mascot', 'Not identifying')],
         fb='SSNs can open accounts and file taxes in your name.', sub='Sensitive information'),
       q('Where should a Social Security card usually be kept?', 'Somewhere safe at home',
         [('In a phone case', 'Easy to lose'), ('Taped inside a car', 'Easy to steal'), ('In a backpack every day', 'Easy to lose')],
@@ -49,7 +49,7 @@ S(98, 'Identity theft: prevention and recovery', 'Recognize signs of identity th
         [('1', 'Undercounts'), ('5', 'Overcounts'), ('50', 'Confuses with states')],
         fb='Equifax, Experian, and TransUnion.', calc=3, sub='Credit bureaus'),
       q('How can Rosa spot an account she did not open?', 'Review her free credit reports',
-        [('Check her social media likes', 'Unrelated'), ('Read her school schedule', 'Unrelated'), ('Count her cash', 'Unrelated')],
+        [('Check the likes on her social media posts', 'Unrelated'), ('Read her school schedule', 'Unrelated'), ('Count her cash', 'Unrelated')],
         fb='Credit reports list accounts in your name.', sub='Monitoring'),
     ]),
     math('Solve multistep problems with rational numbers', 'Losses and liability limits compare amounts step by step.', 'grade_7', 29),
@@ -110,7 +110,7 @@ S(99, 'Recognizing and avoiding scams', 'Identify common scams and their warning
         [('A wire transfer', 'Hard to reverse'), ('Cryptocurrency', 'Hard to reverse'), ('A gift card', 'Like cash')],
         fb='Credit cards have federal dispute rights and liability limits.', sub='Protected payments'),
       q('"Act now or lose this offer!" is an example of…', 'Pressure to act quickly',
-        [('Good customer service', 'Misreads pressure'), ('A legal requirement', 'Untrue'), ('A refund policy', 'Unrelated')],
+        [('Good, helpful customer service', 'Misreads pressure'), ('A legal requirement', 'Untrue'), ('A refund policy', 'Unrelated')],
         fb='Urgency pushes victims to skip checking.', sub='Pressure tactics'),
       q('A check for $1,500 pays a $300 item. How much is the overpayment?', '$1,200',
         [('$1,800', 'Adds'), ('$300', 'Gives the price'), ('$1,500', 'Gives the check amount')],
@@ -170,13 +170,13 @@ S(100, 'Consumer rights and where to get help', 'Use federal and state consumer 
   back=[
     concept('What consumer protection laws do', 'Each law protects a different kind of transaction.', [
       q('Which law limits harassment by debt collectors?', 'The Fair Debt Collection Practices Act',
-        [('The Fair Labor Standards Act', 'Wages'), ('The Clean Air Act', 'Environment'), ('The Affordable Care Act', 'Health')],
+        [('The Fair Labor Standards Act (minimum wage)', 'Wages'), ('The Clean Air Act', 'Environment'), ('The Affordable Care Act', 'Health')],
         fb='The FDCPA governs debt collectors.', sub='FDCPA'),
       q('Which law gives the right to dispute errors on a credit report?', 'The Fair Credit Reporting Act',
-        [('The Truth in Lending Act', 'Loan disclosures'), ('The Cooling-Off Rule', 'Door-to-door sales'), ('The Fair Labor Standards Act', 'Wages')],
+        [('The Truth in Lending Act', 'Loan disclosures'), ('The Cooling-Off Rule', 'Door-to-door sales'), ('The Fair Labor Standards Act of 1938', 'Wages')],
         fb='The FCRA covers credit reports.', sub='FCRA'),
       q('Which agency collects reports about scams?', 'The Federal Trade Commission',
-        [('The Federal Reserve', 'Monetary policy'), ('NASA', 'Space'), ('The National Park Service', 'Parks')],
+        [('The Federal Reserve', 'Monetary policy'), ('NASA', 'Space'), ('The National Park Service office', 'Parks')],
         fb='The FTC collects fraud reports.', sub='FTC'),
       q('Under federal law, what is the most a person can owe for unauthorized credit card use?', '$50',
         [('$500', 'Debit rule'), ('$5,000', 'Invents a limit'), ('Unlimited', 'Ignores the law')],
@@ -190,7 +190,7 @@ S(100, 'Consumer rights and where to get help', 'Use federal and state consumer 
   go=[
     deeper('Using your rights', [
       q('A credit card statement shows a $120 charge for an item never delivered. Under the Fair Credit Billing Act, how long does Rosa have to dispute it in writing?', '60 days after the statement',
-        [('6 days after the purchase', 'Too short'), ('6 years after the purchase', 'Too long'), ('Only before the item ships', 'Misreads the rule')],
+        [('6 days after the purchase', 'Too short'), ('6 years after the purchase', 'Too long'), ('Only before the seller ships the item', 'Misreads the rule')],
         intro='The Fair Credit Billing Act lets you dispute billing errors, including goods not delivered, in writing within 60 days after the statement with the error was sent.',
         fb='Dispute in writing within 60 days of the statement.', calc=60, sub='Billing disputes', eff='FCBA as of 2026'),
       q('Within how many days of first contact can Rosa dispute a debt in writing and make the collector verify it?', '30',
@@ -204,7 +204,7 @@ S(100, 'Consumer rights and where to get help', 'Use federal and state consumer 
         [('The Department of Transportation', 'Roads'), ('The State Police only', 'Not first stop'), ('The Board of Education', 'Schools')],
         fb='The Division of Consumer Affairs handles consumer complaints in New Jersey.', sub='State help'),
       q('Why keep receipts and confirmation emails?', 'They prove what was bought and promised',
-        [('Stores require them for every visit', 'Untrue'), ('They raise credit scores', 'Untrue'), ('They lower sales tax', 'Untrue')],
+        [('Stores require them to be shown at every visit', 'Untrue'), ('They raise credit scores', 'Untrue'), ('They lower sales tax', 'Untrue')],
         fb='Records support disputes and returns.', sub='Keeping records', how=True),
     ]),
   ],
@@ -215,7 +215,7 @@ S(100, 'Consumer rights and where to get help', 'Use federal and state consumer 
 S(101, 'Digital security for money', 'Protect financial accounts online with strong passwords, multifactor authentication, and safe habits',
   main=[
     q('Which password is strongest?', 'A long, random phrase used only for one account',
-      [('Rosa2008 used on every site', 'Short, guessable, and reused'), ('The word "password" with a 1 at the end', 'Very common'), ('Her pet\'s name and birthday', 'Easy to guess from social media')],
+      [('Rosa2008 used on every site', 'Short, guessable, and reused'), ('The word "password" with the number 1 added at the end', 'Very common'), ('Her pet\'s name and birthday', 'Easy to guess from social media')],
       intro='Strong passwords are long, unique to each account, and hard to guess. A password manager can create and store them.',
       fb='Length plus uniqueness makes passwords strong.', sub='Strong passwords'),
     q('What does multifactor authentication (MFA) add?', 'A second proof of identity',
@@ -236,7 +236,7 @@ S(101, 'Digital security for money', 'Protect financial accounts online with str
   back=[
     concept('Everyday account security', 'Security habits matter before any tricky situation arises.', [
       q('Why should each account have a different password?', 'One leak cannot unlock everything',
-        [('Websites forbid reuse by law', 'Untrue'), ('Different passwords are shorter', 'Untrue'), ('It raises interest rates', 'Unrelated')],
+        [('Websites forbid reuse by law', 'Untrue'), ('Different passwords are always shorter to type', 'Untrue'), ('It raises interest rates', 'Unrelated')],
         fb='Unique passwords limit the damage of a breach.', sub='Unique passwords'),
       q('What is phishing?', 'A fake message that tricks you into sharing information',
         [('A safe way to reset passwords', 'Untrue'), ('A type of savings account', 'Unrelated'), ('A bank\'s official alert', 'Untrue')],
@@ -248,7 +248,7 @@ S(101, 'Digital security for money', 'Protect financial accounts online with str
         [('60', 'Multiplies 10 by 6'), ('100,000', 'Uses five factors'), ('10,000,000', 'Uses seven factors')],
         fb='10^6 = 1,000,000.', calc=1000000, sub='Powers of ten'),
       q('Which alert helps Rosa notice fraud fast?', 'A text for every card purchase',
-        [('A weekly weather alert', 'Unrelated'), ('A game notification', 'Unrelated'), ('A music playlist update', 'Unrelated')],
+        [('A weekly weather alert', 'Unrelated'), ('A game notification', 'Unrelated'), ('A music playlist update each week', 'Unrelated')],
         fb='Transaction alerts flag charges right away.', sub='Account alerts', how=True),
     ]),
     math('Evaluate numerical expressions with whole-number exponents', 'Counting possible passwords uses powers.', 'grade_6', 40),
@@ -263,7 +263,7 @@ S(101, 'Digital security for money', 'Protect financial accounts online with str
         intro='With your number, a thief can receive text codes. Add a carrier PIN and prefer app-based or key-based MFA.',
         fb='SIM swaps hijack phone numbers to steal codes.', sub='SIM swap'),
       q('Why is a password manager helpful?', 'It creates and stores unique strong passwords',
-        [('It shares passwords with friends', 'Untrue'), ('It removes the need for any password', 'Untrue'), ('It posts passwords online for backup', 'Unsafe')],
+        [('It shares passwords with friends', 'Untrue'), ('It removes the need for any password', 'Untrue'), ('It posts your passwords online as a backup copy', 'Unsafe')],
         fb='Managers make unique strong passwords practical.', sub='Password managers', how=True),
       q('Which is safest to post publicly?', 'Her favorite book',
         [('Her full birth date and address', 'Used for identity theft'), ('A photo of her debit card', 'Exposes the number'), ('Her bank\'s security question answers', 'Unlocks accounts')],
