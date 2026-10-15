@@ -86,6 +86,11 @@ class Page:
 def header(c, left, right, pageno, title):
     c.setFillColor(MUTED)
     c.setFont(F, 8.5)
+    room = PW - MR - ML - c.stringWidth(right, F, 8.5) - 12
+    if c.stringWidth(left, F, 8.5) > room:  # shorten a long set title so it never runs into the question ID
+        while c.stringWidth(left + '…', F, 8.5) > room:
+            left = left[:-1]
+        left = left.rstrip() + '…'
     c.drawString(ML, PH - 32, left)
     c.drawRightString(PW - MR, PH - 32, right)
     c.setStrokeColor(LINE)

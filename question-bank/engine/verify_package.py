@@ -68,6 +68,11 @@ def verify(path):
         if [x['section_code'] for x in doc['sections']] != [x['section_code'] for x in s['sections']]:
             errs.append('%s: sections differ from index' % s['file'])
         for isec, sec in zip(s['sections'], doc['sections']):
+            if sec.get('kind') == 'math':  # a link to another course's skill; it carries no questions
+                if sec.get('questions') or 'ref' not in sec or isec.get('ref') != sec['ref']:
+                    errs.append('%s %s: math link must have a ref (matching the index) and no questions'
+                                % (s['file'], sec['section_code']))
+                continue
             qids = [q['id'] for q in sec['questions']]
             if qids != isec['question_ids']:
                 errs.append('%s %s: question IDs differ from index' % (s['file'], sec['section_code']))
