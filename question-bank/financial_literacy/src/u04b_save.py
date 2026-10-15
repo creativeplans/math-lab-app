@@ -144,7 +144,7 @@ S(25, 'Compounding frequency and APY', 'Calculate balances with monthly, quarter
         [('Monthly', 'Reverses frequency'), ('They are the same', 'Ignores frequency'), ('Neither compounds', 'Misunderstands compounding')],
         fb='Daily = 365 times per year; monthly = 12.', sub='Frequency'),
     ]),
-    math('Use the properties of exponents to transform exponential expressions', 'Rewriting an annual rate as a monthly factor uses exponent properties.', 'algebra_1', 16),
+    math('Evaluate numerical expressions with whole-number exponents', 'Compound interest formulas raise a growth factor to a power.', 'grade_6', 40),
     math('Interpret growth and decay rates using exponent properties', 'APY compares yearly growth factors from different compounding periods.', 'algebra_1', 46),
     math('Divide multi-digit decimals', 'Periodic rates divide the annual rate by the number of periods.', 'grade_6', 20),
   ],
@@ -242,8 +242,8 @@ S(26, 'Time, doubling, and the Rule of 72', 'Estimate doubling time with the Rul
         [('Growth is fastest in the first year', 'Reverses the pattern'), ('Growth is the same number of dollars every year', 'Describes simple interest'), ('Growth stops after 10 years', 'Invents a limit')],
         fb='Each year adds a percent of a larger balance, so dollar growth speeds up.', sub='Accelerating growth'),
     ]),
-    math('Write arithmetic and geometric sequences', 'Repeated doubling is a geometric sequence.', 'algebra_1', 50),
-    math('Observe that exponential growth eventually exceeds linear growth', 'Compound growth eventually outpaces steady additions.', 'algebra_1', 57),
+    math('Divide multi-digit decimals', 'The Rule of 72 divides 72 by the rate (or by the years).', 'grade_6', 20),
+    math('Evaluate numerical expressions with whole-number exponents', 'Repeated doubling is a power of 2.', 'grade_6', 40),
   ],
   go=[
     deeper('Starting early', [

@@ -212,7 +212,7 @@ S(45, 'Opening and funding a brokerage account', 'Complete the steps to open and
     q('Ana links her checking account and transfers $500 to her new brokerage account. The broker holds new deposits as cash in a bank sweep. What has she done?', 'Funded the account; she has not bought any investment yet',
       [('Bought $500 of stock automatically', 'Confuses funding with buying'), ('Bought a $500 savings bond', 'Confuses funding with buying'), ('Paid a $500 fee to open the account', 'Confuses funding with a fee')],
       intro='Funding means moving money into the account, often by an electronic transfer from a bank. After funding, the money sits as cash until you place an order to buy an investment.',
-      fb='Moving money in is funding; buying requires a separate order.', sub='Funding vs buying', how=True),
+      fb='Moving money in is funding; buying requires a separate order.', sub='Funding vs buying'),
     q('Ana\'s brokerage account shows $500 in uninvested cash (a bank sweep) and $0 in investments. What should she do to invest it?', 'Choose an investment and place a buy order',
       [('Nothing; the cash is invested automatically', 'Thinks funding invests money'), ('Transfer the money back to checking', 'Undoes funding'), ('Call the FDIC to activate investing', 'Confuses agencies')],
       intro='Investing requires choosing a specific investment (such as a fund) and placing an order. Many accounts leave deposited money in cash until you do.',

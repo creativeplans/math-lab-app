@@ -151,7 +151,7 @@ S(64, 'Tax forms: W-2, 1099s, and Form 1040', 'Identify the tax forms workers re
       q('Ana\'s W-2 is correct. It shows Box 1 wages $28,500 and Box 3 Social Security wages $30,000, and she made $1,500 of traditional (pre-tax) 401(k) contributions. Why is Box 1 lower?', 'Pre-tax 401(k) contributions reduce Box 1 but not Box 3',
         [('Box 1 leaves out her overtime pay', 'Invents a rule about overtime'), ('Box 3 includes her tips only', 'Misreads Box 3'), ('Box 1 is always half of Box 3', 'Misreads')],
         intro='Box 1 shows wages subject to federal income tax. Box 3 shows wages subject to Social Security tax. Traditional 401(k) contributions lower Box 1 but not Box 3.',
-        fb='$30,000 − $1,500 pre-tax 401(k) = $28,500 in Box 1.', sub='Box 1 vs Box 3', how=True),
+        fb='$30,000 − $1,500 pre-tax 401(k) = $28,500 in Box 1.', sub='Box 1 vs Box 3'),
       q('Box 3 Social Security wages are $30,000. What should Box 4 (Social Security tax withheld at 6.2%) show?', '$1,860',
         [('$186', 'Uses 0.62%'), ('$435', 'Uses the Medicare rate'), ('$4,590', 'Uses 15.3%')],
         intro='Box 4 shows the Social Security tax withheld: Box 3 wages × 6.2%.',

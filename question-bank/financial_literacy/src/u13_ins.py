@@ -103,7 +103,7 @@ S(87, 'Health insurance', 'Calculate costs under a health plan and compare plans
     q('Why does staying in network usually matter?', 'In-network care costs the patient less',
       [('Out-of-network doctors are not licensed to treat patients', 'Confuses network with licensing'), ('In-network care never needs any deductible', 'Deductibles still apply'), ('Network rules only matter for dental care', 'Applies to medical plans too')],
       intro='Insurers negotiate lower prices with in-network providers. Out-of-network care may cost much more or not be covered.',
-      fb='Network providers have negotiated rates, so patients pay less.', sub='Networks', how=True),
+      fb='Network providers have negotiated rates, so patients pay less.', sub='Networks'),
   ],
   back=[
     concept('Health plan vocabulary', 'Plan costs depend on knowing which term means what.', [

@@ -75,7 +75,7 @@ S(59, 'Opening a Roth IRA', 'Choose a provider and complete the steps to open a 
       q('Why name a beneficiary on a Roth IRA?', 'It says who receives the account if the owner dies',
         [('It lets the beneficiary withdraw money from it right now', 'Confuses a beneficiary with an owner'), ('It doubles the contribution limit', 'Believes beneficiaries change limits'), ('It is required to buy investments', 'Invents a requirement')],
         intro='A beneficiary designation tells the provider who inherits the account. It usually overrides a will for that account.',
-        fb='Beneficiary designations direct who inherits the account.', sub='Beneficiaries', how=True),
+        fb='Beneficiary designations direct who inherits the account.', sub='Beneficiaries'),
     ]),
     deeper('Keeping the account safe and organized', [
       q('Which security step is MOST important for an online Roth IRA account?', 'Turning on multi-factor authentication',
@@ -143,7 +143,7 @@ S(60, 'Contributing to and investing inside an IRA', 'Distinguish contributing f
       q('Some IRAs let you set "automatic investing" for new contributions. What does it do?', 'Buys chosen funds automatically when money arrives',
         [('Withdraws money automatically', 'Reverses'), ('Raises the contribution limit', 'Believes features change limits'), ('Moves money to checking', 'Reverses')],
         intro='Automatic investing directs each contribution into chosen funds so money does not sit in cash.',
-        fb='It invests new money automatically in your chosen funds.', sub='Automatic investing', how=True),
+        fb='It invests new money automatically in your chosen funds.', sub='Automatic investing'),
       q('What is a common, costly IRA mistake?', 'Contributing for years but never investing the cash',
         [('Choosing a low-cost index fund', 'Sensible choice'), ('Checking the account balance occasionally on her phone', 'Sensible'), ('Naming a beneficiary', 'Sensible')],
         fb='Uninvested cash misses years of potential growth.', sub='Common mistake'),

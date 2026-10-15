@@ -200,7 +200,7 @@ S(10, 'Reading a pay stub', 'Read a pay stub and calculate deductions and net pa
     q('Which amount on a pay stub is the money actually deposited into the worker\'s bank account?', 'Net pay',
       [('Gross pay', 'Confuses gross with net'), ('Year-to-date gross', 'Confuses this period with the year total'), ('Total deductions', 'Confuses money taken out with money received')],
       intro='A pay stub (pay statement) shows: gross pay; deductions, which are amounts taken out for taxes, retirement, insurance, and more; net pay, which is gross pay minus deductions; and year-to-date (YTD) totals. Net pay is your take-home pay.',
-      fb='Net pay = gross pay − deductions, and it is the amount deposited.', sub='Net pay', how=True),
+      fb='Net pay = gross pay − deductions, and it is the amount deposited.', sub='Net pay'),
     q('Gabriel\'s gross pay is $1,200.00. The Social Security tax rate for employees is 6.2%. How much Social Security tax is withheld?', '$74.40',
       [('$7.44', 'Uses 0.62%'), ('$744.00', 'Uses 62%'), ('$17.40', 'Uses the Medicare rate')],
       intro='FICA taxes fund Social Security and Medicare. Employees pay 6.2% of wages for Social Security (up to a yearly wage limit) and 1.45% for Medicare. The employer pays a matching amount.',

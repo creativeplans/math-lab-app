@@ -173,7 +173,7 @@ S(29, 'APR and periodic interest rates', 'Interpret APR and convert it to monthl
       q('A Truth in Lending disclosure shows: Amount financed $8,000; Finance charge $1,620; Total of payments $9,620. What is the finance charge?', 'The dollar cost of the credit: $1,620',
         [('The full amount of money borrowed: $8,000', 'Confuses with the amount financed'), ('The total paid: $9,620', 'Confuses with total of payments'), ('The monthly payment', 'Not shown here')],
         intro='The Truth in Lending Act requires lenders to show key terms before you sign: the APR, the finance charge (the dollar cost of credit), the amount financed, and the total of payments.',
-        fb='The finance charge is the total dollar cost of credit.', calc=1620, sub='Finance charge', how=True),
+        fb='The finance charge is the total dollar cost of credit.', calc=1620, sub='Finance charge'),
       q('A loan disclosure shows: Amount financed $8,000; Total of payments $9,620; 48 monthly payments. What is each payment (nearest cent)?', '$200.42',
         [('$166.67', 'Divides the amount financed'), ('$33.75', 'Divides the finance charge'), ('$240.50', 'Uses 40 payments')],
         intro='When payments are equal, each payment = total of payments ÷ number of payments.',

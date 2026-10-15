@@ -192,7 +192,7 @@ S(110, 'Your first full-time job: a money plan', 'Set priorities for a first pay
         fb='$1,600 ÷ 2 = $800 a year; ÷ 12 = $66.67.', calc=66.67, sub='Saving raises'),
       q('Nia turns on a 401(k) feature that automatically raises her contribution rate by one percentage point of salary each year. What is this called?', 'Automatic escalation',
         [('Lifestyle creep', 'Confuses rising spending with rising saving'), ('Dollar-cost averaging', 'Confuses with investing on a schedule'), ('A catch-up contribution', 'Confuses with extra contributions at 50+')],
-        fb='Automatic escalation raises the contribution rate on a set schedule.', sub='Auto-escalation', how=True),
+        fb='Automatic escalation raises the contribution rate on a set schedule.', sub='Auto-escalation'),
       q('If Nia leaves her job, what can she usually do with her 401(k)?', 'Roll it into an IRA or new plan',
         [('Lose it all automatically', 'Her contributions are hers'), ('Cash it out with no tax', 'Taxes and penalties may apply'), ('Give it back to the employer when she leaves', 'Misreads ownership')],
         intro='A rollover moves retirement money without taxes when done correctly. Unvested employer match money may be forfeited.',

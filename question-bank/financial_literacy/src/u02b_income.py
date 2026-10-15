@@ -177,7 +177,7 @@ S(13, 'Gig work and independent contractors', 'Compare employee and independent 
         fb='Without withholding, estimated payments, or a safe harbor, she may owe an underpayment penalty.', sub='Estimated taxes'),
       q('Mia sets aside 25% of each week\'s $630 net in a separate savings account. How much is set aside over a 13-week quarter?', '$2,047.50',
         [('$157.50', 'Gives one week'), ('$8,190.00', 'Gives total net for the quarter'), ('$630.00', 'Gives one week\'s net')],
-        fb='$630 × 0.25 = $157.50 per week; × 13 = $2,047.50.', calc=630 * 0.25 * 13, sub='Setting aside for taxes', how=True),
+        fb='$630 × 0.25 = $157.50 per week; × 13 = $2,047.50.', calc=630 * 0.25 * 13, sub='Setting aside for taxes'),
       q('Why keep gig tax money in a separate account?', 'So it is not spent before taxes are due',
         [('Because the IRS requires a separate account by law', 'Invents a legal rule'), ('Because separate accounts earn no interest', 'Unrelated and untrue'), ('Because keeping it separate lowers the tax owed', 'Thinks storage changes the tax')],
         fb='Separating tax money protects it from everyday spending.', sub='Tax savings habit', how=True),
@@ -229,7 +229,7 @@ S(14, 'Education, careers, and lifetime income', 'Evaluate how education, skills
         [('Buying a more expensive car', 'Consumer spending'), ('Switching to a new phone plan', 'Consumer choice'), ('Taking a weekend trip', 'Consumer choice')],
         fb='Certifications build human capital in demand.', sub='Raising earning power'),
     ]),
-    math('Write and solve systems of linear equations in context', 'Finding when a higher-paying path catches up uses two linear expressions for total earnings.', 'grade_8', 22),
+    math('Solve multistep problems with rational numbers', 'Comparing career paths multiplies yearly pay by years and subtracts totals.', 'grade_7', 29),
     math('Multiply multi-digit decimals', 'Multi-year earnings multiply yearly pay by years.', 'grade_6', 19),
   ],
   go=[

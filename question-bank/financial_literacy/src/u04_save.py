@@ -77,7 +77,7 @@ S(21, 'Setting savings goals', 'Set specific savings goals and calculate the tim
         fb='$150 × 30 = $4,500.', calc=150 * 30, sub='Long-term goal'),
       q('Why keep separate "buckets" or accounts for different goals?', 'It shows progress on each goal and avoids spending one goal\'s money on another',
         [('Separate accounts always earn more interest', 'Invents a benefit'), ('Banks require one account per goal', 'Invents a rule'), ('It lowers taxes on savings', 'Invents a tax effect')],
-        fb='Labeling money by goal keeps plans clear.', sub='Buckets', how=True),
+        fb='Labeling money by goal keeps plans clear.', sub='Buckets'),
       q('Ray\'s goals, in priority order, are an emergency fund, a trip, and a car. He gets a $300 birthday gift. Which use matches his priorities?', 'Add it to the emergency fund first',
         [('Spend it all on wants right away', 'Ignores priorities'), ('Add it to the car goal only', 'Skips the top priority'), ('Leave it in his wallet for months', 'Unplanned')],
         fb='Unexpected money can speed up the highest-priority goal.', sub='Windfalls'),

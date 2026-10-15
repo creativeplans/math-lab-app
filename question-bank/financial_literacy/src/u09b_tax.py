@@ -54,7 +54,6 @@ S(67, 'Marginal and effective tax rates', 'Calculate income tax with marginal br
         [('The average rate paid across the whole income', 'Describes effective rate'), ('The lowest rate in the system', 'Misreads'), ('A rate set by the taxpayer', 'Misreads')],
         fb='Marginal = the rate on the last or next dollar.', sub='Marginal'),
     ]),
-    math('Graph piecewise-defined and step functions', 'Bracket tax is a piecewise-defined function of income.', 'algebra_1', 75),
     math('Find a percent of a quantity', 'Each bracket\'s tax is a percent of the income in it.', 'grade_6', 10),
     math('Solve multistep problems with rational numbers', 'Bracket calculations combine several subtraction and percent steps.', 'grade_7', 29),
   ],

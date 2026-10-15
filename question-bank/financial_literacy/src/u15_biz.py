@@ -155,7 +155,7 @@ S(96, 'Self-employment taxes', 'Estimate self-employment and income taxes for a 
         fb='Underpaying estimated taxes can lead to penalties.', sub='Penalties'),
       q('What is the main reason to track income and expenses all year?', 'To report accurately and claim deductions',
         [('To avoid ever paying tax', 'Illegal'), ('Because the IRS requires daily income reports', 'Invents a rule'), ('To raise his business credit score', 'Confuses records with credit')],
-        fb='Good records support accurate returns and deductions.', sub='Records', how=True),
+        fb='Good records support accurate returns and deductions.', sub='Records'),
     ]),
   ],
   nat=('Earning Income', 'Estimate taxes on self-employment income and plan estimated payments'), nj=['PB', 'CFR'],

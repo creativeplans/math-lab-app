@@ -261,7 +261,7 @@ S(20, 'Spending decisions and behavioral biases', 'Use a decision process and re
         fb='Aligning spending with personal priorities, not others\' expectations, improves satisfaction.', sub='Values'),
       q('Tara writes her top three money priorities and checks big purchases against them. What does this help with?', 'Making choices that match her goals',
         [('Raising her credit limit so priorities are easier to afford', 'Thinks more credit makes goals easier'), ('Avoiding all spending', 'Overstates'), ('Spending first and checking priorities later', 'Reverses the order of planning')],
-        fb='Written priorities act as criteria for decisions.', sub='Using priorities', how=True),
+        fb='Written priorities act as criteria for decisions.', sub='Using priorities'),
     ]),
   ],
   nat=('Spending', 'Influences on spending decisions: behavioral biases, marketing, and social pressure'), nj=['FP', 'PB'],
