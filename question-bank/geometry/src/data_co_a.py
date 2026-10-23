@@ -918,7 +918,7 @@ SETS += [
              key='Reflect across the x-axis, then translate 3 units left.',
              note='Any valid sequence (for example, translate 3 units left, then reflect across the x-axis). The orientation is reversed, '
                   'so the sequence must include a reflection.'),
-          sa('Describe a sequence of rigid transformations that carries triangle ABC onto triangle A′B′C′.', 'Sequence:',
+          sa('On the grid, triangle A′B′C′ is congruent to triangle ABC. Describe a sequence of rigid transformations that carries ABC onto A′B′C′, with A → A′, B → B′, C → C′.', 'Sequence:',
              fig=grid_fig({'A': (2, 1), 'B': (5, 1), 'C': (2, 3), 'D': (-1, 3), 'E': (-1, 6), 'F': (-3, 3)},
                           [('poly', ['A', 'B', 'C']), ('poly', ['D', 'E', 'F'])], lo=-6, hi=6, names={'D': 'A′', 'E': 'B′', 'F': 'C′'},
                           desc='Grid from -6 to 6. Triangle ABC: A(2, 1), B(5, 1), C(2, 3). Triangle A′B′C′: A′(-1, 3), B′(-1, 6), C′(-3, 3).'),
