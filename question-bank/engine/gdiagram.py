@@ -260,14 +260,30 @@ def fig_gd(c, f, x, y, w, h, s):
             L = math.hypot(dx, dy)
             ux, uy = (dx / L, dy / L) if L > 1e-9 else (0.7, 0.7)
         tw = R.rich_w(text, R.FB, fs)
-        R.draw_label(c, text, px + ux * (9 + tw * 0.5), py + uy * (11 + fs * 0.1), fs, R.FB, color=R.POINT)
+        lx, ly = px + ux * (9 + tw * 0.5), py + uy * (11 + fs * 0.1)
+        if f.get('grid'):
+            _halo(c, lx - tw / 2, ly, tw, fs)
+        R.draw_label(c, text, lx, ly, fs, R.FB, color=R.POINT)
     for it in f.get('items', []):
         if it[0] == 'text':
             o = _opts(it, 3)
             px, py = P(it[1])
-            R.draw_label(c, it[2], px, py, fs * o.get('size', 1), R.FB if o.get('bold') else R.F, anchor=o.get('anchor', 'c'))
+            size = fs * o.get('size', 1)
+            if f.get('grid'):
+                tw = R.rich_w(it[2], R.F, size)
+                anc = o.get('anchor', 'c')
+                _halo(c, px - (tw / 2 if anc == 'c' else tw if anc == 'r' else 0), py, tw, size)
+            R.draw_label(c, it[2], px, py, size, R.FB if o.get('bold') else R.F, anchor=o.get('anchor', 'c'))
     if note:
         R.draw_label(c, note, x + w / 2, y + fs * 0.6, fs * 0.85, R.F, color=R.MUTED)
+
+
+def _halo(c, x0, y, w, size):
+    """White box behind a label so grid lines do not run through it."""
+    c.saveState()
+    c.setFillColor(R.white)
+    c.rect(x0 - 2, y - size * 0.55, w + 4, size * 1.1, fill=1, stroke=0)
+    c.restoreState()
 
 
 def _style(c, o, s):
