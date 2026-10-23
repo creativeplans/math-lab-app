@@ -331,6 +331,35 @@ COURSE_RELATIONS = dict(
     nearest_related='true marks a forward branch that no later-course standard directly continues; it uses the nearest related standard')
 
 
+GEO_RELATIONS = dict(
+    main='the Geometry skill the set is built around (strand: core, or advanced extension (+))',
+    backward='a prerequisite obstacle to check when a student misses MAIN questions: a Grade K-8 or Algebra I standard, or '
+             'the MAIN standard of an earlier Geometry set; branch.alignment is exact or supporting',
+    forward1='the next demand after MAIN; branch.progression is same-course deepening, cross-standard extension, or '
+             'later-course extension, and branch.new_demand states what it adds',
+    forward2='a further demand; branch.builds_on says how it builds on FORWARD 1 (or why it is a separate extension of MAIN)',
+    nearest_related='true marks a forward branch that no standard directly continues; it uses the nearest related standard')
+BRANCH_MAP_DOC = ('Teacher metadata for every branch, by set: backward branches give the obstacle, why it blocks MAIN, the '
+                  'evidence the five questions collect (rationale) and whether the standard is exact or supporting; forward '
+                  'branches give the progression type, direct or nearest related, the new demand, and (FORWARD 2) how it '
+                  'builds on FORWARD 1. The same fields are in each set file under sections[].branch.')
+
+
+def branch_meta(st, key, std, nearest):
+    """Geometry: the exported teacher metadata of one section."""
+    import hs_courses
+    b = build.branch_of(st, key)
+    if b is None:
+        return dict(kind='main', strand=st['strand'], target_skill=st['target'])
+    m = b.get('meta', {})
+    if key.startswith('BACKWARD'):
+        return dict(kind='backward', alignment=m['align'], rationale=m['why'],
+                    source=('Grade %s' % std.split('.')[0] if not std.startswith('HS') else hs_courses.course_of(std)))
+    return dict(kind='forward', progression=m['prog'], connection='nearest related' if nearest else 'direct',
+                new_demand=m['demand'], course=hs_courses.course_of(std),
+                **(dict(builds_on=m['builds']) if m.get('builds') else {}))
+
+
 def hs_level(key, std=None):
     if qb.COURSE:
         import hs_courses
@@ -407,6 +436,9 @@ def export(out_dir):
 
     index_sets = []
     nfig = 0
+    geo = bool(qb.COURSE and qb.COURSE.get('rules') == 'geometry')
+    snaps = {}
+    branch_map = []
     for st in build.all_sets():
         sid = 'S%d' % st['num']
         fname = 'sets/S%02d.json' % st['num']
@@ -442,6 +474,9 @@ def export(out_dir):
                     drawing_answer=r['drawing_answer'], required_method=r['required_method'],
                     grading_note=r['grading_note'], figure=None, page=r['page'],
                     revision=None)
+                if geo:
+                    rec.update({k: r[k] for k in ('strand', 'set_target', 'target_skill', 'alignment_type', 'course_level',
+                                                  'question_page', 'answer_key_page')})
                 if qd.get('fig'):
                     base = os.path.join(out_dir, 'assets', qid)
                     write_figure(qd['fig'], base)
@@ -461,16 +496,26 @@ def export(out_dir):
                 rev = tracker.check(qid, revisions.snapshot(dict(qd, fig=jsonable(qd['fig']) if qd.get('fig') else None),
                                                             snap, std, name, nearest))
                 rec['revision'] = rev['status']
+                snaps[qid] = revisions.snapshot(dict(qd, fig=jsonable(qd['fig']) if qd.get('fig') else None), snap, std, name, nearest)
                 qrecs.append(rec)
             sections.append(dict(section=key, section_code=code, relation=RELATION.get(code, 'backward'),
                                  skill=name, standard=std, nearest_related=bool(nearest),
-                                 **(dict(nearest_connection=nearest) if isinstance(nearest, str) else {}), questions=qrecs))
+                                 **(dict(nearest_connection=nearest) if isinstance(nearest, str) else {}),
+                                 **(dict(branch=branch_meta(st, key, std, nearest)) if geo else {}), questions=qrecs))
         set_doc = dict(format_version=FORMAT_VERSION, collection=build.COLLECTION, grade=build.GRADE, set=st['num'], set_id=sid,
-                       standard=st['std'], title=st['title'], domain=st['domain'], sections=sections)
+                       standard=st['std'], title=st['title'], domain=st['domain'],
+                       **(dict(strand=st['strand'], target_skill=st['target'], covers=st['covers']) if geo else {}),
+                       sections=sections)
+        if geo:
+            branch_map.append(dict(set=st['num'], set_id=sid, standard=st['std'], strand=st['strand'], target_skill=st['target'],
+                                   covers=st['covers'], branches=[dict(section=s['section'], section_code=s['section_code'],
+                                                                       standard=s['standard'], skill=s['skill'], **s['branch'])
+                                                                  for s in sections if s['section_code'] != 'M']))
         with open(os.path.join(out_dir, fname), 'w', encoding='utf-8') as fh:
             json.dump(set_doc, fh, ensure_ascii=False, indent=1)
         index_sets.append(dict(
             set=st['num'], set_id=sid, file=fname, standard=st['std'], title=st['title'], domain=st['domain'],
+            **(dict(strand=st['strand'], target_skill=st['target']) if geo else {}),
             sections=[dict(section=s['section'], section_code=s['section_code'], relation=s['relation'],
                            skill=s['skill'], standard=s['standard'], nearest_related=s['nearest_related'],
                            **({'nearest_connection': s['nearest_connection']} if 'nearest_connection' in s else {}),
@@ -489,7 +534,7 @@ def export(out_dir):
                   % (build.GRADE, build.GRADE + 1, build.GRADE + 2, build.COLLECTION['id'],
                      build.GRADE + 1, build.GRADE + 2),
         revisions_file='revisions.json' if tracker.active else None,
-        relations=COURSE_RELATIONS if qb.COURSE else dict(main='the Grade %d skill the set is built around' % build.GRADE,
+        relations=GEO_RELATIONS if geo else COURSE_RELATIONS if qb.COURSE else dict(main='the Grade %d skill the set is built around' % build.GRADE,
                        backward='a prerequisite skill to check when a student misses MAIN questions',
                        forward1='the directly connected Grade %d skill' % (build.GRADE + 1),
                        forward2='the next connected Grade %d skill' % (build.GRADE + 2),
@@ -500,6 +545,14 @@ def export(out_dir):
         sets=index_sets)
     with open(os.path.join(out_dir, 'index.json'), 'w', encoding='utf-8') as fh:
         json.dump(index, fh, ensure_ascii=False, indent=1)
+    if geo:
+        with open(os.path.join(out_dir, 'BRANCH_MAP.json'), 'w', encoding='utf-8') as fh:
+            json.dump(dict(collection=build.COLLECTION, description=BRANCH_MAP_DOC, sets=branch_map), fh, ensure_ascii=False, indent=1)
+        if not tracker.active:  # first release: keep the snapshot later revisions are compared with
+            hist = os.path.join(build.GRADE_DIR, 'src', 'history')
+            os.makedirs(hist, exist_ok=True)
+            with open(os.path.join(hist, 'v%s_records.json' % build.COLLECTION['version'].split('.')[0]), 'w', encoding='utf-8') as fh:
+                json.dump(dict(version=build.COLLECTION['version'], questions=snaps), fh, ensure_ascii=False)
     rev_doc = tracker.document()
     if rev_doc:
         index['revision_summary'] = rev_doc['summary']
@@ -520,12 +573,47 @@ def export(out_dir):
             part.insert_pdf(doc, from_page=p * PDF_PART, to_page=min(len(doc), (p + 1) * PDF_PART) - 1)
             part.save(os.path.join(out_dir, 'pdf', '%s - Part %d of %s.pdf' % (build.name(), p + 1, kind)),
                       garbage=3, deflate=True)
-    for doc_name in ('CORRECTIONS.md', 'COVERAGE.md'):
+    if geo:
+        write_part_index(out_dir, paths, records)
+    for doc_name in ('CORRECTIONS.md', 'COVERAGE.md', 'VALIDATION.md', 'CHANGELOG.md'):
         if os.path.exists(os.path.join(build.GRADE_DIR, doc_name)):
             shutil.copy(os.path.join(build.GRADE_DIR, doc_name), os.path.join(out_dir, doc_name))
     write_readme(out_dir, index, npages)
     write_manifest(out_dir)
     return index
+
+
+def write_part_index(out_dir, paths, records):
+    """Geometry: pdf/PART_INDEX.md lists each part's page and ID range, after checking every part page against the full PDF."""
+    by_page = {}
+    for r in records:
+        by_page.setdefault(r['page'], []).append(r['id'])
+    L = ['# PDF parts: page and question ranges', '',
+         'Each part holds %d pages of the full PDF. Page numbers below are pages of the full PDF (the `page` field). Every page of '
+         'every part was compared with the same page of the full PDF (text and page size) when this index was written; '
+         'all match.' % PDF_PART, '']
+    for kind, src in (('questions', paths['questions']), ('answers', paths['key'])):
+        full = pymupdf.open(src)
+        parts = (len(full) + PDF_PART - 1) // PDF_PART
+        L += ['## %s' % ('Question Collection' if kind == 'questions' else 'Answer Key'), '',
+              '| File | Full-PDF pages | First question | Last question | Questions |', '|---|---|---|---|---:|']
+        total = 0
+        for p in range(parts):
+            name = '%s - Part %d of %s.pdf' % (build.name(), p + 1, kind)
+            part = pymupdf.open(os.path.join(out_dir, 'pdf', name))
+            lo = p * PDF_PART
+            hi = min(len(full), lo + PDF_PART)
+            assert len(part) == hi - lo, (name, len(part))
+            for i in range(len(part)):
+                a, b = part[i], full[lo + i]
+                assert a.get_text() == b.get_text() and a.rect == b.rect, (name, i)
+            ids = [q for pg in range(lo + 1, hi + 1) for q in by_page.get(pg, [])]
+            total += len(part)
+            L.append('| %s | %d-%d | %s | %s | %d |' % (name, lo + 1, hi, ids[0] if ids else '-', ids[-1] if ids else '-', len(ids)))
+        assert total == len(full)
+        L.append('')
+    with open(os.path.join(out_dir, 'pdf', 'PART_INDEX.md'), 'w', encoding='utf-8') as fh:
+        fh.write('\n'.join(L) + '\n')
 
 
 def write_manifest(out_dir):
@@ -626,8 +714,31 @@ what `grading_note` lists.
 '''.format(gname=build.name(), sets=index['set_count'], nq=index['question_count'], nfig=index['figure_count'],
            part=PDF_PART, ex=ex, cid=col['id'], ver=col['version'], revline=revline,
            levelrows=level_rows())
+    if qb.COURSE and qb.COURSE.get('rules') == 'geometry':
+        text += GEO_README
     with open(os.path.join(out_dir, 'README.md'), 'w', encoding='utf-8') as fh:
         fh.write(text)
+
+
+GEO_README = '''
+## Geometry additions
+
+| Path or field | Contents |
+|---|---|
+| `BRANCH_MAP.json` | Every set's MAIN target skill, the subskills it covers, and each branch's teacher metadata (also in each set file as `sections[].branch`). |
+| `VALIDATION.md` | The automatic checks run on this release and their results. |
+| `COVERAGE.md` | Every standard, every subskill (subpart or distinct demand) with its set and MAIN IDs, and each set's branches. |
+| `CHANGELOG.md` | Changes by question ID. |
+| set file `strand`, `target_skill`, `covers` | `core` or `advanced` (the ADVANCED EXTENSION of (+) standards); the one skill MAIN measures; subskill IDs. |
+| question `strand`, `set_target`, `target_skill`, `alignment_type`, `course_level` | Strand; the set's target; the skill this section measures; how the section's standard relates to it (direct MAIN, exact or supporting prerequisite, or the forward progression type with direct / nearest related); the course label. |
+| question `question_page`, `answer_key_page` | Page in each PDF (always equal). |
+| `sections[].branch` | Backward: `alignment` (exact or supporting), `rationale` (obstacle, why it matters, evidence collected), `source`. Forward: `progression`, `connection` (direct or nearest related), `new_demand`, `course`, and for FORWARD 2 `builds_on`. |
+
+Question types used: `sa`, `mc`, `tf`, `work` (proofs, derivations, and explanations: the student shows the argument in a work
+box; `required_method` and `grading_note` give the essential criteria, accepted alternatives, and invalid arguments), and
+`plot` (drawings and compass-and-straightedge constructions on the figure; the grading note lists the construction marks
+to check). These need a person or a drawing surface to grade. No other new type is used, so the existing importer applies.
+'''
 
 
 if __name__ == '__main__':

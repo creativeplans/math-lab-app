@@ -9,7 +9,8 @@
 | `grade7/` | Grade 7 collection, version 2.0.0: 70 question sets, 1,755 questions; FORWARD 2 uses Common Core high-school standards, which this bank places at Grade 9 (see its CHANGELOG, CORRECTIONS, and COVERAGE) |
 | `grade8/` | Grade 8 collection, version 2.0.0: 65 question sets, 1,625 questions; both forward branches use Common Core high-school standards, which this bank places at Grade 9 (FORWARD 1) and Grade 10 (FORWARD 2) (see its CHANGELOG, CORRECTIONS, and COVERAGE) |
 | `algebra1/` | Algebra I course collection, version 2.0.0: 84 question sets, 2,100 questions, covering the 60 standards of the Common Core traditional-pathway Algebra I course. No grade is assigned; forward branches use Geometry, Algebra II, Probability & Statistics, and Precalculus standards (see its README and COVERAGE) |
-| `nexus/grade3/`, `nexus/grade4/`, `nexus/grade5/`, `nexus/grade6/`, `nexus/grade7/`, `nexus/grade8/` | Import packages for Untangle The Nexus (JSON per set, index, figure files, PDFs, manifest). Each has its own README. `nexus/Grade3_Nexus_Import_v2.0.0.zip`, `nexus/Grade4_Nexus_Import_v2.0.0.zip`, `nexus/Grade5_Nexus_Import_v2.0.0.zip`, `nexus/Grade7_Nexus_Import_v2.0.0.zip`, and `nexus/Grade8_Nexus_Import_v2.0.0.zip` are the packages zipped. `nexus/algebra1/` and `nexus/Algebra1_Nexus_Import_v2.0.0.zip` are the Algebra I package. |
+| `geometry/` | Geometry course collection, version 1.0.0: 96 question sets, 2,915 questions. Core strand: all 38 non-(+) HSG standards, split into their subparts and distinct demands. ADVANCED EXTENSION strand: the six (+) standards. Branches carry teacher metadata (exact or supporting prerequisites; progression type and new demand). Includes proofs, constructions, and geometry diagrams. See its README, COVERAGE, and VALIDATION |
+| `nexus/grade3/`, `nexus/grade4/`, `nexus/grade5/`, `nexus/grade6/`, `nexus/grade7/`, `nexus/grade8/` | Import packages for Untangle The Nexus (JSON per set, index, figure files, PDFs, manifest). Each has its own README. `nexus/Grade3_Nexus_Import_v2.0.0.zip`, `nexus/Grade4_Nexus_Import_v2.0.0.zip`, `nexus/Grade5_Nexus_Import_v2.0.0.zip`, `nexus/Grade7_Nexus_Import_v2.0.0.zip`, and `nexus/Grade8_Nexus_Import_v2.0.0.zip` are the packages zipped. `nexus/algebra1/` and `nexus/Algebra1_Nexus_Import_v2.0.0.zip` are the Algebra I package. `nexus/geometry/` and `nexus/Geometry_Nexus_Import_v1.0.0.zip` are the Geometry package. |
 | `engine/` | Shared code that builds the PDFs, answer keys, and Nexus packages |
 
 Every set has a MAIN section (5 questions at the set's grade), BACKWARD branches (prerequisite skills from
@@ -30,7 +31,7 @@ python3 question-bank/engine/coverage.py grade5   # COVERAGE.md
 python3 question-bank/engine/verify_package.py question-bank/nexus/grade5   # check the package
 ```
 
-Replace `grade5` with `grade3`, `grade4`, `grade6`, `grade7`, `grade8`, or `algebra1` for the other collections. Run `build.py` before `export.py`.
+Replace `grade5` with `grade3`, `grade4`, `grade6`, `grade7`, `grade8`, `algebra1`, or `geometry` for the other collections. Run `build.py` before `export.py`.
 
 ## Course collections (high school)
 
