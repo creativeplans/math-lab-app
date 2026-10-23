@@ -72,7 +72,7 @@ def rt(a_lab=None, b_lab=None, c_lab=None, ang=None, ang_at='A', h=210, desc=Non
         it.append(('seg', 'A', 'B', {'label': c_lab, 'side': 1}))
     if ang:
         it.append(('ang', 'A', 'C', 'B', {'label': ang}) if ang_at == 'A' else ('ang', 'B', 'A', 'C', {'label': ang}))
-    return gd(P, it, h=h, desc=desc or 'Right triangle ABC with the right angle at C.')
+    return gd(P, it, h=h, note=NTS, desc=(desc or 'Right triangle ABC with the right angle at C.') + ' Not drawn to scale.')
 
 
 SETS = [
