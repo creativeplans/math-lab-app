@@ -1631,7 +1631,15 @@ FIGS = {
 }
 
 RIGHT_KINDS = {'coord', 'shape', 'prism', 'grid', 'cyl', 'cone', 'sphere', 'pyramid', 'rays', 'array', 'geo', 'protractor',
-               'clock', 'beaker', 'scale', 'circle', 'spinner', 'extrude'}
+               'clock', 'beaker', 'scale', 'circle', 'spinner', 'extrude', 'gd'}
+
+
+def _register_gd():
+    import gdiagram
+    FIGS['gd'] = gdiagram.fig_gd
+
+
+_register_gd()
 
 
 def draw_fig(c, f, x, y, w, h, s=1.0):
@@ -1837,6 +1845,21 @@ def layout(q, s):
     elif t == 'sa':
         if q.get('ans', '') is not None:
             variants = [answer_block(q.get('ans', ''), stem_size, col_w, q.get('linew'))]
+    if q.get('space'):
+        # a blank work / proof canvas below the stem (Geometry); it takes the room left on the page, at least space pts
+        variants = [v for v in variants]
+        sp = q['space'] * s
+
+        def spfn(c, x, ytop, sp=sp, col_w=col_w):
+            c.setStrokeColor(RULE)
+            c.setLineWidth(1)
+            c.setDash(3, 3)
+            c.roundRect(x, ytop - sp, col_w, sp, 6, fill=0, stroke=1)
+            c.setDash()
+            c.setFillColor(MUTED)
+            c.setFont(F, 8)
+            c.drawString(x + 6, ytop - 11, q.get('space_label', 'Work space'))
+        blocks_left.append(Block(sp, spfn))
     for v in variants:
         bl = blocks_left + ([v] if v else [])
         total = sum(b.h for b in bl) + gap * (len(bl) - 1)

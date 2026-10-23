@@ -43,8 +43,9 @@ def load_grade(name):
     qb.MAIN_SEEN.clear()
     GRADING_RULES[:] = BASE_GRADING_RULES + list(getattr(cfg, 'EXTRA_GRADING_RULES', []))
     COLLECTION.clear()
+    import hs_courses
+    hs_courses.HOME = course['name'] if course else None
     if course:
-        import hs_courses
         GRADE = None
         qb.GRADE = None
         qb.COURSE = dict(course, standards=hs_courses.STANDARDS[course['name']])
@@ -298,9 +299,46 @@ def build(out, mode='questions'):
                     correct_letter=rec['letter'], correct_answer=rec['answer'],
                     drawing_answer=rec.get('drawing'), required_method=rec.get('method'),
                     grading_note=rec['note']))
+                if qb.COURSE and qb.COURSE.get('rules') == 'geometry':
+                    records[-1].update(geometry_fields(st, key, std, nearest, pageno))
     assert pageno == total_pages, (pageno, total_pages)
     c.save()
     return len(sets), nq, total_pages, records
+
+
+def branch_of(st, key):
+    """The branch dict (or None for MAIN) of a set's section key."""
+    if key == 'MAIN':
+        return None
+    if key.startswith('FORWARD'):
+        return st['f1'] if key == 'FORWARD 1' else st['f2']
+    nums = [b.get('fixed_num', i) for i, b in enumerate(st['back'], 1)]
+    return st['back'][nums.index(int(key.split()[-1]))]
+
+
+def alignment_of(st, key):
+    """Geometry: how a section's standard relates to the skill it tests."""
+    import hs_courses
+    b = branch_of(st, key)
+    if b is None:
+        return 'direct (MAIN: the set\'s own %s standard)' % ('advanced extension (+)' if st.get('strand') == 'advanced' else 'core')
+    m = b.get('meta', {})
+    if key.startswith('BACKWARD'):
+        return ('exact prerequisite standard' if m.get('align') == 'exact' else
+                'supporting prerequisite (closest standard; no standard names this micro-skill exactly)')
+    rel = 'nearest related' if b['nearest'] else 'direct'
+    return '%s; %s' % (m.get('prog'), rel)
+
+
+def geometry_fields(st, key, std, nearest, pageno):
+    import hs_courses
+    b = branch_of(st, key)
+    return dict(strand='advanced extension (+)' if st.get('strand') == 'advanced' else 'core',
+                set_target=st.get('target'), target_skill=(st.get('target') if b is None else b['title']),
+                alignment_type=alignment_of(st, key),
+                course_level=(hs_courses.course_label(std, 'Geometry') if std.startswith('HS') else 'Grade %s' % std.split('.')[0]),
+                question_page=pageno, answer_key_page=pageno,
+                nearest_connection=(nearest if isinstance(nearest, str) else None))
 
 
 BASE_GRADING_RULES = [
@@ -334,6 +372,9 @@ def write_data(records, base):
                        grading_rules=GRADING_RULES, questions=records), f, ensure_ascii=False, indent=1)
     cols = ['uid', 'id', 'page', 'set', 'section', 'number', 'standard', 'type', 'question', 'choices',
             'correct_letter', 'correct_answer', 'drawing_answer', 'required_method', 'grading_note']
+    if records and 'alignment_type' in records[0]:  # Geometry: extra columns at the end, earlier columns unchanged
+        cols += ['strand', 'set_target', 'target_skill', 'alignment_type', 'course_level', 'question_page', 'answer_key_page',
+                 'has_figure', 'nearest_related', 'nearest_connection']
     with open(base + '.csv', 'w', encoding='utf-8-sig', newline='') as f:
         w = csv.writer(f)
         w.writerow(cols)

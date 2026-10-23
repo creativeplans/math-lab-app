@@ -92,6 +92,10 @@ def tf(stem, fig=None, **kw):
 
 def nearest_note(std=None, key=None):
     """Note for a nearest-related forward branch, naming the branch's own grade (from its standard and slot)."""
+    if COURSE and COURSE.get('rules') == 'geometry':
+        import hs_courses
+        return ('NEAREST RELATED: no standard directly continues this skill at this step. This branch uses the nearest '
+                'related %s standard.' % hs_courses.course_of(std))
     if COURSE:
         import hs_courses
         return ('No standard in a later course directly continues this skill at this step. This branch uses the '
@@ -104,25 +108,50 @@ def nearest_note(std=None, key=None):
             'This branch uses the nearest related Grade %d standard.' % (g, g))
 
 
-def B(title, std, qs, nearest=False, num=None):
+BRANCH_META = ('why', 'align', 'prog', 'demand', 'builds')
+
+
+def B(title, std, qs, nearest=False, num=None, **meta):
     """nearest=True flags a forward branch with no direct next-grade continuation. In course mode nearest may instead be
     a sentence stating how the branch connects to the set's MAIN skill (shown on the branch page and exported).
-    num fixes a backward branch's number (its ID code B<num>); by default branches count 1, 2, 3."""
+    num fixes a backward branch's number (its ID code B<num>); by default branches count 1, 2, 3.
+
+    Optional teacher metadata (Geometry and later courses; exported, never printed on student pages):
+      why=    backward: the obstacle, why it blocks MAIN, and what evidence the five questions collect
+      align=  'exact' (std is the skill's own standard) or 'supporting' (std is the closest supporting standard;
+              no standard names this micro-skill exactly)
+      prog=   forward: 'same-course deepening', 'cross-standard extension' or 'later-course extension'
+      demand= forward: the one new demand the branch introduces
+      builds= FORWARD 2: how it builds on FORWARD 1 (or why it is a second, separate extension of MAIN)"""
     assert len(qs) == 5, (title, len(qs))
+    assert set(meta) <= set(BRANCH_META), (title, set(meta) - set(BRANCH_META))
     std_info(std)
     d = dict(title=title, std=std, qs=qs, nearest=nearest)
+    if meta:
+        d['meta'] = meta
     if num:
         d['fixed_num'] = num
     return d
 
 
-def S(std, title, main, back, f1, f2, num=None):
+def S(std, title, main, back, f1, f2, num=None, target=None, strand=None, covers=None):
     """num fixes the set number (IDs S<num>-...). Sets added after a collection is published take
-    the next free number so earlier IDs never move; unnumbered sets count up in collection order."""
+    the next free number so earlier IDs never move; unnumbered sets count up in collection order.
+    target= (Geometry) the one skill all five MAIN questions measure; strand= 'core' or 'advanced' (+);
+    covers= the subskill IDs of the standard inventory that this set's MAIN covers (geometry/src/standards.py)."""
     assert len(main) == 5, (std, title)
     if COURSE:
-        _check_course_set(std, title, main, back, f1, f2)
+        if COURSE.get('rules') == 'geometry':
+            _check_geometry_set(std, title, main, back, f1, f2, target, strand)
+        else:
+            _check_course_set(std, title, main, back, f1, f2)
         d = dict(std=std, title=title, main=main, back=back, f1=f1, f2=f2)
+        if target:
+            d['target'] = target
+        if strand:
+            d['strand'] = strand
+        if covers:
+            d['covers'] = list(covers)
         if num:
             d['fixed_num'] = num
         return d
@@ -170,6 +199,79 @@ def _check_course_set(std, title, main, back, f1, f2):
                         if depth == 0:
                             break
                     assert ' ' not in v[i:j], ('write exponents without spaces so they typeset as superscripts', v[i:j], v[:60])
+    MAIN_SEEN.append(std)
+
+
+PROGRESSIONS = ('same-course deepening', 'cross-standard extension', 'later-course extension')
+
+
+def _check_text(q):
+    for v in [q.get(k) for k in ('stem', 'key', 'note', 'draw', 'method', 'ans')] + list(q.get('ch') or []):
+        if isinstance(v, str):
+            for i in [m for m in range(len(v)) if v.startswith('^(', m)]:
+                depth, j = 0, i + 1
+                while j < len(v):
+                    depth += v[j] == '('
+                    depth -= v[j] == ')'
+                    j += 1
+                    if depth == 0:
+                        break
+                assert ' ' not in v[i:j], ('write exponents without spaces so they typeset as superscripts', v[i:j], v[:60])
+
+
+def _check_geometry_set(std, title, main, back, f1, f2, target, strand):
+    """Geometry rules (see geometry/README.md).
+    MAIN: a Geometry standard; strand 'advanced' exactly for (+) standards; a stated target skill.
+    BACKWARD: one to eight branches, each with why= (obstacle, why it matters, evidence) and align=. A branch uses a
+      Grade K-8 standard, an earlier-course standard (Algebra I), or a Geometry standard that is the MAIN standard of
+      an EARLIER set (so no branch depends on a later or the same set: no circular prerequisites).
+    FORWARD: Geometry (the same standard is allowed when the demand advances) or a later course; FORWARD 2 is never in
+      an earlier course than FORWARD 1. Each has prog= (progression type), demand= (the new demand); FORWARD 2 also
+      builds= (how it builds on FORWARD 1). nearest= marks a NEAREST RELATED step and states the connection.
+    Every question has an explanation (note=)."""
+    import hs_courses
+    assert std in COURSE['standards'], (title, std)
+    assert target, ('every Geometry set states its target skill (target=)', title)
+    want = 'advanced' if std in hs_courses.GEOMETRY_PLUS else 'core'
+    assert strand == want, ('strand must be %s' % want, title, std)
+    home = hs_courses.RANK['Geometry']
+    assert 1 <= len(back) <= 8, (title, len(back))
+    for b in back:
+        c, m = b['std'], b.get('meta', {})
+        assert m.get('why') and m.get('align') in ('exact', 'supporting'), ('backward branch needs why= and align=', title, b['title'])
+        assert not b['nearest'], (title, b['title'])
+        if c.startswith('HS'):
+            if hs_courses.course_of(c) == 'Geometry':
+                assert c in MAIN_SEEN, ('a Geometry backward branch must use the MAIN standard of an earlier set', title, c)
+            else:
+                assert hs_courses.RANK[hs_courses.course_of(c)] < home, ('backward uses an earlier course', title, c)
+        else:
+            assert grade_num(c) <= 8, (title, c)
+    ranks = []
+    for key, f in (('FORWARD 1', f1), ('FORWARD 2', f2)):
+        m = f.get('meta', {})
+        assert m.get('prog') in PROGRESSIONS and m.get('demand'), ('forward branch needs prog= and demand=', title, key)
+        crs = hs_courses.course_of(f['std'])
+        r = hs_courses.RANK[crs]
+        assert r >= home, ('forward branches stay in Geometry or go to a later course', title, key, f['std'])
+        if crs == 'Geometry':
+            assert m['prog'] != 'later-course extension', (title, key)
+            if f['std'] == std:
+                assert m['prog'] == 'same-course deepening', (title, key)
+        else:
+            assert m['prog'] == 'later-course extension', (title, key, f['std'])
+        if f['nearest']:
+            assert isinstance(f['nearest'], str), ('a nearest-related branch states its connection', title, key)
+        ranks.append(r)
+    assert f2['meta'].get('builds'), ('FORWARD 2 states how it builds on FORWARD 1', title)
+    assert ranks[1] >= ranks[0], ('FORWARD 2 is at least as advanced as FORWARD 1', title)
+    for q in main + [q for b in back + [f1, f2] for q in b['qs']]:
+        assert q.get('note'), ('every course question needs an explanation (note=)', title, q['stem'][:60])
+        _check_text(q)
+        figs = [q.get('fig')] + list(q.get('cfigs') or [])
+        for fg in figs:
+            if fg and fg.get('k') == 'gd':
+                assert fg.get('desc'), ('every geometry diagram needs desc= (plain-text description)', title, q['stem'][:60])
     MAIN_SEEN.append(std)
 
 

@@ -30,7 +30,25 @@ ALGEBRA_I = [
     'HSS-ID.A.1', 'HSS-ID.A.2', 'HSS-ID.A.3', 'HSS-ID.B.5', 'HSS-ID.B.6.a', 'HSS-ID.B.6.b', 'HSS-ID.B.6.c',
     'HSS-ID.C.7', 'HSS-ID.C.8', 'HSS-ID.C.9',
 ]
-STANDARDS = {'Algebra I': ALGEBRA_I}
+# Geometry (traditional pathway, CCSS Appendix A): every HSG standard that is not marked (+), as leaf codes.
+GEOMETRY = [
+    'HSG-CO.A.1', 'HSG-CO.A.2', 'HSG-CO.A.3', 'HSG-CO.A.4', 'HSG-CO.A.5',
+    'HSG-CO.B.6', 'HSG-CO.B.7', 'HSG-CO.B.8',
+    'HSG-CO.C.9', 'HSG-CO.C.10', 'HSG-CO.C.11',
+    'HSG-CO.D.12', 'HSG-CO.D.13',
+    'HSG-SRT.A.1.a', 'HSG-SRT.A.1.b', 'HSG-SRT.A.2', 'HSG-SRT.A.3',
+    'HSG-SRT.B.4', 'HSG-SRT.B.5',
+    'HSG-SRT.C.6', 'HSG-SRT.C.7', 'HSG-SRT.C.8',
+    'HSG-C.A.1', 'HSG-C.A.2', 'HSG-C.A.3', 'HSG-C.B.5',
+    'HSG-GPE.A.1', 'HSG-GPE.A.2', 'HSG-GPE.B.4', 'HSG-GPE.B.5', 'HSG-GPE.B.6', 'HSG-GPE.B.7',
+    'HSG-GMD.A.1', 'HSG-GMD.A.3', 'HSG-GMD.B.4',
+    'HSG-MG.A.1', 'HSG-MG.A.2', 'HSG-MG.A.3',
+]
+# The HSG standards marked (+). The Geometry collection teaches them in a separate ADVANCED EXTENSION strand
+# (enrichment, not core mastery). In every other collection they stay in Precalculus, as before.
+GEOMETRY_PLUS = ['HSG-SRT.D.9', 'HSG-SRT.D.10', 'HSG-SRT.D.11', 'HSG-C.A.4', 'HSG-GPE.A.3', 'HSG-GMD.A.2']
+STANDARDS = {'Algebra I': ALGEBRA_I, 'Geometry': GEOMETRY + GEOMETRY_PLUS}
+HOME = None  # the collection being built (set by build.load_grade); only 'Geometry' changes any placement
 
 # (+) standards, placed in Precalculus.
 PRECALCULUS = {
@@ -53,6 +71,8 @@ def course_of(code):
     """The course this bank places a high-school standard code in (raises for an unknown code)."""
     if code in ALGEBRA_I:
         return 'Algebra I'
+    if HOME == 'Geometry' and code in GEOMETRY_PLUS:
+        return 'Geometry'
     if code in PRECALCULUS or code.startswith('HSN-VM.'):
         return 'Precalculus'
     if code.startswith('HSS-IC.') or code.startswith('HSS-CP.') or code.startswith('HSS-MD.') or code == 'HSS-ID.A.4':
@@ -64,9 +84,15 @@ def course_of(code):
     raise ValueError('No course placement for %s: add it to engine/hs_courses.py' % code)
 
 
+def is_plus(code):
+    return code in GEOMETRY_PLUS or code in PRECALCULUS
+
+
 def course_label(code, home):
     """PDF/record label for a high-school standard in the collection of course `home`."""
     c = course_of(code)
+    if home == 'Geometry' and code in GEOMETRY_PLUS:
+        return 'High School — Geometry, Advanced Extension (+)'
     if c == home:
         return 'High School — %s' % c
     return 'High School — %s (course placement in this bank)' % c
