@@ -4,7 +4,7 @@
   "id": "GEO",
   "grade": null,
   "course": "Geometry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-23"
  },
  "grade": null,
@@ -29,7 +29,8 @@
    "branch": {
     "kind": "main",
     "strand": "core",
-    "target_skill": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure"
+    "target_skill": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -78,15 +79,15 @@
      "required_method": null,
      "grading_note": "H stretches horizontally: (0, 0) and (1, 0) are 1 unit apart, but their images (0, 0) and (2, 0) are 2 units apart. The others are a translation, a reflection, and a rotation.",
      "figure": null,
-     "page": 115,
+     "page": 209,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "target_skill": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 115,
-     "answer_key_page": 115
+     "question_page": 209,
+     "answer_key_page": 209
     },
     {
      "id": "S4-M-Q2",
@@ -119,15 +120,15 @@
      "required_method": null,
      "grading_note": "Form required: both images, the distance (exact or to 0.01), and the conclusion. √(6² + 4²) = √52 ≠ 5.",
      "figure": null,
-     "page": 116,
+     "page": 210,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "target_skill": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 116,
-     "answer_key_page": 116
+     "question_page": 210,
+     "answer_key_page": 210
     },
     {
      "id": "S4-M-Q3",
@@ -160,15 +161,15 @@
      "required_method": null,
      "grading_note": "Form required: both images and both distances.",
      "figure": null,
-     "page": 117,
+     "page": 211,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "target_skill": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 117,
-     "answer_key_page": 117
+     "question_page": 211,
+     "answer_key_page": 211
     },
     {
      "id": "S4-M-Q4",
@@ -187,36 +188,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "tf",
-     "response": "select true or false",
-     "prompt": "The transformation V(x, y) = (x, 3y) preserves the measure of every angle.",
-     "prompt_markup": "The transformation V(x, y) = (x, 3y) preserves the measure of every angle.",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "True"
-      },
-      {
-       "letter": "B",
-       "text": "False"
-      }
+     "type": "sa",
+     "response": "write",
+     "prompt": "V(x, y) = (x, 3y). Does V preserve the measure of every angle? Use the right angle at O(0, 0) between the rays through (1, 1) and (1, -1) to decide.",
+     "prompt_markup": "V(x, y) = (x, 3y). Does V preserve the measure of every angle? Use the right angle at O(0, 0) between the rays through (1, 1) and (1, -1) to decide.",
+     "choices": [],
+     "answer_lines": [
+      "Answer:"
      ],
-     "answer_lines": [],
-     "correct_letter": "B",
-     "correct_answer": "False",
+     "correct_letter": null,
+     "correct_answer": "No. The images of (1, 1) and (1, -1) are (1, 3) and (1, -3); the angle between the rays from O through them is about 143°, not 90°.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "The right angle at (0, 0) between the rays through (1, 1) and (1, -1) maps to the angle between the rays through (1, 3) and (1, -3), which is about 143°, not 90°.",
+     "grading_note": "Form required: the images, the new angle (or a reason it is not 90°, such as slopes 3 and -3 not multiplying to -1), and the conclusion.",
      "figure": null,
-     "page": 118,
-     "revision": "unchanged",
+     "page": 212,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "target_skill": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 118,
-     "answer_key_page": 118
+     "question_page": 212,
+     "answer_key_page": 212
     },
     {
      "id": "S4-M-Q5",
@@ -249,15 +243,15 @@
      "required_method": null,
      "grading_note": "Form required: both answers with reasons. Example: (0, 0) and (1, 0) are 1 apart; their images are 3 apart.",
      "figure": null,
-     "page": 119,
+     "page": 213,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "target_skill": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 119,
-     "answer_key_page": 119
+     "question_page": 213,
+     "answer_key_page": 213
     }
    ]
   },
@@ -272,7 +266,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot compute the distance between two points. Why it matters: checking whether a transformation preserves distance means comparing distances before and after. Evidence: uses the Pythagorean Theorem (and horizontal distance) to find lengths.",
-    "source": "Grade 8"
+    "source": "Grade 8",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -304,15 +299,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form. √(3² + 4²) = 5.",
      "figure": null,
-     "page": 121,
+     "page": 215,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "target_skill": "Find the distance between two points",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 121,
-     "answer_key_page": 121
+     "question_page": 215,
+     "answer_key_page": 215
     },
     {
      "id": "S4-B1-Q2",
@@ -343,15 +338,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form. Same y, so |4 - (-2)| = 6.",
      "figure": null,
-     "page": 122,
+     "page": 216,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "target_skill": "Find the distance between two points",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 122,
-     "answer_key_page": 122
+     "question_page": 216,
+     "answer_key_page": 216
     },
     {
      "id": "S4-B1-Q3",
@@ -382,15 +377,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form. √(25 + 144) = 13.",
      "figure": null,
-     "page": 123,
+     "page": 217,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "target_skill": "Find the distance between two points",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 123,
-     "answer_key_page": 123
+     "question_page": 217,
+     "answer_key_page": 217
     },
     {
      "id": "S4-B1-Q4",
@@ -428,15 +423,15 @@
      "required_method": null,
      "grading_note": "√(1² + 1²) = √2 ≈ 1.41.",
      "figure": null,
-     "page": 124,
+     "page": 218,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "target_skill": "Find the distance between two points",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 124,
-     "answer_key_page": 124
+     "question_page": 218,
+     "answer_key_page": 218
     },
     {
      "id": "S4-B1-Q5",
@@ -482,15 +477,15 @@
      "required_method": null,
      "grading_note": "√(3² + 4²) = 5.",
      "figure": null,
-     "page": 125,
+     "page": 219,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "target_skill": "Find the distance between two points",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 125,
-     "answer_key_page": 125
+     "question_page": 219,
+     "answer_key_page": 219
     }
    ]
   },
@@ -505,7 +500,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student does not know which properties rigid motions keep. Why it matters: comparing transformations depends on knowing what a rigid motion preserves. Evidence: states and applies the preserved properties.",
-    "source": "Grade 8"
+    "source": "Grade 8",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -544,15 +540,15 @@
      "required_method": null,
      "grading_note": "Rotations are rigid motions.",
      "figure": null,
-     "page": 127,
+     "page": 221,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "target_skill": "Know that rigid motions keep lengths and angle measures",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 127,
-     "answer_key_page": 127
+     "question_page": 221,
+     "answer_key_page": 221
     },
     {
      "id": "S4-B2-Q2",
@@ -590,15 +586,15 @@
      "required_method": null,
      "grading_note": "Reflections keep angle measures.",
      "figure": null,
-     "page": 128,
+     "page": 222,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "target_skill": "Know that rigid motions keep lengths and angle measures",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 128,
-     "answer_key_page": 128
+     "question_page": 222,
+     "answer_key_page": 222
     },
     {
      "id": "S4-B2-Q3",
@@ -644,15 +640,15 @@
      "required_method": null,
      "grading_note": "A translation moves the figure but keeps its lengths, angles, and area.",
      "figure": null,
-     "page": 129,
+     "page": 223,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "target_skill": "Know that rigid motions keep lengths and angle measures",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 129,
-     "answer_key_page": 129
+     "question_page": 223,
+     "answer_key_page": 223
     },
     {
      "id": "S4-B2-Q4",
@@ -683,15 +679,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 130,
+     "page": 224,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "target_skill": "Know that rigid motions keep lengths and angle measures",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 130,
-     "answer_key_page": 130
+     "question_page": 224,
+     "answer_key_page": 224
     },
     {
      "id": "S4-B2-Q5",
@@ -722,15 +718,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 131,
+     "page": 225,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "target_skill": "Know that rigid motions keep lengths and angle measures",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 131,
-     "answer_key_page": 131
+     "question_page": 225,
+     "answer_key_page": 225
     }
    ]
   },
@@ -746,7 +742,8 @@
     "progression": "cross-standard extension",
     "connection": "direct",
     "new_demand": "Sort transformations into three classes (rigid, similarity, neither) by testing what happens to distances and angles.",
-    "course": "Geometry"
+    "course": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -795,15 +792,15 @@
      "required_method": null,
      "grading_note": "Multiplying both coordinates by 4 is a dilation: angles stay, distances are multiplied by 4.",
      "figure": null,
-     "page": 133,
+     "page": 227,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "target_skill": "Classify transformations as rigid motions, similarity transformations, or neither",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 133,
-     "answer_key_page": 133
+     "question_page": 227,
+     "answer_key_page": 227
     },
     {
      "id": "S4-F1-Q2",
@@ -836,15 +833,15 @@
      "required_method": null,
      "grading_note": "Any equivalent explanation that shows the factor 2 for distances and that angles are kept.",
      "figure": null,
-     "page": 134,
+     "page": 228,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "target_skill": "Classify transformations as rigid motions, similarity transformations, or neither",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 134,
-     "answer_key_page": 134
+     "question_page": 228,
+     "answer_key_page": 228
     },
     {
      "id": "S4-F1-Q3",
@@ -877,15 +874,15 @@
      "required_method": null,
      "grading_note": "Any correct counterexample showing that distances are not scaled by a single factor (or an angle changes).",
      "figure": null,
-     "page": 135,
+     "page": 229,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "target_skill": "Classify transformations as rigid motions, similarity transformations, or neither",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 135,
-     "answer_key_page": 135
+     "question_page": 229,
+     "answer_key_page": 229
     },
     {
      "id": "S4-F1-Q4",
@@ -925,15 +922,15 @@
      "required_method": null,
      "grading_note": "Only similarity transformations with scale factor 1 are rigid motions.",
      "figure": null,
-     "page": 136,
+     "page": 230,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "target_skill": "Classify transformations as rigid motions, similarity transformations, or neither",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 136,
-     "answer_key_page": 136
+     "question_page": 230,
+     "answer_key_page": 230
     },
     {
      "id": "S4-F1-Q5",
@@ -973,15 +970,15 @@
      "required_method": null,
      "grading_note": "Multiplying all distances by k keeps triangles similar (SSS), so angle measures stay the same.",
      "figure": null,
-     "page": 137,
+     "page": 231,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "target_skill": "Classify transformations as rigid motions, similarity transformations, or neither",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 137,
-     "answer_key_page": 137
+     "question_page": 231,
+     "answer_key_page": 231
     }
    ]
   },
@@ -998,7 +995,8 @@
     "connection": "direct",
     "new_demand": "Prove the classification for ALL pairs of points with variables, and explain why examples alone cannot prove it.",
     "course": "Geometry",
-    "builds_on": "FORWARD 1 classifies transformations with specific points; FORWARD 2 proves the general claim algebraically."
+    "builds_on": "FORWARD 1 classifies transformations with specific points; FORWARD 2 proves the general claim algebraically.",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1032,15 +1030,15 @@
      "required_method": "Write both images, apply the distance formula to the images, and show that a and b cancel.",
      "grading_note": "Any valid algebraic proof. Essential: images (x₁ + a, y₁ + b) and (x₂ + a, y₂ + b); the differences are x₂ - x₁ and y₂ - y₁, so the distance formula gives the same value. Invalid: checking one or two numerical examples only.",
      "figure": null,
-     "page": 139,
+     "page": 233,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "target_skill": "Prove with variables that a transformation preserves or scales every distance",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 139,
-     "answer_key_page": 139
+     "question_page": 233,
+     "answer_key_page": 233
     },
     {
      "id": "S4-F2-Q2",
@@ -1073,15 +1071,15 @@
      "required_method": "Write both images, apply the distance formula, and factor out 9 under the square root.",
      "grading_note": "Any valid proof. Essential: √((3x₂ - 3x₁)² + (3y₂ - 3y₁)²) = √(9[(x₂ - x₁)² + (y₂ - y₁)²]) = 3·(original distance).",
      "figure": null,
-     "page": 140,
+     "page": 234,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "target_skill": "Prove with variables that a transformation preserves or scales every distance",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 140,
-     "answer_key_page": 140
+     "question_page": 234,
+     "answer_key_page": 234
     },
     {
      "id": "S4-F2-Q3",
@@ -1114,15 +1112,15 @@
      "required_method": null,
      "grading_note": "Any equivalent condition. The distance is unchanged only if 4(x₂ - x₁)² = (x₂ - x₁)², that is, x₂ = x₁.",
      "figure": null,
-     "page": 141,
+     "page": 235,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "target_skill": "Prove with variables that a transformation preserves or scales every distance",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 141,
-     "answer_key_page": 141
+     "question_page": 235,
+     "answer_key_page": 235
     },
     {
      "id": "S4-F2-Q4",
@@ -1162,15 +1160,15 @@
      "required_method": null,
      "grading_note": "H(x, y) = (2x, y) keeps vertical distances but changes others. A general claim needs a proof for all points.",
      "figure": null,
-     "page": 142,
+     "page": 236,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "target_skill": "Prove with variables that a transformation preserves or scales every distance",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 142,
-     "answer_key_page": 142
+     "question_page": 236,
+     "answer_key_page": 236
     },
     {
      "id": "S4-F2-Q5",
@@ -1191,8 +1189,8 @@
      "standard_course": "Geometry",
      "type": "tf",
      "response": "select true or false",
-     "prompt": "One example in which a distance is preserved is enough to prove that a transformation preserves distance.",
-     "prompt_markup": "One example in which a distance is preserved is enough to prove that a transformation preserves distance.",
+     "prompt": "If a transformation preserves the distance between every pair of points, it also preserves every angle measure.",
+     "prompt_markup": "If a transformation preserves the distance between every pair of points, it also preserves every angle measure.",
      "choices": [
       {
        "letter": "A",
@@ -1204,21 +1202,21 @@
       }
      ],
      "answer_lines": [],
-     "correct_letter": "B",
-     "correct_answer": "False",
+     "correct_letter": "A",
+     "correct_answer": "True",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Every pair of points must keep its distance; one example proves nothing about all pairs.",
+     "grading_note": "The three distances of any triangle are kept, so each triangle maps to a congruent triangle (SSS), and its angles are kept.",
      "figure": null,
-     "page": 143,
-     "revision": "unchanged",
+     "page": 237,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Decide, with coordinates and examples, whether a transformation preserves distance and angle measure",
      "target_skill": "Prove with variables that a transformation preserves or scales every distance",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 143,
-     "answer_key_page": 143
+     "question_page": 237,
+     "answer_key_page": 237
     }
    ]
   }

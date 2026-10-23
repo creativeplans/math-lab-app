@@ -4,7 +4,7 @@
   "id": "GEO",
   "grade": null,
   "course": "Geometry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-23"
  },
  "grade": null,
@@ -29,7 +29,8 @@
    "branch": {
     "kind": "main",
     "strand": "advanced",
-    "target_skill": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction"
+    "target_skill": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
+    "plus_standard": true
    },
    "questions": [
     {
@@ -93,15 +94,15 @@
        }
       }
      },
-     "page": 3450,
+     "page": 3754,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3450,
-     "answer_key_page": 3450
+     "question_page": 3754,
+     "answer_key_page": 3754
     },
     {
      "id": "S93-M-Q2",
@@ -164,15 +165,15 @@
        }
       }
      },
-     "page": 3451,
+     "page": 3755,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3451,
-     "answer_key_page": 3451
+     "question_page": 3755,
+     "answer_key_page": 3755
     },
     {
      "id": "S93-M-Q3",
@@ -191,29 +192,59 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Write the steps for constructing a tangent from an external point P to circle O.",
-     "prompt_markup": "Write the steps for constructing a tangent from an external point P to circle O.",
+     "type": "plot",
+     "response": "draw on the figure",
+     "prompt": "Compass and straightedge only; leave all arcs. Construct a line through R tangent to the circle with center O. Then write one sentence explaining why your line is tangent.",
+     "prompt_markup": "Compass and straightedge only; leave all arcs.\nConstruct a line through R tangent to the circle with center O. Then write one sentence explaining why your line is tangent.",
      "choices": [],
-     "answer_lines": [
-      "Steps:"
-     ],
+     "answer_lines": [],
      "correct_letter": null,
-     "correct_answer": "1. Draw OP. 2. Bisect OP to find its midpoint M. 3. Draw the circle with center M and radius MO. 4. Label a point T where it meets circle O. 5. Draw line PT.",
+     "correct_answer": "Midpoint M of OR; circle with center M through O meets circle O at T; line RT. Tangent because ∠OTR is inscribed in a semicircle (90°), so RT ⊥ radius OT at T.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent steps.",
-     "figure": null,
-     "page": 3452,
-     "revision": "unchanged",
+     "grading_note": "Grade the construction marks, not only the final figure: all construction marks for the midpoint and the helper circle, the tangent line, and the right-angle justification.",
+     "figure": {
+      "svg": "assets/S93-M-Q3.svg",
+      "png": "assets/S93-M-Q3.png",
+      "kind": "gd",
+      "description": "Circle with center O and a point R outside the circle, to its right.",
+      "blank_for_drawing": true,
+      "data": {
+       "k": "gd",
+       "P": {
+        "O": [
+         0,
+         0
+        ],
+        "R": [
+         3,
+         1.6
+        ]
+       },
+       "items": [
+        [
+         "circle",
+         "O",
+         1
+        ]
+       ],
+       "desc": "Circle with center O and a point R outside the circle, to its right.",
+       "h": 220,
+       "lab": {
+        "O": "sw",
+        "R": "e"
+       }
+      }
+     },
+     "page": 3756,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3452,
-     "answer_key_page": 3452
+     "question_page": 3756,
+     "answer_key_page": 3756
     },
     {
      "id": "S93-M-Q4",
@@ -232,25 +263,23 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "work",
-     "response": "write the answer and show the required work",
-     "prompt": "Explain why line PT in the construction is tangent to circle O.",
-     "prompt_markup": "Explain why line PT in the construction is tangent to circle O.",
+     "type": "plot",
+     "response": "draw on the figure",
+     "prompt": "Compass and straightedge only; leave all arcs. Construct both tangent lines from S to the circle with center O. Then, as evidence, set your compass to ST₁ and show that the same opening reaches T₂ from S.",
+     "prompt_markup": "Compass and straightedge only; leave all arcs.\nConstruct both tangent lines from S to the circle with center O. Then, as evidence, set your compass to ST₁ and show that the same opening reaches T₂ from S.",
      "choices": [],
-     "answer_lines": [
-      "Explanation:"
-     ],
+     "answer_lines": [],
      "correct_letter": null,
-     "correct_answer": "T is on the circle with diameter OP, so ∠OTP is inscribed in a semicircle and equals 90°; a line perpendicular to a radius at its endpoint on the circle is tangent.",
+     "correct_answer": "Construct both tangents ST₁ and ST₂ with the circle on diameter OS; the compass check shows ST₁ = ST₂ (congruent tangent segments).",
      "drawing_answer": null,
-     "required_method": "Use the circle on diameter OP and the tangent-radius theorem.",
-     "grading_note": "Any valid explanation. Essential: ∠OTP = 90° (inscribed angle on a diameter); PT ⊥ OT at T on circle O; converse of the tangent-radius theorem.",
+     "required_method": null,
+     "grading_note": "Grade the construction marks, not only the final figure: both tangents from the full construction and the compass check of equal tangent segments.",
      "figure": {
       "svg": "assets/S93-M-Q4.svg",
       "png": "assets/S93-M-Q4.png",
       "kind": "gd",
-      "description": "Circle with center O. Point P is outside the circle. Segment PT touches the circle at T, radius OT is drawn, and a right angle is marked at T. Dashed segment OP joins the center to P.",
-      "blank_for_drawing": false,
+      "description": "Circle with center O and a point S outside the circle, to its right.",
+      "blank_for_drawing": true,
       "data": {
        "k": "gd",
        "P": {
@@ -258,64 +287,35 @@
          0,
          0
         ],
-        "P": [
-         4,
+        "S": [
+         4.4,
          0
-        ],
-        "T": [
-         0.49,
-         1.3114495796636636
         ]
        },
        "items": [
         [
          "circle",
          "O",
-         1.4
-        ],
-        [
-         "seg",
-         "O",
-         "T"
-        ],
-        [
-         "seg",
-         "P",
-         "T"
-        ],
-        [
-         "seg",
-         "O",
-         "P",
-         {
-          "dash": true
-         }
-        ],
-        [
-         "ra",
-         "T",
-         "O",
-         "P"
+         1.3
         ]
        ],
-       "desc": "Circle with center O. Point P is outside the circle. Segment PT touches the circle at T, radius OT is drawn, and a right angle is marked at T. Dashed segment OP joins the center to P.",
+       "desc": "Circle with center O and a point S outside the circle, to its right.",
        "h": 220,
        "lab": {
         "O": "sw",
-        "P": "e",
-        "T": "n"
+        "S": "e"
        }
       }
      },
-     "page": 3453,
-     "revision": "unchanged",
+     "page": 3757,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3453,
-     "answer_key_page": 3453
+     "question_page": 3757,
+     "answer_key_page": 3757
     },
     {
      "id": "S93-M-Q5",
@@ -334,44 +334,59 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "mc",
-     "response": "select one",
-     "prompt": "The two tangent segments from P to circle O are",
-     "prompt_markup": "The two tangent segments from P to circle O are",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "perpendicular"
-      },
-      {
-       "letter": "B",
-       "text": "congruent"
-      },
-      {
-       "letter": "C",
-       "text": "parallel"
-      },
-      {
-       "letter": "D",
-       "text": "always equal to the radius"
-      }
-     ],
+     "type": "plot",
+     "response": "draw on the figure",
+     "prompt": "Compass and straightedge only; leave all arcs. Construct both tangent lines from P to the circle with center O. Then construct the bisector of the angle formed by the two tangents and show that it passes through O.",
+     "prompt_markup": "Compass and straightedge only; leave all arcs.\nConstruct both tangent lines from P to the circle with center O. Then construct the bisector of the angle formed by the two tangents and show that it passes through O.",
+     "choices": [],
      "answer_lines": [],
-     "correct_letter": "B",
-     "correct_answer": "congruent",
+     "correct_letter": null,
+     "correct_answer": "Both tangents from the circle on diameter OP; bisecting ∠T₁PT₂ gives a ray through O (OP bisects the angle between the tangents).",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "HL congruence of triangles OTP.",
-     "figure": null,
-     "page": 3454,
-     "revision": "unchanged",
+     "grading_note": "Grade the construction marks, not only the final figure: both tangents, the angle bisector construction, and the observation that it passes through O.",
+     "figure": {
+      "svg": "assets/S93-M-Q5.svg",
+      "png": "assets/S93-M-Q5.png",
+      "kind": "gd",
+      "description": "Circle with center O and a point P outside the circle, to its right.",
+      "blank_for_drawing": true,
+      "data": {
+       "k": "gd",
+       "P": {
+        "O": [
+         0,
+         0
+        ],
+        "P": [
+         4.6,
+         -1
+        ]
+       },
+       "items": [
+        [
+         "circle",
+         "O",
+         1.5
+        ]
+       ],
+       "desc": "Circle with center O and a point P outside the circle, to its right.",
+       "h": 220,
+       "lab": {
+        "O": "sw",
+        "P": "e"
+       }
+      }
+     },
+     "page": 3758,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3454,
-     "answer_key_page": 3454
+     "question_page": 3758,
+     "answer_key_page": 3758
     }
    ]
   },
@@ -386,7 +401,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot locate M. Why it matters: M is the center of the helper circle. Evidence: constructs midpoints.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -420,15 +436,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 3456,
+     "page": 3760,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Construct the midpoint of a segment",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3456,
-     "answer_key_page": 3456
+     "question_page": 3760,
+     "answer_key_page": 3760
     },
     {
      "id": "S93-B1-Q2",
@@ -468,15 +484,15 @@
      "required_method": null,
      "grading_note": "Definition.",
      "figure": null,
-     "page": 3457,
+     "page": 3761,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Construct the midpoint of a segment",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3457,
-     "answer_key_page": 3457
+     "question_page": 3761,
+     "answer_key_page": 3761
     },
     {
      "id": "S93-B1-Q3",
@@ -524,15 +540,15 @@
      "required_method": null,
      "grading_note": "Equal radii.",
      "figure": null,
-     "page": 3458,
+     "page": 3762,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Construct the midpoint of a segment",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3458,
-     "answer_key_page": 3458
+     "question_page": 3762,
+     "answer_key_page": 3762
     },
     {
      "id": "S93-B1-Q4",
@@ -565,15 +581,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 3459,
+     "page": 3763,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Construct the midpoint of a segment",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3459,
-     "answer_key_page": 3459
+     "question_page": 3763,
+     "answer_key_page": 3763
     },
     {
      "id": "S93-B1-Q5",
@@ -613,15 +629,15 @@
      "required_method": null,
      "grading_note": "It must be constructed.",
      "figure": null,
-     "page": 3460,
+     "page": 3764,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Construct the midpoint of a segment",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3460,
-     "answer_key_page": 3460
+     "question_page": 3764,
+     "answer_key_page": 3764
     }
    ]
   },
@@ -636,7 +652,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student does not know why the angle is right. Why it matters: the justification uses it. Evidence: applies the theorem.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -677,15 +694,15 @@
      "required_method": null,
      "grading_note": "Theorem.",
      "figure": null,
-     "page": 3462,
+     "page": 3766,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Inscribed angles on a diameter",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3462,
-     "answer_key_page": 3462
+     "question_page": 3766,
+     "answer_key_page": 3766
     },
     {
      "id": "S93-B2-Q2",
@@ -718,15 +735,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 3463,
+     "page": 3767,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Inscribed angles on a diameter",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3463,
-     "answer_key_page": 3463
+     "question_page": 3767,
+     "answer_key_page": 3767
     },
     {
      "id": "S93-B2-Q3",
@@ -774,15 +791,15 @@
      "required_method": null,
      "grading_note": "Half of 180 is 90.",
      "figure": null,
-     "page": 3464,
+     "page": 3768,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Inscribed angles on a diameter",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3464,
-     "answer_key_page": 3464
+     "question_page": 3768,
+     "answer_key_page": 3768
     },
     {
      "id": "S93-B2-Q4",
@@ -815,15 +832,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 3465,
+     "page": 3769,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Inscribed angles on a diameter",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3465,
-     "answer_key_page": 3465
+     "question_page": 3769,
+     "answer_key_page": 3769
     },
     {
      "id": "S93-B2-Q5",
@@ -863,15 +880,15 @@
      "required_method": null,
      "grading_note": "Always 90°.",
      "figure": null,
-     "page": 3466,
+     "page": 3770,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Inscribed angles on a diameter",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3466,
-     "answer_key_page": 3466
+     "question_page": 3770,
+     "answer_key_page": 3770
     }
    ]
   },
@@ -886,7 +903,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot justify tangency. Why it matters: the construction makes PT ⊥ OT. Evidence: uses the tangent-radius relationship.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -927,15 +945,15 @@
      "required_method": null,
      "grading_note": "Converse.",
      "figure": null,
-     "page": 3468,
+     "page": 3772,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Tangent is perpendicular to the radius",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3468,
-     "answer_key_page": 3468
+     "question_page": 3772,
+     "answer_key_page": 3772
     },
     {
      "id": "S93-B3-Q2",
@@ -968,15 +986,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 3469,
+     "page": 3773,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Tangent is perpendicular to the radius",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3469,
-     "answer_key_page": 3469
+     "question_page": 3773,
+     "answer_key_page": 3773
     },
     {
      "id": "S93-B3-Q3",
@@ -1024,15 +1042,15 @@
      "required_method": null,
      "grading_note": "Converse.",
      "figure": null,
-     "page": 3470,
+     "page": 3774,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Tangent is perpendicular to the radius",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3470,
-     "answer_key_page": 3470
+     "question_page": 3774,
+     "answer_key_page": 3774
     },
     {
      "id": "S93-B3-Q4",
@@ -1065,15 +1083,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 3471,
+     "page": 3775,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Tangent is perpendicular to the radius",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3471,
-     "answer_key_page": 3471
+     "question_page": 3775,
+     "answer_key_page": 3775
     },
     {
      "id": "S93-B3-Q5",
@@ -1113,15 +1131,15 @@
      "required_method": null,
      "grading_note": "It touches at one point.",
      "figure": null,
-     "page": 3472,
+     "page": 3776,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Tangent is perpendicular to the radius",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3472,
-     "answer_key_page": 3472
+     "question_page": 3776,
+     "answer_key_page": 3776
     }
    ]
   },
@@ -1137,7 +1155,8 @@
     "progression": "same-course deepening",
     "connection": "direct",
     "new_demand": "Prove a consequence of the construction and compute tangent lengths.",
-    "course": "Geometry"
+    "course": "Geometry",
+    "plus_standard": true
    },
    "questions": [
     {
@@ -1171,15 +1190,15 @@
      "required_method": "Use the right triangles OAP and OBP.",
      "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: right angles at A and B (tangent ⊥ radius); OA = OB (radii); OP common hypotenuse; HL; CPCTC.",
      "figure": null,
-     "page": 3474,
+     "page": 3778,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Prove that the two tangent segments are congruent and compute lengths",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3474,
-     "answer_key_page": 3474
+     "question_page": 3778,
+     "answer_key_page": 3778
     },
     {
      "id": "S93-F1-Q2",
@@ -1212,15 +1231,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 3475,
+     "page": 3779,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Prove that the two tangent segments are congruent and compute lengths",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3475,
-     "answer_key_page": 3475
+     "question_page": 3779,
+     "answer_key_page": 3779
     },
     {
      "id": "S93-F1-Q3",
@@ -1260,15 +1279,15 @@
      "required_method": null,
      "grading_note": "Congruent triangles.",
      "figure": null,
-     "page": 3476,
+     "page": 3780,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Prove that the two tangent segments are congruent and compute lengths",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3476,
-     "answer_key_page": 3476
+     "question_page": 3780,
+     "answer_key_page": 3780
     },
     {
      "id": "S93-F1-Q4",
@@ -1316,15 +1335,15 @@
      "required_method": null,
      "grading_note": "Quadrilateral with two right angles.",
      "figure": null,
-     "page": 3477,
+     "page": 3781,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Prove that the two tangent segments are congruent and compute lengths",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3477,
-     "answer_key_page": 3477
+     "question_page": 3781,
+     "answer_key_page": 3781
     },
     {
      "id": "S93-F1-Q5",
@@ -1357,15 +1376,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 3478,
+     "page": 3782,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Prove that the two tangent segments are congruent and compute lengths",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3478,
-     "answer_key_page": 3478
+     "question_page": 3782,
+     "answer_key_page": 3782
     }
    ]
   },
@@ -1382,7 +1401,8 @@
     "connection": "direct",
     "new_demand": "Use the tangent-radius right triangle to model lines of sight.",
     "course": "Geometry",
-    "builds_on": "Builds on FORWARD 1: tangent-length computations model the distance to the horizon."
+    "builds_on": "Builds on FORWARD 1: tangent-length computations model the distance to the horizon.",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1404,8 +1424,8 @@
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "Model Earth as a sphere of radius 6,371 km. A person's eyes are 2 m (0.002 km) above the sea. How far is the horizon (tangent distance), to the nearest tenth of a km?",
-     "prompt_markup": "Model Earth as a sphere of radius 6,371 km. A person's eyes are 2 m (0.002 km) above the sea. How far is the horizon (tangent distance), to the nearest tenth of a km?",
+     "prompt": "Model Earth as a sphere of radius 6,371 km and ignore atmospheric refraction (light travels in straight lines). A person's eyes are 2 m (0.002 km) above the sea. How far is the horizon (tangent distance), to the nearest tenth of a km?",
+     "prompt_markup": "Model Earth as a sphere of radius 6,371 km and ignore atmospheric refraction (light travels in straight lines). A person's eyes are 2 m (0.002 km) above the sea. How far is the horizon (tangent distance), to the nearest tenth of a km?",
      "choices": [],
      "answer_lines": [
       "Distance:"
@@ -1416,15 +1436,15 @@
      "required_method": null,
      "grading_note": "Rounding to 0.1 required. d² = (6371.002)² - 6371².",
      "figure": null,
-     "page": 3480,
-     "revision": "unchanged",
+     "page": 3784,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Lines of sight to the horizon",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 3480,
-     "answer_key_page": 3480
+     "question_page": 3784,
+     "answer_key_page": 3784
     },
     {
      "id": "S93-F2-Q2",
@@ -1445,8 +1465,8 @@
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "From the top of a 100 m tower (0.1 km), how far is the horizon, to the nearest km?",
-     "prompt_markup": "From the top of a 100 m tower (0.1 km), how far is the horizon, to the nearest km?",
+     "prompt": "Model Earth as a sphere of radius 6,371 km and ignore atmospheric refraction. From the top of a 100 m (0.1 km) tower at sea level, how far is the horizon, to the nearest km?",
+     "prompt_markup": "Model Earth as a sphere of radius 6,371 km and ignore atmospheric refraction. From the top of a 100 m (0.1 km) tower at sea level, how far is the horizon, to the nearest km?",
      "choices": [],
      "answer_lines": [
       "Distance:"
@@ -1457,15 +1477,15 @@
      "required_method": null,
      "grading_note": "Rounding to the nearest km required.",
      "figure": null,
-     "page": 3481,
-     "revision": "unchanged",
+     "page": 3785,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Lines of sight to the horizon",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 3481,
-     "answer_key_page": 3481
+     "question_page": 3785,
+     "answer_key_page": 3785
     },
     {
      "id": "S93-F2-Q3",
@@ -1505,15 +1525,15 @@
      "required_method": null,
      "grading_note": "It is tangent, perpendicular to the radius at the horizon point.",
      "figure": null,
-     "page": 3482,
+     "page": 3786,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Lines of sight to the horizon",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 3482,
-     "answer_key_page": 3482
+     "question_page": 3786,
+     "answer_key_page": 3786
     },
     {
      "id": "S93-F2-Q4",
@@ -1561,15 +1581,15 @@
      "required_method": null,
      "grading_note": "d ≈ √(2Rh).",
      "figure": null,
-     "page": 3483,
+     "page": 3787,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Lines of sight to the horizon",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 3483,
-     "answer_key_page": 3483
+     "question_page": 3787,
+     "answer_key_page": 3787
     },
     {
      "id": "S93-F2-Q5",
@@ -1602,15 +1622,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 3484,
+     "page": 3788,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Construct the tangent lines from a point outside a given circle to the circle, and justify the construction",
      "target_skill": "Lines of sight to the horizon",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 3484,
-     "answer_key_page": 3484
+     "question_page": 3788,
+     "answer_key_page": 3788
     }
    ]
   }

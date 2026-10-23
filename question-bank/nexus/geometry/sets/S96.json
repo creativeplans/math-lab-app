@@ -4,7 +4,7 @@
   "id": "GEO",
   "grade": null,
   "course": "Geometry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-23"
  },
  "grade": null,
@@ -29,7 +29,8 @@
    "branch": {
     "kind": "main",
     "strand": "advanced",
-    "target_skill": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)"
+    "target_skill": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
+    "plus_standard": true
    },
    "questions": [
     {
@@ -200,15 +201,15 @@
        "note": "Not drawn to scale."
       }
      },
-     "page": 3561,
+     "page": 3865,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3561,
-     "answer_key_page": 3561
+     "question_page": 3865,
+     "answer_key_page": 3865
     },
     {
      "id": "S96-M-Q2",
@@ -227,29 +228,166 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Let r = 5 and y = 3. Find the cross-section areas of the hemisphere and of the cylinder-minus-cone at height y.",
-     "prompt_markup": "Let r = 5 and y = 3. Find the cross-section areas of the hemisphere and of the cylinder-minus-cone at height y.",
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "Let r = 6. A hemisphere of radius 6 rests on its flat base, and a cylinder of radius 6 and height 6 has a cone removed whose vertex is at the center of the bottom base and whose base is the top of the cylinder. Show that the two cross-sections have equal area at every height y (0 ≤ y ≤ 6), and use Cavalieri's principle to find the hemisphere's and the sphere's volumes.",
+     "prompt_markup": "Let r = 6. A hemisphere of radius 6 rests on its flat base, and a cylinder of radius 6 and height 6 has a cone removed whose vertex is at the center of the bottom base and whose base is the top of the cylinder. Show that the two cross-sections have equal area at every height y (0 ≤ y ≤ 6), and use Cavalieri's principle to find the hemisphere's and the sphere's volumes.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Explanation:"
      ],
      "correct_letter": null,
-     "correct_answer": "Both 16π",
+     "correct_answer": "Hemisphere slice π(36 - y²); ring π(36 - y²); equal at every y, equal heights, so V(hemisphere) = 216π - 72π = 144π and V(sphere) = 288π.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Form required: both. 25π - 9π.",
-     "figure": null,
-     "page": 3562,
-     "revision": "unchanged",
+     "required_method": "Write both slice areas in terms of y, compare, then compute the cylinder-minus-cone volume.",
+     "grading_note": "Any valid explanation. Essential: both areas as functions of y; Cavalieri's principle; 144π; doubled 288π = 4/3 π · 216.",
+     "figure": {
+      "svg": "assets/S96-M-Q2.svg",
+      "png": "assets/S96-M-Q2.png",
+      "kind": "gd",
+      "description": "Left: a hemisphere of radius r resting on its flat base, with a dashed horizontal slice at height y. Right: a cylinder of radius r and height r with an upside-down cone (vertex at the center of the bottom, base at the top) removed, shown in side view, with a dashed slice at the same height y.",
+      "blank_for_drawing": false,
+      "data": {
+       "k": "gd",
+       "P": {},
+       "items": [
+        [
+         "arc",
+         [
+          0,
+          0
+         ],
+         1.5,
+         0,
+         180
+        ],
+        [
+         "seg",
+         [
+          -1.5,
+          0
+         ],
+         [
+          1.5,
+          0
+         ]
+        ],
+        [
+         "seg",
+         [
+          -1.2,
+          0.9
+         ],
+         [
+          1.2,
+          0.9
+         ],
+         {
+          "dash": true
+         }
+        ],
+        [
+         "poly",
+         [
+          [
+           2.4,
+           0
+          ],
+          [
+           5.4,
+           0
+          ],
+          [
+           5.4,
+           1.5
+          ],
+          [
+           2.4,
+           1.5
+          ]
+         ]
+        ],
+        [
+         "seg",
+         [
+          3.9,
+          0
+         ],
+         [
+          2.4,
+          1.5
+         ],
+         {
+          "faint": true
+         }
+        ],
+        [
+         "seg",
+         [
+          3.9,
+          0
+         ],
+         [
+          5.4,
+          1.5
+         ],
+         {
+          "faint": true
+         }
+        ],
+        [
+         "seg",
+         [
+          2.4,
+          0.9
+         ],
+         [
+          5.4,
+          0.9
+         ],
+         {
+          "dash": true
+         }
+        ],
+        [
+         "text",
+         [
+          0,
+          -0.35
+         ],
+         "hemisphere, radius r"
+        ],
+        [
+         "text",
+         [
+          3.9,
+          -0.35
+         ],
+         "cylinder minus cone"
+        ],
+        [
+         "text",
+         [
+          5.75,
+          0.9
+         ],
+         "y"
+        ]
+       ],
+       "desc": "Left: a hemisphere of radius r resting on its flat base, with a dashed horizontal slice at height y. Right: a cylinder of radius r and height r with an upside-down cone (vertex at the center of the bottom, base at the top) removed, shown in side view, with a dashed slice at the same height y.",
+       "h": 200,
+       "note": "Not drawn to scale."
+      }
+     },
+     "page": 3866,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3562,
-     "answer_key_page": 3562
+     "question_page": 3866,
+     "answer_key_page": 3866
     },
     {
      "id": "S96-M-Q3",
@@ -268,29 +406,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Let r = 6. Find the volume of the cylinder-minus-cone and compare it with ⅔πr³.",
-     "prompt_markup": "Let r = 6. Find the volume of the cylinder-minus-cone and compare it with ⅔πr³.",
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "A sphere of radius r fits exactly inside a cylinder of radius r and height 2r. Use the Cavalieri result for the hemisphere to explain why the sphere has ⅔ of the cylinder's volume.",
+     "prompt_markup": "A sphere of radius r fits exactly inside a cylinder of radius r and height 2r. Use the Cavalieri result for the hemisphere to explain why the sphere has ⅔ of the cylinder's volume.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Explanation:"
      ],
      "correct_letter": null,
-     "correct_answer": "216π - 72π = 144π = ⅔π(216)",
+     "correct_answer": "Each hemisphere has volume (cylinder of height r) - (cone) = πr³ - ⅓πr³ = ⅔ of πr³; doubling, the sphere is ⅔ of the cylinder 2πr³: 4/3 πr³.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Form required: the computation and the comparison.",
+     "required_method": "Split the cylinder at the sphere's center into two cylinders of height r and compare each with a hemisphere.",
+     "grading_note": "Any valid explanation. Essential: two halves; each hemisphere is ⅔ of its half-cylinder by the Cavalieri comparison; ⅔ of the whole (Archimedes).",
      "figure": null,
-     "page": 3563,
-     "revision": "unchanged",
+     "page": 3867,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3563,
-     "answer_key_page": 3563
+     "question_page": 3867,
+     "answer_key_page": 3867
     },
     {
      "id": "S96-M-Q4",
@@ -309,29 +447,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain why a stack of coins pushed into a slanted stack keeps its volume, using Cavalieri's principle.",
-     "prompt_markup": "Explain why a stack of coins pushed into a slanted stack keeps its volume, using Cavalieri's principle.",
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "Explain, using Cavalieri's principle, why an oblique cylinder of radius r and vertical height h has the same volume as a right cylinder of radius r and height h.",
+     "prompt_markup": "Explain, using Cavalieri's principle, why an oblique cylinder of radius r and vertical height h has the same volume as a right cylinder of radius r and height h.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Explanation:"
      ],
      "correct_letter": null,
-     "correct_answer": "Each coin (cross-section) has the same area at every height, so the volumes are equal.",
+     "correct_answer": "Every horizontal slice of both is a disk of area πr², and the heights are equal, so the volumes are equal: πr²h.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "required_method": "Compare cross-sections at every height.",
+     "grading_note": "Any valid explanation. Essential: equal slice areas at every level; equal heights; Cavalieri's principle.",
      "figure": null,
-     "page": 3564,
-     "revision": "unchanged",
+     "page": 3868,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3564,
-     "answer_key_page": 3564
+     "question_page": 3868,
+     "answer_key_page": 3868
     },
     {
      "id": "S96-M-Q5",
@@ -350,44 +488,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "mc",
-     "response": "select one",
-     "prompt": "Cavalieri's principle requires",
-     "prompt_markup": "Cavalieri's principle requires",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "equal surface areas"
-      },
-      {
-       "letter": "B",
-       "text": "congruent bases only"
-      },
-      {
-       "letter": "C",
-       "text": "the same shape at every level"
-      },
-      {
-       "letter": "D",
-       "text": "equal heights and equal cross-section areas at every level"
-      }
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "A student turns the removed cone upright (base on the bottom of the cylinder, vertex at the top) and compares the remaining solid with the hemisphere. Explain why Cavalieri's principle cannot be used for this comparison, by comparing the two cross-section areas at height y = 0.",
+     "prompt_markup": "A student turns the removed cone upright (base on the bottom of the cylinder, vertex at the top) and compares the remaining solid with the hemisphere. Explain why Cavalieri's principle cannot be used for this comparison, by comparing the two cross-section areas at height y = 0.",
+     "choices": [],
+     "answer_lines": [
+      "Explanation:"
      ],
-     "answer_lines": [],
-     "correct_letter": "D",
-     "correct_answer": "equal heights and equal cross-section areas at every level",
+     "correct_letter": null,
+     "correct_answer": "At y = 0 the hemisphere slice has area πr², but the cylinder slice is completely removed by the cone base (area πr² - πr² = 0); the areas differ, so the principle does not apply.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Statement.",
+     "required_method": "Compute both slice areas at y = 0.",
+     "grading_note": "Any valid explanation. Essential: both areas at y = 0; unequal areas at some level; conclusion that the hypothesis of Cavalieri's principle fails.",
      "figure": null,
-     "page": 3565,
-     "revision": "unchanged",
+     "page": 3869,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3565,
-     "answer_key_page": 3565
+     "question_page": 3869,
+     "answer_key_page": 3869
     }
    ]
   },
@@ -402,7 +525,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student does not know the principle. Why it matters: the sphere argument rests on it. Evidence: states and applies it.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -443,15 +567,15 @@
      "required_method": null,
      "grading_note": "Principle.",
      "figure": null,
-     "page": 3567,
+     "page": 3871,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Cavalieri's principle for prisms and cylinders",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3567,
-     "answer_key_page": 3567
+     "question_page": 3871,
+     "answer_key_page": 3871
     },
     {
      "id": "S96-B1-Q2",
@@ -484,15 +608,15 @@
      "required_method": null,
      "grading_note": "Form required: exact value.",
      "figure": null,
-     "page": 3568,
+     "page": 3872,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Cavalieri's principle for prisms and cylinders",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3568,
-     "answer_key_page": 3568
+     "question_page": 3872,
+     "answer_key_page": 3872
     },
     {
      "id": "S96-B1-Q3",
@@ -540,15 +664,15 @@
      "required_method": null,
      "grading_note": "Cavalieri.",
      "figure": null,
-     "page": 3569,
+     "page": 3873,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Cavalieri's principle for prisms and cylinders",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3569,
-     "answer_key_page": 3569
+     "question_page": 3873,
+     "answer_key_page": 3873
     },
     {
      "id": "S96-B1-Q4",
@@ -581,15 +705,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 3570,
+     "page": 3874,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Cavalieri's principle for prisms and cylinders",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3570,
-     "answer_key_page": 3570
+     "question_page": 3874,
+     "answer_key_page": 3874
     },
     {
      "id": "S96-B1-Q5",
@@ -629,15 +753,15 @@
      "required_method": null,
      "grading_note": "Only equal areas.",
      "figure": null,
-     "page": 3571,
+     "page": 3875,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Cavalieri's principle for prisms and cylinders",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3571,
-     "answer_key_page": 3571
+     "question_page": 3875,
+     "answer_key_page": 3875
     }
    ]
   },
@@ -652,7 +776,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot find the slice radius. Why it matters: the hemisphere slice area needs it. Evidence: uses the Pythagorean Theorem in 3-D.",
-    "source": "Grade 8"
+    "source": "Grade 8",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -684,15 +809,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 3573,
+     "page": 3877,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Cross-section radius with the Pythagorean Theorem",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 3573,
-     "answer_key_page": 3573
+     "question_page": 3877,
+     "answer_key_page": 3877
     },
     {
      "id": "S96-B2-Q2",
@@ -711,8 +836,8 @@
      "nearest_related": false,
      "type": "sa",
      "response": "write",
-     "prompt": "Radius r, height y: slice radius?",
-     "prompt_markup": "Radius r, height y: slice radius?",
+     "prompt": "A hemisphere of radius r rests on its flat base; y is the height above the base plane (0 ≤ y ≤ r). Find the radius of the horizontal slice at height y.",
+     "prompt_markup": "A hemisphere of radius r rests on its flat base; y is the height above the base plane (0 ≤ y ≤ r). Find the radius of the horizontal slice at height y.",
      "choices": [],
      "answer_lines": [
       "Radius:"
@@ -723,15 +848,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 3574,
-     "revision": "unchanged",
+     "page": 3878,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Cross-section radius with the Pythagorean Theorem",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 3574,
-     "answer_key_page": 3574
+     "question_page": 3878,
+     "answer_key_page": 3878
     },
     {
      "id": "S96-B2-Q3",
@@ -777,15 +902,15 @@
      "required_method": null,
      "grading_note": "100 - 36.",
      "figure": null,
-     "page": 3575,
+     "page": 3879,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Cross-section radius with the Pythagorean Theorem",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 3575,
-     "answer_key_page": 3575
+     "question_page": 3879,
+     "answer_key_page": 3879
     },
     {
      "id": "S96-B2-Q4",
@@ -823,15 +948,15 @@
      "required_method": null,
      "grading_note": "Right angle at the slice center.",
      "figure": null,
-     "page": 3576,
+     "page": 3880,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Cross-section radius with the Pythagorean Theorem",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 3576,
-     "answer_key_page": 3576
+     "question_page": 3880,
+     "answer_key_page": 3880
     },
     {
      "id": "S96-B2-Q5",
@@ -850,8 +975,8 @@
      "nearest_related": false,
      "type": "tf",
      "response": "select true or false",
-     "prompt": "Slices of a hemisphere get bigger as y increases.",
-     "prompt_markup": "Slices of a hemisphere get bigger as y increases.",
+     "prompt": "A hemisphere of radius r rests on its flat base; y is the height above the base plane (0 ≤ y ≤ r). Its horizontal slices get bigger as y increases.",
+     "prompt_markup": "A hemisphere of radius r rests on its flat base; y is the height above the base plane (0 ≤ y ≤ r). Its horizontal slices get bigger as y increases.",
      "choices": [
       {
        "letter": "A",
@@ -869,15 +994,15 @@
      "required_method": null,
      "grading_note": "Smaller.",
      "figure": null,
-     "page": 3577,
-     "revision": "unchanged",
+     "page": 3881,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Cross-section radius with the Pythagorean Theorem",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 3577,
-     "answer_key_page": 3577
+     "question_page": 3881,
+     "answer_key_page": 3881
     }
    ]
   },
@@ -892,7 +1017,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot compute the comparison solid. Why it matters: its volume becomes the hemisphere's. Evidence: computes those volumes.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -926,15 +1052,15 @@
      "required_method": null,
      "grading_note": "Form required: exact value.",
      "figure": null,
-     "page": 3579,
+     "page": 3883,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Volumes of cylinders and cones",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3579,
-     "answer_key_page": 3579
+     "question_page": 3883,
+     "answer_key_page": 3883
     },
     {
      "id": "S96-B3-Q2",
@@ -967,15 +1093,15 @@
      "required_method": null,
      "grading_note": "Form required: exact value.",
      "figure": null,
-     "page": 3580,
+     "page": 3884,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Volumes of cylinders and cones",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3580,
-     "answer_key_page": 3580
+     "question_page": 3884,
+     "answer_key_page": 3884
     },
     {
      "id": "S96-B3-Q3",
@@ -1023,15 +1149,15 @@
      "required_method": null,
      "grading_note": "πr³ - ⅓πr³.",
      "figure": null,
-     "page": 3581,
+     "page": 3885,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Volumes of cylinders and cones",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3581,
-     "answer_key_page": 3581
+     "question_page": 3885,
+     "answer_key_page": 3885
     },
     {
      "id": "S96-B3-Q4",
@@ -1071,15 +1197,15 @@
      "required_method": null,
      "grading_note": "Formula.",
      "figure": null,
-     "page": 3582,
+     "page": 3886,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Volumes of cylinders and cones",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3582,
-     "answer_key_page": 3582
+     "question_page": 3886,
+     "answer_key_page": 3886
     },
     {
      "id": "S96-B3-Q5",
@@ -1119,15 +1245,15 @@
      "required_method": null,
      "grading_note": "⅔πr³.",
      "figure": null,
-     "page": 3583,
+     "page": 3887,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Volumes of cylinders and cones",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3583,
-     "answer_key_page": 3583
+     "question_page": 3887,
+     "answer_key_page": 3887
     }
    ]
   },
@@ -1142,7 +1268,8 @@
     "kind": "backward",
     "alignment": "supporting",
     "rationale": "Obstacle: the student cannot find the ring area. Why it matters: the comparison slice is a ring. Evidence: computes ring areas.",
-    "source": "Grade 7"
+    "source": "Grade 7",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1174,15 +1301,15 @@
      "required_method": null,
      "grading_note": "Form required: exact value.",
      "figure": null,
-     "page": 3585,
+     "page": 3889,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Area of a ring",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 3585,
-     "answer_key_page": 3585
+     "question_page": 3889,
+     "answer_key_page": 3889
     },
     {
      "id": "S96-B4-Q2",
@@ -1220,15 +1347,15 @@
      "required_method": null,
      "grading_note": "Subtract.",
      "figure": null,
-     "page": 3586,
+     "page": 3890,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Area of a ring",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 3586,
-     "answer_key_page": 3586
+     "question_page": 3890,
+     "answer_key_page": 3890
     },
     {
      "id": "S96-B4-Q3",
@@ -1274,15 +1401,15 @@
      "required_method": null,
      "grading_note": "16 - 1.",
      "figure": null,
-     "page": 3587,
+     "page": 3891,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Area of a ring",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 3587,
-     "answer_key_page": 3587
+     "question_page": 3891,
+     "answer_key_page": 3891
     },
     {
      "id": "S96-B4-Q4",
@@ -1313,15 +1440,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 3588,
+     "page": 3892,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Area of a ring",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 3588,
-     "answer_key_page": 3588
+     "question_page": 3892,
+     "answer_key_page": 3892
     },
     {
      "id": "S96-B4-Q5",
@@ -1359,15 +1486,15 @@
      "required_method": null,
      "grading_note": "π(R² - r²).",
      "figure": null,
-     "page": 3589,
+     "page": 3893,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Area of a ring",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 3589,
-     "answer_key_page": 3589
+     "question_page": 3893,
+     "answer_key_page": 3893
     }
    ]
   },
@@ -1383,7 +1510,8 @@
     "progression": "same-course deepening",
     "connection": "direct",
     "new_demand": "Apply the principle to solids beyond the sphere (twisted solids, pyramids and cones).",
-    "course": "Geometry"
+    "course": "Geometry",
+    "plus_standard": true
    },
    "questions": [
     {
@@ -1417,15 +1545,15 @@
      "required_method": null,
      "grading_note": "Form required: the comparison with the value.",
      "figure": null,
-     "page": 3591,
+     "page": 3895,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Use Cavalieri's principle for other solids",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3591,
-     "answer_key_page": 3591
+     "question_page": 3895,
+     "answer_key_page": 3895
     },
     {
      "id": "S96-F1-Q2",
@@ -1458,15 +1586,15 @@
      "required_method": null,
      "grading_note": "Form required: the comparison with the value.",
      "figure": null,
-     "page": 3592,
+     "page": 3896,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Use Cavalieri's principle for other solids",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3592,
-     "answer_key_page": 3592
+     "question_page": 3896,
+     "answer_key_page": 3896
     },
     {
      "id": "S96-F1-Q3",
@@ -1506,15 +1634,15 @@
      "required_method": null,
      "grading_note": "Equal slices.",
      "figure": null,
-     "page": 3593,
+     "page": 3897,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Use Cavalieri's principle for other solids",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3593,
-     "answer_key_page": 3593
+     "question_page": 3897,
+     "answer_key_page": 3897
     },
     {
      "id": "S96-F1-Q4",
@@ -1562,15 +1690,15 @@
      "required_method": null,
      "grading_note": "5 × 8.",
      "figure": null,
-     "page": 3594,
+     "page": 3898,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Use Cavalieri's principle for other solids",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3594,
-     "answer_key_page": 3594
+     "question_page": 3898,
+     "answer_key_page": 3898
     },
     {
      "id": "S96-F1-Q5",
@@ -1603,15 +1731,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 3595,
+     "page": 3899,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Use Cavalieri's principle for other solids",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3595,
-     "answer_key_page": 3595
+     "question_page": 3899,
+     "answer_key_page": 3899
     }
    ]
   },
@@ -1628,7 +1756,8 @@
     "connection": "direct",
     "new_demand": "Use the justified sphere volume in a model with density.",
     "course": "Geometry",
-    "builds_on": "Builds on FORWARD 1: volumes justified by Cavalieri are used in a structural model."
+    "builds_on": "Builds on FORWARD 1: volumes justified by Cavalieri are used in a structural model.",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1662,15 +1791,15 @@
      "required_method": null,
      "grading_note": "Rounding to 0.1 required. ⅔π(10³ - 9.5³).",
      "figure": null,
-     "page": 3597,
+     "page": 3901,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Model a dome as a hemispherical shell",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 3597,
-     "answer_key_page": 3597
+     "question_page": 3901,
+     "answer_key_page": 3901
     },
     {
      "id": "S96-F2-Q2",
@@ -1691,8 +1820,8 @@
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "Concrete has density 2.4 t/m³. Estimate the dome's mass to the nearest ton.",
-     "prompt_markup": "Concrete has density 2.4 t/m³. Estimate the dome's mass to the nearest ton.",
+     "prompt": "A concrete dome is a hemispherical shell with outer radius 10 m and inner radius 9.5 m. Concrete has density 2.4 t/m³. Estimate the dome's mass to the nearest ton.",
+     "prompt_markup": "A concrete dome is a hemispherical shell with outer radius 10 m and inner radius 9.5 m. Concrete has density 2.4 t/m³. Estimate the dome's mass to the nearest ton.",
      "choices": [],
      "answer_lines": [
       "Mass:"
@@ -1701,17 +1830,17 @@
      "correct_answer": "717 t",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Rounding to the nearest ton required.",
+     "grading_note": "Rounding to the nearest ton required. Volume ⅔π(10³ - 9.5³) ≈ 298.71 m³; × 2.4.",
      "figure": null,
-     "page": 3598,
-     "revision": "unchanged",
+     "page": 3902,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Model a dome as a hemispherical shell",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 3598,
-     "answer_key_page": 3598
+     "question_page": 3902,
+     "answer_key_page": 3902
     },
     {
      "id": "S96-F2-Q3",
@@ -1751,15 +1880,15 @@
      "required_method": null,
      "grading_note": "Subtract.",
      "figure": null,
-     "page": 3599,
+     "page": 3903,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Model a dome as a hemispherical shell",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 3599,
-     "answer_key_page": 3599
+     "question_page": 3903,
+     "answer_key_page": 3903
     },
     {
      "id": "S96-F2-Q4",
@@ -1807,15 +1936,15 @@
      "required_method": null,
      "grading_note": "⅔π · 27.",
      "figure": null,
-     "page": 3600,
+     "page": 3904,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Model a dome as a hemispherical shell",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 3600,
-     "answer_key_page": 3600
+     "question_page": 3904,
+     "answer_key_page": 3904
     },
     {
      "id": "S96-F2-Q5",
@@ -1848,15 +1977,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 3601,
+     "page": 3905,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Give an informal argument using Cavalieri's principle for the volume of a sphere (and other solid figures)",
      "target_skill": "Model a dome as a hemispherical shell",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 3601,
-     "answer_key_page": 3601
+     "question_page": 3905,
+     "answer_key_page": 3905
     }
    ]
   }

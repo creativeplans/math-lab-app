@@ -36,8 +36,10 @@ SETS = [
              note='Any equivalent explanation. Essential: the images are parallel because rigid motions take parallel lines to parallel lines.'),
           sa('Point A is 4 cm from line m. Triangle ABC is reflected across m. How far is A′ from m, and on which side of m is it?', 'Answer:',
              key='4 cm, on the other side of m.', note='Any equivalent wording. m is the perpendicular bisector of AA′.'),
-          tf('A translation can reverse the orientation (the clockwise or counterclockwise order) of a triangle\'s vertices.', key=False,
-             note='A translation slides every point the same way, so the order of the vertices around the triangle is kept.'),
+          sa('Triangle ABC is labeled counterclockwise (A → B → C). It is translated 5 units right and then reflected across a line m. Is the final image '
+             'A″B″C″ labeled clockwise or counterclockwise? Explain each step.', 'Answer:',
+             key='Clockwise. The translation keeps the counterclockwise order (it slides every point the same way); the reflection reverses it.',
+             note='Any equivalent explanation that predicts the effect of each motion on orientation.'),
           sa('Segment AB lies on line ℓ. A 180° rotation about a point O on ℓ maps AB to A′B′. Where does A′B′ lie? Explain.', 'Answer:',
              key='On ℓ. A 180° rotation about a point of ℓ sends every point of ℓ to the point of ℓ on the opposite side of O, so ℓ maps onto itself.',
              note='Any equivalent explanation.'),
@@ -68,8 +70,10 @@ SETS = [
       f1=B('Predict the effect of a sequence of rigid motions', 'HSG-CO.B.6', [
           sa('Triangle ABC is reflected across line ℓ and then across line m, where ℓ ∥ m. Is the final image clockwise or counterclockwise if ABC is counterclockwise? Explain.',
              'Answer:', key='Counterclockwise. Each reflection reverses the orientation, so two reflections restore it.', note='Any equivalent explanation.'),
-          sa('A figure is rotated 70° about point O and then rotated 50° about the same point O. Which single rigid motion has the same effect?', 'Answer:',
-             key='A rotation of 120° about O (in the same direction).', note='Any equivalent wording.'),
+          sa('A figure is rotated 70° counterclockwise about point O and then rotated 50° clockwise about the same point O. Which single rigid motion has the same effect?',
+             'Answer:', key='A rotation of 20° counterclockwise about O.',
+             note='Form required: the angle, the direction, and the center. Directed angles add: +70° + (-50°) = +20°. (If both turns were in the same '
+                  'direction, the result would be 120°.)'),
           tf('A translation that is not the identity has exactly one fixed point.', key=False, note='Every point moves by the same nonzero amount, so no point is fixed.'),
           mc('Which rigid motion keeps exactly one point fixed?', ['A rotation of 90° about point O', 'A reflection across line ℓ',
                                                                   'A translation 3 units right', 'The identity'],
@@ -109,11 +113,15 @@ SETS = [
                          'Grid from -6 to 6. Triangle ABC: A(0, 0), B(3, 0), C(0, 4). Triangle PQR: P(-5, -1), Q(-2, -1), R(-5, 4).'),
              key='No. ABC has legs 3 and 4, but PQR has legs 3 and 5. A rigid motion keeps every length, so none can carry one onto the other.',
              note='Form required: "No" with a length (or area) that differs. Areas 6 and 7.5 also show it.'),
-          mc('Which fact proves that two figures are NOT congruent?', ['One has area 12 and the other has area 15',
-                                                                       'They face opposite directions', 'They are in different quadrants', 'One is above the other'],
-             note='Rigid motions keep area. Direction and position can be changed by rigid motions.'),
-          tf('Two figures are congruent if some sequence of rotations, reflections, and translations carries one onto the other.', key=True,
-             note='That is the definition of congruence in terms of rigid motions.'),
+          sa('Is triangle ABC congruent to triangle DEF? If so, give a rigid motion (or sequence) that carries ABC onto DEF. If not, explain why.', 'Answer:',
+             fig=two_tri({'A': (1, 1), 'B': (5, 1), 'C': (1, 3)}, {'D': (-2, 0), 'E': (-2, 4), 'F': (-4, 0)}, {},
+                         'Grid from -6 to 6. Triangle ABC: A(1, 1), B(5, 1), C(1, 3). Triangle DEF: D(-2, 0), E(-2, 4), F(-4, 0).'),
+             key='Yes. Rotate 90° counterclockwise about the origin (A → (-1, 1), B → (-1, 5), C → (-3, 1)), then translate 1 unit left and 1 unit down.',
+             note='Any valid sequence that sends A to D, B to E, and C to F; the conclusion and a working motion are both required.'),
+          sa('Quadrilateral Q has sides 3, 4, 3, 4 and four right angles. Quadrilateral R has sides 3, 4, 3, 4 and two 70° angles. Is Q congruent to R? '
+             'Explain using rigid motions.', 'Answer:',
+             key='No. Rigid motions keep angle measures, so no rigid motion can carry a 90° angle of Q onto a 70° angle, and every vertex of Q has a 90° angle.',
+             note='Form required: "No" with a preserved measure (angle) that differs.'),
           sa('Rectangle R is 4 cm wide and 6 cm tall. Rectangle S is 6 cm wide and 4 cm tall. Are they congruent? Give a rigid motion or explain why not.',
              'Answer:', key='Yes. A 90° rotation (followed by a translation if needed) carries R onto S.',
              note='Any valid rigid motion. Both are 4 by 6 rectangles; turning one a quarter turn matches the other.'),
@@ -148,9 +156,11 @@ SETS = [
           sa('Two quadrilaterals each have sides 5, 5, 5, 5. One is a square and the other has a 60° angle. Are they congruent? Explain.', 'Answer:',
              key='No. A rigid motion keeps angle measures, but one has 90° angles and the other a 60° angle.', note='Any equivalent explanation.'),
           tf('Two triangles with the same perimeter must be congruent.', key=False, note='A 3-4-5 triangle and a 4-4-4 triangle both have perimeter 12.'),
-          mc('Which information is enough to show two segments are congruent?', ['They have the same length', 'They have the same slope',
-                                                                                 'They have the same midpoint', 'They both start at the origin'],
-             note='A rigid motion can carry any segment onto any other segment of the same length.'),
+          sa('Sector P has radius 4 and central angle 50°. Sector Q has radius 4 and central angle 50°, drawn in another place and turned. Are they congruent? '
+             'Explain with a rigid motion.', 'Answer:',
+             key='Yes. Translate P\'s center onto Q\'s center, rotate so one bounding radius of P lies along one of Q\'s, and reflect across it if the arcs '
+                 'are on opposite sides. Equal radii and equal 50° angles make the arcs match.',
+             note='Any valid motion with a reason using the equal radius and equal angle.'),
           sa('Angle 1 measures 35° and angle 2 measures 35°. Describe a rigid motion that carries angle 1 onto angle 2.', 'Answer:',
              key='Translate the vertex of angle 1 to the vertex of angle 2, rotate so one side lies along a side of angle 2, and reflect across that side if the other side is on the wrong side.',
              note='Any valid description that matches vertex and both sides.'),
@@ -187,12 +197,24 @@ SETS = [
                 note='Any valid explanation. Essential: the translation and rotation match A and B; the reflection (if needed) puts C on F\'s side; '
                      'C lands on F because ∠A ≅ ∠D puts C on ray DF and AC = DF fixes its distance from D. Accept using ∠B and ∠E instead. '
                      'Invalid: stating the result without explaining why C lands on F.'),
-          mc('A rigid motion maps △PQR onto △XYZ with P → X, Q → Y, R → Z. Which must be true?', ['QR = YZ', 'QR = XZ', '∠P ≅ ∠Y', 'PQ = YZ'],
-             note='Side QR corresponds to side YZ.'),
-          sa('△JKL ≅ △MNO with J ↔ M, K ↔ N, L ↔ O. JK = 8, KL = 11, and m∠L = 37°. Find MN, NO, and m∠O.', 'Answer:',
-             key='MN = 8, NO = 11, m∠O = 37°', note='Any equivalent form. Corresponding parts of congruent triangles are congruent.'),
-          tf('Two triangles whose three pairs of corresponding angles are congruent must be congruent.', key=False,
-             note='A small and a large equilateral triangle have the same angles but are not congruent: the sides must match too.'),
+          proof('The rotation of 90° counterclockwise about the origin carries △ABC, with A(1, 0), B(4, 0), C(1, 2), onto △A′B′C′. Find A′, B′, C′, check that '
+                'all six pairs of corresponding parts are congruent, and explain why the definition of congruence guarantees this for every rigid motion.',
+                method='Apply (x, y) → (-y, x); compare the three side lengths and the angles; then give the general reason.',
+                key='A′(0, 1), B′(0, 4), C′(-2, 1). AB = A′B′ = 3, AC = A′C′ = 2, BC = B′C′ = √13; the right angles at A and A′ match and the other angles '
+                    'match because the triangles have the same sides. In general a rigid motion sends each side and angle onto its partner and keeps length and angle measure.',
+                note='Any valid explanation. Essential: correct images; the six comparisons (angles may be checked by slopes or by SSS); the general reason '
+                     '(the motion carries parts onto corresponding parts, and rigid motions preserve measures).'),
+          proof('△ABC has A(0, 0), B(3, 0), C(0, 4). △DEF has D(5, 1), E(5, 4), F(1, 1). Show that all six pairs of corresponding parts (A ↔ D, B ↔ E, C ↔ F) are '
+                'congruent, and then give a rigid motion that carries △ABC onto △DEF.',
+                method='Compare the sides (and angles), then build the motion: move A onto D, turn ray AB onto ray DE, and reflect if needed.',
+                key='AB = DE = 3, AC = DF = 4, BC = EF = 5, and the right angles at A and D match. Translate 5 right and 1 up (A → D, B → (8, 1), C → (5, 5)), rotate '
+                    '90° counterclockwise about D (B → (5, 4) = E, C → (1, 1) = F).',
+                note='Any valid motion. Essential: all six matches (angles via the right angles and equal sides), and a sequence that sends A, B, C to D, E, F.'),
+          proof('Explain why the converse direction needs the sides as well as the angles: give two triangles with all three pairs of angles congruent for '
+                'which no rigid motion carries one onto the other, and say which part of the definition fails.',
+                method='Use a counterexample and the fact that rigid motions preserve length.',
+                key='A 3-4-5 right triangle and a 6-8-10 right triangle have the same angles, but a rigid motion keeps lengths, so it cannot send a 3-unit side to a 6-unit side.',
+                note='Any valid counterexample with equal angles and unequal sides, and the reason (rigid motions preserve length).'),
       ],
       back=[
           B('Read a congruence statement to match corresponding parts', '8.G.A.2', [
@@ -269,16 +291,30 @@ SETS = [
                 note='Any valid explanation. Essential: (1) translate A onto D; (2) rotate about D so ray AB lies on ray DE; B lands on E because AB = DE; '
                      '(3) reflect across DE if needed so C is on F\'s side; (4) ray AC lands on ray DF because ∠A ≅ ∠D; (5) C lands on F because AC = DF. '
                      'Invalid: "the triangles look the same"; citing SAS to prove SAS.'),
-          mc('In the rigid-motion proof of SAS, A has been moved to D and ray AB lies on ray DE, with C on the same side of line DE as F. Why must ray AC lie on ray DF?',
-             ['∠A ≅ ∠D, so both rays make the same angle with ray DE on the same side', 'AC = DF', 'BC = EF', 'The triangles have equal areas'],
-             note='There is only one ray from D on that side of line DE making that angle with ray DE.'),
-          sa('In the rigid-motion proof of SAS, ray AC now lies on ray DF. Why does C land exactly on F?', 'Answer:',
-             key='AC = DF and rigid motions keep length, so C is the point of ray DF at distance DF from D, which is F.', note='Any equivalent explanation.'),
-          sa('Explain why a reflection is sometimes needed in the rigid-motion proof of SAS, and why it does not move D or E.', 'Answer:',
-             key='After the rotation, C may be on the opposite side of line DE from F. Reflecting across line DE moves it to F\'s side; D and E are on the line, so they stay fixed.',
-             note='Any equivalent explanation with both parts.'),
-          tf('The rigid-motion argument for SAS still works if the congruent angle is not between the two congruent sides.', key=False,
-             note='Then the angle does not fix where the third vertex goes; SSA can give two different triangles.'),
+          proof('In △JKL and △MNO, JK = MN, JL = MO, and ∠J ≅ ∠M. △MNO is a mirror image of △JKL (its vertices run the opposite way around). '
+                'Explain, using rigid motions, why △JKL ≅ △MNO, and say at which step a reflection is needed.',
+                method='Translate J to M; rotate so ray JK lies on ray MN; then reflect across line MN because L is on the other side from O. Explain why K lands on N and L lands on O.',
+                key='A translation, a rotation, and a reflection across line MN carry J to M, K to N, and L to O.',
+                note='Any valid explanation. Essential: (1) J → M; (2) ray JK onto ray MN, K lands on N because JK = MN; (3) the reflection across MN is needed '
+                     'because the orientation is reversed, and it fixes M and N; (4) ray JL lands on ray MO because ∠J ≅ ∠M; (5) L lands on O because JL = MO. '
+                     'Invalid: citing SAS to prove SAS.'),
+          proof('△ABC has A(0, 0), B(4, 0), C(1, 3). △DEF has D(2, -1), E(2, 3), F(-1, 0). AB = DE = 4, AC = DF = √10, and ∠A ≅ ∠D. Name a translation and '
+                'a rotation that carry A to D and ray AB onto ray DE, and explain, using only the SAS facts, why C must then land on F.',
+                method='Find the motions, then use ∠A ≅ ∠D to place ray AC on ray DF and AC = DF to place C on F.',
+                key='Translate 2 right and 1 down (A → D, B → (6, -1)); rotate 90° counterclockwise about D (B → E). Ray AC goes to the ray from D making ∠A '
+                    'with ray DE on F\'s side, which is ray DF (∠A ≅ ∠D); C is √10 from D on it, so C → F.',
+                note='Any valid motions. Essential: the motions with the check B → E; the angle places the ray; the length places the point. A computation '
+                     'C → (-1, 0) is accepted as a check but the SAS reasoning is required.'),
+          proof('In quadrilateral ABCD, AB = AD and diagonal AC bisects ∠BAD. Explain, using one reflection, why △ABC ≅ △ADC.',
+                method='Reflect across line AC. Explain where A, C, ray AB, and B go.',
+                key='The reflection across line AC fixes A and C, sends ray AB onto ray AD, and sends B to D, so △ABC → △ADC.',
+                note='Any valid explanation. Essential: A and C are on the mirror line, so they are fixed; ∠BAC ≅ ∠DAC (bisector), with B and D on opposite '
+                     'sides of AC, so the reflection sends ray AB onto ray AD; AB = AD, so B lands on D. Invalid: "they look like mirror images".'),
+          proof('Segments AC and BD bisect each other at E (A, E, C on one line and B, E, D on another). Explain, using a 180° rotation about E, why △AEB ≅ △CED.',
+                method='Use that a 180° rotation about E sends each ray from E to the opposite ray, and keeps distances from E.',
+                key='The 180° rotation about E sends A to C and B to D (and fixes E), so △AEB → △CED.',
+                note='Any valid explanation. Essential: ray EA goes to the opposite ray EC and EA = EC, so A → C; ray EB goes to ray ED and EB = ED, so B → D; '
+                     'E is fixed. (This is the SAS configuration with the vertical angles at E.)'),
       ],
       back=[
           B('Identify the included angle and included side', '7.G.A.2', [
@@ -322,7 +358,7 @@ SETS = [
                 key='△ABC ≅ △CDA by SAS.',
                 note='Any valid proof. Essential: AB = CD (given); ∠BAC ≅ ∠DCA (alternate interior angles, AB ∥ DC); AC = CA (reflexive); SAS with the '
                      'angle between the sides. Invalid: using ∠B ≅ ∠D without proof.'),
-          proof('Point M is the midpoint of segment AB, and line ℓ is perpendicular to AB at M. Point P is on ℓ. Prove that △PMA ≅ △PMB.',
+          proof('Point M is the midpoint of segment AB, and line ℓ is perpendicular to AB at M. Point P is on ℓ, and P ≠ M. Prove that △PMA ≅ △PMB.',
                 method='Use the midpoint, the right angles, and the shared side PM with SAS.',
                 key='△PMA ≅ △PMB by SAS, so PA = PB.',
                 note='Any valid proof. Essential: AM = BM (midpoint); ∠PMA ≅ ∠PMB (both right angles); PM = PM; SAS.'),
@@ -371,17 +407,30 @@ SETS += [
                 note='Any valid explanation. Essential: (1) A → D and B → E using AB = DE; (2) C on F\'s side of DE (reflect if needed); (3) ray AC lands '
                      'on ray DF because ∠A ≅ ∠D; (4) ray BC lands on ray EF because ∠B ≅ ∠E; (5) C is where rays AC and BC meet, so it lands where DF and '
                      'EF meet, which is F. Invalid: using side lengths AC or BC (not given); citing ASA to prove ASA.'),
-          mc('In the rigid-motion proof of ASA, A is on D, B is on E, and C is on F\'s side of line DE. Why does C land on F?',
-             ['C is where rays AC and BC meet; those rays now lie on rays DF and EF, which meet only at F', 'AC = DF', 'BC = EF',
-              'C and F are both the highest points'],
-             note='The two angles place the two rays; the intersection point is unique.'),
-          sa('In the rigid-motion proof of ASA, A is on D, B is on E, and C is on the same side of line DE as F. Explain why ray BC lies on ray EF.', 'Answer:',
-             key='∠B ≅ ∠E, and on that side of line DE there is only one ray from E making that angle with ray ED, namely ray EF.',
-             note='Any equivalent explanation.'),
-          sa('In the rigid-motion proof of ASA, why can rays DF and EF meet in only one point?', 'Answer:',
-             key='They lie on two different lines, and two different lines meet in at most one point.', note='Any equivalent explanation.'),
-          tf('In the rigid-motion proof of ASA, a reflection across line DE leaves D and E where they are.', key=True,
-             note='Points on the line of reflection are fixed.'),
+          proof('In △PQR and △STU, ∠P ≅ ∠S, PQ = ST, and ∠Q ≅ ∠T. △STU is a mirror image of △PQR (its vertices run the opposite way around). Explain, using '
+                'rigid motions, why △PQR ≅ △STU, including where the reflection is used and why R lands on U.',
+                method='Translate P to S; rotate so ray PQ lies on ray ST; reflect across line ST; then use the two angles to place two rays and their intersection.',
+                key='A translation, a rotation, and a reflection across ST carry P → S, Q → T, and R → U.',
+                note='Any valid explanation. Essential: P → S and Q → T (PQ = ST); the reflection (fixing S and T) puts R on U\'s side; ray PR lands on ray SU '
+                     '(∠P ≅ ∠S) and ray QR lands on ray TU (∠Q ≅ ∠T); two different lines meet in at most one point, so R lands on U.'),
+          proof('△ABC has A(0, 0), B(4, 0), C(1, 3). △DEF has D(5, 5), E(1, 5), F(4, 2). ∠A ≅ ∠D, AB = DE, and ∠B ≅ ∠E. The 180° rotation about (2.5, 2.5) '
+                'sends A to D and B to E. Explain, using only the ASA facts (not the coordinates of C), why it must send C to F.',
+                method='Use the angles to place the images of rays AC and BC, then the intersection.',
+                key='The image of ray AC is the ray from D making ∠A with ray DE on F\'s side, which is ray DF; likewise ray BC goes to ray EF; C, the intersection, goes to F.',
+                note='Any valid explanation. Essential: the rotation keeps angle measures and sends the side of line AB containing C to the side of DE containing F; '
+                     'the two angles place the two rays; the unique intersection. A coordinate check alone is not enough.'),
+          proof('In △ABC, ∠B ≅ ∠C. Let ℓ be the perpendicular bisector of BC. Explain, using the reflection across ℓ and the ASA argument, why the reflection '
+                'carries △ABC onto △ACB, and conclude that AB = AC.',
+                method='The reflection swaps B and C. Use ∠B ≅ ∠C to find the images of rays BA and CA, then the image of A.',
+                key='The reflection swaps B and C, sends ray BA onto ray CA and ray CA onto ray BA, so it fixes A; hence segment AB maps onto AC and AB = AC.',
+                note='Any valid explanation. Essential: ℓ is the perpendicular bisector of BC, so B ↔ C; the image of ray BA is the ray from C making ∠B with CB '
+                     'on A\'s side, which is ray CA because ∠B ≅ ∠C (and vice versa); A is the intersection of the two rays, so A → A; lengths are kept.'),
+          proof('Segments AD and BC cross at E, which is the midpoint of AD, and AB ∥ CD (B and C on opposite sides of AD). Explain, using a 180° rotation about E, '
+                'why △ABE ≅ △DCE.',
+                method='Find the images of A, line AB, and ray EB, then the image of B as an intersection.',
+                key='The rotation sends A to D, line AB to line DC, and ray EB to ray EC, so B goes to C and △ABE → △DCE.',
+                note='Any valid explanation. Essential: EA = ED with opposite rays, so A → D; a 180° rotation sends line AB to a parallel line through D, which is '
+                     'line DC (parallel postulate); ray EB goes to the opposite ray EC; B = AB ∩ EB goes to DC ∩ EC = C (an ASA-type argument).'),
       ],
       back=[
           B('Two angles and the included side determine a triangle', '7.G.A.2', [
@@ -426,8 +475,9 @@ SETS += [
                 note='Any valid proof. Essential: m∠C = 180° - m∠A - m∠B = 180° - m∠D - m∠E = m∠F; then ∠B, side BC, ∠C match ∠E, EF, ∠F (ASA).'),
           sa('Two triangles have angles 40° and 75° and a 9 cm side opposite the 75° angle. Must they be congruent? Explain.', 'Answer:',
              key='Yes, by AAS: the third angles are both 65°, so ASA applies.', note='Any equivalent explanation.'),
-          tf('AAS is a valid congruence criterion only because the angles of a triangle add to 180°.', key=True,
-             note='The angle sum gives the third pair of angles, turning AAS into ASA.'),
+          sa('In the argument above, how does AAS follow from ASA? Name the theorem used to get the third pair of angles.', 'Answer:',
+             key='The triangle angle sum theorem gives ∠C ≅ ∠F (180° minus equal sums), and then ∠B, side BC, ∠C satisfy ASA.',
+             note='Any equivalent answer. Other valid derivations of AAS exist; this question asks about this argument.'),
           mc('In △PQR and △XYZ, ∠P ≅ ∠X, ∠Q ≅ ∠Y, and PR = XZ. Which criterion proves congruence?', ['AAS', 'ASA', 'SAS', 'SSS'],
              note='PR is not between ∠P and ∠Q, so it is AAS.'),
           sa('Which corresponding side would make AAS apply if ∠A ≅ ∠D and ∠C ≅ ∠F?', 'Side:', key='AB = DE or BC = EF',
@@ -460,20 +510,36 @@ SETS += [
                        'bisector of C′F, so the reflection across DE carries C′ to F.',
                 key='A translation and a rotation carry A to D and B to E; if needed, the reflection across DE carries C′ to F.',
                 note='Any valid explanation. Essential: (1) A → D, B → E (AB = DE); (2) DC′ = DF and EC′ = EF (rigid motions keep lengths); (3) if C′ ≠ F, '
-                     'D and E are each equidistant from C′ and F, so line DE is the perpendicular bisector of C′F; (4) the reflection across DE fixes D and E '
-                     'and maps C′ to F. Alternative: C′ and F both lie on the circles centered at D and E with these radii, which meet in at most one point on '
-                     'each side of DE. Invalid: using angles (none are given); citing SSS to prove SSS.'),
-          mc('In the rigid-motion proof of SSS, A is on D, B is on E, and C′ (the image of C) is not F. Why is line DE the perpendicular bisector of C′F?',
-             ['D and E are each the same distance from C′ as from F', 'DE is parallel to C′F', 'DE bisects ∠D', 'C′F is the longest segment'],
-             note='A point equidistant from C′ and F lies on the perpendicular bisector of C′F; two such points determine that line.'),
-          sa('In the rigid-motion proof of SSS, line DE is the perpendicular bisector of C′F. Why does the reflection across DE carry C′ onto F, and why is that enough?',
-             'Answer:', key='By the definition of a reflection, it maps C′ to F because DE is the perpendicular bisector of C′F; it keeps D and E fixed, so the whole triangle lands on DEF.',
-             note='Any equivalent explanation with both parts.'),
-          sa('The rigid-motion proof of SSS uses no angle information. Explain how the three side lengths alone locate the third vertex.', 'Answer:',
-             key='Once D and E are matched, the third vertex must be DF from D and EF from E: it lies on two circles, which meet in at most one point on each side of DE.',
-             note='Any equivalent explanation.'),
-          tf('A triangle with sides 5, 7, and 9 is congruent to a triangle with sides 9, 5, and 7.', key=True,
-             note='Matching the sides by length gives three pairs of congruent sides (SSS).'),
+                     'D and E are each equidistant from C′ and F, so each lies on the perpendicular bisector of C′F, and line DE is that bisector; (4) the '
+                     'reflection across DE fixes D and E and maps C′ to F. Step 3 must not rest on SSS: justify it with SAS (the bisector of ∠C′DF meets C′F '
+                     'at M; △DMC′ ≅ △DMF by SAS, so MC′ = MF and the angles at M are a congruent linear pair, 90° each) or with coordinates (set 19). '
+                     'Invalid: using angles of the triangles (none are given); citing SSS, or the converse of the perpendicular bisector theorem proved with SSS.'),
+          proof('In △ABC and △DEF, AB = DE, BC = EF, and CA = FD. A translation and a rotation have moved A onto D and B onto E, and the image C′ of C is on the '
+                'opposite side of line DE from F, with DC′ = DF and EC′ = EF. Explain why the reflection across line DE carries C′ onto F. Justify each step '
+                'without using SSS (it is what is being explained).',
+                method='Show that D and E each lie on the perpendicular bisector of C′F using SAS, then use the definition of a reflection.',
+                key='D and E are both on the perpendicular bisector of C′F, so line DE is that bisector, and the reflection across it maps C′ to F.',
+                note='Any valid explanation. Essential: the bisector of ∠C′DF meets C′F at M; △DMC′ ≅ △DMF by SAS (DC′ = DF, equal angles, DM shared), so '
+                     'MC′ = MF and ∠DMC′ ≅ ∠DMF, a linear pair, so each is 90°: D is on the perpendicular bisector. The same for E. Two points determine the line, '
+                     'so DE is the perpendicular bisector, and by definition the reflection maps C′ to F. Invalid: citing SSS.'),
+          proof('△ABC has A(0, 0), B(5, 0), C(1, 3). △DEF has D(1, 1), E(1, 6), F(-2, 2). Show that the three pairs of corresponding sides are congruent, and '
+                'explain, using rigid motions, why the triangles are congruent.',
+                method='Compute the six lengths; then give motions that carry A to D and B to E and explain where C goes.',
+                key='AB = DE = 5, BC = EF = 5, CA = FD = √10. Translate 1 right and 1 up, then rotate 90° counterclockwise about D: A → D, B → E, and C → F.',
+                note='Any valid explanation. Essential: all six lengths; motions that match A and B; why C lands on F (the computed image (-2, 2), or the '
+                     'SSS argument that C′ is DF from D and EF from E on F\'s side).'),
+          proof('Quadrilateral ABCD has AB = AD and CB = CD (a kite). Explain, using the reflection across line AC, why △ABC ≅ △ADC.',
+                method='Show that line AC is the perpendicular bisector of BD, then use the reflection.',
+                key='A and C are each equidistant from B and D, so line AC is the perpendicular bisector of BD; the reflection across AC fixes A and C and swaps B and D.',
+                note='Any valid explanation. Essential: equidistance of A and of C from B and D, justified without SSS (SAS with the angle bisector, or the '
+                     'perpendicular bisector converse proved independently); the reflection fixes A and C and sends B to D.'),
+          proof('A triangle has sides 4, 5, and 6. Its 6-unit side is placed on segment DE (DE = 6). Explain why the third vertex can be in exactly two places, '
+                'one on each side of line DE, and why the reflection across DE carries one place onto the other.',
+                method='Use the circles of radius 4 about D and radius 5 about E, and what a reflection across DE does to distances from D and E.',
+                key='The third vertex is 4 from D and 5 from E: the two circles meet in one point on each side of DE. The reflection across DE keeps distances '
+                    'from D and E, so it sends one intersection point to the other.',
+                note='Any valid explanation. Essential: the two circles (4 + 5 > 6, so they meet); one point on each side; the reflection fixes D and E and keeps '
+                     'distances, so it swaps the two points. This is why SSS needs at most one reflection.'),
       ],
       back=[
           B('Three side lengths determine a triangle (triangle inequality)', '7.G.A.2', [
@@ -490,7 +556,8 @@ SETS += [
           B('Find the points at given distances from two points (two circles)', '7.G.B.4', [
               sa('Point P is 5 units from A and 5 units from B, and A and B are 6 units apart. How many such points P are there in the plane?', 'Number:',
                  key='2', note='Any equivalent form. The circles of radius 5 about A and B meet twice, once on each side of AB.'),
-              tf('All points 3 cm from a point A form a circle with center A and radius 3 cm.', key=True, note='That is the definition of a circle.'),
+              tf('In a given plane containing A, all points 3 cm from A form a circle with center A and radius 3 cm.', key=True,
+                 note='That is the definition of a circle (in space, the points would form a sphere).'),
               mc('Circles of radius 4 centered at A and B meet at two points. AB = 6. Where are the two points?', ['One on each side of line AB',
                                                                                                                  'Both on line AB', 'Both on the same side of AB', 'At A and B'],
                  note='The picture is symmetric across line AB.'),

@@ -78,7 +78,8 @@ STANDARDS = {
     'HSG-CO.C.11': ('Prove theorems about parallelograms. Theorems include: opposite sides are congruent, opposite angles '
                     'are congruent, the diagonals of a parallelogram bisect each other, and conversely, rectangles are '
                     'parallelograms with congruent diagonals.', [
-        ('CO11-opposite', 'Prove opposite sides and opposite angles of a parallelogram are congruent'),
+        ('CO11-opposite', 'Prove opposite sides of a parallelogram are congruent'),
+        ('CO11-angles', 'Prove opposite angles of a parallelogram are congruent'),
         ('CO11-diagonals', 'Prove the diagonals of a parallelogram bisect each other'),
         ('CO11-converse', 'Prove the converses (a quadrilateral with these properties is a parallelogram)'),
         ('CO11-rectangle', 'Prove rectangles are parallelograms with congruent diagonals'),
@@ -227,9 +228,11 @@ STANDARDS = {
     'HSG-GMD.A.1': ('Give an informal argument for the formulas for the circumference of a circle, area of a circle, volume '
                     'of a cylinder, pyramid, and cone. Use dissection arguments, Cavalieri\'s principle, and informal limit '
                     'arguments.', [
-        ('GMD1-circle', 'Informal arguments for the circumference and area of a circle'),
+        ('GMD1-circle', 'Informal argument for the circumference of a circle'),
+        ('GMD1-area', 'Informal argument for the area of a circle'),
         ('GMD1-cylinder', 'Informal argument for the volume of a cylinder'),
-        ('GMD1-pyramid', 'Informal arguments for the volumes of a pyramid and a cone'),
+        ('GMD1-pyramid', 'Informal argument for the volume of a pyramid'),
+        ('GMD1-cone', 'Informal argument for the volume of a cone'),
     ]),
     'HSG-GMD.A.2': ('(+) Give an informal argument using Cavalieri\'s principle for the formulas for the volume of a sphere '
                     'and other solid figures.', [

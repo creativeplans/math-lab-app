@@ -4,7 +4,7 @@
   "id": "GEO",
   "grade": null,
   "course": "Geometry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-23"
  },
  "grade": null,
@@ -29,7 +29,8 @@
    "branch": {
     "kind": "main",
     "strand": "core",
-    "target_skill": "Prove that the three medians of any triangle meet at one point"
+    "target_skill": "Prove that the three medians of any triangle meet at one point",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -63,15 +64,15 @@
      "required_method": "Find the midpoint of each side, then show G is two-thirds of the way from each vertex to the opposite midpoint (or on each median line).",
      "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: the three midpoints (b + c, d), (c, d), (b, 0); for each median, G = vertex + ⅔(midpoint - vertex): A + ⅔((b + c, d) - A) = G; B + ⅔((c, d) - (2b, 0)) = G; C + ⅔((b, 0) - (2c, 2d)) = G. Alternative: show G satisfies each median's equation. Invalid: checking one triangle with numbers.",
      "figure": null,
-     "page": 806,
+     "page": 931,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Prove that the three medians of any triangle meet at one point",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 806,
-     "answer_key_page": 806
+     "question_page": 931,
+     "answer_key_page": 931
     },
     {
      "id": "S23-M-Q2",
@@ -104,15 +105,15 @@
      "required_method": "Use the midsegment theorem in triangles ABC and GBC to show FEKH is a parallelogram, then its diagonals.",
      "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: FE ∥ BC and FE = ½BC (midsegment in △ABC); HK ∥ BC and HK = ½BC (midsegment in △GBC); so FEKH is a parallelogram; its diagonals bisect each other, so HG = GE; with BH = HG, BG = 2GE; any two medians meet at the point two-thirds along each, so all three share it.",
      "figure": null,
-     "page": 807,
+     "page": 932,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Prove that the three medians of any triangle meet at one point",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 807,
-     "answer_key_page": 807
+     "question_page": 932,
+     "answer_key_page": 932
     },
     {
      "id": "S23-M-Q3",
@@ -131,29 +132,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain why proving that the point two-thirds of the way along EACH median is the same point proves that the three medians meet at one point.",
-     "prompt_markup": "Explain why proving that the point two-thirds of the way along EACH median is the same point proves that the three medians meet at one point.",
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "Triangle ABC has A(-2a, 0), B(2a, 0), and C(0, 2b), with a > 0 and b > 0. Prove that the three medians meet at (0, 2b/3).",
+     "prompt_markup": "Triangle ABC has A(-2a, 0), B(2a, 0), and C(0, 2b), with a > 0 and b > 0. Prove that the three medians meet at (0, 2b/3).",
      "choices": [],
      "answer_lines": [
-      "Explanation:"
+      "Conclusion:"
      ],
      "correct_letter": null,
-     "correct_answer": "Each median contains its own two-thirds point. If those three points are one point, that point lies on all three medians, so they meet there.",
+     "correct_answer": "Midpoints (a, b), (-a, b), (0, 0); the point (0, 2b/3) is ⅔ of the way along each median.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "required_method": "Find the three midpoints and show that (0, 2b/3) is two-thirds of the way from each vertex to the opposite midpoint.",
+     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: midpoint of BC (a, b), of AC (-a, b), of AB (0, 0); A + ⅔((a, b) - A) = (0, 2b/3); B + ⅔((-a, b) - B) = (0, 2b/3); C + ⅔((0, 0) - C) = (0, 2b/3).",
      "figure": null,
-     "page": 808,
-     "revision": "unchanged",
+     "page": 933,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Prove that the three medians of any triangle meet at one point",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 808,
-     "answer_key_page": 808
+     "question_page": 933,
+     "answer_key_page": 933
     },
     {
      "id": "S23-M-Q4",
@@ -186,15 +187,15 @@
      "required_method": "Find each median as a line through a vertex and a midpoint, find where two meet, and check that the third passes through that point.",
      "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: midpoints (3, 3), (0, 3), (3, 0); medians y = x, y = -½x + 3 (from Q), y = -2x + 6 (from R); y = x and y = -2x + 6 meet at (2, 2); (2, 2) satisfies y = -½x + 3. (This proves the claim for this triangle; the general proof needs variables.)",
      "figure": null,
-     "page": 809,
+     "page": 934,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Prove that the three medians of any triangle meet at one point",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 809,
-     "answer_key_page": 809
+     "question_page": 934,
+     "answer_key_page": 934
     },
     {
      "id": "S23-M-Q5",
@@ -213,36 +214,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "tf",
-     "response": "select true or false",
-     "prompt": "Drawing medians carefully in three different triangles and seeing that they meet proves that the medians of every triangle meet at one point.",
-     "prompt_markup": "Drawing medians carefully in three different triangles and seeing that they meet proves that the medians of every triangle meet at one point.",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "True"
-      },
-      {
-       "letter": "B",
-       "text": "False"
-      }
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "Triangle ABC has A(x₁, y₁), B(x₂, y₂), C(x₃, y₃), not on one line. Let G = ((x₁ + x₂ + x₃)/3, (y₁ + y₂ + y₃)/3). Prove that G lies on all three medians.",
+     "prompt_markup": "Triangle ABC has A(x₁, y₁), B(x₂, y₂), C(x₃, y₃), not on one line. Let G = ((x₁ + x₂ + x₃)/3, (y₁ + y₂ + y₃)/3). Prove that G lies on all three medians.",
+     "choices": [],
+     "answer_lines": [
+      "Conclusion:"
      ],
-     "answer_lines": [],
-     "correct_letter": "B",
-     "correct_answer": "False",
+     "correct_letter": null,
+     "correct_answer": "For the median from A: A + ⅔(((x₂ + x₃)/2, (y₂ + y₃)/2) - A) = G; the same holds from B and C, so the medians meet at G.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Examples suggest a theorem but cannot prove it for every triangle.",
+     "required_method": "For each median, show G = vertex + ⅔(opposite midpoint - vertex).",
+     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: the computation for one median with the general coordinates and the symmetry (or computation) for the other two. Invalid: drawing examples.",
      "figure": null,
-     "page": 810,
-     "revision": "unchanged",
+     "page": 935,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Prove that the three medians of any triangle meet at one point",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 810,
-     "answer_key_page": 810
+     "question_page": 935,
+     "answer_key_page": 935
     }
    ]
   },
@@ -257,7 +251,8 @@
     "kind": "backward",
     "alignment": "supporting",
     "rationale": "Obstacle: the student cannot locate the endpoints of the medians. Why it matters: every median ends at a midpoint. Evidence: finds midpoints and identifies medians.",
-    "source": "Grade 6"
+    "source": "Grade 6",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -289,15 +284,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 812,
+     "page": 937,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Find midpoints, including with variables",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 6",
-     "question_page": 812,
-     "answer_key_page": 812
+     "question_page": 937,
+     "answer_key_page": 937
     },
     {
      "id": "S23-B1-Q2",
@@ -328,15 +323,15 @@
      "required_method": null,
      "grading_note": "Form required: an ordered pair.",
      "figure": null,
-     "page": 813,
+     "page": 938,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Find midpoints, including with variables",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 6",
-     "question_page": 813,
-     "answer_key_page": 813
+     "question_page": 938,
+     "answer_key_page": 938
     },
     {
      "id": "S23-B1-Q3",
@@ -382,15 +377,15 @@
      "required_method": null,
      "grading_note": "Definition of a median.",
      "figure": null,
-     "page": 814,
+     "page": 939,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Find midpoints, including with variables",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 6",
-     "question_page": 814,
-     "answer_key_page": 814
+     "question_page": 939,
+     "answer_key_page": 939
     },
     {
      "id": "S23-B1-Q4",
@@ -428,15 +423,15 @@
      "required_method": null,
      "grading_note": "One from each vertex.",
      "figure": null,
-     "page": 815,
+     "page": 940,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Find midpoints, including with variables",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 6",
-     "question_page": 815,
-     "answer_key_page": 815
+     "question_page": 940,
+     "answer_key_page": 940
     },
     {
      "id": "S23-B1-Q5",
@@ -474,15 +469,15 @@
      "required_method": null,
      "grading_note": "Only in special cases (for example, the vertex angle of an isosceles triangle).",
      "figure": null,
-     "page": 816,
+     "page": 941,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Find midpoints, including with variables",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 6",
-     "question_page": 816,
-     "answer_key_page": 816
+     "question_page": 941,
+     "answer_key_page": 941
     }
    ]
   },
@@ -497,7 +492,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student does not apply the midsegment theorem. Why it matters: the synthetic proof uses it twice. Evidence: uses the theorem for lengths and parallelism.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -531,15 +527,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 818,
+     "page": 943,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Use the midsegment theorem",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 818,
-     "answer_key_page": 818
+     "question_page": 943,
+     "answer_key_page": 943
     },
     {
      "id": "S23-B2-Q2",
@@ -579,15 +575,15 @@
      "required_method": null,
      "grading_note": "Midsegment theorem.",
      "figure": null,
-     "page": 819,
+     "page": 944,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Use the midsegment theorem",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 819,
-     "answer_key_page": 819
+     "question_page": 944,
+     "answer_key_page": 944
     },
     {
      "id": "S23-B2-Q3",
@@ -635,15 +631,15 @@
      "required_method": null,
      "grading_note": "Midsegment theorem in triangle GBC.",
      "figure": null,
-     "page": 820,
+     "page": 945,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Use the midsegment theorem",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 820,
-     "answer_key_page": 820
+     "question_page": 945,
+     "answer_key_page": 945
     },
     {
      "id": "S23-B2-Q4",
@@ -676,15 +672,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 821,
+     "page": 946,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Use the midsegment theorem",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 821,
-     "answer_key_page": 821
+     "question_page": 946,
+     "answer_key_page": 946
     },
     {
      "id": "S23-B2-Q5",
@@ -724,15 +720,15 @@
      "required_method": null,
      "grading_note": "Only half as long as the side it is parallel to.",
      "figure": null,
-     "page": 822,
+     "page": 947,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Use the midsegment theorem",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 822,
-     "answer_key_page": 822
+     "question_page": 947,
+     "answer_key_page": 947
     }
    ]
   },
@@ -747,7 +743,8 @@
     "kind": "backward",
     "alignment": "supporting",
     "rationale": "Obstacle: the student cannot find a point two-thirds of the way along a segment. Why it matters: the medians meet at the two-thirds point of each. Evidence: computes points at a fractional distance along segments.",
-    "source": "Grade 7"
+    "source": "Grade 7",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -779,15 +776,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 824,
+     "page": 949,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Find the point a given fraction of the way along a segment",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 824,
-     "answer_key_page": 824
+     "question_page": 949,
+     "answer_key_page": 949
     },
     {
      "id": "S23-B3-Q2",
@@ -818,15 +815,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form. 3 + ⅔(9).",
      "figure": null,
-     "page": 825,
+     "page": 950,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Find the point a given fraction of the way along a segment",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 825,
-     "answer_key_page": 825
+     "question_page": 950,
+     "answer_key_page": 950
     },
     {
      "id": "S23-B3-Q3",
@@ -872,15 +869,15 @@
      "required_method": null,
      "grading_note": "⅔ and ⅓ of the length.",
      "figure": null,
-     "page": 826,
+     "page": 951,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Find the point a given fraction of the way along a segment",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 826,
-     "answer_key_page": 826
+     "question_page": 951,
+     "answer_key_page": 951
     },
     {
      "id": "S23-B3-Q4",
@@ -918,15 +915,15 @@
      "required_method": null,
      "grading_note": "⅔ of each coordinate.",
      "figure": null,
-     "page": 827,
+     "page": 952,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Find the point a given fraction of the way along a segment",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 827,
-     "answer_key_page": 827
+     "question_page": 952,
+     "answer_key_page": 952
     },
     {
      "id": "S23-B3-Q5",
@@ -964,15 +961,15 @@
      "required_method": null,
      "grading_note": "It is (2, 4).",
      "figure": null,
-     "page": 828,
+     "page": 953,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Find the point a given fraction of the way along a segment",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 828,
-     "answer_key_page": 828
+     "question_page": 953,
+     "answer_key_page": 953
     }
    ]
   },
@@ -987,7 +984,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot write a median as a line. Why it matters: the coordinate method shows a point is on each median line. Evidence: writes and checks line equations.",
-    "source": "Grade 8"
+    "source": "Grade 8",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1019,15 +1017,15 @@
      "required_method": null,
      "grading_note": "Any equivalent equation.",
      "figure": null,
-     "page": 830,
+     "page": 955,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Write the equation of a line through two points",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 830,
-     "answer_key_page": 830
+     "question_page": 955,
+     "answer_key_page": 955
     },
     {
      "id": "S23-B4-Q2",
@@ -1058,15 +1056,15 @@
      "required_method": null,
      "grading_note": "Any equivalent equation.",
      "figure": null,
-     "page": 831,
+     "page": 956,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Write the equation of a line through two points",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 831,
-     "answer_key_page": 831
+     "question_page": 956,
+     "answer_key_page": 956
     },
     {
      "id": "S23-B4-Q3",
@@ -1112,15 +1110,15 @@
      "required_method": null,
      "grading_note": "-2(2) + 6 = 2.",
      "figure": null,
-     "page": 832,
+     "page": 957,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Write the equation of a line through two points",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 832,
-     "answer_key_page": 832
+     "question_page": 957,
+     "answer_key_page": 957
     },
     {
      "id": "S23-B4-Q4",
@@ -1158,15 +1156,15 @@
      "required_method": null,
      "grading_note": "(0 - 6) ÷ (3 - 0).",
      "figure": null,
-     "page": 833,
+     "page": 958,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Write the equation of a line through two points",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 833,
-     "answer_key_page": 833
+     "question_page": 958,
+     "answer_key_page": 958
     },
     {
      "id": "S23-B4-Q5",
@@ -1204,15 +1202,15 @@
      "required_method": null,
      "grading_note": "2 ≠ 3.",
      "figure": null,
-     "page": 834,
+     "page": 959,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Write the equation of a line through two points",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 834,
-     "answer_key_page": 834
+     "question_page": 959,
+     "answer_key_page": 959
     }
    ]
   },
@@ -1228,7 +1226,8 @@
     "progression": "cross-standard extension",
     "connection": "direct",
     "new_demand": "Use the concurrency point quantitatively: find the centroid and apply the 2 : 1 division of each median.",
-    "course": "Geometry"
+    "course": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1262,15 +1261,15 @@
      "required_method": null,
      "grading_note": "Form required: an ordered pair. Average the vertices.",
      "figure": null,
-     "page": 836,
+     "page": 961,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Locate the centroid and use the 2 : 1 ratio",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 836,
-     "answer_key_page": 836
+     "question_page": 961,
+     "answer_key_page": 961
     },
     {
      "id": "S23-F1-Q2",
@@ -1303,15 +1302,15 @@
      "required_method": null,
      "grading_note": "Form required: both distances.",
      "figure": null,
-     "page": 837,
+     "page": 962,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Locate the centroid and use the 2 : 1 ratio",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 837,
-     "answer_key_page": 837
+     "question_page": 962,
+     "answer_key_page": 962
     },
     {
      "id": "S23-F1-Q3",
@@ -1351,15 +1350,15 @@
      "required_method": null,
      "grading_note": "The part from the vertex is twice the other part (2 : 1).",
      "figure": null,
-     "page": 838,
+     "page": 963,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Locate the centroid and use the 2 : 1 ratio",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 838,
-     "answer_key_page": 838
+     "question_page": 963,
+     "answer_key_page": 963
     },
     {
      "id": "S23-F1-Q4",
@@ -1407,15 +1406,15 @@
      "required_method": null,
      "grading_note": "BG = 10, so BE = 15.",
      "figure": null,
-     "page": 839,
+     "page": 964,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Locate the centroid and use the 2 : 1 ratio",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 839,
-     "answer_key_page": 839
+     "question_page": 964,
+     "answer_key_page": 964
     },
     {
      "id": "S23-F1-Q5",
@@ -1448,15 +1447,15 @@
      "required_method": null,
      "grading_note": "Any equivalent derivation.",
      "figure": null,
-     "page": 840,
+     "page": 965,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Locate the centroid and use the 2 : 1 ratio",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 840,
-     "answer_key_page": 840
+     "question_page": 965,
+     "answer_key_page": 965
     }
    ]
   },
@@ -1473,7 +1472,8 @@
     "connection": "direct",
     "new_demand": "Prove a different concurrency theorem (angle bisectors) with the same strategy of two lines meeting and a converse.",
     "course": "Geometry",
-    "builds_on": "A second, separate extension of MAIN: FORWARD 1 measures with the centroid; FORWARD 2 proves concurrency of a different set of lines."
+    "builds_on": "A second, separate extension of MAIN: FORWARD 1 measures with the centroid; FORWARD 2 proves concurrency of a different set of lines.",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1507,15 +1507,15 @@
      "required_method": "Use the fact that a point on an angle bisector is equidistant from the angle's sides, and its converse.",
      "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: the bisectors of ∠A and ∠B meet at I; I is equidistant from AB and AC, and from AB and BC; so it is equidistant from AC and BC; by the converse it lies on the bisector of ∠C.",
      "figure": null,
-     "page": 842,
+     "page": 967,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Prove that the angle bisectors of a triangle meet at one point",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 842,
-     "answer_key_page": 842
+     "question_page": 967,
+     "answer_key_page": 967
     },
     {
      "id": "S23-F2-Q2",
@@ -1548,15 +1548,15 @@
      "required_method": null,
      "grading_note": "Any reasonable explanation.",
      "figure": null,
-     "page": 843,
+     "page": 968,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Prove that the angle bisectors of a triangle meet at one point",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 843,
-     "answer_key_page": 843
+     "question_page": 968,
+     "answer_key_page": 968
     },
     {
      "id": "S23-F2-Q3",
@@ -1596,15 +1596,15 @@
      "required_method": null,
      "grading_note": "Proved with congruent right triangles (AAS).",
      "figure": null,
-     "page": 844,
+     "page": 969,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Prove that the angle bisectors of a triangle meet at one point",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 844,
-     "answer_key_page": 844
+     "question_page": 969,
+     "answer_key_page": 969
     },
     {
      "id": "S23-F2-Q4",
@@ -1652,15 +1652,15 @@
      "required_method": null,
      "grading_note": "It is equidistant from the sides.",
      "figure": null,
-     "page": 845,
+     "page": 970,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Prove that the angle bisectors of a triangle meet at one point",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 845,
-     "answer_key_page": 845
+     "question_page": 970,
+     "answer_key_page": 970
     },
     {
      "id": "S23-F2-Q5",
@@ -1700,15 +1700,15 @@
      "required_method": null,
      "grading_note": "Only in an equilateral triangle in general.",
      "figure": null,
-     "page": 846,
+     "page": 971,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the three medians of any triangle meet at one point",
      "target_skill": "Prove that the angle bisectors of a triangle meet at one point",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 846,
-     "answer_key_page": 846
+     "question_page": 971,
+     "answer_key_page": 971
     }
    ]
   }

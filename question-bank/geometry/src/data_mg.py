@@ -72,8 +72,8 @@ SETS = [
           sa('Why might a cylinder model overestimate the volume of a bottle?', 'Answer:', key='The real bottle narrows at the neck and has thick walls, so it holds less than the full cylinder.', note='Any reasonable answer.'),
       ], prog='same-course deepening', demand='Compare the model\'s result with a real measurement and refine the model.'),
       f2=B('Use the model to estimate mass with density', 'HSG-MG.A.2', [
-          sa('A tree trunk modeled as a cylinder has volume about %s m³. The wood has density 600 kg/m³. Estimate the trunk\'s mass to the nearest 10 kg.' % d1(TREE_V), 'Mass:', key='About %d kg' % round(TREE_V * 600, -1),
-             note='Rounding to the nearest 10 kg required; using 2.3 m³ gives 1,380 kg, also accepted.'),
+          sa('A tree trunk modeled as a cylinder has volume about %s m³. The wood has density 600 kg/m³. Estimate the trunk\'s mass to the nearest 10 kg.' % d1(TREE_V), 'Mass:', key='About 1,380 kg',
+             note='Rounding to the nearest 10 kg required. 2.3 × 600 = 1,380 (using the unrounded volume %.3f m³ gives %d kg, also accepted).' % (TREE_V, round(TREE_V * 600, -1))),
           sa('A sand pile modeled as a cone has volume 16π m³. The sand has density 1,600 kg/m³. Estimate its mass in metric tons (1 t = 1,000 kg), to the nearest ton.', 'Mass:', key='%d t' % round(16 * PI * 1.6), note='Rounding to the nearest ton required.'),
           tf('A more accurate volume model gives a more accurate mass estimate.', key=True, note='Mass = density × volume.'),
           mc('A pool holds 450 m³ of water (1,000 kg/m³). Mass?', ['450,000 kg', '450 kg', '4,500 kg', '45,000 kg'], note='Product.'),
@@ -129,8 +129,8 @@ SETS = [
       ], prog='same-course deepening', demand='Work across area units and rescale densities.'),
       f2=B('Plan capacity from an area density', 'HSG-MG.A.3', [
           sa('Safety rules allow 2 people per m² in a plaza. The plaza is a 30 m by 40 m rectangle. Maximum crowd?', 'Answer:', key='2,400 people', note='Any equivalent form.'),
-          sa('A festival expects 5,000 people and wants at most 1.5 people per m². What is the smallest area needed (nearest m²)?', 'Area:', key='%d m²' % math.ceil(5000 / 1.5),
-             note='Rounding up required: 3,334 m² (3,333.3… rounded up so the limit is met).'),
+          sa('A festival expects 5,000 people and wants at most 1.5 people per m². What is the smallest whole number of square meters that meets the limit?', 'Area:', key='{:,} m²'.format(math.ceil(5000 / 1.5)),
+             note='Form required: a whole number of m² that meets the limit. 5,000 ÷ 1.5 = 3,333.3…, so round UP to 3,334 (3,333 m² would allow only 4,999.5 people).'),
           tf('When planning for a safety limit, round the capacity up.', key=False, note='Round capacity down (and area up) to stay within the limit.'),
           mc('A circular dance floor of radius 5 m allows 3 people per m². Capacity is about', ['235 people', '47 people', '75 people', '471 people'], note='75π ≈ 235.6, round down.'),
           sa('A circular dance floor of radius 5 m allows at most 3 people per m², and 3 · 25π ≈ 235.6. Explain why the capacity is 235 people, not 236.', 'Answer:', key='Rounding up would exceed the allowed density.', note='Any equivalent answer.'),
@@ -275,9 +275,9 @@ SETS += [
       ], prog='later-course extension', demand='Model the design with a polynomial function and find the optimum from its graph (Algebra II).',
         builds='Builds on FORWARD 1: the constraint checks become a function whose maximum is the best design.')),
 
-    # ------------------------------------------------------------------ 87. MG.A.3 cost and typographic grids
-    S('HSG-MG.A.3', 'Design to minimize cost and work with typographic grids',
-      target='Apply geometric methods to compare and minimize cost in designs, and to lay out typographic grid systems based on ratios', strand='core', covers=['MG3-cost', 'MG3-grid'],
+    # ------------------------------------------------------------------ 87. MG.A.3 minimize cost
+    S('HSG-MG.A.3', 'Design to minimize cost',
+      target='Apply geometric methods (surface area, area, and volume) to compare designs and choose the one with the lowest cost', strand='core', covers=['MG3-cost'],
       main=[
           sa('A can with radius 4 cm and height 10 cm is made of metal costing $0.002 per cm². Find the area of metal (top, bottom, and side) and the cost, to the nearest cent.', 'Answer:',
              key='%s cm² ≈ %s cm²; cost $%s' % ('112π', d1(CAN_A), d2(CAN_A * 0.002)), note='Form required: the area and the cost. 2πr² + 2πrh = 32π + 80π.'),
@@ -285,10 +285,12 @@ SETS += [
              key='Both hold 160π cm³; A uses 112π cm², B uses 114π cm², so A uses less metal.', note='Form required: both volumes, both areas, and the choice.'),
           sa('A wall 12 m by 3 m has a window 1.5 m by 1.2 m. Paint covers 10 m² per liter and is sold only in whole liters at $8 each. Find the cost to paint the wall once.', 'Cost:', key='$32',
              note='Any equivalent form. 34.2 m² needs 3.42 L, so buy 4 L.'),
-          sa('A page is 8.5 in. wide with 1 in. margins on each side. The text area has 3 equal columns separated by 2 gutters of 0.2 in. Find the width of each column to the nearest hundredth of an inch.',
-             'Width:', fig=GRID, key='%s in.' % d2((8.5 - 2 - 0.4) / 3), note='Rounding to 0.01 required. (6.5 - 0.4) ÷ 3.'),
-          mc('A poster grid uses the golden ratio (about 1.618 : 1) for height : width. A poster is 60 cm wide. Its height is about', ['97.1 cm', '37.1 cm', '61.6 cm', '120 cm'],
-             note='60 × 1.618.'),
+          sa('Two closed cardboard boxes each hold 600 cm³: box A is 10 cm by 10 cm by 6 cm and box B is 5 cm by 10 cm by 12 cm. Cardboard costs $0.01 per cm² (ignore thickness and overlaps). '
+             'Find the cost of each box and choose the cheaper one.', 'Answer:',
+             key='A: 440 cm², $4.40; B: 460 cm², $4.60; box A is cheaper.', note='Form required: both surface areas, both costs, and the choice. A: 2(100 + 60 + 60); B: 2(50 + 60 + 120).'),
+          sa('A 4 m by 3.5 m floor is covered with 0.5 m square tiles that cost $3.25 each and are sold individually. Plan A uses these tiles; plan B uses sheet flooring at $11 per m². '
+             'Find the cost of each plan and choose the cheaper one.', 'Answer:',
+             key='A: 8 × 7 = 56 tiles, $182; B: 14 m² × $11 = $154; plan B is cheaper.', note='Form required: both costs and the choice.'),
       ],
       back=[
           B('Surface area of prisms and cylinders', '7.G.B.6', [
@@ -299,14 +301,14 @@ SETS += [
               tf('A cylinder\'s surface area is πr²h.', key=False, note='That is volume.'),
           ], align='exact',
             why=why('the student cannot find the material area.', 'cost depends on it.', 'computes surface areas.')),
-          B('Proportional reasoning with ratios', '7.RP.A.2', [
-              sa('Height : width = 1.618 : 1 and width = 10. Height?', 'Height:', key='16.18', note='Any equivalent form.'),
-              sa('Split 6.1 in. into 3 equal columns. Width of each (nearest hundredth)?', 'Width:', key='2.03 in.', note='Rounding to 0.01 required.'),
-              mc('A 2 : 3 rectangle 30 cm wide (width = 2 parts) is', ['45 cm tall', '20 cm tall', '60 cm tall', '33 cm tall'], note='15 per part.'),
-              tf('Equal columns divide the available width equally.', key=True, note='Definition.'),
-              tf('A 1 : 2 ratio means the second is half the first.', key=False, note='Twice.'),
-          ], align='exact',
-            why=why('the student cannot apply a layout ratio.', 'grids are built from ratios.', 'uses ratios.')),
+          B('Areas of surfaces with openings', '7.G.B.6', [
+              sa('A wall 12 m by 3 m has a 1.5 m by 1.2 m window. Area to paint?', 'Area:', key='34.2 m²', note='Any equivalent form.'),
+              sa('A 4 m by 3.5 m floor: area?', 'Area:', key='14 m²', note='Any equivalent form.'),
+              mc('A 5 m by 2.4 m wall has a 0.9 m by 2 m door. Paintable area?', ['10.2 m²', '12 m²', '1.8 m²', '13.8 m²'], note='12 - 1.8.'),
+              tf('Openings in a surface are subtracted from its area before buying material.', key=True, note='No material is needed there.'),
+              tf('A floor of 14 m² needs 14 tiles that are 0.5 m on a side.', key=False, note='Each tile is 0.25 m², so 56 tiles.'),
+          ], align='exact', num=4,
+            why=why('the student cannot find the area that needs material.', 'cost is area × unit price.', 'finds areas with openings.')),
           B('Unit prices and rounding up purchases', '7.EE.B.3', [
               sa('Paint needed is 3.42 L, sold in whole liters. How many liters must be bought?', 'Liters:', key='4', note='Any equivalent form.'),
               sa('Metal costs $0.002 per cm². Cost of 350 cm²?', 'Cost:', key='$0.70', note='Any equivalent form.'),
@@ -317,23 +319,89 @@ SETS += [
             why=why('the student rounds down purchases.', 'real cost uses whole units.', 'rounds up correctly.')),
       ],
       f1=B('Compare designs with equal volume for least material', 'HSG-MG.A.3', [
-          sa('A box with a square base must hold 1,000 cm³. Compare the surface areas for base sides 8, 10, and 12 cm. Which uses the least material?', 'Answer:',
+          sa('A closed box with a square base must hold 1,000 cm³ (ignore the thickness of the material). Compare the surface areas for base sides 8, 10, and 12 cm. Which uses the least material?', 'Answer:',
              key='8 cm: 628 cm²; 10 cm: 600 cm²; 12 cm: about 621 cm²; the 10 cm cube uses the least', note='Form required: the three areas and the choice. h = 1000/s².'),
-          sa('A 12-column grid on a 6.5 in. text area has 11 gutters of 0.125 in. Find the width of each column to the nearest thousandth of an inch.', 'Width:', key='%.3f in.' % ((6.5 - 11 * 0.125) / 12),
-             note='Rounding to 0.001 required. (6.5 - 1.375) ÷ 12.'),
-          tf('Among boxes with a square base and a fixed volume, the cube has the least surface area.', key=True, note='Classic result.'),
-          mc('A 12-column grid can also be used as', ['4 columns of 3, 3 of 4, or 2 of 6', 'only 12 columns', '5 equal columns', '7 equal columns'], note='Divisors of 12.'),
-          sa('Why do designers often choose 12-column grids?', 'Answer:', key='12 divides evenly into 2, 3, 4, and 6, giving many layout options.', note='Any equivalent answer.'),
-      ], prog='same-course deepening', demand='Compare several designs under a fixed requirement and choose the cheapest or most flexible.'),
+          sa('A closed cylinder must hold 1,000 cm³. Compare its surface area (to the nearest cm²) for radii 4 cm, 5.42 cm and 7 cm, and choose the radius that uses the least material.', 'Answer:',
+             key='r = 4: %d cm²; r = 5.42: %d cm²; r = 7: %d cm²; r = 5.42 cm uses the least.' % tuple(round(2 * PI * r * r + 2000 / r) for r in (4, 5.42, 7)),
+             note='Form required: three areas and the choice. h = 1000/(πr²), so the area is 2πr² + 2000/r.'),
+          tf('Among closed boxes with a square base and a fixed volume (ignoring material thickness), the cube has the least surface area.', key=True, note='Classic result.'),
+          mc('For a closed cylinder with a fixed volume, the least surface area occurs when', ['the height equals the diameter', 'the height equals the radius', 'the radius is as large as possible',
+                                                                                                'the height is as large as possible'], note='h = 2r (r = 5.42 cm gives h ≈ 10.84 cm).'),
+          sa('Give one reason a manufacturer might NOT choose the least-material can shape.', 'Answer:', key='For example: it is hard to grip, does not fit standard shelves, or leaves too little label space.',
+             note='Any reasonable reason.'),
+      ], prog='same-course deepening', demand='Compare several designs under a fixed requirement and choose the one using the least material.'),
       f2=B('Decide between designs using expected cost', 'HSS-MD.B.7', [
           sa('Packaging A costs $1.20 per item and 2% of items break. Packaging B costs $0.90 and 8% break. A break costs $20. Find the expected cost per item for each and choose.', 'Answer:',
              key='A: $1.20 + 0.02 × $20 = $1.60; B: $0.90 + 0.08 × $20 = $2.50; choose A', note='Form required: both expected costs and the choice.'),
-          sa('A design uses a cheaper metal that fails 5% of the time, with replacement cost $40. How much cheaper must it be per can to be worth it?', 'Answer:', key='More than $2.00 cheaper (0.05 × $40)',
-             note='Any equivalent answer.'),
+          sa('The standard metal for a can never fails. A cheaper metal fails 5% of the time, and each failure costs $40 to replace. By how much must the cheaper metal\'s price per can be below '
+             'the standard price for its expected cost per can to be strictly lower?', 'Answer:', key='By more than $2.00 (0.05 × $40 = $2.00 expected failure cost)',
+             note='Form required: "more than $2.00"; exactly $2.00 cheaper gives equal expected costs.'),
           tf('The cheapest material always gives the cheapest design.', key=False, note='Failures and replacement costs can make it more expensive overall.'),
           mc('Expected cost = ', ['upfront cost + probability of failure × cost of failure', 'upfront cost × probability', 'cost of failure only', 'upfront cost - probability'],
              note='Weighted cost.'),
           sa('Name one cost besides material that a can designer might consider.', 'Answer:', key='For example shipping weight, labor, breakage, or recycling.', note='Any reasonable answer.'),
       ], prog='later-course extension', demand='Use probability to compare design costs that include risk (Probability & Statistics).',
-        builds='Builds on FORWARD 1: the cheapest-material design is re-examined when failures carry a cost.')),
+        builds='Builds on FORWARD 1: the least-material design is re-examined when failures carry a cost.')),
+
+    # ------------------------------------------------------------------ 105. MG.A.3 typographic grids
+    S('HSG-MG.A.3', 'Design typographic grid systems',
+      target='Apply ratios and measurement to lay out typographic grid systems (columns, gutters, margins, and modules) that fit a page', strand='core', covers=['MG3-grid'], num=105,
+      main=[
+          sa('A page is 8.5 in. wide with 1 in. margins on each side. The text area has 3 equal columns separated by 2 gutters of 0.2 in. Find the width of each column to the nearest hundredth of an inch.',
+             'Width:', fig=GRID, key='%s in.' % d2((8.5 - 2 - 0.4) / 3), note='Rounding to 0.01 required. (6.5 - 0.4) ÷ 3.'),
+          mc('A poster grid uses the golden ratio (about 1.618 : 1) for height : width. A poster is 60 cm wide. Its height is about', ['97.1 cm', '37.1 cm', '61.6 cm', '120 cm'],
+             note='60 × 1.618.'),
+          sa('A 12-column grid on a 6.5 in. text area has 11 gutters of 0.125 in. Find the width of each column to the nearest thousandth of an inch.', 'Width:', key='%.3f in.' % ((6.5 - 11 * 0.125) / 12),
+             note='Rounding to 0.001 required. (6.5 - 1.375) ÷ 12.'),
+          sa('A web page 1,200 px wide uses a 12-column grid with 24 px gutters between columns and no outer margins. Find the column width and the width of an element that spans 4 columns '
+             '(including the gutters inside it).', 'Answer:', key='Column 78 px; 4-column element 384 px', note='Form required: both. (1,200 - 11 · 24) ÷ 12 = 78; 4 · 78 + 3 · 24 = 384.'),
+          sa('A 6 in. by 9 in. page has 0.75 in. margins on all sides. A modular grid has 3 columns and 4 rows with 0.25 in. gutters in both directions. Find the width and height of each module '
+             'to the nearest hundredth of an inch.', 'Answer:', key='Width %s in.; height %s in.' % (d2((4.5 - 0.5) / 3), d2((7.5 - 0.75) / 4)),
+             note='Form required: both, rounded to 0.01. Text area 4.5 by 7.5; (4.5 - 2 · 0.25) ÷ 3 and (7.5 - 3 · 0.25) ÷ 4.'),
+      ],
+      back=[
+          B('Proportional reasoning with ratios', '7.RP.A.2', [
+              sa('Height : width = 1.618 : 1 and width = 10. Height?', 'Height:', key='16.18', note='Any equivalent form.'),
+              sa('Split 6.1 in. into 3 equal columns. Width of each (nearest hundredth)?', 'Width:', key='2.03 in.', note='Rounding to 0.01 required.'),
+              mc('A 2 : 3 rectangle 30 cm wide (width = 2 parts) is', ['45 cm tall', '20 cm tall', '60 cm tall', '33 cm tall'], note='15 per part.'),
+              tf('Equal columns divide the available width equally.', key=True, note='Definition.'),
+              tf('A 1 : 2 ratio means the second is half the first.', key=False, note='Twice.'),
+          ], align='exact',
+            why=why('the student cannot apply a layout ratio.', 'grids are built from ratios.', 'uses ratios.')),
+          B('Operate with decimals', '6.NS.B.3', [
+              sa('8.5 - 2 × 1 = ', 'Answer:', key='6.5', note='Any equivalent form.'),
+              sa('11 × 0.125 = ', 'Answer:', key='1.375', note='Any equivalent form.'),
+              mc('6.1 ÷ 3 to the nearest hundredth is', ['2.03', '2.04', '2.3', '18.3'], note='2.0333….'),
+              tf('5.125 ÷ 12 ≈ 0.427', key=True, note='Division.'),
+              tf('0.2 + 0.2 = 0.04', key=False, note='0.4.'),
+          ], align='exact',
+            why=why('the student makes decimal errors.', 'grid measurements are decimals.', 'adds, subtracts, multiplies and divides decimals.')),
+          B('Factors of a whole number', '4.OA.B.4', [
+              sa('List all factors of 12.', 'Factors:', key='1, 2, 3, 4, 6, 12', note='Form required: all six.'),
+              sa('Which numbers from 2 to 6 are factors of 10?', 'Answer:', key='2 and 5', note='Form required: both.'),
+              mc('Which is a factor of 12?', ['4', '5', '7', '8'], note='12 ÷ 4 = 3.'),
+              tf('12 has more factors than 10.', key=True, note='Six factors vs four.'),
+              tf('5 is a factor of 12.', key=False, note='12 ÷ 5 is not whole.'),
+          ], align='supporting',
+            why=why('the student does not see why some column counts split evenly.', 'equal column groups need factors.', 'finds factors.')),
+      ],
+      f1=B('Choose grids that support several layouts', 'HSG-MG.A.3', [
+          mc('A 12-column grid can also be used as', ['4 columns of 3, 3 of 4, or 2 of 6', 'only 12 columns', '5 equal columns', '7 equal columns'], note='Divisors of 12.'),
+          sa('Why do designers often choose 12-column grids?', 'Answer:', key='12 divides evenly into 2, 3, 4, and 6, giving many layout options.', note='Any equivalent answer.'),
+          tf('A 10-column grid can be split into 3 equal groups of whole columns.', key=False, note='3 is not a factor of 10.'),
+          sa('A 12-column grid has 78 px columns and 24 px gutters. How wide is an element that spans 6 columns?', 'Width:', key='588 px', note='Any equivalent form. 6 · 78 + 5 · 24.'),
+          sa('A 6.5 in. text area must hold 4 columns, each 1.5 in. wide, with equal gutters between them. Find the exact gutter width.', 'Gutter:', key='⅙ in. ≈ 0.17 in.',
+             note='Exact value or rounding to 0.01. (6.5 - 6) ÷ 3.'),
+      ], prog='same-course deepening', demand='Choose and use grids that allow several layouts, working backward from a required column width.'),
+      f2=B('Scale a grid layout to a new page size', 'HSG-SRT.A.2', [
+          sa('A poster layout is 60 cm wide and 97.1 cm tall. It is reduced to a flyer 24 cm wide with the same shape. Find the scale factor and the flyer\'s height.', 'Answer:',
+             key='Factor 0.4; height 38.84 cm', note='Form required: both. 24 ÷ 60; 97.1 × 0.4.'),
+          sa('In the poster above, a column is 15 cm wide and a gutter is 1.2 cm. Find their widths on the flyer.', 'Answer:', key='Column 6 cm; gutter 0.48 cm', note='Form required: both. Multiply by 0.4.'),
+          tf('Scaling a layout by factor k multiplies the area of each module by k².', key=True, note='Similar figures.'),
+          mc('A layout is enlarged by factor 1.5. A 4 cm by 6 cm module becomes', ['6 cm by 9 cm', '5.5 cm by 7.5 cm', '4 cm by 9 cm', '9 cm by 13.5 cm'], note='Multiply both by 1.5.'),
+          sa('Explain why a grid keeps its proportions when every measurement is multiplied by the same factor.', 'Answer:',
+             key='Every ratio of two measurements is unchanged (k·a/k·b = a/b), so the scaled layout is similar to the original.', note='Any equivalent explanation.'),
+      ], prog='cross-standard extension', demand='Use similarity (one scale factor) to resize a whole grid system.',
+        builds='Builds on FORWARD 1: a chosen grid is resized to another format with a single scale factor.')),
+
 ]

@@ -4,7 +4,7 @@
   "id": "GEO",
   "grade": null,
   "course": "Geometry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-23"
  },
  "grade": null,
@@ -29,7 +29,8 @@
    "branch": {
     "kind": "main",
     "strand": "core",
-    "target_skill": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion"
+    "target_skill": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -63,15 +64,15 @@
      "required_method": "Use the definition: the motion sends each vertex to its partner, so it sends each side and angle onto the corresponding one, and rigid motions keep length and angle measure.",
      "grading_note": "Any valid explanation. Essential: (1) the motion maps segment AB onto segment DE (endpoints to endpoints), and similarly for the other sides and angles; (2) rigid motions preserve distance and angle measure. Invalid: \"they look the same\".",
      "figure": null,
-     "page": 430,
+     "page": 555,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 430,
-     "answer_key_page": 430
+     "question_page": 555,
+     "answer_key_page": 555
     },
     {
      "id": "S13-M-Q2",
@@ -104,15 +105,15 @@
      "required_method": "Translate A to D; rotate about D so ray AB lies on ray DE (B lands on E because AB = DE); if C is on the other side of line DE from F, reflect across DE. Explain why C then lands on F.",
      "grading_note": "Any valid explanation. Essential: the translation and rotation match A and B; the reflection (if needed) puts C on F's side; C lands on F because ∠A ≅ ∠D puts C on ray DF and AC = DF fixes its distance from D. Accept using ∠B and ∠E instead. Invalid: stating the result without explaining why C lands on F.",
      "figure": null,
-     "page": 431,
+     "page": 556,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 431,
-     "answer_key_page": 431
+     "question_page": 556,
+     "answer_key_page": 556
     },
     {
      "id": "S13-M-Q3",
@@ -131,44 +132,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "mc",
-     "response": "select one",
-     "prompt": "A rigid motion maps △PQR onto △XYZ with P → X, Q → Y, R → Z. Which must be true?",
-     "prompt_markup": "A rigid motion maps △PQR onto △XYZ with P → X, Q → Y, R → Z. Which must be true?",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "QR = YZ"
-      },
-      {
-       "letter": "B",
-       "text": "PQ = YZ"
-      },
-      {
-       "letter": "C",
-       "text": "∠P ≅ ∠Y"
-      },
-      {
-       "letter": "D",
-       "text": "QR = XZ"
-      }
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "The rotation of 90° counterclockwise about the origin carries △ABC, with A(1, 0), B(4, 0), C(1, 2), onto △A′B′C′. Find A′, B′, C′, check that all six pairs of corresponding parts are congruent, and explain why the definition of congruence guarantees this for every rigid motion.",
+     "prompt_markup": "The rotation of 90° counterclockwise about the origin carries △ABC, with A(1, 0), B(4, 0), C(1, 2), onto △A′B′C′. Find A′, B′, C′, check that all six pairs of corresponding parts are congruent, and explain why the definition of congruence guarantees this for every rigid motion.",
+     "choices": [],
+     "answer_lines": [
+      "Conclusion:"
      ],
-     "answer_lines": [],
-     "correct_letter": "A",
-     "correct_answer": "QR = YZ",
+     "correct_letter": null,
+     "correct_answer": "A′(0, 1), B′(0, 4), C′(-2, 1). AB = A′B′ = 3, AC = A′C′ = 2, BC = B′C′ = √13; the right angles at A and A′ match and the other angles match because the triangles have the same sides. In general a rigid motion sends each side and angle onto its partner and keeps length and angle measure.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Side QR corresponds to side YZ.",
+     "required_method": "Apply (x, y) → (-y, x); compare the three side lengths and the angles; then give the general reason.",
+     "grading_note": "Any valid explanation. Essential: correct images; the six comparisons (angles may be checked by slopes or by SSS); the general reason (the motion carries parts onto corresponding parts, and rigid motions preserve measures).",
      "figure": null,
-     "page": 432,
-     "revision": "unchanged",
+     "page": 557,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 432,
-     "answer_key_page": 432
+     "question_page": 557,
+     "answer_key_page": 557
     },
     {
      "id": "S13-M-Q4",
@@ -187,29 +173,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "△JKL ≅ △MNO with J ↔ M, K ↔ N, L ↔ O. JK = 8, KL = 11, and m∠L = 37°. Find MN, NO, and m∠O.",
-     "prompt_markup": "△JKL ≅ △MNO with J ↔ M, K ↔ N, L ↔ O. JK = 8, KL = 11, and m∠L = 37°. Find MN, NO, and m∠O.",
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "△ABC has A(0, 0), B(3, 0), C(0, 4). △DEF has D(5, 1), E(5, 4), F(1, 1). Show that all six pairs of corresponding parts (A ↔ D, B ↔ E, C ↔ F) are congruent, and then give a rigid motion that carries △ABC onto △DEF.",
+     "prompt_markup": "△ABC has A(0, 0), B(3, 0), C(0, 4). △DEF has D(5, 1), E(5, 4), F(1, 1). Show that all six pairs of corresponding parts (A ↔ D, B ↔ E, C ↔ F) are congruent, and then give a rigid motion that carries △ABC onto △DEF.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Conclusion:"
      ],
      "correct_letter": null,
-     "correct_answer": "MN = 8, NO = 11, m∠O = 37°",
+     "correct_answer": "AB = DE = 3, AC = DF = 4, BC = EF = 5, and the right angles at A and D match. Translate 5 right and 1 up (A → D, B → (8, 1), C → (5, 5)), rotate 90° counterclockwise about D (B → (5, 4) = E, C → (1, 1) = F).",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Any equivalent form. Corresponding parts of congruent triangles are congruent.",
+     "required_method": "Compare the sides (and angles), then build the motion: move A onto D, turn ray AB onto ray DE, and reflect if needed.",
+     "grading_note": "Any valid motion. Essential: all six matches (angles via the right angles and equal sides), and a sequence that sends A, B, C to D, E, F.",
      "figure": null,
-     "page": 433,
-     "revision": "unchanged",
+     "page": 558,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 433,
-     "answer_key_page": 433
+     "question_page": 558,
+     "answer_key_page": 558
     },
     {
      "id": "S13-M-Q5",
@@ -228,36 +214,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "tf",
-     "response": "select true or false",
-     "prompt": "Two triangles whose three pairs of corresponding angles are congruent must be congruent.",
-     "prompt_markup": "Two triangles whose three pairs of corresponding angles are congruent must be congruent.",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "True"
-      },
-      {
-       "letter": "B",
-       "text": "False"
-      }
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "Explain why the converse direction needs the sides as well as the angles: give two triangles with all three pairs of angles congruent for which no rigid motion carries one onto the other, and say which part of the definition fails.",
+     "prompt_markup": "Explain why the converse direction needs the sides as well as the angles: give two triangles with all three pairs of angles congruent for which no rigid motion carries one onto the other, and say which part of the definition fails.",
+     "choices": [],
+     "answer_lines": [
+      "Conclusion:"
      ],
-     "answer_lines": [],
-     "correct_letter": "B",
-     "correct_answer": "False",
+     "correct_letter": null,
+     "correct_answer": "A 3-4-5 right triangle and a 6-8-10 right triangle have the same angles, but a rigid motion keeps lengths, so it cannot send a 3-unit side to a 6-unit side.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "A small and a large equilateral triangle have the same angles but are not congruent: the sides must match too.",
+     "required_method": "Use a counterexample and the fact that rigid motions preserve length.",
+     "grading_note": "Any valid counterexample with equal angles and unequal sides, and the reason (rigid motions preserve length).",
      "figure": null,
-     "page": 434,
-     "revision": "unchanged",
+     "page": 559,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 434,
-     "answer_key_page": 434
+     "question_page": 559,
+     "answer_key_page": 559
     }
    ]
   },
@@ -272,7 +251,8 @@
     "kind": "backward",
     "alignment": "supporting",
     "rationale": "Obstacle: the student cannot match parts from the order of letters. Why it matters: the theorem is about CORRESPONDING parts. Evidence: reads a congruence statement and names corresponding sides and angles.",
-    "source": "Grade 8"
+    "source": "Grade 8",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -304,15 +284,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form. The order of the letters gives the correspondence.",
      "figure": null,
-     "page": 436,
+     "page": 561,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Read a congruence statement to match corresponding parts",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 8",
-     "question_page": 436,
-     "answer_key_page": 436
+     "question_page": 561,
+     "answer_key_page": 561
     },
     {
      "id": "S13-B1-Q2",
@@ -343,15 +323,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 437,
+     "page": 562,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Read a congruence statement to match corresponding parts",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 8",
-     "question_page": 437,
-     "answer_key_page": 437
+     "question_page": 562,
+     "answer_key_page": 562
     },
     {
      "id": "S13-B1-Q3",
@@ -397,15 +377,15 @@
      "required_method": null,
      "grading_note": "Q ↔ M and R ↔ N.",
      "figure": null,
-     "page": 438,
+     "page": 563,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Read a congruence statement to match corresponding parts",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 8",
-     "question_page": 438,
-     "answer_key_page": 438
+     "question_page": 563,
+     "answer_key_page": 563
     },
     {
      "id": "S13-B1-Q4",
@@ -443,15 +423,15 @@
      "required_method": null,
      "grading_note": "The third letters correspond.",
      "figure": null,
-     "page": 439,
+     "page": 564,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Read a congruence statement to match corresponding parts",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 8",
-     "question_page": 439,
-     "answer_key_page": 439
+     "question_page": 564,
+     "answer_key_page": 564
     },
     {
      "id": "S13-B1-Q5",
@@ -489,15 +469,15 @@
      "required_method": null,
      "grading_note": "DE corresponds to GH.",
      "figure": null,
-     "page": 440,
+     "page": 565,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Read a congruence statement to match corresponding parts",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 8",
-     "question_page": 440,
-     "answer_key_page": 440
+     "question_page": 565,
+     "answer_key_page": 565
     }
    ]
   },
@@ -512,7 +492,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student does not know that rigid motions keep lengths and angles. Why it matters: this is the reason corresponding parts are congruent. Evidence: states and uses the preserved properties.",
-    "source": "Grade 8"
+    "source": "Grade 8",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -551,15 +532,15 @@
      "required_method": null,
      "grading_note": "Rotations are rigid motions.",
      "figure": null,
-     "page": 442,
+     "page": 567,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Rigid motions keep lengths and angle measures",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 442,
-     "answer_key_page": 442
+     "question_page": 567,
+     "answer_key_page": 567
     },
     {
      "id": "S13-B2-Q2",
@@ -590,15 +571,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 443,
+     "page": 568,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Rigid motions keep lengths and angle measures",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 443,
-     "answer_key_page": 443
+     "question_page": 568,
+     "answer_key_page": 568
     },
     {
      "id": "S13-B2-Q3",
@@ -644,15 +625,15 @@
      "required_method": null,
      "grading_note": "Reflections keep angle measures.",
      "figure": null,
-     "page": 444,
+     "page": 569,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Rigid motions keep lengths and angle measures",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 444,
-     "answer_key_page": 444
+     "question_page": 569,
+     "answer_key_page": 569
     },
     {
      "id": "S13-B2-Q4",
@@ -690,15 +671,15 @@
      "required_method": null,
      "grading_note": "Translations keep every length.",
      "figure": null,
-     "page": 445,
+     "page": 570,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Rigid motions keep lengths and angle measures",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 445,
-     "answer_key_page": 445
+     "question_page": 570,
+     "answer_key_page": 570
     },
     {
      "id": "S13-B2-Q5",
@@ -729,15 +710,15 @@
      "required_method": null,
      "grading_note": "Any order.",
      "figure": null,
-     "page": 446,
+     "page": 571,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Rigid motions keep lengths and angle measures",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 446,
-     "answer_key_page": 446
+     "question_page": 571,
+     "answer_key_page": 571
     }
    ]
   },
@@ -752,7 +733,8 @@
     "kind": "backward",
     "alignment": "supporting",
     "rationale": "Obstacle: the student cannot plan the motions that place one triangle on another. Why it matters: the converse direction builds a rigid motion step by step. Evidence: chooses a translation, a rotation, and a reflection for given goals.",
-    "source": "Grade 8"
+    "source": "Grade 8",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -784,15 +766,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form: (x, y) → (x + 3, y - 4).",
      "figure": null,
-     "page": 448,
+     "page": 573,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Move a point onto another and a ray onto another with rigid motions",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 8",
-     "question_page": 448,
-     "answer_key_page": 448
+     "question_page": 573,
+     "answer_key_page": 573
     },
     {
      "id": "S13-B3-Q2",
@@ -823,15 +805,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form (270° clockwise).",
      "figure": null,
-     "page": 449,
+     "page": 574,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Move a point onto another and a ray onto another with rigid motions",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 8",
-     "question_page": 449,
-     "answer_key_page": 449
+     "question_page": 574,
+     "answer_key_page": 574
     },
     {
      "id": "S13-B3-Q3",
@@ -877,15 +859,15 @@
      "required_method": null,
      "grading_note": "A reflection across DE keeps every point of the line fixed.",
      "figure": null,
-     "page": 450,
+     "page": 575,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Move a point onto another and a ray onto another with rigid motions",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 8",
-     "question_page": 450,
-     "answer_key_page": 450
+     "question_page": 575,
+     "answer_key_page": 575
     },
     {
      "id": "S13-B3-Q4",
@@ -923,15 +905,15 @@
      "required_method": null,
      "grading_note": "Points on the mirror line are their own images.",
      "figure": null,
-     "page": 451,
+     "page": 576,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Move a point onto another and a ray onto another with rigid motions",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 8",
-     "question_page": 451,
-     "answer_key_page": 451
+     "question_page": 576,
+     "answer_key_page": 576
     },
     {
      "id": "S13-B3-Q5",
@@ -969,15 +951,15 @@
      "required_method": null,
      "grading_note": "A nonzero translation moves every point.",
      "figure": null,
-     "page": 452,
+     "page": 577,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Move a point onto another and a ray onto another with rigid motions",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 8",
-     "question_page": 452,
-     "answer_key_page": 452
+     "question_page": 577,
+     "answer_key_page": 577
     }
    ]
   },
@@ -993,7 +975,8 @@
     "progression": "cross-standard extension",
     "connection": "direct",
     "new_demand": "Decide which smaller sets of corresponding parts guarantee congruence, with counterexamples for those that do not.",
-    "course": "Geometry"
+    "course": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1027,15 +1010,15 @@
      "required_method": null,
      "grading_note": "Any equivalent explanation.",
      "figure": null,
-     "page": 454,
+     "page": 579,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Find which three corresponding parts are enough",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 454,
-     "answer_key_page": 454
+     "question_page": 579,
+     "answer_key_page": 579
     },
     {
      "id": "S13-F1-Q2",
@@ -1068,15 +1051,15 @@
      "required_method": null,
      "grading_note": "Any valid SSA counterexample with the angle not between the sides.",
      "figure": null,
-     "page": 455,
+     "page": 580,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Find which three corresponding parts are enough",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 455,
-     "answer_key_page": 455
+     "question_page": 580,
+     "answer_key_page": 580
     },
     {
      "id": "S13-F1-Q3",
@@ -1116,15 +1099,15 @@
      "required_method": null,
      "grading_note": "AAA gives similar triangles, not necessarily congruent ones.",
      "figure": null,
-     "page": 456,
+     "page": 581,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Find which three corresponding parts are enough",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 456,
-     "answer_key_page": 456
+     "question_page": 581,
+     "answer_key_page": 581
     },
     {
      "id": "S13-F1-Q4",
@@ -1172,15 +1155,15 @@
      "required_method": null,
      "grading_note": "SSA can give two different triangles.",
      "figure": null,
-     "page": 457,
+     "page": 582,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Find which three corresponding parts are enough",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 457,
-     "answer_key_page": 457
+     "question_page": 582,
+     "answer_key_page": 582
     },
     {
      "id": "S13-F1-Q5",
@@ -1213,15 +1196,15 @@
      "required_method": null,
      "grading_note": "Any equivalent explanation.",
      "figure": null,
-     "page": 458,
+     "page": 583,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Find which three corresponding parts are enough",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 458,
-     "answer_key_page": 458
+     "question_page": 583,
+     "answer_key_page": 583
     }
    ]
   },
@@ -1238,7 +1221,8 @@
     "connection": "direct",
     "new_demand": "Prove a relationship in a figure by first proving two triangles congruent and then using corresponding parts.",
     "course": "Geometry",
-    "builds_on": "FORWARD 1 finds which parts force congruence; FORWARD 2 uses such a congruence inside a proof."
+    "builds_on": "FORWARD 1 finds which parts force congruence; FORWARD 2 uses such a congruence inside a proof.",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1272,15 +1256,15 @@
      "required_method": "Prove △ABD ≅ △CBD (SSS, with BD shared), then use corresponding angles.",
      "grading_note": "Any valid proof. Essential: AB = CB, AD = CD, BD = BD (reflexive); SSS gives the congruence; corresponding angles ∠ABD and ∠CBD are congruent, which is the definition of a bisector. Invalid: assuming the angles are equal from the picture.",
      "figure": null,
-     "page": 460,
+     "page": 585,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Use congruent triangles to prove a relationship in a figure",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 460,
-     "answer_key_page": 460
+     "question_page": 585,
+     "answer_key_page": 585
     },
     {
      "id": "S13-F2-Q2",
@@ -1313,15 +1297,15 @@
      "required_method": "Use vertical angles and the bisected segments to prove △AEB ≅ △CED by SAS.",
      "grading_note": "Any valid proof. Essential: AE = CE and BE = DE (definition of bisect); ∠AEB ≅ ∠CED (vertical angles); SAS; corresponding sides AB = CD.",
      "figure": null,
-     "page": 461,
+     "page": 586,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Use congruent triangles to prove a relationship in a figure",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 461,
-     "answer_key_page": 461
+     "question_page": 586,
+     "answer_key_page": 586
     },
     {
      "id": "S13-F2-Q3",
@@ -1354,15 +1338,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 462,
+     "page": 587,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Use congruent triangles to prove a relationship in a figure",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 462,
-     "answer_key_page": 462
+     "question_page": 587,
+     "answer_key_page": 587
     },
     {
      "id": "S13-F2-Q4",
@@ -1402,15 +1386,15 @@
      "required_method": null,
      "grading_note": "Congruence gives all six pairs of corresponding parts (CPCTC).",
      "figure": null,
-     "page": 463,
+     "page": 588,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Use congruent triangles to prove a relationship in a figure",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 463,
-     "answer_key_page": 463
+     "question_page": 588,
+     "answer_key_page": 588
     },
     {
      "id": "S13-F2-Q5",
@@ -1458,15 +1442,15 @@
      "required_method": null,
      "grading_note": "Midpoint means XM = MY.",
      "figure": null,
-     "page": 464,
+     "page": 589,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use the rigid-motion definition to show both directions: a rigid motion between triangles makes all corresponding sides and angles congruent, and congruent corresponding parts give a rigid motion",
      "target_skill": "Use congruent triangles to prove a relationship in a figure",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 464,
-     "answer_key_page": 464
+     "question_page": 589,
+     "answer_key_page": 589
     }
    ]
   }

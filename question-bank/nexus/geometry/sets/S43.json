@@ -4,7 +4,7 @@
   "id": "GEO",
   "grade": null,
   "course": "Geometry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-23"
  },
  "grade": null,
@@ -29,7 +29,8 @@
    "branch": {
     "kind": "main",
     "strand": "core",
-    "target_skill": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side"
+    "target_skill": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -63,15 +64,15 @@
      "required_method": "Turn the given ratio into AD/AB = AE/AC, prove △ADE ~ △ABC by SAS similarity, then use congruent corresponding angles.",
      "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: AD/DB = AE/EC gives AD/AB = AE/AC (add 1 to the reciprocals); ∠A shared; SAS similarity; ∠ADE ≅ ∠ABC; congruent corresponding angles make DE ∥ BC (converse). Invalid: assuming DE ∥ BC to get the similarity.",
      "figure": null,
-     "page": 1552,
+     "page": 1745,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1552,
-     "answer_key_page": 1552
+     "question_page": 1745,
+     "answer_key_page": 1745
     },
     {
      "id": "S43-M-Q2",
@@ -104,15 +105,15 @@
      "required_method": "Show PS/PQ = PT/PR, then SAS similarity and corresponding angles.",
      "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: PS/PQ = 4/10 = 0.4 and PT/PR = 6/15 = 0.4; ∠P shared; SAS similarity; corresponding angles congruent; converse of corresponding angles theorem.",
      "figure": null,
-     "page": 1553,
+     "page": 1746,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1553,
-     "answer_key_page": 1553
+     "question_page": 1746,
+     "answer_key_page": 1746
     },
     {
      "id": "S43-M-Q3",
@@ -131,29 +132,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Show the algebra that turns AD/DB = AE/EC into AD/AB = AE/AC.",
-     "prompt_markup": "Show the algebra that turns AD/DB = AE/EC into AD/AB = AE/AC.",
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "In △ABC, D is on AB and E is on AC with AD/AB = AE/AC. Prove that DE ∥ BC.",
+     "prompt_markup": "In △ABC, D is on AB and E is on AC with AD/AB = AE/AC. Prove that DE ∥ BC.",
      "choices": [],
      "answer_lines": [
-      "Work:"
+      "Conclusion:"
      ],
      "correct_letter": null,
-     "correct_answer": "Reciprocals: DB/AD = EC/AE; add 1: (AD + DB)/AD = (AE + EC)/AE, so AB/AD = AC/AE; reciprocals: AD/AB = AE/AC.",
+     "correct_answer": "DE ∥ BC",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Any correct route.",
+     "required_method": "SAS similarity using the shared angle, then congruent corresponding angles.",
+     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: AD/AB = AE/AC and ∠A shared; SAS similarity gives △ADE ~ △ABC; ∠ADE ≅ ∠ABC; congruent corresponding angles (transversal AB) make DE ∥ BC.",
      "figure": null,
-     "page": 1554,
-     "revision": "unchanged",
+     "page": 1747,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1554,
-     "answer_key_page": 1554
+     "question_page": 1747,
+     "answer_key_page": 1747
     },
     {
      "id": "S43-M-Q4",
@@ -172,44 +173,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "mc",
-     "response": "select one",
-     "prompt": "In △ABC, AD = 3, DB = 5, AE = 4.5, EC = 7.5 (D on AB, E on AC). Is DE ∥ BC?",
-     "prompt_markup": "In △ABC, AD = 3, DB = 5, AE = 4.5, EC = 7.5 (D on AB, E on AC). Is DE ∥ BC?",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "Yes, because 3/5 = 4.5/7.5"
-      },
-      {
-       "letter": "B",
-       "text": "No, because 3 ≠ 4.5"
-      },
-      {
-       "letter": "C",
-       "text": "Yes, because D and E are midpoints"
-      },
-      {
-       "letter": "D",
-       "text": "No, because 5 ≠ 7.5"
-      }
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "In △ABC, M is the midpoint of AB and N is the midpoint of AC. Use the converse of the triangle proportionality theorem to prove that MN ∥ BC.",
+     "prompt_markup": "In △ABC, M is the midpoint of AB and N is the midpoint of AC. Use the converse of the triangle proportionality theorem to prove that MN ∥ BC.",
+     "choices": [],
+     "answer_lines": [
+      "Conclusion:"
      ],
-     "answer_lines": [],
-     "correct_letter": "A",
-     "correct_answer": "Yes, because 3/5 = 4.5/7.5",
+     "correct_letter": null,
+     "correct_answer": "MN ∥ BC",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Both ratios equal 0.6, so the converse applies.",
+     "required_method": "Show the two side ratios are equal, then apply the converse.",
+     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: AM = MB and AN = NC, so AM/MB = 1 = AN/NC; by the converse, MN ∥ BC. Invalid: assuming MN ∥ BC.",
      "figure": null,
-     "page": 1555,
-     "revision": "unchanged",
+     "page": 1748,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1555,
-     "answer_key_page": 1555
+     "question_page": 1748,
+     "answer_key_page": 1748
     },
     {
      "id": "S43-M-Q5",
@@ -228,36 +214,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "tf",
-     "response": "select true or false",
-     "prompt": "In △ABC, D is on AB and E is on AC with AD = 2, DB = 3, AE = 3, EC = 4. Then DE ∥ BC.",
-     "prompt_markup": "In △ABC, D is on AB and E is on AC with AD = 2, DB = 3, AE = 3, EC = 4. Then DE ∥ BC.",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "True"
-      },
-      {
-       "letter": "B",
-       "text": "False"
-      }
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "In △ABC, D is on AB and E is on AC with AD = 3, DB = 5, AE = 4.5, EC = 7.5, and BC = 16. Prove that DE ∥ BC, then find DE.",
+     "prompt_markup": "In △ABC, D is on AB and E is on AC with AD = 3, DB = 5, AE = 4.5, EC = 7.5, and BC = 16. Prove that DE ∥ BC, then find DE.",
+     "choices": [],
+     "answer_lines": [
+      "Conclusion:"
      ],
-     "answer_lines": [],
-     "correct_letter": "B",
-     "correct_answer": "False",
+     "correct_letter": null,
+     "correct_answer": "DE ∥ BC; DE = 6",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "2/3 ≠ 3/4, so DE is not parallel to BC.",
+     "required_method": "Compare AD/DB and AE/EC, apply the converse, then use △ADE ~ △ABC.",
+     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: 3/5 = 0.6 = 4.5/7.5, so DE ∥ BC by the converse; △ADE ~ △ABC with ratio AD/AB = 3/8; DE = 16 · 3/8 = 6.",
      "figure": null,
-     "page": 1556,
-     "revision": "unchanged",
+     "page": 1749,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1556,
-     "answer_key_page": 1556
+     "question_page": 1749,
+     "answer_key_page": 1749
     }
    ]
   },
@@ -272,7 +251,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student does not know the forward theorem. Why it matters: the converse reverses it. Evidence: applies and states the theorem.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -294,8 +274,8 @@
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "In △ABC, DE ∥ BC, AD = 6, DB = 4, AE = 9. Find EC.",
-     "prompt_markup": "In △ABC, DE ∥ BC, AD = 6, DB = 4, AE = 9. Find EC.",
+     "prompt": "In △ABC, D is on AB and E is on AC with DE ∥ BC. AD = 6, DB = 4, AE = 9. Find EC.",
+     "prompt_markup": "In △ABC, D is on AB and E is on AC with DE ∥ BC. AD = 6, DB = 4, AE = 9. Find EC.",
      "choices": [],
      "answer_lines": [
       "EC ="
@@ -306,15 +286,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1558,
-     "revision": "unchanged",
+     "page": 1751,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "Use the triangle proportionality theorem",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1558,
-     "answer_key_page": 1558
+     "question_page": 1751,
+     "answer_key_page": 1751
     },
     {
      "id": "S43-B1-Q2",
@@ -335,8 +315,8 @@
      "standard_course": "Geometry",
      "type": "tf",
      "response": "select true or false",
-     "prompt": "If DE ∥ BC in △ABC, then AD/DB = AE/EC.",
-     "prompt_markup": "If DE ∥ BC in △ABC, then AD/DB = AE/EC.",
+     "prompt": "In △ABC, D is on AB and E is on AC. If DE ∥ BC, then AD/DB = AE/EC.",
+     "prompt_markup": "In △ABC, D is on AB and E is on AC. If DE ∥ BC, then AD/DB = AE/EC.",
      "choices": [
       {
        "letter": "A",
@@ -354,15 +334,15 @@
      "required_method": null,
      "grading_note": "The theorem.",
      "figure": null,
-     "page": 1559,
-     "revision": "unchanged",
+     "page": 1752,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "Use the triangle proportionality theorem",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1559,
-     "answer_key_page": 1559
+     "question_page": 1752,
+     "answer_key_page": 1752
     },
     {
      "id": "S43-B1-Q3",
@@ -383,8 +363,8 @@
      "standard_course": "Geometry",
      "type": "mc",
      "response": "select one",
-     "prompt": "DE ∥ BC, AD = 2, AB = 8, AC = 12. Find AE.",
-     "prompt_markup": "DE ∥ BC, AD = 2, AB = 8, AC = 12. Find AE.",
+     "prompt": "In △ABC, D is on AB and E is on AC with DE ∥ BC. AD = 2, AB = 8, AC = 12. Find AE.",
+     "prompt_markup": "In △ABC, D is on AB and E is on AC with DE ∥ BC. AD = 2, AB = 8, AC = 12. Find AE.",
      "choices": [
       {
        "letter": "A",
@@ -410,15 +390,15 @@
      "required_method": null,
      "grading_note": "2/8 = AE/12.",
      "figure": null,
-     "page": 1560,
-     "revision": "unchanged",
+     "page": 1753,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "Use the triangle proportionality theorem",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1560,
-     "answer_key_page": 1560
+     "question_page": 1753,
+     "answer_key_page": 1753
     },
     {
      "id": "S43-B1-Q4",
@@ -439,8 +419,8 @@
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "State the converse of \"If DE ∥ BC, then AD/DB = AE/EC.\"",
-     "prompt_markup": "State the converse of \"If DE ∥ BC, then AD/DB = AE/EC.\"",
+     "prompt": "In △ABC, D is on AB and E is on AC. State the converse of \"If DE ∥ BC, then AD/DB = AE/EC.\"",
+     "prompt_markup": "In △ABC, D is on AB and E is on AC. State the converse of \"If DE ∥ BC, then AD/DB = AE/EC.\"",
      "choices": [],
      "answer_lines": [
       "Converse:"
@@ -451,15 +431,15 @@
      "required_method": null,
      "grading_note": "Any equivalent wording.",
      "figure": null,
-     "page": 1561,
-     "revision": "unchanged",
+     "page": 1754,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "Use the triangle proportionality theorem",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1561,
-     "answer_key_page": 1561
+     "question_page": 1754,
+     "answer_key_page": 1754
     },
     {
      "id": "S43-B1-Q5",
@@ -499,15 +479,15 @@
      "required_method": null,
      "grading_note": "Some converses are false; this one must be proved.",
      "figure": null,
-     "page": 1562,
+     "page": 1755,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "Use the triangle proportionality theorem",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1562,
-     "answer_key_page": 1562
+     "question_page": 1755,
+     "answer_key_page": 1755
     }
    ]
   },
@@ -522,7 +502,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot get the similarity from ratios. Why it matters: the converse proof uses SAS similarity. Evidence: applies SAS similarity.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -563,15 +544,15 @@
      "required_method": null,
      "grading_note": "SAS similarity.",
      "figure": null,
-     "page": 1564,
+     "page": 1757,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "SAS similarity",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1564,
-     "answer_key_page": 1564
+     "question_page": 1757,
+     "answer_key_page": 1757
     },
     {
      "id": "S43-B2-Q2",
@@ -592,8 +573,8 @@
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "△ADE and △ABC share ∠A, AD/AB = AE/AC = 0.4. Are they similar? Criterion?",
-     "prompt_markup": "△ADE and △ABC share ∠A, AD/AB = AE/AC = 0.4. Are they similar? Criterion?",
+     "prompt": "In △ABC, D is on AB and E is on AC, so △ADE and △ABC share ∠A. AD/AB = AE/AC = 0.4. Are they similar? Criterion?",
+     "prompt_markup": "In △ABC, D is on AB and E is on AC, so △ADE and △ABC share ∠A. AD/AB = AE/AC = 0.4. Are they similar? Criterion?",
      "choices": [],
      "answer_lines": [
       "Answer:"
@@ -604,15 +585,15 @@
      "required_method": null,
      "grading_note": "Form required: both.",
      "figure": null,
-     "page": 1565,
-     "revision": "unchanged",
+     "page": 1758,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "SAS similarity",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1565,
-     "answer_key_page": 1565
+     "question_page": 1758,
+     "answer_key_page": 1758
     },
     {
      "id": "S43-B2-Q3",
@@ -660,15 +641,15 @@
      "required_method": null,
      "grading_note": "D ↔ B.",
      "figure": null,
-     "page": 1566,
+     "page": 1759,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "SAS similarity",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1566,
-     "answer_key_page": 1566
+     "question_page": 1759,
+     "answer_key_page": 1759
     },
     {
      "id": "S43-B2-Q4",
@@ -701,15 +682,15 @@
      "required_method": null,
      "grading_note": "Form required: both.",
      "figure": null,
-     "page": 1567,
+     "page": 1760,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "SAS similarity",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1567,
-     "answer_key_page": 1567
+     "question_page": 1760,
+     "answer_key_page": 1760
     },
     {
      "id": "S43-B2-Q5",
@@ -749,15 +730,15 @@
      "required_method": null,
      "grading_note": "Included angle.",
      "figure": null,
-     "page": 1568,
+     "page": 1761,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "SAS similarity",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1568,
-     "answer_key_page": 1568
+     "question_page": 1761,
+     "answer_key_page": 1761
     }
    ]
   },
@@ -772,7 +753,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot conclude parallel lines. Why it matters: the last step of the proof. Evidence: applies the converse.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -813,15 +795,15 @@
      "required_method": null,
      "grading_note": "Converse.",
      "figure": null,
-     "page": 1570,
+     "page": 1763,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "Converse of the corresponding angles theorem",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1570,
-     "answer_key_page": 1570
+     "question_page": 1763,
+     "answer_key_page": 1763
     },
     {
      "id": "S43-B3-Q2",
@@ -842,8 +824,8 @@
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "∠ADE ≅ ∠ABC with transversal AB. What can you conclude about DE and BC?",
-     "prompt_markup": "∠ADE ≅ ∠ABC with transversal AB. What can you conclude about DE and BC?",
+     "prompt": "In △ABC, D is on AB and E is on AC. ∠ADE ≅ ∠ABC, with AB as the transversal. What can you conclude about DE and BC?",
+     "prompt_markup": "In △ABC, D is on AB and E is on AC. ∠ADE ≅ ∠ABC, with AB as the transversal. What can you conclude about DE and BC?",
      "choices": [],
      "answer_lines": [
       "Answer:"
@@ -854,15 +836,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1571,
-     "revision": "unchanged",
+     "page": 1764,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "Converse of the corresponding angles theorem",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1571,
-     "answer_key_page": 1571
+     "question_page": 1764,
+     "answer_key_page": 1764
     },
     {
      "id": "S43-B3-Q3",
@@ -883,8 +865,8 @@
      "standard_course": "Geometry",
      "type": "mc",
      "response": "select one",
-     "prompt": "Which angles, if congruent, prove DE ∥ BC?",
-     "prompt_markup": "Which angles, if congruent, prove DE ∥ BC?",
+     "prompt": "In △ABC, D is on AB and E is on AC. Which angles, if congruent, prove DE ∥ BC?",
+     "prompt_markup": "In △ABC, D is on AB and E is on AC. Which angles, if congruent, prove DE ∥ BC?",
      "choices": [
       {
        "letter": "A",
@@ -910,15 +892,15 @@
      "required_method": null,
      "grading_note": "Corresponding angles along AC.",
      "figure": null,
-     "page": 1572,
-     "revision": "unchanged",
+     "page": 1765,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "Converse of the corresponding angles theorem",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1572,
-     "answer_key_page": 1572
+     "question_page": 1765,
+     "answer_key_page": 1765
     },
     {
      "id": "S43-B3-Q4",
@@ -951,15 +933,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 1573,
+     "page": 1766,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "Converse of the corresponding angles theorem",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1573,
-     "answer_key_page": 1573
+     "question_page": 1766,
+     "answer_key_page": 1766
     },
     {
      "id": "S43-B3-Q5",
@@ -999,15 +981,15 @@
      "required_method": null,
      "grading_note": "They are always congruent.",
      "figure": null,
-     "page": 1574,
+     "page": 1767,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "Converse of the corresponding angles theorem",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1574,
-     "answer_key_page": 1574
+     "question_page": 1767,
+     "answer_key_page": 1767
     }
    ]
   },
@@ -1023,7 +1005,8 @@
     "progression": "same-course deepening",
     "connection": "direct",
     "new_demand": "Use the converse to find unknown lengths that force parallelism, and connect it to the midsegment theorem.",
-    "course": "Geometry"
+    "course": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1057,15 +1040,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1576,
+     "page": 1769,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "Use the converse to decide parallelism in figures",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1576,
-     "answer_key_page": 1576
+     "question_page": 1769,
+     "answer_key_page": 1769
     },
     {
      "id": "S43-F1-Q2",
@@ -1098,15 +1081,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1577,
+     "page": 1770,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "Use the converse to decide parallelism in figures",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1577,
-     "answer_key_page": 1577
+     "question_page": 1770,
+     "answer_key_page": 1770
     },
     {
      "id": "S43-F1-Q3",
@@ -1146,15 +1129,15 @@
      "required_method": null,
      "grading_note": "AD/DB = AE/EC = 1.",
      "figure": null,
-     "page": 1578,
+     "page": 1771,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "Use the converse to decide parallelism in figures",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1578,
-     "answer_key_page": 1578
+     "question_page": 1771,
+     "answer_key_page": 1771
     },
     {
      "id": "S43-F1-Q4",
@@ -1202,15 +1185,15 @@
      "required_method": null,
      "grading_note": "2 : 3 = 4 : 6.",
      "figure": null,
-     "page": 1579,
+     "page": 1772,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "Use the converse to decide parallelism in figures",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1579,
-     "answer_key_page": 1579
+     "question_page": 1772,
+     "answer_key_page": 1772
     },
     {
      "id": "S43-F1-Q5",
@@ -1243,15 +1226,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form. AD : AB = 1 : 3.",
      "figure": null,
-     "page": 1580,
+     "page": 1773,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "Use the converse to decide parallelism in figures",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1580,
-     "answer_key_page": 1580
+     "question_page": 1773,
+     "answer_key_page": 1773
     }
    ]
   },
@@ -1268,7 +1251,8 @@
     "connection": "direct",
     "new_demand": "Combine the converse with midsegments to prove a new theorem about trapezoids.",
     "course": "Geometry",
-    "builds_on": "Builds on FORWARD 1: the parallel conditions found there combine into the trapezoid midsegment proof."
+    "builds_on": "Builds on FORWARD 1: the parallel conditions found there combine into the trapezoid midsegment proof.",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1302,15 +1286,15 @@
      "required_method": "Draw diagonal AC; let P be the midpoint of AC; use the midsegment theorem (or the converse) in △ACD and △ABC.",
      "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: in △ADC, MP ∥ DC and MP = ½DC; in △ABC, PN ∥ AB and PN = ½AB; AB ∥ DC so MP and PN are both parallel to AB through P, so M, P, N are collinear; MN = ½(AB + DC).",
      "figure": null,
-     "page": 1582,
+     "page": 1775,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "Prove the trapezoid midsegment theorem",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1582,
-     "answer_key_page": 1582
+     "question_page": 1775,
+     "answer_key_page": 1775
     },
     {
      "id": "S43-F2-Q2",
@@ -1343,15 +1327,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1583,
+     "page": 1776,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "Prove the trapezoid midsegment theorem",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1583,
-     "answer_key_page": 1583
+     "question_page": 1776,
+     "answer_key_page": 1776
     },
     {
      "id": "S43-F2-Q3",
@@ -1391,15 +1375,15 @@
      "required_method": null,
      "grading_note": "It is half the sum of the bases.",
      "figure": null,
-     "page": 1584,
+     "page": 1777,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "Prove the trapezoid midsegment theorem",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1584,
-     "answer_key_page": 1584
+     "question_page": 1777,
+     "answer_key_page": 1777
     },
     {
      "id": "S43-F2-Q4",
@@ -1447,15 +1431,15 @@
      "required_method": null,
      "grading_note": "(9 + b)/2 = 12.",
      "figure": null,
-     "page": 1585,
+     "page": 1778,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "Prove the trapezoid midsegment theorem",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1585,
-     "answer_key_page": 1585
+     "question_page": 1778,
+     "answer_key_page": 1778
     },
     {
      "id": "S43-F2-Q5",
@@ -1476,8 +1460,8 @@
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "Explain why M, P, N are on one line in the trapezoid midsegment proof.",
-     "prompt_markup": "Explain why M, P, N are on one line in the trapezoid midsegment proof.",
+     "prompt": "Trapezoid ABCD has AB ∥ DC; M and N are the midpoints of legs AD and BC, and P is the midpoint of diagonal AC. Explain why M, P and N lie on one line.",
+     "prompt_markup": "Trapezoid ABCD has AB ∥ DC; M and N are the midpoints of legs AD and BC, and P is the midpoint of diagonal AC. Explain why M, P and N lie on one line.",
      "choices": [],
      "answer_lines": [
       "Answer:"
@@ -1488,15 +1472,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 1586,
-     "revision": "unchanged",
+     "page": 1779,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that a line dividing two sides of a triangle proportionally is parallel to the third side",
      "target_skill": "Prove the trapezoid midsegment theorem",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1586,
-     "answer_key_page": 1586
+     "question_page": 1779,
+     "answer_key_page": 1779
     }
    ]
   }

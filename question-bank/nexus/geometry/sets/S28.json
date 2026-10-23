@@ -4,7 +4,7 @@
   "id": "GEO",
   "grade": null,
   "course": "Geometry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-23"
  },
  "grade": null,
@@ -16,8 +16,7 @@
  "strand": "core",
  "target_skill": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
  "covers": [
-  "CO12-copyseg",
-  "CO12-tools"
+  "CO12-copyseg"
  ],
  "sections": [
   {
@@ -30,7 +29,8 @@
    "branch": {
     "kind": "main",
     "strand": "core",
-    "target_skill": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)"
+    "target_skill": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -103,15 +103,15 @@
        "h": 250
       }
      },
-     "page": 997,
+     "page": 1159,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 997,
-     "answer_key_page": 997
+     "question_page": 1159,
+     "answer_key_page": 1159
     },
     {
      "id": "S28-M-Q2",
@@ -193,15 +193,15 @@
        "h": 250
       }
      },
-     "page": 998,
+     "page": 1160,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 998,
-     "answer_key_page": 998
+     "question_page": 1160,
+     "answer_key_page": 1160
     },
     {
      "id": "S28-M-Q3",
@@ -273,15 +273,15 @@
        "h": 250
       }
      },
-     "page": 999,
+     "page": 1161,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 999,
-     "answer_key_page": 999
+     "question_page": 1161,
+     "answer_key_page": 1161
     },
     {
      "id": "S28-M-Q4",
@@ -300,29 +300,81 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Write the steps for copying segment AB onto ray PR, starting at P, with a compass and straightedge.",
-     "prompt_markup": "Write the steps for copying segment AB onto ray PR, starting at P, with a compass and straightedge.",
+     "type": "plot",
+     "response": "draw on the figure",
+     "prompt": "Compass and straightedge only; leave all arcs. On ray XW, construct a point Z so that XZ = AB + CD.",
+     "prompt_markup": "Compass and straightedge only; leave all arcs.\nOn ray XW, construct a point Z so that XZ = AB + CD.",
      "choices": [],
-     "answer_lines": [
-      "Steps:"
-     ],
+     "answer_lines": [],
      "correct_letter": null,
-     "correct_answer": "1. Put the compass point on A and open it to B. 2. Without changing the opening, put the compass point on P. 3. Draw an arc that crosses ray PR; label the crossing Q. Then PQ = AB.",
+     "correct_answer": "Copy AB from X to get Y on the ray, then copy CD from Y (away from X) to get Z; XZ = AB + CD.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent steps. Essential: the compass is set to AB and is not changed, the arc is centered at P, and the crossing is labeled.",
-     "figure": null,
-     "page": 1000,
-     "revision": "unchanged",
+     "grading_note": "Grade the construction marks, not only the final figure: an arc of radius AB centered at X, an arc of radius CD centered at the first point, and Z labeled.",
+     "figure": {
+      "svg": "assets/S28-M-Q4.svg",
+      "png": "assets/S28-M-Q4.png",
+      "kind": "gd",
+      "description": "Two segments at the top, AB (horizontal) and CD (slanting up), and below them a horizontal ray from X through W.",
+      "blank_for_drawing": true,
+      "data": {
+       "k": "gd",
+       "P": {
+        "A": [
+         0,
+         3.2
+        ],
+        "B": [
+         1.8,
+         3.2
+        ],
+        "C": [
+         2.6,
+         3.2
+        ],
+        "D": [
+         3.8,
+         3.6
+        ],
+        "X": [
+         0,
+         0.6
+        ],
+        "W": [
+         5.2,
+         0.6
+        ]
+       },
+       "items": [
+        [
+         "seg",
+         "A",
+         "B"
+        ],
+        [
+         "seg",
+         "C",
+         "D"
+        ],
+        [
+         "ray",
+         "X",
+         "W"
+        ]
+       ],
+       "desc": "Two segments at the top, AB (horizontal) and CD (slanting up), and below them a horizontal ray from X through W.",
+       "h": 250
+      }
+     },
+     "page": 1162,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1000,
-     "answer_key_page": 1000
+     "question_page": 1162,
+     "answer_key_page": 1162
     },
     {
      "id": "S28-M-Q5",
@@ -341,29 +393,68 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "You have no compass, only a straightedge and a strip of paper. Describe how to copy segment AB onto line ℓ starting at point C.",
-     "prompt_markup": "You have no compass, only a straightedge and a strip of paper. Describe how to copy segment AB onto line ℓ starting at point C.",
+     "type": "plot",
+     "response": "draw on the figure",
+     "prompt": "Compass and straightedge only; leave all arcs. Construct an isosceles triangle with base PQ whose two legs are each congruent to segment AB.",
+     "prompt_markup": "Compass and straightedge only; leave all arcs.\nConstruct an isosceles triangle with base PQ whose two legs are each congruent to segment AB.",
      "choices": [],
-     "answer_lines": [
-      "Method:"
-     ],
+     "answer_lines": [],
      "correct_letter": null,
-     "correct_answer": "Lay the strip along AB and mark the positions of A and B on its edge. Move the strip to ℓ, put the A-mark on C along ℓ, and mark the point at the B-mark: that is D, with CD = AB.",
+     "correct_answer": "Arcs of radius AB centered at P and at Q meet at R; triangle PQR has PR = QR = AB.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any valid method using the paper strip (or string) to transfer the length without measuring it with a ruler.",
-     "figure": null,
-     "page": 1001,
-     "revision": "unchanged",
+     "grading_note": "Grade the construction marks, not only the final figure: two arcs with the compass set to AB, centered at P and Q, their crossing R, and the legs drawn.",
+     "figure": {
+      "svg": "assets/S28-M-Q5.svg",
+      "png": "assets/S28-M-Q5.png",
+      "kind": "gd",
+      "description": "Segment AB at the top; below it, a horizontal segment PQ that is shorter than twice AB.",
+      "blank_for_drawing": true,
+      "data": {
+       "k": "gd",
+       "P": {
+        "A": [
+         0,
+         3
+        ],
+        "B": [
+         2.4,
+         3.4
+        ],
+        "P": [
+         0.4,
+         0.4
+        ],
+        "Q": [
+         3.2,
+         0.4
+        ]
+       },
+       "items": [
+        [
+         "seg",
+         "A",
+         "B"
+        ],
+        [
+         "seg",
+         "P",
+         "Q"
+        ]
+       ],
+       "desc": "Segment AB at the top; below it, a horizontal segment PQ that is shorter than twice AB.",
+       "h": 250
+      }
+     },
+     "page": 1163,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1001,
-     "answer_key_page": 1001
+     "question_page": 1163,
+     "answer_key_page": 1163
     }
    ]
   },
@@ -378,7 +469,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student does not connect \"congruent\" with \"same length\". Why it matters: a copy must have exactly the same length. Evidence: compares and combines lengths.",
-    "source": "Grade 2"
+    "source": "Grade 2",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -410,15 +502,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer: equal lengths.",
      "figure": null,
-     "page": 1003,
+     "page": 1165,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "Compare and measure lengths",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 2",
-     "question_page": 1003,
-     "answer_key_page": 1003
+     "question_page": 1165,
+     "answer_key_page": 1165
     },
     {
      "id": "S28-B1-Q2",
@@ -456,15 +548,15 @@
      "required_method": null,
      "grading_note": "Definition of congruent segments.",
      "figure": null,
-     "page": 1004,
+     "page": 1166,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "Compare and measure lengths",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 2",
-     "question_page": 1004,
-     "answer_key_page": 1004
+     "question_page": 1166,
+     "answer_key_page": 1166
     },
     {
      "id": "S28-B1-Q3",
@@ -510,15 +602,15 @@
      "required_method": null,
      "grading_note": "The compass keeps a fixed opening.",
      "figure": null,
-     "page": 1005,
+     "page": 1167,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "Compare and measure lengths",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 2",
-     "question_page": 1005,
-     "answer_key_page": 1005
+     "question_page": 1167,
+     "answer_key_page": 1167
     },
     {
      "id": "S28-B1-Q4",
@@ -549,15 +641,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1006,
+     "page": 1168,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "Compare and measure lengths",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 2",
-     "question_page": 1006,
-     "answer_key_page": 1006
+     "question_page": 1168,
+     "answer_key_page": 1168
     },
     {
      "id": "S28-B1-Q5",
@@ -595,15 +687,15 @@
      "required_method": null,
      "grading_note": "Congruent segments have equal lengths.",
      "figure": null,
-     "page": 1007,
+     "page": 1169,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "Compare and measure lengths",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 2",
-     "question_page": 1007,
-     "answer_key_page": 1007
+     "question_page": 1169,
+     "answer_key_page": 1169
     }
    ]
   },
@@ -618,7 +710,8 @@
     "kind": "backward",
     "alignment": "supporting",
     "rationale": "Obstacle: the student does not know why a compass copies lengths. Why it matters: the construction depends on the arc being at a fixed distance. Evidence: uses the circle definition.",
-    "source": "Grade 7"
+    "source": "Grade 7",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -650,15 +743,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1009,
+     "page": 1171,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "A compass draws all points at one distance from its center",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1009,
-     "answer_key_page": 1009
+     "question_page": 1171,
+     "answer_key_page": 1171
     },
     {
      "id": "S28-B2-Q2",
@@ -696,15 +789,15 @@
      "required_method": null,
      "grading_note": "The opening must stay fixed.",
      "figure": null,
-     "page": 1010,
+     "page": 1172,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "A compass draws all points at one distance from its center",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1010,
-     "answer_key_page": 1010
+     "question_page": 1172,
+     "answer_key_page": 1172
     },
     {
      "id": "S28-B2-Q3",
@@ -750,15 +843,15 @@
      "required_method": null,
      "grading_note": "Q is on the arc, so it is one radius from P.",
      "figure": null,
-     "page": 1011,
+     "page": 1173,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "A compass draws all points at one distance from its center",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1011,
-     "answer_key_page": 1011
+     "question_page": 1173,
+     "answer_key_page": 1173
     },
     {
      "id": "S28-B2-Q4",
@@ -796,15 +889,15 @@
      "required_method": null,
      "grading_note": "Definition of a circle.",
      "figure": null,
-     "page": 1012,
+     "page": 1174,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "A compass draws all points at one distance from its center",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1012,
-     "answer_key_page": 1012
+     "question_page": 1174,
+     "answer_key_page": 1174
     },
     {
      "id": "S28-B2-Q5",
@@ -835,15 +928,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1013,
+     "page": 1175,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "A compass draws all points at one distance from its center",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1013,
-     "answer_key_page": 1013
+     "question_page": 1175,
+     "answer_key_page": 1175
     }
    ]
   },
@@ -858,7 +951,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student misreads where the copy must go. Why it matters: the copy starts at the ray's endpoint. Evidence: reads ray and segment notation.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -899,15 +993,15 @@
      "required_method": null,
      "grading_note": "Definition of a ray.",
      "figure": null,
-     "page": 1015,
+     "page": 1177,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "Know rays, segments, and their endpoints",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1015,
-     "answer_key_page": 1015
+     "question_page": 1177,
+     "answer_key_page": 1177
     },
     {
      "id": "S28-B3-Q2",
@@ -928,27 +1022,27 @@
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "Q is on ray PR with PQ = 5. Must Q be between P and R?",
-     "prompt_markup": "Q is on ray PR with PQ = 5. Must Q be between P and R?",
+     "prompt": "Q is on ray PR with PQ = 5. Must Q be between P and R? Describe all the cases.",
+     "prompt_markup": "Q is on ray PR with PQ = 5. Must Q be between P and R? Describe all the cases.",
      "choices": [],
      "answer_lines": [
       "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "No. It is between P and R only if PR > 5; otherwise R is between P and Q.",
+     "correct_answer": "No. If PR > 5, Q is between P and R; if PR = 5, Q is R; if PR < 5, R is between P and Q.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer.",
+     "grading_note": "Form required: all three cases.",
      "figure": null,
-     "page": 1016,
-     "revision": "unchanged",
+     "page": 1178,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "Know rays, segments, and their endpoints",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1016,
-     "answer_key_page": 1016
+     "question_page": 1178,
+     "answer_key_page": 1178
     },
     {
      "id": "S28-B3-Q3",
@@ -996,15 +1090,15 @@
      "required_method": null,
      "grading_note": "A segment has two endpoints.",
      "figure": null,
-     "page": 1017,
+     "page": 1179,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "Know rays, segments, and their endpoints",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1017,
-     "answer_key_page": 1017
+     "question_page": 1179,
+     "answer_key_page": 1179
     },
     {
      "id": "S28-B3-Q4",
@@ -1044,15 +1138,15 @@
      "required_method": null,
      "grading_note": "The ray goes only from P toward R.",
      "figure": null,
-     "page": 1018,
+     "page": 1180,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "Know rays, segments, and their endpoints",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1018,
-     "answer_key_page": 1018
+     "question_page": 1180,
+     "answer_key_page": 1180
     },
     {
      "id": "S28-B3-Q5",
@@ -1085,15 +1179,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1019,
+     "page": 1181,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "Know rays, segments, and their endpoints",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1019,
-     "answer_key_page": 1019
+     "question_page": 1181,
+     "answer_key_page": 1181
     }
    ]
   },
@@ -1109,7 +1203,8 @@
     "progression": "same-course deepening",
     "connection": "direct",
     "new_demand": "Use segment copying as a tool inside a larger construction (a triangle from three sides).",
-    "course": "Geometry"
+    "course": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1212,15 +1307,15 @@
        "h": 250
       }
      },
-     "page": 1021,
+     "page": 1183,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "Construct a triangle from three given segments",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1021,
-     "answer_key_page": 1021
+     "question_page": 1183,
+     "answer_key_page": 1183
     },
     {
      "id": "S28-F1-Q2",
@@ -1253,15 +1348,15 @@
      "required_method": null,
      "grading_note": "Any equivalent explanation.",
      "figure": null,
-     "page": 1022,
+     "page": 1184,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "Construct a triangle from three given segments",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1022,
-     "answer_key_page": 1022
+     "question_page": 1184,
+     "answer_key_page": 1184
     },
     {
      "id": "S28-F1-Q3",
@@ -1301,15 +1396,15 @@
      "required_method": null,
      "grading_note": "The two arcs meet only if each length is less than the sum of the other two.",
      "figure": null,
-     "page": 1023,
+     "page": 1185,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "Construct a triangle from three given segments",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1023,
-     "answer_key_page": 1023
+     "question_page": 1185,
+     "answer_key_page": 1185
     },
     {
      "id": "S28-F1-Q4",
@@ -1357,15 +1452,15 @@
      "required_method": null,
      "grading_note": "Reflection across the base swaps them.",
      "figure": null,
-     "page": 1024,
+     "page": 1186,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "Construct a triangle from three given segments",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1024,
-     "answer_key_page": 1024
+     "question_page": 1186,
+     "answer_key_page": 1186
     },
     {
      "id": "S28-F1-Q5",
@@ -1398,15 +1493,15 @@
      "required_method": null,
      "grading_note": "Any equivalent explanation.",
      "figure": null,
-     "page": 1025,
+     "page": 1187,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "Construct a triangle from three given segments",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1025,
-     "answer_key_page": 1025
+     "question_page": 1187,
+     "answer_key_page": 1187
     }
    ]
   },
@@ -1423,7 +1518,8 @@
     "connection": "direct",
     "new_demand": "Reason about existence: decide when a construction from given lengths is possible, and construct sums and differences.",
     "course": "Geometry",
-    "builds_on": "Builds on FORWARD 1: asks when the triangle construction succeeds and extends copying to sums and differences."
+    "builds_on": "Builds on FORWARD 1: asks when the triangle construction succeeds and extends copying to sums and differences.",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1457,15 +1553,15 @@
      "required_method": null,
      "grading_note": "Any equivalent explanation.",
      "figure": null,
-     "page": 1027,
+     "page": 1189,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "Decide whether segments can form a triangle, and construct sums and differences",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1027,
-     "answer_key_page": 1027
+     "question_page": 1189,
+     "answer_key_page": 1189
     },
     {
      "id": "S28-F2-Q2",
@@ -1562,15 +1658,15 @@
        "h": 250
       }
      },
-     "page": 1028,
+     "page": 1190,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "Decide whether segments can form a triangle, and construct sums and differences",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1028,
-     "answer_key_page": 1028
+     "question_page": 1190,
+     "answer_key_page": 1190
     },
     {
      "id": "S28-F2-Q3",
@@ -1610,15 +1706,15 @@
      "required_method": null,
      "grading_note": "Then one length equals the sum of the other two.",
      "figure": null,
-     "page": 1029,
+     "page": 1191,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "Decide whether segments can form a triangle, and construct sums and differences",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1029,
-     "answer_key_page": 1029
+     "question_page": 1191,
+     "answer_key_page": 1191
     },
     {
      "id": "S28-F2-Q4",
@@ -1666,15 +1762,15 @@
      "required_method": null,
      "grading_note": "1 + 2 = 3, so the figure is flat.",
      "figure": null,
-     "page": 1030,
+     "page": 1192,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "Decide whether segments can form a triangle, and construct sums and differences",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1030,
-     "answer_key_page": 1030
+     "question_page": 1192,
+     "answer_key_page": 1192
     },
     {
      "id": "S28-F2-Q5",
@@ -1707,15 +1803,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1031,
+     "page": 1193,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a segment congruent to a given segment with compass and straightedge (and with other tools)",
      "target_skill": "Decide whether segments can form a triangle, and construct sums and differences",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1031,
-     "answer_key_page": 1031
+     "question_page": 1193,
+     "answer_key_page": 1193
     }
    ]
   }

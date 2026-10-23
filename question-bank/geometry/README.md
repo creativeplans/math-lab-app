@@ -1,4 +1,4 @@
-# Geometry — Question Collection (version 1.0.0)
+# Geometry — Question Collection (version 1.1.0)
 
 The High School Geometry collection for Untangle the Nexus. Geometry is a course, not a grade, so the collection has no
 grade level. Everything is generated from one source, the data in `src/`, by `question-bank/engine/`. The collection has
@@ -7,38 +7,46 @@ only as standard codes in backward branches.
 
 | File | Contents |
 |---|---|
-| `Geometry_Question_Collection.pdf` | The questions, one per page (3,601 pages including set and branch title pages) |
+| `Geometry_Question_Collection.pdf` | The questions, one per page (3,905 pages including set and branch title pages) |
 | `Geometry_Answer_Key.pdf` | Same page numbers; each page shows a reduced copy of the question, its answer, and its grading note |
-| `Geometry_Answer_Key.json` / `.csv` | Machine-readable key, one record per question, keyed by `uid` (for example `GEO:S24-M-Q1`) |
+| `Geometry_Answer_Key.json` / `.csv` | Machine-readable key, one record per question, keyed by `uid` (for example `GEO:S24-M-Q1`). Questions with a figure also carry `figure_svg`, `figure_png`, `figure_description`, and `figure_data` (new last columns in the CSV) |
 | `COVERAGE.md` | Every standard (core and (+)), every subskill with its set and MAIN IDs, every set's branches, distributions, and known gaps |
-| `VALIDATION.md` | The 17 automatic checks and their results |
-| `CHANGELOG.md` | Changes by question ID |
-| `PLAN.md` | The authoring plan: the 96 sets by batch |
-| `src/` | The single source: `standards.py` (inventory and subskills), `data_*.py` (sets), `grade.py` (course settings and grading rules), `validate.py`, `resolve.py`, `coverage_reqs.py`, `choice_plan.json` (frozen MC letters), `history/` (the v1 snapshot later versions are compared with) |
+| `VALIDATION.md` | The 21 automatic checks, each with its result and its actual scope, plus the manual reviews (proof dependencies, independently solved questions, inspected figures) |
+| `CHANGELOG.md` | Changes by question ID (1.1.0 above 1.0.0) |
+| `CORRECTIONS.md` | The 1.1.0 response to the correction report: R01-R33 and the refinements, each with what was done and the IDs, plus the old-to-new ID map |
+| `PLAN.md` | The original authoring plan: the 96 sets of 1.0.0 by batch (sets 97-105 were added in 1.1.0; see CORRECTIONS.md) |
+| `src/` | The single source: `standards.py` (inventory and subskills), `data_*.py` (sets), `grade.py` (course settings and grading rules), `validate.py`, `resolve.py`, `review_log.py` (manual review record), `coverage_reqs.py`, `changes.py` (the 1.1.0 revision map), `choice_plan.json` (frozen MC letters), `history/` (the v1 snapshot and the 1.0.0 change log) |
 
 The Untangle The Nexus import package is `question-bank/nexus/geometry/`, zipped as
-`question-bank/nexus/Geometry_Nexus_Import_v1.0.0.zip`. Its README describes every field. The split PDFs are in its `pdf/`
+`question-bank/nexus/Geometry_Nexus_Import_v1.1.0.zip`. Its README describes every field. The split PDFs are in its `pdf/`
 folder, and `MANIFEST.json` lists every file with its SHA-256 hash.
 
 ## Contents
 
-- **96 question sets, 2,915 questions.**
-  - **Core strand (sets 1-87):** all 38 non-(+) HSG standards (G-CO, G-SRT, G-C, G-GPE, G-GMD, G-MG).
+- **105 question sets, 3,160 questions.**
+  - **Core strand (sets 1-87 and 97-105):** all 38 non-(+) HSG standards (G-CO, G-SRT, G-C, G-GPE, G-GMD, G-MG). Sets 97-105
+    were added in 1.1.0 so that each subskill has its own set (for example S97 defines an angle and S98 a segment, split from S1).
   - **ADVANCED EXTENSION strand (sets 88-96):** all six (+) standards (SRT.D.9, SRT.D.10, SRT.D.11, C.A.4, GPE.A.3, GMD.A.2).
     The `strand` field marks them, and no core set uses them as a prerequisite.
-- **Subparts and distinct demands.** Each standard is split into the subskills its wording names (102 in all). Examples are
+  - **(+) content in core sets.** Seven core sets have a FORWARD 2 branch on a (+) standard: S44-F2 and S60-F2 (SRT.D.10),
+    S52-F2 (SRT.D.11), S55-F2 (C.A.4), S65-F2 (GPE.A.3), S81-F2 (GMD.A.2), and S87-F2 (S-MD.B.7). Each branch is flagged
+    `plus_standard: true` in the export, so these branches can be skipped for students in the core course.
+- **Subparts and distinct demands.** Each standard is split into the subskills its wording names (105 in all). Examples are
   the five definitions in CO.A.1; SAS, ASA, and SSS in CO.B.8; and each construction in CO.D.12. Every subskill is the
   declared focus (`covers`) of a set whose five MAIN questions test it. Subskills whose verb is prove, derive, explain, or
   construct have MAIN questions that require that product: a proof or derivation in a work box, or a construction on the
   figure. `COVERAGE.md` section 3 lists each subskill with its set, IDs, and page.
 - **Set structure.**
-  - **MAIN:** five parallel questions on one target skill (`target_skill`).
-  - **BACKWARD 1..N:** 2-4 per set, 295 in all. Each is a diagnostic branch with easy numbers and one idea per question.
+  - **MAIN:** five comparable full performances on one target skill (`target_skill`). In proof sets all five are proofs, in
+    construction sets all five are constructions with evidence, and in derive or argue sets all five are derivations or
+    informal arguments. No MAIN has a true/false item. Five sets whose target is "explain (or derive) and use" (S40, S48,
+    S49, S62, S88) pair one shown-work explanation with four written explain-and-use tasks.
+  - **BACKWARD 1..N:** 2-4 per set, 317 in all. Each is a diagnostic branch with easy numbers and one idea per question.
     Its teacher metadata gives the obstacle, why it blocks MAIN, the evidence the five questions collect, and whether the
-    standard is an **exact** prerequisite (222) or the closest **supporting** standard (73).
+    standard is an **exact** prerequisite (233) or the closest **supporting** standard (84).
   - **FORWARD 1 and FORWARD 2:** each states its progression type and its one new demand:
-    - same-course deepening (97)
-    - cross-standard extension (89)
+    - same-course deepening (108)
+    - cross-standard extension (96)
     - later-course extension (6)
 
     Each is marked direct or NEAREST RELATED; every branch in this release is direct. FORWARD 2 states how it builds on
@@ -46,12 +54,12 @@ folder, and `MANIFEST.json` lists every file with its SHA-256 hash.
 - **No circular prerequisites.** A backward standard is a Grade K-8 standard, an Algebra I standard, or the MAIN standard of an
   *earlier* Geometry set. The build stops on anything else, so routing always goes to material taught earlier.
 - **Question types:**
-  - short answer 1,285
-  - multiple choice 571 (A 146, B 145, C 142, D 138)
-  - true/false 831 (409 True, 422 False)
-  - shown work 168 (proofs, derivations, explanations)
-  - drawing or construction 60 (49 compass-and-straightedge constructions)
-  - 154 questions have geometry diagrams; every diagram has a text description.
+  - short answer 1,384
+  - multiple choice 549 (A 141, B 139, C 136, D 133)
+  - true/false 836 (418 True, 418 False), none in MAIN
+  - shown work 304 (proofs, derivations, explanations)
+  - drawing or construction 87 (74 compass-and-straightedge constructions)
+  - 189 questions have figures (188 geometry diagrams); every figure has a text description.
 
 ## Answer forms and grading
 
@@ -79,20 +87,21 @@ folder, and `MANIFEST.json` lists every file with its SHA-256 hash.
     Algebra II, Probability & Statistics, or Precalculus.
   - Within this collection, the (+) standards are placed in Geometry's ADVANCED EXTENSION strand. Earlier collections
     placed (+) standards in Precalculus.
-- **Forward branches that apply an earlier-taught standard (15).** Some forward branches use a Geometry standard that is the
+- **Forward branches that apply an earlier-taught standard (17).** Some forward branches use a Geometry standard that is the
   MAIN of an earlier set, at a higher demand. An example is justifying a construction with a congruence proof. They are
   labeled cross-standard extension, and `VALIDATION.md` lists them.
 - **Grading support.** Proofs, constructions, and drawings need a person or a drawing surface. Equivalent-form answers need a
   checker that accepts equivalent expressions.
-- **Verification limits.** `src/resolve.py` independently recomputes 239 numeric and exact answers. Proofs, explanations,
-  classifications, and constructions were checked by reading and by rendering the pages. Diagrams were render-inspected by
-  sample (several per batch), not every page.
+- **Verification limits.** `src/resolve.py` independently recomputes 271 questions (313 values). Proofs, explanations,
+  classifications, and constructions were checked by reading. `VALIDATION.md` gives each automatic check's scope, and its
+  manual-review sections list exactly which proofs were checked step by step, which answers were recomputed by hand, and
+  which figures were inspected. All of this is the author's own review; no second person has checked it.
 - **Game functionality is unchanged.** This release is content only. The import package uses the existing types (`sa`, `mc`,
   `tf`, `work`, `plot`) and adds fields, which the importer ignores.
 
 ## Checks
 
-`python3 question-bank/geometry/src/validate.py` writes `VALIDATION.md` and exits non-zero on any failure. It checks:
+`python3 question-bank/geometry/src/validate.py` writes `VALIDATION.md` and exits non-zero on any failure. Each row states what the check covers and what it cannot show. It checks:
 
 - structure: five questions per section, 2-7 backward branches
 - IDs and uids
@@ -107,6 +116,10 @@ folder, and `MANIFEST.json` lists every file with its SHA-256 hash.
 - every ID on its recorded page in both PDFs
 - stand-alone wording
 - the independent re-solve
+- MAIN comparability (no true/false; five proofs, constructions, or arguments where the subskill asks for one)
+- figure fields in the answer key
+- (+) branches in core sets
+- totals recalculated three ways
 
 The build itself also stops on rule violations, such as a backward standard that is not earlier, a missing branch
 metadata field, or a figure without a description.

@@ -4,7 +4,7 @@
   "id": "GEO",
   "grade": null,
   "course": "Geometry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-23"
  },
  "grade": null,
@@ -29,7 +29,8 @@
    "branch": {
     "kind": "main",
     "strand": "core",
-    "target_skill": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1"
+    "target_skill": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -63,15 +64,15 @@
      "required_method": "Write the lines as y = mx + b₁ and y = mx + b₂ with b₁ ≠ b₂ and show there is no intersection.",
      "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: equations with equal slopes and different intercepts; solving for an intersection leads to b₁ = b₂ (false); conclusion. Alternative: a translation maps one line to the other; or congruent slope triangles with corresponding angles equal.",
      "figure": null,
-     "page": 2520,
+     "page": 2713,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 2520,
-     "answer_key_page": 2520
+     "question_page": 2713,
+     "answer_key_page": 2713
     },
     {
      "id": "S69-M-Q2",
@@ -203,15 +204,15 @@
        }
       }
      },
-     "page": 2521,
+     "page": 2714,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 2521,
-     "answer_key_page": 2521
+     "question_page": 2714,
+     "answer_key_page": 2714
     },
     {
      "id": "S69-M-Q3",
@@ -230,29 +231,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain why a 90° rotation of the slope triangle with run 3 and rise 2 gives a slope triangle with run -2 and rise 3.",
-     "prompt_markup": "Explain why a 90° rotation of the slope triangle with run 3 and rise 2 gives a slope triangle with run -2 and rise 3.",
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "Prove that two distinct nonvertical lines that are parallel have equal slopes.",
+     "prompt_markup": "Prove that two distinct nonvertical lines that are parallel have equal slopes.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Conclusion:"
      ],
      "correct_letter": null,
-     "correct_answer": "Rotating 90° counterclockwise sends (x, y) to (-y, x): the run becomes the old rise (negated) and the rise becomes the old run.",
+     "correct_answer": "If m₁ ≠ m₂, then m₁x + b₁ = m₂x + b₂ has the solution x = (b₂ - b₁)/(m₁ - m₂), so the lines meet, contradicting parallel. So m₁ = m₂.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "required_method": "Indirect: assume the slopes m₁ and m₂ are different and find an intersection point.",
+     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: assumption of unequal slopes; solving for the intersection; contradiction with \"parallel\"; conclusion.",
      "figure": null,
-     "page": 2522,
-     "revision": "unchanged",
+     "page": 2715,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 2522,
-     "answer_key_page": 2522
+     "question_page": 2715,
+     "answer_key_page": 2715
     },
     {
      "id": "S69-M-Q4",
@@ -271,44 +272,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "mc",
-     "response": "select one",
-     "prompt": "Why do two nonvertical lines with equal slopes and different y-intercepts never meet?",
-     "prompt_markup": "Why do two nonvertical lines with equal slopes and different y-intercepts never meet?",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "Their slopes are negative reciprocals"
-      },
-      {
-       "letter": "B",
-       "text": "Their intercepts are equal"
-      },
-      {
-       "letter": "C",
-       "text": "Setting the equations equal leads to a false statement"
-      },
-      {
-       "letter": "D",
-       "text": "They meet at the origin"
-      }
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "Prove that if two nonvertical lines have slopes m and -1/m (m ≠ 0), they are perpendicular. (Translate both lines so they pass through the origin first.)",
+     "prompt_markup": "Prove that if two nonvertical lines have slopes m and -1/m (m ≠ 0), they are perpendicular. (Translate both lines so they pass through the origin first.)",
+     "choices": [],
+     "answer_lines": [
+      "Conclusion:"
      ],
-     "answer_lines": [],
-     "correct_letter": "C",
-     "correct_answer": "Setting the equations equal leads to a false statement",
+     "correct_letter": null,
+     "correct_answer": "(1, m) rotates to (-m, 1), on the line with slope 1/(-m) = -1/m; so the line with slope -1/m through O is the 90° image of y = mx, hence perpendicular.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "mx + b₁ = mx + b₂ has no solution.",
+     "required_method": "Rotate the point (1, m) on y = mx by 90° about the origin and find the slope of its image line.",
+     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: translations keep slopes; the rotation image of (1, m); its slope -1/m; a 90° rotation image is perpendicular; only one line through O has slope -1/m.",
      "figure": null,
-     "page": 2523,
-     "revision": "unchanged",
+     "page": 2716,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 2523,
-     "answer_key_page": 2523
+     "question_page": 2716,
+     "answer_key_page": 2716
     },
     {
      "id": "S69-M-Q5",
@@ -327,36 +313,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "tf",
-     "response": "select true or false",
-     "prompt": "Lines with slopes 2 and -2 are perpendicular.",
-     "prompt_markup": "Lines with slopes 2 and -2 are perpendicular.",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "True"
-      },
-      {
-       "letter": "B",
-       "text": "False"
-      }
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "Lines y = mx and y = -x/m (m ≠ 0) pass through the origin O. Use the points P(1, m) and Q(-m, 1) and the converse of the Pythagorean Theorem to prove that the lines are perpendicular.",
+     "prompt_markup": "Lines y = mx and y = -x/m (m ≠ 0) pass through the origin O. Use the points P(1, m) and Q(-m, 1) and the converse of the Pythagorean Theorem to prove that the lines are perpendicular.",
+     "choices": [],
+     "answer_lines": [
+      "Conclusion:"
      ],
-     "answer_lines": [],
-     "correct_letter": "B",
-     "correct_answer": "False",
+     "correct_letter": null,
+     "correct_answer": "OP² + OQ² = (1 + m²) + (m² + 1) = 2 + 2m² = PQ², so ∠POQ = 90°.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Product -4, not -1.",
+     "required_method": "Compute OP², OQ², and PQ², and compare.",
+     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: OP² = 1 + m²; OQ² = m² + 1; PQ² = (1 + m)² + (m - 1)² = 2 + 2m²; converse of the Pythagorean Theorem; conclusion.",
      "figure": null,
-     "page": 2524,
-     "revision": "unchanged",
+     "page": 2717,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 2524,
-     "answer_key_page": 2524
+     "question_page": 2717,
+     "answer_key_page": 2717
     }
    ]
   },
@@ -371,7 +350,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student does not see why one line has one slope. Why it matters: the proof uses slope triangles. Evidence: explains constant slope.",
-    "source": "Grade 8"
+    "source": "Grade 8",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -410,15 +390,15 @@
      "required_method": null,
      "grading_note": "AA.",
      "figure": null,
-     "page": 2526,
+     "page": 2719,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Similar slope triangles give the same slope",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 2526,
-     "answer_key_page": 2526
+     "question_page": 2719,
+     "answer_key_page": 2719
     },
     {
      "id": "S69-B1-Q2",
@@ -449,15 +429,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2527,
+     "page": 2720,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Similar slope triangles give the same slope",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 2527,
-     "answer_key_page": 2527
+     "question_page": 2720,
+     "answer_key_page": 2720
     },
     {
      "id": "S69-B1-Q3",
@@ -503,15 +483,15 @@
      "required_method": null,
      "grading_note": "9/6 = 3/2.",
      "figure": null,
-     "page": 2528,
+     "page": 2721,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Similar slope triangles give the same slope",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 2528,
-     "answer_key_page": 2528
+     "question_page": 2721,
+     "answer_key_page": 2721
     },
     {
      "id": "S69-B1-Q4",
@@ -542,15 +522,15 @@
      "required_method": null,
      "grading_note": "Any equivalent explanation.",
      "figure": null,
-     "page": 2529,
+     "page": 2722,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Similar slope triangles give the same slope",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 2529,
-     "answer_key_page": 2529
+     "question_page": 2722,
+     "answer_key_page": 2722
     },
     {
      "id": "S69-B1-Q5",
@@ -588,15 +568,15 @@
      "required_method": null,
      "grading_note": "Constant.",
      "figure": null,
-     "page": 2530,
+     "page": 2723,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Similar slope triangles give the same slope",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 2530,
-     "answer_key_page": 2530
+     "question_page": 2723,
+     "answer_key_page": 2723
     }
    ]
   },
@@ -611,7 +591,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot rotate points. Why it matters: the perpendicular proof rotates (a, b). Evidence: rotates points 90°.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -645,15 +626,15 @@
      "required_method": null,
      "grading_note": "Form required: an ordered pair.",
      "figure": null,
-     "page": 2532,
+     "page": 2725,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Rotate a point 90° about the origin",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 2532,
-     "answer_key_page": 2532
+     "question_page": 2725,
+     "answer_key_page": 2725
     },
     {
      "id": "S69-B2-Q2",
@@ -686,15 +667,15 @@
      "required_method": null,
      "grading_note": "Form required: an ordered pair.",
      "figure": null,
-     "page": 2533,
+     "page": 2726,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Rotate a point 90° about the origin",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 2533,
-     "answer_key_page": 2533
+     "question_page": 2726,
+     "answer_key_page": 2726
     },
     {
      "id": "S69-B2-Q3",
@@ -742,15 +723,15 @@
      "required_method": null,
      "grading_note": "Rule.",
      "figure": null,
-     "page": 2534,
+     "page": 2727,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Rotate a point 90° about the origin",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 2534,
-     "answer_key_page": 2534
+     "question_page": 2727,
+     "answer_key_page": 2727
     },
     {
      "id": "S69-B2-Q4",
@@ -790,15 +771,15 @@
      "required_method": null,
      "grading_note": "Angle of rotation.",
      "figure": null,
-     "page": 2535,
+     "page": 2728,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Rotate a point 90° about the origin",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 2535,
-     "answer_key_page": 2535
+     "question_page": 2728,
+     "answer_key_page": 2728
     },
     {
      "id": "S69-B2-Q5",
@@ -838,15 +819,15 @@
      "required_method": null,
      "grading_note": "Counterclockwise gives (0, 2).",
      "figure": null,
-     "page": 2536,
+     "page": 2729,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Rotate a point 90° about the origin",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 2536,
-     "answer_key_page": 2536
+     "question_page": 2729,
+     "answer_key_page": 2729
     }
    ]
   },
@@ -861,7 +842,8 @@
     "kind": "backward",
     "alignment": "supporting",
     "rationale": "Obstacle: the student cannot simplify the product. Why it matters: the proof ends with (b/a)(-a/b) = -1. Evidence: computes negative reciprocals.",
-    "source": "Grade 7"
+    "source": "Grade 7",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -893,15 +875,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2538,
+     "page": 2731,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Negative reciprocals",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 2538,
-     "answer_key_page": 2538
+     "question_page": 2731,
+     "answer_key_page": 2731
     },
     {
      "id": "S69-B3-Q2",
@@ -932,15 +914,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2539,
+     "page": 2732,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Negative reciprocals",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 2539,
-     "answer_key_page": 2539
+     "question_page": 2732,
+     "answer_key_page": 2732
     },
     {
      "id": "S69-B3-Q3",
@@ -986,15 +968,15 @@
      "required_method": null,
      "grading_note": "-1 ÷ (-4).",
      "figure": null,
-     "page": 2540,
+     "page": 2733,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Negative reciprocals",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 2540,
-     "answer_key_page": 2540
+     "question_page": 2733,
+     "answer_key_page": 2733
     },
     {
      "id": "S69-B3-Q4",
@@ -1032,15 +1014,15 @@
      "required_method": null,
      "grading_note": "Definition.",
      "figure": null,
-     "page": 2541,
+     "page": 2734,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Negative reciprocals",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 2541,
-     "answer_key_page": 2541
+     "question_page": 2734,
+     "answer_key_page": 2734
     },
     {
      "id": "S69-B3-Q5",
@@ -1078,15 +1060,15 @@
      "required_method": null,
      "grading_note": "-1.",
      "figure": null,
-     "page": 2542,
+     "page": 2735,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Negative reciprocals",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 2542,
-     "answer_key_page": 2542
+     "question_page": 2735,
+     "answer_key_page": 2735
     }
    ]
   },
@@ -1102,7 +1084,8 @@
     "progression": "same-course deepening",
     "connection": "direct",
     "new_demand": "Apply the proved criteria to lines in different forms, including the vertical/horizontal exception.",
-    "course": "Geometry"
+    "course": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1136,15 +1119,15 @@
      "required_method": null,
      "grading_note": "Form required: the classification with the slopes.",
      "figure": null,
-     "page": 2544,
+     "page": 2737,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Use the criteria to classify pairs of lines",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2544,
-     "answer_key_page": 2544
+     "question_page": 2737,
+     "answer_key_page": 2737
     },
     {
      "id": "S69-F1-Q2",
@@ -1177,15 +1160,15 @@
      "required_method": null,
      "grading_note": "Form required: the classification with the slopes.",
      "figure": null,
-     "page": 2545,
+     "page": 2738,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Use the criteria to classify pairs of lines",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2545,
-     "answer_key_page": 2545
+     "question_page": 2738,
+     "answer_key_page": 2738
     },
     {
      "id": "S69-F1-Q3",
@@ -1225,15 +1208,15 @@
      "required_method": null,
      "grading_note": "Vertical slope is undefined.",
      "figure": null,
-     "page": 2546,
+     "page": 2739,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Use the criteria to classify pairs of lines",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2546,
-     "answer_key_page": 2546
+     "question_page": 2739,
+     "answer_key_page": 2739
     },
     {
      "id": "S69-F1-Q4",
@@ -1281,15 +1264,15 @@
      "required_method": null,
      "grading_note": "Product 1.",
      "figure": null,
-     "page": 2547,
+     "page": 2740,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Use the criteria to classify pairs of lines",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2547,
-     "answer_key_page": 2547
+     "question_page": 2740,
+     "answer_key_page": 2740
     },
     {
      "id": "S69-F1-Q5",
@@ -1322,15 +1305,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2548,
+     "page": 2741,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Use the criteria to classify pairs of lines",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2548,
-     "answer_key_page": 2548
+     "question_page": 2741,
+     "answer_key_page": 2741
     }
    ]
   },
@@ -1347,7 +1330,8 @@
     "connection": "direct",
     "new_demand": "Use the slope criteria as a tool in general coordinate proofs.",
     "course": "Geometry",
-    "builds_on": "Builds on FORWARD 1: classifying lines by slope becomes a step in proving theorems."
+    "builds_on": "Builds on FORWARD 1: classifying lines by slope becomes a step in proving theorems.",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1381,15 +1365,15 @@
      "required_method": "Find the slopes of OB and AC and multiply.",
      "grading_note": "Any valid coordinate proof. Essential: both slopes; product simplified with b² + c² = a²; conclusion. (Assume b ≠ ±a, so neither diagonal is vertical.)",
      "figure": null,
-     "page": 2550,
+     "page": 2743,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Use the criteria inside a general coordinate proof",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2550,
-     "answer_key_page": 2550
+     "question_page": 2743,
+     "answer_key_page": 2743
     },
     {
      "id": "S69-F2-Q2",
@@ -1422,15 +1406,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 2551,
+     "page": 2744,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Use the criteria inside a general coordinate proof",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2551,
-     "answer_key_page": 2551
+     "question_page": 2744,
+     "answer_key_page": 2744
     },
     {
      "id": "S69-F2-Q3",
@@ -1470,15 +1454,15 @@
      "required_method": null,
      "grading_note": "Product -1.",
      "figure": null,
-     "page": 2552,
+     "page": 2745,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Use the criteria inside a general coordinate proof",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2552,
-     "answer_key_page": 2552
+     "question_page": 2745,
+     "answer_key_page": 2745
     },
     {
      "id": "S69-F2-Q4",
@@ -1526,15 +1510,15 @@
      "required_method": null,
      "grading_note": "Criterion.",
      "figure": null,
-     "page": 2553,
+     "page": 2746,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Use the criteria inside a general coordinate proof",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2553,
-     "answer_key_page": 2553
+     "question_page": 2746,
+     "answer_key_page": 2746
     },
     {
      "id": "S69-F2-Q5",
@@ -1567,15 +1551,15 @@
      "required_method": null,
      "grading_note": "Form required: the conclusion with slopes. Slope BC = (4 - 2)/(3 - 4) = -2; product -1.",
      "figure": null,
-     "page": 2554,
+     "page": 2747,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that nonvertical lines are parallel exactly when their slopes are equal, and perpendicular exactly when the product of their slopes is -1",
      "target_skill": "Use the criteria inside a general coordinate proof",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2554,
-     "answer_key_page": 2554
+     "question_page": 2747,
+     "answer_key_page": 2747
     }
    ]
   }

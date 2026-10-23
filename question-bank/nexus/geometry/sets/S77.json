@@ -4,17 +4,17 @@
   "id": "GEO",
   "grade": null,
   "course": "Geometry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-23"
  },
  "grade": null,
  "set": 77,
  "set_id": "S77",
  "standard": "HSG-GMD.A.1",
- "title": "Informal arguments for the volumes of a pyramid and a cone",
+ "title": "Informal arguments for the volume of a pyramid",
  "domain": "Geometric Measurement and Dimension",
  "strand": "core",
- "target_skill": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
+ "target_skill": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
  "covers": [
   "GMD1-pyramid"
  ],
@@ -23,13 +23,14 @@
    "section": "MAIN",
    "section_code": "M",
    "relation": "main",
-   "skill": "Informal arguments for the volumes of a pyramid and a cone",
+   "skill": "Informal arguments for the volume of a pyramid",
    "standard": "HSG-GMD.A.1",
    "nearest_related": false,
    "branch": {
     "kind": "main",
     "strand": "core",
-    "target_skill": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones"
+    "target_skill": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -45,23 +46,23 @@
      "standard": "HSG-GMD.A.1",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "Informal arguments for the volumes of a pyramid and a cone",
+     "skill": "Informal arguments for the volume of a pyramid",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
      "type": "work",
      "response": "write the answer and show the required work",
-     "prompt": "A cube is split into three congruent pyramids that share one vertex of the cube as their apex, as shown. Use this to explain why a pyramid's volume is ⅓Bh.",
-     "prompt_markup": "A cube is split into three congruent pyramids that share one vertex of the cube as their apex, as shown. Use this to explain why a pyramid's volume is ⅓Bh.",
+     "prompt": "A cube with edge s is split into three congruent pyramids that share one vertex of the cube as their apex, as shown. Use this, together with scaling and Cavalieri's principle, to explain why EVERY pyramid with base area B and height h has volume ⅓Bh.",
+     "prompt_markup": "A cube with edge s is split into three congruent pyramids that share one vertex of the cube as their apex, as shown. Use this, together with scaling and Cavalieri's principle, to explain why EVERY pyramid with base area B and height h has volume ⅓Bh.",
      "choices": [],
      "answer_lines": [
       "Explanation:"
      ],
      "correct_letter": null,
-     "correct_answer": "Each pyramid has the cube's base B = s² and height h = s, and the three fill the cube, so each has volume ⅓s³ = ⅓Bh.",
+     "correct_answer": "Each of the three pyramids has volume ⅓s³ = ⅓(s²)(s). Stretching vertically by h/s multiplies the volume by h/s, giving ⅓s²h. Any pyramid with base area B and height h has cross-sections B((h - y)/h)² at height y, the same as a square pyramid with base area B and height h, so by Cavalieri's principle its volume is ⅓Bh.",
      "drawing_answer": null,
-     "required_method": "Compare each pyramid's base and height with the cube's.",
-     "grading_note": "Any valid explanation. Essential: three congruent pyramids fill the cube; each has base = a face (B = s²) and height = s; so V = ⅓s³ = ⅓Bh. Extension to other pyramids by Cavalieri (cross-sections scale the same way) earns full credit but is not required.",
+     "required_method": "(1) Find the volume of one of the three pyramids. (2) Stretch it vertically to any height h. (3) Use Cavalieri's principle to compare any pyramid with a square pyramid of the same base area and height.",
+     "grading_note": "Any valid explanation. Essential: (1) the three congruent pyramids fill the cube, each with base s² and height s, so ⅓s³; (2) a vertical stretch extends this to any height; (3) cross-sections are scaled copies of the base with area B((h - y)/h)², so Cavalieri's principle extends it to any base shape and apex position. The cube case alone is NOT sufficient for full credit.",
      "figure": {
       "svg": "assets/S77-M-Q1.svg",
       "png": "assets/S77-M-Q1.png",
@@ -268,15 +269,15 @@
        "h": 220
       }
      },
-     "page": 2828,
-     "revision": "unchanged",
+     "page": 3058,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
-     "target_skill": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
+     "target_skill": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 2828,
-     "answer_key_page": 2828
+     "question_page": 3058,
+     "answer_key_page": 3058
     },
     {
      "id": "S77-M-Q2",
@@ -291,1029 +292,33 @@
      "standard": "HSG-GMD.A.1",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "Informal arguments for the volumes of a pyramid and a cone",
+     "skill": "Informal arguments for the volume of a pyramid",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
      "type": "work",
      "response": "write the answer and show the required work",
-     "prompt": "Explain why the volume of a cone is ⅓πr²h, using pyramids.",
-     "prompt_markup": "Explain why the volume of a cone is ⅓πr²h, using pyramids.",
+     "prompt": "A triangular prism with base area B and height h is cut into three pyramids (tetrahedra), as Euclid did. Pairs of these pyramids have congruent bases and equal heights. Explain why each pyramid has volume ⅓Bh.",
+     "prompt_markup": "A triangular prism with base area B and height h is cut into three pyramids (tetrahedra), as Euclid did. Pairs of these pyramids have congruent bases and equal heights. Explain why each pyramid has volume ⅓Bh.",
      "choices": [],
      "answer_lines": [
       "Explanation:"
      ],
      "correct_letter": null,
-     "correct_answer": "Pyramids with regular n-gon bases inscribed in the circle have V = ⅓Bh; as n grows, B approaches πr² and the pyramids approach the cone, so V = ⅓πr²h.",
+     "correct_answer": "Pyramid 1 and pyramid 2 have equal bases and heights, and so do pyramids 2 and 3, so all three have equal volume. They fill the prism (volume Bh), so each has ⅓Bh; pyramid 1 has the prism's base and height.",
      "drawing_answer": null,
-     "required_method": "Think of pyramids whose bases are regular polygons with more and more sides.",
-     "grading_note": "Any valid explanation. Essential: pyramid volume ⅓Bh; base polygons approach the circle (B → πr²); the pyramids approach the cone. Alternative: Cavalieri comparison with a pyramid of equal base area and height.",
-     "figure": {
-      "svg": "assets/S77-M-Q2.svg",
-      "png": "assets/S77-M-Q2.png",
-      "kind": "gd",
-      "description": "Right circular cone with base radius r and height h; the height is dashed and meets the radius at a right angle.",
-      "blank_for_drawing": false,
-      "data": {
-       "k": "gd",
-       "P": {},
-       "items": [
-        [
-         "seg",
-         [
-          -1.6,
-          0
-         ],
-         [
-          -1.593911516946793,
-          -0.04183475651887581
-         ]
-        ],
-        [
-         "seg",
-         [
-          -1.593911516946793,
-          -0.04183475651887581
-         ],
-         [
-          -1.5756924048195329,
-          -0.08335112528012663
-         ]
-        ],
-        [
-         "seg",
-         [
-          -1.5756924048195329,
-          -0.08335112528012663
-         ],
-         [
-          -1.5454813220625094,
-          -0.12423314164920998
-         ]
-        ],
-        [
-         "seg",
-         [
-          -1.5454813220625094,
-          -0.12423314164920998
-         ],
-         [
-          -1.5035081932574537,
-          -0.16416966879632094
-         ]
-        ],
-        [
-         "seg",
-         [
-          -1.5035081932574537,
-          -0.16416966879632094
-         ],
-         [
-          -1.4500924592586402,
-          -0.20285676563553565
-         ]
-        ],
-        [
-         "seg",
-         [
-          -1.4500924592586402,
-          -0.20285676563553565
-         ],
-         [
-          -1.3856406460551018,
-          -0.24000000000000005
-         ]
-        ],
-        [
-         "seg",
-         [
-          -1.3856406460551018,
-          -0.24000000000000005
-         ],
-         [
-          -1.310643270862387,
-          -0.2753166894485021
-         ]
-        ],
-        [
-         "seg",
-         [
-          -1.310643270862387,
-          -0.2753166894485021
-         ],
-         [
-          -1.225671108990365,
-          -0.3085380526495388
-         ]
-        ],
-        [
-         "seg",
-         [
-          -1.225671108990365,
-          -0.3085380526495388
-         ],
-         [
-          -1.1313708498984762,
-          -0.3394112549695428
-         ]
-        ],
-        [
-         "seg",
-         [
-          -1.1313708498984762,
-          -0.3394112549695428
-         ],
-         [
-          -1.0284601754984632,
-          -0.36770133269710936
-         ]
-        ],
-        [
-         "seg",
-         [
-          -1.0284601754984632,
-          -0.36770133269710936
-         ],
-         [
-          -0.9177222981616743,
-          -0.39319298125871593
-         ]
-        ],
-        [
-         "seg",
-         [
-          -0.9177222981616743,
-          -0.39319298125871593
-         ],
-         [
-          -0.8000000000000007,
-          -0.4156921938165304
-         ]
-        ],
-        [
-         "seg",
-         [
-          -0.8000000000000007,
-          -0.4156921938165304
-         ],
-         [
-          -0.6761892187851187,
-          -0.435027737777592
-         ]
-        ],
-        [
-         "seg",
-         [
-          -0.6761892187851187,
-          -0.435027737777592
-         ],
-         [
-          -0.5472322293210697,
-          -0.45105245797723603
-         ]
-        ],
-        [
-         "seg",
-         [
-          -0.5472322293210697,
-          -0.45105245797723603
-         ],
-         [
-          -0.414110472164033,
-          -0.4636443966187528
-         ]
-        ],
-        [
-         "seg",
-         [
-          -0.414110472164033,
-          -0.4636443966187528
-         ],
-         [
-          -0.27783708426708853,
-          -0.4727077214458598
-         ]
-        ],
-        [
-         "seg",
-         [
-          -0.27783708426708853,
-          -0.4727077214458598
-         ],
-         [
-          -0.1394491883962532,
-          -0.47817345508403786
-         ]
-        ],
-        [
-         "seg",
-         [
-          -0.1394491883962532,
-          -0.47817345508403786
-         ],
-         [
-          0,
-          -0.48
-         ]
-        ],
-        [
-         "seg",
-         [
-          0,
-          -0.48
-         ],
-         [
-          0.13944918839625262,
-          -0.47817345508403786
-         ]
-        ],
-        [
-         "seg",
-         [
-          0.13944918839625262,
-          -0.47817345508403786
-         ],
-         [
-          0.277837084267088,
-          -0.4727077214458599
-         ]
-        ],
-        [
-         "seg",
-         [
-          0.277837084267088,
-          -0.4727077214458599
-         ],
-         [
-          0.4141104721640325,
-          -0.46364439661875284
-         ]
-        ],
-        [
-         "seg",
-         [
-          0.4141104721640325,
-          -0.46364439661875284
-         ],
-         [
-          0.5472322293210704,
-          -0.451052457977236
-         ]
-        ],
-        [
-         "seg",
-         [
-          0.5472322293210704,
-          -0.451052457977236
-         ],
-         [
-          0.6761892187851194,
-          -0.43502773777759196
-         ]
-        ],
-        [
-         "seg",
-         [
-          0.6761892187851194,
-          -0.43502773777759196
-         ],
-         [
-          0.8000000000000003,
-          -0.4156921938165305
-         ]
-        ],
-        [
-         "seg",
-         [
-          0.8000000000000003,
-          -0.4156921938165305
-         ],
-         [
-          0.9177222981616737,
-          -0.39319298125871605
-         ]
-        ],
-        [
-         "seg",
-         [
-          0.9177222981616737,
-          -0.39319298125871605
-         ],
-         [
-          1.0284601754984628,
-          -0.3677013326971095
-         ]
-        ],
-        [
-         "seg",
-         [
-          1.0284601754984628,
-          -0.3677013326971095
-         ],
-         [
-          1.1313708498984758,
-          -0.3394112549695429
-         ]
-        ],
-        [
-         "seg",
-         [
-          1.1313708498984758,
-          -0.3394112549695429
-         ],
-         [
-          1.2256711089903645,
-          -0.308538052649539
-         ]
-        ],
-        [
-         "seg",
-         [
-          1.2256711089903645,
-          -0.308538052649539
-         ],
-         [
-          1.3106432708623865,
-          -0.2753166894485023
-         ]
-        ],
-        [
-         "seg",
-         [
-          1.3106432708623865,
-          -0.2753166894485023
-         ],
-         [
-          1.3856406460551014,
-          -0.2400000000000002
-         ]
-        ],
-        [
-         "seg",
-         [
-          1.3856406460551014,
-          -0.2400000000000002
-         ],
-         [
-          1.4500924592586402,
-          -0.20285676563553562
-         ]
-        ],
-        [
-         "seg",
-         [
-          1.4500924592586402,
-          -0.20285676563553562
-         ],
-         [
-          1.5035081932574537,
-          -0.16416966879632092
-         ]
-        ],
-        [
-         "seg",
-         [
-          1.5035081932574537,
-          -0.16416966879632092
-         ],
-         [
-          1.5454813220625094,
-          -0.12423314164920993
-         ]
-        ],
-        [
-         "seg",
-         [
-          1.5454813220625094,
-          -0.12423314164920993
-         ],
-         [
-          1.5756924048195329,
-          -0.08335112528012659
-         ]
-        ],
-        [
-         "seg",
-         [
-          1.5756924048195329,
-          -0.08335112528012659
-         ],
-         [
-          1.593911516946793,
-          -0.04183475651887599
-         ]
-        ],
-        [
-         "seg",
-         [
-          1.593911516946793,
-          -0.04183475651887599
-         ],
-         [
-          1.6,
-          0
-         ]
-        ],
-        [
-         "seg",
-         [
-          1.6,
-          0
-         ],
-         [
-          1.593911516946793,
-          0.041834756518875915
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          1.593911516946793,
-          0.041834756518875915
-         ],
-         [
-          1.5756924048195329,
-          0.08335112528012656
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          1.5756924048195329,
-          0.08335112528012656
-         ],
-         [
-          1.5454813220625094,
-          0.12423314164920995
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          1.5454813220625094,
-          0.12423314164920995
-         ],
-         [
-          1.5035081932574537,
-          0.16416966879632097
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          1.5035081932574537,
-          0.16416966879632097
-         ],
-         [
-          1.45009245925864,
-          0.20285676563553573
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          1.45009245925864,
-          0.20285676563553573
-         ],
-         [
-          1.385640646055102,
-          0.23999999999999996
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          1.385640646055102,
-          0.23999999999999996
-         ],
-         [
-          1.310643270862387,
-          0.27531668944850207
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          1.310643270862387,
-          0.27531668944850207
-         ],
-         [
-          1.225671108990365,
-          0.3085380526495388
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          1.225671108990365,
-          0.3085380526495388
-         ],
-         [
-          1.1313708498984762,
-          0.3394112549695428
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          1.1313708498984762,
-          0.3394112549695428
-         ],
-         [
-          1.028460175498463,
-          0.3677013326971094
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          1.028460175498463,
-          0.3677013326971094
-         ],
-         [
-          0.9177222981616739,
-          0.39319298125871605
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          0.9177222981616739,
-          0.39319298125871605
-         ],
-         [
-          0.8000000000000003,
-          0.4156921938165305
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          0.8000000000000003,
-          0.4156921938165305
-         ],
-         [
-          0.6761892187851192,
-          0.43502773777759196
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          0.6761892187851192,
-          0.43502773777759196
-         ],
-         [
-          0.5472322293210702,
-          0.451052457977236
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          0.5472322293210702,
-          0.451052457977236
-         ],
-         [
-          0.4141104721640332,
-          0.4636443966187528
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          0.4141104721640332,
-          0.4636443966187528
-         ],
-         [
-          0.2778370842670887,
-          0.4727077214458598
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          0.2778370842670887,
-          0.4727077214458598
-         ],
-         [
-          0.13944918839625303,
-          0.47817345508403786
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          0.13944918839625303,
-          0.47817345508403786
-         ],
-         [
-          0,
-          0.48
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          0,
-          0.48
-         ],
-         [
-          -0.13944918839625317,
-          0.47817345508403786
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          -0.13944918839625317,
-          0.47817345508403786
-         ],
-         [
-          -0.2778370842670885,
-          0.4727077214458598
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          -0.2778370842670885,
-          0.4727077214458598
-         ],
-         [
-          -0.4141104721640334,
-          0.4636443966187528
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          -0.4141104721640334,
-          0.4636443966187528
-         ],
-         [
-          -0.54723222932107,
-          0.45105245797723603
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          -0.54723222932107,
-          0.45105245797723603
-         ],
-         [
-          -0.676189218785119,
-          0.435027737777592
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          -0.676189218785119,
-          0.435027737777592
-         ],
-         [
-          -0.7999999999999997,
-          0.41569219381653055
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          -0.7999999999999997,
-          0.41569219381653055
-         ],
-         [
-          -0.9177222981616739,
-          0.393192981258716
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          -0.9177222981616739,
-          0.393192981258716
-         ],
-         [
-          -1.028460175498463,
-          0.3677013326971094
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          -1.028460175498463,
-          0.3677013326971094
-         ],
-         [
-          -1.131370849898476,
-          0.33941125496954283
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          -1.131370849898476,
-          0.33941125496954283
-         ],
-         [
-          -1.2256711089903647,
-          0.30853805264953893
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          -1.2256711089903647,
-          0.30853805264953893
-         ],
-         [
-          -1.3106432708623872,
-          0.275316689448502
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          -1.3106432708623872,
-          0.275316689448502
-         ],
-         [
-          -1.385640646055102,
-          0.23999999999999996
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          -1.385640646055102,
-          0.23999999999999996
-         ],
-         [
-          -1.45009245925864,
-          0.20285676563553576
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          -1.45009245925864,
-          0.20285676563553576
-         ],
-         [
-          -1.5035081932574534,
-          0.16416966879632106
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          -1.5035081932574534,
-          0.16416966879632106
-         ],
-         [
-          -1.5454813220625092,
-          0.12423314164921008
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          -1.5454813220625092,
-          0.12423314164921008
-         ],
-         [
-          -1.5756924048195329,
-          0.08335112528012653
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          -1.5756924048195329,
-          0.08335112528012653
-         ],
-         [
-          -1.593911516946793,
-          0.04183475651887593
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          -1.593911516946793,
-          0.04183475651887593
-         ],
-         [
-          -1.6,
-          0
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          -1.6,
-          0
-         ],
-         [
-          0,
-          3
-         ]
-        ],
-        [
-         "seg",
-         [
-          1.6,
-          0
-         ],
-         [
-          0,
-          3
-         ]
-        ],
-        [
-         "seg",
-         [
-          0,
-          0
-         ],
-         [
-          1.6,
-          0
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "seg",
-         [
-          0,
-          0
-         ],
-         [
-          0,
-          3
-         ],
-         {
-          "dash": true
-         }
-        ],
-        [
-         "ra",
-         [
-          0,
-          0
-         ],
-         [
-          0,
-          3
-         ],
-         [
-          1.6,
-          0
-         ]
-        ],
-        [
-         "text",
-         [
-          0.8,
-          0.2
-         ],
-         "r"
-        ],
-        [
-         "text",
-         [
-          -0.3,
-          1.5
-         ],
-         "h"
-        ]
-       ],
-       "desc": "Right circular cone with base radius r and height h; the height is dashed and meets the radius at a right angle.",
-       "h": 230,
-       "note": "Not drawn to scale."
-      }
-     },
-     "page": 2829,
-     "revision": "unchanged",
+     "required_method": "Use the fact that pyramids with equal base areas and equal heights have equal volumes (Cavalieri's principle), applied to two pairs.",
+     "grading_note": "Any valid explanation. Essential: two equal-volume pairs give three equal volumes; their sum is Bh; one of them has base B and height h, so V = ⅓Bh.",
+     "figure": null,
+     "page": 3059,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
-     "target_skill": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
+     "target_skill": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 2829,
-     "answer_key_page": 2829
+     "question_page": 3059,
+     "answer_key_page": 3059
     },
     {
      "id": "S77-M-Q3",
@@ -1328,33 +333,33 @@
      "standard": "HSG-GMD.A.1",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "Informal arguments for the volumes of a pyramid and a cone",
+     "skill": "Informal arguments for the volume of a pyramid",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "A cone and a cylinder have the same base and the same height. How many cones full of water fill the cylinder?",
-     "prompt_markup": "A cone and a cylinder have the same base and the same height. How many cones full of water fill the cylinder?",
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "In a class experiment, a hollow square pyramid and a hollow square prism have the same base and the same height. It takes three pyramids full of sand to fill the prism. Explain what this shows about the pyramid formula and why it is evidence, not a proof.",
+     "prompt_markup": "In a class experiment, a hollow square pyramid and a hollow square prism have the same base and the same height. It takes three pyramids full of sand to fill the prism. Explain what this shows about the pyramid formula and why it is evidence, not a proof.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Explanation:"
      ],
      "correct_letter": null,
-     "correct_answer": "3",
+     "correct_answer": "The pyramid holds about ⅓ of the prism, Bh, which supports V = ⅓Bh. The experiment has measurement error and tests one pyramid only, so it does not prove the formula for all pyramids.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Any equivalent form.",
+     "required_method": "Relate the prism volume Bh to the three pyramid fillings, then discuss measurement.",
+     "grading_note": "Any valid explanation. Essential: the ⅓ relationship with the prism; evidence versus proof.",
      "figure": null,
-     "page": 2830,
-     "revision": "unchanged",
+     "page": 3060,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
-     "target_skill": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
+     "target_skill": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 2830,
-     "answer_key_page": 2830
+     "question_page": 3060,
+     "answer_key_page": 3060
     },
     {
      "id": "S77-M-Q4",
@@ -1369,48 +374,33 @@
      "standard": "HSG-GMD.A.1",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "Informal arguments for the volumes of a pyramid and a cone",
+     "skill": "Informal arguments for the volume of a pyramid",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "mc",
-     "response": "select one",
-     "prompt": "A cube with side 6 is split into three congruent pyramids that share one vertex of the cube as their apex. The volume of each pyramid is",
-     "prompt_markup": "A cube with side 6 is split into three congruent pyramids that share one vertex of the cube as their apex. The volume of each pyramid is",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "36"
-      },
-      {
-       "letter": "B",
-       "text": "216"
-      },
-      {
-       "letter": "C",
-       "text": "108"
-      },
-      {
-       "letter": "D",
-       "text": "72"
-      }
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "A cube with edge 6 is split into three congruent pyramids that share one vertex of the cube as their apex. Find the volume of each pyramid, then show that ⅓Bh gives the same value for one pyramid, and explain why this agreement is a check, not a proof for all pyramids.",
+     "prompt_markup": "A cube with edge 6 is split into three congruent pyramids that share one vertex of the cube as their apex. Find the volume of each pyramid, then show that ⅓Bh gives the same value for one pyramid, and explain why this agreement is a check, not a proof for all pyramids.",
+     "choices": [],
+     "answer_lines": [
+      "Explanation:"
      ],
-     "answer_lines": [],
-     "correct_letter": "D",
-     "correct_answer": "72",
+     "correct_letter": null,
+     "correct_answer": "Each is 216 ÷ 3 = 72; one pyramid has base 6 × 6 = 36 and height 6, and ⅓ · 36 · 6 = 72. One numerical case cannot cover every pyramid.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "216 ÷ 3.",
+     "required_method": "Divide the cube's volume by 3; then compute ⅓Bh for one pyramid.",
+     "grading_note": "Any valid explanation. Essential: 216 ÷ 3 = 72; B = 36 and h = 6 for one pyramid; ⅓Bh = 72; a single case is evidence only.",
      "figure": null,
-     "page": 2831,
-     "revision": "unchanged",
+     "page": 3061,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
-     "target_skill": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
+     "target_skill": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 2831,
-     "answer_key_page": 2831
+     "question_page": 3061,
+     "answer_key_page": 3061
     },
     {
      "id": "S77-M-Q5",
@@ -1425,40 +415,33 @@
      "standard": "HSG-GMD.A.1",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "Informal arguments for the volumes of a pyramid and a cone",
+     "skill": "Informal arguments for the volume of a pyramid",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "tf",
-     "response": "select true or false",
-     "prompt": "A pyramid has half the volume of a prism with the same base and height.",
-     "prompt_markup": "A pyramid has half the volume of a prism with the same base and height.",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "True"
-      },
-      {
-       "letter": "B",
-       "text": "False"
-      }
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "A square pyramid has base side s and height h. Imagine it built from n stacked square slabs, each of thickness h/n, where the slab k steps from the top has side ks/n. The total slab volume is (s²h/n³) × (the sum of the squares 1², 2², 3², and so on up to n²). For n = 10 and n = 100 this equals 0.385s²h and 0.338s²h. Explain how this supports V = ⅓s²h.",
+     "prompt_markup": "A square pyramid has base side s and height h. Imagine it built from n stacked square slabs, each of thickness h/n, where the slab k steps from the top has side ks/n. The total slab volume is (s²h/n³) × (the sum of the squares 1², 2², 3², and so on up to n²). For n = 10 and n = 100 this equals 0.385s²h and 0.338s²h. Explain how this supports V = ⅓s²h.",
+     "choices": [],
+     "answer_lines": [
+      "Explanation:"
      ],
-     "answer_lines": [],
-     "correct_letter": "B",
-     "correct_answer": "False",
+     "correct_letter": null,
+     "correct_answer": "The slabs approach the pyramid as they get thinner, and the coefficients 0.385, 0.338, … approach ⅓, so the volume is ⅓s²h.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "One third.",
+     "required_method": "Describe what the slabs approach and what the coefficients approach as n grows.",
+     "grading_note": "Any valid explanation. Essential: the slabs approximate the pyramid more closely as n grows; the coefficient trend toward ⅓; conclusion (an informal limit argument).",
      "figure": null,
-     "page": 2832,
-     "revision": "unchanged",
+     "page": 3062,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
-     "target_skill": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
+     "target_skill": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 2832,
-     "answer_key_page": 2832
+     "question_page": 3062,
+     "answer_key_page": 3062
     }
    ]
   },
@@ -1473,7 +456,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot find the prism's volume. Why it matters: the pyramid is a third of it. Evidence: computes prism volume.",
-    "source": "Grade 7"
+    "source": "Grade 7",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1505,15 +489,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2834,
+     "page": 3064,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
      "target_skill": "Volume of a prism",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2834,
-     "answer_key_page": 2834
+     "question_page": 3064,
+     "answer_key_page": 3064
     },
     {
      "id": "S77-B1-Q2",
@@ -1544,15 +528,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2835,
+     "page": 3065,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
      "target_skill": "Volume of a prism",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2835,
-     "answer_key_page": 2835
+     "question_page": 3065,
+     "answer_key_page": 3065
     },
     {
      "id": "S77-B1-Q3",
@@ -1598,15 +582,15 @@
      "required_method": null,
      "grading_note": "Prism.",
      "figure": null,
-     "page": 2836,
+     "page": 3066,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
      "target_skill": "Volume of a prism",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2836,
-     "answer_key_page": 2836
+     "question_page": 3066,
+     "answer_key_page": 3066
     },
     {
      "id": "S77-B1-Q4",
@@ -1644,15 +628,15 @@
      "required_method": null,
      "grading_note": "Square base.",
      "figure": null,
-     "page": 2837,
+     "page": 3067,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
      "target_skill": "Volume of a prism",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2837,
-     "answer_key_page": 2837
+     "question_page": 3067,
+     "answer_key_page": 3067
     },
     {
      "id": "S77-B1-Q5",
@@ -1690,15 +674,15 @@
      "required_method": null,
      "grading_note": "Base area and height.",
      "figure": null,
-     "page": 2838,
+     "page": 3068,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
      "target_skill": "Volume of a prism",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2838,
-     "answer_key_page": 2838
+     "question_page": 3068,
+     "answer_key_page": 3068
     }
    ]
   },
@@ -1713,7 +697,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student uses an edge instead of the base area. Why it matters: B is an area. Evidence: finds base areas.",
-    "source": "Grade 6"
+    "source": "Grade 6",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1745,15 +730,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2840,
+     "page": 3070,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
      "target_skill": "Base area of a pyramid",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 6",
-     "question_page": 2840,
-     "answer_key_page": 2840
+     "question_page": 3070,
+     "answer_key_page": 3070
     },
     {
      "id": "S77-B2-Q2",
@@ -1784,15 +769,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2841,
+     "page": 3071,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
      "target_skill": "Base area of a pyramid",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 6",
-     "question_page": 2841,
-     "answer_key_page": 2841
+     "question_page": 3071,
+     "answer_key_page": 3071
     },
     {
      "id": "S77-B2-Q3",
@@ -1811,8 +796,8 @@
      "nearest_related": false,
      "type": "mc",
      "response": "select one",
-     "prompt": "The base of a cone is a",
-     "prompt_markup": "The base of a cone is a",
+     "prompt": "The base of a square pyramid is a",
+     "prompt_markup": "The base of a square pyramid is a",
      "choices": [
       {
        "letter": "A",
@@ -1820,33 +805,33 @@
       },
       {
        "letter": "B",
-       "text": "circle"
+       "text": "square"
       },
       {
        "letter": "C",
-       "text": "sector"
+       "text": "rectangle that is not a square"
       },
       {
        "letter": "D",
-       "text": "square"
+       "text": "circle"
       }
      ],
      "answer_lines": [],
      "correct_letter": "B",
-     "correct_answer": "circle",
+     "correct_answer": "square",
      "drawing_answer": null,
      "required_method": null,
      "grading_note": "Definition.",
      "figure": null,
-     "page": 2842,
-     "revision": "unchanged",
+     "page": 3072,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
      "target_skill": "Base area of a pyramid",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 6",
-     "question_page": 2842,
-     "answer_key_page": 2842
+     "question_page": 3072,
+     "answer_key_page": 3072
     },
     {
      "id": "S77-B2-Q4",
@@ -1884,15 +869,15 @@
      "required_method": null,
      "grading_note": "Area.",
      "figure": null,
-     "page": 2843,
+     "page": 3073,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
      "target_skill": "Base area of a pyramid",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 6",
-     "question_page": 2843,
-     "answer_key_page": 2843
+     "question_page": 3073,
+     "answer_key_page": 3073
     },
     {
      "id": "S77-B2-Q5",
@@ -1930,53 +915,184 @@
      "required_method": null,
      "grading_note": "Area.",
      "figure": null,
-     "page": 2844,
+     "page": 3074,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
      "target_skill": "Base area of a pyramid",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 6",
-     "question_page": 2844,
-     "answer_key_page": 2844
+     "question_page": 3074,
+     "answer_key_page": 3074
     }
    ]
   },
   {
-   "section": "BACKWARD 3",
-   "section_code": "B3",
+   "section": "BACKWARD 4",
+   "section_code": "B4",
    "relation": "backward",
-   "skill": "The cylinder volume argument",
-   "standard": "HSG-GMD.A.1",
+   "skill": "Split a volume into equal parts",
+   "standard": "5.MD.C.5",
    "nearest_related": false,
    "branch": {
     "kind": "backward",
     "alignment": "supporting",
-    "rationale": "Obstacle: the student cannot compare a cone with its cylinder. Why it matters: the factor ⅓ compares them. Evidence: relates cone and cylinder volumes.",
-    "source": "Geometry"
+    "rationale": "Obstacle: the student does not see why \"three equal pieces\" means one third. Why it matters: the dissection argument depends on it. Evidence: splits volumes into equal parts.",
+    "source": "Grade 5",
+    "plus_standard": false
    },
    "questions": [
     {
-     "id": "S77-B3-Q1",
-     "uid": "GEO:S77-B3-Q1",
+     "id": "S77-B4-Q1",
+     "uid": "GEO:S77-B4-Q1",
      "collection": "GEO",
      "set": 77,
-     "section": "BACKWARD 3",
-     "section_code": "B3",
+     "section": "BACKWARD 4",
+     "section_code": "B4",
      "relation": "backward",
      "number": 1,
      "of": 5,
-     "standard": "HSG-GMD.A.1",
-     "standard_grade": "HS",
-     "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "The cylinder volume argument",
+     "standard": "5.MD.C.5",
+     "standard_grade": 5,
+     "domain": "Measurement & Data",
+     "skill": "Split a volume into equal parts",
      "nearest_related": false,
-     "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
-     "standard_course": "Geometry",
+     "type": "sa",
+     "response": "write",
+     "prompt": "A box of volume 60 cm³ is split into three equal parts. Volume of each?",
+     "prompt_markup": "A box of volume 60 cm³ is split into three equal parts. Volume of each?",
+     "choices": [],
+     "answer_lines": [
+      "Volume:"
+     ],
+     "correct_letter": null,
+     "correct_answer": "20 cm³",
+     "drawing_answer": null,
+     "required_method": null,
+     "grading_note": "Any equivalent form.",
+     "figure": null,
+     "page": 3076,
+     "revision": "new",
+     "strand": "core",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
+     "target_skill": "Split a volume into equal parts",
+     "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
+     "course_level": "Grade 5",
+     "question_page": 3076,
+     "answer_key_page": 3076
+    },
+    {
+     "id": "S77-B4-Q2",
+     "uid": "GEO:S77-B4-Q2",
+     "collection": "GEO",
+     "set": 77,
+     "section": "BACKWARD 4",
+     "section_code": "B4",
+     "relation": "backward",
+     "number": 2,
+     "of": 5,
+     "standard": "5.MD.C.5",
+     "standard_grade": 5,
+     "domain": "Measurement & Data",
+     "skill": "Split a volume into equal parts",
+     "nearest_related": false,
+     "type": "sa",
+     "response": "write",
+     "prompt": "Three congruent blocks fill a cube of volume 27. Volume of one block?",
+     "prompt_markup": "Three congruent blocks fill a cube of volume 27. Volume of one block?",
+     "choices": [],
+     "answer_lines": [
+      "Volume:"
+     ],
+     "correct_letter": null,
+     "correct_answer": "9",
+     "drawing_answer": null,
+     "required_method": null,
+     "grading_note": "Any equivalent form.",
+     "figure": null,
+     "page": 3077,
+     "revision": "new",
+     "strand": "core",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
+     "target_skill": "Split a volume into equal parts",
+     "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
+     "course_level": "Grade 5",
+     "question_page": 3077,
+     "answer_key_page": 3077
+    },
+    {
+     "id": "S77-B4-Q3",
+     "uid": "GEO:S77-B4-Q3",
+     "collection": "GEO",
+     "set": 77,
+     "section": "BACKWARD 4",
+     "section_code": "B4",
+     "relation": "backward",
+     "number": 3,
+     "of": 5,
+     "standard": "5.MD.C.5",
+     "standard_grade": 5,
+     "domain": "Measurement & Data",
+     "skill": "Split a volume into equal parts",
+     "nearest_related": false,
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A solid made of non-overlapping parts has volume",
+     "prompt_markup": "A solid made of non-overlapping parts has volume",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "the largest part's volume"
+      },
+      {
+       "letter": "B",
+       "text": "the sum of the parts' volumes"
+      },
+      {
+       "letter": "C",
+       "text": "the product of the parts' volumes"
+      },
+      {
+       "letter": "D",
+       "text": "the average volume"
+      }
+     ],
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "the sum of the parts' volumes",
+     "drawing_answer": null,
+     "required_method": null,
+     "grading_note": "Additivity.",
+     "figure": null,
+     "page": 3078,
+     "revision": "new",
+     "strand": "core",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
+     "target_skill": "Split a volume into equal parts",
+     "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
+     "course_level": "Grade 5",
+     "question_page": 3078,
+     "answer_key_page": 3078
+    },
+    {
+     "id": "S77-B4-Q4",
+     "uid": "GEO:S77-B4-Q4",
+     "collection": "GEO",
+     "set": 77,
+     "section": "BACKWARD 4",
+     "section_code": "B4",
+     "relation": "backward",
+     "number": 4,
+     "of": 5,
+     "standard": "5.MD.C.5",
+     "standard_grade": 5,
+     "domain": "Measurement & Data",
+     "skill": "Split a volume into equal parts",
+     "nearest_related": false,
      "type": "tf",
      "response": "select true or false",
-     "prompt": "A cylinder's volume is πr²h because it is a stack of disks of area πr².",
-     "prompt_markup": "A cylinder's volume is πr²h because it is a stack of disks of area πr².",
+     "prompt": "If three equal pieces fill a prism, each piece has ⅓ of the prism's volume.",
+     "prompt_markup": "If three equal pieces fill a prism, each piece has ⅓ of the prism's volume.",
      "choices": [
       {
        "letter": "A",
@@ -1992,177 +1108,37 @@
      "correct_answer": "True",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Set 76.",
+     "grading_note": "Equal shares.",
      "figure": null,
-     "page": 2846,
-     "revision": "unchanged",
+     "page": 3079,
+     "revision": "new",
      "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
-     "target_skill": "The cylinder volume argument",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
+     "target_skill": "Split a volume into equal parts",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
-     "course_level": "High School — Geometry",
-     "question_page": 2846,
-     "answer_key_page": 2846
+     "course_level": "Grade 5",
+     "question_page": 3079,
+     "answer_key_page": 3079
     },
     {
-     "id": "S77-B3-Q2",
-     "uid": "GEO:S77-B3-Q2",
+     "id": "S77-B4-Q5",
+     "uid": "GEO:S77-B4-Q5",
      "collection": "GEO",
      "set": 77,
-     "section": "BACKWARD 3",
-     "section_code": "B3",
-     "relation": "backward",
-     "number": 2,
-     "of": 5,
-     "standard": "HSG-GMD.A.1",
-     "standard_grade": "HS",
-     "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "The cylinder volume argument",
-     "nearest_related": false,
-     "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
-     "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Cylinder radius 3, height 5: exact volume?",
-     "prompt_markup": "Cylinder radius 3, height 5: exact volume?",
-     "choices": [],
-     "answer_lines": [
-      "Volume:"
-     ],
-     "correct_letter": null,
-     "correct_answer": "45π",
-     "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Form required: exact value.",
-     "figure": null,
-     "page": 2847,
-     "revision": "unchanged",
-     "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
-     "target_skill": "The cylinder volume argument",
-     "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
-     "course_level": "High School — Geometry",
-     "question_page": 2847,
-     "answer_key_page": 2847
-    },
-    {
-     "id": "S77-B3-Q3",
-     "uid": "GEO:S77-B3-Q3",
-     "collection": "GEO",
-     "set": 77,
-     "section": "BACKWARD 3",
-     "section_code": "B3",
-     "relation": "backward",
-     "number": 3,
-     "of": 5,
-     "standard": "HSG-GMD.A.1",
-     "standard_grade": "HS",
-     "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "The cylinder volume argument",
-     "nearest_related": false,
-     "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
-     "standard_course": "Geometry",
-     "type": "mc",
-     "response": "select one",
-     "prompt": "A cone fits inside a cylinder with the same base and height. The cone's volume is",
-     "prompt_markup": "A cone fits inside a cylinder with the same base and height. The cone's volume is",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "equal to the cylinder's"
-      },
-      {
-       "letter": "B",
-       "text": "⅔ of the cylinder's"
-      },
-      {
-       "letter": "C",
-       "text": "½ of the cylinder's"
-      },
-      {
-       "letter": "D",
-       "text": "⅓ of the cylinder's"
-      }
-     ],
-     "answer_lines": [],
-     "correct_letter": "D",
-     "correct_answer": "⅓ of the cylinder's",
-     "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Cone vs cylinder.",
-     "figure": null,
-     "page": 2848,
-     "revision": "unchanged",
-     "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
-     "target_skill": "The cylinder volume argument",
-     "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
-     "course_level": "High School — Geometry",
-     "question_page": 2848,
-     "answer_key_page": 2848
-    },
-    {
-     "id": "S77-B3-Q4",
-     "uid": "GEO:S77-B3-Q4",
-     "collection": "GEO",
-     "set": 77,
-     "section": "BACKWARD 3",
-     "section_code": "B3",
-     "relation": "backward",
-     "number": 4,
-     "of": 5,
-     "standard": "HSG-GMD.A.1",
-     "standard_grade": "HS",
-     "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "The cylinder volume argument",
-     "nearest_related": false,
-     "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
-     "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "A cylinder holds 60 cm³. A cone with the same base and height holds",
-     "prompt_markup": "A cylinder holds 60 cm³. A cone with the same base and height holds",
-     "choices": [],
-     "answer_lines": [
-      "Volume:"
-     ],
-     "correct_letter": null,
-     "correct_answer": "20 cm³",
-     "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Any equivalent form.",
-     "figure": null,
-     "page": 2849,
-     "revision": "unchanged",
-     "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
-     "target_skill": "The cylinder volume argument",
-     "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
-     "course_level": "High School — Geometry",
-     "question_page": 2849,
-     "answer_key_page": 2849
-    },
-    {
-     "id": "S77-B3-Q5",
-     "uid": "GEO:S77-B3-Q5",
-     "collection": "GEO",
-     "set": 77,
-     "section": "BACKWARD 3",
-     "section_code": "B3",
+     "section": "BACKWARD 4",
+     "section_code": "B4",
      "relation": "backward",
      "number": 5,
      "of": 5,
-     "standard": "HSG-GMD.A.1",
-     "standard_grade": "HS",
-     "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "The cylinder volume argument",
+     "standard": "5.MD.C.5",
+     "standard_grade": 5,
+     "domain": "Measurement & Data",
+     "skill": "Split a volume into equal parts",
      "nearest_related": false,
-     "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
-     "standard_course": "Geometry",
      "type": "tf",
      "response": "select true or false",
-     "prompt": "A cone is a cylinder with the top cut off flat.",
-     "prompt_markup": "A cone is a cylinder with the top cut off flat.",
+     "prompt": "Cutting a solid into pieces changes its total volume.",
+     "prompt_markup": "Cutting a solid into pieces changes its total volume.",
      "choices": [
       {
        "letter": "A",
@@ -2178,17 +1154,17 @@
      "correct_answer": "False",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "It comes to a point.",
+     "grading_note": "Volume is additive.",
      "figure": null,
-     "page": 2850,
-     "revision": "unchanged",
+     "page": 3080,
+     "revision": "new",
      "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
-     "target_skill": "The cylinder volume argument",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
+     "target_skill": "Split a volume into equal parts",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
-     "course_level": "High School — Geometry",
-     "question_page": 2850,
-     "answer_key_page": 2850
+     "course_level": "Grade 5",
+     "question_page": 3080,
+     "answer_key_page": 3080
     }
    ]
   },
@@ -2196,15 +1172,16 @@
    "section": "FORWARD 1",
    "section_code": "F1",
    "relation": "forward1",
-   "skill": "Cavalieri's principle for pyramids and cones",
+   "skill": "Cavalieri's principle for pyramids",
    "standard": "HSG-GMD.A.1",
    "nearest_related": false,
    "branch": {
     "kind": "forward",
     "progression": "same-course deepening",
     "connection": "direct",
-    "new_demand": "Extend the argument with Cavalieri's principle to oblique pyramids and cones.",
-    "course": "Geometry"
+    "new_demand": "Extend the argument with Cavalieri's principle to oblique pyramids and pyramids with different base shapes.",
+    "course": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -2220,14 +1197,14 @@
      "standard": "HSG-GMD.A.1",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "Cavalieri's principle for pyramids and cones",
+     "skill": "Cavalieri's principle for pyramids",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "A square pyramid and a cone both have base area 50 cm² and height 9 cm. Compare their volumes.",
-     "prompt_markup": "A square pyramid and a cone both have base area 50 cm² and height 9 cm. Compare their volumes.",
+     "prompt": "A square pyramid and a triangular pyramid both have base area 50 cm² and height 9 cm. Compare their volumes.",
+     "prompt_markup": "A square pyramid and a triangular pyramid both have base area 50 cm² and height 9 cm. Compare their volumes.",
      "choices": [],
      "answer_lines": [
       "Answer:"
@@ -2238,15 +1215,15 @@
      "required_method": null,
      "grading_note": "Form required: the comparison with the value.",
      "figure": null,
-     "page": 2852,
-     "revision": "unchanged",
+     "page": 3082,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
-     "target_skill": "Cavalieri's principle for pyramids and cones",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
+     "target_skill": "Cavalieri's principle for pyramids",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2852,
-     "answer_key_page": 2852
+     "question_page": 3082,
+     "answer_key_page": 3082
     },
     {
      "id": "S77-F1-Q2",
@@ -2261,33 +1238,33 @@
      "standard": "HSG-GMD.A.1",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "Cavalieri's principle for pyramids and cones",
+     "skill": "Cavalieri's principle for pyramids",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "An oblique cone has radius 4 and vertical height 6. Find its exact volume.",
-     "prompt_markup": "An oblique cone has radius 4 and vertical height 6. Find its exact volume.",
+     "prompt": "An oblique pyramid has a square base with side 4 and vertical height 6. Find its volume.",
+     "prompt_markup": "An oblique pyramid has a square base with side 4 and vertical height 6. Find its volume.",
      "choices": [],
      "answer_lines": [
       "Volume:"
      ],
      "correct_letter": null,
-     "correct_answer": "32π",
+     "correct_answer": "32",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: exact value.",
+     "grading_note": "Any equivalent form. ⅓ · 16 · 6; use the vertical height.",
      "figure": null,
-     "page": 2853,
-     "revision": "unchanged",
+     "page": 3083,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
-     "target_skill": "Cavalieri's principle for pyramids and cones",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
+     "target_skill": "Cavalieri's principle for pyramids",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2853,
-     "answer_key_page": 2853
+     "question_page": 3083,
+     "answer_key_page": 3083
     },
     {
      "id": "S77-F1-Q3",
@@ -2302,7 +1279,7 @@
      "standard": "HSG-GMD.A.1",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "Cavalieri's principle for pyramids and cones",
+     "skill": "Cavalieri's principle for pyramids",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
@@ -2327,15 +1304,15 @@
      "required_method": null,
      "grading_note": "Cavalieri.",
      "figure": null,
-     "page": 2854,
-     "revision": "unchanged",
+     "page": 3084,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
-     "target_skill": "Cavalieri's principle for pyramids and cones",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
+     "target_skill": "Cavalieri's principle for pyramids",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2854,
-     "answer_key_page": 2854
+     "question_page": 3084,
+     "answer_key_page": 3084
     },
     {
      "id": "S77-F1-Q4",
@@ -2350,14 +1327,14 @@
      "standard": "HSG-GMD.A.1",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "Cavalieri's principle for pyramids and cones",
+     "skill": "Cavalieri's principle for pyramids",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
      "type": "mc",
      "response": "select one",
-     "prompt": "Why do a pyramid and a cone with equal base areas and heights have equal cross-section areas at every level?",
-     "prompt_markup": "Why do a pyramid and a cone with equal base areas and heights have equal cross-section areas at every level?",
+     "prompt": "Why do two pyramids with equal base areas and equal heights have equal cross-section areas at every level?",
+     "prompt_markup": "Why do two pyramids with equal base areas and equal heights have equal cross-section areas at every level?",
      "choices": [
       {
        "letter": "A",
@@ -2365,7 +1342,7 @@
       },
       {
        "letter": "B",
-       "text": "Both cross-sections are scaled copies of the base by the same factor"
+       "text": "Both cross-sections are scaled copies of the bases by the same factor"
       },
       {
        "letter": "C",
@@ -2378,20 +1355,20 @@
      ],
      "answer_lines": [],
      "correct_letter": "B",
-     "correct_answer": "Both cross-sections are scaled copies of the base by the same factor",
+     "correct_answer": "Both cross-sections are scaled copies of the bases by the same factor",
      "drawing_answer": null,
      "required_method": null,
      "grading_note": "Each cross-section at height y is the base scaled by (h - y)/h.",
      "figure": null,
-     "page": 2855,
-     "revision": "unchanged",
+     "page": 3085,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
-     "target_skill": "Cavalieri's principle for pyramids and cones",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
+     "target_skill": "Cavalieri's principle for pyramids",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2855,
-     "answer_key_page": 2855
+     "question_page": 3085,
+     "answer_key_page": 3085
     },
     {
      "id": "S77-F1-Q5",
@@ -2406,7 +1383,7 @@
      "standard": "HSG-GMD.A.1",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "Cavalieri's principle for pyramids and cones",
+     "skill": "Cavalieri's principle for pyramids",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
@@ -2424,15 +1401,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form. Scale factor ½.",
      "figure": null,
-     "page": 2856,
-     "revision": "unchanged",
+     "page": 3086,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
-     "target_skill": "Cavalieri's principle for pyramids and cones",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
+     "target_skill": "Cavalieri's principle for pyramids",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2856,
-     "answer_key_page": 2856
+     "question_page": 3086,
+     "answer_key_page": 3086
     }
    ]
   },
@@ -2440,16 +1417,17 @@
    "section": "FORWARD 2",
    "section_code": "F2",
    "relation": "forward2",
-   "skill": "Use pyramid and cone volume formulas",
+   "skill": "Use the pyramid volume formula",
    "standard": "HSG-GMD.A.3",
    "nearest_related": false,
    "branch": {
     "kind": "forward",
     "progression": "cross-standard extension",
     "connection": "direct",
-    "new_demand": "Apply the justified formulas to computation problems.",
+    "new_demand": "Apply the justified formula to computation problems.",
     "course": "Geometry",
-    "builds_on": "Builds on FORWARD 1: the ⅓Bh formula, justified for any apex position, is now applied."
+    "builds_on": "Builds on FORWARD 1: the ⅓Bh formula, justified for any apex position, is now applied.",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -2465,7 +1443,7 @@
      "standard": "HSG-GMD.A.3",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "Use pyramid and cone volume formulas",
+     "skill": "Use the pyramid volume formula",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
@@ -2483,15 +1461,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2858,
-     "revision": "unchanged",
+     "page": 3088,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
-     "target_skill": "Use pyramid and cone volume formulas",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
+     "target_skill": "Use the pyramid volume formula",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2858,
-     "answer_key_page": 2858
+     "question_page": 3088,
+     "answer_key_page": 3088
     },
     {
      "id": "S77-F2-Q2",
@@ -2506,33 +1484,33 @@
      "standard": "HSG-GMD.A.3",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "Use pyramid and cone volume formulas",
+     "skill": "Use the pyramid volume formula",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "A cone has radius 3 in. and height 8 in. Find its volume to the nearest tenth.",
-     "prompt_markup": "A cone has radius 3 in. and height 8 in. Find its volume to the nearest tenth.",
+     "prompt": "A rectangular pyramid has a 6 in. by 4 in. base and height 7.5 in. Find its volume.",
+     "prompt_markup": "A rectangular pyramid has a 6 in. by 4 in. base and height 7.5 in. Find its volume.",
      "choices": [],
      "answer_lines": [
       "Volume:"
      ],
      "correct_letter": null,
-     "correct_answer": "75.4 in³",
+     "correct_answer": "60 in³",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Rounding to 0.1 required. 24π.",
+     "grading_note": "Any equivalent form. ⅓ · 24 · 7.5.",
      "figure": null,
-     "page": 2859,
-     "revision": "unchanged",
+     "page": 3089,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
-     "target_skill": "Use pyramid and cone volume formulas",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
+     "target_skill": "Use the pyramid volume formula",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2859,
-     "answer_key_page": 2859
+     "question_page": 3089,
+     "answer_key_page": 3089
     },
     {
      "id": "S77-F2-Q3",
@@ -2547,14 +1525,14 @@
      "standard": "HSG-GMD.A.3",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "Use pyramid and cone volume formulas",
+     "skill": "Use the pyramid volume formula",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
      "type": "tf",
      "response": "select true or false",
-     "prompt": "A cone with the same base and height as a cylinder of volume 90 has volume 45.",
-     "prompt_markup": "A cone with the same base and height as a cylinder of volume 90 has volume 45.",
+     "prompt": "A pyramid with the same base and height as a prism of volume 90 has volume 45.",
+     "prompt_markup": "A pyramid with the same base and height as a prism of volume 90 has volume 45.",
      "choices": [
       {
        "letter": "A",
@@ -2572,15 +1550,15 @@
      "required_method": null,
      "grading_note": "It has ⅓ of the volume: 30.",
      "figure": null,
-     "page": 2860,
-     "revision": "unchanged",
+     "page": 3090,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
-     "target_skill": "Use pyramid and cone volume formulas",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
+     "target_skill": "Use the pyramid volume formula",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2860,
-     "answer_key_page": 2860
+     "question_page": 3090,
+     "answer_key_page": 3090
     },
     {
      "id": "S77-F2-Q4",
@@ -2595,7 +1573,7 @@
      "standard": "HSG-GMD.A.3",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "Use pyramid and cone volume formulas",
+     "skill": "Use the pyramid volume formula",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
@@ -2628,15 +1606,15 @@
      "required_method": null,
      "grading_note": "⅓ · 240.",
      "figure": null,
-     "page": 2861,
-     "revision": "unchanged",
+     "page": 3091,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
-     "target_skill": "Use pyramid and cone volume formulas",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
+     "target_skill": "Use the pyramid volume formula",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2861,
-     "answer_key_page": 2861
+     "question_page": 3091,
+     "answer_key_page": 3091
     },
     {
      "id": "S77-F2-Q5",
@@ -2651,33 +1629,33 @@
      "standard": "HSG-GMD.A.3",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "Use pyramid and cone volume formulas",
+     "skill": "Use the pyramid volume formula",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "A cone-shaped cup has diameter 6 cm and height 9 cm. Exact volume?",
-     "prompt_markup": "A cone-shaped cup has diameter 6 cm and height 9 cm. Exact volume?",
+     "prompt": "A paperweight is a pyramid whose triangular base has base 6 cm and height 5 cm; the pyramid is 8 cm tall. Find its volume.",
+     "prompt_markup": "A paperweight is a pyramid whose triangular base has base 6 cm and height 5 cm; the pyramid is 8 cm tall. Find its volume.",
      "choices": [],
      "answer_lines": [
       "Volume:"
      ],
      "correct_letter": null,
-     "correct_answer": "27π cm³",
+     "correct_answer": "40 cm³",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: exact value. r = 3.",
+     "grading_note": "Any equivalent form. B = 15; ⅓ · 15 · 8.",
      "figure": null,
-     "page": 2862,
-     "revision": "unchanged",
+     "page": 3092,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (dissection of a cube, Cavalieri's principle, and limits of pyramids) for V = ⅓Bh for pyramids and V = ⅓πr²h for cones",
-     "target_skill": "Use pyramid and cone volume formulas",
+     "set_target": "Give informal arguments (dissection of a cube or prism, Cavalieri's principle, and stacked slabs) for V = ⅓Bh for every pyramid",
+     "target_skill": "Use the pyramid volume formula",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2862,
-     "answer_key_page": 2862
+     "question_page": 3092,
+     "answer_key_page": 3092
     }
    ]
   }

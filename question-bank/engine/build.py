@@ -288,6 +288,7 @@ def build(out, mode='questions'):
                     number=i, of=len(qs), nearest_related=bool(nearest), type=rec['type'],
                     question=A.plain(qd['stem']).replace('\n', ' '),
                     has_figure=bool(qd.get('fig') or qd.get('cfigs')),
+                    **(figure_fields(qid, qd) if geo_course() else {}),
                     choices=([dict(letter=A.LETTERS[j], text=A.plain(ch)) for j, ch in enumerate(qd['ch'])]
                              if rec['type'] == 'mc' and not qd.get('cfigs') else
                              [dict(letter=A.LETTERS[j], text='(picture)') for j in range(len(qd['cfigs']))]
@@ -364,6 +365,26 @@ BASE_GRADING_RULES = [
 GRADING_RULES = list(BASE_GRADING_RULES)  # plus a collection's EXTRA_GRADING_RULES (set by load_grade)
 
 
+def geo_course():
+    return bool(qb.COURSE and qb.COURSE.get('rules') == 'geometry')
+
+
+def figure_fields(qid, qd):
+    """Geometry answer-key fields that tie a question to its figure: the asset paths inside the Nexus import package
+    (the same files the set JSON names), the text description, and the figure data, keyed by the question's UID."""
+    import export  # late import: export imports build
+    f, cf = qd.get('fig'), qd.get('cfigs')
+    out = dict(figure_svg=None, figure_png=None, figure_description=None, figure_data=None, choice_figures=None)
+    if f:
+        out.update(figure_svg='assets/%s.svg' % qid, figure_png='assets/%s.png' % qid,
+                   figure_description=export.describe(f), figure_data=export.jsonable(f))
+    if cf:
+        out['choice_figures'] = [dict(letter=A.LETTERS[j], svg='assets/%s-%s.svg' % (qid, A.LETTERS[j]),
+                                      png='assets/%s-%s.png' % (qid, A.LETTERS[j]), description=export.describe(g),
+                                      data=export.jsonable(g)) for j, g in enumerate(cf)]
+    return out
+
+
 def write_data(records, base):
     with open(base + '.json', 'w', encoding='utf-8') as f:
         json.dump(dict(title=series() + ' — Answer Key', collection=COLLECTION,
@@ -374,12 +395,15 @@ def write_data(records, base):
             'correct_letter', 'correct_answer', 'drawing_answer', 'required_method', 'grading_note']
     if records and 'alignment_type' in records[0]:  # Geometry: extra columns at the end, earlier columns unchanged
         cols += ['strand', 'set_target', 'target_skill', 'alignment_type', 'course_level', 'question_page', 'answer_key_page',
-                 'has_figure', 'nearest_related', 'nearest_connection']
+                 'has_figure', 'nearest_related', 'nearest_connection',
+                 'figure_svg', 'figure_png', 'figure_description', 'figure_data']
     with open(base + '.csv', 'w', encoding='utf-8-sig', newline='') as f:
         w = csv.writer(f)
         w.writerow(cols)
         for r in records:
             row = dict(r, choices=' | '.join('%s. %s' % (ch['letter'], ch['text']) for ch in r['choices']))
+            if row.get('figure_data') is not None:  # one JSON cell; the figure file paths are relative to the import package
+                row['figure_data'] = json.dumps(row['figure_data'], ensure_ascii=False)
             w.writerow([row[k] if row[k] is not None else '' for k in cols])
 
 

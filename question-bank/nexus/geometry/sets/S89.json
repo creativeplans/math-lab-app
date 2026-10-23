@@ -4,7 +4,7 @@
   "id": "GEO",
   "grade": null,
   "course": "Geometry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-23"
  },
  "grade": null,
@@ -29,7 +29,8 @@
    "branch": {
     "kind": "main",
     "strand": "advanced",
-    "target_skill": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case"
+    "target_skill": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
+    "plus_standard": true
    },
    "questions": [
     {
@@ -160,15 +161,15 @@
        "note": "Not drawn to scale."
       }
      },
-     "page": 3290,
+     "page": 3594,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3290,
-     "answer_key_page": 3290
+     "question_page": 3594,
+     "answer_key_page": 3594
     },
     {
      "id": "S89-M-Q2",
@@ -201,15 +202,15 @@
      "required_method": "Use the right triangle with angle 180° - A at A, and sin(180° - A) = sin A.",
      "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: the exterior angle at A is 180° - A; h = b sin(180° - A); the identity sin(180° - A) = sin A; equate with h = a sin B.",
      "figure": null,
-     "page": 3291,
+     "page": 3595,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3291,
-     "answer_key_page": 3291
+     "question_page": 3595,
+     "answer_key_page": 3595
     },
     {
      "id": "S89-M-Q3",
@@ -228,29 +229,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain how the area formula ½bc sin A = ½ac sin B gives the Law of Sines.",
-     "prompt_markup": "Explain how the area formula ½bc sin A = ½ac sin B gives the Law of Sines.",
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "In acute triangle ABC, AE is the altitude from A to BC. Prove that b/sin B = c/sin C.",
+     "prompt_markup": "In acute triangle ABC, AE is the altitude from A to BC. Prove that b/sin B = c/sin C.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Conclusion:"
      ],
      "correct_letter": null,
-     "correct_answer": "Dividing both sides by ½abc gives sin A/a = sin B/b.",
+     "correct_answer": "AE = c sin B and AE = b sin C, so c sin B = b sin C and b/sin B = c/sin C.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "required_method": "Write the altitude AE two ways, using right triangles ABE and ACE.",
+     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: sin B = AE/c and sin C = AE/b from the two right triangles; equate; divide by sin B sin C. (If ∠B or ∠C is obtuse, use sin(180° - x) = sin x.)",
      "figure": null,
-     "page": 3292,
-     "revision": "unchanged",
+     "page": 3596,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3292,
-     "answer_key_page": 3292
+     "question_page": 3596,
+     "answer_key_page": 3596
     },
     {
      "id": "S89-M-Q4",
@@ -269,44 +270,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "mc",
-     "response": "select one",
-     "prompt": "In the proof of the Law of Sines, the altitude from C to AB has length h and forms right triangle ADC. Which fact gives h = b sin A?",
-     "prompt_markup": "In the proof of the Law of Sines, the altitude from C to AB has length h and forms right triangle ADC. Which fact gives h = b sin A?",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "The triangle angle sum"
-      },
-      {
-       "letter": "B",
-       "text": "sin A = opposite/hypotenuse in right triangle ADC"
-      },
-      {
-       "letter": "C",
-       "text": "cos A = h/b"
-      },
-      {
-       "letter": "D",
-       "text": "The Pythagorean Theorem"
-      }
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "Triangle ABC has a right angle at C. Prove that a/sin A = b/sin B = c/sin C in this case.",
+     "prompt_markup": "Triangle ABC has a right angle at C. Prove that a/sin A = b/sin B = c/sin C in this case.",
+     "choices": [],
+     "answer_lines": [
+      "Conclusion:"
      ],
-     "answer_lines": [],
-     "correct_letter": "B",
-     "correct_answer": "sin A = opposite/hypotenuse in right triangle ADC",
+     "correct_letter": null,
+     "correct_answer": "sin A = a/c and sin B = b/c, so a/sin A = c = b/sin B; and c/sin C = c/1 = c.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Right triangle ADC.",
+     "required_method": "Use the right-triangle definitions of sine and sin 90° = 1.",
+     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: sin A = a/c, sin B = b/c (opposite over hypotenuse); each ratio equals c; sin 90° = 1 gives c/sin C = c.",
      "figure": null,
-     "page": 3293,
-     "revision": "unchanged",
+     "page": 3597,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3293,
-     "answer_key_page": 3293
+     "question_page": 3597,
+     "answer_key_page": 3597
     },
     {
      "id": "S89-M-Q5",
@@ -325,36 +311,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "tf",
-     "response": "select true or false",
-     "prompt": "The Law of Sines works only in right triangles.",
-     "prompt_markup": "The Law of Sines works only in right triangles.",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "True"
-      },
-      {
-       "letter": "B",
-       "text": "False"
-      }
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "Triangle ABC with acute angle A is inscribed in a circle of radius R. Draw the diameter BD. Prove that a/sin A = 2R, and explain why this gives the Law of Sines.",
+     "prompt_markup": "Triangle ABC with acute angle A is inscribed in a circle of radius R. Draw the diameter BD. Prove that a/sin A = 2R, and explain why this gives the Law of Sines.",
+     "choices": [],
+     "answer_lines": [
+      "Conclusion:"
      ],
-     "answer_lines": [],
-     "correct_letter": "B",
-     "correct_answer": "False",
+     "correct_letter": null,
+     "correct_answer": "∠BDC ≅ ∠A (inscribed angles on arc BC); ∠BCD = 90°; sin D = BC/BD = a/(2R), so a/sin A = 2R. The same holds for b and c, so all three ratios equal 2R.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "It works in every triangle.",
+     "required_method": "Compare ∠A with ∠D (same arc BC) and use right triangle BCD (angle in a semicircle).",
+     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: inscribed angles on the same arc; angle in a semicircle; sine in right triangle BCD; each ratio equals 2R. (For obtuse A, ∠D = 180° - A and sin D = sin A.)",
      "figure": null,
-     "page": 3294,
-     "revision": "unchanged",
+     "page": 3598,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3294,
-     "answer_key_page": 3294
+     "question_page": 3598,
+     "answer_key_page": 3598
     }
    ]
   },
@@ -369,7 +348,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot express h with sine. Why it matters: the proof writes h twice. Evidence: uses right-triangle trigonometry.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -403,15 +383,15 @@
      "required_method": null,
      "grading_note": "Rounding to 0.1 required.",
      "figure": null,
-     "page": 3296,
+     "page": 3600,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "Use trigonometry in right triangles",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3296,
-     "answer_key_page": 3296
+     "question_page": 3600,
+     "answer_key_page": 3600
     },
     {
      "id": "S89-B1-Q2",
@@ -432,8 +412,8 @@
      "standard_course": "Geometry",
      "type": "tf",
      "response": "select true or false",
-     "prompt": "An altitude splits a triangle into two right triangles.",
-     "prompt_markup": "An altitude splits a triangle into two right triangles.",
+     "prompt": "In an acute triangle, an altitude splits the triangle into two right triangles.",
+     "prompt_markup": "In an acute triangle, an altitude splits the triangle into two right triangles.",
      "choices": [
       {
        "letter": "A",
@@ -449,17 +429,17 @@
      "correct_answer": "True",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Perpendicular.",
+     "grading_note": "The foot lies on the opposite side; in an obtuse triangle, an altitude from an acute-angle vertex falls outside.",
      "figure": null,
-     "page": 3297,
-     "revision": "unchanged",
+     "page": 3601,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "Use trigonometry in right triangles",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3297,
-     "answer_key_page": 3297
+     "question_page": 3601,
+     "answer_key_page": 3601
     },
     {
      "id": "S89-B1-Q3",
@@ -507,15 +487,15 @@
      "required_method": null,
      "grading_note": "Multiply.",
      "figure": null,
-     "page": 3298,
+     "page": 3602,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "Use trigonometry in right triangles",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3298,
-     "answer_key_page": 3298
+     "question_page": 3602,
+     "answer_key_page": 3602
     },
     {
      "id": "S89-B1-Q4",
@@ -548,15 +528,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 3299,
+     "page": 3603,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "Use trigonometry in right triangles",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3299,
-     "answer_key_page": 3299
+     "question_page": 3603,
+     "answer_key_page": 3603
     },
     {
      "id": "S89-B1-Q5",
@@ -596,15 +576,15 @@
      "required_method": null,
      "grading_note": "The altitude creates right triangles.",
      "figure": null,
-     "page": 3300,
+     "page": 3604,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "Use trigonometry in right triangles",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 3300,
-     "answer_key_page": 3300
+     "question_page": 3604,
+     "answer_key_page": 3604
     }
    ]
   },
@@ -619,7 +599,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot use the area route. Why it matters: it gives a second proof. Evidence: writes the area three ways.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": true
    },
    "questions": [
     {
@@ -653,15 +634,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 3302,
+     "page": 3606,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "The area formula ½ab sin C",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3302,
-     "answer_key_page": 3302
+     "question_page": 3606,
+     "answer_key_page": 3606
     },
     {
      "id": "S89-B2-Q2",
@@ -701,15 +682,15 @@
      "required_method": null,
      "grading_note": "Same triangle.",
      "figure": null,
-     "page": 3303,
+     "page": 3607,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "The area formula ½ab sin C",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3303,
-     "answer_key_page": 3303
+     "question_page": 3607,
+     "answer_key_page": 3607
     },
     {
      "id": "S89-B2-Q3",
@@ -757,15 +738,15 @@
      "required_method": null,
      "grading_note": "½ · 36 · ½.",
      "figure": null,
-     "page": 3304,
+     "page": 3608,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "The area formula ½ab sin C",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3304,
-     "answer_key_page": 3304
+     "question_page": 3608,
+     "answer_key_page": 3608
     },
     {
      "id": "S89-B2-Q4",
@@ -798,15 +779,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 3305,
+     "page": 3609,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "The area formula ½ab sin C",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3305,
-     "answer_key_page": 3305
+     "question_page": 3609,
+     "answer_key_page": 3609
     },
     {
      "id": "S89-B2-Q5",
@@ -846,15 +827,15 @@
      "required_method": null,
      "grading_note": "Angle C.",
      "figure": null,
-     "page": 3306,
+     "page": 3610,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "The area formula ½ab sin C",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3306,
-     "answer_key_page": 3306
+     "question_page": 3610,
+     "answer_key_page": 3610
     }
    ]
   },
@@ -869,7 +850,8 @@
     "kind": "backward",
     "alignment": "supporting",
     "rationale": "Obstacle: the student cannot rearrange the final equation. Why it matters: the law is a proportion. Evidence: rearranges products into proportions.",
-    "source": "Grade 7"
+    "source": "Grade 7",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -901,15 +883,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 3308,
+     "page": 3612,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "Proportions and cross-multiplying",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 3308,
-     "answer_key_page": 3308
+     "question_page": 3612,
+     "answer_key_page": 3612
     },
     {
      "id": "S89-B3-Q2",
@@ -947,15 +929,15 @@
      "required_method": null,
      "grading_note": "Divide by sin A sin B.",
      "figure": null,
-     "page": 3309,
+     "page": 3613,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "Proportions and cross-multiplying",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 3309,
-     "answer_key_page": 3309
+     "question_page": 3613,
+     "answer_key_page": 3613
     },
     {
      "id": "S89-B3-Q3",
@@ -1001,15 +983,15 @@
      "required_method": null,
      "grading_note": "Divide.",
      "figure": null,
-     "page": 3310,
+     "page": 3614,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "Proportions and cross-multiplying",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 3310,
-     "answer_key_page": 3310
+     "question_page": 3614,
+     "answer_key_page": 3614
     },
     {
      "id": "S89-B3-Q4",
@@ -1040,15 +1022,15 @@
      "required_method": null,
      "grading_note": "Any correct proportion.",
      "figure": null,
-     "page": 3311,
+     "page": 3615,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "Proportions and cross-multiplying",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 3311,
-     "answer_key_page": 3311
+     "question_page": 3615,
+     "answer_key_page": 3615
     },
     {
      "id": "S89-B3-Q5",
@@ -1086,15 +1068,15 @@
      "required_method": null,
      "grading_note": "ad = bc.",
      "figure": null,
-     "page": 3312,
+     "page": 3616,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "Proportions and cross-multiplying",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 3312,
-     "answer_key_page": 3312
+     "question_page": 3616,
+     "answer_key_page": 3616
     }
    ]
   },
@@ -1110,7 +1092,8 @@
     "progression": "same-course deepening",
     "connection": "direct",
     "new_demand": "Use the proved law to solve triangles from two angles and a side.",
-    "course": "Geometry"
+    "course": "Geometry",
+    "plus_standard": true
    },
    "questions": [
     {
@@ -1144,15 +1127,15 @@
      "required_method": null,
      "grading_note": "Rounding to 0.1 required.",
      "figure": null,
-     "page": 3314,
+     "page": 3618,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "Use the Law of Sines (AAS and ASA)",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3314,
-     "answer_key_page": 3314
+     "question_page": 3618,
+     "answer_key_page": 3618
     },
     {
      "id": "S89-F1-Q2",
@@ -1185,15 +1168,15 @@
      "required_method": null,
      "grading_note": "Form required: both.",
      "figure": null,
-     "page": 3315,
+     "page": 3619,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "Use the Law of Sines (AAS and ASA)",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3315,
-     "answer_key_page": 3315
+     "question_page": 3619,
+     "answer_key_page": 3619
     },
     {
      "id": "S89-F1-Q3",
@@ -1233,15 +1216,15 @@
      "required_method": null,
      "grading_note": "AAS/ASA.",
      "figure": null,
-     "page": 3316,
+     "page": 3620,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "Use the Law of Sines (AAS and ASA)",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3316,
-     "answer_key_page": 3316
+     "question_page": 3620,
+     "answer_key_page": 3620
     },
     {
      "id": "S89-F1-Q4",
@@ -1289,15 +1272,15 @@
      "required_method": null,
      "grading_note": "6 sin 45°/sin 30°.",
      "figure": null,
-     "page": 3317,
+     "page": 3621,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "Use the Law of Sines (AAS and ASA)",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3317,
-     "answer_key_page": 3317
+     "question_page": 3621,
+     "answer_key_page": 3621
     },
     {
      "id": "S89-F1-Q5",
@@ -1330,15 +1313,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 3318,
+     "page": 3622,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "Use the Law of Sines (AAS and ASA)",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3318,
-     "answer_key_page": 3318
+     "question_page": 3622,
+     "answer_key_page": 3622
     }
    ]
   },
@@ -1355,7 +1338,8 @@
     "connection": "direct",
     "new_demand": "Apply the law to real surveying problems.",
     "course": "Geometry",
-    "builds_on": "Builds on FORWARD 1: solving AAS/ASA triangles is the computation inside triangulation."
+    "builds_on": "Builds on FORWARD 1: solving AAS/ASA triangles is the computation inside triangulation.",
+    "plus_standard": true
    },
    "questions": [
     {
@@ -1389,15 +1373,15 @@
      "required_method": null,
      "grading_note": "Rounding to the nearest meter required. Third angle 50°; side opposite 60°.",
      "figure": null,
-     "page": 3320,
+     "page": 3624,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "Surveying with the Law of Sines",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3320,
-     "answer_key_page": 3320
+     "question_page": 3624,
+     "answer_key_page": 3624
     },
     {
      "id": "S89-F2-Q2",
@@ -1430,15 +1414,15 @@
      "required_method": null,
      "grading_note": "Rounding to the nearest meter required. Third angle 57°.",
      "figure": null,
-     "page": 3321,
+     "page": 3625,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "Surveying with the Law of Sines",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3321,
-     "answer_key_page": 3321
+     "question_page": 3625,
+     "answer_key_page": 3625
     },
     {
      "id": "S89-F2-Q3",
@@ -1478,15 +1462,15 @@
      "required_method": null,
      "grading_note": "Triangulation.",
      "figure": null,
-     "page": 3322,
+     "page": 3626,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "Surveying with the Law of Sines",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3322,
-     "answer_key_page": 3322
+     "question_page": 3626,
+     "answer_key_page": 3626
     },
     {
      "id": "S89-F2-Q4",
@@ -1534,15 +1518,15 @@
      "required_method": null,
      "grading_note": "Law of Sines.",
      "figure": null,
-     "page": 3323,
+     "page": 3627,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "Surveying with the Law of Sines",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3323,
-     "answer_key_page": 3323
+     "question_page": 3627,
+     "answer_key_page": 3627
     },
     {
      "id": "S89-F2-Q5",
@@ -1575,15 +1559,15 @@
      "required_method": null,
      "grading_note": "Any reasonable answer.",
      "figure": null,
-     "page": 3324,
+     "page": 3628,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Prove the Law of Sines (a/sin A = b/sin B = c/sin C) using an altitude, including the obtuse case",
      "target_skill": "Surveying with the Law of Sines",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 3324,
-     "answer_key_page": 3324
+     "question_page": 3628,
+     "answer_key_page": 3628
     }
    ]
   }

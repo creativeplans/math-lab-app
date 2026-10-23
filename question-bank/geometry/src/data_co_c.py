@@ -50,19 +50,22 @@ SETS = [
                 key='∠2 ≅ ∠4',
                 note=PROOF_RULE + 'Essential: m∠1 + m∠2 = 180° and m∠1 + m∠4 = 180° (linear pairs, each with a reason); so m∠2 = 180° - m∠1 = m∠4. '
                      'Using ∠3 as the shared angle is also valid. Invalid: using ∠2 ≅ ∠4 as a step.'),
-          sa('A proof that ∠1 ≅ ∠3 for vertical angles 1 and 3 (with ∠2 next to both):\n1. m∠1 + m∠2 = 180°  (linear pair)\n2. m∠2 + m∠3 = 180°  (linear pair)\n'
-             '3. m∠1 + m∠2 = m∠2 + m∠3  (?)\n4. m∠1 = m∠3  (?)\nGive the reasons for steps 3 and 4.', 'Reasons:',
-             key='Step 3: substitution (or the transitive property of equality); step 4: subtraction property of equality.',
-             note='Any equivalent names for both reasons. Both are required.'),
+          proof('Lines PQ and RS intersect at T (P, T, Q on one line and R, T, S on the other). Prove that ∠PTR ≅ ∠QTS.',
+                method='Use the two linear pairs that share ∠RTQ, and the properties of equality.',
+                key='∠PTR ≅ ∠QTS',
+                note=PROOF_RULE + 'Essential: m∠PTR + m∠RTQ = 180° (linear pair: P, T, Q collinear); m∠RTQ + m∠QTS = 180° (linear pair: R, T, S collinear); '
+                     'substitution and subtraction give m∠PTR = m∠QTS. Invalid: citing the vertical angle theorem itself.'),
           proof('Lines AB and CD intersect at E. Explain, using a rigid motion, why ∠AEC ≅ ∠BED.', fig=X_AB_CD,
                 method='Use the 180° rotation about E and explain where it sends rays EA and EC.',
                 key='The 180° rotation about E maps ∠AEC onto ∠BED, so the angles are congruent.',
                 note='Any valid explanation. Essential: a 180° rotation about E maps each line through E onto itself, sending ray EA to the opposite ray EB '
                      'and ray EC to ray ED; so it maps ∠AEC onto ∠BED; rotations keep angle measures.'),
-          mc('A student measures two vertical angles in one drawing, finds that both are 47°, and writes "vertical angles are congruent." Why is this not a proof?',
-             ['It checks one example; a proof must show the result for every pair of vertical angles', 'Protractors are never accurate',
-              'Vertical angles are not always congruent', 'The student should have measured all four angles'],
-             note='Measuring can suggest a theorem but cannot prove it for all cases.'),
+          proof('Two lines intersect, forming vertical angles ∠1 and ∠3, and ∠2 is adjacent to both. Suppose m∠1 = x°. Prove that m∠3 = x° for every value of x, '
+                'giving a reason for each step.',
+                method='Write m∠2 in terms of x using one linear pair, then m∠3 using the other.',
+                key='m∠3 = x°',
+                note=PROOF_RULE + 'Essential: m∠2 = 180° - x° (linear pair with ∠1); m∠3 = 180° - m∠2 = 180° - (180° - x°) = x° (linear pair with ∠2); the '
+                     'argument uses no particular value, so it holds for all vertical angles. Invalid: checking one value of x.'),
       ],
       back=[
           B('Angles in a linear pair add to 180°', '7.G.B.5', [
@@ -140,29 +143,35 @@ SETS = [
       target='Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent',
       strand='core', covers=['CO9-parallel'],
       main=[
-          proof('Lines ℓ and m are parallel and are cut by transversal t. Assume the corresponding angles postulate (corresponding angles formed by a transversal '
-                'of parallel lines are congruent). Prove that alternate interior angles ∠3 and ∠5 are congruent.', fig=transversal(),
-                method='Use the corresponding angle of ∠5 at the top crossing and vertical angles.',
-                key='∠3 ≅ ∠5',
-                note=PROOF_RULE + 'Essential: ∠1 ≅ ∠5 (corresponding angles postulate, ℓ ∥ m); ∠1 ≅ ∠3 (vertical angles); so ∠3 ≅ ∠5 (transitive). '
-                     'Invalid: "they look equal"; assuming alternate interior angles are congruent.'),
-          proof('Lines ℓ and m are parallel and are cut by transversal t. Assume that alternate interior angles are congruent. Prove that corresponding angles ∠2 and ∠6 are congruent.',
-                fig=transversal(), method='Use an alternate interior angle and vertical angles.',
-                key='∠2 ≅ ∠6',
-                note=PROOF_RULE + 'Essential: ∠4 ≅ ∠6 (alternate interior angles); ∠2 ≅ ∠4 (vertical angles); so ∠2 ≅ ∠6 (transitive).'),
-          proof('Lines ℓ and m are parallel and are cut by transversal t, crossing ℓ at P and m at Q. Explain, using a translation, why corresponding angles ∠1 and ∠5 are congruent.',
+          proof('Lines ℓ and m are parallel and are cut by transversal t, crossing ℓ at P and m at Q. Explain, using a translation, why corresponding angles ∠1 and ∠5 are congruent. '
+                '(This argument uses only the parallel postulate and rigid motions, so the later items may use its result.)',
                 fig=transversal(),
                 method='Translate along the transversal from Q to P. Explain why the image of m is ℓ and why the image of ∠5 is ∠1.',
                 key='The translation that moves Q to P maps m onto ℓ and maps t onto itself, so it maps ∠5 onto ∠1; translations keep angle measure.',
                 note='Any valid explanation. Essential: (1) the translation maps t onto itself (it moves along t); (2) it maps m to a line through P parallel to m; '
-                     '(3) by the parallel postulate that line is ℓ; (4) so the angle formed by t and m at Q maps to the corresponding angle at P; (5) angle measure is kept.'),
-          sa('Lines ℓ ∥ m are cut by transversal t, and m∠1 = 115°. Find m∠5, m∠3, and m∠6. Give a reason for each.', 'Answer:', fig=transversal(),
-             key='m∠5 = 115° (corresponding to ∠1); m∠3 = 115° (vertical to ∠1); m∠6 = 65° (linear pair with ∠5).',
-             note='Form required: each measure with a valid reason. Other valid reason chains are accepted.'),
-          mc('A student "proves" that alternate interior angles are congruent by saying: "The lines are parallel because the alternate interior angles are congruent." What is wrong?',
-             ['The argument is circular: it assumes the conclusion', 'Nothing; the argument is correct', 'Alternate interior angles are supplementary',
-              'The lines must be perpendicular'],
-             note='The statement uses the result it is trying to prove (and states a converse instead).'),
+                     '(3) by the parallel postulate that line is ℓ; (4) so the angle formed by t and m at Q maps to the corresponding angle at P; (5) angle measure is kept. '
+                     'Invalid: assuming corresponding angles are congruent.'),
+          proof('Lines ℓ and m are parallel and are cut by transversal t. Use the corresponding angles theorem (proved with a translation) to prove that alternate '
+                'interior angles ∠3 and ∠5 are congruent.', fig=transversal(),
+                method='Use the corresponding angle of ∠5 at the top crossing and vertical angles.',
+                key='∠3 ≅ ∠5',
+                note=PROOF_RULE + 'Essential: ∠1 ≅ ∠5 (corresponding angles theorem, ℓ ∥ m); ∠1 ≅ ∠3 (vertical angles); so ∠3 ≅ ∠5 (transitive). '
+                     'Invalid: "they look equal"; assuming alternate interior angles are congruent.'),
+          proof('Lines ℓ and m are parallel and are cut by transversal t. Use the corresponding angles theorem to prove that alternate exterior angles ∠2 and ∠8 are congruent.',
+                fig=transversal(), method='Use a corresponding angle and vertical angles.',
+                key='∠2 ≅ ∠8',
+                note=PROOF_RULE + 'Essential: ∠2 ≅ ∠6 (corresponding angles, ℓ ∥ m); ∠6 ≅ ∠8 (vertical angles); so ∠2 ≅ ∠8 (transitive).'),
+          proof('Lines ℓ and m are parallel and are cut by transversal t. Prove that same-side interior angles ∠4 and ∠5 are supplementary.', fig=transversal(),
+                method='Use a corresponding angle and a linear pair.',
+                key='m∠4 + m∠5 = 180°',
+                note=PROOF_RULE + 'Essential: ∠4 ≅ ∠8 (corresponding angles, ℓ ∥ m); m∠8 + m∠5 = 180° (linear pair at Q); substitute: m∠4 + m∠5 = 180°.'),
+          proof('Lines ℓ and m are parallel and are cut by transversal t at P (on ℓ) and Q (on m). Let M be the midpoint of PQ. Explain, using the 180° rotation about M, '
+                'why alternate interior angles ∠3 and ∠5 are congruent.', fig=transversal(),
+                method='Find the images of P, Q, t, and ℓ under the rotation, then the image of ∠3.',
+                key='The rotation swaps P and Q, maps t onto itself, and maps ℓ to the line through Q parallel to ℓ, which is m; so ∠3 maps onto ∠5.',
+                note='Any valid explanation. Essential: MP = MQ, so P ↔ Q; t passes through M, so it maps onto itself (each ray reversed); a 180° rotation maps ℓ to a '
+                     'parallel line through Q, which is m (parallel postulate); ∠3 (between ray PQ and ℓ on one side) goes to the angle between ray QP and m on the '
+                     'other side, ∠5; rotations keep angle measure.'),
       ],
       back=[
           B('Name and use angles formed by parallel lines and a transversal', '8.G.A.5', [
@@ -266,20 +275,25 @@ SETS += [
                 method='Use SSS on triangles PMA and PMB, then the linear pair of congruent angles at M.',
                 key='PM ⊥ AB, so P is on the perpendicular bisector of AB.',
                 note=PROOF_RULE + 'Essential: PA = PB (given), AM = BM (midpoint), PM = PM; △PMA ≅ △PMB (SSS); ∠PMA ≅ ∠PMB; they form a linear pair, so each '
-                     'is 90°; so PM is perpendicular to AB through its midpoint. Invalid: drawing the perpendicular bisector through P and assuming it '
+                     'is 90°; so PM is perpendicular to AB through its midpoint. SSS may be used here: in set 16 it was explained with SAS and a reflection, '
+                     'not with this converse, so the reasoning is not circular. Invalid: drawing the perpendicular bisector through P and assuming it '
                      'passes through P (that is the claim).'),
-          sa('The theorem says the points on the perpendicular bisector of AB are EXACTLY the points equidistant from A and B. Which two statements must be proved?',
-             'Answer:', key='(1) Every point on the perpendicular bisector is equidistant from A and B. (2) Every point equidistant from A and B is on the perpendicular bisector.',
-             note='Any equivalent wording of both directions.'),
+          proof('Point P is not on line AB, and PA = PB. The bisector of ∠APB meets AB at M. Prove that line PM is the perpendicular bisector of AB '
+                '(a second proof of the converse, using SAS).',
+                method='Prove △PMA ≅ △PMB by SAS, then use corresponding parts.',
+                key='AM = BM and PM ⊥ AB, so PM is the perpendicular bisector of AB.',
+                note=PROOF_RULE + 'Essential: PA = PB (given); ∠APM ≅ ∠BPM (bisector); PM = PM; SAS; AM = BM and ∠PMA ≅ ∠PMB; these angles form a linear pair, '
+                     'so each is 90°.'),
           proof('In a coordinate plane, A(-a, 0) and B(a, 0) with a > 0. Prove that every point P(0, y) on the y-axis is equidistant from A and B, and that every point '
                 'P(x, y) with PA = PB has x = 0.',
                 method='Use the distance formula in both directions.',
                 key='PA = PB = √(a² + y²) for P(0, y); and PA = PB gives (x + a)² = (x - a)², so x = 0.',
                 note=PROOF_RULE + 'Essential: both directions. (1) √(a² + y²) both ways. (2) (x + a)² + y² = (x - a)² + y² simplifies to 4ax = 0, and a ≠ 0, so x = 0.'),
-          mc('A student proves only that every point on the perpendicular bisector of AB is equidistant from A and B. What is missing?',
-             ['The converse: every point equidistant from A and B is on the perpendicular bisector', 'A proof that the bisector is a line',
-              'A measurement of PA and PB', 'Nothing; one direction proves "exactly"'],
-             note='"Exactly those points" needs both directions.'),
+          proof('A(1, 1) and B(5, 3). Prove that every point on the line y = -2x + 8 is equidistant from A and B, and that every point equidistant from A and B lies on y = -2x + 8.',
+                method='Use the distance formula (squared) in both directions.',
+                key='For P(x, -2x + 8), PA² = PB² = 5x² - 30x + 50; and PA = PB simplifies to 8x + 4y = 32, that is, y = -2x + 8.',
+                note=PROOF_RULE + 'Essential: both directions with algebra. (1) PA² = (x - 1)² + (-2x + 7)² and PB² = (x - 5)² + (-2x + 5)², both 5x² - 30x + 50. '
+                     '(2) (x - 1)² + (y - 1)² = (x - 5)² + (y - 3)² gives 8x + 4y = 32.'),
       ],
       back=[
           B('Use the definitions of midpoint and perpendicular bisector', 'HSG-CO.A.1', [
@@ -333,7 +347,7 @@ SETS += [
              note='Form required: an ordered pair. Bisectors x = 3 and y = 4 meet at (3, 4); it is 5 from each vertex.'),
           tf('The point where the perpendicular bisectors of a triangle meet is always inside the triangle.', key=False,
              note='For an obtuse triangle it is outside; for a right triangle it is on the hypotenuse.'),
-          mc('Three towns are to share a well equally distant from all three. Where should it go?', ['Where the perpendicular bisectors of the triangle\'s sides meet',
+          mc('Three towns that are not on one straight line will share a well equally distant from all three. Where should it go?', ['Where the perpendicular bisectors of the triangle\'s sides meet',
                                                                                                       'Where the angle bisectors meet', 'At the midpoint of the longest side', 'Where the medians meet'],
              note='Points equidistant from two towns are on the perpendicular bisector.'),
           sa('Explain why showing that the perpendicular bisectors of AB and BC meet at O is enough to show that all three meet at O.', 'Explanation:',
@@ -350,7 +364,8 @@ SETS += [
                 key='m∠A + m∠B + m∠C = 180°',
                 note=PROOF_RULE + 'Essential: (1) through C there is exactly one line parallel to AB (parallel postulate); (2) the angles it makes with CA and CB are '
                      'congruent to ∠A and ∠B (alternate interior angles, transversals CA and CB); (3) those two angles and ∠ACB form a straight angle, 180°; '
-                     '(4) substitute. Invalid: measuring angles; citing the exterior angle theorem (it depends on this result).'),
+                     '(4) substitute. Invalid: measuring angles; citing the exterior angle theorem, because in this course that theorem is proved FROM the '
+                     'angle sum (set 20, FORWARD 1), so using it here would be circular.'),
           proof('In triangle PQR, draw the line through P parallel to QR. Prove that the angles of triangle PQR add to 180°.',
                 method='Same strategy with vertex P: alternate interior angles and a straight angle at P.',
                 key='m∠P + m∠Q + m∠R = 180°',
@@ -361,14 +376,17 @@ SETS += [
                 key='m∠A + m∠B + m∠ACB = 180°',
                 note=PROOF_RULE + 'Essential: ∠ACE ≅ ∠A (alternate interior, transversal AC); ∠ECD ≅ ∠B (corresponding, transversal BD); ∠ACB + ∠ACE + ∠ECD = 180° '
                      '(straight angle at C).'),
-          sa('A proof of the triangle angle sum (line ℓ through C parallel to AB, making ∠1 next to CA and ∠2 next to CB):\n1. m∠1 + m∠ACB + m∠2 = 180°  (?)\n'
-             '2. ∠1 ≅ ∠A and ∠2 ≅ ∠B  (?)\n3. m∠A + m∠ACB + m∠B = 180°  (?)\nGive the three reasons.', 'Reasons:',
-             key='1: the angles form a straight angle (angle addition); 2: alternate interior angles are congruent (ℓ ∥ AB); 3: substitution.',
-             note='Any equivalent names for all three reasons.'),
-          mc('A student proves the angle sum theorem using "an exterior angle equals the sum of the two remote interior angles." What is wrong?',
-             ['That theorem is usually proved FROM the angle sum, so the argument is circular', 'Exterior angles do not exist in triangles',
-              'The exterior angle theorem is false', 'Nothing is wrong'],
-             note='Using a result that depends on the theorem being proved is circular reasoning.'),
+          proof('In triangle ABC, translate the triangle along ray AB so that A moves to B; C moves to C′ and B moves to D (on ray AB beyond B). Prove that the angles '
+                'of triangle ABC add to 180°, using the three angles at B.',
+                method='Use the straight angle ABD at B, the translation (∠C′BD ≅ ∠A), and alternate interior angles (BC′ ∥ AC).',
+                key='m∠A + m∠ABC + m∠C = 180°',
+                note=PROOF_RULE + 'Essential: ∠ABC + ∠CBC′ + ∠C′BD = 180° (straight angle, A, B, D collinear); ∠C′BD ≅ ∠CAB (the translation maps ∠CAB onto it); '
+                     'the translation maps line AC to the parallel line BC′, so ∠CBC′ ≅ ∠ACB (alternate interior angles, transversal BC); substitute.'),
+          proof('In triangle PQR, extend side PQ past Q to S, and draw ray QT parallel to PR (T on the same side of line PS as R). Prove that the angles of triangle PQR add to 180°.',
+                method='Use alternate interior angles (∠R and ∠RQT) and corresponding angles (∠P and ∠TQS), then the straight angle PQS.',
+                key='m∠P + m∠PQR + m∠R = 180°',
+                note=PROOF_RULE + 'Essential: ∠RQT ≅ ∠R (alternate interior, transversal QR); ∠TQS ≅ ∠P (corresponding, transversal PS); ∠PQR + ∠RQT + ∠TQS = 180° '
+                     '(straight angle at Q); substitute.'),
       ],
       back=[
           B('Use the angle sum and parallel-line angles informally', '8.G.A.5', [
@@ -394,9 +412,9 @@ SETS += [
           B('Alternate interior angles of parallel lines are congruent', 'HSG-CO.C.9', [
               sa('Lines ℓ ∥ m are cut by transversal t. An alternate interior angle of a 58° angle measures', 'Measure:', key='58°', note='Any equivalent form.'),
               tf('Alternate interior angles formed by a transversal of parallel lines are congruent.', key=True, note='This is the theorem proved in an earlier set.'),
-              mc('Line ℓ through C is parallel to AB. Which angle at C is congruent to ∠A?', ['The angle between ℓ and CA', 'The angle between ℓ and CB',
-                                                                                         '∠ACB', 'The angle between CA and CB'],
-                 note='CA is a transversal of ℓ and AB.'),
+              mc('Triangle ABC has A at the left end of base AB, B at the right end, and C above AB. Line ℓ through C is parallel to AB; D is on ℓ to the left of C '
+                 'and E is on ℓ to the right of C. Which angle is congruent to ∠CAB?', ['∠DCA', '∠ECA', '∠ECB', '∠ACB'],
+                 note='With transversal CA, ∠CAB and ∠DCA are alternate interior angles (on opposite sides of CA, between the parallel lines). ∠ECB is congruent to ∠CBA.'),
               sa('Why is it allowed to draw the line through C parallel to AB?', 'Reason:', key='The parallel postulate: through a point not on a line there is exactly one parallel line.',
                  note='Any equivalent wording.'),
               tf('Alternate interior angles are congruent for any two lines cut by a transversal.', key=False, note='Only when the lines are parallel.'),
@@ -452,8 +470,10 @@ SETS += [
                 method='Apply the isosceles base angle theorem twice, with two different pairs of equal sides.',
                 key='All three angles are congruent (each is 60°).',
                 note=PROOF_RULE + 'Essential: AB = AC gives ∠B ≅ ∠C; AB = BC gives ∠A ≅ ∠C; so all three are congruent (and each is 60° by the angle sum).'),
-          mc('In the proof that base angles of isosceles triangle ABC (AB = AC) are congruent, the bisector of ∠A meets BC at D. Which criterion proves △ABD ≅ △ACD?',
-             ['SAS', 'SSS', 'ASA', 'AAS'], note='AB = AC, ∠BAD ≅ ∠CAD, and AD is shared: two sides and the included angle.'),
+          proof('Triangle ABC has A(0, h), B(-b, 0), and C(b, 0), with b > 0 and h > 0, so AB = AC. Prove that ∠B ≅ ∠C using the reflection (x, y) → (-x, y).',
+                method='Find the images of A, B, and C, and explain why the reflection carries ∠ABC onto ∠ACB.',
+                key='The reflection fixes A and swaps B and C, so it maps ∠ABC onto ∠ACB; reflections keep angle measure.',
+                note='Any valid explanation. Essential: A(0, h) → A, B(-b, 0) → C(b, 0), C → B; so ray BA → ray CA and ray BC → ray CB; ∠ABC → ∠ACB.'),
       ],
       back=[
           B('Prove triangles congruent with SAS or SSS', 'HSG-CO.B.8', [
@@ -550,17 +570,22 @@ SETS += [
                 note=PROOF_RULE + 'Essential: CE = BE, DE = FE, vertical angles at E, so △DEC ≅ △FEB (SAS); BF = DC = AD; ∠DCE ≅ ∠FBE gives BF ∥ AC (alternate '
                      'interior converse); one pair of opposite sides of ABFD is parallel and congruent, so ABFD is a parallelogram; so DF ∥ AB and DF = AB; '
                      'DE = ½DF = ½AB.'),
-          sa('In the coordinate proof of the midsegment theorem, the vertices are A(0, 0), B(2a, 0), C(2b, 2c). Why are the coordinates written with 2a, 2b, and 2c?',
-             'Answer:', key='So the midpoints have whole-letter coordinates (a, b, c) without fractions, which keeps the algebra simple; any triangle can still be placed this way.',
-             note='Any equivalent explanation that mentions avoiding fractions in the midpoint formula and that the placement is general.'),
-          sa('A proof of the midsegment theorem with A(0, 0), B(2a, 0), C(2b, 2c):\n1. D = (b, c), E = (a + b, c)  (?)\n2. slope DE = 0 = slope AB  (?)\n3. DE ∥ AB  (?)\n'
-             '4. DE = a and AB = 2a, so DE = ½AB  (?)\nGive the four reasons.', 'Reasons:',
-             key='1: midpoint formula; 2: slope formula (equal y-coordinates); 3: lines with equal slopes are parallel; 4: distance formula (horizontal distances).',
-             note='Any equivalent names for all four reasons.'),
-          mc('A student checks the triangle A(0, 0), B(6, 0), C(2, 4), finds the midsegment is parallel to AB and 3 units long, and concludes the theorem is proved. What is the flaw?',
-             ['One example cannot prove a statement about every triangle', 'The midsegment should be 6 units long', 'The midsegment is not parallel to AB',
-              'Midpoints cannot be found with coordinates'],
-             note='A general proof must work for every triangle, for example with variable coordinates.'),
+          proof('Triangle ABC has A(0, 0), B(2a, 0), and C(2b, 2c), with a > 0 and c ≠ 0. F is the midpoint of AB and E is the midpoint of AC. Prove that FE ∥ BC and FE = ½BC.',
+                method='Find F and E, then compare slopes (or note both are vertical) and lengths.',
+                key='F(a, 0), E(b, c); FE goes from (a, 0) to (b, c), the same direction as BC from (2a, 0) to (2b, 2c), and FE = ½BC.',
+                note=PROOF_RULE + 'Essential: both midpoints; FE = (b - a, c) and BC = (2b - 2a, 2c) = 2(b - a, c), so they are parallel (equal slopes c/(b - a), or both '
+                     'vertical when b = a) and FE = √((b - a)² + c²) = ½BC.'),
+          proof('In triangle ABC, F is the midpoint of AB and E is the midpoint of AC. Extend FE past E to G so that EG = FE. Prove that FE ∥ BC and FE = ½BC.',
+                method='Prove △AEF ≅ △CEG (SAS); then show FBCG is a parallelogram.',
+                key='FE ∥ BC and FE = ½BC',
+                note=PROOF_RULE + 'Essential: AE = CE, FE = GE, vertical angles at E, so △AEF ≅ △CEG (SAS); CG = AF = FB and ∠FAE ≅ ∠GCE, so CG ∥ AB (alternate '
+                     'interior converse); FBCG has a pair of opposite sides parallel and congruent, so it is a parallelogram; FG ∥ BC and FG = BC; FE = ½FG = ½BC.'),
+          proof('Triangle ABC has A(2p, 2q), B(2r, 2s), and C(2t, 2u), not on one line, with AB not vertical. D is the midpoint of AC and E is the midpoint of BC. '
+                'Prove that DE ∥ AB and DE = ½AB.',
+                method='Find D and E, then compare the coordinate differences of DE and AB.',
+                key='D(p + t, q + u), E(r + t, s + u); DE = (r - p, s - q) and AB = (2r - 2p, 2s - 2q) = 2·DE, so DE ∥ AB and DE = ½AB.',
+                note=PROOF_RULE + 'Essential: both midpoints; slope DE = (s - q)/(r - p) = slope AB; DE = √((r - p)² + (s - q)²) = ½AB. DE and AB are different '
+                     'lines because C is not on AB.'),
       ],
       back=[
           B('Find midpoints of segments in the coordinate plane', '6.G.A.3', [
@@ -574,7 +599,7 @@ SETS += [
                     'averages coordinates, including variable coordinates.')),
           B('Find and compare slopes to decide whether lines are parallel', '8.EE.B.6', [
               sa('Find the slope of the line through (1, 2) and (4, 8).', 'Slope:', key='2', note='Any equivalent form. (8 - 2) ÷ (4 - 1).'),
-              sa('Find the slope of the line through (b, c) and (a + b, c).', 'Slope:', key='0', note='Any equivalent form. The y-coordinates are equal.'),
+              sa('Find the slope of the line through (b, c) and (a + b, c), where a ≠ 0.', 'Slope:', key='0', note='Any equivalent form. The y-coordinates are equal and the points are different.'),
               tf('Two different nonvertical lines with the same slope are parallel.', key=True, note='Same steepness, different positions.'),
               mc('Which segment is parallel to the segment from (0, 0) to (4, 2)?', ['From (1, 3) to (5, 5)', 'From (1, 3) to (3, 7)', 'From (0, 0) to (2, -1)', 'From (2, 2) to (2, 6)'],
                  note='Both have slope 1/2.'),
@@ -645,16 +670,21 @@ SETS += [
                 key='BG = 2GE; the same argument for medians AD and BE gives the point that is two-thirds along BE, which is G, so AD passes through G.',
                 note=PROOF_RULE + 'Essential: FE ∥ BC and FE = ½BC (midsegment in △ABC); HK ∥ BC and HK = ½BC (midsegment in △GBC); so FEKH is a parallelogram; its '
                      'diagonals bisect each other, so HG = GE; with BH = HG, BG = 2GE; any two medians meet at the point two-thirds along each, so all three share it.'),
-          sa('Explain why proving that the point two-thirds of the way along EACH median is the same point proves that the three medians meet at one point.', 'Explanation:',
-             key='Each median contains its own two-thirds point. If those three points are one point, that point lies on all three medians, so they meet there.',
-             note='Any equivalent explanation.'),
+          proof('Triangle ABC has A(-2a, 0), B(2a, 0), and C(0, 2b), with a > 0 and b > 0. Prove that the three medians meet at (0, 2b/3).',
+                method='Find the three midpoints and show that (0, 2b/3) is two-thirds of the way from each vertex to the opposite midpoint.',
+                key='Midpoints (a, b), (-a, b), (0, 0); the point (0, 2b/3) is ⅔ of the way along each median.',
+                note=PROOF_RULE + 'Essential: midpoint of BC (a, b), of AC (-a, b), of AB (0, 0); A + ⅔((a, b) - A) = (0, 2b/3); B + ⅔((-a, b) - B) = (0, 2b/3); '
+                     'C + ⅔((0, 0) - C) = (0, 2b/3).'),
           proof('Triangle PQR has P(0, 0), Q(6, 0), and R(0, 6). Find the three medians\' equations and prove that they meet at one point.',
                 method='Find each median as a line through a vertex and a midpoint, find where two meet, and check that the third passes through that point.',
                 key='The medians meet at (2, 2).',
                 note=PROOF_RULE + 'Essential: midpoints (3, 3), (0, 3), (3, 0); medians y = x, y = -½x + 3 (from Q), y = -2x + 6 (from R); y = x and y = -2x + 6 meet at (2, 2); '
                      '(2, 2) satisfies y = -½x + 3. (This proves the claim for this triangle; the general proof needs variables.)'),
-          tf('Drawing medians carefully in three different triangles and seeing that they meet proves that the medians of every triangle meet at one point.', key=False,
-             note='Examples suggest a theorem but cannot prove it for every triangle.'),
+          proof('Triangle ABC has A(x₁, y₁), B(x₂, y₂), C(x₃, y₃), not on one line. Let G = ((x₁ + x₂ + x₃)/3, (y₁ + y₂ + y₃)/3). Prove that G lies on all three medians.',
+                method='For each median, show G = vertex + ⅔(opposite midpoint - vertex).',
+                key='For the median from A: A + ⅔(((x₂ + x₃)/2, (y₂ + y₃)/2) - A) = G; the same holds from B and C, so the medians meet at G.',
+                note=PROOF_RULE + 'Essential: the computation for one median with the general coordinates and the symmetry (or computation) for the other two. '
+                     'Invalid: drawing examples.'),
       ],
       back=[
           B('Find midpoints, including with variables', '6.G.A.3', [
@@ -720,43 +750,43 @@ SETS += [
 ]
 
 SETS += [
-    # ------------------------------------------------------------------ 24. CO.C.11 opposite sides and angles
-    S('HSG-CO.C.11', 'Prove that opposite sides and opposite angles of a parallelogram are congruent',
-      target='Prove that the opposite sides and the opposite angles of a parallelogram are congruent', strand='core', covers=['CO11-opposite'],
+    # ------------------------------------------------------------------ 24. CO.C.11 opposite sides
+    S('HSG-CO.C.11', 'Prove that opposite sides of a parallelogram are congruent',
+      target='Prove that the opposite sides of a parallelogram are congruent', strand='core', covers=['CO11-opposite'],
       main=[
           proof('ABCD is a parallelogram (AB ∥ DC and AD ∥ BC). Prove that AB = CD and AD = CB. (Draw diagonal AC.)', fig=PGRAM,
                 method='Prove △ABC ≅ △CDA by ASA, using alternate interior angles from both pairs of parallel sides and the shared diagonal.',
                 key='AB = CD and AD = CB',
                 note=PROOF_RULE + 'Essential: ∠BAC ≅ ∠DCA (alternate interior, AB ∥ DC); ∠BCA ≅ ∠DAC (alternate interior, AD ∥ BC); AC = CA (reflexive); '
                      '△ABC ≅ △CDA (ASA); corresponding sides. Invalid: "opposite sides look equal"; using the theorem being proved.'),
-          proof('ABCD is a parallelogram. Prove that ∠B ≅ ∠D.', fig=PGRAM,
-                method='Use diagonal AC and the congruent triangles ABC and CDA (ASA), then corresponding angles.',
-                key='∠B ≅ ∠D',
-                note=PROOF_RULE + 'Essential: the same ASA congruence △ABC ≅ △CDA; ∠B and ∠D are corresponding angles. Alternative: consecutive angles are '
-                     'supplementary (same-side interior), so ∠B = 180° - ∠A = ∠D.'),
-          proof('ABCD is a parallelogram. Prove that ∠A ≅ ∠C using same-side interior angles (no diagonal).', fig=PGRAM,
-                method='Show ∠A and ∠B are supplementary and ∠B and ∠C are supplementary, then subtract.',
-                key='∠A ≅ ∠C',
-                note=PROOF_RULE + 'Essential: AD ∥ BC with transversal AB gives m∠A + m∠B = 180°; AB ∥ DC with transversal BC gives m∠B + m∠C = 180°; so '
-                     'm∠A = m∠C.'),
-          sa('A proof that opposite sides of parallelogram ABCD are congruent (diagonal AC drawn):\n1. ∠BAC ≅ ∠DCA  (?)\n2. ∠BCA ≅ ∠DAC  (?)\n3. AC = CA  (?)\n'
-             '4. △ABC ≅ △CDA  (?)\n5. AB = CD and BC = DA  (?)\nGive the five reasons.', 'Reasons:',
-             key='1: alternate interior angles (AB ∥ DC); 2: alternate interior angles (AD ∥ BC); 3: reflexive property; 4: ASA; 5: corresponding parts of congruent triangles.',
-             note='Any equivalent names for all five reasons.'),
-          mc('In the proof that opposite sides of parallelogram ABCD are congruent, which congruence criterion is used for triangles ABC and CDA?', ['ASA', 'SSS', 'SAS', 'SSA'],
-             note='Two pairs of alternate interior angles and the shared side between them. SSS would assume what is being proved.'),
+          proof('PQRS is a parallelogram (PQ ∥ SR and PS ∥ QR). Prove that PQ = RS and QR = SP, using diagonal QS.',
+                method='Prove △PQS ≅ △RSQ by ASA with alternate interior angles and the shared diagonal QS.',
+                key='PQ = RS and QR = SP',
+                note=PROOF_RULE + 'Essential: ∠PQS ≅ ∠RSQ (alternate interior, PQ ∥ SR); ∠PSQ ≅ ∠RQS (alternate interior, PS ∥ QR); QS shared; ASA; corresponding sides.'),
+          proof('ABCD is a parallelogram and M is the midpoint of diagonal AC. Explain, using the 180° rotation about M, why AB = CD and AD = CB.',
+                method='Find the images of A, line AB, and line AD; then the image of B as an intersection of lines.',
+                key='The rotation swaps A and C and sends B to D, so it maps AB onto CD and AD onto CB; rotations keep length.',
+                note='Any valid explanation. Essential: M is the midpoint of AC, so A ↔ C; a 180° rotation maps line AB to the parallel line through C, which is '
+                     'line CD (parallel postulate), and line CB to the parallel line through A, which is AD; B = AB ∩ CB goes to CD ∩ AD = D; lengths are kept.'),
+          proof('A parallelogram has vertices A(0, 0), B(a, 0), C(a + b, c), D(b, c), with a > 0 and c > 0. Prove that AB = DC and AD = BC.',
+                method='Use the distance formula on each pair of opposite sides.',
+                key='AB = DC = a and AD = BC = √(b² + c²)',
+                note=PROOF_RULE + 'Essential: AB = a; DC = |a + b - b| = a; AD = √(b² + c²); BC = √((a + b - a)² + c²) = √(b² + c²).'),
+          proof('ABCD and ABEF are parallelograms that share side AB, with C, D, E, F all different points. Prove that DC = FE.',
+                method='Apply the theorem in each parallelogram and use the transitive property.',
+                key='DC = AB = FE, so DC = FE.',
+                note=PROOF_RULE + 'Essential: DC = AB (opposite sides of ABCD); FE = AB (opposite sides of ABEF); transitive property.'),
       ],
       back=[
-          B('Alternate interior and same-side interior angles of parallel lines', 'HSG-CO.C.9', [
+          B('Alternate interior angles of parallel lines', 'HSG-CO.C.9', [
               sa('AB ∥ DC and diagonal AC is drawn. Which angle at C is congruent to ∠BAC?', 'Angle:', key='∠DCA', note='Any equivalent form. Alternate interior angles.'),
-              tf('Same-side interior angles formed by a transversal of parallel lines are supplementary.', key=True, note='They add to 180°.'),
-              mc('In parallelogram ABCD, side AB is a transversal of AD and BC. What is m∠A + m∠B?', ['180°', '90°', '360°', 'It depends on the figure'],
-                 note='Same-side interior angles.'),
-              sa('In parallelogram ABCD, m∠A = 65°. Find m∠B.', 'Measure:', key='115°', note='Any equivalent form.'),
+              tf('Alternate interior angles formed by a transversal of parallel lines are congruent.', key=True, note='Theorem from set 18.'),
+              mc('In parallelogram ABCD with diagonal BD, which angle is congruent to ∠ABD?', ['∠CDB', '∠ADB', '∠CBD', '∠ABC'], note='AB ∥ DC with transversal BD.'),
+              sa('In parallelogram ABCD with diagonal AC, AD ∥ BC. Which angle is congruent to ∠DAC?', 'Angle:', key='∠BCA', note='Any equivalent form.'),
               tf('Alternate interior angles of parallel lines are supplementary.', key=False, note='They are congruent.'),
           ], align='exact',
-            why=why('the student cannot get angle facts from the parallel sides.', 'every proof of these properties starts there.',
-                    'names alternate interior and same-side interior angles in a parallelogram.')),
+            why=why('the student cannot get angle facts from the parallel sides.', 'the proof starts there.',
+                    'names alternate interior angles in a parallelogram with a diagonal.')),
           B('Prove triangles congruent with ASA', 'HSG-CO.B.8', [
               sa('Two triangles have two pairs of congruent angles and the congruent sides between them. Which criterion applies?', 'Criterion:', key='ASA', note='Any equivalent form.'),
               tf('A diagonal shared by two triangles can be the included side in ASA.', key=True, note='Reflexive property.'),
@@ -769,14 +799,15 @@ SETS += [
             why=why('the student cannot complete the congruence step.', 'the proof uses ASA with the diagonal.', 'applies ASA and reads the correspondence.')),
           B('Know the definition of a parallelogram', '5.G.B.3', [
               tf('A parallelogram is a quadrilateral with both pairs of opposite sides parallel.', key=True, note='Definition.'),
-              mc('Which quadrilateral is always a parallelogram?', ['A rectangle', 'A trapezoid', 'A kite', 'Any quadrilateral with one right angle'],
+              mc('Which quadrilateral is always a parallelogram?', ['A rectangle', 'A trapezoid with exactly one pair of parallel sides', 'A kite that is not a rhombus',
+                                                                    'Any quadrilateral with one right angle'],
                  note='A rectangle has both pairs of opposite sides parallel.'),
               sa('Name the two pairs of opposite sides of parallelogram PQRS.', 'Answer:', key='PQ and RS; QR and SP', note='Any order.'),
               tf('In parallelogram ABCD, sides AB and BC are opposite sides.', key=False, note='They are consecutive sides.'),
-              sa('Name the two pairs of opposite angles of parallelogram WXYZ.', 'Answer:', key='∠W and ∠Y; ∠X and ∠Z', note='Any order.'),
+              sa('Which sides of parallelogram WXYZ are parallel to WX and to XY?', 'Answer:', key='ZY ∥ WX and WZ ∥ XY', note='Any equivalent form.'),
           ], align='supporting',
             why=why('the student does not know what a parallelogram is given to have.', 'the proof may use only the definition (parallel sides).',
-                    'states the definition and names opposite parts.')),
+                    'states the definition and names opposite sides.')),
       ],
       f1=B('Prove that the diagonals of a rhombus are perpendicular', 'HSG-CO.C.11', [
           proof('ABCD is a rhombus (a parallelogram with all four sides congruent), with diagonals meeting at E. Prove that AC ⊥ BD.',
@@ -785,25 +816,109 @@ SETS += [
                 note=PROOF_RULE + 'Essential: BE = ED (diagonals of a parallelogram bisect each other); AB = AD; AE = AE; △AEB ≅ △AED (SSS); ∠AEB ≅ ∠AED form a linear '
                      'pair, so both are 90°. Alternative: A and C are each equidistant from B and D, so AC is the perpendicular bisector of BD.'),
           sa('In rhombus ABCD, diagonals AC = 16 and BD = 12. Find the side length.', 'Side:', key='10', note='Any equivalent form. Half-diagonals 8 and 6.'),
-          tf('Each diagonal of a rhombus bisects two of its angles.', key=True, note='SSS on the triangles formed by a diagonal.'),
-          mc('Which property does every rhombus have but not every parallelogram?', ['Perpendicular diagonals', 'Opposite sides parallel',
-                                                                                    'Opposite angles congruent', 'Diagonals that bisect each other'],
-             note='The other three hold for every parallelogram.'),
-          sa('In rhombus PQRS, m∠PQR = 110°. Find m∠PQS, where QS is a diagonal.', 'Measure:', key='55°', note='Any equivalent form. The diagonal bisects ∠PQR.'),
-      ], prog='same-course deepening', demand='Prove properties of a special parallelogram (rhombus) that build on the general parallelogram theorems.'),
-      f2=B('Prove the parallelogram properties with coordinates', 'HSG-GPE.B.4', [
-          proof('A parallelogram has vertices A(0, 0), B(a, 0), C(a + b, c), D(b, c), with a > 0 and c > 0. Prove that AB = DC and AD = BC.',
-                method='Use the distance formula on each pair of opposite sides.',
-                key='AB = DC = a and AD = BC = √(b² + c²)',
-                note=PROOF_RULE + 'Essential: AB = a; DC = |a + b - b| = a; AD = √(b² + c²); BC = √((a + b - a)² + c²) = √(b² + c²).'),
+          proof('ABCD is a rhombus. Prove that diagonal AC bisects ∠BAD and ∠BCD.', method='Use SSS on triangles ABC and ADC.',
+                key='∠BAC ≅ ∠DAC and ∠BCA ≅ ∠DCA',
+                note=PROOF_RULE + 'Essential: AB = AD and CB = CD (all sides congruent); AC shared; SSS; corresponding angles.'),
+          sa('Rhombus ABCD has perimeter 52 and diagonal AC = 24. Find diagonal BD.', 'BD =', key='10', note='Any equivalent form. Side 13, half-diagonals 12 and 5.'),
+          sa('In rhombus PQRS, m∠PQR = 110°. Find m∠PQS, where QS is a diagonal, and give the reason.', 'Answer:', key='55°, because a diagonal of a rhombus bisects the angles at its ends.',
+             note='Form required: the measure and the reason.'),
+      ], prog='same-course deepening', demand='Prove and use side-based properties of a special parallelogram (rhombus) that build on the general theorems.'),
+      f2=B('Use opposite sides with coordinates and algebra', 'HSG-GPE.B.4', [
+          sa('Parallelogram ABCD has A(1, 2), B(6, 2), and D(3, 5). Find C, and verify that AB = DC and AD = BC.', 'Answer:',
+             key='C(8, 5); AB = DC = 5 and AD = BC = √13.', note='Form required: C and both pairs of lengths.'),
           sa('Explain why the vertices A(0, 0), B(a, 0), C(a + b, c), D(b, c) describe a general parallelogram.', 'Explanation:',
              key='Any parallelogram can be moved (rigid motion) so that A is at the origin and AB lies on the positive x-axis; then D = (b, c) and C = B + (D - A) = (a + b, c).',
              note='Any equivalent explanation.'),
-          tf('With vertices A(0, 0), B(a, 0), C(a + b, c), D(b, c), slopes show AC ⊥ BD for every choice of a, b, and c.', key=False, note='The product of the slopes is c²/(b² - a²), which is -1 only when a² = b² + c² (a rhombus).'),
+          sa('In parallelogram WXYZ, WX = 3x + 4 and YZ = 5x - 6. Find x and WX.', 'Answer:', key='x = 5; WX = 19', note='Form required: both. Opposite sides are congruent.'),
           mc('For the parallelogram A(0, 0), B(6, 0), C(8, 4), D(2, 4), what is AD?', ['2√5', '6', '4', '√20 + 2'], note='√(4 + 16) = √20 = 2√5.'),
           sa('Parallelogram ABCD has A(1, 1), B(5, 1), and D(2, 4). Find C.', 'C =', key='(6, 4)', note='Form required: an ordered pair. C = B + (D - A).'),
-      ], prog='cross-standard extension', demand='Prove the same properties algebraically, with a general coordinate placement.',
-        builds='A second, separate extension of MAIN: FORWARD 1 adds a special case (rhombus); FORWARD 2 reproves the general theorem with coordinates.')),
+      ], prog='cross-standard extension', demand='Use the theorem with coordinates and equations to find vertices and unknown lengths.',
+        builds='A second, separate extension of MAIN: FORWARD 1 adds a special case (rhombus); FORWARD 2 applies the theorem with coordinates and algebra.')),
+
+    # ------------------------------------------------------------------ 101. CO.C.11 opposite angles
+    S('HSG-CO.C.11', 'Prove that opposite angles of a parallelogram are congruent', num=101,
+      target='Prove that the opposite angles of a parallelogram are congruent', strand='core', covers=['CO11-angles'],
+      main=[
+          proof('ABCD is a parallelogram. Prove that ∠B ≅ ∠D.', fig=PGRAM,
+                method='Use diagonal AC and the congruent triangles ABC and CDA (ASA), then corresponding angles.',
+                key='∠B ≅ ∠D',
+                note=PROOF_RULE + 'Essential: ∠BAC ≅ ∠DCA and ∠BCA ≅ ∠DAC (alternate interior); AC shared; △ABC ≅ △CDA (ASA); ∠B and ∠D are corresponding angles.'),
+          proof('ABCD is a parallelogram. Prove that ∠A ≅ ∠C using same-side interior angles (no diagonal).', fig=PGRAM,
+                method='Show ∠A and ∠B are supplementary and ∠B and ∠C are supplementary, then subtract.',
+                key='∠A ≅ ∠C',
+                note=PROOF_RULE + 'Essential: AD ∥ BC with transversal AB gives m∠A + m∠B = 180°; AB ∥ DC with transversal BC gives m∠B + m∠C = 180°; so '
+                     'm∠A = m∠C.'),
+          proof('PQRS is a parallelogram. Prove that ∠P ≅ ∠R, using diagonal QS.',
+                method='Prove △PQS ≅ △RSQ by ASA, then use corresponding angles.',
+                key='∠P ≅ ∠R',
+                note=PROOF_RULE + 'Essential: ∠PQS ≅ ∠RSQ (alternate interior, PQ ∥ SR); ∠PSQ ≅ ∠RQS (alternate interior, PS ∥ QR); QS shared; ASA; ∠P and ∠R correspond.'),
+          proof('ABCD is a parallelogram and M is the midpoint of diagonal AC. Explain, using the 180° rotation about M, why ∠DAB ≅ ∠BCD.',
+                method='Use that the rotation swaps A and C and maps the sides at A onto the sides at C.',
+                key='The rotation maps ∠DAB onto ∠BCD, and rotations keep angle measure.',
+                note='Any valid explanation. Essential: A ↔ C; line AB → the parallel line through C, which is CD; line AD → the parallel line through C, which is CB; '
+                     'ray AB goes to ray CD and ray AD to ray CB, so ∠DAB → ∠BCD.'),
+          proof('ABCD is a parallelogram with m∠A = x°. Prove that m∠C = x° and m∠B = m∠D = (180 - x)°, giving a reason for each step.',
+                method='Use same-side interior angles for each pair of consecutive angles.',
+                key='m∠B = 180 - x, m∠C = x, m∠D = 180 - x',
+                note=PROOF_RULE + 'Essential: m∠A + m∠B = 180° (AD ∥ BC, transversal AB); m∠B + m∠C = 180° (AB ∥ DC); m∠C + m∠D = 180° (AD ∥ BC); solve each step.'),
+      ],
+      back=[
+          B('Same-side interior angles of parallel lines', 'HSG-CO.C.9', [
+              tf('Same-side interior angles formed by a transversal of parallel lines are supplementary.', key=True, note='They add to 180°.'),
+              mc('In parallelogram ABCD, side AB is a transversal of AD and BC. What is m∠A + m∠B?', ['180°', '90°', '360°', 'It depends on the figure'],
+                 note='Same-side interior angles.'),
+              sa('In parallelogram ABCD, m∠A = 65°. Find m∠B.', 'Measure:', key='115°', note='Any equivalent form.'),
+              sa('Lines ℓ ∥ m are cut by a transversal; one same-side interior angle is 72°. Find the other.', 'Measure:', key='108°', note='Any equivalent form.'),
+              tf('Same-side interior angles of parallel lines are congruent.', key=False, note='They are supplementary.'),
+          ], align='exact',
+            why=why('the student does not see that consecutive angles of a parallelogram are supplementary.', 'one proof of opposite angles uses this twice.',
+                    'finds same-side interior angles.')),
+          B('Name opposite and consecutive angles of a quadrilateral', '5.G.B.3', [
+              sa('Name the two pairs of opposite angles of parallelogram WXYZ.', 'Answer:', key='∠W and ∠Y; ∠X and ∠Z', note='Any order.'),
+              tf('In quadrilateral ABCD, ∠A and ∠B are consecutive angles.', key=True, note='They share side AB.'),
+              mc('Which angle is opposite ∠Q in quadrilateral PQRS?', ['∠S', '∠R', '∠P', '∠Q'], note='Opposite vertices are not neighbors.'),
+              sa('Quadrilateral KLMN: name the angles consecutive to ∠K.', 'Answer:', key='∠L and ∠N', note='Any order.'),
+              tf('In quadrilateral ABCD, ∠A and ∠C share a side.', key=False, note='They are opposite angles.'),
+          ], align='supporting',
+            why=why('the student cannot name opposite angles.', 'the theorem is about them.', 'names opposite and consecutive angles.')),
+          B('Prove triangles congruent with ASA and use corresponding angles', 'HSG-CO.B.8', [
+              sa('△ABC ≅ △CDA with A ↔ C, B ↔ D, C ↔ A. Which angle corresponds to ∠B?', 'Angle:', key='∠D', note='Any equivalent form.'),
+              tf('After two triangles are proved congruent, their corresponding angles are congruent.', key=True, note='Definition of congruence.'),
+              mc('Which criterion uses two angles and the side between them?', ['ASA', 'SAS', 'SSS', 'AAS'], note='Definition.'),
+              sa('△PQS ≅ △RSQ with P ↔ R. Which angle corresponds to ∠P?', 'Angle:', key='∠R', note='Any equivalent form.'),
+              tf('ASA can use a shared diagonal as its side.', key=True, note='Reflexive property.'),
+          ], align='exact',
+            why=why('the student cannot get the angle conclusion from a congruence.', 'the diagonal proof ends with corresponding angles.',
+                    'reads correspondences and names corresponding angles.')),
+      ],
+      f1=B('Prove angle properties of special parallelograms', 'HSG-CO.C.11', [
+          proof('Prove that a parallelogram with one right angle has four right angles (so it is a rectangle).',
+                method='Use opposite angles congruent and consecutive angles supplementary.',
+                key='All four angles are 90°.',
+                note=PROOF_RULE + 'Essential: the opposite angle is 90° (opposite angles); each consecutive angle is 180° - 90° = 90°.'),
+          sa('In parallelogram ABCD, m∠A = (3x + 10)° and m∠C = (5x - 30)°. Find x and m∠B.', 'Answer:', key='x = 20; m∠B = 110°', note='Form required: both. 3x + 10 = 5x - 30.'),
+          proof('Rhombus ABCD has m∠A = 60°. Prove that diagonal BD divides it into two equilateral triangles.',
+                method='Use the opposite angle, the equal sides, and the isosceles triangle angle facts.',
+                key='△ABD and △CBD each have three 60° angles (and three equal sides).',
+                note=PROOF_RULE + 'Essential: AB = AD (rhombus), so △ABD is isosceles with vertex angle 60°, and its base angles are (180° - 60°) ÷ 2 = 60°: equilateral; '
+                     'm∠C = 60° (opposite angles) and CB = CD, so △CBD is equilateral too.'),
+          sa('In parallelogram PQRS, m∠P is twice m∠Q. Find all four angles.', 'Answer:', key='∠P = ∠R = 120°, ∠Q = ∠S = 60°', note='Form required: all four. 2x + x = 180.'),
+          mc('A parallelogram has an angle of 47°. Which list gives all four angles in order?', ['47°, 133°, 47°, 133°', '47°, 47°, 133°, 133°', '47°, 43°, 47°, 43°', '47°, 133°, 133°, 47°'],
+             note='Opposite angles are equal; consecutive angles add to 180°.'),
+      ], prog='same-course deepening', demand='Use the opposite-angle theorem with consecutive angles in special parallelograms and equations.'),
+      f2=B('Opposite angles and angles of rotation with coordinates', 'HSG-CO.A.3', [
+          sa('Parallelogram ABCD has A(0, 0), B(4, 0), C(6, 3), D(2, 3). The 180° rotation about (3, 1.5) maps it onto itself. Which angle does ∠A map onto?', 'Answer:',
+             key='∠C', note='Any equivalent form. A(0, 0) → (6, 3) = C.'),
+          sa('Parallelogram ABCD has A(0, 0), B(4, 0), C(6, 3), D(2, 3). Name the image of each vertex under the 180° rotation about (3, 1.5).', 'Answer:',
+             key='A → C, B → D, C → A, D → B', note='Form required: all four. (x, y) → (6 - x, 3 - y).'),
+          tf('A 180° rotation about the center of a parallelogram maps each angle onto the angle opposite it.', key=True, note='It swaps opposite vertices.'),
+          mc('Which transformation shows that opposite angles of every parallelogram are congruent?', ['A 180° rotation about the intersection of the diagonals',
+                                                                                                       'A reflection across a diagonal', 'A 90° rotation about a vertex', 'A translation along a side'],
+             note='Reflections across diagonals work only for rhombuses.'),
+          sa('Parallelogram PQRS has P(1, 1), Q(5, 1), R(7, 4), S(3, 4). Give the center and angle of a rotation that maps ∠P onto ∠R.', 'Answer:',
+             key='180° about (4, 2.5)', note='Form required: the center and the angle. The center is the midpoint of PR.'),
+      ], prog='cross-standard extension', demand='Use the 180° rotation symmetry with coordinates to match opposite angles.',
+        builds='A second, separate extension of MAIN: FORWARD 1 uses the theorem with special parallelograms; FORWARD 2 connects it to rotation symmetry with coordinates.')),
 
     # ------------------------------------------------------------------ 25. CO.C.11 diagonals bisect
     S('HSG-CO.C.11', 'Prove that the diagonals of a parallelogram bisect each other',
@@ -823,14 +938,16 @@ SETS += [
                 key='Both diagonals have midpoint ((a + b)/2, c/2).',
                 note=PROOF_RULE + 'Essential: midpoint of AC = ((a + b)/2, c/2); midpoint of BD = ((a + b)/2, c/2); the same point lies on both diagonals and is the '
                      'midpoint of each.'),
-          sa('A proof that the diagonals of parallelogram ABCD bisect each other (they meet at E):\n1. AB = CD  (?)\n2. ∠BAE ≅ ∠DCE  (?)\n3. ∠AEB ≅ ∠CED  (?)\n'
-             '4. △ABE ≅ △CDE  (?)\n5. AE = CE, BE = DE  (?)\nGive the five reasons.', 'Reasons:',
-             key='1: opposite sides of a parallelogram are congruent; 2: alternate interior angles (AB ∥ DC); 3: vertical angles; 4: AAS; 5: corresponding parts.',
-             note='Any equivalent names for all five reasons.'),
-          mc('Which previously proved fact does the proof that a parallelogram\'s diagonals bisect each other use?', ['Opposite sides of a parallelogram are congruent',
-                                                                                                                    'Diagonals of a parallelogram are congruent',
-                                                                                                                    'Consecutive sides are congruent', 'Diagonals are perpendicular'],
-             note='AB = CD is needed for the congruence. The other facts are false for general parallelograms.'),
+          proof('ABCD is a parallelogram with diagonals meeting at E. Prove that AE = CE and BE = DE using triangles AED and CEB.',
+                method='Use AD = CB, alternate interior angles from AD ∥ BC, and ASA.',
+                key='AE = CE and BE = DE',
+                note=PROOF_RULE + 'Essential: AD = CB (opposite sides); ∠DAE ≅ ∠BCE and ∠ADE ≅ ∠CBE (alternate interior, AD ∥ BC); △AED ≅ △CEB (ASA); corresponding sides.'),
+          proof('WXYZ is a parallelogram whose diagonals WY and XZ meet at V. Prove that V is the midpoint of WY and of XZ, using the 180° rotation about the midpoint M of WY '
+                '(show that M is also the midpoint of XZ, so M = V).',
+                method='Show that the rotation maps X to Z; then M is the midpoint of XZ too.',
+                key='The rotation swaps W and Y and maps X to Z, so M is the midpoint of XZ; the diagonals meet at M, so V = M.',
+                note='Any valid explanation. Essential: W ↔ Y; line WX → the parallel line through Y, which is YZ; line YX → the parallel line through W, which is WZ; '
+                     'X = WX ∩ YX → YZ ∩ WZ = Z; so M is the midpoint of XZ, and M lies on both diagonals, so it is their intersection V.'),
       ],
       back=[
           B('Opposite sides of a parallelogram are congruent', 'HSG-CO.C.11', [
@@ -865,7 +982,9 @@ SETS += [
                 note=PROOF_RULE + 'Essential: a 180° rotation about E maps each point P to the point P′ with E the midpoint of PP′; E is the midpoint of AC and BD, so '
                      'A → C, C → A, B → D, D → B; segments map to segments, so each side maps onto its opposite side.'),
           sa('Parallelogram ABCD has diagonals meeting at E(2, 3), and A(-1, 1). Find C.', 'C =', key='(5, 5)', note='Form required: an ordered pair. E is the midpoint of AC.'),
-          tf('A quadrilateral whose diagonals bisect each other has 180° rotation symmetry about their crossing point.', key=True, note='The rotation swaps opposite vertices.'),
+          sa('Quadrilateral ABCD has diagonals that bisect each other at E. Explain why the 180° rotation about E carries ABCD onto itself.', 'Answer:',
+             key='E is the midpoint of AC and of BD, so the rotation swaps A with C and B with D, and it maps each side onto the opposite side.',
+             note='Any equivalent explanation.'),
           mc('The 180° rotation about the center of parallelogram PQRS maps side PQ onto', ['side RS', 'side QR', 'side SP', 'diagonal PR'], note='P → R and Q → S.'),
           sa('A 180° rotation about the intersection of its diagonals carries a parallelogram onto itself. Explain why this implies that opposite angles of a parallelogram are congruent.', 'Explanation:',
              key='The rotation maps each angle onto the opposite angle, and rotations keep angle measures.', note='Any equivalent explanation.'),
@@ -904,9 +1023,11 @@ SETS += [
                 key='AD ∥ BC and AB ∥ DC.',
                 note=PROOF_RULE + 'Essential: 2m∠A + 2m∠B = 360°, so m∠A + m∠B = 180°; same-side interior angles supplementary gives AD ∥ BC; similarly m∠A + m∠D = 180° '
                      'gives AB ∥ DC.'),
-          mc('Quadrilateral ABCD has AB ∥ DC and AD = BC. Which conclusion is justified?', ['ABCD may not be a parallelogram (it could be an isosceles trapezoid)',
-                                                                                             'ABCD must be a parallelogram', 'ABCD must be a rectangle', 'ABCD must be a rhombus'],
-             note='An isosceles trapezoid has one pair of parallel sides and the other pair congruent.'),
+          proof('In quadrilateral ABCD, ∠A and ∠B are supplementary, and ∠B and ∠C are supplementary. Prove that ABCD is a parallelogram.',
+                method='Use the converse of the same-side interior angles theorem twice.',
+                key='AD ∥ BC and AB ∥ DC, so ABCD is a parallelogram.',
+                note=PROOF_RULE + 'Essential: with transversal AB, same-side interior angles ∠A and ∠B are supplementary, so AD ∥ BC; with transversal BC, ∠B and ∠C are '
+                     'supplementary, so AB ∥ DC; definition of a parallelogram.'),
       ],
       back=[
           B('Converses of the parallel-line angle theorems', 'HSG-CO.C.9', [
@@ -980,12 +1101,16 @@ SETS += [
           proof('Rectangle ABCD has A(0, 0), B(a, 0), C(a, b), D(0, b), with a, b > 0. Prove that its diagonals are congruent.',
                 method='Use the distance formula on both diagonals.', key='AC = BD = √(a² + b²)',
                 note=PROOF_RULE + 'Essential: AC = √(a² + b²) and BD = √(a² + b²).'),
-          sa('Explain why a rectangle is a parallelogram.', 'Explanation:',
-             key='Its opposite angles are congruent (all 90°), so it is a parallelogram; or: both pairs of opposite sides are perpendicular to the same side, so they are parallel.',
-             note='Any valid explanation.'),
-          mc('Which statement is the converse proved in this set?', ['A parallelogram with congruent diagonals is a rectangle', 'Every rectangle has congruent diagonals',
-                                                                     'Every quadrilateral with congruent diagonals is a rectangle', 'A rectangle has perpendicular diagonals'],
-             note='The converse needs the quadrilateral to be a parallelogram; an isosceles trapezoid also has congruent diagonals.'),
+          proof('Quadrilateral ABCD has four right angles. Prove that ABCD is a parallelogram (so a rectangle is a parallelogram).',
+                method='Use the converse of the same-side interior angles theorem.',
+                key='AB ∥ DC and AD ∥ BC.',
+                note=PROOF_RULE + 'Essential: ∠A + ∠B = 180° with transversal AB, so AD ∥ BC; ∠A + ∠D = 180° with transversal AD, so AB ∥ DC (or: both are perpendicular '
+                     'to the same line). Invalid: "it looks like a parallelogram".'),
+          proof('The diagonals of quadrilateral ABCD bisect each other and are congruent. Prove that ABCD is a rectangle.',
+                method='First show ABCD is a parallelogram (diagonals bisect each other), then use the parallelogram-with-congruent-diagonals theorem or SSS.',
+                key='ABCD is a parallelogram with congruent diagonals, so it is a rectangle.',
+                note=PROOF_RULE + 'Essential: diagonals that bisect each other make ABCD a parallelogram (set 26); then △ABC ≅ △BAD by SSS (BC = AD, AC = BD, AB shared), '
+                     'so ∠A ≅ ∠B; consecutive angles are supplementary, so each is 90°.'),
       ],
       back=[
           B('Parallelogram properties: opposite sides and consecutive angles', 'HSG-CO.C.11', [

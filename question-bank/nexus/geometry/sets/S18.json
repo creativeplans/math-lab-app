@@ -4,7 +4,7 @@
   "id": "GEO",
   "grade": null,
   "course": "Geometry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-23"
  },
  "grade": null,
@@ -29,7 +29,8 @@
    "branch": {
     "kind": "main",
     "strand": "core",
-    "target_skill": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent"
+    "target_skill": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -51,17 +52,17 @@
      "standard_course": "Geometry",
      "type": "work",
      "response": "write the answer and show the required work",
-     "prompt": "Lines ℓ and m are parallel and are cut by transversal t. Assume the corresponding angles postulate (corresponding angles formed by a transversal of parallel lines are congruent). Prove that alternate interior angles ∠3 and ∠5 are congruent.",
-     "prompt_markup": "Lines ℓ and m are parallel and are cut by transversal t. Assume the corresponding angles postulate (corresponding angles formed by a transversal of parallel lines are congruent). Prove that alternate interior angles ∠3 and ∠5 are congruent.",
+     "prompt": "Lines ℓ and m are parallel and are cut by transversal t, crossing ℓ at P and m at Q. Explain, using a translation, why corresponding angles ∠1 and ∠5 are congruent. (This argument uses only the parallel postulate and rigid motions, so the later items may use its result.)",
+     "prompt_markup": "Lines ℓ and m are parallel and are cut by transversal t, crossing ℓ at P and m at Q. Explain, using a translation, why corresponding angles ∠1 and ∠5 are congruent. (This argument uses only the parallel postulate and rigid motions, so the later items may use its result.)",
      "choices": [],
      "answer_lines": [
       "Conclusion:"
      ],
      "correct_letter": null,
-     "correct_answer": "∠3 ≅ ∠5",
+     "correct_answer": "The translation that moves Q to P maps m onto ℓ and maps t onto itself, so it maps ∠5 onto ∠1; translations keep angle measure.",
      "drawing_answer": null,
-     "required_method": "Use the corresponding angle of ∠5 at the top crossing and vertical angles.",
-     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: ∠1 ≅ ∠5 (corresponding angles postulate, ℓ ∥ m); ∠1 ≅ ∠3 (vertical angles); so ∠3 ≅ ∠5 (transitive). Invalid: \"they look equal\"; assuming alternate interior angles are congruent.",
+     "required_method": "Translate along the transversal from Q to P. Explain why the image of m is ℓ and why the image of ∠5 is ∠1.",
+     "grading_note": "Any valid explanation. Essential: (1) the translation maps t onto itself (it moves along t); (2) it maps m to a line through P parallel to m; (3) by the parallel postulate that line is ℓ; (4) so the angle formed by t and m at Q maps to the corresponding angle at P; (5) angle measure is kept. Invalid: assuming corresponding angles are congruent.",
      "figure": {
       "svg": "assets/S18-M-Q1.svg",
       "png": "assets/S18-M-Q1.png",
@@ -221,15 +222,15 @@
        ]
       }
      },
-     "page": 615,
-     "revision": "unchanged",
+     "page": 740,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 615,
-     "answer_key_page": 615
+     "question_page": 740,
+     "answer_key_page": 740
     },
     {
      "id": "S18-M-Q2",
@@ -250,17 +251,17 @@
      "standard_course": "Geometry",
      "type": "work",
      "response": "write the answer and show the required work",
-     "prompt": "Lines ℓ and m are parallel and are cut by transversal t. Assume that alternate interior angles are congruent. Prove that corresponding angles ∠2 and ∠6 are congruent.",
-     "prompt_markup": "Lines ℓ and m are parallel and are cut by transversal t. Assume that alternate interior angles are congruent. Prove that corresponding angles ∠2 and ∠6 are congruent.",
+     "prompt": "Lines ℓ and m are parallel and are cut by transversal t. Use the corresponding angles theorem (proved with a translation) to prove that alternate interior angles ∠3 and ∠5 are congruent.",
+     "prompt_markup": "Lines ℓ and m are parallel and are cut by transversal t. Use the corresponding angles theorem (proved with a translation) to prove that alternate interior angles ∠3 and ∠5 are congruent.",
      "choices": [],
      "answer_lines": [
       "Conclusion:"
      ],
      "correct_letter": null,
-     "correct_answer": "∠2 ≅ ∠6",
+     "correct_answer": "∠3 ≅ ∠5",
      "drawing_answer": null,
-     "required_method": "Use an alternate interior angle and vertical angles.",
-     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: ∠4 ≅ ∠6 (alternate interior angles); ∠2 ≅ ∠4 (vertical angles); so ∠2 ≅ ∠6 (transitive).",
+     "required_method": "Use the corresponding angle of ∠5 at the top crossing and vertical angles.",
+     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: ∠1 ≅ ∠5 (corresponding angles theorem, ℓ ∥ m); ∠1 ≅ ∠3 (vertical angles); so ∠3 ≅ ∠5 (transitive). Invalid: \"they look equal\"; assuming alternate interior angles are congruent.",
      "figure": {
       "svg": "assets/S18-M-Q2.svg",
       "png": "assets/S18-M-Q2.png",
@@ -420,15 +421,15 @@
        ]
       }
      },
-     "page": 616,
-     "revision": "unchanged",
+     "page": 741,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 616,
-     "answer_key_page": 616
+     "question_page": 741,
+     "answer_key_page": 741
     },
     {
      "id": "S18-M-Q3",
@@ -449,17 +450,17 @@
      "standard_course": "Geometry",
      "type": "work",
      "response": "write the answer and show the required work",
-     "prompt": "Lines ℓ and m are parallel and are cut by transversal t, crossing ℓ at P and m at Q. Explain, using a translation, why corresponding angles ∠1 and ∠5 are congruent.",
-     "prompt_markup": "Lines ℓ and m are parallel and are cut by transversal t, crossing ℓ at P and m at Q. Explain, using a translation, why corresponding angles ∠1 and ∠5 are congruent.",
+     "prompt": "Lines ℓ and m are parallel and are cut by transversal t. Use the corresponding angles theorem to prove that alternate exterior angles ∠2 and ∠8 are congruent.",
+     "prompt_markup": "Lines ℓ and m are parallel and are cut by transversal t. Use the corresponding angles theorem to prove that alternate exterior angles ∠2 and ∠8 are congruent.",
      "choices": [],
      "answer_lines": [
       "Conclusion:"
      ],
      "correct_letter": null,
-     "correct_answer": "The translation that moves Q to P maps m onto ℓ and maps t onto itself, so it maps ∠5 onto ∠1; translations keep angle measure.",
+     "correct_answer": "∠2 ≅ ∠8",
      "drawing_answer": null,
-     "required_method": "Translate along the transversal from Q to P. Explain why the image of m is ℓ and why the image of ∠5 is ∠1.",
-     "grading_note": "Any valid explanation. Essential: (1) the translation maps t onto itself (it moves along t); (2) it maps m to a line through P parallel to m; (3) by the parallel postulate that line is ℓ; (4) so the angle formed by t and m at Q maps to the corresponding angle at P; (5) angle measure is kept.",
+     "required_method": "Use a corresponding angle and vertical angles.",
+     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: ∠2 ≅ ∠6 (corresponding angles, ℓ ∥ m); ∠6 ≅ ∠8 (vertical angles); so ∠2 ≅ ∠8 (transitive).",
      "figure": {
       "svg": "assets/S18-M-Q3.svg",
       "png": "assets/S18-M-Q3.png",
@@ -619,15 +620,15 @@
        ]
       }
      },
-     "page": 617,
-     "revision": "unchanged",
+     "page": 742,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 617,
-     "answer_key_page": 617
+     "question_page": 742,
+     "answer_key_page": 742
     },
     {
      "id": "S18-M-Q4",
@@ -646,19 +647,19 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Lines ℓ ∥ m are cut by transversal t, and m∠1 = 115°. Find m∠5, m∠3, and m∠6. Give a reason for each.",
-     "prompt_markup": "Lines ℓ ∥ m are cut by transversal t, and m∠1 = 115°. Find m∠5, m∠3, and m∠6. Give a reason for each.",
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "Lines ℓ and m are parallel and are cut by transversal t. Prove that same-side interior angles ∠4 and ∠5 are supplementary.",
+     "prompt_markup": "Lines ℓ and m are parallel and are cut by transversal t. Prove that same-side interior angles ∠4 and ∠5 are supplementary.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Conclusion:"
      ],
      "correct_letter": null,
-     "correct_answer": "m∠5 = 115° (corresponding to ∠1); m∠3 = 115° (vertical to ∠1); m∠6 = 65° (linear pair with ∠5).",
+     "correct_answer": "m∠4 + m∠5 = 180°",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Form required: each measure with a valid reason. Other valid reason chains are accepted.",
+     "required_method": "Use a corresponding angle and a linear pair.",
+     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: ∠4 ≅ ∠8 (corresponding angles, ℓ ∥ m); m∠8 + m∠5 = 180° (linear pair at Q); substitute: m∠4 + m∠5 = 180°.",
      "figure": {
       "svg": "assets/S18-M-Q4.svg",
       "png": "assets/S18-M-Q4.png",
@@ -818,15 +819,15 @@
        ]
       }
      },
-     "page": 618,
-     "revision": "unchanged",
+     "page": 743,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 618,
-     "answer_key_page": 618
+     "question_page": 743,
+     "answer_key_page": 743
     },
     {
      "id": "S18-M-Q5",
@@ -845,44 +846,187 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "mc",
-     "response": "select one",
-     "prompt": "A student \"proves\" that alternate interior angles are congruent by saying: \"The lines are parallel because the alternate interior angles are congruent.\" What is wrong?",
-     "prompt_markup": "A student \"proves\" that alternate interior angles are congruent by saying: \"The lines are parallel because the alternate interior angles are congruent.\" What is wrong?",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "Nothing; the argument is correct"
-      },
-      {
-       "letter": "B",
-       "text": "The argument is circular: it assumes the conclusion"
-      },
-      {
-       "letter": "C",
-       "text": "Alternate interior angles are supplementary"
-      },
-      {
-       "letter": "D",
-       "text": "The lines must be perpendicular"
-      }
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "Lines ℓ and m are parallel and are cut by transversal t at P (on ℓ) and Q (on m). Let M be the midpoint of PQ. Explain, using the 180° rotation about M, why alternate interior angles ∠3 and ∠5 are congruent.",
+     "prompt_markup": "Lines ℓ and m are parallel and are cut by transversal t at P (on ℓ) and Q (on m). Let M be the midpoint of PQ. Explain, using the 180° rotation about M, why alternate interior angles ∠3 and ∠5 are congruent.",
+     "choices": [],
+     "answer_lines": [
+      "Conclusion:"
      ],
-     "answer_lines": [],
-     "correct_letter": "B",
-     "correct_answer": "The argument is circular: it assumes the conclusion",
+     "correct_letter": null,
+     "correct_answer": "The rotation swaps P and Q, maps t onto itself, and maps ℓ to the line through Q parallel to ℓ, which is m; so ∠3 maps onto ∠5.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "The statement uses the result it is trying to prove (and states a converse instead).",
-     "figure": null,
-     "page": 619,
-     "revision": "unchanged",
+     "required_method": "Find the images of P, Q, t, and ℓ under the rotation, then the image of ∠3.",
+     "grading_note": "Any valid explanation. Essential: MP = MQ, so P ↔ Q; t passes through M, so it maps onto itself (each ray reversed); a 180° rotation maps ℓ to a parallel line through Q, which is m (parallel postulate); ∠3 (between ray PQ and ℓ on one side) goes to the angle between ray QP and m on the other side, ∠5; rotations keep angle measure.",
+     "figure": {
+      "svg": "assets/S18-M-Q5.svg",
+      "png": "assets/S18-M-Q5.png",
+      "kind": "gd",
+      "description": "Two horizontal lines ℓ (top) and m (bottom) cut by a transversal t that slants down to the left. Arrow marks show ℓ ∥ m. At the top crossing the angles are numbered 1 (upper right), 2 (upper left), 3 (lower left), 4 (lower right); at the bottom crossing 5 (upper right), 6 (upper left), 7 (lower left), 8 (lower right).",
+      "blank_for_drawing": false,
+      "data": {
+       "k": "gd",
+       "P": {
+        "P": [
+         0.6,
+         1.5
+        ],
+        "Q": [
+         -0.6,
+         -1.5
+        ]
+       },
+       "items": [
+        [
+         "line",
+         [
+          -3,
+          1.5
+         ],
+         [
+          3,
+          1.5
+         ],
+         {
+          "arrows": 1
+         }
+        ],
+        [
+         "line",
+         [
+          -3,
+          -1.5
+         ],
+         [
+          3,
+          -1.5
+         ],
+         {
+          "arrows": 1
+         }
+        ],
+        [
+         "line",
+         [
+          1.2,
+          3
+         ],
+         [
+          -1.2,
+          -3
+         ]
+        ],
+        [
+         "text",
+         [
+          1.25,
+          1.85
+         ],
+         "1"
+        ],
+        [
+         "text",
+         [
+          0.05,
+          1.85
+         ],
+         "2"
+        ],
+        [
+         "text",
+         [
+          -0.05,
+          1.15
+         ],
+         "3"
+        ],
+        [
+         "text",
+         [
+          1.15,
+          1.15
+         ],
+         "4"
+        ],
+        [
+         "text",
+         [
+          0.05,
+          -1.15
+         ],
+         "5"
+        ],
+        [
+         "text",
+         [
+          -1.15,
+          -1.15
+         ],
+         "6"
+        ],
+        [
+         "text",
+         [
+          -1.25,
+          -1.85
+         ],
+         "7"
+        ],
+        [
+         "text",
+         [
+          -0.05,
+          -1.85
+         ],
+         "8"
+        ],
+        [
+         "text",
+         [
+          2.7,
+          1.85
+         ],
+         "ℓ"
+        ],
+        [
+         "text",
+         [
+          2.7,
+          -1.15
+         ],
+         "m"
+        ],
+        [
+         "text",
+         [
+          1.6,
+          2.6
+         ],
+         "t"
+        ]
+       ],
+       "desc": "Two horizontal lines ℓ (top) and m (bottom) cut by a transversal t that slants down to the left. Arrow marks show ℓ ∥ m. At the top crossing the angles are numbered 1 (upper right), 2 (upper left), 3 (lower left), 4 (lower right); at the bottom crossing 5 (upper right), 6 (upper left), 7 (lower left), 8 (lower right).",
+       "h": 230,
+       "nolabel": [
+        "P",
+        "Q"
+       ],
+       "nodot": [
+        "P",
+        "Q"
+       ]
+      }
+     },
+     "page": 744,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 619,
-     "answer_key_page": 619
+     "question_page": 744,
+     "answer_key_page": 744
     }
    ]
   },
@@ -897,7 +1041,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot name the angle pairs or their relationships. Why it matters: the theorems are about these specific pairs. Evidence: names corresponding, alternate interior, and same-side angles and finds their measures.",
-    "source": "Grade 8"
+    "source": "Grade 8",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1087,15 +1232,15 @@
        ]
       }
      },
-     "page": 621,
+     "page": 746,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "Name and use angles formed by parallel lines and a transversal",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 621,
-     "answer_key_page": 621
+     "question_page": 746,
+     "answer_key_page": 746
     },
     {
      "id": "S18-B1-Q2",
@@ -1299,15 +1444,15 @@
        ]
       }
      },
-     "page": 622,
+     "page": 747,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "Name and use angles formed by parallel lines and a transversal",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 622,
-     "answer_key_page": 622
+     "question_page": 747,
+     "answer_key_page": 747
     },
     {
      "id": "S18-B1-Q3",
@@ -1503,15 +1648,15 @@
        ]
       }
      },
-     "page": 623,
+     "page": 748,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "Name and use angles formed by parallel lines and a transversal",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 623,
-     "answer_key_page": 623
+     "question_page": 748,
+     "answer_key_page": 748
     },
     {
      "id": "S18-B1-Q4",
@@ -1549,15 +1694,15 @@
      "required_method": null,
      "grading_note": "They are congruent only when the lines are parallel.",
      "figure": null,
-     "page": 624,
+     "page": 749,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "Name and use angles formed by parallel lines and a transversal",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 624,
-     "answer_key_page": 624
+     "question_page": 749,
+     "answer_key_page": 749
     },
     {
      "id": "S18-B1-Q5",
@@ -1746,15 +1891,15 @@
        ]
       }
      },
-     "page": 625,
+     "page": 750,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "Name and use angles formed by parallel lines and a transversal",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 625,
-     "answer_key_page": 625
+     "question_page": 750,
+     "answer_key_page": 750
     }
    ]
   },
@@ -1769,7 +1914,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot connect angles at one crossing. Why it matters: each proof links the two crossings with vertical angles or linear pairs. Evidence: gives vertical-angle and linear-pair reasons.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1803,15 +1949,15 @@
      "required_method": null,
      "grading_note": "Any equivalent wording.",
      "figure": null,
-     "page": 627,
+     "page": 752,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "Vertical angles and linear pairs as reasons",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 627,
-     "answer_key_page": 627
+     "question_page": 752,
+     "answer_key_page": 752
     },
     {
      "id": "S18-B2-Q2",
@@ -1844,15 +1990,15 @@
      "required_method": null,
      "grading_note": "Any equivalent wording.",
      "figure": null,
-     "page": 628,
+     "page": 753,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "Vertical angles and linear pairs as reasons",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 628,
-     "answer_key_page": 628
+     "question_page": 753,
+     "answer_key_page": 753
     },
     {
      "id": "S18-B2-Q3",
@@ -2058,15 +2204,15 @@
        ]
       }
      },
-     "page": 629,
+     "page": 754,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "Vertical angles and linear pairs as reasons",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 629,
-     "answer_key_page": 629
+     "question_page": 754,
+     "answer_key_page": 754
     },
     {
      "id": "S18-B2-Q4",
@@ -2264,15 +2410,15 @@
        ]
       }
      },
-     "page": 630,
+     "page": 755,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "Vertical angles and linear pairs as reasons",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 630,
-     "answer_key_page": 630
+     "question_page": 755,
+     "answer_key_page": 755
     },
     {
      "id": "S18-B2-Q5",
@@ -2470,15 +2616,15 @@
        ]
       }
      },
-     "page": 631,
+     "page": 756,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "Vertical angles and linear pairs as reasons",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 631,
-     "answer_key_page": 631
+     "question_page": 756,
+     "answer_key_page": 756
     }
    ]
   },
@@ -2493,7 +2639,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student does not know the uniqueness of the parallel through a point. Why it matters: the rigid-motion proof depends on it. Evidence: uses the definition of parallel lines and the parallel postulate.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -2534,15 +2681,15 @@
      "required_method": null,
      "grading_note": "The parallel postulate.",
      "figure": null,
-     "page": 633,
+     "page": 758,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "The parallel postulate and the definition of parallel lines",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 633,
-     "answer_key_page": 633
+     "question_page": 758,
+     "answer_key_page": 758
     },
     {
      "id": "S18-B3-Q2",
@@ -2575,15 +2722,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer: by the parallel postulate.",
      "figure": null,
-     "page": 634,
+     "page": 759,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "The parallel postulate and the definition of parallel lines",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 634,
-     "answer_key_page": 634
+     "question_page": 759,
+     "answer_key_page": 759
     },
     {
      "id": "S18-B3-Q3",
@@ -2631,15 +2778,15 @@
      "required_method": null,
      "grading_note": "Same slope, different intercepts: they never meet.",
      "figure": null,
-     "page": 635,
+     "page": 760,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "The parallel postulate and the definition of parallel lines",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 635,
-     "answer_key_page": 635
+     "question_page": 760,
+     "answer_key_page": 760
     },
     {
      "id": "S18-B3-Q4",
@@ -2679,15 +2826,15 @@
      "required_method": null,
      "grading_note": "Definition of parallel lines.",
      "figure": null,
-     "page": 636,
+     "page": 761,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "The parallel postulate and the definition of parallel lines",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 636,
-     "answer_key_page": 636
+     "question_page": 761,
+     "answer_key_page": 761
     },
     {
      "id": "S18-B3-Q5",
@@ -2720,15 +2867,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 637,
+     "page": 762,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "The parallel postulate and the definition of parallel lines",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 637,
-     "answer_key_page": 637
+     "question_page": 762,
+     "answer_key_page": 762
     }
    ]
   },
@@ -2744,7 +2891,8 @@
     "progression": "same-course deepening",
     "connection": "direct",
     "new_demand": "Prove the CONVERSE (from congruent angles to parallel lines), which needs an indirect argument.",
-    "course": "Geometry"
+    "course": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -2936,15 +3084,15 @@
        ]
       }
      },
-     "page": 639,
+     "page": 764,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "Prove the converse: congruent alternate interior angles make lines parallel",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 639,
-     "answer_key_page": 639
+     "question_page": 764,
+     "answer_key_page": 764
     },
     {
      "id": "S18-F1-Q2",
@@ -3135,15 +3283,15 @@
        ]
       }
      },
-     "page": 640,
+     "page": 765,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "Prove the converse: congruent alternate interior angles make lines parallel",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 640,
-     "answer_key_page": 640
+     "question_page": 765,
+     "answer_key_page": 765
     },
     {
      "id": "S18-F1-Q3",
@@ -3183,15 +3331,15 @@
      "required_method": null,
      "grading_note": "Then the alternate interior angles are congruent.",
      "figure": null,
-     "page": 641,
+     "page": 766,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "Prove the converse: congruent alternate interior angles make lines parallel",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 641,
-     "answer_key_page": 641
+     "question_page": 766,
+     "answer_key_page": 766
     },
     {
      "id": "S18-F1-Q4",
@@ -3239,15 +3387,15 @@
      "required_method": null,
      "grading_note": "Vertical angles and linear pairs hold for any crossing lines.",
      "figure": null,
-     "page": 642,
+     "page": 767,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "Prove the converse: congruent alternate interior angles make lines parallel",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 642,
-     "answer_key_page": 642
+     "question_page": 767,
+     "answer_key_page": 767
     },
     {
      "id": "S18-F1-Q5",
@@ -3438,15 +3586,15 @@
        ]
       }
      },
-     "page": 643,
+     "page": 768,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "Prove the converse: congruent alternate interior angles make lines parallel",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 643,
-     "answer_key_page": 643
+     "question_page": 768,
+     "answer_key_page": 768
     }
    ]
   },
@@ -3463,7 +3611,8 @@
     "connection": "direct",
     "new_demand": "Apply the parallel-line theorems as tools to prove a triangle theorem.",
     "course": "Geometry",
-    "builds_on": "FORWARD 1 proves when lines are parallel; FORWARD 2 uses parallel lines to prove the triangle angle sum."
+    "builds_on": "FORWARD 1 proves when lines are parallel; FORWARD 2 uses parallel lines to prove the triangle angle sum.",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -3497,15 +3646,15 @@
      "required_method": "Name the two new angles at B, use alternate interior angles, and the straight angle at B.",
      "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: the line through B parallel to AC exists (parallel postulate); the angles it makes with BA and BC are congruent to ∠A and ∠C (alternate interior angles); those two angles and ∠ABC form a straight angle, 180°.",
      "figure": null,
-     "page": 645,
+     "page": 770,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "Use parallel-line theorems to prove the triangle angle sum",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 645,
-     "answer_key_page": 645
+     "question_page": 770,
+     "answer_key_page": 770
     },
     {
      "id": "S18-F2-Q2",
@@ -3538,15 +3687,15 @@
      "required_method": null,
      "grading_note": "Form required: all three. Alternate interior angles give ∠A and ∠C; 180 - 50 - 65 = 65.",
      "figure": null,
-     "page": 646,
+     "page": 771,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "Use parallel-line theorems to prove the triangle angle sum",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 646,
-     "answer_key_page": 646
+     "question_page": 771,
+     "answer_key_page": 771
     },
     {
      "id": "S18-F2-Q3",
@@ -3586,15 +3735,15 @@
      "required_method": null,
      "grading_note": "It uses the parallel through one vertex and the alternate interior angle theorem.",
      "figure": null,
-     "page": 647,
+     "page": 772,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "Use parallel-line theorems to prove the triangle angle sum",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 647,
-     "answer_key_page": 647
+     "question_page": 772,
+     "answer_key_page": 772
     },
     {
      "id": "S18-F2-Q4",
@@ -3642,15 +3791,15 @@
      "required_method": null,
      "grading_note": "Sides BA and BC are transversals of the parallel lines (AC and the line through B).",
      "figure": null,
-     "page": 648,
+     "page": 773,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "Use parallel-line theorems to prove the triangle angle sum",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 648,
-     "answer_key_page": 648
+     "question_page": 773,
+     "answer_key_page": 773
     },
     {
      "id": "S18-F2-Q5",
@@ -3683,15 +3832,15 @@
      "required_method": null,
      "grading_note": "Any equivalent explanation.",
      "figure": null,
-     "page": 649,
+     "page": 774,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that when a transversal crosses parallel lines, alternate interior angles are congruent and corresponding angles are congruent",
      "target_skill": "Use parallel-line theorems to prove the triangle angle sum",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 649,
-     "answer_key_page": 649
+     "question_page": 774,
+     "answer_key_page": 774
     }
    ]
   }

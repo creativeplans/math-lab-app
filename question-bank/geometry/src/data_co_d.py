@@ -16,6 +16,15 @@ def seg_and_ray(h=250):
               desc='Segment AB at the top, slanting slightly upward. Below it, a horizontal ray starting at P and passing through R.')
 
 
+def circle_nc(h=270, desc='A circle; its center is not marked.'):
+    return gd({}, [('circle', (0, 0), 2.2)], h=h, desc=desc)
+
+
+def circle_top(h=270):
+    return gd({'O': (0, 0), 'T': (0, 2.2)}, [('circle', 'O', 2.2)], h=h, lab={'O': 'sw', 'T': 'n'},
+              desc='A circle with center O and a point T at the top of the circle.')
+
+
 ANG = gd({'A': (2.3, 3.5), 'B': (0, 2.2), 'C': (2.7, 2.2), 'P': (0, 0), 'R': (2.7, 0)},
          [('ray', 'B', 'A'), ('ray', 'B', 'C'), ('ang', 'B', 'C', 'A'), ('ray', 'P', 'R')], h=290, lab={'C': 's', 'R': 's', 'P': 'w'},
          desc='Angle ABC with vertex B (about 30°) at the top. Below it, a separate horizontal ray from P through R.')
@@ -24,7 +33,7 @@ SETS = [
     # ------------------------------------------------------------------ 28. copy a segment
     S('HSG-CO.D.12', 'Construct a copy of a segment',
       target='Construct a segment congruent to a given segment with compass and straightedge (and with other tools)',
-      strand='core', covers=['CO12-copyseg', 'CO12-tools'],
+      strand='core', covers=['CO12-copyseg'],
       main=[
           plot(TOOLS + '\nConstruct a point Q on ray PR so that PQ = AB.', seg_and_ray(),
                key='A compass arc centered at P with radius AB crosses ray PR at Q; PQ = AB.',
@@ -37,13 +46,17 @@ SETS = [
           plot(TOOLS + '\nConstruct a point Q on ray PR so that PQ = 2 · AB.', seg_and_ray(),
                key='Copy AB from P to get M on the ray, then copy AB again from M (away from P) to get Q; PQ = 2AB.',
                note=EV + 'two arcs of radius AB, one centered at P and one centered at the first point, with Q labeled.'),
-          sa('Write the steps for copying segment AB onto ray PR, starting at P, with a compass and straightedge.', 'Steps:',
-             key='1. Put the compass point on A and open it to B. 2. Without changing the opening, put the compass point on P. 3. Draw an arc that crosses ray PR; '
-                 'label the crossing Q. Then PQ = AB.',
-             note='Any equivalent steps. Essential: the compass is set to AB and is not changed, the arc is centered at P, and the crossing is labeled.'),
-          sa('You have no compass, only a straightedge and a strip of paper. Describe how to copy segment AB onto line ℓ starting at point C.', 'Method:',
-             key='Lay the strip along AB and mark the positions of A and B on its edge. Move the strip to ℓ, put the A-mark on C along ℓ, and mark the point at the B-mark: that is D, with CD = AB.',
-             note='Any valid method using the paper strip (or string) to transfer the length without measuring it with a ruler.'),
+          plot(TOOLS + '\nOn ray XW, construct a point Z so that XZ = AB + CD.',
+               gd({'A': (0, 3.2), 'B': (1.8, 3.2), 'C': (2.6, 3.2), 'D': (3.8, 3.6), 'X': (0, 0.6), 'W': (5.2, 0.6)},
+                  [('seg', 'A', 'B'), ('seg', 'C', 'D'), ('ray', 'X', 'W')], h=250,
+                  desc='Two segments at the top, AB (horizontal) and CD (slanting up), and below them a horizontal ray from X through W.'),
+               key='Copy AB from X to get Y on the ray, then copy CD from Y (away from X) to get Z; XZ = AB + CD.',
+               note=EV + 'an arc of radius AB centered at X, an arc of radius CD centered at the first point, and Z labeled.'),
+          plot(TOOLS + '\nConstruct an isosceles triangle with base PQ whose two legs are each congruent to segment AB.',
+               gd({'A': (0, 3.0), 'B': (2.4, 3.4), 'P': (0.4, 0.4), 'Q': (3.2, 0.4)}, [('seg', 'A', 'B'), ('seg', 'P', 'Q')], h=250,
+                  desc='Segment AB at the top; below it, a horizontal segment PQ that is shorter than twice AB.'),
+               key='Arcs of radius AB centered at P and at Q meet at R; triangle PQR has PR = QR = AB.',
+               note=EV + 'two arcs with the compass set to AB, centered at P and Q, their crossing R, and the legs drawn.'),
       ],
       back=[
           B('Compare and measure lengths', '2.MD.A.1', [
@@ -65,7 +78,8 @@ SETS = [
             why=why('the student does not know why a compass copies lengths.', 'the construction depends on the arc being at a fixed distance.', 'uses the circle definition.')),
           B('Know rays, segments, and their endpoints', 'HSG-CO.A.1', [
               tf('Ray PR starts at P and continues through R without end.', key=True, note='Definition of a ray.'),
-              sa('Q is on ray PR with PQ = 5. Must Q be between P and R?', 'Answer:', key='No. It is between P and R only if PR > 5; otherwise R is between P and Q.', note='Any equivalent answer.'),
+              sa('Q is on ray PR with PQ = 5. Must Q be between P and R? Describe all the cases.', 'Answer:',
+                 key='No. If PR > 5, Q is between P and R; if PR = 5, Q is R; if PR < 5, R is between P and Q.', note='Form required: all three cases.'),
               mc('Segment AB has endpoints', ['A and B', 'only A', 'only B', 'none'], note='A segment has two endpoints.'),
               tf('A point on ray PR can be on the opposite side of P from R.', key=False, note='The ray goes only from P toward R.'),
               sa('Name the endpoint of ray PR.', 'Endpoint:', key='P', note='Any equivalent form.'),
@@ -101,6 +115,87 @@ SETS = [
       ], prog='same-course deepening', demand='Reason about existence: decide when a construction from given lengths is possible, and construct sums and differences.',
         builds='Builds on FORWARD 1: asks when the triangle construction succeeds and extends copying to sums and differences.')),
 
+    # ------------------------------------------------------------------ 102. constructions with other tools
+    S('HSG-CO.D.12', 'Make formal constructions with a variety of tools and methods', num=102,
+      target='Carry out a formal construction with a tool other than compass and straightedge (paper folding, string, a reflective device, or '
+             'dynamic geometry software) and explain why the method is exact',
+      strand='core', covers=['CO12-tools'],
+      main=[
+          sa('You have no compass, only a straightedge and a strip of paper. Describe how to copy segment AB onto line ℓ starting at point C, and explain why '
+             'the copy is exact.', 'Method:',
+             key='Lay the strip along AB and mark the positions of A and B on its edge. Move the strip to ℓ, put the A-mark on C along ℓ, and mark the point at '
+                 'the B-mark: that is D. The strip carries the same length without measuring, so CD = AB.',
+             note='Any valid method using a strip (or string) to transfer the length without reading a ruler, with the reason.'),
+          sa('Describe how to construct the perpendicular bisector of segment AB by folding paper, and explain why the crease is the perpendicular bisector.', 'Method:',
+             key='Fold so that A lands exactly on B and crease. The fold is a reflection that maps A to B, so by the definition of a reflection the crease is the '
+                 'perpendicular bisector of AB.',
+             note='Any equivalent method and reason (the fold matches A onto B; a reflection line is the perpendicular bisector of PP′).'),
+          sa('Describe how to bisect an angle drawn on paper by folding, and explain why the crease bisects the angle.', 'Method:',
+             key='Fold through the vertex so that one side lies exactly on the other side. The fold is a reflection that maps one side onto the other and fixes '
+                 'the vertex, so it makes two congruent angles.',
+             note='Any equivalent method and reason.'),
+          sa('You have a pencil, a pin, and a piece of string, but no compass. Describe how to construct an equilateral triangle on segment AB, and explain why it works.',
+             'Method:',
+             key='Tie the string to the pin so the length from pin to pencil is AB. Pin it at A and draw an arc; pin it at B and draw an arc; the arcs cross at C. '
+                 'AC = BC = AB because the string length did not change.',
+             note='Any valid string method that keeps one fixed length, with the reason.'),
+          sa('In dynamic geometry software, describe how to construct the line through P parallel to line ℓ so that it stays parallel when P or ℓ is dragged, '
+             'and explain why a line drawn "by eye" is not a construction.', 'Method:',
+             key='Use the parallel-line tool (or construct a perpendicular to ℓ through P, then a perpendicular to that line at P). The software keeps the defining '
+                 'relationship when points move; a line placed by eye is not tied to ℓ and stops being parallel when anything is dragged.',
+             note='Any valid software construction based on a defining relationship, and the drag-test reason.'),
+      ],
+      back=[
+          B('Congruent segments have equal lengths', '2.MD.A.1', [
+              sa('Segment PQ is 4.5 cm and segment RS is 45 mm. Are they congruent? Explain.', 'Answer:', key='Yes: 45 mm = 4.5 cm, so the lengths are equal.', note='Any equivalent answer with the unit conversion.'),
+              tf('A strip of paper can carry a length from one place to another without a ruler.', key=True, note='Mark the two ends on the strip.'),
+              mc('Which of these can carry a length from one segment to another without a ruler?', ['A folded paper strip marked at both ends', 'A protractor', 'A calculator', 'A thermometer'], note='The marks keep a fixed length.'),
+              sa('A string is cut to the length of segment AB. It is laid along line ℓ from C. How long is the segment it marks?', 'Answer:', key='AB (the same length)', note='Any equivalent answer.'),
+              tf('Two segments with different lengths can be congruent if they are drawn with the same tool.', key=False, note='Congruent segments have equal lengths, whatever tool is used.'),
+          ], align='supporting',
+            why=why('the student does not see that a length can be carried without measuring.', 'every alternative tool carries a fixed length.', 'compares and transfers lengths.')),
+          B('A reflection maps a point to its mirror image', '8.G.A.1', [
+              tf('Folding paper along a line matches each point with its reflection across the fold.', key=True, note='The fold line is the mirror.'),
+              sa('A paper is folded so that point A lands on point B. What is the fold line, in relation to segment AB?', 'Answer:', key='The perpendicular bisector of AB',
+                 note='Any equivalent answer.'),
+              mc('A reflection keeps', ['lengths and angle measures', 'only lengths', 'only angles', 'neither'], note='Rigid motion.'),
+              tf('A point on the fold line moves when the paper is folded.', key=False, note='Points on the fold line stay fixed.'),
+              sa('Folding makes ray BA land on ray BC. What is true of ∠ABD and ∠DBC, where BD is the crease?', 'Answer:', key='They are congruent.', note='Any equivalent answer.'),
+          ], align='supporting',
+            why=why('the student does not see a fold as a reflection.', 'paper-folding constructions are justified by reflections.', 'connects folding with reflection properties.')),
+      ],
+      f1=B('Choose and justify a method for a construction', 'HSG-CO.D.12', [
+          sa('Which tool or method would you use to find the midpoint of a segment drawn on tracing paper, without a compass? Explain why it is exact.', 'Answer:',
+             key='Fold A onto B: the crease is the perpendicular bisector, so it crosses AB at the midpoint.', note='Any valid method with the reason.'),
+          sa('A reflective device (a transparent mirror) is placed on line ℓ, and point P is seen in it. Explain how to use it to locate the reflection of P across ℓ.', 'Answer:',
+             key='Look through the device placed along ℓ and mark the point where the image of P appears behind it; that point is P′, the reflection of P.',
+             note='Any equivalent description.'),
+          sa('Explain why measuring a 60° angle with a protractor is not a formal construction, but stepping a compass around a circle is.', 'Answer:',
+             key='A formal construction uses only the tools\' exact operations (fixed lengths, lines through points), not readings of a scale; the protractor reading is an approximation.',
+             note='Any equivalent explanation.'),
+          sa('Describe a way to construct the perpendicular from P to line ℓ by folding.', 'Method:',
+             key='Fold the paper so that ℓ lands on itself and the crease passes through P; the crease is perpendicular to ℓ.',
+             note='Any valid folding method with ℓ folded onto itself through P.'),
+          sa('In dynamic geometry software, a student constructs a "square" by placing four points by eye. Describe a drag test that shows it is not a constructed square, '
+             'and how to construct one properly.', 'Answer:',
+             key='Drag a vertex: the figure stops being a square. Construct it from a segment with perpendiculars at both ends and circles of radius equal to the side, '
+                 'so it stays a square when dragged.', note='Any valid test and construction.'),
+      ], prog='same-course deepening', demand='Choose among tools and justify why a method is an exact construction.'),
+      f2=B('Locate the circumcenter by folding', 'HSG-C.A.3', [
+          sa('Describe how to find the point equidistant from the three vertices of a paper triangle by folding.', 'Method:',
+             key='Fold each of two vertices onto another (A onto B, then B onto C); the two creases are perpendicular bisectors and cross at the circumcenter.',
+             note='Any valid folding method.'),
+          sa('Why do two creases suffice, without folding the third pair of vertices?', 'Answer:',
+             key='The crossing point is equidistant from A and B and from B and C, so it is equidistant from A and C and lies on the third bisector too.',
+             note='Any equivalent answer.'),
+          tf('The point where the perpendicular-bisector creases of a triangle cross can lie outside the triangle.', key=True, note='For an obtuse triangle.'),
+          mc('Folding vertex A onto vertex B of a triangle gives a crease that is', ['the perpendicular bisector of AB', 'the bisector of ∠C', 'the median from C', 'parallel to AB'],
+             note='The fold reflects A onto B.'),
+          sa('After finding the circumcenter O by folding, how can you draw the circumscribed circle with a pin and string?', 'Answer:',
+             key='Pin the string at O and set its length to OA; draw the circle through A, which also passes through B and C.', note='Any equivalent answer.'),
+      ], prog='cross-standard extension', demand='Use folding and string to locate the circumcenter and draw the circumscribed circle.',
+        builds='Builds on FORWARD 1: the justified folding method is applied twice to a triangle.')),
+
     # ------------------------------------------------------------------ 29. copy an angle
     S('HSG-CO.D.12', 'Construct a copy of an angle',
       target='Construct an angle congruent to a given angle with compass and straightedge', strand='core', covers=['CO12-copyang'],
@@ -114,14 +209,20 @@ SETS = [
                   desc='Angle XYZ with vertex Y (about 70°). To the right, a horizontal line m with point Q on it.'),
                key='Same steps as copying an angle: arcs of the same radius at Y and Q, then the chord length transferred; the new ray from Q opens upward.',
                note=EV + 'equal-radius arcs at Y and Q and the transferred chord arc.'),
-          sa('Write the steps to copy ∠ABC so that its vertex is at P and one side is ray PR.', 'Steps:',
-             key='1. Arc centered at B crossing BA at D and BC at E. 2. Same arc centered at P crossing ray PR at F. 3. Set the compass to DE. 4. Arc centered at F crossing the second arc at G. 5. Draw ray PG.',
-             note='Any equivalent steps with all five actions.'),
+          plot(TOOLS + '\nConstruct an angle with vertex P and one side ray PR that is congruent to ∠ABC, opening BELOW ray PR.', ANG,
+               key='Equal-radius arcs at B and at P, the chord DE transferred from F on the lower side, and ray PG drawn below ray PR.',
+               note=EV + 'the arc at B, the same-radius arc at P, the chord arc centered on ray PR, and the new ray below PR.'),
           plot(TOOLS + '\nConstruct an angle at P on ray PR whose measure is twice m∠ABC.', ANG,
                key='Copy ∠ABC onto ray PR to get ray PG, then copy ∠ABC again onto ray PG (on the other side from R) to get ray PH; ∠RPH = 2∠ABC.',
                note=EV + 'two complete angle copies sharing ray PG.'),
-          tf('When copying an angle, the first arcs at B and at P must have the same radius.', key=True,
-             note='The chord length DE transfers the angle only if the two arcs have equal radii.'),
+          plot(TOOLS + '\nConstruct triangle DEF with ∠D ≅ ∠K, DE = s, and DF = t.',
+               gd({'K': (0, 2.6), 'J': (2.6, 2.6), 'L': (1.3, 4.0), 'S1': (3.6, 3.6), 'S2': (5.6, 3.6), 'T1': (3.6, 2.8), 'T2': (5.0, 2.8), 'D': (0, 0), 'X': (5.4, 0)},
+                  [('ray', 'K', 'J'), ('ray', 'K', 'L'), ('ang', 'K', 'J', 'L'), ('seg', 'S1', 'S2'), ('seg', 'T1', 'T2'), ('ray', 'D', 'X'),
+                   ('text', (5.9, 3.6), 's'), ('text', (5.3, 2.8), 't')],
+                  h=280, nolabel=('J', 'L', 'S1', 'S2', 'T1', 'T2', 'X'), nodot=('J', 'L', 'S1', 'S2', 'T1', 'T2', 'X'),
+                  desc='At the top left, an angle with vertex K (about 45°). To its right, two segments labeled s (longer) and t (shorter). Below, a horizontal ray starting at point D.'),
+               key='Copy ∠K at D with one side on the ray; copy s along the ray from D to get E; copy t along the other side from D to get F; join E and F.',
+               note=EV + 'the complete angle copy at D and the two segment copies; triangle DEF drawn.'),
       ],
       back=[
           B('Measure and draw angles with a protractor', '4.MD.C.6', [
@@ -133,7 +234,8 @@ SETS = [
           ], align='exact',
             why=why('the student does not know what it means for angles to be congruent.', 'a copy must have the same measure.', 'measures and compares angles.')),
           B('Copy a segment with a compass', 'HSG-CO.D.12', [
-              sa('In copying an angle, which length is transferred with the compass in the fourth step?', 'Answer:', key='The chord DE between the arc crossings on the two sides',
+              sa('To copy ∠ABC to vertex P, an arc centered at B crosses BA at D and BC at E, and the same arc centered at P crosses ray PR at F. Which length is set on '
+                 'the compass next, to locate the second side?', 'Answer:', key='DE, the chord between the two arc crossings',
                  note='Any equivalent description.'),
               tf('To copy a length, set the compass to the length and do not change it.', key=True, note='Fixed opening.'),
               mc('An arc centered at F with radius DE crosses another arc at G. What is FG?', ['DE', 'BD', 'PF', 'Half of DE'], note='G is on the circle about F with radius DE.'),
@@ -154,12 +256,21 @@ SETS = [
           proof('In copying ∠ABC to ∠FPG, BD = BE = PF = PG (same arc radius) and DE = FG (same compass setting). Prove that ∠DBE ≅ ∠FPG.',
                 method='Prove △DBE ≅ △FPG by SSS, then use corresponding angles.', key='∠DBE ≅ ∠FPG',
                 note='Any valid proof. Essential: BD = PF, BE = PG, DE = FG (construction); SSS; corresponding angles ∠DBE and ∠FPG.'),
-          sa('Which congruence criterion explains the angle-copy construction?', 'Criterion:', key='SSS', note='Any equivalent form.'),
-          tf('The angle copy would fail if the second arc used a different radius than the first.', key=True, note='Then the triangles would not have matching sides.'),
-          mc('Which three pairs of segments are congruent in the angle-copy construction?', ['BD and PF, BE and PG, DE and FG', 'BD and DE, PF and FG, BE and PG',
-                                                                                             'BA and PR, BC and PG, AC and RG', 'Only DE and FG'],
-             note='Two radii and the chord.'),
-          sa('Why does the construction not need to measure the angle with a protractor?', 'Answer:', key='SSS guarantees the triangles, and so the angles, are congruent.', note='Any equivalent answer.'),
+          proof('∠XYZ is copied to vertex Q, opening downward: an arc of radius r centered at Y meets the sides at U and V, the same arc centered at Q meets the given ray at '
+                'U′, and an arc of radius UV centered at U′ meets it at V′. Prove that ∠U′QV′ ≅ ∠XYZ.',
+                method='Name the three pairs of equal segments, then use SSS.', key='∠U′QV′ ≅ ∠UYV, which is ∠XYZ.',
+                note='Any valid proof. Essential: YU = QU′ = r, YV = QV′ = r, UV = U′V′ (construction); △UYV ≅ △U′QV′ (SSS); corresponding angles.'),
+          proof('∠ABC is copied twice at P: first onto ray PR to give ray PG, then onto ray PG (on the side away from R) to give ray PH. Prove that m∠RPH = 2 · m∠ABC.',
+                method='Use the justified copy twice and the angle addition postulate.', key='m∠RPH = m∠RPG + m∠GPH = 2m∠ABC',
+                note='Any valid proof. Essential: each copy is congruent to ∠ABC (SSS justification); G is in the interior of ∠RPH, so the measures add.'),
+          sa('In copying ∠ABC to P, a student keeps the arc radius but sets the compass to BD (a radius) instead of the chord DE for the last arc. Which step of the '
+             'SSS justification fails, and what goes wrong with the copy?', 'Answer:',
+             key='The third pair of sides is no longer DE = FG, so SSS does not apply; the new ray makes a 60° angle (an equilateral triangle) instead of ∠ABC unless ∠ABC is 60°.',
+             note='Any equivalent explanation that names the missing side equality.'),
+          proof('Explain why the angle-copy construction works using a rigid motion instead of SSS: there is a rigid motion taking B to P and ray BC onto ray PR.',
+                method='Follow D, E, F, G under the rigid motion and use the fact that two circles meet in at most one point on each side of a line.',
+                key='The motion sends E to F (same radius on ray PR) and D to the point on the arc at P that is DE from F on the chosen side, which is G; so ∠ABC → ∠FPG.',
+                note='Any valid explanation. Essential: rigid motions keep the distances BD, BE, DE; the image of D is on the arc at P and DE from F; on one side of line PR that point is G.'),
       ], prog='cross-standard extension', demand='Prove that the construction is correct, using a congruence criterion.'),
       f2=B('Use angle copying to construct a parallel line', 'HSG-CO.D.12', [
           plot(TOOLS + '\nConstruct the line through P parallel to line ℓ by copying an angle.',
@@ -213,13 +324,13 @@ SETS += [
                   desc='Points A and B above a horizontal line ℓ.'),
                key='Construct the perpendicular bisector of AB; the point P where it meets ℓ is equidistant from A and B.',
                note=EV + 'the full perpendicular bisector construction for AB and its intersection with ℓ marked.'),
-          sa('Write the steps for constructing the perpendicular bisector of segment AB.', 'Steps:',
-             key='1. Open the compass to more than half of AB. 2. Draw arcs centered at A above and below AB. 3. With the same opening, draw arcs centered at B crossing the first arcs. '
-                 '4. Draw the line through the two crossing points.',
-             note='Any equivalent steps. Essential: the same opening for both centers, more than half of AB, and the line through both crossings.'),
-          sa('Describe how to find the perpendicular bisector of segment AB by folding paper.', 'Method:',
-             key='Fold the paper so that A lands exactly on B and crease it; the crease is the perpendicular bisector of AB.',
-             note='Any equivalent description (the fold matches A onto B).'),
+          plot(TOOLS + '\nConstruct the perpendicular bisector of the short vertical segment UV.',
+               gd({'U': (0, 0), 'V': (0, 1.6)}, [('seg', 'U', 'V')], h=250, desc='A short vertical segment UV.'),
+               key='Equal arcs (radius more than half of UV) centered at U and V cross on the left and right; the horizontal line through the crossings bisects UV.',
+               note=EV + 'two equal-radius arcs from each endpoint, the two crossings, and the line through them.'),
+          plot(TOOLS + '\nDivide segment AB into four congruent parts.', seg_fig((0, 0), (4.6, 0.8), desc='Segment AB, slanting slightly upward.'),
+               key='Bisect AB at M; then bisect AM and MB; the three points cut AB into four equal parts.',
+               note=EV + 'three perpendicular bisector constructions (for AB, AM, and MB).'),
       ],
       back=[
           B('Points equidistant from A and B lie on the perpendicular bisector', 'HSG-CO.C.9', [
@@ -297,11 +408,14 @@ SETS += [
                gd({'A': (0, 0)}, [('line', (-2.5, 0), (3, 0)), ('text', (3.4, 0.3), 'ℓ')], h=260, desc='Horizontal line ℓ with point A on it.'),
                key='Construct the perpendicular to ℓ at A (bisect the straight angle), then bisect one of the right angles.',
                note=EV + 'the perpendicular construction at A and the angle bisector construction.'),
-          sa('Write the steps for bisecting ∠ABC with compass and straightedge.', 'Steps:',
-             key='1. Arc centered at B crossing BA at X and BC at Y. 2. With a fixed opening, arcs centered at X and at Y crossing at Z. 3. Draw ray BZ.',
-             note='Any equivalent steps. Essential: equal radii from X and Y.'),
-          sa('Describe how to bisect an angle drawn on paper by folding.', 'Method:', key='Fold so that one side of the angle lies exactly on the other side, with the fold through the vertex; the crease is the bisector.',
-             note='Any equivalent description.'),
+          plot(TOOLS + '\nConstruct the bisector of the narrow angle ∠KLM.',
+               gd({'K': (3.6, 1.6), 'L': (0, 0), 'M': (3.8, 0)}, [('ray', 'L', 'K'), ('ray', 'L', 'M'), ('ang', 'L', 'M', 'K')], h=250,
+                  desc='A narrow angle KLM (about 25°) with vertex L at the left; ray LM is horizontal.'),
+               key='Arc centered at L crosses both sides; equal arcs from those points cross inside the angle; ray from L through the crossing.',
+               note=EV + 'the arc at L, the two equal arcs, and the bisector ray.'),
+          plot(TOOLS + '\nConstruct a ray QS inside ∠PQR so that m∠RQS = ¼ m∠PQR.', angle_fig(),
+               key='Bisect ∠PQR with ray QT, then bisect ∠TQR with ray QS.',
+               note=EV + 'two complete angle bisector constructions, the second inside the half next to ray QR.'),
       ],
       back=[
           B('Know the definition of an angle bisector', 'HSG-CO.A.1', [
@@ -315,8 +429,10 @@ SETS += [
           B('Prove triangles congruent with SSS', 'HSG-CO.B.8', [
               sa('Two triangles share a side and have two more pairs of congruent sides. Which criterion?', 'Criterion:', key='SSS', note='Any equivalent form.'),
               tf('SSS guarantees that corresponding angles are congruent.', key=True, note='Congruent triangles.'),
-              mc('In the bisector construction, which triangles are congruent?', ['△BXZ and △BYZ', '△ABC and △XYZ', '△BXY and △XYZ', 'None'], note='BX = BY, XZ = YZ, BZ shared.'),
-              sa('After △BXZ ≅ △BYZ, which angle is congruent to ∠XBZ?', 'Angle:', key='∠YBZ', note='Any equivalent form.'),
+              mc('To bisect ∠ABC, an arc centered at B crosses BA at X and BC at Y, and equal arcs centered at X and Y meet at Z. Which triangles are congruent?',
+                 ['△BXZ and △BYZ', '△ABC and △XYZ', '△BXY and △XYZ', 'None'], note='BX = BY, XZ = YZ, BZ shared.'),
+              sa('In the angle-bisector construction for ∠ABC (arc at B meeting the sides at X and Y, equal arcs from X and Y meeting at Z), △BXZ ≅ △BYZ. Which angle is congruent to ∠XBZ?',
+             'Angle:', key='∠YBZ', note='Any equivalent form.'),
               tf('SSS requires knowing one angle.', key=False, note='Only three sides.'),
           ], align='exact',
             why=why('the student cannot see why the construction works.', 'SSS is the reason.', 'applies SSS in the figure.')),
@@ -370,11 +486,15 @@ SETS += [
                gd({'P': (0, 2.4)}, [('line', (-2.4, -0.8), (3, 1.4)), ('text', (3.4, 1.7), 'm')], h=260, desc='A slanted line m and point P above it.'),
                key='Same method as for a point not on the line: arc from P meets m twice, equal arcs from those points meet, and the line through P and the crossing.',
                note=EV + 'all arcs and the perpendicular line.'),
-          sa('Write the steps for constructing the perpendicular from a point P not on line ℓ.', 'Steps:',
-             key='1. Arc centered at P crossing ℓ at A and B. 2. Equal arcs centered at A and B (radius more than half of AB) meeting at Q on the other side. 3. Draw line PQ.',
-             note='Any equivalent steps.'),
-          sa('Explain why the perpendicular construction from a point P not on ℓ is really a perpendicular bisector construction.', 'Explanation:',
-             key='P is equidistant from A and B (same arc), and so is Q; so line PQ is the perpendicular bisector of AB, which is perpendicular to ℓ.', note='Any equivalent explanation.'),
+          plot(TOOLS + '\nConstruct the line perpendicular to the slanted line m at the point P on m.',
+               gd({'P': (0.4, 0.2)}, [('line', (-2.4, -0.8), (3.2, 1.07)), ('text', (3.6, 1.35), 'm')], h=260, desc='A slanted line m rising to the right, with point P on it.'),
+               key='Arcs centered at P mark two points on m equally far from P; the perpendicular bisector of those two points passes through P.',
+               note=EV + 'the two equal marks on m and the perpendicular bisector arcs, with the line drawn through P.'),
+          plot(TOOLS + '\nConstruct a right triangle whose legs are congruent to segments a and b.',
+               gd({}, [('seg', (0, 3), (3, 3)), ('seg', (0, 2), (1.8, 2)), ('text', (3.3, 3), 'a'), ('text', (2.1, 2), 'b'), ('ray', (0, 0.4), (5, 0.4))], h=250,
+                  desc='Segment a (longer) and segment b (shorter) at the top, and a horizontal ray below them.'),
+               key='Copy a onto the ray as XY; construct the perpendicular to the ray at X; copy b onto it as XZ; join Y and Z.',
+               note=EV + 'the copy of a, the perpendicular construction at X, the copy of b, and the hypotenuse.'),
       ],
       back=[
           B('Know the definition of perpendicular lines', 'HSG-CO.A.1', [
@@ -415,11 +535,14 @@ SETS += [
              note='It meets the hypotenuse between its endpoints.'),
       ], prog='same-course deepening', demand='Use the perpendicular construction in a triangle (altitudes, including outside the triangle).'),
       f2=B('Construct a square on a given segment', 'HSG-CO.D.12', [
-          plot(TOOLS + '\nConstruct a square with side AB.', seg_fig((0, 0), (2.4, 0), desc='Horizontal segment AB.'),
-               key='Construct perpendiculars to AB at A and at B; copy AB onto each to get D and C; join C and D.',
-               note=EV + 'two perpendicular constructions and two segment copies.'),
-          sa('A square on segment AB is constructed by drawing perpendiculars to AB at A and at B and copying AB onto each. Explain why the figure is a square.', 'Answer:', key='It has four right angles (perpendiculars, and the fourth by the angle sum) and four sides equal to AB.',
-             note='Any valid explanation.'),
+          plot(TOOLS + '\nConstruct a square with side AB, above AB.', seg_fig((0, 0), (2.4, 0), desc='Horizontal segment AB.'),
+               key='Construct perpendiculars to AB at A and at B; copy AB onto each, on the SAME side of AB (above it), to get D and C; join C and D.',
+               note=EV + 'two perpendicular constructions and two segment copies on the same side of AB. Copies on opposite sides give a crossed figure, not a square.'),
+          sa('A square on segment AB is constructed by drawing perpendiculars to AB at A and at B and copying AB onto each, on the same side of line AB, to get D '
+             '(from A) and C (from B). Explain why ABCD is a square, and why the two copies must be on the same side of AB.', 'Answer:',
+             key='AD ∥ BC (both ⊥ AB) and AD = BC, so ABCD is a parallelogram; it has a right angle at A, so it is a rectangle; AB = AD, so all sides are equal: a square. '
+                 'If D and C were on opposite sides, segment DC would cross AB and ABCD would not be a quadrilateral with these sides.',
+             note='Any valid explanation with both parts.'),
           tf('A quadrilateral with four congruent sides is always a square.', key=False, note='A rhombus need not have right angles.'),
           mc('To construct a rectangle 2AB long and AB wide, which additional step is needed?', ['Copy AB twice along the base', 'Bisect AB', 'Construct a 60° angle', 'Draw a circle through A and B'],
              note='The base must be doubled.'),
@@ -443,12 +566,16 @@ SETS += [
           plot(TOOLS + '\nConstruct the line through P parallel to ℓ using two perpendiculars.',
                gd({'P': (0.4, 2.1)}, [('line', (-2.4, 0), (3.2, 0)), ('text', (3.6, 0.3), 'ℓ')], h=260, desc='Horizontal line ℓ and point P above it.'),
                key='Construct the perpendicular k from P to ℓ, then the perpendicular to k at P; it is parallel to ℓ.', note=EV + 'two complete perpendicular constructions.'),
-          sa('Write the steps for constructing the line through P parallel to line ℓ by copying an angle.', 'Steps:',
-             key='1. Draw a line through P crossing ℓ at A. 2. Copy the angle between ℓ and line AP at A to vertex P, on the same side, using AP as a side. 3. Extend the new side into a line.',
-             note='Any equivalent steps.'),
-          mc('Why is the line constructed by copying the corresponding angle parallel to ℓ?', ['Congruent corresponding angles make the lines parallel', 'It looks parallel',
-                                                                                              'It passes through P', 'It is perpendicular to the transversal'],
-             note='Converse of the corresponding angles theorem.'),
+          plot(TOOLS + '\nConstruct the line through P parallel to line ℓ by copying an ALTERNATE INTERIOR angle.',
+               gd({'P': (-0.6, 2.0), 'A': (1.6, 0)}, [('line', (-2.6, 0), (3.4, 0)), ('line', 'A', 'P', {'ext': 1}), ('text', (3.8, 0.3), 'ℓ')], h=260,
+                  desc='Horizontal line ℓ, point A on it, point P above and to the left, and the line through A and P.'),
+               key='Copy the angle between ℓ and line AP at A to vertex P, on the opposite side of line AP (alternate interior position); the new side through P is parallel to ℓ.',
+               note=EV + 'a complete angle copy at P in the alternate interior position and the line drawn.'),
+          plot(TOOLS + '\nConstruct parallelogram ABCD with sides AB and AD.',
+               gd({'A': (0, 0), 'B': (3.2, 0), 'D': (1.0, 1.8)}, [('seg', 'A', 'B'), ('seg', 'A', 'D')], h=250,
+                  desc='Segments AB (horizontal) and AD (rising to the upper right) meeting at A.'),
+               key='Construct the line through D parallel to AB and the line through B parallel to AD; they meet at C.',
+               note=EV + 'two parallel-line constructions (angle copies or two perpendiculars) and the point C labeled.'),
       ],
       back=[
           B('Copy an angle with compass and straightedge', 'HSG-CO.D.12', [
@@ -474,7 +601,7 @@ SETS += [
               mc('Which letter has parallel segments?', ['H', 'V', 'X', 'A'], note='H\'s two uprights.'),
               sa('Two railroad rails stay the same distance apart. What are they modeling?', 'Answer:', key='Parallel lines', note='Any equivalent answer.'),
               tf('Lines that cross are parallel.', key=False, note='Parallel lines never meet.'),
-              sa('How many lines through a point are parallel to a given line (in a plane)?', 'Number:', key='1', note='Parallel postulate.'),
+              sa('In a plane, how many lines through a point NOT on a given line are parallel to that line?', 'Number:', key='1', note='Parallel postulate.'),
           ], align='exact',
             why=why('the student cannot recognize the goal.', 'the result must never meet ℓ.', 'identifies parallel lines.')),
       ],
@@ -515,12 +642,12 @@ SETS += [
           plot(TOOLS + '\nConstruct an equilateral triangle inscribed in the circle using a diameter: draw diameter AD, then an arc centered at D with radius DO.',
                gd({'O': (0, 0), 'A': (-2.2, 0), 'D': (2.2, 0)}, [('circle', 'O', 2.2), ('seg', 'A', 'D')], h=270, lab={'O': 's'}, desc='A circle with center O and diameter AD (horizontal).'),
                key='The arc centered at D with radius DO meets the circle at B and C; triangle ABC is equilateral.', note=EV + 'the arc at D and the triangle ABC.'),
-          sa('Write the steps for inscribing an equilateral triangle in a circle with center O.', 'Steps:',
-             key='1. Mark A on the circle. 2. With the compass set to the radius, mark successive points around the circle (6 in all). 3. Join A to the 2nd and 4th points, and those to each other.',
-             note='Any valid set of steps.'),
-          mc('When a compass set to the radius of a circle is stepped around the circle, why does the radius fit exactly six times?', ['Each step makes an equilateral triangle with the center, a 60° central angle',
-                                                                                                         'The circle has six parts', 'The compass is 6 cm', 'Any length fits six times'],
-             note='Six 60° angles make 360°.'),
+          plot(TOOLS + '\nConstruct an equilateral triangle inscribed in the circle with one vertex at the top point T.', circle_top(),
+               key='Step the radius around the circle from T to mark six points; join T to the 2nd and 4th points.',
+               note=EV + 'stepping arcs from T and the triangle joining alternate points.'),
+          plot(TOOLS + '\nThe center of this circle is not marked. Construct an equilateral triangle inscribed in it.', circle_nc(),
+               key='Draw two chords and construct their perpendicular bisectors; they meet at the center O; then step the radius around the circle and join alternate points.',
+               note=EV + 'two perpendicular bisector constructions locating O, the compass set to the radius, and the triangle.'),
       ],
       back=[
           B('Central angles of a regular polygon', 'HSG-CO.A.3', [
@@ -554,11 +681,20 @@ SETS += [
                 method='Show each central angle between consecutive marks is 60°, so AOC, COE, EOA are each 120°, then use congruent triangles (SAS).', key='AC = CE = EA',
                 note='Any valid proof. Essential: each small triangle (O, two consecutive marks) is equilateral, so each central angle is 60°; ∠AOC = ∠COE = ∠EOA = 120°; '
                      'triangles AOC, COE, EOA are congruent by SAS (radii); so AC = CE = EA.'),
-          sa('An equilateral triangle is inscribed in a circle of radius 6. Find its side length.', 'Side:', key='6√3', note='Form required: exact value. Side = r√3.'),
-          tf('Congruent central angles cut off congruent chords.', key=True, note='SAS with radii.'),
-          mc('Each angle of the inscribed triangle ACE intercepts an arc (not containing its vertex) of', ['120°', '240°', '60°', '180°'],
-             note='Each 60° inscribed angle intercepts an arc twice its measure, 120°.'),
-          sa('Find the area of an equilateral triangle inscribed in a circle of radius 2.', 'Area:', key='3√3', note='Form required: exact. Side 2√3; area (√3/4)(12).'),
+          proof('A circle has center O and diameter AD. An arc centered at D with radius DO meets the circle at B and C. Prove that triangle ABC is equilateral.',
+                method='Show △DOB and △DOC are equilateral, find the central angles, and use SAS (or inscribed angles).', key='AB = BC = CA',
+                note='Any valid proof. Essential: DB = DO = OB, so △DOB is equilateral and ∠DOB = 60°; likewise ∠DOC = 60°; so ∠BOC = 120° and ∠AOB = ∠AOC = 180° - 60° = 120°; '
+                     'SAS with radii gives AB = BC = CA.'),
+          proof('Explain why stepping a compass set to the radius around a circle returns exactly to the starting point after six steps.',
+                method='Use the equilateral triangles formed with the center.', key='Each step makes a 60° central angle, and 6 × 60° = 360°.',
+                note='Any valid explanation. Essential: each chord equals the radius, so the triangle with the center is equilateral (60° at O); six steps fill 360°.'),
+          proof('In the stepped construction, points A, B, C, D, E, F lie on a circle with center O, each 60° from the next. Prove that ∠CAE = 60°.',
+                method='Use the inscribed angle theorem (or the isosceles triangles AOC and AOE).', key='m∠CAE = 60°',
+                note='Any valid proof. Essential: arc CE (not containing A) measures 120°, and an inscribed angle is half its arc. Alternative: ∠OAC = ∠OAE = 30° from isosceles triangles with 120° apex.'),
+          sa('Ana inscribes a triangle by marking points every 120° around the center with a protractor. Explain why her triangle is equilateral, and why her method is not a '
+             'compass-and-straightedge construction.', 'Answer:',
+             key='Equal central angles of 120° cut off equal chords (SAS with radii), so the sides are equal. Measuring with a protractor is not one of the allowed construction tools.',
+             note='Any equivalent explanation with both parts.'),
       ], prog='cross-standard extension', demand='Prove that the construction produces an equilateral triangle, using circle relationships.'),
       f2=B('Construct a regular dodecagon by bisecting arcs', 'HSG-CO.D.13', [
           plot(TOOLS + '\nConstruct a regular 12-sided polygon inscribed in the circle.', circle_fig(),
@@ -585,11 +721,14 @@ SETS += [
                   desc='A circle with center O and a horizontal line ℓ below it.'),
                key='Construct the perpendicular from O to ℓ (one diameter); bisect the right angles at O to get diagonals at 45°; their endpoints form a square with sides parallel to ℓ.',
                note=EV + 'the perpendicular, the angle bisectors, and the square. Accept any valid method.'),
-          sa('Write the steps for inscribing a square in a circle with center O.', 'Steps:',
-             key='1. Draw a diameter AC. 2. Construct the perpendicular bisector of AC, meeting the circle at B and D. 3. Join A, B, C, D in order.', note='Any valid steps.'),
-          mc('Which property of a square\'s diagonals does the construction use?', ['They are congruent, perpendicular, and bisect each other', 'They are parallel',
-                                                                                   'They are equal to the sides', 'They meet outside the square'],
-             note='Two perpendicular diameters have all three properties.'),
+          plot(TOOLS + '\nThe center of this circle is not marked. Construct a square inscribed in it.', circle_nc(),
+               key='Locate the center O with the perpendicular bisectors of two chords; draw a diameter through O; construct the perpendicular diameter; join the four endpoints.',
+               note=EV + 'the center construction, two perpendicular diameters, and the square.'),
+          plot(TOOLS + '\nConstruct a square inscribed in the circle so that one of its diagonals lies along line k.',
+               gd({'O': (0, 0)}, [('circle', 'O', 2.0), ('line', (-2.6, -1.3), (2.6, 1.3)), ('text', (3.0, 1.6), 'k')], h=280, lab={'O': 's'},
+                  desc='A circle with center O and a slanted line k through O.'),
+               key='Line k meets the circle at A and C; construct the perpendicular to k at O, meeting the circle at B and D; join ABCD.',
+               note=EV + 'the perpendicular construction at O and the square.'),
       ],
       back=[
           B('Construct a perpendicular bisector', 'HSG-CO.D.12', [
@@ -602,7 +741,8 @@ SETS += [
             why=why('the student cannot create the second diameter.', 'the square comes from two perpendicular diameters.', 'uses the perpendicular bisector construction.')),
           B('Diagonals of a square', 'HSG-CO.C.11', [
               tf('The diagonals of a square are congruent and perpendicular.', key=True, note='A square is a rectangle and a rhombus.'),
-              mc('A quadrilateral\'s diagonals are congruent, perpendicular, and bisect each other. It is a', ['square', 'rhombus that is not a square', 'kite', 'trapezoid'], note='All three properties.'),
+              mc('A quadrilateral\'s diagonals are congruent, perpendicular, and bisect each other. What is its most specific name?',
+                 ['square', 'rhombus that is not a square', 'kite that is not a rhombus', 'trapezoid'], note='All three properties together give a square.'),
               sa('A square has diagonal 8. Find its side.', 'Side:', key='4√2', note='Form required: exact value.'),
               tf('A rectangle always has perpendicular diagonals.', key=False, note='Only a square does.'),
               sa('The diagonals of a square meet at O. Name the angle between them.', 'Angle:', key='90°', note='Any equivalent form.'),
@@ -649,10 +789,12 @@ SETS += [
           plot(TOOLS + '\nConstruct a regular hexagon inscribed in the circle using diameter AD and arcs centered at A and D with radius equal to the circle\'s radius.',
                gd({'O': (0, 0), 'A': (-2.2, 0), 'D': (2.2, 0)}, [('circle', 'O', 2.2), ('seg', 'A', 'D')], h=270, lab={'O': 's'}, desc='A circle with center O and diameter AD.'),
                key='The arc at A meets the circle at B and F; the arc at D meets it at C and E; join A, B, C, D, E, F.', note=EV + 'the two arcs and the hexagon.'),
-          sa('Write the steps for inscribing a regular hexagon in a circle.', 'Steps:',
-             key='1. Mark a point A on the circle. 2. Keep the compass set to the radius. 3. Mark B on the circle with an arc centered at A, then C from B, and so on, to F. 4. Join the points in order.',
-             note='Any valid steps.'),
-          tf('In the hexagon construction, the compass is set to the diameter of the circle.', key=False, note='It is set to the radius.'),
+          plot(TOOLS + '\nConstruct a regular hexagon inscribed in the circle with one vertex at the top point T.', circle_top(),
+               key='Keep the compass set to the radius and step around the circle from T; join the six points in order.',
+               note=EV + 'all stepping arcs from T and the hexagon.'),
+          plot(TOOLS + '\nThe center of this circle is not marked. Construct a regular hexagon inscribed in it.', circle_nc(),
+               key='Locate the center with the perpendicular bisectors of two chords; set the compass to the radius; step around the circle and join consecutive points.',
+               note=EV + 'the center construction, the radius setting, and the hexagon.'),
       ],
       back=[
           B('Construct an inscribed equilateral triangle', 'HSG-CO.D.13', [
@@ -693,8 +835,8 @@ SETS += [
       f2=B('Use inscribed hexagons to estimate π', 'HSG-GMD.A.1', [
           sa('A regular hexagon is inscribed in a circle of radius r. Compare its perimeter with the circumference. What estimate of π does this give?', 'Answer:',
              key='Perimeter 6r < circumference 2πr, so π > 3.', note='Any equivalent explanation.'),
-          sa('A regular 12-gon inscribed in a circle of radius 1 has perimeter about 6.21. What estimate of π does it give?', 'Estimate:', key='About 3.11 (π > 3.10)',
-             note='Any value 3.10-3.11 with explanation (half the perimeter).'),
+          sa('A regular 12-gon inscribed in a circle of radius 1 has perimeter about 6.212. What estimate of π does it give, to the nearest hundredth?', 'Estimate:', key='About 3.11 (π > 3.10)',
+             note='Rounding to 0.01 required, with the explanation (half the perimeter: 6.212 ÷ 2 = 3.106).'),
           tf('Doubling the number of sides of an inscribed regular polygon makes its perimeter longer than the circumference.', key=False, note='The perimeter gets closer to the circumference but stays shorter (each side is a chord).'),
           mc('Which polygon\'s perimeter is closest to the circumference of its circle?', ['Inscribed regular 96-gon', 'Inscribed regular hexagon', 'Inscribed square', 'Inscribed triangle'],
              note='More sides fit the circle more closely.'),

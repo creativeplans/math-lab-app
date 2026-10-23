@@ -4,7 +4,7 @@
   "id": "GEO",
   "grade": null,
   "course": "Geometry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-23"
  },
  "grade": null,
@@ -29,7 +29,8 @@
    "branch": {
     "kind": "main",
     "strand": "core",
-    "target_skill": "Construct an equilateral triangle inscribed in a given circle"
+    "target_skill": "Construct an equilateral triangle inscribed in a given circle",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -92,15 +93,15 @@
        }
       }
      },
-     "page": 1219,
+     "page": 1412,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Construct an equilateral triangle inscribed in a given circle",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1219,
-     "answer_key_page": 1219
+     "question_page": 1412,
+     "answer_key_page": 1412
     },
     {
      "id": "S34-M-Q2",
@@ -158,15 +159,15 @@
        }
       }
      },
-     "page": 1220,
+     "page": 1413,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Construct an equilateral triangle inscribed in a given circle",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1220,
-     "answer_key_page": 1220
+     "question_page": 1413,
+     "answer_key_page": 1413
     },
     {
      "id": "S34-M-Q3",
@@ -237,15 +238,15 @@
        }
       }
      },
-     "page": 1221,
+     "page": 1414,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Construct an equilateral triangle inscribed in a given circle",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1221,
-     "answer_key_page": 1221
+     "question_page": 1414,
+     "answer_key_page": 1414
     },
     {
      "id": "S34-M-Q4",
@@ -264,29 +265,59 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Write the steps for inscribing an equilateral triangle in a circle with center O.",
-     "prompt_markup": "Write the steps for inscribing an equilateral triangle in a circle with center O.",
+     "type": "plot",
+     "response": "draw on the figure",
+     "prompt": "Compass and straightedge only; leave all arcs. Construct an equilateral triangle inscribed in the circle with one vertex at the top point T.",
+     "prompt_markup": "Compass and straightedge only; leave all arcs.\nConstruct an equilateral triangle inscribed in the circle with one vertex at the top point T.",
      "choices": [],
-     "answer_lines": [
-      "Steps:"
-     ],
+     "answer_lines": [],
      "correct_letter": null,
-     "correct_answer": "1. Mark A on the circle. 2. With the compass set to the radius, mark successive points around the circle (6 in all). 3. Join A to the 2nd and 4th points, and those to each other.",
+     "correct_answer": "Step the radius around the circle from T to mark six points; join T to the 2nd and 4th points.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any valid set of steps.",
-     "figure": null,
-     "page": 1222,
-     "revision": "unchanged",
+     "grading_note": "Grade the construction marks, not only the final figure: stepping arcs from T and the triangle joining alternate points.",
+     "figure": {
+      "svg": "assets/S34-M-Q4.svg",
+      "png": "assets/S34-M-Q4.png",
+      "kind": "gd",
+      "description": "A circle with center O and a point T at the top of the circle.",
+      "blank_for_drawing": true,
+      "data": {
+       "k": "gd",
+       "P": {
+        "O": [
+         0,
+         0
+        ],
+        "T": [
+         0,
+         2.2
+        ]
+       },
+       "items": [
+        [
+         "circle",
+         "O",
+         2.2
+        ]
+       ],
+       "desc": "A circle with center O and a point T at the top of the circle.",
+       "h": 270,
+       "lab": {
+        "O": "sw",
+        "T": "n"
+       }
+      }
+     },
+     "page": 1415,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Construct an equilateral triangle inscribed in a given circle",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1222,
-     "answer_key_page": 1222
+     "question_page": 1415,
+     "answer_key_page": 1415
     },
     {
      "id": "S34-M-Q5",
@@ -305,44 +336,49 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "mc",
-     "response": "select one",
-     "prompt": "When a compass set to the radius of a circle is stepped around the circle, why does the radius fit exactly six times?",
-     "prompt_markup": "When a compass set to the radius of a circle is stepped around the circle, why does the radius fit exactly six times?",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "Any length fits six times"
-      },
-      {
-       "letter": "B",
-       "text": "The compass is 6 cm"
-      },
-      {
-       "letter": "C",
-       "text": "The circle has six parts"
-      },
-      {
-       "letter": "D",
-       "text": "Each step makes an equilateral triangle with the center, a 60° central angle"
-      }
-     ],
+     "type": "plot",
+     "response": "draw on the figure",
+     "prompt": "Compass and straightedge only; leave all arcs. The center of this circle is not marked. Construct an equilateral triangle inscribed in it.",
+     "prompt_markup": "Compass and straightedge only; leave all arcs.\nThe center of this circle is not marked. Construct an equilateral triangle inscribed in it.",
+     "choices": [],
      "answer_lines": [],
-     "correct_letter": "D",
-     "correct_answer": "Each step makes an equilateral triangle with the center, a 60° central angle",
+     "correct_letter": null,
+     "correct_answer": "Draw two chords and construct their perpendicular bisectors; they meet at the center O; then step the radius around the circle and join alternate points.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Six 60° angles make 360°.",
-     "figure": null,
-     "page": 1223,
-     "revision": "unchanged",
+     "grading_note": "Grade the construction marks, not only the final figure: two perpendicular bisector constructions locating O, the compass set to the radius, and the triangle.",
+     "figure": {
+      "svg": "assets/S34-M-Q5.svg",
+      "png": "assets/S34-M-Q5.png",
+      "kind": "gd",
+      "description": "A circle; its center is not marked.",
+      "blank_for_drawing": true,
+      "data": {
+       "k": "gd",
+       "P": {},
+       "items": [
+        [
+         "circle",
+         [
+          0,
+          0
+         ],
+         2.2
+        ]
+       ],
+       "desc": "A circle; its center is not marked.",
+       "h": 270
+      }
+     },
+     "page": 1416,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Construct an equilateral triangle inscribed in a given circle",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1223,
-     "answer_key_page": 1223
+     "question_page": 1416,
+     "answer_key_page": 1416
     }
    ]
   },
@@ -357,7 +393,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student does not see the 120° spacing. Why it matters: the triangle's vertices are equally spaced on the circle. Evidence: uses central angles.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -391,15 +428,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1225,
+     "page": 1418,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Central angles of a regular polygon",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1225,
-     "answer_key_page": 1225
+     "question_page": 1418,
+     "answer_key_page": 1418
     },
     {
      "id": "S34-B1-Q2",
@@ -432,15 +469,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1226,
+     "page": 1419,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Central angles of a regular polygon",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1226,
-     "answer_key_page": 1226
+     "question_page": 1419,
+     "answer_key_page": 1419
     },
     {
      "id": "S34-B1-Q3",
@@ -480,15 +517,15 @@
      "required_method": null,
      "grading_note": "360 ÷ 3.",
      "figure": null,
-     "page": 1227,
+     "page": 1420,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Central angles of a regular polygon",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1227,
-     "answer_key_page": 1227
+     "question_page": 1420,
+     "answer_key_page": 1420
     },
     {
      "id": "S34-B1-Q4",
@@ -536,15 +573,15 @@
      "required_method": null,
      "grading_note": "Every other vertex: 120° apart.",
      "figure": null,
-     "page": 1228,
+     "page": 1421,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Central angles of a regular polygon",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1228,
-     "answer_key_page": 1228
+     "question_page": 1421,
+     "answer_key_page": 1421
     },
     {
      "id": "S34-B1-Q5",
@@ -584,15 +621,15 @@
      "required_method": null,
      "grading_note": "They are 120°.",
      "figure": null,
-     "page": 1229,
+     "page": 1422,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Central angles of a regular polygon",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1229,
-     "answer_key_page": 1229
+     "question_page": 1422,
+     "answer_key_page": 1422
     }
    ]
   },
@@ -607,7 +644,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot step lengths around the circle. Why it matters: the construction transfers the radius. Evidence: uses a fixed compass opening.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -641,15 +679,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 1231,
+     "page": 1424,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Copy a length with a compass",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1231,
-     "answer_key_page": 1231
+     "question_page": 1424,
+     "answer_key_page": 1424
     },
     {
      "id": "S34-B2-Q2",
@@ -689,15 +727,15 @@
      "required_method": null,
      "grading_note": "All chords must be equal.",
      "figure": null,
-     "page": 1232,
+     "page": 1425,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Copy a length with a compass",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1232,
-     "answer_key_page": 1232
+     "question_page": 1425,
+     "answer_key_page": 1425
     },
     {
      "id": "S34-B2-Q3",
@@ -745,15 +783,15 @@
      "required_method": null,
      "grading_note": "All three sides equal the radius.",
      "figure": null,
-     "page": 1233,
+     "page": 1426,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Copy a length with a compass",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1233,
-     "answer_key_page": 1233
+     "question_page": 1426,
+     "answer_key_page": 1426
     },
     {
      "id": "S34-B2-Q4",
@@ -786,15 +824,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1234,
+     "page": 1427,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Copy a length with a compass",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1234,
-     "answer_key_page": 1234
+     "question_page": 1427,
+     "answer_key_page": 1427
     },
     {
      "id": "S34-B2-Q5",
@@ -834,15 +872,15 @@
      "required_method": null,
      "grading_note": "The diameter fits only twice.",
      "figure": null,
-     "page": 1235,
+     "page": 1428,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Copy a length with a compass",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1235,
-     "answer_key_page": 1235
+     "question_page": 1428,
+     "answer_key_page": 1428
     }
    ]
   },
@@ -857,7 +895,8 @@
     "kind": "backward",
     "alignment": "supporting",
     "rationale": "Obstacle: the student does not know what \"inscribed\" requires. Why it matters: every vertex must be on the circle. Evidence: uses circle vocabulary.",
-    "source": "Grade 7"
+    "source": "Grade 7",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -889,15 +928,15 @@
      "required_method": null,
      "grading_note": "Any equivalent definition.",
      "figure": null,
-     "page": 1237,
+     "page": 1430,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Circle vocabulary: center, radius, chord, diameter",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1237,
-     "answer_key_page": 1237
+     "question_page": 1430,
+     "answer_key_page": 1430
     },
     {
      "id": "S34-B3-Q2",
@@ -935,15 +974,15 @@
      "required_method": null,
      "grading_note": "Definition.",
      "figure": null,
-     "page": 1238,
+     "page": 1431,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Circle vocabulary: center, radius, chord, diameter",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1238,
-     "answer_key_page": 1238
+     "question_page": 1431,
+     "answer_key_page": 1431
     },
     {
      "id": "S34-B3-Q3",
@@ -989,15 +1028,15 @@
      "required_method": null,
      "grading_note": "Twice the radius.",
      "figure": null,
-     "page": 1239,
+     "page": 1432,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Circle vocabulary: center, radius, chord, diameter",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1239,
-     "answer_key_page": 1239
+     "question_page": 1432,
+     "answer_key_page": 1432
     },
     {
      "id": "S34-B3-Q4",
@@ -1028,15 +1067,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 1240,
+     "page": 1433,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Circle vocabulary: center, radius, chord, diameter",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1240,
-     "answer_key_page": 1240
+     "question_page": 1433,
+     "answer_key_page": 1433
     },
     {
      "id": "S34-B3-Q5",
@@ -1074,15 +1113,15 @@
      "required_method": null,
      "grading_note": "All vertices are on the circle.",
      "figure": null,
-     "page": 1241,
+     "page": 1434,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Circle vocabulary: center, radius, chord, diameter",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1241,
-     "answer_key_page": 1241
+     "question_page": 1434,
+     "answer_key_page": 1434
     }
    ]
   },
@@ -1098,7 +1137,8 @@
     "progression": "cross-standard extension",
     "connection": "direct",
     "new_demand": "Prove that the construction produces an equilateral triangle, using circle relationships.",
-    "course": "Geometry"
+    "course": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1132,15 +1172,15 @@
      "required_method": "Show each central angle between consecutive marks is 60°, so AOC, COE, EOA are each 120°, then use congruent triangles (SAS).",
      "grading_note": "Any valid proof. Essential: each small triangle (O, two consecutive marks) is equilateral, so each central angle is 60°; ∠AOC = ∠COE = ∠EOA = 120°; triangles AOC, COE, EOA are congruent by SAS (radii); so AC = CE = EA.",
      "figure": null,
-     "page": 1243,
+     "page": 1436,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Justify that the inscribed triangle is equilateral",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1243,
-     "answer_key_page": 1243
+     "question_page": 1436,
+     "answer_key_page": 1436
     },
     {
      "id": "S34-F1-Q2",
@@ -1159,29 +1199,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "An equilateral triangle is inscribed in a circle of radius 6. Find its side length.",
-     "prompt_markup": "An equilateral triangle is inscribed in a circle of radius 6. Find its side length.",
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "A circle has center O and diameter AD. An arc centered at D with radius DO meets the circle at B and C. Prove that triangle ABC is equilateral.",
+     "prompt_markup": "A circle has center O and diameter AD. An arc centered at D with radius DO meets the circle at B and C. Prove that triangle ABC is equilateral.",
      "choices": [],
      "answer_lines": [
-      "Side:"
+      "Conclusion:"
      ],
      "correct_letter": null,
-     "correct_answer": "6√3",
+     "correct_answer": "AB = BC = CA",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Form required: exact value. Side = r√3.",
+     "required_method": "Show △DOB and △DOC are equilateral, find the central angles, and use SAS (or inscribed angles).",
+     "grading_note": "Any valid proof. Essential: DB = DO = OB, so △DOB is equilateral and ∠DOB = 60°; likewise ∠DOC = 60°; so ∠BOC = 120° and ∠AOB = ∠AOC = 180° - 60° = 120°; SAS with radii gives AB = BC = CA.",
      "figure": null,
-     "page": 1244,
-     "revision": "unchanged",
+     "page": 1437,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Justify that the inscribed triangle is equilateral",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1244,
-     "answer_key_page": 1244
+     "question_page": 1437,
+     "answer_key_page": 1437
     },
     {
      "id": "S34-F1-Q3",
@@ -1200,36 +1240,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "tf",
-     "response": "select true or false",
-     "prompt": "Congruent central angles cut off congruent chords.",
-     "prompt_markup": "Congruent central angles cut off congruent chords.",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "True"
-      },
-      {
-       "letter": "B",
-       "text": "False"
-      }
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "Explain why stepping a compass set to the radius around a circle returns exactly to the starting point after six steps.",
+     "prompt_markup": "Explain why stepping a compass set to the radius around a circle returns exactly to the starting point after six steps.",
+     "choices": [],
+     "answer_lines": [
+      "Conclusion:"
      ],
-     "answer_lines": [],
-     "correct_letter": "A",
-     "correct_answer": "True",
+     "correct_letter": null,
+     "correct_answer": "Each step makes a 60° central angle, and 6 × 60° = 360°.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "SAS with radii.",
+     "required_method": "Use the equilateral triangles formed with the center.",
+     "grading_note": "Any valid explanation. Essential: each chord equals the radius, so the triangle with the center is equilateral (60° at O); six steps fill 360°.",
      "figure": null,
-     "page": 1245,
-     "revision": "unchanged",
+     "page": 1438,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Justify that the inscribed triangle is equilateral",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1245,
-     "answer_key_page": 1245
+     "question_page": 1438,
+     "answer_key_page": 1438
     },
     {
      "id": "S34-F1-Q4",
@@ -1248,44 +1281,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "mc",
-     "response": "select one",
-     "prompt": "Each angle of the inscribed triangle ACE intercepts an arc (not containing its vertex) of",
-     "prompt_markup": "Each angle of the inscribed triangle ACE intercepts an arc (not containing its vertex) of",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "120°"
-      },
-      {
-       "letter": "B",
-       "text": "240°"
-      },
-      {
-       "letter": "C",
-       "text": "180°"
-      },
-      {
-       "letter": "D",
-       "text": "60°"
-      }
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "In the stepped construction, points A, B, C, D, E, F lie on a circle with center O, each 60° from the next. Prove that ∠CAE = 60°.",
+     "prompt_markup": "In the stepped construction, points A, B, C, D, E, F lie on a circle with center O, each 60° from the next. Prove that ∠CAE = 60°.",
+     "choices": [],
+     "answer_lines": [
+      "Conclusion:"
      ],
-     "answer_lines": [],
-     "correct_letter": "A",
-     "correct_answer": "120°",
+     "correct_letter": null,
+     "correct_answer": "m∠CAE = 60°",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Each 60° inscribed angle intercepts an arc twice its measure, 120°.",
+     "required_method": "Use the inscribed angle theorem (or the isosceles triangles AOC and AOE).",
+     "grading_note": "Any valid proof. Essential: arc CE (not containing A) measures 120°, and an inscribed angle is half its arc. Alternative: ∠OAC = ∠OAE = 30° from isosceles triangles with 120° apex.",
      "figure": null,
-     "page": 1246,
-     "revision": "unchanged",
+     "page": 1439,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Justify that the inscribed triangle is equilateral",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1246,
-     "answer_key_page": 1246
+     "question_page": 1439,
+     "answer_key_page": 1439
     },
     {
      "id": "S34-F1-Q5",
@@ -1306,27 +1324,27 @@
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "Find the area of an equilateral triangle inscribed in a circle of radius 2.",
-     "prompt_markup": "Find the area of an equilateral triangle inscribed in a circle of radius 2.",
+     "prompt": "Ana inscribes a triangle by marking points every 120° around the center with a protractor. Explain why her triangle is equilateral, and why her method is not a compass-and-straightedge construction.",
+     "prompt_markup": "Ana inscribes a triangle by marking points every 120° around the center with a protractor. Explain why her triangle is equilateral, and why her method is not a compass-and-straightedge construction.",
      "choices": [],
      "answer_lines": [
-      "Area:"
+      "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "3√3",
+     "correct_answer": "Equal central angles of 120° cut off equal chords (SAS with radii), so the sides are equal. Measuring with a protractor is not one of the allowed construction tools.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: exact. Side 2√3; area (√3/4)(12).",
+     "grading_note": "Any equivalent explanation with both parts.",
      "figure": null,
-     "page": 1247,
-     "revision": "unchanged",
+     "page": 1440,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Justify that the inscribed triangle is equilateral",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1247,
-     "answer_key_page": 1247
+     "question_page": 1440,
+     "answer_key_page": 1440
     }
    ]
   },
@@ -1343,7 +1361,8 @@
     "connection": "direct",
     "new_demand": "Extend the construction to a new regular polygon by bisecting arcs.",
     "course": "Geometry",
-    "builds_on": "Builds on FORWARD 1: knowing why the 60° steps work, halve them to get more vertices."
+    "builds_on": "Builds on FORWARD 1: knowing why the 60° steps work, halve them to get more vertices.",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1406,15 +1425,15 @@
        }
       }
      },
-     "page": 1249,
+     "page": 1442,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Construct a regular dodecagon by bisecting arcs",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1249,
-     "answer_key_page": 1249
+     "question_page": 1442,
+     "answer_key_page": 1442
     },
     {
      "id": "S34-F2-Q2",
@@ -1447,15 +1466,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1250,
+     "page": 1443,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Construct a regular dodecagon by bisecting arcs",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1250,
-     "answer_key_page": 1250
+     "question_page": 1443,
+     "answer_key_page": 1443
     },
     {
      "id": "S34-F2-Q3",
@@ -1495,15 +1514,15 @@
      "required_method": null,
      "grading_note": "Doubling the vertices gives a regular 12-gon.",
      "figure": null,
-     "page": 1251,
+     "page": 1444,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Construct a regular dodecagon by bisecting arcs",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1251,
-     "answer_key_page": 1251
+     "question_page": 1444,
+     "answer_key_page": 1444
     },
     {
      "id": "S34-F2-Q4",
@@ -1551,15 +1570,15 @@
      "required_method": null,
      "grading_note": "4 → 8.",
      "figure": null,
-     "page": 1252,
+     "page": 1445,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Construct a regular dodecagon by bisecting arcs",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1252,
-     "answer_key_page": 1252
+     "question_page": 1445,
+     "answer_key_page": 1445
     },
     {
      "id": "S34-F2-Q5",
@@ -1592,15 +1611,15 @@
      "required_method": null,
      "grading_note": "3 → 6 → 12.",
      "figure": null,
-     "page": 1253,
+     "page": 1446,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct an equilateral triangle inscribed in a given circle",
      "target_skill": "Construct a regular dodecagon by bisecting arcs",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1253,
-     "answer_key_page": 1253
+     "question_page": 1446,
+     "answer_key_page": 1446
     }
    ]
   }

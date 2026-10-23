@@ -4,17 +4,17 @@
   "id": "GEO",
   "grade": null,
   "course": "Geometry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-23"
  },
  "grade": null,
  "set": 75,
  "set_id": "S75",
  "standard": "HSG-GMD.A.1",
- "title": "Informal arguments for the circumference and area of a circle",
+ "title": "Informal arguments for the circumference of a circle",
  "domain": "Geometric Measurement and Dimension",
  "strand": "core",
- "target_skill": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
+ "target_skill": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
  "covers": [
   "GMD1-circle"
  ],
@@ -23,13 +23,14 @@
    "section": "MAIN",
    "section_code": "M",
    "relation": "main",
-   "skill": "Informal arguments for the circumference and area of a circle",
+   "skill": "Informal arguments for the circumference of a circle",
    "standard": "HSG-GMD.A.1",
    "nearest_related": false,
    "branch": {
     "kind": "main",
     "strand": "core",
-    "target_skill": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle"
+    "target_skill": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -45,254 +46,33 @@
      "standard": "HSG-GMD.A.1",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "Informal arguments for the circumference and area of a circle",
+     "skill": "Informal arguments for the circumference of a circle",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
      "type": "work",
      "response": "write the answer and show the required work",
-     "prompt": "A circle of radius r is cut into many equal sectors, which are rearranged as shown. Explain why this shows that the area of the circle is πr².",
-     "prompt_markup": "A circle of radius r is cut into many equal sectors, which are rearranged as shown. Explain why this shows that the area of the circle is πr².",
+     "prompt": "Regular hexagons are inscribed in and circumscribed about a circle of radius 1. Their perimeters are 6 and 4√3 ≈ 6.93. Explain why this shows that 3 < π < 2√3 ≈ 3.46.",
+     "prompt_markup": "Regular hexagons are inscribed in and circumscribed about a circle of radius 1. Their perimeters are 6 and 4√3 ≈ 6.93. Explain why this shows that 3 < π < 2√3 ≈ 3.46.",
      "choices": [],
      "answer_lines": [
       "Explanation:"
      ],
      "correct_letter": null,
-     "correct_answer": "Area = (half the circumference) × r = πr · r = πr².",
+     "correct_answer": "The circle lies between the two hexagons, so 6 < C < 4√3; with C = 2π this gives 3 < π < 2√3 ≈ 3.46.",
      "drawing_answer": null,
-     "required_method": "Describe the base and height of the rearranged shape and what happens as the number of sectors grows.",
-     "grading_note": "Any valid explanation. Essential: the shape approaches a parallelogram (rectangle); its height approaches r; its base is half the circumference, πr; area = πr · r = πr². Invalid: \"the formula says so\" or measuring one drawing.",
-     "figure": {
-      "svg": "assets/S75-M-Q1.svg",
-      "png": "assets/S75-M-Q1.png",
-      "kind": "gd",
-      "description": "Left: a circle of radius r cut into 8 equal sectors. Right: the 8 sectors rearranged, alternating point-up and point-down, into a shape close to a parallelogram whose base is about half the circumference and whose height is about r.",
-      "blank_for_drawing": false,
-      "data": {
-       "k": "gd",
-       "P": {},
-       "items": [
-        [
-         "sector",
-         [
-          0,
-          0
-         ],
-         1.4,
-         0,
-         45
-        ],
-        [
-         "sector",
-         [
-          0,
-          0
-         ],
-         1.4,
-         45,
-         90
-        ],
-        [
-         "sector",
-         [
-          0,
-          0
-         ],
-         1.4,
-         90,
-         135
-        ],
-        [
-         "sector",
-         [
-          0,
-          0
-         ],
-         1.4,
-         135,
-         180
-        ],
-        [
-         "sector",
-         [
-          0,
-          0
-         ],
-         1.4,
-         180,
-         225
-        ],
-        [
-         "sector",
-         [
-          0,
-          0
-         ],
-         1.4,
-         225,
-         270
-        ],
-        [
-         "sector",
-         [
-          0,
-          0
-         ],
-         1.4,
-         270,
-         315
-        ],
-        [
-         "sector",
-         [
-          0,
-          0
-         ],
-         1.4,
-         315,
-         360
-        ],
-        [
-         "seg",
-         [
-          2.4,
-          0
-         ],
-         [
-          6.8,
-          0
-         ]
-        ],
-        [
-         "seg",
-         [
-          2.4,
-          1.3
-         ],
-         [
-          6.8,
-          1.3
-         ]
-        ],
-        [
-         "seg",
-         [
-          2.4,
-          0
-         ],
-         [
-          2.95,
-          1.3
-         ]
-        ],
-        [
-         "seg",
-         [
-          3.5,
-          0
-         ],
-         [
-          4.050000000000001,
-          1.3
-         ]
-        ],
-        [
-         "seg",
-         [
-          4.6,
-          0
-         ],
-         [
-          5.15,
-          1.3
-         ]
-        ],
-        [
-         "seg",
-         [
-          5.7,
-          0
-         ],
-         [
-          6.25,
-          1.3
-         ]
-        ],
-        [
-         "seg",
-         [
-          2.95,
-          1.3
-         ],
-         [
-          3.5,
-          0
-         ]
-        ],
-        [
-         "seg",
-         [
-          4.050000000000001,
-          1.3
-         ],
-         [
-          4.6,
-          0
-         ]
-        ],
-        [
-         "seg",
-         [
-          5.15,
-          1.3
-         ],
-         [
-          5.7,
-          0
-         ]
-        ],
-        [
-         "seg",
-         [
-          6.25,
-          1.3
-         ],
-         [
-          6.800000000000001,
-          0
-         ]
-        ],
-        [
-         "text",
-         [
-          4.6,
-          -0.35
-         ],
-         "about half the circumference"
-        ],
-        [
-         "text",
-         [
-          7.1,
-          0.65
-         ],
-         "r"
-        ]
-       ],
-       "desc": "Left: a circle of radius r cut into 8 equal sectors. Right: the 8 sectors rearranged, alternating point-up and point-down, into a shape close to a parallelogram whose base is about half the circumference and whose height is about r.",
-       "h": 240,
-       "note": "Not drawn to scale."
-      }
-     },
-     "page": 2754,
-     "revision": "unchanged",
+     "required_method": "Compare the circumference 2π with the two perimeters, then divide by 2.",
+     "grading_note": "Any valid explanation. Essential: the inscribed hexagon is six equilateral triangles of side 1 (perimeter 6); the circumference is between the inner and outer perimeters; C = 2π · 1; divide by 2. Invalid: quoting π ≈ 3.14 as the reason.",
+     "figure": null,
+     "page": 2947,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
-     "target_skill": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
+     "target_skill": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 2754,
-     "answer_key_page": 2754
+     "question_page": 2947,
+     "answer_key_page": 2947
     },
     {
      "id": "S75-M-Q2",
@@ -307,7 +87,7 @@
      "standard": "HSG-GMD.A.1",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "Informal arguments for the circumference and area of a circle",
+     "skill": "Informal arguments for the circumference of a circle",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
@@ -325,15 +105,15 @@
      "required_method": "Use the fact that all circles are similar.",
      "grading_note": "Any valid explanation. Essential: circles are similar (dilation); lengths scale by the same factor k; C₂/d₂ = kC₁/kd₁ = C₁/d₁.",
      "figure": null,
-     "page": 2755,
-     "revision": "unchanged",
+     "page": 2948,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
-     "target_skill": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
+     "target_skill": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 2755,
-     "answer_key_page": 2755
+     "question_page": 2948,
+     "answer_key_page": 2948
     },
     {
      "id": "S75-M-Q3",
@@ -348,48 +128,33 @@
      "standard": "HSG-GMD.A.1",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "Informal arguments for the circumference and area of a circle",
+     "skill": "Informal arguments for the circumference of a circle",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "mc",
-     "response": "select one",
-     "prompt": "A circle of radius r is cut into many equal sectors, which are rearranged, alternating point up and point down, into a near-parallelogram. Its base gets closer and closer to",
-     "prompt_markup": "A circle of radius r is cut into many equal sectors, which are rearranged, alternating point up and point down, into a near-parallelogram. Its base gets closer and closer to",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "πr²"
-      },
-      {
-       "letter": "B",
-       "text": "2πr (the whole circumference)"
-      },
-      {
-       "letter": "C",
-       "text": "r"
-      },
-      {
-       "letter": "D",
-       "text": "πr (half the circumference)"
-      }
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "A wheel with diameter 70 cm rolls one full turn along level ground without slipping, and a student measures the distance traveled as 219.9 cm. Explain why that distance is the circumference, use the measurement to estimate π, and say why a measurement supports the formula but does not prove it.",
+     "prompt_markup": "A wheel with diameter 70 cm rolls one full turn along level ground without slipping, and a student measures the distance traveled as 219.9 cm. Explain why that distance is the circumference, use the measurement to estimate π, and say why a measurement supports the formula but does not prove it.",
+     "choices": [],
+     "answer_lines": [
+      "Explanation:"
      ],
-     "answer_lines": [],
-     "correct_letter": "D",
-     "correct_answer": "πr (half the circumference)",
+     "correct_letter": null,
+     "correct_answer": "Each point of the rim touches the ground once in one turn, so the distance equals the circumference; 219.9 ÷ 70 ≈ 3.141, close to π. A measurement has error and covers one wheel only.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Half the arcs are on top, half on the bottom.",
+     "required_method": "Relate each point of the rim to the ground it touches; divide distance by diameter.",
+     "grading_note": "Any valid explanation. Essential: rolling without slipping lays the rim along the ground; C/d ≈ 3.141; evidence versus proof.",
      "figure": null,
-     "page": 2756,
-     "revision": "unchanged",
+     "page": 2949,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
-     "target_skill": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
+     "target_skill": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 2756,
-     "answer_key_page": 2756
+     "question_page": 2949,
+     "answer_key_page": 2949
     },
     {
      "id": "S75-M-Q4",
@@ -404,33 +169,33 @@
      "standard": "HSG-GMD.A.1",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "Informal arguments for the circumference and area of a circle",
+     "skill": "Informal arguments for the circumference of a circle",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "A regular hexagon is inscribed in a circle of radius 5. Find the hexagon's perimeter and compare it with the circle's circumference. What happens as the number of sides increases?",
-     "prompt_markup": "A regular hexagon is inscribed in a circle of radius 5. Find the hexagon's perimeter and compare it with the circle's circumference. What happens as the number of sides increases?",
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "A regular hexagon is inscribed in a circle of radius 5. Find the hexagon's perimeter, compare it with the circle's circumference, and explain what happens as the number of sides increases.",
+     "prompt_markup": "A regular hexagon is inscribed in a circle of radius 5. Find the hexagon's perimeter, compare it with the circle's circumference, and explain what happens as the number of sides increases.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Explanation:"
      ],
      "correct_letter": null,
      "correct_answer": "Perimeter 30 < 10π ≈ 31.4; with more sides the perimeter gets closer to the circumference.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Form required: both numbers and the trend. The hexagon is six equilateral triangles of side 5.",
+     "required_method": "Split the hexagon into six triangles from the center; compare 30 with 10π; describe the trend.",
+     "grading_note": "Any valid explanation. Essential: six equilateral triangles of side 5 (central angles 60°, two radii), so perimeter 30; 30 < 10π; more sides bring the perimeter closer to the circumference.",
      "figure": null,
-     "page": 2757,
-     "revision": "unchanged",
+     "page": 2950,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
-     "target_skill": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
+     "target_skill": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 2757,
-     "answer_key_page": 2757
+     "question_page": 2950,
+     "answer_key_page": 2950
     },
     {
      "id": "S75-M-Q5",
@@ -445,40 +210,33 @@
      "standard": "HSG-GMD.A.1",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "Informal arguments for the circumference and area of a circle",
+     "skill": "Informal arguments for the circumference of a circle",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "tf",
-     "response": "select true or false",
-     "prompt": "As the number of sectors increases, the rearranged shape gets closer to a rectangle with height r.",
-     "prompt_markup": "As the number of sectors increases, the rearranged shape gets closer to a rectangle with height r.",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "True"
-      },
-      {
-       "letter": "B",
-       "text": "False"
-      }
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "Regular polygons with 6, 12 and 24 sides are inscribed in a circle of radius 1. Their perimeters are 6, 6.212 and 6.265. Explain what these values suggest about the circumference and how the formula C = 2πr follows for a circle of any radius r.",
+     "prompt_markup": "Regular polygons with 6, 12 and 24 sides are inscribed in a circle of radius 1. Their perimeters are 6, 6.212 and 6.265. Explain what these values suggest about the circumference and how the formula C = 2πr follows for a circle of any radius r.",
+     "choices": [],
+     "answer_lines": [
+      "Explanation:"
      ],
-     "answer_lines": [],
-     "correct_letter": "A",
-     "correct_answer": "True",
+     "correct_letter": null,
+     "correct_answer": "The perimeters increase toward 2π ≈ 6.283, the circumference of the unit circle; a circle of radius r is the unit circle dilated by r, so its circumference is 2π · r.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "The scalloped edges flatten.",
+     "required_method": "Describe the trend of the perimeters, then use similarity (scaling by r).",
+     "grading_note": "Any valid explanation. Essential: the inscribed perimeters approach the circumference from below; the limit for radius 1 is 2π; dilation by r multiplies lengths by r.",
      "figure": null,
-     "page": 2758,
-     "revision": "unchanged",
+     "page": 2951,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
-     "target_skill": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
+     "target_skill": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 2758,
-     "answer_key_page": 2758
+     "question_page": 2951,
+     "answer_key_page": 2951
     }
    ]
   },
@@ -486,14 +244,15 @@
    "section": "BACKWARD 1",
    "section_code": "B1",
    "relation": "backward",
-   "skill": "Circumference and area formulas",
+   "skill": "Circumference formulas",
    "standard": "7.G.B.4",
    "nearest_related": false,
    "branch": {
     "kind": "backward",
     "alignment": "exact",
-    "rationale": "Obstacle: the student does not know the formulas being justified. Why it matters: the argument connects them. Evidence: states and uses both formulas.",
-    "source": "Grade 7"
+    "rationale": "Obstacle: the student does not know the formula being justified. Why it matters: the argument explains it. Evidence: states and uses the circumference formula.",
+    "source": "Grade 7",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -509,7 +268,7 @@
      "standard": "7.G.B.4",
      "standard_grade": 7,
      "domain": "Geometry",
-     "skill": "Circumference and area formulas",
+     "skill": "Circumference formulas",
      "nearest_related": false,
      "type": "sa",
      "response": "write",
@@ -525,15 +284,15 @@
      "required_method": null,
      "grading_note": "Form required: exact value.",
      "figure": null,
-     "page": 2760,
-     "revision": "unchanged",
+     "page": 2953,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
-     "target_skill": "Circumference and area formulas",
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
+     "target_skill": "Circumference formulas",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2760,
-     "answer_key_page": 2760
+     "question_page": 2953,
+     "answer_key_page": 2953
     },
     {
      "id": "S75-B1-Q2",
@@ -548,31 +307,31 @@
      "standard": "7.G.B.4",
      "standard_grade": 7,
      "domain": "Geometry",
-     "skill": "Circumference and area formulas",
+     "skill": "Circumference formulas",
      "nearest_related": false,
      "type": "sa",
      "response": "write",
-     "prompt": "Find the exact area of a circle of radius 4.",
-     "prompt_markup": "Find the exact area of a circle of radius 4.",
+     "prompt": "Find the exact circumference of a circle of diameter 9.",
+     "prompt_markup": "Find the exact circumference of a circle of diameter 9.",
      "choices": [],
      "answer_lines": [
       "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "16π",
+     "correct_answer": "9π",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: exact value.",
+     "grading_note": "Form required: exact value. C = πd.",
      "figure": null,
-     "page": 2761,
-     "revision": "unchanged",
+     "page": 2954,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
-     "target_skill": "Circumference and area formulas",
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
+     "target_skill": "Circumference formulas",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2761,
-     "answer_key_page": 2761
+     "question_page": 2954,
+     "answer_key_page": 2954
     },
     {
      "id": "S75-B1-Q3",
@@ -587,7 +346,7 @@
      "standard": "7.G.B.4",
      "standard_grade": 7,
      "domain": "Geometry",
-     "skill": "Circumference and area formulas",
+     "skill": "Circumference formulas",
      "nearest_related": false,
      "type": "mc",
      "response": "select one",
@@ -618,15 +377,15 @@
      "required_method": null,
      "grading_note": "½ · 2πr.",
      "figure": null,
-     "page": 2762,
-     "revision": "unchanged",
+     "page": 2955,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
-     "target_skill": "Circumference and area formulas",
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
+     "target_skill": "Circumference formulas",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2762,
-     "answer_key_page": 2762
+     "question_page": 2955,
+     "answer_key_page": 2955
     },
     {
      "id": "S75-B1-Q4",
@@ -641,7 +400,7 @@
      "standard": "7.G.B.4",
      "standard_grade": 7,
      "domain": "Geometry",
-     "skill": "Circumference and area formulas",
+     "skill": "Circumference formulas",
      "nearest_related": false,
      "type": "tf",
      "response": "select true or false",
@@ -664,15 +423,15 @@
      "required_method": null,
      "grading_note": "Formula.",
      "figure": null,
-     "page": 2763,
-     "revision": "unchanged",
+     "page": 2956,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
-     "target_skill": "Circumference and area formulas",
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
+     "target_skill": "Circumference formulas",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2763,
-     "answer_key_page": 2763
+     "question_page": 2956,
+     "answer_key_page": 2956
     },
     {
      "id": "S75-B1-Q5",
@@ -687,7 +446,7 @@
      "standard": "7.G.B.4",
      "standard_grade": 7,
      "domain": "Geometry",
-     "skill": "Circumference and area formulas",
+     "skill": "Circumference formulas",
      "nearest_related": false,
      "type": "tf",
      "response": "select true or false",
@@ -710,90 +469,184 @@
      "required_method": null,
      "grading_note": "A = πr².",
      "figure": null,
-     "page": 2764,
-     "revision": "unchanged",
+     "page": 2957,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
-     "target_skill": "Circumference and area formulas",
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
+     "target_skill": "Circumference formulas",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2764,
-     "answer_key_page": 2764
+     "question_page": 2957,
+     "answer_key_page": 2957
     }
    ]
   },
   {
-   "section": "BACKWARD 2",
-   "section_code": "B2",
+   "section": "BACKWARD 4",
+   "section_code": "B4",
    "relation": "backward",
-   "skill": "Area of a parallelogram",
-   "standard": "6.G.A.1",
+   "skill": "Perimeters of regular polygons",
+   "standard": "3.MD.D.8",
    "nearest_related": false,
    "branch": {
     "kind": "backward",
-    "alignment": "exact",
-    "rationale": "Obstacle: the student cannot find the area of the rearranged shape. Why it matters: the argument ends with base × height. Evidence: finds parallelogram areas.",
-    "source": "Grade 6"
+    "alignment": "supporting",
+    "rationale": "Obstacle: the student cannot find polygon perimeters. Why it matters: the polygon argument compares them with the circumference. Evidence: computes perimeters of regular polygons.",
+    "source": "Grade 3",
+    "plus_standard": false
    },
    "questions": [
     {
-     "id": "S75-B2-Q1",
-     "uid": "GEO:S75-B2-Q1",
+     "id": "S75-B4-Q1",
+     "uid": "GEO:S75-B4-Q1",
      "collection": "GEO",
      "set": 75,
-     "section": "BACKWARD 2",
-     "section_code": "B2",
+     "section": "BACKWARD 4",
+     "section_code": "B4",
      "relation": "backward",
      "number": 1,
      "of": 5,
-     "standard": "6.G.A.1",
-     "standard_grade": 6,
-     "domain": "Geometry",
-     "skill": "Area of a parallelogram",
+     "standard": "3.MD.D.8",
+     "standard_grade": 3,
+     "domain": "Measurement & Data",
+     "skill": "Perimeters of regular polygons",
      "nearest_related": false,
      "type": "sa",
      "response": "write",
-     "prompt": "Area of a parallelogram with base 9 and height 4?",
-     "prompt_markup": "Area of a parallelogram with base 9 and height 4?",
+     "prompt": "Find the perimeter of a regular hexagon with side 5.",
+     "prompt_markup": "Find the perimeter of a regular hexagon with side 5.",
      "choices": [],
      "answer_lines": [
-      "Area:"
+      "Perimeter:"
      ],
      "correct_letter": null,
-     "correct_answer": "36",
+     "correct_answer": "30",
      "drawing_answer": null,
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2766,
-     "revision": "unchanged",
+     "page": 2959,
+     "revision": "new",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
-     "target_skill": "Area of a parallelogram",
-     "alignment_type": "exact prerequisite standard",
-     "course_level": "Grade 6",
-     "question_page": 2766,
-     "answer_key_page": 2766
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
+     "target_skill": "Perimeters of regular polygons",
+     "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
+     "course_level": "Grade 3",
+     "question_page": 2959,
+     "answer_key_page": 2959
     },
     {
-     "id": "S75-B2-Q2",
-     "uid": "GEO:S75-B2-Q2",
+     "id": "S75-B4-Q2",
+     "uid": "GEO:S75-B4-Q2",
      "collection": "GEO",
      "set": 75,
-     "section": "BACKWARD 2",
-     "section_code": "B2",
+     "section": "BACKWARD 4",
+     "section_code": "B4",
      "relation": "backward",
      "number": 2,
      "of": 5,
-     "standard": "6.G.A.1",
-     "standard_grade": 6,
-     "domain": "Geometry",
-     "skill": "Area of a parallelogram",
+     "standard": "3.MD.D.8",
+     "standard_grade": 3,
+     "domain": "Measurement & Data",
+     "skill": "Perimeters of regular polygons",
+     "nearest_related": false,
+     "type": "sa",
+     "response": "write",
+     "prompt": "Find the perimeter of a regular octagon with side 2.5 cm.",
+     "prompt_markup": "Find the perimeter of a regular octagon with side 2.5 cm.",
+     "choices": [],
+     "answer_lines": [
+      "Perimeter:"
+     ],
+     "correct_letter": null,
+     "correct_answer": "20 cm",
+     "drawing_answer": null,
+     "required_method": null,
+     "grading_note": "Any equivalent form.",
+     "figure": null,
+     "page": 2960,
+     "revision": "new",
+     "strand": "core",
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
+     "target_skill": "Perimeters of regular polygons",
+     "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
+     "course_level": "Grade 3",
+     "question_page": 2960,
+     "answer_key_page": 2960
+    },
+    {
+     "id": "S75-B4-Q3",
+     "uid": "GEO:S75-B4-Q3",
+     "collection": "GEO",
+     "set": 75,
+     "section": "BACKWARD 4",
+     "section_code": "B4",
+     "relation": "backward",
+     "number": 3,
+     "of": 5,
+     "standard": "3.MD.D.8",
+     "standard_grade": 3,
+     "domain": "Measurement & Data",
+     "skill": "Perimeters of regular polygons",
+     "nearest_related": false,
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A regular 12-gon has perimeter 36. Each side is",
+     "prompt_markup": "A regular 12-gon has perimeter 36. Each side is",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "432"
+      },
+      {
+       "letter": "B",
+       "text": "3"
+      },
+      {
+       "letter": "C",
+       "text": "12"
+      },
+      {
+       "letter": "D",
+       "text": "36"
+      }
+     ],
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "3",
+     "drawing_answer": null,
+     "required_method": null,
+     "grading_note": "36 ÷ 12.",
+     "figure": null,
+     "page": 2961,
+     "revision": "new",
+     "strand": "core",
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
+     "target_skill": "Perimeters of regular polygons",
+     "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
+     "course_level": "Grade 3",
+     "question_page": 2961,
+     "answer_key_page": 2961
+    },
+    {
+     "id": "S75-B4-Q4",
+     "uid": "GEO:S75-B4-Q4",
+     "collection": "GEO",
+     "set": 75,
+     "section": "BACKWARD 4",
+     "section_code": "B4",
+     "relation": "backward",
+     "number": 4,
+     "of": 5,
+     "standard": "3.MD.D.8",
+     "standard_grade": 3,
+     "domain": "Measurement & Data",
+     "skill": "Perimeters of regular polygons",
      "nearest_related": false,
      "type": "tf",
      "response": "select true or false",
-     "prompt": "A parallelogram has the same area as a rectangle with the same base and height.",
-     "prompt_markup": "A parallelogram has the same area as a rectangle with the same base and height.",
+     "prompt": "A regular polygon with n sides of length s has perimeter ns.",
+     "prompt_markup": "A regular polygon with n sides of length s has perimeter ns.",
      "choices": [
       {
        "letter": "A",
@@ -809,130 +662,37 @@
      "correct_answer": "True",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Cut and slide.",
+     "grading_note": "Equal sides.",
      "figure": null,
-     "page": 2767,
-     "revision": "unchanged",
+     "page": 2962,
+     "revision": "new",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
-     "target_skill": "Area of a parallelogram",
-     "alignment_type": "exact prerequisite standard",
-     "course_level": "Grade 6",
-     "question_page": 2767,
-     "answer_key_page": 2767
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
+     "target_skill": "Perimeters of regular polygons",
+     "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
+     "course_level": "Grade 3",
+     "question_page": 2962,
+     "answer_key_page": 2962
     },
     {
-     "id": "S75-B2-Q3",
-     "uid": "GEO:S75-B2-Q3",
+     "id": "S75-B4-Q5",
+     "uid": "GEO:S75-B4-Q5",
      "collection": "GEO",
      "set": 75,
-     "section": "BACKWARD 2",
-     "section_code": "B2",
-     "relation": "backward",
-     "number": 3,
-     "of": 5,
-     "standard": "6.G.A.1",
-     "standard_grade": 6,
-     "domain": "Geometry",
-     "skill": "Area of a parallelogram",
-     "nearest_related": false,
-     "type": "mc",
-     "response": "select one",
-     "prompt": "A parallelogram's area is",
-     "prompt_markup": "A parallelogram's area is",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "base × slanted side"
-      },
-      {
-       "letter": "B",
-       "text": "base × height"
-      },
-      {
-       "letter": "C",
-       "text": "base + height"
-      },
-      {
-       "letter": "D",
-       "text": "½ base × height"
-      }
-     ],
-     "answer_lines": [],
-     "correct_letter": "B",
-     "correct_answer": "base × height",
-     "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Perpendicular height.",
-     "figure": null,
-     "page": 2768,
-     "revision": "unchanged",
-     "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
-     "target_skill": "Area of a parallelogram",
-     "alignment_type": "exact prerequisite standard",
-     "course_level": "Grade 6",
-     "question_page": 2768,
-     "answer_key_page": 2768
-    },
-    {
-     "id": "S75-B2-Q4",
-     "uid": "GEO:S75-B2-Q4",
-     "collection": "GEO",
-     "set": 75,
-     "section": "BACKWARD 2",
-     "section_code": "B2",
-     "relation": "backward",
-     "number": 4,
-     "of": 5,
-     "standard": "6.G.A.1",
-     "standard_grade": 6,
-     "domain": "Geometry",
-     "skill": "Area of a parallelogram",
-     "nearest_related": false,
-     "type": "sa",
-     "response": "write",
-     "prompt": "A parallelogram has base πr and height r. Area?",
-     "prompt_markup": "A parallelogram has base πr and height r. Area?",
-     "choices": [],
-     "answer_lines": [
-      "Area:"
-     ],
-     "correct_letter": null,
-     "correct_answer": "πr²",
-     "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Any equivalent form.",
-     "figure": null,
-     "page": 2769,
-     "revision": "unchanged",
-     "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
-     "target_skill": "Area of a parallelogram",
-     "alignment_type": "exact prerequisite standard",
-     "course_level": "Grade 6",
-     "question_page": 2769,
-     "answer_key_page": 2769
-    },
-    {
-     "id": "S75-B2-Q5",
-     "uid": "GEO:S75-B2-Q5",
-     "collection": "GEO",
-     "set": 75,
-     "section": "BACKWARD 2",
-     "section_code": "B2",
+     "section": "BACKWARD 4",
+     "section_code": "B4",
      "relation": "backward",
      "number": 5,
      "of": 5,
-     "standard": "6.G.A.1",
-     "standard_grade": 6,
-     "domain": "Geometry",
-     "skill": "Area of a parallelogram",
+     "standard": "3.MD.D.8",
+     "standard_grade": 3,
+     "domain": "Measurement & Data",
+     "skill": "Perimeters of regular polygons",
      "nearest_related": false,
      "type": "tf",
      "response": "select true or false",
-     "prompt": "The slanted side is the height of a parallelogram.",
-     "prompt_markup": "The slanted side is the height of a parallelogram.",
+     "prompt": "A regular pentagon with side 4 has perimeter 16.",
+     "prompt_markup": "A regular pentagon with side 4 has perimeter 16.",
      "choices": [
       {
        "letter": "A",
@@ -948,17 +708,17 @@
      "correct_answer": "False",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Perpendicular height.",
+     "grading_note": "5 × 4 = 20.",
      "figure": null,
-     "page": 2770,
-     "revision": "unchanged",
+     "page": 2963,
+     "revision": "new",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
-     "target_skill": "Area of a parallelogram",
-     "alignment_type": "exact prerequisite standard",
-     "course_level": "Grade 6",
-     "question_page": 2770,
-     "answer_key_page": 2770
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
+     "target_skill": "Perimeters of regular polygons",
+     "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
+     "course_level": "Grade 3",
+     "question_page": 2963,
+     "answer_key_page": 2963
     }
    ]
   },
@@ -973,7 +733,8 @@
     "kind": "backward",
     "alignment": "supporting",
     "rationale": "Obstacle: the student does not see why π is a constant. Why it matters: the circumference argument uses similarity. Evidence: uses similarity of circles.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1014,15 +775,15 @@
      "required_method": null,
      "grading_note": "Similarity.",
      "figure": null,
-     "page": 2772,
+     "page": 2965,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
      "target_skill": "All circles are similar",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Geometry",
-     "question_page": 2772,
-     "answer_key_page": 2772
+     "question_page": 2965,
+     "answer_key_page": 2965
     },
     {
      "id": "S75-B3-Q2",
@@ -1055,15 +816,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2773,
+     "page": 2966,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
      "target_skill": "All circles are similar",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Geometry",
-     "question_page": 2773,
-     "answer_key_page": 2773
+     "question_page": 2966,
+     "answer_key_page": 2966
     },
     {
      "id": "S75-B3-Q3",
@@ -1111,15 +872,15 @@
      "required_method": null,
      "grading_note": "Scale factor.",
      "figure": null,
-     "page": 2774,
+     "page": 2967,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
      "target_skill": "All circles are similar",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Geometry",
-     "question_page": 2774,
-     "answer_key_page": 2774
+     "question_page": 2967,
+     "answer_key_page": 2967
     },
     {
      "id": "S75-B3-Q4",
@@ -1152,15 +913,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 2775,
+     "page": 2968,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
      "target_skill": "All circles are similar",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Geometry",
-     "question_page": 2775,
-     "answer_key_page": 2775
+     "question_page": 2968,
+     "answer_key_page": 2968
     },
     {
      "id": "S75-B3-Q5",
@@ -1200,15 +961,15 @@
      "required_method": null,
      "grading_note": "π is constant.",
      "figure": null,
-     "page": 2776,
+     "page": 2969,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
      "target_skill": "All circles are similar",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Geometry",
-     "question_page": 2776,
-     "answer_key_page": 2776
+     "question_page": 2969,
+     "answer_key_page": 2969
     }
    ]
   },
@@ -1216,15 +977,16 @@
    "section": "FORWARD 1",
    "section_code": "F1",
    "relation": "forward1",
-   "skill": "Area of a circle as a limit of regular polygons",
+   "skill": "Trap π between inscribed and circumscribed polygons",
    "standard": "HSG-GMD.A.1",
    "nearest_related": false,
    "branch": {
     "kind": "forward",
     "progression": "same-course deepening",
     "connection": "direct",
-    "new_demand": "Give a second, polygon-limit argument and connect perimeter and area formulas.",
-    "course": "Geometry"
+    "new_demand": "Bound the circumference from both sides and turn the bounds into an estimate of π.",
+    "course": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1240,33 +1002,33 @@
      "standard": "HSG-GMD.A.1",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "Area of a circle as a limit of regular polygons",
+     "skill": "Trap π between inscribed and circumscribed polygons",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "work",
-     "response": "write the answer and show the required work",
-     "prompt": "A regular n-gon is inscribed in a circle of radius r. Its area is ½ · perimeter · apothem. Explain why this approaches πr² as n increases.",
-     "prompt_markup": "A regular n-gon is inscribed in a circle of radius r. Its area is ½ · perimeter · apothem. Explain why this approaches πr² as n increases.",
+     "type": "sa",
+     "response": "write",
+     "prompt": "A circle has radius 1. Find the perimeters of the inscribed square and the circumscribed square, and use them to write bounds for π.",
+     "prompt_markup": "A circle has radius 1. Find the perimeters of the inscribed square and the circumscribed square, and use them to write bounds for π.",
      "choices": [],
      "answer_lines": [
-      "Explanation:"
+      "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "The perimeter approaches 2πr and the apothem approaches r, so the area approaches ½ · 2πr · r = πr².",
+     "correct_answer": "Inscribed 4√2 ≈ 5.66, circumscribed 8; 5.66 < 2π < 8, so 2.83 < π < 4.",
      "drawing_answer": null,
-     "required_method": "Describe what the perimeter and apothem approach.",
-     "grading_note": "Any valid explanation. Essential: perimeter → circumference; apothem → radius; substitution.",
+     "required_method": null,
+     "grading_note": "Form required: both perimeters and the bounds. Inscribed side √2.",
      "figure": null,
-     "page": 2778,
-     "revision": "unchanged",
+     "page": 2971,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
-     "target_skill": "Area of a circle as a limit of regular polygons",
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
+     "target_skill": "Trap π between inscribed and circumscribed polygons",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2778,
-     "answer_key_page": 2778
+     "question_page": 2971,
+     "answer_key_page": 2971
     },
     {
      "id": "S75-F1-Q2",
@@ -1281,33 +1043,33 @@
      "standard": "HSG-GMD.A.1",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "Area of a circle as a limit of regular polygons",
+     "skill": "Trap π between inscribed and circumscribed polygons",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "Find the area of a regular hexagon with side 2 and apothem √3. Compare with the area of its circumscribed circle (radius 2).",
-     "prompt_markup": "Find the area of a regular hexagon with side 2 and apothem √3. Compare with the area of its circumscribed circle (radius 2).",
+     "prompt": "Inscribed and circumscribed regular 12-gons of a circle of radius 1 have perimeters about 6.212 and 6.431. What bounds for π do they give (to the nearest hundredth)?",
+     "prompt_markup": "Inscribed and circumscribed regular 12-gons of a circle of radius 1 have perimeters about 6.212 and 6.431. What bounds for π do they give (to the nearest hundredth)?",
      "choices": [],
      "answer_lines": [
       "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "6√3 ≈ 10.4 < 4π ≈ 12.6",
+     "correct_answer": "3.11 < π < 3.22",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: both numbers. ½ · 12 · √3.",
+     "grading_note": "Form required: both bounds. Divide each perimeter by 2.",
      "figure": null,
-     "page": 2779,
-     "revision": "unchanged",
+     "page": 2972,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
-     "target_skill": "Area of a circle as a limit of regular polygons",
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
+     "target_skill": "Trap π between inscribed and circumscribed polygons",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2779,
-     "answer_key_page": 2779
+     "question_page": 2972,
+     "answer_key_page": 2972
     },
     {
      "id": "S75-F1-Q3",
@@ -1322,14 +1084,14 @@
      "standard": "HSG-GMD.A.1",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "Area of a circle as a limit of regular polygons",
+     "skill": "Trap π between inscribed and circumscribed polygons",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
      "type": "tf",
      "response": "select true or false",
-     "prompt": "An inscribed polygon always has less area than its circle.",
-     "prompt_markup": "An inscribed polygon always has less area than its circle.",
+     "prompt": "Using polygons with more sides gives closer bounds for π.",
+     "prompt_markup": "Using polygons with more sides gives closer bounds for π.",
      "choices": [
       {
        "letter": "A",
@@ -1345,17 +1107,17 @@
      "correct_answer": "True",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "It lies inside the circle.",
+     "grading_note": "Both perimeters approach the circumference.",
      "figure": null,
-     "page": 2780,
-     "revision": "unchanged",
+     "page": 2973,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
-     "target_skill": "Area of a circle as a limit of regular polygons",
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
+     "target_skill": "Trap π between inscribed and circumscribed polygons",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2780,
-     "answer_key_page": 2780
+     "question_page": 2973,
+     "answer_key_page": 2973
     },
     {
      "id": "S75-F1-Q4",
@@ -1370,48 +1132,48 @@
      "standard": "HSG-GMD.A.1",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "Area of a circle as a limit of regular polygons",
+     "skill": "Trap π between inscribed and circumscribed polygons",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
      "type": "mc",
      "response": "select one",
-     "prompt": "As n grows, the apothem of an inscribed regular n-gon approaches",
-     "prompt_markup": "As n grows, the apothem of an inscribed regular n-gon approaches",
+     "prompt": "Why is the circumscribed polygon's perimeter larger than the circumference?",
+     "prompt_markup": "Why is the circumscribed polygon's perimeter larger than the circumference?",
      "choices": [
       {
        "letter": "A",
-       "text": "πr"
+       "text": "It has fewer sides"
       },
       {
        "letter": "B",
-       "text": "r"
+       "text": "The circle lies inside it, and a curve inside a convex shape is shorter than the shape's boundary"
       },
       {
        "letter": "C",
-       "text": "0"
+       "text": "Its radius is smaller"
       },
       {
        "letter": "D",
-       "text": "2r"
+       "text": "Its sides are curved"
       }
      ],
      "answer_lines": [],
      "correct_letter": "B",
-     "correct_answer": "r",
+     "correct_answer": "The circle lies inside it, and a curve inside a convex shape is shorter than the shape's boundary",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "The sides approach the circle.",
+     "grading_note": "The circle is enclosed by the polygon.",
      "figure": null,
-     "page": 2781,
-     "revision": "unchanged",
+     "page": 2974,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
-     "target_skill": "Area of a circle as a limit of regular polygons",
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
+     "target_skill": "Trap π between inscribed and circumscribed polygons",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2781,
-     "answer_key_page": 2781
+     "question_page": 2974,
+     "answer_key_page": 2974
     },
     {
      "id": "S75-F1-Q5",
@@ -1426,33 +1188,33 @@
      "standard": "HSG-GMD.A.1",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "Area of a circle as a limit of regular polygons",
+     "skill": "Trap π between inscribed and circumscribed polygons",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "Why do mathematicians call this an \"informal\" argument?",
-     "prompt_markup": "Why do mathematicians call this an \"informal\" argument?",
+     "prompt": "Archimedes used 96-gons and found 3 10/71 < π < 3 1/7. Write these bounds as decimals to the nearest thousandth.",
+     "prompt_markup": "Archimedes used 96-gons and found 3 10/71 < π < 3 1/7. Write these bounds as decimals to the nearest thousandth.",
      "choices": [],
      "answer_lines": [
       "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "It relies on what the shapes approach (a limit) without a formal proof of the limit.",
+     "correct_answer": "3.141 < π < 3.143",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any reasonable answer.",
+     "grading_note": "Form required: both decimals. 3 10/71 ≈ 3.1408 and 3 1/7 ≈ 3.1429.",
      "figure": null,
-     "page": 2782,
-     "revision": "unchanged",
+     "page": 2975,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
-     "target_skill": "Area of a circle as a limit of regular polygons",
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
+     "target_skill": "Trap π between inscribed and circumscribed polygons",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2782,
-     "answer_key_page": 2782
+     "question_page": 2975,
+     "answer_key_page": 2975
     }
    ]
   },
@@ -1460,16 +1222,17 @@
    "section": "FORWARD 2",
    "section_code": "F2",
    "relation": "forward2",
-   "skill": "From area to volume: stacking disks",
+   "skill": "Extend the circumference argument to arcs and curved boundaries",
    "standard": "HSG-GMD.A.1",
    "nearest_related": false,
    "branch": {
     "kind": "forward",
     "progression": "same-course deepening",
     "connection": "direct",
-    "new_demand": "Use the circle area as the base of a volume argument (the next part of the same standard).",
+    "new_demand": "Extend the circumference argument from whole circles to arcs and boundaries made of arcs and segments.",
     "course": "Geometry",
-    "builds_on": "Builds on FORWARD 1: once the circle's area is justified, it becomes the base area in the cylinder argument."
+    "builds_on": "Builds on FORWARD 1: polygon bounds for the whole circle become chord approximations and proportional arcs.",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1485,33 +1248,33 @@
      "standard": "HSG-GMD.A.1",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "From area to volume: stacking disks",
+     "skill": "Extend the circumference argument to arcs and curved boundaries",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "A stack of 40 identical coins, each a disk of radius 1 cm and thickness 0.2 cm, forms a cylinder. Find the exact volume.",
-     "prompt_markup": "A stack of 40 identical coins, each a disk of radius 1 cm and thickness 0.2 cm, forms a cylinder. Find the exact volume.",
+     "prompt": "Use the circumference formula to explain why an arc with central angle 90° in a circle of radius 6 has length 3π, and find its length to the nearest tenth.",
+     "prompt_markup": "Use the circumference formula to explain why an arc with central angle 90° in a circle of radius 6 has length 3π, and find its length to the nearest tenth.",
      "choices": [],
      "answer_lines": [
-      "Volume:"
+      "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "8π cm³",
+     "correct_answer": "The arc is 90/360 = ¼ of the circle, so its length is ¼ · 2π · 6 = 3π ≈ 9.4.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: exact value. π · 1² · 8.",
+     "grading_note": "Form required: the fraction-of-the-circle reasoning and the value (rounding to 0.1).",
      "figure": null,
-     "page": 2784,
-     "revision": "unchanged",
+     "page": 2977,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
-     "target_skill": "From area to volume: stacking disks",
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
+     "target_skill": "Extend the circumference argument to arcs and curved boundaries",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2784,
-     "answer_key_page": 2784
+     "question_page": 2977,
+     "answer_key_page": 2977
     },
     {
      "id": "S75-F2-Q2",
@@ -1526,40 +1289,33 @@
      "standard": "HSG-GMD.A.1",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "From area to volume: stacking disks",
+     "skill": "Extend the circumference argument to arcs and curved boundaries",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "tf",
-     "response": "select true or false",
-     "prompt": "A cylinder can be thought of as a stack of congruent disks.",
-     "prompt_markup": "A cylinder can be thought of as a stack of congruent disks.",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "True"
-      },
-      {
-       "letter": "B",
-       "text": "False"
-      }
+     "type": "sa",
+     "response": "write",
+     "prompt": "Explain why the length of an arc is proportional to its central angle, so that an arc of θ° has length (θ/360) · 2πr.",
+     "prompt_markup": "Explain why the length of an arc is proportional to its central angle, so that an arc of θ° has length (θ/360) · 2πr.",
+     "choices": [],
+     "answer_lines": [
+      "Answer:"
      ],
-     "answer_lines": [],
-     "correct_letter": "A",
-     "correct_answer": "True",
+     "correct_letter": null,
+     "correct_answer": "Equal central angles cut off congruent arcs (a rotation about the center maps one onto another), so the 360° of the circle split the circumference 2πr in proportion to the angle.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Layers.",
+     "grading_note": "Any equivalent explanation using equal angles ↔ equal arcs.",
      "figure": null,
-     "page": 2785,
-     "revision": "unchanged",
+     "page": 2978,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
-     "target_skill": "From area to volume: stacking disks",
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
+     "target_skill": "Extend the circumference argument to arcs and curved boundaries",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2785,
-     "answer_key_page": 2785
+     "question_page": 2978,
+     "answer_key_page": 2978
     },
     {
      "id": "S75-F2-Q3",
@@ -1574,48 +1330,40 @@
      "standard": "HSG-GMD.A.1",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "From area to volume: stacking disks",
+     "skill": "Extend the circumference argument to arcs and curved boundaries",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "mc",
-     "response": "select one",
-     "prompt": "The volume of a stack of disks of area πr² and total height h is",
-     "prompt_markup": "The volume of a stack of disks of area πr² and total height h is",
+     "type": "tf",
+     "response": "select true or false",
+     "prompt": "A semicircular region of radius 5 has perimeter 5π.",
+     "prompt_markup": "A semicircular region of radius 5 has perimeter 5π.",
      "choices": [
       {
        "letter": "A",
-       "text": "⅓πr²h"
+       "text": "True"
       },
       {
        "letter": "B",
-       "text": "2πrh"
-      },
-      {
-       "letter": "C",
-       "text": "πr²h"
-      },
-      {
-       "letter": "D",
-       "text": "πr²"
+       "text": "False"
       }
      ],
      "answer_lines": [],
-     "correct_letter": "C",
-     "correct_answer": "πr²h",
+     "correct_letter": "B",
+     "correct_answer": "False",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Base area × height.",
+     "grading_note": "The perimeter also includes the diameter: 5π + 10.",
      "figure": null,
-     "page": 2786,
-     "revision": "unchanged",
+     "page": 2979,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
-     "target_skill": "From area to volume: stacking disks",
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
+     "target_skill": "Extend the circumference argument to arcs and curved boundaries",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2786,
-     "answer_key_page": 2786
+     "question_page": 2979,
+     "answer_key_page": 2979
     },
     {
      "id": "S75-F2-Q4",
@@ -1630,33 +1378,48 @@
      "standard": "HSG-GMD.A.1",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "From area to volume: stacking disks",
+     "skill": "Extend the circumference argument to arcs and curved boundaries",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain how the area of a circle is used to find the volume of a cylinder.",
-     "prompt_markup": "Explain how the area of a circle is used to find the volume of a cylinder.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A running track has two straight sides of 100 m and two semicircular ends of radius 30 m. Its length is about",
+     "prompt_markup": "A running track has two straight sides of 100 m and two semicircular ends of radius 30 m. Its length is about",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "294 m"
+      },
+      {
+       "letter": "B",
+       "text": "200 m"
+      },
+      {
+       "letter": "C",
+       "text": "388π m"
+      },
+      {
+       "letter": "D",
+       "text": "388 m"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "The volume is the base area πr² times the height h.",
+     "answer_lines": [],
+     "correct_letter": "D",
+     "correct_answer": "388 m",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "200 + 60π ≈ 388.5 m.",
      "figure": null,
-     "page": 2787,
-     "revision": "unchanged",
+     "page": 2980,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
-     "target_skill": "From area to volume: stacking disks",
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
+     "target_skill": "Extend the circumference argument to arcs and curved boundaries",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2787,
-     "answer_key_page": 2787
+     "question_page": 2980,
+     "answer_key_page": 2980
     },
     {
      "id": "S75-F2-Q5",
@@ -1671,33 +1434,33 @@
      "standard": "HSG-GMD.A.1",
      "standard_grade": "HS",
      "domain": "Geometry: Geometric Measurement & Dimension",
-     "skill": "From area to volume: stacking disks",
+     "skill": "Extend the circumference argument to arcs and curved boundaries",
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "Each disk in a stack has area 12 cm² and the stack is 5 cm high. Volume?",
-     "prompt_markup": "Each disk in a stack has area 12 cm² and the stack is 5 cm high. Volume?",
+     "prompt": "The circumference argument used inscribed polygons whose perimeters approach 2πr. Explain why inscribed broken lines (chords) can be used the same way to measure the length of an arc.",
+     "prompt_markup": "The circumference argument used inscribed polygons whose perimeters approach 2πr. Explain why inscribed broken lines (chords) can be used the same way to measure the length of an arc.",
      "choices": [],
      "answer_lines": [
-      "Volume:"
+      "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "60 cm³",
+     "correct_answer": "Chords that split the arc into smaller and smaller pieces form broken lines whose lengths increase toward the arc length, just as the polygon perimeters approach the circumference.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form.",
+     "grading_note": "Any equivalent explanation of the limit of chord lengths.",
      "figure": null,
-     "page": 2788,
-     "revision": "unchanged",
+     "page": 2981,
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Give informal arguments (similarity, dissection, and limits of polygons) for the formulas for the circumference and area of a circle",
-     "target_skill": "From area to volume: stacking disks",
+     "set_target": "Give informal arguments (similarity, rolling, and limits of polygon perimeters) for the formula C = πd = 2πr for the circumference of a circle",
+     "target_skill": "Extend the circumference argument to arcs and curved boundaries",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2788,
-     "answer_key_page": 2788
+     "question_page": 2981,
+     "answer_key_page": 2981
     }
    ]
   }

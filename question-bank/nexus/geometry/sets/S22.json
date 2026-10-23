@@ -4,7 +4,7 @@
   "id": "GEO",
   "grade": null,
   "course": "Geometry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-23"
  },
  "grade": null,
@@ -29,7 +29,8 @@
    "branch": {
     "kind": "main",
     "strand": "core",
-    "target_skill": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long"
+    "target_skill": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -63,15 +64,15 @@
      "required_method": "Find D and E with the midpoint formula, then compare slopes and lengths.",
      "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: both midpoints; DE has slope 0 (same y) and AB has slope 0, so DE ∥ AB (and DE ≠ AB since c ≠ 0); DE = |a + b - b| = a and AB = 2a. Invalid: checking one numerical triangle only.",
      "figure": null,
-     "page": 763,
+     "page": 888,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 763,
-     "answer_key_page": 763
+     "question_page": 888,
+     "answer_key_page": 888
     },
     {
      "id": "S22-M-Q2",
@@ -184,15 +185,15 @@
        "h": 200
       }
      },
-     "page": 764,
+     "page": 889,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 764,
-     "answer_key_page": 764
+     "question_page": 889,
+     "answer_key_page": 889
     },
     {
      "id": "S22-M-Q3",
@@ -211,29 +212,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "In the coordinate proof of the midsegment theorem, the vertices are A(0, 0), B(2a, 0), C(2b, 2c). Why are the coordinates written with 2a, 2b, and 2c?",
-     "prompt_markup": "In the coordinate proof of the midsegment theorem, the vertices are A(0, 0), B(2a, 0), C(2b, 2c). Why are the coordinates written with 2a, 2b, and 2c?",
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "Triangle ABC has A(0, 0), B(2a, 0), and C(2b, 2c), with a > 0 and c ≠ 0. F is the midpoint of AB and E is the midpoint of AC. Prove that FE ∥ BC and FE = ½BC.",
+     "prompt_markup": "Triangle ABC has A(0, 0), B(2a, 0), and C(2b, 2c), with a > 0 and c ≠ 0. F is the midpoint of AB and E is the midpoint of AC. Prove that FE ∥ BC and FE = ½BC.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Conclusion:"
      ],
      "correct_letter": null,
-     "correct_answer": "So the midpoints have whole-letter coordinates (a, b, c) without fractions, which keeps the algebra simple; any triangle can still be placed this way.",
+     "correct_answer": "F(a, 0), E(b, c); FE goes from (a, 0) to (b, c), the same direction as BC from (2a, 0) to (2b, 2c), and FE = ½BC.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Any equivalent explanation that mentions avoiding fractions in the midpoint formula and that the placement is general.",
+     "required_method": "Find F and E, then compare slopes (or note both are vertical) and lengths.",
+     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: both midpoints; FE = (b - a, c) and BC = (2b - 2a, 2c) = 2(b - a, c), so they are parallel (equal slopes c/(b - a), or both vertical when b = a) and FE = √((b - a)² + c²) = ½BC.",
      "figure": null,
-     "page": 765,
-     "revision": "unchanged",
+     "page": 890,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 765,
-     "answer_key_page": 765
+     "question_page": 890,
+     "answer_key_page": 890
     },
     {
      "id": "S22-M-Q4",
@@ -252,29 +253,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "A proof of the midsegment theorem with A(0, 0), B(2a, 0), C(2b, 2c): 1. D = (b, c), E = (a + b, c)  (?) 2. slope DE = 0 = slope AB  (?) 3. DE ∥ AB  (?) 4. DE = a and AB = 2a, so DE = ½AB  (?) Give the four reasons.",
-     "prompt_markup": "A proof of the midsegment theorem with A(0, 0), B(2a, 0), C(2b, 2c):\n1. D = (b, c), E = (a + b, c)  (?)\n2. slope DE = 0 = slope AB  (?)\n3. DE ∥ AB  (?)\n4. DE = a and AB = 2a, so DE = ½AB  (?)\nGive the four reasons.",
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "In triangle ABC, F is the midpoint of AB and E is the midpoint of AC. Extend FE past E to G so that EG = FE. Prove that FE ∥ BC and FE = ½BC.",
+     "prompt_markup": "In triangle ABC, F is the midpoint of AB and E is the midpoint of AC. Extend FE past E to G so that EG = FE. Prove that FE ∥ BC and FE = ½BC.",
      "choices": [],
      "answer_lines": [
-      "Reasons:"
+      "Conclusion:"
      ],
      "correct_letter": null,
-     "correct_answer": "1: midpoint formula; 2: slope formula (equal y-coordinates); 3: lines with equal slopes are parallel; 4: distance formula (horizontal distances).",
+     "correct_answer": "FE ∥ BC and FE = ½BC",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Any equivalent names for all four reasons.",
+     "required_method": "Prove △AEF ≅ △CEG (SAS); then show FBCG is a parallelogram.",
+     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: AE = CE, FE = GE, vertical angles at E, so △AEF ≅ △CEG (SAS); CG = AF = FB and ∠FAE ≅ ∠GCE, so CG ∥ AB (alternate interior converse); FBCG has a pair of opposite sides parallel and congruent, so it is a parallelogram; FG ∥ BC and FG = BC; FE = ½FG = ½BC.",
      "figure": null,
-     "page": 766,
-     "revision": "unchanged",
+     "page": 891,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 766,
-     "answer_key_page": 766
+     "question_page": 891,
+     "answer_key_page": 891
     },
     {
      "id": "S22-M-Q5",
@@ -293,44 +294,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "mc",
-     "response": "select one",
-     "prompt": "A student checks the triangle A(0, 0), B(6, 0), C(2, 4), finds the midsegment is parallel to AB and 3 units long, and concludes the theorem is proved. What is the flaw?",
-     "prompt_markup": "A student checks the triangle A(0, 0), B(6, 0), C(2, 4), finds the midsegment is parallel to AB and 3 units long, and concludes the theorem is proved. What is the flaw?",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "One example cannot prove a statement about every triangle"
-      },
-      {
-       "letter": "B",
-       "text": "The midsegment should be 6 units long"
-      },
-      {
-       "letter": "C",
-       "text": "Midpoints cannot be found with coordinates"
-      },
-      {
-       "letter": "D",
-       "text": "The midsegment is not parallel to AB"
-      }
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "Triangle ABC has A(2p, 2q), B(2r, 2s), and C(2t, 2u), not on one line, with AB not vertical. D is the midpoint of AC and E is the midpoint of BC. Prove that DE ∥ AB and DE = ½AB.",
+     "prompt_markup": "Triangle ABC has A(2p, 2q), B(2r, 2s), and C(2t, 2u), not on one line, with AB not vertical. D is the midpoint of AC and E is the midpoint of BC. Prove that DE ∥ AB and DE = ½AB.",
+     "choices": [],
+     "answer_lines": [
+      "Conclusion:"
      ],
-     "answer_lines": [],
-     "correct_letter": "A",
-     "correct_answer": "One example cannot prove a statement about every triangle",
+     "correct_letter": null,
+     "correct_answer": "D(p + t, q + u), E(r + t, s + u); DE = (r - p, s - q) and AB = (2r - 2p, 2s - 2q) = 2·DE, so DE ∥ AB and DE = ½AB.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "A general proof must work for every triangle, for example with variable coordinates.",
+     "required_method": "Find D and E, then compare the coordinate differences of DE and AB.",
+     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: both midpoints; slope DE = (s - q)/(r - p) = slope AB; DE = √((r - p)² + (s - q)²) = ½AB. DE and AB are different lines because C is not on AB.",
      "figure": null,
-     "page": 767,
-     "revision": "unchanged",
+     "page": 892,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 767,
-     "answer_key_page": 767
+     "question_page": 892,
+     "answer_key_page": 892
     }
    ]
   },
@@ -345,7 +331,8 @@
     "kind": "backward",
     "alignment": "supporting",
     "rationale": "Obstacle: the student cannot find midpoints, especially with letters. Why it matters: the coordinate proof starts from the two midpoints. Evidence: averages coordinates, including variable coordinates.",
-    "source": "Grade 6"
+    "source": "Grade 6",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -377,15 +364,15 @@
      "required_method": null,
      "grading_note": "Form required: an ordered pair. Average the coordinates.",
      "figure": null,
-     "page": 769,
+     "page": 894,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Find midpoints of segments in the coordinate plane",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 6",
-     "question_page": 769,
-     "answer_key_page": 769
+     "question_page": 894,
+     "answer_key_page": 894
     },
     {
      "id": "S22-B1-Q2",
@@ -416,15 +403,15 @@
      "required_method": null,
      "grading_note": "Form required: an ordered pair.",
      "figure": null,
-     "page": 770,
+     "page": 895,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Find midpoints of segments in the coordinate plane",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 6",
-     "question_page": 770,
-     "answer_key_page": 770
+     "question_page": 895,
+     "answer_key_page": 895
     },
     {
      "id": "S22-B1-Q3",
@@ -455,15 +442,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 771,
+     "page": 896,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Find midpoints of segments in the coordinate plane",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 6",
-     "question_page": 771,
-     "answer_key_page": 771
+     "question_page": 896,
+     "answer_key_page": 896
     },
     {
      "id": "S22-B1-Q4",
@@ -501,15 +488,15 @@
      "required_method": null,
      "grading_note": "((1 + 7) ÷ 2, 1).",
      "figure": null,
-     "page": 772,
+     "page": 897,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Find midpoints of segments in the coordinate plane",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 6",
-     "question_page": 772,
-     "answer_key_page": 772
+     "question_page": 897,
+     "answer_key_page": 897
     },
     {
      "id": "S22-B1-Q5",
@@ -547,15 +534,15 @@
      "required_method": null,
      "grading_note": "It is (3, 2).",
      "figure": null,
-     "page": 773,
+     "page": 898,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Find midpoints of segments in the coordinate plane",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 6",
-     "question_page": 773,
-     "answer_key_page": 773
+     "question_page": 898,
+     "answer_key_page": 898
     }
    ]
   },
@@ -570,7 +557,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot test parallelism with slopes. Why it matters: the coordinate proof shows DE ∥ AB by equal slopes. Evidence: computes and compares slopes.",
-    "source": "Grade 8"
+    "source": "Grade 8",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -602,15 +590,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form. (8 - 2) ÷ (4 - 1).",
      "figure": null,
-     "page": 775,
+     "page": 900,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Find and compare slopes to decide whether lines are parallel",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 775,
-     "answer_key_page": 775
+     "question_page": 900,
+     "answer_key_page": 900
     },
     {
      "id": "S22-B2-Q2",
@@ -629,8 +617,8 @@
      "nearest_related": false,
      "type": "sa",
      "response": "write",
-     "prompt": "Find the slope of the line through (b, c) and (a + b, c).",
-     "prompt_markup": "Find the slope of the line through (b, c) and (a + b, c).",
+     "prompt": "Find the slope of the line through (b, c) and (a + b, c), where a ≠ 0.",
+     "prompt_markup": "Find the slope of the line through (b, c) and (a + b, c), where a ≠ 0.",
      "choices": [],
      "answer_lines": [
       "Slope:"
@@ -639,17 +627,17 @@
      "correct_answer": "0",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form. The y-coordinates are equal.",
+     "grading_note": "Any equivalent form. The y-coordinates are equal and the points are different.",
      "figure": null,
-     "page": 776,
-     "revision": "unchanged",
+     "page": 901,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Find and compare slopes to decide whether lines are parallel",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 776,
-     "answer_key_page": 776
+     "question_page": 901,
+     "answer_key_page": 901
     },
     {
      "id": "S22-B2-Q3",
@@ -687,15 +675,15 @@
      "required_method": null,
      "grading_note": "Same steepness, different positions.",
      "figure": null,
-     "page": 777,
+     "page": 902,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Find and compare slopes to decide whether lines are parallel",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 777,
-     "answer_key_page": 777
+     "question_page": 902,
+     "answer_key_page": 902
     },
     {
      "id": "S22-B2-Q4",
@@ -741,15 +729,15 @@
      "required_method": null,
      "grading_note": "Both have slope 1/2.",
      "figure": null,
-     "page": 778,
+     "page": 903,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Find and compare slopes to decide whether lines are parallel",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 778,
-     "answer_key_page": 778
+     "question_page": 903,
+     "answer_key_page": 903
     },
     {
      "id": "S22-B2-Q5",
@@ -787,15 +775,15 @@
      "required_method": null,
      "grading_note": "Horizontal has slope 0; vertical is undefined.",
      "figure": null,
-     "page": 779,
+     "page": 904,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Find and compare slopes to decide whether lines are parallel",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 779,
-     "answer_key_page": 779
+     "question_page": 904,
+     "answer_key_page": 904
     }
    ]
   },
@@ -810,7 +798,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot compare the lengths of DE and AB. Why it matters: the \"half as long\" part needs both lengths. Evidence: finds lengths, including with variables.",
-    "source": "Grade 8"
+    "source": "Grade 8",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -842,15 +831,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 781,
+     "page": 906,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Find lengths with the distance formula",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 781,
-     "answer_key_page": 781
+     "question_page": 906,
+     "answer_key_page": 906
     },
     {
      "id": "S22-B3-Q2",
@@ -881,15 +870,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 782,
+     "page": 907,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Find lengths with the distance formula",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 782,
-     "answer_key_page": 782
+     "question_page": 907,
+     "answer_key_page": 907
     },
     {
      "id": "S22-B3-Q3",
@@ -935,15 +924,15 @@
      "required_method": null,
      "grading_note": "Horizontal: |4 - (-2)| = 6.",
      "figure": null,
-     "page": 783,
+     "page": 908,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Find lengths with the distance formula",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 783,
-     "answer_key_page": 783
+     "question_page": 908,
+     "answer_key_page": 908
     },
     {
      "id": "S22-B3-Q4",
@@ -981,15 +970,15 @@
      "required_method": null,
      "grading_note": "√(9 + 16) = 5.",
      "figure": null,
-     "page": 784,
+     "page": 909,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Find lengths with the distance formula",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 784,
-     "answer_key_page": 784
+     "question_page": 909,
+     "answer_key_page": 909
     },
     {
      "id": "S22-B3-Q5",
@@ -1027,15 +1016,15 @@
      "required_method": null,
      "grading_note": "It is 2a.",
      "figure": null,
-     "page": 785,
+     "page": 910,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Find lengths with the distance formula",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 785,
-     "answer_key_page": 785
+     "question_page": 910,
+     "answer_key_page": 910
     }
    ]
   },
@@ -1050,7 +1039,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot justify a parallel conclusion in the synthetic proof. Why it matters: the proof shows BF ∥ AC this way. Evidence: uses the converse to conclude lines are parallel.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1084,15 +1074,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 787,
+     "page": 912,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Prove lines parallel from congruent alternate interior angles",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 787,
-     "answer_key_page": 787
+     "question_page": 912,
+     "answer_key_page": 912
     },
     {
      "id": "S22-B4-Q2",
@@ -1132,15 +1122,15 @@
      "required_method": null,
      "grading_note": "Converse of the alternate interior angles theorem.",
      "figure": null,
-     "page": 788,
+     "page": 913,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Prove lines parallel from congruent alternate interior angles",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 788,
-     "answer_key_page": 788
+     "question_page": 913,
+     "answer_key_page": 913
     },
     {
      "id": "S22-B4-Q3",
@@ -1188,15 +1178,15 @@
      "required_method": null,
      "grading_note": "Congruent alternate interior angles (transversal BC) give parallel lines.",
      "figure": null,
-     "page": 789,
+     "page": 914,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Prove lines parallel from congruent alternate interior angles",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 789,
-     "answer_key_page": 789
+     "question_page": 914,
+     "answer_key_page": 914
     },
     {
      "id": "S22-B4-Q4",
@@ -1229,15 +1219,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 790,
+     "page": 915,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Prove lines parallel from congruent alternate interior angles",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 790,
-     "answer_key_page": 790
+     "question_page": 915,
+     "answer_key_page": 915
     },
     {
      "id": "S22-B4-Q5",
@@ -1277,15 +1267,15 @@
      "required_method": null,
      "grading_note": "Vertical angles are congruent for any crossing lines.",
      "figure": null,
-     "page": 791,
+     "page": 916,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Prove lines parallel from congruent alternate interior angles",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 791,
-     "answer_key_page": 791
+     "question_page": 916,
+     "answer_key_page": 916
     }
    ]
   },
@@ -1301,7 +1291,8 @@
     "progression": "cross-standard extension",
     "connection": "direct",
     "new_demand": "Use the midsegment theorem twice inside a new proof about quadrilaterals.",
-    "course": "Geometry"
+    "course": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1335,15 +1326,15 @@
      "required_method": "Draw diagonal AC and apply the midsegment theorem in triangles ABC and ADC.",
      "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: in △ABC, PQ ∥ AC and PQ = ½AC; in △ADC, SR ∥ AC and SR = ½AC; so PQ ∥ SR and PQ = SR; a quadrilateral with one pair of opposite sides parallel and congruent is a parallelogram.",
      "figure": null,
-     "page": 793,
+     "page": 918,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Prove that the midpoints of a quadrilateral's sides form a parallelogram",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 793,
-     "answer_key_page": 793
+     "question_page": 918,
+     "answer_key_page": 918
     },
     {
      "id": "S22-F1-Q2",
@@ -1376,15 +1367,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form. Its sides are ½AC, ½BD, ½AC, ½BD: 5 + 7 + 5 + 7.",
      "figure": null,
-     "page": 794,
+     "page": 919,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Prove that the midpoints of a quadrilateral's sides form a parallelogram",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 794,
-     "answer_key_page": 794
+     "question_page": 919,
+     "answer_key_page": 919
     },
     {
      "id": "S22-F1-Q3",
@@ -1424,15 +1415,15 @@
      "required_method": null,
      "grading_note": "This is Varignon's theorem.",
      "figure": null,
-     "page": 795,
+     "page": 920,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Prove that the midpoints of a quadrilateral's sides form a parallelogram",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 795,
-     "answer_key_page": 795
+     "question_page": 920,
+     "answer_key_page": 920
     },
     {
      "id": "S22-F1-Q4",
@@ -1480,15 +1471,15 @@
      "required_method": null,
      "grading_note": "Its sides are parallel to the diagonals, so adjacent sides are perpendicular.",
      "figure": null,
-     "page": 796,
+     "page": 921,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Prove that the midpoints of a quadrilateral's sides form a parallelogram",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 796,
-     "answer_key_page": 796
+     "question_page": 921,
+     "answer_key_page": 921
     },
     {
      "id": "S22-F1-Q5",
@@ -1521,15 +1512,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form. Each midsegment is half the parallel side: 6 + 8 + 5.",
      "figure": null,
-     "page": 797,
+     "page": 922,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Prove that the midpoints of a quadrilateral's sides form a parallelogram",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 797,
-     "answer_key_page": 797
+     "question_page": 922,
+     "answer_key_page": 922
     }
    ]
   },
@@ -1546,7 +1537,8 @@
     "connection": "direct",
     "new_demand": "Connect the midsegment theorem to similarity: scale factor ½ and the area ratio ¼.",
     "course": "Geometry",
-    "builds_on": "FORWARD 1 uses midsegments to prove a parallelogram; FORWARD 2 measures how the midsegment figure compares in size (similarity and area)."
+    "builds_on": "FORWARD 1 uses midsegments to prove a parallelogram; FORWARD 2 measures how the midsegment figure compares in size (similarity and area).",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1580,15 +1572,15 @@
      "required_method": null,
      "grading_note": "Any equivalent explanation with the factor ½ (or 2 from DEF to ABC).",
      "figure": null,
-     "page": 799,
+     "page": 924,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Midsegment triangles: similarity, scale factor, and area",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 799,
-     "answer_key_page": 799
+     "question_page": 924,
+     "answer_key_page": 924
     },
     {
      "id": "S22-F2-Q2",
@@ -1621,15 +1613,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form. Scale factor ½ gives area factor ¼; also the 4 small triangles are congruent.",
      "figure": null,
-     "page": 800,
+     "page": 925,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Midsegment triangles: similarity, scale factor, and area",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 800,
-     "answer_key_page": 800
+     "question_page": 925,
+     "answer_key_page": 925
     },
     {
      "id": "S22-F2-Q3",
@@ -1669,15 +1661,15 @@
      "required_method": null,
      "grading_note": "The scale factor is ½: each side is half a side of the original.",
      "figure": null,
-     "page": 801,
+     "page": 926,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Midsegment triangles: similarity, scale factor, and area",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 801,
-     "answer_key_page": 801
+     "question_page": 926,
+     "answer_key_page": 926
     },
     {
      "id": "S22-F2-Q4",
@@ -1725,15 +1717,15 @@
      "required_method": null,
      "grading_note": "Each repetition halves the length.",
      "figure": null,
-     "page": 802,
+     "page": 927,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Midsegment triangles: similarity, scale factor, and area",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 802,
-     "answer_key_page": 802
+     "question_page": 927,
+     "answer_key_page": 927
     },
     {
      "id": "S22-F2-Q5",
@@ -1766,15 +1758,15 @@
      "required_method": null,
      "grading_note": "Form required: the three midpoints and both areas.",
      "figure": null,
-     "page": 803,
+     "page": 928,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the segment joining the midpoints of two sides of a triangle is parallel to the third side and half as long",
      "target_skill": "Midsegment triangles: similarity, scale factor, and area",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 803,
-     "answer_key_page": 803
+     "question_page": 928,
+     "answer_key_page": 928
     }
    ]
   }

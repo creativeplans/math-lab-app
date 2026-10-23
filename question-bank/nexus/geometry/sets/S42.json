@@ -4,7 +4,7 @@
   "id": "GEO",
   "grade": null,
   "course": "Geometry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-23"
  },
  "grade": null,
@@ -29,7 +29,8 @@
    "branch": {
     "kind": "main",
     "strand": "core",
-    "target_skill": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally"
+    "target_skill": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -122,15 +123,15 @@
        "h": 210
       }
      },
-     "page": 1515,
+     "page": 1708,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1515,
-     "answer_key_page": 1515
+     "question_page": 1708,
+     "answer_key_page": 1708
     },
     {
      "id": "S42-M-Q2",
@@ -149,29 +150,88 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "In the proof of the triangle proportionality theorem, the similarity gives AD/AB = AE/AC. Show the algebra that turns this into AD/DB = AE/EC.",
-     "prompt_markup": "In the proof of the triangle proportionality theorem, the similarity gives AD/AB = AE/AC. Show the algebra that turns this into AD/DB = AE/EC.",
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "In △ABC, D is on AB and E is on AC with DE ∥ BC. Prove that AD/AB = AE/AC = DE/BC.",
+     "prompt_markup": "In △ABC, D is on AB and E is on AC with DE ∥ BC. Prove that AD/AB = AE/AC = DE/BC.",
      "choices": [],
      "answer_lines": [
-      "Work:"
+      "Conclusion:"
      ],
      "correct_letter": null,
-     "correct_answer": "Take reciprocals: AB/AD = AC/AE; write AB = AD + DB and AC = AE + EC; subtract 1 from both sides: DB/AD = EC/AE; take reciprocals: AD/DB = AE/EC.",
+     "correct_answer": "AD/AB = AE/AC = DE/BC",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Any correct algebraic route.",
-     "figure": null,
-     "page": 1516,
-     "revision": "unchanged",
+     "required_method": "Prove △ADE ~ △ABC by AA, then use that corresponding sides of similar triangles are proportional.",
+     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: shared ∠A; ∠ADE ≅ ∠ABC (corresponding angles); AA; corresponding sides proportional with AD ↔ AB, AE ↔ AC, DE ↔ BC.",
+     "figure": {
+      "svg": "assets/S42-M-Q2.svg",
+      "png": "assets/S42-M-Q2.png",
+      "kind": "gd",
+      "description": "Triangle ABC with D on AB and E on AC; segment DE is parallel to BC (arrow marks).",
+      "blank_for_drawing": false,
+      "data": {
+       "k": "gd",
+       "P": {
+        "A": [
+         1.6,
+         3.4
+        ],
+        "B": [
+         0,
+         0
+        ],
+        "C": [
+         5,
+         0
+        ],
+        "D": [
+         0.8,
+         1.7
+        ],
+        "E": [
+         3.3,
+         1.7
+        ]
+       },
+       "items": [
+        [
+         "poly",
+         [
+          "A",
+          "B",
+          "C"
+         ]
+        ],
+        [
+         "seg",
+         "D",
+         "E",
+         {
+          "arrows": 1
+         }
+        ],
+        [
+         "seg",
+         "B",
+         "C",
+         {
+          "arrows": 1
+         }
+        ]
+       ],
+       "desc": "Triangle ABC with D on AB and E on AC; segment DE is parallel to BC (arrow marks).",
+       "h": 210
+      }
+     },
+     "page": 1709,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1516,
-     "answer_key_page": 1516
+     "question_page": 1709,
+     "answer_key_page": 1709
     },
     {
      "id": "S42-M-Q3",
@@ -204,15 +264,15 @@
      "required_method": "AA similarity of △PST and △PQR, then the same algebra.",
      "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: shared ∠P and corresponding angles give △PST ~ △PQR; then the proportion algebra.",
      "figure": null,
-     "page": 1517,
+     "page": 1710,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1517,
-     "answer_key_page": 1517
+     "question_page": 1710,
+     "answer_key_page": 1710
     },
     {
      "id": "S42-M-Q4",
@@ -231,29 +291,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "A proof of the triangle proportionality theorem: 1. ∠ADE ≅ ∠ABC  (?) 2. ∠A ≅ ∠A  (?) 3. △ADE ~ △ABC  (?) 4. AD/AB = AE/AC  (?) Give the reasons.",
-     "prompt_markup": "A proof of the triangle proportionality theorem:\n1. ∠ADE ≅ ∠ABC  (?)\n2. ∠A ≅ ∠A  (?)\n3. △ADE ~ △ABC  (?)\n4. AD/AB = AE/AC  (?)\nGive the reasons.",
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "Coordinate proof. Place △ABC with A(0, 0), B(p, 0) and C(q, r), where p > 0 and r > 0. D(tp, 0) is on AB with 0 < t < 1, and E is on AC with DE ∥ BC. Prove that AD/DB = AE/EC.",
+     "prompt_markup": "Coordinate proof. Place △ABC with A(0, 0), B(p, 0) and C(q, r), where p > 0 and r > 0. D(tp, 0) is on AB with 0 < t < 1, and E is on AC with DE ∥ BC. Prove that AD/DB = AE/EC.",
      "choices": [],
      "answer_lines": [
-      "Reasons:"
+      "Conclusion:"
      ],
      "correct_letter": null,
-     "correct_answer": "1: corresponding angles (DE ∥ BC); 2: reflexive; 3: AA; 4: corresponding sides of similar triangles are proportional.",
+     "correct_answer": "AD/DB = AE/EC = t/(1 - t)",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Any equivalent names for all four.",
+     "required_method": "Write E = (sq, sr) with 0 < s < 1, use equal slopes of DE and BC to show s = t, then compute both ratios.",
+     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: slope DE = sr/(sq - tp) and slope BC = r/(q - p) (or both vertical); equal slopes give s(q - p) = sq - tp, so sp = tp and s = t; AD = tp, DB = (1 - t)p; AE = t · AC, EC = (1 - t) · AC; both ratios are t/(1 - t).",
      "figure": null,
-     "page": 1518,
-     "revision": "unchanged",
+     "page": 1711,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1518,
-     "answer_key_page": 1518
+     "question_page": 1711,
+     "answer_key_page": 1711
     },
     {
      "id": "S42-M-Q5",
@@ -272,44 +332,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "mc",
-     "response": "select one",
-     "prompt": "In the proof of the triangle proportionality theorem (DE ∥ BC in △ABC, with D on AB and E on AC), which fact does the proof use first?",
-     "prompt_markup": "In the proof of the triangle proportionality theorem (DE ∥ BC in △ABC, with D on AB and E on AC), which fact does the proof use first?",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "AB = AC"
-      },
-      {
-       "letter": "B",
-       "text": "D and E are midpoints"
-      },
-      {
-       "letter": "C",
-       "text": "DE ∥ BC makes corresponding angles congruent"
-      },
-      {
-       "letter": "D",
-       "text": "DE = ½BC"
-      }
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "In △ABC, D is on AB and E is on AC with DE ∥ BC. Prove that AD/DB = AE/EC using the dilation about A with scale factor k = AB/AD.",
+     "prompt_markup": "In △ABC, D is on AB and E is on AC with DE ∥ BC. Prove that AD/DB = AE/EC using the dilation about A with scale factor k = AB/AD.",
+     "choices": [],
+     "answer_lines": [
+      "Conclusion:"
      ],
-     "answer_lines": [],
-     "correct_letter": "C",
-     "correct_answer": "DE ∥ BC makes corresponding angles congruent",
+     "correct_letter": null,
+     "correct_answer": "AD/DB = AE/EC",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Only DE ∥ BC is given.",
+     "required_method": "Show the dilation maps D to B and line DE to line BC, so it maps E to C; compare lengths, then rewrite the proportion.",
+     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: the dilation sends D to B (B is on ray AD with AB = k · AD); it sends line DE to the line through B parallel to DE, which is line BC; E is on ray AC, so its image is on ray AC and on line BC, which is C; hence AC = k · AE, so AD/AB = AE/AC = 1/k; then (AB - AD)/AD = (AC - AE)/AE gives DB/AD = EC/AE and AD/DB = AE/EC.",
      "figure": null,
-     "page": 1519,
-     "revision": "unchanged",
+     "page": 1712,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1519,
-     "answer_key_page": 1519
+     "question_page": 1712,
+     "answer_key_page": 1712
     }
    ]
   },
@@ -324,7 +369,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot get the similarity. Why it matters: the theorem is proved from △ADE ~ △ABC. Evidence: uses AA and its ratios.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -365,15 +411,15 @@
      "required_method": null,
      "grading_note": "AA.",
      "figure": null,
-     "page": 1521,
+     "page": 1714,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Use AA to show triangles are similar",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1521,
-     "answer_key_page": 1521
+     "question_page": 1714,
+     "answer_key_page": 1714
     },
     {
      "id": "S42-B1-Q2",
@@ -394,8 +440,8 @@
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "DE ∥ BC in △ABC. Name two pairs of congruent angles in △ADE and △ABC.",
-     "prompt_markup": "DE ∥ BC in △ABC. Name two pairs of congruent angles in △ADE and △ABC.",
+     "prompt": "In △ABC, D is on AB and E is on AC with DE ∥ BC. Name two pairs of congruent angles in △ADE and △ABC.",
+     "prompt_markup": "In △ABC, D is on AB and E is on AC with DE ∥ BC. Name two pairs of congruent angles in △ADE and △ABC.",
      "choices": [],
      "answer_lines": [
       "Answer:"
@@ -406,15 +452,15 @@
      "required_method": null,
      "grading_note": "Any two valid pairs.",
      "figure": null,
-     "page": 1522,
-     "revision": "unchanged",
+     "page": 1715,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Use AA to show triangles are similar",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1522,
-     "answer_key_page": 1522
+     "question_page": 1715,
+     "answer_key_page": 1715
     },
     {
      "id": "S42-B1-Q3",
@@ -435,8 +481,8 @@
      "standard_course": "Geometry",
      "type": "mc",
      "response": "select one",
-     "prompt": "△ADE ~ △ABC. Which ratio equals AD/AB?",
-     "prompt_markup": "△ADE ~ △ABC. Which ratio equals AD/AB?",
+     "prompt": "In △ABC, D is on AB and E is on AC with DE ∥ BC, so △ADE ~ △ABC. Which ratio equals AD/AB?",
+     "prompt_markup": "In △ABC, D is on AB and E is on AC with DE ∥ BC, so △ADE ~ △ABC. Which ratio equals AD/AB?",
      "choices": [
       {
        "letter": "A",
@@ -462,15 +508,15 @@
      "required_method": null,
      "grading_note": "Corresponding sides.",
      "figure": null,
-     "page": 1523,
-     "revision": "unchanged",
+     "page": 1716,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Use AA to show triangles are similar",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1523,
-     "answer_key_page": 1523
+     "question_page": 1716,
+     "answer_key_page": 1716
     },
     {
      "id": "S42-B1-Q4",
@@ -491,8 +537,8 @@
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "△ADE ~ △ABC with AD = 3, AB = 9, AE = 4. Find AC.",
-     "prompt_markup": "△ADE ~ △ABC with AD = 3, AB = 9, AE = 4. Find AC.",
+     "prompt": "In △ABC, D is on AB and E is on AC with DE ∥ BC, so △ADE ~ △ABC. AD = 3, AB = 9, AE = 4. Find AC.",
+     "prompt_markup": "In △ABC, D is on AB and E is on AC with DE ∥ BC, so △ADE ~ △ABC. AD = 3, AB = 9, AE = 4. Find AC.",
      "choices": [],
      "answer_lines": [
       "AC ="
@@ -503,15 +549,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1524,
-     "revision": "unchanged",
+     "page": 1717,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Use AA to show triangles are similar",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1524,
-     "answer_key_page": 1524
+     "question_page": 1717,
+     "answer_key_page": 1717
     },
     {
      "id": "S42-B1-Q5",
@@ -532,8 +578,8 @@
      "standard_course": "Geometry",
      "type": "tf",
      "response": "select true or false",
-     "prompt": "△ADE ~ △ABC means AD/DB = DE/BC.",
-     "prompt_markup": "△ADE ~ △ABC means AD/DB = DE/BC.",
+     "prompt": "In △ABC, D is on AB and E is on AC with DE ∥ BC, so △ADE ~ △ABC. Then AD/DB = DE/BC.",
+     "prompt_markup": "In △ABC, D is on AB and E is on AC with DE ∥ BC, so △ADE ~ △ABC. Then AD/DB = DE/BC.",
      "choices": [
       {
        "letter": "A",
@@ -551,15 +597,15 @@
      "required_method": null,
      "grading_note": "DB is not a side of either triangle.",
      "figure": null,
-     "page": 1525,
-     "revision": "unchanged",
+     "page": 1718,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Use AA to show triangles are similar",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1525,
-     "answer_key_page": 1525
+     "question_page": 1718,
+     "answer_key_page": 1718
     }
    ]
   },
@@ -574,7 +620,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot justify the congruent angles. Why it matters: they come from DE ∥ BC. Evidence: names corresponding angles.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -615,15 +662,15 @@
      "required_method": null,
      "grading_note": "Theorem.",
      "figure": null,
-     "page": 1527,
+     "page": 1720,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Corresponding angles of parallel lines",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1527,
-     "answer_key_page": 1527
+     "question_page": 1720,
+     "answer_key_page": 1720
     },
     {
      "id": "S42-B2-Q2",
@@ -644,8 +691,8 @@
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "DE ∥ BC and AB is a transversal. Which angle corresponds to ∠ADE?",
-     "prompt_markup": "DE ∥ BC and AB is a transversal. Which angle corresponds to ∠ADE?",
+     "prompt": "In △ABC, D is on AB and E is on AC with DE ∥ BC, so AB is a transversal of DE and BC. Which angle corresponds to ∠ADE?",
+     "prompt_markup": "In △ABC, D is on AB and E is on AC with DE ∥ BC, so AB is a transversal of DE and BC. Which angle corresponds to ∠ADE?",
      "choices": [],
      "answer_lines": [
       "Angle:"
@@ -656,15 +703,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1528,
-     "revision": "unchanged",
+     "page": 1721,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Corresponding angles of parallel lines",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1528,
-     "answer_key_page": 1528
+     "question_page": 1721,
+     "answer_key_page": 1721
     },
     {
      "id": "S42-B2-Q3",
@@ -685,8 +732,8 @@
      "standard_course": "Geometry",
      "type": "mc",
      "response": "select one",
-     "prompt": "DE ∥ BC, AC a transversal. ∠AED corresponds to",
-     "prompt_markup": "DE ∥ BC, AC a transversal. ∠AED corresponds to",
+     "prompt": "In △ABC, D is on AB and E is on AC with DE ∥ BC. With AC as the transversal, ∠AED corresponds to",
+     "prompt_markup": "In △ABC, D is on AB and E is on AC with DE ∥ BC. With AC as the transversal, ∠AED corresponds to",
      "choices": [
       {
        "letter": "A",
@@ -712,15 +759,15 @@
      "required_method": null,
      "grading_note": "Same position.",
      "figure": null,
-     "page": 1529,
-     "revision": "unchanged",
+     "page": 1722,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Corresponding angles of parallel lines",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1529,
-     "answer_key_page": 1529
+     "question_page": 1722,
+     "answer_key_page": 1722
     },
     {
      "id": "S42-B2-Q4",
@@ -741,8 +788,8 @@
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "∠ABC = 65° and DE ∥ BC. Find ∠ADE.",
-     "prompt_markup": "∠ABC = 65° and DE ∥ BC. Find ∠ADE.",
+     "prompt": "In △ABC, D is on AB and E is on AC with DE ∥ BC. m∠ABC = 65°. Find m∠ADE.",
+     "prompt_markup": "In △ABC, D is on AB and E is on AC with DE ∥ BC. m∠ABC = 65°. Find m∠ADE.",
      "choices": [],
      "answer_lines": [
       "Angle:"
@@ -753,15 +800,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1530,
-     "revision": "unchanged",
+     "page": 1723,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Corresponding angles of parallel lines",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1530,
-     "answer_key_page": 1530
+     "question_page": 1723,
+     "answer_key_page": 1723
     },
     {
      "id": "S42-B2-Q5",
@@ -801,15 +848,15 @@
      "required_method": null,
      "grading_note": "Congruent for parallel lines.",
      "figure": null,
-     "page": 1531,
+     "page": 1724,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Corresponding angles of parallel lines",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1531,
-     "answer_key_page": 1531
+     "question_page": 1724,
+     "answer_key_page": 1724
     }
    ]
   },
@@ -824,7 +871,8 @@
     "kind": "backward",
     "alignment": "supporting",
     "rationale": "Obstacle: the student cannot convert the similarity proportion. Why it matters: the theorem's proportion is a rewritten form. Evidence: manipulates proportions.",
-    "source": "Grade 7"
+    "source": "Grade 7",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -844,8 +892,8 @@
      "nearest_related": false,
      "type": "sa",
      "response": "write",
-     "prompt": "If a/b = c/d, write the equation you get by taking reciprocals.",
-     "prompt_markup": "If a/b = c/d, write the equation you get by taking reciprocals.",
+     "prompt": "If a/b = c/d, where a, b, c and d are all nonzero, write the equation you get by taking reciprocals.",
+     "prompt_markup": "If a/b = c/d, where a, b, c and d are all nonzero, write the equation you get by taking reciprocals.",
      "choices": [],
      "answer_lines": [
       "Answer:"
@@ -856,15 +904,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 1533,
-     "revision": "unchanged",
+     "page": 1726,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Rewrite and solve proportions algebraically",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1533,
-     "answer_key_page": 1533
+     "question_page": 1726,
+     "answer_key_page": 1726
     },
     {
      "id": "S42-B3-Q2",
@@ -895,15 +943,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form. 60 = 24 + 6x.",
      "figure": null,
-     "page": 1534,
+     "page": 1727,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Rewrite and solve proportions algebraically",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1534,
-     "answer_key_page": 1534
+     "question_page": 1727,
+     "answer_key_page": 1727
     },
     {
      "id": "S42-B3-Q3",
@@ -949,15 +997,15 @@
      "required_method": null,
      "grading_note": "Subtract 1 from both sides.",
      "figure": null,
-     "page": 1535,
+     "page": 1728,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Rewrite and solve proportions algebraically",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1535,
-     "answer_key_page": 1535
+     "question_page": 1728,
+     "answer_key_page": 1728
     },
     {
      "id": "S42-B3-Q4",
@@ -995,15 +1043,15 @@
      "required_method": null,
      "grading_note": "Reciprocals.",
      "figure": null,
-     "page": 1536,
+     "page": 1729,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Rewrite and solve proportions algebraically",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1536,
-     "answer_key_page": 1536
+     "question_page": 1729,
+     "answer_key_page": 1729
     },
     {
      "id": "S42-B3-Q5",
@@ -1041,15 +1089,15 @@
      "required_method": null,
      "grading_note": "Subtracting 1 gives 3/2 = 3/2.",
      "figure": null,
-     "page": 1537,
+     "page": 1730,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Rewrite and solve proportions algebraically",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1537,
-     "answer_key_page": 1537
+     "question_page": 1730,
+     "answer_key_page": 1730
     }
    ]
   },
@@ -1065,7 +1113,8 @@
     "progression": "same-course deepening",
     "connection": "direct",
     "new_demand": "Generalize the theorem to three parallel lines cutting any two transversals.",
-    "course": "Geometry"
+    "course": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1099,15 +1148,15 @@
      "required_method": "Draw segment AF; apply the triangle proportionality theorem in △ACF and in △FDA.",
      "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: AF crosses the middle line at G; in △ACF, BG ∥ CF so AB/BC = AG/GF; in △FAD, GE ∥ AD so FG/GA = FE/ED, so AG/GF = DE/EF; combine.",
      "figure": null,
-     "page": 1539,
+     "page": 1732,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Prove that parallel lines cut transversals proportionally",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1539,
-     "answer_key_page": 1539
+     "question_page": 1732,
+     "answer_key_page": 1732
     },
     {
      "id": "S42-F1-Q2",
@@ -1140,15 +1189,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1540,
+     "page": 1733,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Prove that parallel lines cut transversals proportionally",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1540,
-     "answer_key_page": 1540
+     "question_page": 1733,
+     "answer_key_page": 1733
     },
     {
      "id": "S42-F1-Q3",
@@ -1188,15 +1237,15 @@
      "required_method": null,
      "grading_note": "Ratio 1.",
      "figure": null,
-     "page": 1541,
+     "page": 1734,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Prove that parallel lines cut transversals proportionally",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1541,
-     "answer_key_page": 1541
+     "question_page": 1734,
+     "answer_key_page": 1734
     },
     {
      "id": "S42-F1-Q4",
@@ -1217,8 +1266,8 @@
      "standard_course": "Geometry",
      "type": "mc",
      "response": "select one",
-     "prompt": "In △ABC, DE ∥ BC, AD = 5, DB = 3, AE = 7.5. Find EC.",
-     "prompt_markup": "In △ABC, DE ∥ BC, AD = 5, DB = 3, AE = 7.5. Find EC.",
+     "prompt": "In △ABC, D is on AB and E is on AC with DE ∥ BC. AD = 5, DB = 3, AE = 7.5. Find EC.",
+     "prompt_markup": "In △ABC, D is on AB and E is on AC with DE ∥ BC. AD = 5, DB = 3, AE = 7.5. Find EC.",
      "choices": [
       {
        "letter": "A",
@@ -1244,15 +1293,15 @@
      "required_method": null,
      "grading_note": "5/3 = 7.5/EC.",
      "figure": null,
-     "page": 1542,
-     "revision": "unchanged",
+     "page": 1735,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Prove that parallel lines cut transversals proportionally",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1542,
-     "answer_key_page": 1542
+     "question_page": 1735,
+     "answer_key_page": 1735
     },
     {
      "id": "S42-F1-Q5",
@@ -1285,15 +1334,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1543,
+     "page": 1736,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Prove that parallel lines cut transversals proportionally",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1543,
-     "answer_key_page": 1543
+     "question_page": 1736,
+     "answer_key_page": 1736
     }
    ]
   },
@@ -1310,7 +1359,8 @@
     "connection": "direct",
     "new_demand": "Use the triangle proportionality theorem as a tool to prove a new relationship (the angle bisector theorem).",
     "course": "Geometry",
-    "builds_on": "A second extension of MAIN: FORWARD 1 generalizes the theorem; FORWARD 2 uses it to prove another theorem."
+    "builds_on": "A second extension of MAIN: FORWARD 1 generalizes the theorem; FORWARD 2 uses it to prove another theorem.",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1344,15 +1394,15 @@
      "required_method": "Show △ACE is isosceles (AE = AC), then apply the triangle proportionality theorem in △BCE.",
      "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: ∠BAD ≅ ∠AEC (corresponding) and ∠DAC ≅ ∠ACE (alternate interior), and ∠BAD ≅ ∠DAC, so ∠AEC ≅ ∠ACE and AE = AC; in △BCE, AD ∥ EC gives BD/DC = BA/AE = AB/AC.",
      "figure": null,
-     "page": 1545,
+     "page": 1738,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Prove the angle bisector theorem",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1545,
-     "answer_key_page": 1545
+     "question_page": 1738,
+     "answer_key_page": 1738
     },
     {
      "id": "S42-F2-Q2",
@@ -1385,15 +1435,15 @@
      "required_method": null,
      "grading_note": "Form required: both. BD/DC = 9/6.",
      "figure": null,
-     "page": 1546,
+     "page": 1739,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Prove the angle bisector theorem",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1546,
-     "answer_key_page": 1546
+     "question_page": 1739,
+     "answer_key_page": 1739
     },
     {
      "id": "S42-F2-Q3",
@@ -1433,15 +1483,15 @@
      "required_method": null,
      "grading_note": "Only when the two sides are equal.",
      "figure": null,
-     "page": 1547,
+     "page": 1740,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Prove the angle bisector theorem",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1547,
-     "answer_key_page": 1547
+     "question_page": 1740,
+     "answer_key_page": 1740
     },
     {
      "id": "S42-F2-Q4",
@@ -1489,15 +1539,15 @@
      "required_method": null,
      "grading_note": "3/5 = 6/PR.",
      "figure": null,
-     "page": 1548,
+     "page": 1741,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Prove the angle bisector theorem",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1548,
-     "answer_key_page": 1548
+     "question_page": 1741,
+     "answer_key_page": 1741
     },
     {
      "id": "S42-F2-Q5",
@@ -1530,15 +1580,15 @@
      "required_method": null,
      "grading_note": "Any reasonable explanation.",
      "figure": null,
-     "page": 1549,
+     "page": 1742,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that a line parallel to one side of a triangle divides the other two sides proportionally",
      "target_skill": "Prove the angle bisector theorem",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1549,
-     "answer_key_page": 1549
+     "question_page": 1742,
+     "answer_key_page": 1742
     }
    ]
   }

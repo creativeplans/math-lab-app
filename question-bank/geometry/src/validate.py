@@ -80,7 +80,7 @@ for st in SETS:
 for code in hs_courses.GEOMETRY + hs_courses.GEOMETRY_PLUS:
     if not core_main.get(code):
         prob.append('no MAIN set for ' + code)
-check('Every Geometry standard has a MAIN set; (+) standards only in the ADVANCED EXTENSION strand', prob,
+check('Every Geometry standard has a MAIN set; (+) standards are the MAIN of ADVANCED EXTENSION sets only (core-set forward branches on (+) standards: check 20)', prob,
       '%d core standards and %d (+) standards, each with at least one MAIN set' % (len(hs_courses.GEOMETRY), len(hs_courses.GEOMETRY_PLUS)))
 
 prob = []
@@ -284,6 +284,97 @@ nq, nv, bad = resolve.run()
 check('Independent re-solve: numeric and exact answers recomputed from the givens with separate code (resolve.py)', bad,
       '%d questions (%d values) recomputed; all agree with the key' % (nq, nv))
 
+# ---------------------------------------------------------------- 8. checks added in 1.1.0 (correction report R02, R32, R33)
+prob = []
+subs_all = {sid: d for _c, (_t, ss) in standards.STANDARDS.items() for sid, d in ss}
+main_by_set = collections.defaultdict(list)
+for r in RECS:
+    if r['section'] == 'MAIN':
+        main_by_set[r['set']].append(r)
+mixed = []
+for st in SETS:
+    types = [r['type'] for r in main_by_set[st['num']]]
+    if 'tf' in types:
+        prob.append('S%d MAIN has a true/false item' % st['num'])
+    desc = ' '.join(subs_all[c] for c in st['covers']).lower()
+    verb = desc.split()[0]
+    need = 'plot' if verb == 'construct' else ('work' if verb in ('prove', 'derive', 'explain', 'informal', 'give') or 'argument' in desc else None)
+    if not need:
+        continue
+    if types.count(need) == 5:
+        continue
+    tgt = st['target'].lower()
+    if ' use ' in ' %s ' % desc or ' use' in tgt or ' define ' in tgt:
+        mixed.append('S%d (%d of 5 %s; the rest written explain-and-use tasks)' % (st['num'], types.count(need), need))
+        if types.count(need) < 1 or set(types) - {need, 'sa', 'work'}:
+            prob.append('S%d MAIN %s' % (st['num'], types))
+    else:
+        prob.append('S%d MAIN types %s (all five must be %s)' % (st['num'], types, need))
+check('MAIN comparability: no true/false in any MAIN; prove / derive / argue sets have five shown-work items and construct sets five '
+      'constructions, except sets whose target is "explain (or derive) and use (or define)", which need at least one shown-work item and no '
+      'selected-response item', prob, 'all %d sets meet the rule; explain-and-use sets: %s' % (len(SETS), ', '.join(mixed) or 'none'))
+
+prob = []
+nf = 0
+for r in RECS:
+    if r['has_figure'] and r['type'] != 'mc' or (r.get('figure_svg')):
+        if r.get('figure_svg') or r.get('choice_figures'):
+            nf += 1
+            if r.get('figure_svg') and not (r.get('figure_description') and r.get('figure_data')):
+                prob.append(r['id'] + ' figure fields incomplete')
+        elif r['has_figure']:
+            prob.append(r['id'] + ' has a figure but no figure fields')
+check('Answer key JSON/CSV link every figure by UID: asset paths, text description, and figure data (field names unchanged; new columns appended)',
+      prob, '%d records carry figure fields' % nf)
+
+import export  # noqa: E402  (engine; for the (+) list)
+plus_core = ['S%d-%s %s' % (st['num'], 'F1' if key == 'FORWARD 1' else 'F2' if key == 'FORWARD 2' else key, std)
+             for st in SETS if st.get('strand') == 'core'
+             for key, _n, std, _q, _ne in build.sections(st) if export.plus_standard(std)]
+prob = ['%s is a (+) branch in a core set but not a forward branch' % x for x in plus_core if ' F' not in x and '-F' not in x]
+check('(+) content outside the ADVANCED EXTENSION strand appears only as forward branches of core sets, and is flagged plus_standard in the export',
+      prob, '%d core-set branches use a (+) standard: %s' % (len(plus_core), ', '.join(plus_core)))
+
+prob = []
+src_count = sum(5 * len(build.sections(st)) for st in SETS)
+by_sec = collections.Counter(r['section'].split()[0] for r in RECS)
+if src_count != len(RECS):
+    prob.append('source %d vs key %d' % (src_count, len(RECS)))
+if by_sec['MAIN'] != 5 * len(SETS) or by_sec['FORWARD'] != 10 * len(SETS):
+    prob.append('section totals %s' % dict(by_sec))
+if DATA['question_count'] != len(RECS):
+    prob.append('question_count field %d' % DATA['question_count'])
+check('Totals recalculated three ways (source sets, key records, key header) and by section', prob,
+      '%d questions = %d sets × 5 MAIN + %d backward branches × 5 + %d sets × 10 forward' % (
+          len(RECS), len(SETS), sum(len(st['back']) for st in SETS), len(SETS)))
+
+SCOPE = [
+    'Automatic, every set: counts sections and questions in the source.',
+    'Automatic, every record: ID pattern, uniqueness, uid prefix.',
+    'Automatic: standard codes against the inventory and each set\'s strand. Does not judge whether a question fits its standard.',
+    'Automatic: covers= tags against the subskill list. Whether the five questions really measure that subskill was judged by reading (see Manual review).',
+    'Automatic: question types only. It cannot tell whether a proof is valid; see Manual review.',
+    'Automatic: backward standards come from K-8, Algebra I, or an earlier MAIN, so the routing graph is acyclic. It does NOT check '
+    'logical dependencies inside proofs; those were reviewed by hand (see Proof-dependency review).',
+    'Automatic: metadata present and standard placement. The quality of the stated new demand was judged by reading.',
+    'Automatic: fields present and well formed. Correctness of answers is covered only by check 17 and by Manual review.',
+    'Automatic counts.',
+    'Automatic: looks for the word "Essential" in proof notes. It cannot tell whether the criteria are mathematically right.',
+    'Automatic: tool statement and "construction marks" in the note. Constructions were also drawn by hand while authoring.',
+    'Automatic: exact-text repeats within a set and ellipses. Near-duplicates across sets were reviewed with a separate stem comparison.',
+    'Automatic: every gd figure has desc text. Whether the picture matches the text was checked by rendering changed figures (see Manual review).',
+    'Automatic, every record and field.',
+    'Automatic: searches each PDF page\'s text for its ID. Layout quality was checked by rendering sample pages.',
+    'Automatic phrase search. Missing givens that the phrases do not catch were found by reading (correction report R04).',
+    'Automatic, %d of %d questions: resolve.py recomputes listed numeric or exact answers with separate code. The other questions '
+    '(proofs, explanations, constructions, classifications) are not covered by this check.' % (nq, len(RECS)),
+    'Automatic: question types in MAIN against the subskill verb. Comparability of difficulty was judged by reading.',
+    'Automatic: presence of figure fields in the key JSON (the CSV is checked against the JSON by check 14).',
+    'Automatic: lists every (+) branch in a core set.',
+    'Automatic arithmetic on the generated files.',
+]
+assert len(SCOPE) == len(results), (len(SCOPE), len(results))
+
 # ---------------------------------------------------------------- report
 fails = [x for x in results if not x[1]]
 types = collections.Counter(r['type'] for r in RECS)
@@ -294,9 +385,12 @@ L = ['# Geometry validation results', '',
      'Generated by `geometry/src/validate.py` from the source sets and the generated files (version %s, %s).' % (
          DATA['collection']['version'], DATA['collection']['date']), '',
      '**Result: %s** (%d checks, %d failed).' % ('PASS' if not fails else 'FAIL', len(results), len(fails)), '',
-     '| # | Check | Result | Detail |', '|---:|---|---|---|']
-for i, (n, ok, d) in enumerate(results, 1):
-    L.append('| %d | %s | %s | %s |' % (i, n, 'PASS' if ok else '**FAIL**', d.replace('|', '/')))
+     'PASS means only that the automatic test found no problem within the scope stated in its row. Content quality that no '
+     'script can test (proof validity, fit to the standard, wording) is covered by the manual review sections below, which say '
+     'what was reviewed and how.', '',
+     '| # | Check | Result | Detail | Scope (what the check covers) |', '|---:|---|---|---|---|']
+for i, ((n, ok, d), sc) in enumerate(zip(results, SCOPE), 1):
+    L.append('| %d | %s | %s | %s | %s |' % (i, n, 'PASS' if ok else '**FAIL**', d.replace('|', '/'), sc))
 L += ['', '## Counts', '',
       '- Sets: %d (%d core, %d advanced extension (+))' % (len(SETS), strands['core'], strands['advanced']),
       '- Questions: %d — MAIN %d, BACKWARD %d, FORWARD 1 %d, FORWARD 2 %d' % (len(RECS), secs['MAIN'], secs['BACKWARD'], secs['FORWARD 1'], secs['FORWARD 2']),
@@ -310,6 +404,8 @@ L += ['', '## Counts', '',
       'extension, and the new demand is stated. The validator accepts this only with that label.', '',
       '| Set | Branch | Standard | Branch title | New demand |', '|---|---|---|---|---|'] + [
       '| S%d | %s | %s | %s | %s |' % a for a in applied] + ['']
+import review_log  # noqa: E402
+L += review_log.markdown(resolve.CASES, RECS)
 out = os.path.join(build.GRADE_DIR, 'VALIDATION.md')
 open(out, 'w', encoding='utf-8').write('\n'.join(L) + '\n')
 print('\n'.join(L))

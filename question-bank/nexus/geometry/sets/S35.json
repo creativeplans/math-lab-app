@@ -4,7 +4,7 @@
   "id": "GEO",
   "grade": null,
   "course": "Geometry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-23"
  },
  "grade": null,
@@ -29,7 +29,8 @@
    "branch": {
     "kind": "main",
     "strand": "core",
-    "target_skill": "Construct a square inscribed in a given circle"
+    "target_skill": "Construct a square inscribed in a given circle",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -88,15 +89,15 @@
        }
       }
      },
-     "page": 1256,
+     "page": 1449,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Construct a square inscribed in a given circle",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1256,
-     "answer_key_page": 1256
+     "question_page": 1449,
+     "answer_key_page": 1449
     },
     {
      "id": "S35-M-Q2",
@@ -158,15 +159,15 @@
        }
       }
      },
-     "page": 1257,
+     "page": 1450,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Construct a square inscribed in a given circle",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1257,
-     "answer_key_page": 1257
+     "question_page": 1450,
+     "answer_key_page": 1450
     },
     {
      "id": "S35-M-Q3",
@@ -243,15 +244,15 @@
        }
       }
      },
-     "page": 1258,
+     "page": 1451,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Construct a square inscribed in a given circle",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1258,
-     "answer_key_page": 1258
+     "question_page": 1451,
+     "answer_key_page": 1451
     },
     {
      "id": "S35-M-Q4",
@@ -270,29 +271,49 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Write the steps for inscribing a square in a circle with center O.",
-     "prompt_markup": "Write the steps for inscribing a square in a circle with center O.",
+     "type": "plot",
+     "response": "draw on the figure",
+     "prompt": "Compass and straightedge only; leave all arcs. The center of this circle is not marked. Construct a square inscribed in it.",
+     "prompt_markup": "Compass and straightedge only; leave all arcs.\nThe center of this circle is not marked. Construct a square inscribed in it.",
      "choices": [],
-     "answer_lines": [
-      "Steps:"
-     ],
+     "answer_lines": [],
      "correct_letter": null,
-     "correct_answer": "1. Draw a diameter AC. 2. Construct the perpendicular bisector of AC, meeting the circle at B and D. 3. Join A, B, C, D in order.",
+     "correct_answer": "Locate the center O with the perpendicular bisectors of two chords; draw a diameter through O; construct the perpendicular diameter; join the four endpoints.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any valid steps.",
-     "figure": null,
-     "page": 1259,
-     "revision": "unchanged",
+     "grading_note": "Grade the construction marks, not only the final figure: the center construction, two perpendicular diameters, and the square.",
+     "figure": {
+      "svg": "assets/S35-M-Q4.svg",
+      "png": "assets/S35-M-Q4.png",
+      "kind": "gd",
+      "description": "A circle; its center is not marked.",
+      "blank_for_drawing": true,
+      "data": {
+       "k": "gd",
+       "P": {},
+       "items": [
+        [
+         "circle",
+         [
+          0,
+          0
+         ],
+         2.2
+        ]
+       ],
+       "desc": "A circle; its center is not marked.",
+       "h": 270
+      }
+     },
+     "page": 1452,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Construct a square inscribed in a given circle",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1259,
-     "answer_key_page": 1259
+     "question_page": 1452,
+     "answer_key_page": 1452
     },
     {
      "id": "S35-M-Q5",
@@ -311,44 +332,73 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "mc",
-     "response": "select one",
-     "prompt": "Which property of a square's diagonals does the construction use?",
-     "prompt_markup": "Which property of a square's diagonals does the construction use?",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "They are congruent, perpendicular, and bisect each other"
-      },
-      {
-       "letter": "B",
-       "text": "They are parallel"
-      },
-      {
-       "letter": "C",
-       "text": "They are equal to the sides"
-      },
-      {
-       "letter": "D",
-       "text": "They meet outside the square"
-      }
-     ],
+     "type": "plot",
+     "response": "draw on the figure",
+     "prompt": "Compass and straightedge only; leave all arcs. Construct a square inscribed in the circle so that one of its diagonals lies along line k.",
+     "prompt_markup": "Compass and straightedge only; leave all arcs.\nConstruct a square inscribed in the circle so that one of its diagonals lies along line k.",
+     "choices": [],
      "answer_lines": [],
-     "correct_letter": "A",
-     "correct_answer": "They are congruent, perpendicular, and bisect each other",
+     "correct_letter": null,
+     "correct_answer": "Line k meets the circle at A and C; construct the perpendicular to k at O, meeting the circle at B and D; join ABCD.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Two perpendicular diameters have all three properties.",
-     "figure": null,
-     "page": 1260,
-     "revision": "unchanged",
+     "grading_note": "Grade the construction marks, not only the final figure: the perpendicular construction at O and the square.",
+     "figure": {
+      "svg": "assets/S35-M-Q5.svg",
+      "png": "assets/S35-M-Q5.png",
+      "kind": "gd",
+      "description": "A circle with center O and a slanted line k through O.",
+      "blank_for_drawing": true,
+      "data": {
+       "k": "gd",
+       "P": {
+        "O": [
+         0,
+         0
+        ]
+       },
+       "items": [
+        [
+         "circle",
+         "O",
+         2
+        ],
+        [
+         "line",
+         [
+          -2.6,
+          -1.3
+         ],
+         [
+          2.6,
+          1.3
+         ]
+        ],
+        [
+         "text",
+         [
+          3,
+          1.6
+         ],
+         "k"
+        ]
+       ],
+       "desc": "A circle with center O and a slanted line k through O.",
+       "h": 280,
+       "lab": {
+        "O": "s"
+       }
+      }
+     },
+     "page": 1453,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Construct a square inscribed in a given circle",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1260,
-     "answer_key_page": 1260
+     "question_page": 1453,
+     "answer_key_page": 1453
     }
    ]
   },
@@ -363,7 +413,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot create the second diameter. Why it matters: the square comes from two perpendicular diameters. Evidence: uses the perpendicular bisector construction.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -397,15 +448,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 1262,
+     "page": 1455,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Construct a perpendicular bisector",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1262,
-     "answer_key_page": 1262
+     "question_page": 1455,
+     "answer_key_page": 1455
     },
     {
      "id": "S35-B1-Q2",
@@ -445,15 +496,15 @@
      "required_method": null,
      "grading_note": "The center is the diameter's midpoint.",
      "figure": null,
-     "page": 1263,
+     "page": 1456,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Construct a perpendicular bisector",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1263,
-     "answer_key_page": 1263
+     "question_page": 1456,
+     "answer_key_page": 1456
     },
     {
      "id": "S35-B1-Q3",
@@ -501,15 +552,15 @@
      "required_method": null,
      "grading_note": "360 ÷ 4.",
      "figure": null,
-     "page": 1264,
+     "page": 1457,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Construct a perpendicular bisector",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1264,
-     "answer_key_page": 1264
+     "question_page": 1457,
+     "answer_key_page": 1457
     },
     {
      "id": "S35-B1-Q4",
@@ -542,15 +593,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 1265,
+     "page": 1458,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Construct a perpendicular bisector",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1265,
-     "answer_key_page": 1265
+     "question_page": 1458,
+     "answer_key_page": 1458
     },
     {
      "id": "S35-B1-Q5",
@@ -590,15 +641,15 @@
      "required_method": null,
      "grading_note": "A construction uses compass and straightedge.",
      "figure": null,
-     "page": 1266,
+     "page": 1459,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Construct a perpendicular bisector",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1266,
-     "answer_key_page": 1266
+     "question_page": 1459,
+     "answer_key_page": 1459
     }
    ]
   },
@@ -613,7 +664,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student does not see why the result is a square. Why it matters: its diagonals are the two diameters. Evidence: states the diagonal properties.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -654,15 +706,15 @@
      "required_method": null,
      "grading_note": "A square is a rectangle and a rhombus.",
      "figure": null,
-     "page": 1268,
+     "page": 1461,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Diagonals of a square",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1268,
-     "answer_key_page": 1268
+     "question_page": 1461,
+     "answer_key_page": 1461
     },
     {
      "id": "S35-B2-Q2",
@@ -683,8 +735,8 @@
      "standard_course": "Geometry",
      "type": "mc",
      "response": "select one",
-     "prompt": "A quadrilateral's diagonals are congruent, perpendicular, and bisect each other. It is a",
-     "prompt_markup": "A quadrilateral's diagonals are congruent, perpendicular, and bisect each other. It is a",
+     "prompt": "A quadrilateral's diagonals are congruent, perpendicular, and bisect each other. What is its most specific name?",
+     "prompt_markup": "A quadrilateral's diagonals are congruent, perpendicular, and bisect each other. What is its most specific name?",
      "choices": [
       {
        "letter": "A",
@@ -700,7 +752,7 @@
       },
       {
        "letter": "D",
-       "text": "kite"
+       "text": "kite that is not a rhombus"
       }
      ],
      "answer_lines": [],
@@ -708,17 +760,17 @@
      "correct_answer": "square",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "All three properties.",
+     "grading_note": "All three properties together give a square.",
      "figure": null,
-     "page": 1269,
-     "revision": "unchanged",
+     "page": 1462,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Diagonals of a square",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1269,
-     "answer_key_page": 1269
+     "question_page": 1462,
+     "answer_key_page": 1462
     },
     {
      "id": "S35-B2-Q3",
@@ -751,15 +803,15 @@
      "required_method": null,
      "grading_note": "Form required: exact value.",
      "figure": null,
-     "page": 1270,
+     "page": 1463,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Diagonals of a square",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1270,
-     "answer_key_page": 1270
+     "question_page": 1463,
+     "answer_key_page": 1463
     },
     {
      "id": "S35-B2-Q4",
@@ -799,15 +851,15 @@
      "required_method": null,
      "grading_note": "Only a square does.",
      "figure": null,
-     "page": 1271,
+     "page": 1464,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Diagonals of a square",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1271,
-     "answer_key_page": 1271
+     "question_page": 1464,
+     "answer_key_page": 1464
     },
     {
      "id": "S35-B2-Q5",
@@ -840,15 +892,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1272,
+     "page": 1465,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Diagonals of a square",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1272,
-     "answer_key_page": 1272
+     "question_page": 1465,
+     "answer_key_page": 1465
     }
    ]
   },
@@ -863,7 +915,8 @@
     "kind": "backward",
     "alignment": "supporting",
     "rationale": "Obstacle: the student does not use diameters. Why it matters: the square's diagonals are diameters. Evidence: uses diameter facts.",
-    "source": "Grade 7"
+    "source": "Grade 7",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -895,15 +948,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1274,
+     "page": 1467,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Diameters and the center of a circle",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1274,
-     "answer_key_page": 1274
+     "question_page": 1467,
+     "answer_key_page": 1467
     },
     {
      "id": "S35-B3-Q2",
@@ -941,15 +994,15 @@
      "required_method": null,
      "grading_note": "Definition.",
      "figure": null,
-     "page": 1275,
+     "page": 1468,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Diameters and the center of a circle",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1275,
-     "answer_key_page": 1275
+     "question_page": 1468,
+     "answer_key_page": 1468
     },
     {
      "id": "S35-B3-Q3",
@@ -995,15 +1048,15 @@
      "required_method": null,
      "grading_note": "Both pass through the center.",
      "figure": null,
-     "page": 1276,
+     "page": 1469,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Diameters and the center of a circle",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1276,
-     "answer_key_page": 1276
+     "question_page": 1469,
+     "answer_key_page": 1469
     },
     {
      "id": "S35-B3-Q4",
@@ -1034,15 +1087,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 1277,
+     "page": 1470,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Diameters and the center of a circle",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1277,
-     "answer_key_page": 1277
+     "question_page": 1470,
+     "answer_key_page": 1470
     },
     {
      "id": "S35-B3-Q5",
@@ -1080,15 +1133,15 @@
      "required_method": null,
      "grading_note": "All equal 2r.",
      "figure": null,
-     "page": 1278,
+     "page": 1471,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Diameters and the center of a circle",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1278,
-     "answer_key_page": 1278
+     "question_page": 1471,
+     "answer_key_page": 1471
     }
    ]
   },
@@ -1104,7 +1157,8 @@
     "progression": "cross-standard extension",
     "connection": "direct",
     "new_demand": "Prove that the construction yields a square, and use the proof to compute.",
-    "course": "Geometry"
+    "course": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1138,15 +1192,15 @@
      "required_method": "Use that the diagonals are congruent (both diameters), bisect each other (radii), and are perpendicular; or SAS on the four triangles.",
      "grading_note": "Any valid proof. Essential: OA = OB = OC = OD; four right angles at O; SAS gives four congruent sides; each triangle is isosceles right, so each vertex angle is 45° + 45° = 90°.",
      "figure": null,
-     "page": 1280,
+     "page": 1473,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Justify that the inscribed quadrilateral is a square",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1280,
-     "answer_key_page": 1280
+     "question_page": 1473,
+     "answer_key_page": 1473
     },
     {
      "id": "S35-F1-Q2",
@@ -1179,15 +1233,15 @@
      "required_method": null,
      "grading_note": "Form required: exact side and area.",
      "figure": null,
-     "page": 1281,
+     "page": 1474,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Justify that the inscribed quadrilateral is a square",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1281,
-     "answer_key_page": 1281
+     "question_page": 1474,
+     "answer_key_page": 1474
     },
     {
      "id": "S35-F1-Q3",
@@ -1227,15 +1281,15 @@
      "required_method": null,
      "grading_note": "The side is r√2; 2r is its diagonal.",
      "figure": null,
-     "page": 1282,
+     "page": 1475,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Justify that the inscribed quadrilateral is a square",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1282,
-     "answer_key_page": 1282
+     "question_page": 1475,
+     "answer_key_page": 1475
     },
     {
      "id": "S35-F1-Q4",
@@ -1283,15 +1337,15 @@
      "required_method": null,
      "grading_note": "(r√2)² = 2r².",
      "figure": null,
-     "page": 1283,
+     "page": 1476,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Justify that the inscribed quadrilateral is a square",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1283,
-     "answer_key_page": 1283
+     "question_page": 1476,
+     "answer_key_page": 1476
     },
     {
      "id": "S35-F1-Q5",
@@ -1324,15 +1378,15 @@
      "required_method": null,
      "grading_note": "Form required: exact value. 2r² ÷ πr².",
      "figure": null,
-     "page": 1284,
+     "page": 1477,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Justify that the inscribed quadrilateral is a square",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1284,
-     "answer_key_page": 1284
+     "question_page": 1477,
+     "answer_key_page": 1477
     }
    ]
   },
@@ -1349,7 +1403,8 @@
     "connection": "direct",
     "new_demand": "Extend the square construction to a regular octagon by bisecting.",
     "course": "Geometry",
-    "builds_on": "Builds on FORWARD 1: halving the justified 90° central angles gives eight equal arcs."
+    "builds_on": "Builds on FORWARD 1: halving the justified 90° central angles gives eight equal arcs.",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1408,15 +1463,15 @@
        }
       }
      },
-     "page": 1286,
+     "page": 1479,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Construct a regular octagon inscribed in a circle",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1286,
-     "answer_key_page": 1286
+     "question_page": 1479,
+     "answer_key_page": 1479
     },
     {
      "id": "S35-F2-Q2",
@@ -1449,15 +1504,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1287,
+     "page": 1480,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Construct a regular octagon inscribed in a circle",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1287,
-     "answer_key_page": 1287
+     "question_page": 1480,
+     "answer_key_page": 1480
     },
     {
      "id": "S35-F2-Q3",
@@ -1497,15 +1552,15 @@
      "required_method": null,
      "grading_note": "(8 - 2) · 180 ÷ 8 = 135°; 120° is the hexagon.",
      "figure": null,
-     "page": 1288,
+     "page": 1481,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Construct a regular octagon inscribed in a circle",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1288,
-     "answer_key_page": 1288
+     "question_page": 1481,
+     "answer_key_page": 1481
     },
     {
      "id": "S35-F2-Q4",
@@ -1553,15 +1608,15 @@
      "required_method": null,
      "grading_note": "8 → 16.",
      "figure": null,
-     "page": 1289,
+     "page": 1482,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Construct a regular octagon inscribed in a circle",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1289,
-     "answer_key_page": 1289
+     "question_page": 1482,
+     "answer_key_page": 1482
     },
     {
      "id": "S35-F2-Q5",
@@ -1594,15 +1649,15 @@
      "required_method": null,
      "grading_note": "Any equivalent explanation.",
      "figure": null,
-     "page": 1290,
+     "page": 1483,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a square inscribed in a given circle",
      "target_skill": "Construct a regular octagon inscribed in a circle",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1290,
-     "answer_key_page": 1290
+     "question_page": 1483,
+     "answer_key_page": 1483
     }
    ]
   }

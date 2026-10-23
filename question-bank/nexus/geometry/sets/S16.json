@@ -4,7 +4,7 @@
   "id": "GEO",
   "grade": null,
   "course": "Geometry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-23"
  },
  "grade": null,
@@ -29,7 +29,8 @@
    "branch": {
     "kind": "main",
     "strand": "core",
-    "target_skill": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent"
+    "target_skill": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -61,7 +62,7 @@
      "correct_answer": "A translation and a rotation carry A to D and B to E; if needed, the reflection across DE carries C′ to F.",
      "drawing_answer": null,
      "required_method": "Move A to D and B to E (translation and rotation, using AB = DE). If the image C′ of C is not F, show that line DE is the perpendicular bisector of C′F, so the reflection across DE carries C′ to F.",
-     "grading_note": "Any valid explanation. Essential: (1) A → D, B → E (AB = DE); (2) DC′ = DF and EC′ = EF (rigid motions keep lengths); (3) if C′ ≠ F, D and E are each equidistant from C′ and F, so line DE is the perpendicular bisector of C′F; (4) the reflection across DE fixes D and E and maps C′ to F. Alternative: C′ and F both lie on the circles centered at D and E with these radii, which meet in at most one point on each side of DE. Invalid: using angles (none are given); citing SSS to prove SSS.",
+     "grading_note": "Any valid explanation. Essential: (1) A → D, B → E (AB = DE); (2) DC′ = DF and EC′ = EF (rigid motions keep lengths); (3) if C′ ≠ F, D and E are each equidistant from C′ and F, so each lies on the perpendicular bisector of C′F, and line DE is that bisector; (4) the reflection across DE fixes D and E and maps C′ to F. Step 3 must not rest on SSS: justify it with SAS (the bisector of ∠C′DF meets C′F at M; △DMC′ ≅ △DMF by SAS, so MC′ = MF and the angles at M are a congruent linear pair, 90° each) or with coordinates (set 19). Invalid: using angles of the triangles (none are given); citing SSS, or the converse of the perpendicular bisector theorem proved with SSS.",
      "figure": {
       "svg": "assets/S16-M-Q1.svg",
       "png": "assets/S16-M-Q1.png",
@@ -166,15 +167,15 @@
        "h": 200
       }
      },
-     "page": 541,
-     "revision": "unchanged",
+     "page": 666,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 541,
-     "answer_key_page": 541
+     "question_page": 666,
+     "answer_key_page": 666
     },
     {
      "id": "S16-M-Q2",
@@ -193,44 +194,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "mc",
-     "response": "select one",
-     "prompt": "In the rigid-motion proof of SSS, A is on D, B is on E, and C′ (the image of C) is not F. Why is line DE the perpendicular bisector of C′F?",
-     "prompt_markup": "In the rigid-motion proof of SSS, A is on D, B is on E, and C′ (the image of C) is not F. Why is line DE the perpendicular bisector of C′F?",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "DE bisects ∠D"
-      },
-      {
-       "letter": "B",
-       "text": "DE is parallel to C′F"
-      },
-      {
-       "letter": "C",
-       "text": "D and E are each the same distance from C′ as from F"
-      },
-      {
-       "letter": "D",
-       "text": "C′F is the longest segment"
-      }
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "In △ABC and △DEF, AB = DE, BC = EF, and CA = FD. A translation and a rotation have moved A onto D and B onto E, and the image C′ of C is on the opposite side of line DE from F, with DC′ = DF and EC′ = EF. Explain why the reflection across line DE carries C′ onto F. Justify each step without using SSS (it is what is being explained).",
+     "prompt_markup": "In △ABC and △DEF, AB = DE, BC = EF, and CA = FD. A translation and a rotation have moved A onto D and B onto E, and the image C′ of C is on the opposite side of line DE from F, with DC′ = DF and EC′ = EF. Explain why the reflection across line DE carries C′ onto F. Justify each step without using SSS (it is what is being explained).",
+     "choices": [],
+     "answer_lines": [
+      "Conclusion:"
      ],
-     "answer_lines": [],
-     "correct_letter": "C",
-     "correct_answer": "D and E are each the same distance from C′ as from F",
+     "correct_letter": null,
+     "correct_answer": "D and E are both on the perpendicular bisector of C′F, so line DE is that bisector, and the reflection across it maps C′ to F.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "A point equidistant from C′ and F lies on the perpendicular bisector of C′F; two such points determine that line.",
+     "required_method": "Show that D and E each lie on the perpendicular bisector of C′F using SAS, then use the definition of a reflection.",
+     "grading_note": "Any valid explanation. Essential: the bisector of ∠C′DF meets C′F at M; △DMC′ ≅ △DMF by SAS (DC′ = DF, equal angles, DM shared), so MC′ = MF and ∠DMC′ ≅ ∠DMF, a linear pair, so each is 90°: D is on the perpendicular bisector. The same for E. Two points determine the line, so DE is the perpendicular bisector, and by definition the reflection maps C′ to F. Invalid: citing SSS.",
      "figure": null,
-     "page": 542,
-     "revision": "unchanged",
+     "page": 667,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 542,
-     "answer_key_page": 542
+     "question_page": 667,
+     "answer_key_page": 667
     },
     {
      "id": "S16-M-Q3",
@@ -249,29 +235,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "In the rigid-motion proof of SSS, line DE is the perpendicular bisector of C′F. Why does the reflection across DE carry C′ onto F, and why is that enough?",
-     "prompt_markup": "In the rigid-motion proof of SSS, line DE is the perpendicular bisector of C′F. Why does the reflection across DE carry C′ onto F, and why is that enough?",
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "△ABC has A(0, 0), B(5, 0), C(1, 3). △DEF has D(1, 1), E(1, 6), F(-2, 2). Show that the three pairs of corresponding sides are congruent, and explain, using rigid motions, why the triangles are congruent.",
+     "prompt_markup": "△ABC has A(0, 0), B(5, 0), C(1, 3). △DEF has D(1, 1), E(1, 6), F(-2, 2). Show that the three pairs of corresponding sides are congruent, and explain, using rigid motions, why the triangles are congruent.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Conclusion:"
      ],
      "correct_letter": null,
-     "correct_answer": "By the definition of a reflection, it maps C′ to F because DE is the perpendicular bisector of C′F; it keeps D and E fixed, so the whole triangle lands on DEF.",
+     "correct_answer": "AB = DE = 5, BC = EF = 5, CA = FD = √10. Translate 1 right and 1 up, then rotate 90° counterclockwise about D: A → D, B → E, and C → F.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Any equivalent explanation with both parts.",
+     "required_method": "Compute the six lengths; then give motions that carry A to D and B to E and explain where C goes.",
+     "grading_note": "Any valid explanation. Essential: all six lengths; motions that match A and B; why C lands on F (the computed image (-2, 2), or the SSS argument that C′ is DF from D and EF from E on F's side).",
      "figure": null,
-     "page": 543,
-     "revision": "unchanged",
+     "page": 668,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 543,
-     "answer_key_page": 543
+     "question_page": 668,
+     "answer_key_page": 668
     },
     {
      "id": "S16-M-Q4",
@@ -290,29 +276,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "The rigid-motion proof of SSS uses no angle information. Explain how the three side lengths alone locate the third vertex.",
-     "prompt_markup": "The rigid-motion proof of SSS uses no angle information. Explain how the three side lengths alone locate the third vertex.",
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "Quadrilateral ABCD has AB = AD and CB = CD (a kite). Explain, using the reflection across line AC, why △ABC ≅ △ADC.",
+     "prompt_markup": "Quadrilateral ABCD has AB = AD and CB = CD (a kite). Explain, using the reflection across line AC, why △ABC ≅ △ADC.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Conclusion:"
      ],
      "correct_letter": null,
-     "correct_answer": "Once D and E are matched, the third vertex must be DF from D and EF from E: it lies on two circles, which meet in at most one point on each side of DE.",
+     "correct_answer": "A and C are each equidistant from B and D, so line AC is the perpendicular bisector of BD; the reflection across AC fixes A and C and swaps B and D.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "required_method": "Show that line AC is the perpendicular bisector of BD, then use the reflection.",
+     "grading_note": "Any valid explanation. Essential: equidistance of A and of C from B and D, justified without SSS (SAS with the angle bisector, or the perpendicular bisector converse proved independently); the reflection fixes A and C and sends B to D.",
      "figure": null,
-     "page": 544,
-     "revision": "unchanged",
+     "page": 669,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 544,
-     "answer_key_page": 544
+     "question_page": 669,
+     "answer_key_page": 669
     },
     {
      "id": "S16-M-Q5",
@@ -331,36 +317,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "tf",
-     "response": "select true or false",
-     "prompt": "A triangle with sides 5, 7, and 9 is congruent to a triangle with sides 9, 5, and 7.",
-     "prompt_markup": "A triangle with sides 5, 7, and 9 is congruent to a triangle with sides 9, 5, and 7.",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "True"
-      },
-      {
-       "letter": "B",
-       "text": "False"
-      }
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "A triangle has sides 4, 5, and 6. Its 6-unit side is placed on segment DE (DE = 6). Explain why the third vertex can be in exactly two places, one on each side of line DE, and why the reflection across DE carries one place onto the other.",
+     "prompt_markup": "A triangle has sides 4, 5, and 6. Its 6-unit side is placed on segment DE (DE = 6). Explain why the third vertex can be in exactly two places, one on each side of line DE, and why the reflection across DE carries one place onto the other.",
+     "choices": [],
+     "answer_lines": [
+      "Conclusion:"
      ],
-     "answer_lines": [],
-     "correct_letter": "A",
-     "correct_answer": "True",
+     "correct_letter": null,
+     "correct_answer": "The third vertex is 4 from D and 5 from E: the two circles meet in one point on each side of DE. The reflection across DE keeps distances from D and E, so it sends one intersection point to the other.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Matching the sides by length gives three pairs of congruent sides (SSS).",
+     "required_method": "Use the circles of radius 4 about D and radius 5 about E, and what a reflection across DE does to distances from D and E.",
+     "grading_note": "Any valid explanation. Essential: the two circles (4 + 5 > 6, so they meet); one point on each side; the reflection fixes D and E and keeps distances, so it swaps the two points. This is why SSS needs at most one reflection.",
      "figure": null,
-     "page": 545,
-     "revision": "unchanged",
+     "page": 670,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 545,
-     "answer_key_page": 545
+     "question_page": 670,
+     "answer_key_page": 670
     }
    ]
   },
@@ -375,7 +354,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student does not see that three lengths fix a triangle. Why it matters: SSS says exactly that, with rigid motions as the reason. Evidence: uses the triangle inequality and uniqueness from three sides.",
-    "source": "Grade 7"
+    "source": "Grade 7",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -414,15 +394,15 @@
      "required_method": null,
      "grading_note": "3 + 4 = 7 is less than 8.",
      "figure": null,
-     "page": 547,
+     "page": 672,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Three side lengths determine a triangle (triangle inequality)",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 547,
-     "answer_key_page": 547
+     "question_page": 672,
+     "answer_key_page": 672
     },
     {
      "id": "S16-B1-Q2",
@@ -460,15 +440,15 @@
      "required_method": null,
      "grading_note": "5 + 6 > 10, and three sides fix the triangle.",
      "figure": null,
-     "page": 548,
+     "page": 673,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Three side lengths determine a triangle (triangle inequality)",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 548,
-     "answer_key_page": 548
+     "question_page": 673,
+     "answer_key_page": 673
     },
     {
      "id": "S16-B1-Q3",
@@ -514,15 +494,15 @@
      "required_method": null,
      "grading_note": "Each pair must add to more than the third side.",
      "figure": null,
-     "page": 549,
+     "page": 674,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Three side lengths determine a triangle (triangle inequality)",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 549,
-     "answer_key_page": 549
+     "question_page": 674,
+     "answer_key_page": 674
     },
     {
      "id": "S16-B1-Q4",
@@ -553,15 +533,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 550,
+     "page": 675,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Three side lengths determine a triangle (triangle inequality)",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 550,
-     "answer_key_page": 550
+     "question_page": 675,
+     "answer_key_page": 675
     },
     {
      "id": "S16-B1-Q5",
@@ -592,15 +572,15 @@
      "required_method": null,
      "grading_note": "Any equivalent explanation.",
      "figure": null,
-     "page": 551,
+     "page": 676,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Three side lengths determine a triangle (triangle inequality)",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 551,
-     "answer_key_page": 551
+     "question_page": 676,
+     "answer_key_page": 676
     }
    ]
   },
@@ -615,7 +595,8 @@
     "kind": "backward",
     "alignment": "supporting",
     "rationale": "Obstacle: the student cannot locate a point from two distances. Why it matters: the SSS argument locates the third vertex this way. Evidence: reasons about where circles about two centers meet.",
-    "source": "Grade 7"
+    "source": "Grade 7",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -647,15 +628,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form. The circles of radius 5 about A and B meet twice, once on each side of AB.",
      "figure": null,
-     "page": 553,
+     "page": 678,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Find the points at given distances from two points (two circles)",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 553,
-     "answer_key_page": 553
+     "question_page": 678,
+     "answer_key_page": 678
     },
     {
      "id": "S16-B2-Q2",
@@ -674,8 +655,8 @@
      "nearest_related": false,
      "type": "tf",
      "response": "select true or false",
-     "prompt": "All points 3 cm from a point A form a circle with center A and radius 3 cm.",
-     "prompt_markup": "All points 3 cm from a point A form a circle with center A and radius 3 cm.",
+     "prompt": "In a given plane containing A, all points 3 cm from A form a circle with center A and radius 3 cm.",
+     "prompt_markup": "In a given plane containing A, all points 3 cm from A form a circle with center A and radius 3 cm.",
      "choices": [
       {
        "letter": "A",
@@ -691,17 +672,17 @@
      "correct_answer": "True",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "That is the definition of a circle.",
+     "grading_note": "That is the definition of a circle (in space, the points would form a sphere).",
      "figure": null,
-     "page": 554,
-     "revision": "unchanged",
+     "page": 679,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Find the points at given distances from two points (two circles)",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 554,
-     "answer_key_page": 554
+     "question_page": 679,
+     "answer_key_page": 679
     },
     {
      "id": "S16-B2-Q3",
@@ -747,15 +728,15 @@
      "required_method": null,
      "grading_note": "The picture is symmetric across line AB.",
      "figure": null,
-     "page": 555,
+     "page": 680,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Find the points at given distances from two points (two circles)",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 555,
-     "answer_key_page": 555
+     "question_page": 680,
+     "answer_key_page": 680
     },
     {
      "id": "S16-B2-Q4",
@@ -793,15 +774,15 @@
      "required_method": null,
      "grading_note": "They can meet in 0, 1, or 2 points (or be the same circle).",
      "figure": null,
-     "page": 556,
+     "page": 681,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Find the points at given distances from two points (two circles)",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 556,
-     "answer_key_page": 556
+     "question_page": 681,
+     "answer_key_page": 681
     },
     {
      "id": "S16-B2-Q5",
@@ -832,15 +813,15 @@
      "required_method": null,
      "grading_note": "Any equivalent explanation.",
      "figure": null,
-     "page": 557,
+     "page": 682,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Find the points at given distances from two points (two circles)",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 557,
-     "answer_key_page": 557
+     "question_page": 682,
+     "answer_key_page": 682
     }
    ]
   },
@@ -855,7 +836,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student does not use preserved lengths to locate image points. Why it matters: the SSS argument relies on DC′ = DC and EC′ = EC. Evidence: states and applies that rigid motions keep lengths.",
-    "source": "Grade 8"
+    "source": "Grade 8",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -887,15 +869,15 @@
      "required_method": null,
      "grading_note": "Any order.",
      "figure": null,
-     "page": 559,
+     "page": 684,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Rigid motions keep every length",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 559,
-     "answer_key_page": 559
+     "question_page": 684,
+     "answer_key_page": 684
     },
     {
      "id": "S16-B3-Q2",
@@ -933,15 +915,15 @@
      "required_method": null,
      "grading_note": "Rigid motions keep all distances.",
      "figure": null,
-     "page": 560,
+     "page": 685,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Rigid motions keep every length",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 560,
-     "answer_key_page": 560
+     "question_page": 685,
+     "answer_key_page": 685
     },
     {
      "id": "S16-B3-Q3",
@@ -987,15 +969,15 @@
      "required_method": null,
      "grading_note": "Only the position changes.",
      "figure": null,
-     "page": 561,
+     "page": 686,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Rigid motions keep every length",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 561,
-     "answer_key_page": 561
+     "question_page": 686,
+     "answer_key_page": 686
     },
     {
      "id": "S16-B3-Q4",
@@ -1033,15 +1015,15 @@
      "required_method": null,
      "grading_note": "The image is the same distance from the line, on the other side.",
      "figure": null,
-     "page": 562,
+     "page": 687,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Rigid motions keep every length",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 562,
-     "answer_key_page": 562
+     "question_page": 687,
+     "answer_key_page": 687
     },
     {
      "id": "S16-B3-Q5",
@@ -1072,15 +1054,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form. D is on the line, so it is fixed, and distances are kept.",
      "figure": null,
-     "page": 563,
+     "page": 688,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Rigid motions keep every length",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 563,
-     "answer_key_page": 563
+     "question_page": 688,
+     "answer_key_page": 688
     }
    ]
   },
@@ -1096,7 +1078,8 @@
     "progression": "cross-standard extension",
     "connection": "direct",
     "new_demand": "Derive a new criterion for right triangles (HL) by reducing it to SSS with the Pythagorean Theorem.",
-    "course": "Geometry"
+    "course": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1130,15 +1113,15 @@
      "required_method": "Use the Pythagorean Theorem to show BC = EF, then apply SSS.",
      "grading_note": "Any valid proof. Essential: BC = √(AB² - AC²) = √(DE² - DF²) = EF; then SSS.",
      "figure": null,
-     "page": 565,
+     "page": 690,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Explain the Hypotenuse-Leg criterion for right triangles",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 565,
-     "answer_key_page": 565
+     "question_page": 690,
+     "answer_key_page": 690
     },
     {
      "id": "S16-F1-Q2",
@@ -1171,15 +1154,15 @@
      "required_method": null,
      "grading_note": "Form required: the conclusion and the leg. √(169 - 25) = 12.",
      "figure": null,
-     "page": 566,
+     "page": 691,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Explain the Hypotenuse-Leg criterion for right triangles",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 566,
-     "answer_key_page": 566
+     "question_page": 691,
+     "answer_key_page": 691
     },
     {
      "id": "S16-F1-Q3",
@@ -1219,15 +1202,15 @@
      "required_method": null,
      "grading_note": "The right angle is opposite the hypotenuse; the Pythagorean Theorem fixes the third side.",
      "figure": null,
-     "page": 567,
+     "page": 692,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Explain the Hypotenuse-Leg criterion for right triangles",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 567,
-     "answer_key_page": 567
+     "question_page": 692,
+     "answer_key_page": 692
     },
     {
      "id": "S16-F1-Q4",
@@ -1275,15 +1258,15 @@
      "required_method": null,
      "grading_note": "HL needs the hypotenuse and a leg.",
      "figure": null,
-     "page": 568,
+     "page": 693,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Explain the Hypotenuse-Leg criterion for right triangles",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 568,
-     "answer_key_page": 568
+     "question_page": 693,
+     "answer_key_page": 693
     },
     {
      "id": "S16-F1-Q5",
@@ -1316,15 +1299,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 569,
+     "page": 694,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Explain the Hypotenuse-Leg criterion for right triangles",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 569,
-     "answer_key_page": 569
+     "question_page": 694,
+     "answer_key_page": 694
     }
    ]
   },
@@ -1341,7 +1324,8 @@
     "connection": "direct",
     "new_demand": "Judge which combinations of data are sufficient, justifying \"no\" with an explicit counterexample.",
     "course": "Geometry",
-    "builds_on": "FORWARD 1 adds HL by reducing it to SSS; FORWARD 2 surveys all combinations, proving or refuting each."
+    "builds_on": "FORWARD 1 adds HL by reducing it to SSS; FORWARD 2 surveys all combinations, proving or refuting each.",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1375,15 +1359,15 @@
      "required_method": null,
      "grading_note": "Any valid counterexample.",
      "figure": null,
-     "page": 571,
+     "page": 696,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Decide which criteria guarantee congruence, with counterexamples",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 571,
-     "answer_key_page": 571
+     "question_page": 696,
+     "answer_key_page": 696
     },
     {
      "id": "S16-F2-Q2",
@@ -1416,15 +1400,15 @@
      "required_method": null,
      "grading_note": "Any valid SSA counterexample (two non-congruent triangles with the same SSA data).",
      "figure": null,
-     "page": 572,
+     "page": 697,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Decide which criteria guarantee congruence, with counterexamples",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 572,
-     "answer_key_page": 572
+     "question_page": 697,
+     "answer_key_page": 697
     },
     {
      "id": "S16-F2-Q3",
@@ -1472,15 +1456,15 @@
      "required_method": null,
      "grading_note": "SSA and AAA are not criteria (HL is a special right-triangle case).",
      "figure": null,
-     "page": 573,
+     "page": 698,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Decide which criteria guarantee congruence, with counterexamples",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 573,
-     "answer_key_page": 573
+     "question_page": 698,
+     "answer_key_page": 698
     },
     {
      "id": "S16-F2-Q4",
@@ -1520,15 +1504,15 @@
      "required_method": null,
      "grading_note": "SSS gives congruence, and corresponding angles of congruent triangles are congruent.",
      "figure": null,
-     "page": 574,
+     "page": 699,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Decide which criteria guarantee congruence, with counterexamples",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 574,
-     "answer_key_page": 574
+     "question_page": 699,
+     "answer_key_page": 699
     },
     {
      "id": "S16-F2-Q5",
@@ -1568,15 +1552,15 @@
      "required_method": null,
      "grading_note": "The included angles could be θ and 180° - θ: equal areas (same sine), different third sides.",
      "figure": null,
-     "page": 575,
+     "page": 700,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with three pairs of congruent sides are congruent",
      "target_skill": "Decide which criteria guarantee congruence, with counterexamples",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 575,
-     "answer_key_page": 575
+     "question_page": 700,
+     "answer_key_page": 700
     }
    ]
   }

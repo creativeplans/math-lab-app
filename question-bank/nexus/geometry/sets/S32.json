@@ -4,7 +4,7 @@
   "id": "GEO",
   "grade": null,
   "course": "Geometry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-23"
  },
  "grade": null,
@@ -29,7 +29,8 @@
    "branch": {
     "kind": "main",
     "strand": "core",
-    "target_skill": "Construct the line perpendicular to a given line through a given point, on the line or not on it"
+    "target_skill": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -99,15 +100,15 @@
        "h": 260
       }
      },
-     "page": 1145,
+     "page": 1338,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1145,
-     "answer_key_page": 1145
+     "question_page": 1338,
+     "answer_key_page": 1338
     },
     {
      "id": "S32-M-Q2",
@@ -176,15 +177,15 @@
        "h": 260
       }
      },
-     "page": 1146,
+     "page": 1339,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1146,
-     "answer_key_page": 1146
+     "question_page": 1339,
+     "answer_key_page": 1339
     },
     {
      "id": "S32-M-Q3",
@@ -253,15 +254,15 @@
        "h": 260
       }
      },
-     "page": 1147,
+     "page": 1340,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1147,
-     "answer_key_page": 1147
+     "question_page": 1340,
+     "answer_key_page": 1340
     },
     {
      "id": "S32-M-Q4",
@@ -280,29 +281,65 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Write the steps for constructing the perpendicular from a point P not on line ℓ.",
-     "prompt_markup": "Write the steps for constructing the perpendicular from a point P not on line ℓ.",
+     "type": "plot",
+     "response": "draw on the figure",
+     "prompt": "Compass and straightedge only; leave all arcs. Construct the line perpendicular to the slanted line m at the point P on m.",
+     "prompt_markup": "Compass and straightedge only; leave all arcs.\nConstruct the line perpendicular to the slanted line m at the point P on m.",
      "choices": [],
-     "answer_lines": [
-      "Steps:"
-     ],
+     "answer_lines": [],
      "correct_letter": null,
-     "correct_answer": "1. Arc centered at P crossing ℓ at A and B. 2. Equal arcs centered at A and B (radius more than half of AB) meeting at Q on the other side. 3. Draw line PQ.",
+     "correct_answer": "Arcs centered at P mark two points on m equally far from P; the perpendicular bisector of those two points passes through P.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent steps.",
-     "figure": null,
-     "page": 1148,
-     "revision": "unchanged",
+     "grading_note": "Grade the construction marks, not only the final figure: the two equal marks on m and the perpendicular bisector arcs, with the line drawn through P.",
+     "figure": {
+      "svg": "assets/S32-M-Q4.svg",
+      "png": "assets/S32-M-Q4.png",
+      "kind": "gd",
+      "description": "A slanted line m rising to the right, with point P on it.",
+      "blank_for_drawing": true,
+      "data": {
+       "k": "gd",
+       "P": {
+        "P": [
+         0.4,
+         0.2
+        ]
+       },
+       "items": [
+        [
+         "line",
+         [
+          -2.4,
+          -0.8
+         ],
+         [
+          3.2,
+          1.07
+         ]
+        ],
+        [
+         "text",
+         [
+          3.6,
+          1.35
+         ],
+         "m"
+        ]
+       ],
+       "desc": "A slanted line m rising to the right, with point P on it.",
+       "h": 260
+      }
+     },
+     "page": 1341,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1148,
-     "answer_key_page": 1148
+     "question_page": 1341,
+     "answer_key_page": 1341
     },
     {
      "id": "S32-M-Q5",
@@ -321,29 +358,90 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain why the perpendicular construction from a point P not on ℓ is really a perpendicular bisector construction.",
-     "prompt_markup": "Explain why the perpendicular construction from a point P not on ℓ is really a perpendicular bisector construction.",
+     "type": "plot",
+     "response": "draw on the figure",
+     "prompt": "Compass and straightedge only; leave all arcs. Construct a right triangle whose legs are congruent to segments a and b.",
+     "prompt_markup": "Compass and straightedge only; leave all arcs.\nConstruct a right triangle whose legs are congruent to segments a and b.",
      "choices": [],
-     "answer_lines": [
-      "Explanation:"
-     ],
+     "answer_lines": [],
      "correct_letter": null,
-     "correct_answer": "P is equidistant from A and B (same arc), and so is Q; so line PQ is the perpendicular bisector of AB, which is perpendicular to ℓ.",
+     "correct_answer": "Copy a onto the ray as XY; construct the perpendicular to the ray at X; copy b onto it as XZ; join Y and Z.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
-     "figure": null,
-     "page": 1149,
-     "revision": "unchanged",
+     "grading_note": "Grade the construction marks, not only the final figure: the copy of a, the perpendicular construction at X, the copy of b, and the hypotenuse.",
+     "figure": {
+      "svg": "assets/S32-M-Q5.svg",
+      "png": "assets/S32-M-Q5.png",
+      "kind": "gd",
+      "description": "Segment a (longer) and segment b (shorter) at the top, and a horizontal ray below them.",
+      "blank_for_drawing": true,
+      "data": {
+       "k": "gd",
+       "P": {},
+       "items": [
+        [
+         "seg",
+         [
+          0,
+          3
+         ],
+         [
+          3,
+          3
+         ]
+        ],
+        [
+         "seg",
+         [
+          0,
+          2
+         ],
+         [
+          1.8,
+          2
+         ]
+        ],
+        [
+         "text",
+         [
+          3.3,
+          3
+         ],
+         "a"
+        ],
+        [
+         "text",
+         [
+          2.1,
+          2
+         ],
+         "b"
+        ],
+        [
+         "ray",
+         [
+          0,
+          0.4
+         ],
+         [
+          5,
+          0.4
+         ]
+        ]
+       ],
+       "desc": "Segment a (longer) and segment b (shorter) at the top, and a horizontal ray below them.",
+       "h": 250
+      }
+     },
+     "page": 1342,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1149,
-     "answer_key_page": 1149
+     "question_page": 1342,
+     "answer_key_page": 1342
     }
    ]
   },
@@ -358,7 +456,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student is unsure of the goal. Why it matters: the constructed line must form right angles. Evidence: applies the definition.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -399,15 +498,15 @@
      "required_method": null,
      "grading_note": "Definition.",
      "figure": null,
-     "page": 1151,
+     "page": 1344,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Know the definition of perpendicular lines",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1151,
-     "answer_key_page": 1151
+     "question_page": 1344,
+     "answer_key_page": 1344
     },
     {
      "id": "S32-B1-Q2",
@@ -440,15 +539,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1152,
+     "page": 1345,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Know the definition of perpendicular lines",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1152,
-     "answer_key_page": 1152
+     "question_page": 1345,
+     "answer_key_page": 1345
     },
     {
      "id": "S32-B1-Q3",
@@ -496,15 +595,15 @@
      "required_method": null,
      "grading_note": "Slopes multiply to -1.",
      "figure": null,
-     "page": 1153,
+     "page": 1346,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Know the definition of perpendicular lines",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1153,
-     "answer_key_page": 1153
+     "question_page": 1346,
+     "answer_key_page": 1346
     },
     {
      "id": "S32-B1-Q4",
@@ -544,15 +643,15 @@
      "required_method": null,
      "grading_note": "Exactly one.",
      "figure": null,
-     "page": 1154,
+     "page": 1347,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Know the definition of perpendicular lines",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1154,
-     "answer_key_page": 1154
+     "question_page": 1347,
+     "answer_key_page": 1347
     },
     {
      "id": "S32-B1-Q5",
@@ -585,15 +684,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 1155,
+     "page": 1348,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Know the definition of perpendicular lines",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1155,
-     "answer_key_page": 1155
+     "question_page": 1348,
+     "answer_key_page": 1348
     }
    ]
   },
@@ -608,7 +707,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot complete the final step. Why it matters: both perpendicular constructions end with a perpendicular bisector. Evidence: uses that construction.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -642,15 +742,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 1157,
+     "page": 1350,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Construct the perpendicular bisector of a segment",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1157,
-     "answer_key_page": 1157
+     "question_page": 1350,
+     "answer_key_page": 1350
     },
     {
      "id": "S32-B2-Q2",
@@ -690,15 +790,15 @@
      "required_method": null,
      "grading_note": "Equidistant crossings.",
      "figure": null,
-     "page": 1158,
+     "page": 1351,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Construct the perpendicular bisector of a segment",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1158,
-     "answer_key_page": 1158
+     "question_page": 1351,
+     "answer_key_page": 1351
     },
     {
      "id": "S32-B2-Q3",
@@ -746,15 +846,15 @@
      "required_method": null,
      "grading_note": "Same radius.",
      "figure": null,
-     "page": 1159,
+     "page": 1352,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Construct the perpendicular bisector of a segment",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1159,
-     "answer_key_page": 1159
+     "question_page": 1352,
+     "answer_key_page": 1352
     },
     {
      "id": "S32-B2-Q4",
@@ -787,15 +887,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 1160,
+     "page": 1353,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Construct the perpendicular bisector of a segment",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1160,
-     "answer_key_page": 1160
+     "question_page": 1353,
+     "answer_key_page": 1353
     },
     {
      "id": "S32-B2-Q5",
@@ -835,15 +935,15 @@
      "required_method": null,
      "grading_note": "It passes through the midpoint.",
      "figure": null,
-     "page": 1161,
+     "page": 1354,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Construct the perpendicular bisector of a segment",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1161,
-     "answer_key_page": 1161
+     "question_page": 1354,
+     "answer_key_page": 1354
     }
    ]
   },
@@ -858,7 +958,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot recognize perpendicularity. Why it matters: needed to check the result. Evidence: identifies perpendicular lines.",
-    "source": "Grade 4"
+    "source": "Grade 4",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -897,15 +998,15 @@
      "required_method": null,
      "grading_note": "They meet at right angles.",
      "figure": null,
-     "page": 1163,
+     "page": 1356,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Recognize perpendicular lines in figures",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 4",
-     "question_page": 1163,
-     "answer_key_page": 1163
+     "question_page": 1356,
+     "answer_key_page": 1356
     },
     {
      "id": "S32-B3-Q2",
@@ -951,15 +1052,15 @@
      "required_method": null,
      "grading_note": "T has a right angle.",
      "figure": null,
-     "page": 1164,
+     "page": 1357,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Recognize perpendicular lines in figures",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 4",
-     "question_page": 1164,
-     "answer_key_page": 1164
+     "question_page": 1357,
+     "answer_key_page": 1357
     },
     {
      "id": "S32-B3-Q3",
@@ -990,15 +1091,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1165,
+     "page": 1358,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Recognize perpendicular lines in figures",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 4",
-     "question_page": 1165,
-     "answer_key_page": 1165
+     "question_page": 1358,
+     "answer_key_page": 1358
     },
     {
      "id": "S32-B3-Q4",
@@ -1036,15 +1137,15 @@
      "required_method": null,
      "grading_note": "Appearance is not proof.",
      "figure": null,
-     "page": 1166,
+     "page": 1359,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Recognize perpendicular lines in figures",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 4",
-     "question_page": 1166,
-     "answer_key_page": 1166
+     "question_page": 1359,
+     "answer_key_page": 1359
     },
     {
      "id": "S32-B3-Q5",
@@ -1075,15 +1176,15 @@
      "required_method": null,
      "grading_note": "Any correct pair.",
      "figure": null,
-     "page": 1167,
+     "page": 1360,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Recognize perpendicular lines in figures",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 4",
-     "question_page": 1167,
-     "answer_key_page": 1167
+     "question_page": 1360,
+     "answer_key_page": 1360
     }
    ]
   },
@@ -1099,7 +1200,8 @@
     "progression": "same-course deepening",
     "connection": "direct",
     "new_demand": "Use the perpendicular construction in a triangle (altitudes, including outside the triangle).",
-    "course": "Geometry"
+    "course": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1166,15 +1268,15 @@
        "h": 270
       }
      },
-     "page": 1169,
+     "page": 1362,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Construct an altitude of a triangle and use it for area",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1169,
-     "answer_key_page": 1169
+     "question_page": 1362,
+     "answer_key_page": 1362
     },
     {
      "id": "S32-F1-Q2",
@@ -1240,15 +1342,15 @@
        "h": 270
       }
      },
-     "page": 1170,
+     "page": 1363,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Construct an altitude of a triangle and use it for area",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1170,
-     "answer_key_page": 1170
+     "question_page": 1363,
+     "answer_key_page": 1363
     },
     {
      "id": "S32-F1-Q3",
@@ -1281,15 +1383,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1171,
+     "page": 1364,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Construct an altitude of a triangle and use it for area",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1171,
-     "answer_key_page": 1171
+     "question_page": 1364,
+     "answer_key_page": 1364
     },
     {
      "id": "S32-F1-Q4",
@@ -1329,15 +1431,15 @@
      "required_method": null,
      "grading_note": "An obtuse triangle has two altitudes outside it.",
      "figure": null,
-     "page": 1172,
+     "page": 1365,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Construct an altitude of a triangle and use it for area",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1172,
-     "answer_key_page": 1172
+     "question_page": 1365,
+     "answer_key_page": 1365
     },
     {
      "id": "S32-F1-Q5",
@@ -1385,15 +1487,15 @@
      "required_method": null,
      "grading_note": "It meets the hypotenuse between its endpoints.",
      "figure": null,
-     "page": 1173,
+     "page": 1366,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Construct an altitude of a triangle and use it for area",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1173,
-     "answer_key_page": 1173
+     "question_page": 1366,
+     "answer_key_page": 1366
     }
    ]
   },
@@ -1410,7 +1512,8 @@
     "connection": "direct",
     "new_demand": "Combine perpendicular constructions with segment copying to build a polygon.",
     "course": "Geometry",
-    "builds_on": "Builds on FORWARD 1: uses perpendiculars at both ends of a segment, plus copying, to construct a square."
+    "builds_on": "Builds on FORWARD 1: uses perpendiculars at both ends of a segment, plus copying, to construct a square.",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1432,15 +1535,15 @@
      "standard_course": "Geometry",
      "type": "plot",
      "response": "draw on the figure",
-     "prompt": "Compass and straightedge only; leave all arcs. Construct a square with side AB.",
-     "prompt_markup": "Compass and straightedge only; leave all arcs.\nConstruct a square with side AB.",
+     "prompt": "Compass and straightedge only; leave all arcs. Construct a square with side AB, above AB.",
+     "prompt_markup": "Compass and straightedge only; leave all arcs.\nConstruct a square with side AB, above AB.",
      "choices": [],
      "answer_lines": [],
      "correct_letter": null,
-     "correct_answer": "Construct perpendiculars to AB at A and at B; copy AB onto each to get D and C; join C and D.",
+     "correct_answer": "Construct perpendiculars to AB at A and at B; copy AB onto each, on the SAME side of AB (above it), to get D and C; join C and D.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Grade the construction marks, not only the final figure: two perpendicular constructions and two segment copies.",
+     "grading_note": "Grade the construction marks, not only the final figure: two perpendicular constructions and two segment copies on the same side of AB. Copies on opposite sides give a crossed figure, not a square.",
      "figure": {
       "svg": "assets/S32-F2-Q1.svg",
       "png": "assets/S32-F2-Q1.png",
@@ -1470,15 +1573,15 @@
        "h": 260
       }
      },
-     "page": 1175,
-     "revision": "unchanged",
+     "page": 1368,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Construct a square on a given segment",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1175,
-     "answer_key_page": 1175
+     "question_page": 1368,
+     "answer_key_page": 1368
     },
     {
      "id": "S32-F2-Q2",
@@ -1499,27 +1602,27 @@
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "A square on segment AB is constructed by drawing perpendiculars to AB at A and at B and copying AB onto each. Explain why the figure is a square.",
-     "prompt_markup": "A square on segment AB is constructed by drawing perpendiculars to AB at A and at B and copying AB onto each. Explain why the figure is a square.",
+     "prompt": "A square on segment AB is constructed by drawing perpendiculars to AB at A and at B and copying AB onto each, on the same side of line AB, to get D (from A) and C (from B). Explain why ABCD is a square, and why the two copies must be on the same side of AB.",
+     "prompt_markup": "A square on segment AB is constructed by drawing perpendiculars to AB at A and at B and copying AB onto each, on the same side of line AB, to get D (from A) and C (from B). Explain why ABCD is a square, and why the two copies must be on the same side of AB.",
      "choices": [],
      "answer_lines": [
       "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "It has four right angles (perpendiculars, and the fourth by the angle sum) and four sides equal to AB.",
+     "correct_answer": "AD ∥ BC (both ⊥ AB) and AD = BC, so ABCD is a parallelogram; it has a right angle at A, so it is a rectangle; AB = AD, so all sides are equal: a square. If D and C were on opposite sides, segment DC would cross AB and ABCD would not be a quadrilateral with these sides.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any valid explanation.",
+     "grading_note": "Any valid explanation with both parts.",
      "figure": null,
-     "page": 1176,
-     "revision": "unchanged",
+     "page": 1369,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Construct a square on a given segment",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1176,
-     "answer_key_page": 1176
+     "question_page": 1369,
+     "answer_key_page": 1369
     },
     {
      "id": "S32-F2-Q3",
@@ -1559,15 +1662,15 @@
      "required_method": null,
      "grading_note": "A rhombus need not have right angles.",
      "figure": null,
-     "page": 1177,
+     "page": 1370,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Construct a square on a given segment",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1177,
-     "answer_key_page": 1177
+     "question_page": 1370,
+     "answer_key_page": 1370
     },
     {
      "id": "S32-F2-Q4",
@@ -1615,15 +1718,15 @@
      "required_method": null,
      "grading_note": "The base must be doubled.",
      "figure": null,
-     "page": 1178,
+     "page": 1371,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Construct a square on a given segment",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1178,
-     "answer_key_page": 1178
+     "question_page": 1371,
+     "answer_key_page": 1371
     },
     {
      "id": "S32-F2-Q5",
@@ -1656,15 +1759,15 @@
      "required_method": null,
      "grading_note": "Form required: exact value.",
      "figure": null,
-     "page": 1179,
+     "page": 1372,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct the line perpendicular to a given line through a given point, on the line or not on it",
      "target_skill": "Construct a square on a given segment",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1179,
-     "answer_key_page": 1179
+     "question_page": 1372,
+     "answer_key_page": 1372
     }
    ]
   }

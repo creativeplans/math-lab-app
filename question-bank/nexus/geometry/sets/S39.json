@@ -4,7 +4,7 @@
   "id": "GEO",
   "grade": null,
   "course": "Geometry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-23"
  },
  "grade": null,
@@ -29,7 +29,8 @@
    "branch": {
     "kind": "main",
     "strand": "core",
-    "target_skill": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists"
+    "target_skill": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -126,15 +127,15 @@
        "names": {}
       }
      },
-     "page": 1404,
+     "page": 1597,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1404,
-     "answer_key_page": 1404
+     "question_page": 1597,
+     "answer_key_page": 1597
     },
     {
      "id": "S39-M-Q2",
@@ -167,15 +168,15 @@
      "required_method": null,
      "grading_note": "Any equivalent explanation comparing the ratios.",
      "figure": null,
-     "page": 1405,
+     "page": 1598,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1405,
-     "answer_key_page": 1405
+     "question_page": 1598,
+     "answer_key_page": 1598
     },
     {
      "id": "S39-M-Q3",
@@ -271,15 +272,15 @@
        "names": {}
       }
      },
-     "page": 1406,
+     "page": 1599,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1406,
-     "answer_key_page": 1406
+     "question_page": 1599,
+     "answer_key_page": 1599
     },
     {
      "id": "S39-M-Q4",
@@ -298,44 +299,92 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "mc",
-     "response": "select one",
-     "prompt": "Which pair of figures must be similar?",
-     "prompt_markup": "Which pair of figures must be similar?",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "Any two isosceles triangles"
-      },
-      {
-       "letter": "B",
-       "text": "Any two rectangles"
-      },
-      {
-       "letter": "C",
-       "text": "Any two rhombuses"
-      },
-      {
-       "letter": "D",
-       "text": "Any two squares"
-      }
+     "type": "sa",
+     "response": "write",
+     "prompt": "Is triangle JKL similar to triangle MNO? If so, describe a similarity transformation; if not, explain.",
+     "prompt_markup": "Is triangle JKL similar to triangle MNO? If so, describe a similarity transformation; if not, explain.",
+     "choices": [],
+     "answer_lines": [
+      "Answer:"
      ],
-     "answer_lines": [],
-     "correct_letter": "D",
-     "correct_answer": "Any two squares",
+     "correct_letter": null,
+     "correct_answer": "No. JKL has legs 4 and 2 (ratio 2 : 1) while MNO has legs 2 and 2 (ratio 1 : 1); a dilation multiplies both legs by the same factor, so no similarity transformation maps one onto the other.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Two squares differ only by a scale factor (and position); the others can have different shapes.",
-     "figure": null,
-     "page": 1407,
-     "revision": "unchanged",
+     "grading_note": "Any equivalent explanation comparing ratios of corresponding sides (or the unequal acute angles).",
+     "figure": {
+      "svg": "assets/S39-M-Q4.svg",
+      "png": "assets/S39-M-Q4.png",
+      "kind": "gd",
+      "description": "Grid from -8 to 8. Triangle JKL: J(-7, -6), K(-3, -6), L(-7, -4). Triangle MNO: M(1, 1), N(3, 1), O(1, 3).",
+      "blank_for_drawing": false,
+      "data": {
+       "k": "gd",
+       "P": {
+        "J": [
+         -7,
+         -6
+        ],
+        "K": [
+         -3,
+         -6
+        ],
+        "L": [
+         -7,
+         -4
+        ],
+        "M": [
+         1,
+         1
+        ],
+        "N": [
+         3,
+         1
+        ],
+        "O": [
+         1,
+         3
+        ]
+       },
+       "items": [
+        [
+         "poly",
+         [
+          "J",
+          "K",
+          "L"
+         ]
+        ],
+        [
+         "poly",
+         [
+          "M",
+          "N",
+          "O"
+         ]
+        ]
+       ],
+       "desc": "Grid from -8 to 8. Triangle JKL: J(-7, -6), K(-3, -6), L(-7, -4). Triangle MNO: M(1, 1), N(3, 1), O(1, 3).",
+       "h": 260,
+       "grid": [
+        -8,
+        8,
+        -8,
+        8
+       ],
+       "maxk": 60,
+       "names": {}
+      }
+     },
+     "page": 1600,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1407,
-     "answer_key_page": 1407
+     "question_page": 1600,
+     "answer_key_page": 1600
     },
     {
      "id": "S39-M-Q5",
@@ -354,36 +403,92 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "tf",
-     "response": "select true or false",
-     "prompt": "If a sequence of rigid motions and one dilation carries figure F onto figure G, then F and G are similar.",
-     "prompt_markup": "If a sequence of rigid motions and one dilation carries figure F onto figure G, then F and G are similar.",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "True"
-      },
-      {
-       "letter": "B",
-       "text": "False"
-      }
+     "type": "sa",
+     "response": "write",
+     "prompt": "Is triangle STU similar to triangle VWX? If so, describe a similarity transformation; if not, explain.",
+     "prompt_markup": "Is triangle STU similar to triangle VWX? If so, describe a similarity transformation; if not, explain.",
+     "choices": [],
+     "answer_lines": [
+      "Answer:"
      ],
-     "answer_lines": [],
-     "correct_letter": "A",
-     "correct_answer": "True",
+     "correct_letter": null,
+     "correct_answer": "Yes. Dilate by 3 about S(1, 1), then translate 8 left and 6 down.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Definition of similarity.",
-     "figure": null,
-     "page": 1408,
-     "revision": "unchanged",
+     "grading_note": "Any valid sequence. About S: T → (7, 1), U → (1, 4); then (x - 8, y - 6) gives V(-7, -5), W(-1, -5), X(-7, -2).",
+     "figure": {
+      "svg": "assets/S39-M-Q5.svg",
+      "png": "assets/S39-M-Q5.png",
+      "kind": "gd",
+      "description": "Grid from -8 to 8. Triangle STU: S(1, 1), T(3, 1), U(1, 2). Triangle VWX: V(-7, -5), W(-1, -5), X(-7, -2).",
+      "blank_for_drawing": false,
+      "data": {
+       "k": "gd",
+       "P": {
+        "S": [
+         1,
+         1
+        ],
+        "T": [
+         3,
+         1
+        ],
+        "U": [
+         1,
+         2
+        ],
+        "V": [
+         -7,
+         -5
+        ],
+        "W": [
+         -1,
+         -5
+        ],
+        "X": [
+         -7,
+         -2
+        ]
+       },
+       "items": [
+        [
+         "poly",
+         [
+          "S",
+          "T",
+          "U"
+         ]
+        ],
+        [
+         "poly",
+         [
+          "V",
+          "W",
+          "X"
+         ]
+        ]
+       ],
+       "desc": "Grid from -8 to 8. Triangle STU: S(1, 1), T(3, 1), U(1, 2). Triangle VWX: V(-7, -5), W(-1, -5), X(-7, -2).",
+       "h": 260,
+       "grid": [
+        -8,
+        8,
+        -8,
+        8
+       ],
+       "maxk": 60,
+       "names": {}
+      }
+     },
+     "page": 1601,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1408,
-     "answer_key_page": 1408
+     "question_page": 1601,
+     "answer_key_page": 1601
     }
    ]
   },
@@ -398,7 +503,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student does not connect similarity with transformations. Why it matters: the decision is made with a similarity transformation. Evidence: describes similarity sequences.",
-    "source": "Grade 8"
+    "source": "Grade 8",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -437,15 +543,15 @@
      "required_method": null,
      "grading_note": "A similarity sequence.",
      "figure": null,
-     "page": 1410,
+     "page": 1603,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Similar figures as a sequence of transformations including a dilation",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 1410,
-     "answer_key_page": 1410
+     "question_page": 1603,
+     "answer_key_page": 1603
     },
     {
      "id": "S39-B1-Q2",
@@ -491,15 +597,15 @@
      "required_method": null,
      "grading_note": "Size may change.",
      "figure": null,
-     "page": 1411,
+     "page": 1604,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Similar figures as a sequence of transformations including a dilation",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 1411,
-     "answer_key_page": 1411
+     "question_page": 1604,
+     "answer_key_page": 1604
     },
     {
      "id": "S39-B1-Q3",
@@ -530,15 +636,15 @@
      "required_method": null,
      "grading_note": "Any order.",
      "figure": null,
-     "page": 1412,
+     "page": 1605,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Similar figures as a sequence of transformations including a dilation",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 1412,
-     "answer_key_page": 1412
+     "question_page": 1605,
+     "answer_key_page": 1605
     },
     {
      "id": "S39-B1-Q4",
@@ -576,15 +682,15 @@
      "required_method": null,
      "grading_note": "Side ratios must all be equal.",
      "figure": null,
-     "page": 1413,
+     "page": 1606,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Similar figures as a sequence of transformations including a dilation",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 1413,
-     "answer_key_page": 1413
+     "question_page": 1606,
+     "answer_key_page": 1606
     },
     {
      "id": "S39-B1-Q5",
@@ -615,15 +721,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 1414,
+     "page": 1607,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Similar figures as a sequence of transformations including a dilation",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 1414,
-     "answer_key_page": 1414
+     "question_page": 1607,
+     "answer_key_page": 1607
     }
    ]
   },
@@ -638,7 +744,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot finish the sequence after scaling. Why it matters: a similarity sequence ends with rigid motions. Evidence: names rigid motions from rules.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -672,15 +779,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 1416,
+     "page": 1609,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Specify a sequence of rigid motions",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1416,
-     "answer_key_page": 1416
+     "question_page": 1609,
+     "answer_key_page": 1609
     },
     {
      "id": "S39-B2-Q2",
@@ -713,15 +820,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 1417,
+     "page": 1610,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Specify a sequence of rigid motions",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1417,
-     "answer_key_page": 1417
+     "question_page": 1610,
+     "answer_key_page": 1610
     },
     {
      "id": "S39-B2-Q3",
@@ -769,15 +876,15 @@
      "required_method": null,
      "grading_note": "(x, y) → (-y, x).",
      "figure": null,
-     "page": 1418,
+     "page": 1611,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Specify a sequence of rigid motions",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1418,
-     "answer_key_page": 1418
+     "question_page": 1611,
+     "answer_key_page": 1611
     },
     {
      "id": "S39-B2-Q4",
@@ -817,15 +924,15 @@
      "required_method": null,
      "grading_note": "Any composition of rigid motions.",
      "figure": null,
-     "page": 1419,
+     "page": 1612,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Specify a sequence of rigid motions",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1419,
-     "answer_key_page": 1419
+     "question_page": 1612,
+     "answer_key_page": 1612
     },
     {
      "id": "S39-B2-Q5",
@@ -865,15 +972,15 @@
      "required_method": null,
      "grading_note": "It changes lengths unless k = 1.",
      "figure": null,
-     "page": 1420,
+     "page": 1613,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Specify a sequence of rigid motions",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1420,
-     "answer_key_page": 1420
+     "question_page": 1613,
+     "answer_key_page": 1613
     }
    ]
   },
@@ -888,7 +995,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot apply the scaling step. Why it matters: similarity sequences include a dilation. Evidence: dilates figures.",
-    "source": "Grade 8"
+    "source": "Grade 8",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -920,15 +1028,15 @@
      "required_method": null,
      "grading_note": "Form required: the three vertices.",
      "figure": null,
-     "page": 1422,
+     "page": 1615,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Dilate figures about the origin",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 1422,
-     "answer_key_page": 1422
+     "question_page": 1615,
+     "answer_key_page": 1615
     },
     {
      "id": "S39-B3-Q2",
@@ -966,15 +1074,15 @@
      "required_method": null,
      "grading_note": "(3x, 3y).",
      "figure": null,
-     "page": 1423,
+     "page": 1616,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Dilate figures about the origin",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 1423,
-     "answer_key_page": 1423
+     "question_page": 1616,
+     "answer_key_page": 1616
     },
     {
      "id": "S39-B3-Q3",
@@ -1020,15 +1128,15 @@
      "required_method": null,
      "grading_note": "Halve each coordinate.",
      "figure": null,
-     "page": 1424,
+     "page": 1617,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Dilate figures about the origin",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 1424,
-     "answer_key_page": 1424
+     "question_page": 1617,
+     "answer_key_page": 1617
     },
     {
      "id": "S39-B3-Q4",
@@ -1059,15 +1167,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1425,
+     "page": 1618,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Dilate figures about the origin",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 1425,
-     "answer_key_page": 1425
+     "question_page": 1618,
+     "answer_key_page": 1618
     },
     {
      "id": "S39-B3-Q5",
@@ -1105,15 +1213,15 @@
      "required_method": null,
      "grading_note": "Angles are preserved.",
      "figure": null,
-     "page": 1426,
+     "page": 1619,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Dilate figures about the origin",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 1426,
-     "answer_key_page": 1426
+     "question_page": 1619,
+     "answer_key_page": 1619
     }
    ]
   },
@@ -1129,7 +1237,8 @@
     "progression": "same-course deepening",
     "connection": "direct",
     "new_demand": "Decide similarity and its correspondence when the figures are in different orientations, using side ratios.",
-    "course": "Geometry"
+    "course": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1163,15 +1272,15 @@
      "required_method": null,
      "grading_note": "Form required: the correspondence and the factor. Match shortest to shortest.",
      "figure": null,
-     "page": 1428,
+     "page": 1621,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Find the scale factor and correspondence when the image is turned or flipped",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1428,
-     "answer_key_page": 1428
+     "question_page": 1621,
+     "answer_key_page": 1621
     },
     {
      "id": "S39-F1-Q2",
@@ -1204,15 +1313,15 @@
      "required_method": null,
      "grading_note": "Form required: both.",
      "figure": null,
-     "page": 1429,
+     "page": 1622,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Find the scale factor and correspondence when the image is turned or flipped",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1429,
-     "answer_key_page": 1429
+     "question_page": 1622,
+     "answer_key_page": 1622
     },
     {
      "id": "S39-F1-Q3",
@@ -1252,15 +1361,15 @@
      "required_method": null,
      "grading_note": "Similarity preserves the order of side lengths.",
      "figure": null,
-     "page": 1430,
+     "page": 1623,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Find the scale factor and correspondence when the image is turned or flipped",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1430,
-     "answer_key_page": 1430
+     "question_page": 1623,
+     "answer_key_page": 1623
     },
     {
      "id": "S39-F1-Q4",
@@ -1308,15 +1417,15 @@
      "required_method": null,
      "grading_note": "Ratios 2, 2, 15/7.",
      "figure": null,
-     "page": 1431,
+     "page": 1624,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Find the scale factor and correspondence when the image is turned or flipped",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1431,
-     "answer_key_page": 1431
+     "question_page": 1624,
+     "answer_key_page": 1624
     },
     {
      "id": "S39-F1-Q5",
@@ -1349,15 +1458,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1432,
+     "page": 1625,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Find the scale factor and correspondence when the image is turned or flipped",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1432,
-     "answer_key_page": 1432
+     "question_page": 1625,
+     "answer_key_page": 1625
     }
    ]
   },
@@ -1374,7 +1483,8 @@
     "connection": "direct",
     "new_demand": "Extend the transformation definition of similarity to curved figures (circles).",
     "course": "Geometry",
-    "builds_on": "A second extension of MAIN: FORWARD 1 handles turned and flipped triangles; FORWARD 2 applies the definition to circles."
+    "builds_on": "A second extension of MAIN: FORWARD 1 handles turned and flipped triangles; FORWARD 2 applies the definition to circles.",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1408,15 +1518,15 @@
      "required_method": "Translate A to B, then dilate about B with scale factor s/r; show the image of C₁ is C₂.",
      "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: the translation maps C₁ to the circle with center B and radius r; the dilation about B with factor s/r sends each point at distance r from B to a point at distance s, so the image is C₂ (and every point of C₂ is reached).",
      "figure": null,
-     "page": 1434,
+     "page": 1627,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Prove that all circles are similar",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1434,
-     "answer_key_page": 1434
+     "question_page": 1627,
+     "answer_key_page": 1627
     },
     {
      "id": "S39-F2-Q2",
@@ -1449,15 +1559,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1435,
+     "page": 1628,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Prove that all circles are similar",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1435,
-     "answer_key_page": 1435
+     "question_page": 1628,
+     "answer_key_page": 1628
     },
     {
      "id": "S39-F2-Q3",
@@ -1497,15 +1607,15 @@
      "required_method": null,
      "grading_note": "A 1 × 2 and a 1 × 3 rectangle do not have proportional sides.",
      "figure": null,
-     "page": 1436,
+     "page": 1629,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Prove that all circles are similar",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1436,
-     "answer_key_page": 1436
+     "question_page": 1629,
+     "answer_key_page": 1629
     },
     {
      "id": "S39-F2-Q4",
@@ -1553,15 +1663,15 @@
      "required_method": null,
      "grading_note": "Ellipses can have different shapes.",
      "figure": null,
-     "page": 1437,
+     "page": 1630,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Prove that all circles are similar",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1437,
-     "answer_key_page": 1437
+     "question_page": 1630,
+     "answer_key_page": 1630
     },
     {
      "id": "S39-F2-Q5",
@@ -1594,15 +1704,15 @@
      "required_method": null,
      "grading_note": "Any valid explanation.",
      "figure": null,
-     "page": 1438,
+     "page": 1631,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Given two figures, decide whether they are similar by finding a similarity transformation (dilation and rigid motions) or explaining why none exists",
      "target_skill": "Prove that all circles are similar",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1438,
-     "answer_key_page": 1438
+     "question_page": 1631,
+     "answer_key_page": 1631
     }
    ]
   }

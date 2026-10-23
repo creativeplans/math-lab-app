@@ -342,22 +342,35 @@ GEO_RELATIONS = dict(
 BRANCH_MAP_DOC = ('Teacher metadata for every branch, by set: backward branches give the obstacle, why it blocks MAIN, the '
                   'evidence the five questions collect (rationale) and whether the standard is exact or supporting; forward '
                   'branches give the progression type, direct or nearest related, the new demand, and (FORWARD 2) how it '
-                  'builds on FORWARD 1. The same fields are in each set file under sections[].branch.')
+                  'builds on FORWARD 1. plus_standard is true when the branch\'s standard is a Common Core (+) standard; this happens in some core-strand sets (their FORWARD 2) as well as in the advanced strand. The same fields are in each set file under sections[].branch.')
+
+
+# Common Core (+) standards: content beyond the college-and-career-ready core. A branch on one of these is flagged
+# plus_standard = true even when its set is in the core strand (for example a core set's FORWARD 2 on the Law of Sines).
+PLUS_PREFIXES = ('HSG-SRT.D.', 'HSG-C.A.4', 'HSG-GPE.A.3', 'HSG-GMD.A.2', 'HSN-VM.', 'HSN-CN.A.3', 'HSN-CN.B.', 'HSN-CN.C.8',
+                 'HSN-CN.C.9', 'HSS-MD.', 'HSS-CP.B.8', 'HSS-CP.B.9', 'HSA-REI.C.8', 'HSA-REI.C.9', 'HSA-APR.C.5', 'HSA-APR.D.7',
+                 'HSF-IF.C.7.d', 'HSF-BF.A.1.c', 'HSF-BF.B.4.b', 'HSF-BF.B.4.c', 'HSF-BF.B.4.d', 'HSF-BF.B.5',
+                 'HSF-TF.A.3', 'HSF-TF.A.4', 'HSF-TF.B.6', 'HSF-TF.B.7', 'HSF-TF.C.9')
+
+
+def plus_standard(std):
+    return any(std == p or std.startswith(p) for p in PLUS_PREFIXES)
 
 
 def branch_meta(st, key, std, nearest):
     """Geometry: the exported teacher metadata of one section."""
     import hs_courses
     b = build.branch_of(st, key)
+    plus = dict(plus_standard=plus_standard(std))
     if b is None:
-        return dict(kind='main', strand=st['strand'], target_skill=st['target'])
+        return dict(kind='main', strand=st['strand'], target_skill=st['target'], **plus)
     m = b.get('meta', {})
     if key.startswith('BACKWARD'):
         return dict(kind='backward', alignment=m['align'], rationale=m['why'],
-                    source=('Grade %s' % std.split('.')[0] if not std.startswith('HS') else hs_courses.course_of(std)))
+                    source=('Grade %s' % std.split('.')[0] if not std.startswith('HS') else hs_courses.course_of(std)), **plus)
     return dict(kind='forward', progression=m['prog'], connection='nearest related' if nearest else 'direct',
                 new_demand=m['demand'], course=hs_courses.course_of(std),
-                **(dict(builds_on=m['builds']) if m.get('builds') else {}))
+                **(dict(builds_on=m['builds']) if m.get('builds') else {}), **plus)
 
 
 def hs_level(key, std=None):
@@ -404,7 +417,11 @@ def write_figure(f, base):
     page = doc[0]
     rect = None
     for d in page.get_drawings():
-        rect = d['rect'] if rect is None else rect | d['rect']
+        # a horizontal or vertical segment has a zero-height (or zero-width) box, which a Rect union ignores;
+        # widen every box by half the stroke so such segments still count toward the crop
+        hw = (d.get('width') or 1) / 2 + 0.5
+        r = pymupdf.Rect(d['rect'].x0 - hw, d['rect'].y0 - hw, d['rect'].x1 + hw, d['rect'].y1 + hw)
+        rect = r if rect is None else rect | r
     for b in page.get_text('blocks'):
         r = pymupdf.Rect(b[:4])
         rect = r if rect is None else rect | r
@@ -563,6 +580,12 @@ def export(out_dir):
         title = '%s question collection' % build.name()
         revisions.write_changelog(rev_doc, os.path.join(out_dir, 'CHANGELOG.md'), title)
         revisions.write_changelog(rev_doc, os.path.join(build.GRADE_DIR, 'CHANGELOG.md'), title)
+        earlier = os.path.join(build.GRADE_DIR, 'src', 'history', 'CHANGELOG_earlier.md')
+        if os.path.exists(earlier):  # keep the notes of earlier versions below the current one
+            text = open(earlier, encoding='utf-8').read()
+            for path in (os.path.join(out_dir, 'CHANGELOG.md'), os.path.join(build.GRADE_DIR, 'CHANGELOG.md')):
+                with open(path, 'a', encoding='utf-8') as fh:
+                    fh.write('\n' + text)
 
     # PDFs in parts
     for kind, src in (('questions', paths['questions']), ('answers', paths['key'])):
@@ -732,7 +755,9 @@ GEO_README = '''
 | set file `strand`, `target_skill`, `covers` | `core` or `advanced` (the ADVANCED EXTENSION of (+) standards); the one skill MAIN measures; subskill IDs. |
 | question `strand`, `set_target`, `target_skill`, `alignment_type`, `course_level` | Strand; the set's target; the skill this section measures; how the section's standard relates to it (direct MAIN, exact or supporting prerequisite, or the forward progression type with direct / nearest related); the course label. |
 | question `question_page`, `answer_key_page` | Page in each PDF (always equal). |
-| `sections[].branch` | Backward: `alignment` (exact or supporting), `rationale` (obstacle, why it matters, evidence collected), `source`. Forward: `progression`, `connection` (direct or nearest related), `new_demand`, `course`, and for FORWARD 2 `builds_on`. |
+| `sections[].branch` | Backward: `alignment` (exact or supporting), `rationale` (obstacle, why it matters, evidence collected), `source`. Forward: `progression`, `connection` (direct or nearest related), `new_demand`, `course`, and for FORWARD 2 `builds_on`. Every section: `plus_standard` (true when its standard is a Common Core (+) standard; seven core sets have a (+) FORWARD 2). |
+| `revisions.json` | One entry per question ID since the published 1.0.0: status (unchanged, revised, new, retired), the correction-report finding codes, the reason, and `moved_from` / `moved_to` for content that moved to a new set. |
+| answer key (`Geometry_Answer_Key.json` / `.csv`, outside this package) | Adds `figure_svg`, `figure_png` (paths inside this package), `figure_description`, and `figure_data` for every question with a figure, keyed by `uid`; the CSV appends these as the last columns, and no existing column was renamed. |
 
 Question types used: `sa`, `mc`, `tf`, `work` (proofs, derivations, and explanations: the student shows the argument in a work
 box; `required_method` and `grading_note` give the essential criteria, accepted alternatives, and invalid arguments), and

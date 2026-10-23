@@ -4,7 +4,7 @@
   "id": "GEO",
   "grade": null,
   "course": "Geometry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-23"
  },
  "grade": null,
@@ -29,7 +29,8 @@
    "branch": {
     "kind": "main",
     "strand": "core",
-    "target_skill": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent"
+    "target_skill": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -162,15 +163,15 @@
        "h": 200
       }
      },
-     "page": 467,
+     "page": 592,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 467,
-     "answer_key_page": 467
+     "question_page": 592,
+     "answer_key_page": 592
     },
     {
      "id": "S14-M-Q2",
@@ -189,44 +190,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "mc",
-     "response": "select one",
-     "prompt": "In the rigid-motion proof of SAS, A has been moved to D and ray AB lies on ray DE, with C on the same side of line DE as F. Why must ray AC lie on ray DF?",
-     "prompt_markup": "In the rigid-motion proof of SAS, A has been moved to D and ray AB lies on ray DE, with C on the same side of line DE as F. Why must ray AC lie on ray DF?",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "BC = EF"
-      },
-      {
-       "letter": "B",
-       "text": "The triangles have equal areas"
-      },
-      {
-       "letter": "C",
-       "text": "AC = DF"
-      },
-      {
-       "letter": "D",
-       "text": "∠A ≅ ∠D, so both rays make the same angle with ray DE on the same side"
-      }
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "In △JKL and △MNO, JK = MN, JL = MO, and ∠J ≅ ∠M. △MNO is a mirror image of △JKL (its vertices run the opposite way around). Explain, using rigid motions, why △JKL ≅ △MNO, and say at which step a reflection is needed.",
+     "prompt_markup": "In △JKL and △MNO, JK = MN, JL = MO, and ∠J ≅ ∠M. △MNO is a mirror image of △JKL (its vertices run the opposite way around). Explain, using rigid motions, why △JKL ≅ △MNO, and say at which step a reflection is needed.",
+     "choices": [],
+     "answer_lines": [
+      "Conclusion:"
      ],
-     "answer_lines": [],
-     "correct_letter": "D",
-     "correct_answer": "∠A ≅ ∠D, so both rays make the same angle with ray DE on the same side",
+     "correct_letter": null,
+     "correct_answer": "A translation, a rotation, and a reflection across line MN carry J to M, K to N, and L to O.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "There is only one ray from D on that side of line DE making that angle with ray DE.",
+     "required_method": "Translate J to M; rotate so ray JK lies on ray MN; then reflect across line MN because L is on the other side from O. Explain why K lands on N and L lands on O.",
+     "grading_note": "Any valid explanation. Essential: (1) J → M; (2) ray JK onto ray MN, K lands on N because JK = MN; (3) the reflection across MN is needed because the orientation is reversed, and it fixes M and N; (4) ray JL lands on ray MO because ∠J ≅ ∠M; (5) L lands on O because JL = MO. Invalid: citing SAS to prove SAS.",
      "figure": null,
-     "page": 468,
-     "revision": "unchanged",
+     "page": 593,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 468,
-     "answer_key_page": 468
+     "question_page": 593,
+     "answer_key_page": 593
     },
     {
      "id": "S14-M-Q3",
@@ -245,29 +231,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "In the rigid-motion proof of SAS, ray AC now lies on ray DF. Why does C land exactly on F?",
-     "prompt_markup": "In the rigid-motion proof of SAS, ray AC now lies on ray DF. Why does C land exactly on F?",
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "△ABC has A(0, 0), B(4, 0), C(1, 3). △DEF has D(2, -1), E(2, 3), F(-1, 0). AB = DE = 4, AC = DF = √10, and ∠A ≅ ∠D. Name a translation and a rotation that carry A to D and ray AB onto ray DE, and explain, using only the SAS facts, why C must then land on F.",
+     "prompt_markup": "△ABC has A(0, 0), B(4, 0), C(1, 3). △DEF has D(2, -1), E(2, 3), F(-1, 0). AB = DE = 4, AC = DF = √10, and ∠A ≅ ∠D. Name a translation and a rotation that carry A to D and ray AB onto ray DE, and explain, using only the SAS facts, why C must then land on F.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Conclusion:"
      ],
      "correct_letter": null,
-     "correct_answer": "AC = DF and rigid motions keep length, so C is the point of ray DF at distance DF from D, which is F.",
+     "correct_answer": "Translate 2 right and 1 down (A → D, B → (6, -1)); rotate 90° counterclockwise about D (B → E). Ray AC goes to the ray from D making ∠A with ray DE on F's side, which is ray DF (∠A ≅ ∠D); C is √10 from D on it, so C → F.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "required_method": "Find the motions, then use ∠A ≅ ∠D to place ray AC on ray DF and AC = DF to place C on F.",
+     "grading_note": "Any valid motions. Essential: the motions with the check B → E; the angle places the ray; the length places the point. A computation C → (-1, 0) is accepted as a check but the SAS reasoning is required.",
      "figure": null,
-     "page": 469,
-     "revision": "unchanged",
+     "page": 594,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 469,
-     "answer_key_page": 469
+     "question_page": 594,
+     "answer_key_page": 594
     },
     {
      "id": "S14-M-Q4",
@@ -286,29 +272,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain why a reflection is sometimes needed in the rigid-motion proof of SAS, and why it does not move D or E.",
-     "prompt_markup": "Explain why a reflection is sometimes needed in the rigid-motion proof of SAS, and why it does not move D or E.",
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "In quadrilateral ABCD, AB = AD and diagonal AC bisects ∠BAD. Explain, using one reflection, why △ABC ≅ △ADC.",
+     "prompt_markup": "In quadrilateral ABCD, AB = AD and diagonal AC bisects ∠BAD. Explain, using one reflection, why △ABC ≅ △ADC.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Conclusion:"
      ],
      "correct_letter": null,
-     "correct_answer": "After the rotation, C may be on the opposite side of line DE from F. Reflecting across line DE moves it to F's side; D and E are on the line, so they stay fixed.",
+     "correct_answer": "The reflection across line AC fixes A and C, sends ray AB onto ray AD, and sends B to D, so △ABC → △ADC.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Any equivalent explanation with both parts.",
+     "required_method": "Reflect across line AC. Explain where A, C, ray AB, and B go.",
+     "grading_note": "Any valid explanation. Essential: A and C are on the mirror line, so they are fixed; ∠BAC ≅ ∠DAC (bisector), with B and D on opposite sides of AC, so the reflection sends ray AB onto ray AD; AB = AD, so B lands on D. Invalid: \"they look like mirror images\".",
      "figure": null,
-     "page": 470,
-     "revision": "unchanged",
+     "page": 595,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 470,
-     "answer_key_page": 470
+     "question_page": 595,
+     "answer_key_page": 595
     },
     {
      "id": "S14-M-Q5",
@@ -327,36 +313,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "tf",
-     "response": "select true or false",
-     "prompt": "The rigid-motion argument for SAS still works if the congruent angle is not between the two congruent sides.",
-     "prompt_markup": "The rigid-motion argument for SAS still works if the congruent angle is not between the two congruent sides.",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "True"
-      },
-      {
-       "letter": "B",
-       "text": "False"
-      }
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "Segments AC and BD bisect each other at E (A, E, C on one line and B, E, D on another). Explain, using a 180° rotation about E, why △AEB ≅ △CED.",
+     "prompt_markup": "Segments AC and BD bisect each other at E (A, E, C on one line and B, E, D on another). Explain, using a 180° rotation about E, why △AEB ≅ △CED.",
+     "choices": [],
+     "answer_lines": [
+      "Conclusion:"
      ],
-     "answer_lines": [],
-     "correct_letter": "B",
-     "correct_answer": "False",
+     "correct_letter": null,
+     "correct_answer": "The 180° rotation about E sends A to C and B to D (and fixes E), so △AEB → △CED.",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Then the angle does not fix where the third vertex goes; SSA can give two different triangles.",
+     "required_method": "Use that a 180° rotation about E sends each ray from E to the opposite ray, and keeps distances from E.",
+     "grading_note": "Any valid explanation. Essential: ray EA goes to the opposite ray EC and EA = EC, so A → C; ray EB goes to ray ED and EB = ED, so B → D; E is fixed. (This is the SAS configuration with the vertical angles at E.)",
      "figure": null,
-     "page": 471,
-     "revision": "unchanged",
+     "page": 596,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 471,
-     "answer_key_page": 471
+     "question_page": 596,
+     "answer_key_page": 596
     }
    ]
   },
@@ -371,7 +350,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student confuses an included angle with any angle of the triangle. Why it matters: SAS works only for the included angle. Evidence: names included angles and sides and knows which conditions fix a triangle.",
-    "source": "Grade 7"
+    "source": "Grade 7",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -403,15 +383,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form. The included angle is at the shared vertex.",
      "figure": null,
-     "page": 473,
+     "page": 598,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Identify the included angle and included side",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 473,
-     "answer_key_page": 473
+     "question_page": 598,
+     "answer_key_page": 598
     },
     {
      "id": "S14-B1-Q2",
@@ -442,15 +422,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 474,
+     "page": 599,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Identify the included angle and included side",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 474,
-     "answer_key_page": 474
+     "question_page": 599,
+     "answer_key_page": 599
     },
     {
      "id": "S14-B1-Q3",
@@ -496,15 +476,15 @@
      "required_method": null,
      "grading_note": "Sides XY and YZ share vertex Y, so ∠Y is included; ∠X is not.",
      "figure": null,
-     "page": 475,
+     "page": 600,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Identify the included angle and included side",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 475,
-     "answer_key_page": 475
+     "question_page": 600,
+     "answer_key_page": 600
     },
     {
      "id": "S14-B1-Q4",
@@ -542,15 +522,15 @@
      "required_method": null,
      "grading_note": "Two sides and the included angle fix the triangle.",
      "figure": null,
-     "page": 476,
+     "page": 601,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Identify the included angle and included side",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 476,
-     "answer_key_page": 476
+     "question_page": 601,
+     "answer_key_page": 601
     },
     {
      "id": "S14-B1-Q5",
@@ -588,15 +568,15 @@
      "required_method": null,
      "grading_note": "When the angle is not between the sides, there may be two triangles or none.",
      "figure": null,
-     "page": 477,
+     "page": 602,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Identify the included angle and included side",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 477,
-     "answer_key_page": 477
+     "question_page": 602,
+     "answer_key_page": 602
     }
    ]
   },
@@ -611,7 +591,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot say why a point lands where it does after a motion. Why it matters: each step of the SAS argument is justified by a preserved property. Evidence: uses preserved lengths and angles to locate image points.",
-    "source": "Grade 8"
+    "source": "Grade 8",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -650,15 +631,15 @@
      "required_method": null,
      "grading_note": "Rigid motions map rays to rays.",
      "figure": null,
-     "page": 479,
+     "page": 604,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Rigid motions map rays, lengths, and angles to equal ones",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 479,
-     "answer_key_page": 479
+     "question_page": 604,
+     "answer_key_page": 604
     },
     {
      "id": "S14-B2-Q2",
@@ -689,15 +670,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 480,
+     "page": 605,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Rigid motions map rays, lengths, and angles to equal ones",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 480,
-     "answer_key_page": 480
+     "question_page": 605,
+     "answer_key_page": 605
     },
     {
      "id": "S14-B2-Q3",
@@ -743,15 +724,15 @@
      "required_method": null,
      "grading_note": "A rotation about D keeps distances from D.",
      "figure": null,
-     "page": 481,
+     "page": 606,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Rigid motions map rays, lengths, and angles to equal ones",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 481,
-     "answer_key_page": 481
+     "question_page": 606,
+     "answer_key_page": 606
     },
     {
      "id": "S14-B2-Q4",
@@ -789,15 +770,15 @@
      "required_method": null,
      "grading_note": "Points on the mirror line stay fixed.",
      "figure": null,
-     "page": 482,
+     "page": 607,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Rigid motions map rays, lengths, and angles to equal ones",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 482,
-     "answer_key_page": 482
+     "question_page": 607,
+     "answer_key_page": 607
     },
     {
      "id": "S14-B2-Q5",
@@ -828,15 +809,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 483,
+     "page": 608,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Rigid motions map rays, lengths, and angles to equal ones",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 483,
-     "answer_key_page": 483
+     "question_page": 608,
+     "answer_key_page": 608
     }
    ]
   },
@@ -851,7 +832,8 @@
     "kind": "backward",
     "alignment": "supporting",
     "rationale": "Obstacle: the student cannot choose the motion for each step of the argument. Why it matters: the SAS argument is a planned sequence of three motions. Evidence: chooses the motion that achieves each goal.",
-    "source": "Grade 8"
+    "source": "Grade 8",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -883,15 +865,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 485,
+     "page": 610,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Choose a translation, rotation, or reflection to move a point or ray onto a target",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 8",
-     "question_page": 485,
-     "answer_key_page": 485
+     "question_page": 610,
+     "answer_key_page": 610
     },
     {
      "id": "S14-B3-Q2",
@@ -922,15 +904,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 486,
+     "page": 611,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Choose a translation, rotation, or reflection to move a point or ray onto a target",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 8",
-     "question_page": 486,
-     "answer_key_page": 486
+     "question_page": 611,
+     "answer_key_page": 611
     },
     {
      "id": "S14-B3-Q3",
@@ -976,15 +958,15 @@
      "required_method": null,
      "grading_note": "Only the reflection keeps both D and E fixed.",
      "figure": null,
-     "page": 487,
+     "page": 612,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Choose a translation, rotation, or reflection to move a point or ray onto a target",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 8",
-     "question_page": 487,
-     "answer_key_page": 487
+     "question_page": 612,
+     "answer_key_page": 612
     },
     {
      "id": "S14-B3-Q4",
@@ -1022,15 +1004,15 @@
      "required_method": null,
      "grading_note": "The center of a rotation is its own image.",
      "figure": null,
-     "page": 488,
+     "page": 613,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Choose a translation, rotation, or reflection to move a point or ray onto a target",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 8",
-     "question_page": 488,
-     "answer_key_page": 488
+     "question_page": 613,
+     "answer_key_page": 613
     },
     {
      "id": "S14-B3-Q5",
@@ -1068,15 +1050,15 @@
      "required_method": null,
      "grading_note": "It moves A onto D.",
      "figure": null,
-     "page": 489,
+     "page": 614,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Choose a translation, rotation, or reflection to move a point or ray onto a target",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 8",
-     "question_page": 489,
-     "answer_key_page": 489
+     "question_page": 614,
+     "answer_key_page": 614
     }
    ]
   },
@@ -1092,7 +1074,8 @@
     "progression": "cross-standard extension",
     "connection": "direct",
     "new_demand": "Use SAS to prove congruence inside a compound figure, finding the needed parts (shared sides, vertical angles, parallel lines).",
-    "course": "Geometry"
+    "course": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1126,15 +1109,15 @@
      "required_method": "Use alternate interior angles with the parallel sides and the shared diagonal to apply SAS.",
      "grading_note": "Any valid proof. Essential: AB = CD (given); ∠BAC ≅ ∠DCA (alternate interior angles, AB ∥ DC); AC = CA (reflexive); SAS with the angle between the sides. Invalid: using ∠B ≅ ∠D without proof.",
      "figure": null,
-     "page": 491,
+     "page": 616,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Prove triangles congruent by SAS inside a larger figure",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 491,
-     "answer_key_page": 491
+     "question_page": 616,
+     "answer_key_page": 616
     },
     {
      "id": "S14-F1-Q2",
@@ -1155,8 +1138,8 @@
      "standard_course": "Geometry",
      "type": "work",
      "response": "write the answer and show the required work",
-     "prompt": "Point M is the midpoint of segment AB, and line ℓ is perpendicular to AB at M. Point P is on ℓ. Prove that △PMA ≅ △PMB.",
-     "prompt_markup": "Point M is the midpoint of segment AB, and line ℓ is perpendicular to AB at M. Point P is on ℓ. Prove that △PMA ≅ △PMB.",
+     "prompt": "Point M is the midpoint of segment AB, and line ℓ is perpendicular to AB at M. Point P is on ℓ, and P ≠ M. Prove that △PMA ≅ △PMB.",
+     "prompt_markup": "Point M is the midpoint of segment AB, and line ℓ is perpendicular to AB at M. Point P is on ℓ, and P ≠ M. Prove that △PMA ≅ △PMB.",
      "choices": [],
      "answer_lines": [
       "Conclusion:"
@@ -1167,15 +1150,15 @@
      "required_method": "Use the midpoint, the right angles, and the shared side PM with SAS.",
      "grading_note": "Any valid proof. Essential: AM = BM (midpoint); ∠PMA ≅ ∠PMB (both right angles); PM = PM; SAS.",
      "figure": null,
-     "page": 492,
-     "revision": "unchanged",
+     "page": 617,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Prove triangles congruent by SAS inside a larger figure",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 492,
-     "answer_key_page": 492
+     "question_page": 617,
+     "answer_key_page": 617
     },
     {
      "id": "S14-F1-Q3",
@@ -1208,15 +1191,15 @@
      "required_method": null,
      "grading_note": "Any equivalent correct pair (also △AED ≅ △CEB).",
      "figure": null,
-     "page": 493,
+     "page": 618,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Prove triangles congruent by SAS inside a larger figure",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 493,
-     "answer_key_page": 493
+     "question_page": 618,
+     "answer_key_page": 618
     },
     {
      "id": "S14-F1-Q4",
@@ -1256,15 +1239,15 @@
      "required_method": null,
      "grading_note": "The shared side is congruent to itself (reflexive property).",
      "figure": null,
-     "page": 494,
+     "page": 619,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Prove triangles congruent by SAS inside a larger figure",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 494,
-     "answer_key_page": 494
+     "question_page": 619,
+     "answer_key_page": 619
     },
     {
      "id": "S14-F1-Q5",
@@ -1312,15 +1295,15 @@
      "required_method": null,
      "grading_note": "∠PTR and ∠QTS (or the other pair) are vertical angles.",
      "figure": null,
-     "page": 495,
+     "page": 620,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Prove triangles congruent by SAS inside a larger figure",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 495,
-     "answer_key_page": 495
+     "question_page": 620,
+     "answer_key_page": 620
     }
    ]
   },
@@ -1337,7 +1320,8 @@
     "connection": "direct",
     "new_demand": "Judge whether given data suffice for SAS and name the exact missing condition, with a reason.",
     "course": "Geometry",
-    "builds_on": "Builds on FORWARD 1: before using SAS in a proof, decide whether the available data actually satisfy it."
+    "builds_on": "Builds on FORWARD 1: before using SAS in a proof, decide whether the available data actually satisfy it.",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1371,15 +1355,15 @@
      "required_method": null,
      "grading_note": "Form required: the included angle pair. (AC = DF would give SSS, not SAS.)",
      "figure": null,
-     "page": 497,
+     "page": 622,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Decide whether given information is enough for SAS, and name a missing condition",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 497,
-     "answer_key_page": 497
+     "question_page": 622,
+     "answer_key_page": 622
     },
     {
      "id": "S14-F2-Q2",
@@ -1412,15 +1396,15 @@
      "required_method": null,
      "grading_note": "Any equivalent explanation.",
      "figure": null,
-     "page": 498,
+     "page": 623,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Decide whether given information is enough for SAS, and name a missing condition",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 498,
-     "answer_key_page": 498
+     "question_page": 623,
+     "answer_key_page": 623
     },
     {
      "id": "S14-F2-Q3",
@@ -1460,15 +1444,15 @@
      "required_method": null,
      "grading_note": "The congruent angles at C are not included between AB and AC (this is SSA), so SAS does not apply.",
      "figure": null,
-     "page": 499,
+     "page": 624,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Decide whether given information is enough for SAS, and name a missing condition",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 499,
-     "answer_key_page": 499
+     "question_page": 624,
+     "answer_key_page": 624
     },
     {
      "id": "S14-F2-Q4",
@@ -1516,15 +1500,15 @@
      "required_method": null,
      "grading_note": "The given parts are the two sides and the included angle of △ABC and △EFG.",
      "figure": null,
-     "page": 500,
+     "page": 625,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Decide whether given information is enough for SAS, and name a missing condition",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 500,
-     "answer_key_page": 500
+     "question_page": 625,
+     "answer_key_page": 625
     },
     {
      "id": "S14-F2-Q5",
@@ -1557,15 +1541,15 @@
      "required_method": null,
      "grading_note": "Any equivalent explanation.",
      "figure": null,
-     "page": 501,
+     "page": 626,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain, using rigid motions, why two triangles with two pairs of congruent sides and congruent included angles are congruent",
      "target_skill": "Decide whether given information is enough for SAS, and name a missing condition",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 501,
-     "answer_key_page": 501
+     "question_page": 626,
+     "answer_key_page": 626
     }
    ]
   }

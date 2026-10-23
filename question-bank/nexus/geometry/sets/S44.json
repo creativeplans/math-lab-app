@@ -4,7 +4,7 @@
   "id": "GEO",
   "grade": null,
   "course": "Geometry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-23"
  },
  "grade": null,
@@ -29,7 +29,8 @@
    "branch": {
     "kind": "main",
     "strand": "core",
-    "target_skill": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)"
+    "target_skill": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -125,15 +126,15 @@
        }
       }
      },
-     "page": 1589,
+     "page": 1782,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1589,
-     "answer_key_page": 1589
+     "question_page": 1782,
+     "answer_key_page": 1782
     },
     {
      "id": "S44-M-Q2",
@@ -152,22 +153,63 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "In the similarity proof of the Pythagorean Theorem, why is △ADC ~ △ACB?",
-     "prompt_markup": "In the similarity proof of the Pythagorean Theorem, why is △ADC ~ △ACB?",
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "Right triangle PQR has the right angle at R, legs p = QR and q = PR, and hypotenuse r = PQ. The altitude from R meets PQ at S. Prove that p² + q² = r².",
+     "prompt_markup": "Right triangle PQR has the right angle at R, legs p = QR and q = PR, and hypotenuse r = PQ. The altitude from R meets PQ at S. Prove that p² + q² = r².",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Conclusion:"
      ],
      "correct_letter": null,
-     "correct_answer": "They share ∠A and both have a right angle (at D and at C), so AA applies.",
+     "correct_answer": "p² + q² = r²",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Any equivalent answer naming both pairs of angles.",
+     "required_method": "Prove △PSR ~ △PRQ and △RSQ ~ △PRQ (AA), write the two proportions, and add.",
+     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: shared ∠P and right angles give △PSR ~ △PRQ, so PS/PR = PR/PQ and q² = r · PS; shared ∠Q gives △RSQ ~ △PRQ, so QS/QR = QR/QP and p² = r · QS; adding, p² + q² = r(PS + QS) = r². Invalid: assuming the theorem or using the distance formula.",
+     "figure": null,
+     "page": 1783,
+     "revision": "revised",
+     "strand": "core",
+     "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
+     "target_skill": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
+     "alignment_type": "direct (MAIN: the set's own core standard)",
+     "course_level": "High School — Geometry",
+     "question_page": 1783,
+     "answer_key_page": 1783
+    },
+    {
+     "id": "S44-M-Q3",
+     "uid": "GEO:S44-M-Q3",
+     "collection": "GEO",
+     "set": 44,
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "number": 3,
+     "of": 5,
+     "standard": "HSG-SRT.B.4",
+     "standard_grade": "HS",
+     "domain": "Geometry: Similarity, Right Triangles & Trigonometry",
+     "skill": "Prove the Pythagorean Theorem using similar triangles",
+     "nearest_related": false,
+     "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
+     "standard_course": "Geometry",
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "Isosceles right triangle ABC has the right angle at C and legs AC = BC = a. The altitude from C meets AB at D. Using similar triangles (not the Pythagorean Theorem), prove that AB² = 2a².",
+     "prompt_markup": "Isosceles right triangle ABC has the right angle at C and legs AC = BC = a. The altitude from C meets AB at D. Using similar triangles (not the Pythagorean Theorem), prove that AB² = 2a².",
+     "choices": [],
+     "answer_lines": [
+      "Conclusion:"
+     ],
+     "correct_letter": null,
+     "correct_answer": "AB² = 2a²",
+     "drawing_answer": null,
+     "required_method": "Use the similarity proportions a² = AB · AD and a² = AB · BD, then add.",
+     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: △ADC ~ △ACB gives a² = AB · AD; △CDB ~ △ACB gives a² = AB · BD; adding, 2a² = AB(AD + BD) = AB².",
      "figure": {
-      "svg": "assets/S44-M-Q2.svg",
-      "png": "assets/S44-M-Q2.png",
+      "svg": "assets/S44-M-Q3.svg",
+      "png": "assets/S44-M-Q3.png",
       "kind": "gd",
       "description": "Right triangle ABC with the right angle at C. The altitude CD is drawn from C to the hypotenuse AB, with a right-angle mark at D.",
       "blank_for_drawing": false,
@@ -228,56 +270,15 @@
        }
       }
      },
-     "page": 1590,
-     "revision": "unchanged",
+     "page": 1784,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1590,
-     "answer_key_page": 1590
-    },
-    {
-     "id": "S44-M-Q3",
-     "uid": "GEO:S44-M-Q3",
-     "collection": "GEO",
-     "set": 44,
-     "section": "MAIN",
-     "section_code": "M",
-     "relation": "main",
-     "number": 3,
-     "of": 5,
-     "standard": "HSG-SRT.B.4",
-     "standard_grade": "HS",
-     "domain": "Geometry: Similarity, Right Triangles & Trigonometry",
-     "skill": "Prove the Pythagorean Theorem using similar triangles",
-     "nearest_related": false,
-     "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
-     "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "In right triangle ABC with the right angle at C, legs a and b, and hypotenuse c, the altitude from C meets AB at D. Similar triangles give b² = c · AD and a² = c · BD. Show how these give a² + b² = c².",
-     "prompt_markup": "In right triangle ABC with the right angle at C, legs a and b, and hypotenuse c, the altitude from C meets AB at D. Similar triangles give b² = c · AD and a² = c · BD. Show how these give a² + b² = c².",
-     "choices": [],
-     "answer_lines": [
-      "Work:"
-     ],
-     "correct_letter": null,
-     "correct_answer": "a² + b² = c · BD + c · AD = c(BD + AD) = c · c = c², since AD + DB = AB = c.",
-     "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Any correct algebra, including why AD + BD = c (D is between A and B).",
-     "figure": null,
-     "page": 1591,
-     "revision": "unchanged",
-     "strand": "core",
-     "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
-     "target_skill": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
-     "alignment_type": "direct (MAIN: the set's own core standard)",
-     "course_level": "High School — Geometry",
-     "question_page": 1591,
-     "answer_key_page": 1591
+     "question_page": 1784,
+     "answer_key_page": 1784
     },
     {
      "id": "S44-M-Q4",
@@ -298,27 +299,89 @@
      "standard_course": "Geometry",
      "type": "work",
      "response": "write the answer and show the required work",
-     "prompt": "A right triangle has legs 6 and 8, and the altitude to the hypotenuse divides it into parts x and y. Use similar triangles (not the Pythagorean Theorem) to find x and y, and show that the hypotenuse is 10.",
-     "prompt_markup": "A right triangle has legs 6 and 8, and the altitude to the hypotenuse divides it into parts x and y. Use similar triangles (not the Pythagorean Theorem) to find x and y, and show that the hypotenuse is 10.",
+     "prompt": "Right triangle ABC has the right angle at C, AC = 6 and BC = 8. The altitude from C meets AB at D; let x = AD and y = DB. Use similar triangles (not the Pythagorean Theorem) to find x, y and AB.",
+     "prompt_markup": "Right triangle ABC has the right angle at C, AC = 6 and BC = 8. The altitude from C meets AB at D; let x = AD and y = DB. Use similar triangles (not the Pythagorean Theorem) to find x, y and AB.",
      "choices": [],
      "answer_lines": [
       "Conclusion:"
      ],
      "correct_letter": null,
-     "correct_answer": "c = 10, x = 3.6, y = 6.4",
+     "correct_answer": "AB = 10, x = 3.6, y = 6.4",
      "drawing_answer": null,
-     "required_method": "Use 6² = c · x and 8² = c · y with x + y = c.",
-     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: from similarity 36 = cx and 64 = cy; adding, 100 = c(x + y) = c², so c = 10, x = 3.6, y = 6.4.",
-     "figure": null,
-     "page": 1592,
-     "revision": "unchanged",
+     "required_method": "Write 6² = AB · x and 8² = AB · y from the similar triangles, and use x + y = AB.",
+     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: △ADC ~ △ACB gives 36 = AB · x; △CDB ~ △ACB gives 64 = AB · y; adding, 100 = AB(x + y) = AB², so AB = 10, x = 3.6, y = 6.4.",
+     "figure": {
+      "svg": "assets/S44-M-Q4.svg",
+      "png": "assets/S44-M-Q4.png",
+      "kind": "gd",
+      "description": "Right triangle ABC with the right angle at C. The altitude CD is drawn from C to the hypotenuse AB, with a right-angle mark at D.",
+      "blank_for_drawing": false,
+      "data": {
+       "k": "gd",
+       "P": {
+        "A": [
+         0,
+         0
+        ],
+        "B": [
+         5,
+         0
+        ],
+        "C": [
+         1.8,
+         2.4
+        ],
+        "D": [
+         1.8,
+         0
+        ]
+       },
+       "items": [
+        [
+         "poly",
+         [
+          "A",
+          "B",
+          "C"
+         ]
+        ],
+        [
+         "seg",
+         "C",
+         "D",
+         {
+          "dash": true
+         }
+        ],
+        [
+         "ra",
+         "C",
+         "A",
+         "B"
+        ],
+        [
+         "ra",
+         "D",
+         "B",
+         "C"
+        ]
+       ],
+       "desc": "Right triangle ABC with the right angle at C. The altitude CD is drawn from C to the hypotenuse AB, with a right-angle mark at D.",
+       "h": 210,
+       "lab": {
+        "D": "s"
+       }
+      }
+     },
+     "page": 1785,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1592,
-     "answer_key_page": 1592
+     "question_page": 1785,
+     "answer_key_page": 1785
     },
     {
      "id": "S44-M-Q5",
@@ -337,44 +400,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "mc",
-     "response": "select one",
-     "prompt": "Right triangle ABC has its right angle at C, and the altitude from C meets hypotenuse AB at D. Which pair of triangles is NOT similar?",
-     "prompt_markup": "Right triangle ABC has its right angle at C, and the altitude from C meets hypotenuse AB at D. Which pair of triangles is NOT similar?",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "△ACD and △ABC"
-      },
-      {
-       "letter": "B",
-       "text": "△BCD and △ABC"
-      },
-      {
-       "letter": "C",
-       "text": "△ACD and △CBD"
-      },
-      {
-       "letter": "D",
-       "text": "None; all three triangles are similar"
-      }
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "A right triangle has legs 5 and 12. The altitude to the hypotenuse divides it into parts x (next to the leg 5) and y. Use similar triangles (not the Pythagorean Theorem) to find the hypotenuse c, x and y.",
+     "prompt_markup": "A right triangle has legs 5 and 12. The altitude to the hypotenuse divides it into parts x (next to the leg 5) and y. Use similar triangles (not the Pythagorean Theorem) to find the hypotenuse c, x and y.",
+     "choices": [],
+     "answer_lines": [
+      "Conclusion:"
      ],
-     "answer_lines": [],
-     "correct_letter": "D",
-     "correct_answer": "None; all three triangles are similar",
+     "correct_letter": null,
+     "correct_answer": "c = 13, x = 25/13, y = 144/13",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "All three triangles are similar (AA).",
+     "required_method": "Write 5² = c · x and 12² = c · y, add, and use x + y = c.",
+     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: 25 = cx and 144 = cy; adding, 169 = c(x + y) = c², so c = 13; x = 25/13 ≈ 1.92 and y = 144/13 ≈ 11.08.",
      "figure": null,
-     "page": 1593,
-     "revision": "unchanged",
+     "page": 1786,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1593,
-     "answer_key_page": 1593
+     "question_page": 1786,
+     "answer_key_page": 1786
     }
    ]
   },
@@ -389,7 +437,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot see the three similar triangles. Why it matters: the proof is built on them. Evidence: identifies AA in the altitude figure.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -430,15 +479,15 @@
      "required_method": null,
      "grading_note": "AA.",
      "figure": null,
-     "page": 1595,
+     "page": 1788,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "Show triangles similar with AA",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1595,
-     "answer_key_page": 1595
+     "question_page": 1788,
+     "answer_key_page": 1788
     },
     {
      "id": "S44-B1-Q2",
@@ -459,8 +508,8 @@
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "△ADC and △ACB: name two pairs of congruent angles.",
-     "prompt_markup": "△ADC and △ACB: name two pairs of congruent angles.",
+     "prompt": "Right triangle ABC has the right angle at C, and the altitude from C meets hypotenuse AB at D. Name two pairs of congruent angles in △ADC and △ACB.",
+     "prompt_markup": "Right triangle ABC has the right angle at C, and the altitude from C meets hypotenuse AB at D. Name two pairs of congruent angles in △ADC and △ACB.",
      "choices": [],
      "answer_lines": [
       "Answer:"
@@ -471,15 +520,15 @@
      "required_method": null,
      "grading_note": "Any two valid pairs.",
      "figure": null,
-     "page": 1596,
-     "revision": "unchanged",
+     "page": 1789,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "Show triangles similar with AA",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1596,
-     "answer_key_page": 1596
+     "question_page": 1789,
+     "answer_key_page": 1789
     },
     {
      "id": "S44-B1-Q3",
@@ -500,8 +549,8 @@
      "standard_course": "Geometry",
      "type": "mc",
      "response": "select one",
-     "prompt": "△ADC ~ △ACB. Which ratio equals AD/AC?",
-     "prompt_markup": "△ADC ~ △ACB. Which ratio equals AD/AC?",
+     "prompt": "Right triangle ABC has the right angle at C, and the altitude from C meets hypotenuse AB at D. Then △ADC ~ △ACB. Which ratio equals AD/AC?",
+     "prompt_markup": "Right triangle ABC has the right angle at C, and the altitude from C meets hypotenuse AB at D. Then △ADC ~ △ACB. Which ratio equals AD/AC?",
      "choices": [
       {
        "letter": "A",
@@ -527,15 +576,15 @@
      "required_method": null,
      "grading_note": "AD ↔ AC, AC ↔ AB.",
      "figure": null,
-     "page": 1597,
-     "revision": "unchanged",
+     "page": 1790,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "Show triangles similar with AA",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1597,
-     "answer_key_page": 1597
+     "question_page": 1790,
+     "answer_key_page": 1790
     },
     {
      "id": "S44-B1-Q4",
@@ -556,8 +605,8 @@
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "If △ADC ~ △ACB with AD = 4 and AB = 9, find AC.",
-     "prompt_markup": "If △ADC ~ △ACB with AD = 4 and AB = 9, find AC.",
+     "prompt": "Right triangle ABC has the right angle at C, and the altitude from C meets hypotenuse AB at D. △ADC ~ △ACB, AD = 4 and AB = 9. Find AC.",
+     "prompt_markup": "Right triangle ABC has the right angle at C, and the altitude from C meets hypotenuse AB at D. △ADC ~ △ACB, AD = 4 and AB = 9. Find AC.",
      "choices": [],
      "answer_lines": [
       "AC ="
@@ -568,15 +617,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form. AC² = AD · AB = 36.",
      "figure": null,
-     "page": 1598,
-     "revision": "unchanged",
+     "page": 1791,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "Show triangles similar with AA",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1598,
-     "answer_key_page": 1598
+     "question_page": 1791,
+     "answer_key_page": 1791
     },
     {
      "id": "S44-B1-Q5",
@@ -616,15 +665,15 @@
      "required_method": null,
      "grading_note": "Only the shape matches.",
      "figure": null,
-     "page": 1599,
+     "page": 1792,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "Show triangles similar with AA",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1599,
-     "answer_key_page": 1599
+     "question_page": 1792,
+     "answer_key_page": 1792
     }
    ]
   },
@@ -639,7 +688,8 @@
     "kind": "backward",
     "alignment": "supporting",
     "rationale": "Obstacle: the student cannot turn proportions into products. Why it matters: the proof uses b² = c · AD. Evidence: cross-multiplies.",
-    "source": "Grade 7"
+    "source": "Grade 7",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -671,15 +721,15 @@
      "required_method": null,
      "grading_note": "Any equivalent equation.",
      "figure": null,
-     "page": 1601,
+     "page": 1794,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "Cross-multiply proportions",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1601,
-     "answer_key_page": 1601
+     "question_page": 1794,
+     "answer_key_page": 1794
     },
     {
      "id": "S44-B2-Q2",
@@ -710,15 +760,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1602,
+     "page": 1795,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "Cross-multiply proportions",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1602,
-     "answer_key_page": 1602
+     "question_page": 1795,
+     "answer_key_page": 1795
     },
     {
      "id": "S44-B2-Q3",
@@ -764,15 +814,15 @@
      "required_method": null,
      "grading_note": "Cross-multiply.",
      "figure": null,
-     "page": 1603,
+     "page": 1796,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "Cross-multiply proportions",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1603,
-     "answer_key_page": 1603
+     "question_page": 1796,
+     "answer_key_page": 1796
     },
     {
      "id": "S44-B2-Q4",
@@ -810,15 +860,15 @@
      "required_method": null,
      "grading_note": "Cross-multiply.",
      "figure": null,
-     "page": 1604,
+     "page": 1797,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "Cross-multiply proportions",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1604,
-     "answer_key_page": 1604
+     "question_page": 1797,
+     "answer_key_page": 1797
     },
     {
      "id": "S44-B2-Q5",
@@ -856,15 +906,15 @@
      "required_method": null,
      "grading_note": "x² = 25, so x = ±5 (x = 5 for a length).",
      "figure": null,
-     "page": 1605,
+     "page": 1798,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "Cross-multiply proportions",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1605,
-     "answer_key_page": 1605
+     "question_page": 1798,
+     "answer_key_page": 1798
     }
    ]
   },
@@ -879,7 +929,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student does not know what is being proved. Why it matters: the proof must establish this statement in general. Evidence: states and applies the theorem.",
-    "source": "Grade 8"
+    "source": "Grade 8",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -918,15 +969,15 @@
      "required_method": null,
      "grading_note": "Statement.",
      "figure": null,
-     "page": 1607,
+     "page": 1800,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "Explain a proof of the Pythagorean Theorem informally",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 1607,
-     "answer_key_page": 1607
+     "question_page": 1800,
+     "answer_key_page": 1800
     },
     {
      "id": "S44-B3-Q2",
@@ -957,15 +1008,15 @@
      "required_method": null,
      "grading_note": "Any valid area argument.",
      "figure": null,
-     "page": 1608,
+     "page": 1801,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "Explain a proof of the Pythagorean Theorem informally",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 1608,
-     "answer_key_page": 1608
+     "question_page": 1801,
+     "answer_key_page": 1801
     },
     {
      "id": "S44-B3-Q3",
@@ -1011,15 +1062,15 @@
      "required_method": null,
      "grading_note": "25 + 144 = 169.",
      "figure": null,
-     "page": 1609,
+     "page": 1802,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "Explain a proof of the Pythagorean Theorem informally",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 1609,
-     "answer_key_page": 1609
+     "question_page": 1802,
+     "answer_key_page": 1802
     },
     {
      "id": "S44-B3-Q4",
@@ -1050,15 +1101,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1610,
+     "page": 1803,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "Explain a proof of the Pythagorean Theorem informally",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 1610,
-     "answer_key_page": 1610
+     "question_page": 1803,
+     "answer_key_page": 1803
     },
     {
      "id": "S44-B3-Q5",
@@ -1096,15 +1147,15 @@
      "required_method": null,
      "grading_note": "Examples are not proofs.",
      "figure": null,
-     "page": 1611,
+     "page": 1804,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "Explain a proof of the Pythagorean Theorem informally",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 1611,
-     "answer_key_page": 1611
+     "question_page": 1804,
+     "answer_key_page": 1804
     }
    ]
   },
@@ -1120,7 +1171,8 @@
     "progression": "cross-standard extension",
     "connection": "direct",
     "new_demand": "Derive and use further relationships (geometric means) from the same similar triangles.",
-    "course": "Geometry"
+    "course": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1142,8 +1194,8 @@
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "In right triangle ABC with altitude CD to hypotenuse AB, AD = 4 and DB = 9. Find CD.",
-     "prompt_markup": "In right triangle ABC with altitude CD to hypotenuse AB, AD = 4 and DB = 9. Find CD.",
+     "prompt": "Right triangle ABC has the right angle at C, and altitude CD meets hypotenuse AB at D. AD = 4 and DB = 9. Find CD.",
+     "prompt_markup": "Right triangle ABC has the right angle at C, and altitude CD meets hypotenuse AB at D. AD = 4 and DB = 9. Find CD.",
      "choices": [],
      "answer_lines": [
       "CD ="
@@ -1154,15 +1206,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form. CD² = AD · DB.",
      "figure": null,
-     "page": 1613,
-     "revision": "unchanged",
+     "page": 1806,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "Use the geometric mean relationships in a right triangle",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1613,
-     "answer_key_page": 1613
+     "question_page": 1806,
+     "answer_key_page": 1806
     },
     {
      "id": "S44-F1-Q2",
@@ -1183,8 +1235,8 @@
      "standard_course": "Geometry",
      "type": "work",
      "response": "write the answer and show the required work",
-     "prompt": "In right triangle ABC with right angle at C and altitude CD, prove that CD² = AD · DB.",
-     "prompt_markup": "In right triangle ABC with right angle at C and altitude CD, prove that CD² = AD · DB.",
+     "prompt": "In right triangle ABC with the right angle at C, altitude CD meets hypotenuse AB at D. Prove that CD² = AD · DB.",
+     "prompt_markup": "In right triangle ABC with the right angle at C, altitude CD meets hypotenuse AB at D. Prove that CD² = AD · DB.",
      "choices": [],
      "answer_lines": [
       "Conclusion:"
@@ -1195,15 +1247,15 @@
      "required_method": "Show △ACD ~ △CBD and write a proportion.",
      "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: △ADC ~ △CDB (AA: right angles at D, and ∠A ≅ ∠BCD since both are complementary to ∠B); AD/CD = CD/DB.",
      "figure": null,
-     "page": 1614,
-     "revision": "unchanged",
+     "page": 1807,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "Use the geometric mean relationships in a right triangle",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1614,
-     "answer_key_page": 1614
+     "question_page": 1807,
+     "answer_key_page": 1807
     },
     {
      "id": "S44-F1-Q3",
@@ -1243,15 +1295,15 @@
      "required_method": null,
      "grading_note": "CD² = AD · DB.",
      "figure": null,
-     "page": 1615,
+     "page": 1808,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "Use the geometric mean relationships in a right triangle",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1615,
-     "answer_key_page": 1615
+     "question_page": 1808,
+     "answer_key_page": 1808
     },
     {
      "id": "S44-F1-Q4",
@@ -1299,15 +1351,15 @@
      "required_method": null,
      "grading_note": "AC² = AD · AB = 16.",
      "figure": null,
-     "page": 1616,
+     "page": 1809,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "Use the geometric mean relationships in a right triangle",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1616,
-     "answer_key_page": 1616
+     "question_page": 1809,
+     "answer_key_page": 1809
     },
     {
      "id": "S44-F1-Q5",
@@ -1340,15 +1392,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form. 144 = 9x.",
      "figure": null,
-     "page": 1617,
+     "page": 1810,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "Use the geometric mean relationships in a right triangle",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1617,
-     "answer_key_page": 1617
+     "question_page": 1810,
+     "answer_key_page": 1810
     }
    ]
   },
@@ -1365,7 +1417,8 @@
     "connection": "direct",
     "new_demand": "See the theorem as the C = 90° case of a general relationship, and classify triangles by comparing squares.",
     "course": "Geometry",
-    "builds_on": "A second extension of MAIN: FORWARD 1 extracts more right-triangle relationships; FORWARD 2 generalizes to all triangles (advanced strand)."
+    "builds_on": "A second extension of MAIN: FORWARD 1 extracts more right-triangle relationships; FORWARD 2 generalizes to all triangles (advanced strand).",
+    "plus_standard": true
    },
    "questions": [
     {
@@ -1399,15 +1452,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 1619,
+     "page": 1812,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "The Law of Cosines as a generalization of the Pythagorean Theorem",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 1619,
-     "answer_key_page": 1619
+     "question_page": 1812,
+     "answer_key_page": 1812
     },
     {
      "id": "S44-F2-Q2",
@@ -1440,15 +1493,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form. 25 + 64 - 40 = 49.",
      "figure": null,
-     "page": 1620,
+     "page": 1813,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "The Law of Cosines as a generalization of the Pythagorean Theorem",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 1620,
-     "answer_key_page": 1620
+     "question_page": 1813,
+     "answer_key_page": 1813
     },
     {
      "id": "S44-F2-Q3",
@@ -1488,15 +1541,15 @@
      "required_method": null,
      "grading_note": "It is acute; the angle is obtuse when a² + b² < c².",
      "figure": null,
-     "page": 1621,
+     "page": 1814,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "The Law of Cosines as a generalization of the Pythagorean Theorem",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 1621,
-     "answer_key_page": 1621
+     "question_page": 1814,
+     "answer_key_page": 1814
     },
     {
      "id": "S44-F2-Q4",
@@ -1544,15 +1597,15 @@
      "required_method": null,
      "grading_note": "16 + 25 = 41 < 49.",
      "figure": null,
-     "page": 1622,
+     "page": 1815,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "The Law of Cosines as a generalization of the Pythagorean Theorem",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 1622,
-     "answer_key_page": 1622
+     "question_page": 1815,
+     "answer_key_page": 1815
     },
     {
      "id": "S44-F2-Q5",
@@ -1585,15 +1638,15 @@
      "required_method": null,
      "grading_note": "Form required: the classification with the check.",
      "figure": null,
-     "page": 1623,
+     "page": 1816,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove the Pythagorean Theorem using triangle similarity (the altitude to the hypotenuse)",
      "target_skill": "The Law of Cosines as a generalization of the Pythagorean Theorem",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry, Advanced Extension (+)",
-     "question_page": 1623,
-     "answer_key_page": 1623
+     "question_page": 1816,
+     "answer_key_page": 1816
     }
    ]
   }

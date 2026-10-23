@@ -4,7 +4,7 @@
   "id": "GEO",
   "grade": null,
   "course": "Geometry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-23"
  },
  "grade": null,
@@ -29,7 +29,8 @@
    "branch": {
     "kind": "main",
     "strand": "core",
-    "target_skill": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it"
+    "target_skill": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -118,15 +119,15 @@
        }
       }
      },
-     "page": 2033,
+     "page": 2226,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 2033,
-     "answer_key_page": 2033
+     "question_page": 2226,
+     "answer_key_page": 2226
     },
     {
      "id": "S56-M-Q2",
@@ -159,15 +160,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form. ∠OTP = 90°.",
      "figure": null,
-     "page": 2034,
+     "page": 2227,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 2034,
-     "answer_key_page": 2034
+     "question_page": 2227,
+     "answer_key_page": 2227
     },
     {
      "id": "S56-M-Q3",
@@ -200,15 +201,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2035,
+     "page": 2228,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 2035,
-     "answer_key_page": 2035
+     "question_page": 2228,
+     "answer_key_page": 2228
     },
     {
      "id": "S56-M-Q4",
@@ -227,44 +228,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "mc",
-     "response": "select one",
-     "prompt": "Segment PT touches circle O at T. OT = 7, PT = 24, OP = 26. Is PT tangent to the circle?",
-     "prompt_markup": "Segment PT touches circle O at T. OT = 7, PT = 24, OP = 26. Is PT tangent to the circle?",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "Yes, because 26 > 24"
-      },
-      {
-       "letter": "B",
-       "text": "Yes, because it touches at T"
-      },
-      {
-       "letter": "C",
-       "text": "No, because 7 < 24"
-      },
-      {
-       "letter": "D",
-       "text": "No, because 7² + 24² ≠ 26²"
-      }
+     "type": "sa",
+     "response": "write",
+     "prompt": "T lies on circle O, and P is outside it, with OT = 7, PT = 24 and OP = 26. Is line PT tangent to the circle at T? Justify your answer.",
+     "prompt_markup": "T lies on circle O, and P is outside it, with OT = 7, PT = 24 and OP = 26. Is line PT tangent to the circle at T? Justify your answer.",
+     "choices": [],
+     "answer_lines": [
+      "Answer:"
      ],
-     "answer_lines": [],
-     "correct_letter": "D",
-     "correct_answer": "No, because 7² + 24² ≠ 26²",
+     "correct_letter": null,
+     "correct_answer": "No, PT is not tangent: 7² + 24² = 625 ≠ 676 = 26², so ∠OTP is not a right angle, and a tangent at T must be perpendicular to radius OT.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Tangency requires ∠OTP = 90°, but 49 + 576 = 625 ≠ 676.",
+     "grading_note": "Form required: the computation, the conclusion \"not tangent\", and the reason (radius ⊥ tangent).",
      "figure": null,
-     "page": 2036,
-     "revision": "unchanged",
+     "page": 2229,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 2036,
-     "answer_key_page": 2036
+     "question_page": 2229,
+     "answer_key_page": 2229
     },
     {
      "id": "S56-M-Q5",
@@ -283,36 +269,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "tf",
-     "response": "select true or false",
-     "prompt": "A line perpendicular to a radius at its endpoint on the circle is tangent to the circle.",
-     "prompt_markup": "A line perpendicular to a radius at its endpoint on the circle is tangent to the circle.",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "True"
-      },
-      {
-       "letter": "B",
-       "text": "False"
-      }
+     "type": "sa",
+     "response": "write",
+     "prompt": "T is on circle O with radius 6. Line ℓ is perpendicular to OT at T, and Q is a point on ℓ with TQ = 8. Find OQ, and explain why Q is outside the circle. What does this show about line ℓ?",
+     "prompt_markup": "T is on circle O with radius 6. Line ℓ is perpendicular to OT at T, and Q is a point on ℓ with TQ = 8. Find OQ, and explain why Q is outside the circle. What does this show about line ℓ?",
+     "choices": [],
+     "answer_lines": [
+      "Answer:"
      ],
-     "answer_lines": [],
-     "correct_letter": "A",
-     "correct_answer": "True",
+     "correct_letter": null,
+     "correct_answer": "OQ = 10 > 6, so Q is outside. Every point of ℓ other than T is the end of a hypotenuse longer than OT, so ℓ meets the circle only at T: ℓ is tangent.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Converse.",
+     "grading_note": "Form required: the length, the comparison, and the tangent conclusion.",
      "figure": null,
-     "page": 2037,
-     "revision": "unchanged",
+     "page": 2230,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 2037,
-     "answer_key_page": 2037
+     "question_page": 2230,
+     "answer_key_page": 2230
     }
    ]
   },
@@ -327,7 +306,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot compute with the right triangle formed by the radius and tangent. Why it matters: tangent problems are right-triangle problems. Evidence: uses the theorem and converse.",
-    "source": "Grade 8"
+    "source": "Grade 8",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -359,15 +339,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2039,
+     "page": 2232,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "Use the Pythagorean Theorem and its converse",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 2039,
-     "answer_key_page": 2039
+     "question_page": 2232,
+     "answer_key_page": 2232
     },
     {
      "id": "S56-B1-Q2",
@@ -398,15 +378,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2040,
+     "page": 2233,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "Use the Pythagorean Theorem and its converse",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 2040,
-     "answer_key_page": 2040
+     "question_page": 2233,
+     "answer_key_page": 2233
     },
     {
      "id": "S56-B1-Q3",
@@ -444,15 +424,15 @@
      "required_method": null,
      "grading_note": "49 + 576 = 625.",
      "figure": null,
-     "page": 2041,
+     "page": 2234,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "Use the Pythagorean Theorem and its converse",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 2041,
-     "answer_key_page": 2041
+     "question_page": 2234,
+     "answer_key_page": 2234
     },
     {
      "id": "S56-B1-Q4",
@@ -498,15 +478,15 @@
      "required_method": null,
      "grading_note": "36 + 64 ≠ 121.",
      "figure": null,
-     "page": 2042,
+     "page": 2235,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "Use the Pythagorean Theorem and its converse",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 2042,
-     "answer_key_page": 2042
+     "question_page": 2235,
+     "answer_key_page": 2235
     },
     {
      "id": "S56-B1-Q5",
@@ -544,15 +524,15 @@
      "required_method": null,
      "grading_note": "Right triangles only.",
      "figure": null,
-     "page": 2043,
+     "page": 2236,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "Use the Pythagorean Theorem and its converse",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 2043,
-     "answer_key_page": 2043
+     "question_page": 2236,
+     "answer_key_page": 2236
     }
    ]
   },
@@ -567,7 +547,8 @@
     "kind": "backward",
     "alignment": "supporting",
     "rationale": "Obstacle: the student does not know the shortest-distance fact. Why it matters: the indirect proof relies on it. Evidence: explains shortest distance.",
-    "source": "Grade 7"
+    "source": "Grade 7",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -606,15 +587,15 @@
      "required_method": null,
      "grading_note": "Any other segment is a hypotenuse.",
      "figure": null,
-     "page": 2045,
+     "page": 2238,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "The perpendicular is the shortest segment from a point to a line",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 2045,
-     "answer_key_page": 2045
+     "question_page": 2238,
+     "answer_key_page": 2238
     },
     {
      "id": "S56-B2-Q2",
@@ -645,15 +626,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 2046,
+     "page": 2239,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "The perpendicular is the shortest segment from a point to a line",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 2046,
-     "answer_key_page": 2046
+     "question_page": 2239,
+     "answer_key_page": 2239
     },
     {
      "id": "S56-B2-Q3",
@@ -699,15 +680,15 @@
      "required_method": null,
      "grading_note": "At least 4 cm.",
      "figure": null,
-     "page": 2047,
+     "page": 2240,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "The perpendicular is the shortest segment from a point to a line",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 2047,
-     "answer_key_page": 2047
+     "question_page": 2240,
+     "answer_key_page": 2240
     },
     {
      "id": "S56-B2-Q4",
@@ -738,15 +719,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 2048,
+     "page": 2241,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "The perpendicular is the shortest segment from a point to a line",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 2048,
-     "answer_key_page": 2048
+     "question_page": 2241,
+     "answer_key_page": 2241
     },
     {
      "id": "S56-B2-Q5",
@@ -784,15 +765,15 @@
      "required_method": null,
      "grading_note": "Along the perpendicular.",
      "figure": null,
-     "page": 2049,
+     "page": 2242,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "The perpendicular is the shortest segment from a point to a line",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 2049,
-     "answer_key_page": 2049
+     "question_page": 2242,
+     "answer_key_page": 2242
     }
    ]
   },
@@ -807,7 +788,8 @@
     "kind": "backward",
     "alignment": "supporting",
     "rationale": "Obstacle: the student is unclear what tangent means. Why it matters: the proof uses the one-point property. Evidence: uses the definition.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -848,15 +830,15 @@
      "required_method": null,
      "grading_note": "Definition.",
      "figure": null,
-     "page": 2051,
+     "page": 2244,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "A tangent touches a circle at exactly one point",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Geometry",
-     "question_page": 2051,
-     "answer_key_page": 2051
+     "question_page": 2244,
+     "answer_key_page": 2244
     },
     {
      "id": "S56-B3-Q2",
@@ -904,15 +886,15 @@
      "required_method": null,
      "grading_note": "Two points.",
      "figure": null,
-     "page": 2052,
+     "page": 2245,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "A tangent touches a circle at exactly one point",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Geometry",
-     "question_page": 2052,
-     "answer_key_page": 2052
+     "question_page": 2245,
+     "answer_key_page": 2245
     },
     {
      "id": "S56-B3-Q3",
@@ -945,15 +927,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 2053,
+     "page": 2246,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "A tangent touches a circle at exactly one point",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Geometry",
-     "question_page": 2053,
-     "answer_key_page": 2053
+     "question_page": 2246,
+     "answer_key_page": 2246
     },
     {
      "id": "S56-B3-Q4",
@@ -986,15 +968,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 2054,
+     "page": 2247,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "A tangent touches a circle at exactly one point",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Geometry",
-     "question_page": 2054,
-     "answer_key_page": 2054
+     "question_page": 2247,
+     "answer_key_page": 2247
     },
     {
      "id": "S56-B3-Q5",
@@ -1034,15 +1016,15 @@
      "required_method": null,
      "grading_note": "Then it would meet the circle twice.",
      "figure": null,
-     "page": 2055,
+     "page": 2248,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "A tangent touches a circle at exactly one point",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Geometry",
-     "question_page": 2055,
-     "answer_key_page": 2055
+     "question_page": 2248,
+     "answer_key_page": 2248
     }
    ]
   },
@@ -1058,7 +1040,8 @@
     "progression": "same-course deepening",
     "connection": "direct",
     "new_demand": "Prove and use a new consequence: tangent segments from one point are congruent.",
-    "course": "Geometry"
+    "course": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1164,15 +1147,15 @@
        }
       }
      },
-     "page": 2057,
+     "page": 2250,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "Tangent segments from an external point are congruent",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2057,
-     "answer_key_page": 2057
+     "question_page": 2250,
+     "answer_key_page": 2250
     },
     {
      "id": "S56-F1-Q2",
@@ -1205,15 +1188,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2058,
+     "page": 2251,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "Tangent segments from an external point are congruent",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2058,
-     "answer_key_page": 2058
+     "question_page": 2251,
+     "answer_key_page": 2251
     },
     {
      "id": "S56-F1-Q3",
@@ -1253,15 +1236,15 @@
      "required_method": null,
      "grading_note": "Congruent triangles.",
      "figure": null,
-     "page": 2059,
+     "page": 2252,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "Tangent segments from an external point are congruent",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2059,
-     "answer_key_page": 2059
+     "question_page": 2252,
+     "answer_key_page": 2252
     },
     {
      "id": "S56-F1-Q4",
@@ -1309,15 +1292,15 @@
      "required_method": null,
      "grading_note": "Same external point.",
      "figure": null,
-     "page": 2060,
+     "page": 2253,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "Tangent segments from an external point are congruent",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2060,
-     "answer_key_page": 2060
+     "question_page": 2253,
+     "answer_key_page": 2253
     },
     {
      "id": "S56-F1-Q5",
@@ -1350,15 +1333,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form. AB + CD = BC + DA.",
      "figure": null,
-     "page": 2061,
+     "page": 2254,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "Tangent segments from an external point are congruent",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2061,
-     "answer_key_page": 2061
+     "question_page": 2254,
+     "answer_key_page": 2254
     }
    ]
   },
@@ -1375,7 +1358,8 @@
     "connection": "direct",
     "new_demand": "Use radius ⊥ tangent with slopes to write tangent line equations.",
     "course": "Geometry",
-    "builds_on": "A second extension of MAIN: FORWARD 1 stays synthetic; FORWARD 2 moves the same fact to coordinates."
+    "builds_on": "A second extension of MAIN: FORWARD 1 stays synthetic; FORWARD 2 moves the same fact to coordinates.",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1409,15 +1393,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form, such as 3x + 4y = 25. The radius has slope 4/3.",
      "figure": null,
-     "page": 2063,
+     "page": 2256,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "Write the equation of a tangent line in the coordinate plane",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2063,
-     "answer_key_page": 2063
+     "question_page": 2256,
+     "answer_key_page": 2256
     },
     {
      "id": "S56-F2-Q2",
@@ -1450,15 +1434,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form. Radius slope -3/2; tangent slope 2/3.",
      "figure": null,
-     "page": 2064,
+     "page": 2257,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "Write the equation of a tangent line in the coordinate plane",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2064,
-     "answer_key_page": 2064
+     "question_page": 2257,
+     "answer_key_page": 2257
     },
     {
      "id": "S56-F2-Q3",
@@ -1498,15 +1482,15 @@
      "required_method": null,
      "grading_note": "Its slope is the negative reciprocal (when neither line is vertical or horizontal).",
      "figure": null,
-     "page": 2065,
+     "page": 2258,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "Write the equation of a tangent line in the coordinate plane",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2065,
-     "answer_key_page": 2065
+     "question_page": 2258,
+     "answer_key_page": 2258
     },
     {
      "id": "S56-F2-Q4",
@@ -1554,15 +1538,15 @@
      "required_method": null,
      "grading_note": "The radius is vertical, so the tangent is horizontal.",
      "figure": null,
-     "page": 2066,
+     "page": 2259,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "Write the equation of a tangent line in the coordinate plane",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2066,
-     "answer_key_page": 2066
+     "question_page": 2259,
+     "answer_key_page": 2259
     },
     {
      "id": "S56-F2-Q5",
@@ -1595,15 +1579,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 2067,
+     "page": 2260,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain why a tangent line is perpendicular to the radius at the point of tangency, and use it",
      "target_skill": "Write the equation of a tangent line in the coordinate plane",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 2067,
-     "answer_key_page": 2067
+     "question_page": 2260,
+     "answer_key_page": 2260
     }
    ]
   }

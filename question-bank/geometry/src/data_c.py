@@ -57,11 +57,18 @@ SETS = [
                 method='Give the translation that moves the centers together and the dilation (center and factor).',
                 key='Translate 5 units left and 2 units down, then dilate about (-4, 0) with scale factor 2.',
                 note=PR + 'Essential: the translation (x, y) → (x - 5, y - 2) moves the center to (-4, 0) keeping the radius 3; the dilation about (-4, 0) by 2 doubles every distance from the center, so radius 6.'),
-          sa('In the proof that all circles are similar, why must the scale factor be the ratio of the radii (s/r)?', 'Answer:',
-             key='A dilation about the center multiplies every distance from the center by the factor, so the radius r must become s: k · r = s.', note='Any equivalent explanation.'),
+          proof('Circle C₁ has center (0, 0) and radius 2. Circle C₂ has center (3, -1) and radius 5. Prove that C₁ and C₂ are similar by giving a similarity transformation, and show '
+                'where it sends the point (2, 0) of C₁.',
+                method='Translate the center onto (3, -1), then dilate about (3, -1) with factor 5/2; follow (2, 0) through both steps and check its distance from (3, -1).',
+                key='Translate by (x, y) → (x + 3, y - 1), then dilate about (3, -1) by 2.5; (2, 0) → (5, -1) → (8, -1), which is 5 from (3, -1).',
+                note=PR + 'Essential: the translation keeps the radius 2 and moves the center to (3, -1); the dilation by 5/2 about the center makes every radius 5, so the image is C₂; '
+                     'the check point lands on C₂.'),
           proof('Explain why two circles with the same center but different radii, r and s, are similar using only ONE transformation.', method='Name the transformation and its center and factor.',
                 key='The dilation about the common center with factor s/r maps the first circle onto the second.', note=PR + 'Essential: dilation about the shared center; factor s/r; each point at distance r goes to distance s.'),
-          tf('A circle can be similar to an ellipse that is not a circle.', key=False, note='A similarity keeps the ratio of all distances from the center, so the image of a circle is a circle.'),
+          proof('Circle C has center A and radius r, and circle D has center B and radius s. Prove that C and D are similar using a dilation FIRST and a translation SECOND.',
+                method='Dilate about A with factor s/r, then translate A to B; show the image is exactly D.', key='The dilation followed by the translation maps C onto D, so they are similar.',
+                note=PR + 'Essential: the dilation about A by s/r maps C onto the circle with center A and radius s (every distance from A is multiplied by s/r); the translation A → B keeps '
+                     'distances, so it maps that circle onto the circle with center B and radius s, which is D.'),
       ],
       back=[
           B('A dilation multiplies distances by the scale factor', 'HSG-SRT.A.1.b', [
@@ -120,7 +127,9 @@ SETS = [
                 method='Use isosceles triangle AOB (OA = OB) and the exterior angle theorem at O.', key='m∠BAC = ½ m∠BOC',
                 note=PR + 'Essential: OA = OB (radii), so ∠OAB ≅ ∠OBA; ∠BOC is an exterior angle of △AOB, so m∠BOC = m∠OAB + m∠OBA = 2m∠BAC.'),
           mc('Inscribed angle XYZ and central angle XOZ intercept the same arc XZ, and m∠XYZ = 47°. What is m∠XOZ?', ['94°', '47°', '23.5°', '133°'], note='Double the inscribed angle.'),
-          tf('An inscribed angle and a central angle that intercept the same arc have equal measures.', key=False, note='The inscribed angle is half the central angle.'),
+          sa('In circle O, points C and D are on the same side of chord AB, so inscribed angles ADB and ACB intercept the same arc AB. m∠ADB = (3x + 4)° and m∠ACB = (5x - 12)°. '
+             'Find x, m∠ACB, and the central angle AOB that intercepts arc AB.', 'Answer:',
+             key='x = 8; m∠ACB = 28°; m∠AOB = 56°.', note='Form required: all three. Both inscribed angles are half of arc AB, so 3x + 4 = 5x - 12.'),
       ],
       back=[
           B('Base angles of an isosceles triangle are congruent', 'HSG-CO.C.10', [
@@ -149,21 +158,27 @@ SETS = [
             why=why('the student does not connect central angles with arcs.', 'the relationship is stated with arcs.', 'converts between arcs and central angles.')),
       ],
       f1=B('Prove the inscribed angle theorem when the center is inside or outside the angle', 'HSG-C.A.2', [
-          proof('Inscribed angle ABC has the center O inside it. Prove that m∠ABC = ½ m∠AOC. (Draw diameter BD.)',
-                method='Split ∠ABC and ∠AOC along BD and apply the diameter case twice, then add.', key='m∠ABC = ½ m∠AOC',
-                note=PR + 'Essential: m∠ABD = ½m∠AOD and m∠DBC = ½m∠DOC (diameter case); add: m∠ABC = ½(m∠AOD + m∠DOC) = ½m∠AOC.'),
-          proof('Inscribed angle ABC has the center O outside it. Prove that m∠ABC = ½ m∠AOC. (Draw diameter BD.)',
-                method='Use the diameter case twice and SUBTRACT.', key='m∠ABC = ½ m∠AOC',
-                note=PR + 'Essential: with D such that A and C are on the same side of BD: m∠DBC = ½m∠DOC and m∠DBA = ½m∠DOA; subtract.'),
+          proof('Inscribed angle ABC in circle O has the center O inside the angle. Prove that m∠ABC = ½ m(arc AC), where arc AC is the arc intercepted by ∠ABC (the arc not containing B). '
+                '(Draw diameter BD.) If ∠ABC is obtuse, arc AC is a major arc and its central angle is a reflex angle.',
+                method='Split ∠ABC along BD, apply the diameter case to each part, then add the arcs.', key='m∠ABC = ½ m(arc AC)',
+                note=PR + 'Essential: m∠ABD = ½ m(arc AD) and m∠DBC = ½ m(arc DC) (diameter case, with each arc measured by its central angle); D lies on arc AC, so '
+                     'm∠ABC = ½(m(arc AD) + m(arc DC)) = ½ m(arc AC). This also covers an obtuse ∠ABC, where arc AC is greater than 180°.'),
+          proof('Inscribed angle ABC in circle O has the center O outside the angle. Prove that m∠ABC = ½ m(arc AC), where arc AC is the arc intercepted by ∠ABC (the arc not containing B). '
+                '(Draw diameter BD.)',
+                method='Use the diameter case twice and SUBTRACT the arcs.', key='m∠ABC = ½ m(arc AC)',
+                note=PR + 'Essential: label so that A lies on arc DC (A and C on the same side of BD); m∠DBC = ½ m(arc DC) and m∠DBA = ½ m(arc DA) (diameter case); subtract: '
+                     'm∠ABC = ½(m(arc DC) - m(arc DA)) = ½ m(arc AC). Here ∠ABC is acute and arc AC is a minor arc.'),
           tf('The inscribed angle theorem needs three cases for a complete proof.', key=True, note='Center on a side, inside, or outside.'),
           mc('In the proof of the inscribed angle theorem for the case where the center lies inside the inscribed angle, a diameter splits the angle in two, and the two diameter-case results are', ['added', 'subtracted', 'multiplied', 'averaged'], note='The angle is the sum of two pieces.'),
           sa('Why can\'t the proof of the inscribed angle theorem stop after the case in which one side of the angle is a diameter?', 'Answer:', key='Most inscribed angles do not have a diameter as a side; the other positions must be covered too.', note='Any equivalent answer.'),
       ], prog='same-course deepening', demand='Complete the proof for every position of the center (all three cases).'),
       f2=B('Inscribed angles on the same arc, and arc applications', 'HSG-C.A.2', [
-          sa('Inscribed angles ∠ADB and ∠ACB intercept the same arc AB, and m∠ADB = 41°. Find m∠ACB.', 'm∠ACB =', key='41°', note='Any equivalent form.'),
-          proof('Prove that two inscribed angles that intercept the same arc are congruent.', method='Each is half the same central angle.', key='They are congruent.',
-                note=PR + 'Essential: each equals ½ of the central angle on that arc (inscribed angle theorem).'),
-          tf('An inscribed angle that intercepts a 200° arc measures 200°.', key=False, note='It is half the arc: 100°.'),
+          sa('In a circle, inscribed angles ∠ADB and ∠ACB intercept the same arc AB, and m∠ADB = 41°. Find m∠ACB.', 'm∠ACB =', key='41°', note='Any equivalent form.'),
+          proof('In a circle, inscribed angles ADB and ACB intercept the same arc AB (C and D are on the same side of chord AB). Prove that ∠ADB ≅ ∠ACB.',
+                method='Each inscribed angle is half the measure of the same intercepted arc.', key='They are congruent.',
+                note=PR + 'Essential: m∠ADB = ½ m(arc AB) and m∠ACB = ½ m(arc AB), where arc AB is the arc not containing C or D (it may be a major arc, with a reflex central angle); '
+                     'equal halves of the same arc, so the angles are congruent.'),
+          tf('An inscribed angle whose intercepted arc is a 200° major arc measures 200°.', key=False, note='It is half the intercepted arc: 100°.'),
           mc('Points A, B, C, D are on a circle with arc AB = 80° and arc CD = 50° (arcs not containing the other points). Chords AC and BD meet at E inside. m∠AEB?', ['65°', '130°', '30°', '15°'],
              note='Angle formed by two chords = half the sum of the intercepted arcs: (80 + 50)/2.'),
           sa('An inscribed angle measures 3x + 10 and its intercepted arc measures 110°. Find x.', 'x =', key='15', note='Any equivalent form. 3x + 10 = 55.'),
@@ -191,8 +206,12 @@ SETS += [
           sa('AB is a diameter of a circle and C is on the circle. AC = 6 and BC = 8. Find AB and the radius.', 'Answer:', key='AB = 10; radius 5',
              note='Form required: both. ∠C = 90°, so AB = √(36 + 64).'),
           sa('AB is a diameter of circle O and C is on the circle with m∠CAB = 34°. Find m∠CBA.', 'm∠CBA =', key='56°', note='Any equivalent form. ∠C = 90°.'),
-          mc('Triangle PQR is inscribed in a circle with PR a diameter. Which statement must be true?', ['∠Q = 90°', '∠P = 90°', 'PQ = QR', 'PR = PQ'], note='The angle opposite the diameter.'),
-          tf('Every triangle inscribed in a circle is a right triangle.', key=False, note='Only when one side is a diameter.'),
+          sa('Triangle PQR is inscribed in a circle with PR a diameter. m∠P = (3x)° and m∠R = (2x + 15)°. Find x and the measures of all three angles, and name the theorem you used.',
+             'Answer:', key='x = 15; m∠P = 45°, m∠R = 45°, m∠Q = 90° (an angle inscribed in a semicircle is a right angle).',
+             note='Form required: x, three angles, and the theorem. 3x + 2x + 15 = 90.'),
+          sa('Points A(-5, 0), B(5, 0) and C(3, 4) are on the circle x² + y² = 25, and AB is a diameter. Use slopes to show that ∠ACB is a right angle, and explain how this agrees with the theorem.',
+             'Answer:', key='Slope CA = 4/8 = ½ and slope CB = 4/(-2) = -2; the product is -1, so CA ⊥ CB. This matches the theorem: ∠ACB is inscribed in a semicircle.',
+             note='Form required: both slopes, the perpendicularity conclusion, and the link to the theorem.'),
       ],
       back=[
           B('Use the inscribed angle theorem', 'HSG-C.A.2', [
@@ -255,10 +274,13 @@ SETS += [
                      'and then ℓ would cross the circle twice, contradicting tangency. Invalid: "it looks perpendicular".'),
           sa('Line PT is tangent to circle O at T. OT = 5 and PT = 12. Find OP.', 'OP =', key='13', note='Any equivalent form. ∠OTP = 90°.'),
           sa('A tangent from P touches circle O at T. OP = 17 and the radius is 8. Find PT.', 'PT =', key='15', note='Any equivalent form.'),
-          mc('Segment PT touches circle O at T. OT = 7, PT = 24, OP = 26. Is PT tangent to the circle?', ['No, because 7² + 24² ≠ 26²', 'Yes, because it touches at T',
-                                                                                                         'Yes, because 26 > 24', 'No, because 7 < 24'],
-             note='Tangency requires ∠OTP = 90°, but 49 + 576 = 625 ≠ 676.'),
-          tf('A line perpendicular to a radius at its endpoint on the circle is tangent to the circle.', key=True, note='Converse.'),
+          sa('T lies on circle O, and P is outside it, with OT = 7, PT = 24 and OP = 26. Is line PT tangent to the circle at T? Justify your answer.', 'Answer:',
+             key='No, PT is not tangent: 7² + 24² = 625 ≠ 676 = 26², so ∠OTP is not a right angle, and a tangent at T must be perpendicular to radius OT.',
+             note='Form required: the computation, the conclusion "not tangent", and the reason (radius ⊥ tangent).'),
+          sa('T is on circle O with radius 6. Line ℓ is perpendicular to OT at T, and Q is a point on ℓ with TQ = 8. Find OQ, and explain why Q is outside the circle. What does this '
+             'show about line ℓ?', 'Answer:',
+             key='OQ = 10 > 6, so Q is outside. Every point of ℓ other than T is the end of a hypotenuse longer than OT, so ℓ meets the circle only at T: ℓ is tangent.',
+             note='Form required: the length, the comparison, and the tangent conclusion.'),
       ],
       back=[
           B('Use the Pythagorean Theorem and its converse', '8.G.B.7', [
@@ -311,12 +333,13 @@ SETS += [
           proof('Tangents from P touch circle O at A and B. Prove that m∠APB + m∠AOB = 180°.', fig=CIRCA,
                 method='Use the right angles at A and B and the angle sum of quadrilateral OAPB.', key='m∠APB + m∠AOB = 180°',
                 note=PR + 'Essential: ∠OAP = ∠OBP = 90° (radius ⊥ tangent); the angles of quadrilateral OAPB add to 360°; so m∠APB + m∠AOB = 360° - 180° = 180°.'),
-          sa('The circumscribed angle APB measures 52°. Find the central angle AOB and the minor arc AB.', 'Answer:', key='∠AOB = 128°; arc AB = 128°', note='Form required: both.'),
-          sa('Minor arc AB measures 100°. Find the circumscribed angle formed by the tangents at A and B.', 'Angle:', key='80°', note='Any equivalent form.'),
-          mc('A circumscribed angle measures 90°. The quadrilateral formed by the center, the two tangent points, and the vertex is a', ['square', 'rhombus that is not a square',
-                                                                                                                                         'kite that is not a square', 'trapezoid'],
-             note='All four angles are 90°, so OAPB is a rectangle; its opposite sides give OA = PB, and with PA = PB and OA = OB all four sides are equal, so it is a square.'),
-          tf('A circumscribed angle and its central angle are congruent.', key=False, note='They are supplementary.'),
+          sa('Tangents from P touch circle O at A and B. The circumscribed angle APB measures 52°. Find the central angle AOB and the minor arc AB.', 'Answer:', key='∠AOB = 128°; arc AB = 128°', note='Form required: both.'),
+          sa('Tangents from P touch circle O at A and B. Minor arc AB measures 100°. Find the circumscribed angle APB.', 'Angle:', key='80°', note='Any equivalent form.'),
+          sa('Tangents from P touch circle O at A and B. m∠APB = 90°. Find m∠AOB and classify quadrilateral OAPB as specifically as possible. Give reasons.', 'Answer:',
+             key='m∠AOB = 90°. OAPB is a square: all four angles are 90° (a rectangle), and OA = OB (radii) and PA = PB (tangent segments) with OA = PB (opposite sides), so all sides are equal.',
+             note='Form required: the angle, "square", and the reasons.'),
+          sa('Tangents from P touch circle O at A and B. m∠APB = (2x + 10)° and m∠AOB = (4x + 50)°. Find x and both angle measures, and state the relationship you used.', 'Answer:',
+             key='x = 20; m∠APB = 50°, m∠AOB = 130°; a circumscribed angle and its central angle are supplementary.', note='Form required: x, both angles, and the relationship. 6x + 60 = 180.'),
       ],
       back=[
           B('A tangent is perpendicular to the radius at the point of tangency', 'HSG-C.A.2', [
@@ -345,12 +368,12 @@ SETS += [
             why=why('the student does not know "supplementary".', 'the relationship is supplementary angles.', 'finds supplements.')),
       ],
       f1=B('Use the circumscribed angle with arcs, including major arcs', 'HSG-C.A.2', [
-          sa('The circumscribed angle at P is 40°. Find the minor arc AB and the major arc AB.', 'Answer:', key='Minor arc 140°; major arc 220°', note='Form required: both.'),
-          sa('Show that a circumscribed angle equals ½(major arc - minor arc).', 'Answer:',
+          sa('Tangents from P touch circle O at A and B. The circumscribed angle APB is 40°. Find the minor arc AB and the major arc AB.', 'Answer:', key='Minor arc 140°; major arc 220°', note='Form required: both.'),
+          sa('Tangents from P touch circle O at A and B. Show that m∠APB = ½(major arc AB - minor arc AB).', 'Answer:',
              key='If the minor arc is m, the major arc is 360 - m and the angle is 180 - m = ½((360 - m) - m).', note='Any equivalent algebra.'),
           tf('A circumscribed angle can measure more than 180°.', key=False, note='It is 180° minus the minor arc, so it is less than 180°.'),
-          mc('Tangents from P make a 70° angle. An inscribed angle intercepting the minor arc AB measures', ['55°', '110°', '35°', '70°'], note='Minor arc = 110°, inscribed angle = 55°.'),
-          sa('The minor arc between two tangent points is x°, and the circumscribed angle is (x - 20)°. Find x.', 'x =', key='100', note='Any equivalent form. x + x - 20 = 180.'),
+          mc('Tangents from P touch circle O at A and B. m∠APB = 70°. An inscribed angle intercepting the minor arc AB measures', ['55°', '110°', '35°', '70°'], note='Minor arc = 110°, inscribed angle = 55°.'),
+          sa('Tangents from P touch circle O at A and B. Minor arc AB is x°, and the circumscribed angle APB is (x - 20)°. Find x.', 'x =', key='100', note='Any equivalent form. x + x - 20 = 180.'),
       ], prog='same-course deepening', demand='Express the circumscribed angle in terms of both arcs and combine it with inscribed angles.'),
       f2=B('Angles formed by secants and tangents outside a circle', 'HSG-C.A.2', [
           proof('Two secants from P meet a circle at A, B and at C, D (A between P and B, C between P and D). Prove that m∠P = ½(arc BD - arc AC).',
@@ -372,9 +395,12 @@ SETS += [
                 note=PR + 'Essential: OA = OB (radii); OM shared; right angles at M; HL (or the Pythagorean Theorem: AM = √(r² - OM²) = MB).'),
           sa('A circle has radius 13. A chord is 5 units from the center. How long is the chord?', 'Length:', key='24', note='Any equivalent form. Half-chord √(169 - 25) = 12.'),
           sa('A chord of length 16 is in a circle of radius 10. How far is the chord from the center?', 'Distance:', key='6', note='Any equivalent form.'),
-          mc('Two chords of a circle are each 7 units from the center. Which is true?', ['The chords are congruent', 'The chords are parallel', 'The chords are perpendicular', 'The chords meet at the center'],
-             note='Equidistant chords are congruent.'),
-          tf('The perpendicular bisector of any chord passes through the center of the circle.', key=True, note='The center is equidistant from the chord\'s endpoints.'),
+          proof('In circle O, chords AB and CD are congruent. OM ⊥ AB at M and ON ⊥ CD at N. Prove that OM = ON (congruent chords are equidistant from the center).',
+                method='Use the perpendicular-bisects-chord result, then HL on △OMA and △ONC.', key='OM = ON',
+                note=PR + 'Essential: OM ⊥ AB bisects AB and ON ⊥ CD bisects CD, so AM = ½AB = ½CD = CN; OA = OC (radii); right angles at M and N; HL gives △OMA ≅ △ONC, so OM = ON.'),
+          sa('Circle O has radius 17. Chords AB and CD are each 30 units long. Find the distance from O to each chord, and explain why the distances are equal.', 'Answer:',
+             key='Each distance is 8 (half-chord 15, √(289 - 225) = 8). They are equal because congruent chords are equidistant from the center.',
+             note='Form required: the distance with work and the reason.'),
       ],
       back=[
           B('Right triangles: Hypotenuse-Leg and the Pythagorean Theorem', 'HSG-SRT.B.5', [
@@ -389,7 +415,7 @@ SETS += [
               tf('A point equidistant from A and B lies on the perpendicular bisector of AB.', key=True, note='Converse.'),
               sa('The center O of a circle is equidistant from the endpoints of chord AB. Why?', 'Answer:', key='OA and OB are radii.', note='Any equivalent answer.'),
               mc('The center of a circle is equidistant from the endpoints of each of its chords. So the center lies on', ['the perpendicular bisector of every chord', 'every chord', 'the circle', 'a tangent'], note='Converse.'),
-              sa('Two chords\' perpendicular bisectors meet at P. What is P?', 'Answer:', key='The center of the circle', note='Any equivalent answer.'),
+              sa('Two chords of a circle are not parallel, so their perpendicular bisectors are different lines; the bisectors meet at P. What is P?', 'Answer:', key='The center of the circle', note='Any equivalent answer.'),
               tf('The perpendicular bisector of a chord can miss the center.', key=False, note='It always passes through it.'),
           ], align='exact',
             why=why('the student does not connect chords to perpendicular bisectors.', 'the center is on every chord\'s bisector.', 'applies the theorem.')),
@@ -433,9 +459,11 @@ def tri_fig(P, desc, h=270):
 
 
 T1 = {'A': (0, 0), 'B': (4.4, 0), 'C': (1.4, 3)}
-T2 = {'A': (0, 0), 'B': (4.6, 0), 'C': (3.6, 2.2)}
+T2 = {'A': (0, 0), 'B': (4.6, 0), 'C': (3.4, 1.2)}
 T3 = {'A': (0, 0), 'B': (3.2, 0), 'C': (0, 2.6)}
 T4 = {'A': (0, 0), 'B': (4.6, 0), 'C': (-0.8, 1.9)}
+T5 = {'A': (0, 0), 'B': (4.4, 0), 'C': (2.2, 3.2)}
+T6 = {'A': (0, 0), 'B': (5, 0), 'C': (3.8, 1.6)}
 PI = math.pi
 
 SETS += [
@@ -450,12 +478,13 @@ SETS += [
                key='Same steps: two angle bisectors meet at I (inside the triangle), perpendicular from I to a side gives the radius, then the circle.', note=EV + 'all constructions and the circle.'),
           plot(TOOLS + '\nConstruct the inscribed circle of right triangle ABC.', tri_fig(T3, 'Right triangle ABC with the right angle at A.'),
                key='Two angle bisectors, the perpendicular from their intersection to a side, and the circle.', note=EV + 'all constructions and the circle.'),
-          sa('Write the steps for constructing the inscribed circle of a triangle.', 'Steps:',
-             key='1. Construct the bisectors of two angles; label their intersection I. 2. Construct the perpendicular from I to one side; label the foot D. 3. Draw the circle with center I through D.',
-             note='Any equivalent steps. The radius must come from a PERPENDICULAR to a side, not from I to a vertex.'),
-          mc('Why is the radius of the inscribed circle measured along a perpendicular from the incenter to a side?', ['The circle must be tangent to the side, and a tangent is perpendicular to the radius',
-                                                                                                                        'The perpendicular is the longest segment', 'Any segment from I works', 'The radius goes to a vertex'],
-             note='Tangent ⊥ radius at the point of tangency.'),
+          plot(TOOLS + '\nConstruct the inscribed circle of isosceles triangle ABC (AC = BC). Then, as evidence, construct the perpendiculars from the incenter to ALL THREE sides '
+               'and mark the three points where the circle touches the sides.', tri_fig(T5, 'Isosceles triangle ABC with AC = BC and base AB.'),
+               key='Bisect two angles to get I; construct perpendiculars from I to AB, BC and CA (feet D, E, F); draw the circle with center I through D; it passes through E and F and touches each side once.',
+               note=EV + 'two angle bisectors, all three perpendiculars, and a circle through the three feet (evidence that the distances are equal).'),
+          plot(TOOLS + '\nConstruct the inscribed circle of triangle ABC by bisecting ∠B and ∠C (not ∠A). Then construct the bisector of ∠A as a check.', tri_fig(T6, 'Scalene triangle ABC with a long side AB.'),
+               key='The bisectors of ∠B and ∠C meet at I; the perpendicular from I to a side gives the radius; the circle is drawn; the bisector of ∠A also passes through I (the check).',
+               note=EV + 'three angle bisectors meeting at one point, the perpendicular, and the circle.'),
       ],
       back=[
           B('Construct an angle bisector', 'HSG-CO.D.12', [
@@ -515,9 +544,14 @@ SETS += [
                key='Same steps; the circumcenter is outside the triangle.', note=EV + 'all constructions and the circle.'),
           plot(TOOLS + '\nConstruct the circumscribed circle of right triangle ABC.', tri_fig(T3, 'Right triangle ABC with the right angle at A.'),
                key='The perpendicular bisectors meet at the midpoint of hypotenuse BC; circle centered there through A.', note=EV + 'constructions and the circle; the center is on BC.'),
-          sa('Write the steps for constructing the circumscribed circle of a triangle.', 'Steps:',
-             key='1. Construct the perpendicular bisectors of two sides. 2. Label their intersection O. 3. Draw the circle with center O through one vertex.', note='Any equivalent steps.'),
-          tf('The circumcenter of an obtuse triangle lies inside the triangle.', key=False, note='It lies outside.'),
+          plot(TOOLS + '\nConstruct the circumscribed circle of isosceles triangle ABC (AC = BC). Then, as evidence, construct the perpendicular bisector of the third side and show that it '
+               'passes through the same center.', tri_fig(T5, 'Isosceles triangle ABC with AC = BC and base AB.'),
+               key='Perpendicular bisectors of two sides meet at O; the third perpendicular bisector also passes through O; the circle with center O through A passes through B and C.',
+               note=EV + 'three perpendicular bisectors meeting at O and the circle through all three vertices.'),
+          plot(TOOLS + '\nConstruct the circumscribed circle of triangle ABC using the perpendicular bisectors of AC and BC. Then check with the compass that the circle passes through all three vertices.',
+               tri_fig(T6, 'Obtuse triangle ABC with the obtuse angle at C and a long side AB.'),
+               key='The perpendicular bisectors of AC and BC meet at O, outside the triangle below AB; the circle with center O through C also passes through A and B.',
+               note=EV + 'both perpendicular bisector constructions and the circle through A, B and C; the center is outside the triangle.'),
       ],
       back=[
           B('Construct the perpendicular bisector of a segment', 'HSG-CO.D.12', [
@@ -571,9 +605,15 @@ SETS += [
                 note=PR + 'Essential: m∠A = ½ arc BCD and m∠C = ½ arc BAD (inscribed angle theorem); the two arcs add to 360°; so the angles add to 180°.'),
           proof('Quadrilateral PQRS is inscribed in a circle. Prove that ∠Q and ∠S are supplementary.', method='Use the inscribed angle theorem: ∠Q and ∠S intercept arcs PSR and PQR, which together make the whole circle.',
                 key='m∠Q + m∠S = 180°', note=PR + 'Essential: each angle is half its intercepted arc, and the two intercepted arcs make up the whole circle (360°).'),
-          sa('Quadrilateral ABCD is inscribed in a circle with m∠A = 72° and m∠B = 105°. Find m∠C and m∠D.', 'Answer:', key='m∠C = 108°, m∠D = 75°', note='Form required: both.'),
-          mc('Which quadrilateral can always be inscribed in a circle?', ['Any rectangle', 'Any rhombus', 'Any parallelogram', 'Any trapezoid'], note='Opposite angles 90° + 90°.'),
-          tf('A parallelogram that is not a rectangle can be inscribed in a circle.', key=False, note='Its opposite angles are equal but not 90°, so they are not supplementary.'),
+          proof('Quadrilateral ABCD is inscribed in a circle with m∠A = 72° and m∠B = 105°. Find m∠C and m∠D, justifying each with the inscribed-quadrilateral theorem.',
+                method='Use that opposite angles of an inscribed quadrilateral are supplementary.', key='m∠C = 108°, m∠D = 75°',
+                note=PR + 'Essential: ∠A and ∠C are opposite, so m∠C = 180° - 72° = 108°; ∠B and ∠D are opposite, so m∠D = 180° - 105° = 75°; the theorem named for each.'),
+          proof('Parallelogram ABCD is inscribed in a circle. Prove that ABCD is a rectangle.',
+                method='Opposite angles of a parallelogram are congruent; opposite angles of an inscribed quadrilateral are supplementary.', key='ABCD is a rectangle.',
+                note=PR + 'Essential: ∠A ≅ ∠C (parallelogram) and m∠A + m∠C = 180° (inscribed), so each is 90°; a parallelogram with a right angle is a rectangle.'),
+          proof('Trapezoid ABCD with AB ∥ DC is inscribed in a circle. Prove that ∠A ≅ ∠B (so the trapezoid is isosceles).',
+                method='Compare same-side interior angles (from the parallel sides) with opposite angles (from the circle).', key='∠A ≅ ∠B',
+                note=PR + 'Essential: m∠A + m∠D = 180° (same-side interior angles, AB ∥ DC); m∠B + m∠D = 180° (opposite angles of an inscribed quadrilateral); so m∠A = m∠B.'),
       ],
       back=[
           B('The inscribed angle theorem', 'HSG-C.A.2', [
@@ -632,8 +672,9 @@ SETS += [
           sa('A central angle cuts off an arc of length 12 cm on a circle of radius 4 cm. What is the angle in radians?', 'Angle:', key='3 radians', note='Any equivalent form. θ = s/r.'),
           sa('Find the length of the arc cut off by a central angle of 2.5 radians in a circle of radius 6 m.', 'Length:', key='15 m', note='Any equivalent form. s = rθ.'),
           sa('Find the exact length of the arc cut off by a 120° central angle in a circle of radius 9.', 'Length:', key='6π', note='Form required: exact value. 120° = 2π/3 radians; s = 9 · 2π/3.'),
-          mc('Why is a full circle 2π radians?', ['The circumference is 2πr, so s/r = 2π for the whole circle', 'There are 360 degrees', 'π ≈ 3.14', 'Every circle has radius 1'],
-             note='Arc length ÷ radius for the whole circle.'),
+          sa('Use s = rθ to explain why a full turn is 2π radians and a half turn is π radians, and convert 270° to radians.', 'Answer:',
+             key='A full turn cuts off the whole circumference 2πr, so θ = 2πr/r = 2π; half a turn cuts off πr, so θ = π; 270° is ¾ of a turn, 3π/2 radians.',
+             note='Form required: both explanations and the conversion.'),
       ],
       back=[
           B('Similar figures: lengths scale by the scale factor', 'HSG-SRT.A.2', [
@@ -670,7 +711,7 @@ SETS += [
       ], prog='same-course deepening', demand='Work fluently between degree and radian measure, using the definition s = rθ.'),
       f2=B('Radian measure for angles of rotation and the unit circle', 'HSF-TF.A.1', [
           sa('On the unit circle, an angle of 2 radians cuts off an arc of what length?', 'Length:', key='2', note='Any equivalent form. r = 1.'),
-          sa('A wheel of radius 0.3 m turns through 10 radians. How far does a point on its rim travel?', 'Distance:', key='3 m', note='Any equivalent form.'),
+          sa('A wheel of radius 0.3 m rotates about its fixed center (axle) through 10 radians. How far does a point on its rim travel along its circular path?', 'Distance:', key='3 m', note='Any equivalent form.'),
           tf('An angle of 6 radians is more than one full turn.', key=False, note='One full turn is 2π ≈ 6.28 radians.'),
           mc('A point on the unit circle travels an arc of length π. The angle is', ['π radians (180°)', '1 radian', '2π radians', 'π°'], note='θ = s/r.'),
           sa('Explain why the radian measure of an angle does not depend on the radius of the circle used.', 'Answer:', key='Arc length is proportional to radius, so s/r is the same for every circle.',
@@ -685,11 +726,19 @@ SETS += [
           proof('Derive a formula for the area of a sector with central angle θ (in degrees) in a circle of radius r. Then rewrite it for θ in radians.',
                 method='Use the fraction of the whole circle that the sector is, times the circle\'s area.', key='A = (θ/360)πr² for degrees; A = ½r²θ for radians.',
                 note=PR + 'Essential: the sector is θ/360 of the circle (central angles split the area in proportion); area = (θ/360)πr²; with θ radians, the fraction is θ/(2π), so A = (θ/(2π))πr² = ½r²θ.'),
-          sa('Find the exact area of a sector with a 60° central angle in a circle of radius 6.', 'Area:', key='6π', note='Form required: exact value. (60/360)π(36).'),
-          sa('Find the area of a sector with central angle 1.2 radians in a circle of radius 5.', 'Area:', key='15', note='Any equivalent form. ½(25)(1.2).'),
-          sa('A pizza with diameter 14 in. is cut into 8 equal slices. Find the area of one slice to the nearest tenth of a square inch.', 'Area:', key='%s in²' % d1(PI * 49 / 8),
-             note='Rounding to 0.1 required. Radius 7 (not 14): (1/8)π(49).'),
-          mc('A sector has area 12π in a circle of radius 6. What is its central angle?', ['120°', '60°', '12°', '240°'], note='12π/36π = ⅓ of 360.'),
+          proof('Derive the formula A = ½rs for the area of a sector in terms of its radius r and arc length s. Then use it for a sector with r = 8 and s = 5.',
+                method='Use the fraction s/(2πr) of the circumference, which is the same fraction of the area.', key='A = ½rs; A = 20',
+                note=PR + 'Essential: the sector is s/(2πr) of the circle (arc length and area are in the same proportion to the whole circle); A = (s/(2πr)) · πr² = ½rs; ½ · 8 · 5 = 20.'),
+          proof('Derive the sector area formula for θ in radians from the proportion A/(πr²) = θ/(2π). Then find the area of a sector with central angle 1.2 radians in a circle of radius 5.',
+                method='Solve the proportion for A, then substitute.', key='A = ½r²θ; area 15',
+                note=PR + 'Essential: the fraction of the full angle (2π) equals the fraction of the area; A = πr² · θ/(2π) = ½r²θ; ½ · 25 · 1.2 = 15.'),
+          proof('A circular pizza of diameter d is cut into n equal slices. Derive a formula for the area of one slice in terms of d and n, then find the area for d = 14 in. and n = 8, to the '
+                'nearest tenth of a square inch.',
+                method='Each slice is a sector with central angle 360°/n and radius d/2.', key='A = πd²/(4n); %s in²' % d1(PI * 49 / 8),
+                note=PR + 'Essential: radius d/2 (not d); fraction 1/n; A = (1/n)π(d/2)² = πd²/(4n); π · 196/32 = %.3f. Rounding to 0.1 required.' % (PI * 49 / 8)),
+          proof('Solve the degree sector formula A = (θ/360)πr² for θ, and use your formula to find the central angle of a sector with area 12π in a circle of radius 6.',
+                method='Isolate θ algebraically, then substitute.', key='θ = 360A/(πr²); θ = 120°',
+                note=PR + 'Essential: multiply both sides by 360 and divide by πr²; θ = 360 · 12π/(36π) = 120°.'),
       ],
       back=[
           B('Area of a circle', '7.G.B.4', [

@@ -4,7 +4,7 @@
   "id": "GEO",
   "grade": null,
   "course": "Geometry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-23"
  },
  "grade": null,
@@ -29,7 +29,8 @@
    "branch": {
     "kind": "main",
     "strand": "core",
-    "target_skill": "Prove that the measures of the interior angles of any triangle add to 180°"
+    "target_skill": "Prove that the measures of the interior angles of any triangle add to 180°",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -61,7 +62,7 @@
      "correct_answer": "m∠A + m∠B + m∠C = 180°",
      "drawing_answer": null,
      "required_method": "Name the two new angles at C, use alternate interior angles with AB, and the straight angle at C.",
-     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: (1) through C there is exactly one line parallel to AB (parallel postulate); (2) the angles it makes with CA and CB are congruent to ∠A and ∠B (alternate interior angles, transversals CA and CB); (3) those two angles and ∠ACB form a straight angle, 180°; (4) substitute. Invalid: measuring angles; citing the exterior angle theorem (it depends on this result).",
+     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: (1) through C there is exactly one line parallel to AB (parallel postulate); (2) the angles it makes with CA and CB are congruent to ∠A and ∠B (alternate interior angles, transversals CA and CB); (3) those two angles and ∠ACB form a straight angle, 180°; (4) substitute. Invalid: measuring angles; citing the exterior angle theorem, because in this course that theorem is proved FROM the angle sum (set 20, FORWARD 1), so using it here would be circular.",
      "figure": {
       "svg": "assets/S20-M-Q1.svg",
       "png": "assets/S20-M-Q1.png",
@@ -98,15 +99,15 @@
        "h": 190
       }
      },
-     "page": 689,
-     "revision": "unchanged",
+     "page": 814,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Prove that the measures of the interior angles of any triangle add to 180°",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 689,
-     "answer_key_page": 689
+     "question_page": 814,
+     "answer_key_page": 814
     },
     {
      "id": "S20-M-Q2",
@@ -139,15 +140,15 @@
      "required_method": "Same strategy with vertex P: alternate interior angles and a straight angle at P.",
      "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: unique parallel through P; the two angles at P next to ∠QPR are congruent to ∠Q and ∠R (alternate interior); the three angles at P make 180°.",
      "figure": null,
-     "page": 690,
+     "page": 815,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Prove that the measures of the interior angles of any triangle add to 180°",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 690,
-     "answer_key_page": 690
+     "question_page": 815,
+     "answer_key_page": 815
     },
     {
      "id": "S20-M-Q3",
@@ -180,15 +181,15 @@
      "required_method": "Use alternate interior angles (∠A and ∠ACE) and corresponding angles (∠B and ∠ECD), then the straight angle BCD.",
      "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: ∠ACE ≅ ∠A (alternate interior, transversal AC); ∠ECD ≅ ∠B (corresponding, transversal BD); ∠ACB + ∠ACE + ∠ECD = 180° (straight angle at C).",
      "figure": null,
-     "page": 691,
+     "page": 816,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Prove that the measures of the interior angles of any triangle add to 180°",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 691,
-     "answer_key_page": 691
+     "question_page": 816,
+     "answer_key_page": 816
     },
     {
      "id": "S20-M-Q4",
@@ -207,29 +208,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "A proof of the triangle angle sum (line ℓ through C parallel to AB, making ∠1 next to CA and ∠2 next to CB): 1. m∠1 + m∠ACB + m∠2 = 180°  (?) 2. ∠1 ≅ ∠A and ∠2 ≅ ∠B  (?) 3. m∠A + m∠ACB + m∠B = 180°  (?) Give the three reasons.",
-     "prompt_markup": "A proof of the triangle angle sum (line ℓ through C parallel to AB, making ∠1 next to CA and ∠2 next to CB):\n1. m∠1 + m∠ACB + m∠2 = 180°  (?)\n2. ∠1 ≅ ∠A and ∠2 ≅ ∠B  (?)\n3. m∠A + m∠ACB + m∠B = 180°  (?)\nGive the three reasons.",
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "In triangle ABC, translate the triangle along ray AB so that A moves to B; C moves to C′ and B moves to D (on ray AB beyond B). Prove that the angles of triangle ABC add to 180°, using the three angles at B.",
+     "prompt_markup": "In triangle ABC, translate the triangle along ray AB so that A moves to B; C moves to C′ and B moves to D (on ray AB beyond B). Prove that the angles of triangle ABC add to 180°, using the three angles at B.",
      "choices": [],
      "answer_lines": [
-      "Reasons:"
+      "Conclusion:"
      ],
      "correct_letter": null,
-     "correct_answer": "1: the angles form a straight angle (angle addition); 2: alternate interior angles are congruent (ℓ ∥ AB); 3: substitution.",
+     "correct_answer": "m∠A + m∠ABC + m∠C = 180°",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Any equivalent names for all three reasons.",
+     "required_method": "Use the straight angle ABD at B, the translation (∠C′BD ≅ ∠A), and alternate interior angles (BC′ ∥ AC).",
+     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: ∠ABC + ∠CBC′ + ∠C′BD = 180° (straight angle, A, B, D collinear); ∠C′BD ≅ ∠CAB (the translation maps ∠CAB onto it); the translation maps line AC to the parallel line BC′, so ∠CBC′ ≅ ∠ACB (alternate interior angles, transversal BC); substitute.",
      "figure": null,
-     "page": 692,
-     "revision": "unchanged",
+     "page": 817,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Prove that the measures of the interior angles of any triangle add to 180°",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 692,
-     "answer_key_page": 692
+     "question_page": 817,
+     "answer_key_page": 817
     },
     {
      "id": "S20-M-Q5",
@@ -248,44 +249,29 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "mc",
-     "response": "select one",
-     "prompt": "A student proves the angle sum theorem using \"an exterior angle equals the sum of the two remote interior angles.\" What is wrong?",
-     "prompt_markup": "A student proves the angle sum theorem using \"an exterior angle equals the sum of the two remote interior angles.\" What is wrong?",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "Exterior angles do not exist in triangles"
-      },
-      {
-       "letter": "B",
-       "text": "Nothing is wrong"
-      },
-      {
-       "letter": "C",
-       "text": "That theorem is usually proved FROM the angle sum, so the argument is circular"
-      },
-      {
-       "letter": "D",
-       "text": "The exterior angle theorem is false"
-      }
+     "type": "work",
+     "response": "write the answer and show the required work",
+     "prompt": "In triangle PQR, extend side PQ past Q to S, and draw ray QT parallel to PR (T on the same side of line PS as R). Prove that the angles of triangle PQR add to 180°.",
+     "prompt_markup": "In triangle PQR, extend side PQ past Q to S, and draw ray QT parallel to PR (T on the same side of line PS as R). Prove that the angles of triangle PQR add to 180°.",
+     "choices": [],
+     "answer_lines": [
+      "Conclusion:"
      ],
-     "answer_lines": [],
-     "correct_letter": "C",
-     "correct_answer": "That theorem is usually proved FROM the angle sum, so the argument is circular",
+     "correct_letter": null,
+     "correct_answer": "m∠P + m∠PQR + m∠R = 180°",
      "drawing_answer": null,
-     "required_method": null,
-     "grading_note": "Using a result that depends on the theorem being proved is circular reasoning.",
+     "required_method": "Use alternate interior angles (∠R and ∠RQT) and corresponding angles (∠P and ∠TQS), then the straight angle PQS.",
+     "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: ∠RQT ≅ ∠R (alternate interior, transversal QR); ∠TQS ≅ ∠P (corresponding, transversal PS); ∠PQR + ∠RQT + ∠TQS = 180° (straight angle at Q); substitute.",
      "figure": null,
-     "page": 693,
-     "revision": "unchanged",
+     "page": 818,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Prove that the measures of the interior angles of any triangle add to 180°",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 693,
-     "answer_key_page": 693
+     "question_page": 818,
+     "answer_key_page": 818
     }
    ]
   },
@@ -300,7 +286,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student does not know the angle sum or the parallel-line angle facts informally. Why it matters: the proof turns this informal fact into a deduction. Evidence: uses the angle sum and parallel-line angle pairs in calculations.",
-    "source": "Grade 8"
+    "source": "Grade 8",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -332,15 +319,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 695,
+     "page": 820,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Use the angle sum and parallel-line angles informally",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 695,
-     "answer_key_page": 695
+     "question_page": 820,
+     "answer_key_page": 820
     },
     {
      "id": "S20-B1-Q2",
@@ -378,15 +365,15 @@
      "required_method": null,
      "grading_note": "They add to 180°.",
      "figure": null,
-     "page": 696,
+     "page": 821,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Use the angle sum and parallel-line angles informally",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 696,
-     "answer_key_page": 696
+     "question_page": 821,
+     "answer_key_page": 821
     },
     {
      "id": "S20-B1-Q3",
@@ -417,15 +404,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form. 6x = 180.",
      "figure": null,
-     "page": 697,
+     "page": 822,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Use the angle sum and parallel-line angles informally",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 697,
-     "answer_key_page": 697
+     "question_page": 822,
+     "answer_key_page": 822
     },
     {
      "id": "S20-B1-Q4",
@@ -471,15 +458,15 @@
      "required_method": null,
      "grading_note": "Alternate interior angles are congruent.",
      "figure": null,
-     "page": 698,
+     "page": 823,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Use the angle sum and parallel-line angles informally",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 698,
-     "answer_key_page": 698
+     "question_page": 823,
+     "answer_key_page": 823
     },
     {
      "id": "S20-B1-Q5",
@@ -517,15 +504,15 @@
      "required_method": null,
      "grading_note": "Two angles over 90° would already add to more than 180°.",
      "figure": null,
-     "page": 699,
+     "page": 824,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Use the angle sum and parallel-line angles informally",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 699,
-     "answer_key_page": 699
+     "question_page": 824,
+     "answer_key_page": 824
     }
    ]
   },
@@ -540,7 +527,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student does not see that the angles at the parallel line form a straight angle. Why it matters: that is the final step of the proof. Evidence: adds angles that make up a straight angle.",
-    "source": "Grade 4"
+    "source": "Grade 4",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -572,15 +560,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 701,
+     "page": 826,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Angles that form a straight angle add to 180°",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 4",
-     "question_page": 701,
-     "answer_key_page": 701
+     "question_page": 826,
+     "answer_key_page": 826
     },
     {
      "id": "S20-B2-Q2",
@@ -618,15 +606,15 @@
      "required_method": null,
      "grading_note": "They make a straight angle.",
      "figure": null,
-     "page": 702,
+     "page": 827,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Angles that form a straight angle add to 180°",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 4",
-     "question_page": 702,
-     "answer_key_page": 702
+     "question_page": 827,
+     "answer_key_page": 827
     },
     {
      "id": "S20-B2-Q3",
@@ -672,15 +660,15 @@
      "required_method": null,
      "grading_note": "180 - 100 = 80.",
      "figure": null,
-     "page": 703,
+     "page": 828,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Angles that form a straight angle add to 180°",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 4",
-     "question_page": 703,
-     "answer_key_page": 703
+     "question_page": 828,
+     "answer_key_page": 828
     },
     {
      "id": "S20-B2-Q4",
@@ -711,15 +699,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form. 5x = 180.",
      "figure": null,
-     "page": 704,
+     "page": 829,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Angles that form a straight angle add to 180°",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 4",
-     "question_page": 704,
-     "answer_key_page": 704
+     "question_page": 829,
+     "answer_key_page": 829
     },
     {
      "id": "S20-B2-Q5",
@@ -757,15 +745,15 @@
      "required_method": null,
      "grading_note": "They add to 180° but can be any pair, such as 30° and 150°.",
      "figure": null,
-     "page": 705,
+     "page": 830,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Angles that form a straight angle add to 180°",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 4",
-     "question_page": 705,
-     "answer_key_page": 705
+     "question_page": 830,
+     "answer_key_page": 830
     }
    ]
   },
@@ -780,7 +768,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student cannot justify the key step of the proof. Why it matters: the new angles at C equal ∠A and ∠B because of this theorem. Evidence: uses alternate interior angles and the parallel postulate.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -814,15 +803,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 707,
+     "page": 832,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Alternate interior angles of parallel lines are congruent",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 707,
-     "answer_key_page": 707
+     "question_page": 832,
+     "answer_key_page": 832
     },
     {
      "id": "S20-B3-Q2",
@@ -862,15 +851,15 @@
      "required_method": null,
      "grading_note": "This is the theorem proved in an earlier set.",
      "figure": null,
-     "page": 708,
+     "page": 833,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Alternate interior angles of parallel lines are congruent",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 708,
-     "answer_key_page": 708
+     "question_page": 833,
+     "answer_key_page": 833
     },
     {
      "id": "S20-B3-Q3",
@@ -891,42 +880,42 @@
      "standard_course": "Geometry",
      "type": "mc",
      "response": "select one",
-     "prompt": "Line ℓ through C is parallel to AB. Which angle at C is congruent to ∠A?",
-     "prompt_markup": "Line ℓ through C is parallel to AB. Which angle at C is congruent to ∠A?",
+     "prompt": "Triangle ABC has A at the left end of base AB, B at the right end, and C above AB. Line ℓ through C is parallel to AB; D is on ℓ to the left of C and E is on ℓ to the right of C. Which angle is congruent to ∠CAB?",
+     "prompt_markup": "Triangle ABC has A at the left end of base AB, B at the right end, and C above AB. Line ℓ through C is parallel to AB; D is on ℓ to the left of C and E is on ℓ to the right of C. Which angle is congruent to ∠CAB?",
      "choices": [
       {
        "letter": "A",
-       "text": "The angle between CA and CB"
+       "text": "∠ACB"
       },
       {
        "letter": "B",
-       "text": "The angle between ℓ and CB"
+       "text": "∠ECA"
       },
       {
        "letter": "C",
-       "text": "The angle between ℓ and CA"
+       "text": "∠DCA"
       },
       {
        "letter": "D",
-       "text": "∠ACB"
+       "text": "∠ECB"
       }
      ],
      "answer_lines": [],
      "correct_letter": "C",
-     "correct_answer": "The angle between ℓ and CA",
+     "correct_answer": "∠DCA",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "CA is a transversal of ℓ and AB.",
+     "grading_note": "With transversal CA, ∠CAB and ∠DCA are alternate interior angles (on opposite sides of CA, between the parallel lines). ∠ECB is congruent to ∠CBA.",
      "figure": null,
-     "page": 709,
-     "revision": "unchanged",
+     "page": 834,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Alternate interior angles of parallel lines are congruent",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 709,
-     "answer_key_page": 709
+     "question_page": 834,
+     "answer_key_page": 834
     },
     {
      "id": "S20-B3-Q4",
@@ -959,15 +948,15 @@
      "required_method": null,
      "grading_note": "Any equivalent wording.",
      "figure": null,
-     "page": 710,
+     "page": 835,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Alternate interior angles of parallel lines are congruent",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 710,
-     "answer_key_page": 710
+     "question_page": 835,
+     "answer_key_page": 835
     },
     {
      "id": "S20-B3-Q5",
@@ -1007,15 +996,15 @@
      "required_method": null,
      "grading_note": "Only when the lines are parallel.",
      "figure": null,
-     "page": 711,
+     "page": 836,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Alternate interior angles of parallel lines are congruent",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 711,
-     "answer_key_page": 711
+     "question_page": 836,
+     "answer_key_page": 836
     }
    ]
   },
@@ -1031,7 +1020,8 @@
     "progression": "same-course deepening",
     "connection": "direct",
     "new_demand": "Prove a new theorem (the exterior angle theorem) that depends on the angle sum.",
-    "course": "Geometry"
+    "course": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1065,15 +1055,15 @@
      "required_method": "Use the linear pair at C and the triangle angle sum.",
      "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: m∠ACD + m∠ACB = 180° (linear pair); m∠A + m∠B + m∠ACB = 180° (angle sum); substitute and subtract m∠ACB.",
      "figure": null,
-     "page": 713,
+     "page": 838,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Prove the exterior angle theorem",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 713,
-     "answer_key_page": 713
+     "question_page": 838,
+     "answer_key_page": 838
     },
     {
      "id": "S20-F1-Q2",
@@ -1106,15 +1096,15 @@
      "required_method": null,
      "grading_note": "Form required: both angles.",
      "figure": null,
-     "page": 714,
+     "page": 839,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Prove the exterior angle theorem",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 714,
-     "answer_key_page": 714
+     "question_page": 839,
+     "answer_key_page": 839
     },
     {
      "id": "S20-F1-Q3",
@@ -1154,15 +1144,15 @@
      "required_method": null,
      "grading_note": "The exterior angle at an obtuse vertex is acute.",
      "figure": null,
-     "page": 715,
+     "page": 840,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Prove the exterior angle theorem",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 715,
-     "answer_key_page": 715
+     "question_page": 840,
+     "answer_key_page": 840
     },
     {
      "id": "S20-F1-Q4",
@@ -1210,15 +1200,15 @@
      "required_method": null,
      "grading_note": "5x + 10 = 4x + 35.",
      "figure": null,
-     "page": 716,
+     "page": 841,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Prove the exterior angle theorem",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 716,
-     "answer_key_page": 716
+     "question_page": 841,
+     "answer_key_page": 841
     },
     {
      "id": "S20-F1-Q5",
@@ -1251,15 +1241,15 @@
      "required_method": null,
      "grading_note": "Any valid argument.",
      "figure": null,
-     "page": 717,
+     "page": 842,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Prove the exterior angle theorem",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 717,
-     "answer_key_page": 717
+     "question_page": 842,
+     "answer_key_page": 842
     }
    ]
   },
@@ -1276,7 +1266,8 @@
     "connection": "direct",
     "new_demand": "Generalize the result with a parameter: the angle sum of an n-sided polygon, by dissection into triangles.",
     "course": "Geometry",
-    "builds_on": "FORWARD 1 derives one consequence (exterior angles); FORWARD 2 generalizes the theorem to every polygon."
+    "builds_on": "FORWARD 1 derives one consequence (exterior angles); FORWARD 2 generalizes the theorem to every polygon.",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1310,15 +1301,15 @@
      "required_method": "Draw the diagonals from one vertex to divide the polygon into triangles and use the triangle angle sum.",
      "grading_note": "Any valid proof (paragraph, two-column, or flow). Essential: from one vertex there are n - 3 diagonals, making n - 2 triangles; their angles together make up exactly the polygon's angles; each triangle contributes 180°.",
      "figure": null,
-     "page": 719,
+     "page": 844,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Generalize the angle sum to polygons",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 719,
-     "answer_key_page": 719
+     "question_page": 844,
+     "answer_key_page": 844
     },
     {
      "id": "S20-F2-Q2",
@@ -1351,15 +1342,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form. (8 - 2) · 180 ÷ 8 = 135.",
      "figure": null,
-     "page": 720,
+     "page": 845,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Generalize the angle sum to polygons",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 720,
-     "answer_key_page": 720
+     "question_page": 845,
+     "answer_key_page": 845
     },
     {
      "id": "S20-F2-Q3",
@@ -1392,15 +1383,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form. Each exterior angle is 24°; 360 ÷ 24 = 15.",
      "figure": null,
-     "page": 721,
+     "page": 846,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Generalize the angle sum to polygons",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 721,
-     "answer_key_page": 721
+     "question_page": 846,
+     "answer_key_page": 846
     },
     {
      "id": "S20-F2-Q4",
@@ -1440,15 +1431,15 @@
      "required_method": null,
      "grading_note": "(6 - 2) · 180 = 720°; 1,080° is the sum for an octagon.",
      "figure": null,
-     "page": 722,
+     "page": 847,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Generalize the angle sum to polygons",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 722,
-     "answer_key_page": 722
+     "question_page": 847,
+     "answer_key_page": 847
     },
     {
      "id": "S20-F2-Q5",
@@ -1496,15 +1487,15 @@
      "required_method": null,
      "grading_note": "540 - 425 = 115.",
      "figure": null,
-     "page": 723,
+     "page": 848,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove that the measures of the interior angles of any triangle add to 180°",
      "target_skill": "Generalize the angle sum to polygons",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Geometry",
-     "question_page": 723,
-     "answer_key_page": 723
+     "question_page": 848,
+     "answer_key_page": 848
     }
    ]
   }

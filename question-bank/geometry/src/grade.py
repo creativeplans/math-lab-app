@@ -7,7 +7,7 @@ Forward branches may stay in Geometry (the same standard is allowed when the dem
 Rules are checked by engine/qb.py (_check_geometry_set).
 """
 COURSE = dict(id='GEO', name='Geometry', file='Geometry', seed=102, rules='geometry')
-VERSION = '1.0.0'
+VERSION = '1.1.0'
 VERSION_DATE = '2026-10-23'
 BALANCE_MC = True
 STRICT_BACKWARD = True

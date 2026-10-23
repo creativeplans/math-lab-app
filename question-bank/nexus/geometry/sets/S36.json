@@ -4,7 +4,7 @@
   "id": "GEO",
   "grade": null,
   "course": "Geometry",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-23"
  },
  "grade": null,
@@ -29,7 +29,8 @@
    "branch": {
     "kind": "main",
     "strand": "core",
-    "target_skill": "Construct a regular hexagon inscribed in a given circle"
+    "target_skill": "Construct a regular hexagon inscribed in a given circle",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -92,15 +93,15 @@
        }
       }
      },
-     "page": 1293,
+     "page": 1486,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "Construct a regular hexagon inscribed in a given circle",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1293,
-     "answer_key_page": 1293
+     "question_page": 1486,
+     "answer_key_page": 1486
     },
     {
      "id": "S36-M-Q2",
@@ -158,15 +159,15 @@
        }
       }
      },
-     "page": 1294,
+     "page": 1487,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "Construct a regular hexagon inscribed in a given circle",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1294,
-     "answer_key_page": 1294
+     "question_page": 1487,
+     "answer_key_page": 1487
     },
     {
      "id": "S36-M-Q3",
@@ -237,15 +238,15 @@
        }
       }
      },
-     "page": 1295,
+     "page": 1488,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "Construct a regular hexagon inscribed in a given circle",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1295,
-     "answer_key_page": 1295
+     "question_page": 1488,
+     "answer_key_page": 1488
     },
     {
      "id": "S36-M-Q4",
@@ -264,29 +265,59 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Write the steps for inscribing a regular hexagon in a circle.",
-     "prompt_markup": "Write the steps for inscribing a regular hexagon in a circle.",
+     "type": "plot",
+     "response": "draw on the figure",
+     "prompt": "Compass and straightedge only; leave all arcs. Construct a regular hexagon inscribed in the circle with one vertex at the top point T.",
+     "prompt_markup": "Compass and straightedge only; leave all arcs.\nConstruct a regular hexagon inscribed in the circle with one vertex at the top point T.",
      "choices": [],
-     "answer_lines": [
-      "Steps:"
-     ],
+     "answer_lines": [],
      "correct_letter": null,
-     "correct_answer": "1. Mark a point A on the circle. 2. Keep the compass set to the radius. 3. Mark B on the circle with an arc centered at A, then C from B, and so on, to F. 4. Join the points in order.",
+     "correct_answer": "Keep the compass set to the radius and step around the circle from T; join the six points in order.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any valid steps.",
-     "figure": null,
-     "page": 1296,
-     "revision": "unchanged",
+     "grading_note": "Grade the construction marks, not only the final figure: all stepping arcs from T and the hexagon.",
+     "figure": {
+      "svg": "assets/S36-M-Q4.svg",
+      "png": "assets/S36-M-Q4.png",
+      "kind": "gd",
+      "description": "A circle with center O and a point T at the top of the circle.",
+      "blank_for_drawing": true,
+      "data": {
+       "k": "gd",
+       "P": {
+        "O": [
+         0,
+         0
+        ],
+        "T": [
+         0,
+         2.2
+        ]
+       },
+       "items": [
+        [
+         "circle",
+         "O",
+         2.2
+        ]
+       ],
+       "desc": "A circle with center O and a point T at the top of the circle.",
+       "h": 270,
+       "lab": {
+        "O": "sw",
+        "T": "n"
+       }
+      }
+     },
+     "page": 1489,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "Construct a regular hexagon inscribed in a given circle",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1296,
-     "answer_key_page": 1296
+     "question_page": 1489,
+     "answer_key_page": 1489
     },
     {
      "id": "S36-M-Q5",
@@ -305,36 +336,49 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "tf",
-     "response": "select true or false",
-     "prompt": "In the hexagon construction, the compass is set to the diameter of the circle.",
-     "prompt_markup": "In the hexagon construction, the compass is set to the diameter of the circle.",
-     "choices": [
-      {
-       "letter": "A",
-       "text": "True"
-      },
-      {
-       "letter": "B",
-       "text": "False"
-      }
-     ],
+     "type": "plot",
+     "response": "draw on the figure",
+     "prompt": "Compass and straightedge only; leave all arcs. The center of this circle is not marked. Construct a regular hexagon inscribed in it.",
+     "prompt_markup": "Compass and straightedge only; leave all arcs.\nThe center of this circle is not marked. Construct a regular hexagon inscribed in it.",
+     "choices": [],
      "answer_lines": [],
-     "correct_letter": "B",
-     "correct_answer": "False",
+     "correct_letter": null,
+     "correct_answer": "Locate the center with the perpendicular bisectors of two chords; set the compass to the radius; step around the circle and join consecutive points.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "It is set to the radius.",
-     "figure": null,
-     "page": 1297,
-     "revision": "unchanged",
+     "grading_note": "Grade the construction marks, not only the final figure: the center construction, the radius setting, and the hexagon.",
+     "figure": {
+      "svg": "assets/S36-M-Q5.svg",
+      "png": "assets/S36-M-Q5.png",
+      "kind": "gd",
+      "description": "A circle; its center is not marked.",
+      "blank_for_drawing": true,
+      "data": {
+       "k": "gd",
+       "P": {},
+       "items": [
+        [
+         "circle",
+         [
+          0,
+          0
+         ],
+         2.2
+        ]
+       ],
+       "desc": "A circle; its center is not marked.",
+       "h": 270
+      }
+     },
+     "page": 1490,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "Construct a regular hexagon inscribed in a given circle",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Geometry",
-     "question_page": 1297,
-     "answer_key_page": 1297
+     "question_page": 1490,
+     "answer_key_page": 1490
     }
    ]
   },
@@ -349,7 +393,8 @@
     "kind": "backward",
     "alignment": "exact",
     "rationale": "Obstacle: the student does not connect the two constructions. Why it matters: the hexagon uses the same six points. Evidence: relates the two constructions.",
-    "source": "Geometry"
+    "source": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -383,15 +428,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 1299,
+     "page": 1492,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "Construct an inscribed equilateral triangle",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1299,
-     "answer_key_page": 1299
+     "question_page": 1492,
+     "answer_key_page": 1492
     },
     {
      "id": "S36-B1-Q2",
@@ -431,15 +476,15 @@
      "required_method": null,
      "grading_note": "Same six points.",
      "figure": null,
-     "page": 1300,
+     "page": 1493,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "Construct an inscribed equilateral triangle",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1300,
-     "answer_key_page": 1300
+     "question_page": 1493,
+     "answer_key_page": 1493
     },
     {
      "id": "S36-B1-Q3",
@@ -487,15 +532,15 @@
      "required_method": null,
      "grading_note": "60° each.",
      "figure": null,
-     "page": 1301,
+     "page": 1494,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "Construct an inscribed equilateral triangle",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1301,
-     "answer_key_page": 1301
+     "question_page": 1494,
+     "answer_key_page": 1494
     },
     {
      "id": "S36-B1-Q4",
@@ -528,15 +573,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1302,
+     "page": 1495,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "Construct an inscribed equilateral triangle",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1302,
-     "answer_key_page": 1302
+     "question_page": 1495,
+     "answer_key_page": 1495
     },
     {
      "id": "S36-B1-Q5",
@@ -576,15 +621,15 @@
      "required_method": null,
      "grading_note": "Triangle side r√3; hexagon side r.",
      "figure": null,
-     "page": 1303,
+     "page": 1496,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "Construct an inscribed equilateral triangle",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry",
-     "question_page": 1303,
-     "answer_key_page": 1303
+     "question_page": 1496,
+     "answer_key_page": 1496
     }
    ]
   },
@@ -599,7 +644,8 @@
     "kind": "backward",
     "alignment": "supporting",
     "rationale": "Obstacle: the student does not see the six equilateral triangles. Why it matters: they explain why the radius steps around exactly six times. Evidence: uses equilateral triangle facts.",
-    "source": "Grade 4"
+    "source": "Grade 4",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -638,15 +684,15 @@
      "required_method": null,
      "grading_note": "180 ÷ 3.",
      "figure": null,
-     "page": 1305,
+     "page": 1498,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "An equilateral triangle has equal sides and 60° angles",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 4",
-     "question_page": 1305,
-     "answer_key_page": 1305
+     "question_page": 1498,
+     "answer_key_page": 1498
     },
     {
      "id": "S36-B2-Q2",
@@ -677,15 +723,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 1306,
+     "page": 1499,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "An equilateral triangle has equal sides and 60° angles",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 4",
-     "question_page": 1306,
-     "answer_key_page": 1306
+     "question_page": 1499,
+     "answer_key_page": 1499
     },
     {
      "id": "S36-B2-Q3",
@@ -731,15 +777,15 @@
      "required_method": null,
      "grading_note": "6 × 60.",
      "figure": null,
-     "page": 1307,
+     "page": 1500,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "An equilateral triangle has equal sides and 60° angles",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 4",
-     "question_page": 1307,
-     "answer_key_page": 1307
+     "question_page": 1500,
+     "answer_key_page": 1500
     },
     {
      "id": "S36-B2-Q4",
@@ -770,15 +816,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1308,
+     "page": 1501,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "An equilateral triangle has equal sides and 60° angles",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 4",
-     "question_page": 1308,
-     "answer_key_page": 1308
+     "question_page": 1501,
+     "answer_key_page": 1501
     },
     {
      "id": "S36-B2-Q5",
@@ -816,15 +862,15 @@
      "required_method": null,
      "grading_note": "Six.",
      "figure": null,
-     "page": 1309,
+     "page": 1502,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "An equilateral triangle has equal sides and 60° angles",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 4",
-     "question_page": 1309,
-     "answer_key_page": 1309
+     "question_page": 1502,
+     "answer_key_page": 1502
     }
    ]
   },
@@ -839,7 +885,8 @@
     "kind": "backward",
     "alignment": "supporting",
     "rationale": "Obstacle: the student cannot relate the chord to the radius. Why it matters: each hexagon side equals the radius. Evidence: uses radius and chord facts.",
-    "source": "Grade 7"
+    "source": "Grade 7",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -871,15 +918,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1311,
+     "page": 1504,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "Circle facts: radius and chord",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1311,
-     "answer_key_page": 1311
+     "question_page": 1504,
+     "answer_key_page": 1504
     },
     {
      "id": "S36-B3-Q2",
@@ -917,15 +964,15 @@
      "required_method": null,
      "grading_note": "All sides equal r.",
      "figure": null,
-     "page": 1312,
+     "page": 1505,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "Circle facts: radius and chord",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1312,
-     "answer_key_page": 1312
+     "question_page": 1505,
+     "answer_key_page": 1505
     },
     {
      "id": "S36-B3-Q3",
@@ -971,15 +1018,15 @@
      "required_method": null,
      "grading_note": "6 × 7.",
      "figure": null,
-     "page": 1313,
+     "page": 1506,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "Circle facts: radius and chord",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1313,
-     "answer_key_page": 1313
+     "question_page": 1506,
+     "answer_key_page": 1506
     },
     {
      "id": "S36-B3-Q4",
@@ -1010,15 +1057,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 1314,
+     "page": 1507,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "Circle facts: radius and chord",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1314,
-     "answer_key_page": 1314
+     "question_page": 1507,
+     "answer_key_page": 1507
     },
     {
      "id": "S36-B3-Q5",
@@ -1056,15 +1103,15 @@
      "required_method": null,
      "grading_note": "Chords range up to the diameter.",
      "figure": null,
-     "page": 1315,
+     "page": 1508,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "Circle facts: radius and chord",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 1315,
-     "answer_key_page": 1315
+     "question_page": 1508,
+     "answer_key_page": 1508
     }
    ]
   },
@@ -1080,7 +1127,8 @@
     "progression": "cross-standard extension",
     "connection": "direct",
     "new_demand": "Prove that the construction yields a regular hexagon.",
-    "course": "Geometry"
+    "course": "Geometry",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1114,15 +1162,15 @@
      "required_method": "Show the six triangles from O are equilateral (all sides r), so all sides equal r and all angles equal 120°.",
      "grading_note": "Any valid proof. Essential: each triangle O-consecutive points has three sides equal to r (equilateral, 60° at O); six 60° angles fill 360°, so the stepping closes; all sides equal r; each hexagon angle is 60° + 60° = 120°.",
      "figure": null,
-     "page": 1317,
+     "page": 1510,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "Justify that the inscribed hexagon is regular",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1317,
-     "answer_key_page": 1317
+     "question_page": 1510,
+     "answer_key_page": 1510
     },
     {
      "id": "S36-F1-Q2",
@@ -1155,15 +1203,15 @@
      "required_method": null,
      "grading_note": "Any equivalent answer.",
      "figure": null,
-     "page": 1318,
+     "page": 1511,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "Justify that the inscribed hexagon is regular",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1318,
-     "answer_key_page": 1318
+     "question_page": 1511,
+     "answer_key_page": 1511
     },
     {
      "id": "S36-F1-Q3",
@@ -1203,15 +1251,15 @@
      "required_method": null,
      "grading_note": "Each interior angle is 120°; 60° is the central angle.",
      "figure": null,
-     "page": 1319,
+     "page": 1512,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "Justify that the inscribed hexagon is regular",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1319,
-     "answer_key_page": 1319
+     "question_page": 1512,
+     "answer_key_page": 1512
     },
     {
      "id": "S36-F1-Q4",
@@ -1259,15 +1307,15 @@
      "required_method": null,
      "grading_note": "6 × 4.",
      "figure": null,
-     "page": 1320,
+     "page": 1513,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "Justify that the inscribed hexagon is regular",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1320,
-     "answer_key_page": 1320
+     "question_page": 1513,
+     "answer_key_page": 1513
     },
     {
      "id": "S36-F1-Q5",
@@ -1300,15 +1348,15 @@
      "required_method": null,
      "grading_note": "Form required: exact. Six equilateral triangles of side 2: 6 · √3.",
      "figure": null,
-     "page": 1321,
+     "page": 1514,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "Justify that the inscribed hexagon is regular",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1321,
-     "answer_key_page": 1321
+     "question_page": 1514,
+     "answer_key_page": 1514
     }
    ]
   },
@@ -1325,7 +1373,8 @@
     "connection": "direct",
     "new_demand": "Use the construction in an informal limit argument for the circumference (estimating π).",
     "course": "Geometry",
-    "builds_on": "A second, separate extension of MAIN: FORWARD 1 proves the hexagon is regular; FORWARD 2 uses it to bound π."
+    "builds_on": "A second, separate extension of MAIN: FORWARD 1 proves the hexagon is regular; FORWARD 2 uses it to bound π.",
+    "plus_standard": false
    },
    "questions": [
     {
@@ -1359,15 +1408,15 @@
      "required_method": null,
      "grading_note": "Any equivalent explanation.",
      "figure": null,
-     "page": 1323,
+     "page": 1516,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "Use inscribed hexagons to estimate π",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1323,
-     "answer_key_page": 1323
+     "question_page": 1516,
+     "answer_key_page": 1516
     },
     {
      "id": "S36-F2-Q2",
@@ -1388,8 +1437,8 @@
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "A regular 12-gon inscribed in a circle of radius 1 has perimeter about 6.21. What estimate of π does it give?",
-     "prompt_markup": "A regular 12-gon inscribed in a circle of radius 1 has perimeter about 6.21. What estimate of π does it give?",
+     "prompt": "A regular 12-gon inscribed in a circle of radius 1 has perimeter about 6.212. What estimate of π does it give, to the nearest hundredth?",
+     "prompt_markup": "A regular 12-gon inscribed in a circle of radius 1 has perimeter about 6.212. What estimate of π does it give, to the nearest hundredth?",
      "choices": [],
      "answer_lines": [
       "Estimate:"
@@ -1398,17 +1447,17 @@
      "correct_answer": "About 3.11 (π > 3.10)",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any value 3.10-3.11 with explanation (half the perimeter).",
+     "grading_note": "Rounding to 0.01 required, with the explanation (half the perimeter: 6.212 ÷ 2 = 3.106).",
      "figure": null,
-     "page": 1324,
-     "revision": "unchanged",
+     "page": 1517,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "Use inscribed hexagons to estimate π",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1324,
-     "answer_key_page": 1324
+     "question_page": 1517,
+     "answer_key_page": 1517
     },
     {
      "id": "S36-F2-Q3",
@@ -1448,15 +1497,15 @@
      "required_method": null,
      "grading_note": "The perimeter gets closer to the circumference but stays shorter (each side is a chord).",
      "figure": null,
-     "page": 1325,
+     "page": 1518,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "Use inscribed hexagons to estimate π",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1325,
-     "answer_key_page": 1325
+     "question_page": 1518,
+     "answer_key_page": 1518
     },
     {
      "id": "S36-F2-Q4",
@@ -1504,15 +1553,15 @@
      "required_method": null,
      "grading_note": "More sides fit the circle more closely.",
      "figure": null,
-     "page": 1326,
+     "page": 1519,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "Use inscribed hexagons to estimate π",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1326,
-     "answer_key_page": 1326
+     "question_page": 1519,
+     "answer_key_page": 1519
     },
     {
      "id": "S36-F2-Q5",
@@ -1545,15 +1594,15 @@
      "required_method": null,
      "grading_note": "Any equivalent explanation.",
      "figure": null,
-     "page": 1327,
+     "page": 1520,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Construct a regular hexagon inscribed in a given circle",
      "target_skill": "Use inscribed hexagons to estimate π",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Geometry",
-     "question_page": 1327,
-     "answer_key_page": 1327
+     "question_page": 1520,
+     "answer_key_page": 1520
     }
    ]
   }
