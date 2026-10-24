@@ -101,7 +101,7 @@ SETS = [
              fig=tbl(['t (h)', '0', '2', '4', '6', '8', '10', '12', '14', '16', '18'], [['d (ft)', '9', '7', '3', '1', '3', '7', '9', '7', '3', '1']])),
           sa('A piston\'s position p (cm) is graphed for 0 ≤ t ≤ 3 seconds. Give the amplitude, the period, and the intervals of the first cycle where p increases.', 'Answer:',
              key='Amplitude 3 cm; period 1 s; increasing on 0 < t < 0.25 and 0.75 < t < 1', note='Form required: all three.',
-             fig=graph([lambda t: 3 * math.sin(2 * math.pi * t)], x=(0, 3), y=(-4, 4), xstep=0.25, dom=(0, 3), xlabel='t (s)', ylabel='p (cm)',
+             fig=graph([lambda t: 3 * math.sin(2 * math.pi * t)], x=(0, 3), y=(-4, 4), xstep=0.25, xlab=0.5, dom=(0, 3), xlabel='t (s)', ylabel='p (cm)',
                        desc='Graph of a wave between -3 and 3 starting at 0 and increasing, reaching 3 at t = 0.25, -3 at t = 0.75, and repeating every 1 second.')),
           sa('The table shows hours of daylight D in month m (m = 0 is January). Give the maximum, the minimum, the period, and the months in which daylight increases.', 'Answer:',
              key='Maximum 15 h (m = 6), minimum 9 h (m = 0 and 12), period 12 months, increasing from m = 0 to m = 6', note='Form required: all four.',
@@ -109,7 +109,7 @@ SETS = [
                      [['D (h)', '9', '9.4', '10.5', '12', '13.5', '14.6', '15', '14.6', '13.5', '12', '10.5', '9.4', '9']])),
           sa('The graph shows blood pressure P (mm Hg) over 2.4 seconds. Give the maximum and minimum pressures and the number of heartbeats per minute.', 'Answer:',
              key='Maximum 120, minimum 80; period 0.8 s, so 75 beats per minute', note='Form required: all three.',
-             fig=graph([lambda t: 100 + 20 * math.sin(2.5 * math.pi * t)], x=(0, 2.4), y=(60, 130), xstep=0.2, ystep=10, dom=(0, 2.4), xlabel='t (s)', ylabel='P (mm Hg)',
+             fig=graph([lambda t: 100 + 20 * math.sin(2.5 * math.pi * t)], x=(0, 2.4), y=(60, 130), xstep=0.2, xlab=0.4, ystep=10, dom=(0, 2.4), xlabel='t (s)', ylabel='P (mm Hg)',
                        desc='Graph of a wave between 80 and 120 starting at 100, with 3 full cycles between t = 0 and t = 2.4 seconds.')),
       ],
       back=[
@@ -275,10 +275,11 @@ SETS = [
 PI = math.pi
 
 
-def tgrid(periods=2, ylo=-4, yhi=4, ystep=1):
-    """Blank grid for a trigonometric graph: x from 0 to periods·π in steps of π/4, labeled every π/2."""
-    return blank(x=(0, periods * PI), y=(ylo, yhi), xstep=PI / 4, ystep=ystep, xticks=pticks(0.5, periods, 0.5),
-                 desc='Blank coordinate grid with x from 0 to %sπ (grid lines every π/4, labels every π/2) and y from %s to %s.' % (periods if periods != 1 else '', ylo, yhi))
+def tgrid(periods=2, ylo=-4, yhi=4, ystep=1, lab=0.5):
+    """Blank grid for a trigonometric graph: x from 0 to periods·π in steps of π/4, labeled every lab·π."""
+    return blank(x=(0, periods * PI), y=(ylo, yhi), xstep=PI / 4, ystep=ystep, xticks=pticks(lab, periods, lab),
+                 desc='Blank coordinate grid with x from 0 to %sπ (grid lines every π/4, labels every %s) and y from %s to %s.'
+                      % (periods if periods != 1 else '', 'π/2' if lab == 0.5 else 'π', ylo, yhi))
 
 
 SETS += [
@@ -292,9 +293,9 @@ SETS += [
                key='Starts at (-3, 0); passes through (-2, -1) and (1, -2); decreasing; domain x ≥ -3, range y ≤ 0.', note='Any graph with these features.'),
           plot(GR + 'the starting point and two more points, and state the domain and range.\ny = 2√x - 3', grid((-1, 10), (-4, 4)),
                key='Starts at (0, -3); passes through (1, -1) and (4, 1), (9, 3); domain x ≥ 0, range y ≥ -3.', note='Any graph with these features.'),
-          plot(GR + 'the center point and two points on each side, and state the domain and range.\ny = ∛(x + 1)', grid((-10, 8), (-3, 3)),
+          plot(GR + 'the center point and two points on each side, and state the domain and range.\ny = ∛(x + 1)', dict(grid((-10, 8), (-3, 3)), xlab=2),
                key='Center (-1, 0); points (-2, -1), (-9, -2), (0, 1), (7, 2); increasing; domain and range all real numbers.', note='Any graph with these features.'),
-          plot(GR + 'the center point and two more points, and state the domain and range.\ny = -∛(x - 2) + 1', grid((-7, 11), (-3, 4)),
+          plot(GR + 'the center point and two more points, and state the domain and range.\ny = -∛(x - 2) + 1', dict(grid((-7, 11), (-3, 4)), xlab=2),
                key='Center (2, 1); points (3, 0), (1, 2), (10, -1), (-6, 3); decreasing; domain and range all real numbers.', note='Any graph with these features.'),
       ],
       back=[
@@ -324,7 +325,7 @@ SETS += [
             why=why('the student cannot compute points.', 'plotted points need roots.', 'evaluates roots.')),
       ],
       f1=B('Graph radical functions with horizontal stretches and reflections', 'HSF-IF.C.7.b', [
-          plot(GR + 'the starting point and two more points, and state the domain.\ny = √(-x)', grid((-10, 2), (-1, 4)),
+          plot(GR + 'the starting point and two more points, and state the domain.\ny = √(-x)', dict(grid((-10, 2), (-1, 4)), xlab=2),
                key='Starts at (0, 0); passes through (-1, 1), (-4, 2), (-9, 3); domain x ≤ 0.', note='Any graph with these features.'),
           sa('Show that √(4x) = 2√x for x ≥ 0 and explain what this says about the two graphs.', 'Answer:', key='√(4x) = √4 · √x = 2√x, so the horizontal compression by 1/4 equals the vertical stretch by 2.',
              note='Any equivalent explanation.'),
@@ -590,7 +591,7 @@ SETS += [
                key='Midline y = 1; amplitude 1; period 2π; key points (0, 2), (π/2, 1), (π, 0), (3π/2, 1), (2π, 2).', note='Any graph with these features.'),
           plot(GR + 'the midline (dashed), the maximum and minimum points, and the period on 0 ≤ x ≤ 2π.\ny = sin(2x)', tgrid(2, -2, 2),
                key='Midline y = 0; amplitude 1; period π; maxima at (π/4, 1), (5π/4, 1); minima at (3π/4, -1), (7π/4, -1); zeros at multiples of π/2.', note='Any graph with these features.'),
-          plot(GR + 'the midline (dashed), the maximum and minimum points, and the period on 0 ≤ x ≤ 4π.\ny = 3cos(x/2)', tgrid(4, -4, 4),
+          plot(GR + 'the midline (dashed), the maximum and minimum points, and the period on 0 ≤ x ≤ 4π.\ny = 3cos(x/2)', tgrid(4, -4, 4, lab=1),
                key='Midline y = 0; amplitude 3; period 4π; key points (0, 3), (π, 0), (2π, -3), (3π, 0), (4π, 3).', note='Any graph with these features.'),
           plot(GR + 'the midline (dashed), the maximum and minimum points, and the period on 0 ≤ x ≤ 2π.\ny = -sin x + 2', tgrid(2, -1, 4),
                key='Midline y = 2; amplitude 1; period 2π; key points (0, 2), (π/2, 1), (π, 2), (3π/2, 3), (2π, 2).', note='Any graph with these features.'),
@@ -707,14 +708,14 @@ SETS += [
              key='g has the greater y-intercept (10 > 3); at x = 20, f(20) ≈ 20.18 < g(20) = 110, so g is greater', note='Form required: both comparisons with values.',
              fig=tbl(['x', '0', '1', '2', '3', '4'], [['g(x)', '10', '15', '20', '25', '30']])),
           sa('f(x) = √(x - 1). The graph of g is shown. Compare their domains.', 'Answer:', key='f: x ≥ 1; g: all real numbers (g is a cube root graph)', note='Form required: both domains.',
-             fig=graph([lambda x: math.copysign(abs(x) ** (1 / 3), x)], x=(-8, 8), y=(-3, 3), desc='Graph of g(x) = ∛x through (-8, -2), (-1, -1), (0, 0), (1, 1), (8, 2), extending in both directions.')),
+             fig=graph([lambda x: math.copysign(abs(x) ** (1 / 3), x)], x=(-8, 8), y=(-3, 3), xlab=2, desc='Graph of g(x) = ∛x through (-8, -2), (-1, -1), (0, 0), (1, 1), (8, 2), extending in both directions.')),
           sa('h(t) = 12 + 10sin(πt/15) gives one Ferris wheel\'s height (m, t in s). A second wheel has radius 8 m, center 10 m high, and turns once every 40 s. Compare the maximum heights and the periods.', 'Answer:',
              key='Maximum heights 22 m and 18 m; periods 30 s and 40 s; the first wheel is higher and faster', note='Form required: both comparisons.'),
           sa('f(x) = log₂ x. The table shows g. Which is greater at x = 9?', 'Answer:', key='f(9) ≈ 3.17 > g(9) = 2', note='Form required: answer with values.',
              fig=tbl(['x', '1', '3', '9', '27'], [['g(x)', '0', '1', '2', '3']])),
           sa('f(x) = (2x + 1)/(x - 3). The graph of g shows the horizontal asymptote y = 1 and the vertical asymptote x = -2. Compare the asymptotes.', 'Answer:',
              key='f: horizontal y = 2, vertical x = 3; g: horizontal y = 1, vertical x = -2', note='Form required: both pairs.',
-             fig=graph([lambda x: (x + 1) / (x + 2)], x=(-8, 6), y=(-6, 6), vas=[-2], has=[1], desc='Graph of g with two branches, a dashed vertical asymptote x = -2 and a dashed horizontal asymptote y = 1.')),
+             fig=graph([lambda x: (x + 1) / (x + 2)], x=(-8, 6), y=(-6, 6), xlab=2, vas=[-2], has=[1], desc='Graph of g with two branches, a dashed vertical asymptote x = -2 and a dashed horizontal asymptote y = 1.')),
       ],
       back=[
           B('Compare linear, quadratic, and exponential functions', 'HSF-IF.C.9', [

@@ -336,7 +336,7 @@ SETS = [
           plot(SK + '\ny = x(x - 3)²', sk_grid(),
                key='Crosses at x = 0 and touches at x = 3; y-intercept 0; falls to the left and rises to the right.',
                note='Any rough graph with all listed features. Between 0 and 3 the graph is above the axis (for example y(1) = 4).'),
-          plot(SK + '\ny = (x + 2)(x + 1)(x - 1)(x - 3)', sk_grid(),
+          plot(SK + '\ny = (x+2)(x+1)(x−1)(x−3)', sk_grid(),
                key='Crosses at x = -2, -1, 1, 3; y-intercept 6; rises at both ends (degree 4, positive leading coefficient).',
                note='Any rough graph with all listed features. Signs: positive for x < -2, negative on (-2, -1), positive on (-1, 1), negative on (1, 3), positive for x > 3.'),
           plot(SK + '\ny = -(x - 1)³(x + 2)', sk_grid(),

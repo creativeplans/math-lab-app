@@ -32,7 +32,7 @@ PROP = hist(['<0.46', '0.46–0.49', '0.50–0.53', '0.54–0.57', '0.58–0.61'
 BOOT = hist(['<6.40', '6.40–6.54', '6.55–6.69', '6.70–6.84', '6.85–6.99', '7.00–7.14', '≥7.15'], [3, 14, 38, 45, 59, 31, 10], ymax=60, ystep=10,
             xlabel='Mean sleep (h) in 200 resamples of size 40', ylabel='Number of resamples')
 RERAND = hist(['< -2', '-2 to -1', '-1 to 0', '0 to 1', '1 to 2', '2 to 3', '≥ 3'], [0, 29, 74, 66, 27, 4, 0], ymax=80, ystep=10,
-              xlabel='Difference in means (cm) in 200 re-randomizations', ylabel='Number of re-randomizations')
+              xlabel='Difference in means (cm) in 200 re-randomizations', ylabel='Count')
 
 SETS = [
     # ------------------------------------------------------------------ 61. ID.A.4 estimate with a normal model
