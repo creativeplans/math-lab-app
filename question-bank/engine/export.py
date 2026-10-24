@@ -599,7 +599,7 @@ def export(out_dir):
                       garbage=3, deflate=True)
     if geo:
         write_part_index(out_dir, paths, records)
-    for doc_name in ('CORRECTIONS.md', 'COVERAGE.md', 'VALIDATION.md', 'CHANGELOG.md'):
+    for doc_name in ('CORRECTIONS.md', 'COVERAGE.md', 'VALIDATION.md', 'CHANGELOG.md', 'DATASETS.md'):
         if os.path.exists(os.path.join(build.GRADE_DIR, doc_name)):
             shutil.copy(os.path.join(build.GRADE_DIR, doc_name), os.path.join(out_dir, doc_name))
     write_readme(out_dir, index, npages)

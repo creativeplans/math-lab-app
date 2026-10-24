@@ -625,17 +625,25 @@ def fig_hist(c, f, x, y, w, h, s):
     fs = 12 * s
     ymax = f.get('ymax', max(counts))
     ystep = f.get('ystep', 1)
-    padl, padb, padt = 46, 44 if f.get('xlabel') else 28, 10
+    padl, padb, padt = 46, 44 if f.get('xlabel') else 28, (28 if f.get('title') else 10)
+    if f.get('compact'):  # small answer-choice panel: tighter margins, axis titles given in the question text
+        padl, padb, padt = 34, 22, (20 if f.get('title') else 8)
     x0, y0 = x + padl, y + padb
     gw, gh = w - padl - 12, h - padb - padt
     c.setStrokeColor(GRID)
     c.setLineWidth(0.7)
-    v = 0
+    every = 1
+    if f.get('compact'):  # label every k-th grid line so the numbers never overlap
+        import math
+        every = max(1, math.ceil(fs * 1.2 / max(ystep / ymax * gh, 1e-6)))
+    v, i = 0, 0
     while v <= ymax + 1e-9:
         yy = y0 + v / ymax * gh
         c.line(x0, yy, x0 + gw, yy)
-        draw_label(c, fmt(v), x0 - 6, yy, fs, anchor='r', color=MUTED)
+        if i % every == 0:
+            draw_label(c, fmt(v), x0 - 6, yy, fs, anchor='r', color=MUTED)
         v += ystep
+        i += 1
     n = len(bins)
     bw = gw / n
     for i, (b, k) in enumerate(zip(bins, counts)):
@@ -660,6 +668,8 @@ def fig_hist(c, f, x, y, w, h, s):
         c.rotate(90)
         draw_label(c, f['ylabel'], 0, 0, fs, FB)
         c.restoreState()
+    if f.get('title'):  # a panel name above the plot (for example "Graph A" in a choice figure)
+        draw_label(c, f['title'], x0 + gw / 2, y + h - 10, fs * 1.25, FB)
 
 
 def fig_box(c, f, x, y, w, h, s):
@@ -682,12 +692,17 @@ def fig_box(c, f, x, y, w, h, s):
         c.line(X(v), base - 6, X(v), base + 6)
         if abs(((v - vmin) / lstep) - round((v - vmin) / lstep)) < 1e-9:
             draw_label(c, fmt(v), X(v), base - 17, fs)
-    avail = h - (base - y) - 14
+    avail = h - (base - y) - 14 - (16 if f.get('title') else 0)
     slot = avail / len(boxes)
     bh = min(38, slot * 0.6)
-    for i, (nm, five) in enumerate(boxes):
+    for i, bx_ in enumerate(boxes):
+        nm, five = bx_[0], bx_[1]
+        outl = bx_[2] if len(bx_) > 2 else ()  # outliers: drawn as points; the whiskers end at five[0] and five[4]
         cy = base + 12 + slot * (len(boxes) - 1 - i) + slot / 2
         a, q1, md, q3, b = five
+        for ov in outl:
+            c.setFillColor(POINT)
+            c.circle(X(ov), cy, 3.6, fill=1, stroke=0)
         c.setStrokeColor(POINT)
         c.setLineWidth(1.8)
         c.line(X(a), cy, X(q1), cy)
@@ -701,6 +716,8 @@ def fig_box(c, f, x, y, w, h, s):
             draw_label(c, nm, x + pad, cy, fs, FB, anchor='l')
     if f.get('xlabel'):
         draw_label(c, f['xlabel'], (x0 + x1) / 2, y + 10, fs, FB)
+    if f.get('title'):
+        draw_label(c, f['title'], (x0 + x1) / 2, y + h - 8, fs * 1.15, FB)
 
 
 def fig_table(c, f, x, y, w, h, s):
