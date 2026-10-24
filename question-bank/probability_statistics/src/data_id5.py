@@ -93,7 +93,7 @@ SETS = [
           mc('For car age and value, r = -0.97. Which interpretation is correct?', [
               'strong negative linear association', 'weak negative linear association', 'strong positive linear association',
               'no association'], note='|r| near 1, negative.'),
-          mc('For speed and fuel efficiency, r = 0.25 but the scatter plot shows a clear curve. Which statement is correct?', [
+          mc('For speed and fuel efficiency, r ≈ 0.245 but the scatter plot shows a clear curve. Which statement is correct?', [
               'r measures only linear association, so it misses the curve.', 'There is no relationship between the variables.',
               'There is a weak linear relationship and nothing more.', 'r must have been computed incorrectly.'],
              fig=FIG_C, note='A strong nonlinear relationship can have r near 0.'),
@@ -192,11 +192,12 @@ SETS = [
           mc('Children with larger shoe sizes have higher reading scores. What is the most likely lurking variable?', [
               'age', 'shoe brand', 'reading-book color', 'school lunch menu'], note='Older children have bigger feet and read better.'),
           mc('Which statement is correct?', [
-              'Causation implies association, but association does not imply causation.',
+              'An observed association alone does not establish a causal relationship.',
               'Association implies causation when r is above 0.9.',
               'Causation can only be shown with a scatter plot.',
               'If two variables are not correlated, neither can cause anything.'],
-             note='A causal link produces an association; the reverse need not hold.'),
+             note='Association is not enough by itself to show cause. The others are false: no r value proves cause, scatter plots '
+                  'cannot show cause, and a lack of correlation does not rule out every causal effect.'),
       ],
       back=[
           B('Recognize a strong correlation', 'HSS-ID.C.8', [
@@ -250,10 +251,14 @@ SETS = [
       f2=B('Judge causal claims from experiment results', 'HSS-IC.B.5', [
           sa('In a randomized experiment, 40 plants got fertilizer and grew a mean of 18 cm; 40 got none and grew a mean of 12 cm. '
              'What is the difference in means (fertilizer minus none)?', 'Difference (cm):', key='6', note='18 - 12.'),
-          mc('Re-randomizing the plants many times gave differences of 6 cm or more only 1% of the time. What can be concluded?', [
+          mc('(Hypothetical simulation results.) In an experiment, 80 plants were randomly assigned, 40 to fertilizer and 40 to none, and the mean growth difference '
+             '(fertilizer minus none) was 6 cm. Under the no-effect model, re-randomizing the 80 results many times gave differences '
+             'of 6 cm or more (fertilizer minus none) in only 1% of the re-randomizations. Using a one-sided rule (fewer than 5% '
+             'counts as significant), what can be concluded?', [
               'The fertilizer likely caused more growth.', 'The difference is due to chance alone.',
               'Fertilizer is unrelated to growth.', 'No conclusion is possible without r.'],
-             note='A rare difference under chance plus random assignment supports cause.'),
+             note='1% < 5%: a difference this large is rare under the no-effect model, and random assignment lets it be credited to '
+                  'the fertilizer. The others ignore the evidence or bring in r.'),
           tf('In a randomized experiment, a difference much larger than chance alone would produce supports a causal conclusion.',
              key=True, note='Random assignment rules out lurking variables.'),
           mc('An observational study found a large difference between coffee drinkers and others. Why can\'t it prove cause?', [

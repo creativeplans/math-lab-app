@@ -49,25 +49,25 @@ SETS = [
              'the outcomes',
       strand='core', covers=['CP1-space'],
       main=[
-          sa('A fair coin is flipped and a fair six-sided die is rolled. How many outcomes are in the sample space?', 'Outcomes:',
+          sa('A fair coin is flipped and a fair six-sided die is rolled, independently. How many outcomes are in the sample space?', 'Outcomes:',
              key='12', note='2 · 6.'),
-          sa('Two fair coins are flipped; the sample space is HH, HT, TH, TT. How many outcomes are in the event "at least one '
+          sa('Two fair coins are flipped independently; the sample space is HH, HT, TH, TT. How many outcomes are in the event "at least one '
              'head"?', 'Outcomes:', key='3', note='HH, HT, TH.'),
-          mc('A coin is flipped twice and the sequence of results is recorded. Which is the sample space?', [
+          mc('A fair coin is flipped twice, independently, and the sequence of results is recorded. Which is the sample space?', [
               '{HH, HT, TH, TT}', '{HH, HT, TT}', '{H, T}', '{HH, TT}'], note='Order matters: HT and TH differ.'),
-          sa('Two fair dice are rolled. How many of the 36 equally likely outcomes are in the event "the sum is 7"?', 'Outcomes:',
+          sa('Two fair dice are rolled independently. How many of the 36 equally likely outcomes are in the event "the sum is 7"?', 'Outcomes:',
              key='6', note='(1,6), (2,5), (3,4), (4,3), (5,2), (6,1).'),
           sa('A spinner has 8 equal sections numbered 1 to 8. Event A is "an even number greater than 3". How many outcomes are '
              'in A, and what is P(A)?%s' % FL, ['Outcomes in A:', 'P(A):'], key='3; 3/8', note='Form required: both. {4, 6, 8}.'),
       ],
       back=[
           B('List a sample space with a list, table or tree', '7.SP.C.8.b', [
-              sa('A bag has a red and a blue marble; a coin is flipped. How many outcomes (color, coin) are there?', 'Outcomes:',
+              sa('A bag has a red and a blue marble; a fair coin is flipped. How many outcomes (color, coin) are there?', 'Outcomes:',
                  key='4', note='2 · 2.'),
-              tf('A tree diagram for flipping a coin 3 times has 8 final branches.', key=True, note='2 · 2 · 2.'),
+              tf('A tree diagram for flipping a coin 3 times (heads or tails each time) has 8 final branches.', key=True, note='2 · 2 · 2.'),
               mc('A sandwich shop offers 3 breads and 4 fillings. How many bread-filling choices are there?', ['12', '7', '34', '81'],
                  note='3 · 4.'),
-              tf('The sample space for rolling two dice has 12 outcomes.', key=False, note='36.'),
+              tf('The sample space for rolling two six-sided dice (as ordered pairs) has 12 outcomes.', key=False, note='36.'),
               sa('A spinner with 3 equal colors is spun twice. How many outcomes are in the sample space?', 'Outcomes:', key='9',
                  note='3 · 3.'),
           ], align='exact',
@@ -85,22 +85,22 @@ SETS = [
                     'follow from the sample space.', 'finds probabilities in uniform models.')),
       ],
       f1=B('Describe events in multi-stage sample spaces', 'HSS-CP.A.1', [
-          sa('Three fair coins are flipped. How many outcomes are in the sample space, and how many have exactly 2 heads?',
+          sa('Three fair coins are flipped independently. How many outcomes are in the sample space, and how many have exactly 2 heads?',
              ['Outcomes:', 'Exactly 2 heads:'], key='8; 3', note='Form required: both. HHT, HTH, THH.'),
-          sa('Three fair coins are flipped. What is P(exactly 2 heads)?%s' % FL, 'P:', key='3/8', note='3 of 8.'),
-          tf('For two dice, the event "doubles" contains 6 outcomes.', key=True, note='(1,1) ... (6,6).'),
-          mc('For two dice, which event contains exactly 4 outcomes?', ['the sum is 5', 'the sum is 7', 'doubles', 'the sum is 12'],
+          sa('Three fair coins are flipped independently. What is P(exactly 2 heads)?%s' % FL, 'P:', key='3/8', note='3 of 8.'),
+          tf('For two fair dice rolled independently, the event "doubles" contains 6 outcomes.', key=True, note='(1,1) ... (6,6).'),
+          mc('For two fair dice rolled independently, which event contains exactly 4 outcomes?', ['the sum is 5', 'the sum is 7', 'doubles', 'the sum is 12'],
              note='(1,4), (2,3), (3,2), (4,1). Sum 7 has 6; doubles 6; sum 12 has 1.'),
-          sa('Two dice are rolled. How many outcomes have a sum of 10 or more?', 'Outcomes:', key='6',
+          sa('Two fair dice are rolled independently. How many outcomes have a sum of 10 or more?', 'Outcomes:', key='6',
              note='Sum 10: 3; sum 11: 2; sum 12: 1.'),
       ], prog='same-course deepening', demand='Describe and count events in sample spaces with more stages.'),
       f2=B('Combine events with "and", "or" and "not"', 'HSS-CP.A.1', [
-          sa('A die is rolled. A = "even", B = "greater than 3". How many outcomes are in "A and B"?', 'Outcomes:', key='2',
+          sa('A fair six-sided die is rolled. A = "even", B = "greater than 3". How many outcomes are in "A and B"?', 'Outcomes:', key='2',
              note='{4, 6}.'),
-          sa('A die is rolled. A = "even", B = "greater than 3". How many outcomes are in "A or B"?', 'Outcomes:', key='4',
+          sa('A fair six-sided die is rolled. A = "even", B = "greater than 3". How many outcomes are in "A or B"?', 'Outcomes:', key='4',
              note='{2, 4, 5, 6}.'),
           tf('The event "not A" contains every outcome of the sample space that is not in A.', key=True, note='Complement.'),
-          mc('A die is rolled. A = "even". Which set is "not A"?', ['{1, 3, 5}', '{2, 4, 6}', '{1, 2, 3}', '{ }'],
+          mc('A fair six-sided die is rolled. A = "even". Which set is "not A"?', ['{1, 3, 5}', '{2, 4, 6}', '{1, 2, 3}', '{ }'],
              note='Odd outcomes.'),
           tf('The event "A and B" always contains at least as many outcomes as "A or B".', key=False, note='Never more.'),
       ], prog='same-course deepening', demand='Build new events from old ones with and, or and not.',
@@ -119,7 +119,7 @@ SETS = [
           sa('A fair die is rolled. A = "even". What is P(not A)?%s' % FL, 'P(not A):', key='1/2', note='{1, 3, 5}.'),
           mc('A fair die is rolled. A = "even" and B = "greater than 3". Which describes the event {1, 3}?', [
               'not (A or B)', 'A and B', 'A or B', 'not A'], note='Neither even nor greater than 3. "not A" is {1, 3, 5}.'),
-          sa('A card is drawn from a standard 52-card deck. H = "heart", F = "face card (jack, queen or king)". Find P(H and F) '
+          sa('A card is drawn at random from a standard 52-card deck. H = "heart", F = "face card (jack, queen or king)". Find P(H and F) '
              'and P(H or F).%s' % FL, ['P(H and F):', 'P(H or F):'], key='3/52; 11/26',
              note='Form required: both. 3 heart face cards; 13 + 12 - 3 = 22, and 22/52 = 11/26.'),
       ],
@@ -127,20 +127,20 @@ SETS = [
           B('Count the outcomes in an event', 'HSS-CP.A.1', [
               sa('A number from 1 to 10 is chosen. How many outcomes are in "multiple of 3"?', 'Outcomes:', key='3',
                  note='3, 6, 9.'),
-              tf('For one roll of a die, the event "less than 3" is {1, 2}.', key=True, note='List.'),
+              tf('For one roll of a fair six-sided die, the event "less than 3" is {1, 2}.', key=True, note='List.'),
               mc('A letter is chosen from the word PROBABILITY. How many outcomes (letter positions) are in "the letter B"?', [
                   '2', '1', '3', '11'], note='B appears twice.'),
-              sa('How many cards in a standard deck are face cards?', 'Cards:', key='12', note='3 per suit · 4.'),
+              sa('How many cards in a standard 52-card deck are face cards?', 'Cards:', key='12', note='3 per suit · 4.'),
               tf('A standard deck has 4 aces and 13 hearts, so it has 17 cards that are aces or hearts.', key=False,
                  note='The ace of hearts is counted twice: 16.'),
           ], align='exact',
             why=why('the student cannot list the outcomes in a described event.', 'combining events starts with the events.',
                     'lists and counts outcomes in events.')),
           B('Find a probability by counting', '7.SP.C.8.a', [
-              sa('Two coins are flipped. What is P(two heads)?%s' % FL, 'P:', key='1/4', note='1 of 4.'),
-              sa('A die is rolled. What is P(1 or 2)?%s' % FL, 'P:', key='1/3', note='2 of 6.'),
+              sa('Two fair coins are flipped independently. What is P(two heads)?%s' % FL, 'P:', key='1/4', note='1 of 4.'),
+              sa('A fair six-sided die is rolled. What is P(1 or 2)?%s' % FL, 'P:', key='1/3', note='2 of 6.'),
               tf('The probability of an event plus the probability of its complement is 1.', key=True, note='Complements.'),
-              mc('A card is drawn from a standard deck. What is P(king)?', ['1/13', '1/4', '4/13', '1/52'], note='4/52.'),
+              mc('A card is drawn at random from a standard 52-card deck. What is P(king)?', ['1/13', '1/4', '4/13', '1/52'], note='4/52.'),
               tf('If P(A) = 0.3, then P(not A) = 0.3.', key=False, note='0.7.'),
           ], align='supporting',
             why=why('the student cannot turn a count into a probability.', 'every answer here is a probability.',
@@ -154,11 +154,12 @@ SETS = [
           tf('In a Venn diagram, the overlap of two circles shows "A and B".', key=True, note='Intersection.'),
           mc('Of 30 students, 18 play soccer, 12 play basketball and 5 play both. What is P(not soccer)?', [
               '2/5', '3/5', '1/6', '7/30'], note='12/30.'),
-          tf('Adding 18 and 12 gives the number who play soccer or basketball.', key=False, note='The 5 are counted twice.'),
+          tf('Of 30 students, 18 play soccer, 12 play basketball and 5 play both. Adding 18 and 12 gives the number who play soccer '
+             'or basketball.', key=False, note='The 5 are counted twice.'),
       ], prog='same-course deepening', demand='Count unions, intersections and complements from overlapping groups.'),
       f2=B('Apply the Addition Rule', 'HSS-CP.B.7', [
           sa('P(A) = 0.5, P(B) = 0.4 and P(A and B) = 0.2. Find P(A or B).', 'P(A or B):', key='0.7', note='0.5 + 0.4 - 0.2.'),
-          sa('A card is drawn. Find P(king or heart).%s' % FL, 'P:', key='4/13', note='4/52 + 13/52 - 1/52 = 16/52.'),
+          sa('A card is drawn at random from a standard 52-card deck. Find P(king or heart).%s' % FL, 'P:', key='4/13', note='4/52 + 13/52 - 1/52 = 16/52.'),
           tf('If A and B cannot happen together, P(A or B) = P(A) + P(B).', key=True, note='P(A and B) = 0.'),
           mc('P(A) = 0.6, P(B) = 0.3, P(A or B) = 0.7. What is P(A and B)?', ['0.2', '0.9', '0.1', '0.18'],
              note='0.6 + 0.3 - 0.7.'),
@@ -178,7 +179,7 @@ SETS = [
              'or no).', ['P(A)·P(B):', 'Independent (yes or no):'], key='0.18; no', note='Form required: both. 0.18 ≠ 0.25.'),
           sa('A and B are independent with P(A) = 0.7 and P(B) = 0.2. Find P(A and B).', 'P(A and B):', key='0.14',
              note='0.7 · 0.2.'),
-          mc('A die is rolled. A = "even" and B = "1 or 2". Are A and B independent?', [
+          mc('A fair six-sided die is rolled. A = "even" and B = "1 or 2". Are A and B independent?', [
               'Yes: P(A and B) = 1/6 = (1/2)(1/3).', 'No: P(A and B) = 1/6, not 1/2.',
               'No: A and B share the outcome 2.', 'Yes: A and B have no outcomes in common.'],
              note='A and B = {2}. Sharing an outcome does not decide independence.'),
@@ -197,22 +198,22 @@ SETS = [
             why=why('the student cannot multiply fractions or decimals.', 'the test multiplies P(A) by P(B).', 'multiplies '
                     'probabilities.')),
           B('Find P(A and B) by counting', 'HSS-CP.A.1', [
-              sa('A die is rolled. What is P(even and greater than 3)?%s' % FL, 'P:', key='1/3', note='{4, 6}.'),
-              sa('A coin is flipped and a die is rolled. What is P(heads and 6)?%s' % FL, 'P:', key='1/12', note='1 of 12.'),
-              tf('For one die, P(odd and even) = 0.', key=True, note='No outcome is both.'),
-              mc('Two coins are flipped. What is P(first is heads and second is tails)?', ['1/4', '1/2', '3/4', '1'],
+              sa('A fair six-sided die is rolled. What is P(even and greater than 3)?%s' % FL, 'P:', key='1/3', note='{4, 6}.'),
+              sa('A fair coin is flipped and a fair die is rolled, independently. What is P(heads and 6)?%s' % FL, 'P:', key='1/12', note='1 of 12.'),
+              tf('For one roll of a fair six-sided die, P(odd and even) = 0.', key=True, note='No outcome is both.'),
+              mc('Two fair coins are flipped independently. What is P(first is heads and second is tails)?', ['1/4', '1/2', '3/4', '1'],
                  note='HT only.'),
-              tf('For one die, P(less than 3 and odd) = 1/3.', key=False, note='{1}: 1/6.'),
+              tf('For one roll of a fair six-sided die, P(less than 3 and odd) = 1/3.', key=False, note='{1}: 1/6.'),
           ], align='exact',
             why=why('the student cannot find P(A and B) from the sample space.', 'the test compares it with a product.',
                     'counts intersections.')),
       ],
       f1=B('Use independence for several events', 'HSS-CP.A.2', [
-          sa('A fair coin is flipped 3 times. What is P(all three heads)?%s' % FL, 'P:', key='1/8', note='(1/2)^3.'),
+          sa('A fair coin is flipped 3 times, independently. What is P(all three heads)?%s' % FL, 'P:', key='1/8', note='(1/2)^3.'),
           sa('Each of 3 independent lights works with probability 0.9. What is P(all 3 work), and P(at least one fails)?',
              ['All work:', 'At least one fails:'], key='0.729; 0.271', note='Form required: both. 0.9^3; 1 - 0.729.'),
           tf('For independent events, P(A and B and C) = P(A)·P(B)·P(C).', key=True, note='Extends the product rule.'),
-          mc('A fair die is rolled twice. What is P(two sixes)?', ['1/36', '1/6', '1/12', '2/6'], note='(1/6)(1/6).'),
+          mc('A fair die is rolled twice, independently. What is P(two sixes)?', ['1/36', '1/6', '1/12', '2/6'], note='(1/6)(1/6).'),
           tf('If P(A and B) = P(A)·P(B), then A and B cannot happen together.', key=False,
              note='Independent events can happen together; that describes mutually exclusive events.'),
       ], prog='same-course deepening', demand='Use the product rule for more than two events and with complements.'),
@@ -235,7 +236,7 @@ SETS = [
       main=[
           sa('P(A and B) = 0.12 and P(B) = 0.4. Find P(A given B).', 'P(A given B):', key='0.3', note='0.12/0.4.'),
           sa('A fair die is rolled. What is P(6 given the roll is even)?%s' % FL, 'P:', key='1/3', note='P(6)/P(even) = (1/6)/(1/2).'),
-          sa('Two fair dice are rolled. What is P(doubles given the sum is 8)?%s' % FL, 'P:',
+          sa('Two fair dice are rolled independently. What is P(doubles given the sum is 8)?%s' % FL, 'P:',
              key=f(pd(lambda o: o[0] == o[1], lambda o: sum(o) == 8)),
              note='Sum 8: (2,6), (3,5), (4,4), (5,3), (6,2); one is doubles.'),
           mc('On a given day, P(rain) = 0.3 and P(rain and wind) = 0.12. What is P(wind given rain)?', ['0.4', '0.036', '0.12', '2.5'],
@@ -252,20 +253,20 @@ SETS = [
           ], align='supporting',
             why=why('the student cannot divide decimals.', 'the definition divides two probabilities.', 'divides decimals.')),
           B('Count outcomes in a restricted sample space', 'HSS-CP.A.1', [
-              sa('A die is rolled and shows an even number. How many outcomes remain possible?', 'Outcomes:', key='3',
+              sa('A fair six-sided die is rolled and shows an even number. How many outcomes remain possible?', 'Outcomes:', key='3',
                  note='{2, 4, 6}.'),
-              sa('Two dice are rolled and the sum is 8. How many outcomes give a sum of 8?', 'Outcomes:', key='5',
+              sa('Two fair dice are rolled independently and the sum is 8. How many outcomes give a sum of 8?', 'Outcomes:', key='5',
                  note='(2,6) to (6,2).'),
-              tf('Knowing that a card is a heart leaves 13 possible cards.', key=True, note='The hearts.'),
-              mc('A die shows a number greater than 2. How many of the remaining outcomes are odd?', ['2', '3', '4', '1'],
+              tf('A card is drawn from a standard 52-card deck. Knowing that it is a heart leaves 13 possible cards.', key=True, note='The hearts.'),
+              mc('A fair six-sided die is rolled and shows a number greater than 2. How many of the remaining outcomes are odd?', ['2', '3', '4', '1'],
                  note='{3, 4, 5, 6}: 3 and 5.'),
-              tf('Knowing a card is a face card leaves 13 possible cards.', key=False, note='12.'),
+              tf('A card is drawn from a standard 52-card deck. Knowing that it is a face card leaves 13 possible cards.', key=False, note='12.'),
           ], align='exact',
             why=why('the student does not shrink the sample space to the condition.', 'P(A given B) lives inside B.',
                     'restricts and counts.')),
       ],
       f1=B('Compute conditional probability in both directions', 'HSS-CP.A.3', [
-          sa('A card is drawn. Find P(king given face card) and P(face card given king).%s' % FL,
+          sa('A card is drawn at random from a standard 52-card deck. Find P(king given face card) and P(face card given king).%s' % FL,
              ['P(king given face card):', 'P(face card given king):'], key='1/3; 1', note='Form required: both. 4/12 and 4/4.'),
           tf('P(A given B) and P(B given A) are always equal.', key=False, note='The king example shows otherwise.'),
           sa('P(A) = 0.5, P(B) = 0.2 and P(A and B) = 0.1. Find P(A given B) and P(B given A).',
@@ -279,7 +280,7 @@ SETS = [
           sa('P(A) = 0.6, P(B) = 0.5, P(A and B) = 0.3. Find P(A given B), and decide whether A and B are independent (enter yes '
              'or no).', ['P(A given B):', 'Independent (yes or no):'], key='0.6; yes', note='Form required: both. 0.3/0.5 = P(A).'),
           tf('If P(A given B) = P(A), then also P(B given A) = P(B), provided P(A) > 0.', key=True, note='Symmetric.'),
-          mc('Two cards are drawn without replacement. Are "first card is an ace" and "second card is an ace" independent?', [
+          mc('Two cards are drawn at random, without replacement, from a standard 52-card deck. Are "first card is an ace" and "second card is an ace" independent?', [
               'No: the first draw changes the chance for the second.', 'Yes: each card in the deck is equally likely to be drawn.',
               'Yes: the deck always contains exactly 4 aces.', 'No: two aces can never be drawn one after another.'],
              note='P(second ace given first ace) = 3/51 ≠ 4/52.'),
@@ -300,7 +301,7 @@ SETS = [
           mc('A and B are independent. Which statement is correct?', [
               'Knowing that B happened does not change the probability of A.', 'A and B can never happen at the same time as each other.',
               'Whenever B happens, then A must also happen.', 'P(A) and P(B) must be equal to each other.'], note='Meaning of independence.'),
-          sa('Two cards are drawn from a standard deck. Find P(second is an ace given the first is an ace) when the first card is '
+          sa('Two cards are drawn at random from a standard 52-card deck. Find P(second is an ace given the first is an ace) when the first card is '
              'replaced, and when it is not replaced.%s' % FL, ['With replacement:', 'Without replacement:'], key='1/13; 1/17',
              note='Form required: both. 4/52 and 3/51.'),
           mc('Which pair of events is independent?', [

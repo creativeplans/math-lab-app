@@ -4,7 +4,7 @@
   "id": "PS",
   "grade": null,
   "course": "Probability & Statistics",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -52,21 +52,21 @@
      "standard_course": "Probability & Statistics",
      "type": "sa",
      "response": "write",
-     "prompt": "A hockey team trails by 1 goal with 2 minutes left. Keeping the goalie gives a 0.08 chance of tying; pulling the goalie for an extra skater gives a 0.20 chance of tying (but more chance of allowing another goal, which also loses). Give both chances of tying.",
-     "prompt_markup": "A hockey team trails by 1 goal with 2 minutes left. Keeping the goalie gives a 0.08 chance of tying; pulling the goalie for an extra skater gives a 0.20 chance of tying (but more chance of allowing another goal, which also loses). Give both chances of tying.",
+     "prompt": "A hockey team trails by 1 goal with 2 minutes left, and its only goal is to avoid losing, which requires tying. Keeping the goalie gives a 0.08 chance of tying; pulling the goalie for an extra skater gives a 0.20 chance (allowing another goal still means a loss, as before). By how many percentage points does pulling the goalie raise the chance of tying, and how many times as large is that chance?",
+     "prompt_markup": "A hockey team trails by 1 goal with 2 minutes left, and its only goal is to avoid losing, which requires tying. Keeping the goalie gives a 0.08 chance of tying; pulling the goalie for an extra skater gives a 0.20 chance (allowing another goal still means a loss, as before). By how many percentage points does pulling the goalie raise the chance of tying, and how many times as large is that chance?",
      "choices": [],
      "answer_lines": [
-      "Keep goalie:",
-      "Pull goalie:"
+      "Percentage points:",
+      "Times as large:"
      ],
      "correct_letter": null,
-     "correct_answer": "0.08; 0.2",
+     "correct_answer": "12; 2.5",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: both.",
+     "grading_note": "Form required: both. 20 - 8 = 12 points; 0.20/0.08 = 2.5.",
      "figure": null,
      "page": 1753,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Use probability concepts to analyze decisions and strategies, such as product testing, test-taking and when to take a risk in a game",
      "target_skill": "Use probability concepts to analyze decisions and strategies, such as product testing, test-taking and when to take a risk in a game",
@@ -150,8 +150,8 @@
      "standard_course": "Probability & Statistics",
      "type": "sa",
      "response": "write",
-     "prompt": "A box of 12 parts has 3 defective. An inspector checks 2 parts at random. What is P(no defective part is found)? Give a fraction in lowest terms.",
-     "prompt_markup": "A box of 12 parts has 3 defective. An inspector checks 2 parts at random. What is P(no defective part is found)? Give a fraction in lowest terms.",
+     "prompt": "A box of 12 parts has 3 defective. An inspector checks 2 parts chosen at random, without replacement (every pair equally likely). What is P(no defective part is found)? Give a fraction in lowest terms.",
+     "prompt_markup": "A box of 12 parts has 3 defective. An inspector checks 2 parts chosen at random, without replacement (every pair equally likely). What is P(no defective part is found)? Give a fraction in lowest terms.",
      "choices": [],
      "answer_lines": [
       "P:"
@@ -163,7 +163,7 @@
      "grading_note": "9C2/12C2 = 36/66.",
      "figure": null,
      "page": 1755,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Use probability concepts to analyze decisions and strategies, such as product testing, test-taking and when to take a risk in a game",
      "target_skill": "Use probability concepts to analyze decisions and strategies, such as product testing, test-taking and when to take a risk in a game",
@@ -191,8 +191,8 @@
      "standard_course": "Probability & Statistics",
      "type": "sa",
      "response": "write",
-     "prompt": "A test question has 5 choices; a correct answer earns 1 point and a wrong answer loses 1/4 point. Find the expected score of a random guess, and of a guess after eliminating one wrong choice. Give a fraction in lowest terms.",
-     "prompt_markup": "A test question has 5 choices; a correct answer earns 1 point and a wrong answer loses 1/4 point. Find the expected score of a random guess, and of a guess after eliminating one wrong choice. Give a fraction in lowest terms.",
+     "prompt": "A test question has 5 choices and one correct answer; a correct answer earns 1 point, a wrong answer loses 1/4 point, and a blank earns 0. A guess picks at random among the choices still in play. Find the expected score of a guess with no choices eliminated, and of a guess after eliminating one wrong choice. Give a fraction in lowest terms.",
+     "prompt_markup": "A test question has 5 choices and one correct answer; a correct answer earns 1 point, a wrong answer loses 1/4 point, and a blank earns 0. A guess picks at random among the choices still in play. Find the expected score of a guess with no choices eliminated, and of a guess after eliminating one wrong choice. Give a fraction in lowest terms.",
      "choices": [],
      "answer_lines": [
       "Random guess:",
@@ -205,7 +205,7 @@
      "grading_note": "Form required: both. 1/5 - (4/5)(1/4); 1/4 - (3/4)(1/4).",
      "figure": null,
      "page": 1756,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Use probability concepts to analyze decisions and strategies, such as product testing, test-taking and when to take a risk in a game",
      "target_skill": "Use probability concepts to analyze decisions and strategies, such as product testing, test-taking and when to take a risk in a game",
@@ -395,8 +395,8 @@
      "standard_course": "Probability & Statistics",
      "type": "mc",
      "response": "select one",
-     "prompt": "Strategy B scores 2 for sure; strategy A scores 3 with probability 0.5. Which is better on average?",
-     "prompt_markup": "Strategy B scores 2 for sure; strategy A scores 3 with probability 0.5. Which is better on average?",
+     "prompt": "Strategy B scores 2 for sure; strategy A scores 3 with probability 0.5 and 0 otherwise. Which is better on average?",
+     "prompt_markup": "Strategy B scores 2 for sure; strategy A scores 3 with probability 0.5 and 0 otherwise. Which is better on average?",
      "choices": [
       {
        "letter": "A",
@@ -423,7 +423,7 @@
      "grading_note": "2 > 1.5.",
      "figure": null,
      "page": 1761,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Use probability concepts to analyze decisions and strategies, such as product testing, test-taking and when to take a risk in a game",
      "target_skill": "Compare expected values of choices",
@@ -899,35 +899,35 @@
      "standard_course": "Probability & Statistics",
      "type": "mc",
      "response": "select one",
-     "prompt": "A student must decide whether to guess on 10 four-choice questions with a 1/3-point penalty. Which strategy has the highest expected score?",
-     "prompt_markup": "A student must decide whether to guess on 10 four-choice questions with a 1/3-point penalty. Which strategy has the highest expected score?",
+     "prompt": "On a test, each question has 4 choices and one correct answer: +1 point if correct, -1/3 point if wrong, 0 if blank. A guess picks at random among the choices still in play. Which statement about strategy is correct?",
+     "prompt_markup": "On a test, each question has 4 choices and one correct answer: +1 point if correct, -1/3 point if wrong, 0 if blank. A guess picks at random among the choices still in play. Which statement about strategy is correct?",
      "choices": [
       {
        "letter": "A",
-       "text": "Guess only on the last question."
+       "text": "A blind guess averages -1/12, less than a blank, so never guess without eliminating."
       },
       {
        "letter": "B",
-       "text": "Guess only where at least one choice can be eliminated."
+       "text": "A blind guess and a blank both average 0; a guess after one elimination averages 1/9."
       },
       {
        "letter": "C",
-       "text": "Leave every question blank."
+       "text": "Eliminating one wrong choice leaves the average score of a guess at 0."
       },
       {
        "letter": "D",
-       "text": "Guess on every question, even with no information."
+       "text": "A blind guess averages 1/4, more than a blank, so guess on every question."
       }
      ],
      "answer_lines": [],
      "correct_letter": "B",
-     "correct_answer": "Guess only where at least one choice can be eliminated.",
+     "correct_answer": "A blind guess and a blank both average 0; a guess after one elimination averages 1/9.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Expected 0 with no information; 1/9 or more after eliminating.",
+     "grading_note": "Blind: 1/4 - (3/4)(1/3) = 0, the same as a blank (so blind guessing neither helps nor hurts on average). After one elimination: 1/3 - (2/3)(1/3) = 1/9. The others give wrong expected values.",
      "figure": null,
      "page": 1773,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Use probability concepts to analyze decisions and strategies, such as product testing, test-taking and when to take a risk in a game",
      "target_skill": "Weigh probabilities against consequences",
@@ -955,8 +955,8 @@
      "standard_course": "Probability & Statistics",
      "type": "sa",
      "response": "write",
-     "prompt": "With two choices eliminated (2 left), what is the expected score of a guess (1 point right, -1/3 wrong)? Give a fraction in lowest terms.",
-     "prompt_markup": "With two choices eliminated (2 left), what is the expected score of a guess (1 point right, -1/3 wrong)? Give a fraction in lowest terms.",
+     "prompt": "A question has 4 choices and one correct answer: +1 point if correct, -1/3 point if wrong, 0 if blank. Two wrong choices are eliminated, and a guess picks at random between the 2 left. What is the expected score of the guess? Give a fraction in lowest terms.",
+     "prompt_markup": "A question has 4 choices and one correct answer: +1 point if correct, -1/3 point if wrong, 0 if blank. Two wrong choices are eliminated, and a guess picks at random between the 2 left. What is the expected score of the guess? Give a fraction in lowest terms.",
      "choices": [],
      "answer_lines": [
       "Score:"
@@ -968,7 +968,7 @@
      "grading_note": "1/2 - (1/2)(1/3).",
      "figure": null,
      "page": 1774,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Use probability concepts to analyze decisions and strategies, such as product testing, test-taking and when to take a risk in a game",
      "target_skill": "Weigh probabilities against consequences",
@@ -1063,21 +1063,21 @@
      "standard_course": "Probability & Statistics",
      "type": "sa",
      "response": "write",
-     "prompt": "A quiz has 5 four-choice questions. A student guesses on all. What is the expected number correct, and P(all wrong)? Give a fraction in lowest terms.",
-     "prompt_markup": "A quiz has 5 four-choice questions. A student guesses on all. What is the expected number correct, and P(all wrong)? Give a fraction in lowest terms.",
+     "prompt": "A quiz has 5 questions (each question has 4 choices and one correct answer; each guess picks a choice at random, independently of the others), and a student guesses on all of them. What is the expected number correct, and P(all wrong)? Give each answer as a fraction in lowest terms.",
+     "prompt_markup": "A quiz has 5 questions (each question has 4 choices and one correct answer; each guess picks a choice at random, independently of the others), and a student guesses on all of them. What is the expected number correct, and P(all wrong)? Give each answer as a fraction in lowest terms.",
      "choices": [],
      "answer_lines": [
       "Expected correct:",
       "P(all wrong):"
      ],
      "correct_letter": null,
-     "correct_answer": "1.25; 243/1024",
+     "correct_answer": "5/4; 243/1024",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: both. 5/4; (3/4)^5.",
+     "grading_note": "Form required: both, as fractions. 5 · 1/4; (3/4)^5.",
      "figure": null,
      "page": 1777,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Use probability concepts to analyze decisions and strategies, such as product testing, test-taking and when to take a risk in a game",
      "target_skill": "Combine several probability tools in one decision",
@@ -1153,8 +1153,8 @@
      "standard_course": "Probability & Statistics",
      "type": "sa",
      "response": "write",
-     "prompt": "A quiz has 5 four-choice questions and a student guesses on all. What is P(at least one correct)? Give a fraction in lowest terms.",
-     "prompt_markup": "A quiz has 5 four-choice questions and a student guesses on all. What is P(at least one correct)? Give a fraction in lowest terms.",
+     "prompt": "A quiz has 5 questions (each question has 4 choices and one correct answer; each guess picks a choice at random, independently of the others), and a student guesses on all of them. What is P(at least one correct)? Give a fraction in lowest terms.",
+     "prompt_markup": "A quiz has 5 questions (each question has 4 choices and one correct answer; each guess picks a choice at random, independently of the others), and a student guesses on all of them. What is P(at least one correct)? Give a fraction in lowest terms.",
      "choices": [],
      "answer_lines": [
       "P:"
@@ -1166,7 +1166,7 @@
      "grading_note": "1 - 243/1024.",
      "figure": null,
      "page": 1779,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Use probability concepts to analyze decisions and strategies, such as product testing, test-taking and when to take a risk in a game",
      "target_skill": "Combine several probability tools in one decision",
@@ -1194,8 +1194,8 @@
      "standard_course": "Probability & Statistics",
      "type": "mc",
      "response": "select one",
-     "prompt": "A team must choose between a play that gains 2 points with probability 0.5 and one that gains 3 points with probability 0.3. Which has the higher expected gain?",
-     "prompt_markup": "A team must choose between a play that gains 2 points with probability 0.5 and one that gains 3 points with probability 0.3. Which has the higher expected gain?",
+     "prompt": "A team must choose between a play that gains 2 points with probability 0.5 (and 0 otherwise) and one that gains 3 points with probability 0.3 (and 0 otherwise). Which has the higher expected gain?",
+     "prompt_markup": "A team must choose between a play that gains 2 points with probability 0.5 (and 0 otherwise) and one that gains 3 points with probability 0.3 (and 0 otherwise). Which has the higher expected gain?",
      "choices": [
       {
        "letter": "A",
@@ -1222,7 +1222,7 @@
      "grading_note": "1.0 versus 0.9.",
      "figure": null,
      "page": 1780,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Use probability concepts to analyze decisions and strategies, such as product testing, test-taking and when to take a risk in a game",
      "target_skill": "Combine several probability tools in one decision",
@@ -1250,8 +1250,8 @@
      "standard_course": "Probability & Statistics",
      "type": "tf",
      "response": "select true or false",
-     "prompt": "If the team needs 3 points to win, the 2-point play is still the better choice.",
-     "prompt_markup": "If the team needs 3 points to win, the 2-point play is still the better choice.",
+     "prompt": "On one final play, option P scores 2 points with probability 0.5 (otherwise 0) and option Q scores 3 points with probability 0.3 (otherwise 0). The team needs at least 3 points on this play to win. Option P is the better choice.",
+     "prompt_markup": "On one final play, option P scores 2 points with probability 0.5 (otherwise 0) and option Q scores 3 points with probability 0.3 (otherwise 0). The team needs at least 3 points on this play to win. Option P is the better choice.",
      "choices": [
       {
        "letter": "A",
@@ -1267,10 +1267,10 @@
      "correct_answer": "False",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Only the 3-point play can win; its chance is 0.3 versus 0.",
+     "grading_note": "Option P can never reach 3 points, so its chance of winning is 0; option Q wins with probability 0.3, even though P has the higher expected gain (1.0 versus 0.9).",
      "figure": null,
      "page": 1781,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Use probability concepts to analyze decisions and strategies, such as product testing, test-taking and when to take a risk in a game",
      "target_skill": "Combine several probability tools in one decision",

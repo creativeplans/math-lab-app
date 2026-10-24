@@ -4,7 +4,7 @@
   "id": "PS",
   "grade": null,
   "course": "Probability & Statistics",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -52,21 +52,21 @@
      "standard_course": "Probability & Statistics",
      "type": "sa",
      "response": "write",
-     "prompt": "A bar graph's vertical axis starts at 50. One bar shows 52 and another shows 55. How tall is the second bar compared with the first (ratio of drawn heights), and what is the ratio of the actual values? Round the second answer to two decimal places.",
-     "prompt_markup": "A bar graph's vertical axis starts at 50. One bar shows 52 and another shows 55. How tall is the second bar compared with the first (ratio of drawn heights), and what is the ratio of the actual values? Round the second answer to two decimal places.",
+     "prompt": "A bar graph's vertical axis starts at 50. One bar shows 52 and another shows 55. How tall is the second bar compared with the first (ratio of drawn heights), and what is the ratio of the actual values? Give both ratios to two decimal places.",
+     "prompt_markup": "A bar graph's vertical axis starts at 50. One bar shows 52 and another shows 55. How tall is the second bar compared with the first (ratio of drawn heights), and what is the ratio of the actual values? Give both ratios to two decimal places.",
      "choices": [],
      "answer_lines": [
       "Ratio of drawn heights:",
       "Ratio of values:"
      ],
      "correct_letter": null,
-     "correct_answer": "2.5; 1.06",
+     "correct_answer": "2.50; 1.06",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: both. (55 - 50)/(52 - 50) = 2.5; 55/52 = 1.0577.",
+     "grading_note": "Form required: both, to two decimal places. (55 - 50)/(52 - 50) = 2.5; 55/52 = 1.0577.",
      "figure": null,
      "page": 1028,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Evaluate the statistics and displays in a report: truncated axes, relative versus absolute change, margins of error, and the choice of summary statistic",
      "target_skill": "Evaluate the statistics and displays in a report: truncated axes, relative versus absolute change, margins of error, and the choice of summary statistic",
@@ -150,8 +150,8 @@
      "standard_course": "Probability & Statistics",
      "type": "mc",
      "response": "select one",
-     "prompt": "A poll shows candidate A at 51% and B at 49%, with a margin of error of 3 percentage points. A headline says \"A leads!\" What is the best evaluation?",
-     "prompt_markup": "A poll shows candidate A at 51% and B at 49%, with a margin of error of 3 percentage points. A headline says \"A leads!\" What is the best evaluation?",
+     "prompt": "A poll shows candidate A at 51% and B at 49%, with a margin of error of 3 percentage points. A headline says \"Poll shows A has a reliable lead among all voters!\" What is the best evaluation?",
+     "prompt_markup": "A poll shows candidate A at 51% and B at 49%, with a margin of error of 3 percentage points. A headline says \"Poll shows A has a reliable lead among all voters!\" What is the best evaluation?",
      "choices": [
       {
        "letter": "A",
@@ -175,10 +175,10 @@
      "correct_answer": "Misleading: the gap is well within the margin of error.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "48%-54% and 46%-52% overlap.",
+     "grading_note": "48%-54% and 46%-52% overlap a lot, so the poll does not show a reliable lead. The others are false: 51% vs 49% is a sample result, not the population; a sample does not show a majority of all voters; and B is not certainly ahead.",
      "figure": null,
      "page": 1030,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Evaluate the statistics and displays in a report: truncated axes, relative versus absolute change, margins of error, and the choice of summary statistic",
      "target_skill": "Evaluate the statistics and displays in a report: truncated axes, relative versus absolute change, margins of error, and the choice of summary statistic",
@@ -362,8 +362,8 @@
      "standard_course": "Probability & Statistics",
      "type": "tf",
      "response": "select true or false",
-     "prompt": "If two intervals overlap a lot, the data do not clearly show which value is larger.",
-     "prompt_markup": "If two intervals overlap a lot, the data do not clearly show which value is larger.",
+     "prompt": "If two intervals overlap a lot, a cautious reading is not to claim from them which value is larger.",
+     "prompt_markup": "If two intervals overlap a lot, a cautious reading is not to claim from them which value is larger.",
      "choices": [
       {
        "letter": "A",
@@ -379,10 +379,10 @@
      "correct_answer": "True",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Too close.",
+     "grading_note": "Overlap is only a cautious reading; a formal comparison would use the margin of error of the difference.",
      "figure": null,
      "page": 1035,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Evaluate the statistics and displays in a report: truncated axes, relative versus absolute change, margins of error, and the choice of summary statistic",
      "target_skill": "Use margins of error to compare results",
@@ -1087,30 +1087,30 @@
      "choices": [
       {
        "letter": "A",
-       "text": "Accidents cannot be counted."
+       "text": "Car accidents cannot be counted accurately by anyone."
       },
       {
        "letter": "B",
-       "text": "Five miles is too short."
+       "text": "A distance of five miles is too short to be studied."
       },
       {
        "letter": "C",
-       "text": "Cars are safer far away."
+       "text": "Cars are always safer when driven far from home."
       },
       {
        "letter": "D",
-       "text": "Most driving happens near home."
+       "text": "It uses counts without the amount of driving near and far from home."
       }
      ],
      "answer_lines": [],
      "correct_letter": "D",
-     "correct_answer": "Most driving happens near home.",
+     "correct_answer": "It uses counts without the amount of driving near and far from home.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Rates need the amount of driving: P(accident given driving near home) is not reported.",
+     "grading_note": "A fair comparison needs exposure, such as accidents per mile driven near and far from home; the report gives counts only. The others are unsupported claims.",
      "figure": null,
      "page": 1052,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Evaluate the statistics and displays in a report: truncated axes, relative versus absolute change, margins of error, and the choice of summary statistic",
      "target_skill": "Reason about conditional rates in reports",

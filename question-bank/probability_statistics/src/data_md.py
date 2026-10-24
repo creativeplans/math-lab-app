@@ -44,12 +44,12 @@ SETS = [
              'space, and graph the corresponding probability distribution',
       strand='advanced', covers=['MD1-define'],
       main=[
-          sa('Three fair coins are flipped. X = number of heads. Find P(X = 0), P(X = 1), P(X = 2) and P(X = 3).%s' % FL,
+          sa('Three fair coins are flipped independently. X = number of heads. Find P(X = 0), P(X = 1), P(X = 2) and P(X = 3).%s' % FL,
              ['P(X = 0):', 'P(X = 1):', 'P(X = 2):', 'P(X = 3):'], key='1/8; 3/8; 3/8; 1/8',
              note='Form required: all four. Outcomes with 0, 1, 2, 3 heads: 1, 3, 3, 1 of 8.'),
-          sa('Two fair dice are rolled and X = the sum. How many different values can X take, and what is P(X = 7)?%s' % FL,
+          sa('Two fair dice are rolled independently and X = the sum. How many different values can X take, and what is P(X = 7)?%s' % FL,
              ['Number of values:', 'P(X = 7):'], key='11; 1/6', note='Form required: both. 2 to 12; 6 of 36.'),
-          pickfig('Four fair coins are flipped and X = number of heads. Each bar graph shows, for X = 0 to 4, how many of the 16 '
+          pickfig('Four fair coins are flipped independently and X = number of heads. Each bar graph shows, for X = 0 to 4, how many of the 16 '
                   'equally likely outcomes give that value. Which graph shows the distribution of X?', 'C', [
                       bars(range(5), [1, 4, 6, 4, 1], 'Number of heads'), bars(range(5), [3, 3, 4, 3, 3], 'Number of heads'),
                       bars(range(5), [6, 4, 3, 2, 1], 'Number of heads'), bars(range(5), [2, 4, 4, 4, 2], 'Number of heads')],
@@ -62,11 +62,11 @@ SETS = [
       ],
       back=[
           B('Describe outcomes in a sample space', 'HSS-CP.A.1', [
-              sa('Three coins are flipped. How many outcomes have exactly 1 head?', 'Outcomes:', key='3', note='HTT, THT, TTH.'),
-              tf('Three coin flips have 8 equally likely outcomes.', key=True, note='2^3.'),
-              mc('Two dice are rolled. How many outcomes have a sum of 4?', ['3', '4', '2', '6'], note='(1,3), (2,2), (3,1).'),
-              sa('Four coins are flipped. How many outcomes are there?', 'Outcomes:', key='16', note='2^4.'),
-              tf('For two dice, the sums 2 and 12 each come from 2 outcomes.', key=False, note='One each.'),
+              sa('Three fair coins are flipped independently. How many outcomes have exactly 1 head?', 'Outcomes:', key='3', note='HTT, THT, TTH.'),
+              tf('Three fair coins are flipped independently. The 8 outcomes of the sample space are equally likely.', key=True, note='2^3.'),
+              mc('Two fair dice are rolled independently. How many outcomes have a sum of 4?', ['3', '4', '2', '6'], note='(1,3), (2,2), (3,1).'),
+              sa('Four fair coins are flipped independently. How many outcomes are there?', 'Outcomes:', key='16', note='2^4.'),
+              tf('For two fair dice rolled independently, the sums 2 and 12 each come from 2 outcomes.', key=False, note='One each.'),
           ], align='exact',
             why=why('the student cannot list the outcomes behind each value.', 'a random variable groups outcomes.',
                     'counts outcomes in events.')),
@@ -84,14 +84,14 @@ SETS = [
       ],
       f1=B('Find probabilities of ranges of values', 'HSS-MD.A.1', [
           sa('For X = number of heads in 3 flips, find P(X ≥ 2).%s' % FL, 'P:', key='1/2', note='3/8 + 1/8.'),
-          sa('For X = sum of two dice, find P(X ≤ 4).%s' % FL, 'P:', key='1/6', note='1 + 2 + 3 = 6 outcomes.'),
+          sa('For X = sum of two fair dice rolled independently, find P(X ≤ 4).%s' % FL, 'P:', key='1/6', note='1 + 2 + 3 = 6 outcomes.'),
           tf('The probabilities of all values of a random variable add to 1.', key=True, note='Distribution.'),
           mc('X takes the values 0 to 3 with probabilities 0.1, 0.35, 0.4, 0.15. What is P(X > 1)?', ['0.55', '0.45', '0.4', '0.9'],
              note='0.4 + 0.15.'),
           tf('P(X ≥ 1) = 1 - P(X = 1).', key=False, note='1 - P(X = 0).'),
       ], prog='same-course deepening', demand='Use a distribution to find probabilities of ranges of values.'),
       f2=B('Compute the expected value of a random variable', 'HSS-MD.A.2', [
-          sa('X = number of heads when 2 fair coins are flipped. Find the expected value of X.', 'E(X):', key='1',
+          sa('X = number of heads when 2 fair coins are flipped independently. Find the expected value of X.', 'E(X):', key='1',
              note='0(1/4) + 1(1/2) + 2(1/4).'),
           tf('The expected value is the probability-weighted average of the values.', key=True, note='Definition.'),
           sa('X takes 1, 2, 3 with probabilities 0.2, 0.5, 0.3. Find E(X).', 'E(X):', key='2.1', note='0.2 + 1 + 0.9.'),
@@ -106,7 +106,7 @@ SETS = [
       target='Calculate the expected value of a random variable and interpret it as the mean of its probability distribution',
       strand='advanced', covers=['MD2-ev'],
       main=[
-          sa('X = number of heads when 3 fair coins are flipped (table). Find E(X).', 'E(X):', key='1.5', fig=dtab('x', H3),
+          sa('X = number of heads when 3 fair coins are flipped independently (table). Find E(X).', 'E(X):', key='1.5', fig=dtab('x', H3),
              note='0(1/8) + 1(3/8) + 2(3/8) + 3(1/8) = 12/8.'),
           sa('Find E(X) for the distribution in the table.', 'E(X):', key='1.6', fig=dtab('x', DX), note='0.35 + 0.8 + 0.45.'),
           sa('X = the number rolled on a fair six-sided die. Find E(X).', 'E(X):', key='3.5', note='(1 + 2 + ... + 6)/6.'),
@@ -130,7 +130,7 @@ SETS = [
               sa('In the distribution table with values 0 to 3, what is P(X = 2)?', 'P:', key='0.4', fig=dtab('x', DX),
                  note='Read the table.'),
               tf('A probability distribution lists every value of X with its probability.', key=True, note='Definition.'),
-              mc('In the coin table, which values of X are equally likely?', ['1 and 2', '0 and 1', '2 and 3', 'all four'],
+              mc('In the table (X = number of heads when 3 fair coins are flipped independently), which values of X are equally likely?', ['1 and 2', '0 and 1', '2 and 3', 'all four'],
                  fig=dtab('x', H3), note='P(X = 1) = P(X = 2) = 3/8.'),
               sa('A distribution has P(X = 5) = 0.3 and P(X = 10) = 0.7. What is P(X = 5) + P(X = 10)?', 'Sum:', key='1',
                  note='Total probability.'),
@@ -158,14 +158,14 @@ SETS = [
           tf('If E(X) = 0, the player breaks even on every single play.', key=False, note='Only on average.'),
       ], prog='same-course deepening', demand='Compute expected values with negative values and over many trials.'),
       f2=B('Find expected values of theoretical distributions', 'HSS-MD.A.3', [
-          sa('A student guesses on 6 true-false questions. X = number correct. Find P(X = 3).%s' % FL, 'P:', key='5/16',
+          sa('A student guesses at random on 6 true-false questions (each answer is True or False, and each guess is correct with probability 1/2, independently of the others). X = number correct. Find P(X = 3).%s' % FL, 'P:', key='5/16',
              note='6C3/64 = 20/64.'),
-          sa('A student guesses on 6 true-false questions. Find the expected number correct.', 'E(X):', key='3', note='6 · 0.5.'),
+          sa('A student guesses at random on 6 true-false questions (each answer is True or False, and each guess is correct with probability 1/2, independently of the others). Find the expected number correct.', 'E(X):', key='3', note='6 · 0.5.'),
           tf('For n independent trials with success probability p, the expected number of successes is np.', key=True,
              note='Binomial mean.'),
-          mc('A student guesses on 10 four-choice questions. What is the expected number correct?', ['2.5', '4', '10', '0.25'],
+          mc('A student guesses at random on 10 four-choice questions (each question has 4 choices and one correct answer; each guess picks a choice at random, independently of the others). What is the expected number correct?', ['2.5', '4', '10', '0.25'],
              note='10 · 1/4.'),
-          tf('Guessing on 4 true-false questions, getting all 4 right has probability 1/4.', key=False, note='1/16.'),
+          tf('A student guesses at random on 4 true-false questions (each answer is True or False, and each guess is correct with probability 1/2, independently of the others). The probability of getting all 4 right is 1/4.', key=False, note='1/16.'),
       ], prog='cross-standard extension', demand='Build theoretical distributions and find their means.',
         builds='Builds on FORWARD 1: expected value is applied to distributions computed from a probability model.')),
 
@@ -175,14 +175,15 @@ SETS = [
              'and find its expected value',
       strand='advanced', covers=['MD3-theory'],
       main=[
-          sa('A student guesses on 4 true-false questions. X = number correct. Find P(X = 2).%s' % FL, 'P:', key='3/8',
+          sa('A student guesses at random on 4 true-false questions (each answer is True or False, and each guess is correct with probability 1/2, independently of the others). X = number correct. Find P(X = 2).%s' % FL, 'P:', key='3/8',
              note='4C2 · (1/2)^4 = 6/16.'),
-          sa('A student guesses on 4 true-false questions. X = number correct. Find E(X).', 'E(X):', key='2', note='4 · 1/2.'),
-          sa('A student guesses on 5 questions, each with 4 choices. Find P(all 5 correct) and the expected number correct.%s' % FL,
-             ['P(all correct):', 'Expected number correct:'], key='1/1024; 1.25', note='Form required: both. (1/4)^5; 5 · 1/4.'),
-          mc('A student guesses on 3 four-choice questions. What is P(exactly 1 correct)?', ['27/64', '9/64', '1/4', '3/4'],
+          sa('A student guesses at random on 4 true-false questions (each answer is True or False, and each guess is correct with probability 1/2, independently of the others). X = number correct. Find E(X).', 'E(X):', key='2', note='4 · 1/2.'),
+          sa('A student guesses at random on 5 questions (each question has 4 choices and one correct answer; each guess picks a choice at random, independently of the others). Find P(all 5 correct) and the expected number correct. Give '
+             'each answer as a fraction in lowest terms.',
+             ['P(all correct):', 'Expected number correct:'], key='1/1024; 5/4', note='Form required: both, as fractions. (1/4)^5; 5 · 1/4.'),
+          mc('A student guesses at random on 3 four-choice questions (each question has 4 choices and one correct answer; each guess picks a choice at random, independently of the others). What is P(exactly 1 correct)?', ['27/64', '9/64', '1/4', '3/4'],
              note='3 · (1/4)(3/4)^2.'),
-          sa('A student guesses on 3 four-choice questions. What is P(at least 1 correct)?%s' % FL, 'P:', key='37/64',
+          sa('A student guesses at random on 3 four-choice questions (each question has 4 choices and one correct answer; each guess picks a choice at random, independently of the others). What is P(at least 1 correct)?%s' % FL, 'P:', key='37/64',
              note='1 - (3/4)^3.'),
       ],
       back=[
@@ -197,7 +198,8 @@ SETS = [
           B('Multiply probabilities of independent trials', 'HSS-CP.A.2', [
               sa('Compute (1/2)^4.%s' % FL, 'Answer:', key='1/16', note='1/16.'),
               sa('Compute (1/4)(3/4)(3/4).%s' % FL, 'Answer:', key='9/64', note='9/64.'),
-              tf('Guesses on different questions are independent.', key=True, note='Each guess is separate.'),
+              tf('When each guess is made at random and independently, being right on one question does not change the chance of being '
+                 'right on another.', key=True, note='That is what independence means.'),
               mc('P(correct) = 1/4 on each of 2 independent guesses. P(both correct)?', ['1/16', '1/8', '1/2', '1/4'],
                  note='(1/4)^2.'),
               tf('(3/4)^3 = 9/12.', key=False, note='27/64.'),
@@ -206,16 +208,16 @@ SETS = [
                     'multiplies independent probabilities.')),
       ],
       f1=B('Build the whole theoretical distribution', 'HSS-MD.A.3', [
-          sa('A student guesses on 3 four-choice questions; X = number correct. Find P(X = 0), P(X = 1), P(X = 2), P(X = 3).%s' % FL,
+          sa('A student guesses at random on 3 four-choice questions (each question has 4 choices and one correct answer; each guess picks a choice at random, independently of the others); X = number correct. Find P(X = 0), P(X = 1), P(X = 2), P(X = 3).%s' % FL,
              ['P(X = 0):', 'P(X = 1):', 'P(X = 2):', 'P(X = 3):'], key='; '.join(p for _, p in G3),
              note='Form required: all four. 3Ck (1/4)^k (3/4)^(3-k).'),
-          sa('For X = number correct out of 3 four-choice guesses, find E(X).', 'E(X):', key='0.75', note='3 · 1/4.'),
+          sa('A student guesses at random on 3 four-choice questions (each question has 4 choices and one correct answer; each guess picks a choice at random, independently of the others); X = number correct. Find E(X).', 'E(X):', key='0.75', note='3 · 1/4.'),
           tf('The four probabilities 27/64, 27/64, 9/64, 1/64 add to 1.', key=True, note='64/64.'),
-          mc('For 3 four-choice guesses, which value of X is least likely?', ['3', '0', '1', '2'], note='1/64.'),
-          tf('For 3 four-choice guesses, X = 1 is more likely than X = 0.', key=False, note='Equal: 27/64 each.'),
+          mc('A student guesses at random on 3 four-choice questions (each question has 4 choices and one correct answer; each guess picks a choice at random, independently of the others); X = number correct. Which value of X is least likely?', ['3', '0', '1', '2'], note='1/64.'),
+          tf('A student guesses at random on 3 four-choice questions (each question has 4 choices and one correct answer; each guess picks a choice at random, independently of the others); X = number correct. X = 1 is more likely than X = 0.', key=False, note='Equal: 27/64 each.'),
       ], prog='same-course deepening', demand='List the full distribution and check it.'),
       f2=B('Compare a theoretical distribution with data', 'HSS-MD.A.4', [
-          sa('A die is rolled 60 times. How many sixes does the theoretical distribution predict?', 'Sixes:', key='10',
+          sa('A fair six-sided die is rolled 60 times, independently. How many sixes does the theoretical distribution predict?', 'Sixes:', key='10',
              note='60/6.'),
           sa('In 60 rolls, a die showed 6 sixes. What is the empirical probability of a six? Give a decimal.', 'P:', key='0.1',
              note='6/60.'),
@@ -238,10 +240,11 @@ SETS = [
              note='Form required: both. 40/100; (20 + 5)/100.'),
           sa('Using the TV survey, find the expected number of TVs in a household.', 'E(X):', key='1.9', fig=TVT,
              note='(30 + 80 + 60 + 20)/100.'),
-          sa('Using the expected value 1.9 TVs per household, about how many TVs are expected in 500 households?', 'TVs:',
+          sa('The 100 surveyed households were a random sample of a town\'s households. Using the sample mean, 1.9 TVs per '
+             'household, as the estimate, about how many TVs are expected in 500 households of the town?', 'TVs:',
              key='950', note='500 · 1.9.'),
           mc('The TV survey gives E(X) = 1.9. Which interpretation is correct?', [
-              'Households in this population average about 1.9 TVs.', 'Most of the households have exactly 1.9 TVs.',
+              'The surveyed households averaged about 1.9 TVs.', 'Most of the households have exactly 1.9 TVs.',
               'Every household surveyed has 1 or 2 TVs.', 'There is a 1.9% chance of owning a TV.'], fig=TVT, note='Mean.'),
           sa('A store recorded complaints for 50 days (table). Find the expected number of complaints in a day.', 'E(X):',
              key='1', fig=CPT, note='(15 + 20 + 15)/50.'),
@@ -270,12 +273,13 @@ SETS = [
       ],
       f1=B('Compare empirical and theoretical results', 'HSS-MD.A.4', [
           sa('A die was rolled 60 times: the faces 1-6 appeared 7, 13, 9, 11, 14, 6 times. Find the empirical P(6) and the '
-             'theoretical P(6). Give decimals rounded to two places.', ['Empirical:', 'Theoretical:'], key='0.1; 0.17',
-             note='Form required: both. 6/60; 1/6 = 0.1666...'),
+             'theoretical P(6) for a fair die. Give decimals rounded to two places.', ['Empirical:', 'Theoretical:'],
+             key='0.10; 0.17', note='Form required: both, to two decimal places. 6/60; 1/6 = 0.1666...'),
           sa('Using the 60 rolls (faces 1-6 appeared 7, 13, 9, 11, 14, 6 times), find the empirical expected value of a roll.',
              'E(X):', key='3.5', note='(7 + 26 + 27 + 44 + 70 + 36)/60 = 210/60.'),
-          tf('With many more rolls, empirical probabilities tend to get closer to the theoretical ones.', key=True,
-             note='Law of large numbers.'),
+          tf('For repeated independent rolls of a fair die, the empirical probabilities tend to get closer to 1/6 as the number of '
+             'rolls grows.', key=True,
+             note='Law of large numbers. For a biased die they approach its own probabilities, not 1/6.'),
           mc('Which result would most suggest the die is unfair?', [
               'In 6,000 rolls, a 6 appeared 1,800 times.', 'In 60 rolls, a 6 appeared 6 times.',
               'In 600 rolls, a 6 appeared 104 times.', 'In 6 rolls, no 6 appeared.'],
@@ -284,7 +288,7 @@ SETS = [
              note='More data, more reliable.'),
       ], prog='same-course deepening', demand='Judge empirical distributions against theory and sample size.'),
       f2=B('Find the expected payoff of a game of chance', 'HSS-MD.B.5.a', [
-          sa('A $1 ticket wins $200 with probability 1/500. Find the expected net gain per ticket.', 'Dollars:', key='-0.6',
+          sa('A $1 ticket wins $200 with probability 1/500 (and nothing otherwise). Find the expected net gain per ticket.', 'Dollars:', key='-0.6',
              note='0.4 - 1.'),
           tf('A game with negative expected net gain loses money for the player in the long run.', key=True, note='Long run.'),
           sa('A spinner: win $6 with probability 1/3, lose $3 otherwise. Find the expected gain.', 'Dollars:', key='0',
@@ -344,12 +348,12 @@ SETS += [
                     'computes with signed numbers.')),
       ],
       f1=B('Set a price that makes a game fair', 'HSS-MD.B.5.a', [
-          sa('A game pays $12 if a die shows 6 and nothing otherwise. What price makes the game fair?', 'Dollars:', key='2',
+          sa('A game pays $12 if a fair die shows 6 and nothing otherwise. What price makes the game fair?', 'Dollars:', key='2',
              note='Expected payout 12/6.'),
           sa('A raffle has one $1,000 prize and 400 tickets. What ticket price makes the raffle fair?', 'Dollars:', key='2.5',
              note='1000/400.'),
           tf('A game is fair when the price equals the expected payout.', key=True, note='Expected net 0.'),
-          mc('A game costs $3 and pays $10 with probability 0.25. What is the expected net gain over 100 plays?', [
+          mc('A game costs $3 and pays $10 with probability 0.25 (and nothing otherwise). What is the expected net gain over 100 plays?', [
               '-$50', '$50', '-$0.50', '$250'], note='100(2.5 - 3).'),
           tf('A raffle with 400 tickets and a $1,000 prize is fair at $5 per ticket.', key=False, note='Fair at $2.50.'),
       ], prog='same-course deepening', demand='Work backward from fairness to a price and scale to many plays.'),
@@ -360,7 +364,7 @@ SETS += [
               'X has the higher expected value, but Y has no risk of loss.', 'Y has the higher expected value of the two.',
               'X is certain to gain $400 for whoever chooses it.', 'X and Y have exactly the same expected value.'], note='Expected value and risk.'),
           tf('Expected value describes the long-run average, not what happens in one decision.', key=True, note='Meaning.'),
-          sa('Insurance costs $200. Without it, a $1,500 repair is needed with probability 0.1. What is the expected repair cost '
+          sa('Insurance costs $200. Without it, a $1,500 repair is needed with probability 0.1 (otherwise no repair is needed). What is the expected repair cost '
              'without insurance?', 'Dollars:', key='150', note='1500 · 0.1.'),
           tf('Buying insurance always has a greater expected value than not buying it.', key=False,
              note='Insurers set prices above expected costs.'),
@@ -372,9 +376,9 @@ SETS += [
       target='Evaluate and compare strategies on the basis of expected values (insurance plans, warranties, investments)',
       strand='advanced', covers=['MD5b-compare'],
       main=[
-          sa('Plan A: premium $1,200, deductible $500. Plan B: premium $900, deductible $1,000. A claim larger than $1,000 occurs '
-             'with probability 0.2 (at most one claim). Find the expected yearly cost of each plan (premium plus expected '
-             'deductible).', ['Plan A:', 'Plan B:'], key='1300; 1100', note='Form required: both. 1200 + 100; 900 + 200.'),
+          sa('Plan A: premium $1,200, deductible $500. Plan B: premium $900, deductible $1,000. In a year, one claim larger than $1,000 '
+             'occurs with probability 0.2, and otherwise there is no claim. When the claim occurs, the owner pays the plan\'s '
+             'deductible. Find the expected yearly cost of each plan (premium plus expected deductible).', ['Plan A:', 'Plan B:'], key='1300; 1100', note='Form required: both. 1200 + 100; 900 + 200.'),
           mc('Plan A has expected cost $1,300 and plan B $1,100 per year. Which plan is better on the basis of expected cost?', [
               'Plan B', 'Plan A', 'They are equal', 'It cannot be decided'], note='Lower expected cost.'),
           sa('Option X gains $2,000 with probability 0.3 and loses $400 with probability 0.7. Option Y gains $250 for sure. Find '
@@ -385,7 +389,7 @@ SETS += [
               'X is certain to gain $320 for the person who chooses it.',
               'X and Y have the same expected value, so they are equal.'],
              note='Expected value plus risk.'),
-          sa('A phone warranty costs $150. Without it, a repair costing $800 is needed with probability 0.1. What is the expected '
+          sa('A phone warranty costs $150. Without it, a repair costing $800 is needed with probability 0.1 (otherwise no repair is needed). What is the expected '
              'repair cost without the warranty, and how much more is the warranty than that?', ['Expected cost:', 'Difference:'],
              key='80; 70', note='Form required: both. 800 · 0.1; 150 - 80.'),
       ],
@@ -405,7 +409,7 @@ SETS += [
           B('Read a distribution and its mean', 'HSS-MD.A.2', [
               tf('The option with the larger expected value is better on average.', key=True, note='Long run.'),
               sa('X = 1000 with probability 0.6 and -500 with probability 0.4. Find E(X).', 'E(X):', key='400', note='600 - 200.'),
-              mc('Which has the larger expected value: $50 for sure, or $120 with probability 0.5?', [
+              mc('Which has the larger expected value: $50 for sure, or $120 with probability 0.5 (and $0 otherwise)?', [
                   '$120 with probability 0.5', '$50 for sure', 'they are equal', 'cannot tell'], note='60 > 50.'),
               sa('Cost = 500 with probability 0.2 and 0 otherwise. Find the expected cost.', 'Dollars:', key='100',
                  note='500 · 0.2.'),
@@ -425,14 +429,14 @@ SETS += [
           tf('The better plan never depends on the claim probability.', key=False, note='It switches at p = 0.6.'),
       ], prog='same-course deepening', demand='Find where two strategies have equal expected value.'),
       f2=B('Make fair decisions with probability', 'HSS-MD.B.6', [
-          mc('Four friends want to decide fairly with one die who gets a ticket. Which method is fair?', [
-              'Assign 1-4 to the friends and reroll a 5 or 6.', 'Assign 1-4 and give 5 and 6 to the first friend.',
+          mc('Four friends want to decide fairly with one fair die who gets a ticket. Which method is fair?', [
+              'Assign 1-4 to the friends; on a 5 or 6, roll again.', 'Assign 1-4 and give 5 and 6 to the first friend.',
               'Give 1-3 to one friend and 4-6 to the other three.', 'Give the ticket to whoever guesses the roll.'],
-             note='Rerolling keeps 1/4 each; the others favor someone or do not use chance fairly.'),
+             note='Rolling again until a 1-4 comes up keeps 1/4 each; the others favor someone or do not use chance fairly.'),
           tf('A method is fair if every person has the same probability of being chosen.', key=True, note='Definition.'),
-          sa('Ana has 4 tickets, Ben 6 and Cy 10 in a drawing of 20 tickets. What is P(Ana wins)?%s' % FL, 'P:', key='1/5',
+          sa('Ana has 4 tickets, Ben 6 and Cy 10 in a drawing of 20 tickets; one ticket is drawn, each equally likely. What is P(Ana wins)?%s' % FL, 'P:', key='1/5',
              note='4/20.'),
-          mc('In a two-dice game, A wins if the sum is 7 or less; otherwise B wins. Is it fair?', [
+          mc('In a game with two fair dice rolled independently, A wins if the sum is 7 or less; otherwise B wins. Is it fair?', [
               'No: A wins with probability 7/12.', 'Yes: A has 6 sums and B has 5.', 'No: A wins with probability 6/11.',
               'Yes: each player has 1/2.'], note='1 + 2 + 3 + 4 + 5 + 6 = 21 of 36 outcomes.'),
           tf('Letting the oldest person choose is a fair random method.', key=False, note='Not random.'),
@@ -451,12 +455,12 @@ SETS += [
           sa('One of four people, A, B, C and D, is chosen with random digits: 0-1 = A, 2-3 = B, 4-5 = C, 6-7 = D, and 8-9 are '
              'skipped. Reading line 2 of the table from the left, who is chosen? Enter A, B, C or D.', 'Person:', key=FIRST2, fig=DIGT,
              note='The first digit of line 2 is 4 → C.'),
-          sa('Two players each flip a coin. Ana wins if the coins match; Ben wins if they differ. What is P(Ana wins)?%s' % FL, 'P:',
+          sa('Two players each flip a fair coin, independently. Ana wins if the coins match; Ben wins if they differ. What is P(Ana wins)?%s' % FL, 'P:',
              key='1/2', note='HH or TT: 2 of 4.'),
-          mc('Two dice are rolled. Player A wins if the sum is 6, 7 or 8; otherwise B wins. Is the game fair?', [
+          mc('Two fair dice are rolled independently. Player A wins if the sum is 6, 7 or 8; otherwise B wins. Is the game fair?', [
               'No: A wins with probability 4/9.', 'Yes: the sums are split fairly.', 'No: A wins with probability 3/11.',
               'Yes: each player wins with probability 1/2.'], note='16 of 36 outcomes.'),
-          sa('In a drawing, Ana has 3 tickets, Ben 5 and Cy 2, out of 10. What is P(Ben wins)?%s' % FL, 'P:', key='1/2',
+          sa('In a drawing, Ana has 3 tickets, Ben 5 and Cy 2, out of 10; one ticket is drawn, each equally likely. What is P(Ben wins)?%s' % FL, 'P:', key='1/2',
              note='5/10.'),
       ],
       back=[
@@ -469,16 +473,17 @@ SETS += [
                                                                                                       'letter):',
                  key='skip', note='Skipped.'),
               tf('Skipping digits 8 and 9 makes the assignment unfair.', key=False, note='The others stay equally likely.'),
-              mc('Using the same assignment, the digits read 8, 9, 3. Who is chosen?', ['B', 'D', 'A', 'no one'],
+              mc('One of four people is chosen with random digits: 0-1 = A, 2-3 = B, 4-5 = C, 6-7 = D, and 8-9 are skipped (read the next '
+                 'digit). The digits read 8, 9, 3. Who is chosen?', ['B', 'D', 'A', 'no one'],
                  note='8 and 9 skipped; 3 → B.'),
           ], align='exact',
             why=why('the student cannot use digits to choose at random.', 'fair decisions often use them.',
                     'assigns and reads random digits.')),
           B('Find probabilities in a uniform model', '7.SP.C.7.a', [
-              sa('A die is rolled. What is P(an odd number)?%s' % FL, 'P:', key='1/2', note='3/6.'),
+              sa('A fair six-sided die is rolled. What is P(an odd number)?%s' % FL, 'P:', key='1/2', note='3/6.'),
               tf('With a fair coin, heads and tails each have probability 1/2.', key=True, note='Uniform.'),
               mc('Names of 5 people are in a hat. P(a particular person is drawn)?', ['1/5', '1/4', '1/2', '5'], note='Uniform.'),
-              sa('Two coins are flipped. What is P(they match)?%s' % FL, 'P:', key='1/2', note='HH, TT.'),
+              sa('Two fair coins are flipped independently. What is P(they match)?%s' % FL, 'P:', key='1/2', note='HH, TT.'),
               tf('A spinner with one half red and two quarters blue and green is fair among the three colors.', key=False,
                  note='1/2, 1/4, 1/4.'),
           ], align='supporting',
@@ -486,15 +491,17 @@ SETS += [
                     'finds probabilities in uniform models.')),
       ],
       f1=B('Design fair methods for awkward numbers', 'HSS-MD.B.6', [
-          mc('Five people must be chosen from fairly with one die. Which method works?', [
-              'Assign 1-5 to the people and reroll a 6.', 'Assign 1-5 to the people and give 6 to the first person.',
+          mc('Five people must be chosen from fairly with one fair die. Which method works?', [
+              'Assign 1-5 to the people; on a 6, roll again.', 'Assign 1-5 to the people and give 6 to the first person.',
               'Roll and divide the result by 5.', 'Assign 1-6 and let the sixth face mean "everyone".'],
-             note='Rerolling keeps 1/5 each.'),
-          sa('With the "reroll a 6" method for 5 people, what is each person\'s probability of being chosen?%s' % FL, 'P:',
+             note='Rolling again until a 1-5 comes up keeps 1/5 each; the others favor one person or do not pick exactly one person.'),
+          sa('Five people are assigned the faces 1-5 of a fair die; on a 6 the die is rolled again, until a 1-5 comes up. What is each person\'s probability of being chosen?%s' % FL, 'P:',
              key='1/5', note='Uniform over 5 faces.'),
-          tf('A method that gives one person 2 of 6 die faces and the others 1 each is unfair.', key=True, note='2/6 vs 1/6.'),
-          sa('Using two-digit numbers 00-99, how many numbers should each of 3 people get for a fair choice, if the rest are '
-             'skipped?', 'Numbers each:', key='33', note='99 numbers (00-98) split 33 each; skip 99.'),
+          tf('A method that uses one roll of a fair die and gives one person 2 of the 6 faces and each other person 1 face is unfair.', key=True, note='2/6 vs 1/6.'),
+          sa('One of 3 people is chosen with random two-digit numbers 00-99. Each person gets the same number of values, as many of '
+             'the 100 numbers as possible are used, and a skipped number means reading the next number. How many numbers does each '
+             'person get?', 'Numbers each:', key='33', note='3 · 33 = 99 numbers are used (for example 00-98) and one (99) is skipped. '
+             'Fewer per person would also be fair but would use fewer of the numbers.'),
           tf('Drawing names one at a time from a hat without replacement is unfair to the last name.', key=False,
              note='Each order position is equally likely.'),
       ], prog='same-course deepening', demand='Build fair methods when the number of people does not divide the outcomes.'),
@@ -556,8 +563,8 @@ SETS += [
                     'computes conditional fractions.')),
       ],
       f1=B('See how prevalence changes the answer', 'HSS-MD.B.7', [
-          sa('Now 10% of 1,000 people have the disease; the test is positive for 90% of them and for 5% of the healthy. How many '
-             'true positives and how many false positives?', ['True positives:', 'False positives:'], key='90; 45',
+          sa('In a population of 1,000 people, 10% have a disease. A test is positive for 90% of the people with the disease and for 5% '
+             'of the people without it. How many true positives and how many false positives are there?', ['True positives:', 'False positives:'], key='90; 45',
              note='Form required: both. 0.9 · 100; 0.05 · 900.'),
           sa('With 90 true positives and 45 false positives, what is P(disease given positive)?%s' % FL, 'P:', key='2/3',
              note='90/135.'),
@@ -570,16 +577,20 @@ SETS += [
           tf('For a rare disease, a positive result makes having the disease certain.', key=False, note='About 27% here.'),
       ], prog='same-course deepening', demand='Compare the same test in populations with different prevalence.'),
       f2=B('Analyze strategies in games and quality control', 'HSS-MD.B.7', [
-          sa('A box of 10 parts has 2 defective. An inspector checks 2 parts at random. What is P(no defective part is found)?%s' % FL,
+          sa('A box of 10 parts has 2 defective. An inspector checks 2 parts chosen at random, without replacement (every pair equally likely). What is P(no defective part is found)?%s' % FL,
              'P:', key='28/45', note='8C2/10C2.'),
           tf('Checking more parts raises the chance of finding a defective part.', key=True, note='Fewer escape.'),
-          sa('A test question has 4 choices; a correct answer earns 1 point and a wrong answer loses 1/3 point. What is the '
-             'expected score of a random guess, and of a guess after one wrong choice is eliminated?%s' % FL,
+          sa('A test question has 4 choices and one correct answer; a correct answer earns 1 point, a wrong answer loses 1/3 point, '
+             'and a blank earns 0. A guess picks at random among the choices still in play. What is the expected score of a guess '
+             'with no choices eliminated, and of a guess after one wrong choice is eliminated?%s' % FL,
              ['Random guess:', 'After eliminating one:'], key='0; 1/9', note='Form required: both. 1/4 - (3/4)(1/3); 1/3 - '
                                                                            '(2/3)(1/3).'),
-          mc('Using those expected scores, when is guessing worthwhile?', [
+          mc('A test question has 4 choices and one correct answer: +1 point if correct, -1/3 point if wrong, 0 if left blank. A guess '
+             'picks at random among the choices still in play. When does a guess have a positive expected score?', [
               'after eliminating at least one wrong choice', 'never, under any circumstances', 'always, even with no information',
-              'only on the last question of the test'], note='Expected 1/9 > 0.'),
+              'only on the last question of the test'],
+             note='No elimination: 1/4 - (3/4)(1/3) = 0, the same as a blank. One elimination: 1/3 - (2/3)(1/3) = 1/9 > 0. The '
+                  'others ignore the elimination or the zero expected value of a blind guess.'),
           tf('A strategy with a higher expected value always wins in a single try.', key=False, note='Only on average.'),
       ], prog='same-course deepening', demand='Apply the same probability analysis to other decisions.',
         builds='Builds on FORWARD 1: the decision analysis used for tests is carried to inspection and test-taking strategy.')),
@@ -590,9 +601,11 @@ SETS += [
              'take a risk in a game',
       strand='advanced', covers=['MD7-strategy'],
       main=[
-          sa('A hockey team trails by 1 goal with 2 minutes left. Keeping the goalie gives a 0.08 chance of tying; pulling the '
-             'goalie for an extra skater gives a 0.20 chance of tying (but more chance of allowing another goal, which also loses). '
-             'Give both chances of tying.', ['Keep goalie:', 'Pull goalie:'], key='0.08; 0.2', note='Form required: both.'),
+          sa('A hockey team trails by 1 goal with 2 minutes left, and its only goal is to avoid losing, which requires tying. Keeping '
+             'the goalie gives a 0.08 chance of tying; pulling the goalie for an extra skater gives a 0.20 chance (allowing another '
+             'goal still means a loss, as before). By how many percentage points does pulling the goalie raise the chance of tying, '
+             'and how many times as large is that chance?', ['Percentage points:', 'Times as large:'], key='12; 2.5',
+             note='Form required: both. 20 - 8 = 12 points; 0.20/0.08 = 2.5.'),
           mc('The team loses unless it ties. Keeping the goalie gives a 0.08 chance of tying; pulling gives 0.20. Which strategy '
              'is better?', [
               'Pull the goalie: it gives the better chance of avoiding a loss.',
@@ -600,10 +613,11 @@ SETS += [
               'Keep the goalie: 0.08 is the safer probability.',
               'Either one: both chances are less than one-half.'],
              note='A second goal against changes nothing: a loss is a loss.'),
-          sa('A box of 12 parts has 3 defective. An inspector checks 2 parts at random. What is P(no defective part is found)?%s'
+          sa('A box of 12 parts has 3 defective. An inspector checks 2 parts chosen at random, without replacement (every pair equally likely). What is P(no defective part is found)?%s'
              % FL, 'P:', key='6/11', note='9C2/12C2 = 36/66.'),
-          sa('A test question has 5 choices; a correct answer earns 1 point and a wrong answer loses 1/4 point. Find the expected '
-             'score of a random guess, and of a guess after eliminating one wrong choice.%s' % FL,
+          sa('A test question has 5 choices and one correct answer; a correct answer earns 1 point, a wrong answer loses 1/4 point, '
+             'and a blank earns 0. A guess picks at random among the choices still in play. Find the expected score of a guess with '
+             'no choices eliminated, and of a guess after eliminating one wrong choice.%s' % FL,
              ['Random guess:', 'After eliminating one:'], key='0; 1/16', note='Form required: both. 1/5 - (4/5)(1/4); 1/4 - '
                                                                             '(3/4)(1/4).'),
           mc('A company can test 2 or 5 parts from each box of 10 (2 defective). With 2 tested, P(missing both defectives) = 28/45; '
@@ -618,7 +632,7 @@ SETS += [
                  note='3 · 0.5.'),
               tf('Between two strategies, the one with the larger expected value is better on average.', key=True,
                  note='Long run.'),
-              mc('Strategy B scores 2 for sure; strategy A scores 3 with probability 0.5. Which is better on average?', [
+              mc('Strategy B scores 2 for sure; strategy A scores 3 with probability 0.5 and 0 otherwise. Which is better on average?', [
                   'B', 'A', 'equal', 'cannot tell'], note='2 > 1.5.'),
               sa('A guess earns 1 with probability 1/3 and loses 1/3 otherwise. Expected score?%s' % FL, 'Score:', key='1/9',
                  note='1/3 - 2/9.'),
@@ -642,28 +656,34 @@ SETS += [
              note='Form required: both. 50 + 0.2 · 400.'),
           tf('A strategy can have a better expected value even if it sometimes produces the worst outcome.', key=True,
              note='Expected value averages outcomes.'),
-          mc('A student must decide whether to guess on 10 four-choice questions with a 1/3-point penalty. Which strategy has '
-             'the highest expected score?', [
-              'Guess only where at least one choice can be eliminated.', 'Guess only on the last question.',
-              'Guess on every question, even with no information.', 'Leave every question blank.'],
-             note='Expected 0 with no information; 1/9 or more after eliminating.'),
-          sa('With two choices eliminated (2 left), what is the expected score of a guess (1 point right, -1/3 wrong)?%s' % FL,
+          mc('On a test, each question has 4 choices and one correct answer: +1 point if correct, -1/3 point if wrong, 0 if blank. A '
+             'guess picks at random among the choices still in play. Which statement about strategy is correct?', [
+              'A blind guess and a blank both average 0; a guess after one elimination averages 1/9.',
+              'A blind guess averages -1/12, less than a blank, so never guess without eliminating.',
+              'A blind guess averages 1/4, more than a blank, so guess on every question.',
+              'Eliminating one wrong choice leaves the average score of a guess at 0.'],
+             note='Blind: 1/4 - (3/4)(1/3) = 0, the same as a blank (so blind guessing neither helps nor hurts on average). After '
+                  'one elimination: 1/3 - (2/3)(1/3) = 1/9. The others give wrong expected values.'),
+          sa('A question has 4 choices and one correct answer: +1 point if correct, -1/3 point if wrong, 0 if blank. Two wrong choices '
+             'are eliminated, and a guess picks at random between the 2 left. What is the expected score of the guess?%s' % FL,
              'Score:', key='1/3', note='1/2 - (1/2)(1/3).'),
           tf('Probability analysis can tell exactly what will happen in one game.', key=False, note='It describes chances.'),
       ], prog='same-course deepening', demand='Combine probabilities with costs to choose a strategy.'),
       f2=B('Combine several probability tools in one decision', 'HSS-MD.B.7', [
-          sa('A quiz has 5 four-choice questions. A student guesses on all. What is the expected number correct, and P(all '
-             'wrong)?%s' % FL, ['Expected correct:', 'P(all wrong):'], key='1.25; 243/1024',
-             note='Form required: both. 5/4; (3/4)^5.'),
+          sa('A quiz has 5 questions (each question has 4 choices and one correct answer; each guess picks a choice at random, independently of the others), and a student guesses on all of them. What is the expected number '
+             'correct, and P(all wrong)? Give each answer as a fraction in lowest terms.', ['Expected correct:', 'P(all wrong):'],
+             key='5/4; 243/1024', note='Form required: both, as fractions. 5 · 1/4; (3/4)^5.'),
           tf('P(at least one correct) = 1 - P(all wrong).', key=True, note='Complement.'),
-          sa('A quiz has 5 four-choice questions and a student guesses on all. What is P(at least one correct)?%s' % FL, 'P:',
+          sa('A quiz has 5 questions (each question has 4 choices and one correct answer; each guess picks a choice at random, independently of the others), and a student guesses on all of them. What is P(at least one correct)?%s' % FL, 'P:',
              key='781/1024', note='1 - 243/1024.'),
-          mc('A team must choose between a play that gains 2 points with probability 0.5 and one that gains 3 points with '
-             'probability 0.3. Which has the higher expected gain?', ['the 2-point play', 'the 3-point play', 'equal',
+          mc('A team must choose between a play that gains 2 points with probability 0.5 (and 0 otherwise) and one that gains 3 '
+             'points with probability 0.3 (and 0 otherwise). Which has the higher expected gain?', ['the 2-point play', 'the 3-point play', 'equal',
                                                                        'cannot tell'],
              note='1.0 versus 0.9.'),
-          tf('If the team needs 3 points to win, the 2-point play is still the better choice.', key=False,
-             note='Only the 3-point play can win; its chance is 0.3 versus 0.'),
+          tf('On one final play, option P scores 2 points with probability 0.5 (otherwise 0) and option Q scores 3 points with '
+             'probability 0.3 (otherwise 0). The team needs at least 3 points on this play to win. Option P is the better choice.',
+             key=False, note='Option P can never reach 3 points, so its chance of winning is 0; option Q wins with probability 0.3, '
+                             'even though P has the higher expected gain (1.0 versus 0.9).'),
       ], prog='same-course deepening', demand='Use expected value, complements and goals together.',
         builds='Builds on FORWARD 1: costs and probabilities are combined with a goal that changes which strategy is best.')),
 ]

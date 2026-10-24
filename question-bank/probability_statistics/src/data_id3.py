@@ -223,14 +223,17 @@ SETS = [
           sa('A bolt fits if its diameter is between 9.8 and 10.2 mm. Diameters are normal with mean 10.0 mm and SD 0.1 mm. Table: '
              'area 0.9772 left of z = 2 and 0.0228 left of z = -2. What proportion of bolts fit?', 'Answer:', key='0.9544',
              note='0.9772 - 0.0228.'),
-          mc('Machine A fills bottles with mean 500 mL, SD 4 mL; machine B with mean 502 mL, SD 1 mL. A bottle is underfilled below '
+          mc('Fill amounts from both machines are approximately normal. Machine A fills bottles with mean 500 mL, SD 4 mL; machine B '
+             'with mean 502 mL, SD 1 mL. A bottle is underfilled below '
              '498 mL. Table: area 0.3085 to the left of z = -0.5; the area to the left of z = -4 is less than 0.0001. '
              'Which machine underfills fewer bottles?', [
               'B: under 0.01% versus about 31% for A', 'A, because its mean is closer to 498 mL', 'They underfill the same proportion',
               'A, because its standard deviation is larger'],
              note='A: z = (498 - 500)/4 = -0.5, area 0.3085. B: z = (498 - 502)/1 = -4, area very close to 0.'),
-          tf('Reducing a process\'s standard deviation, with the mean unchanged, reduces the proportion of items far from the mean.',
-             key=True, note='The same limits are more standard deviations away.'),
+          tf('A process makes items whose lengths are approximately normal. If its standard deviation is reduced while its mean stays '
+             'the same and the process stays normal, the proportion of items more than 1 mm from the mean goes down.',
+             key=True, note='The same 1 mm cutoff is now more standard deviations away, so each normal tail is smaller. For other '
+                            'shapes a smaller SD alone would not guarantee this.'),
           sa('Scores are normal with mean 70 and SD 10. A prize goes to scores of 85 or more. Table: area 0.9332 left of z = 1.5. What '
              'proportion of students win?', 'Answer:', key='0.0668', note='1 - 0.9332.'),
           mc('Two normal processes have the same mean. Process 1 has SD 2; process 2 has SD 5. Which has more items within 4 units of '
@@ -731,7 +734,7 @@ SETS += [
       ], prog='same-course deepening', demand='Check a prediction against the data range and the context.'),
       f2=B('Compare predictions from two fitted models', 'HSS-ID.B.6.a', [
           sa('Two models fit a town\'s population (thousands), t years after 2020: linear L = 2t + 40 and exponential '
-             'E = 40(1.05)^t. Predict each for t = 2. Round E to two decimal places.', ['L:', 'E:'], key='44; 44.1',
+             'E = 40(1.05)^t. Predict each for t = 2. Round E to two decimal places.', ['L:', 'E:'], key='44; 44.10',
              note='Form required: both. 40 · 1.1025 = 44.1.'),
           mc('For the models L = 2t + 40 and E = 40(1.05)^t, which statement about large t is correct?', [
               'E eventually predicts more, because it grows by a constant percent.',

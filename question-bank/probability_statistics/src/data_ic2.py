@@ -9,7 +9,12 @@ from qb import S, B, sa, mc, tf
 from common import why, n, mean, dlist, tbl
 from datasets import D
 from data_id1 import histf
-from data_ic1 import RULE5
+from data_ic1 import RULE5, rule
+
+def plant(counted):
+    return rule('the "no difference" model (plant food does not change growth)', counted + ' (A minus B; a one-sided check)').replace(
+        'with the data;', 'with the data and the difference is significant;').replace(
+        'otherwise it is consistent', 'otherwise it is consistent and the difference is not significant')
 
 MOE = ' Use margin of error = 2 × (standard deviation of the simulated values).'
 SLEEP = D('S28 sleep', [7, 6.5, 8, 7.5, 6, 9, 7, 8], 'hours', 'Hours of sleep reported by a random sample of 8 students')
@@ -31,7 +36,7 @@ SETS = [
       main=[
           sa('In a random sample of 400 adults, 248 favor a new park. What is the sample proportion? Give a decimal.',
              'Proportion:', key='0.62', note='248/400.'),
-          sa('500 random samples of size 400 were simulated from a population with proportion 0.62. The simulated sample '
+          sa('(Hypothetical simulation results.) 500 random samples of size 400 were simulated from a population with proportion 0.62. The simulated sample '
              'proportions had standard deviation 0.024.%s What is the margin of error?' % MOE, 'Margin of error:', key='0.048',
              note='2 · 0.024.'),
           sa('A sample proportion is 0.62 and the margin of error is 0.048. Give the interval of plausible values for the '
@@ -61,7 +66,7 @@ SETS = [
                     'computes sample proportions.')),
           B('Read a standard deviation as typical variation', 'HSS-ID.A.2', [
               tf('A standard deviation measures how far values typically are from their mean.', key=True, note='Meaning.'),
-              mc('Simulated proportions from samples of size 100 have SD 0.05; from samples of size 400, SD 0.025. Which vary '
+              mc('(Hypothetical simulation results.) Simulated proportions from samples of size 100 have SD 0.05; from samples of size 400, SD 0.025. Which vary '
                  'less?', ['the proportions from samples of size 400', 'the proportions from samples of size 100',
                            'they vary the same', 'cannot tell'], note='Smaller SD.'),
               sa('Compute 2 × 0.031.', 'Answer:', key='0.062', note='Doubling.'),
@@ -79,16 +84,16 @@ SETS = [
           mc('A pollster wants a smaller margin of error. What should change?', [
               'take a larger random sample', 'take a smaller random sample', 'ask only volunteers', 'round the results'],
              note='Larger n.'),
-          sa('Simulated proportions from samples of size 900 have SD 0.016.%s What is the margin of error?' % MOE,
+          sa('(Hypothetical simulation results.) Simulated proportions from samples of size 900 have SD 0.016.%s What is the margin of error?' % MOE,
              'Margin of error:', key='0.032', note='2 · 0.016.'),
           tf('A larger sample removes the bias of a poorly worded question.', key=False, note='Size does not fix bias.'),
       ], prog='same-course deepening', demand='Predict and compute how the margin of error depends on sample size.'),
       f2=B('Read margins of error in poll reports', 'HSS-IC.B.6', [
           mc('Candidate A has 48% and candidate B has 45%, each with a margin of error of 4 percentage points. What is the best '
              'conclusion?', [
-              'Too close to call: the two intervals overlap a lot.', 'A is certainly ahead of B by exactly 3 points.',
+              'No clear leader: the two intervals overlap a lot.', 'A is certainly ahead of B by exactly 3 points.',
               'B is certainly behind A by at least 3 points.', 'Both candidates have under 50%, so both lose.'],
-             note='44%-52% and 41%-49% overlap.'),
+             note='44%-52% and 41%-49% overlap a lot, so a cautious reading is that the poll shows no clear leader. The others claim certainty the poll cannot give, or confuse sample percents with winning.'),
           sa('A report gives 62% with a margin of error of 5 percentage points. Give the interval in percents.', ['From:', 'To:'],
              key='57%; 67%', note='Form required: both.'),
           tf('A margin of error describes only random sampling variation, not bias from how the sample was chosen.', key=True,
@@ -110,7 +115,7 @@ SETS = [
       main=[
           sa('A random sample of 8 students reported these hours of sleep: %s. What is the sample mean?' % dlist(SLEEP), 'Mean:',
              key='7.375', note='59/8.'),
-          sa('Simulated random samples of 8 students gave sample means with standard deviation 0.15 hour.%s What is the margin of '
+          sa('(Hypothetical simulation results.) Simulated random samples of 8 students gave sample means with standard deviation 0.15 hour.%s What is the margin of '
              'error?' % MOE, 'Margin of error (hours):', key='0.3', note='2 · 0.15.'),
           sa('A sample mean is 7.4 hours with a margin of error of 0.3 hour. Give the interval of plausible values for the '
              'population mean.', ['From:', 'To:'], key='7.1; 7.7', note='Form required: both.'),
@@ -119,7 +124,7 @@ SETS = [
               'Population means from 7.1 to 7.7 hours are plausible.', 'Every student sleeps between 7.1 and 7.7 hours.',
               'The population mean is exactly 7.4 hours.', 'Half of all students sleep 7.4 hours.'],
              note='The interval is for the mean, not for individuals.'),
-          sa('In 1,000 simulated samples, the middle 95% of sample means ran from 41.2 to 44.8. Give the center of this interval '
+          sa('(Hypothetical simulation results.) In 1,000 simulated samples, the middle 95% of sample means ran from 41.2 to 44.8. Give the center of this interval '
              'and the margin of error (half its width).', ['Center:', 'Margin of error:'], key='43; 1.8',
              note='Form required: both. (41.2 + 44.8)/2 and (44.8 - 41.2)/2.'),
       ],
@@ -149,13 +154,13 @@ SETS = [
               'Means of larger samples vary more, so the margin is larger.',
               'Both sample sizes give the same margin of error.',
               'Sample size has no effect at all on sample means.'], note='Quadrupling n halves the SD.'),
-          sa('Simulated sample means from samples of size 36 have SD 1.%s What is the margin of error?' % MOE,
+          sa('(Hypothetical simulation results.) Simulated sample means from samples of size 36 have SD 1.%s What is the margin of error?' % MOE,
              'Margin of error:', key='2', note='2 · 1.'),
           tf('Individual values vary more than means of samples of those values.', key=True, note='Averaging reduces spread.'),
           sa('An estimate of 52 has a margin of error of 2. Is 55 a plausible population mean? Enter yes or no.', 'Answer:',
              key='no', note='50 to 54.'),
-          tf('A margin of error for a mean can be computed without any random sample.', key=False,
-             note='It describes random sampling variation.'),
+          tf('A margin of error corrects the bias of a convenience sample.', key=False,
+             note='A margin of error describes only random sampling variation; it does not fix bias from how the sample was chosen.'),
       ], prog='same-course deepening', demand='Relate sample size to the spread of sample means and judge values.'),
       f2=B('Compare two treatments\' means', 'HSS-IC.B.5', [
           sa('Plant food A: mean growth 13 cm; plant food B: mean growth 10 cm. What is the difference (A minus B)?',
@@ -165,7 +170,7 @@ SETS = [
              note='Re-randomization models "no effect".'),
           tf('A difference in means from a randomized experiment is always caused by the treatment.', key=False,
              note='It may be chance.'),
-          sa('In 200 re-randomizations, a difference of 3 or more occurred 4 times. What proportion? Give a decimal.',
+          sa('(Hypothetical simulation results.) In 200 re-randomizations, a difference of 3 or more occurred 4 times. What proportion? Give a decimal.',
              'Proportion:', key='0.02', note='4/200.'),
           tf('A difference that chance alone produces in only 2% of re-randomizations is significant under a 5% rule.', key=True,
              note='2% < 5%.'),
@@ -181,12 +186,13 @@ SETS = [
           sa('Ten plants were randomly assigned to plant food A or B. Find the mean growth for each group and the difference '
              '(A minus B).', ['Mean A:', 'Mean B:', 'Difference:'], key='13; 10; 3', fig=GT,
              note='Form required: all three. 65/5, 50/5.'),
-          sa('In an experiment, 10 plants were randomly assigned to two plant foods (5 each), and the difference in mean growth was '
+          sa('(Hypothetical simulation results.) In an experiment, 10 plants were randomly assigned to two plant foods (5 each), and the difference in mean growth was '
              '3 cm. The 10 results were re-randomized into two groups of 5 a total of 200 times. A difference of 3 or more occurred 4 '
              'times. What proportion of the re-randomizations is that? Give a decimal.', 'Proportion:', key='0.02',
              note='4/200.'),
-          mc('In 200 re-randomizations, a difference of 3 or more (the observed difference) occurred 4 times.%s Which decision '
-             'is correct?' % RULE5.replace('the model', 'the "no difference" model'), [
+          mc('(Hypothetical simulation results.) Ten plants were randomly assigned to plant food A or B (5 each); mean growth A minus B was 3 cm. In 200 '
+             're-randomizations, a difference (A minus B) of 3 or more occurred 4 times.%s Which decision is correct?' % (
+                 plant('differences of 3 or more')), [
               'The difference is significant: chance gave it only 2% of the time.',
               'The difference is not significant: it happened 4 times by chance.',
               'The difference is not significant: the groups had only 5 plants.',
@@ -198,8 +204,9 @@ SETS = [
               'Grows 10 new plants, again using the two plant foods.', 'Repeats the whole experiment with many more plants.',
               'Swaps the means of the two original groups of plants.'],
              note='It models the "no difference" assumption.'),
-          mc('Another experiment found a difference of 1.2. In 200 re-randomizations, differences of 1.2 or more occurred 62 '
-             'times.%s Which decision is correct?' % RULE5.replace('the model', 'the "no difference" model'), [
+          mc('(Hypothetical simulation results.) In another plant-food experiment with random assignment, mean growth A minus B was 1.2 cm. In 200 re-randomizations, '
+             'differences (A minus B) of 1.2 or more occurred 62 times.%s Which decision is correct?' % (
+                 plant('differences of 1.2 or more')), [
               'Not significant: chance gave such a difference 31% of the time.',
               'Significant: 62 is a large number of re-randomizations.',
               'Significant: the difference 1.2 is greater than 0.',
@@ -209,7 +216,7 @@ SETS = [
       back=[
           B('Decide whether a model is consistent with data', 'HSS-IC.A.2', [
               tf('A result that would happen rarely under a model is evidence against the model.', key=True, note='Logic of the test.'),
-              sa('A result at least as extreme happened in 3 of 150 simulated trials. What proportion? Give a decimal.',
+              sa('(Hypothetical simulation results.) A result at least as extreme happened in 3 of 150 simulated trials. What proportion? Give a decimal.',
                  'Proportion:', key='0.02', note='3/150.'),
               mc('Under the 5% rule, a result as extreme as the data occurred in 12% of trials. The decision is', [
                   'consistent with the model', 'not consistent with the model', 'the model is proven', 'no decision'],
@@ -221,7 +228,7 @@ SETS = [
             why=why('the student cannot apply the decision rule.', 'deciding significance uses the same rule.',
                     'decides from a proportion and a threshold.')),
           B('Explain random assignment', 'HSS-IC.B.3', [
-              tf('Random assignment makes the treatment groups similar before treatment.', key=True, note='Balances other variables.'),
+              tf('Random assignment tends to make the treatment groups similar before treatment, although chance differences remain.', key=True, note='It tends to balance other variables between the groups; it does not make them identical.'),
               mc('In an experiment, plants were assigned to two plant foods at random. Why?', [
                   'so growth differences can be credited to food', 'so that more of the plants grow well',
                   'so the two group means come out equal', 'so that no plant needs to be measured'], note='Purpose.'),
@@ -243,7 +250,7 @@ SETS = [
             why=why('the student cannot compute the group means.', 'the comparison uses their difference.', 'computes means.')),
       ],
       f1=B('Use differences in either direction', 'HSS-IC.B.5', [
-          sa('In 200 re-randomizations, differences of 3 or more occurred 4 times and differences of -3 or less occurred 5 times. '
+          sa('(Hypothetical simulation results.) In 200 re-randomizations, differences of 3 or more occurred 4 times and differences of -3 or less occurred 5 times. '
              'What proportion is at least 3 away from 0 in either direction? Give a decimal.', 'Proportion:', key='0.045',
              note='9/200.'),
           tf('Under a 5% rule, a proportion of 0.045 means the difference is significant.', key=True, note='0.045 < 0.05.'),
@@ -260,7 +267,7 @@ SETS = [
               'Subjects chose their own group: no random assignment.', 'Twenty subjects is too many for a study.',
               'Scores of two groups cannot be compared.', 'Drinks cannot be studied in an experiment.'], note='Self-selection.'),
           tf('A report should say whether a difference could plausibly be due to chance.', key=True, note='Significance.'),
-          mc('A report says a new method raised mean scores from 70 to 71, "a significant improvement." Re-randomization shows '
+          mc('(Hypothetical simulation results.) A report says a new method raised mean scores from 70 to 71, "a significant improvement." Re-randomization shows '
              'such differences 40% of the time. What is the best response?', [
               'Not supported: chance often gives such differences.', 'Supported: 71 is higher than 70.',
               'Proven true: the study was an experiment.', 'The new method actually lowered scores.'], note='40% ≥ 5%.'),

@@ -250,7 +250,8 @@ SETS = [
       ],
       back=[
           B('Fit a line by eye', '8.SP.A.2', [
-              tf('A good fitted line has about as many points above it as below it.', key=True, note='Balanced residuals.'),
+              tf('A least-squares line must have exactly as many data points above it as below it.', key=False,
+                 note='Least squares (with an intercept) makes the residuals add to 0; the numbers of points above and below can differ.'),
               mc('Which line passes through (0, 2), (2, 6) and (4, 10)?', ['y = 2x + 2', 'y = x + 2', 'y = 2x', 'y = 4x + 2'],
                  note='Check each point.'),
               sa('A line drawn by eye passes through (0, 50) and (5, 75). Find its slope and y-intercept.', ['Slope:',
@@ -387,7 +388,7 @@ SETS = [
           tf('A larger slope always means a stronger correlation.', key=False, note='Slope depends on units; r does not.'),
           sa('The least-squares slope equals r·(s_y/s_x). If r = 0.8, s_y = 10 and s_x = 4, what is the slope?', 'Slope:',
              key='2', note='0.8 · 2.5.'),
-          mc('If the least-squares line has slope 0, what is r?', ['0', '1', '-1', 'it cannot be found'], note='b = r·s_y/s_x.'),
+          mc('The x-values vary and the y-values vary (neither is constant). If the least-squares line has slope 0, what is r?', ['0', '1', '-1', 'it cannot be found'], note='b = r·s_y/s_x.'),
       ], prog='cross-standard extension', demand='Connect the slope of the fitted line with the correlation coefficient.',
         builds='Builds on FORWARD 1: the slope, read as a rate with units, is compared with the unit-free r.')),
 ]

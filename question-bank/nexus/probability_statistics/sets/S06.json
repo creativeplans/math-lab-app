@@ -4,7 +4,7 @@
   "id": "PS",
   "grade": null,
   "course": "Probability & Statistics",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -1009,8 +1009,8 @@
      "nearest_related": false,
      "type": "tf",
      "response": "select true or false",
-     "prompt": "If two groups have very different medians and small IQRs, their distributions overlap very little.",
-     "prompt_markup": "If two groups have very different medians and small IQRs, their distributions overlap very little.",
+     "prompt": "Group 1 has median 20 and IQR 2; group 2 has median 40 and IQR 2. The middle halves (Q1 to Q3) of the two groups cannot overlap.",
+     "prompt_markup": "Group 1 has median 20 and IQR 2; group 2 has median 40 and IQR 2. The middle halves (Q1 to Q3) of the two groups cannot overlap.",
      "choices": [
       {
        "letter": "A",
@@ -1026,10 +1026,10 @@
      "correct_answer": "True",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Small spread around far-apart centers.",
+     "grading_note": "Each box contains its median and is 2 wide, so box 1 lies within 18 to 22 and box 2 within 38 to 42. The summaries say nothing about the tails, which could still overlap.",
      "figure": null,
      "page": 212,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret the differences in shape, center and spread between two data sets in the terms of their context",
      "target_skill": "Compare two distributions informally",
@@ -1094,8 +1094,8 @@
      "nearest_related": false,
      "type": "mc",
      "response": "select one",
-     "prompt": "Which pair of groups overlaps the most?",
-     "prompt_markup": "Which pair of groups overlaps the most?",
+     "prompt": "Which pair of groups has the smallest gap between medians measured in IQRs (median gap divided by the common IQR)?",
+     "prompt_markup": "Which pair of groups has the smallest gap between medians measured in IQRs (median gap divided by the common IQR)?",
      "choices": [
       {
        "letter": "A",
@@ -1119,10 +1119,10 @@
      "correct_answer": "medians 20 and 21, both IQRs 10",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Centers 1 apart relative to spreads of 10.",
+     "grading_note": "1/10 = 0.1. The others give 20/2 = 10, 10/1 = 10 and 40/5 = 8.",
      "figure": null,
      "page": 214,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret the differences in shape, center and spread between two data sets in the terms of their context",
      "target_skill": "Compare two distributions informally",
@@ -1352,8 +1352,8 @@
      "standard_course": "Probability & Statistics",
      "type": "tf",
      "response": "select true or false",
-     "prompt": "Two groups whose means are 0.2 standard deviations apart overlap a great deal.",
-     "prompt_markup": "Two groups whose means are 0.2 standard deviations apart overlap a great deal.",
+     "prompt": "Two approximately normal groups have the same standard deviation, and their means are 0.2 standard deviations apart. Their distributions overlap a great deal.",
+     "prompt_markup": "Two approximately normal groups have the same standard deviation, and their means are 0.2 standard deviations apart. Their distributions overlap a great deal.",
      "choices": [
       {
        "letter": "A",
@@ -1369,10 +1369,10 @@
      "correct_answer": "True",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Small separation relative to spread.",
+     "grading_note": "Under the stated normal model with equal spread, a 0.2-SD gap leaves most values of each group in the range of the other. Summaries alone, without a shape, would not decide this.",
      "figure": null,
      "page": 220,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret the differences in shape, center and spread between two data sets in the terms of their context",
      "target_skill": "Measure separation in units of spread",
@@ -1475,8 +1475,8 @@
      "standard_course": "Probability & Statistics",
      "type": "mc",
      "response": "select one",
-     "prompt": "A report says that brand X bulbs \"last much longer\" than brand Y: means 1,010 and 1,000 hours, both with standard deviation 80 hours. Evaluate.",
-     "prompt_markup": "A report says that brand X bulbs \"last much longer\" than brand Y: means 1,010 and 1,000 hours, both with standard deviation 80 hours. Evaluate.",
+     "prompt": "A report says that brand X bulbs \"last much longer\" than brand Y. Lifetimes of both brands are approximately normal with means 1,010 and 1,000 hours and the same standard deviation, 80 hours. Evaluate.",
+     "prompt_markup": "A report says that brand X bulbs \"last much longer\" than brand Y. Lifetimes of both brands are approximately normal with means 1,010 and 1,000 hours and the same standard deviation, 80 hours. Evaluate.",
      "choices": [
       {
        "letter": "A",
@@ -1500,10 +1500,10 @@
      "correct_answer": "Weak: the means differ by about 0.13 standard deviations, so the lives overlap almost completely.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "10/80 = 0.125. The others overstate or misuse the spread.",
+     "grading_note": "10/80 = 0.125 SD; for two normal distributions with equal spread, that gap means near-total overlap. The others overstate or misuse the spread.",
      "figure": null,
      "page": 223,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret the differences in shape, center and spread between two data sets in the terms of their context",
      "target_skill": "Judge whether a difference supports a claim",
@@ -1531,8 +1531,8 @@
      "standard_course": "Probability & Statistics",
      "type": "tf",
      "response": "select true or false",
-     "prompt": "A difference of 5 points between group means is more convincing when each group's standard deviation is 2 than when it is 20.",
-     "prompt_markup": "A difference of 5 points between group means is more convincing when each group's standard deviation is 2 than when it is 20.",
+     "prompt": "A difference of 5 points between two group means is 2.5 standard deviations when each group's standard deviation is 2, but only 0.25 standard deviations when it is 20.",
+     "prompt_markup": "A difference of 5 points between two group means is 2.5 standard deviations when each group's standard deviation is 2, but only 0.25 standard deviations when it is 20.",
      "choices": [
       {
        "letter": "A",
@@ -1548,10 +1548,10 @@
      "correct_answer": "True",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "2.5 SDs versus 0.25 SDs.",
+     "grading_note": "5/2 and 5/20. How strong the evidence is would also depend on sample sizes and design, which are not given.",
      "figure": null,
      "page": 224,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret the differences in shape, center and spread between two data sets in the terms of their context",
      "target_skill": "Judge whether a difference supports a claim",
@@ -1579,35 +1579,35 @@
      "standard_course": "Probability & Statistics",
      "type": "mc",
      "response": "select one",
-     "prompt": "A coach claims the new training \"improved race times a lot\": median time dropped from 52 to 50 seconds; IQRs 8 seconds. Which evaluation is best?",
-     "prompt_markup": "A coach claims the new training \"improved race times a lot\": median time dropped from 52 to 50 seconds; IQRs 8 seconds. Which evaluation is best?",
+     "prompt": "After new training, a team's median race time dropped from 52 to 50 seconds; the IQR was 8 seconds before and after. Which statement correctly describes the size of the drop relative to the spread?",
+     "prompt_markup": "After new training, a team's median race time dropped from 52 to 50 seconds; the IQR was 8 seconds before and after. Which statement correctly describes the size of the drop relative to the spread?",
      "choices": [
       {
        "letter": "A",
-       "text": "The drop is small relative to the spread (a quarter of an IQR), so \"a lot\" overstates it."
+       "text": "It is a quarter of an IQR (2/8), small relative to the athlete-to-athlete spread."
       },
       {
        "letter": "B",
-       "text": "The claim cannot be judged, because the IQRs of the two groups are equal."
+       "text": "It cannot be measured, because the two IQRs are equal to each other."
       },
       {
        "letter": "C",
-       "text": "The claim is wrong, because a drop in the median time means the athletes slowed down."
+       "text": "It shows that the athletes slowed down by two seconds on average."
       },
       {
        "letter": "D",
-       "text": "The drop is large, because two seconds is a long time in a race of 52 seconds."
+       "text": "It is four IQRs (8/2), large relative to the athlete-to-athlete spread."
       }
      ],
      "answer_lines": [],
      "correct_letter": "A",
-     "correct_answer": "The drop is small relative to the spread (a quarter of an IQR), so \"a lot\" overstates it.",
+     "correct_answer": "It is a quarter of an IQR (2/8), small relative to the athlete-to-athlete spread.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "2/8 = 0.25 IQR. Lower times are faster, so the choice saying the athletes slowed down is wrong too.",
+     "grading_note": "2/8 = 0.25 IQR. Whether 2 seconds matters in a race is a separate judgment that the ratio does not settle. The others invert the ratio, read a lower time as slower, or treat equal IQRs as a problem.",
      "figure": null,
      "page": 225,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret the differences in shape, center and spread between two data sets in the terms of their context",
      "target_skill": "Judge whether a difference supports a claim",

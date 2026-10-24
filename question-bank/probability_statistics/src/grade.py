@@ -12,7 +12,7 @@ Every question is graded automatically by the game (question-bank/AUTO_GRADING_R
 or a short answer that the game's answer checker accepts.
 """
 COURSE = dict(id='PS', name='Probability & Statistics', file='Probability_Statistics', seed=104, rules='profile')
-VERSION = '1.0.0'
+VERSION = '1.1.0'
 VERSION_DATE = '2026-10-24'
 BALANCE_MC = True
 STRICT_BACKWARD = True

@@ -40,7 +40,7 @@ SETS = [
       ],
       back=[
           B('Know what each design can support', 'HSS-IC.B.3', [
-              tf('Only a randomized experiment can support a cause-and-effect conclusion.', key=True, note='Among these designs.'),
+              tf('Of a sample survey, an observational study and a randomized experiment, the randomized experiment is the design built to support a cause-and-effect conclusion.', key=True, note='Random assignment makes the groups comparable; the other two designs do not assign treatments.'),
               mc('Which design lets results be generalized to a population?', [
                   'a random sample from that population', 'a group of volunteers', 'a convenience sample', 'an experiment on friends'],
                  note='Random sampling.'),
@@ -104,18 +104,18 @@ SETS = [
       strand='core', covers=['IC6-displays'],
       main=[
           sa('A bar graph\'s vertical axis starts at 50. One bar shows 52 and another shows 55. How tall is the second bar compared '
-             'with the first (ratio of drawn heights), and what is the ratio of the actual values? Round the second answer to two '
-             'decimal places.', ['Ratio of drawn heights:', 'Ratio of values:'], key='2.5; 1.06',
-             note='Form required: both. (55 - 50)/(52 - 50) = 2.5; 55/52 = 1.0577.'),
+             'with the first (ratio of drawn heights), and what is the ratio of the actual values? Give both ratios to two decimal '
+             'places.', ['Ratio of drawn heights:', 'Ratio of values:'], key='2.50; 1.06',
+             note='Form required: both, to two decimal places. (55 - 50)/(52 - 50) = 2.5; 55/52 = 1.0577.'),
           mc('An ad says a risk "increased 80%," from 1 in 10,000 to 1.8 in 10,000. Which statement is correct?', [
               'The absolute risk rose by only 0.8 in 10,000.', 'The risk is now 80 out of every 100 people.',
               'Most people will now be affected by it.', 'The risk went from 1% of people to 80%.'],
              note='Relative change sounds large; absolute change is tiny.'),
-          mc('A poll shows candidate A at 51% and B at 49%, with a margin of error of 3 percentage points. A headline says "A '
-             'leads!" What is the best evaluation?', [
+          mc('A poll shows candidate A at 51% and B at 49%, with a margin of error of 3 percentage points. A headline says "Poll shows A '
+             'has a reliable lead among all voters!" What is the best evaluation?', [
               'Misleading: the gap is well within the margin of error.', 'Correct: 51% is more than 49%, so A leads.',
               'Correct: A has a majority of all the voters.', 'Misleading: B is certainly ahead of A.'],
-             note='48%-54% and 46%-52% overlap.'),
+             note='48%-54% and 46%-52% overlap a lot, so the poll does not show a reliable lead. The others are false: 51% vs 49% is a sample result, not the population; a sample does not show a majority of all voters; and B is not certainly ahead.'),
           mc('A report gives the mean income in a town as $95,000, but most households earn under $50,000 and a few earn millions. '
              'What is the best evaluation?', [
               'The median would describe a typical household better.', 'The mean is the best summary for skewed data.',
@@ -128,7 +128,7 @@ SETS = [
           B('Use margins of error to compare results', 'HSS-IC.B.4', [
               sa('An estimate is 51% with a margin of error of 3 points. Give the interval.', ['From:', 'To:'], key='48%; 54%',
                  note='Form required: both.'),
-              tf('If two intervals overlap a lot, the data do not clearly show which value is larger.', key=True, note='Too close.'),
+              tf('If two intervals overlap a lot, a cautious reading is not to claim from them which value is larger.', key=True, note='Overlap is only a cautious reading; a formal comparison would use the margin of error of the difference.'),
               mc('Which pair of estimates (each ± 2 points) clearly differs?', ['40% and 50%', '48% and 50%', '49% and 51%',
                                                                                  '45% and 47%'],
                  note='38-42 and 48-52 do not overlap.'),
@@ -162,9 +162,12 @@ SETS = [
       ], prog='same-course deepening', demand='Name and quantify distortions in common displays.'),
       f2=B('Reason about conditional rates in reports', 'HSS-CP.A.5', [
           mc('A report says "most car accidents happen within 5 miles of home, so driving near home is dangerous." What is the '
-             'main flaw?', ['Most driving happens near home.', 'Accidents cannot be counted.', 'Five miles is too short.',
-                            'Cars are safer far away.'],
-             note='Rates need the amount of driving: P(accident given driving near home) is not reported.'),
+             'main flaw?', ['It uses counts without the amount of driving near and far from home.',
+                            'Car accidents cannot be counted accurately by anyone.',
+                            'A distance of five miles is too short to be studied.',
+                            'Cars are always safer when driven far from home.'],
+             note='A fair comparison needs exposure, such as accidents per mile driven near and far from home; the report gives '
+                  'counts only. The others are unsupported claims.'),
           tf('Knowing that 90% of people in a hospital are sick does not tell you the chance that a sick person is in the hospital.',
              key=True, note='P(sick given in the hospital) differs from P(in the hospital given sick).'),
           mc('A test catches 95% of people who have a rare disease. A report concludes that 95% of people who test positive have '

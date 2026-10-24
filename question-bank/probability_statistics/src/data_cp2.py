@@ -78,13 +78,13 @@ SETS = [
              'positive".', key=False, note='Reversing the condition is not allowed.'),
       ], prog='same-course deepening', demand='Move between everyday sentences, notation and computation.'),
       f2=B('Find a conditional probability as a fraction of outcomes', 'HSS-CP.B.6', [
-          sa('A die is rolled. Given the roll is odd, what is P(the roll is 5)?%s' % FL, 'P:', key='1/3', note='{1, 3, 5}.'),
-          sa('A card is red. What is P(it is a king)?%s' % FL, 'P:', key='1/13', note='2 of 26.'),
+          sa('A fair six-sided die is rolled. Given the roll is odd, what is P(the roll is 5)?%s' % FL, 'P:', key='1/3', note='{1, 3, 5}.'),
+          sa('A card drawn at random from a standard 52-card deck is red. What is P(it is a king)?%s' % FL, 'P:', key='1/13', note='2 of 26.'),
           tf('P(A given B) can be found as (outcomes in both A and B)/(outcomes in B) in a uniform model.', key=True,
              note='Fraction of B.'),
           mc('A number from 1 to 10 is even. What is P(it is greater than 6)?', ['2/5', '1/5', '2/3', '1/2'],
              note='{2, 4, 6, 8, 10}: 8 and 10.'),
-          tf('Given the roll of a die is even, P(roll is 3) = 1/6.', key=False, note='0.'),
+          tf('Given the roll of a fair six-sided die is even, P(roll is 3) = 1/6.', key=False, note='0.'),
       ], prog='cross-standard extension', demand='Compute conditional probabilities by counting within the condition.',
         builds='Builds on FORWARD 1: conditional sentences become counts within the conditioning event.')),
 
@@ -94,9 +94,9 @@ SETS = [
              'the model',
       strand='core', covers=['CP6-fraction'],
       main=[
-          sa('Two fair dice are rolled. The first die shows 5. What is P(the sum is 10 or more)?%s' % FL, 'P:', key='1/3',
+          sa('Two fair dice are rolled independently. The first die shows 5. What is P(the sum is 10 or more)?%s' % FL, 'P:', key='1/3',
              note='Second die 5 or 6: 2 of 6.'),
-          sa('A card drawn from a standard deck is red. What is P(it is an ace)?%s' % FL, 'P:', key='1/13', note='2 of 26.'),
+          sa('A card drawn at random from a standard 52-card deck is red. What is P(it is an ace)?%s' % FL, 'P:', key='1/13', note='2 of 26.'),
           sa('A patient from the drug table is chosen at random and got the placebo. What is P(improved)?%s' % FL, 'P:',
              key='2/5', fig=TRIALT, note='12 of 30.'),
           sa('A number from 1 to 10 is chosen at random and is odd. What is P(it is prime)?%s' % FL, 'P:', key='3/5',
@@ -108,11 +108,11 @@ SETS = [
       ],
       back=[
           B('Count outcomes in events', 'HSS-CP.A.1', [
-              sa('How many red cards are in a standard deck?', 'Cards:', key='26', note='Hearts and diamonds.'),
-              sa('Two dice: how many outcomes have the first die equal to 5?', 'Outcomes:', key='6', note='(5,1) to (5,6).'),
-              tf('There are 2 red aces.', key=True, note='Hearts and diamonds.'),
+              sa('How many red cards are in a standard 52-card deck?', 'Cards:', key='26', note='Hearts and diamonds.'),
+              sa('Two fair dice rolled independently: how many outcomes have the first die equal to 5?', 'Outcomes:', key='6', note='(5,1) to (5,6).'),
+              tf('A standard 52-card deck has 2 red aces.', key=True, note='Hearts and diamonds.'),
               mc('How many numbers from 1 to 10 are odd and prime?', ['3', '4', '5', '2'], note='3, 5, 7.'),
-              tf('There are 4 red kings.', key=False, note='2.'),
+              tf('A standard 52-card deck has 4 red kings.', key=False, note='2.'),
           ], align='exact',
             why=why('the student cannot count the outcomes of an event.', 'the fraction needs both counts.', 'counts outcomes.')),
           B('Use the definition of conditional probability', 'HSS-CP.A.3', [
@@ -127,21 +127,21 @@ SETS = [
                     'uses the definition.')),
       ],
       f1=B('Condition on "at least one"', 'HSS-CP.B.6', [
-          sa('Two fair dice are rolled and at least one shows 6. What is P(the sum is 7)?%s' % FL, 'P:', key='2/11',
+          sa('Two fair dice are rolled independently and at least one shows 6. What is P(the sum is 7)?%s' % FL, 'P:', key='2/11',
              note='11 outcomes contain a 6; (1,6) and (6,1) sum to 7.'),
           sa('A family has two children; each is equally likely to be a girl or a boy. Given at least one is a girl, what is '
              'P(both are girls)?%s' % FL, 'P:', key='1/3', note='GG, GB, BG.'),
-          tf('Given at least one of two coins shows heads, P(both heads) = 1/2.', key=False, note='1/3.'),
-          mc('Two dice are rolled and the sum is at least 11. What is P(doubles)?', ['1/3', '1/2', '1/6', '1/36'],
+          tf('Two fair coins are flipped independently. Given at least one shows heads, P(both heads) = 1/2.', key=False, note='1/3.'),
+          mc('Two fair dice are rolled independently and the sum is at least 11. What is P(doubles)?', ['1/3', '1/2', '1/6', '1/36'],
              note='(5,6), (6,5), (6,6).'),
           tf('Conditioning on an event removes the outcomes outside it from the sample space.', key=True, note='Restriction.'),
       ], prog='same-course deepening', demand='Condition on compound events such as "at least one".'),
       f2=B('Multiply along a chain of conditions', 'HSS-CP.B.8', [
-          sa('A bag has 4 red and 2 blue marbles. Two are drawn without replacement. What is P(both red)?%s' % FL, 'P:',
+          sa('A bag has 4 red and 2 blue marbles. Two are drawn at random without replacement. What is P(both red)?%s' % FL, 'P:',
              key='2/5', note='(4/6)(3/5) = 12/30.'),
           tf('P(A and B) = P(A)·P(B given A).', key=True, note='General Multiplication Rule.'),
           sa('P(A) = 0.8 and P(B given A) = 0.25. Find P(A and B).', 'P(A and B):', key='0.2', note='0.8 · 0.25.'),
-          mc('Two cards are drawn without replacement. What is P(second is a heart given the first is a heart)?', [
+          mc('Two cards are drawn at random, without replacement, from a standard 52-card deck. What is P(second is a heart given the first is a heart)?', [
               '12/51', '13/52', '1/4', '13/51'], note='12 hearts left of 51 cards.'),
           tf('For draws without replacement, P(second red given first red) equals P(first red).', key=False,
              note='One red is gone.'),
@@ -155,8 +155,8 @@ SETS = [
       main=[
           sa('P(A) = 0.45, P(B) = 0.35 and P(A and B) = 0.15. Find P(A or B).', 'P(A or B):', key='0.65',
              note='0.45 + 0.35 - 0.15.'),
-          sa('A card is drawn from a standard deck. Find P(red or king).%s' % FL, 'P:', key='7/13', note='26 + 4 - 2 = 28; 28/52.'),
-          sa('Two fair dice are rolled. Find P(doubles or sum of 8).%s' % FL, 'P:', key='5/18',
+          sa('A card is drawn at random from a standard 52-card deck. Find P(red or king).%s' % FL, 'P:', key='7/13', note='26 + 4 - 2 = 28; 28/52.'),
+          sa('Two fair dice are rolled independently. Find P(doubles or sum of 8).%s' % FL, 'P:', key='5/18',
              note='6 + 5 - 1 = 10 outcomes; 10/36.'),
           mc('Of 200 students, 120 take Spanish, 70 take art, and 40 take both. A student is chosen at random. What is '
              'P(Spanish or art)?', ['3/4', '19/20', '1/5', '7/10'], note='150/200. 19/20 forgets to subtract the 40.'),
@@ -167,9 +167,9 @@ SETS = [
       ],
       back=[
           B('Count a union without double counting', 'HSS-CP.A.1', [
-              sa('A die is rolled. How many outcomes are "even or less than 3"?', 'Outcomes:', key='4', note='{1, 2, 4, 6}.'),
-              tf('Hearts or face cards: 13 + 12 - 3 = 22 cards.', key=True, note='Remove the 3 heart face cards counted twice.'),
-              mc('How many cards are aces or spades?', ['16', '17', '13', '4'], note='4 + 13 - 1.'),
+              sa('A fair six-sided die is rolled. How many outcomes are "even or less than 3"?', 'Outcomes:', key='4', note='{1, 2, 4, 6}.'),
+              tf('In a standard 52-card deck, the number of cards that are hearts or face cards is 13 + 12 - 3 = 22.', key=True, note='Remove the 3 heart face cards counted twice.'),
+              mc('In a standard 52-card deck, how many cards are aces or spades?', ['16', '17', '13', '4'], note='4 + 13 - 1.'),
               sa('How many numbers from 1 to 20 are multiples of 2 or multiples of 5?', 'Numbers:', key='12',
                  note='10 + 4 - 2.'),
               tf('The number of outcomes in "A or B" is always the count of A plus the count of B.', key=False,
@@ -189,7 +189,7 @@ SETS = [
       f1=B('Use the rule in reverse and with exclusive events', 'HSS-CP.B.7', [
           sa('P(A) = 0.5, P(B) = 0.4 and P(A or B) = 0.7. Find P(A and B).', 'P(A and B):', key='0.2', note='0.5 + 0.4 - 0.7.'),
           tf('If A and B are mutually exclusive, P(A or B) = P(A) + P(B).', key=True, note='P(A and B) = 0.'),
-          sa('A die is rolled. Find P(1 or 6).%s' % FL, 'P:', key='1/3', note='Exclusive: 1/6 + 1/6.'),
+          sa('A fair six-sided die is rolled. Find P(1 or 6).%s' % FL, 'P:', key='1/3', note='Exclusive: 1/6 + 1/6.'),
           mc('P(A) = 0.3, P(B) = 0.5, and A and B are independent. What is P(A or B)?', ['0.65', '0.8', '0.15', '0.5'],
              note='0.3 + 0.5 - 0.15.'),
           tf('If P(A) = 0.6 and P(B) = 0.7, then A and B could be mutually exclusive.', key=False,
@@ -200,7 +200,7 @@ SETS = [
           sa('Of 200 students, 120 take Spanish, 70 take art and 40 take both. What is P(neither)?%s' % FL, 'P:', key='1/4',
              note='1 - 3/4.'),
           tf('P(not (A or B)) = 1 - P(A or B).', key=True, note='Complement.'),
-          mc('A card is drawn. What is P(neither red nor a king)?', ['6/13', '7/13', '1/2', '11/26'], note='1 - 7/13.'),
+          mc('A card is drawn at random from a standard 52-card deck. What is P(neither red nor a king)?', ['6/13', '7/13', '1/2', '11/26'], note='1 - 7/13.'),
           tf('P(neither A nor B) = 1 - P(A) - P(B) in every case.', key=False, note='Only if A and B cannot overlap.'),
       ], prog='same-course deepening', demand='Find "neither" probabilities with the rule and the complement.',
         builds='Builds on FORWARD 1: the rule\'s pieces are combined with the complement to answer "neither" questions.')),
@@ -211,11 +211,11 @@ SETS = [
              'P(B)·P(A given B), and interpret the answer',
       strand='advanced', covers=['CP8-mult'],
       main=[
-          sa('A bag has 5 red and 3 blue marbles. Two are drawn without replacement. What is P(both red)?%s' % FL, 'P:',
+          sa('A bag has 5 red and 3 blue marbles. Two are drawn at random without replacement. What is P(both red)?%s' % FL, 'P:',
              key='5/14', note='(5/8)(4/7) = 20/56.'),
-          sa('A bag has 5 red and 3 blue marbles. Two are drawn without replacement. What is P(first red and second blue)?%s' % FL,
+          sa('A bag has 5 red and 3 blue marbles. Two are drawn at random without replacement. What is P(first red and second blue)?%s' % FL,
              'P:', key='15/56', note='(5/8)(3/7).'),
-          sa('Two cards are drawn without replacement. What is P(both aces)?%s' % FL, 'P:', key='1/221', note='(4/52)(3/51).'),
+          sa('Two cards are drawn at random, without replacement, from a standard 52-card deck. What is P(both aces)?%s' % FL, 'P:', key='1/221', note='(4/52)(3/51).'),
           sa('P(A) = 0.6 and P(B given A) = 0.5. Find P(A and B).', 'P(A and B):', key='0.3', note='0.6 · 0.5.'),
           mc('A committee has 3 boys and 2 girls. Two members are chosen at random, one after the other. What is P(both girls)?', [
               '1/10', '4/25', '1/5', '2/5'], note='(2/5)(1/4). 4/25 assumes replacement.'),
@@ -241,9 +241,9 @@ SETS = [
             why=why('the student cannot multiply and simplify fractions.', 'the rule multiplies fractions.', 'multiplies '
                     'fractions.')),
           B('Multiply for independent events', 'HSS-CP.A.2', [
-              sa('A die is rolled twice. What is P(both 6)?%s' % FL, 'P:', key='1/36', note='(1/6)(1/6).'),
+              sa('A fair die is rolled twice, independently. What is P(both 6)?%s' % FL, 'P:', key='1/36', note='(1/6)(1/6).'),
               tf('With replacement, P(red then red) from 5 red and 3 blue is (5/8)(5/8).', key=True, note='Independent draws.'),
-              mc('A coin is flipped and a die is rolled. P(tails and even)?', ['1/4', '1/2', '1/12', '2/3'], note='(1/2)(1/2).'),
+              mc('A fair coin is flipped and a fair die is rolled, independently. P(tails and even)?', ['1/4', '1/2', '1/12', '2/3'], note='(1/2)(1/2).'),
               sa('Independent events have P(A) = 0.5 and P(B) = 0.3. Find P(A and B).', 'P(A and B):', key='0.15',
                  note='0.5 · 0.3.'),
               tf('Without replacement, draws are independent.', key=False, note='Without replacement changes the second draw.'),
@@ -252,12 +252,12 @@ SETS = [
                     'multiplies probabilities of independent events.')),
       ],
       f1=B('Combine orders and longer chains', 'HSS-CP.B.8', [
-          sa('A bag has 5 red and 3 blue marbles. Two are drawn without replacement. What is P(one of each color)?%s' % FL, 'P:',
+          sa('A bag has 5 red and 3 blue marbles. Two are drawn at random without replacement. What is P(one of each color)?%s' % FL, 'P:',
              key='15/28', note='(5/8)(3/7) + (3/8)(5/7) = 30/56.'),
-          sa('Three cards are drawn without replacement. What is P(all three are hearts)?%s' % FL, 'P:', key='11/850',
+          sa('Three cards are drawn at random, without replacement, from a standard 52-card deck. What is P(all three are hearts)?%s' % FL, 'P:', key='11/850',
              note='(13/52)(12/51)(11/50) = 1716/132600.'),
           tf('P(A and B) = P(B)·P(A given B) gives the same answer as P(A)·P(B given A).', key=True, note='Both equal P(A and B).'),
-          mc('A bag has 4 green and 6 yellow marbles. Two are drawn without replacement. What is P(both yellow)?', [
+          mc('A bag has 4 green and 6 yellow marbles. Two are drawn at random without replacement. What is P(both yellow)?', [
               '1/3', '9/25', '3/5', '2/5'], note='(6/10)(5/9) = 30/90.'),
           tf('P(first red and second blue) equals P(first blue and second red) for 5 red and 3 blue drawn without replacement.',
              key=True, note='Both 15/56.'),
@@ -361,7 +361,7 @@ SETS += [
             why=why('the student cannot count ordered arrangements.', 'combinations are found from them.', 'counts '
                     'permutations.')),
           B('Represent and count outcomes of compound events', '7.SP.C.8.b', [
-              sa('List the 2-letter groups (order does not matter) from A, B, C. How many are there?', 'Groups:', key='3',
+              sa('How many 2-letter groups (order does not matter) can be chosen from the letters A, B, C?', 'Groups:', key='3',
                  note='AB, AC, BC.'),
               tf('From A, B, C, D, the groups AB and BA are the same group.', key=True, note='Unordered.'),
               mc('How many 2-letter groups (order does not matter) can be chosen from A, B, C, D?', ['6', '12', '4', '8'],
@@ -376,20 +376,20 @@ SETS += [
       f1=B('Count selections from separate groups', 'HSS-CP.B.9', [
           sa('A committee needs 3 of 5 boys and 2 of 4 girls. How many committees are possible?', 'Committees:',
              key=str(comb(5, 3) * comb(4, 2)), note='10 · 6.'),
-          sa('How many ways can 2 hearts be chosen from the 13 hearts in a deck?', 'Ways:', key=str(comb(13, 2)), note='13C2.'),
+          sa('How many ways can 2 hearts be chosen from the 13 hearts in a standard 52-card deck?', 'Ways:', key=str(comb(13, 2)), note='13C2.'),
           tf('nCr = n!/(r!(n - r)!).', key=True, note='Formula.'),
-          mc('How many 5-card hands can be chosen from 52 cards?', ['2,598,960', '311,875,200', '380,204,032', '260'],
+          mc('How many 5-card hands can be chosen from a standard 52-card deck (order does not matter)?', ['2,598,960', '311,875,200', '380,204,032', '260'],
              note='52C5. 311,875,200 is 52P5.'),
           tf('Choosing 2 from 4 girls and 3 from 5 boys gives 6 + 10 = 16 committees.', key=False, note='Multiply: 60.'),
       ], prog='same-course deepening', demand='Combine combination counts from separate groups.'),
       f2=B('Turn counts into probabilities', 'HSS-CP.B.9', [
           sa('3 people are chosen at random from 5 boys and 4 girls. How many groups are possible in all?', 'Groups:',
              key=str(comb(9, 3)), note='9C3 = 84.'),
-          sa('3 people are chosen at random from 5 boys and 4 girls. What is P(all three are girls)?%s' % FL, 'P:', key='1/21',
+          sa('3 people are chosen at random, without replacement (every group of 3 equally likely), from 5 boys and 4 girls. What is P(all three are girls)?%s' % FL, 'P:', key='1/21',
              note='4C3/9C3 = 4/84.'),
           tf('In a uniform model, P(event) = (number of outcomes in the event)/(number of outcomes in all).', key=True,
              note='Counting probability.'),
-          mc('2 cards are drawn from a deck. What is P(both hearts)?', ['1/17', '1/16', '13/52', '1/4'], note='78/1326.'),
+          mc('2 cards are drawn at random, without replacement, from a standard 52-card deck. What is P(both hearts)?', ['1/17', '1/16', '13/52', '1/4'], note='78/1326.'),
           tf('P(all three are boys) from 5 boys and 4 girls is 3/9.', key=False, note='10/84 = 5/42.'),
       ], prog='same-course deepening', demand='Use combination counts to compute probabilities.',
         builds='Builds on FORWARD 1: counts from separate groups become the numerator of a probability.')),
@@ -405,7 +405,7 @@ SETS += [
              note='4/84.'),
           sa('Five people line up in random order. What is P(Ann is first and Bo is second)?%s' % FL, 'P:',
              key=f(Fr(perm(3), perm(5))), note='3!/5! = 6/120.'),
-          sa('Two cards are dealt from a standard deck. What is P(both are hearts)?%s' % FL, 'P:', key='1/17',
+          sa('Two cards are dealt at random, without replacement, from a standard 52-card deck. What is P(both are hearts)?%s' % FL, 'P:', key='1/17',
              note='13C2/52C2 = 78/1326.'),
           mc('A 3-person group is chosen at random from 5 boys and 4 girls. What is P(exactly one girl)?', [
               '10/21', '5/21', '4/9', '1/3'], note='4C1 · 5C2 / 84 = 40/84.'),
@@ -420,13 +420,14 @@ SETS += [
           ], align='exact',
             why=why('the student cannot compute the counts.', 'probabilities are ratios of them.', 'evaluates nPr and nCr.')),
           B('Multiply conditional probabilities along draws', 'HSS-CP.B.8', [
-              sa('Using the Multiplication Rule, find P(both hearts) for two cards dealt without replacement.%s' % FL, 'P:',
+              sa('Using the Multiplication Rule, find P(both hearts) for two cards dealt at random, without replacement, from a standard 52-card deck.%s' % FL, 'P:',
                  key='1/17', note='(13/52)(12/51).'),
               tf('(4/9)(3/8)(2/7) = 1/21.', key=True, note='24/504.'),
               mc('From 5 boys and 4 girls, two are chosen in order without replacement. P(both boys)?', [
                   '5/18', '25/81', '5/9', '1/4'], note='(5/9)(4/8).'),
               sa('Five people line up at random. P(Ann first)?%s' % FL, 'P:', key='1/5', note='1 of 5.'),
-              tf('Drawing without replacement, P(second girl given first girl) = 4/9.', key=False, note='3/8.'),
+              tf('A group has 5 boys and 4 girls. Two people are chosen one after the other, at random and without replacement. Given that '
+                 'the first is a girl, P(second is a girl) = 4/9.', key=False, note='3/8.'),
           ], align='exact',
             why=why('the student cannot use the step-by-step method.', 'it checks the counting answer.', 'applies the '
                     'Multiplication Rule.')),
@@ -437,17 +438,17 @@ SETS += [
           sa('A 3-person group is chosen at random from 5 boys and 4 girls. What is P(at least one girl)?%s' % FL, 'P:',
              key='37/42', note='1 - 5/42.'),
           tf('P(at least one) = 1 - P(none).', key=True, note='Complement.'),
-          mc('Four cards are dealt. What is P(no aces)? (48C4 = 194,580 and 52C4 = 270,725.)', [
+          mc('Four cards are dealt at random, without replacement, from a standard 52-card deck. What is P(no aces)? (48C4 = 194,580 and 52C4 = 270,725.)', [
               '38,916/54,145', '4/52', '1/13', '194,580/52'], note='194,580/270,725 in lowest terms.'),
           tf('P(at least one girl) = 3 · (4/9).', key=False, note='Not a valid method.'),
       ], prog='same-course deepening', demand='Use the complement to count "at least one" events.'),
       f2=B('Define a random variable from a counting model', 'HSS-MD.A.1', [
-          sa('X = number of girls in a random group of 3 from 5 boys and 4 girls. What values can X take? Give the smallest and '
+          sa('X = the number of girls in a group of 3 chosen at random (without replacement, every group equally likely) from 5 boys and 4 girls. What values can X take? Give the smallest and '
              'the largest.', ['Smallest:', 'Largest:'], key='0; 3', note='Form required: both.'),
-          sa('For X = number of girls in the group, find P(X = 0) and P(X = 3).%s' % FL, ['P(X = 0):', 'P(X = 3):'],
+          sa('X = the number of girls in a group of 3 chosen at random (without replacement, every group equally likely) from 5 boys and 4 girls. Find P(X = 0) and P(X = 3).%s' % FL, ['P(X = 0):', 'P(X = 3):'],
              key='5/42; 1/21', note='Form required: both. 10/84 and 4/84.'),
-          tf('The probabilities P(X = 0), P(X = 1), P(X = 2), P(X = 3) add to 1.', key=True, note='10 + 40 + 30 + 4 = 84.'),
-          mc('For X = number of girls in the group, what is P(X = 2)?', ['5/14', '10/21', '1/21', '2/9'],
+          tf('X = the number of girls in a group of 3 chosen at random (without replacement, every group equally likely) from 5 boys and 4 girls. The probabilities P(X = 0), P(X = 1), P(X = 2), P(X = 3) add to 1.', key=True, note='10 + 40 + 30 + 4 = 84.'),
+          mc('X = the number of girls in a group of 3 chosen at random (without replacement, every group equally likely) from 5 boys and 4 girls. What is P(X = 2)?', ['5/14', '10/21', '1/21', '2/9'],
              note='4C2 · 5C1/84 = 30/84.'),
           tf('A random variable assigns a probability, not a number, to each outcome.', key=False,
              note='It assigns a number; the distribution gives probabilities.'),

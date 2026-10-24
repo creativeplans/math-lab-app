@@ -52,6 +52,13 @@ RULE5 = (' Decision rule: if results at least as extreme as the observed result 
          'trials, the model is not consistent with the data; otherwise it is consistent.')
 
 
+def rule(model, counted):
+    """A decision rule that names the model, exactly which simulated results are counted (one tail or both) and the 5%
+    cutoff, so the test is fixed before any choice is read."""
+    return (' Decision rule: the model is %s. Count the simulated results that are %s. If they make up fewer than 5%% of the '
+            'simulated results, the model is not consistent with the data; otherwise it is consistent.' % (model, counted))
+
+
 def frac_at_least(tab, k):
     return sum(v for x, v in tab.items() if x >= k) / sum(tab.values())
 
@@ -85,8 +92,9 @@ SETS = [
       back=[
           B('Recognize random and representative samples', '7.SP.A.1', [
               tf('A random sample tends to be representative of its population.', key=True, note='Each member has the same chance.'),
-              mc('A town wants residents\' opinion on a new park. Which method gives a random sample?', [
-                  'pick 100 names by lottery from the voter list', 'ask the first 100 people at the park',
+              mc('A town wants residents\' opinion on a new park and has a complete list of all residents. Which method gives a random '
+                 'sample of residents?', [
+                  'pick 100 names by lottery from the complete resident list', 'ask the first 100 people at the park',
                   'post an online survey and use the first replies', 'ask the members of the parks committee'],
                  note='Chance selection from the whole population.'),
               tf('A sample of volunteers who choose to respond is a random sample.', key=False, note='Self-selected.'),
@@ -133,7 +141,7 @@ SETS = [
           mc('A poll reports 48% with a margin of error of 3 percentage points. Which value is plausible for the population '
              'percent?', ['50%', '52%', '44%', '55%'], note='45% to 51%.'),
           tf('A larger random sample usually gives a smaller margin of error.', key=True, note='Less variability.'),
-          sa('Simulated sample proportions have standard deviation 0.025. Using margin of error = 2 × standard deviation, what is '
+          sa('(Hypothetical simulation results.) Simulated sample proportions have standard deviation 0.025. Using margin of error = 2 × standard deviation, what is '
              'the margin of error?', 'Margin of error:', key='0.05', note='2 · 0.025.'),
           tf('A margin of error accounts for bias from a sample of volunteers.', key=False,
              note='It covers only chance variation in random samples.'),
@@ -171,7 +179,7 @@ SETS = [
                  note='4, 1, 0, 3, 4.'),
               tf('A trial of a simulation for "number of heads in 10 flips" uses 10 random digits.', key=True,
                  note='One digit per flip.'),
-              mc('To simulate rolling a die with digits, what should be done with 0, 7, 8 and 9?', [
+              mc('To simulate rolling a fair six-sided die with digits, what should be done with 0, 7, 8 and 9?', [
                   'skip them and read the next digit', 'count them as a 6', 'count them as a 1', 'stop the simulation'],
                  note='Only 1-6 are used, so each face stays equally likely.'),
               tf('Running more trials of a simulation makes the estimated probability less reliable.', key=False,
@@ -180,7 +188,7 @@ SETS = [
             why=why('the student cannot set up a simulation for a chance process.', 'the standard asks for one.',
                     'assigns digits and defines a trial.')),
           B('Find a probability as a relative frequency', '7.SP.C.6', [
-              sa('In 50 simulated trials, an event happened 16 times. What is its relative frequency? Give a decimal.', 'Answer:',
+              sa('(Hypothetical simulation results.) In 50 simulated trials, an event happened 16 times. What is its relative frequency? Give a decimal.', 'Answer:',
                  key='0.32', note='16/50.'),
               sa('An event happened in 9 of 200 trials. What is its relative frequency as a percent?', 'Percent:', key='4.5%',
                  note='9/200.'),
@@ -211,7 +219,8 @@ SETS = [
           sa('In 100 simulated sets of 10 fair-coin flips (table), in what proportion of the sets were there 9 or more heads? Give '
              'a decimal.', 'Proportion:', key='0.02', fig=HT, note='2/100.'),
           mc('A coin claimed to be fair gave 9 heads in 10 flips. Use the table of 100 simulated sets.%s Which decision is '
-             'correct?' % RULE5, [
+             'correct?' % rule('a fair coin', '9 or more heads (a one-sided check: only an excess of heads counts against the '
+                                  'model)'), [
               'Not consistent: 9 or more heads happened in only 2% of the trials.',
               'Consistent: 9 or more heads happened in 2% of the trials.',
               'Consistent: a fair coin can land heads 9 times.',
@@ -240,24 +249,28 @@ SETS += [
           sa('The table shows 100 simulated sets of 10 fair-coin flips. In what proportion of the sets were there 8 or more heads? '
              'Give a decimal.', 'Proportion:', key='0.06', fig=HT, note='(4 + 2 + 0)/100.'),
           mc('A coin claimed to be fair gave 8 heads in 10 flips. Use the table of 100 simulated sets.%s Which decision is '
-             'correct?' % RULE5, [
+             'correct?' % rule('a fair coin', '8 or more heads (a one-sided check: only an excess of heads counts against the '
+                               'model)'), [
               'Consistent: 8 or more heads happened in 6% of the simulated sets.',
               'Not consistent: 8 or more heads happened in only 6% of the sets.',
               'Not consistent: a fair coin should give 5 heads every time.',
               'Consistent: 8 heads happened in exactly 4% of the sets.'],
              fig=HT, note='6% is not fewer than 5%. The others misapply the rule, expect exactly 5 heads, or use "exactly 8" (4%) instead of "8 or more".'),
-          sa('A die is claimed to be fair. In 60 rolls it showed 18 sixes. In 200 simulated sets of 60 fair rolls, 18 or more sixes '
+          sa('(Hypothetical simulation results.) A die is claimed to be fair. In 60 rolls it showed 18 sixes. In 200 simulated sets of 60 fair rolls, 18 or more sixes '
              'happened 4 times. What proportion of the simulated sets is that? Give a decimal.', 'Proportion:', key='0.02',
              note='4/200.'),
-          mc('A die claimed to be fair showed 18 sixes in 60 rolls. In 200 simulated sets of 60 fair rolls, 18 or more sixes '
-             'happened 4 times.%s Which decision is correct?' % RULE5, [
+          mc('(Hypothetical simulation results.) A die claimed to be fair showed 18 sixes in 60 rolls. In 200 simulated sets of 60 fair rolls, 18 or more sixes '
+             'happened 4 times.%s Which decision is correct?' % rule('a fair die', '18 or more sixes (a one-sided check: only an excess of '
+                                                                 'sixes counts against the model)'), [
               'Not consistent: so many sixes happened in only 2% of simulated sets.',
               'Consistent: 18 sixes is possible with a fair die.',
               'Consistent: 4 simulated sets had 18 or more sixes.',
               'Not consistent: a fair die must give exactly 10 sixes.'],
              note='2% < 5%. Possible is not the test; the proportion is.'),
-          mc('A spinner is claimed to land on red 25%% of the time. In 40 spins it landed on red 6 times. In 1,000 simulated sets '
-             'of 40 spins, 6 or fewer reds happened 120 times.%s Which decision is correct?' % RULE5, [
+          mc('(Hypothetical simulation results.) A spinner is claimed to land on red 25%% of the time. In 40 spins it landed on red 6 times. In 1,000 simulated sets '
+             'of 40 spins, 6 or fewer reds happened 120 times.%s Which decision is correct?' % rule(
+                 'a spinner that lands on red 25% of the time', '6 or fewer reds (a one-sided check: only too few reds counts '
+                 'against the model)'), [
               'Consistent: 6 or fewer reds happened in 12% of the sets.',
               'Not consistent: 6 is fewer than the expected 10 reds.',
               'Not consistent: only 120 of the sets had 6 or fewer.',
@@ -270,10 +283,10 @@ SETS += [
                  key='19', fig=GT, note='Read the table.'),
               sa('In the table of 50 simulated families, what proportion had 1 or fewer girls? Give a decimal.', 'Proportion:',
                  key='0.3', fig=GT, note='(3 + 12)/50.'),
-              tf('The table of 100 simulated coin sets shows 25 sets with exactly 5 heads.', key=True, fig=HT, note='Read it.'),
-              mc('In the table of 100 simulated coin sets, how many sets had 3 or fewer heads?', ['17', '12', '5', '29'], fig=HT,
+              tf('The table of 100 simulated sets of 10 fair-coin flips shows 25 sets with exactly 5 heads.', key=True, fig=HT, note='Read it.'),
+              mc('In the table of 100 simulated sets of 10 fair-coin flips, how many sets had 3 or fewer heads?', ['17', '12', '5', '29'], fig=HT,
                  note='0 + 1 + 4 + 12.'),
-              tf('In the table of 100 simulated coin sets, more sets had 6 heads than 4 heads.', key=False, fig=HT,
+              tf('In the table of 100 simulated sets of 10 fair-coin flips, more sets had 6 heads than 4 heads.', key=False, fig=HT,
                  note='20 each.'),
           ], align='exact',
             why=why('the student cannot read counts and proportions from simulation output.', 'the decision uses them.',
@@ -281,10 +294,10 @@ SETS += [
           B('Compare observed frequencies with a probability model', '7.SP.C.7.b', [
               tf('A coin that lands heads 520 times in 1,000 flips is reasonably consistent with a fair coin.', key=True,
                  note='52% is close to 50%.'),
-              mc('A fair die is rolled 600 times. About how many sixes does the fair model predict?', ['100', '160', '60', '600'],
+              mc('A fair die is rolled 600 times, independently. About how many sixes does the fair model predict?', ['100', '160', '60', '600'],
                  note='600/6.'),
               sa('How many heads does a fair-coin model predict on average in 10 flips?', 'Heads:', key='5', note='10 · 0.5.'),
-              tf('A fair die rolled 60 times must show each face exactly 10 times.', key=False, note='Results vary by chance.'),
+              tf('A fair die rolled 60 times, independently, must show each face exactly 10 times.', key=False, note='Results vary by chance.'),
               mc('A spinner is claimed to land on red 50% of the time. Which result in 100 spins most suggests the claim is wrong?',
                  ['82 red', '53 red', '47 red', '50 red'], note='Farthest from 50.'),
           ], align='supporting',
@@ -294,24 +307,29 @@ SETS += [
       f1=B('Decide using results extreme in either direction', 'HSS-IC.A.2', [
           sa('In the table of 100 simulated sets of 10 fair flips, what proportion had 9 or more heads or 1 or fewer heads? Give a '
              'decimal.', 'Proportion:', key='0.03', fig=HT, note='(2 + 0) + (0 + 1) = 3.'),
-          mc('A coin gave 1 head in 10 flips. Count results at least as far from 5 heads in either direction as 1 head (9 or more '
-             'heads, or 1 or fewer), using the table.%s Which decision is correct?' % RULE5, [
+          mc('A coin claimed to be fair gave 1 head in 10 flips. Use the table of 100 simulated sets of 10 fair-coin '
+             'flips; results at least as far from 5 heads as 1 head are in either tail.%s Which decision is correct?' % rule(
+                 'a fair coin', '9 or more heads or 1 or fewer heads (a two-sided check: too many or too few heads both count)'), [
               'Not consistent: such results happened in 3% of the sets.', 'Consistent: such results happened in 3% of the sets.',
               'Consistent: 1 head happened in exactly 1 set.', 'Not consistent: a fair coin cannot give 1 head.'],
              fig=HT, note='3% < 5%.', cols=2),
           tf('Under the 5% rule, the smaller the proportion of simulated results as extreme as the data, the stronger the evidence '
              'against the model.', key=True, note='Rarer under the model means stronger evidence.'),
-          sa('A coin gave 7 heads in 10 flips. In the table, what proportion of sets are at least as far from 5 heads in either '
+          sa('A coin claimed to be fair gave 7 heads in 10 flips. In the table, what proportion of sets are at least as far from 5 heads in either '
              'direction (7 or more, or 3 or fewer)? Give a decimal.', 'Proportion:', key='0.35', fig=HT,
              note='(12 + 4 + 2) + (12 + 4 + 1) = 35.'),
           tf('If a model is judged not consistent under the 5% rule, there is no chance that the model is true.', key=False,
              note='Rare results can still happen.'),
       ], prog='same-course deepening', demand='Count results extreme in both directions and decide.'),
       f2=B('Judge a treatment difference by re-randomization', 'HSS-IC.B.5', [
-          sa('In 100 re-randomizations of an experiment\'s results, a difference in means of 6 or more appeared 3 times. What '
+          sa('(Hypothetical simulation results.) In 100 re-randomizations of an experiment\'s results, a difference in means of 6 or more appeared 3 times. What '
              'proportion is that? Give a decimal.', 'Proportion:', key='0.03', note='3/100.'),
-          mc('The observed difference was 6. In 100 re-randomizations, differences of 6 or more appeared 3 times.%s Which decision '
-             'is correct?' % RULE5.replace('the model', 'the "no effect" model'), [
+          mc('(Hypothetical simulation results.) In a randomized experiment, the treatment group\'s mean minus the control group\'s mean was 6. In 100 re-randomizations '
+             'of the results, differences (treatment minus control) of 6 or more appeared 3 times.%s Which decision is correct?' % rule(
+                 'the "no effect" model (the treatment does not change the results)', 'differences of 6 or more (a one-sided '
+                 'check)').replace('the model is not consistent', 'the "no effect" model is not consistent').replace(
+                 'otherwise it is consistent', 'otherwise it is consistent, and the difference is not significant').replace(
+                 'with the data;', 'with the data and the difference is significant;'), [
               'The difference is significant: chance alone gave it 3% of the time.',
               'The difference is not significant: it appeared 3 times.',
               'The difference is not significant: re-randomizing changes the data.',
@@ -425,10 +443,11 @@ SETS += [
              note='Random sampling supports generalization. The others describe random assignment (cause), or claim it makes answers '
                   'identical or the sample small.'),
           mc('What is the main purpose of assigning subjects to treatments at random in an experiment?', [
-              'to make groups alike so a difference can be due to treatment', 'to let the results describe everyone in the country',
+              'to help balance other variables between the groups', 'to let the results describe everyone in the country',
               'to guarantee that the treatment will work', 'to avoid needing any control or comparison group'],
-             note='Random assignment supports cause. The others describe random sampling (generalization) or claim it guarantees '
-                  'success or replaces a control group.'),
+             note='Random assignment tends to balance other variables, so a difference larger than chance variation can be credited to '
+                  'the treatment; it does not guarantee identical groups. The others describe random sampling (generalization) or '
+                  'claim it guarantees success or replaces a control group.'),
           mc('A study randomly assigned 80 volunteers to two diets and found a significant difference in weight loss. The '
              'volunteers were not a random sample. What can be concluded?', [
               'The diet caused the difference for volunteers like these.',

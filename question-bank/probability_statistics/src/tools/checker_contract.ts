@@ -1,5 +1,5 @@
-// Runs the Untangle The Nexus short-answer checker on every short answer in the Algebra II key.
-//   npx tsx <this file> <Algebra2_Answer_Key.json> <out.json>     (run from the game repository, so its imports resolve)
+// Runs the Untangle The Nexus short-answer checker on every short answer in the answer key.
+//   npx tsx <this file> <Answer_Key.json> <out.json>     (run from the game repository, so its imports resolve)
 // For each short answer it records whether the game treats the key as automatically checkable, whether the key is
 // accepted as its own response, and whether two simple rewrites are accepted: the same answer without spaces, and a
 // sum written with its terms in reverse order (only for expressions with a variable).

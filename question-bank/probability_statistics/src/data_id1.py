@@ -245,10 +245,11 @@ SETS = [
                   '15-20, 20-25?%s' % (dlist(WAIT), EP), 'A',
                   [histf([0, 5, 10, 15, 20, 25], bincount(WAIT, [0, 5, 10, 15, 20, 25]), 'Minutes', ymax=8, ystep=2),
                    histf([0, 5, 10, 15, 20, 25], bincount_right(WAIT, [0, 5, 10, 15, 20, 25]), 'Minutes', ymax=8, ystep=2),
-                   histf([0, 5, 10, 15, 20, 25], [2, 7, 6, 2, 1], 'Minutes', ymax=8, ystep=2),
+                   histf([0, 5, 10, 15, 20, 25], [2, 6, 7, 2, 1], 'Minutes', ymax=8, ystep=2),
                    histf([0, 5, 10, 15, 20, 25], [3, 5, 6, 3, 1], 'Minutes', ymax=8, ystep=2)],
                   'Counts 0-5: %d, 5-10: %d, 10-15: %d, 15-20: %d, 20-25: %d (5, 10, 15 and 20 go in the bin they start). The '
-                  'others put endpoints in the lower bin or miscount.' % tuple(bincount(WAIT, [0, 5, 10, 15, 20, 25])), h=200),
+                  'others put each endpoint value in the lower bin (4, 7, 5, 2, 0), move one value from 5-10 into 10-15 (2, 6, 7, 2, 1), '
+                  'or miscount three bins (3, 5, 6, 3, 1).' % tuple(bincount(WAIT, [0, 5, 10, 15, 20, 25])), h=200),
           sa('Standing long-jump distances (cm) of 16 students are %s. A histogram uses the bins 140-150, 150-160, 160-170, '
              '170-180 and 180-190.%s How many values are in the bins 150-160 and 170-180?' % (dlist(JUMP), EP),
              ['150-160:', '170-180:'], key='%d; %d' % (bincount(JUMP, [150, 160])[0], bincount(JUMP, [170, 180])[0]),
@@ -257,10 +258,11 @@ SETS = [
                   '70-75, 75-80?%s' % (dlist(TEMP), EP), 'D',
                   [histf([55, 60, 65, 70, 75, 80], bincount(TEMP, [55, 60, 65, 70, 75, 80]), '°F', ymax=8, ystep=2),
                    histf([55, 60, 65, 70, 75, 80], bincount_right(TEMP, [55, 60, 65, 70, 75, 80]), '°F', ymax=8, ystep=2),
-                   histf([55, 60, 65, 70, 75, 80], [2, 5, 5, 5, 1], '°F', ymax=8, ystep=2),
+                   histf([55, 60, 65, 70, 75, 80], [2, 5, 4, 6, 1], '°F', ymax=8, ystep=2),
                    histf([55, 60, 65, 70, 75, 80], [2, 4, 6, 5, 1], '°F', ymax=8, ystep=2)],
                   'Counts 55-60: %d, 60-65: %d, 65-70: %d, 70-75: %d, 75-80: %d. The others put endpoints such as 60, 65, 70 and 75 '
-                  'in the lower bin, or miscount.' % tuple(bincount(TEMP, [55, 60, 65, 70, 75, 80])), h=200),
+                  'in the lower bin (3, 5, 6, 4, 0), move one value from 65-70 into 70-75 (2, 5, 4, 6, 1), or move one value from '
+                  '60-65 into 65-70 (2, 4, 6, 5, 1).' % tuple(bincount(TEMP, [55, 60, 65, 70, 75, 80])), h=200),
           sa('Page counts of 14 novels are %s. A histogram uses bins of width 50: 50-100, 100-150, ..., 300-350.%s Which bin has '
              'the most values (give its left endpoint), and how many values does it have?' % (dlist(PAGES), EP),
              ['Left endpoint of the tallest bin:', 'Values in that bin:'], key='150; %d' % bincount(PAGES, [150, 200])[0],

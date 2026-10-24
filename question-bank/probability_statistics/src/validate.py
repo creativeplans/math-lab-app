@@ -478,6 +478,184 @@ prob = [k for k in datasets.REG if '| %s |' % k not in text_md]
 check('Every dataset is synthetic and documented in DATASETS.md (values, size, unit, context)', prob,
       '%d datasets written to DATASETS.md' % len(datasets.REG))
 
+# ---------------------------------------------------------------- 15. four-graph choices: exactly one panel is correct
+import statistics as stx  # noqa: E402
+from math import comb as _comb  # noqa: E402
+
+
+def _panels(r):
+    return [f for row in r['figure_data']['figs'] for f in row['figs']]
+
+
+def _content(p):
+    """A panel's mathematical content: everything except its label, description and layout."""
+    return json.dumps({k: v for k, v in p.items() if k not in ('title', 'desc', 'tag', 'h', 'compact', 'xlab', 'ylab')},
+                      sort_keys=True)
+
+
+def _raw(q):
+    m = re.search(r'((?:-?\d+(?:\.\d+)?, ){4,}-?\d+(?:\.\d+)?)', q)
+    return [float(x) for x in m.group(1).split(', ')]
+
+
+def _five(v):
+    v = sorted(v)
+    h = len(v) // 2
+    return [v[0], stx.median(v[:h]), stx.median(v), stx.median(v[h + len(v) % 2:]), v[-1]]
+
+
+def _r(p):
+    return stx.correlation([t[0] for t in p['pts']], [t[1] for t in p['pts']])
+
+
+def _fits(p):
+    xs, ys = [t[0] for t in p['pts']], [t[1] for t in p['pts']]
+    sl, ic = stx.linear_regression(xs, ys)
+    (x0, y0), (x1, y1) = p['curves'][0][0], p['curves'][0][-1]
+    return abs((y1 - y0) / (x1 - x0) - sl) < 0.02 and abs(y0 - (ic + sl * x0)) < 0.2
+
+
+def _expected(r):
+    """A test that recomputes, from the question text alone, whether a panel is the correct graph (None: no rule)."""
+    q, ps = r['question'], _panels(r)
+    k = ps[0]['k']
+    if k == 'dot':
+        c = collections.Counter(n_ if n_ != int(n_) else int(n_) for n_ in _raw(q))
+        return lambda p: {a: b for a, b in p['data'].items() if b} == {str(a): b for a, b in c.items()}
+    if k == 'hist' and 'Each bin includes its left endpoint' in q:
+        v = _raw(q)
+        bins = [tuple(float(t) for t in re.split('[–-]', b)) for b in ps[0]['bins']]
+        want = [sum(1 for x in v if a <= x < b) for a, b in bins]
+        return lambda p: p['bins'] == ps[0]['bins'] and p['counts'] == want
+    if k == 'hist' and 'Four fair coins' in q:
+        return lambda p: p['counts'] == [_comb(4, i) for i in range(5)]
+    if k == 'box' and 'median of the lower half' in q:
+        f5 = _five(_raw(q))
+        return lambda p: [float(x) for x in p['five']] == [float(x) for x in f5]
+    if k == 'coord' and re.search(r'\(\d+, \d+(\.\d+)?\), \(', q):
+        pts = sorted((float(a), float(b)) for a, b in re.findall(r'\((\d+(?:\.\d+)?), (\d+(?:\.\d+)?)\)', q))
+        return lambda p: sorted((float(t[0]), float(t[1])) for t in p['pts']) == pts
+    if k == 'coord' and 'residual plot' in q:
+        a, b = map(int, re.search(r'y = (\d+)x \+ (\d+)', q).groups())
+        ys = [float(t) for t in re.search(r'y = ((?:\d+(?:\.\d+)?, )+\d+(?:\.\d+)?)\)', q).group(1).split(', ')]
+        res = [(float(i), round(y - (a * i + b), 6)) for i, y in enumerate(ys, 1)]
+        return lambda p: sorted((float(t[0]), round(float(t[1]), 6)) for t in p['pts']) == res
+    if k == 'coord' and 'strong, negative, linear' in q:
+        return lambda p: _r(p) < -0.9
+    if k == 'coord' and 'r ≈ -0.45' in q:
+        return lambda p: abs(_r(p) + 0.45) < 0.05
+    if k == 'coord' and 'best fits' in q:
+        return _fits
+    return None
+
+
+prob, recomputed, distinct_only = [], [], []
+for r in RECS:
+    if not (r['type'] == 'mc' and r['choices'][0]['text'] == 'Graph A'):
+        continue
+    ps = _panels(r)
+    if len({_content(p) for p in ps}) != 4:
+        prob.append(r['id'] + ' two panels have the same mathematical content')
+    test = _expected(r)
+    if test is None:
+        distinct_only.append(r['id'])
+        continue
+    recomputed.append(r['id'])
+    hit = [L_ for L_, p in zip('ABCD', ps) if test(p)]
+    if hit != [r['correct_letter']]:
+        prob.append('%s: panels that match the question: %s (keyed %s)' % (r['id'], ', '.join(hit) or 'none', r['correct_letter']))
+check('Four-graph choices: the four panels differ in mathematical content (labels and descriptions ignored), and exactly one '
+      'panel, the keyed one, matches the data or condition in the question', prob,
+      '%d items recomputed from the question text (%s); %d checked for distinct panels only (%s)' % (
+          len(recomputed), ', '.join(recomputed), len(distinct_only), ', '.join(distinct_only)))
+
+# ---------------------------------------------------------------- 16. probability models stated in the question
+ASKS = re.compile(r'\bP\(|probabilit|expected|likely|E\(X\)|\bfair\b|chance', re.I)
+EMPIRICAL = re.compile(r'claimed|was rolled \d+ times|were rolled|showed|gave|landed|empirical|is it fair|which method|fair\?|'
+                       r'consistent with', re.I)
+prob, nmod = [], 0
+for r in RECS:
+    q = r['question']
+    ql = q.lower()
+    if not ASKS.search(q):
+        continue
+    dev = re.search(r'\b(coins?|dice|die|spinner)\b', ql)
+    emp = EMPIRICAL.search(ql)
+    miss = []
+    if dev and not emp and not re.search(r'\bfair\b|equal sections|lands on .* of the time|equally likely|with probability', ql):
+        miss.append('fair device')
+    if dev and not emp and re.search(r'\b(two|three|four|both|\d+) (fair )?(coins|dice)\b|twice|\b\d+ times\b|flipped and a', ql) \
+            and 'independ' not in ql:
+        miss.append('independent trials')
+    if re.search(r'\bcards?\b', ql) and re.search(r'\bP\(|probabilit', q) and 'at random' not in ql:
+        miss.append('card drawn at random')
+    if re.search(r'\b(two|three|four|\d) cards\b|\bcards are (drawn|dealt)', ql) and re.search(r'\bP\(|probabilit', q) \
+            and 'replace' not in ql:
+        miss.append('with or without replacement')
+    if re.search(r'\bguess', ql) and re.search(r'\bP\(|expected|E\(X\)', q) and not re.search(r'at random|p\(correct\) =', ql):
+        miss.append('guessing model')
+    if re.search(r'(scores?|pays?|gains?|wins?) \$?[\d,]+( points?)? with probability', ql) \
+            and len(re.findall(r'with probability', ql)) < 2 and not re.search(r'otherwise|nothing|and 0', ql):
+        miss.append('payoff when the event does not happen')
+    if re.search(r'\b(two|three|\d) (parts|people|students|marbles)\b', ql) and re.search(r'at random|chosen', ql) \
+            and re.search(r'\bP\(|probabilit', q) and not re.search(r'replace|every (pair|group)|one after the other', ql):
+        miss.append('selection rule')
+    if dev or 'card' in ql or 'guess' in ql or 'with probability' in ql or 'at random' in ql:
+        nmod += 1
+    if miss:
+        prob.append('%s does not state: %s' % (r['id'], ', '.join(miss)))
+check('Probability models stated in the question: fair devices, independent trials, cards drawn at random with the replacement '
+      'rule, the guessing model, the payoff when an event does not happen, and the selection rule', prob,
+      '%d questions with a chance device, cards, guessing, payoffs or random selection' % nmod)
+
+# ---------------------------------------------------------------- 17. stated precision is the precision of the key
+PLACES = [(r'nearest tenth|one decimal place', 1), (r'nearest hundredth|two decimal places|two places', 2),
+          (r'nearest thousandth|three decimal places', 3)]
+PART = re.compile(r'Round (the (first|second|third) answer|[A-Z]\b)|(nearest \w+|decimal places?) and the')
+prob, nprec = [], 0
+for r in RECS:
+    if r['type'] != 'sa':
+        continue
+    q = r['question'] + ' ' + ' '.join(r['answer_lines'] or [])
+    ks = [k for pat, k in PLACES if re.search(pat, q)]
+    if len(ks) != 1:
+        continue
+    nprec += 1
+    for p_ in (x.strip() for x in r['correct_answer'].split(';')):
+        m = re.fullmatch(r'-?\$?\d+(\.(\d+))?%?', p_)
+        if m and ((m.group(1) and len(m.group(2)) != ks[0]) or (not m.group(1) and not PART.search(q))):
+            prob.append('%s key %s is not written to %d decimal places' % (r['id'], p_, ks[0]))
+check('Precision: when a question asks for a number of decimal places, each key part it applies to is written with exactly '
+      'that many (trailing zeros included, for example 2.00 and 0.10)', prob, '%d short answers state a precision' % nprec)
+
+# ---------------------------------------------------------------- 18. fixed right and wrong responses through the game checker
+# src/checker_cases.json: typed responses (the key, reordered parts, swapped values, reciprocals, other roundings, trailing
+# zeros) with the result each must get from the game's checker. Shows what the checker does, including what it accepts by
+# comparing values (1.25 for 5/4, 2 for 2.00).
+prob, ncases, cases_out = [], 0, []
+if os.path.exists(os.path.join(NEXUS, 'packages', 'curriculum', 'src', 'answers.ts')):
+    out = os.path.join(tempfile.mkdtemp(), 'cases.json')
+    run = subprocess.run(['npx', 'tsx', os.path.join(HERE, 'tools', 'checker_cases.ts'), P['data'] + '.json',
+                          os.path.join(HERE, 'checker_cases.json'), out], cwd=NEXUS, capture_output=True, text=True)
+    if run.returncode or not os.path.exists(out):
+        prob.append('NOT RUN: checker script failed: ' + run.stderr.strip()[-300:])
+    else:
+        cases_out = json.load(open(out, encoding='utf-8'))
+        ncases = len(cases_out)
+        for c_ in cases_out:
+            if c_['accepted'] is None:
+                prob.append(c_['id'] + ' not in the key')
+            elif c_['accepted'] != c_['expected']:
+                prob.append('%s response %s was %s; expected %s' % (c_['id'], '; '.join(c_['parts']),
+                                                                    'accepted' if c_['accepted'] else 'rejected',
+                                                                    'accepted' if c_['expected'] else 'rejected'))
+else:
+    prob.append('NOT RUN: game repository not found (set NEXUS_DIR)')
+check('Game answer checker, fixed responses: correct responses are accepted and wrong ones (parts in the wrong order, swapped '
+      'values, a reciprocal, a wrong rounding) are rejected', prob,
+      '%d responses, %d expected to be accepted and %d to be rejected; all got the expected result' % (
+          ncases, sum(1 for c_ in cases_out if c_['expected']), sum(1 for c_ in cases_out if not c_['expected'])))
+
 SCOPE = [
     'Automatic, every set: counts sections and questions in the source.',
     'Automatic, every record: ID pattern, uniqueness, uid prefix.',
@@ -509,6 +687,13 @@ SCOPE = [
     'Automatic, every short answer asked "in lowest terms", and every typed probability.',
     'Automatic: every dataset registered in src/datasets.py appears in DATASETS.md. That each one is synthetic is stated by the '
     'author; none was taken from a website or publication.',
+    'Automatic, every four-graph item: panel contents compared with labels removed. For 12 items the correct panel is recomputed '
+    'from the question text (raw data, bins and endpoint rule, quartile rule, points, model, or the stated r); the remaining item '
+    '(which histogram suits a normal model) is checked for distinct panels only and was judged by reading.',
+    'Automatic pattern rules on question text. A model stated in other words is not recognized; the read-through checked the rest.',
+    'Automatic, every short answer whose question names a number of decimal places. A part the question says is exact is exempt.',
+    'Automatic: the responses listed in src/checker_cases.json, run through the game\'s checker code (tools/checker_cases.ts). The '
+    'table under "Fixed checker responses" lists each one. It is not a test in the live game.',
 ]
 assert len(SCOPE) == len(results), (len(SCOPE), len(results))
 
@@ -536,6 +721,17 @@ L += ['', '## Counts', '',
       '## Forward branches that apply a standard taught in an earlier set', '',
       '| Set | Branch | Standard | Branch title | New demand |', '|---|---|---|---|---|'] + [
       '| S%d | %s | %s | %s | %s |' % a_ for a_ in applied] + ['']
+L += ['## Fixed checker responses (check 30)', '',
+      'Each response was typed into the game\'s own short-answer checker (`packages/curriculum/src/answers.ts`, read-only). The '
+      'checker compares numeric values: a value written with or without trailing zeros (2, 2.0, 2.00) is accepted, and so is an '
+      'equal decimal or mixed number for a fraction (1.25 or 1 1/4 for 5/4). Precision is enforced through the value: a response '
+      'with more or fewer decimal places than asked (1.633 or 1.6 for 1.63) has a different value and is rejected. Keys are '
+      'still written to the stated precision (2.00, 0.10, 44.10) so the printed key matches the question.', '',
+      '| Question | Key | Response | Expected | Result | What it tests |', '|---|---|---|---|---|---|']
+L += ['| %s | %s | %s | %s | %s | %s |' % (c_['id'], c_.get('key', ''), '; '.join(c_['parts']),
+                                         'accept' if c_['expected'] else 'reject',
+                                         'accepted' if c_['accepted'] else 'rejected', c_['what']) for c_ in cases_out]
+L += ['']
 import review_log  # noqa: E402
 L += review_log.markdown(resolve.CASES, RECS)
 out = os.path.join(build.GRADE_DIR, 'VALIDATION.md')

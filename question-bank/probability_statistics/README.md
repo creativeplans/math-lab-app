@@ -1,4 +1,4 @@
-# Probability & Statistics — Question Collection (version 1.0.0)
+# Probability & Statistics — Question Collection (version 1.1.0)
 
 The High School Probability & Statistics collection for Untangle the Nexus. Probability & Statistics is a course, not a
 grade (students usually take it in grade 10, 11 or 12), so the collection uses course-placement labels, not grade
@@ -8,6 +8,30 @@ file; those courses appear only as standard codes in backward branches.
 
 **Every question is graded automatically by the game.** Question types are short answer, multiple choice and
 true/false only, and every short-answer key was run through the game's own answer checker.
+
+**What changed in 1.1.0.** This version answers an external review of 1.0.0. Question IDs are kept: 206 questions
+were revised, 1,229 are unchanged, none were added or retired, and no unchanged multiple-choice item changed its letter.
+`CHANGELOG.md` lists every changed ID with its finding (R01-R09):
+
+- **One correct answer per item (R01).** Two histogram items had two identical correct panels (S2-M-Q2, S2-M-Q4); each
+  extra panel now shows a specific error. A strategy item with a tie (S54-F1-Q3) and a random-digit count with more than
+  one defensible answer (S52-F1-Q4) were rewritten.
+- **Statistical statements (R02).** Overlap is judged from standardized gaps or a stated normal model. Random assignment
+  "tends to" balance groups. Least squares balances residuals, not counts of points. A conclusion names the population it
+  applies to.
+- **Simulation decisions (R03).** Every decision rule states the model, the tail counted (one-sided or two-sided) and
+  the 5% cutoff. Supplied simulation results are labeled hypothetical (R09).
+- **Local givens and forms (R04).** Each question restates what it uses. Fraction answers are asked for and keyed as
+  fractions (5/4, not 1.25).
+- **Probability models, bank-wide (R05).** Fair devices, independent trials, cards drawn at random from a standard
+  52-card deck with the replacement rule, the guessing model, and the payoff when an event does not happen. This was
+  applied to every item the new check 28 finds, not only the review's examples (127 questions).
+- **Precision and wording (R06-R08).** Keys are written to the stated precision (2.00, 0.10, 44.10, 2.50). Overstated
+  claims were narrowed. A MAIN item that only repeated its givens (S54-M-Q1) now asks for a computation.
+- **New permanent checks.** Check 27 recomputes every four-graph item from its question and requires exactly one
+  matching panel. Check 28 looks for a stated probability model. Check 29 compares the stated precision with the key.
+  Check 30 runs 37 fixed right and wrong responses through the game's checker. Run on the 1.0.0 answer key, the rules of checks 27 and 29
+  flag the review's findings (S2-M-Q2, S2-M-Q4; S5-F1-Q3, S14-F2-Q1, S49-F1-Q1).
 
 This release is for independent review before import. It has not been pushed, merged, published, or tried in the live
 game.
@@ -19,13 +43,13 @@ game.
 | `Probability_Statistics_Answer_Key.json` / `.csv` | Machine-readable key, one record per question, keyed by `uid` (for example `PS:S12-B2-Q3`). Questions with a figure also carry `figure_svg`, `figure_png`, `figure_description`, and `figure_data` |
 | `COVERAGE.md` | The course profile, the overlap with the Algebra I, Geometry and Algebra II collections, a matrix of every standard and subskill with its MAIN sets, pages and **assessed response**, the branch map, and response types |
 | `DATASETS.md` | Every dataset used: values, size, units, context. All are synthetic (written for this collection) |
-| `VALIDATION.md` | The 26 automatic checks, each with its result and its actual scope, plus the manual review record |
-| `CHANGELOG.md` | Version history by question ID (1.0.0 is the first release) |
+| `VALIDATION.md` | The 30 automatic checks, each with its result and its actual scope, plus the table of fixed checker responses and the manual review record |
+| `CHANGELOG.md` | Version 1.1.0 by question ID, followed by the 1.0.0 release notes |
 | `PLAN.md` | The set list by authoring batch |
-| `src/` | The single source: `standards.py` (inventory and subskills), `data_*.py` (sets), `datasets.py` (dataset registry), `common.py` (statistics and figure helpers), `grade.py` (course settings and grading rules), `resolve.py` (independent re-solve), `validate.py`, `tools/checker_contract.ts` (runs the game's answer checker), `review_log.py`, `coverage_report.py`, `choice_plan.json` (frozen multiple-choice letters), `history/` (the 1.0.0 snapshot for future revision tracking) |
+| `src/` | The single source: `standards.py` (inventory and subskills), `data_*.py` (sets), `datasets.py` (dataset registry), `common.py` (statistics and figure helpers), `grade.py` (course settings and grading rules), `resolve.py` (independent re-solve), `validate.py`, `tools/checker_contract.ts` (runs the game's answer checker on every key), `tools/checker_cases.ts` with `checker_cases.json` (fixed right and wrong responses), `review_log.py`, `coverage_report.py`, `changes.py` (the 1.1.0 revision map), `choice_plan.json` (frozen multiple-choice letters), `history/` (the 1.0.0 and 1.1.0 snapshots and the 1.0.0 release notes) |
 
 The Untangle The Nexus import package is `question-bank/nexus/probability_statistics/`, zipped as
-`question-bank/nexus/Probability_Statistics_Nexus_Import_v1.0.0.zip`. Its README describes every field. The split PDFs
+`question-bank/nexus/Probability_Statistics_Nexus_Import_v1.1.0.zip` (the 1.0.0 ZIP is kept next to it). Its README describes every field. The split PDFs
 (three parts of at most 800 pages each) are in its `pdf/` folder with `PART_INDEX.md` (the page and question-ID range of
 each part), and `MANIFEST.json` lists every file with its SHA-256 hash.
 
@@ -52,8 +76,8 @@ each part), and `MANIFEST.json` lists every file with its SHA-256 hash.
   skills used as prerequisites are labeled Algebra I), or the MAIN standard of an *earlier* set of this collection. The
   build stops on anything else.
 - **Every question stands alone.** IDs are printed in a separate reference box on each page, not in the question.
-- **Question types:** short answer 573; multiple choice 433 (A 111, B 107, C 110, D 105); true/false 429 (227 True,
-  202 False), none in MAIN. 190 questions carry a figure: 125 tables (data tables, two-way tables, normal tables,
+- **Question types:** short answer 573; multiple choice 433 (A 111, B 107, C 110, D 105); true/false 429 (226 True,
+  203 False), none in MAIN. 190 questions carry a figure: 125 tables (data tables, two-way tables, normal tables,
   random-digit tables), 27 scatter or residual plots, 10 box plots, 9 dot plots, 6 histograms, and 13 four-panel
   "Graph A-D" choice figures.
 
@@ -72,7 +96,9 @@ overlapping sets once, in the course where it teaches them.
   exactly one correct option; its grading note says what is wrong with the other options.
 - **Short answer:** the game's answer checker compares the response with `correct_answer`. Each question has one answer
   line per part, names the form ("a fraction in lowest terms", "a decimal", "as a percent") and the precision ("to the
-  nearest tenth", "four decimal places"). A rounded answer must be given to exactly that precision.
+  nearest tenth", "four decimal places"), and the key is written to that precision (2.00, 0.10).
+  The checker compares values, so 2, 2.0 and 2.00 are all accepted, while 1.633 or 1.6 for 1.63 is rejected. It also
+  accepts an equal decimal or mixed number for a fraction (1.25 or 1 1/4 for 5/4). Check 30 records this behavior.
 - **Word answers** appear only when the question lists the allowed words (yes or no; positive or negative; a letter A, B,
   C or D; "skip").
 - **Conventions stated on the page** (validation check 24): quartiles are the medians of the lower and upper halves, the
@@ -111,41 +137,50 @@ Where the MAIN questions are choices, the set measures recognition (choosing the
 not producing a drawing, a design or a written argument. The "Assessed response" column of `COVERAGE.md` says which
 sets these are.
 
-## Verification actually run
+## Verification actually run for 1.1.0
 
-- **Game answer checker (validation check 21).** Every one of the 573 short-answer keys was run through the game's own
-  checker code (`packages/curriculum/src/answers.ts`, read-only) with `src/tools/checker_contract.ts`. All 573 are
-  automatically checkable and accepted. The same answer written without spaces, or with its terms in reverse order, is
-  also accepted.
-- **Importer, check mode.** `npx tsx tools/import-collection/import.ts --check <unzipped package> <scratch folder>`
-  resolved the course to the game's existing Probability & Statistics course (code 104) and read 54 sets and 1,435
-  questions: 0 invalid, 0 warnings, 0 drawn or interactive items (sa→short 573, mc 433, tf 429). It reported "CHECK ONLY:
-  the bank is valid. Nothing was changed."
-- **Importer, real run into a scratch folder** outside both repositories. The importer's own key conversion (`bankKey`)
-  and the game checker were then applied to every imported short answer: all 573 are auto-checkable and accept their own
-  key (98 carry the form "simplified", from questions that ask for lowest terms), and no rewrite (no spaces, reversed
-  terms) was rejected. The game repository was left unchanged (`git status` clean).
-- **Automatic checks.** `src/validate.py`: 26 of 26 PASS. Among them: structure and IDs, coverage of every standard and
-  subskill, branch rules, answer-key completeness, balance, duplicates, stand-alone questions, PDF pages, labels, the game
-  checker (21), clean keys (22), multiple-choice length cue (23), statistics conventions on the page (24), fractions in
-  lowest terms and probabilities in [0, 1] (25), datasets documented (26).
-- **Independent re-solve.** `src/resolve.py` recomputes 158 questions (243 values) from the givens with Python's
-  statistics, fractions and math modules, typed in again (no data-module code or key strings reused): 0 disagreements.
-- **Hand work.** The author re-solved all 1,435 questions in one read-through after the build, checking every
-  multiple-choice option and every true/false statement. The problems found and fixed are listed in `VALIDATION.md`.
-- **Figures.** All 190 figure pages were rendered and inspected; layout fixes were made and the changed pages
-  inspected again.
-- **Letters.** Every multiple-choice letter is frozen in `src/choice_plan.json` (the rebuild with the plan is identical),
-  so future revisions will not move unchanged items.
-- **Other collections.** The engine changed in small ways (the Probability & Statistics placement rules in
-  `engine/hs_courses.py`; an optional title, outliers and a compact mode for box plots and histograms in
-  `engine/render.py`; `DATASETS.md` in the export). All nine other engine-built collections (Grades 3-8, Algebra I,
-  Geometry, Algebra II) were rebuilt: their answer keys (JSON and CSV) are byte-identical to the committed files, and
-  their PDFs have the same page text and drawings as the committed PDFs, except Grade 6 (3 pages, drawings) and Grade 8
-  (5 pages, text). Those two were also rebuilt with the engine from before this work, and that build matches today's
-  build page for page, so the difference is in the older committed PDFs, not in this change. The committed files were
-  left as they were. Financial Literacy uses its own builder, which does not use the changed modules.
-- **Package.** `engine/verify_package.py` checks the ZIP against `MANIFEST.json`: OK.
+- **Game answer checker (validation check 21).** All 573 short-answer keys were run through the game's own checker code
+  (`packages/curriculum/src/answers.ts`, read-only) with `src/tools/checker_contract.ts`. All 573 are automatically
+  checkable and accepted. The same answer without spaces, or with its terms reversed, is also accepted.
+- **Fixed right and wrong responses (check 30).** 37 typed responses were run through the same checker. All 37 got the
+  expected result (21 accepted, 16 rejected). These are the review's tests:
+  - S1-M-Q1 "3; 5; 4" is rejected.
+  - S15-M-Q1 with a and b swapped is rejected.
+  - S26-M-Q1 with the selections reversed is rejected.
+  - S48-F1-Q1 with P(X = 0) and P(X = 3) swapped is rejected.
+  - S34-M-Q1 ".2; no" is rejected.
+  - 5/4 is accepted and 4/5 rejected.
+
+  The rest show how rounding and trailing zeros are handled. `VALIDATION.md` lists every response.
+- **Importer, check mode.** `npx tsx tools/import-collection/import.ts --check <unzipped 1.1.0 package> <scratch folder>`
+  read 54 sets and 1,435 questions: 0 invalid, 0 warnings, 0 drawn or interactive items (sa→short 573, mc 433, tf 429).
+  It reported "CHECK ONLY: the bank is valid. Nothing was changed."
+- **Importer, real run into a scratch folder** outside both repositories. It installed "Probability & Statistics bank
+  version 1.1.0". The importer's own key conversion (`bankKey`) and the game checker were then applied to every imported
+  short answer. All 573 are auto-checkable and accept their own key (98 with the form "simplified"), and no rewrite was
+  rejected. The game repository was left unchanged (`git status` clean).
+- **Automatic checks.** `src/validate.py`: 30 of 30 PASS. New in 1.1.0:
+  - check 27: four-graph panels. 12 items are recomputed from the question text; S10-M-Q1 is checked for distinct panels
+    only.
+  - check 28: probability models stated, on 202 questions with a chance device, cards, guessing, payoffs or random
+    selection
+  - check 29: precision, on 20 short answers
+  - check 30: fixed checker responses
+
+  The multiple-choice length check (23) finds no strong cue, but the correct choice is still the uniquely longest in 162 of
+  420 text items (39%; 25% would be chance).
+- **Independent re-solve.** `src/resolve.py` recomputes 160 questions (246 values) from the givens with separate code: 0
+  disagreements. S54-M-Q1 and S52-F1-Q4 were added for 1.1.0.
+- **Hand work.** The author re-read and re-solved all 206 revised questions in their final form (`VALIDATION.md`,
+  "Manual review", lists what that turned up). The 1,229 unchanged questions were **not** read again in 1.1.0; they were
+  read in full for 1.0.0.
+- **Figures.** The two changed figure pages (S2-M-Q2, S2-M-Q4) were rendered and inspected. Other figures are unchanged
+  from 1.0.0, where all 190 were inspected.
+- **Revision tracking.** The export compares every question with the 1.0.0 snapshot and stops on any change without an
+  entry in `src/changes.py`. It reported 206 revised, 1,229 unchanged.
+- **Letters.** No multiple-choice item changed its letter. All letters remain frozen in `src/choice_plan.json`.
+- **Other collections.** The engine was not changed in 1.1.0, so no other collection was rebuilt.
+- **Package.** `engine/verify_package.py` checks the 1.1.0 ZIP against `MANIFEST.json`: OK.
 
 **Not done:** no test in the live game, no test with the AI grader, and no second human reviewer. The checks above show
 what the content files and the game's checker code do with each key. They do not show how every possible student
@@ -155,12 +190,13 @@ wording will be graded.
 
 - **Choosing is not producing.** See "How construct, design, explain and simulate demands are assessed".
 - **Student wording.** The checker accepts equivalent numbers. It was not tested on every way a student might write an
-  answer, only on the key, the key without spaces, and the key with terms reversed.
+  answer, only on the key, the key without spaces, the key with terms reversed, and the 37 fixed responses of check 30.
 - **Standards wording** was written from the published Common Core standards as recalled (the official site could not be
   opened from the authoring environment) and should be spot-checked.
 - **Datasets** are synthetic, chosen to show the intended feature; they are not real measurements (`DATASETS.md`).
-- **Supplied simulation results** (tables of simulated sets, re-randomization counts) are chosen to be close to the
-  theoretical distribution; they were not produced by a simulation run.
+- **Supplied simulation results** (tables of simulated sets, re-randomization counts) are hypothetical, chosen to be
+  close to the theoretical distribution. They were not produced by a simulation run. Questions that state such results
+  say "(Hypothetical simulation results.)".
 - **No game changes.** This release is content only. The game, grading engine, routing rules, database, UI and
   deployment were not changed. The game repository was only read.
 
@@ -172,5 +208,5 @@ python3 question-bank/engine/coverage.py probability_statistics     # COVERAGE.m
 python3 question-bank/probability_statistics/src/validate.py         # VALIDATION.md and DATASETS.md (exit 1 on any failure; check 21 needs the game repository, NEXUS_DIR)
 python3 question-bank/probability_statistics/src/resolve.py          # independent re-solve only
 python3 question-bank/engine/export.py probability_statistics       # nexus/probability_statistics/ (sets, assets, PDFs in parts, MANIFEST.json)
-python3 question-bank/engine/verify_package.py question-bank/nexus/Probability_Statistics_Nexus_Import_v1.0.0.zip
+python3 question-bank/engine/verify_package.py question-bank/nexus/Probability_Statistics_Nexus_Import_v1.1.0.zip
 ```

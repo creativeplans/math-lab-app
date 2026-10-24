@@ -1,8 +1,27 @@
-"""Manual review record for Probability & Statistics 1.0.0, printed into VALIDATION.md by validate.py.
+"""Manual review record for Probability & Statistics (1.1.0, then 1.0.0), printed into VALIDATION.md by validate.py.
 
 Everything here was done by reading, drawing or computing by the author of this release. It is NOT an automatic check,
 and no second person has reviewed it.
 """
+
+READ_THROUGH_11 = (
+    'Version 1.1.0 answers an external review of 1.0.0 (findings R01-R09 in CHANGELOG.md). After the rebuild, every one of the '
+    '206 revised questions was listed in its final form (question text, choices with the keyed letter, key, grading note) and '
+    're-solved by the author: computed keys by hand or in Python, each multiple-choice option checked against its note, and each '
+    'rewritten true/false statement checked. The two changed histogram pages (S2-M-Q2, S2-M-Q4) were rendered and inspected. '
+    'The 1,229 unchanged questions were not read again in 1.1.0; new checks 27-29 were run on all of them.'
+)
+
+FIXES_11 = [
+    ('S24-M-Q5', 'The decision-rule text printed "25%%" (a formatting escape); now "25%".'),
+    ('S24-F1-Q2', 'The stem said what to count twice (before and inside the decision rule); the first sentence was shortened.'),
+    ('S31-M-Q1', 'New check 29 found the key 2.5 printed with one decimal place where the question asked for two; the question now '
+                 'asks for both ratios to two decimal places (key 2.50; 1.06).'),
+    ('S24-B2-Q2/Q4, S32-M-Q1/Q3, S33-M-Q5, S34-F1-Q1, S40-M-Q2, S44-F2-Q2, S48-F2-Q1, S49-F2-Q1, S50-F1-Q4, S50-F2-Q4, S51-M-Q5',
+     'New check 28 found models the review\'s examples did not list (independent rolls, cards at random, selection without '
+     'replacement, the payoff otherwise); each now states it.'),
+    ('S29-B2-Q1, S52-F1-Q1', 'Notes revised to match the reworded statement and choices.'),
+]
 
 READ_THROUGH = (
     'After the build, all 1435 questions were listed in one compact file (question text, choices with the keyed letter, key, '
@@ -68,12 +87,16 @@ SIMULATIONS = (
 
 def markdown(cases, recs):
     ids = [c[0] for c in cases]
-    L = ['## Manual review (author)', '',
-         '- **Read-through and re-solve of every question:** ' + READ_THROUGH,
+    L = ['## Manual review (author)', '', '### Version 1.1.0', '',
+         '- **Read-through of every revised question:** ' + READ_THROUGH_11, '',
+         '| Question | Problem found during 1.1.0 and fix |', '|---|---|']
+    L += ['| %s | %s |' % f for f in FIXES_11]
+    L += ['', '### Version 1.0.0', '',
+         '- **Read-through and re-solve of every question (1.0.0):** ' + READ_THROUGH,
          '- **Automatic re-solve (check 17), %d questions:** %s.' % (len(ids), ', '.join(ids)),
          '- **Figures:** ' + FIGURES,
          '- **Simulations:** ' + SIMULATIONS, '',
-         '### Errors found and fixed before release', '', '| Question | Problem and fix |', '|---|---|']
+         '### Errors found and fixed before the 1.0.0 release', '', '| Question | Problem and fix |', '|---|---|']
     L += ['| %s | %s |' % f for f in FIXES]
     L += ['', 'No second reviewer has checked this collection, and no question has been tried in the live game or with the AI grader.', '']
     return L

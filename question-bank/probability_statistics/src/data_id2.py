@@ -167,7 +167,7 @@ SETS = [
             why=why('the student confuses the range and the IQR.', 'spread is compared with the IQR when there are outliers.',
                     'finds ranges and IQRs from lists and five-number summaries.')),
           B('Measure distances from the mean', '6.SP.B.5.c', [
-              sa('The mean of 2, 6, 10 is 6. What are the distances of the values from the mean?', ['Distance of 2:', 'Distance of 10:'],
+              sa('The mean of 2, 6, 10 is 6. What are the distances of 2 and of 10 from the mean?', ['Distance of 2:', 'Distance of 10:'],
                  key='4; 4', note='Form required: both.'),
               sa('Find the mean absolute deviation of 1, 3, 5, 7.', 'MAD:', key='2', note='Mean 4; distances 3, 1, 1, 3; mean 2.'),
               tf('A data set whose values are all far from the mean has a large spread.', key=True, note='Spread measures distance from center.'),
@@ -193,7 +193,7 @@ SETS = [
           tf('For the same data, the sample standard deviation (divide by n - 1) is never smaller than the population standard '
              'deviation (divide by n).', key=True, note='Dividing by the smaller number n - 1 gives a larger or equal value.'),
           sa('For 2, 4, 6, give the population and the sample standard deviations, to the nearest hundredth.' + TECH, ['Population:', 'Sample:'],
-             key='1.63; 2', note='Form required: both. Squared deviations 4, 0, 4: √(8/3) ≈ 1.633 and √(8/2) = 2.'),
+             key='1.63; 2.00', note='Form required: both, to the nearest hundredth. Squared deviations 4, 0, 4: √(8/3) ≈ 1.633 and √(8/2) = 2.'),
           mc('A spreadsheet gives 5.2 for STDEV.S and 4.9 for STDEV.P of the same data. Which statement is correct?', [
               'STDEV.S divides by n - 1 and treats the data as a sample; STDEV.P divides by n and treats them as the population.',
               'STDEV.S divides by n and treats the data as the whole population; STDEV.P divides by n - 1 for a sample.',
@@ -294,12 +294,14 @@ SETS = [
               mc('Group 1 has median 12 and IQR 3; group 2 has median 15 and IQR 3. Which is true?', [
                   'Group 2\'s typical value is 3 higher, with similar spread.', 'Group 1\'s values are higher, since its IQR is the same.',
                   'Group 2 varies more, since its median is higher.', 'The groups are the same, since the IQRs are equal.'], note='Same IQR, higher median.'),
-              tf('If two groups have very different medians and small IQRs, their distributions overlap very little.', key=True,
-                 note='Small spread around far-apart centers.'),
+              tf('Group 1 has median 20 and IQR 2; group 2 has median 40 and IQR 2. The middle halves (Q1 to Q3) of the two groups '
+                 'cannot overlap.', key=True,
+                 note='Each box contains its median and is 2 wide, so box 1 lies within 18 to 22 and box 2 within 38 to 42. The '
+                      'summaries say nothing about the tails, which could still overlap.'),
               sa('Group A has mean 40 and group B has mean 46. By how much are the means different?', 'Answer:', key='6', note='46 - 40.'),
-              mc('Which pair of groups overlaps the most?', [
+              mc('Which pair of groups has the smallest gap between medians measured in IQRs (median gap divided by the common IQR)?', [
                   'medians 20 and 21, both IQRs 10', 'medians 20 and 40, both IQRs 2', 'medians 20 and 30, both IQRs 1',
-                  'medians 10 and 50, both IQRs 5'], note='Centers 1 apart relative to spreads of 10.'),
+                  'medians 10 and 50, both IQRs 5'], note='1/10 = 0.1. The others give 20/2 = 10, 10/1 = 10 and 40/5 = 8.'),
               tf('Two groups with the same center must have the same spread.', key=False, note='Spread is separate from center.'),
           ], align='exact',
             why=why('the student cannot compare two distributions at all.', 'interpretation in context starts from a comparison.',
@@ -312,7 +314,10 @@ SETS = [
           mc('Pair 1: means 50 and 55, both SDs 10. Pair 2: means 50 and 53, both SDs 1. Which pair is more clearly separated?', [
               'pair 2, 3 SDs apart', 'pair 1, 5 points apart', 'pair 1, 0.5 SDs apart', 'they are equally separated'],
              note='Pair 1 is 0.5 SDs apart, pair 2 is 3 SDs apart. A larger raw gap is not the larger separation.'),
-          tf('Two groups whose means are 0.2 standard deviations apart overlap a great deal.', key=True, note='Small separation relative to spread.'),
+          tf('Two approximately normal groups have the same standard deviation, and their means are 0.2 standard deviations apart. '
+             'Their distributions overlap a great deal.', key=True,
+             note='Under the stated normal model with equal spread, a 0.2-SD gap leaves most values of each group in the range of '
+                  'the other. Summaries alone, without a shape, would not decide this.'),
           mc('Why measure a difference in units of spread?', [
               'A gap matters only relative to how much values vary within each group.',
               'Units of spread make every difference look larger than it really is.',
@@ -321,22 +326,25 @@ SETS = [
              note='The others are false claims about standardizing.'),
       ], prog='same-course deepening', demand='Quantify how far apart two groups are relative to their spread.'),
       f2=B('Judge whether a difference supports a claim', 'HSS-IC.B.6', [
-          mc('A report says that brand X bulbs "last much longer" than brand Y: means 1,010 and 1,000 hours, both with standard '
-             'deviation 80 hours. Evaluate.', [
+          mc('A report says that brand X bulbs "last much longer" than brand Y. Lifetimes of both brands are approximately normal '
+             'with means 1,010 and 1,000 hours and the same standard deviation, 80 hours. Evaluate.', [
               'Weak: the means differ by about 0.13 standard deviations, so the lives overlap almost completely.',
               'Strong: 1,010 is greater than 1,000, so every brand X bulb lasts longer than any brand Y bulb.',
               'Strong: both brands have the same standard deviation, so the difference in means must be large.',
               'Weak: the claim would be supported only if the standard deviations were different.'],
-             note='10/80 = 0.125. The others overstate or misuse the spread.'),
-          tf('A difference of 5 points between group means is more convincing when each group\'s standard deviation is 2 than when '
-             'it is 20.', key=True, note='2.5 SDs versus 0.25 SDs.'),
-          mc('A coach claims the new training "improved race times a lot": median time dropped from 52 to 50 seconds; IQRs 8 seconds. Which '
-             'evaluation is best?', [
-              'The drop is small relative to the spread (a quarter of an IQR), so "a lot" overstates it.',
-              'The drop is large, because two seconds is a long time in a race of 52 seconds.',
-              'The claim is wrong, because a drop in the median time means the athletes slowed down.',
-              'The claim cannot be judged, because the IQRs of the two groups are equal.'],
-             note='2/8 = 0.25 IQR. Lower times are faster, so the choice saying the athletes slowed down is wrong too.'),
+             note='10/80 = 0.125 SD; for two normal distributions with equal spread, that gap means near-total overlap. The '
+                  'others overstate or misuse the spread.'),
+          tf('A difference of 5 points between two group means is 2.5 standard deviations when each group\'s standard deviation '
+             'is 2, but only 0.25 standard deviations when it is 20.', key=True,
+             note='5/2 and 5/20. How strong the evidence is would also depend on sample sizes and design, which are not given.'),
+          mc('After new training, a team\'s median race time dropped from 52 to 50 seconds; the IQR was 8 seconds before and after. '
+             'Which statement correctly describes the size of the drop relative to the spread?', [
+              'It is a quarter of an IQR (2/8), small relative to the athlete-to-athlete spread.',
+              'It is four IQRs (8/2), large relative to the athlete-to-athlete spread.',
+              'It shows that the athletes slowed down by two seconds on average.',
+              'It cannot be measured, because the two IQRs are equal to each other.'],
+             note='2/8 = 0.25 IQR. Whether 2 seconds matters in a race is a separate judgment that the ratio does not settle. The '
+                  'others invert the ratio, read a lower time as slower, or treat equal IQRs as a problem.'),
           sa('Two groups have means 120 and 135 and the same standard deviation 10. How many standard deviations apart are they?',
              'Answer:', key='1.5', note='15/10.'),
           tf('If two groups\' means differ by less than one standard deviation, the groups cannot differ in any important way.',
@@ -433,8 +441,9 @@ SETS = [
              'Find the new mean to the nearest tenth and the new median.', ['Mean:', 'Median:'],
              key='%s; %s' % (d1(float(mean([12, 15, 14, 18, 16, 13, 17, 15, 14, 14, 16]))), nm(median([12, 15, 14, 18, 16, 13, 17, 15, 14, 14, 16]))),
              note='Form required: both. Sum 164/11 ≈ 14.9; ordered middle value 15.'),
-          tf('The IQR barely changes when a single extreme value is removed from a large data set.', key=True,
-             note='Quartiles depend on the middle of the data.'),
+          tf('In most large data sets, removing one extreme value changes the IQR less than it changes the standard deviation.',
+             key=True, note='Quartiles depend on the middle of the data, so the IQR is usually less sensitive; it can still move '
+                            'when the removal shifts a quartile across a gap in the data.'),
           mc('Which summary is most changed by one extreme value?', ['the standard deviation', 'the IQR', 'the median', 'Q1'],
              note='Squared distances make the SD very sensitive.'),
           sa('Data 5, 6, 6, 7, 8, 30: find the median and the IQR (Q1 and Q3 are the medians of the halves).', ['Median:', 'IQR:'],
