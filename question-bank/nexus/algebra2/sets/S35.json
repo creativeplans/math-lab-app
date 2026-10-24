@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -52,20 +52,20 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "On the unit circle, a central angle subtends an arc of length 2.5. What is the radian measure of the angle? Explain.",
-     "prompt_markup": "On the unit circle, a central angle subtends an arc of length 2.5. What is the radian measure of the angle? Explain.",
+     "prompt": "On the unit circle, a central angle subtends an arc of length 2.5. What is the radian measure of the angle?",
+     "prompt_markup": "On the unit circle, a central angle subtends an arc of length 2.5. What is the radian measure of the angle?",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Radians:"
      ],
      "correct_letter": null,
-     "correct_answer": "2.5 radians: on the unit circle the radian measure equals the length of the subtended arc.",
+     "correct_answer": "2.5",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: the measure and the reason.",
+     "grading_note": "Form required: the value. On the unit circle (radius 1) the radian measure equals the length of the subtended arc: θ = s/r = 2.5/1.",
      "figure": null,
      "page": 1273,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret and find radian measures as arc lengths on the unit circle, and convert between degrees and radians",
      "target_skill": "Interpret and find radian measures as arc lengths on the unit circle, and convert between degrees and radians",
@@ -175,20 +175,20 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "A central angle of 2π/3 radians is drawn in a circle of radius 6 cm. Find the length of the arc it subtends.",
-     "prompt_markup": "A central angle of 2π/3 radians is drawn in a circle of radius 6 cm. Find the length of the arc it subtends.",
+     "prompt": "A central angle of 2π/3 radians is drawn in a circle of radius 6 cm. Find the exact length of the arc it subtends, in cm, in terms of π.",
+     "prompt_markup": "A central angle of 2π/3 radians is drawn in a circle of radius 6 cm. Find the exact length of the arc it subtends, in cm, in terms of π.",
      "choices": [],
      "answer_lines": [
       "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "4π cm (about 12.57 cm)",
+     "correct_answer": "4π",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: exact or decimal with units. s = rθ.",
+     "grading_note": "s = rθ = 6 · 2π/3 = 4π cm (about 12.57 cm).",
      "figure": null,
      "page": 1276,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret and find radian measures as arc lengths on the unit circle, and convert between degrees and radians",
      "target_skill": "Interpret and find radian measures as arc lengths on the unit circle, and convert between degrees and radians",
@@ -214,22 +214,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain why one full turn measures 2π radians.",
-     "prompt_markup": "Explain why one full turn measures 2π radians.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Why does one full turn measure 2π radians?",
+     "prompt_markup": "Why does one full turn measure 2π radians?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A full turn subtends the whole unit circle, whose circumference is 2π · 1 = 2π, and radian measure equals arc length on the unit circle."
+      },
+      {
+       "letter": "B",
+       "text": "Because π radians is a quarter turn of the unit circle, so a full turn of four quarters measures 2π radians."
+      },
+      {
+       "letter": "C",
+       "text": "Because the area of the unit circle is 2π · 1 = 2π, and radian measure equals the area swept out by the angle."
+      },
+      {
+       "letter": "D",
+       "text": "Because a full turn is 360°, and 360 = 2π when degrees are written as numbers of radians."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "A full turn subtends the whole unit circle, whose circumference is 2π · 1 = 2π.",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "A full turn subtends the whole unit circle, whose circumference is 2π · 1 = 2π, and radian measure equals arc length on the unit circle.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "Radian measure is arc length on the unit circle. The others confuse degrees and radians, use the area (π), or misstate π as a quarter turn (it is a half turn).",
      "figure": null,
      "page": 1277,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret and find radian measures as arc lengths on the unit circle, and convert between degrees and radians",
      "target_skill": "Interpret and find radian measures as arc lengths on the unit circle, and convert between degrees and radians",
@@ -1173,20 +1188,20 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "A point travels 10 units counterclockwise around the unit circle from (1, 0). How far past one full turn is it? Give a decimal to the nearest hundredth. A calculator may be used.",
-     "prompt_markup": "A point travels 10 units counterclockwise around the unit circle from (1, 0). How far past one full turn is it? Give a decimal to the nearest hundredth. A calculator may be used.",
+     "prompt": "A point travels 10 units counterclockwise around the unit circle from (1, 0). How far past one full turn is it (along the circle)? Round to the nearest hundredth. A calculator may be used.",
+     "prompt_markup": "A point travels 10 units counterclockwise around the unit circle from (1, 0). How far past one full turn is it (along the circle)? Round to the nearest hundredth. A calculator may be used.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Distance past one turn:"
      ],
      "correct_letter": null,
-     "correct_answer": "10 - 2π ≈ 3.72",
+     "correct_answer": "3.72",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form.",
+     "grading_note": "Rounding to 0.01. One turn is 2π ≈ 6.2832, and 10 - 2π ≈ 3.7168.",
      "figure": null,
      "page": 1301,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret and find radian measures as arc lengths on the unit circle, and convert between degrees and radians",
      "target_skill": "Measure negative angles and angles beyond one turn",
@@ -1233,20 +1248,20 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "What point of the unit circle is at angle π? Give cos π and sin π.",
-     "prompt_markup": "What point of the unit circle is at angle π? Give cos π and sin π.",
+     "prompt": "The point of the unit circle at angle π is (cos π, sin π). Give that point.",
+     "prompt_markup": "The point of the unit circle at angle π is (cos π, sin π). Give that point.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Point:"
      ],
      "correct_letter": null,
-     "correct_answer": "(-1, 0); cos π = -1, sin π = 0",
+     "correct_answer": "(-1, 0)",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: the point and both values.",
+     "grading_note": "Form required: the ordered pair, so cos π = -1 and sin π = 0.",
      "figure": null,
      "page": 1303,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret and find radian measures as arc lengths on the unit circle, and convert between degrees and radians",
      "target_skill": "Read sine and cosine of radian angles from the unit circle",
@@ -1278,16 +1293,17 @@
      "prompt_markup": "Find cos(3π/2) and sin(3π/2).",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "cos(3π/2) =",
+      "sin(3π/2) ="
      ],
      "correct_letter": null,
-     "correct_answer": "0 and -1",
+     "correct_answer": "0; -1",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: both.",
+     "grading_note": "Form required: both. The point at 3π/2 is (0, -1).",
      "figure": null,
      "page": 1304,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret and find radian measures as arc lengths on the unit circle, and convert between degrees and radians",
      "target_skill": "Read sine and cosine of radian angles from the unit circle",
@@ -1417,22 +1433,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain why cos θ and sin θ make sense for θ = 13π/6.",
-     "prompt_markup": "Explain why cos θ and sin θ make sense for θ = 13π/6.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Why do cos θ and sin θ make sense for θ = 13π/6?",
+     "prompt_markup": "Why do cos θ and sin θ make sense for θ = 13π/6?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "13π/6 ends at the same point as 13π/6 - π = 7π/6, so the values are those at 7π/6."
+      },
+      {
+       "letter": "B",
+       "text": "13π/6 = 2π + π/6 ends at the same point as π/6, so cos and sin take the values at that point."
+      },
+      {
+       "letter": "C",
+       "text": "13π/6 is greater than 2π, so cos and sin are both equal to 0 at that angle."
+      },
+      {
+       "letter": "D",
+       "text": "cos and sin are defined only for 0 ≤ θ ≤ 2π, so 13π/6 is first divided by 13."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "13π/6 ends at the same point as π/6, so cos and sin take the values at that point (√3/2, 1/2).",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "13π/6 = 2π + π/6 ends at the same point as π/6, so cos and sin take the values at that point.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "Angles that differ by 2π end at the same point on the unit circle. The others subtract π (a half turn, the opposite point), claim both values are 0, or invent a rule that angles are divided down.",
      "figure": null,
      "page": 1307,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret and find radian measures as arc lengths on the unit circle, and convert between degrees and radians",
      "target_skill": "Read sine and cosine of radian angles from the unit circle",

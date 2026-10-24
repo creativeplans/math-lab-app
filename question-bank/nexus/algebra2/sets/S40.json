@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -80,7 +80,7 @@
      "grading_note": "The coordinates of the point satisfy the circle equation. The others check one angle or rely on the false statement sin θ + cos θ = 1.",
      "figure": null,
      "page": 1458,
-     "revision": "revised",
+     "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove sin²θ + cos²θ = 1 and closely related identities: identify the valid argument and reject example checks and invalid steps",
      "target_skill": "Prove sin²θ + cos²θ = 1 and closely related identities: identify the valid argument and reject example checks and invalid steps",
@@ -136,7 +136,7 @@
      "grading_note": "Both ratios and a² + b² = c². The others swap the ratios and use a + b = c, square a sum incorrectly, or check one triangle.",
      "figure": null,
      "page": 1459,
-     "revision": "revised",
+     "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove sin²θ + cos²θ = 1 and closely related identities: identify the valid argument and reject example checks and invalid steps",
      "target_skill": "Prove sin²θ + cos²θ = 1 and closely related identities: identify the valid argument and reject example checks and invalid steps",
@@ -192,7 +192,7 @@
      "grading_note": "Divide the Pythagorean identity by cos²θ. The others divide by sin²θ and then treat cos²θ/sin²θ as tan²θ (it is 1/tan²θ), replace sin²θ by 1, or check one angle.",
      "figure": null,
      "page": 1460,
-     "revision": "revised",
+     "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove sin²θ + cos²θ = 1 and closely related identities: identify the valid argument and reject example checks and invalid steps",
      "target_skill": "Prove sin²θ + cos²θ = 1 and closely related identities: identify the valid argument and reject example checks and invalid steps",
@@ -248,7 +248,7 @@
      "grading_note": "Side lengths are |x| and |y|; squares remove the signs. The others add the legs, mishandle the negative coordinate, or skip the argument.",
      "figure": null,
      "page": 1461,
-     "revision": "revised",
+     "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove sin²θ + cos²θ = 1 and closely related identities: identify the valid argument and reject example checks and invalid steps",
      "target_skill": "Prove sin²θ + cos²θ = 1 and closely related identities: identify the valid argument and reject example checks and invalid steps",
@@ -304,7 +304,7 @@
      "grading_note": "Expand the square, then use the Pythagorean identity. The others drop the middle term, check one angle, or use the false statement sin θ + cos θ = 1.",
      "figure": null,
      "page": 1462,
-     "revision": "revised",
+     "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove sin²θ + cos²θ = 1 and closely related identities: identify the valid argument and reject example checks and invalid steps",
      "target_skill": "Prove sin²θ + cos²θ = 1 and closely related identities: identify the valid argument and reject example checks and invalid steps",
@@ -581,22 +581,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Give the coordinates of the point on the unit circle at angle θ.",
-     "prompt_markup": "Give the coordinates of the point on the unit circle at angle θ.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which gives the coordinates of the point on the unit circle at angle θ?",
+     "prompt_markup": "Which gives the coordinates of the point on the unit circle at angle θ?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "(sin θ, cos θ)"
+      },
+      {
+       "letter": "B",
+       "text": "(θ, sin θ)"
+      },
+      {
+       "letter": "C",
+       "text": "(cos θ, sin θ)"
+      },
+      {
+       "letter": "D",
+       "text": "(cos θ, tan θ)"
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "C",
      "correct_answer": "(cos θ, sin θ)",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer.",
+     "grading_note": "The x-coordinate is cos θ and the y-coordinate is sin θ.",
      "figure": null,
      "page": 1470,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove sin²θ + cos²θ = 1 and closely related identities: identify the valid argument and reject example checks and invalid steps",
      "target_skill": "Coordinates of the point at angle θ",
@@ -624,20 +639,21 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Give cos(2π/3) and sin(2π/3).",
-     "prompt_markup": "Give cos(2π/3) and sin(2π/3).",
+     "prompt": "Give cos(2π/3) and sin(2π/3) exactly.",
+     "prompt_markup": "Give cos(2π/3) and sin(2π/3) exactly.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "cos(2π/3) =",
+      "sin(2π/3) ="
      ],
      "correct_letter": null,
-     "correct_answer": "-1/2 and √3/2",
+     "correct_answer": "-1/2; √3/2",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: both.",
+     "grading_note": "Form required: both exact. The point is (-1/2, √3/2).",
      "figure": null,
      "page": 1471,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove sin²θ + cos²θ = 1 and closely related identities: identify the valid argument and reject example checks and invalid steps",
      "target_skill": "Coordinates of the point at angle θ",
@@ -834,13 +850,13 @@
       "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "a² + 2ab + b²",
+     "correct_answer": "a² + 2a·b + b²",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form.",
+     "grading_note": "Form required: expanded. (a + b)(a + b) = a² + ab + ab + b².",
      "figure": null,
      "page": 1476,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove sin²θ + cos²θ = 1 and closely related identities: identify the valid argument and reject example checks and invalid steps",
      "target_skill": "Expand and simplify algebraic squares",
@@ -1020,13 +1036,13 @@
       "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "s² + 2sc + c²",
+     "correct_answer": "s² + 2s·c + c²",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form.",
+     "grading_note": "Form required: expanded.",
      "figure": null,
      "page": 1480,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove sin²θ + cos²θ = 1 and closely related identities: identify the valid argument and reject example checks and invalid steps",
      "target_skill": "Expand and simplify algebraic squares",
@@ -1100,7 +1116,7 @@
      "grading_note": "Factor as a difference of squares and use the Pythagorean identity. The others assume the identity (and divide by an expression that can be 0), use the false rule a⁴ - b⁴ = (a - b)⁴, or check one angle.",
      "figure": null,
      "page": 1482,
-     "revision": "revised",
+     "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove sin²θ + cos²θ = 1 and closely related identities: identify the valid argument and reject example checks and invalid steps",
      "target_skill": "Prove identities derived from the Pythagorean identity",
@@ -1156,7 +1172,7 @@
      "grading_note": "Multiply (difference of squares), then use the identity. The others multiply incorrectly or check one angle.",
      "figure": null,
      "page": 1483,
-     "revision": "revised",
+     "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove sin²θ + cos²θ = 1 and closely related identities: identify the valid argument and reject example checks and invalid steps",
      "target_skill": "Prove identities derived from the Pythagorean identity",
@@ -1316,7 +1332,7 @@
      "grading_note": "Substitute sin²θ = 1 - cos²θ and subtract the whole expression. The others drop the parentheses, check one angle, or end with an unproved statement.",
      "figure": null,
      "page": 1486,
-     "revision": "revised",
+     "revision": "unchanged",
      "strand": "core",
      "set_target": "Prove sin²θ + cos²θ = 1 and closely related identities: identify the valid argument and reject example checks and invalid steps",
      "target_skill": "Prove identities derived from the Pythagorean identity",
@@ -1402,22 +1418,37 @@
      "nearest_related": false,
      "standard_level": "Precalculus. Common Core groups high-school standards by category, not by course; this bank places this one in Precalculus, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Precalculus",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Use cos(a + b) = cos a cos b - sin a sin b with a = b = θ to write cos 2θ.",
-     "prompt_markup": "Use cos(a + b) = cos a cos b - sin a sin b with a = b = θ to write cos 2θ.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Use cos(a + b) = cos a cos b - sin a sin b with a = b = θ. Which expression equals cos 2θ?",
+     "prompt_markup": "Use cos(a + b) = cos a cos b - sin a sin b with a = b = θ. Which expression equals cos 2θ?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "cos²θ + sin²θ"
+      },
+      {
+       "letter": "B",
+       "text": "2cos θ"
+      },
+      {
+       "letter": "C",
+       "text": "2sin θ cos θ"
+      },
+      {
+       "letter": "D",
+       "text": "cos²θ - sin²θ"
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "D",
      "correct_answer": "cos²θ - sin²θ",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form.",
+     "grading_note": "cos(θ + θ) = cos θ cos θ - sin θ sin θ. The others double the cosine, change the sign (that equals 1), or give sin 2θ.",
      "figure": null,
      "page": 1489,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove sin²θ + cos²θ = 1 and closely related identities: identify the valid argument and reject example checks and invalid steps",
      "target_skill": "Use the angle-addition formulas",
@@ -1547,22 +1578,37 @@
      "nearest_related": false,
      "standard_level": "Precalculus. Common Core groups high-school standards by category, not by course; this bank places this one in Precalculus, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Precalculus",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Use (sin θ + cos θ)² = 1 + 2sin θ cos θ to write (sin θ + cos θ)² in terms of sin 2θ.",
-     "prompt_markup": "Use (sin θ + cos θ)² = 1 + 2sin θ cos θ to write (sin θ + cos θ)² in terms of sin 2θ.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "sin 2θ = 2sin θ cos θ. Use (sin θ + cos θ)² = 1 + 2sin θ cos θ to write (sin θ + cos θ)² in terms of sin 2θ.",
+     "prompt_markup": "sin 2θ = 2sin θ cos θ. Use (sin θ + cos θ)² = 1 + 2sin θ cos θ to write (sin θ + cos θ)² in terms of sin 2θ.",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "2 + sin 2θ"
+      },
+      {
+       "letter": "B",
+       "text": "sin 2θ"
+      },
+      {
+       "letter": "C",
+       "text": "1 + sin 2θ"
+      },
+      {
+       "letter": "D",
+       "text": "1 + 2sin 2θ"
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "C",
      "correct_answer": "1 + sin 2θ",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form.",
+     "grading_note": "Replace 2sin θ cos θ with sin 2θ.",
      "figure": null,
      "page": 1492,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Prove sin²θ + cos²θ = 1 and closely related identities: identify the valid argument and reject example checks and invalid steps",
      "target_skill": "Use the angle-addition formulas",

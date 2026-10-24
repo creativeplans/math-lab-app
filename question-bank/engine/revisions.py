@@ -1,7 +1,8 @@
 """Revision map between a published collection and the current source.
 
 A grade that has been published keeps a snapshot of every question in
-src/history/v<N>_records.json and explains each change in src/changes.py:
+src/history/v<N>_records.json (or v<version>_records.json for a later
+release) and explains each change in src/changes.py:
 
     VERSION_FROM = '1.0.0'
     FINDINGS = {'C01': 'Juice units', ...}            # review finding codes and titles
@@ -83,8 +84,9 @@ class Tracker:
             return
         ch = importlib.import_module('changes')
         self.cfg = ch
-        hist = json.load(open(os.path.join(src, 'history', 'v%s_records.json' % ch.VERSION_FROM.split('.')[0]),
-                              encoding='utf-8'))
+        full = os.path.join(src, 'history', 'v%s_records.json' % ch.VERSION_FROM)  # a later release keeps its own snapshot
+        major = os.path.join(src, 'history', 'v%s_records.json' % ch.VERSION_FROM.split('.')[0])
+        hist = json.load(open(full if os.path.exists(full) else major, encoding='utf-8'))
         self.old = hist['questions']
         self.rules = []
         for pats, code, status, text in ch.CHANGES:

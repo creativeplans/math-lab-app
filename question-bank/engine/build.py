@@ -43,7 +43,7 @@ def load_grade(name):
     cfg = importlib.import_module('grade')
     course = getattr(cfg, 'COURSE', None)
     qb.MAIN_SEEN.clear()
-    GRADING_RULES[:] = BASE_GRADING_RULES + list(getattr(cfg, 'EXTRA_GRADING_RULES', []))
+    GRADING_RULES[:] = list(getattr(cfg, 'BASE_GRADING_RULES', BASE_GRADING_RULES)) + list(getattr(cfg, 'EXTRA_GRADING_RULES', []))
     COLLECTION.clear()
     import hs_courses
     hs_courses.HOME = course['name'] if course else None

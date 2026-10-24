@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -134,20 +134,22 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Use the identity (a + b)(a - b) = a² - b² to compute 47 × 53 mentally. Show which a and b you use.",
-     "prompt_markup": "Use the identity (a + b)(a - b) = a² - b² to compute 47 × 53 mentally. Show which a and b you use.",
+     "prompt": "Use the identity (a + b)(a - b) = a² - b² to compute 47 × 53 mentally: write 53 = a + b and 47 = a - b with whole numbers a and b.",
+     "prompt_markup": "Use the identity (a + b)(a - b) = a² - b² to compute 47 × 53 mentally: write 53 = a + b and 47 = a - b with whole numbers a and b.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "a =",
+      "b =",
+      "47 × 53 ="
      ],
      "correct_letter": null,
-     "correct_answer": "a = 50, b = 3: 2500 - 9 = 2491",
+     "correct_answer": "50; 3; 2491",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: the choice of a and b and the product.",
+     "grading_note": "Form required: all three. a = 50 and b = 3; 50² - 3² = 2500 - 9 = 2491.",
      "figure": null,
      "page": 720,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use a polynomial identity to generate or compute numerical relationships",
      "target_skill": "Use a polynomial identity to generate or compute numerical relationships",
@@ -175,20 +177,21 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Use the identity (n + 1)² - n² = 2n + 1 to write 41 as a difference of two consecutive squares.",
-     "prompt_markup": "Use the identity (n + 1)² - n² = 2n + 1 to write 41 as a difference of two consecutive squares.",
+     "prompt": "Use the identity (n + 1)² - n² = 2n + 1 to write 41 as (n + 1)² - n², a difference of two consecutive squares. Give n + 1 and n.",
+     "prompt_markup": "Use the identity (n + 1)² - n² = 2n + 1 to write 41 as (n + 1)² - n², a difference of two consecutive squares. Give n + 1 and n.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "n + 1 =",
+      "n ="
      ],
      "correct_letter": null,
-     "correct_answer": "41 = 21² - 20²",
+     "correct_answer": "21; 20",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: the two squares. 2n + 1 = 41 gives n = 20.",
+     "grading_note": "Form required: both. 2n + 1 = 41 gives n = 20; 21² - 20² = 441 - 400 = 41.",
      "figure": null,
      "page": 721,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use a polynomial identity to generate or compute numerical relationships",
      "target_skill": "Use a polynomial identity to generate or compute numerical relationships",
@@ -504,22 +507,37 @@
      "domain": "Geometry",
      "skill": "Check a Pythagorean triple",
      "nearest_related": false,
-     "type": "sa",
-     "response": "write",
+     "type": "mc",
+     "response": "select one",
      "prompt": "Do 5, 12, 13 satisfy a² + b² = c²?",
      "prompt_markup": "Do 5, 12, 13 satisfy a² + b² = c²?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No: 25 + 144 = 196"
+      },
+      {
+       "letter": "B",
+       "text": "Yes: 25 + 144 = 169"
+      },
+      {
+       "letter": "C",
+       "text": "No: 25 + 144 ≠ 169"
+      },
+      {
+       "letter": "D",
+       "text": "Yes: 5 + 12 = 17"
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "B",
      "correct_answer": "Yes: 25 + 144 = 169",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: the check.",
+     "grading_note": "5² + 12² = 25 + 144 = 169 = 13².",
      "figure": null,
      "page": 730,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use a polynomial identity to generate or compute numerical relationships",
      "target_skill": "Check a Pythagorean triple",
@@ -543,22 +561,37 @@
      "domain": "Geometry",
      "skill": "Check a Pythagorean triple",
      "nearest_related": false,
-     "type": "sa",
-     "response": "write",
+     "type": "mc",
+     "response": "select one",
      "prompt": "Do 20, 21, 29 satisfy a² + b² = c²?",
      "prompt_markup": "Do 20, 21, 29 satisfy a² + b² = c²?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes: 400 + 441 = 841"
+      },
+      {
+       "letter": "B",
+       "text": "No: 400 + 441 = 851"
+      },
+      {
+       "letter": "C",
+       "text": "No: 20 + 21 ≠ 29"
+      },
+      {
+       "letter": "D",
+       "text": "Yes: 20 + 21 = 41"
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "A",
      "correct_answer": "Yes: 400 + 441 = 841",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: the check.",
+     "grading_note": "20² + 21² = 400 + 441 = 841 = 29².",
      "figure": null,
      "page": 731,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use a polynomial identity to generate or compute numerical relationships",
      "target_skill": "Check a Pythagorean triple",
@@ -682,22 +715,37 @@
      "domain": "Geometry",
      "skill": "Check a Pythagorean triple",
      "nearest_related": false,
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain why a triangle with sides 5, 12, 13 is a right triangle.",
-     "prompt_markup": "Explain why a triangle with sides 5, 12, 13 is a right triangle.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Why is a triangle with sides 5, 12, 13 a right triangle?",
+     "prompt_markup": "Why is a triangle with sides 5, 12, 13 a right triangle?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "13 is the longest side, so the angle opposite it must be 90° in any triangle."
+      },
+      {
+       "letter": "B",
+       "text": "5 + 12 > 13 satisfies the triangle inequality, so it is a right triangle."
+      },
+      {
+       "letter": "C",
+       "text": "Its three sides are whole numbers, so it must be a right triangle."
+      },
+      {
+       "letter": "D",
+       "text": "5² + 12² = 13², so by the converse of the Pythagorean Theorem it is a right triangle."
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "D",
      "correct_answer": "5² + 12² = 13², so by the converse of the Pythagorean Theorem it is a right triangle.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "The converse of the Pythagorean Theorem. The others give the triangle inequality (true for every triangle) or non-reasons.",
      "figure": null,
      "page": 734,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use a polynomial identity to generate or compute numerical relationships",
      "target_skill": "Check a Pythagorean triple",
@@ -987,20 +1035,21 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Use the triple identity to find x and y (whole numbers, x > y) that give a triple with hypotenuse 25 and legs 7 and 24.",
-     "prompt_markup": "Use the triple identity to find x and y (whole numbers, x > y) that give a triple with hypotenuse 25 and legs 7 and 24.",
+     "prompt": "The identity (x² + y²)² = (x² - y²)² + (2xy)² gives triples with legs x² - y² and 2xy and hypotenuse x² + y². Find whole numbers x > y that give the triple with legs 7 and 24 and hypotenuse 25.",
+     "prompt_markup": "The identity (x² + y²)² = (x² - y²)² + (2xy)² gives triples with legs x² - y² and 2xy and hypotenuse x² + y². Find whole numbers x > y that give the triple with legs 7 and 24 and hypotenuse 25.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "x =",
+      "y ="
      ],
      "correct_letter": null,
-     "correct_answer": "x = 4, y = 3",
+     "correct_answer": "4; 3",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form. x² + y² = 25, x² - y² = 7, 2xy = 24.",
+     "grading_note": "Form required: both. x² + y² = 25, x² - y² = 7, 2xy = 24 give x = 4, y = 3.",
      "figure": null,
      "page": 742,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use a polynomial identity to generate or compute numerical relationships",
      "target_skill": "Generate a triple with a required side",
@@ -1028,20 +1077,21 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Find x and y (whole numbers, x > y) for which the identity gives a triple with a leg 2xy = 40 and hypotenuse 41.",
-     "prompt_markup": "Find x and y (whole numbers, x > y) for which the identity gives a triple with a leg 2xy = 40 and hypotenuse 41.",
+     "prompt": "The identity (x² + y²)² = (x² - y²)² + (2xy)² gives triples with legs x² - y² and 2xy and hypotenuse x² + y². Find whole numbers x > y that give a leg 2xy = 40 and hypotenuse 41.",
+     "prompt_markup": "The identity (x² + y²)² = (x² - y²)² + (2xy)² gives triples with legs x² - y² and 2xy and hypotenuse x² + y². Find whole numbers x > y that give a leg 2xy = 40 and hypotenuse 41.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "x =",
+      "y ="
      ],
      "correct_letter": null,
-     "correct_answer": "x = 5, y = 4",
+     "correct_answer": "5; 4",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form. x² - y² = 9.",
+     "grading_note": "Form required: both. xy = 20 and x² + y² = 41 give x = 5, y = 4 (the other leg is 9).",
      "figure": null,
      "page": 743,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use a polynomial identity to generate or compute numerical relationships",
      "target_skill": "Generate a triple with a required side",
@@ -1171,22 +1221,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain why x = 2y gives a triple with legs in the ratio 3 : 4.",
-     "prompt_markup": "Explain why x = 2y gives a triple with legs in the ratio 3 : 4.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "The identity gives legs x² - y² and 2xy. Why does x = 2y (y a positive whole number) give legs in the ratio 3 : 4?",
+     "prompt_markup": "The identity gives legs x² - y² and 2xy. Why does x = 2y (y a positive whole number) give legs in the ratio 3 : 4?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "With y = 1, x = 2 gives legs 3 and 4, so every y works the same way without checking."
+      },
+      {
+       "letter": "B",
+       "text": "x² - y² = 2y² and 2xy = 4y², so the ratio is 1 : 2, which equals 3 : 4."
+      },
+      {
+       "letter": "C",
+       "text": "x² - y² = 3y and 2xy = 4y, so the legs are 3y and 4y."
+      },
+      {
+       "letter": "D",
+       "text": "x² - y² = 4y² - y² = 3y² and 2xy = 4y², so the legs are 3y² and 4y², in the ratio 3 : 4."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "x² - y² = 3y² and 2xy = 4y², so the legs are 3y² and 4y² (ratio 3 : 4).",
+     "answer_lines": [],
+     "correct_letter": "D",
+     "correct_answer": "x² - y² = 4y² - y² = 3y² and 2xy = 4y², so the legs are 3y² and 4y², in the ratio 3 : 4.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "Substitute x = 2y. The others compute (2y)² incorrectly, generalize from one case, or drop the squares.",
      "figure": null,
      "page": 746,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use a polynomial identity to generate or compute numerical relationships",
      "target_skill": "Generate a triple with a required side",
@@ -1274,20 +1339,21 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Compute (x + yi)² in the form a + bi.",
-     "prompt_markup": "Compute (x + yi)² in the form a + bi.",
+     "prompt": "Compute (x + yi)² in the form a + bi, where x and y are real. Give the real part and the imaginary part.",
+     "prompt_markup": "Compute (x + yi)² in the form a + bi, where x and y are real. Give the real part and the imaginary part.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Real part:",
+      "Imaginary part:"
      ],
      "correct_letter": null,
-     "correct_answer": "(x² - y²) + 2xyi",
+     "correct_answer": "x^2 - y^2; 2·x·y",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: a + bi.",
+     "grading_note": "Form required: both. (x + yi)² = x² + 2xyi + y²i² = (x² - y²) + 2xyi.",
      "figure": null,
      "page": 749,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use a polynomial identity to generate or compute numerical relationships",
      "target_skill": "Connect the triple identity to complex numbers",
@@ -1315,8 +1381,8 @@
      "standard_course": "Algebra II",
      "type": "tf",
      "response": "select true or false",
-     "prompt": "The real and imaginary parts of (x + yi)² are the legs of the Pythagorean triple from the identity.",
-     "prompt_markup": "The real and imaginary parts of (x + yi)² are the legs of the Pythagorean triple from the identity.",
+     "prompt": "For positive integers x > y, the real and imaginary parts of (x + yi)² are x² - y² and 2xy, the legs of a Pythagorean triple whose hypotenuse is x² + y².",
+     "prompt_markup": "For positive integers x > y, the real and imaginary parts of (x + yi)² are x² - y² and 2xy, the legs of a Pythagorean triple whose hypotenuse is x² + y².",
      "choices": [
       {
        "letter": "A",
@@ -1332,10 +1398,10 @@
      "correct_answer": "True",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "x² - y² and 2xy.",
+     "grading_note": "(x + yi)² = (x² - y²) + 2xyi, and (x² - y²)² + (2xy)² = (x² + y²)². The condition x > y > 0 makes both legs positive integers (x = y = 1 would give a zero leg).",
      "figure": null,
      "page": 750,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use a polynomial identity to generate or compute numerical relationships",
      "target_skill": "Connect the triple identity to complex numbers",

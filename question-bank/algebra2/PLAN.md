@@ -106,3 +106,7 @@ need; forward branches record a progression type and, when needed, NEAREST RELAT
 82. F-TF.A.4 Explain the symmetry and periodicity of trigonometric functions with the unit circle
 83. F-TF.B.6 Choose and justify domain restrictions that make trigonometric functions invertible
 84. F-TF.B.7 Solve trigonometric equations in models with inverse functions
+
+## Added in 1.2.0 (fixed number, placed after set 47 in the collection)
+
+85. F-IF.C.7.b Graph step functions (greatest integer, rounding-up rate models; open and closed endpoints)

@@ -1,4 +1,4 @@
-"""Manual review record for Algebra II (1.0.0 and 1.1.0), printed into VALIDATION.md by validate.py.
+"""Manual review record for Algebra II (1.0.0, 1.1.0 and 1.2.0), printed into VALIDATION.md by validate.py.
 
 Everything here was done by reading, drawing, or computing by the author of this release. It is NOT an automatic check,
 and no second person has reviewed it.
@@ -10,7 +10,11 @@ READ_THROUGH = (
     'answers that need technology (logarithms, trigonometric inverses, compound interest, root approximations) were '
     'recomputed with Python written separately from the data modules. Version 1.1.0: the 108 rewritten multiple-choice '
     'items were solved again in their final form; for each, the keyed choice was confirmed correct and every other choice '
-    'was confirmed wrong for the reason named in its grading note (computed values were recomputed in Python).'
+    'was confirmed wrong for the reason named in its grading note (computed values were recomputed in Python). '
+    'Version 1.2.0: the 910 revised and 30 new questions were solved by the author while rewriting them (computed values, '
+    'such as 95/590 ≈ 0.161, 4.318, 14.21 and 3.4, recomputed in Python); every question named in the review\'s '
+    'correction report was re-read in its final form. There was no separate second read-through of all 2555 questions in '
+    '1.2.0. Every short-answer key was run through the game\'s own answer checker (check 21).'
 )
 
 # Errors found while writing or in the read-through, all fixed before release.
@@ -41,6 +45,20 @@ FIXES = [
     ('39 proof and explanation choices (1.1.0)', 'In the first multiple-choice draft the correct argument was the longest choice '
                           'in 39 of 53 rewritten items. Distractors were rewritten as fully worded flawed arguments; now 3 of 53 '
                           'have the correct choice longest, each by at most 2 characters.'),
+    ('S2-B1-Q1/Q2/Q5, S13-B2-Q2 (1.2.0)', 'The game checker rejected a correct answer written in the other order when the key began '
+                          'with a negative constant (key -4 + 7x rejected 7x - 4). Keys are now in standard order (7x - 4), '
+                          'which the checker accepts in either order; check 21 now tests reversed term order on every key.'),
+    ('Radical, logarithmic and decimal-coefficient expression keys (1.2.0)', 'The checker compared keys such as 3 - √x, '
+                          '(A/P)^(1/t) - 1 and 20 - 1.95t only as text, so an equivalent rewrite (√x written as sqrt(x), terms '
+                          'reordered) was marked wrong. These items are now multiple choice or ask for numeric parameters.'),
+    ('S16-M-Q1/Q2/Q3 (1.2.0)', 'A numeric answer line (p(2) = 0) next to a factored line failed, because the checker applies '
+                          '"factor" to every line of a question. The check value now appears in the question.'),
+    ('S25-B2-Q1 (1.2.0)', 'Two answers shared one answer line; now one line each.'),
+    ('37 unchanged multiple-choice items (1.2.0)', 'Adding new multiple-choice items moved the letters of 37 unchanged 1.1.0 items. '
+                          'Their 1.1.0 letters were restored, and every current letter is now frozen in choice_plan.json.'),
+    ('146 multiple-choice items (1.2.0)', 'The correct choice was much longer than every other choice in 146 items (and the '
+                          'uniquely longest in 40% of text items). Distractors were rewritten with specific errors; check 23 '
+                          'now finds no strong length cue, and the correct choice is the uniquely longest in 33% (25% is chance).'),
 ]
 
 FIGURES = (
@@ -53,7 +71,10 @@ FIGURES = (
     'Version 1.1.0: all 55 four-graph figures (graphing items now multiple choice) were rendered and inspected: each panel '
     'against its own equation (zeros, multiplicity, asymptotes, holes, open and closed endpoints, period, midline, title), '
     'the keyed panel against the question, and the labels A-D. Layout fixes after inspection: panel letters moved out of the '
-    'grid, axis numbers spaced out, choices on one line, axis names removed from the titled S28 panels.'
+    'grid, axis numbers spaced out, choices on one line, axis names removed from the titled S28 panels. Version 1.2.0: the five '
+    'step-function figures of S85-M (pages 1754-1758) were rendered and inspected: step heights, step widths, open and closed '
+    'endpoints of every panel, the keyed panel against the question, and the ⌊ ⌋ and ⌈ ⌉ symbols in the text. Figures '
+    'of other changed questions were reused unchanged.'
 )
 
 PROOFS = (
@@ -79,7 +100,7 @@ def markdown(cases, recs):
     L = ['## Manual review (author)', '',
          '- **Read-through and re-solve of every question:** ' + READ_THROUGH,
          '- **Automatic re-solve (check 17), %d questions:** %s.' % (len(ids), ', '.join(ids)),
-         '- **Shown-work items:** ' + PROOFS,
+         '- **Former shown-work items:** ' + PROOFS,
          '- **Figures:** ' + FIGURES,
          '- **Simulations:** ' + SIMULATIONS, '',
          '### Errors found and fixed before release', '', '| Question | Problem and fix |', '|---|---|']

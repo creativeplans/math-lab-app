@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -50,19 +50,34 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "The graphs of y = 2^x and y = x + 2 are shown. They meet at x = 2 and at a negative x. Explain why x = 2 solves 2^x = x + 2, and verify it.",
-     "prompt_markup": "The graphs of y = 2^x and y = x + 2 are shown. They meet at x = 2 and at a negative x. Explain why x = 2 solves 2^x = x + 2, and verify it.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "The graphs of y = 2^x and y = x + 2 are shown. They meet at x = 2 and at a negative x. Why does x = 2 solve 2^x = x + 2?",
+     "prompt_markup": "The graphs of y = 2^x and y = x + 2 are shown. They meet at x = 2 and at a negative x. Why does x = 2 solve 2^x = x + 2?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because 2^x and x + 2 are equal for every x ≥ 0, including x = 2."
+      },
+      {
+       "letter": "B",
+       "text": "At an intersection both functions have the same output for the same input; at x = 2, 2² = 4 = 2 + 2."
+      },
+      {
+       "letter": "C",
+       "text": "Because x = 2 is where the graph of y = 2^x crosses the x-axis."
+      },
+      {
+       "letter": "D",
+       "text": "Because the y-coordinate of the intersection point is 2, not its x-coordinate."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "At an intersection both functions have the same y-value for the same x, so 2^x = x + 2 there; 2² = 4 = 2 + 2.",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "At an intersection both functions have the same output for the same input; at x = 2, 2² = 4 = 2 + 2.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: the explanation and the check.",
+     "grading_note": "Reading the x-coordinate of an intersection solves f(x) = g(x). The others read the wrong coordinate (y = 4 there), overgeneralize (at x = 0: 1 ≠ 2), or state a false fact (2^x is never 0).",
      "figure": {
       "svg": "assets/S33-M-Q1.svg",
       "png": "assets/S33-M-Q1.png",
@@ -2355,7 +2370,7 @@
       }
      },
      "page": 1199,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain why the x-coordinates of the intersections of y = f(x) and y = g(x) solve f(x) = g(x), for polynomial, rational, radical, absolute value, and exponential functions",
      "target_skill": "Explain why the x-coordinates of the intersections of y = f(x) and y = g(x) solve f(x) = g(x), for polynomial, rational, radical, absolute value, and exponential functions",
@@ -2381,19 +2396,34 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "The graphs of y = x³ - 3x and y = x are shown. Use them to list every solution of x³ - 3x = x, and explain why they are solutions.",
-     "prompt_markup": "The graphs of y = x³ - 3x and y = x are shown. Use them to list every solution of x³ - 3x = x, and explain why they are solutions.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "The graphs of y = x³ - 3x and y = x are shown. Which gives every solution of x³ - 3x = x with a correct reason?",
+     "prompt_markup": "The graphs of y = x³ - 3x and y = x are shown. Which gives every solution of x³ - 3x = x with a correct reason?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "x = 0 only: that is where both graphs pass through the origin."
+      },
+      {
+       "letter": "B",
+       "text": "x = -√3, 0, √3: these are where y = x³ - 3x crosses the x-axis."
+      },
+      {
+       "letter": "C",
+       "text": "x = -2, 0, 2: the graphs meet at these x-values, where the two outputs are equal."
+      },
+      {
+       "letter": "D",
+       "text": "y = -2, 0, 2: these are the heights where the graphs meet."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "x = -2, 0, 2: at these x-values the two outputs are equal (each point lies on both graphs).",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "x = -2, 0, 2: the graphs meet at these x-values, where the two outputs are equal.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: all three solutions and the explanation.",
+     "grading_note": "The solutions are the x-coordinates of all intersections. The others give heights, use the zeros of one function, or miss two intersections.",
      "figure": {
       "svg": "assets/S33-M-Q2.svg",
       "png": "assets/S33-M-Q2.png",
@@ -4514,7 +4544,7 @@
       }
      },
      "page": 1200,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain why the x-coordinates of the intersections of y = f(x) and y = g(x) solve f(x) = g(x), for polynomial, rational, radical, absolute value, and exponential functions",
      "target_skill": "Explain why the x-coordinates of the intersections of y = f(x) and y = g(x) solve f(x) = g(x), for polynomial, rational, radical, absolute value, and exponential functions",
@@ -4540,19 +4570,34 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "The graphs of y = 1/x and y = x are shown. List every solution of 1/x = x and explain using the graphs.",
-     "prompt_markup": "The graphs of y = 1/x and y = x are shown. List every solution of 1/x = x and explain using the graphs.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "The graphs of y = 1/x and y = x are shown. Which gives every solution of 1/x = x with a correct reason?",
+     "prompt_markup": "The graphs of y = 1/x and y = x are shown. Which gives every solution of 1/x = x with a correct reason?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "x = 0: the graphs are closest near the origin, where 1/x and x both approach 0."
+      },
+      {
+       "letter": "B",
+       "text": "x = 1 only: the graphs meet only in the first quadrant, at (1, 1)."
+      },
+      {
+       "letter": "C",
+       "text": "x = -1 and x = 1: the graphs meet at (-1, -1) and (1, 1), where 1/x and x are equal."
+      },
+      {
+       "letter": "D",
+       "text": "There is no solution, because y = 1/x has a vertical asymptote at x = 0."
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "C",
      "correct_answer": "x = -1 and x = 1: the graphs meet at (-1, -1) and (1, 1), where 1/x and x are equal.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: both solutions and the explanation.",
+     "grading_note": "Both intersections count. The others miss one, use the excluded x = 0, or confuse an asymptote with having no intersections.",
      "figure": {
       "svg": "assets/S33-M-Q3.svg",
       "png": "assets/S33-M-Q3.png",
@@ -6936,7 +6981,7 @@
       }
      },
      "page": 1201,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain why the x-coordinates of the intersections of y = f(x) and y = g(x) solve f(x) = g(x), for polynomial, rational, radical, absolute value, and exponential functions",
      "target_skill": "Explain why the x-coordinates of the intersections of y = f(x) and y = g(x) solve f(x) = g(x), for polynomial, rational, radical, absolute value, and exponential functions",
@@ -6962,19 +7007,34 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "The graphs of y = √x and y = x/2 are shown. List every solution of √x = x/2 and verify each.",
-     "prompt_markup": "The graphs of y = √x and y = x/2 are shown. List every solution of √x = x/2 and verify each.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "The graphs of y = √x and y = x/2 are shown. Which gives every solution of √x = x/2 with a correct check?",
+     "prompt_markup": "The graphs of y = √x and y = x/2 are shown. Which gives every solution of √x = x/2 with a correct check?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "x = 0 and x = 4: √0 = 0 = 0/2 and √4 = 2 = 4/2."
+      },
+      {
+       "letter": "B",
+       "text": "x = 2 and x = 4: these are the heights and the widths of the intersection."
+      },
+      {
+       "letter": "C",
+       "text": "x = 4 only: √4 = 2 = 4/2; the origin does not count."
+      },
+      {
+       "letter": "D",
+       "text": "x = 0 and x = 2: √2 = 1 = 2/2."
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "A",
      "correct_answer": "x = 0 and x = 4: √0 = 0 = 0/2 and √4 = 2 = 4/2.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: both solutions and the checks.",
+     "grading_note": "Both intersections are solutions, and each checks. The others drop x = 0, mix coordinates, or use a false check (√2 ≈ 1.41).",
      "figure": {
       "svg": "assets/S33-M-Q4.svg",
       "png": "assets/S33-M-Q4.png",
@@ -9243,7 +9303,7 @@
       }
      },
      "page": 1202,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain why the x-coordinates of the intersections of y = f(x) and y = g(x) solve f(x) = g(x), for polynomial, rational, radical, absolute value, and exponential functions",
      "target_skill": "Explain why the x-coordinates of the intersections of y = f(x) and y = g(x) solve f(x) = g(x), for polynomial, rational, radical, absolute value, and exponential functions",
@@ -9269,19 +9329,34 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "The graphs of y = |x - 1| and y = 3 are shown. List every solution of |x - 1| = 3 and explain.",
-     "prompt_markup": "The graphs of y = |x - 1| and y = 3 are shown. List every solution of |x - 1| = 3 and explain.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "The graphs of y = |x - 1| and y = 3 are shown. Which gives every solution of |x - 1| = 3 with a correct reason?",
+     "prompt_markup": "The graphs of y = |x - 1| and y = 3 are shown. Which gives every solution of |x - 1| = 3 with a correct reason?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "x = -4 and x = 2: these x-values are 3 units from 1 on the number line."
+      },
+      {
+       "letter": "B",
+       "text": "x = -2 and x = 4: the V-shaped graph is at height 3 at these x-values."
+      },
+      {
+       "letter": "C",
+       "text": "x = 3: the horizontal line is at height 3, so x = 3 is the solution."
+      },
+      {
+       "letter": "D",
+       "text": "x = 4 only: |x - 1| is positive only for x > 1, so only one solution."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "x = -2 and x = 4: the V-shaped graph is at height 3 there.",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "x = -2 and x = 4: the V-shaped graph is at height 3 at these x-values.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: both solutions and the explanation.",
+     "grading_note": "Both intersections count. The others miss one, give a height, or compute distances from -1 instead of 1.",
      "figure": {
       "svg": "assets/S33-M-Q5.svg",
       "png": "assets/S33-M-Q5.png",
@@ -11722,7 +11797,7 @@
       }
      },
      "page": 1203,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain why the x-coordinates of the intersections of y = f(x) and y = g(x) solve f(x) = g(x), for polynomial, rational, radical, absolute value, and exponential functions",
      "target_skill": "Explain why the x-coordinates of the intersections of y = f(x) and y = g(x) solve f(x) = g(x), for polynomial, rational, radical, absolute value, and exponential functions",
@@ -11767,20 +11842,20 @@
      "standard_course": "Algebra I",
      "type": "sa",
      "response": "write",
-     "prompt": "Is (2, 4) on the graph of y = 2^x? Explain.",
-     "prompt_markup": "Is (2, 4) on the graph of y = 2^x? Explain.",
+     "prompt": "Is the point (2, 4) on the graph of y = 2^x? (Yes or No)",
+     "prompt_markup": "Is the point (2, 4) on the graph of y = 2^x? (Yes or No)",
      "choices": [],
      "answer_lines": [
       "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "Yes: 2² = 4",
+     "correct_answer": "Yes",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: decision and check.",
+     "grading_note": "2² = 4.",
      "figure": null,
      "page": 1205,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain why the x-coordinates of the intersections of y = f(x) and y = g(x) solve f(x) = g(x), for polynomial, rational, radical, absolute value, and exponential functions",
      "target_skill": "A graph is the set of its solutions",
@@ -11808,20 +11883,20 @@
      "standard_course": "Algebra I",
      "type": "sa",
      "response": "write",
-     "prompt": "Is (3, 6) on the graph of y = x + 2?",
-     "prompt_markup": "Is (3, 6) on the graph of y = x + 2?",
+     "prompt": "Is the point (3, 6) on the graph of y = x + 2? (Yes or No)",
+     "prompt_markup": "Is the point (3, 6) on the graph of y = x + 2? (Yes or No)",
      "choices": [],
      "answer_lines": [
       "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "No: 3 + 2 = 5",
+     "correct_answer": "No",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: decision and check.",
+     "grading_note": "3 + 2 = 5 ≠ 6.",
      "figure": null,
      "page": 1206,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain why the x-coordinates of the intersections of y = f(x) and y = g(x) solve f(x) = g(x), for polynomial, rational, radical, absolute value, and exponential functions",
      "target_skill": "A graph is the set of its solutions",
@@ -11953,20 +12028,20 @@
      "standard_course": "Algebra I",
      "type": "sa",
      "response": "write",
-     "prompt": "Is (-1, -1) on the graph of y = 1/x?",
-     "prompt_markup": "Is (-1, -1) on the graph of y = 1/x?",
+     "prompt": "Is the point (-1, -1) on the graph of y = 1/x? (Yes or No)",
+     "prompt_markup": "Is the point (-1, -1) on the graph of y = 1/x? (Yes or No)",
      "choices": [],
      "answer_lines": [
       "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "Yes: 1/(-1) = -1",
+     "correct_answer": "Yes",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: decision and check.",
+     "grading_note": "1/(-1) = -1.",
      "figure": null,
      "page": 1209,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain why the x-coordinates of the intersections of y = f(x) and y = g(x) solve f(x) = g(x), for polynomial, rational, radical, absolute value, and exponential functions",
      "target_skill": "A graph is the set of its solutions",
@@ -12007,22 +12082,37 @@
      "domain": "Expressions & Equations",
      "skill": "Solve a linear system by graphing",
      "nearest_related": false,
-     "type": "sa",
-     "response": "write",
-     "prompt": "The lines y = x + 1 and y = -x + 5 meet at (2, 3). Explain why x = 2 solves x + 1 = -x + 5.",
-     "prompt_markup": "The lines y = x + 1 and y = -x + 5 meet at (2, 3). Explain why x = 2 solves x + 1 = -x + 5.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "The lines y = x + 1 and y = -x + 5 meet at (2, 3). Why does x = 2 solve x + 1 = -x + 5?",
+     "prompt_markup": "The lines y = x + 1 and y = -x + 5 meet at (2, 3). Why does x = 2 solve x + 1 = -x + 5?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because the two lines have opposite slopes, 1 and -1."
+      },
+      {
+       "letter": "B",
+       "text": "Because the y-coordinate of the intersection point (2, 3) is 2."
+      },
+      {
+       "letter": "C",
+       "text": "At x = 2 both expressions equal 3, so both sides are equal."
+      },
+      {
+       "letter": "D",
+       "text": "Because x = 2 is where both lines cross the x-axis."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "At x = 2 both equal 3.",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "At x = 2 both expressions equal 3, so both sides are equal.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "An intersection point is on both graphs, so both outputs are equal there. The others misread the coordinates or give an irrelevant fact.",
      "figure": null,
      "page": 1211,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain why the x-coordinates of the intersections of y = f(x) and y = g(x) solve f(x) = g(x), for polynomial, rational, radical, absolute value, and exponential functions",
      "target_skill": "Solve a linear system by graphing",
@@ -12249,16 +12339,17 @@
      "prompt_markup": "Find 2^x and x + 2 when x = 2.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "2^x =",
+      "x + 2 ="
      ],
      "correct_letter": null,
-     "correct_answer": "4 and 4",
+     "correct_answer": "4; 4",
      "drawing_answer": null,
      "required_method": null,
      "grading_note": "Form required: both.",
      "figure": null,
      "page": 1217,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain why the x-coordinates of the intersections of y = f(x) and y = g(x) solve f(x) = g(x), for polynomial, rational, radical, absolute value, and exponential functions",
      "target_skill": "Evaluate nonlinear functions at an input",
@@ -12488,22 +12579,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain why the solutions of x³ - 3x = x are the zeros of h(x) = x³ - 4x.",
-     "prompt_markup": "Explain why the solutions of x³ - 3x = x are the zeros of h(x) = x³ - 4x.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Why are the solutions of x³ - 3x = x the zeros of h(x) = x³ - 4x?",
+     "prompt_markup": "Why are the solutions of x³ - 3x = x the zeros of h(x) = x³ - 4x?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because h(x) = f(x) · g(x) and a product is 0 when a factor is 0."
+      },
+      {
+       "letter": "B",
+       "text": "Because adding x to both sides gives x³ - 4x = 0."
+      },
+      {
+       "letter": "C",
+       "text": "Because x³ - 4x has three terms."
+      },
+      {
+       "letter": "D",
+       "text": "f(x) = g(x) exactly when f(x) - g(x) = 0, and (x³ - 3x) - x = x³ - 4x."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "f(x) = g(x) exactly when f(x) - g(x) = 0, and f - g = x³ - 4x.",
+     "answer_lines": [],
+     "correct_letter": "D",
+     "correct_answer": "f(x) = g(x) exactly when f(x) - g(x) = 0, and (x³ - 3x) - x = x³ - 4x.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "Subtracting g(x) from both sides. The others give a non-reason, an algebra error (adding x gives x³ - 2x = 2x), or the wrong combination.",
      "figure": null,
      "page": 1223,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain why the x-coordinates of the intersections of y = f(x) and y = g(x) solve f(x) = g(x), for polynomial, rational, radical, absolute value, and exponential functions",
      "target_skill": "Relate intersections to zeros of f - g",
@@ -12674,22 +12780,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain why 2^x = x + 2 has exactly two solutions using h(x) = 2^x - x - 2.",
-     "prompt_markup": "Explain why 2^x = x + 2 has exactly two solutions using h(x) = 2^x - x - 2.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "h(x) = 2^x - x - 2, with h(-2) = 0.25, h(0) = -1, h(3) = 3. h decreases and then increases (it has one turning point). Why does 2^x = x + 2 have exactly two solutions?",
+     "prompt_markup": "h(x) = 2^x - x - 2, with h(-2) = 0.25, h(0) = -1, h(3) = 3. h decreases and then increases (it has one turning point). Why does 2^x = x + 2 have exactly two solutions?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "h is continuous and changes sign twice (on -2 to 0 and 0 to 3), and with one turning point it has at most two zeros."
+      },
+      {
+       "letter": "B",
+       "text": "Every equation that sets an exponential function equal to a line has exactly two solutions, so 2^x = x + 2 has two."
+      },
+      {
+       "letter": "C",
+       "text": "h(-2) and h(3) are both positive, so h cannot change sign anywhere between them, and therefore it has no zeros at all."
+      },
+      {
+       "letter": "D",
+       "text": "h has degree 2 because of the 2^x term, so like every quadratic it has exactly two zeros."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "h changes sign twice (h(-2) > 0, h(0) < 0, h(3) > 0) and h is decreasing then increasing, so it has exactly two zeros.",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "h is continuous and changes sign twice (on -2 to 0 and 0 to 3), and with one turning point it has at most two zeros.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "Sign changes give at least two zeros; one turning point allows at most two. The others ignore the sign changes, overgeneralize (2^x = 1 has one solution), or treat h as a polynomial.",
      "figure": null,
      "page": 1227,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain why the x-coordinates of the intersections of y = f(x) and y = g(x) solve f(x) = g(x), for polynomial, rational, radical, absolute value, and exponential functions",
      "target_skill": "Relate intersections to zeros of f - g",
@@ -12920,22 +13041,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain why sin x = 2 has no solution using the graph.",
-     "prompt_markup": "Explain why sin x = 2 has no solution using the graph.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Why does sin x = 2 have no solution?",
+     "prompt_markup": "Why does sin x = 2 have no solution?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The graph of y = sin x meets y = 2 only at x = π/2."
+      },
+      {
+       "letter": "B",
+       "text": "sin x = 2 has solutions only when x is in degrees."
+      },
+      {
+       "letter": "C",
+       "text": "The graph of y = sin x is not periodic, so it never returns to the height 2."
+      },
+      {
+       "letter": "D",
+       "text": "The graph of y = sin x stays between -1 and 1, so it never meets y = 2."
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "D",
      "correct_answer": "The graph of y = sin x stays between -1 and 1, so it never meets y = 2.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "The range of sine is [-1, 1]. The others misread sin(π/2) = 1, confuse units, or state a false fact.",
      "figure": null,
      "page": 1233,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain why the x-coordinates of the intersections of y = f(x) and y = g(x) solve f(x) = g(x), for polynomial, rational, radical, absolute value, and exponential functions",
      "target_skill": "Find all solutions of a trigonometric equation on an interval from a graph",

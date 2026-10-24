@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -50,22 +50,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "A town's population is modeled by P(t) = 12,500(0.97)ᵗ, where t is the number of years after 2020. What do 12,500 and 0.97 represent, and what does 1 - 0.97 represent?",
-     "prompt_markup": "A town's population is modeled by P(t) = 12,500(0.97)ᵗ, where t is the number of years after 2020. What do 12,500 and 0.97 represent, and what does 1 - 0.97 represent?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A town's population is modeled by P(t) = 12,500(0.97)ᵗ, where t is the number of years after 2020. Which interpretation of 12,500, 0.97, and 1 - 0.97 is correct?",
+     "prompt_markup": "A town's population is modeled by P(t) = 12,500(0.97)ᵗ, where t is the number of years after 2020. Which interpretation of 12,500, 0.97, and 1 - 0.97 is correct?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "12,500 is the population in 2020; 0.97 means the population decreases by 97% per year; 1 - 0.97 = 0.03 is the population left after one year."
+      },
+      {
+       "letter": "B",
+       "text": "12,500 is the population in 2020; 0.97 is the yearly factor (each year the population is 97% of the year before); 1 - 0.97 = 0.03 means a 3% decrease per year."
+      },
+      {
+       "letter": "C",
+       "text": "12,500 is the number of people lost per year; 0.97 is the yearly factor; 1 - 0.97 = 0.03 means a 3% decrease per year."
+      },
+      {
+       "letter": "D",
+       "text": "12,500 is the population after one year; 0.97 is the yearly factor; 1 - 0.97 = 0.03 means a 3% increase per year."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "12,500 is the population in 2020; 0.97 is the yearly factor (each year the population is 97% of the year before); 1 - 0.97 = 0.03 means the population decreases by 3% per year.",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "12,500 is the population in 2020; 0.97 is the yearly factor (each year the population is 97% of the year before); 1 - 0.97 = 0.03 means a 3% decrease per year.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent interpretation of all three parts, with units (people, per year).",
+     "grading_note": "At t = 0, P = 12,500; multiplying by 0.97 keeps 97%, a 3% decrease. The others read 0.97 as the percent lost, call 12,500 the value after one year or the yearly loss, or read 0.03 as growth.",
      "figure": null,
      "page": 231,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret terms, factors, coefficients, and bases of polynomial, rational, and exponential expressions in terms of a context",
      "target_skill": "Interpret terms, factors, coefficients, and bases of polynomial, rational, and exponential expressions in terms of a context",
@@ -91,22 +106,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "The average cost per item of making x items is C(x) = (4,000 + 6x) / x dollars. Interpret 4,000, 6x, and the division by x.",
-     "prompt_markup": "The average cost per item of making x items is C(x) = (4,000 + 6x) / x dollars. Interpret 4,000, 6x, and the division by x.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "The average cost per item of making x items is C(x) = (4,000 + 6x)/x dollars. Which interpretation of 4,000, 6x, and the division by x is correct?",
+     "prompt_markup": "The average cost per item of making x items is C(x) = (4,000 + 6x)/x dollars. Which interpretation of 4,000, 6x, and the division by x is correct?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "4,000 is a fixed cost in dollars; 6x is the variable cost; dividing by x gives the total cost of x items."
+      },
+      {
+       "letter": "B",
+       "text": "4,000 is the cost of each item; 6x is the number of items made; dividing by x gives the total cost of all items."
+      },
+      {
+       "letter": "C",
+       "text": "4,000 is a fixed cost in dollars; 6x is the variable cost ($6 per item for x items); dividing the total cost by x gives the cost per item."
+      },
+      {
+       "letter": "D",
+       "text": "4,000 is a fixed cost in dollars; 6x is the profit on x items ($6 per item); dividing by x gives the profit per item."
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "C",
      "correct_answer": "4,000 is a fixed cost in dollars; 6x is the variable cost ($6 per item for x items); dividing the total cost by x gives the cost per item.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent interpretation of all three parts.",
+     "grading_note": "Total cost = fixed + variable, and total ÷ items = average cost per item. The others misread one part: the fixed cost, the variable cost, or what the division gives.",
      "figure": null,
      "page": 232,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret terms, factors, coefficients, and bases of polynomial, rational, and exponential expressions in terms of a context",
      "target_skill": "Interpret terms, factors, coefficients, and bases of polynomial, rational, and exponential expressions in terms of a context",
@@ -132,22 +162,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "An open box is made by cutting squares of side x cm from the corners of a 20 cm by 20 cm sheet. Its volume is V(x) = x(20 - 2x)² cm³. Interpret x, 20 - 2x, and (20 - 2x)².",
-     "prompt_markup": "An open box is made by cutting squares of side x cm from the corners of a 20 cm by 20 cm sheet. Its volume is V(x) = x(20 - 2x)² cm³. Interpret x, 20 - 2x, and (20 - 2x)².",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "An open box is made by cutting squares of side x cm from the corners of a 20 cm by 20 cm sheet and folding up the sides. Its volume is V(x) = x(20 - 2x)² cm³. Which interpretation of x, 20 - 2x, and (20 - 2x)² is correct?",
+     "prompt_markup": "An open box is made by cutting squares of side x cm from the corners of a 20 cm by 20 cm sheet and folding up the sides. Its volume is V(x) = x(20 - 2x)² cm³. Which interpretation of x, 20 - 2x, and (20 - 2x)² is correct?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "x is the side of the base; 20 - 2x is the height; (20 - 2x)² is the volume in cm³."
+      },
+      {
+       "letter": "B",
+       "text": "x is the height; 20 - 2x is the side of the base (20 cm minus one cut); (20 - 2x)² is the perimeter of the base."
+      },
+      {
+       "letter": "C",
+       "text": "x is the height; 20 - 2x is the area of one side; (20 - 2x)² is the surface area of the box."
+      },
+      {
+       "letter": "D",
+       "text": "x is the height of the box; 20 - 2x is the side length of the square base (20 cm minus two cuts); (20 - 2x)² is the base area in cm²."
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "D",
      "correct_answer": "x is the height of the box; 20 - 2x is the side length of the square base (20 cm minus two cuts); (20 - 2x)² is the base area in cm².",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent interpretation of all three parts.",
+     "grading_note": "The folded flaps have height x; each side of the base loses x at both ends. The others swap height and base, count one cut, or confuse area with perimeter or surface area.",
      "figure": null,
      "page": 233,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret terms, factors, coefficients, and bases of polynomial, rational, and exponential expressions in terms of a context",
      "target_skill": "Interpret terms, factors, coefficients, and bases of polynomial, rational, and exponential expressions in terms of a context",
@@ -173,22 +218,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "The amount of a medicine in the body t hours after a dose is A(t) = 200(1/2)^(t/6) mg. Interpret 200, 1/2, and t/6.",
-     "prompt_markup": "The amount of a medicine in the body t hours after a dose is A(t) = 200(1/2)^(t/6) mg. Interpret 200, 1/2, and t/6.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "The amount of a medicine in the body t hours after a dose is A(t) = 200(1/2)^(t/6) mg. Which interpretation of 200, 1/2, and t/6 is correct?",
+     "prompt_markup": "The amount of a medicine in the body t hours after a dose is A(t) = 200(1/2)^(t/6) mg. Which interpretation of 200, 1/2, and t/6 is correct?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "200 mg is the dose at t = 0; 1/2 means the amount is halved repeatedly; t/6 counts 6-hour periods, so the amount halves every 6 hours."
+      },
+      {
+       "letter": "B",
+       "text": "200 mg is the dose at t = 0; 1/2 means the amount is halved; t/6 means the amount halves every 1/6 hour."
+      },
+      {
+       "letter": "C",
+       "text": "200 mg is the amount left after 6 hours; 1/2 means the amount is halved; t/6 counts 6-hour periods."
+      },
+      {
+       "letter": "D",
+       "text": "200 mg is the dose at t = 0; 1/2 means half of the dose is removed every hour; t/6 is the number of doses taken."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "200 mg is the initial dose; the amount is halved repeatedly; t/6 counts 6-hour periods, so the amount halves every 6 hours (half-life 6 hours).",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "200 mg is the dose at t = 0; 1/2 means the amount is halved repeatedly; t/6 counts 6-hour periods, so the amount halves every 6 hours.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent interpretation of all three parts.",
+     "grading_note": "At t = 0, A = 200; the exponent t/6 increases by 1 every 6 hours, and each step multiplies by 1/2 (half-life 6 hours). The others misread the exponent, the starting value, or the halving period.",
      "figure": null,
      "page": 234,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret terms, factors, coefficients, and bases of polynomial, rational, and exponential expressions in terms of a context",
      "target_skill": "Interpret terms, factors, coefficients, and bases of polynomial, rational, and exponential expressions in terms of a context",
@@ -214,22 +274,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Maya keeps $1,500 in an account that earns 4% interest compounded once a year and also puts $200 per year in a jar (no interest). Her total after n years is T(n) = 1500(1.04)ⁿ + 200n. Interpret 1500(1.04)ⁿ, 1.04, and 200n.",
-     "prompt_markup": "Maya keeps $1,500 in an account that earns 4% interest compounded once a year and also puts $200 per year in a jar (no interest). Her total after n years is T(n) = 1500(1.04)ⁿ + 200n. Interpret 1500(1.04)ⁿ, 1.04, and 200n.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Maya keeps $1,500 in an account that earns 4% interest compounded once a year and also puts $200 per year in a jar (no interest). Her total after n years is T(n) = 1500(1.04)ⁿ + 200n. Which interpretation of 1500(1.04)ⁿ, 1.04, and 200n is correct?",
+     "prompt_markup": "Maya keeps $1,500 in an account that earns 4% interest compounded once a year and also puts $200 per year in a jar (no interest). Her total after n years is T(n) = 1500(1.04)ⁿ + 200n. Which interpretation of 1500(1.04)ⁿ, 1.04, and 200n is correct?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "1500(1.04)ⁿ is the account balance after n years; 1.04 means 104% interest per year; 200n is the cash in the jar after n years."
+      },
+      {
+       "letter": "B",
+       "text": "1500(1.04)ⁿ is the account balance after n years; 1.04 is the yearly growth factor (4% interest added each year); 200n is the cash in the jar after n years."
+      },
+      {
+       "letter": "C",
+       "text": "1500(1.04)ⁿ is the account balance after n years; 1.04 is the yearly growth factor; 200n is the interest earned by the jar."
+      },
+      {
+       "letter": "D",
+       "text": "1500(1.04)ⁿ is the interest earned after n years; 1.04 is the yearly growth factor; 200n is the cash in the jar after n years."
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "B",
      "correct_answer": "1500(1.04)ⁿ is the account balance after n years; 1.04 is the yearly growth factor (4% interest added each year); 200n is the cash in the jar after n years.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent interpretation of all three parts.",
+     "grading_note": "The exponential term is the whole balance; 1.04 keeps 100% and adds 4%; 200n is the uninvested cash. The others call the balance interest, read 1.04 as 104% interest, or give the jar interest.",
      "figure": null,
      "page": 235,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret terms, factors, coefficients, and bases of polynomial, rational, and exponential expressions in terms of a context",
      "target_skill": "Interpret terms, factors, coefficients, and bases of polynomial, rational, and exponential expressions in terms of a context",
@@ -272,22 +347,37 @@
      "nearest_related": false,
      "standard_level": "Algebra I. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra I, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra I",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Name the terms of 4,000 + 6x.",
-     "prompt_markup": "Name the terms of 4,000 + 6x.",
-     "choices": [],
-     "answer_lines": [
-      "Terms:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which lists the terms of 4,000 + 6x?",
+     "prompt_markup": "Which lists the terms of 4,000 + 6x?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "4,000 and 6"
+      },
+      {
+       "letter": "B",
+       "text": "4,000, 6, and x"
+      },
+      {
+       "letter": "C",
+       "text": "4,000 and 6x"
+      },
+      {
+       "letter": "D",
+       "text": "6 and x"
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "C",
      "correct_answer": "4,000 and 6x",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: both terms.",
+     "grading_note": "Terms are the parts that are added. The others list the factors 6 and x of the term 6x, or mix terms and factors.",
      "figure": null,
      "page": 237,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret terms, factors, coefficients, and bases of polynomial, rational, and exponential expressions in terms of a context",
      "target_skill": "Name terms, factors, and coefficients",
@@ -458,22 +548,37 @@
      "nearest_related": false,
      "standard_level": "Algebra I. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra I, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra I",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Name the factors of 200(0.5)ᵗ.",
-     "prompt_markup": "Name the factors of 200(0.5)ᵗ.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which lists the factors of 200(0.5)ᵗ?",
+     "prompt_markup": "Which lists the factors of 200(0.5)ᵗ?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "0.5 and t"
+      },
+      {
+       "letter": "B",
+       "text": "200 + (0.5)ᵗ"
+      },
+      {
+       "letter": "C",
+       "text": "200 and 0.5t"
+      },
+      {
+       "letter": "D",
+       "text": "200 and (0.5)ᵗ"
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "D",
      "correct_answer": "200 and (0.5)ᵗ",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer.",
+     "grading_note": "200(0.5)ᵗ is 200 times (0.5)ᵗ. The others rewrite the power as a product, add instead of multiplying, or split the power into its base and exponent.",
      "figure": null,
      "page": 241,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret terms, factors, coefficients, and bases of polynomial, rational, and exponential expressions in terms of a context",
      "target_skill": "Name terms, factors, and coefficients",
@@ -516,20 +621,20 @@
      "nearest_related": false,
      "type": "sa",
      "response": "write",
-     "prompt": "A price is multiplied by 0.97. By what percent does it change?",
-     "prompt_markup": "A price is multiplied by 0.97. By what percent does it change?",
+     "prompt": "A price is multiplied by 0.97. By what percent does it change? Give a signed percent (negative for a decrease).",
+     "prompt_markup": "A price is multiplied by 0.97. By what percent does it change? Give a signed percent (negative for a decrease).",
      "choices": [],
      "answer_lines": [
       "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "It decreases by 3%.",
+     "correct_answer": "-3%",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer.",
+     "grading_note": "0.97 = 1 - 0.03.",
      "figure": null,
      "page": 243,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret terms, factors, coefficients, and bases of polynomial, rational, and exponential expressions in terms of a context",
      "target_skill": "Translate between a percent change and a multiplying factor",
@@ -694,20 +799,20 @@
      "nearest_related": false,
      "type": "sa",
      "response": "write",
-     "prompt": "Find 1 - 0.85 and explain what it means for an amount multiplied by 0.85.",
-     "prompt_markup": "Find 1 - 0.85 and explain what it means for an amount multiplied by 0.85.",
+     "prompt": "An amount is multiplied by 0.85. By what percent does it decrease? (Hint: find 1 - 0.85.)",
+     "prompt_markup": "An amount is multiplied by 0.85. By what percent does it decrease? (Hint: find 1 - 0.85.)",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Percent decrease:"
      ],
      "correct_letter": null,
-     "correct_answer": "0.15; the amount decreases by 15%.",
+     "correct_answer": "15%",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer.",
+     "grading_note": "Any equivalent form (15% or 15). 1 - 0.85 = 0.15, so the amount decreases by 15%.",
      "figure": null,
      "page": 247,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret terms, factors, coefficients, and bases of polynomial, rational, and exponential expressions in terms of a context",
      "target_skill": "Translate between a percent change and a multiplying factor",
@@ -748,22 +853,37 @@
      "domain": "Ratios & Proportional Relationships",
      "skill": "Interpret a quotient as an amount per unit",
      "nearest_related": false,
-     "type": "sa",
-     "response": "write",
-     "prompt": "A total cost of $600 is shared by 30 people. What does 600/30 represent?",
-     "prompt_markup": "A total cost of $600 is shared by 30 people. What does 600/30 represent?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A total cost of $600 is shared equally by 30 people. What does 600/30 = 20 represent?",
+     "prompt_markup": "A total cost of $600 is shared equally by 30 people. What does 600/30 = 20 represent?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The total cost, $20"
+      },
+      {
+       "letter": "B",
+       "text": "The number of people per dollar"
+      },
+      {
+       "letter": "C",
+       "text": "The cost per person, $20"
+      },
+      {
+       "letter": "D",
+       "text": "The number of people, 20"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "The cost per person, $20.",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "The cost per person, $20",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer.",
+     "grading_note": "Dollars divided by people gives dollars per person. The others invert the rate or misread the quotient as a total or a count.",
      "figure": null,
      "page": 249,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret terms, factors, coefficients, and bases of polynomial, rational, and exponential expressions in terms of a context",
      "target_skill": "Interpret a quotient as an amount per unit",
@@ -787,22 +907,37 @@
      "domain": "Ratios & Proportional Relationships",
      "skill": "Interpret a quotient as an amount per unit",
      "nearest_related": false,
-     "type": "sa",
-     "response": "write",
-     "prompt": "A car travels 150 miles in 3 hours. What does 150/3 represent?",
-     "prompt_markup": "A car travels 150 miles in 3 hours. What does 150/3 represent?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A car travels 150 miles in 3 hours. What does 150/3 = 50 represent?",
+     "prompt_markup": "A car travels 150 miles in 3 hours. What does 150/3 = 50 represent?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The average speed, 50 miles per hour"
+      },
+      {
+       "letter": "B",
+       "text": "The time per mile, 50 hours per mile"
+      },
+      {
+       "letter": "C",
+       "text": "The total distance, 50 miles"
+      },
+      {
+       "letter": "D",
+       "text": "The number of hours, 50"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "The average speed, 50 miles per hour.",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "The average speed, 50 miles per hour",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer.",
+     "grading_note": "Miles divided by hours gives miles per hour. The others invert the rate or read the quotient as a total.",
      "figure": null,
      "page": 250,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret terms, factors, coefficients, and bases of polynomial, rational, and exponential expressions in terms of a context",
      "target_skill": "Interpret a quotient as an amount per unit",
@@ -926,22 +1061,37 @@
      "domain": "Ratios & Proportional Relationships",
      "skill": "Interpret a quotient as an amount per unit",
      "nearest_related": false,
-     "type": "sa",
-     "response": "write",
-     "prompt": "What does (4,000 + 6x)/x mean when x = 100?",
-     "prompt_markup": "What does (4,000 + 6x)/x mean when x = 100?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Making x items costs a total of 4,000 + 6x dollars. What does (4,000 + 6x)/x equal when x = 100, and what does it mean?",
+     "prompt_markup": "Making x items costs a total of 4,000 + 6x dollars. What does (4,000 + 6x)/x equal when x = 100, and what does it mean?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "$46: the cost of making the 100th item alone"
+      },
+      {
+       "letter": "B",
+       "text": "$40: the fixed cost per item when 100 items are made"
+      },
+      {
+       "letter": "C",
+       "text": "$4,600: the total cost of making 100 items"
+      },
+      {
+       "letter": "D",
+       "text": "$46: the average cost per item when 100 items are made"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "The average cost per item when 100 items are made: $46.",
+     "answer_lines": [],
+     "correct_letter": "D",
+     "correct_answer": "$46: the average cost per item when 100 items are made",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer. 4,600/100.",
+     "grading_note": "4,600/100 = 46 dollars per item, the average. The others give the total, confuse the average with the cost of one more item ($6), or include only the fixed cost.",
      "figure": null,
      "page": 253,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret terms, factors, coefficients, and bases of polynomial, rational, and exponential expressions in terms of a context",
      "target_skill": "Interpret a quotient as an amount per unit",
@@ -987,20 +1137,20 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Write an expression for the value of a $24,000 car that loses 15% of its value each year, t years after purchase.",
-     "prompt_markup": "Write an expression for the value of a $24,000 car that loses 15% of its value each year, t years after purchase.",
+     "prompt": "A $24,000 car loses 15% of its value each year. Write an expression for its value in dollars t years after purchase.",
+     "prompt_markup": "A $24,000 car loses 15% of its value each year. Write an expression for its value in dollars t years after purchase.",
      "choices": [],
      "answer_lines": [
       "Expression:"
      ],
      "correct_letter": null,
-     "correct_answer": "24,000(0.85)ᵗ",
+     "correct_answer": "24000(0.85)^t",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent expression.",
+     "grading_note": "Any equivalent expression. Each year the car keeps 85% of its value.",
      "figure": null,
      "page": 255,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret terms, factors, coefficients, and bases of polynomial, rational, and exponential expressions in terms of a context",
      "target_skill": "Build an expression whose parts have given meanings",
@@ -1028,8 +1178,8 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "A gym charges a $90 joining fee and $35 per month. Write an expression for the average cost per month over m months.",
-     "prompt_markup": "A gym charges a $90 joining fee and $35 per month. Write an expression for the average cost per month over m months.",
+     "prompt": "A gym charges a $90 joining fee and $35 per month. Write an expression for the average cost per month, in dollars, over m months.",
+     "prompt_markup": "A gym charges a $90 joining fee and $35 per month. Write an expression for the average cost per month, in dollars, over m months.",
      "choices": [],
      "answer_lines": [
       "Expression:"
@@ -1038,10 +1188,10 @@
      "correct_answer": "(90 + 35m)/m",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent expression (for example 35 + 90/m).",
+     "grading_note": "Any equivalent expression is accepted by the checker (for example 35 + 90/m).",
      "figure": null,
      "page": 256,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret terms, factors, coefficients, and bases of polynomial, rational, and exponential expressions in terms of a context",
      "target_skill": "Build an expression whose parts have given meanings",
@@ -1171,22 +1321,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "A gym charges a $90 joining fee and $35 per month, so the average cost per month over m months is 35 + 90/m dollars. Explain what the part 90/m means.",
-     "prompt_markup": "A gym charges a $90 joining fee and $35 per month, so the average cost per month over m months is 35 + 90/m dollars. Explain what the part 90/m means.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A gym charges a $90 joining fee and $35 per month, so the average cost per month over m months is 35 + 90/m dollars. What does the part 90/m represent?",
+     "prompt_markup": "A gym charges a $90 joining fee and $35 per month, so the average cost per month over m months is 35 + 90/m dollars. What does the part 90/m represent?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The monthly fee, which stays the same $35 for every m."
+      },
+      {
+       "letter": "B",
+       "text": "The joining fee spread over the m months; it shrinks as m grows."
+      },
+      {
+       "letter": "C",
+       "text": "The total amount paid for the gym after m months of membership."
+      },
+      {
+       "letter": "D",
+       "text": "The joining fee, charged again in full each month."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "The joining fee spread over m months: the part of the monthly average that comes from the fee, which shrinks as m grows.",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "The joining fee spread over the m months; it shrinks as m grows.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation (the gym charges $90 to join and $35 per month).",
+     "grading_note": "90/m is the share of the one-time $90 fee per month. The others confuse it with the $35 term, the total 90 + 35m, or a repeated fee (which would be 90, not 90/m).",
      "figure": null,
      "page": 259,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret terms, factors, coefficients, and bases of polynomial, rational, and exponential expressions in terms of a context",
      "target_skill": "Build an expression whose parts have given meanings",
@@ -1274,20 +1439,21 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "A(t) = 200(1/2)^(t/6). Write A as 200 · bᵗ and give b to 4 decimal places. What is the hourly percent decrease?",
-     "prompt_markup": "A(t) = 200(1/2)^(t/6). Write A as 200 · bᵗ and give b to 4 decimal places. What is the hourly percent decrease?",
+     "prompt": "A(t) = 200(1/2)^(t/6). Write A as 200 · bᵗ. Give b to 4 decimal places, and the hourly percent decrease to the nearest hundredth of a percent.",
+     "prompt_markup": "A(t) = 200(1/2)^(t/6). Write A as 200 · bᵗ. Give b to 4 decimal places, and the hourly percent decrease to the nearest hundredth of a percent.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "b =",
+      "Hourly percent decrease:"
      ],
      "correct_letter": null,
-     "correct_answer": "b = (1/2)^(1/6) ≈ 0.8909; about 10.91% decrease per hour",
+     "correct_answer": "0.8909; 10.91%",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Rounding to 4 decimal places for b; percent to 0.01.",
+     "grading_note": "Rounding as stated. b = (1/2)^(1/6) ≈ 0.890899, and 1 - 0.890899 ≈ 0.1091, a 10.91% decrease per hour.",
      "figure": null,
      "page": 262,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret terms, factors, coefficients, and bases of polynomial, rational, and exponential expressions in terms of a context",
      "target_skill": "Rewrite an exponential expression to reveal a different rate",
@@ -1417,22 +1583,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain why rewriting does not change the values of the function.",
-     "prompt_markup": "Explain why rewriting does not change the values of the function.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A(t) = 200(1/2)^(t/6) is rewritten as A(t) = 200(0.8909)ᵗ (rounded). Why does an exact rewriting such as 200((1/2)^(1/6))ᵗ give the same value as 200(1/2)^(t/6) for every t?",
+     "prompt_markup": "A(t) = 200(1/2)^(t/6) is rewritten as A(t) = 200(0.8909)ᵗ (rounded). Why does an exact rewriting such as 200((1/2)^(1/6))ᵗ give the same value as 200(1/2)^(t/6) for every t?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "By the power of a power rule, ((1/2)^(1/6))ᵗ = (1/2)^(t/6), so the two are equal for every t; only the displayed rate differs."
+      },
+      {
+       "letter": "B",
+       "text": "Rewriting an exponential always changes its values a little, so the two expressions are only close for each t."
+      },
+      {
+       "letter": "C",
+       "text": "They give the same value only at t = 0, where both equal 200; for other t the base 0.8909 makes them differ."
+      },
+      {
+       "letter": "D",
+       "text": "They are equal only when t is a multiple of 6, because the exponent t/6 is then a whole number and no rounding is involved."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "The new form is equivalent by the properties of exponents, so it gives the same output for every input; it only shows another rate.",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "By the power of a power rule, ((1/2)^(1/6))ᵗ = (1/2)^(t/6), so the two are equal for every t; only the displayed rate differs.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "(aᵐ)ⁿ = aᵐⁿ makes the forms identical. The others claim agreement only at some inputs, or confuse the exact rewriting with the rounded factor 0.8909.",
      "figure": null,
      "page": 265,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret terms, factors, coefficients, and bases of polynomial, rational, and exponential expressions in terms of a context",
      "target_skill": "Rewrite an exponential expression to reveal a different rate",

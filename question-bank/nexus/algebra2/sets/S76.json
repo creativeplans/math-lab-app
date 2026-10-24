@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -50,29 +50,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "f(x) = √x and g(x) = x - 4. Write f(g(x)) and g(f(x)) and give the domain of each.",
-     "prompt_markup": "f(x) = √x and g(x) = x - 4. Write f(g(x)) and g(f(x)) and give the domain of each.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "f(x) = √x and g(x) = x - 4. Which gives f(g(x)) and g(f(x)) with the domain of each?",
+     "prompt_markup": "f(x) = √x and g(x) = x - 4. Which gives f(g(x)) and g(f(x)) with the domain of each?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "f(g(x)) = √x - 4, x ≥ 0; g(f(x)) = √(x - 4), x ≥ 4"
+      },
+      {
+       "letter": "B",
+       "text": "f(g(x)) = √(x - 4), x ≥ 4; g(f(x)) = √x - 4, x ≥ 0"
+      },
+      {
+       "letter": "C",
+       "text": "f(g(x)) = √(x - 4), all real x; g(f(x)) = √x - 4, all real x"
+      },
+      {
+       "letter": "D",
+       "text": "f(g(x)) = √(x - 4), x ≥ 0; g(f(x)) = √x - 4, x ≥ 4"
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "B",
      "correct_answer": "f(g(x)) = √(x - 4), x ≥ 4; g(f(x)) = √x - 4, x ≥ 0",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: both with domains.",
+     "grading_note": "The input of a square root must be nonnegative: x - 4 ≥ 0 for f(g(x)), x ≥ 0 for g(f(x)).",
      "figure": null,
-     "page": 2790,
-     "revision": "unchanged",
+     "page": 2827,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Write a composition of two functions, state its domain, and interpret it in context",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 2790,
-     "answer_key_page": 2790
+     "question_page": 2827,
+     "answer_key_page": 2827
     },
     {
      "id": "S76-M-Q2",
@@ -93,27 +108,29 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "The temperature is T(h) = 20 - 6.5h °C at height h km, and a balloon's height is h(t) = 0.3t km after t minutes. Write T(h(t)) and find the temperature at t = 10.",
-     "prompt_markup": "The temperature is T(h) = 20 - 6.5h °C at height h km, and a balloon's height is h(t) = 0.3t km after t minutes. Write T(h(t)) and find the temperature at t = 10.",
+     "prompt": "The temperature is T(h) = 20 - 6.5h °C at height h km, and a balloon's height is h(t) = 0.3t km after t minutes. Write T(h(t)) = a + bt, and find the temperature at t = 10.",
+     "prompt_markup": "The temperature is T(h) = 20 - 6.5h °C at height h km, and a balloon's height is h(t) = 0.3t km after t minutes. Write T(h(t)) = a + bt, and find the temperature at t = 10.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "a =",
+      "b =",
+      "Temperature at t = 10 (°C):"
      ],
      "correct_letter": null,
-     "correct_answer": "T(h(t)) = 20 - 1.95t; 0.5°C",
+     "correct_answer": "20; -1.95; 0.5",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: function and value.",
+     "grading_note": "Form required: all three. T(h(t)) = 20 - 6.5(0.3t) = 20 - 1.95t; T = 20 - 19.5 = 0.5.",
      "figure": null,
-     "page": 2791,
-     "revision": "unchanged",
+     "page": 2828,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Write a composition of two functions, state its domain, and interpret it in context",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 2791,
-     "answer_key_page": 2791
+     "question_page": 2828,
+     "answer_key_page": 2828
     },
     {
      "id": "S76-M-Q3",
@@ -134,27 +151,28 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "f(x) = 1/(x - 1) and g(x) = x². Write f(g(x)) and give its domain.",
-     "prompt_markup": "f(x) = 1/(x - 1) and g(x) = x². Write f(g(x)) and give its domain.",
+     "prompt": "f(x) = 1/(x - 1) and g(x) = x². Write f(g(x)) and list the real numbers excluded from its domain, separated by commas. Use ^ for exponents.",
+     "prompt_markup": "f(x) = 1/(x - 1) and g(x) = x². Write f(g(x)) and list the real numbers excluded from its domain, separated by commas. Use ^ for exponents.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "f(g(x)) =",
+      "Excluded values:"
      ],
      "correct_letter": null,
-     "correct_answer": "1/(x² - 1); x ≠ 1, -1",
+     "correct_answer": "1/(x^2 - 1); {-1, 1}",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: both.",
+     "grading_note": "Form required: both. x² - 1 = 0 when x = ±1.",
      "figure": null,
-     "page": 2792,
-     "revision": "unchanged",
+     "page": 2829,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Write a composition of two functions, state its domain, and interpret it in context",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 2792,
-     "answer_key_page": 2792
+     "question_page": 2829,
+     "answer_key_page": 2829
     },
     {
      "id": "S76-M-Q4",
@@ -175,27 +193,28 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "A dollar amount d converts to euros by e(d) = 0.9d, and a store's price with tax in euros is p(e) = 1.2e. Write p(e(d)) and find it for d = 50.",
-     "prompt_markup": "A dollar amount d converts to euros by e(d) = 0.9d, and a store's price with tax in euros is p(e) = 1.2e. Write p(e(d)) and find it for d = 50.",
+     "prompt": "A dollar amount d converts to euros by e(d) = 0.9d, and a store's price with tax in euros is p(e) = 1.2e. Then p(e(d)) = kd. Find k and the price in euros for d = 50.",
+     "prompt_markup": "A dollar amount d converts to euros by e(d) = 0.9d, and a store's price with tax in euros is p(e) = 1.2e. Then p(e(d)) = kd. Find k and the price in euros for d = 50.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "k =",
+      "p(e(50)) (euros):"
      ],
      "correct_letter": null,
-     "correct_answer": "p(e(d)) = 1.08d; 54 euros",
+     "correct_answer": "1.08; 54",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: function and value.",
+     "grading_note": "Form required: both. 1.2(0.9d) = 1.08d; 1.08 · 50 = 54.",
      "figure": null,
-     "page": 2793,
-     "revision": "unchanged",
+     "page": 2830,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Write a composition of two functions, state its domain, and interpret it in context",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 2793,
-     "answer_key_page": 2793
+     "question_page": 2830,
+     "answer_key_page": 2830
     },
     {
      "id": "S76-M-Q5",
@@ -214,29 +233,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "f(x) = log₂ x and g(x) = x² - 9. Write f(g(x)) and give its domain.",
-     "prompt_markup": "f(x) = log₂ x and g(x) = x² - 9. Write f(g(x)) and give its domain.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "f(x) = log₂ x and g(x) = x² - 9. Which gives f(g(x)) and its domain?",
+     "prompt_markup": "f(x) = log₂ x and g(x) = x² - 9. Which gives f(g(x)) and its domain?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "f(g(x)) = log₂(x² - 9); domain x < -3 or x > 3"
+      },
+      {
+       "letter": "B",
+       "text": "f(g(x)) = (log₂ x)² - 9; domain x > 0"
+      },
+      {
+       "letter": "C",
+       "text": "f(g(x)) = log₂(x²) - 9; domain x ≠ 0"
+      },
+      {
+       "letter": "D",
+       "text": "f(g(x)) = log₂(x² - 9); domain x > 3"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "log₂(x² - 9); x < -3 or x > 3",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "f(g(x)) = log₂(x² - 9); domain x < -3 or x > 3",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: both.",
+     "grading_note": "x² - 9 > 0 on both sides. The others compose in the wrong place, miss x < -3, or compose in the other order.",
      "figure": null,
-     "page": 2794,
-     "revision": "unchanged",
+     "page": 2831,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Write a composition of two functions, state its domain, and interpret it in context",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 2794,
-     "answer_key_page": 2794
+     "question_page": 2831,
+     "answer_key_page": 2831
     }
    ]
   },
@@ -286,15 +320,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2796,
+     "page": 2833,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Build combined models",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Algebra I",
-     "question_page": 2796,
-     "answer_key_page": 2796
+     "question_page": 2833,
+     "answer_key_page": 2833
     },
     {
      "id": "S76-B1-Q2",
@@ -327,15 +361,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2797,
+     "page": 2834,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Build combined models",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Algebra I",
-     "question_page": 2797,
-     "answer_key_page": 2797
+     "question_page": 2834,
+     "answer_key_page": 2834
     },
     {
      "id": "S76-B1-Q3",
@@ -375,15 +409,15 @@
      "required_method": null,
      "grading_note": "Composition vs product.",
      "figure": null,
-     "page": 2798,
+     "page": 2835,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Build combined models",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Algebra I",
-     "question_page": 2798,
-     "answer_key_page": 2798
+     "question_page": 2835,
+     "answer_key_page": 2835
     },
     {
      "id": "S76-B1-Q4",
@@ -431,15 +465,15 @@
      "required_method": null,
      "grading_note": "Subtract.",
      "figure": null,
-     "page": 2799,
+     "page": 2836,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Build combined models",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Algebra I",
-     "question_page": 2799,
-     "answer_key_page": 2799
+     "question_page": 2836,
+     "answer_key_page": 2836
     },
     {
      "id": "S76-B1-Q5",
@@ -458,29 +492,44 @@
      "nearest_related": false,
      "standard_level": "Algebra I. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra I, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra I",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Name the operation in T(h(t)).",
-     "prompt_markup": "Name the operation in T(h(t)).",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which operation combines T and h in T(h(t))?",
+     "prompt_markup": "Which operation combines T and h in T(h(t))?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "division"
+      },
+      {
+       "letter": "B",
+       "text": "addition"
+      },
+      {
+       "letter": "C",
+       "text": "composition"
+      },
+      {
+       "letter": "D",
+       "text": "multiplication"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Composition",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "composition",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer.",
+     "grading_note": "The output of h is the input of T.",
      "figure": null,
-     "page": 2800,
-     "revision": "unchanged",
+     "page": 2837,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Build combined models",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Algebra I",
-     "question_page": 2800,
-     "answer_key_page": 2800
+     "question_page": 2837,
+     "answer_key_page": 2837
     }
    ]
   },
@@ -516,29 +565,44 @@
      "nearest_related": false,
      "standard_level": "Algebra I. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra I, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra I",
-     "type": "sa",
-     "response": "write",
+     "type": "mc",
+     "response": "select one",
      "prompt": "f(x) = √x. Find f(x - 4).",
      "prompt_markup": "f(x) = √x. Find f(x - 4).",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "choices": [
+      {
+       "letter": "A",
+       "text": "√x - √4"
+      },
+      {
+       "letter": "B",
+       "text": "√(x) · (-4)"
+      },
+      {
+       "letter": "C",
+       "text": "√x - 4"
+      },
+      {
+       "letter": "D",
+       "text": "√(x - 4)"
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "D",
      "correct_answer": "√(x - 4)",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form.",
+     "grading_note": "Replace x by x - 4 inside the root.",
      "figure": null,
-     "page": 2802,
-     "revision": "unchanged",
+     "page": 2839,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Evaluate a function at an expression",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra I",
-     "question_page": 2802,
-     "answer_key_page": 2802
+     "question_page": 2839,
+     "answer_key_page": 2839
     },
     {
      "id": "S76-B2-Q2",
@@ -559,27 +623,28 @@
      "standard_course": "Algebra I",
      "type": "sa",
      "response": "write",
-     "prompt": "T(h) = 20 - 6.5h. Find T(0.3t).",
-     "prompt_markup": "T(h) = 20 - 6.5h. Find T(0.3t).",
+     "prompt": "T(h) = 20 - 6.5h. Find T(0.3t) in the form a + bt. Give a and b.",
+     "prompt_markup": "T(h) = 20 - 6.5h. Find T(0.3t) in the form a + bt. Give a and b.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "a =",
+      "b ="
      ],
      "correct_letter": null,
-     "correct_answer": "20 - 1.95t",
+     "correct_answer": "20; -1.95",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form.",
+     "grading_note": "Form required: both. 6.5 · 0.3 = 1.95.",
      "figure": null,
-     "page": 2803,
-     "revision": "unchanged",
+     "page": 2840,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Evaluate a function at an expression",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra I",
-     "question_page": 2803,
-     "answer_key_page": 2803
+     "question_page": 2840,
+     "answer_key_page": 2840
     },
     {
      "id": "S76-B2-Q3",
@@ -619,15 +684,15 @@
      "required_method": null,
      "grading_note": "Substitute.",
      "figure": null,
-     "page": 2804,
+     "page": 2841,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Evaluate a function at an expression",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra I",
-     "question_page": 2804,
-     "answer_key_page": 2804
+     "question_page": 2841,
+     "answer_key_page": 2841
     },
     {
      "id": "S76-B2-Q4",
@@ -675,15 +740,15 @@
      "required_method": null,
      "grading_note": "9 - 9.",
      "figure": null,
-     "page": 2805,
+     "page": 2842,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Evaluate a function at an expression",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra I",
-     "question_page": 2805,
-     "answer_key_page": 2805
+     "question_page": 2842,
+     "answer_key_page": 2842
     },
     {
      "id": "S76-B2-Q5",
@@ -716,15 +781,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2806,
+     "page": 2843,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Evaluate a function at an expression",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra I",
-     "question_page": 2806,
-     "answer_key_page": 2806
+     "question_page": 2843,
+     "answer_key_page": 2843
     }
    ]
   },
@@ -774,15 +839,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2808,
+     "page": 2845,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Domains of radical, rational, and log functions",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra I",
-     "question_page": 2808,
-     "answer_key_page": 2808
+     "question_page": 2845,
+     "answer_key_page": 2845
     },
     {
      "id": "S76-B3-Q2",
@@ -815,15 +880,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2809,
+     "page": 2846,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Domains of radical, rational, and log functions",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra I",
-     "question_page": 2809,
-     "answer_key_page": 2809
+     "question_page": 2846,
+     "answer_key_page": 2846
     },
     {
      "id": "S76-B3-Q3",
@@ -863,15 +928,15 @@
      "required_method": null,
      "grading_note": "x² - 1 = 0 at both x = 1 and x = -1.",
      "figure": null,
-     "page": 2810,
+     "page": 2847,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Domains of radical, rational, and log functions",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra I",
-     "question_page": 2810,
-     "answer_key_page": 2810
+     "question_page": 2847,
+     "answer_key_page": 2847
     },
     {
      "id": "S76-B3-Q4",
@@ -919,15 +984,15 @@
      "required_method": null,
      "grading_note": "Outside the roots.",
      "figure": null,
-     "page": 2811,
+     "page": 2848,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Domains of radical, rational, and log functions",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra I",
-     "question_page": 2811,
-     "answer_key_page": 2811
+     "question_page": 2848,
+     "answer_key_page": 2848
     },
     {
      "id": "S76-B3-Q5",
@@ -960,15 +1025,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2812,
+     "page": 2849,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Domains of radical, rational, and log functions",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra I",
-     "question_page": 2812,
-     "answer_key_page": 2812
+     "question_page": 2849,
+     "answer_key_page": 2849
     }
    ]
   },
@@ -1005,29 +1070,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Write h(x) = (3x + 1)⁵ as f(g(x)). Give f and g.",
-     "prompt_markup": "Write h(x) = (3x + 1)⁵ as f(g(x)). Give f and g.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which pair writes h(x) = (3x + 1)⁵ as f(g(x))?",
+     "prompt_markup": "Which pair writes h(x) = (3x + 1)⁵ as f(g(x))?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "g(x) = 3x + 1, f(x) = x⁵"
+      },
+      {
+       "letter": "B",
+       "text": "g(x) = 3x + 1, f(x) = 5x"
+      },
+      {
+       "letter": "C",
+       "text": "g(x) = 3x, f(x) = x⁵ + 1"
+      },
+      {
+       "letter": "D",
+       "text": "g(x) = x⁵, f(x) = 3x + 1"
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "A",
      "correct_answer": "g(x) = 3x + 1, f(x) = x⁵",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any valid decomposition.",
+     "grading_note": "The inner function is 3x + 1 and the outer raises to the 5th power. The others reverse the order, split the inner function, or multiply by 5.",
      "figure": null,
-     "page": 2814,
-     "revision": "unchanged",
+     "page": 2851,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Decompose functions into compositions",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 2814,
-     "answer_key_page": 2814
+     "question_page": 2851,
+     "answer_key_page": 2851
     },
     {
      "id": "S76-F1-Q2",
@@ -1046,29 +1126,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Write h(x) = 2^(x²) as f(g(x)).",
-     "prompt_markup": "Write h(x) = 2^(x²) as f(g(x)).",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which pair writes h(x) = 2^(x²) as f(g(x))?",
+     "prompt_markup": "Which pair writes h(x) = 2^(x²) as f(g(x))?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "g(x) = 2x, f(x) = x²"
+      },
+      {
+       "letter": "B",
+       "text": "g(x) = x², f(x) = 2^x"
+      },
+      {
+       "letter": "C",
+       "text": "g(x) = x², f(x) = 2x"
+      },
+      {
+       "letter": "D",
+       "text": "g(x) = 2^x, f(x) = x²"
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "B",
      "correct_answer": "g(x) = x², f(x) = 2^x",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any valid decomposition.",
+     "grading_note": "f(g(x)) = 2^(x²). The others give (2^x)², (2x)², or 2x².",
      "figure": null,
-     "page": 2815,
-     "revision": "unchanged",
+     "page": 2852,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Decompose functions into compositions",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 2815,
-     "answer_key_page": 2815
+     "question_page": 2852,
+     "answer_key_page": 2852
     },
     {
      "id": "S76-F1-Q3",
@@ -1089,8 +1184,8 @@
      "standard_course": "Algebra II",
      "type": "tf",
      "response": "select true or false",
-     "prompt": "Every composition f(g(x)) can be decomposed in only one way.",
-     "prompt_markup": "Every composition f(g(x)) can be decomposed in only one way.",
+     "prompt": "h(x) = (x + 1)² can be written as f(g(x)) in more than one way, for example with g(x) = x + 1 and f(x) = x², or with g(x) = x² + 2x and f(x) = x + 1.",
+     "prompt_markup": "h(x) = (x + 1)² can be written as f(g(x)) in more than one way, for example with g(x) = x + 1 and f(x) = x², or with g(x) = x² + 2x and f(x) = x + 1.",
      "choices": [
       {
        "letter": "A",
@@ -1102,21 +1197,21 @@
       }
      ],
      "answer_lines": [],
-     "correct_letter": "B",
-     "correct_answer": "False",
+     "correct_letter": "A",
+     "correct_answer": "True",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Many decompositions exist.",
+     "grading_note": "Both give x² + 2x + 1.",
      "figure": null,
-     "page": 2816,
-     "revision": "unchanged",
+     "page": 2853,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Decompose functions into compositions",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 2816,
-     "answer_key_page": 2816
+     "question_page": 2853,
+     "answer_key_page": 2853
     },
     {
      "id": "S76-F1-Q4",
@@ -1164,15 +1259,15 @@
      "required_method": null,
      "grading_note": "k(3) = 9, g = 18, f = 19.",
      "figure": null,
-     "page": 2817,
+     "page": 2854,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Decompose functions into compositions",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 2817,
-     "answer_key_page": 2817
+     "question_page": 2854,
+     "answer_key_page": 2854
     },
     {
      "id": "S76-F1-Q5",
@@ -1191,29 +1286,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Write a context for a composition V(r(t)).",
-     "prompt_markup": "Write a context for a composition V(r(t)).",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which context describes a composition V(r(t))?",
+     "prompt_markup": "Which context describes a composition V(r(t))?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The time t depends on the volume V, and the volume depends on the radius r."
+      },
+      {
+       "letter": "B",
+       "text": "The volume V of a balloon depends on its radius r, and the radius depends on time t."
+      },
+      {
+       "letter": "C",
+       "text": "The volume V of a balloon is multiplied by its radius r at each time t."
+      },
+      {
+       "letter": "D",
+       "text": "The volume V and the radius r of a balloon are added together at each time t."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "For example the volume of a balloon whose radius r grows with time t",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "The volume V of a balloon depends on its radius r, and the radius depends on time t.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any valid context.",
+     "grading_note": "t → r → V: the output of r is the input of V.",
      "figure": null,
-     "page": 2818,
-     "revision": "unchanged",
+     "page": 2855,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Decompose functions into compositions",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 2818,
-     "answer_key_page": 2818
+     "question_page": 2855,
+     "answer_key_page": 2855
     }
    ]
   },
@@ -1251,29 +1361,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Verify that f(x) = 2x + 3 and g(x) = (x - 3)/2 are inverses.",
-     "prompt_markup": "Verify that f(x) = 2x + 3 and g(x) = (x - 3)/2 are inverses.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which work shows that f(x) = 2x + 3 and g(x) = (x - 3)/2 are inverses?",
+     "prompt_markup": "Which work shows that f(x) = 2x + 3 and g(x) = (x - 3)/2 are inverses?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "f(0) = 3 and g(0) = -3/2, which are opposite in sign"
+      },
+      {
+       "letter": "B",
+       "text": "f(x) · g(x) = (2x + 3)(x - 3)/2 = x"
+      },
+      {
+       "letter": "C",
+       "text": "f(g(x)) = 2((x - 3)/2) + 3 = x + 6 and g(f(x)) = x"
+      },
+      {
+       "letter": "D",
+       "text": "f(g(x)) = 2((x - 3)/2) + 3 = x and g(f(x)) = ((2x + 3) - 3)/2 = x"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "f(g(x)) = x and g(f(x)) = x",
+     "answer_lines": [],
+     "correct_letter": "D",
+     "correct_answer": "f(g(x)) = 2((x - 3)/2) + 3 = x and g(f(x)) = ((2x + 3) - 3)/2 = x",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: both compositions.",
+     "grading_note": "Both compositions must equal x. The others make an arithmetic error, multiply instead of composing, or compare single values.",
      "figure": null,
-     "page": 2820,
-     "revision": "unchanged",
+     "page": 2857,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Verify inverses by composition",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 2820,
-     "answer_key_page": 2820
+     "question_page": 2857,
+     "answer_key_page": 2857
     },
     {
      "id": "S76-F2-Q2",
@@ -1306,15 +1431,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2821,
+     "page": 2858,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Verify inverses by composition",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 2821,
-     "answer_key_page": 2821
+     "question_page": 2858,
+     "answer_key_page": 2858
     },
     {
      "id": "S76-F2-Q3",
@@ -1354,15 +1479,15 @@
      "required_method": null,
      "grading_note": "Definition.",
      "figure": null,
-     "page": 2822,
+     "page": 2859,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Verify inverses by composition",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 2822,
-     "answer_key_page": 2822
+     "question_page": 2859,
+     "answer_key_page": 2859
     },
     {
      "id": "S76-F2-Q4",
@@ -1410,15 +1535,15 @@
      "required_method": null,
      "grading_note": "Inverses.",
      "figure": null,
-     "page": 2823,
+     "page": 2860,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Verify inverses by composition",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 2823,
-     "answer_key_page": 2823
+     "question_page": 2860,
+     "answer_key_page": 2860
     },
     {
      "id": "S76-F2-Q5",
@@ -1437,29 +1562,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain why composition is the natural test for inverses.",
-     "prompt_markup": "Explain why composition is the natural test for inverses.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Why is composition the natural test for inverse functions?",
+     "prompt_markup": "Why is composition the natural test for inverse functions?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Composition adds the two functions, and inverses must add to 0 for every input x."
+      },
+      {
+       "letter": "B",
+       "text": "Composition reverses the graph across the x-axis, which is where an inverse must lie."
+      },
+      {
+       "letter": "C",
+       "text": "An inverse undoes the function, so applying one after the other must return the original input."
+      },
+      {
+       "letter": "D",
+       "text": "Two functions are inverses exactly when their product f(x) · g(x) is equal to 1 for every x."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "An inverse undoes the function, so applying one after the other must return the input.",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "An inverse undoes the function, so applying one after the other must return the original input.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "f(g(x)) = x and g(f(x)) = x. The others describe adding, reflecting over the x-axis, or multiplying, none of which is the inverse relationship.",
      "figure": null,
-     "page": 2824,
-     "revision": "unchanged",
+     "page": 2861,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Write a composition of two functions, state its domain, and interpret it in context",
      "target_skill": "Verify inverses by composition",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 2824,
-     "answer_key_page": 2824
+     "question_page": 2861,
+     "answer_key_page": 2861
     }
    ]
   }

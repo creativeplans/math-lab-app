@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -52,27 +52,29 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "A disease affects 1% of 10,000 people. A test detects 95% of cases and gives false positives for 5% of healthy people. Find P(disease | positive).",
-     "prompt_markup": "A disease affects 1% of 10,000 people. A test detects 95% of cases and gives false positives for 5% of healthy people. Find P(disease | positive).",
+     "prompt": "A disease affects 1% of 10,000 people. A test detects 95% of people who have it and gives a false positive for 5% of healthy people. Find the number of true positives, the number of false positives, and P(disease | positive) as a decimal rounded to the nearest thousandth.",
+     "prompt_markup": "A disease affects 1% of 10,000 people. A test detects 95% of people who have it and gives a false positive for 5% of healthy people. Find the number of true positives, the number of false positives, and P(disease | positive) as a decimal rounded to the nearest thousandth.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "True positives:",
+      "False positives:",
+      "P(disease | positive):"
      ],
      "correct_letter": null,
-     "correct_answer": "95/590 ≈ 0.161",
+     "correct_answer": "95; 495; 0.161",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: the probability with the counts. 95 true positives, 495 false positives.",
+     "grading_note": "Form required: all three. 0.95(100) = 95; 0.05(9,900) = 495; 95/590 ≈ 0.161.",
      "figure": null,
-     "page": 2642,
-     "revision": "unchanged",
+     "page": 2679,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Algebra II, (+) standard listed in the pathway",
-     "question_page": 2642,
-     "answer_key_page": 2642
+     "question_page": 2679,
+     "answer_key_page": 2679
     },
     {
      "id": "S72-M-Q2",
@@ -93,27 +95,27 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "A shipment is accepted if 2 randomly tested items are both non-defective. If 10% of items are defective, what is the probability the shipment is accepted? (Assume independence.)",
-     "prompt_markup": "A shipment is accepted if 2 randomly tested items are both non-defective. If 10% of items are defective, what is the probability the shipment is accepted? (Assume independence.)",
+     "prompt": "A shipment is accepted if 2 randomly tested items are both non-defective. Each item is defective with probability 0.1, independently. What is the probability the shipment is accepted? Give a decimal.",
+     "prompt_markup": "A shipment is accepted if 2 randomly tested items are both non-defective. Each item is defective with probability 0.1, independently. What is the probability the shipment is accepted? Give a decimal.",
      "choices": [],
      "answer_lines": [
       "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "0.9 × 0.9 = 0.81",
+     "correct_answer": "0.81",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form.",
+     "grading_note": "0.9 × 0.9.",
      "figure": null,
-     "page": 2643,
-     "revision": "unchanged",
+     "page": 2680,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Algebra II, (+) standard listed in the pathway",
-     "question_page": 2643,
-     "answer_key_page": 2643
+     "question_page": 2680,
+     "answer_key_page": 2680
     },
     {
      "id": "S72-M-Q3",
@@ -132,29 +134,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "A $30 warranty covers a repair that costs $200 and happens with probability 0.1. Compare the expected repair cost without the warranty to the warranty price, and decide.",
-     "prompt_markup": "A $30 warranty covers a repair that costs $200 and happens with probability 0.1. Compare the expected repair cost without the warranty to the warranty price, and decide.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A $30 warranty covers a repair that costs $200 and is needed with probability 0.1 (otherwise there is no cost). Using expected cost as the decision rule, which is correct?",
+     "prompt_markup": "A $30 warranty covers a repair that costs $200 and is needed with probability 0.1 (otherwise there is no cost). Using expected cost as the decision rule, which is correct?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Expected repair cost 0.1 × 200 = $20 < $30, so the warranty is worth buying."
+      },
+      {
+       "letter": "B",
+       "text": "Expected repair cost 0.9 × 200 = $180 > $30, so the warranty is worth buying."
+      },
+      {
+       "letter": "C",
+       "text": "Expected repair cost 200 - 30 = $170 > $30, so the warranty is worth buying."
+      },
+      {
+       "letter": "D",
+       "text": "Expected repair cost 0.1 × 200 = $20 < $30, so the warranty is not worth buying."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Expected cost 0.1 × 200 = $20 < $30, so on average the warranty is not worth buying",
+     "answer_lines": [],
+     "correct_letter": "D",
+     "correct_answer": "Expected repair cost 0.1 × 200 = $20 < $30, so the warranty is not worth buying.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: expected cost, comparison, decision.",
+     "grading_note": "On average the warranty costs $10 more than it saves.",
      "figure": null,
-     "page": 2644,
-     "revision": "unchanged",
+     "page": 2681,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Algebra II, (+) standard listed in the pathway",
-     "question_page": 2644,
-     "answer_key_page": 2644
+     "question_page": 2681,
+     "answer_key_page": 2681
     },
     {
      "id": "S72-M-Q4",
@@ -173,29 +190,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Option A pays $10 with probability 0.5; option B pays $50 with probability 0.1. Compare the expected values and the risks.",
-     "prompt_markup": "Option A pays $10 with probability 0.5; option B pays $50 with probability 0.1. Compare the expected values and the risks.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Option A pays $10 with probability 0.5 and $0 otherwise; option B pays $50 with probability 0.1 and $0 otherwise. Compare the expected values and the risks.",
+     "prompt_markup": "Option A pays $10 with probability 0.5 and $0 otherwise; option B pays $50 with probability 0.1 and $0 otherwise. Compare the expected values and the risks.",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Both have expected value $5; A is riskier, because it pays less."
+      },
+      {
+       "letter": "B",
+       "text": "A has expected value $10 and B has $5, so A is better."
+      },
+      {
+       "letter": "C",
+       "text": "Both have expected value $5; B is riskier, because it usually pays $0."
+      },
+      {
+       "letter": "D",
+       "text": "A has expected value $5 and B has $50, so B is better."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Both have expected value $5; B is riskier (usually pays nothing)",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "Both have expected value $5; B is riskier, because it usually pays $0.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: both expected values and a risk comparison.",
+     "grading_note": "0.5(10) = 0.1(50) = 5; B pays $0 90% of the time.",
      "figure": null,
-     "page": 2645,
-     "revision": "unchanged",
+     "page": 2682,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Algebra II, (+) standard listed in the pathway",
-     "question_page": 2645,
-     "answer_key_page": 2645
+     "question_page": 2682,
+     "answer_key_page": 2682
     },
     {
      "id": "S72-M-Q5",
@@ -214,29 +246,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "A test gives +1 point for a correct answer and -1/4 point for a wrong one on 4-choice questions. Should a student guess randomly on a question? Justify with expected value.",
-     "prompt_markup": "A test gives +1 point for a correct answer and -1/4 point for a wrong one on 4-choice questions. Should a student guess randomly on a question? Justify with expected value.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A test gives +1 point for a correct answer, -1/4 point for a wrong answer, and 0 for a blank, on 4-choice questions. Using expected score as the decision rule, should a student with no idea of the answer guess randomly or leave it blank?",
+     "prompt_markup": "A test gives +1 point for a correct answer, -1/4 point for a wrong answer, and 0 for a blank, on 4-choice questions. Using expected score as the decision rule, should a student with no idea of the answer guess randomly or leave it blank?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Leave it blank: the expected score of guessing is (1/4)(1) + (3/4)(-1) = -1/2."
+      },
+      {
+       "letter": "B",
+       "text": "Guess: the expected score is (1/4)(1) + (3/4)(-1/4) = 1/16, more than 0 for a blank."
+      },
+      {
+       "letter": "C",
+       "text": "Leave it blank: a wrong answer loses points, so guessing always lowers the score."
+      },
+      {
+       "letter": "D",
+       "text": "Guess: the expected score is (1/4)(1) = 1/4, because wrong answers do not count."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Yes (slightly): expected value = 1/4(1) + 3/4(-1/4) = 1/16 > 0",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "Guess: the expected score is (1/4)(1) + (3/4)(-1/4) = 1/16, more than 0 for a blank.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: expected value and decision.",
+     "grading_note": "1/16 > 0.",
      "figure": null,
-     "page": 2646,
-     "revision": "unchanged",
+     "page": 2683,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Algebra II, (+) standard listed in the pathway",
-     "question_page": 2646,
-     "answer_key_page": 2646
+     "question_page": 2683,
+     "answer_key_page": 2683
     }
    ]
   },
@@ -272,8 +319,8 @@
      "nearest_related": false,
      "type": "sa",
      "response": "write",
-     "prompt": "P(non-defective) = 0.9 for each item. Find P(two non-defective).",
-     "prompt_markup": "P(non-defective) = 0.9 for each item. Find P(two non-defective).",
+     "prompt": "Each item is non-defective with probability 0.9, independently of the others. Find the probability that two items are both non-defective. Give a decimal.",
+     "prompt_markup": "Each item is non-defective with probability 0.9, independently of the others. Find the probability that two items are both non-defective. Give a decimal.",
      "choices": [],
      "answer_lines": [
       "Answer:"
@@ -282,17 +329,17 @@
      "correct_answer": "0.81",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form.",
+     "grading_note": "0.9 × 0.9.",
      "figure": null,
-     "page": 2648,
-     "revision": "unchanged",
+     "page": 2685,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Probability of compound independent events",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2648,
-     "answer_key_page": 2648
+     "question_page": 2685,
+     "answer_key_page": 2685
     },
     {
      "id": "S72-B1-Q2",
@@ -323,15 +370,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2649,
+     "page": 2686,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Probability of compound independent events",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2649,
-     "answer_key_page": 2649
+     "question_page": 2686,
+     "answer_key_page": 2686
     },
     {
      "id": "S72-B1-Q3",
@@ -369,15 +416,15 @@
      "required_method": null,
      "grading_note": "Multiplication rule.",
      "figure": null,
-     "page": 2650,
+     "page": 2687,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Probability of compound independent events",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2650,
-     "answer_key_page": 2650
+     "question_page": 2687,
+     "answer_key_page": 2687
     },
     {
      "id": "S72-B1-Q4",
@@ -396,8 +443,8 @@
      "nearest_related": false,
      "type": "mc",
      "response": "select one",
-     "prompt": "P(three non-defective) with P = 0.9 each is",
-     "prompt_markup": "P(three non-defective) with P = 0.9 each is",
+     "prompt": "Each item is non-defective with probability 0.9, independently of the others. The probability that three items are all non-defective is",
+     "prompt_markup": "Each item is non-defective with probability 0.9, independently of the others. The probability that three items are all non-defective is",
      "choices": [
       {
        "letter": "A",
@@ -423,15 +470,15 @@
      "required_method": null,
      "grading_note": "0.9³.",
      "figure": null,
-     "page": 2651,
-     "revision": "unchanged",
+     "page": 2688,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Probability of compound independent events",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2651,
-     "answer_key_page": 2651
+     "question_page": 2688,
+     "answer_key_page": 2688
     },
     {
      "id": "S72-B1-Q5",
@@ -450,8 +497,8 @@
      "nearest_related": false,
      "type": "sa",
      "response": "write",
-     "prompt": "Find P(at least one defective) among two items when P(defective) = 0.1.",
-     "prompt_markup": "Find P(at least one defective) among two items when P(defective) = 0.1.",
+     "prompt": "Each item is defective with probability 0.1, independently of the others. Find the probability that at least one of two items is defective. Give a decimal.",
+     "prompt_markup": "Each item is defective with probability 0.1, independently of the others. Find the probability that at least one of two items is defective. Give a decimal.",
      "choices": [],
      "answer_lines": [
       "Answer:"
@@ -460,17 +507,17 @@
      "correct_answer": "0.19",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form. 1 - 0.81.",
+     "grading_note": "1 - 0.9² = 0.19.",
      "figure": null,
-     "page": 2652,
-     "revision": "unchanged",
+     "page": 2689,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Probability of compound independent events",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2652,
-     "answer_key_page": 2652
+     "question_page": 2689,
+     "answer_key_page": 2689
     }
    ]
   },
@@ -518,15 +565,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2654,
+     "page": 2691,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Two-way tables of counts",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 2654,
-     "answer_key_page": 2654
+     "question_page": 2691,
+     "answer_key_page": 2691
     },
     {
      "id": "S72-B2-Q2",
@@ -557,15 +604,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2655,
+     "page": 2692,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Two-way tables of counts",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 2655,
-     "answer_key_page": 2655
+     "question_page": 2692,
+     "answer_key_page": 2692
     },
     {
      "id": "S72-B2-Q3",
@@ -603,15 +650,15 @@
      "required_method": null,
      "grading_note": "Rows and columns.",
      "figure": null,
-     "page": 2656,
+     "page": 2693,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Two-way tables of counts",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 2656,
-     "answer_key_page": 2656
+     "question_page": 2693,
+     "answer_key_page": 2693
     },
     {
      "id": "S72-B2-Q4",
@@ -657,15 +704,15 @@
      "required_method": null,
      "grading_note": "Add.",
      "figure": null,
-     "page": 2657,
+     "page": 2694,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Two-way tables of counts",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 2657,
-     "answer_key_page": 2657
+     "question_page": 2694,
+     "answer_key_page": 2694
     },
     {
      "id": "S72-B2-Q5",
@@ -696,15 +743,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2658,
+     "page": 2695,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Two-way tables of counts",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 8",
-     "question_page": 2658,
-     "answer_key_page": 2658
+     "question_page": 2695,
+     "answer_key_page": 2695
     }
    ]
   },
@@ -752,15 +799,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2660,
+     "page": 2697,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Weighted averages of outcomes",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 6",
-     "question_page": 2660,
-     "answer_key_page": 2660
+     "question_page": 2697,
+     "answer_key_page": 2697
     },
     {
      "id": "S72-B3-Q2",
@@ -783,23 +830,24 @@
      "prompt_markup": "Compute 0.5 × 10 and 0.1 × 50.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "0.5 × 10 =",
+      "0.1 × 50 ="
      ],
      "correct_letter": null,
-     "correct_answer": "5 and 5",
+     "correct_answer": "5; 5",
      "drawing_answer": null,
      "required_method": null,
      "grading_note": "Form required: both.",
      "figure": null,
-     "page": 2661,
-     "revision": "unchanged",
+     "page": 2698,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Weighted averages of outcomes",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 6",
-     "question_page": 2661,
-     "answer_key_page": 2661
+     "question_page": 2698,
+     "answer_key_page": 2698
     },
     {
      "id": "S72-B3-Q3",
@@ -837,15 +885,15 @@
      "required_method": null,
      "grading_note": "1/4 - 3/16 = 1/16.",
      "figure": null,
-     "page": 2662,
+     "page": 2699,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Weighted averages of outcomes",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 6",
-     "question_page": 2662,
-     "answer_key_page": 2662
+     "question_page": 2699,
+     "answer_key_page": 2699
     },
     {
      "id": "S72-B3-Q4",
@@ -891,15 +939,15 @@
      "required_method": null,
      "grading_note": "Weighted sum.",
      "figure": null,
-     "page": 2663,
+     "page": 2700,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Weighted averages of outcomes",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 6",
-     "question_page": 2663,
-     "answer_key_page": 2663
+     "question_page": 2700,
+     "answer_key_page": 2700
     },
     {
      "id": "S72-B3-Q5",
@@ -930,15 +978,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2664,
+     "page": 2701,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Weighted averages of outcomes",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 6",
-     "question_page": 2664,
-     "answer_key_page": 2664
+     "question_page": 2701,
+     "answer_key_page": 2701
     }
    ]
   },
@@ -977,27 +1025,27 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "A test detects 95% of cases and gives false positives for 5% of healthy people. In a group of 10,000 where 10% have the disease, find P(disease | positive).",
-     "prompt_markup": "A test detects 95% of cases and gives false positives for 5% of healthy people. In a group of 10,000 where 10% have the disease, find P(disease | positive).",
+     "prompt": "A test detects 95% of people who have a disease and gives a false positive for 5% of healthy people. In a group of 10,000 where 10% have the disease, find P(disease | positive). Give a decimal rounded to the nearest thousandth.",
+     "prompt_markup": "A test detects 95% of people who have a disease and gives a false positive for 5% of healthy people. In a group of 10,000 where 10% have the disease, find P(disease | positive). Give a decimal rounded to the nearest thousandth.",
      "choices": [],
      "answer_lines": [
       "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "950/1400 ≈ 0.679",
+     "correct_answer": "0.679",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: the probability. 950 true and 450 false positives in 10,000.",
+     "grading_note": "950 true and 0.05(9,000) = 450 false positives; 950/1,400 ≈ 0.679.",
      "figure": null,
-     "page": 2666,
-     "revision": "unchanged",
+     "page": 2703,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Investigate how changing conditions changes the decision",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II, (+) standard listed in the pathway",
-     "question_page": 2666,
-     "answer_key_page": 2666
+     "question_page": 2703,
+     "answer_key_page": 2703
     },
     {
      "id": "S72-F1-Q2",
@@ -1016,29 +1064,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "A $30 warranty covers a repair that costs $200. If the repair probability is 0.2, is the warranty worth it on average?",
-     "prompt_markup": "A $30 warranty covers a repair that costs $200. If the repair probability is 0.2, is the warranty worth it on average?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A $30 warranty covers a repair that costs $200; the repair is needed with probability 0.2 and otherwise there is no cost. Using expected cost as the decision rule, is the warranty worth buying?",
+     "prompt_markup": "A $30 warranty covers a repair that costs $200; the repair is needed with probability 0.2 and otherwise there is no cost. Using expected cost as the decision rule, is the warranty worth buying?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes: the repair cost of $200 is more than $30."
+      },
+      {
+       "letter": "B",
+       "text": "No: the repair probably will not happen, since 0.2 < 0.5."
+      },
+      {
+       "letter": "C",
+       "text": "Yes: the expected repair cost is 0.2 × 200 = $40, more than $30."
+      },
+      {
+       "letter": "D",
+       "text": "No: the expected repair cost is $40, which is more than $30."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Yes: expected cost $40 > $30",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "Yes: the expected repair cost is 0.2 × 200 = $40, more than $30.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: decision and value.",
+     "grading_note": "Compare $40 with $30.",
      "figure": null,
-     "page": 2667,
-     "revision": "unchanged",
+     "page": 2704,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Investigate how changing conditions changes the decision",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II, (+) standard listed in the pathway",
-     "question_page": 2667,
-     "answer_key_page": 2667
+     "question_page": 2704,
+     "answer_key_page": 2704
     },
     {
      "id": "S72-F1-Q3",
@@ -1078,15 +1141,15 @@
      "required_method": null,
      "grading_note": "Compare 0.161 and 0.679.",
      "figure": null,
-     "page": 2668,
+     "page": 2705,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Investigate how changing conditions changes the decision",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II, (+) standard listed in the pathway",
-     "question_page": 2668,
-     "answer_key_page": 2668
+     "question_page": 2705,
+     "answer_key_page": 2705
     },
     {
      "id": "S72-F1-Q4",
@@ -1107,42 +1170,42 @@
      "standard_course": "Algebra II",
      "type": "mc",
      "response": "select one",
-     "prompt": "If students could eliminate one wrong choice before guessing (3 choices left), the expected value of guessing is",
-     "prompt_markup": "If students could eliminate one wrong choice before guessing (3 choices left), the expected value of guessing is",
+     "prompt": "A test gives +1 point for a correct answer and -1/4 point for a wrong answer on 4-choice questions. A student eliminates one wrong choice and guesses randomly among the 3 remaining choices. What is the expected score for the guess?",
+     "prompt_markup": "A test gives +1 point for a correct answer and -1/4 point for a wrong answer on 4-choice questions. A student eliminates one wrong choice and guesses randomly among the 3 remaining choices. What is the expected score for the guess?",
      "choices": [
       {
        "letter": "A",
-       "text": "1/3 - 2/3 · 1/4 = 1/6"
+       "text": "(1/3)(1) + (2/3)(-1/4) = 1/6"
       },
       {
        "letter": "B",
-       "text": "0"
+       "text": "(1/3)(1) + (2/3)(-1) = -1/3"
       },
       {
        "letter": "C",
-       "text": "1/16"
+       "text": "(1/4)(1) + (3/4)(-1/4) = 1/16"
       },
       {
        "letter": "D",
-       "text": "-1/4"
+       "text": "(1/3)(1) = 1/3"
       }
      ],
      "answer_lines": [],
      "correct_letter": "A",
-     "correct_answer": "1/3 - 2/3 · 1/4 = 1/6",
+     "correct_answer": "(1/3)(1) + (2/3)(-1/4) = 1/6",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Higher.",
+     "grading_note": "With 3 choices, P(correct) = 1/3.",
      "figure": null,
-     "page": 2669,
-     "revision": "unchanged",
+     "page": 2706,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Investigate how changing conditions changes the decision",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II, (+) standard listed in the pathway",
-     "question_page": 2669,
-     "answer_key_page": 2669
+     "question_page": 2706,
+     "answer_key_page": 2706
     },
     {
      "id": "S72-F1-Q5",
@@ -1163,27 +1226,27 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "How many items must be tested (all non-defective) for the acceptance probability to drop below 0.5 when 10% are defective?",
-     "prompt_markup": "How many items must be tested (all non-defective) for the acceptance probability to drop below 0.5 when 10% are defective?",
+     "prompt": "A shipment is accepted only if all n tested items are non-defective. Each item is defective with probability 0.1, independently. What is the smallest whole number n for which the probability of acceptance is below 0.5?",
+     "prompt_markup": "A shipment is accepted only if all n tested items are non-defective. Each item is defective with probability 0.1, independently. What is the smallest whole number n for which the probability of acceptance is below 0.5?",
      "choices": [],
      "answer_lines": [
       "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "7 items (0.9⁷ ≈ 0.478)",
+     "correct_answer": "7",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form.",
+     "grading_note": "0.9⁶ ≈ 0.531 and 0.9⁷ ≈ 0.478.",
      "figure": null,
-     "page": 2670,
-     "revision": "unchanged",
+     "page": 2707,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Investigate how changing conditions changes the decision",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II, (+) standard listed in the pathway",
-     "question_page": 2670,
-     "answer_key_page": 2670
+     "question_page": 2707,
+     "answer_key_page": 2707
     }
    ]
   },
@@ -1235,15 +1298,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2672,
+     "page": 2709,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Find expected values of random variables",
      "alignment_type": "later-course extension; direct",
      "course_level": "High School — Probability & Statistics (course placement in this bank)",
-     "question_page": 2672,
-     "answer_key_page": 2672
+     "question_page": 2709,
+     "answer_key_page": 2709
     },
     {
      "id": "S72-F2-Q2",
@@ -1264,27 +1327,27 @@
      "standard_course": "Probability & Statistics",
      "type": "sa",
      "response": "write",
-     "prompt": "A raffle sells 500 tickets at $2; one prize is $400. Find the expected net gain of one ticket.",
-     "prompt_markup": "A raffle sells 500 tickets at $2; one prize is $400. Find the expected net gain of one ticket.",
+     "prompt": "A raffle sells 500 tickets at $2 each; one ticket wins a $400 prize. Find the expected net gain of one ticket, in dollars, as a decimal.",
+     "prompt_markup": "A raffle sells 500 tickets at $2 each; one ticket wins a $400 prize. Find the expected net gain of one ticket, in dollars, as a decimal.",
      "choices": [],
      "answer_lines": [
       "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "400/500 - 2 = -$1.20",
+     "correct_answer": "-1.2",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form.",
+     "grading_note": "400/500 - 2 = -1.20.",
      "figure": null,
-     "page": 2673,
-     "revision": "unchanged",
+     "page": 2710,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Find expected values of random variables",
      "alignment_type": "later-course extension; direct",
      "course_level": "High School — Probability & Statistics (course placement in this bank)",
-     "question_page": 2673,
-     "answer_key_page": 2673
+     "question_page": 2710,
+     "answer_key_page": 2710
     },
     {
      "id": "S72-F2-Q3",
@@ -1324,15 +1387,15 @@
      "required_method": null,
      "grading_note": "Interpretation.",
      "figure": null,
-     "page": 2674,
+     "page": 2711,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Find expected values of random variables",
      "alignment_type": "later-course extension; direct",
      "course_level": "High School — Probability & Statistics (course placement in this bank)",
-     "question_page": 2674,
-     "answer_key_page": 2674
+     "question_page": 2711,
+     "answer_key_page": 2711
     },
     {
      "id": "S72-F2-Q4",
@@ -1380,15 +1443,15 @@
      "required_method": null,
      "grading_note": "21/6.",
      "figure": null,
-     "page": 2675,
+     "page": 2712,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Find expected values of random variables",
      "alignment_type": "later-course extension; direct",
      "course_level": "High School — Probability & Statistics (course placement in this bank)",
-     "question_page": 2675,
-     "answer_key_page": 2675
+     "question_page": 2712,
+     "answer_key_page": 2712
     },
     {
      "id": "S72-F2-Q5",
@@ -1407,29 +1470,44 @@
      "nearest_related": false,
      "standard_level": "Probability & Statistics. Common Core groups high-school standards by category, not by course; this bank places this one in Probability & Statistics, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Probability & Statistics",
-     "type": "sa",
-     "response": "write",
-     "prompt": "A $30 warranty covers a $200 repair that happens with probability 0.1. Explain how deciding whether to buy it is an expected-value calculation for a random variable.",
-     "prompt_markup": "A $30 warranty covers a $200 repair that happens with probability 0.1. Explain how deciding whether to buy it is an expected-value calculation for a random variable.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A $30 warranty covers a $200 repair that is needed with probability 0.1 (otherwise no cost). Why is deciding whether to buy it an expected-value calculation?",
+     "prompt_markup": "A $30 warranty covers a $200 repair that is needed with probability 0.1 (otherwise no cost). Why is deciding whether to buy it an expected-value calculation?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The repair cost is a random variable (0 or 200) with expected value $20, compared with the certain $30 price."
+      },
+      {
+       "letter": "B",
+       "text": "The repair will cost exactly $20 for certain, so the warranty price is compared with $20."
+      },
+      {
+       "letter": "C",
+       "text": "The expected repair cost is 0.1 + 200 = $200.10, which is compared with the $30 price."
+      },
+      {
+       "letter": "D",
+       "text": "The warranty price is a random variable whose expected value is $200, compared with the $30 price."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "The repair cost is a random variable (0 or 200); its expected value 20 is compared with the certain cost 30.",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "The repair cost is a random variable (0 or 200) with expected value $20, compared with the certain $30 price.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "E(cost) = 0.1(200) + 0.9(0) = 20.",
      "figure": null,
-     "page": 2676,
-     "revision": "unchanged",
+     "page": 2713,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use probabilities (including conditional reasoning with counts) to analyze decisions such as medical testing, product testing, warranties, and test-taking strategies",
      "target_skill": "Find expected values of random variables",
      "alignment_type": "later-course extension; direct",
      "course_level": "High School — Probability & Statistics (course placement in this bank)",
-     "question_page": 2676,
-     "answer_key_page": 2676
+     "question_page": 2713,
+     "answer_key_page": 2713
     }
    ]
   }

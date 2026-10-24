@@ -4,14 +4,14 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-24"
  },
  "grade": null,
  "title": "Algebra II — Common Core High School Math — Question Sets",
- "set_count": 84,
- "question_count": 2525,
- "figure_count": 106,
+ "set_count": 85,
+ "question_count": 2555,
+ "figure_count": 111,
  "id_format": "S<set>-<section>-Q<number>. Section codes: M = MAIN (the course's own standard), B1, B2, ... = BACKWARD branches (a Grade K-8 standard, or a course standard that is the MAIN standard of an earlier set), F1 = FORWARD 1 and F2 = FORWARD 2 (standards of later courses; standard_course names the course). id is unique within this collection; uid = \"A2:\" + id is unique across all collections. Forward branches name standards only, never question IDs of other collections. Set and branch numbers are fixed: they need not be consecutive, and an ID is never reused for a different skill (see revisions.json).",
  "revisions_file": "revisions.json",
  "relations": {
@@ -22,22 +22,20 @@
   "nearest_related": "true marks a forward branch that no standard directly continues; it uses the nearest related standard"
  },
  "grading_rules": [
-  "Match each student response to its key record by the question ID printed on the question page (for example S40-F2-Q3). The page number is the same in the Question Collection and the Answer Key. IDs are unique within one grade's collection; across collections use uid (for example G5:S40-F2-Q3).",
-  "Multiple choice and true/false: the response is correct when the chosen letter equals correct_letter, or when the student wrote the text of the correct choice.",
-  "Short answer: accept any mathematically equivalent form unless the question asks for a specific form (equivalent fractions, decimals, and mixed numbers; a ratio written as a : b, a to b, or a/b; \"x = 5\" or \"5\"; terms of an expression in any order). Units are not required unless the question asks for them.",
-  "When an answer has several parts (separated by semicolons, or with labels such as \"Rate of change:\"), every part must be correct.",
-  "Drawing / plotting questions (type plot): correct_answer describes what a correct drawing shows. Judge the student's drawing against it.",
-  "Drawing + written questions (type plot_text): the student draws on the figure AND writes an answer. drawing_answer describes the correct drawing and correct_answer the written answer. Both must be correct: every requested point, segment or shape in the drawing, and the written conclusion.",
-  "Answer with required work (type work): required_method says what the shown work must use. A correct final answer without that work earns partial credit only; correct work with a slip in the final answer is also partial.",
-  "Explain / describe questions: grading_note says what a correct response must include; accept any reasonable wording.",
-  "grading_note also lists other accepted answers and the work behind an answer. It is guidance for the grader, not for students.",
-  "Algebra II answer forms: the grading_note of every written answer begins with \"Form required:\" or with \"Any\" (for example \"Any equivalent form\"), which says what else is accepted. \"Exact\" means an exact value (fractions, radicals, logarithms, π, i); a decimal approximation alone is not full credit. When rounding is allowed the note names the precision; an answer within half a unit of the last required place is correct.",
-  "Solutions: a question says whether solutions are real or may be complex. A solution set must contain every solution (with multiplicity when the question asks for it); an extraneous value listed as a solution is an error. \"No real solution\" is an answer when the key says so. Complex numbers are written a + bi with real a and b unless a form is named.",
+  "Match each student response to its key record by the question ID printed on the question page (for example S40-F2-Q3). The page number is the same in the Question Collection and the Answer Key. IDs are unique within one collection; across collections use uid (for example A2:S40-F2-Q3).",
+  "Every question is graded automatically; no question needs a person, a drawing surface, or a judgment of wording. Question types are mc, tf and sa only. There is no partial credit: a response is correct or not.",
+  "Multiple choice and true/false: the response is correct when the chosen letter equals correct_letter.",
+  "Short answer: the response is checked against correct_answer by the game's answer checker. Mathematically equivalent numbers (fractions, decimals, \"x = 5\" or \"5\") and equivalent polynomial or rational expressions are accepted unless the question names a form. When an answer has several parts (one per answer line), every part must be correct. A list of values (solutions, excluded values) may be given in any order unless the question says \"in that order\".",
+  "A word answer is used only when the question lists the allowed words (for example \"Answer Yes or No\", \"Answer Positive or Negative\", \"enter none if there are none\"); the response must be one of those words.",
+  "grading_note gives the accepted form, the work behind the answer and, for multiple choice, what is wrong with each other choice. It is guidance for teachers, not for students.",
+  "Algebra II answer forms: the grading_note of every written answer begins with \"Form required:\" or with \"Any\" (for example \"Any equivalent form\"), which says what else is accepted. \"Exact\" means an exact value (fractions, radicals, π, i); a decimal approximation of an exact answer is not accepted. When a question asks for rounding it names the precision (for example \"to the nearest hundredth\"), and the answer must be given to exactly that precision. Answers whose accepted forms the checker cannot compare reliably (radical, logarithmic, trigonometric or inverse-function formulas, interval statements, interpretations) are multiple choice.",
+  "Solutions: a question says whether solutions are real or may be complex. A solution set must contain every solution (with multiplicity when the question asks for it) and no extraneous value. Complex numbers are written a + bi with real a and b unless a form is named.",
   "Domains: logarithms are real only for positive arguments and bases b > 0, b ≠ 1; √(x²) = |x| over the reals; a rational expression keeps the exclusions of its original denominator after cancelling. Trigonometric questions state degrees or radians and an interval, and \"all solutions\" means every solution in that interval.",
-  "Proofs, derivations and explanations are multiple choice (no question needs a person to grade): the keyed choice is a complete, valid argument; each other choice is a flawed one (checking a few values, an invalid algebra step, assuming the result, a false fact, or the wrong direction or reflection), and grading_note says what is wrong with each.",
-  "Graphs are multiple choice (no question needs a drawing surface): the figure shows four candidate graphs labeled A to D on the same window, with asymptotes and midlines dashed and holes as open circles, and the choices are \"Graph A\" to \"Graph D\". grading_note lists the features of the correct graph and what each other graph shows.",
-  "Technology: a question that needs a calculator says so and names the capability (logarithms, normal cumulative probability, trigonometric values in radians or degrees). Simulation questions supply the simulated results; any answer that reads them correctly within the stated tolerance is accepted.",
-  "Every question has an explanation in its grading_note after the form rule; for numeric questions it shows the verified exact value and the work."
+  "Proofs, derivations and explanations are multiple choice: the keyed choice is a complete, valid argument; each other choice is a flawed one (checking a few values, an invalid algebra step, assuming the result, a false fact, or the wrong direction or reflection), and grading_note says what is wrong with each.",
+  "Graphs are multiple choice: the figure shows four candidate graphs labeled A to D on the same window, with asymptotes and midlines dashed, holes and excluded endpoints as open circles and included endpoints as closed dots, and the choices are \"Graph A\" to \"Graph D\". grading_note lists the features of the correct graph and what each other graph shows.",
+  "Statistics: every question states its own model and conventions: the null model and the tail direction of a simulation count, the 5% cutoff for \"unusual\", the margin of error as 2 standard deviations of the simulated statistic (a 95% range), independence of repeated events, and fair, equally likely devices. A result that is not unusual is described as consistent with the model, never as proof that the model is true; an unusual result is evidence against it, not proof.",
+  "Technology: a question that needs a calculator says so. Simulation questions supply the simulated results as a histogram or as counts.",
+  "Every question has an explanation in its grading_note; for numeric questions it shows the verified exact value and the work."
  ],
  "markup": "prompt is plain text. prompt_markup uses {a/b} for a stacked fraction and 2{1/2} for a mixed number.",
  "sets": [
@@ -1780,7 +1778,7 @@
    "set_id": "S18",
    "file": "sets/S18.json",
    "standard": "HSA-APR.B.3",
-   "title": "Construct a rough graph of a polynomial from its zeros",
+   "title": "Identify the rough graph of a polynomial from its zeros",
    "domain": "Arithmetic with Polynomials and Rational Expressions",
    "strand": "core",
    "target_skill": "Use the zeros, their multiplicities, the leading term, and the y-intercept to identify the rough graph of a factored polynomial among graphs that differ in one of these features",
@@ -1789,7 +1787,7 @@
      "section": "MAIN",
      "section_code": "M",
      "relation": "main",
-     "skill": "Construct a rough graph of a polynomial from its zeros",
+     "skill": "Identify the rough graph of a polynomial from its zeros",
      "standard": "HSA-APR.B.3",
      "nearest_related": false,
      "question_ids": [
@@ -4846,6 +4844,108 @@
       "S47-F2-Q3",
       "S47-F2-Q4",
       "S47-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 85,
+   "set_id": "S85",
+   "file": "sets/S85.json",
+   "standard": "HSF-IF.C.7.b",
+   "title": "Graph step functions",
+   "domain": "Interpreting Functions",
+   "strand": "core",
+   "target_skill": "Identify the graph of a step function (greatest integer, rounding-up, and rate-table models) from its rule, including the value of each step and which endpoint of each step is included",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Graph step functions",
+     "standard": "HSF-IF.C.7.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S85-M-Q1",
+      "S85-M-Q2",
+      "S85-M-Q3",
+      "S85-M-Q4",
+      "S85-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Evaluate step functions",
+     "standard": "HSF-IF.C.7.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S85-B1-Q1",
+      "S85-B1-Q2",
+      "S85-B1-Q3",
+      "S85-B1-Q4",
+      "S85-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Included and excluded endpoints of intervals",
+     "standard": "6.EE.B.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S85-B2-Q1",
+      "S85-B2-Q2",
+      "S85-B2-Q3",
+      "S85-B2-Q4",
+      "S85-B2-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 3",
+     "section_code": "B3",
+     "relation": "backward",
+     "skill": "Integers just below a number",
+     "standard": "6.NS.C.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S85-B3-Q1",
+      "S85-B3-Q2",
+      "S85-B3-Q3",
+      "S85-B3-Q4",
+      "S85-B3-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Write and interpret step-function models",
+     "standard": "HSF-IF.C.7.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S85-F1-Q1",
+      "S85-F1-Q2",
+      "S85-F1-Q3",
+      "S85-F1-Q4",
+      "S85-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Transform step functions",
+     "standard": "HSF-BF.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S85-F2-Q1",
+      "S85-F2-Q2",
+      "S85-F2-Q3",
+      "S85-F2-Q4",
+      "S85-F2-Q5"
      ]
     }
    ]
@@ -8626,7 +8726,8 @@
   }
  ],
  "revision_summary": {
-  "unchanged": 2417,
-  "revised": 108
+  "unchanged": 1615,
+  "revised": 910,
+  "new": 30
  }
 }

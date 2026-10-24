@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -458,22 +458,37 @@
      "nearest_related": false,
      "standard_level": "Algebra I. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra I, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra I",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Write the quadratic formula.",
-     "prompt_markup": "Write the quadratic formula.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which is the quadratic formula for the solutions of ax² + bx + c = 0 (a ≠ 0)?",
+     "prompt_markup": "Which is the quadratic formula for the solutions of ax² + bx + c = 0 (a ≠ 0)?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "x = -b ± √(b² - 4ac)/(2a)"
+      },
+      {
+       "letter": "B",
+       "text": "x = (-b ± √(b² - 4ac))/(2a)"
+      },
+      {
+       "letter": "C",
+       "text": "x = (-b ± √(b² + 4ac))/(2a)"
+      },
+      {
+       "letter": "D",
+       "text": "x = (b ± √(b² - 4ac))/(2a)"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "x = (-b ± √(b² - 4ac)) / (2a)",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "x = (-b ± √(b² - 4ac))/(2a)",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form.",
+     "grading_note": "The others change the sign of b, divide only the radical by 2a, or change the sign of 4ac.",
      "figure": null,
      "page": 130,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Solve quadratic equations with real coefficients and non-real solutions, giving exact solutions in a + bi form",
      "target_skill": "Use the quadratic formula and the discriminant",
@@ -1011,16 +1026,17 @@
      "prompt_markup": "3 - 2i is a solution of x² + bx + c = 0, where b and c are real. Find b and c.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "b =",
+      "c ="
      ],
      "correct_letter": null,
-     "correct_answer": "b = -6, c = 13",
+     "correct_answer": "-6; 13",
      "drawing_answer": null,
      "required_method": null,
      "grading_note": "Form required: both. With real coefficients the other solution is 3 + 2i; sum 6 = -b, product 9 + 4 = 13 = c.",
      "figure": null,
      "page": 144,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Solve quadratic equations with real coefficients and non-real solutions, giving exact solutions in a + bi form",
      "target_skill": "Find a quadratic from one complex solution",
@@ -1048,20 +1064,21 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "-1 + 4i is a solution of a quadratic equation x² + bx + c = 0 with real b and c. Write the equation.",
-     "prompt_markup": "-1 + 4i is a solution of a quadratic equation x² + bx + c = 0 with real b and c. Write the equation.",
+     "prompt": "-1 + 4i is a solution of a quadratic equation x² + bx + c = 0 with real b and c. Find b and c.",
+     "prompt_markup": "-1 + 4i is a solution of a quadratic equation x² + bx + c = 0 with real b and c. Find b and c.",
      "choices": [],
      "answer_lines": [
-      "Equation:"
+      "b =",
+      "c ="
      ],
      "correct_letter": null,
-     "correct_answer": "x² + 2x + 17 = 0",
+     "correct_answer": "2; 17",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent equation. Sum -2, product 1 + 16 = 17.",
+     "grading_note": "Form required: both. The roots -1 ± 4i have sum -2 = -b and product 1 + 16 = 17 = c.",
      "figure": null,
      "page": 145,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Solve quadratic equations with real coefficients and non-real solutions, giving exact solutions in a + bi form",
      "target_skill": "Find a quadratic from one complex solution",
@@ -1191,22 +1208,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain why x² - (2 + i)x = 0 has the solution 2 + i but not the solution 2 - i.",
-     "prompt_markup": "Explain why x² - (2 + i)x = 0 has the solution 2 + i but not the solution 2 - i.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Why does x² - (2 + i)x = 0 have the solution 2 + i but not the solution 2 - i?",
+     "prompt_markup": "Why does x² - (2 + i)x = 0 have the solution 2 + i but not the solution 2 - i?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Substituting 2 - i gives (2 - i)² - (2 + i)(2 - i) = 0, so 2 - i is a solution after all."
+      },
+      {
+       "letter": "B",
+       "text": "Non-real solutions of every quadratic equation come in conjugate pairs, so 2 - i must also be a solution, along with 2 + i."
+      },
+      {
+       "letter": "C",
+       "text": "Its coefficient 2 + i is not real, so its solutions need not come in conjugate pairs; factoring x(x - (2 + i)) = 0 gives only 0 and 2 + i."
+      },
+      {
+       "letter": "D",
+       "text": "A quadratic equation can have only one non-real solution, so once 2 + i is found there is no room for 2 - i."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Its coefficient 2 + i is not real, so solutions need not come in conjugate pairs: the solutions are 0 and 2 + i.",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "Its coefficient 2 + i is not real, so its solutions need not come in conjugate pairs; factoring x(x - (2 + i)) = 0 gives only 0 and 2 + i.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation naming the non-real coefficient.",
+     "grading_note": "The conjugate-pair rule needs real coefficients. The others apply the rule without that condition, misstate the number of solutions, or miscompute: (2 - i)² - (2 + i)(2 - i) = 3 - 4i - 5 ≠ 0.",
      "figure": null,
      "page": 148,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Solve quadratic equations with real coefficients and non-real solutions, giving exact solutions in a + bi form",
      "target_skill": "Find a quadratic from one complex solution",
@@ -1294,20 +1326,21 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "For which real values of c does x² - 4x + c = 0 have non-real solutions? Give them for c = 8.",
-     "prompt_markup": "For which real values of c does x² - 4x + c = 0 have non-real solutions? Give them for c = 8.",
+     "prompt": "Consider x² - 4x + c = 0 with real c. (a) For which real values of c are the solutions non-real? (b) Solve the equation when c = 8.",
+     "prompt_markup": "Consider x² - 4x + c = 0 with real c. (a) For which real values of c are the solutions non-real? (b) Solve the equation when c = 8.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "(a)",
+      "(b) x ="
      ],
      "correct_letter": null,
-     "correct_answer": "c > 4; for c = 8, x = 2 ± 2i",
+     "correct_answer": "c > 4; 2 ± 2i",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: both parts. Discriminant 16 - 4c < 0.",
+     "grading_note": "Form required: both parts. The discriminant 16 - 4c < 0 gives c > 4. For c = 8: x = (4 ± √(-16))/2 = 2 ± 2i.",
      "figure": null,
      "page": 151,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Solve quadratic equations with real coefficients and non-real solutions, giving exact solutions in a + bi form",
      "target_skill": "Classify solutions for a family of quadratics",
@@ -1437,22 +1470,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "For c > 4, write the solutions of x² - 4x + c = 0 in terms of c.",
-     "prompt_markup": "For c > 4, write the solutions of x² - 4x + c = 0 in terms of c.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "For c > 4, which gives the solutions of x² - 4x + c = 0 in terms of c?",
+     "prompt_markup": "For c > 4, which gives the solutions of x² - 4x + c = 0 in terms of c?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "x = 2 ± i√(4 - c)"
+      },
+      {
+       "letter": "B",
+       "text": "x = -2 ± i√(c - 4)"
+      },
+      {
+       "letter": "C",
+       "text": "x = 2 ± √(c - 4)"
+      },
+      {
+       "letter": "D",
+       "text": "x = 2 ± i√(c - 4)"
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "D",
      "correct_answer": "x = 2 ± i√(c - 4)",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: exact in terms of c. (4 ± √(16 - 4c))/2 = 2 ± √(4 - c) = 2 ± i√(c - 4).",
+     "grading_note": "(4 ± √(16 - 4c))/2 = 2 ± √(4 - c), and 4 - c < 0, so √(4 - c) = i√(c - 4).",
      "figure": null,
      "page": 154,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Solve quadratic equations with real coefficients and non-real solutions, giving exact solutions in a + bi form",
      "target_skill": "Classify solutions for a family of quadratics",

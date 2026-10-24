@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -79,15 +79,15 @@
      "required_method": null,
      "grading_note": "Halving the base gives 1/2; the Pythagorean Theorem gives √3/2; the larger angle is opposite the longer leg. The others put π/3 opposite the short leg, subtract lengths instead of using the Pythagorean Theorem, or add instead of subtracting squares.",
      "figure": null,
-     "page": 2975,
-     "revision": "revised",
+     "page": 3012,
+     "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 2975,
-     "answer_key_page": 2975
+     "question_page": 3012,
+     "answer_key_page": 3012
     },
     {
      "id": "S81-M-Q2",
@@ -135,15 +135,15 @@
      "required_method": null,
      "grading_note": "Equal legs make the ratio 1. The others use the hypotenuse as a leg, add instead of dividing, or use a 30°-60°-90° fact.",
      "figure": null,
-     "page": 2976,
-     "revision": "revised",
+     "page": 3013,
+     "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 2976,
-     "answer_key_page": 2976
+     "question_page": 3013,
+     "answer_key_page": 3013
     },
     {
      "id": "S81-M-Q3",
@@ -162,29 +162,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Use sin(π - x) = sin x to find sin(5π/6) exactly, and explain the identity with the unit circle.",
-     "prompt_markup": "Use sin(π - x) = sin x to find sin(5π/6) exactly, and explain the identity with the unit circle.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which uses sin(π - x) = sin x to find sin(5π/6) exactly, with a correct unit-circle explanation?",
+     "prompt_markup": "Which uses sin(π - x) = sin x to find sin(5π/6) exactly, with a correct unit-circle explanation?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "sin(5π/6) = -sin(π/6) = -1/2: the points for x and π - x are reflections over the x-axis, so their y-coordinates are opposite."
+      },
+      {
+       "letter": "B",
+       "text": "sin(5π/6) = sin(π/6) = 1/2: the points for x and π - x are reflections over the y-axis, so they have the same y-coordinate."
+      },
+      {
+       "letter": "C",
+       "text": "sin(5π/6) = cos(π/6) = √3/2: the point for π - x is a quarter turn from the point for x, so y becomes x."
+      },
+      {
+       "letter": "D",
+       "text": "sin(5π/6) = sin(π/6) = 1/2: the points for x and π - x are reflections over the x-axis, so they have the same y-coordinate."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "sin(5π/6) = sin(π/6) = 1/2: the points at x and π - x are reflections over the y-axis, with the same y-coordinate",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "sin(5π/6) = sin(π/6) = 1/2: the points for x and π - x are reflections over the y-axis, so they have the same y-coordinate.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: value and explanation.",
+     "grading_note": "(cos x, sin x) and (-cos x, sin x) mirror over the y-axis. The others name the x-axis reflection (which changes the sign of y), or treat π - x as a quarter turn.",
      "figure": null,
-     "page": 2977,
-     "revision": "unchanged",
+     "page": 3014,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 2977,
-     "answer_key_page": 2977
+     "question_page": 3014,
+     "answer_key_page": 3014
     },
     {
      "id": "S81-M-Q4",
@@ -209,23 +224,23 @@
      "prompt_markup": "Use cos(π + x) = -cos x to find cos(7π/6) exactly.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "cos(7π/6) ="
      ],
      "correct_letter": null,
-     "correct_answer": "-cos(π/6) = -√3/2",
+     "correct_answer": "-√3/2",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: exact value and the relation used.",
+     "grading_note": "cos(7π/6) = -cos(π/6) = -√3/2.",
      "figure": null,
-     "page": 2978,
-     "revision": "unchanged",
+     "page": 3015,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 2978,
-     "answer_key_page": 2978
+     "question_page": 3015,
+     "answer_key_page": 3015
     },
     {
      "id": "S81-M-Q5",
@@ -250,23 +265,23 @@
      "prompt_markup": "Use tan(2π - x) = -tan x to find tan(5π/3) exactly.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "tan(5π/3) ="
      ],
      "correct_letter": null,
-     "correct_answer": "-tan(π/3) = -√3",
+     "correct_answer": "-√3",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: exact value and the relation used.",
+     "grading_note": "tan(5π/3) = -tan(π/3) = -√3.",
      "figure": null,
-     "page": 2979,
-     "revision": "unchanged",
+     "page": 3016,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 2979,
-     "answer_key_page": 2979
+     "question_page": 3016,
+     "answer_key_page": 3016
     }
    ]
   },
@@ -304,27 +319,28 @@
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "Give the sides of a 30°-60°-90° triangle with hypotenuse 2.",
-     "prompt_markup": "Give the sides of a 30°-60°-90° triangle with hypotenuse 2.",
+     "prompt": "A 30°-60°-90° triangle has hypotenuse 2. Give the lengths of its legs exactly.",
+     "prompt_markup": "A 30°-60°-90° triangle has hypotenuse 2. Give the lengths of its legs exactly.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Short leg:",
+      "Long leg:"
      ],
      "correct_letter": null,
-     "correct_answer": "1, √3, 2",
+     "correct_answer": "1; √3",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: all three.",
+     "grading_note": "Form required: both. Half of an equilateral triangle with side 2.",
      "figure": null,
-     "page": 2981,
-     "revision": "unchanged",
+     "page": 3018,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Special right triangle side ratios",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry (course placement in this bank)",
-     "question_page": 2981,
-     "answer_key_page": 2981
+     "question_page": 3018,
+     "answer_key_page": 3018
     },
     {
      "id": "S81-B1-Q2",
@@ -357,15 +373,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2982,
+     "page": 3019,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Special right triangle side ratios",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry (course placement in this bank)",
-     "question_page": 2982,
-     "answer_key_page": 2982
+     "question_page": 3019,
+     "answer_key_page": 3019
     },
     {
      "id": "S81-B1-Q3",
@@ -405,15 +421,15 @@
      "required_method": null,
      "grading_note": "Half of an equilateral triangle.",
      "figure": null,
-     "page": 2983,
+     "page": 3020,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Special right triangle side ratios",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry (course placement in this bank)",
-     "question_page": 2983,
-     "answer_key_page": 2983
+     "question_page": 3020,
+     "answer_key_page": 3020
     },
     {
      "id": "S81-B1-Q4",
@@ -461,15 +477,15 @@
      "required_method": null,
      "grading_note": "Adjacent/hypotenuse.",
      "figure": null,
-     "page": 2984,
+     "page": 3021,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Special right triangle side ratios",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry (course placement in this bank)",
-     "question_page": 2984,
-     "answer_key_page": 2984
+     "question_page": 3021,
+     "answer_key_page": 3021
     },
     {
      "id": "S81-B1-Q5",
@@ -502,15 +518,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2985,
+     "page": 3022,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Special right triangle side ratios",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry (course placement in this bank)",
-     "question_page": 2985,
-     "answer_key_page": 2985
+     "question_page": 3022,
+     "answer_key_page": 3022
     }
    ]
   },
@@ -560,15 +576,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2987,
+     "page": 3024,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Unit-circle values in all quadrants",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra II",
-     "question_page": 2987,
-     "answer_key_page": 2987
+     "question_page": 3024,
+     "answer_key_page": 3024
     },
     {
      "id": "S81-B2-Q2",
@@ -601,15 +617,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2988,
+     "page": 3025,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Unit-circle values in all quadrants",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra II",
-     "question_page": 2988,
-     "answer_key_page": 2988
+     "question_page": 3025,
+     "answer_key_page": 3025
     },
     {
      "id": "S81-B2-Q3",
@@ -649,15 +665,15 @@
      "required_method": null,
      "grading_note": "y > 0.",
      "figure": null,
-     "page": 2989,
+     "page": 3026,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Unit-circle values in all quadrants",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra II",
-     "question_page": 2989,
-     "answer_key_page": 2989
+     "question_page": 3026,
+     "answer_key_page": 3026
     },
     {
      "id": "S81-B2-Q4",
@@ -705,15 +721,15 @@
      "required_method": null,
      "grading_note": "Between 3π/2 and 2π.",
      "figure": null,
-     "page": 2990,
+     "page": 3027,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Unit-circle values in all quadrants",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra II",
-     "question_page": 2990,
-     "answer_key_page": 2990
+     "question_page": 3027,
+     "answer_key_page": 3027
     },
     {
      "id": "S81-B2-Q5",
@@ -746,15 +762,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2991,
+     "page": 3028,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Unit-circle values in all quadrants",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra II",
-     "question_page": 2991,
-     "answer_key_page": 2991
+     "question_page": 3028,
+     "answer_key_page": 3028
     }
    ]
   },
@@ -802,15 +818,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2993,
+     "page": 3030,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "The Pythagorean Theorem",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 8",
-     "question_page": 2993,
-     "answer_key_page": 2993
+     "question_page": 3030,
+     "answer_key_page": 3030
     },
     {
      "id": "S81-B3-Q2",
@@ -841,15 +857,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2994,
+     "page": 3031,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "The Pythagorean Theorem",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 8",
-     "question_page": 2994,
-     "answer_key_page": 2994
+     "question_page": 3031,
+     "answer_key_page": 3031
     },
     {
      "id": "S81-B3-Q3",
@@ -887,15 +903,15 @@
      "required_method": null,
      "grading_note": "1/4 + 3/4 = 1.",
      "figure": null,
-     "page": 2995,
+     "page": 3032,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "The Pythagorean Theorem",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 8",
-     "question_page": 2995,
-     "answer_key_page": 2995
+     "question_page": 3032,
+     "answer_key_page": 3032
     },
     {
      "id": "S81-B3-Q4",
@@ -941,15 +957,15 @@
      "required_method": null,
      "grading_note": "√2.",
      "figure": null,
-     "page": 2996,
+     "page": 3033,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "The Pythagorean Theorem",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 8",
-     "question_page": 2996,
-     "answer_key_page": 2996
+     "question_page": 3033,
+     "answer_key_page": 3033
     },
     {
      "id": "S81-B3-Q5",
@@ -980,15 +996,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2997,
+     "page": 3034,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "The Pythagorean Theorem",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 8",
-     "question_page": 2997,
-     "answer_key_page": 2997
+     "question_page": 3034,
+     "answer_key_page": 3034
     }
    ]
   },
@@ -1054,15 +1070,15 @@
      "required_method": null,
      "grading_note": "Opposite over adjacent, then simplify (1/2)/(√3/2) = 1/√3 = √3/3. The others use the angle π/3, give sin(π/6) instead, or simplify the quotient incorrectly.",
      "figure": null,
-     "page": 2999,
-     "revision": "revised",
+     "page": 3036,
+     "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Derive more special values and the reflection identities",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 2999,
-     "answer_key_page": 2999
+     "question_page": 3036,
+     "answer_key_page": 3036
     },
     {
      "id": "S81-F1-Q2",
@@ -1110,15 +1126,15 @@
      "required_method": null,
      "grading_note": "Reflection over the y-axis changes the sign of x and keeps y. The others name the wrong reflection (it keeps x), distribute cosine over a difference, or check one value.",
      "figure": null,
-     "page": 3000,
-     "revision": "revised",
+     "page": 3037,
+     "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Derive more special values and the reflection identities",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3000,
-     "answer_key_page": 3000
+     "question_page": 3037,
+     "answer_key_page": 3037
     },
     {
      "id": "S81-F1-Q3",
@@ -1158,15 +1174,15 @@
      "required_method": null,
      "grading_note": "Rotation by π.",
      "figure": null,
-     "page": 3001,
+     "page": 3038,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Derive more special values and the reflection identities",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3001,
-     "answer_key_page": 3001
+     "question_page": 3038,
+     "answer_key_page": 3038
     },
     {
      "id": "S81-F1-Q4",
@@ -1214,15 +1230,15 @@
      "required_method": null,
      "grading_note": "Reflection over the x-axis.",
      "figure": null,
-     "page": 3002,
+     "page": 3039,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Derive more special values and the reflection identities",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3002,
-     "answer_key_page": 3002
+     "question_page": 3039,
+     "answer_key_page": 3039
     },
     {
      "id": "S81-F1-Q5",
@@ -1243,27 +1259,27 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Find sin(11π/6) using one of the relations.",
-     "prompt_markup": "Find sin(11π/6) using one of the relations.",
+     "prompt": "Use sin(2π - x) = -sin x to find sin(11π/6) exactly.",
+     "prompt_markup": "Use sin(2π - x) = -sin x to find sin(11π/6) exactly.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "sin(11π/6) ="
      ],
      "correct_letter": null,
-     "correct_answer": "-sin(π/6) = -1/2",
+     "correct_answer": "-1/2",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: value and relation.",
+     "grading_note": "sin(11π/6) = -sin(π/6) = -1/2.",
      "figure": null,
-     "page": 3003,
-     "revision": "unchanged",
+     "page": 3040,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Derive more special values and the reflection identities",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3003,
-     "answer_key_page": 3003
+     "question_page": 3040,
+     "answer_key_page": 3040
     }
    ]
   },
@@ -1301,29 +1317,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain why sin(-x) = -sin x with the unit circle.",
-     "prompt_markup": "Explain why sin(-x) = -sin x with the unit circle.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which unit-circle reasoning explains why sin(-x) = -sin x?",
+     "prompt_markup": "Which unit-circle reasoning explains why sin(-x) = -sin x?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The points for x and -x are opposite points, so their x-coordinates are equal."
+      },
+      {
+       "letter": "B",
+       "text": "The points for x and -x are reflections over the y-axis, so their y-coordinates are opposites."
+      },
+      {
+       "letter": "C",
+       "text": "The points for x and -x are reflections over the x-axis, so their y-coordinates are opposites."
+      },
+      {
+       "letter": "D",
+       "text": "The points for x and -x are the same point, so their y-coordinates are equal."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "x and -x give points reflected over the x-axis; their y-coordinates are opposites.",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "The points for x and -x are reflections over the x-axis, so their y-coordinates are opposites.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "Equal arcs in opposite directions from (1, 0) mirror over the x-axis. The others call the points opposite or the same, or name the y-axis reflection, which keeps the y-coordinate.",
      "figure": null,
-     "page": 3005,
-     "revision": "unchanged",
+     "page": 3042,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Explain symmetry and periodicity",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3005,
-     "answer_key_page": 3005
+     "question_page": 3042,
+     "answer_key_page": 3042
     },
     {
      "id": "S81-F2-Q2",
@@ -1342,29 +1373,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Is cos an even or odd function? Justify.",
-     "prompt_markup": "Is cos an even or odd function? Justify.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Is cos an even or odd function, and why?",
+     "prompt_markup": "Is cos an even or odd function, and why?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Even: the points for x and -x have the same y-coordinate, so cos(-x) = cos x."
+      },
+      {
+       "letter": "B",
+       "text": "Even: the points for x and -x have the same x-coordinate, so cos(-x) = cos x."
+      },
+      {
+       "letter": "C",
+       "text": "Odd: the points for x and -x have opposite x-coordinates, so cos(-x) = -cos x."
+      },
+      {
+       "letter": "D",
+       "text": "Neither: cos(-x) is not related to cos x."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Even: cos(-x) = cos x (same x-coordinate)",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "Even: the points for x and -x have the same x-coordinate, so cos(-x) = cos x.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: decision and reason.",
+     "grading_note": "Reflection over the x-axis keeps the x-coordinate.",
      "figure": null,
-     "page": 3006,
-     "revision": "unchanged",
+     "page": 3043,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Explain symmetry and periodicity",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3006,
-     "answer_key_page": 3006
+     "question_page": 3043,
+     "answer_key_page": 3043
     },
     {
      "id": "S81-F2-Q3",
@@ -1404,15 +1450,15 @@
      "required_method": null,
      "grading_note": "Period.",
      "figure": null,
-     "page": 3007,
+     "page": 3044,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Explain symmetry and periodicity",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3007,
-     "answer_key_page": 3007
+     "question_page": 3044,
+     "answer_key_page": 3044
     },
     {
      "id": "S81-F2-Q4",
@@ -1460,15 +1506,15 @@
      "required_method": null,
      "grading_note": "Odd.",
      "figure": null,
-     "page": 3008,
+     "page": 3045,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Explain symmetry and periodicity",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3008,
-     "answer_key_page": 3008
+     "question_page": 3045,
+     "answer_key_page": 3045
     },
     {
      "id": "S81-F2-Q5",
@@ -1487,29 +1533,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Use 2π - x = -x + 2π to explain why tan(2π - x) = -tan x.",
-     "prompt_markup": "Use 2π - x = -x + 2π to explain why tan(2π - x) = -tan x.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Using 2π - x = -x + 2π, which reasoning explains why tan(2π - x) = -tan x?",
+     "prompt_markup": "Using 2π - x = -x + 2π, which reasoning explains why tan(2π - x) = -tan x?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "tan(-x + 2π) = tan(-x) by periodicity, and tan is odd, so tan(-x) = -tan x."
+      },
+      {
+       "letter": "B",
+       "text": "tan(-x + 2π) = tan x by periodicity, and tan is even."
+      },
+      {
+       "letter": "C",
+       "text": "tan(-x + 2π) = tan(-x) + tan(2π) = -tan x + 1."
+      },
+      {
+       "letter": "D",
+       "text": "tan(2π - x) = 2π - tan x, because tan distributes over subtraction."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "tan(-x + 2π) = tan(-x) by periodicity, and tan is odd, so it equals -tan x.",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "tan(-x + 2π) = tan(-x) by periodicity, and tan is odd, so tan(-x) = -tan x.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "Period π (so also 2π) and oddness.",
      "figure": null,
-     "page": 3009,
-     "revision": "unchanged",
+     "page": 3046,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Explain symmetry and periodicity",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3009,
-     "answer_key_page": 3009
+     "question_page": 3046,
+     "answer_key_page": 3046
     }
    ]
   }

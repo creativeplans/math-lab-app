@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -50,22 +50,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "P(r) = 5000(1 + r)¹⁰ with r > 0 is the value of an investment. Without calculating, explain why P(r) > 5000.",
-     "prompt_markup": "P(r) = 5000(1 + r)¹⁰ with r > 0 is the value of an investment. Without calculating, explain why P(r) > 5000.",
-     "choices": [],
-     "answer_lines": [
-      "Explanation:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "P(r) = 5000(1 + r)¹⁰ with r > 0 is the value of an investment. Which reasoning shows, without calculating, that P(r) > 5000?",
+     "prompt_markup": "P(r) = 5000(1 + r)¹⁰ with r > 0 is the value of an investment. Which reasoning shows, without calculating, that P(r) > 5000?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "(1 + r)¹⁰ = 1 + r¹⁰ by distributing the exponent, and 1 + r¹⁰ is greater than 1 for r > 0, so P(r) > 5000."
+      },
+      {
+       "letter": "B",
+       "text": "1 + r > 1, so (1 + r)¹⁰ is a product of ten numbers greater than 1 and is greater than 1; 5000 times a number greater than 1 is greater than 5000."
+      },
+      {
+       "letter": "C",
+       "text": "For r = 0.05, P = 8,144.47 > 5000, so P(r) > 5000 for every r > 0."
+      },
+      {
+       "letter": "D",
+       "text": "The exponent 10 is greater than 1, so any positive number raised to the 10th power is greater than 1, and P(r) > 5000."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "1 + r > 1, so (1 + r)¹⁰ > 1, and 5000 times a number greater than 1 is greater than 5000.",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "1 + r > 1, so (1 + r)¹⁰ is a product of ten numbers greater than 1 and is greater than 1; 5000 times a number greater than 1 is greater than 5000.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation that treats (1 + r)¹⁰ as one quantity greater than 1.",
+     "grading_note": "Treat (1 + r)¹⁰ as one quantity greater than 1. The others distribute a power over a sum, check one value, or use a false rule (0.5¹⁰ < 1).",
      "figure": null,
      "page": 268,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Reason about the value of a complicated expression by treating one of its parts as a single quantity (its sign, size, or limits)",
      "target_skill": "Reason about the value of a complicated expression by treating one of its parts as a single quantity (its sign, size, or limits)",
@@ -93,20 +108,21 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "The height of a ball is h(t) = 80 - 16(t - 2)² feet after t seconds. Without expanding, find the greatest height and when it occurs, and explain.",
-     "prompt_markup": "The height of a ball is h(t) = 80 - 16(t - 2)² feet after t seconds. Without expanding, find the greatest height and when it occurs, and explain.",
+     "prompt": "The height of a ball is h(t) = 80 - 16(t - 2)² feet after t seconds. Without expanding, use the fact that (t - 2)² ≥ 0 to find the greatest height and when it occurs.",
+     "prompt_markup": "The height of a ball is h(t) = 80 - 16(t - 2)² feet after t seconds. Without expanding, use the fact that (t - 2)² ≥ 0 to find the greatest height and when it occurs.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Greatest height (ft):",
+      "t ="
      ],
      "correct_letter": null,
-     "correct_answer": "80 ft at t = 2: (t - 2)² ≥ 0, so 16(t - 2)² ≥ 0 and h(t) ≤ 80, with equality only when t = 2.",
+     "correct_answer": "80; 2",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: the height, the time, and the reason.",
+     "grading_note": "Form required: both. 16(t - 2)² ≥ 0, so h(t) ≤ 80, with equality only when t - 2 = 0.",
      "figure": null,
      "page": 269,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Reason about the value of a complicated expression by treating one of its parts as a single quantity (its sign, size, or limits)",
      "target_skill": "Reason about the value of a complicated expression by treating one of its parts as a single quantity (its sign, size, or limits)",
@@ -132,22 +148,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "C(x) = 10 + 40/(x + 1) is a cost in dollars for x ≥ 0. Explain why C(x) is always more than 10 and never more than 50.",
-     "prompt_markup": "C(x) = 10 + 40/(x + 1) is a cost in dollars for x ≥ 0. Explain why C(x) is always more than 10 and never more than 50.",
-     "choices": [],
-     "answer_lines": [
-      "Explanation:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "C(x) = 10 + 40/(x + 1) is a cost in dollars for x ≥ 0. Which reasoning shows that C(x) is always more than 10 and never more than 50?",
+     "prompt_markup": "C(x) = 10 + 40/(x + 1) is a cost in dollars for x ≥ 0. Which reasoning shows that C(x) is always more than 10 and never more than 50?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "40/(x + 1) is at least 40 because x + 1 ≥ 1, so C(x) is at least 10 + 40 = 50 for every x ≥ 0."
+      },
+      {
+       "letter": "B",
+       "text": "40/(x + 1) can be 0, so C(x) can equal 10; it is at most 50 because 10 + 40 = 50."
+      },
+      {
+       "letter": "C",
+       "text": "C(0) = 50 and C(100) ≈ 10.4, and both are between 10 and 50, so every value of C(x) is between 10 and 50."
+      },
+      {
+       "letter": "D",
+       "text": "x + 1 ≥ 1, so 40/(x + 1) is positive and at most 40; adding 10 gives more than 10 and at most 50 (equal to 50 at x = 0)."
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "D",
      "correct_answer": "x + 1 ≥ 1, so 40/(x + 1) is positive and at most 40; adding 10 gives more than 10 and at most 50 (equal to 50 at x = 0).",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation treating 40/(x + 1) as one positive quantity at most 40.",
+     "grading_note": "Treat 40/(x + 1) as one positive quantity at most 40. The others check two values, reverse the inequality, or claim the fraction can be 0.",
      "figure": null,
      "page": 270,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Reason about the value of a complicated expression by treating one of its parts as a single quantity (its sign, size, or limits)",
      "target_skill": "Reason about the value of a complicated expression by treating one of its parts as a single quantity (its sign, size, or limits)",
@@ -173,22 +204,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "The temperature of a drink is T(t) = 70 - 30(0.8)ᵗ °F after t minutes. Explain why T(t) is always below 70 and gets closer to 70 as t grows.",
-     "prompt_markup": "The temperature of a drink is T(t) = 70 - 30(0.8)ᵗ °F after t minutes. Explain why T(t) is always below 70 and gets closer to 70 as t grows.",
-     "choices": [],
-     "answer_lines": [
-      "Explanation:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "The temperature of a drink is T(t) = 70 - 30(0.8)ᵗ °F after t minutes (t ≥ 0). Which reasoning explains why T(t) is always below 70 and gets closer to 70 as t grows?",
+     "prompt_markup": "The temperature of a drink is T(t) = 70 - 30(0.8)ᵗ °F after t minutes (t ≥ 0). Which reasoning explains why T(t) is always below 70 and gets closer to 70 as t grows?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "30(0.8)ᵗ is always positive, so T < 70; (0.8)ᵗ shrinks toward 0 as t grows, so T approaches 70."
+      },
+      {
+       "letter": "B",
+       "text": "(0.8)ᵗ grows as t grows, so the amount 30(0.8)ᵗ grows, and T rises toward 70 from below without reaching it."
+      },
+      {
+       "letter": "C",
+       "text": "30(0.8)ᵗ becomes exactly 0 after enough minutes, and from then on T equals 70 and stops changing."
+      },
+      {
+       "letter": "D",
+       "text": "T(0) = 40 and T(10) ≈ 66.8 are both below 70 and rising, so T stays below 70 and approaches it."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "30(0.8)ᵗ is positive, so T is below 70; (0.8)ᵗ shrinks toward 0 as t grows, so the subtracted part shrinks and T approaches 70.",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "30(0.8)ᵗ is always positive, so T < 70; (0.8)ᵗ shrinks toward 0 as t grows, so T approaches 70.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "Treat 30(0.8)ᵗ as one positive, shrinking quantity. The others claim the power grows, claim it reaches 0, or reason from two values.",
      "figure": null,
      "page": 271,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Reason about the value of a complicated expression by treating one of its parts as a single quantity (its sign, size, or limits)",
      "target_skill": "Reason about the value of a complicated expression by treating one of its parts as a single quantity (its sign, size, or limits)",
@@ -214,22 +260,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "f(x) = 3/(x² + 1). Find the greatest value of f(x) and explain why no input gives a greater value.",
-     "prompt_markup": "f(x) = 3/(x² + 1). Find the greatest value of f(x) and explain why no input gives a greater value.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "f(x) = 3/(x² + 1). Which gives the greatest value of f(x) with a correct reason?",
+     "prompt_markup": "f(x) = 3/(x² + 1). Which gives the greatest value of f(x) with a correct reason?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "4, at x = 1, because x² + 1 is smallest when x = 1."
+      },
+      {
+       "letter": "B",
+       "text": "3, at x = 0: x² + 1 ≥ 1, so 3/(x² + 1) ≤ 3, with equality only when x = 0."
+      },
+      {
+       "letter": "C",
+       "text": "3, at x = 0, because f(1) = 1.5 and f(2) = 0.6 are smaller."
+      },
+      {
+       "letter": "D",
+       "text": "There is no greatest value, because x² + 1 can be as large as we like."
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "B",
      "correct_answer": "3, at x = 0: x² + 1 ≥ 1, so 3/(x² + 1) ≤ 3, with equality only when x = 0.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: the value and the reason.",
+     "grading_note": "The smallest denominator gives the largest value. The others check a few inputs only, confuse a large denominator with a large value, or misplace the smallest denominator.",
      "figure": null,
      "page": 272,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Reason about the value of a complicated expression by treating one of its parts as a single quantity (its sign, size, or limits)",
      "target_skill": "Reason about the value of a complicated expression by treating one of its parts as a single quantity (its sign, size, or limits)",
@@ -318,20 +379,21 @@
      "nearest_related": false,
      "type": "sa",
      "response": "write",
-     "prompt": "What is the smallest value of (x + 5)², and for which x?",
-     "prompt_markup": "What is the smallest value of (x + 5)², and for which x?",
+     "prompt": "What is the smallest value of (x + 5)², and for which x does it occur?",
+     "prompt_markup": "What is the smallest value of (x + 5)², and for which x does it occur?",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Smallest value:",
+      "x ="
      ],
      "correct_letter": null,
-     "correct_answer": "0, when x = -5",
+     "correct_answer": "0; -5",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: both.",
+     "grading_note": "Form required: both. A square is never negative and equals 0 only when x + 5 = 0.",
      "figure": null,
      "page": 275,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Reason about the value of a complicated expression by treating one of its parts as a single quantity (its sign, size, or limits)",
      "target_skill": "Squares are never negative",
@@ -511,22 +573,37 @@
      "domain": "Expressions & Equations",
      "skill": "Powers of numbers greater than 1 and between 0 and 1",
      "nearest_related": false,
-     "type": "sa",
-     "response": "write",
+     "type": "mc",
+     "response": "select one",
      "prompt": "Is 1.05¹⁰ greater than or less than 1?",
      "prompt_markup": "Is 1.05¹⁰ greater than or less than 1?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Less than 1"
+      },
+      {
+       "letter": "B",
+       "text": "Equal to 1"
+      },
+      {
+       "letter": "C",
+       "text": "Greater than 1"
+      },
+      {
+       "letter": "D",
+       "text": "It cannot be decided without a calculator"
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "C",
      "correct_answer": "Greater than 1",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer.",
+     "grading_note": "A power of a number greater than 1 (with a positive whole-number exponent) is greater than 1 (about 1.63).",
      "figure": null,
      "page": 280,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Reason about the value of a complicated expression by treating one of its parts as a single quantity (its sign, size, or limits)",
      "target_skill": "Powers of numbers greater than 1 and between 0 and 1",
@@ -550,22 +627,37 @@
      "domain": "Expressions & Equations",
      "skill": "Powers of numbers greater than 1 and between 0 and 1",
      "nearest_related": false,
-     "type": "sa",
-     "response": "write",
+     "type": "mc",
+     "response": "select one",
      "prompt": "Is 0.8⁵ greater than or less than 1?",
      "prompt_markup": "Is 0.8⁵ greater than or less than 1?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It cannot be decided without a calculator"
+      },
+      {
+       "letter": "B",
+       "text": "Greater than 1"
+      },
+      {
+       "letter": "C",
+       "text": "Less than 1"
+      },
+      {
+       "letter": "D",
+       "text": "Equal to 1"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Less than 1 (about 0.33)",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "Less than 1",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer.",
+     "grading_note": "Each factor 0.8 makes the product smaller: 0.8⁵ ≈ 0.33.",
      "figure": null,
      "page": 281,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Reason about the value of a complicated expression by treating one of its parts as a single quantity (its sign, size, or limits)",
      "target_skill": "Powers of numbers greater than 1 and between 0 and 1",
@@ -689,22 +781,37 @@
      "domain": "Expressions & Equations",
      "skill": "Powers of numbers greater than 1 and between 0 and 1",
      "nearest_related": false,
-     "type": "sa",
-     "response": "write",
-     "prompt": "Order from least to greatest: 0.9², 0.9⁵, 0.9.",
-     "prompt_markup": "Order from least to greatest: 0.9², 0.9⁵, 0.9.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which order is from least to greatest?",
+     "prompt_markup": "Which order is from least to greatest?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "0.9⁵, 0.9², 0.9"
+      },
+      {
+       "letter": "B",
+       "text": "0.9², 0.9⁵, 0.9"
+      },
+      {
+       "letter": "C",
+       "text": "0.9², 0.9, 0.9⁵"
+      },
+      {
+       "letter": "D",
+       "text": "0.9, 0.9², 0.9⁵"
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "A",
      "correct_answer": "0.9⁵, 0.9², 0.9",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent listing.",
+     "grading_note": "For 0 < b < 1, higher powers are smaller: 0.9⁵ ≈ 0.59 < 0.9² = 0.81 < 0.9.",
      "figure": null,
      "page": 284,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Reason about the value of a complicated expression by treating one of its parts as a single quantity (its sign, size, or limits)",
      "target_skill": "Powers of numbers greater than 1 and between 0 and 1",
@@ -1032,20 +1139,20 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Find every value of f(x) = 3/(x² + 1) for real x.",
-     "prompt_markup": "Find every value of f(x) = 3/(x² + 1) for real x.",
+     "prompt": "Find every value of f(x) = 3/(x² + 1) for real x. Write the answer as a compound inequality in y.",
+     "prompt_markup": "Find every value of f(x) = 3/(x² + 1) for real x. Write the answer as a compound inequality in y.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Range:"
      ],
      "correct_letter": null,
-     "correct_answer": "0 < f(x) ≤ 3",
+     "correct_answer": "0 < y ≤ 3",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: an inequality or interval.",
+     "grading_note": "Form required: the compound inequality. x² + 1 ≥ 1, so 0 < 3/(x² + 1) ≤ 3, with 3 at x = 0 and values near 0 for large |x|.",
      "figure": null,
      "page": 293,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Reason about the value of a complicated expression by treating one of its parts as a single quantity (its sign, size, or limits)",
      "target_skill": "Find the set of all values of an expression on a domain",
@@ -1177,20 +1284,20 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Find every value of g(x) = 5 - 2/(x² + 4) for real x.",
-     "prompt_markup": "Find every value of g(x) = 5 - 2/(x² + 4) for real x.",
+     "prompt": "Find every value of g(x) = 5 - 2/(x² + 4) for real x. Write the answer as a compound inequality in y.",
+     "prompt_markup": "Find every value of g(x) = 5 - 2/(x² + 4) for real x. Write the answer as a compound inequality in y.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Range:"
      ],
      "correct_letter": null,
-     "correct_answer": "4.5 ≤ g(x) < 5",
+     "correct_answer": "4.5 ≤ y < 5",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: an inequality or interval. 2/(x² + 4) is in (0, 0.5].",
+     "grading_note": "Form required: the compound inequality. 2/(x² + 4) is greater than 0 and at most 0.5 (at x = 0).",
      "figure": null,
      "page": 296,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Reason about the value of a complicated expression by treating one of its parts as a single quantity (its sign, size, or limits)",
      "target_skill": "Find the set of all values of an expression on a domain",
@@ -1235,22 +1342,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain why y = 10 + 40/(x + 1) has the horizontal asymptote y = 10.",
-     "prompt_markup": "Explain why y = 10 + 40/(x + 1) has the horizontal asymptote y = 10.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Why does y = 10 + 40/(x + 1) have the horizontal asymptote y = 10?",
+     "prompt_markup": "Why does y = 10 + 40/(x + 1) have the horizontal asymptote y = 10?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The constant term of any rational expression, here 10, is always its horizontal asymptote."
+      },
+      {
+       "letter": "B",
+       "text": "As x grows without bound, 40/(x + 1) gets closer and closer to 0, so y gets closer to 10."
+      },
+      {
+       "letter": "C",
+       "text": "When x = -1 the fraction is undefined, so y = 10 there."
+      },
+      {
+       "letter": "D",
+       "text": "At x = 0, y = 10 + 40 = 50, and 50 is the asymptote shifted up by the 40 in the numerator."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "As x grows without bound, 40/(x + 1) gets closer to 0, so y gets closer to 10.",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "As x grows without bound, 40/(x + 1) gets closer and closer to 0, so y gets closer to 10.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "The quotient 40/(x + 1) tends to 0. The others use a single point, a false rule (y = 10 + 40x/(x + 1) has asymptote 50), or confuse the vertical asymptote x = -1 with a value of y.",
      "figure": null,
      "page": 298,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Reason about the value of a complicated expression by treating one of its parts as a single quantity (its sign, size, or limits)",
      "target_skill": "Use single-entity reasoning to find horizontal asymptotes",
@@ -1421,22 +1543,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Does the graph of y = 10 + 40/(x + 1) ever reach its horizontal asymptote? Explain.",
-     "prompt_markup": "Does the graph of y = 10 + 40/(x + 1) ever reach its horizontal asymptote? Explain.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Does the graph of y = 10 + 40/(x + 1) ever reach its horizontal asymptote y = 10?",
+     "prompt_markup": "Does the graph of y = 10 + 40/(x + 1) ever reach its horizontal asymptote y = 10?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes: for very large x the fraction is 0, so y equals 10."
+      },
+      {
+       "letter": "B",
+       "text": "No: the graph stays far from y = 10 for every x."
+      },
+      {
+       "letter": "C",
+       "text": "Yes: at x = 0, where y = 10."
+      },
+      {
+       "letter": "D",
+       "text": "No: 40/(x + 1) is never 0, so y is never exactly 10."
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "D",
      "correct_answer": "No: 40/(x + 1) is never 0, so y is never exactly 10.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "A fraction with numerator 40 is never 0. The others compute y(0) incorrectly (it is 50), treat \"close\" as \"equal,\" or deny that y approaches 10.",
      "figure": null,
      "page": 302,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Reason about the value of a complicated expression by treating one of its parts as a single quantity (its sign, size, or limits)",
      "target_skill": "Use single-entity reasoning to find horizontal asymptotes",

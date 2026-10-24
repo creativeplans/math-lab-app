@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -50,19 +50,34 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "10 plants got fertilizer and 10 did not (randomly assigned). Fertilized plants grew 2.9 cm more on average. The histogram shows 200 re-randomized differences; none was 2.9 or more. Is the difference significant? Explain.",
-     "prompt_markup": "10 plants got fertilizer and 10 did not (randomly assigned). Fertilized plants grew 2.9 cm more on average. The histogram shows 200 re-randomized differences; none was 2.9 or more. Is the difference significant? Explain.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "10 plants got fertilizer and 10 did not (randomly assigned). Fertilized plants grew 2.9 cm more on average. The histogram shows 200 re-randomized differences under the model that fertilizer has no effect. Use a one-sided count (2.9 cm or more) and a 5% cutoff. Which conclusion is justified?",
+     "prompt_markup": "10 plants got fertilizer and 10 did not (randomly assigned). Fertilized plants grew 2.9 cm more on average. The histogram shows 200 re-randomized differences under the model that fertilizer has no effect. Use a one-sided count (2.9 cm or more) and a 5% cutoff. Which conclusion is justified?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Most re-randomized differences were near 0, so the observed difference is not significant."
+      },
+      {
+       "letter": "B",
+       "text": "4 of 200 (2%) were 2 cm or more, so the observed difference of 2.9 cm is not significant."
+      },
+      {
+       "letter": "C",
+       "text": "0 of 200 were 2.9 cm or more; 0% < 5%, so the difference is significant: fertilizer appears to increase growth."
+      },
+      {
+       "letter": "D",
+       "text": "0 of 200 were 2.9 cm or more, so this difference has probability exactly 0 and fertilizer is proved to work."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Yes: a difference of 2.9 cm almost never happens by chance alone (0 of 200), so the fertilizer appears to increase growth",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "0 of 200 were 2.9 cm or more; 0% < 5%, so the difference is significant: fertilizer appears to increase growth.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: decision and evidence.",
+     "grading_note": "The ≥ 3 bar and the part of the 2-to-3 bar at 2.9 or more: none of 200. Rare is not impossible.",
      "figure": {
       "svg": "assets/S69-M-Q1.svg",
       "png": "assets/S69-M-Q1.png",
@@ -95,15 +110,15 @@
        "ylabel": "Count"
       }
      },
-     "page": 2531,
-     "revision": "unchanged",
+     "page": 2568,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Algebra II",
-     "question_page": 2531,
-     "answer_key_page": 2531
+     "question_page": 2568,
+     "answer_key_page": 2568
     },
     {
      "id": "S69-M-Q2",
@@ -122,29 +137,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "In a caffeine experiment, the caffeine group's reaction time was 0.04 s faster on average. In 200 re-randomizations, 62 differences were at least 0.04 s. Is the difference significant?",
-     "prompt_markup": "In a caffeine experiment, the caffeine group's reaction time was 0.04 s faster on average. In 200 re-randomizations, 62 differences were at least 0.04 s. Is the difference significant?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "In a randomized caffeine experiment, the caffeine group's mean reaction time was 0.04 s faster. Under the model that caffeine has no effect, 62 of 200 re-randomizations gave the caffeine group a mean at least 0.04 s faster. Using a one-sided count and a 5% cutoff, is the difference significant?",
+     "prompt_markup": "In a randomized caffeine experiment, the caffeine group's mean reaction time was 0.04 s faster. Under the model that caffeine has no effect, 62 of 200 re-randomizations gave the caffeine group a mean at least 0.04 s faster. Using a one-sided count and a 5% cutoff, is the difference significant?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No: 62/200 = 31% > 5%, so the difference could easily be chance."
+      },
+      {
+       "letter": "B",
+       "text": "Yes: 62/200 = 31% is more than 5%, so the difference is significant."
+      },
+      {
+       "letter": "C",
+       "text": "No: 31% > 5%, and this proves that caffeine has no effect."
+      },
+      {
+       "letter": "D",
+       "text": "Yes: 0.04 s is less than 5% of a second, so it is significant."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "No: 31% of re-randomizations give a difference that large by chance",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "No: 62/200 = 31% > 5%, so the difference could easily be chance.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: decision and proportion.",
+     "grading_note": "31% is common. Not significant is not proof of no effect.",
      "figure": null,
-     "page": 2532,
-     "revision": "unchanged",
+     "page": 2569,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Algebra II",
-     "question_page": 2532,
-     "answer_key_page": 2532
+     "question_page": 2569,
+     "answer_key_page": 2569
     },
     {
      "id": "S69-M-Q3",
@@ -163,29 +193,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Students randomly assigned to a study app scored 6 points higher on average. In 200 re-randomizations, 9 differences were at least 6. Is the difference significant at the 5% level?",
-     "prompt_markup": "Students randomly assigned to a study app scored 6 points higher on average. In 200 re-randomizations, 9 differences were at least 6. Is the difference significant at the 5% level?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Students were randomly assigned to use a study app or not, and the app group scored 6 points higher on average. Under the model that the app has no effect, 9 of 200 re-randomizations gave the app group at least 6 more points. Using a one-sided count and a 5% cutoff, is the difference significant?",
+     "prompt_markup": "Students were randomly assigned to use a study app or not, and the app group scored 6 points higher on average. Under the model that the app has no effect, 9 of 200 re-randomizations gave the app group at least 6 more points. Using a one-sided count and a 5% cutoff, is the difference significant?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes: 9/200 = 45%, which is above 5%."
+      },
+      {
+       "letter": "B",
+       "text": "No: 9 is more than 6, so the app has no effect."
+      },
+      {
+       "letter": "C",
+       "text": "No: 9/200 = 4.5%, which is above 5%."
+      },
+      {
+       "letter": "D",
+       "text": "Yes: 9/200 = 4.5%, which is below 5%."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Yes: 9/200 = 4.5%, below 5%",
+     "answer_lines": [],
+     "correct_letter": "D",
+     "correct_answer": "Yes: 9/200 = 4.5%, which is below 5%.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: decision and proportion.",
+     "grading_note": "One-sided: 9/200 = 4.5% < 5%.",
      "figure": null,
-     "page": 2533,
-     "revision": "unchanged",
+     "page": 2570,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Algebra II",
-     "question_page": 2533,
-     "answer_key_page": 2533
+     "question_page": 2570,
+     "answer_key_page": 2570
     },
     {
      "id": "S69-M-Q4",
@@ -204,29 +249,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain what a re-randomization simulation assumes and how it is carried out.",
-     "prompt_markup": "Explain what a re-randomization simulation assumes and how it is carried out.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "What does a re-randomization simulation assume, and how is it carried out?",
+     "prompt_markup": "What does a re-randomization simulation assume, and how is it carried out?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It assumes no treatment effect; each group's values are re-sorted from smallest to largest, and the two sorted lists are compared once to find the difference."
+      },
+      {
+       "letter": "B",
+       "text": "It assumes the treatment works; the observed difference is doubled and halved many times, and the results are graphed to show how large the effect could be."
+      },
+      {
+       "letter": "C",
+       "text": "It assumes no treatment effect; all responses are pooled and randomly re-split into groups of the original sizes, and the difference in means is recorded many times."
+      },
+      {
+       "letter": "D",
+       "text": "It assumes the treatment works; new subjects are recruited for each run, and the difference in their group means is recorded many times to estimate the true effect."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "It assumes the treatment has no effect; all responses are pooled, randomly re-split into two groups of the original sizes, and the difference in means is recorded, many times.",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "It assumes no treatment effect; all responses are pooled and randomly re-split into groups of the original sizes, and the difference in means is recorded many times.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation with assumption and procedure.",
+     "grading_note": "Null model plus shuffling of labels.",
      "figure": null,
-     "page": 2534,
-     "revision": "unchanged",
+     "page": 2571,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Algebra II",
-     "question_page": 2534,
-     "answer_key_page": 2534
+     "question_page": 2571,
+     "answer_key_page": 2571
     },
     {
      "id": "S69-M-Q5",
@@ -245,19 +305,34 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Using the histogram of 200 re-randomized differences, about how many were at least 2 cm? Would an observed difference of 2 cm be significant at the 5% level?",
-     "prompt_markup": "Using the histogram of 200 re-randomized differences, about how many were at least 2 cm? Would an observed difference of 2 cm be significant at the 5% level?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Using the histogram of 200 re-randomized differences, how many differences were 2 cm or more, and would an observed difference of 2 cm be significant using a one-sided count and a 5% cutoff?",
+     "prompt_markup": "Using the histogram of 200 re-randomized differences, how many differences were 2 cm or more, and would an observed difference of 2 cm be significant using a one-sided count and a 5% cutoff?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "0 of 200; a difference of 2 cm has probability 0 under the model."
+      },
+      {
+       "letter": "B",
+       "text": "4 of 200 (2%); 2% < 5%, so yes, it would be significant."
+      },
+      {
+       "letter": "C",
+       "text": "31 of 200 (15.5%); 15.5% > 5%, so no, it would not be significant."
+      },
+      {
+       "letter": "D",
+       "text": "4 of 200 (2%); 2% < 5%, so no, it would not be significant."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "4 (the 2-to-3 bar); 4/200 = 2%, so yes",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "4 of 200 (2%); 2% < 5%, so yes, it would be significant.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: count, proportion, decision.",
+     "grading_note": "The 2-to-3 bar has 4 and the ≥ 3 bar has 0. 31 counts from 1 cm.",
      "figure": {
       "svg": "assets/S69-M-Q5.svg",
       "png": "assets/S69-M-Q5.png",
@@ -290,15 +365,15 @@
        "ylabel": "Count"
       }
      },
-     "page": 2535,
-     "revision": "unchanged",
+     "page": 2572,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Algebra II",
-     "question_page": 2535,
-     "answer_key_page": 2535
+     "question_page": 2572,
+     "answer_key_page": 2572
     }
    ]
   },
@@ -346,15 +421,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2537,
+     "page": 2574,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Compare the means of two groups",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2537,
-     "answer_key_page": 2537
+     "question_page": 2574,
+     "answer_key_page": 2574
     },
     {
      "id": "S69-B1-Q2",
@@ -385,15 +460,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2538,
+     "page": 2575,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Compare the means of two groups",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2538,
-     "answer_key_page": 2538
+     "question_page": 2575,
+     "answer_key_page": 2575
     },
     {
      "id": "S69-B1-Q3",
@@ -431,15 +506,15 @@
      "required_method": null,
      "grading_note": "Chance.",
      "figure": null,
-     "page": 2539,
+     "page": 2576,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Compare the means of two groups",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2539,
-     "answer_key_page": 2539
+     "question_page": 2576,
+     "answer_key_page": 2576
     },
     {
      "id": "S69-B1-Q4",
@@ -485,15 +560,15 @@
      "required_method": null,
      "grading_note": "Subtract.",
      "figure": null,
-     "page": 2540,
+     "page": 2577,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Compare the means of two groups",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2540,
-     "answer_key_page": 2540
+     "question_page": 2577,
+     "answer_key_page": 2577
     },
     {
      "id": "S69-B1-Q5",
@@ -510,29 +585,44 @@
      "domain": "Statistics & Probability",
      "skill": "Compare the means of two groups",
      "nearest_related": false,
-     "type": "sa",
-     "response": "write",
-     "prompt": "Why compare the difference with the variability in the groups?",
-     "prompt_markup": "Why compare the difference with the variability in the groups?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Why is a difference between two group means compared with the variability in the groups?",
+     "prompt_markup": "Why is a difference between two group means compared with the variability in the groups?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Any difference between the group means proves a treatment effect."
+      },
+      {
+       "letter": "B",
+       "text": "The variability in the groups gives the exact size of the effect."
+      },
+      {
+       "letter": "C",
+       "text": "A difference is meaningful only if it is large relative to the natural variation."
+      },
+      {
+       "letter": "D",
+       "text": "Variability matters only when the two group means are equal."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "A difference is meaningful only if it is large relative to the natural variation",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "A difference is meaningful only if it is large relative to the natural variation.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer.",
+     "grading_note": "Signal versus noise. The others are false: a difference alone is not proof, variability is not the effect size, and variability always matters.",
      "figure": null,
-     "page": 2541,
-     "revision": "unchanged",
+     "page": 2578,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Compare the means of two groups",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2541,
-     "answer_key_page": 2541
+     "question_page": 2578,
+     "answer_key_page": 2578
     }
    ]
   },
@@ -568,29 +658,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
+     "type": "mc",
+     "response": "select one",
      "prompt": "In a fertilizer experiment, 20 plants were randomly assigned to fertilizer or no fertilizer. Why were they randomly assigned?",
      "prompt_markup": "In a fertilizer experiment, 20 plants were randomly assigned to fertilizer or no fertilizer. Why were they randomly assigned?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "choices": [
+      {
+       "letter": "A",
+       "text": "to make the groups comparable, so a difference can be due to the fertilizer"
+      },
+      {
+       "letter": "B",
+       "text": "so that no measurements of growth are needed afterward"
+      },
+      {
+       "letter": "C",
+       "text": "so the result can be generalized to all plants of every kind, everywhere"
+      },
+      {
+       "letter": "D",
+       "text": "to make sure every plant grows exactly the same amount"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "To make the groups comparable so differences can be attributed to the fertilizer",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "to make the groups comparable, so a difference can be due to the fertilizer",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer.",
+     "grading_note": "Random assignment balances other factors.",
      "figure": null,
-     "page": 2543,
-     "revision": "unchanged",
+     "page": 2580,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Random assignment in experiments",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra II",
-     "question_page": 2543,
-     "answer_key_page": 2543
+     "question_page": 2580,
+     "answer_key_page": 2580
     },
     {
      "id": "S69-B2-Q2",
@@ -609,29 +714,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Describe how to randomly assign 20 plants into two groups of 10.",
-     "prompt_markup": "Describe how to randomly assign 20 plants into two groups of 10.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "How can 20 plants be randomly assigned to two groups of 10?",
+     "prompt_markup": "How can 20 plants be randomly assigned to two groups of 10?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Put the 10 tallest plants in the fertilizer group."
+      },
+      {
+       "letter": "B",
+       "text": "Let the gardener pick 10 healthy-looking plants for fertilizer."
+      },
+      {
+       "letter": "C",
+       "text": "Put the 10 plants nearest the window in the fertilizer group."
+      },
+      {
+       "letter": "D",
+       "text": "Number the plants 1-20 and use random numbers to choose 10 for fertilizer."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Number the plants 1-20 and use random numbers to choose 10 for fertilizer",
+     "answer_lines": [],
+     "correct_letter": "D",
+     "correct_answer": "Number the plants 1-20 and use random numbers to choose 10 for fertilizer.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any valid method.",
+     "grading_note": "Chance alone decides.",
      "figure": null,
-     "page": 2544,
-     "revision": "unchanged",
+     "page": 2581,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Random assignment in experiments",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra II",
-     "question_page": 2544,
-     "answer_key_page": 2544
+     "question_page": 2581,
+     "answer_key_page": 2581
     },
     {
      "id": "S69-B2-Q3",
@@ -671,15 +791,15 @@
      "required_method": null,
      "grading_note": "Design matters.",
      "figure": null,
-     "page": 2545,
+     "page": 2582,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Random assignment in experiments",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra II",
-     "question_page": 2545,
-     "answer_key_page": 2545
+     "question_page": 2582,
+     "answer_key_page": 2582
     },
     {
      "id": "S69-B2-Q4",
@@ -727,15 +847,15 @@
      "required_method": null,
      "grading_note": "Definition.",
      "figure": null,
-     "page": 2546,
+     "page": 2583,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Random assignment in experiments",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra II",
-     "question_page": 2546,
-     "answer_key_page": 2546
+     "question_page": 2583,
+     "answer_key_page": 2583
     },
     {
      "id": "S69-B2-Q5",
@@ -754,29 +874,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "What kind of conclusion does a significant result in a randomized experiment allow?",
-     "prompt_markup": "What kind of conclusion does a significant result in a randomized experiment allow?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A randomized experiment gives a significant difference. Which conclusion does it allow?",
+     "prompt_markup": "A randomized experiment gives a significant difference. Which conclusion does it allow?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "the difference is due to chance alone, not the treatment"
+      },
+      {
+       "letter": "B",
+       "text": "there is evidence the treatment caused the difference for these subjects"
+      },
+      {
+       "letter": "C",
+       "text": "the treatment causes the same difference in everyone everywhere"
+      },
+      {
+       "letter": "D",
+       "text": "the subjects were a random sample of everyone in the population"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "That the treatment caused the difference (for these subjects)",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "there is evidence the treatment caused the difference for these subjects",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer.",
+     "grading_note": "Cause for the subjects studied.",
      "figure": null,
-     "page": 2547,
-     "revision": "unchanged",
+     "page": 2584,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Random assignment in experiments",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra II",
-     "question_page": 2547,
-     "answer_key_page": 2547
+     "question_page": 2584,
+     "answer_key_page": 2584
     }
    ]
   },
@@ -824,15 +959,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2549,
+     "page": 2586,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Probability as relative frequency in simulations",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 2549,
-     "answer_key_page": 2549
+     "question_page": 2586,
+     "answer_key_page": 2586
     },
     {
      "id": "S69-B3-Q2",
@@ -863,15 +998,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2550,
+     "page": 2587,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Probability as relative frequency in simulations",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 2550,
-     "answer_key_page": 2550
+     "question_page": 2587,
+     "answer_key_page": 2587
     },
     {
      "id": "S69-B3-Q3",
@@ -909,15 +1044,15 @@
      "required_method": null,
      "grading_note": "40% is common; unusual usually means about 5% or less.",
      "figure": null,
-     "page": 2551,
+     "page": 2588,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Probability as relative frequency in simulations",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 2551,
-     "answer_key_page": 2551
+     "question_page": 2588,
+     "answer_key_page": 2588
     },
     {
      "id": "S69-B3-Q4",
@@ -963,15 +1098,15 @@
      "required_method": null,
      "grading_note": "Rare, not impossible.",
      "figure": null,
-     "page": 2552,
+     "page": 2589,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Probability as relative frequency in simulations",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 2552,
-     "answer_key_page": 2552
+     "question_page": 2589,
+     "answer_key_page": 2589
     },
     {
      "id": "S69-B3-Q5",
@@ -990,27 +1125,27 @@
      "nearest_related": false,
      "type": "sa",
      "response": "write",
-     "prompt": "Is 4/200 below 5%?",
-     "prompt_markup": "Is 4/200 below 5%?",
+     "prompt": "Is 4/200 less than 5%? Answer Yes or No.",
+     "prompt_markup": "Is 4/200 less than 5%? Answer Yes or No.",
      "choices": [],
      "answer_lines": [
       "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "Yes: 2%",
+     "correct_answer": "Yes",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer.",
+     "grading_note": "4/200 = 2%.",
      "figure": null,
-     "page": 2553,
-     "revision": "unchanged",
+     "page": 2590,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Probability as relative frequency in simulations",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 7",
-     "question_page": 2553,
-     "answer_key_page": 2553
+     "question_page": 2590,
+     "answer_key_page": 2590
     }
    ]
   },
@@ -1047,29 +1182,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "In a caffeine experiment, the observed difference in mean reaction time was 0.04 s, and the question is whether caffeine changes reaction time in either direction. How should the re-randomization results be counted?",
-     "prompt_markup": "In a caffeine experiment, the observed difference in mean reaction time was 0.04 s, and the question is whether caffeine changes reaction time in either direction. How should the re-randomization results be counted?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "In a caffeine experiment, the observed difference in mean reaction time was 0.04 s. The question is whether caffeine changes reaction time in either direction. Which re-randomized differences should be counted?",
+     "prompt_markup": "In a caffeine experiment, the observed difference in mean reaction time was 0.04 s. The question is whether caffeine changes reaction time in either direction. Which re-randomized differences should be counted?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "only those with difference ≥ 0.04 s"
+      },
+      {
+       "letter": "B",
+       "text": "those with |difference| ≥ 0.04 s, in either direction"
+      },
+      {
+       "letter": "C",
+       "text": "only those with |difference| ≤ 0.04 s"
+      },
+      {
+       "letter": "D",
+       "text": "only those with difference exactly 0.04 s"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Count differences at least 0.04 s in either direction (|difference| ≥ 0.04)",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "those with |difference| ≥ 0.04 s, in either direction",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer.",
+     "grading_note": "A two-sided question counts both tails.",
      "figure": null,
-     "page": 2555,
-     "revision": "unchanged",
+     "page": 2592,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Two-sided comparisons and design choices",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II",
-     "question_page": 2555,
-     "answer_key_page": 2555
+     "question_page": 2592,
+     "answer_key_page": 2592
     },
     {
      "id": "S69-F1-Q2",
@@ -1090,17 +1240,17 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Using the fertilizer histogram, estimate how many re-randomized differences were 2 or more in absolute value.",
-     "prompt_markup": "Using the fertilizer histogram, estimate how many re-randomized differences were 2 or more in absolute value.",
+     "prompt": "The histogram shows 200 re-randomized differences in mean growth (cm). How many differences were 2 cm or more, or less than -2 cm?",
+     "prompt_markup": "The histogram shows 200 re-randomized differences in mean growth (cm). How many differences were 2 cm or more, or less than -2 cm?",
      "choices": [],
      "answer_lines": [
       "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "About 4 (no bar below -2, 4 in 2 to 3)",
+     "correct_answer": "4",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer.",
+     "grading_note": "The 2-to-3 bar has 4; the ≥ 3 and < -2 bars have 0.",
      "figure": {
       "svg": "assets/S69-F1-Q2.svg",
       "png": "assets/S69-F1-Q2.png",
@@ -1133,15 +1283,15 @@
        "ylabel": "Count"
       }
      },
-     "page": 2556,
-     "revision": "unchanged",
+     "page": 2593,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Two-sided comparisons and design choices",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II",
-     "question_page": 2556,
-     "answer_key_page": 2556
+     "question_page": 2593,
+     "answer_key_page": 2593
     },
     {
      "id": "S69-F1-Q3",
@@ -1181,15 +1331,15 @@
      "required_method": null,
      "grading_note": "Less chance variation.",
      "figure": null,
-     "page": 2557,
+     "page": 2594,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Two-sided comparisons and design choices",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II",
-     "question_page": 2557,
-     "answer_key_page": 2557
+     "question_page": 2594,
+     "answer_key_page": 2594
     },
     {
      "id": "S69-F1-Q4",
@@ -1219,15 +1369,15 @@
       },
       {
        "letter": "B",
-       "text": "the data are rounded"
+       "text": "the data are rounded to whole numbers"
       },
       {
        "letter": "C",
-       "text": "the groups were not randomized"
+       "text": "the groups were not randomly assigned"
       },
       {
        "letter": "D",
-       "text": "the sample is small"
+       "text": "the sample in each group is small"
       }
      ],
      "answer_lines": [],
@@ -1237,15 +1387,15 @@
      "required_method": null,
      "grading_note": "Small spread.",
      "figure": null,
-     "page": 2558,
-     "revision": "unchanged",
+     "page": 2595,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Two-sided comparisons and design choices",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II",
-     "question_page": 2558,
-     "answer_key_page": 2558
+     "question_page": 2595,
+     "answer_key_page": 2595
     },
     {
      "id": "S69-F1-Q5",
@@ -1264,29 +1414,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Why should the decision rule (such as 5%) be chosen before seeing the data?",
-     "prompt_markup": "Why should the decision rule (such as 5%) be chosen before seeing the data?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Why should the cutoff for significance (such as 5%) be chosen before seeing the data?",
+     "prompt_markup": "Why should the cutoff for significance (such as 5%) be chosen before seeing the data?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The cutoff changes the data that are collected in the study."
+      },
+      {
+       "letter": "B",
+       "text": "The cutoff must equal the observed proportion of the data."
+      },
+      {
+       "letter": "C",
+       "text": "Choosing it afterward could bias the conclusion toward the result one wants."
+      },
+      {
+       "letter": "D",
+       "text": "Cutoffs chosen in advance are always 50%, the fairest choice."
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "C",
      "correct_answer": "Choosing it afterward could bias the conclusion toward the result one wants.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer.",
+     "grading_note": "Avoids bias. The others are false: the cutoff does not change the data, is not set equal to the result, and is usually 5%, not 50%.",
      "figure": null,
-     "page": 2559,
-     "revision": "unchanged",
+     "page": 2596,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Two-sided comparisons and design choices",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II",
-     "question_page": 2559,
-     "answer_key_page": 2559
+     "question_page": 2596,
+     "answer_key_page": 2596
     }
    ]
   },
@@ -1324,29 +1489,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "A company reports its supplement \"improved memory scores by 3 points\" in a study of 8 people without a control group. Evaluate.",
-     "prompt_markup": "A company reports its supplement \"improved memory scores by 3 points\" in a study of 8 people without a control group. Evaluate.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A company says its supplement \"improved memory scores by 3 points\" in a study of 8 people with no control group. Which evaluation is correct?",
+     "prompt_markup": "A company says its supplement \"improved memory scores by 3 points\" in a study of 8 people with no control group. Which evaluation is correct?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Strong evidence: an increase of 3 points is a real improvement in memory for these people."
+      },
+      {
+       "letter": "B",
+       "text": "Weak evidence, but only because an increase of 3 points is too small a number to matter."
+      },
+      {
+       "letter": "C",
+       "text": "Strong evidence: every one of the 8 people in the study took the supplement as directed."
+      },
+      {
+       "letter": "D",
+       "text": "Weak evidence: with no control group and only 8 people, the change could be due to other factors or chance."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Weak evidence: no control group, very small sample, no randomization, no significance test",
+     "answer_lines": [],
+     "correct_letter": "D",
+     "correct_answer": "Weak evidence: with no control group and only 8 people, the change could be due to other factors or chance.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any two valid criticisms.",
+     "grading_note": "No comparison and a tiny sample.",
      "figure": null,
-     "page": 2561,
-     "revision": "unchanged",
+     "page": 2598,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Evaluate reports of experiments",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II",
-     "question_page": 2561,
-     "answer_key_page": 2561
+     "question_page": 2598,
+     "answer_key_page": 2598
     },
     {
      "id": "S69-F2-Q2",
@@ -1365,29 +1545,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "A report says a new teaching method \"significantly\" raised scores in a randomized experiment, with 2 of 200 re-randomizations as extreme. Evaluate.",
-     "prompt_markup": "A report says a new teaching method \"significantly\" raised scores in a randomized experiment, with 2 of 200 re-randomizations as extreme. Evaluate.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A report says a new teaching method \"significantly\" raised scores in a randomized experiment. Under the no-effect model, 2 of 200 re-randomized differences were at least as large as the observed difference. Use 5% as the cutoff for unusual. Evaluate the report.",
+     "prompt_markup": "A report says a new teaching method \"significantly\" raised scores in a randomized experiment. Under the no-effect model, 2 of 200 re-randomized differences were at least as large as the observed difference. Use 5% as the cutoff for unusual. Evaluate the report.",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Supported: the assignment was random, and 2/200 = 1% < 5%."
+      },
+      {
+       "letter": "B",
+       "text": "Supported: the method is proved to work for all students."
+      },
+      {
+       "letter": "C",
+       "text": "Not supported: re-randomization cannot be used for experiments."
+      },
+      {
+       "letter": "D",
+       "text": "Not supported: 2/200 = 1% is too small to matter."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Supported: randomized, and 1% is unusual",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "Supported: the assignment was random, and 2/200 = 1% < 5%.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: evaluation and reason.",
+     "grading_note": "Significant evidence from a randomized design.",
      "figure": null,
-     "page": 2562,
-     "revision": "unchanged",
+     "page": 2599,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Evaluate reports of experiments",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II",
-     "question_page": 2562,
-     "answer_key_page": 2562
+     "question_page": 2599,
+     "answer_key_page": 2599
     },
     {
      "id": "S69-F2-Q3",
@@ -1427,15 +1622,15 @@
      "required_method": null,
      "grading_note": "It means unlikely by chance; it may be small.",
      "figure": null,
-     "page": 2563,
+     "page": 2600,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Evaluate reports of experiments",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II",
-     "question_page": 2563,
-     "answer_key_page": 2563
+     "question_page": 2600,
+     "answer_key_page": 2600
     },
     {
      "id": "S69-F2-Q4",
@@ -1461,37 +1656,37 @@
      "choices": [
       {
        "letter": "A",
-       "text": "a study with no comparison group"
+       "text": "a study of 500 users with no comparison group or random assignment"
       },
       {
        "letter": "B",
-       "text": "testimonials from customers"
+       "text": "testimonials from many satisfied customers"
       },
       {
        "letter": "C",
-       "text": "a randomized experiment with a control group and a small simulated p-value"
+       "text": "a randomized experiment with a control group and a rare result"
       },
       {
        "letter": "D",
-       "text": "an online poll of users"
+       "text": "an online poll of 10,000 users of the product"
       }
      ],
      "answer_lines": [],
      "correct_letter": "C",
-     "correct_answer": "a randomized experiment with a control group and a small simulated p-value",
+     "correct_answer": "a randomized experiment with a control group and a rare result",
      "drawing_answer": null,
      "required_method": null,
      "grading_note": "Design and evidence.",
      "figure": null,
-     "page": 2564,
-     "revision": "unchanged",
+     "page": 2601,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Evaluate reports of experiments",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II",
-     "question_page": 2564,
-     "answer_key_page": 2564
+     "question_page": 2601,
+     "answer_key_page": 2601
     },
     {
      "id": "S69-F2-Q5",
@@ -1510,29 +1705,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "What information should a report of an experiment include?",
-     "prompt_markup": "What information should a report of an experiment include?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which information should a report of an experiment include?",
+     "prompt_markup": "Which information should a report of an experiment include?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "only the observed difference between the two groups"
+      },
+      {
+       "letter": "B",
+       "text": "the assignment method, group sizes, observed difference, and how unusual it is"
+      },
+      {
+       "letter": "C",
+       "text": "only the conclusion that the treatment works for everyone"
+      },
+      {
+       "letter": "D",
+       "text": "only the names of the treatments, the date of the study, and who paid for it"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "How subjects were assigned, the group sizes, the observed difference, and how unusual it is by chance",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "the assignment method, group sizes, observed difference, and how unusual it is",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer.",
+     "grading_note": "All the evidence needed to judge it.",
      "figure": null,
-     "page": 2565,
-     "revision": "unchanged",
+     "page": 2602,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use data from a randomized experiment and a supplied re-randomization simulation to decide whether a difference between treatments is significant",
      "target_skill": "Evaluate reports of experiments",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II",
-     "question_page": 2565,
-     "answer_key_page": 2565
+     "question_page": 2602,
+     "answer_key_page": 2602
     }
    ]
   }

@@ -227,11 +227,17 @@ check('Proofs, derivations, verifications and explanations (as multiple choice):
 prob = []
 need_excl = [r for r in RECS if r['section'] == 'MAIN' and re.search(r'excluded values', r['question'])]
 for r in need_excl:
-    if not re.search(r'x ≠|no excluded|none', r['correct_answer']):
+    lines = [l for l in r['answer_lines'] or [] if 'xcluded' in l]
+    parts = r['correct_answer'].split(';')
+    if lines and len(parts) == len(r['answer_lines']):  # a labeled "Excluded values:" line: its key part must list them
+        part = parts[r['answer_lines'].index(lines[0])].strip()
+        if not re.fullmatch(r'\{[^{}]+\}|-?[\d/]+|none', part):
+            prob.append(r['id'])
+    elif not re.search(r'x ≠|no excluded|none', r['correct_answer']):
         prob.append(r['id'])
 ext = [r for r in RECS if re.search(r'extraneous', r['question'], re.I) and r['section'] == 'MAIN']
 for r in ext:
-    if 'extraneous' not in r['correct_answer'].lower():
+    if 'extraneous' not in (r['correct_answer'] + ' '.join(r['answer_lines'] or [])).lower():
         prob.append(r['id'] + ' extraneous not addressed')
 check('Domains: MAIN items that ask for excluded values state them in the key; MAIN items that ask about extraneous solutions '
       'name them (or "none extraneous")', prob, '%d excluded-value items, %d extraneous-solution items' % (len(need_excl), len(ext)))
@@ -330,6 +336,77 @@ check('Totals recalculated three ways (source sets, key records, key header) and
       '%d questions = %d sets × 5 MAIN + %d backward branches × 5 + %d sets × 10 forward' % (
           len(RECS), len(SETS), sum(len(st['back']) for st in SETS), len(SETS)))
 
+# ---------------------------------------------------------------- 9. game answer checker contract
+# Runs the Untangle The Nexus short-answer checker (its own code, packages/curriculum/src/answers.ts) on every short answer.
+# NEXUS_DIR names the game repository (default /home/user/untangle-the-nexus); without it the check fails as NOT RUN.
+import subprocess  # noqa: E402
+import tempfile  # noqa: E402
+NEXUS = os.environ.get('NEXUS_DIR', '/home/user/untangle-the-nexus')
+# Rewrites the checker rejects on purpose: the question names a form, so the other order is not that form.
+REWRITE_OK = {'S1-M-Q4': 'the question asks for the form a + bi, so (5√3/2)i - 2 is not in that form'}
+prob, contract = [], None
+if os.path.exists(os.path.join(NEXUS, 'packages', 'curriculum', 'src', 'answers.ts')):
+    out = os.path.join(tempfile.mkdtemp(), 'contract.json')
+    run = subprocess.run(['npx', 'tsx', os.path.join(HERE, 'tools', 'checker_contract.ts'), P['data'] + '.json', out],
+                         cwd=NEXUS, capture_output=True, text=True)
+    if run.returncode or not os.path.exists(out):
+        prob.append('NOT RUN: checker script failed: ' + run.stderr.strip()[-300:])
+    else:
+        contract = json.load(open(out, encoding='utf-8'))
+        for r_ in contract:
+            if not r_['auto']:
+                prob.append(r_['id'] + ' not automatically checkable')
+            elif not r_['self']:
+                prob.append(r_['id'] + ' key not accepted by the checker')
+            elif r_['rejected'] and r_['id'] not in REWRITE_OK:
+                prob.append(r_['id'] + ' equivalent rewrite rejected: ' + '; '.join(r_['rejected']))
+else:
+    prob.append('NOT RUN: game repository not found (set NEXUS_DIR)')
+check('Game answer checker: every short answer is automatically checkable by the Untangle The Nexus checker, its key is accepted '
+      'as a response, and the same answer without spaces or with its terms in reverse order is accepted', prob,
+      '%d short answers checked with the game\'s answer checker; documented form exceptions: %s' % (
+          len(contract or []), '; '.join('%s (%s)' % kv for kv in REWRITE_OK.items())))
+
+# ---------------------------------------------------------------- 10. word answers and clean keys
+WORDS = {'yes', 'no', 'none', 'positive', 'negative', 'odd', 'even', 'neither', 'open', 'closed', 'clockwise',
+         'counterclockwise', 'touches', 'crosses', 'growth', 'decay', 'i', 'ii', 'iii', 'iv'}
+prob = []
+for r in RECS:
+    if r['type'] != 'sa':
+        continue
+    parts = [p_.strip() for p_ in r['correct_answer'].split(';')]
+    text = r['question'] + ' ' + ' '.join(r['answer_lines'] or [])
+    if len(parts) > 1 and len(parts) != len(r['answer_lines'] or []):
+        prob.append(r['id'] + ' parts do not match answer lines')
+    for p_ in parts:
+        if re.search(r'≈|\babout\b|for example|\(that is|\be\.g\.', p_, re.I):
+            prob.append('%s key part "%s" contains commentary' % (r['id'], p_))
+        if re.fullmatch(r'[A-Za-z]+', p_) and len(p_) > 1 or p_.lower() in WORDS:
+            if p_.lower() not in WORDS:
+                prob.append('%s word key "%s" is not an allowed word answer' % (r['id'], p_))
+            elif not (re.search(r'\b%s\b' % re.escape(p_), text, re.I) and re.search(r'\bor\b|enter none', text)):
+                prob.append('%s word key "%s" is not listed as an option in the question' % (r['id'], p_))
+check('Short-answer keys: no commentary inside a key; one key part per answer line; a word answer is one of a closed set of words '
+      'that the question itself lists as the options', prob, 'all %d short answers' % sum(1 for r in RECS if r['type'] == 'sa'))
+
+# ---------------------------------------------------------------- 11. length cue in multiple choice
+prob, longest, textmc = [], 0, 0
+for r in RECS:
+    if r['type'] != 'mc' or r['choices'][0]['text'] == 'Graph A':
+        continue
+    textmc += 1
+    lens = [len(c['text']) for c in r['choices']]
+    k = 'ABCD'.index(r['correct_letter'])
+    srt = sorted(lens)
+    if lens[k] == max(lens) and lens.count(max(lens)) == 1:
+        longest += 1
+        if srt[-1] > 1.3 * srt[-2] and srt[-1] >= 40:
+            prob.append('%s correct choice %d characters, next longest %d' % (r['id'], srt[-1], srt[-2]))
+check('Multiple choice length cue: the correct choice is never much longer than every other choice (more than 30% longer, '
+      'for choices of 40 characters or more)', prob,
+      'no strong length cue; the correct choice is the uniquely longest in %d of %d text multiple-choice items (%.0f%%; 25%% '
+      'would be chance)' % (longest, textmc, 100.0 * longest / max(textmc, 1)))
+
 SCOPE = [
     'Automatic, every set: counts sections and questions in the source.',
     'Automatic, every record: ID pattern, uniqueness, uid prefix.',
@@ -347,11 +424,15 @@ SCOPE = [
     'Automatic, every record and listed field.',
     'Automatic: searches each PDF page\'s text for its ID. Layout quality was checked by rendering every figure page.',
     'Automatic phrase search. Missing givens that the phrases do not catch were looked for in the read-through.',
-    'Automatic, %d of %d questions: recomputes listed answers with separate code. All other questions were re-solved by hand '
-    '(see Manual review).' % (nq, len(RECS)),
+    'Automatic, %d of %d questions: recomputes listed answers with separate code. All other questions were solved by hand by the author '
+    '(see Manual review for what was re-read in each version).' % (nq, len(RECS)),
     'Automatic, every record.',
-    'Automatic, every record: response type. Short answers still need a checker that accepts equivalent forms (see README).',
+    'Automatic, every record: response type. Whether the game accepts each short answer is check 21.',
     'Automatic arithmetic on the generated files.',
+    'Automatic, every short answer, using the game\'s own checker code (algebra2/src/tools/checker_contract.ts). It does not '
+    'cover every way a student might write an answer; it is not a test in the live game.',
+    'Automatic pattern rules on every short-answer key and its question text.',
+    'Automatic, every multiple-choice item except the four-graph items (whose choices are the fixed labels Graph A to D).',
 ]
 assert len(SCOPE) == len(results), (len(SCOPE), len(results))
 

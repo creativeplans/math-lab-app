@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -754,16 +754,17 @@
      "prompt_markup": "Write 47 = 5 × q + r with 0 ≤ r < 5.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "q =",
+      "r ="
      ],
      "correct_letter": null,
-     "correct_answer": "47 = 5 × 9 + 2",
+     "correct_answer": "9; 2",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: q = 9 and r = 2.",
+     "grading_note": "Form required: both. 47 = 5 × 9 + 2.",
      "figure": null,
      "page": 545,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Find the remainder when a polynomial p(x) is divided by x - a by evaluating p(a)",
      "target_skill": "Dividend = divisor × quotient + remainder",
@@ -1032,16 +1033,17 @@
      "prompt_markup": "p(x) = x³ + ax + b leaves remainder 5 on division by x - 1 and remainder -1 on division by x + 1. Find a and b.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "a =",
+      "b ="
      ],
      "correct_letter": null,
-     "correct_answer": "a = 2, b = 2",
+     "correct_answer": "2; 2",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: both. 1 + a + b = 5 and -1 - a + b = -1.",
+     "grading_note": "Form required: both. p(1) = 1 + a + b = 5 and p(-1) = -1 - a + b = -1.",
      "figure": null,
      "page": 552,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Find the remainder when a polynomial p(x) is divided by x - a by evaluating p(a)",
      "target_skill": "Find unknown coefficients from given remainders",
@@ -1261,7 +1263,7 @@
      "grading_note": "The division identity with a constant remainder, then x = a makes the factor (a - a) zero. The others check one example, substitute the wrong value (x = 0 gives p(0), not p(a)), or state the result without a reason.",
      "figure": null,
      "page": 557,
-     "revision": "revised",
+     "revision": "unchanged",
      "strand": "core",
      "set_target": "Find the remainder when a polynomial p(x) is divided by x - a by evaluating p(a)",
      "target_skill": "Prove the Remainder Theorem",
@@ -1287,22 +1289,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Why must the remainder on division by x - a be a constant?",
-     "prompt_markup": "Why must the remainder on division by x - a be a constant?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "When a polynomial p(x) is divided by x - a, why must the remainder be a constant?",
+     "prompt_markup": "When a polynomial p(x) is divided by x - a, why must the remainder be a constant?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because dividing by x - a always comes out evenly, so the remainder always equals 0."
+      },
+      {
+       "letter": "B",
+       "text": "Because a is a constant, everything left over after dividing by x - a must also be a constant."
+      },
+      {
+       "letter": "C",
+       "text": "The remainder has a lower degree than the divisor x - a (degree 1), so it is a constant or 0."
+      },
+      {
+       "letter": "D",
+       "text": "Because p(x) always has degree 1 when it is divided by x - a, so the remainder is a constant."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "The remainder has a lower degree than the divisor x - a, which has degree 1, so it has degree 0 (a constant).",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "The remainder has a lower degree than the divisor x - a (degree 1), so it is a constant or 0.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer.",
+     "grading_note": "A remainder has smaller degree than the divisor. The others are false (x² ÷ (x - 1) leaves 1) or give a non-reason.",
      "figure": null,
      "page": 558,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Find the remainder when a polynomial p(x) is divided by x - a by evaluating p(a)",
      "target_skill": "Prove the Remainder Theorem",
@@ -1383,30 +1400,30 @@
      "choices": [
       {
        "letter": "A",
-       "text": "Graphing p(x)"
+       "text": "Graphing p(x) and reading its zeros"
       },
       {
        "letter": "B",
-       "text": "Dividing p(x) by x"
+       "text": "Dividing p(x) by x to find the quotient q(x)"
       },
       {
        "letter": "C",
-       "text": "Factoring p(x)"
+       "text": "Factoring p(x) into linear factors"
       },
       {
        "letter": "D",
-       "text": "Substituting x = a into p(x) = (x - a)q(x) + r"
+       "text": "Substituting x = a into (x - a)q(x) + r"
       }
      ],
      "answer_lines": [],
      "correct_letter": "D",
-     "correct_answer": "Substituting x = a into p(x) = (x - a)q(x) + r",
+     "correct_answer": "Substituting x = a into (x - a)q(x) + r",
      "drawing_answer": null,
      "required_method": null,
      "grading_note": "The product term vanishes.",
      "figure": null,
      "page": 560,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Find the remainder when a polynomial p(x) is divided by x - a by evaluating p(a)",
      "target_skill": "Prove the Remainder Theorem",
@@ -1432,22 +1449,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain how the proof shows that p(a) = 0 exactly when x - a is a factor of p(x).",
-     "prompt_markup": "Explain how the proof shows that p(a) = 0 exactly when x - a is a factor of p(x).",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "p(x) = (x - a)q(x) + r, where r is a constant. Why is p(a) = 0 exactly when x - a is a factor of p(x)?",
+     "prompt_markup": "p(x) = (x - a)q(x) + r, where r is a constant. Why is p(a) = 0 exactly when x - a is a factor of p(x)?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "p(a) = 0 for every polynomial written as (x - a)q(x) + r, so x - a is always a factor."
+      },
+      {
+       "letter": "B",
+       "text": "Substituting x = a gives p(a) = r; and r = 0 exactly when p(x) = (x - a)q(x), which means x - a is a factor."
+      },
+      {
+       "letter": "C",
+       "text": "x - a is a factor exactly when q(a) = 0."
+      },
+      {
+       "letter": "D",
+       "text": "Substituting x = a gives p(a) = q(a), so p(a) = 0 exactly when q(x) is a factor of p(x)."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "p(a) = r, and r = 0 exactly when p(x) = (x - a)q(x), i.e. x - a is a factor.",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "Substituting x = a gives p(a) = r; and r = 0 exactly when p(x) = (x - a)q(x), which means x - a is a factor.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "The remainder equals p(a). The others are false statements about p(a) and q(a).",
      "figure": null,
      "page": 561,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Find the remainder when a polynomial p(x) is divided by x - a by evaluating p(a)",
      "target_skill": "Prove the Remainder Theorem",

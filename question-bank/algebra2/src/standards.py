@@ -70,7 +70,7 @@ STANDARDS = {
     'HSA-APR.B.3': ('Identify zeros of polynomials when suitable factorizations are available, and use the zeros to construct a '
                     'rough graph of the function defined by the polynomial.', [
         ('APR3-zeros', 'Identify zeros and their multiplicities from a factorization'),
-        ('APR3-sketch', 'Construct a rough graph of a polynomial from its zeros'),
+        ('APR3-sketch', 'Identify the rough graph of a polynomial from its zeros (the standard asks students to construct it; here the graph is chosen)'),
     ]),
     'HSA-APR.C.4': ('Prove polynomial identities and use them to describe numerical relationships. For example, the polynomial '
                     'identity (x² + y²)² = (x² − y²)² + (2xy)² can be used to generate Pythagorean triples.', [
@@ -179,6 +179,7 @@ STANDARDS = {
                      'functions, including step functions and absolute value functions.', [
         ('IF7b-radical', 'REVISIT with transformations: graph square root and cube root functions'),
         ('IF7b-piecewise', 'REVISIT: graph piecewise-defined and absolute value functions'),
+        ('IF7b-step', 'Identify the graphs of step functions (greatest integer and rounding-up rate models) with open and closed endpoints'),
     ]),
     'HSF-IF.C.7.c': ('Graph polynomial functions, identifying zeros when suitable factorizations are available, and showing end '
                      'behavior.★', [

@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -57,7 +57,7 @@
      "choices": [
       {
        "letter": "A",
-       "text": "Start at (0, 1) and travel t units clockwise; cos t is the y-coordinate and sin t is the x-coordinate of the endpoint."
+       "text": "Start at (1, 0) and move t units straight up; cos t and sin t are the coordinates of the point reached."
       },
       {
        "letter": "B",
@@ -77,7 +77,7 @@
      "correct_answer": "Start at (1, 0) and travel |t| units along the unit circle, counterclockwise if t > 0 and clockwise if t < 0; cos t and sin t are the x- and y-coordinates of the endpoint.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Arc length |t| from (1, 0), direction by the sign of t, coordinates of the endpoint. The others use the right-triangle definition (only acute angles), the wrong start and coordinates, or leave negative t undefined.",
+     "grading_note": "Arc length |t| from (1, 0), direction by the sign of t, coordinates of the endpoint. The others use the right-triangle definition (only acute angles), move along a line instead of the circle (the point leaves the circle), or leave negative t undefined.",
      "figure": null,
      "page": 1347,
      "revision": "revised",
@@ -136,7 +136,7 @@
      "grading_note": "One full turn returns to the same point. The others distribute sine over a sum (false in general), check one value, or describe the wrong motion.",
      "figure": null,
      "page": 1348,
-     "revision": "revised",
+     "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
@@ -192,7 +192,7 @@
      "grading_note": "Quadrant II and the x-coordinate. The others use the wrong coordinate and sign, a false claim (cos t increases again after π and is positive after 3π/2), or one example.",
      "figure": null,
      "page": 1349,
-     "revision": "revised",
+     "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
@@ -248,7 +248,7 @@
      "grading_note": "Coordinates of points on the unit circle satisfy x² + y² = 1. The others only cover acute angles (and wrongly exclude sin t = 1), misstate the definition, or reason from two values.",
      "figure": null,
      "page": 1350,
-     "revision": "revised",
+     "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
@@ -304,7 +304,7 @@
      "grading_note": "A negative t means clockwise travel; the endpoint is (√3/2, -1/2) and the sine is its y-coordinate. The others go the wrong way, use the point for π/3, or leave negative t undefined.",
      "figure": null,
      "page": 1351,
-     "revision": "revised",
+     "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
@@ -347,22 +347,37 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Define sin A in a right triangle.",
-     "prompt_markup": "Define sin A in a right triangle.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "In a right triangle, sin A (A an acute angle) is defined as",
+     "prompt_markup": "In a right triangle, sin A (A an acute angle) is defined as",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "opposite/adjacent"
+      },
+      {
+       "letter": "B",
+       "text": "adjacent/hypotenuse"
+      },
+      {
+       "letter": "C",
+       "text": "opposite/hypotenuse"
+      },
+      {
+       "letter": "D",
+       "text": "hypotenuse/opposite"
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "C",
      "correct_answer": "opposite/hypotenuse",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent definition.",
+     "grading_note": "The side opposite A divided by the hypotenuse.",
      "figure": null,
      "page": 1353,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Right-triangle definitions of sine and cosine",
@@ -388,22 +403,37 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "In a right triangle with hypotenuse 1, what are the legs next to and opposite an acute angle θ?",
-     "prompt_markup": "In a right triangle with hypotenuse 1, what are the legs next to and opposite an acute angle θ?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "In a right triangle with hypotenuse 1, what are the lengths of the leg adjacent to an acute angle θ and the leg opposite θ?",
+     "prompt_markup": "In a right triangle with hypotenuse 1, what are the lengths of the leg adjacent to an acute angle θ and the leg opposite θ?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "adjacent cos θ, opposite sin θ"
+      },
+      {
+       "letter": "B",
+       "text": "adjacent 1, opposite tan θ"
+      },
+      {
+       "letter": "C",
+       "text": "adjacent sin θ, opposite cos θ"
+      },
+      {
+       "letter": "D",
+       "text": "adjacent tan θ, opposite 1"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "cos θ (adjacent) and sin θ (opposite)",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "adjacent cos θ, opposite sin θ",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: both.",
+     "grading_note": "cos θ = adjacent/1 and sin θ = opposite/1.",
      "figure": null,
      "page": 1354,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Right-triangle definitions of sine and cosine",
@@ -533,22 +563,37 @@
      "nearest_related": false,
      "standard_level": "Geometry. Common Core groups high-school standards by category, not by course; this bank places this one in Geometry, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Geometry",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Why does the right-triangle definition fail for negative angles?",
-     "prompt_markup": "Why does the right-triangle definition fail for negative angles?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Why does the right-triangle definition of sine fail for negative angles?",
+     "prompt_markup": "Why does the right-triangle definition of sine fail for negative angles?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because sine is always negative for negative angles, and side ratios in a triangle are positive."
+      },
+      {
+       "letter": "B",
+       "text": "Because the hypotenuse of a triangle with a negative angle would have negative length."
+      },
+      {
+       "letter": "C",
+       "text": "The acute angles of a right triangle are between 0° and 90°, so there is no right triangle with a negative angle."
+      },
+      {
+       "letter": "D",
+       "text": "It does not fail: a negative angle just flips the right triangle over, and the same side ratio is used."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Triangle angles are positive (between 0° and 90° for the acute angles).",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "The acute angles of a right triangle are between 0° and 90°, so there is no right triangle with a negative angle.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer.",
+     "grading_note": "The triangle definition only covers acute angles, which is why the unit circle definition is used. The others are false or confuse a reflection with a negative angle in a triangle.",
      "figure": null,
      "page": 1357,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Right-triangle definitions of sine and cosine",
@@ -634,20 +679,21 @@
      "standard_course": "Geometry",
      "type": "sa",
      "response": "write",
-     "prompt": "Is (-1/2, √3/2) on the unit circle?",
-     "prompt_markup": "Is (-1/2, √3/2) on the unit circle?",
+     "prompt": "Is (-1/2, √3/2) on the unit circle x² + y² = 1? Find x² + y², then answer Yes or No.",
+     "prompt_markup": "Is (-1/2, √3/2) on the unit circle x² + y² = 1? Find x² + y², then answer Yes or No.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "x² + y² =",
+      "On the circle? (Yes or No)"
      ],
      "correct_letter": null,
-     "correct_answer": "Yes: 1/4 + 3/4 = 1",
+     "correct_answer": "1; Yes",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: decision and check.",
+     "grading_note": "Form required: both. 1/4 + 3/4 = 1.",
      "figure": null,
      "page": 1360,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Points on the unit circle",
@@ -878,8 +924,8 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Which direction does t = -π/6 travel?",
-     "prompt_markup": "Which direction does t = -π/6 travel?",
+     "prompt": "On the unit circle, which direction does t = -π/6 travel from (1, 0)? Answer Clockwise or Counterclockwise.",
+     "prompt_markup": "On the unit circle, which direction does t = -π/6 travel from (1, 0)? Answer Clockwise or Counterclockwise.",
      "choices": [],
      "answer_lines": [
       "Answer:"
@@ -891,7 +937,7 @@
      "grading_note": "Any equivalent answer.",
      "figure": null,
      "page": 1366,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Radian measure as directed arc length",
@@ -1023,8 +1069,8 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Give a negative t that ends at (0, -1).",
-     "prompt_markup": "Give a negative t that ends at (0, -1).",
+     "prompt": "Find the value of t with -2π < t < 0 for which travel of t units from (1, 0) on the unit circle ends at (0, -1). Give it exactly, in terms of π.",
+     "prompt_markup": "Find the value of t with -2π < t < 0 for which travel of t units from (1, 0) on the unit circle ends at (0, -1). Give it exactly, in terms of π.",
      "choices": [],
      "answer_lines": [
       "t ="
@@ -1033,10 +1079,10 @@
      "correct_answer": "-π/2",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any valid value (-π/2 + 2πk).",
+     "grading_note": "Form required: the exact value. A quarter turn clockwise; -π/2 is the only such t in this interval.",
      "figure": null,
      "page": 1369,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Radian measure as directed arc length",
@@ -1110,7 +1156,7 @@
      "grading_note": "The endpoints are (0, ±1), where the x-coordinate cos t is 0. The others use the wrong points, invert the ratio, or give a rule that misses t = 3π/2 (where sin t = -1).",
      "figure": null,
      "page": 1371,
-     "revision": "revised",
+     "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Explain where tangent is defined and how values repeat",
@@ -1136,22 +1182,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Give the domain and range of y = sin t.",
-     "prompt_markup": "Give the domain and range of y = sin t.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "What are the domain and range of y = sin t?",
+     "prompt_markup": "What are the domain and range of y = sin t?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Domain: 0 ≤ t ≤ 2π; range: -1 ≤ y ≤ 1"
+      },
+      {
+       "letter": "B",
+       "text": "Domain: all real numbers; range: -1 ≤ y ≤ 1"
+      },
+      {
+       "letter": "C",
+       "text": "Domain: all real numbers; range: all real numbers"
+      },
+      {
+       "letter": "D",
+       "text": "Domain: -1 ≤ t ≤ 1; range: all real numbers"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Domain all real numbers; range -1 ≤ y ≤ 1",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "Domain: all real numbers; range: -1 ≤ y ≤ 1",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: both.",
+     "grading_note": "The unit circle definition works for every real t, and sin t is a y-coordinate on the unit circle.",
      "figure": null,
      "page": 1372,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Explain where tangent is defined and how values repeat",
@@ -1281,22 +1342,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain why cos t = cos(-t) using the unit circle.",
-     "prompt_markup": "Explain why cos t = cos(-t) using the unit circle.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Why is cos(-t) = cos t, using the unit circle?",
+     "prompt_markup": "Why is cos(-t) = cos t, using the unit circle?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because -t and t are the same angle, so they end at the same point on the unit circle."
+      },
+      {
+       "letter": "B",
+       "text": "Because cos is always positive, so cos(-t) and cos t cannot have different signs."
+      },
+      {
+       "letter": "C",
+       "text": "The endpoints for t and -t are reflections of each other over the y-axis, which keeps the x-coordinate (the cosine)."
+      },
+      {
+       "letter": "D",
+       "text": "The endpoints for t and -t are reflections of each other over the x-axis, which keeps the x-coordinate (the cosine)."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "t and -t end at points that are reflections over the x-axis, which have the same x-coordinate.",
+     "answer_lines": [],
+     "correct_letter": "D",
+     "correct_answer": "The endpoints for t and -t are reflections of each other over the x-axis, which keeps the x-coordinate (the cosine).",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "Reflection over the x-axis keeps x and changes the sign of y. The others name the wrong reflection (it changes x), state a false fact, or confuse the angles.",
      "figure": null,
      "page": 1375,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Explain where tangent is defined and how values repeat",
@@ -1371,7 +1447,7 @@
      "grading_note": "Equal arcs in opposite directions from (1, 0) give mirror images over the x-axis. The others name the wrong reflection (it keeps y), check one value, or describe the points wrongly.",
      "figure": null,
      "page": 1377,
-     "revision": "revised",
+     "revision": "unchanged",
      "strand": "core",
      "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Explain symmetry and periodicity",
@@ -1542,22 +1618,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain why cos is an even function.",
-     "prompt_markup": "Explain why cos is an even function.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Why is cos an even function?",
+     "prompt_markup": "Why is cos an even function?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The points for t and -t are reflections over the x-axis, which keeps the x-coordinate, so cos(-t) = cos t."
+      },
+      {
+       "letter": "B",
+       "text": "The points for t and -t are reflections over the y-axis, which keeps the x-coordinate, so cos(-t) = cos t."
+      },
+      {
+       "letter": "C",
+       "text": "cos t is positive for every t, so cos(-t) and cos t are always equal."
+      },
+      {
+       "letter": "D",
+       "text": "The points for t and -t are reflections over the x-axis, which negates the x-coordinate, so cos(-t) = -cos t."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "cos(-t) = cos t because reflection over the x-axis keeps the x-coordinate.",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "The points for t and -t are reflections over the x-axis, which keeps the x-coordinate, so cos(-t) = cos t.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "Reflecting over the x-axis changes only the sign of the y-coordinate. The others name the wrong reflection, use a false fact (cos is not always positive), or say the x-coordinate changes sign.",
      "figure": null,
      "page": 1381,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Explain symmetry and periodicity",

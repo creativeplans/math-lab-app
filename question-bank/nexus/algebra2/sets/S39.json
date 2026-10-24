@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -56,16 +56,18 @@
      "prompt_markup": "A Ferris wheel rider's height is h(t) = 12 + 10sin(πt/15) meters after t seconds. Give the maximum height, the minimum height, and the time for one revolution.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Maximum (m):",
+      "Minimum (m):",
+      "One revolution (s):"
      ],
      "correct_letter": null,
-     "correct_answer": "22 m, 2 m, 30 s",
+     "correct_answer": "22; 2; 30",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: all three with units.",
+     "grading_note": "Form required: all three. 12 ± 10, and the period is 2π/(π/15) = 30.",
      "figure": null,
      "page": 1421,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret amplitude, period, frequency, and midline of a sinusoidal model in context and use them to answer questions",
      "target_skill": "Interpret amplitude, period, frequency, and midline of a sinusoidal model in context and use them to answer questions",
@@ -91,22 +93,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Hours of daylight are D(t) = 12 + 3sin(2π(t - 80)/365), t in days. Interpret 12, 3, and 365.",
-     "prompt_markup": "Hours of daylight are D(t) = 12 + 3sin(2π(t - 80)/365), t in days. Interpret 12, 3, and 365.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Hours of daylight are D(t) = 12 + 3sin(2π(t - 80)/365), t in days. What do 12, 3, and 365 represent?",
+     "prompt_markup": "Hours of daylight are D(t) = 12 + 3sin(2π(t - 80)/365), t in days. What do 12, 3, and 365 represent?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "12: average daylight (midline, hours); 3: greatest change from 12 (amplitude, hours); 365: day of greatest daylight."
+      },
+      {
+       "letter": "B",
+       "text": "12: average daylight (midline, hours); 3: days in one cycle (period); 365: greatest daylight (amplitude, hours)."
+      },
+      {
+       "letter": "C",
+       "text": "12: greatest daylight (maximum, hours); 3: average daylight (midline, hours); 365: days in one cycle (period)."
+      },
+      {
+       "letter": "D",
+       "text": "12: average daylight (midline, hours); 3: greatest change from 12 (amplitude, hours); 365: days in one cycle (period)."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "12: average daylight (midline, hours); 3: the most daylight varies from 12 (amplitude, hours); 365: days in one cycle (period)",
+     "answer_lines": [],
+     "correct_letter": "D",
+     "correct_answer": "12: average daylight (midline, hours); 3: greatest change from 12 (amplitude, hours); 365: days in one cycle (period).",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: all three interpretations.",
+     "grading_note": "Midline 12, amplitude 3, period 2π/(2π/365) = 365 days.",
      "figure": null,
      "page": 1422,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret amplitude, period, frequency, and midline of a sinusoidal model in context and use them to answer questions",
      "target_skill": "Interpret amplitude, period, frequency, and midline of a sinusoidal model in context and use them to answer questions",
@@ -138,16 +155,17 @@
      "prompt_markup": "A model of blood pressure is P(t) = 100 + 20sin(2.5πt), t in seconds. Find the period and the number of heartbeats per minute.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Period (s):",
+      "Beats per minute:"
      ],
      "correct_letter": null,
-     "correct_answer": "Period 0.8 s; 75 beats per minute",
+     "correct_answer": "0.8; 75",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: both. 2π/(2.5π) = 0.8; 60/0.8.",
+     "grading_note": "Form required: both. 2π/(2.5π) = 0.8 s; 60/0.8 = 75.",
      "figure": null,
      "page": 1423,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret amplitude, period, frequency, and midline of a sinusoidal model in context and use them to answer questions",
      "target_skill": "Interpret amplitude, period, frequency, and midline of a sinusoidal model in context and use them to answer questions",
@@ -175,20 +193,22 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "A spring's position is y = -4cos(3πt) cm, t in seconds. Give the amplitude, period, and frequency.",
-     "prompt_markup": "A spring's position is y = -4cos(3πt) cm, t in seconds. Give the amplitude, period, and frequency.",
+     "prompt": "A spring's position is y = -4cos(3πt) cm, t in seconds. Give the amplitude, the period, and the frequency.",
+     "prompt_markup": "A spring's position is y = -4cos(3πt) cm, t in seconds. Give the amplitude, the period, and the frequency.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Amplitude (cm):",
+      "Period (s):",
+      "Frequency (cycles per second):"
      ],
      "correct_letter": null,
-     "correct_answer": "4 cm; 2/3 s; 1.5 cycles per second",
+     "correct_answer": "4; 2/3; 1.5",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: all three with units.",
+     "grading_note": "Form required: all three. |-4| = 4; 2π/(3π) = 2/3; 1/(2/3) = 1.5.",
      "figure": null,
      "page": 1424,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret amplitude, period, frequency, and midline of a sinusoidal model in context and use them to answer questions",
      "target_skill": "Interpret amplitude, period, frequency, and midline of a sinusoidal model in context and use them to answer questions",
@@ -216,20 +236,21 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Two sounds are y = sin(880πt) and y = sin(440πt), t in seconds. Give the frequency of each in cycles per second and say which is higher.",
-     "prompt_markup": "Two sounds are y = sin(880πt) and y = sin(440πt), t in seconds. Give the frequency of each in cycles per second and say which is higher.",
+     "prompt": "Two sounds are y = sin(880πt) and y = sin(440πt), t in seconds. Give the frequency of each in cycles per second.",
+     "prompt_markup": "Two sounds are y = sin(880πt) and y = sin(440πt), t in seconds. Give the frequency of each in cycles per second.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Frequency of sin(880πt):",
+      "Frequency of sin(440πt):"
      ],
      "correct_letter": null,
-     "correct_answer": "440 and 220 cycles per second; the first is higher",
+     "correct_answer": "440; 220",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: both frequencies and the comparison.",
+     "grading_note": "Form required: both. Frequency = B/(2π): 880π/(2π) = 440 and 440π/(2π) = 220, so the first sound is higher.",
      "figure": null,
      "page": 1425,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret amplitude, period, frequency, and midline of a sinusoidal model in context and use them to answer questions",
      "target_skill": "Interpret amplitude, period, frequency, and midline of a sinusoidal model in context and use them to answer questions",
@@ -460,20 +481,21 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Write a model with amplitude 4, period 2/3, and midline 0.",
-     "prompt_markup": "Write a model with amplitude 4, period 2/3, and midline 0.",
+     "prompt": "Write a sine model with amplitude 4, period 2/3, and midline 0, in the form y = A·sin(Bt) with A > 0 and B > 0. Give B exactly, in terms of π.",
+     "prompt_markup": "Write a sine model with amplitude 4, period 2/3, and midline 0, in the form y = A·sin(Bt) with A > 0 and B > 0. Give B exactly, in terms of π.",
      "choices": [],
      "answer_lines": [
-      "y ="
+      "A =",
+      "B ="
      ],
      "correct_letter": null,
-     "correct_answer": "4sin(3πt)",
+     "correct_answer": "4; 3π",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form (cos also accepted).",
+     "grading_note": "Form required: both. B = 2π/(2/3) = 3π.",
      "figure": null,
      "page": 1431,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret amplitude, period, frequency, and midline of a sinusoidal model in context and use them to answer questions",
      "target_skill": "Build the model from amplitude, period, and midline",
@@ -997,20 +1019,20 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "A Ferris wheel rider's height is h(t) = 12 + 10sin(πt/15) m after t seconds. The wheel is replaced by one of the same size that turns twice as fast. Rewrite h(t).",
-     "prompt_markup": "A Ferris wheel rider's height is h(t) = 12 + 10sin(πt/15) m after t seconds. The wheel is replaced by one of the same size that turns twice as fast. Rewrite h(t).",
+     "prompt": "A Ferris wheel rider's height is h(t) = 12 + 10sin(πt/15) m after t seconds. The wheel is replaced by one of the same size that turns twice as fast. In the new model h(t) = 12 + 10sin(Bt), what is B? Give B exactly, in terms of π.",
+     "prompt_markup": "A Ferris wheel rider's height is h(t) = 12 + 10sin(πt/15) m after t seconds. The wheel is replaced by one of the same size that turns twice as fast. In the new model h(t) = 12 + 10sin(Bt), what is B? Give B exactly, in terms of π.",
      "choices": [],
      "answer_lines": [
-      "h ="
+      "B ="
      ],
      "correct_letter": null,
-     "correct_answer": "12 + 10sin(2πt/15)",
+     "correct_answer": "2π/15",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form. Period 15 s.",
+     "grading_note": "Form required: the exact value. Twice as fast halves the period from 30 s to 15 s, so B = 2π/15.",
      "figure": null,
      "page": 1445,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret amplitude, period, frequency, and midline of a sinusoidal model in context and use them to answer questions",
      "target_skill": "Predict how changing a parameter changes the situation",
@@ -1036,22 +1058,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
+     "type": "mc",
+     "response": "select one",
      "prompt": "Daylight in one city is D(t) = 12 + 3sin(2π(t - 80)/365) hours. A city farther from the equator has daylight between 8 and 16 hours with the same period and timing. Which parameter changes, and to what?",
      "prompt_markup": "Daylight in one city is D(t) = 12 + 3sin(2π(t - 80)/365) hours. A city farther from the equator has daylight between 8 and 16 hours with the same period and timing. Which parameter changes, and to what?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The amplitude changes to 4"
+      },
+      {
+       "letter": "B",
+       "text": "The amplitude changes to 8"
+      },
+      {
+       "letter": "C",
+       "text": "The midline changes to 16"
+      },
+      {
+       "letter": "D",
+       "text": "The period changes to 8 days"
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "A",
      "correct_answer": "The amplitude changes to 4",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: parameter and value.",
+     "grading_note": "The midline (16 + 8)/2 = 12 stays the same; the amplitude becomes (16 - 8)/2 = 4. The others confuse the maximum with the midline, change the period, or use the full range.",
      "figure": null,
      "page": 1446,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret amplitude, period, frequency, and midline of a sinusoidal model in context and use them to answer questions",
      "target_skill": "Predict how changing a parameter changes the situation",
@@ -1243,20 +1280,20 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "A table of a tide's depth shows maxima at t = 2 and t = 14 hours. What is the period?",
-     "prompt_markup": "A table of a tide's depth shows maxima at t = 2 and t = 14 hours. What is the period?",
+     "prompt": "A sinusoidal model of a tide's depth has consecutive maxima at t = 2 and t = 14 hours. What is its period, in hours?",
+     "prompt_markup": "A sinusoidal model of a tide's depth has consecutive maxima at t = 2 and t = 14 hours. What is its period, in hours?",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Period (hours):"
      ],
      "correct_letter": null,
-     "correct_answer": "12 hours",
+     "correct_answer": "12",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form.",
+     "grading_note": "Form required: the value. For a sinusoidal model, consecutive maxima are one period apart: 14 - 2 = 12.",
      "figure": null,
      "page": 1451,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret amplitude, period, frequency, and midline of a sinusoidal model in context and use them to answer questions",
      "target_skill": "Interpret periodic features from graphs and tables",
@@ -1284,20 +1321,21 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "A graph of a temperature model has a high of 30 and a low of 10. What are the midline and amplitude?",
-     "prompt_markup": "A graph of a temperature model has a high of 30 and a low of 10. What are the midline and amplitude?",
+     "prompt": "A temperature model has a high of 30 and a low of 10. What are its midline value and amplitude?",
+     "prompt_markup": "A temperature model has a high of 30 and a low of 10. What are its midline value and amplitude?",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Midline value:",
+      "Amplitude:"
      ],
      "correct_letter": null,
-     "correct_answer": "Midline 20; amplitude 10",
+     "correct_answer": "20; 10",
      "drawing_answer": null,
      "required_method": null,
      "grading_note": "Form required: both.",
      "figure": null,
      "page": 1452,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret amplitude, period, frequency, and midline of a sinusoidal model in context and use them to answer questions",
      "target_skill": "Interpret periodic features from graphs and tables",
@@ -1325,8 +1363,8 @@
      "standard_course": "Algebra II",
      "type": "tf",
      "response": "select true or false",
-     "prompt": "Consecutive minima of a periodic function are one period apart.",
-     "prompt_markup": "Consecutive minima of a periodic function are one period apart.",
+     "prompt": "For a nonconstant sinusoidal function, consecutive minima are one period apart.",
+     "prompt_markup": "For a nonconstant sinusoidal function, consecutive minima are one period apart.",
      "choices": [
       {
        "letter": "A",
@@ -1342,10 +1380,10 @@
      "correct_answer": "True",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Repeating pattern.",
+     "grading_note": "A sinusoid has exactly one minimum per period. (For a general periodic function this can fail: it may have several local minima in one period.)",
      "figure": null,
      "page": 1453,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret amplitude, period, frequency, and midline of a sinusoidal model in context and use them to answer questions",
      "target_skill": "Interpret periodic features from graphs and tables",
@@ -1427,22 +1465,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain how to read the frequency of a periodic graph.",
-     "prompt_markup": "Explain how to read the frequency of a periodic graph.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "How can the frequency be read from the graph of a periodic function?",
+     "prompt_markup": "How can the frequency be read from the graph of a periodic function?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Read the maximum height of the graph, which is the number of cycles per unit of the input."
+      },
+      {
+       "letter": "B",
+       "text": "Find the length of one cycle (the period) and take its reciprocal, the number of cycles per unit of the input."
+      },
+      {
+       "letter": "C",
+       "text": "Find half the difference between the maximum and the minimum, which is the number of cycles per unit."
+      },
+      {
+       "letter": "D",
+       "text": "Count the number of times the graph crosses the x-axis in the window shown; that count is the frequency."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Find the length of one cycle (the period) and take its reciprocal (cycles per unit).",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "Find the length of one cycle (the period) and take its reciprocal, the number of cycles per unit of the input.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "Frequency = 1/period. The others give the maximum, a count that depends on the midline, or the amplitude.",
      "figure": null,
      "page": 1455,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Interpret amplitude, period, frequency, and midline of a sinusoidal model in context and use them to answer questions",
      "target_skill": "Interpret periodic features from graphs and tables",

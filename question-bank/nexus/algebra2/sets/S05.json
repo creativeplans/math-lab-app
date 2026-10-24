@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -134,8 +134,8 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Factor 4x² + 9 into linear factors with complex numbers.",
-     "prompt_markup": "Factor 4x² + 9 into linear factors with complex numbers.",
+     "prompt": "Factor 4x² + 9 into two linear factors with complex coefficients, each of the form (2x + ki) with k real.",
+     "prompt_markup": "Factor 4x² + 9 into two linear factors with complex coefficients, each of the form (2x + ki) with k real.",
      "choices": [],
      "answer_lines": [
       "Answer:"
@@ -144,10 +144,10 @@
      "correct_answer": "(2x + 3i)(2x - 3i)",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent factorization (for example 4(x + 3i/2)(x - 3i/2)).",
+     "grading_note": "Form required: factored. 4x² + 9 = (2x)² - (3i)². The order of the factors does not matter.",
      "figure": null,
      "page": 159,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use polynomial identities to factor polynomials, including sums of squares, into linear factors with complex numbers",
      "target_skill": "Use polynomial identities to factor polynomials, including sums of squares, into linear factors with complex numbers",
@@ -1253,20 +1253,20 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Write a polynomial with real coefficients, leading coefficient 1 and least degree, whose zeros include 2i and 1 - i.",
-     "prompt_markup": "Write a polynomial with real coefficients, leading coefficient 1 and least degree, whose zeros include 2i and 1 - i.",
+     "prompt": "Write a polynomial with real coefficients, leading coefficient 1 and least degree, whose zeros include 2i and 1 - i. Give it in expanded form. Use ^ for exponents.",
+     "prompt_markup": "Write a polynomial with real coefficients, leading coefficient 1 and least degree, whose zeros include 2i and 1 - i. Give it in expanded form. Use ^ for exponents.",
      "choices": [],
      "answer_lines": [
       "p(x) ="
      ],
      "correct_letter": null,
-     "correct_answer": "(x² + 4)(x² - 2x + 2) = x⁴ - 2x³ + 6x² - 8x + 8",
+     "correct_answer": "x^4 - 2x^3 + 6x^2 - 8x + 8",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form. Conjugates -2i and 1 + i must also be zeros, so degree 4.",
+     "grading_note": "Conjugates -2i and 1 + i must also be zeros, so degree 4: (x² + 4)(x² - 2x + 2).",
      "figure": null,
      "page": 187,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use polynomial identities to factor polynomials, including sums of squares, into linear factors with complex numbers",
      "target_skill": "Write polynomials with real coefficients from complex zeros",
@@ -1437,22 +1437,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain why a polynomial with real coefficients and degree 3 must have at least one real zero.",
-     "prompt_markup": "Explain why a polynomial with real coefficients and degree 3 must have at least one real zero.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Why must a polynomial with real coefficients and degree 3 have at least one real zero?",
+     "prompt_markup": "Why must a polynomial with real coefficients and degree 3 have at least one real zero?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The Fundamental Theorem of Algebra says that every zero of a polynomial with real coefficients is real, so all 3 zeros are real."
+      },
+      {
+       "letter": "B",
+       "text": "It has 3 zeros counted with multiplicity, and its non-real zeros come in conjugate pairs, so at most 2 are non-real and at least 1 is real."
+      },
+      {
+       "letter": "C",
+       "text": "Every polynomial has at least one real zero, whatever its degree."
+      },
+      {
+       "letter": "D",
+       "text": "Every cubic with real coefficients can be factored over the integers, so at least one of its 3 zeros is a whole number."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "It has 3 complex zeros with multiplicity; non-real zeros pair up, so they come two at a time, leaving at least one real zero.",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "It has 3 zeros counted with multiplicity, and its non-real zeros come in conjugate pairs, so at most 2 are non-real and at least 1 is real.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation using the Fundamental Theorem of Algebra and conjugate pairs.",
+     "grading_note": "Count with the Fundamental Theorem of Algebra and pair the non-real zeros. The others make false claims (x² + 1 has no real zero; the theorem guarantees complex zeros; x³ - 2 has no integer zero).",
      "figure": null,
      "page": 191,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use polynomial identities to factor polynomials, including sums of squares, into linear factors with complex numbers",
      "target_skill": "Write polynomials with real coefficients from complex zeros",

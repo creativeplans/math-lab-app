@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -141,13 +141,13 @@
       "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "34 (that is, 34 + 0i)",
+     "correct_answer": "34",
      "drawing_answer": null,
      "required_method": null,
      "grading_note": "Form required: a + bi or the real number 34. 25 + 15i - 15i - 9i² = 25 + 9.",
      "figure": null,
      "page": 85,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Multiply complex numbers and simplify powers of i using i² = -1 and the distributive property",
      "target_skill": "Multiply complex numbers and simplify powers of i using i² = -1 and the distributive property",
@@ -942,16 +942,17 @@
      "prompt_markup": "Write 39 as 4q + r with 0 ≤ r < 4.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "q =",
+      "r ="
      ],
      "correct_letter": null,
-     "correct_answer": "39 = 4 · 9 + 3",
+     "correct_answer": "9; 3",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: q = 9 and r = 3.",
+     "grading_note": "Form required: both. 39 = 4 · 9 + 3.",
      "figure": null,
      "page": 105,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Multiply complex numbers and simplify powers of i using i² = -1 and the distributive property",
      "target_skill": "Divide whole numbers to find a remainder",
@@ -1001,16 +1002,17 @@
      "prompt_markup": "a is a real number. For what value of a is (a + 2i)(3 - i) a real number? Give the product.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "a =",
+      "The product:"
      ],
      "correct_letter": null,
-     "correct_answer": "a = 6; the product is 20",
+     "correct_answer": "6; 20",
      "drawing_answer": null,
      "required_method": null,
      "grading_note": "Form required: both. (a + 2i)(3 - i) = (3a + 2) + (6 - a)i; the imaginary part 6 - a = 0. Product 18 + 2 = 20.",
      "figure": null,
      "page": 107,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Multiply complex numbers and simplify powers of i using i² = -1 and the distributive property",
      "target_skill": "Find a real parameter that makes a product real",
@@ -1181,22 +1183,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Show that (a + bi)(a - bi) is a real number for all real a and b.",
-     "prompt_markup": "Show that (a + bi)(a - bi) is a real number for all real a and b.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "a and b are real numbers. Which work shows that (a + bi)(a - bi) is always a real number?",
+     "prompt_markup": "a and b are real numbers. Which work shows that (a + bi)(a - bi) is always a real number?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "(a + bi)(a - bi) = a² - abi + abi - b²i² = a² - b²(-1) = a² + b², which is real."
+      },
+      {
+       "letter": "B",
+       "text": "(a + bi)(a - bi) = a² - b², which is real."
+      },
+      {
+       "letter": "C",
+       "text": "(3 + 2i)(3 - 2i) = 13 is real, so every such product is real."
+      },
+      {
+       "letter": "D",
+       "text": "(a + bi)(a - bi) = a² - b²i², and a² - b²i² is real because it has no i in it."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "a² - abi + abi - b²i² = a² + b², which is real.",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "(a + bi)(a - bi) = a² - abi + abi - b²i² = a² - b²(-1) = a² + b², which is real.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent algebra.",
+     "grading_note": "The middle terms cancel and i² = -1. The others treat i² as having no i (without simplifying), lose the sign from i² = -1, or check one example.",
      "figure": null,
      "page": 111,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Multiply complex numbers and simplify powers of i using i² = -1 and the distributive property",
      "target_skill": "Find a real parameter that makes a product real",
@@ -1427,22 +1444,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain why multiplying by the conjugate of the denominator always gives a real denominator.",
-     "prompt_markup": "Explain why multiplying by the conjugate of the denominator always gives a real denominator.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "c and d are real and not both 0. Why does multiplying by the conjugate of the denominator c + di always give a real denominator?",
+     "prompt_markup": "c and d are real and not both 0. Why does multiplying by the conjugate of the denominator c + di always give a real denominator?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "(c + di)(c - di) = c² - d², a real number (the middle terms cancel)."
+      },
+      {
+       "letter": "B",
+       "text": "The conjugate c - di is itself a real number, so any product with it is real."
+      },
+      {
+       "letter": "C",
+       "text": "Multiplying by any complex number makes the denominator real."
+      },
+      {
+       "letter": "D",
+       "text": "(c + di)(c - di) = c² + d², a real number (positive because c and d are not both 0)."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "(c + di)(c - di) = c² + d², a real number (and positive unless c = d = 0).",
+     "answer_lines": [],
+     "correct_letter": "D",
+     "correct_answer": "(c + di)(c - di) = c² + d², a real number (positive because c and d are not both 0).",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "The product of a number and its conjugate is c² + d². The others lose the sign from i² = -1, call c - di real, or overgeneralize ((1 + i)(1 + i) = 2i).",
      "figure": null,
      "page": 117,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Multiply complex numbers and simplify powers of i using i² = -1 and the distributive property",
      "target_skill": "Divide complex numbers using conjugates",

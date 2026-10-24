@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -216,20 +216,22 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "What is the least number of terms of 2 + 6 + 18 + ... whose sum is greater than 10,000? Show the sums that decide it.",
-     "prompt_markup": "What is the least number of terms of 2 + 6 + 18 + ... whose sum is greater than 10,000? Show the sums that decide it.",
+     "prompt": "The sum of the first n terms of 2 + 6 + 18 + ... is Sₙ = 3ⁿ - 1. What is the least number of terms whose sum is greater than 10,000? Give that number and the sums of the first 8 and the first 9 terms.",
+     "prompt_markup": "The sum of the first n terms of 2 + 6 + 18 + ... is Sₙ = 3ⁿ - 1. What is the least number of terms whose sum is greater than 10,000? Give that number and the sums of the first 8 and the first 9 terms.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Least number of terms:",
+      "Sum of the first 8 terms:",
+      "Sum of the first 9 terms:"
      ],
      "correct_letter": null,
-     "correct_answer": "9 terms: S₈ = 6560 and S₉ = 19,682",
+     "correct_answer": "9; 6,560; 19,682",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: n and the two sums. Sₙ = 3ⁿ - 1.",
+     "grading_note": "Form required: all three. S₈ = 3⁸ - 1 = 6,560 ≤ 10,000 and S₉ = 3⁹ - 1 = 19,682 > 10,000.",
      "figure": null,
      "page": 420,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Identify a, r, and n in a situation and use Sₙ = a(1 - rⁿ)/(1 - r) to find a total",
      "target_skill": "Identify a, r, and n in a situation and use Sₙ = a(1 - rⁿ)/(1 - r) to find a total",
@@ -274,20 +276,22 @@
      "standard_course": "Algebra I",
      "type": "sa",
      "response": "write",
-     "prompt": "For 5 + 15 + 45 + ... (12 terms), give a, r, and n.",
-     "prompt_markup": "For 5 + 15 + 45 + ... (12 terms), give a, r, and n.",
+     "prompt": "For the geometric series 5 + 15 + 45 + ... with 12 terms, give the first term a, the ratio r, and the number of terms n.",
+     "prompt_markup": "For the geometric series 5 + 15 + 45 + ... with 12 terms, give the first term a, the ratio r, and the number of terms n.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "a =",
+      "r =",
+      "n ="
      ],
      "correct_letter": null,
-     "correct_answer": "a = 5, r = 3, n = 12",
+     "correct_answer": "5; 3; 12",
      "drawing_answer": null,
      "required_method": null,
      "grading_note": "Form required: all three.",
      "figure": null,
      "page": 422,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Identify a, r, and n in a situation and use Sₙ = a(1 - rⁿ)/(1 - r) to find a total",
      "target_skill": "Identify the first term, ratio, and number of terms",
@@ -315,20 +319,22 @@
      "standard_course": "Algebra I",
      "type": "sa",
      "response": "write",
-     "prompt": "For 250 + 250(1.005) + ... + 250(1.005)³⁵, give a, r, and n.",
-     "prompt_markup": "For 250 + 250(1.005) + ... + 250(1.005)³⁵, give a, r, and n.",
+     "prompt": "For 250 + 250(1.005) + ... + 250(1.005)³⁵, give the first term a, the ratio r, and the number of terms n.",
+     "prompt_markup": "For 250 + 250(1.005) + ... + 250(1.005)³⁵, give the first term a, the ratio r, and the number of terms n.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "a =",
+      "r =",
+      "n ="
      ],
      "correct_letter": null,
-     "correct_answer": "a = 250, r = 1.005, n = 36",
+     "correct_answer": "250; 1.005; 36",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: all three. Exponents 0 to 35.",
+     "grading_note": "Form required: all three. The exponents run from 0 to 35, which is 36 terms.",
      "figure": null,
      "page": 423,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Identify a, r, and n in a situation and use Sₙ = a(1 - rⁿ)/(1 - r) to find a total",
      "target_skill": "Identify the first term, ratio, and number of terms",
@@ -458,22 +464,37 @@
      "nearest_related": false,
      "standard_level": "Algebra I. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra I, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra I",
-     "type": "sa",
-     "response": "write",
-     "prompt": "For P/1.004 + P/1.004² + ... + P/1.004³⁶⁰, give the first term and the ratio.",
-     "prompt_markup": "For P/1.004 + P/1.004² + ... + P/1.004³⁶⁰, give the first term and the ratio.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "For P/1.004 + P/1.004² + ... + P/1.004³⁶⁰, which gives the first term a and the common ratio r?",
+     "prompt_markup": "For P/1.004 + P/1.004² + ... + P/1.004³⁶⁰, which gives the first term a and the common ratio r?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "a = P/1.004, r = 1/1.004"
+      },
+      {
+       "letter": "B",
+       "text": "a = 1/1.004, r = P"
+      },
+      {
+       "letter": "C",
+       "text": "a = P, r = 1.004"
+      },
+      {
+       "letter": "D",
+       "text": "a = P/1.004, r = 1.004"
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "A",
      "correct_answer": "a = P/1.004, r = 1/1.004",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: both.",
+     "grading_note": "Each term is the previous one divided by 1.004.",
      "figure": null,
      "page": 426,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Identify a, r, and n in a situation and use Sₙ = a(1 - rⁿ)/(1 - r) to find a total",
      "target_skill": "Identify the first term, ratio, and number of terms",
@@ -997,20 +1018,20 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "How many end-of-month deposits of $250 at 0.5% per month are needed for the balance to reach $20,000? Use 250(1.005ⁿ - 1)/0.005 ≥ 20,000.",
-     "prompt_markup": "How many end-of-month deposits of $250 at 0.5% per month are needed for the balance to reach $20,000? Use 250(1.005ⁿ - 1)/0.005 ≥ 20,000.",
+     "prompt": "How many end-of-month deposits of $250 at 0.5% per month are needed for the balance to reach $20,000? Use 250(1.005ⁿ - 1)/0.005 ≥ 20,000 and give the smallest whole number n.",
+     "prompt_markup": "How many end-of-month deposits of $250 at 0.5% per month are needed for the balance to reach $20,000? Use 250(1.005ⁿ - 1)/0.005 ≥ 20,000 and give the smallest whole number n.",
      "choices": [],
      "answer_lines": [
       "n ="
      ],
      "correct_letter": null,
-     "correct_answer": "68 deposits",
+     "correct_answer": "68",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: a whole number. 1.005ⁿ ≥ 1 + 20,000(0.005)/250 = 1.4, so n ≥ ln 1.4/ln 1.005 ≈ 67.46; check: n = 67 gives about $19,838.70 and n = 68 about $20,187.89.",
+     "grading_note": "1.005ⁿ ≥ 1 + 20,000(0.005)/250 = 1.4, so n ≥ ln 1.4/ln 1.005 ≈ 67.46; check: n = 67 gives about $19,838.70 and n = 68 about $20,187.89.",
      "figure": null,
      "page": 440,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Identify a, r, and n in a situation and use Sₙ = a(1 - rⁿ)/(1 - r) to find a total",
      "target_skill": "Find the number of terms with logarithms",
@@ -1038,20 +1059,21 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Solve 2(3ⁿ - 1)/2 = 3ⁿ - 1 = 1,000,000 for n exactly, then give the least whole number of terms whose sum is at least 1,000,000.",
-     "prompt_markup": "Solve 2(3ⁿ - 1)/2 = 3ⁿ - 1 = 1,000,000 for n exactly, then give the least whole number of terms whose sum is at least 1,000,000.",
+     "prompt": "The sum of the first n terms of 2 + 6 + 18 + ... is 3ⁿ - 1. Solve 3ⁿ - 1 = 1,000,000 for n (to 2 decimal places), then give the least whole number of terms whose sum is at least 1,000,000.",
+     "prompt_markup": "The sum of the first n terms of 2 + 6 + 18 + ... is 3ⁿ - 1. Solve 3ⁿ - 1 = 1,000,000 for n (to 2 decimal places), then give the least whole number of terms whose sum is at least 1,000,000.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "n (2 decimal places) =",
+      "Least number of terms:"
      ],
      "correct_letter": null,
-     "correct_answer": "n = log₃(1,000,001) ≈ 12.58, so 13 terms",
+     "correct_answer": "12.58; 13",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: the exact value and the whole number.",
+     "grading_note": "Form required: both. n = log₃(1,000,001) = ln(1,000,001)/ln 3 ≈ 12.575; 12 terms give 531,440, 13 terms give 1,594,322.",
      "figure": null,
      "page": 441,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Identify a, r, and n in a situation and use Sₙ = a(1 - rⁿ)/(1 - r) to find a total",
      "target_skill": "Find the number of terms with logarithms",
@@ -1181,22 +1203,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain why the number of terms must be rounded up, not to the nearest whole number.",
-     "prompt_markup": "Explain why the number of terms must be rounded up, not to the nearest whole number.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "The sum of a geometric series with positive terms first reaches a target when n ≈ 12.58. Why must n be rounded up to 13 rather than simply rounded to the nearest whole number?",
+     "prompt_markup": "The sum of a geometric series with positive terms first reaches a target when n ≈ 12.58. Why must n be rounded up to 13 rather than simply rounded to the nearest whole number?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Rounding down to 12 is safer: fewer terms always give a sum that still reaches the target."
+      },
+      {
+       "letter": "B",
+       "text": "Answers must always be rounded to the nearest whole number, and 12.58 rounds to 13 that way."
+      },
+      {
+       "letter": "C",
+       "text": "Any whole number near 12.58 gives about the same sum, so 12 and 13 are both acceptable answers, and the choice is a matter of style."
+      },
+      {
+       "letter": "D",
+       "text": "The sum increases with n and must reach the target; 12 terms give a sum below it, so round up to 13."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "The sum must reach the target; rounding down would give a sum that is still too small.",
+     "answer_lines": [],
+     "correct_letter": "D",
+     "correct_answer": "The sum increases with n and must reach the target; 12 terms give a sum below it, so round up to 13.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "Only n ≥ 12.58 meets the target, so the least whole number is 13 (rounding up). The others rely on ordinary rounding (12.4 would round to 12, which fails), prefer a count that fails, or accept both.",
      "figure": null,
      "page": 444,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Identify a, r, and n in a situation and use Sₙ = a(1 - rⁿ)/(1 - r) to find a total",
      "target_skill": "Find the number of terms with logarithms",
@@ -1243,20 +1280,21 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Plan A pays $1,000 per month for 24 months. Plan B pays $500 the first month and 8% more each month after that, for 24 months. Which plan pays more in total, and by how much?",
-     "prompt_markup": "Plan A pays $1,000 per month for 24 months. Plan B pays $500 the first month and 8% more each month after that, for 24 months. Which plan pays more in total, and by how much?",
+     "prompt": "Plan A pays $1,000 per month for 24 months. Plan B pays $500 the first month and 8% more each month after that, for 24 months. Find Plan B's total and how much more than Plan A it pays, to the nearest cent.",
+     "prompt_markup": "Plan A pays $1,000 per month for 24 months. Plan B pays $500 the first month and 8% more each month after that, for 24 months. Find Plan B's total and how much more than Plan A it pays, to the nearest cent.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Plan B total ($):",
+      "Difference ($):"
      ],
      "correct_letter": null,
-     "correct_answer": "Plan B: 500(1.08²⁴ - 1)/0.08 ≈ $33,382.38 vs $24,000; about $9,382.38 more",
+     "correct_answer": "33,382.38; 9,382.38",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: the plan and the difference to the nearest cent.",
+     "grading_note": "Rounding to the nearest cent. Plan B: 500(1.08²⁴ - 1)/0.08 ≈ 33,382.38; Plan A: 24,000.",
      "figure": null,
      "page": 446,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Identify a, r, and n in a situation and use Sₙ = a(1 - rⁿ)/(1 - r) to find a total",
      "target_skill": "Compare two payment plans with the series formula",
@@ -1288,16 +1326,16 @@
      "prompt_markup": "Plan A pays $1,000 per month. Plan B pays $500 the first month and 8% more each month after that. After how many months does Plan B's total first exceed Plan A's total for the same number of months?",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Number of months:"
      ],
      "correct_letter": null,
-     "correct_answer": "After 18 months",
+     "correct_answer": "18",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: the month. Compare 500(1.08ⁿ - 1)/0.08 with 1000n: n = 17 gives 16,875.11 < 17,000; n = 18 gives 18,725.12 > 18,000.",
+     "grading_note": "Form required: the whole number. Compare 500(1.08ⁿ - 1)/0.08 with 1000n: n = 17 gives 16,875.11 < 17,000; n = 18 gives 18,725.12 > 18,000.",
      "figure": null,
      "page": 447,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Identify a, r, and n in a situation and use Sₙ = a(1 - rⁿ)/(1 - r) to find a total",
      "target_skill": "Compare two payment plans with the series formula",
@@ -1427,22 +1465,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Name one assumption in comparing the plans by their totals only.",
-     "prompt_markup": "Name one assumption in comparing the plans by their totals only.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Plan A pays $1,000 per month for 24 months; Plan B pays $500 the first month and 8% more each month after that. Comparing the plans only by their 24-month totals assumes which of the following?",
+     "prompt_markup": "Plan A pays $1,000 per month for 24 months; Plan B pays $500 the first month and 8% more each month after that. Comparing the plans only by their 24-month totals assumes which of the following?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "That both plans pay exactly $24,000 in total over the 24 months."
+      },
+      {
+       "letter": "B",
+       "text": "That Plan B pays the same amount every month, just like Plan A."
+      },
+      {
+       "letter": "C",
+       "text": "That money received later is worth the same as money now (no interest or inflation)."
+      },
+      {
+       "letter": "D",
+       "text": "That the 8% increase in Plan B is applied only once, in month 2, and not again after that."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "For example: money received later is treated as equal in value to money now (no interest or inflation).",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "That money received later is worth the same as money now (no interest or inflation).",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any reasonable assumption.",
+     "grading_note": "Totals ignore when the money arrives. The others contradict the plans as stated.",
      "figure": null,
      "page": 450,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Identify a, r, and n in a situation and use Sₙ = a(1 - rⁿ)/(1 - r) to find a total",
      "target_skill": "Compare two payment plans with the series formula",

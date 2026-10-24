@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -175,20 +175,21 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Simplify (x⁵ - 3x³ + x) - (x⁵ + 2x⁴ - 3x³ - 7). Write the result in standard form and give its degree.",
-     "prompt_markup": "Simplify (x⁵ - 3x³ + x) - (x⁵ + 2x⁴ - 3x³ - 7). Write the result in standard form and give its degree.",
+     "prompt": "Subtract (x⁵ + 2x⁴ - 3x³ - 7) from (x⁵ - 3x³ + x). Combine like terms and write the result in standard form; then give its degree.",
+     "prompt_markup": "Subtract (x⁵ + 2x⁴ - 3x³ - 7) from (x⁵ - 3x³ + x). Combine like terms and write the result in standard form; then give its degree.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Result:",
+      "Degree:"
      ],
      "correct_letter": null,
-     "correct_answer": "-2x⁴ + x + 7; degree 4",
+     "correct_answer": "-2x⁴ + x + 7; 4",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: standard form and the degree. The x⁵ and x³ terms cancel.",
+     "grading_note": "Form required: both. (x⁵ - 3x³ + x) - (x⁵ + 2x⁴ - 3x³ - 7): the x⁵ and x³ terms cancel.",
      "figure": null,
      "page": 456,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Add and subtract polynomials of degree 3 or more and write the result in standard form",
      "target_skill": "Add and subtract polynomials of degree 3 or more and write the result in standard form",
@@ -552,13 +553,13 @@
       "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "2 + 3x",
+     "correct_answer": "3x + 2",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form.",
+     "grading_note": "Any equivalent simplified form.",
      "figure": null,
      "page": 466,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Add and subtract polynomials of degree 3 or more and write the result in standard form",
      "target_skill": "Subtract a whole expression",
@@ -985,22 +986,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "p(x) has degree 4 and q(x) has degree 4. What degrees can p(x) + q(x) have? Give an example where the degree drops.",
-     "prompt_markup": "p(x) has degree 4 and q(x) has degree 4. What degrees can p(x) + q(x) have? Give an example where the degree drops.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "p(x) and q(x) both have degree 4. Which statement about p(x) + q(x) is true?",
+     "prompt_markup": "p(x) and q(x) both have degree 4. Which statement about p(x) + q(x) is true?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Its degree is 4 or less, or it is the zero polynomial: (x⁴ + x) + (-x⁴ + 1) = x + 1."
+      },
+      {
+       "letter": "B",
+       "text": "Its degree is always exactly 4, because adding never changes the highest power."
+      },
+      {
+       "letter": "C",
+       "text": "Its degree is always 4 or more, because adding can only raise the degree."
+      },
+      {
+       "letter": "D",
+       "text": "Its degree is always 8, because adding polynomials adds their degrees: 4 + 4 = 8."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "4 or less (or the zero polynomial); for example (x⁴ + x) + (-x⁴ + 1) = x + 1",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "Its degree is 4 or less, or it is the zero polynomial: (x⁴ + x) + (-x⁴ + 1) = x + 1.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any correct example.",
+     "grading_note": "Adding cannot create higher powers, but the x⁴ terms can cancel. The others add the degrees (that happens for products), or ignore cancellation.",
      "figure": null,
      "page": 477,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Add and subtract polynomials of degree 3 or more and write the result in standard form",
      "target_skill": "Reason about the degree of a sum or difference",
@@ -1171,22 +1187,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain why the sum of two polynomials is a polynomial.",
-     "prompt_markup": "Explain why the sum of two polynomials is a polynomial.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Why is the sum of two polynomials always a polynomial?",
+     "prompt_markup": "Why is the sum of two polynomials always a polynomial?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The sum always has a higher degree than either polynomial, and anything with a higher degree is a polynomial."
+      },
+      {
+       "letter": "B",
+       "text": "Adding combines like terms, and each term is still a real number times a whole-number power of x."
+      },
+      {
+       "letter": "C",
+       "text": "Adding powers of x gives a power of x, as x² + x³ = x⁵ shows, so each term of the sum is still a power of x."
+      },
+      {
+       "letter": "D",
+       "text": "Any expression that contains x, such as 1/x or √x, is a polynomial, so every sum of such expressions is a polynomial too."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Adding like terms gives terms that are a coefficient times a whole-number power of x, which is the form of a polynomial.",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "Adding combines like terms, and each term is still a real number times a whole-number power of x.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation (closure under addition).",
+     "grading_note": "Closure under addition: like terms combine and no negative or fractional exponents appear. The others give false statements (degrees do not increase; 1/x is not a polynomial; x² + x³ ≠ x⁵).",
      "figure": null,
      "page": 481,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Add and subtract polynomials of degree 3 or more and write the result in standard form",
      "target_skill": "Reason about the degree of a sum or difference",
@@ -1233,20 +1264,21 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Write 3/x + 2/(x + 1) as one rational expression, and state the excluded values.",
-     "prompt_markup": "Write 3/x + 2/(x + 1) as one rational expression, and state the excluded values.",
+     "prompt": "Write 3/x + 2/(x + 1) as one fraction with denominator x(x + 1). Give the numerator and the excluded values.",
+     "prompt_markup": "Write 3/x + 2/(x + 1) as one fraction with denominator x(x + 1). Give the numerator and the excluded values.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Numerator:",
+      "Excluded values:"
      ],
      "correct_letter": null,
-     "correct_answer": "(5x + 3)/(x(x + 1)); x ≠ 0, -1",
+     "correct_answer": "5x + 3; {0, -1}",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: one fraction and the exclusions.",
+     "grading_note": "Form required: both. 3(x + 1) + 2x = 5x + 3; x = 0 and x = -1 make a denominator zero.",
      "figure": null,
      "page": 483,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Add and subtract polynomials of degree 3 or more and write the result in standard form",
      "target_skill": "Add and subtract rational expressions",
@@ -1274,20 +1306,21 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Write 1/(x - 2) - 1/(x + 2) as one rational expression, and state the excluded values.",
-     "prompt_markup": "Write 1/(x - 2) - 1/(x + 2) as one rational expression, and state the excluded values.",
+     "prompt": "Write 1/(x - 2) - 1/(x + 2) as one fraction with denominator (x - 2)(x + 2). Give the numerator and the excluded values.",
+     "prompt_markup": "Write 1/(x - 2) - 1/(x + 2) as one fraction with denominator (x - 2)(x + 2). Give the numerator and the excluded values.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Numerator:",
+      "Excluded values:"
      ],
      "correct_letter": null,
-     "correct_answer": "4/((x - 2)(x + 2)); x ≠ 2, -2",
+     "correct_answer": "4; {2, -2}",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: one fraction and the exclusions.",
+     "grading_note": "Form required: both. (x + 2) - (x - 2) = 4.",
      "figure": null,
      "page": 484,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Add and subtract polynomials of degree 3 or more and write the result in standard form",
      "target_skill": "Add and subtract rational expressions",
@@ -1417,22 +1450,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain how adding rational expressions is like adding fractions of integers.",
-     "prompt_markup": "Explain how adding rational expressions is like adding fractions of integers.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "How is adding rational expressions like adding fractions of integers?",
+     "prompt_markup": "How is adding rational expressions like adding fractions of integers?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "In both, the numerators are multiplied together and the denominators are added together."
+      },
+      {
+       "letter": "B",
+       "text": "In both, the numerators are added and the denominators are added."
+      },
+      {
+       "letter": "C",
+       "text": "Rational expressions never need a common denominator, unlike fractions of integers, which always do."
+      },
+      {
+       "letter": "D",
+       "text": "Both are rewritten over a common denominator and then the numerators are added; polynomials play the role of integers."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Rewrite both over a common denominator, then add the numerators; polynomials play the role of integers.",
+     "answer_lines": [],
+     "correct_letter": "D",
+     "correct_answer": "Both are rewritten over a common denominator and then the numerators are added; polynomials play the role of integers.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "Common denominator, then add numerators. The others use the error a/b + c/d = (a + c)/(b + d) or other invalid rules.",
      "figure": null,
      "page": 487,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Add and subtract polynomials of degree 3 or more and write the result in standard form",
      "target_skill": "Add and subtract rational expressions",

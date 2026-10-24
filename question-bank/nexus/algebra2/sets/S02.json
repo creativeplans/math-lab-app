@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -182,13 +182,13 @@
       "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "4 (that is, 4 + 0i)",
+     "correct_answer": "4",
      "drawing_answer": null,
      "required_method": null,
      "grading_note": "Form required: a + bi or the real number 4. Real: 2.5 + 1.5 = 4; imaginary: -1 - 3 + 4 = 0.",
      "figure": null,
      "page": 49,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Add and subtract complex numbers by combining real parts and imaginary parts",
      "target_skill": "Add and subtract complex numbers by combining real parts and imaginary parts",
@@ -279,13 +279,13 @@
       "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "-4 + 7x",
+     "correct_answer": "7x - 4",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form.",
+     "grading_note": "Any equivalent simplified form.",
      "figure": null,
      "page": 52,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Add and subtract complex numbers by combining real parts and imaginary parts",
      "target_skill": "Combine like terms",
@@ -318,13 +318,13 @@
       "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "8 - 13x",
+     "correct_answer": "-13x + 8",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form. The minus sign applies to both terms.",
+     "grading_note": "Any equivalent simplified form. The minus sign applies to both terms.",
      "figure": null,
      "page": 53,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Add and subtract complex numbers by combining real parts and imaginary parts",
      "target_skill": "Combine like terms",
@@ -457,13 +457,13 @@
       "Answer:"
      ],
      "correct_letter": null,
-     "correct_answer": "-1 - 3x",
+     "correct_answer": "-3x - 1",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form.",
+     "grading_note": "Any equivalent simplified form.",
      "figure": null,
      "page": 56,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Add and subtract complex numbers by combining real parts and imaginary parts",
      "target_skill": "Combine like terms",
@@ -991,16 +991,17 @@
      "prompt_markup": "k is a real number. For what value of k is (3 + ki) + (k - 5i) a real number? Give that real number.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "k =",
+      "The sum:"
      ],
      "correct_letter": null,
-     "correct_answer": "k = 5; the sum is 8",
+     "correct_answer": "5; 8",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: k and the number. The imaginary part k - 5 must be 0.",
+     "grading_note": "Form required: k and the number. The imaginary part k - 5 must be 0; then the sum is 3 + 5 = 8.",
      "figure": null,
      "page": 70,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Add and subtract complex numbers by combining real parts and imaginary parts",
      "target_skill": "Find real parameters that make a sum real or imaginary",
@@ -1171,22 +1172,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain why the sum of a + bi and a - bi is always a real number when a and b are real.",
-     "prompt_markup": "Explain why the sum of a + bi and a - bi is always a real number when a and b are real.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "a and b are real numbers. Why is the sum of a + bi and a - bi always a real number?",
+     "prompt_markup": "a and b are real numbers. Why is the sum of a + bi and a - bi always a real number?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The real parts a and a cancel, leaving 2bi, which is real."
+      },
+      {
+       "letter": "B",
+       "text": "The imaginary parts bi and -bi add to 0, leaving 2a, which is real."
+      },
+      {
+       "letter": "C",
+       "text": "Any sum of two complex numbers is real."
+      },
+      {
+       "letter": "D",
+       "text": "It is real only when b = 0, because otherwise the sum has an i term."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "The imaginary parts b and -b add to 0, leaving 2a, a real number.",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "The imaginary parts bi and -bi add to 0, leaving 2a, which is real.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "(a + bi) + (a - bi) = 2a + 0i. The others cancel the wrong parts, overgeneralize ((1 + i) + (1 + i) = 2 + 2i is not real), or forget that bi - bi = 0.",
      "figure": null,
      "page": 74,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Add and subtract complex numbers by combining real parts and imaginary parts",
      "target_skill": "Find real parameters that make a sum real or imaginary",
@@ -1233,20 +1249,20 @@
      "standard_course": "Precalculus",
      "type": "sa",
      "response": "write",
-     "prompt": "Plot 2 + i and 1 + 3i as points in the complex plane (real axis horizontal). What point represents their sum?",
-     "prompt_markup": "Plot 2 + i and 1 + 3i as points in the complex plane (real axis horizontal). What point represents their sum?",
+     "prompt": "In the complex plane (real axis horizontal, imaginary axis vertical), the number a + bi is the point (a, b). Which point represents the sum (2 + i) + (1 + 3i)?",
+     "prompt_markup": "In the complex plane (real axis horizontal, imaginary axis vertical), the number a + bi is the point (a, b). Which point represents the sum (2 + i) + (1 + 3i)?",
      "choices": [],
      "answer_lines": [
-      "Sum point:"
+      "Point:"
      ],
      "correct_letter": null,
-     "correct_answer": "(3, 4), the number 3 + 4i",
+     "correct_answer": "(3, 4)",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: the point or the number.",
+     "grading_note": "Form required: the ordered pair. The sum is 3 + 4i, the point (3, 4): add the real parts and the imaginary parts, as with vectors.",
      "figure": null,
      "page": 76,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Add and subtract complex numbers by combining real parts and imaginary parts",
      "target_skill": "Add complex numbers as vectors in the complex plane",
@@ -1272,22 +1288,37 @@
      "nearest_related": false,
      "standard_level": "Precalculus. Common Core groups high-school standards by category, not by course; this bank places this one in Precalculus, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Precalculus",
-     "type": "sa",
-     "response": "write",
-     "prompt": "The points 0, 2 + i, 1 + 3i and their sum are vertices of a quadrilateral. What kind of quadrilateral is it?",
-     "prompt_markup": "The points 0, 2 + i, 1 + 3i and their sum are vertices of a quadrilateral. What kind of quadrilateral is it?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "The points 0, 2 + i, 1 + 3i and their sum are vertices of a quadrilateral in the complex plane. What kind of quadrilateral is it?",
+     "prompt_markup": "The points 0, 2 + i, 1 + 3i and their sum are vertices of a quadrilateral in the complex plane. What kind of quadrilateral is it?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "a parallelogram"
+      },
+      {
+       "letter": "B",
+       "text": "a kite that is not a parallelogram"
+      },
+      {
+       "letter": "C",
+       "text": "a trapezoid that is not a parallelogram"
+      },
+      {
+       "letter": "D",
+       "text": "a square"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "A parallelogram",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "a parallelogram",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer. Adding complex numbers adds their vectors (parallelogram rule).",
+     "grading_note": "Adding complex numbers adds their vectors (parallelogram rule). Sides are √5 and √10, so it is not a square.",
      "figure": null,
      "page": 77,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Add and subtract complex numbers by combining real parts and imaginary parts",
      "target_skill": "Add complex numbers as vectors in the complex plane",

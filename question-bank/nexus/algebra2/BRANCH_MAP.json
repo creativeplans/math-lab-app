@@ -3,7 +3,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-24"
  },
  "description": "Teacher metadata for every branch, by set: backward branches give the obstacle, why it blocks MAIN, the evidence the five questions collect (rationale) and whether the standard is exact or supporting; forward branches give the progression type, direct or nearest related, the new demand, and (FORWARD 2) how it builds on FORWARD 1. plus_standard is true when the branch's standard is a Common Core (+) standard; this happens in some core-strand sets (their FORWARD 2) as well as in the advanced strand. The same fields are in each set file under sections[].branch.",
@@ -3305,6 +3305,76 @@
      "new_demand": "Relate absolute value graphs to transformations and symmetry.",
      "course": "Algebra II",
      "builds_on": "Builds on FORWARD 1: the piecewise form of |x - 3| shows the reflection that makes absolute value graphs V-shaped and symmetric.",
+     "plus_standard": false
+    }
+   ]
+  },
+  {
+   "set": 85,
+   "set_id": "S85",
+   "standard": "HSF-IF.C.7.b",
+   "strand": "core",
+   "target_skill": "Identify the graph of a step function (greatest integer, rounding-up, and rate-table models) from its rule, including the value of each step and which endpoint of each step is included",
+   "covers": [
+    "IF7b-step"
+   ],
+   "branches": [
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "standard": "HSF-IF.C.7.b",
+     "skill": "Evaluate step functions",
+     "kind": "backward",
+     "alignment": "exact",
+     "rationale": "Obstacle: the student cannot find the value of a step function at a given input, especially at a whole number or a negative input. Why it matters: each step of the graph is drawn at these values. Evidence: evaluates ⌊x⌋ and rounding-up charges correctly.",
+     "source": "Algebra I",
+     "plus_standard": false
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "standard": "6.EE.B.8",
+     "skill": "Included and excluded endpoints of intervals",
+     "kind": "backward",
+     "alignment": "supporting",
+     "rationale": "Obstacle: the student closes the wrong end of each step. Why it matters: the endpoints decide which value a step function takes at each jump. Evidence: matches inequalities with open and closed endpoints.",
+     "source": "Grade 6",
+     "plus_standard": false
+    },
+    {
+     "section": "BACKWARD 3",
+     "section_code": "B3",
+     "standard": "6.NS.C.7",
+     "skill": "Integers just below a number",
+     "kind": "backward",
+     "alignment": "supporting",
+     "rationale": "Obstacle: the student rounds negative numbers toward 0. Why it matters: the greatest integer function goes down the number line for negative inputs. Evidence: finds the integers just below and just above a number.",
+     "source": "Grade 6",
+     "plus_standard": false
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "standard": "HSF-IF.C.7.b",
+     "skill": "Write and interpret step-function models",
+     "kind": "forward",
+     "progression": "same-course deepening",
+     "connection": "direct",
+     "new_demand": "Write step-function rules for contexts with a maximum or a base charge, and reason about steps and jumps.",
+     "course": "Algebra II",
+     "plus_standard": false
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "standard": "HSF-BF.B.3",
+     "skill": "Transform step functions",
+     "kind": "forward",
+     "progression": "cross-standard extension",
+     "connection": "direct",
+     "new_demand": "Describe vertical and horizontal transformations of step functions and identify transformed step rules.",
+     "course": "Algebra II",
+     "builds_on": "Builds on FORWARD 1: the rules written there are transformations of ⌊x⌋ and ⌈x⌉, so stretching and shifting the basic step graph explains their step heights and widths.",
      "plus_standard": false
     }
    ]

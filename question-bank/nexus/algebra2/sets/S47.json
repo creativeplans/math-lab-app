@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -4762,7 +4762,7 @@
       }
      },
      "page": 1717,
-     "revision": "revised",
+     "revision": "unchanged",
      "strand": "core",
      "set_target": "Identify the graphs of piecewise-defined functions (with open and closed endpoints) and of absolute value functions with transformations",
      "target_skill": "Identify the graphs of piecewise-defined functions (with open and closed endpoints) and of absolute value functions with transformations",
@@ -8936,7 +8936,7 @@
       }
      },
      "page": 1718,
-     "revision": "revised",
+     "revision": "unchanged",
      "strand": "core",
      "set_target": "Identify the graphs of piecewise-defined functions (with open and closed endpoints) and of absolute value functions with transformations",
      "target_skill": "Identify the graphs of piecewise-defined functions (with open and closed endpoints) and of absolute value functions with transformations",
@@ -13990,7 +13990,7 @@
       }
      },
      "page": 1719,
-     "revision": "revised",
+     "revision": "unchanged",
      "strand": "core",
      "set_target": "Identify the graphs of piecewise-defined functions (with open and closed endpoints) and of absolute value functions with transformations",
      "target_skill": "Identify the graphs of piecewise-defined functions (with open and closed endpoints) and of absolute value functions with transformations",
@@ -18776,7 +18776,7 @@
       }
      },
      "page": 1720,
-     "revision": "revised",
+     "revision": "unchanged",
      "strand": "core",
      "set_target": "Identify the graphs of piecewise-defined functions (with open and closed endpoints) and of absolute value functions with transformations",
      "target_skill": "Identify the graphs of piecewise-defined functions (with open and closed endpoints) and of absolute value functions with transformations",
@@ -22990,7 +22990,7 @@
       }
      },
      "page": 1721,
-     "revision": "revised",
+     "revision": "unchanged",
      "strand": "core",
      "set_target": "Identify the graphs of piecewise-defined functions (with open and closed endpoints) and of absolute value functions with transformations",
      "target_skill": "Identify the graphs of piecewise-defined functions (with open and closed endpoints) and of absolute value functions with transformations",
@@ -23039,16 +23039,17 @@
      "prompt_markup": "f(x) = 2 for x < 0 and f(x) = x for x ≥ 0. Find f(-3) and f(5).",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "f(-3) =",
+      "f(5) ="
      ],
      "correct_letter": null,
-     "correct_answer": "2 and 5",
+     "correct_answer": "2; 5",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: both.",
+     "grading_note": "Form required: both. -3 < 0 uses the first rule; 5 ≥ 0 uses the second.",
      "figure": null,
      "page": 1723,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Identify the graphs of piecewise-defined functions (with open and closed endpoints) and of absolute value functions with transformations",
      "target_skill": "Evaluate and graph simple piecewise functions",
@@ -23281,16 +23282,17 @@
      "prompt_markup": "Find |-5| and |3|.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "|-5| =",
+      "|3| ="
      ],
      "correct_letter": null,
-     "correct_answer": "5 and 3",
+     "correct_answer": "5; 3",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: both.",
+     "grading_note": "Form required: both. Absolute value is distance from 0.",
      "figure": null,
      "page": 1729,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Identify the graphs of piecewise-defined functions (with open and closed endpoints) and of absolute value functions with transformations",
      "target_skill": "Absolute value as distance",
@@ -23746,22 +23748,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "A shipping company charges $5 for packages up to 2 lb and $5 plus $1.50 per pound over 2 lb. Write the cost C(w).",
-     "prompt_markup": "A shipping company charges $5 for packages up to 2 lb and $5 plus $1.50 per pound over 2 lb. Write the cost C(w).",
-     "choices": [],
-     "answer_lines": [
-      "C(w) ="
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A shipping company charges $5 for packages up to 2 lb and $5 plus $1.50 per pound over 2 lb. Which gives the cost C(w) for a package of w pounds?",
+     "prompt_markup": "A shipping company charges $5 for packages up to 2 lb and $5 plus $1.50 per pound over 2 lb. Which gives the cost C(w) for a package of w pounds?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "C(w) = 5 for 0 < w ≤ 2, and C(w) = 1.5(w - 2) for w > 2"
+      },
+      {
+       "letter": "B",
+       "text": "C(w) = 5 for 0 < w ≤ 2, and C(w) = 5 + 1.5(w - 2) for w > 2"
+      },
+      {
+       "letter": "C",
+       "text": "C(w) = 5 for 0 < w < 2, and C(w) = 5 + 1.5w for w ≥ 2"
+      },
+      {
+       "letter": "D",
+       "text": "C(w) = 5 + 1.5w for every w > 0"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "5 for 0 < w ≤ 2; 5 + 1.5(w - 2) for w > 2",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "C(w) = 5 for 0 < w ≤ 2, and C(w) = 5 + 1.5(w - 2) for w > 2",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form with correct endpoints.",
+     "grading_note": "\"Up to 2 lb\" includes 2; only the weight over 2 lb is charged $1.50 per pound, on top of the $5. The others charge every pound, drop the $5, or misplace the endpoint.",
      "figure": null,
      "page": 1741,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Identify the graphs of piecewise-defined functions (with open and closed endpoints) and of absolute value functions with transformations",
      "target_skill": "Write piecewise functions from graphs and contexts",
@@ -23787,22 +23804,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Write |x - 3| as a piecewise function without absolute value bars.",
-     "prompt_markup": "Write |x - 3| as a piecewise function without absolute value bars.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which writes |x - 3| as a piecewise function without absolute value bars?",
+     "prompt_markup": "Which writes |x - 3| as a piecewise function without absolute value bars?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "3 - x for x < 3, and x - 3 for x ≥ 3"
+      },
+      {
+       "letter": "B",
+       "text": "x - 3 for every x"
+      },
+      {
+       "letter": "C",
+       "text": "3 - x for x < 0, and x - 3 for x ≥ 0"
+      },
+      {
+       "letter": "D",
+       "text": "x - 3 for x < 3, and 3 - x for x ≥ 3"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "3 - x for x < 3; x - 3 for x ≥ 3",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "3 - x for x < 3, and x - 3 for x ≥ 3",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form.",
+     "grading_note": "|u| = -u when u < 0. The others swap the pieces, ignore the sign, or split at 0 instead of 3.",
      "figure": null,
      "page": 1742,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Identify the graphs of piecewise-defined functions (with open and closed endpoints) and of absolute value functions with transformations",
      "target_skill": "Write piecewise functions from graphs and contexts",
@@ -23992,22 +24024,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Describe y = |2x - 4| - 1 as a transformation of y = |x|.",
-     "prompt_markup": "Describe y = |2x - 4| - 1 as a transformation of y = |x|.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which describes y = |2x - 4| - 1 as a transformation of y = |x|?",
+     "prompt_markup": "Which describes y = |2x - 4| - 1 as a transformation of y = |x|?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "y = 2|x - 4| - 1: shift right 4, stretch vertically by 2, shift down 1"
+      },
+      {
+       "letter": "B",
+       "text": "y = 2|x - 2| - 1: shift right 2, stretch vertically by 2, shift down 1"
+      },
+      {
+       "letter": "C",
+       "text": "y = 2|x + 2| - 1: shift left 2, stretch vertically by 2, shift down 1"
+      },
+      {
+       "letter": "D",
+       "text": "y = |x - 2| - 1: shift right 2, shift down 1, no vertical stretch"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "y = 2|x - 2| - 1: right 2, vertical stretch by 2, down 1",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "y = 2|x - 2| - 1: shift right 2, stretch vertically by 2, shift down 1",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent description.",
+     "grading_note": "|2x - 4| = 2|x - 2|. The others shift by 4, shift the wrong way, or miss the factor 2.",
      "figure": null,
      "page": 1747,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Identify the graphs of piecewise-defined functions (with open and closed endpoints) and of absolute value functions with transformations",
      "target_skill": "Describe absolute value graphs as transformations, and identify symmetry",
@@ -24035,20 +24082,20 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Write an absolute value function with vertex (-1, 3) that opens down and passes through (2, 0).",
-     "prompt_markup": "Write an absolute value function with vertex (-1, 3) that opens down and passes through (2, 0).",
+     "prompt": "An absolute value function y = a|x + 1| + 3 has vertex (-1, 3), opens down, and passes through (2, 0). Find a.",
+     "prompt_markup": "An absolute value function y = a|x + 1| + 3 has vertex (-1, 3), opens down, and passes through (2, 0). Find a.",
      "choices": [],
      "answer_lines": [
-      "y ="
+      "a ="
      ],
      "correct_letter": null,
-     "correct_answer": "-|x + 1| + 3",
+     "correct_answer": "-1",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form.",
+     "grading_note": "Form required: the value. 0 = a · 3 + 3 gives a = -1 (negative, so it opens down).",
      "figure": null,
      "page": 1748,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Identify the graphs of piecewise-defined functions (with open and closed endpoints) and of absolute value functions with transformations",
      "target_skill": "Describe absolute value graphs as transformations, and identify symmetry",
@@ -24180,20 +24227,22 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Is y = -|x + 1| + 3 an even function? Explain.",
-     "prompt_markup": "Is y = -|x + 1| + 3 an even function? Explain.",
+     "prompt": "f(x) = -|x + 1| + 3. Find f(1) and f(-1), and decide whether f is even.",
+     "prompt_markup": "f(x) = -|x + 1| + 3. Find f(1) and f(-1), and decide whether f is even.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "f(1) =",
+      "f(-1) =",
+      "Is f even? (Yes or No)"
      ],
      "correct_letter": null,
-     "correct_answer": "No: f(1) = 1 but f(-1) = 3",
+     "correct_answer": "1; 3; No",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: decision and evidence.",
+     "grading_note": "Form required: all three. An even function has f(-x) = f(x) for every x; f(1) ≠ f(-1).",
      "figure": null,
      "page": 1751,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Identify the graphs of piecewise-defined functions (with open and closed endpoints) and of absolute value functions with transformations",
      "target_skill": "Describe absolute value graphs as transformations, and identify symmetry",

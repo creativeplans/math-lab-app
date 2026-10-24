@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -1427,22 +1427,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain why the coefficients of (x + y)ⁿ are symmetric.",
-     "prompt_markup": "Explain why the coefficients of (x + y)ⁿ are symmetric.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Why are the coefficients of (x + y)ⁿ symmetric (the same read forward and backward)?",
+     "prompt_markup": "Why are the coefficients of (x + y)ⁿ symmetric (the same read forward and backward)?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "C(n, k) = C(n, n - k): choosing which k of the n factors give x is the same as choosing which n - k give y."
+      },
+      {
+       "letter": "B",
+       "text": "x and y always have equal values in the expansion, so the coefficients of matching terms are the same."
+      },
+      {
+       "letter": "C",
+       "text": "Every coefficient of (x + y)ⁿ equals 1."
+      },
+      {
+       "letter": "D",
+       "text": "The middle coefficient is always the largest one, so the list of coefficients must be symmetric."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "C(n, k) = C(n, n - k): choosing k of the n factors to give x is the same as choosing the n - k that give y.",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "C(n, k) = C(n, n - k): choosing which k of the n factors give x is the same as choosing which n - k give y.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "The count C(n, k) is symmetric. The others are false ((x + y)² = x² + 2xy + y²) or do not explain the symmetry.",
      "figure": null,
      "page": 524,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Multiply polynomials whose product has degree 3 or more and write the product in standard form",
      "target_skill": "Expand powers of binomials with the Binomial Theorem",

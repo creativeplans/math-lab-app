@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -50,19 +50,34 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "A coin is claimed to be fair. It landed heads 34 times in 50 flips. The histogram shows 200 simulated runs of 50 fair flips. Is the claim consistent with the result? Justify with the simulation.",
-     "prompt_markup": "A coin is claimed to be fair. It landed heads 34 times in 50 flips. The histogram shows 200 simulated runs of 50 fair flips. Is the claim consistent with the result? Justify with the simulation.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A coin is claimed to be fair. It landed heads 34 times in 50 flips. The histogram shows 200 simulated runs of 50 flips of a fair coin. Count runs with 34 or more heads. Use 5% as the cutoff for unusual. Which conclusion is justified?",
+     "prompt_markup": "A coin is claimed to be fair. It landed heads 34 times in 50 flips. The histogram shows 200 simulated runs of 50 flips of a fair coin. Count runs with 34 or more heads. Use 5% as the cutoff for unusual. Which conclusion is justified?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "3 of 200 runs (1.5%) had 34 or more heads; 1.5% < 5%, so the data are evidence against a fair coin."
+      },
+      {
+       "letter": "B",
+       "text": "3 of 200 runs (1.5%) had 34 or more heads, so the coin is proved to be unfair."
+      },
+      {
+       "letter": "C",
+       "text": "A fair coin can never land heads 34 times in 50 flips, so the claim is false."
+      },
+      {
+       "letter": "D",
+       "text": "36 of 200 runs (18%) had 29 or more heads, so 34 heads is not unusual for a fair coin."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "No: only 3 of 200 runs (1.5%) had 34 or more heads, so 34 heads is very unusual for a fair coin",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "3 of 200 runs (1.5%) had 34 or more heads; 1.5% < 5%, so the data are evidence against a fair coin.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: decision and the simulated proportion.",
+     "grading_note": "Only the ≥34 bar counts: 3/200. Evidence is not proof, and the event is rare, not impossible.",
      "figure": {
       "svg": "assets/S64-M-Q1.svg",
       "png": "assets/S64-M-Q1.png",
@@ -95,15 +110,15 @@
        "ylabel": "Number of runs"
       }
      },
-     "page": 2346,
-     "revision": "unchanged",
+     "page": 2383,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Algebra II",
-     "question_page": 2346,
-     "answer_key_page": 2346
+     "question_page": 2383,
+     "answer_key_page": 2383
     },
     {
      "id": "S64-M-Q2",
@@ -122,19 +137,34 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "A spinner is claimed to land on red 25% of the time. It landed on red 13 times in 40 spins. The histogram shows 200 simulated runs. Is the claim consistent? Justify.",
-     "prompt_markup": "A spinner is claimed to land on red 25% of the time. It landed on red 13 times in 40 spins. The histogram shows 200 simulated runs. Is the claim consistent? Justify.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A spinner is claimed to land on red 25% of the time. It landed on red 13 times in 40 spins. The histogram shows 200 simulated runs of 40 spins under the claim. Count runs with 13 or more reds. Use 5% as the cutoff for unusual. Which conclusion is justified?",
+     "prompt_markup": "A spinner is claimed to land on red 25% of the time. It landed on red 13 times in 40 spins. The histogram shows 200 simulated runs of 40 spins under the claim. Count runs with 13 or more reds. Use 5% as the cutoff for unusual. Which conclusion is justified?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The expected count is 10, and 13 is not 10, so the claim is false."
+      },
+      {
+       "letter": "B",
+       "text": "34 of 200 runs (17%) had 13 or more reds, so the claim is proved true."
+      },
+      {
+       "letter": "C",
+       "text": "Only runs with exactly 13 reds count, which is rare, so the claim is rejected."
+      },
+      {
+       "letter": "D",
+       "text": "34 of 200 runs (17%) had 13 or more reds; 17% > 5%, so the result is consistent with the claim."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Yes: 13 or more reds happened in 34 of 200 runs (17%), which is not unusual",
+     "answer_lines": [],
+     "correct_letter": "D",
+     "correct_answer": "34 of 200 runs (17%) had 13 or more reds; 17% > 5%, so the result is consistent with the claim.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: decision and the simulated proportion.",
+     "grading_note": "20 + 14 = 34 runs. Consistent with the model does not prove it.",
      "figure": {
       "svg": "assets/S64-M-Q2.svg",
       "png": "assets/S64-M-Q2.png",
@@ -167,15 +197,15 @@
        "ylabel": "Number of runs"
       }
      },
-     "page": 2347,
-     "revision": "unchanged",
+     "page": 2384,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Algebra II",
-     "question_page": 2347,
-     "answer_key_page": 2347
+     "question_page": 2384,
+     "answer_key_page": 2384
     },
     {
      "id": "S64-M-Q3",
@@ -194,19 +224,34 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "A die is claimed to be fair. It showed 16 sixes in 60 rolls. The histogram shows 200 simulated runs. Is the claim consistent? Justify.",
-     "prompt_markup": "A die is claimed to be fair. It showed 16 sixes in 60 rolls. The histogram shows 200 simulated runs. Is the claim consistent? Justify.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A die is claimed to be fair. It showed 16 sixes in 60 rolls. The histogram shows 200 simulated runs of 60 rolls of a fair die. Count runs with 16 or more sixes. Use 5% as the cutoff for unusual. Which conclusion is justified?",
+     "prompt_markup": "A die is claimed to be fair. It showed 16 sixes in 60 rolls. The histogram shows 200 simulated runs of 60 rolls of a fair die. Count runs with 16 or more sixes. Use 5% as the cutoff for unusual. Which conclusion is justified?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "15 of 200 runs (7.5%) had 14 or more sixes, so 16 sixes is not unusual."
+      },
+      {
+       "letter": "B",
+       "text": "3 of 200 runs (1.5%) had 16 or more sixes; 1.5% < 5%, so the data are evidence against a fair die."
+      },
+      {
+       "letter": "C",
+       "text": "3 of 200 runs (1.5%) had 16 or more sixes, so the die is proved to be unfair."
+      },
+      {
+       "letter": "D",
+       "text": "A fair die can never show 16 sixes in 60 rolls, so the claim is false."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "No: 16 or more sixes happened in only 3 of 200 runs (1.5%), so the result is unusual for a fair die",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "3 of 200 runs (1.5%) had 16 or more sixes; 1.5% < 5%, so the data are evidence against a fair die.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: decision and proportion.",
+     "grading_note": "Only the ≥16 bar counts: 3/200.",
      "figure": {
       "svg": "assets/S64-M-Q3.svg",
       "png": "assets/S64-M-Q3.png",
@@ -239,15 +284,15 @@
        "ylabel": "Number of runs"
       }
      },
-     "page": 2348,
-     "revision": "unchanged",
+     "page": 2385,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Algebra II",
-     "question_page": 2348,
-     "answer_key_page": 2348
+     "question_page": 2385,
+     "answer_key_page": 2385
     },
     {
      "id": "S64-M-Q4",
@@ -266,19 +311,34 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "A player claims to make 70% of free throws. She made 11 of 20. The histogram shows 200 simulated runs of 20 shots. Is the claim consistent? Justify.",
-     "prompt_markup": "A player claims to make 70% of free throws. She made 11 of 20. The histogram shows 200 simulated runs of 20 shots. Is the claim consistent? Justify.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A player claims to make 70% of her free throws. She made 11 of 20. The histogram shows 200 simulated runs of 20 shots under the claim. Count runs with 11 or fewer makes. Use 5% as the cutoff for unusual. Which conclusion is justified?",
+     "prompt_markup": "A player claims to make 70% of her free throws. She made 11 of 20. The histogram shows 200 simulated runs of 20 shots under the claim. Count runs with 11 or fewer makes. Use 5% as the cutoff for unusual. Which conclusion is justified?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "She made 11, not the expected 14, so the claim is false."
+      },
+      {
+       "letter": "B",
+       "text": "24 of 200 runs (12%) had 11 or fewer makes, so the 70% claim is proved true."
+      },
+      {
+       "letter": "C",
+       "text": "24 of 200 runs (12%) had 11 or fewer makes; 12% > 5%, so the result is consistent with the claim."
+      },
+      {
+       "letter": "D",
+       "text": "6 of 200 runs (3%) had 9 or fewer makes; 3% < 5%, so 11 makes is unusual."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Yes: 11 or fewer made shots happened in 6 + 18 = 24 of 200 runs (12%), which is not unusual",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "24 of 200 runs (12%) had 11 or fewer makes; 12% > 5%, so the result is consistent with the claim.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: decision and proportion.",
+     "grading_note": "6 + 18 = 24 runs. Not unusual is not proof.",
      "figure": {
       "svg": "assets/S64-M-Q4.svg",
       "png": "assets/S64-M-Q4.png",
@@ -309,15 +369,15 @@
        "ylabel": "Number of runs"
       }
      },
-     "page": 2349,
-     "revision": "unchanged",
+     "page": 2386,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Algebra II",
-     "question_page": 2349,
-     "answer_key_page": 2349
+     "question_page": 2386,
+     "answer_key_page": 2386
     },
     {
      "id": "S64-M-Q5",
@@ -336,19 +396,34 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "A model says boys and girls are equally likely. A hospital had 58 boys in 100 births. The histogram shows 200 simulated runs. Is the model consistent? Justify.",
-     "prompt_markup": "A model says boys and girls are equally likely. A hospital had 58 boys in 100 births. The histogram shows 200 simulated runs. Is the model consistent? Justify.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A model says boys and girls are equally likely. A hospital had 58 boys in 100 births. The histogram shows 200 simulated runs of 100 births under the model. Count runs with 58 or more boys. Use 5% as the cutoff for unusual. Which conclusion is justified?",
+     "prompt_markup": "A model says boys and girls are equally likely. A hospital had 58 boys in 100 births. The histogram shows 200 simulated runs of 100 births under the model. Count runs with 58 or more boys. Use 5% as the cutoff for unusual. Which conclusion is justified?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "19 of 200 runs (9.5%) had 58 or more boys, so the model is proved true."
+      },
+      {
+       "letter": "B",
+       "text": "19 runs had 58 or more boys, and 19 is more than 5, so the result is unusual."
+      },
+      {
+       "letter": "C",
+       "text": "There were 58 boys, not the expected 50, so the model is false."
+      },
+      {
+       "letter": "D",
+       "text": "19 of 200 runs (9.5%) had 58 or more boys; 9.5% > 5%, so the result is consistent with the model."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Yes: 58 or more boys happened in 19 of 200 runs (9.5%), which is not unusual at the 5% level",
+     "answer_lines": [],
+     "correct_letter": "D",
+     "correct_answer": "19 of 200 runs (9.5%) had 58 or more boys; 9.5% > 5%, so the result is consistent with the model.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: decision and proportion.",
+     "grading_note": "19/200 = 9.5%.",
      "figure": {
       "svg": "assets/S64-M-Q5.svg",
       "png": "assets/S64-M-Q5.png",
@@ -379,15 +454,15 @@
        "ylabel": "Number of runs"
       }
      },
-     "page": 2350,
-     "revision": "unchanged",
+     "page": 2387,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Algebra II",
-     "question_page": 2350,
-     "answer_key_page": 2350
+     "question_page": 2387,
+     "answer_key_page": 2387
     }
    ]
   },
@@ -435,15 +510,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2352,
+     "page": 2389,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Probability as long-run relative frequency",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2352,
-     "answer_key_page": 2352
+     "question_page": 2389,
+     "answer_key_page": 2389
     },
     {
      "id": "S64-B1-Q2",
@@ -474,15 +549,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2353,
+     "page": 2390,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Probability as long-run relative frequency",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2353,
-     "answer_key_page": 2353
+     "question_page": 2390,
+     "answer_key_page": 2390
     },
     {
      "id": "S64-B1-Q3",
@@ -520,15 +595,15 @@
      "required_method": null,
      "grading_note": "Results vary.",
      "figure": null,
-     "page": 2354,
+     "page": 2391,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Probability as long-run relative frequency",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2354,
-     "answer_key_page": 2354
+     "question_page": 2391,
+     "answer_key_page": 2391
     },
     {
      "id": "S64-B1-Q4",
@@ -574,15 +649,15 @@
      "required_method": null,
      "grading_note": "60/6.",
      "figure": null,
-     "page": 2355,
+     "page": 2392,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Probability as long-run relative frequency",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2355,
-     "answer_key_page": 2355
+     "question_page": 2392,
+     "answer_key_page": 2392
     },
     {
      "id": "S64-B1-Q5",
@@ -599,29 +674,44 @@
      "domain": "Statistics & Probability",
      "skill": "Probability as long-run relative frequency",
      "nearest_related": false,
-     "type": "sa",
-     "response": "write",
-     "prompt": "Why is 26 heads in 50 flips not surprising?",
-     "prompt_markup": "Why is 26 heads in 50 flips not surprising?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A fair coin is flipped 50 times and lands heads 26 times. Why is this not surprising?",
+     "prompt_markup": "A fair coin is flipped 50 times and lands heads 26 times. Why is this not surprising?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "26 is close to the expected 25, and results vary by chance."
+      },
+      {
+       "letter": "B",
+       "text": "Every number of heads from 0 to 50 is equally likely."
+      },
+      {
+       "letter": "C",
+       "text": "A fair coin always gives exactly 26 heads in 50 flips."
+      },
+      {
+       "letter": "D",
+       "text": "26 is more than half, which proves the coin is fair."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "It is close to the expected 25; chance variation is normal",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "26 is close to the expected 25, and results vary by chance.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer.",
+     "grading_note": "Chance variation around 25.",
      "figure": null,
-     "page": 2356,
-     "revision": "unchanged",
+     "page": 2393,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Probability as long-run relative frequency",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2356,
-     "answer_key_page": 2356
+     "question_page": 2393,
+     "answer_key_page": 2393
     }
    ]
   },
@@ -655,29 +745,44 @@
      "domain": "Statistics & Probability",
      "skill": "Use simulations of compound events",
      "nearest_related": false,
-     "type": "sa",
-     "response": "write",
-     "prompt": "Describe how to simulate 50 fair coin flips with random digits.",
-     "prompt_markup": "Describe how to simulate 50 fair coin flips with random digits.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which design simulates 50 flips of a fair coin with random digits 0-9?",
+     "prompt_markup": "Which design simulates 50 flips of a fair coin with random digits 0-9?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Use 50 random digits; only the digit 5 = heads."
+      },
+      {
+       "letter": "B",
+       "text": "Use 50 random digits; even = heads, odd = tails."
+      },
+      {
+       "letter": "C",
+       "text": "Use 50 random digits; 0 = heads, 1-9 = tails."
+      },
+      {
+       "letter": "D",
+       "text": "Use 1 random digit and multiply it by 50."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Use 50 random digits; even = heads, odd = tails",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "Use 50 random digits; even = heads, odd = tails.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any valid design.",
+     "grading_note": "Half of the digits must represent heads.",
      "figure": null,
-     "page": 2358,
-     "revision": "unchanged",
+     "page": 2395,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Use simulations of compound events",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2358,
-     "answer_key_page": 2358
+     "question_page": 2395,
+     "answer_key_page": 2395
     },
     {
      "id": "S64-B2-Q2",
@@ -694,29 +799,44 @@
      "domain": "Statistics & Probability",
      "skill": "Use simulations of compound events",
      "nearest_related": false,
-     "type": "sa",
-     "response": "write",
-     "prompt": "How could you simulate one spin of a spinner with P(red) = 0.25 using two-digit random numbers 00-99?",
-     "prompt_markup": "How could you simulate one spin of a spinner with P(red) = 0.25 using two-digit random numbers 00-99?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which design simulates one spin of a spinner with P(red) = 0.25 using two-digit random numbers 00-99?",
+     "prompt_markup": "Which design simulates one spin of a spinner with P(red) = 0.25 using two-digit random numbers 00-99?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "00-25 = red; 26-99 = not red"
+      },
+      {
+       "letter": "B",
+       "text": "25 = red; all other numbers = not red"
+      },
+      {
+       "letter": "C",
+       "text": "00-49 = red; 50-99 = not red"
+      },
+      {
+       "letter": "D",
+       "text": "00-24 = red; 25-99 = not red"
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "D",
      "correct_answer": "00-24 = red; 25-99 = not red",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any valid design with 25 of the 100 numbers for red.",
+     "grading_note": "25 of the 100 numbers must mean red; 00-25 has 26.",
      "figure": null,
-     "page": 2359,
-     "revision": "unchanged",
+     "page": 2396,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Use simulations of compound events",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2359,
-     "answer_key_page": 2359
+     "question_page": 2396,
+     "answer_key_page": 2396
     },
     {
      "id": "S64-B2-Q3",
@@ -754,15 +874,15 @@
      "required_method": null,
      "grading_note": "Model.",
      "figure": null,
-     "page": 2360,
+     "page": 2397,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Use simulations of compound events",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2360,
-     "answer_key_page": 2360
+     "question_page": 2397,
+     "answer_key_page": 2397
     },
     {
      "id": "S64-B2-Q4",
@@ -808,15 +928,15 @@
      "required_method": null,
      "grading_note": "Run = experiment.",
      "figure": null,
-     "page": 2361,
+     "page": 2398,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Use simulations of compound events",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2361,
-     "answer_key_page": 2361
+     "question_page": 2398,
+     "answer_key_page": 2398
     },
     {
      "id": "S64-B2-Q5",
@@ -833,29 +953,44 @@
      "domain": "Statistics & Probability",
      "skill": "Use simulations of compound events",
      "nearest_related": false,
-     "type": "sa",
-     "response": "write",
-     "prompt": "Why are many runs used?",
-     "prompt_markup": "Why are many runs used?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Why does a simulation use many runs instead of just one?",
+     "prompt_markup": "Why does a simulation use many runs instead of just one?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because a single run always gives the wrong answer."
+      },
+      {
+       "letter": "B",
+       "text": "Because more runs change the model's probabilities."
+      },
+      {
+       "letter": "C",
+       "text": "To see the pattern of results the model produces by chance."
+      },
+      {
+       "letter": "D",
+       "text": "To make the model match the observed data exactly."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "To see the pattern of results that the model produces by chance",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "To see the pattern of results the model produces by chance.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer.",
+     "grading_note": "Many runs show the distribution under the model. The others are false: one run is not wrong, more runs do not change the model, and runs are not fitted to the data.",
      "figure": null,
-     "page": 2362,
-     "revision": "unchanged",
+     "page": 2399,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Use simulations of compound events",
      "alignment_type": "exact prerequisite standard",
      "course_level": "Grade 7",
-     "question_page": 2362,
-     "answer_key_page": 2362
+     "question_page": 2399,
+     "answer_key_page": 2399
     }
    ]
   },
@@ -903,15 +1038,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2364,
+     "page": 2401,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Relative frequency of a group of outcomes",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 6",
-     "question_page": 2364,
-     "answer_key_page": 2364
+     "question_page": 2401,
+     "answer_key_page": 2401
     },
     {
      "id": "S64-B3-Q2",
@@ -942,15 +1077,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 2365,
+     "page": 2402,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Relative frequency of a group of outcomes",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 6",
-     "question_page": 2365,
-     "answer_key_page": 2365
+     "question_page": 2402,
+     "answer_key_page": 2402
     },
     {
      "id": "S64-B3-Q3",
@@ -988,15 +1123,15 @@
      "required_method": null,
      "grading_note": "19/200 = 0.095 = 9.5%.",
      "figure": null,
-     "page": 2366,
+     "page": 2403,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Relative frequency of a group of outcomes",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 6",
-     "question_page": 2366,
-     "answer_key_page": 2366
+     "question_page": 2403,
+     "answer_key_page": 2403
     },
     {
      "id": "S64-B3-Q4",
@@ -1042,15 +1177,15 @@
      "required_method": null,
      "grading_note": "34/200.",
      "figure": null,
-     "page": 2367,
+     "page": 2404,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Relative frequency of a group of outcomes",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 6",
-     "question_page": 2367,
-     "answer_key_page": 2367
+     "question_page": 2404,
+     "answer_key_page": 2404
     },
     {
      "id": "S64-B3-Q5",
@@ -1069,8 +1204,8 @@
      "nearest_related": false,
      "type": "sa",
      "response": "write",
-     "prompt": "Is 2% less than 5%?",
-     "prompt_markup": "Is 2% less than 5%?",
+     "prompt": "Is 2% less than 5%? Answer Yes or No.",
+     "prompt_markup": "Is 2% less than 5%? Answer Yes or No.",
      "choices": [],
      "answer_lines": [
       "Answer:"
@@ -1079,17 +1214,17 @@
      "correct_answer": "Yes",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer.",
+     "grading_note": "Compare the percents.",
      "figure": null,
-     "page": 2368,
-     "revision": "unchanged",
+     "page": 2405,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Relative frequency of a group of outcomes",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 6",
-     "question_page": 2368,
-     "answer_key_page": 2368
+     "question_page": 2405,
+     "answer_key_page": 2405
     }
    ]
   },
@@ -1126,29 +1261,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Describe a simulation to test whether a basketball player really makes 70% of free throws, given that she made 11 of 20.",
-     "prompt_markup": "Describe a simulation to test whether a basketball player really makes 70% of free throws, given that she made 11 of 20.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A player claims to make 70% of her free throws, and she made 11 of 20. Which simulation tests the claim?",
+     "prompt_markup": "A player claims to make 70% of her free throws, and she made 11 of 20. Which simulation tests the claim?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Digits 0-6 = make; 20 digits per run; repeat many runs; find how often 11 or fewer makes occur."
+      },
+      {
+       "letter": "B",
+       "text": "Digits 0-6 = make; 20 digits in a single run; the claim is true if that run has 14 makes."
+      },
+      {
+       "letter": "C",
+       "text": "Digits 0-4 = make; 20 digits per run; repeat many runs; find how often exactly 11 makes occur."
+      },
+      {
+       "letter": "D",
+       "text": "Digits 0-6 = make; 11 digits per run; repeat many runs; find how often 20 makes occur."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Use random digits 0-9 with 0-6 = make; take 20 digits per run, count makes; repeat many runs; see how often 11 or fewer makes occur.",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "Digits 0-6 = make; 20 digits per run; repeat many runs; find how often 11 or fewer makes occur.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any valid design with all parts.",
+     "grading_note": "7 of 10 digits model 70%; each run copies 20 shots; count results at least as extreme.",
      "figure": null,
-     "page": 2370,
-     "revision": "unchanged",
+     "page": 2407,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Design a simulation to test a model",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II",
-     "question_page": 2370,
-     "answer_key_page": 2370
+     "question_page": 2407,
+     "answer_key_page": 2407
     },
     {
      "id": "S64-F1-Q2",
@@ -1167,29 +1317,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "A player who claims to make 70% of free throws made 11 of 20. Why should a simulation count results of 11 or fewer (as extreme or more extreme) rather than exactly 11?",
-     "prompt_markup": "A player who claims to make 70% of free throws made 11 of 20. Why should a simulation count results of 11 or fewer (as extreme or more extreme) rather than exactly 11?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A player who claims to make 70% of free throws made 11 of 20. Why should a simulation count runs with 11 or fewer makes, not only runs with exactly 11?",
+     "prompt_markup": "A player who claims to make 70% of free throws made 11 of 20. Why should a simulation count runs with 11 or fewer makes, not only runs with exactly 11?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Any one exact count can be rare; the question is how often results at least this far below the claim occur."
+      },
+      {
+       "letter": "B",
+       "text": "Runs with exactly 11 makes are impossible under the model, so they would never be counted at all."
+      },
+      {
+       "letter": "C",
+       "text": "The claim is about making 11 or fewer shots, not about making 70% of her free throws."
+      },
+      {
+       "letter": "D",
+       "text": "Counting 11 or fewer always makes the result significant, which is the goal of the simulation."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Any single exact value can be rare; the question is how unusual results this far from the claim are.",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "Any one exact count can be rare; the question is how often results at least this far below the claim occur.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "Use results as extreme or more extreme.",
      "figure": null,
-     "page": 2371,
-     "revision": "unchanged",
+     "page": 2408,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Design a simulation to test a model",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II",
-     "question_page": 2371,
-     "answer_key_page": 2371
+     "question_page": 2408,
+     "answer_key_page": 2408
     },
     {
      "id": "S64-F1-Q3",
@@ -1229,15 +1394,15 @@
      "required_method": null,
      "grading_note": "30% is common.",
      "figure": null,
-     "page": 2372,
+     "page": 2409,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Design a simulation to test a model",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II",
-     "question_page": 2372,
-     "answer_key_page": 2372
+     "question_page": 2409,
+     "answer_key_page": 2409
     },
     {
      "id": "S64-F1-Q4",
@@ -1285,15 +1450,15 @@
      "required_method": null,
      "grading_note": "Convention.",
      "figure": null,
-     "page": 2373,
+     "page": 2410,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Design a simulation to test a model",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II",
-     "question_page": 2373,
-     "answer_key_page": 2373
+     "question_page": 2410,
+     "answer_key_page": 2410
     },
     {
      "id": "S64-F1-Q5",
@@ -1312,29 +1477,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Doubling the number of runs from 200 to 400 changes what about the simulation?",
-     "prompt_markup": "Doubling the number of runs from 200 to 400 changes what about the simulation?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A simulation of a model is run 400 times instead of 200 times. What does this change?",
+     "prompt_markup": "A simulation of a model is run 400 times instead of 200 times. What does this change?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It changes the observed data that the model is compared with."
+      },
+      {
+       "letter": "B",
+       "text": "It changes the probabilities that the model assigns to each outcome."
+      },
+      {
+       "letter": "C",
+       "text": "It turns an unusual result into a usual one, because more runs are counted."
+      },
+      {
+       "letter": "D",
+       "text": "It gives a more precise estimate of how often a result occurs under the model."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "It gives a more precise estimate of how often the result occurs under the model (the model and data are unchanged).",
+     "answer_lines": [],
+     "correct_letter": "D",
+     "correct_answer": "It gives a more precise estimate of how often a result occurs under the model.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer.",
+     "grading_note": "More runs estimate the model's proportion more precisely; the model and data are unchanged.",
      "figure": null,
-     "page": 2374,
-     "revision": "unchanged",
+     "page": 2411,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Design a simulation to test a model",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II",
-     "question_page": 2374,
-     "answer_key_page": 2374
+     "question_page": 2411,
+     "answer_key_page": 2411
     }
    ]
   },
@@ -1372,19 +1552,34 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "In an experiment, fertilized plants grew 2.9 cm more on average. In 200 re-randomizations, none of the differences was 2.9 cm or more. What do you conclude?",
-     "prompt_markup": "In an experiment, fertilized plants grew 2.9 cm more on average. In 200 re-randomizations, none of the differences was 2.9 cm or more. What do you conclude?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "In an experiment, 20 plants were randomly assigned to fertilizer or no fertilizer, and the fertilized plants grew 2.9 cm more on average. The histogram shows 200 re-randomized differences under the model that fertilizer has no effect; none was 2.9 cm or more. Use 5% as the cutoff for unusual. What do you conclude?",
+     "prompt_markup": "In an experiment, 20 plants were randomly assigned to fertilizer or no fertilizer, and the fertilized plants grew 2.9 cm more on average. The histogram shows 200 re-randomized differences under the model that fertilizer has no effect; none was 2.9 cm or more. Use 5% as the cutoff for unusual. What do you conclude?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "0/200 < 5%: a difference this large is very unlikely by chance, so fertilizer appears to increase growth."
+      },
+      {
+       "letter": "B",
+       "text": "The difference is not significant, because no re-randomized difference matched it exactly."
+      },
+      {
+       "letter": "C",
+       "text": "0/200: a difference this large has probability exactly 0, so the fertilizer is proved to work."
+      },
+      {
+       "letter": "D",
+       "text": "No conclusion is possible, because the result must first be compared with a fair coin."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "The difference is very unlikely by chance alone, so the fertilizer appears to increase growth",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "0/200 < 5%: a difference this large is very unlikely by chance, so fertilizer appears to increase growth.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: conclusion and reason.",
+     "grading_note": "A rare result is evidence of an effect, not proof; probability is not shown to be zero.",
      "figure": {
       "svg": "assets/S64-F2-Q1.svg",
       "png": "assets/S64-F2-Q1.png",
@@ -1417,15 +1612,15 @@
        "ylabel": "Count"
       }
      },
-     "page": 2376,
-     "revision": "unchanged",
+     "page": 2413,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Compare two treatments with a re-randomization simulation",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II",
-     "question_page": 2376,
-     "answer_key_page": 2376
+     "question_page": 2413,
+     "answer_key_page": 2413
     },
     {
      "id": "S64-F2-Q2",
@@ -1444,29 +1639,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "What model does the re-randomization assume?",
-     "prompt_markup": "What model does the re-randomization assume?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "What model does a re-randomization simulation assume?",
+     "prompt_markup": "What model does a re-randomization simulation assume?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The two groups were chosen by voluntary response."
+      },
+      {
+       "letter": "B",
+       "text": "The observed difference is exactly the true effect."
+      },
+      {
+       "letter": "C",
+       "text": "The treatment has no effect, so the group labels can be shuffled."
+      },
+      {
+       "letter": "D",
+       "text": "The treatment has the same large effect on every subject."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "That the treatment has no effect, so group labels can be shuffled",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "The treatment has no effect, so the group labels can be shuffled.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer.",
+     "grading_note": "The null model.",
      "figure": null,
-     "page": 2377,
-     "revision": "unchanged",
+     "page": 2414,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Compare two treatments with a re-randomization simulation",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II",
-     "question_page": 2377,
-     "answer_key_page": 2377
+     "question_page": 2414,
+     "answer_key_page": 2414
     },
     {
      "id": "S64-F2-Q3",
@@ -1506,15 +1716,15 @@
      "required_method": null,
      "grading_note": "Both test a model.",
      "figure": null,
-     "page": 2378,
+     "page": 2415,
      "revision": "unchanged",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Compare two treatments with a re-randomization simulation",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II",
-     "question_page": 2378,
-     "answer_key_page": 2378
+     "question_page": 2415,
+     "answer_key_page": 2415
     },
     {
      "id": "S64-F2-Q4",
@@ -1535,8 +1745,8 @@
      "standard_course": "Algebra II",
      "type": "mc",
      "response": "select one",
-     "prompt": "If 60 of 200 re-randomized differences were at least the observed one, the result is",
-     "prompt_markup": "If 60 of 200 re-randomized differences were at least the observed one, the result is",
+     "prompt": "Under the model of no treatment effect, 60 of 200 re-randomized differences were at least as large as the observed one. Use 5% as the cutoff for unusual. The result is",
+     "prompt_markup": "Under the model of no treatment effect, 60 of 200 re-randomized differences were at least as large as the observed one. Use 5% as the cutoff for unusual. The result is",
      "choices": [
       {
        "letter": "A",
@@ -1560,17 +1770,17 @@
      "correct_answer": "not statistically significant",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "30% is common.",
+     "grading_note": "30% is common; not significant does not prove the model.",
      "figure": null,
-     "page": 2379,
-     "revision": "unchanged",
+     "page": 2416,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Compare two treatments with a re-randomization simulation",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II",
-     "question_page": 2379,
-     "answer_key_page": 2379
+     "question_page": 2416,
+     "answer_key_page": 2416
     },
     {
      "id": "S64-F2-Q5",
@@ -1589,29 +1799,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain how a re-randomization test for an experiment extends the reasoning used to test a fair-coin claim with a simulation.",
-     "prompt_markup": "Explain how a re-randomization test for an experiment extends the reasoning used to test a fair-coin claim with a simulation.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "How does a re-randomization test for an experiment extend the reasoning of testing a fair-coin claim with a simulation?",
+     "prompt_markup": "How does a re-randomization test for an experiment extend the reasoning of testing a fair-coin claim with a simulation?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Both flip a real coin many times and then count how many heads appear in each of the groups of subjects in the study."
+      },
+      {
+       "letter": "B",
+       "text": "Both ask how often a model produces a result at least as extreme as the observed one; here the model is \"no treatment effect.\""
+      },
+      {
+       "letter": "C",
+       "text": "The coin test uses a probability model, but the re-randomization test does not use any model of the results at all."
+      },
+      {
+       "letter": "D",
+       "text": "Both prove the model is true whenever the observed result turns out to be common among the simulated results."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Both ask how often a model produces a result as extreme as the observed one; here the model is \"no treatment effect\".",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "Both ask how often a model produces a result at least as extreme as the observed one; here the model is \"no treatment effect.\"",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "Same logic, different null model. The others describe flipping a real coin, deny that re-randomization uses a model, or treat a common result as proof.",
      "figure": null,
-     "page": 2380,
-     "revision": "unchanged",
+     "page": 2417,
+     "revision": "revised",
      "strand": "core",
      "set_target": "Use supplied simulation results to decide whether a probability model is consistent with an observed result",
      "target_skill": "Compare two treatments with a re-randomization simulation",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II",
-     "question_page": 2380,
-     "answer_key_page": 2380
+     "question_page": 2417,
+     "answer_key_page": 2417
     }
    ]
   }

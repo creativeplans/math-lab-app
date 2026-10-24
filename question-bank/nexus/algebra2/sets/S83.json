@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -50,29 +50,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain why sin x has no inverse on all real numbers, and give a restricted domain on which it does.",
-     "prompt_markup": "Explain why sin x has no inverse on all real numbers, and give a restricted domain on which it does.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Why does sin x have no inverse on all real numbers, and on which restricted domain does it have one?",
+     "prompt_markup": "Why does sin x have no inverse on all real numbers, and on which restricted domain does it have one?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "sin repeats values, so it is not one-to-one; on 0 ≤ x ≤ π it is increasing and takes each value in [-1, 1] once."
+      },
+      {
+       "letter": "B",
+       "text": "sin is not defined for all real numbers; on 0 ≤ x ≤ π it is defined and takes each value in [-1, 1] once."
+      },
+      {
+       "letter": "C",
+       "text": "sin repeats values, so it is not one-to-one; on -π/2 ≤ x ≤ π/2 it is increasing and takes each value in [-1, 1] once."
+      },
+      {
+       "letter": "D",
+       "text": "sin has outputs greater than 1 for large x; on -π ≤ x ≤ π it takes each value in [-1, 1] exactly once."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "sin repeats values (not one-to-one); on -π/2 ≤ x ≤ π/2 it is increasing and takes every value in [-1, 1] once",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "sin repeats values, so it is not one-to-one; on -π/2 ≤ x ≤ π/2 it is increasing and takes each value in [-1, 1] once.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: reason and domain.",
+     "grading_note": "On [0, π] sin rises then falls; on [-π, π] values repeat. The others use [0, π] or [-π, π], where values repeat, or claim false facts about the domain and outputs of sin.",
      "figure": null,
-     "page": 3049,
-     "revision": "unchanged",
+     "page": 3086,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3049,
-     "answer_key_page": 3049
+     "question_page": 3086,
+     "answer_key_page": 3086
     },
     {
      "id": "S83-M-Q2",
@@ -91,29 +106,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Give the standard restricted domain of cos x and justify it.",
-     "prompt_markup": "Give the standard restricted domain of cos x and justify it.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "What is the standard restricted domain of cos x, and why does it work?",
+     "prompt_markup": "What is the standard restricted domain of cos x, and why does it work?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "0 ≤ x ≤ 2π: cos takes every value from -1 to 1 there, so it is enough."
+      },
+      {
+       "letter": "B",
+       "text": "0 ≤ x ≤ π: cos decreases from 1 to -1 there, taking each value once."
+      },
+      {
+       "letter": "C",
+       "text": "-π/2 ≤ x ≤ π/2: cos increases from -1 to 1 there, taking each value once."
+      },
+      {
+       "letter": "D",
+       "text": "-π ≤ x ≤ 0: cos decreases from 1 to -1 there, taking each value once."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "0 ≤ x ≤ π: cos decreases from 1 to -1 there, taking each value once",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "0 ≤ x ≤ π: cos decreases from 1 to -1 there, taking each value once.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: domain and reason.",
+     "grading_note": "On [-π/2, π/2] cos rises and falls; on [-π, 0] it increases. The others use [-π/2, π/2], where cos rises then falls, [0, 2π], where values repeat, or [-π, 0], where cos increases.",
      "figure": null,
-     "page": 3050,
-     "revision": "unchanged",
+     "page": 3087,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3050,
-     "answer_key_page": 3050
+     "question_page": 3087,
+     "answer_key_page": 3087
     },
     {
      "id": "S83-M-Q3",
@@ -132,29 +162,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Give the standard restricted domain of tan x and justify it.",
-     "prompt_markup": "Give the standard restricted domain of tan x and justify it.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "What is the standard restricted domain of tan x, and why does it work?",
+     "prompt_markup": "What is the standard restricted domain of tan x, and why does it work?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "-π/2 < x < π/2: tan increases from -∞ to ∞ there, taking each real value once."
+      },
+      {
+       "letter": "B",
+       "text": "0 < x < π: tan is defined and increasing at every point of that interval."
+      },
+      {
+       "letter": "C",
+       "text": "0 ≤ x < π/2: tan increases there and takes each real value exactly once."
+      },
+      {
+       "letter": "D",
+       "text": "-π/2 ≤ x ≤ π/2: tan increases there, including its values at both endpoints."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "-π/2 < x < π/2: tan increases from -∞ to ∞ there, taking each real value once",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "-π/2 < x < π/2: tan increases from -∞ to ∞ there, taking each real value once.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: domain and reason.",
+     "grading_note": "tan is undefined at ±π/2 and takes only nonnegative values on [0, π/2). The others include π/2 (where tan is undefined), include the endpoints ±π/2, or use [0, π/2), which gives only nonnegative values.",
      "figure": null,
-     "page": 3051,
-     "revision": "unchanged",
+     "page": 3088,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3051,
-     "answer_key_page": 3051
+     "question_page": 3088,
+     "answer_key_page": 3088
     },
     {
      "id": "S83-M-Q4",
@@ -173,29 +218,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Evaluate arcsin(1/2) and explain why it is not 5π/6.",
-     "prompt_markup": "Evaluate arcsin(1/2) and explain why it is not 5π/6.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "What is arcsin(1/2), and why is it not 5π/6?",
+     "prompt_markup": "What is arcsin(1/2), and why is it not 5π/6?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "π/6 and 5π/6: arcsin gives every angle in [0, 2π) whose sine is 1/2."
+      },
+      {
+       "letter": "B",
+       "text": "π/3: arcsin(1/2) is the angle whose cosine is 1/2, not 5π/6."
+      },
+      {
+       "letter": "C",
+       "text": "5π/6: arcsin gives the largest angle in [0, 2π) whose sine is 1/2."
+      },
+      {
+       "letter": "D",
+       "text": "π/6: arcsin outputs only angles in [-π/2, π/2], and 5π/6 is outside that interval."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "π/6: arcsin outputs only angles in [-π/2, π/2], and 5π/6 is outside",
+     "answer_lines": [],
+     "correct_letter": "D",
+     "correct_answer": "π/6: arcsin outputs only angles in [-π/2, π/2], and 5π/6 is outside that interval.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: value and reason.",
+     "grading_note": "An inverse function has one output. The others give an angle outside the range of arcsin, give two outputs for one input, or use the cosine value.",
      "figure": null,
-     "page": 3052,
-     "revision": "unchanged",
+     "page": 3089,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3052,
-     "answer_key_page": 3052
+     "question_page": 3089,
+     "answer_key_page": 3089
     },
     {
      "id": "S83-M-Q5",
@@ -228,15 +288,15 @@
      "required_method": null,
      "grading_note": "Form required: exact value in [0, π].",
      "figure": null,
-     "page": 3053,
+     "page": 3090,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "alignment_type": "direct (MAIN: the set's own advanced extension (+) standard)",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3053,
-     "answer_key_page": 3053
+     "question_page": 3090,
+     "answer_key_page": 3090
     }
    ]
   },
@@ -272,29 +332,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Give a domain on which f(x) = x² is invertible.",
-     "prompt_markup": "Give a domain on which f(x) = x² is invertible.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "On which domain is f(x) = x² invertible?",
+     "prompt_markup": "On which domain is f(x) = x² invertible?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "all real numbers"
+      },
+      {
+       "letter": "B",
+       "text": "x ≥ -2"
+      },
+      {
+       "letter": "C",
+       "text": "x ≥ 0"
+      },
+      {
+       "letter": "D",
+       "text": "-1 ≤ x ≤ 1"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "x ≥ 0 (or x ≤ 0)",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "x ≥ 0",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any valid domain.",
+     "grading_note": "f is one-to-one on one side of the vertex only.",
      "figure": null,
-     "page": 3055,
-     "revision": "unchanged",
+     "page": 3092,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "Restrict a domain to make a function invertible",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3055,
-     "answer_key_page": 3055
+     "question_page": 3092,
+     "answer_key_page": 3092
     },
     {
      "id": "S83-B1-Q2",
@@ -313,29 +388,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Why does the restricted function need to be increasing or decreasing?",
-     "prompt_markup": "Why does the restricted function need to be increasing or decreasing?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Why must a function be strictly increasing or strictly decreasing on an interval to be invertible there?",
+     "prompt_markup": "Why must a function be strictly increasing or strictly decreasing on an interval to be invertible there?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Then the function is defined at every real number, inside and outside the interval."
+      },
+      {
+       "letter": "B",
+       "text": "Then the function has no zeros on the interval, so it never crosses the x-axis."
+      },
+      {
+       "letter": "C",
+       "text": "Then the outputs are all positive on the interval, so each can be undone."
+      },
+      {
+       "letter": "D",
+       "text": "Then no output repeats on the interval, so each output comes from exactly one input."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Then no output repeats, so each output has one input",
+     "answer_lines": [],
+     "correct_letter": "D",
+     "correct_answer": "Then no output repeats on the interval, so each output comes from exactly one input.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer.",
+     "grading_note": "Strict monotonicity on an interval implies one-to-one there. The others name properties (domain, zeros, positive outputs) that do not make a function one-to-one.",
      "figure": null,
-     "page": 3056,
-     "revision": "unchanged",
+     "page": 3093,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "Restrict a domain to make a function invertible",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3056,
-     "answer_key_page": 3056
+     "question_page": 3093,
+     "answer_key_page": 3093
     },
     {
      "id": "S83-B1-Q3",
@@ -375,15 +465,15 @@
      "required_method": null,
      "grading_note": "Monotonic.",
      "figure": null,
-     "page": 3057,
+     "page": 3094,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "Restrict a domain to make a function invertible",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3057,
-     "answer_key_page": 3057
+     "question_page": 3094,
+     "answer_key_page": 3094
     },
     {
      "id": "S83-B1-Q4",
@@ -431,15 +521,15 @@
      "required_method": null,
      "grading_note": "One side of the vertex.",
      "figure": null,
-     "page": 3058,
+     "page": 3095,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "Restrict a domain to make a function invertible",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3058,
-     "answer_key_page": 3058
+     "question_page": 3095,
+     "answer_key_page": 3095
     },
     {
      "id": "S83-B1-Q5",
@@ -458,29 +548,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Write the inverse of x² on x ≥ 0.",
-     "prompt_markup": "Write the inverse of x² on x ≥ 0.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which is the inverse of f(x) = x² on x ≥ 0?",
+     "prompt_markup": "Which is the inverse of f(x) = x² on x ≥ 0?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "-√x"
+      },
+      {
+       "letter": "B",
+       "text": "√x"
+      },
+      {
+       "letter": "C",
+       "text": "x/2"
+      },
+      {
+       "letter": "D",
+       "text": "1/x²"
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "B",
      "correct_answer": "√x",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form.",
+     "grading_note": "The outputs of the inverse must be ≥ 0.",
      "figure": null,
-     "page": 3059,
-     "revision": "unchanged",
+     "page": 3096,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "Restrict a domain to make a function invertible",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3059,
-     "answer_key_page": 3059
+     "question_page": 3096,
+     "answer_key_page": 3096
     }
    ]
   },
@@ -518,27 +623,28 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Give sin(π/6) and sin(5π/6).",
-     "prompt_markup": "Give sin(π/6) and sin(5π/6).",
+     "prompt": "Give sin(π/6) and sin(5π/6) exactly.",
+     "prompt_markup": "Give sin(π/6) and sin(5π/6) exactly.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "sin(π/6) =",
+      "sin(5π/6) ="
      ],
      "correct_letter": null,
-     "correct_answer": "1/2 and 1/2",
+     "correct_answer": "1/2; 1/2",
      "drawing_answer": null,
      "required_method": null,
      "grading_note": "Form required: both.",
      "figure": null,
-     "page": 3061,
-     "revision": "unchanged",
+     "page": 3098,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "Exact values on the unit circle",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra II",
-     "question_page": 3061,
-     "answer_key_page": 3061
+     "question_page": 3098,
+     "answer_key_page": 3098
     },
     {
      "id": "S83-B2-Q2",
@@ -559,27 +665,28 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Give cos(2π/3) and cos(4π/3).",
-     "prompt_markup": "Give cos(2π/3) and cos(4π/3).",
+     "prompt": "Give cos(2π/3) and cos(4π/3) exactly.",
+     "prompt_markup": "Give cos(2π/3) and cos(4π/3) exactly.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "cos(2π/3) =",
+      "cos(4π/3) ="
      ],
      "correct_letter": null,
-     "correct_answer": "-1/2 and -1/2",
+     "correct_answer": "-1/2; -1/2",
      "drawing_answer": null,
      "required_method": null,
      "grading_note": "Form required: both.",
      "figure": null,
-     "page": 3062,
-     "revision": "unchanged",
+     "page": 3099,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "Exact values on the unit circle",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra II",
-     "question_page": 3062,
-     "answer_key_page": 3062
+     "question_page": 3099,
+     "answer_key_page": 3099
     },
     {
      "id": "S83-B2-Q3",
@@ -619,15 +726,15 @@
      "required_method": null,
      "grading_note": "tan(π/4) = 1 and tan(3π/4) = -1.",
      "figure": null,
-     "page": 3063,
+     "page": 3100,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "Exact values on the unit circle",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra II",
-     "question_page": 3063,
-     "answer_key_page": 3063
+     "question_page": 3100,
+     "answer_key_page": 3100
     },
     {
      "id": "S83-B2-Q4",
@@ -675,15 +782,15 @@
      "required_method": null,
      "grading_note": "Quadrant II.",
      "figure": null,
-     "page": 3064,
+     "page": 3101,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "Exact values on the unit circle",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra II",
-     "question_page": 3064,
-     "answer_key_page": 3064
+     "question_page": 3101,
+     "answer_key_page": 3101
     },
     {
      "id": "S83-B2-Q5",
@@ -716,15 +823,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 3065,
+     "page": 3102,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "Exact values on the unit circle",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra II",
-     "question_page": 3065,
-     "answer_key_page": 3065
+     "question_page": 3102,
+     "answer_key_page": 3102
     }
    ]
   },
@@ -774,15 +881,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 3067,
+     "page": 3104,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "Periodicity of trigonometric functions",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3067,
-     "answer_key_page": 3067
+     "question_page": 3104,
+     "answer_key_page": 3104
     },
     {
      "id": "S83-B3-Q2",
@@ -815,15 +922,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 3068,
+     "page": 3105,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "Periodicity of trigonometric functions",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3068,
-     "answer_key_page": 3068
+     "question_page": 3105,
+     "answer_key_page": 3105
     },
     {
      "id": "S83-B3-Q3",
@@ -863,15 +970,15 @@
      "required_method": null,
      "grading_note": "Values repeat.",
      "figure": null,
-     "page": 3069,
+     "page": 3106,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "Periodicity of trigonometric functions",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3069,
-     "answer_key_page": 3069
+     "question_page": 3106,
+     "answer_key_page": 3106
     },
     {
      "id": "S83-B3-Q4",
@@ -919,15 +1026,15 @@
      "required_method": null,
      "grading_note": "Every multiple of π.",
      "figure": null,
-     "page": 3070,
+     "page": 3107,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "Periodicity of trigonometric functions",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3070,
-     "answer_key_page": 3070
+     "question_page": 3107,
+     "answer_key_page": 3107
     },
     {
      "id": "S83-B3-Q5",
@@ -946,29 +1053,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Name two angles with cos = 1.",
-     "prompt_markup": "Name two angles with cos = 1.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which two angles both have cosine 1?",
+     "prompt_markup": "Which two angles both have cosine 1?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "0 and 2π"
+      },
+      {
+       "letter": "B",
+       "text": "0 and π"
+      },
+      {
+       "letter": "C",
+       "text": "π and 2π"
+      },
+      {
+       "letter": "D",
+       "text": "π/2 and 3π/2"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "0 and 2π (for example)",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "0 and 2π",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any two valid angles.",
+     "grading_note": "cos x = 1 at multiples of 2π.",
      "figure": null,
-     "page": 3071,
-     "revision": "unchanged",
+     "page": 3108,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "Periodicity of trigonometric functions",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3071,
-     "answer_key_page": 3071
+     "question_page": 3108,
+     "answer_key_page": 3108
     }
    ]
   },
@@ -1019,15 +1141,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 3073,
+     "page": 3110,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "Compose trigonometric functions with their inverses",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3073,
-     "answer_key_page": 3073
+     "question_page": 3110,
+     "answer_key_page": 3110
     },
     {
      "id": "S83-F1-Q2",
@@ -1060,15 +1182,15 @@
      "required_method": null,
      "grading_note": "Any equivalent form.",
      "figure": null,
-     "page": 3074,
+     "page": 3111,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "Compose trigonometric functions with their inverses",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3074,
-     "answer_key_page": 3074
+     "question_page": 3111,
+     "answer_key_page": 3111
     },
     {
      "id": "S83-F1-Q3",
@@ -1108,15 +1230,15 @@
      "required_method": null,
      "grading_note": "Only for 0 ≤ x ≤ π.",
      "figure": null,
-     "page": 3075,
+     "page": 3112,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "Compose trigonometric functions with their inverses",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3075,
-     "answer_key_page": 3075
+     "question_page": 3112,
+     "answer_key_page": 3112
     },
     {
      "id": "S83-F1-Q4",
@@ -1164,15 +1286,15 @@
      "required_method": null,
      "grading_note": "Into (-π/2, π/2).",
      "figure": null,
-     "page": 3076,
+     "page": 3113,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "Compose trigonometric functions with their inverses",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3076,
-     "answer_key_page": 3076
+     "question_page": 3113,
+     "answer_key_page": 3113
     },
     {
      "id": "S83-F1-Q5",
@@ -1191,29 +1313,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Give the domain and range of arccos.",
-     "prompt_markup": "Give the domain and range of arccos.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "What are the domain and range of arccos?",
+     "prompt_markup": "What are the domain and range of arccos?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "all real numbers; range [0, π]"
+      },
+      {
+       "letter": "B",
+       "text": "domain [0, π]; range [-1, 1]"
+      },
+      {
+       "letter": "C",
+       "text": "domain [-1, 1]; range [-π/2, π/2]"
+      },
+      {
+       "letter": "D",
+       "text": "domain [-1, 1]; range [0, π]"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Domain [-1, 1]; range [0, π]",
+     "answer_lines": [],
+     "correct_letter": "D",
+     "correct_answer": "domain [-1, 1]; range [0, π]",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: both.",
+     "grading_note": "arccos inverts cos on [0, π].",
      "figure": null,
-     "page": 3077,
-     "revision": "unchanged",
+     "page": 3114,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "Compose trigonometric functions with their inverses",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3077,
-     "answer_key_page": 3077
+     "question_page": 3114,
+     "answer_key_page": 3114
     }
    ]
   },
@@ -1253,27 +1390,27 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Solve sin x = 0.4 on 0 ≤ x < 2π to the nearest hundredth. A calculator may be used.",
-     "prompt_markup": "Solve sin x = 0.4 on 0 ≤ x < 2π to the nearest hundredth. A calculator may be used.",
+     "prompt": "Solve sin x = 0.4 on 0 ≤ x < 2π. Give both solutions to the nearest hundredth, separated by a comma. A calculator may be used.",
+     "prompt_markup": "Solve sin x = 0.4 on 0 ≤ x < 2π. Give both solutions to the nearest hundredth, separated by a comma. A calculator may be used.",
      "choices": [],
      "answer_lines": [
       "x ≈"
      ],
      "correct_letter": null,
-     "correct_answer": "0.41 and 2.73",
+     "correct_answer": "{0.41, 2.73}",
      "drawing_answer": null,
      "required_method": null,
      "grading_note": "Form required: both. arcsin(0.4) and π - arcsin(0.4).",
      "figure": null,
-     "page": 3079,
-     "revision": "unchanged",
+     "page": 3116,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "Solve trigonometric equations with inverses",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3079,
-     "answer_key_page": 3079
+     "question_page": 3116,
+     "answer_key_page": 3116
     },
     {
      "id": "S83-F2-Q2",
@@ -1294,27 +1431,27 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Solve cos x = 0.4 on 0 ≤ x < 2π to the nearest hundredth. A calculator may be used.",
-     "prompt_markup": "Solve cos x = 0.4 on 0 ≤ x < 2π to the nearest hundredth. A calculator may be used.",
+     "prompt": "Solve cos x = 0.4 on 0 ≤ x < 2π. Give both solutions to the nearest hundredth, separated by a comma. A calculator may be used.",
+     "prompt_markup": "Solve cos x = 0.4 on 0 ≤ x < 2π. Give both solutions to the nearest hundredth, separated by a comma. A calculator may be used.",
      "choices": [],
      "answer_lines": [
       "x ≈"
      ],
      "correct_letter": null,
-     "correct_answer": "1.16 and 5.12",
+     "correct_answer": "{1.16, 5.12}",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: both.",
+     "grading_note": "Form required: both. arccos(0.4) and 2π - arccos(0.4).",
      "figure": null,
-     "page": 3080,
-     "revision": "unchanged",
+     "page": 3117,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "Solve trigonometric equations with inverses",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3080,
-     "answer_key_page": 3080
+     "question_page": 3117,
+     "answer_key_page": 3117
     },
     {
      "id": "S83-F2-Q3",
@@ -1335,8 +1472,8 @@
      "standard_course": "Algebra II",
      "type": "tf",
      "response": "select true or false",
-     "prompt": "arcsin gives only one of the solutions of sin x = c on [0, 2π).",
-     "prompt_markup": "arcsin gives only one of the solutions of sin x = c on [0, 2π).",
+     "prompt": "For 0 < c < 1, arcsin c gives only one of the two solutions of sin x = c on [0, 2π).",
+     "prompt_markup": "For 0 < c < 1, arcsin c gives only one of the two solutions of sin x = c on [0, 2π).",
      "choices": [
       {
        "letter": "A",
@@ -1352,17 +1489,17 @@
      "correct_answer": "True",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Use symmetry for the other.",
+     "grading_note": "The other is π - arcsin c.",
      "figure": null,
-     "page": 3081,
-     "revision": "unchanged",
+     "page": 3118,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "Solve trigonometric equations with inverses",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3081,
-     "answer_key_page": 3081
+     "question_page": 3118,
+     "answer_key_page": 3118
     },
     {
      "id": "S83-F2-Q4",
@@ -1410,15 +1547,15 @@
      "required_method": null,
      "grading_note": "Quadrant II.",
      "figure": null,
-     "page": 3082,
+     "page": 3119,
      "revision": "unchanged",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "Solve trigonometric equations with inverses",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3082,
-     "answer_key_page": 3082
+     "question_page": 3119,
+     "answer_key_page": 3119
     },
     {
      "id": "S83-F2-Q5",
@@ -1437,29 +1574,44 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain how the restricted range of arccos is used to find all solutions of cos x = c.",
-     "prompt_markup": "Explain how the restricted range of arccos is used to find all solutions of cos x = c.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "For -1 < c < 1, how is the restricted range of arccos used to find both solutions of cos x = c on [0, 2π)?",
+     "prompt_markup": "For -1 < c < 1, how is the restricted range of arccos used to find both solutions of cos x = c on [0, 2π)?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "arccos c gives the solution in (0, π); the other is 2π - arccos c, by symmetry over the x-axis."
+      },
+      {
+       "letter": "B",
+       "text": "arccos c gives both solutions at once, because its range is the whole interval [0, 2π)."
+      },
+      {
+       "letter": "C",
+       "text": "arccos c gives the solution in (0, π); the other is π - arccos c, by symmetry over the y-axis."
+      },
+      {
+       "letter": "D",
+       "text": "arccos c gives the solution in (-π/2, π/2); the other is arccos c + π, by periodicity."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "arccos gives the solution in [0, π]; the other is 2π - arccos c by symmetry.",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "arccos c gives the solution in (0, π); the other is 2π - arccos c, by symmetry over the x-axis.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation.",
+     "grading_note": "cos is even: cos(2π - a) = cos(-a) = cos a.",
      "figure": null,
-     "page": 3083,
-     "revision": "unchanged",
+     "page": 3120,
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "State and justify the restricted domains for sine, cosine, and tangent, and evaluate inverse trigonometric functions on them",
      "target_skill": "Solve trigonometric equations with inverses",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
-     "question_page": 3083,
-     "answer_key_page": 3083
+     "question_page": 3120,
+     "answer_key_page": 3120
     }
    ]
   }

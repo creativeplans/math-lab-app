@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -52,20 +52,21 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "List the zeros of p(x) = (x - 4)²(x + 1)(2x - 3) and give the multiplicity of each.",
-     "prompt_markup": "List the zeros of p(x) = (x - 4)²(x + 1)(2x - 3) and give the multiplicity of each.",
+     "prompt": "p(x) = (x - 4)²(x + 1)(2x - 3). List the zero of multiplicity 2, and the zeros of multiplicity 1.",
+     "prompt_markup": "p(x) = (x - 4)²(x + 1)(2x - 3). List the zero of multiplicity 2, and the zeros of multiplicity 1.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Zero of multiplicity 2:",
+      "Zeros of multiplicity 1:"
      ],
      "correct_letter": null,
-     "correct_answer": "4 (multiplicity 2), -1 (multiplicity 1), 3/2 (multiplicity 1)",
+     "correct_answer": "4; -1 or 3/2",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: every zero with its multiplicity.",
+     "grading_note": "Form required: both parts (3/2 or 1.5). 2x - 3 = 0 gives x = 3/2.",
      "figure": null,
      "page": 601,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Factor a polynomial when needed and list every real zero with its multiplicity",
      "target_skill": "Factor a polynomial when needed and list every real zero with its multiplicity",
@@ -93,20 +94,22 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Factor p(x) = x³ - 6x² + 9x, then list its zeros with multiplicities.",
-     "prompt_markup": "Factor p(x) = x³ - 6x² + 9x, then list its zeros with multiplicities.",
+     "prompt": "p(x) = x³ - 6x² + 9x can be written as x(x - a)² with a positive number a. Find a, then give the zero of multiplicity 1 and the zero of multiplicity 2.",
+     "prompt_markup": "p(x) = x³ - 6x² + 9x can be written as x(x - a)² with a positive number a. Find a, then give the zero of multiplicity 1 and the zero of multiplicity 2.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "a =",
+      "Zero of multiplicity 1:",
+      "Zero of multiplicity 2:"
      ],
      "correct_letter": null,
-     "correct_answer": "p(x) = x(x - 3)²; 0 (multiplicity 1), 3 (multiplicity 2)",
+     "correct_answer": "3; 0; 3",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: factorization and zeros with multiplicities.",
+     "grading_note": "Form required: all three. x³ - 6x² + 9x = x(x² - 6x + 9) = x(x - 3)².",
      "figure": null,
      "page": 602,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Factor a polynomial when needed and list every real zero with its multiplicity",
      "target_skill": "Factor a polynomial when needed and list every real zero with its multiplicity",
@@ -214,22 +217,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Factor p(x) = x⁴ - 8x² + 16, then list its zeros with multiplicities.",
-     "prompt_markup": "Factor p(x) = x⁴ - 8x² + 16, then list its zeros with multiplicities.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which gives the factorization of p(x) = x⁴ - 8x² + 16 and its zeros with multiplicities?",
+     "prompt_markup": "Which gives the factorization of p(x) = x⁴ - 8x² + 16 and its zeros with multiplicities?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "(x - 2)(x + 2); zeros 2 and -2, each of multiplicity 1"
+      },
+      {
+       "letter": "B",
+       "text": "(x² - 4)²; the only zero is 4, of multiplicity 2"
+      },
+      {
+       "letter": "C",
+       "text": "(x - 4)²; the only zero is 4, of multiplicity 2"
+      },
+      {
+       "letter": "D",
+       "text": "(x - 2)²(x + 2)²; zeros 2 and -2, each of multiplicity 2"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "p(x) = (x - 2)²(x + 2)²; 2 (2), -2 (2)",
+     "answer_lines": [],
+     "correct_letter": "D",
+     "correct_answer": "(x - 2)²(x + 2)²; zeros 2 and -2, each of multiplicity 2",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: factorization and zeros with multiplicities. (x² - 4)².",
+     "grading_note": "p = (x² - 4)² = ((x - 2)(x + 2))².",
      "figure": null,
      "page": 605,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Factor a polynomial when needed and list every real zero with its multiplicity",
      "target_skill": "Factor a polynomial when needed and list every real zero with its multiplicity",
@@ -1241,22 +1259,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "All polynomials with zeros 1 and 3 only (each multiplicity 1) and degree 2 have what form?",
-     "prompt_markup": "All polynomials with zeros 1 and 3 only (each multiplicity 1) and degree 2 have what form?",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which describes all polynomials of degree 2 whose only zeros are 1 and 3 (each of multiplicity 1)?",
+     "prompt_markup": "Which describes all polynomials of degree 2 whose only zeros are 1 and 3 (each of multiplicity 1)?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "a(x + 1)(x + 3) for any real number a ≠ 0"
+      },
+      {
+       "letter": "B",
+       "text": "a(x - 1)(x - 3) + c for any real numbers a and c"
+      },
+      {
+       "letter": "C",
+       "text": "(x - 1)(x - 3) only"
+      },
+      {
+       "letter": "D",
+       "text": "a(x - 1)(x - 3) for any real number a ≠ 0"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "a(x - 1)(x - 3) with any real a ≠ 0",
+     "answer_lines": [],
+     "correct_letter": "D",
+     "correct_answer": "a(x - 1)(x - 3) for any real number a ≠ 0",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent answer.",
+     "grading_note": "The zeros fix the factors; a nonzero constant multiple keeps the zeros. The others drop the constant multiple, use the wrong signs, or add a constant (which moves the zeros).",
      "figure": null,
      "page": 631,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Factor a polynomial when needed and list every real zero with its multiplicity",
      "target_skill": "Decide what the zeros determine and what remains free",
@@ -1282,22 +1315,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "If the degree is not fixed, give two different polynomials whose only real zeros are 1 and 3.",
-     "prompt_markup": "If the degree is not fixed, give two different polynomials whose only real zeros are 1 and 3.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which polynomial has 1 and 3 as its only real zeros but is NOT a constant multiple of (x - 1)(x - 3)?",
+     "prompt_markup": "Which polynomial has 1 and 3 as its only real zeros but is NOT a constant multiple of (x - 1)(x - 3)?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "2(x - 1)(x - 3)"
+      },
+      {
+       "letter": "B",
+       "text": "(x - 1)(x - 3)(x + 1)"
+      },
+      {
+       "letter": "C",
+       "text": "(x - 1)²(x - 3)(x² + 1)"
+      },
+      {
+       "letter": "D",
+       "text": "(x - 1)(x + 3)"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "For example (x - 1)(x - 3) and (x - 1)²(x - 3)(x² + 1)",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "(x - 1)²(x - 3)(x² + 1)",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any two valid examples.",
+     "grading_note": "x² + 1 has no real zeros, and the extra factor (x - 1) only repeats a zero. The others are a constant multiple, add the real zero -1, or have the zero -3.",
      "figure": null,
      "page": 632,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Factor a polynomial when needed and list every real zero with its multiplicity",
      "target_skill": "Decide what the zeros determine and what remains free",
@@ -1427,22 +1475,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Explain why knowing only the real zeros of a degree-4 polynomial may not determine it even up to scale.",
-     "prompt_markup": "Explain why knowing only the real zeros of a degree-4 polynomial may not determine it even up to scale.",
-     "choices": [],
-     "answer_lines": [
-      "Answer:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Why may the real zeros of a degree-4 polynomial fail to determine it, even up to a constant multiple?",
+     "prompt_markup": "Why may the real zeros of a degree-4 polynomial fail to determine it, even up to a constant multiple?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Every degree-4 polynomial with real coefficients has four real zeros counted with multiplicity, so its real zeros always determine it up to a constant multiple."
+      },
+      {
+       "letter": "B",
+       "text": "Two polynomials with the same real zeros must be equal."
+      },
+      {
+       "letter": "C",
+       "text": "It may have non-real zeros, from a factor such as x² + c with c > 0, that the real zeros do not show; for example (x - 1)(x - 2)(x² + 1) and (x - 1)(x - 2)(x² + 4) have the same real zeros."
+      },
+      {
+       "letter": "D",
+       "text": "They never fail: the real zeros of a degree-4 polynomial determine it exactly, including its leading coefficient, so (x - 1)(x - 2) gives the whole polynomial."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "It may have non-real zeros (an irreducible quadratic factor such as x² + c) that the real zeros do not show, so different quartics share the same real zeros.",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "It may have non-real zeros, from a factor such as x² + c with c > 0, that the real zeros do not show; for example (x - 1)(x - 2)(x² + 1) and (x - 1)(x - 2)(x² + 4) have the same real zeros.",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent explanation with an example.",
+     "grading_note": "Non-real zeros are invisible on the real line. The others make false claims (x⁴ + 1 has no real zeros; multiples share zeros).",
      "figure": null,
      "page": 635,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Factor a polynomial when needed and list every real zero with its multiplicity",
      "target_skill": "Decide what the zeros determine and what remains free",

@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -52,20 +52,20 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "The lens formula is 1/f = 1/a + 1/b. Solve for b and state the condition needed.",
-     "prompt_markup": "The lens formula is 1/f = 1/a + 1/b. Solve for b and state the condition needed.",
+     "prompt": "The lens formula is 1/f = 1/a + 1/b, where a, b, and f are nonzero and a ≠ f. Solve for b.",
+     "prompt_markup": "The lens formula is 1/f = 1/a + 1/b, where a, b, and f are nonzero and a ≠ f. Solve for b.",
      "choices": [],
      "answer_lines": [
       "b ="
      ],
      "correct_letter": null,
-     "correct_answer": "af/(a - f), a ≠ f",
+     "correct_answer": "a·f/(a - f)",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: the formula and the condition. 1/b = (a - f)/(af).",
+     "grading_note": "Any equivalent expression. 1/b = 1/f - 1/a = (a - f)/(af), so b = af/(a - f). Taking the reciprocal needs a - f ≠ 0, which is why a ≠ f is required.",
      "figure": null,
      "page": 1088,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Rearrange a rational, radical, or exponential formula to isolate a quantity, and state the conditions used",
      "target_skill": "Rearrange a rational, radical, or exponential formula to isolate a quantity, and state the conditions used",
@@ -93,20 +93,20 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "A pendulum's period is T = 2π√(L/g). Solve for L.",
-     "prompt_markup": "A pendulum's period is T = 2π√(L/g). Solve for L.",
+     "prompt": "A pendulum's period is T = 2π√(L/g), where g > 0 and L ≥ 0 (so T ≥ 0). Solve for L.",
+     "prompt_markup": "A pendulum's period is T = 2π√(L/g), where g > 0 and L ≥ 0 (so T ≥ 0). Solve for L.",
      "choices": [],
      "answer_lines": [
       "L ="
      ],
      "correct_letter": null,
-     "correct_answer": "gT²/(4π²)",
+     "correct_answer": "g·T^2/(4π^2)",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form. Square both sides of T/(2π) = √(L/g).",
+     "grading_note": "Any equivalent expression. T/(2π) = √(L/g); squaring is reversible here because both sides are nonnegative, so L/g = T²/(4π²).",
      "figure": null,
      "page": 1089,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Rearrange a rational, radical, or exponential formula to isolate a quantity, and state the conditions used",
      "target_skill": "Rearrange a rational, radical, or exponential formula to isolate a quantity, and state the conditions used",
@@ -132,22 +132,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "An investment grows by A = P(1 + r)^t. Solve for r.",
-     "prompt_markup": "An investment grows by A = P(1 + r)^t. Solve for r.",
-     "choices": [],
-     "answer_lines": [
-      "r ="
+     "type": "mc",
+     "response": "select one",
+     "prompt": "An investment grows by A = P(1 + r)^t, where P > 0, A > 0, the growth base 1 + r is positive, and t ≠ 0. Solve for r.",
+     "prompt_markup": "An investment grows by A = P(1 + r)^t, where P > 0, A > 0, the growth base 1 + r is positive, and t ≠ 0. Solve for r.",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "r = (A - P)^(1/t)"
+      },
+      {
+       "letter": "B",
+       "text": "r = (A/P)^t - 1"
+      },
+      {
+       "letter": "C",
+       "text": "r = (A/P)^(1/t) - 1"
+      },
+      {
+       "letter": "D",
+       "text": "r = (A/P - 1)^(1/t)"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "(A/P)^(1/t) - 1",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "r = (A/P)^(1/t) - 1",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form (the t-th root of A/P minus 1).",
+     "grading_note": "(1 + r)^t = A/P with 1 + r > 0, so 1 + r = (A/P)^(1/t), the unique positive root.",
      "figure": null,
      "page": 1090,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Rearrange a rational, radical, or exponential formula to isolate a quantity, and state the conditions used",
      "target_skill": "Rearrange a rational, radical, or exponential formula to isolate a quantity, and state the conditions used",
@@ -175,20 +190,20 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "The speed of a falling object is v = √(2gh). Solve for h and state the condition on v.",
-     "prompt_markup": "The speed of a falling object is v = √(2gh). Solve for h and state the condition on v.",
+     "prompt": "The speed of a falling object is v = √(2gh), where g > 0 and h ≥ 0 (so v ≥ 0). Solve for h.",
+     "prompt_markup": "The speed of a falling object is v = √(2gh), where g > 0 and h ≥ 0 (so v ≥ 0). Solve for h.",
      "choices": [],
      "answer_lines": [
       "h ="
      ],
      "correct_letter": null,
-     "correct_answer": "v²/(2g), with v ≥ 0",
+     "correct_answer": "v^2/(2g)",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: formula and condition.",
+     "grading_note": "Any equivalent expression. Square both sides (both are nonnegative): v² = 2gh.",
      "figure": null,
      "page": 1091,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Rearrange a rational, radical, or exponential formula to isolate a quantity, and state the conditions used",
      "target_skill": "Rearrange a rational, radical, or exponential formula to isolate a quantity, and state the conditions used",
@@ -216,20 +231,20 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "In a circuit, I = V/(R + r). Solve for R and state the condition needed.",
-     "prompt_markup": "In a circuit, I = V/(R + r). Solve for R and state the condition needed.",
+     "prompt": "In a circuit, I = V/(R + r), where R + r ≠ 0 and I ≠ 0. Solve for R.",
+     "prompt_markup": "In a circuit, I = V/(R + r), where R + r ≠ 0 and I ≠ 0. Solve for R.",
      "choices": [],
      "answer_lines": [
       "R ="
      ],
      "correct_letter": null,
-     "correct_answer": "V/I - r, I ≠ 0",
+     "correct_answer": "V/I - r",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: formula and condition.",
+     "grading_note": "Any equivalent expression. I(R + r) = V; dividing by I needs I ≠ 0 (if I = 0 then V = 0 and R cannot be isolated); R = V/I - r.",
      "figure": null,
      "page": 1092,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Rearrange a rational, radical, or exponential formula to isolate a quantity, and state the conditions used",
      "target_skill": "Rearrange a rational, radical, or exponential formula to isolate a quantity, and state the conditions used",
@@ -793,20 +808,20 @@
      "standard_course": "Algebra I",
      "type": "sa",
      "response": "write",
-     "prompt": "Combine 1/a - 1/f into one fraction.",
-     "prompt_markup": "Combine 1/a - 1/f into one fraction.",
+     "prompt": "Write 1/a - 1/f as one fraction with denominator af (a and f nonzero). Give the numerator.",
+     "prompt_markup": "Write 1/a - 1/f as one fraction with denominator af (a and f nonzero). Give the numerator.",
      "choices": [],
      "answer_lines": [
-      "Answer:"
+      "Numerator:"
      ],
      "correct_letter": null,
-     "correct_answer": "(f - a)/(af)",
+     "correct_answer": "f - a",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form.",
+     "grading_note": "Form required: the numerator. 1/a - 1/f = f/(af) - a/(af) = (f - a)/(af).",
      "figure": null,
      "page": 1107,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Rearrange a rational, radical, or exponential formula to isolate a quantity, and state the conditions used",
      "target_skill": "Clear fractions in an equation",
@@ -995,22 +1010,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Solve A = πr² for r, given r is a length.",
-     "prompt_markup": "Solve A = πr² for r, given r is a length.",
-     "choices": [],
-     "answer_lines": [
-      "r ="
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Solve A = πr² for r, where r is a length (r ≥ 0) and A ≥ 0.",
+     "prompt_markup": "Solve A = πr² for r, where r is a length (r ≥ 0) and A ≥ 0.",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "r = √A/π"
+      },
+      {
+       "letter": "B",
+       "text": "r = √(A/π)"
+      },
+      {
+       "letter": "C",
+       "text": "r = ±√(A/π)"
+      },
+      {
+       "letter": "D",
+       "text": "r = A/(2π)"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "√(A/π)",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "r = √(A/π)",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: the positive root only (r ≥ 0).",
+     "grading_note": "Divide by π, then take the nonnegative root; a length cannot be negative.",
      "figure": null,
      "page": 1112,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Rearrange a rational, radical, or exponential formula to isolate a quantity, and state the conditions used",
      "target_skill": "Rearrange formulas where conditions decide the result",
@@ -1038,20 +1068,20 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Solve y = (x + 1)/(x - 2) for x and state the condition on y.",
-     "prompt_markup": "Solve y = (x + 1)/(x - 2) for x and state the condition on y.",
+     "prompt": "Solve y = (x + 1)/(x - 2) for x, where x ≠ 2 and y ≠ 1.",
+     "prompt_markup": "Solve y = (x + 1)/(x - 2) for x, where x ≠ 2 and y ≠ 1.",
      "choices": [],
      "answer_lines": [
       "x ="
      ],
      "correct_letter": null,
-     "correct_answer": "(2y + 1)/(y - 1), y ≠ 1",
+     "correct_answer": "(2y + 1)/(y - 1)",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: formula and condition.",
+     "grading_note": "Any equivalent expression. y(x - 2) = x + 1 gives xy - x = 2y + 1, x(y - 1) = 2y + 1; dividing needs y ≠ 1 (y = 1 would give 0 = 3, no x).",
      "figure": null,
      "page": 1113,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Rearrange a rational, radical, or exponential formula to isolate a quantity, and state the conditions used",
      "target_skill": "Rearrange formulas where conditions decide the result",
@@ -1181,22 +1211,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Solve P = k/V² for V (V > 0).",
-     "prompt_markup": "Solve P = k/V² for V (V > 0).",
-     "choices": [],
-     "answer_lines": [
-      "V ="
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Solve P = k/V² for V, where k > 0, P > 0, and V > 0.",
+     "prompt_markup": "Solve P = k/V² for V, where k > 0, P > 0, and V > 0.",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "V = k/(2P)"
+      },
+      {
+       "letter": "B",
+       "text": "V = ±√(k/P)"
+      },
+      {
+       "letter": "C",
+       "text": "V = √(k/P)"
+      },
+      {
+       "letter": "D",
+       "text": "V = √(P/k)"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "√(k/P)",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "V = √(k/P)",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Form required: positive root with k/P > 0.",
+     "grading_note": "V² = k/P, and V > 0 selects the positive root.",
      "figure": null,
      "page": 1116,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Rearrange a rational, radical, or exponential formula to isolate a quantity, and state the conditions used",
      "target_skill": "Rearrange formulas where conditions decide the result",
@@ -1241,22 +1286,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Solve A = Pe^(rt) for t.",
-     "prompt_markup": "Solve A = Pe^(rt) for t.",
-     "choices": [],
-     "answer_lines": [
-      "t ="
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A = Pe^(rt), where P ≠ 0, A/P > 0, and r ≠ 0. Which formula gives t?",
+     "prompt_markup": "A = Pe^(rt), where P ≠ 0, A/P > 0, and r ≠ 0. Which formula gives t?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "t = ln(A/P)/r"
+      },
+      {
+       "letter": "B",
+       "text": "t = ln(A - P)/r"
+      },
+      {
+       "letter": "C",
+       "text": "t = r ln(A/P)"
+      },
+      {
+       "letter": "D",
+       "text": "t = (A/P)/(r e)"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "ln(A/P)/r",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "t = ln(A/P)/r",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form.",
+     "grading_note": "Divide by P (P ≠ 0): e^(rt) = A/P; take ln (allowed because A/P > 0): rt = ln(A/P); divide by r (r ≠ 0). The others subtract instead of dividing, do not use a logarithm, or multiply by r.",
      "figure": null,
      "page": 1118,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Rearrange a rational, radical, or exponential formula to isolate a quantity, and state the conditions used",
      "target_skill": "Rearrange exponential formulas with logarithms",
@@ -1282,22 +1342,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "sa",
-     "response": "write",
-     "prompt": "Solve A = P(1 + r)^t for t.",
-     "prompt_markup": "Solve A = P(1 + r)^t for t.",
-     "choices": [],
-     "answer_lines": [
-      "t ="
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A = P(1 + r)^t, where P > 0, A > 0, and the growth base 1 + r is positive and not 1. Which formula gives t?",
+     "prompt_markup": "A = P(1 + r)^t, where P > 0, A > 0, and the growth base 1 + r is positive and not 1. Which formula gives t?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "t = (A/P)/(1 + r)"
+      },
+      {
+       "letter": "B",
+       "text": "t = log(A/P)/log(1 + r)"
+      },
+      {
+       "letter": "C",
+       "text": "t = log(A/P) - log(1 + r)"
+      },
+      {
+       "letter": "D",
+       "text": "t = log(A - P)/log(1 + r)"
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "log(A/P)/log(1 + r)",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "t = log(A/P)/log(1 + r)",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any equivalent form.",
+     "grading_note": "Divide by P, take logarithms (A/P > 0), and divide by log(1 + r), which is nonzero because 1 + r ≠ 1. The others subtract instead of dividing, skip the logarithm, or subtract the logarithms.",
      "figure": null,
      "page": 1119,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Rearrange a rational, radical, or exponential formula to isolate a quantity, and state the conditions used",
      "target_skill": "Rearrange exponential formulas with logarithms",
@@ -1429,20 +1504,20 @@
      "standard_course": "Algebra II",
      "type": "sa",
      "response": "write",
-     "prompt": "Use t = log(A/P)/log(1 + r) to find t for A = 2000, P = 1000, r = 0.05. A calculator may be used.",
-     "prompt_markup": "Use t = log(A/P)/log(1 + r) to find t for A = 2000, P = 1000, r = 0.05. A calculator may be used.",
+     "prompt": "Use t = log(A/P)/log(1 + r) to find t for A = 2000, P = 1000, r = 0.05. Round to the nearest hundredth. A calculator may be used.",
+     "prompt_markup": "Use t = log(A/P)/log(1 + r) to find t for A = 2000, P = 1000, r = 0.05. Round to the nearest hundredth. A calculator may be used.",
      "choices": [],
      "answer_lines": [
-      "t ≈"
+      "t ="
      ],
      "correct_letter": null,
      "correct_answer": "14.21",
      "drawing_answer": null,
      "required_method": null,
-     "grading_note": "Any value 14.2 to 14.21.",
+     "grading_note": "Rounding to 0.01. log 2/log 1.05 ≈ 14.2067.",
      "figure": null,
      "page": 1122,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Rearrange a rational, radical, or exponential formula to isolate a quantity, and state the conditions used",
      "target_skill": "Rearrange exponential formulas with logarithms",
