@@ -1,4 +1,4 @@
-"""Manual review record for Algebra II 1.0.0, printed into VALIDATION.md by validate.py.
+"""Manual review record for Algebra II (1.0.0 and 1.1.0), printed into VALIDATION.md by validate.py.
 
 Everything here was done by reading, drawing, or computing by the author of this release. It is NOT an automatic check,
 and no second person has reviewed it.
@@ -8,7 +8,9 @@ READ_THROUGH = (
     'All 2525 questions were listed in one compact file (question text, choices with the keyed letter, key) after the build, '
     'and the author re-solved every one by hand or with a separate calculator script, in set order S1 to S84. Numeric '
     'answers that need technology (logarithms, trigonometric inverses, compound interest, root approximations) were '
-    'recomputed with Python written separately from the data modules.'
+    'recomputed with Python written separately from the data modules. Version 1.1.0: the 108 rewritten multiple-choice '
+    'items were solved again in their final form; for each, the keyed choice was confirmed correct and every other choice '
+    'was confirmed wrong for the reason named in its grading note (computed values were recomputed in Python).'
 )
 
 # Errors found while writing or in the read-through, all fixed before release.
@@ -33,6 +35,12 @@ FIXES = [
                              'statements, each with a grading note that gives the correct fact (now 207 True, 217 False).'),
     ('S74-B1-Q5', 'The game importer (check mode) rejected the key 2x/((x - 2)(x + 2)) under "Form required: factored"; '
                   'the item now asks to factor the denominator x² - 4.'),
+    ('S42-F1-Q2 (1.1.0)', 'The 1.0.0 drawing item asked for a cubic with zeros -1 and 3 only, a positive y-intercept, falling to '
+                          'the right and touching the x-axis at 3; no cubic has all of these. Found while redesigning it as '
+                          'multiple choice; the condition is now a negative y-intercept (keyed graph y = -(x + 1)(x - 3)²/3).'),
+    ('39 proof and explanation choices (1.1.0)', 'In the first multiple-choice draft the correct argument was the longest choice '
+                          'in 39 of 53 rewritten items. Distractors were rewritten as fully worded flawed arguments; now 3 of 53 '
+                          'have the correct choice longest, each by at most 2 characters.'),
 ]
 
 FIGURES = (
@@ -41,15 +49,22 @@ FIGURES = (
     'midlines, open circles at holes, labels, and axis numbers. Fixes after inspection: crowded axis numbers on S43-M-Q3/Q5, '
     'S46-M-Q4/Q5, S46-F1-Q1, S51-M-Q4, S53-M-Q2/Q5, S74-M-Q3/Q5, S78-M-Q4 (label spacing); axis titles overlapping 4- and 5-digit '
     'numbers on S28-M-Q1/Q4 (rescaled: rabbits 5·2ᵗ; car value in thousands of dollars); S28-M-Q5 x spacing; long histogram axis '
-    'title on the re-randomization figures; a mid-factor line break in S18-M-Q4. The changed pages were rendered again and inspected.'
+    'title on the re-randomization figures; a mid-factor line break in S18-M-Q4. The changed pages were rendered again and inspected. '
+    'Version 1.1.0: all 55 four-graph figures (graphing items now multiple choice) were rendered and inspected: each panel '
+    'against its own equation (zeros, multiplicity, asymptotes, holes, open and closed endpoints, period, midline, title), '
+    'the keyed panel against the question, and the labels A-D. Layout fixes after inspection: panel letters moved out of the '
+    'grid, axis numbers spaced out, choices on one line, axis names removed from the titled S28 panels.'
 )
 
 PROOFS = (
-    'All 53 work (shown-work) questions were checked step by step against their rubrics: derivations (S11), the Fundamental '
-    'Theorem of Algebra arguments (S6), the Remainder Theorem proof (S15-F2-Q1), identity proofs (S19, S40), polynomial divisions '
-    '(S22), unit-circle explanations (S37, S82), composition verifications (S77), special-triangle derivations (S81), and the '
-    'even/odd proofs (S57-F1). Each rubric lists the essential steps; the derivations use no result that depends on the claim.'
+    'In 1.0.0 the 53 shown-work questions were checked step by step against their rubrics. Since 1.1.0 they are multiple '
+    'choice: derivation steps (S11), the Fundamental Theorem of Algebra arguments (S6), the Remainder Theorem proof '
+    '(S15-F2-Q1), identity proofs (S19, S40), polynomial divisions (S22), unit-circle explanations (S37, S82), composition '
+    'verifications (S77), special-triangle derivations (S81), and the even/odd proofs (S57-F1). For each, the keyed argument was '
+    'read step by step (it uses no result that depends on the claim), and each other choice was checked to contain the flaw '
+    'its note names (an example check, an invalid step, circular reasoning, a false fact).'
 )
+
 
 SIMULATIONS = (
     'The histograms of S64 (model consistency), S67 (sample proportions), S68 (resampled means) and S69 (re-randomized '

@@ -2,7 +2,7 @@
 import math
 from fractions import Fraction
 
-from qb import coord, table, hist, work, sa  # noqa: F401  (re-exported for the data modules)
+from qb import coord, table, hist, work, sa, mc  # noqa: F401  (re-exported for the data modules)
 
 PR = 'Any valid proof or derivation. '
 EXP = 'Any valid explanation. '
@@ -131,6 +131,67 @@ def blank(x=(-6, 6), y=(-6, 6), xstep=1, ystep=1, desc=None, xticks=None, **kw):
     if xticks:
         d['xticks'] = xticks
     return d
+
+
+GRAPHS = ['Graph A', 'Graph B', 'Graph C', 'Graph D']
+
+
+def cbrt(v):
+    return math.copysign(abs(v) ** (1 / 3), v)
+
+
+def cand(fs, desc, **kw):
+    """One candidate graph for pick(): the functions drawn, a plain description of what the panel shows (no equation,
+    so the description does not give the answer away), and its own features (vas, has, holes, pts)."""
+    return dict(fs=fs, desc=desc, **kw)
+
+
+def pick(stem, at, cands, note, x=(-6, 6), y=(-6, 6), xstep=1, ystep=1, xticks=None, window=None, h=230, **win):
+    """Multiple choice 'Which graph ...?': four graphs on the same window in a 2 x 2 figure labeled A-D. cands[0] is the
+    correct graph and is placed at letter `at`; the others fill the remaining letters in order. The choices are the
+    fixed list Graph A-D, so the letter is set here (balanced by hand across the collection), not by the engine."""
+    order = list(cands[1:])
+    order.insert('ABCD'.index(at), cands[0])
+    if not xticks and 'xlab' not in win:  # at most about 10 numbers per axis in a quarter-size panel
+        win['xlab'] = xstep * max(1, math.ceil((x[1] - x[0]) / xstep / 10))
+    if 'ylab' not in win:
+        win['ylab'] = ystep * max(1, math.ceil((y[1] - y[0]) / ystep / 6))
+    panels = []
+    for L, c in zip('ABCD', order):
+        c = dict(c)
+        fs, desc = c.pop('fs'), c.pop('desc')
+        slants = c.pop('slant', ())
+        g = graph(fs, x=x, y=y, xstep=xstep, ystep=ystep, xticks=xticks, desc='Graph %s: %s' % (L, desc),
+                  tag=L, h=h, **dict(win, **c))
+        g['fs'] = 1.35  # larger axis numbers: each panel is a quarter of the figure
+        for m, b in slants:  # dashed slant asymptote y = mx + b, clipped to the window
+            ya, yb = (y[0] - b) / m, (y[1] - b) / m
+            lo, hi = max(x[0], min(ya, yb)), min(x[1], max(ya, yb))
+            g['dlines'].append(((lo, m * lo + b), (hi, m * hi + b)))
+        panels.append(g)
+    window = window or 'x from %s to %s and y from %s to %s' % (n(x[0]), n(x[1]), n(y[0]), n(y[1]))
+    fig = dict(k='vstack', figs=[dict(k='hrow', figs=panels[:2]), dict(k='hrow', figs=panels[2:])],
+               desc='Four graphs labeled A to D, each on a grid with %s. %s' % (window, ' '.join(p['desc'] for p in panels)))
+    return mc(stem, list(GRAPHS), fig=fig, key='abcd'['ABCD'.index(at)], note=note, cols=4)
+
+
+def rise_fall(y0, T, peak, L):
+    """f(t) = L + (ct + d)e^(-kt) with f(0) = y0, a single maximum peak at t = T, and f(t) -> L as t grows."""
+    d = y0 - L
+
+    def h_(u):
+        return d * math.exp(-u) / (1 - u) - (peak - L)
+    lo, hi = (1e-6, 1 - 1e-9) if d > 0 else (1 + 1e-9, 40.0)
+    for _ in range(200):
+        mid = (lo + hi) / 2
+        if (h_(lo) < 0) == (h_(mid) < 0):
+            lo = mid
+        else:
+            hi = mid
+    u = (lo + hi) / 2
+    k = u / T
+    c = k * d / (1 - u)
+    return lambda t: L + (c * t + d) * math.exp(-k * t)
 
 
 def pticks(lo, hi, step):

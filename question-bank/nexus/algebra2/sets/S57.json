@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -2217,22 +2217,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "work",
-     "response": "write the answer and show the required work",
-     "prompt": "Prove that the sum of two odd functions is odd.",
-     "prompt_markup": "Prove that the sum of two odd functions is odd.",
-     "choices": [],
-     "answer_lines": [
-      "Conclusion:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which argument proves that the sum of two odd functions f and g is odd?",
+     "prompt_markup": "Which argument proves that the sum of two odd functions f and g is odd?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "x³ and x⁵ are odd and x³ + x⁵ is odd, so every sum of two odd functions is odd."
+      },
+      {
+       "letter": "B",
+       "text": "(f + g)(-x) = f(-x) + g(-x) = -f(x) - g(x) = -(f(x) + g(x)) = -(f + g)(x)."
+      },
+      {
+       "letter": "C",
+       "text": "(f + g)(-x) = f(x) + g(x) = (f + g)(x), so the sum is odd."
+      },
+      {
+       "letter": "D",
+       "text": "(f + g)(-x) = -f(-x) - g(-x) = -(f + g)(-x), so the sum is odd."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "(f + g)(-x) = f(-x) + g(-x) = -f(x) - g(x) = -(f + g)(x).",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "(f + g)(-x) = f(-x) + g(-x) = -f(x) - g(x) = -(f(x) + g(x)) = -(f + g)(x).",
      "drawing_answer": null,
-     "required_method": "Use f(-x) = -f(x) and g(-x) = -g(x).",
-     "grading_note": "Any valid proof or derivation. Essential: both definitions and the factoring of -1.",
+     "required_method": null,
+     "grading_note": "Use f(-x) = -f(x) and g(-x) = -g(x), then factor out -1. The others use the even-function rule (and would show even), check one example, or misapply the definition.",
      "figure": null,
      "page": 2111,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Decide whether a function is even, odd, or neither from its expression (by computing f(-x)) or from its graph",
      "target_skill": "Reason about sums and products of even and odd functions",
@@ -2258,22 +2273,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "work",
-     "response": "write the answer and show the required work",
-     "prompt": "Prove that the product of two odd functions is even.",
-     "prompt_markup": "Prove that the product of two odd functions is even.",
-     "choices": [],
-     "answer_lines": [
-      "Conclusion:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which argument proves that the product of two odd functions f and g is even?",
+     "prompt_markup": "Which argument proves that the product of two odd functions f and g is even?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "(fg)(-x) = f(-x)g(-x) = (-f(x))(-g(x)) = f(x)g(x) = (fg)(x)."
+      },
+      {
+       "letter": "B",
+       "text": "x · x³ = x⁴ is even, so every product of two odd functions is even."
+      },
+      {
+       "letter": "C",
+       "text": "Odd times odd is odd for whole numbers, so the product of two odd functions is odd."
+      },
+      {
+       "letter": "D",
+       "text": "(fg)(-x) = f(-x)g(-x) = -f(x)g(x), so the product is odd."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "(fg)(-x) = f(-x)g(-x) = (-f(x))(-g(x)) = f(x)g(x).",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "(fg)(-x) = f(-x)g(-x) = (-f(x))(-g(x)) = f(x)g(x) = (fg)(x).",
      "drawing_answer": null,
-     "required_method": "Compute (fg)(-x).",
-     "grading_note": "Any valid proof or derivation. Essential: the computation.",
+     "required_method": null,
+     "grading_note": "The two negative signs multiply to +1. The others drop one negative sign, check one example, or confuse odd functions with odd numbers.",
      "figure": null,
      "page": 2112,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Decide whether a function is even, odd, or neither from its expression (by computing f(-x)) or from its graph",
      "target_skill": "Reason about sums and products of even and odd functions",

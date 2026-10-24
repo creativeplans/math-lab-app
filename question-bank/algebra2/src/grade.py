@@ -9,7 +9,7 @@ Forward branches stay in Algebra II (a same-standard branch must add a new deman
 The rules are checked by engine/qb.py (profile mode, shared with Geometry).
 """
 COURSE = dict(id='A2', name='Algebra II', file='Algebra2', seed=103, rules='profile')
-VERSION = '1.0.0'
+VERSION = '1.1.0'
 VERSION_DATE = '2026-10-24'
 BALANCE_MC = True
 STRICT_BACKWARD = True
@@ -26,7 +26,7 @@ DOMAINS = [
 ]
 EXTRA_GRADING_RULES = [
     'Algebra II answer forms: the grading_note of every written answer begins with "Form required:" or with "Any" '
-    '(for example "Any equivalent form" or "Any valid proof"), which says what else is accepted. "Exact" means an exact '
+    '(for example "Any equivalent form"), which says what else is accepted. "Exact" means an exact '
     'value (fractions, radicals, logarithms, π, i); a decimal approximation alone is not full credit. When rounding is '
     'allowed the note names the precision; an answer within half a unit of the last required place is correct.',
     'Solutions: a question says whether solutions are real or may be complex. A solution set must contain every solution '
@@ -35,12 +35,12 @@ EXTRA_GRADING_RULES = [
     'Domains: logarithms are real only for positive arguments and bases b > 0, b ≠ 1; √(x²) = |x| over the reals; a rational '
     'expression keeps the exclusions of its original denominator after cancelling. Trigonometric questions state degrees or '
     'radians and an interval, and "all solutions" means every solution in that interval.',
-    'Proofs, derivations and explanations (type work): grade the logic, not the wording. grading_note lists the ESSENTIAL '
-    'steps (every one must appear with a valid reason), accepted alternatives, and INVALID arguments (checking a few values '
-    'for an identity, assuming the result, dividing by an expression that may be zero, squaring without checking).',
-    'Graphs (type plot): correct_answer states every feature a correct graph must show (intercepts, asymptotes as dashed '
-    'lines, holes as open circles, end behavior, period, midline, maximum and minimum points). Accept a graph with those '
-    'features plotted within half a grid unit; the exact curve between them is not graded.',
+    'Proofs, derivations and explanations are multiple choice (no question needs a person to grade): the keyed choice is a '
+    'complete, valid argument; each other choice is a flawed one (checking a few values, an invalid algebra step, assuming the '
+    'result, a false fact, or the wrong direction or reflection), and grading_note says what is wrong with each.',
+    'Graphs are multiple choice (no question needs a drawing surface): the figure shows four candidate graphs labeled A to D '
+    'on the same window, with asymptotes and midlines dashed and holes as open circles, and the choices are "Graph A" to '
+    '"Graph D". grading_note lists the features of the correct graph and what each other graph shows.',
     'Technology: a question that needs a calculator says so and names the capability (logarithms, normal cumulative '
     'probability, trigonometric values in radians or degrees). Simulation questions supply the simulated results; any '
     'answer that reads them correctly within the stated tolerance is accepted.',
@@ -71,10 +71,9 @@ PACKAGE_README_EXTRA = '''
 | question `question_page`, `answer_key_page` | Page in each PDF (always equal). |
 | `sections[].branch` | Backward: `alignment` (exact or supporting), `rationale` (obstacle, why it matters, evidence collected), `source`. Forward: `progression`, `connection` (direct or nearest related), `new_demand`, `course`, and for FORWARD 2 `builds_on`. Every section: `plus_standard` (true for an official Common Core (+) standard). |
 
-Question types used: `sa`, `mc`, `tf`, `work` (proofs, derivations, and explanations in a work box; `required_method` and
-`grading_note` give the essential criteria, accepted alternatives, and invalid arguments), `plot` (graphs drawn on a
-blank grid; `correct_answer` lists the features to check), and `plot_text` (a graph plus a written equation; `drawing_answer`
-describes the graph). These need a person or a drawing surface to grade. All six types already exist in earlier collections;
-the game importer's `--check` mode was run on this package (see the collection README for the result). Nothing here has been
-tested in the live game or with the AI grader.
+Question types used: `sa`, `mc`, and `tf` only. No question needs a person or a drawing surface to grade: since version 1.1.0
+the former shown-work items (proofs, derivations, explanations, divisions) and drawing items are multiple choice. A graphing
+question shows four candidate graphs labeled A to D in one figure (`figure` in the set file, described in
+`figure.description`) and its choices are "Graph A" to "Graph D". The game importer's `--check` mode was run on this package
+(see the collection README for the result). Nothing here has been tested in the live game or with the AI grader.
 '''

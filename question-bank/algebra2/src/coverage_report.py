@@ -95,8 +95,9 @@ def run(name):
     tbs = collections.Counter((sec(r), r['type']) for r in recs)
     ts = sorted(types)
     L += ['', '## 5. Response types', '',
-          'sa = short answer; mc = multiple choice (exactly one correct option); tf = true/false; plot = drawing on a blank grid; '
-          'plot_text = drawing plus a written answer; work = answer with required work (proofs, derivations, divisions).', '',
+          'sa = short answer; mc = multiple choice (exactly one correct option); tf = true/false. Since version 1.1.0 no question '
+          'needs a person or a drawing surface to grade: proofs, derivations, explanations and divisions are multiple choice, and '
+          'graphing questions show four candidate graphs labeled A to D.', '',
           '| Section | ' + ' | '.join(ts) + ' |', '|---|' + '---:|' * len(ts)]
     for s in ('MAIN', 'BACKWARD', 'FORWARD 1', 'FORWARD 2'):
         L.append('| %s | %s |' % (s, ' | '.join(str(tbs[(s, t_)]) for t_ in ts)))

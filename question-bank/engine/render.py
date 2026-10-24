@@ -434,9 +434,11 @@ def fig_coord(c, f, x, y, w, h, s):
     xl, yl = f.get('xlab', xs), f.get('ylab', ys)
     fs = 12.5 * s * f.get('fs', 1)
     plain_xy = f.get('xlabel') == 'x' and f.get('ylabel') == 'y'   # generic axes: names at the axis ends
-    padl = 30 + (16 if f.get('ylabel') and not plain_xy else 0)
+    padl = 30 + (16 if f.get('ylabel') and not plain_xy else 0) + (34 * f.get('fs', 1) if f.get('tag') else 0)
     padb = 22 + (16 if f.get('xlabel') and not plain_xy else 0)
     padr, padt = (26, 22) if plain_xy else (16, 14)
+    if f.get('title'):  # a line of text above the grid (for example the equation a panel claims to show)
+        padt += 22 * f.get('fs', 1)
     nx = (xmax - xmin) / xs
     ny = (ymax - ymin) / ys
     aw, ah = w - padl - padr, h - padb - padt
@@ -565,6 +567,16 @@ def fig_coord(c, f, x, y, w, h, s):
             dy = {'ne': 9, 'nw': 9, 'se': -9, 'sw': -9, 'n': 12, 's': -12, 'e': 0, 'w': 0}[pos]
             anc = 'l' if dx > 0 else ('r' if dx < 0 else 'c')
             draw_label(c, p[2], px + dx, py + dy, fs * 1.25, FB, anchor=anc, color=POINT)
+    if f.get('title'):
+        draw_label(c, f['title'], ox + gw / 2, oy + gh + 9 * f.get('fs', 1), fs * 1.2, FB, color=INK)
+    if f.get('tag'):  # panel letter ("Graph A") in a box in the left margin (padl is widened for it), level with the grid top
+        ts = fs * 1.5
+        bx = x + 2
+        c.setFillColor(HexColor('#ffffff'))
+        c.setStrokeColor(AXIS)
+        c.setLineWidth(1)
+        c.rect(bx, oy + gh - ts * 1.35, ts * 1.3, ts * 1.35, fill=1, stroke=1)
+        draw_label(c, f['tag'], bx + ts * 0.65, oy + gh - ts * 0.68, ts, FB, color=AXIS)
 
 
 def fig_dot(c, f, x, y, w, h, s):

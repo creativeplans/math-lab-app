@@ -2,7 +2,7 @@
 import math
 
 from qb import S, B, sa, mc, tf, draw_write
-from common import why, proof, PR, EXP, blank, graph, tbl
+from common import why, proof, PR, EXP, blank, graph, tbl, pick, cand
 
 TECH = ' A calculator may be used.'
 
@@ -138,26 +138,43 @@ SETS = [
 
     # ------------------------------------------------------------------ 28. CED.A.2 create and graph two-variable models
     S('HSA-CED.A.2', 'Create and graph nonlinear two-variable models',
-      target='Write a two-variable nonlinear equation for a context and graph it on axes with labels and scales', strand='core', covers=['CED2-graph'],
+      target='Write a two-variable nonlinear equation for a context and identify the correct equation together with its correct graph on scaled axes', strand='core', covers=['CED2-graph'],
       main=[
-          draw_write('A rabbit population starts at 5 and doubles every year. Write an equation for the number N after t years, then graph it for 0 ≤ t ≤ 4 on the grid.',
-                     grid((0, 4), (0, 90), 1, 10, 't (years)', 'N (rabbits)'), 'N =', key='N = 5 · 2^t',
-                     draw='Exponential curve through (0, 5), (1, 10), (2, 20), (3, 40), (4, 80), increasing and getting steeper.',
-                     note='Form required: equation and graph. Any curve through these points with the correct shape.'),
-          draw_write('A rectangle has area 24 square units. Write an equation for its width w in terms of its length L, then graph it for 1 ≤ L ≤ 12.',
-                     grid((0, 12), (0, 24), 1, 2, 'L (units)', 'w (units)'), 'w =', key='w = 24/L',
-                     draw='Decreasing curve through (1, 24), (2, 12), (3, 8), (4, 6), (6, 4), (8, 3), (12, 2), approaching but never touching the L-axis.',
-                     note='Form required: equation and graph.'),
-          draw_write('A stone is dropped from 64 feet. Its height after t seconds is 64 minus 16 times the square of t. Write the equation and graph it for 0 ≤ t ≤ 2.',
-                     grid((0, 2), (0, 70), 0.5, 10, 't (s)', 'h (ft)'), 'h =', key='h = 64 - 16t²',
-                     draw='Decreasing parabola arc through (0, 64), (0.5, 60), (1, 48), (1.5, 28), (2, 0).', note='Form required: equation and graph.'),
-          draw_write('A $20,000 car loses 15% of its value each year. Write an equation for its value V, in thousands of dollars, after t years, then graph it for 0 ≤ t ≤ 5.',
-                     grid((0, 5), (0, 22), 1, 2, 't (years)', 'V (thousand $)'), 'V =', key='V = 20(0.85)^t',
-                     draw='Decreasing exponential curve through (0, 20), (1, 17), (2, 14.45), (3, 12.28), (4, 10.44), (5, 8.87).',
-                     note='Form required: equation and graph.'),
-          draw_write('A car\'s speed s (mph) is the square root of 24 times its skid length d (ft). Write the equation and graph it for 0 ≤ d ≤ 150.',
-                     grid((0, 150), (0, 70), 25, 10, 'd (ft)', 's (mph)'), 's =', key='s = √(24d)',
-                     draw='Increasing curve that flattens, through (0, 0), (6, 12), (24, 24), (96, 48), (150, 60).', note='Form required: equation and graph.'),
+          pick('A rabbit population starts at 5 and doubles every year. Which graph shows a correct equation for the situation with a correct graph of that equation for 0 ≤ t ≤ 4 (t in years, N rabbits)?', 'B', [
+              cand([lambda t: 5 * 2 ** t], 'titled "N = 5 · 2ᵗ"; an increasing curve that gets steeper, through (0, 5), (1, 10), (2, 20), (3, 40), and (4, 80).', title='N = 5 · 2ᵗ'),
+              cand([lambda t: 2 * 5 ** t], 'titled "N = 2 · 5ᵗ"; a curve through (0, 2), (1, 10), and (2, 50) that leaves the grid before t = 3.', title='N = 2 · 5ᵗ'),
+              cand([lambda t: 5 + 2 * t], 'titled "N = 5 + 2t"; a nearly flat straight line from (0, 5) to (4, 13).', title='N = 5 + 2t'),
+              cand([lambda t: 5 + 18.75 * t], 'titled "N = 5 · 2ᵗ"; a straight line from (0, 5) to (4, 80).', title='N = 5 · 2ᵗ'),
+          ], 'Doubling every year from 5 gives N = 5 · 2^t, an exponential curve through (0, 5), (1, 10), (2, 20), (3, 40), (4, 80). The others use the wrong model (2 · 5^t or 5 + 2t) or pair the right equation with a straight line, which is not its graph.',
+              x=(0, 4), y=(0, 90), ystep=10, window='t from 0 to 4 and N from 0 to 90'),
+          pick('A rectangle has area 24 square units. Which graph shows a correct equation for the situation with a correct graph of that equation for 1 ≤ L ≤ 12 (length L, width w)?', 'D', [
+              cand([lambda L: 24 / L], 'titled "w = 24/L"; a decreasing curve that flattens, through (1, 24), (2, 12), (3, 8), (4, 6), (6, 4), (8, 3), and (12, 2).', title='w = 24/L', dom=(1, 12)),
+              cand([lambda L: 24 - L], 'titled "w = 24 - L"; a straight line from (1, 23) to (12, 12).', title='w = 24 - L', dom=(1, 12)),
+              cand([lambda L: 12 - L], 'titled "w = 12 - L"; a straight line from (1, 11) to (12, 0).', title='w = 12 - L', dom=(1, 12)),
+              cand([lambda L: 24 - 2 * (L - 1)], 'titled "w = 24/L"; a straight line from (1, 24) to (12, 2).', title='w = 24/L', dom=(1, 12)),
+          ], 'Area = Lw = 24 gives w = 24/L, a decreasing curve that flattens and approaches the L-axis, through (1, 24), (2, 12), (4, 6), (12, 2). The others use w = 24 - L, w = 12 - L (a perimeter idea), or draw a straight line for 24/L.',
+              x=(0, 12), y=(0, 24), ystep=2, window='L from 0 to 12 and w from 0 to 24'),
+          pick('A stone is dropped from 64 feet. Its height after t seconds is 64 minus 16 times the square of t. Which graph shows a correct equation for the situation with a correct graph of that equation for 0 ≤ t ≤ 2 (h in feet)?', 'A', [
+              cand([lambda t: 64 - 16 * t * t], 'titled "h = 64 - 16t²"; a curve that starts at (0, 64), falls slowly at first and then faster, through (0.5, 60), (1, 48), (1.5, 28), and (2, 0).', title='h = 64 - 16t²'),
+              cand([lambda t: 64 - 16 * t], 'titled "h = 64 - 16t"; a straight line from (0, 64) to (2, 32).', title='h = 64 - 16t'),
+              cand([lambda t: 16 * t * t], 'titled "h = 16t²"; a curve that rises from (0, 0) to (2, 64).', title='h = 16t²'),
+              cand([lambda t: 16 * (t - 2) ** 2], 'titled "h = 64 - 16t²"; a curve from (0, 64) to (2, 0) that falls fast at first and then slowly, through (1, 16).', title='h = 64 - 16t²'),
+          ], 'h = 64 - 16t²: the height falls slowly at first and then faster, through (0, 64), (0.5, 60), (1, 48), (1.5, 28), (2, 0). The others use 64 - 16t (not squared), 16t² (the distance fallen), or draw a curve that does not match 64 - 16t² (it gives 16 at t = 1 instead of 48).',
+              x=(0, 2), y=(0, 70), xstep=0.5, ystep=10, window='t from 0 to 2 and h from 0 to 70'),
+          pick('A $20,000 car loses 15% of its value each year. Which graph shows a correct equation for the situation with a correct graph of that equation for 0 ≤ t ≤ 5 (V in thousands of dollars, t in years)?', 'C', [
+              cand([lambda t: 20 * 0.85 ** t], 'titled "V = 20(0.85)ᵗ"; a decreasing curve through (0, 20), (1, 17), (2, 14.45), (3, 12.28), (4, 10.44), and (5, 8.87).', title='V = 20(0.85)ᵗ'),
+              cand([lambda t: 20 * 0.15 ** t], 'titled "V = 20(0.15)ᵗ"; a curve that drops from (0, 20) to (1, 3) and then nearly to 0.', title='V = 20(0.15)ᵗ'),
+              cand([lambda t: 20 - 3 * t], 'titled "V = 20 - 3t"; a straight line from (0, 20) to (5, 5).', title='V = 20 - 3t'),
+              cand([lambda t: 20 * 1.15 ** t], 'titled "V = 20(1.15)ᵗ"; an increasing curve from (0, 20) that leaves the grid near t = 0.7.', title='V = 20(1.15)ᵗ'),
+          ], 'Keeping 85% each year gives V = 20(0.85)^t, through (1, 17), (2, 14.45), (5, 8.87). The others keep only 15% each year, subtract a fixed $3,000 each year (15% of the first value only), or grow 15% each year.',
+              x=(0, 5), y=(0, 22), ystep=2, window='t from 0 to 5 and V from 0 to 22'),
+          pick('A car\'s speed s (mph) is the square root of 24 times its skid length d (ft). Which graph shows a correct equation for the situation with a correct graph of that equation for 0 ≤ d ≤ 150?', 'B', [
+              cand([lambda d: math.sqrt(24 * d)], 'titled "s = √(24d)"; an increasing curve that flattens, through (0, 0), (6, 12), (24, 24), (96, 48), and (150, 60).', title='s = √(24d)'),
+              cand([lambda d: 24 * math.sqrt(d)], 'titled "s = 24√d"; a curve that rises from (0, 0) through (1, 24) and (4, 48) and leaves the grid before d = 9.', title='s = 24√d'),
+              cand([lambda d: math.sqrt(d) + 24], 'titled "s = √d + 24"; a curve that starts at (0, 24) and rises slowly to about (150, 36).', title='s = √d + 24'),
+              cand([lambda d: 0.4 * d], 'titled "s = √(24d)"; a straight line from (0, 0) to (150, 60).', title='s = √(24d)'),
+          ], 's = √(24d): an increasing curve that flattens, through (6, 12), (24, 24), (96, 48), (150, 60). The others use 24√d or √d + 24, or draw a straight line for √(24d) (it gives 24 at d = 60, not 37.9).',
+              x=(0, 150), y=(0, 70), xstep=25, ystep=10, window='d from 0 to 150 and s from 0 to 70'),
       ],
       back=[
           B('Make a table of values from an equation', '6.EE.C.9', [

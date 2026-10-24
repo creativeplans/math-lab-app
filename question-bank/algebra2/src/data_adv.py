@@ -3,7 +3,7 @@ These sets are optional for the core course; they carry strand='advanced'."""
 import math
 
 from qb import S, B, sa, mc, tf, plot
-from common import why, proof, PR, EXP, blank, graph, tbl
+from common import why, proof, PR, EXP, blank, graph, tbl, pick, cand
 
 TECH = ' A calculator may be used.'
 
@@ -52,7 +52,12 @@ SETS = [
             why=why('the student keeps i² terms.', 'conjugate products become real using i² = -1.', 'simplifies powers of i.')),
       ],
       f1=B('Prove properties of conjugates and moduli', 'HSN-CN.A.3', [
-          proof('Prove that z · z̄ = |z|² for z = a + bi.', method='Multiply and compare.', key='(a + bi)(a - bi) = a² - b²i² = a² + b² = |z|².', note=PR + 'Essential: the product and i² = -1.'),
+          mc('Which argument proves z · z̄ = |z|² for z = a + bi (a and b real)?', [
+              '(a + bi)(a - bi) = a² - b²i² = a² + b², and |z|² = a² + b².',
+              '(a + bi)(a - bi) = a² - b², and |z|² = a² - b².',
+              'For z = 3 + 4i: (3 + 4i)(3 - 4i) = 25 = 5², so the statement holds.',
+              '(a + bi)(a - bi) = a² + b²i², which is |z|² because |z| = √(a² + b²i²).'],
+             note='Multiply, use i² = -1, and compare with |z| = √(a² + b²). The others forget i² = -1 (and misstate |z|), check one example, or expand with a sign error.'),
           sa('Verify |zw| = |z||w| for z = 3 + 4i and w = 1 + i.', 'Answer:', key='zw = -1 + 7i, |zw| = √50 = 5√2 = 5 · √2', note='Form required: both sides.'),
           tf('The conjugate of a real number is itself.', key=True, note='b = 0.'),
           mc('If z = 2 - 5i, then z + z̄ is', ['4', '-10i', '4 - 10i', '0'], note='2a.'),
@@ -70,18 +75,43 @@ SETS = [
 
     # ------------------------------------------------------------------ 74. IF.C.7.d rational graphs with asymptotes
     S('HSF-IF.C.7.d', 'Graph rational functions with zeros and asymptotes',
-      target='Graph a rational function from a factored form, showing zeros, intercepts, vertical and horizontal asymptotes, and end behavior', strand='advanced', covers=['IF7d-asym'],
+      target='Identify the graph of a rational function from its zeros, intercepts, vertical and horizontal asymptotes, and end behavior', strand='advanced', covers=['IF7d-asym'],
       main=[
-          plot(RG + 'y = (x + 1)/(x - 2)', grid((-6, 8), (-6, 6)),
-               key='Zero -1; y-intercept -1/2; vertical asymptote x = 2; horizontal asymptote y = 1; y → +∞ as x → 2⁺, y → -∞ as x → 2⁻.', note='Any graph with all features.'),
-          plot(RG + 'y = 2x/(x² - 4)', grid((-6, 6), (-5, 5)),
-               key='Zero 0 (also the y-intercept); vertical asymptotes x = -2 and x = 2; horizontal asymptote y = 0; three branches.', note='Any graph with all features.'),
-          plot(RG + 'y = (x² - 1)/(x² - 9)', dict(grid((-8, 8), (-6, 6)), xlab=2),
-               key='Zeros ±1; y-intercept 1/9; vertical asymptotes x = ±3; horizontal asymptote y = 1; outer branches above y = 1.', note='Any graph with all features.'),
-          plot(RG + 'y = 3/(x + 1)²', grid((-6, 4), (-1, 8)),
-               key='No zeros; y-intercept 3; vertical asymptote x = -1 (y → +∞ on both sides); horizontal asymptote y = 0; graph always above the x-axis.', note='Any graph with all features.'),
-          plot(RG + 'y = (2x - 4)/(x + 3)', dict(grid((-10, 6), (-8, 10)), xlab=2, ylab=2),
-               key='Zero 2; y-intercept -4/3; vertical asymptote x = -3; horizontal asymptote y = 2.', note='Any graph with all features.'),
+          pick('Which graph shows y = (x + 1)/(x - 2), with its asymptotes dashed?', 'C', [
+              cand([lambda x: (x + 1) / (x - 2)], 'two branches with a dashed vertical asymptote x = 2 and a dashed horizontal asymptote y = 1; zero at -1 and y-intercept -1/2; the right branch rises toward +∞ near x = 2.', vas=[2], has=[1]),
+              cand([lambda x: (x - 1) / (x + 2)], 'two branches with a dashed vertical asymptote x = -2 and a dashed horizontal asymptote y = 1; zero at 1 and y-intercept -1/2.', vas=[-2], has=[1]),
+              cand([lambda x: (x - 2) / (x + 1)], 'two branches with a dashed vertical asymptote x = -1 and a dashed horizontal asymptote y = 1; zero at 2 and y-intercept -2.', vas=[-1], has=[1]),
+              cand([lambda x: -(x + 1) / (x - 2)], 'two branches with a dashed vertical asymptote x = 2 and a dashed horizontal asymptote y = -1; zero at -1 and y-intercept 1/2.', vas=[2], has=[-1]),
+          ], 'Zero -1, y-intercept -1/2, vertical asymptote x = 2, horizontal asymptote y = 1 (ratio of leading coefficients); y → +∞ as x → 2⁺ and y → -∞ as x → 2⁻. The others show (x - 1)/(x + 2) (same y-intercept), (x - 2)/(x + 1), and the reflection.',
+              x=(-6, 8), y=(-6, 6)),
+          pick('Which graph shows y = 2x/(x² - 4), with its asymptotes dashed?', 'B', [
+              cand([lambda x: 2 * x / (x * x - 4)], 'three branches separated by dashed vertical asymptotes x = -2 and x = 2; horizontal asymptote y = 0; the middle branch falls through the origin; the left branch is below the x-axis and the right branch above it.', vas=[-2, 2], has=[0]),
+              cand([lambda x: 2 * x / (x * x + 4)], 'one smooth curve with no vertical asymptotes, through the origin, with a high point at (2, 0.5) and a low point at (-2, -0.5).', has=[0]),
+              cand([lambda x: 2 * x * x / (x * x - 4)], 'three branches separated by dashed vertical asymptotes x = -2 and x = 2, with a dashed horizontal asymptote y = 2; the middle branch touches the origin from below.', vas=[-2, 2], has=[2]),
+              cand([lambda x: -2 * x / (x * x - 4)], 'three branches separated by dashed vertical asymptotes x = -2 and x = 2; horizontal asymptote y = 0; the middle branch rises through the origin; the left branch is above the x-axis.', vas=[-2, 2], has=[0]),
+          ], 'Zero and y-intercept 0; vertical asymptotes x = ±2 (zeros of x² - 4); horizontal asymptote y = 0 (degree of numerator < degree of denominator); e.g. y(3) = 6/5 > 0 and y(1) = -2/3 < 0. The others show 2x/(x² + 4), 2x²/(x² - 4), and the reflection.',
+              x=(-6, 6), y=(-5, 5)),
+          pick('Which graph shows y = (x² - 1)/(x² - 9), with its asymptotes dashed?', 'D', [
+              cand([lambda x: (x * x - 1) / (x * x - 9)], 'three branches with dashed vertical asymptotes x = -3 and x = 3 and a dashed horizontal asymptote y = 1; the middle branch crosses the x-axis at -1 and 1 with y-intercept 1/9; the outer branches stay above y = 1.', vas=[-3, 3], has=[1]),
+              cand([lambda x: (x * x - 9) / (x * x - 1)], 'three branches with dashed vertical asymptotes x = -1 and x = 1 and a dashed horizontal asymptote y = 1; zeros at -3 and 3; the middle branch is above the grid near x = 0.', vas=[-1, 1], has=[1]),
+              cand([lambda x: (x * x + 1) / (x * x - 9)], 'three branches with dashed vertical asymptotes x = -3 and x = 3 and a dashed horizontal asymptote y = 1; no zeros; the middle branch is below the x-axis with y-intercept -1/9.', vas=[-3, 3], has=[1]),
+              cand([lambda x: (x - 1) / (x - 3)], 'two branches with a dashed vertical asymptote x = 3 and a dashed horizontal asymptote y = 1; zero at 1 and y-intercept 1/3.', vas=[3], has=[1]),
+          ], 'Zeros ±1, y-intercept 1/9, vertical asymptotes x = ±3, horizontal asymptote y = 1; the outer branches are above y = 1. The others show the reciprocal (x² - 9)/(x² - 1), (x² + 1)/(x² - 9), and (x - 1)/(x - 3).',
+              x=(-8, 8), y=(-6, 6), xlab=2),
+          pick('Which graph shows y = 3/(x + 1)², with its asymptotes dashed?', 'A', [
+              cand([lambda x: 3 / (x + 1) ** 2], 'two branches above the x-axis on both sides of a dashed vertical asymptote x = -1, both rising toward +∞ near it; horizontal asymptote y = 0; y-intercept 3.', vas=[-1], has=[0]),
+              cand([lambda x: 3 / (x + 1)], 'two branches on opposite sides of a dashed vertical asymptote x = -1: the left branch below the x-axis, the right branch above it; y-intercept 3.', vas=[-1], has=[0]),
+              cand([lambda x: 3 / (x - 1) ** 2], 'two branches above the x-axis on both sides of a dashed vertical asymptote x = 1; y-intercept 3.', vas=[1], has=[0]),
+              cand([lambda x: -3 / (x + 1) ** 2], 'two branches below the x-axis on both sides of a dashed vertical asymptote x = -1, both falling toward -∞ near it; y-intercept -3.', vas=[-1], has=[0]),
+          ], 'No zeros; y-intercept 3; vertical asymptote x = -1 with y → +∞ on both sides (the square is positive); horizontal asymptote y = 0. The others show 3/(x + 1), 3/(x - 1)² (same y-intercept), and -3/(x + 1)².',
+              x=(-6, 4), y=(-5, 8)),
+          pick('Which graph shows y = (2x - 4)/(x + 3), with its asymptotes dashed?', 'B', [
+              cand([lambda x: (2 * x - 4) / (x + 3)], 'two branches with a dashed vertical asymptote x = -3 and a dashed horizontal asymptote y = 2; zero at 2 and y-intercept -4/3.', vas=[-3], has=[2]),
+              cand([lambda x: (2 * x + 4) / (x - 3)], 'two branches with a dashed vertical asymptote x = 3 and a dashed horizontal asymptote y = 2; zero at -2 and y-intercept -4/3.', vas=[3], has=[2]),
+              cand([lambda x: (x - 4) / (x + 3)], 'two branches with a dashed vertical asymptote x = -3 and a dashed horizontal asymptote y = 1; zero at 4 and y-intercept -4/3.', vas=[-3], has=[1]),
+              cand([lambda x: (x + 3) / (2 * x - 4)], 'two branches with a dashed vertical asymptote x = 2 and a dashed horizontal asymptote y = 1/2; zero at -3 and y-intercept -3/4.', vas=[2], has=[0.5]),
+          ], 'Zero 2, y-intercept -4/3, vertical asymptote x = -3, horizontal asymptote y = 2/1 = 2. The others show (2x + 4)/(x - 3) and (x - 4)/(x + 3) (both with the same y-intercept) and the reciprocal.',
+              x=(-10, 6), y=(-8, 10), xlab=2, ylab=2),
       ],
       back=[
           B('Rewrite a rational expression by inspection', 'HSA-APR.D.6', [
@@ -110,8 +140,13 @@ SETS = [
             why=why('the student draws the branches on the wrong side.', 'signs decide the behavior near asymptotes.', 'tests signs.')),
       ],
       f1=B('Graph rational functions with slant asymptotes', 'HSF-IF.C.7.d', [
-          plot(RG.replace('and the horizontal asymptote', 'and the slant asymptote') + 'y = (x² + 1)/x', grid((-6, 6), (-8, 8), 1, 2),
-               key='No zeros; no y-intercept; vertical asymptote x = 0; slant asymptote y = x; branch through (1, 2) and (-1, -2).', note='Any graph with all features.'),
+          pick('Which graph shows y = (x² + 1)/x, with its asymptotes dashed?', 'C', [
+              cand([lambda x: (x * x + 1) / x], 'two branches with a dashed vertical asymptote x = 0 and a dashed slant asymptote y = x; no zeros; the right branch has a low point at (1, 2) and the left branch a high point at (-1, -2).', vas=[0], slant=[(1, 0)]),
+              cand([lambda x: (x * x - 1) / x], 'two increasing branches with a dashed vertical asymptote x = 0 and a dashed slant asymptote y = x; zeros at -1 and 1.', vas=[0], slant=[(1, 0)]),
+              cand([lambda x: (x * x + 1) / (x - 1)], 'two branches with a dashed vertical asymptote x = 1 and a dashed slant asymptote y = x + 1; y-intercept -1.', vas=[1], slant=[(1, 1)]),
+              cand([lambda x: -(x * x + 1) / x], 'two branches with a dashed vertical asymptote x = 0 and a dashed slant asymptote y = -x; the right branch has a high point at (1, -2).', vas=[0], slant=[(-1, 0)]),
+          ], '(x² + 1)/x = x + 1/x: vertical asymptote x = 0, slant asymptote y = x, no zeros, no y-intercept, through (1, 2) and (-1, -2). The others show (x² - 1)/x, (x² + 1)/(x - 1), and -(x² + 1)/x.',
+              x=(-6, 6), y=(-8, 8), ystep=2),
           sa('Find the slant asymptote of y = (x² - x - 1)/(x - 2).', 'Answer:', key='y = x + 1', note='Form required: equation. Quotient x + 1, remainder 1.'),
           tf('A rational function can cross its horizontal asymptote.', key=True, note='For example y = x/(x² + 1) crosses y = 0 at x = 0.'),
           mc('y = (3x² + 1)/(x² + 4) has horizontal asymptote', ['y = 3', 'y = 1/4', 'y = 0', 'none'], note='Ratio of leading coefficients.'),
@@ -165,8 +200,13 @@ SETS = [
       ],
       f1=B('Construct and graph rational functions with holes', 'HSF-IF.C.7.d', [
           sa('Write a rational function with a hole at x = 1, a vertical asymptote x = -3, and horizontal asymptote y = 0.', 'Answer:', key='For example (x - 1)/((x - 1)(x + 3))', note='Any valid function.'),
-          plot('Graph y = (x² - x - 2)/(x - 2) on the grid. Show the hole with an open circle.', grid((-5, 5), (-4, 6)),
-               key='The line y = x + 1 with an open circle at (2, 3).', note='Any graph with the line and the open circle.'),
+          pick('Which graph shows y = (x² - x - 2)/(x - 2)?', 'A', [
+              cand([lambda x: x + 1], 'the line y = x + 1 with an open circle at (2, 3).', holes=[(2, 3)]),
+              cand([lambda x: x + 1], 'the line y = x + 1 broken at a dashed vertical asymptote x = 2.', vas=[2]),
+              cand([lambda x: x + 1], 'the line y = x + 1 with an open circle at (-1, 0).', holes=[(-1, 0)]),
+              cand([lambda x: x + 1], 'the complete line y = x + 1 with no open circle.'),
+          ], 'x² - x - 2 = (x - 2)(x + 1), so y = x + 1 for x ≠ 2: the line with a hole at (2, 3). The factor cancels, so there is no asymptote at x = 2, and x = -1 is a zero, not an excluded value.',
+              x=(-5, 5), y=(-4, 6)),
           tf('A rational function can have both a hole and a vertical asymptote.', key=True, note='Different factors.'),
           mc('f(x) = (x - 4)²/(x - 4) has', ['a hole at (4, 0)', 'a vertical asymptote x = 4', 'no special features', 'a hole at (4, 4)'], note='Simplifies to x - 4.'),
           sa('Explain why x = -3 is an asymptote but x = 3 is a hole for (x - 3)/(x² - 9).', 'Answer:',
@@ -239,18 +279,38 @@ SETS += [
 
     # ------------------------------------------------------------------ 77. BF.B.4.b verify inverses
     S('HSF-BF.B.4.b', 'Verify inverses by composition on the stated domains',
-      target='Verify that two functions are inverses by computing both compositions and checking the domains', strand='advanced', covers=['BF4b-verify'],
+      target='Verify that two functions are inverses by computing both compositions and checking the domains: identify the complete, correct verification', strand='advanced', covers=['BF4b-verify'],
       main=[
-          proof('Verify by composition that f(x) = 2x + 3 and g(x) = (x - 3)/2 are inverses.', method='Compute f(g(x)) and g(f(x)).',
-                key='f(g(x)) = 2(x - 3)/2 + 3 = x; g(f(x)) = (2x + 3 - 3)/2 = x, for all real x.', note=PR + 'Essential: both compositions simplified to x.'),
-          proof('Verify by composition that f(x) = x³ - 1 and g(x) = ∛(x + 1) are inverses.', method='Compute both compositions.',
-                key='f(g(x)) = (∛(x + 1))³ - 1 = x; g(f(x)) = ∛(x³) = x, for all real x.', note=PR + 'Essential: both compositions.'),
-          proof('Verify by composition that f(x) = 2^x and g(x) = log₂ x are inverses, stating the domains.', method='Compute both compositions with domains.',
-                key='f(g(x)) = 2^(log₂x) = x for x > 0; g(f(x)) = log₂(2^x) = x for all real x.', note=PR + 'Essential: both compositions and both domains.'),
-          proof('Verify by composition that f(x) = 1/(x - 2) (x ≠ 2) and g(x) = 1/x + 2 (x ≠ 0) are inverses.', method='Compute both compositions with domains.',
-                key='f(g(x)) = 1/(1/x) = x for x ≠ 0; g(f(x)) = (x - 2) + 2 = x for x ≠ 2.', note=PR + 'Essential: both compositions and domains.'),
-          proof('Verify that f(x) = x² with domain x ≥ 0 and g(x) = √x are inverses. Explain why the domain restriction is needed.', method='Compute both compositions; use √(x²) = |x|.',
-                key='f(g(x)) = (√x)² = x for x ≥ 0; g(f(x)) = √(x²) = |x| = x because x ≥ 0. Without the restriction, √(x²) = |x| ≠ x for x < 0.', note=PR + 'Essential: both compositions and the |x| step.'),
+          mc('Which work verifies by composition that f(x) = 2x + 3 and g(x) = (x - 3)/2 are inverses?', [
+              'f(g(x)) = 2 · (x - 3)/2 + 3 = x and g(f(x)) = ((2x + 3) - 3)/2 = x, for all real x.',
+              'f(g(x)) = 2 · (x - 3)/2 + 3 = x for all real x, and one composition is enough by itself.',
+              'f(1) = 5 and g(5) = 1, so f and g are inverses.',
+              'f(x) · g(x) = (2x + 3)(x - 3)/2 = 1, so f and g are inverses.'],
+             note='Both compositions must simplify to x. The others check one composition only, one input only, or multiply the functions instead of composing them.'),
+          mc('Which work verifies by composition that f(x) = x³ - 1 and g(x) = ∛(x + 1) are inverses?', [
+              'f(g(x)) = (∛(x + 1))³ - 1 = x and g(f(x)) = ∛((x³ - 1) + 1) = ∛(x³) = x, for all real x.',
+              'f(g(x)) = (∛(x + 1))³ - 1 = x, but only for x ≥ 0, so f and g are inverses only when x ≥ 0.',
+              'f(2) = 7 and g(7) = 2, so f and g are inverses.',
+              'g(f(x)) = ∛(x³ - 1) + 1 = x, so f and g are inverses.'],
+             note='Both compositions simplify to x for every real x (cube roots are defined for negatives). The others add a false domain limit, check one input, or compose incorrectly.'),
+          mc('Which work verifies by composition that f(x) = 2^x and g(x) = log₂ x are inverses, with the correct domains?', [
+              'f(g(x)) = 2^(log₂x) = x for x > 0, and g(f(x)) = log₂(2^x) = x for all real x.',
+              'f(g(x)) = 2^(log₂x) = x and g(f(x)) = log₂(2^x) = x, both for every real number x.',
+              'f(g(x)) = 2 · log₂ x = x for x > 0.',
+              'f(3) = 8 and g(8) = 3, so f and g are inverses for all x.'],
+             note='log₂ x is defined only for x > 0, so f(g(x)) = x holds for x > 0; g(f(x)) = x for every real x. The others ignore the domain of log₂, multiply instead of composing, or check one input.'),
+          mc('Which work verifies by composition that f(x) = 1/(x - 2) (x ≠ 2) and g(x) = 1/x + 2 (x ≠ 0) are inverses?', [
+              'f(g(x)) = 1/((1/x + 2) - 2) = 1/(1/x) = x for x ≠ 0, and g(f(x)) = 1/(1/(x - 2)) + 2 = (x - 2) + 2 = x for x ≠ 2.',
+              'f(g(x)) = 1/((1/x + 2) - 2) = 1/(1/x) = x, so f and g are inverses for all real x with no excluded values needed.',
+              'g(f(x)) = 1/(x - 2) + 2 = (2x - 3)/(x - 2), so they are not inverses.',
+              'f(3) = 1 and g(1) = 3, so f and g are inverses.'],
+             note='Both compositions simplify to x on the stated domains. The others drop the second composition and the domains, compute f(x) + 2 instead of g(f(x)), or check one input.'),
+          mc('f(x) = x² with domain x ≥ 0 and g(x) = √x. Which work verifies that they are inverses and explains why the domain restriction is needed?', [
+              'f(g(x)) = (√x)² = x for x ≥ 0, and g(f(x)) = √(x²) = |x| = x because x ≥ 0. Without the restriction, √(x²) = |x| ≠ x for x < 0.',
+              'f(g(x)) = (√x)² = x and g(f(x)) = √(x²) = x for every real number x, so the two functions are inverses and no domain restriction is needed.',
+              'The restriction is needed because √x is undefined for x > 0.',
+              'g(f(x)) = √(x²) = ±x, and the restriction chooses the + sign.'],
+             note='√(x²) = |x|, which equals x only when x ≥ 0 (for example √((-3)²) = 3). The others ignore |x|, state a false fact about √x, or treat √ as giving two values.'),
       ],
       back=[
           B('Find inverses algebraically', 'HSF-BF.B.4.a', [
@@ -338,8 +398,13 @@ SETS += [
       ],
       f1=B('Estimate inverse values between data points and sketch inverse graphs', 'HSF-BF.B.4.c', [
           sa('A plane\'s altitude is 880 m at t = 3 min and 1200 m at t = 4 min. Estimate the time when it reaches 1000 m.', 'Answer:', key='About 3.4 minutes', note='Accept 3.3 to 3.5 (linear interpolation 3 + 120/320).'),
-          plot('Sketch the graph of the inverse of f(x) = 2^x - 1 on the grid, using at least three points.', grid((-2, 8), (-3, 4)),
-               key='Curve through (0, 0), (1, 1), (3, 2), (7, 3), with vertical asymptote x = -1 (reflection of f over y = x).', note='Any graph with these features.'),
+          pick('Which graph shows the inverse of f(x) = 2^x - 1?', 'D', [
+              cand([lambda x: math.log(x + 1, 2)], 'an increasing curve to the right of the dashed vertical asymptote x = -1, through (0, 0), (1, 1), (3, 2), and (7, 3).', vas=[-1]),
+              cand([lambda x: 2 ** x - 1], 'an increasing curve approaching the dashed line y = -1 to the left, through (0, 0), (1, 1), and (2, 3).', has=[-1]),
+              cand([lambda x: 1 / (2 ** x - 1)], 'two branches separated by a dashed vertical asymptote x = 0: decreasing toward 0 on the right and staying below -1 on the left.', vas=[0]),
+              cand([lambda x: math.log(x, 2) - 1], 'an increasing curve to the right of the dashed vertical asymptote x = 0, through (1, -1), (2, 0), and (4, 1).', vas=[0]),
+          ], 'Swap the coordinates of points of f: (0, 0), (1, 1), (2, 3) on f give (0, 0), (1, 1), (3, 2) on f⁻¹; the asymptote y = -1 becomes x = -1; f⁻¹(x) = log₂(x + 1). The others show f itself, the reciprocal 1/f(x), and log₂ x - 1 (operations undone in the wrong order).',
+              x=(-2, 8), y=(-3, 4)),
           tf('The graph of f⁻¹ is the reflection of the graph of f across y = x.', key=True, note='Swap coordinates.'),
           mc('A decreasing function has g(1) = 40, g(2) = 25, g(3) = 16, g(4) = 10. Estimate g⁻¹(20).', ['between 2 and 3', 'between 3 and 4', 'between 1 and 2', 'between 4 and 5'], note='g(2) = 25, g(3) = 16.'),
           sa('A table gives f(0) = 1, f(1) = 3, f(2) = 7, f(3) = 15. Find (f⁻¹)⁻¹(2).', 'Answer:', key='f(2) = 7', note='Any equivalent form.'),
@@ -463,10 +528,18 @@ SETS += [
     S('HSF-TF.A.3', 'Derive values from special triangles and relate π - x, π + x, 2π - x to x',
       target='Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x', strand='advanced', covers=['TF3-special'],
       main=[
-          proof('Use a 30°-60°-90° triangle with hypotenuse 1 to derive sin(π/3) and cos(π/3).', method='Start from an equilateral triangle of side 1 cut in half.',
-                key='Halving an equilateral triangle gives legs 1/2 and √(1 - 1/4) = √3/2; the angle π/3 is opposite √3/2, so sin(π/3) = √3/2 and cos(π/3) = 1/2.',
-                note=PR + 'Essential: the half-equilateral triangle, the Pythagorean Theorem, and the ratio.'),
-          proof('Use a 45°-45°-90° triangle to derive tan(π/4).', method='Use equal legs.', key='The legs are equal, so tan(π/4) = opposite/adjacent = 1.', note=PR + 'Essential: equal legs and the ratio.'),
+          mc('A 30°-60°-90° triangle with hypotenuse 1 is half of an equilateral triangle with side 1. Which derivation of sin(π/3) and cos(π/3) is correct?', [
+              'The short leg is 1/2 and the long leg is √(1 - 1/4) = √3/2. The angle π/3 is opposite the long leg, so sin(π/3) = √3/2 and cos(π/3) = 1/2.',
+              'The short leg is 1/2 and the long leg is √(1 - 1/4) = √3/2. The angle π/3 is opposite the short leg, so sin(π/3) = 1/2 and cos(π/3) = √3/2.',
+              'The legs are 1/2 and 1 - 1/2 = 1/2, so sin(π/3) = cos(π/3) = 1/2.',
+              'The long leg is √(1 + 1/4) = √5/2, so sin(π/3) = √5/2.'],
+             note='Halving the base gives 1/2; the Pythagorean Theorem gives √3/2; the larger angle is opposite the longer leg. The others put π/3 opposite the short leg, subtract lengths instead of using the Pythagorean Theorem, or add instead of subtracting squares.'),
+          mc('Which derivation of tan(π/4) from a 45°-45°-90° triangle is correct?', [
+              'The two legs are equal, so tan(π/4) = opposite/adjacent = 1.',
+              'The legs are 1 and √2, so tan(π/4) = opposite/adjacent = 1/√2 = √2/2.',
+              'tan(π/4) = sin(π/4) + cos(π/4) = √2.',
+              'The hypotenuse is twice a leg, so tan(π/4) = 1/2.'],
+             note='Equal legs make the ratio 1. The others use the hypotenuse as a leg, add instead of dividing, or use a 30°-60°-90° fact.'),
           sa('Use sin(π - x) = sin x to find sin(5π/6) exactly, and explain the identity with the unit circle.', 'Answer:',
              key='sin(5π/6) = sin(π/6) = 1/2: the points at x and π - x are reflections over the y-axis, with the same y-coordinate', note='Form required: value and explanation.'),
           sa('Use cos(π + x) = -cos x to find cos(7π/6) exactly.', 'Answer:', key='-cos(π/6) = -√3/2', note='Form required: exact value and the relation used.'),
@@ -499,8 +572,18 @@ SETS += [
             why=why('the student cannot compute the missing side.', 'the derivation needs it.', 'uses the Pythagorean Theorem.')),
       ],
       f1=B('Derive more special values and the reflection identities', 'HSF-TF.A.3', [
-          proof('Derive tan(π/6) exactly from a special triangle.', method='Use the 30°-60°-90° triangle.', key='tan(π/6) = (1/2)/(√3/2) = 1/√3 = √3/3.', note=PR + 'Essential: the ratio and its simplification.'),
-          proof('Explain with the unit circle why cos(π - x) = -cos x.', method='Use reflection over the y-axis.', key='The points at x and π - x are reflections over the y-axis, so their x-coordinates are opposites.', note=PR + 'Essential: the reflection and the coordinate.'),
+          mc('Which derivation of tan(π/6) from a special triangle is correct?', [
+              'In the 30°-60°-90° triangle with hypotenuse 1, π/6 is opposite the leg 1/2 and adjacent to the leg √3/2, so tan(π/6) = (1/2)/(√3/2) = 1/√3 = √3/3.',
+              'In the 30°-60°-90° triangle with hypotenuse 1, π/6 is opposite the leg √3/2 and adjacent to the leg 1/2, so tan(π/6) = (√3/2)/(1/2) = √3 exactly.',
+              'The opposite side is half the hypotenuse, so tan(π/6) = 1/2.',
+              'tan(π/6) = (1/2)/(√3/2) = √3/2.'],
+             note='Opposite over adjacent, then simplify (1/2)/(√3/2) = 1/√3 = √3/3. The others use the angle π/3, give sin(π/6) instead, or simplify the quotient incorrectly.'),
+          mc('Which unit-circle argument explains why cos(π - x) = -cos x?', [
+              'The points for x and π - x are reflections of each other over the y-axis, so their x-coordinates (the cosines) are opposites.',
+              'The points for x and π - x are reflections of each other over the x-axis, so their x-coordinates (the cosines) are opposites.',
+              'cos(π - x) = cos π - cos x = -1 - cos x.',
+              'cos(π - π/3) = -1/2 = -cos(π/3), so the rule always holds.'],
+             note='Reflection over the y-axis changes the sign of x and keeps y. The others name the wrong reflection (it keeps x), distribute cosine over a difference, or check one value.'),
           tf('sin(π + x) = -sin x.', key=True, note='Rotation by π.'),
           mc('cos(2π - x) equals', ['cos x', '-cos x', 'sin x', '-sin x'], note='Reflection over the x-axis.'),
           sa('Find sin(11π/6) using one of the relations.', 'Answer:', key='-sin(π/6) = -1/2', note='Form required: value and relation.'),
@@ -518,9 +601,24 @@ SETS += [
     S('HSF-TF.A.4', 'Explain the symmetry and periodicity of trigonometric functions with the unit circle',
       target='Use the unit circle to explain odd/even symmetry and periodicity of sine, cosine, and tangent, and use them to evaluate', strand='advanced', covers=['TF4-symmetry'],
       main=[
-          proof('Use the unit circle to explain why sin(-x) = -sin x.', method='Compare the points for x and -x.', key='The points for x and -x are reflections over the x-axis, so their y-coordinates (the sines) are opposites.', note=EXP + 'Essential: the reflection and y-coordinates.'),
-          proof('Use the unit circle to explain why cos(x + 2π) = cos x.', method='Use one full turn.', key='Adding 2π travels one full circle and ends at the same point, so the x-coordinate is the same.', note=EXP + 'Essential: full turn, same point.'),
-          proof('Use the unit circle to explain why tan(x + π) = tan x.', method='Compare the points for x and x + π.', key='Adding π gives the opposite point (-a, -b); tan = (-b)/(-a) = b/a, the same ratio.', note=EXP + 'Essential: opposite point and the ratio.'),
+          mc('Which unit-circle explanation shows why sin(-x) = -sin x?', [
+              'The points for x and -x are (a, b) and (a, -b), reflections over the x-axis, so the sines b and -b are opposites.',
+              'The points for x and -x are (a, b) and (-a, b), reflections of each other over the y-axis, so their sines are opposites.',
+              'A negative sign can always be moved outside a function, so sin(-x) = -sin x.',
+              'sin(-π/6) = -1/2 = -sin(π/6), so the rule always holds.'],
+             note='Equal arcs in opposite directions from (1, 0) give points that mirror over the x-axis. The others name the wrong reflection, use a false general rule (cos(-x) = cos x, not -cos x), or check one value.'),
+          mc('Which unit-circle explanation shows why cos(x + 2π) = cos x?', [
+              'Adding 2π travels one full turn around the unit circle and ends at the same point, so the x-coordinate (the cosine) is the same.',
+              'cos(x + 2π) = cos x + cos 2π = cos x + 1.',
+              'Adding 2π moves the point to the opposite side of the unit circle, and opposite points on the circle have the same x-coordinate, so the cosine is the same.',
+              'cos(0 + 2π) = 1 = cos 0, so the rule always holds.'],
+             note='The circumference is 2π, so x and x + 2π give the same point. The others distribute cosine over a sum, describe the wrong motion, or check one value.'),
+          mc('Which unit-circle explanation shows why tan(x + π) = tan x?', [
+              'Adding π gives the opposite point (-a, -b) of (a, b), and tan = (-b)/(-a) = b/a, the same ratio.',
+              'Adding π gives the point (a, -b), a reflection over the x-axis, so tan(x + π) = -b/a = -tan x, which is not tan x.',
+              'Adding π travels a full turn, so the point is the same.',
+              'tan(π/4 + π) = 1 = tan(π/4), so the rule always holds.'],
+             note='Half a turn takes (a, b) to (-a, -b); both coordinates change sign, so the ratio is unchanged. The others use the wrong point, mistake π for a full turn, or check one value.'),
           sa('Use symmetry to evaluate cos(-2π/3), and explain.', 'Answer:', key='-1/2: cos is even, so cos(-2π/3) = cos(2π/3) = -1/2', note='Form required: value and reason.'),
           sa('Is f(x) = sin x cos x even, odd, or neither? Explain.', 'Answer:', key='Odd: f(-x) = (-sin x)(cos x) = -f(x)', note='Form required: decision and reason.'),
       ],

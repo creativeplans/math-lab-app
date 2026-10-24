@@ -333,25 +333,27 @@ SETS = [
 
     # ------------------------------------------------------------------ 6. CN.C.9 (+) Fundamental Theorem of Algebra
     S('HSN-CN.C.9', 'Use the Fundamental Theorem of Algebra',
-      target='Use the Fundamental Theorem of Algebra to count the complex zeros of a polynomial (with multiplicity), and show that it holds for quadratics',
+      target='Use the Fundamental Theorem of Algebra to count the complex zeros of a polynomial (with multiplicity), and recognize the argument that shows it holds for quadratics',
       strand='core', covers=['CN9-fta'],
       main=[
           sa('How many complex zeros, counted with multiplicity, does p(x) = 3x⁵ - x² + 7 have? Name the theorem you used.', 'Answer:',
              key='5, by the Fundamental Theorem of Algebra (degree 5)', note='Form required: the number and the theorem.'),
           sa('List every complex zero of p(x) = (x - 2)³(x² + 9) with its multiplicity, and check that the multiplicities add to the degree.', 'Answer:',
              key='2 (multiplicity 3), 3i (multiplicity 1), -3i (multiplicity 1); 3 + 1 + 1 = 5 = degree', note='Form required: all zeros with multiplicities and the check.'),
-          proof('Show that the Fundamental Theorem of Algebra holds for every quadratic p(x) = ax² + bx + c with real a, b, c and a ≠ 0: '
-                'p has exactly two complex zeros counted with multiplicity.', method='Use the quadratic formula and the cases of the discriminant.',
-                key='The zeros are (-b ± √(b² - 4ac))/(2a): two real zeros if D > 0, one real zero of multiplicity 2 if D = 0, two conjugate non-real zeros if D < 0.',
-                note=PR + 'Essential: the formula gives all zeros; the three cases of D = b² - 4ac; for D < 0, √D = i√(-D) is a complex number; '
-                          'for D = 0 the zero -b/(2a) has multiplicity 2 since p(x) = a(x + b/(2a))². Invalid: checking one example.'),
+          mc('Which argument shows that every quadratic p(x) = ax² + bx + c (real a, b, c, a ≠ 0) has exactly two complex zeros, counted with multiplicity?', [
+              'The quadratic formula (-b ± √(b² - 4ac))/(2a) gives every zero: two real zeros if b² - 4ac > 0, one zero of multiplicity 2 if b² - 4ac = 0, and two non-real conjugate zeros if b² - 4ac < 0.',
+              'x² - 5x + 6 = (x - 2)(x - 3) has two zeros, so every quadratic has two zeros.',
+              'The graph of every quadratic is a parabola, and a parabola that opens up or down always crosses the x-axis in exactly two places, so every quadratic ax² + bx + c has exactly two zeros.',
+              'By the quadratic formula the zeros are (-b ± √(b² - 4ac))/(2a). If b² - 4ac < 0 the square root does not exist, so there are no zeros; otherwise there are two, so a quadratic never has more than two zeros.'],
+             note='Every case of the discriminant gives two zeros counted with multiplicity (for D < 0, √D = i√(-D) is a complex number). The others check one example, use a false graph fact (x² + 1 never crosses), or ignore complex zeros.'),
           sa('Find every complex zero of p(x) = x⁴ - 81 and check that the count agrees with the Fundamental Theorem of Algebra.', 'Answer:',
              key='3, -3, 3i, -3i; four zeros for degree 4', note='Form required: all four and the check. (x² - 9)(x² + 9).'),
-          proof('A student says p(x) = x³ + x + 1 has no zeros because it does not factor with integers. Use the Fundamental Theorem of Algebra '
-                'to explain how many complex zeros it has, and explain why at least one of them is real.', ans='Explanation:',
-                method='Count zeros by degree; use conjugate pairs for real coefficients.',
-                key='It has 3 complex zeros with multiplicity; non-real zeros of a real polynomial come in conjugate pairs, so at most 2 are non-real and at least 1 is real.',
-                note=EXP + 'Essential: degree 3 gives 3 zeros; "no integer factorization" does not mean "no zeros"; conjugate pairs force an odd number of real zeros.'),
+          mc('A student says p(x) = x³ + x + 1 has no zeros because it does not factor with integers. Which statement is correct?', [
+              'It has 3 complex zeros counted with multiplicity, and at least one is real, because non-real zeros of a polynomial with real coefficients come in conjugate pairs.',
+              'The student is right: a polynomial that does not factor over the integers has no zeros.',
+              'It has exactly 3 real zeros, because the Fundamental Theorem of Algebra says a polynomial of degree 3 has 3 zeros, and a polynomial with real coefficients has only real zeros.',
+              'It has 3 complex zeros counted with multiplicity, and all three could be non-real, because a polynomial that does not factor over the integers need not cross the x-axis.'],
+             note='Degree 3 gives 3 zeros (Fundamental Theorem of Algebra); conjugate pairs make the number of non-real zeros even, so at least 1 is real. The others confuse "no integer factor" with "no zero", assume all zeros are real, or ignore conjugate pairs.'),
       ],
       back=[
           B('Find the degree of a polynomial', 'HSA-SSE.A.1.a', [
@@ -392,9 +394,12 @@ SETS = [
              key='No: the fourth zero would be a single non-real zero, but non-real zeros come in conjugate pairs.', note='Any equivalent explanation.'),
       ], prog='cross-standard extension', demand='Connect the count of complex zeros to what a graph shows: real zeros as x-intercepts, the rest non-real.'),
       f2=B('Prove existence statements about real zeros', 'HSN-CN.C.9', [
-          proof('Prove that every polynomial of odd degree with real coefficients has at least one real zero.', method='Count zeros with the theorem; pair non-real zeros.',
-                key='An odd number of zeros, minus an even number of non-real zeros, leaves an odd (so nonzero) number of real zeros.',
-                note=PR + 'Essential: n zeros with multiplicity (n odd); conjugate pairs have equal multiplicity, so the non-real zeros count is even; odd minus even is odd ≥ 1.'),
+          mc('Which argument proves that every polynomial of odd degree with real coefficients has at least one real zero?', [
+              'By the Fundamental Theorem of Algebra it has n zeros counted with multiplicity, n odd. Non-real zeros come in conjugate pairs, so there is an even number of them; odd minus even is odd, so at least one zero is real.',
+              'x³ - 1 has the real zero 1, so every polynomial of odd degree has a real zero.',
+              'The Fundamental Theorem of Algebra says that every polynomial of degree n ≥ 1 with real coefficients has at least one real zero; a polynomial of odd degree has degree at least 1, so it has at least one real zero as well.',
+              'By the Fundamental Theorem of Algebra it has n zeros counted with multiplicity, n odd. Non-real zeros come one at a time, so there is an odd number of them, and an odd number of non-real zeros leaves at least one zero that is real.'],
+             note='Count zeros with the theorem and pair the non-real ones. The others check one example, misstate the theorem (it guarantees complex zeros, and x² + 1 has no real zero), or claim an odd number of non-real zeros.'),
           sa('A degree-4 polynomial with real coefficients has the zeros 1 + i and 3. What are all of its possible zero lists?', 'Answer:',
              key='1 + i, 1 - i, 3 and one more real zero r (r may be 3 again, giving 3 with multiplicity 2)', note='Any equivalent answer.'),
           tf('A degree-4 polynomial with real coefficients must have at least one real zero.', key=False, note='x⁴ + 1 has no real zeros; only odd degree guarantees a real zero.'),

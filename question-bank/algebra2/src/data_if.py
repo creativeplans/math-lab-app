@@ -2,7 +2,7 @@
 import math
 
 from qb import S, B, sa, mc, tf, plot
-from common import why, proof, PR, EXP, blank, graph, tbl, pticks
+from common import why, proof, PR, EXP, blank, graph, tbl, pticks, pick, cand, cbrt, rise_fall
 
 TECH = ' A calculator may be used.'
 
@@ -68,11 +68,20 @@ SETS = [
             why=why('the student cannot locate intercepts.', 'intercepts and signs come from factors.', 'finds zeros and signs.')),
       ],
       f1=B('Sketch a model from a verbal description of key features', 'HSF-IF.B.4', [
-          plot('Sketch a possible graph: a population is 50 at t = 0, rises to a maximum of 200 at t = 4, then decreases toward a level of 100 as t grows.',
-               grid((0, 12), (0, 220), 1, 20), key='Starts at (0, 50), peaks at (4, 200), then decreases and approaches the line y = 100.', note='Any graph with all features.'),
-          plot('Sketch a possible graph of a cubic with zeros at -1 and 3 only, positive y-intercept, falling to the right, and touching the x-axis at 3.',
-               grid((-3, 5), (-8, 8), 1, 2), key='Rises to the left, crosses at -1, positive at 0, touches at 3 from above, falls to the right; for example -(x + 1)(x - 3)² scaled.',
-               note='Any graph with all features.'),
+          pick('Which graph could show a population that is 50 at t = 0, rises to a maximum of 200 at t = 4, and then decreases toward a level of 100 as t grows?', 'C', [
+              cand([rise_fall(50, 4, 200, 100)], 'starts at (0, 50), rises to a single peak at (4, 200), then decreases toward the dashed line y = 100.', has=[100], pts=[(0, 50, ''), (4, 200, '')]),
+              cand([rise_fall(50, 4, 200, 0)], 'starts at (0, 50), rises to a single peak at (4, 200), then decreases toward 0.', pts=[(0, 50, ''), (4, 200, '')]),
+              cand([rise_fall(100, 4, 200, 50)], 'starts at (0, 100), rises to a single peak at (4, 200), then decreases toward the dashed line y = 50.', has=[50], pts=[(0, 100, ''), (4, 200, '')]),
+              cand([rise_fall(50, 8, 200, 100)], 'starts at (0, 50), rises to a single peak at (8, 200), then decreases toward the dashed line y = 100.', has=[100], pts=[(0, 50, ''), (8, 200, '')]),
+          ], 'The graph must start at (0, 50), peak at (4, 200), and level off toward y = 100. The others level off toward 0, start at 100 and level off toward 50, or peak at t = 8.',
+              x=(0, 12), y=(0, 220), ystep=20, ylab=40),
+          pick('Which graph could show a cubic with zeros at -1 and 3 only, a negative y-intercept, falling to the right, and touching the x-axis at 3?', 'A', [
+              cand([lambda x: -(x + 1) * (x - 3) ** 2 / 3], 'a cubic curve that comes down from the upper left, crosses the x-axis at -1, passes (0, -3), touches the x-axis at 3 from below, and falls to the right.'),
+              cand([lambda x: (x + 1) * (x - 3) ** 2 / 3], 'a cubic curve that rises from the lower left, crosses at -1, passes (0, 3), touches the x-axis at 3 from above, and rises to the right.'),
+              cand([lambda x: -(x + 1) ** 2 * (x - 3) / 3], 'a cubic curve that touches the x-axis at -1, passes (0, 1), crosses at 3, and falls to the right.'),
+              cand([lambda x: -(x + 1) * (x - 3) / 2], 'a parabola opening down that crosses the x-axis at -1 and 3 and passes (0, 1.5).'),
+          ], 'Touching at 3 and falling to the right means the graph is below the axis on both sides of 3, so it is negative between -1 and 3 and the y-intercept is negative; for example y = -(x + 1)(x - 3)²/3. The others rise to the right, touch at -1 instead of 3, or are a parabola (not a cubic).',
+              x=(-3, 5), y=(-8, 8), ystep=2),
           tf('A graph can have a relative maximum that is not the absolute maximum.', key=True, note='Cubics, for example.'),
           mc('A model rises to a peak and approaches 0 as t grows. Which formula fits?', ['20t/(t² + 4)', '20t', '20 - t', 't²'], note='Rational with a peak.'),
           sa('Write a polynomial with zeros 0 and 6 and a relative maximum in between, whose values are positive between the zeros.', 'Answer:', key='For example f(x) = x(6 - x)', note='Any valid example.'),
@@ -285,18 +294,43 @@ def tgrid(periods=2, ylo=-4, yhi=4, ystep=1, lab=0.5):
 SETS += [
     # ------------------------------------------------------------------ 46. IF.C.7.b radical functions
     S('HSF-IF.C.7.b', 'Graph square root and cube root functions with transformations',
-      target='Graph a transformed square root or cube root function by hand, showing the starting point or center, key points, domain, and range', strand='core', covers=['IF7b-radical'],
+      target='Identify the graph of a transformed square root or cube root function from its starting point or center, key points, domain, and range', strand='core', covers=['IF7b-radical'],
       main=[
-          plot(GR + 'the starting point and two more points, and state the domain and range.\ny = √(x - 2) + 1', grid((-2, 10), (-2, 6)),
-               key='Starts at (2, 1); passes through (3, 2) and (6, 3); increasing; domain x ≥ 2, range y ≥ 1.', note='Any graph with these features; domain and range required.'),
-          plot(GR + 'the starting point and two more points, and state the domain and range.\ny = -√(x + 3)', grid((-4, 8), (-5, 2)),
-               key='Starts at (-3, 0); passes through (-2, -1) and (1, -2); decreasing; domain x ≥ -3, range y ≤ 0.', note='Any graph with these features.'),
-          plot(GR + 'the starting point and two more points, and state the domain and range.\ny = 2√x - 3', grid((-1, 10), (-4, 4)),
-               key='Starts at (0, -3); passes through (1, -1) and (4, 1), (9, 3); domain x ≥ 0, range y ≥ -3.', note='Any graph with these features.'),
-          plot(GR + 'the center point and two points on each side, and state the domain and range.\ny = ∛(x + 1)', dict(grid((-10, 8), (-3, 3)), xlab=2),
-               key='Center (-1, 0); points (-2, -1), (-9, -2), (0, 1), (7, 2); increasing; domain and range all real numbers.', note='Any graph with these features.'),
-          plot(GR + 'the center point and two more points, and state the domain and range.\ny = -∛(x - 2) + 1', dict(grid((-7, 11), (-3, 4)), xlab=2),
-               key='Center (2, 1); points (3, 0), (1, 2), (10, -1), (-6, 3); decreasing; domain and range all real numbers.', note='Any graph with these features.'),
+          pick('Which graph shows y = √(x - 2) + 1?', 'B', [
+              cand([lambda x: math.sqrt(x - 2) + 1], 'a curve that starts at the point (2, 1) and rises to the right through (3, 2) and (6, 3).', pts=[(2, 1, '')]),
+              cand([lambda x: math.sqrt(x + 2) + 1], 'a curve that starts at the point (-2, 1) and rises to the right through (-1, 2) and (2, 3).', pts=[(-2, 1, '')]),
+              cand([lambda x: math.sqrt(x - 1) + 2], 'a curve that starts at the point (1, 2) and rises to the right through (2, 3) and (5, 4).', pts=[(1, 2, '')]),
+              cand([lambda x: -math.sqrt(x - 2) + 1], 'a curve that starts at the point (2, 1) and falls to the right through (3, 0) and (6, -1).', pts=[(2, 1, '')]),
+          ], 'The graph starts at (2, 1) (right 2 and up 1 from y = √x) and rises through (3, 2) and (6, 3); domain x ≥ 2, range y ≥ 1. The others show √(x + 2) + 1 (shifted the wrong way), √(x - 1) + 2 (shifts swapped), and -√(x - 2) + 1 (reflected).',
+              x=(-3, 10), y=(-2, 6)),
+          pick('Which graph shows y = -√(x + 3)?', 'D', [
+              cand([lambda x: -math.sqrt(x + 3)], 'a curve that starts at the point (-3, 0) and falls to the right through (-2, -1) and (1, -2).', pts=[(-3, 0, '')]),
+              cand([lambda x: -math.sqrt(x - 3)], 'a curve that starts at the point (3, 0) and falls to the right through (4, -1) and (7, -2).', pts=[(3, 0, '')]),
+              cand([lambda x: math.sqrt(x + 3)], 'a curve that starts at the point (-3, 0) and rises to the right through (-2, 1) and (1, 2).', pts=[(-3, 0, '')]),
+              cand([lambda x: -math.sqrt(x) + 3], 'a curve that starts at the point (0, 3) and falls to the right through (1, 2) and (4, 1).', pts=[(0, 3, '')]),
+          ], 'Left 3, then reflected over the x-axis: starts at (-3, 0) and falls through (-2, -1) and (1, -2); domain x ≥ -3, range y ≤ 0. The others show -√(x - 3), √(x + 3), and -√x + 3.',
+              x=(-4, 8), y=(-4, 4)),
+          pick('Which graph shows y = 2√x - 3?', 'A', [
+              cand([lambda x: 2 * math.sqrt(x) - 3], 'a curve that starts at the point (0, -3) and rises to the right through (1, -1), (4, 1), and (9, 3).', pts=[(0, -3, '')]),
+              cand([lambda x: 2 * math.sqrt(x - 3)], 'a curve that starts at the point (3, 0) and rises to the right through (4, 2) and (7, 4).', pts=[(3, 0, '')]),
+              cand([lambda x: math.sqrt(x) - 3], 'a curve that starts at the point (0, -3) and rises more slowly through (1, -2), (4, -1), and (9, 0).', pts=[(0, -3, '')]),
+              cand([lambda x: 2 * math.sqrt(x) + 3], 'a curve that starts at the point (0, 3) and rises to the right through (1, 5).', pts=[(0, 3, '')]),
+          ], 'Vertical stretch by 2, then down 3: starts at (0, -3) and passes (1, -1), (4, 1), (9, 3); domain x ≥ 0, range y ≥ -3. The others show 2√(x - 3), √x - 3 (no stretch), and 2√x + 3.',
+              x=(-1, 10), y=(-4, 6)),
+          pick('Which graph shows y = ∛(x + 1)?', 'C', [
+              cand([lambda x: cbrt(x + 1)], 'an S-shaped curve, increasing, centered at the point (-1, 0), through (-9, -2), (-2, -1), (0, 1), and (7, 2).', pts=[(-1, 0, '')]),
+              cand([lambda x: cbrt(x - 1)], 'an S-shaped curve, increasing, centered at the point (1, 0), through (-7, -2), (0, -1), and (2, 1).', pts=[(1, 0, '')]),
+              cand([lambda x: cbrt(x) + 1], 'an S-shaped curve, increasing, centered at the point (0, 1), through (-8, -1), (-1, 0), and (1, 2).', pts=[(0, 1, '')]),
+              cand([lambda x: -cbrt(x + 1)], 'an S-shaped curve, decreasing, centered at the point (-1, 0), through (-2, 1) and (0, -1).', pts=[(-1, 0, '')]),
+          ], 'Left 1: increasing, centered at (-1, 0), through (-9, -2), (-2, -1), (0, 1), (7, 2); domain and range all real numbers. The others show ∛(x - 1), ∛x + 1, and -∛(x + 1).',
+              x=(-10, 8), y=(-3, 3), xlab=2),
+          pick('Which graph shows y = -∛(x - 2) + 1?', 'B', [
+              cand([lambda x: -cbrt(x - 2) + 1], 'an S-shaped curve, decreasing, centered at the point (2, 1), through (-6, 3), (1, 2), (3, 0), and (10, -1).', pts=[(2, 1, '')]),
+              cand([lambda x: cbrt(x - 2) + 1], 'an S-shaped curve, increasing, centered at the point (2, 1), through (1, 0) and (3, 2).', pts=[(2, 1, '')]),
+              cand([lambda x: -cbrt(x + 2) + 1], 'an S-shaped curve, decreasing, centered at the point (-2, 1), through (-3, 2) and (-1, 0).', pts=[(-2, 1, '')]),
+              cand([lambda x: -cbrt(x - 1) + 2], 'an S-shaped curve, decreasing, centered at the point (1, 2), through (0, 3) and (2, 1).', pts=[(1, 2, '')]),
+          ], 'Right 2, reflected, up 1: decreasing, centered at (2, 1), through (1, 2), (3, 0), (10, -1), (-6, 3); domain and range all real numbers. The others show ∛(x - 2) + 1, -∛(x + 2) + 1, and -∛(x - 1) + 2.',
+              x=(-7, 11), y=(-3, 4), xlab=2),
       ],
       back=[
           B('Graph y = √x and y = ∛x from a table', 'HSF-IF.C.7.b', [
@@ -325,8 +359,13 @@ SETS += [
             why=why('the student cannot compute points.', 'plotted points need roots.', 'evaluates roots.')),
       ],
       f1=B('Graph radical functions with horizontal stretches and reflections', 'HSF-IF.C.7.b', [
-          plot(GR + 'the starting point and two more points, and state the domain.\ny = √(-x)', dict(grid((-10, 2), (-1, 4)), xlab=2),
-               key='Starts at (0, 0); passes through (-1, 1), (-4, 2), (-9, 3); domain x ≤ 0.', note='Any graph with these features.'),
+          pick('Which graph shows y = √(-x)?', 'D', [
+              cand([lambda x: math.sqrt(-x)], 'a curve that starts at the origin and rises to the left through (-1, 1), (-4, 2), and (-9, 3).', pts=[(0, 0, '')]),
+              cand([lambda x: math.sqrt(x)], 'a curve that starts at the origin and rises to the right through (1, 1), (4, 2), and (9, 3).', pts=[(0, 0, '')]),
+              cand([lambda x: -math.sqrt(x)], 'a curve that starts at the origin and falls to the right through (1, -1), (4, -2), and (9, -3).', pts=[(0, 0, '')]),
+              cand([lambda x: -math.sqrt(-x)], 'a curve that starts at the origin and falls to the left through (-1, -1), (-4, -2), and (-9, -3).', pts=[(0, 0, '')]),
+          ], 'Reflection of y = √x over the y-axis: starts at (0, 0) and rises to the left through (-1, 1), (-4, 2), (-9, 3); domain x ≤ 0. The others show √x, -√x, and -√(-x).',
+              x=(-10, 10), y=(-4, 4), xlab=2),
           sa('Show that √(4x) = 2√x for x ≥ 0 and explain what this says about the two graphs.', 'Answer:', key='√(4x) = √4 · √x = 2√x, so the horizontal compression by 1/4 equals the vertical stretch by 2.',
              note='Any equivalent explanation.'),
           tf('y = ∛(-x) is the same as y = ∛x.', key=False, note='∛(-x) = -∛x; at x = 8 they give -2 and 2.'),
@@ -345,19 +384,67 @@ SETS += [
 
     # ------------------------------------------------------------------ 47. IF.C.7.b piecewise and absolute value
     S('HSF-IF.C.7.b', 'Graph piecewise-defined and absolute value functions',
-      target='Graph piecewise-defined functions (with open and closed endpoints) and absolute value functions with transformations', strand='core', covers=['IF7b-piecewise'],
+      target='Identify the graphs of piecewise-defined functions (with open and closed endpoints) and of absolute value functions with transformations', strand='core', covers=['IF7b-piecewise'],
       main=[
-          plot(GR + 'each endpoint with an open or closed circle.\nf(x) = x + 3 for x < -1, and f(x) = x² for x ≥ -1', grid((-5, 3), (-2, 9)),
-               key='A ray of slope 1 ending at an open circle (-1, 2); a parabola piece starting at a closed circle (-1, 1) through (0, 0), (1, 1), (2, 4).', note='Endpoint circles must be correct.'),
-          plot(GR + 'the vertex and two more points.\ny = |2x - 4| - 1', grid((-1, 6), (-2, 7)),
-               key='V with vertex (2, -1); points (0, 3), (4, 3), (1, 1), (3, 1).', note='Any graph with these features.'),
-          plot(GR + 'each endpoint with an open or closed circle.\nf(x) = -2 for x ≤ 1, and f(x) = √(x - 1) for x > 1', grid((-3, 10), (-3, 4)),
-               key='Horizontal ray y = -2 ending at a closed circle (1, -2); square-root piece starting at an open circle (1, 0) through (2, 1), (5, 2), (10, 3).', note='Endpoint circles must be correct.'),
-          plot(GR + 'the vertex and two more points.\ny = -|x + 1| + 3', grid((-6, 4), (-3, 4)),
-               key='Upside-down V with vertex (-1, 3); points (-4, 0), (2, 0), (0, 2).', note='Any graph with these features.'),
-          plot(GR + 'each endpoint with an open or closed circle.\nf(x) = 2^x for x < 1, and f(x) = 4 - x for x ≥ 1', grid((-3, 6), (-2, 4)),
-               key='Exponential piece through (-2, 0.25), (0, 1), approaching y = 0 to the left, ending at an open circle (1, 2); a line from a closed circle (1, 3) through (4, 0).',
-               note='Endpoint circles must be correct.'),
+          pick('Which graph shows f(x) = x + 3 for x < -1, and f(x) = x² for x ≥ -1?', 'C', [
+              cand([lambda x: x + 3 if x < -1 else None, lambda x: x * x if x >= -1 else None],
+                   'a line of slope 1 coming from the lower left and ending at an open circle at (-1, 2); a parabola piece starting at a closed dot at (-1, 1) and passing (0, 0), (1, 1), (2, 4).',
+                   holes=[(-1, 2)], pts=[(-1, 1, '')]),
+              cand([lambda x: x + 3 if x < -1 else None, lambda x: x * x if x >= -1 else None],
+                   'the same two pieces, but the line ends at a closed dot at (-1, 2) and the parabola piece starts at an open circle at (-1, 1).',
+                   holes=[(-1, 1)], pts=[(-1, 2, '')]),
+              cand([lambda x: x + 3 if x > -1 else None, lambda x: x * x if x <= -1 else None],
+                   'a parabola piece for x ≤ -1 ending at a closed dot at (-1, 1); a line of slope 1 starting at an open circle at (-1, 2) and rising to the right.',
+                   holes=[(-1, 2)], pts=[(-1, 1, '')]),
+              cand([lambda x: x + 3 if x < 1 else None, lambda x: x * x if x >= 1 else None],
+                   'a line of slope 1 ending at an open circle at (1, 4); a parabola piece starting at a closed dot at (1, 1).',
+                   holes=[(1, 4)], pts=[(1, 1, '')]),
+          ], 'The line y = x + 3 is used to the left of -1 and ends with an open circle at (-1, 2) (x = -1 is not included); the parabola y = x² starts with a closed dot at (-1, 1). The others swap the circles, swap the pieces, or break at x = 1.',
+              x=(-5, 3), y=(-2, 9)),
+          pick('Which graph shows y = |2x - 4| - 1?', 'A', [
+              cand([lambda x: abs(2 * x - 4) - 1], 'a V shape opening up with vertex (2, -1), through (1, 1), (3, 1), (0, 3), and (4, 3).', pts=[(2, -1, '')]),
+              cand([lambda x: abs(x - 2) - 1], 'a V shape opening up with vertex (2, -1), through (0, 1) and (4, 1); less steep.', pts=[(2, -1, '')]),
+              cand([lambda x: abs(2 * x - 4) + 1], 'a V shape opening up with vertex (2, 1), through (0, 5) and (4, 5).', pts=[(2, 1, '')]),
+              cand([lambda x: -abs(2 * x - 4) - 1], 'a V shape opening down with vertex (2, -1), through (1, -3) and (3, -3).', pts=[(2, -1, '')]),
+          ], '|2x - 4| = 2|x - 2|: vertex (2, -1), slopes ±2, through (0, 3), (1, 1), (3, 1), (4, 3). The others show |x - 2| - 1 (slopes ±1), |2x - 4| + 1, and -|2x - 4| - 1.',
+              x=(-1, 6), y=(-4, 7)),
+          pick('Which graph shows f(x) = -2 for x ≤ 1, and f(x) = √(x - 1) for x > 1?', 'D', [
+              cand([lambda x: -2 if x <= 1 else None, lambda x: math.sqrt(x - 1) if x > 1 else None],
+                   'a horizontal ray at y = -2 ending at a closed dot at (1, -2); a square-root curve starting at an open circle at (1, 0) through (2, 1) and (5, 2).',
+                   holes=[(1, 0)], pts=[(1, -2, '')]),
+              cand([lambda x: -2 if x <= 1 else None, lambda x: math.sqrt(x - 1) if x > 1 else None],
+                   'the same two pieces, but the ray ends at an open circle at (1, -2) and the curve starts at a closed dot at (1, 0).',
+                   holes=[(1, -2)], pts=[(1, 0, '')]),
+              cand([lambda x: -2 if x <= 1 else None, lambda x: math.sqrt(x) if x > 1 else None],
+                   'a horizontal ray at y = -2 ending at a closed dot at (1, -2); a square-root curve starting at an open circle at (1, 1) through (4, 2) and (9, 3).',
+                   holes=[(1, 1)], pts=[(1, -2, '')]),
+              cand([lambda x: 2 if x <= 1 else None, lambda x: math.sqrt(x - 1) if x > 1 else None],
+                   'a horizontal ray at y = 2 ending at a closed dot at (1, 2); a square-root curve starting at an open circle at (1, 0) through (2, 1) and (5, 2).',
+                   holes=[(1, 0)], pts=[(1, 2, '')]),
+          ], 'The constant piece includes x = 1 (closed dot at (1, -2)); the square-root piece starts at x = 1 but does not include it (open circle at (1, 0)) and passes (2, 1), (5, 2), (10, 3). The others swap the circles, use √x, or use y = 2.',
+              x=(-3, 10), y=(-3, 4)),
+          pick('Which graph shows y = -|x + 1| + 3?', 'B', [
+              cand([lambda x: -abs(x + 1) + 3], 'an upside-down V with vertex (-1, 3), crossing the x-axis at -4 and 2.', pts=[(-1, 3, '')]),
+              cand([lambda x: -abs(x - 1) + 3], 'an upside-down V with vertex (1, 3), crossing the x-axis at -2 and 4.', pts=[(1, 3, '')]),
+              cand([lambda x: abs(x + 1) - 3], 'a V opening up with vertex (-1, -3), crossing the x-axis at -4 and 2.', pts=[(-1, -3, '')]),
+              cand([lambda x: -abs(x + 3) + 1], 'an upside-down V with vertex (-3, 1), crossing the x-axis at -4 and -2.', pts=[(-3, 1, '')]),
+          ], 'Left 1, reflected, up 3: vertex (-1, 3), opening down, through (-4, 0), (0, 2), (2, 0). The others show -|x - 1| + 3, |x + 1| - 3, and -|x + 3| + 1.',
+              x=(-6, 4), y=(-4, 5)),
+          pick('Which graph shows f(x) = 2^x for x < 1, and f(x) = 4 - x for x ≥ 1?', 'A', [
+              cand([lambda x: 2 ** x if x < 1 else None, lambda x: 4 - x if x >= 1 else None],
+                   'an increasing exponential curve through (0, 1) ending at an open circle at (1, 2); a line of slope -1 starting at a closed dot at (1, 3) through (4, 0).',
+                   holes=[(1, 2)], pts=[(1, 3, '')]),
+              cand([lambda x: 2 ** x if x < 1 else None, lambda x: 4 - x if x >= 1 else None],
+                   'the same two pieces, but the curve ends at a closed dot at (1, 2) and the line starts at an open circle at (1, 3).',
+                   holes=[(1, 3)], pts=[(1, 2, '')]),
+              cand([lambda x: 0.5 ** x if x < 1 else None, lambda x: 4 - x if x >= 1 else None],
+                   'a decreasing exponential curve through (0, 1) ending at an open circle at (1, 0.5); a line of slope -1 starting at a closed dot at (1, 3) through (4, 0).',
+                   holes=[(1, 0.5)], pts=[(1, 3, '')]),
+              cand([lambda x: 4 - x if x < 1 else None, lambda x: 2 ** x if x >= 1 else None],
+                   'a line of slope -1 ending at an open circle at (1, 3); an increasing exponential curve starting at a closed dot at (1, 2) through (2, 4).',
+                   holes=[(1, 3)], pts=[(1, 2, '')]),
+          ], 'For x < 1 the graph is y = 2^x (through (0, 1), approaching y = 0 to the left) with an open circle at (1, 2); for x ≥ 1 it is y = 4 - x from a closed dot at (1, 3) through (4, 0). The others swap the circles, use (1/2)^x, or swap the pieces.',
+              x=(-3, 6), y=(-2, 5)),
       ],
       back=[
           B('Evaluate and graph simple piecewise functions', 'HSF-IF.C.7.b', [
@@ -404,18 +491,43 @@ SETS += [
 
     # ------------------------------------------------------------------ 48. IF.C.7.c polynomial graphs
     S('HSF-IF.C.7.c', 'Graph polynomial functions showing zeros and end behavior',
-      target='Factor a polynomial given in standard form, then graph it showing zeros (crossing or touching), the y-intercept, a point in each interval, and end behavior', strand='core', covers=['IF7c-poly'],
+      target='Factor a polynomial given in standard form, then identify its graph from the zeros (crossing or touching), the y-intercept, a point in each interval, and end behavior', strand='core', covers=['IF7c-poly'],
       main=[
-          plot('Factor, then graph on the grid. Show every zero, the y-intercept, one point between each pair of zeros, and the end behavior.\ny = x³ - 4x', grid((-3, 3), (-8, 8), 1, 2),
-               key='x(x - 2)(x + 2): crosses at -2, 0, 2; points (-1, 3) and (1, -3); falls left, rises right.', note='Any graph with these features.'),
-          plot('Factor, then graph on the grid. Show every zero, the y-intercept, one point between each pair of zeros, and the end behavior.\ny = -x³ + 3x²', grid((-2, 4), (-6, 8), 1, 2),
-               key='-x²(x - 3): touches at 0, crosses at 3; point (2, 4); y-intercept 0; rises left, falls right.', note='Any graph with these features.'),
-          plot('Factor, then graph on the grid. Show every zero, the y-intercept, one point between each pair of zeros, and the end behavior.\ny = x⁴ - 4x²', grid((-3, 3), (-6, 8), 1, 2),
-               key='x²(x - 2)(x + 2): touches at 0, crosses at ±2; points (±1, -3); rises at both ends.', note='Any graph with these features.'),
-          plot('Factor, then graph on the grid. Show every zero, the y-intercept, one point between each pair of zeros, and the end behavior.\ny = x³ + x² - 6x', grid((-4, 3), (-10, 12), 1, 2),
-               key='x(x + 3)(x - 2): crosses at -3, 0, 2; points (-2, 8) and (1, -4); falls left, rises right.', note='Any graph with these features.'),
-          plot('Factor, then graph on the grid. Show every zero, the y-intercept, one point between each pair of zeros, and the end behavior.\ny = -x⁴ + 2x³', grid((-2, 3), (-6, 4), 1, 1),
-               key='-x³(x - 2): crosses at 0 with a flattened shape (multiplicity 3) and crosses at 2; point (1, 1); falls at both ends.', note='Any graph with these features.'),
+          pick('Which graph shows y = x³ - 4x?', 'D', [
+              cand([lambda x: x ** 3 - 4 * x], 'a cubic that falls to the left and rises to the right, crossing the x-axis at -2, 0, and 2, through (-1, 3) and (1, -3).'),
+              cand([lambda x: -x ** 3 + 4 * x], 'a cubic that rises to the left and falls to the right, crossing the x-axis at -2, 0, and 2, through (-1, -3) and (1, 3).'),
+              cand([lambda x: x * (x - 2) ** 2], 'a cubic that crosses the x-axis at 0 and touches it at 2, through (1, 1).'),
+              cand([lambda x: x * x - 4], 'a parabola opening up with vertex (0, -4), crossing the x-axis at -2 and 2.'),
+          ], 'x³ - 4x = x(x - 2)(x + 2): crosses at -2, 0, 2; (-1, 3) and (1, -3); falls left, rises right (odd degree, positive leading coefficient). The others show -x³ + 4x, x(x - 2)², and x² - 4.',
+              x=(-3, 3), y=(-8, 8), ystep=2),
+          pick('Which graph shows y = -x³ + 3x²?', 'C', [
+              cand([lambda x: -x ** 3 + 3 * x * x], 'a cubic that rises to the left and falls to the right, touching the x-axis at 0 from above and crossing at 3, through (2, 4).'),
+              cand([lambda x: x ** 3 - 3 * x * x], 'a cubic that falls to the left and rises to the right, touching the x-axis at 0 from below and crossing at 3, through (2, -4).'),
+              cand([lambda x: -x * (x - 3) ** 2], 'a cubic that crosses the x-axis at 0 and touches it at 3, through (1, -4).'),
+              cand([lambda x: -x * x * (x + 3)], 'a cubic that crosses the x-axis at -3 and touches it at 0, through (-2, -4) and (1, -4).'),
+          ], '-x³ + 3x² = -x²(x - 3): touches at 0 (double zero), crosses at 3, (2, 4), rises left and falls right. The others show x³ - 3x², -x(x - 3)², and -x²(x + 3).',
+              x=(-4, 4), y=(-6, 8), ystep=2),
+          pick('Which graph shows y = x⁴ - 4x²?', 'B', [
+              cand([lambda x: x ** 4 - 4 * x * x], 'a W-shaped quartic that rises at both ends, crosses at -2 and 2, touches the x-axis at 0 from below, through (-1, -3) and (1, -3).'),
+              cand([lambda x: -x ** 4 + 4 * x * x], 'an M-shaped quartic that falls at both ends, crosses at -2 and 2, touches at 0 from above, through (-1, 3) and (1, 3).'),
+              cand([lambda x: x ** 3 - 4 * x], 'a cubic that falls left and rises right, crossing at -2, 0, and 2.'),
+              cand([lambda x: x ** 4 - x * x], 'a W-shaped quartic that rises at both ends, with zeros at -1, 0, and 1 and shallow dips between.'),
+          ], 'x⁴ - 4x² = x²(x - 2)(x + 2): touches at 0, crosses at ±2, (±1, -3), rises at both ends (even degree, positive leading coefficient). The others show -x⁴ + 4x², x³ - 4x, and x⁴ - x².',
+              x=(-3, 3), y=(-6, 8), ystep=2),
+          pick('Which graph shows y = x³ + x² - 6x?', 'A', [
+              cand([lambda x: x ** 3 + x * x - 6 * x], 'a cubic that falls left and rises right, crossing at -3, 0, and 2, through (-2, 8) and (1, -4).'),
+              cand([lambda x: x ** 3 - x * x - 6 * x], 'a cubic that falls left and rises right, crossing at -2, 0, and 3, through (-1, 4) and (2, -8).'),
+              cand([lambda x: -x ** 3 - x * x + 6 * x], 'a cubic that rises left and falls right, crossing at -3, 0, and 2, through (-2, -8) and (1, 4).'),
+              cand([lambda x: x * x + x - 6], 'a parabola opening up crossing at -3 and 2, with y-intercept -6.'),
+          ], 'x³ + x² - 6x = x(x + 3)(x - 2): crosses at -3, 0, 2; (-2, 8) and (1, -4); falls left, rises right. The others show x(x - 3)(x + 2), its reflection -x(x + 3)(x - 2), and x² + x - 6.',
+              x=(-4, 3), y=(-10, 12), ystep=2),
+          pick('Which graph shows y = -x⁴ + 2x³?', 'C', [
+              cand([lambda x: -x ** 4 + 2 * x ** 3], 'a quartic that falls at both ends, crosses at 0 with a flattened S shape and crosses at 2, through (1, 1).'),
+              cand([lambda x: x ** 4 - 2 * x ** 3], 'a quartic that rises at both ends, crosses at 0 with a flattened S shape and crosses at 2, through (1, -1).'),
+              cand([lambda x: -x * x * (x - 2) ** 2], 'a quartic that falls at both ends and touches the x-axis at 0 and at 2, staying at or below the axis, through (1, -1).'),
+              cand([lambda x: -x ** 4 - 2 * x ** 3], 'a quartic that falls at both ends, crosses at -2 and at 0, through (-1, 1).'),
+          ], '-x⁴ + 2x³ = -x³(x - 2): crosses at 0 with a flattened shape (multiplicity 3) and at 2; (1, 1); falls at both ends (even degree, negative leading coefficient). The others show x⁴ - 2x³, -x²(x - 2)², and -x³(x + 2).',
+              x=(-3, 3), y=(-6, 4)),
       ],
       back=[
           B('Factor out common factors and special products', 'HSA-SSE.A.2', [
@@ -468,18 +580,43 @@ SETS += [
 SETS += [
     # ------------------------------------------------------------------ 49. IF.C.7.e exponential graphs
     S('HSF-IF.C.7.e', 'Graph exponential functions with intercepts, asymptote, and end behavior',
-      target='Graph a transformed exponential function, showing the y-intercept, any x-intercept, the horizontal asymptote, and end behavior', strand='core', covers=['IF7e-exp'],
+      target='Identify the graph of a transformed exponential function from its y-intercept, any x-intercept, the horizontal asymptote, and end behavior', strand='core', covers=['IF7e-exp'],
       main=[
-          plot(GR + 'the y-intercept, the x-intercept (as a decimal), and the asymptote (dashed).\ny = 2^x - 3', grid((-4, 4), (-4, 6)),
-               key='Asymptote y = -3; y-intercept (0, -2); x-intercept log₂ 3 ≈ 1.58; points (1, -1), (2, 1), (3, 5); increasing.', note='Any graph with these features.'),
-          plot(GR + 'the y-intercept and the asymptote (dashed), and describe the end behavior.\ny = 3(0.5)^x', grid((-3, 5), (-1, 12), 1, 1),
-               key='Asymptote y = 0; y-intercept (0, 3); points (-2, 12), (-1, 6), (1, 1.5), (2, 0.75); decreasing; y → 0 as x → ∞.', note='Any graph with these features.'),
-          plot(GR + 'the y-intercept, the x-intercept, and the asymptote (dashed).\ny = -2^x + 4', grid((-4, 4), (-5, 5)),
-               key='Asymptote y = 4; y-intercept (0, 3); x-intercept (2, 0); points (1, 2), (3, -4); decreasing; approaches 4 to the left.', note='Any graph with these features.'),
-          plot(GR + 'the y-intercept and the asymptote (dashed).\ny = 2^(x+1)', grid((-5, 3), (-1, 9)),
-               key='Asymptote y = 0; y-intercept (0, 2); points (-1, 1), (1, 4), (2, 8); increasing.', note='Any graph with these features.'),
-          plot(GR + 'the y-intercept and the asymptote (dashed).\ny = (1/3)^x + 1', grid((-3, 4), (-1, 11)),
-               key='Asymptote y = 1; y-intercept (0, 2); points (-1, 4), (-2, 10), (1, 4/3); decreasing toward 1.', note='Any graph with these features.'),
+          pick('Which graph shows y = 2^x - 3?', 'B', [
+              cand([lambda x: 2 ** x - 3], 'an increasing curve approaching the dashed line y = -3 to the left, through (0, -2), (2, 1), and (3, 5), crossing the x-axis near 1.58.', has=[-3]),
+              cand([lambda x: 2 ** (x - 3)], 'an increasing curve approaching the x-axis to the left, through (3, 1) and (4, 2).', has=[0]),
+              cand([lambda x: 2 ** x + 3], 'an increasing curve approaching the dashed line y = 3 to the left, through (0, 4) and (1, 5).', has=[3]),
+              cand([lambda x: 0.5 ** x - 3], 'a decreasing curve approaching the dashed line y = -3 to the right, through (0, -2), (-2, 1), and (-3, 5).', has=[-3]),
+          ], 'Down 3 from y = 2^x: asymptote y = -3, y-intercept (0, -2), x-intercept log₂ 3 ≈ 1.58, increasing. The others show 2^(x-3), 2^x + 3, and (1/2)^x - 3.',
+              x=(-4, 4), y=(-4, 6)),
+          pick('Which graph shows y = 3(0.5)^x?', 'D', [
+              cand([lambda x: 3 * 0.5 ** x], 'a decreasing curve through (-2, 12), (-1, 6), (0, 3), and (1, 1.5), approaching the x-axis to the right.', has=[0]),
+              cand([lambda x: 3 * 2 ** x], 'an increasing curve through (0, 3), (1, 6), and (2, 12), approaching the x-axis to the left.', has=[0]),
+              cand([lambda x: 0.5 * 3 ** x], 'an increasing curve through (0, 0.5), (1, 1.5), and (2, 4.5).', has=[0]),
+              cand([lambda x: 0.5 ** x + 3], 'a decreasing curve through (-1, 5) and (0, 4), approaching the dashed line y = 3 to the right.', has=[3]),
+          ], 'Initial value 3, factor 0.5: y-intercept (0, 3), (1, 1.5), (-1, 6); decreasing; asymptote y = 0 (y → 0 as x → ∞). The others show 3(2)^x, 0.5(3)^x, and (0.5)^x + 3.',
+              x=(-3, 5), y=(-1, 12), ylab=2),
+          pick('Which graph shows y = -2^x + 4?', 'A', [
+              cand([lambda x: -2 ** x + 4], 'a decreasing curve approaching the dashed line y = 4 to the left, through (0, 3), (1, 2), (2, 0), and (3, -4).', has=[4]),
+              cand([lambda x: 2 ** x - 4], 'an increasing curve approaching the dashed line y = -4 to the left, through (0, -3) and (2, 0).', has=[-4]),
+              cand([lambda x: 4 - 2 ** (-x)], 'an increasing curve approaching the dashed line y = 4 to the right, through (-2, 0), (-1, 2), and (0, 3).', has=[4]),
+              cand([lambda x: -2 ** x + 2], 'a decreasing curve approaching the dashed line y = 2 to the left, through (0, 1) and (1, 0).', has=[2]),
+          ], 'Reflect y = 2^x over the x-axis and move up 4: asymptote y = 4 (approached to the left), y-intercept (0, 3), x-intercept (2, 0), decreasing. The others show 2^x - 4, 4 - 2^(-x), and -2^x + 2.',
+              x=(-4, 4), y=(-5, 5)),
+          pick('Which graph shows y = 2^(x+1)?', 'C', [
+              cand([lambda x: 2 ** (x + 1)], 'an increasing curve approaching the x-axis to the left, through (-1, 1), (0, 2), (1, 4), and (2, 8).', has=[0]),
+              cand([lambda x: 2 ** (x - 1)], 'an increasing curve approaching the x-axis to the left, through (1, 1), (2, 2), and (3, 4).', has=[0]),
+              cand([lambda x: 2 ** x + 1], 'an increasing curve approaching the dashed line y = 1 to the left, through (0, 2), (1, 3), and (3, 9).', has=[1]),
+              cand([lambda x: 2 ** (-x + 1)], 'a decreasing curve approaching the x-axis to the right, through (-2, 8), (-1, 4), and (0, 2).', has=[0]),
+          ], 'Left 1 from y = 2^x (or 2 · 2^x): asymptote y = 0, y-intercept (0, 2), through (-1, 1), (1, 4), (2, 8). The others show 2^(x-1), 2^x + 1 (same y-intercept, asymptote y = 1), and 2^(1-x).',
+              x=(-5, 3), y=(-1, 9)),
+          pick('Which graph shows y = (1/3)^x + 1?', 'D', [
+              cand([lambda x: (1 / 3) ** x + 1], 'a decreasing curve approaching the dashed line y = 1 to the right, through (-2, 10), (-1, 4), and (0, 2).', has=[1]),
+              cand([lambda x: 3 ** x + 1], 'an increasing curve approaching the dashed line y = 1 to the left, through (0, 2), (1, 4), and (2, 10).', has=[1]),
+              cand([lambda x: (1 / 3) ** x - 1], 'a decreasing curve approaching the dashed line y = -1 to the right, through (-2, 8), (-1, 2), and (0, 0).', has=[-1]),
+              cand([lambda x: (1 / 3) ** (x + 1)], 'a decreasing curve approaching the x-axis to the right, through (-3, 9), (-2, 3), and (-1, 1).', has=[0]),
+          ], 'Up 1 from y = (1/3)^x: asymptote y = 1, y-intercept (0, 2), through (-1, 4) and (-2, 10), decreasing toward 1. The others show 3^x + 1, (1/3)^x - 1, and (1/3)^(x+1).',
+              x=(-3, 4), y=(-1, 11)),
       ],
       back=[
           B('Graph basic exponential functions', 'HSF-IF.C.7.e', [
@@ -525,18 +662,43 @@ SETS += [
 
     # ------------------------------------------------------------------ 50. IF.C.7.e logarithmic graphs
     S('HSF-IF.C.7.e', 'Graph logarithmic functions with intercept, asymptote, and end behavior',
-      target='Graph a transformed logarithmic function, showing the vertical asymptote, the x-intercept, key points, the domain, and end behavior', strand='core', covers=['IF7e-log'],
+      target='Identify the graph of a transformed logarithmic function from its vertical asymptote, x-intercept, key points, domain, and end behavior', strand='core', covers=['IF7e-log'],
       main=[
-          plot(GR + 'the x-intercept, two more points, and the asymptote (dashed); state the domain.\ny = log₂ x', grid((-1, 9), (-3, 4)),
-               key='Asymptote x = 0; x-intercept (1, 0); points (1/2, -1), (2, 1), (4, 2), (8, 3); domain x > 0; increases slowly.', note='Any graph with these features.'),
-          plot(GR + 'the x-intercept, two more points, and the asymptote (dashed); state the domain.\ny = log₂(x + 3)', grid((-4, 6), (-3, 4)),
-               key='Asymptote x = -3; x-intercept (-2, 0); points (-1, 1), (1, 2), (5, 3); domain x > -3.', note='Any graph with these features.'),
-          plot(GR + 'the x-intercept, two more points, and the asymptote (dashed); state the domain.\ny = log₃ x - 1', grid((-1, 10), (-3, 3)),
-               key='Asymptote x = 0; x-intercept (3, 0); points (1, -1), (9, 1), (1/3, -2); domain x > 0.', note='Any graph with these features.'),
-          plot(GR + 'the x-intercept, two more points, and the asymptote (dashed); state the domain.\ny = -log₂ x', grid((-1, 9), (-4, 3)),
-               key='Asymptote x = 0; x-intercept (1, 0); points (2, -1), (4, -2), (1/2, 1); decreasing; domain x > 0.', note='Any graph with these features.'),
-          plot(GR + 'two points and the asymptote (dashed); state the domain and whether there is an x-intercept.\ny = log₂(x - 1) + 2', grid((-1, 9), (-2, 6)),
-               key='Asymptote x = 1; points (2, 2), (3, 3), (5, 4), (1.5, 1); x-intercept (1.25, 0); domain x > 1.', note='Any graph with these features.'),
+          pick('Which graph shows y = log₂ x?', 'A', [
+              cand([lambda x: math.log(x, 2)], 'an increasing curve to the right of the dashed line x = 0, through (0.5, -1), (1, 0), (2, 1), (4, 2), and (8, 3).', vas=[0]),
+              cand([lambda x: 2 ** x], 'an increasing curve approaching the x-axis to the left, through (0, 1), (1, 2), and (2, 4).', has=[0]),
+              cand([lambda x: math.log(x + 1, 2)], 'an increasing curve to the right of the dashed line x = -1, through (0, 0), (1, 1), (3, 2), and (7, 3).', vas=[-1]),
+              cand([lambda x: -math.log(x, 2)], 'a decreasing curve to the right of the dashed line x = 0, through (0.5, 1), (1, 0), (2, -1), and (4, -2).', vas=[0]),
+          ], 'Asymptote x = 0, x-intercept (1, 0), through (2, 1), (4, 2), (8, 3); domain x > 0; increases slowly. The others show 2^x (the inverse), log₂(x + 1), and -log₂ x.',
+              x=(-1, 9), y=(-3, 4)),
+          pick('Which graph shows y = log₂(x + 3)?', 'B', [
+              cand([lambda x: math.log(x + 3, 2)], 'an increasing curve to the right of the dashed line x = -3, through (-2, 0), (-1, 1), (1, 2), and (5, 3).', vas=[-3]),
+              cand([lambda x: math.log(x - 3, 2)], 'an increasing curve to the right of the dashed line x = 3, through (4, 0) and (5, 1).', vas=[3]),
+              cand([lambda x: math.log(x, 2) + 3], 'an increasing curve to the right of the dashed line x = 0, through (0.5, 2), (1, 3), and (2, 4).', vas=[0]),
+              cand([lambda x: -math.log(x + 3, 2)], 'a decreasing curve to the right of the dashed line x = -3, through (-2, 0), (-1, -1), and (1, -2).', vas=[-3]),
+          ], 'Left 3 from y = log₂ x: asymptote x = -3, x-intercept (-2, 0), through (-1, 1), (1, 2), (5, 3); domain x > -3. The others show log₂(x - 3), log₂ x + 3, and -log₂(x + 3).',
+              x=(-4, 6), y=(-3, 4)),
+          pick('Which graph shows y = log₃ x - 1?', 'C', [
+              cand([lambda x: math.log(x, 3) - 1], 'an increasing curve to the right of the dashed line x = 0, through (1, -1), (3, 0), and (9, 1).', vas=[0]),
+              cand([lambda x: math.log(x - 1, 3)], 'an increasing curve to the right of the dashed line x = 1, through (2, 0) and (4, 1).', vas=[1]),
+              cand([lambda x: math.log(x, 3) + 1], 'an increasing curve to the right of the dashed line x = 0, through (1, 1), (3, 2), and (9, 3).', vas=[0]),
+              cand([lambda x: math.log(x, 2) - 1], 'an increasing curve to the right of the dashed line x = 0, through (1, -1), (2, 0), and (8, 2).', vas=[0]),
+          ], 'Down 1 from y = log₃ x: asymptote x = 0, x-intercept (3, 0), through (1, -1) and (9, 1); domain x > 0. The others show log₃(x - 1), log₃ x + 1, and log₂ x - 1 (wrong base: it passes (2, 0)).',
+              x=(-1, 10), y=(-3, 3)),
+          pick('Which graph shows y = -log₂ x?', 'D', [
+              cand([lambda x: -math.log(x, 2)], 'a decreasing curve to the right of the dashed line x = 0, through (0.5, 1), (1, 0), (2, -1), (4, -2), and (8, -3).', vas=[0]),
+              cand([lambda x: math.log(x, 2)], 'an increasing curve to the right of the dashed line x = 0, through (1, 0), (2, 1), (4, 2), and (8, 3).', vas=[0]),
+              cand([lambda x: math.log(-x, 2)], 'a curve to the left of the dashed line x = 0 that rises toward the left, through (-1, 0), (-2, 1), (-4, 2), and (-8, 3).', vas=[0]),
+              cand([lambda x: -math.log(-x, 2)], 'a curve to the left of the dashed line x = 0 that falls toward the left, through (-1, 0), (-2, -1), (-4, -2), and (-8, -3).', vas=[0]),
+          ], 'Reflection of y = log₂ x over the x-axis: asymptote x = 0, x-intercept (1, 0), through (2, -1), (4, -2), (8, -3); decreasing; domain x > 0. The others show log₂ x, log₂(-x), and -log₂(-x).',
+              x=(-9, 9), y=(-4, 4), xlab=3),
+          pick('Which graph shows y = log₂(x - 1) + 2?', 'B', [
+              cand([lambda x: math.log(x - 1, 2) + 2], 'an increasing curve to the right of the dashed line x = 1, through (1.25, 0), (1.5, 1), (2, 2), (3, 3), and (5, 4).', vas=[1]),
+              cand([lambda x: math.log(x + 1, 2) + 2], 'an increasing curve to the right of the dashed line x = -1, through (0, 2), (1, 3), and (3, 4).', vas=[-1]),
+              cand([lambda x: math.log(x - 2, 2) + 1], 'an increasing curve to the right of the dashed line x = 2, through (3, 1), (4, 2), and (6, 3).', vas=[2]),
+              cand([lambda x: math.log(x - 1, 2) - 2], 'an increasing curve to the right of the dashed line x = 1, through (2, -2), (3, -1), (5, 0), and (9, 1).', vas=[1]),
+          ], 'Right 1 and up 2: asymptote x = 1, through (2, 2), (3, 3), (5, 4), x-intercept (1.25, 0); domain x > 1. The others show log₂(x + 1) + 2, log₂(x - 2) + 1, and log₂(x - 1) - 2.',
+              x=(-3, 9), y=(-2, 6)),
       ],
       back=[
           B('Graph exponential functions', 'HSF-IF.C.7.e', [
@@ -565,8 +727,13 @@ SETS += [
             why=why('the student puts the asymptote at x = 0 always.', 'shifts move it.', 'applies shifts.')),
       ],
       f1=B('Graph logarithms with reflections that change the domain', 'HSF-IF.C.7.e', [
-          plot(GR + 'the x-intercept, two more points, and the asymptote (dashed); state the domain.\ny = log₂(4 - x)', grid((-5, 5), (-3, 4)),
-               key='Asymptote x = 4; x-intercept (3, 0); points (2, 1), (0, 2), (-4, 3); decreasing; domain x < 4.', note='Any graph with these features.'),
+          pick('Which graph shows y = log₂(4 - x)?', 'C', [
+              cand([lambda x: math.log(4 - x, 2)], 'a decreasing curve to the left of the dashed line x = 4, through (-4, 3), (0, 2), (2, 1), and (3, 0).', vas=[4]),
+              cand([lambda x: math.log(x + 4, 2)], 'an increasing curve to the right of the dashed line x = -4, through (-3, 0), (-2, 1), (0, 2), and (4, 3).', vas=[-4]),
+              cand([lambda x: -math.log(4 - x, 2)], 'an increasing curve to the left of the dashed line x = 4, through (0, -2), (2, -1), and (3, 0).', vas=[4]),
+              cand([lambda x: math.log(2 - x, 2)], 'a decreasing curve to the left of the dashed line x = 2, through (-2, 2), (0, 1), and (1, 0).', vas=[2]),
+          ], '4 - x > 0 gives domain x < 4 and asymptote x = 4; x-intercept (3, 0); through (2, 1), (0, 2), (-4, 3); decreasing. The others show log₂(x + 4), -log₂(4 - x), and log₂(2 - x).',
+              x=(-5, 5), y=(-3, 4)),
           sa('Give the domain of y = log(x² - 1) and explain the graph has two branches.', 'Answer:', key='x < -1 or x > 1: x² - 1 > 0 on two separate intervals', note='Form required: domain and reason.'),
           tf('y = log₂(2x) is y = log₂ x shifted up 1.', key=True, note='log₂ 2 + log₂ x.'),
           mc('The x-intercept of y = log₂(x + 3) is', ['-2', '-3', '1', '0'], note='x + 3 = 1.'),
@@ -583,18 +750,43 @@ SETS += [
 
     # ------------------------------------------------------------------ 51. IF.C.7.e trigonometric graphs
     S('HSF-IF.C.7.e', 'Graph trigonometric functions showing period, midline, and amplitude',
-      target='Graph sine and cosine functions with given parameters, showing the period, midline, amplitude, and key points on a radian axis', strand='core', covers=['IF7e-trig'],
+      target='Identify the graph of a sine or cosine function with given parameters from its period, midline, amplitude, and key points on a radian axis', strand='core', covers=['IF7e-trig'],
       main=[
-          plot(GR + 'the midline (dashed), the maximum and minimum points, and the period for one cycle on 0 ≤ x ≤ 2π.\ny = 2sin x', tgrid(2, -3, 3),
-               key='Midline y = 0; amplitude 2; period 2π; key points (0, 0), (π/2, 2), (π, 0), (3π/2, -2), (2π, 0).', note='Any graph with these features.'),
-          plot(GR + 'the midline (dashed), the maximum and minimum points, and the period on 0 ≤ x ≤ 2π.\ny = cos x + 1', tgrid(2, -1, 3),
-               key='Midline y = 1; amplitude 1; period 2π; key points (0, 2), (π/2, 1), (π, 0), (3π/2, 1), (2π, 2).', note='Any graph with these features.'),
-          plot(GR + 'the midline (dashed), the maximum and minimum points, and the period on 0 ≤ x ≤ 2π.\ny = sin(2x)', tgrid(2, -2, 2),
-               key='Midline y = 0; amplitude 1; period π; maxima at (π/4, 1), (5π/4, 1); minima at (3π/4, -1), (7π/4, -1); zeros at multiples of π/2.', note='Any graph with these features.'),
-          plot(GR + 'the midline (dashed), the maximum and minimum points, and the period on 0 ≤ x ≤ 4π.\ny = 3cos(x/2)', tgrid(4, -4, 4, lab=1),
-               key='Midline y = 0; amplitude 3; period 4π; key points (0, 3), (π, 0), (2π, -3), (3π, 0), (4π, 3).', note='Any graph with these features.'),
-          plot(GR + 'the midline (dashed), the maximum and minimum points, and the period on 0 ≤ x ≤ 2π.\ny = -sin x + 2', tgrid(2, -1, 4),
-               key='Midline y = 2; amplitude 1; period 2π; key points (0, 2), (π/2, 1), (π, 2), (3π/2, 3), (2π, 2).', note='Any graph with these features.'),
+          pick('Which graph shows y = 2sin x on 0 ≤ x ≤ 2π?', 'A', [
+              cand([lambda x: 2 * math.sin(x)], 'one cycle starting at (0, 0), maximum (π/2, 2), back to 0 at π, minimum (3π/2, -2), ending at (2π, 0).'),
+              cand([lambda x: math.sin(2 * x)], 'two cycles between -1 and 1, maxima at π/4 and 5π/4.'),
+              cand([lambda x: 2 * math.cos(x)], 'one cycle starting at the maximum (0, 2), minimum (π, -2), ending at (2π, 2).'),
+              cand([lambda x: -2 * math.sin(x)], 'one cycle starting at (0, 0), minimum (π/2, -2), maximum (3π/2, 2), ending at (2π, 0).'),
+          ], 'Amplitude 2, period 2π, midline y = 0: (0, 0), (π/2, 2), (π, 0), (3π/2, -2), (2π, 0). The others show sin(2x), 2cos x, and -2sin x.',
+              x=(0, 2 * PI), y=(-3, 3), xstep=PI / 4, xticks=pticks(0.5, 2, 0.5), window='x from 0 to 2π (grid lines every π/4, labels every π/2) and y from -3 to 3'),
+          pick('Which graph shows y = cos x + 1 on 0 ≤ x ≤ 2π?', 'D', [
+              cand([lambda x: math.cos(x) + 1], 'one cycle about the dashed midline y = 1: maximum (0, 2), minimum (π, 0), maximum (2π, 2).', has=[1]),
+              cand([lambda x: math.sin(x) + 1], 'one cycle about the dashed midline y = 1: starts at (0, 1), maximum (π/2, 2), minimum (3π/2, 0).', has=[1]),
+              cand([lambda x: math.cos(x) - 1], 'one cycle about the dashed midline y = -1: maximum (0, 0), minimum (π, -2), maximum (2π, 0).', has=[-1]),
+              cand([lambda x: 2 * math.cos(x)], 'one cycle about the midline y = 0: maximum (0, 2), minimum (π, -2), maximum (2π, 2).'),
+          ], 'Midline y = 1, amplitude 1, period 2π: (0, 2), (π/2, 1), (π, 0), (3π/2, 1), (2π, 2). The others show sin x + 1, cos x - 1, and 2cos x (same maximum, wrong minimum).',
+              x=(0, 2 * PI), y=(-3, 3), xstep=PI / 4, xticks=pticks(0.5, 2, 0.5), window='x from 0 to 2π (grid lines every π/4, labels every π/2) and y from -3 to 3'),
+          pick('Which graph shows y = sin(2x) on 0 ≤ x ≤ 2π?', 'C', [
+              cand([lambda x: math.sin(2 * x)], 'two full cycles between -1 and 1: zeros at multiples of π/2, maxima (π/4, 1) and (5π/4, 1), minima (3π/4, -1) and (7π/4, -1).'),
+              cand([lambda x: 2 * math.sin(x)], 'one cycle between -2 and 2: maximum (π/2, 2), minimum (3π/2, -2).'),
+              cand([lambda x: math.sin(x / 2)], 'half a cycle: rises from (0, 0) to a maximum (π, 1) and returns to (2π, 0).'),
+              cand([lambda x: math.cos(2 * x)], 'two full cycles between -1 and 1: maxima (0, 1), (π, 1), (2π, 1), minima (π/2, -1) and (3π/2, -1).'),
+          ], 'Period 2π/2 = π, amplitude 1, midline y = 0: two cycles on [0, 2π], starting at (0, 0) and rising to (π/4, 1). The others show 2sin x, sin(x/2), and cos(2x).',
+              x=(0, 2 * PI), y=(-2, 2), xstep=PI / 4, xticks=pticks(0.5, 2, 0.5), window='x from 0 to 2π (grid lines every π/4, labels every π/2) and y from -2 to 2'),
+          pick('Which graph shows y = 3cos(x/2) on 0 ≤ x ≤ 4π?', 'B', [
+              cand([lambda x: 3 * math.cos(x / 2)], 'one cycle: maximum (0, 3), zero at π, minimum (2π, -3), zero at 3π, maximum (4π, 3).'),
+              cand([lambda x: 3 * math.cos(2 * x)], 'four full cycles between -3 and 3, each of length π.'),
+              cand([lambda x: 3 * math.sin(x / 2)], 'one cycle: starts at (0, 0), maximum (π, 3), zero at 2π, minimum (3π, -3), ends at (4π, 0).'),
+              cand([lambda x: 3 * math.cos(x)], 'two full cycles between -3 and 3: maxima at 0, 2π, 4π and minima at π and 3π.'),
+          ], 'Period 2π/(1/2) = 4π, amplitude 3, midline y = 0: (0, 3), (π, 0), (2π, -3), (3π, 0), (4π, 3). The others show 3cos(2x), 3sin(x/2), and 3cos x.',
+              x=(0, 4 * PI), y=(-4, 4), xstep=PI / 4, xticks=pticks(1, 4, 1), window='x from 0 to 4π (grid lines every π/4, labels every π) and y from -4 to 4'),
+          pick('Which graph shows y = -sin x + 2 on 0 ≤ x ≤ 2π?', 'A', [
+              cand([lambda x: -math.sin(x) + 2], 'one cycle about the dashed midline y = 2: starts at (0, 2), minimum (π/2, 1), back to 2 at π, maximum (3π/2, 3), ends at (2π, 2).', has=[2]),
+              cand([lambda x: math.sin(x) + 2], 'one cycle about the dashed midline y = 2: starts at (0, 2), maximum (π/2, 3), minimum (3π/2, 1).', has=[2]),
+              cand([lambda x: -math.sin(x) + 1], 'one cycle about the dashed midline y = 1: starts at (0, 1), minimum (π/2, 0), maximum (3π/2, 2).', has=[1]),
+              cand([lambda x: -math.cos(x) + 2], 'one cycle about the dashed midline y = 2: minimum (0, 1), maximum (π, 3), minimum (2π, 1).', has=[2]),
+          ], 'Midline y = 2, amplitude 1, reflected: (0, 2), (π/2, 1), (π, 2), (3π/2, 3), (2π, 2). The others show sin x + 2, -sin x + 1, and -cos x + 2.',
+              x=(0, 2 * PI), y=(-1, 4), xstep=PI / 4, xticks=pticks(0.5, 2, 0.5), window='x from 0 to 2π (grid lines every π/4, labels every π/2) and y from -1 to 4'),
       ],
       back=[
           B('Unit-circle values at quarter turns', 'HSF-TF.A.2', [
@@ -623,9 +815,13 @@ SETS += [
             why=why('the student cannot place the midline.', 'shifts and reflections move key points.', 'applies vertical transformations.')),
       ],
       f1=B('Graph shifted sinusoids and the tangent function', 'HSF-IF.C.7.e', [
-          plot(GR + 'the asymptotes (dashed) and three points.\ny = tan x for -π/2 < x < π/2', blank(x=(-PI / 2, PI / 2), y=(-4, 4), xstep=PI / 4, xticks=pticks(-0.5, 0.5, 0.25),
-                                                                                         desc='Blank grid with x from -π/2 to π/2 (marks every π/4) and y from -4 to 4.'),
-               key='Asymptotes x = ±π/2; points (-π/4, -1), (0, 0), (π/4, 1); increasing.', note='Any graph with these features.'),
+          pick('Which graph shows y = tan x for -π/2 < x < π/2?', 'D', [
+              cand([lambda x: math.tan(x)], 'one increasing branch between the dashed asymptotes x = -π/2 and x = π/2, through (-π/4, -1), (0, 0), and (π/4, 1).', vas=[-PI / 2, PI / 2]),
+              cand([lambda x: -math.tan(x)], 'one decreasing branch between the dashed asymptotes x = -π/2 and x = π/2, through (-π/4, 1), (0, 0), and (π/4, -1).', vas=[-PI / 2, PI / 2]),
+              cand([lambda x: math.tan(2 * x)], 'increasing branches separated by dashed asymptotes at x = -π/4 and x = π/4; the middle branch passes (0, 0).', vas=[-PI / 4, PI / 4]),
+              cand([lambda x: math.tan(x / 2)], 'a gently increasing curve with no asymptotes in view, through (-π/2, -1), (0, 0), and (π/2, 1).'),
+          ], 'Asymptotes x = ±π/2 (cos x = 0 there); increasing through (-π/4, -1), (0, 0), (π/4, 1). The others show -tan x, tan(2x), and tan(x/2).',
+              x=(-PI / 2, PI / 2), y=(-4, 4), xstep=PI / 4, xticks=pticks(-0.5, 0.5, 0.25), window='x from -π/2 to π/2 (marks every π/4) and y from -4 to 4'),
           sa('Describe the graph of y = sin(x - π/2) compared with y = sin x, and name a simpler formula for it.', 'Answer:', key='Shifted right π/2; it equals -cos x', note='Form required: both.'),
           tf('The period of y = tan x is 2π.', key=False, note='tan(x + π) = tan x, so the period is π.'),
           mc('The first maximum of y = cos(x - π/3) for x ≥ 0 is at', ['x = π/3', 'x = 0', 'x = -π/3', 'x = 2π/3'], note='Shift right π/3.'),

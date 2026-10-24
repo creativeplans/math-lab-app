@@ -116,19 +116,27 @@ for st in SETS:
         prob.append('S%d MAIN has a true/false item' % st['num'])
     desc = ' '.join(subs_all[c] for c in st['covers']).replace('REVISIT with nonlinear families: ', '').replace('REVISIT: ', '')
     verb = desc.split()[0].lower()
-    if verb == 'prove' and types.count('work') != 5:
-        prob.append('S%d prove set MAIN %s' % (st['num'], types))
-    if verb == 'derive' and (types.count('work') < 2 or 'mc' in types):
-        prob.append('S%d derive set MAIN %s' % (st['num'], types))
-    if verb in ('explain', 'choose') and 'mc' in types:
-        prob.append('S%d explain set has selected-response MAIN items' % st['num'])
-    if verb in ('graph', 'construct') or desc.lower().startswith('graph'):
-        if types.count('plot') + types.count('plot_text') < 5 and 'sketch' not in desc.lower():
-            verbs.append('S%d graph set: %d drawn' % (st['num'], types.count('plot') + types.count('plot_text')))
+    mains = [r for r in RECS if r['section'] == 'MAIN' and r['set'] == st['num']]
+    if verb in ('prove', 'derive', 'explain', 'choose'):
+        # reasoning sets: selected or short written responses only; every multiple-choice item weighs a valid argument
+        # against flawed ones, and its note says what is wrong with the others
+        for r in mains:
+            if r['type'] not in ('mc', 'sa'):
+                prob.append('%s %s set item is %s' % (r['id'], verb, r['type']))
+            elif r['type'] == 'mc' and 'The others' not in r['grading_note']:
+                prob.append('%s note does not explain the other choices' % r['id'])
+    if verb == 'graph' or desc.lower().startswith('graph'):
+        # graph sets: five "Which graph" items, each with four candidate graphs (A-D) in one figure
+        for r in mains:
+            fd = r['figure_data'] or {}
+            panels = [g for row in fd.get('figs', []) for g in row.get('figs', [])]
+            if r['type'] != 'mc' or not r['correct_answer'].startswith('Graph ') or [g.get('tag') for g in panels] != list('ABCD'):
+                prob.append('%s graph set item is not a four-graph choice' % r['id'])
     if verb in ('prove', 'derive', 'explain', 'choose', 'graph'):
         verbs.append('S%d %s: %s' % (st['num'], verb, '/'.join(types)))
-check('MAIN response types: no true/false in any MAIN; "prove" sets have five shown-work items; "derive" sets at least two and no '
-      'multiple choice; "explain" and "choose and justify" sets only written responses', prob,
+check('MAIN response types: no true/false in any MAIN; "prove", "derive", "explain" and "choose" sets use only multiple choice '
+      '(a valid argument against flawed ones, with every other choice explained in the note) or short answers; "graph" sets use '
+      'five "Which graph" items with four labeled candidate graphs', prob,
       '%d sets checked; verb sets: %s' % (len(SETS), '; '.join(verbs)))
 
 # ---------------------------------------------------------------- 3. branches
@@ -208,11 +216,13 @@ check('Balance: True/False within 10%; MC letters A-D within 15 of each other', 
       'T/F: %d True, %d False. MC: %s' % (tfc['True'], tfc['False'], ', '.join('%s %d' % kv for kv in sorted(mcc.items()))))
 
 prob = []
-proof_like = [r for r in RECS if r['type'] == 'work' and re.search(r'\b(Prove|prove|Derive|derive|Verify)\b', r['question'])]
-for r in proof_like:
-    if 'Essential' not in r['grading_note']:
+reasoning = [r for r in RECS if r['type'] == 'mc' and re.match(r'(Which (argument|derivation|work verifies|explanation|statement correctly '
+                                                               r'explains|unit-circle)|Why |How does|Is .* an identity)', r['question'])]
+for r in reasoning:
+    if 'The others' not in r['grading_note']:
         prob.append(r['id'])
-check('Proofs, derivations and verifications: grading note lists the essential steps', prob, '%d such questions' % len(proof_like))
+check('Proofs, derivations, verifications and explanations (as multiple choice): the grading note says why the keyed argument is '
+      'valid and what is wrong with each other choice', prob, '%d such questions' % len(reasoning))
 
 prob = []
 need_excl = [r for r in RECS if r['section'] == 'MAIN' and re.search(r'excluded values', r['question'])]
@@ -307,6 +317,11 @@ for r in RECS:
 check('Labels: every record has strand core/advanced, the MAIN records of ADVANCED EXTENSION sets are labeled as such, and course-placement labels '
       '(high-school codes never carry a grade level; K-8 prerequisite codes keep their official grade-level standard label)', prob, 'all records labeled by course placement')
 
+prob = [r['id'] + ' ' + r['type'] for r in RECS if r['type'] not in ('sa', 'mc', 'tf')]
+check('No question needs a person or a drawing surface to grade: every item is short answer, multiple choice, or true/false '
+      '(no shown-work, drawing, or drawing-plus-writing items)', prob,
+      'all %d questions: %s' % (len(RECS), ', '.join('%s %d' % kv for kv in sorted(collections.Counter(r['type'] for r in RECS).items()))))
+
 prob = []
 by_sec = collections.Counter(r['section'].split()[0] for r in RECS)
 if by_sec['MAIN'] != 5 * len(SETS) or by_sec['FORWARD'] != 10 * len(SETS) or DATA['question_count'] != len(RECS):
@@ -320,12 +335,12 @@ SCOPE = [
     'Automatic, every record: ID pattern, uniqueness, uid prefix.',
     'Automatic: standard codes against the course profile. Does not judge whether a question fits its standard.',
     'Automatic: covers= tags against the subskill list. Whether the questions measure the subskill was judged by reading.',
-    'Automatic: MAIN question types against the subskill verb. Comparability of difficulty was judged by reading.',
+    'Automatic: MAIN question types and figures against the subskill verb. Whether a choice item measures the reasoning or graphing skill, and the comparability of difficulty, were judged by reading.',
     'Automatic: placement of backward codes, so the routing graph is acyclic. Logical dependencies inside proofs were reviewed by hand.',
     'Automatic: metadata present and consistent with placement. The quality of the stated new demand was judged by reading.',
     'Automatic: fields present and well formed. Correctness is covered by check 17 and by the manual read-through.',
     'Automatic counts.',
-    'Automatic: looks for "Essential" in the notes of prove/derive/verify items. Mathematical correctness of rubrics was read by hand.',
+    'Automatic: looks for "The others" in the notes of reasoning items. That each keyed argument is valid and each other choice is flawed was checked by reading.',
     'Automatic pattern search on MAIN stems and keys; other sections were read by hand.',
     'Automatic: exact-text repeats within a set and unfinished text.',
     'Automatic: every coordinate figure has desc text. Whether the picture matches the text was checked by rendering every figure page.',
@@ -335,6 +350,7 @@ SCOPE = [
     'Automatic, %d of %d questions: recomputes listed answers with separate code. All other questions were re-solved by hand '
     '(see Manual review).' % (nq, len(RECS)),
     'Automatic, every record.',
+    'Automatic, every record: response type. Short answers still need a checker that accepts equivalent forms (see README).',
     'Automatic arithmetic on the generated files.',
 ]
 assert len(SCOPE) == len(results), (len(SCOPE), len(results))

@@ -1,6 +1,6 @@
 """A-APR Arithmetic with Polynomials and Rational Expressions (sets 13-25)."""
 from qb import S, B, sa, mc, tf, plot, work
-from common import why, proof, PR, EXP, blank, graph
+from common import why, proof, PR, EXP, blank, graph, pick, cand
 
 SK = 'Sketch a rough graph on the grid. Show every zero (crossing or touching the x-axis), the y-intercept, and the end behavior.'
 
@@ -183,8 +183,12 @@ SETS = [
           sa('For which k is the remainder of x⁴ - kx + 6 divided by x + 2 equal to 0?', 'k =', key='-11', note='Any equivalent form. 16 + 2k + 6 = 0.'),
       ], prog='same-course deepening', demand='Solve the inverse problem: use given remainders to find unknown coefficients.'),
       f2=B('Prove the Remainder Theorem', 'HSA-APR.B.2', [
-          proof('Prove that the remainder when a polynomial p(x) is divided by x - a is p(a).', method='Write p(x) = (x - a)q(x) + r and substitute x = a.',
-                key='p(a) = (a - a)q(a) + r = r.', note=PR + 'Essential: the division identity with a constant remainder r (degree less than 1); substitution x = a; the factor (a - a) = 0.'),
+          mc('Which argument proves that the remainder when a polynomial p(x) is divided by x - a is p(a)?', [
+              'Write p(x) = (x - a)q(x) + r, where r is a constant because it has degree less than 1. Substituting x = a gives p(a) = 0 · q(a) + r = r.',
+              'Dividing x³ by x - 2 leaves remainder 8, and 2³ = 8, so the remainder is always p(a).',
+              'Write p(x) = (x - a)q(x) + r. Substituting x = 0 gives p(0) = (0 - a)q(0) + r = -a · q(0) + r, so the remainder r equals p(a) for every a.',
+              'Since x - a = 0 exactly when x = a, dividing p(x) by x - a is the same as replacing x with a, so the remainder must be p(a).'],
+             note='The division identity with a constant remainder, then x = a makes the factor (a - a) zero. The others check one example, substitute the wrong value (x = 0 gives p(0), not p(a)), or state the result without a reason.'),
           sa('Why must the remainder on division by x - a be a constant?', 'Answer:', key='The remainder has a lower degree than the divisor x - a, which has degree 1, so it has degree 0 (a constant).',
              note='Any equivalent answer.'),
           tf('The Remainder Theorem also works for division by 2x - 1 with remainder p(1/2).', key=True, note='p(x) = (2x - 1)q(x) + r gives p(1/2) = r.'),
@@ -324,24 +328,39 @@ SETS = [
 
     # ------------------------------------------------------------------ 18. APR.B.3 rough graph from zeros
     S('HSA-APR.B.3', 'Construct a rough graph of a polynomial from its zeros',
-      target='Use the zeros, their multiplicities, the leading term, and the y-intercept to sketch a rough graph of a factored polynomial',
+      target='Use the zeros, their multiplicities, the leading term, and the y-intercept to identify the rough graph of a factored polynomial among graphs that differ in one of these features',
       strand='core', covers=['APR3-sketch'],
       main=[
-          plot(SK + '\ny = (x + 2)(x - 1)(x - 3)', sk_grid(),
-               key='Crosses at x = -2, 1, 3; y-intercept 6; falls to the left and rises to the right (degree 3, positive leading coefficient).',
-               note='Any rough graph with all listed features: the three crossings, (0, 6), and both ends.'),
-          plot(SK + '\ny = -(x + 1)²(x - 2)', sk_grid(),
-               key='Touches at x = -1 (even multiplicity) and crosses at x = 2; y-intercept 2; rises to the left and falls to the right (degree 3, negative leading coefficient).',
-               note='Any rough graph with all listed features.'),
-          plot(SK + '\ny = x(x - 3)²', sk_grid(),
-               key='Crosses at x = 0 and touches at x = 3; y-intercept 0; falls to the left and rises to the right.',
-               note='Any rough graph with all listed features. Between 0 and 3 the graph is above the axis (for example y(1) = 4).'),
-          plot(SK + '\ny = (x+2)(x+1)(x−1)(x−3)', sk_grid(),
-               key='Crosses at x = -2, -1, 1, 3; y-intercept 6; rises at both ends (degree 4, positive leading coefficient).',
-               note='Any rough graph with all listed features. Signs: positive for x < -2, negative on (-2, -1), positive on (-1, 1), negative on (1, 3), positive for x > 3.'),
-          plot(SK + '\ny = -(x - 1)³(x + 2)', sk_grid(),
-               key='Crosses at x = -2 and crosses at x = 1 with a flattened (inflection) shape (multiplicity 3); y-intercept 2; falls at both ends (degree 4, negative leading coefficient).',
-               note='Any rough graph with all listed features.'),
+          pick('Which graph is a rough graph of y = (x + 2)(x - 1)(x - 3)?', 'A', [
+              cand([lambda x: (x + 2) * (x - 1) * (x - 3)], 'a cubic that falls to the left and rises to the right, crossing the x-axis at -2, 1, and 3, with y-intercept 6.'),
+              cand([lambda x: (x - 2) * (x + 1) * (x + 3)], 'a cubic that falls to the left and rises to the right, crossing the x-axis at -3, -1, and 2, with y-intercept -6.'),
+              cand([lambda x: -(x + 2) * (x - 1) * (x - 3)], 'a cubic that rises to the left and falls to the right, crossing the x-axis at -2, 1, and 3, with y-intercept -6.'),
+              cand([lambda x: (x + 2) * (x - 1) ** 2], 'a cubic that crosses the x-axis at -2 and touches it at 1, with y-intercept 2.'),
+          ], 'Zeros -2, 1, 3 (each crossed, multiplicity 1); y-intercept (2)(-1)(-3) = 6; degree 3 with positive leading coefficient, so it falls left and rises right. The others have the zeros with the wrong signs, the opposite end behavior, or a double zero at 1.', x=(-5, 5), y=(-10, 10), ystep=2),
+          pick('Which graph is a rough graph of y = -(x + 1)²(x - 2)?', 'D', [
+              cand([lambda x: -(x + 1) ** 2 * (x - 2)], 'a cubic that rises to the left and falls to the right, touching the x-axis at -1, crossing at 2, with y-intercept 2.'),
+              cand([lambda x: (x + 1) ** 2 * (x - 2)], 'a cubic that falls to the left and rises to the right, touching the x-axis at -1, crossing at 2, with y-intercept -2.'),
+              cand([lambda x: -(x + 1) * (x - 2) ** 2], 'a cubic that crosses the x-axis at -1 and touches it at 2, with y-intercept -4.'),
+              cand([lambda x: -(x - 1) ** 2 * (x + 2)], 'a cubic that crosses the x-axis at -2 and touches it at 1, with y-intercept -2.'),
+          ], 'Double zero at -1 (touches), single zero at 2 (crosses); y-intercept -(1)²(-2) = 2; leading coefficient -1 with odd degree, so it rises left and falls right. The others flip the sign, swap the multiplicities, or use the zeros 1 and -2.', x=(-5, 5), y=(-10, 10), ystep=2),
+          pick('Which graph is a rough graph of y = x(x - 3)²?', 'C', [
+              cand([lambda x: x * (x - 3) ** 2], 'a cubic that falls to the left and rises to the right, crossing the x-axis at 0 and touching it at 3, above the axis between them (through (1, 4)).'),
+              cand([lambda x: x * x * (x - 3)], 'a cubic that touches the x-axis at 0 and crosses it at 3, below the axis between them (through (1, -2)).'),
+              cand([lambda x: -x * (x - 3) ** 2], 'a cubic that rises to the left and falls to the right, crossing at 0 and touching at 3, below the axis between them (through (1, -4)).'),
+              cand([lambda x: x * (x + 3) ** 2], 'a cubic that touches the x-axis at -3 and crosses it at 0, through (-1, -4).'),
+          ], 'Single zero at 0 (crosses), double zero at 3 (touches); y-intercept 0; y(1) = 4 > 0; falls left and rises right. The others swap the multiplicities, flip the sign, or put the double zero at -3.', x=(-5, 5), y=(-10, 10), ystep=2),
+          pick('Which graph is a rough graph of y = (x + 2)(x + 1)(x - 1)(x - 3)?', 'B', [
+              cand([lambda x: (x + 2) * (x + 1) * (x - 1) * (x - 3)], 'a quartic that rises at both ends, crossing the x-axis at -2, -1, 1, and 3, with y-intercept 6.'),
+              cand([lambda x: -(x + 2) * (x + 1) * (x - 1) * (x - 3)], 'a quartic that falls at both ends, crossing the x-axis at -2, -1, 1, and 3, with y-intercept -6.'),
+              cand([lambda x: (x - 2) * (x - 1) * (x + 1) * (x + 3)], 'a quartic that rises at both ends, crossing the x-axis at -3, -1, 1, and 2, with y-intercept 6.'),
+              cand([lambda x: (x + 2) * (x + 1) * (x - 1)], 'a cubic crossing the x-axis at -2, -1, and 1, with y-intercept -2.'),
+          ], 'Four single zeros -2, -1, 1, 3; y-intercept (2)(1)(-1)(-3) = 6; degree 4 with positive leading coefficient, so it rises at both ends. The others are reflected, have zeros with the wrong signs (same y-intercept), or leave out a factor.', x=(-5, 5), y=(-10, 10), ystep=2),
+          pick('Which graph is a rough graph of y = -(x - 1)³(x + 2)?', 'A', [
+              cand([lambda x: -(x - 1) ** 3 * (x + 2)], 'a quartic that falls at both ends, crossing the x-axis at -2 and crossing at 1 with a flattened S shape, with y-intercept 2.'),
+              cand([lambda x: (x - 1) ** 3 * (x + 2)], 'a quartic that rises at both ends, crossing at -2 and crossing at 1 with a flattened shape, with y-intercept -2.'),
+              cand([lambda x: -(x - 1) ** 2 * (x + 2)], 'a cubic that crosses the x-axis at -2 and touches it at 1, with y-intercept -2.'),
+              cand([lambda x: -(x - 1) * (x + 2) ** 3], 'a quartic that crosses at 1 and crosses at -2 with a flattened shape, with y-intercept 8.'),
+          ], 'Zero 1 has multiplicity 3 (crosses with a flattened shape), zero -2 is single; y-intercept -(-1)³(2) = 2; degree 4 with negative leading coefficient, so it falls at both ends. The others flip the sign, use multiplicity 2 at 1, or put the triple zero at -2.', x=(-5, 5), y=(-10, 10), ystep=2),
       ],
       back=[
           B('Read zeros and multiplicities', 'HSA-APR.B.3', [
@@ -379,10 +398,18 @@ SETS = [
             why=why('the student cannot tell crossing from touching.', 'an odd power changes sign at the zero and an even power does not.', 'finds signs of powers.')),
       ],
       f1=B('Sketch graphs from standard form by factoring first', 'HSF-IF.C.7.c', [
-          plot('Factor, then sketch a rough graph showing every zero, the y-intercept, and end behavior.\ny = x³ - x² - 6x', sk_grid(),
-               key='x(x - 3)(x + 2): crosses at -2, 0, 3; y-intercept 0; falls left and rises right.', note='Any rough graph with all features.'),
-          plot('Factor, then sketch a rough graph showing every zero, the y-intercept, and end behavior.\ny = x⁴ - 5x² + 4', sk_grid(),
-               key='(x - 1)(x + 1)(x - 2)(x + 2): crosses at ±1, ±2; y-intercept 4; rises at both ends.', note='Any rough graph with all features.'),
+          pick('Factor y = x³ - x² - 6x. Which graph is a rough graph of it?', 'B', [
+              cand([lambda x: x ** 3 - x * x - 6 * x], 'a cubic that falls to the left and rises to the right, crossing the x-axis at -2, 0, and 3, through (-1, 4) and (2, -8).'),
+              cand([lambda x: x ** 3 + x * x - 6 * x], 'a cubic that falls to the left and rises to the right, crossing the x-axis at -3, 0, and 2.'),
+              cand([lambda x: -x ** 3 + x * x + 6 * x], 'a cubic that rises to the left and falls to the right, crossing the x-axis at -2, 0, and 3.'),
+              cand([lambda x: x * x - x - 6], 'a parabola opening up crossing the x-axis at -2 and 3, with y-intercept -6.'),
+          ], 'x³ - x² - 6x = x(x - 3)(x + 2): crosses at -2, 0, 3; y-intercept 0; falls left and rises right. The others use x(x + 3)(x - 2), the reflection, or drop the factor x.', x=(-5, 5), y=(-10, 10), ystep=2),
+          pick('Factor y = x⁴ - 5x² + 4. Which graph is a rough graph of it?', 'D', [
+              cand([lambda x: x ** 4 - 5 * x * x + 4], 'a quartic that rises at both ends, crossing the x-axis at -2, -1, 1, and 2, with y-intercept 4.'),
+              cand([lambda x: -(x ** 4 - 5 * x * x + 4)], 'a quartic that falls at both ends, crossing the x-axis at -2, -1, 1, and 2, with y-intercept -4.'),
+              cand([lambda x: x ** 4 + 3 * x * x - 4], 'a quartic that rises at both ends, crossing the x-axis only at -1 and 1, with y-intercept -4.'),
+              cand([lambda x: (x * x - 1) * (x * x - 9)], 'a quartic that rises at both ends, crossing the x-axis at -3, -1, 1, and 3, with y-intercept 9.'),
+          ], 'x⁴ - 5x² + 4 = (x² - 1)(x² - 4) = (x - 1)(x + 1)(x - 2)(x + 2): crosses at ±1 and ±2; y-intercept 4; rises at both ends. The others are reflected, factor as (x² - 1)(x² + 4), or use (x² - 1)(x² - 9).', x=(-5, 5), y=(-10, 10), ystep=2),
           tf('y = x³ + 4x crosses the x-axis at x = -2, 0, and 2.', key=False, note='x(x² + 4) = 0 only at x = 0; x² + 4 has no real zeros.'),
           mc('y = -x³ + 9x crosses the x-axis at', ['-3, 0, 3', '0 and 9', '3 only', '-9, 0, 9'], note='-x(x - 3)(x + 3).'),
           sa('y = x³ - 3x² + 4 = (x + 1)(x - 2)². Describe its behavior at each zero.', 'Answer:', key='Crosses at x = -1; touches (turns) at x = 2.', note='Any equivalent answer.'),
@@ -404,22 +431,38 @@ SETS = [
 SETS += [
     # ------------------------------------------------------------------ 19. APR.C.4 prove identities
     S('HSA-APR.C.4', 'Prove polynomial identities',
-      target='Prove a polynomial identity by transforming one side into the other with valid algebra', strand='core', covers=['APR4-prove'],
+      target='Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra', strand='core', covers=['APR4-prove'],
       main=[
-          proof('Prove the identity (x² + y²)² = (x² - y²)² + (2xy)².', method='Expand both sides (or one side) and show they are equal.',
-                key='Left: x⁴ + 2x²y² + y⁴. Right: x⁴ - 2x²y² + y⁴ + 4x²y² = x⁴ + 2x²y² + y⁴. The two sides are equal.',
-                note=PR + 'Essential: correct expansion of both squares and the combination -2x²y² + 4x²y² = 2x²y².'),
-          proof('Prove the identity a³ + b³ = (a + b)(a² - ab + b²).', method='Multiply out the right side.',
-                key='(a + b)(a² - ab + b²) = a³ - a²b + ab² + a²b - ab² + b³ = a³ + b³.',
-                note=PR + 'Essential: all six products and the cancellation of -a²b + a²b and ab² - ab².'),
-          proof('Prove the identity (a + b)² - (a - b)² = 4ab.', method='Expand both squares, or factor as a difference of squares.',
-                key='(a² + 2ab + b²) - (a² - 2ab + b²) = 4ab. (Or: [(a + b) - (a - b)][(a + b) + (a - b)] = (2b)(2a) = 4ab.)',
-                note=PR + 'Essential: subtracting the whole second square (the sign of every term changes).'),
-          proof('Prove the identity x⁴ + 4 = (x² + 2x + 2)(x² - 2x + 2).', method='Multiply the right side, or write it as a difference of squares.',
-                key='(x² + 2)² - (2x)² = x⁴ + 4x² + 4 - 4x² = x⁴ + 4.',
-                note=PR + 'Essential: grouping (x² + 2 + 2x)(x² + 2 - 2x) as a difference of squares, or a complete expansion.'),
-          proof('Prove the identity (n + 1)³ - n³ = 3n² + 3n + 1.', method='Expand (n + 1)³ and simplify.',
-                key='(n + 1)³ = n³ + 3n² + 3n + 1, so (n + 1)³ - n³ = 3n² + 3n + 1.', note=PR + 'Essential: the correct expansion of the cube.'),
+          mc('Which argument proves the identity (x² + y²)² = (x² - y²)² + (2xy)²?', [
+              'The left side is x⁴ + 2x²y² + y⁴. The right side is x⁴ - 2x²y² + y⁴ + 4x²y² = x⁴ + 2x²y² + y⁴. The sides are equal.',
+              'For x = 2 and y = 1: 25 = 9 + 16, so the identity is true.',
+              'The right side is (x² - y²)² + (2xy)² = x⁴ - y⁴ + 4x²y², and the left side is x⁴ + y⁴ + 4x²y², so the two sides are equal.',
+              'Take the square root of both sides: x² + y² = (x² - y²) + 2xy, and the right side simplifies to x² - y² + 2xy, so the identity is true.'],
+             note='Both sides expand to x⁴ + 2x²y² + y⁴. The others check one example, square x² - y² as x⁴ - y⁴, or take square roots term by term.'),
+          mc('Which argument proves the identity a³ + b³ = (a + b)(a² - ab + b²)?', [
+              'The product is a³ - a²b + ab² + a²b - ab² + b³. The terms -a²b and a²b cancel, ab² and -ab² cancel, leaving a³ + b³.',
+              'For a = 1 and b = 2 the left side is 1 + 8 = 9 and the right side is 3 · (1 - 2 + 4) = 9, so the identity is true for all a and b.',
+              'Multiply the first terms and the last terms: a · a² = a³ and b · b² = b³, so the product is a³ + b³.',
+              'The product is a³ - 2a²b + b³, which equals a³ + b³.'],
+             note='All six products, then the cancellations. The others check one example, skip four of the six products, or multiply incorrectly.'),
+          mc('Which argument proves the identity (a + b)² - (a - b)² = 4ab?', [
+              '(a² + 2ab + b²) - (a² - 2ab + b²) = a² + 2ab + b² - a² + 2ab - b² = 4ab.',
+              'For a = 3 and b = 1: 16 - 4 = 12 = 4 · 3, so the identity is true.',
+              '(a + b)² - (a - b)² = (a² + b²) - (a² - b²) = a² + b² - a² + b² = 4ab.',
+              '(a + b)² - (a - b)² = [(a + b) - (a - b)]² = (2b)² = 4ab.'],
+             note='Subtract the whole second square, changing the sign of every term (or factor as [(a + b) - (a - b)][(a + b) + (a - b)] = (2b)(2a)). The others check one example, square binomials as a² + b², or use the false rule x² - y² = (x - y)².'),
+          mc('Which argument proves the identity x⁴ + 4 = (x² + 2x + 2)(x² - 2x + 2)?', [
+              'The right side is ((x² + 2) + 2x)((x² + 2) - 2x) = (x² + 2)² - (2x)² = x⁴ + 4x² + 4 - 4x² = x⁴ + 4.',
+              'For x = 0: 4 = 2 · 2, so the identity is true.',
+              'The right side is ((x² + 2) + 2x)((x² + 2) - 2x) = (x² + 2)² + (2x)² = x⁴ + 4x² + 4 - 4x² = x⁴ + 4.',
+              'Multiply the first terms and the last terms: x² · x² = x⁴ and 2 · 2 = 4.'],
+             note='Group as a difference of squares (or expand all nine products). The others check one example, use (u + v)(u - v) = u² + v², or skip the middle products.'),
+          mc('Which argument proves the identity (n + 1)³ - n³ = 3n² + 3n + 1?', [
+              '(n + 1)³ = n³ + 3n² + 3n + 1, so (n + 1)³ - n³ = 3n² + 3n + 1.',
+              'For n = 1, 2, and 3 the left side is 7, 19, and 37, and so is the right side, so it is true for every n.',
+              '(n + 1)³ - n³ = (n + 1 - n)³ = 1³ = 1.',
+              '(n + 1)³ = n³ + 1, so (n + 1)³ - n³ = 1, which is 3n² + 3n + 1.'],
+             note='Expand (n + 1)³ correctly and subtract. The others check several values (evidence, not a proof) or use the false rules a³ - b³ = (a - b)³ and (n + 1)³ = n³ + 1.'),
       ],
       back=[
           B('Expand the square of a binomial', 'HSA-APR.A.1', [
@@ -449,17 +492,29 @@ SETS += [
             why=why('the student proves by checking examples.', 'a proof must work for all values.', 'distinguishes identities from equations.')),
       ],
       f1=B('Prove or disprove proposed identities', 'HSA-APR.C.4', [
-          proof('Prove or disprove: (a + b)³ = a³ + b³ + 3ab(a + b).', method='Expand both sides, or give a counterexample.',
-                key='True: 3ab(a + b) = 3a²b + 3ab², and (a + b)³ = a³ + 3a²b + 3ab² + b³.', note=PR + 'Essential: a correct decision with a full expansion.'),
-          proof('Prove or disprove: a⁴ - b⁴ = (a - b)⁴.', method='Give a counterexample or a proof.',
-                key='False: a = 2, b = 1 gives 15 ≠ 1.', note=PR + 'Essential: a numerical counterexample (a factorization (a - b)(a + b)(a² + b²) is also acceptable).'),
+          mc('Is (a + b)³ = a³ + b³ + 3ab(a + b) an identity? Which answer is correct?', [
+              'Yes: (a + b)³ = a³ + 3a²b + 3ab² + b³, and 3ab(a + b) = 3a²b + 3ab², so both sides are equal.',
+              'No: (a + b)³ = a³ + b³, so the extra term makes the two sides different.',
+              'Yes, because a = 1 and b = 1 give 8 = 2 + 6.',
+              'No: for a = 1 and b = 2 the left side is 3³ = 27 and the right side is 1 + 8 + 3 · 2 = 15, so the sides differ.'],
+             note='True by expansion. The others use (a + b)³ = a³ + b³, check one example, or miscompute (a = 1, b = 2 gives 27 = 1 + 8 + 18 on both sides).'),
+          mc('Is a⁴ - b⁴ = (a - b)⁴ an identity? Which answer is correct?', [
+              'No: for a = 2 and b = 1, the left side is 16 - 1 = 15 and the right side is 1⁴ = 1.',
+              'Yes: a fourth power applies to each term inside the parentheses, so (a - b)⁴ = a⁴ - b⁴ for all a and b.',
+              'Yes: for a = 1 and b = 0 both sides equal 1.',
+              'No, because a⁴ - b⁴ = (a - b)²(a + b)².'],
+             note='One counterexample disproves an identity. The others distribute the exponent, generalize from one example, or use a false factorization (a⁴ - b⁴ = (a - b)(a + b)(a² + b²)).'),
           tf('(x - 1)(x² + x + 1) = x³ + 1 is an identity.', key=False, note='The product is x³ - 1 (difference of cubes).'),
           mc('Which is an identity?', ['(x + 2)² - (x - 2)² = 8x', '(x + 2)² = x² + 4', 'x² - 4 = (x - 4)²', '(x + 1)³ = x³ + 1'], note='4ab with a = x, b = 2.'),
           sa('Find c so that (x + c)² - (x - c)² = 12x is an identity.', 'c =', key='3', note='Any equivalent form. 4cx = 12x.'),
       ], prog='same-course deepening', demand='Decide whether a proposed identity is true; prove it or produce a counterexample, including with a parameter.'),
       f2=B('Prove identities with the Binomial Theorem', 'HSA-APR.C.5', [
-          proof('Use the Binomial Theorem with x = y = 1 to prove that the entries in row n of Pascal\'s Triangle add to 2ⁿ.', method='Substitute into (x + y)ⁿ.',
-                key='(1 + 1)ⁿ = Σ C(n, k) 1ᵏ 1ⁿ⁻ᵏ = Σ C(n, k), so the row sum is 2ⁿ.', note=PR + 'Essential: the substitution and the sum of the coefficients.'),
+          mc('Which argument uses the Binomial Theorem to prove that the entries in row n of Pascal\'s Triangle add to 2ⁿ?', [
+              'Set x = y = 1 in (x + y)ⁿ = C(n, 0)xⁿ + C(n, 1)xⁿ⁻¹y + ... + C(n, n)yⁿ. The left side is 2ⁿ and the right side is C(n, 0) + C(n, 1) + ... + C(n, n), the row sum.',
+              'Row 3 is 1, 3, 3, 1, which adds to 8 = 2³, so every row n adds to 2ⁿ.',
+              'Set x = 1 and y = 0 in (x + y)ⁿ = C(n, 0)xⁿ + ... + C(n, n)yⁿ: the left side is 1 and the right side is C(n, 0) = 1, so each row adds to 2ⁿ.',
+              'Row n has n + 1 entries, and each entry is the sum of the two entries above it, so every row has twice as many entries as the row before it and the sum of row n is 2ⁿ.'],
+             note='Substituting 1 for x and y makes every term equal to its coefficient. The others check one row, use a substitution that gives 1, or argue from the number of entries.'),
           sa('Use the Binomial Theorem with x = 1 and y = -1 to find C(5,0) - C(5,1) + C(5,2) - C(5,3) + C(5,4) - C(5,5).', 'Answer:', key='0',
              note='Any equivalent form. (1 - 1)⁵ = 0.'),
           tf('(1 + 1)⁴ = 1 + 4 + 6 + 4 + 1.', key=True, note='16.'),
@@ -587,18 +642,23 @@ SETS += [
 SETS += [
     # ------------------------------------------------------------------ 22. APR.D.6 long division
     S('HSA-APR.D.6', 'Rewrite rational expressions by polynomial division',
-      target='Rewrite a(x)/b(x) in the form q(x) + r(x)/b(x) using long or synthetic division', strand='core', covers=['APR6-divide'],
+      target='Rewrite a(x)/b(x) in the form q(x) + r(x)/b(x) using long or synthetic division, and identify the correct result among the results of common division errors', strand='core', covers=['APR6-divide'],
       main=[
-          work('Rewrite (x³ + 2x² - 5x + 3)/(x - 1) in the form q(x) + r(x)/b(x).', 'Answer:', method='Long division or synthetic division, shown.',
-               key='x² + 3x - 2 + 1/(x - 1)', note='Form required: q(x) + r/b(x). Synthetic division by 1: 1, 3, -2, remainder 1.'),
-          work('Rewrite (2x³ - 3x² + 4x - 7)/(x² + 1) in the form q(x) + r(x)/b(x).', 'Answer:', method='Long division, shown.',
-               key='2x - 3 + (2x - 4)/(x² + 1)', note='Form required: q(x) + r(x)/b(x) with deg r < 2. (x² + 1)(2x - 3) = 2x³ - 3x² + 2x - 3.'),
-          work('Rewrite (x⁴ - 16)/(x - 2) in the form q(x) + r(x)/b(x).', 'Answer:', method='Long or synthetic division, using 0 coefficients for missing terms.',
-               key='x³ + 2x² + 4x + 8 (remainder 0)', note='Form required: the quotient and the remainder 0.'),
-          work('Rewrite (6x² + x - 4)/(2x + 1) in the form q(x) + r(x)/b(x).', 'Answer:', method='Long division, shown.',
-               key='3x - 1 - 3/(2x + 1)', note='Form required: q(x) + r/b(x). (2x + 1)(3x - 1) = 6x² + x - 1.'),
-          work('Rewrite (x³ - 4x + 5)/(x + 3) in the form q(x) + r(x)/b(x).', 'Answer:', method='Synthetic or long division, using 0 for the missing x² term.',
-               key='x² - 3x + 5 - 10/(x + 3)', note='Form required: q(x) + r/b(x). Synthetic division by -3: 1, -3, 5, remainder -10.'),
+          mc('Which shows (x³ + 2x² - 5x + 3)/(x - 1) written in the form q(x) + r(x)/b(x)?',
+             ['x² + 3x - 2 + 1/(x - 1)', 'x² + x - 6 + 9/(x - 1)', 'x² + 3x - 2 - 1/(x - 1)', 'x² + 3x - 2 + 1/(x + 1)'],
+             note='Synthetic division by 1: 1, 3, -2, remainder 1. The others divide by -1 instead of 1 (x² + x - 6, remainder 9), change the sign of the remainder, or change the divisor.'),
+          mc('Which shows (2x³ - 3x² + 4x - 7)/(x² + 1) written in the form q(x) + r(x)/b(x)?',
+             ['2x - 3 + (2x - 4)/(x² + 1)', '2x - 3 + (6x - 10)/(x² + 1)', '2x - 3 + (2x - 10)/(x² + 1)', '2x - 3 + (2x + 4)/(x² + 1)'],
+             note='(x² + 1)(2x - 3) = 2x³ - 3x² + 2x - 3; subtracting from the dividend leaves 2x - 4 (degree less than 2). The others add instead of subtracting, or make a sign error in one term.'),
+          mc('Which shows (x⁴ - 16)/(x - 2) written in the form q(x) + r(x)/b(x)?',
+             ['x³ + 2x² + 4x + 8 (remainder 0)', 'x³ - 2x² + 4x - 8 (remainder 0)', 'x³ + 8 (remainder 0)', 'x³ + 2x² + 4x + 8 - 32/(x - 2)'],
+             note='Synthetic division by 2 with coefficients 1, 0, 0, 0, -16: 1, 2, 4, 8, remainder 0. The others divide by x + 2, leave out the zero placeholders, or miscompute the remainder.'),
+          mc('Which shows (6x² + x - 4)/(2x + 1) written in the form q(x) + r(x)/b(x)?',
+             ['3x - 1 - 3/(2x + 1)', '3x - 1 + 3/(2x + 1)', '6x - 2 - 3/(2x + 1)', '3x - 1 - 4/(2x + 1)'],
+             note='(2x + 1)(3x - 1) = 6x² + x - 1, so the remainder is -4 - (-1) = -3. The others change the sign of the remainder, use synthetic division by -1/2 without dividing the quotient by 2, or forget to subtract the -1.'),
+          mc('Which shows (x³ - 4x + 5)/(x + 3) written in the form q(x) + r(x)/b(x)?',
+             ['x² - 3x + 5 - 10/(x + 3)', 'x - 7 + 26/(x + 3)', 'x² + 3x + 5 + 20/(x + 3)', 'x² - 3x + 5 + 10/(x + 3)'],
+             note='Synthetic division by -3 with coefficients 1, 0, -4, 5: 1, -3, 5, remainder -10. The others leave out the 0 for x², divide by 3 instead of -3, or change the sign of the remainder.'),
       ],
       back=[
           B('Write a division with a remainder as a mixed number', '4.NF.B.3', [

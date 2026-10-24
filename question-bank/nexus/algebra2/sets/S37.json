@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -14,7 +14,7 @@
  "title": "Explain the extension of sine and cosine to all real numbers",
  "domain": "Trigonometric Functions",
  "strand": "core",
- "target_skill": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+ "target_skill": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
  "covers": [
   "TF2-explain"
  ],
@@ -29,7 +29,7 @@
    "branch": {
     "kind": "main",
     "strand": "core",
-    "target_skill": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+    "target_skill": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
     "plus_standard": false
    },
    "questions": [
@@ -50,25 +50,40 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "work",
-     "response": "write the answer and show the required work",
-     "prompt": "Explain how the unit circle defines cos t and sin t for every real number t.",
-     "prompt_markup": "Explain how the unit circle defines cos t and sin t for every real number t.",
-     "choices": [],
-     "answer_lines": [
-      "Conclusion:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which statement correctly explains how the unit circle defines cos t and sin t for every real number t?",
+     "prompt_markup": "Which statement correctly explains how the unit circle defines cos t and sin t for every real number t?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Start at (0, 1) and travel t units clockwise; cos t is the y-coordinate and sin t is the x-coordinate of the endpoint."
+      },
+      {
+       "letter": "B",
+       "text": "Start at (1, 0) and travel |t| units along the unit circle, counterclockwise if t > 0 and clockwise if t < 0; cos t and sin t are the x- and y-coordinates of the endpoint."
+      },
+      {
+       "letter": "C",
+       "text": "Travel t units counterclockwise from (1, 0); for t < 0 the values are undefined."
+      },
+      {
+       "letter": "D",
+       "text": "Draw a right triangle with an acute angle of t radians; cos t and sin t are the ratios adjacent/hypotenuse and opposite/hypotenuse, so the definition works only for t between 0 and π/2."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Start at (1, 0) and travel |t| units along the unit circle, counterclockwise if t > 0 and clockwise if t < 0; the endpoint is (cos t, sin t).",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "Start at (1, 0) and travel |t| units along the unit circle, counterclockwise if t > 0 and clockwise if t < 0; cos t and sin t are the x- and y-coordinates of the endpoint.",
      "drawing_answer": null,
-     "required_method": "Describe the arc, the endpoint, and the coordinates.",
-     "grading_note": "Any valid explanation. Essential: arc of length |t|, direction by sign, coordinates of the endpoint.",
+     "required_method": null,
+     "grading_note": "Arc length |t| from (1, 0), direction by the sign of t, coordinates of the endpoint. The others use the right-triangle definition (only acute angles), the wrong start and coordinates, or leave negative t undefined.",
      "figure": null,
      "page": 1347,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
-     "target_skill": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
+     "target_skill": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Algebra II",
      "question_page": 1347,
@@ -91,25 +106,40 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "work",
-     "response": "write the answer and show the required work",
-     "prompt": "Explain why sin(t + 2π) = sin t for every real number t.",
-     "prompt_markup": "Explain why sin(t + 2π) = sin t for every real number t.",
-     "choices": [],
-     "answer_lines": [
-      "Conclusion:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which explanation shows why sin(t + 2π) = sin t for every real number t?",
+     "prompt_markup": "Which explanation shows why sin(t + 2π) = sin t for every real number t?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "For t = π/2 both sides equal 1, so they are always equal."
+      },
+      {
+       "letter": "B",
+       "text": "Sine distributes over addition, so sin(t + 2π) = sin t + sin 2π, and sin 2π = 0 because the point at 2π is (1, 0); therefore sin(t + 2π) = sin t."
+      },
+      {
+       "letter": "C",
+       "text": "Adding 2π to t reflects the endpoint on the unit circle over the x-axis, and a reflection over the x-axis keeps the y-coordinate, so sin(t + 2π) = sin t."
+      },
+      {
+       "letter": "D",
+       "text": "The unit circle has circumference 2π, so adding 2π adds one full trip around it: t and t + 2π end at the same point, which has the same y-coordinate."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Adding 2π adds one full trip around the circle, so t + 2π ends at the same point as t and has the same y-coordinate.",
+     "answer_lines": [],
+     "correct_letter": "D",
+     "correct_answer": "The unit circle has circumference 2π, so adding 2π adds one full trip around it: t and t + 2π end at the same point, which has the same y-coordinate.",
      "drawing_answer": null,
-     "required_method": "Use the unit circle definition.",
-     "grading_note": "Any valid explanation. Essential: 2π is the circumference; same endpoint; same coordinate.",
+     "required_method": null,
+     "grading_note": "One full turn returns to the same point. The others distribute sine over a sum (false in general), check one value, or describe the wrong motion.",
      "figure": null,
      "page": 1348,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
-     "target_skill": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
+     "target_skill": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Algebra II",
      "question_page": 1348,
@@ -132,25 +162,40 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "work",
-     "response": "write the answer and show the required work",
-     "prompt": "Explain why cos t < 0 for π/2 < t < π.",
-     "prompt_markup": "Explain why cos t < 0 for π/2 < t < π.",
-     "choices": [],
-     "answer_lines": [
-      "Conclusion:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Why is cos t < 0 for π/2 < t < π?",
+     "prompt_markup": "Why is cos t < 0 for π/2 < t < π?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "For these t the endpoint on the unit circle is in quadrant II, where x-coordinates are negative, and cos t is the x-coordinate."
+      },
+      {
+       "letter": "B",
+       "text": "For these t the endpoint is in quadrant II, where y-coordinates are negative, and cos t is the y-coordinate."
+      },
+      {
+       "letter": "C",
+       "text": "cos(2π/3) = -1/2, so cos t is negative on this interval."
+      },
+      {
+       "letter": "D",
+       "text": "On the unit circle cos t decreases steadily as t increases from 0, so once t passes π/2, where cos t = 0, the value of cos t is negative for every larger t."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "For π/2 < t < π the endpoint is in quadrant II, where x-coordinates are negative, and cos t is the x-coordinate.",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "For these t the endpoint on the unit circle is in quadrant II, where x-coordinates are negative, and cos t is the x-coordinate.",
      "drawing_answer": null,
-     "required_method": "Use the location of the endpoint.",
-     "grading_note": "Any valid explanation. Essential: quadrant and x-coordinate.",
+     "required_method": null,
+     "grading_note": "Quadrant II and the x-coordinate. The others use the wrong coordinate and sign, a false claim (cos t increases again after π and is positive after 3π/2), or one example.",
      "figure": null,
      "page": 1349,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
-     "target_skill": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
+     "target_skill": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Algebra II",
      "question_page": 1349,
@@ -173,25 +218,40 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "work",
-     "response": "write the answer and show the required work",
-     "prompt": "Explain why -1 ≤ sin t ≤ 1 for every real t.",
-     "prompt_markup": "Explain why -1 ≤ sin t ≤ 1 for every real t.",
-     "choices": [],
-     "answer_lines": [
-      "Conclusion:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Why is -1 ≤ sin t ≤ 1 for every real number t?",
+     "prompt_markup": "Why is -1 ≤ sin t ≤ 1 for every real number t?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "sin(π/2) = 1 and sin(3π/2) = -1, so every value lies between them."
+      },
+      {
+       "letter": "B",
+       "text": "In a right triangle the hypotenuse is longer than either leg, so opposite/hypotenuse is less than 1, which means sin t < 1 for every real number t."
+      },
+      {
+       "letter": "C",
+       "text": "sin t is the y-coordinate of a point on the unit circle x² + y² = 1, so y² ≤ 1, which means -1 ≤ y ≤ 1."
+      },
+      {
+       "letter": "D",
+       "text": "sin t is an arc length on the unit circle, and those arcs are at most 1."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "sin t is the y-coordinate of a point on the unit circle, and every such point has -1 ≤ y ≤ 1 (x² + y² = 1 gives y² ≤ 1).",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "sin t is the y-coordinate of a point on the unit circle x² + y² = 1, so y² ≤ 1, which means -1 ≤ y ≤ 1.",
      "drawing_answer": null,
-     "required_method": "Use the unit circle definition.",
-     "grading_note": "Any valid explanation. Essential: coordinate on the circle and the bound.",
+     "required_method": null,
+     "grading_note": "Coordinates of points on the unit circle satisfy x² + y² = 1. The others only cover acute angles (and wrongly exclude sin t = 1), misstate the definition, or reason from two values.",
      "figure": null,
      "page": 1350,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
-     "target_skill": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
+     "target_skill": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Algebra II",
      "question_page": 1350,
@@ -214,25 +274,40 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "work",
-     "response": "write the answer and show the required work",
-     "prompt": "Explain how the definition gives sin(-π/6), and find it.",
-     "prompt_markup": "Explain how the definition gives sin(-π/6), and find it.",
-     "choices": [],
-     "answer_lines": [
-      "Conclusion:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "How does the unit-circle definition give sin(-π/6)?",
+     "prompt_markup": "How does the unit-circle definition give sin(-π/6)?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Travel π/6 clockwise from (1, 0) to (1/2, -√3/2), so sin(-π/6) = -√3/2."
+      },
+      {
+       "letter": "B",
+       "text": "Negative inputs are not on the unit circle, so sin(-π/6) is undefined."
+      },
+      {
+       "letter": "C",
+       "text": "Travel π/6 clockwise from (1, 0) to the point (√3/2, -1/2), so sin(-π/6) = -1/2."
+      },
+      {
+       "letter": "D",
+       "text": "Travel π/6 counterclockwise from (1, 0) to the point (√3/2, 1/2), so sin(-π/6) = 1/2."
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "C",
      "correct_answer": "Travel π/6 clockwise from (1, 0) to the point (√3/2, -1/2), so sin(-π/6) = -1/2.",
      "drawing_answer": null,
-     "required_method": "Use clockwise travel.",
-     "grading_note": "Any valid explanation. Essential: clockwise direction, endpoint, value.",
+     "required_method": null,
+     "grading_note": "A negative t means clockwise travel; the endpoint is (√3/2, -1/2) and the sine is its y-coordinate. The others go the wrong way, use the point for π/3, or leave negative t undefined.",
      "figure": null,
      "page": 1351,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
-     "target_skill": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
+     "target_skill": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Algebra II",
      "question_page": 1351,
@@ -289,7 +364,7 @@
      "page": 1353,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Right-triangle definitions of sine and cosine",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry (course placement in this bank)",
@@ -330,7 +405,7 @@
      "page": 1354,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Right-triangle definitions of sine and cosine",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry (course placement in this bank)",
@@ -378,7 +453,7 @@
      "page": 1355,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Right-triangle definitions of sine and cosine",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry (course placement in this bank)",
@@ -434,7 +509,7 @@
      "page": 1356,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Right-triangle definitions of sine and cosine",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry (course placement in this bank)",
@@ -475,7 +550,7 @@
      "page": 1357,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Right-triangle definitions of sine and cosine",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Geometry (course placement in this bank)",
@@ -533,7 +608,7 @@
      "page": 1359,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Points on the unit circle",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Geometry (course placement in this bank)",
@@ -574,7 +649,7 @@
      "page": 1360,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Points on the unit circle",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Geometry (course placement in this bank)",
@@ -622,7 +697,7 @@
      "page": 1361,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Points on the unit circle",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Geometry (course placement in this bank)",
@@ -678,7 +753,7 @@
      "page": 1362,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Points on the unit circle",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Geometry (course placement in this bank)",
@@ -719,7 +794,7 @@
      "page": 1363,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Points on the unit circle",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Geometry (course placement in this bank)",
@@ -777,7 +852,7 @@
      "page": 1365,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Radian measure as directed arc length",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra II",
@@ -818,7 +893,7 @@
      "page": 1366,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Radian measure as directed arc length",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra II",
@@ -866,7 +941,7 @@
      "page": 1367,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Radian measure as directed arc length",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra II",
@@ -922,7 +997,7 @@
      "page": 1368,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Radian measure as directed arc length",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra II",
@@ -963,7 +1038,7 @@
      "page": 1369,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Radian measure as directed arc length",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra II",
@@ -1005,24 +1080,39 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "work",
-     "response": "write the answer and show the required work",
-     "prompt": "Explain why tan t is undefined at t = π/2 + kπ (k an integer).",
-     "prompt_markup": "Explain why tan t is undefined at t = π/2 + kπ (k an integer).",
-     "choices": [],
-     "answer_lines": [
-      "Conclusion:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Why is tan t undefined at t = π/2 + kπ (k an integer)?",
+     "prompt_markup": "Why is tan t undefined at t = π/2 + kπ (k an integer)?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "At these t the endpoint on the unit circle is (0, 1) or (0, -1), so cos t = 0 and tan t = sin t/cos t would divide by 0."
+      },
+      {
+       "letter": "B",
+       "text": "tan t is undefined whenever sin t = 1."
+      },
+      {
+       "letter": "C",
+       "text": "At these t the endpoint on the unit circle is (1, 0) or (-1, 0), so sin t = 0 and tan t = sin t/cos t would have to divide by 0."
+      },
+      {
+       "letter": "D",
+       "text": "tan t = cos t/sin t, and sin t = 0 at these t."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "At these t the endpoint is (0, ±1), so cos t = 0 and sin t/cos t is undefined.",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "At these t the endpoint on the unit circle is (0, 1) or (0, -1), so cos t = 0 and tan t = sin t/cos t would divide by 0.",
      "drawing_answer": null,
-     "required_method": "Use tan t = sin t/cos t on the unit circle.",
-     "grading_note": "Any valid explanation. Essential: endpoints and division by 0.",
+     "required_method": null,
+     "grading_note": "The endpoints are (0, ±1), where the x-coordinate cos t is 0. The others use the wrong points, invert the ratio, or give a rule that misses t = 3π/2 (where sin t = -1).",
      "figure": null,
      "page": 1371,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Explain where tangent is defined and how values repeat",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II",
@@ -1063,7 +1153,7 @@
      "page": 1372,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Explain where tangent is defined and how values repeat",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II",
@@ -1111,7 +1201,7 @@
      "page": 1373,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Explain where tangent is defined and how values repeat",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II",
@@ -1167,7 +1257,7 @@
      "page": 1374,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Explain where tangent is defined and how values repeat",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II",
@@ -1208,7 +1298,7 @@
      "page": 1375,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Explain where tangent is defined and how values repeat",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II",
@@ -1251,24 +1341,39 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "work",
-     "response": "write the answer and show the required work",
-     "prompt": "Use the unit circle to explain why sin(-t) = -sin t.",
-     "prompt_markup": "Use the unit circle to explain why sin(-t) = -sin t.",
-     "choices": [],
-     "answer_lines": [
-      "Conclusion:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which unit-circle argument shows that sin(-t) = -sin t?",
+     "prompt_markup": "Which unit-circle argument shows that sin(-t) = -sin t?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "sin(-π/2) = -1 = -sin(π/2), so the rule holds for every t."
+      },
+      {
+       "letter": "B",
+       "text": "The endpoints for t and -t are reflections of each other over the x-axis, so their y-coordinates (the sines) are opposites."
+      },
+      {
+       "letter": "C",
+       "text": "The endpoints for t and -t are the same point, so their sines are opposites."
+      },
+      {
+       "letter": "D",
+       "text": "The endpoints for t and -t are always reflections of each other over the y-axis, so their y-coordinates (the sines) are opposites."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "The endpoints of t and -t are reflections over the x-axis, so their y-coordinates are opposites.",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "The endpoints for t and -t are reflections of each other over the x-axis, so their y-coordinates (the sines) are opposites.",
      "drawing_answer": null,
-     "required_method": "Use reflection over the x-axis.",
-     "grading_note": "Any valid explanation. Essential: reflection and the y-coordinate.",
+     "required_method": null,
+     "grading_note": "Equal arcs in opposite directions from (1, 0) give mirror images over the x-axis. The others name the wrong reflection (it keeps y), check one value, or describe the points wrongly.",
      "figure": null,
      "page": 1377,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Explain symmetry and periodicity",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
@@ -1309,7 +1414,7 @@
      "page": 1378,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Explain symmetry and periodicity",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
@@ -1357,7 +1462,7 @@
      "page": 1379,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Explain symmetry and periodicity",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
@@ -1413,7 +1518,7 @@
      "page": 1380,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Explain symmetry and periodicity",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",
@@ -1454,7 +1559,7 @@
      "page": 1381,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+     "set_target": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
      "target_skill": "Explain symmetry and periodicity",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II, Advanced Extension (+)",

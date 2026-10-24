@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -50,22 +50,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "work",
-     "response": "write the answer and show the required work",
-     "prompt": "Use a 30°-60°-90° triangle with hypotenuse 1 to derive sin(π/3) and cos(π/3).",
-     "prompt_markup": "Use a 30°-60°-90° triangle with hypotenuse 1 to derive sin(π/3) and cos(π/3).",
-     "choices": [],
-     "answer_lines": [
-      "Conclusion:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "A 30°-60°-90° triangle with hypotenuse 1 is half of an equilateral triangle with side 1. Which derivation of sin(π/3) and cos(π/3) is correct?",
+     "prompt_markup": "A 30°-60°-90° triangle with hypotenuse 1 is half of an equilateral triangle with side 1. Which derivation of sin(π/3) and cos(π/3) is correct?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The short leg is 1/2 and the long leg is √(1 - 1/4) = √3/2. The angle π/3 is opposite the long leg, so sin(π/3) = √3/2 and cos(π/3) = 1/2."
+      },
+      {
+       "letter": "B",
+       "text": "The long leg is √(1 + 1/4) = √5/2, so sin(π/3) = √5/2."
+      },
+      {
+       "letter": "C",
+       "text": "The short leg is 1/2 and the long leg is √(1 - 1/4) = √3/2. The angle π/3 is opposite the short leg, so sin(π/3) = 1/2 and cos(π/3) = √3/2."
+      },
+      {
+       "letter": "D",
+       "text": "The legs are 1/2 and 1 - 1/2 = 1/2, so sin(π/3) = cos(π/3) = 1/2."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Halving an equilateral triangle gives legs 1/2 and √(1 - 1/4) = √3/2; the angle π/3 is opposite √3/2, so sin(π/3) = √3/2 and cos(π/3) = 1/2.",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "The short leg is 1/2 and the long leg is √(1 - 1/4) = √3/2. The angle π/3 is opposite the long leg, so sin(π/3) = √3/2 and cos(π/3) = 1/2.",
      "drawing_answer": null,
-     "required_method": "Start from an equilateral triangle of side 1 cut in half.",
-     "grading_note": "Any valid proof or derivation. Essential: the half-equilateral triangle, the Pythagorean Theorem, and the ratio.",
+     "required_method": null,
+     "grading_note": "Halving the base gives 1/2; the Pythagorean Theorem gives √3/2; the larger angle is opposite the longer leg. The others put π/3 opposite the short leg, subtract lengths instead of using the Pythagorean Theorem, or add instead of subtracting squares.",
      "figure": null,
      "page": 2975,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
@@ -91,22 +106,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "work",
-     "response": "write the answer and show the required work",
-     "prompt": "Use a 45°-45°-90° triangle to derive tan(π/4).",
-     "prompt_markup": "Use a 45°-45°-90° triangle to derive tan(π/4).",
-     "choices": [],
-     "answer_lines": [
-      "Conclusion:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which derivation of tan(π/4) from a 45°-45°-90° triangle is correct?",
+     "prompt_markup": "Which derivation of tan(π/4) from a 45°-45°-90° triangle is correct?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The hypotenuse is twice a leg, so tan(π/4) = 1/2."
+      },
+      {
+       "letter": "B",
+       "text": "tan(π/4) = sin(π/4) + cos(π/4) = √2."
+      },
+      {
+       "letter": "C",
+       "text": "The legs are 1 and √2, so tan(π/4) = opposite/adjacent = 1/√2 = √2/2."
+      },
+      {
+       "letter": "D",
+       "text": "The two legs are equal, so tan(π/4) = opposite/adjacent = 1."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "The legs are equal, so tan(π/4) = opposite/adjacent = 1.",
+     "answer_lines": [],
+     "correct_letter": "D",
+     "correct_answer": "The two legs are equal, so tan(π/4) = opposite/adjacent = 1.",
      "drawing_answer": null,
-     "required_method": "Use equal legs.",
-     "grading_note": "Any valid proof or derivation. Essential: equal legs and the ratio.",
+     "required_method": null,
+     "grading_note": "Equal legs make the ratio 1. The others use the hypotenuse as a leg, add instead of dividing, or use a 30°-60°-90° fact.",
      "figure": null,
      "page": 2976,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
@@ -995,22 +1025,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "work",
-     "response": "write the answer and show the required work",
-     "prompt": "Derive tan(π/6) exactly from a special triangle.",
-     "prompt_markup": "Derive tan(π/6) exactly from a special triangle.",
-     "choices": [],
-     "answer_lines": [
-      "Conclusion:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which derivation of tan(π/6) from a special triangle is correct?",
+     "prompt_markup": "Which derivation of tan(π/6) from a special triangle is correct?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The opposite side is half the hypotenuse, so tan(π/6) = 1/2."
+      },
+      {
+       "letter": "B",
+       "text": "In the 30°-60°-90° triangle with hypotenuse 1, π/6 is opposite the leg 1/2 and adjacent to the leg √3/2, so tan(π/6) = (1/2)/(√3/2) = 1/√3 = √3/3."
+      },
+      {
+       "letter": "C",
+       "text": "In the 30°-60°-90° triangle with hypotenuse 1, π/6 is opposite the leg √3/2 and adjacent to the leg 1/2, so tan(π/6) = (√3/2)/(1/2) = √3 exactly."
+      },
+      {
+       "letter": "D",
+       "text": "tan(π/6) = (1/2)/(√3/2) = √3/2."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "tan(π/6) = (1/2)/(√3/2) = 1/√3 = √3/3.",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "In the 30°-60°-90° triangle with hypotenuse 1, π/6 is opposite the leg 1/2 and adjacent to the leg √3/2, so tan(π/6) = (1/2)/(√3/2) = 1/√3 = √3/3.",
      "drawing_answer": null,
-     "required_method": "Use the 30°-60°-90° triangle.",
-     "grading_note": "Any valid proof or derivation. Essential: the ratio and its simplification.",
+     "required_method": null,
+     "grading_note": "Opposite over adjacent, then simplify (1/2)/(√3/2) = 1/√3 = √3/3. The others use the angle π/3, give sin(π/6) instead, or simplify the quotient incorrectly.",
      "figure": null,
      "page": 2999,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Derive more special values and the reflection identities",
@@ -1036,22 +1081,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "work",
-     "response": "write the answer and show the required work",
-     "prompt": "Explain with the unit circle why cos(π - x) = -cos x.",
-     "prompt_markup": "Explain with the unit circle why cos(π - x) = -cos x.",
-     "choices": [],
-     "answer_lines": [
-      "Conclusion:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which unit-circle argument explains why cos(π - x) = -cos x?",
+     "prompt_markup": "Which unit-circle argument explains why cos(π - x) = -cos x?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The points for x and π - x are reflections of each other over the y-axis, so their x-coordinates (the cosines) are opposites."
+      },
+      {
+       "letter": "B",
+       "text": "cos(π - π/3) = -1/2 = -cos(π/3), so the rule always holds."
+      },
+      {
+       "letter": "C",
+       "text": "cos(π - x) = cos π - cos x = -1 - cos x."
+      },
+      {
+       "letter": "D",
+       "text": "The points for x and π - x are reflections of each other over the x-axis, so their x-coordinates (the cosines) are opposites."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "The points at x and π - x are reflections over the y-axis, so their x-coordinates are opposites.",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "The points for x and π - x are reflections of each other over the y-axis, so their x-coordinates (the cosines) are opposites.",
      "drawing_answer": null,
-     "required_method": "Use reflection over the y-axis.",
-     "grading_note": "Any valid proof or derivation. Essential: the reflection and the coordinate.",
+     "required_method": null,
+     "grading_note": "Reflection over the y-axis changes the sign of x and keeps y. The others name the wrong reflection (it keeps x), distribute cosine over a difference, or check one value.",
      "figure": null,
      "page": 3000,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Use special right triangles to find exact values at π/6, π/4, π/3, and use the unit circle to express values at π - x, π + x, and 2π - x in terms of x",
      "target_skill": "Derive more special values and the reflection identities",

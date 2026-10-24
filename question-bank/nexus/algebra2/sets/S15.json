@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -1231,22 +1231,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "work",
-     "response": "write the answer and show the required work",
-     "prompt": "Prove that the remainder when a polynomial p(x) is divided by x - a is p(a).",
-     "prompt_markup": "Prove that the remainder when a polynomial p(x) is divided by x - a is p(a).",
-     "choices": [],
-     "answer_lines": [
-      "Conclusion:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which argument proves that the remainder when a polynomial p(x) is divided by x - a is p(a)?",
+     "prompt_markup": "Which argument proves that the remainder when a polynomial p(x) is divided by x - a is p(a)?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Write p(x) = (x - a)q(x) + r, where r is a constant because it has degree less than 1. Substituting x = a gives p(a) = 0 · q(a) + r = r."
+      },
+      {
+       "letter": "B",
+       "text": "Dividing x³ by x - 2 leaves remainder 8, and 2³ = 8, so the remainder is always p(a)."
+      },
+      {
+       "letter": "C",
+       "text": "Since x - a = 0 exactly when x = a, dividing p(x) by x - a is the same as replacing x with a, so the remainder must be p(a)."
+      },
+      {
+       "letter": "D",
+       "text": "Write p(x) = (x - a)q(x) + r. Substituting x = 0 gives p(0) = (0 - a)q(0) + r = -a · q(0) + r, so the remainder r equals p(a) for every a."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "p(a) = (a - a)q(a) + r = r.",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "Write p(x) = (x - a)q(x) + r, where r is a constant because it has degree less than 1. Substituting x = a gives p(a) = 0 · q(a) + r = r.",
      "drawing_answer": null,
-     "required_method": "Write p(x) = (x - a)q(x) + r and substitute x = a.",
-     "grading_note": "Any valid proof or derivation. Essential: the division identity with a constant remainder r (degree less than 1); substitution x = a; the factor (a - a) = 0.",
+     "required_method": null,
+     "grading_note": "The division identity with a constant remainder, then x = a makes the factor (a - a) zero. The others check one example, substitute the wrong value (x = 0 gives p(0), not p(a)), or state the result without a reason.",
      "figure": null,
      "page": 557,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
      "set_target": "Find the remainder when a polynomial p(x) is divided by x - a by evaluating p(a)",
      "target_skill": "Prove the Remainder Theorem",

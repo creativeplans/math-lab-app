@@ -209,15 +209,15 @@ BACKWARD branches review prerequisites (K-8, Algebra I, Geometry, or the MAIN st
 
 ## 5. Response types
 
-sa = short answer; mc = multiple choice (exactly one correct option); tf = true/false; plot = drawing on a blank grid; plot_text = drawing plus a written answer; work = answer with required work (proofs, derivations, divisions).
+sa = short answer; mc = multiple choice (exactly one correct option); tf = true/false. Since version 1.1.0 no question needs a person or a drawing surface to grade: proofs, derivations, explanations and divisions are multiple choice, and graphing questions show four candidate graphs labeled A to D.
 
-| Section | mc | plot | plot_text | sa | tf | work |
-|---|---:|---:|---:|---:|---:|---:|
-| MAIN | 0 | 40 | 5 | 338 | 0 | 37 |
-| BACKWARD | 253 | 0 | 0 | 756 | 256 | 0 |
-| FORWARD 1 | 84 | 10 | 0 | 230 | 84 | 12 |
-| FORWARD 2 | 84 | 0 | 0 | 248 | 84 | 4 |
-| Total | 421 | 50 | 5 | 1572 | 424 | 53 |
+| Section | mc | sa | tf |
+|---|---:|---:|---:|
+| MAIN | 82 | 338 | 0 |
+| BACKWARD | 253 | 756 | 256 |
+| FORWARD 1 | 106 | 230 | 84 |
+| FORWARD 2 | 88 | 248 | 84 |
+| Total | 529 | 1572 | 424 |
 
 Figures: 106 questions carry a figure (coordinate graphs, tables, histograms of supplied simulation results).
 

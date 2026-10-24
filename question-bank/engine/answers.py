@@ -90,7 +90,8 @@ def split_note(raw):
 
 CATCH_ALL = re.compile(r'^(They |Both are|Both$|Neither|None|There is no|There are no|No conclusion|Never|'
                        r'The ratios are equivalent|The balances are equal)')
-FIXED = [('One solution', 'No solution', 'Infinitely many solutions')]
+FIXED = [('One solution', 'No solution', 'Infinitely many solutions'),
+         ('Graph A', 'Graph B', 'Graph C', 'Graph D')]  # choices that name labeled panels of the figure keep their order
 NUM = re.compile(r'^(-)?\$?(-)?(\d[\d,]*(?:\.\d+)?)?(?:\{(\d+)/(\d+)\})?\s*(?:°?[A-Za-z%° .]*)$')
 
 

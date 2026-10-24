@@ -115,20 +115,38 @@ SETS = [
 
     # ------------------------------------------------------------------ 37. TF.A.2 explain the extension
     S('HSF-TF.A.2', 'Explain the extension of sine and cosine to all real numbers',
-      target='Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise', strand='core', covers=['TF2-explain'],
+      target='Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones', strand='core', covers=['TF2-explain'],
       main=[
-          proof('Explain how the unit circle defines cos t and sin t for every real number t.', method='Describe the arc, the endpoint, and the coordinates.',
-                key='Start at (1, 0) and travel |t| units along the unit circle, counterclockwise if t > 0 and clockwise if t < 0; the endpoint is (cos t, sin t).',
-                note=EXP + 'Essential: arc of length |t|, direction by sign, coordinates of the endpoint.'),
-          proof('Explain why sin(t + 2π) = sin t for every real number t.', method='Use the unit circle definition.',
-                key='Adding 2π adds one full trip around the circle, so t + 2π ends at the same point as t and has the same y-coordinate.',
-                note=EXP + 'Essential: 2π is the circumference; same endpoint; same coordinate.'),
-          proof('Explain why cos t < 0 for π/2 < t < π.', method='Use the location of the endpoint.',
-                key='For π/2 < t < π the endpoint is in quadrant II, where x-coordinates are negative, and cos t is the x-coordinate.', note=EXP + 'Essential: quadrant and x-coordinate.'),
-          proof('Explain why -1 ≤ sin t ≤ 1 for every real t.', method='Use the unit circle definition.',
-                key='sin t is the y-coordinate of a point on the unit circle, and every such point has -1 ≤ y ≤ 1 (x² + y² = 1 gives y² ≤ 1).', note=EXP + 'Essential: coordinate on the circle and the bound.'),
-          proof('Explain how the definition gives sin(-π/6), and find it.', method='Use clockwise travel.',
-                key='Travel π/6 clockwise from (1, 0) to the point (√3/2, -1/2), so sin(-π/6) = -1/2.', note=EXP + 'Essential: clockwise direction, endpoint, value.'),
+          mc('Which statement correctly explains how the unit circle defines cos t and sin t for every real number t?', [
+              'Start at (1, 0) and travel |t| units along the unit circle, counterclockwise if t > 0 and clockwise if t < 0; cos t and sin t are the x- and y-coordinates of the endpoint.',
+              'Draw a right triangle with an acute angle of t radians; cos t and sin t are the ratios adjacent/hypotenuse and opposite/hypotenuse, so the definition works only for t between 0 and π/2.',
+              'Start at (0, 1) and travel t units clockwise; cos t is the y-coordinate and sin t is the x-coordinate of the endpoint.',
+              'Travel t units counterclockwise from (1, 0); for t < 0 the values are undefined.'],
+             note='Arc length |t| from (1, 0), direction by the sign of t, coordinates of the endpoint. The others use the right-triangle definition (only acute angles), the wrong start and coordinates, or leave negative t undefined.'),
+          mc('Which explanation shows why sin(t + 2π) = sin t for every real number t?', [
+              'The unit circle has circumference 2π, so adding 2π adds one full trip around it: t and t + 2π end at the same point, which has the same y-coordinate.',
+              'Sine distributes over addition, so sin(t + 2π) = sin t + sin 2π, and sin 2π = 0 because the point at 2π is (1, 0); therefore sin(t + 2π) = sin t.',
+              'For t = π/2 both sides equal 1, so they are always equal.',
+              'Adding 2π to t reflects the endpoint on the unit circle over the x-axis, and a reflection over the x-axis keeps the y-coordinate, so sin(t + 2π) = sin t.'],
+             note='One full turn returns to the same point. The others distribute sine over a sum (false in general), check one value, or describe the wrong motion.'),
+          mc('Why is cos t < 0 for π/2 < t < π?', [
+              'For these t the endpoint on the unit circle is in quadrant II, where x-coordinates are negative, and cos t is the x-coordinate.',
+              'For these t the endpoint is in quadrant II, where y-coordinates are negative, and cos t is the y-coordinate.',
+              'On the unit circle cos t decreases steadily as t increases from 0, so once t passes π/2, where cos t = 0, the value of cos t is negative for every larger t.',
+              'cos(2π/3) = -1/2, so cos t is negative on this interval.'],
+             note='Quadrant II and the x-coordinate. The others use the wrong coordinate and sign, a false claim (cos t increases again after π and is positive after 3π/2), or one example.'),
+          mc('Why is -1 ≤ sin t ≤ 1 for every real number t?', [
+              'sin t is the y-coordinate of a point on the unit circle x² + y² = 1, so y² ≤ 1, which means -1 ≤ y ≤ 1.',
+              'In a right triangle the hypotenuse is longer than either leg, so opposite/hypotenuse is less than 1, which means sin t < 1 for every real number t.',
+              'sin t is an arc length on the unit circle, and those arcs are at most 1.',
+              'sin(π/2) = 1 and sin(3π/2) = -1, so every value lies between them.'],
+             note='Coordinates of points on the unit circle satisfy x² + y² = 1. The others only cover acute angles (and wrongly exclude sin t = 1), misstate the definition, or reason from two values.'),
+          mc('How does the unit-circle definition give sin(-π/6)?', [
+              'Travel π/6 clockwise from (1, 0) to the point (√3/2, -1/2), so sin(-π/6) = -1/2.',
+              'Travel π/6 counterclockwise from (1, 0) to the point (√3/2, 1/2), so sin(-π/6) = 1/2.',
+              'Travel π/6 clockwise from (1, 0) to (1/2, -√3/2), so sin(-π/6) = -√3/2.',
+              'Negative inputs are not on the unit circle, so sin(-π/6) is undefined.'],
+             note='A negative t means clockwise travel; the endpoint is (√3/2, -1/2) and the sine is its y-coordinate. The others go the wrong way, use the point for π/3, or leave negative t undefined.'),
       ],
       back=[
           B('Right-triangle definitions of sine and cosine', 'HSG-SRT.C.6', [
@@ -157,16 +175,24 @@ SETS = [
             why=why('the student cannot locate the endpoint.', 'the definition uses arc length and direction.', 'locates endpoints of arcs.')),
       ],
       f1=B('Explain where tangent is defined and how values repeat', 'HSF-TF.A.2', [
-          proof('Explain why tan t is undefined at t = π/2 + kπ (k an integer).', method='Use tan t = sin t/cos t on the unit circle.',
-                key='At these t the endpoint is (0, ±1), so cos t = 0 and sin t/cos t is undefined.', note=EXP + 'Essential: endpoints and division by 0.'),
+          mc('Why is tan t undefined at t = π/2 + kπ (k an integer)?', [
+              'At these t the endpoint on the unit circle is (0, 1) or (0, -1), so cos t = 0 and tan t = sin t/cos t would divide by 0.',
+              'At these t the endpoint on the unit circle is (1, 0) or (-1, 0), so sin t = 0 and tan t = sin t/cos t would have to divide by 0.',
+              'tan t = cos t/sin t, and sin t = 0 at these t.',
+              'tan t is undefined whenever sin t = 1.'],
+             note='The endpoints are (0, ±1), where the x-coordinate cos t is 0. The others use the wrong points, invert the ratio, or give a rule that misses t = 3π/2 (where sin t = -1).'),
           sa('Give the domain and range of y = sin t.', 'Answer:', key='Domain all real numbers; range -1 ≤ y ≤ 1', note='Form required: both.'),
           tf('cos t and sin t can both equal 0 for the same t.', key=False, note='(0, 0) is not on the unit circle.'),
           mc('The unit-circle definition agrees with the triangle definition for', ['0 < t < π/2', 'all t', 't < 0 only', 'π/2 < t < π only'], note='Acute angles.'),
           sa('Explain why cos t = cos(-t) using the unit circle.', 'Answer:', key='t and -t end at points that are reflections over the x-axis, which have the same x-coordinate.', note='Any equivalent explanation.'),
       ], prog='same-course deepening', demand='Explain domains, ranges, and undefined values that the unit-circle definition creates.'),
       f2=B('Explain symmetry and periodicity', 'HSF-TF.A.4', [
-          proof('Use the unit circle to explain why sin(-t) = -sin t.', method='Use reflection over the x-axis.',
-                key='The endpoints of t and -t are reflections over the x-axis, so their y-coordinates are opposites.', note=EXP + 'Essential: reflection and the y-coordinate.'),
+          mc('Which unit-circle argument shows that sin(-t) = -sin t?', [
+              'The endpoints for t and -t are reflections of each other over the x-axis, so their y-coordinates (the sines) are opposites.',
+              'The endpoints for t and -t are always reflections of each other over the y-axis, so their y-coordinates (the sines) are opposites.',
+              'sin(-π/2) = -1 = -sin(π/2), so the rule holds for every t.',
+              'The endpoints for t and -t are the same point, so their sines are opposites.'],
+             note='Equal arcs in opposite directions from (1, 0) give mirror images over the x-axis. The others name the wrong reflection (it keeps y), check one value, or describe the points wrongly.'),
           sa('Is sine an even function, an odd function, or neither?', 'Answer:', key='Odd', note='Any equivalent answer.'),
           tf('tan(t + π) = tan t for every t where it is defined.', key=True, note='The endpoints of t and t + π are opposite points; the ratio y/x is unchanged.'),
           mc('The period of y = tan t is', ['π', '2π', 'π/2', '4π'], note='Opposite points give equal ratios.'),
@@ -291,19 +317,38 @@ SETS = [
 
     # ------------------------------------------------------------------ 40. TF.C.8 prove the identity
     S('HSF-TF.C.8', 'Prove the Pythagorean identity',
-      target='Prove sin²θ + cos²θ = 1, and prove closely related identities from it', strand='core', covers=['TF8-prove'],
+      target='Prove sin²θ + cos²θ = 1 and closely related identities: identify the valid argument and reject example checks and invalid steps', strand='core', covers=['TF8-prove'],
       main=[
-          proof('Prove that sin²θ + cos²θ = 1 for every angle θ, using the unit circle.', method='Use the coordinates of the point at angle θ and the circle\'s equation.',
-                key='The point at θ is (cos θ, sin θ) and lies on x² + y² = 1, so cos²θ + sin²θ = 1.', note=PR + 'Essential: the point, the circle equation, and substitution.'),
-          proof('A right triangle has legs a and b, hypotenuse c, and acute angle θ opposite a. Prove sin²θ + cos²θ = 1.', method='Use the ratios and the Pythagorean Theorem.',
-                key='sin θ = a/c and cos θ = b/c, so sin²θ + cos²θ = (a² + b²)/c² = c²/c² = 1.', note=PR + 'Essential: both ratios and a² + b² = c².'),
-          proof('Prove that 1 + tan²θ = 1/cos²θ wherever cos θ ≠ 0.', method='Divide the Pythagorean identity by cos²θ.',
-                key='Dividing sin²θ + cos²θ = 1 by cos²θ gives tan²θ + 1 = 1/cos²θ.', note=PR + 'Essential: division by cos²θ (nonzero) and tan θ = sin θ/cos θ.'),
-          proof('θ is in quadrant II. Prove sin²θ + cos²θ = 1 using a reference triangle, explaining what happens to the signs.', method='Use the reference triangle with legs |x| and |y| and hypotenuse 1.',
-                key='The point is (x, y) with x < 0 < y; the reference triangle has legs |x|, |y| and hypotenuse 1, so |x|² + |y|² = 1, and squares remove the signs: cos²θ + sin²θ = 1.',
-                note=PR + 'Essential: absolute values for the legs and squaring.'),
-          proof('Prove that (sin θ + cos θ)² = 1 + 2sin θ cos θ.', method='Expand and use the Pythagorean identity.',
-                key='(sin θ + cos θ)² = sin²θ + 2sin θ cos θ + cos²θ = 1 + 2sin θ cos θ.', note=PR + 'Essential: the expansion and the identity.'),
+          mc('Which argument proves sin²θ + cos²θ = 1 for every angle θ, using the unit circle?', [
+              'The point at angle θ is (cos θ, sin θ), and every point on the unit circle satisfies x² + y² = 1; substituting gives cos²θ + sin²θ = 1.',
+              'For θ = 30°: (1/2)² + (√3/2)² = 1, so the identity holds.',
+              'The point at angle θ is (sin θ, cos θ), so sin θ + cos θ = 1.',
+              'On the unit circle sin θ + cos θ = 1 for every angle θ, because the coordinates of a point add to the radius; squaring both sides gives sin²θ + cos²θ = 1.'],
+             note='The coordinates of the point satisfy the circle equation. The others check one angle or rely on the false statement sin θ + cos θ = 1.'),
+          mc('A right triangle has legs a and b, hypotenuse c, and acute angle θ opposite a. Which argument proves sin²θ + cos²θ = 1?', [
+              'sin θ = a/c and cos θ = b/c, so sin²θ + cos²θ = (a² + b²)/c² = c²/c² = 1 by the Pythagorean Theorem.',
+              'sin θ = b/c and cos θ = a/c, so sin θ + cos θ = (a + b)/c = 1.',
+              'sin θ = a/c and cos θ = b/c, so sin²θ + cos²θ = (a + b)²/c², and (a + b)² = c² by the Pythagorean Theorem, so the sum is 1.',
+              'In a 3-4-5 triangle, (3/5)² + (4/5)² = 1, so the identity holds.'],
+             note='Both ratios and a² + b² = c². The others swap the ratios and use a + b = c, square a sum incorrectly, or check one triangle.'),
+          mc('Which argument proves 1 + tan²θ = 1/cos²θ wherever cos θ ≠ 0?', [
+              'Divide sin²θ + cos²θ = 1 by cos²θ, which is allowed because cos θ ≠ 0: sin²θ/cos²θ + 1 = 1/cos²θ, and sin²θ/cos²θ = tan²θ.',
+              'Divide sin²θ + cos²θ = 1 by sin²θ to get 1 + cos²θ/sin²θ = 1/sin²θ; since cos²θ/sin²θ = tan²θ, this gives 1 + tan²θ = 1/cos²θ.',
+              'Square tan θ = sin θ/cos θ to get tan²θ = sin²θ/cos²θ = 1/cos²θ.',
+              'For θ = 0: 1 + 0 = 1/1, so the identity holds.'],
+             note='Divide the Pythagorean identity by cos²θ. The others divide by sin²θ and then treat cos²θ/sin²θ as tan²θ (it is 1/tan²θ), replace sin²θ by 1, or check one angle.'),
+          mc('θ is in quadrant II, and its point on the unit circle is (x, y) with x < 0 < y. Which argument proves sin²θ + cos²θ = 1 with a reference triangle?', [
+              'The reference triangle has legs |x| and |y| and hypotenuse 1, so |x|² + |y|² = 1. Squaring removes the signs, so x² + y² = cos²θ + sin²θ = 1.',
+              'The reference triangle has legs x and y, so x + y = 1, which means cos θ + sin θ = 1.',
+              'The legs of the reference triangle are x and y, and x is negative in quadrant II, so x² + y² = -1 there, which means cos²θ + sin²θ = -1 instead of 1.',
+              'The identity was proved for acute angles, so it is true in quadrant II with no further work.'],
+             note='Side lengths are |x| and |y|; squares remove the signs. The others add the legs, mishandle the negative coordinate, or skip the argument.'),
+          mc('Which argument proves (sin θ + cos θ)² = 1 + 2sin θ cos θ?', [
+              '(sin θ + cos θ)² = sin²θ + 2sin θ cos θ + cos²θ, and sin²θ + cos²θ = 1.',
+              '(sin θ + cos θ)² = sin²θ + cos²θ = 1, so the term 2sin θ cos θ is extra.',
+              'For θ = 0: (0 + 1)² = 1 + 0, so the identity holds.',
+              '(sin θ + cos θ)² = 1² = 1 because sin θ + cos θ = 1.'],
+             note='Expand the square, then use the Pythagorean identity. The others drop the middle term, check one angle, or use the false statement sin θ + cos θ = 1.'),
       ],
       back=[
           B('The Pythagorean Theorem', '8.G.B.7', [
@@ -332,13 +377,26 @@ SETS = [
             why=why('the student cannot manipulate the identity.', 'derived identities need algebra.', 'expands and divides expressions.')),
       ],
       f1=B('Prove identities derived from the Pythagorean identity', 'HSF-TF.C.8', [
-          proof('Prove that sin⁴θ - cos⁴θ = sin²θ - cos²θ.', method='Factor as a difference of squares.',
-                key='sin⁴θ - cos⁴θ = (sin²θ - cos²θ)(sin²θ + cos²θ) = (sin²θ - cos²θ)(1).', note=PR + 'Essential: the factorization and the identity.'),
-          proof('Prove that (1 - cos θ)(1 + cos θ) = sin²θ.', method='Multiply and use the identity.',
-                key='(1 - cos θ)(1 + cos θ) = 1 - cos²θ = sin²θ.', note=PR + 'Essential: the product and the identity.'),
+          mc('Which argument proves sin⁴θ - cos⁴θ = sin²θ - cos²θ?', [
+              'sin⁴θ - cos⁴θ = (sin²θ - cos²θ)(sin²θ + cos²θ) = (sin²θ - cos²θ)(1) = sin²θ - cos²θ.',
+              'Divide both sides by sin²θ - cos²θ to get sin²θ + cos²θ = 1, which is the Pythagorean identity, so the identity is true.',
+              'sin⁴θ - cos⁴θ = (sin θ - cos θ)⁴, which equals sin²θ - cos²θ.',
+              'For θ = π/4 both sides are 0, so the identity holds.'],
+             note='Factor as a difference of squares and use the Pythagorean identity. The others assume the identity (and divide by an expression that can be 0), use the false rule a⁴ - b⁴ = (a - b)⁴, or check one angle.'),
+          mc('Which argument proves (1 - cos θ)(1 + cos θ) = sin²θ?', [
+              '(1 - cos θ)(1 + cos θ) = 1 - cos²θ, and 1 - cos²θ = sin²θ by the Pythagorean identity.',
+              '(1 - cos θ)(1 + cos θ) = 1 + cos²θ, which equals sin²θ.',
+              'For θ = π/2: (1 - 0)(1 + 0) = 1 = sin²(π/2), so the identity holds.',
+              '(1 - cos θ)(1 + cos θ) = 1 - 2cos θ + cos²θ, and by the Pythagorean identity this equals sin²θ.'],
+             note='Multiply (difference of squares), then use the identity. The others multiply incorrectly or check one angle.'),
           tf('sin θ + cos θ = 1 for every θ.', key=False, note='θ = π/4 gives √2.'),
           mc('Which equals 1 - sin²θ?', ['cos²θ', 'cos θ', '1 - cos²θ', 'tan²θ'], note='Rearranged identity.'),
-          proof('Prove that cos²θ - sin²θ = 2cos²θ - 1.', method='Replace sin²θ.', key='cos²θ - (1 - cos²θ) = 2cos²θ - 1.', note=PR + 'Essential: substitution sin²θ = 1 - cos²θ.'),
+          mc('Which argument proves cos²θ - sin²θ = 2cos²θ - 1?', [
+              'Replace sin²θ with 1 - cos²θ: cos²θ - (1 - cos²θ) = cos²θ - 1 + cos²θ = 2cos²θ - 1.',
+              'Replace sin²θ with 1 - cos²θ: cos²θ - 1 - cos²θ = -1, so the identity is false for every θ.',
+              'For θ = 0: 1 - 0 = 2 - 1, so the identity holds.',
+              'Add sin²θ to both sides to get cos²θ = 2cos²θ - 1 + sin²θ, which is always true.'],
+             note='Substitute sin²θ = 1 - cos²θ and subtract the whole expression. The others drop the parentheses, check one angle, or end with an unproved statement.'),
       ], prog='same-course deepening', demand='Use the proved identity as a tool to prove new identities.'),
       f2=B('Use the angle-addition formulas', 'HSF-TF.C.9', [
           sa('Use sin(a + b) = sin a cos b + cos a sin b to find sin(75°) exactly.', 'Answer:', key='(√6 + √2)/4', note='Any equivalent form. a = 45°, b = 30°.'),

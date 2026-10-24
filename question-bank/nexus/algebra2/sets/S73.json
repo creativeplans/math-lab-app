@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -995,22 +995,37 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "work",
-     "response": "write the answer and show the required work",
-     "prompt": "Prove that z · z̄ = |z|² for z = a + bi.",
-     "prompt_markup": "Prove that z · z̄ = |z|² for z = a + bi.",
-     "choices": [],
-     "answer_lines": [
-      "Conclusion:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which argument proves z · z̄ = |z|² for z = a + bi (a and b real)?",
+     "prompt_markup": "Which argument proves z · z̄ = |z|² for z = a + bi (a and b real)?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "(a + bi)(a - bi) = a² + b²i², which is |z|² because |z| = √(a² + b²i²)."
+      },
+      {
+       "letter": "B",
+       "text": "(a + bi)(a - bi) = a² - b², and |z|² = a² - b²."
+      },
+      {
+       "letter": "C",
+       "text": "(a + bi)(a - bi) = a² - b²i² = a² + b², and |z|² = a² + b²."
+      },
+      {
+       "letter": "D",
+       "text": "For z = 3 + 4i: (3 + 4i)(3 - 4i) = 25 = 5², so the statement holds."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "(a + bi)(a - bi) = a² - b²i² = a² + b² = |z|².",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "(a + bi)(a - bi) = a² - b²i² = a² + b², and |z|² = a² + b².",
      "drawing_answer": null,
-     "required_method": "Multiply and compare.",
-     "grading_note": "Any valid proof or derivation. Essential: the product and i² = -1.",
+     "required_method": null,
+     "grading_note": "Multiply, use i² = -1, and compare with |z| = √(a² + b²). The others forget i² = -1 (and misstate |z|), check one example, or expand with a sign error.",
      "figure": null,
      "page": 2703,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "advanced extension (+)",
      "set_target": "Find the conjugate of a complex number and use it to find the modulus and to write quotients in the form a + bi",
      "target_skill": "Prove properties of conjugates and moduli",

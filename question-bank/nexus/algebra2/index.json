@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -13,7 +13,7 @@
  "question_count": 2525,
  "figure_count": 106,
  "id_format": "S<set>-<section>-Q<number>. Section codes: M = MAIN (the course's own standard), B1, B2, ... = BACKWARD branches (a Grade K-8 standard, or a course standard that is the MAIN standard of an earlier set), F1 = FORWARD 1 and F2 = FORWARD 2 (standards of later courses; standard_course names the course). id is unique within this collection; uid = \"A2:\" + id is unique across all collections. Forward branches name standards only, never question IDs of other collections. Set and branch numbers are fixed: they need not be consecutive, and an ID is never reused for a different skill (see revisions.json).",
- "revisions_file": null,
+ "revisions_file": "revisions.json",
  "relations": {
   "main": "the Algebra II skill the set is built around (strand: core, or advanced extension (+))",
   "backward": "a prerequisite obstacle to check when a student misses MAIN questions: a Grade K-8, Algebra I or Geometry standard, or the MAIN standard of an earlier Algebra II set; branch.alignment is exact or supporting",
@@ -31,11 +31,11 @@
   "Answer with required work (type work): required_method says what the shown work must use. A correct final answer without that work earns partial credit only; correct work with a slip in the final answer is also partial.",
   "Explain / describe questions: grading_note says what a correct response must include; accept any reasonable wording.",
   "grading_note also lists other accepted answers and the work behind an answer. It is guidance for the grader, not for students.",
-  "Algebra II answer forms: the grading_note of every written answer begins with \"Form required:\" or with \"Any\" (for example \"Any equivalent form\" or \"Any valid proof\"), which says what else is accepted. \"Exact\" means an exact value (fractions, radicals, logarithms, π, i); a decimal approximation alone is not full credit. When rounding is allowed the note names the precision; an answer within half a unit of the last required place is correct.",
+  "Algebra II answer forms: the grading_note of every written answer begins with \"Form required:\" or with \"Any\" (for example \"Any equivalent form\"), which says what else is accepted. \"Exact\" means an exact value (fractions, radicals, logarithms, π, i); a decimal approximation alone is not full credit. When rounding is allowed the note names the precision; an answer within half a unit of the last required place is correct.",
   "Solutions: a question says whether solutions are real or may be complex. A solution set must contain every solution (with multiplicity when the question asks for it); an extraneous value listed as a solution is an error. \"No real solution\" is an answer when the key says so. Complex numbers are written a + bi with real a and b unless a form is named.",
   "Domains: logarithms are real only for positive arguments and bases b > 0, b ≠ 1; √(x²) = |x| over the reals; a rational expression keeps the exclusions of its original denominator after cancelling. Trigonometric questions state degrees or radians and an interval, and \"all solutions\" means every solution in that interval.",
-  "Proofs, derivations and explanations (type work): grade the logic, not the wording. grading_note lists the ESSENTIAL steps (every one must appear with a valid reason), accepted alternatives, and INVALID arguments (checking a few values for an identity, assuming the result, dividing by an expression that may be zero, squaring without checking).",
-  "Graphs (type plot): correct_answer states every feature a correct graph must show (intercepts, asymptotes as dashed lines, holes as open circles, end behavior, period, midline, maximum and minimum points). Accept a graph with those features plotted within half a grid unit; the exact curve between them is not graded.",
+  "Proofs, derivations and explanations are multiple choice (no question needs a person to grade): the keyed choice is a complete, valid argument; each other choice is a flawed one (checking a few values, an invalid algebra step, assuming the result, a false fact, or the wrong direction or reflection), and grading_note says what is wrong with each.",
+  "Graphs are multiple choice (no question needs a drawing surface): the figure shows four candidate graphs labeled A to D on the same window, with asymptotes and midlines dashed and holes as open circles, and the choices are \"Graph A\" to \"Graph D\". grading_note lists the features of the correct graph and what each other graph shows.",
   "Technology: a question that needs a calculator says so and names the capability (logarithms, normal cumulative probability, trigonometric values in radians or degrees). Simulation questions supply the simulated results; any answer that reads them correctly within the stated tolerance is accepted.",
   "Every question has an explanation in its grading_note after the form rule; for numeric questions it shows the verified exact value and the work."
  ],
@@ -559,7 +559,7 @@
    "title": "Use the Fundamental Theorem of Algebra",
    "domain": "The Complex Number System",
    "strand": "core",
-   "target_skill": "Use the Fundamental Theorem of Algebra to count the complex zeros of a polynomial (with multiplicity), and show that it holds for quadratics",
+   "target_skill": "Use the Fundamental Theorem of Algebra to count the complex zeros of a polynomial (with multiplicity), and recognize the argument that shows it holds for quadratics",
    "sections": [
     {
      "section": "MAIN",
@@ -1069,7 +1069,7 @@
    "title": "Derive the formula for the sum of a finite geometric series",
    "domain": "Seeing Structure in Expressions",
    "strand": "core",
-   "target_skill": "Derive the sum of a finite geometric series by multiplying by the common ratio and subtracting, with r ≠ 1",
+   "target_skill": "Derive the sum of a finite geometric series by multiplying by the common ratio and subtracting, with r ≠ 1: choose the correct step, result, or reason in the derivation",
    "sections": [
     {
      "section": "MAIN",
@@ -1783,7 +1783,7 @@
    "title": "Construct a rough graph of a polynomial from its zeros",
    "domain": "Arithmetic with Polynomials and Rational Expressions",
    "strand": "core",
-   "target_skill": "Use the zeros, their multiplicities, the leading term, and the y-intercept to sketch a rough graph of a factored polynomial",
+   "target_skill": "Use the zeros, their multiplicities, the leading term, and the y-intercept to identify the rough graph of a factored polynomial among graphs that differ in one of these features",
    "sections": [
     {
      "section": "MAIN",
@@ -1900,7 +1900,7 @@
    "title": "Prove polynomial identities",
    "domain": "Arithmetic with Polynomials and Rational Expressions",
    "strand": "core",
-   "target_skill": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+   "target_skill": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
    "sections": [
     {
      "section": "MAIN",
@@ -2206,7 +2206,7 @@
    "title": "Rewrite rational expressions by polynomial division",
    "domain": "Arithmetic with Polynomials and Rational Expressions",
    "strand": "core",
-   "target_skill": "Rewrite a(x)/b(x) in the form q(x) + r(x)/b(x) using long or synthetic division",
+   "target_skill": "Rewrite a(x)/b(x) in the form q(x) + r(x)/b(x) using long or synthetic division, and identify the correct result among the results of common division errors",
    "sections": [
     {
      "section": "MAIN",
@@ -2818,7 +2818,7 @@
    "title": "Create and graph nonlinear two-variable models",
    "domain": "Creating Equations and Reasoning with Equations",
    "strand": "core",
-   "target_skill": "Write a two-variable nonlinear equation for a context and graph it on axes with labels and scales",
+   "target_skill": "Write a two-variable nonlinear equation for a context and identify the correct equation together with its correct graph on scaled axes",
    "sections": [
     {
      "section": "MAIN",
@@ -3736,7 +3736,7 @@
    "title": "Explain the extension of sine and cosine to all real numbers",
    "domain": "Trigonometric Functions",
    "strand": "core",
-   "target_skill": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise",
+   "target_skill": "Explain how the unit circle defines sine and cosine for every real number, using radian measures traversed counterclockwise or clockwise: identify the correct explanation and reject flawed ones",
    "sections": [
     {
      "section": "MAIN",
@@ -4042,7 +4042,7 @@
    "title": "Prove the Pythagorean identity",
    "domain": "Trigonometric Functions",
    "strand": "core",
-   "target_skill": "Prove sin²θ + cos²θ = 1, and prove closely related identities from it",
+   "target_skill": "Prove sin²θ + cos²θ = 1 and closely related identities: identify the valid argument and reject example checks and invalid steps",
    "sections": [
     {
      "section": "MAIN",
@@ -4654,7 +4654,7 @@
    "title": "Graph square root and cube root functions with transformations",
    "domain": "Interpreting Functions",
    "strand": "core",
-   "target_skill": "Graph a transformed square root or cube root function by hand, showing the starting point or center, key points, domain, and range",
+   "target_skill": "Identify the graph of a transformed square root or cube root function from its starting point or center, key points, domain, and range",
    "sections": [
     {
      "section": "MAIN",
@@ -4756,7 +4756,7 @@
    "title": "Graph piecewise-defined and absolute value functions",
    "domain": "Interpreting Functions",
    "strand": "core",
-   "target_skill": "Graph piecewise-defined functions (with open and closed endpoints) and absolute value functions with transformations",
+   "target_skill": "Identify the graphs of piecewise-defined functions (with open and closed endpoints) and of absolute value functions with transformations",
    "sections": [
     {
      "section": "MAIN",
@@ -4858,7 +4858,7 @@
    "title": "Graph polynomial functions showing zeros and end behavior",
    "domain": "Interpreting Functions",
    "strand": "core",
-   "target_skill": "Factor a polynomial given in standard form, then graph it showing zeros (crossing or touching), the y-intercept, a point in each interval, and end behavior",
+   "target_skill": "Factor a polynomial given in standard form, then identify its graph from the zeros (crossing or touching), the y-intercept, a point in each interval, and end behavior",
    "sections": [
     {
      "section": "MAIN",
@@ -4960,7 +4960,7 @@
    "title": "Graph exponential functions with intercepts, asymptote, and end behavior",
    "domain": "Interpreting Functions",
    "strand": "core",
-   "target_skill": "Graph a transformed exponential function, showing the y-intercept, any x-intercept, the horizontal asymptote, and end behavior",
+   "target_skill": "Identify the graph of a transformed exponential function from its y-intercept, any x-intercept, the horizontal asymptote, and end behavior",
    "sections": [
     {
      "section": "MAIN",
@@ -5062,7 +5062,7 @@
    "title": "Graph logarithmic functions with intercept, asymptote, and end behavior",
    "domain": "Interpreting Functions",
    "strand": "core",
-   "target_skill": "Graph a transformed logarithmic function, showing the vertical asymptote, the x-intercept, key points, the domain, and end behavior",
+   "target_skill": "Identify the graph of a transformed logarithmic function from its vertical asymptote, x-intercept, key points, domain, and end behavior",
    "sections": [
     {
      "section": "MAIN",
@@ -5164,7 +5164,7 @@
    "title": "Graph trigonometric functions showing period, midline, and amplitude",
    "domain": "Interpreting Functions",
    "strand": "core",
-   "target_skill": "Graph sine and cosine functions with given parameters, showing the period, midline, amplitude, and key points on a radian axis",
+   "target_skill": "Identify the graph of a sine or cosine function with given parameters from its period, midline, amplitude, and key points on a radian axis",
    "sections": [
     {
      "section": "MAIN",
@@ -7510,7 +7510,7 @@
    "title": "Graph rational functions with zeros and asymptotes",
    "domain": "Advanced Extension (+)",
    "strand": "advanced",
-   "target_skill": "Graph a rational function from a factored form, showing zeros, intercepts, vertical and horizontal asymptotes, and end behavior",
+   "target_skill": "Identify the graph of a rational function from its zeros, intercepts, vertical and horizontal asymptotes, and end behavior",
    "sections": [
     {
      "section": "MAIN",
@@ -7816,7 +7816,7 @@
    "title": "Verify inverses by composition on the stated domains",
    "domain": "Advanced Extension (+)",
    "strand": "advanced",
-   "target_skill": "Verify that two functions are inverses by computing both compositions and checking the domains",
+   "target_skill": "Verify that two functions are inverses by computing both compositions and checking the domains: identify the complete, correct verification",
    "sections": [
     {
      "section": "MAIN",
@@ -8624,5 +8624,9 @@
     }
    ]
   }
- ]
+ ],
+ "revision_summary": {
+  "unchanged": 2417,
+  "revised": 108
+ }
 }

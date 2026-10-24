@@ -231,9 +231,18 @@ SETS = [
             why=why('the student cannot compute f(-x).', 'the test compares f(-x) with f(x).', 'substitutes -x.')),
       ],
       f1=B('Reason about sums and products of even and odd functions', 'HSF-BF.B.3', [
-          proof('Prove that the sum of two odd functions is odd.', method='Use f(-x) = -f(x) and g(-x) = -g(x).',
-                key='(f + g)(-x) = f(-x) + g(-x) = -f(x) - g(x) = -(f + g)(x).', note=PR + 'Essential: both definitions and the factoring of -1.'),
-          proof('Prove that the product of two odd functions is even.', method='Compute (fg)(-x).', key='(fg)(-x) = f(-x)g(-x) = (-f(x))(-g(x)) = f(x)g(x).', note=PR + 'Essential: the computation.'),
+          mc('Which argument proves that the sum of two odd functions f and g is odd?', [
+              '(f + g)(-x) = f(-x) + g(-x) = -f(x) - g(x) = -(f(x) + g(x)) = -(f + g)(x).',
+              '(f + g)(-x) = f(x) + g(x) = (f + g)(x), so the sum is odd.',
+              'x³ and x⁵ are odd and x³ + x⁵ is odd, so every sum of two odd functions is odd.',
+              '(f + g)(-x) = -f(-x) - g(-x) = -(f + g)(-x), so the sum is odd.'],
+             note='Use f(-x) = -f(x) and g(-x) = -g(x), then factor out -1. The others use the even-function rule (and would show even), check one example, or misapply the definition.'),
+          mc('Which argument proves that the product of two odd functions f and g is even?', [
+              '(fg)(-x) = f(-x)g(-x) = (-f(x))(-g(x)) = f(x)g(x) = (fg)(x).',
+              '(fg)(-x) = f(-x)g(-x) = -f(x)g(x), so the product is odd.',
+              'x · x³ = x⁴ is even, so every product of two odd functions is even.',
+              'Odd times odd is odd for whole numbers, so the product of two odd functions is odd.'],
+             note='The two negative signs multiply to +1. The others drop one negative sign, check one example, or confuse odd functions with odd numbers.'),
           tf('The only function that is both even and odd is f(x) = 0.', key=True, note='f(x) = f(-x) = -f(x) gives f(x) = 0.'),
           mc('f(x) = |x| + x³ is', ['neither', 'even', 'odd', 'both'], note='f(1) = 2, f(-1) = 0.'),
           sa('Is f(x) = x sin x even, odd, or neither? Explain using the fact that a product of two odd functions is even.', 'Answer:', key='Even: x and sin x are both odd, so their product is even.', note='Any equivalent explanation.'),

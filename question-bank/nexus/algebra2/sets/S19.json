@@ -4,7 +4,7 @@
   "id": "A2",
   "grade": null,
   "course": "Algebra II",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-24"
  },
  "grade": null,
@@ -14,7 +14,7 @@
  "title": "Prove polynomial identities",
  "domain": "Arithmetic with Polynomials and Rational Expressions",
  "strand": "core",
- "target_skill": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+ "target_skill": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
  "covers": [
   "APR4-prove"
  ],
@@ -29,7 +29,7 @@
    "branch": {
     "kind": "main",
     "strand": "core",
-    "target_skill": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+    "target_skill": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
     "plus_standard": false
    },
    "questions": [
@@ -50,25 +50,40 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "work",
-     "response": "write the answer and show the required work",
-     "prompt": "Prove the identity (x² + y²)² = (x² - y²)² + (2xy)².",
-     "prompt_markup": "Prove the identity (x² + y²)² = (x² - y²)² + (2xy)².",
-     "choices": [],
-     "answer_lines": [
-      "Conclusion:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which argument proves the identity (x² + y²)² = (x² - y²)² + (2xy)²?",
+     "prompt_markup": "Which argument proves the identity (x² + y²)² = (x² - y²)² + (2xy)²?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "For x = 2 and y = 1: 25 = 9 + 16, so the identity is true."
+      },
+      {
+       "letter": "B",
+       "text": "Take the square root of both sides: x² + y² = (x² - y²) + 2xy, and the right side simplifies to x² - y² + 2xy, so the identity is true."
+      },
+      {
+       "letter": "C",
+       "text": "The left side is x⁴ + 2x²y² + y⁴. The right side is x⁴ - 2x²y² + y⁴ + 4x²y² = x⁴ + 2x²y² + y⁴. The sides are equal."
+      },
+      {
+       "letter": "D",
+       "text": "The right side is (x² - y²)² + (2xy)² = x⁴ - y⁴ + 4x²y², and the left side is x⁴ + y⁴ + 4x²y², so the two sides are equal."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "Left: x⁴ + 2x²y² + y⁴. Right: x⁴ - 2x²y² + y⁴ + 4x²y² = x⁴ + 2x²y² + y⁴. The two sides are equal.",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "The left side is x⁴ + 2x²y² + y⁴. The right side is x⁴ - 2x²y² + y⁴ + 4x²y² = x⁴ + 2x²y² + y⁴. The sides are equal.",
      "drawing_answer": null,
-     "required_method": "Expand both sides (or one side) and show they are equal.",
-     "grading_note": "Any valid proof or derivation. Essential: correct expansion of both squares and the combination -2x²y² + 4x²y² = 2x²y².",
+     "required_method": null,
+     "grading_note": "Both sides expand to x⁴ + 2x²y² + y⁴. The others check one example, square x² - y² as x⁴ - y⁴, or take square roots term by term.",
      "figure": null,
      "page": 681,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
-     "target_skill": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
+     "target_skill": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Algebra II",
      "question_page": 681,
@@ -91,25 +106,40 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "work",
-     "response": "write the answer and show the required work",
-     "prompt": "Prove the identity a³ + b³ = (a + b)(a² - ab + b²).",
-     "prompt_markup": "Prove the identity a³ + b³ = (a + b)(a² - ab + b²).",
-     "choices": [],
-     "answer_lines": [
-      "Conclusion:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which argument proves the identity a³ + b³ = (a + b)(a² - ab + b²)?",
+     "prompt_markup": "Which argument proves the identity a³ + b³ = (a + b)(a² - ab + b²)?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The product is a³ - a²b + ab² + a²b - ab² + b³. The terms -a²b and a²b cancel, ab² and -ab² cancel, leaving a³ + b³."
+      },
+      {
+       "letter": "B",
+       "text": "For a = 1 and b = 2 the left side is 1 + 8 = 9 and the right side is 3 · (1 - 2 + 4) = 9, so the identity is true for all a and b."
+      },
+      {
+       "letter": "C",
+       "text": "Multiply the first terms and the last terms: a · a² = a³ and b · b² = b³, so the product is a³ + b³."
+      },
+      {
+       "letter": "D",
+       "text": "The product is a³ - 2a²b + b³, which equals a³ + b³."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "(a + b)(a² - ab + b²) = a³ - a²b + ab² + a²b - ab² + b³ = a³ + b³.",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "The product is a³ - a²b + ab² + a²b - ab² + b³. The terms -a²b and a²b cancel, ab² and -ab² cancel, leaving a³ + b³.",
      "drawing_answer": null,
-     "required_method": "Multiply out the right side.",
-     "grading_note": "Any valid proof or derivation. Essential: all six products and the cancellation of -a²b + a²b and ab² - ab².",
+     "required_method": null,
+     "grading_note": "All six products, then the cancellations. The others check one example, skip four of the six products, or multiply incorrectly.",
      "figure": null,
      "page": 682,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
-     "target_skill": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
+     "target_skill": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Algebra II",
      "question_page": 682,
@@ -132,25 +162,40 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "work",
-     "response": "write the answer and show the required work",
-     "prompt": "Prove the identity (a + b)² - (a - b)² = 4ab.",
-     "prompt_markup": "Prove the identity (a + b)² - (a - b)² = 4ab.",
-     "choices": [],
-     "answer_lines": [
-      "Conclusion:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which argument proves the identity (a + b)² - (a - b)² = 4ab?",
+     "prompt_markup": "Which argument proves the identity (a + b)² - (a - b)² = 4ab?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "For a = 3 and b = 1: 16 - 4 = 12 = 4 · 3, so the identity is true."
+      },
+      {
+       "letter": "B",
+       "text": "(a² + 2ab + b²) - (a² - 2ab + b²) = a² + 2ab + b² - a² + 2ab - b² = 4ab."
+      },
+      {
+       "letter": "C",
+       "text": "(a + b)² - (a - b)² = [(a + b) - (a - b)]² = (2b)² = 4ab."
+      },
+      {
+       "letter": "D",
+       "text": "(a + b)² - (a - b)² = (a² + b²) - (a² - b²) = a² + b² - a² + b² = 4ab."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "(a² + 2ab + b²) - (a² - 2ab + b²) = 4ab. (Or: [(a + b) - (a - b)][(a + b) + (a - b)] = (2b)(2a) = 4ab.)",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "(a² + 2ab + b²) - (a² - 2ab + b²) = a² + 2ab + b² - a² + 2ab - b² = 4ab.",
      "drawing_answer": null,
-     "required_method": "Expand both squares, or factor as a difference of squares.",
-     "grading_note": "Any valid proof or derivation. Essential: subtracting the whole second square (the sign of every term changes).",
+     "required_method": null,
+     "grading_note": "Subtract the whole second square, changing the sign of every term (or factor as [(a + b) - (a - b)][(a + b) + (a - b)] = (2b)(2a)). The others check one example, square binomials as a² + b², or use the false rule x² - y² = (x - y)².",
      "figure": null,
      "page": 683,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
-     "target_skill": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
+     "target_skill": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Algebra II",
      "question_page": 683,
@@ -173,25 +218,40 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "work",
-     "response": "write the answer and show the required work",
-     "prompt": "Prove the identity x⁴ + 4 = (x² + 2x + 2)(x² - 2x + 2).",
-     "prompt_markup": "Prove the identity x⁴ + 4 = (x² + 2x + 2)(x² - 2x + 2).",
-     "choices": [],
-     "answer_lines": [
-      "Conclusion:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which argument proves the identity x⁴ + 4 = (x² + 2x + 2)(x² - 2x + 2)?",
+     "prompt_markup": "Which argument proves the identity x⁴ + 4 = (x² + 2x + 2)(x² - 2x + 2)?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The right side is ((x² + 2) + 2x)((x² + 2) - 2x) = (x² + 2)² + (2x)² = x⁴ + 4x² + 4 - 4x² = x⁴ + 4."
+      },
+      {
+       "letter": "B",
+       "text": "For x = 0: 4 = 2 · 2, so the identity is true."
+      },
+      {
+       "letter": "C",
+       "text": "The right side is ((x² + 2) + 2x)((x² + 2) - 2x) = (x² + 2)² - (2x)² = x⁴ + 4x² + 4 - 4x² = x⁴ + 4."
+      },
+      {
+       "letter": "D",
+       "text": "Multiply the first terms and the last terms: x² · x² = x⁴ and 2 · 2 = 4."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "(x² + 2)² - (2x)² = x⁴ + 4x² + 4 - 4x² = x⁴ + 4.",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "The right side is ((x² + 2) + 2x)((x² + 2) - 2x) = (x² + 2)² - (2x)² = x⁴ + 4x² + 4 - 4x² = x⁴ + 4.",
      "drawing_answer": null,
-     "required_method": "Multiply the right side, or write it as a difference of squares.",
-     "grading_note": "Any valid proof or derivation. Essential: grouping (x² + 2 + 2x)(x² + 2 - 2x) as a difference of squares, or a complete expansion.",
+     "required_method": null,
+     "grading_note": "Group as a difference of squares (or expand all nine products). The others check one example, use (u + v)(u - v) = u² + v², or skip the middle products.",
      "figure": null,
      "page": 684,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
-     "target_skill": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
+     "target_skill": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Algebra II",
      "question_page": 684,
@@ -214,25 +274,40 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "work",
-     "response": "write the answer and show the required work",
-     "prompt": "Prove the identity (n + 1)³ - n³ = 3n² + 3n + 1.",
-     "prompt_markup": "Prove the identity (n + 1)³ - n³ = 3n² + 3n + 1.",
-     "choices": [],
-     "answer_lines": [
-      "Conclusion:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which argument proves the identity (n + 1)³ - n³ = 3n² + 3n + 1?",
+     "prompt_markup": "Which argument proves the identity (n + 1)³ - n³ = 3n² + 3n + 1?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "For n = 1, 2, and 3 the left side is 7, 19, and 37, and so is the right side, so it is true for every n."
+      },
+      {
+       "letter": "B",
+       "text": "(n + 1)³ = n³ + 1, so (n + 1)³ - n³ = 1, which is 3n² + 3n + 1."
+      },
+      {
+       "letter": "C",
+       "text": "(n + 1)³ - n³ = (n + 1 - n)³ = 1³ = 1."
+      },
+      {
+       "letter": "D",
+       "text": "(n + 1)³ = n³ + 3n² + 3n + 1, so (n + 1)³ - n³ = 3n² + 3n + 1."
+      }
      ],
-     "correct_letter": null,
+     "answer_lines": [],
+     "correct_letter": "D",
      "correct_answer": "(n + 1)³ = n³ + 3n² + 3n + 1, so (n + 1)³ - n³ = 3n² + 3n + 1.",
      "drawing_answer": null,
-     "required_method": "Expand (n + 1)³ and simplify.",
-     "grading_note": "Any valid proof or derivation. Essential: the correct expansion of the cube.",
+     "required_method": null,
+     "grading_note": "Expand (n + 1)³ correctly and subtract. The others check several values (evidence, not a proof) or use the false rules a³ - b³ = (a - b)³ and (n + 1)³ = n³ + 1.",
      "figure": null,
      "page": 685,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
-     "target_skill": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
+     "target_skill": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "alignment_type": "direct (MAIN: the set's own core standard)",
      "course_level": "High School — Algebra II",
      "question_page": 685,
@@ -289,7 +364,7 @@
      "page": 687,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "target_skill": "Expand the square of a binomial",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra I",
@@ -330,7 +405,7 @@
      "page": 688,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "target_skill": "Expand the square of a binomial",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra I",
@@ -378,7 +453,7 @@
      "page": 689,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "target_skill": "Expand the square of a binomial",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra I",
@@ -434,7 +509,7 @@
      "page": 690,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "target_skill": "Expand the square of a binomial",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra I",
@@ -475,7 +550,7 @@
      "page": 691,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "target_skill": "Expand the square of a binomial",
      "alignment_type": "exact prerequisite standard",
      "course_level": "High School — Algebra I",
@@ -533,7 +608,7 @@
      "page": 693,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "target_skill": "Recognize a difference of squares",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Algebra I",
@@ -574,7 +649,7 @@
      "page": 694,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "target_skill": "Recognize a difference of squares",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Algebra I",
@@ -622,7 +697,7 @@
      "page": 695,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "target_skill": "Recognize a difference of squares",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Algebra I",
@@ -678,7 +753,7 @@
      "page": 696,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "target_skill": "Recognize a difference of squares",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Algebra I",
@@ -719,7 +794,7 @@
      "page": 697,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "target_skill": "Recognize a difference of squares",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "High School — Algebra I",
@@ -775,7 +850,7 @@
      "page": 699,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "target_skill": "What makes an identity",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 6",
@@ -814,7 +889,7 @@
      "page": 700,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "target_skill": "What makes an identity",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 6",
@@ -860,7 +935,7 @@
      "page": 701,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "target_skill": "What makes an identity",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 6",
@@ -914,7 +989,7 @@
      "page": 702,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "target_skill": "What makes an identity",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 6",
@@ -953,7 +1028,7 @@
      "page": 703,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "target_skill": "What makes an identity",
      "alignment_type": "supporting prerequisite (closest standard; no standard names this micro-skill exactly)",
      "course_level": "Grade 6",
@@ -995,24 +1070,39 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "work",
-     "response": "write the answer and show the required work",
-     "prompt": "Prove or disprove: (a + b)³ = a³ + b³ + 3ab(a + b).",
-     "prompt_markup": "Prove or disprove: (a + b)³ = a³ + b³ + 3ab(a + b).",
-     "choices": [],
-     "answer_lines": [
-      "Conclusion:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Is (a + b)³ = a³ + b³ + 3ab(a + b) an identity? Which answer is correct?",
+     "prompt_markup": "Is (a + b)³ = a³ + b³ + 3ab(a + b) an identity? Which answer is correct?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes: (a + b)³ = a³ + 3a²b + 3ab² + b³, and 3ab(a + b) = 3a²b + 3ab², so both sides are equal."
+      },
+      {
+       "letter": "B",
+       "text": "Yes, because a = 1 and b = 1 give 8 = 2 + 6."
+      },
+      {
+       "letter": "C",
+       "text": "No: for a = 1 and b = 2 the left side is 3³ = 27 and the right side is 1 + 8 + 3 · 2 = 15, so the sides differ."
+      },
+      {
+       "letter": "D",
+       "text": "No: (a + b)³ = a³ + b³, so the extra term makes the two sides different."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "True: 3ab(a + b) = 3a²b + 3ab², and (a + b)³ = a³ + 3a²b + 3ab² + b³.",
+     "answer_lines": [],
+     "correct_letter": "A",
+     "correct_answer": "Yes: (a + b)³ = a³ + 3a²b + 3ab² + b³, and 3ab(a + b) = 3a²b + 3ab², so both sides are equal.",
      "drawing_answer": null,
-     "required_method": "Expand both sides, or give a counterexample.",
-     "grading_note": "Any valid proof or derivation. Essential: a correct decision with a full expansion.",
+     "required_method": null,
+     "grading_note": "True by expansion. The others use (a + b)³ = a³ + b³, check one example, or miscompute (a = 1, b = 2 gives 27 = 1 + 8 + 18 on both sides).",
      "figure": null,
      "page": 705,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "target_skill": "Prove or disprove proposed identities",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II",
@@ -1036,24 +1126,39 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "work",
-     "response": "write the answer and show the required work",
-     "prompt": "Prove or disprove: a⁴ - b⁴ = (a - b)⁴.",
-     "prompt_markup": "Prove or disprove: a⁴ - b⁴ = (a - b)⁴.",
-     "choices": [],
-     "answer_lines": [
-      "Conclusion:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Is a⁴ - b⁴ = (a - b)⁴ an identity? Which answer is correct?",
+     "prompt_markup": "Is a⁴ - b⁴ = (a - b)⁴ an identity? Which answer is correct?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes: for a = 1 and b = 0 both sides equal 1."
+      },
+      {
+       "letter": "B",
+       "text": "No: for a = 2 and b = 1, the left side is 16 - 1 = 15 and the right side is 1⁴ = 1."
+      },
+      {
+       "letter": "C",
+       "text": "Yes: a fourth power applies to each term inside the parentheses, so (a - b)⁴ = a⁴ - b⁴ for all a and b."
+      },
+      {
+       "letter": "D",
+       "text": "No, because a⁴ - b⁴ = (a - b)²(a + b)²."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "False: a = 2, b = 1 gives 15 ≠ 1.",
+     "answer_lines": [],
+     "correct_letter": "B",
+     "correct_answer": "No: for a = 2 and b = 1, the left side is 16 - 1 = 15 and the right side is 1⁴ = 1.",
      "drawing_answer": null,
-     "required_method": "Give a counterexample or a proof.",
-     "grading_note": "Any valid proof or derivation. Essential: a numerical counterexample (a factorization (a - b)(a + b)(a² + b²) is also acceptable).",
+     "required_method": null,
+     "grading_note": "One counterexample disproves an identity. The others distribute the exponent, generalize from one example, or use a false factorization (a⁴ - b⁴ = (a - b)(a + b)(a² + b²)).",
      "figure": null,
      "page": 706,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "target_skill": "Prove or disprove proposed identities",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II",
@@ -1101,7 +1206,7 @@
      "page": 707,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "target_skill": "Prove or disprove proposed identities",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II",
@@ -1157,7 +1262,7 @@
      "page": 708,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "target_skill": "Prove or disprove proposed identities",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II",
@@ -1198,7 +1303,7 @@
      "page": 709,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "target_skill": "Prove or disprove proposed identities",
      "alignment_type": "same-course deepening; direct",
      "course_level": "High School — Algebra II",
@@ -1241,24 +1346,39 @@
      "nearest_related": false,
      "standard_level": "Algebra II. Common Core groups high-school standards by category, not by course; this bank places this one in Algebra II, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.",
      "standard_course": "Algebra II",
-     "type": "work",
-     "response": "write the answer and show the required work",
-     "prompt": "Use the Binomial Theorem with x = y = 1 to prove that the entries in row n of Pascal's Triangle add to 2ⁿ.",
-     "prompt_markup": "Use the Binomial Theorem with x = y = 1 to prove that the entries in row n of Pascal's Triangle add to 2ⁿ.",
-     "choices": [],
-     "answer_lines": [
-      "Conclusion:"
+     "type": "mc",
+     "response": "select one",
+     "prompt": "Which argument uses the Binomial Theorem to prove that the entries in row n of Pascal's Triangle add to 2ⁿ?",
+     "prompt_markup": "Which argument uses the Binomial Theorem to prove that the entries in row n of Pascal's Triangle add to 2ⁿ?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Row n has n + 1 entries, and each entry is the sum of the two entries above it, so every row has twice as many entries as the row before it and the sum of row n is 2ⁿ."
+      },
+      {
+       "letter": "B",
+       "text": "Row 3 is 1, 3, 3, 1, which adds to 8 = 2³, so every row n adds to 2ⁿ."
+      },
+      {
+       "letter": "C",
+       "text": "Set x = y = 1 in (x + y)ⁿ = C(n, 0)xⁿ + C(n, 1)xⁿ⁻¹y + ... + C(n, n)yⁿ. The left side is 2ⁿ and the right side is C(n, 0) + C(n, 1) + ... + C(n, n), the row sum."
+      },
+      {
+       "letter": "D",
+       "text": "Set x = 1 and y = 0 in (x + y)ⁿ = C(n, 0)xⁿ + ... + C(n, n)yⁿ: the left side is 1 and the right side is C(n, 0) = 1, so each row adds to 2ⁿ."
+      }
      ],
-     "correct_letter": null,
-     "correct_answer": "(1 + 1)ⁿ = Σ C(n, k) 1ᵏ 1ⁿ⁻ᵏ = Σ C(n, k), so the row sum is 2ⁿ.",
+     "answer_lines": [],
+     "correct_letter": "C",
+     "correct_answer": "Set x = y = 1 in (x + y)ⁿ = C(n, 0)xⁿ + C(n, 1)xⁿ⁻¹y + ... + C(n, n)yⁿ. The left side is 2ⁿ and the right side is C(n, 0) + C(n, 1) + ... + C(n, n), the row sum.",
      "drawing_answer": null,
-     "required_method": "Substitute into (x + y)ⁿ.",
-     "grading_note": "Any valid proof or derivation. Essential: the substitution and the sum of the coefficients.",
+     "required_method": null,
+     "grading_note": "Substituting 1 for x and y makes every term equal to its coefficient. The others check one row, use a substitution that gives 1, or argue from the number of entries.",
      "figure": null,
      "page": 711,
-     "revision": "unchanged",
+     "revision": "revised",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "target_skill": "Prove identities with the Binomial Theorem",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II, (+) standard listed in the pathway",
@@ -1299,7 +1419,7 @@
      "page": 712,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "target_skill": "Prove identities with the Binomial Theorem",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II, (+) standard listed in the pathway",
@@ -1347,7 +1467,7 @@
      "page": 713,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "target_skill": "Prove identities with the Binomial Theorem",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II, (+) standard listed in the pathway",
@@ -1403,7 +1523,7 @@
      "page": 714,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "target_skill": "Prove identities with the Binomial Theorem",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II, (+) standard listed in the pathway",
@@ -1444,7 +1564,7 @@
      "page": 715,
      "revision": "unchanged",
      "strand": "core",
-     "set_target": "Prove a polynomial identity by transforming one side into the other with valid algebra",
+     "set_target": "Prove a polynomial identity: identify the valid argument that transforms one side into the other, and reject example checks and invalid algebra",
      "target_skill": "Prove identities with the Binomial Theorem",
      "alignment_type": "cross-standard extension; direct",
      "course_level": "High School — Algebra II, (+) standard listed in the pathway",
