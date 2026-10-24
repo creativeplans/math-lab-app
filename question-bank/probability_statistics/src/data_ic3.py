@@ -166,7 +166,7 @@ SETS = [
                             'Cars are safer far away.'],
              note='Rates need the amount of driving: P(accident given driving near home) is not reported.'),
           tf('Knowing that 90% of people in a hospital are sick does not tell you the chance that a sick person is in the hospital.',
-             key=True, note='P(sick | hospital) differs from P(hospital | sick).'),
+             key=True, note='P(sick given in the hospital) differs from P(in the hospital given sick).'),
           mc('A test catches 95% of people who have a rare disease. A report concludes that 95% of people who test positive have '
              'it. What is the error?', [
               'It confuses P(positive given disease) with P(disease given positive).',

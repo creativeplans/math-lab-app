@@ -20,7 +20,7 @@ PE = [0.25, 0.30, 0.35, 0.40, 0.45, 0.50, 0.55]
 PC = [3, 26, 71, 72, 25, 3]
 assert sum(PC) == 200
 PHIST = histf(PE, PC, 'Sample proportion', 10, 80)
-GT = tbl(['Group', 'Growth (cm)', 'Mean'], [['A', dlist(GA), '13'], ['B', dlist(GB), '10']])
+GT = tbl(['Plant food', 'Growth of the 5 plants (cm)'], [['A', dlist(GA)], ['B', dlist(GB)]])
 
 SETS = [
     # ------------------------------------------------------------------ 27. IC.B.4 estimate a proportion
@@ -181,7 +181,8 @@ SETS = [
           sa('Ten plants were randomly assigned to plant food A or B. Find the mean growth for each group and the difference '
              '(A minus B).', ['Mean A:', 'Mean B:', 'Difference:'], key='13; 10; 3', fig=GT,
              note='Form required: all three. 65/5, 50/5.'),
-          sa('The 10 results were re-randomized into two groups of 5 a total of 200 times. A difference of 3 or more occurred 4 '
+          sa('In an experiment, 10 plants were randomly assigned to two plant foods (5 each), and the difference in mean growth was '
+             '3 cm. The 10 results were re-randomized into two groups of 5 a total of 200 times. A difference of 3 or more occurred 4 '
              'times. What proportion of the re-randomizations is that? Give a decimal.', 'Proportion:', key='0.02',
              note='4/200.'),
           mc('In 200 re-randomizations, a difference of 3 or more (the observed difference) occurred 4 times.%s Which decision '
@@ -191,7 +192,8 @@ SETS = [
               'The difference is not significant: the groups had only 5 plants.',
               'The difference is significant: any difference is significant.'],
              note='2% < 5%.'),
-          mc('What does one re-randomization do?', [
+          mc('In an experiment, 10 plants were randomly assigned to plant food A or B (5 each). What does one re-randomization of '
+             'the 10 growth results do?', [
               'Reshuffles the 10 results into groups of 5, ignoring food.',
               'Grows 10 new plants, again using the two plant foods.', 'Repeats the whole experiment with many more plants.',
               'Swaps the means of the two original groups of plants.'],
@@ -220,7 +222,7 @@ SETS = [
                     'decides from a proportion and a threshold.')),
           B('Explain random assignment', 'HSS-IC.B.3', [
               tf('Random assignment makes the treatment groups similar before treatment.', key=True, note='Balances other variables.'),
-              mc('Why were the plants assigned to foods at random?', [
+              mc('In an experiment, plants were assigned to two plant foods at random. Why?', [
                   'so growth differences can be credited to food', 'so that more of the plants grow well',
                   'so the two group means come out equal', 'so that no plant needs to be measured'], note='Purpose.'),
               tf('In an experiment, subjects choose which treatment they receive.', key=False, note='The researcher assigns.'),

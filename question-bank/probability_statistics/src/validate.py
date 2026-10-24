@@ -1,8 +1,9 @@
-"""Algebra II collection validation: writes algebra2/VALIDATION.md and exits 1 if any check fails.
+"""Probability & Statistics collection validation: writes probability_statistics/VALIDATION.md and exits 1 if any check
+fails.
 
-    python3 question-bank/algebra2/src/validate.py
+    python3 question-bank/probability_statistics/src/validate.py
 
-Run after engine/build.py algebra2. Checks the source sets (structure, coverage, branch rules, metadata, figures) and the
+Run after engine/build.py probability_statistics. Checks the source sets (structure, coverage, branch rules, metadata, figures) and the
 generated files (answer key JSON and CSV, both PDFs page by page), then runs the independent re-solve.
 """
 import collections
@@ -19,11 +20,11 @@ import build  # noqa: E402
 import hs_courses  # noqa: E402
 import qb  # noqa: E402
 
-build.load_grade('algebra2')
-import standards  # noqa: E402  (algebra2/src, on the path after load_grade)
+build.load_grade('probability_statistics')
+import standards  # noqa: E402  (probability_statistics/src, on the path after load_grade)
 
-HOME = 'Algebra II'
-CORE, ADV = hs_courses.ALGEBRA_II_CORE, hs_courses.ALGEBRA_II_ADVANCED
+HOME = hs_courses.PS
+CORE, ADV = hs_courses.PROB_STAT_CORE, hs_courses.PROB_STAT_ADVANCED
 SETS = list(build.all_sets())
 P = build.out_paths()
 DATA = json.load(open(P['data'] + '.json', encoding='utf-8'))
@@ -63,11 +64,11 @@ for dup in [k for k, v in collections.Counter(r['uid'] for r in RECS).items() if
 pat = re.compile(r'^S(\d+)-(M|B\d|F1|F2)-Q([1-5])$')
 for r in RECS:
     m = pat.match(r['id'])
-    if not m or int(m.group(1)) != r['set'] or r['uid'] != 'A2:' + r['id']:
+    if not m or int(m.group(1)) != r['set'] or r['uid'] != 'PS:' + r['id']:
         prob.append('bad id ' + r['id'])
 if len(RECS) != sum(5 * len(build.sections(st)) for st in SETS):
     prob.append('record count')
-check('IDs unique, well formed, namespaced (A2:), one record per question', prob, '%d questions, %d unique IDs' % (len(RECS), len(set(ids))))
+check('IDs unique, well formed, namespaced (PS:), one record per question', prob, '%d questions, %d unique IDs' % (len(RECS), len(set(ids))))
 
 # ---------------------------------------------------------------- 2. coverage
 prob = []
@@ -117,7 +118,7 @@ for st in SETS:
     desc = ' '.join(subs_all[c] for c in st['covers']).replace('REVISIT with nonlinear families: ', '').replace('REVISIT: ', '')
     verb = desc.split()[0].lower()
     mains = [r for r in RECS if r['section'] == 'MAIN' and r['set'] == st['num']]
-    if verb in ('prove', 'derive', 'explain', 'choose'):
+    if verb in ('prove', 'derive', 'explain'):
         # reasoning sets: selected or short written responses only; every multiple-choice item weighs a valid argument
         # against flawed ones, and its note says what is wrong with the others
         for r in mains:
@@ -132,9 +133,9 @@ for st in SETS:
             panels = [g for row in fd.get('figs', []) for g in row.get('figs', [])]
             if r['type'] != 'mc' or not r['correct_answer'].startswith('Graph ') or [g.get('tag') for g in panels] != list('ABCD'):
                 prob.append('%s graph set item is not a four-graph choice' % r['id'])
-    if verb in ('prove', 'derive', 'explain', 'choose', 'graph'):
+    if verb in ('prove', 'derive', 'explain', 'graph'):
         verbs.append('S%d %s: %s' % (st['num'], verb, '/'.join(types)))
-check('MAIN response types: no true/false in any MAIN; "prove", "derive", "explain" and "choose" sets use only multiple choice '
+check('MAIN response types: no true/false in any MAIN; "prove", "derive" and "explain" sets use only multiple choice '
       '(a valid argument against flawed ones, with every other choice explained in the note) or short answers; "graph" sets use '
       'five "Which graph" items with four labeled candidate graphs', prob,
       '%d sets checked; verb sets: %s' % (len(SETS), '; '.join(verbs)))
@@ -170,18 +171,20 @@ for st in SETS:
             prob.append('S%d F2 builds' % st['num'])
         crs = hs_courses.placement(b['std'], 'forward') if b['std'].startswith('HS') else None
         if crs is None or rank[crs] < rank[HOME]:
-            prob.append('S%d %s %s is not Algebra II or later' % (st['num'], key, b['std']))
+            prob.append('S%d %s %s is an earlier course' % (st['num'], key, b['std']))
         if b['std'] == st['std'] and m.get('prog') != 'same-course deepening':
             prob.append('S%d %s same standard but %s' % (st['num'], key, m.get('prog')))
+        if crs == HOME and b['std'] != st['std'] and m.get('prog') != 'cross-standard extension':
+            prob.append('S%d %s %s is another standard of this course but labeled %s' % (st['num'], key, b['std'], m.get('prog')))
         if crs and crs != HOME and m.get('prog') != 'later-course extension':
             prob.append('S%d %s %s is %s but labeled %s' % (st['num'], key, b['std'], crs, m.get('prog')))
         if b['std'] in main_before[st['num']] and b['std'] != st['std']:
             applied.append((st['num'], key.upper(), b['std'], b['title'], m.get('demand')))
 check('Backward branches: metadata (obstacle, why it matters, evidence; exact/supporting) and no circular prerequisites '
-      '(K-8, Algebra I, Geometry, or the MAIN of an EARLIER Algebra II set)', [p_ for p_ in prob if ' B' in p_ or 'metadata' in p_],
+      '(K-8, Algebra I, or the MAIN of an EARLIER set of this collection)', [p_ for p_ in prob if ' B' in p_ or 'metadata' in p_],
       'every backward standard points to an earlier course or an earlier set, so the prerequisite graph has no cycles')
-check('Forward branches: progression type consistent with placement (same standard = same-course deepening; later course = '
-      'later-course extension), new demand stated, FORWARD 2 states how it builds on FORWARD 1; never an earlier course',
+check('Forward branches: progression type consistent with placement (same standard = same-course deepening; another standard '
+      'of this course = cross-standard extension; later course = later-course extension), new demand stated, FORWARD 2 states how it builds on FORWARD 1; never an earlier course',
       [p_ for p_ in prob if ' f1' in p_ or ' f2' in p_ or 'F2' in p_], 'all forward branches consistent')
 progs = collections.Counter((k, st[k]['meta']['prog']) for st in SETS for k in ('f1', 'f2'))
 
@@ -309,7 +312,7 @@ check('Every question stands alone (no reference to another question; every "sho
 
 import resolve  # noqa: E402
 nq, nv, bad = resolve.run()
-check('Independent re-solve: computable answers recomputed from the givens with separate code (resolve.py, sympy)', bad,
+check('Independent re-solve: computable answers recomputed from the givens with separate code (resolve.py)', bad,
       '%d questions (%d values) recomputed; all agree with the key' % (nq, nv))
 
 prob = []
@@ -343,7 +346,7 @@ import subprocess  # noqa: E402
 import tempfile  # noqa: E402
 NEXUS = os.environ.get('NEXUS_DIR', '/home/user/untangle-the-nexus')
 # Rewrites the checker rejects on purpose: the question names a form, so the other order is not that form.
-REWRITE_OK = {'S1-M-Q4': 'the question asks for the form a + bi, so (5√3/2)i - 2 is not in that form'}
+REWRITE_OK = {}
 prob, contract = [], None
 if os.path.exists(os.path.join(NEXUS, 'packages', 'curriculum', 'src', 'answers.ts')):
     out = os.path.join(tempfile.mkdtemp(), 'contract.json')
@@ -365,11 +368,11 @@ else:
 check('Game answer checker: every short answer is automatically checkable by the Untangle The Nexus checker, its key is accepted '
       'as a response, and the same answer without spaces or with its terms in reverse order is accepted', prob,
       '%d short answers checked with the game\'s answer checker; documented form exceptions: %s' % (
-          len(contract or []), '; '.join('%s (%s)' % kv for kv in REWRITE_OK.items())))
+          len(contract or []), '; '.join('%s (%s)' % kv for kv in REWRITE_OK.items()) or 'none'))
 
 # ---------------------------------------------------------------- 10. word answers and clean keys
 WORDS = {'yes', 'no', 'none', 'positive', 'negative', 'odd', 'even', 'neither', 'open', 'closed', 'clockwise',
-         'counterclockwise', 'touches', 'crosses', 'growth', 'decay', 'i', 'ii', 'iii', 'iv'}
+         'counterclockwise', 'touches', 'crosses', 'growth', 'decay', 'i', 'ii', 'iii', 'iv', 'skip'}
 prob = []
 for r in RECS:
     if r['type'] != 'sa':
@@ -407,6 +410,74 @@ check('Multiple choice length cue: the correct choice is never much longer than 
       'no strong length cue; the correct choice is the uniquely longest in %d of %d text multiple-choice items (%.0f%%; 25%% '
       'would be chance)' % (longest, textmc, 100.0 * longest / max(textmc, 1)))
 
+# ---------------------------------------------------------------- 12. statistics conventions stated on the page
+RAW = re.compile(r'(-?\d+(\.\d+)?, ){4,}-?\d')  # a list of five or more numbers: raw data in the stem
+prob, nq_, nsd, nres, ndec = [], 0, 0, 0, 0
+for r in RECS:
+    q = r['question']
+    if r['type'] == 'tf':
+        continue
+    if RAW.search(q) and re.search(r'\b(Q1|Q3|IQR|interquartile|five-number|quartile|box plot|fence)', q):
+        nq_ += 1
+        if not re.search(r'medians? of the (lower )?halv|median of a half|median of the lower half|leave out the median', q):
+            prob.append(r['id'] + ' quartile rule not stated')
+    if re.search(r'\b(Give|Find|find|give)\b[^.]*standard deviation', q) and RAW.search(q):
+        nsd += 1
+        if not re.search(r'population|sample standard deviation|divide by n', q):
+            prob.append(r['id'] + ' population or sample SD not stated')
+    if re.search(r'\bresidual', q) and r['type'] == 'sa' and re.search(r'\b(find|Find|compute)\b', q) and 'sum of' not in q:
+        nres += 1
+        if not re.search(r'observed minus predicted', q):
+            prob.append(r['id'] + ' residual convention not stated')
+    if r['type'] == 'mc' and re.search(r'Which decision', q):
+        ndec += 1
+        if 'Decision rule' not in q:
+            prob.append(r['id'] + ' decision threshold not stated')
+check('Conventions stated in the question: the quartile rule wherever quartiles are computed from raw data; population or '
+      'sample wherever a standard deviation is computed; "observed minus predicted" wherever a residual is computed; the decision '
+      'rule (threshold and what counts as extreme) wherever a simulation decision is asked', prob,
+      '%d quartile items, %d standard-deviation items, %d residual items, %d decision items' % (nq_, nsd, nres, ndec))
+
+# ---------------------------------------------------------------- 13. probability keys
+from fractions import Fraction  # noqa: E402
+prob, nfr = [], 0
+for r in RECS:
+    if r['type'] != 'sa' or 'lowest terms' not in r['question']:
+        continue
+    for p_ in r['correct_answer'].split(';'):
+        p_ = p_.strip()
+        if '/' in p_:
+            nfr += 1
+            a_, b_ = p_.split('/')
+            if Fraction(int(a_), int(b_)).denominator != int(b_):
+                prob.append('%s %s is not in lowest terms' % (r['id'], p_))
+for r in RECS:
+    if r['type'] != 'sa':
+        continue
+    lines = r['answer_lines'] or []
+    parts = r['correct_answer'].split(';')
+    for i, p_ in enumerate(parts):
+        label = lines[i] if len(lines) == len(parts) else (lines[0] if lines else '')
+        if not (label.startswith('P') and (label[1:2] in ('(', ':'))):
+            continue
+        try:
+            v_ = Fraction(p_.strip())
+        except ValueError:
+            continue
+        if not 0 <= v_ <= 1:
+            prob.append('%s probability %s outside [0, 1]' % (r['id'], p_))
+check('Probability keys: fractions asked "in lowest terms" are in lowest terms; probabilities are between 0 and 1', prob,
+      '%d fraction keys checked' % nfr)
+
+# ---------------------------------------------------------------- 14. datasets documented
+import datasets  # noqa: E402
+md = os.path.join(build.GRADE_DIR, 'DATASETS.md')
+datasets.write_md(md)
+text_md = open(md, encoding='utf-8').read()
+prob = [k for k in datasets.REG if '| %s |' % k not in text_md]
+check('Every dataset is synthetic and documented in DATASETS.md (values, size, unit, context)', prob,
+      '%d datasets written to DATASETS.md' % len(datasets.REG))
+
 SCOPE = [
     'Automatic, every set: counts sections and questions in the source.',
     'Automatic, every record: ID pattern, uniqueness, uid prefix.',
@@ -429,10 +500,15 @@ SCOPE = [
     'Automatic, every record.',
     'Automatic, every record: response type. Whether the game accepts each short answer is check 21.',
     'Automatic arithmetic on the generated files.',
-    'Automatic, every short answer, using the game\'s own checker code (algebra2/src/tools/checker_contract.ts). It does not '
+    'Automatic, every short answer, using the game\'s own checker code (probability_statistics/src/tools/checker_contract.ts). It does not '
     'cover every way a student might write an answer; it is not a test in the live game.',
     'Automatic pattern rules on every short-answer key and its question text.',
     'Automatic, every multiple-choice item except the four-graph items (whose choices are the fixed labels Graph A to D).',
+    'Automatic pattern rules on question text. Conventions given in another form (for example quartiles already supplied) are '
+    'not counted; the read-through checked the rest.',
+    'Automatic, every short answer asked "in lowest terms", and every typed probability.',
+    'Automatic: every dataset registered in src/datasets.py appears in DATASETS.md. That each one is synthetic is stated by the '
+    'author; none was taken from a website or publication.',
 ]
 assert len(SCOPE) == len(results), (len(SCOPE), len(results))
 
@@ -441,8 +517,8 @@ types = collections.Counter(r['type'] for r in RECS)
 secs = collections.Counter(('BACKWARD' if r['section'].startswith('BACKWARD') else r['section']) for r in RECS)
 strands = collections.Counter(st.get('strand') for st in SETS)
 align = collections.Counter(b['meta']['align'] for st in SETS for b in st['back'])
-L = ['# Algebra II validation results', '',
-     'Generated by `algebra2/src/validate.py` from the source sets and the generated files (version %s, %s).' % (
+L = ['# Probability & Statistics validation results', '',
+     'Generated by `probability_statistics/src/validate.py` from the source sets and the generated files (version %s, %s).' % (
          DATA['collection']['version'], DATA['collection']['date']), '',
      '**Result: %s** (%d checks, %d failed).' % ('PASS' if not fails else 'FAIL', len(results), len(fails)), '',
      'PASS means only that the automatic test found no problem within the scope stated in its row. These checks ran on the content '

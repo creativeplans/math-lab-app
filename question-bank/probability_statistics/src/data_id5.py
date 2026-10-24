@@ -244,7 +244,8 @@ SETS = [
           mc('Why does random assignment help support causal conclusions?', [
               'It tends to balance other variables between the groups.', 'It makes the sample larger than other designs do.',
               'It guarantees that r will be close to 1.', 'It removes all variability from the measurements.'],
-             note='Balancing lurking variables.'),
+             note='Balancing lurking variables. The others are false: random assignment does not remove variability, fix r, or '
+                  'enlarge the sample.'),
       ], prog='cross-standard extension', demand='Classify study designs by whether they can support causal claims.'),
       f2=B('Judge causal claims from experiment results', 'HSS-IC.B.5', [
           sa('In a randomized experiment, 40 plants got fertilizer and grew a mean of 18 cm; 40 got none and grew a mean of 12 cm. '

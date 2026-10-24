@@ -402,9 +402,9 @@ SETS = [
                  note='Form required: both. Halves 1, 3, 5 and 9, 11, 13.'),
               tf('For 1, 2, 3, 4, 5, 6, 7, 8, 9, Q1 is 2.5 when the median 5 is left out of both halves.', key=True,
                  note='Lower half 1, 2, 3, 4; its median is 2.5.'),
-              mc('For 10, 20, 30, 40, 50, 60, what is the interquartile range Q3 - Q1?', ['30', '50', '20', '35'],
+              mc('For 10, 20, 30, 40, 50, 60, what is the interquartile range Q3 - Q1 (Q1 and Q3 are the medians of the halves)?', ['30', '50', '20', '35'],
                  note='Q1 = 20, Q3 = 50. 50 is the range; 20 and 35 come from wrong halves.'),
-              sa('For 5, 6, 8, 9, 12, 15, find Q1.', 'Q1:', key='6', note='Lower half 5, 6, 8.'),
+              sa('For 5, 6, 8, 9, 12, 15, find Q1 (the median of the lower half).', 'Q1:', key='6', note='Lower half 5, 6, 8.'),
           ], align='exact',
             why=why('the student cannot split the data into halves or forgets to leave out the median.', 'the box edges are the '
                     'quartiles.', 'finds Q1 and Q3 for odd and even counts under the stated rule.')),

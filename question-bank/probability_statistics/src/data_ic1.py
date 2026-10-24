@@ -166,7 +166,7 @@ SETS = [
           B('Design a simulation for a compound event', '7.SP.C.8.c', [
               mc('To simulate a fair coin with random digits, which assignment works?', [
                   'even digits = heads; odd digits = tails', '0-6 = heads; 7-9 = tails', '0 = heads; 1-9 = tails',
-                  '0-4 = heads; 4-9 = tails'], note='5 of 10 each way. The last overlaps at 4.'),
+                  '0-4 = heads; 4-9 = tails'], note='Even and odd digits split 5 and 5. 0-4 and 4-9 overlap at 4; 0 alone gives 0.1; 0-6 gives 0.7.'),
               sa('In the digits 4 1 7 0 7 5 3 6 4 5, digits 0-4 mean heads. How many heads?', 'Heads:', key='5',
                  note='4, 1, 0, 3, 4.'),
               tf('A trial of a simulation for "number of heads in 10 flips" uses 10 random digits.', key=True,
@@ -245,7 +245,7 @@ SETS += [
               'Not consistent: 8 or more heads happened in only 6% of the sets.',
               'Not consistent: a fair coin should give 5 heads every time.',
               'Consistent: 8 heads happened in exactly 4% of the sets.'],
-             fig=HT, note='6% is not fewer than 5%. The last uses "exactly 8" instead of "8 or more".'),
+             fig=HT, note='6% is not fewer than 5%. The others misapply the rule, expect exactly 5 heads, or use "exactly 8" (4%) instead of "8 or more".'),
           sa('A die is claimed to be fair. In 60 rolls it showed 18 sixes. In 200 simulated sets of 60 fair rolls, 18 or more sixes '
              'happened 4 times. What proportion of the simulated sets is that? Give a decimal.', 'Proportion:', key='0.02',
              note='4/200.'),
@@ -298,7 +298,7 @@ SETS += [
              'heads, or 1 or fewer), using the table.%s Which decision is correct?' % RULE5, [
               'Not consistent: such results happened in 3% of the sets.', 'Consistent: such results happened in 3% of the sets.',
               'Consistent: 1 head happened in exactly 1 set.', 'Not consistent: a fair coin cannot give 1 head.'],
-             fig=HT, note='3% < 5%.'),
+             fig=HT, note='3% < 5%.', cols=2),
           tf('Under the 5% rule, the smaller the proportion of simulated results as extreme as the data, the stronger the evidence '
              'against the model.', key=True, note='Rarer under the model means stronger evidence.'),
           sa('A coin gave 7 heads in 10 flips. In the table, what proportion of sets are at least as far from 5 heads in either '
@@ -348,7 +348,8 @@ SETS += [
               'Experiments always use more subjects than observational studies.',
               'Observational studies never collect any numerical data.',
               'Experiments do not need any comparison or control group.'],
-             note='Imposed, randomly assigned treatments control lurking variables.'),
+             note='Imposed, randomly assigned treatments control lurking variables. The others are false claims about data, sizes '
+                  'or control groups.'),
       ],
       back=[
           B('Identify the population, sample, parameter and statistic', 'HSS-IC.A.1', [
@@ -387,7 +388,7 @@ SETS += [
              note='Purpose of control.'),
           mc('Why do experiments on medicines often give some subjects a placebo?', [
               'to account for the effect of believing one is being treated', 'to make the experiment cheaper to run',
-              'to increase the number of different treatments', 'to make sure the results come out positive'], note='Placebo effect.'),
+              'to increase the number of different treatments', 'to make sure the results come out positive'], note='Placebo effect. The others are false: a placebo does not lower cost, add treatments, or fix the outcome.'),
           tf('In a double-blind experiment, only the subjects do not know which treatment they receive.', key=False,
              note='The people who evaluate them do not know either.'),
       ], prog='same-course deepening', demand='Name treatments, units, response, control and blinding in an experiment.'),
@@ -421,18 +422,21 @@ SETS += [
           mc('What is the main purpose of selecting a sample at random in a survey?', [
               'so the results can be generalized to the population', 'so a treatment can be shown to cause a change',
               'so that every answer comes out the same', 'so the sample is as small as possible'],
-             note='Random sampling supports generalization.'),
+             note='Random sampling supports generalization. The others describe random assignment (cause), or claim it makes answers '
+                  'identical or the sample small.'),
           mc('What is the main purpose of assigning subjects to treatments at random in an experiment?', [
               'to make groups alike so a difference can be due to treatment', 'to let the results describe everyone in the country',
               'to guarantee that the treatment will work', 'to avoid needing any control or comparison group'],
-             note='Random assignment supports cause.'),
+             note='Random assignment supports cause. The others describe random sampling (generalization) or claim it guarantees '
+                  'success or replaces a control group.'),
           mc('A study randomly assigned 80 volunteers to two diets and found a significant difference in weight loss. The '
              'volunteers were not a random sample. What can be concluded?', [
               'The diet caused the difference for volunteers like these.',
               'The diet causes the same difference for everyone in the country.',
               'Nothing, because the subjects were volunteers.',
               'Only that the two diets are associated with weight.'],
-             note='Random assignment gives cause; no random sample, so no broad generalization.'),
+             note='Random assignment gives cause; no random sample, so no broad generalization. The others generalize to the '
+                  'country, ignore the random assignment, or claim only association.'),
           sa('Plots in a field are numbered 01 to 60. Read line 3 of the table as two-digit numbers, skipping 00, numbers above 60 '
              'and repeats. Which three plots are assigned fertilizer A first?', ['First:', 'Second:', 'Third:'],
              key='; '.join(map(str, P3b)), fig=DT,
@@ -465,7 +469,7 @@ SETS += [
               mc('Why are repeated numbers skipped when selecting a sample from a random-digit table?', [
                   'a person cannot be chosen twice', 'repeated digits are always printing errors', 'repeated numbers are too large to use',
                   'skipping them saves time in the selection'],
-                 note='Sampling without replacement.'),
+                 note='Sampling without replacement. The others are false reasons: repeats are valid digits of the right size.'),
           ], align='supporting',
             why=why('the student cannot carry out random selection.', 'random sampling and assignment use it.',
                     'selects a random sample with a table.')),

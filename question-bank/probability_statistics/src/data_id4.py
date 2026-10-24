@@ -116,7 +116,7 @@ SETS = [
       f2=B('Check a fitted model with residuals', 'HSS-ID.B.6.b', [
           sa('For the model y = 2.52x + 9.86, find the residual (observed minus predicted) for the data point (5, 24).',
              'Residual:', key='1.54', note='24 - 22.46.'),
-          sa('For the model y = 2.52x + 9.86, find the residual for the data point (4, 19).', 'Residual:', key='-0.94',
+          sa('For the model y = 2.52x + 9.86, find the residual (observed minus predicted) for the data point (4, 19).', 'Residual:', key='-0.94',
              note='19 - 19.94.'),
           tf('A positive residual means the data point lies above the fitted line.', key=True, note='Observed > predicted.'),
           mc('A line is fitted to data that actually grow exponentially. What pattern do the residuals usually show?', [
@@ -136,7 +136,7 @@ SETS = [
           sa('The model y = 2x + 1 is used for the data in the table. Find the residuals (observed minus predicted) at x = 1 and '
              'at x = 2.', ['Residual at x = 1:', 'Residual at x = 2:'], key='0.5; -0.4', fig=xy(RES),
              note='Form required: both. 3.5 - 3 and 4.6 - 5.'),
-          sa('A model predicts y = 3x + 10. Find the residuals for the observed points (4, 20) and (6, 30).',
+          sa('A model predicts y = 3x + 10. Find the residuals (observed minus predicted) for the observed points (4, 20) and (6, 30).',
              ['Residual for (4, 20):', 'Residual for (6, 30):'], key='-2; 2', note='Form required: both. 20 - 22 and 30 - 28.'),
           pick('The model y = 2x + 1 is used for the data in the table (x = 1 to 5; y = 3.5, 4.6, 7.2, 8.8, 11.1). Which plot is '
                'the residual plot (observed minus predicted)?', 'A', [
@@ -152,7 +152,8 @@ SETS = [
               'The linear model is appropriate, because residuals are both signs.',
               'The data must contain an error, because residuals are not all 0.'],
              fig=FIG_CURVED, note='A systematic curve in the residuals shows the line misses the form.'),
-          mc('A line was fitted to a data set. The residual plot is shown. Which conclusion is correct?', [
+          mc('A line was fitted to a different data set, and its residual plot is shown. What does the plot show about the linear '
+             'model?', [
               'The linear model is appropriate: the residuals show no pattern.',
               'The linear model is not appropriate, because residuals are not 0.',
               'A quadratic model is needed, because residuals change sign.',
@@ -195,7 +196,8 @@ SETS = [
                     'compares observed and predicted values.')),
       ],
       f1=B('Compute least-squares residuals', 'HSS-ID.B.6.b', [
-          sa('The least-squares line for (1, 2), (2, 5), (3, 4), (4, 7) is y = 1.4x + 1. Find the residuals at x = 1 and x = 2.',
+          sa('The least-squares line for (1, 2), (2, 5), (3, 4), (4, 7) is y = 1.4x + 1. Find the residuals (observed minus predicted) at '
+             'x = 1 and x = 2.',
              ['At x = 1:', 'At x = 2:'], key='-0.4; 1.2', note='Form required: both. 2 - 2.4 and 5 - 3.8.'),
           sa('For y = 1.4x + 1 and the points (1, 2), (2, 5), (3, 4), (4, 7), what is the sum of all four residuals?', 'Sum:',
              key='0', note='-0.4 + 1.2 - 1.2 + 0.4.'),
@@ -229,9 +231,9 @@ SETS = [
       strand='core', covers=['ID6c-line'],
       main=[
           sa('Find the least-squares line y = mx + b for hours studied (x) and score (y). Round m and b to two decimal places.%s'
-             % TECH, ['m:', 'b:'], key='5.17; 48.28', fig=SAT, note='Form required: both. b = 2485/481, a = 23225/481.'),
+             % TECH, ['m:', 'b:'], key='5.17; 48.28', fig=SAT, note='Form required: both. m = 2485/481 ≈ 5.166; b = 23225/481 ≈ 48.285.'),
           sa('Find the least-squares line y = mx + b for car age (x) and value in $1000s (y). Round m and b to two decimal '
-             'places.%s' % TECH, ['m:', 'b:'], key='-1.88; 25.87', fig=SBT, note='Form required: both. -311/165 and 388/15.'),
+             'places.%s' % TECH, ['m:', 'b:'], key='-1.88; 25.87', fig=SBT, note='Form required: both. m = -311/165 ≈ -1.885; b = 388/15 ≈ 25.867.'),
           pick('Which graph shows the line that best fits the study data (hours, score)?', 'D', [
               cand([lambda x: 48.28 + 5.17 * x], 'a line through the middle of the points', pts=[(a, b, '') for a, b in SA]),
               cand([lambda x: 40 + 5.17 * x], 'a line below almost every point', pts=[(a, b, '') for a, b in SA]),

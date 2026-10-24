@@ -256,8 +256,14 @@ def ztable(zs):
 
 
 def digits_table(rows):
-    """Rows of random digits, printed in groups of five (a reproducible stand-in for a random number generator)."""
-    return tbl(['Line'] + ['Digits'], [[str(i + 1), ' '.join(r[k:k + 5] for k in range(0, len(r), 5))] for i, r in enumerate(rows)])
+    """Rows of random digits, printed in groups of five (a reproducible stand-in for a random number generator). More than
+    four lines are printed in two side-by-side halves (lines 1-4 left, 5-8 right) so the digits stay large."""
+    cells = [[str(i + 1), ' '.join(r[k:k + 5] for k in range(0, len(r), 5))] for i, r in enumerate(rows)]
+    if len(cells) <= 4:
+        return tbl(['Line', 'Digits'], cells)
+    h = (len(cells) + 1) // 2
+    right = cells[h:] + [['', '']] * (2 * h - len(cells))
+    return tbl(['Line', 'Digits', 'Line', 'Digits'], [a_ + b_ for a_, b_ in zip(cells[:h], right)])
 
 
 def scatter(pts, x, y, desc, xlabel='x', ylabel='y', xstep=1, ystep=1, fs=(), has=(), **kw):
@@ -278,7 +284,7 @@ def pickfig(stem, at, figs, note, h=210, cols=4):
     order = list(figs[1:])
     order.insert('ABCD'.index(at), figs[0])
     if figs[0]['k'] == 'hist' and figs[0].get('xlabel'):
-        stem += ' In each histogram, the horizontal axis shows %s and the vertical axis shows frequency.' % figs[0]['xlabel'].lower()
+        stem += ' In each histogram, the horizontal axis shows %s and the vertical axis shows frequency.' % (figs[0]['xlabel'] if not figs[0]['xlabel'][:1].isalpha() or figs[0]['xlabel'][1:2].isupper() else figs[0]['xlabel'][0].lower() + figs[0]['xlabel'][1:])
     panels = []
     for L, f in zip('ABCD', order):
         f = dict(f)

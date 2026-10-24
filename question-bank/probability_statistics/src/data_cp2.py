@@ -137,10 +137,10 @@ SETS = [
           tf('Conditioning on an event removes the outcomes outside it from the sample space.', key=True, note='Restriction.'),
       ], prog='same-course deepening', demand='Condition on compound events such as "at least one".'),
       f2=B('Multiply along a chain of conditions', 'HSS-CP.B.8', [
-          sa('A bag has 5 red and 3 blue marbles. Two are drawn without replacement. What is P(both red)?%s' % FL, 'P:',
-             key='5/14', note='(5/8)(4/7).'),
+          sa('A bag has 4 red and 2 blue marbles. Two are drawn without replacement. What is P(both red)?%s' % FL, 'P:',
+             key='2/5', note='(4/6)(3/5) = 12/30.'),
           tf('P(A and B) = P(A)·P(B given A).', key=True, note='General Multiplication Rule.'),
-          sa('P(A) = 0.6 and P(B given A) = 0.5. Find P(A and B).', 'P(A and B):', key='0.3', note='0.6 · 0.5.'),
+          sa('P(A) = 0.8 and P(B given A) = 0.25. Find P(A and B).', 'P(A and B):', key='0.2', note='0.8 · 0.25.'),
           mc('Two cards are drawn without replacement. What is P(second is a heart given the first is a heart)?', [
               '12/51', '13/52', '1/4', '13/51'], note='12 hearts left of 51 cards.'),
           tf('For draws without replacement, P(second red given first red) equals P(first red).', key=False,

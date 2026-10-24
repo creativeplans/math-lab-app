@@ -80,7 +80,7 @@ SETS = [
           B('Recognize skew and extreme values', '6.SP.A.2', [
               mc('Which data set is skewed to the right?', ['1, 2, 2, 3, 3, 3, 4, 15', '1, 2, 3, 4, 5, 6, 7', '5, 5, 5, 5, 5',
                                                             '1, 12, 13, 13, 14, 14, 14, 15'],
-                 note='A long tail of high values (15). The second is symmetric, the third constant, the fourth skewed left.'),
+                 note='A long tail of high values (15). The others are constant, skewed left (a low tail at 1), or symmetric.'),
               tf('A data set with a single value far below all the others is skewed to the left.', key=True,
                  note='The tail points toward the low value.'),
               mc('Which value is extreme in 20, 22, 21, 23, 22, 60?', ['60', '20', '23', 'none'], note='60 is far from the rest.'),
@@ -336,7 +336,7 @@ SETS = [
               'The drop is large, because two seconds is a long time in a race of 52 seconds.',
               'The claim is wrong, because a drop in the median time means the athletes slowed down.',
               'The claim cannot be judged, because the IQRs of the two groups are equal.'],
-             note='2/8 = 0.25 IQR. Lower times are faster, so the third choice is wrong too.'),
+             note='2/8 = 0.25 IQR. Lower times are faster, so the choice saying the athletes slowed down is wrong too.'),
           sa('Two groups have means 120 and 135 and the same standard deviation 10. How many standard deviations apart are they?',
              'Answer:', key='1.5', note='15/10.'),
           tf('If two groups\' means differ by less than one standard deviation, the groups cannot differ in any important way.',

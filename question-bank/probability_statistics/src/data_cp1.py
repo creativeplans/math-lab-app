@@ -434,7 +434,7 @@ SETS += [
           tf('In the drug table, improving and treatment are independent.', key=False, fig=TRIALT, note='7/10 ≠ 47/80.'),
           mc('A patient is chosen at random from the drug table. What is P(drug given improved)?', ['35/47', '35/50', '7/16', '47/80'],
              fig=TRIALT, note='Condition on the improved column.'),
-          sa('A patient is chosen at random. What is P(placebo and did not improve)?%s' % FL, 'P:', key='9/40', fig=TRIALT,
+          sa('A patient is chosen at random from the drug table. What is P(placebo and did not improve)?%s' % FL, 'P:', key='9/40', fig=TRIALT,
              note='18/80.'),
       ], prog='same-course deepening', demand='Treat the completed table as a sample space for probabilities.',
         builds='Builds on FORWARD 1: the checked table becomes a sample space.')),
@@ -456,7 +456,7 @@ SETS += [
                                                                                                   '30/50.'),
           mc('In the sports table, are "plays a sport" and "9th grade" independent?', [
               'Yes: P(sport given 9th) = P(sport) = 0.6.', 'No: 30 is not equal to 42.', 'No: the grades have different sizes.',
-              'Yes: more students play than do not.'], fig=ST, note='Compare rates, not counts.'),
+              'Yes: more students play than do not.'], fig=ST, note='Compare rates, not counts.', cols=2),
           sa('A student who drives is chosen at random from the driving table. What is P(junior given drives)?%s' % FL, 'P:',
              key='2/3', fig=DT, note='60/90.'),
       ],

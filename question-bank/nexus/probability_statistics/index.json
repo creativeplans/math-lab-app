@@ -1,0 +1,4995 @@
+{
+ "format_version": 1,
+ "collection": {
+  "id": "PS",
+  "grade": null,
+  "course": "Probability & Statistics",
+  "version": "1.0.0",
+  "date": "2026-10-24"
+ },
+ "grade": null,
+ "title": "Probability & Statistics — Common Core High School Math — Question Sets",
+ "set_count": 54,
+ "question_count": 1435,
+ "figure_count": 190,
+ "id_format": "S<set>-<section>-Q<number>. Section codes: M = MAIN (the course's own standard), B1, B2, ... = BACKWARD branches (a Grade K-8 standard, or a course standard that is the MAIN standard of an earlier set), F1 = FORWARD 1 and F2 = FORWARD 2 (standards of later courses; standard_course names the course). id is unique within this collection; uid = \"PS:\" + id is unique across all collections. Forward branches name standards only, never question IDs of other collections. Set and branch numbers are fixed: they need not be consecutive, and an ID is never reused for a different skill (see revisions.json).",
+ "revisions_file": null,
+ "relations": {
+  "main": "the Probability & Statistics skill the set is built around (strand: core, or advanced extension (+))",
+  "backward": "a prerequisite obstacle to check when a student misses MAIN questions: a Grade K-8, Algebra I or Geometry standard, or the MAIN standard of an earlier set of this course; branch.alignment is exact or supporting",
+  "forward1": "the next demand after MAIN; branch.progression is same-course deepening, cross-standard extension, or later-course extension, and branch.new_demand states what it adds",
+  "forward2": "a further demand; branch.builds_on says how it builds on FORWARD 1 (or why it is a separate extension of MAIN)",
+  "nearest_related": "true marks a forward branch that no standard directly continues; it uses the nearest related standard"
+ },
+ "grading_rules": [
+  "Match each student response to its key record by the question ID printed on the question page (for example S12-B2-Q3). The page number is the same in the Question Collection and the Answer Key. IDs are unique within one collection; across collections use uid (for example PS:S12-B2-Q3).",
+  "Every question is graded automatically; no question needs a person, a drawing surface, or a judgment of wording. Question types are mc, tf and sa only. There is no partial credit: a response is correct or not.",
+  "Multiple choice and true/false: the response is correct when the chosen letter equals correct_letter.",
+  "Short answer: the response is checked against correct_answer by the game's answer checker. Mathematically equivalent numbers (fractions, decimals, percents where the question asks for a percent, \"x = 5\" or \"5\") are accepted unless the question names a form. When an answer has several parts (one per answer line), every part must be correct. A list of values may be given in any order unless the question says \"in that order\".",
+  "A word answer is used only when the question lists the allowed words (for example \"Answer Yes or No\"); the response must be one of those words.",
+  "grading_note gives the accepted form, the work behind the answer and, for multiple choice, what is wrong with each other choice. It is guidance for teachers, not for students.",
+  "Precision: a question that asks for rounding names the precision (\"to the nearest hundredth\", \"as a percent to one decimal place\"), and the answer must be given to exactly that precision. A probability may be given as a fraction or a decimal unless the question names one form; a fraction need not be in lowest terms unless the question says so.",
+  "Conventions stated on the page: quartiles are the medians of the lower and upper halves (the median left out of both halves when n is odd); an outlier lies more than 1.5·IQR beyond a quartile; each question says whether a standard deviation is the population (divide by n) or sample (divide by n - 1) value; histogram bins include their left endpoint and exclude their right endpoint unless stated otherwise; residual = observed - predicted.",
+  "Probability models: every question states the sample space or the process (fair, equally likely, with or without replacement, order matters or not, independent trials), and \"or\" is inclusive unless stated otherwise.",
+  "Simulation: a question that asks students to carry out a simulation supplies the random digits and the rule for using them, so every correct procedure gives the same result. A question about a simulation run by someone else supplies its results. Every inference states the null model, the outcomes counted (one or two tails) and the cutoff; a rare result is evidence against a model, not proof, and a common result is consistent with the model, not proof that it is true.",
+  "Skills that ask students to construct a display, design a study or explain a conclusion are assessed by what the game can check: the numbers that define the display (counts, quartiles, residuals), a choice among candidate plots, designs or arguments whose other choices are specific errors, or the conclusion that follows from supplied evidence. COVERAGE.md records which subskills are assessed by recognition.",
+  "Technology: a question that needs a calculator or spreadsheet says so and names the capability (mean and standard deviation, least-squares line, correlation, normal area). A normal table is printed on the page when a question uses one.",
+  "Every question has an explanation in its grading_note; for numeric questions it shows the work and the exact value."
+ ],
+ "markup": "prompt is plain text. prompt_markup uses {a/b} for a stacked fraction and 2{1/2} for a mixed number.",
+ "sets": [
+  {
+   "set": 1,
+   "set_id": "S1",
+   "file": "sets/S01.json",
+   "standard": "HSS-ID.A.1",
+   "title": "Represent data with dot plots",
+   "domain": "Interpreting Categorical and Quantitative Data",
+   "strand": "core",
+   "target_skill": "Represent a data set with a dot plot: the number of dots above each value, and the dot plot that matches a list",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Represent data with dot plots",
+     "standard": "HSS-ID.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S1-M-Q1",
+      "S1-M-Q2",
+      "S1-M-Q3",
+      "S1-M-Q4",
+      "S1-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Count how often each value occurs",
+     "standard": "6.SP.B.5.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S1-B1-Q1",
+      "S1-B1-Q2",
+      "S1-B1-Q3",
+      "S1-B1-Q4",
+      "S1-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Locate values on a number-line scale",
+     "standard": "6.NS.C.6.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S1-B2-Q1",
+      "S1-B2-Q2",
+      "S1-B2-Q3",
+      "S1-B2-Q4",
+      "S1-B2-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 3",
+     "section_code": "B3",
+     "relation": "backward",
+     "skill": "Read counts from a dot plot",
+     "standard": "6.SP.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S1-B3-Q1",
+      "S1-B3-Q2",
+      "S1-B3-Q3",
+      "S1-B3-Q4",
+      "S1-B3-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find the median and mean from a dot plot",
+     "standard": "HSS-ID.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S1-F1-Q1",
+      "S1-F1-Q2",
+      "S1-F1-Q3",
+      "S1-F1-Q4",
+      "S1-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Choose the display that keeps the information you need",
+     "standard": "HSS-ID.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S1-F2-Q1",
+      "S1-F2-Q2",
+      "S1-F2-Q3",
+      "S1-F2-Q4",
+      "S1-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 2,
+   "set_id": "S2",
+   "file": "sets/S02.json",
+   "standard": "HSS-ID.A.1",
+   "title": "Represent data with histograms",
+   "domain": "Interpreting Categorical and Quantitative Data",
+   "strand": "core",
+   "target_skill": "Represent a data set with a histogram: the count in each stated bin, using the stated endpoint rule",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Represent data with histograms",
+     "standard": "HSS-ID.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S2-M-Q1",
+      "S2-M-Q2",
+      "S2-M-Q3",
+      "S2-M-Q4",
+      "S2-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Assign values to bins with an endpoint rule",
+     "standard": "6.SP.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S2-B1-Q1",
+      "S2-B1-Q2",
+      "S2-B1-Q3",
+      "S2-B1-Q4",
+      "S2-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Count the values in an interval",
+     "standard": "6.SP.B.5.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S2-B2-Q1",
+      "S2-B2-Q2",
+      "S2-B2-Q3",
+      "S2-B2-Q4",
+      "S2-B2-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 3",
+     "section_code": "B3",
+     "relation": "backward",
+     "skill": "Read a histogram",
+     "standard": "6.SP.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S2-B3-Q1",
+      "S2-B3-Q2",
+      "S2-B3-Q3",
+      "S2-B3-Q4",
+      "S2-B3-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Regroup a histogram with wider bins",
+     "standard": "HSS-ID.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S2-F1-Q1",
+      "S2-F1-Q2",
+      "S2-F1-Q3",
+      "S2-F1-Q4",
+      "S2-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Locate the median in a histogram",
+     "standard": "HSS-ID.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S2-F2-Q1",
+      "S2-F2-Q2",
+      "S2-F2-Q3",
+      "S2-F2-Q4",
+      "S2-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 3,
+   "set_id": "S3",
+   "file": "sets/S03.json",
+   "standard": "HSS-ID.A.1",
+   "title": "Represent data with box plots",
+   "domain": "Interpreting Categorical and Quantitative Data",
+   "strand": "core",
+   "target_skill": "Represent a data set with a box plot: its five-number summary under the stated quartile rule, and the box plot that matches a list",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Represent data with box plots",
+     "standard": "HSS-ID.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S3-M-Q1",
+      "S3-M-Q2",
+      "S3-M-Q3",
+      "S3-M-Q4",
+      "S3-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Order data and find the median",
+     "standard": "6.SP.B.5.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S3-B1-Q1",
+      "S3-B1-Q2",
+      "S3-B1-Q3",
+      "S3-B1-Q4",
+      "S3-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Find quartiles as medians of the halves",
+     "standard": "6.SP.B.5.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S3-B2-Q1",
+      "S3-B2-Q2",
+      "S3-B2-Q3",
+      "S3-B2-Q4",
+      "S3-B2-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 3",
+     "section_code": "B3",
+     "relation": "backward",
+     "skill": "Read a box plot",
+     "standard": "6.SP.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S3-B3-Q1",
+      "S3-B3-Q2",
+      "S3-B3-Q3",
+      "S3-B3-Q4",
+      "S3-B3-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Mark outliers on a box plot",
+     "standard": "HSS-ID.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S3-F1-Q1",
+      "S3-F1-Q2",
+      "S3-F1-Q3",
+      "S3-F1-Q4",
+      "S3-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Compare two box plots",
+     "standard": "HSS-ID.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S3-F2-Q1",
+      "S3-F2-Q2",
+      "S3-F2-Q3",
+      "S3-F2-Q4",
+      "S3-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 4,
+   "set_id": "S4",
+   "file": "sets/S04.json",
+   "standard": "HSS-ID.A.2",
+   "title": "Compare centers with the measure suited to the shape",
+   "domain": "Interpreting Categorical and Quantitative Data",
+   "strand": "core",
+   "target_skill": "Compare the centers of two data sets, choosing the median when a set is skewed or has outliers and the mean when both are roughly symmetric, and computing that measure for each set",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Compare centers with the measure suited to the shape",
+     "standard": "HSS-ID.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S4-M-Q1",
+      "S4-M-Q2",
+      "S4-M-Q3",
+      "S4-M-Q4",
+      "S4-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Compute a mean",
+     "standard": "6.SP.B.5.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S4-B1-Q1",
+      "S4-B1-Q2",
+      "S4-B1-Q3",
+      "S4-B1-Q4",
+      "S4-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Compute a median",
+     "standard": "6.SP.B.5.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S4-B2-Q1",
+      "S4-B2-Q2",
+      "S4-B2-Q3",
+      "S4-B2-Q4",
+      "S4-B2-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 3",
+     "section_code": "B3",
+     "relation": "backward",
+     "skill": "Recognize skew and extreme values",
+     "standard": "6.SP.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S4-B3-Q1",
+      "S4-B3-Q2",
+      "S4-B3-Q3",
+      "S4-B3-Q4",
+      "S4-B3-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find a missing value from a target mean or median",
+     "standard": "HSS-ID.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S4-F1-Q1",
+      "S4-F1-Q2",
+      "S4-F1-Q3",
+      "S4-F1-Q4",
+      "S4-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Predict how changes in data move the mean and median",
+     "standard": "HSS-ID.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S4-F2-Q1",
+      "S4-F2-Q2",
+      "S4-F2-Q3",
+      "S4-F2-Q4",
+      "S4-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 5,
+   "set_id": "S5",
+   "file": "sets/S05.json",
+   "standard": "HSS-ID.A.2",
+   "title": "Compare spreads with the IQR or the standard deviation",
+   "domain": "Interpreting Categorical and Quantitative Data",
+   "strand": "core",
+   "target_skill": "Compare the spreads of two data sets with the measure suited to their shapes (IQR with skew or outliers, standard deviation when roughly symmetric), computing that measure for each set",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Compare spreads with the IQR or the standard deviation",
+     "standard": "HSS-ID.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S5-M-Q1",
+      "S5-M-Q2",
+      "S5-M-Q3",
+      "S5-M-Q4",
+      "S5-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find the range and the interquartile range",
+     "standard": "6.SP.B.5.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S5-B1-Q1",
+      "S5-B1-Q2",
+      "S5-B1-Q3",
+      "S5-B1-Q4",
+      "S5-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Measure distances from the mean",
+     "standard": "6.SP.B.5.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S5-B2-Q1",
+      "S5-B2-Q2",
+      "S5-B2-Q3",
+      "S5-B2-Q4",
+      "S5-B2-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 3",
+     "section_code": "B3",
+     "relation": "backward",
+     "skill": "Square, average, and take square roots",
+     "standard": "8.EE.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S5-B3-Q1",
+      "S5-B3-Q2",
+      "S5-B3-Q3",
+      "S5-B3-Q4",
+      "S5-B3-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Compare population and sample standard deviations",
+     "standard": "HSS-ID.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S5-F1-Q1",
+      "S5-F1-Q2",
+      "S5-F1-Q3",
+      "S5-F1-Q4",
+      "S5-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Predict how adding or multiplying changes center and spread",
+     "standard": "HSS-ID.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S5-F2-Q1",
+      "S5-F2-Q2",
+      "S5-F2-Q3",
+      "S5-F2-Q4",
+      "S5-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 6,
+   "set_id": "S6",
+   "file": "sets/S06.json",
+   "standard": "HSS-ID.A.3",
+   "title": "Interpret differences in shape, center and spread in context",
+   "domain": "Interpreting Categorical and Quantitative Data",
+   "strand": "core",
+   "target_skill": "Interpret the differences in shape, center and spread between two data sets in the terms of their context",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Interpret differences in shape, center and spread in context",
+     "standard": "HSS-ID.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S6-M-Q1",
+      "S6-M-Q2",
+      "S6-M-Q3",
+      "S6-M-Q4",
+      "S6-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Describe the shape of a distribution",
+     "standard": "6.SP.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S6-B1-Q1",
+      "S6-B1-Q2",
+      "S6-B1-Q3",
+      "S6-B1-Q4",
+      "S6-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "What center and spread tell about data",
+     "standard": "6.SP.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S6-B2-Q1",
+      "S6-B2-Q2",
+      "S6-B2-Q3",
+      "S6-B2-Q4",
+      "S6-B2-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 3",
+     "section_code": "B3",
+     "relation": "backward",
+     "skill": "Compare two distributions informally",
+     "standard": "7.SP.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S6-B3-Q1",
+      "S6-B3-Q2",
+      "S6-B3-Q3",
+      "S6-B3-Q4",
+      "S6-B3-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Measure separation in units of spread",
+     "standard": "HSS-ID.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S6-F1-Q1",
+      "S6-F1-Q2",
+      "S6-F1-Q3",
+      "S6-F1-Q4",
+      "S6-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Judge whether a difference supports a claim",
+     "standard": "HSS-IC.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S6-F2-Q1",
+      "S6-F2-Q2",
+      "S6-F2-Q3",
+      "S6-F2-Q4",
+      "S6-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 7,
+   "set_id": "S7",
+   "file": "sets/S07.json",
+   "standard": "HSS-ID.A.3",
+   "title": "Identify outliers and account for their effects",
+   "domain": "Interpreting Categorical and Quantitative Data",
+   "strand": "core",
+   "target_skill": "Identify outliers with the 1.5·IQR rule and determine their effect on the mean, median and spread",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Identify outliers and account for their effects",
+     "standard": "HSS-ID.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S7-M-Q1",
+      "S7-M-Q2",
+      "S7-M-Q3",
+      "S7-M-Q4",
+      "S7-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find the interquartile range",
+     "standard": "6.SP.B.5.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S7-B1-Q1",
+      "S7-B1-Q2",
+      "S7-B1-Q3",
+      "S7-B1-Q4",
+      "S7-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Compute the fences",
+     "standard": "6.NS.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S7-B2-Q1",
+      "S7-B2-Q2",
+      "S7-B2-Q3",
+      "S7-B2-Q4",
+      "S7-B2-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 3",
+     "section_code": "B3",
+     "relation": "backward",
+     "skill": "How an extreme value affects the mean and the median",
+     "standard": "6.SP.B.5.d",
+     "nearest_related": false,
+     "question_ids": [
+      "S7-B3-Q1",
+      "S7-B3-Q2",
+      "S7-B3-Q3",
+      "S7-B3-Q4",
+      "S7-B3-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Decide whether an outlier is an error or a real value",
+     "standard": "HSS-ID.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S7-F1-Q1",
+      "S7-F1-Q2",
+      "S7-F1-Q3",
+      "S7-F1-Q4",
+      "S7-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Report resistant summaries after checking outliers",
+     "standard": "HSS-ID.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S7-F2-Q1",
+      "S7-F2-Q2",
+      "S7-F2-Q3",
+      "S7-F2-Q4",
+      "S7-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 8,
+   "set_id": "S8",
+   "file": "sets/S08.json",
+   "standard": "HSS-ID.A.4",
+   "title": "Estimate percentages with the 68-95-99.7 rule",
+   "domain": "Interpreting Categorical and Quantitative Data",
+   "strand": "core",
+   "target_skill": "Estimate the percent of a normally distributed population in an interval bounded by whole numbers of standard deviations from the mean, with the 68-95-99.7 rule",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Estimate percentages with the 68-95-99.7 rule",
+     "standard": "HSS-ID.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S8-M-Q1",
+      "S8-M-Q2",
+      "S8-M-Q3",
+      "S8-M-Q4",
+      "S8-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Count standard deviations from the mean",
+     "standard": "HSS-ID.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S8-B1-Q1",
+      "S8-B1-Q2",
+      "S8-B1-Q3",
+      "S8-B1-Q4",
+      "S8-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Find a percent of a population",
+     "standard": "6.RP.A.3.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S8-B2-Q1",
+      "S8-B2-Q2",
+      "S8-B2-Q3",
+      "S8-B2-Q4",
+      "S8-B2-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 3",
+     "section_code": "B3",
+     "relation": "backward",
+     "skill": "Use the symmetry of the normal curve",
+     "standard": "6.SP.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S8-B3-Q1",
+      "S8-B3-Q2",
+      "S8-B3-Q3",
+      "S8-B3-Q4",
+      "S8-B3-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find a cutoff from a percent",
+     "standard": "HSS-ID.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S8-F1-Q1",
+      "S8-F1-Q2",
+      "S8-F1-Q3",
+      "S8-F1-Q4",
+      "S8-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Compare positions in two populations with standardized values",
+     "standard": "HSS-ID.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S8-F2-Q1",
+      "S8-F2-Q2",
+      "S8-F2-Q3",
+      "S8-F2-Q4",
+      "S8-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 9,
+   "set_id": "S9",
+   "file": "sets/S09.json",
+   "standard": "HSS-ID.A.4",
+   "title": "Estimate normal areas with a table or calculator",
+   "domain": "Interpreting Categorical and Quantitative Data",
+   "strand": "core",
+   "target_skill": "Estimate the proportion of a normal population in an interval by standardizing and using a normal table (or a calculator), including left tails, right tails and areas between two values",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Estimate normal areas with a table or calculator",
+     "standard": "HSS-ID.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S9-M-Q1",
+      "S9-M-Q2",
+      "S9-M-Q3",
+      "S9-M-Q4",
+      "S9-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Compute a standardized value",
+     "standard": "7.NS.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S9-B1-Q1",
+      "S9-B1-Q2",
+      "S9-B1-Q3",
+      "S9-B1-Q4",
+      "S9-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Read areas as proportions",
+     "standard": "7.SP.C.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S9-B2-Q1",
+      "S9-B2-Q2",
+      "S9-B2-Q3",
+      "S9-B2-Q4",
+      "S9-B2-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 3",
+     "section_code": "B3",
+     "relation": "backward",
+     "skill": "Find right tails and areas between from left areas",
+     "standard": "HSS-ID.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S9-B3-Q1",
+      "S9-B3-Q2",
+      "S9-B3-Q3",
+      "S9-B3-Q4",
+      "S9-B3-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find the cutoff for a percentile",
+     "standard": "HSS-ID.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S9-F1-Q1",
+      "S9-F1-Q2",
+      "S9-F1-Q3",
+      "S9-F1-Q4",
+      "S9-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Make decisions with normal areas",
+     "standard": "HSS-ID.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S9-F2-Q1",
+      "S9-F2-Q2",
+      "S9-F2-Q3",
+      "S9-F2-Q4",
+      "S9-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 10,
+   "set_id": "S10",
+   "file": "sets/S10.json",
+   "standard": "HSS-ID.A.4",
+   "title": "Recognize when a normal model is not appropriate",
+   "domain": "Interpreting Categorical and Quantitative Data",
+   "strand": "core",
+   "target_skill": "Recognize data sets for which fitting a normal model and estimating percentages is not appropriate (skewed, bimodal or bounded data), using the shape of a display and the percentages the model would give",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Recognize when a normal model is not appropriate",
+     "standard": "HSS-ID.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S10-M-Q1",
+      "S10-M-Q2",
+      "S10-M-Q3",
+      "S10-M-Q4",
+      "S10-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Describe the shape of a distribution",
+     "standard": "6.SP.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S10-B1-Q1",
+      "S10-B1-Q2",
+      "S10-B1-Q3",
+      "S10-B1-Q4",
+      "S10-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Relate the mean and median to the shape",
+     "standard": "6.SP.B.5.d",
+     "nearest_related": false,
+     "question_ids": [
+      "S10-B2-Q1",
+      "S10-B2-Q2",
+      "S10-B2-Q3",
+      "S10-B2-Q4",
+      "S10-B2-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 3",
+     "section_code": "B3",
+     "relation": "backward",
+     "skill": "Test a normal model against the data",
+     "standard": "HSS-ID.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S10-B3-Q1",
+      "S10-B3-Q2",
+      "S10-B3-Q3",
+      "S10-B3-Q4",
+      "S10-B3-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Compare actual percents with the 68-95-99.7 rule",
+     "standard": "HSS-ID.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S10-F1-Q1",
+      "S10-F1-Q2",
+      "S10-F1-Q3",
+      "S10-F1-Q4",
+      "S10-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Choose summaries for data that are not normal",
+     "standard": "HSS-ID.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S10-F2-Q1",
+      "S10-F2-Q2",
+      "S10-F2-Q3",
+      "S10-F2-Q4",
+      "S10-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 11,
+   "set_id": "S11",
+   "file": "sets/S11.json",
+   "standard": "HSS-ID.B.5",
+   "title": "Joint and marginal frequencies in two-way tables",
+   "domain": "Interpreting Categorical and Quantitative Data",
+   "strand": "core",
+   "target_skill": "Summarize categorical data for two categories in a two-way frequency table and interpret joint and marginal relative frequencies",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Joint and marginal frequencies in two-way tables",
+     "standard": "HSS-ID.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S11-M-Q1",
+      "S11-M-Q2",
+      "S11-M-Q3",
+      "S11-M-Q4",
+      "S11-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Complete and read a two-way frequency table",
+     "standard": "8.SP.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S11-B1-Q1",
+      "S11-B1-Q2",
+      "S11-B1-Q3",
+      "S11-B1-Q4",
+      "S11-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Write a part of a whole as a fraction, decimal and percent",
+     "standard": "7.NS.A.2.d",
+     "nearest_related": false,
+     "question_ids": [
+      "S11-B2-Q1",
+      "S11-B2-Q2",
+      "S11-B2-Q3",
+      "S11-B2-Q4",
+      "S11-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Build a joint relative-frequency table",
+     "standard": "HSS-ID.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S11-F1-Q1",
+      "S11-F1-Q2",
+      "S11-F1-Q3",
+      "S11-F1-Q4",
+      "S11-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Look for an association by comparing rows",
+     "standard": "HSS-ID.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S11-F2-Q1",
+      "S11-F2-Q2",
+      "S11-F2-Q3",
+      "S11-F2-Q4",
+      "S11-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 12,
+   "set_id": "S12",
+   "file": "sets/S12.json",
+   "standard": "HSS-ID.B.5",
+   "title": "Conditional relative frequencies and association",
+   "domain": "Interpreting Categorical and Quantitative Data",
+   "strand": "core",
+   "target_skill": "Interpret conditional relative frequencies in a two-way table and use them to recognize possible associations and trends",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Conditional relative frequencies and association",
+     "standard": "HSS-ID.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S12-M-Q1",
+      "S12-M-Q2",
+      "S12-M-Q3",
+      "S12-M-Q4",
+      "S12-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Choose the denominator for a conditional relative frequency",
+     "standard": "8.SP.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S12-B1-Q1",
+      "S12-B1-Q2",
+      "S12-B1-Q3",
+      "S12-B1-Q4",
+      "S12-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Find a percent of a group",
+     "standard": "6.RP.A.3.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S12-B2-Q1",
+      "S12-B2-Q2",
+      "S12-B2-Q3",
+      "S12-B2-Q4",
+      "S12-B2-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 3",
+     "section_code": "B3",
+     "relation": "backward",
+     "skill": "Compare two fractions",
+     "standard": "4.NF.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S12-B3-Q1",
+      "S12-B3-Q2",
+      "S12-B3-Q3",
+      "S12-B3-Q4",
+      "S12-B3-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Distinguish the two directions of a conditional rate",
+     "standard": "HSS-ID.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S12-F1-Q1",
+      "S12-F1-Q2",
+      "S12-F1-Q3",
+      "S12-F1-Q4",
+      "S12-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Recognize when combining groups reverses a comparison",
+     "standard": "HSS-ID.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S12-F2-Q1",
+      "S12-F2-Q2",
+      "S12-F2-Q3",
+      "S12-F2-Q4",
+      "S12-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 13,
+   "set_id": "S13",
+   "file": "sets/S13.json",
+   "standard": "HSS-ID.B.6",
+   "title": "Represent two quantitative variables on a scatter plot",
+   "domain": "Interpreting Categorical and Quantitative Data",
+   "strand": "core",
+   "target_skill": "Represent data on two quantitative variables on a scatter plot and describe how the variables are related (direction, form, strength, outliers)",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Represent two quantitative variables on a scatter plot",
+     "standard": "HSS-ID.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S13-M-Q1",
+      "S13-M-Q2",
+      "S13-M-Q3",
+      "S13-M-Q4",
+      "S13-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Plot and read points in the first quadrant",
+     "standard": "5.G.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S13-B1-Q1",
+      "S13-B1-Q2",
+      "S13-B1-Q3",
+      "S13-B1-Q4",
+      "S13-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Describe patterns of association",
+     "standard": "8.SP.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S13-B2-Q1",
+      "S13-B2-Q2",
+      "S13-B2-Q3",
+      "S13-B2-Q4",
+      "S13-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Compare the direction, form and strength of associations",
+     "standard": "HSS-ID.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S13-F1-Q1",
+      "S13-F1-Q2",
+      "S13-F1-Q3",
+      "S13-F1-Q4",
+      "S13-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Distinguish association from causation",
+     "standard": "HSS-ID.C.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S13-F2-Q1",
+      "S13-F2-Q2",
+      "S13-F2-Q3",
+      "S13-F2-Q4",
+      "S13-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 14,
+   "set_id": "S14",
+   "file": "sets/S14.json",
+   "standard": "HSS-ID.B.6.a",
+   "title": "Use a function fitted to data to solve problems",
+   "domain": "Interpreting Categorical and Quantitative Data",
+   "strand": "core",
+   "target_skill": "Use a given function fitted to data (linear, exponential or quadratic) to make predictions and solve problems in context",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Use a function fitted to data to solve problems",
+     "standard": "HSS-ID.B.6.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S14-M-Q1",
+      "S14-M-Q2",
+      "S14-M-Q3",
+      "S14-M-Q4",
+      "S14-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Evaluate a function at an input",
+     "standard": "HSF-IF.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S14-B1-Q1",
+      "S14-B1-Q2",
+      "S14-B1-Q3",
+      "S14-B1-Q4",
+      "S14-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Evaluate expressions with exponents",
+     "standard": "6.EE.A.2.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S14-B2-Q1",
+      "S14-B2-Q2",
+      "S14-B2-Q3",
+      "S14-B2-Q4",
+      "S14-B2-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 3",
+     "section_code": "B3",
+     "relation": "backward",
+     "skill": "Solve a linear equation for the input",
+     "standard": "HSA-REI.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S14-B3-Q1",
+      "S14-B3-Q2",
+      "S14-B3-Q3",
+      "S14-B3-Q4",
+      "S14-B3-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Judge whether a prediction is reasonable",
+     "standard": "HSS-ID.B.6.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S14-F1-Q1",
+      "S14-F1-Q2",
+      "S14-F1-Q3",
+      "S14-F1-Q4",
+      "S14-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Compare predictions from two fitted models",
+     "standard": "HSS-ID.B.6.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S14-F2-Q1",
+      "S14-F2-Q2",
+      "S14-F2-Q3",
+      "S14-F2-Q4",
+      "S14-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 15,
+   "set_id": "S15",
+   "file": "sets/S15.json",
+   "standard": "HSS-ID.B.6.a",
+   "title": "Choose and fit a linear, quadratic or exponential function",
+   "domain": "Interpreting Categorical and Quantitative Data",
+   "strand": "core",
+   "target_skill": "Fit a function to data: choose the family (linear, quadratic or exponential) suggested by the data and the context, and find its parameters",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Choose and fit a linear, quadratic or exponential function",
+     "standard": "HSS-ID.B.6.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S15-M-Q1",
+      "S15-M-Q2",
+      "S15-M-Q3",
+      "S15-M-Q4",
+      "S15-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Tell equal differences from equal factors",
+     "standard": "HSF-LE.A.1.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S15-B1-Q1",
+      "S15-B1-Q2",
+      "S15-B1-Q3",
+      "S15-B1-Q4",
+      "S15-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Write a linear function from two points",
+     "standard": "8.F.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S15-B2-Q1",
+      "S15-B2-Q2",
+      "S15-B2-Q3",
+      "S15-B2-Q4",
+      "S15-B2-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 3",
+     "section_code": "B3",
+     "relation": "backward",
+     "skill": "Write an exponential function from two points",
+     "standard": "HSF-LE.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S15-B3-Q1",
+      "S15-B3-Q2",
+      "S15-B3-Q3",
+      "S15-B3-Q4",
+      "S15-B3-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Fit a model with regression technology",
+     "standard": "HSS-ID.B.6.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S15-F1-Q1",
+      "S15-F1-Q2",
+      "S15-F1-Q3",
+      "S15-F1-Q4",
+      "S15-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Check a fitted model with residuals",
+     "standard": "HSS-ID.B.6.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S15-F2-Q1",
+      "S15-F2-Q2",
+      "S15-F2-Q3",
+      "S15-F2-Q4",
+      "S15-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 16,
+   "set_id": "S16",
+   "file": "sets/S16.json",
+   "standard": "HSS-ID.B.6.b",
+   "title": "Assess the fit of a function with residuals",
+   "domain": "Interpreting Categorical and Quantitative Data",
+   "strand": "core",
+   "target_skill": "Informally assess the fit of a function by computing residuals (observed minus predicted), plotting them and analyzing the pattern",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Assess the fit of a function with residuals",
+     "standard": "HSS-ID.B.6.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S16-M-Q1",
+      "S16-M-Q2",
+      "S16-M-Q3",
+      "S16-M-Q4",
+      "S16-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Subtract with signed decimals",
+     "standard": "7.NS.A.1.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S16-B1-Q1",
+      "S16-B1-Q2",
+      "S16-B1-Q3",
+      "S16-B1-Q4",
+      "S16-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Find a predicted value from a model",
+     "standard": "HSF-IF.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S16-B2-Q1",
+      "S16-B2-Q2",
+      "S16-B2-Q3",
+      "S16-B2-Q4",
+      "S16-B2-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 3",
+     "section_code": "B3",
+     "relation": "backward",
+     "skill": "Compare an observed value with a prediction",
+     "standard": "HSS-ID.B.6.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S16-B3-Q1",
+      "S16-B3-Q2",
+      "S16-B3-Q3",
+      "S16-B3-Q4",
+      "S16-B3-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Compute least-squares residuals",
+     "standard": "HSS-ID.B.6.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S16-F1-Q1",
+      "S16-F1-Q2",
+      "S16-F1-Q3",
+      "S16-F1-Q4",
+      "S16-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Compare two models with residuals",
+     "standard": "HSS-ID.B.6.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S16-F2-Q1",
+      "S16-F2-Q2",
+      "S16-F2-Q3",
+      "S16-F2-Q4",
+      "S16-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 17,
+   "set_id": "S17",
+   "file": "sets/S17.json",
+   "standard": "HSS-ID.B.6.c",
+   "title": "Fit a linear function to a linear scatter plot",
+   "domain": "Interpreting Categorical and Quantitative Data",
+   "strand": "core",
+   "target_skill": "Fit a linear function to a scatter plot that suggests a linear association, using least-squares regression with technology, and use it",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Fit a linear function to a linear scatter plot",
+     "standard": "HSS-ID.B.6.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S17-M-Q1",
+      "S17-M-Q2",
+      "S17-M-Q3",
+      "S17-M-Q4",
+      "S17-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Fit a line by eye",
+     "standard": "8.SP.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S17-B1-Q1",
+      "S17-B1-Q2",
+      "S17-B1-Q3",
+      "S17-B1-Q4",
+      "S17-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Find slope and intercept from points",
+     "standard": "8.F.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S17-B2-Q1",
+      "S17-B2-Q2",
+      "S17-B2-Q3",
+      "S17-B2-Q4",
+      "S17-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use the properties of the least-squares line",
+     "standard": "HSS-ID.B.6.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S17-F1-Q1",
+      "S17-F1-Q2",
+      "S17-F1-Q3",
+      "S17-F1-Q4",
+      "S17-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Interpret the fitted line's slope and intercept",
+     "standard": "HSS-ID.C.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S17-F2-Q1",
+      "S17-F2-Q2",
+      "S17-F2-Q3",
+      "S17-F2-Q4",
+      "S17-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 18,
+   "set_id": "S18",
+   "file": "sets/S18.json",
+   "standard": "HSS-ID.C.7",
+   "title": "Interpret the slope and intercept of a linear model",
+   "domain": "Interpreting Categorical and Quantitative Data",
+   "strand": "core",
+   "target_skill": "Interpret the slope (rate of change) and the intercept (constant term) of a linear model in the context of the data, with units, and recognize when the intercept is not meaningful",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Interpret the slope and intercept of a linear model",
+     "standard": "HSS-ID.C.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S18-M-Q1",
+      "S18-M-Q2",
+      "S18-M-Q3",
+      "S18-M-Q4",
+      "S18-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Interpret the rate and the initial value of a linear function",
+     "standard": "8.F.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S18-B1-Q1",
+      "S18-B1-Q2",
+      "S18-B1-Q3",
+      "S18-B1-Q4",
+      "S18-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Use a linear model's equation to answer questions",
+     "standard": "8.SP.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S18-B2-Q1",
+      "S18-B2-Q2",
+      "S18-B2-Q3",
+      "S18-B2-Q4",
+      "S18-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Interpret parameters with units and judge meaning",
+     "standard": "HSS-ID.C.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S18-F1-Q1",
+      "S18-F1-Q2",
+      "S18-F1-Q3",
+      "S18-F1-Q4",
+      "S18-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Relate the slope to the correlation coefficient",
+     "standard": "HSS-ID.C.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S18-F2-Q1",
+      "S18-F2-Q2",
+      "S18-F2-Q3",
+      "S18-F2-Q4",
+      "S18-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 19,
+   "set_id": "S19",
+   "file": "sets/S19.json",
+   "standard": "HSS-ID.C.8",
+   "title": "Compute the correlation coefficient with technology",
+   "domain": "Interpreting Categorical and Quantitative Data",
+   "strand": "core",
+   "target_skill": "Compute (using technology) the correlation coefficient r of a linear fit",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Compute the correlation coefficient with technology",
+     "standard": "HSS-ID.C.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S19-M-Q1",
+      "S19-M-Q2",
+      "S19-M-Q3",
+      "S19-M-Q4",
+      "S19-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find means and deviations",
+     "standard": "6.SP.B.5.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S19-B1-Q1",
+      "S19-B1-Q2",
+      "S19-B1-Q3",
+      "S19-B1-Q4",
+      "S19-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Read the direction of an association",
+     "standard": "HSS-ID.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S19-B2-Q1",
+      "S19-B2-Q2",
+      "S19-B2-Q3",
+      "S19-B2-Q4",
+      "S19-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Compute r from deviations",
+     "standard": "HSS-ID.C.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S19-F1-Q1",
+      "S19-F1-Q2",
+      "S19-F1-Q3",
+      "S19-F1-Q4",
+      "S19-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "See how changes to the data affect r",
+     "standard": "HSS-ID.C.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S19-F2-Q1",
+      "S19-F2-Q2",
+      "S19-F2-Q3",
+      "S19-F2-Q4",
+      "S19-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 20,
+   "set_id": "S20",
+   "file": "sets/S20.json",
+   "standard": "HSS-ID.C.8",
+   "title": "Interpret the correlation coefficient",
+   "domain": "Interpreting Categorical and Quantitative Data",
+   "strand": "core",
+   "target_skill": "Interpret the correlation coefficient of a linear fit: its sign (direction), its size (strength), and that it measures only linear association",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Interpret the correlation coefficient",
+     "standard": "HSS-ID.C.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S20-M-Q1",
+      "S20-M-Q2",
+      "S20-M-Q3",
+      "S20-M-Q4",
+      "S20-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Describe strength and direction from a plot",
+     "standard": "HSS-ID.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S20-B1-Q1",
+      "S20-B1-Q2",
+      "S20-B1-Q3",
+      "S20-B1-Q4",
+      "S20-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Compare numbers on a scale from -1 to 1",
+     "standard": "6.NS.C.7.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S20-B2-Q1",
+      "S20-B2-Q2",
+      "S20-B2-Q3",
+      "S20-B2-Q4",
+      "S20-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Match correlation coefficients to scatter plots",
+     "standard": "HSS-ID.C.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S20-F1-Q1",
+      "S20-F1-Q2",
+      "S20-F1-Q3",
+      "S20-F1-Q4",
+      "S20-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Correlation is not causation",
+     "standard": "HSS-ID.C.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S20-F2-Q1",
+      "S20-F2-Q2",
+      "S20-F2-Q3",
+      "S20-F2-Q4",
+      "S20-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 21,
+   "set_id": "S21",
+   "file": "sets/S21.json",
+   "standard": "HSS-ID.C.9",
+   "title": "Distinguish between correlation and causation",
+   "domain": "Interpreting Categorical and Quantitative Data",
+   "strand": "core",
+   "target_skill": "Distinguish between correlation and causation: recognize lurking variables and the kind of study needed to support a causal claim",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Distinguish between correlation and causation",
+     "standard": "HSS-ID.C.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S21-M-Q1",
+      "S21-M-Q2",
+      "S21-M-Q3",
+      "S21-M-Q4",
+      "S21-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Recognize a strong correlation",
+     "standard": "HSS-ID.C.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S21-B1-Q1",
+      "S21-B1-Q2",
+      "S21-B1-Q3",
+      "S21-B1-Q4",
+      "S21-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Describe the association in a scatter plot",
+     "standard": "8.SP.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S21-B2-Q1",
+      "S21-B2-Q2",
+      "S21-B2-Q3",
+      "S21-B2-Q4",
+      "S21-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Tell experiments from observational studies",
+     "standard": "HSS-IC.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S21-F1-Q1",
+      "S21-F1-Q2",
+      "S21-F1-Q3",
+      "S21-F1-Q4",
+      "S21-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Judge causal claims from experiment results",
+     "standard": "HSS-IC.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S21-F2-Q1",
+      "S21-F2-Q2",
+      "S21-F2-Q3",
+      "S21-F2-Q4",
+      "S21-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 22,
+   "set_id": "S22",
+   "file": "sets/S22.json",
+   "standard": "HSS-IC.A.1",
+   "title": "Statistics as a process of inference from samples",
+   "domain": "Making Inferences and Justifying Conclusions",
+   "strand": "core",
+   "target_skill": "Identify the population, sample, parameter and statistic in a study, and use a statistic from a random sample to make an inference about the population parameter",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Statistics as a process of inference from samples",
+     "standard": "HSS-IC.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S22-M-Q1",
+      "S22-M-Q2",
+      "S22-M-Q3",
+      "S22-M-Q4",
+      "S22-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Recognize random and representative samples",
+     "standard": "7.SP.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S22-B1-Q1",
+      "S22-B1-Q2",
+      "S22-B1-Q3",
+      "S22-B1-Q4",
+      "S22-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Use a sample to estimate a population count",
+     "standard": "7.SP.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S22-B2-Q1",
+      "S22-B2-Q2",
+      "S22-B2-Q3",
+      "S22-B2-Q4",
+      "S22-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "See how sample size affects sampling variability",
+     "standard": "HSS-IC.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S22-F1-Q1",
+      "S22-F1-Q2",
+      "S22-F1-Q3",
+      "S22-F1-Q4",
+      "S22-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Attach a margin of error to an estimate",
+     "standard": "HSS-IC.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S22-F2-Q1",
+      "S22-F2-Q2",
+      "S22-F2-Q3",
+      "S22-F2-Q4",
+      "S22-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 23,
+   "set_id": "S23",
+   "file": "sets/S23.json",
+   "standard": "HSS-IC.A.2",
+   "title": "Simulate a probability model with random digits",
+   "domain": "Making Inferences and Justifying Conclusions",
+   "strand": "core",
+   "target_skill": "Carry out a simulation of a specified model by assigning random digits to outcomes and counting results",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Simulate a probability model with random digits",
+     "standard": "HSS-IC.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S23-M-Q1",
+      "S23-M-Q2",
+      "S23-M-Q3",
+      "S23-M-Q4",
+      "S23-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Design a simulation for a compound event",
+     "standard": "7.SP.C.8.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S23-B1-Q1",
+      "S23-B1-Q2",
+      "S23-B1-Q3",
+      "S23-B1-Q4",
+      "S23-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Find a probability as a relative frequency",
+     "standard": "7.SP.C.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S23-B2-Q1",
+      "S23-B2-Q2",
+      "S23-B2-Q3",
+      "S23-B2-Q4",
+      "S23-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use two-digit groups for probabilities in hundredths",
+     "standard": "HSS-IC.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S23-F1-Q1",
+      "S23-F1-Q2",
+      "S23-F1-Q3",
+      "S23-F1-Q4",
+      "S23-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use simulation results to judge a model",
+     "standard": "HSS-IC.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S23-F2-Q1",
+      "S23-F2-Q2",
+      "S23-F2-Q3",
+      "S23-F2-Q4",
+      "S23-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 24,
+   "set_id": "S24",
+   "file": "sets/S24.json",
+   "standard": "HSS-IC.A.2",
+   "title": "Decide whether a model is consistent with data",
+   "domain": "Making Inferences and Justifying Conclusions",
+   "strand": "core",
+   "target_skill": "Decide whether a specified model is consistent with results from a data-generating process, using the proportion of simulated results at least as extreme as the observed result and a stated threshold",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Decide whether a model is consistent with data",
+     "standard": "HSS-IC.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S24-M-Q1",
+      "S24-M-Q2",
+      "S24-M-Q3",
+      "S24-M-Q4",
+      "S24-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Read the results of a simulation",
+     "standard": "HSS-IC.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S24-B1-Q1",
+      "S24-B1-Q2",
+      "S24-B1-Q3",
+      "S24-B1-Q4",
+      "S24-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Compare observed frequencies with a probability model",
+     "standard": "7.SP.C.7.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S24-B2-Q1",
+      "S24-B2-Q2",
+      "S24-B2-Q3",
+      "S24-B2-Q4",
+      "S24-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Decide using results extreme in either direction",
+     "standard": "HSS-IC.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S24-F1-Q1",
+      "S24-F1-Q2",
+      "S24-F1-Q3",
+      "S24-F1-Q4",
+      "S24-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Judge a treatment difference by re-randomization",
+     "standard": "HSS-IC.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S24-F2-Q1",
+      "S24-F2-Q2",
+      "S24-F2-Q3",
+      "S24-F2-Q4",
+      "S24-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 25,
+   "set_id": "S25",
+   "file": "sets/S25.json",
+   "standard": "HSS-IC.B.3",
+   "title": "Sample surveys, experiments and observational studies",
+   "domain": "Making Inferences and Justifying Conclusions",
+   "strand": "core",
+   "target_skill": "Recognize the purposes of and differences among sample surveys, experiments and observational studies",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Sample surveys, experiments and observational studies",
+     "standard": "HSS-IC.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S25-M-Q1",
+      "S25-M-Q2",
+      "S25-M-Q3",
+      "S25-M-Q4",
+      "S25-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Identify the population, sample, parameter and statistic",
+     "standard": "HSS-IC.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S25-B1-Q1",
+      "S25-B1-Q2",
+      "S25-B1-Q3",
+      "S25-B1-Q4",
+      "S25-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Separate association from causation",
+     "standard": "HSS-ID.C.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S25-B2-Q1",
+      "S25-B2-Q2",
+      "S25-B2-Q3",
+      "S25-B2-Q4",
+      "S25-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Identify the parts of an experiment",
+     "standard": "HSS-IC.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S25-F1-Q1",
+      "S25-F1-Q2",
+      "S25-F1-Q3",
+      "S25-F1-Q4",
+      "S25-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Choose a study design for a question",
+     "standard": "HSS-IC.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S25-F2-Q1",
+      "S25-F2-Q2",
+      "S25-F2-Q3",
+      "S25-F2-Q4",
+      "S25-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 26,
+   "set_id": "S26",
+   "file": "sets/S26.json",
+   "standard": "HSS-IC.B.3",
+   "title": "How randomization relates to each kind of study",
+   "domain": "Making Inferences and Justifying Conclusions",
+   "strand": "core",
+   "target_skill": "Explain how randomization relates to sample surveys (random sampling) and experiments (random assignment), and what each allows a study to conclude",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "How randomization relates to each kind of study",
+     "standard": "HSS-IC.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S26-M-Q1",
+      "S26-M-Q2",
+      "S26-M-Q3",
+      "S26-M-Q4",
+      "S26-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Classify a study",
+     "standard": "HSS-IC.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S26-B1-Q1",
+      "S26-B1-Q2",
+      "S26-B1-Q3",
+      "S26-B1-Q4",
+      "S26-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Select a simple random sample",
+     "standard": "7.SP.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S26-B2-Q1",
+      "S26-B2-Q2",
+      "S26-B2-Q3",
+      "S26-B2-Q4",
+      "S26-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Decide the scope of conclusions",
+     "standard": "HSS-IC.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S26-F1-Q1",
+      "S26-F1-Q2",
+      "S26-F1-Q3",
+      "S26-F1-Q4",
+      "S26-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Evaluate a report's conclusion from its design",
+     "standard": "HSS-IC.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S26-F2-Q1",
+      "S26-F2-Q2",
+      "S26-F2-Q3",
+      "S26-F2-Q4",
+      "S26-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 27,
+   "set_id": "S27",
+   "file": "sets/S27.json",
+   "standard": "HSS-IC.B.4",
+   "title": "Estimate a population proportion with a margin of error",
+   "domain": "Making Inferences and Justifying Conclusions",
+   "strand": "core",
+   "target_skill": "Use data from a sample survey to estimate a population proportion, and develop a margin of error from a simulation of random sampling",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Estimate a population proportion with a margin of error",
+     "standard": "HSS-IC.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S27-M-Q1",
+      "S27-M-Q2",
+      "S27-M-Q3",
+      "S27-M-Q4",
+      "S27-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Compute a sample proportion and name it",
+     "standard": "HSS-IC.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S27-B1-Q1",
+      "S27-B1-Q2",
+      "S27-B1-Q3",
+      "S27-B1-Q4",
+      "S27-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Read a standard deviation as typical variation",
+     "standard": "HSS-ID.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S27-B2-Q1",
+      "S27-B2-Q2",
+      "S27-B2-Q3",
+      "S27-B2-Q4",
+      "S27-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "See how sample size changes the margin of error",
+     "standard": "HSS-IC.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S27-F1-Q1",
+      "S27-F1-Q2",
+      "S27-F1-Q3",
+      "S27-F1-Q4",
+      "S27-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Read margins of error in poll reports",
+     "standard": "HSS-IC.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S27-F2-Q1",
+      "S27-F2-Q2",
+      "S27-F2-Q3",
+      "S27-F2-Q4",
+      "S27-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 28,
+   "set_id": "S28",
+   "file": "sets/S28.json",
+   "standard": "HSS-IC.B.4",
+   "title": "Estimate a population mean with a margin of error",
+   "domain": "Making Inferences and Justifying Conclusions",
+   "strand": "core",
+   "target_skill": "Use data from a sample survey to estimate a population mean, and develop a margin of error from a simulation of random sampling",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Estimate a population mean with a margin of error",
+     "standard": "HSS-IC.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S28-M-Q1",
+      "S28-M-Q2",
+      "S28-M-Q3",
+      "S28-M-Q4",
+      "S28-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Use a margin of error",
+     "standard": "HSS-IC.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S28-B1-Q1",
+      "S28-B1-Q2",
+      "S28-B1-Q3",
+      "S28-B1-Q4",
+      "S28-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Compute a mean",
+     "standard": "6.SP.B.5.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S28-B2-Q1",
+      "S28-B2-Q2",
+      "S28-B2-Q3",
+      "S28-B2-Q4",
+      "S28-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Compare variability of sample means",
+     "standard": "HSS-IC.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S28-F1-Q1",
+      "S28-F1-Q2",
+      "S28-F1-Q3",
+      "S28-F1-Q4",
+      "S28-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Compare two treatments' means",
+     "standard": "HSS-IC.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S28-F2-Q1",
+      "S28-F2-Q2",
+      "S28-F2-Q3",
+      "S28-F2-Q4",
+      "S28-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 29,
+   "set_id": "S29",
+   "file": "sets/S29.json",
+   "standard": "HSS-IC.B.5",
+   "title": "Compare two treatments with a randomization simulation",
+   "domain": "Making Inferences and Justifying Conclusions",
+   "strand": "core",
+   "target_skill": "Use data from a randomized experiment to compare two treatments, and use a re-randomization simulation to decide whether the difference is significant",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Compare two treatments with a randomization simulation",
+     "standard": "HSS-IC.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S29-M-Q1",
+      "S29-M-Q2",
+      "S29-M-Q3",
+      "S29-M-Q4",
+      "S29-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Decide whether a model is consistent with data",
+     "standard": "HSS-IC.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S29-B1-Q1",
+      "S29-B1-Q2",
+      "S29-B1-Q3",
+      "S29-B1-Q4",
+      "S29-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Explain random assignment",
+     "standard": "HSS-IC.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S29-B2-Q1",
+      "S29-B2-Q2",
+      "S29-B2-Q3",
+      "S29-B2-Q4",
+      "S29-B2-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 3",
+     "section_code": "B3",
+     "relation": "backward",
+     "skill": "Compute means of small groups",
+     "standard": "6.SP.B.5.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S29-B3-Q1",
+      "S29-B3-Q2",
+      "S29-B3-Q3",
+      "S29-B3-Q4",
+      "S29-B3-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use differences in either direction",
+     "standard": "HSS-IC.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S29-F1-Q1",
+      "S29-F1-Q2",
+      "S29-F1-Q3",
+      "S29-F1-Q4",
+      "S29-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Evaluate a report of an experiment",
+     "standard": "HSS-IC.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S29-F2-Q1",
+      "S29-F2-Q2",
+      "S29-F2-Q3",
+      "S29-F2-Q4",
+      "S29-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 30,
+   "set_id": "S30",
+   "file": "sets/S30.json",
+   "standard": "HSS-IC.B.6",
+   "title": "Evaluate the conclusions of reports based on data",
+   "domain": "Making Inferences and Justifying Conclusions",
+   "strand": "core",
+   "target_skill": "Evaluate the conclusions of a report against how its data were produced: causation claims, generalization beyond the sample, and bias from sampling or question wording",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Evaluate the conclusions of reports based on data",
+     "standard": "HSS-IC.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S30-M-Q1",
+      "S30-M-Q2",
+      "S30-M-Q3",
+      "S30-M-Q4",
+      "S30-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Know what each design can support",
+     "standard": "HSS-IC.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S30-B1-Q1",
+      "S30-B1-Q2",
+      "S30-B1-Q3",
+      "S30-B1-Q4",
+      "S30-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Recognize lurking variables",
+     "standard": "HSS-ID.C.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S30-B2-Q1",
+      "S30-B2-Q2",
+      "S30-B2-Q3",
+      "S30-B2-Q4",
+      "S30-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Identify the type of bias in a report",
+     "standard": "HSS-IC.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S30-F1-Q1",
+      "S30-F1-Q2",
+      "S30-F1-Q3",
+      "S30-F1-Q4",
+      "S30-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Weigh several flaws and decide what a report shows",
+     "standard": "HSS-IC.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S30-F2-Q1",
+      "S30-F2-Q2",
+      "S30-F2-Q3",
+      "S30-F2-Q4",
+      "S30-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 31,
+   "set_id": "S31",
+   "file": "sets/S31.json",
+   "standard": "HSS-IC.B.6",
+   "title": "Evaluate the statistics and displays in reports",
+   "domain": "Making Inferences and Justifying Conclusions",
+   "strand": "core",
+   "target_skill": "Evaluate the statistics and displays in a report: truncated axes, relative versus absolute change, margins of error, and the choice of summary statistic",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Evaluate the statistics and displays in reports",
+     "standard": "HSS-IC.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S31-M-Q1",
+      "S31-M-Q2",
+      "S31-M-Q3",
+      "S31-M-Q4",
+      "S31-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Use margins of error to compare results",
+     "standard": "HSS-IC.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S31-B1-Q1",
+      "S31-B1-Q2",
+      "S31-B1-Q3",
+      "S31-B1-Q4",
+      "S31-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Compute percent change",
+     "standard": "7.RP.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S31-B2-Q1",
+      "S31-B2-Q2",
+      "S31-B2-Q3",
+      "S31-B2-Q4",
+      "S31-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Spot misleading features of displays",
+     "standard": "HSS-IC.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S31-F1-Q1",
+      "S31-F1-Q2",
+      "S31-F1-Q3",
+      "S31-F1-Q4",
+      "S31-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Reason about conditional rates in reports",
+     "standard": "HSS-CP.A.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S31-F2-Q1",
+      "S31-F2-Q2",
+      "S31-F2-Q3",
+      "S31-F2-Q4",
+      "S31-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 32,
+   "set_id": "S32",
+   "file": "sets/S32.json",
+   "standard": "HSS-CP.A.1",
+   "title": "Describe sample spaces and events",
+   "domain": "Conditional Probability and the Rules of Probability",
+   "strand": "core",
+   "target_skill": "Describe the sample space of a chance process and describe events as subsets of it, using characteristics of the outcomes",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Describe sample spaces and events",
+     "standard": "HSS-CP.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S32-M-Q1",
+      "S32-M-Q2",
+      "S32-M-Q3",
+      "S32-M-Q4",
+      "S32-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "List a sample space with a list, table or tree",
+     "standard": "7.SP.C.8.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S32-B1-Q1",
+      "S32-B1-Q2",
+      "S32-B1-Q3",
+      "S32-B1-Q4",
+      "S32-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Find probabilities in a uniform model",
+     "standard": "7.SP.C.7.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S32-B2-Q1",
+      "S32-B2-Q2",
+      "S32-B2-Q3",
+      "S32-B2-Q4",
+      "S32-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Describe events in multi-stage sample spaces",
+     "standard": "HSS-CP.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S32-F1-Q1",
+      "S32-F1-Q2",
+      "S32-F1-Q3",
+      "S32-F1-Q4",
+      "S32-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Combine events with \"and\", \"or\" and \"not\"",
+     "standard": "HSS-CP.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S32-F2-Q1",
+      "S32-F2-Q2",
+      "S32-F2-Q3",
+      "S32-F2-Q4",
+      "S32-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 33,
+   "set_id": "S33",
+   "file": "sets/S33.json",
+   "standard": "HSS-CP.A.1",
+   "title": "Unions, intersections and complements of events",
+   "domain": "Conditional Probability and the Rules of Probability",
+   "strand": "core",
+   "target_skill": "Describe events as unions (\"or\"), intersections (\"and\") and complements (\"not\") of other events, and find their probabilities by counting",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Unions, intersections and complements of events",
+     "standard": "HSS-CP.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S33-M-Q1",
+      "S33-M-Q2",
+      "S33-M-Q3",
+      "S33-M-Q4",
+      "S33-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Count the outcomes in an event",
+     "standard": "HSS-CP.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S33-B1-Q1",
+      "S33-B1-Q2",
+      "S33-B1-Q3",
+      "S33-B1-Q4",
+      "S33-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Find a probability by counting",
+     "standard": "7.SP.C.8.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S33-B2-Q1",
+      "S33-B2-Q2",
+      "S33-B2-Q3",
+      "S33-B2-Q4",
+      "S33-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use a Venn diagram of counts",
+     "standard": "HSS-CP.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S33-F1-Q1",
+      "S33-F1-Q2",
+      "S33-F1-Q3",
+      "S33-F1-Q4",
+      "S33-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Apply the Addition Rule",
+     "standard": "HSS-CP.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S33-F2-Q1",
+      "S33-F2-Q2",
+      "S33-F2-Q3",
+      "S33-F2-Q4",
+      "S33-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 34,
+   "set_id": "S34",
+   "file": "sets/S34.json",
+   "standard": "HSS-CP.A.2",
+   "title": "Decide independence with the product rule",
+   "domain": "Conditional Probability and the Rules of Probability",
+   "strand": "core",
+   "target_skill": "Understand that A and B are independent if P(A and B) = P(A)·P(B), and use this to decide whether events are independent",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Decide independence with the product rule",
+     "standard": "HSS-CP.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S34-M-Q1",
+      "S34-M-Q2",
+      "S34-M-Q3",
+      "S34-M-Q4",
+      "S34-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Multiply probabilities",
+     "standard": "5.NF.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S34-B1-Q1",
+      "S34-B1-Q2",
+      "S34-B1-Q3",
+      "S34-B1-Q4",
+      "S34-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Find P(A and B) by counting",
+     "standard": "HSS-CP.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S34-B2-Q1",
+      "S34-B2-Q2",
+      "S34-B2-Q3",
+      "S34-B2-Q4",
+      "S34-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use independence for several events",
+     "standard": "HSS-CP.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S34-F1-Q1",
+      "S34-F1-Q2",
+      "S34-F1-Q3",
+      "S34-F1-Q4",
+      "S34-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Interpret independence with conditional probability",
+     "standard": "HSS-CP.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S34-F2-Q1",
+      "S34-F2-Q2",
+      "S34-F2-Q3",
+      "S34-F2-Q4",
+      "S34-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 35,
+   "set_id": "S35",
+   "file": "sets/S35.json",
+   "standard": "HSS-CP.A.3",
+   "title": "Compute conditional probability as P(A and B)/P(B)",
+   "domain": "Conditional Probability and the Rules of Probability",
+   "strand": "core",
+   "target_skill": "Understand and compute the conditional probability of A given B as P(A and B)/P(B), without reversing the condition",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Compute conditional probability as P(A and B)/P(B)",
+     "standard": "HSS-CP.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S35-M-Q1",
+      "S35-M-Q2",
+      "S35-M-Q3",
+      "S35-M-Q4",
+      "S35-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Divide decimals and fractions",
+     "standard": "6.NS.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S35-B1-Q1",
+      "S35-B1-Q2",
+      "S35-B1-Q3",
+      "S35-B1-Q4",
+      "S35-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Count outcomes in a restricted sample space",
+     "standard": "HSS-CP.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S35-B2-Q1",
+      "S35-B2-Q2",
+      "S35-B2-Q3",
+      "S35-B2-Q4",
+      "S35-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Compute conditional probability in both directions",
+     "standard": "HSS-CP.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S35-F1-Q1",
+      "S35-F1-Q2",
+      "S35-F1-Q3",
+      "S35-F1-Q4",
+      "S35-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Test independence with conditional probability",
+     "standard": "HSS-CP.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S35-F2-Q1",
+      "S35-F2-Q2",
+      "S35-F2-Q3",
+      "S35-F2-Q4",
+      "S35-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 36,
+   "set_id": "S36",
+   "file": "sets/S36.json",
+   "standard": "HSS-CP.A.3",
+   "title": "Interpret independence through conditional probability",
+   "domain": "Conditional Probability and the Rules of Probability",
+   "strand": "core",
+   "target_skill": "Interpret independence of A and B as P(A given B) = P(A) and P(B given A) = P(B), and use it to decide and explain",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Interpret independence through conditional probability",
+     "standard": "HSS-CP.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S36-M-Q1",
+      "S36-M-Q2",
+      "S36-M-Q3",
+      "S36-M-Q4",
+      "S36-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Compute a conditional probability",
+     "standard": "HSS-CP.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S36-B1-Q1",
+      "S36-B1-Q2",
+      "S36-B1-Q3",
+      "S36-B1-Q4",
+      "S36-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Test independence with the product rule",
+     "standard": "HSS-CP.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S36-B2-Q1",
+      "S36-B2-Q2",
+      "S36-B2-Q3",
+      "S36-B2-Q4",
+      "S36-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Check both directions of independence",
+     "standard": "HSS-CP.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S36-F1-Q1",
+      "S36-F1-Q2",
+      "S36-F1-Q3",
+      "S36-F1-Q4",
+      "S36-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Approximate conditional probabilities from data",
+     "standard": "HSS-CP.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S36-F2-Q1",
+      "S36-F2-Q2",
+      "S36-F2-Q3",
+      "S36-F2-Q4",
+      "S36-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 37,
+   "set_id": "S37",
+   "file": "sets/S37.json",
+   "standard": "HSS-CP.A.4",
+   "title": "Construct two-way frequency tables",
+   "domain": "Conditional Probability and the Rules of Probability",
+   "strand": "core",
+   "target_skill": "Construct a two-way frequency table from a description of data in which each object is classified by two categories, and interpret its cells and totals",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Construct two-way frequency tables",
+     "standard": "HSS-CP.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S37-M-Q1",
+      "S37-M-Q2",
+      "S37-M-Q3",
+      "S37-M-Q4",
+      "S37-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Fill in a two-way frequency table",
+     "standard": "8.SP.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S37-B1-Q1",
+      "S37-B1-Q2",
+      "S37-B1-Q3",
+      "S37-B1-Q4",
+      "S37-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Read joint and marginal frequencies",
+     "standard": "HSS-ID.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S37-B2-Q1",
+      "S37-B2-Q2",
+      "S37-B2-Q3",
+      "S37-B2-Q4",
+      "S37-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Check statements against a built table",
+     "standard": "HSS-CP.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S37-F1-Q1",
+      "S37-F1-Q2",
+      "S37-F1-Q3",
+      "S37-F1-Q4",
+      "S37-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Use the table as a sample space",
+     "standard": "HSS-CP.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S37-F2-Q1",
+      "S37-F2-Q2",
+      "S37-F2-Q3",
+      "S37-F2-Q4",
+      "S37-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 38,
+   "set_id": "S38",
+   "file": "sets/S38.json",
+   "standard": "HSS-CP.A.4",
+   "title": "Use two-way tables to find conditional probabilities and judge independence",
+   "domain": "Conditional Probability and the Rules of Probability",
+   "strand": "core",
+   "target_skill": "Use a two-way table as a sample space to approximate conditional probabilities and decide whether two events are independent",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Use two-way tables to find conditional probabilities and judge independence",
+     "standard": "HSS-CP.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S38-M-Q1",
+      "S38-M-Q2",
+      "S38-M-Q3",
+      "S38-M-Q4",
+      "S38-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Compute conditional relative frequencies",
+     "standard": "HSS-ID.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S38-B1-Q1",
+      "S38-B1-Q2",
+      "S38-B1-Q3",
+      "S38-B1-Q4",
+      "S38-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Compare P(A given B) with P(A)",
+     "standard": "HSS-CP.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S38-B2-Q1",
+      "S38-B2-Q2",
+      "S38-B2-Q3",
+      "S38-B2-Q4",
+      "S38-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use larger two-way tables",
+     "standard": "HSS-CP.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S38-F1-Q1",
+      "S38-F1-Q2",
+      "S38-F1-Q3",
+      "S38-F1-Q4",
+      "S38-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Explain table results in everyday language",
+     "standard": "HSS-CP.A.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S38-F2-Q1",
+      "S38-F2-Q2",
+      "S38-F2-Q3",
+      "S38-F2-Q4",
+      "S38-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 39,
+   "set_id": "S39",
+   "file": "sets/S39.json",
+   "standard": "HSS-CP.A.5",
+   "title": "Conditional probability and independence in everyday language",
+   "domain": "Conditional Probability and the Rules of Probability",
+   "strand": "core",
+   "target_skill": "Recognize and explain conditional probability and independence in everyday language and everyday situations",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Conditional probability and independence in everyday language",
+     "standard": "HSS-CP.A.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S39-M-Q1",
+      "S39-M-Q2",
+      "S39-M-Q3",
+      "S39-M-Q4",
+      "S39-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Compute and read conditional probabilities",
+     "standard": "HSS-CP.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S39-B1-Q1",
+      "S39-B1-Q2",
+      "S39-B1-Q3",
+      "S39-B1-Q4",
+      "S39-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Read conditional rates in a table",
+     "standard": "HSS-CP.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S39-B2-Q1",
+      "S39-B2-Q2",
+      "S39-B2-Q3",
+      "S39-B2-Q4",
+      "S39-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Translate statements and compute",
+     "standard": "HSS-CP.A.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S39-F1-Q1",
+      "S39-F1-Q2",
+      "S39-F1-Q3",
+      "S39-F1-Q4",
+      "S39-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Find a conditional probability as a fraction of outcomes",
+     "standard": "HSS-CP.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S39-F2-Q1",
+      "S39-F2-Q2",
+      "S39-F2-Q3",
+      "S39-F2-Q4",
+      "S39-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 40,
+   "set_id": "S40",
+   "file": "sets/S40.json",
+   "standard": "HSS-CP.B.6",
+   "title": "Find conditional probability as a fraction of outcomes",
+   "domain": "Conditional Probability and the Rules of Probability",
+   "strand": "core",
+   "target_skill": "Find P(A given B) as the fraction of B's outcomes that also belong to A, and interpret the answer in terms of the model",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Find conditional probability as a fraction of outcomes",
+     "standard": "HSS-CP.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S40-M-Q1",
+      "S40-M-Q2",
+      "S40-M-Q3",
+      "S40-M-Q4",
+      "S40-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Count outcomes in events",
+     "standard": "HSS-CP.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S40-B1-Q1",
+      "S40-B1-Q2",
+      "S40-B1-Q3",
+      "S40-B1-Q4",
+      "S40-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Use the definition of conditional probability",
+     "standard": "HSS-CP.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S40-B2-Q1",
+      "S40-B2-Q2",
+      "S40-B2-Q3",
+      "S40-B2-Q4",
+      "S40-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Condition on \"at least one\"",
+     "standard": "HSS-CP.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S40-F1-Q1",
+      "S40-F1-Q2",
+      "S40-F1-Q3",
+      "S40-F1-Q4",
+      "S40-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Multiply along a chain of conditions",
+     "standard": "HSS-CP.B.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S40-F2-Q1",
+      "S40-F2-Q2",
+      "S40-F2-Q3",
+      "S40-F2-Q4",
+      "S40-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 41,
+   "set_id": "S41",
+   "file": "sets/S41.json",
+   "standard": "HSS-CP.B.7",
+   "title": "Apply the Addition Rule",
+   "domain": "Conditional Probability and the Rules of Probability",
+   "strand": "core",
+   "target_skill": "Apply the Addition Rule, P(A or B) = P(A) + P(B) - P(A and B), and interpret the answer in terms of the model",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Apply the Addition Rule",
+     "standard": "HSS-CP.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S41-M-Q1",
+      "S41-M-Q2",
+      "S41-M-Q3",
+      "S41-M-Q4",
+      "S41-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Count a union without double counting",
+     "standard": "HSS-CP.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S41-B1-Q1",
+      "S41-B1-Q2",
+      "S41-B1-Q3",
+      "S41-B1-Q4",
+      "S41-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Add and subtract fractions",
+     "standard": "5.NF.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S41-B2-Q1",
+      "S41-B2-Q2",
+      "S41-B2-Q3",
+      "S41-B2-Q4",
+      "S41-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use the rule in reverse and with exclusive events",
+     "standard": "HSS-CP.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S41-F1-Q1",
+      "S41-F1-Q2",
+      "S41-F1-Q3",
+      "S41-F1-Q4",
+      "S41-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Combine the Addition Rule with complements",
+     "standard": "HSS-CP.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S41-F2-Q1",
+      "S41-F2-Q2",
+      "S41-F2-Q3",
+      "S41-F2-Q4",
+      "S41-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 42,
+   "set_id": "S42",
+   "file": "sets/S42.json",
+   "standard": "HSS-CP.B.8",
+   "title": "Apply the general Multiplication Rule (+)",
+   "domain": "Conditional Probability and the Rules of Probability",
+   "strand": "advanced",
+   "target_skill": "Apply the general Multiplication Rule in a uniform probability model, P(A and B) = P(A)·P(B given A) = P(B)·P(A given B), and interpret the answer",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Apply the general Multiplication Rule (+)",
+     "standard": "HSS-CP.B.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S42-M-Q1",
+      "S42-M-Q2",
+      "S42-M-Q3",
+      "S42-M-Q4",
+      "S42-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Rearrange the conditional probability formula",
+     "standard": "HSS-CP.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S42-B1-Q1",
+      "S42-B1-Q2",
+      "S42-B1-Q3",
+      "S42-B1-Q4",
+      "S42-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Multiply fractions",
+     "standard": "5.NF.B.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S42-B2-Q1",
+      "S42-B2-Q2",
+      "S42-B2-Q3",
+      "S42-B2-Q4",
+      "S42-B2-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 3",
+     "section_code": "B3",
+     "relation": "backward",
+     "skill": "Multiply for independent events",
+     "standard": "HSS-CP.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S42-B3-Q1",
+      "S42-B3-Q2",
+      "S42-B3-Q3",
+      "S42-B3-Q4",
+      "S42-B3-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Combine orders and longer chains",
+     "standard": "HSS-CP.B.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S42-F1-Q1",
+      "S42-F1-Q2",
+      "S42-F1-Q3",
+      "S42-F1-Q4",
+      "S42-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Count arrangements to find probabilities",
+     "standard": "HSS-CP.B.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S42-F2-Q1",
+      "S42-F2-Q2",
+      "S42-F2-Q3",
+      "S42-F2-Q4",
+      "S42-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 43,
+   "set_id": "S43",
+   "file": "sets/S43.json",
+   "standard": "HSS-CP.B.9",
+   "title": "Count ordered arrangements with permutations (+)",
+   "domain": "Conditional Probability and the Rules of Probability",
+   "strand": "advanced",
+   "target_skill": "Use permutations to count ordered arrangements of objects, as a step toward computing probabilities of compound events",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Count ordered arrangements with permutations (+)",
+     "standard": "HSS-CP.B.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S43-M-Q1",
+      "S43-M-Q2",
+      "S43-M-Q3",
+      "S43-M-Q4",
+      "S43-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Count outcomes with a tree or the counting principle",
+     "standard": "7.SP.C.8.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S43-B1-Q1",
+      "S43-B1-Q2",
+      "S43-B1-Q3",
+      "S43-B1-Q4",
+      "S43-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Multiply several whole numbers",
+     "standard": "5.NBT.B.5",
+     "nearest_related": false,
+     "question_ids": [
+      "S43-B2-Q1",
+      "S43-B2-Q2",
+      "S43-B2-Q3",
+      "S43-B2-Q4",
+      "S43-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Count arrangements with conditions",
+     "standard": "HSS-CP.B.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S43-F1-Q1",
+      "S43-F1-Q2",
+      "S43-F1-Q3",
+      "S43-F1-Q4",
+      "S43-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Count selections where order does not matter",
+     "standard": "HSS-CP.B.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S43-F2-Q1",
+      "S43-F2-Q2",
+      "S43-F2-Q3",
+      "S43-F2-Q4",
+      "S43-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 44,
+   "set_id": "S44",
+   "file": "sets/S44.json",
+   "standard": "HSS-CP.B.9",
+   "title": "Count unordered selections with combinations (+)",
+   "domain": "Conditional Probability and the Rules of Probability",
+   "strand": "advanced",
+   "target_skill": "Use combinations to count selections in which order does not matter",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Count unordered selections with combinations (+)",
+     "standard": "HSS-CP.B.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S44-M-Q1",
+      "S44-M-Q2",
+      "S44-M-Q3",
+      "S44-M-Q4",
+      "S44-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Count ordered arrangements",
+     "standard": "HSS-CP.B.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S44-B1-Q1",
+      "S44-B1-Q2",
+      "S44-B1-Q3",
+      "S44-B1-Q4",
+      "S44-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Represent and count outcomes of compound events",
+     "standard": "7.SP.C.8.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S44-B2-Q1",
+      "S44-B2-Q2",
+      "S44-B2-Q3",
+      "S44-B2-Q4",
+      "S44-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Count selections from separate groups",
+     "standard": "HSS-CP.B.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S44-F1-Q1",
+      "S44-F1-Q2",
+      "S44-F1-Q3",
+      "S44-F1-Q4",
+      "S44-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Turn counts into probabilities",
+     "standard": "HSS-CP.B.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S44-F2-Q1",
+      "S44-F2-Q2",
+      "S44-F2-Q3",
+      "S44-F2-Q4",
+      "S44-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 45,
+   "set_id": "S45",
+   "file": "sets/S45.json",
+   "standard": "HSS-CP.B.9",
+   "title": "Compute probabilities with permutations and combinations (+)",
+   "domain": "Conditional Probability and the Rules of Probability",
+   "strand": "advanced",
+   "target_skill": "Use permutations and combinations to compute probabilities of compound events and solve problems",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Compute probabilities with permutations and combinations (+)",
+     "standard": "HSS-CP.B.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S45-M-Q1",
+      "S45-M-Q2",
+      "S45-M-Q3",
+      "S45-M-Q4",
+      "S45-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Count with permutations and combinations",
+     "standard": "HSS-CP.B.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S45-B1-Q1",
+      "S45-B1-Q2",
+      "S45-B1-Q3",
+      "S45-B1-Q4",
+      "S45-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Multiply conditional probabilities along draws",
+     "standard": "HSS-CP.B.8",
+     "nearest_related": false,
+     "question_ids": [
+      "S45-B2-Q1",
+      "S45-B2-Q2",
+      "S45-B2-Q3",
+      "S45-B2-Q4",
+      "S45-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Use complements with counting",
+     "standard": "HSS-CP.B.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S45-F1-Q1",
+      "S45-F1-Q2",
+      "S45-F1-Q3",
+      "S45-F1-Q4",
+      "S45-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Define a random variable from a counting model",
+     "standard": "HSS-MD.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S45-F2-Q1",
+      "S45-F2-Q2",
+      "S45-F2-Q3",
+      "S45-F2-Q4",
+      "S45-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 46,
+   "set_id": "S46",
+   "file": "sets/S46.json",
+   "standard": "HSS-MD.A.1",
+   "title": "Define a random variable and graph its distribution (+)",
+   "domain": "Using Probability to Make Decisions (+)",
+   "strand": "advanced",
+   "target_skill": "Define a random variable for a quantity of interest by assigning a numerical value to each event in a sample space, and graph the corresponding probability distribution",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Define a random variable and graph its distribution (+)",
+     "standard": "HSS-MD.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S46-M-Q1",
+      "S46-M-Q2",
+      "S46-M-Q3",
+      "S46-M-Q4",
+      "S46-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Describe outcomes in a sample space",
+     "standard": "HSS-CP.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S46-B1-Q1",
+      "S46-B1-Q2",
+      "S46-B1-Q3",
+      "S46-B1-Q4",
+      "S46-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Read and draw a distribution display",
+     "standard": "HSS-ID.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S46-B2-Q1",
+      "S46-B2-Q2",
+      "S46-B2-Q3",
+      "S46-B2-Q4",
+      "S46-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find probabilities of ranges of values",
+     "standard": "HSS-MD.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S46-F1-Q1",
+      "S46-F1-Q2",
+      "S46-F1-Q3",
+      "S46-F1-Q4",
+      "S46-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Compute the expected value of a random variable",
+     "standard": "HSS-MD.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S46-F2-Q1",
+      "S46-F2-Q2",
+      "S46-F2-Q3",
+      "S46-F2-Q4",
+      "S46-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 47,
+   "set_id": "S47",
+   "file": "sets/S47.json",
+   "standard": "HSS-MD.A.2",
+   "title": "Calculate and interpret expected value (+)",
+   "domain": "Using Probability to Make Decisions (+)",
+   "strand": "advanced",
+   "target_skill": "Calculate the expected value of a random variable and interpret it as the mean of its probability distribution",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Calculate and interpret expected value (+)",
+     "standard": "HSS-MD.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S47-M-Q1",
+      "S47-M-Q2",
+      "S47-M-Q3",
+      "S47-M-Q4",
+      "S47-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Compute a mean",
+     "standard": "6.SP.B.5.c",
+     "nearest_related": false,
+     "question_ids": [
+      "S47-B1-Q1",
+      "S47-B1-Q2",
+      "S47-B1-Q3",
+      "S47-B1-Q4",
+      "S47-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Read a probability distribution",
+     "standard": "HSS-MD.A.1",
+     "nearest_related": false,
+     "question_ids": [
+      "S47-B2-Q1",
+      "S47-B2-Q2",
+      "S47-B2-Q3",
+      "S47-B2-Q4",
+      "S47-B2-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 3",
+     "section_code": "B3",
+     "relation": "backward",
+     "skill": "Multiply and add decimals",
+     "standard": "6.NS.B.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S47-B3-Q1",
+      "S47-B3-Q2",
+      "S47-B3-Q3",
+      "S47-B3-Q4",
+      "S47-B3-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Expected value with gains and losses",
+     "standard": "HSS-MD.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S47-F1-Q1",
+      "S47-F1-Q2",
+      "S47-F1-Q3",
+      "S47-F1-Q4",
+      "S47-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Find expected values of theoretical distributions",
+     "standard": "HSS-MD.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S47-F2-Q1",
+      "S47-F2-Q2",
+      "S47-F2-Q3",
+      "S47-F2-Q4",
+      "S47-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 48,
+   "set_id": "S48",
+   "file": "sets/S48.json",
+   "standard": "HSS-MD.A.3",
+   "title": "Develop a theoretical probability distribution (+)",
+   "domain": "Using Probability to Make Decisions (+)",
+   "strand": "advanced",
+   "target_skill": "Develop a probability distribution for a random variable whose probabilities can be calculated theoretically, and find its expected value",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Develop a theoretical probability distribution (+)",
+     "standard": "HSS-MD.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S48-M-Q1",
+      "S48-M-Q2",
+      "S48-M-Q3",
+      "S48-M-Q4",
+      "S48-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Count arrangements of successes",
+     "standard": "HSS-CP.B.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S48-B1-Q1",
+      "S48-B1-Q2",
+      "S48-B1-Q3",
+      "S48-B1-Q4",
+      "S48-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Multiply probabilities of independent trials",
+     "standard": "HSS-CP.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S48-B2-Q1",
+      "S48-B2-Q2",
+      "S48-B2-Q3",
+      "S48-B2-Q4",
+      "S48-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Build the whole theoretical distribution",
+     "standard": "HSS-MD.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S48-F1-Q1",
+      "S48-F1-Q2",
+      "S48-F1-Q3",
+      "S48-F1-Q4",
+      "S48-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Compare a theoretical distribution with data",
+     "standard": "HSS-MD.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S48-F2-Q1",
+      "S48-F2-Q2",
+      "S48-F2-Q3",
+      "S48-F2-Q4",
+      "S48-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 49,
+   "set_id": "S49",
+   "file": "sets/S49.json",
+   "standard": "HSS-MD.A.4",
+   "title": "Develop an empirical probability distribution (+)",
+   "domain": "Using Probability to Make Decisions (+)",
+   "strand": "advanced",
+   "target_skill": "Develop a probability distribution for a random variable whose probabilities are assigned empirically from data, and find its expected value",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Develop an empirical probability distribution (+)",
+     "standard": "HSS-MD.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S49-M-Q1",
+      "S49-M-Q2",
+      "S49-M-Q3",
+      "S49-M-Q4",
+      "S49-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find relative frequencies",
+     "standard": "7.SP.C.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S49-B1-Q1",
+      "S49-B1-Q2",
+      "S49-B1-Q3",
+      "S49-B1-Q4",
+      "S49-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Compute an expected value",
+     "standard": "HSS-MD.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S49-B2-Q1",
+      "S49-B2-Q2",
+      "S49-B2-Q3",
+      "S49-B2-Q4",
+      "S49-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Compare empirical and theoretical results",
+     "standard": "HSS-MD.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S49-F1-Q1",
+      "S49-F1-Q2",
+      "S49-F1-Q3",
+      "S49-F1-Q4",
+      "S49-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Find the expected payoff of a game of chance",
+     "standard": "HSS-MD.B.5.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S49-F2-Q1",
+      "S49-F2-Q2",
+      "S49-F2-Q3",
+      "S49-F2-Q4",
+      "S49-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 50,
+   "set_id": "S50",
+   "file": "sets/S50.json",
+   "standard": "HSS-MD.B.5.a",
+   "title": "Weigh the payoffs of a game of chance (+)",
+   "domain": "Using Probability to Make Decisions (+)",
+   "strand": "advanced",
+   "target_skill": "Find the expected payoff for a game of chance (lotteries, raffles, spinners, dice games) and interpret it",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Weigh the payoffs of a game of chance (+)",
+     "standard": "HSS-MD.B.5.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S50-M-Q1",
+      "S50-M-Q2",
+      "S50-M-Q3",
+      "S50-M-Q4",
+      "S50-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Compute an expected value",
+     "standard": "HSS-MD.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S50-B1-Q1",
+      "S50-B1-Q2",
+      "S50-B1-Q3",
+      "S50-B1-Q4",
+      "S50-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Add and subtract signed numbers",
+     "standard": "7.NS.A.3",
+     "nearest_related": false,
+     "question_ids": [
+      "S50-B2-Q1",
+      "S50-B2-Q2",
+      "S50-B2-Q3",
+      "S50-B2-Q4",
+      "S50-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Set a price that makes a game fair",
+     "standard": "HSS-MD.B.5.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S50-F1-Q1",
+      "S50-F1-Q2",
+      "S50-F1-Q3",
+      "S50-F1-Q4",
+      "S50-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Compare decisions by expected value",
+     "standard": "HSS-MD.B.5.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S50-F2-Q1",
+      "S50-F2-Q2",
+      "S50-F2-Q3",
+      "S50-F2-Q4",
+      "S50-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 51,
+   "set_id": "S51",
+   "file": "sets/S51.json",
+   "standard": "HSS-MD.B.5.b",
+   "title": "Evaluate and compare strategies by expected value (+)",
+   "domain": "Using Probability to Make Decisions (+)",
+   "strand": "advanced",
+   "target_skill": "Evaluate and compare strategies on the basis of expected values (insurance plans, warranties, investments)",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Evaluate and compare strategies by expected value (+)",
+     "standard": "HSS-MD.B.5.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S51-M-Q1",
+      "S51-M-Q2",
+      "S51-M-Q3",
+      "S51-M-Q4",
+      "S51-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Find the expected payoff of one choice",
+     "standard": "HSS-MD.B.5.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S51-B1-Q1",
+      "S51-B1-Q2",
+      "S51-B1-Q3",
+      "S51-B1-Q4",
+      "S51-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Read a distribution and its mean",
+     "standard": "HSS-MD.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S51-B2-Q1",
+      "S51-B2-Q2",
+      "S51-B2-Q3",
+      "S51-B2-Q4",
+      "S51-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Find break-even probabilities",
+     "standard": "HSS-MD.B.5.b",
+     "nearest_related": false,
+     "question_ids": [
+      "S51-F1-Q1",
+      "S51-F1-Q2",
+      "S51-F1-Q3",
+      "S51-F1-Q4",
+      "S51-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Make fair decisions with probability",
+     "standard": "HSS-MD.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S51-F2-Q1",
+      "S51-F2-Q2",
+      "S51-F2-Q3",
+      "S51-F2-Q4",
+      "S51-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 52,
+   "set_id": "S52",
+   "file": "sets/S52.json",
+   "standard": "HSS-MD.B.6",
+   "title": "Use probabilities to make fair decisions (+)",
+   "domain": "Using Probability to Make Decisions (+)",
+   "strand": "advanced",
+   "target_skill": "Use probabilities to make fair decisions, for example drawing by lots or using a random number generator",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Use probabilities to make fair decisions (+)",
+     "standard": "HSS-MD.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S52-M-Q1",
+      "S52-M-Q2",
+      "S52-M-Q3",
+      "S52-M-Q4",
+      "S52-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Simulate with random digits",
+     "standard": "HSS-IC.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S52-B1-Q1",
+      "S52-B1-Q2",
+      "S52-B1-Q3",
+      "S52-B1-Q4",
+      "S52-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Find probabilities in a uniform model",
+     "standard": "7.SP.C.7.a",
+     "nearest_related": false,
+     "question_ids": [
+      "S52-B2-Q1",
+      "S52-B2-Q2",
+      "S52-B2-Q3",
+      "S52-B2-Q4",
+      "S52-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Design fair methods for awkward numbers",
+     "standard": "HSS-MD.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S52-F1-Q1",
+      "S52-F1-Q2",
+      "S52-F1-Q3",
+      "S52-F1-Q4",
+      "S52-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Analyze a decision with a medical test",
+     "standard": "HSS-MD.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S52-F2-Q1",
+      "S52-F2-Q2",
+      "S52-F2-Q3",
+      "S52-F2-Q4",
+      "S52-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 53,
+   "set_id": "S53",
+   "file": "sets/S53.json",
+   "standard": "HSS-MD.B.7",
+   "title": "Analyze decisions about medical testing (+)",
+   "domain": "Using Probability to Make Decisions (+)",
+   "strand": "advanced",
+   "target_skill": "Use probability concepts to analyze decisions, such as medical testing: find and interpret the probability of disease given a positive result",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Analyze decisions about medical testing (+)",
+     "standard": "HSS-MD.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S53-M-Q1",
+      "S53-M-Q2",
+      "S53-M-Q3",
+      "S53-M-Q4",
+      "S53-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Read a two-way table as a sample space",
+     "standard": "HSS-CP.A.4",
+     "nearest_related": false,
+     "question_ids": [
+      "S53-B1-Q1",
+      "S53-B1-Q2",
+      "S53-B1-Q3",
+      "S53-B1-Q4",
+      "S53-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Find a conditional probability as a fraction of outcomes",
+     "standard": "HSS-CP.B.6",
+     "nearest_related": false,
+     "question_ids": [
+      "S53-B2-Q1",
+      "S53-B2-Q2",
+      "S53-B2-Q3",
+      "S53-B2-Q4",
+      "S53-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "See how prevalence changes the answer",
+     "standard": "HSS-MD.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S53-F1-Q1",
+      "S53-F1-Q2",
+      "S53-F1-Q3",
+      "S53-F1-Q4",
+      "S53-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Analyze strategies in games and quality control",
+     "standard": "HSS-MD.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S53-F2-Q1",
+      "S53-F2-Q2",
+      "S53-F2-Q3",
+      "S53-F2-Q4",
+      "S53-F2-Q5"
+     ]
+    }
+   ]
+  },
+  {
+   "set": 54,
+   "set_id": "S54",
+   "file": "sets/S54.json",
+   "standard": "HSS-MD.B.7",
+   "title": "Analyze strategies and decisions with probability (+)",
+   "domain": "Using Probability to Make Decisions (+)",
+   "strand": "advanced",
+   "target_skill": "Use probability concepts to analyze decisions and strategies, such as product testing, test-taking and when to take a risk in a game",
+   "sections": [
+    {
+     "section": "MAIN",
+     "section_code": "M",
+     "relation": "main",
+     "skill": "Analyze strategies and decisions with probability (+)",
+     "standard": "HSS-MD.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S54-M-Q1",
+      "S54-M-Q2",
+      "S54-M-Q3",
+      "S54-M-Q4",
+      "S54-M-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 1",
+     "section_code": "B1",
+     "relation": "backward",
+     "skill": "Compare expected values of choices",
+     "standard": "HSS-MD.A.2",
+     "nearest_related": false,
+     "question_ids": [
+      "S54-B1-Q1",
+      "S54-B1-Q2",
+      "S54-B1-Q3",
+      "S54-B1-Q4",
+      "S54-B1-Q5"
+     ]
+    },
+    {
+     "section": "BACKWARD 2",
+     "section_code": "B2",
+     "relation": "backward",
+     "skill": "Count selections to find probabilities",
+     "standard": "HSS-CP.B.9",
+     "nearest_related": false,
+     "question_ids": [
+      "S54-B2-Q1",
+      "S54-B2-Q2",
+      "S54-B2-Q3",
+      "S54-B2-Q4",
+      "S54-B2-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 1",
+     "section_code": "F1",
+     "relation": "forward1",
+     "skill": "Weigh probabilities against consequences",
+     "standard": "HSS-MD.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S54-F1-Q1",
+      "S54-F1-Q2",
+      "S54-F1-Q3",
+      "S54-F1-Q4",
+      "S54-F1-Q5"
+     ]
+    },
+    {
+     "section": "FORWARD 2",
+     "section_code": "F2",
+     "relation": "forward2",
+     "skill": "Combine several probability tools in one decision",
+     "standard": "HSS-MD.B.7",
+     "nearest_related": false,
+     "question_ids": [
+      "S54-F2-Q1",
+      "S54-F2-Q2",
+      "S54-F2-Q3",
+      "S54-F2-Q4",
+      "S54-F2-Q5"
+     ]
+    }
+   ]
+  }
+ ]
+}

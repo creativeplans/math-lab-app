@@ -1,97 +1,68 @@
-"""Manual review record for Algebra II (1.0.0, 1.1.0 and 1.2.0), printed into VALIDATION.md by validate.py.
+"""Manual review record for Probability & Statistics 1.0.0, printed into VALIDATION.md by validate.py.
 
-Everything here was done by reading, drawing, or computing by the author of this release. It is NOT an automatic check,
+Everything here was done by reading, drawing or computing by the author of this release. It is NOT an automatic check,
 and no second person has reviewed it.
 """
 
 READ_THROUGH = (
-    'All 2525 questions were listed in one compact file (question text, choices with the keyed letter, key) after the build, '
-    'and the author re-solved every one by hand or with a separate calculator script, in set order S1 to S84. Numeric '
-    'answers that need technology (logarithms, trigonometric inverses, compound interest, root approximations) were '
-    'recomputed with Python written separately from the data modules. Version 1.1.0: the 108 rewritten multiple-choice '
-    'items were solved again in their final form; for each, the keyed choice was confirmed correct and every other choice '
-    'was confirmed wrong for the reason named in its grading note (computed values were recomputed in Python). '
-    'Version 1.2.0: the 910 revised and 30 new questions were solved by the author while rewriting them (computed values, '
-    'such as 95/590 ≈ 0.161, 4.318, 14.21 and 3.4, recomputed in Python); every question named in the review\'s '
-    'correction report was re-read in its final form. There was no separate second read-through of all 2555 questions in '
-    '1.2.0. Every short-answer key was run through the game\'s own answer checker (check 21).'
+    'After the build, all 1435 questions were listed in one compact file (question text, choices with the keyed letter, key, '
+    'grading note) and the author re-solved every one in set order S1 to S54: computed answers by hand or with Python written '
+    'separately from the data modules, every multiple-choice option checked (the keyed choice correct, each other choice wrong '
+    'for the reason its note gives), and every true/false statement checked against its note. Simulation keys were recounted '
+    'from the printed random digits. Datasets were summarized again (quartiles by the stated rule, population or sample '
+    'standard deviation as stated, least-squares coefficients and r from exact fractions). Every short-answer key was run '
+    'through the game\'s own answer checker (check 21).'
 )
 
 # Errors found while writing or in the read-through, all fixed before release.
 FIXES = [
-    ('S12-F1-Q1', 'Key gave too few deposits; recomputed: 68 deposits (67 give $19,838.70, 68 give $20,187.89).'),
-    ('S12-F2-Q2', 'Comparison values recomputed (16,875.11 and 18,725.12) and the month corrected.'),
-    ('S18-F2-Q5', 'Stated y-intercept (-4) contradicted the end behavior; changed to 4 so 2(x + 2)(x - 1)² fits all conditions.'),
-    ('S21-F1-Q4', 'Keyed option was +10x⁴; the correct term is -10x⁴. Options reordered so the correct one is keyed.'),
-    ('S22-F1-Q1', 'Key a = -1 was wrong for the original dividend; dividend changed to x³ + ax² + 2x + 4 (a = -2, remainder 5) and re-checked.'),
-    ('S26-F1-Q5', 'Grading note contained an abandoned calculation; replaced with the correct equation x² - 2.8x - 4.8 = 0.'),
-    ('S45-F2-Q4', 'Keyed option said the rates were equal; h has rate 20 and k has rate 10, so "a greater rate for h" is keyed.'),
-    ('S45-B2-Q4', 'A distractor (24/72) was equal to the key (1/3); replaced with 72/24.'),
-    ('S48-F2-Q2', 'Profit interval key used rounded endpoints inconsistently; restated with exact endpoints (9 ± √21)/2.'),
-    ('S60-F1-Q4/Q5', 'Unfinished note and an unclear stem rewritten.'),
-    ('S64-B2-Q2', 'Key described an unworkable digit scheme; stem now uses two-digit numbers 00-99 (00-24 = red).'),
-    ('S74-F1-Q3', 'Note contained a wrong example; replaced with y = x/(x² + 1).'),
-    ('S75-F2-Q5', 'Key -5 was wrong; (x + 3)/(x + 1) = 2 gives x = 1, which is allowed.'),
-    ('71 branch and MAIN items', 'Stems that relied on another question ("this branch", "the same model", "the depth table", '
-                                 '"the diet experiment" and similar) were rewritten to restate their own givens (validation check 16 '
-                                 'and a wider phrase search; examples S7-F1-Q5, S12-F2-Q2, S43-B2-Q1, S61-M-Q2, S66-F2-Q1, S78-B2-Q1).'),
-    ('127 true/false items', 'The first draft had 334 True and 90 False keys. 127 true statements were rewritten as false '
-                             'statements, each with a grading note that gives the correct fact (now 207 True, 217 False).'),
-    ('S74-B1-Q5', 'The game importer (check mode) rejected the key 2x/((x - 2)(x + 2)) under "Form required: factored"; '
-                  'the item now asks to factor the denominator x² - 4.'),
-    ('S42-F1-Q2 (1.1.0)', 'The 1.0.0 drawing item asked for a cubic with zeros -1 and 3 only, a positive y-intercept, falling to '
-                          'the right and touching the x-axis at 3; no cubic has all of these. Found while redesigning it as '
-                          'multiple choice; the condition is now a negative y-intercept (keyed graph y = -(x + 1)(x - 3)²/3).'),
-    ('39 proof and explanation choices (1.1.0)', 'In the first multiple-choice draft the correct argument was the longest choice '
-                          'in 39 of 53 rewritten items. Distractors were rewritten as fully worded flawed arguments; now 3 of 53 '
-                          'have the correct choice longest, each by at most 2 characters.'),
-    ('S2-B1-Q1/Q2/Q5, S13-B2-Q2 (1.2.0)', 'The game checker rejected a correct answer written in the other order when the key began '
-                          'with a negative constant (key -4 + 7x rejected 7x - 4). Keys are now in standard order (7x - 4), '
-                          'which the checker accepts in either order; check 21 now tests reversed term order on every key.'),
-    ('Radical, logarithmic and decimal-coefficient expression keys (1.2.0)', 'The checker compared keys such as 3 - √x, '
-                          '(A/P)^(1/t) - 1 and 20 - 1.95t only as text, so an equivalent rewrite (√x written as sqrt(x), terms '
-                          'reordered) was marked wrong. These items are now multiple choice or ask for numeric parameters.'),
-    ('S16-M-Q1/Q2/Q3 (1.2.0)', 'A numeric answer line (p(2) = 0) next to a factored line failed, because the checker applies '
-                          '"factor" to every line of a question. The check value now appears in the question.'),
-    ('S25-B2-Q1 (1.2.0)', 'Two answers shared one answer line; now one line each.'),
-    ('37 unchanged multiple-choice items (1.2.0)', 'Adding new multiple-choice items moved the letters of 37 unchanged 1.1.0 items. '
-                          'Their 1.1.0 letters were restored, and every current letter is now frozen in choice_plan.json.'),
-    ('146 multiple-choice items (1.2.0)', 'The correct choice was much longer than every other choice in 146 items (and the '
-                          'uniquely longest in 40% of text items). Distractors were rewritten with specific errors; check 23 '
-                          'now finds no strong length cue, and the correct choice is the uniquely longest in 33% (25% is chance).'),
+    ('S2 dataset PAGES', 'Two bins tied for the tallest bar, so "which bin has the most values" had two answers; 245 changed to 255.'),
+    ('S1-F2-Q5, S2-F2-Q3', 'True/false notes gave a wrong example (five-number summaries; histogram counts); corrected and re-checked.'),
+    ('S10 histograms', 'The flat ("uniform") histogram summed to 42, not the stated 40; counts changed to 6, 6, 6, 5, 6, 6, 5.'),
+    ('S9-F2-Q2', 'The stem contained an unfinished instruction ("Use these: ..."); rewritten with the table values stated.'),
+    ('S23-M-Q4, S23-F1-Q4', 'Line 2 of the digit table contained no red spins and no line had 7 or more heads, which made the '
+                            'keys 0; the questions now use line 5 and "3 or fewer heads" (keys 2 and 4).'),
+    ('S23-F1-Q1', 'Two choices were correct (00-34 and "01-35 with 00 failure"); choices rewritten so exactly one assignment has '
+                  'probability 0.35.'),
+    ('S49-F1-Q2', 'The die counts gave an empirical mean of 209/60, not the keyed 3.5; counts changed to 7, 13, 9, 11, 14, 6 '
+                  '(210/60 = 3.5).'),
+    ('S29-M-Q1', 'The data table printed the two group means, which were the answers; the mean column was removed.'),
+    ('S4-B3-Q1, S23-B1-Q1, S24-M-Q2, S6-F2-Q3', 'Grading notes referred to choices by position ("the second", "the last"), which '
+                                                'the letter shuffle changes; notes now name the choices by content.'),
+    ('S17-M-Q1/Q2', 'Notes mixed the letters of y = a + bx and y = mx + b; now give m and b with exact fractions.'),
+    ('S15-F2-Q2, S16-M-Q2, S16-F1-Q1, S3-B2-Q4/Q5', 'Residual and quartile questions did not state the convention on the page; '
+                                                     '"observed minus predicted" and "medians of the halves" added (check 24).'),
+    ('S29-M-Q2/Q4, S29-B2-Q2, S37-F2-Q5, S52-M-Q2', 'Stems relied on another question ("the 10 results", "the plants") or were '
+                                                    'unclear; each now restates its own givens.'),
+    ('S40-F2, S46-F2, S47-F2, S49-F2, S50-F2, S51-F2, S52-F2', 'FORWARD 2 questions repeated the next set\'s MAIN questions word for '
+                                                               'word; rewritten with new numbers and contexts.'),
+    ('S51-M-Q3/Q4, S54-M-Q3/Q4, S16-M-Q5', 'Repeated an earlier branch or another MAIN question in the same set; new numbers '
+                                           'and stems.'),
+    ('S47-B1-Q5, S54-F1-Q3', 'A true/false item duplicated the one before it; two choices were equivalent ("never guess" and '
+                             '"leave every question blank"). Both rewritten.'),
+    ('S2-M-Q4', 'The axis sentence added to histogram choices lowercased "°F"; the label is now kept as written.'),
+    ('47 multiple-choice items', 'The correct choice was much longer than every other choice; distractors were rewritten '
+                                        'with specific errors (check 23 finds no strong length cue).'),
+    ('Notes of 8 explanation items', 'Notes of "why" and design items did not say what is wrong with the other choices '
+                                      '(checks 5 and 10); added.'),
 ]
 
 FIGURES = (
-    'All 106 question pages that carry a figure (78 coordinate graphs or grids, 15 histograms, 13 tables) were rendered from the '
-    'question PDF and inspected by eye: curves against their equations (intercepts, asymptotes, extrema), dashed asymptotes and '
-    'midlines, open circles at holes, labels, and axis numbers. Fixes after inspection: crowded axis numbers on S43-M-Q3/Q5, '
-    'S46-M-Q4/Q5, S46-F1-Q1, S51-M-Q4, S53-M-Q2/Q5, S74-M-Q3/Q5, S78-M-Q4 (label spacing); axis titles overlapping 4- and 5-digit '
-    'numbers on S28-M-Q1/Q4 (rescaled: rabbits 5·2ᵗ; car value in thousands of dollars); S28-M-Q5 x spacing; long histogram axis '
-    'title on the re-randomization figures; a mid-factor line break in S18-M-Q4. The changed pages were rendered again and inspected. '
-    'Version 1.1.0: all 55 four-graph figures (graphing items now multiple choice) were rendered and inspected: each panel '
-    'against its own equation (zeros, multiplicity, asymptotes, holes, open and closed endpoints, period, midline, title), '
-    'the keyed panel against the question, and the labels A-D. Layout fixes after inspection: panel letters moved out of the '
-    'grid, axis numbers spaced out, choices on one line, axis names removed from the titled S28 panels. Version 1.2.0: the five '
-    'step-function figures of S85-M (pages 1754-1758) were rendered and inspected: step heights, step widths, open and closed '
-    'endpoints of every panel, the keyed panel against the question, and the ⌊ ⌋ and ⌈ ⌉ symbols in the text. Figures '
-    'of other changed questions were reused unchanged.'
+    'All 190 question pages that carry a figure (dot plots, histograms, box plots, scatter and residual plots, tables and '
+    'random-digit tables, and the four-panel choice figures) were rendered from the question PDF and inspected by eye: data '
+    'against the stem (dot counts, bin counts, five-number summaries, plotted points, fitted lines), keyed panel against the '
+    'key, panel labels A-D, axis numbers and titles. Fixes after inspection: histogram choice panels were too flat to read '
+    '(compact panels with the axis titles moved into the question text; S2-M-Q2/Q4, S10-M-Q1, S46-M-Q3); random-digit tables '
+    'were printed in small type (now two side-by-side halves of four lines); box-plot titles overlapped the first box; two '
+    'choice rows were split into two columns (S24-F1-Q2, S38-M-Q4). Changed pages were rendered again and inspected.'
 )
-
-PROOFS = (
-    'In 1.0.0 the 53 shown-work questions were checked step by step against their rubrics. Since 1.1.0 they are multiple '
-    'choice: derivation steps (S11), the Fundamental Theorem of Algebra arguments (S6), the Remainder Theorem proof '
-    '(S15-F2-Q1), identity proofs (S19, S40), polynomial divisions (S22), unit-circle explanations (S37, S82), composition '
-    'verifications (S77), special-triangle derivations (S81), and the even/odd proofs (S57-F1). For each, the keyed argument was '
-    'read step by step (it uses no result that depends on the claim), and each other choice was checked to contain the flaw '
-    'its note names (an example check, an invalid step, circular reasoning, a false fact).'
-)
-
 
 SIMULATIONS = (
-    'The histograms of S64 (model consistency), S67 (sample proportions), S68 (resampled means) and S69 (re-randomized '
-    'differences) were produced by the seeded script algebra2/src/simulations.py; the counts in the figures and keys were copied '
-    'from its output and re-read. Other simulation summaries stated in text (for example "62 of 200 re-randomizations") are '
-    'supplied data chosen to be plausible; they were not produced by a simulation run.'
+    'Every simulation that students carry out uses the eight lines of random digits printed on the page (DATASETS.md, "S23 '
+    'random digits"; generated once and fixed), so each key is a count anyone can repeat. Simulation results described in a '
+    'question (for example the 100 simulated sets of 10 coin flips, or "differences of 3 or more occurred 4 times in 200 '
+    're-randomizations") are supplied data chosen to be close to the theoretical distribution; they were not produced by a '
+    'simulation run, and the questions never ask what a new random run would give.'
 )
 
 
@@ -100,7 +71,6 @@ def markdown(cases, recs):
     L = ['## Manual review (author)', '',
          '- **Read-through and re-solve of every question:** ' + READ_THROUGH,
          '- **Automatic re-solve (check 17), %d questions:** %s.' % (len(ids), ', '.join(ids)),
-         '- **Former shown-work items:** ' + PROOFS,
          '- **Figures:** ' + FIGURES,
          '- **Simulations:** ' + SIMULATIONS, '',
          '### Errors found and fixed before release', '', '| Question | Problem and fix |', '|---|---|']
