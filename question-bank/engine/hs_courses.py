@@ -47,8 +47,33 @@ GEOMETRY = [
 # The HSG standards marked (+). The Geometry collection teaches them in a separate ADVANCED EXTENSION strand
 # (enrichment, not core mastery). In every other collection they stay in Precalculus, as before.
 GEOMETRY_PLUS = ['HSG-SRT.D.9', 'HSG-SRT.D.10', 'HSG-SRT.D.11', 'HSG-C.A.4', 'HSG-GPE.A.3', 'HSG-GMD.A.2']
-STANDARDS = {'Algebra I': ALGEBRA_I, 'Geometry': GEOMETRY + GEOMETRY_PLUS}
-HOME = None  # the collection being built (set by build.load_grade); only 'Geometry' changes any placement
+# Algebra II course profile (the Algebra II collection; see algebra2/README.md for sources and decisions).
+# CORE: every standard of the Common Core traditional-pathway Algebra II course (CCSS Appendix A), including the (+)
+# standards that the pathway itself lists (N-CN.8, N-CN.9, A-APR.5, A-APR.7, S-MD.6, S-MD.7) and the codes that the
+# pathway shares with Algebra I (revisited with new function families; F-IF.8 is taken as its exponential part, 8b).
+ALGEBRA_II_CORE = [
+    'HSN-CN.A.1', 'HSN-CN.A.2', 'HSN-CN.C.7', 'HSN-CN.C.8', 'HSN-CN.C.9',
+    'HSA-SSE.A.1.a', 'HSA-SSE.A.1.b', 'HSA-SSE.A.2', 'HSA-SSE.B.4',
+    'HSA-APR.A.1', 'HSA-APR.B.2', 'HSA-APR.B.3', 'HSA-APR.C.4', 'HSA-APR.C.5', 'HSA-APR.D.6', 'HSA-APR.D.7',
+    'HSA-CED.A.1', 'HSA-CED.A.2', 'HSA-CED.A.3', 'HSA-CED.A.4', 'HSA-REI.A.2', 'HSA-REI.D.11',
+    'HSF-IF.B.4', 'HSF-IF.B.5', 'HSF-IF.B.6', 'HSF-IF.C.7.b', 'HSF-IF.C.7.c', 'HSF-IF.C.7.e', 'HSF-IF.C.8.b', 'HSF-IF.C.9',
+    'HSF-BF.A.1.b', 'HSF-BF.B.3', 'HSF-BF.B.4.a', 'HSF-LE.A.4',
+    'HSF-TF.A.1', 'HSF-TF.A.2', 'HSF-TF.B.5', 'HSF-TF.C.8',
+    'HSS-ID.A.4', 'HSS-IC.A.1', 'HSS-IC.A.2', 'HSS-IC.B.3', 'HSS-IC.B.4', 'HSS-IC.B.5', 'HSS-IC.B.6',
+    'HSS-MD.B.6', 'HSS-MD.B.7',
+]
+# ADVANCED EXTENSION: official (+) standards beyond the pathway baseline, chosen by this bank as natural continuations
+# of Algebra II work (a local decision, not an official assignment).
+ALGEBRA_II_ADVANCED = [
+    'HSN-CN.A.3', 'HSF-IF.C.7.d', 'HSF-BF.A.1.c', 'HSF-BF.B.4.b', 'HSF-BF.B.4.c', 'HSF-BF.B.4.d', 'HSF-BF.B.5',
+    'HSF-TF.A.3', 'HSF-TF.A.4', 'HSF-TF.B.6', 'HSF-TF.B.7',
+]
+# Every Common Core standard marked (+) that this bank uses outside Precalculus or Geometry's list.
+OFFICIAL_PLUS_EXTRA = {'HSN-CN.A.3', 'HSN-CN.B.4', 'HSN-CN.B.5', 'HSN-CN.B.6', 'HSS-MD.A.1', 'HSS-MD.A.2', 'HSS-MD.A.3',
+                       'HSS-MD.A.4', 'HSS-MD.B.5', 'HSS-MD.B.6', 'HSS-MD.B.7', 'HSS-CP.B.8', 'HSS-CP.B.9'}
+STANDARDS = {'Algebra I': ALGEBRA_I, 'Geometry': GEOMETRY + GEOMETRY_PLUS, 'Algebra II': ALGEBRA_II_CORE + ALGEBRA_II_ADVANCED}
+ADVANCED = {'Geometry': GEOMETRY_PLUS, 'Algebra II': ALGEBRA_II_ADVANCED}
+HOME = None  # the collection being built (set by build.load_grade); only 'Geometry' and 'Algebra II' change any placement
 
 # (+) standards, placed in Precalculus.
 PRECALCULUS = {
@@ -73,6 +98,8 @@ def course_of(code):
         return 'Algebra I'
     if HOME == 'Geometry' and code in GEOMETRY_PLUS:
         return 'Geometry'
+    if HOME == 'Algebra II' and code in STANDARDS['Algebra II']:
+        return 'Algebra II'
     if code in PRECALCULUS or code.startswith('HSN-VM.'):
         return 'Precalculus'
     if code.startswith('HSS-IC.') or code.startswith('HSS-CP.') or code.startswith('HSS-MD.') or code == 'HSS-ID.A.4':
@@ -88,8 +115,33 @@ def is_plus(code):
     return code in GEOMETRY_PLUS or code in PRECALCULUS
 
 
-def course_label(code, home):
+def official_plus(code):
+    """True for a Common Core standard marked (+)."""
+    return code in GEOMETRY_PLUS or code in PRECALCULUS or code in OFFICIAL_PLUS_EXTRA or code.startswith('HSN-VM.')
+
+
+def placement(code, role='main'):
+    """The course of a code as used in a section: 'main', 'backward' or 'forward'. Only the Algebra II collection
+    distinguishes roles: a code Appendix A shares with Algebra I is Algebra II work in MAIN and forward sections (it is
+    revisited with new function families) and an Algebra I prerequisite in a backward branch."""
+    if HOME == 'Algebra II' and role != 'backward' and code in STANDARDS['Algebra II']:
+        return 'Algebra II'
+    return course_of(code)
+
+
+def course_label(code, home, role='main'):
     """PDF/record label for a high-school standard in the collection of course `home`."""
+    if home == 'Algebra II':
+        c = placement(code, role)
+        if c == 'Algebra II':
+            if code in ALGEBRA_II_ADVANCED:
+                return 'High School — Algebra II, Advanced Extension (+)'
+            tags = (['(+) standard listed in the pathway'] if official_plus(code) else []) + \
+                   (['revisits an Algebra I standard'] if code in ALGEBRA_I else [])
+            return 'High School — Algebra II' + (', ' + '; '.join(tags) if tags else '')
+        if c == 'Algebra I':
+            return 'High School — Algebra I'
+        return 'High School — %s (course placement in this bank)' % c
     c = course_of(code)
     if home == 'Geometry' and code in GEOMETRY_PLUS:
         return 'High School — Geometry, Advanced Extension (+)'

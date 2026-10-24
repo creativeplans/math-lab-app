@@ -311,9 +311,10 @@ def describe(f):
     return k
 
 
-def course_of(std):
+def course_of(std, key=None):
     import hs_courses
-    return hs_courses.course_of(std)
+    role = 'backward' if key and key.startswith('BACKWARD') else ('forward' if key and key.startswith('FORWARD') else 'main')
+    return hs_courses.placement(std, role)
 
 
 COURSE_ID_FORMAT = (
@@ -369,14 +370,14 @@ def branch_meta(st, key, std, nearest):
         return dict(kind='backward', alignment=m['align'], rationale=m['why'],
                     source=('Grade %s' % std.split('.')[0] if not std.startswith('HS') else hs_courses.course_of(std)), **plus)
     return dict(kind='forward', progression=m['prog'], connection='nearest related' if nearest else 'direct',
-                new_demand=m['demand'], course=hs_courses.course_of(std),
+                new_demand=m['demand'], course=hs_courses.placement(std, 'forward'),
                 **(dict(builds_on=m['builds']) if m.get('builds') else {}), **plus)
 
 
 def hs_level(key, std=None):
     if qb.COURSE:
         import hs_courses
-        c = hs_courses.course_of(std)
+        c = course_of(std, key)
         return ('%s. Common Core groups high-school standards by category, not by course; this bank places this one in '
                 '%s, following the Common Core traditional pathway (Appendix A) except where engine/hs_courses.py says otherwise.' % (c, c))
     return ('High school (Common Core high-school standard; this bank places it at Grade %d as a %s forward step. '
@@ -453,7 +454,7 @@ def export(out_dir):
 
     index_sets = []
     nfig = 0
-    geo = bool(qb.COURSE and qb.COURSE.get('rules') == 'geometry')
+    geo = qb.profile_mode()
     snaps = {}
     branch_map = []
     for st in build.all_sets():
@@ -479,7 +480,7 @@ def export(out_dir):
                     domain=r['domain'], skill=name, nearest_related=bool(nearest),
                     **(dict(nearest_connection=nearest) if isinstance(nearest, str) else {}),
                     **(dict(standard_level=hs_level(key, std)) if std.startswith('HS') else {}),
-                    **(dict(standard_course=course_of(std)) if qb.COURSE and std.startswith('HS') else {}),
+                    **(dict(standard_course=course_of(std, key)) if qb.COURSE and std.startswith('HS') else {}),
                     type=r['type'],
                     response={'mc': 'select one', 'tf': 'select true or false', 'sa': 'write',
                               'plot': 'draw on the figure',
@@ -551,7 +552,7 @@ def export(out_dir):
                   % (build.GRADE, build.GRADE + 1, build.GRADE + 2, build.COLLECTION['id'],
                      build.GRADE + 1, build.GRADE + 2),
         revisions_file='revisions.json' if tracker.active else None,
-        relations=GEO_RELATIONS if geo else COURSE_RELATIONS if qb.COURSE else dict(main='the Grade %d skill the set is built around' % build.GRADE,
+        relations=(GEO_RELATIONS if qb.COURSE['name'] == 'Geometry' else build.PROFILE_RELATIONS) if geo else COURSE_RELATIONS if qb.COURSE else dict(main='the Grade %d skill the set is built around' % build.GRADE,
                        backward='a prerequisite skill to check when a student misses MAIN questions',
                        forward1='the directly connected Grade %d skill' % (build.GRADE + 1),
                        forward2='the next connected Grade %d skill' % (build.GRADE + 2),
@@ -737,8 +738,8 @@ what `grading_note` lists.
 '''.format(gname=build.name(), sets=index['set_count'], nq=index['question_count'], nfig=index['figure_count'],
            part=PDF_PART, ex=ex, cid=col['id'], ver=col['version'], revline=revline,
            levelrows=level_rows())
-    if qb.COURSE and qb.COURSE.get('rules') == 'geometry':
-        text += GEO_README
+    if qb.profile_mode():
+        text += GEO_README if qb.COURSE['name'] == 'Geometry' else build.PACKAGE_README_EXTRA
     with open(os.path.join(out_dir, 'README.md'), 'w', encoding='utf-8') as fh:
         fh.write(text)
 

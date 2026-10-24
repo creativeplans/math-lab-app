@@ -212,6 +212,9 @@ def run(name):
     build.load_grade(name)
     if qb.COURSE and qb.COURSE.get('rules') == 'geometry':
         return run_geometry(name)
+    if qb.profile_mode():  # later profile courses (Algebra II) write their report from their own src/coverage_report.py
+        import importlib
+        return importlib.import_module('coverage_report').run(name)
     if qb.COURSE:
         return run_course(name)
     cov = importlib.import_module('coverage_reqs')

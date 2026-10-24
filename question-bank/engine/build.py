@@ -30,6 +30,8 @@ from qb import std_info  # noqa: E402
 GRADE = None
 GRADE_DIR = None
 DOMAIN_ORDER = []
+PACKAGE_README_EXTRA = ''
+PROFILE_RELATIONS = None
 COLLECTION = {}  # id (namespace for question IDs, e.g. G5), version, date: from src/grade.py
 
 
@@ -58,6 +60,9 @@ def load_grade(name):
         COLLECTION.update(id='G%d' % GRADE, grade=GRADE, version=getattr(cfg, 'VERSION', '1.0.0'),
                           date=getattr(cfg, 'VERSION_DATE', None))
     qb.STRICT_BACKWARD = getattr(cfg, 'STRICT_BACKWARD', False)
+    global PACKAGE_README_EXTRA, PROFILE_RELATIONS
+    PACKAGE_README_EXTRA = getattr(cfg, 'PACKAGE_README_EXTRA', '')
+    PROFILE_RELATIONS = getattr(cfg, 'RELATIONS', None)
     R.SUPERSCRIPT = bool(course)
     A.KEY_DIR = os.path.join(GRADE_DIR, 'src', 'answers')
     DOMAIN_ORDER = [(dom, importlib.import_module(mod).SETS) for dom, mod in cfg.DOMAINS]
@@ -300,7 +305,7 @@ def build(out, mode='questions'):
                     correct_letter=rec['letter'], correct_answer=rec['answer'],
                     drawing_answer=rec.get('drawing'), required_method=rec.get('method'),
                     grading_note=rec['note']))
-                if qb.COURSE and qb.COURSE.get('rules') == 'geometry':
+                if qb.profile_mode():
                     records[-1].update(geometry_fields(st, key, std, nearest, pageno))
     assert pageno == total_pages, (pageno, total_pages)
     c.save()
@@ -337,7 +342,8 @@ def geometry_fields(st, key, std, nearest, pageno):
     return dict(strand='advanced extension (+)' if st.get('strand') == 'advanced' else 'core',
                 set_target=st.get('target'), target_skill=(st.get('target') if b is None else b['title']),
                 alignment_type=alignment_of(st, key),
-                course_level=(hs_courses.course_label(std, 'Geometry') if std.startswith('HS') else 'Grade %s' % std.split('.')[0]),
+                course_level=(hs_courses.course_label(std, qb.COURSE['name'], 'main' if b is None else key.split()[0].lower())
+                              if std.startswith('HS') else 'Grade %s' % std.split('.')[0]),
                 question_page=pageno, answer_key_page=pageno,
                 nearest_connection=(nearest if isinstance(nearest, str) else None))
 
@@ -366,7 +372,7 @@ GRADING_RULES = list(BASE_GRADING_RULES)  # plus a collection's EXTRA_GRADING_RU
 
 
 def geo_course():
-    return bool(qb.COURSE and qb.COURSE.get('rules') == 'geometry')
+    return qb.profile_mode()
 
 
 def figure_fields(qid, qd):

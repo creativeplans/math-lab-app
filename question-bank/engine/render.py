@@ -484,11 +484,19 @@ def fig_coord(c, f, x, y, w, h, s):
     if ymin < 0:
         arrow_head(c, ax0, oy - 4, 0, -1, 6)
     arrow_head(c, ax0, oy + gh + 4, 0, 1, 6)
+    if f.get('xticks'):  # custom x-axis labels {value: text} (for example multiples of π); replaces the numbers
+        c.setFillColor(MUTED)
+        for v, t in f['xticks'].items():
+            px, _ = P(v, 0)
+            c.setStrokeColor(AXIS)
+            c.setLineWidth(1.2)
+            c.line(px, ay0 - 3, px, ay0 + 3)
+            draw_label(c, t, px, ay0 - fs * 1.05, fs, color=MUTED)
     if f.get('nums', True):
         c.setFillColor(MUTED)
         v = xmin
         while v <= xmax + 1e-9:
-            if abs(v) > 1e-9 or xmin == 0:
+            if (abs(v) > 1e-9 or xmin == 0) and not f.get('xticks'):
                 if abs((v / xl) - round(v / xl)) < 1e-9:
                     px, _ = P(v, 0)
                     draw_label(c, fmt(v), px, ay0 - fs * 0.95, fs, color=MUTED)
@@ -514,11 +522,39 @@ def fig_coord(c, f, x, y, w, h, s):
         c.rotate(90)
         draw_label(c, f['ylabel'], 0, 0, fs * 1.1, FB)
         c.restoreState()
+    for ln in f.get('dlines', []):  # dashed reference lines: asymptotes, midlines, boundaries (drawn under the graph)
+        a, b = P(*ln[0]), P(*ln[1])
+        c.saveState()
+        c.setStrokeColor(HexColor('#5a6b7d'))
+        c.setLineWidth(1.6)
+        c.setDash(6, 4)
+        c.line(a[0], a[1], b[0], b[1])
+        c.restoreState()
+    for crv in f.get('curves', []):  # smooth graphs as one path each
+        pts = [P(*q) for q in crv]
+        path = c.beginPath()
+        path.moveTo(*pts[0])
+        for q in pts[1:]:
+            path.lineTo(*q)
+        c.setStrokeColor(POINT)
+        c.setLineWidth(2.2)
+        c.drawPath(path, fill=0, stroke=1)
     for ln in f.get('lines', []):
         a, b = P(*ln[0]), P(*ln[1])
         c.setStrokeColor(POINT)
         c.setLineWidth(2.2)
         c.line(a[0], a[1], b[0], b[1])
+    for p in f.get('opts', []):  # open circles: holes and excluded endpoints
+        px, py = P(p[0], p[1])
+        c.setFillColor(HexColor('#ffffff'))
+        c.setStrokeColor(POINT)
+        c.setLineWidth(1.8)
+        c.circle(px, py, 4.4, fill=1, stroke=1)
+        if len(p) > 2 and p[2]:
+            draw_label(c, p[2], px + 7, py + 9, fs * 1.25, FB, anchor='l', color=POINT)
+    for t in f.get('texts', []):  # (x, y, text): labels such as asymptote equations
+        tx, ty = P(t[0], t[1])
+        draw_label(c, t[2], tx, ty, fs * 1.05, anchor=t[3] if len(t) > 3 else 'l', color=AXIS)
     for p in f.get('pts', []):
         px, py = P(p[0], p[1])
         c.setFillColor(POINT)

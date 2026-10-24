@@ -70,7 +70,8 @@ def grade_num(code, key=None):
 def std_info(code, key=None):
     if COURSE and code.startswith('HS'):
         import hs_courses
-        return hs_courses.course_label(code, COURSE['name']), HS_DOMAINS[code[2:].split('.')[0]]
+        role = 'backward' if key and key.startswith('BACKWARD') else ('forward' if key and key.startswith('FORWARD') else 'main')
+        return hs_courses.course_label(code, COURSE['name'], role), HS_DOMAINS[code[2:].split('.')[0]]
     if code.startswith('HS'):
         dom = code[2:].split('.')[0]
         return 'High School (Grade %d in this bank)' % hs_place(key), HS_DOMAINS[dom]
@@ -92,10 +93,10 @@ def tf(stem, fig=None, **kw):
 
 def nearest_note(std=None, key=None):
     """Note for a nearest-related forward branch, naming the branch's own grade (from its standard and slot)."""
-    if COURSE and COURSE.get('rules') == 'geometry':
+    if profile_mode():
         import hs_courses
         return ('NEAREST RELATED: no standard directly continues this skill at this step. This branch uses the nearest '
-                'related %s standard.' % hs_courses.course_of(std))
+                'related %s standard.' % hs_courses.placement(std, 'forward'))
     if COURSE:
         import hs_courses
         return ('No standard in a later course directly continues this skill at this step. This branch uses the '
@@ -141,7 +142,7 @@ def S(std, title, main, back, f1, f2, num=None, target=None, strand=None, covers
     covers= the subskill IDs of the standard inventory that this set's MAIN covers (geometry/src/standards.py)."""
     assert len(main) == 5, (std, title)
     if COURSE:
-        if COURSE.get('rules') == 'geometry':
+        if profile_mode():
             _check_geometry_set(std, title, main, back, f1, f2, target, strand)
         else:
             _check_course_set(std, title, main, back, f1, f2)
@@ -219,6 +220,12 @@ def _check_text(q):
                 assert ' ' not in v[i:j], ('write exponents without spaces so they typeset as superscripts', v[i:j], v[:60])
 
 
+def profile_mode():
+    """True for a course built against a standards profile with strands, targets and branch metadata (Geometry,
+    Algebra II). rules='geometry' is the original name; rules='profile' is the same rule set for later courses."""
+    return bool(COURSE and COURSE.get('rules') in ('geometry', 'profile'))
+
+
 def _check_geometry_set(std, title, main, back, f1, f2, target, strand):
     """Geometry rules (see geometry/README.md).
     MAIN: a Geometry standard; strand 'advanced' exactly for (+) standards; a stated target skill.
@@ -231,18 +238,19 @@ def _check_geometry_set(std, title, main, back, f1, f2, target, strand):
     Every question has an explanation (note=)."""
     import hs_courses
     assert std in COURSE['standards'], (title, std)
-    assert target, ('every Geometry set states its target skill (target=)', title)
-    want = 'advanced' if std in hs_courses.GEOMETRY_PLUS else 'core'
+    assert target, ('every set states its target skill (target=)', title)
+    hname = COURSE['name']
+    want = 'advanced' if std in hs_courses.ADVANCED[hname] else 'core'
     assert strand == want, ('strand must be %s' % want, title, std)
-    home = hs_courses.RANK['Geometry']
+    home = hs_courses.RANK[hname]
     assert 1 <= len(back) <= 8, (title, len(back))
     for b in back:
         c, m = b['std'], b.get('meta', {})
         assert m.get('why') and m.get('align') in ('exact', 'supporting'), ('backward branch needs why= and align=', title, b['title'])
         assert not b['nearest'], (title, b['title'])
         if c.startswith('HS'):
-            if hs_courses.course_of(c) == 'Geometry':
-                assert c in MAIN_SEEN, ('a Geometry backward branch must use the MAIN standard of an earlier set', title, c)
+            if hs_courses.placement(c, 'backward') == hname:
+                assert c in MAIN_SEEN, ('a same-course backward branch must use the MAIN standard of an earlier set', title, c)
             else:
                 assert hs_courses.RANK[hs_courses.course_of(c)] < home, ('backward uses an earlier course', title, c)
         else:
@@ -251,10 +259,10 @@ def _check_geometry_set(std, title, main, back, f1, f2, target, strand):
     for key, f in (('FORWARD 1', f1), ('FORWARD 2', f2)):
         m = f.get('meta', {})
         assert m.get('prog') in PROGRESSIONS and m.get('demand'), ('forward branch needs prog= and demand=', title, key)
-        crs = hs_courses.course_of(f['std'])
+        crs = hs_courses.placement(f['std'], 'forward')
         r = hs_courses.RANK[crs]
-        assert r >= home, ('forward branches stay in Geometry or go to a later course', title, key, f['std'])
-        if crs == 'Geometry':
+        assert r >= home, ('forward branches stay in the course or go to a later course', title, key, f['std'])
+        if crs == hname:
             assert m['prog'] != 'later-course extension', (title, key)
             if f['std'] == std:
                 assert m['prog'] == 'same-course deepening', (title, key)
