@@ -39,7 +39,7 @@ SETS = [
           B('Multiply and subtract polynomials', 'HSA-APR.A.1', [
               sa('Expand x(50 - 0.5x).', 'Answer:', key='50x - 0.5x²', note='Any equivalent form.'),
               sa('Simplify (50x - 0.5x²) - (200 + 10x).', 'Answer:', key='-0.5x² + 40x - 200', note='Any equivalent form.'),
-              tf('-(200 + 10x) = -200 - 10x.', key=True, note='Distribute.'),
+              tf('-(200 + 10x) = -200 + 10x.', key=False, note='The minus sign applies to both terms: -200 - 10x.'),
               mc('(3x + 1) - (x - 4) equals', ['2x + 5', '2x - 3', '4x - 3', '2x + 3'], note='Subtract each term.'),
               sa('Expand 2(x² - 3x).', 'Answer:', key='2x² - 6x', note='Any equivalent form.'),
           ], align='supporting',
@@ -107,7 +107,7 @@ SETS = [
           B('Translate points in the plane', '8.G.A.3', [
               sa('Translate (0, 0) right 2 and up 1.', 'Answer:', key='(2, 1)', note='Any equivalent answer.'),
               sa('Translate (1, 1) left 2 and up 3.', 'Answer:', key='(-1, 4)', note='Any equivalent answer.'),
-              tf('Translating (0, 0) down 2 gives (0, -2).', key=True, note='Subtract from y.'),
+              tf('Translating (0, 0) down 2 gives (-2, 0).', key=False, note='Down 2 changes y: (0, -2).'),
               mc('(x, y) → (x - 2, y + 3) moves (0, 0) to', ['(-2, 3)', '(2, 3)', '(-2, -3)', '(3, -2)'], note='Apply the rule.'),
               sa('Which translation takes (0, 0) to (1, -2)?', 'Answer:', key='Right 1, down 2', note='Any equivalent answer.'),
           ], align='exact',
@@ -131,7 +131,7 @@ SETS = [
       f2=B('Read sinusoid parameters as transformations', 'HSF-TF.B.5', [
           sa('Describe y = 3sin x + 2 as transformations of y = sin x and give its maximum.', 'Answer:', key='Vertical stretch by 3, up 2; maximum 5', note='Form required: both.'),
           sa('Write the function for y = cos x stretched vertically by 4 and shifted down 1.', 'y =', key='4cos x - 1', note='Any equivalent form.'),
-          tf('In y = A sin x + D, D is the midline.', key=True, note='Vertical shift.'),
+          tf('In y = A sin x + D, A is the midline.', key=False, note='D gives the midline y = D; |A| is the amplitude.'),
           mc('y = -2cos x + 5 has amplitude and midline', ['2 and y = 5', '-2 and y = 5', '5 and y = 2', '2 and y = -5'], note='|A|.'),
           sa('A model is y = A sin x + D with maximum 9 and minimum 1. Find A (A > 0) and D.', 'Answer:', key='A = 4, D = 5', note='Form required: both.'),
       ], prog='cross-standard extension', demand='See the amplitude and midline of a sinusoidal model as a vertical stretch and shift.',
@@ -161,7 +161,7 @@ SETS = [
           B('Solve kx = c for x', '6.EE.B.7', [
               sa('Solve 2x = 4.', 'x =', key='2', note='Any equivalent form.'),
               sa('Solve -x/2 = 2.', 'x =', key='-4', note='Any equivalent form.'),
-              tf('If 4x = 4, then x = 1.', key=True, note='Divide by 4.'),
+              tf('If 4x = 4, then x = 16.', key=False, note='Divide by 4: x = 1.'),
               mc('3x = 2π gives x =', ['2π/3', '6π', '2π - 3', 'π/3'], note='Divide by 3.'),
               sa('Solve -x = 1.', 'x =', key='-1', note='Any equivalent form.'),
           ], align='exact',
@@ -169,7 +169,7 @@ SETS = [
           B('Period of y = sin(Bx)', 'HSF-TF.B.5', [
               sa('Give the period of y = sin(2x).', 'Answer:', key='π', note='Any equivalent form.'),
               sa('Give the period of y = cos(x/2).', 'Answer:', key='4π', note='Any equivalent form.'),
-              tf('A larger B gives a shorter period.', key=True, note='2π/B.'),
+              tf('For y = sin(Bx) with B > 0, a larger B gives a longer period.', key=False, note='The period 2π/B gets shorter as B grows.'),
               mc('y = sin(4x) has period', ['π/2', '4π', '8π', 'π/4'], note='2π/4.'),
               sa('Which B gives period 6?', 'B =', key='π/3', note='Any equivalent form.'),
           ], align='supporting',
@@ -208,7 +208,7 @@ SETS = [
           B('Signs of powers of negatives', '7.NS.A.2', [
               sa('Simplify (-x)⁴ and (-x)³.', 'Answer:', key='x⁴ and -x³', note='Form required: both.'),
               sa('Simplify (-x)².', 'Answer:', key='x²', note='Any equivalent form.'),
-              tf('(-x)⁵ = -x⁵.', key=True, note='Odd power.'),
+              tf('(-x)⁵ = x⁵.', key=False, note='An odd power keeps the sign: (-x)⁵ = -x⁵.'),
               mc('(-2)² - (-2) equals', ['6', '2', '-6', '0'], note='4 + 2.'),
               sa('Simplify -(-x)³.', 'Answer:', key='x³', note='Any equivalent form.'),
           ], align='exact',
@@ -224,7 +224,7 @@ SETS = [
           B('Substitute -x into an expression', 'HSF-IF.A.2', [
               sa('For f(x) = x² + x, find f(-x).', 'Answer:', key='x² - x', note='Any equivalent form.'),
               sa('For f(x) = x³ - x, find f(-2) and f(2).', 'Answer:', key='-6 and 6', note='Form required: both.'),
-              tf('For f(x) = 3x, f(-x) = -3x.', key=True, note='Substitute.'),
+              tf('For f(x) = 3x, f(-x) = 3x.', key=False, note='f(-x) = 3(-x) = -3x.'),
               mc('For f(x) = x⁴ - 3x², f(-1) is', ['-2', '2', '-4', '4'], note='1 - 3.'),
               sa('For f(x) = 1/x, find f(-x).', 'Answer:', key='-1/x', note='Any equivalent form.'),
           ], align='exact',
@@ -236,7 +236,7 @@ SETS = [
           proof('Prove that the product of two odd functions is even.', method='Compute (fg)(-x).', key='(fg)(-x) = f(-x)g(-x) = (-f(x))(-g(x)) = f(x)g(x).', note=PR + 'Essential: the computation.'),
           tf('The only function that is both even and odd is f(x) = 0.', key=True, note='f(x) = f(-x) = -f(x) gives f(x) = 0.'),
           mc('f(x) = |x| + x³ is', ['neither', 'even', 'odd', 'both'], note='f(1) = 2, f(-1) = 0.'),
-          sa('Is f(x) = x sin x even, odd, or neither? Explain with the product rule above.', 'Answer:', key='Even: x and sin x are both odd, so their product is even.', note='Any equivalent explanation.'),
+          sa('Is f(x) = x sin x even, odd, or neither? Explain using the fact that a product of two odd functions is even.', 'Answer:', key='Even: x and sin x are both odd, so their product is even.', note='Any equivalent explanation.'),
       ], prog='same-course deepening', demand='Prove general facts about even and odd functions and use them.'),
       f2=B('Explain trigonometric symmetry with the unit circle', 'HSF-TF.A.4', [
           sa('Use the unit circle to explain why cos(-x) = cos x.', 'Answer:', key='The points at angles x and -x are reflections over the x-axis and have the same x-coordinate.', note='Any equivalent explanation.'),
@@ -277,7 +277,7 @@ SETS = [
           B('Domain and range', 'HSF-IF.B.5', [
               sa('Give the range of f(x) = √(x + 4).', 'Answer:', key='y ≥ 0', note='Any equivalent form.'),
               sa('Give the range of f(x) = 5 · 2^x.', 'Answer:', key='y > 0', note='Any equivalent form.'),
-              tf('The range of f(x) = 2x/(x - 3) excludes y = 2.', key=True, note='Horizontal asymptote y = 2.'),
+              tf('The range of f(x) = 2x/(x - 3) excludes y = 3.', key=False, note='f(9) = 18/6 = 3; the excluded value is y = 2 (the horizontal asymptote).'),
               mc('The domain of log₃(x - 1) is', ['x > 1', 'x ≥ 1', 'x > 0', 'all reals'], note='x - 1 > 0.'),
               sa('Give the range of f(x) = log₃(x - 1).', 'Answer:', key='All real numbers', note='Any equivalent answer.'),
           ], align='exact',
@@ -285,14 +285,14 @@ SETS = [
       ],
       f1=B('Inverses that are their own inverse, and checking by points', 'HSF-BF.B.4.a', [
           sa('Find the inverse of f(x) = (x + 1)/(x - 1). What do you notice?', 'Answer:', key='f⁻¹(x) = (x + 1)/(x - 1): f is its own inverse', note='Form required: formula and observation.'),
-          sa('f(x) = 5 · 2^x passes through (1, 10). Check your inverse with this point.', 'Answer:', key='log₂(10/5) = log₂ 2 = 1', note='Form required: the check.'),
+          sa('f(x) = 5 · 2^x passes through (1, 10), and f⁻¹(x) = log₂(x/5). Check the inverse with this point.', 'Answer:', key='log₂(10/5) = log₂ 2 = 1', note='Form required: the check.'),
           tf('Every function has an inverse function.', key=False, note='Only one-to-one functions; f(x) = x² on all reals does not.'),
           mc('Which is its own inverse?', ['f(x) = 1/x', 'f(x) = x + 1', 'f(x) = 2x', 'f(x) = x²'], note='1/(1/x) = x.'),
-          sa('Explain how the graph shows whether f(x) = x³ - x has an inverse function.', 'Answer:', key='A horizontal line such as y = 0 meets the graph three times, so f is not one-to-one and has no inverse function.', note='Any equivalent explanation.'),
+          sa('Use the horizontal line test on the graph of f(x) = x³ - x to decide whether f has an inverse function. Explain.', 'Answer:', key='A horizontal line such as y = 0 meets the graph three times, so f is not one-to-one and has no inverse function.', note='Any equivalent explanation.'),
       ], prog='same-course deepening', demand='Use symmetry about y = x and the one-to-one property to reason about inverses.'),
       f2=B('Verify inverses by composition', 'HSF-BF.B.4.b', [
           sa('Verify that f(x) = (x - 1)³ + 2 and g(x) = ∛(x - 2) + 1 are inverses by computing f(g(x)).', 'Answer:', key='f(g(x)) = (∛(x - 2))³ + 2 = x', note='Form required: the computation.'),
-          sa('Compute g(f(x)) for the same pair.', 'Answer:', key='∛((x - 1)³) + 1 = x', note='Form required: the computation.'),
+          sa('f(x) = (x - 1)³ + 2 and g(x) = ∛(x - 2) + 1. Compute g(f(x)).', 'Answer:', key='∛((x - 1)³) + 1 = x', note='Form required: the computation.'),
           tf('To verify inverses, both f(g(x)) = x and g(f(x)) = x must hold on the domains.', key=True, note='Two-sided.'),
           mc('For f(x) = √(x + 4) and g(x) = x² - 4 (x ≥ 0), g(f(x)) =', ['x for x ≥ -4', 'x for all x', '|x|', 'x² + 4'], note='(√(x + 4))² - 4.'),
           sa('Explain why g(x) = x² - 4 without a domain restriction is not the inverse of f(x) = √(x + 4).', 'Answer:', key='f(g(x)) = √(x²) = |x|, which is not x when x < 0.', note='Any equivalent explanation (uses √(x²) = |x|).'),
@@ -321,7 +321,7 @@ SETS = [
           B('Powers of 2, 3, and 10', '8.EE.A.1', [
               sa('Write 16 as a power of 2.', 'Answer:', key='2⁴', note='Any equivalent form.'),
               sa('Write 1000 as a power of 10.', 'Answer:', key='10³', note='Any equivalent form.'),
-              tf('3⁴ = 81.', key=True, note='3·3·3·3.'),
+              tf('3⁴ = 12.', key=False, note='3⁴ = 3 · 3 · 3 · 3 = 81; 12 is 3 · 4.'),
               mc('2^(5t) = 2⁴ gives', ['5t = 4', 't = 4', '5t = 16', 't = 20'], note='Equal exponents.'),
               sa('Write 1/8 as a power of 2.', 'Answer:', key='2^(-3)', note='Any equivalent form.'),
           ], align='supporting',
@@ -329,7 +329,7 @@ SETS = [
           B('Logarithms as the inverse of exponentials', 'HSF-BF.B.4.a', [
               sa('Rewrite 10^x = 4.5 as a logarithm.', 'Answer:', key='x = log 4.5', note='Any equivalent form.'),
               sa('Rewrite e^u = 6 as a logarithm.', 'Answer:', key='u = ln 6', note='Any equivalent form.'),
-              tf('log₂ 8 = 3 because 2³ = 8.', key=True, note='Definition.'),
+              tf('log₂ 8 = 4 because 2⁴ = 8.', key=False, note='2⁴ = 16; log₂ 8 = 3 because 2³ = 8.'),
               mc('3^y = 5 means y =', ['log₃ 5', 'log₅ 3', '5/3', '3/5'], note='Definition.'),
               sa('Evaluate log₂ 32.', 'Answer:', key='5', note='Any equivalent form.'),
           ], align='exact',
@@ -378,7 +378,7 @@ SETS = [
           B('Evaluate logarithms with a calculator', 'HSF-IF.A.2', [
               sa('Evaluate log 1.6 to four decimal places.' + TECH, 'Answer:', key='0.2041', note='Any equivalent form.'),
               sa('Evaluate ln 1.25 to four decimal places.' + TECH, 'Answer:', key='0.2231', note='Any equivalent form.'),
-              tf('log 0.25 is negative.', key=True, note='Input less than 1.'),
+              tf('log 0.25 is positive.', key=False, note='0.25 < 1, so log 0.25 < 0 (about -0.602).'),
               mc('log 1.6/log 1.035 is about', ['13.66', '1.55', '0.20', '46.0'], note='0.2041/0.01494.'),
               sa('Evaluate log 0.25/log 0.8 to two decimal places.' + TECH, 'Answer:', key='6.21', note='Any equivalent form.'),
           ], align='exact',

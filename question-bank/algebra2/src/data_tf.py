@@ -21,7 +21,7 @@ SETS = [
           B('Circumference of a circle', '7.G.B.4', [
               sa('Find the circumference of a circle of radius 1.', 'Answer:', key='2π', note='Any equivalent form.'),
               sa('Find the circumference of a circle of radius 6 cm.', 'Answer:', key='12π cm', note='Any equivalent form with units.'),
-              tf('The circumference of a circle is πd.', key=True, note='C = πd = 2πr.'),
+              tf('The circumference of a circle is πr².', key=False, note='πr² is the area; the circumference is πd = 2πr.'),
               mc('Half of the unit circle has length', ['π', '2π', 'π/2', '1'], note='2π/2.'),
               sa('What length is one quarter of the unit circle?', 'Answer:', key='π/2', note='Any equivalent form.'),
           ], align='exact',
@@ -37,7 +37,7 @@ SETS = [
           B('Degrees as fractions of a turn', '4.MD.C.5', [
               sa('How many degrees are in a full turn?', 'Answer:', key='360°', note='Any equivalent form.'),
               sa('What fraction of a turn is 150°?', 'Answer:', key='5/12', note='Any equivalent form.'),
-              tf('A 315° angle is 7/8 of a turn.', key=True, note='315/360.'),
+              tf('A 315° angle is 3/4 of a turn.', key=False, note='315/360 = 7/8; 3/4 of a turn is 270°.'),
               mc('A quarter turn is', ['90°', '45°', '180°', '360°'], note='360/4.'),
               sa('How many degrees are in 2/3 of a turn?', 'Answer:', key='240°', note='Any equivalent form.'),
           ], align='supporting',
@@ -75,7 +75,7 @@ SETS = [
           B('Special right triangle ratios', 'HSG-SRT.C.6', [
               sa('In a 30°-60°-90° triangle with hypotenuse 1, give the side lengths.', 'Answer:', key='1/2 (opposite 30°) and √3/2 (opposite 60°)', note='Form required: both.'),
               sa('Find sin 45° exactly.', 'Answer:', key='√2/2', note='Any equivalent form.'),
-              tf('cos 60° = 1/2.', key=True, note='Adjacent/hypotenuse.'),
+              tf('cos 60° = √3/2.', key=False, note='cos 60° = 1/2; √3/2 is sin 60°.'),
               mc('sin 60° equals', ['√3/2', '1/2', '√2/2', '√3'], note='Opposite/hypotenuse.'),
               sa('Find tan 30° exactly.', 'Answer:', key='√3/3', note='Any equivalent form (1/√3).'),
           ], align='exact',
@@ -83,7 +83,7 @@ SETS = [
           B('Reference angles for radian measures', 'HSF-TF.A.1', [
               sa('Find the reference angle of 5π/6.', 'Answer:', key='π/6', note='Any equivalent form.'),
               sa('Find the reference angle of 4π/3.', 'Answer:', key='π/3', note='Any equivalent form.'),
-              tf('The reference angle of 7π/4 is π/4.', key=True, note='2π - 7π/4.'),
+              tf('The reference angle of 7π/4 is 3π/4.', key=False, note='2π - 7π/4 = π/4.'),
               mc('Which quadrant contains 11π/6?', ['IV', 'III', 'II', 'I'], note='Between 3π/2 and 2π.'),
               sa('Convert 4π/3 to degrees.', 'Answer:', key='240°', note='Any equivalent form.'),
           ], align='exact',
@@ -91,7 +91,7 @@ SETS = [
           B('Signs of coordinates by quadrant', '6.NS.C.6.b', [
               sa('In which quadrant are both coordinates negative?', 'Answer:', key='III', note='Any equivalent answer.'),
               sa('What are the signs of the coordinates in quadrant II?', 'Answer:', key='x negative, y positive', note='Any equivalent answer.'),
-              tf('A point in quadrant IV has a positive x-coordinate.', key=True, note='(+, -).'),
+              tf('A point in quadrant IV has a positive y-coordinate.', key=False, note='Quadrant IV points have x > 0 and y < 0.'),
               mc('The point (-√3/2, 1/2) is in quadrant', ['II', 'I', 'III', 'IV'], note='(-, +).'),
               sa('Give the signs of x and y for a point in quadrant IV.', 'Answer:', key='x positive, y negative', note='Any equivalent answer.'),
           ], align='exact',
@@ -150,7 +150,7 @@ SETS = [
           B('Radian measure as directed arc length', 'HSF-TF.A.1', [
               sa('What arc length on the unit circle does t = π/6 cut off?', 'Answer:', key='π/6', note='Any equivalent form.'),
               sa('Which direction does t = -π/6 travel?', 'Answer:', key='Clockwise', note='Any equivalent answer.'),
-              tf('t = 2π returns to the starting point (1, 0).', key=True, note='A full turn.'),
+              tf('t = π returns to the starting point (1, 0).', key=False, note='t = π is half a turn and ends at (-1, 0); t = 2π returns to (1, 0).'),
               mc('An arc of length π from (1, 0) ends at', ['(-1, 0)', '(0, 1)', '(0, -1)', '(1, 0)'], note='Half a turn.'),
               sa('Give a negative t that ends at (0, -1).', 't =', key='-π/2', note='Any valid value (-π/2 + 2πk).'),
           ], align='exact',
@@ -199,7 +199,7 @@ SETS = [
           B('Period and frequency', '6.RP.A.2', [
               sa('A wheel turns once every 4 minutes. How many turns per minute?', 'Answer:', key='1/4', note='Any equivalent form.'),
               sa('A spring oscillates 3 times per second. What is the period?', 'Answer:', key='1/3 s', note='Any equivalent form.'),
-              tf('Frequency is the reciprocal of the period.', key=True, note='Cycles per unit time.'),
+              tf('Frequency is equal to the period.', key=False, note='Frequency is the reciprocal: f = 1/period.'),
               mc('A period of 12 hours means a frequency of', ['1/12 cycle per hour', '12 cycles per hour', '2 cycles per hour', '1/2 cycle per hour'], note='Reciprocal.'),
               sa('y = sin(Bx) has period 2π/B. Find B for period 4.', 'B =', key='π/2', note='Any equivalent form.'),
           ], align='exact',
@@ -207,7 +207,7 @@ SETS = [
           B('Vertical stretches, shifts, and reflections', 'HSF-BF.B.3', [
               sa('Describe how y = 3cos x + 1 is obtained from y = cos x.', 'Answer:', key='Vertical stretch by 3, then shift up 1', note='Any equivalent description.'),
               sa('Describe y = -cos x compared with y = cos x.', 'Answer:', key='Reflection over the x-axis', note='Any equivalent description.'),
-              tf('y = cos x + 5 has a maximum of 6.', key=True, note='1 + 5.'),
+              tf('y = cos x + 5 has a maximum of 5.', key=False, note='The maximum of cos x is 1, so the maximum is 6; 5 is the midline.'),
               mc('y = -20cos x starts (at x = 0) at', ['its minimum', 'its maximum', 'the midline going up', 'the midline going down'], note='-20.'),
               sa('Write y = sin x shifted down 1 and stretched vertically by 2.', 'y =', key='2sin x - 1', note='Any equivalent form.'),
           ], align='supporting',
@@ -216,7 +216,7 @@ SETS = [
       f1=B('Write models from data or with a phase shift', 'HSF-TF.B.5', [
           sa('A rider\'s height is 3 m at t = 0 (bottom), 27 m at the top after 15 s, and the motion repeats every 30 s. Write h(t).', 'h =', key='15 - 12cos(πt/15)', note='Any equivalent form.'),
           sa('Sunrise times vary between 5:30 and 7:30 (as 5.5 and 7.5 hours) with period 365 days, latest at day 0. Write a model.', 'S =', key='6.5 + cos(2πt/365)', note='Any equivalent form.'),
-          tf('y = 4sin(x - π/2) is the same as y = -4cos x.', key=True, note='sin(x - π/2) = -cos x.'),
+          tf('y = 4sin(x - π/2) is the same as y = 4cos x.', key=False, note='sin(x - π/2) = -cos x, so 4sin(x - π/2) = -4cos x.'),
           mc('A sine model with period 10, amplitude 3, midline 7, and a maximum at t = 2.5 is', ['7 + 3sin(πt/5)', '7 + 3sin(10t)', '3 + 7sin(πt/5)', '7 + 3cos(πt/5)'], note='Quarter period 2.5 gives the maximum of sine.'),
           sa('A model has a maximum of 18 at t = 3 and the next minimum of 6 at t = 7. Write a cosine model.', 'y =', key='12 + 6cos(π(t - 3)/4)', note='Any equivalent form. Period 8.'),
       ], prog='same-course deepening', demand='Determine every parameter, including a horizontal shift, from data points.'),
@@ -250,7 +250,7 @@ SETS = [
           B('Build the model from amplitude, period, and midline', 'HSF-TF.B.5', [
               sa('What is the amplitude of y = 12 + 10sin(πt/15)?', 'Answer:', key='10', note='Any equivalent form.'),
               sa('What is the midline of y = 12 + 10sin(πt/15)?', 'Answer:', key='y = 12', note='Any equivalent form.'),
-              tf('The period of y = sin(Bt) is 2π/B.', key=True, note='Definition.'),
+              tf('The period of y = sin(Bt) is B/(2π).', key=False, note='The period is 2π/B (for B > 0).'),
               mc('The period of y = sin(πt/15) is', ['30', '15', 'π/15', '2π'], note='2π/(π/15).'),
               sa('Write a model with amplitude 4, period 2/3, and midline 0.', 'y =', key='4sin(3πt)', note='Any equivalent form (cos also accepted).'),
           ], align='exact',
@@ -258,7 +258,7 @@ SETS = [
           B('Evaluate a sinusoidal model', 'HSF-TF.A.2', [
               sa('Evaluate 12 + 10sin(π/2).', 'Answer:', key='22', note='Any equivalent form.'),
               sa('Evaluate 12 + 10sin(3π/2).', 'Answer:', key='2', note='Any equivalent form.'),
-              tf('-4cos(0) = -4.', key=True, note='cos 0 = 1.'),
+              tf('-4cos(0) = 0.', key=False, note='cos 0 = 1, so -4cos 0 = -4.'),
               mc('100 + 20sin(π/2) equals', ['120', '80', '100', '20'], note='sin(π/2) = 1.'),
               sa('Evaluate 12 + 3sin(0).', 'Answer:', key='12', note='Any equivalent form.'),
           ], align='exact',
@@ -266,15 +266,15 @@ SETS = [
           B('Convert rates between units', '6.RP.A.3.d', [
               sa('A cycle lasts 0.8 s. How many cycles are in 60 s?', 'Answer:', key='75', note='Any equivalent form.'),
               sa('1.5 cycles per second is how many cycles per minute?', 'Answer:', key='90', note='Any equivalent form.'),
-              tf('A period of 30 s means 2 revolutions per minute.', key=True, note='60/30.'),
+              tf('A period of 30 s means 30 revolutions per minute.', key=False, note='60/30 = 2 revolutions per minute.'),
               mc('440 cycles per second is how many cycles per millisecond?', ['0.44', '440', '4.4', '44'], note='1000 ms per second.'),
               sa('A tide has period 12 hours. How many cycles in 3 days?', 'Answer:', key='6', note='Any equivalent form.'),
           ], align='supporting',
             why=why('the student cannot answer per-minute questions.', 'contexts mix time units.', 'converts rates.')),
       ],
       f1=B('Predict how changing a parameter changes the situation', 'HSF-TF.B.5', [
-          sa('The Ferris wheel is replaced by one that turns twice as fast. Rewrite h(t) = 12 + 10sin(πt/15).', 'h =', key='12 + 10sin(2πt/15)', note='Any equivalent form. Period 15 s.'),
-          sa('The daylight model D(t) is changed for a city farther from the equator, with daylight between 8 and 16 hours. What parameter changes, and to what?', 'Answer:',
+          sa('A Ferris wheel rider\'s height is h(t) = 12 + 10sin(πt/15) m after t seconds. The wheel is replaced by one of the same size that turns twice as fast. Rewrite h(t).', 'h =', key='12 + 10sin(2πt/15)', note='Any equivalent form. Period 15 s.'),
+          sa('Daylight in one city is D(t) = 12 + 3sin(2π(t - 80)/365) hours. A city farther from the equator has daylight between 8 and 16 hours with the same period and timing. Which parameter changes, and to what?', 'Answer:',
              key='The amplitude changes to 4', note='Form required: parameter and value.'),
           tf('Changing the midline changes the period.', key=False, note='The midline only shifts the graph vertically.'),
           mc('Multiplying B by 3 makes the period', ['one third as long', 'three times as long', 'unchanged', '3 units longer'], note='2π/(3B).'),
@@ -325,7 +325,7 @@ SETS = [
           B('Expand and simplify algebraic squares', 'HSA-SSE.A.2', [
               sa('Expand (a + b)².', 'Answer:', key='a² + 2ab + b²', note='Any equivalent form.'),
               sa('Simplify (a/c)² + (b/c)².', 'Answer:', key='(a² + b²)/c²', note='Any equivalent form.'),
-              tf('(sin θ)² is written sin²θ.', key=True, note='Notation.'),
+              tf('sin²θ means sin(θ²).', key=False, note='sin²θ means (sin θ)².'),
               mc('Dividing x² + y² = 1 by x² gives', ['1 + y²/x² = 1/x²', 'y² = 1', '1 + y² = 1/x', 'x² + y² = 1/x²'], note='Divide each term.'),
               sa('Expand (s + c)².', 'Answer:', key='s² + 2sc + c²', note='Any equivalent form.'),
           ], align='supporting',
@@ -363,7 +363,7 @@ SETS = [
           B('Signs of sine, cosine, and tangent by quadrant', 'HSF-TF.A.2', [
               sa('In quadrant II, which of sin, cos, tan are positive?', 'Answer:', key='sin only', note='Any equivalent answer.'),
               sa('In quadrant III, what is the sign of tan θ?', 'Answer:', key='Positive', note='Any equivalent answer.'),
-              tf('In quadrant IV, cos θ > 0 and sin θ < 0.', key=True, note='(+, -).'),
+              tf('In quadrant IV, cos θ < 0 and sin θ > 0.', key=False, note='Quadrant IV has x > 0 and y < 0, so cos θ > 0 and sin θ < 0.'),
               mc('If sin θ < 0 and cos θ > 0, θ is in quadrant', ['IV', 'III', 'II', 'I'], note='(+, -).'),
               sa('If tan θ < 0 and sin θ > 0, which quadrant is θ in?', 'Answer:', key='II', note='Any equivalent answer.'),
           ], align='exact',
@@ -371,7 +371,7 @@ SETS = [
           B('Square roots of fractions', '8.EE.A.2', [
               sa('Find √(16/25).', 'Answer:', key='4/5', note='Any equivalent form.'),
               sa('Find √(8/9) in simplest radical form.', 'Answer:', key='2√2/3', note='Any equivalent form.'),
-              tf('√(144/169) = 12/13.', key=True, note='12² = 144, 13² = 169.'),
+              tf('√(144/169) = 12/169.', key=False, note='Take the root of both: √144/√169 = 12/13.'),
               mc('√(1/5) equals', ['√5/5', '1/25', '5', '√5'], note='Rationalize.'),
               sa('Find √0.64.', 'Answer:', key='0.8', note='Any equivalent form.'),
           ], align='exact',

@@ -45,7 +45,7 @@ SETS = [
           B('Powers of i', 'HSN-CN.A.1', [
               sa('Simplify i².', 'Answer:', key='-1', note='Any equivalent form.'),
               sa('Simplify -12i · i.', 'Answer:', key='12', note='Any equivalent form.'),
-              tf('-3i² = 3.', key=True, note='i² = -1.'),
+              tf('-3i² = -3.', key=False, note='i² = -1, so -3i² = 3.'),
               mc('Which is real?', ['(4 + 3i)(4 - 3i)', '(4 + 3i)²', '4 + 3i', '3i'], note='Conjugate product.'),
               sa('Write 13/13 - 13i/13 in the form a + bi.', 'Answer:', key='1 - i', note='Form required: a + bi.'),
           ], align='supporting',
@@ -89,7 +89,7 @@ SETS = [
               sa('Rewrite (2x - 4)/(x + 3) as 2 + r/(x + 3).', 'Answer:', key='2 - 10/(x + 3)', note='Form required.'),
               tf('The constant q in q + r/(x - a) is the horizontal asymptote.', key=True, note='r/(x - a) → 0.'),
               mc('(x² - 1)/(x² - 9) equals', ['1 + 8/(x² - 9)', '1 - 8/(x² - 9)', '1/9', '1 + 1/(x² - 9)'], note='x² - 1 = (x² - 9) + 8.'),
-              sa('Rewrite 2x/(x² - 4) in factored form.', 'Answer:', key='2x/((x - 2)(x + 2))', note='Form required.'),
+              sa('Factor the denominator of 2x/(x² - 4).', 'Answer:', key='(x - 2)(x + 2)', note='Form required: factored. The vertical asymptotes are at the zeros of these factors.'),
           ], align='exact',
             why=why('the student cannot find the horizontal asymptote.', 'the inspected form shows it.', 'rewrites rational expressions.')),
           B('Domain and excluded values', 'HSF-IF.B.5', [
@@ -103,7 +103,7 @@ SETS = [
           B('Sign of a quotient on intervals', '7.NS.A.2', [
               sa('Is (x + 1)/(x - 2) positive or negative at x = 0?', 'Answer:', key='Negative: 1/(-2)', note='Any equivalent answer.'),
               sa('Is 2x/(x² - 4) positive or negative at x = 3?', 'Answer:', key='Positive: 6/5', note='Any equivalent answer.'),
-              tf('A quotient of two negative numbers is positive.', key=True, note='Signs.'),
+              tf('A quotient of two negative numbers is negative.', key=False, note='For example (-6)/(-2) = 3.'),
               mc('At x = 2.1, (x + 1)/(x - 2) is', ['large and positive', 'large and negative', 'zero', 'undefined'], note='3.1/0.1 = 31.'),
               sa('Is 3/(x + 1)² ever negative? Why?', 'Answer:', key='No: a positive number over a square', note='Any equivalent answer.'),
           ], align='supporting',
@@ -141,7 +141,7 @@ SETS = [
           B('Factor numerators and denominators', 'HSA-SSE.A.2', [
               sa('Factor x² + x - 6 and x² - x - 2.', 'Answer:', key='(x + 3)(x - 2) and (x - 2)(x + 1)', note='Form required: both.'),
               sa('Factor x² - 9.', 'Answer:', key='(x - 3)(x + 3)', note='Form required.'),
-              tf('x² - 1 = (x - 1)(x + 1).', key=True, note='Difference of squares.'),
+              tf('x² - 1 = (x - 1)².', key=False, note='(x - 1)² = x² - 2x + 1; x² - 1 = (x - 1)(x + 1).'),
               mc('x² - 4 equals', ['(x - 2)(x + 2)', '(x - 4)(x + 1)', '(x - 2)²', 'x(x - 4)'], note='Difference of squares.'),
               sa('Factor x² + 2x.', 'Answer:', key='x(x + 2)', note='Form required.'),
           ], align='exact',
@@ -198,7 +198,7 @@ SETS += [
       back=[
           B('Build combined models', 'HSF-BF.A.1.b', [
               sa('f(x) = x² and g(x) = x + 1. Find f(x) + g(x).', 'Answer:', key='x² + x + 1', note='Any equivalent form.'),
-              sa('Find f(x) · g(x) for the same functions.', 'Answer:', key='x³ + x²', note='Any equivalent form.'),
+              sa('f(x) = x² and g(x) = x + 1. Find f(x) · g(x).', 'Answer:', key='x³ + x²', note='Any equivalent form.'),
               tf('f(g(x)) is a different combination from f(x) · g(x).', key=True, note='Composition vs product.'),
               mc('For f(x) = 2x and g(x) = x + 3, f(x) - g(x) is', ['x - 3', 'x + 3', '3x + 3', '2x² + 6x'], note='Subtract.'),
               sa('Name the operation in T(h(t)).', 'Answer:', key='Composition', note='Any equivalent answer.'),
@@ -215,7 +215,7 @@ SETS += [
           B('Domains of radical, rational, and log functions', 'HSF-IF.B.5', [
               sa('Give the domain of √(x - 4).', 'Answer:', key='x ≥ 4', note='Any equivalent form.'),
               sa('Give the domain of log₂ u in terms of u.', 'Answer:', key='u > 0', note='Any equivalent form.'),
-              tf('1/(x² - 1) is undefined at x = ±1.', key=True, note='Denominator 0.'),
+              tf('1/(x² - 1) is undefined only at x = 1.', key=False, note='x² - 1 = 0 at both x = 1 and x = -1.'),
               mc('x² - 9 > 0 when', ['x < -3 or x > 3', '-3 < x < 3', 'x > 9', 'all x'], note='Outside the roots.'),
               sa('Give the domain of √x - 4.', 'Answer:', key='x ≥ 0', note='Any equivalent form.'),
           ], align='exact',
@@ -263,7 +263,7 @@ SETS += [
             why=why('the student has no candidate to verify.', 'verification checks a proposed inverse.', 'finds inverses.')),
           B('Compose functions', 'HSF-BF.A.1.c', [
               sa('f(x) = 2x + 3 and g(x) = (x - 3)/2. Compute f(g(5)).', 'Answer:', key='5', note='Any equivalent form.'),
-              sa('Compute g(f(5)) for the same pair.', 'Answer:', key='5', note='Any equivalent form.'),
+              sa('f(x) = 2x + 3 and g(x) = (x - 3)/2. Compute g(f(5)).', 'Answer:', key='5', note='Any equivalent form.'),
               tf('f(g(x)) means apply g first, then f.', key=True, note='Inside out.'),
               mc('For f(x) = x³ and g(x) = x + 1, f(g(x)) is', ['(x + 1)³', 'x³ + 1', '3x + 1', 'x + 1'], note='Substitute.'),
               sa('Compute log₂(2⁵).', 'Answer:', key='5', note='Any equivalent form.'),
@@ -287,10 +287,10 @@ SETS += [
       ], prog='same-course deepening', demand='Use composition to disprove proposed inverses and repair domains.'),
       f2=B('Read inverse values from tables and graphs', 'HSF-BF.B.4.c', [
           sa('A table gives f(0) = 1, f(1) = 3, f(2) = 7, f(3) = 15. Find f⁻¹(7).', 'Answer:', key='2', note='Any equivalent form.'),
-          sa('From the same table, find f⁻¹(f⁻¹(15)).', 'Answer:', key='f⁻¹(3) = 1', note='Any equivalent form.'),
+          sa('A table gives f(0) = 1, f(1) = 3, f(2) = 7, f(3) = 15. Find f⁻¹(f⁻¹(15)).', 'Answer:', key='f⁻¹(3) = 1', note='Any equivalent form.'),
           tf('If (a, b) is on the graph of f, then (b, a) is on the graph of f⁻¹.', key=True, note='Swap.'),
           mc('If f(4) = 9, then f⁻¹(9) is', ['4', '9', '1/4', '13'], note='Swap.'),
-          sa('Explain how f(f⁻¹(7)) = 7 shows a composition fact using the table.', 'Answer:', key='f⁻¹(7) = 2 and f(2) = 7, so f(f⁻¹(7)) = 7.', note='Any equivalent explanation.'),
+          sa('A table gives f(1) = 3 and f(2) = 7. Explain how these values give f(f⁻¹(7)) = 7.', 'Answer:', key='f⁻¹(7) = 2 and f(2) = 7, so f(f⁻¹(7)) = 7.', note='Any equivalent explanation.'),
       ], prog='cross-standard extension', demand='Apply the inverse relationship to values in tables and graphs.',
         builds='Builds on FORWARD 1: compositions verified algebraically are now checked with tabled values.')),
 
@@ -320,10 +320,10 @@ SETS += [
           ], align='exact',
             why=why('the student reads f instead of f⁻¹.', 'reading an inverse means reading backward.', 'swaps inputs and outputs.')),
           B('Read points from graphs and tables', '8.F.A.1', [
-              sa('In the table, what is f(2)?', 'Answer:', key='7', note='Any equivalent form.'),
-              sa('From the altitude table, what is A(3)?', 'Answer:', key='880 m', note='Any equivalent form.'),
+              sa('A table gives f(0) = 1, f(1) = 3, f(2) = 7, f(3) = 15. What is f(2)?', 'Answer:', key='7', note='Any equivalent form.'),
+              sa('A plane\'s altitude A (m) at t = 0, 1, 2, 3, 4 minutes is 0, 250, 550, 880, 1200. What is A(3)?', 'Answer:', key='880 m', note='Any equivalent form.'),
               tf('A function gives exactly one output for each input.', key=True, note='Definition.'),
-              mc('Which input of g gives 16?', ['3', '2', '4', '16'], note='Read backward.'),
+              mc('g(1) = 40, g(2) = 25, g(3) = 16, g(4) = 10. Which input of g gives 16?', ['3', '2', '4', '16'], note='Read backward.'),
               sa('A graph passes through (8, 3). What is the output at input 8?', 'Answer:', key='3', note='Any equivalent form.'),
           ], align='exact',
             why=why('the student misreads tables.', 'inverse values are read from the same tables.', 'reads functions.')),
@@ -332,17 +332,17 @@ SETS += [
               sa('Does a function with f(1) = 4 and f(3) = 4 have an inverse function?', 'Answer:', key='No: 4 has two inputs', note='Any equivalent answer.'),
               tf('A decreasing function can have an inverse.', key=True, note='Still one-to-one.'),
               mc('Which table has an inverse function?', ['x: 1, 2, 3; y: 5, 7, 9', 'x: 1, 2, 3; y: 5, 7, 5', 'x: 1, 2, 3; y: 2, 2, 2', 'x: 1, 2, 3; y: 0, 1, 0'], note='Distinct outputs.'),
-              sa('Verify f(f⁻¹(15)) = 15 with the table.', 'Answer:', key='f⁻¹(15) = 3 and f(3) = 15', note='Form required: the check.'),
+              sa('A table gives f(2) = 7 and f(3) = 15. Verify f(f⁻¹(15)) = 15 with the table.', 'Answer:', key='f⁻¹(15) = 3 and f(3) = 15', note='Form required: the check.'),
           ], align='supporting',
             why=why('the student reads values from non-invertible data.', 'reading requires one-to-one data.', 'recognizes one-to-one functions.')),
       ],
       f1=B('Estimate inverse values between data points and sketch inverse graphs', 'HSF-BF.B.4.c', [
-          sa('Use the altitude table to estimate the time when the plane reaches 1000 m.', 'Answer:', key='About 3.4 minutes', note='Accept 3.3 to 3.5 (linear interpolation 3 + 120/320).'),
+          sa('A plane\'s altitude is 880 m at t = 3 min and 1200 m at t = 4 min. Estimate the time when it reaches 1000 m.', 'Answer:', key='About 3.4 minutes', note='Accept 3.3 to 3.5 (linear interpolation 3 + 120/320).'),
           plot('Sketch the graph of the inverse of f(x) = 2^x - 1 on the grid, using at least three points.', grid((-2, 8), (-3, 4)),
                key='Curve through (0, 0), (1, 1), (3, 2), (7, 3), with vertical asymptote x = -1 (reflection of f over y = x).', note='Any graph with these features.'),
           tf('The graph of f⁻¹ is the reflection of the graph of f across y = x.', key=True, note='Swap coordinates.'),
-          mc('Estimate g⁻¹(20) from the decreasing table of g.', ['between 2 and 3', 'between 3 and 4', 'between 1 and 2', 'between 4 and 5'], note='g(2) = 25, g(3) = 16.'),
-          sa('Use the table of f to find (f⁻¹)⁻¹(2).', 'Answer:', key='f(2) = 7', note='Any equivalent form.'),
+          mc('A decreasing function has g(1) = 40, g(2) = 25, g(3) = 16, g(4) = 10. Estimate g⁻¹(20).', ['between 2 and 3', 'between 3 and 4', 'between 1 and 2', 'between 4 and 5'], note='g(2) = 25, g(3) = 16.'),
+          sa('A table gives f(0) = 1, f(1) = 3, f(2) = 7, f(3) = 15. Find (f⁻¹)⁻¹(2).', 'Answer:', key='f(2) = 7', note='Any equivalent form.'),
       ], prog='same-course deepening', demand='Estimate inverse values between data points and draw inverse graphs.'),
       f2=B('Restrict the domain to make a function invertible', 'HSF-BF.B.4.d', [
           sa('f(x) = (x - 3)² is not invertible. Give a domain restriction that makes it invertible, and write the inverse.', 'Answer:', key='x ≥ 3; f⁻¹(x) = 3 + √x', note='Any valid restriction with its inverse.'),
@@ -391,7 +391,7 @@ SETS += [
             why=why('the student omits the inverse\'s domain.', 'the inverse domain is the range.', 'finds ranges.')),
       ],
       f1=B('Compare different restrictions', 'HSF-BF.B.4.d', [
-          sa('Restrict f(x) = (x - 3)² to x ≤ 3 instead. Write the inverse.', 'f⁻¹(x) =', key='3 - √x, x ≥ 0', note='Form required: formula and domain.'),
+          sa('Restrict f(x) = (x - 3)² to x ≤ 3. Write the inverse.', 'f⁻¹(x) =', key='3 - √x, x ≥ 0', note='Form required: formula and domain.'),
           sa('A ball\'s height is h(t) = -5(t - 2)² + 20 for 0 ≤ t ≤ 4. Which restriction gives the time as a function of height on the way down? Write it.', 'Answer:',
              key='2 ≤ t ≤ 4; t = 2 + √((20 - h)/5)', note='Form required: restriction and inverse.'),
           tf('A function can have more than one valid restriction that makes it invertible.', key=True, note='Either side of the vertex.'),
@@ -428,7 +428,7 @@ SETS += [
             why=why('the student cannot convert forms.', 'log equations are solved by converting to exponential form.', 'converts between forms.')),
           B('Check for extraneous solutions', 'HSA-REI.A.2', [
               sa('Check x = -2 in log₂ x + log₂(x - 2) = 3.', 'Answer:', key='log₂(-2) is undefined, so -2 is extraneous', note='Form required: check and conclusion.'),
-              sa('Check x = 4 in the same equation.', 'Answer:', key='2 + 1 = 3; a solution', note='Form required: check.'),
+              sa('Check x = 4 in log₂ x + log₂(x - 2) = 3.', 'Answer:', key='2 + 1 = 3; a solution', note='Form required: check.'),
               tf('Combining logs can introduce solutions outside the original domain.', key=True, note='log a + log b = log(ab) needs a, b > 0.'),
               mc('Which value is excluded from log(x - 9)?', ['x = 5', 'x = 10', 'x = 20', 'x = 100'], note='x - 9 > 0.'),
               sa('Solve x(x - 2) = 8.', 'x =', key='4 or -2', note='Form required: both.'),
@@ -437,7 +437,7 @@ SETS += [
           B('Domains of logarithmic expressions', 'HSF-IF.B.5', [
               sa('Give the domain of log₅(x - 1).', 'Answer:', key='x > 1', note='Any equivalent form.'),
               sa('Give the domain of ln(x + 2).', 'Answer:', key='x > -2', note='Any equivalent form.'),
-              tf('log 0 is undefined.', key=True, note='No exponent gives 0.'),
+              tf('log 0 = 0.', key=False, note='No power of 10 equals 0, so log 0 is undefined (log 1 = 0).'),
               mc('The domain of log₂ x + log₂(x - 2) is', ['x > 2', 'x > 0', 'x ≠ 2', 'all reals'], note='Both inputs positive.'),
               sa('Give the domain of log x - log(x - 9).', 'Answer:', key='x > 9', note='Any equivalent form.'),
           ], align='supporting',
@@ -492,7 +492,7 @@ SETS += [
           B('The Pythagorean Theorem', '8.G.B.7', [
               sa('A right triangle has hypotenuse 1 and leg 1/2. Find the other leg.', 'Answer:', key='√3/2', note='Any equivalent form.'),
               sa('A right isosceles triangle has hypotenuse 1. Find each leg.', 'Answer:', key='√2/2', note='Any equivalent form.'),
-              tf('(1/2)² + (√3/2)² = 1.', key=True, note='1/4 + 3/4.'),
+              tf('(1/2)² + (√3/2)² = 2.', key=False, note='1/4 + 3/4 = 1.'),
               mc('Legs 1 and 1 give hypotenuse', ['√2', '2', '1', '√3'], note='√2.'),
               sa('Find x if x² + x² = 1 (x > 0).', 'x =', key='√2/2', note='Any equivalent form.'),
           ], align='supporting',
@@ -544,7 +544,7 @@ SETS += [
           B('Reflect points over the axes', '8.G.A.3', [
               sa('Reflect (a, b) over the x-axis.', 'Answer:', key='(a, -b)', note='Any equivalent answer.'),
               sa('Rotate (a, b) by 180° about the origin.', 'Answer:', key='(-a, -b)', note='Any equivalent answer.'),
-              tf('Reflecting over the x-axis keeps the x-coordinate.', key=True, note='(a, -b).'),
+              tf('Reflecting over the x-axis keeps the y-coordinate.', key=False, note='(a, b) → (a, -b): the x-coordinate stays and y changes sign.'),
               mc('Reflecting (0.6, 0.8) over the x-axis gives', ['(0.6, -0.8)', '(-0.6, 0.8)', '(-0.6, -0.8)', '(0.8, 0.6)'], note='Negate y.'),
               sa('Rotate (√3/2, 1/2) by 180°.', 'Answer:', key='(-√3/2, -1/2)', note='Any equivalent answer.'),
           ], align='supporting',
@@ -589,7 +589,7 @@ SETS += [
           B('Exact values on the unit circle', 'HSF-TF.A.2', [
               sa('Give sin(π/6) and sin(5π/6).', 'Answer:', key='1/2 and 1/2', note='Form required: both.'),
               sa('Give cos(2π/3) and cos(4π/3).', 'Answer:', key='-1/2 and -1/2', note='Form required: both.'),
-              tf('tan(π/4) = tan(5π/4).', key=True, note='Both equal 1.'),
+              tf('tan(π/4) = tan(3π/4).', key=False, note='tan(π/4) = 1 and tan(3π/4) = -1.'),
               mc('Which angle in [0, π] has cos = -1/2?', ['2π/3', '4π/3', 'π/3', '5π/6'], note='Quadrant II.'),
               sa('Give sin(-π/6).', 'Answer:', key='-1/2', note='Any equivalent form.'),
           ], align='exact',
@@ -641,7 +641,7 @@ SETS += [
           B('Parameters of sinusoidal models', 'HSF-TF.B.5', [
               sa('In h(t) = 12 + 10sin(πt/15), what is the period?', 'Answer:', key='30 s', note='Any equivalent form.'),
               sa('Rewrite h = 17 as an equation for sin(πt/15).', 'Answer:', key='sin(πt/15) = 1/2', note='Any equivalent form.'),
-              tf('d(t) = 5 + 4cos(πt/6) has a maximum of 9.', key=True, note='5 + 4.'),
+              tf('d(t) = 5 + 4cos(πt/6) has a maximum of 5.', key=False, note='The maximum is 5 + 4 = 9; 5 is the midline.'),
               mc('Isolating the cosine in 5 + 4cos(πt/6) = 7 gives', ['cos(πt/6) = 1/2', 'cos(πt/6) = 7/4', 'cos(πt/6) = 2', 'cos(πt/6) = 3'], note='Subtract 5, divide by 4.'),
               sa('What is the midline of d(t)?', 'Answer:', key='d = 5', note='Any equivalent form.'),
           ], align='exact',

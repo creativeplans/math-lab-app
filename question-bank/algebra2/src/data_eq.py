@@ -33,7 +33,7 @@ SETS = [
           B('Express rates of work and unit rates', '6.RP.A.3.b', [
               sa('Ana paints a room in 4 hours. What fraction of the room does she paint per hour?', 'Answer:', key='1/4', note='Any equivalent form.'),
               sa('A pump fills a pool in 6 hours. What fraction does it fill in 2 hours?', 'Answer:', key='1/3', note='Any equivalent form.'),
-              tf('If two people work together, their hourly rates add.', key=True, note='Work rates add.'),
+              tf('If two people work together, their times to finish the job add.', key=False, note='Their rates (jobs per hour) add; working together takes less time, not more.'),
               mc('A machine makes 300 parts in 5 hours. Its rate is', ['60 parts per hour', '1500 parts per hour', '5/300 parts per hour', '300 parts per hour'], note='300/5.'),
               sa('A job takes 2.4 hours together. What fraction is done per hour?', 'Answer:', key='1/2.4 = 5/12', note='Any equivalent form.'),
           ], align='exact',
@@ -41,7 +41,7 @@ SETS = [
           B('Write exponential growth models', 'HSF-LE.A.2', [
               sa('A population of 1,200 doubles every 5 years. Write the population after t years.', 'P(t) =', key='1200 · 2^(t/5)', note='Any equivalent form.'),
               sa('A $500 deposit grows 3% per year. Write its value after t years.', 'V(t) =', key='500(1.03)^t', note='Any equivalent form.'),
-              tf('A quantity that doubles every 5 years is multiplied by 2⁴ after 20 years.', key=True, note='20/5 = 4 doublings.'),
+              tf('A quantity that doubles every 5 years is multiplied by 2⁵ after 20 years.', key=False, note='20/5 = 4 doublings, a factor of 2⁴ = 16.'),
               mc('A quantity triples every year starting at 7. After t years it is', ['7 · 3^t', '3 · 7^t', '7 + 3t', '21t'], note='Repeated multiplication.'),
               sa('How many doublings happen in 15 years if the doubling time is 5 years?', 'Answer:', key='3', note='Any equivalent form.'),
           ], align='exact',
@@ -96,7 +96,7 @@ SETS = [
           B('Solve quadratic equations by factoring', 'HSA-REI.B.4.b', [
               sa('Solve t² - 4t + 3 = 0.', 't =', key='1 or 3', note='Form required: both.'),
               sa('Solve x² - 50x + 600 = 0.', 'x =', key='20 or 30', note='Form required: both.'),
-              tf('The solutions of t² - 5t + 4 = 0 are 1 and 4.', key=True, note='(t - 1)(t - 4).'),
+              tf('The solutions of t² - 5t + 4 = 0 are -1 and -4.', key=False, note='(t - 1)(t - 4) = 0 gives t = 1 or t = 4.'),
               mc('The solutions of x² - x - 12 = 0 are', ['4 and -3', '-4 and 3', '12 and -1', '6 and -2'], note='(x - 4)(x + 3).'),
               sa('Solve 2x² - 100x + 1200 = 0.', 'x =', key='20 or 30', note='Form required: both.'),
           ], align='exact',
@@ -163,7 +163,7 @@ SETS = [
           B('Make a table of values from an equation', '6.EE.C.9', [
               sa('For N = 200 · 2^t, find N when t = 0, 1, 2, 3.', 'Answer:', key='200, 400, 800, 1600', note='Form required: all four.'),
               sa('For w = 24/L, find w when L = 2, 3, 4, 6.', 'Answer:', key='12, 8, 6, 4', note='Form required: all four.'),
-              tf('For h = 64 - 16t², h = 48 when t = 1.', key=True, note='64 - 16.'),
+              tf('For h = 64 - 16t², h = 48 when t = 2.', key=False, note='h(2) = 64 - 64 = 0; h = 48 when t = 1.'),
               mc('For s = √(24d), s when d = 96 is', ['48', '24', '96', '2304'], note='√2304.'),
               sa('For V = 20000(0.85)^t, find V when t = 1 and t = 2.', 'Answer:', key='17000 and 14450', note='Form required: both.'),
           ], align='exact',
@@ -224,7 +224,7 @@ SETS = [
           B('Represent constraints with a linear system', 'HSA-CED.A.3', [
               sa('Write a constraint for "the total of L and W is 30".', 'Answer:', key='L + W = 30', note='Any equivalent form.'),
               sa('Write a constraint for "at most 40 m of fence for a rectangle with sides x and y".', 'Answer:', key='2x + 2y ≤ 40', note='Any equivalent form.'),
-              tf('"At least 200" is written ≥ 200.', key=True, note='At least means greater than or equal to.'),
+              tf('"At least 200" is written ≤ 200.', key=False, note='At least 200 means 200 or more: ≥ 200.'),
               mc('"The height h must be at most 4" is', ['h ≤ 4', 'h ≥ 4', 'h < 4', 'h = 4'], note='At most: less than or equal.'),
               sa('Is (12, 20) a solution of x + y ≤ 30?', 'Answer:', key='No: 32 > 30', note='Form required: the decision and check.'),
           ], align='exact',
@@ -240,14 +240,14 @@ SETS = [
           B('Solve quadratic inequalities', 'HSA-CED.A.1', [
               sa('Solve W² - 30W + 200 ≤ 0.', 'Answer:', key='10 ≤ W ≤ 20', note='Any equivalent form.'),
               sa('Solve p² - 50p + 600 ≤ 0.', 'Answer:', key='20 ≤ p ≤ 30', note='Any equivalent form.'),
-              tf('x² ≥ 8 with x > 0 means x ≥ 2√2.', key=True, note='Take the positive root.'),
+              tf('x² ≥ 8 with x > 0 means x ≥ 4.', key=False, note='x ≥ √8 = 2√2 ≈ 2.83; for example x = 3 works.'),
               mc('The solution of (x - 2)(x - 6) ≤ 0 is', ['2 ≤ x ≤ 6', 'x ≤ 2 or x ≥ 6', 'x ≥ 6', 'x = 2 or x = 6'], note='Between the roots.'),
               sa('Solve 32/x² ≤ 4 for x > 0.', 'Answer:', key='x ≥ 2√2', note='Any equivalent form (x ≥ 2.83).'),
           ], align='exact',
             why=why('the student cannot find the viable range.', 'the viable set is the solution of the nonlinear inequality.', 'solves quadratic inequalities.')),
       ],
       f1=B('Optimize within nonlinear constraints', 'HSA-CED.A.3', [
-          sa('With L + W = 30, which width gives the greatest garden area, and what is that area?', 'Answer:', key='W = 15; 225 ft²', note='Form required: both. A = W(30 - W) has vertex at W = 15.'),
+          sa('A rectangular garden has length L and width W (feet) with L + W = 30. Which width gives the greatest area, and what is that area?', 'Answer:', key='W = 15; 225 ft²', note='Form required: both. A = W(30 - W) has vertex at W = 15.'),
           sa('Which ticket price p gives the greatest revenue p(500 - 10p), and what is that revenue?', 'Answer:', key='p = $25; $6,250', note='Form required: both.'),
           tf('A maximum found from the model must still satisfy every other constraint to be a viable choice.', key=True, note='Check all constraints.'),
           mc('For the pen with xy ≥ 50 and 2x + 2y ≤ 40, which is viable?', ['(10, 10)', '(4, 12)', '(15, 10)', '(2, 20)'], note='(10, 10): area 100, perimeter 40.'),
@@ -278,7 +278,7 @@ SETS = [
           B('Rearrange linear formulas', 'HSA-CED.A.4', [
               sa('Solve P = 2L + 2W for W.', 'W =', key='(P - 2L)/2', note='Any equivalent form.'),
               sa('Solve d = rt for t.', 't =', key='d/r', note='Any equivalent form.'),
-              tf('Solving V = IR for R gives R = V/I.', key=True, note='Divide by I.'),
+              tf('Solving V = IR for R gives R = VI.', key=False, note='Divide both sides by I: R = V/I.'),
               mc('Solving y = mx + b for x gives', ['(y - b)/m', '(y + b)/m', 'y/m - b', 'm(y - b)'], note='Subtract b, divide by m.'),
               sa('Solve A = (1/2)bh for h.', 'h =', key='2A/b', note='Any equivalent form.'),
           ], align='exact',
@@ -286,7 +286,7 @@ SETS = [
           B('Undo squares and square roots', '8.EE.A.2', [
               sa('Solve x² = 49 for x > 0.', 'x =', key='7', note='Any equivalent form.'),
               sa('Solve √y = 6.', 'y =', key='36', note='Any equivalent form.'),
-              tf('If √(L/g) = k, then L/g = k².', key=True, note='Square both sides.'),
+              tf('If √(L/g) = k, then L/g = √k.', key=False, note='Square both sides: L/g = k².'),
               mc('(√(2gh))² equals', ['2gh', '√(2gh)', '4g²h²', '2g√h'], note='Squaring undoes the root.'),
               sa('Solve T/(2π) = √m for m.', 'm =', key='T²/(4π²)', note='Any equivalent form.'),
           ], align='exact',
@@ -332,7 +332,7 @@ SETS = [
           B('Solve proportions', '7.RP.A.2', [
               sa('Solve 3/x = 6/10.', 'x =', key='5', note='Any equivalent form.'),
               sa('Solve 4/7 = x/21.', 'x =', key='12', note='Any equivalent form.'),
-              tf('a/b = c/d implies ad = bc when b, d ≠ 0.', key=True, note='Cross-multiplication.'),
+              tf('a/b = c/d implies ac = bd when b, d ≠ 0.', key=False, note='Cross-multiplying gives ad = bc.'),
               mc('2/5 = 6/x gives x =', ['15', '12', '3', '2.4'], note='2x = 30.'),
               sa('Solve 3/(x - 1) = 1.', 'x =', key='4', note='Any equivalent form.'),
           ], align='exact',
@@ -403,7 +403,7 @@ SETS = [
           B('Check a candidate in the original equation', '6.EE.B.5', [
               sa('Check x = 2 in √(x + 7) = x - 5.', 'Answer:', key='√9 = 3 but 2 - 5 = -3; not a solution', note='Form required: the check and conclusion.'),
               sa('Check x = 6 in √(x + 3) + 3 = x.', 'Answer:', key='√9 + 3 = 6; a solution', note='Form required: the check and conclusion.'),
-              tf('x = 5 satisfies √(2x - 1) = 3.', key=True, note='√9 = 3.'),
+              tf('x = 4 satisfies √(2x - 1) = 3.', key=False, note='√(8 - 1) = √7 ≠ 3; the solution is x = 5.'),
               mc('Which value satisfies √(x + 3) + 3 = x?', ['6', '1', '0', '-3'], note='Check each.'),
               sa('Check x = 10 in √(x - 1) + 5 = 2.', 'Answer:', key='3 + 5 = 8 ≠ 2; not a solution', note='Form required: check and conclusion.'),
           ], align='exact',
@@ -419,7 +419,7 @@ SETS = [
       f2=B('Explain extraneous solutions with graphs of radical functions', 'HSF-IF.C.7.b', [
           sa('The graphs of y = √(x + 7) and y = x - 5 meet at one point. Give it.', 'Answer:', key='(9, 4)', note='Form required: the point.'),
           sa('The extraneous value x = 2 is where y = x - 5 meets which other graph?', 'Answer:', key='y = -√(x + 7)', note='Any equivalent answer. Squaring cannot tell √ from -√.'),
-          tf('The graph of y = √(x + 7) starts at (-7, 0) and increases.', key=True, note='Shift of y = √x left 7.'),
+          tf('The graph of y = √(x + 7) starts at (7, 0) and increases.', key=False, note='x + 7 = 0 at x = -7, so it starts at (-7, 0).'),
           mc('The graph of y = √(x - 1) + 5 lies', ['at or above y = 5', 'below y = 2', 'below the x-axis', 'at or below y = 5'], note='√ ≥ 0.'),
           sa('Use the graphs to explain why √(x - 1) + 5 = 2 has no solution.', 'Answer:', key='y = √(x - 1) + 5 is always at least 5, so it never meets y = 2.', note='Any equivalent explanation.'),
       ], prog='cross-standard extension', demand='Explain extraneous and missing solutions with the graphs of radical functions.',
@@ -471,7 +471,7 @@ SETS = [
           B('Evaluate nonlinear functions at an input', 'HSF-IF.A.2', [
               sa('Find 2^x and x + 2 when x = 2.', 'Answer:', key='4 and 4', note='Form required: both.'),
               sa('Find x³ - 3x when x = -2.', 'Answer:', key='-2', note='Any equivalent form.'),
-              tf('√4 = 4/2.', key=True, note='2 = 2.'),
+              tf('√9 = 9/2.', key=False, note='√9 = 3, but 9/2 = 4.5.'),
               mc('|x - 1| when x = -2 is', ['3', '-3', '1', '-1'], note='|-3|.'),
               sa('Find 1/x when x = -1.', 'Answer:', key='-1', note='Any equivalent form.'),
           ], align='supporting',
@@ -488,7 +488,7 @@ SETS = [
       f2=B('Find all solutions of a trigonometric equation on an interval from a graph', 'HSF-TF.B.7', [
           sa('On 0 ≤ x < 2π, where does y = sin x meet y = 1/2? Give exact values.', 'x =', key='π/6 and 5π/6', note='Form required: both.'),
           sa('On 0 ≤ x < 2π, where does y = cos x meet y = 0?', 'x =', key='π/2 and 3π/2', note='Form required: both.'),
-          tf('sin x = 1/2 has infinitely many real solutions.', key=True, note='Periodicity.'),
+          tf('sin x = 1/2 has exactly two real solutions.', key=False, note='It has two solutions in each period, so infinitely many real solutions.'),
           mc('How many solutions does sin x = 0.3 have on 0 ≤ x < 2π?', ['2', '1', '0', '4'], note='The horizontal line crosses twice in one period.'),
           sa('Explain why sin x = 2 has no solution using the graph.', 'Answer:', key='The graph of y = sin x stays between -1 and 1, so it never meets y = 2.', note='Any equivalent explanation.'),
       ], prog='cross-standard extension', demand='Apply the intersection idea to periodic functions, where every solution on an interval must be found.',
@@ -518,7 +518,7 @@ SETS = [
           B('Evaluate exponential and logarithmic expressions with a calculator', 'HSF-IF.A.2', [
               sa('Find 2^1.7 to the nearest hundredth.' + TECH, 'Answer:', key='3.25', note='Any equivalent form.'),
               sa('Find log 1.75 (base 10) to the nearest thousandth.' + TECH, 'Answer:', key='0.243', note='Any equivalent form.'),
-              tf('1.7³ = 4.913.', key=True, note='1.7 · 1.7 · 1.7.'),
+              tf('1.7³ = 5.1.', key=False, note='1.7 · 1.7 · 1.7 = 4.913 (5.1 is 3 · 1.7).'),
               mc('3(0.8)² equals', ['1.92', '2.4', '0.192', '4.8'], note='3 · 0.64.'),
               sa('Find 2^(-1.7) to the nearest hundredth.' + TECH, 'Answer:', key='0.31', note='Any equivalent form.'),
           ], align='exact',
@@ -536,7 +536,7 @@ SETS = [
           sa('h(x) = 2^x + x - 5. Find h(1.71) and h(1.72) and explain why a solution lies between them.' + TECH, 'Answer:',
              key='h(1.71) ≈ -0.018 and h(1.72) ≈ 0.014; h changes sign, so h has a zero between them', note='Form required: both values and the reason.'),
           sa('Use one step of bisection on [1, 2] for x³ + x - 7 = 0. Which half contains the solution?', 'Answer:', key='[1.5, 2], since h(1.5) = -2.125 < 0 and h(2) = 3 > 0', note='Form required: the half and the evidence.'),
-          tf('After 4 bisection steps starting from an interval of length 1, the solution is known within 1/16.', key=True, note='Each step halves the interval.'),
+          tf('After 4 bisection steps starting from an interval of length 1, the interval has length 1/8.', key=False, note='Each step halves the length: (1/2)⁴ = 1/16.'),
           mc('How many bisection steps from [1, 2] guarantee an interval shorter than 0.01?', ['7', '5', '10', '100'], note='2⁷ = 128 > 100.'),
           sa('Explain why checking h(1.715) and h(1.725) decides whether the solution rounds to 1.72.', 'Answer:',
              key='If h changes sign between 1.715 and 1.725, the zero is in that interval, and every number there rounds to 1.72.', note='Any equivalent explanation.'),

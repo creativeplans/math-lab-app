@@ -66,13 +66,15 @@ PACKAGE_README_EXTRA = '''
 | `COVERAGE.md` | The course profile (inclusion and exclusion table), every standard and subskill with its set and MAIN IDs, and each set's branches. |
 | `VALIDATION.md` | The automatic checks run on this release, each with its scope, and the manual reviews. |
 | `CHANGELOG.md` | Changes by question ID. |
-| set file `strand`, `target_skill`, `covers` | `core` (the Appendix A Algebra II pathway) or `advanced` (further (+) standards); the one skill MAIN measures; subskill IDs. |
-| question `strand`, `set_target`, `target_skill`, `alignment_type`, `course_level` | Strand; the set's target; the skill this section measures; how the section's standard relates to it; the course label (for example "High School — Algebra II (revisits an Algebra I standard)" or "(+) standard listed in the pathway"). |
+| set file `strand`, `target_skill`, `covers` | `core` (the Appendix A Algebra II pathway) or `advanced` (further (+) standards, optional); the one skill MAIN measures; subskill IDs. |
+| question `strand`, `set_target`, `target_skill`, `alignment_type`, `course_level` | Strand (`core` or `advanced extension (+)`); the set's target; the skill this section measures; how the section's standard relates to it; the course-placement label (for example "High School — Algebra II, revisits an Algebra I standard", "High School — Algebra II, Advanced Extension (+)", or a K-8 grade-level standard's own grade for a prerequisite). |
 | question `question_page`, `answer_key_page` | Page in each PDF (always equal). |
 | `sections[].branch` | Backward: `alignment` (exact or supporting), `rationale` (obstacle, why it matters, evidence collected), `source`. Forward: `progression`, `connection` (direct or nearest related), `new_demand`, `course`, and for FORWARD 2 `builds_on`. Every section: `plus_standard` (true for an official Common Core (+) standard). |
 
 Question types used: `sa`, `mc`, `tf`, `work` (proofs, derivations, and explanations in a work box; `required_method` and
-`grading_note` give the essential criteria, accepted alternatives, and invalid arguments), and `plot` (graphs drawn on a
-blank grid; `correct_answer` lists the features to check). These need a person or a drawing surface to grade. No other
-new type is used, so the existing importer applies.
+`grading_note` give the essential criteria, accepted alternatives, and invalid arguments), `plot` (graphs drawn on a
+blank grid; `correct_answer` lists the features to check), and `plot_text` (a graph plus a written equation; `drawing_answer`
+describes the graph). These need a person or a drawing surface to grade. All six types already exist in earlier collections;
+the game importer's `--check` mode was run on this package (see the collection README for the result). Nothing here has been
+tested in the live game or with the AI grader.
 '''

@@ -307,5 +307,19 @@ def main():
     return 1 if bad else 0
 
 
+def run():
+    """For validate.py: (questions checked, values checked, disagreements)."""
+    data = json.load(open(KEY, encoding='utf-8'))
+    recs = {r['id']: r for r in data['questions']}
+    bad, nv = [], 0
+    for case in CASES:
+        qid, kind, want = case[:3]
+        dec = case[3] if len(case) > 3 else None
+        nv += len(want) if kind == 'S' else 1
+        if qid not in recs or not check(recs[qid], kind, want, dec):
+            bad.append('%s: key does not state %s' % (qid, want))
+    return len(CASES), nv, bad
+
+
 if __name__ == '__main__':
     sys.exit(main())
