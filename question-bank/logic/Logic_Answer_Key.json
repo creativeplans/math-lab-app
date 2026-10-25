@@ -56790,6 +56790,4592 @@
     "correct_answer": "True",
     "no_shuffle": true
    }
+  },
+  {
+   "uid": "LOGIC:S45-M-Q1",
+   "id": "S45-M-Q1",
+   "set": 45,
+   "set_title": "Letter grids and word squares",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Fill and analyze letter grids under stated rules and a supplied word list",
+   "number": 1,
+   "type": "sa",
+   "outcome": "LOGIC.GRID.02",
+   "outcome_title": "Fill and analyze letter grids under stated rules and a supplied word list",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP7"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "letter grids",
+   "family": "verbal",
+   "question_page": 0,
+   "prompt": "Rule: each row and each column must contain each of the letters A, B, C and D exactly once. The grid in the figure has six letters filled in. Which letter belongs in the shaded cell (bottom row, first column)?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "D",
+   "accepted_alternatives": [],
+   "solution": "Column 1 already has A (row 1) and C (row 2), so rows 3 and 4 start with B and D in some order. Row 3 already has D (in column 4), so row 3 starts with B and row 4 starts with D. (The whole grid is ADBC, CADB, BCAD, DBCA.)",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "assets/S45-M-Q1.svg",
+   "figure_description": "A 4 by 4 letter grid; some cells hold letters, the rest are empty, and one empty cell is shaded.",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.GRID.02",
+    "answer_lines": [
+     "Letter:"
+    ],
+    "correct_answer": "D"
+   }
+  },
+  {
+   "uid": "LOGIC:S45-M-Q2",
+   "id": "S45-M-Q2",
+   "set": 45,
+   "set_title": "Letter grids and word squares",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Fill and analyze letter grids under stated rules and a supplied word list",
+   "number": 2,
+   "type": "values",
+   "outcome": "LOGIC.GRID.02",
+   "outcome_title": "Fill and analyze letter grids under stated rules and a supplied word list",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP7"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "letter grids",
+   "family": "verbal",
+   "question_page": 0,
+   "prompt": "Word list (the ONLY words allowed): CAT, ARE, TEN, ART, EAR, NET, TAN, ATE, RAT, ERA, TEA, ACE, ONE, NAP, APE, PEN, OAR, ORE, ROE, TOE, TON, NOT, ANT. In a word square, the three rows, read left to right, are the same words as the three columns, read top to bottom, in the same order. The first row of a word square is TEN. Give the second and third rows.",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "any values that satisfy: w2 == 'era' and w3 == 'nap' (example: w2 = ERA, w3 = NAP)",
+   "accepted_alternatives": [],
+   "solution": "Column 1 must be TEN, so row 2 starts with E and row 3 with N. Row 2 = column 2, which starts with E: ERA fits (E, R, A). Then column 3 is N, A, ?, and row 3 = NA?: NAP. Check: columns TEN, ERA, NAP.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [
+    {
+     "w2": "EAR",
+     "w3": "NAP"
+    },
+    {
+     "w2": "ERA",
+     "w3": "NET"
+    }
+   ],
+   "validation": "Search of every pair of listed words: 1 word square(s) start with TEN. Automatic: the example passes the rule and 2 listed mistakes fail it.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "values",
+    "outcome": "LOGIC.GRID.02",
+    "fields": [
+     {
+      "name": "w2",
+      "label": "Row 2 ="
+     },
+     {
+      "name": "w3",
+      "label": "Row 3 ="
+     }
+    ],
+    "rule": "w2 == 'era' and w3 == 'nap'",
+    "example_answer": {
+     "w2": "ERA",
+     "w3": "NAP"
+    },
+    "correct_answer": "any values that satisfy: w2 == 'era' and w3 == 'nap' (example: w2 = ERA, w3 = NAP)"
+   }
+  },
+  {
+   "uid": "LOGIC:S45-M-Q3",
+   "id": "S45-M-Q3",
+   "set": 45,
+   "set_title": "Letter grids and word squares",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Fill and analyze letter grids under stated rules and a supplied word list",
+   "number": 3,
+   "type": "tf",
+   "outcome": "LOGIC.GRID.02",
+   "outcome_title": "Fill and analyze letter grids under stated rules and a supplied word list",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP7"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "letter grids",
+   "family": "verbal",
+   "question_page": 0,
+   "prompt": "Rule: a 3 by 3 grid is filled with the letters A and B so that no two cells that share a side hold the same letter. The center cell holds A. Then all four corner cells hold the same letter.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "True",
+   "accepted_alternatives": [],
+   "solution": "The center's four side neighbors must be B, and each corner touches two of those B cells, so each corner is A.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the statement was evaluated by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.GRID.02",
+    "correct_letter": "A",
+    "correct_answer": "True",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S45-M-Q4",
+   "id": "S45-M-Q4",
+   "set": 45,
+   "set_title": "Letter grids and word squares",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Fill and analyze letter grids under stated rules and a supplied word list",
+   "number": 4,
+   "type": "mc",
+   "outcome": "LOGIC.GRID.02",
+   "outcome_title": "Fill and analyze letter grids under stated rules and a supplied word list",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP7"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "letter grids",
+   "family": "verbal",
+   "question_page": 0,
+   "prompt": "Rule: each row and each column must contain each of the letters A, B and C exactly once. The top-left cell holds A and the center cell holds A. Which letter must go in the bottom-right cell?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "A"
+    },
+    {
+     "letter": "B",
+     "text": "B"
+    },
+    {
+     "letter": "C",
+     "text": "It could be B or C"
+    },
+    {
+     "letter": "D",
+     "text": "C"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "A. A",
+   "accepted_alternatives": [],
+   "solution": "Row 3 needs an A, but columns 1 and 2 already have one. So A goes in column 3 of row 3.",
+   "wrong_choices": [
+    {
+     "text": "B",
+     "why_wrong": "the grid can be completed only with A there"
+    },
+    {
+     "text": "C",
+     "why_wrong": "the grid can be completed only with A there"
+    },
+    {
+     "text": "It could be B or C",
+     "why_wrong": "A is already in rows 1 and 2 and in columns 1 and 2, so A must go in row 3, column 3"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "assets/S45-M-Q4.svg",
+   "figure_description": "A 3 by 3 letter grid; some cells hold letters, the rest are empty.",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.GRID.02",
+    "correct_letter": "A",
+    "correct_answer": "A"
+   }
+  },
+  {
+   "uid": "LOGIC:S45-M-Q5",
+   "id": "S45-M-Q5",
+   "set": 45,
+   "set_title": "Letter grids and word squares",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Fill and analyze letter grids under stated rules and a supplied word list",
+   "number": 5,
+   "type": "sa",
+   "outcome": "LOGIC.GRID.02",
+   "outcome_title": "Fill and analyze letter grids under stated rules and a supplied word list",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP7"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "letter grids",
+   "family": "verbal",
+   "question_page": 0,
+   "prompt": "Rule: each row and each column must contain each of the letters A, B and C exactly once. The first row is A B C. How many ways are there to complete the grid?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "2",
+   "accepted_alternatives": [],
+   "solution": "The second row must avoid the letter above each cell: B C A or C A B. Each choice forces the third row. So 2 ways.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.GRID.02",
+    "answer_lines": [
+     "Ways:"
+    ],
+    "correct_answer": "2"
+   }
+  },
+  {
+   "uid": "LOGIC:S45-B1-Q1",
+   "id": "S45-B1-Q1",
+   "set": 45,
+   "set_title": "Letter grids and word squares",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "guided_strategy",
+   "section_skill": "Strategy: fill the most constrained cell first",
+   "number": 1,
+   "type": "sa",
+   "outcome": "LOGIC.GRID.02",
+   "outcome_title": "Fill and analyze letter grids under stated rules and a supplied word list",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP7"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "letter grids",
+   "family": "verbal",
+   "question_page": 0,
+   "prompt": "Rule: each row and each column must contain each of the letters A, B and C exactly once. A row reads A _ C. Which letter fills the gap?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "B",
+   "accepted_alternatives": [],
+   "solution": "Each row holds A, B and C once, and only B is missing.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.GRID.02",
+    "answer_lines": [
+     "Letter:"
+    ],
+    "correct_answer": "B"
+   }
+  },
+  {
+   "uid": "LOGIC:S45-B1-Q2",
+   "id": "S45-B1-Q2",
+   "set": 45,
+   "set_title": "Letter grids and word squares",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "guided_strategy",
+   "section_skill": "Strategy: fill the most constrained cell first",
+   "number": 2,
+   "type": "tf",
+   "outcome": "LOGIC.GRID.02",
+   "outcome_title": "Fill and analyze letter grids under stated rules and a supplied word list",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP7"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "letter grids",
+   "family": "verbal",
+   "question_page": 0,
+   "prompt": "Rule: each row and each column must contain each of the letters A, B and C exactly once. If column 1 holds A and B, its third cell must hold C.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "True",
+   "accepted_alternatives": [],
+   "solution": "C is the only letter not yet used in that column.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.GRID.02",
+    "correct_letter": "A",
+    "correct_answer": "True",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S45-B1-Q3",
+   "id": "S45-B1-Q3",
+   "set": 45,
+   "set_title": "Letter grids and word squares",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "guided_strategy",
+   "section_skill": "Strategy: fill the most constrained cell first",
+   "number": 3,
+   "type": "mc",
+   "outcome": "LOGIC.GRID.02",
+   "outcome_title": "Fill and analyze letter grids under stated rules and a supplied word list",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP7"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "letter grids",
+   "family": "verbal",
+   "question_page": 0,
+   "prompt": "Rule: each row and each column must contain each of the letters A, B, C and D exactly once. A cell's row already holds A and D, and its column holds B. Which letter must go in the cell?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "A"
+    },
+    {
+     "letter": "B",
+     "text": "D"
+    },
+    {
+     "letter": "C",
+     "text": "B"
+    },
+    {
+     "letter": "D",
+     "text": "C"
+    }
+   ],
+   "correct_letter": "D",
+   "correct_answer": "D. C",
+   "accepted_alternatives": [],
+   "solution": "Only C is used by neither the row nor the column.",
+   "wrong_choices": [
+    {
+     "text": "A",
+     "why_wrong": "A is already in the row"
+    },
+    {
+     "text": "B",
+     "why_wrong": "B is already in the column"
+    },
+    {
+     "text": "D",
+     "why_wrong": "D is already in the row"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.GRID.02",
+    "correct_letter": "D",
+    "correct_answer": "C"
+   }
+  },
+  {
+   "uid": "LOGIC:S45-B1-Q4",
+   "id": "S45-B1-Q4",
+   "set": 45,
+   "set_title": "Letter grids and word squares",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "guided_strategy",
+   "section_skill": "Strategy: fill the most constrained cell first",
+   "number": 4,
+   "type": "tf",
+   "outcome": "LOGIC.GRID.02",
+   "outcome_title": "Fill and analyze letter grids under stated rules and a supplied word list",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP7"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "letter grids",
+   "family": "verbal",
+   "question_page": 0,
+   "prompt": "Rule: each row and each column must contain each of the letters A, B and C exactly once. A grid can have the row A B C directly above the row A C B.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "False",
+   "accepted_alternatives": [],
+   "solution": "Both rows put A in column 1, so column 1 would have A twice.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.GRID.02",
+    "correct_letter": "B",
+    "correct_answer": "False",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S45-B1-Q5",
+   "id": "S45-B1-Q5",
+   "set": 45,
+   "set_title": "Letter grids and word squares",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "guided_strategy",
+   "section_skill": "Strategy: fill the most constrained cell first",
+   "number": 5,
+   "type": "sa",
+   "outcome": "LOGIC.GRID.02",
+   "outcome_title": "Fill and analyze letter grids under stated rules and a supplied word list",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP7"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "letter grids",
+   "family": "verbal",
+   "question_page": 0,
+   "prompt": "Rule: each row and each column must contain each of the letters A, B and C exactly once. Rows 1 and 2 are A B C and C A B. What is row 3? Type the three letters with no spaces.",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "BCA",
+   "accepted_alternatives": [],
+   "solution": "Each column needs its missing letter: column 1 has A, C so B; column 2 has B, A so C; column 3 has C, B so A.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.GRID.02",
+    "answer_lines": [
+     "Row 3:"
+    ],
+    "correct_answer": "BCA"
+   }
+  },
+  {
+   "uid": "LOGIC:S45-F1-Q1",
+   "id": "S45-F1-Q1",
+   "set": 45,
+   "set_title": "Letter grids and word squares",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Word squares from a list",
+   "number": 1,
+   "type": "values",
+   "outcome": "LOGIC.GRID.02",
+   "outcome_title": "Fill and analyze letter grids under stated rules and a supplied word list",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP7"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "letter grids",
+   "family": "verbal",
+   "question_page": 0,
+   "prompt": "Word list (the ONLY words allowed): CAT, ARE, TEN, ART, EAR, NET, TAN, ATE, RAT, ERA, TEA, ACE, ONE, NAP, APE, PEN, OAR, ORE, ROE, TOE, TON, NOT, ANT. In a word square, the three rows, read left to right, are the same words as the three columns, read top to bottom, in the same order. The first row of a word square is ATE. Give the second and third rows.",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "any values that satisfy: w2 == 'tea' and w3 == 'ear' (example: w2 = TEA, w3 = EAR)",
+   "accepted_alternatives": [],
+   "solution": "Row 2 = column 2 starts with T, and row 3 = column 3 starts with E. TEA and EAR fit: columns ATE, TEA, EAR.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [
+    {
+     "w2": "TEN",
+     "w3": "EAR"
+    },
+    {
+     "w2": "TAN",
+     "w3": "ERA"
+    }
+   ],
+   "validation": "Search: 1 word square(s) start with ATE. Automatic: the example passes the rule and 2 listed mistakes fail it.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "values",
+    "outcome": "LOGIC.GRID.02",
+    "fields": [
+     {
+      "name": "w2",
+      "label": "Row 2 ="
+     },
+     {
+      "name": "w3",
+      "label": "Row 3 ="
+     }
+    ],
+    "rule": "w2 == 'tea' and w3 == 'ear'",
+    "example_answer": {
+     "w2": "TEA",
+     "w3": "EAR"
+    },
+    "correct_answer": "any values that satisfy: w2 == 'tea' and w3 == 'ear' (example: w2 = TEA, w3 = EAR)"
+   }
+  },
+  {
+   "uid": "LOGIC:S45-F1-Q2",
+   "id": "S45-F1-Q2",
+   "set": 45,
+   "set_title": "Letter grids and word squares",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Word squares from a list",
+   "number": 2,
+   "type": "sa",
+   "outcome": "LOGIC.GRID.02",
+   "outcome_title": "Fill and analyze letter grids under stated rules and a supplied word list",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP7"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "letter grids",
+   "family": "verbal",
+   "question_page": 0,
+   "prompt": "Word list (the ONLY words allowed): CAT, ARE, TEN, ART, EAR, NET, TAN, ATE, RAT, ERA, TEA, ACE, ONE, NAP, APE, PEN, OAR, ORE, ROE, TOE, TON, NOT, ANT. In a word square, the three rows, read left to right, are the same words as the three columns, read top to bottom, in the same order. How many words on the list can be the first row of at least one word square?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "15",
+   "accepted_alternatives": [],
+   "solution": "A search of every pair of words for each possible first row finds the squares; count the first rows that work.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.GRID.02",
+    "answer_lines": [
+     "Words:"
+    ],
+    "correct_answer": "15"
+   }
+  },
+  {
+   "uid": "LOGIC:S45-F1-Q3",
+   "id": "S45-F1-Q3",
+   "set": 45,
+   "set_title": "Letter grids and word squares",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Word squares from a list",
+   "number": 3,
+   "type": "tf",
+   "outcome": "LOGIC.GRID.02",
+   "outcome_title": "Fill and analyze letter grids under stated rules and a supplied word list",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP7"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "letter grids",
+   "family": "verbal",
+   "question_page": 0,
+   "prompt": "Word list (the ONLY words allowed): CAT, ARE, TEN, ART, EAR, NET, TAN, ATE, RAT, ERA, TEA, ACE, ONE, NAP, APE, PEN, OAR, ORE, ROE, TOE, TON, NOT, ANT. In a word square, the three rows, read left to right, are the same words as the three columns, read top to bottom, in the same order. A word square can start with the row ONE.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "False",
+   "accepted_alternatives": [],
+   "solution": "Row 2 must start with N (NET, NAP or NOT) and row 3 with E. The middle letter of row 3 must equal the last letter of row 2 (T or P), but no listed word starts with ET or EP.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the statement was evaluated by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.GRID.02",
+    "correct_letter": "B",
+    "correct_answer": "False",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S45-F1-Q4",
+   "id": "S45-F1-Q4",
+   "set": 45,
+   "set_title": "Letter grids and word squares",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Word squares from a list",
+   "number": 4,
+   "type": "sa",
+   "outcome": "LOGIC.GRID.02",
+   "outcome_title": "Fill and analyze letter grids under stated rules and a supplied word list",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP7"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "letter grids",
+   "family": "verbal",
+   "question_page": 0,
+   "prompt": "Rule: each row and each column must contain each of the letters A, B, C and D exactly once. The grid in the figure has six letters filled in. Type the complete top row (four letters, no spaces).",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "ADBC",
+   "accepted_alternatives": [],
+   "solution": "Row 2 is C _ D B, so its gap is A. Column 4 needs A in row 4. Continuing cell by cell gives the only completion: ADBC, CADB, BCAD, DBCA.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "assets/S45-F1-Q4.svg",
+   "figure_description": "A 4 by 4 letter grid; some cells hold letters, the rest are empty.",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.GRID.02",
+    "answer_lines": [
+     "Row 1:"
+    ],
+    "correct_answer": "ADBC"
+   }
+  },
+  {
+   "uid": "LOGIC:S45-F1-Q5",
+   "id": "S45-F1-Q5",
+   "set": 45,
+   "set_title": "Letter grids and word squares",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Word squares from a list",
+   "number": 5,
+   "type": "mc",
+   "outcome": "LOGIC.GRID.02",
+   "outcome_title": "Fill and analyze letter grids under stated rules and a supplied word list",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP7"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "letter grids",
+   "family": "verbal",
+   "question_page": 0,
+   "prompt": "Rule: a 2 by 3 grid is filled with A and B so that no two cells sharing a side hold the same letter. How many such grids are there?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "2"
+    },
+    {
+     "letter": "B",
+     "text": "4"
+    },
+    {
+     "letter": "C",
+     "text": "6"
+    },
+    {
+     "letter": "D",
+     "text": "1"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "A. 2",
+   "accepted_alternatives": [],
+   "solution": "The top-left letter decides the whole checkerboard pattern: 2 grids.",
+   "wrong_choices": [
+    {
+     "text": "1",
+     "why_wrong": "the top-left cell can be either letter"
+    },
+    {
+     "text": "4",
+     "why_wrong": "once the top-left cell is chosen, every other cell is forced"
+    },
+    {
+     "text": "6",
+     "why_wrong": "that counts cells, not grids"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.GRID.02",
+    "correct_letter": "A",
+    "correct_answer": "2"
+   }
+  },
+  {
+   "uid": "LOGIC:S45-F2-Q1",
+   "id": "S45-F2-Q1",
+   "set": 45,
+   "set_title": "Letter grids and word squares",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Prove a grid is impossible or count it",
+   "number": 1,
+   "type": "sa",
+   "outcome": "LOGIC.GRID.02",
+   "outcome_title": "Fill and analyze letter grids under stated rules and a supplied word list",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP7"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "letter grids",
+   "family": "verbal",
+   "question_page": 0,
+   "prompt": "Rule: each row and each column must contain each of the letters A, B, C and D exactly once. How many ways are there to fill the whole grid if the first row is A B C D?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "24",
+   "accepted_alternatives": [],
+   "solution": "Count the second rows that avoid the letter above each cell (9 ways), then the completions of each (search): 24 in all.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.GRID.02",
+    "answer_lines": [
+     "Ways:"
+    ],
+    "correct_answer": "24"
+   }
+  },
+  {
+   "uid": "LOGIC:S45-F2-Q2",
+   "id": "S45-F2-Q2",
+   "set": 45,
+   "set_title": "Letter grids and word squares",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Prove a grid is impossible or count it",
+   "number": 2,
+   "type": "tf",
+   "outcome": "LOGIC.GRID.02",
+   "outcome_title": "Fill and analyze letter grids under stated rules and a supplied word list",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP7"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "letter grids",
+   "family": "verbal",
+   "question_page": 0,
+   "prompt": "Rule: a 3 by 3 grid is filled with A and B so that no two cells sharing a side hold the same letter. The top-left cell holds A and the top-right cell holds B.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "False",
+   "accepted_alternatives": [],
+   "solution": "The top row must alternate A, B, A, so its two ends match. A grid with A and B at the two top corners breaks the rule.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the statement was evaluated by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.GRID.02",
+    "correct_letter": "B",
+    "correct_answer": "False",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S45-F2-Q3",
+   "id": "S45-F2-Q3",
+   "set": 45,
+   "set_title": "Letter grids and word squares",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Prove a grid is impossible or count it",
+   "number": 3,
+   "type": "mc",
+   "outcome": "LOGIC.GRID.02",
+   "outcome_title": "Fill and analyze letter grids under stated rules and a supplied word list",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP7"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "letter grids",
+   "family": "verbal",
+   "question_page": 0,
+   "prompt": "Rule: each row and each column must contain each of the letters A, B and C exactly once. Which partly filled grid can NOT be completed?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "Row 1 starts A, and row 2 starts B"
+    },
+    {
+     "letter": "B",
+     "text": "Row 1 starts A B, and row 2 ends in C"
+    },
+    {
+     "letter": "C",
+     "text": "The diagonal from top left to bottom right is A, A, A"
+    },
+    {
+     "letter": "D",
+     "text": "Row 1 is A B C"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "B. Row 1 starts A B, and row 2 ends in C",
+   "accepted_alternatives": [],
+   "solution": "Row 1 is A B _, so its last cell must be C. But column 3 already has C in row 2, so no letter fits.",
+   "wrong_choices": [
+    {
+     "text": "Row 1 is A B C",
+     "why_wrong": "it can be completed in 2 ways"
+    },
+    {
+     "text": "Row 1 starts A, and row 2 starts B",
+     "why_wrong": "for example A B C, B C A, C A B"
+    },
+    {
+     "text": "The diagonal from top left to bottom right is A, A, A",
+     "why_wrong": "for example A B C, C A B, B C A"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.GRID.02",
+    "correct_letter": "B",
+    "correct_answer": "Row 1 starts A B, and row 2 ends in C"
+   }
+  },
+  {
+   "uid": "LOGIC:S45-F2-Q4",
+   "id": "S45-F2-Q4",
+   "set": 45,
+   "set_title": "Letter grids and word squares",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Prove a grid is impossible or count it",
+   "number": 4,
+   "type": "values",
+   "outcome": "LOGIC.GRID.02",
+   "outcome_title": "Fill and analyze letter grids under stated rules and a supplied word list",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP7"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "letter grids",
+   "family": "verbal",
+   "question_page": 0,
+   "prompt": "Word list (the ONLY words allowed): CAT, ARE, TEN, ART, EAR, NET, TAN, ATE, RAT, ERA, TEA, ACE, ONE, NAP, APE, PEN, OAR, ORE, ROE, TOE, TON, NOT, ANT. In a word square, the three rows, read left to right, are the same words as the three columns, read top to bottom, in the same order. Give the second and third rows of the word square whose first row is ROE.",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "any values that satisfy: w2 == 'oar' and w3 == 'era' (example: w2 = OAR, w3 = ERA)",
+   "accepted_alternatives": [],
+   "solution": "Row 2 starts with O and row 3 with E. OAR and ERA give columns ROE, OAR, ERA.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [
+    {
+     "w2": "ORE",
+     "w3": "ERA"
+    },
+    {
+     "w2": "OAR",
+     "w3": "EAR"
+    }
+   ],
+   "validation": "Search: 1 word square(s) start with ROE. Automatic: the example passes the rule and 2 listed mistakes fail it.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "values",
+    "outcome": "LOGIC.GRID.02",
+    "fields": [
+     {
+      "name": "w2",
+      "label": "Row 2 ="
+     },
+     {
+      "name": "w3",
+      "label": "Row 3 ="
+     }
+    ],
+    "rule": "w2 == 'oar' and w3 == 'era'",
+    "example_answer": {
+     "w2": "OAR",
+     "w3": "ERA"
+    },
+    "correct_answer": "any values that satisfy: w2 == 'oar' and w3 == 'era' (example: w2 = OAR, w3 = ERA)"
+   }
+  },
+  {
+   "uid": "LOGIC:S45-F2-Q5",
+   "id": "S45-F2-Q5",
+   "set": 45,
+   "set_title": "Letter grids and word squares",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Prove a grid is impossible or count it",
+   "number": 5,
+   "type": "sa",
+   "outcome": "LOGIC.GRID.02",
+   "outcome_title": "Fill and analyze letter grids under stated rules and a supplied word list",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP7"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "letter grids",
+   "family": "verbal",
+   "question_page": 0,
+   "prompt": "Rule: each row and each column must contain each of the letters A, B and C exactly once. How many ways are there to fill an empty 3 by 3 grid?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "12",
+   "accepted_alternatives": [],
+   "solution": "The first row can be any of the 6 orders of A, B, C, and each has 2 completions: 12.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.GRID.02",
+    "answer_lines": [
+     "Ways:"
+    ],
+    "correct_answer": "12"
+   }
+  },
+  {
+   "uid": "LOGIC:S46-M-Q1",
+   "id": "S46-M-Q1",
+   "set": 46,
+   "set_title": "Explanations and missing assumptions",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Identify the unstated assumption an argument needs and evaluate competing explanations",
+   "number": 1,
+   "type": "mc",
+   "outcome": "LOGIC.EVIDENCE.01",
+   "outcome_title": "Identify the unstated assumption an argument needs and evaluate competing explanations",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. \"The school's robot passed every test in the lab, so it will work at the competition.\" Which assumption does this argument need?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "The robot failed some tests last year."
+    },
+    {
+     "letter": "B",
+     "text": "The robot was built by students."
+    },
+    {
+     "letter": "C",
+     "text": "Conditions at the competition are like those in the lab."
+    },
+    {
+     "letter": "D",
+     "text": "Other teams also tested their robots."
+    }
+   ],
+   "correct_letter": "C",
+   "correct_answer": "C. Conditions at the competition are like those in the lab.",
+   "accepted_alternatives": [],
+   "solution": "Lab success supports competition success only if the two settings are alike.",
+   "wrong_choices": [
+    {
+     "text": "The robot was built by students.",
+     "why_wrong": "who built it does not connect the lab results to the competition"
+    },
+    {
+     "text": "The robot failed some tests last year.",
+     "why_wrong": "that is about the past and weakens nothing here"
+    },
+    {
+     "text": "Other teams also tested their robots.",
+     "why_wrong": "other teams' testing is irrelevant to this robot"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.EVIDENCE.01",
+    "correct_letter": "C",
+    "correct_answer": "Conditions at the competition are like those in the lab."
+   }
+  },
+  {
+   "uid": "LOGIC:S46-M-Q2",
+   "id": "S46-M-Q2",
+   "set": 46,
+   "set_title": "Explanations and missing assumptions",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Identify the unstated assumption an argument needs and evaluate competing explanations",
+   "number": 2,
+   "type": "mc",
+   "outcome": "LOGIC.EVIDENCE.01",
+   "outcome_title": "Identify the unstated assumption an argument needs and evaluate competing explanations",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. \"Mia's plant grew faster after she moved it to the window, so sunlight made it grow faster.\" Which assumption does this argument need?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "Nothing else that affects growth changed when the plant was moved."
+    },
+    {
+     "letter": "B",
+     "text": "The window faces south."
+    },
+    {
+     "letter": "C",
+     "text": "Mia has other plants indoors."
+    },
+    {
+     "letter": "D",
+     "text": "Plants need water to grow."
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "A. Nothing else that affects growth changed when the plant was moved.",
+   "accepted_alternatives": [],
+   "solution": "If the temperature or watering also changed, those could explain the faster growth instead.",
+   "wrong_choices": [
+    {
+     "text": "Plants need water to grow.",
+     "why_wrong": "true, but it does not link the move to the faster growth"
+    },
+    {
+     "text": "The window faces south.",
+     "why_wrong": "the direction is not needed for the conclusion"
+    },
+    {
+     "text": "Mia has other plants indoors.",
+     "why_wrong": "other plants are not part of the argument"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.EVIDENCE.01",
+    "correct_letter": "A",
+    "correct_answer": "Nothing else that affects growth changed when the plant was moved."
+   }
+  },
+  {
+   "uid": "LOGIC:S46-M-Q3",
+   "id": "S46-M-Q3",
+   "set": 46,
+   "set_title": "Explanations and missing assumptions",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Identify the unstated assumption an argument needs and evaluate competing explanations",
+   "number": 3,
+   "type": "tf",
+   "outcome": "LOGIC.EVIDENCE.01",
+   "outcome_title": "Identify the unstated assumption an argument needs and evaluate competing explanations",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. \"Every member of the chess club is in grade 10. Jo is in grade 10. So Jo is in the chess club.\" This argument would become valid if we add the assumption \"Everyone in grade 10 is in the chess club.\"",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "True",
+   "accepted_alternatives": [],
+   "solution": "With that added premise, Jo being in grade 10 forces Jo into the club. The original premise points the other way.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.EVIDENCE.01",
+    "correct_letter": "A",
+    "correct_answer": "True",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S46-M-Q4",
+   "id": "S46-M-Q4",
+   "set": 46,
+   "set_title": "Explanations and missing assumptions",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Identify the unstated assumption an argument needs and evaluate competing explanations",
+   "number": 4,
+   "type": "mc",
+   "outcome": "LOGIC.EVIDENCE.01",
+   "outcome_title": "Identify the unstated assumption an argument needs and evaluate competing explanations",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "The cafeteria sold fewer sandwiches this week than last week. Which explanation is best supported if we also learn that the cafeteria was closed on two days this week?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "Fewer students attend the school this year."
+    },
+    {
+     "letter": "B",
+     "text": "The cafeteria was open on fewer days to sell sandwiches."
+    },
+    {
+     "letter": "C",
+     "text": "Students stopped liking sandwiches."
+    },
+    {
+     "letter": "D",
+     "text": "The sandwich price went up."
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "B. The cafeteria was open on fewer days to sell sandwiches.",
+   "accepted_alternatives": [],
+   "solution": "The given fact directly explains fewer sales without any other change.",
+   "wrong_choices": [
+    {
+     "text": "Students stopped liking sandwiches.",
+     "why_wrong": "nothing given says tastes changed"
+    },
+    {
+     "text": "The sandwich price went up.",
+     "why_wrong": "nothing given mentions prices"
+    },
+    {
+     "text": "Fewer students attend the school this year.",
+     "why_wrong": "the comparison is week to week, and enrollment was not mentioned"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.EVIDENCE.01",
+    "correct_letter": "B",
+    "correct_answer": "The cafeteria was open on fewer days to sell sandwiches."
+   }
+  },
+  {
+   "uid": "LOGIC:S46-M-Q5",
+   "id": "S46-M-Q5",
+   "set": 46,
+   "set_title": "Explanations and missing assumptions",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Identify the unstated assumption an argument needs and evaluate competing explanations",
+   "number": 5,
+   "type": "tf",
+   "outcome": "LOGIC.EVIDENCE.01",
+   "outcome_title": "Identify the unstated assumption an argument needs and evaluate competing explanations",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. \"This bridge is safe because it has stood for 80 years.\" The argument needs the assumption that the bridge will be used the same way as it has been.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "True",
+   "accepted_alternatives": [],
+   "solution": "If much heavier loads start crossing, 80 years of standing would say little about safety under the new loads.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.EVIDENCE.01",
+    "correct_letter": "A",
+    "correct_answer": "True",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S46-B1-Q1",
+   "id": "S46-B1-Q1",
+   "set": 46,
+   "set_title": "Explanations and missing assumptions",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "guided_strategy",
+   "section_skill": "Find the gap between premise and conclusion",
+   "number": 1,
+   "type": "mc",
+   "outcome": "LOGIC.EVIDENCE.01",
+   "outcome_title": "Identify the unstated assumption an argument needs and evaluate competing explanations",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. \"Sam is taller than Ana, so Sam is taller than Raj.\" Which assumption fills the gap?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "Raj is taller than Ana."
+    },
+    {
+     "letter": "B",
+     "text": "Ana and Raj are friends."
+    },
+    {
+     "letter": "C",
+     "text": "Sam is the tallest in his class."
+    },
+    {
+     "letter": "D",
+     "text": "Ana is at least as tall as Raj."
+    }
+   ],
+   "correct_letter": "D",
+   "correct_answer": "D. Ana is at least as tall as Raj.",
+   "accepted_alternatives": [],
+   "solution": "Sam > Ana and Ana >= Raj give Sam > Raj.",
+   "wrong_choices": [
+    {
+     "text": "Raj is taller than Ana.",
+     "why_wrong": "that would make the conclusion less certain, not more"
+    },
+    {
+     "text": "Sam is the tallest in his class.",
+     "why_wrong": "Raj may not be in Sam's class"
+    },
+    {
+     "text": "Ana and Raj are friends.",
+     "why_wrong": "friendship says nothing about height"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.EVIDENCE.01",
+    "correct_letter": "D",
+    "correct_answer": "Ana is at least as tall as Raj."
+   }
+  },
+  {
+   "uid": "LOGIC:S46-B1-Q2",
+   "id": "S46-B1-Q2",
+   "set": 46,
+   "set_title": "Explanations and missing assumptions",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "guided_strategy",
+   "section_skill": "Find the gap between premise and conclusion",
+   "number": 2,
+   "type": "tf",
+   "outcome": "LOGIC.EVIDENCE.01",
+   "outcome_title": "Identify the unstated assumption an argument needs and evaluate competing explanations",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. A statement can be true and still not be an assumption that an argument needs.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "True",
+   "accepted_alternatives": [],
+   "solution": "A true fact that does not bridge the gap between premise and conclusion is not needed.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.EVIDENCE.01",
+    "correct_letter": "A",
+    "correct_answer": "True",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S46-B1-Q3",
+   "id": "S46-B1-Q3",
+   "set": 46,
+   "set_title": "Explanations and missing assumptions",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "guided_strategy",
+   "section_skill": "Find the gap between premise and conclusion",
+   "number": 3,
+   "type": "mc",
+   "outcome": "LOGIC.EVIDENCE.01",
+   "outcome_title": "Identify the unstated assumption an argument needs and evaluate competing explanations",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. \"The park was crowded on Saturday, so it will be crowded this Saturday.\" What is the gap?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "From Saturday to Sunday"
+    },
+    {
+     "letter": "B",
+     "text": "From the park to the city"
+    },
+    {
+     "letter": "C",
+     "text": "From one past Saturday to a future Saturday"
+    },
+    {
+     "letter": "D",
+     "text": "From crowded to empty"
+    }
+   ],
+   "correct_letter": "C",
+   "correct_answer": "C. From one past Saturday to a future Saturday",
+   "accepted_alternatives": [],
+   "solution": "The argument needs this Saturday to be like the last one.",
+   "wrong_choices": [
+    {
+     "text": "From the park to the city",
+     "why_wrong": "the argument never mentions a city"
+    },
+    {
+     "text": "From crowded to empty",
+     "why_wrong": "the conclusion also says crowded"
+    },
+    {
+     "text": "From Saturday to Sunday",
+     "why_wrong": "both days in the argument are Saturdays"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.EVIDENCE.01",
+    "correct_letter": "C",
+    "correct_answer": "From one past Saturday to a future Saturday"
+   }
+  },
+  {
+   "uid": "LOGIC:S46-B1-Q4",
+   "id": "S46-B1-Q4",
+   "set": 46,
+   "set_title": "Explanations and missing assumptions",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "guided_strategy",
+   "section_skill": "Find the gap between premise and conclusion",
+   "number": 4,
+   "type": "tf",
+   "outcome": "LOGIC.EVIDENCE.01",
+   "outcome_title": "Identify the unstated assumption an argument needs and evaluate competing explanations",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. If an assumption an argument needs turns out to be false, the conclusion no longer follows from the premises.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "True",
+   "accepted_alternatives": [],
+   "solution": "That is what it means for the argument to need it.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.EVIDENCE.01",
+    "correct_letter": "A",
+    "correct_answer": "True",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S46-B1-Q5",
+   "id": "S46-B1-Q5",
+   "set": 46,
+   "set_title": "Explanations and missing assumptions",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "guided_strategy",
+   "section_skill": "Find the gap between premise and conclusion",
+   "number": 5,
+   "type": "tf",
+   "outcome": "LOGIC.EVIDENCE.01",
+   "outcome_title": "Identify the unstated assumption an argument needs and evaluate competing explanations",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. \"All squares are rectangles, so all rectangles are squares\" needs no assumption to be valid.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "False",
+   "accepted_alternatives": [],
+   "solution": "It reverses the premise. It would need the extra premise \"all rectangles are squares\", which is false.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.EVIDENCE.01",
+    "correct_letter": "B",
+    "correct_answer": "False",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S46-F1-Q1",
+   "id": "S46-F1-Q1",
+   "set": 46,
+   "set_title": "Explanations and missing assumptions",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Weaken and strengthen explanations",
+   "number": 1,
+   "type": "mc",
+   "outcome": "LOGIC.EVIDENCE.01",
+   "outcome_title": "Identify the unstated assumption an argument needs and evaluate competing explanations",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "Claim: \"Students who eat breakfast score higher on tests, so eating breakfast raises test scores.\" Which fact would most WEAKEN the claim?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "Test scores rose last year."
+    },
+    {
+     "letter": "B",
+     "text": "Many students eat breakfast."
+    },
+    {
+     "letter": "C",
+     "text": "Breakfast foods are cheap."
+    },
+    {
+     "letter": "D",
+     "text": "Students who eat breakfast also sleep more, and sleep is linked to higher scores."
+    }
+   ],
+   "correct_letter": "D",
+   "correct_answer": "D. Students who eat breakfast also sleep more, and sleep is linked to higher scores.",
+   "accepted_alternatives": [],
+   "solution": "Another factor (sleep) could explain both, so breakfast might not be the cause.",
+   "wrong_choices": [
+    {
+     "text": "Many students eat breakfast.",
+     "why_wrong": "how common breakfast is does not affect the link"
+    },
+    {
+     "text": "Test scores rose last year.",
+     "why_wrong": "a general rise does not touch the breakfast link"
+    },
+    {
+     "text": "Breakfast foods are cheap.",
+     "why_wrong": "price does not touch the link between breakfast and scores"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.EVIDENCE.01",
+    "correct_letter": "D",
+    "correct_answer": "Students who eat breakfast also sleep more, and sleep is linked to higher scores."
+   }
+  },
+  {
+   "uid": "LOGIC:S46-F1-Q2",
+   "id": "S46-F1-Q2",
+   "set": 46,
+   "set_title": "Explanations and missing assumptions",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Weaken and strengthen explanations",
+   "number": 2,
+   "type": "mc",
+   "outcome": "LOGIC.EVIDENCE.01",
+   "outcome_title": "Identify the unstated assumption an argument needs and evaluate competing explanations",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "Claim: \"The new crosswalk signal reduced accidents at Elm Street.\" Which fact would most STRENGTHEN the claim?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "The signal cost a lot of money."
+    },
+    {
+     "letter": "B",
+     "text": "Elm Street is near a school."
+    },
+    {
+     "letter": "C",
+     "text": "Accidents did not drop at similar streets that did not get the signal."
+    },
+    {
+     "letter": "D",
+     "text": "Drivers like the new signal."
+    }
+   ],
+   "correct_letter": "C",
+   "correct_answer": "C. Accidents did not drop at similar streets that did not get the signal.",
+   "accepted_alternatives": [],
+   "solution": "If accidents fell only where the signal was added, the signal is the likely cause.",
+   "wrong_choices": [
+    {
+     "text": "The signal cost a lot of money.",
+     "why_wrong": "cost says nothing about the effect"
+    },
+    {
+     "text": "Elm Street is near a school.",
+     "why_wrong": "location alone does not show the signal worked"
+    },
+    {
+     "text": "Drivers like the new signal.",
+     "why_wrong": "liking it does not show accidents fell because of it"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.EVIDENCE.01",
+    "correct_letter": "C",
+    "correct_answer": "Accidents did not drop at similar streets that did not get the signal."
+   }
+  },
+  {
+   "uid": "LOGIC:S46-F1-Q3",
+   "id": "S46-F1-Q3",
+   "set": 46,
+   "set_title": "Explanations and missing assumptions",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Weaken and strengthen explanations",
+   "number": 3,
+   "type": "tf",
+   "outcome": "LOGIC.EVIDENCE.01",
+   "outcome_title": "Identify the unstated assumption an argument needs and evaluate competing explanations",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. \"No reptiles have fur. This animal has fur. So this animal is not a reptile.\" This argument needs an unstated assumption to be valid.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "False",
+   "accepted_alternatives": [],
+   "solution": "It is already valid: if it were a reptile, it would have no fur, but it has fur.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.EVIDENCE.01",
+    "correct_letter": "B",
+    "correct_answer": "False",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S46-F1-Q4",
+   "id": "S46-F1-Q4",
+   "set": 46,
+   "set_title": "Explanations and missing assumptions",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Weaken and strengthen explanations",
+   "number": 4,
+   "type": "mc",
+   "outcome": "LOGIC.EVIDENCE.01",
+   "outcome_title": "Identify the unstated assumption an argument needs and evaluate competing explanations",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. \"Our team lost every game we played in the rain. It will rain on Friday. So we will lose Friday's game.\" Which assumption does the argument need?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "It rains more in the spring."
+    },
+    {
+     "letter": "B",
+     "text": "The rain caused the losses, rather than something else about those games."
+    },
+    {
+     "letter": "C",
+     "text": "Friday's game is at home."
+    },
+    {
+     "letter": "D",
+     "text": "Our team has played in the rain before."
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "B. The rain caused the losses, rather than something else about those games.",
+   "accepted_alternatives": [],
+   "solution": "The past pattern predicts Friday only if rain is the reason for the losses.",
+   "wrong_choices": [
+    {
+     "text": "Our team has played in the rain before.",
+     "why_wrong": "that is already stated in the premise"
+    },
+    {
+     "text": "Friday's game is at home.",
+     "why_wrong": "location is not part of the argument"
+    },
+    {
+     "text": "It rains more in the spring.",
+     "why_wrong": "that does not connect rain to losing"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.EVIDENCE.01",
+    "correct_letter": "B",
+    "correct_answer": "The rain caused the losses, rather than something else about those games."
+   }
+  },
+  {
+   "uid": "LOGIC:S46-F1-Q5",
+   "id": "S46-F1-Q5",
+   "set": 46,
+   "set_title": "Explanations and missing assumptions",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Weaken and strengthen explanations",
+   "number": 5,
+   "type": "tf",
+   "outcome": "LOGIC.EVIDENCE.01",
+   "outcome_title": "Identify the unstated assumption an argument needs and evaluate competing explanations",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "Two explanations both fit the facts. Finding a new fact that one explanation predicts and the other does not can help decide between them.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "True",
+   "accepted_alternatives": [],
+   "solution": "A fact predicted by only one explanation supports that explanation over the other.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.EVIDENCE.01",
+    "correct_letter": "A",
+    "correct_answer": "True",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S46-F2-Q1",
+   "id": "S46-F2-Q1",
+   "set": 46,
+   "set_title": "Explanations and missing assumptions",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Judge explanations with care",
+   "number": 1,
+   "type": "mc",
+   "outcome": "LOGIC.EVIDENCE.01",
+   "outcome_title": "Identify the unstated assumption an argument needs and evaluate competing explanations",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "A town's ice-cream sales and its number of sunburns rise and fall together during the year. Which explanation is best?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "Hot, sunny weather increases both."
+    },
+    {
+     "letter": "B",
+     "text": "Eating ice cream causes sunburn."
+    },
+    {
+     "letter": "C",
+     "text": "Sunburns make people buy ice cream."
+    },
+    {
+     "letter": "D",
+     "text": "The two numbers match by chance every year."
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "A. Hot, sunny weather increases both.",
+   "accepted_alternatives": [],
+   "solution": "A common cause (weather) explains why the two move together.",
+   "wrong_choices": [
+    {
+     "text": "Eating ice cream causes sunburn.",
+     "why_wrong": "nothing suggests ice cream affects skin"
+    },
+    {
+     "text": "Sunburns make people buy ice cream.",
+     "why_wrong": "the timing fits weather better than this"
+    },
+    {
+     "text": "The two numbers match by chance every year.",
+     "why_wrong": "a yearly pattern is unlikely to be chance alone"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.EVIDENCE.01",
+    "correct_letter": "A",
+    "correct_answer": "Hot, sunny weather increases both."
+   }
+  },
+  {
+   "uid": "LOGIC:S46-F2-Q2",
+   "id": "S46-F2-Q2",
+   "set": 46,
+   "set_title": "Explanations and missing assumptions",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Judge explanations with care",
+   "number": 2,
+   "type": "mc",
+   "outcome": "LOGIC.EVIDENCE.01",
+   "outcome_title": "Identify the unstated assumption an argument needs and evaluate competing explanations",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. \"Ming read the book, so Ming knows how it ends.\" Which assumption is needed?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "Ming liked the book."
+    },
+    {
+     "letter": "B",
+     "text": "Ming read the book all the way to the end."
+    },
+    {
+     "letter": "C",
+     "text": "The book has a surprise ending."
+    },
+    {
+     "letter": "D",
+     "text": "The book is long."
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "B. Ming read the book all the way to the end.",
+   "accepted_alternatives": [],
+   "solution": "Reading part of the book would not reveal the ending.",
+   "wrong_choices": [
+    {
+     "text": "The book has a surprise ending.",
+     "why_wrong": "the type of ending does not matter"
+    },
+    {
+     "text": "Ming liked the book.",
+     "why_wrong": "liking it is not needed to know the ending"
+    },
+    {
+     "text": "The book is long.",
+     "why_wrong": "length is not needed for the conclusion"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.EVIDENCE.01",
+    "correct_letter": "B",
+    "correct_answer": "Ming read the book all the way to the end."
+   }
+  },
+  {
+   "uid": "LOGIC:S46-F2-Q3",
+   "id": "S46-F2-Q3",
+   "set": 46,
+   "set_title": "Explanations and missing assumptions",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Judge explanations with care",
+   "number": 3,
+   "type": "tf",
+   "outcome": "LOGIC.EVIDENCE.01",
+   "outcome_title": "Identify the unstated assumption an argument needs and evaluate competing explanations",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. \"Every prize winner practiced daily. Kai practiced daily. So Kai won a prize.\" Adding \"Only prize winners practiced daily\" makes the argument valid.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "True",
+   "accepted_alternatives": [],
+   "solution": "Then anyone who practiced daily is a prize winner, and Kai practiced daily.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.EVIDENCE.01",
+    "correct_letter": "A",
+    "correct_answer": "True",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S46-F2-Q4",
+   "id": "S46-F2-Q4",
+   "set": 46,
+   "set_title": "Explanations and missing assumptions",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Judge explanations with care",
+   "number": 4,
+   "type": "mc",
+   "outcome": "LOGIC.EVIDENCE.01",
+   "outcome_title": "Identify the unstated assumption an argument needs and evaluate competing explanations",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "A survey of the chess club finds that 90% of members prefer quiet study rooms. A student concludes that 90% of the whole school prefers quiet study rooms. What assumption does this need?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "The survey asked about study rooms."
+    },
+    {
+     "letter": "B",
+     "text": "The chess club has more than 10 members."
+    },
+    {
+     "letter": "C",
+     "text": "Chess club members have the same preferences as the whole school."
+    },
+    {
+     "letter": "D",
+     "text": "Quiet rooms are better for studying."
+    }
+   ],
+   "correct_letter": "C",
+   "correct_answer": "C. Chess club members have the same preferences as the whole school.",
+   "accepted_alternatives": [],
+   "solution": "The conclusion jumps from one group to the school; it needs the group to represent the school.",
+   "wrong_choices": [
+    {
+     "text": "The chess club has more than 10 members.",
+     "why_wrong": "size alone does not make the club like the school"
+    },
+    {
+     "text": "Quiet rooms are better for studying.",
+     "why_wrong": "that does not link the club to the school"
+    },
+    {
+     "text": "The survey asked about study rooms.",
+     "why_wrong": "that is already part of the information"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.EVIDENCE.01",
+    "correct_letter": "C",
+    "correct_answer": "Chess club members have the same preferences as the whole school."
+   }
+  },
+  {
+   "uid": "LOGIC:S46-F2-Q5",
+   "id": "S46-F2-Q5",
+   "set": 46,
+   "set_title": "Explanations and missing assumptions",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Judge explanations with care",
+   "number": 5,
+   "type": "tf",
+   "outcome": "LOGIC.EVIDENCE.01",
+   "outcome_title": "Identify the unstated assumption an argument needs and evaluate competing explanations",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "If a needed assumption is shown to be false, the conclusion of the argument must be false.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "False",
+   "accepted_alternatives": [],
+   "solution": "The argument fails, but the conclusion could still be true for other reasons.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.EVIDENCE.01",
+    "correct_letter": "B",
+    "correct_answer": "False",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S47-M-Q1",
+   "id": "S47-M-Q1",
+   "set": 47,
+   "set_title": "Is there enough information?",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Decide whether the given information determines the answer, and what extra fact would",
+   "number": 1,
+   "type": "mc",
+   "outcome": "LOGIC.EVIDENCE.02",
+   "outcome_title": "Decide whether the given information determines the answer, and what extra fact would",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "Decide whether each clue, alone or together with the other, is enough to answer the question with exactly one answer. (In each of these questions, the two clues together are enough.) Ana, Ben and Cal ran a race with no ties. Who finished first? Clue (1): Ana finished ahead of Ben. Clue (2): Cal finished last.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "Neither clue alone is enough, but both together are."
+    },
+    {
+     "letter": "B",
+     "text": "Clue (2) alone is enough, but clue (1) alone is not."
+    },
+    {
+     "letter": "C",
+     "text": "Clue (1) alone is enough, but clue (2) alone is not."
+    },
+    {
+     "letter": "D",
+     "text": "Each clue alone is enough."
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "A. Neither clue alone is enough, but both together are.",
+   "accepted_alternatives": [],
+   "solution": "Clue (1) allows A B C, A C B and C A B (first could be Ana or Cal). Clue (2) allows A B C and B A C. Together only A B C: Ana.",
+   "wrong_choices": [
+    {
+     "text": "Clue (1) alone is enough, but clue (2) alone is not.",
+     "why_wrong": "check whether clue (1) alone leaves exactly one answer"
+    },
+    {
+     "text": "Clue (2) alone is enough, but clue (1) alone is not.",
+     "why_wrong": "check whether clue (2) alone leaves exactly one answer"
+    },
+    {
+     "text": "Each clue alone is enough.",
+     "why_wrong": "one of the clues alone leaves more than one answer"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.EVIDENCE.02",
+    "correct_letter": "A",
+    "correct_answer": "Neither clue alone is enough, but both together are."
+   }
+  },
+  {
+   "uid": "LOGIC:S47-M-Q2",
+   "id": "S47-M-Q2",
+   "set": 47,
+   "set_title": "Is there enough information?",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Decide whether the given information determines the answer, and what extra fact would",
+   "number": 2,
+   "type": "mc",
+   "outcome": "LOGIC.EVIDENCE.02",
+   "outcome_title": "Decide whether the given information determines the answer, and what extra fact would",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "Decide whether each clue, alone or together with the other, is enough to answer the question with exactly one answer. (In each of these questions, the two clues together are enough.) x is a whole number from 1 to 20. What is x? Clue (1): x is a multiple of 7 and greater than 10. Clue (2): x is even.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "Each clue alone is enough."
+    },
+    {
+     "letter": "B",
+     "text": "Neither clue alone is enough, but both together are."
+    },
+    {
+     "letter": "C",
+     "text": "Clue (2) alone is enough, but clue (1) alone is not."
+    },
+    {
+     "letter": "D",
+     "text": "Clue (1) alone is enough, but clue (2) alone is not."
+    }
+   ],
+   "correct_letter": "D",
+   "correct_answer": "D. Clue (1) alone is enough, but clue (2) alone is not.",
+   "accepted_alternatives": [],
+   "solution": "Clue (1) leaves only 14. Clue (2) leaves 10 numbers.",
+   "wrong_choices": [
+    {
+     "text": "Clue (2) alone is enough, but clue (1) alone is not.",
+     "why_wrong": "check whether clue (2) alone leaves exactly one answer"
+    },
+    {
+     "text": "Neither clue alone is enough, but both together are.",
+     "why_wrong": "check each clue alone before combining them"
+    },
+    {
+     "text": "Each clue alone is enough.",
+     "why_wrong": "one of the clues alone leaves more than one answer"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.EVIDENCE.02",
+    "correct_letter": "D",
+    "correct_answer": "Clue (1) alone is enough, but clue (2) alone is not."
+   }
+  },
+  {
+   "uid": "LOGIC:S47-M-Q3",
+   "id": "S47-M-Q3",
+   "set": 47,
+   "set_title": "Is there enough information?",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Decide whether the given information determines the answer, and what extra fact would",
+   "number": 3,
+   "type": "tf",
+   "outcome": "LOGIC.EVIDENCE.02",
+   "outcome_title": "Decide whether the given information determines the answer, and what extra fact would",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "Two whole numbers, each from 1 to 9, add up to 17. Knowing only this is enough to know which two numbers they are.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "True",
+   "accepted_alternatives": [],
+   "solution": "Only 8 + 9 = 17 (in either order).",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the statement was evaluated by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.EVIDENCE.02",
+    "correct_letter": "A",
+    "correct_answer": "True",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S47-M-Q4",
+   "id": "S47-M-Q4",
+   "set": 47,
+   "set_title": "Is there enough information?",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Decide whether the given information determines the answer, and what extra fact would",
+   "number": 4,
+   "type": "mc",
+   "outcome": "LOGIC.EVIDENCE.02",
+   "outcome_title": "Decide whether the given information determines the answer, and what extra fact would",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "Decide whether each clue, alone or together with the other, is enough to answer the question with exactly one answer. (In each of these questions, the two clues together are enough.) A rectangle has whole-number side lengths. What is its area? Clue (1): its perimeter is 12. Clue (2): one side is twice as long as the other.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "Clue (1) alone is enough, but clue (2) alone is not."
+    },
+    {
+     "letter": "B",
+     "text": "Neither clue alone is enough, but both together are."
+    },
+    {
+     "letter": "C",
+     "text": "Clue (2) alone is enough, but clue (1) alone is not."
+    },
+    {
+     "letter": "D",
+     "text": "Each clue alone is enough."
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "B. Neither clue alone is enough, but both together are.",
+   "accepted_alternatives": [],
+   "solution": "Clue (1) allows 1 by 5, 2 by 4, 3 by 3 (areas 5, 8, 9). Clue (2) allows 1 by 2, 2 by 4, and more. Together: 2 by 4, area 8.",
+   "wrong_choices": [
+    {
+     "text": "Clue (1) alone is enough, but clue (2) alone is not.",
+     "why_wrong": "check whether clue (1) alone leaves exactly one answer"
+    },
+    {
+     "text": "Clue (2) alone is enough, but clue (1) alone is not.",
+     "why_wrong": "check whether clue (2) alone leaves exactly one answer"
+    },
+    {
+     "text": "Each clue alone is enough.",
+     "why_wrong": "one of the clues alone leaves more than one answer"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.EVIDENCE.02",
+    "correct_letter": "B",
+    "correct_answer": "Neither clue alone is enough, but both together are."
+   }
+  },
+  {
+   "uid": "LOGIC:S47-M-Q5",
+   "id": "S47-M-Q5",
+   "set": 47,
+   "set_title": "Is there enough information?",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Decide whether the given information determines the answer, and what extra fact would",
+   "number": 5,
+   "type": "sa",
+   "outcome": "LOGIC.EVIDENCE.02",
+   "outcome_title": "Decide whether the given information determines the answer, and what extra fact would",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "x is a whole number from 1 to 50. You know that x is a multiple of 6 and also a multiple of 4. How many values of x are still possible?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "4",
+   "accepted_alternatives": [],
+   "solution": "Multiples of both 6 and 4 are multiples of 12: 12, 24, 36, 48. Four values remain, so the clues are not enough to find x.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.EVIDENCE.02",
+    "answer_lines": [
+     "Values:"
+    ],
+    "correct_answer": "4"
+   }
+  },
+  {
+   "uid": "LOGIC:S47-B1-Q1",
+   "id": "S47-B1-Q1",
+   "set": 47,
+   "set_title": "Is there enough information?",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "guided_strategy",
+   "section_skill": "Strategy: list what each clue leaves",
+   "number": 1,
+   "type": "sa",
+   "outcome": "LOGIC.EVIDENCE.02",
+   "outcome_title": "Decide whether the given information determines the answer, and what extra fact would",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "n is a whole number from 1 to 10, and n is a multiple of 4. How many values of n are possible?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "2",
+   "accepted_alternatives": [],
+   "solution": "4 and 8.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.EVIDENCE.02",
+    "answer_lines": [
+     "Values:"
+    ],
+    "correct_answer": "2"
+   }
+  },
+  {
+   "uid": "LOGIC:S47-B1-Q2",
+   "id": "S47-B1-Q2",
+   "set": 47,
+   "set_title": "Is there enough information?",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "guided_strategy",
+   "section_skill": "Strategy: list what each clue leaves",
+   "number": 2,
+   "type": "tf",
+   "outcome": "LOGIC.EVIDENCE.02",
+   "outcome_title": "Decide whether the given information determines the answer, and what extra fact would",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "n is a whole number from 1 to 10. Knowing that n is prime and even is enough to find n.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "True",
+   "accepted_alternatives": [],
+   "solution": "2 is the only even prime.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the statement was evaluated by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.EVIDENCE.02",
+    "correct_letter": "A",
+    "correct_answer": "True",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S47-B1-Q3",
+   "id": "S47-B1-Q3",
+   "set": 47,
+   "set_title": "Is there enough information?",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "guided_strategy",
+   "section_skill": "Strategy: list what each clue leaves",
+   "number": 3,
+   "type": "tf",
+   "outcome": "LOGIC.EVIDENCE.02",
+   "outcome_title": "Decide whether the given information determines the answer, and what extra fact would",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "Two whole numbers add to 10. Knowing only this is enough to find the larger number.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "False",
+   "accepted_alternatives": [],
+   "solution": "1 + 9, 2 + 8, 3 + 7, 4 + 6 and 5 + 5 all work.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.EVIDENCE.02",
+    "correct_letter": "B",
+    "correct_answer": "False",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S47-B1-Q4",
+   "id": "S47-B1-Q4",
+   "set": 47,
+   "set_title": "Is there enough information?",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "guided_strategy",
+   "section_skill": "Strategy: list what each clue leaves",
+   "number": 4,
+   "type": "mc",
+   "outcome": "LOGIC.EVIDENCE.02",
+   "outcome_title": "Decide whether the given information determines the answer, and what extra fact would",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "A clue is \"enough\" to answer a question when...",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "exactly one answer is left after using it."
+    },
+    {
+     "letter": "B",
+     "text": "at least one answer is left after using it."
+    },
+    {
+     "letter": "C",
+     "text": "it is true."
+    },
+    {
+     "letter": "D",
+     "text": "it rules out at least one answer."
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "A. exactly one answer is left after using it.",
+   "accepted_alternatives": [],
+   "solution": "Enough means the answer is determined.",
+   "wrong_choices": [
+    {
+     "text": "at least one answer is left after using it.",
+     "why_wrong": "two or more answers left means not enough"
+    },
+    {
+     "text": "it rules out at least one answer.",
+     "why_wrong": "it may still leave several answers"
+    },
+    {
+     "text": "it is true.",
+     "why_wrong": "a true clue can still leave several answers"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.EVIDENCE.02",
+    "correct_letter": "A",
+    "correct_answer": "exactly one answer is left after using it."
+   }
+  },
+  {
+   "uid": "LOGIC:S47-B1-Q5",
+   "id": "S47-B1-Q5",
+   "set": 47,
+   "set_title": "Is there enough information?",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "guided_strategy",
+   "section_skill": "Strategy: list what each clue leaves",
+   "number": 5,
+   "type": "sa",
+   "outcome": "LOGIC.EVIDENCE.02",
+   "outcome_title": "Decide whether the given information determines the answer, and what extra fact would",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "n is a whole number from 1 to 20. Clue: n is a square number and n is odd. How many values of n are left?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "2",
+   "accepted_alternatives": [],
+   "solution": "1 and 9.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.EVIDENCE.02",
+    "answer_lines": [
+     "Values:"
+    ],
+    "correct_answer": "2"
+   }
+  },
+  {
+   "uid": "LOGIC:S47-F1-Q1",
+   "id": "S47-F1-Q1",
+   "set": 47,
+   "set_title": "Is there enough information?",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Which clue is enough?",
+   "number": 1,
+   "type": "mc",
+   "outcome": "LOGIC.EVIDENCE.02",
+   "outcome_title": "Decide whether the given information determines the answer, and what extra fact would",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "Decide whether each clue, alone or together with the other, is enough to answer the question with exactly one answer. (In each of these questions, the two clues together are enough.) Four friends sit in a row of four seats numbered 1 to 4: Dee, Eli, Fay and Gus. Who sits in seat 1? Clue (1): Dee sits in seat 4. Clue (2): Eli sits directly left of Fay, and Gus sits directly left of Eli.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "Clue (2) alone is enough, but clue (1) alone is not."
+    },
+    {
+     "letter": "B",
+     "text": "Clue (1) alone is enough, but clue (2) alone is not."
+    },
+    {
+     "letter": "C",
+     "text": "Neither clue alone is enough, but both together are."
+    },
+    {
+     "letter": "D",
+     "text": "Each clue alone is enough."
+    }
+   ],
+   "correct_letter": "C",
+   "correct_answer": "C. Neither clue alone is enough, but both together are.",
+   "accepted_alternatives": [],
+   "solution": "Clue (2) forces G E F together in that order, so the order is G E F D or D G E F: not enough. Clue (1) alone leaves 6 orders. Together: G E F D, so Gus.",
+   "wrong_choices": [
+    {
+     "text": "Clue (1) alone is enough, but clue (2) alone is not.",
+     "why_wrong": "check whether clue (1) alone leaves exactly one answer"
+    },
+    {
+     "text": "Clue (2) alone is enough, but clue (1) alone is not.",
+     "why_wrong": "check whether clue (2) alone leaves exactly one answer"
+    },
+    {
+     "text": "Each clue alone is enough.",
+     "why_wrong": "one of the clues alone leaves more than one answer"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.EVIDENCE.02",
+    "correct_letter": "C",
+    "correct_answer": "Neither clue alone is enough, but both together are."
+   }
+  },
+  {
+   "uid": "LOGIC:S47-F1-Q2",
+   "id": "S47-F1-Q2",
+   "set": 47,
+   "set_title": "Is there enough information?",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Which clue is enough?",
+   "number": 2,
+   "type": "mc",
+   "outcome": "LOGIC.EVIDENCE.02",
+   "outcome_title": "Decide whether the given information determines the answer, and what extra fact would",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "Decide whether each clue, alone or together with the other, is enough to answer the question with exactly one answer. (In each of these questions, the two clues together are enough.) Pat is older than Quinn. How old is Quinn, in whole years? Clue (1): their ages add to 30. Clue (2): Pat is 4 years older than Quinn.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "Each clue alone is enough."
+    },
+    {
+     "letter": "B",
+     "text": "Clue (2) alone is enough, but clue (1) alone is not."
+    },
+    {
+     "letter": "C",
+     "text": "Clue (1) alone is enough, but clue (2) alone is not."
+    },
+    {
+     "letter": "D",
+     "text": "Neither clue alone is enough, but both together are."
+    }
+   ],
+   "correct_letter": "D",
+   "correct_answer": "D. Neither clue alone is enough, but both together are.",
+   "accepted_alternatives": [],
+   "solution": "Clue (1) allows many pairs (16, 14), (20, 10), ... Clue (2) allows many pairs. Together: P + Q = 30 and P - Q = 4, so Q = 13.",
+   "wrong_choices": [
+    {
+     "text": "Clue (1) alone is enough, but clue (2) alone is not.",
+     "why_wrong": "check whether clue (1) alone leaves exactly one answer"
+    },
+    {
+     "text": "Clue (2) alone is enough, but clue (1) alone is not.",
+     "why_wrong": "check whether clue (2) alone leaves exactly one answer"
+    },
+    {
+     "text": "Each clue alone is enough.",
+     "why_wrong": "one of the clues alone leaves more than one answer"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.EVIDENCE.02",
+    "correct_letter": "D",
+    "correct_answer": "Neither clue alone is enough, but both together are."
+   }
+  },
+  {
+   "uid": "LOGIC:S47-F1-Q3",
+   "id": "S47-F1-Q3",
+   "set": 47,
+   "set_title": "Is there enough information?",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Which clue is enough?",
+   "number": 3,
+   "type": "mc",
+   "outcome": "LOGIC.EVIDENCE.02",
+   "outcome_title": "Decide whether the given information determines the answer, and what extra fact would",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "Decide whether each clue, alone or together with the other, is enough to answer the question with exactly one answer. (In each of these questions, the two clues together are enough.) n is a whole number from 1 to 30. What is n? Clue (1): n leaves remainder 1 when divided by 7. Clue (2): n is a perfect square.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "Each clue alone is enough."
+    },
+    {
+     "letter": "B",
+     "text": "Clue (1) alone is enough, but clue (2) alone is not."
+    },
+    {
+     "letter": "C",
+     "text": "Neither clue alone is enough, but both together are."
+    },
+    {
+     "letter": "D",
+     "text": "Clue (2) alone is enough, but clue (1) alone is not."
+    }
+   ],
+   "correct_letter": "C",
+   "correct_answer": "C. Neither clue alone is enough, but both together are.",
+   "accepted_alternatives": [],
+   "solution": "Clue (1) allows 1, 8, 15, 22, 29. Clue (2) allows 1, 4, 9, 16, 25. Only 1 is in both lists.",
+   "wrong_choices": [
+    {
+     "text": "Clue (1) alone is enough, but clue (2) alone is not.",
+     "why_wrong": "check whether clue (1) alone leaves exactly one answer"
+    },
+    {
+     "text": "Clue (2) alone is enough, but clue (1) alone is not.",
+     "why_wrong": "check whether clue (2) alone leaves exactly one answer"
+    },
+    {
+     "text": "Each clue alone is enough.",
+     "why_wrong": "one of the clues alone leaves more than one answer"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.EVIDENCE.02",
+    "correct_letter": "C",
+    "correct_answer": "Neither clue alone is enough, but both together are."
+   }
+  },
+  {
+   "uid": "LOGIC:S47-F1-Q4",
+   "id": "S47-F1-Q4",
+   "set": 47,
+   "set_title": "Is there enough information?",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Which clue is enough?",
+   "number": 4,
+   "type": "tf",
+   "outcome": "LOGIC.EVIDENCE.02",
+   "outcome_title": "Decide whether the given information determines the answer, and what extra fact would",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "A bag holds only red and blue marbles, 12 in all. Knowing that there are 4 more red marbles than blue ones is enough to find the number of red marbles.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "True",
+   "accepted_alternatives": [],
+   "solution": "r + b = 12 and r - b = 4 give r = 8.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the statement was evaluated by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.EVIDENCE.02",
+    "correct_letter": "A",
+    "correct_answer": "True",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S47-F1-Q5",
+   "id": "S47-F1-Q5",
+   "set": 47,
+   "set_title": "Is there enough information?",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Which clue is enough?",
+   "number": 5,
+   "type": "values",
+   "outcome": "LOGIC.EVIDENCE.02",
+   "outcome_title": "Decide whether the given information determines the answer, and what extra fact would",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "x is a whole number from 1 to 20 and x is a multiple of 3. Give one extra clue as a single number: a value m from 2 to 10 such that knowing \"x is also a multiple of m\" leaves exactly one possible x.",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "any values that satisfy: m == 4 or m == 5 (example: m = 4)",
+   "accepted_alternatives": [],
+   "solution": "The multiples of 3 up to 20 are 3, 6, 9, 12, 15, 18. \"Also a multiple of 4\" leaves only 12, and \"also a multiple of 5\" leaves only 15. Other values of m leave none or several.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [
+    {
+     "m": 2
+    },
+    {
+     "m": 6
+    },
+    {
+     "m": 9
+    },
+    {
+     "m": 7
+    }
+   ],
+   "validation": "Checked every m from 2 to 10: exactly one x remains for m = [4, 5]. Automatic: the example passes the rule and 4 listed mistakes fail it.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "values",
+    "outcome": "LOGIC.EVIDENCE.02",
+    "fields": [
+     {
+      "name": "m",
+      "label": "m ="
+     }
+    ],
+    "rule": "m == 4 or m == 5",
+    "example_answer": {
+     "m": 4
+    },
+    "correct_answer": "any values that satisfy: m == 4 or m == 5 (example: m = 4)"
+   }
+  },
+  {
+   "uid": "LOGIC:S47-F2-Q1",
+   "id": "S47-F2-Q1",
+   "set": 47,
+   "set_title": "Is there enough information?",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Design the missing clue",
+   "number": 1,
+   "type": "mc",
+   "outcome": "LOGIC.EVIDENCE.02",
+   "outcome_title": "Decide whether the given information determines the answer, and what extra fact would",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "Decide whether each clue, alone or together with the other, is enough to answer the question with exactly one answer. (In each of these questions, the two clues together are enough.) n is a whole number from 1 to 20. What is n? Clue (1): n + 5 = 12. Clue (2): 2n = 14.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "Clue (2) alone is enough, but clue (1) alone is not."
+    },
+    {
+     "letter": "B",
+     "text": "Clue (1) alone is enough, but clue (2) alone is not."
+    },
+    {
+     "letter": "C",
+     "text": "Neither clue alone is enough, but both together are."
+    },
+    {
+     "letter": "D",
+     "text": "Each clue alone is enough."
+    }
+   ],
+   "correct_letter": "D",
+   "correct_answer": "D. Each clue alone is enough.",
+   "accepted_alternatives": [],
+   "solution": "Each clue alone gives n = 7.",
+   "wrong_choices": [
+    {
+     "text": "Clue (1) alone is enough, but clue (2) alone is not.",
+     "why_wrong": "check whether clue (1) alone leaves exactly one answer"
+    },
+    {
+     "text": "Clue (2) alone is enough, but clue (1) alone is not.",
+     "why_wrong": "check whether clue (2) alone leaves exactly one answer"
+    },
+    {
+     "text": "Neither clue alone is enough, but both together are.",
+     "why_wrong": "check each clue alone before combining them"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.EVIDENCE.02",
+    "correct_letter": "D",
+    "correct_answer": "Each clue alone is enough."
+   }
+  },
+  {
+   "uid": "LOGIC:S47-F2-Q2",
+   "id": "S47-F2-Q2",
+   "set": 47,
+   "set_title": "Is there enough information?",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Design the missing clue",
+   "number": 2,
+   "type": "mc",
+   "outcome": "LOGIC.EVIDENCE.02",
+   "outcome_title": "Decide whether the given information determines the answer, and what extra fact would",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "Decide whether each clue, alone or together with the other, is enough to answer the question with exactly one answer. (In each of these questions, the two clues together are enough.) n is a whole number from 1 to 20. What is n? Clue (1): n is odd. Clue (2): n is a multiple of 13.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "Clue (2) alone is enough, but clue (1) alone is not."
+    },
+    {
+     "letter": "B",
+     "text": "Clue (1) alone is enough, but clue (2) alone is not."
+    },
+    {
+     "letter": "C",
+     "text": "Neither clue alone is enough, but both together are."
+    },
+    {
+     "letter": "D",
+     "text": "Each clue alone is enough."
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "A. Clue (2) alone is enough, but clue (1) alone is not.",
+   "accepted_alternatives": [],
+   "solution": "Clue (2) alone leaves only 13 (26 is too big). Clue (1) leaves 10 odd numbers.",
+   "wrong_choices": [
+    {
+     "text": "Clue (1) alone is enough, but clue (2) alone is not.",
+     "why_wrong": "check whether clue (1) alone leaves exactly one answer"
+    },
+    {
+     "text": "Neither clue alone is enough, but both together are.",
+     "why_wrong": "check each clue alone before combining them"
+    },
+    {
+     "text": "Each clue alone is enough.",
+     "why_wrong": "one of the clues alone leaves more than one answer"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.EVIDENCE.02",
+    "correct_letter": "A",
+    "correct_answer": "Clue (2) alone is enough, but clue (1) alone is not."
+   }
+  },
+  {
+   "uid": "LOGIC:S47-F2-Q3",
+   "id": "S47-F2-Q3",
+   "set": 47,
+   "set_title": "Is there enough information?",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Design the missing clue",
+   "number": 3,
+   "type": "values",
+   "outcome": "LOGIC.EVIDENCE.02",
+   "outcome_title": "Decide whether the given information determines the answer, and what extra fact would",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "Two whole numbers from 1 to 9 multiply to 12. Give a sum s such that also knowing \"the two numbers add to s\" tells you exactly which two numbers they are.",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "any values that satisfy: s == 7 or s == 8 (example: s = 7)",
+   "accepted_alternatives": [],
+   "solution": "The pairs with product 12 are 2 and 6 (sum 8) and 3 and 4 (sum 7). Either sum picks out one pair.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [
+    {
+     "s": 13
+    },
+    {
+     "s": 6
+    },
+    {
+     "s": 12
+    }
+   ],
+   "validation": "Checked every sum from 2 to 18: the pair is determined for s = [7, 8]. Automatic: the example passes the rule and 3 listed mistakes fail it.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "values",
+    "outcome": "LOGIC.EVIDENCE.02",
+    "fields": [
+     {
+      "name": "s",
+      "label": "s ="
+     }
+    ],
+    "rule": "s == 7 or s == 8",
+    "example_answer": {
+     "s": 7
+    },
+    "correct_answer": "any values that satisfy: s == 7 or s == 8 (example: s = 7)"
+   }
+  },
+  {
+   "uid": "LOGIC:S47-F2-Q4",
+   "id": "S47-F2-Q4",
+   "set": 47,
+   "set_title": "Is there enough information?",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Design the missing clue",
+   "number": 4,
+   "type": "tf",
+   "outcome": "LOGIC.EVIDENCE.02",
+   "outcome_title": "Decide whether the given information determines the answer, and what extra fact would",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "Two whole numbers, each from 1 to 9, multiply to 36. Knowing only this is enough to know which two numbers they are.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "False",
+   "accepted_alternatives": [],
+   "solution": "Both 4 x 9 and 6 x 6 equal 36.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the statement was evaluated by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.EVIDENCE.02",
+    "correct_letter": "B",
+    "correct_answer": "False",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S47-F2-Q5",
+   "id": "S47-F2-Q5",
+   "set": 47,
+   "set_title": "Is there enough information?",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Design the missing clue",
+   "number": 5,
+   "type": "sa",
+   "outcome": "LOGIC.EVIDENCE.02",
+   "outcome_title": "Decide whether the given information determines the answer, and what extra fact would",
+   "alignment_type": "local",
+   "practices": [
+    "MP1",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "Three different whole numbers from 1 to 9 add up to 23. How many different sets of three numbers are possible?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "1",
+   "accepted_alternatives": [],
+   "solution": "The largest possible total is 9 + 8 + 7 = 24. To get 23, lower one number by 1 without repeating: only 9 + 8 + 6. So the total alone is enough to find the set.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.EVIDENCE.02",
+    "answer_lines": [
+     "Sets:"
+    ],
+    "correct_answer": "1"
+   }
+  },
+  {
+   "uid": "LOGIC:S48-M-Q1",
+   "id": "S48-M-Q1",
+   "set": 48,
+   "set_title": "Digital displays",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Reason about seven-segment digits: segments used, rotations and segment moves",
+   "number": 1,
+   "type": "sa",
+   "outcome": "LOGIC.SPATIAL.06",
+   "outcome_title": "Reason about seven-segment digits: segments used, rotations and segment moves",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP6"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "seven-segment displays",
+   "family": "visual",
+   "question_page": 0,
+   "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. How many segments are lit when the display shows 2026?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "22",
+   "accepted_alternatives": [],
+   "solution": "2 uses 5, 0 uses 6, 2 uses 5, 6 uses 6: 22.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "assets/S48-M-Q1.svg",
+   "figure_description": "Reference: the digits 0 to 9 on a seven-segment display.",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.SPATIAL.06",
+    "answer_lines": [
+     "Segments:"
+    ],
+    "correct_answer": "22"
+   }
+  },
+  {
+   "uid": "LOGIC:S48-M-Q2",
+   "id": "S48-M-Q2",
+   "set": 48,
+   "set_title": "Digital displays",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Reason about seven-segment digits: segments used, rotations and segment moves",
+   "number": 2,
+   "type": "mc",
+   "outcome": "LOGIC.SPATIAL.06",
+   "outcome_title": "Reason about seven-segment digits: segments used, rotations and segment moves",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP6"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "seven-segment displays",
+   "family": "visual",
+   "question_page": 0,
+   "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. Which digit uses exactly 3 lit segments?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "4"
+    },
+    {
+     "letter": "B",
+     "text": "7"
+    },
+    {
+     "letter": "C",
+     "text": "1"
+    },
+    {
+     "letter": "D",
+     "text": "2"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "B. 7",
+   "accepted_alternatives": [],
+   "solution": "7 lights the top bar and the two right-hand segments.",
+   "wrong_choices": [
+    {
+     "text": "1",
+     "why_wrong": "1 uses 2 segments"
+    },
+    {
+     "text": "4",
+     "why_wrong": "4 uses 4 segments"
+    },
+    {
+     "text": "2",
+     "why_wrong": "2 uses 5 segments"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "assets/S48-M-Q2.svg",
+   "figure_description": "Reference: the digits 0 to 9 on a seven-segment display.",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.SPATIAL.06",
+    "correct_letter": "B",
+    "correct_answer": "7"
+   }
+  },
+  {
+   "uid": "LOGIC:S48-M-Q3",
+   "id": "S48-M-Q3",
+   "set": 48,
+   "set_title": "Digital displays",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Reason about seven-segment digits: segments used, rotations and segment moves",
+   "number": 3,
+   "type": "tf",
+   "outcome": "LOGIC.SPATIAL.06",
+   "outcome_title": "Reason about seven-segment digits: segments used, rotations and segment moves",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP6"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "seven-segment displays",
+   "family": "visual",
+   "question_page": 0,
+   "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. When the display showing 69 is turned upside down, it shows 69 again.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "True",
+   "accepted_alternatives": [],
+   "solution": "A half turn turns 6 into 9 and 9 into 6, and also reverses their order: 69 becomes 69.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the statement was evaluated by code.",
+   "figure": "assets/S48-M-Q3.svg",
+   "figure_description": "Reference: the digits 0 to 9 on a seven-segment display.",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.SPATIAL.06",
+    "correct_letter": "A",
+    "correct_answer": "True",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S48-M-Q4",
+   "id": "S48-M-Q4",
+   "set": 48,
+   "set_title": "Digital displays",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Reason about seven-segment digits: segments used, rotations and segment moves",
+   "number": 4,
+   "type": "values",
+   "outcome": "LOGIC.SPATIAL.06",
+   "outcome_title": "Reason about seven-segment digits: segments used, rotations and segment moves",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP6"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "seven-segment displays",
+   "family": "visual",
+   "question_page": 0,
+   "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. Give a digit that looks exactly the same after the display is turned upside down.",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "any values that satisfy: d == 0 or d == 2 or d == 5 or d == 8 (example: d = 8)",
+   "accepted_alternatives": [],
+   "solution": "0, 2, 5 and 8 are unchanged by a half turn. 6 and 9 swap, and 1, 3, 4, 7 do not become digits.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [
+    {
+     "d": 6
+    },
+    {
+     "d": 1
+    },
+    {
+     "d": 9
+    },
+    {
+     "d": 3
+    }
+   ],
+   "validation": "Checked by turning every digit: unchanged digits ['0', '2', '5', '8']. Automatic: the example passes the rule and 4 listed mistakes fail it.",
+   "figure": "assets/S48-M-Q4.svg",
+   "figure_description": "Reference: the digits 0 to 9 on a seven-segment display.",
+   "package_fields": {
+    "type": "values",
+    "outcome": "LOGIC.SPATIAL.06",
+    "fields": [
+     {
+      "name": "d",
+      "label": "Digit ="
+     }
+    ],
+    "rule": "d == 0 or d == 2 or d == 5 or d == 8",
+    "example_answer": {
+     "d": 8
+    },
+    "correct_answer": "any values that satisfy: d == 0 or d == 2 or d == 5 or d == 8 (example: d = 8)"
+   }
+  },
+  {
+   "uid": "LOGIC:S48-M-Q5",
+   "id": "S48-M-Q5",
+   "set": 48,
+   "set_title": "Digital displays",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Reason about seven-segment digits: segments used, rotations and segment moves",
+   "number": 5,
+   "type": "mc",
+   "outcome": "LOGIC.SPATIAL.06",
+   "outcome_title": "Reason about seven-segment digits: segments used, rotations and segment moves",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP6"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "seven-segment displays",
+   "family": "visual",
+   "question_page": 0,
+   "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. Exactly one lit segment of the digit 2 is moved to an unlit position. Which digit can result?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "5"
+    },
+    {
+     "letter": "B",
+     "text": "7"
+    },
+    {
+     "letter": "C",
+     "text": "8"
+    },
+    {
+     "letter": "D",
+     "text": "3"
+    }
+   ],
+   "correct_letter": "D",
+   "correct_answer": "D. 3",
+   "accepted_alternatives": [],
+   "solution": "Move the lower-left segment to the lower-right position: 2 becomes 3.",
+   "wrong_choices": [
+    {
+     "text": "5",
+     "why_wrong": "turning 2 into 5 needs two segments moved"
+    },
+    {
+     "text": "8",
+     "why_wrong": "8 has more segments than 2"
+    },
+    {
+     "text": "7",
+     "why_wrong": "7 has fewer segments than 2"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "assets/S48-M-Q5.svg",
+   "figure_description": "Reference: the digits 0 to 9 on a seven-segment display.",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.SPATIAL.06",
+    "correct_letter": "D",
+    "correct_answer": "3"
+   }
+  },
+  {
+   "uid": "LOGIC:S48-B1-Q1",
+   "id": "S48-B1-Q1",
+   "set": 48,
+   "set_title": "Digital displays",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "prerequisite",
+   "section_skill": "Read the segments of each digit",
+   "number": 1,
+   "type": "sa",
+   "outcome": "LOGIC.SPATIAL.06",
+   "outcome_title": "Reason about seven-segment digits: segments used, rotations and segment moves",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP6"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "seven-segment displays",
+   "family": "visual",
+   "question_page": 0,
+   "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. How many segments does the digit 4 light?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "4",
+   "accepted_alternatives": [],
+   "solution": "Upper left, middle, and both right-hand segments: 4.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "assets/S48-B1-Q1.svg",
+   "figure_description": "Reference: the digits 0 to 9 on a seven-segment display.",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.SPATIAL.06",
+    "answer_lines": [
+     "Segments:"
+    ],
+    "correct_answer": "4"
+   }
+  },
+  {
+   "uid": "LOGIC:S48-B1-Q2",
+   "id": "S48-B1-Q2",
+   "set": 48,
+   "set_title": "Digital displays",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "prerequisite",
+   "section_skill": "Read the segments of each digit",
+   "number": 2,
+   "type": "tf",
+   "outcome": "LOGIC.SPATIAL.06",
+   "outcome_title": "Reason about seven-segment digits: segments used, rotations and segment moves",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP6"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "seven-segment displays",
+   "family": "visual",
+   "question_page": 0,
+   "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. The digit 8 lights all seven segments.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "True",
+   "accepted_alternatives": [],
+   "solution": "8 uses every segment.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the statement was evaluated by code.",
+   "figure": "assets/S48-B1-Q2.svg",
+   "figure_description": "Reference: the digits 0 to 9 on a seven-segment display.",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.SPATIAL.06",
+    "correct_letter": "A",
+    "correct_answer": "True",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S48-B1-Q3",
+   "id": "S48-B1-Q3",
+   "set": 48,
+   "set_title": "Digital displays",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "prerequisite",
+   "section_skill": "Read the segments of each digit",
+   "number": 3,
+   "type": "mc",
+   "outcome": "LOGIC.SPATIAL.06",
+   "outcome_title": "Reason about seven-segment digits: segments used, rotations and segment moves",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP6"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "seven-segment displays",
+   "family": "visual",
+   "question_page": 0,
+   "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. Which digit lights the fewest segments?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "4"
+    },
+    {
+     "letter": "B",
+     "text": "0"
+    },
+    {
+     "letter": "C",
+     "text": "1"
+    },
+    {
+     "letter": "D",
+     "text": "7"
+    }
+   ],
+   "correct_letter": "C",
+   "correct_answer": "C. 1",
+   "accepted_alternatives": [],
+   "solution": "1 lights only 2 segments.",
+   "wrong_choices": [
+    {
+     "text": "7",
+     "why_wrong": "7 lights 3"
+    },
+    {
+     "text": "4",
+     "why_wrong": "4 lights 4"
+    },
+    {
+     "text": "0",
+     "why_wrong": "0 lights 6"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "assets/S48-B1-Q3.svg",
+   "figure_description": "Reference: the digits 0 to 9 on a seven-segment display.",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.SPATIAL.06",
+    "correct_letter": "C",
+    "correct_answer": "1"
+   }
+  },
+  {
+   "uid": "LOGIC:S48-B1-Q4",
+   "id": "S48-B1-Q4",
+   "set": 48,
+   "set_title": "Digital displays",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "prerequisite",
+   "section_skill": "Read the segments of each digit",
+   "number": 4,
+   "type": "tf",
+   "outcome": "LOGIC.SPATIAL.06",
+   "outcome_title": "Reason about seven-segment digits: segments used, rotations and segment moves",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP6"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "seven-segment displays",
+   "family": "visual",
+   "question_page": 0,
+   "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. The digits 0 and 6 light the same number of segments.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "True",
+   "accepted_alternatives": [],
+   "solution": "Each lights 6 segments (in different positions).",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the statement was evaluated by code.",
+   "figure": "assets/S48-B1-Q4.svg",
+   "figure_description": "Reference: the digits 0 to 9 on a seven-segment display.",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.SPATIAL.06",
+    "correct_letter": "A",
+    "correct_answer": "True",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S48-B1-Q5",
+   "id": "S48-B1-Q5",
+   "set": 48,
+   "set_title": "Digital displays",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "prerequisite",
+   "section_skill": "Read the segments of each digit",
+   "number": 5,
+   "type": "tf",
+   "outcome": "LOGIC.SPATIAL.06",
+   "outcome_title": "Reason about seven-segment digits: segments used, rotations and segment moves",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP6"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "seven-segment displays",
+   "family": "visual",
+   "question_page": 0,
+   "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. The digit 3 lights the middle segment and both left-hand segments.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "False",
+   "accepted_alternatives": [],
+   "solution": "3 lights the top, middle, bottom and both right-hand segments; no left-hand ones.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the statement was evaluated by code.",
+   "figure": "assets/S48-B1-Q5.svg",
+   "figure_description": "Reference: the digits 0 to 9 on a seven-segment display.",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.SPATIAL.06",
+    "correct_letter": "B",
+    "correct_answer": "False",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S48-F1-Q1",
+   "id": "S48-F1-Q1",
+   "set": 48,
+   "set_title": "Digital displays",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Turned displays and segment counts",
+   "number": 1,
+   "type": "sa",
+   "outcome": "LOGIC.SPATIAL.06",
+   "outcome_title": "Reason about seven-segment digits: segments used, rotations and segment moves",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP6"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "seven-segment displays",
+   "family": "visual",
+   "question_page": 0,
+   "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. The display shows 1958. How many segments are lit?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "20",
+   "accepted_alternatives": [],
+   "solution": "2 + 6 + 5 + 7 = 20.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "assets/S48-F1-Q1.svg",
+   "figure_description": "Reference: the digits 0 to 9 on a seven-segment display.",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.SPATIAL.06",
+    "answer_lines": [
+     "Segments:"
+    ],
+    "correct_answer": "20"
+   }
+  },
+  {
+   "uid": "LOGIC:S48-F1-Q2",
+   "id": "S48-F1-Q2",
+   "set": 48,
+   "set_title": "Digital displays",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Turned displays and segment counts",
+   "number": 2,
+   "type": "mc",
+   "outcome": "LOGIC.SPATIAL.06",
+   "outcome_title": "Reason about seven-segment digits: segments used, rotations and segment moves",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP6"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "seven-segment displays",
+   "family": "visual",
+   "question_page": 0,
+   "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. The display shows 625. What does it show after being turned upside down?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "529"
+    },
+    {
+     "letter": "B",
+     "text": "526"
+    },
+    {
+     "letter": "C",
+     "text": "925"
+    },
+    {
+     "letter": "D",
+     "text": "It does not show a number"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "A. 529",
+   "accepted_alternatives": [],
+   "solution": "Reverse the order and turn each digit: 5 stays 5, 2 stays 2, 6 becomes 9: 529.",
+   "wrong_choices": [
+    {
+     "text": "526",
+     "why_wrong": "the 6 also turns into a 9"
+    },
+    {
+     "text": "925",
+     "why_wrong": "the order of the digits is also reversed"
+    },
+    {
+     "text": "It does not show a number",
+     "why_wrong": "6, 2 and 5 all turn into digits"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "assets/S48-F1-Q2.svg",
+   "figure_description": "Reference: the digits 0 to 9 on a seven-segment display.",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.SPATIAL.06",
+    "correct_letter": "A",
+    "correct_answer": "529"
+   }
+  },
+  {
+   "uid": "LOGIC:S48-F1-Q3",
+   "id": "S48-F1-Q3",
+   "set": 48,
+   "set_title": "Digital displays",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Turned displays and segment counts",
+   "number": 3,
+   "type": "tf",
+   "outcome": "LOGIC.SPATIAL.06",
+   "outcome_title": "Reason about seven-segment digits: segments used, rotations and segment moves",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP6"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "seven-segment displays",
+   "family": "visual",
+   "question_page": 0,
+   "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. The display showing 1001 still shows a number after it is turned upside down.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "False",
+   "accepted_alternatives": [],
+   "solution": "The 1 lights the two right-hand segments; turned, they become the two left-hand segments, which is not a digit in the reference.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the statement was evaluated by code.",
+   "figure": "assets/S48-F1-Q3.svg",
+   "figure_description": "Reference: the digits 0 to 9 on a seven-segment display.",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.SPATIAL.06",
+    "correct_letter": "B",
+    "correct_answer": "False",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S48-F1-Q4",
+   "id": "S48-F1-Q4",
+   "set": 48,
+   "set_title": "Digital displays",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Turned displays and segment counts",
+   "number": 4,
+   "type": "sa",
+   "outcome": "LOGIC.SPATIAL.06",
+   "outcome_title": "Reason about seven-segment digits: segments used, rotations and segment moves",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP6"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "seven-segment displays",
+   "family": "visual",
+   "question_page": 0,
+   "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. How many two-digit numbers (10 to 99) still show a number after the display is turned upside down?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "30",
+   "accepted_alternatives": [],
+   "solution": "Both digits must be from 0, 2, 5, 6, 8, 9; the first cannot be 0: 5 x 6 = 30.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "assets/S48-F1-Q4.svg",
+   "figure_description": "Reference: the digits 0 to 9 on a seven-segment display.",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.SPATIAL.06",
+    "answer_lines": [
+     "Numbers:"
+    ],
+    "correct_answer": "30"
+   }
+  },
+  {
+   "uid": "LOGIC:S48-F1-Q5",
+   "id": "S48-F1-Q5",
+   "set": 48,
+   "set_title": "Digital displays",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Turned displays and segment counts",
+   "number": 5,
+   "type": "values",
+   "outcome": "LOGIC.SPATIAL.06",
+   "outcome_title": "Reason about seven-segment digits: segments used, rotations and segment moves",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP6"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "seven-segment displays",
+   "family": "visual",
+   "question_page": 0,
+   "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. Give a digit d such that adding exactly one lit segment to d (moving nothing) makes the digit 8.",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "any values that satisfy: d == 0 or d == 6 or d == 9 (example: d = 0)",
+   "accepted_alternatives": [],
+   "solution": "0, 6 and 9 each light 6 segments, and each is 8 with one segment missing.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [
+    {
+     "d": 5
+    },
+    {
+     "d": 3
+    },
+    {
+     "d": 8
+    }
+   ],
+   "validation": "Checked: digits one segment short of 8: ['0', '6', '9']. Automatic: the example passes the rule and 3 listed mistakes fail it.",
+   "figure": "assets/S48-F1-Q5.svg",
+   "figure_description": "Reference: the digits 0 to 9 on a seven-segment display.",
+   "package_fields": {
+    "type": "values",
+    "outcome": "LOGIC.SPATIAL.06",
+    "fields": [
+     {
+      "name": "d",
+      "label": "d ="
+     }
+    ],
+    "rule": "d == 0 or d == 6 or d == 9",
+    "example_answer": {
+     "d": 0
+    },
+    "correct_answer": "any values that satisfy: d == 0 or d == 6 or d == 9 (example: d = 0)"
+   }
+  },
+  {
+   "uid": "LOGIC:S48-F2-Q1",
+   "id": "S48-F2-Q1",
+   "set": 48,
+   "set_title": "Digital displays",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Segment moves and best displays",
+   "number": 1,
+   "type": "values",
+   "outcome": "LOGIC.SPATIAL.06",
+   "outcome_title": "Reason about seven-segment digits: segments used, rotations and segment moves",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP6"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "seven-segment displays",
+   "family": "visual",
+   "question_page": 0,
+   "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. Exactly one lit segment of the digit 3 is moved to an unlit position. Give a digit that can result.",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "any values that satisfy: d == 2 or d == 5 (example: d = 5)",
+   "accepted_alternatives": [],
+   "solution": "Move the upper-right segment to the upper left to make 5, or the lower-right segment to the lower left to make 2.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [
+    {
+     "d": 9
+    },
+    {
+     "d": 8
+    },
+    {
+     "d": 3
+    }
+   ],
+   "validation": "Checked every one-segment move: 3 can become ['2', '5']. Automatic: the example passes the rule and 3 listed mistakes fail it.",
+   "figure": "assets/S48-F2-Q1.svg",
+   "figure_description": "Reference: the digits 0 to 9 on a seven-segment display.",
+   "package_fields": {
+    "type": "values",
+    "outcome": "LOGIC.SPATIAL.06",
+    "fields": [
+     {
+      "name": "d",
+      "label": "Digit ="
+     }
+    ],
+    "rule": "d == 2 or d == 5",
+    "example_answer": {
+     "d": 5
+    },
+    "correct_answer": "any values that satisfy: d == 2 or d == 5 (example: d = 5)"
+   }
+  },
+  {
+   "uid": "LOGIC:S48-F2-Q2",
+   "id": "S48-F2-Q2",
+   "set": 48,
+   "set_title": "Digital displays",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Segment moves and best displays",
+   "number": 2,
+   "type": "sa",
+   "outcome": "LOGIC.SPATIAL.06",
+   "outcome_title": "Reason about seven-segment digits: segments used, rotations and segment moves",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP6"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "seven-segment displays",
+   "family": "visual",
+   "question_page": 0,
+   "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. You may light at most 12 segments in total. What is the largest whole number you can show? (Any number of digits; the first digit is not 0.)",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "111111",
+   "accepted_alternatives": [],
+   "solution": "More digits beat bigger digits, and 1 is the cheapest digit (2 segments). Six 1s use 12 segments: 111111. Swapping a 1 for 7 costs one more segment, which is not available.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "assets/S48-F2-Q2.svg",
+   "figure_description": "Reference: the digits 0 to 9 on a seven-segment display.",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.SPATIAL.06",
+    "answer_lines": [
+     "Number:"
+    ],
+    "correct_answer": "111111"
+   }
+  },
+  {
+   "uid": "LOGIC:S48-F2-Q3",
+   "id": "S48-F2-Q3",
+   "set": 48,
+   "set_title": "Digital displays",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Segment moves and best displays",
+   "number": 3,
+   "type": "tf",
+   "outcome": "LOGIC.SPATIAL.06",
+   "outcome_title": "Reason about seven-segment digits: segments used, rotations and segment moves",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP6"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "seven-segment displays",
+   "family": "visual",
+   "question_page": 0,
+   "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. Every digit can be turned into some other digit by moving exactly one lit segment.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "False",
+   "accepted_alternatives": [],
+   "solution": "1, 4, 7 and 8 cannot: no single move turns them into another digit.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the statement was evaluated by code.",
+   "figure": "assets/S48-F2-Q3.svg",
+   "figure_description": "Reference: the digits 0 to 9 on a seven-segment display.",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.SPATIAL.06",
+    "correct_letter": "B",
+    "correct_answer": "False",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S48-F2-Q4",
+   "id": "S48-F2-Q4",
+   "set": 48,
+   "set_title": "Digital displays",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Segment moves and best displays",
+   "number": 4,
+   "type": "mc",
+   "outcome": "LOGIC.SPATIAL.06",
+   "outcome_title": "Reason about seven-segment digits: segments used, rotations and segment moves",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP6"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "seven-segment displays",
+   "family": "visual",
+   "question_page": 0,
+   "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. A clock shows hours 1 to 12 and minutes 00 to 59 (for example 9:58 uses the digits 9, 5, 8). Which time lights the most segments?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "9:58"
+    },
+    {
+     "letter": "B",
+     "text": "10:08"
+    },
+    {
+     "letter": "C",
+     "text": "12:59"
+    },
+    {
+     "letter": "D",
+     "text": "11:11"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "B. 10:08",
+   "accepted_alternatives": [],
+   "solution": "10:08 lights 2 + 6 + 6 + 7 = 21. A search of every time confirms 21 is the most, and 10:08 is one of the times that reach it.",
+   "wrong_choices": [
+    {
+     "text": "12:59",
+     "why_wrong": "12:59 lights 2 + 5 + 5 + 6 = 18"
+    },
+    {
+     "text": "9:58",
+     "why_wrong": "9:58 lights 6 + 5 + 7 = 18"
+    },
+    {
+     "text": "11:11",
+     "why_wrong": "11:11 lights only 8"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "assets/S48-F2-Q4.svg",
+   "figure_description": "Reference: the digits 0 to 9 on a seven-segment display.",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.SPATIAL.06",
+    "correct_letter": "B",
+    "correct_answer": "10:08"
+   }
+  },
+  {
+   "uid": "LOGIC:S48-F2-Q5",
+   "id": "S48-F2-Q5",
+   "set": 48,
+   "set_title": "Digital displays",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Segment moves and best displays",
+   "number": 5,
+   "type": "sa",
+   "outcome": "LOGIC.SPATIAL.06",
+   "outcome_title": "Reason about seven-segment digits: segments used, rotations and segment moves",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP6"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "seven-segment displays",
+   "family": "visual",
+   "question_page": 0,
+   "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. How many digits light more than 5 segments?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "4",
+   "accepted_alternatives": [],
+   "solution": "0, 6, 9 light 6 and 8 lights 7: four digits.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "assets/S48-F2-Q5.svg",
+   "figure_description": "Reference: the digits 0 to 9 on a seven-segment display.",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.SPATIAL.06",
+    "answer_lines": [
+     "Digits:"
+    ],
+    "correct_answer": "4"
+   }
   }
  ]
 }
