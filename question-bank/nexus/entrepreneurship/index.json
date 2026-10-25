@@ -191,6 +191,38 @@
    "title": "Separate business contact channels from personal ones and keep them reachable",
    "alignment": "local"
   },
+  "ENT.PAY.01": {
+   "title": "Write or judge a quote that states the work, price and what is not included",
+   "alignment": "local"
+  },
+  "ENT.PAY.02": {
+   "title": "Read and set payment terms, due dates and deposits",
+   "alignment": "local"
+  },
+  "ENT.PAY.03": {
+   "title": "Write clear cancellation and refund terms and apply them consistently",
+   "alignment": "local"
+  },
+  "ENT.PAY.04": {
+   "title": "Handle a request for extra work with a written change and new price",
+   "alignment": "local"
+  },
+  "ENT.PAY.05": {
+   "title": "Explain recurring billing terms customers need to see and how cancellations work",
+   "alignment": "local"
+  },
+  "ENT.PAY.06": {
+   "title": "Explain a chargeback and gather evidence to respond",
+   "alignment": "local"
+  },
+  "ENT.PAY.07": {
+   "title": "Spot fraud signals in invoices, overpayments and changed payment details",
+   "alignment": "local"
+  },
+  "ENT.PAY.08": {
+   "title": "Read supplier terms and tell customers about delays early and honestly",
+   "alignment": "local"
+  },
   "ENT.PRICE.01": {
    "title": "Find cost per item and profit per item from a stated price",
    "alignment": "local"
@@ -444,7 +476,16 @@
    "title": "Foundation 9: Selling and getting paid",
    "kind": "foundation",
    "description": "Quotes, invoices, refunds, disputes and scams.",
-   "sets": []
+   "sets": [
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76
+   ]
   },
   {
    "id": "web",
@@ -1012,6 +1053,62 @@
    "title": "Records, tax forms and professional help",
    "outcome": "ENT.TAX.06",
    "module": "books"
+  },
+  {
+   "set": 69,
+   "file": "sets/S069.json",
+   "title": "Quotes and proposals",
+   "outcome": "ENT.PAY.01",
+   "module": "paid"
+  },
+  {
+   "set": 70,
+   "file": "sets/S070.json",
+   "title": "Invoices, payment terms and deposits",
+   "outcome": "ENT.PAY.02",
+   "module": "paid"
+  },
+  {
+   "set": 71,
+   "file": "sets/S071.json",
+   "title": "Cancellations, refunds and expectations",
+   "outcome": "ENT.PAY.03",
+   "module": "paid"
+  },
+  {
+   "set": 72,
+   "file": "sets/S072.json",
+   "title": "Scope changes",
+   "outcome": "ENT.PAY.04",
+   "module": "paid"
+  },
+  {
+   "set": 73,
+   "file": "sets/S073.json",
+   "title": "Subscriptions and recurring billing",
+   "outcome": "ENT.PAY.05",
+   "module": "paid"
+  },
+  {
+   "set": 74,
+   "file": "sets/S074.json",
+   "title": "Chargebacks and payment disputes",
+   "outcome": "ENT.PAY.06",
+   "module": "paid"
+  },
+  {
+   "set": 75,
+   "file": "sets/S075.json",
+   "title": "Invoice and payment scams",
+   "outcome": "ENT.PAY.07",
+   "module": "paid"
+  },
+  {
+   "set": 76,
+   "file": "sets/S076.json",
+   "title": "Supplier terms and communicating delays",
+   "outcome": "ENT.PAY.08",
+   "module": "paid"
   }
  ]
 }

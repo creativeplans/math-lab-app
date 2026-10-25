@@ -1,0 +1,668 @@
+{
+ "set": 74,
+ "title": "Chargebacks and payment disputes",
+ "outcome": "ENT.PAY.06",
+ "content_status": "time_sensitive",
+ "requires": [
+  35
+ ],
+ "module": "paid",
+ "path_refs": [
+  "services",
+  "products",
+  "digital",
+  "content"
+ ],
+ "suggested": [
+  37
+ ],
+ "sources": [
+  {
+   "url": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/",
+   "claim": "Card customers can dispute charges with their card issuer; the merchant may lose the payment and pay a fee, and can respond with evidence by the deadline on the dispute notice (deadlines depend on the card network and reason).",
+   "checked": "2026-10-25"
+  }
+ ],
+ "review_interval_days": 365,
+ "jurisdiction": "US",
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Prevent chargebacks and respond with evidence",
+   "questions": [
+    {
+     "id": "S74-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 9: Selling and getting paid",
+     "type": "mc",
+     "prompt": "What is a chargeback?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A fee the business pays to open a bank account"
+      },
+      {
+       "letter": "B",
+       "text": "A coupon the customer uses at checkout"
+      },
+      {
+       "letter": "C",
+       "text": "A customer disputing a card charge with their bank"
+      },
+      {
+       "letter": "D",
+       "text": "A refund the business chooses to give on its own"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A customer disputing a card charge with their bank",
+     "intro": "A CHARGEBACK happens when a card customer disputes a charge with their card issuer (their bank). The merchant may lose the payment and pay a fee, but can usually respond with EVIDENCE by the deadline on the dispute notice; deadlines depend on the card network and reason. Useful evidence includes receipts, delivery tracking, signed agreements and messages. Prevent disputes with clear descriptions, a recognizable business name on card statements, fast responses to complaints, and a fair refund policy.",
+     "feedback": "The card issuer handles the dispute."
+    },
+    {
+     "id": "S74-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 9: Selling and getting paid",
+     "type": "mc",
+     "prompt": "What can a merchant usually do in response?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Post the customer's card number online"
+      },
+      {
+       "letter": "B",
+       "text": "Charge the customer again right away"
+      },
+      {
+       "letter": "C",
+       "text": "Ignore it, since disputes always resolve for merchants"
+      },
+      {
+       "letter": "D",
+       "text": "Submit evidence by the deadline"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Submit evidence by the deadline",
+     "intro": "A CHARGEBACK happens when a card customer disputes a charge with their card issuer (their bank). The merchant may lose the payment and pay a fee, but can usually respond with EVIDENCE by the deadline on the dispute notice; deadlines depend on the card network and reason. Useful evidence includes receipts, delivery tracking, signed agreements and messages. Prevent disputes with clear descriptions, a recognizable business name on card statements, fast responses to complaints, and a fair refund policy.",
+     "feedback": "Respond with evidence in time."
+    },
+    {
+     "id": "S74-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 9: Selling and getting paid",
+     "type": "mc",
+     "prompt": "Which is useful evidence for a shipped order?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A photo of the owner smiling at the shop"
+      },
+      {
+       "letter": "B",
+       "text": "Delivery tracking showing it arrived"
+      },
+      {
+       "letter": "C",
+       "text": "The business's logo file"
+      },
+      {
+       "letter": "D",
+       "text": "A list of other happy customers"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Delivery tracking showing it arrived",
+     "intro": "A CHARGEBACK happens when a card customer disputes a charge with their card issuer (their bank). The merchant may lose the payment and pay a fee, but can usually respond with EVIDENCE by the deadline on the dispute notice; deadlines depend on the card network and reason. Useful evidence includes receipts, delivery tracking, signed agreements and messages. Prevent disputes with clear descriptions, a recognizable business name on card statements, fast responses to complaints, and a fair refund policy.",
+     "feedback": "Tracking shows delivery."
+    },
+    {
+     "id": "S74-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 9: Selling and getting paid",
+     "type": "mc",
+     "prompt": "Which habit helps prevent disputes?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Hiding the refund policy"
+      },
+      {
+       "letter": "B",
+       "text": "Slow replies to complaints"
+      },
+      {
+       "letter": "C",
+       "text": "A confusing name customers do not recognize"
+      },
+      {
+       "letter": "D",
+       "text": "A recognizable business name on card statements"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "A recognizable business name on card statements",
+     "intro": "A CHARGEBACK happens when a card customer disputes a charge with their card issuer (their bank). The merchant may lose the payment and pay a fee, but can usually respond with EVIDENCE by the deadline on the dispute notice; deadlines depend on the card network and reason. Useful evidence includes receipts, delivery tracking, signed agreements and messages. Prevent disputes with clear descriptions, a recognizable business name on card statements, fast responses to complaints, and a fair refund policy.",
+     "feedback": "Recognition prevents \"I don't know this charge.\""
+    },
+    {
+     "id": "S74-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 9: Selling and getting paid",
+     "type": "mc",
+     "prompt": "What sets the response deadline?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The merchant's own preferred schedule for replying"
+      },
+      {
+       "letter": "B",
+       "text": "There is never a deadline"
+      },
+      {
+       "letter": "C",
+       "text": "The dispute notice, based on card network and reason"
+      },
+      {
+       "letter": "D",
+       "text": "The customer's birthday"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The dispute notice, based on card network and reason",
+     "intro": "A CHARGEBACK happens when a card customer disputes a charge with their card issuer (their bank). The merchant may lose the payment and pay a fee, but can usually respond with EVIDENCE by the deadline on the dispute notice; deadlines depend on the card network and reason. Useful evidence includes receipts, delivery tracking, signed agreements and messages. Prevent disputes with clear descriptions, a recognizable business name on card statements, fast responses to complaints, and a fair refund policy.",
+     "feedback": "Check the notice."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "A referee for payments",
+   "questions": [
+    {
+     "id": "S74-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 9: Selling and getting paid",
+     "type": "mc",
+     "prompt": "In a chargeback, who is like the referee?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The shipping company that delivered"
+      },
+      {
+       "letter": "B",
+       "text": "The business owner"
+      },
+      {
+       "letter": "C",
+       "text": "The customer"
+      },
+      {
+       "letter": "D",
+       "text": "The customer's card issuer"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The customer's card issuer",
+     "intro": "Think of a sports referee. When one player says a goal should not count, the referee looks at the replay before deciding. In a chargeback, the customer's bank is like the referee. The customer says the charge should not count; the business shows its \"replay\": receipts, tracking and messages. Without a replay, the referee usually sides with the complaint.",
+     "feedback": "The issuer decides."
+    },
+    {
+     "id": "S74-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 9: Selling and getting paid",
+     "type": "mc",
+     "prompt": "The business's \"replay\" is what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A discount code for later use"
+      },
+      {
+       "letter": "B",
+       "text": "A song"
+      },
+      {
+       "letter": "C",
+       "text": "Receipts, tracking and messages"
+      },
+      {
+       "letter": "D",
+       "text": "A logo"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Receipts, tracking and messages",
+     "intro": "Think of a sports referee. When one player says a goal should not count, the referee looks at the replay before deciding. In a chargeback, the customer's bank is like the referee. The customer says the charge should not count; the business shows its \"replay\": receipts, tracking and messages. Without a replay, the referee usually sides with the complaint.",
+     "feedback": "Evidence."
+    },
+    {
+     "id": "S74-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 9: Selling and getting paid",
+     "type": "mc",
+     "prompt": "Without a replay, what usually happens?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The game is cancelled"
+      },
+      {
+       "letter": "B",
+       "text": "The business wins automatically"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing happens"
+      },
+      {
+       "letter": "D",
+       "text": "The referee sides with the complaint"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The referee sides with the complaint",
+     "intro": "Think of a sports referee. When one player says a goal should not count, the referee looks at the replay before deciding. In a chargeback, the customer's bank is like the referee. The customer says the charge should not count; the business shows its \"replay\": receipts, tracking and messages. Without a replay, the referee usually sides with the complaint.",
+     "feedback": "Evidence matters."
+    },
+    {
+     "id": "S74-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 9: Selling and getting paid",
+     "type": "mc",
+     "prompt": "The customer saying a charge should not count is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A coach resting on the bench"
+      },
+      {
+       "letter": "B",
+       "text": "A player disputing a goal"
+      },
+      {
+       "letter": "C",
+       "text": "A fan cheering"
+      },
+      {
+       "letter": "D",
+       "text": "A ticket sale"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A player disputing a goal",
+     "intro": "Think of a sports referee. When one player says a goal should not count, the referee looks at the replay before deciding. In a chargeback, the customer's bank is like the referee. The customer says the charge should not count; the business shows its \"replay\": receipts, tracking and messages. Without a replay, the referee usually sides with the complaint.",
+     "feedback": "It is a dispute."
+    },
+    {
+     "id": "S74-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 9: Selling and getting paid",
+     "type": "mc",
+     "prompt": "What helps the business most in a dispute?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Getting angry"
+      },
+      {
+       "letter": "B",
+       "text": "Guessing"
+      },
+      {
+       "letter": "C",
+       "text": "Clear evidence"
+      },
+      {
+       "letter": "D",
+       "text": "Ignoring it"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Clear evidence",
+     "intro": "Think of a sports referee. When one player says a goal should not count, the referee looks at the replay before deciding. In a chargeback, the customer's bank is like the referee. The customer says the charge should not count; the business shows its \"replay\": receipts, tracking and messages. Without a replay, the referee usually sides with the complaint.",
+     "feedback": "Evidence wins disputes."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who misses MAIN may not see how disputes are decided; a referee reviewing a replay shows it."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Apply it: respond to a dispute",
+   "questions": [
+    {
+     "id": "S74-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 9: Selling and getting paid",
+     "type": "mc",
+     "prompt": "A customer disputes a 120-dollar order as \"not received.\" The owner has tracking showing delivery to the customer's address. What should she send?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nothing; disputes always go her way"
+      },
+      {
+       "letter": "B",
+       "text": "A new charge to the same card"
+      },
+      {
+       "letter": "C",
+       "text": "The tracking record and order receipt by the deadline"
+      },
+      {
+       "letter": "D",
+       "text": "An angry message to the customer's employer about the dispute"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The tracking record and order receipt by the deadline",
+     "intro": "A CHARGEBACK happens when a card customer disputes a charge with their card issuer (their bank). The merchant may lose the payment and pay a fee, but can usually respond with EVIDENCE by the deadline on the dispute notice; deadlines depend on the card network and reason. Useful evidence includes receipts, delivery tracking, signed agreements and messages. Prevent disputes with clear descriptions, a recognizable business name on card statements, fast responses to complaints, and a fair refund policy.",
+     "feedback": "Evidence answers the claim."
+    },
+    {
+     "id": "S74-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 9: Selling and getting paid",
+     "type": "mc",
+     "prompt": "The card statement shows \"XQZ HOLDINGS 4471,\" but customers know the shop as \"Maple Candle Co.\" What risk does this create?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No risk at all, because statement names never matter"
+      },
+      {
+       "letter": "B",
+       "text": "Lower card fees"
+      },
+      {
+       "letter": "C",
+       "text": "Higher sales automatically"
+      },
+      {
+       "letter": "D",
+       "text": "Customers may not recognize the charge and dispute it"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Customers may not recognize the charge and dispute it",
+     "intro": "A CHARGEBACK happens when a card customer disputes a charge with their card issuer (their bank). The merchant may lose the payment and pay a fee, but can usually respond with EVIDENCE by the deadline on the dispute notice; deadlines depend on the card network and reason. Useful evidence includes receipts, delivery tracking, signed agreements and messages. Prevent disputes with clear descriptions, a recognizable business name on card statements, fast responses to complaints, and a fair refund policy.",
+     "feedback": "Use a recognizable name."
+    },
+    {
+     "id": "S74-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 9: Selling and getting paid",
+     "type": "mc",
+     "prompt": "A chargeback of 80 dollars is lost and the processor charges a 15-dollar dispute fee (example amount). What is the total cost?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "95 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "80 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "65 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "15 dollars"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "95 dollars",
+     "intro": "A CHARGEBACK happens when a card customer disputes a charge with their card issuer (their bank). The merchant may lose the payment and pay a fee, but can usually respond with EVIDENCE by the deadline on the dispute notice; deadlines depend on the card network and reason. Useful evidence includes receipts, delivery tracking, signed agreements and messages. Prevent disputes with clear descriptions, a recognizable business name on card statements, fast responses to complaints, and a fair refund policy.",
+     "feedback": "80 + 15 = 95."
+    },
+    {
+     "id": "S74-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 9: Selling and getting paid",
+     "type": "mc",
+     "prompt": "A customer emails a complaint before disputing. What response best prevents a chargeback?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Tell them to contact their bank"
+      },
+      {
+       "letter": "B",
+       "text": "Block their email"
+      },
+      {
+       "letter": "C",
+       "text": "Reply quickly and offer a fair fix"
+      },
+      {
+       "letter": "D",
+       "text": "Wait two weeks to reply"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Reply quickly and offer a fair fix",
+     "intro": "A CHARGEBACK happens when a card customer disputes a charge with their card issuer (their bank). The merchant may lose the payment and pay a fee, but can usually respond with EVIDENCE by the deadline on the dispute notice; deadlines depend on the card network and reason. Useful evidence includes receipts, delivery tracking, signed agreements and messages. Prevent disputes with clear descriptions, a recognizable business name on card statements, fast responses to complaints, and a fair refund policy.",
+     "feedback": "Fast, fair responses prevent disputes."
+    },
+    {
+     "id": "S74-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 9: Selling and getting paid",
+     "type": "mc",
+     "prompt": "Which record helps most for a service dispute?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A competitor's price list"
+      },
+      {
+       "letter": "B",
+       "text": "The signed agreement and messages confirming the work"
+      },
+      {
+       "letter": "C",
+       "text": "A picture of the office plant"
+      },
+      {
+       "letter": "D",
+       "text": "The company's mission statement and values page"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The signed agreement and messages confirming the work",
+     "intro": "A CHARGEBACK happens when a card customer disputes a charge with their card issuer (their bank). The merchant may lose the payment and pay a fee, but can usually respond with EVIDENCE by the deadline on the dispute notice; deadlines depend on the card network and reason. Useful evidence includes receipts, delivery tracking, signed agreements and messages. Prevent disputes with clear descriptions, a recognizable business name on card statements, fast responses to complaints, and a fair refund policy.",
+     "feedback": "Documents show what was agreed and done."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Handle the complications: fraud and repeat disputes",
+   "questions": [
+    {
+     "id": "S74-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 9: Selling and getting paid",
+     "type": "mc",
+     "prompt": "An order uses a card that the real cardholder says was stolen. What does this show?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Fraud can cause chargebacks even when the item shipped"
+      },
+      {
+       "letter": "B",
+       "text": "Shipping guarantees payment"
+      },
+      {
+       "letter": "C",
+       "text": "Chargebacks only happen when the service was poor"
+      },
+      {
+       "letter": "D",
+       "text": "The customer must always be lying"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Fraud can cause chargebacks even when the item shipped",
+     "intro": "A CHARGEBACK happens when a card customer disputes a charge with their card issuer (their bank). The merchant may lose the payment and pay a fee, but can usually respond with EVIDENCE by the deadline on the dispute notice; deadlines depend on the card network and reason. Useful evidence includes receipts, delivery tracking, signed agreements and messages. Prevent disputes with clear descriptions, a recognizable business name on card statements, fast responses to complaints, and a fair refund policy.",
+     "feedback": "Fraud is a dispute reason."
+    },
+    {
+     "id": "S74-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 9: Selling and getting paid",
+     "type": "mc",
+     "prompt": "A shop has many disputes from orders shipped to addresses that do not match billing. What precaution fits?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ship faster to everyone"
+      },
+      {
+       "letter": "B",
+       "text": "Refuse all card payments"
+      },
+      {
+       "letter": "C",
+       "text": "Stop recording customers' shipping addresses"
+      },
+      {
+       "letter": "D",
+       "text": "Review mismatched high-risk orders before shipping"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Review mismatched high-risk orders before shipping",
+     "intro": "A CHARGEBACK happens when a card customer disputes a charge with their card issuer (their bank). The merchant may lose the payment and pay a fee, but can usually respond with EVIDENCE by the deadline on the dispute notice; deadlines depend on the card network and reason. Useful evidence includes receipts, delivery tracking, signed agreements and messages. Prevent disputes with clear descriptions, a recognizable business name on card statements, fast responses to complaints, and a fair refund policy.",
+     "feedback": "Screen risky orders."
+    },
+    {
+     "id": "S74-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 9: Selling and getting paid",
+     "type": "mc",
+     "prompt": "A business receives 4 disputes on 400 orders. What is the dispute rate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "10 percent"
+      },
+      {
+       "letter": "B",
+       "text": "1 percent"
+      },
+      {
+       "letter": "C",
+       "text": "0.1 percent"
+      },
+      {
+       "letter": "D",
+       "text": "4 percent"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "1 percent",
+     "intro": "A CHARGEBACK happens when a card customer disputes a charge with their card issuer (their bank). The merchant may lose the payment and pay a fee, but can usually respond with EVIDENCE by the deadline on the dispute notice; deadlines depend on the card network and reason. Useful evidence includes receipts, delivery tracking, signed agreements and messages. Prevent disputes with clear descriptions, a recognizable business name on card statements, fast responses to complaints, and a fair refund policy.",
+     "feedback": "4 / 400 = 0.01."
+    },
+    {
+     "id": "S74-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 9: Selling and getting paid",
+     "type": "mc",
+     "prompt": "The deadline on a dispute notice is close. The owner is missing some evidence. What should she do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Submit the evidence she has before the deadline"
+      },
+      {
+       "letter": "B",
+       "text": "Ignore the notice"
+      },
+      {
+       "letter": "C",
+       "text": "Wait until everything is perfect, even past the deadline"
+      },
+      {
+       "letter": "D",
+       "text": "Create fake receipts"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Submit the evidence she has before the deadline",
+     "intro": "A CHARGEBACK happens when a card customer disputes a charge with their card issuer (their bank). The merchant may lose the payment and pay a fee, but can usually respond with EVIDENCE by the deadline on the dispute notice; deadlines depend on the card network and reason. Useful evidence includes receipts, delivery tracking, signed agreements and messages. Prevent disputes with clear descriptions, a recognizable business name on card statements, fast responses to complaints, and a fair refund policy.",
+     "feedback": "Respond on time with real evidence."
+    },
+    {
+     "id": "S74-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 9: Selling and getting paid",
+     "type": "mc",
+     "prompt": "Which statement is accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Chargebacks are always just small fees, with no lost sale."
+      },
+      {
+       "letter": "B",
+       "text": "Rules and deadlines differ by card network, so read each notice."
+      },
+      {
+       "letter": "C",
+       "text": "Every dispute has the same deadline."
+      },
+      {
+       "letter": "D",
+       "text": "Merchants can never respond."
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Rules and deadlines differ by card network, so read each notice.",
+     "intro": "A CHARGEBACK happens when a card customer disputes a charge with their card issuer (their bank). The merchant may lose the payment and pay a fee, but can usually respond with EVIDENCE by the deadline on the dispute notice; deadlines depend on the card network and reason. Useful evidence includes receipts, delivery tracking, signed agreements and messages. Prevent disputes with clear descriptions, a recognizable business name on card statements, fast responses to complaints, and a fair refund policy.",
+     "feedback": "Read the specifics."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}
