@@ -15,6 +15,26 @@
    "title": "Apply a documented early decision (learning a skill cheaply and starting with one small shop) to a new small business",
    "alignment": "local"
   },
+  "ENT.CASE.02": {
+   "title": "Apply a documented early decision (solving a problem you have and checking that others share it) to a new business",
+   "alignment": "local"
+  },
+  "ENT.CUST.01": {
+   "title": "Identify a specific, frequent problem that someone already spends time or money on",
+   "alignment": "local"
+  },
+  "ENT.CUST.02": {
+   "title": "Describe a specific customer group instead of \"everyone\"",
+   "alignment": "local"
+  },
+  "ENT.CUST.03": {
+   "title": "Write an offer (value proposition) that says who it is for, the problem and the result",
+   "alignment": "local"
+  },
+  "ENT.CUST.04": {
+   "title": "Tell the paying customer from the user and the decision-maker",
+   "alignment": "local"
+  },
   "ENT.START.01": {
    "title": "Describe a business as solving a problem for customers who pay, and tell revenue-seeking activity from a hobby",
    "alignment": "local"
@@ -68,7 +88,13 @@
    "title": "Foundation 2: Customers and offers",
    "kind": "foundation",
    "description": "Who has the problem, who pays, what you offer.",
-   "sets": []
+   "sets": [
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
   },
   {
    "id": "testing",
@@ -237,6 +263,41 @@
    "title": "Founder case: Ben & Jerry's starts small",
    "outcome": "ENT.CASE.01",
    "module": "start"
+  },
+  {
+   "set": 5,
+   "file": "sets/S005.json",
+   "title": "Finding a real customer problem",
+   "outcome": "ENT.CUST.01",
+   "module": "customers"
+  },
+  {
+   "set": 6,
+   "file": "sets/S006.json",
+   "title": "Naming a specific customer",
+   "outcome": "ENT.CUST.02",
+   "module": "customers"
+  },
+  {
+   "set": 7,
+   "file": "sets/S007.json",
+   "title": "Writing a clear offer",
+   "outcome": "ENT.CUST.03",
+   "module": "customers"
+  },
+  {
+   "set": 8,
+   "file": "sets/S008.json",
+   "title": "Customer or user: who pays?",
+   "outcome": "ENT.CUST.04",
+   "module": "customers"
+  },
+  {
+   "set": 9,
+   "file": "sets/S009.json",
+   "title": "Founder case: Spanx and a problem the founder had",
+   "outcome": "ENT.CASE.02",
+   "module": "customers"
   }
  ]
 }

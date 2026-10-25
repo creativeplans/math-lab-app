@@ -1,0 +1,596 @@
+"""Entrepreneurship sets 5-9: Foundation 2, customers and offers."""
+from eq import Q, sec, cs, SET
+
+# ------------------------------------------------------------------ Set 5: real customer problem
+PROB = ('A good business idea starts with a real problem. A real problem happens often, matters to the person, and is '
+        'something they already spend time or money trying to solve. "People might like this" is weak. "Parents in my '
+        'neighborhood drive 30 minutes twice a week to a tutor" is strong, because it describes a costly habit that '
+        'already exists. Look for complaints, workarounds (homemade fixes), and money already being spent.')
+
+s5 = SET('ENT.CUST.01',
+    M=sec('Identify a real, frequent customer problem', PROB, [
+        Q('Which statement describes the strongest customer problem?',
+          'Restaurant owners spend hours each week fixing their online menus.',
+          ('Some people might enjoy a new kind of phone case someday.', 'it is a guess with no sign of a costly habit'),
+          ('Everyone would probably like more free time in their lives, so it is a problem.', 'it is vague and names no specific habit'),
+          ('My friends said a glow-in-the-dark mug sounds kind of fun.', 'a fun idea is not a problem people pay to fix'),
+          'Hours spent every week on a task is a frequent, costly problem people already deal with.'),
+        Q('What is a "workaround"?', 'A homemade fix people use because no good solution exists yet',
+          ('A product that has already solved the problem fully for everyone', 'then no workaround would be needed'),
+          ('A business rule that customers must follow before buying', 'that is not what the word means'),
+          ('A complaint posted online about a company\'s prices', 'a complaint is different from a fix'),
+          'Workarounds, like spreadsheets taped together, are clues that a real problem exists.'),
+        Q('Nina notices dog owners in her building tie their dogs outside the grocery store for 20 minutes. What does '
+          'this suggest?', 'A real, repeated problem that a service might solve',
+          ('A sign that dog owners do not care about their pets at all', 'it shows a need, not a lack of care'),
+          ('Proof that a dog-sitting business will certainly succeed', 'a clue is not proof of success'),
+          ('Nothing useful, because the owners have not complained yet', 'a costly habit is useful even without complaints'),
+          'A repeated, inconvenient habit is a clue to a real problem worth testing.'),
+        Q('Which clue best shows people already spend money on a problem?',
+          'Local parents pay 40 dollars an hour for help with math homework.',
+          ('Parents say math homework is "annoying" whenever they are asked about it.', 'a complaint shows no spending'),
+          ('A news story says homework levels have changed over time.', 'it says nothing about spending'),
+          ('Students post jokes online about long homework assignments.', 'jokes show no spending'),
+          'Money already being spent is strong evidence a problem matters.'),
+        Q('Which is the best first question for finding a real problem?', 'What tasks take up your time each week that you dislike?',
+          ('Would you buy my new homework app if I built it for you someday?', 'it pushes a solution before finding a problem'),
+          ('Do you agree my idea is clever and worth trying out?', 'it asks for praise, not problems'),
+          ('How much would you pay for anything I decide to sell?', 'it is too vague to reveal a problem'),
+          'Asking about real tasks and frustrations uncovers problems without pushing an idea.'),
+    ]),
+    B=[cs('Problem, not product', 'Start with the problem, not your product. Think of a person stuck in a long line at a '
+          'coffee shop every morning. The problem is wasted time. A product, like an order-ahead app, is one possible '
+          'answer. If you start with "I want to build an app," you may build something nobody needs. If you start with '
+          '"people wait 15 minutes every morning," you can test different answers and keep the one people choose. '
+          'Problems come first; products come second.', [
+        Q('People wait 15 minutes in line for coffee each morning. Which part is the problem?', 'The 15-minute wait',
+          ('An order-ahead app', 'that is one possible answer, not the problem'),
+          ('The coffee shop\'s menu', 'the menu is not what bothers them'),
+          ('The price of coffee', 'the story is about waiting, not price'), 'The wasted time is the problem.'),
+        Q('Which statement starts with a problem?', 'Many renters struggle to find quiet study spaces nearby.',
+          ('I want to build an app with many cool features for people.', 'it starts with a product'),
+          ('I will sell bright blue backpacks to everyone.', 'it starts with a product'),
+          ('My brand will have a lightning bolt logo.', 'it starts with branding'), 'It names a struggle people have.'),
+        Q('Why start with the problem?', 'So you do not build something nobody needs',
+          ('So you can skip talking to customers completely', 'problems are found by talking to customers'),
+          ('So you can choose a business name sooner', 'naming is not the reason'),
+          ('So the product is as expensive as possible', 'price is unrelated'),
+          'Understanding the problem first keeps you from building the wrong thing.'),
+        Q('An order-ahead app is one answer to long lines. Which is another possible answer?', 'Adding a second cashier during rush hour',
+          ('Making the coffee cups larger than before', 'it does not reduce waiting'),
+          ('Changing the color of the store sign', 'it does not reduce waiting'),
+          ('Raising the price of a large coffee', 'it does not reduce waiting'),
+          'A second cashier also addresses the wait; problems can have several answers.'),
+        Q('Which is a product, not a problem?', 'A meal-planning app',
+          ('Families wasting food every week', 'that is a problem'),
+          ('Workers with no time to cook dinner', 'that is a problem'),
+          ('Shoppers forgetting items at the store', 'that is a problem'), 'An app is a possible answer, so it is a product.'),
+    ], why='A learner who misses MAIN may describe products instead of problems; one everyday example separates them.')],
+    F1=sec('Apply it: choose the problem worth testing', PROB, [
+        Q('Three problems a student heard about. Which is best to test first? (1) Neighbors pay a teen 20 dollars to '
+          'carry groceries upstairs weekly. (2) A cousin wishes shoes came in more colors. (3) A friend says parking is '
+          'annoying sometimes.', 'Problem 1, because people already pay to solve it every week',
+          ('Problem 2, because more colors would be fun to design', 'a wish shows no spending or frequency'),
+          ('Problem 3, because parking is a common topic that comes up in towns', 'it is vague and occasional'),
+          ('None, because none of these is a real problem at all', 'problem 1 shows paid, repeated demand'),
+          'Weekly paid help is frequent and already costs money, so it is the strongest to test.'),
+        Q('A small bakery owner spends 5 hours a week answering the same questions about allergies by phone. Which '
+          'business idea targets this problem most directly?', 'A clear allergy guide and order form for bakeries',
+          ('A new line of colorful bakery boxes for cakes', 'boxes do not reduce phone questions'),
+          ('A social media page with funny bakery jokes and memes for customers', 'jokes do not answer allergy questions'),
+          ('A discount coupon book for bakery customers', 'coupons do not reduce the questions'),
+          'A clear guide answers the repeated questions that cost the owner time.'),
+        Q('Which observation most clearly shows a workaround?', 'Office workers share one spreadsheet to track lunch orders.',
+          ('Office workers enjoy eating lunch together on Fridays.', 'enjoyment is not a homemade fix'),
+          ('Office workers buy lunch from three different nearby restaurants.', 'buying is not a workaround'),
+          ('Office workers prefer lunch at noon most days.', 'a preference is not a fix'),
+          'A shared spreadsheet is a homemade fix for an unsolved coordination problem.'),
+        Q('A landscaper hears one client say, once, that leaf blowers are loud. What is the best next step?',
+          'Ask more clients whether noise is a repeated problem for them', ('Buy quiet equipment for the whole crew today',
+                                                                          'one comment is not enough evidence'),
+          ('Ignore it, since only complaints written down in emails count', 'spoken comments can be useful clues'),
+          ('Launch a "quiet landscaping" brand next week', 'too early to build on one remark'),
+          'One comment is a clue; asking more people checks whether it is a real, shared problem.'),
+        Q('Two problems: A happens once a year and costs 10 dollars. B happens weekly and costs 30 dollars each time. '
+          'Over a year (52 weeks), how much does B cost a person?', '1,560 dollars',
+          ('30 dollars', 'that is just one week'), ('520 dollars', 'that uses 10 dollars instead of 30'),
+          ('1,300 dollars', 'that uses 25 dollars instead of 30'),
+          '30 x 52 = 1,560 dollars, far more than problem A\'s 10 dollars.', calc=lambda: 30 * 52 == 1560),
+    ]),
+    F2=sec('Handle the complications: real problem or just interesting?', PROB, [
+        Q('Many people say traffic is terrible, but none would pay for a service to avoid it. What does this show?',
+          'A common complaint is not always a problem people will pay to solve.',
+          ('Traffic is not a real problem for anyone who drives to work.', 'it is real; the issue is paying'),
+          ('Every complaint can become a profitable business quickly.', 'not every complaint leads to paying customers'),
+          ('People will always pay as soon as any service exists, without exception.', 'there is no evidence of that'),
+          'Complaints show a problem exists; willingness to pay must still be checked.'),
+        Q('Leah\'s idea solves a problem only she has. Before building it, what should she check?',
+          'Whether other people have the same problem and spend on it', ('Whether her own problem bothers her a lot',
+                                                                        'she already knows it bothers her'),
+          ('Whether she can design a logo for it this week', 'a logo does not show others share the problem'),
+          ('Whether a big company already has a famous product like it', 'that does not answer her question directly'),
+          'Her own problem is a start, but a business needs others with the same problem.'),
+        Q('A problem is frequent and annoying, but free tools already solve it well. What is the main thing to learn next?',
+          'Why someone would choose a paid option over the free ones', ('Whether the problem is frequent', 'already known'),
+          ('Whether the problem exists at all in this market', 'already known'),
+          ('How to make the free tools stop working well for people', 'that is not a fair or useful plan'),
+          'With free alternatives, a paid offer needs a clear reason people would switch.'),
+        Q('Which piece of information is MISSING before deciding a problem is worth solving? The problem is frequent and '
+          'people complain about it.', 'Whether people already spend time or money to fix it',
+          ('Whether the problem has a catchy name for marketing', 'a name does not show it matters'),
+          ('Whether the founder enjoys thinking about it every day', 'enjoyment does not show demand'),
+          ('Whether the problem was in the news this year', 'news coverage does not show spending'),
+          'Spending time or money shows the problem matters enough to pay for a fix.'),
+        Q('A student found that dorm residents lose keys often. Replacing a key costs 25 dollars and happens to about 40 '
+          'residents per term. What total amount do residents spend on replacements each term?', '1,000 dollars',
+          ('40 dollars', 'that is the number of residents'), ('65 dollars', 'that adds instead of multiplying'),
+          ('250 dollars', 'that uses 10 residents instead of 40'),
+          '25 x 40 = 1,000 dollars a term, which shows real spending on the problem.', calc=lambda: 25 * 40 == 1000),
+    ]))
+
+# ------------------------------------------------------------------ Set 6: specific customer
+CUST = ('"Everyone" is not a customer. A specific customer is a group you can describe and find: who they are, what '
+        'situation they are in, and where they can be reached. "Busy people" is too broad. "Parents of children ages '
+        '6 to 10 who both work full time in our town" is specific. A specific customer helps you choose words, prices, '
+        'and places to advertise. You can widen the group later, after you learn what works for the first group.')
+
+s6 = SET('ENT.CUST.02',
+    M=sec('Describe a specific customer group', CUST, [
+        Q('Which customer description is the most specific?', 'Owners of food trucks in Austin who take card payments',
+          ('People who like food and eat out sometimes', 'it describes almost everyone'),
+          ('Anyone in Texas who might want to buy things', 'it is far too broad'),
+          ('Small businesses of every kind everywhere in the whole world', 'it is far too broad'),
+          'A specific type of owner, place and situation makes a group you can find.'),
+        Q('Why does a specific customer group help a new business?', 'It guides words, prices and where to advertise.',
+          ('It guarantees that every customer will buy at once.', 'nothing guarantees sales'),
+          ('It removes the need to test the idea with anyone.', 'testing is still needed'),
+          ('It means the business can never sell to others later.', 'the group can widen later'),
+          'Knowing exactly who you serve shapes your message, price and channels.'),
+        Q('Rewrite "busy people" as a more specific customer. Which is best?',
+          'Nurses working night shifts who have little time to cook',
+          ('People who are busy and want things to be easier', 'still too broad'),
+          ('All adults who have jobs in any kind of field', 'still too broad'),
+          ('Busy people who use the internet every single day for work', 'still too broad'),
+          'Night-shift nurses are a group with a clear situation and need.'),
+        Q('A tutor writes, "My customers are students." What detail would make this most useful?',
+          'High-school juniors preparing for a specific math exam', ('Students who like learning new things at school every week',
+                                                                      'still very broad'),
+          ('Students of any age anywhere in the country', 'still very broad'),
+          ('Students who have smartphones and laptops', 'device ownership is not the key need'),
+          'A grade, a goal and a subject make the customer group clear.'),
+        Q('Which detail helps you FIND a specific customer group?', 'Where they gather, such as a local parents\' group',
+          ('Their favorite color, if it is known', 'it rarely helps you reach them'),
+          ('How many hours they usually sleep each night of the week', 'it does not tell you where to reach them'),
+          ('Whether they like your logo design', 'it does not help you find them'),
+          'Knowing where a group gathers tells you where to reach them.'),
+    ]),
+    B=[cs('Narrowing "everyone" step by step', 'Narrowing works in steps. Start with "people who need meals." Add a '
+          'situation: "people who need meals after surgery." Add a place: "in our city." Add who decides: "usually a '
+          'family member who orders." Each step removes people who are unlikely to buy and keeps the ones with a clear '
+          'need. A narrow group is not small thinking; it is a clear target you can actually reach and serve well.', [
+        Q('Which step narrows "people who need meals" by situation?', 'People recovering from surgery',
+          ('People who live on planet Earth', 'that does not narrow anything'), ('People who eat food', 'that does not narrow'),
+          ('People who like meals', 'that does not narrow'), 'A situation like surgery recovery narrows the group.'),
+        Q('Which step narrows a group by place?', 'In our city',
+          ('Who like good food', 'that is a preference'), ('Who order online', 'that is a behavior'),
+          ('Who are adults', 'that is age'), '"In our city" is a place.'),
+        Q('Why narrow the customer group?', 'To find people with a clear need you can reach',
+          ('To sell to fewer people forever', 'you can widen later'), ('To avoid all marketing', 'you still market'),
+          ('To make all prices higher automatically for every buyer', 'narrowing does not set prices'),
+          'A narrower group is easier to reach and serve well.'),
+        Q('"Family members ordering meals for someone after surgery in our city." How many narrowing steps does it '
+          'include beyond "people"?', 'Three: situation, place and who orders',
+          ('One: only the city', 'it also names situation and who orders'),
+          ('None at all', 'it adds several details'), ('Ten different steps, one for each word in it', 'it has three main details'),
+          'It adds a situation (surgery), a place (our city) and the buyer (family member).'),
+        Q('Which group is narrower?', 'Dog owners in one apartment complex who work late',
+          ('Dog owners', 'broader'), ('Pet owners', 'broader still'), ('People who have some animals living nearby them', 'very broad'),
+          'Adding a place and a situation makes the group narrower.'),
+    ], why='A learner who misses MAIN may not know how to narrow a group; adding one detail at a time makes the method '
+           'concrete.')],
+    F1=sec('Apply it: pick a first customer group', CUST, [
+        Q('Ray sells a scheduling tool. He can afford to reach only one group first. Which group is best to start with?',
+          'Independent hair stylists who book clients by text', ('All businesses that have any kind of schedule at all',
+                                                                 'too broad to reach with a small budget'),
+          ('People who think calendars are useful', 'too vague'),
+          ('Anyone who owns a smartphone in the country', 'too broad'),
+          'A narrow group with a clear scheduling pain fits a small budget.'),
+        Q('Iris makes gluten-free cupcakes. Which first customer group best fits her product?',
+          'Parents planning parties for children who cannot eat gluten', ('Anyone who likes eating sweet desserts on the weekends',
+                                                                          'too broad'),
+          ('People who prefer salty snacks', 'not likely buyers'), ('Restaurants of every type', 'too broad'),
+          'This group has a specific need her cupcakes meet.'),
+        Q('A fitness coach targets "people who want to be healthy." Signups are low. What change is most likely to help?',
+          'Focus on new parents who want 20-minute home workouts', ('Target "everyone who breathes"', 'even broader'),
+          ('Remove all descriptions of who it is for', 'that makes it less clear'),
+          ('Charge the same price but add more fonts and colors', 'design does not fix a vague target'),
+          'A specific group with a clear situation makes the offer easier to understand.'),
+        Q('Which detail matters MOST when choosing a customer group for a home-repair service?',
+          'Homeowners nearby who cannot do repairs themselves', ('People who watch home TV shows',
+                                                                 'watching does not mean needing repairs'),
+          ('Renters whose landlord fixes everything', 'they may not pay for repairs'),
+          ('People who live far outside the area the service covers', 'they cannot be served'),
+          'Location and need decide who can actually become a customer.'),
+        Q('A group has 2,000 people. A business expects 1 out of every 100 to buy. How many buyers is that?', '20',
+          ('2', 'that is 1 out of 1,000'), ('200', 'that is 1 out of 10'), ('100', 'that confuses the rate'),
+          '2,000 / 100 = 20 expected buyers.', calc=lambda: 2000 // 100 == 20),
+    ]),
+    F2=sec('Handle the complications: too narrow, too broad, or untested', CUST, [
+        Q('A seller picked "left-handed violinists in one small town." There are about 5 of them. What is the main '
+          'risk?', 'The group may be too small to support the business.', ('The group is too broad to reach at all.',
+                                                                            'it is very narrow'),
+          ('The group is perfect because narrow is always better.', 'narrow groups can be too small'),
+          ('The group must be wrong because violinists exist everywhere.', 'the issue is size, not existence'),
+          'A group must be specific but also large enough to sustain sales.'),
+        Q('A founder describes her customer clearly but has not spoken to any of them. What should she do next?',
+          'Talk to several people in that group to confirm the need', ('Build the full product right away',
+                                                                       'the need is not confirmed'),
+          ('Widen the group to everyone living anywhere in her state', 'widening does not confirm the need'),
+          ('Pay for a large ad campaign immediately', 'too early'),
+          'A clear description is a guess until people in the group confirm it.'),
+        Q('Two possible groups for a laundry pickup service: students in one dorm (300 people, no cars) or families in '
+          'a suburb (3,000 people, most have washers). The goal is a quick first test. Which is the better first group?',
+          'The dorm students, because they lack washers and cars and are close together',
+          ('The suburb families, because their number is ten times larger than the dorm', 'most have washers, so need is lower'),
+          ('Both at once, to cover every possible customer', 'that is not a quick focused test'),
+          ('Neither, because laundry is not a real need', 'laundry is a common need'),
+          'A smaller group with a stronger need and easy reach fits a quick test.'),
+        Q('A business sells to small offices, but the person who uses the product is not the person who pays. Which '
+          'detail should the customer description include?', 'Who makes the buying decision in the office',
+          ('What music the users like to listen to while they work', 'not relevant to buying'),
+          ('How many windows the office has', 'not relevant'), ('The color of the office walls', 'not relevant'),
+          'Knowing the decision-maker tells you whom to convince.'),
+        Q('A group of 500 customers each buy once a month and spend 12 dollars. If 10 percent of them become your '
+          'customers, what are your expected monthly sales?', '600 dollars', ('6,000 dollars', 'that uses all 500 people'),
+          ('60 dollars', 'that uses 5 customers'), ('50 dollars', 'that is the number of customers'),
+          '10 percent of 500 is 50 customers; 50 x 12 = 600 dollars.', calc=lambda: 500 * 10 // 100 * 12 == 600),
+    ]))
+
+# ------------------------------------------------------------------ Set 7: clear offer
+OFFER = ('An offer (also called a value proposition) says, in plain words, who it is for, what problem it solves, and '
+         'what result the customer gets. A simple pattern: "For [customer] who [problem], we [what you do] so you can '
+         '[result]." For example: "For busy pet owners who work late, we walk your dog at lunch so it gets exercise and '
+         'you do not rush home." A clear offer is specific, honest and easy to repeat. It avoids vague phrases like '
+         '"best quality" that do not say what the customer gets.')
+
+s7 = SET('ENT.CUST.03',
+    M=sec('Write and judge a clear offer', OFFER, [
+        Q('Which offer is the clearest?', 'For new runners, we create 8-week plans so you finish your first 5K injury-free.',
+          ('We offer the very best fitness services and the highest quality for all of you.', 'vague; no customer or result'),
+          ('Fitness for everyone, everywhere, always, at great prices.', 'too broad to mean anything'),
+          ('Our company has many years of fitness experience in sports.', 'it talks about the company, not the customer'),
+          'It names the customer, the help and the result.'),
+        Q('What three parts should a clear offer include?', 'The customer, the problem, and the result they get',
+          ('A slogan, a logo, and a list of the owner\'s hobbies', 'those are not the parts of an offer'),
+          ('The founding date, the address, and the office hours', 'useful details, but not the offer'),
+          ('A discount, a deadline, and a free gift for every buyer', 'promotions are not the core offer'),
+          'Who, what problem, and what result make an offer clear.'),
+        Q('Why is "best quality cleaning" a weak offer?', 'It does not say who it is for or what result they get.',
+          ('It is too short to be shown on a sign or website.', 'length is not the problem'),
+          ('It mentions cleaning, which customers usually find very boring.', 'the topic is fine'),
+          ('It is illegal to describe a service as good.', 'it is not illegal; it is vague'),
+          'Vague praise does not tell the customer what they get.'),
+        Q('Fill in the pattern for a meal-prep business: "For ___ who ___, we ___ so you can ___." Which is best?',
+          'Night-shift nurses / have no time to cook / deliver ready meals / eat well at work',
+          ('Everyone / is hungry / sell food / be happy', 'too vague to guide anything'),
+          ('Our team / loves cooking / make meals / buy from us', 'it centers the business, not the customer'),
+          ('Customers / want some food / have a kitchen at home / pay us money today', 'it does not name a real problem or result'),
+          'Each blank is specific and describes the customer\'s situation and result.'),
+        Q('Which phrase states a RESULT for the customer?', 'so your taxes are filed on time without stress',
+          ('we use the latest accounting software', 'that describes the business\'s tools'),
+          ('our accountants have many certificates on the wall', 'that describes the business'),
+          ('we are open on weekdays until five', 'that is a detail, not a result'), 'A result says what the customer gets.'),
+    ]),
+    B=[cs('Customer, problem, result', 'An offer answers three questions a customer silently asks: "Is this for me?", '
+          '"Does it fix my problem?", and "What will I get?" Think of a sign at a car wash: "Busy commuters: get your car '
+          'washed in 10 minutes while you wait for coffee." It tells who (busy commuters), the problem (no time) and the '
+          'result (a clean car in 10 minutes). If a sign only says "Quality car care," the customer cannot answer any of '
+          'the three questions.', [
+        Q('In "Busy commuters: car washed in 10 minutes," who is the customer?', 'Busy commuters',
+          ('The car wash owner', 'the owner sells the service'), ('The coffee shop', 'not the customer here'),
+          ('The cars', 'cars do not pay'), 'Busy commuters are named as the customer.'),
+        Q('In the same sign, what is the result?', 'A clean car in 10 minutes',
+          ('Busy commuters', 'that is the customer'), ('Quality car care', 'that is vague'),
+          ('Coffee', 'coffee is not the service'), 'The result is what the customer gets.'),
+        Q('Which question does an offer help a customer answer?', '"Is this for me?"',
+          ('"What year was the company founded?"', 'not part of the offer'),
+          ('"What is the owner\'s favorite food?"', 'not relevant'), ('"Who designed the logo?"', 'not relevant'),
+          'An offer helps customers see whether it fits them.'),
+        Q('Which sign answers all three questions?', 'New parents: we deliver diapers within 2 hours so you never run out',
+          ('Quality products for families who shop with us every week', 'no problem or result'), ('Diapers and more since 2010', 'no result'),
+          ('The best store in town', 'vague'), 'It names the customer, the problem and the result.'),
+        Q('"Quality car care" fails to tell the customer what?', 'Who it is for, what problem it fixes, or what they get',
+          ('That the business washes cars at all for customers', 'it does hint at car care'),
+          ('Where the owner went to school', 'not relevant'), ('The price of every service', 'price is a separate detail'),
+          'Vague phrases answer none of the three questions.'),
+    ], why='A learner who misses MAIN may not know what makes an offer clear; the three silent customer questions give '
+           'a simple test.')],
+    F1=sec('Apply it: improve a real-sounding offer', OFFER, [
+        Q('A dog groomer\'s website says "Pampering pets with love." She mainly serves large dogs that are anxious at '
+          'busy salons. Which rewrite is best?', 'Calm, one-on-one grooming for large, nervous dogs, with no waiting room',
+          ('Pampering all pets with even more love and care every single day', 'still vague'),
+          ('The best grooming in the entire state of Ohio', 'an unsupported claim, not a clear offer'),
+          ('Grooming since 2015 with many happy tails', 'about the business, not the customer result'),
+          'It names who it is for and the result that fits their problem.'),
+        Q('A bookkeeper\'s draft offer: "We do numbers." Which addition helps most?',
+          'Who she serves and what result they get, like on-time monthly records', ('A bigger logo at the top of the page',
+                                                                                     'design does not clarify the offer'),
+          ('A longer list of her favorite software brands and computer tools', 'tools are not the result'),
+          ('More exclamation marks to show excitement', 'punctuation adds no meaning'),
+          'Naming the customer and result turns "we do numbers" into an offer.'),
+        Q('Which offer is honest AND clear for a new tutor with no results data yet?',
+          'For 7th graders behind in fractions: weekly 1-on-1 practice with a written plan',
+          ('Guaranteed A grades for every student who signs up', 'a guarantee she cannot support'),
+          ('The top-rated tutor in the whole country, according to everyone who knows', 'an unsupported claim'),
+          ('Tutoring that is simply better than all the others', 'vague and unsupported'),
+          'It is specific without promising results she cannot prove.'),
+        Q('Two offers for a cleaning service. A: "Spotless homes." B: "For renters moving out: a deposit-ready clean in '
+          'one day." The owner wants more move-out jobs. Which fits that goal?', 'Offer B, because it names move-out renters',
+          ('Offer A, because shorter is always better', 'shorter is not always clearer'),
+          ('Both are the same, because both mention cleaning', 'only B names the target job'),
+          ('Neither, because offers do not affect bookings', 'a clear offer helps the right customers act'),
+          'Offer B speaks directly to the customer and job the owner wants.'),
+        Q('Which phrase should be removed from an offer because it cannot be checked?', '"the world\'s best"',
+          ('"for small restaurants"', 'that names a customer'), ('"in 48 hours"', 'that is a specific result'),
+          ('"with a written quote first"', 'that is a specific detail'),
+          'Superlatives like "world\'s best" are unsupported and say nothing specific.'),
+    ]),
+    F2=sec('Handle the complications: honest, specific, and tested', OFFER, [
+        Q('An offer promises "results in 24 hours," but the owner usually needs 3 days. What is the best fix?',
+          'Change the promise to match the real delivery time', ('Keep the promise and apologize later',
+                                                                  'that misleads customers'),
+          ('Remove all timing so customers cannot complain', 'customers need to know timing'),
+          ('Promise even faster results so she can beat her competitors', 'that makes it more misleading'),
+          'An offer must match what the business can actually deliver.'),
+        Q('A founder wrote a clear offer but has no idea if customers care about the stated result. What should she '
+          'check?', 'Whether target customers say that result matters to them', ('Whether the sentence has a nice rhythm when read aloud',
+                                                                                  'style is secondary'),
+          ('Whether her family likes the wording', 'family is not the target customer'),
+          ('Whether the font matches her logo', 'not relevant to customer interest'),
+          'The offer\'s promised result must matter to the actual customers.'),
+        Q('A web designer serves both restaurants and law firms with very different needs. One offer for both sounds '
+          'vague. What is a sensible approach?', 'Write a separate clear offer for each customer group',
+          ('Keep one vague offer to cover everyone', 'vagueness is the problem'),
+          ('Remove all mention of who the service is for', 'that makes it less clear'),
+          ('Stop serving one of the groups without checking demand', 'not required; separate offers can work'),
+          'Different groups often need different offers.'),
+        Q('A competitor\'s offer is "fast delivery." Yours is the same. What should you check before deciding how to '
+          'stand out?', 'What else your customers care about that you do well', ('How to copy the competitor\'s logo',
+                                                                                  'copying a logo can be a legal problem'),
+          ('How to claim you are faster without proof', 'that would mislead'),
+          ('Whether to remove delivery from your offer completely', 'delivery may still matter'),
+          'Learning what customers value lets you offer a real difference.'),
+        Q('Which offer could mislead customers?', '"Doctor-approved" when no doctor has reviewed the product',
+          ('"Ships within 2 business days" when it does', 'accurate'),
+          ('"For runners training for a first marathon"', 'a customer description'),
+          ('"Includes a printed instruction sheet" when it really does', 'accurate'),
+          'Claims must be true; an unreviewed "doctor-approved" claim is false.'),
+    ]))
+
+# ------------------------------------------------------------------ Set 8: customer or user
+WHO = ('The CUSTOMER is the person or organization who pays. The USER is the person who uses the product or service. '
+       'Sometimes they are the same; sometimes they are different. A parent pays for a child\'s piano lessons; the '
+       'child is the user. A company pays for software its workers use. There may also be a DECISION-MAKER who chooses, '
+       'like a manager who approves a purchase. To sell well, you must convince whoever pays and decides, while also '
+       'making the product work for the user.')
+
+s8 = SET('ENT.CUST.04',
+    M=sec('Tell the paying customer from the user and the decision-maker', WHO, [
+        Q('A school pays for a reading app that students use. Who is the paying customer?', 'The school',
+          ('The students who use the app every day', 'they are the users, but they do not pay'),
+          ('The app\'s designers who built the screens', 'they make the product'),
+          ('The parents who never see the bill', 'in this case the school pays'), 'The school pays, so it is the customer.'),
+        Q('A dog-walking service. Who are the user and the customer?', 'The dog uses the walks; the owner pays.',
+          ('The owner uses the walks; the dog pays for them.', 'dogs do not pay'),
+          ('The walker is both the user and the customer here.', 'the walker provides the service'),
+          ('The park is the customer and the owner is the user.', 'the park is not involved in paying'),
+          'The owner pays (customer); the dog enjoys the walk (user).'),
+        Q('A manager must approve any new software her team uses. What is the manager\'s role?', 'The decision-maker',
+          ('The user, since the manager tests the software daily', 'the team uses it'),
+          ('The supplier of the software to the business', 'the manager buys, not supplies'),
+          ('The competitor of the software company', 'not a competitor'), 'Approving the purchase makes her the decision-maker.'),
+        Q('Why does it matter that the customer and user can be different?', 'You must persuade the payer while serving the user.',
+          ('It means only the user matters for sales.', 'the payer must also be convinced'),
+          ('It means only the payer matters when designing the product.', 'the product must still work for the user'),
+          ('It means you never need to talk to customers.', 'you need to talk to both'),
+          'Sales depend on the payer; satisfaction depends on the user.'),
+        Q('A grandparent buys a video game for a grandchild. Who is the user?', 'The grandchild',
+          ('The grandparent who paid for the game', 'that is the customer'),
+          ('The store clerk who rang up the sale', 'the clerk works for the store'),
+          ('The game company that made the game', 'the maker is not the user'), 'The grandchild plays the game.'),
+    ]),
+    B=[cs('Who pays, who uses', 'Ask two questions about any sale: "Whose money pays for it?" and "Who actually uses '
+          'it?" For a child\'s soccer camp, a parent\'s money pays and the child uses it. For a coffee you buy for '
+          'yourself, the same person pays and uses. For office chairs, the company pays and the workers sit in them. '
+          'Write down both answers every time; they guide who you talk to and what you build.', [
+        Q('For a child\'s soccer camp, whose money pays?', 'The parent\'s', ('The child\'s', 'children rarely pay'),
+          ('The coach\'s', 'the coach is paid'), ('The field owner\'s', 'not involved'), 'The parent pays.'),
+        Q('You buy a coffee for yourself. Who is the user?', 'You', ('The barista', 'the barista makes it'),
+          ('The coffee farmer', 'the farmer grows beans'), ('The café owner', 'the owner sells it'),
+          'You pay and drink it, so you are both customer and user.'),
+        Q('A company buys office chairs. Who uses them?', 'The workers', ('The chair maker', 'the maker sells'),
+          ('The delivery driver', 'the driver delivers'), ('The bank', 'not involved'), 'Workers sit in the chairs.'),
+        Q('Which two questions separate customer and user?', '"Who pays?" and "Who uses it?"',
+          ('"Who built it?" and "Who sold it?"', 'those are about the seller'),
+          ('"What color?" and "What size?"', 'product details'), ('"When?" and "Where?"', 'timing and place'),
+          'Asking who pays and who uses separates the roles.'),
+        Q('A pet owner buys a cat toy. Who is the customer?', 'The pet owner', ('The cat', 'the cat uses it'),
+          ('The toy factory', 'the factory makes it'), ('The pet store\'s landlord', 'not involved'), 'The owner pays.'),
+    ], why='A learner who misses MAIN may merge payer and user; two simple questions separate the roles.')],
+    F1=sec('Apply it: who to convince and who to serve', WHO, [
+        Q('Lia sells an after-school coding club. Kids love it, but few sign up. Who should her marketing mainly speak to?',
+          'Parents, who pay and decide', ('Kids only, since they enjoy the club most', 'kids do not usually pay'),
+          ('Teachers, since they grade homework', 'teachers do not pay for the club'),
+          ('Other coding clubs nearby', 'competitors do not sign up'),
+          'Parents pay and decide, so the message must reach them.'),
+        Q('A company\'s IT manager approves software, but sales staff use it. Which feedback is MOST important when '
+          'improving daily ease of use?', 'Feedback from the sales staff who use it daily', ('Feedback from the CEO\'s family',
+                                                                                             'they do not use it'),
+          ('Feedback from a competitor\'s customers in another town', 'not the users'),
+          ('Feedback only from the IT manager', 'the manager does not use it daily'),
+          'Daily users know what makes the product easy or hard to use.'),
+        Q('A senior-care service is used by older adults, but adult children usually pay. Which detail should the '
+          'website make clear for the payers?', 'Safety, schedules and how they will be kept informed', ('The '
+          'owner\'s favorite movies', 'not relevant'), ('A long history of the company\'s logo', 'not relevant'),
+          ('Games the care staff like to play on their breaks', 'not relevant'),
+          'Payers want to know their parent is safe and that they will be informed.'),
+        Q('A dentist\'s office buys a booking tool. The receptionist uses it; the dentist pays. The receptionist says it '
+          'is confusing. What is the risk to the seller?', 'The office may cancel if the daily user struggles.',
+          ('No risk, because the dentist already paid', 'unhappy users often lead to cancellation'),
+          ('The receptionist will become the payer', 'roles do not switch that way'),
+          ('The tool will start working better by itself over time', 'it will not fix itself'),
+          'If the user struggles, the payer may stop paying.'),
+        Q('A toy costs 30 dollars. A parent buys 2 for twins. How much does the customer pay?', '60 dollars',
+          ('30 dollars', 'that is one toy'), ('32 dollars', 'that adds 2 instead of multiplying'),
+          ('15 dollars', 'that halves the price'), '30 x 2 = 60 dollars, paid by the parent (the customer).',
+          calc=lambda: 30 * 2 == 60),
+    ]),
+    F2=sec('Handle the complications: several people in one decision', WHO, [
+        Q('A small business owner pays for payroll software, the accountant recommends it, and staff use it. Who has the '
+          'final say on buying?', 'The owner, who pays and approves the purchase', ('The staff, because they use it',
+                                                                                     'users do not usually approve purchases'),
+          ('The accountant, because she was the one who suggested it', 'she influences but does not pay'),
+          ('The software\'s salesperson', 'the seller does not decide for the buyer'),
+          'The owner pays and approves; others influence the choice.'),
+        Q('A seller pitches only to users, who love the product, but no one buys. Which detail is most likely missing?',
+          'Convincing the person who controls the budget', ('A brighter product color', 'not the main issue'),
+          ('More features that the users did not ask for', 'users already like it'),
+          ('A longer company history page', 'not the main issue'),
+          'Users cannot buy without the budget holder\'s approval.'),
+        Q('A grant program pays for students\' summer classes, and the students choose the class. Who is the paying '
+          'customer?', 'The grant program', ('The students', 'they choose, but the grant pays'),
+          ('The teacher', 'the teacher provides the class'), ('The school building', 'not a payer'),
+          'The program\'s money pays, so it is the paying customer here.'),
+        Q('Before writing a sales message, what should a business check first in a new market?',
+          'Who pays, who decides, and who uses', ('Which font is most popular this year', 'design comes later'),
+          ('How many likes competitors get', 'likes do not identify the buyer'),
+          ('What price ends in .99', 'pricing tricks come later'),
+          'Knowing the roles tells you whom each message is for.'),
+        Q('A daycare charges 200 dollars a week per child. A family enrolls 2 children for 4 weeks. How much does the '
+          'family pay?', '1,600 dollars', ('800 dollars', 'that counts only one child'),
+          ('400 dollars', 'that is one week'), ('206 dollars', 'that adds instead of multiplying'),
+          '200 x 2 x 4 = 1,600 dollars, paid by the family (customer) for the children (users).',
+          calc=lambda: 200 * 2 * 4 == 1600),
+    ]))
+
+# ------------------------------------------------------------------ Set 9: Spanx case
+SPX = ('Documented history: Sara Blakely cut the feet off control-top pantyhose to wear under white pants. She started '
+       'Spanx in 2000 with $5,000 of her own savings. Several hosiery manufacturers turned her down before one agreed '
+       'to make the product, and she got it into the Neiman Marcus department store. Lesson drawn by this course (an '
+       'interpretation, not her words): a problem you have yourself can be a starting point, but you still need '
+       'evidence that many others share it and will buy. One success story does not guarantee the same result.')
+
+s9 = SET('ENT.CASE.02',
+    M=sec('Apply a documented decision: your own problem, then evidence others share it', SPX, [
+        Q('According to the passage, what problem did Blakely start with?', 'She wanted a smooth look under white pants.',
+          ('She wanted cheaper shoes for running on trails.', 'not in the passage'),
+          ('She wanted a new kind of store for selling dresses.', 'not in the passage'),
+          ('She wanted to open a factory for making fabric.', 'not in the passage'),
+          'The passage says she cut pantyhose to wear under white pants.'),
+        Q('How much of her own money does the passage say she started with?', '$5,000',
+          ('$500', 'the passage says $5,000'), ('$50,000', 'the passage says $5,000'),
+          ('No money at all, only loans', 'she used her savings'), 'The documented amount is $5,000 of savings.'),
+        Q('Which lesson does this course draw?', 'Your own problem can be a start, but check that others share it.',
+          ('Your own problem always proves a large market exists for it.', 'one person is not a market'),
+          ('Manufacturers always say yes to new ideas.', 'several turned her down'),
+          ('Big stores accept every new product quickly.', 'not a lesson from the passage'),
+          'The lesson pairs a personal problem with evidence from others.'),
+        Q('Theo is annoyed that his bike lock is heavy. Applying the lesson, what should he do first?',
+          'Ask other cyclists whether heavy locks bother them and what they use', ('Order 5,000 lighter locks today',
+                                                                                    'no evidence others want them'),
+          ('Assume every cyclist feels exactly as he does about heavy locks', 'he needs evidence'),
+          ('Wait until a manufacturer calls him', 'he should gather evidence himself'),
+          'He should test whether others share his problem before investing.'),
+        Q('Which statement about this case is accurate?', 'Rejections came before a manufacturer agreed.',
+          ('The first manufacturer she asked said yes.', 'the passage says several turned her down'),
+          ('She started with a large outside investment.', 'she used her own savings'),
+          ('Her success guarantees others the same result.', 'one case guarantees nothing'),
+          'The passage documents several rejections before a yes.'),
+    ]),
+    B=[cs('One person\'s problem versus a market', 'Your own problem is a clue, not proof. If you are frustrated by '
+          'something, ask: do many other people have this same frustration, and do they spend money on it? One person '
+          'is a sample of one. A market is many people with the same need who will pay. You find out by asking others '
+          'about their experience and by testing whether they will buy, not by assuming they feel what you feel.', [
+        Q('Your own frustration with a product is best described as what?', 'A clue worth checking',
+          ('Proof of a large market', 'one person is not a market'), ('A finished business plan', 'it is only a start'),
+          ('A guarantee of sales', 'nothing guarantees sales'), 'Your own problem is a starting clue.'),
+        Q('What is a market, in plain words?', 'Many people with the same need who will pay',
+          ('One person with a strong opinion', 'one person is not a market'),
+          ('A building where products are sold', 'that is another meaning of "market"'),
+          ('A list of your friends\' favorite things to buy', 'friends are a small, biased group'),
+          'A market is many people with a shared need willing to pay.'),
+        Q('How do you check whether others share your problem?', 'Ask other people about their experience',
+          ('Assume they all feel exactly the same as you do', 'assuming is not checking'),
+          ('Design a logo first', 'a logo does not check need'), ('Buy inventory first', 'that spends before checking'),
+          'Asking others is how you check.'),
+        Q('A "sample of one" means what?', 'Evidence from only one person',
+          ('A free sample given to one customer', 'a different meaning'), ('A test with a thousand people', 'that is large'),
+          ('A product that sells once', 'not the meaning here'), 'It means the evidence comes from one person.'),
+        Q('Which shows that others share a problem?', 'Many people describe it and already pay for fixes',
+          ('You personally feel very strongly about it', 'that is one person'), ('Your friend nods politely', 'politeness is not evidence'),
+          ('The idea sounds clever', 'cleverness is not evidence'), 'Many people with the problem who pay is evidence.'),
+    ], why='A learner who misses MAIN may treat a personal problem as proof of demand; separating a sample of one from a '
+           'market is the obstacle.')],
+    F1=sec('Apply it: from a personal problem to a tested idea', SPX, [
+        Q('Ana hates that her reusable water bottle leaks in her bag. Which first step best applies the lesson?',
+          'Survey commuters about leaking bottles and what they do now', ('Buy a bottle factory before telling anyone about the idea',
+                                                                          'too much spending first'),
+          ('Ask only her mother whether bottles leak', 'one person is not enough'),
+          ('Post a logo and wait for orders', 'no evidence gathered'),
+          'Asking many commuters checks whether her problem is shared.'),
+        Q('Ken\'s own frustration is finding parking at the gym. He asks 30 gym members, and 25 say it bothers them. What '
+          'fraction said it bothers them?', '25 out of 30, which is about 83 percent', ('25 out of 100', 'he asked 30 people'),
+          ('5 out of 30, which is about 17 percent', 'that is the number NOT bothered'),
+          ('30 out of 25', 'that reverses the numbers'), '25 / 30 is about 0.83, or about 83 percent.',
+          calc=lambda: round(25 / 30 * 100) == 83),
+        Q('Mei solved her own problem (tangled earbuds) with a clip. Ten friends tried it and liked it, but none would pay. '
+          'What does this suggest?', 'Liking it is not the same as paying; she needs more evidence.',
+          ('She should order thousands of clips from a factory today.', 'no one has shown willingness to pay'),
+          ('Her friends\' approval proves a market.', 'approval is not payment'),
+          ('She should give up all ideas forever.', 'one weak test does not end every idea'),
+          'Approval without payment is weak evidence of demand.'),
+        Q('Which plan follows the lesson with the least money at risk?', 'Make 20 samples and try selling them at one market',
+          ('Order 10,000 units at a low bulk price', 'large spending before evidence'),
+          ('Sign a contract with a national store chain first', 'too large before testing'),
+          ('Hire a sales team before any sales', 'spending before evidence'),
+          'A small test risks little while gathering evidence.'),
+        Q('Which description separates the documented fact from the lesson?',
+          'Fact: she started with $5,000 of savings. Lesson: check others share your problem.',
+          ('Fact: everyone loves her product today. Lesson: using savings guarantees success.', 'neither is documented or sound'),
+          ('Fact: she had no rejections. Lesson: never ask for feedback.', 'the fact is wrong'),
+          ('Fact: she copied a competitor. Lesson: copying always works.', 'not documented'),
+          'The fact is from the record; the lesson is an interpretation.'),
+    ]),
+    F2=sec('Handle the complications: why copying may fail', SPX, [
+        Q('Ben copies the "use my own savings" idea, but his savings are also his emergency fund for rent. What should he '
+          'check first?', 'How much he can spend without risking his living costs', ('Whether the founder used $5,000',
+                                                                                      'her amount is not his limit'),
+          ('Whether savings are always better than loans for founders', 'not always; it depends'),
+          ('Whether his logo is ready', 'not the main question'),
+          'He must protect his own living costs before investing savings.'),
+        Q('A product solved the founder\'s problem, but the founder\'s situation is unusual (very tall, needing special '
+          'clothing). What is the main risk in assuming a large market?', 'Few other people may share the unusual problem.',
+          ('Tall people never buy clothing at all.', 'they do buy clothing'),
+          ('Unusual problems always make the best businesses.', 'not always; the market may be small'),
+          ('There is no risk if the product works.', 'a working product can still lack buyers'),
+          'An unusual situation may mean a small market; it must be checked.'),
+        Q('Several manufacturers reject Pia\'s product. Using the case wisely, what should she do?',
+          'Ask why they said no, improve or adjust, and keep looking if the evidence supports it', ('Assume rejection '
+          'means guaranteed success later', 'rejection does not predict success'),
+          ('Stop immediately, because one round of rejections ends any idea for good', 'one round of rejections is not decisive'),
+          ('Ignore their reasons and send the same pitch again', 'reasons may reveal real problems'),
+          'Rejections are information; persistence makes sense only with supporting evidence.'),
+        Q('A big store accepted Spanx. A new founder wants to skip testing and go straight to big stores. What is the '
+          'main problem?', 'Without evidence of demand, big stores are unlikely to accept or reorder.',
+          ('Big stores accept every new product.', 'they do not'),
+          ('Skipping tests always saves money in the end.', 'it can waste money'),
+          ('There is no problem at all, because the case proves that it works.', 'one case proves nothing for another'),
+          'Stores want evidence that customers buy; testing builds that evidence.'),
+        Q('What is the most accurate takeaway from a single founder story?', 'It shows one path and decisions to consider, '
+          'not a guaranteed formula.', ('It is a formula that works for every product.', 'no single story is a formula'),
+          ('It proves that the founder\'s exact steps caused her later success.', 'causes are not proven by one story'),
+          ('It is useless because conditions differ.', 'it can still teach useful decisions'),
+          'A case teaches decisions to weigh, not a guaranteed outcome.'),
+    ]))
+
+SETS = [s5, s6, s7, s8, s9]
