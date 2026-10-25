@@ -432,6 +432,17 @@ def write_key(recs):
             w.writerow(row)
 
 
+def shrink_pdf(path):
+    """Subset the embedded fonts (each page otherwise carries whole font files) and rewrite compactly."""
+    import pymupdf
+    doc = pymupdf.open(path)
+    doc.subset_fonts()
+    tmp = path + '.tmp'
+    doc.save(tmp, garbage=4, deflate=True, clean=True)
+    doc.close()
+    os.replace(tmp, path)
+
+
 def main(pdf=True):
     all_sets = load_sets()
     letters = assign_letters(all_sets)
@@ -444,6 +455,8 @@ def main(pdf=True):
             r['question_page'] = page_of[r['id']]
         make_key_pdf(recs, os.path.join(ROOT, 'Logic_Answer_Key.pdf'))
         make_strategy_pdf(all_sets, os.path.join(ROOT, 'Logic_Strategy_Guide.pdf'))
+        for f in ('Logic_Question_Collection.pdf', 'Logic_Answer_Key.pdf', 'Logic_Strategy_Guide.pdf'):
+            shrink_pdf(os.path.join(ROOT, f))
     else:
         for r in recs:
             r['question_page'] = 0

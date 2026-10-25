@@ -1,0 +1,573 @@
+{
+ "set": 37,
+ "title": "Direct proof with numbers",
+ "outcome": "LOGIC.PROOF.01",
+ "genre": "formal logic",
+ "kind": "formal",
+ "family": "formal",
+ "practices": [
+  "MP3",
+  "MP7"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Build a direct argument about even, odd and multiples from definitions",
+   "outcome": "LOGIC.PROOF.01",
+   "questions": [
+    {
+     "id": "S37-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "order",
+     "prompt": "Definitions: an integer n is even if n = 2k for some integer k, and odd if n = 2k + 1 for some integer k. An integer n is a multiple of m if n = mk for some integer k. Put the steps of a direct proof that the sum of two odd integers is even in order.",
+     "outcome": "LOGIC.PROOF.01",
+     "items": [
+      {
+       "key": "A",
+       "text": "Let m = 2a + 1 and n = 2b + 1, where a and b are integers."
+      },
+      {
+       "key": "B",
+       "text": "Then m + n = 2a + 2b + 2."
+      },
+      {
+       "key": "C",
+       "text": "So m + n = 2(a + b + 1)."
+      },
+      {
+       "key": "D",
+       "text": "Since a + b + 1 is an integer, m + n is even."
+      }
+     ],
+     "correct_order": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "correct_answer": "Let m = 2a + 1 and n = 2b + 1, where a and b are integers. → Then m + n = 2a + 2b + 2. → So m + n = 2(a + b + 1). → Since a + b + 1 is an integer, m + n is even."
+    },
+    {
+     "id": "S37-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Definitions: an integer n is even if n = 2k for some integer k, and odd if n = 2k + 1 for some integer k. An integer n is a multiple of m if n = mk for some integer k. Which first line correctly begins a direct proof that the product of any two odd integers is odd?",
+     "outcome": "LOGIC.PROOF.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Let m = 2a + 1 and n = 2a + 1, where a is an integer."
+      },
+      {
+       "letter": "B",
+       "text": "Let m = 3 and n = 5."
+      },
+      {
+       "letter": "C",
+       "text": "Let m = 2a + 1 and n = 2b + 1, where a and b are integers."
+      },
+      {
+       "letter": "D",
+       "text": "Assume that m times n is odd."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Let m = 2a + 1 and n = 2b + 1, where a and b are integers."
+    },
+    {
+     "id": "S37-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Definitions: an integer n is even if n = 2k for some integer k, and odd if n = 2k + 1 for some integer k. An integer n is a multiple of m if n = mk for some integer k. A proof that an even integer plus an odd integer is odd reaches the line m + n = 2a + 2b + 1. Which line correctly finishes it?",
+     "outcome": "LOGIC.PROOF.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Since 4 + 3 = 7 is odd, m + n is odd."
+      },
+      {
+       "letter": "B",
+       "text": "m + n is odd because the expression 2a + 2b + 1 contains a 1."
+      },
+      {
+       "letter": "C",
+       "text": "m + n = 2(a + b + 1), so m + n is even."
+      },
+      {
+       "letter": "D",
+       "text": "m + n = 2(a + b) + 1, and a + b is an integer, so m + n is odd."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "m + n = 2(a + b) + 1, and a + b is an integer, so m + n is odd."
+    },
+    {
+     "id": "S37-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "Definitions: an integer n is even if n = 2k for some integer k, and odd if n = 2k + 1 for some integer k. An integer n is a multiple of m if n = mk for some integer k. Checking that 3 + 5, 7 + 9 and 11 + 13 are all even proves that the sum of any two odd integers is even.",
+     "outcome": "LOGIC.PROOF.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S37-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "Definitions: an integer n is even if n = 2k for some integer k, and odd if n = 2k + 1 for some integer k. An integer n is a multiple of m if n = mk for some integer k. To show that 6n + 4 is even for every integer n, write 6n + 4 = 2(pn + q). Give the numbers p and q.",
+     "outcome": "LOGIC.PROOF.01",
+     "fields": [
+      {
+       "name": "p",
+       "label": "p ="
+      },
+      {
+       "name": "q",
+       "label": "q ="
+      }
+     ],
+     "rule": "p == 3 and q == 2",
+     "example_answer": {
+      "p": 3,
+      "q": 2
+     },
+     "correct_answer": "any values that satisfy: p == 3 and q == 2 (example: p = 3, q = 2)"
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Use the definitions of even and odd",
+   "outcome": "LOGIC.PROOF.01",
+   "branch_mode": "prerequisite",
+   "relationship": "A direct proof starts from the definitions. Students who cannot write even and odd numbers in the forms 2k and 2k + 1 cannot begin.",
+   "author_note": "A direct proof starts from the definitions. Students who cannot write even and odd numbers in the forms 2k and 2k + 1 cannot begin.",
+   "questions": [
+    {
+     "id": "S37-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Definitions: an integer n is even if n = 2k for some integer k, and odd if n = 2k + 1 for some integer k. An integer n is a multiple of m if n = mk for some integer k. Which expression is odd for every integer k?",
+     "outcome": "LOGIC.PROOF.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "2k + 7"
+      },
+      {
+       "letter": "B",
+       "text": "k + 1"
+      },
+      {
+       "letter": "C",
+       "text": "2k + 4"
+      },
+      {
+       "letter": "D",
+       "text": "4k"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "2k + 7"
+    },
+    {
+     "id": "S37-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "Definitions: an integer n is even if n = 2k for some integer k, and odd if n = 2k + 1 for some integer k. An integer n is a multiple of m if n = mk for some integer k. 2k + 6 is even for every integer k.",
+     "outcome": "LOGIC.PROOF.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S37-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "Definitions: an integer n is even if n = 2k for some integer k, and odd if n = 2k + 1 for some integer k. An integer n is a multiple of m if n = mk for some integer k. Write 19 in the form 2k + 1. What is k?",
+     "outcome": "LOGIC.PROOF.01",
+     "answer_lines": [
+      "k ="
+     ],
+     "correct_answer": "9"
+    },
+    {
+     "id": "S37-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "Definitions: an integer n is even if n = 2k for some integer k, and odd if n = 2k + 1 for some integer k. An integer n is a multiple of m if n = mk for some integer k. If n = 2k + 1, then n + 1 is odd.",
+     "outcome": "LOGIC.PROOF.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S37-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Which statement is the definition of an even integer?",
+     "outcome": "LOGIC.PROOF.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "n ends in the digit 0"
+      },
+      {
+       "letter": "B",
+       "text": "n = 2k + 1 for some integer k"
+      },
+      {
+       "letter": "C",
+       "text": "n leaves remainder 1 when divided by 2"
+      },
+      {
+       "letter": "D",
+       "text": "n = 2k for some integer k"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "n = 2k for some integer k"
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Direct proofs about multiples",
+   "outcome": "LOGIC.PROOF.01",
+   "relationship": "Harder: direct proofs about multiples of 3 and 9.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S37-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "order",
+     "prompt": "Definitions: an integer n is even if n = 2k for some integer k, and odd if n = 2k + 1 for some integer k. An integer n is a multiple of m if n = mk for some integer k. Put the steps of a direct proof that if n is a multiple of 3, then n squared is a multiple of 9 in a correct order. (Two orders are correct.)",
+     "outcome": "LOGIC.PROOF.01",
+     "items": [
+      {
+       "key": "A",
+       "text": "Let n = 3k, where k is an integer."
+      },
+      {
+       "key": "B",
+       "text": "Then n squared = 9k squared."
+      },
+      {
+       "key": "C",
+       "text": "k squared is an integer, because k is an integer."
+      },
+      {
+       "key": "D",
+       "text": "So n squared is 9 times an integer, a multiple of 9."
+      }
+     ],
+     "correct_order": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "accept_orders": [
+      [
+       "A",
+       "C",
+       "B",
+       "D"
+      ]
+     ],
+     "correct_answer": "Let n = 3k, where k is an integer. → Then n squared = 9k squared. → k squared is an integer, because k is an integer. → So n squared is 9 times an integer, a multiple of 9."
+    },
+    {
+     "id": "S37-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Definitions: an integer n is even if n = 2k for some integer k, and odd if n = 2k + 1 for some integer k. An integer n is a multiple of m if n = mk for some integer k. Which is a correct direct proof that the sum of three consecutive integers is a multiple of 3?",
+     "outcome": "LOGIC.PROOF.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "n + (n + 1) + (n + 2) = 3n + 3 = 3(n + 1), and n + 1 is an integer."
+      },
+      {
+       "letter": "B",
+       "text": "1 + 2 + 3 = 6, and 6 is a multiple of 3."
+      },
+      {
+       "letter": "C",
+       "text": "n + (n + 1) + (n + 2) = 3n + 3, which is odd."
+      },
+      {
+       "letter": "D",
+       "text": "n + n + n = 3n, which is a multiple of 3."
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "n + (n + 1) + (n + 2) = 3n + 3 = 3(n + 1), and n + 1 is an integer."
+    },
+    {
+     "id": "S37-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "Definitions: an integer n is even if n = 2k for some integer k, and odd if n = 2k + 1 for some integer k. An integer n is a multiple of m if n = mk for some integer k. If n is odd, then n squared minus 1 is a multiple of 8.",
+     "outcome": "LOGIC.PROOF.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S37-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "Definitions: an integer n is even if n = 2k for some integer k, and odd if n = 2k + 1 for some integer k. An integer n is a multiple of m if n = mk for some integer k. (2a + 1)(2b + 1) = 2(2ab + a + b) + 1. For a = 3 and b = 4, what number is 2ab + a + b?",
+     "outcome": "LOGIC.PROOF.01",
+     "fields": [
+      {
+       "name": "x",
+       "label": "Number ="
+      }
+     ],
+     "rule": "x == 31",
+     "example_answer": {
+      "x": 31
+     },
+     "correct_answer": "any values that satisfy: x == 31 (example: x = 31)"
+    },
+    {
+     "id": "S37-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Definitions: an integer n is even if n = 2k for some integer k, and odd if n = 2k + 1 for some integer k. An integer n is a multiple of m if n = mk for some integer k. A student proves that every multiple of 4 is even by writing n = 4k = 2(2k). What justifies the last sentence, \"so n is even\"?",
+     "outcome": "LOGIC.PROOF.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "n can be any number at all."
+      },
+      {
+       "letter": "B",
+       "text": "2k is an integer, so n is 2 times an integer."
+      },
+      {
+       "letter": "C",
+       "text": "4 is an even number."
+      },
+      {
+       "letter": "D",
+       "text": "k must be an even number."
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "2k is an integer, so n is 2 times an integer."
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Judge and complete direct proofs",
+   "outcome": "LOGIC.PROOF.01",
+   "relationship": "Expert: find the flaw in a proof, and prove remainder facts.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S37-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "order",
+     "prompt": "Definitions: an integer n is even if n = 2k for some integer k, and odd if n = 2k + 1 for some integer k. An integer n is a multiple of m if n = mk for some integer k. Put the steps of a direct proof that the square of an odd integer leaves remainder 1 when divided by 4 in order.",
+     "outcome": "LOGIC.PROOF.01",
+     "items": [
+      {
+       "key": "A",
+       "text": "Let n = 2k + 1, where k is an integer."
+      },
+      {
+       "key": "B",
+       "text": "Then n squared = 4k squared + 4k + 1."
+      },
+      {
+       "key": "C",
+       "text": "So n squared = 4(k squared + k) + 1."
+      },
+      {
+       "key": "D",
+       "text": "Since k squared + k is an integer, n squared leaves remainder 1 when divided by 4."
+      }
+     ],
+     "correct_order": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "correct_answer": "Let n = 2k + 1, where k is an integer. → Then n squared = 4k squared + 4k + 1. → So n squared = 4(k squared + k) + 1. → Since k squared + k is an integer, n squared leaves remainder 1 when divided by 4."
+    },
+    {
+     "id": "S37-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Definitions: an integer n is even if n = 2k for some integer k, and odd if n = 2k + 1 for some integer k. An integer n is a multiple of m if n = mk for some integer k. Claim: the sum of two even integers is a multiple of 4. \"Proof: Let m = 2k and n = 2k. Then m + n = 4k.\" What is wrong?",
+     "outcome": "LOGIC.PROOF.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nothing is wrong; the proof is correct."
+      },
+      {
+       "letter": "B",
+       "text": "It should have started with m = 4k."
+      },
+      {
+       "letter": "C",
+       "text": "It uses the same k for both, so it only covers the case m = n."
+      },
+      {
+       "letter": "D",
+       "text": "It should check an example before starting."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "It uses the same k for both, so it only covers the case m = n."
+    },
+    {
+     "id": "S37-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "Definitions: an integer n is even if n = 2k for some integer k, and odd if n = 2k + 1 for some integer k. An integer n is a multiple of m if n = mk for some integer k. The statement \"n squared + n is even for every integer n\" can be proved by two cases: n even and n odd.",
+     "outcome": "LOGIC.PROOF.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S37-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "Definitions: an integer n is even if n = 2k for some integer k, and odd if n = 2k + 1 for some integer k. An integer n is a multiple of m if n = mk for some integer k. For odd n = 2k + 1, n squared + 4n + 3 = 2(2k squared + 6k + 4). For k = 5, what number is 2k squared + 6k + 4?",
+     "outcome": "LOGIC.PROOF.01",
+     "answer_lines": [
+      "Number:"
+     ],
+     "correct_answer": "84"
+    },
+    {
+     "id": "S37-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "Definitions: an integer n is even if n = 2k for some integer k, and odd if n = 2k + 1 for some integer k. An integer n is a multiple of m if n = mk for some integer k. Give an integer n from 1 to 20 for which n squared + n + 1 is even. If no such n exists, enter 0.",
+     "outcome": "LOGIC.PROOF.01",
+     "fields": [
+      {
+       "name": "n",
+       "label": "n ="
+      }
+     ],
+     "rule": "n == 0",
+     "example_answer": {
+      "n": 0
+     },
+     "correct_answer": "any values that satisfy: n == 0 (example: n = 0)"
+    }
+   ]
+  }
+ ]
+}

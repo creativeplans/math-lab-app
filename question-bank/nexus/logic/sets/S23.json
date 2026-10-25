@@ -1,0 +1,588 @@
+{
+ "set": 23,
+ "title": "Cube nets",
+ "outcome": "LOGIC.SPATIAL.04",
+ "genre": "cube nets",
+ "kind": "puzzle",
+ "family": "visual",
+ "practices": [
+  "MP7",
+  "MP1"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Match a cube to its net: opposite and adjacent faces",
+   "outcome": "LOGIC.SPATIAL.04",
+   "questions": [
+    {
+     "id": "S23-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "cube nets",
+     "type": "mc",
+     "prompt": "The squares are folded along their shared edges to make a cube, with the letters on the outside. Faces that are opposite each other on the cube never touch. Which letter is on the face OPPOSITE the face A?",
+     "outcome": "LOGIC.SPATIAL.04",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "C"
+      },
+      {
+       "letter": "B",
+       "text": "E"
+      },
+      {
+       "letter": "C",
+       "text": "B"
+      },
+      {
+       "letter": "D",
+       "text": "F"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "E",
+     "figure": {
+      "svg": "assets/S23-M-Q1.svg",
+      "description": "A cross-shaped net of six squares: A on top, then B, C, D in a row, then E, then F below C."
+     }
+    },
+    {
+     "id": "S23-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "cube nets",
+     "type": "mc",
+     "prompt": "Each figure is made of six squares. Which figure can be folded along the lines between squares into a closed cube (with no overlapping squares)?",
+     "outcome": "LOGIC.SPATIAL.04",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Figure A"
+      },
+      {
+       "letter": "B",
+       "text": "Figure B"
+      },
+      {
+       "letter": "C",
+       "text": "Figure C"
+      },
+      {
+       "letter": "D",
+       "text": "Figure D"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Figure C",
+     "no_shuffle": true,
+     "figure": {
+      "svg": "assets/S23-M-Q2.svg",
+      "description": "Four shapes made of six squares, labeled A to D."
+     }
+    },
+    {
+     "id": "S23-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "cube nets",
+     "type": "grid",
+     "prompt": "The squares are folded along their shared edges to make a cube, with the letters on the outside. Faces that are opposite each other on the cube never touch. For each face P, Q and R of this net, which letter is on the opposite face?",
+     "outcome": "LOGIC.SPATIAL.04",
+     "rows": [
+      "P",
+      "Q",
+      "R"
+     ],
+     "columns": [
+      "S",
+      "T",
+      "U"
+     ],
+     "distinct_columns": true,
+     "correct_assignment": {
+      "P": "U",
+      "Q": "S",
+      "R": "T"
+     },
+     "correct_answer": "P: U; Q: S; R: T",
+     "figure": {
+      "svg": "assets/S23-M-Q3.svg",
+      "description": "A net: P above Q; a row Q, R, S, T; U below T."
+     }
+    },
+    {
+     "id": "S23-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "cube nets",
+     "type": "mc",
+     "prompt": "The squares are folded along their shared edges to make a cube, with the letters on the outside. Faces that are opposite each other on the cube never touch. Which two letters can NEVER be seen at the same time when you look at the cube?",
+     "outcome": "LOGIC.SPATIAL.04",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "G and H"
+      },
+      {
+       "letter": "B",
+       "text": "H and J"
+      },
+      {
+       "letter": "C",
+       "text": "H and I"
+      },
+      {
+       "letter": "D",
+       "text": "G and J"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "G and J",
+     "figure": {
+      "svg": "assets/S23-M-Q4.svg",
+      "description": "A staircase net: G, H in the top row; H above I; I, J in the middle; J above K; K, L in the bottom row."
+     }
+    },
+    {
+     "id": "S23-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "cube nets",
+     "type": "tf",
+     "prompt": "The squares are folded along their shared edges to make a cube, with the letters on the outside. Faces that are opposite each other on the cube never touch. On the cube made from this net, faces M and W share an edge.",
+     "outcome": "LOGIC.SPATIAL.04",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true,
+     "figure": {
+      "svg": "assets/S23-M-Q5.svg",
+      "description": "A net: M, N, O in the top row; V, W, X in the next row, starting under O."
+     }
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Strategy: skip one square to find the opposite face",
+   "outcome": "LOGIC.SPATIAL.04",
+   "branch_mode": "guided_strategy",
+   "relationship": "Students try to picture the whole fold. The rule \"in a straight row, squares with exactly one square between them are opposite\" finds most opposite faces without folding in your head.",
+   "author_note": "Students try to picture the whole fold. The rule \"in a straight row, squares with exactly one square between them are opposite\" finds most opposite faces without folding in your head.",
+   "lesson": {
+    "title": "Skip one square to find the opposite face",
+    "text": [
+     "A cube has 3 pairs of opposite faces. Opposite faces never share an edge.",
+     "In any straight row or column of the net, two squares with exactly one square between them end up opposite.",
+     "Squares that share an edge in the net always share an edge on the cube.",
+     "For a square sticking out of a row, slide it along its row in your mind: it is opposite the square two steps away along the direction it folds."
+    ],
+    "example": {
+     "title": "Worked example (a different net)",
+     "prompt": [
+      "A net has the row 1, 2, 3, 4 with square 5 above square 2 and square 6 below square 3."
+     ],
+     "steps": [
+      "In the row: 1 and 3 are opposite; 2 and 4 are opposite.",
+      "That leaves 5 and 6, which must be opposite each other.",
+      "Check: 5 touches 2 in the net, and 2 is not opposite 5. Every face has exactly one opposite."
+     ]
+    }
+   },
+   "questions": [
+    {
+     "id": "S23-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "cube nets",
+     "type": "mc",
+     "prompt": "A straight row of four squares, numbered 1 to 4, is part of a cube net. Which square is opposite square 1?",
+     "outcome": "LOGIC.SPATIAL.04",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "2"
+      },
+      {
+       "letter": "B",
+       "text": "3"
+      },
+      {
+       "letter": "C",
+       "text": "4"
+      },
+      {
+       "letter": "D",
+       "text": "1"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "3"
+    },
+    {
+     "id": "S23-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "cube nets",
+     "type": "tf",
+     "prompt": "Two squares that share an edge in a net always share an edge on the cube.",
+     "outcome": "LOGIC.SPATIAL.04",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S23-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "cube nets",
+     "type": "sa",
+     "prompt": "How many pairs of opposite faces does a cube have?",
+     "outcome": "LOGIC.SPATIAL.04",
+     "answer_lines": [
+      "Pairs:"
+     ],
+     "correct_answer": "3"
+    },
+    {
+     "id": "S23-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "cube nets",
+     "type": "mc",
+     "prompt": "On a cube, how many faces share an edge with any one face?",
+     "outcome": "LOGIC.SPATIAL.04",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "4"
+      },
+      {
+       "letter": "B",
+       "text": "6"
+      },
+      {
+       "letter": "C",
+       "text": "3"
+      },
+      {
+       "letter": "D",
+       "text": "5"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "4"
+    },
+    {
+     "id": "S23-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "cube nets",
+     "type": "tf",
+     "prompt": "Two faces that are opposite on the cube can be seen at the same time.",
+     "outcome": "LOGIC.SPATIAL.04",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Harder nets",
+   "outcome": "LOGIC.SPATIAL.04",
+   "relationship": "Harder: nets of other shapes and questions about every face.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S23-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "cube nets",
+     "type": "mc",
+     "prompt": "The squares are folded along their shared edges to make a cube, with the letters on the outside. Faces that are opposite each other on the cube never touch. Which letter is opposite H?",
+     "outcome": "LOGIC.SPATIAL.04",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "G"
+      },
+      {
+       "letter": "B",
+       "text": "J"
+      },
+      {
+       "letter": "C",
+       "text": "I"
+      },
+      {
+       "letter": "D",
+       "text": "K"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "K",
+     "figure": {
+      "svg": "assets/S23-F1-Q1.svg",
+      "description": "A staircase net of six squares labeled G to L."
+     }
+    },
+    {
+     "id": "S23-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "cube nets",
+     "type": "sa",
+     "prompt": "Each of the four figures is made of six squares. How many of them can be folded into a closed cube?",
+     "outcome": "LOGIC.SPATIAL.04",
+     "answer_lines": [
+      "Count:"
+     ],
+     "correct_answer": "2",
+     "figure": {
+      "svg": "assets/S23-F1-Q2.svg",
+      "description": "Four shapes made of six squares, labeled A to D."
+     }
+    },
+    {
+     "id": "S23-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "cube nets",
+     "type": "grid",
+     "prompt": "The squares are folded along their shared edges to make a cube, with the letters on the outside. Faces that are opposite each other on the cube never touch. For each face M, N and V of this net, which letter is on the opposite face?",
+     "outcome": "LOGIC.SPATIAL.04",
+     "rows": [
+      "M",
+      "N",
+      "V"
+     ],
+     "columns": [
+      "O",
+      "W",
+      "X"
+     ],
+     "distinct_columns": true,
+     "correct_assignment": {
+      "M": "O",
+      "N": "W",
+      "V": "X"
+     },
+     "correct_answer": "M: O; N: W; V: X",
+     "figure": {
+      "svg": "assets/S23-F1-Q3.svg",
+      "description": "A net: M, N, O in the top row; V, W, X in the next row, starting under O."
+     }
+    },
+    {
+     "id": "S23-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "cube nets",
+     "type": "tf",
+     "prompt": "Every net of a cube has exactly 6 squares.",
+     "outcome": "LOGIC.SPATIAL.04",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S23-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "cube nets",
+     "type": "mc",
+     "prompt": "The squares are folded along their shared edges to make a cube, with the letters on the outside. Faces that are opposite each other on the cube never touch. In the cross-shaped net (A on top; B, C, D across; E and F below C), which two faces each share an edge with all of B, C and D?",
+     "outcome": "LOGIC.SPATIAL.04",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "B and D"
+      },
+      {
+       "letter": "B",
+       "text": "E and F"
+      },
+      {
+       "letter": "C",
+       "text": "A and E"
+      },
+      {
+       "letter": "D",
+       "text": "A and F"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A and E",
+     "figure": {
+      "svg": "assets/S23-F1-Q5.svg",
+      "description": "A cross-shaped net of six squares labeled A to F."
+     }
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Counting and designing nets",
+   "outcome": "LOGIC.SPATIAL.04",
+   "relationship": "Expert: count all nets and design numbered cubes.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S23-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "cube nets",
+     "type": "sa",
+     "prompt": "Count the different nets of a cube: shapes of six squares joined edge to edge that fold into a cube, where shapes that are turns or flips of each other count as the same. How many are there?",
+     "outcome": "LOGIC.SPATIAL.04",
+     "answer_lines": [
+      "Nets:"
+     ],
+     "correct_answer": "11"
+    },
+    {
+     "id": "S23-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "cube nets",
+     "type": "sa",
+     "prompt": "The faces of a cube are colored so that faces sharing an edge always have different colors. What is the least number of colors needed?",
+     "outcome": "LOGIC.SPATIAL.04",
+     "answer_lines": [
+      "Colors:"
+     ],
+     "correct_answer": "3"
+    },
+    {
+     "id": "S23-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "cube nets",
+     "type": "tf",
+     "prompt": "On a standard die, opposite faces add to 7. In a cross-shaped net with 1, 2, 3, 4 in the long column and 5, 6 on the two sides, the numbers can follow this rule.",
+     "outcome": "LOGIC.SPATIAL.04",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S23-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "cube nets",
+     "type": "mc",
+     "prompt": "The squares are folded along their shared edges to make a cube, with the letters on the outside. Faces that are opposite each other on the cube never touch. The numbers 1 to 6 are written on the cross-shaped net with A = 1, B = 2, C = 3, D = 5, E = 6 and F = 4. Which statement is true?",
+     "outcome": "LOGIC.SPATIAL.04",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Every pair of opposite faces adds to 7."
+      },
+      {
+       "letter": "B",
+       "text": "Faces 3 and 4 touch."
+      },
+      {
+       "letter": "C",
+       "text": "Faces 2 and 6 are opposite."
+      },
+      {
+       "letter": "D",
+       "text": "Faces 1 and 2 are opposite."
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Every pair of opposite faces adds to 7.",
+     "figure": {
+      "svg": "assets/S23-F2-Q4.svg",
+      "description": "A cross-shaped net of six squares labeled A to F."
+     }
+    },
+    {
+     "id": "S23-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "cube nets",
+     "type": "tf",
+     "prompt": "A cube net can contain four squares in a 2 by 2 block.",
+     "outcome": "LOGIC.SPATIAL.04",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    }
+   ]
+  }
+ ]
+}

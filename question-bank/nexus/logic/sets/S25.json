@@ -1,0 +1,486 @@
+{
+ "set": 25,
+ "title": "Moves and rearrangements",
+ "outcome": "LOGIC.SEQUENCE.01",
+ "genre": "token moves",
+ "kind": "puzzle",
+ "family": "symbolic",
+ "practices": [
+  "MP1",
+  "MP6"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Carry out stated moves on a row of tokens and find moves that reach a target",
+   "outcome": "LOGIC.SEQUENCE.01",
+   "questions": [
+    {
+     "id": "S25-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "token moves",
+     "type": "order",
+     "prompt": "Tiles in a row each show a different letter. The row reads T, E, A, M. Move the leftmost tile to the far right end. Then swap the first two tiles. What is the row now, from left to right?",
+     "outcome": "LOGIC.SEQUENCE.01",
+     "items": [
+      {
+       "key": "T",
+       "text": "T"
+      },
+      {
+       "key": "E",
+       "text": "E"
+      },
+      {
+       "key": "A",
+       "text": "A"
+      },
+      {
+       "key": "M",
+       "text": "M"
+      }
+     ],
+     "correct_order": [
+      "A",
+      "E",
+      "M",
+      "T"
+     ],
+     "correct_answer": "A → E → M → T"
+    },
+    {
+     "id": "S25-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "token moves",
+     "type": "sa",
+     "prompt": "Tiles in a row each show a different letter. One move swaps two tiles that are next to each other. What is the least number of moves that turn D, C, B, A into A, B, C, D?",
+     "outcome": "LOGIC.SEQUENCE.01",
+     "answer_lines": [
+      "Moves:"
+     ],
+     "correct_answer": "6"
+    },
+    {
+     "id": "S25-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "token moves",
+     "type": "mc",
+     "prompt": "Tiles in a row each show a different letter. Which single move turns R, O, P, E into O, P, E, R?",
+     "outcome": "LOGIC.SEQUENCE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Swap the two middle tiles."
+      },
+      {
+       "letter": "B",
+       "text": "Move E from the right end to the left end."
+      },
+      {
+       "letter": "C",
+       "text": "Swap R and O."
+      },
+      {
+       "letter": "D",
+       "text": "Move R from the left end to the right end."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Move R from the left end to the right end."
+    },
+    {
+     "id": "S25-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "token moves",
+     "type": "sa",
+     "prompt": "Tiles in a row each show a different letter. One move swaps two tiles that are next to each other. What is the least number of moves that turn C, A, B, E, D into A, B, C, D, E?",
+     "outcome": "LOGIC.SEQUENCE.01",
+     "answer_lines": [
+      "Moves:"
+     ],
+     "correct_answer": "3"
+    },
+    {
+     "id": "S25-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "token moves",
+     "type": "tf",
+     "prompt": "Tiles in a row each show a different letter. Reversing the whole row twice puts every tile back where it started.",
+     "outcome": "LOGIC.SEQUENCE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Strategy: number the positions",
+   "outcome": "LOGIC.SEQUENCE.01",
+   "branch_mode": "guided_strategy",
+   "relationship": "Students lose track when tiles move. Writing position numbers under the row and updating them one move at a time keeps every move exact.",
+   "author_note": "Students lose track when tiles move. Writing position numbers under the row and updating them one move at a time keeps every move exact.",
+   "lesson": {
+    "title": "Number the positions",
+    "text": [
+     "Write the row, and under it the position numbers 1, 2, 3, ... from the left.",
+     "Do one move at a time and rewrite the whole row after each move.",
+     "To find the fewest swaps of neighbors, count the pairs that are in the wrong order: each swap of neighbors fixes exactly one such pair."
+    ],
+    "example": {
+     "title": "Worked example (a different row)",
+     "prompt": [
+      "Row: B, A, D, C. Fewest swaps of neighbors to reach A, B, C, D?"
+     ],
+     "steps": [
+      "Pairs in the wrong order: (B, A) and (D, C). That is 2.",
+      "Swap B and A: A, B, D, C. Swap D and C: A, B, C, D. Two moves."
+     ]
+    }
+   },
+   "questions": [
+    {
+     "id": "S25-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "token moves",
+     "type": "order",
+     "prompt": "Tiles in a row each show a different letter. Row: K, I, T. Swap the first two tiles. What is the row?",
+     "outcome": "LOGIC.SEQUENCE.01",
+     "items": [
+      {
+       "key": "K",
+       "text": "K"
+      },
+      {
+       "key": "I",
+       "text": "I"
+      },
+      {
+       "key": "T",
+       "text": "T"
+      }
+     ],
+     "correct_order": [
+      "I",
+      "K",
+      "T"
+     ],
+     "correct_answer": "I → K → T"
+    },
+    {
+     "id": "S25-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "token moves",
+     "type": "order",
+     "prompt": "Tiles in a row each show a different letter. Row: P, A, N. Move the leftmost tile to the far right. What is the row?",
+     "outcome": "LOGIC.SEQUENCE.01",
+     "items": [
+      {
+       "key": "P",
+       "text": "P"
+      },
+      {
+       "key": "A",
+       "text": "A"
+      },
+      {
+       "key": "N",
+       "text": "N"
+      }
+     ],
+     "correct_order": [
+      "A",
+      "N",
+      "P"
+     ],
+     "correct_answer": "A → N → P"
+    },
+    {
+     "id": "S25-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "token moves",
+     "type": "sa",
+     "prompt": "Tiles in a row each show a different letter. How many pairs of tiles are in the wrong alphabetical order in C, B, A?",
+     "outcome": "LOGIC.SEQUENCE.01",
+     "answer_lines": [
+      "Pairs:"
+     ],
+     "correct_answer": "3"
+    },
+    {
+     "id": "S25-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "token moves",
+     "type": "tf",
+     "prompt": "Tiles in a row each show a different letter. Swapping two neighboring tiles twice returns the row to how it was.",
+     "outcome": "LOGIC.SEQUENCE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S25-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "token moves",
+     "type": "sa",
+     "prompt": "Tiles in a row each show a different letter. One move swaps neighboring tiles. Least number of moves from B, A, C to A, B, C?",
+     "outcome": "LOGIC.SEQUENCE.01",
+     "answer_lines": [
+      "Moves:"
+     ],
+     "correct_answer": "1"
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Fewest moves under different rules",
+   "outcome": "LOGIC.SEQUENCE.01",
+   "relationship": "Harder: other kinds of moves and longer rows.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S25-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "token moves",
+     "type": "sa",
+     "prompt": "Tiles in a row each show a different letter. One move takes ANY tile and puts it at the far right end. What is the least number of moves that turn B, C, D, A into A, B, C, D?",
+     "outcome": "LOGIC.SEQUENCE.01",
+     "answer_lines": [
+      "Moves:"
+     ],
+     "correct_answer": "3"
+    },
+    {
+     "id": "S25-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "token moves",
+     "type": "sa",
+     "prompt": "Tiles in a row each show a different letter. One move takes ANY tile and puts it at the far right end. What is the least number of moves that turn A, C, D, B into A, B, C, D?",
+     "outcome": "LOGIC.SEQUENCE.01",
+     "answer_lines": [
+      "Moves:"
+     ],
+     "correct_answer": "2"
+    },
+    {
+     "id": "S25-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "token moves",
+     "type": "order",
+     "prompt": "Tiles in a row each show a different letter. Row: S, T, O, P. Move the tile in position 3 to the far left end, then swap the last two tiles. What is the row?",
+     "outcome": "LOGIC.SEQUENCE.01",
+     "items": [
+      {
+       "key": "S",
+       "text": "S"
+      },
+      {
+       "key": "T",
+       "text": "T"
+      },
+      {
+       "key": "O",
+       "text": "O"
+      },
+      {
+       "key": "P",
+       "text": "P"
+      }
+     ],
+     "correct_order": [
+      "O",
+      "S",
+      "P",
+      "T"
+     ],
+     "correct_answer": "O → S → P → T"
+    },
+    {
+     "id": "S25-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "token moves",
+     "type": "sa",
+     "prompt": "Tiles in a row each show a different letter. One move swaps neighboring tiles. What is the least number of moves that turn E, D, C, B, A into A, B, C, D, E?",
+     "outcome": "LOGIC.SEQUENCE.01",
+     "answer_lines": [
+      "Moves:"
+     ],
+     "correct_answer": "10"
+    },
+    {
+     "id": "S25-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "token moves",
+     "type": "tf",
+     "prompt": "Tiles in a row each show a different letter. If one move swaps neighboring tiles, any arrangement of 4 tiles can be reached from any other.",
+     "outcome": "LOGIC.SEQUENCE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Moves that can never work",
+   "outcome": "LOGIC.SEQUENCE.01",
+   "relationship": "Expert: find what a move cannot change, and prove a target impossible.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S25-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "token moves",
+     "type": "mc",
+     "prompt": "Tiles in a row each show a different letter. One move reverses any three tiles that are next to each other (for example A, B, C becomes C, B, A). Starting from A, B, C, D, E, can you reach B, A, C, D, E?",
+     "outcome": "LOGIC.SEQUENCE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No: each move keeps every tile in an odd or an even position, and A would need to move from position 1 to position 2."
+      },
+      {
+       "letter": "B",
+       "text": "Yes: any arrangement can be reached with enough moves."
+      },
+      {
+       "letter": "C",
+       "text": "Yes: reverse A, B, C, then reverse B, A, ... in a few moves."
+      },
+      {
+       "letter": "D",
+       "text": "No: because each move changes three tiles at once."
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "No: each move keeps every tile in an odd or an even position, and A would need to move from position 1 to position 2."
+    },
+    {
+     "id": "S25-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "token moves",
+     "type": "sa",
+     "prompt": "Tiles in a row each show a different letter. One move reverses any three neighboring tiles. Starting from A, B, C, D, E, how many different arrangements can be reached (counting the start)?",
+     "outcome": "LOGIC.SEQUENCE.01",
+     "answer_lines": [
+      "Arrangements:"
+     ],
+     "correct_answer": "12"
+    },
+    {
+     "id": "S25-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "token moves",
+     "type": "values",
+     "prompt": "Tiles in a row each show a different letter. One move swaps neighboring tiles. The row C, A, D, B, E must become A, B, C, D, E. Give the least number of moves m.",
+     "outcome": "LOGIC.SEQUENCE.01",
+     "fields": [
+      {
+       "name": "m",
+       "label": "m ="
+      }
+     ],
+     "rule": "m == 3",
+     "example_answer": {
+      "m": 3
+     },
+     "correct_answer": "any values that satisfy: m == 3 (example: m = 3)"
+    },
+    {
+     "id": "S25-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "token moves",
+     "type": "tf",
+     "prompt": "Tiles in a row each show a different letter. One move swaps ANY two tiles (not only neighbors). D, C, B, A can be turned into A, B, C, D in 2 moves.",
+     "outcome": "LOGIC.SEQUENCE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S25-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "token moves",
+     "type": "sa",
+     "prompt": "Tiles in a row each show a different letter. One move swaps ANY two tiles. What is the least number of moves that turn B, C, D, E, A into A, B, C, D, E?",
+     "outcome": "LOGIC.SEQUENCE.01",
+     "answer_lines": [
+      "Moves:"
+     ],
+     "correct_answer": "4"
+    }
+   ]
+  }
+ ]
+}

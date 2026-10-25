@@ -1,0 +1,681 @@
+{
+ "set": 24,
+ "title": "Valid versus sound",
+ "outcome": "LOGIC.INFERENCE.03",
+ "genre": "formal logic",
+ "kind": "formal",
+ "family": "formal",
+ "practices": [
+  "MP3"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Tell whether an argument is valid, and whether it is also sound",
+   "outcome": "LOGIC.INFERENCE.03",
+   "questions": [
+    {
+     "id": "S24-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "\"All mammals breathe air. Whales are mammals. So whales breathe air.\" How is this argument best described?",
+     "outcome": "LOGIC.INFERENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "sound but not valid"
+      },
+      {
+       "letter": "B",
+       "text": "valid but not sound"
+      },
+      {
+       "letter": "C",
+       "text": "invalid"
+      },
+      {
+       "letter": "D",
+       "text": "valid and sound"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "valid and sound"
+    },
+    {
+     "id": "S24-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "\"All birds can swim. A sparrow is a bird. So a sparrow can swim.\" How is this argument best described?",
+     "outcome": "LOGIC.INFERENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "sound but not valid"
+      },
+      {
+       "letter": "B",
+       "text": "valid but not sound"
+      },
+      {
+       "letter": "C",
+       "text": "valid and sound"
+      },
+      {
+       "letter": "D",
+       "text": "invalid"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "valid but not sound"
+    },
+    {
+     "id": "S24-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "An argument can be sound even if its conclusion is false.",
+     "outcome": "LOGIC.INFERENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S24-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "\"If a number is divisible by 10, it is even. 14 is even. So 14 is divisible by 10.\" How is this described?",
+     "outcome": "LOGIC.INFERENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "sound but not valid"
+      },
+      {
+       "letter": "B",
+       "text": "valid but not sound"
+      },
+      {
+       "letter": "C",
+       "text": "valid and sound"
+      },
+      {
+       "letter": "D",
+       "text": "invalid, so it cannot be sound"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "invalid, so it cannot be sound"
+    },
+    {
+     "id": "S24-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Which argument is SOUND?",
+     "outcome": "LOGIC.INFERENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Every odd number is prime. 9 is odd. So 9 is prime.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Every prime greater than 2 is odd. 13 is a prime greater than 2. So 13 is odd.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"If 13 is odd, 13 is prime. 13 is prime. So 13 is odd.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Every prime is odd. 2 is prime. So 2 is odd.\""
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "\"Every prime greater than 2 is odd. 13 is a prime greater than 2. So 13 is odd.\""
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Is the form valid?",
+   "outcome": "LOGIC.INFERENCE.01",
+   "branch_mode": "prerequisite",
+   "relationship": "Soundness starts with validity; students must first judge the form.",
+   "author_note": "Soundness starts with validity; students must first judge the form.",
+   "questions": [
+    {
+     "id": "S24-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"If P then Q. P. So Q.\" is a valid form.",
+     "outcome": "LOGIC.INFERENCE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S24-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"If P then Q. Q. So P.\" is a valid form.",
+     "outcome": "LOGIC.INFERENCE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S24-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "A valid argument guarantees what?",
+     "outcome": "LOGIC.INFERENCE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The argument is convincing."
+      },
+      {
+       "letter": "B",
+       "text": "The premises are true."
+      },
+      {
+       "letter": "C",
+       "text": "If the premises are true, the conclusion is true."
+      },
+      {
+       "letter": "D",
+       "text": "The conclusion is true."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "If the premises are true, the conclusion is true."
+    },
+    {
+     "id": "S24-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"P or Q. P. So not Q.\" is a valid form.",
+     "outcome": "LOGIC.INFERENCE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S24-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "An argument with a true conclusion is always valid.",
+     "outcome": "LOGIC.INFERENCE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "B2",
+   "section_code": "B2",
+   "relation": "backward",
+   "skill": "Are the premises true?",
+   "outcome": "LOGIC.ARGUMENT.01",
+   "branch_mode": "prerequisite",
+   "relationship": "Soundness also needs true premises; students must check each premise as a fact.",
+   "author_note": "Soundness also needs true premises; students must check each premise as a fact.",
+   "questions": [
+    {
+     "id": "S24-B2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"Every rectangle has four equal sides\" is true.",
+     "outcome": "LOGIC.ARGUMENT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S24-B2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"Every rectangle is a square\" is true.",
+     "outcome": "LOGIC.ARGUMENT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S24-B2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"Every multiple of 2 is a multiple of 4\" is true.",
+     "outcome": "LOGIC.ARGUMENT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S24-B2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"Every prime number is odd\" is true.",
+     "outcome": "LOGIC.ARGUMENT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S24-B2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"Water freezes at 10 degrees Celsius at normal air pressure\" is true.",
+     "outcome": "LOGIC.ARGUMENT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Classify harder arguments",
+   "outcome": "LOGIC.INFERENCE.03",
+   "relationship": "Harder: mathematical premises and hidden false premises.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S24-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "\"Every whole number that is divisible by 4 is divisible by 8. 12 is divisible by 4. So 12 is divisible by 8.\" How is it described?",
+     "outcome": "LOGIC.INFERENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "valid but not sound"
+      },
+      {
+       "letter": "B",
+       "text": "invalid"
+      },
+      {
+       "letter": "C",
+       "text": "sound but not valid"
+      },
+      {
+       "letter": "D",
+       "text": "valid and sound"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "valid but not sound"
+    },
+    {
+     "id": "S24-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "A valid argument with a false conclusion can have all of its premises true.",
+     "outcome": "LOGIC.INFERENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S24-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "\"No reptile has fur. A snake is a reptile. So a snake has no fur.\" How is it described?",
+     "outcome": "LOGIC.INFERENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "sound but not valid"
+      },
+      {
+       "letter": "B",
+       "text": "valid but not sound"
+      },
+      {
+       "letter": "C",
+       "text": "invalid"
+      },
+      {
+       "letter": "D",
+       "text": "valid and sound"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "valid and sound"
+    },
+    {
+     "id": "S24-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "If an argument is invalid, its conclusion must be false.",
+     "outcome": "LOGIC.INFERENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S24-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Which statement is TRUE?",
+     "outcome": "LOGIC.INFERENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Every sound argument is valid."
+      },
+      {
+       "letter": "B",
+       "text": "Every argument with true premises is sound."
+      },
+      {
+       "letter": "C",
+       "text": "Every valid argument is sound."
+      },
+      {
+       "letter": "D",
+       "text": "Every argument with a true conclusion is sound."
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Every sound argument is valid."
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Validity, soundness and truth together",
+   "outcome": "LOGIC.INFERENCE.03",
+   "relationship": "Expert: which combinations of truth values are possible?",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S24-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Which combination is IMPOSSIBLE for an argument?",
+     "outcome": "LOGIC.INFERENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "invalid, all premises true, conclusion true"
+      },
+      {
+       "letter": "B",
+       "text": "invalid, all premises true, conclusion false"
+      },
+      {
+       "letter": "C",
+       "text": "valid, all premises true, conclusion false"
+      },
+      {
+       "letter": "D",
+       "text": "valid, a false premise, conclusion true"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "valid, all premises true, conclusion false"
+    },
+    {
+     "id": "S24-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "An argument whose premises can never all be true at the same time (they contradict each other) is valid.",
+     "outcome": "LOGIC.INFERENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S24-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "Of the 8 combinations (valid or invalid; premises all true or not; conclusion true or false), how many are impossible for an argument?",
+     "outcome": "LOGIC.INFERENCE.03",
+     "answer_lines": [
+      "Impossible combinations:"
+     ],
+     "correct_answer": "1"
+    },
+    {
+     "id": "S24-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "\"If x = 3, then x squared = 9. x squared = 9. So x = 3.\" For real x, this argument is:",
+     "outcome": "LOGIC.INFERENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "sound: both premises can be true"
+      },
+      {
+       "letter": "B",
+       "text": "invalid: x = -3 makes the premises true and the conclusion false"
+      },
+      {
+       "letter": "C",
+       "text": "valid: squaring is unique"
+      },
+      {
+       "letter": "D",
+       "text": "valid but not sound"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "invalid: x = -3 makes the premises true and the conclusion false"
+    },
+    {
+     "id": "S24-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "Adding a false premise to a sound argument keeps it valid.",
+     "outcome": "LOGIC.INFERENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    }
+   ]
+  }
+ ]
+}

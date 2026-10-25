@@ -1,0 +1,540 @@
+{
+ "set": 47,
+ "title": "Is there enough information?",
+ "outcome": "LOGIC.EVIDENCE.02",
+ "genre": "formal logic",
+ "kind": "formal",
+ "family": "formal",
+ "practices": [
+  "MP1",
+  "MP3"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Decide whether the given information determines the answer, and what extra fact would",
+   "outcome": "LOGIC.EVIDENCE.02",
+   "questions": [
+    {
+     "id": "S47-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Decide whether each clue, alone or together with the other, is enough to answer the question with exactly one answer. (In each of these questions, the two clues together are enough.) Ana, Ben and Cal ran a race with no ties. Who finished first? Clue (1): Ana finished ahead of Ben. Clue (2): Cal finished last.",
+     "outcome": "LOGIC.EVIDENCE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Neither clue alone is enough, but both together are."
+      },
+      {
+       "letter": "B",
+       "text": "Clue (2) alone is enough, but clue (1) alone is not."
+      },
+      {
+       "letter": "C",
+       "text": "Clue (1) alone is enough, but clue (2) alone is not."
+      },
+      {
+       "letter": "D",
+       "text": "Each clue alone is enough."
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Neither clue alone is enough, but both together are."
+    },
+    {
+     "id": "S47-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Decide whether each clue, alone or together with the other, is enough to answer the question with exactly one answer. (In each of these questions, the two clues together are enough.) x is a whole number from 1 to 20. What is x? Clue (1): x is a multiple of 7 and greater than 10. Clue (2): x is even.",
+     "outcome": "LOGIC.EVIDENCE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Each clue alone is enough."
+      },
+      {
+       "letter": "B",
+       "text": "Neither clue alone is enough, but both together are."
+      },
+      {
+       "letter": "C",
+       "text": "Clue (2) alone is enough, but clue (1) alone is not."
+      },
+      {
+       "letter": "D",
+       "text": "Clue (1) alone is enough, but clue (2) alone is not."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Clue (1) alone is enough, but clue (2) alone is not."
+    },
+    {
+     "id": "S47-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "Two whole numbers, each from 1 to 9, add up to 17. Knowing only this is enough to know which two numbers they are.",
+     "outcome": "LOGIC.EVIDENCE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S47-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Decide whether each clue, alone or together with the other, is enough to answer the question with exactly one answer. (In each of these questions, the two clues together are enough.) A rectangle has whole-number side lengths. What is its area? Clue (1): its perimeter is 12. Clue (2): one side is twice as long as the other.",
+     "outcome": "LOGIC.EVIDENCE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Clue (1) alone is enough, but clue (2) alone is not."
+      },
+      {
+       "letter": "B",
+       "text": "Neither clue alone is enough, but both together are."
+      },
+      {
+       "letter": "C",
+       "text": "Clue (2) alone is enough, but clue (1) alone is not."
+      },
+      {
+       "letter": "D",
+       "text": "Each clue alone is enough."
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Neither clue alone is enough, but both together are."
+    },
+    {
+     "id": "S47-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "x is a whole number from 1 to 50. You know that x is a multiple of 6 and also a multiple of 4. How many values of x are still possible?",
+     "outcome": "LOGIC.EVIDENCE.02",
+     "answer_lines": [
+      "Values:"
+     ],
+     "correct_answer": "4"
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Strategy: list what each clue leaves",
+   "outcome": "LOGIC.EVIDENCE.02",
+   "branch_mode": "guided_strategy",
+   "relationship": "Students decide \"enough\" by feel. Listing every possibility each clue leaves makes the decision exact: one possibility left means enough.",
+   "author_note": "Students decide \"enough\" by feel. Listing every possibility each clue leaves makes the decision exact: one possibility left means enough.",
+   "lesson": {
+    "title": "List what each clue leaves",
+    "text": [
+     "List every possibility allowed before any clue.",
+     "Cross out the ones a clue rules out. If exactly one answer remains, the clue is enough.",
+     "Do this for each clue alone, then for the clues together."
+    ],
+    "example": {
+     "title": "Worked example (a different question)",
+     "prompt": [
+      "n is a whole number from 1 to 10. What is n? Clue (1): n is odd. Clue (2): n is a multiple of 3."
+     ],
+     "steps": [
+      "Clue (1) leaves 1, 3, 5, 7, 9: not enough. Clue (2) leaves 3, 6, 9: not enough.",
+      "Together: 3 and 9. Still not enough: a third clue is needed."
+     ]
+    }
+   },
+   "questions": [
+    {
+     "id": "S47-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "n is a whole number from 1 to 10, and n is a multiple of 4. How many values of n are possible?",
+     "outcome": "LOGIC.EVIDENCE.02",
+     "answer_lines": [
+      "Values:"
+     ],
+     "correct_answer": "2"
+    },
+    {
+     "id": "S47-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "n is a whole number from 1 to 10. Knowing that n is prime and even is enough to find n.",
+     "outcome": "LOGIC.EVIDENCE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S47-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "Two whole numbers add to 10. Knowing only this is enough to find the larger number.",
+     "outcome": "LOGIC.EVIDENCE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S47-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "A clue is \"enough\" to answer a question when...",
+     "outcome": "LOGIC.EVIDENCE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "exactly one answer is left after using it."
+      },
+      {
+       "letter": "B",
+       "text": "at least one answer is left after using it."
+      },
+      {
+       "letter": "C",
+       "text": "it is true."
+      },
+      {
+       "letter": "D",
+       "text": "it rules out at least one answer."
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "exactly one answer is left after using it."
+    },
+    {
+     "id": "S47-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "n is a whole number from 1 to 20. Clue: n is a square number and n is odd. How many values of n are left?",
+     "outcome": "LOGIC.EVIDENCE.02",
+     "answer_lines": [
+      "Values:"
+     ],
+     "correct_answer": "2"
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Which clue is enough?",
+   "outcome": "LOGIC.EVIDENCE.02",
+   "relationship": "Harder: clues about orders, ages and numbers.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S47-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Decide whether each clue, alone or together with the other, is enough to answer the question with exactly one answer. (In each of these questions, the two clues together are enough.) Four friends sit in a row of four seats numbered 1 to 4: Dee, Eli, Fay and Gus. Who sits in seat 1? Clue (1): Dee sits in seat 4. Clue (2): Eli sits directly left of Fay, and Gus sits directly left of Eli.",
+     "outcome": "LOGIC.EVIDENCE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Clue (2) alone is enough, but clue (1) alone is not."
+      },
+      {
+       "letter": "B",
+       "text": "Clue (1) alone is enough, but clue (2) alone is not."
+      },
+      {
+       "letter": "C",
+       "text": "Neither clue alone is enough, but both together are."
+      },
+      {
+       "letter": "D",
+       "text": "Each clue alone is enough."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Neither clue alone is enough, but both together are."
+    },
+    {
+     "id": "S47-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Decide whether each clue, alone or together with the other, is enough to answer the question with exactly one answer. (In each of these questions, the two clues together are enough.) Pat is older than Quinn. How old is Quinn, in whole years? Clue (1): their ages add to 30. Clue (2): Pat is 4 years older than Quinn.",
+     "outcome": "LOGIC.EVIDENCE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Each clue alone is enough."
+      },
+      {
+       "letter": "B",
+       "text": "Clue (2) alone is enough, but clue (1) alone is not."
+      },
+      {
+       "letter": "C",
+       "text": "Clue (1) alone is enough, but clue (2) alone is not."
+      },
+      {
+       "letter": "D",
+       "text": "Neither clue alone is enough, but both together are."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Neither clue alone is enough, but both together are."
+    },
+    {
+     "id": "S47-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Decide whether each clue, alone or together with the other, is enough to answer the question with exactly one answer. (In each of these questions, the two clues together are enough.) n is a whole number from 1 to 30. What is n? Clue (1): n leaves remainder 1 when divided by 7. Clue (2): n is a perfect square.",
+     "outcome": "LOGIC.EVIDENCE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Each clue alone is enough."
+      },
+      {
+       "letter": "B",
+       "text": "Clue (1) alone is enough, but clue (2) alone is not."
+      },
+      {
+       "letter": "C",
+       "text": "Neither clue alone is enough, but both together are."
+      },
+      {
+       "letter": "D",
+       "text": "Clue (2) alone is enough, but clue (1) alone is not."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Neither clue alone is enough, but both together are."
+    },
+    {
+     "id": "S47-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "A bag holds only red and blue marbles, 12 in all. Knowing that there are 4 more red marbles than blue ones is enough to find the number of red marbles.",
+     "outcome": "LOGIC.EVIDENCE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S47-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "x is a whole number from 1 to 20 and x is a multiple of 3. Give one extra clue as a single number: a value m from 2 to 10 such that knowing \"x is also a multiple of m\" leaves exactly one possible x.",
+     "outcome": "LOGIC.EVIDENCE.02",
+     "fields": [
+      {
+       "name": "m",
+       "label": "m ="
+      }
+     ],
+     "rule": "m == 4 or m == 5",
+     "example_answer": {
+      "m": 4
+     },
+     "correct_answer": "any values that satisfy: m == 4 or m == 5 (example: m = 4)"
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Design the missing clue",
+   "outcome": "LOGIC.EVIDENCE.02",
+   "relationship": "Expert: find what extra fact would settle the question.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S47-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Decide whether each clue, alone or together with the other, is enough to answer the question with exactly one answer. (In each of these questions, the two clues together are enough.) n is a whole number from 1 to 20. What is n? Clue (1): n + 5 = 12. Clue (2): 2n = 14.",
+     "outcome": "LOGIC.EVIDENCE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Clue (2) alone is enough, but clue (1) alone is not."
+      },
+      {
+       "letter": "B",
+       "text": "Clue (1) alone is enough, but clue (2) alone is not."
+      },
+      {
+       "letter": "C",
+       "text": "Neither clue alone is enough, but both together are."
+      },
+      {
+       "letter": "D",
+       "text": "Each clue alone is enough."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Each clue alone is enough."
+    },
+    {
+     "id": "S47-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Decide whether each clue, alone or together with the other, is enough to answer the question with exactly one answer. (In each of these questions, the two clues together are enough.) n is a whole number from 1 to 20. What is n? Clue (1): n is odd. Clue (2): n is a multiple of 13.",
+     "outcome": "LOGIC.EVIDENCE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Clue (2) alone is enough, but clue (1) alone is not."
+      },
+      {
+       "letter": "B",
+       "text": "Clue (1) alone is enough, but clue (2) alone is not."
+      },
+      {
+       "letter": "C",
+       "text": "Neither clue alone is enough, but both together are."
+      },
+      {
+       "letter": "D",
+       "text": "Each clue alone is enough."
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Clue (2) alone is enough, but clue (1) alone is not."
+    },
+    {
+     "id": "S47-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "Two whole numbers from 1 to 9 multiply to 12. Give a sum s such that also knowing \"the two numbers add to s\" tells you exactly which two numbers they are.",
+     "outcome": "LOGIC.EVIDENCE.02",
+     "fields": [
+      {
+       "name": "s",
+       "label": "s ="
+      }
+     ],
+     "rule": "s == 7 or s == 8",
+     "example_answer": {
+      "s": 7
+     },
+     "correct_answer": "any values that satisfy: s == 7 or s == 8 (example: s = 7)"
+    },
+    {
+     "id": "S47-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "Two whole numbers, each from 1 to 9, multiply to 36. Knowing only this is enough to know which two numbers they are.",
+     "outcome": "LOGIC.EVIDENCE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S47-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "Three different whole numbers from 1 to 9 add up to 23. How many different sets of three numbers are possible?",
+     "outcome": "LOGIC.EVIDENCE.02",
+     "answer_lines": [
+      "Sets:"
+     ],
+     "correct_answer": "1"
+    }
+   ]
+  }
+ ]
+}

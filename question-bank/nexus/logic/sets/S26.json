@@ -1,0 +1,673 @@
+{
+ "set": 26,
+ "title": "Quantifiers over a stated domain",
+ "outcome": "LOGIC.QUANT.01",
+ "genre": "formal logic",
+ "kind": "formal",
+ "family": "formal",
+ "practices": [
+  "MP6",
+  "MP3"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Decide the truth of \"all\", \"some\" and \"no\" statements over a stated domain",
+   "outcome": "LOGIC.QUANT.01",
+   "questions": [
+    {
+     "id": "S26-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "The domain is exactly these five club members: Ava (age 15, chess, has a bus pass), Ben (16, robotics, no bus pass), Cy (15, robotics, bus pass), Dee (17, chess, bus pass), Eli (16, art, no bus pass). \"All chess members have a bus pass.\"",
+     "outcome": "LOGIC.QUANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true,
+     "figure": {
+      "svg": "assets/S26-M-Q1.svg",
+      "description": "A table of five club members with their age, club and whether they have a bus pass."
+     }
+    },
+    {
+     "id": "S26-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "The domain is exactly these five club members: Ava (age 15, chess, has a bus pass), Ben (16, robotics, no bus pass), Cy (15, robotics, bus pass), Dee (17, chess, bus pass), Eli (16, art, no bus pass). \"Some member aged 16 has a bus pass.\"",
+     "outcome": "LOGIC.QUANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true,
+     "figure": {
+      "svg": "assets/S26-M-Q2.svg",
+      "description": "A table of five club members with their age, club and whether they have a bus pass."
+     }
+    },
+    {
+     "id": "S26-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "The domain is exactly these five club members: Ava (age 15, chess, has a bus pass), Ben (16, robotics, no bus pass), Cy (15, robotics, bus pass), Dee (17, chess, bus pass), Eli (16, art, no bus pass). Which statement is TRUE?",
+     "outcome": "LOGIC.QUANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "All robotics members have a bus pass."
+      },
+      {
+       "letter": "B",
+       "text": "Every member is at least 16."
+      },
+      {
+       "letter": "C",
+       "text": "No art member has a bus pass."
+      },
+      {
+       "letter": "D",
+       "text": "Some chess member is 16."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "No art member has a bus pass.",
+     "figure": {
+      "svg": "assets/S26-M-Q3.svg",
+      "description": "A table of five club members with their age, club and whether they have a bus pass."
+     }
+    },
+    {
+     "id": "S26-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "The domain is exactly these five club members: Ava (age 15, chess, has a bus pass), Ben (16, robotics, no bus pass), Cy (15, robotics, bus pass), Dee (17, chess, bus pass), Eli (16, art, no bus pass). How many members make \"the member is 15 or has no bus pass\" true?",
+     "outcome": "LOGIC.QUANT.01",
+     "answer_lines": [
+      "Count:"
+     ],
+     "correct_answer": "4",
+     "figure": {
+      "svg": "assets/S26-M-Q4.svg",
+      "description": "A table of five club members with their age, club and whether they have a bus pass."
+     }
+    },
+    {
+     "id": "S26-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "The domain is the whole numbers 1 to 10. Which statement is FALSE?",
+     "outcome": "LOGIC.QUANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Some number in the domain is prime."
+      },
+      {
+       "letter": "B",
+       "text": "Every number in the domain is less than 10."
+      },
+      {
+       "letter": "C",
+       "text": "Some number in the domain is a multiple of 7."
+      },
+      {
+       "letter": "D",
+       "text": "No number in the domain is negative."
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Every number in the domain is less than 10."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Read \"all\", \"some\" and \"no\"",
+   "outcome": "LOGIC.QUANT.01",
+   "branch_mode": "prerequisite",
+   "relationship": "Each quantifier makes a different claim; students who read \"some\" as \"all\" (or \"no\" as \"not all\") misjudge truth.",
+   "author_note": "Each quantifier makes a different claim; students who read \"some\" as \"all\" (or \"no\" as \"not all\") misjudge truth.",
+   "questions": [
+    {
+     "id": "S26-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "\"Some students walk to school\" is true when ...",
+     "outcome": "LOGIC.QUANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "most students walk"
+      },
+      {
+       "letter": "B",
+       "text": "at least one student walks to school"
+      },
+      {
+       "letter": "C",
+       "text": "exactly one student walks"
+      },
+      {
+       "letter": "D",
+       "text": "every student walks to school"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "at least one student walks to school"
+    },
+    {
+     "id": "S26-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "\"No student walks to school\" is true when ...",
+     "outcome": "LOGIC.QUANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "most students ride"
+      },
+      {
+       "letter": "B",
+       "text": "some students do not walk"
+      },
+      {
+       "letter": "C",
+       "text": "not even one student walks"
+      },
+      {
+       "letter": "D",
+       "text": "exactly one student walks"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "not even one student walks"
+    },
+    {
+     "id": "S26-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"All the lights are on\" is true if exactly one light is off.",
+     "outcome": "LOGIC.QUANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S26-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"Some numbers in {2, 4, 6} are odd\" is true.",
+     "outcome": "LOGIC.QUANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S26-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"Every number in {3, 5, 7} is odd\" is true.",
+     "outcome": "LOGIC.QUANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "B2",
+   "section_code": "B2",
+   "relation": "backward",
+   "skill": "Stay inside the stated domain",
+   "outcome": "LOGIC.QUANT.01",
+   "branch_mode": "prerequisite",
+   "relationship": "A quantified statement is about the stated domain only. Students who think of numbers or people outside it get the wrong truth value.",
+   "author_note": "A quantified statement is about the stated domain only. Students who think of numbers or people outside it get the wrong truth value.",
+   "questions": [
+    {
+     "id": "S26-B2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "The domain is {1, 2, 3}. \"Every number in the domain is less than 4\" is true.",
+     "outcome": "LOGIC.QUANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S26-B2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "The domain is {10, 20, 30}. \"Some number in the domain is odd\" is true.",
+     "outcome": "LOGIC.QUANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S26-B2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "The domain is the days Monday to Friday. Which is true?",
+     "outcome": "LOGIC.QUANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No day in the domain is a weekend day."
+      },
+      {
+       "letter": "B",
+       "text": "Every day in the domain starts with M."
+      },
+      {
+       "letter": "C",
+       "text": "Some day in the domain is Sunday."
+      },
+      {
+       "letter": "D",
+       "text": "Some day in the domain is Saturday."
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "No day in the domain is a weekend day."
+    },
+    {
+     "id": "S26-B2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"All prime numbers are odd\" is true when the domain is {3, 5, 7, 11}.",
+     "outcome": "LOGIC.QUANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S26-B2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"All prime numbers are odd\" is true when the domain is all whole numbers.",
+     "outcome": "LOGIC.QUANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Quantifiers with two conditions",
+   "outcome": "LOGIC.QUANT.01",
+   "relationship": "Harder: statements that combine conditions and count.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S26-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "The domain is exactly these five club members: Ava (age 15, chess, has a bus pass), Ben (16, robotics, no bus pass), Cy (15, robotics, bus pass), Dee (17, chess, bus pass), Eli (16, art, no bus pass). \"Every member without a bus pass is 16.\"",
+     "outcome": "LOGIC.QUANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true,
+     "figure": {
+      "svg": "assets/S26-F1-Q1.svg",
+      "description": "A table of five club members with their age, club and whether they have a bus pass."
+     }
+    },
+    {
+     "id": "S26-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "The domain is exactly these five club members: Ava (age 15, chess, has a bus pass), Ben (16, robotics, no bus pass), Cy (15, robotics, bus pass), Dee (17, chess, bus pass), Eli (16, art, no bus pass). \"Some member with a bus pass is older than every robotics member.\"",
+     "outcome": "LOGIC.QUANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true,
+     "figure": {
+      "svg": "assets/S26-F1-Q2.svg",
+      "description": "A table of five club members with their age, club and whether they have a bus pass."
+     }
+    },
+    {
+     "id": "S26-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "The domain is the whole numbers 1 to 20. How many numbers make \"the number is even and not a multiple of 3\" true?",
+     "outcome": "LOGIC.QUANT.01",
+     "answer_lines": [
+      "Count:"
+     ],
+     "correct_answer": "7"
+    },
+    {
+     "id": "S26-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "The domain is exactly these five club members: Ava (age 15, chess, has a bus pass), Ben (16, robotics, no bus pass), Cy (15, robotics, bus pass), Dee (17, chess, bus pass), Eli (16, art, no bus pass). Which statement is FALSE?",
+     "outcome": "LOGIC.QUANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Every chess member is 15 or 17."
+      },
+      {
+       "letter": "B",
+       "text": "All members aged 17 play chess."
+      },
+      {
+       "letter": "C",
+       "text": "Some member has no bus pass."
+      },
+      {
+       "letter": "D",
+       "text": "No member aged 15 is in robotics."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "No member aged 15 is in robotics.",
+     "figure": {
+      "svg": "assets/S26-F1-Q4.svg",
+      "description": "A table of five club members with their age, club and whether they have a bus pass."
+     }
+    },
+    {
+     "id": "S26-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "The domain is empty (it has no members). \"Every member of the domain is green\" is true.",
+     "outcome": "LOGIC.QUANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Nested quantifiers",
+   "outcome": "LOGIC.QUANT.01",
+   "relationship": "Expert: \"for every ... there is ...\" and the order of quantifiers.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S26-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "The domain is the whole numbers 1 to 5. \"For every number x, there is a number y with y > x\" is true.",
+     "outcome": "LOGIC.QUANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S26-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "The domain is the whole numbers 1 to 5. \"There is a number y such that for every number x, y ≥ x\" is true.",
+     "outcome": "LOGIC.QUANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S26-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "The domain is all whole numbers. Which statement is TRUE?",
+     "outcome": "LOGIC.QUANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "For every x and every y, y > x."
+      },
+      {
+       "letter": "B",
+       "text": "There is an x such that for every y, y > x."
+      },
+      {
+       "letter": "C",
+       "text": "For every x, there is a y with y > x."
+      },
+      {
+       "letter": "D",
+       "text": "There is a y such that for every x, y > x."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "For every x, there is a y with y > x."
+    },
+    {
+     "id": "S26-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "The domain is exactly these five club members: Ava (age 15, chess, has a bus pass), Ben (16, robotics, no bus pass), Cy (15, robotics, bus pass), Dee (17, chess, bus pass), Eli (16, art, no bus pass). For how many members x is the statement \"some other member is the same age as x\" true?",
+     "outcome": "LOGIC.QUANT.01",
+     "answer_lines": [
+      "Count:"
+     ],
+     "correct_answer": "4",
+     "figure": {
+      "svg": "assets/S26-F2-Q4.svg",
+      "description": "A table of five club members with their age, club and whether they have a bus pass."
+     }
+    },
+    {
+     "id": "S26-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "The domain is the whole numbers 1 to 9. Give a number x that makes \"for every y in the domain, x + y > 5\" true.",
+     "outcome": "LOGIC.QUANT.01",
+     "fields": [
+      {
+       "name": "x",
+       "label": "x ="
+      }
+     ],
+     "rule": "x >= 5 and x <= 9 and isInteger(x)",
+     "example_answer": {
+      "x": 6
+     },
+     "correct_answer": "any values that satisfy: x >= 5 and x <= 9 and isInteger(x) (example: x = 6)"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,495 @@
+{
+ "set": 45,
+ "title": "Letter grids and word squares",
+ "outcome": "LOGIC.GRID.02",
+ "genre": "letter grids",
+ "kind": "puzzle",
+ "family": "verbal",
+ "practices": [
+  "MP1",
+  "MP7"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Fill and analyze letter grids under stated rules and a supplied word list",
+   "outcome": "LOGIC.GRID.02",
+   "questions": [
+    {
+     "id": "S45-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "letter grids",
+     "type": "sa",
+     "prompt": "Rule: each row and each column must contain each of the letters A, B, C and D exactly once. The grid in the figure has six letters filled in. Which letter belongs in the shaded cell (bottom row, first column)?",
+     "outcome": "LOGIC.GRID.02",
+     "answer_lines": [
+      "Letter:"
+     ],
+     "correct_answer": "D",
+     "figure": {
+      "svg": "assets/S45-M-Q1.svg",
+      "description": "A 4 by 4 letter grid; some cells hold letters, the rest are empty, and one empty cell is shaded."
+     }
+    },
+    {
+     "id": "S45-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "letter grids",
+     "type": "values",
+     "prompt": "Word list (the ONLY words allowed): CAT, ARE, TEN, ART, EAR, NET, TAN, ATE, RAT, ERA, TEA, ACE, ONE, NAP, APE, PEN, OAR, ORE, ROE, TOE, TON, NOT, ANT. In a word square, the three rows, read left to right, are the same words as the three columns, read top to bottom, in the same order. The first row of a word square is TEN. Give the second and third rows.",
+     "outcome": "LOGIC.GRID.02",
+     "fields": [
+      {
+       "name": "w2",
+       "label": "Row 2 ="
+      },
+      {
+       "name": "w3",
+       "label": "Row 3 ="
+      }
+     ],
+     "rule": "w2 == 'era' and w3 == 'nap'",
+     "example_answer": {
+      "w2": "ERA",
+      "w3": "NAP"
+     },
+     "correct_answer": "any values that satisfy: w2 == 'era' and w3 == 'nap' (example: w2 = ERA, w3 = NAP)"
+    },
+    {
+     "id": "S45-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "letter grids",
+     "type": "tf",
+     "prompt": "Rule: a 3 by 3 grid is filled with the letters A and B so that no two cells that share a side hold the same letter. The center cell holds A. Then all four corner cells hold the same letter.",
+     "outcome": "LOGIC.GRID.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S45-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "letter grids",
+     "type": "mc",
+     "prompt": "Rule: each row and each column must contain each of the letters A, B and C exactly once. The top-left cell holds A and the center cell holds A. Which letter must go in the bottom-right cell?",
+     "outcome": "LOGIC.GRID.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A"
+      },
+      {
+       "letter": "B",
+       "text": "B"
+      },
+      {
+       "letter": "C",
+       "text": "It could be B or C"
+      },
+      {
+       "letter": "D",
+       "text": "C"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "A",
+     "figure": {
+      "svg": "assets/S45-M-Q4.svg",
+      "description": "A 3 by 3 letter grid; some cells hold letters, the rest are empty."
+     }
+    },
+    {
+     "id": "S45-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "letter grids",
+     "type": "sa",
+     "prompt": "Rule: each row and each column must contain each of the letters A, B and C exactly once. The first row is A B C. How many ways are there to complete the grid?",
+     "outcome": "LOGIC.GRID.02",
+     "answer_lines": [
+      "Ways:"
+     ],
+     "correct_answer": "2"
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Strategy: fill the most constrained cell first",
+   "outcome": "LOGIC.GRID.02",
+   "branch_mode": "guided_strategy",
+   "relationship": "Students guess letters and get stuck. Looking for a row, column or cell with only one possibility turns the grid into a chain of forced steps.",
+   "author_note": "Students guess letters and get stuck. Looking for a row, column or cell with only one possibility turns the grid into a chain of forced steps.",
+   "lesson": {
+    "title": "Fill the most constrained cell first",
+    "text": [
+     "For each empty cell, list the letters its row and column have not used yet.",
+     "A cell with only one possible letter is forced: fill it in.",
+     "Also look along a row: if a letter can go in only one cell of that row, it goes there.",
+     "Repeat. Each new letter removes options from other cells."
+    ],
+    "example": {
+     "title": "Worked example (a different grid)",
+     "prompt": [
+      "Rule: each row and column of a 3 by 3 grid holds X, Y and Z once. Row 1 is X Y Z. Row 2 starts with Z."
+     ],
+     "steps": [
+      "Row 2, column 2 cannot be Y (column) or Z (row), so it is X. Row 2 is Z X Y.",
+      "Row 3 gets the letter missing from each column: Y Z X."
+     ]
+    }
+   },
+   "questions": [
+    {
+     "id": "S45-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "letter grids",
+     "type": "sa",
+     "prompt": "Rule: each row and each column must contain each of the letters A, B and C exactly once. A row reads A _ C. Which letter fills the gap?",
+     "outcome": "LOGIC.GRID.02",
+     "answer_lines": [
+      "Letter:"
+     ],
+     "correct_answer": "B"
+    },
+    {
+     "id": "S45-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "letter grids",
+     "type": "tf",
+     "prompt": "Rule: each row and each column must contain each of the letters A, B and C exactly once. If column 1 holds A and B, its third cell must hold C.",
+     "outcome": "LOGIC.GRID.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S45-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "letter grids",
+     "type": "mc",
+     "prompt": "Rule: each row and each column must contain each of the letters A, B, C and D exactly once. A cell's row already holds A and D, and its column holds B. Which letter must go in the cell?",
+     "outcome": "LOGIC.GRID.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A"
+      },
+      {
+       "letter": "B",
+       "text": "D"
+      },
+      {
+       "letter": "C",
+       "text": "B"
+      },
+      {
+       "letter": "D",
+       "text": "C"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "C"
+    },
+    {
+     "id": "S45-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "letter grids",
+     "type": "tf",
+     "prompt": "Rule: each row and each column must contain each of the letters A, B and C exactly once. A grid can have the row A B C directly above the row A C B.",
+     "outcome": "LOGIC.GRID.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S45-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "letter grids",
+     "type": "sa",
+     "prompt": "Rule: each row and each column must contain each of the letters A, B and C exactly once. Rows 1 and 2 are A B C and C A B. What is row 3? Type the three letters with no spaces.",
+     "outcome": "LOGIC.GRID.02",
+     "answer_lines": [
+      "Row 3:"
+     ],
+     "correct_answer": "BCA"
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Word squares from a list",
+   "outcome": "LOGIC.GRID.02",
+   "relationship": "Harder: word squares and larger grids.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S45-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "letter grids",
+     "type": "values",
+     "prompt": "Word list (the ONLY words allowed): CAT, ARE, TEN, ART, EAR, NET, TAN, ATE, RAT, ERA, TEA, ACE, ONE, NAP, APE, PEN, OAR, ORE, ROE, TOE, TON, NOT, ANT. In a word square, the three rows, read left to right, are the same words as the three columns, read top to bottom, in the same order. The first row of a word square is ATE. Give the second and third rows.",
+     "outcome": "LOGIC.GRID.02",
+     "fields": [
+      {
+       "name": "w2",
+       "label": "Row 2 ="
+      },
+      {
+       "name": "w3",
+       "label": "Row 3 ="
+      }
+     ],
+     "rule": "w2 == 'tea' and w3 == 'ear'",
+     "example_answer": {
+      "w2": "TEA",
+      "w3": "EAR"
+     },
+     "correct_answer": "any values that satisfy: w2 == 'tea' and w3 == 'ear' (example: w2 = TEA, w3 = EAR)"
+    },
+    {
+     "id": "S45-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "letter grids",
+     "type": "sa",
+     "prompt": "Word list (the ONLY words allowed): CAT, ARE, TEN, ART, EAR, NET, TAN, ATE, RAT, ERA, TEA, ACE, ONE, NAP, APE, PEN, OAR, ORE, ROE, TOE, TON, NOT, ANT. In a word square, the three rows, read left to right, are the same words as the three columns, read top to bottom, in the same order. How many words on the list can be the first row of at least one word square?",
+     "outcome": "LOGIC.GRID.02",
+     "answer_lines": [
+      "Words:"
+     ],
+     "correct_answer": "15"
+    },
+    {
+     "id": "S45-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "letter grids",
+     "type": "tf",
+     "prompt": "Word list (the ONLY words allowed): CAT, ARE, TEN, ART, EAR, NET, TAN, ATE, RAT, ERA, TEA, ACE, ONE, NAP, APE, PEN, OAR, ORE, ROE, TOE, TON, NOT, ANT. In a word square, the three rows, read left to right, are the same words as the three columns, read top to bottom, in the same order. A word square can start with the row ONE.",
+     "outcome": "LOGIC.GRID.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S45-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "letter grids",
+     "type": "sa",
+     "prompt": "Rule: each row and each column must contain each of the letters A, B, C and D exactly once. The grid in the figure has six letters filled in. Type the complete top row (four letters, no spaces).",
+     "outcome": "LOGIC.GRID.02",
+     "answer_lines": [
+      "Row 1:"
+     ],
+     "correct_answer": "ADBC",
+     "figure": {
+      "svg": "assets/S45-F1-Q4.svg",
+      "description": "A 4 by 4 letter grid; some cells hold letters, the rest are empty."
+     }
+    },
+    {
+     "id": "S45-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "letter grids",
+     "type": "mc",
+     "prompt": "Rule: a 2 by 3 grid is filled with A and B so that no two cells sharing a side hold the same letter. How many such grids are there?",
+     "outcome": "LOGIC.GRID.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "2"
+      },
+      {
+       "letter": "B",
+       "text": "4"
+      },
+      {
+       "letter": "C",
+       "text": "6"
+      },
+      {
+       "letter": "D",
+       "text": "1"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "2"
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Prove a grid is impossible or count it",
+   "outcome": "LOGIC.GRID.02",
+   "relationship": "Expert: counting completions and impossibility.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S45-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "letter grids",
+     "type": "sa",
+     "prompt": "Rule: each row and each column must contain each of the letters A, B, C and D exactly once. How many ways are there to fill the whole grid if the first row is A B C D?",
+     "outcome": "LOGIC.GRID.02",
+     "answer_lines": [
+      "Ways:"
+     ],
+     "correct_answer": "24"
+    },
+    {
+     "id": "S45-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "letter grids",
+     "type": "tf",
+     "prompt": "Rule: a 3 by 3 grid is filled with A and B so that no two cells sharing a side hold the same letter. The top-left cell holds A and the top-right cell holds B.",
+     "outcome": "LOGIC.GRID.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S45-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "letter grids",
+     "type": "mc",
+     "prompt": "Rule: each row and each column must contain each of the letters A, B and C exactly once. Which partly filled grid can NOT be completed?",
+     "outcome": "LOGIC.GRID.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Row 1 starts A, and row 2 starts B"
+      },
+      {
+       "letter": "B",
+       "text": "Row 1 starts A B, and row 2 ends in C"
+      },
+      {
+       "letter": "C",
+       "text": "The diagonal from top left to bottom right is A, A, A"
+      },
+      {
+       "letter": "D",
+       "text": "Row 1 is A B C"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Row 1 starts A B, and row 2 ends in C"
+    },
+    {
+     "id": "S45-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "letter grids",
+     "type": "values",
+     "prompt": "Word list (the ONLY words allowed): CAT, ARE, TEN, ART, EAR, NET, TAN, ATE, RAT, ERA, TEA, ACE, ONE, NAP, APE, PEN, OAR, ORE, ROE, TOE, TON, NOT, ANT. In a word square, the three rows, read left to right, are the same words as the three columns, read top to bottom, in the same order. Give the second and third rows of the word square whose first row is ROE.",
+     "outcome": "LOGIC.GRID.02",
+     "fields": [
+      {
+       "name": "w2",
+       "label": "Row 2 ="
+      },
+      {
+       "name": "w3",
+       "label": "Row 3 ="
+      }
+     ],
+     "rule": "w2 == 'oar' and w3 == 'era'",
+     "example_answer": {
+      "w2": "OAR",
+      "w3": "ERA"
+     },
+     "correct_answer": "any values that satisfy: w2 == 'oar' and w3 == 'era' (example: w2 = OAR, w3 = ERA)"
+    },
+    {
+     "id": "S45-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "letter grids",
+     "type": "sa",
+     "prompt": "Rule: each row and each column must contain each of the letters A, B and C exactly once. How many ways are there to fill an empty 3 by 3 grid?",
+     "outcome": "LOGIC.GRID.02",
+     "answer_lines": [
+      "Ways:"
+     ],
+     "correct_answer": "12"
+    }
+   ]
+  }
+ ]
+}

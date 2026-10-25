@@ -1,0 +1,554 @@
+{
+ "set": 48,
+ "title": "Digital displays",
+ "outcome": "LOGIC.SPATIAL.06",
+ "genre": "seven-segment displays",
+ "kind": "puzzle",
+ "family": "visual",
+ "practices": [
+  "MP7",
+  "MP6"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Reason about seven-segment digits: segments used, rotations and segment moves",
+   "outcome": "LOGIC.SPATIAL.06",
+   "questions": [
+    {
+     "id": "S48-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "seven-segment displays",
+     "type": "sa",
+     "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. How many segments are lit when the display shows 2026?",
+     "outcome": "LOGIC.SPATIAL.06",
+     "answer_lines": [
+      "Segments:"
+     ],
+     "correct_answer": "22",
+     "figure": {
+      "svg": "assets/S48-M-Q1.svg",
+      "description": "Reference: the digits 0 to 9 on a seven-segment display."
+     }
+    },
+    {
+     "id": "S48-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "seven-segment displays",
+     "type": "mc",
+     "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. Which digit uses exactly 3 lit segments?",
+     "outcome": "LOGIC.SPATIAL.06",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "4"
+      },
+      {
+       "letter": "B",
+       "text": "7"
+      },
+      {
+       "letter": "C",
+       "text": "1"
+      },
+      {
+       "letter": "D",
+       "text": "2"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "7",
+     "figure": {
+      "svg": "assets/S48-M-Q2.svg",
+      "description": "Reference: the digits 0 to 9 on a seven-segment display."
+     }
+    },
+    {
+     "id": "S48-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "seven-segment displays",
+     "type": "tf",
+     "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. When the display showing 69 is turned upside down, it shows 69 again.",
+     "outcome": "LOGIC.SPATIAL.06",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true,
+     "figure": {
+      "svg": "assets/S48-M-Q3.svg",
+      "description": "Reference: the digits 0 to 9 on a seven-segment display."
+     }
+    },
+    {
+     "id": "S48-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "seven-segment displays",
+     "type": "values",
+     "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. Give a digit that looks exactly the same after the display is turned upside down.",
+     "outcome": "LOGIC.SPATIAL.06",
+     "fields": [
+      {
+       "name": "d",
+       "label": "Digit ="
+      }
+     ],
+     "rule": "d == 0 or d == 2 or d == 5 or d == 8",
+     "example_answer": {
+      "d": 8
+     },
+     "correct_answer": "any values that satisfy: d == 0 or d == 2 or d == 5 or d == 8 (example: d = 8)",
+     "figure": {
+      "svg": "assets/S48-M-Q4.svg",
+      "description": "Reference: the digits 0 to 9 on a seven-segment display."
+     }
+    },
+    {
+     "id": "S48-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "seven-segment displays",
+     "type": "mc",
+     "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. Exactly one lit segment of the digit 2 is moved to an unlit position. Which digit can result?",
+     "outcome": "LOGIC.SPATIAL.06",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "5"
+      },
+      {
+       "letter": "B",
+       "text": "7"
+      },
+      {
+       "letter": "C",
+       "text": "8"
+      },
+      {
+       "letter": "D",
+       "text": "3"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "3",
+     "figure": {
+      "svg": "assets/S48-M-Q5.svg",
+      "description": "Reference: the digits 0 to 9 on a seven-segment display."
+     }
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Read the segments of each digit",
+   "outcome": "LOGIC.SPATIAL.06",
+   "branch_mode": "prerequisite",
+   "relationship": "Every display puzzle depends on knowing which segments each digit lights.",
+   "author_note": "Every display puzzle depends on knowing which segments each digit lights.",
+   "questions": [
+    {
+     "id": "S48-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "seven-segment displays",
+     "type": "sa",
+     "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. How many segments does the digit 4 light?",
+     "outcome": "LOGIC.SPATIAL.06",
+     "answer_lines": [
+      "Segments:"
+     ],
+     "correct_answer": "4",
+     "figure": {
+      "svg": "assets/S48-B1-Q1.svg",
+      "description": "Reference: the digits 0 to 9 on a seven-segment display."
+     }
+    },
+    {
+     "id": "S48-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "seven-segment displays",
+     "type": "tf",
+     "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. The digit 8 lights all seven segments.",
+     "outcome": "LOGIC.SPATIAL.06",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true,
+     "figure": {
+      "svg": "assets/S48-B1-Q2.svg",
+      "description": "Reference: the digits 0 to 9 on a seven-segment display."
+     }
+    },
+    {
+     "id": "S48-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "seven-segment displays",
+     "type": "mc",
+     "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. Which digit lights the fewest segments?",
+     "outcome": "LOGIC.SPATIAL.06",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "4"
+      },
+      {
+       "letter": "B",
+       "text": "0"
+      },
+      {
+       "letter": "C",
+       "text": "1"
+      },
+      {
+       "letter": "D",
+       "text": "7"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "1",
+     "figure": {
+      "svg": "assets/S48-B1-Q3.svg",
+      "description": "Reference: the digits 0 to 9 on a seven-segment display."
+     }
+    },
+    {
+     "id": "S48-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "seven-segment displays",
+     "type": "tf",
+     "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. The digits 0 and 6 light the same number of segments.",
+     "outcome": "LOGIC.SPATIAL.06",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true,
+     "figure": {
+      "svg": "assets/S48-B1-Q4.svg",
+      "description": "Reference: the digits 0 to 9 on a seven-segment display."
+     }
+    },
+    {
+     "id": "S48-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "seven-segment displays",
+     "type": "tf",
+     "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. The digit 3 lights the middle segment and both left-hand segments.",
+     "outcome": "LOGIC.SPATIAL.06",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true,
+     "figure": {
+      "svg": "assets/S48-B1-Q5.svg",
+      "description": "Reference: the digits 0 to 9 on a seven-segment display."
+     }
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Turned displays and segment counts",
+   "outcome": "LOGIC.SPATIAL.06",
+   "relationship": "Harder: whole numbers turned upside down.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S48-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "seven-segment displays",
+     "type": "sa",
+     "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. The display shows 1958. How many segments are lit?",
+     "outcome": "LOGIC.SPATIAL.06",
+     "answer_lines": [
+      "Segments:"
+     ],
+     "correct_answer": "20",
+     "figure": {
+      "svg": "assets/S48-F1-Q1.svg",
+      "description": "Reference: the digits 0 to 9 on a seven-segment display."
+     }
+    },
+    {
+     "id": "S48-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "seven-segment displays",
+     "type": "mc",
+     "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. The display shows 625. What does it show after being turned upside down?",
+     "outcome": "LOGIC.SPATIAL.06",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "529"
+      },
+      {
+       "letter": "B",
+       "text": "526"
+      },
+      {
+       "letter": "C",
+       "text": "925"
+      },
+      {
+       "letter": "D",
+       "text": "It does not show a number"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "529",
+     "figure": {
+      "svg": "assets/S48-F1-Q2.svg",
+      "description": "Reference: the digits 0 to 9 on a seven-segment display."
+     }
+    },
+    {
+     "id": "S48-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "seven-segment displays",
+     "type": "tf",
+     "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. The display showing 1001 still shows a number after it is turned upside down.",
+     "outcome": "LOGIC.SPATIAL.06",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true,
+     "figure": {
+      "svg": "assets/S48-F1-Q3.svg",
+      "description": "Reference: the digits 0 to 9 on a seven-segment display."
+     }
+    },
+    {
+     "id": "S48-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "seven-segment displays",
+     "type": "sa",
+     "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. How many two-digit numbers (10 to 99) still show a number after the display is turned upside down?",
+     "outcome": "LOGIC.SPATIAL.06",
+     "answer_lines": [
+      "Numbers:"
+     ],
+     "correct_answer": "30",
+     "figure": {
+      "svg": "assets/S48-F1-Q4.svg",
+      "description": "Reference: the digits 0 to 9 on a seven-segment display."
+     }
+    },
+    {
+     "id": "S48-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "seven-segment displays",
+     "type": "values",
+     "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. Give a digit d such that adding exactly one lit segment to d (moving nothing) makes the digit 8.",
+     "outcome": "LOGIC.SPATIAL.06",
+     "fields": [
+      {
+       "name": "d",
+       "label": "d ="
+      }
+     ],
+     "rule": "d == 0 or d == 6 or d == 9",
+     "example_answer": {
+      "d": 0
+     },
+     "correct_answer": "any values that satisfy: d == 0 or d == 6 or d == 9 (example: d = 0)",
+     "figure": {
+      "svg": "assets/S48-F1-Q5.svg",
+      "description": "Reference: the digits 0 to 9 on a seven-segment display."
+     }
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Segment moves and best displays",
+   "outcome": "LOGIC.SPATIAL.06",
+   "relationship": "Expert: moves, budgets and maximum values.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S48-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "seven-segment displays",
+     "type": "values",
+     "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. Exactly one lit segment of the digit 3 is moved to an unlit position. Give a digit that can result.",
+     "outcome": "LOGIC.SPATIAL.06",
+     "fields": [
+      {
+       "name": "d",
+       "label": "Digit ="
+      }
+     ],
+     "rule": "d == 2 or d == 5",
+     "example_answer": {
+      "d": 5
+     },
+     "correct_answer": "any values that satisfy: d == 2 or d == 5 (example: d = 5)",
+     "figure": {
+      "svg": "assets/S48-F2-Q1.svg",
+      "description": "Reference: the digits 0 to 9 on a seven-segment display."
+     }
+    },
+    {
+     "id": "S48-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "seven-segment displays",
+     "type": "sa",
+     "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. You may light at most 12 segments in total. What is the largest whole number you can show? (Any number of digits; the first digit is not 0.)",
+     "outcome": "LOGIC.SPATIAL.06",
+     "answer_lines": [
+      "Number:"
+     ],
+     "correct_answer": "111111",
+     "figure": {
+      "svg": "assets/S48-F2-Q2.svg",
+      "description": "Reference: the digits 0 to 9 on a seven-segment display."
+     }
+    },
+    {
+     "id": "S48-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "seven-segment displays",
+     "type": "tf",
+     "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. Every digit can be turned into some other digit by moving exactly one lit segment.",
+     "outcome": "LOGIC.SPATIAL.06",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true,
+     "figure": {
+      "svg": "assets/S48-F2-Q3.svg",
+      "description": "Reference: the digits 0 to 9 on a seven-segment display."
+     }
+    },
+    {
+     "id": "S48-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "seven-segment displays",
+     "type": "mc",
+     "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. A clock shows hours 1 to 12 and minutes 00 to 59 (for example 9:58 uses the digits 9, 5, 8). Which time lights the most segments?",
+     "outcome": "LOGIC.SPATIAL.06",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "9:58"
+      },
+      {
+       "letter": "B",
+       "text": "10:08"
+      },
+      {
+       "letter": "C",
+       "text": "12:59"
+      },
+      {
+       "letter": "D",
+       "text": "11:11"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "10:08",
+     "figure": {
+      "svg": "assets/S48-F2-Q4.svg",
+      "description": "Reference: the digits 0 to 9 on a seven-segment display."
+     }
+    },
+    {
+     "id": "S48-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "seven-segment displays",
+     "type": "sa",
+     "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. How many digits light more than 5 segments?",
+     "outcome": "LOGIC.SPATIAL.06",
+     "answer_lines": [
+      "Digits:"
+     ],
+     "correct_answer": "4",
+     "figure": {
+      "svg": "assets/S48-F2-Q5.svg",
+      "description": "Reference: the digits 0 to 9 on a seven-segment display."
+     }
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,587 @@
+{
+ "set": 40,
+ "title": "Proof by contradiction",
+ "outcome": "LOGIC.PROOF.03",
+ "genre": "formal logic",
+ "kind": "formal",
+ "family": "formal",
+ "practices": [
+  "MP3"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Set up and complete an argument by contradiction",
+   "outcome": "LOGIC.PROOF.03",
+   "questions": [
+    {
+     "id": "S40-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "In a proof by contradiction, you assume the statement is false and show that this leads to something impossible. To prove \"there is no largest even integer\" by contradiction, how should the proof begin?",
+     "outcome": "LOGIC.PROOF.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Show that 100 is an even integer."
+      },
+      {
+       "letter": "B",
+       "text": "Assume there is a largest even integer; call it N."
+      },
+      {
+       "letter": "C",
+       "text": "Assume there is no largest even integer."
+      },
+      {
+       "letter": "D",
+       "text": "Assume every even integer is less than 100."
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Assume there is a largest even integer; call it N."
+    },
+    {
+     "id": "S40-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "order",
+     "prompt": "Definitions: an integer n is even if n = 2k for some integer k, and odd if n = 2k + 1 for some integer k. An integer n is a multiple of m if n = mk for some integer k. In a proof by contradiction, you assume the statement is false and show that this leads to something impossible. Put the steps of a proof that if n squared is even, then n is even, in order.",
+     "outcome": "LOGIC.PROOF.03",
+     "items": [
+      {
+       "key": "A",
+       "text": "Assume n squared is even, but n is odd."
+      },
+      {
+       "key": "B",
+       "text": "Then n = 2k + 1 for some integer k."
+      },
+      {
+       "key": "C",
+       "text": "So n squared = 2(2k squared + 2k) + 1, which is odd."
+      },
+      {
+       "key": "D",
+       "text": "This contradicts n squared being even, so n must be even."
+      }
+     ],
+     "correct_order": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "correct_answer": "Assume n squared is even, but n is odd. → Then n = 2k + 1 for some integer k. → So n squared = 2(2k squared + 2k) + 1, which is odd. → This contradicts n squared being even, so n must be even."
+    },
+    {
+     "id": "S40-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "In a proof by contradiction, you assume the statement is false and show that this leads to something impossible. Reaching a statement that contradicts a known fact shows that the assumption was false.",
+     "outcome": "LOGIC.PROOF.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S40-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Definitions: an integer n is even if n = 2k for some integer k, and odd if n = 2k + 1 for some integer k. An integer n is a multiple of m if n = mk for some integer k. In a proof by contradiction, you assume the statement is false and show that this leads to something impossible. Claim: no integer is both even and odd. Suppose n = 2a and n = 2b + 1 for integers a and b. Which line gives the contradiction?",
+     "outcome": "LOGIC.PROOF.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "2a = 2b + 1, so a = b."
+      },
+      {
+       "letter": "B",
+       "text": "n = 4 is even and not odd."
+      },
+      {
+       "letter": "C",
+       "text": "2a = 2b + 1, so 2(a - b) = 1, but 1 is not 2 times an integer."
+      },
+      {
+       "letter": "D",
+       "text": "2a + 2b + 1 is an odd number."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "2a = 2b + 1, so 2(a - b) = 1, but 1 is not 2 times an integer."
+    },
+    {
+     "id": "S40-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "Definitions: an integer n is even if n = 2k for some integer k, and odd if n = 2k + 1 for some integer k. An integer n is a multiple of m if n = mk for some integer k. In a proof by contradiction, you assume the statement is false and show that this leads to something impossible. To show that 15 is not the sum of two even integers, assume 15 = 2a + 2b for integers a and b. Then a + b must equal what number?",
+     "outcome": "LOGIC.PROOF.03",
+     "fields": [
+      {
+       "name": "x",
+       "label": "a + b ="
+      }
+     ],
+     "rule": "x == 7.5",
+     "example_answer": {
+      "x": 7.5
+     },
+     "correct_answer": "any values that satisfy: x == 7.5 (example: x = 7.5)"
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Strategy: assume the opposite and look for the impossible",
+   "outcome": "LOGIC.PROOF.03",
+   "branch_mode": "guided_strategy",
+   "relationship": "Students start a contradiction proof by assuming the wrong thing. Writing the exact opposite first, and then hunting for a clash, gives every such proof the same shape.",
+   "author_note": "Students start a contradiction proof by assuming the wrong thing. Writing the exact opposite first, and then hunting for a clash, gives every such proof the same shape.",
+   "lesson": {
+    "title": "Assume the opposite and look for the impossible",
+    "text": [
+     "Write the exact opposite (negation) of what you want to prove, and assume it.",
+     "Reason from that assumption with definitions and facts you know.",
+     "Stop when you reach something impossible, such as 1 = 0 or a number that is both even and odd. Then the assumption is false, so the statement is true."
+    ],
+    "example": {
+     "title": "Worked example (a different claim)",
+     "prompt": [
+      "Prove: there is no smallest positive fraction."
+     ],
+     "steps": [
+      "Assume the opposite: there is a smallest positive fraction r.",
+      "Then r / 2 is also a positive fraction, and r / 2 < r.",
+      "That contradicts r being smallest, so no smallest positive fraction exists."
+     ]
+    }
+   },
+   "questions": [
+    {
+     "id": "S40-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "In a proof by contradiction, you assume the statement is false and show that this leads to something impossible. To prove \"n is not divisible by 4\" by contradiction, what do you assume?",
+     "outcome": "LOGIC.PROOF.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "n is divisible by 4."
+      },
+      {
+       "letter": "B",
+       "text": "n is not divisible by 4."
+      },
+      {
+       "letter": "C",
+       "text": "n is divisible by 2."
+      },
+      {
+       "letter": "D",
+       "text": "n is an odd number."
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "n is divisible by 4."
+    },
+    {
+     "id": "S40-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "In a proof by contradiction, you assume the statement is false and show that this leads to something impossible. To prove \"there is no integer x with 2x = 7\" by contradiction, what do you assume?",
+     "outcome": "LOGIC.PROOF.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Every integer x has 2x = 7."
+      },
+      {
+       "letter": "B",
+       "text": "There is an integer x with 2x not equal to 7."
+      },
+      {
+       "letter": "C",
+       "text": "There is no integer x with 2x = 7."
+      },
+      {
+       "letter": "D",
+       "text": "There is an integer x with 2x = 7."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "There is an integer x with 2x = 7."
+    },
+    {
+     "id": "S40-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "In a proof by contradiction, you assume the statement is false and show that this leads to something impossible. A proof by contradiction begins by assuming that the statement to be proved is true.",
+     "outcome": "LOGIC.PROOF.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S40-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "In a proof by contradiction, you assume the statement is false and show that this leads to something impossible. If assuming P leads to 1 = 0, then P is false.",
+     "outcome": "LOGIC.PROOF.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S40-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Definitions: an integer n is even if n = 2k for some integer k, and odd if n = 2k + 1 for some integer k. An integer n is a multiple of m if n = mk for some integer k. In a proof by contradiction, you assume the statement is false and show that this leads to something impossible. Assume there is a largest odd integer M. Which number gives the contradiction?",
+     "outcome": "LOGIC.PROOF.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "2M"
+      },
+      {
+       "letter": "B",
+       "text": "M + 2"
+      },
+      {
+       "letter": "C",
+       "text": "M - 2"
+      },
+      {
+       "letter": "D",
+       "text": "M + 1"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "M + 2"
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Contradiction with divisibility",
+   "outcome": "LOGIC.PROOF.03",
+   "relationship": "Harder: contradiction arguments about multiples and remainders.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S40-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "In a proof by contradiction, you assume the statement is false and show that this leads to something impossible. To prove that no integers a and b satisfy 6a + 9b = 10, which fact gives the contradiction?",
+     "outcome": "LOGIC.PROOF.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "6a + 9b = 3(2a + 3b) is a multiple of 3, but 10 is not."
+      },
+      {
+       "letter": "B",
+       "text": "a and b would have to be fractions."
+      },
+      {
+       "letter": "C",
+       "text": "10 is even, and 6a + 9b is always odd."
+      },
+      {
+       "letter": "D",
+       "text": "6 and 9 are both odd numbers."
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "6a + 9b = 3(2a + 3b) is a multiple of 3, but 10 is not."
+    },
+    {
+     "id": "S40-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "order",
+     "prompt": "In a proof by contradiction, you assume the statement is false and show that this leads to something impossible. Put the steps of the proof that the square root of 2 is not a fraction in order.",
+     "outcome": "LOGIC.PROOF.03",
+     "items": [
+      {
+       "key": "A",
+       "text": "Assume the square root of 2 = p / q, with p and q integers in lowest terms."
+      },
+      {
+       "key": "B",
+       "text": "Then p squared = 2q squared, so p squared is even, so p is even: p = 2m."
+      },
+      {
+       "key": "C",
+       "text": "Then 4m squared = 2q squared, so q squared = 2m squared, and q is even."
+      },
+      {
+       "key": "D",
+       "text": "Both p and q are even, which contradicts lowest terms."
+      }
+     ],
+     "correct_order": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "correct_answer": "Assume the square root of 2 = p / q, with p and q integers in lowest terms. → Then p squared = 2q squared, so p squared is even, so p is even: p = 2m. → Then 4m squared = 2q squared, so q squared = 2m squared, and q is even. → Both p and q are even, which contradicts lowest terms."
+    },
+    {
+     "id": "S40-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "Among any 5 integers, two of them leave the same remainder when divided by 4.",
+     "outcome": "LOGIC.PROOF.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S40-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "A perfect square is divided by 4. What is the largest remainder (0, 1, 2 or 3) that can NEVER occur?",
+     "outcome": "LOGIC.PROOF.03",
+     "answer_lines": [
+      "Remainder:"
+     ],
+     "correct_answer": "3"
+    },
+    {
+     "id": "S40-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "Give an integer n from 1 to 50 for which n squared + 1 is a multiple of 3. If no such n exists, enter 0.",
+     "outcome": "LOGIC.PROOF.03",
+     "fields": [
+      {
+       "name": "n",
+       "label": "n ="
+      }
+     ],
+     "rule": "n == 0",
+     "example_answer": {
+      "n": 0
+     },
+     "correct_answer": "any values that satisfy: n == 0 (example: n = 0)"
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Contradiction in larger arguments",
+   "outcome": "LOGIC.PROOF.03",
+   "relationship": "Expert: primes, inequalities and flawed contradiction proofs.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S40-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "In a proof by contradiction, you assume the statement is false and show that this leads to something impossible. Assume there are only finitely many primes, p1, p2, ..., pk, and let N = p1 x p2 x ... x pk + 1. Why is this a contradiction?",
+     "outcome": "LOGIC.PROOF.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "N is always an even number."
+      },
+      {
+       "letter": "B",
+       "text": "N is always a prime number."
+      },
+      {
+       "letter": "C",
+       "text": "N is larger than every prime, so N is not prime."
+      },
+      {
+       "letter": "D",
+       "text": "N leaves remainder 1 when divided by each listed prime, so a prime factor of N is not on the list."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "N leaves remainder 1 when divided by each listed prime, so a prime factor of N is not on the list."
+    },
+    {
+     "id": "S40-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "2 x 3 x 5 x 7 x 11 x 13 + 1 is a prime number.",
+     "outcome": "LOGIC.PROOF.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S40-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "order",
+     "prompt": "In a proof by contradiction, you assume the statement is false and show that this leads to something impossible. Put the steps of a proof that if a + b is at least 20, then a is at least 10 or b is at least 10, in order.",
+     "outcome": "LOGIC.PROOF.03",
+     "items": [
+      {
+       "key": "A",
+       "text": "Assume a + b is at least 20, but a < 10 and b < 10."
+      },
+      {
+       "key": "B",
+       "text": "Adding the two inequalities gives a + b < 20."
+      },
+      {
+       "key": "C",
+       "text": "That contradicts a + b being at least 20."
+      },
+      {
+       "key": "D",
+       "text": "So a is at least 10 or b is at least 10."
+      }
+     ],
+     "correct_order": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "correct_answer": "Assume a + b is at least 20, but a < 10 and b < 10. → Adding the two inequalities gives a + b < 20. → That contradicts a + b being at least 20. → So a is at least 10 or b is at least 10."
+    },
+    {
+     "id": "S40-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "In a proof by contradiction, you assume the statement is false and show that this leads to something impossible. Claim: every integer is even. \"Proof: Assume some integer is odd, say 3. Then 3 = 2k for no integer k. Contradiction.\" What is wrong?",
+     "outcome": "LOGIC.PROOF.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nothing; the proof is correct."
+      },
+      {
+       "letter": "B",
+       "text": "Nothing impossible was reached; 3 not being 2k agrees with 3 being odd."
+      },
+      {
+       "letter": "C",
+       "text": "It should assume that every integer is odd."
+      },
+      {
+       "letter": "D",
+       "text": "It should use 5 instead of 3."
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Nothing impossible was reached; 3 not being 2k agrees with 3 being odd."
+    },
+    {
+     "id": "S40-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "At least how many integers must you choose to be sure that two of them leave the same remainder when divided by 6?",
+     "outcome": "LOGIC.PROOF.03",
+     "answer_lines": [
+      "Integers:"
+     ],
+     "correct_answer": "7"
+    }
+   ]
+  }
+ ]
+}

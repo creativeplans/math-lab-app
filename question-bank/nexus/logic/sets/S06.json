@@ -1,0 +1,465 @@
+{
+ "set": 6,
+ "title": "Crack a code with a stated key",
+ "outcome": "LOGIC.CODE.01",
+ "genre": "symbol codes",
+ "kind": "puzzle",
+ "family": "symbolic",
+ "practices": [
+  "MP7",
+  "MP2"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Decode and encode with a stated key, and find a key within a stated family",
+   "outcome": "LOGIC.CODE.01",
+   "questions": [
+    {
+     "id": "S6-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "symbol codes",
+     "type": "sa",
+     "prompt": "In a code, each letter has the value of its position in the alphabet (A = 1, B = 2, ..., Z = 26), and a word's value is the sum of its letters' values. For example, CAB = 3 + 1 + 2 = 6. What is the value of BEAD?",
+     "outcome": "LOGIC.CODE.01",
+     "answer_lines": [
+      "Value:"
+     ],
+     "correct_answer": "12"
+    },
+    {
+     "id": "S6-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "symbol codes",
+     "type": "mc",
+     "prompt": "In a code, every letter is replaced by the letter 3 places later in the alphabet (A becomes D, B becomes E, and X, Y, Z wrap around to A, B, C). A coded word reads FDW. What was the original word?",
+     "outcome": "LOGIC.CODE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "CAW"
+      },
+      {
+       "letter": "B",
+       "text": "CAT"
+      },
+      {
+       "letter": "C",
+       "text": "DBX"
+      },
+      {
+       "letter": "D",
+       "text": "IGZ"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "CAT"
+    },
+    {
+     "id": "S6-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "symbol codes",
+     "type": "sa",
+     "prompt": "A code adds the same whole number k to every digit and keeps only the last digit of each sum (so 8 + 3 gives 1). The code turns 2025 into 4247. What does it turn 1990 into?",
+     "outcome": "LOGIC.CODE.01",
+     "answer_lines": [
+      "Code:"
+     ],
+     "correct_answer": "3112"
+    },
+    {
+     "id": "S6-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "symbol codes",
+     "type": "sa",
+     "prompt": "Each symbol stands for a whole number. Star + Star = 10. Star + Circle = 8. Circle + Square = 9. What number is Square?",
+     "outcome": "LOGIC.CODE.01",
+     "answer_lines": [
+      "Square:"
+     ],
+     "correct_answer": "6"
+    },
+    {
+     "id": "S6-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "symbol codes",
+     "type": "mc",
+     "prompt": "Two 3-letter words were interleaved: first letter of word 1, first letter of word 2, second letter of word 1, and so on. The result is CDAORT. Which two words were interleaved?",
+     "outcome": "LOGIC.CODE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "CAR and DOT"
+      },
+      {
+       "letter": "B",
+       "text": "CAD and ORT"
+      },
+      {
+       "letter": "C",
+       "text": "COD and ART"
+      },
+      {
+       "letter": "D",
+       "text": "CAT and DOR"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "CAR and DOT"
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Strategy: write the key as a table",
+   "outcome": "LOGIC.CODE.01",
+   "branch_mode": "guided_strategy",
+   "relationship": "Students who decode in their head lose track of which way the key works. Writing the key as a table and applying it one symbol at a time keeps encoding and decoding straight.",
+   "author_note": "Students who decode in their head lose track of which way the key works. Writing the key as a table and applying it one symbol at a time keeps encoding and decoding straight.",
+   "lesson": {
+    "title": "Write the key as a table",
+    "text": [
+     "A code is a rule that turns each symbol into another symbol (or a number).",
+     "Write the key as a two-row table: plain symbols on top, coded symbols below. To encode, read top to bottom; to decode, find the coded symbol on the bottom row and read up.",
+     "When the key must be found from an example, use the example to fill in the table, then check the key on EVERY symbol of the example before using it."
+    ],
+    "example": {
+     "title": "Worked example (a different code)",
+     "prompt": [
+      "A code replaces each digit d by 9 - d. What is 274 in code, and what number does the code 815 come from?"
+     ],
+     "steps": [
+      "Table: 0->9, 1->8, 2->7, 3->6, 4->5, 5->4, 6->3, 7->2, 8->1, 9->0.",
+      "Encode 274: 2->7, 7->2, 4->5, so 725.",
+      "Decode 815: 8 comes from 1, 1 from 8, 5 from 4, so 184.",
+      "Check: 184 encodes to 815."
+     ]
+    }
+   },
+   "questions": [
+    {
+     "id": "S6-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "symbol codes",
+     "type": "sa",
+     "prompt": "A code replaces each letter by its position in the alphabet (A = 1, ..., Z = 26) and adds them. What is the value of DOG?",
+     "outcome": "LOGIC.CODE.01",
+     "answer_lines": [
+      "Value:"
+     ],
+     "correct_answer": "26"
+    },
+    {
+     "id": "S6-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "symbol codes",
+     "type": "mc",
+     "prompt": "A code moves each letter 1 place later (A -> B, ..., Z -> A). What is BOX in code?",
+     "outcome": "LOGIC.CODE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "CPY"
+      },
+      {
+       "letter": "B",
+       "text": "DQZ"
+      },
+      {
+       "letter": "C",
+       "text": "CPX"
+      },
+      {
+       "letter": "D",
+       "text": "ANW"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "CPY"
+    },
+    {
+     "id": "S6-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "symbol codes",
+     "type": "sa",
+     "prompt": "A code replaces each digit d by 9 - d. What is the code for 306?",
+     "outcome": "LOGIC.CODE.01",
+     "answer_lines": [
+      "Code:"
+     ],
+     "correct_answer": "693"
+    },
+    {
+     "id": "S6-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "symbol codes",
+     "type": "tf",
+     "prompt": "If a code moves every letter 2 places later, then decoding moves every letter 2 places earlier.",
+     "outcome": "LOGIC.CODE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S6-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "symbol codes",
+     "type": "sa",
+     "prompt": "Triangle + Triangle + Triangle = 12. What number is Triangle?",
+     "outcome": "LOGIC.CODE.01",
+     "answer_lines": [
+      "Triangle:"
+     ],
+     "correct_answer": "4"
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Codes with structure: shapes of letters and combined rules",
+   "outcome": "LOGIC.CODE.01",
+   "relationship": "Harder: a key based on letter shapes, and two rules applied in order.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S6-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "symbol codes",
+     "type": "sa",
+     "prompt": "In this code, a letter's value is the number of closed spaces inside it in plain block capitals: A, D, O, P, Q and R have 1, B has 2, and every other letter has 0. A word's value is the sum of its letters' values. What is the value of BREAD?",
+     "outcome": "LOGIC.CODE.01",
+     "answer_lines": [
+      "Value:"
+     ],
+     "correct_answer": "5"
+    },
+    {
+     "id": "S6-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "symbol codes",
+     "type": "mc",
+     "prompt": "In this code, a letter's value is the number of closed spaces inside it in plain block capitals: A, D, O, P, Q and R have 1, B has 2, and every other letter has 0. A word's value is the sum of its letters' values. Which word has value 0?",
+     "outcome": "LOGIC.CODE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "SHIRT"
+      },
+      {
+       "letter": "B",
+       "text": "FLIES"
+      },
+      {
+       "letter": "C",
+       "text": "MAZE"
+      },
+      {
+       "letter": "D",
+       "text": "TOWEL"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "FLIES"
+    },
+    {
+     "id": "S6-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "symbol codes",
+     "type": "sa",
+     "prompt": "A code first writes a word backward and then moves each letter 1 place later in the alphabet. What is the code for MAP?",
+     "outcome": "LOGIC.CODE.01",
+     "answer_lines": [
+      "Code:"
+     ],
+     "correct_answer": "QBN"
+    },
+    {
+     "id": "S6-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "symbol codes",
+     "type": "sa",
+     "prompt": "Each symbol stands for a whole number. Moon + Moon + Sun = 13. Sun + Sun = 6. Moon + Star = 9. What number is Star?",
+     "outcome": "LOGIC.CODE.01",
+     "answer_lines": [
+      "Star:"
+     ],
+     "correct_answer": "4"
+    },
+    {
+     "id": "S6-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "symbol codes",
+     "type": "tf",
+     "prompt": "A code moves every letter 13 places later in the alphabet (wrapping around). Applying this code twice gives back the original word.",
+     "outcome": "LOGIC.CODE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Find a key and prove when none exists",
+   "outcome": "LOGIC.CODE.01",
+   "relationship": "Expert: determine a key from coded examples, and show that a requested code cannot exist.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S6-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "symbol codes",
+     "type": "mc",
+     "prompt": "A code adds 3 to each digit of a 4-digit number and keeps only the last digit of each sum (so 8 becomes 1). Is there a 4-digit number whose code is the same number written backward?",
+     "outcome": "LOGIC.CODE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No: but only because the first digit cannot be 0."
+      },
+      {
+       "letter": "B",
+       "text": "Yes: 1234 works."
+      },
+      {
+       "letter": "C",
+       "text": "No: the middle digits would need b + 6 to end in the same digit as b, which never happens."
+      },
+      {
+       "letter": "D",
+       "text": "Yes: any number whose digits are all equal works."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "No: the middle digits would need b + 6 to end in the same digit as b, which never happens."
+    },
+    {
+     "id": "S6-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "symbol codes",
+     "type": "sa",
+     "prompt": "A code moves every letter the same number of places later in the alphabet (wrapping around). It turns GO into MU. What does it turn LOGIC into?",
+     "outcome": "LOGIC.CODE.01",
+     "answer_lines": [
+      "Code:"
+     ],
+     "correct_answer": "RUMOI"
+    },
+    {
+     "id": "S6-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "symbol codes",
+     "type": "values",
+     "prompt": "Each symbol stands for a whole number from 1 to 9. Square + Square = Circle, and Circle + Square = 12. Find Square s and Circle c.",
+     "outcome": "LOGIC.CODE.01",
+     "fields": [
+      {
+       "name": "s",
+       "label": "Square s ="
+      },
+      {
+       "name": "c",
+       "label": "Circle c ="
+      }
+     ],
+     "rule": "s + s == c and c + s == 12 and isInteger(s) and isInteger(c)",
+     "example_answer": {
+      "s": 4,
+      "c": 8
+     },
+     "correct_answer": "any values that satisfy: s + s == c and c + s == 12 and isInteger(s) and isInteger(c) (example: s = 4, c = 8)"
+    },
+    {
+     "id": "S6-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "symbol codes",
+     "type": "sa",
+     "prompt": "In this code, a letter's value is the number of closed spaces inside it in plain block capitals: A, D, O, P, Q and R have 1, B has 2, and every other letter has 0. A word's value is the sum of its letters' values. Using only the letters B, O and T (each as often as you like), what is the greatest value of a 4-letter string?",
+     "outcome": "LOGIC.CODE.01",
+     "answer_lines": [
+      "Value:"
+     ],
+     "correct_answer": "8"
+    },
+    {
+     "id": "S6-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "symbol codes",
+     "type": "mc",
+     "prompt": "A code sends each letter to the letter at the same distance from the other end of the alphabet (A <-> Z, B <-> Y, C <-> X, ...). Which word is coded as itself?",
+     "outcome": "LOGIC.CODE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "WIZARD"
+      },
+      {
+       "letter": "B",
+       "text": "MOON"
+      },
+      {
+       "letter": "C",
+       "text": "NOON"
+      },
+      {
+       "letter": "D",
+       "text": "No word: no letter is coded as itself."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "No word: no letter is coded as itself."
+    }
+   ]
+  }
+ ]
+}

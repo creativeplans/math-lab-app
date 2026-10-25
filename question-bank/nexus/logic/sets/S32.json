@@ -1,0 +1,648 @@
+{
+ "set": 32,
+ "title": "Categorical arguments",
+ "outcome": "LOGIC.SETS.02",
+ "genre": "formal logic",
+ "kind": "formal",
+ "family": "formal",
+ "practices": [
+  "MP3",
+  "MP7"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Test categorical arguments with Venn diagrams, including the existence assumption",
+   "outcome": "LOGIC.SETS.02",
+   "questions": [
+    {
+     "id": "S32-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mark",
+     "prompt": "Premise: \"No reptile is warm-blooded.\" Circle A is reptiles and circle B is warm-blooded animals. Mark the region this premise says is EMPTY.",
+     "outcome": "LOGIC.SETS.02",
+     "layout": "venn2",
+     "sets": [
+      "reptiles (A)",
+      "warm-blooded (B)"
+     ],
+     "correct_marks": [
+      "AB"
+     ],
+     "correct_answer": "AB"
+    },
+    {
+     "id": "S32-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "\"All violinists are musicians. All musicians practice. So all violinists practice.\" Is this valid?",
+     "outcome": "LOGIC.SETS.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No: some violinists may not practice."
+      },
+      {
+       "letter": "B",
+       "text": "Yes, but only if every musician is a violinist."
+      },
+      {
+       "letter": "C",
+       "text": "Yes: every violinist is inside the musicians, who are all inside those who practice."
+      },
+      {
+       "letter": "D",
+       "text": "No: the conclusion reverses a premise."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Yes: every violinist is inside the musicians, who are all inside those who practice."
+    },
+    {
+     "id": "S32-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "\"All squares are rectangles. Some rectangles are not rhombuses. So some squares are not rhombuses.\" Is this valid?",
+     "outcome": "LOGIC.SETS.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No: the rectangles that are not rhombuses may all lie outside the squares."
+      },
+      {
+       "letter": "B",
+       "text": "Yes: the conclusion is true."
+      },
+      {
+       "letter": "C",
+       "text": "Yes: squares are rectangles, so they share every property."
+      },
+      {
+       "letter": "D",
+       "text": "No: no rectangle is a square."
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "No: the rectangles that are not rhombuses may all lie outside the squares."
+    },
+    {
+     "id": "S32-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"All A are B. Some C are A. So some C are B.\" This form is valid.",
+     "outcome": "LOGIC.SETS.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S32-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "\"All dragons breathe fire. So some dragons breathe fire.\" When does this follow?",
+     "outcome": "LOGIC.SETS.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Always: \"all\" includes \"some\"."
+      },
+      {
+       "letter": "B",
+       "text": "Only if dragons are real animals."
+      },
+      {
+       "letter": "C",
+       "text": "Never: the premise is about all dragons."
+      },
+      {
+       "letter": "D",
+       "text": "Only if at least one dragon exists (the existence assumption)."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Only if at least one dragon exists (the existence assumption)."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Mark statements on a Venn diagram",
+   "outcome": "LOGIC.SETS.01",
+   "branch_mode": "prerequisite",
+   "relationship": "Testing an argument means drawing each premise; students need to draw \"all\", \"no\" and \"some\".",
+   "author_note": "Testing an argument means drawing each premise; students need to draw \"all\", \"no\" and \"some\".",
+   "questions": [
+    {
+     "id": "S32-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mark",
+     "prompt": "\"All A are B.\" Mark the region that must be EMPTY.",
+     "outcome": "LOGIC.SETS.01",
+     "layout": "venn2",
+     "sets": [
+      "A",
+      "B"
+     ],
+     "correct_marks": [
+      "A"
+     ],
+     "correct_answer": "A"
+    },
+    {
+     "id": "S32-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mark",
+     "prompt": "\"No A is B.\" Mark the region that must be EMPTY.",
+     "outcome": "LOGIC.SETS.01",
+     "layout": "venn2",
+     "sets": [
+      "A",
+      "B"
+     ],
+     "correct_marks": [
+      "AB"
+     ],
+     "correct_answer": "AB"
+    },
+    {
+     "id": "S32-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mark",
+     "prompt": "\"Some A is B.\" Mark the region where something must be.",
+     "outcome": "LOGIC.SETS.01",
+     "layout": "venn2",
+     "sets": [
+      "A",
+      "B"
+     ],
+     "correct_marks": [
+      "AB"
+     ],
+     "correct_answer": "AB"
+    },
+    {
+     "id": "S32-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mark",
+     "prompt": "\"Some A is not B.\" Mark the region where something must be.",
+     "outcome": "LOGIC.SETS.01",
+     "layout": "venn2",
+     "sets": [
+      "A",
+      "B"
+     ],
+     "correct_marks": [
+      "A"
+     ],
+     "correct_answer": "A"
+    },
+    {
+     "id": "S32-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"All A are B\" and \"No A is B\" can both be true if A has no members.",
+     "outcome": "LOGIC.SETS.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "B2",
+   "section_code": "B2",
+   "relation": "backward",
+   "skill": "Valid means no counterexample",
+   "outcome": "LOGIC.INFERENCE.03",
+   "branch_mode": "prerequisite",
+   "relationship": "A categorical argument is valid when no situation makes the premises true and the conclusion false.",
+   "author_note": "A categorical argument is valid when no situation makes the premises true and the conclusion false.",
+   "questions": [
+    {
+     "id": "S32-B2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "An argument is valid if a situation exists with true premises and a false conclusion.",
+     "outcome": "LOGIC.INFERENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S32-B2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "\"All cats are mammals. All dogs are mammals. So all cats are dogs.\" Which situation shows it is invalid?",
+     "outcome": "LOGIC.INFERENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "a world where all mammals are dogs"
+      },
+      {
+       "letter": "B",
+       "text": "the real world: cats and dogs are both mammals but cats are not dogs"
+      },
+      {
+       "letter": "C",
+       "text": "a world with no mammals"
+      },
+      {
+       "letter": "D",
+       "text": "a world with no cats"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "the real world: cats and dogs are both mammals but cats are not dogs"
+    },
+    {
+     "id": "S32-B2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"All A are B. All B are C. So all A are C.\" is valid.",
+     "outcome": "LOGIC.INFERENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S32-B2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"Some A are B. Some B are C. So some A are C.\" is valid.",
+     "outcome": "LOGIC.INFERENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S32-B2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Which premise pair makes \"So no A is C\" follow?",
+     "outcome": "LOGIC.INFERENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"All A are B.\" and \"Some B are not C.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Some A are B.\" and \"No B is C.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"All A are B.\" and \"No B is C.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"No A is B.\" and \"No B is C.\""
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "\"All A are B.\" and \"No B is C.\""
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Harder categorical forms",
+   "outcome": "LOGIC.SETS.02",
+   "relationship": "Harder: \"some ... not\", three terms and hidden reversals.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S32-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"No A is B. All C are B. So no C is A.\" This form is valid.",
+     "outcome": "LOGIC.SETS.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S32-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"All A are B. No C is A. So no C is B.\" This form is valid.",
+     "outcome": "LOGIC.SETS.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S32-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "\"Some athletes are vegetarians. All vegetarians eat beans. So ...\" Which conclusion follows?",
+     "outcome": "LOGIC.SETS.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "all athletes eat beans"
+      },
+      {
+       "letter": "B",
+       "text": "no athlete eats meat"
+      },
+      {
+       "letter": "C",
+       "text": "all bean eaters are athletes"
+      },
+      {
+       "letter": "D",
+       "text": "some athletes eat beans"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "some athletes eat beans"
+    },
+    {
+     "id": "S32-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mark",
+     "prompt": "Premises: \"All A are B\" and \"No B is C\". On a three-circle diagram (A, B, C), mark every region that the premises make EMPTY.",
+     "outcome": "LOGIC.SETS.02",
+     "layout": "venn3",
+     "sets": [
+      "A",
+      "B",
+      "C"
+     ],
+     "correct_marks": [
+      "A",
+      "AC",
+      "BC",
+      "ABC"
+     ],
+     "correct_answer": "A, AC, BC, ABC"
+    },
+    {
+     "id": "S32-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"All A are B. Some A are C. So some B are C.\" This form is valid.",
+     "outcome": "LOGIC.SETS.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Existence and hidden assumptions",
+   "outcome": "LOGIC.SETS.02",
+   "relationship": "Expert: arguments that need the existence assumption.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S32-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"All A are B. All A are C. So some B are C.\" This form is valid without any existence assumption.",
+     "outcome": "LOGIC.SETS.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S32-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Which added premise makes \"All A are B. All A are C. So some B are C.\" valid?",
+     "outcome": "LOGIC.SETS.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "At least one A exists."
+      },
+      {
+       "letter": "B",
+       "text": "All B are A."
+      },
+      {
+       "letter": "C",
+       "text": "At least one B exists."
+      },
+      {
+       "letter": "D",
+       "text": "At least one C exists."
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "At least one A exists."
+    },
+    {
+     "id": "S32-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "How many of these forms are valid (with no existence assumption)? (1) All A are B; all B are C; so all A are C. (2) No A is B; all C are A; so no C is B. (3) All A are B; some C are not B; so some C are not A. (4) Some A are B; all B are C; so some A are C.",
+     "outcome": "LOGIC.SETS.02",
+     "answer_lines": [
+      "Valid forms:"
+     ],
+     "correct_answer": "4"
+    },
+    {
+     "id": "S32-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"All unicorns have one horn\" is true if no unicorns exist.",
+     "outcome": "LOGIC.SETS.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S32-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "\"No square is a circle. Some circles are shaded. So some shaded things are not squares.\" Is it valid?",
+     "outcome": "LOGIC.SETS.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No: shaded things may all be squares."
+      },
+      {
+       "letter": "B",
+       "text": "Yes: a shaded circle is not a square."
+      },
+      {
+       "letter": "C",
+       "text": "No: it needs squares to exist."
+      },
+      {
+       "letter": "D",
+       "text": "Yes, but only if all circles are shaded."
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Yes: a shaded circle is not a square."
+    }
+   ]
+  }
+ ]
+}

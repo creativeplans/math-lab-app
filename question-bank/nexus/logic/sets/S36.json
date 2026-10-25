@@ -1,0 +1,435 @@
+{
+ "set": 36,
+ "title": "Search every case",
+ "outcome": "LOGIC.SEARCH.01",
+ "genre": "complete search",
+ "kind": "puzzle",
+ "family": "constraint",
+ "practices": [
+  "MP1",
+  "MP8"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Organize a complete case analysis and count or find every solution",
+   "outcome": "LOGIC.SEARCH.01",
+   "questions": [
+    {
+     "id": "S36-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "complete search",
+     "type": "sa",
+     "prompt": "How many three-digit whole numbers (100 to 999) have digits that add up to 5?",
+     "outcome": "LOGIC.SEARCH.01",
+     "answer_lines": [
+      "Numbers:"
+     ],
+     "correct_answer": "15"
+    },
+    {
+     "id": "S36-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "complete search",
+     "type": "sa",
+     "prompt": "A 12-hour digital clock shows times from 1:00 to 12:59: the hour (1 to 12, no leading zero) and then two minute digits (00 to 59). At how many times do the shown digits add up to exactly 22?",
+     "outcome": "LOGIC.SEARCH.01",
+     "answer_lines": [
+      "Times:"
+     ],
+     "correct_answer": "3"
+    },
+    {
+     "id": "S36-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "complete search",
+     "type": "values",
+     "prompt": "Find the two-digit whole number that equals 3 times the sum of its digits.",
+     "outcome": "LOGIC.SEARCH.01",
+     "fields": [
+      {
+       "name": "n",
+       "label": "Number ="
+      }
+     ],
+     "rule": "isInteger(n) and n >= 10 and n <= 99 and n == 3 * (floor(n / 10) + mod(n, 10))",
+     "example_answer": {
+      "n": 27
+     },
+     "correct_answer": "any values that satisfy: isInteger(n) and n >= 10 and n <= 99 and n == 3 * (floor(n / 10) + mod(n, 10)) (example: n = 27)"
+    },
+    {
+     "id": "S36-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "complete search",
+     "type": "sa",
+     "prompt": "In how many ways can you make 30 cents using nickels (5 cents), dimes (10 cents) and quarters (25 cents)? You may use any number of each coin, including none; the order of the coins does not matter.",
+     "outcome": "LOGIC.SEARCH.01",
+     "answer_lines": [
+      "Ways:"
+     ],
+     "correct_answer": "5"
+    },
+    {
+     "id": "S36-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "complete search",
+     "type": "tf",
+     "prompt": "Exactly 6 of the 24 orderings of the letters A, B, C and D have A before B and also C before D.",
+     "outcome": "LOGIC.SEARCH.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Strategy: make an organized list",
+   "outcome": "LOGIC.SEARCH.01",
+   "branch_mode": "guided_strategy",
+   "relationship": "Students who list cases at random miss some or count some twice. Ordering the list by one choice at a time makes it complete.",
+   "author_note": "Students who list cases at random miss some or count some twice. Ordering the list by one choice at a time makes it complete.",
+   "lesson": {
+    "title": "Make an organized list",
+    "text": [
+     "Pick the choice with the fewest options and go through its values in order.",
+     "For each value, list what the rest can be, again in order.",
+     "When every value has been handled, the list is complete; count it."
+    ],
+    "example": {
+     "title": "Worked example (a different count)",
+     "prompt": [
+      "How many two-digit numbers have digits that add up to 4?"
+     ],
+     "steps": [
+      "Go through the tens digit in order: 1 gives 13, 2 gives 22, 3 gives 31, 4 gives 40.",
+      "A tens digit of 5 or more is too big, and 0 is not allowed for a two-digit number. So there are 4."
+     ]
+    }
+   },
+   "questions": [
+    {
+     "id": "S36-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "complete search",
+     "type": "sa",
+     "prompt": "How many two-digit numbers have digits that add up to 6?",
+     "outcome": "LOGIC.SEARCH.01",
+     "answer_lines": [
+      "Numbers:"
+     ],
+     "correct_answer": "6"
+    },
+    {
+     "id": "S36-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "complete search",
+     "type": "sa",
+     "prompt": "In how many ways can you make 20 cents using only nickels and dimes? The order of the coins does not matter.",
+     "outcome": "LOGIC.SEARCH.01",
+     "answer_lines": [
+      "Ways:"
+     ],
+     "correct_answer": "3"
+    },
+    {
+     "id": "S36-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "complete search",
+     "type": "tf",
+     "prompt": "There are exactly 4 two-digit numbers whose digits multiply to 12.",
+     "outcome": "LOGIC.SEARCH.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S36-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "complete search",
+     "type": "mc",
+     "prompt": "Ana lists the ways to make 15 cents from nickels and dimes: \"3 nickels; 1 dime and 1 nickel.\" Is her list complete? The order of the coins does not matter.",
+     "outcome": "LOGIC.SEARCH.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No: a nickel then a dime is a third way"
+      },
+      {
+       "letter": "B",
+       "text": "No: 2 dimes and no nickels is missing"
+      },
+      {
+       "letter": "C",
+       "text": "No: 1 dime alone is missing"
+      },
+      {
+       "letter": "D",
+       "text": "Yes: she used 0 dimes and 1 dime, and 2 dimes is too much"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Yes: she used 0 dimes and 1 dime, and 2 dimes is too much"
+    },
+    {
+     "id": "S36-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "complete search",
+     "type": "tf",
+     "prompt": "There are 5 two-digit numbers whose digits add up to 3.",
+     "outcome": "LOGIC.SEARCH.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Counting with extra conditions",
+   "outcome": "LOGIC.SEARCH.01",
+   "relationship": "Harder: complete searches with several conditions.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S36-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "complete search",
+     "type": "sa",
+     "prompt": "How many three-digit numbers have three different digits that add up to 6?",
+     "outcome": "LOGIC.SEARCH.01",
+     "answer_lines": [
+      "Numbers:"
+     ],
+     "correct_answer": "14"
+    },
+    {
+     "id": "S36-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "complete search",
+     "type": "sa",
+     "prompt": "In how many ways can 10 be written as a sum of 1s and 2s if the order matters? (For example, 3 can be written 3 ways: 1 + 1 + 1, 1 + 2 and 2 + 1.)",
+     "outcome": "LOGIC.SEARCH.01",
+     "answer_lines": [
+      "Ways:"
+     ],
+     "correct_answer": "89"
+    },
+    {
+     "id": "S36-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "complete search",
+     "type": "values",
+     "prompt": "Find a three-digit number whose three digits are all odd, all different, and add up to 15.",
+     "outcome": "LOGIC.SEARCH.01",
+     "fields": [
+      {
+       "name": "n",
+       "label": "Number ="
+      }
+     ],
+     "rule": "isInteger(n) and n >= 100 and n <= 999 and isOdd(floor(n / 100)) and isOdd(mod(floor(n / 10), 10)) and isOdd(mod(n, 10)) and floor(n / 100) + mod(floor(n / 10), 10) + mod(n, 10) == 15 and floor(n / 100) != mod(floor(n / 10), 10) and floor(n / 100) != mod(n, 10) and mod(floor(n / 10), 10) != mod(n, 10)",
+     "example_answer": {
+      "n": 159
+     },
+     "correct_answer": "any values that satisfy: isInteger(n) and n >= 100 and n <= 999 and isOdd(floor(n / 100)) and isOdd(mod(floor(n / 10), 10)) and isOdd(mod(n, 10)) and floor(n / 100) + mod(floor(n / 10), 10) + mod(n, 10) == 15 and floor(n / 100) != mod(floor(n / 10), 10) and floor(n / 100) != mod(n, 10) and mod(floor(n / 10), 10) != mod(n, 10) (example: n = 159)"
+    },
+    {
+     "id": "S36-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "complete search",
+     "type": "tf",
+     "prompt": "There are more ways to make 50 cents from nickels and dimes than from dimes and quarters. The order of the coins does not matter.",
+     "outcome": "LOGIC.SEARCH.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S36-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "complete search",
+     "type": "mc",
+     "prompt": "How many rectangles of any size (including squares) can be traced along the lines of a grid that is 2 squares tall and 3 squares wide?",
+     "outcome": "LOGIC.SEARCH.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "15"
+      },
+      {
+       "letter": "B",
+       "text": "18"
+      },
+      {
+       "letter": "C",
+       "text": "17"
+      },
+      {
+       "letter": "D",
+       "text": "6"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "18"
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Searches with many cases",
+   "outcome": "LOGIC.SEARCH.01",
+   "relationship": "Expert: split a large search into organized cases.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S36-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "complete search",
+     "type": "sa",
+     "prompt": "A 12-hour digital clock shows times from 1:00 to 12:59: the hour (1 to 12, no leading zero) and then two minute digits (00 to 59). At how many times do the shown digits add up to exactly 6?",
+     "outcome": "LOGIC.SEARCH.01",
+     "answer_lines": [
+      "Times:"
+     ],
+     "correct_answer": "36"
+    },
+    {
+     "id": "S36-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "complete search",
+     "type": "sa",
+     "prompt": "In how many ways can you make 1 dollar (100 cents) using nickels, dimes and quarters? The order of the coins does not matter.",
+     "outcome": "LOGIC.SEARCH.01",
+     "answer_lines": [
+      "Ways:"
+     ],
+     "correct_answer": "29"
+    },
+    {
+     "id": "S36-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "complete search",
+     "type": "sa",
+     "prompt": "How many positive whole numbers less than 1000 have digits that add up to 4?",
+     "outcome": "LOGIC.SEARCH.01",
+     "answer_lines": [
+      "Numbers:"
+     ],
+     "correct_answer": "15"
+    },
+    {
+     "id": "S36-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "complete search",
+     "type": "tf",
+     "prompt": "Every whole number of cents from 8 to 30 can be paid exactly using only 3-cent and 5-cent stamps.",
+     "outcome": "LOGIC.SEARCH.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S36-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "complete search",
+     "type": "values",
+     "prompt": "Give a whole number of cents from 1 to 10 that CANNOT be paid exactly using only 3-cent and 5-cent stamps.",
+     "outcome": "LOGIC.SEARCH.01",
+     "fields": [
+      {
+       "name": "n",
+       "label": "Amount ="
+      }
+     ],
+     "rule": "n == 1 or n == 2 or n == 4 or n == 7",
+     "example_answer": {
+      "n": 7
+     },
+     "correct_answer": "any values that satisfy: n == 1 or n == 2 or n == 4 or n == 7 (example: n = 7)"
+    }
+   ]
+  }
+ ]
+}

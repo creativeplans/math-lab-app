@@ -1,0 +1,675 @@
+{
+ "set": 8,
+ "title": "And, inclusive or, exclusive or",
+ "outcome": "LOGIC.CONNECTIVE.02",
+ "genre": "formal logic",
+ "kind": "formal",
+ "family": "formal",
+ "practices": [
+  "MP6"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Truth values of and, inclusive or, exclusive or",
+   "outcome": "LOGIC.CONNECTIVE.02",
+   "questions": [
+    {
+     "id": "S8-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"7 is odd and 7 is greater than 10\" is true.",
+     "outcome": "LOGIC.CONNECTIVE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S8-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"7 is odd or 7 is greater than 10\" is true (with \"or\" meaning at least one).",
+     "outcome": "LOGIC.CONNECTIVE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S8-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "A sign says: \"Each meal comes with soup or salad, but not both.\" Which order follows the sign?",
+     "outcome": "LOGIC.CONNECTIVE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "a meal with salad and no soup"
+      },
+      {
+       "letter": "B",
+       "text": "a meal with soup and salad"
+      },
+      {
+       "letter": "C",
+       "text": "a meal with two salads and a soup"
+      },
+      {
+       "letter": "D",
+       "text": "a meal with neither soup nor salad"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "a meal with salad and no soup"
+    },
+    {
+     "id": "S8-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "Give a whole number n that makes \"n is even or n is greater than 20\" true but \"n is even and n is greater than 20\" false.",
+     "outcome": "LOGIC.CONNECTIVE.02",
+     "fields": [
+      {
+       "name": "n",
+       "label": "n ="
+      }
+     ],
+     "rule": "(isEven(n) or n > 20) and not (isEven(n) and n > 20) and isInteger(n)",
+     "example_answer": {
+      "n": 4
+     },
+     "correct_answer": "any values that satisfy: (isEven(n) or n > 20) and not (isEven(n) and n > 20) and isInteger(n) (example: n = 4)"
+    },
+    {
+     "id": "S8-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "P is true and Q is false. Which statement is FALSE?",
+     "outcome": "LOGIC.CONNECTIVE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "P and not Q"
+      },
+      {
+       "letter": "B",
+       "text": "P exclusive-or Q"
+      },
+      {
+       "letter": "C",
+       "text": "P or Q"
+      },
+      {
+       "letter": "D",
+       "text": "P and Q"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "P and Q"
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Truth values of the parts",
+   "outcome": "LOGIC.CONNECTIVE.01",
+   "branch_mode": "prerequisite",
+   "relationship": "A compound statement can only be judged once each part is judged. Students who misjudge a part get the whole wrong.",
+   "author_note": "A compound statement can only be judged once each part is judged. Students who misjudge a part get the whole wrong.",
+   "questions": [
+    {
+     "id": "S8-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"12 is a multiple of 5\" is true.",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S8-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"-3 < 1\" is true.",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S8-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"A triangle has 4 sides\" is true.",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S8-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"0 is even\" is true.",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S8-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Which part of \"9 is odd and 9 is prime\" is false?",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "both parts"
+      },
+      {
+       "letter": "B",
+       "text": "9 is prime"
+      },
+      {
+       "letter": "C",
+       "text": "9 is odd"
+      },
+      {
+       "letter": "D",
+       "text": "neither part"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "9 is prime"
+    }
+   ]
+  },
+  {
+   "section": "B2",
+   "section_code": "B2",
+   "relation": "backward",
+   "skill": "Inclusive or exclusive?",
+   "outcome": "LOGIC.CONNECTIVE.02",
+   "branch_mode": "prerequisite",
+   "relationship": "Students who apply \"or\" differently from the question's meaning get the opposite truth value when both parts are true. Reading the stated meaning of \"or\" is the obstacle.",
+   "author_note": "Students who apply \"or\" differently from the question's meaning get the opposite truth value when both parts are true. Reading the stated meaning of \"or\" is the obstacle.",
+   "questions": [
+    {
+     "id": "S8-B2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "With inclusive \"or\", \"P or Q\" is false when both P and Q are true.",
+     "outcome": "LOGIC.CONNECTIVE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S8-B2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "With exclusive \"or\", \"P or Q\" is true when both P and Q are true.",
+     "outcome": "LOGIC.CONNECTIVE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S8-B2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "A rule says \"You may bring a pencil or a pen (or both).\" Which kind of \"or\" is this?",
+     "outcome": "LOGIC.CONNECTIVE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "neither kind"
+      },
+      {
+       "letter": "B",
+       "text": "it cannot be told"
+      },
+      {
+       "letter": "C",
+       "text": "inclusive"
+      },
+      {
+       "letter": "D",
+       "text": "exclusive"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "inclusive"
+    },
+    {
+     "id": "S8-B2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "\"The light is either on or off\" describes two cases that can never both happen. Which \"or\" fits best?",
+     "outcome": "LOGIC.CONNECTIVE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"and\""
+      },
+      {
+       "letter": "B",
+       "text": "exclusive"
+      },
+      {
+       "letter": "C",
+       "text": "inclusive"
+      },
+      {
+       "letter": "D",
+       "text": "neither"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "exclusive"
+    },
+    {
+     "id": "S8-B2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "When P is false and Q is false, exclusive \"P or Q\" is true.",
+     "outcome": "LOGIC.CONNECTIVE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Compound statements with three parts",
+   "outcome": "LOGIC.CONNECTIVE.02",
+   "relationship": "Harder: three parts and mixed connectives.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S8-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"(3 > 2 and 5 > 9) or 4 is even\" is true.",
+     "outcome": "LOGIC.CONNECTIVE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S8-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"3 > 2 and (5 > 9 or 4 is odd)\" is true.",
+     "outcome": "LOGIC.CONNECTIVE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S8-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "For how many whole numbers n from 1 to 20 is \"n is a multiple of 3 exclusive-or n is a multiple of 4\" true?",
+     "outcome": "LOGIC.CONNECTIVE.02",
+     "answer_lines": [
+      "Count:"
+     ],
+     "correct_answer": "9"
+    },
+    {
+     "id": "S8-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "truth_table",
+     "prompt": "Complete the truth table for \"P exclusive-or Q\" and for \"P or Q\" (inclusive).",
+     "outcome": "LOGIC.CONNECTIVE.02",
+     "variables": [
+      "P",
+      "Q"
+     ],
+     "rows": [
+      [
+       "T",
+       "T"
+      ],
+      [
+       "T",
+       "F"
+      ],
+      [
+       "F",
+       "T"
+      ],
+      [
+       "F",
+       "F"
+      ]
+     ],
+     "columns": [
+      "P exclusive-or Q",
+      "P or Q"
+     ],
+     "correct": [
+      [
+       "F",
+       "T"
+      ],
+      [
+       "T",
+       "T"
+      ],
+      [
+       "T",
+       "T"
+      ],
+      [
+       "F",
+       "F"
+      ]
+     ],
+     "correct_answer": "F T / T T / T T / F F"
+    },
+    {
+     "id": "S8-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Statement S: \"P or Q\" (inclusive). S is false. What can be concluded?",
+     "outcome": "LOGIC.CONNECTIVE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "P is false and Q is false."
+      },
+      {
+       "letter": "B",
+       "text": "P is true and Q is false."
+      },
+      {
+       "letter": "C",
+       "text": "P is false or Q is false."
+      },
+      {
+       "letter": "D",
+       "text": "Exactly one of P and Q is false."
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "P is false and Q is false."
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Design statements with given truth values",
+   "outcome": "LOGIC.CONNECTIVE.02",
+   "relationship": "Expert: build and count assignments that make compound statements true.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S8-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "P, Q and R are statements. In how many of the 8 combinations of truth values is \"(P or Q) and not R\" true?",
+     "outcome": "LOGIC.CONNECTIVE.02",
+     "answer_lines": [
+      "Combinations:"
+     ],
+     "correct_answer": "3"
+    },
+    {
+     "id": "S8-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "Give whole numbers a and b with \"a > b exclusive-or a + b is even\" true and both numbers between 1 and 9.",
+     "outcome": "LOGIC.CONNECTIVE.02",
+     "fields": [
+      {
+       "name": "a",
+       "label": "a ="
+      },
+      {
+       "name": "b",
+       "label": "b ="
+      }
+     ],
+     "rule": "((a > b) != isEven(a + b)) and a >= 1 and a <= 9 and b >= 1 and b <= 9 and isInteger(a) and isInteger(b)",
+     "example_answer": {
+      "a": 5,
+      "b": 2
+     },
+     "correct_answer": "any values that satisfy: ((a > b) != isEven(a + b)) and a >= 1 and a <= 9 and b >= 1 and b <= 9 and isInteger(a) and isInteger(b) (example: a = 5, b = 2)"
+    },
+    {
+     "id": "S8-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"P exclusive-or Q\" has the same truth value as \"(P or Q) and not (P and Q)\" in every row of a truth table.",
+     "outcome": "LOGIC.CONNECTIVE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S8-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Three lamps A, B and C are each on or off. Exactly one of these statements is true: (1) \"A is on or B is on.\" (2) \"C is on.\" (3) \"A is on exclusive-or C is on.\" Which lamps are on?",
+     "outcome": "LOGIC.CONNECTIVE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A only"
+      },
+      {
+       "letter": "B",
+       "text": "A and B"
+      },
+      {
+       "letter": "C",
+       "text": "none"
+      },
+      {
+       "letter": "D",
+       "text": "B only"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "B only"
+    },
+    {
+     "id": "S8-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "For how many whole numbers n from 1 to 30 is \"n is odd and (n is a multiple of 3 or n is a multiple of 5)\" true?",
+     "outcome": "LOGIC.CONNECTIVE.02",
+     "answer_lines": [
+      "Count:"
+     ],
+     "correct_answer": "7"
+    }
+   ]
+  }
+ ]
+}

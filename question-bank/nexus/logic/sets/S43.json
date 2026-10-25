@@ -1,0 +1,637 @@
+{
+ "set": 43,
+ "title": "Proofs about lines and angles",
+ "outcome": "LOGIC.PROOF.05",
+ "genre": "formal logic",
+ "kind": "formal",
+ "family": "formal",
+ "practices": [
+  "MP3"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Order and justify the steps of proofs about angles formed by intersecting and parallel lines",
+   "outcome": "LOGIC.PROOF.05",
+   "questions": [
+    {
+     "id": "S43-M-Q1",
+     "number": 1,
+     "standard": "HSG-CO.C.9",
+     "domain": "formal logic",
+     "type": "order",
+     "prompt": "Lines meet at a point, forming angle 1 and angle 2 as vertical angles, and angle 3 next to both (angle 3 forms a linear pair with angle 1 and with angle 2). Put the steps of the proof that angle 1 = angle 2 in a correct order. (Two orders are correct.)",
+     "outcome": "LOGIC.PROOF.05",
+     "items": [
+      {
+       "key": "A",
+       "text": "angle 1 + angle 3 = 180 degrees (linear pair)"
+      },
+      {
+       "key": "B",
+       "text": "angle 2 + angle 3 = 180 degrees (linear pair)"
+      },
+      {
+       "key": "C",
+       "text": "angle 1 + angle 3 = angle 2 + angle 3 (both sums equal 180 degrees)"
+      },
+      {
+       "key": "D",
+       "text": "angle 1 = angle 2 (subtract angle 3 from both sides)"
+      }
+     ],
+     "correct_order": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "accept_orders": [
+      [
+       "B",
+       "A",
+       "C",
+       "D"
+      ]
+     ],
+     "correct_answer": "angle 1 + angle 3 = 180 degrees (linear pair) → angle 2 + angle 3 = 180 degrees (linear pair) → angle 1 + angle 3 = angle 2 + angle 3 (both sums equal 180 degrees) → angle 1 = angle 2 (subtract angle 3 from both sides)"
+    },
+    {
+     "id": "S43-M-Q2",
+     "number": 2,
+     "standard": "HSG-CO.C.9",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Which pair of angles are alternate interior angles?",
+     "outcome": "LOGIC.PROOF.05",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Angles 2 and 3"
+      },
+      {
+       "letter": "B",
+       "text": "Angles 4 and 5"
+      },
+      {
+       "letter": "C",
+       "text": "Angles 4 and 8"
+      },
+      {
+       "letter": "D",
+       "text": "Angles 1 and 5"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Angles 4 and 5",
+     "figure": {
+      "svg": "assets/S43-M-Q2.svg",
+      "description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions. A note says p is parallel to q."
+     }
+    },
+    {
+     "id": "S43-M-Q3",
+     "number": 3,
+     "standard": "HSG-CO.C.9",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Lines p and q are parallel. If angle 2 = 70 degrees, then angle 7 = 70 degrees.",
+     "outcome": "LOGIC.PROOF.05",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true,
+     "figure": {
+      "svg": "assets/S43-M-Q3.svg",
+      "description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions. A note says p is parallel to q."
+     }
+    },
+    {
+     "id": "S43-M-Q4",
+     "number": 4,
+     "standard": "HSG-CO.C.9",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Lines p and q are parallel, and angle 1 = 115 degrees. Give the measure of angle 6 in degrees.",
+     "outcome": "LOGIC.PROOF.05",
+     "fields": [
+      {
+       "name": "x",
+       "label": "angle 6 ="
+      }
+     ],
+     "rule": "x == 65",
+     "example_answer": {
+      "x": 65
+     },
+     "correct_answer": "any values that satisfy: x == 65 (example: x = 65)",
+     "figure": {
+      "svg": "assets/S43-M-Q4.svg",
+      "description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions. A note says p is parallel to q."
+     }
+    },
+    {
+     "id": "S43-M-Q5",
+     "number": 5,
+     "standard": "HSG-CO.C.9",
+     "domain": "formal logic",
+     "type": "order",
+     "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Put the steps of the proof that angle 3 = angle 6 when p is parallel to q in a correct order. (Two orders are correct.)",
+     "outcome": "LOGIC.PROOF.05",
+     "items": [
+      {
+       "key": "A",
+       "text": "p is parallel to q, cut by transversal t (given)"
+      },
+      {
+       "key": "B",
+       "text": "angle 2 = angle 6 (corresponding angles, p parallel to q)"
+      },
+      {
+       "key": "C",
+       "text": "angle 2 = angle 3 (vertical angles)"
+      },
+      {
+       "key": "D",
+       "text": "angle 3 = angle 6 (both equal angle 2)"
+      }
+     ],
+     "correct_order": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "accept_orders": [
+      [
+       "A",
+       "C",
+       "B",
+       "D"
+      ]
+     ],
+     "correct_answer": "p is parallel to q, cut by transversal t (given) → angle 2 = angle 6 (corresponding angles, p parallel to q) → angle 2 = angle 3 (vertical angles) → angle 3 = angle 6 (both equal angle 2)",
+     "figure": {
+      "svg": "assets/S43-M-Q5.svg",
+      "description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions. A note says p is parallel to q."
+     }
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Name the angle pairs",
+   "outcome": "LOGIC.PROOF.05",
+   "branch_mode": "prerequisite",
+   "relationship": "A proof step cites an angle relationship by name. Students who cannot identify linear pairs, vertical angles and corresponding angles cannot justify the steps.",
+   "author_note": "A proof step cites an angle relationship by name. Students who cannot identify linear pairs, vertical angles and corresponding angles cannot justify the steps.",
+   "questions": [
+    {
+     "id": "S43-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "Two angles form a linear pair (together they make a straight line). One measures 48 degrees. What does the other measure, in degrees?",
+     "outcome": "LOGIC.PROOF.05",
+     "answer_lines": [
+      "Degrees:"
+     ],
+     "correct_answer": "132"
+    },
+    {
+     "id": "S43-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Angles 1 and 4 are vertical angles.",
+     "outcome": "LOGIC.PROOF.05",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true,
+     "figure": {
+      "svg": "assets/S43-B1-Q2.svg",
+      "description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions."
+     }
+    },
+    {
+     "id": "S43-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). What kind of angle pair are angles 3 and 7?",
+     "outcome": "LOGIC.PROOF.05",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Vertical angles"
+      },
+      {
+       "letter": "B",
+       "text": "A linear pair"
+      },
+      {
+       "letter": "C",
+       "text": "Corresponding angles"
+      },
+      {
+       "letter": "D",
+       "text": "Alternate interior angles"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Corresponding angles",
+     "figure": {
+      "svg": "assets/S43-B1-Q3.svg",
+      "description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions."
+     }
+    },
+    {
+     "id": "S43-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Angles 3 and 5 are alternate interior angles.",
+     "outcome": "LOGIC.PROOF.05",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true,
+     "figure": {
+      "svg": "assets/S43-B1-Q4.svg",
+      "description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions."
+     }
+    },
+    {
+     "id": "S43-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Angle 3 = 2x + 10 degrees and angle 2 = 3x - 15 degrees. They are vertical angles. Find x.",
+     "outcome": "LOGIC.PROOF.05",
+     "fields": [
+      {
+       "name": "x",
+       "label": "x ="
+      }
+     ],
+     "rule": "x == 25",
+     "example_answer": {
+      "x": 25
+     },
+     "correct_answer": "any values that satisfy: x == 25 (example: x = 25)",
+     "figure": {
+      "svg": "assets/S43-B1-Q5.svg",
+      "description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions."
+     }
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Perpendicular bisectors and converses",
+   "outcome": "LOGIC.PROOF.05",
+   "relationship": "Harder: the perpendicular bisector theorem and converses.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S43-F1-Q1",
+     "number": 1,
+     "standard": "HSG-CO.C.9",
+     "domain": "formal logic",
+     "type": "order",
+     "prompt": "M is the midpoint of segment AB, and line PM is perpendicular to AB, so P is on the perpendicular bisector of AB. Put the steps of the proof that PA = PB in a correct order. (Two orders are correct.)",
+     "outcome": "LOGIC.PROOF.05",
+     "items": [
+      {
+       "key": "A",
+       "text": "AM = BM, and angles PMA and PMB are right angles (midpoint; perpendicular)"
+      },
+      {
+       "key": "B",
+       "text": "PM = PM (a segment equals itself)"
+      },
+      {
+       "key": "C",
+       "text": "Triangle PMA is congruent to triangle PMB (SAS)"
+      },
+      {
+       "key": "D",
+       "text": "PA = PB (corresponding parts of congruent triangles)"
+      }
+     ],
+     "correct_order": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "accept_orders": [
+      [
+       "B",
+       "A",
+       "C",
+       "D"
+      ]
+     ],
+     "correct_answer": "AM = BM, and angles PMA and PMB are right angles (midpoint; perpendicular) → PM = PM (a segment equals itself) → Triangle PMA is congruent to triangle PMB (SAS) → PA = PB (corresponding parts of congruent triangles)"
+    },
+    {
+     "id": "S43-F1-Q2",
+     "number": 2,
+     "standard": "HSG-CO.C.9",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Theorem: a point is on the perpendicular bisector of AB exactly when it is the same distance from A and B. Point P has PA = PB = 7. What follows?",
+     "outcome": "LOGIC.PROOF.05",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nothing follows without more information."
+      },
+      {
+       "letter": "B",
+       "text": "P is the midpoint of AB."
+      },
+      {
+       "letter": "C",
+       "text": "AB = 7."
+      },
+      {
+       "letter": "D",
+       "text": "P is on the perpendicular bisector of AB."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "P is on the perpendicular bisector of AB."
+    },
+    {
+     "id": "S43-F1-Q3",
+     "number": 3,
+     "standard": "HSG-CO.C.9",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Lines p and q are parallel. Then angle 4 + angle 6 = 180 degrees.",
+     "outcome": "LOGIC.PROOF.05",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true,
+     "figure": {
+      "svg": "assets/S43-F1-Q3.svg",
+      "description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions. A note says p is parallel to q."
+     }
+    },
+    {
+     "id": "S43-F1-Q4",
+     "number": 4,
+     "standard": "HSG-CO.C.9",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Lines p and q are parallel. Angle 4 = 3x + 5 degrees and angle 5 = 5x - 35 degrees. Find x.",
+     "outcome": "LOGIC.PROOF.05",
+     "fields": [
+      {
+       "name": "x",
+       "label": "x ="
+      }
+     ],
+     "rule": "x == 20",
+     "example_answer": {
+      "x": 20
+     },
+     "correct_answer": "any values that satisfy: x == 20 (example: x = 20)",
+     "figure": {
+      "svg": "assets/S43-F1-Q4.svg",
+      "description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions. A note says p is parallel to q."
+     }
+    },
+    {
+     "id": "S43-F1-Q5",
+     "number": 5,
+     "standard": "HSG-CO.C.9",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Here p and q are NOT known to be parallel. Which fact would prove that they are parallel?",
+     "outcome": "LOGIC.PROOF.05",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "angle 3 = angle 6"
+      },
+      {
+       "letter": "B",
+       "text": "angle 1 + angle 2 = 180 degrees"
+      },
+      {
+       "letter": "C",
+       "text": "angle 1 = angle 4"
+      },
+      {
+       "letter": "D",
+       "text": "angle 5 = angle 8"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "angle 3 = angle 6",
+     "figure": {
+      "svg": "assets/S43-F1-Q5.svg",
+      "description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions."
+     }
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Complete and check angle proofs",
+   "outcome": "LOGIC.PROOF.05",
+   "relationship": "Expert: same-side interior angles, flawed proofs, systems.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S43-F2-Q1",
+     "number": 1,
+     "standard": "HSG-CO.C.9",
+     "domain": "formal logic",
+     "type": "order",
+     "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Put the steps of the proof that angle 4 + angle 6 = 180 degrees when p is parallel to q in a correct order. (Two orders are correct.)",
+     "outcome": "LOGIC.PROOF.05",
+     "items": [
+      {
+       "key": "A",
+       "text": "angle 4 = angle 5 (alternate interior angles, p parallel to q)"
+      },
+      {
+       "key": "B",
+       "text": "angle 5 + angle 6 = 180 degrees (linear pair)"
+      },
+      {
+       "key": "C",
+       "text": "angle 4 + angle 6 = 180 degrees (substitute angle 4 for angle 5)"
+      }
+     ],
+     "correct_order": [
+      "A",
+      "B",
+      "C"
+     ],
+     "accept_orders": [
+      [
+       "B",
+       "A",
+       "C"
+      ]
+     ],
+     "correct_answer": "angle 4 = angle 5 (alternate interior angles, p parallel to q) → angle 5 + angle 6 = 180 degrees (linear pair) → angle 4 + angle 6 = 180 degrees (substitute angle 4 for angle 5)",
+     "figure": {
+      "svg": "assets/S43-F2-Q1.svg",
+      "description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions. A note says p is parallel to q."
+     }
+    },
+    {
+     "id": "S43-F2-Q2",
+     "number": 2,
+     "standard": "HSG-CO.C.9",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "A student writes: \"Angle 1 = angle 4 because they look the same size in the diagram.\" What is wrong with this step?",
+     "outcome": "LOGIC.PROOF.05",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A diagram is not a reason; the step needs the vertical angles theorem."
+      },
+      {
+       "letter": "B",
+       "text": "The step should say angle 1 + angle 4 = 180 degrees."
+      },
+      {
+       "letter": "C",
+       "text": "Nothing; looking at the diagram is enough."
+      },
+      {
+       "letter": "D",
+       "text": "Angles 1 and 4 are never equal."
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "A diagram is not a reason; the step needs the vertical angles theorem."
+    },
+    {
+     "id": "S43-F2-Q3",
+     "number": 3,
+     "standard": "HSG-CO.C.9",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Lines p and q are parallel. Angle 1 = 2x + 30 degrees and angle 6 = x + 15 degrees. Find x.",
+     "outcome": "LOGIC.PROOF.05",
+     "fields": [
+      {
+       "name": "x",
+       "label": "x ="
+      }
+     ],
+     "rule": "x == 45",
+     "example_answer": {
+      "x": 45
+     },
+     "correct_answer": "any values that satisfy: x == 45 (example: x = 45)",
+     "figure": {
+      "svg": "assets/S43-F2-Q3.svg",
+      "description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions. A note says p is parallel to q."
+     }
+    },
+    {
+     "id": "S43-F2-Q4",
+     "number": 4,
+     "standard": "HSG-CO.C.9",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Without knowing that p and q are parallel, one can conclude that angle 3 = angle 6.",
+     "outcome": "LOGIC.PROOF.05",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true,
+     "figure": {
+      "svg": "assets/S43-F2-Q4.svg",
+      "description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions."
+     }
+    },
+    {
+     "id": "S43-F2-Q5",
+     "number": 5,
+     "standard": "HSG-CO.C.9",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "P is on the perpendicular bisector of segment AB. PA = 3x - 4 and PB = x + 10. What is PA?",
+     "outcome": "LOGIC.PROOF.05",
+     "answer_lines": [
+      "PA ="
+     ],
+     "correct_answer": "17"
+    }
+   ]
+  }
+ ]
+}

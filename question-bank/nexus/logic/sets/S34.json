@@ -1,0 +1,580 @@
+{
+ "set": 34,
+ "title": "Translate clues into conditions",
+ "outcome": "LOGIC.CONSTRAINT.02",
+ "genre": "clue translation",
+ "kind": "puzzle",
+ "family": "constraint",
+ "practices": [
+  "MP2",
+  "MP6"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Translate puzzle clues into exact conditions and test candidate arrangements against them",
+   "outcome": "LOGIC.CONSTRAINT.02",
+   "questions": [
+    {
+     "id": "S34-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "clue translation",
+     "type": "mc",
+     "prompt": "Five friends, Ava, Ben, Cal, Dee and Eli, each use one of five lockers numbered 1 to 5 from left to right, one friend per locker. \"Left of\" means a lower number. The letters A, B, C, D and E stand for the friends' locker numbers. Which condition says exactly the same thing as the clue \"Exactly one locker lies between Cal and Dee\"?",
+     "outcome": "LOGIC.CONSTRAINT.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "C - D = 2"
+      },
+      {
+       "letter": "B",
+       "text": "|C - D| = 1"
+      },
+      {
+       "letter": "C",
+       "text": "|C - D| >= 2"
+      },
+      {
+       "letter": "D",
+       "text": "|C - D| = 2"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "|C - D| = 2"
+    },
+    {
+     "id": "S34-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "clue translation",
+     "type": "order",
+     "prompt": "Five friends, Ava, Ben, Cal, Dee and Eli, each use one of five lockers numbered 1 to 5 from left to right, one friend per locker. \"Left of\" means a lower number. The letters A, B, C, D and E stand for the friends' locker numbers. Clues: (1) Ava is somewhere left of Ben. (2) Exactly one locker lies between Cal and Dee. (3) Eli is not at either end. (4) Ben and Cal are next to each other. (5) Dee is in an even-numbered locker. Put the friends in locker order, from locker 1 to locker 5.",
+     "outcome": "LOGIC.CONSTRAINT.02",
+     "items": [
+      {
+       "key": "A",
+       "text": "Ava"
+      },
+      {
+       "key": "B",
+       "text": "Ben"
+      },
+      {
+       "key": "C",
+       "text": "Cal"
+      },
+      {
+       "key": "D",
+       "text": "Dee"
+      },
+      {
+       "key": "E",
+       "text": "Eli"
+      }
+     ],
+     "correct_order": [
+      "A",
+      "D",
+      "E",
+      "C",
+      "B"
+     ],
+     "correct_answer": "Ava → Dee → Eli → Cal → Ben"
+    },
+    {
+     "id": "S34-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "clue translation",
+     "type": "tf",
+     "prompt": "Five friends, Ava, Ben, Cal, Dee and Eli, each use one of five lockers numbered 1 to 5 from left to right, one friend per locker. \"Left of\" means a lower number. The letters A, B, C, D and E stand for the friends' locker numbers. Clues: (1) Ava is somewhere left of Ben. (2) Exactly one locker lies between Cal and Dee. (3) Eli is not at either end. (4) Ben and Cal are next to each other. (5) Dee is in an even-numbered locker. The arrangement Ava, Cal, Eli, Dee, Ben (lockers 1 to 5) breaks exactly one of the five clues.",
+     "outcome": "LOGIC.CONSTRAINT.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S34-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "clue translation",
+     "type": "mc",
+     "prompt": "Five friends, Ava, Ben, Cal, Dee and Eli, each use one of five lockers numbered 1 to 5 from left to right, one friend per locker. \"Left of\" means a lower number. The letters A, B, C, D and E stand for the friends' locker numbers. Clues: (1) Ava is somewhere left of Ben. (2) Exactly one locker lies between Cal and Dee. (3) Eli is not at either end. (4) Ben and Cal are next to each other. (5) Dee is in an even-numbered locker. The arrangement Ava, Dee, Eli, Ben, Cal (lockers 1 to 5) breaks one clue. Which one?",
+     "outcome": "LOGIC.CONSTRAINT.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Clue 2"
+      },
+      {
+       "letter": "B",
+       "text": "Clue 5"
+      },
+      {
+       "letter": "C",
+       "text": "Clue 1"
+      },
+      {
+       "letter": "D",
+       "text": "Clue 4"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Clue 2"
+    },
+    {
+     "id": "S34-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "clue translation",
+     "type": "values",
+     "prompt": "A row has nine lockers numbered 1 to 9. Eli's locker must meet every condition: it is odd-numbered; it is not at either end (not 1 and not 9); and it is at least 2 lockers away from locker 5 (|E - 5| >= 2). Give one locker number Eli could have.",
+     "outcome": "LOGIC.CONSTRAINT.02",
+     "fields": [
+      {
+       "name": "e",
+       "label": "E ="
+      }
+     ],
+     "rule": "isInteger(e) and isOdd(e) and e > 1 and e < 9 and abs(e - 5) >= 2",
+     "example_answer": {
+      "e": 3
+     },
+     "correct_answer": "any values that satisfy: isInteger(e) and isOdd(e) and e > 1 and e < 9 and abs(e - 5) >= 2 (example: e = 3)"
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Strategy: write each clue as a condition on numbers",
+   "outcome": "LOGIC.CONSTRAINT.02",
+   "branch_mode": "guided_strategy",
+   "relationship": "Students who misread a clue test arrangements against the wrong rule. Writing each clue as a condition on locker numbers makes every test exact.",
+   "author_note": "Students who misread a clue test arrangements against the wrong rule. Writing each clue as a condition on locker numbers makes every test exact.",
+   "lesson": {
+    "title": "Write each clue as a condition on numbers",
+    "text": [
+     "Give each person a letter that stands for their position number.",
+     "Translate each clue: \"somewhere left of\" becomes <, \"next to\" becomes a difference of 1 in either order, \"exactly one between\" becomes a difference of 2 in either order.",
+     "To test an arrangement, put its numbers into every condition. One failed condition rules the arrangement out."
+    ],
+    "example": {
+     "title": "Worked example (a different puzzle)",
+     "prompt": [
+      "Three books, Map (M), Novel (N) and Poems (P), stand on a shelf in spots 1 to 3. Clues: Map is next to Poems; Novel is not in spot 2."
+     ],
+     "steps": [
+      "Conditions: |M - P| = 1 and N is 1 or 3.",
+      "If N = 1, then M and P fill 2 and 3, which are next to each other: N, M, P or N, P, M.",
+      "If N = 3, then M and P fill 1 and 2: M, P, N or P, M, N. Four arrangements fit."
+     ]
+    }
+   },
+   "questions": [
+    {
+     "id": "S34-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "clue translation",
+     "type": "mc",
+     "prompt": "Five friends, Ava, Ben, Cal, Dee and Eli, each use one of five lockers numbered 1 to 5 from left to right, one friend per locker. \"Left of\" means a lower number. The letters A, B, C, D and E stand for the friends' locker numbers. Which condition matches the clue \"Ava is somewhere left of Ben\"?",
+     "outcome": "LOGIC.CONSTRAINT.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A = B - 1"
+      },
+      {
+       "letter": "B",
+       "text": "A > B"
+      },
+      {
+       "letter": "C",
+       "text": "A < B"
+      },
+      {
+       "letter": "D",
+       "text": "A + 1 < B"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A < B"
+    },
+    {
+     "id": "S34-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "clue translation",
+     "type": "mc",
+     "prompt": "Five friends, Ava, Ben, Cal, Dee and Eli, each use one of five lockers numbered 1 to 5 from left to right, one friend per locker. \"Left of\" means a lower number. The letters A, B, C, D and E stand for the friends' locker numbers. Which condition matches the clue \"Ben and Cal are next to each other\"?",
+     "outcome": "LOGIC.CONSTRAINT.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "B - C = 1"
+      },
+      {
+       "letter": "B",
+       "text": "|B - C| = 1"
+      },
+      {
+       "letter": "C",
+       "text": "|B - C| = 2"
+      },
+      {
+       "letter": "D",
+       "text": "|B - C| <= 2"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "|B - C| = 1"
+    },
+    {
+     "id": "S34-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "clue translation",
+     "type": "tf",
+     "prompt": "Five friends, Ava, Ben, Cal, Dee and Eli, each use one of five lockers numbered 1 to 5 from left to right, one friend per locker. \"Left of\" means a lower number. The letters A, B, C, D and E stand for the friends' locker numbers. With five lockers, the clue \"Eli is not at either end\" means E is 2, 3 or 4.",
+     "outcome": "LOGIC.CONSTRAINT.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S34-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "clue translation",
+     "type": "tf",
+     "prompt": "Five friends, Ava, Ben, Cal, Dee and Eli, each use one of five lockers numbered 1 to 5 from left to right, one friend per locker. \"Left of\" means a lower number. The letters A, B, C, D and E stand for the friends' locker numbers. The clue \"Dee is directly left of Ava\" means the same as D < A.",
+     "outcome": "LOGIC.CONSTRAINT.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S34-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "clue translation",
+     "type": "sa",
+     "prompt": "Five friends, Ava, Ben, Cal, Dee and Eli, each use one of five lockers numbered 1 to 5 from left to right, one friend per locker. \"Left of\" means a lower number. The letters A, B, C, D and E stand for the friends' locker numbers. Dee is in locker 2, and exactly one locker lies between Cal and Dee. Which locker is Cal in?",
+     "outcome": "LOGIC.CONSTRAINT.02",
+     "answer_lines": [
+      "Locker:"
+     ],
+     "correct_answer": "4"
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Harder clue words",
+   "outcome": "LOGIC.CONSTRAINT.02",
+   "relationship": "Harder: \"at least\", \"unless\", \"directly\" and six-person puzzles.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S34-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "clue translation",
+     "type": "mc",
+     "prompt": "Five friends, Ava, Ben, Cal, Dee and Eli, each use one of five lockers numbered 1 to 5 from left to right, one friend per locker. \"Left of\" means a lower number. The letters A, B, C, D and E stand for the friends' locker numbers. Which condition matches the clue \"At least two lockers lie between Ava and Eli\"?",
+     "outcome": "LOGIC.CONSTRAINT.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "|A - E| >= 3"
+      },
+      {
+       "letter": "B",
+       "text": "A - E >= 3"
+      },
+      {
+       "letter": "C",
+       "text": "|A - E| = 3"
+      },
+      {
+       "letter": "D",
+       "text": "|A - E| >= 2"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "|A - E| >= 3"
+    },
+    {
+     "id": "S34-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "clue translation",
+     "type": "mc",
+     "prompt": "Five friends, Ava, Ben, Cal, Dee and Eli, each use one of five lockers numbered 1 to 5 from left to right, one friend per locker. \"Left of\" means a lower number. The letters A, B, C, D and E stand for the friends' locker numbers. In these puzzles, \"X unless Y\" means \"if Y is false, then X is true.\" Which condition matches the clue \"Ben is in locker 3 unless Cal is\"?",
+     "outcome": "LOGIC.CONSTRAINT.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "C = 3"
+      },
+      {
+       "letter": "B",
+       "text": "B = 3 or C = 3"
+      },
+      {
+       "letter": "C",
+       "text": "B is not 3 and C is not 3"
+      },
+      {
+       "letter": "D",
+       "text": "B = 3 and C is not 3"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "B = 3 or C = 3"
+    },
+    {
+     "id": "S34-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "clue translation",
+     "type": "order",
+     "prompt": "Six friends, Ava, Ben, Cal, Dee, Eli and Fay, each use one of six lockers numbered 1 to 6 from left to right. \"Left of\" means a lower number. Clues: (1) Ava is somewhere left of Ben. (2) Exactly two lockers lie between Cal and Dee. (3) Fay is somewhere right of Cal. (4) Dee is in an odd-numbered locker. (5) Cal is somewhere left of Ava. (6) Ben is not in locker 6. Put the friends in locker order, from locker 1 to locker 6.",
+     "outcome": "LOGIC.CONSTRAINT.02",
+     "items": [
+      {
+       "key": "A",
+       "text": "Ava"
+      },
+      {
+       "key": "B",
+       "text": "Ben"
+      },
+      {
+       "key": "C",
+       "text": "Cal"
+      },
+      {
+       "key": "D",
+       "text": "Dee"
+      },
+      {
+       "key": "E",
+       "text": "Eli"
+      },
+      {
+       "key": "F",
+       "text": "Fay"
+      }
+     ],
+     "correct_order": [
+      "E",
+      "C",
+      "A",
+      "B",
+      "D",
+      "F"
+     ],
+     "correct_answer": "Eli → Cal → Ava → Ben → Dee → Fay"
+    },
+    {
+     "id": "S34-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "clue translation",
+     "type": "tf",
+     "prompt": "Five friends, Ava, Ben, Cal, Dee and Eli, each use one of five lockers numbered 1 to 5 from left to right, one friend per locker. \"Left of\" means a lower number. The letters A, B, C, D and E stand for the friends' locker numbers. The two conditions A < B and B < A + 2 together say that Ben is directly right of Ava.",
+     "outcome": "LOGIC.CONSTRAINT.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S34-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "clue translation",
+     "type": "values",
+     "prompt": "Seven lockers are numbered 1 to 7 from left to right. Give lockers for Ava and Ben that meet every clue: Ava is somewhere left of Ben; at least two lockers lie between them; Ben's locker is even-numbered.",
+     "outcome": "LOGIC.CONSTRAINT.02",
+     "fields": [
+      {
+       "name": "a",
+       "label": "A ="
+      },
+      {
+       "name": "b",
+       "label": "B ="
+      }
+     ],
+     "rule": "isInteger(a) and isInteger(b) and a >= 1 and b <= 7 and a < b and b - a >= 3 and isEven(b)",
+     "example_answer": {
+      "a": 1,
+      "b": 4
+     },
+     "correct_answer": "any values that satisfy: isInteger(a) and isInteger(b) and a >= 1 and b <= 7 and a < b and b - a >= 3 and isEven(b) (example: a = 1, b = 4)"
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Test what each clue contributes",
+   "outcome": "LOGIC.CONSTRAINT.02",
+   "relationship": "Expert: count the arrangements a set of clues allows.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S34-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "clue translation",
+     "type": "sa",
+     "prompt": "Five friends, Ava, Ben, Cal, Dee and Eli, each use one of five lockers numbered 1 to 5 from left to right, one friend per locker. \"Left of\" means a lower number. The letters A, B, C, D and E stand for the friends' locker numbers. Clues: (1) Ava is somewhere left of Ben. (2) Exactly one locker lies between Cal and Dee. (3) Eli is not at either end. (4) Ben and Cal are next to each other. (5) Dee is in an even-numbered locker. If clue 3 is removed, how many arrangements fit the other four clues?",
+     "outcome": "LOGIC.CONSTRAINT.02",
+     "answer_lines": [
+      "Arrangements:"
+     ],
+     "correct_answer": "4"
+    },
+    {
+     "id": "S34-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "clue translation",
+     "type": "sa",
+     "prompt": "Five friends, Ava, Ben, Cal, Dee and Eli, each use one of five lockers numbered 1 to 5 from left to right, one friend per locker. \"Left of\" means a lower number. The letters A, B, C, D and E stand for the friends' locker numbers. How many arrangements fit both clues \"Eli is not at either end\" and \"Ben and Cal are next to each other\" (and no other clues)?",
+     "outcome": "LOGIC.CONSTRAINT.02",
+     "answer_lines": [
+      "Arrangements:"
+     ],
+     "correct_answer": "24"
+    },
+    {
+     "id": "S34-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "clue translation",
+     "type": "tf",
+     "prompt": "Five friends, Ava, Ben, Cal, Dee and Eli, each use one of five lockers numbered 1 to 5 from left to right, one friend per locker. \"Left of\" means a lower number. The letters A, B, C, D and E stand for the friends' locker numbers. Clues: (1) Ava is somewhere left of Ben. (2) Exactly one locker lies between Cal and Dee. (3) Eli is not at either end. (4) Ben and Cal are next to each other. (5) Dee is in an even-numbered locker. If clue 5 is replaced by \"Dee is in locker 2\", the puzzle still has exactly one answer, and it is the same answer.",
+     "outcome": "LOGIC.CONSTRAINT.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S34-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "clue translation",
+     "type": "mc",
+     "prompt": "Five friends, Ava, Ben, Cal, Dee and Eli, each use one of five lockers numbered 1 to 5 from left to right, one friend per locker. \"Left of\" means a lower number. The letters A, B, C, D and E stand for the friends' locker numbers. Which condition matches the clue \"Ava and Ben are not both at the ends\"?",
+     "outcome": "LOGIC.CONSTRAINT.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Exactly one of Ava and Ben is in locker 1 or 5"
+      },
+      {
+       "letter": "B",
+       "text": "Ava and Ben are both in lockers 2, 3 or 4"
+      },
+      {
+       "letter": "C",
+       "text": "Neither Ava nor Ben is in locker 1 or 5"
+      },
+      {
+       "letter": "D",
+       "text": "At most one of Ava and Ben is in locker 1 or 5"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "At most one of Ava and Ben is in locker 1 or 5"
+    },
+    {
+     "id": "S34-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "clue translation",
+     "type": "tf",
+     "prompt": "Five friends, Ava, Ben, Cal, Dee and Eli, each use one of five lockers numbered 1 to 5 from left to right, one friend per locker. \"Left of\" means a lower number. The letters A, B, C, D and E stand for the friends' locker numbers. In these puzzles, \"X unless Y\" means \"if Y is false, then X is true.\" Under the clue \"Ben is in locker 3 unless Cal is\", an arrangement with Ava in locker 3 is allowed.",
+     "outcome": "LOGIC.CONSTRAINT.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    }
+   ]
+  }
+ ]
+}

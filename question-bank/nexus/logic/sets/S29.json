@@ -1,0 +1,653 @@
+{
+ "set": 29,
+ "title": "Witnesses and counterexamples",
+ "outcome": "LOGIC.QUANT.03",
+ "genre": "formal logic",
+ "kind": "formal",
+ "family": "formal",
+ "practices": [
+  "MP3"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Give a witness for a \"some\" statement and a counterexample to an \"all\" statement",
+   "outcome": "LOGIC.QUANT.03",
+   "questions": [
+    {
+     "id": "S29-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "Give a witness for the true statement \"Some whole number between 20 and 30 is prime.\"",
+     "outcome": "LOGIC.QUANT.03",
+     "fields": [
+      {
+       "name": "n",
+       "label": "n ="
+      }
+     ],
+     "rule": "isPrime(n) and n > 20 and n < 30",
+     "example_answer": {
+      "n": 23
+     },
+     "correct_answer": "any values that satisfy: isPrime(n) and n > 20 and n < 30 (example: n = 23)"
+    },
+    {
+     "id": "S29-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "Give a counterexample to \"Every whole number that is divisible by 3 is odd.\"",
+     "outcome": "LOGIC.QUANT.03",
+     "fields": [
+      {
+       "name": "n",
+       "label": "n ="
+      }
+     ],
+     "rule": "n % 3 == 0 and isEven(n) and isInteger(n)",
+     "example_answer": {
+      "n": 6
+     },
+     "correct_answer": "any values that satisfy: n % 3 == 0 and isEven(n) and isInteger(n) (example: n = 6)"
+    },
+    {
+     "id": "S29-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Which number is a counterexample to \"Every number that ends in 1 is prime\"?",
+     "outcome": "LOGIC.QUANT.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "21"
+      },
+      {
+       "letter": "B",
+       "text": "31"
+      },
+      {
+       "letter": "C",
+       "text": "12"
+      },
+      {
+       "letter": "D",
+       "text": "11"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "21"
+    },
+    {
+     "id": "S29-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "Give real numbers a and b that are a counterexample to \"For all real numbers a and b, (a + b) squared = a squared + b squared.\"",
+     "outcome": "LOGIC.QUANT.03",
+     "fields": [
+      {
+       "name": "a",
+       "label": "a ="
+      },
+      {
+       "name": "b",
+       "label": "b ="
+      }
+     ],
+     "rule": "(a + b)^2 != a^2 + b^2",
+     "example_answer": {
+      "a": 1,
+      "b": 1
+     },
+     "correct_answer": "any values that satisfy: (a + b)^2 != a^2 + b^2 (example: a = 1, b = 1)"
+    },
+    {
+     "id": "S29-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "One example where a statement is true proves \"Every number has this property.\"",
+     "outcome": "LOGIC.QUANT.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Read \"every\" and \"some\" statements",
+   "outcome": "LOGIC.QUANT.01",
+   "branch_mode": "prerequisite",
+   "relationship": "A student must know what kind of claim it is before choosing a witness or a counterexample.",
+   "author_note": "A student must know what kind of claim it is before choosing a witness or a counterexample.",
+   "questions": [
+    {
+     "id": "S29-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "What kind of example disproves \"Every bird can fly\"?",
+     "outcome": "LOGIC.QUANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "a flying insect"
+      },
+      {
+       "letter": "B",
+       "text": "a bird that can fly"
+      },
+      {
+       "letter": "C",
+       "text": "a bird that cannot fly"
+      },
+      {
+       "letter": "D",
+       "text": "an animal that is not a bird"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "a bird that cannot fly"
+    },
+    {
+     "id": "S29-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "What kind of example proves \"Some square numbers are even\"?",
+     "outcome": "LOGIC.QUANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "an odd square number"
+      },
+      {
+       "letter": "B",
+       "text": "an even number that is not a square"
+      },
+      {
+       "letter": "C",
+       "text": "every square number"
+      },
+      {
+       "letter": "D",
+       "text": "an even square number, such as 4"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "an even square number, such as 4"
+    },
+    {
+     "id": "S29-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"All cats are black\" is shown true by one black cat.",
+     "outcome": "LOGIC.QUANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S29-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"All cats are black\" is shown false by one white cat.",
+     "outcome": "LOGIC.QUANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S29-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"No number is negative\" is shown false by the number 1.",
+     "outcome": "LOGIC.QUANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "B2",
+   "section_code": "B2",
+   "relation": "backward",
+   "skill": "Test a number against a property",
+   "outcome": "LOGIC.QUANT.03",
+   "branch_mode": "prerequisite",
+   "relationship": "Checking whether a candidate works requires testing each condition exactly.",
+   "author_note": "Checking whether a candidate works requires testing each condition exactly.",
+   "questions": [
+    {
+     "id": "S29-B2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "15 is prime.",
+     "outcome": "LOGIC.QUANT.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S29-B2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "27 is divisible by 3 and odd.",
+     "outcome": "LOGIC.QUANT.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S29-B2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "What is 7 squared minus 7?",
+     "outcome": "LOGIC.QUANT.03",
+     "answer_lines": [
+      "Value:"
+     ],
+     "correct_answer": "42"
+    },
+    {
+     "id": "S29-B2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "2 is both prime and even.",
+     "outcome": "LOGIC.QUANT.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S29-B2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Which number is a multiple of 4 but not of 8?",
+     "outcome": "LOGIC.QUANT.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "12"
+      },
+      {
+       "letter": "B",
+       "text": "10"
+      },
+      {
+       "letter": "C",
+       "text": "16"
+      },
+      {
+       "letter": "D",
+       "text": "8"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "12"
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Counterexamples in algebra",
+   "outcome": "LOGIC.QUANT.03",
+   "relationship": "Harder: counterexamples to tempting algebra rules.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S29-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "Give a real number x that is a counterexample to \"For every real number x, x squared ≥ x.\"",
+     "outcome": "LOGIC.QUANT.03",
+     "fields": [
+      {
+       "name": "x",
+       "label": "x ="
+      }
+     ],
+     "rule": "x^2 < x",
+     "example_answer": {
+      "x": 0.5
+     },
+     "correct_answer": "any values that satisfy: x^2 < x (example: x = 0.5)"
+    },
+    {
+     "id": "S29-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "Give positive whole numbers a and b that are a counterexample to \"If a divides b x c, then a divides b or a divides c\", using c = 2.",
+     "outcome": "LOGIC.QUANT.03",
+     "fields": [
+      {
+       "name": "a",
+       "label": "a ="
+      },
+      {
+       "name": "b",
+       "label": "b ="
+      }
+     ],
+     "rule": "divides(a, b * 2) and not divides(a, b) and not divides(a, 2) and a > 0 and b > 0 and isInteger(a) and isInteger(b)",
+     "example_answer": {
+      "a": 4,
+      "b": 2
+     },
+     "correct_answer": "any values that satisfy: divides(a, b * 2) and not divides(a, b) and not divides(a, 2) and a > 0 and b > 0 and isInteger(a) and isInteger(b) (example: a = 4, b = 2)"
+    },
+    {
+     "id": "S29-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Which value of n is a counterexample to \"n squared + n + 1 is prime for every whole number n ≥ 1\"?",
+     "outcome": "LOGIC.QUANT.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "1"
+      },
+      {
+       "letter": "B",
+       "text": "4"
+      },
+      {
+       "letter": "C",
+       "text": "3"
+      },
+      {
+       "letter": "D",
+       "text": "2"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "4"
+    },
+    {
+     "id": "S29-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "The statement \"For every real x, if x > 1 then x squared > x\" has no counterexample.",
+     "outcome": "LOGIC.QUANT.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S29-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "Give whole numbers a and b, each from 1 to 9, that show \"a - b = b - a\" can be false.",
+     "outcome": "LOGIC.QUANT.03",
+     "fields": [
+      {
+       "name": "a",
+       "label": "a ="
+      },
+      {
+       "name": "b",
+       "label": "b ="
+      }
+     ],
+     "rule": "a - b != b - a and a >= 1 and a <= 9 and b >= 1 and b <= 9",
+     "example_answer": {
+      "a": 5,
+      "b": 2
+     },
+     "correct_answer": "any values that satisfy: a - b != b - a and a >= 1 and a <= 9 and b >= 1 and b <= 9 (example: a = 5, b = 2)"
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Witnesses that are hard to find",
+   "outcome": "LOGIC.QUANT.03",
+   "relationship": "Expert: search a stated range carefully, or show none exists.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S29-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "Give a witness for \"Some whole number from 1 to 100 leaves remainder 2 when divided by 3, remainder 3 when divided by 4, and remainder 4 when divided by 5.\"",
+     "outcome": "LOGIC.QUANT.03",
+     "fields": [
+      {
+       "name": "n",
+       "label": "n ="
+      }
+     ],
+     "rule": "n % 3 == 2 and n % 4 == 3 and n % 5 == 4 and n >= 1 and n <= 100",
+     "example_answer": {
+      "n": 59
+     },
+     "correct_answer": "any values that satisfy: n % 3 == 2 and n % 4 == 3 and n % 5 == 4 and n >= 1 and n <= 100 (example: n = 59)"
+    },
+    {
+     "id": "S29-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Is there a whole number n from 1 to 100 with n squared ending in the digit 2?",
+     "outcome": "LOGIC.QUANT.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No: but only because 2 is even."
+      },
+      {
+       "letter": "B",
+       "text": "Yes: n = 12."
+      },
+      {
+       "letter": "C",
+       "text": "Yes: n = 22."
+      },
+      {
+       "letter": "D",
+       "text": "No: squares end only in 0, 1, 4, 5, 6 or 9."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "No: squares end only in 0, 1, 4, 5, 6 or 9."
+    },
+    {
+     "id": "S29-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "Give whole numbers a, b and c (each from 1 to 20) with a squared + b squared = c squared and a < b.",
+     "outcome": "LOGIC.QUANT.03",
+     "fields": [
+      {
+       "name": "a",
+       "label": "a ="
+      },
+      {
+       "name": "b",
+       "label": "b ="
+      },
+      {
+       "name": "c",
+       "label": "c ="
+      }
+     ],
+     "rule": "a^2 + b^2 == c^2 and a < b and a >= 1 and c <= 20 and isInteger(a) and isInteger(b) and isInteger(c)",
+     "example_answer": {
+      "a": 3,
+      "b": 4,
+      "c": 5
+     },
+     "correct_answer": "any values that satisfy: a^2 + b^2 == c^2 and a < b and a >= 1 and c <= 20 and isInteger(a) and isInteger(b) and isInteger(c) (example: a = 3, b = 4, c = 5)"
+    },
+    {
+     "id": "S29-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "How many counterexamples to \"Every odd number from 1 to 30 is prime\" are there in that range?",
+     "outcome": "LOGIC.QUANT.03",
+     "answer_lines": [
+      "Counterexamples:"
+     ],
+     "correct_answer": "6"
+    },
+    {
+     "id": "S29-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "To disprove \"There is a whole number n with n + 5 = n\", one example is enough.",
+     "outcome": "LOGIC.QUANT.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,4 @@
+Validator (src/validate.py): 23 required checks, all PASS; 3 balance and style checks, all PASS. Details in VALIDATION.md.
+Game importer, check-only mode (tools/import-collection/import.ts --check): 54 sets, 1170 questions, 0 invalid, 0 warnings: "the bank is valid".
+Game response checks (src/tools/game_checks.ts, using the game's own response checkers): 204 interactive questions (order, grid, truth table, mark, values), 617 keyed and wrong responses, 0 problems.
+Build-time solvers: every ordering and grid enumerated, every truth table and Venn region computed, every rule-checked answer tested with its example and listed mistakes, and every check or compute function re-run on each build.

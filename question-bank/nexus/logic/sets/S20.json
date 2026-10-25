@@ -1,0 +1,608 @@
+{
+ "set": 20,
+ "title": "What is on top? Stacking and occlusion",
+ "outcome": "LOGIC.SPATIAL.03",
+ "genre": "occlusion and stacking",
+ "kind": "puzzle",
+ "family": "visual",
+ "practices": [
+  "MP7",
+  "MP1"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Infer stacking order from what is visible",
+   "outcome": "LOGIC.SPATIAL.03",
+   "questions": [
+    {
+     "id": "S20-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "occlusion and stacking",
+     "type": "order",
+     "prompt": "Rectangular paper sheets are lying flat, one on top of another, seen from directly above. Each sheet is white with a dark outline and a letter in its corner. A sheet hides the parts of the sheets under it. This stack has 3 sheets: A, B, C. Put the sheets in order from the BOTTOM sheet to the TOP sheet.",
+     "outcome": "LOGIC.SPATIAL.03",
+     "items": [
+      {
+       "key": "A",
+       "text": "sheet A"
+      },
+      {
+       "key": "B",
+       "text": "sheet B"
+      },
+      {
+       "key": "C",
+       "text": "sheet C"
+      }
+     ],
+     "correct_order": [
+      "B",
+      "C",
+      "A"
+     ],
+     "correct_answer": "sheet B → sheet C → sheet A",
+     "figure": {
+      "svg": "assets/S20-M-Q1.svg",
+      "description": "Several overlapping rectangles labeled with letters, seen from above."
+     }
+    },
+    {
+     "id": "S20-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "occlusion and stacking",
+     "type": "order",
+     "prompt": "Rectangular paper sheets are lying flat, one on top of another, seen from directly above. Each sheet is white with a dark outline and a letter in its corner. A sheet hides the parts of the sheets under it. This stack has 4 sheets: A, B, C, D. List the sheets starting with the one at the BOTTOM and ending with the one on TOP.",
+     "outcome": "LOGIC.SPATIAL.03",
+     "items": [
+      {
+       "key": "A",
+       "text": "sheet A"
+      },
+      {
+       "key": "B",
+       "text": "sheet B"
+      },
+      {
+       "key": "C",
+       "text": "sheet C"
+      },
+      {
+       "key": "D",
+       "text": "sheet D"
+      }
+     ],
+     "correct_order": [
+      "B",
+      "C",
+      "A",
+      "D"
+     ],
+     "correct_answer": "sheet B → sheet C → sheet A → sheet D",
+     "figure": {
+      "svg": "assets/S20-M-Q2.svg",
+      "description": "Several overlapping rectangles labeled with letters, seen from above."
+     }
+    },
+    {
+     "id": "S20-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "occlusion and stacking",
+     "type": "mc",
+     "prompt": "Four round discs are stacked with their centers lined up, from bottom to top: W (radius 5 cm), X (radius 3 cm), Y (radius 4 cm), Z (radius 1 cm). Looking straight down from above, which discs can be seen?",
+     "outcome": "LOGIC.SPATIAL.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "W and Z"
+      },
+      {
+       "letter": "B",
+       "text": "Z only"
+      },
+      {
+       "letter": "C",
+       "text": "W, Y and Z"
+      },
+      {
+       "letter": "D",
+       "text": "W, X, Y and Z"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "W, Y and Z"
+    },
+    {
+     "id": "S20-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "occlusion and stacking",
+     "type": "order",
+     "prompt": "Rectangular paper sheets are lying flat, one on top of another, seen from directly above. Each sheet is white with a dark outline and a letter in its corner. A sheet hides the parts of the sheets under it. This stack has 4 sheets: A, B, C, D. Put the sheets in order from the BOTTOM sheet to the TOP sheet.",
+     "outcome": "LOGIC.SPATIAL.03",
+     "items": [
+      {
+       "key": "A",
+       "text": "sheet A"
+      },
+      {
+       "key": "B",
+       "text": "sheet B"
+      },
+      {
+       "key": "C",
+       "text": "sheet C"
+      },
+      {
+       "key": "D",
+       "text": "sheet D"
+      }
+     ],
+     "correct_order": [
+      "C",
+      "D",
+      "A",
+      "B"
+     ],
+     "correct_answer": "sheet C → sheet D → sheet A → sheet B",
+     "figure": {
+      "svg": "assets/S20-M-Q4.svg",
+      "description": "Several overlapping rectangles labeled with letters, seen from above."
+     }
+    },
+    {
+     "id": "S20-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "occlusion and stacking",
+     "type": "sa",
+     "prompt": "Square cards are placed one at a time on an 8 by 8 grid, each covering a block of cells (rows and columns numbered 1 to 8; \"rows 1-4, columns 1-4\" means a 4 by 4 block). In order: A covers rows 1-4, columns 1-4; B covers rows 3-6, columns 3-6; C covers rows 2-5, columns 2-5; D covers rows 1-3, columns 4-7; E covers rows 5-7, columns 1-3. Seen from above, how many of the five cards can be seen at least partly?",
+     "outcome": "LOGIC.SPATIAL.03",
+     "answer_lines": [
+      "Cards seen:"
+     ],
+     "correct_answer": "5"
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Strategy: the cut-off sheet is underneath",
+   "outcome": "LOGIC.SPATIAL.03",
+   "branch_mode": "guided_strategy",
+   "relationship": "Students guess the order from size or position. The rule \"where two sheets overlap, the one whose outline is cut off is underneath\" settles each pair, and the pairs together give the order.",
+   "author_note": "Students guess the order from size or position. The rule \"where two sheets overlap, the one whose outline is cut off is underneath\" settles each pair, and the pairs together give the order.",
+   "lesson": {
+    "title": "The cut-off sheet is underneath",
+    "text": [
+     "Look at one place where two sheets overlap.",
+     "The sheet whose outline runs straight through the overlap is on top there. The sheet whose outline stops at the other sheet's edge is underneath.",
+     "Record each pair as \"X under Y\". Then find the sheet that is under no other sheet: that is the top. Remove it and repeat.",
+     "For stacks of centered discs, a disc shows only if every disc above it is smaller."
+    ],
+    "example": {
+     "title": "Worked example (different sheets)",
+     "prompt": [
+      "Three sheets: the outline of K stops at the edge of M; the outline of M stops at the edge of J; the outline of K stops at the edge of J."
+     ],
+     "steps": [
+      "Pairs: K under M, M under J, K under J.",
+      "J is under nothing: J is on top.",
+      "Then M, then K at the bottom. Order from bottom to top: K, M, J."
+     ]
+    }
+   },
+   "questions": [
+    {
+     "id": "S20-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "occlusion and stacking",
+     "type": "mc",
+     "prompt": "Where sheets X and Y overlap, the outline of X runs straight through and the outline of Y stops at X's edge. What follows?",
+     "outcome": "LOGIC.SPATIAL.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "X is under Y."
+      },
+      {
+       "letter": "B",
+       "text": "It cannot be told."
+      },
+      {
+       "letter": "C",
+       "text": "Y is under X."
+      },
+      {
+       "letter": "D",
+       "text": "They are side by side."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Y is under X."
+    },
+    {
+     "id": "S20-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "occlusion and stacking",
+     "type": "order",
+     "prompt": "Pairs found: P under Q, Q under R, P under R. Order the sheets from bottom to top.",
+     "outcome": "LOGIC.SPATIAL.03",
+     "items": [
+      {
+       "key": "P",
+       "text": "sheet P"
+      },
+      {
+       "key": "Q",
+       "text": "sheet Q"
+      },
+      {
+       "key": "R",
+       "text": "sheet R"
+      }
+     ],
+     "correct_order": [
+      "P",
+      "Q",
+      "R"
+     ],
+     "correct_answer": "sheet P → sheet Q → sheet R"
+    },
+    {
+     "id": "S20-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "occlusion and stacking",
+     "type": "tf",
+     "prompt": "A sheet whose whole outline can be seen must be on top of every sheet it overlaps.",
+     "outcome": "LOGIC.SPATIAL.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S20-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "occlusion and stacking",
+     "type": "mc",
+     "prompt": "Discs are stacked with centers lined up, from bottom to top: radius 2 cm, then 6 cm. Which can be seen from above?",
+     "outcome": "LOGIC.SPATIAL.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "only the 2 cm disc"
+      },
+      {
+       "letter": "B",
+       "text": "both discs"
+      },
+      {
+       "letter": "C",
+       "text": "neither disc"
+      },
+      {
+       "letter": "D",
+       "text": "only the 6 cm disc"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "only the 6 cm disc"
+    },
+    {
+     "id": "S20-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "occlusion and stacking",
+     "type": "sa",
+     "prompt": "Five sheets are stacked. Exactly one of them is on top of all four others. How many sheets are under it?",
+     "outcome": "LOGIC.SPATIAL.03",
+     "answer_lines": [
+      "Sheets under it:"
+     ],
+     "correct_answer": "4"
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Larger stacks",
+   "outcome": "LOGIC.SPATIAL.03",
+   "relationship": "Harder: five sheets and stacks described by numbers.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S20-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "occlusion and stacking",
+     "type": "order",
+     "prompt": "Rectangular paper sheets are lying flat, one on top of another, seen from directly above. Each sheet is white with a dark outline and a letter in its corner. A sheet hides the parts of the sheets under it. This stack has 5 sheets: A, B, C, D, E. Put the five sheets in order from the BOTTOM sheet to the TOP sheet.",
+     "outcome": "LOGIC.SPATIAL.03",
+     "items": [
+      {
+       "key": "A",
+       "text": "sheet A"
+      },
+      {
+       "key": "B",
+       "text": "sheet B"
+      },
+      {
+       "key": "C",
+       "text": "sheet C"
+      },
+      {
+       "key": "D",
+       "text": "sheet D"
+      },
+      {
+       "key": "E",
+       "text": "sheet E"
+      }
+     ],
+     "correct_order": [
+      "E",
+      "D",
+      "A",
+      "C",
+      "B"
+     ],
+     "correct_answer": "sheet E → sheet D → sheet A → sheet C → sheet B",
+     "figure": {
+      "svg": "assets/S20-F1-Q1.svg",
+      "description": "Several overlapping rectangles labeled with letters, seen from above."
+     }
+    },
+    {
+     "id": "S20-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "occlusion and stacking",
+     "type": "order",
+     "prompt": "Rectangular paper sheets are lying flat, one on top of another, seen from directly above. Each sheet is white with a dark outline and a letter in its corner. A sheet hides the parts of the sheets under it. This stack has 5 sheets: A, B, C, D, E. List the five sheets starting with the BOTTOM sheet and ending with the TOP sheet.",
+     "outcome": "LOGIC.SPATIAL.03",
+     "items": [
+      {
+       "key": "A",
+       "text": "sheet A"
+      },
+      {
+       "key": "B",
+       "text": "sheet B"
+      },
+      {
+       "key": "C",
+       "text": "sheet C"
+      },
+      {
+       "key": "D",
+       "text": "sheet D"
+      },
+      {
+       "key": "E",
+       "text": "sheet E"
+      }
+     ],
+     "correct_order": [
+      "B",
+      "E",
+      "A",
+      "C",
+      "D"
+     ],
+     "correct_answer": "sheet B → sheet E → sheet A → sheet C → sheet D",
+     "figure": {
+      "svg": "assets/S20-F1-Q2.svg",
+      "description": "Several overlapping rectangles labeled with letters, seen from above."
+     }
+    },
+    {
+     "id": "S20-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "occlusion and stacking",
+     "type": "sa",
+     "prompt": "Cards are placed one at a time on an 8 by 8 grid: A covers rows 2-3, columns 2-3; B covers rows 1-4, columns 1-4; C covers rows 4-6, columns 4-6; D covers rows 1-2, columns 5-6; E covers rows 3-6, columns 1-4. Seen from above, how many of the five cards can be seen at least partly?",
+     "outcome": "LOGIC.SPATIAL.03",
+     "answer_lines": [
+      "Cards seen:"
+     ],
+     "correct_answer": "4"
+    },
+    {
+     "id": "S20-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "occlusion and stacking",
+     "type": "mc",
+     "prompt": "Four discs with centers lined up are stacked, bottom to top: radius 6, 2, 5, 3 (cm). How many can be seen from above?",
+     "outcome": "LOGIC.SPATIAL.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "3"
+      },
+      {
+       "letter": "B",
+       "text": "1"
+      },
+      {
+       "letter": "C",
+       "text": "2"
+      },
+      {
+       "letter": "D",
+       "text": "4"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "3"
+    },
+    {
+     "id": "S20-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "occlusion and stacking",
+     "type": "tf",
+     "prompt": "If two sheets do not overlap at all, the picture from above cannot show which one is higher.",
+     "outcome": "LOGIC.SPATIAL.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "How much does a picture tell?",
+   "outcome": "LOGIC.SPATIAL.03",
+   "relationship": "Expert: count the orders a picture allows and design stacks.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S20-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "occlusion and stacking",
+     "type": "sa",
+     "prompt": "Three sheets: A and B do not overlap each other, and sheet C overlaps both and is on top of both. How many different bottom-to-top orders are consistent with the picture from above?",
+     "outcome": "LOGIC.SPATIAL.03",
+     "answer_lines": [
+      "Orders:"
+     ],
+     "correct_answer": "2"
+    },
+    {
+     "id": "S20-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "occlusion and stacking",
+     "type": "mc",
+     "prompt": "Discs of radius 1, 2, 3 and 4 cm are stacked with centers lined up. In which stacking order (bottom to top) can ALL four discs be seen from above?",
+     "outcome": "LOGIC.SPATIAL.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "3, 4, 2, 1"
+      },
+      {
+       "letter": "B",
+       "text": "4, 3, 2, 1"
+      },
+      {
+       "letter": "C",
+       "text": "1, 2, 3, 4"
+      },
+      {
+       "letter": "D",
+       "text": "4, 2, 3, 1"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "4, 3, 2, 1"
+    },
+    {
+     "id": "S20-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "occlusion and stacking",
+     "type": "sa",
+     "prompt": "Discs of radius 1, 2, 3 and 4 cm are stacked in some order with centers lined up. Over all 24 stacking orders, in how many is EXACTLY one disc visible from above?",
+     "outcome": "LOGIC.SPATIAL.03",
+     "answer_lines": [
+      "Orders:"
+     ],
+     "correct_answer": "6"
+    },
+    {
+     "id": "S20-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "occlusion and stacking",
+     "type": "tf",
+     "prompt": "From a picture of a stack of sheets, the TOP sheet can always be identified if every sheet overlaps at least one other sheet.",
+     "outcome": "LOGIC.SPATIAL.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S20-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "occlusion and stacking",
+     "type": "mc",
+     "prompt": "Cards on a grid: P covers rows 1-3, columns 1-3; Q covers rows 2-4, columns 2-4. P was placed first. Which cell shows card P?",
+     "outcome": "LOGIC.SPATIAL.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "row 1, column 2"
+      },
+      {
+       "letter": "B",
+       "text": "row 3, column 3"
+      },
+      {
+       "letter": "C",
+       "text": "row 2, column 2"
+      },
+      {
+       "letter": "D",
+       "text": "row 4, column 4"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "row 1, column 2"
+    }
+   ]
+  }
+ ]
+}

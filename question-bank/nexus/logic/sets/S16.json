@@ -1,0 +1,708 @@
+{
+ "set": 16,
+ "title": "Biconditionals: \"if and only if\"",
+ "outcome": "LOGIC.CONDITIONAL.04",
+ "genre": "formal logic",
+ "kind": "formal",
+ "family": "formal",
+ "practices": [
+  "MP6",
+  "MP3"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Find truth values of \"if and only if\" statements and use them as definitions",
+   "outcome": "LOGIC.CONDITIONAL.04",
+   "questions": [
+    {
+     "id": "S16-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "truth_table",
+     "prompt": "Complete the truth table for \"P if and only if Q\".",
+     "outcome": "LOGIC.CONDITIONAL.04",
+     "variables": [
+      "P",
+      "Q"
+     ],
+     "rows": [
+      [
+       "T",
+       "T"
+      ],
+      [
+       "T",
+       "F"
+      ],
+      [
+       "F",
+       "T"
+      ],
+      [
+       "F",
+       "F"
+      ]
+     ],
+     "columns": [
+      "P if and only if Q"
+     ],
+     "correct": [
+      [
+       "T"
+      ],
+      [
+       "F"
+      ],
+      [
+       "F"
+      ],
+      [
+       "T"
+      ]
+     ],
+     "correct_answer": "T / F / F / T"
+    },
+    {
+     "id": "S16-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "For real numbers x, \"x squared = 9 if and only if x = 3\" is true.",
+     "outcome": "LOGIC.CONDITIONAL.04",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S16-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "Find a real number x that makes \"x > 5 if and only if x > 3\" FALSE.",
+     "outcome": "LOGIC.CONDITIONAL.04",
+     "fields": [
+      {
+       "name": "x",
+       "label": "x ="
+      }
+     ],
+     "rule": "(x > 5) != (x > 3)",
+     "example_answer": {
+      "x": 4
+     },
+     "correct_answer": "any values that satisfy: (x > 5) != (x > 3) (example: x = 4)"
+    },
+    {
+     "id": "S16-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Which statement is a correct DEFINITION of an even whole number?",
+     "outcome": "LOGIC.CONDITIONAL.04",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A whole number is even only if it is greater than 1."
+      },
+      {
+       "letter": "B",
+       "text": "A whole number is even if and only if it is divisible by 2."
+      },
+      {
+       "letter": "C",
+       "text": "A whole number is even if and only if it ends in 0."
+      },
+      {
+       "letter": "D",
+       "text": "A whole number is even if it is divisible by 4."
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A whole number is even if and only if it is divisible by 2."
+    },
+    {
+     "id": "S16-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "\"P if and only if Q\" is true and P is false. What follows?",
+     "outcome": "LOGIC.CONDITIONAL.04",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nothing about Q."
+      },
+      {
+       "letter": "B",
+       "text": "Q is true."
+      },
+      {
+       "letter": "C",
+       "text": "Q is false."
+      },
+      {
+       "letter": "D",
+       "text": "P and Q are both true."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Q is false."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Conditionals first",
+   "outcome": "LOGIC.CONDITIONAL.01",
+   "branch_mode": "prerequisite",
+   "relationship": "\"If and only if\" joins two conditionals; students must know when one conditional is true.",
+   "author_note": "\"If and only if\" joins two conditionals; students must know when one conditional is true.",
+   "questions": [
+    {
+     "id": "S16-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"If 2 > 3, then 4 > 5\" is true.",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S16-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"If 3 > 2, then 4 > 5\" is true.",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S16-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "When is \"if P then Q\" false?",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "when P is true and Q is false"
+      },
+      {
+       "letter": "B",
+       "text": "when both are false"
+      },
+      {
+       "letter": "C",
+       "text": "when Q is true"
+      },
+      {
+       "letter": "D",
+       "text": "when P is false"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "when P is true and Q is false"
+    },
+    {
+     "id": "S16-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"If 4 > 1, then 2 > 6\" is true.",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S16-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "In how many of the 4 rows is \"if P then Q\" true?",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "answer_lines": [
+      "Rows:"
+     ],
+     "correct_answer": "3"
+    }
+   ]
+  },
+  {
+   "section": "B2",
+   "section_code": "B2",
+   "relation": "backward",
+   "skill": "The converse",
+   "outcome": "LOGIC.CONDITIONAL.03",
+   "branch_mode": "prerequisite",
+   "relationship": "\"P if and only if Q\" means the conditional AND its converse. Students must be able to form the converse.",
+   "author_note": "\"P if and only if Q\" means the conditional AND its converse. Students must be able to form the converse.",
+   "questions": [
+    {
+     "id": "S16-B2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "What is the converse of \"If it is a dog, then it barks\"?",
+     "outcome": "LOGIC.CONDITIONAL.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It is a barking dog."
+      },
+      {
+       "letter": "B",
+       "text": "If it is not a dog, then it does not bark."
+      },
+      {
+       "letter": "C",
+       "text": "If it does not bark, then it is not a dog."
+      },
+      {
+       "letter": "D",
+       "text": "If it barks, then it is a dog."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "If it barks, then it is a dog."
+    },
+    {
+     "id": "S16-B2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "The converse of \"If n = 2, then n is even\" is \"If n is not 2, then n is not even\".",
+     "outcome": "LOGIC.CONDITIONAL.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S16-B2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "The converse of a true statement is always true.",
+     "outcome": "LOGIC.CONDITIONAL.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S16-B2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "\"P if and only if Q\" means \"if P then Q\" AND what?",
+     "outcome": "LOGIC.CONDITIONAL.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "if Q then P"
+      },
+      {
+       "letter": "B",
+       "text": "P or Q"
+      },
+      {
+       "letter": "C",
+       "text": "if not P then Q"
+      },
+      {
+       "letter": "D",
+       "text": "not P and not Q"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "if Q then P"
+    },
+    {
+     "id": "S16-B2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "If a conditional is true but its converse is false, the biconditional is true.",
+     "outcome": "LOGIC.CONDITIONAL.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Biconditionals as definitions and tests",
+   "outcome": "LOGIC.CONDITIONAL.04",
+   "relationship": "Harder: count where a biconditional holds and test definitions.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S16-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "For how many whole numbers n from 1 to 20 is \"n is even if and only if n is a multiple of 4\" TRUE?",
+     "outcome": "LOGIC.CONDITIONAL.04",
+     "answer_lines": [
+      "Count:"
+     ],
+     "correct_answer": "15"
+    },
+    {
+     "id": "S16-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "truth_table",
+     "prompt": "Complete the table to compare \"P if and only if Q\" with \"(if P then Q) and (if Q then P)\".",
+     "outcome": "LOGIC.CONDITIONAL.04",
+     "variables": [
+      "P",
+      "Q"
+     ],
+     "rows": [
+      [
+       "T",
+       "T"
+      ],
+      [
+       "T",
+       "F"
+      ],
+      [
+       "F",
+       "T"
+      ],
+      [
+       "F",
+       "F"
+      ]
+     ],
+     "columns": [
+      "P if and only if Q",
+      "(if P then Q) and (if Q then P)"
+     ],
+     "correct": [
+      [
+       "T",
+       "T"
+      ],
+      [
+       "F",
+       "F"
+      ],
+      [
+       "F",
+       "F"
+      ],
+      [
+       "T",
+       "T"
+      ]
+     ],
+     "correct_answer": "T T / F F / F F / T T"
+    },
+    {
+     "id": "S16-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Which definition of a SQUARE is correct (works in both directions)?",
+     "outcome": "LOGIC.CONDITIONAL.04",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A quadrilateral is a square if and only if its diagonals are equal."
+      },
+      {
+       "letter": "B",
+       "text": "A quadrilateral is a square if and only if it has four equal sides and four right angles."
+      },
+      {
+       "letter": "C",
+       "text": "A quadrilateral is a square if and only if it has four right angles."
+      },
+      {
+       "letter": "D",
+       "text": "A quadrilateral is a square if and only if it has four equal sides."
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A quadrilateral is a square if and only if it has four equal sides and four right angles."
+    },
+    {
+     "id": "S16-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"A whole number is divisible by 10 if and only if it ends in 0\" is true.",
+     "outcome": "LOGIC.CONDITIONAL.04",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S16-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "Find a whole number n that makes \"n is divisible by 3 if and only if n is odd\" FALSE.",
+     "outcome": "LOGIC.CONDITIONAL.04",
+     "fields": [
+      {
+       "name": "n",
+       "label": "n ="
+      }
+     ],
+     "rule": "(n % 3 == 0) != isOdd(n) and isInteger(n)",
+     "example_answer": {
+      "n": 6
+     },
+     "correct_answer": "any values that satisfy: (n % 3 == 0) != isOdd(n) and isInteger(n) (example: n = 6)"
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Chains and opposites of biconditionals",
+   "outcome": "LOGIC.CONDITIONAL.04",
+   "relationship": "Expert: combine biconditionals and relate them to exclusive or.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S16-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"P exclusive-or Q\" has the opposite truth value of \"P if and only if Q\" in every row.",
+     "outcome": "LOGIC.CONDITIONAL.04",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S16-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "\"P iff Q\" and \"Q iff R\" are both true. Which must be true?",
+     "outcome": "LOGIC.CONDITIONAL.04",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "P exclusive-or R"
+      },
+      {
+       "letter": "B",
+       "text": "P and R"
+      },
+      {
+       "letter": "C",
+       "text": "P iff R"
+      },
+      {
+       "letter": "D",
+       "text": "not Q"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "P iff R"
+    },
+    {
+     "id": "S16-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "In how many of the 8 rows of a truth table for P, Q, R is \"(P iff Q) iff R\" true?",
+     "outcome": "LOGIC.CONDITIONAL.04",
+     "answer_lines": [
+      "Rows:"
+     ],
+     "correct_answer": "4"
+    },
+    {
+     "id": "S16-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "Find whole numbers a and b, each from 1 to 9, that make \"a + b is even if and only if a is even\" TRUE and a different from b.",
+     "outcome": "LOGIC.CONDITIONAL.04",
+     "fields": [
+      {
+       "name": "a",
+       "label": "a ="
+      },
+      {
+       "name": "b",
+       "label": "b ="
+      }
+     ],
+     "rule": "(isEven(a + b) == isEven(a)) and a != b and a >= 1 and a <= 9 and b >= 1 and b <= 9",
+     "example_answer": {
+      "a": 2,
+      "b": 4
+     },
+     "correct_answer": "any values that satisfy: (isEven(a + b) == isEven(a)) and a != b and a >= 1 and a <= 9 and b >= 1 and b <= 9 (example: a = 2, b = 4)"
+    },
+    {
+     "id": "S16-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Which statement about whole numbers is TRUE?",
+     "outcome": "LOGIC.CONDITIONAL.04",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "n is even if and only if n is a multiple of 4."
+      },
+      {
+       "letter": "B",
+       "text": "n is a multiple of 3 if and only if n is a multiple of 9."
+      },
+      {
+       "letter": "C",
+       "text": "n is odd if and only if n is prime."
+      },
+      {
+       "letter": "D",
+       "text": "n is odd if and only if n + 1 is even."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "n is odd if and only if n + 1 is even."
+    }
+   ]
+  }
+ ]
+}

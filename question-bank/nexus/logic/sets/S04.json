@@ -1,0 +1,546 @@
+{
+ "set": 4,
+ "title": "Eliminate candidates clue by clue",
+ "outcome": "LOGIC.CONSTRAINT.01",
+ "genre": "elimination",
+ "kind": "puzzle",
+ "family": "constraint",
+ "practices": [
+  "MP1",
+  "MP6"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Find the only candidate left after every clue",
+   "outcome": "LOGIC.CONSTRAINT.01",
+   "questions": [
+    {
+     "id": "S4-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "elimination",
+     "type": "mc",
+     "prompt": "Which month is it? Its name has fewer than 8 letters. Its name contains the letter R. It is the 1st, 3rd, 5th, 7th, 9th or 11th month. Its name does not start with J.",
+     "outcome": "LOGIC.CONSTRAINT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "March"
+      },
+      {
+       "letter": "B",
+       "text": "May"
+      },
+      {
+       "letter": "C",
+       "text": "January"
+      },
+      {
+       "letter": "D",
+       "text": "September"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "March"
+    },
+    {
+     "id": "S4-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "elimination",
+     "type": "mc",
+     "prompt": "Which day of the week is it? Its name has no letter E. It comes after Wednesday in the week that starts on Monday. Its name has exactly 6 letters. Its name contains the letter U.",
+     "outcome": "LOGIC.CONSTRAINT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Friday"
+      },
+      {
+       "letter": "B",
+       "text": "Thursday"
+      },
+      {
+       "letter": "C",
+       "text": "Sunday"
+      },
+      {
+       "letter": "D",
+       "text": "Saturday"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Sunday"
+    },
+    {
+     "id": "S4-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "elimination",
+     "type": "sa",
+     "prompt": "A whole number from 1 to 50 leaves remainder 3 when divided by 7. It is greater than 20. It is even. It does not leave remainder 4 when divided by 5. What is the number?",
+     "outcome": "LOGIC.CONSTRAINT.01",
+     "answer_lines": [
+      "Number:"
+     ],
+     "correct_answer": "38"
+    },
+    {
+     "id": "S4-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "elimination",
+     "type": "grid",
+     "prompt": "Three friends, Ana, Ben and Cai, each have exactly one pet: a cat, a dog or a fish, all different. Ana does not have the dog. Ben has neither the cat nor the dog. Which pet does each friend have?",
+     "outcome": "LOGIC.CONSTRAINT.01",
+     "rows": [
+      "Ana",
+      "Ben",
+      "Cai"
+     ],
+     "columns": [
+      "cat",
+      "dog",
+      "fish"
+     ],
+     "distinct_columns": true,
+     "correct_assignment": {
+      "Ana": "cat",
+      "Ben": "fish",
+      "Cai": "dog"
+     },
+     "correct_answer": "Ana: cat; Ben: fish; Cai: dog"
+    },
+    {
+     "id": "S4-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "elimination",
+     "type": "mc",
+     "prompt": "A locker number is one of 12, 15, 18, 21, 24, 27. It is even. It is not a multiple of 4. Which locker is it?",
+     "outcome": "LOGIC.CONSTRAINT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "24"
+      },
+      {
+       "letter": "B",
+       "text": "27"
+      },
+      {
+       "letter": "C",
+       "text": "12"
+      },
+      {
+       "letter": "D",
+       "text": "18"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "18"
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Strategy: cross out, one clue at a time",
+   "outcome": "LOGIC.CONSTRAINT.01",
+   "branch_mode": "guided_strategy",
+   "relationship": "Students who guess usually try to hold all clues in mind. Writing the full candidate list and crossing out what each clue rules out makes the elimination complete and checkable.",
+   "author_note": "Students who guess usually try to hold all clues in mind. Writing the full candidate list and crossing out what each clue rules out makes the elimination complete and checkable.",
+   "lesson": {
+    "title": "Cross out, one clue at a time",
+    "text": [
+     "Write down every candidate first: all 12 months, all 7 days, every number in range.",
+     "Apply ONE clue at a time and cross out every candidate it rules out. Do not skip a candidate because it \"seems\" unlikely.",
+     "When the clues are done, exactly one candidate should be left. If more than one is left, the clues are not enough; if none is left, recheck the work."
+    ],
+    "example": {
+     "title": "Worked example (a different list)",
+     "prompt": [
+      "A number from 1 to 20: it is a multiple of 3; it is odd; it is greater than 10."
+     ],
+     "steps": [
+      "Multiples of 3: 3, 6, 9, 12, 15, 18.",
+      "Odd: 3, 9, 15.",
+      "Greater than 10: 15.",
+      "Exactly one is left, so the number is 15."
+     ]
+    }
+   },
+   "questions": [
+    {
+     "id": "S4-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "elimination",
+     "type": "sa",
+     "prompt": "A number from 1 to 10 is even, greater than 7 and less than 10. What is it?",
+     "outcome": "LOGIC.CONSTRAINT.01",
+     "answer_lines": [
+      "Number:"
+     ],
+     "correct_answer": "8"
+    },
+    {
+     "id": "S4-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "elimination",
+     "type": "mc",
+     "prompt": "A day of the week (Monday to Sunday) starts with T and has more than 7 letters. Which day?",
+     "outcome": "LOGIC.CONSTRAINT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Saturday"
+      },
+      {
+       "letter": "B",
+       "text": "Thursday"
+      },
+      {
+       "letter": "C",
+       "text": "Tuesday"
+      },
+      {
+       "letter": "D",
+       "text": "Wednesday"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Thursday"
+    },
+    {
+     "id": "S4-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "elimination",
+     "type": "sa",
+     "prompt": "How many months have a name with exactly 4 letters?",
+     "outcome": "LOGIC.CONSTRAINT.01",
+     "answer_lines": [
+      "Months:"
+     ],
+     "correct_answer": "2"
+    },
+    {
+     "id": "S4-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "elimination",
+     "type": "tf",
+     "prompt": "If two candidates are left after every clue, the clues determine the answer.",
+     "outcome": "LOGIC.CONSTRAINT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S4-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "elimination",
+     "type": "mc",
+     "prompt": "Candidates: 2, 3, 4, 5, 6. Clue 1: the number is prime. Clue 2: the number is odd. How many candidates are left?",
+     "outcome": "LOGIC.CONSTRAINT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "0"
+      },
+      {
+       "letter": "B",
+       "text": "3"
+      },
+      {
+       "letter": "C",
+       "text": "2"
+      },
+      {
+       "letter": "D",
+       "text": "1"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "2"
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Eliminate with clues about neighbors and positions",
+   "outcome": "LOGIC.CONSTRAINT.01",
+   "relationship": "Harder: clues about the month before or after, and two-way clues.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S4-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "elimination",
+     "type": "mc",
+     "prompt": "Which month is it? The month before it has a name longer than 5 letters. The month after it does not end in \"ber\". The month after it contains the letter U. Its own name contains the letter A.",
+     "outcome": "LOGIC.CONSTRAINT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "January"
+      },
+      {
+       "letter": "B",
+       "text": "May"
+      },
+      {
+       "letter": "C",
+       "text": "February"
+      },
+      {
+       "letter": "D",
+       "text": "December"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "January"
+    },
+    {
+     "id": "S4-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "elimination",
+     "type": "tf",
+     "prompt": "In the week Monday to Sunday, exactly one day has a name whose day before and day after both contain the letter T.",
+     "outcome": "LOGIC.CONSTRAINT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S4-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "elimination",
+     "type": "sa",
+     "prompt": "A whole number from 1 to 100 is a perfect square, is odd, has two digits, and its digits add to 13. What is it?",
+     "outcome": "LOGIC.CONSTRAINT.01",
+     "answer_lines": [
+      "Number:"
+     ],
+     "correct_answer": "49"
+    },
+    {
+     "id": "S4-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "elimination",
+     "type": "grid",
+     "prompt": "Four runners, Dev, Eva, Finn and Gia, finished 1st to 4th, no ties. Eva finished right after Dev. Gia finished before Finn. Finn finished before Dev. Assign each runner a place.",
+     "outcome": "LOGIC.CONSTRAINT.01",
+     "rows": [
+      "Dev",
+      "Eva",
+      "Finn",
+      "Gia"
+     ],
+     "columns": [
+      "1st",
+      "2nd",
+      "3rd",
+      "4th"
+     ],
+     "distinct_columns": true,
+     "correct_assignment": {
+      "Dev": "3rd",
+      "Eva": "4th",
+      "Finn": "2nd",
+      "Gia": "1st"
+     },
+     "correct_answer": "Dev: 3rd; Eva: 4th; Finn: 2nd; Gia: 1st"
+    },
+    {
+     "id": "S4-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "elimination",
+     "type": "mc",
+     "prompt": "Candidates are the whole numbers 1 to 30. Clues: A: the number is odd. B: it is a multiple of 3. C: it is greater than 10. D: it is a multiple of 5. Which number fits all four clues?",
+     "outcome": "LOGIC.CONSTRAINT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "30"
+      },
+      {
+       "letter": "B",
+       "text": "15"
+      },
+      {
+       "letter": "C",
+       "text": "5"
+      },
+      {
+       "letter": "D",
+       "text": "25"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "15"
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Which clues are really needed?",
+   "outcome": "LOGIC.CONSTRAINT.01",
+   "relationship": "Expert: find unnecessary clues and the least information that still determines the answer.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S4-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "elimination",
+     "type": "mc",
+     "prompt": "Candidates are the whole numbers 1 to 30, with four clues: A: odd; B: a multiple of 3; C: greater than 10; D: a multiple of 5. Only 15 fits all four. Which ONE clue can be removed so that exactly one number is still left?",
+     "outcome": "LOGIC.CONSTRAINT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "C (greater than 10)"
+      },
+      {
+       "letter": "B",
+       "text": "D (multiple of 5)"
+      },
+      {
+       "letter": "C",
+       "text": "A (odd)"
+      },
+      {
+       "letter": "D",
+       "text": "B (multiple of 3)"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "C (greater than 10)"
+    },
+    {
+     "id": "S4-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "elimination",
+     "type": "sa",
+     "prompt": "A number from 1 to 30 is a multiple of 4. What is the least number of extra yes/no questions of the form \"Is it greater than k?\" that always identify it?",
+     "outcome": "LOGIC.CONSTRAINT.01",
+     "answer_lines": [
+      "Questions:"
+     ],
+     "correct_answer": "3"
+    },
+    {
+     "id": "S4-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "elimination",
+     "type": "tf",
+     "prompt": "Adding a new clue to a puzzle can never increase the number of candidates left.",
+     "outcome": "LOGIC.CONSTRAINT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S4-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "elimination",
+     "type": "values",
+     "prompt": "Candidates are the whole numbers 1 to 20. Write a number n that survives BOTH clues: n is prime, and n leaves remainder 1 when divided by 4.",
+     "outcome": "LOGIC.CONSTRAINT.01",
+     "fields": [
+      {
+       "name": "n",
+       "label": "n ="
+      }
+     ],
+     "rule": "isPrime(n) and n % 4 == 1 and n >= 1 and n <= 20",
+     "example_answer": {
+      "n": 5
+     },
+     "correct_answer": "any values that satisfy: isPrime(n) and n % 4 == 1 and n >= 1 and n <= 20 (example: n = 5)"
+    },
+    {
+     "id": "S4-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "elimination",
+     "type": "mc",
+     "prompt": "Six boxes are numbered 1 to 6. One holds a prize. Which single clue, added alone, would leave exactly one box?",
+     "outcome": "LOGIC.CONSTRAINT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"The box number is odd.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"The box number is a multiple of 3.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"The box number is less than 4.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"The box number is prime and even.\""
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "\"The box number is prime and even.\""
+    }
+   ]
+  }
+ ]
+}

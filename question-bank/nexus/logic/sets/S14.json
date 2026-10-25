@@ -1,0 +1,603 @@
+{
+ "set": 14,
+ "title": "Logic grid puzzles",
+ "outcome": "LOGIC.GRID.01",
+ "genre": "logic grids",
+ "kind": "puzzle",
+ "family": "constraint",
+ "practices": [
+  "MP1",
+  "MP6"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Solve a matching puzzle by combining clues",
+   "outcome": "LOGIC.GRID.01",
+   "questions": [
+    {
+     "id": "S14-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "logic grids",
+     "type": "grid",
+     "prompt": "Three students, Ama, Bex and Cho, each play one instrument: drums, flute or violin (all different). Ama does not play the flute. Bex plays neither the drums nor the flute. Which instrument does each student play?",
+     "outcome": "LOGIC.GRID.01",
+     "rows": [
+      "Ama",
+      "Bex",
+      "Cho"
+     ],
+     "columns": [
+      "drums",
+      "flute",
+      "violin"
+     ],
+     "distinct_columns": true,
+     "correct_assignment": {
+      "Ama": "drums",
+      "Bex": "violin",
+      "Cho": "flute"
+     },
+     "correct_answer": "Ama: drums; Bex: violin; Cho: flute"
+    },
+    {
+     "id": "S14-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "logic grids",
+     "type": "grid",
+     "prompt": "Four friends, Dara, Eli, Faye and Gus, each ordered a different drink: cocoa, juice, milk or tea. Dara did not order a hot drink (cocoa and tea are hot). Eli ordered tea. Faye ordered neither cocoa nor juice. Who ordered what?",
+     "outcome": "LOGIC.GRID.01",
+     "rows": [
+      "Dara",
+      "Eli",
+      "Faye",
+      "Gus"
+     ],
+     "columns": [
+      "cocoa",
+      "juice",
+      "milk",
+      "tea"
+     ],
+     "distinct_columns": true,
+     "correct_assignment": {
+      "Dara": "juice",
+      "Eli": "tea",
+      "Faye": "milk",
+      "Gus": "cocoa"
+     },
+     "correct_answer": "Dara: juice; Eli: tea; Faye: milk; Gus: cocoa"
+    },
+    {
+     "id": "S14-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "logic grids",
+     "type": "grid",
+     "prompt": "Four runners wore bibs 1, 2, 3 and 4 (all different): Hal, Ivy, Jun and Kit. Ivy's number is twice Hal's. Hal's number is even. Jun's number is odd. Kit's number is greater than Jun's. What number did each runner wear?",
+     "outcome": "LOGIC.GRID.01",
+     "rows": [
+      "Hal",
+      "Ivy",
+      "Jun",
+      "Kit"
+     ],
+     "columns": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ],
+     "distinct_columns": true,
+     "correct_assignment": {
+      "Hal": "2",
+      "Ivy": "4",
+      "Jun": "1",
+      "Kit": "3"
+     },
+     "correct_answer": "Hal: 2; Ivy: 4; Jun: 1; Kit: 3"
+    },
+    {
+     "id": "S14-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "logic grids",
+     "type": "grid",
+     "prompt": "Three pets, a cat, a dog and a rabbit, belong to Lea, Max and Noa (one each). The cat's owner sits next to Max. Lea owns neither the dog nor the cat. Noa does not own the dog. Who owns which pet?",
+     "outcome": "LOGIC.GRID.01",
+     "rows": [
+      "Lea",
+      "Max",
+      "Noa"
+     ],
+     "columns": [
+      "cat",
+      "dog",
+      "rabbit"
+     ],
+     "distinct_columns": true,
+     "correct_assignment": {
+      "Lea": "rabbit",
+      "Max": "dog",
+      "Noa": "cat"
+     },
+     "correct_answer": "Lea: rabbit; Max: dog; Noa: cat"
+    },
+    {
+     "id": "S14-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "logic grids",
+     "type": "grid",
+     "prompt": "Four lockers, numbered 1 to 4 in a row, belong to Oz, Pia, Quin and Rae (one each). Pia's locker is directly to the right of Oz's (one number higher). Rae's locker is at an end of the row. Quin's locker number is even. Rae's number is lower than Quin's. Oz's locker is not number 2. Who has which locker?",
+     "outcome": "LOGIC.GRID.01",
+     "rows": [
+      "Oz",
+      "Pia",
+      "Quin",
+      "Rae"
+     ],
+     "columns": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ],
+     "distinct_columns": true,
+     "correct_assignment": {
+      "Oz": "3",
+      "Pia": "4",
+      "Quin": "2",
+      "Rae": "1"
+     },
+     "correct_answer": "Oz: 3; Pia: 4; Quin: 2; Rae: 1"
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Strategy: mark X for \"no\" and O for \"yes\" in a grid",
+   "outcome": "LOGIC.GRID.01",
+   "branch_mode": "guided_strategy",
+   "relationship": "Students lose track of eliminated options. A grid with X for \"not possible\" and O for \"this one\", plus the rule \"one O per row and per column\", makes every deduction visible.",
+   "author_note": "Students lose track of eliminated options. A grid with X for \"not possible\" and O for \"this one\", plus the rule \"one O per row and per column\", makes every deduction visible.",
+   "lesson": {
+    "title": "Mark X for \"no\" and O for \"yes\"",
+    "text": [
+     "Draw a grid: people down the side, options across the top.",
+     "For each \"not\" clue, put an X in that cell.",
+     "When a row has only one empty cell left, put an O there; then put X in the rest of that column (each option is used once).",
+     "Repeat until every row has an O. Then check every clue again."
+    ],
+    "example": {
+     "title": "Worked example (a different puzzle)",
+     "prompt": [
+      "Three hikers, Uri, Val and Wen, carry a map, a rope or a stove (one each). Val does not carry the rope or the stove. Wen does not carry the rope."
+     ],
+     "steps": [
+      "Val: X rope, X stove, so O map. Put X under \"map\" for Uri and Wen.",
+      "Wen: X rope, X map, so O stove.",
+      "Uri gets the rope. Check: every clue holds."
+     ]
+    }
+   },
+   "questions": [
+    {
+     "id": "S14-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "logic grids",
+     "type": "grid",
+     "prompt": "Two friends, Ann and Bo, each pick a different color: red or blue. Ann does not pick red. Who picks which color?",
+     "outcome": "LOGIC.GRID.01",
+     "rows": [
+      "Ann",
+      "Bo"
+     ],
+     "columns": [
+      "red",
+      "blue"
+     ],
+     "distinct_columns": true,
+     "correct_assignment": {
+      "Ann": "blue",
+      "Bo": "red"
+     },
+     "correct_answer": "Ann: blue; Bo: red"
+    },
+    {
+     "id": "S14-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "logic grids",
+     "type": "mc",
+     "prompt": "In a 3 by 3 grid (3 people, 3 jobs, one each), a person's row has X in two cells. What follows?",
+     "outcome": "LOGIC.GRID.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nothing follows yet."
+      },
+      {
+       "letter": "B",
+       "text": "The person has the job in the third cell."
+      },
+      {
+       "letter": "C",
+       "text": "The person has no job."
+      },
+      {
+       "letter": "D",
+       "text": "Another person has that job."
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The person has the job in the third cell."
+    },
+    {
+     "id": "S14-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "logic grids",
+     "type": "tf",
+     "prompt": "In a matching puzzle where each option is used once, if Kim has the bike, no one else has the bike.",
+     "outcome": "LOGIC.GRID.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S14-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "logic grids",
+     "type": "grid",
+     "prompt": "Three cousins, Cy, Di and Ed, are ages 8, 9 and 10 (all different). Cy is the youngest. Ed is not 10. How old is each?",
+     "outcome": "LOGIC.GRID.01",
+     "rows": [
+      "Cy",
+      "Di",
+      "Ed"
+     ],
+     "columns": [
+      "8",
+      "9",
+      "10"
+     ],
+     "distinct_columns": true,
+     "correct_assignment": {
+      "Cy": "8",
+      "Di": "10",
+      "Ed": "9"
+     },
+     "correct_answer": "Cy: 8; Di: 10; Ed: 9"
+    },
+    {
+     "id": "S14-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "logic grids",
+     "type": "mc",
+     "prompt": "Three people and three snacks, one each. Gil does not have the apple or the pear. Which snack does Gil have, if the snacks are apple, pear and plum?",
+     "outcome": "LOGIC.GRID.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "apple"
+      },
+      {
+       "letter": "B",
+       "text": "it cannot be known"
+      },
+      {
+       "letter": "C",
+       "text": "pear"
+      },
+      {
+       "letter": "D",
+       "text": "plum"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "plum"
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Grids with relative clues",
+   "outcome": "LOGIC.GRID.01",
+   "relationship": "Harder: clues that compare positions or numbers.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S14-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "logic grids",
+     "type": "grid",
+     "prompt": "Four friends, Ari, Bea, Cal and Dev, finished a quiz with scores 6, 7, 8 and 9 (all different). Bea scored 1 more than Dev. Ari scored the most. Cal did not score 6. What did each score?",
+     "outcome": "LOGIC.GRID.01",
+     "rows": [
+      "Ari",
+      "Bea",
+      "Cal",
+      "Dev"
+     ],
+     "columns": [
+      "6",
+      "7",
+      "8",
+      "9"
+     ],
+     "distinct_columns": true,
+     "correct_assignment": {
+      "Ari": "9",
+      "Bea": "7",
+      "Cal": "8",
+      "Dev": "6"
+     },
+     "correct_answer": "Ari: 9; Bea: 7; Cal: 8; Dev: 6"
+    },
+    {
+     "id": "S14-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "logic grids",
+     "type": "grid",
+     "prompt": "Five boxes in a row, positions 1 to 5, hold a hat, a kite, a lamp, a mug and a net (one each). The kite is in an even position. The lamp is directly left of the mug. The hat is at position 5. The net is not next to the kite. Which item is in each position?",
+     "outcome": "LOGIC.GRID.01",
+     "rows": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+     ],
+     "columns": [
+      "hat",
+      "kite",
+      "lamp",
+      "mug",
+      "net"
+     ],
+     "distinct_columns": true,
+     "correct_assignment": {
+      "1": "net",
+      "2": "lamp",
+      "3": "mug",
+      "4": "kite",
+      "5": "hat"
+     },
+     "correct_answer": "1: net; 2: lamp; 3: mug; 4: kite; 5: hat"
+    },
+    {
+     "id": "S14-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "logic grids",
+     "type": "mc",
+     "prompt": "Rae, Sol and Tom own a cat, a dog and a fish, one each. Clue 1: Rae does not own the cat. Clue 2: Sol does not own the dog. These two clues allow three matchings. Which additional clue leaves exactly one?",
+     "outcome": "LOGIC.GRID.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Rae does not own the fish."
+      },
+      {
+       "letter": "B",
+       "text": "Tom owns the cat."
+      },
+      {
+       "letter": "C",
+       "text": "Tom does not own the dog."
+      },
+      {
+       "letter": "D",
+       "text": "Sol does not own the fish."
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Tom owns the cat."
+    },
+    {
+     "id": "S14-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "logic grids",
+     "type": "grid",
+     "prompt": "Three students, Uma, Vik and Wyn, each chose a different sport (golf, judo or swimming) and a different day (Monday, Tuesday, Wednesday). The judo student trains on Monday. Uma trains on Wednesday. Uma does not play golf. Wyn trains on Tuesday. Which sport did each choose?",
+     "outcome": "LOGIC.GRID.01",
+     "rows": [
+      "Uma",
+      "Vik",
+      "Wyn"
+     ],
+     "columns": [
+      "golf",
+      "judo",
+      "swimming"
+     ],
+     "distinct_columns": true,
+     "correct_assignment": {
+      "Uma": "swimming",
+      "Vik": "judo",
+      "Wyn": "golf"
+     },
+     "correct_answer": "Uma: swimming; Vik: judo; Wyn: golf"
+    },
+    {
+     "id": "S14-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "logic grids",
+     "type": "tf",
+     "prompt": "In a matching puzzle with 4 people and 4 options (one each), if three people's options are known, the fourth person's option is also known.",
+     "outcome": "LOGIC.GRID.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Two-attribute grids and decisive clues",
+   "outcome": "LOGIC.GRID.01",
+   "relationship": "Expert: puzzles with two attributes and the least information that decides them.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S14-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "logic grids",
+     "type": "grid",
+     "prompt": "Four students, Al, Bo, Cy and Di, each have a different favorite number from 1 to 4 and a different color (red, blue, green, gold). The red student's number is 1 more than the blue student's number. Al is gold. Bo's number is 4. Cy's number is twice Di's number. What is each student's number?",
+     "outcome": "LOGIC.GRID.01",
+     "rows": [
+      "Al",
+      "Bo",
+      "Cy",
+      "Di"
+     ],
+     "columns": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ],
+     "distinct_columns": true,
+     "correct_assignment": {
+      "Al": "3",
+      "Bo": "4",
+      "Cy": "2",
+      "Di": "1"
+     },
+     "correct_answer": "Al: 3; Bo: 4; Cy: 2; Di: 1"
+    },
+    {
+     "id": "S14-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "logic grids",
+     "type": "mc",
+     "prompt": "Three people wear a red, a blue and a green hat, one each, so there are 6 possible matchings. Clues have the form \"person X does not wear color Y\". What is the smallest number of such clues that can leave exactly one matching?",
+     "outcome": "LOGIC.GRID.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "3"
+      },
+      {
+       "letter": "B",
+       "text": "4"
+      },
+      {
+       "letter": "C",
+       "text": "1"
+      },
+      {
+       "letter": "D",
+       "text": "2"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "3"
+    },
+    {
+     "id": "S14-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "logic grids",
+     "type": "sa",
+     "prompt": "Four people each get a different one of 4 prizes. How many matchings are possible if one person, Ash, cannot get prize 1 or prize 2?",
+     "outcome": "LOGIC.GRID.01",
+     "answer_lines": [
+      "Matchings:"
+     ],
+     "correct_answer": "12"
+    },
+    {
+     "id": "S14-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "logic grids",
+     "type": "tf",
+     "prompt": "In a 3-person, 3-option matching puzzle, the clues \"A not x\" and \"B not x\" together force C to have x.",
+     "outcome": "LOGIC.GRID.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S14-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "logic grids",
+     "type": "values",
+     "prompt": "Five players wear the numbers 1 to 5 (all different). Al's number plus Bo's number is 9. Give one possible pair: Al's number a and Bo's number b.",
+     "outcome": "LOGIC.GRID.01",
+     "fields": [
+      {
+       "name": "a",
+       "label": "Al a ="
+      },
+      {
+       "name": "b",
+       "label": "Bo b ="
+      }
+     ],
+     "rule": "a + b == 9 and a != b and a >= 1 and a <= 5 and b >= 1 and b <= 5 and isInteger(a) and isInteger(b)",
+     "example_answer": {
+      "a": 4,
+      "b": 5
+     },
+     "correct_answer": "any values that satisfy: a + b == 9 and a != b and a >= 1 and a <= 5 and b >= 1 and b <= 5 and isInteger(a) and isInteger(b) (example: a = 4, b = 5)"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,492 @@
+{
+ "set": 53,
+ "title": "Rearranging letters",
+ "outcome": "LOGIC.WORD.03",
+ "genre": "anagrams",
+ "kind": "puzzle",
+ "family": "verbal",
+ "practices": [
+  "MP7",
+  "MP1"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Find anagrams and letter-bank words within a supplied word list and letter rules",
+   "outcome": "LOGIC.WORD.03",
+   "questions": [
+    {
+     "id": "S53-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "anagrams",
+     "type": "mc",
+     "prompt": "Word list (the ONLY words allowed): MELON, LEMON, SOLEMN, TEARS, RATES, STARE, TASTE, STATE, LISTEN, SILENT, ENLIST, TINSEL, PLANE, PANEL, PLANET, LEAN, LANE, NEAT, ANT, TAN, PEN, NET, TEN, PALE, LEAP, PLATE, PETAL, SPOT, STOP, POTS, TOPS, POST, RATS, STAR, ARTS, NIGHT, THING, DUSTY, STUDY, NOTE, TONE, STONE, ONSET, NOTES, BREAD, BEARD, BARED, HEART, EARTH, HATER. An anagram uses exactly the same letters, each as many times, in a different order. Which word on the list is an anagram of LEMON?",
+     "outcome": "LOGIC.WORD.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "SOLEMN"
+      },
+      {
+       "letter": "B",
+       "text": "LANE"
+      },
+      {
+       "letter": "C",
+       "text": "TONE"
+      },
+      {
+       "letter": "D",
+       "text": "MELON"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "MELON"
+    },
+    {
+     "id": "S53-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "anagrams",
+     "type": "values",
+     "prompt": "Word list (the ONLY words allowed): MELON, LEMON, SOLEMN, TEARS, RATES, STARE, TASTE, STATE, LISTEN, SILENT, ENLIST, TINSEL, PLANE, PANEL, PLANET, LEAN, LANE, NEAT, ANT, TAN, PEN, NET, TEN, PALE, LEAP, PLATE, PETAL, SPOT, STOP, POTS, TOPS, POST, RATS, STAR, ARTS, NIGHT, THING, DUSTY, STUDY, NOTE, TONE, STONE, ONSET, NOTES, BREAD, BEARD, BARED, HEART, EARTH, HATER. An anagram uses exactly the same letters, each as many times, in a different order. Give a word on the list that is an anagram of STARE.",
+     "outcome": "LOGIC.WORD.03",
+     "fields": [
+      {
+       "name": "w",
+       "label": "Word ="
+      }
+     ],
+     "rule": "w == 'tears' or w == 'rates'",
+     "example_answer": {
+      "w": "TEARS"
+     },
+     "correct_answer": "any values that satisfy: w == 'tears' or w == 'rates' (example: w = TEARS)"
+    },
+    {
+     "id": "S53-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "anagrams",
+     "type": "tf",
+     "prompt": "Word list (the ONLY words allowed): MELON, LEMON, SOLEMN, TEARS, RATES, STARE, TASTE, STATE, LISTEN, SILENT, ENLIST, TINSEL, PLANE, PANEL, PLANET, LEAN, LANE, NEAT, ANT, TAN, PEN, NET, TEN, PALE, LEAP, PLATE, PETAL, SPOT, STOP, POTS, TOPS, POST, RATS, STAR, ARTS, NIGHT, THING, DUSTY, STUDY, NOTE, TONE, STONE, ONSET, NOTES, BREAD, BEARD, BARED, HEART, EARTH, HATER. An anagram uses exactly the same letters, each as many times, in a different order. LISTEN, SILENT, ENLIST and TINSEL are all anagrams of one another.",
+     "outcome": "LOGIC.WORD.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S53-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "anagrams",
+     "type": "sa",
+     "prompt": "Word list (the ONLY words allowed): MELON, LEMON, SOLEMN, TEARS, RATES, STARE, TASTE, STATE, LISTEN, SILENT, ENLIST, TINSEL, PLANE, PANEL, PLANET, LEAN, LANE, NEAT, ANT, TAN, PEN, NET, TEN, PALE, LEAP, PLATE, PETAL, SPOT, STOP, POTS, TOPS, POST, RATS, STAR, ARTS, NIGHT, THING, DUSTY, STUDY, NOTE, TONE, STONE, ONSET, NOTES, BREAD, BEARD, BARED, HEART, EARTH, HATER. How many words on the list can be spelled using the letters of PLANET, each letter at most once?",
+     "outcome": "LOGIC.WORD.03",
+     "answer_lines": [
+      "Words:"
+     ],
+     "correct_answer": "15"
+    },
+    {
+     "id": "S53-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "anagrams",
+     "type": "mc",
+     "prompt": "Word list (the ONLY words allowed): MELON, LEMON, SOLEMN, TEARS, RATES, STARE, TASTE, STATE, LISTEN, SILENT, ENLIST, TINSEL, PLANE, PANEL, PLANET, LEAN, LANE, NEAT, ANT, TAN, PEN, NET, TEN, PALE, LEAP, PLATE, PETAL, SPOT, STOP, POTS, TOPS, POST, RATS, STAR, ARTS, NIGHT, THING, DUSTY, STUDY, NOTE, TONE, STONE, ONSET, NOTES, BREAD, BEARD, BARED, HEART, EARTH, HATER. Read the letters STOPAN from right to left. Which word on the list appears as a block of neighboring letters in that backward reading?",
+     "outcome": "LOGIC.WORD.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "SPOT"
+      },
+      {
+       "letter": "B",
+       "text": "POTS"
+      },
+      {
+       "letter": "C",
+       "text": "PAN"
+      },
+      {
+       "letter": "D",
+       "text": "STOP"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "POTS"
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Strategy: sort the letters",
+   "outcome": "LOGIC.WORD.03",
+   "branch_mode": "guided_strategy",
+   "relationship": "Students compare words by eye and miss a letter. Writing each word's letters in alphabetical order turns \"is it an anagram?\" into \"are these strings equal?\".",
+   "author_note": "Students compare words by eye and miss a letter. Writing each word's letters in alphabetical order turns \"is it an anagram?\" into \"are these strings equal?\".",
+   "lesson": {
+    "title": "Sort the letters",
+    "text": [
+     "Write the letters of each word in alphabetical order, keeping repeats.",
+     "Two words are anagrams exactly when their sorted letters match.",
+     "To check whether a word can be spelled from a set of letters, cross off each letter as you use it."
+    ],
+    "example": {
+     "title": "Worked example (different words)",
+     "prompt": [
+      "Are DIRTY and DIRT anagrams? Are CAFE and FACE?"
+     ],
+     "steps": [
+      "DIRTY sorts to D, I, R, T, Y and DIRT sorts to D, I, R, T. DIRTY has an extra Y, so they are not anagrams.",
+      "CAFE and FACE both sort to A, C, E, F: anagrams."
+     ]
+    }
+   },
+   "questions": [
+    {
+     "id": "S53-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "anagrams",
+     "type": "sa",
+     "prompt": "Write the letters of NOTE in alphabetical order (no spaces).",
+     "outcome": "LOGIC.WORD.03",
+     "answer_lines": [
+      "Letters:"
+     ],
+     "correct_answer": "ENOT"
+    },
+    {
+     "id": "S53-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "anagrams",
+     "type": "tf",
+     "prompt": "An anagram uses exactly the same letters, each as many times, in a different order. STONE and NOTES are anagrams.",
+     "outcome": "LOGIC.WORD.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S53-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "anagrams",
+     "type": "tf",
+     "prompt": "An anagram uses exactly the same letters, each as many times, in a different order. TASTE and STATE are anagrams.",
+     "outcome": "LOGIC.WORD.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S53-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "anagrams",
+     "type": "mc",
+     "prompt": "An anagram uses exactly the same letters, each as many times, in a different order. Which word is NOT an anagram of SPOT?",
+     "outcome": "LOGIC.WORD.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "POTS"
+      },
+      {
+       "letter": "B",
+       "text": "STOP"
+      },
+      {
+       "letter": "C",
+       "text": "SPOTS"
+      },
+      {
+       "letter": "D",
+       "text": "TOPS"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "SPOTS"
+    },
+    {
+     "id": "S53-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "anagrams",
+     "type": "tf",
+     "prompt": "An anagram uses exactly the same letters, each as many times, in a different order. BREAD and BEARD are anagrams.",
+     "outcome": "LOGIC.WORD.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Letter banks and joined parts",
+   "outcome": "LOGIC.WORD.03",
+   "relationship": "Harder: build words from parts and from letter banks.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S53-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "anagrams",
+     "type": "values",
+     "prompt": "Word list (the ONLY words allowed): MELON, LEMON, SOLEMN, TEARS, RATES, STARE, TASTE, STATE, LISTEN, SILENT, ENLIST, TINSEL, PLANE, PANEL, PLANET, LEAN, LANE, NEAT, ANT, TAN, PEN, NET, TEN, PALE, LEAP, PLATE, PETAL, SPOT, STOP, POTS, TOPS, POST, RATS, STAR, ARTS, NIGHT, THING, DUSTY, STUDY, NOTE, TONE, STONE, ONSET, NOTES, BREAD, BEARD, BARED, HEART, EARTH, HATER. Join one part from the first group to one part from the second group to make a word on the list. First group: PL, ST, HE. Second group: ART, ANET, ONE. Give the word.",
+     "outcome": "LOGIC.WORD.03",
+     "fields": [
+      {
+       "name": "w",
+       "label": "Word ="
+      }
+     ],
+     "rule": "w == 'planet' or w == 'heart' or w == 'stone'",
+     "example_answer": {
+      "w": "PLANET"
+     },
+     "correct_answer": "any values that satisfy: w == 'planet' or w == 'heart' or w == 'stone' (example: w = PLANET)"
+    },
+    {
+     "id": "S53-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "anagrams",
+     "type": "sa",
+     "prompt": "Word list (the ONLY words allowed): MELON, LEMON, SOLEMN, TEARS, RATES, STARE, TASTE, STATE, LISTEN, SILENT, ENLIST, TINSEL, PLANE, PANEL, PLANET, LEAN, LANE, NEAT, ANT, TAN, PEN, NET, TEN, PALE, LEAP, PLATE, PETAL, SPOT, STOP, POTS, TOPS, POST, RATS, STAR, ARTS, NIGHT, THING, DUSTY, STUDY, NOTE, TONE, STONE, ONSET, NOTES, BREAD, BEARD, BARED, HEART, EARTH, HATER. An anagram uses exactly the same letters, each as many times, in a different order. How many words on the list are anagrams of EARTH (not counting EARTH itself)?",
+     "outcome": "LOGIC.WORD.03",
+     "answer_lines": [
+      "Words:"
+     ],
+     "correct_answer": "2"
+    },
+    {
+     "id": "S53-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "anagrams",
+     "type": "mc",
+     "prompt": "Word list (the ONLY words allowed): MELON, LEMON, SOLEMN, TEARS, RATES, STARE, TASTE, STATE, LISTEN, SILENT, ENLIST, TINSEL, PLANE, PANEL, PLANET, LEAN, LANE, NEAT, ANT, TAN, PEN, NET, TEN, PALE, LEAP, PLATE, PETAL, SPOT, STOP, POTS, TOPS, POST, RATS, STAR, ARTS, NIGHT, THING, DUSTY, STUDY, NOTE, TONE, STONE, ONSET, NOTES, BREAD, BEARD, BARED, HEART, EARTH, HATER. You may use the letters S, T, O, P as often as you like. Which is the longest word on the list you can spell?",
+     "outcome": "LOGIC.WORD.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "All of SPOT, STOP, POTS, TOPS and POST tie at 4 letters"
+      },
+      {
+       "letter": "B",
+       "text": "SPOTS"
+      },
+      {
+       "letter": "C",
+       "text": "STONE"
+      },
+      {
+       "letter": "D",
+       "text": "STOP is the only longest word"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "All of SPOT, STOP, POTS, TOPS and POST tie at 4 letters"
+    },
+    {
+     "id": "S53-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "anagrams",
+     "type": "tf",
+     "prompt": "Word list (the ONLY words allowed): MELON, LEMON, SOLEMN, TEARS, RATES, STARE, TASTE, STATE, LISTEN, SILENT, ENLIST, TINSEL, PLANE, PANEL, PLANET, LEAN, LANE, NEAT, ANT, TAN, PEN, NET, TEN, PALE, LEAP, PLATE, PETAL, SPOT, STOP, POTS, TOPS, POST, RATS, STAR, ARTS, NIGHT, THING, DUSTY, STUDY, NOTE, TONE, STONE, ONSET, NOTES, BREAD, BEARD, BARED, HEART, EARTH, HATER. An anagram uses exactly the same letters, each as many times, in a different order. NIGHT and THING are anagrams.",
+     "outcome": "LOGIC.WORD.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S53-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "anagrams",
+     "type": "sa",
+     "prompt": "Word list (the ONLY words allowed): MELON, LEMON, SOLEMN, TEARS, RATES, STARE, TASTE, STATE, LISTEN, SILENT, ENLIST, TINSEL, PLANE, PANEL, PLANET, LEAN, LANE, NEAT, ANT, TAN, PEN, NET, TEN, PALE, LEAP, PLATE, PETAL, SPOT, STOP, POTS, TOPS, POST, RATS, STAR, ARTS, NIGHT, THING, DUSTY, STUDY, NOTE, TONE, STONE, ONSET, NOTES, BREAD, BEARD, BARED, HEART, EARTH, HATER. An anagram uses exactly the same letters, each as many times, in a different order. Group the list words into anagram families (words with the same sorted letters). How many families have exactly 4 or more words?",
+     "outcome": "LOGIC.WORD.03",
+     "answer_lines": [
+      "Families:"
+     ],
+     "correct_answer": "2"
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Phrases and hidden words",
+   "outcome": "LOGIC.WORD.03",
+   "relationship": "Expert: anagrams of phrases and backward readings.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S53-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "anagrams",
+     "type": "mc",
+     "prompt": "Word list (the ONLY words allowed): MELON, LEMON, SOLEMN, TEARS, RATES, STARE, TASTE, STATE, LISTEN, SILENT, ENLIST, TINSEL, PLANE, PANEL, PLANET, LEAN, LANE, NEAT, ANT, TAN, PEN, NET, TEN, PALE, LEAP, PLATE, PETAL, SPOT, STOP, POTS, TOPS, POST, RATS, STAR, ARTS, NIGHT, THING, DUSTY, STUDY, NOTE, TONE, STONE, ONSET, NOTES, BREAD, BEARD, BARED, HEART, EARTH, HATER. An anagram uses exactly the same letters, each as many times, in a different order. Spaces do not count. Which pair of list words, written together, is an anagram of the phrase PAST TEEN?",
+     "outcome": "LOGIC.WORD.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "STAR PEN"
+      },
+      {
+       "letter": "B",
+       "text": "NEAT POTS"
+      },
+      {
+       "letter": "C",
+       "text": "TASTE PEN"
+      },
+      {
+       "letter": "D",
+       "text": "PETAL NET"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "TASTE PEN"
+    },
+    {
+     "id": "S53-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "anagrams",
+     "type": "tf",
+     "prompt": "Word list (the ONLY words allowed): MELON, LEMON, SOLEMN, TEARS, RATES, STARE, TASTE, STATE, LISTEN, SILENT, ENLIST, TINSEL, PLANE, PANEL, PLANET, LEAN, LANE, NEAT, ANT, TAN, PEN, NET, TEN, PALE, LEAP, PLATE, PETAL, SPOT, STOP, POTS, TOPS, POST, RATS, STAR, ARTS, NIGHT, THING, DUSTY, STUDY, NOTE, TONE, STONE, ONSET, NOTES, BREAD, BEARD, BARED, HEART, EARTH, HATER. Every word on the list that is also a list word when read backward has 3 or 4 letters.",
+     "outcome": "LOGIC.WORD.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S53-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "anagrams",
+     "type": "values",
+     "prompt": "Word list (the ONLY words allowed): MELON, LEMON, SOLEMN, TEARS, RATES, STARE, TASTE, STATE, LISTEN, SILENT, ENLIST, TINSEL, PLANE, PANEL, PLANET, LEAN, LANE, NEAT, ANT, TAN, PEN, NET, TEN, PALE, LEAP, PLATE, PETAL, SPOT, STOP, POTS, TOPS, POST, RATS, STAR, ARTS, NIGHT, THING, DUSTY, STUDY, NOTE, TONE, STONE, ONSET, NOTES, BREAD, BEARD, BARED, HEART, EARTH, HATER. Give a word on the list that is also a word on the list when read backward.",
+     "outcome": "LOGIC.WORD.03",
+     "fields": [
+      {
+       "name": "w",
+       "label": "Word ="
+      }
+     ],
+     "rule": "w == 'net' or w == 'ten' or w == 'spot' or w == 'stop' or w == 'pots' or w == 'tops' or w == 'rats' or w == 'star'",
+     "example_answer": {
+      "w": "STOP"
+     },
+     "correct_answer": "any values that satisfy: w == 'net' or w == 'ten' or w == 'spot' or w == 'stop' or w == 'pots' or w == 'tops' or w == 'rats' or w == 'star' (example: w = STOP)"
+    },
+    {
+     "id": "S53-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "anagrams",
+     "type": "sa",
+     "prompt": "Word list (the ONLY words allowed): MELON, LEMON, SOLEMN, TEARS, RATES, STARE, TASTE, STATE, LISTEN, SILENT, ENLIST, TINSEL, PLANE, PANEL, PLANET, LEAN, LANE, NEAT, ANT, TAN, PEN, NET, TEN, PALE, LEAP, PLATE, PETAL, SPOT, STOP, POTS, TOPS, POST, RATS, STAR, ARTS, NIGHT, THING, DUSTY, STUDY, NOTE, TONE, STONE, ONSET, NOTES, BREAD, BEARD, BARED, HEART, EARTH, HATER. How many words on the list can be spelled using the letters of STONE, each letter at most once?",
+     "outcome": "LOGIC.WORD.03",
+     "answer_lines": [
+      "Words:"
+     ],
+     "correct_answer": "7"
+    },
+    {
+     "id": "S53-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "anagrams",
+     "type": "sa",
+     "prompt": "Word list (the ONLY words allowed): MELON, LEMON, SOLEMN, TEARS, RATES, STARE, TASTE, STATE, LISTEN, SILENT, ENLIST, TINSEL, PLANE, PANEL, PLANET, LEAN, LANE, NEAT, ANT, TAN, PEN, NET, TEN, PALE, LEAP, PLATE, PETAL, SPOT, STOP, POTS, TOPS, POST, RATS, STAR, ARTS, NIGHT, THING, DUSTY, STUDY, NOTE, TONE, STONE, ONSET, NOTES, BREAD, BEARD, BARED, HEART, EARTH, HATER. An anagram uses exactly the same letters, each as many times, in a different order. How many words on the list use exactly the letters of NOTES, counting NOTES itself?",
+     "outcome": "LOGIC.WORD.03",
+     "answer_lines": [
+      "Words:"
+     ],
+     "correct_answer": "3"
+    }
+   ]
+  }
+ ]
+}

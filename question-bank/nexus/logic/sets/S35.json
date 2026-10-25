@@ -1,0 +1,523 @@
+{
+ "set": 35,
+ "title": "Must, could, cannot",
+ "outcome": "LOGIC.CONSTRAINT.03",
+ "genre": "scheduling puzzles",
+ "kind": "puzzle",
+ "family": "constraint",
+ "practices": [
+  "MP1",
+  "MP3"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Decide what must be true, what could be true and what cannot be true in a constrained arrangement",
+   "outcome": "LOGIC.CONSTRAINT.03",
+   "questions": [
+    {
+     "id": "S35-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "scheduling puzzles",
+     "type": "mc",
+     "prompt": "A club holds five talks, Fossils, Gears, Honey, Jazz and Kites, one on each day from Monday to Friday. Conditions: (1) Gears is earlier in the week than Jazz. (2) Honey is on Wednesday or Friday. (3) Fossils and Kites are not on consecutive days. (4) Jazz is not on Friday. Which statement MUST be true?",
+     "outcome": "LOGIC.CONSTRAINT.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Kites is on Friday."
+      },
+      {
+       "letter": "B",
+       "text": "Fossils is on Monday."
+      },
+      {
+       "letter": "C",
+       "text": "Gears is on Monday or Tuesday."
+      },
+      {
+       "letter": "D",
+       "text": "Honey is on Friday."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Gears is on Monday or Tuesday."
+    },
+    {
+     "id": "S35-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "scheduling puzzles",
+     "type": "mc",
+     "prompt": "A club holds five talks, Fossils, Gears, Honey, Jazz and Kites, one on each day from Monday to Friday. Conditions: (1) Gears is earlier in the week than Jazz. (2) Honey is on Wednesday or Friday. (3) Fossils and Kites are not on consecutive days. (4) Jazz is not on Friday. Which statement CANNOT be true?",
+     "outcome": "LOGIC.CONSTRAINT.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Jazz is on Tuesday."
+      },
+      {
+       "letter": "B",
+       "text": "Kites is on Wednesday."
+      },
+      {
+       "letter": "C",
+       "text": "Fossils is on Friday."
+      },
+      {
+       "letter": "D",
+       "text": "Honey is on Wednesday."
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Jazz is on Tuesday."
+    },
+    {
+     "id": "S35-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "scheduling puzzles",
+     "type": "tf",
+     "prompt": "A club holds five talks, Fossils, Gears, Honey, Jazz and Kites, one on each day from Monday to Friday. Conditions: (1) Gears is earlier in the week than Jazz. (2) Honey is on Wednesday or Friday. (3) Fossils and Kites are not on consecutive days. (4) Jazz is not on Friday. Fossils could be on Friday.",
+     "outcome": "LOGIC.CONSTRAINT.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S35-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "scheduling puzzles",
+     "type": "sa",
+     "prompt": "A club holds five talks, Fossils, Gears, Honey, Jazz and Kites, one on each day from Monday to Friday. Conditions: (1) Gears is earlier in the week than Jazz. (2) Honey is on Wednesday or Friday. (3) Fossils and Kites are not on consecutive days. (4) Jazz is not on Friday. How many complete schedules meet all four conditions?",
+     "outcome": "LOGIC.CONSTRAINT.03",
+     "answer_lines": [
+      "Schedules:"
+     ],
+     "correct_answer": "10"
+    },
+    {
+     "id": "S35-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "scheduling puzzles",
+     "type": "values",
+     "prompt": "A club holds five talks, Fossils, Gears, Honey, Jazz and Kites, one on each day from Monday to Friday. Conditions: (1) Gears is earlier in the week than Jazz. (2) Honey is on Wednesday or Friday. (3) Fossils and Kites are not on consecutive days. (4) Jazz is not on Friday. Suppose Honey is on Wednesday. Using Monday = 1, Tuesday = 2, Wednesday = 3, Thursday = 4 and Friday = 5, give a day number Kites could be on.",
+     "outcome": "LOGIC.CONSTRAINT.03",
+     "fields": [
+      {
+       "name": "k",
+       "label": "Kites day ="
+      }
+     ],
+     "rule": "k == 1 or k == 2 or k == 5",
+     "example_answer": {
+      "k": 5
+     },
+     "correct_answer": "any values that satisfy: k == 1 or k == 2 or k == 5 (example: k = 5)"
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Strategy: list every case, then read must, could, cannot",
+   "outcome": "LOGIC.CONSTRAINT.03",
+   "branch_mode": "guided_strategy",
+   "relationship": "Students guess from one schedule. Listing every schedule that meets the conditions turns each question into a check: true in all, true in some, or true in none.",
+   "author_note": "Students guess from one schedule. Listing every schedule that meets the conditions turns each question into a check: true in all, true in some, or true in none.",
+   "lesson": {
+    "title": "List every case, then read must, could and cannot",
+    "text": [
+     "Find every arrangement that meets all the conditions. Organize the list by one item with few choices, so no case is missed.",
+     "A statement MUST be true if it is true in every arrangement on the list.",
+     "It COULD be true if it is true in at least one. It CANNOT be true if it is true in none."
+    ],
+    "example": {
+     "title": "Worked example (a different puzzle)",
+     "prompt": [
+      "Three chores, dishes (D), laundry (L) and sweeping (W), are done on days 1, 2, 3, one per day. Conditions: laundry is not on day 3; dishes are after sweeping."
+     ],
+     "steps": [
+      "Laundry on day 1: W, D fill days 2 and 3 with W first: L, W, D.",
+      "Laundry on day 2: W on day 1, D on day 3: W, L, D.",
+      "Dishes are on day 3 in both, so \"dishes are on day 3\" must be true. \"Laundry is on day 1\" could be true. \"Sweeping is on day 3\" cannot be true."
+     ]
+    }
+   },
+   "questions": [
+    {
+     "id": "S35-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "scheduling puzzles",
+     "type": "sa",
+     "prompt": "Three talks, P, Q and R, are on days 1, 2 and 3, one per day. Conditions: P is not on day 1; Q is earlier than R. How many schedules meet both conditions?",
+     "outcome": "LOGIC.CONSTRAINT.03",
+     "answer_lines": [
+      "Schedules:"
+     ],
+     "correct_answer": "2"
+    },
+    {
+     "id": "S35-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "scheduling puzzles",
+     "type": "tf",
+     "prompt": "Three talks, P, Q and R, are on days 1, 2 and 3, one per day. Conditions: P is not on day 1; Q is earlier than R. Then Q must be on day 1.",
+     "outcome": "LOGIC.CONSTRAINT.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S35-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "scheduling puzzles",
+     "type": "tf",
+     "prompt": "Three talks, P, Q and R, are on days 1, 2 and 3, one per day. Conditions: P is not on day 1; Q is earlier than R. Then R must be on day 3.",
+     "outcome": "LOGIC.CONSTRAINT.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S35-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "scheduling puzzles",
+     "type": "mc",
+     "prompt": "In a scheduling puzzle, what does it mean to say a statement CANNOT be true?",
+     "outcome": "LOGIC.CONSTRAINT.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It is not mentioned in any of the conditions."
+      },
+      {
+       "letter": "B",
+       "text": "It is false in every schedule that meets the conditions."
+      },
+      {
+       "letter": "C",
+       "text": "It is false in at least one schedule that meets the conditions."
+      },
+      {
+       "letter": "D",
+       "text": "It is true in exactly one schedule that meets the conditions."
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "It is false in every schedule that meets the conditions."
+    },
+    {
+     "id": "S35-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "scheduling puzzles",
+     "type": "mc",
+     "prompt": "Three talks, P, Q and R, are on days 1, 2 and 3, one per day. Conditions: P is not on day 1; Q is earlier than R. Which statement COULD be true?",
+     "outcome": "LOGIC.CONSTRAINT.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "P is on day 1."
+      },
+      {
+       "letter": "B",
+       "text": "R is on day 1."
+      },
+      {
+       "letter": "C",
+       "text": "P is on day 2."
+      },
+      {
+       "letter": "D",
+       "text": "Q is on day 3."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "P is on day 2."
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Must, could, cannot under an added condition",
+   "outcome": "LOGIC.CONSTRAINT.03",
+   "relationship": "Harder: reason inside a hypothetical case.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S35-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "scheduling puzzles",
+     "type": "mc",
+     "prompt": "A club holds five talks, Fossils, Gears, Honey, Jazz and Kites, one on each day from Monday to Friday. Conditions: (1) Gears is earlier in the week than Jazz. (2) Honey is on Wednesday or Friday. (3) Fossils and Kites are not on consecutive days. (4) Jazz is not on Friday. If Kites is on Monday, which statement MUST be true?",
+     "outcome": "LOGIC.CONSTRAINT.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Fossils is on Wednesday."
+      },
+      {
+       "letter": "B",
+       "text": "Jazz is on Thursday."
+      },
+      {
+       "letter": "C",
+       "text": "Honey is on Friday."
+      },
+      {
+       "letter": "D",
+       "text": "Gears is on Tuesday."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Gears is on Tuesday."
+    },
+    {
+     "id": "S35-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "scheduling puzzles",
+     "type": "sa",
+     "prompt": "A club holds five talks, Fossils, Gears, Honey, Jazz and Kites, one on each day from Monday to Friday. Conditions: (1) Gears is earlier in the week than Jazz. (2) Honey is on Wednesday or Friday. (3) Fossils and Kites are not on consecutive days. (4) Jazz is not on Friday. If Kites is on Friday, how many schedules are possible?",
+     "outcome": "LOGIC.CONSTRAINT.03",
+     "answer_lines": [
+      "Schedules:"
+     ],
+     "correct_answer": "2"
+    },
+    {
+     "id": "S35-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "scheduling puzzles",
+     "type": "tf",
+     "prompt": "A club holds five talks, Fossils, Gears, Honey, Jazz and Kites, one on each day from Monday to Friday. Conditions: (1) Gears is earlier in the week than Jazz. (2) Honey is on Wednesday or Friday. (3) Fossils and Kites are not on consecutive days. (4) Jazz is not on Friday. If Jazz is on Wednesday, then Honey must be on Friday.",
+     "outcome": "LOGIC.CONSTRAINT.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S35-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "scheduling puzzles",
+     "type": "mc",
+     "prompt": "A club holds five talks, Fossils, Gears, Honey, Jazz and Kites, one on each day from Monday to Friday. Conditions: (1) Gears is earlier in the week than Jazz. (2) Honey is on Wednesday or Friday. (3) Fossils and Kites are not on consecutive days. (4) Jazz is not on Friday. Which ONE added condition would leave exactly one possible schedule?",
+     "outcome": "LOGIC.CONSTRAINT.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Fossils is on Wednesday."
+      },
+      {
+       "letter": "B",
+       "text": "Kites is on Thursday."
+      },
+      {
+       "letter": "C",
+       "text": "Fossils is on Friday."
+      },
+      {
+       "letter": "D",
+       "text": "Honey is on Wednesday."
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Fossils is on Wednesday."
+    },
+    {
+     "id": "S35-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "scheduling puzzles",
+     "type": "values",
+     "prompt": "A club holds five talks, Fossils, Gears, Honey, Jazz and Kites, one on each day from Monday to Friday. Conditions: (1) Gears is earlier in the week than Jazz. (2) Honey is on Wednesday or Friday. (3) Fossils and Kites are not on consecutive days. (4) Jazz is not on Friday. Suppose Honey is on Friday. Using Monday = 1 to Friday = 5, give the day numbers of Gears and Jazz in one schedule that meets every condition.",
+     "outcome": "LOGIC.CONSTRAINT.03",
+     "fields": [
+      {
+       "name": "g",
+       "label": "Gears day ="
+      },
+      {
+       "name": "j",
+       "label": "Jazz day ="
+      }
+     ],
+     "rule": "(g == 2 and (j == 3 or j == 4)) or (g == 1 and j == 3)",
+     "example_answer": {
+      "g": 2,
+      "j": 3
+     },
+     "correct_answer": "any values that satisfy: (g == 2 and (j == 3 or j == 4)) or (g == 1 and j == 3) (example: g = 2, j = 3)"
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Change the conditions and re-test",
+   "outcome": "LOGIC.CONSTRAINT.03",
+   "relationship": "Expert: what happens when a condition is replaced or added.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S35-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "scheduling puzzles",
+     "type": "sa",
+     "prompt": "A club holds five talks, Fossils, Gears, Honey, Jazz and Kites, one on each day from Monday to Friday. Conditions: (1) Gears is earlier in the week than Jazz. (2) Honey is on Wednesday or Friday. (3) Fossils and Kites are not on consecutive days. (4) Jazz is not on Friday. How many of the five talks could be on Friday?",
+     "outcome": "LOGIC.CONSTRAINT.03",
+     "answer_lines": [
+      "Talks:"
+     ],
+     "correct_answer": "3"
+    },
+    {
+     "id": "S35-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "scheduling puzzles",
+     "type": "mc",
+     "prompt": "A club holds five talks, Fossils, Gears, Honey, Jazz and Kites, one on each day from Monday to Friday. Conditions: (1) Gears is earlier in the week than Jazz. (2) Honey is on Wednesday or Friday. (3) Fossils and Kites are not on consecutive days. (4) Jazz is not on Friday. Suppose condition 3 is replaced by \"Fossils is on Monday.\" Which statement must be true?",
+     "outcome": "LOGIC.CONSTRAINT.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Kites is on Friday."
+      },
+      {
+       "letter": "B",
+       "text": "Honey is on Friday."
+      },
+      {
+       "letter": "C",
+       "text": "Jazz is on Wednesday or Thursday."
+      },
+      {
+       "letter": "D",
+       "text": "Gears is on Tuesday."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Jazz is on Wednesday or Thursday."
+    },
+    {
+     "id": "S35-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "scheduling puzzles",
+     "type": "tf",
+     "prompt": "A club holds five talks, Fossils, Gears, Honey, Jazz and Kites, one on each day from Monday to Friday. Conditions: (1) Gears is earlier in the week than Jazz. (2) Honey is on Wednesday or Friday. (3) Fossils and Kites are not on consecutive days. (4) Jazz is not on Friday. Removing condition 4 adds exactly two new schedules.",
+     "outcome": "LOGIC.CONSTRAINT.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S35-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "scheduling puzzles",
+     "type": "sa",
+     "prompt": "A club holds five talks, Fossils, Gears, Honey, Jazz and Kites, one on each day from Monday to Friday. Conditions: (1) Gears is earlier in the week than Jazz. (2) Honey is on Wednesday or Friday. (3) Fossils and Kites are not on consecutive days. (4) Jazz is not on Friday. Add a fifth condition: no two of Gears, Honey and Jazz are on consecutive days. How many schedules remain?",
+     "outcome": "LOGIC.CONSTRAINT.03",
+     "answer_lines": [
+      "Schedules:"
+     ],
+     "correct_answer": "2"
+    },
+    {
+     "id": "S35-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "scheduling puzzles",
+     "type": "tf",
+     "prompt": "A club holds five talks, Fossils, Gears, Honey, Jazz and Kites, one on each day from Monday to Friday. Conditions: (1) Gears is earlier in the week than Jazz. (2) Honey is on Wednesday or Friday. (3) Fossils and Kites are not on consecutive days. (4) Jazz is not on Friday. If Gears is on Monday, then Fossils and Kites could be on Tuesday and Thursday.",
+     "outcome": "LOGIC.CONSTRAINT.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    }
+   ]
+  }
+ ]
+}

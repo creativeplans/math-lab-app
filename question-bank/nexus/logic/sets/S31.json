@@ -1,0 +1,536 @@
+{
+ "set": 31,
+ "title": "Maps and neighbors",
+ "outcome": "LOGIC.GRAPH.02",
+ "genre": "region adjacency",
+ "kind": "puzzle",
+ "family": "visual",
+ "practices": [
+  "MP7",
+  "MP1"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Turn a map into a neighbor graph and reason about neighbors and colorings",
+   "outcome": "LOGIC.GRAPH.02",
+   "questions": [
+    {
+     "id": "S31-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "region adjacency",
+     "type": "sa",
+     "prompt": "Regions are neighbors when they share a border of some length; touching only at a corner point does not count. How many neighbors does region F have?",
+     "outcome": "LOGIC.GRAPH.02",
+     "answer_lines": [
+      "Neighbors:"
+     ],
+     "correct_answer": "6",
+     "figure": {
+      "svg": "assets/S31-M-Q1.svg",
+      "description": "A map of regions made of grid squares with thick borders between regions, each region labeled."
+     }
+    },
+    {
+     "id": "S31-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "region adjacency",
+     "type": "mc",
+     "prompt": "Regions are neighbors when they share a border of some length; touching only at a corner point does not count. Which region has the most neighbors?",
+     "outcome": "LOGIC.GRAPH.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "C"
+      },
+      {
+       "letter": "B",
+       "text": "F"
+      },
+      {
+       "letter": "C",
+       "text": "D"
+      },
+      {
+       "letter": "D",
+       "text": "B"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "F",
+     "figure": {
+      "svg": "assets/S31-M-Q2.svg",
+      "description": "A map of regions made of grid squares with thick borders between regions, each region labeled."
+     }
+    },
+    {
+     "id": "S31-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "region adjacency",
+     "type": "tf",
+     "prompt": "Regions are neighbors when they share a border of some length; touching only at a corner point does not count. Regions A and I are neighbors.",
+     "outcome": "LOGIC.GRAPH.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true,
+     "figure": {
+      "svg": "assets/S31-M-Q3.svg",
+      "description": "A map of regions made of grid squares with thick borders between regions, each region labeled."
+     }
+    },
+    {
+     "id": "S31-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "region adjacency",
+     "type": "sa",
+     "prompt": "Regions are neighbors when they share a border of some length; touching only at a corner point does not count. Each region gets one color and neighbors must get different colors. What is the least number of colors needed for this map?",
+     "outcome": "LOGIC.GRAPH.02",
+     "answer_lines": [
+      "Colors:"
+     ],
+     "correct_answer": "3",
+     "figure": {
+      "svg": "assets/S31-M-Q4.svg",
+      "description": "A map of regions made of grid squares with thick borders between regions, each region labeled."
+     }
+    },
+    {
+     "id": "S31-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "region adjacency",
+     "type": "grid",
+     "prompt": "Regions are neighbors when they share a border of some length; touching only at a corner point does not count. Color each region red, blue or green so that neighbors differ. P is red and Q is blue. Give every region's color.",
+     "outcome": "LOGIC.GRAPH.02",
+     "rows": [
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+     ],
+     "columns": [
+      "red",
+      "blue",
+      "green"
+     ],
+     "correct_assignment": {
+      "P": "red",
+      "Q": "blue",
+      "R": "green",
+      "S": "blue",
+      "T": "red",
+      "U": "blue"
+     },
+     "accept_assignments": [
+      {
+       "P": "red",
+       "Q": "blue",
+       "R": "green",
+       "S": "blue",
+       "T": "red",
+       "U": "green"
+      }
+     ],
+     "correct_answer": "P: red; Q: blue; R: green; S: blue; T: red; U: blue",
+     "figure": {
+      "svg": "assets/S31-M-Q5.svg",
+      "description": "A map of regions made of grid squares with thick borders between regions, each region labeled."
+     }
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Strategy: draw the neighbor graph",
+   "outcome": "LOGIC.GRAPH.02",
+   "branch_mode": "guided_strategy",
+   "relationship": "Students miscount neighbors on a busy map. Turning each region into a dot and each shared border into a line gives a small graph that is easy to count and color.",
+   "author_note": "Students miscount neighbors on a busy map. Turning each region into a dot and each shared border into a line gives a small graph that is easy to count and color.",
+   "lesson": {
+    "title": "Draw the neighbor graph",
+    "text": [
+     "Put one dot for each region.",
+     "Walk around each region's border and draw a line to every region it shares a border with. A corner touch is not a border.",
+     "The number of lines at a dot is the number of neighbors.",
+     "To color the map, color the dots so that every line joins two different colors. Start with the region that has the most neighbors."
+    ],
+    "example": {
+     "title": "Worked example (a different map)",
+     "prompt": [
+      "Four regions W, X, Y, Z: W borders X and Y; X borders Y and Z; Y borders Z."
+     ],
+     "steps": [
+      "Lines: W-X, W-Y, X-Y, X-Z, Y-Z.",
+      "W, X, Y all border each other, so they need 3 different colors: W red, X blue, Y green.",
+      "Z borders X and Y, so Z must be red. Three colors are enough."
+     ]
+    }
+   },
+   "questions": [
+    {
+     "id": "S31-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "region adjacency",
+     "type": "sa",
+     "prompt": "Regions are neighbors when they share a border of some length; touching only at a corner point does not count. How many neighbors does region C have?",
+     "outcome": "LOGIC.GRAPH.02",
+     "answer_lines": [
+      "Neighbors:"
+     ],
+     "correct_answer": "3",
+     "figure": {
+      "svg": "assets/S31-B1-Q1.svg",
+      "description": "A map of regions made of grid squares with thick borders between regions, each region labeled."
+     }
+    },
+    {
+     "id": "S31-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "region adjacency",
+     "type": "tf",
+     "prompt": "Regions are neighbors when they share a border of some length; touching only at a corner point does not count. Regions B and D are neighbors.",
+     "outcome": "LOGIC.GRAPH.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true,
+     "figure": {
+      "svg": "assets/S31-B1-Q2.svg",
+      "description": "A map of regions made of grid squares with thick borders between regions, each region labeled."
+     }
+    },
+    {
+     "id": "S31-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "region adjacency",
+     "type": "mc",
+     "prompt": "Two regions touch only at a single corner point. Are they neighbors under this rule?",
+     "outcome": "LOGIC.GRAPH.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes"
+      },
+      {
+       "letter": "B",
+       "text": "It depends on their size"
+      },
+      {
+       "letter": "C",
+       "text": "No"
+      },
+      {
+       "letter": "D",
+       "text": "Only if they are the same color"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "No"
+    },
+    {
+     "id": "S31-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "region adjacency",
+     "type": "sa",
+     "prompt": "Regions are neighbors when they share a border of some length; touching only at a corner point does not count. How many neighbors does region U have?",
+     "outcome": "LOGIC.GRAPH.02",
+     "answer_lines": [
+      "Neighbors:"
+     ],
+     "correct_answer": "1",
+     "figure": {
+      "svg": "assets/S31-B1-Q4.svg",
+      "description": "A map of regions made of grid squares with thick borders between regions, each region labeled."
+     }
+    },
+    {
+     "id": "S31-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "region adjacency",
+     "type": "tf",
+     "prompt": "If three regions all border each other, a coloring with different colors for neighbors needs at least 3 colors.",
+     "outcome": "LOGIC.GRAPH.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Neighbor counts as clues",
+   "outcome": "LOGIC.GRAPH.02",
+   "relationship": "Harder: reason from neighbor counts and fixed colors.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S31-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "region adjacency",
+     "type": "sa",
+     "prompt": "Regions are neighbors when they share a border of some length; touching only at a corner point does not count. What is the total of the neighbor counts of all nine regions?",
+     "outcome": "LOGIC.GRAPH.02",
+     "answer_lines": [
+      "Total:"
+     ],
+     "correct_answer": "36",
+     "figure": {
+      "svg": "assets/S31-F1-Q1.svg",
+      "description": "A map of regions made of grid squares with thick borders between regions, each region labeled."
+     }
+    },
+    {
+     "id": "S31-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "region adjacency",
+     "type": "sa",
+     "prompt": "Regions are neighbors when they share a border of some length; touching only at a corner point does not count. How many pairs of regions share a border?",
+     "outcome": "LOGIC.GRAPH.02",
+     "answer_lines": [
+      "Pairs:"
+     ],
+     "correct_answer": "18",
+     "figure": {
+      "svg": "assets/S31-F1-Q2.svg",
+      "description": "A map of regions made of grid squares with thick borders between regions, each region labeled."
+     }
+    },
+    {
+     "id": "S31-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "region adjacency",
+     "type": "sa",
+     "prompt": "Regions are neighbors when they share a border of some length; touching only at a corner point does not count. What is the least number of colors needed so that neighbors differ?",
+     "outcome": "LOGIC.GRAPH.02",
+     "answer_lines": [
+      "Colors:"
+     ],
+     "correct_answer": "3",
+     "figure": {
+      "svg": "assets/S31-F1-Q3.svg",
+      "description": "A map of regions made of grid squares with thick borders between regions, each region labeled."
+     }
+    },
+    {
+     "id": "S31-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "region adjacency",
+     "type": "tf",
+     "prompt": "Regions are neighbors when they share a border of some length; touching only at a corner point does not count. In any coloring of this map with 3 colors where neighbors differ, regions A and F have the same color.",
+     "outcome": "LOGIC.GRAPH.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true,
+     "figure": {
+      "svg": "assets/S31-F1-Q4.svg",
+      "description": "A map of regions made of grid squares with thick borders between regions, each region labeled."
+     }
+    },
+    {
+     "id": "S31-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "region adjacency",
+     "type": "mc",
+     "prompt": "Regions are neighbors when they share a border of some length; touching only at a corner point does not count. Which ONE region could be removed so that only 2 colors are needed for the rest?",
+     "outcome": "LOGIC.GRAPH.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "S"
+      },
+      {
+       "letter": "B",
+       "text": "U"
+      },
+      {
+       "letter": "C",
+       "text": "T"
+      },
+      {
+       "letter": "D",
+       "text": "R"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "R",
+     "figure": {
+      "svg": "assets/S31-F1-Q5.svg",
+      "description": "A map of regions made of grid squares with thick borders between regions, each region labeled."
+     }
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Colorings: count and prove",
+   "outcome": "LOGIC.GRAPH.02",
+   "relationship": "Expert: count colorings and prove lower bounds.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S31-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "region adjacency",
+     "type": "sa",
+     "prompt": "Regions are neighbors when they share a border of some length; touching only at a corner point does not count. How many ways can the map be colored with red, blue and green so that neighbors differ?",
+     "outcome": "LOGIC.GRAPH.02",
+     "answer_lines": [
+      "Colorings:"
+     ],
+     "correct_answer": "12",
+     "figure": {
+      "svg": "assets/S31-F2-Q1.svg",
+      "description": "A map of regions made of grid squares with thick borders between regions, each region labeled."
+     }
+    },
+    {
+     "id": "S31-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "region adjacency",
+     "type": "tf",
+     "prompt": "Some map drawn on a page needs at least 4 colors so that neighbors differ.",
+     "outcome": "LOGIC.GRAPH.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S31-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "region adjacency",
+     "type": "values",
+     "prompt": "A map has regions in a ring: region 1 borders 2, 2 borders 3, and so on, and the last region borders region 1 (and there are no other borders). Give a number of regions n, from 3 to 10, for which 2 colors are NOT enough.",
+     "outcome": "LOGIC.GRAPH.02",
+     "fields": [
+      {
+       "name": "n",
+       "label": "n ="
+      }
+     ],
+     "rule": "isOdd(n) and n >= 3 and n <= 10",
+     "example_answer": {
+      "n": 5
+     },
+     "correct_answer": "any values that satisfy: isOdd(n) and n >= 3 and n <= 10 (example: n = 5)"
+    },
+    {
+     "id": "S31-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "region adjacency",
+     "type": "sa",
+     "prompt": "Regions are neighbors when they share a border of some length; touching only at a corner point does not count. How many ways can this map be colored with red, blue and green so that neighbors differ, if A is red?",
+     "outcome": "LOGIC.GRAPH.02",
+     "answer_lines": [
+      "Colorings:"
+     ],
+     "correct_answer": "2",
+     "figure": {
+      "svg": "assets/S31-F2-Q4.svg",
+      "description": "A map of regions made of grid squares with thick borders between regions, each region labeled."
+     }
+    },
+    {
+     "id": "S31-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "region adjacency",
+     "type": "tf",
+     "prompt": "If a map can be colored with 4 colors so that neighbors differ, it can also be colored with 3 colors.",
+     "outcome": "LOGIC.GRAPH.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    }
+   ]
+  }
+ ]
+}

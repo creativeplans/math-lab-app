@@ -1,0 +1,487 @@
+{
+ "set": 51,
+ "title": "Best possible: constrained optimization",
+ "outcome": "LOGIC.OPTIMIZE.01",
+ "genre": "optimization",
+ "kind": "puzzle",
+ "family": "constraint",
+ "practices": [
+  "MP1",
+  "MP7"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Find the best value under stated constraints and show nothing better is possible",
+   "outcome": "LOGIC.OPTIMIZE.01",
+   "questions": [
+    {
+     "id": "S51-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "optimization",
+     "type": "sa",
+     "prompt": "Two whole numbers add up to 20. What is the largest possible product?",
+     "outcome": "LOGIC.OPTIMIZE.01",
+     "answer_lines": [
+      "Product:"
+     ],
+     "correct_answer": "100"
+    },
+    {
+     "id": "S51-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "optimization",
+     "type": "sa",
+     "prompt": "A rectangular pen uses exactly 24 meters of fence, and its sides are whole numbers of meters. What is the largest possible area, in square meters?",
+     "outcome": "LOGIC.OPTIMIZE.01",
+     "answer_lines": [
+      "Area:"
+     ],
+     "correct_answer": "36"
+    },
+    {
+     "id": "S51-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "optimization",
+     "type": "mc",
+     "prompt": "A 12-hour digital clock shows times from 1:00 to 12:59. Which time has the largest product of its digits?",
+     "outcome": "LOGIC.OPTIMIZE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "8:59"
+      },
+      {
+       "letter": "B",
+       "text": "9:59"
+      },
+      {
+       "letter": "C",
+       "text": "11:59"
+      },
+      {
+       "letter": "D",
+       "text": "12:59"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "9:59"
+    },
+    {
+     "id": "S51-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "optimization",
+     "type": "tf",
+     "prompt": "Using coins worth 1, 5, 10 and 25 cents, the fewest coins that make exactly 30 cents is 2.",
+     "outcome": "LOGIC.OPTIMIZE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S51-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "optimization",
+     "type": "values",
+     "prompt": "Whole numbers x and y are each 0 or more, with x + 2y at most 10 and x at most 6. Make x + 3y as large as possible. Give x and y.",
+     "outcome": "LOGIC.OPTIMIZE.01",
+     "fields": [
+      {
+       "name": "x",
+       "label": "x ="
+      },
+      {
+       "name": "y",
+       "label": "y ="
+      }
+     ],
+     "rule": "x == 0 and y == 5",
+     "example_answer": {
+      "x": 0,
+      "y": 5
+     },
+     "correct_answer": "any values that satisfy: x == 0 and y == 5 (example: x = 0, y = 5)"
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Strategy: find a good answer, then prove nothing beats it",
+   "outcome": "LOGIC.OPTIMIZE.01",
+   "branch_mode": "guided_strategy",
+   "relationship": "Students stop at the first good answer. A best-answer problem needs two parts: an example that reaches a value, and a reason no answer can do better.",
+   "author_note": "Students stop at the first good answer. A best-answer problem needs two parts: an example that reaches a value, and a reason no answer can do better.",
+   "lesson": {
+    "title": "Find a good answer, then prove nothing beats it",
+    "text": [
+     "Try several cases in an organized way and keep the best so far.",
+     "Look for a limit (a bound): a reason every answer is at most some value.",
+     "If your best example reaches the bound, it is the best possible."
+    ],
+    "example": {
+     "title": "Worked example (a different problem)",
+     "prompt": [
+      "Two whole numbers add to 9. What is the largest product?"
+     ],
+     "steps": [
+      "Try 1 x 8 = 8, 2 x 7 = 14, 3 x 6 = 18, 4 x 5 = 20.",
+      "Moving away from the middle makes the product smaller, so 20 is the largest."
+     ]
+    }
+   },
+   "questions": [
+    {
+     "id": "S51-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "optimization",
+     "type": "sa",
+     "prompt": "Two whole numbers add to 14. What is the largest possible product?",
+     "outcome": "LOGIC.OPTIMIZE.01",
+     "answer_lines": [
+      "Product:"
+     ],
+     "correct_answer": "49"
+    },
+    {
+     "id": "S51-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "optimization",
+     "type": "tf",
+     "prompt": "To show that a value is the largest possible, it is enough to find one example that reaches it.",
+     "outcome": "LOGIC.OPTIMIZE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S51-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "optimization",
+     "type": "mc",
+     "prompt": "Which numbers from the list 4, 9, 2, 7, 5 give the largest sum if you may choose any two?",
+     "outcome": "LOGIC.OPTIMIZE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "4 and 9"
+      },
+      {
+       "letter": "B",
+       "text": "9 and 5"
+      },
+      {
+       "letter": "C",
+       "text": "9 and 7"
+      },
+      {
+       "letter": "D",
+       "text": "7 and 5"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "9 and 7"
+    },
+    {
+     "id": "S51-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "optimization",
+     "type": "sa",
+     "prompt": "Using coins worth 1, 5 and 10 cents, what is the fewest coins that make 27 cents?",
+     "outcome": "LOGIC.OPTIMIZE.01",
+     "answer_lines": [
+      "Coins:"
+     ],
+     "correct_answer": "5"
+    },
+    {
+     "id": "S51-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "optimization",
+     "type": "tf",
+     "prompt": "A rectangle with whole-number sides and perimeter 20 can have area 25.",
+     "outcome": "LOGIC.OPTIMIZE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "When the obvious choice is not best",
+   "outcome": "LOGIC.OPTIMIZE.01",
+   "relationship": "Harder: greedy choices that fail, and products.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S51-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "optimization",
+     "type": "sa",
+     "prompt": "Coins are worth 1, 4 and 6 cents. What is the fewest coins that make exactly 8 cents?",
+     "outcome": "LOGIC.OPTIMIZE.01",
+     "answer_lines": [
+      "Coins:"
+     ],
+     "correct_answer": "2"
+    },
+    {
+     "id": "S51-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "optimization",
+     "type": "sa",
+     "prompt": "Whole numbers add up to 10 (you choose how many numbers). What is the largest possible product?",
+     "outcome": "LOGIC.OPTIMIZE.01",
+     "answer_lines": [
+      "Product:"
+     ],
+     "correct_answer": "36"
+    },
+    {
+     "id": "S51-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "optimization",
+     "type": "tf",
+     "prompt": "Coins are worth 1, 4 and 6 cents. Always taking the largest coin that fits gives the fewest coins for every amount.",
+     "outcome": "LOGIC.OPTIMIZE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S51-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "optimization",
+     "type": "mc",
+     "prompt": "A backpack can hold at most 10 kilograms. Items: tent 6 kg, value 8; stove 4 kg, value 5; food 5 kg, value 6; lamp 1 kg, value 3. Which choice has the greatest total value?",
+     "outcome": "LOGIC.OPTIMIZE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Food, stove, lamp"
+      },
+      {
+       "letter": "B",
+       "text": "Food, lamp"
+      },
+      {
+       "letter": "C",
+       "text": "Tent, stove"
+      },
+      {
+       "letter": "D",
+       "text": "Tent, lamp"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Food, stove, lamp"
+    },
+    {
+     "id": "S51-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "optimization",
+     "type": "values",
+     "prompt": "Two whole numbers are each at least 1 and their product is 36. Make their sum as small as possible. Give the two numbers.",
+     "outcome": "LOGIC.OPTIMIZE.01",
+     "fields": [
+      {
+       "name": "a",
+       "label": "a ="
+      },
+      {
+       "name": "b",
+       "label": "b ="
+      }
+     ],
+     "rule": "a == 6 and b == 6",
+     "example_answer": {
+      "a": 6,
+      "b": 6
+     },
+     "correct_answer": "any values that satisfy: a == 6 and b == 6 (example: a = 6, b = 6)"
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Prove the best value",
+   "outcome": "LOGIC.OPTIMIZE.01",
+   "relationship": "Expert: bounds that match the best example.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S51-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "optimization",
+     "type": "sa",
+     "prompt": "Whole numbers add up to 20 (you choose how many numbers). What is the largest possible product?",
+     "outcome": "LOGIC.OPTIMIZE.01",
+     "answer_lines": [
+      "Product:"
+     ],
+     "correct_answer": "1458"
+    },
+    {
+     "id": "S51-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "optimization",
+     "type": "sa",
+     "prompt": "Coins are worth 1, 7 and 10 cents. What is the fewest coins that make exactly 14 cents?",
+     "outcome": "LOGIC.OPTIMIZE.01",
+     "answer_lines": [
+      "Coins:"
+     ],
+     "correct_answer": "2"
+    },
+    {
+     "id": "S51-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "optimization",
+     "type": "tf",
+     "prompt": "Among rectangles with whole-number sides and area 36, the 6 by 6 square has the smallest perimeter.",
+     "outcome": "LOGIC.OPTIMIZE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S51-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "optimization",
+     "type": "values",
+     "prompt": "Whole numbers a, b and c are each at least 1 and add up to 12. Make the product a x b x c as large as possible. Give a, b and c.",
+     "outcome": "LOGIC.OPTIMIZE.01",
+     "fields": [
+      {
+       "name": "a",
+       "label": "a ="
+      },
+      {
+       "name": "b",
+       "label": "b ="
+      },
+      {
+       "name": "c",
+       "label": "c ="
+      }
+     ],
+     "rule": "a == 4 and b == 4 and c == 4",
+     "example_answer": {
+      "a": 4,
+      "b": 4,
+      "c": 4
+     },
+     "correct_answer": "any values that satisfy: a == 4 and b == 4 and c == 4 (example: a = 4, b = 4, c = 4)"
+    },
+    {
+     "id": "S51-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "optimization",
+     "type": "mc",
+     "prompt": "Use each of the digits 1, 2, 3 and 4 once to make two 2-digit numbers. Which pair has the largest product?",
+     "outcome": "LOGIC.OPTIMIZE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "31 x 24"
+      },
+      {
+       "letter": "B",
+       "text": "43 x 21"
+      },
+      {
+       "letter": "C",
+       "text": "42 x 31"
+      },
+      {
+       "letter": "D",
+       "text": "41 x 32"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "41 x 32"
+    }
+   ]
+  }
+ ]
+}

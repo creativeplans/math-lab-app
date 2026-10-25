@@ -1,0 +1,569 @@
+{
+ "set": 39,
+ "title": "Justify each step of solving an equation",
+ "outcome": "LOGIC.PROOF.02",
+ "genre": "formal logic",
+ "kind": "formal",
+ "family": "formal",
+ "practices": [
+  "MP3",
+  "MP6"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Explain each step in solving an equation and justify the solution method",
+   "outcome": "LOGIC.PROOF.02",
+   "questions": [
+    {
+     "id": "S39-M-Q1",
+     "number": 1,
+     "standard": "HSA-REI.A.1",
+     "domain": "formal logic",
+     "type": "order",
+     "prompt": "Assume the equation has a solution x. Each new line must follow from the equality in the line before it. Put the steps for solving 4x + 7 = 2x + 19 in order.",
+     "outcome": "LOGIC.PROOF.02",
+     "items": [
+      {
+       "key": "A",
+       "text": "2x + 7 = 19   (subtract 2x from both sides)"
+      },
+      {
+       "key": "B",
+       "text": "2x = 12   (subtract 7 from both sides)"
+      },
+      {
+       "key": "C",
+       "text": "x = 6   (divide both sides by 2)"
+      },
+      {
+       "key": "D",
+       "text": "Check: 4(6) + 7 = 31 and 2(6) + 19 = 31"
+      }
+     ],
+     "correct_order": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "correct_answer": "2x + 7 = 19   (subtract 2x from both sides) → 2x = 12   (subtract 7 from both sides) → x = 6   (divide both sides by 2) → Check: 4(6) + 7 = 31 and 2(6) + 19 = 31"
+    },
+    {
+     "id": "S39-M-Q2",
+     "number": 2,
+     "standard": "HSA-REI.A.1",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Assume the equation has a solution x. Each new line must follow from the equality in the line before it. Which reason justifies going from 5x - 4 = 21 to 5x = 25?",
+     "outcome": "LOGIC.PROOF.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Use the distributive property on 5x - 4."
+      },
+      {
+       "letter": "B",
+       "text": "Multiply both sides by 4."
+      },
+      {
+       "letter": "C",
+       "text": "Rewrite 5x - 4 as 4 - 5x."
+      },
+      {
+       "letter": "D",
+       "text": "Add 4 to both sides; equal numbers plus 4 are still equal."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Add 4 to both sides; equal numbers plus 4 are still equal."
+    },
+    {
+     "id": "S39-M-Q3",
+     "number": 3,
+     "standard": "HSA-REI.A.1",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Assume the equation has a solution x. Each new line must follow from the equality in the line before it. A student writes: Line 1: 2(x + 3) = 14. Line 2: 2x + 3 = 14. Line 3: 2x = 11. Line 4: x = 5.5. Which line is the first one that does NOT follow from the line before it?",
+     "outcome": "LOGIC.PROOF.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Line 2"
+      },
+      {
+       "letter": "B",
+       "text": "None; every line follows"
+      },
+      {
+       "letter": "C",
+       "text": "Line 4"
+      },
+      {
+       "letter": "D",
+       "text": "Line 3"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Line 2"
+    },
+    {
+     "id": "S39-M-Q4",
+     "number": 4,
+     "standard": "HSA-REI.A.1",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "Assume the equation has a solution x. Each new line must follow from the equality in the line before it. From 6 - x = 10, the next line \"x = 10 - 6\" follows correctly.",
+     "outcome": "LOGIC.PROOF.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S39-M-Q5",
+     "number": 5,
+     "standard": "HSA-REI.A.1",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "Assume the equation has a solution x. Each new line must follow from the equality in the line before it. Solve 7 - 2(x - 1) = x - 3. Give x.",
+     "outcome": "LOGIC.PROOF.02",
+     "fields": [
+      {
+       "name": "x",
+       "label": "x ="
+      }
+     ],
+     "rule": "x == 4",
+     "example_answer": {
+      "x": 4
+     },
+     "correct_answer": "any values that satisfy: x == 4 (example: x = 4)"
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Properties of equality",
+   "outcome": "LOGIC.PROOF.02",
+   "branch_mode": "prerequisite",
+   "relationship": "Each step of solving an equation is justified by a property of equality or of operations. Students who cannot name them cannot justify a step.",
+   "author_note": "Each step of solving an equation is justified by a property of equality or of operations. Students who cannot name them cannot justify a step.",
+   "questions": [
+    {
+     "id": "S39-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "If a = b, which statement must also be true?",
+     "outcome": "LOGIC.PROOF.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "a / 5 = b / 3"
+      },
+      {
+       "letter": "B",
+       "text": "5a = b"
+      },
+      {
+       "letter": "C",
+       "text": "a - 5 = b - 5"
+      },
+      {
+       "letter": "D",
+       "text": "a - 5 = b + 5"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "a - 5 = b - 5"
+    },
+    {
+     "id": "S39-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "If 3x = 12, then x = 4 follows by dividing both sides by 3.",
+     "outcome": "LOGIC.PROOF.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S39-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Which step uses the distributive property?",
+     "outcome": "LOGIC.PROOF.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "4x = 20 becomes x = 5"
+      },
+      {
+       "letter": "B",
+       "text": "5(x - 2) = 13 becomes 5x - 10 = 13"
+      },
+      {
+       "letter": "C",
+       "text": "x + 3 = 8 becomes x = 5"
+      },
+      {
+       "letter": "D",
+       "text": "x + 2 = 9 becomes 2 + x = 9"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "5(x - 2) = 13 becomes 5x - 10 = 13"
+    },
+    {
+     "id": "S39-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "Multiplying both sides of an equation by 0 always gives an equation with the same solutions.",
+     "outcome": "LOGIC.PROOF.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S39-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "To solve x / 4 = 9 in one step, by what number do you multiply both sides?",
+     "outcome": "LOGIC.PROOF.02",
+     "answer_lines": [
+      "Number:"
+     ],
+     "correct_answer": "4"
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Steps that need care",
+   "outcome": "LOGIC.PROOF.02",
+   "relationship": "Harder: dividing by a variable, no solution, every number a solution.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S39-F1-Q1",
+     "number": 1,
+     "standard": "HSA-REI.A.1",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Assume the equation has a solution x. Each new line must follow from the equality in the line before it. A student solves x squared = 5x by dividing both sides by x and gets x = 5. What is wrong?",
+     "outcome": "LOGIC.PROOF.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nothing; x = 5 is the only solution."
+      },
+      {
+       "letter": "B",
+       "text": "The answer should be x = 0 only."
+      },
+      {
+       "letter": "C",
+       "text": "x squared = 5x has no solutions."
+      },
+      {
+       "letter": "D",
+       "text": "Dividing by x assumes x is not 0, and x = 0 is also a solution."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Dividing by x assumes x is not 0, and x = 0 is also a solution."
+    },
+    {
+     "id": "S39-F1-Q2",
+     "number": 2,
+     "standard": "HSA-REI.A.1",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "The equation 3(x + 2) = 3x + 6 is true for every number x.",
+     "outcome": "LOGIC.PROOF.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S39-F1-Q3",
+     "number": 3,
+     "standard": "HSA-REI.A.1",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "Assume the equation has a solution x. Each new line must follow from the equality in the line before it. Solve 2(x - 4) + 3 = 5x + 7. What is x?",
+     "outcome": "LOGIC.PROOF.02",
+     "answer_lines": [
+      "x ="
+     ],
+     "correct_answer": "-4"
+    },
+    {
+     "id": "S39-F1-Q4",
+     "number": 4,
+     "standard": "HSA-REI.A.1",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Assume the equation has a solution x. Each new line must follow from the equality in the line before it. Solving 4x + 1 = 4x - 3 leads to the line 1 = -3. What does this show?",
+     "outcome": "LOGIC.PROOF.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The solution is x = -3."
+      },
+      {
+       "letter": "B",
+       "text": "Every number is a solution."
+      },
+      {
+       "letter": "C",
+       "text": "The equation has no solution."
+      },
+      {
+       "letter": "D",
+       "text": "The solution is x = 0."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The equation has no solution."
+    },
+    {
+     "id": "S39-F1-Q5",
+     "number": 5,
+     "standard": "HSA-REI.A.1",
+     "domain": "formal logic",
+     "type": "order",
+     "prompt": "Assume the equation has a solution x. Each new line must follow from the equality in the line before it. Put the lines of this solution of (x + 5) / 3 = 4 in order.",
+     "outcome": "LOGIC.PROOF.02",
+     "items": [
+      {
+       "key": "A",
+       "text": "Assume x is a number with (x + 5) / 3 = 4."
+      },
+      {
+       "key": "B",
+       "text": "x + 5 = 12   (multiply both sides by 3)"
+      },
+      {
+       "key": "C",
+       "text": "x = 7   (subtract 5 from both sides)"
+      },
+      {
+       "key": "D",
+       "text": "Check: (7 + 5) / 3 = 4"
+      }
+     ],
+     "correct_order": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "correct_answer": "Assume x is a number with (x + 5) / 3 = 4. → x + 5 = 12   (multiply both sides by 3) → x = 7   (subtract 5 from both sides) → Check: (7 + 5) / 3 = 4"
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Justify a solution method",
+   "outcome": "LOGIC.PROOF.02",
+   "relationship": "Expert: steps that are not reversible, and why checking matters.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S39-F2-Q1",
+     "number": 1,
+     "standard": "HSA-REI.A.1",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Assume the equation has a solution x. Each new line must follow from the equality in the line before it. To solve the equation (square root of (x + 2)) = x, a student squares both sides: x + 2 = x squared, so x = 2 or x = -1. Which answer is correct?",
+     "outcome": "LOGIC.PROOF.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only x = 2; x = -1 gives square root of 1 = 1, not -1."
+      },
+      {
+       "letter": "B",
+       "text": "Neither one."
+      },
+      {
+       "letter": "C",
+       "text": "Only x = -1."
+      },
+      {
+       "letter": "D",
+       "text": "Both x = 2 and x = -1."
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Only x = 2; x = -1 gives square root of 1 = 1, not -1."
+    },
+    {
+     "id": "S39-F2-Q2",
+     "number": 2,
+     "standard": "HSA-REI.A.1",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "Assume the equation has a solution x. Each new line must follow from the equality in the line before it. If each line of a solution follows from the line before it, then every number found at the end must solve the original equation.",
+     "outcome": "LOGIC.PROOF.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S39-F2-Q3",
+     "number": 3,
+     "standard": "HSA-REI.A.1",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "Assume the equation has a solution x. Each new line must follow from the equality in the line before it. Solve 3(2x - 1) = 4(x + 2) - 1. Give x.",
+     "outcome": "LOGIC.PROOF.02",
+     "fields": [
+      {
+       "name": "x",
+       "label": "x ="
+      }
+     ],
+     "rule": "x == 5",
+     "example_answer": {
+      "x": 5
+     },
+     "correct_answer": "any values that satisfy: x == 5 (example: x = 5)"
+    },
+    {
+     "id": "S39-F2-Q4",
+     "number": 4,
+     "standard": "HSA-REI.A.1",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Which step can give an equation with MORE solutions than the one before it?",
+     "outcome": "LOGIC.PROOF.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Dividing both sides by 2"
+      },
+      {
+       "letter": "B",
+       "text": "Adding 7 to both sides"
+      },
+      {
+       "letter": "C",
+       "text": "Multiplying both sides by -3"
+      },
+      {
+       "letter": "D",
+       "text": "Squaring both sides"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Squaring both sides"
+    },
+    {
+     "id": "S39-F2-Q5",
+     "number": 5,
+     "standard": "HSA-REI.A.1",
+     "domain": "formal logic",
+     "type": "order",
+     "prompt": "Assume the equation has a solution x. Each new line must follow from the equality in the line before it. Put the lines of this solution of 5 - 3(x - 1) = 2x - 2 in order.",
+     "outcome": "LOGIC.PROOF.02",
+     "items": [
+      {
+       "key": "A",
+       "text": "5 - 3x + 3 = 2x - 2   (distributive property)"
+      },
+      {
+       "key": "B",
+       "text": "8 - 3x = 2x - 2   (combine 5 and 3)"
+      },
+      {
+       "key": "C",
+       "text": "10 = 5x   (add 3x and 2 to both sides)"
+      },
+      {
+       "key": "D",
+       "text": "x = 2   (divide both sides by 5)"
+      }
+     ],
+     "correct_order": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "correct_answer": "5 - 3x + 3 = 2x - 2   (distributive property) → 8 - 3x = 2x - 2   (combine 5 and 3) → 10 = 5x   (add 3x and 2 to both sides) → x = 2   (divide both sides by 5)"
+    }
+   ]
+  }
+ ]
+}

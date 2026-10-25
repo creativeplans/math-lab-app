@@ -1,0 +1,467 @@
+{
+ "set": 54,
+ "title": "Weighings and the least information needed",
+ "outcome": "LOGIC.SEARCH.02",
+ "genre": "balance puzzles",
+ "kind": "puzzle",
+ "family": "constraint",
+ "practices": [
+  "MP1",
+  "MP3"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Plan weighings or questions and find the least number that always identifies the answer",
+   "outcome": "LOGIC.SEARCH.02",
+   "questions": [
+    {
+     "id": "S54-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "balance puzzles",
+     "type": "sa",
+     "prompt": "A balance scale compares two groups of coins: one side goes down, or the two sides balance. All coins look the same. All genuine coins weigh the same; the one odd coin is heavier unless the question says otherwise. There are 9 coins and one is heavier. What is the least number of weighings that always finds the heavy coin?",
+     "outcome": "LOGIC.SEARCH.02",
+     "answer_lines": [
+      "Weighings:"
+     ],
+     "correct_answer": "2"
+    },
+    {
+     "id": "S54-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "balance puzzles",
+     "type": "mc",
+     "prompt": "A balance scale compares two groups of coins: one side goes down, or the two sides balance. All coins look the same. All genuine coins weigh the same; the one odd coin is heavier unless the question says otherwise. There are 9 coins and one is heavier. Which first weighing lets you always finish in the fewest total weighings?",
+     "outcome": "LOGIC.SEARCH.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "3 coins against 3 coins"
+      },
+      {
+       "letter": "B",
+       "text": "1 coin against 1 coin"
+      },
+      {
+       "letter": "C",
+       "text": "2 coins against 2 coins"
+      },
+      {
+       "letter": "D",
+       "text": "4 coins against 4 coins"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "3 coins against 3 coins"
+    },
+    {
+     "id": "S54-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "balance puzzles",
+     "type": "tf",
+     "prompt": "A balance scale compares two groups of coins: one side goes down, or the two sides balance. All coins look the same. All genuine coins weigh the same; the one odd coin is heavier unless the question says otherwise. With 3 weighings you can always find the heavier coin among 27 coins.",
+     "outcome": "LOGIC.SEARCH.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S54-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "balance puzzles",
+     "type": "values",
+     "prompt": "A balance scale compares two groups of coins: one side goes down, or the two sides balance. All coins look the same. All genuine coins weigh the same; the one odd coin is heavier unless the question says otherwise. What is the largest number of coins n for which 2 weighings always find the one heavier coin?",
+     "outcome": "LOGIC.SEARCH.02",
+     "fields": [
+      {
+       "name": "n",
+       "label": "n ="
+      }
+     ],
+     "rule": "n == 9",
+     "example_answer": {
+      "n": 9
+     },
+     "correct_answer": "any values that satisfy: n == 9 (example: n = 9)"
+    },
+    {
+     "id": "S54-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "balance puzzles",
+     "type": "sa",
+     "prompt": "A balance scale compares two groups of coins: one side goes down, or the two sides balance. All coins look the same. All genuine coins weigh the same; the one odd coin is heavier unless the question says otherwise. There are 10 coins and one is heavier. What is the least number of weighings that always finds the heavy coin?",
+     "outcome": "LOGIC.SEARCH.02",
+     "answer_lines": [
+      "Weighings:"
+     ],
+     "correct_answer": "3"
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Strategy: each weighing has three outcomes",
+   "outcome": "LOGIC.SEARCH.02",
+   "branch_mode": "guided_strategy",
+   "relationship": "Students weigh half against half. Remembering that a weighing has three outcomes (left down, right down, balance) leads to splitting the suspects into three groups.",
+   "author_note": "Students weigh half against half. Remembering that a weighing has three outcomes (left down, right down, balance) leads to splitting the suspects into three groups.",
+   "lesson": {
+    "title": "Each weighing has three outcomes",
+    "text": [
+     "A weighing can tip left, tip right or balance: three outcomes.",
+     "Split the suspects into three groups as equal as possible: two on the scale (same size) and one off it.",
+     "After w weighings there are at most 3 x 3 x ... (w times) outcome patterns, so at most that many coins can be told apart."
+    ],
+    "example": {
+     "title": "Worked example (a different count)",
+     "prompt": [
+      "There are 3 coins and one is heavier. How many weighings?"
+     ],
+     "steps": [
+      "Weigh coin 1 against coin 2. If one goes down, it is heavy. If they balance, coin 3 is heavy.",
+      "One weighing is enough."
+     ]
+    }
+   },
+   "questions": [
+    {
+     "id": "S54-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "balance puzzles",
+     "type": "sa",
+     "prompt": "How many different outcomes can one weighing on a balance scale have?",
+     "outcome": "LOGIC.SEARCH.02",
+     "answer_lines": [
+      "Outcomes:"
+     ],
+     "correct_answer": "3"
+    },
+    {
+     "id": "S54-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "balance puzzles",
+     "type": "tf",
+     "prompt": "A balance scale compares two groups of coins: one side goes down, or the two sides balance. All coins look the same. All genuine coins weigh the same; the one odd coin is heavier unless the question says otherwise. With 3 coins and one heavier, one weighing always finds the heavy coin.",
+     "outcome": "LOGIC.SEARCH.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S54-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "balance puzzles",
+     "type": "mc",
+     "prompt": "A balance scale compares two groups of coins: one side goes down, or the two sides balance. All coins look the same. All genuine coins weigh the same; the one odd coin is heavier unless the question says otherwise. There are 5 coins and one is heavier. You weigh 2 against 2 and they balance. What do you know?",
+     "outcome": "LOGIC.SEARCH.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nothing yet."
+      },
+      {
+       "letter": "B",
+       "text": "The fifth coin is the heavy one."
+      },
+      {
+       "letter": "C",
+       "text": "You must weigh again to know."
+      },
+      {
+       "letter": "D",
+       "text": "One of the four weighed coins is heavy."
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The fifth coin is the heavy one."
+    },
+    {
+     "id": "S54-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "balance puzzles",
+     "type": "sa",
+     "prompt": "How many outcome patterns do 2 weighings have in all?",
+     "outcome": "LOGIC.SEARCH.02",
+     "answer_lines": [
+      "Patterns:"
+     ],
+     "correct_answer": "9"
+    },
+    {
+     "id": "S54-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "balance puzzles",
+     "type": "tf",
+     "prompt": "A balance scale compares two groups of coins: one side goes down, or the two sides balance. All coins look the same. All genuine coins weigh the same; the one odd coin is heavier unless the question says otherwise. With 4 coins and one heavier, one weighing always finds the heavy coin.",
+     "outcome": "LOGIC.SEARCH.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Bigger groups and comparisons",
+   "outcome": "LOGIC.SEARCH.02",
+   "relationship": "Harder: more coins, and finding the heaviest of different weights.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S54-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "balance puzzles",
+     "type": "sa",
+     "prompt": "A balance scale compares two groups of coins: one side goes down, or the two sides balance. All coins look the same. All genuine coins weigh the same; the one odd coin is heavier unless the question says otherwise. You may use 4 weighings. What is the largest number of coins among which you can always find the one heavier coin?",
+     "outcome": "LOGIC.SEARCH.02",
+     "answer_lines": [
+      "Coins:"
+     ],
+     "correct_answer": "81"
+    },
+    {
+     "id": "S54-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "balance puzzles",
+     "type": "mc",
+     "prompt": "A balance scale compares two groups of coins: one side goes down, or the two sides balance. All coins look the same. All genuine coins weigh the same; the one odd coin is heavier unless the question says otherwise. There are 6 coins and one is heavier. You weigh 2 against 2 and the left side goes down. What should the next weighing be?",
+     "outcome": "LOGIC.SEARCH.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The two coins left off against each other"
+      },
+      {
+       "letter": "B",
+       "text": "All six coins again, 3 against 3"
+      },
+      {
+       "letter": "C",
+       "text": "One left-side coin against a right-side coin"
+      },
+      {
+       "letter": "D",
+       "text": "One left-side coin against the other left-side coin"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "One left-side coin against the other left-side coin"
+    },
+    {
+     "id": "S54-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "balance puzzles",
+     "type": "tf",
+     "prompt": "You have 3 weights of different sizes and compare them two at a time on a balance. Finding the heaviest always takes at least 2 weighings.",
+     "outcome": "LOGIC.SEARCH.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S54-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "balance puzzles",
+     "type": "sa",
+     "prompt": "You have 8 weights of different sizes and compare them two at a time on a balance. What is the least number of weighings that always finds the heaviest?",
+     "outcome": "LOGIC.SEARCH.02",
+     "answer_lines": [
+      "Weighings:"
+     ],
+     "correct_answer": "7"
+    },
+    {
+     "id": "S54-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "balance puzzles",
+     "type": "values",
+     "prompt": "A balance scale compares two groups of coins: one side goes down, or the two sides balance. All coins look the same. All genuine coins weigh the same; the one odd coin is heavier unless the question says otherwise. Give a number of coins n from 20 to 30 for which 3 weighings always find the one heavier coin.",
+     "outcome": "LOGIC.SEARCH.02",
+     "fields": [
+      {
+       "name": "n",
+       "label": "n ="
+      }
+     ],
+     "rule": "isInteger(n) and n >= 20 and n <= 27",
+     "example_answer": {
+      "n": 27
+     },
+     "correct_answer": "any values that satisfy: isInteger(n) and n >= 20 and n <= 27 (example: n = 27)"
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Least weighings, proved",
+   "outcome": "LOGIC.SEARCH.02",
+   "relationship": "Expert: lower bounds from counting outcomes.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S54-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "balance puzzles",
+     "type": "sa",
+     "prompt": "A balance scale compares two groups of coins: one side goes down, or the two sides balance. All coins look the same. All genuine coins weigh the same; the one odd coin is heavier unless the question says otherwise. There are 7 coins and one is LIGHTER (not heavier). What is the least number of weighings that always finds it?",
+     "outcome": "LOGIC.SEARCH.02",
+     "answer_lines": [
+      "Weighings:"
+     ],
+     "correct_answer": "2"
+    },
+    {
+     "id": "S54-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "balance puzzles",
+     "type": "mc",
+     "prompt": "A balance scale compares two groups of coins: one side goes down, or the two sides balance. All coins look the same. All genuine coins weigh the same; the one odd coin is heavier unless the question says otherwise. Why can 2 weighings NOT always find the heavy coin among 10?",
+     "outcome": "LOGIC.SEARCH.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Two weighings give only 9 outcome patterns, but there are 10 possible heavy coins."
+      },
+      {
+       "letter": "B",
+       "text": "You cannot put 5 coins on each side."
+      },
+      {
+       "letter": "C",
+       "text": "10 is an even number."
+      },
+      {
+       "letter": "D",
+       "text": "The first weighing must use all 10 coins."
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Two weighings give only 9 outcome patterns, but there are 10 possible heavy coins."
+    },
+    {
+     "id": "S54-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "balance puzzles",
+     "type": "tf",
+     "prompt": "A balance scale compares two groups of coins: one side goes down, or the two sides balance. All coins look the same. All genuine coins weigh the same; the one odd coin is heavier unless the question says otherwise. With 4 coins and one heavier, 2 weighings always find the heavy coin.",
+     "outcome": "LOGIC.SEARCH.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S54-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "balance puzzles",
+     "type": "values",
+     "prompt": "A balance scale compares two groups of coins: one side goes down, or the two sides balance. All coins look the same. All genuine coins weigh the same; the one odd coin is heavier unless the question says otherwise. Give a number of coins n from 20 to 90 for which 3 weighings are NOT enough but 4 weighings are enough to always find the one heavier coin.",
+     "outcome": "LOGIC.SEARCH.02",
+     "fields": [
+      {
+       "name": "n",
+       "label": "n ="
+      }
+     ],
+     "rule": "isInteger(n) and n >= 28 and n <= 81",
+     "example_answer": {
+      "n": 50
+     },
+     "correct_answer": "any values that satisfy: isInteger(n) and n >= 28 and n <= 81 (example: n = 50)"
+    },
+    {
+     "id": "S54-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "balance puzzles",
+     "type": "sa",
+     "prompt": "You have 4 weights of different sizes and compare them two at a time on a balance. What is the least number of weighings that always finds both the heaviest and the lightest?",
+     "outcome": "LOGIC.SEARCH.02",
+     "answer_lines": [
+      "Weighings:"
+     ],
+     "correct_answer": "4"
+    }
+   ]
+  }
+ ]
+}

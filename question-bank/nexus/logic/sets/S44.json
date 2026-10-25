@@ -1,0 +1,508 @@
+{
+ "set": 44,
+ "title": "Invariants and impossibility",
+ "outcome": "LOGIC.INVARIANT.02",
+ "genre": "invariants",
+ "kind": "puzzle",
+ "family": "constraint",
+ "practices": [
+  "MP7",
+  "MP3"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Find a quantity that never changes under the allowed moves and use it to prove a target is impossible",
+   "outcome": "LOGIC.INVARIANT.02",
+   "questions": [
+    {
+     "id": "S44-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "invariants",
+     "type": "mc",
+     "prompt": "The numbers 1, 2, 3, ..., 10 are written on a board. A move erases any two numbers and writes their sum. After 9 moves one number is left. What is it?",
+     "outcome": "LOGIC.INVARIANT.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It depends on the moves chosen"
+      },
+      {
+       "letter": "B",
+       "text": "55"
+      },
+      {
+       "letter": "C",
+       "text": "10"
+      },
+      {
+       "letter": "D",
+       "text": "45"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "55"
+    },
+    {
+     "id": "S44-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "invariants",
+     "type": "tf",
+     "prompt": "The numbers 1, 2, ..., 10 are written on a board. A move erases two numbers and writes their difference (larger minus smaller). After 9 moves one number is left. It can be 0.",
+     "outcome": "LOGIC.INVARIANT.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S44-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "invariants",
+     "type": "sa",
+     "prompt": "Seven coins lie in a row: H H T H T T T (H = heads, T = tails). A move turns over any two coins that are next to each other. What is the smallest number of heads that can ever be showing?",
+     "outcome": "LOGIC.INVARIANT.02",
+     "answer_lines": [
+      "Heads:"
+     ],
+     "correct_answer": "1"
+    },
+    {
+     "id": "S44-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "invariants",
+     "type": "values",
+     "prompt": "Seven coins lie in a row: H H T H T T T. A move turns over any two coins that are next to each other. Give a number of heads (0 to 7) that can be showing after some moves.",
+     "outcome": "LOGIC.INVARIANT.02",
+     "fields": [
+      {
+       "name": "h",
+       "label": "Heads ="
+      }
+     ],
+     "rule": "isInteger(h) and h >= 0 and h <= 7 and isOdd(h)",
+     "example_answer": {
+      "h": 5
+     },
+     "correct_answer": "any values that satisfy: isInteger(h) and h >= 0 and h <= 7 and isOdd(h) (example: h = 5)"
+    },
+    {
+     "id": "S44-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "invariants",
+     "type": "mc",
+     "prompt": "A robot starts at the point (0, 0). Each move takes it from (x, y) to (x + 1, y + 2) or to (x + 2, y + 1). Which point can it reach?",
+     "outcome": "LOGIC.INVARIANT.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "(5, 5)"
+      },
+      {
+       "letter": "B",
+       "text": "(2, 3)"
+      },
+      {
+       "letter": "C",
+       "text": "(4, 5)"
+      },
+      {
+       "letter": "D",
+       "text": "(7, 0)"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "(4, 5)"
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Strategy: look for something that never changes",
+   "outcome": "LOGIC.INVARIANT.02",
+   "branch_mode": "guided_strategy",
+   "relationship": "Students try move after move without end. A quantity that every move leaves unchanged (an invariant) can prove at once that a target is out of reach.",
+   "author_note": "Students try move after move without end. A quantity that every move leaves unchanged (an invariant) can prove at once that a target is out of reach.",
+   "lesson": {
+    "title": "Look for something that never changes",
+    "text": [
+     "Write down how one move changes simple quantities: a total, a count, odd/even, or a remainder.",
+     "If some quantity is the same after every move, it is an invariant.",
+     "Compare the invariant at the start and at the target. If they differ, the target can never be reached."
+    ],
+    "example": {
+     "title": "Worked example (a different puzzle)",
+     "prompt": [
+      "A counter shows 14. A move adds 6 or subtracts 9. Can it ever show 20?"
+     ],
+     "steps": [
+      "Both moves change the count by a multiple of 3, so the remainder after dividing by 3 never changes.",
+      "14 leaves remainder 2; 20 leaves remainder 2 too, so this test does not rule it out. Indeed 14 + 6 = 20."
+     ]
+    }
+   },
+   "questions": [
+    {
+     "id": "S44-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "invariants",
+     "type": "mc",
+     "prompt": "A counter shows 12. A move adds 4 or subtracts 6. Can it ever show 15?",
+     "outcome": "LOGIC.INVARIANT.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No: 15 is not a multiple of 4."
+      },
+      {
+       "letter": "B",
+       "text": "Yes: after enough moves."
+      },
+      {
+       "letter": "C",
+       "text": "Yes: add 4, then subtract 1."
+      },
+      {
+       "letter": "D",
+       "text": "No: every move keeps the number even, and 15 is odd."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "No: every move keeps the number even, and 15 is odd."
+    },
+    {
+     "id": "S44-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "invariants",
+     "type": "tf",
+     "prompt": "Three numbers on a board are 2, 4 and 9. A move adds 2 to any one of them. The total of the three numbers always stays odd.",
+     "outcome": "LOGIC.INVARIANT.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S44-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "invariants",
+     "type": "sa",
+     "prompt": "A move erases two numbers a and b on a board and writes a + b. The board starts with 3, 5, 6 and 8. What number is left after 3 moves?",
+     "outcome": "LOGIC.INVARIANT.02",
+     "answer_lines": [
+      "Number:"
+     ],
+     "correct_answer": "22"
+    },
+    {
+     "id": "S44-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "invariants",
+     "type": "tf",
+     "prompt": "If a quantity is the same after every allowed move, it can never change, however many moves are made.",
+     "outcome": "LOGIC.INVARIANT.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S44-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "invariants",
+     "type": "mc",
+     "prompt": "A robot starts at (0, 0). Each move goes from (x, y) to (x + 2, y) or to (x, y + 2). Which point can it NEVER reach?",
+     "outcome": "LOGIC.INVARIANT.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "(0, 6)"
+      },
+      {
+       "letter": "B",
+       "text": "(3, 4)"
+      },
+      {
+       "letter": "C",
+       "text": "(2, 4)"
+      },
+      {
+       "letter": "D",
+       "text": "(4, 0)"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "(3, 4)"
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Invariants with remainders",
+   "outcome": "LOGIC.INVARIANT.02",
+   "relationship": "Harder: remainders and totals that change in a fixed way.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S44-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "invariants",
+     "type": "sa",
+     "prompt": "The numbers 1, 2, ..., 10 are on a board. A move erases two numbers a and b and writes a + b + 1. After 9 moves one number is left. What is it?",
+     "outcome": "LOGIC.INVARIANT.02",
+     "answer_lines": [
+      "Number:"
+     ],
+     "correct_answer": "64"
+    },
+    {
+     "id": "S44-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "invariants",
+     "type": "tf",
+     "prompt": "A robot starts at (0, 0). Each move goes from (x, y) to (x + 1, y + 2) or to (x + 2, y + 1). It can reach (10, 10).",
+     "outcome": "LOGIC.INVARIANT.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S44-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "invariants",
+     "type": "mc",
+     "prompt": "Three numbers are on a board: 1, 2, 3. A move picks two of them, adds 1 to one and subtracts 1 from the other. Which quantity never changes?",
+     "outcome": "LOGIC.INVARIANT.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The product of the three numbers"
+      },
+      {
+       "letter": "B",
+       "text": "The number of odd numbers"
+      },
+      {
+       "letter": "C",
+       "text": "The total of the three numbers"
+      },
+      {
+       "letter": "D",
+       "text": "The largest number"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The total of the three numbers"
+    },
+    {
+     "id": "S44-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "invariants",
+     "type": "values",
+     "prompt": "Ten coins all show heads. A move turns over any four coins (they need not be next to each other). Give a number of heads from 0 to 10 that can NEVER be showing.",
+     "outcome": "LOGIC.INVARIANT.02",
+     "fields": [
+      {
+       "name": "h",
+       "label": "Heads ="
+      }
+     ],
+     "rule": "isInteger(h) and h >= 0 and h <= 10 and isOdd(h)",
+     "example_answer": {
+      "h": 7
+     },
+     "correct_answer": "any values that satisfy: isInteger(h) and h >= 0 and h <= 10 and isOdd(h) (example: h = 7)"
+    },
+    {
+     "id": "S44-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "invariants",
+     "type": "sa",
+     "prompt": "A counter shows 100. A move subtracts 7 or adds 3. What is the smallest number of moves that makes it show 0?",
+     "outcome": "LOGIC.INVARIANT.02",
+     "answer_lines": [
+      "Moves:"
+     ],
+     "correct_answer": "20"
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Prove targets impossible",
+   "outcome": "LOGIC.INVARIANT.02",
+   "relationship": "Expert: build the invariant yourself.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S44-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "invariants",
+     "type": "sa",
+     "prompt": "The numbers 1, 2, 3, 4 and 5 are on a board. A move erases two numbers a and b and writes a x b + a + b. After 4 moves one number is left. What is it?",
+     "outcome": "LOGIC.INVARIANT.02",
+     "answer_lines": [
+      "Number:"
+     ],
+     "correct_answer": "719"
+    },
+    {
+     "id": "S44-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "invariants",
+     "type": "tf",
+     "prompt": "A 4 by 4 grid of lights starts all off. A move switches every light in one whole row, or every light in one whole column. Some sequence of moves leaves exactly one light on.",
+     "outcome": "LOGIC.INVARIANT.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S44-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "invariants",
+     "type": "mc",
+     "prompt": "A robot starts at (0, 0). Each move goes from (x, y) to (x + 3, y), to (x, y + 3), or to (x + 1, y + 1). Which point can it reach?",
+     "outcome": "LOGIC.INVARIANT.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "(2, 3)"
+      },
+      {
+       "letter": "B",
+       "text": "(4, 0)"
+      },
+      {
+       "letter": "C",
+       "text": "(1, 5)"
+      },
+      {
+       "letter": "D",
+       "text": "(5, 2)"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "(5, 2)"
+    },
+    {
+     "id": "S44-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "invariants",
+     "type": "values",
+     "prompt": "A 4 by 4 grid of lights starts all off. A move switches every light in one whole row, or every light in one whole column. Give a number of lit lights from 1 to 15 that some sequence of moves can leave.",
+     "outcome": "LOGIC.INVARIANT.02",
+     "fields": [
+      {
+       "name": "h",
+       "label": "Lit lights ="
+      }
+     ],
+     "rule": "h == 4 or h == 6 or h == 8 or h == 10 or h == 12",
+     "example_answer": {
+      "h": 6
+     },
+     "correct_answer": "any values that satisfy: h == 4 or h == 6 or h == 8 or h == 10 or h == 12 (example: h = 6)"
+    },
+    {
+     "id": "S44-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "invariants",
+     "type": "tf",
+     "prompt": "The numbers 1, 2, 3, ..., 10 are on a board. A move erases two numbers a and b and writes a + b + 1. The last number left does not depend on which moves are made.",
+     "outcome": "LOGIC.INVARIANT.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    }
+   ]
+  }
+ ]
+}

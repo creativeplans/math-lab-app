@@ -1,0 +1,490 @@
+{
+ "set": 38,
+ "title": "Tiling and covering",
+ "outcome": "LOGIC.SPATIAL.05",
+ "genre": "tiling",
+ "kind": "puzzle",
+ "family": "visual",
+ "practices": [
+  "MP1",
+  "MP7"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Decide which pieces cover a region exactly, and prove when no covering exists",
+   "outcome": "LOGIC.SPATIAL.05",
+   "questions": [
+    {
+     "id": "S38-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "tiling",
+     "type": "sa",
+     "prompt": "A domino covers exactly two squares that share a side. A tiling covers every square of the region exactly once, with no domino hanging off the region. In how many different ways can a rectangle 2 squares tall and 4 squares wide be tiled with dominoes?",
+     "outcome": "LOGIC.SPATIAL.05",
+     "answer_lines": [
+      "Ways:"
+     ],
+     "correct_answer": "5",
+     "figure": {
+      "svg": "assets/S38-M-Q1.svg",
+      "description": "An empty grid 2 squares tall and 4 squares wide."
+     }
+    },
+    {
+     "id": "S38-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "tiling",
+     "type": "tf",
+     "prompt": "A domino covers exactly two squares that share a side. A tiling covers every square of the region exactly once, with no domino hanging off the region. The 3 by 3 board with its center square removed (shown) can be tiled by 4 dominoes.",
+     "outcome": "LOGIC.SPATIAL.05",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true,
+     "figure": {
+      "svg": "assets/S38-M-Q2.svg",
+      "description": "A 3 by 3 grid with the center square marked X (removed)."
+     }
+    },
+    {
+     "id": "S38-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "tiling",
+     "type": "mc",
+     "prompt": "A domino covers exactly two squares that share a side. A tiling covers every square of the region exactly once, with no domino hanging off the region. Which region can be tiled by 4 dominoes?",
+     "outcome": "LOGIC.SPATIAL.05",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Figure A"
+      },
+      {
+       "letter": "B",
+       "text": "Figure B"
+      },
+      {
+       "letter": "C",
+       "text": "Figure C"
+      },
+      {
+       "letter": "D",
+       "text": "Figure D"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Figure B",
+     "no_shuffle": true,
+     "figure": {
+      "svg": "assets/S38-M-Q3.svg",
+      "description": "Four shaded regions labeled A to D, each made of 8 grid squares."
+     }
+    },
+    {
+     "id": "S38-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "tiling",
+     "type": "values",
+     "prompt": "A domino covers exactly two squares that share a side. A tiling covers every square of the region exactly once, with no domino hanging off the region. One square is removed from a 5 by 5 board, and the other 24 squares are to be tiled by 12 dominoes. Rows and columns are numbered 1 to 5. Give the row r and column c of a square whose removal makes a tiling possible.",
+     "outcome": "LOGIC.SPATIAL.05",
+     "fields": [
+      {
+       "name": "r",
+       "label": "Row r ="
+      },
+      {
+       "name": "c",
+       "label": "Column c ="
+      }
+     ],
+     "rule": "isInteger(r) and isInteger(c) and r >= 1 and r <= 5 and c >= 1 and c <= 5 and isEven(r + c)",
+     "example_answer": {
+      "r": 1,
+      "c": 1
+     },
+     "correct_answer": "any values that satisfy: isInteger(r) and isInteger(c) and r >= 1 and r <= 5 and c >= 1 and c <= 5 and isEven(r + c) (example: r = 1, c = 1)"
+    },
+    {
+     "id": "S38-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "tiling",
+     "type": "sa",
+     "prompt": "An L-tromino is three squares in an L shape (a 2 by 2 square with one square missing). It may be turned any way. In how many ways can a rectangle 2 squares tall and 3 wide be tiled by two L-trominoes?",
+     "outcome": "LOGIC.SPATIAL.05",
+     "answer_lines": [
+      "Ways:"
+     ],
+     "correct_answer": "2"
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Strategy: color the board like a checkerboard",
+   "outcome": "LOGIC.SPATIAL.05",
+   "branch_mode": "guided_strategy",
+   "relationship": "Students try placements forever on a region that cannot be tiled. Counting colors can prove impossibility at once, and shows when a search is still needed.",
+   "author_note": "Students try placements forever on a region that cannot be tiled. Counting colors can prove impossibility at once, and shows when a search is still needed.",
+   "lesson": {
+    "title": "Color the board like a checkerboard",
+    "text": [
+     "Color the squares in a checkerboard pattern: squares that share a side get different colors.",
+     "Every domino covers one dark and one light square. So a region can be tiled only if it has equally many dark and light squares.",
+     "Equal counts do not guarantee a tiling. Then look for a square with only one neighbor: its domino is forced."
+    ],
+    "example": {
+     "title": "Worked example (a different region)",
+     "prompt": [
+      "A T shape: three squares in a row, plus one square below the middle one. Can it be tiled by 2 dominoes?"
+     ],
+     "steps": [
+      "Colors: the middle square is dark; the two ends and the square below are light. That is 1 dark and 3 light.",
+      "Each domino needs one dark square, so at most one domino fits. No tiling exists."
+     ]
+    }
+   },
+   "questions": [
+    {
+     "id": "S38-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "tiling",
+     "type": "sa",
+     "prompt": "A 4 by 4 board is colored like a checkerboard. How many of its squares are dark?",
+     "outcome": "LOGIC.SPATIAL.05",
+     "answer_lines": [
+      "Dark:"
+     ],
+     "correct_answer": "8"
+    },
+    {
+     "id": "S38-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "tiling",
+     "type": "tf",
+     "prompt": "Every domino placed on a checkerboard covers one dark square and one light square.",
+     "outcome": "LOGIC.SPATIAL.05",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S38-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "tiling",
+     "type": "sa",
+     "prompt": "A domino covers exactly two squares that share a side. A tiling covers every square of the region exactly once, with no domino hanging off the region. A region has 7 dark and 5 light squares on a checkerboard coloring. According to the color count, what is the greatest number of dominoes that could be placed on it without overlapping?",
+     "outcome": "LOGIC.SPATIAL.05",
+     "answer_lines": [
+      "Dominoes:"
+     ],
+     "correct_answer": "5"
+    },
+    {
+     "id": "S38-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "tiling",
+     "type": "mc",
+     "prompt": "A domino covers exactly two squares that share a side. A tiling covers every square of the region exactly once, with no domino hanging off the region. A region has 6 dark and 6 light squares. What does the color count tell you?",
+     "outcome": "LOGIC.SPATIAL.05",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It can be tiled in exactly 6 ways."
+      },
+      {
+       "letter": "B",
+       "text": "It can certainly be tiled by 6 dominoes."
+      },
+      {
+       "letter": "C",
+       "text": "It does not rule out a tiling; you still have to find one or show none exists."
+      },
+      {
+       "letter": "D",
+       "text": "It cannot be tiled by dominoes."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "It does not rule out a tiling; you still have to find one or show none exists."
+    },
+    {
+     "id": "S38-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "tiling",
+     "type": "tf",
+     "prompt": "A domino covers exactly two squares that share a side. A tiling covers every square of the region exactly once, with no domino hanging off the region. A region with an even number of squares can always be tiled by dominoes.",
+     "outcome": "LOGIC.SPATIAL.05",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Count tilings and use other pieces",
+   "outcome": "LOGIC.SPATIAL.05",
+   "relationship": "Harder: longer strips and three-square pieces.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S38-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "tiling",
+     "type": "sa",
+     "prompt": "A domino covers exactly two squares that share a side. A tiling covers every square of the region exactly once, with no domino hanging off the region. In how many ways can a strip 2 squares tall and 6 squares wide be tiled by dominoes?",
+     "outcome": "LOGIC.SPATIAL.05",
+     "answer_lines": [
+      "Ways:"
+     ],
+     "correct_answer": "13"
+    },
+    {
+     "id": "S38-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "tiling",
+     "type": "tf",
+     "prompt": "A straight tromino covers three squares in a row. A 3 by 3 square can be tiled by three straight trominoes in exactly 2 ways.",
+     "outcome": "LOGIC.SPATIAL.05",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S38-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "tiling",
+     "type": "mc",
+     "prompt": "A straight tromino covers three squares in a row, flat or upright. One corner square is removed from a 4 by 4 board. Can the other 15 squares be tiled by 5 straight trominoes?",
+     "outcome": "LOGIC.SPATIAL.05",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes, and there is more than one way."
+      },
+      {
+       "letter": "B",
+       "text": "No: the corner gap blocks every tiling."
+      },
+      {
+       "letter": "C",
+       "text": "No: 15 squares cannot be split into trominoes."
+      },
+      {
+       "letter": "D",
+       "text": "Yes, but in exactly one way."
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Yes, and there is more than one way."
+    },
+    {
+     "id": "S38-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "tiling",
+     "type": "sa",
+     "prompt": "A straight tromino covers three squares in a row, flat or upright. In how many ways can a rectangle 3 squares tall and 4 wide be tiled by straight trominoes?",
+     "outcome": "LOGIC.SPATIAL.05",
+     "answer_lines": [
+      "Ways:"
+     ],
+     "correct_answer": "3"
+    },
+    {
+     "id": "S38-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "tiling",
+     "type": "values",
+     "prompt": "A domino covers exactly two squares that share a side. A tiling covers every square of the region exactly once, with no domino hanging off the region. A strip 2 squares tall and n squares wide can be tiled by dominoes in exactly 8 ways. What is n?",
+     "outcome": "LOGIC.SPATIAL.05",
+     "fields": [
+      {
+       "name": "n",
+       "label": "n ="
+      }
+     ],
+     "rule": "n == 5",
+     "example_answer": {
+      "n": 5
+     },
+     "correct_answer": "any values that satisfy: n == 5 (example: n = 5)"
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Prove impossibility and count harder tilings",
+   "outcome": "LOGIC.SPATIAL.05",
+   "relationship": "Expert: color arguments and larger counts.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S38-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "tiling",
+     "type": "sa",
+     "prompt": "A domino covers exactly two squares that share a side. A tiling covers every square of the region exactly once, with no domino hanging off the region. In how many ways can a rectangle 3 squares tall and 4 wide be tiled by dominoes?",
+     "outcome": "LOGIC.SPATIAL.05",
+     "answer_lines": [
+      "Ways:"
+     ],
+     "correct_answer": "11"
+    },
+    {
+     "id": "S38-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "tiling",
+     "type": "tf",
+     "prompt": "A domino covers exactly two squares that share a side. A tiling covers every square of the region exactly once, with no domino hanging off the region. A board 4 rows by 5 columns has two squares removed: row 1, column 1 and row 3, column 3. The other 18 squares can be tiled by 9 dominoes.",
+     "outcome": "LOGIC.SPATIAL.05",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S38-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "tiling",
+     "type": "mc",
+     "prompt": "An L-tromino is three squares in an L shape, turned any way. In how many ways can a strip 2 squares tall and 9 wide be tiled by L-trominoes?",
+     "outcome": "LOGIC.SPATIAL.05",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "6"
+      },
+      {
+       "letter": "B",
+       "text": "8"
+      },
+      {
+       "letter": "C",
+       "text": "9"
+      },
+      {
+       "letter": "D",
+       "text": "3"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "8"
+    },
+    {
+     "id": "S38-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "tiling",
+     "type": "values",
+     "prompt": "A domino covers exactly two squares that share a side. A tiling covers every square of the region exactly once, with no domino hanging off the region. One square is removed from a 3 by 3 board. Rows and columns are numbered 1 to 3. Give a square (row r, column c) whose removal leaves 8 squares that can be tiled by dominoes.",
+     "outcome": "LOGIC.SPATIAL.05",
+     "fields": [
+      {
+       "name": "r",
+       "label": "Row r ="
+      },
+      {
+       "name": "c",
+       "label": "Column c ="
+      }
+     ],
+     "rule": "isInteger(r) and isInteger(c) and r >= 1 and r <= 3 and c >= 1 and c <= 3 and isEven(r + c)",
+     "example_answer": {
+      "r": 2,
+      "c": 2
+     },
+     "correct_answer": "any values that satisfy: isInteger(r) and isInteger(c) and r >= 1 and r <= 3 and c >= 1 and c <= 3 and isEven(r + c) (example: r = 2, c = 2)"
+    },
+    {
+     "id": "S38-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "tiling",
+     "type": "sa",
+     "prompt": "A domino covers exactly two squares that share a side. A tiling covers every square of the region exactly once, with no domino hanging off the region. One square is removed from a board 3 rows by 5 columns. For how many of the 15 squares does removing it leave 14 squares that can be tiled by dominoes?",
+     "outcome": "LOGIC.SPATIAL.05",
+     "answer_lines": [
+      "Squares:"
+     ],
+     "correct_answer": "8"
+    }
+   ]
+  }
+ ]
+}

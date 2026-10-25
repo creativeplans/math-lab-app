@@ -1,0 +1,490 @@
+{
+ "set": 50,
+ "title": "Weighing evidence",
+ "outcome": "LOGIC.EVIDENCE.03",
+ "genre": "informal logic",
+ "kind": "formal",
+ "family": "formal",
+ "practices": [
+  "MP3",
+  "MP2"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Judge whether evidence supports a claim: samples, comparisons and correlation",
+   "outcome": "LOGIC.EVIDENCE.03",
+   "questions": [
+    {
+     "id": "S50-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "informal logic",
+     "type": "mc",
+     "prompt": "To learn how often people in a town exercise, a student surveys 100 people leaving a gym. What is the main problem with this evidence?",
+     "outcome": "LOGIC.EVIDENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "People leaving a gym probably exercise more than the town as a whole."
+      },
+      {
+       "letter": "B",
+       "text": "The survey should have asked about diet too."
+      },
+      {
+       "letter": "C",
+       "text": "100 people is always too few for a survey."
+      },
+      {
+       "letter": "D",
+       "text": "Surveys can never give useful evidence."
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "People leaving a gym probably exercise more than the town as a whole."
+    },
+    {
+     "id": "S50-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "informal logic",
+     "type": "sa",
+     "prompt": "School A: 45 of its 60 students passed a test. School B: 52 of its 80 students passed. What percent of School A's students passed?",
+     "outcome": "LOGIC.EVIDENCE.03",
+     "answer_lines": [
+      "Percent:"
+     ],
+     "correct_answer": "75"
+    },
+    {
+     "id": "S50-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "informal logic",
+     "type": "tf",
+     "prompt": "In many towns, more ice-cream sales come with more swimming accidents. This shows that eating ice cream causes swimming accidents.",
+     "outcome": "LOGIC.EVIDENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S50-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "informal logic",
+     "type": "mc",
+     "prompt": "Which study design gives the best evidence that a tutoring program raises test scores?",
+     "outcome": "LOGIC.EVIDENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Measure the scores of tutored students only."
+      },
+      {
+       "letter": "B",
+       "text": "Compare tutored students with students who chose not to sign up."
+      },
+      {
+       "letter": "C",
+       "text": "Randomly assign students to get tutoring or not, then compare the two groups' scores."
+      },
+      {
+       "letter": "D",
+       "text": "Ask tutored students whether they feel they improved."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Randomly assign students to get tutoring or not, then compare the two groups' scores."
+    },
+    {
+     "id": "S50-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "informal logic",
+     "type": "values",
+     "prompt": "A claim says that more than half of a school's students prefer a later start time. In a random sample of 40 students, n said they prefer it. Give a value of n that would support the claim.",
+     "outcome": "LOGIC.EVIDENCE.03",
+     "fields": [
+      {
+       "name": "n",
+       "label": "n ="
+      }
+     ],
+     "rule": "isInteger(n) and n > 20 and n <= 40",
+     "example_answer": {
+      "n": 28
+     },
+     "correct_answer": "any values that satisfy: isInteger(n) and n > 20 and n <= 40 (example: n = 28)"
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare rates, not counts",
+   "outcome": "LOGIC.EVIDENCE.03",
+   "branch_mode": "prerequisite",
+   "relationship": "Most evidence questions compare groups of different sizes. Students who compare raw counts instead of rates draw the wrong conclusion.",
+   "author_note": "Most evidence questions compare groups of different sizes. Students who compare raw counts instead of rates draw the wrong conclusion.",
+   "questions": [
+    {
+     "id": "S50-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "informal logic",
+     "type": "sa",
+     "prompt": "18 of 24 students in a class walk to school. What percent is that?",
+     "outcome": "LOGIC.EVIDENCE.03",
+     "answer_lines": [
+      "Percent:"
+     ],
+     "correct_answer": "75"
+    },
+    {
+     "id": "S50-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "informal logic",
+     "type": "tf",
+     "prompt": "Club X has 30 members and 12 play chess. Club Y has 10 members and 6 play chess. A larger share of Club Y plays chess.",
+     "outcome": "LOGIC.EVIDENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S50-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "informal logic",
+     "type": "mc",
+     "prompt": "Town P had 50 car accidents and Town Q had 30. What else do you need before saying Town P's roads are more dangerous?",
+     "outcome": "LOGIC.EVIDENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The colors of the cars"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing; 50 is more than 30"
+      },
+      {
+       "letter": "C",
+       "text": "The names of the drivers"
+      },
+      {
+       "letter": "D",
+       "text": "How many people or cars each town has"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "How many people or cars each town has"
+    },
+    {
+     "id": "S50-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "informal logic",
+     "type": "sa",
+     "prompt": "A survey of 200 people finds that 30 own a bike. What percent own a bike?",
+     "outcome": "LOGIC.EVIDENCE.03",
+     "answer_lines": [
+      "Percent:"
+     ],
+     "correct_answer": "15"
+    },
+    {
+     "id": "S50-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "informal logic",
+     "type": "tf",
+     "prompt": "If Group A has more members with a trait than Group B, then a larger percent of Group A has the trait.",
+     "outcome": "LOGIC.EVIDENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Samples and comparisons",
+   "outcome": "LOGIC.EVIDENCE.03",
+   "relationship": "Harder: bias, rates and controls.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S50-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "informal logic",
+     "type": "mc",
+     "prompt": "A website asks visitors to vote on whether the town needs a new park. Of 300 votes, 80% say yes. Why is this weak evidence about the whole town?",
+     "outcome": "LOGIC.EVIDENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "80% is too high to be believed."
+      },
+      {
+       "letter": "B",
+       "text": "300 votes is more than enough."
+      },
+      {
+       "letter": "C",
+       "text": "Websites cannot count votes."
+      },
+      {
+       "letter": "D",
+       "text": "People who choose to vote online may care more about parks than others."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "People who choose to vote online may care more about parks than others."
+    },
+    {
+     "id": "S50-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "informal logic",
+     "type": "sa",
+     "prompt": "Class A: 21 of 28 students finished the project on time. Class B: 24 of 30. What is the higher of the two on-time percents?",
+     "outcome": "LOGIC.EVIDENCE.03",
+     "answer_lines": [
+      "Percent:"
+     ],
+     "correct_answer": "80"
+    },
+    {
+     "id": "S50-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "informal logic",
+     "type": "tf",
+     "prompt": "A study finds that students who own more books tend to have higher reading scores. This alone proves that buying books raises reading scores.",
+     "outcome": "LOGIC.EVIDENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S50-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "informal logic",
+     "type": "mc",
+     "prompt": "To test whether a new fertilizer helps tomato plants grow, which design is best?",
+     "outcome": "LOGIC.EVIDENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Give fertilizer to a randomly chosen half of the plants and compare them with the other half."
+      },
+      {
+       "letter": "B",
+       "text": "Give fertilizer to all plants and measure them."
+      },
+      {
+       "letter": "C",
+       "text": "Ask a gardener whether the plants look bigger."
+      },
+      {
+       "letter": "D",
+       "text": "Use the fertilizer only on the healthiest plants."
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Give fertilizer to a randomly chosen half of the plants and compare them with the other half."
+    },
+    {
+     "id": "S50-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "informal logic",
+     "type": "values",
+     "prompt": "A coin is flipped 50 times to test whether it is fair. Give a number of heads h from 0 to 50 that would be strong evidence the coin favors heads. Use this test: h is at least 35.",
+     "outcome": "LOGIC.EVIDENCE.03",
+     "fields": [
+      {
+       "name": "h",
+       "label": "h ="
+      }
+     ],
+     "rule": "isInteger(h) and h >= 35 and h <= 50",
+     "example_answer": {
+      "h": 40
+     },
+     "correct_answer": "any values that satisfy: isInteger(h) and h >= 35 and h <= 50 (example: h = 40)"
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Comparisons that reverse",
+   "outcome": "LOGIC.EVIDENCE.03",
+   "relationship": "Expert: combined groups and base rates.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S50-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "informal logic",
+     "type": "sa",
+     "prompt": "Two clinics treat a condition. Clinic A treats 100 mild cases (90 recover) and 20 severe cases (8 recover). Clinic B treats 20 mild cases (19 recover) and 100 severe cases (50 recover). What percent of all Clinic A patients recover, to the nearest whole percent?",
+     "outcome": "LOGIC.EVIDENCE.03",
+     "answer_lines": [
+      "Percent:"
+     ],
+     "correct_answer": "82"
+    },
+    {
+     "id": "S50-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "informal logic",
+     "type": "mc",
+     "prompt": "In the clinics above, Clinic A has the higher overall recovery rate (about 82% to 58%). Which statement is true?",
+     "outcome": "LOGIC.EVIDENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Clinic A is better for both mild and severe cases."
+      },
+      {
+       "letter": "B",
+       "text": "Clinic B has the higher recovery rate for mild cases AND for severe cases."
+      },
+      {
+       "letter": "C",
+       "text": "Clinic A must be the better clinic."
+      },
+      {
+       "letter": "D",
+       "text": "The two clinics are equally good for mild cases."
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Clinic B has the higher recovery rate for mild cases AND for severe cases."
+    },
+    {
+     "id": "S50-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "informal logic",
+     "type": "tf",
+     "prompt": "In the clinics above, comparing only the overall recovery rates gives a fair comparison of the clinics.",
+     "outcome": "LOGIC.EVIDENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S50-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "informal logic",
+     "type": "sa",
+     "prompt": "A test for a rare condition is positive for 95 of every 100 people who have it and for 5 of every 100 people who do not. In a town of 10,000 people, 100 have the condition. About how many people in the town test positive in all?",
+     "outcome": "LOGIC.EVIDENCE.03",
+     "answer_lines": [
+      "People:"
+     ],
+     "correct_answer": "590"
+    },
+    {
+     "id": "S50-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "informal logic",
+     "type": "mc",
+     "prompt": "In the town above, 590 people test positive and 95 of them have the condition. What fraction of the positive tests are correct?",
+     "outcome": "LOGIC.EVIDENCE.03",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "About 5%"
+      },
+      {
+       "letter": "B",
+       "text": "About 50%"
+      },
+      {
+       "letter": "C",
+       "text": "About 16%"
+      },
+      {
+       "letter": "D",
+       "text": "About 95%"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "About 16%"
+    }
+   ]
+  }
+ ]
+}

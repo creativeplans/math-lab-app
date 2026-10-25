@@ -1,0 +1,558 @@
+{
+ "set": 17,
+ "title": "Truth-tellers and liars",
+ "outcome": "LOGIC.KNIGHTS.01",
+ "genre": "truth-teller puzzles",
+ "kind": "puzzle",
+ "family": "constraint",
+ "practices": [
+  "MP1",
+  "MP3"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Decide who tells the truth when each speaker always tells the truth or always lies",
+   "outcome": "LOGIC.KNIGHTS.01",
+   "questions": [
+    {
+     "id": "S17-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "truth-teller puzzles",
+     "type": "grid",
+     "prompt": "On this island every person is either a truth-teller, who always tells the truth, or a liar, who always lies. Ana says: \"Ben is a liar.\" Ben says: \"Ana and I are both truth-tellers.\" Mark each person as a truth-teller or a liar.",
+     "outcome": "LOGIC.KNIGHTS.01",
+     "rows": [
+      "Ana",
+      "Ben"
+     ],
+     "columns": [
+      "truth-teller",
+      "liar"
+     ],
+     "correct_assignment": {
+      "Ana": "truth-teller",
+      "Ben": "liar"
+     },
+     "correct_answer": "Ana: truth-teller; Ben: liar"
+    },
+    {
+     "id": "S17-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "truth-teller puzzles",
+     "type": "grid",
+     "prompt": "On this island every person is either a truth-teller, who always tells the truth, or a liar, who always lies. Cal says: \"Dee and I are different kinds.\" Dee says: \"Cal is a liar.\" Mark each person as a truth-teller or a liar.",
+     "outcome": "LOGIC.KNIGHTS.01",
+     "rows": [
+      "Cal",
+      "Dee"
+     ],
+     "columns": [
+      "truth-teller",
+      "liar"
+     ],
+     "correct_assignment": {
+      "Cal": "truth-teller",
+      "Dee": "liar"
+     },
+     "correct_answer": "Cal: truth-teller; Dee: liar"
+    },
+    {
+     "id": "S17-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "truth-teller puzzles",
+     "type": "grid",
+     "prompt": "On this island every person is either a truth-teller, who always tells the truth, or a liar, who always lies. Eve says: \"Fin and Gia are both liars.\" Fin says: \"Eve is a truth-teller.\" Gia says: \"Fin is a liar.\" Mark each person as a truth-teller or a liar.",
+     "outcome": "LOGIC.KNIGHTS.01",
+     "rows": [
+      "Eve",
+      "Fin",
+      "Gia"
+     ],
+     "columns": [
+      "truth-teller",
+      "liar"
+     ],
+     "correct_assignment": {
+      "Eve": "liar",
+      "Fin": "liar",
+      "Gia": "truth-teller"
+     },
+     "correct_answer": "Eve: liar; Fin: liar; Gia: truth-teller"
+    },
+    {
+     "id": "S17-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "truth-teller puzzles",
+     "type": "grid",
+     "prompt": "On this island every person is either a truth-teller, who always tells the truth, or a liar, who always lies. Jo says: \"Kai is a liar.\" Kai says: \"Lu is a liar.\" Lu says: \"Jo and Kai are both liars.\" Mark each person as a truth-teller or a liar.",
+     "outcome": "LOGIC.KNIGHTS.01",
+     "rows": [
+      "Jo",
+      "Kai",
+      "Lu"
+     ],
+     "columns": [
+      "truth-teller",
+      "liar"
+     ],
+     "correct_assignment": {
+      "Jo": "liar",
+      "Kai": "truth-teller",
+      "Lu": "liar"
+     },
+     "correct_answer": "Jo: liar; Kai: truth-teller; Lu: liar"
+    },
+    {
+     "id": "S17-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "truth-teller puzzles",
+     "type": "mc",
+     "prompt": "On this island every person is either a truth-teller, who always tells the truth, or a liar, who always lies. Mo says: \"Exactly one of Ned and Ola is a liar.\" Ned says: \"Mo is a liar.\" Ola says: \"Ned and I are the same kind.\" Who is a liar?",
+     "outcome": "LOGIC.KNIGHTS.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ned only"
+      },
+      {
+       "letter": "B",
+       "text": "Mo only"
+      },
+      {
+       "letter": "C",
+       "text": "Mo and Ned"
+      },
+      {
+       "letter": "D",
+       "text": "Ola only"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Mo only"
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Strategy: suppose, then test",
+   "outcome": "LOGIC.KNIGHTS.01",
+   "branch_mode": "guided_strategy",
+   "relationship": "Students guess and then stop. Supposing one speaker is truthful, following the consequences, and switching when a contradiction appears is a complete method.",
+   "author_note": "Students guess and then stop. Supposing one speaker is truthful, following the consequences, and switching when a contradiction appears is a complete method.",
+   "lesson": {
+    "title": "Suppose, then test",
+    "text": [
+     "Pick one speaker and SUPPOSE that person tells the truth.",
+     "Then everything that person says is true. Use it to decide others, one step at a time. A liar's statement must be false.",
+     "If you reach a contradiction, the supposition was wrong: that speaker is a liar. Start again with that fact.",
+     "When every statement agrees with the speaker's type, you have a solution. Check that no other choice works if the question expects one answer."
+    ],
+    "example": {
+     "title": "Worked example (different people)",
+     "prompt": [
+      "Pip says: \"Rue and I are both liars.\" Rue says nothing. Who is what?"
+     ],
+     "steps": [
+      "Suppose Pip is truthful. Then Pip is a liar: contradiction.",
+      "So Pip is a liar, and \"Rue and I are both liars\" is false.",
+      "Pip IS a liar, so for the statement to be false, Rue must be a truth-teller.",
+      "Answer: Pip liar, Rue truth-teller."
+     ]
+    }
+   },
+   "questions": [
+    {
+     "id": "S17-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "truth-teller puzzles",
+     "type": "tf",
+     "prompt": "On this island every person is either a truth-teller, who always tells the truth, or a liar, who always lies. A truth-teller can say \"I am a liar.\"",
+     "outcome": "LOGIC.KNIGHTS.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S17-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "truth-teller puzzles",
+     "type": "tf",
+     "prompt": "On this island every person is either a truth-teller, who always tells the truth, or a liar, who always lies. A liar can say \"I am a truth-teller.\"",
+     "outcome": "LOGIC.KNIGHTS.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S17-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "truth-teller puzzles",
+     "type": "mc",
+     "prompt": "On this island every person is either a truth-teller, who always tells the truth, or a liar, who always lies. Vic says: \"2 + 2 = 5.\" What is Vic?",
+     "outcome": "LOGIC.KNIGHTS.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "either"
+      },
+      {
+       "letter": "B",
+       "text": "neither"
+      },
+      {
+       "letter": "C",
+       "text": "a liar"
+      },
+      {
+       "letter": "D",
+       "text": "a truth-teller"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "a liar"
+    },
+    {
+     "id": "S17-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "truth-teller puzzles",
+     "type": "mc",
+     "prompt": "On this island every person is either a truth-teller, who always tells the truth, or a liar, who always lies. Wes is a truth-teller and says: \"Xia is a liar.\" What is Xia?",
+     "outcome": "LOGIC.KNIGHTS.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "neither"
+      },
+      {
+       "letter": "B",
+       "text": "a truth-teller"
+      },
+      {
+       "letter": "C",
+       "text": "either"
+      },
+      {
+       "letter": "D",
+       "text": "a liar"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "a liar"
+    },
+    {
+     "id": "S17-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "truth-teller puzzles",
+     "type": "mc",
+     "prompt": "On this island every person is either a truth-teller, who always tells the truth, or a liar, who always lies. Yan is a liar and says: \"Zed is a liar.\" What is Zed?",
+     "outcome": "LOGIC.KNIGHTS.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "a truth-teller"
+      },
+      {
+       "letter": "B",
+       "text": "a liar"
+      },
+      {
+       "letter": "C",
+       "text": "either"
+      },
+      {
+       "letter": "D",
+       "text": "neither"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "a truth-teller"
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Statements about counts",
+   "outcome": "LOGIC.KNIGHTS.01",
+   "relationship": "Harder: speakers who talk about how many liars there are.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S17-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "truth-teller puzzles",
+     "type": "grid",
+     "prompt": "On this island every person is either a truth-teller, who always tells the truth, or a liar, who always lies. Ash says: \"Exactly one of us three is a truth-teller.\" Bly says: \"Exactly two of us three are truth-tellers.\" Cru says: \"None of us three is a truth-teller.\" Mark each person as a truth-teller or a liar.",
+     "outcome": "LOGIC.KNIGHTS.01",
+     "rows": [
+      "Ash",
+      "Bly",
+      "Cru"
+     ],
+     "columns": [
+      "truth-teller",
+      "liar"
+     ],
+     "correct_assignment": {
+      "Ash": "truth-teller",
+      "Bly": "liar",
+      "Cru": "liar"
+     },
+     "correct_answer": "Ash: truth-teller; Bly: liar; Cru: liar"
+    },
+    {
+     "id": "S17-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "truth-teller puzzles",
+     "type": "grid",
+     "prompt": "On this island every person is either a truth-teller, who always tells the truth, or a liar, who always lies. Dov says: \"At least one of Ela and Fyn is a liar.\" Ela says: \"Dov and Fyn are both truth-tellers.\" Fyn says: \"Dov is a liar.\" Mark each person as a truth-teller or a liar.",
+     "outcome": "LOGIC.KNIGHTS.01",
+     "rows": [
+      "Dov",
+      "Ela",
+      "Fyn"
+     ],
+     "columns": [
+      "truth-teller",
+      "liar"
+     ],
+     "correct_assignment": {
+      "Dov": "truth-teller",
+      "Ela": "liar",
+      "Fyn": "liar"
+     },
+     "correct_answer": "Dov: truth-teller; Ela: liar; Fyn: liar"
+    },
+    {
+     "id": "S17-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "truth-teller puzzles",
+     "type": "grid",
+     "prompt": "On this island every person is either a truth-teller, who always tells the truth, or a liar, who always lies. Pat says: \"Exactly two of us three are truth-tellers.\" Quy says: \"Pat is a liar.\" Ren says: \"Quy and Pat are the same kind.\" Mark each person as a truth-teller or a liar.",
+     "outcome": "LOGIC.KNIGHTS.01",
+     "rows": [
+      "Pat",
+      "Quy",
+      "Ren"
+     ],
+     "columns": [
+      "truth-teller",
+      "liar"
+     ],
+     "correct_assignment": {
+      "Pat": "liar",
+      "Quy": "truth-teller",
+      "Ren": "liar"
+     },
+     "correct_answer": "Pat: liar; Quy: truth-teller; Ren: liar"
+    },
+    {
+     "id": "S17-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "truth-teller puzzles",
+     "type": "tf",
+     "prompt": "On this island every person is either a truth-teller, who always tells the truth, or a liar, who always lies. If two people each say \"The other one is a liar,\" then exactly one of them is a liar.",
+     "outcome": "LOGIC.KNIGHTS.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S17-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "truth-teller puzzles",
+     "type": "sa",
+     "prompt": "On this island every person is either a truth-teller, who always tells the truth, or a liar, who always lies. Four people each say exactly the same sentence: \"Exactly one of us four is a truth-teller.\" How many of them are truth-tellers?",
+     "outcome": "LOGIC.KNIGHTS.01",
+     "answer_lines": [
+      "Truth-tellers:"
+     ],
+     "correct_answer": "0"
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Larger systems and impossible statements",
+   "outcome": "LOGIC.KNIGHTS.01",
+   "relationship": "Expert: four speakers, and statements no one can make.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S17-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "truth-teller puzzles",
+     "type": "grid",
+     "prompt": "On this island every person is either a truth-teller, who always tells the truth, or a liar, who always lies. Uri says: \"Exactly three of us four are liars.\" Vee says: \"Uri is a truth-teller.\" Wil says: \"Vee is a liar.\" Xan says: \"Wil is a truth-teller and Uri is a liar.\" Mark each person as a truth-teller or a liar.",
+     "outcome": "LOGIC.KNIGHTS.01",
+     "rows": [
+      "Uri",
+      "Vee",
+      "Wil",
+      "Xan"
+     ],
+     "columns": [
+      "truth-teller",
+      "liar"
+     ],
+     "correct_assignment": {
+      "Uri": "liar",
+      "Vee": "liar",
+      "Wil": "truth-teller",
+      "Xan": "truth-teller"
+     },
+     "correct_answer": "Uri: liar; Vee: liar; Wil: truth-teller; Xan: truth-teller"
+    },
+    {
+     "id": "S17-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "truth-teller puzzles",
+     "type": "mc",
+     "prompt": "On this island every person is either a truth-teller, who always tells the truth, or a liar, who always lies. Which statement can NO person on the island say?",
+     "outcome": "LOGIC.KNIGHTS.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"I am a liar.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"2 + 2 = 5.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"2 + 2 = 4.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"I am a truth-teller.\""
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "\"I am a liar.\""
+    },
+    {
+     "id": "S17-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "truth-teller puzzles",
+     "type": "sa",
+     "prompt": "On this island every person is either a truth-teller, who always tells the truth, or a liar, who always lies. Five people stand in a circle. Each says: \"The person on my left is a liar.\" In how many ways can the five be truth-tellers and liars so that every statement fits?",
+     "outcome": "LOGIC.KNIGHTS.01",
+     "answer_lines": [
+      "Ways:"
+     ],
+     "correct_answer": "0"
+    },
+    {
+     "id": "S17-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "truth-teller puzzles",
+     "type": "tf",
+     "prompt": "On this island every person is either a truth-teller, who always tells the truth, or a liar, who always lies. A person says: \"I am a liar or 2 + 2 = 4.\" This person must be a truth-teller.",
+     "outcome": "LOGIC.KNIGHTS.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S17-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "truth-teller puzzles",
+     "type": "mc",
+     "prompt": "On this island every person is either a truth-teller, who always tells the truth, or a liar, who always lies. You meet Gil and Hal. Gil says: \"At least one of us two is a truth-teller.\" Hal says nothing. Which statement MUST be true?",
+     "outcome": "LOGIC.KNIGHTS.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Hal is a liar."
+      },
+      {
+       "letter": "B",
+       "text": "Gil is a truth-teller."
+      },
+      {
+       "letter": "C",
+       "text": "Both are liars."
+      },
+      {
+       "letter": "D",
+       "text": "If Hal is a truth-teller, then Gil is a truth-teller."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "If Hal is a truth-teller, then Gil is a truth-teller."
+    }
+   ]
+  }
+ ]
+}

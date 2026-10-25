@@ -1,0 +1,487 @@
+{
+ "set": 41,
+ "title": "Parity and alternation",
+ "outcome": "LOGIC.INVARIANT.01",
+ "genre": "parity",
+ "kind": "puzzle",
+ "family": "constraint",
+ "practices": [
+  "MP7",
+  "MP8"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Use odd/even and alternation to predict outcomes and rule out possibilities",
+   "outcome": "LOGIC.INVARIANT.01",
+   "questions": [
+    {
+     "id": "S41-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "parity",
+     "type": "mc",
+     "prompt": "Gears that touch mesh: when one turns clockwise, a gear touching it turns counterclockwise, and the reverse. Seven gears form a closed ring, each touching the gears on either side (figure). Gear 1 is turned clockwise. What happens?",
+     "outcome": "LOGIC.INVARIANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only gears 1, 3, 5 and 7 turn."
+      },
+      {
+       "letter": "B",
+       "text": "Every gear turns, and the directions alternate around the ring."
+      },
+      {
+       "letter": "C",
+       "text": "The gears jam: going around the ring, gear 1 would have to turn both ways."
+      },
+      {
+       "letter": "D",
+       "text": "Every gear turns clockwise."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The gears jam: going around the ring, gear 1 would have to turn both ways.",
+     "figure": {
+      "svg": "assets/S41-M-Q1.svg",
+      "description": "A closed ring of 7 numbered gears, each touching the gears on either side."
+     }
+    },
+    {
+     "id": "S41-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "parity",
+     "type": "sa",
+     "prompt": "Gears that touch mesh: when one turns clockwise, a gear touching it turns counterclockwise, and the reverse. Twelve gears stand in a row (not a ring), each touching the next. Gear 1 turns clockwise. How many of the 12 gears turn counterclockwise?",
+     "outcome": "LOGIC.INVARIANT.01",
+     "answer_lines": [
+      "Gears:"
+     ],
+     "correct_answer": "6"
+    },
+    {
+     "id": "S41-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "parity",
+     "type": "tf",
+     "prompt": "A frog starts on 0 on a number line and makes exactly 9 jumps, each 1 unit left or right. It can end on 4.",
+     "outcome": "LOGIC.INVARIANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S41-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "parity",
+     "type": "values",
+     "prompt": "A lamp starts OFF. Each press of its switch changes it (OFF to ON, or ON to OFF). Give a number of presses from 1 to 20 that leaves the lamp ON.",
+     "outcome": "LOGIC.INVARIANT.01",
+     "fields": [
+      {
+       "name": "n",
+       "label": "Presses ="
+      }
+     ],
+     "rule": "isInteger(n) and n >= 1 and n <= 20 and isOdd(n)",
+     "example_answer": {
+      "n": 7
+     },
+     "correct_answer": "any values that satisfy: isInteger(n) and n >= 1 and n <= 20 and isOdd(n) (example: n = 7)"
+    },
+    {
+     "id": "S41-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "parity",
+     "type": "sa",
+     "prompt": "A token moves along a row of squares numbered 1 to 15. Each move jumps exactly 2 squares left or right (staying on the row). It starts on square 4. How many of the 15 squares can it ever reach, counting square 4?",
+     "outcome": "LOGIC.INVARIANT.01",
+     "answer_lines": [
+      "Squares:"
+     ],
+     "correct_answer": "7"
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Strategy: keep track of odd and even only",
+   "outcome": "LOGIC.INVARIANT.01",
+   "branch_mode": "guided_strategy",
+   "relationship": "Students follow every step of a long process. Often only odd/even matters, and it switches or stays the same at each step.",
+   "author_note": "Students follow every step of a long process. Often only odd/even matters, and it switches or stays the same at each step.",
+   "lesson": {
+    "title": "Keep track of odd and even only",
+    "text": [
+     "Ask what happens to odd/even at each step. Does it switch every time, or stay the same?",
+     "If it switches every step, after an even number of steps it is back where it began; after an odd number it is the other way.",
+     "A target with the wrong parity can never be reached, however the steps are chosen."
+    ],
+    "example": {
+     "title": "Worked example (a different puzzle)",
+     "prompt": [
+      "A card shows its red side. Each turn it is flipped over. After 25 turns, which side shows?"
+     ],
+     "steps": [
+      "Each flip switches the side. After an even number of flips it shows red again.",
+      "25 is odd, so after 25 flips the other side shows."
+     ]
+    }
+   },
+   "questions": [
+    {
+     "id": "S41-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "parity",
+     "type": "tf",
+     "prompt": "The sum of 5 odd numbers is odd.",
+     "outcome": "LOGIC.INVARIANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S41-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "parity",
+     "type": "mc",
+     "prompt": "A coin starts heads up. It is turned over 13 times. Which side is up at the end?",
+     "outcome": "LOGIC.INVARIANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Either side, depending on how it is turned"
+      },
+      {
+       "letter": "B",
+       "text": "Tails"
+      },
+      {
+       "letter": "C",
+       "text": "Heads"
+      },
+      {
+       "letter": "D",
+       "text": "It cannot be known without trying"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Tails"
+    },
+    {
+     "id": "S41-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "parity",
+     "type": "sa",
+     "prompt": "Gears that touch mesh: when one turns clockwise, a gear touching it turns counterclockwise, and the reverse. Nine gears stand in a row, each touching the next. Gear 1 turns clockwise. What is the number of the last gear in the row that turns clockwise?",
+     "outcome": "LOGIC.INVARIANT.01",
+     "answer_lines": [
+      "Gear:"
+     ],
+     "correct_answer": "9"
+    },
+    {
+     "id": "S41-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "parity",
+     "type": "tf",
+     "prompt": "An even number plus an odd number is even.",
+     "outcome": "LOGIC.INVARIANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S41-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "parity",
+     "type": "mc",
+     "prompt": "Which total CANNOT be the sum of three odd numbers?",
+     "outcome": "LOGIC.INVARIANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "15"
+      },
+      {
+       "letter": "B",
+       "text": "9"
+      },
+      {
+       "letter": "C",
+       "text": "10"
+      },
+      {
+       "letter": "D",
+       "text": "3"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "10"
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Parity on boards and rings",
+   "outcome": "LOGIC.INVARIANT.01",
+   "relationship": "Harder: parity on grids, rings and sign choices.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S41-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "parity",
+     "type": "sa",
+     "prompt": "A token starts on a corner square of a 5 by 5 board. Each move goes to a square sharing a side (going back is allowed). After exactly 7 moves, how many different squares could the token be on?",
+     "outcome": "LOGIC.INVARIANT.01",
+     "answer_lines": [
+      "Squares:"
+     ],
+     "correct_answer": "12"
+    },
+    {
+     "id": "S41-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "parity",
+     "type": "tf",
+     "prompt": "Gears that touch mesh: when one turns clockwise, a gear touching it turns counterclockwise, and the reverse. Ten gears form a closed ring, each touching the gears on either side. They can all turn.",
+     "outcome": "LOGIC.INVARIANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S41-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "parity",
+     "type": "mc",
+     "prompt": "Seven cups stand upside down. A move turns over exactly 4 cups (any 4). Can all seven cups end right side up?",
+     "outcome": "LOGIC.INVARIANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No: each move changes the number of upside-down cups by an even amount, so it stays odd."
+      },
+      {
+       "letter": "B",
+       "text": "Yes, after exactly 7 moves."
+      },
+      {
+       "letter": "C",
+       "text": "Yes: turn over 4 cups, then 3 cups."
+      },
+      {
+       "letter": "D",
+       "text": "No: 7 is not a multiple of 4."
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "No: each move changes the number of upside-down cups by an even amount, so it stays odd."
+    },
+    {
+     "id": "S41-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "parity",
+     "type": "values",
+     "prompt": "Put a + or - sign in front of each of the numbers 1, 2, 3, ..., 10 and add. Give a total from 0 to 10 that can be made this way.",
+     "outcome": "LOGIC.INVARIANT.01",
+     "fields": [
+      {
+       "name": "t",
+       "label": "Total ="
+      }
+     ],
+     "rule": "isInteger(t) and t >= 0 and t <= 10 and isOdd(t)",
+     "example_answer": {
+      "t": 1
+     },
+     "correct_answer": "any values that satisfy: isInteger(t) and t >= 0 and t <= 10 and isOdd(t) (example: t = 1)"
+    },
+    {
+     "id": "S41-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "parity",
+     "type": "sa",
+     "prompt": "Gears that touch mesh: when one turns clockwise, a gear touching it turns counterclockwise, and the reverse. Nine gears are arranged in a 3 by 3 square, and each gear touches the gears directly beside, above and below it. A corner gear turns clockwise. How many gears turn clockwise, including the corner gear?",
+     "outcome": "LOGIC.INVARIANT.01",
+     "answer_lines": [
+      "Gears:"
+     ],
+     "correct_answer": "5"
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Prove impossibility with parity",
+   "outcome": "LOGIC.INVARIANT.01",
+   "relationship": "Expert: parity arguments about paths and totals.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S41-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "parity",
+     "type": "mc",
+     "prompt": "A token must visit every square of a 5 by 5 board exactly once, each move going to a square that shares a side. It starts on the square next to a corner (row 1, column 2). Is this possible?",
+     "outcome": "LOGIC.INVARIANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes, but only if it ends on a corner."
+      },
+      {
+       "letter": "B",
+       "text": "Yes: go along row 1, then snake back and forth."
+      },
+      {
+       "letter": "C",
+       "text": "No: 25 is not a multiple of 5."
+      },
+      {
+       "letter": "D",
+       "text": "No: the path must start and end on the corner color, and this square has the other color."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "No: the path must start and end on the corner color, and this square has the other color."
+    },
+    {
+     "id": "S41-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "parity",
+     "type": "sa",
+     "prompt": "Put a + or - sign in front of each of the numbers 1, 2, 3, ..., 10 and add. How many different totals can be made?",
+     "outcome": "LOGIC.INVARIANT.01",
+     "answer_lines": [
+      "Totals:"
+     ],
+     "correct_answer": "56"
+    },
+    {
+     "id": "S41-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "parity",
+     "type": "tf",
+     "prompt": "On a square grid, a path that moves one square up, down, left or right at each step, and ends where it started, always has an even number of steps.",
+     "outcome": "LOGIC.INVARIANT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S41-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "parity",
+     "type": "values",
+     "prompt": "Gears that touch mesh: when one turns clockwise, a gear touching it turns counterclockwise, and the reverse. Give a number of gears n from 3 to 12 for which a closed ring of n gears, each touching its two neighbors, would jam.",
+     "outcome": "LOGIC.INVARIANT.01",
+     "fields": [
+      {
+       "name": "n",
+       "label": "n ="
+      }
+     ],
+     "rule": "isInteger(n) and n >= 3 and n <= 12 and isOdd(n)",
+     "example_answer": {
+      "n": 5
+     },
+     "correct_answer": "any values that satisfy: isInteger(n) and n >= 3 and n <= 12 and isOdd(n) (example: n = 5)"
+    },
+    {
+     "id": "S41-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "parity",
+     "type": "sa",
+     "prompt": "A bug walks along the edges of a cube from corner to corner. It starts at one corner and makes exactly 5 moves (going back is allowed). How many of the 8 corners could it end on?",
+     "outcome": "LOGIC.INVARIANT.01",
+     "answer_lines": [
+      "Corners:"
+     ],
+     "correct_answer": "4"
+    }
+   ]
+  }
+ ]
+}

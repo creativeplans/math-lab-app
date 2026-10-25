@@ -1,0 +1,728 @@
+{
+ "set": 21,
+ "title": "Valid inference forms",
+ "outcome": "LOGIC.INFERENCE.01",
+ "genre": "formal logic",
+ "kind": "formal",
+ "family": "formal",
+ "practices": [
+  "MP3"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Draw valid conclusions with modus ponens, modus tollens, chains and disjunctive syllogism",
+   "outcome": "LOGIC.INFERENCE.01",
+   "questions": [
+    {
+     "id": "S21-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Premises: \"If the reservoir is full, the dam gates open.\" \"The reservoir is full.\" What conclusion follows?",
+     "outcome": "LOGIC.INFERENCE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The reservoir is not full."
+      },
+      {
+       "letter": "B",
+       "text": "The dam gates do not open."
+      },
+      {
+       "letter": "C",
+       "text": "Nothing follows."
+      },
+      {
+       "letter": "D",
+       "text": "The dam gates open."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The dam gates open."
+    },
+    {
+     "id": "S21-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Premises: \"If a number is divisible by 9, it is divisible by 3.\" \"The number 52 is not divisible by 3.\" What follows?",
+     "outcome": "LOGIC.INFERENCE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "52 is divisible by 3."
+      },
+      {
+       "letter": "B",
+       "text": "52 is divisible by 9."
+      },
+      {
+       "letter": "C",
+       "text": "52 is not divisible by 9."
+      },
+      {
+       "letter": "D",
+       "text": "Nothing follows."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "52 is not divisible by 9."
+    },
+    {
+     "id": "S21-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "order",
+     "prompt": "Arrange the steps of the argument so that each line follows from earlier ones and the conclusion comes last.",
+     "outcome": "LOGIC.INFERENCE.01",
+     "items": [
+      {
+       "key": "A",
+       "text": "If the trail is icy, the park closes."
+      },
+      {
+       "key": "B",
+       "text": "If the park closes, the race is cancelled."
+      },
+      {
+       "key": "C",
+       "text": "The trail is icy."
+      },
+      {
+       "key": "D",
+       "text": "So the park closes."
+      },
+      {
+       "key": "E",
+       "text": "So the race is cancelled."
+      }
+     ],
+     "correct_order": [
+      "A",
+      "C",
+      "D",
+      "B",
+      "E"
+     ],
+     "accept_orders": [
+      [
+       "A",
+       "B",
+       "C",
+       "D",
+       "E"
+      ],
+      [
+       "C",
+       "A",
+       "D",
+       "B",
+       "E"
+      ]
+     ],
+     "correct_answer": "If the trail is icy, the park closes. → The trail is icy. → So the park closes. → If the park closes, the race is cancelled. → So the race is cancelled."
+    },
+    {
+     "id": "S21-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Premises: \"The key is in the drawer or in the coat.\" \"The key is not in the drawer.\" What follows?",
+     "outcome": "LOGIC.INFERENCE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The key is in neither place."
+      },
+      {
+       "letter": "B",
+       "text": "The key is in the coat."
+      },
+      {
+       "letter": "C",
+       "text": "The key is in the drawer."
+      },
+      {
+       "letter": "D",
+       "text": "Nothing follows."
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The key is in the coat."
+    },
+    {
+     "id": "S21-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "This argument is valid: \"If P then Q. If Q then R. So if P then R.\"",
+     "outcome": "LOGIC.INFERENCE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "When is a conditional true?",
+   "outcome": "LOGIC.CONDITIONAL.01",
+   "branch_mode": "prerequisite",
+   "relationship": "Valid forms work because of when \"if...then\" is true and false; students who misread conditionals misapply them.",
+   "author_note": "Valid forms work because of when \"if...then\" is true and false; students who misread conditionals misapply them.",
+   "questions": [
+    {
+     "id": "S21-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"If P then Q\" is false when P is false and Q is true.",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S21-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"If P then Q\" is false when P is false.",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S21-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "\"If P then Q\" is true and P is true. What is Q?",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "true"
+      },
+      {
+       "letter": "B",
+       "text": "either"
+      },
+      {
+       "letter": "C",
+       "text": "neither"
+      },
+      {
+       "letter": "D",
+       "text": "false"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "true"
+    },
+    {
+     "id": "S21-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "\"If P then Q\" is true and Q is false. What is P?",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "neither"
+      },
+      {
+       "letter": "B",
+       "text": "either"
+      },
+      {
+       "letter": "C",
+       "text": "false"
+      },
+      {
+       "letter": "D",
+       "text": "true"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "false"
+    },
+    {
+     "id": "S21-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"If P then Q\" is true and Q is true. P must be true.",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "B2",
+   "section_code": "B2",
+   "relation": "backward",
+   "skill": "Using \"or\" and \"not\"",
+   "outcome": "LOGIC.CONNECTIVE.02",
+   "branch_mode": "prerequisite",
+   "relationship": "Disjunctive syllogism needs inclusive \"or\" and negation.",
+   "author_note": "Disjunctive syllogism needs inclusive \"or\" and negation.",
+   "questions": [
+    {
+     "id": "S21-B2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"P or Q\" is true and P is true. Then Q must be false.",
+     "outcome": "LOGIC.CONNECTIVE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S21-B2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"P or Q\" is true and P is true. Then Q is false.",
+     "outcome": "LOGIC.CONNECTIVE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S21-B2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "\"The meeting is on Monday or Tuesday.\" It is not on Monday. When is it?",
+     "outcome": "LOGIC.CONNECTIVE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Monday"
+      },
+      {
+       "letter": "B",
+       "text": "Tuesday"
+      },
+      {
+       "letter": "C",
+       "text": "neither day"
+      },
+      {
+       "letter": "D",
+       "text": "it cannot be told"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Tuesday"
+    },
+    {
+     "id": "S21-B2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Which is the negation of \"the light is on\"?",
+     "outcome": "LOGIC.CONNECTIVE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "the light is dim"
+      },
+      {
+       "letter": "B",
+       "text": "the lamp is broken"
+      },
+      {
+       "letter": "C",
+       "text": "the light is bright"
+      },
+      {
+       "letter": "D",
+       "text": "the light is not on"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "the light is not on"
+    },
+    {
+     "id": "S21-B2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"P or Q\" is true and both P and Q could be true.",
+     "outcome": "LOGIC.CONNECTIVE.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Longer chains of valid steps",
+   "outcome": "LOGIC.INFERENCE.01",
+   "relationship": "Harder: combine several forms in one argument.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S21-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Premises: \"If it is a holiday, the bank is closed.\" \"If the bank is closed, Mara cannot deposit.\" \"Mara deposited.\" What follows?",
+     "outcome": "LOGIC.INFERENCE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It is a holiday."
+      },
+      {
+       "letter": "B",
+       "text": "It is not a holiday."
+      },
+      {
+       "letter": "C",
+       "text": "The bank is closed."
+      },
+      {
+       "letter": "D",
+       "text": "Nothing follows."
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "It is not a holiday."
+    },
+    {
+     "id": "S21-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "Valid: \"P or Q. If P then R. If Q then R. So R.\"",
+     "outcome": "LOGIC.INFERENCE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S21-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Premises: \"Ana or Ben will host.\" \"If Ben hosts, the party is on Friday.\" \"The party is not on Friday.\" Who hosts?",
+     "outcome": "LOGIC.INFERENCE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "both"
+      },
+      {
+       "letter": "B",
+       "text": "Ben"
+      },
+      {
+       "letter": "C",
+       "text": "Ana"
+      },
+      {
+       "letter": "D",
+       "text": "it cannot be told"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Ana"
+    },
+    {
+     "id": "S21-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "order",
+     "prompt": "Arrange into a valid argument ending with the conclusion \"The fountain is off.\"",
+     "outcome": "LOGIC.INFERENCE.01",
+     "items": [
+      {
+       "key": "A",
+       "text": "If the fountain is on, the pump runs."
+      },
+      {
+       "key": "B",
+       "text": "The pump does not run."
+      },
+      {
+       "key": "C",
+       "text": "So the fountain is off."
+      }
+     ],
+     "correct_order": [
+      "A",
+      "B",
+      "C"
+     ],
+     "accept_orders": [
+      [
+       "B",
+       "A",
+       "C"
+      ]
+     ],
+     "correct_answer": "If the fountain is on, the pump runs. → The pump does not run. → So the fountain is off."
+    },
+    {
+     "id": "S21-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "Valid: \"If P then Q. Not Q. So not P.\"",
+     "outcome": "LOGIC.INFERENCE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Valid forms with several variables",
+   "outcome": "LOGIC.INFERENCE.01",
+   "relationship": "Expert: decide validity of new forms with truth tables.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S21-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "Valid: \"If P then (Q and R). Not R. So not P.\"",
+     "outcome": "LOGIC.INFERENCE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S21-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "Valid: \"If P then (Q or R). Not Q. So R.\"",
+     "outcome": "LOGIC.INFERENCE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S21-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Premises: \"If A then B.\" \"If C then D.\" \"A or C.\" Which conclusion follows?",
+     "outcome": "LOGIC.INFERENCE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "B or D"
+      },
+      {
+       "letter": "B",
+       "text": "B and D"
+      },
+      {
+       "letter": "C",
+       "text": "not B"
+      },
+      {
+       "letter": "D",
+       "text": "A and C"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "B or D"
+    },
+    {
+     "id": "S21-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "An argument has premises \"P or Q\" and \"if P then R\" and conclusion \"Q or R\". In how many of the 8 rows of its truth table are both premises true?",
+     "outcome": "LOGIC.INFERENCE.01",
+     "answer_lines": [
+      "Rows:"
+     ],
+     "correct_answer": "4"
+    },
+    {
+     "id": "S21-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "The argument \"P or Q. If P then R. So Q or R.\" is valid.",
+     "outcome": "LOGIC.INFERENCE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    }
+   ]
+  }
+ ]
+}

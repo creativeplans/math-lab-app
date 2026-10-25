@@ -1,0 +1,535 @@
+{
+ "set": 28,
+ "title": "Routes and paths",
+ "outcome": "LOGIC.GRAPH.01",
+ "genre": "routes and graphs",
+ "kind": "puzzle",
+ "family": "visual",
+ "practices": [
+  "MP1",
+  "MP7"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Trace routes in a network and decide which routes exist",
+   "outcome": "LOGIC.GRAPH.01",
+   "questions": [
+    {
+     "id": "S28-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "routes and graphs",
+     "type": "sa",
+     "prompt": "Roads are the straight lines; towns are the circles. Roads meet only at towns. What is the least number of roads on a route from A to F?",
+     "outcome": "LOGIC.GRAPH.01",
+     "answer_lines": [
+      "Roads:"
+     ],
+     "correct_answer": "3",
+     "figure": {
+      "svg": "assets/S28-M-Q1.svg",
+      "description": "A network of towns A, B, C, D, E, F joined by roads: A-B, A-C, B-C, B-D, C-D, D-E, D-F, E-F."
+     }
+    },
+    {
+     "id": "S28-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "routes and graphs",
+     "type": "sa",
+     "prompt": "Roads are the straight lines; towns are the circles. Roads meet only at towns. How many different routes go from A to F without visiting any town twice?",
+     "outcome": "LOGIC.GRAPH.01",
+     "answer_lines": [
+      "Routes:"
+     ],
+     "correct_answer": "8",
+     "figure": {
+      "svg": "assets/S28-M-Q2.svg",
+      "description": "A network of towns A, B, C, D, E, F joined by roads: A-B, A-C, B-C, B-D, C-D, D-E, D-F, E-F."
+     }
+    },
+    {
+     "id": "S28-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "routes and graphs",
+     "type": "mc",
+     "prompt": "Roads are the straight lines; towns are the circles. Roads meet only at towns. Which town, if it were closed (with all its roads), would cut the network into two parts that cannot reach each other?",
+     "outcome": "LOGIC.GRAPH.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "B"
+      },
+      {
+       "letter": "B",
+       "text": "E"
+      },
+      {
+       "letter": "C",
+       "text": "C"
+      },
+      {
+       "letter": "D",
+       "text": "D"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "D",
+     "figure": {
+      "svg": "assets/S28-M-Q3.svg",
+      "description": "A network of towns A, B, C, D, E, F joined by roads: A-B, A-C, B-C, B-D, C-D, D-E, D-F, E-F."
+     }
+    },
+    {
+     "id": "S28-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "routes and graphs",
+     "type": "mc",
+     "prompt": "Walkers 1, 2 and 3 each follow their own line from the left to a gate on the right. Where lines cross, there is no turning: each walker keeps going straight along their own line. Which gate does walker 2 reach?",
+     "outcome": "LOGIC.GRAPH.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Z"
+      },
+      {
+       "letter": "B",
+       "text": "Y"
+      },
+      {
+       "letter": "C",
+       "text": "X"
+      },
+      {
+       "letter": "D",
+       "text": "none of the gates"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Z",
+     "figure": {
+      "svg": "assets/S28-M-Q4.svg",
+      "description": "Three lines start at circles 1, 2, 3 on the left and end at squares X, Y, Z on the right; the lines cross each other."
+     }
+    },
+    {
+     "id": "S28-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "routes and graphs",
+     "type": "tf",
+     "prompt": "Roads are the straight lines; towns are the circles. Roads meet only at towns. A walk can use every road exactly once (towns may be visited more than once).",
+     "outcome": "LOGIC.GRAPH.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true,
+     "figure": {
+      "svg": "assets/S28-M-Q5.svg",
+      "description": "A network of towns A, B, C, D, E, F joined by roads: A-B, A-C, B-C, B-D, C-D, D-E, D-F, E-F."
+     }
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Strategy: mark the route as you trace it",
+   "outcome": "LOGIC.GRAPH.01",
+   "branch_mode": "guided_strategy",
+   "relationship": "Students lose track in a busy network or miscount routes. Tracing with a finger and writing the towns in order, and listing routes in a fixed order, makes counts complete.",
+   "author_note": "Students lose track in a busy network or miscount routes. Tracing with a finger and writing the towns in order, and listing routes in a fixed order, makes counts complete.",
+   "lesson": {
+    "title": "Mark the route as you trace it",
+    "text": [
+     "Write each route as a list of towns, for example A-B-D.",
+     "To count routes, list them in a fixed order: all routes starting A-B first, then those starting A-C, and so on. Never revisit a town in the same route if the rule forbids it.",
+     "For the shortest route, find all towns 1 road away, then all towns 2 roads away, and so on.",
+     "For a walk that uses every road once, count roads at each town: it is possible only if 0 or 2 towns have an odd number of roads (and the network is all one piece)."
+    ],
+    "example": {
+     "title": "Worked example (a different network)",
+     "prompt": [
+      "Towns W, X, Y, Z with roads W-X, X-Y, Y-Z, W-Y. How many routes from W to Z without repeating a town?"
+     ],
+     "steps": [
+      "Routes must end with Y-Z, because Z only touches Y.",
+      "From W to Y: W-Y, or W-X-Y.",
+      "So the routes are W-Y-Z and W-X-Y-Z: 2 routes."
+     ]
+    }
+   },
+   "questions": [
+    {
+     "id": "S28-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "routes and graphs",
+     "type": "sa",
+     "prompt": "Roads are the straight lines; towns are the circles. Roads meet only at towns. How many roads meet at town D?",
+     "outcome": "LOGIC.GRAPH.01",
+     "answer_lines": [
+      "Roads:"
+     ],
+     "correct_answer": "4",
+     "figure": {
+      "svg": "assets/S28-B1-Q1.svg",
+      "description": "A network of towns A, B, C, D, E, F joined by roads: A-B, A-C, B-C, B-D, C-D, D-E, D-F, E-F."
+     }
+    },
+    {
+     "id": "S28-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "routes and graphs",
+     "type": "mc",
+     "prompt": "Roads are the straight lines; towns are the circles. Roads meet only at towns. Which towns can be reached from A using exactly one road?",
+     "outcome": "LOGIC.GRAPH.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "only B"
+      },
+      {
+       "letter": "B",
+       "text": "D"
+      },
+      {
+       "letter": "C",
+       "text": "B and C"
+      },
+      {
+       "letter": "D",
+       "text": "B, C and D"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "B and C",
+     "figure": {
+      "svg": "assets/S28-B1-Q2.svg",
+      "description": "A network of towns A, B, C, D, E, F joined by roads: A-B, A-C, B-C, B-D, C-D, D-E, D-F, E-F."
+     }
+    },
+    {
+     "id": "S28-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "routes and graphs",
+     "type": "tf",
+     "prompt": "Roads are the straight lines; towns are the circles. Roads meet only at towns. There is a road directly from A to D.",
+     "outcome": "LOGIC.GRAPH.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true,
+     "figure": {
+      "svg": "assets/S28-B1-Q3.svg",
+      "description": "A network of towns A, B, C, D, E, F joined by roads: A-B, A-C, B-C, B-D, C-D, D-E, D-F, E-F."
+     }
+    },
+    {
+     "id": "S28-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "routes and graphs",
+     "type": "sa",
+     "prompt": "Roads are the straight lines; towns are the circles. Roads meet only at towns. How many routes go from E to F without visiting a town twice?",
+     "outcome": "LOGIC.GRAPH.01",
+     "answer_lines": [
+      "Routes:"
+     ],
+     "correct_answer": "2",
+     "figure": {
+      "svg": "assets/S28-B1-Q4.svg",
+      "description": "A network of towns A, B, C, D, E, F joined by roads: A-B, A-C, B-C, B-D, C-D, D-E, D-F, E-F."
+     }
+    },
+    {
+     "id": "S28-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "routes and graphs",
+     "type": "tf",
+     "prompt": "In a network, a town with 3 roads must be the start or end of a walk that uses every road once.",
+     "outcome": "LOGIC.GRAPH.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Routes with conditions",
+   "outcome": "LOGIC.GRAPH.01",
+   "relationship": "Harder: routes that must or must not pass certain towns, and longer networks.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S28-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "routes and graphs",
+     "type": "sa",
+     "prompt": "Roads are the straight lines; towns are the circles. Roads meet only at towns. How many routes go from P to U without visiting a town twice?",
+     "outcome": "LOGIC.GRAPH.01",
+     "answer_lines": [
+      "Routes:"
+     ],
+     "correct_answer": "6",
+     "figure": {
+      "svg": "assets/S28-F1-Q1.svg",
+      "description": "A network of towns P, Q, R, S, T, U joined by roads: P-Q, Q-R, P-S, Q-T, R-U, S-T, T-U, Q-U."
+     }
+    },
+    {
+     "id": "S28-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "routes and graphs",
+     "type": "sa",
+     "prompt": "Roads are the straight lines; towns are the circles. Roads meet only at towns. How many routes from P to U (no town twice) pass through T?",
+     "outcome": "LOGIC.GRAPH.01",
+     "answer_lines": [
+      "Routes:"
+     ],
+     "correct_answer": "4",
+     "figure": {
+      "svg": "assets/S28-F1-Q2.svg",
+      "description": "A network of towns P, Q, R, S, T, U joined by roads: P-Q, Q-R, P-S, Q-T, R-U, S-T, T-U, Q-U."
+     }
+    },
+    {
+     "id": "S28-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "routes and graphs",
+     "type": "tf",
+     "prompt": "Roads are the straight lines; towns are the circles. Roads meet only at towns. A walk can use every road exactly once.",
+     "outcome": "LOGIC.GRAPH.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true,
+     "figure": {
+      "svg": "assets/S28-F1-Q3.svg",
+      "description": "A network of towns P, Q, R, S, T, U joined by roads: P-Q, Q-R, P-S, Q-T, R-U, S-T, T-U, Q-U."
+     }
+    },
+    {
+     "id": "S28-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "routes and graphs",
+     "type": "mc",
+     "prompt": "Roads are the straight lines; towns are the circles. Roads meet only at towns. Which single road, if closed, makes T unreachable from P by any route?",
+     "outcome": "LOGIC.GRAPH.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "P-S"
+      },
+      {
+       "letter": "B",
+       "text": "none of these roads"
+      },
+      {
+       "letter": "C",
+       "text": "Q-T"
+      },
+      {
+       "letter": "D",
+       "text": "S-T"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "none of these roads",
+     "figure": {
+      "svg": "assets/S28-F1-Q4.svg",
+      "description": "A network of towns P, Q, R, S, T, U joined by roads: P-Q, Q-R, P-S, Q-T, R-U, S-T, T-U, Q-U."
+     }
+    },
+    {
+     "id": "S28-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "routes and graphs",
+     "type": "sa",
+     "prompt": "Roads are the straight lines; towns are the circles. Roads meet only at towns. What is the least number of roads on a route from S to R?",
+     "outcome": "LOGIC.GRAPH.01",
+     "answer_lines": [
+      "Roads:"
+     ],
+     "correct_answer": "3",
+     "figure": {
+      "svg": "assets/S28-F1-Q5.svg",
+      "description": "A network of towns P, Q, R, S, T, U joined by roads: P-Q, Q-R, P-S, Q-T, R-U, S-T, T-U, Q-U."
+     }
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Every road, every town",
+   "outcome": "LOGIC.GRAPH.01",
+   "relationship": "Expert: walks through every road or every town, and proofs that they cannot exist.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S28-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "routes and graphs",
+     "type": "sa",
+     "prompt": "In a network of 6 towns, the numbers of roads at the towns are 1, 2, 2, 3, 3 and 3. Every road has two ends, each at a town. How many roads are there?",
+     "outcome": "LOGIC.GRAPH.01",
+     "answer_lines": [
+      "Roads:"
+     ],
+     "correct_answer": "7"
+    },
+    {
+     "id": "S28-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "routes and graphs",
+     "type": "tf",
+     "prompt": "Some network has exactly three towns with an odd number of roads.",
+     "outcome": "LOGIC.GRAPH.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S28-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "routes and graphs",
+     "type": "mc",
+     "prompt": "Roads are the straight lines; towns are the circles. Roads meet only at towns. What is the least number of roads that must be ADDED so that a walk can use every road exactly once and return to its starting town?",
+     "outcome": "LOGIC.GRAPH.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "2"
+      },
+      {
+       "letter": "B",
+       "text": "1"
+      },
+      {
+       "letter": "C",
+       "text": "3"
+      },
+      {
+       "letter": "D",
+       "text": "0"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "1",
+     "figure": {
+      "svg": "assets/S28-F2-Q3.svg",
+      "description": "A network of towns A, B, C, D, E, F joined by roads: A-B, A-C, B-C, B-D, C-D, D-E, D-F, E-F."
+     }
+    },
+    {
+     "id": "S28-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "routes and graphs",
+     "type": "sa",
+     "prompt": "Roads are the straight lines; towns are the circles. Roads meet only at towns. How many routes from A to F visit EVERY town exactly once?",
+     "outcome": "LOGIC.GRAPH.01",
+     "answer_lines": [
+      "Routes:"
+     ],
+     "correct_answer": "2",
+     "figure": {
+      "svg": "assets/S28-F2-Q4.svg",
+      "description": "A network of towns A, B, C, D, E, F joined by roads: A-B, A-C, B-C, B-D, C-D, D-E, D-F, E-F."
+     }
+    },
+    {
+     "id": "S28-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "routes and graphs",
+     "type": "values",
+     "prompt": "A network has towns with these numbers of roads: 3, 3, 2, 2 and k. For a walk that uses every road exactly once to be possible in a connected network, at most two towns may have an odd number of roads. Give a whole number k from 1 to 6 that keeps this possible.",
+     "outcome": "LOGIC.GRAPH.01",
+     "fields": [
+      {
+       "name": "k",
+       "label": "k ="
+      }
+     ],
+     "rule": "isEven(k) and k >= 1 and k <= 6",
+     "example_answer": {
+      "k": 2
+     },
+     "correct_answer": "any values that satisfy: isEven(k) and k >= 1 and k <= 6 (example: k = 2)"
+    }
+   ]
+  }
+ ]
+}

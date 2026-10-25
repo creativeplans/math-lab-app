@@ -1,0 +1,689 @@
+{
+ "set": 5,
+ "title": "Negation and truth values",
+ "outcome": "LOGIC.CONNECTIVE.01",
+ "genre": "formal logic",
+ "kind": "formal",
+ "family": "formal",
+ "practices": [
+  "MP6",
+  "MP3"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Form negations and find truth values",
+   "outcome": "LOGIC.CONNECTIVE.01",
+   "questions": [
+    {
+     "id": "S5-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "What is the negation of \"Sam is taller than Ana\"?",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ana is taller than Sam."
+      },
+      {
+       "letter": "B",
+       "text": "Sam and Ana are the same height."
+      },
+      {
+       "letter": "C",
+       "text": "Sam is not taller than Ana."
+      },
+      {
+       "letter": "D",
+       "text": "Sam is shorter than Ana."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Sam is not taller than Ana."
+    },
+    {
+     "id": "S5-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "x stands for a real number. What is the negation of \"x > 5\"?",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "x ≤ 5"
+      },
+      {
+       "letter": "B",
+       "text": "x < 5"
+      },
+      {
+       "letter": "C",
+       "text": "x ≥ 5"
+      },
+      {
+       "letter": "D",
+       "text": "x < -5"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "x ≤ 5"
+    },
+    {
+     "id": "S5-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "P is the statement \"48 is a multiple of 9.\" The negation of P is true.",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S5-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "Give a number x that makes the NEGATION of the statement \"x ≤ 4\" true.",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "fields": [
+      {
+       "name": "x",
+       "label": "x ="
+      }
+     ],
+     "rule": "x > 4",
+     "example_answer": {
+      "x": 7
+     },
+     "correct_answer": "any values that satisfy: x > 4 (example: x = 7)"
+    },
+    {
+     "id": "S5-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Which pair of statements are negations of each other (in every situation, exactly one of the two is true)?",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"The cup is full.\" / \"The cup is empty.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Every student passed.\" / \"Every student failed.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"The coin landed heads up.\" / \"The coin did not land heads up.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"x > 3\" / \"x < 3\""
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "\"The coin landed heads up.\" / \"The coin did not land heads up.\""
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Truth values of simple statements",
+   "outcome": "LOGIC.ARGUMENT.01",
+   "branch_mode": "prerequisite",
+   "relationship": "To negate correctly, a student must first decide whether a statement is true or false. A student who misjudges the original cannot judge its negation.",
+   "author_note": "To negate correctly, a student must first decide whether a statement is true or false. A student who misjudges the original cannot judge its negation.",
+   "questions": [
+    {
+     "id": "S5-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"17 is a prime number\" is true.",
+     "outcome": "LOGIC.ARGUMENT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S5-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"3 x 7 = 24\" is true.",
+     "outcome": "LOGIC.ARGUMENT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S5-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"Every even number is a multiple of 4\" is true.",
+     "outcome": "LOGIC.ARGUMENT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S5-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Which statement is false?",
+     "outcome": "LOGIC.ARGUMENT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "0.5 equals one half."
+      },
+      {
+       "letter": "B",
+       "text": "0.5 + 0.25 = 0.75."
+      },
+      {
+       "letter": "C",
+       "text": "0.75 is greater than 0.5."
+      },
+      {
+       "letter": "D",
+       "text": "0.5 is greater than 0.75."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "0.5 is greater than 0.75."
+    },
+    {
+     "id": "S5-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"10 is not an even number\" is true.",
+     "outcome": "LOGIC.ARGUMENT.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "B2",
+   "section_code": "B2",
+   "relation": "backward",
+   "skill": "Negation is not the same as the opposite",
+   "outcome": "LOGIC.CONNECTIVE.01",
+   "branch_mode": "prerequisite",
+   "relationship": "The most common MAIN error is replacing a statement by its opposite (full/empty, taller/shorter). A negation must cover every case where the original is false.",
+   "author_note": "The most common MAIN error is replacing a statement by its opposite (full/empty, taller/shorter). A negation must cover every case where the original is false.",
+   "questions": [
+    {
+     "id": "S5-B2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "What is the negation of \"The door is open\"?",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The door is locked."
+      },
+      {
+       "letter": "B",
+       "text": "The door is not open."
+      },
+      {
+       "letter": "C",
+       "text": "The door is wide open."
+      },
+      {
+       "letter": "D",
+       "text": "The window is open."
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The door is not open."
+    },
+    {
+     "id": "S5-B2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"The water is cold\" and \"The water is hot\" are negations of each other.",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S5-B2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "What is the negation of \"Tom won the race\"?",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Tom did not win the race."
+      },
+      {
+       "letter": "B",
+       "text": "Someone else won."
+      },
+      {
+       "letter": "C",
+       "text": "Tom lost the race."
+      },
+      {
+       "letter": "D",
+       "text": "Tom came last."
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Tom did not win the race."
+    },
+    {
+     "id": "S5-B2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "If a statement is true, its negation is also true.",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S5-B2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "n is a whole number. What is the negation of \"n is even\"?",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "n is 0."
+      },
+      {
+       "letter": "B",
+       "text": "n is negative."
+      },
+      {
+       "letter": "C",
+       "text": "n is odd."
+      },
+      {
+       "letter": "D",
+       "text": "n is prime."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "n is odd."
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Negate ranges, counts and double negatives",
+   "outcome": "LOGIC.CONNECTIVE.01",
+   "relationship": "Harder: negations of ranges, of \"at least\", and repeated negations.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S5-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "x stands for a real number. What is the negation of \"3 < x < 7\" (x is between 3 and 7)?",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "x < 3 or x > 7"
+      },
+      {
+       "letter": "B",
+       "text": "3 ≥ x ≥ 7"
+      },
+      {
+       "letter": "C",
+       "text": "x ≤ 3 and x ≥ 7"
+      },
+      {
+       "letter": "D",
+       "text": "x ≤ 3 or x ≥ 7"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "x ≤ 3 or x ≥ 7"
+    },
+    {
+     "id": "S5-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Exactly 9 lamps are in a room. What is the negation of \"At least 5 lamps are on\"?",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "At most 5 lamps are on."
+      },
+      {
+       "letter": "B",
+       "text": "At most 4 lamps are on."
+      },
+      {
+       "letter": "C",
+       "text": "No lamps are on."
+      },
+      {
+       "letter": "D",
+       "text": "At least 4 lamps are off."
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "At most 4 lamps are on."
+    },
+    {
+     "id": "S5-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "truth_table",
+     "prompt": "Complete the truth table: the columns are \"not P\" and \"not (not P)\".",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "variables": [
+      "P"
+     ],
+     "rows": [
+      [
+       "T"
+      ],
+      [
+       "F"
+      ]
+     ],
+     "columns": [
+      "not P",
+      "not (not P)"
+     ],
+     "correct": [
+      [
+       "F",
+       "T"
+      ],
+      [
+       "T",
+       "F"
+      ]
+     ],
+     "correct_answer": "F T / T F"
+    },
+    {
+     "id": "S5-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "How many of these are true? (1) \"It is not true that 8 is odd.\" (2) \"It is false that 0 is not a whole number.\" (3) \"It is not the case that 2 + 2 is not 4.\" (4) \"It is not true that 5 is not less than 3.\"",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "answer_lines": [
+      "Number true:"
+     ],
+     "correct_answer": "3"
+    },
+    {
+     "id": "S5-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "The negation of \"Mia always walks to school\" is \"Mia never walks to school\".",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Negation inside conditions and counts",
+   "outcome": "LOGIC.CONNECTIVE.01",
+   "relationship": "Expert: negations of combined conditions and claims about how many.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S5-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "Give a number x that makes the negation of \"x < 2 or x > 5\" true.",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "fields": [
+      {
+       "name": "x",
+       "label": "x ="
+      }
+     ],
+     "rule": "x >= 2 and x <= 5",
+     "example_answer": {
+      "x": 3
+     },
+     "correct_answer": "any values that satisfy: x >= 2 and x <= 5 (example: x = 3)"
+    },
+    {
+     "id": "S5-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "There are 6 lights. What is the negation of \"At most 2 lights are on\"?",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "At least 2 lights are on."
+      },
+      {
+       "letter": "B",
+       "text": "At most 2 lights are off."
+      },
+      {
+       "letter": "C",
+       "text": "At least 3 lights are on."
+      },
+      {
+       "letter": "D",
+       "text": "Exactly 3 lights are on."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "At least 3 lights are on."
+    },
+    {
+     "id": "S5-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Ana says: \"It is false that it is not true that the test is not on Friday.\" What is Ana saying?",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nothing about the test."
+      },
+      {
+       "letter": "B",
+       "text": "The test might be on Friday."
+      },
+      {
+       "letter": "C",
+       "text": "The test is on Friday."
+      },
+      {
+       "letter": "D",
+       "text": "The test is not on Friday."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The test is not on Friday."
+    },
+    {
+     "id": "S5-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "For every statement P, exactly one of P and \"not P\" is true.",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S5-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "Statements about a whole number n from 1 to 10: A: \"n is even.\" B: \"n is not greater than 6.\" C: \"It is not true that n is a multiple of 3.\" For how many values of n are all three statements true?",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "answer_lines": [
+      "Values:"
+     ],
+     "correct_answer": "2"
+    }
+   ]
+  }
+ ]
+}

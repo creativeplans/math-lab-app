@@ -1,0 +1,481 @@
+{
+ "set": 33,
+ "title": "Word ladders",
+ "outcome": "LOGIC.WORD.02",
+ "genre": "word ladders",
+ "kind": "puzzle",
+ "family": "verbal",
+ "practices": [
+  "MP1",
+  "MP7"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Find shortest one-letter-change paths through a supplied word list",
+   "outcome": "LOGIC.WORD.02",
+   "questions": [
+    {
+     "id": "S33-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "word ladders",
+     "type": "order",
+     "prompt": "Word list (the ONLY words allowed): SAND, BAND, BEND, SEND, SENT, BENT, BEAD, BEAT, BOAT, BELT, BOLT, BEST, REST, RENT, RANT, PANT, PART, PORT, POST, MOST, MAST, LAST, LAND, LEND. A ladder step changes exactly one letter and keeps the other letters in place; every word in the ladder must be on the list. Put these four words in ladder order, starting with SAND, so that each word differs from the next by one letter.",
+     "outcome": "LOGIC.WORD.02",
+     "items": [
+      {
+       "key": "A",
+       "text": "SAND"
+      },
+      {
+       "key": "B",
+       "text": "SEND"
+      },
+      {
+       "key": "C",
+       "text": "SENT"
+      },
+      {
+       "key": "D",
+       "text": "RENT"
+      }
+     ],
+     "correct_order": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "correct_answer": "SAND → SEND → SENT → RENT"
+    },
+    {
+     "id": "S33-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "word ladders",
+     "type": "sa",
+     "prompt": "Word list (the ONLY words allowed): SAND, BAND, BEND, SEND, SENT, BENT, BEAD, BEAT, BOAT, BELT, BOLT, BEST, REST, RENT, RANT, PANT, PART, PORT, POST, MOST, MAST, LAST, LAND, LEND. A ladder step changes exactly one letter and keeps the other letters in place; every word in the ladder must be on the list. What is the least number of steps in a ladder from BAND to BOAT?",
+     "outcome": "LOGIC.WORD.02",
+     "answer_lines": [
+      "Steps:"
+     ],
+     "correct_answer": "4"
+    },
+    {
+     "id": "S33-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "word ladders",
+     "type": "mc",
+     "prompt": "Word list (the ONLY words allowed): SAND, BAND, BEND, SEND, SENT, BENT, BEAD, BEAT, BOAT, BELT, BOLT, BEST, REST, RENT, RANT, PANT, PART, PORT, POST, MOST, MAST, LAST, LAND, LEND. A ladder step changes exactly one letter and keeps the other letters in place; every word in the ladder must be on the list. Which word fills the gap in the ladder SENT, ?, RANT?",
+     "outcome": "LOGIC.WORD.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "BENT"
+      },
+      {
+       "letter": "B",
+       "text": "RENT"
+      },
+      {
+       "letter": "C",
+       "text": "PANT"
+      },
+      {
+       "letter": "D",
+       "text": "SEND"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "RENT"
+    },
+    {
+     "id": "S33-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "word ladders",
+     "type": "values",
+     "prompt": "Word list (the ONLY words allowed): SAND, BAND, BEND, SEND, SENT, BENT, BEAD, BEAT, BOAT, BELT, BOLT, BEST, REST, RENT, RANT, PANT, PART, PORT, POST, MOST, MAST, LAST, LAND, LEND. A ladder step changes exactly one letter and keeps the other letters in place; every word in the ladder must be on the list. Give a word from the list that is one step from both BEND and BEAT.",
+     "outcome": "LOGIC.WORD.02",
+     "fields": [
+      {
+       "name": "w",
+       "label": "word ="
+      }
+     ],
+     "rule": "w == 'bent' or w == 'bead'",
+     "example_answer": {
+      "w": "BENT"
+     },
+     "correct_answer": "any values that satisfy: w == 'bent' or w == 'bead' (example: w = BENT)"
+    },
+    {
+     "id": "S33-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "word ladders",
+     "type": "tf",
+     "prompt": "Word list (the ONLY words allowed): SAND, BAND, BEND, SEND, SENT, BENT, BEAD, BEAT, BOAT, BELT, BOLT, BEST, REST, RENT, RANT, PANT, PART, PORT, POST, MOST, MAST, LAST, LAND, LEND. A ladder step changes exactly one letter and keeps the other letters in place; every word in the ladder must be on the list. A ladder from LAND to BELT can be done in 3 steps.",
+     "outcome": "LOGIC.WORD.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Strategy: change the letters that must change, one at a time",
+   "outcome": "LOGIC.WORD.02",
+   "branch_mode": "guided_strategy",
+   "relationship": "Students try random words. Comparing start and end letter by letter shows which letters must change and gives a lower limit on the number of steps.",
+   "author_note": "Students try random words. Comparing start and end letter by letter shows which letters must change and gives a lower limit on the number of steps.",
+   "lesson": {
+    "title": "Change the letters that must change, one at a time",
+    "text": [
+     "Write the start word above the end word and circle each position where they differ. Each step changes one letter, so you need at least as many steps as circled positions.",
+     "Try changing one circled letter at a time, and check that each new word is on the list.",
+     "If no circled letter can change to a listed word, you may need a detour: change a letter that is already correct and change it back later. Detours add steps."
+    ],
+    "example": {
+     "title": "Worked example (a different list)",
+     "prompt": [
+      "List: COT, CAT, HAT, HOT, HUT. Ladder from COT to HAT?"
+     ],
+     "steps": [
+      "COT and HAT differ in 2 positions (C/H, O/A): at least 2 steps.",
+      "COT -> CAT (O to A) -> HAT (C to H). Both words are listed, so 2 steps."
+     ]
+    }
+   },
+   "questions": [
+    {
+     "id": "S33-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "word ladders",
+     "type": "mc",
+     "prompt": "Word list (the ONLY words allowed): SAND, BAND, BEND, SEND, SENT, BENT, BEAD, BEAT, BOAT, BELT, BOLT, BEST, REST, RENT, RANT, PANT, PART, PORT, POST, MOST, MAST, LAST, LAND, LEND. A ladder step changes exactly one letter and keeps the other letters in place; every word in the ladder must be on the list. Which word is one step from BEST?",
+     "outcome": "LOGIC.WORD.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "REST"
+      },
+      {
+       "letter": "B",
+       "text": "BOAT"
+      },
+      {
+       "letter": "C",
+       "text": "POST"
+      },
+      {
+       "letter": "D",
+       "text": "RENT"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "REST"
+    },
+    {
+     "id": "S33-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "word ladders",
+     "type": "sa",
+     "prompt": "In how many positions do the words MOST and PART differ?",
+     "outcome": "LOGIC.WORD.02",
+     "answer_lines": [
+      "Positions:"
+     ],
+     "correct_answer": "3"
+    },
+    {
+     "id": "S33-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "word ladders",
+     "type": "tf",
+     "prompt": "A ladder from MAST to LAST can be done in one step.",
+     "outcome": "LOGIC.WORD.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S33-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "word ladders",
+     "type": "sa",
+     "prompt": "Word list (the ONLY words allowed): SAND, BAND, BEND, SEND, SENT, BENT, BEAD, BEAT, BOAT, BELT, BOLT, BEST, REST, RENT, RANT, PANT, PART, PORT, POST, MOST, MAST, LAST, LAND, LEND. A ladder step changes exactly one letter and keeps the other letters in place; every word in the ladder must be on the list. What is the least number of steps from PORT to MOST?",
+     "outcome": "LOGIC.WORD.02",
+     "answer_lines": [
+      "Steps:"
+     ],
+     "correct_answer": "2"
+    },
+    {
+     "id": "S33-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "word ladders",
+     "type": "tf",
+     "prompt": "If two words differ in 3 positions, every ladder between them has at least 3 steps.",
+     "outcome": "LOGIC.WORD.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Longer ladders and detours",
+   "outcome": "LOGIC.WORD.02",
+   "relationship": "Harder: ladders that need detours through the list.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S33-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "word ladders",
+     "type": "sa",
+     "prompt": "Word list (the ONLY words allowed): SAND, BAND, BEND, SEND, SENT, BENT, BEAD, BEAT, BOAT, BELT, BOLT, BEST, REST, RENT, RANT, PANT, PART, PORT, POST, MOST, MAST, LAST, LAND, LEND. A ladder step changes exactly one letter and keeps the other letters in place; every word in the ladder must be on the list. What is the least number of steps from BEND to PORT?",
+     "outcome": "LOGIC.WORD.02",
+     "answer_lines": [
+      "Steps:"
+     ],
+     "correct_answer": "6"
+    },
+    {
+     "id": "S33-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "word ladders",
+     "type": "sa",
+     "prompt": "Word list (the ONLY words allowed): SAND, BAND, BEND, SEND, SENT, BENT, BEAD, BEAT, BOAT, BELT, BOLT, BEST, REST, RENT, RANT, PANT, PART, PORT, POST, MOST, MAST, LAST, LAND, LEND. A ladder step changes exactly one letter and keeps the other letters in place; every word in the ladder must be on the list. How many different shortest ladders go from BAND to BOAT?",
+     "outcome": "LOGIC.WORD.02",
+     "answer_lines": [
+      "Ladders:"
+     ],
+     "correct_answer": "2"
+    },
+    {
+     "id": "S33-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "word ladders",
+     "type": "mc",
+     "prompt": "Word list (the ONLY words allowed): SAND, BAND, BEND, SEND, SENT, BENT, BEAD, BEAT, BOAT, BELT, BOLT, BEST, REST, RENT, RANT, PANT, PART, PORT, POST, MOST, MAST, LAST, LAND, LEND. A ladder step changes exactly one letter and keeps the other letters in place; every word in the ladder must be on the list. Which word needs the MOST steps to reach from SAND (using shortest ladders)?",
+     "outcome": "LOGIC.WORD.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "BOLT"
+      },
+      {
+       "letter": "B",
+       "text": "PORT"
+      },
+      {
+       "letter": "C",
+       "text": "MOST"
+      },
+      {
+       "letter": "D",
+       "text": "LAST"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "LAST"
+    },
+    {
+     "id": "S33-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "word ladders",
+     "type": "values",
+     "prompt": "Word list (the ONLY words allowed): SAND, BAND, BEND, SEND, SENT, BENT, BEAD, BEAT, BOAT, BELT, BOLT, BEST, REST, RENT, RANT, PANT, PART, PORT, POST, MOST, MAST, LAST, LAND, LEND. A ladder step changes exactly one letter and keeps the other letters in place; every word in the ladder must be on the list. Give a word from the list that is exactly one step from LAND and also one step from SEND.",
+     "outcome": "LOGIC.WORD.02",
+     "fields": [
+      {
+       "name": "w",
+       "label": "word ="
+      }
+     ],
+     "rule": "w == 'sand' or w == 'lend'",
+     "example_answer": {
+      "w": "SAND"
+     },
+     "correct_answer": "any values that satisfy: w == 'sand' or w == 'lend' (example: w = SAND)"
+    },
+    {
+     "id": "S33-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "word ladders",
+     "type": "tf",
+     "prompt": "Word list (the ONLY words allowed): SAND, BAND, BEND, SEND, SENT, BENT, BEAD, BEAT, BOAT, BELT, BOLT, BEST, REST, RENT, RANT, PANT, PART, PORT, POST, MOST, MAST, LAST, LAND, LEND. A ladder step changes exactly one letter and keeps the other letters in place; every word in the ladder must be on the list. BOAT is one step from BOLT.",
+     "outcome": "LOGIC.WORD.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Prove a ladder is shortest or impossible",
+   "outcome": "LOGIC.WORD.02",
+   "relationship": "Expert: lower bounds and counting.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S33-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "word ladders",
+     "type": "sa",
+     "prompt": "Word list (the ONLY words allowed): SAND, BAND, BEND, SEND, SENT, BENT, BEAD, BEAT, BOAT, BELT, BOLT, BEST, REST, RENT, RANT, PANT, PART, PORT, POST, MOST, MAST, LAST, LAND, LEND. A ladder step changes exactly one letter and keeps the other letters in place; every word in the ladder must be on the list. What is the least number of steps from SAND to MOST?",
+     "outcome": "LOGIC.WORD.02",
+     "answer_lines": [
+      "Steps:"
+     ],
+     "correct_answer": "9"
+    },
+    {
+     "id": "S33-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "word ladders",
+     "type": "sa",
+     "prompt": "Word list (the ONLY words allowed): SAND, BAND, BEND, SEND, SENT, BENT, BEAD, BEAT, BOAT, BELT, BOLT, BEST, REST, RENT, RANT, PANT, PART, PORT, POST, MOST, MAST, LAST, LAND, LEND. A ladder step changes exactly one letter and keeps the other letters in place; every word in the ladder must be on the list. Suppose PANT is removed from the list. What is the least number of steps from RANT to PART now? Enter 0 if no ladder is possible.",
+     "outcome": "LOGIC.WORD.02",
+     "answer_lines": [
+      "Steps:"
+     ],
+     "correct_answer": "0"
+    },
+    {
+     "id": "S33-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "word ladders",
+     "type": "tf",
+     "prompt": "Word list (the ONLY words allowed): SAND, BAND, BEND, SEND, SENT, BENT, BEAD, BEAT, BOAT, BELT, BOLT, BEST, REST, RENT, RANT, PANT, PART, PORT, POST, MOST, MAST, LAST, LAND, LEND. A ladder step changes exactly one letter and keeps the other letters in place; every word in the ladder must be on the list. Every ladder from BAND to BOAT passes through BEND.",
+     "outcome": "LOGIC.WORD.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S33-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "word ladders",
+     "type": "sa",
+     "prompt": "Word list (the ONLY words allowed): SAND, BAND, BEND, SEND, SENT, BENT, BEAD, BEAT, BOAT, BELT, BOLT, BEST, REST, RENT, RANT, PANT, PART, PORT, POST, MOST, MAST, LAST, LAND, LEND. A ladder step changes exactly one letter and keeps the other letters in place; every word in the ladder must be on the list. How many words on the list are exactly one step from BENT?",
+     "outcome": "LOGIC.WORD.02",
+     "answer_lines": [
+      "Words:"
+     ],
+     "correct_answer": "6"
+    },
+    {
+     "id": "S33-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "word ladders",
+     "type": "mc",
+     "prompt": "A ladder must go from a 4-letter word to another 4-letter word that differs in all 4 positions. What is the least possible number of steps?",
+     "outcome": "LOGIC.WORD.02",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "3"
+      },
+      {
+       "letter": "B",
+       "text": "8"
+      },
+      {
+       "letter": "C",
+       "text": "4"
+      },
+      {
+       "letter": "D",
+       "text": "2"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "4"
+    }
+   ]
+  }
+ ]
+}

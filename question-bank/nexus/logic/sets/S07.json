@@ -1,0 +1,621 @@
+{
+ "set": 7,
+ "title": "Order from relational clues",
+ "outcome": "LOGIC.ORDER.01",
+ "genre": "ordering",
+ "kind": "puzzle",
+ "family": "constraint",
+ "practices": [
+  "MP1",
+  "MP2"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Build an ordering that satisfies relational clues",
+   "outcome": "LOGIC.ORDER.01",
+   "questions": [
+    {
+     "id": "S7-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "ordering",
+     "type": "order",
+     "prompt": "Four books stand on a shelf. The atlas is left of the cookbook. The diary is right of the cookbook. The biography is at the far left. Order the books from left to right.",
+     "outcome": "LOGIC.ORDER.01",
+     "items": [
+      {
+       "key": "A",
+       "text": "atlas"
+      },
+      {
+       "key": "B",
+       "text": "biography"
+      },
+      {
+       "key": "C",
+       "text": "cookbook"
+      },
+      {
+       "key": "D",
+       "text": "diary"
+      }
+     ],
+     "correct_order": [
+      "B",
+      "A",
+      "C",
+      "D"
+     ],
+     "correct_answer": "biography → atlas → cookbook → diary"
+    },
+    {
+     "id": "S7-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "ordering",
+     "type": "order",
+     "prompt": "Five friends arrived at a party one at a time. Gil arrived before Hana but after Ivo. Jo arrived last. Kai arrived right after Ivo. Order the arrivals, first to last.",
+     "outcome": "LOGIC.ORDER.01",
+     "items": [
+      {
+       "key": "G",
+       "text": "Gil"
+      },
+      {
+       "key": "H",
+       "text": "Hana"
+      },
+      {
+       "key": "I",
+       "text": "Ivo"
+      },
+      {
+       "key": "J",
+       "text": "Jo"
+      },
+      {
+       "key": "K",
+       "text": "Kai"
+      }
+     ],
+     "correct_order": [
+      "I",
+      "K",
+      "G",
+      "H",
+      "J"
+     ],
+     "correct_answer": "Ivo → Kai → Gil → Hana → Jo"
+    },
+    {
+     "id": "S7-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "ordering",
+     "type": "mc",
+     "prompt": "Five runners finished a race with no ties. Uma beat Vic. Wes finished right after Uma. Xia beat Uma. Yan finished last. Who finished in the middle (3rd)?",
+     "outcome": "LOGIC.ORDER.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Uma"
+      },
+      {
+       "letter": "B",
+       "text": "Vic"
+      },
+      {
+       "letter": "C",
+       "text": "Wes"
+      },
+      {
+       "letter": "D",
+       "text": "Xia"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Wes"
+    },
+    {
+     "id": "S7-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "ordering",
+     "type": "order",
+     "prompt": "Four flags hang on a pole, from top to bottom. The green flag is somewhere between the red and the blue flags. The red flag is not at the top. The yellow flag is directly below the blue flag. Order the flags from top to bottom.",
+     "outcome": "LOGIC.ORDER.01",
+     "items": [
+      {
+       "key": "R",
+       "text": "red"
+      },
+      {
+       "key": "G",
+       "text": "green"
+      },
+      {
+       "key": "B",
+       "text": "blue"
+      },
+      {
+       "key": "Y",
+       "text": "yellow"
+      }
+     ],
+     "correct_order": [
+      "B",
+      "Y",
+      "G",
+      "R"
+     ],
+     "correct_answer": "blue → yellow → green → red"
+    },
+    {
+     "id": "S7-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "ordering",
+     "type": "sa",
+     "prompt": "Seven students stand in a line. Lee is 2nd from the left. Max is 3rd from the right. How many students stand between Lee and Max?",
+     "outcome": "LOGIC.ORDER.01",
+     "answer_lines": [
+      "Students between:"
+     ],
+     "correct_answer": "2"
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Strategy: place the most constrained item first",
+   "outcome": "LOGIC.ORDER.01",
+   "branch_mode": "guided_strategy",
+   "relationship": "Students who get stuck usually try the clues in the order given. Starting with fixed positions and tight links (first, last, \"right after\") shrinks the search fast.",
+   "author_note": "Students who get stuck usually try the clues in the order given. Starting with fixed positions and tight links (first, last, \"right after\") shrinks the search fast.",
+   "lesson": {
+    "title": "Place the most constrained item first",
+    "text": [
+     "Draw a row of blanks, one per position.",
+     "Fill in fixed positions first (\"last\", \"2nd from the left\").",
+     "Then join items that must be next to each other into a block (\"right after\").",
+     "Finally use before/after clues to order the remaining pieces, and check every clue at the end."
+    ],
+    "example": {
+     "title": "Worked example (a different line)",
+     "prompt": [
+      "Four cars wait at a light: Pia's car is last. Quin's car is right in front of Rose's. Sal's car is in front of Quin's. Order the cars from front to back."
+     ],
+     "steps": [
+      "Pia is 4th.",
+      "Quin-Rose is a block of two.",
+      "Sal is in front of Quin, so the order of the front three is Sal, Quin, Rose.",
+      "Answer: Sal, Quin, Rose, Pia. Check each clue: all true."
+     ]
+    }
+   },
+   "questions": [
+    {
+     "id": "S7-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "ordering",
+     "type": "order",
+     "prompt": "Three cups stand in a row. The red cup is between the other two. The blue cup is on the right. Order them from left to right.",
+     "outcome": "LOGIC.ORDER.01",
+     "items": [
+      {
+       "key": "R",
+       "text": "red"
+      },
+      {
+       "key": "B",
+       "text": "blue"
+      },
+      {
+       "key": "W",
+       "text": "white"
+      }
+     ],
+     "correct_order": [
+      "W",
+      "R",
+      "B"
+     ],
+     "correct_answer": "white → red → blue"
+    },
+    {
+     "id": "S7-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "ordering",
+     "type": "sa",
+     "prompt": "In a line of 9 people, Ola is 4th from the front. What is her position counted from the back?",
+     "outcome": "LOGIC.ORDER.01",
+     "answer_lines": [
+      "Position from the back:"
+     ],
+     "correct_answer": "6"
+    },
+    {
+     "id": "S7-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "ordering",
+     "type": "tf",
+     "prompt": "\"Bea is right after Cy\" means no one is between Cy and Bea.",
+     "outcome": "LOGIC.ORDER.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S7-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "ordering",
+     "type": "mc",
+     "prompt": "Ava is taller than Ben, and Ben is taller than Cal. Who is shortest?",
+     "outcome": "LOGIC.ORDER.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ben"
+      },
+      {
+       "letter": "B",
+       "text": "Cal"
+      },
+      {
+       "letter": "C",
+       "text": "Ava"
+      },
+      {
+       "letter": "D",
+       "text": "It cannot be known."
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Cal"
+    },
+    {
+     "id": "S7-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "ordering",
+     "type": "order",
+     "prompt": "Four racers: Dot finished first. Eli beat Fay. Gus finished last. Order them, first to last.",
+     "outcome": "LOGIC.ORDER.01",
+     "items": [
+      {
+       "key": "D",
+       "text": "Dot"
+      },
+      {
+       "key": "E",
+       "text": "Eli"
+      },
+      {
+       "key": "F",
+       "text": "Fay"
+      },
+      {
+       "key": "G",
+       "text": "Gus"
+      }
+     ],
+     "correct_order": [
+      "D",
+      "E",
+      "F",
+      "G"
+     ],
+     "correct_answer": "Dot → Eli → Fay → Gus"
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Orderings with \"next to\" and \"not next to\"",
+   "outcome": "LOGIC.ORDER.01",
+   "relationship": "Harder: adjacency clues and more items.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S7-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "ordering",
+     "type": "order",
+     "prompt": "Five houses stand in a row, numbered 1 to 5 from left to right. The bakery is next to the bank. The café is at one end. The dentist is directly right of the café. The florist is not next to the dentist. The bank is in house 4. Order the businesses from left to right.",
+     "outcome": "LOGIC.ORDER.01",
+     "items": [
+      {
+       "key": "K",
+       "text": "bakery"
+      },
+      {
+       "key": "N",
+       "text": "bank"
+      },
+      {
+       "key": "C",
+       "text": "café"
+      },
+      {
+       "key": "D",
+       "text": "dentist"
+      },
+      {
+       "key": "F",
+       "text": "florist"
+      }
+     ],
+     "correct_order": [
+      "C",
+      "D",
+      "K",
+      "N",
+      "F"
+     ],
+     "correct_answer": "café → dentist → bakery → bank → florist"
+    },
+    {
+     "id": "S7-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "ordering",
+     "type": "sa",
+     "prompt": "Six people, A to F, sit in seats 1 to 6 in a row. C is in seat 1 and D is in seat 6. B sits right after A, and E sits right after B. F does not sit next to C. Which seat is F in?",
+     "outcome": "LOGIC.ORDER.01",
+     "answer_lines": [
+      "Seat:"
+     ],
+     "correct_answer": "5"
+    },
+    {
+     "id": "S7-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "ordering",
+     "type": "mc",
+     "prompt": "Five students line up. Pat is in front of Quinn. Rae is right behind Sol. Tia is first. Quinn is last. Which statement must be true?",
+     "outcome": "LOGIC.ORDER.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Rae is 4th."
+      },
+      {
+       "letter": "B",
+       "text": "Pat is 2nd."
+      },
+      {
+       "letter": "C",
+       "text": "Sol is right behind Pat."
+      },
+      {
+       "letter": "D",
+       "text": "Tia is directly in front of Pat or of Sol."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Tia is directly in front of Pat or of Sol."
+    },
+    {
+     "id": "S7-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "ordering",
+     "type": "grid",
+     "prompt": "Four friends sit in seats 1 to 4 in a row. Ari is not next to Bo. Cy sits in seat 2. Bo is in a higher seat number than Cy. Di is not in seat 4. Give each friend's seat.",
+     "outcome": "LOGIC.ORDER.01",
+     "rows": [
+      "Ari",
+      "Bo",
+      "Cy",
+      "Di"
+     ],
+     "columns": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ],
+     "distinct_columns": true,
+     "correct_assignment": {
+      "Ari": "1",
+      "Bo": "4",
+      "Cy": "2",
+      "Di": "3"
+     },
+     "correct_answer": "Ari: 1; Bo: 4; Cy: 2; Di: 3"
+    },
+    {
+     "id": "S7-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "ordering",
+     "type": "tf",
+     "prompt": "If five people stand in a line and three of them must stand next to each other in a fixed order, there are exactly 6 possible lines.",
+     "outcome": "LOGIC.ORDER.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Count and compare orderings",
+   "outcome": "LOGIC.ORDER.01",
+   "relationship": "Expert: count every valid ordering and find which clue is decisive.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S7-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "ordering",
+     "type": "sa",
+     "prompt": "Five students, P, Q, R, S and T, stand in a line. P is somewhere in front of Q, and R is somewhere in front of S. How many different lines are possible?",
+     "outcome": "LOGIC.ORDER.01",
+     "answer_lines": [
+      "Lines:"
+     ],
+     "correct_answer": "30"
+    },
+    {
+     "id": "S7-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "ordering",
+     "type": "order",
+     "prompt": "Six relay swimmers, A to F, swim in order. B swims right after E. D swims before A. C swims last. F swims first. A swims right after B. Give the swimming order.",
+     "outcome": "LOGIC.ORDER.01",
+     "items": [
+      {
+       "key": "A",
+       "text": "A"
+      },
+      {
+       "key": "B",
+       "text": "B"
+      },
+      {
+       "key": "C",
+       "text": "C"
+      },
+      {
+       "key": "D",
+       "text": "D"
+      },
+      {
+       "key": "E",
+       "text": "E"
+      },
+      {
+       "key": "F",
+       "text": "F"
+      }
+     ],
+     "correct_order": [
+      "F",
+      "D",
+      "E",
+      "B",
+      "A",
+      "C"
+     ],
+     "correct_answer": "F → D → E → B → A → C"
+    },
+    {
+     "id": "S7-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "ordering",
+     "type": "mc",
+     "prompt": "Four people, W, X, Y and Z, stand in a line. Clues: (1) W is not first. (2) X is right after W. (3) Y is last. Which clue could be removed and still leave exactly one possible line?",
+     "outcome": "LOGIC.ORDER.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No clue can be removed."
+      },
+      {
+       "letter": "B",
+       "text": "Clue 3"
+      },
+      {
+       "letter": "C",
+       "text": "Clue 1"
+      },
+      {
+       "letter": "D",
+       "text": "Clue 2"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "No clue can be removed."
+    },
+    {
+     "id": "S7-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "ordering",
+     "type": "values",
+     "prompt": "Seven people stand in a line, numbered 1 to 7 from the front. Ana is in position a and Ben is in position b. Ana is in front of Ben, exactly two people stand between them, and Ben is not last. Give one possible pair of positions.",
+     "outcome": "LOGIC.ORDER.01",
+     "fields": [
+      {
+       "name": "a",
+       "label": "Ana a ="
+      },
+      {
+       "name": "b",
+       "label": "Ben b ="
+      }
+     ],
+     "rule": "b - a == 3 and b <= 6 and a >= 1 and isInteger(a) and isInteger(b)",
+     "example_answer": {
+      "a": 2,
+      "b": 5
+     },
+     "correct_answer": "any values that satisfy: b - a == 3 and b <= 6 and a >= 1 and isInteger(a) and isInteger(b) (example: a = 2, b = 5)"
+    },
+    {
+     "id": "S7-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "ordering",
+     "type": "tf",
+     "prompt": "With the clues \"J is before K\" and \"K is before L\" for three people in a line, the order is fully determined.",
+     "outcome": "LOGIC.ORDER.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,765 @@
+{
+ "set": 12,
+ "title": "When is \"if ... then\" false?",
+ "outcome": "LOGIC.CONDITIONAL.01",
+ "genre": "formal logic",
+ "kind": "formal",
+ "family": "formal",
+ "practices": [
+  "MP3",
+  "MP6"
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Find when a conditional is true and the one case that makes it false",
+   "outcome": "LOGIC.CONDITIONAL.01",
+   "questions": [
+    {
+     "id": "S12-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "A rule: \"If a package weighs more than 5 kg, then it has a yellow label.\" Which package BREAKS the rule?",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "a 7 kg package with a yellow label"
+      },
+      {
+       "letter": "B",
+       "text": "a 7 kg package with a blue label"
+      },
+      {
+       "letter": "C",
+       "text": "a 3 kg package with a blue label"
+      },
+      {
+       "letter": "D",
+       "text": "a 3 kg package with a yellow label"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "a 7 kg package with a blue label"
+    },
+    {
+     "id": "S12-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "truth_table",
+     "prompt": "Complete the truth table for \"if P then Q\".",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "variables": [
+      "P",
+      "Q"
+     ],
+     "rows": [
+      [
+       "T",
+       "T"
+      ],
+      [
+       "T",
+       "F"
+      ],
+      [
+       "F",
+       "T"
+      ],
+      [
+       "F",
+       "F"
+      ]
+     ],
+     "columns": [
+      "if P then Q"
+     ],
+     "correct": [
+      [
+       "T"
+      ],
+      [
+       "F"
+      ],
+      [
+       "T"
+      ],
+      [
+       "T"
+      ]
+     ],
+     "correct_answer": "T / F / T / T"
+    },
+    {
+     "id": "S12-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "Find a whole number n that is a counterexample to \"If n is odd, then n is prime.\" (A counterexample makes the \"if\" part true and the \"then\" part false.)",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "fields": [
+      {
+       "name": "n",
+       "label": "n ="
+      }
+     ],
+     "rule": "isOdd(n) and not isPrime(n) and n >= 1",
+     "example_answer": {
+      "n": 9
+     },
+     "correct_answer": "any values that satisfy: isOdd(n) and not isPrime(n) and n >= 1 (example: n = 9)"
+    },
+    {
+     "id": "S12-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"If 5 > 8, then 2 + 2 = 5\" is true.",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S12-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "\"If it is a weekend day, the library opens at noon.\" Today the library opened at 9 a.m. What follows?",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The rule was broken."
+      },
+      {
+       "letter": "B",
+       "text": "Today is a weekend day."
+      },
+      {
+       "letter": "C",
+       "text": "Today is not a weekend day."
+      },
+      {
+       "letter": "D",
+       "text": "Nothing follows."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Today is not a weekend day."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Find the \"if\" part and the \"then\" part",
+   "outcome": "LOGIC.CONDITIONAL.01",
+   "branch_mode": "prerequisite",
+   "relationship": "Students who cannot split a conditional into hypothesis and conclusion cannot find the case that breaks it.",
+   "author_note": "Students who cannot split a conditional into hypothesis and conclusion cannot find the case that breaks it.",
+   "questions": [
+    {
+     "id": "S12-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "In \"If the sun sets, the street lights turn on,\" what is the \"if\" part (the hypothesis)?",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "the street lights turn on"
+      },
+      {
+       "letter": "B",
+       "text": "the lights are bright"
+      },
+      {
+       "letter": "C",
+       "text": "it is night"
+      },
+      {
+       "letter": "D",
+       "text": "the sun sets"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "the sun sets"
+    },
+    {
+     "id": "S12-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "In \"Students may enter the lab only if they wear goggles,\" which is the \"then\" part when it is written as \"If ..., then ...\"?",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "they wear goggles"
+      },
+      {
+       "letter": "B",
+       "text": "students enter the lab"
+      },
+      {
+       "letter": "C",
+       "text": "they leave the lab"
+      },
+      {
+       "letter": "D",
+       "text": "the lab is open"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "they wear goggles"
+    },
+    {
+     "id": "S12-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Rewrite \"Every multiple of 10 ends in 0\" as a conditional.",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "If a number is not a multiple of 10, then it does not end in 0."
+      },
+      {
+       "letter": "B",
+       "text": "If a number ends in 0, then it is a multiple of 10."
+      },
+      {
+       "letter": "C",
+       "text": "If a number is a multiple of 10, then it ends in 0."
+      },
+      {
+       "letter": "D",
+       "text": "A number ends in 0 and is a multiple of 10."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "If a number is a multiple of 10, then it ends in 0."
+    },
+    {
+     "id": "S12-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "In \"If x = 3, then x + 1 = 4,\" the hypothesis is \"x + 1 = 4\".",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S12-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "In \"The alarm rings whenever the door opens,\" which part is the hypothesis?",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "the door opens"
+      },
+      {
+       "letter": "B",
+       "text": "the alarm rings"
+      },
+      {
+       "letter": "C",
+       "text": "the door closes"
+      },
+      {
+       "letter": "D",
+       "text": "the alarm is loud"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "the door opens"
+    }
+   ]
+  },
+  {
+   "section": "B2",
+   "section_code": "B2",
+   "relation": "backward",
+   "skill": "Truth values of the parts",
+   "outcome": "LOGIC.CONNECTIVE.01",
+   "branch_mode": "prerequisite",
+   "relationship": "Judging a conditional requires judging each part.",
+   "author_note": "Judging a conditional requires judging each part.",
+   "questions": [
+    {
+     "id": "S12-B2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"6 is a factor of 30\" is true.",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S12-B2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"4 squared is 8\" is true.",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S12-B2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"Every square is a triangle\" is true.",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S12-B2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "Which statement is true?",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "-5 is greater than 2."
+      },
+      {
+       "letter": "B",
+       "text": "-5 is less than 2."
+      },
+      {
+       "letter": "C",
+       "text": "2 is less than -5."
+      },
+      {
+       "letter": "D",
+       "text": "-5 equals 5."
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "-5 is less than 2."
+    },
+    {
+     "id": "S12-B2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"1 is a prime number\" is true.",
+     "outcome": "LOGIC.CONNECTIVE.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    }
+   ]
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Conditionals in mathematics",
+   "outcome": "LOGIC.CONDITIONAL.01",
+   "relationship": "Harder: conditionals with variables, domains and false hypotheses.",
+   "difficulty": "harder",
+   "label": "ADVANCED APPLICATION",
+   "questions": [
+    {
+     "id": "S12-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "Find a real number x that makes \"If x squared is greater than 9, then x is greater than 3\" FALSE.",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "fields": [
+      {
+       "name": "x",
+       "label": "x ="
+      }
+     ],
+     "rule": "x^2 > 9 and not (x > 3)",
+     "example_answer": {
+      "x": -4
+     },
+     "correct_answer": "any values that satisfy: x^2 > 9 and not (x > 3) (example: x = -4)"
+    },
+    {
+     "id": "S12-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"If a whole number is divisible by 6, then it is divisible by 3\" is true for every whole number.",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S12-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "For how many whole numbers n from 1 to 12 is \"If n is even, then n is a multiple of 4\" FALSE?",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "answer_lines": [
+      "Count:"
+     ],
+     "correct_answer": "3"
+    },
+    {
+     "id": "S12-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "P is false. Which statement MUST be true?",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "If Q then P"
+      },
+      {
+       "letter": "B",
+       "text": "P and Q"
+      },
+      {
+       "letter": "C",
+       "text": "Q"
+      },
+      {
+       "letter": "D",
+       "text": "If P then Q"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "If P then Q"
+    },
+    {
+     "id": "S12-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "mc",
+     "prompt": "\"If you score above 90, you earn a badge.\" Lin earned a badge. What follows?",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The rule was broken."
+      },
+      {
+       "letter": "B",
+       "text": "Lin scored 90 or below."
+      },
+      {
+       "letter": "C",
+       "text": "Nothing about Lin's score follows."
+      },
+      {
+       "letter": "D",
+       "text": "Lin scored above 90."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Nothing about Lin's score follows."
+    }
+   ]
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Nested and chained conditionals",
+   "outcome": "LOGIC.CONDITIONAL.01",
+   "relationship": "Expert: conditionals inside conditionals and their truth tables.",
+   "difficulty": "expert",
+   "label": "EXPERT CHALLENGE",
+   "questions": [
+    {
+     "id": "S12-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "truth_table",
+     "prompt": "Complete the truth table for \"if P then (if Q then R)\".",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "variables": [
+      "P",
+      "Q",
+      "R"
+     ],
+     "rows": [
+      [
+       "T",
+       "T",
+       "T"
+      ],
+      [
+       "T",
+       "T",
+       "F"
+      ],
+      [
+       "T",
+       "F",
+       "T"
+      ],
+      [
+       "T",
+       "F",
+       "F"
+      ],
+      [
+       "F",
+       "T",
+       "T"
+      ],
+      [
+       "F",
+       "T",
+       "F"
+      ],
+      [
+       "F",
+       "F",
+       "T"
+      ],
+      [
+       "F",
+       "F",
+       "F"
+      ]
+     ],
+     "columns": [
+      "if Q then R",
+      "if P then (if Q then R)"
+     ],
+     "correct": [
+      [
+       "T",
+       "T"
+      ],
+      [
+       "F",
+       "F"
+      ],
+      [
+       "T",
+       "T"
+      ],
+      [
+       "T",
+       "T"
+      ],
+      [
+       "T",
+       "T"
+      ],
+      [
+       "F",
+       "T"
+      ],
+      [
+       "T",
+       "T"
+      ],
+      [
+       "T",
+       "T"
+      ]
+     ],
+     "correct_answer": "T T / F F / T T / T T / T T / F T / T T / T T"
+    },
+    {
+     "id": "S12-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "sa",
+     "prompt": "In how many of the 8 rows of a truth table for P, Q, R is \"(if P then Q) and (if Q then R)\" true?",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "answer_lines": [
+      "Rows:"
+     ],
+     "correct_answer": "4"
+    },
+    {
+     "id": "S12-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"If P then (if Q then R)\" has the same truth value as \"if (P and Q) then R\" in every row.",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "True",
+     "no_shuffle": true
+    },
+    {
+     "id": "S12-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "tf",
+     "prompt": "\"If P then (if Q then R)\" has the same truth value as \"if (if P then Q) then R\" in every row.",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True"
+      },
+      {
+       "letter": "B",
+       "text": "False"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "False",
+     "no_shuffle": true
+    },
+    {
+     "id": "S12-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "formal logic",
+     "type": "values",
+     "prompt": "Find whole numbers a and b that make the statement \"If a + b is even, then a and b are both even\" FALSE.",
+     "outcome": "LOGIC.CONDITIONAL.01",
+     "fields": [
+      {
+       "name": "a",
+       "label": "a ="
+      },
+      {
+       "name": "b",
+       "label": "b ="
+      }
+     ],
+     "rule": "isEven(a + b) and not (isEven(a) and isEven(b)) and isInteger(a) and isInteger(b)",
+     "example_answer": {
+      "a": 3,
+      "b": 5
+     },
+     "correct_answer": "any values that satisfy: isEven(a + b) and not (isEven(a) and isEven(b)) and isInteger(a) and isInteger(b) (example: a = 3, b = 5)"
+    }
+   ]
+  }
+ ]
+}
