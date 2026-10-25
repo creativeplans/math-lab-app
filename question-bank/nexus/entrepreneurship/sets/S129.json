@@ -1,0 +1,658 @@
+{
+ "set": 129,
+ "title": "Money raised is not profit",
+ "outcome": "ENT.FUND.05",
+ "content_status": "stable",
+ "requires": [
+  128,
+  47
+ ],
+ "module": "growth",
+ "path_refs": [
+  "services",
+  "products",
+  "digital",
+  "content"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Separate money raised from profit and compute runway",
+   "questions": [
+    {
+     "id": "S129-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "Is a 30,000-dollar loan profit?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes, all cash received is profit"
+      },
+      {
+       "letter": "B",
+       "text": "Yes, if spent within a month"
+      },
+      {
+       "letter": "C",
+       "text": "No, it must be repaid"
+      },
+      {
+       "letter": "D",
+       "text": "Only if the bank is local"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "No, it must be repaid",
+     "intro": "Money from a loan, investor, grant or crowdfunding campaign increases CASH, but it is not PROFIT. Loans must be repaid; investors own part of the business; crowdfunding backers are owed products. Profit comes only from selling for more than your costs. A business can raise a lot of money and still lose money on every sale. Track BURN RATE (how much cash the business uses each month) and RUNWAY (months until cash runs out = cash / monthly burn).",
+     "feedback": "Debt is not profit."
+    },
+    {
+     "id": "S129-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "Where does profit come from?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Selling for more than costs"
+      },
+      {
+       "letter": "B",
+       "text": "Raising money from investors"
+      },
+      {
+       "letter": "C",
+       "text": "Winning a grant"
+      },
+      {
+       "letter": "D",
+       "text": "Borrowing from a bank"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Selling for more than costs",
+     "intro": "Money from a loan, investor, grant or crowdfunding campaign increases CASH, but it is not PROFIT. Loans must be repaid; investors own part of the business; crowdfunding backers are owed products. Profit comes only from selling for more than your costs. A business can raise a lot of money and still lose money on every sale. Track BURN RATE (how much cash the business uses each month) and RUNWAY (months until cash runs out = cash / monthly burn).",
+     "feedback": "Operations."
+    },
+    {
+     "id": "S129-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "What is burn rate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The interest rate charged on a business loan"
+      },
+      {
+       "letter": "B",
+       "text": "The tax rate on profit"
+      },
+      {
+       "letter": "C",
+       "text": "The temperature of the oven"
+      },
+      {
+       "letter": "D",
+       "text": "How much cash the business uses each month"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "How much cash the business uses each month",
+     "intro": "Money from a loan, investor, grant or crowdfunding campaign increases CASH, but it is not PROFIT. Loans must be repaid; investors own part of the business; crowdfunding backers are owed products. Profit comes only from selling for more than your costs. A business can raise a lot of money and still lose money on every sale. Track BURN RATE (how much cash the business uses each month) and RUNWAY (months until cash runs out = cash / monthly burn).",
+     "feedback": "Monthly cash use."
+    },
+    {
+     "id": "S129-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "Cash is 24,000 and monthly burn is 3,000. What is the runway?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "3 months"
+      },
+      {
+       "letter": "B",
+       "text": "72,000 months"
+      },
+      {
+       "letter": "C",
+       "text": "8 months"
+      },
+      {
+       "letter": "D",
+       "text": "21,000 months"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "8 months",
+     "intro": "Money from a loan, investor, grant or crowdfunding campaign increases CASH, but it is not PROFIT. Loans must be repaid; investors own part of the business; crowdfunding backers are owed products. Profit comes only from selling for more than your costs. A business can raise a lot of money and still lose money on every sale. Track BURN RATE (how much cash the business uses each month) and RUNWAY (months until cash runs out = cash / monthly burn).",
+     "feedback": "24,000 / 3,000 = 8."
+    },
+    {
+     "id": "S129-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "A business raised 50,000 dollars but loses 2 dollars on every sale. What is true?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It still loses money on each sale"
+      },
+      {
+       "letter": "B",
+       "text": "Each sale now makes money"
+      },
+      {
+       "letter": "C",
+       "text": "Losses disappear with funding"
+      },
+      {
+       "letter": "D",
+       "text": "It is profitable because it raised money"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "It still loses money on each sale",
+     "intro": "Money from a loan, investor, grant or crowdfunding campaign increases CASH, but it is not PROFIT. Loans must be repaid; investors own part of the business; crowdfunding backers are owed products. Profit comes only from selling for more than your costs. A business can raise a lot of money and still lose money on every sale. Track BURN RATE (how much cash the business uses each month) and RUNWAY (months until cash runs out = cash / monthly burn).",
+     "feedback": "Funding does not fix unit losses."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Runway by division",
+   "questions": [
+    {
+     "id": "S129-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "15,000 cash, 3,000 burn. What is the runway?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "12,000 months"
+      },
+      {
+       "letter": "B",
+       "text": "5 months"
+      },
+      {
+       "letter": "C",
+       "text": "3 months"
+      },
+      {
+       "letter": "D",
+       "text": "45,000 months"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "5 months",
+     "intro": "Runway = cash / monthly burn. Example: 18,000 cash with 2,000 burned per month gives 18,000 / 2,000 = 9 months. If the result is not whole, round DOWN, because a partial month of cash will not cover a full month: 10,000 / 3,000 = 3.33, so about 3 full months. If burn rises, runway falls; if burn drops, runway grows.",
+     "feedback": "15,000 / 3,000 = 5."
+    },
+    {
+     "id": "S129-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "10,000 cash, 3,000 burn. How many full months?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "7"
+      },
+      {
+       "letter": "B",
+       "text": "4"
+      },
+      {
+       "letter": "C",
+       "text": "3.33"
+      },
+      {
+       "letter": "D",
+       "text": "3"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "3",
+     "intro": "Runway = cash / monthly burn. Example: 18,000 cash with 2,000 burned per month gives 18,000 / 2,000 = 9 months. If the result is not whole, round DOWN, because a partial month of cash will not cover a full month: 10,000 / 3,000 = 3.33, so about 3 full months. If burn rises, runway falls; if burn drops, runway grows.",
+     "feedback": "10,000 / 3,000 = 3.33, so 3 full months."
+    },
+    {
+     "id": "S129-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "Why round runway down?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Rounding up is always the safer choice here"
+      },
+      {
+       "letter": "B",
+       "text": "It does not matter"
+      },
+      {
+       "letter": "C",
+       "text": "A partial month of cash will not cover a full month"
+      },
+      {
+       "letter": "D",
+       "text": "Months cannot be counted"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A partial month of cash will not cover a full month",
+     "intro": "Runway = cash / monthly burn. Example: 18,000 cash with 2,000 burned per month gives 18,000 / 2,000 = 9 months. If the result is not whole, round DOWN, because a partial month of cash will not cover a full month: 10,000 / 3,000 = 3.33, so about 3 full months. If burn rises, runway falls; if burn drops, runway grows.",
+     "feedback": "Be conservative."
+    },
+    {
+     "id": "S129-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "If burn rises, what happens to runway?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It doubles"
+      },
+      {
+       "letter": "B",
+       "text": "It stays the same"
+      },
+      {
+       "letter": "C",
+       "text": "It rises"
+      },
+      {
+       "letter": "D",
+       "text": "It falls"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "It falls",
+     "intro": "Runway = cash / monthly burn. Example: 18,000 cash with 2,000 burned per month gives 18,000 / 2,000 = 9 months. If the result is not whole, round DOWN, because a partial month of cash will not cover a full month: 10,000 / 3,000 = 3.33, so about 3 full months. If burn rises, runway falls; if burn drops, runway grows.",
+     "feedback": "More burn, less time."
+    },
+    {
+     "id": "S129-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "20,000 cash, 2,500 burn. What is the runway?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "17,500 months"
+      },
+      {
+       "letter": "B",
+       "text": "8 months"
+      },
+      {
+       "letter": "C",
+       "text": "2.5 months"
+      },
+      {
+       "letter": "D",
+       "text": "50,000 months"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "8 months",
+     "intro": "Runway = cash / monthly burn. Example: 18,000 cash with 2,000 burned per month gives 18,000 / 2,000 = 9 months. If the result is not whole, round DOWN, because a partial month of cash will not cover a full month: 10,000 / 3,000 = 3.33, so about 3 full months. If burn rises, runway falls; if burn drops, runway grows.",
+     "feedback": "20,000 / 2,500 = 8."
+    }
+   ],
+   "branch_mode": "math_prerequisite",
+   "relationship": "A learner who misses MAIN may not compute runway; this practices the division and rounding down."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Apply it: read cash versus profit",
+   "questions": [
+    {
+     "id": "S129-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "A startup has 40,000 dollars from investors and loses 5,000 a month. How many months of runway?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "8 months"
+      },
+      {
+       "letter": "B",
+       "text": "5 months"
+      },
+      {
+       "letter": "C",
+       "text": "35,000 months"
+      },
+      {
+       "letter": "D",
+       "text": "200,000 months"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "8 months",
+     "intro": "Money from a loan, investor, grant or crowdfunding campaign increases CASH, but it is not PROFIT. Loans must be repaid; investors own part of the business; crowdfunding backers are owed products. Profit comes only from selling for more than your costs. A business can raise a lot of money and still lose money on every sale. Track BURN RATE (how much cash the business uses each month) and RUNWAY (months until cash runs out = cash / monthly burn).",
+     "feedback": "40,000 / 5,000 = 8."
+    },
+    {
+     "id": "S129-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "The founder says, \"We have 40,000, so we are profitable.\" What is wrong?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Raised money is not profit; it loses money monthly"
+      },
+      {
+       "letter": "B",
+       "text": "Losses are a type of profit"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing; cash always means profit"
+      },
+      {
+       "letter": "D",
+       "text": "Investors always guarantee profit to the founders"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Raised money is not profit; it loses money monthly",
+     "intro": "Money from a loan, investor, grant or crowdfunding campaign increases CASH, but it is not PROFIT. Loans must be repaid; investors own part of the business; crowdfunding backers are owed products. Profit comes only from selling for more than your costs. A business can raise a lot of money and still lose money on every sale. Track BURN RATE (how much cash the business uses each month) and RUNWAY (months until cash runs out = cash / monthly burn).",
+     "feedback": "Cash versus profit."
+    },
+    {
+     "id": "S129-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "If burn is cut from 5,000 to 4,000 a month, what is the new runway on 40,000?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "9 months"
+      },
+      {
+       "letter": "B",
+       "text": "4 months"
+      },
+      {
+       "letter": "C",
+       "text": "8 months"
+      },
+      {
+       "letter": "D",
+       "text": "10 months"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "10 months",
+     "intro": "Money from a loan, investor, grant or crowdfunding campaign increases CASH, but it is not PROFIT. Loans must be repaid; investors own part of the business; crowdfunding backers are owed products. Profit comes only from selling for more than your costs. A business can raise a lot of money and still lose money on every sale. Track BURN RATE (how much cash the business uses each month) and RUNWAY (months until cash runs out = cash / monthly burn).",
+     "feedback": "40,000 / 4,000 = 10."
+    },
+    {
+     "id": "S129-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "A shop sells an item for 15 dollars that costs 18 dollars to make and ship. Raising more money will do what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Remove the costs"
+      },
+      {
+       "letter": "B",
+       "text": "Fund more losses unless price or cost changes"
+      },
+      {
+       "letter": "C",
+       "text": "Turn the loss on each sale into a profit"
+      },
+      {
+       "letter": "D",
+       "text": "Make each sale profitable"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Fund more losses unless price or cost changes",
+     "intro": "Money from a loan, investor, grant or crowdfunding campaign increases CASH, but it is not PROFIT. Loans must be repaid; investors own part of the business; crowdfunding backers are owed products. Profit comes only from selling for more than your costs. A business can raise a lot of money and still lose money on every sale. Track BURN RATE (how much cash the business uses each month) and RUNWAY (months until cash runs out = cash / monthly burn).",
+     "feedback": "Fix unit economics."
+    },
+    {
+     "id": "S129-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "A 25,000-dollar loan arrives and the bank balance rises. What should the books show?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Cash up and a loan owed, with no profit from it"
+      },
+      {
+       "letter": "B",
+       "text": "25,000 dollars of profit earned for the month"
+      },
+      {
+       "letter": "C",
+       "text": "25,000 dollars of sales"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing at all"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Cash up and a loan owed, with no profit from it",
+     "intro": "Money from a loan, investor, grant or crowdfunding campaign increases CASH, but it is not PROFIT. Loans must be repaid; investors own part of the business; crowdfunding backers are owed products. Profit comes only from selling for more than your costs. A business can raise a lot of money and still lose money on every sale. Track BURN RATE (how much cash the business uses each month) and RUNWAY (months until cash runs out = cash / monthly burn).",
+     "feedback": "Record properly."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Handle the complications: celebrating the wrong number",
+   "questions": [
+    {
+     "id": "S129-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "A crowdfunding campaign raised 20,000 dollars, and the owner wants to spend it on a launch party. What is the problem?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No problem, because campaign money is profit"
+      },
+      {
+       "letter": "B",
+       "text": "Parties are always tax free"
+      },
+      {
+       "letter": "C",
+       "text": "Backers expect nothing"
+      },
+      {
+       "letter": "D",
+       "text": "The money is owed to backers as products"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The money is owed to backers as products",
+     "intro": "Money from a loan, investor, grant or crowdfunding campaign increases CASH, but it is not PROFIT. Loans must be repaid; investors own part of the business; crowdfunding backers are owed products. Profit comes only from selling for more than your costs. A business can raise a lot of money and still lose money on every sale. Track BURN RATE (how much cash the business uses each month) and RUNWAY (months until cash runs out = cash / monthly burn).",
+     "feedback": "Obligations first."
+    },
+    {
+     "id": "S129-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "Runway is 6 months. When should the owner act to raise more or cut costs?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Never; it will work out"
+      },
+      {
+       "letter": "B",
+       "text": "In the last week"
+      },
+      {
+       "letter": "C",
+       "text": "Well before cash runs out"
+      },
+      {
+       "letter": "D",
+       "text": "After cash hits zero"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Well before cash runs out",
+     "intro": "Money from a loan, investor, grant or crowdfunding campaign increases CASH, but it is not PROFIT. Loans must be repaid; investors own part of the business; crowdfunding backers are owed products. Profit comes only from selling for more than your costs. A business can raise a lot of money and still lose money on every sale. Track BURN RATE (how much cash the business uses each month) and RUNWAY (months until cash runs out = cash / monthly burn).",
+     "feedback": "Plan ahead."
+    },
+    {
+     "id": "S129-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "Burn is 6,000 a month, cash is 30,000, and sales add 1,500 a month of net cash. What is the runway using net burn?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "20 months"
+      },
+      {
+       "letter": "B",
+       "text": "6 full months"
+      },
+      {
+       "letter": "C",
+       "text": "5 full months"
+      },
+      {
+       "letter": "D",
+       "text": "4 months"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "6 full months",
+     "intro": "Money from a loan, investor, grant or crowdfunding campaign increases CASH, but it is not PROFIT. Loans must be repaid; investors own part of the business; crowdfunding backers are owed products. Profit comes only from selling for more than your costs. A business can raise a lot of money and still lose money on every sale. Track BURN RATE (how much cash the business uses each month) and RUNWAY (months until cash runs out = cash / monthly burn).",
+     "feedback": "30,000 / (6,000 - 1,500) = 6.67, so 6 full months."
+    },
+    {
+     "id": "S129-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "Investors ask for a profit plan. What should it show?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "How sales will exceed costs over time"
+      },
+      {
+       "letter": "B",
+       "text": "Only the logo and website"
+      },
+      {
+       "letter": "C",
+       "text": "How much more money to raise forever"
+      },
+      {
+       "letter": "D",
+       "text": "Only the founder's salary"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "How sales will exceed costs over time",
+     "intro": "Money from a loan, investor, grant or crowdfunding campaign increases CASH, but it is not PROFIT. Loans must be repaid; investors own part of the business; crowdfunding backers are owed products. Profit comes only from selling for more than your costs. A business can raise a lot of money and still lose money on every sale. Track BURN RATE (how much cash the business uses each month) and RUNWAY (months until cash runs out = cash / monthly burn).",
+     "feedback": "Path to profit."
+    },
+    {
+     "id": "S129-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "Which statement is accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Loans count as profit."
+      },
+      {
+       "letter": "B",
+       "text": "Raising money is the same as earning it from customers."
+      },
+      {
+       "letter": "C",
+       "text": "Raised money adds cash; only selling above cost adds profit."
+      },
+      {
+       "letter": "D",
+       "text": "Runway grows when burn increases."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Raised money adds cash; only selling above cost adds profit.",
+     "intro": "Money from a loan, investor, grant or crowdfunding campaign increases CASH, but it is not PROFIT. Loans must be repaid; investors own part of the business; crowdfunding backers are owed products. Profit comes only from selling for more than your costs. A business can raise a lot of money and still lose money on every sale. Track BURN RATE (how much cash the business uses each month) and RUNWAY (months until cash runs out = cash / monthly burn).",
+     "feedback": "Know the difference."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

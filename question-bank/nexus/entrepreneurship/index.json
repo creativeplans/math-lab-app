@@ -115,6 +115,10 @@
    "title": "Apply a documented early decision (training sales agents and reaching customers directly) to a new business",
    "alignment": "local"
   },
+  "ENT.CASE.09": {
+   "title": "Apply a documented change of offer (switching to the item customers preferred) to a new business",
+   "alignment": "local"
+  },
   "ENT.CASH.01": {
    "title": "Tell revenue, profit and cash available apart in a small example",
    "alignment": "local"
@@ -153,6 +157,46 @@
   },
   "ENT.CUST.04": {
    "title": "Tell the paying customer from the user and the decision-maker",
+   "alignment": "local"
+  },
+  "ENT.FUND.01": {
+   "title": "Compare paying for a business from savings and early sales with outside money",
+   "alignment": "local"
+  },
+  "ENT.FUND.02": {
+   "title": "Compute simple loan costs from stated terms and spot personal guarantees",
+   "alignment": "local"
+  },
+  "ENT.FUND.03": {
+   "title": "Explain that grants are competitive, limited and come with conditions",
+   "alignment": "local"
+  },
+  "ENT.FUND.04": {
+   "title": "Compare repaying money with giving up ownership, and see that most businesses do not fit investor funding",
+   "alignment": "local"
+  },
+  "ENT.FUND.05": {
+   "title": "Separate money from loans or investors from revenue and profit",
+   "alignment": "local"
+  },
+  "ENT.GROW.01": {
+   "title": "Compute profit per customer or per order from stated numbers",
+   "alignment": "local"
+  },
+  "ENT.GROW.02": {
+   "title": "Compare the cost of getting a customer with what a returning customer brings",
+   "alignment": "local"
+  },
+  "ENT.GROW.03": {
+   "title": "Decide when growth is supported by evidence and capacity",
+   "alignment": "local"
+  },
+  "ENT.GROW.04": {
+   "title": "Plan workload and limits that a person can keep up",
+   "alignment": "local"
+  },
+  "ENT.GROW.05": {
+   "title": "List the obligations to handle when closing or pausing a business",
    "alignment": "local"
   },
   "ENT.HELP.01": {
@@ -780,7 +824,19 @@
    "title": "Funding, growth and limits",
    "kind": "specialty",
    "description": "Paying for the business and growing it carefully.",
-   "sets": []
+   "sets": [
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135
+   ]
   },
   {
    "id": "services",
@@ -1691,6 +1747,83 @@
    "title": "Mentors, accountants, attorneys and free help",
    "outcome": "ENT.HELP.06",
    "module": "help"
+  },
+  {
+   "set": 125,
+   "file": "sets/S125.json",
+   "title": "Bootstrapping and using savings",
+   "outcome": "ENT.FUND.01",
+   "module": "growth"
+  },
+  {
+   "set": 126,
+   "file": "sets/S126.json",
+   "title": "Loans: interest, repayment and guarantees",
+   "outcome": "ENT.FUND.02",
+   "module": "growth"
+  },
+  {
+   "set": 127,
+   "file": "sets/S127.json",
+   "title": "Grants and their limits",
+   "outcome": "ENT.FUND.03",
+   "module": "growth"
+  },
+  {
+   "set": 128,
+   "file": "sets/S128.json",
+   "title": "Investors and crowdfunding",
+   "outcome": "ENT.FUND.04",
+   "module": "growth"
+  },
+  {
+   "set": 129,
+   "file": "sets/S129.json",
+   "title": "Money raised is not profit",
+   "outcome": "ENT.FUND.05",
+   "module": "growth"
+  },
+  {
+   "set": 130,
+   "file": "sets/S130.json",
+   "title": "Unit economics",
+   "outcome": "ENT.GROW.01",
+   "module": "growth"
+  },
+  {
+   "set": 131,
+   "file": "sets/S131.json",
+   "title": "Getting customers, keeping customers, repeat sales",
+   "outcome": "ENT.GROW.02",
+   "module": "growth"
+  },
+  {
+   "set": 132,
+   "file": "sets/S132.json",
+   "title": "Growing after evidence, protecting quality",
+   "outcome": "ENT.GROW.03",
+   "module": "growth"
+  },
+  {
+   "set": 133,
+   "file": "sets/S133.json",
+   "title": "Burnout and a sustainable pace",
+   "outcome": "ENT.GROW.04",
+   "module": "growth"
+  },
+  {
+   "set": 134,
+   "file": "sets/S134.json",
+   "title": "Winding down honestly",
+   "outcome": "ENT.GROW.05",
+   "module": "growth"
+  },
+  {
+   "set": 135,
+   "file": "sets/S135.json",
+   "title": "Founder case: Wrigley follows what customers wanted",
+   "outcome": "ENT.CASE.09",
+   "module": "growth"
   }
  ]
 }

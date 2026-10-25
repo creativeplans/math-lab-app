@@ -1,0 +1,657 @@
+{
+ "set": 130,
+ "title": "Unit economics",
+ "outcome": "ENT.GROW.01",
+ "content_status": "stable",
+ "requires": [
+  49
+ ],
+ "module": "growth",
+ "path_refs": [
+  "services",
+  "products",
+  "digital",
+  "content"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Compute contribution per order and compare it with acquisition cost",
+   "questions": [
+    {
+     "id": "S130-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "Price 40; product 15, packaging 2, shipping 8, fees 1.50. What is the contribution per order?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "25.00 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "26.50 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "13.50 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "40.00 dollars"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "13.50 dollars",
+     "intro": "UNIT ECONOMICS looks at whether one sale (or one customer) makes money. For one order: price minus all costs that come with that order (product, packaging, shipping, payment fees, and any discount) gives the CONTRIBUTION per order. If you pay to get customers, compare CUSTOMER ACQUISITION COST (CAC: marketing spend / new customers) with how much contribution a customer brings over time. Growing a business with negative unit economics grows the losses.",
+     "feedback": "40 - 15 - 2 - 8 - 1.50 = 13.50."
+    },
+    {
+     "id": "S130-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "What is customer acquisition cost?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Marketing spend divided by new customers"
+      },
+      {
+       "letter": "B",
+       "text": "Total sales for the year"
+      },
+      {
+       "letter": "C",
+       "text": "The cost of shipping each order to customers"
+      },
+      {
+       "letter": "D",
+       "text": "Price minus cost per item"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Marketing spend divided by new customers",
+     "intro": "UNIT ECONOMICS looks at whether one sale (or one customer) makes money. For one order: price minus all costs that come with that order (product, packaging, shipping, payment fees, and any discount) gives the CONTRIBUTION per order. If you pay to get customers, compare CUSTOMER ACQUISITION COST (CAC: marketing spend / new customers) with how much contribution a customer brings over time. Growing a business with negative unit economics grows the losses.",
+     "feedback": "CAC."
+    },
+    {
+     "id": "S130-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "Marketing spend 600 dollars brings 20 new customers. What is CAC?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "620 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "12,000 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "20 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "30 dollars"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "30 dollars",
+     "intro": "UNIT ECONOMICS looks at whether one sale (or one customer) makes money. For one order: price minus all costs that come with that order (product, packaging, shipping, payment fees, and any discount) gives the CONTRIBUTION per order. If you pay to get customers, compare CUSTOMER ACQUISITION COST (CAC: marketing spend / new customers) with how much contribution a customer brings over time. Growing a business with negative unit economics grows the losses.",
+     "feedback": "600 / 20 = 30."
+    },
+    {
+     "id": "S130-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "What happens when a business grows with negative unit economics?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Its losses grow"
+      },
+      {
+       "letter": "B",
+       "text": "Costs disappear"
+      },
+      {
+       "letter": "C",
+       "text": "Its losses shrink automatically"
+      },
+      {
+       "letter": "D",
+       "text": "It becomes profitable from size alone"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Its losses grow",
+     "intro": "UNIT ECONOMICS looks at whether one sale (or one customer) makes money. For one order: price minus all costs that come with that order (product, packaging, shipping, payment fees, and any discount) gives the CONTRIBUTION per order. If you pay to get customers, compare CUSTOMER ACQUISITION COST (CAC: marketing spend / new customers) with how much contribution a customer brings over time. Growing a business with negative unit economics grows the losses.",
+     "feedback": "Scale magnifies losses."
+    },
+    {
+     "id": "S130-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "A customer brings 13.50 per order and orders once. CAC is 30. Does the first order cover CAC?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It breaks exactly even"
+      },
+      {
+       "letter": "B",
+       "text": "No, it falls short by 16.50"
+      },
+      {
+       "letter": "C",
+       "text": "Cannot be known"
+      },
+      {
+       "letter": "D",
+       "text": "Yes, with 16.50 left over"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "No, it falls short by 16.50",
+     "intro": "UNIT ECONOMICS looks at whether one sale (or one customer) makes money. For one order: price minus all costs that come with that order (product, packaging, shipping, payment fees, and any discount) gives the CONTRIBUTION per order. If you pay to get customers, compare CUSTOMER ACQUISITION COST (CAC: marketing spend / new customers) with how much contribution a customer brings over time. Growing a business with negative unit economics grows the losses.",
+     "feedback": "13.50 - 30 = -16.50."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "A lemonade stand that pays people to stop by",
+   "questions": [
+    {
+     "id": "S130-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "The 1 dollar paid per new customer is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The lemon cost"
+      },
+      {
+       "letter": "B",
+       "text": "The price per cup of lemonade"
+      },
+      {
+       "letter": "C",
+       "text": "Customer acquisition cost"
+      },
+      {
+       "letter": "D",
+       "text": "A tax"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Customer acquisition cost",
+     "intro": "Imagine a lemonade stand earning 50 cents of profit per cup but paying a friend 1 dollar for every new customer he brings. If each customer buys only one cup, the stand loses 50 cents per customer, and the busier it gets, the more it loses. If customers come back for 3 cups, the stand earns 1.50 per customer and the deal works.",
+     "feedback": "Cost to gain a customer."
+    },
+    {
+     "id": "S130-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "With one cup per customer, what happens?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It breaks even"
+      },
+      {
+       "letter": "B",
+       "text": "It earns 1 dollar"
+      },
+      {
+       "letter": "C",
+       "text": "It earns 50 cents for each new customer"
+      },
+      {
+       "letter": "D",
+       "text": "The stand loses 50 cents per customer"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The stand loses 50 cents per customer",
+     "intro": "Imagine a lemonade stand earning 50 cents of profit per cup but paying a friend 1 dollar for every new customer he brings. If each customer buys only one cup, the stand loses 50 cents per customer, and the busier it gets, the more it loses. If customers come back for 3 cups, the stand earns 1.50 per customer and the deal works.",
+     "feedback": "0.50 - 1.00 = -0.50."
+    },
+    {
+     "id": "S130-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "With three cups per customer, what is earned per customer?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "1.00 dollar"
+      },
+      {
+       "letter": "B",
+       "text": "3.00 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "1.50 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "0.50 dollars"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "1.50 dollars",
+     "intro": "Imagine a lemonade stand earning 50 cents of profit per cup but paying a friend 1 dollar for every new customer he brings. If each customer buys only one cup, the stand loses 50 cents per customer, and the busier it gets, the more it loses. If customers come back for 3 cups, the stand earns 1.50 per customer and the deal works.",
+     "feedback": "3 x 0.50 = 1.50."
+    },
+    {
+     "id": "S130-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "If one-cup customers keep coming, what happens as the stand gets busier?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It loses more"
+      },
+      {
+       "letter": "B",
+       "text": "It earns more"
+      },
+      {
+       "letter": "C",
+       "text": "Lemons get cheaper"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing changes"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "It loses more",
+     "intro": "Imagine a lemonade stand earning 50 cents of profit per cup but paying a friend 1 dollar for every new customer he brings. If each customer buys only one cup, the stand loses 50 cents per customer, and the busier it gets, the more it loses. If customers come back for 3 cups, the stand earns 1.50 per customer and the deal works.",
+     "feedback": "Losses scale."
+    },
+    {
+     "id": "S130-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "What makes the deal work?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Customers coming back for more"
+      },
+      {
+       "letter": "B",
+       "text": "Charging nothing"
+      },
+      {
+       "letter": "C",
+       "text": "Paying the friend more per customer"
+      },
+      {
+       "letter": "D",
+       "text": "Fewer cups"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Customers coming back for more",
+     "intro": "Imagine a lemonade stand earning 50 cents of profit per cup but paying a friend 1 dollar for every new customer he brings. If each customer buys only one cup, the stand loses 50 cents per customer, and the busier it gets, the more it loses. If customers come back for 3 cups, the stand earns 1.50 per customer and the deal works.",
+     "feedback": "Repeat purchases."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who misses MAIN may not see how acquisition cost interacts with profit; a lemonade stand makes it concrete."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Apply it: test unit economics",
+   "questions": [
+    {
+     "id": "S130-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "A subscription box earns 9 dollars of contribution per month. Customers stay 6 months on average. What is contribution per customer?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "1.50 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "54 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "15 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "9 dollars"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "54 dollars",
+     "intro": "UNIT ECONOMICS looks at whether one sale (or one customer) makes money. For one order: price minus all costs that come with that order (product, packaging, shipping, payment fees, and any discount) gives the CONTRIBUTION per order. If you pay to get customers, compare CUSTOMER ACQUISITION COST (CAC: marketing spend / new customers) with how much contribution a customer brings over time. Growing a business with negative unit economics grows the losses.",
+     "feedback": "9 x 6 = 54."
+    },
+    {
+     "id": "S130-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "CAC is 40 dollars. Is each customer worth acquiring?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Cannot tell"
+      },
+      {
+       "letter": "B",
+       "text": "No, 40 is more than 54"
+      },
+      {
+       "letter": "C",
+       "text": "Yes, 54 is more than 40"
+      },
+      {
+       "letter": "D",
+       "text": "They are equal"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Yes, 54 is more than 40",
+     "intro": "UNIT ECONOMICS looks at whether one sale (or one customer) makes money. For one order: price minus all costs that come with that order (product, packaging, shipping, payment fees, and any discount) gives the CONTRIBUTION per order. If you pay to get customers, compare CUSTOMER ACQUISITION COST (CAC: marketing spend / new customers) with how much contribution a customer brings over time. Growing a business with negative unit economics grows the losses.",
+     "feedback": "54 > 40."
+    },
+    {
+     "id": "S130-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "By how much does contribution exceed CAC per customer?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "14 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "94 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "40 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "54 dollars"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "14 dollars",
+     "intro": "UNIT ECONOMICS looks at whether one sale (or one customer) makes money. For one order: price minus all costs that come with that order (product, packaging, shipping, payment fees, and any discount) gives the CONTRIBUTION per order. If you pay to get customers, compare CUSTOMER ACQUISITION COST (CAC: marketing spend / new customers) with how much contribution a customer brings over time. Growing a business with negative unit economics grows the losses.",
+     "feedback": "54 - 40 = 14."
+    },
+    {
+     "id": "S130-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "Shipping rises by 3 dollars per box. What is the new monthly contribution?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "12 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "9 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "3 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "6 dollars"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "6 dollars",
+     "intro": "UNIT ECONOMICS looks at whether one sale (or one customer) makes money. For one order: price minus all costs that come with that order (product, packaging, shipping, payment fees, and any discount) gives the CONTRIBUTION per order. If you pay to get customers, compare CUSTOMER ACQUISITION COST (CAC: marketing spend / new customers) with how much contribution a customer brings over time. Growing a business with negative unit economics grows the losses.",
+     "feedback": "9 - 3 = 6."
+    },
+    {
+     "id": "S130-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "With 6 dollars a month for 6 months and CAC 40, what happens?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Each still earns 14 dollars, as before"
+      },
+      {
+       "letter": "B",
+       "text": "Each customer now loses 4 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "Each earns 36 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "It breaks exactly even"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Each customer now loses 4 dollars",
+     "intro": "UNIT ECONOMICS looks at whether one sale (or one customer) makes money. For one order: price minus all costs that come with that order (product, packaging, shipping, payment fees, and any discount) gives the CONTRIBUTION per order. If you pay to get customers, compare CUSTOMER ACQUISITION COST (CAC: marketing spend / new customers) with how much contribution a customer brings over time. Growing a business with negative unit economics grows the losses.",
+     "feedback": "36 - 40 = -4."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Handle the complications: hidden costs and averages",
+   "questions": [
+    {
+     "id": "S130-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "Contribution per order ignores returns. 10 percent of orders return and lose 20 dollars each. What is the average return cost per order?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "10 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "0.20 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "2 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "20 dollars"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "2 dollars",
+     "intro": "UNIT ECONOMICS looks at whether one sale (or one customer) makes money. For one order: price minus all costs that come with that order (product, packaging, shipping, payment fees, and any discount) gives the CONTRIBUTION per order. If you pay to get customers, compare CUSTOMER ACQUISITION COST (CAC: marketing spend / new customers) with how much contribution a customer brings over time. Growing a business with negative unit economics grows the losses.",
+     "feedback": "0.10 x 20 = 2."
+    },
+    {
+     "id": "S130-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "An owner plans to \"make it up on volume\" while losing money on each sale. What is wrong?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Losses become profit after 100 sales"
+      },
+      {
+       "letter": "B",
+       "text": "Volume lowers taxes to zero"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing; volume always fixes losses"
+      },
+      {
+       "letter": "D",
+       "text": "More volume multiplies the loss"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "More volume multiplies the loss",
+     "intro": "UNIT ECONOMICS looks at whether one sale (or one customer) makes money. For one order: price minus all costs that come with that order (product, packaging, shipping, payment fees, and any discount) gives the CONTRIBUTION per order. If you pay to get customers, compare CUSTOMER ACQUISITION COST (CAC: marketing spend / new customers) with how much contribution a customer brings over time. Growing a business with negative unit economics grows the losses.",
+     "feedback": "Fix per-unit first."
+    },
+    {
+     "id": "S130-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "CAC from ads is 25 dollars, but referrals bring customers at 8 dollars. Overall CAC averages 18. What should the owner study?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only the logo"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing, because averages tell everything needed"
+      },
+      {
+       "letter": "C",
+       "text": "Which channels bring profitable customers"
+      },
+      {
+       "letter": "D",
+       "text": "Only the overall average"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Which channels bring profitable customers",
+     "intro": "UNIT ECONOMICS looks at whether one sale (or one customer) makes money. For one order: price minus all costs that come with that order (product, packaging, shipping, payment fees, and any discount) gives the CONTRIBUTION per order. If you pay to get customers, compare CUSTOMER ACQUISITION COST (CAC: marketing spend / new customers) with how much contribution a customer brings over time. Growing a business with negative unit economics grows the losses.",
+     "feedback": "Channel-level CAC."
+    },
+    {
+     "id": "S130-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "Free shipping raised orders but cut contribution per order to 1 dollar. What should the owner check?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only the number of orders"
+      },
+      {
+       "letter": "B",
+       "text": "Whether total contribution actually rose"
+      },
+      {
+       "letter": "C",
+       "text": "Only customer compliments"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing; more orders is always better"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Whether total contribution actually rose",
+     "intro": "UNIT ECONOMICS looks at whether one sale (or one customer) makes money. For one order: price minus all costs that come with that order (product, packaging, shipping, payment fees, and any discount) gives the CONTRIBUTION per order. If you pay to get customers, compare CUSTOMER ACQUISITION COST (CAC: marketing spend / new customers) with how much contribution a customer brings over time. Growing a business with negative unit economics grows the losses.",
+     "feedback": "Look at totals."
+    },
+    {
+     "id": "S130-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Funding, growth and limits",
+     "type": "mc",
+     "prompt": "Which statement is accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Growth always fixes losses."
+      },
+      {
+       "letter": "B",
+       "text": "CAC never matters for small shops."
+      },
+      {
+       "letter": "C",
+       "text": "Shipping and payment fees can safely be ignored."
+      },
+      {
+       "letter": "D",
+       "text": "Growth helps only when each sale makes money after costs."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Growth helps only when each sale makes money after costs.",
+     "intro": "UNIT ECONOMICS looks at whether one sale (or one customer) makes money. For one order: price minus all costs that come with that order (product, packaging, shipping, payment fees, and any discount) gives the CONTRIBUTION per order. If you pay to get customers, compare CUSTOMER ACQUISITION COST (CAC: marketing spend / new customers) with how much contribution a customer brings over time. Growing a business with negative unit economics grows the losses.",
+     "feedback": "Unit economics first."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}
