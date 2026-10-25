@@ -241,9 +241,9 @@ def s50():
              f2=FW('Comparisons that reverse', 'Expert: combined groups and base rates.', [
                  sa('Two clinics treat a condition. Clinic A treats 100 mild cases (90 recover) and 20 severe cases (8 '
                     'recover). Clinic B treats 20 mild cases (19 recover) and 100 severe cases (50 recover). What percent of '
-                    'all Clinic A patients recover?', 'Percent:', str(pct(98, 120)),
-                    '(90 + 8) / 120 = 98 / 120, about 81.7%. In fraction form, 245/3 percent.',
-                    compute=lambda: str(pct(98, 120))),
+                    'all Clinic A patients recover, to the nearest whole percent?', 'Percent:', str(round(98 / 120 * 100)),
+                    '(90 + 8) / 120 = 98 / 120, about 81.7%, which rounds to 82%.',
+                    compute=lambda: str(round(98 / 120 * 100))),
                  mc('In the clinics above, Clinic A has the higher overall recovery rate (about 82% to 58%). Which statement '
                     'is true?', 'Clinic B has the higher recovery rate for mild cases AND for severe cases.',
                     [('Clinic A is better for both mild and severe cases.', 'B: 95% mild, 50% severe; A: 90% mild, 40% '
