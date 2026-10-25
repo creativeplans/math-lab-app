@@ -345,7 +345,7 @@ def s4():
                       'Ben has neither cat nor dog, so Ben has the fish. Ana does not have the dog, so Ana has the cat, and Cai '
                       'has the dog.'),
                  mc('A locker number is one of 12, 15, 18, 21, 24, 27. It is even. It is not a multiple of 4. Which locker is it?', '18',
-                    [('27', 'odd'), ('12', 'a multiple of 4'), ('24', 'a multiple of 4')],
+                    [('27', '27 is odd, so it is not even'), ('12', 'a multiple of 4'), ('24', 'a multiple of 4')],
                     'Even: 12, 18, 24. Not a multiple of 4: 18.',
                     check=lambda t: int(t) % 2 == 0 and int(t) % 4 != 0),
              ],

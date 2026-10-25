@@ -255,7 +255,7 @@ def s10():
                      mc('"All the cookies are gone, so someone ate them." Which part is the conclusion?', 'someone ate them',
                         [('all the cookies are gone', 'the reason given'), ('cookies are tasty', 'not stated'),
                          ('nobody ate them', 'the opposite of the conclusion')], '"So" introduces the conclusion.'),
-                     tf('A premise is a statement offered as a reason.', True, 'Premises support the conclusion.'),
+                     tf('A premise is the statement that an argument is trying to prove.', False, 'The statement an argument tries to prove is its conclusion; premises are the reasons offered for it.'),
                      mc('"It rained every day this week. So it will rain tomorrow." What is the premise?',
                         'It rained every day this week.', [('It will rain tomorrow.', 'the conclusion'),
                                                            ('Rain is good for plants.', 'not stated'),
@@ -268,8 +268,8 @@ def s10():
                  B('Certain or only likely?', 'prerequisite', 'The difference between deduction and induction is whether the '
                                                              'conclusion is certain. Students need to judge certainty first.',
                    qs=[
-                       tf('"Every ticket in the box is red, and I drew a ticket from the box" makes "my ticket is red" certain.',
-                          True, 'If every ticket is red, any ticket drawn is red.'),
+                       tf('"Most tickets in the box are red, and I drew a ticket from the box" makes "my ticket is red" certain.',
+                          False, 'If only most tickets are red, the drawn ticket could be one of the others, so "my ticket is red" is likely but not certain.'),
                        tf('"Most tickets in the box are red, and I drew a ticket" makes "my ticket is red" certain.', False,
                           'It is likely, not certain.'),
                        mc('Which word signals that a conclusion is only likely?', 'probably',
@@ -502,9 +502,9 @@ def s12():
                        tf('"6 is a factor of 30" is true.', True, '30 = 6 x 5.', check=lambda: 30 % 6 == 0),
                        tf('"4 squared is 8" is true.', False, '4 x 4 = 16.'),
                        tf('"Every square is a triangle" is true.', False, 'A square has 4 sides.'),
-                       mc('Which statement is true?', '-5 is less than 2.', [('2 is less than -5.', 'false'),
-                                                                            ('-5 is greater than 2.', 'false'),
-                                                                            ('-5 equals 5.', 'false')], 'On a number line -5 '
+                       mc('Which statement is true?', '-5 is less than 2.', [('2 is less than -5.', '2 is to the right of -5 on the number line, so it is greater'),
+                                                                            ('-5 is greater than 2.', '-5 is to the left of 2 on the number line, so it is less'),
+                                                                            ('-5 equals 5.', '-5 and 5 are on opposite sides of 0')], 'On a number line -5 '
                                                                                                          'is left of 2.'),
                        tf('"1 is a prime number" is true.', False, 'A prime has exactly two different factors; 1 has one.'),
                    ]),

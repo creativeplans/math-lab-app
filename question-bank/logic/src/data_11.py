@@ -38,7 +38,7 @@ def s27():
              back=[
                  B('The meaning of each quantifier', 'prerequisite', 'Negating a quantifier needs a precise meaning of "all", '
                                                                     '"some" and "no".', outcome='LOGIC.QUANT.01', qs=[
-                     tf('"Some cards are red" is true if exactly one card is red.', True, '"Some" means at least one.'),
+                     tf('"Some cards are red" is false if exactly one card is red.', False, '"Some" means at least one, so one red card makes the statement true.'),
                      tf('"All cards are red" is false if one card is blue.', True, 'One exception is enough.'),
                      tf('"No card is red" is true if one card is red.', False, '"No" means zero.'),
                      mc('"Not all cards are red" means ...', 'at least one card is not red',
@@ -52,7 +52,7 @@ def s27():
                        mc('What is the negation of "the bus is late"?', 'the bus is not late',
                           [('the bus is early', 'it could be on time'), ('the train is late', 'unrelated'),
                            ('the bus is very late', 'not a negation')], 'Negate the whole claim.'),
-                       tf('The negation of "x ≥ 4" is "x < 4".', True, 'Exactly the values not at least 4.'),
+                       tf('The negation of "x ≥ 4" is "x ≤ 4".', False, 'x = 4 makes both "x ≥ 4" and "x ≤ 4" true, so they are not negations. The negation is "x < 4".'),
                        mc('What is the negation of "the number is even and positive"?', 'the number is odd or not positive',
                           [('the number is odd and negative', 'too strong'), ('the number is even or positive', 'not a '
                                                                                                                 'negation'),

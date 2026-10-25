@@ -44,11 +44,11 @@ def s5():
                        tf('"17 is a prime number" is true.', True, '17 has no factors other than 1 and itself.',
                           check=lambda: all(17 % d for d in range(2, 17))),
                        tf('"3 x 7 = 24" is true.', False, '3 x 7 = 21.', check=lambda: 3 * 7 == 24),
-                       tf('"Every multiple of 4 is even" is true.', True, '4k = 2(2k).'),
+                       tf('"Every even number is a multiple of 4" is true.', False, '6 is even but not a multiple of 4, so the statement is false.'),
                        mc('Which statement is false?', '0.5 is greater than 0.75.',
-                          [('0.5 equals one half.', 'true'), ('0.75 is greater than 0.5.', 'true'),
-                           ('0.5 + 0.25 = 0.75.', 'true')], '0.5 < 0.75.'),
-                       tf('"10 is not an odd number" is true.', True, '10 is even, so "10 is not odd" is true.'),
+                          [('0.5 equals one half.', 'this is true: 0.5 = 1/2'), ('0.75 is greater than 0.5.', 'this is true: 75 hundredths > 50 hundredths'),
+                           ('0.5 + 0.25 = 0.75.', 'this is true: 50 + 25 = 75 hundredths')], '0.5 < 0.75.'),
+                       tf('"10 is not an even number" is true.', False, '10 = 2 x 5 is even, so "10 is not even" is false.'),
                    ]),
                  B('Negation is not the same as the opposite', 'prerequisite',
                    'The most common MAIN error is replacing a statement by its opposite (full/empty, taller/shorter). A '
@@ -62,7 +62,7 @@ def s5():
                        mc('What is the negation of "Tom won the race"?', 'Tom did not win the race.',
                           [('Tom lost the race.', 'he may not have raced at all'), ('Tom came last.', 'too specific'),
                            ('Someone else won.', 'there may have been no winner')], 'Negate the whole statement.'),
-                       tf('If a statement is true, its negation is false.', True, 'A statement and its negation always have '
+                       tf('If a statement is true, its negation is also true.', False, 'A statement and its negation always have '
                                                                                  'opposite truth values.'),
                        mc('n is a whole number. What is the negation of "n is even"?', 'n is odd.',
                           [('n is 0.', 'too specific'), ('n is negative.', 'unrelated'), ('n is prime.', 'unrelated')],
@@ -459,7 +459,8 @@ def s8():
                  B('Inclusive or exclusive?', 'prerequisite',
                    'Students who apply "or" differently from the question\'s meaning get the opposite truth value when both '
                    'parts are true. Reading the stated meaning of "or" is the obstacle.', qs=[
-                       tf('With inclusive "or", "P or Q" is true when both P and Q are true.', True, 'Inclusive means at least one.'),
+                       tf('With inclusive "or", "P or Q" is false when both P and Q are true.', False, 'Inclusive "or" needs at least one '
+                          'part true; with both true it is true.'),
                        tf('With exclusive "or", "P or Q" is true when both P and Q are true.', False, 'Exclusive means exactly one.'),
                        mc('A rule says "You may bring a pencil or a pen (or both)." Which kind of "or" is this?', 'inclusive',
                           [('exclusive', '"or both" allows both'), ('neither kind', 'it is an "or"'),
@@ -468,8 +469,8 @@ def s8():
                           'best?', 'exclusive', [('inclusive', 'both cannot be true at once, so exactly one holds'),
                                                  ('neither', 'it is an "or" statement'), ('"and"', 'it is not a conjunction')],
                           'Exactly one of the two is true.'),
-                       tf('When P is false and Q is false, both inclusive and exclusive "P or Q" are false.', True,
-                          'Neither part is true.'),
+                       tf('When P is false and Q is false, exclusive "P or Q" is true.', False,
+                          'Exclusive "or" needs exactly one part true; with neither true it is false.'),
                    ]),
              ],
              f1=FW('Compound statements with three parts', 'Harder: three parts and mixed connectives.', [

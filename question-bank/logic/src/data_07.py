@@ -62,8 +62,8 @@ def s19():
                      tt('Complete the truth table for "not P or Q".', ['P', 'Q'], [('not P or Q', lambda p, q: (not p) or q)],
                         'False only when P true and Q false.'),
                      sa('How many rows does a truth table for P and Q have?', 'Rows:', '4', '2 x 2.', compute=lambda: str(4)),
-                     tf('In a truth table, every row lists a different combination of truth values.', True, 'That is how the '
-                                                                                                           'table is built.'),
+                     tf('A truth table for three statements P, Q and R has 6 rows.', False, 'Each of the 3 statements '
+                        'can be true or false: 2 x 2 x 2 = 8 rows.'),
                  ]),
                  B('Always, never, sometimes', 'prerequisite', 'The three classes are just "always true", "never true" and '
                                                               '"sometimes true". Students need that link.', qs=[
@@ -73,13 +73,13 @@ def s19():
                      mc('A statement is false in every row. What is it called?', 'a contradiction',
                         [('a tautology', 'always true'), ('a contingency', 'sometimes true'), ('a conclusion', 'not a class')],
                         'Never true = contradiction.'),
-                     tf('A contingency is true in at least one row and false in at least one row.', True, 'Sometimes true.'),
+                     tf('A contingency is true in every row of its truth table.', False, 'A statement true in every row is a tautology. A contingency is true in some rows and false in others.'),
                      mc('A column reads T, T, F, T. How is the statement classified?', 'a contingency',
                         [('a tautology', 'it has an F'), ('a contradiction', 'it has a T'), ('it cannot be told', 'the column '
                                                                                                                  'decides it')],
                         'Mixed values: contingency.'),
-                     tf('"7 is odd or 7 is not odd" is true no matter what number replaces 7.', True,
-                        'It has the form "P or not P", a tautology.'),
+                     tf('"7 is odd and 7 is not odd" is true.', False,
+                        'It has the form "P and not P", a contradiction: it is false in every case.'),
                  ]),
              ],
              f1=FW('Equivalences by truth table', 'Harder: prove and refute equivalences.', [
@@ -100,7 +100,7 @@ def s19():
                     'then P)"; "P iff not P".', 'Tautologies:', '2', '"P or not P" and "(if P then Q) or (if Q then P)".',
                     compute=lambda: str(sum(kind(*F19[k]) == 'tautology' for k in
                                             ['P or not P', 'P and not P', 'if P then Q', '(if P then Q) or (if Q then P)', 'P iff not P']))),
-                 tf('The negation of a tautology is a contradiction.', True, 'If a statement is true in every row, its negation '
+                 tf('The negation of a tautology is also a tautology.', False, 'If a statement is true in every row, its negation '
                                                                             'is false in every row.'),
              ]),
              f2=FW('Laws of logic', 'Expert: use equivalences to simplify and to find hidden tautologies.', [
@@ -158,7 +158,7 @@ def stack_q(prompt, L, why):
     R, o = L
     fig = pz.stack_figure(R, o)
     items = [(k, 'sheet ' + k) for k in sorted(R)]
-    return order(STACK_RULE + ' ' + prompt, items, lambda p: pz.top_map(R, list(p)) == pz.top_map(R, o), why, expect=o,
+    return order(STACK_RULE + ' This stack has %d sheets: %s. ' % (len(R), ', '.join(sorted(R))) + prompt, items, lambda p: pz.top_map(R, list(p)) == pz.top_map(R, o), why, expect=o,
                  fig=(fig.svg(), 'Several overlapping rectangles labeled with letters, seen from above.'),
                  method='Automatic: every stacking order was drawn on a fine grid and compared with the picture.', unique=True)
 
@@ -193,7 +193,7 @@ def s20():
                  stack_q('Put the sheets in order from the BOTTOM sheet to the TOP sheet.', L5,
                          'Overlaps: B is under C, C is under A, B is under A. A\'s outline is complete, so A is on top; then C; '
                          'B is at the bottom: B, C, A.'),
-                 stack_q('Put the sheets in order from the BOTTOM sheet to the TOP sheet.', L1,
+                 stack_q('List the sheets starting with the one at the BOTTOM and ending with the one on TOP.', L1,
                          'At each overlap the cut-off outline is underneath: B is under C, A and D; C is under A; A is under D. '
                          'So the chain is B, C, A, D from bottom to top.'),
                  mc('Four round discs are stacked with their centers lined up, from bottom to top: W (radius 5 cm), X (radius 3 '
@@ -257,7 +257,7 @@ def s20():
                  stack_q('Put the five sheets in order from the BOTTOM sheet to the TOP sheet.', L3,
                          'Every pair overlaps here. B is cut off by no sheet (top); C is cut off only by B; A by C and B; D by A, '
                          'C and B; E by all four. From bottom to top: E, D, A, C, B.'),
-                 stack_q('Put the five sheets in order from the BOTTOM sheet to the TOP sheet.', L4,
+                 stack_q('List the five sheets starting with the BOTTOM sheet and ending with the TOP sheet.', L4,
                          'Every pair overlaps. D is cut off by no sheet (top); C only by D; A by C and D; E by A, C and D; B by '
                          'all four. From bottom to top: B, E, A, C, D.'),
                  sa('Cards are placed one at a time on an 8 by 8 grid: A covers rows 2-3, columns 2-3; B covers rows 1-4, '

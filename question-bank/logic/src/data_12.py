@@ -38,10 +38,10 @@ def s29():
                        mc('What kind of example proves "Some square numbers are even"?', 'an even square number, such as 4',
                           [('an odd square number', 'does not help'), ('an even number that is not a square', 'not a square'),
                            ('every square number', 'one example is enough')], 'One witness proves "some".'),
-                       tf('"Some cats are black" is shown true by one black cat.', True, 'One witness.'),
+                       tf('"All cats are black" is shown true by one black cat.', False, 'One black cat shows that some cats are black. Showing that all cats are black needs every cat to be black.'),
                        tf('"All cats are black" is shown false by one white cat.', True, 'One counterexample.'),
-                       tf('"No number is negative" is shown false by the number -1.', True, '-1 is a witness for "some number is '
-                                                                                          'negative".'),
+                       tf('"No number is negative" is shown false by the number 1.', False, '1 is not negative, so it does not '
+                          'contradict the statement. A negative number such as -1 would.'),
                    ]),
                  B('Test a number against a property', 'prerequisite', 'Checking whether a candidate works requires testing '
                                                                       'each condition exactly.', qs=[
@@ -316,8 +316,8 @@ def s31():
                                'is red?', 'Colorings:', str(len(colorings(ADJ1, 'rgb', {'A': 'r'}))),
                     'Counted by checking all colorings with A red.', fig=mapfig(M1),
                     compute=lambda: str(len(colorings(ADJ1, 'rgb', {'A': 'r'})))),
-                 tf('If a map can be colored with 3 colors, it can also be colored with 4 colors.', True,
-                    'Use the same coloring; the fourth color need not be used.'),
+                 tf('If a map can be colored with 4 colors so that neighbors differ, it can also be colored with 3 colors.', False,
+                    'Four regions that all border each other need 4 different colors, so 3 colors are not always enough.'),
              ]))
 
 
@@ -338,7 +338,7 @@ def s32():
                     'valid?', 'No: the rectangles that are not rhombuses may all lie outside the squares.',
                     [('Yes: squares are rectangles, so they share every property.', 'subsets do not share every property'),
                      ('Yes: the conclusion is true.', 'validity is about form; and in fact every square IS a rhombus'),
-                     ('No: no rectangle is a square.', 'false')],
+                     ('No: no rectangle is a square.', 'that is false: every square is a rectangle')],
                     'In fact every square is a rhombus, so the premises are true and the conclusion false: invalid.'),
                  tf('"All A are B. Some C are A. So some C are B." This form is valid.', True,
                     'The C that is an A is inside B, so some C is B.',

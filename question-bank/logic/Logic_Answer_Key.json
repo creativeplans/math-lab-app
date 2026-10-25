@@ -4272,7 +4272,7 @@
    "wrong_choices": [
     {
      "text": "27",
-     "why_wrong": "odd"
+     "why_wrong": "27 is odd, so it is not even"
     },
     {
      "text": "12",
@@ -5613,7 +5613,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "\"Every multiple of 4 is even\" is true.",
+   "prompt": "\"Every even number is a multiple of 4\" is true.",
    "choices": [
     {
      "letter": "A",
@@ -5624,10 +5624,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "4k = 2(2k).",
+   "solution": "6 is even but not a multiple of 4, so the statement is false.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -5636,8 +5636,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.ARGUMENT.01",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -5690,15 +5690,15 @@
    "wrong_choices": [
     {
      "text": "0.5 equals one half.",
-     "why_wrong": "true"
+     "why_wrong": "this is true: 0.5 = 1/2"
     },
     {
      "text": "0.75 is greater than 0.5.",
-     "why_wrong": "true"
+     "why_wrong": "this is true: 75 hundredths > 50 hundredths"
     },
     {
      "text": "0.5 + 0.25 = 0.75.",
-     "why_wrong": "true"
+     "why_wrong": "this is true: 50 + 25 = 75 hundredths"
     }
    ],
    "wrong_values_rejected": [],
@@ -5735,7 +5735,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "\"10 is not an odd number\" is true.",
+   "prompt": "\"10 is not an even number\" is true.",
    "choices": [
     {
      "letter": "A",
@@ -5746,10 +5746,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "10 is even, so \"10 is not odd\" is true.",
+   "solution": "10 = 2 x 5 is even, so \"10 is not even\" is false.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -5758,8 +5758,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.ARGUMENT.01",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -5979,7 +5979,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "If a statement is true, its negation is false.",
+   "prompt": "If a statement is true, its negation is also true.",
    "choices": [
     {
      "letter": "A",
@@ -5990,8 +5990,8 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
    "solution": "A statement and its negation always have opposite truth values.",
    "wrong_choices": [],
@@ -6002,8 +6002,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.CONNECTIVE.01",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -9530,7 +9530,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "With inclusive \"or\", \"P or Q\" is true when both P and Q are true.",
+   "prompt": "With inclusive \"or\", \"P or Q\" is false when both P and Q are true.",
    "choices": [
     {
      "letter": "A",
@@ -9541,10 +9541,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "Inclusive means at least one.",
+   "solution": "Inclusive \"or\" needs at least one part true; with both true it is true.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -9553,8 +9553,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.CONNECTIVE.02",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -9770,7 +9770,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "When P is false and Q is false, both inclusive and exclusive \"P or Q\" are false.",
+   "prompt": "When P is false and Q is false, exclusive \"P or Q\" is true.",
    "choices": [
     {
      "letter": "A",
@@ -9781,10 +9781,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "Neither part is true.",
+   "solution": "Exclusive \"or\" needs exactly one part true; with neither true it is false.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -9793,8 +9793,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.CONNECTIVE.02",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -11956,7 +11956,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "A premise is a statement offered as a reason.",
+   "prompt": "A premise is the statement that an argument is trying to prove.",
    "choices": [
     {
      "letter": "A",
@@ -11967,10 +11967,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "Premises support the conclusion.",
+   "solution": "The statement an argument tries to prove is its conclusion; premises are the reasons offered for it.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -11979,8 +11979,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.ARGUMENT.01",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -12200,7 +12200,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "\"Every ticket in the box is red, and I drew a ticket from the box\" makes \"my ticket is red\" certain.",
+   "prompt": "\"Most tickets in the box are red, and I drew a ticket from the box\" makes \"my ticket is red\" certain.",
    "choices": [
     {
      "letter": "A",
@@ -12211,10 +12211,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "If every ticket is red, any ticket drawn is red.",
+   "solution": "If only most tickets are red, the drawn ticket could be one of the others, so \"my ticket is red\" is likely but not certain.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -12223,8 +12223,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.ARGUMENT.02",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -15089,15 +15089,15 @@
    "wrong_choices": [
     {
      "text": "2 is less than -5.",
-     "why_wrong": "false"
+     "why_wrong": "2 is to the right of -5 on the number line, so it is greater"
     },
     {
      "text": "-5 is greater than 2.",
-     "why_wrong": "false"
+     "why_wrong": "-5 is to the left of 2 on the number line, so it is less"
     },
     {
      "text": "-5 equals 5.",
-     "why_wrong": "false"
+     "why_wrong": "-5 and 5 are on opposite sides of 0"
     }
    ],
    "wrong_values_rejected": [],
@@ -16028,7 +16028,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "Being a square is a SUFFICIENT condition for being a rectangle.",
+   "prompt": "Being a square is a NECESSARY condition for being a rectangle.",
    "choices": [
     {
      "letter": "A",
@@ -16039,10 +16039,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "Every square is a rectangle, so knowing a shape is a square is enough to know it is a rectangle.",
+   "solution": "A 2 by 5 rectangle is not a square, so a shape can be a rectangle without being a square. Being a square is sufficient, not necessary.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -16051,8 +16051,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.CONDITIONAL.02",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -16292,7 +16292,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "\"If x = 2, then x + x = 4\" has hypothesis \"x = 2\".",
+   "prompt": "\"If x = 2, then x + x = 4\" has hypothesis \"x + x = 4\".",
    "choices": [
     {
      "letter": "A",
@@ -16303,10 +16303,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "The part after \"if\".",
+   "solution": "The hypothesis is the part after \"if\", which is \"x = 2\". \"x + x = 4\" is the conclusion.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -16315,8 +16315,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.CONDITIONAL.01",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -16465,7 +16465,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "Having fuel is necessary for a gas car to run.",
+   "prompt": "Having fuel is the only thing a gas car needs in order to run.",
    "choices": [
     {
      "letter": "A",
@@ -16476,10 +16476,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "Without fuel it cannot run; fuel is required.",
+   "solution": "A car with fuel can still fail to run, for example with a dead battery. Fuel is necessary, not sufficient.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -16488,8 +16488,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.CONDITIONAL.02",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -16638,7 +16638,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "If A is sufficient for B, then whenever A happens, B happens.",
+   "prompt": "If A is sufficient for B, then whenever B happens, A happens.",
    "choices": [
     {
      "letter": "A",
@@ -16649,10 +16649,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "That is the meaning of sufficient.",
+   "solution": "Sufficient means A guarantees B. B can still happen without A.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -16661,8 +16661,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.CONDITIONAL.02",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -19146,7 +19146,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "\"Not (not P)\" says the same as P.",
+   "prompt": "\"Not (not P)\" says the same as \"not P\".",
    "choices": [
     {
      "letter": "A",
@@ -19157,10 +19157,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "Double negation cancels.",
+   "solution": "Two negations cancel, so \"not (not P)\" says the same as P.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -19169,8 +19169,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.CONNECTIVE.01",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -19339,7 +19339,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "In \"If x = 5, then x + 1 = 6,\" the conclusion is \"x + 1 = 6\".",
+   "prompt": "In \"If x = 5, then x + 1 = 6,\" the conclusion is \"x = 5\".",
    "choices": [
     {
      "letter": "A",
@@ -19350,10 +19350,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "The part after \"then\".",
+   "solution": "The conclusion is the part after \"then\": \"x + 1 = 6\". \"x = 5\" is the hypothesis.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -19362,8 +19362,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.CONDITIONAL.01",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -19710,7 +19710,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "If a conditional is false, its contrapositive is also false.",
+   "prompt": "If a conditional is false, its contrapositive is true.",
    "choices": [
     {
      "letter": "A",
@@ -19721,10 +19721,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "They are equivalent, so they are always true or false together.",
+   "solution": "A conditional and its contrapositive are equivalent, so they are always true or false together.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -19733,8 +19733,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.CONDITIONAL.03",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -20633,7 +20633,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "\"If 3 > 2, then 5 > 4\" is true.",
+   "prompt": "\"If 4 > 1, then 2 > 6\" is true.",
    "choices": [
     {
      "letter": "A",
@@ -20644,10 +20644,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "Both parts true.",
+   "solution": "The \"if\" part is true and the \"then\" part is false, which is the one case that makes a conditional false.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -20656,8 +20656,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.CONDITIONAL.01",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -20798,7 +20798,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "The converse of \"If n = 2, then n is even\" is \"If n is even, then n = 2\".",
+   "prompt": "The converse of \"If n = 2, then n is even\" is \"If n is not 2, then n is not even\".",
    "choices": [
     {
      "letter": "A",
@@ -20809,10 +20809,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "The parts are swapped.",
+   "solution": "That statement negates both parts; it is the inverse. The converse swaps the parts: \"If n is even, then n = 2\".",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -20821,8 +20821,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.CONDITIONAL.03",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -20971,7 +20971,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "If a conditional and its converse are both true, the biconditional is true.",
+   "prompt": "If a conditional is true but its converse is false, the biconditional is true.",
    "choices": [
     {
      "letter": "A",
@@ -20982,10 +20982,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "That is the definition.",
+   "solution": "A biconditional needs both directions true; a false converse makes it false.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -20994,8 +20994,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.CONDITIONAL.03",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -21590,11 +21590,11 @@
     },
     {
      "text": "n is even if and only if n is a multiple of 4.",
-     "why_wrong": "6"
+     "why_wrong": "6 is even but not a multiple of 4"
     },
     {
      "text": "n is a multiple of 3 if and only if n is a multiple of 9.",
-     "why_wrong": "3"
+     "why_wrong": "3 is a multiple of 3 but not of 9"
     }
    ],
    "wrong_values_rejected": [],
@@ -25161,7 +25161,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "In a truth table, every row lists a different combination of truth values.",
+   "prompt": "A truth table for three statements P, Q and R has 6 rows.",
    "choices": [
     {
      "letter": "A",
@@ -25172,10 +25172,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "That is how the table is built.",
+   "solution": "Each of the 3 statements can be true or false: 2 x 2 x 2 = 8 rows.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -25184,8 +25184,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.TRUTH.01",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -25354,7 +25354,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "A contingency is true in at least one row and false in at least one row.",
+   "prompt": "A contingency is true in every row of its truth table.",
    "choices": [
     {
      "letter": "A",
@@ -25365,10 +25365,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "Sometimes true.",
+   "solution": "A statement true in every row is a tautology. A contingency is true in some rows and false in others.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -25377,8 +25377,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.TRUTH.02",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -25476,7 +25476,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "\"7 is odd or 7 is not odd\" is true no matter what number replaces 7.",
+   "prompt": "\"7 is odd and 7 is not odd\" is true.",
    "choices": [
     {
      "letter": "A",
@@ -25487,10 +25487,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "It has the form \"P or not P\", a tautology.",
+   "solution": "It has the form \"P and not P\", a contradiction: it is false in every case.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -25499,8 +25499,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.TRUTH.02",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -25776,7 +25776,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "The negation of a tautology is a contradiction.",
+   "prompt": "The negation of a tautology is also a tautology.",
    "choices": [
     {
      "letter": "A",
@@ -25787,8 +25787,8 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
    "solution": "If a statement is true in every row, its negation is false in every row.",
    "wrong_choices": [],
@@ -25799,8 +25799,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.TRUTH.02",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -26114,7 +26114,7 @@
    "genre": "occlusion and stacking",
    "family": "visual",
    "question_page": 0,
-   "prompt": "Rectangular paper sheets are lying flat, one on top of another, seen from directly above. Each sheet is white with a dark outline and a letter in its corner. A sheet hides the parts of the sheets under it. Put the sheets in order from the BOTTOM sheet to the TOP sheet.",
+   "prompt": "Rectangular paper sheets are lying flat, one on top of another, seen from directly above. Each sheet is white with a dark outline and a letter in its corner. A sheet hides the parts of the sheets under it. This stack has 3 sheets: A, B, C. Put the sheets in order from the BOTTOM sheet to the TOP sheet.",
    "choices": [],
    "correct_letter": "",
    "correct_answer": "sheet B → sheet C → sheet A",
@@ -26173,7 +26173,7 @@
    "genre": "occlusion and stacking",
    "family": "visual",
    "question_page": 0,
-   "prompt": "Rectangular paper sheets are lying flat, one on top of another, seen from directly above. Each sheet is white with a dark outline and a letter in its corner. A sheet hides the parts of the sheets under it. Put the sheets in order from the BOTTOM sheet to the TOP sheet.",
+   "prompt": "Rectangular paper sheets are lying flat, one on top of another, seen from directly above. Each sheet is white with a dark outline and a letter in its corner. A sheet hides the parts of the sheets under it. This stack has 4 sheets: A, B, C, D. List the sheets starting with the one at the BOTTOM and ending with the one on TOP.",
    "choices": [],
    "correct_letter": "",
    "correct_answer": "sheet B → sheet C → sheet A → sheet D",
@@ -26308,7 +26308,7 @@
    "genre": "occlusion and stacking",
    "family": "visual",
    "question_page": 0,
-   "prompt": "Rectangular paper sheets are lying flat, one on top of another, seen from directly above. Each sheet is white with a dark outline and a letter in its corner. A sheet hides the parts of the sheets under it. Put the sheets in order from the BOTTOM sheet to the TOP sheet.",
+   "prompt": "Rectangular paper sheets are lying flat, one on top of another, seen from directly above. Each sheet is white with a dark outline and a letter in its corner. A sheet hides the parts of the sheets under it. This stack has 4 sheets: A, B, C, D. Put the sheets in order from the BOTTOM sheet to the TOP sheet.",
    "choices": [],
    "correct_letter": "",
    "correct_answer": "sheet C → sheet D → sheet A → sheet B",
@@ -26710,7 +26710,7 @@
    "genre": "occlusion and stacking",
    "family": "visual",
    "question_page": 0,
-   "prompt": "Rectangular paper sheets are lying flat, one on top of another, seen from directly above. Each sheet is white with a dark outline and a letter in its corner. A sheet hides the parts of the sheets under it. Put the five sheets in order from the BOTTOM sheet to the TOP sheet.",
+   "prompt": "Rectangular paper sheets are lying flat, one on top of another, seen from directly above. Each sheet is white with a dark outline and a letter in its corner. A sheet hides the parts of the sheets under it. This stack has 5 sheets: A, B, C, D, E. Put the five sheets in order from the BOTTOM sheet to the TOP sheet.",
    "choices": [],
    "correct_letter": "",
    "correct_answer": "sheet E → sheet D → sheet A → sheet C → sheet B",
@@ -26779,7 +26779,7 @@
    "genre": "occlusion and stacking",
    "family": "visual",
    "question_page": 0,
-   "prompt": "Rectangular paper sheets are lying flat, one on top of another, seen from directly above. Each sheet is white with a dark outline and a letter in its corner. A sheet hides the parts of the sheets under it. Put the five sheets in order from the BOTTOM sheet to the TOP sheet.",
+   "prompt": "Rectangular paper sheets are lying flat, one on top of another, seen from directly above. Each sheet is white with a dark outline and a letter in its corner. A sheet hides the parts of the sheets under it. This stack has 5 sheets: A, B, C, D, E. List the five sheets starting with the BOTTOM sheet and ending with the TOP sheet.",
    "choices": [],
    "correct_letter": "",
    "correct_answer": "sheet B → sheet E → sheet A → sheet C → sheet D",
@@ -27638,7 +27638,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "\"If P then Q\" is false when P is true and Q is false.",
+   "prompt": "\"If P then Q\" is false when P is false and Q is true.",
    "choices": [
     {
      "letter": "A",
@@ -27649,10 +27649,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "The only false case.",
+   "solution": "With P false the conditional makes no promise, so it is true. It is false only when P is true and Q is false.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -27661,8 +27661,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.CONDITIONAL.01",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -27928,7 +27928,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "\"P or Q\" is true and P is false. Then Q is true.",
+   "prompt": "\"P or Q\" is true and P is true. Then Q must be false.",
    "choices": [
     {
      "letter": "A",
@@ -27939,10 +27939,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "At least one must be true.",
+   "solution": "Inclusive \"or\" allows both parts to be true, so Q could be true or false.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -27951,8 +27951,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.CONNECTIVE.02",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -29671,7 +29671,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "If every case with true premises has a true conclusion, the argument is valid.",
+   "prompt": "If one case with true premises has a true conclusion, the argument is valid.",
    "choices": [
     {
      "letter": "A",
@@ -29682,10 +29682,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "Definition.",
+   "solution": "Validity needs EVERY case with true premises to have a true conclusion; one good case is not enough.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -29694,8 +29694,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.QUANT.03",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -31951,7 +31951,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "\"P or Q. Not P. So Q.\" is a valid form.",
+   "prompt": "\"P or Q. P. So not Q.\" is a valid form.",
    "choices": [
     {
      "letter": "A",
@@ -31962,10 +31962,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "Disjunctive syllogism.",
+   "solution": "With inclusive \"or\", P and Q can both be true, so the premises can be true while \"not Q\" is false.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -31974,8 +31974,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.INFERENCE.01",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -32051,7 +32051,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "\"Every square has four equal sides\" is true.",
+   "prompt": "\"Every rectangle has four equal sides\" is true.",
    "choices": [
     {
      "letter": "A",
@@ -32062,10 +32062,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "Definition of a square.",
+   "solution": "A 2 by 5 rectangle does not have four equal sides.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -32074,8 +32074,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.ARGUMENT.01",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -32151,7 +32151,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "\"Every multiple of 4 is a multiple of 2\" is true.",
+   "prompt": "\"Every multiple of 2 is a multiple of 4\" is true.",
    "choices": [
     {
      "letter": "A",
@@ -32162,10 +32162,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "4k = 2(2k).",
+   "solution": "6 is a multiple of 2 but not of 4.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -32174,8 +32174,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.ARGUMENT.01",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -32251,7 +32251,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "\"Water freezes at 0 degrees Celsius at normal air pressure\" is true.",
+   "prompt": "\"Water freezes at 10 degrees Celsius at normal air pressure\" is true.",
    "choices": [
     {
      "letter": "A",
@@ -32262,10 +32262,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "A standard fact.",
+   "solution": "At normal air pressure water freezes at 0 degrees Celsius; at 10 degrees it is liquid.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -32274,8 +32274,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.ARGUMENT.01",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -32371,7 +32371,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "A valid argument with a false conclusion must have at least one false premise.",
+   "prompt": "A valid argument with a false conclusion can have all of its premises true.",
    "choices": [
     {
      "letter": "A",
@@ -32382,10 +32382,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "If all premises were true, validity would make the conclusion true.",
+   "solution": "In a valid argument, true premises force a true conclusion. So a false conclusion means some premise is false.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -32394,8 +32394,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.INFERENCE.03",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -34176,11 +34176,11 @@
     },
     {
      "text": "No number in the domain is negative.",
-     "why_wrong": "true"
+     "why_wrong": "this is true: 1 to 10 are all positive"
     },
     {
      "text": "Some number in the domain is a multiple of 7.",
-     "why_wrong": "7"
+     "why_wrong": "this is true: 7 is in the domain"
     }
    ],
    "wrong_values_rejected": [],
@@ -34359,7 +34359,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "\"All the lights are on\" is false if exactly one light is off.",
+   "prompt": "\"All the lights are on\" is true if exactly one light is off.",
    "choices": [
     {
      "letter": "A",
@@ -34370,10 +34370,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "One exception is enough.",
+   "solution": "One light that is off is an exception, and one exception makes an \"all\" statement false.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -34382,8 +34382,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.QUANT.01",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -35654,7 +35654,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "\"Some cards are red\" is true if exactly one card is red.",
+   "prompt": "\"Some cards are red\" is false if exactly one card is red.",
    "choices": [
     {
      "letter": "A",
@@ -35665,10 +35665,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "\"Some\" means at least one.",
+   "solution": "\"Some\" means at least one, so one red card makes the statement true.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -35677,8 +35677,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.QUANT.01",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -36000,7 +36000,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "The negation of \"x ≥ 4\" is \"x < 4\".",
+   "prompt": "The negation of \"x ≥ 4\" is \"x ≤ 4\".",
    "choices": [
     {
      "letter": "A",
@@ -36011,10 +36011,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "Exactly the values not at least 4.",
+   "solution": "x = 4 makes both \"x ≥ 4\" and \"x ≤ 4\" true, so they are not negations. The negation is \"x < 4\".",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -36023,8 +36023,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.CONNECTIVE.01",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -38349,7 +38349,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "\"Some cats are black\" is shown true by one black cat.",
+   "prompt": "\"All cats are black\" is shown true by one black cat.",
    "choices": [
     {
      "letter": "A",
@@ -38360,10 +38360,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "One witness.",
+   "solution": "One black cat shows that some cats are black. Showing that all cats are black needs every cat to be black.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -38372,8 +38372,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.QUANT.01",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -38449,7 +38449,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "\"No number is negative\" is shown false by the number -1.",
+   "prompt": "\"No number is negative\" is shown false by the number 1.",
    "choices": [
     {
      "letter": "A",
@@ -38460,10 +38460,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "-1 is a witness for \"some number is negative\".",
+   "solution": "1 is not negative, so it does not contradict the statement. A negative number such as -1 would.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -38472,8 +38472,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.QUANT.01",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -41588,7 +41588,7 @@
    "genre": "region adjacency",
    "family": "visual",
    "question_page": 0,
-   "prompt": "If a map can be colored with 3 colors, it can also be colored with 4 colors.",
+   "prompt": "If a map can be colored with 4 colors so that neighbors differ, it can also be colored with 3 colors.",
    "choices": [
     {
      "letter": "A",
@@ -41599,10 +41599,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "Use the same coloring; the fourth color need not be used.",
+   "solution": "Four regions that all border each other need 4 different colors, so 3 colors are not always enough.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -41611,8 +41611,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.GRAPH.02",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -41792,7 +41792,7 @@
     },
     {
      "text": "No: no rectangle is a square.",
-     "why_wrong": "false"
+     "why_wrong": "that is false: every square is a rectangle"
     }
    ],
    "wrong_values_rejected": [],
@@ -58268,7 +58268,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. A statement can be true and still not be an assumption that an argument needs.",
+   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. Every true statement about the topic of an argument is an assumption that the argument needs.",
    "choices": [
     {
      "letter": "A",
@@ -58279,10 +58279,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "A true fact that does not bridge the gap between premise and conclusion is not needed.",
+   "solution": "A true fact that does not bridge the gap between premise and conclusion is not needed by the argument.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -58291,8 +58291,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.EVIDENCE.01",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },
@@ -58748,7 +58748,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 0,
-   "prompt": "Two explanations both fit the facts. Finding a new fact that one explanation predicts and the other does not can help decide between them.",
+   "prompt": "Two explanations both fit the facts. Then no new fact can help decide between them.",
    "choices": [
     {
      "letter": "A",
@@ -58759,10 +58759,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "True",
+   "correct_letter": "B",
+   "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "A fact predicted by only one explanation supports that explanation over the other.",
+   "solution": "A new fact that one explanation predicts and the other does not supports the first over the second.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -58771,8 +58771,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.EVIDENCE.01",
-    "correct_letter": "A",
-    "correct_answer": "True",
+    "correct_letter": "B",
+    "correct_answer": "False",
     "no_shuffle": true
    }
   },

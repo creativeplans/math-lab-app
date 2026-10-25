@@ -61,7 +61,7 @@ def s21():
                  B('When is a conditional true?', 'prerequisite', 'Valid forms work because of when "if...then" is true and '
                                                                  'false; students who misread conditionals misapply them.',
                    outcome='LOGIC.CONDITIONAL.01', qs=[
-                       tf('"If P then Q" is false when P is true and Q is false.', True, 'The only false case.'),
+                       tf('"If P then Q" is false when P is false and Q is true.', False, 'With P false the conditional makes no promise, so it is true. It is false only when P is true and Q is false.'),
                        tf('"If P then Q" is false when P is false.', False, 'It is true whenever P is false.'),
                        mc('"If P then Q" is true and P is true. What is Q?', 'true', [('false', 'then the conditional would be '
                                                                                               'false'),
@@ -77,7 +77,7 @@ def s21():
                    ]),
                  B('Using "or" and "not"', 'prerequisite', 'Disjunctive syllogism needs inclusive "or" and negation.',
                    outcome='LOGIC.CONNECTIVE.02', qs=[
-                       tf('"P or Q" is true and P is false. Then Q is true.', True, 'At least one must be true.'),
+                       tf('"P or Q" is true and P is true. Then Q must be false.', False, 'Inclusive "or" allows both parts to be true, so Q could be true or false.'),
                        tf('"P or Q" is true and P is true. Then Q is false.', False, 'Inclusive or allows both.'),
                        mc('"The meeting is on Monday or Tuesday." It is not on Monday. When is it?', 'Tuesday',
                           [('Monday', 'ruled out'), ('neither day', 'the premise says one of them'),
@@ -200,7 +200,7 @@ def s22():
                         'form is invalid?', 'A bat has wings but is not a robin.',
                         [('Robins have wings.', 'that is a premise'), ('Bats fly at night.', 'irrelevant'),
                          ('Some birds cannot fly.', 'irrelevant')], 'True premises, false conclusion.'),
-                     tf('If every case with true premises has a true conclusion, the argument is valid.', True, 'Definition.'),
+                     tf('If one case with true premises has a true conclusion, the argument is valid.', False, 'Validity needs EVERY case with true premises to have a true conclusion; one good case is not enough.'),
                  ]),
              ],
              f1=FW('Spot invalid forms in disguise', 'Harder: invalid forms in everyday wording and with "only if".', [

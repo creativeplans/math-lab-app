@@ -64,7 +64,7 @@ def s15():
                        mc('What is the negation of "it is raining"?', 'it is not raining',
                           [('it is sunny', 'it could be cloudy and dry'), ('it rained yesterday', 'unrelated'),
                            ('it will rain', 'unrelated')], 'Negate the whole claim.'),
-                       tf('"Not (not P)" says the same as P.', True, 'Double negation cancels.'),
+                       tf('"Not (not P)" says the same as "not P".', False, 'Two negations cancel, so "not (not P)" says the same as P.'),
                    ]),
                  B('Hypothesis and conclusion', 'prerequisite', 'Converse and contrapositive swap the two parts; a student '
                                                               'must first identify which part is which.',
@@ -76,7 +76,7 @@ def s15():
                           [('If not P, then not Q.', 'that negates instead of swapping'),
                            ('If not Q, then not P.', 'that swaps AND negates'), ('P and Q.', 'not a conditional')],
                           'Swapping gives the converse.'),
-                       tf('In "If x = 5, then x + 1 = 6," the conclusion is "x + 1 = 6".', True, 'The part after "then".'),
+                       tf('In "If x = 5, then x + 1 = 6," the conclusion is "x = 5".', False, 'The conclusion is the part after "then": "x + 1 = 6". "x = 5" is the hypothesis.'),
                        mc('Which statement has hypothesis "a figure is a square"?', 'If a figure is a square, then it is a '
                                                                                     'rectangle.',
                           [('If a figure is a rectangle, then it is a square.', 'hypothesis is "rectangle"'),
@@ -101,8 +101,8 @@ def s15():
                     'false?', 'Count:', '5', 'The inverse is "If n is not a multiple of 4, then n is not even". It is false '
                                              'when n is even but not a multiple of 4: 2, 6, 10, 14, 18.',
                     compute=lambda: str(sum(1 for n in range(1, 21) if not imp(n % 4 != 0, n % 2 != 0)))),
-                 tf('If a conditional is false, its contrapositive is also false.', True,
-                    'They are equivalent, so they are always true or false together.'),
+                 tf('If a conditional is false, its contrapositive is true.', False,
+                    'A conditional and its contrapositive are equivalent, so they are always true or false together.'),
                  mc('"If a quadrilateral is a square, then its diagonals are equal." Which related statement is FALSE?',
                     'the converse: if the diagonals are equal, the quadrilateral is a square',
                     [('the contrapositive: if the diagonals are not equal, it is not a square', 'equivalent to the true '
@@ -177,7 +177,7 @@ def s16():
                      mc('When is "if P then Q" false?', 'when P is true and Q is false',
                         [('when P is false', 'it is true then'), ('when Q is true', 'it is true then'),
                          ('when both are false', 'it is true then')], 'Only one row is false.'),
-                     tf('"If 3 > 2, then 5 > 4" is true.', True, 'Both parts true.'),
+                     tf('"If 4 > 1, then 2 > 6" is true.', False, 'The "if" part is true and the "then" part is false, which is the one case that makes a conditional false.'),
                      sa('In how many of the 4 rows is "if P then Q" true?', 'Rows:', '3', 'All rows except P true, Q false.',
                         compute=lambda: str(sum(1 for p, q in itertools.product(TF, repeat=2) if imp(p, q)))),
                  ]),
@@ -188,15 +188,15 @@ def s16():
                          ('If it does not bark, then it is not a dog.', 'the contrapositive'), ('It is a barking dog.', 'not '
                                                                                                                      'a conditional')],
                         'Swap the parts.'),
-                     tf('The converse of "If n = 2, then n is even" is "If n is even, then n = 2".', True, 'The parts are swapped.'),
+                     tf('The converse of "If n = 2, then n is even" is "If n is not 2, then n is not even".', False, 'That statement negates both parts; it is the inverse. The converse swaps the parts: "If n is even, then n = 2".'),
                      tf('The converse of a true statement is always true.', False, 'Example: "If n = 2, then n is even" is '
                                                                                    'true, its converse is false.'),
                      mc('"P if and only if Q" means "if P then Q" AND what?', 'if Q then P',
                         [('if not P then Q', 'not the converse'), ('P or Q', 'not part of it'), ('not P and not Q', 'not part '
                                                                                                                   'of it')],
                         'The other direction is the converse.'),
-                     tf('If a conditional and its converse are both true, the biconditional is true.', True,
-                        'That is the definition.'),
+                     tf('If a conditional is true but its converse is false, the biconditional is true.', False,
+                        'A biconditional needs both directions true; a false converse makes it false.'),
                  ]),
              ],
              f1=FW('Biconditionals as definitions and tests', 'Harder: count where a biconditional holds and test '
@@ -246,8 +246,8 @@ def s16():
                         wrong=[{'a': 2, 'b': 3}, {'a': 4, 'b': 4}], search={'a': range(1, 10), 'b': range(1, 10)}),
                  mc('Which statement about whole numbers is TRUE?', 'n is odd if and only if n + 1 is even.',
                     [('n is odd if and only if n is prime.', '9 is odd, not prime; 2 is prime, not odd'),
-                     ('n is even if and only if n is a multiple of 4.', '6'),
-                     ('n is a multiple of 3 if and only if n is a multiple of 9.', '3')],
+                     ('n is even if and only if n is a multiple of 4.', '6 is even but not a multiple of 4'),
+                     ('n is a multiple of 3 if and only if n is a multiple of 9.', '3 is a multiple of 3 but not of 9')],
                     'Adding 1 always changes parity, so n odd and n + 1 even always match.'),
              ]))
 

@@ -243,8 +243,8 @@ def s46():
                              ('Sam is the tallest in his class.', 'Raj may not be in Sam\'s class'),
                              ('Ana and Raj are friends.', 'friendship says nothing about height')],
                             'Sam > Ana and Ana >= Raj give Sam > Raj.'),
-                         tf(ASM + ' A statement can be true and still not be an assumption that an argument needs.', True,
-                            'A true fact that does not bridge the gap between premise and conclusion is not needed.'),
+                         tf(ASM + ' Every true statement about the topic of an argument is an assumption that the argument needs.', False,
+                            'A true fact that does not bridge the gap between premise and conclusion is not needed by the argument.'),
                          mc(ASM + ' "The park was crowded on Saturday, so it will be crowded this Saturday." What is the '
                                   'gap?', 'From one past Saturday to a future Saturday',
                             [('From the park to the city', 'the argument never mentions a city'),
@@ -282,9 +282,8 @@ def s46():
                      ('Friday\'s game is at home.', 'location is not part of the argument'),
                      ('It rains more in the spring.', 'that does not connect rain to losing')],
                     'The past pattern predicts Friday only if rain is the reason for the losses.'),
-                 tf('Two explanations both fit the facts. Finding a new fact that one explanation predicts and the other '
-                    'does not can help decide between them.', True,
-                    'A fact predicted by only one explanation supports that explanation over the other.'),
+                 tf('Two explanations both fit the facts. Then no new fact can help decide between them.', False,
+                    'A new fact that one explanation predicts and the other does not supports the first over the second.'),
              ]),
              f2=FW('Judge explanations with care', 'Expert: alternative explanations and hidden assumptions.', [
                  mc('A town\'s ice-cream sales and its number of sunburns rise and fall together during the year. Which '

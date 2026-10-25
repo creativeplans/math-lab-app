@@ -58,8 +58,8 @@ def s13():
                      ('If the picnic is held, it does not rain.', 'that is the converse of the stated meaning'),
                      ('If it does not rain, the picnic is not held.', 'adds a negation')],
                     'With the stated meaning: if it does not rain, then the picnic is held.'),
-                 tf('Being a square is a SUFFICIENT condition for being a rectangle.', True,
-                    'Every square is a rectangle, so knowing a shape is a square is enough to know it is a rectangle.'),
+                 tf('Being a square is a NECESSARY condition for being a rectangle.', False,
+                    'A 2 by 5 rectangle is not a square, so a shape can be a rectangle without being a square. Being a square is sufficient, not necessary.'),
                  mc('n is a whole number. Which condition is NECESSARY for "n is divisible by 6"?', 'n is even',
                     [('n is divisible by 12', 'sufficient but not necessary: 6 is divisible by 6 but not by 12'),
                      ('n is divisible by 9', '12 is divisible by 6 but not by 9'),
@@ -81,7 +81,7 @@ def s13():
                                                                                                                  'conditional'),
                            ('If the bell does not ring, class does not end.', 'changes the meaning')],
                           '"When" introduces the condition.'),
-                       tf('"If x = 2, then x + x = 4" has hypothesis "x = 2".', True, 'The part after "if".'),
+                       tf('"If x = 2, then x + x = 4" has hypothesis "x + x = 4".', False, 'The hypothesis is the part after "if", which is "x = 2". "x + x = 4" is the conclusion.'),
                        mc('What is the conclusion of "If a number ends in 5, it is divisible by 5"?', 'it is divisible by 5',
                           [('a number ends in 5', 'the hypothesis'), ('it is odd', 'not stated'), ('it is 5', 'not stated')],
                           'The "then" part.'),
@@ -91,7 +91,7 @@ def s13():
                  B('Necessary means required; sufficient means enough', 'prerequisite',
                    'Students who mix up "required" and "enough" reverse every translation. Everyday examples fix the meaning.',
                    qs=[
-                       tf('Having fuel is necessary for a gas car to run.', True, 'Without fuel it cannot run; fuel is required.'),
+                       tf('Having fuel is the only thing a gas car needs in order to run.', False, 'A car with fuel can still fail to run, for example with a dead battery. Fuel is necessary, not sufficient.'),
                        tf('Having fuel is sufficient for a gas car to run.', False, 'A car with fuel may still not run (for '
                                                                                    'example, a dead battery).'),
                        mc('Which is SUFFICIENT for a whole number to be even?', 'It is a multiple of 10.',
@@ -101,8 +101,8 @@ def s13():
                                                       'It is greater than 2.': lambda n: n > 2,
                                                       'It is a multiple of 3.': lambda n: n % 3 == 0,
                                                       'It ends in 1.': lambda n: n % 10 == 1}[t], lambda n: n % 2 == 0)),
-                       tf('If A is sufficient for B, then whenever A happens, B happens.', True, 'That is the meaning of '
-                                                                                                  'sufficient.'),
+                       tf('If A is sufficient for B, then whenever B happens, A happens.', False, 'Sufficient means A guarantees '
+                          'B. B can still happen without A.'),
                        mc('Being a mammal is ___ for being a dog.', 'necessary', [('sufficient', 'a cat is a mammal but not a '
                                                                                                  'dog'),
                                                                                   ('neither necessary nor sufficient', 'every '
