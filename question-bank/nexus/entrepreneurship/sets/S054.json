@@ -1,0 +1,657 @@
+{
+ "set": 54,
+ "title": "Cash timing, unpaid invoices and deposits",
+ "outcome": "ENT.CASH.02",
+ "content_status": "stable",
+ "requires": [
+  47
+ ],
+ "module": "money",
+ "path_refs": [
+  "services",
+  "products",
+  "digital",
+  "content"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Plan for invoice timing, deposits and overdue payments",
+   "questions": [
+    {
+     "id": "S54-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "What does \"Net 30\" mean?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The business must pay 30 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "A 30 percent discount for paying early"
+      },
+      {
+       "letter": "C",
+       "text": "The customer may pay any time in the year"
+      },
+      {
+       "letter": "D",
+       "text": "Payment is due 30 days after the invoice date"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Payment is due 30 days after the invoice date",
+     "intro": "Cash often arrives later than work is done. An INVOICE is a bill sent to a customer; \"Net 30\" means payment is due 30 days after the invoice date. Meanwhile, the business may have to pay for materials and its own bills. A DEPOSIT is money paid up front before work starts; it reduces risk and helps buy materials. Track unpaid invoices (accounts receivable), send reminders on the due date, and set clear terms in writing, such as a late fee if allowed where you operate.",
+     "feedback": "Net 30 sets the due date."
+    },
+    {
+     "id": "S54-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "What is a deposit?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Money paid up front before work starts"
+      },
+      {
+       "letter": "B",
+       "text": "A refund paid after a customer complaint"
+      },
+      {
+       "letter": "C",
+       "text": "A bonus paid to employees"
+      },
+      {
+       "letter": "D",
+       "text": "A tax paid to the state"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Money paid up front before work starts",
+     "intro": "Cash often arrives later than work is done. An INVOICE is a bill sent to a customer; \"Net 30\" means payment is due 30 days after the invoice date. Meanwhile, the business may have to pay for materials and its own bills. A DEPOSIT is money paid up front before work starts; it reduces risk and helps buy materials. Track unpaid invoices (accounts receivable), send reminders on the due date, and set clear terms in writing, such as a late fee if allowed where you operate.",
+     "feedback": "Deposits come first."
+    },
+    {
+     "id": "S54-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "An invoice dated June 1 is Net 30. When is it due?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "August 1"
+      },
+      {
+       "letter": "B",
+       "text": "June 2"
+      },
+      {
+       "letter": "C",
+       "text": "July 1"
+      },
+      {
+       "letter": "D",
+       "text": "June 30 of next year"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "July 1",
+     "intro": "Cash often arrives later than work is done. An INVOICE is a bill sent to a customer; \"Net 30\" means payment is due 30 days after the invoice date. Meanwhile, the business may have to pay for materials and its own bills. A DEPOSIT is money paid up front before work starts; it reduces risk and helps buy materials. Track unpaid invoices (accounts receivable), send reminders on the due date, and set clear terms in writing, such as a late fee if allowed where you operate.",
+     "feedback": "June has 30 days: June 1 + 30 days = July 1."
+    },
+    {
+     "id": "S54-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "What are accounts receivable?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The value of equipment"
+      },
+      {
+       "letter": "B",
+       "text": "Money customers owe the business"
+      },
+      {
+       "letter": "C",
+       "text": "Cash in the owner's wallet"
+      },
+      {
+       "letter": "D",
+       "text": "Money the business owes suppliers"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Money customers owe the business",
+     "intro": "Cash often arrives later than work is done. An INVOICE is a bill sent to a customer; \"Net 30\" means payment is due 30 days after the invoice date. Meanwhile, the business may have to pay for materials and its own bills. A DEPOSIT is money paid up front before work starts; it reduces risk and helps buy materials. Track unpaid invoices (accounts receivable), send reminders on the due date, and set clear terms in writing, such as a late fee if allowed where you operate.",
+     "feedback": "Receivables are unpaid invoices."
+    },
+    {
+     "id": "S54-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "Why ask for a deposit on a large custom order?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It reduces risk and helps pay for materials"
+      },
+      {
+       "letter": "B",
+       "text": "It lowers the business's taxes"
+      },
+      {
+       "letter": "C",
+       "text": "It replaces the need for an invoice"
+      },
+      {
+       "letter": "D",
+       "text": "It guarantees the customer will love the order"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "It reduces risk and helps pay for materials",
+     "intro": "Cash often arrives later than work is done. An INVOICE is a bill sent to a customer; \"Net 30\" means payment is due 30 days after the invoice date. Meanwhile, the business may have to pay for materials and its own bills. A DEPOSIT is money paid up front before work starts; it reduces risk and helps buy materials. Track unpaid invoices (accounts receivable), send reminders on the due date, and set clear terms in writing, such as a late fee if allowed where you operate.",
+     "feedback": "Deposits protect cash."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Waiting for allowance",
+   "questions": [
+    {
+     "id": "S54-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "Doing chores before being paid is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Paying taxes"
+      },
+      {
+       "letter": "B",
+       "text": "Getting a deposit up front from the customer"
+      },
+      {
+       "letter": "C",
+       "text": "Working before an invoice is paid"
+      },
+      {
+       "letter": "D",
+       "text": "Buying supplies"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Working before an invoice is paid",
+     "intro": "Imagine doing chores all month but receiving your allowance only at the end of the next month. Meanwhile, you still need money for lunch. Businesses face the same gap: they do the work, send an invoice, and wait for payment while bills keep coming. A deposit is like getting part of the allowance before you start the chores.",
+     "feedback": "Work comes before cash."
+    },
+    {
+     "id": "S54-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "Needing lunch money while waiting is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A refund"
+      },
+      {
+       "letter": "B",
+       "text": "Extra profit for the whole month"
+      },
+      {
+       "letter": "C",
+       "text": "A discount"
+      },
+      {
+       "letter": "D",
+       "text": "Bills due before payment arrives"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Bills due before payment arrives",
+     "intro": "Imagine doing chores all month but receiving your allowance only at the end of the next month. Meanwhile, you still need money for lunch. Businesses face the same gap: they do the work, send an invoice, and wait for payment while bills keep coming. A deposit is like getting part of the allowance before you start the chores.",
+     "feedback": "The cash gap."
+    },
+    {
+     "id": "S54-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "Getting part of the allowance first is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "An invoice"
+      },
+      {
+       "letter": "B",
+       "text": "A refund"
+      },
+      {
+       "letter": "C",
+       "text": "A deposit"
+      },
+      {
+       "letter": "D",
+       "text": "A fee"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A deposit",
+     "intro": "Imagine doing chores all month but receiving your allowance only at the end of the next month. Meanwhile, you still need money for lunch. Businesses face the same gap: they do the work, send an invoice, and wait for payment while bills keep coming. A deposit is like getting part of the allowance before you start the chores.",
+     "feedback": "Money before work."
+    },
+    {
+     "id": "S54-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "What makes the waiting harder?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Longer payment terms"
+      },
+      {
+       "letter": "B",
+       "text": "Shorter payment terms"
+      },
+      {
+       "letter": "C",
+       "text": "Deposits"
+      },
+      {
+       "letter": "D",
+       "text": "Reminders"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Longer payment terms",
+     "intro": "Imagine doing chores all month but receiving your allowance only at the end of the next month. Meanwhile, you still need money for lunch. Businesses face the same gap: they do the work, send an invoice, and wait for payment while bills keep coming. A deposit is like getting part of the allowance before you start the chores.",
+     "feedback": "Longer waits widen the gap."
+    },
+    {
+     "id": "S54-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "What helps close the gap?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Offering longer terms"
+      },
+      {
+       "letter": "B",
+       "text": "Never sending reminders"
+      },
+      {
+       "letter": "C",
+       "text": "Waiting longer to invoice"
+      },
+      {
+       "letter": "D",
+       "text": "Deposits and prompt invoicing"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Deposits and prompt invoicing",
+     "intro": "Imagine doing chores all month but receiving your allowance only at the end of the next month. Meanwhile, you still need money for lunch. Businesses face the same gap: they do the work, send an invoice, and wait for payment while bills keep coming. A deposit is like getting part of the allowance before you start the chores.",
+     "feedback": "Get paid sooner."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who misses MAIN may not feel the timing gap; waiting for an allowance makes it familiar."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Apply it: plan cash around invoices",
+   "questions": [
+    {
+     "id": "S54-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "A designer finishes a 2,000-dollar project and invoices Net 30. Her rent of 900 dollars is due in 10 days. She has 500 dollars. What is the problem?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "She is 400 dollars short for rent before the invoice is due"
+      },
+      {
+       "letter": "B",
+       "text": "Rent is not her concern"
+      },
+      {
+       "letter": "C",
+       "text": "She has plenty of cash right now to cover the rent easily"
+      },
+      {
+       "letter": "D",
+       "text": "The invoice is already overdue"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "She is 400 dollars short for rent before the invoice is due",
+     "intro": "Cash often arrives later than work is done. An INVOICE is a bill sent to a customer; \"Net 30\" means payment is due 30 days after the invoice date. Meanwhile, the business may have to pay for materials and its own bills. A DEPOSIT is money paid up front before work starts; it reduces risk and helps buy materials. Track unpaid invoices (accounts receivable), send reminders on the due date, and set clear terms in writing, such as a late fee if allowed where you operate.",
+     "feedback": "900 - 500 = 400 short."
+    },
+    {
+     "id": "S54-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "Which change would help her most on future projects?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Stop sending invoices"
+      },
+      {
+       "letter": "B",
+       "text": "Offer Net 90 payment terms to all clients"
+      },
+      {
+       "letter": "C",
+       "text": "Invoice only after 2 months"
+      },
+      {
+       "letter": "D",
+       "text": "Ask for a 50 percent deposit at the start"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Ask for a 50 percent deposit at the start",
+     "intro": "Cash often arrives later than work is done. An INVOICE is a bill sent to a customer; \"Net 30\" means payment is due 30 days after the invoice date. Meanwhile, the business may have to pay for materials and its own bills. A DEPOSIT is money paid up front before work starts; it reduces risk and helps buy materials. Track unpaid invoices (accounts receivable), send reminders on the due date, and set clear terms in writing, such as a late fee if allowed where you operate.",
+     "feedback": "Deposits bring cash earlier."
+    },
+    {
+     "id": "S54-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "A 50 percent deposit on a 2,000-dollar project is how much?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "500 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "1,000 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "1,500 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "2,000 dollars"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "1,000 dollars",
+     "intro": "Cash often arrives later than work is done. An INVOICE is a bill sent to a customer; \"Net 30\" means payment is due 30 days after the invoice date. Meanwhile, the business may have to pay for materials and its own bills. A DEPOSIT is money paid up front before work starts; it reduces risk and helps buy materials. Track unpaid invoices (accounts receivable), send reminders on the due date, and set clear terms in writing, such as a late fee if allowed where you operate.",
+     "feedback": "0.50 x 2,000 = 1,000."
+    },
+    {
+     "id": "S54-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "An invoice was due 15 days ago and is unpaid. What is a sensible first step?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Start a lawsuit today"
+      },
+      {
+       "letter": "B",
+       "text": "Send a polite reminder with the invoice attached"
+      },
+      {
+       "letter": "C",
+       "text": "Ignore it forever"
+      },
+      {
+       "letter": "D",
+       "text": "Post the client's name online as a late payer"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Send a polite reminder with the invoice attached",
+     "intro": "Cash often arrives later than work is done. An INVOICE is a bill sent to a customer; \"Net 30\" means payment is due 30 days after the invoice date. Meanwhile, the business may have to pay for materials and its own bills. A DEPOSIT is money paid up front before work starts; it reduces risk and helps buy materials. Track unpaid invoices (accounts receivable), send reminders on the due date, and set clear terms in writing, such as a late fee if allowed where you operate.",
+     "feedback": "A reminder often solves it."
+    },
+    {
+     "id": "S54-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "A business has receivables of 6,000 dollars, of which 1,500 dollars is over 60 days late. What fraction is very late?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "1/2"
+      },
+      {
+       "letter": "B",
+       "text": "1/6"
+      },
+      {
+       "letter": "C",
+       "text": "1/4"
+      },
+      {
+       "letter": "D",
+       "text": "3/4"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "1/4",
+     "intro": "Cash often arrives later than work is done. An INVOICE is a bill sent to a customer; \"Net 30\" means payment is due 30 days after the invoice date. Meanwhile, the business may have to pay for materials and its own bills. A DEPOSIT is money paid up front before work starts; it reduces risk and helps buy materials. Track unpaid invoices (accounts receivable), send reminders on the due date, and set clear terms in writing, such as a late fee if allowed where you operate.",
+     "feedback": "1,500 / 6,000 = 0.25."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Handle the complications: late payers and big clients",
+   "questions": [
+    {
+     "id": "S54-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "A large client insists on Net 60 terms. The order is 10,000 dollars of materials and labor. What should the owner check?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Whether the logo will be on the client's site"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing; big clients always pay early"
+      },
+      {
+       "letter": "C",
+       "text": "Whether she has cash to cover costs for 60 days"
+      },
+      {
+       "letter": "D",
+       "text": "Only whether the client is famous"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Whether she has cash to cover costs for 60 days",
+     "intro": "Cash often arrives later than work is done. An INVOICE is a bill sent to a customer; \"Net 30\" means payment is due 30 days after the invoice date. Meanwhile, the business may have to pay for materials and its own bills. A DEPOSIT is money paid up front before work starts; it reduces risk and helps buy materials. Track unpaid invoices (accounts receivable), send reminders on the due date, and set clear terms in writing, such as a late fee if allowed where you operate.",
+     "feedback": "Long terms need cash to cover the wait."
+    },
+    {
+     "id": "S54-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "A client has missed three payment dates. What protects the business on future work?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Do more work on credit"
+      },
+      {
+       "letter": "B",
+       "text": "Require payment or a deposit before starting"
+      },
+      {
+       "letter": "C",
+       "text": "Remove invoices"
+      },
+      {
+       "letter": "D",
+       "text": "Offer even longer payment terms to be kind"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Require payment or a deposit before starting",
+     "intro": "Cash often arrives later than work is done. An INVOICE is a bill sent to a customer; \"Net 30\" means payment is due 30 days after the invoice date. Meanwhile, the business may have to pay for materials and its own bills. A DEPOSIT is money paid up front before work starts; it reduces risk and helps buy materials. Track unpaid invoices (accounts receivable), send reminders on the due date, and set clear terms in writing, such as a late fee if allowed where you operate.",
+     "feedback": "Upfront payment reduces risk."
+    },
+    {
+     "id": "S54-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "A contract allows a 1.5 percent monthly late fee where permitted. A 2,000-dollar invoice is one month late. What is the fee?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "30 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "300 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "1.50 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "3 dollars"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "30 dollars",
+     "intro": "Cash often arrives later than work is done. An INVOICE is a bill sent to a customer; \"Net 30\" means payment is due 30 days after the invoice date. Meanwhile, the business may have to pay for materials and its own bills. A DEPOSIT is money paid up front before work starts; it reduces risk and helps buy materials. Track unpaid invoices (accounts receivable), send reminders on the due date, and set clear terms in writing, such as a late fee if allowed where you operate.",
+     "feedback": "0.015 x 2,000 = 30."
+    },
+    {
+     "id": "S54-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "Before adding late fees, what should an owner check?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only whether competitors in her area use late fees"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing; any fee is allowed"
+      },
+      {
+       "letter": "C",
+       "text": "Only the invoice font"
+      },
+      {
+       "letter": "D",
+       "text": "Whether local law allows them and the contract states them"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Whether local law allows them and the contract states them",
+     "intro": "Cash often arrives later than work is done. An INVOICE is a bill sent to a customer; \"Net 30\" means payment is due 30 days after the invoice date. Meanwhile, the business may have to pay for materials and its own bills. A DEPOSIT is money paid up front before work starts; it reduces risk and helps buy materials. Track unpaid invoices (accounts receivable), send reminders on the due date, and set clear terms in writing, such as a late fee if allowed where you operate.",
+     "feedback": "Fees must be legal and agreed."
+    },
+    {
+     "id": "S54-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "Which statement is accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Clear written terms and early reminders reduce late payments."
+      },
+      {
+       "letter": "B",
+       "text": "Customers always pay on time without any reminders or written terms."
+      },
+      {
+       "letter": "C",
+       "text": "Deposits are illegal."
+      },
+      {
+       "letter": "D",
+       "text": "Invoices are optional for businesses."
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Clear written terms and early reminders reduce late payments.",
+     "intro": "Cash often arrives later than work is done. An INVOICE is a bill sent to a customer; \"Net 30\" means payment is due 30 days after the invoice date. Meanwhile, the business may have to pay for materials and its own bills. A DEPOSIT is money paid up front before work starts; it reduces risk and helps buy materials. Track unpaid invoices (accounts receivable), send reminders on the due date, and set clear terms in writing, such as a late fee if allowed where you operate.",
+     "feedback": "Systems help cash flow."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}
