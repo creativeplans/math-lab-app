@@ -43,6 +43,26 @@
    "title": "Tell the paying customer from the user and the decision-maker",
    "alignment": "local"
   },
+  "ENT.LEGAL.01": {
+   "title": "Tell a business name, a legal entity and a brand apart",
+   "alignment": "local"
+  },
+  "ENT.LEGAL.02": {
+   "title": "Explain that a free domain or state name approval does not grant trademark rights, and what to check",
+   "alignment": "local"
+  },
+  "ENT.LEGAL.03": {
+   "title": "Describe sole proprietorships and general partnerships, including personal responsibility for debts",
+   "alignment": "local"
+  },
+  "ENT.LEGAL.04": {
+   "title": "Describe LLCs and corporations at a basic level, including what limited liability does and does not do",
+   "alignment": "local"
+  },
+  "ENT.LEGAL.05": {
+   "title": "Separate an entity's legal form from how it is taxed",
+   "alignment": "local"
+  },
   "ENT.START.01": {
    "title": "Describe a business as solving a problem for customers who pay, and tell revenue-seeking activity from a hobby",
    "alignment": "local"
@@ -154,7 +174,13 @@
    "title": "Foundation 4: Names and legal structure",
    "kind": "foundation",
    "description": "Names, business types, filings, permits.",
-   "sets": []
+   "sets": [
+    19,
+    20,
+    21,
+    22,
+    23
+   ]
   },
   {
    "id": "ids",
@@ -407,6 +433,41 @@
    "title": "Founder case: Dropbox shows a demo first",
    "outcome": "ENT.CASE.04",
    "module": "testing"
+  },
+  {
+   "set": 19,
+   "file": "sets/S019.json",
+   "title": "Business name, legal entity and brand",
+   "outcome": "ENT.LEGAL.01",
+   "module": "legal"
+  },
+  {
+   "set": 20,
+   "file": "sets/S020.json",
+   "title": "Name and domain checks are not trademark rights",
+   "outcome": "ENT.LEGAL.02",
+   "module": "legal"
+  },
+  {
+   "set": 21,
+   "file": "sets/S021.json",
+   "title": "Sole proprietorships and partnerships",
+   "outcome": "ENT.LEGAL.03",
+   "module": "legal"
+  },
+  {
+   "set": 22,
+   "file": "sets/S022.json",
+   "title": "LLCs and corporations",
+   "outcome": "ENT.LEGAL.04",
+   "module": "legal"
+  },
+  {
+   "set": 23,
+   "file": "sets/S023.json",
+   "title": "Legal structure versus tax treatment",
+   "outcome": "ENT.LEGAL.05",
+   "module": "legal"
   }
  ]
 }
