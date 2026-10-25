@@ -52177,6 +52177,4619 @@
     ],
     "correct_answer": "7"
    }
+  },
+  {
+   "uid": "LOGIC:S41-M-Q1",
+   "id": "S41-M-Q1",
+   "set": 41,
+   "set_title": "Parity and alternation",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Use odd/even and alternation to predict outcomes and rule out possibilities",
+   "number": 1,
+   "type": "mc",
+   "outcome": "LOGIC.INVARIANT.01",
+   "outcome_title": "Use odd/even and alternation to predict outcomes and rule out possibilities",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP8"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "parity",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "Gears that touch mesh: when one turns clockwise, a gear touching it turns counterclockwise, and the reverse. Seven gears form a closed ring, each touching the gears on either side (figure). Gear 1 is turned clockwise. What happens?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "Only gears 1, 3, 5 and 7 turn."
+    },
+    {
+     "letter": "B",
+     "text": "Every gear turns, and the directions alternate around the ring."
+    },
+    {
+     "letter": "C",
+     "text": "The gears jam: going around the ring, gear 1 would have to turn both ways."
+    },
+    {
+     "letter": "D",
+     "text": "Every gear turns clockwise."
+    }
+   ],
+   "correct_letter": "C",
+   "correct_answer": "C. The gears jam: going around the ring, gear 1 would have to turn both ways.",
+   "accepted_alternatives": [],
+   "solution": "Going around: 1 clockwise, 2 counter, 3 clockwise, ..., 7 clockwise. Gear 7 touches gear 1, so they must turn opposite ways, but both are clockwise. An odd ring cannot turn.",
+   "wrong_choices": [
+    {
+     "text": "Every gear turns, and the directions alternate around the ring.",
+     "why_wrong": "alternating around 7 gears ends with gear 7 clockwise, touching gear 1, which is also clockwise"
+    },
+    {
+     "text": "Every gear turns clockwise.",
+     "why_wrong": "touching gears must turn opposite ways"
+    },
+    {
+     "text": "Only gears 1, 3, 5 and 7 turn.",
+     "why_wrong": "gears that touch a turning gear are forced to turn"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "assets/S41-M-Q1.svg",
+   "figure_description": "A closed ring of 7 numbered gears, each touching the gears on either side.",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.INVARIANT.01",
+    "correct_letter": "C",
+    "correct_answer": "The gears jam: going around the ring, gear 1 would have to turn both ways."
+   }
+  },
+  {
+   "uid": "LOGIC:S41-M-Q2",
+   "id": "S41-M-Q2",
+   "set": 41,
+   "set_title": "Parity and alternation",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Use odd/even and alternation to predict outcomes and rule out possibilities",
+   "number": 2,
+   "type": "sa",
+   "outcome": "LOGIC.INVARIANT.01",
+   "outcome_title": "Use odd/even and alternation to predict outcomes and rule out possibilities",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP8"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "parity",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "Gears that touch mesh: when one turns clockwise, a gear touching it turns counterclockwise, and the reverse. Twelve gears stand in a row (not a ring), each touching the next. Gear 1 turns clockwise. How many of the 12 gears turn counterclockwise?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "6",
+   "accepted_alternatives": [],
+   "solution": "Odd-numbered gears turn clockwise and even-numbered gears counterclockwise: 2, 4, ..., 12 is 6 gears.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.INVARIANT.01",
+    "answer_lines": [
+     "Gears:"
+    ],
+    "correct_answer": "6"
+   }
+  },
+  {
+   "uid": "LOGIC:S41-M-Q3",
+   "id": "S41-M-Q3",
+   "set": 41,
+   "set_title": "Parity and alternation",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Use odd/even and alternation to predict outcomes and rule out possibilities",
+   "number": 3,
+   "type": "tf",
+   "outcome": "LOGIC.INVARIANT.01",
+   "outcome_title": "Use odd/even and alternation to predict outcomes and rule out possibilities",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP8"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "parity",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "A frog starts on 0 on a number line and makes exactly 9 jumps, each 1 unit left or right. It can end on 4.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "False",
+   "accepted_alternatives": [],
+   "solution": "Each jump changes the position by 1, so it switches between even and odd. After 9 jumps (odd) the frog is on an odd number, and 4 is even.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the statement was evaluated by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.INVARIANT.01",
+    "correct_letter": "B",
+    "correct_answer": "False",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S41-M-Q4",
+   "id": "S41-M-Q4",
+   "set": 41,
+   "set_title": "Parity and alternation",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Use odd/even and alternation to predict outcomes and rule out possibilities",
+   "number": 4,
+   "type": "values",
+   "outcome": "LOGIC.INVARIANT.01",
+   "outcome_title": "Use odd/even and alternation to predict outcomes and rule out possibilities",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP8"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "parity",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "A lamp starts OFF. Each press of its switch changes it (OFF to ON, or ON to OFF). Give a number of presses from 1 to 20 that leaves the lamp ON.",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "any values that satisfy: isInteger(n) and n >= 1 and n <= 20 and isOdd(n) (example: n = 7)",
+   "accepted_alternatives": [],
+   "solution": "After an odd number of presses the lamp is ON; after an even number it is OFF.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [
+    {
+     "n": 8
+    },
+    {
+     "n": 20
+    },
+    {
+     "n": 0
+    }
+   ],
+   "validation": "Automatic: the example passes the rule and 3 listed mistakes fail it. Search of the stated domain: 10 valid answers.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "values",
+    "outcome": "LOGIC.INVARIANT.01",
+    "fields": [
+     {
+      "name": "n",
+      "label": "Presses ="
+     }
+    ],
+    "rule": "isInteger(n) and n >= 1 and n <= 20 and isOdd(n)",
+    "example_answer": {
+     "n": 7
+    },
+    "correct_answer": "any values that satisfy: isInteger(n) and n >= 1 and n <= 20 and isOdd(n) (example: n = 7)"
+   }
+  },
+  {
+   "uid": "LOGIC:S41-M-Q5",
+   "id": "S41-M-Q5",
+   "set": 41,
+   "set_title": "Parity and alternation",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Use odd/even and alternation to predict outcomes and rule out possibilities",
+   "number": 5,
+   "type": "sa",
+   "outcome": "LOGIC.INVARIANT.01",
+   "outcome_title": "Use odd/even and alternation to predict outcomes and rule out possibilities",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP8"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "parity",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "A token moves along a row of squares numbered 1 to 15. Each move jumps exactly 2 squares left or right (staying on the row). It starts on square 4. How many of the 15 squares can it ever reach, counting square 4?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "7",
+   "accepted_alternatives": [],
+   "solution": "Jumps of 2 keep the token on even squares: 2, 4, 6, 8, 10, 12, 14. That is 7 squares, and all of them can be reached.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.INVARIANT.01",
+    "answer_lines": [
+     "Squares:"
+    ],
+    "correct_answer": "7"
+   }
+  },
+  {
+   "uid": "LOGIC:S41-B1-Q1",
+   "id": "S41-B1-Q1",
+   "set": 41,
+   "set_title": "Parity and alternation",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "guided_strategy",
+   "section_skill": "Strategy: keep track of odd and even only",
+   "number": 1,
+   "type": "tf",
+   "outcome": "LOGIC.INVARIANT.01",
+   "outcome_title": "Use odd/even and alternation to predict outcomes and rule out possibilities",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP8"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "parity",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "The sum of 5 odd numbers is odd.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "True",
+   "accepted_alternatives": [],
+   "solution": "Pairs of odd numbers add to even numbers; 5 odd numbers make 2 pairs and 1 left over, so the sum is even + odd = odd.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the statement was evaluated by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.INVARIANT.01",
+    "correct_letter": "A",
+    "correct_answer": "True",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S41-B1-Q2",
+   "id": "S41-B1-Q2",
+   "set": 41,
+   "set_title": "Parity and alternation",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "guided_strategy",
+   "section_skill": "Strategy: keep track of odd and even only",
+   "number": 2,
+   "type": "mc",
+   "outcome": "LOGIC.INVARIANT.01",
+   "outcome_title": "Use odd/even and alternation to predict outcomes and rule out possibilities",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP8"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "parity",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "A coin starts heads up. It is turned over 13 times. Which side is up at the end?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "Either side, depending on how it is turned"
+    },
+    {
+     "letter": "B",
+     "text": "Tails"
+    },
+    {
+     "letter": "C",
+     "text": "Heads"
+    },
+    {
+     "letter": "D",
+     "text": "It cannot be known without trying"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "B. Tails",
+   "accepted_alternatives": [],
+   "solution": "13 is odd, so the side switches an odd number of times: tails.",
+   "wrong_choices": [
+    {
+     "text": "Heads",
+     "why_wrong": "heads is up only after an even number of turns"
+    },
+    {
+     "text": "Either side, depending on how it is turned",
+     "why_wrong": "every turn switches the side, so the result is fixed"
+    },
+    {
+     "text": "It cannot be known without trying",
+     "why_wrong": "the parity of 13 decides it"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.INVARIANT.01",
+    "correct_letter": "B",
+    "correct_answer": "Tails"
+   }
+  },
+  {
+   "uid": "LOGIC:S41-B1-Q3",
+   "id": "S41-B1-Q3",
+   "set": 41,
+   "set_title": "Parity and alternation",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "guided_strategy",
+   "section_skill": "Strategy: keep track of odd and even only",
+   "number": 3,
+   "type": "sa",
+   "outcome": "LOGIC.INVARIANT.01",
+   "outcome_title": "Use odd/even and alternation to predict outcomes and rule out possibilities",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP8"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "parity",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "Gears that touch mesh: when one turns clockwise, a gear touching it turns counterclockwise, and the reverse. Nine gears stand in a row, each touching the next. Gear 1 turns clockwise. What is the number of the last gear in the row that turns clockwise?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "9",
+   "accepted_alternatives": [],
+   "solution": "Odd-numbered gears turn clockwise, and 9 is odd.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.INVARIANT.01",
+    "answer_lines": [
+     "Gear:"
+    ],
+    "correct_answer": "9"
+   }
+  },
+  {
+   "uid": "LOGIC:S41-B1-Q4",
+   "id": "S41-B1-Q4",
+   "set": 41,
+   "set_title": "Parity and alternation",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "guided_strategy",
+   "section_skill": "Strategy: keep track of odd and even only",
+   "number": 4,
+   "type": "tf",
+   "outcome": "LOGIC.INVARIANT.01",
+   "outcome_title": "Use odd/even and alternation to predict outcomes and rule out possibilities",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP8"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "parity",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "An even number plus an odd number is even.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "False",
+   "accepted_alternatives": [],
+   "solution": "2 + 3 = 5. Even + odd is always odd.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.INVARIANT.01",
+    "correct_letter": "B",
+    "correct_answer": "False",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S41-B1-Q5",
+   "id": "S41-B1-Q5",
+   "set": 41,
+   "set_title": "Parity and alternation",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "guided_strategy",
+   "section_skill": "Strategy: keep track of odd and even only",
+   "number": 5,
+   "type": "mc",
+   "outcome": "LOGIC.INVARIANT.01",
+   "outcome_title": "Use odd/even and alternation to predict outcomes and rule out possibilities",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP8"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "parity",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "Which total CANNOT be the sum of three odd numbers?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "15"
+    },
+    {
+     "letter": "B",
+     "text": "9"
+    },
+    {
+     "letter": "C",
+     "text": "10"
+    },
+    {
+     "letter": "D",
+     "text": "3"
+    }
+   ],
+   "correct_letter": "C",
+   "correct_answer": "C. 10",
+   "accepted_alternatives": [],
+   "solution": "odd + odd + odd = even + odd = odd, so the total is always odd.",
+   "wrong_choices": [
+    {
+     "text": "9",
+     "why_wrong": "3 + 3 + 3 = 9"
+    },
+    {
+     "text": "15",
+     "why_wrong": "5 + 5 + 5 = 15"
+    },
+    {
+     "text": "3",
+     "why_wrong": "1 + 1 + 1 = 3"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.INVARIANT.01",
+    "correct_letter": "C",
+    "correct_answer": "10"
+   }
+  },
+  {
+   "uid": "LOGIC:S41-F1-Q1",
+   "id": "S41-F1-Q1",
+   "set": 41,
+   "set_title": "Parity and alternation",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Parity on boards and rings",
+   "number": 1,
+   "type": "sa",
+   "outcome": "LOGIC.INVARIANT.01",
+   "outcome_title": "Use odd/even and alternation to predict outcomes and rule out possibilities",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP8"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "parity",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "A token starts on a corner square of a 5 by 5 board. Each move goes to a square sharing a side (going back is allowed). After exactly 7 moves, how many different squares could the token be on?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "12",
+   "accepted_alternatives": [],
+   "solution": "Color the board like a checkerboard. Each move changes color, so after 7 moves the token is on the other color from the corner: the 12 such squares. All 12 are within 7 moves.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.INVARIANT.01",
+    "answer_lines": [
+     "Squares:"
+    ],
+    "correct_answer": "12"
+   }
+  },
+  {
+   "uid": "LOGIC:S41-F1-Q2",
+   "id": "S41-F1-Q2",
+   "set": 41,
+   "set_title": "Parity and alternation",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Parity on boards and rings",
+   "number": 2,
+   "type": "tf",
+   "outcome": "LOGIC.INVARIANT.01",
+   "outcome_title": "Use odd/even and alternation to predict outcomes and rule out possibilities",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP8"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "parity",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "Gears that touch mesh: when one turns clockwise, a gear touching it turns counterclockwise, and the reverse. Ten gears form a closed ring, each touching the gears on either side. They can all turn.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "True",
+   "accepted_alternatives": [],
+   "solution": "Alternating around 10 gears ends with gear 10 counterclockwise, opposite to gear 1, which it touches. No conflict.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the statement was evaluated by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.INVARIANT.01",
+    "correct_letter": "A",
+    "correct_answer": "True",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S41-F1-Q3",
+   "id": "S41-F1-Q3",
+   "set": 41,
+   "set_title": "Parity and alternation",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Parity on boards and rings",
+   "number": 3,
+   "type": "mc",
+   "outcome": "LOGIC.INVARIANT.01",
+   "outcome_title": "Use odd/even and alternation to predict outcomes and rule out possibilities",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP8"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "parity",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "Seven cups stand upside down. A move turns over exactly 4 cups (any 4). Can all seven cups end right side up?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "No: each move changes the number of upside-down cups by an even amount, so it stays odd."
+    },
+    {
+     "letter": "B",
+     "text": "Yes, after exactly 7 moves."
+    },
+    {
+     "letter": "C",
+     "text": "Yes: turn over 4 cups, then 3 cups."
+    },
+    {
+     "letter": "D",
+     "text": "No: 7 is not a multiple of 4."
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "A. No: each move changes the number of upside-down cups by an even amount, so it stays odd.",
+   "accepted_alternatives": [],
+   "solution": "Turning 4 cups changes the upside-down count by -4, -2, 0, 2 or 4. Starting from 7 (odd), it stays odd and can never be 0.",
+   "wrong_choices": [
+    {
+     "text": "Yes: turn over 4 cups, then 3 cups.",
+     "why_wrong": "a move must turn exactly 4 cups"
+    },
+    {
+     "text": "Yes, after exactly 7 moves.",
+     "why_wrong": "no number of moves works"
+    },
+    {
+     "text": "No: 7 is not a multiple of 4.",
+     "why_wrong": "the true reason is parity; for example 6 cups could all be turned right side up"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.INVARIANT.01",
+    "correct_letter": "A",
+    "correct_answer": "No: each move changes the number of upside-down cups by an even amount, so it stays odd."
+   }
+  },
+  {
+   "uid": "LOGIC:S41-F1-Q4",
+   "id": "S41-F1-Q4",
+   "set": 41,
+   "set_title": "Parity and alternation",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Parity on boards and rings",
+   "number": 4,
+   "type": "values",
+   "outcome": "LOGIC.INVARIANT.01",
+   "outcome_title": "Use odd/even and alternation to predict outcomes and rule out possibilities",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP8"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "parity",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "Put a + or - sign in front of each of the numbers 1, 2, 3, ..., 10 and add. Give a total from 0 to 10 that can be made this way.",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "any values that satisfy: isInteger(t) and t >= 0 and t <= 10 and isOdd(t) (example: t = 1)",
+   "accepted_alternatives": [],
+   "solution": "1 + 2 + ... + 10 = 55 is odd. Changing a + to a - lowers the total by an even amount, so every total is odd. Each odd total from 1 to 9 can be made.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [
+    {
+     "t": 0
+    },
+    {
+     "t": 4
+    },
+    {
+     "t": 10
+    }
+   ],
+   "validation": "Checked: the totals from 0 to 10 that can be made are [1, 3, 5, 7, 9]. Automatic: the example passes the rule and 3 listed mistakes fail it.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "values",
+    "outcome": "LOGIC.INVARIANT.01",
+    "fields": [
+     {
+      "name": "t",
+      "label": "Total ="
+     }
+    ],
+    "rule": "isInteger(t) and t >= 0 and t <= 10 and isOdd(t)",
+    "example_answer": {
+     "t": 1
+    },
+    "correct_answer": "any values that satisfy: isInteger(t) and t >= 0 and t <= 10 and isOdd(t) (example: t = 1)"
+   }
+  },
+  {
+   "uid": "LOGIC:S41-F1-Q5",
+   "id": "S41-F1-Q5",
+   "set": 41,
+   "set_title": "Parity and alternation",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Parity on boards and rings",
+   "number": 5,
+   "type": "sa",
+   "outcome": "LOGIC.INVARIANT.01",
+   "outcome_title": "Use odd/even and alternation to predict outcomes and rule out possibilities",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP8"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "parity",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "Gears that touch mesh: when one turns clockwise, a gear touching it turns counterclockwise, and the reverse. Nine gears are arranged in a 3 by 3 square, and each gear touches the gears directly beside, above and below it. A corner gear turns clockwise. How many gears turn clockwise, including the corner gear?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "5",
+   "accepted_alternatives": [],
+   "solution": "Color like a checkerboard: the corners and center share the corner's color (5 gears) and turn clockwise; the other 4 turn counterclockwise.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.INVARIANT.01",
+    "answer_lines": [
+     "Gears:"
+    ],
+    "correct_answer": "5"
+   }
+  },
+  {
+   "uid": "LOGIC:S41-F2-Q1",
+   "id": "S41-F2-Q1",
+   "set": 41,
+   "set_title": "Parity and alternation",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Prove impossibility with parity",
+   "number": 1,
+   "type": "mc",
+   "outcome": "LOGIC.INVARIANT.01",
+   "outcome_title": "Use odd/even and alternation to predict outcomes and rule out possibilities",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP8"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "parity",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "A token must visit every square of a 5 by 5 board exactly once, each move going to a square that shares a side. It starts on the square next to a corner (row 1, column 2). Is this possible?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "Yes, but only if it ends on a corner."
+    },
+    {
+     "letter": "B",
+     "text": "Yes: go along row 1, then snake back and forth."
+    },
+    {
+     "letter": "C",
+     "text": "No: 25 is not a multiple of 5."
+    },
+    {
+     "letter": "D",
+     "text": "No: the path must start and end on the corner color, and this square has the other color."
+    }
+   ],
+   "correct_letter": "D",
+   "correct_answer": "D. No: the path must start and end on the corner color, and this square has the other color.",
+   "accepted_alternatives": [],
+   "solution": "With checkerboard colors there are 13 corner-colored and 12 other squares. A path alternates colors, so a 25-square path must have 13 of one color at positions 1, 3, ..., 25: it starts on the corner color. A full search confirms no path starts at row 1, column 2.",
+   "wrong_choices": [
+    {
+     "text": "Yes: go along row 1, then snake back and forth.",
+     "why_wrong": "that path misses the corner square or repeats one"
+    },
+    {
+     "text": "Yes, but only if it ends on a corner.",
+     "why_wrong": "no such path exists from this square at all"
+    },
+    {
+     "text": "No: 25 is not a multiple of 5.",
+     "why_wrong": "25 = 5 x 5; the count is not the problem"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.INVARIANT.01",
+    "correct_letter": "D",
+    "correct_answer": "No: the path must start and end on the corner color, and this square has the other color."
+   }
+  },
+  {
+   "uid": "LOGIC:S41-F2-Q2",
+   "id": "S41-F2-Q2",
+   "set": 41,
+   "set_title": "Parity and alternation",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Prove impossibility with parity",
+   "number": 2,
+   "type": "sa",
+   "outcome": "LOGIC.INVARIANT.01",
+   "outcome_title": "Use odd/even and alternation to predict outcomes and rule out possibilities",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP8"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "parity",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "Put a + or - sign in front of each of the numbers 1, 2, 3, ..., 10 and add. How many different totals can be made?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "56",
+   "accepted_alternatives": [],
+   "solution": "Totals are odd, from -55 to 55. Every odd number in that range can be made: 56 totals.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.INVARIANT.01",
+    "answer_lines": [
+     "Totals:"
+    ],
+    "correct_answer": "56"
+   }
+  },
+  {
+   "uid": "LOGIC:S41-F2-Q3",
+   "id": "S41-F2-Q3",
+   "set": 41,
+   "set_title": "Parity and alternation",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Prove impossibility with parity",
+   "number": 3,
+   "type": "tf",
+   "outcome": "LOGIC.INVARIANT.01",
+   "outcome_title": "Use odd/even and alternation to predict outcomes and rule out possibilities",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP8"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "parity",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "On a square grid, a path that moves one square up, down, left or right at each step, and ends where it started, always has an even number of steps.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "True",
+   "accepted_alternatives": [],
+   "solution": "Each step changes the checkerboard color. To return to the starting color, the number of changes must be even.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.INVARIANT.01",
+    "correct_letter": "A",
+    "correct_answer": "True",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S41-F2-Q4",
+   "id": "S41-F2-Q4",
+   "set": 41,
+   "set_title": "Parity and alternation",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Prove impossibility with parity",
+   "number": 4,
+   "type": "values",
+   "outcome": "LOGIC.INVARIANT.01",
+   "outcome_title": "Use odd/even and alternation to predict outcomes and rule out possibilities",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP8"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "parity",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "Gears that touch mesh: when one turns clockwise, a gear touching it turns counterclockwise, and the reverse. Give a number of gears n from 3 to 12 for which a closed ring of n gears, each touching its two neighbors, would jam.",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "any values that satisfy: isInteger(n) and n >= 3 and n <= 12 and isOdd(n) (example: n = 5)",
+   "accepted_alternatives": [],
+   "solution": "A ring jams exactly when the number of gears is odd: 3, 5, 7, 9 or 11.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [
+    {
+     "n": 4
+    },
+    {
+     "n": 12
+    },
+    {
+     "n": 13
+    }
+   ],
+   "validation": "Automatic: the example passes the rule and 3 listed mistakes fail it. Search of the stated domain: 5 valid answers.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "values",
+    "outcome": "LOGIC.INVARIANT.01",
+    "fields": [
+     {
+      "name": "n",
+      "label": "n ="
+     }
+    ],
+    "rule": "isInteger(n) and n >= 3 and n <= 12 and isOdd(n)",
+    "example_answer": {
+     "n": 5
+    },
+    "correct_answer": "any values that satisfy: isInteger(n) and n >= 3 and n <= 12 and isOdd(n) (example: n = 5)"
+   }
+  },
+  {
+   "uid": "LOGIC:S41-F2-Q5",
+   "id": "S41-F2-Q5",
+   "set": 41,
+   "set_title": "Parity and alternation",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Prove impossibility with parity",
+   "number": 5,
+   "type": "sa",
+   "outcome": "LOGIC.INVARIANT.01",
+   "outcome_title": "Use odd/even and alternation to predict outcomes and rule out possibilities",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP8"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "parity",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "A bug walks along the edges of a cube from corner to corner. It starts at one corner and makes exactly 5 moves (going back is allowed). How many of the 8 corners could it end on?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "4",
+   "accepted_alternatives": [],
+   "solution": "Color the corners in two colors so every edge joins different colors (4 and 4). After an odd number of moves the bug is on the other color: 4 corners, and each can be reached.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.INVARIANT.01",
+    "answer_lines": [
+     "Corners:"
+    ],
+    "correct_answer": "4"
+   }
+  },
+  {
+   "uid": "LOGIC:S42-M-Q1",
+   "id": "S42-M-Q1",
+   "set": 42,
+   "set_title": "Disprove a claim with a counterexample",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Find a counterexample that disproves a general mathematical claim",
+   "number": 1,
+   "type": "mc",
+   "outcome": "LOGIC.PROOF.04",
+   "outcome_title": "Find a counterexample that disproves a general mathematical claim",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "A counterexample to a claim about every case is one case where the claim is false. Claim: for every whole number n, n squared + n + 11 is prime. Which n is a counterexample?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "1"
+    },
+    {
+     "letter": "B",
+     "text": "10"
+    },
+    {
+     "letter": "C",
+     "text": "3"
+    },
+    {
+     "letter": "D",
+     "text": "2"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "B. 10",
+   "accepted_alternatives": [],
+   "solution": "100 + 10 + 11 = 121 = 11 x 11, which is not prime.",
+   "wrong_choices": [
+    {
+     "text": "1",
+     "why_wrong": "1 + 1 + 11 = 13, which is prime"
+    },
+    {
+     "text": "2",
+     "why_wrong": "4 + 2 + 11 = 17, which is prime"
+    },
+    {
+     "text": "3",
+     "why_wrong": "9 + 3 + 11 = 23, which is prime"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.PROOF.04",
+    "correct_letter": "B",
+    "correct_answer": "10"
+   }
+  },
+  {
+   "uid": "LOGIC:S42-M-Q2",
+   "id": "S42-M-Q2",
+   "set": 42,
+   "set_title": "Disprove a claim with a counterexample",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Find a counterexample that disproves a general mathematical claim",
+   "number": 2,
+   "type": "values",
+   "outcome": "LOGIC.PROOF.04",
+   "outcome_title": "Find a counterexample that disproves a general mathematical claim",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "A counterexample to a claim about every case is one case where the claim is false. Claim: for all numbers a and b, if a > b, then a squared > b squared. Give a counterexample.",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "any values that satisfy: a > b and a^2 <= b^2 (example: a = 1, b = -2)",
+   "accepted_alternatives": [],
+   "solution": "For example a = 1, b = -2: 1 > -2, but 1 is not greater than 4. A negative b works.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [
+    {
+     "a": 3,
+     "b": 2
+    },
+    {
+     "a": 2,
+     "b": 3
+    },
+    {
+     "a": 5,
+     "b": 0
+    }
+   ],
+   "validation": "Automatic: the example passes the rule and 3 listed mistakes fail it.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "values",
+    "outcome": "LOGIC.PROOF.04",
+    "fields": [
+     {
+      "name": "a",
+      "label": "a ="
+     },
+     {
+      "name": "b",
+      "label": "b ="
+     }
+    ],
+    "rule": "a > b and a^2 <= b^2",
+    "example_answer": {
+     "a": 1,
+     "b": -2
+    },
+    "correct_answer": "any values that satisfy: a > b and a^2 <= b^2 (example: a = 1, b = -2)"
+   }
+  },
+  {
+   "uid": "LOGIC:S42-M-Q3",
+   "id": "S42-M-Q3",
+   "set": 42,
+   "set_title": "Disprove a claim with a counterexample",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Find a counterexample that disproves a general mathematical claim",
+   "number": 3,
+   "type": "tf",
+   "outcome": "LOGIC.PROOF.04",
+   "outcome_title": "Find a counterexample that disproves a general mathematical claim",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "A counterexample to a claim about every case is one case where the claim is false. The claim \"every odd number greater than 1 is prime\" is disproved by the number 9.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "True",
+   "accepted_alternatives": [],
+   "solution": "9 is odd and greater than 1, but 9 = 3 x 3.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the statement was evaluated by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.PROOF.04",
+    "correct_letter": "A",
+    "correct_answer": "True",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S42-M-Q4",
+   "id": "S42-M-Q4",
+   "set": 42,
+   "set_title": "Disprove a claim with a counterexample",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Find a counterexample that disproves a general mathematical claim",
+   "number": 4,
+   "type": "sa",
+   "outcome": "LOGIC.PROOF.04",
+   "outcome_title": "Find a counterexample that disproves a general mathematical claim",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "A counterexample to a claim about every case is one case where the claim is false. Claim: 2 to the power n, plus 1, is prime for every whole number n from 1 to 6. What is the smallest n that disproves it?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "3",
+   "accepted_alternatives": [],
+   "solution": "n = 1: 3, prime. n = 2: 5, prime. n = 3: 9 = 3 x 3, not prime.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.PROOF.04",
+    "answer_lines": [
+     "n ="
+    ],
+    "correct_answer": "3"
+   }
+  },
+  {
+   "uid": "LOGIC:S42-M-Q5",
+   "id": "S42-M-Q5",
+   "set": 42,
+   "set_title": "Disprove a claim with a counterexample",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Find a counterexample that disproves a general mathematical claim",
+   "number": 5,
+   "type": "mc",
+   "outcome": "LOGIC.PROOF.04",
+   "outcome_title": "Find a counterexample that disproves a general mathematical claim",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "A counterexample to a claim about every case is one case where the claim is false. Claim: every multiple of 4 is a multiple of 8. Which number is NOT a counterexample?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "16"
+    },
+    {
+     "letter": "B",
+     "text": "4"
+    },
+    {
+     "letter": "C",
+     "text": "12"
+    },
+    {
+     "letter": "D",
+     "text": "20"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "A. 16",
+   "accepted_alternatives": [],
+   "solution": "16 is a multiple of 8, so the claim holds for 16.",
+   "wrong_choices": [
+    {
+     "text": "4",
+     "why_wrong": "4 is a multiple of 4 but not of 8, so it is a counterexample"
+    },
+    {
+     "text": "12",
+     "why_wrong": "12 is a multiple of 4 but not of 8, so it is a counterexample"
+    },
+    {
+     "text": "20",
+     "why_wrong": "20 is a multiple of 4 but not of 8, so it is a counterexample"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.PROOF.04",
+    "correct_letter": "A",
+    "correct_answer": "16"
+   }
+  },
+  {
+   "uid": "LOGIC:S42-B1-Q1",
+   "id": "S42-B1-Q1",
+   "set": 42,
+   "set_title": "Disprove a claim with a counterexample",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "prerequisite",
+   "section_skill": "What a counterexample is",
+   "number": 1,
+   "type": "mc",
+   "outcome": "LOGIC.PROOF.04",
+   "outcome_title": "Find a counterexample that disproves a general mathematical claim",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "What is a counterexample to the claim \"every number with property P has property Q\"?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "A number with property Q that does not have property P"
+    },
+    {
+     "letter": "B",
+     "text": "A number with neither property"
+    },
+    {
+     "letter": "C",
+     "text": "A number with both properties"
+    },
+    {
+     "letter": "D",
+     "text": "A number with property P that does not have property Q"
+    }
+   ],
+   "correct_letter": "D",
+   "correct_answer": "D. A number with property P that does not have property Q",
+   "accepted_alternatives": [],
+   "solution": "The claim fails exactly when P holds and Q does not.",
+   "wrong_choices": [
+    {
+     "text": "A number with property Q that does not have property P",
+     "why_wrong": "that does not test the claim"
+    },
+    {
+     "text": "A number with neither property",
+     "why_wrong": "the claim says nothing about numbers without P"
+    },
+    {
+     "text": "A number with both properties",
+     "why_wrong": "that agrees with the claim"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.PROOF.04",
+    "correct_letter": "D",
+    "correct_answer": "A number with property P that does not have property Q"
+   }
+  },
+  {
+   "uid": "LOGIC:S42-B1-Q2",
+   "id": "S42-B1-Q2",
+   "set": 42,
+   "set_title": "Disprove a claim with a counterexample",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "prerequisite",
+   "section_skill": "What a counterexample is",
+   "number": 2,
+   "type": "tf",
+   "outcome": "LOGIC.PROOF.04",
+   "outcome_title": "Find a counterexample that disproves a general mathematical claim",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "One counterexample is enough to show that a claim about every case is false.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "True",
+   "accepted_alternatives": [],
+   "solution": "The claim said every case works; one failing case shows it does not.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.PROOF.04",
+    "correct_letter": "A",
+    "correct_answer": "True",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S42-B1-Q3",
+   "id": "S42-B1-Q3",
+   "set": 42,
+   "set_title": "Disprove a claim with a counterexample",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "prerequisite",
+   "section_skill": "What a counterexample is",
+   "number": 3,
+   "type": "tf",
+   "outcome": "LOGIC.PROOF.04",
+   "outcome_title": "Find a counterexample that disproves a general mathematical claim",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "If a claim works for five examples, it is proved true for every case.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "False",
+   "accepted_alternatives": [],
+   "solution": "A later case could still fail.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.PROOF.04",
+    "correct_letter": "B",
+    "correct_answer": "False",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S42-B1-Q4",
+   "id": "S42-B1-Q4",
+   "set": 42,
+   "set_title": "Disprove a claim with a counterexample",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "prerequisite",
+   "section_skill": "What a counterexample is",
+   "number": 4,
+   "type": "mc",
+   "outcome": "LOGIC.PROOF.04",
+   "outcome_title": "Find a counterexample that disproves a general mathematical claim",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "A counterexample to a claim about every case is one case where the claim is false. Which number is a counterexample to \"all prime numbers are odd\"?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "3"
+    },
+    {
+     "letter": "B",
+     "text": "9"
+    },
+    {
+     "letter": "C",
+     "text": "2"
+    },
+    {
+     "letter": "D",
+     "text": "4"
+    }
+   ],
+   "correct_letter": "C",
+   "correct_answer": "C. 2",
+   "accepted_alternatives": [],
+   "solution": "2 is prime and even.",
+   "wrong_choices": [
+    {
+     "text": "9",
+     "why_wrong": "9 is odd and not prime, so it does not test the claim"
+    },
+    {
+     "text": "3",
+     "why_wrong": "3 is prime and odd, so it agrees with the claim"
+    },
+    {
+     "text": "4",
+     "why_wrong": "4 is not prime"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.PROOF.04",
+    "correct_letter": "C",
+    "correct_answer": "2"
+   }
+  },
+  {
+   "uid": "LOGIC:S42-B1-Q5",
+   "id": "S42-B1-Q5",
+   "set": 42,
+   "set_title": "Disprove a claim with a counterexample",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "prerequisite",
+   "section_skill": "What a counterexample is",
+   "number": 5,
+   "type": "values",
+   "outcome": "LOGIC.PROOF.04",
+   "outcome_title": "Find a counterexample that disproves a general mathematical claim",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "A counterexample to a claim about every case is one case where the claim is false. Claim: every whole number divisible by 3 is divisible by 6. Give a counterexample from 1 to 30.",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "any values that satisfy: isInteger(n) and n >= 1 and n <= 30 and mod(n, 3) == 0 and mod(n, 6) != 0 (example: n = 9)",
+   "accepted_alternatives": [],
+   "solution": "Any odd multiple of 3 works: 3, 9, 15, 21, 27.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [
+    {
+     "n": 6
+    },
+    {
+     "n": 10
+    },
+    {
+     "n": 12
+    }
+   ],
+   "validation": "Automatic: the example passes the rule and 3 listed mistakes fail it. Search of the stated domain: 5 valid answers.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "values",
+    "outcome": "LOGIC.PROOF.04",
+    "fields": [
+     {
+      "name": "n",
+      "label": "n ="
+     }
+    ],
+    "rule": "isInteger(n) and n >= 1 and n <= 30 and mod(n, 3) == 0 and mod(n, 6) != 0",
+    "example_answer": {
+     "n": 9
+    },
+    "correct_answer": "any values that satisfy: isInteger(n) and n >= 1 and n <= 30 and mod(n, 3) == 0 and mod(n, 6) != 0 (example: n = 9)"
+   }
+  },
+  {
+   "uid": "LOGIC:S42-F1-Q1",
+   "id": "S42-F1-Q1",
+   "set": 42,
+   "set_title": "Disprove a claim with a counterexample",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Counterexamples to algebra rules",
+   "number": 1,
+   "type": "values",
+   "outcome": "LOGIC.PROOF.04",
+   "outcome_title": "Find a counterexample that disproves a general mathematical claim",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "A counterexample to a claim about every case is one case where the claim is false. Claim: (a + b) squared = a squared + b squared for all numbers a and b. Give whole numbers a and b that disprove it.",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "any values that satisfy: (a + b)^2 != a^2 + b^2 (example: a = 1, b = 1)",
+   "accepted_alternatives": [],
+   "solution": "For a = 1, b = 1: 4 is not 2. The claim fails whenever a and b are both nonzero.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [
+    {
+     "a": 0,
+     "b": 5
+    },
+    {
+     "a": 3,
+     "b": 0
+    }
+   ],
+   "validation": "Automatic: the example passes the rule and 2 listed mistakes fail it.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "values",
+    "outcome": "LOGIC.PROOF.04",
+    "fields": [
+     {
+      "name": "a",
+      "label": "a ="
+     },
+     {
+      "name": "b",
+      "label": "b ="
+     }
+    ],
+    "rule": "(a + b)^2 != a^2 + b^2",
+    "example_answer": {
+     "a": 1,
+     "b": 1
+    },
+    "correct_answer": "any values that satisfy: (a + b)^2 != a^2 + b^2 (example: a = 1, b = 1)"
+   }
+  },
+  {
+   "uid": "LOGIC:S42-F1-Q2",
+   "id": "S42-F1-Q2",
+   "set": 42,
+   "set_title": "Disprove a claim with a counterexample",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Counterexamples to algebra rules",
+   "number": 2,
+   "type": "mc",
+   "outcome": "LOGIC.PROOF.04",
+   "outcome_title": "Find a counterexample that disproves a general mathematical claim",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "A counterexample to a claim about every case is one case where the claim is false. Claim: the square root of (a + b) equals the square root of a plus the square root of b, for all numbers a and b that are 0 or more. Which pair is a counterexample?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "a = 0, b = 4"
+    },
+    {
+     "letter": "B",
+     "text": "a = 9, b = 16"
+    },
+    {
+     "letter": "C",
+     "text": "a = 0, b = 0"
+    },
+    {
+     "letter": "D",
+     "text": "a = 1, b = 0"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "B. a = 9, b = 16",
+   "accepted_alternatives": [],
+   "solution": "Square root of 25 is 5, but 3 + 4 = 7.",
+   "wrong_choices": [
+    {
+     "text": "a = 0, b = 4",
+     "why_wrong": "square root of 4 = 0 + 2, so the claim holds here"
+    },
+    {
+     "text": "a = 0, b = 0",
+     "why_wrong": "0 = 0 + 0, so the claim holds here"
+    },
+    {
+     "text": "a = 1, b = 0",
+     "why_wrong": "1 = 1 + 0, so the claim holds here"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.PROOF.04",
+    "correct_letter": "B",
+    "correct_answer": "a = 9, b = 16"
+   }
+  },
+  {
+   "uid": "LOGIC:S42-F1-Q3",
+   "id": "S42-F1-Q3",
+   "set": 42,
+   "set_title": "Disprove a claim with a counterexample",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Counterexamples to algebra rules",
+   "number": 3,
+   "type": "sa",
+   "outcome": "LOGIC.PROOF.04",
+   "outcome_title": "Find a counterexample that disproves a general mathematical claim",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "A counterexample to a claim about every case is one case where the claim is false. Claim: n factorial plus 1 is prime for every positive whole number n. (n factorial is 1 x 2 x ... x n.) What is the smallest n that disproves it?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "4",
+   "accepted_alternatives": [],
+   "solution": "1! + 1 = 2, 2! + 1 = 3, 3! + 1 = 7 are prime; 4! + 1 = 25 = 5 x 5 is not.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.PROOF.04",
+    "answer_lines": [
+     "n ="
+    ],
+    "correct_answer": "4"
+   }
+  },
+  {
+   "uid": "LOGIC:S42-F1-Q4",
+   "id": "S42-F1-Q4",
+   "set": 42,
+   "set_title": "Disprove a claim with a counterexample",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Counterexamples to algebra rules",
+   "number": 4,
+   "type": "tf",
+   "outcome": "LOGIC.PROOF.04",
+   "outcome_title": "Find a counterexample that disproves a general mathematical claim",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "A counterexample to a claim about every case is one case where the claim is false. The claim \"if n squared is a multiple of 4, then n is a multiple of 4\" is disproved by n = 2.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "True",
+   "accepted_alternatives": [],
+   "solution": "2 squared = 4 is a multiple of 4, but 2 is not.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the statement was evaluated by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.PROOF.04",
+    "correct_letter": "A",
+    "correct_answer": "True",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S42-F1-Q5",
+   "id": "S42-F1-Q5",
+   "set": 42,
+   "set_title": "Disprove a claim with a counterexample",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Counterexamples to algebra rules",
+   "number": 5,
+   "type": "mc",
+   "outcome": "LOGIC.PROOF.04",
+   "outcome_title": "Find a counterexample that disproves a general mathematical claim",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "A counterexample to a claim about every case is one case where the claim is false. Claim: every rectangle with perimeter 20 has area 25. Which rectangle is a counterexample?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "2 by 10"
+    },
+    {
+     "letter": "B",
+     "text": "3 by 8"
+    },
+    {
+     "letter": "C",
+     "text": "5 by 5"
+    },
+    {
+     "letter": "D",
+     "text": "4 by 6"
+    }
+   ],
+   "correct_letter": "D",
+   "correct_answer": "D. 4 by 6",
+   "accepted_alternatives": [],
+   "solution": "A 4 by 6 rectangle has perimeter 20 but area 24.",
+   "wrong_choices": [
+    {
+     "text": "5 by 5",
+     "why_wrong": "perimeter 20 and area 25, so it agrees with the claim"
+    },
+    {
+     "text": "2 by 10",
+     "why_wrong": "its perimeter is 24, so the claim says nothing about it"
+    },
+    {
+     "text": "3 by 8",
+     "why_wrong": "its perimeter is 22, so the claim says nothing about it"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.PROOF.04",
+    "correct_letter": "D",
+    "correct_answer": "4 by 6"
+   }
+  },
+  {
+   "uid": "LOGIC:S42-F2-Q1",
+   "id": "S42-F2-Q1",
+   "set": 42,
+   "set_title": "Disprove a claim with a counterexample",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Counterexamples that take a search",
+   "number": 1,
+   "type": "values",
+   "outcome": "LOGIC.PROOF.04",
+   "outcome_title": "Find a counterexample that disproves a general mathematical claim",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "A counterexample to a claim about every case is one case where the claim is false. Claim: for whole numbers a, b and c, if a divides b x c, then a divides b or a divides c. Give a counterexample with a, b and c each from 2 to 12.",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "any values that satisfy: isInteger(a) and isInteger(b) and isInteger(c) and a >= 2 and a <= 12 and b >= 2 and b <= 12 and c >= 2 and c <= 12 and mod(b * c, a) == 0 and mod(b, a) != 0 and mod(c, a) != 0 (example: a = 4, b = 2, c = 6)",
+   "accepted_alternatives": [],
+   "solution": "For example a = 4, b = 2, c = 6: 4 divides 12, but 4 divides neither 2 nor 6. (The claim is true when a is prime.)",
+   "wrong_choices": [],
+   "wrong_values_rejected": [
+    {
+     "a": 3,
+     "b": 3,
+     "c": 5
+    },
+    {
+     "a": 5,
+     "b": 2,
+     "c": 3
+    }
+   ],
+   "validation": "Automatic: the example passes the rule and 2 listed mistakes fail it. Search of the stated domain: 77 valid answers.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "values",
+    "outcome": "LOGIC.PROOF.04",
+    "fields": [
+     {
+      "name": "a",
+      "label": "a ="
+     },
+     {
+      "name": "b",
+      "label": "b ="
+     },
+     {
+      "name": "c",
+      "label": "c ="
+     }
+    ],
+    "rule": "isInteger(a) and isInteger(b) and isInteger(c) and a >= 2 and a <= 12 and b >= 2 and b <= 12 and c >= 2 and c <= 12 and mod(b * c, a) == 0 and mod(b, a) != 0 and mod(c, a) != 0",
+    "example_answer": {
+     "a": 4,
+     "b": 2,
+     "c": 6
+    },
+    "correct_answer": "any values that satisfy: isInteger(a) and isInteger(b) and isInteger(c) and a >= 2 and a <= 12 and b >= 2 and b <= 12 and c >= 2 and c <= 12 and mod(b * c, a) == 0 and mod(b, a) != 0 and mod(c, a) != 0 (example: a = 4, b = 2, c = 6)"
+   }
+  },
+  {
+   "uid": "LOGIC:S42-F2-Q2",
+   "id": "S42-F2-Q2",
+   "set": 42,
+   "set_title": "Disprove a claim with a counterexample",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Counterexamples that take a search",
+   "number": 2,
+   "type": "tf",
+   "outcome": "LOGIC.PROOF.04",
+   "outcome_title": "Find a counterexample that disproves a general mathematical claim",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "A counterexample to a claim about every case is one case where the claim is false. Claim: 2 to the power n, minus 1, is prime whenever n is prime. The smallest counterexample is n = 11.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "True",
+   "accepted_alternatives": [],
+   "solution": "n = 2, 3, 5, 7 give 3, 7, 31, 127, all prime. n = 11 gives 2047 = 23 x 89.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the statement was evaluated by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.PROOF.04",
+    "correct_letter": "A",
+    "correct_answer": "True",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S42-F2-Q3",
+   "id": "S42-F2-Q3",
+   "set": 42,
+   "set_title": "Disprove a claim with a counterexample",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Counterexamples that take a search",
+   "number": 3,
+   "type": "mc",
+   "outcome": "LOGIC.PROOF.04",
+   "outcome_title": "Find a counterexample that disproves a general mathematical claim",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "Which claim is FALSE?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "The sum of two even numbers is even."
+    },
+    {
+     "letter": "B",
+     "text": "If n squared is odd, then n is odd."
+    },
+    {
+     "letter": "C",
+     "text": "If n is prime, then n + 2 is prime."
+    },
+    {
+     "letter": "D",
+     "text": "If n is odd, then n squared is odd."
+    }
+   ],
+   "correct_letter": "C",
+   "correct_answer": "C. If n is prime, then n + 2 is prime.",
+   "accepted_alternatives": [],
+   "solution": "Counterexample: 7 is prime, but 9 is not.",
+   "wrong_choices": [
+    {
+     "text": "If n is odd, then n squared is odd.",
+     "why_wrong": "true: (2k + 1) squared = 2(2k squared + 2k) + 1"
+    },
+    {
+     "text": "The sum of two even numbers is even.",
+     "why_wrong": "true: 2a + 2b = 2(a + b)"
+    },
+    {
+     "text": "If n squared is odd, then n is odd.",
+     "why_wrong": "true: if n were even, n squared would be even"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.PROOF.04",
+    "correct_letter": "C",
+    "correct_answer": "If n is prime, then n + 2 is prime."
+   }
+  },
+  {
+   "uid": "LOGIC:S42-F2-Q4",
+   "id": "S42-F2-Q4",
+   "set": 42,
+   "set_title": "Disprove a claim with a counterexample",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Counterexamples that take a search",
+   "number": 4,
+   "type": "sa",
+   "outcome": "LOGIC.PROOF.04",
+   "outcome_title": "Find a counterexample that disproves a general mathematical claim",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "A counterexample to a claim about every case is one case where the claim is false. Claim: every whole number from 1 to 30 is a sum of two square numbers (0, 1, 4, 9, 16, 25, ...; a square may be used twice). What is the smallest counterexample?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "3",
+   "accepted_alternatives": [],
+   "solution": "1 = 1 + 0, 2 = 1 + 1, but 3 cannot be made: the squares up to 3 are 0 and 1.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.PROOF.04",
+    "answer_lines": [
+     "Number:"
+    ],
+    "correct_answer": "3"
+   }
+  },
+  {
+   "uid": "LOGIC:S42-F2-Q5",
+   "id": "S42-F2-Q5",
+   "set": 42,
+   "set_title": "Disprove a claim with a counterexample",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Counterexamples that take a search",
+   "number": 5,
+   "type": "mc",
+   "outcome": "LOGIC.PROOF.04",
+   "outcome_title": "Find a counterexample that disproves a general mathematical claim",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "A counterexample to a claim about every case is one case where the claim is false. Claim: for every positive whole number n, 2 to the power n is greater than n. Why is n = -1 NOT a valid counterexample?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "The claim is only about positive whole numbers, and -1 is not one."
+    },
+    {
+     "letter": "B",
+     "text": "Because a counterexample must be a large number."
+    },
+    {
+     "letter": "C",
+     "text": "Because counterexamples cannot be negative."
+    },
+    {
+     "letter": "D",
+     "text": "Because 2 to the power -1 is greater than -1."
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "A. The claim is only about positive whole numbers, and -1 is not one.",
+   "accepted_alternatives": [],
+   "solution": "A counterexample must be a case the claim is about.",
+   "wrong_choices": [
+    {
+     "text": "Because 2 to the power -1 is greater than -1.",
+     "why_wrong": "that is true, but it is not why -1 cannot count"
+    },
+    {
+     "text": "Because a counterexample must be a large number.",
+     "why_wrong": "any case covered by the claim may serve"
+    },
+    {
+     "text": "Because counterexamples cannot be negative.",
+     "why_wrong": "they can be, when the claim covers negative numbers"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.PROOF.04",
+    "correct_letter": "A",
+    "correct_answer": "The claim is only about positive whole numbers, and -1 is not one."
+   }
+  },
+  {
+   "uid": "LOGIC:S43-M-Q1",
+   "id": "S43-M-Q1",
+   "set": 43,
+   "set_title": "Proofs about lines and angles",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Order and justify the steps of proofs about angles formed by intersecting and parallel lines",
+   "number": 1,
+   "type": "order",
+   "outcome": "LOGIC.PROOF.05",
+   "outcome_title": "Order and justify the steps of proofs about angles formed by intersecting and parallel lines",
+   "alignment_type": "direct",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "HSG-CO.C.9",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "Lines meet at a point, forming angle 1 and angle 2 as vertical angles, and angle 3 next to both (angle 3 forms a linear pair with angle 1 and with angle 2). Put the steps of the proof that angle 1 = angle 2 in a correct order. (Two orders are correct.)",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "angle 1 + angle 3 = 180 degrees (linear pair) → angle 2 + angle 3 = 180 degrees (linear pair) → angle 1 + angle 3 = angle 2 + angle 3 (both sums equal 180 degrees) → angle 1 = angle 2 (subtract angle 3 from both sides)",
+   "accepted_alternatives": [
+    "angle 2 + angle 3 = 180 degrees (linear pair) → angle 1 + angle 3 = 180 degrees (linear pair) → angle 1 + angle 3 = angle 2 + angle 3 (both sums equal 180 degrees) → angle 1 = angle 2 (subtract angle 3 from both sides)"
+   ],
+   "solution": "Both linear pairs come first (in either order), then substitution, then subtraction.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "Automatic: all 24 orderings of 4 items enumerated; 2 valid.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "order",
+    "outcome": "LOGIC.PROOF.05",
+    "items": [
+     {
+      "key": "A",
+      "text": "angle 1 + angle 3 = 180 degrees (linear pair)"
+     },
+     {
+      "key": "B",
+      "text": "angle 2 + angle 3 = 180 degrees (linear pair)"
+     },
+     {
+      "key": "C",
+      "text": "angle 1 + angle 3 = angle 2 + angle 3 (both sums equal 180 degrees)"
+     },
+     {
+      "key": "D",
+      "text": "angle 1 = angle 2 (subtract angle 3 from both sides)"
+     }
+    ],
+    "correct_order": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "accept_orders": [
+     [
+      "B",
+      "A",
+      "C",
+      "D"
+     ]
+    ],
+    "correct_answer": "angle 1 + angle 3 = 180 degrees (linear pair) → angle 2 + angle 3 = 180 degrees (linear pair) → angle 1 + angle 3 = angle 2 + angle 3 (both sums equal 180 degrees) → angle 1 = angle 2 (subtract angle 3 from both sides)"
+   }
+  },
+  {
+   "uid": "LOGIC:S43-M-Q2",
+   "id": "S43-M-Q2",
+   "set": 43,
+   "set_title": "Proofs about lines and angles",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Order and justify the steps of proofs about angles formed by intersecting and parallel lines",
+   "number": 2,
+   "type": "mc",
+   "outcome": "LOGIC.PROOF.05",
+   "outcome_title": "Order and justify the steps of proofs about angles formed by intersecting and parallel lines",
+   "alignment_type": "direct",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "HSG-CO.C.9",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Which pair of angles are alternate interior angles?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "Angles 2 and 3"
+    },
+    {
+     "letter": "B",
+     "text": "Angles 4 and 5"
+    },
+    {
+     "letter": "C",
+     "text": "Angles 4 and 8"
+    },
+    {
+     "letter": "D",
+     "text": "Angles 1 and 5"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "B. Angles 4 and 5",
+   "accepted_alternatives": [],
+   "solution": "Angles 4 and 5 lie between p and q, on opposite sides of t.",
+   "wrong_choices": [
+    {
+     "text": "Angles 1 and 5",
+     "why_wrong": "they are corresponding angles: same position at each line"
+    },
+    {
+     "text": "Angles 2 and 3",
+     "why_wrong": "they are vertical angles at line p"
+    },
+    {
+     "text": "Angles 4 and 8",
+     "why_wrong": "they are corresponding angles: same position at each line"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason",
+   "figure": "assets/S43-M-Q2.svg",
+   "figure_description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions. A note says p is parallel to q.",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.PROOF.05",
+    "correct_letter": "B",
+    "correct_answer": "Angles 4 and 5"
+   }
+  },
+  {
+   "uid": "LOGIC:S43-M-Q3",
+   "id": "S43-M-Q3",
+   "set": 43,
+   "set_title": "Proofs about lines and angles",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Order and justify the steps of proofs about angles formed by intersecting and parallel lines",
+   "number": 3,
+   "type": "tf",
+   "outcome": "LOGIC.PROOF.05",
+   "outcome_title": "Order and justify the steps of proofs about angles formed by intersecting and parallel lines",
+   "alignment_type": "direct",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "HSG-CO.C.9",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Lines p and q are parallel. If angle 2 = 70 degrees, then angle 7 = 70 degrees.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "True",
+   "accepted_alternatives": [],
+   "solution": "Angle 2 = angle 3 (vertical), angle 3 = angle 6 (alternate interior, p parallel to q), and angle 6 = angle 7 (vertical). So angle 7 = 70 degrees.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the statement was evaluated by code.",
+   "figure": "assets/S43-M-Q3.svg",
+   "figure_description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions. A note says p is parallel to q.",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.PROOF.05",
+    "correct_letter": "A",
+    "correct_answer": "True",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S43-M-Q4",
+   "id": "S43-M-Q4",
+   "set": 43,
+   "set_title": "Proofs about lines and angles",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Order and justify the steps of proofs about angles formed by intersecting and parallel lines",
+   "number": 4,
+   "type": "values",
+   "outcome": "LOGIC.PROOF.05",
+   "outcome_title": "Order and justify the steps of proofs about angles formed by intersecting and parallel lines",
+   "alignment_type": "direct",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "HSG-CO.C.9",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Lines p and q are parallel, and angle 1 = 115 degrees. Give the measure of angle 6 in degrees.",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "any values that satisfy: x == 65 (example: x = 65)",
+   "accepted_alternatives": [],
+   "solution": "Angle 1 = angle 5 (corresponding), and angle 5 + angle 6 = 180 degrees (linear pair), so angle 6 = 65 degrees.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [
+    {
+     "x": 115
+    },
+    {
+     "x": 75
+    },
+    {
+     "x": 245
+    }
+   ],
+   "validation": "Automatic: the example passes the rule and 3 listed mistakes fail it.",
+   "figure": "assets/S43-M-Q4.svg",
+   "figure_description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions. A note says p is parallel to q.",
+   "package_fields": {
+    "type": "values",
+    "outcome": "LOGIC.PROOF.05",
+    "fields": [
+     {
+      "name": "x",
+      "label": "angle 6 ="
+     }
+    ],
+    "rule": "x == 65",
+    "example_answer": {
+     "x": 65
+    },
+    "correct_answer": "any values that satisfy: x == 65 (example: x = 65)"
+   }
+  },
+  {
+   "uid": "LOGIC:S43-M-Q5",
+   "id": "S43-M-Q5",
+   "set": 43,
+   "set_title": "Proofs about lines and angles",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Order and justify the steps of proofs about angles formed by intersecting and parallel lines",
+   "number": 5,
+   "type": "order",
+   "outcome": "LOGIC.PROOF.05",
+   "outcome_title": "Order and justify the steps of proofs about angles formed by intersecting and parallel lines",
+   "alignment_type": "direct",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "HSG-CO.C.9",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Put the steps of the proof that angle 3 = angle 6 when p is parallel to q in a correct order. (Two orders are correct.)",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "p is parallel to q, cut by transversal t (given) → angle 2 = angle 6 (corresponding angles, p parallel to q) → angle 2 = angle 3 (vertical angles) → angle 3 = angle 6 (both equal angle 2)",
+   "accepted_alternatives": [
+    "p is parallel to q, cut by transversal t (given) → angle 2 = angle 3 (vertical angles) → angle 2 = angle 6 (corresponding angles, p parallel to q) → angle 3 = angle 6 (both equal angle 2)"
+   ],
+   "solution": "Start with the given. The corresponding-angles step and the vertical-angles step can come in either order; the conclusion comes last.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "Automatic: all 24 orderings of 4 items enumerated; 2 valid.",
+   "figure": "assets/S43-M-Q5.svg",
+   "figure_description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions. A note says p is parallel to q.",
+   "package_fields": {
+    "type": "order",
+    "outcome": "LOGIC.PROOF.05",
+    "items": [
+     {
+      "key": "A",
+      "text": "p is parallel to q, cut by transversal t (given)"
+     },
+     {
+      "key": "B",
+      "text": "angle 2 = angle 6 (corresponding angles, p parallel to q)"
+     },
+     {
+      "key": "C",
+      "text": "angle 2 = angle 3 (vertical angles)"
+     },
+     {
+      "key": "D",
+      "text": "angle 3 = angle 6 (both equal angle 2)"
+     }
+    ],
+    "correct_order": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "accept_orders": [
+     [
+      "A",
+      "C",
+      "B",
+      "D"
+     ]
+    ],
+    "correct_answer": "p is parallel to q, cut by transversal t (given) → angle 2 = angle 6 (corresponding angles, p parallel to q) → angle 2 = angle 3 (vertical angles) → angle 3 = angle 6 (both equal angle 2)"
+   }
+  },
+  {
+   "uid": "LOGIC:S43-B1-Q1",
+   "id": "S43-B1-Q1",
+   "set": 43,
+   "set_title": "Proofs about lines and angles",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "prerequisite",
+   "section_skill": "Name the angle pairs",
+   "number": 1,
+   "type": "sa",
+   "outcome": "LOGIC.PROOF.05",
+   "outcome_title": "Order and justify the steps of proofs about angles formed by intersecting and parallel lines",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "Two angles form a linear pair (together they make a straight line). One measures 48 degrees. What does the other measure, in degrees?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "132",
+   "accepted_alternatives": [],
+   "solution": "180 - 48 = 132.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.PROOF.05",
+    "answer_lines": [
+     "Degrees:"
+    ],
+    "correct_answer": "132"
+   }
+  },
+  {
+   "uid": "LOGIC:S43-B1-Q2",
+   "id": "S43-B1-Q2",
+   "set": 43,
+   "set_title": "Proofs about lines and angles",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "prerequisite",
+   "section_skill": "Name the angle pairs",
+   "number": 2,
+   "type": "tf",
+   "outcome": "LOGIC.PROOF.05",
+   "outcome_title": "Order and justify the steps of proofs about angles formed by intersecting and parallel lines",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Angles 1 and 4 are vertical angles.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "True",
+   "accepted_alternatives": [],
+   "solution": "They are opposite each other at the same crossing.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author",
+   "figure": "assets/S43-B1-Q2.svg",
+   "figure_description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions.",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.PROOF.05",
+    "correct_letter": "A",
+    "correct_answer": "True",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S43-B1-Q3",
+   "id": "S43-B1-Q3",
+   "set": 43,
+   "set_title": "Proofs about lines and angles",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "prerequisite",
+   "section_skill": "Name the angle pairs",
+   "number": 3,
+   "type": "mc",
+   "outcome": "LOGIC.PROOF.05",
+   "outcome_title": "Order and justify the steps of proofs about angles formed by intersecting and parallel lines",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). What kind of angle pair are angles 3 and 7?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "Vertical angles"
+    },
+    {
+     "letter": "B",
+     "text": "A linear pair"
+    },
+    {
+     "letter": "C",
+     "text": "Corresponding angles"
+    },
+    {
+     "letter": "D",
+     "text": "Alternate interior angles"
+    }
+   ],
+   "correct_letter": "C",
+   "correct_answer": "C. Corresponding angles",
+   "accepted_alternatives": [],
+   "solution": "Both are in the lower-left position at their crossings.",
+   "wrong_choices": [
+    {
+     "text": "Vertical angles",
+     "why_wrong": "vertical angles are at the same crossing"
+    },
+    {
+     "text": "Alternate interior angles",
+     "why_wrong": "angle 7 is below q, outside the two lines"
+    },
+    {
+     "text": "A linear pair",
+     "why_wrong": "a linear pair is at one crossing and shares a side"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason",
+   "figure": "assets/S43-B1-Q3.svg",
+   "figure_description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions.",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.PROOF.05",
+    "correct_letter": "C",
+    "correct_answer": "Corresponding angles"
+   }
+  },
+  {
+   "uid": "LOGIC:S43-B1-Q4",
+   "id": "S43-B1-Q4",
+   "set": 43,
+   "set_title": "Proofs about lines and angles",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "prerequisite",
+   "section_skill": "Name the angle pairs",
+   "number": 4,
+   "type": "tf",
+   "outcome": "LOGIC.PROOF.05",
+   "outcome_title": "Order and justify the steps of proofs about angles formed by intersecting and parallel lines",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Angles 3 and 5 are alternate interior angles.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "False",
+   "accepted_alternatives": [],
+   "solution": "Both are on the left of t; they are same-side interior angles. The alternate interior pairs are 3 and 6, and 4 and 5.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author",
+   "figure": "assets/S43-B1-Q4.svg",
+   "figure_description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions.",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.PROOF.05",
+    "correct_letter": "B",
+    "correct_answer": "False",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S43-B1-Q5",
+   "id": "S43-B1-Q5",
+   "set": 43,
+   "set_title": "Proofs about lines and angles",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "prerequisite",
+   "section_skill": "Name the angle pairs",
+   "number": 5,
+   "type": "values",
+   "outcome": "LOGIC.PROOF.05",
+   "outcome_title": "Order and justify the steps of proofs about angles formed by intersecting and parallel lines",
+   "alignment_type": "local",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Angle 3 = 2x + 10 degrees and angle 2 = 3x - 15 degrees. They are vertical angles. Find x.",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "any values that satisfy: x == 25 (example: x = 25)",
+   "accepted_alternatives": [],
+   "solution": "Vertical angles are equal: 2x + 10 = 3x - 15, so x = 25.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [
+    {
+     "x": 5
+    },
+    {
+     "x": 37
+    }
+   ],
+   "validation": "Automatic: the example passes the rule and 2 listed mistakes fail it.",
+   "figure": "assets/S43-B1-Q5.svg",
+   "figure_description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions.",
+   "package_fields": {
+    "type": "values",
+    "outcome": "LOGIC.PROOF.05",
+    "fields": [
+     {
+      "name": "x",
+      "label": "x ="
+     }
+    ],
+    "rule": "x == 25",
+    "example_answer": {
+     "x": 25
+    },
+    "correct_answer": "any values that satisfy: x == 25 (example: x = 25)"
+   }
+  },
+  {
+   "uid": "LOGIC:S43-F1-Q1",
+   "id": "S43-F1-Q1",
+   "set": 43,
+   "set_title": "Proofs about lines and angles",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Perpendicular bisectors and converses",
+   "number": 1,
+   "type": "order",
+   "outcome": "LOGIC.PROOF.05",
+   "outcome_title": "Order and justify the steps of proofs about angles formed by intersecting and parallel lines",
+   "alignment_type": "direct",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "HSG-CO.C.9",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "M is the midpoint of segment AB, and line PM is perpendicular to AB, so P is on the perpendicular bisector of AB. Put the steps of the proof that PA = PB in a correct order. (Two orders are correct.)",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "AM = BM, and angles PMA and PMB are right angles (midpoint; perpendicular) → PM = PM (a segment equals itself) → Triangle PMA is congruent to triangle PMB (SAS) → PA = PB (corresponding parts of congruent triangles)",
+   "accepted_alternatives": [
+    "PM = PM (a segment equals itself) → AM = BM, and angles PMA and PMB are right angles (midpoint; perpendicular) → Triangle PMA is congruent to triangle PMB (SAS) → PA = PB (corresponding parts of congruent triangles)"
+   ],
+   "solution": "The two side facts and the angle fact come first, in either order; then SAS, then the conclusion.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "Automatic: all 24 orderings of 4 items enumerated; 2 valid.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "order",
+    "outcome": "LOGIC.PROOF.05",
+    "items": [
+     {
+      "key": "A",
+      "text": "AM = BM, and angles PMA and PMB are right angles (midpoint; perpendicular)"
+     },
+     {
+      "key": "B",
+      "text": "PM = PM (a segment equals itself)"
+     },
+     {
+      "key": "C",
+      "text": "Triangle PMA is congruent to triangle PMB (SAS)"
+     },
+     {
+      "key": "D",
+      "text": "PA = PB (corresponding parts of congruent triangles)"
+     }
+    ],
+    "correct_order": [
+     "A",
+     "B",
+     "C",
+     "D"
+    ],
+    "accept_orders": [
+     [
+      "B",
+      "A",
+      "C",
+      "D"
+     ]
+    ],
+    "correct_answer": "AM = BM, and angles PMA and PMB are right angles (midpoint; perpendicular) → PM = PM (a segment equals itself) → Triangle PMA is congruent to triangle PMB (SAS) → PA = PB (corresponding parts of congruent triangles)"
+   }
+  },
+  {
+   "uid": "LOGIC:S43-F1-Q2",
+   "id": "S43-F1-Q2",
+   "set": 43,
+   "set_title": "Proofs about lines and angles",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Perpendicular bisectors and converses",
+   "number": 2,
+   "type": "mc",
+   "outcome": "LOGIC.PROOF.05",
+   "outcome_title": "Order and justify the steps of proofs about angles formed by intersecting and parallel lines",
+   "alignment_type": "direct",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "HSG-CO.C.9",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "Theorem: a point is on the perpendicular bisector of AB exactly when it is the same distance from A and B. Point P has PA = PB = 7. What follows?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "Nothing follows without more information."
+    },
+    {
+     "letter": "B",
+     "text": "P is the midpoint of AB."
+    },
+    {
+     "letter": "C",
+     "text": "AB = 7."
+    },
+    {
+     "letter": "D",
+     "text": "P is on the perpendicular bisector of AB."
+    }
+   ],
+   "correct_letter": "D",
+   "correct_answer": "D. P is on the perpendicular bisector of AB.",
+   "accepted_alternatives": [],
+   "solution": "The \"exactly when\" part means equal distances put P on the perpendicular bisector.",
+   "wrong_choices": [
+    {
+     "text": "P is the midpoint of AB.",
+     "why_wrong": "P need not be on segment AB at all"
+    },
+    {
+     "text": "AB = 7.",
+     "why_wrong": "the distances to A and B do not fix the length of AB"
+    },
+    {
+     "text": "Nothing follows without more information.",
+     "why_wrong": "the theorem works in both directions"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.PROOF.05",
+    "correct_letter": "D",
+    "correct_answer": "P is on the perpendicular bisector of AB."
+   }
+  },
+  {
+   "uid": "LOGIC:S43-F1-Q3",
+   "id": "S43-F1-Q3",
+   "set": 43,
+   "set_title": "Proofs about lines and angles",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Perpendicular bisectors and converses",
+   "number": 3,
+   "type": "tf",
+   "outcome": "LOGIC.PROOF.05",
+   "outcome_title": "Order and justify the steps of proofs about angles formed by intersecting and parallel lines",
+   "alignment_type": "direct",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "HSG-CO.C.9",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Lines p and q are parallel. Then angle 4 + angle 6 = 180 degrees.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "True",
+   "accepted_alternatives": [],
+   "solution": "Angle 4 = angle 5 (alternate interior), and angle 5 + angle 6 = 180 degrees (linear pair).",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the statement was evaluated by code.",
+   "figure": "assets/S43-F1-Q3.svg",
+   "figure_description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions. A note says p is parallel to q.",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.PROOF.05",
+    "correct_letter": "A",
+    "correct_answer": "True",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S43-F1-Q4",
+   "id": "S43-F1-Q4",
+   "set": 43,
+   "set_title": "Proofs about lines and angles",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Perpendicular bisectors and converses",
+   "number": 4,
+   "type": "values",
+   "outcome": "LOGIC.PROOF.05",
+   "outcome_title": "Order and justify the steps of proofs about angles formed by intersecting and parallel lines",
+   "alignment_type": "direct",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "HSG-CO.C.9",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Lines p and q are parallel. Angle 4 = 3x + 5 degrees and angle 5 = 5x - 35 degrees. Find x.",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "any values that satisfy: x == 20 (example: x = 20)",
+   "accepted_alternatives": [],
+   "solution": "Alternate interior angles are equal: 3x + 5 = 5x - 35, so x = 20 (both angles are 65 degrees).",
+   "wrong_choices": [],
+   "wrong_values_rejected": [
+    {
+     "x": 15
+    },
+    {
+     "x": 65
+    }
+   ],
+   "validation": "Automatic: the example passes the rule and 2 listed mistakes fail it.",
+   "figure": "assets/S43-F1-Q4.svg",
+   "figure_description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions. A note says p is parallel to q.",
+   "package_fields": {
+    "type": "values",
+    "outcome": "LOGIC.PROOF.05",
+    "fields": [
+     {
+      "name": "x",
+      "label": "x ="
+     }
+    ],
+    "rule": "x == 20",
+    "example_answer": {
+     "x": 20
+    },
+    "correct_answer": "any values that satisfy: x == 20 (example: x = 20)"
+   }
+  },
+  {
+   "uid": "LOGIC:S43-F1-Q5",
+   "id": "S43-F1-Q5",
+   "set": 43,
+   "set_title": "Proofs about lines and angles",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Perpendicular bisectors and converses",
+   "number": 5,
+   "type": "mc",
+   "outcome": "LOGIC.PROOF.05",
+   "outcome_title": "Order and justify the steps of proofs about angles formed by intersecting and parallel lines",
+   "alignment_type": "direct",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "HSG-CO.C.9",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Here p and q are NOT known to be parallel. Which fact would prove that they are parallel?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "angle 3 = angle 6"
+    },
+    {
+     "letter": "B",
+     "text": "angle 1 + angle 2 = 180 degrees"
+    },
+    {
+     "letter": "C",
+     "text": "angle 1 = angle 4"
+    },
+    {
+     "letter": "D",
+     "text": "angle 5 = angle 8"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "A. angle 3 = angle 6",
+   "accepted_alternatives": [],
+   "solution": "If alternate interior angles are equal, the lines are parallel (the converse theorem).",
+   "wrong_choices": [
+    {
+     "text": "angle 1 = angle 4",
+     "why_wrong": "vertical angles are always equal, parallel or not"
+    },
+    {
+     "text": "angle 1 + angle 2 = 180 degrees",
+     "why_wrong": "a linear pair always adds to 180 degrees"
+    },
+    {
+     "text": "angle 5 = angle 8",
+     "why_wrong": "vertical angles are always equal, parallel or not"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason",
+   "figure": "assets/S43-F1-Q5.svg",
+   "figure_description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions.",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.PROOF.05",
+    "correct_letter": "A",
+    "correct_answer": "angle 3 = angle 6"
+   }
+  },
+  {
+   "uid": "LOGIC:S43-F2-Q1",
+   "id": "S43-F2-Q1",
+   "set": 43,
+   "set_title": "Proofs about lines and angles",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Complete and check angle proofs",
+   "number": 1,
+   "type": "order",
+   "outcome": "LOGIC.PROOF.05",
+   "outcome_title": "Order and justify the steps of proofs about angles formed by intersecting and parallel lines",
+   "alignment_type": "direct",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "HSG-CO.C.9",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Put the steps of the proof that angle 4 + angle 6 = 180 degrees when p is parallel to q in a correct order. (Two orders are correct.)",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "angle 4 = angle 5 (alternate interior angles, p parallel to q) → angle 5 + angle 6 = 180 degrees (linear pair) → angle 4 + angle 6 = 180 degrees (substitute angle 4 for angle 5)",
+   "accepted_alternatives": [
+    "angle 5 + angle 6 = 180 degrees (linear pair) → angle 4 = angle 5 (alternate interior angles, p parallel to q) → angle 4 + angle 6 = 180 degrees (substitute angle 4 for angle 5)"
+   ],
+   "solution": "A and B in either order, then the substitution.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "Automatic: all 6 orderings of 3 items enumerated; 2 valid.",
+   "figure": "assets/S43-F2-Q1.svg",
+   "figure_description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions. A note says p is parallel to q.",
+   "package_fields": {
+    "type": "order",
+    "outcome": "LOGIC.PROOF.05",
+    "items": [
+     {
+      "key": "A",
+      "text": "angle 4 = angle 5 (alternate interior angles, p parallel to q)"
+     },
+     {
+      "key": "B",
+      "text": "angle 5 + angle 6 = 180 degrees (linear pair)"
+     },
+     {
+      "key": "C",
+      "text": "angle 4 + angle 6 = 180 degrees (substitute angle 4 for angle 5)"
+     }
+    ],
+    "correct_order": [
+     "A",
+     "B",
+     "C"
+    ],
+    "accept_orders": [
+     [
+      "B",
+      "A",
+      "C"
+     ]
+    ],
+    "correct_answer": "angle 4 = angle 5 (alternate interior angles, p parallel to q) → angle 5 + angle 6 = 180 degrees (linear pair) → angle 4 + angle 6 = 180 degrees (substitute angle 4 for angle 5)"
+   }
+  },
+  {
+   "uid": "LOGIC:S43-F2-Q2",
+   "id": "S43-F2-Q2",
+   "set": 43,
+   "set_title": "Proofs about lines and angles",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Complete and check angle proofs",
+   "number": 2,
+   "type": "mc",
+   "outcome": "LOGIC.PROOF.05",
+   "outcome_title": "Order and justify the steps of proofs about angles formed by intersecting and parallel lines",
+   "alignment_type": "direct",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "HSG-CO.C.9",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "A student writes: \"Angle 1 = angle 4 because they look the same size in the diagram.\" What is wrong with this step?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "A diagram is not a reason; the step needs the vertical angles theorem."
+    },
+    {
+     "letter": "B",
+     "text": "The step should say angle 1 + angle 4 = 180 degrees."
+    },
+    {
+     "letter": "C",
+     "text": "Nothing; looking at the diagram is enough."
+    },
+    {
+     "letter": "D",
+     "text": "Angles 1 and 4 are never equal."
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "A. A diagram is not a reason; the step needs the vertical angles theorem.",
+   "accepted_alternatives": [],
+   "solution": "Each step of a proof must cite a definition, given or theorem.",
+   "wrong_choices": [
+    {
+     "text": "Angles 1 and 4 are never equal.",
+     "why_wrong": "vertical angles are always equal"
+    },
+    {
+     "text": "The step should say angle 1 + angle 4 = 180 degrees.",
+     "why_wrong": "that is false for vertical angles in general"
+    },
+    {
+     "text": "Nothing; looking at the diagram is enough.",
+     "why_wrong": "diagrams can be drawn inaccurately"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.PROOF.05",
+    "correct_letter": "A",
+    "correct_answer": "A diagram is not a reason; the step needs the vertical angles theorem."
+   }
+  },
+  {
+   "uid": "LOGIC:S43-F2-Q3",
+   "id": "S43-F2-Q3",
+   "set": 43,
+   "set_title": "Proofs about lines and angles",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Complete and check angle proofs",
+   "number": 3,
+   "type": "values",
+   "outcome": "LOGIC.PROOF.05",
+   "outcome_title": "Order and justify the steps of proofs about angles formed by intersecting and parallel lines",
+   "alignment_type": "direct",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "HSG-CO.C.9",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Lines p and q are parallel. Angle 1 = 2x + 30 degrees and angle 6 = x + 15 degrees. Find x.",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "any values that satisfy: x == 45 (example: x = 45)",
+   "accepted_alternatives": [],
+   "solution": "Angle 1 = angle 5 (corresponding), and angle 5 + angle 6 = 180. So 2x + 30 + x + 15 = 180, 3x = 135, x = 45.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [
+    {
+     "x": 15
+    },
+    {
+     "x": -15
+    }
+   ],
+   "validation": "Automatic: the example passes the rule and 2 listed mistakes fail it.",
+   "figure": "assets/S43-F2-Q3.svg",
+   "figure_description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions. A note says p is parallel to q.",
+   "package_fields": {
+    "type": "values",
+    "outcome": "LOGIC.PROOF.05",
+    "fields": [
+     {
+      "name": "x",
+      "label": "x ="
+     }
+    ],
+    "rule": "x == 45",
+    "example_answer": {
+     "x": 45
+    },
+    "correct_answer": "any values that satisfy: x == 45 (example: x = 45)"
+   }
+  },
+  {
+   "uid": "LOGIC:S43-F2-Q4",
+   "id": "S43-F2-Q4",
+   "set": 43,
+   "set_title": "Proofs about lines and angles",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Complete and check angle proofs",
+   "number": 4,
+   "type": "tf",
+   "outcome": "LOGIC.PROOF.05",
+   "outcome_title": "Order and justify the steps of proofs about angles formed by intersecting and parallel lines",
+   "alignment_type": "direct",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "HSG-CO.C.9",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Without knowing that p and q are parallel, one can conclude that angle 3 = angle 6.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "False",
+   "accepted_alternatives": [],
+   "solution": "Alternate interior angles are equal only when the lines are parallel. If p is tilted, angle 3 and angle 6 differ.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author",
+   "figure": "assets/S43-F2-Q4.svg",
+   "figure_description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions.",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.PROOF.05",
+    "correct_letter": "B",
+    "correct_answer": "False",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S43-F2-Q5",
+   "id": "S43-F2-Q5",
+   "set": 43,
+   "set_title": "Proofs about lines and angles",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Complete and check angle proofs",
+   "number": 5,
+   "type": "sa",
+   "outcome": "LOGIC.PROOF.05",
+   "outcome_title": "Order and justify the steps of proofs about angles formed by intersecting and parallel lines",
+   "alignment_type": "direct",
+   "practices": [
+    "MP3"
+   ],
+   "content_standard": "HSG-CO.C.9",
+   "kind": "formal",
+   "genre": "formal logic",
+   "family": "formal",
+   "question_page": 0,
+   "prompt": "P is on the perpendicular bisector of segment AB. PA = 3x - 4 and PB = x + 10. What is PA?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "17",
+   "accepted_alternatives": [],
+   "solution": "Points on the perpendicular bisector are equidistant from A and B: 3x - 4 = x + 10, so x = 7 and PA = 17.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.PROOF.05",
+    "answer_lines": [
+     "PA ="
+    ],
+    "correct_answer": "17"
+   }
+  },
+  {
+   "uid": "LOGIC:S44-M-Q1",
+   "id": "S44-M-Q1",
+   "set": 44,
+   "set_title": "Invariants and impossibility",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Find a quantity that never changes under the allowed moves and use it to prove a target is impossible",
+   "number": 1,
+   "type": "mc",
+   "outcome": "LOGIC.INVARIANT.02",
+   "outcome_title": "Find a quantity that never changes under the allowed moves and use it to prove a target is impossible",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "invariants",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "The numbers 1, 2, 3, ..., 10 are written on a board. A move erases any two numbers and writes their sum. After 9 moves one number is left. What is it?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "It depends on the moves chosen"
+    },
+    {
+     "letter": "B",
+     "text": "55"
+    },
+    {
+     "letter": "C",
+     "text": "10"
+    },
+    {
+     "letter": "D",
+     "text": "45"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "B. 55",
+   "accepted_alternatives": [],
+   "solution": "Erasing a and b and writing a + b does not change the total. The total starts at 55, so the last number is 55.",
+   "wrong_choices": [
+    {
+     "text": "10",
+     "why_wrong": "the moves combine numbers; they do not count them"
+    },
+    {
+     "text": "45",
+     "why_wrong": "that is the sum of 1 to 9; the 10 is still there"
+    },
+    {
+     "text": "It depends on the moves chosen",
+     "why_wrong": "every move keeps the total the same"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.INVARIANT.02",
+    "correct_letter": "B",
+    "correct_answer": "55"
+   }
+  },
+  {
+   "uid": "LOGIC:S44-M-Q2",
+   "id": "S44-M-Q2",
+   "set": 44,
+   "set_title": "Invariants and impossibility",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Find a quantity that never changes under the allowed moves and use it to prove a target is impossible",
+   "number": 2,
+   "type": "tf",
+   "outcome": "LOGIC.INVARIANT.02",
+   "outcome_title": "Find a quantity that never changes under the allowed moves and use it to prove a target is impossible",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "invariants",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "The numbers 1, 2, ..., 10 are written on a board. A move erases two numbers and writes their difference (larger minus smaller). After 9 moves one number is left. It can be 0.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "False",
+   "accepted_alternatives": [],
+   "solution": "Replacing a and b by a - b changes the total by 2b, an even amount, so the total stays odd (it starts at 55). The last number is odd, so it cannot be 0.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the statement was evaluated by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.INVARIANT.02",
+    "correct_letter": "B",
+    "correct_answer": "False",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S44-M-Q3",
+   "id": "S44-M-Q3",
+   "set": 44,
+   "set_title": "Invariants and impossibility",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Find a quantity that never changes under the allowed moves and use it to prove a target is impossible",
+   "number": 3,
+   "type": "sa",
+   "outcome": "LOGIC.INVARIANT.02",
+   "outcome_title": "Find a quantity that never changes under the allowed moves and use it to prove a target is impossible",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "invariants",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "Seven coins lie in a row: H H T H T T T (H = heads, T = tails). A move turns over any two coins that are next to each other. What is the smallest number of heads that can ever be showing?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "1",
+   "accepted_alternatives": [],
+   "solution": "A move changes the number of heads by -2, 0 or +2, so it stays odd (it starts at 3). It can reach 1 but never 0.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.INVARIANT.02",
+    "answer_lines": [
+     "Heads:"
+    ],
+    "correct_answer": "1"
+   }
+  },
+  {
+   "uid": "LOGIC:S44-M-Q4",
+   "id": "S44-M-Q4",
+   "set": 44,
+   "set_title": "Invariants and impossibility",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Find a quantity that never changes under the allowed moves and use it to prove a target is impossible",
+   "number": 4,
+   "type": "values",
+   "outcome": "LOGIC.INVARIANT.02",
+   "outcome_title": "Find a quantity that never changes under the allowed moves and use it to prove a target is impossible",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "invariants",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "Seven coins lie in a row: H H T H T T T. A move turns over any two coins that are next to each other. Give a number of heads (0 to 7) that can be showing after some moves.",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "any values that satisfy: isInteger(h) and h >= 0 and h <= 7 and isOdd(h) (example: h = 5)",
+   "accepted_alternatives": [],
+   "solution": "The number of heads stays odd: 1, 3, 5 or 7 are possible, and all four can be reached.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [
+    {
+     "h": 0
+    },
+    {
+     "h": 4
+    },
+    {
+     "h": 2
+    }
+   ],
+   "validation": "Breadth-first search over all reachable rows: head counts [1, 3, 5, 7]. Automatic: the example passes the rule and 3 listed mistakes fail it.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "values",
+    "outcome": "LOGIC.INVARIANT.02",
+    "fields": [
+     {
+      "name": "h",
+      "label": "Heads ="
+     }
+    ],
+    "rule": "isInteger(h) and h >= 0 and h <= 7 and isOdd(h)",
+    "example_answer": {
+     "h": 5
+    },
+    "correct_answer": "any values that satisfy: isInteger(h) and h >= 0 and h <= 7 and isOdd(h) (example: h = 5)"
+   }
+  },
+  {
+   "uid": "LOGIC:S44-M-Q5",
+   "id": "S44-M-Q5",
+   "set": 44,
+   "set_title": "Invariants and impossibility",
+   "section": "M",
+   "relation": "main",
+   "branch_mode": "",
+   "section_skill": "Find a quantity that never changes under the allowed moves and use it to prove a target is impossible",
+   "number": 5,
+   "type": "mc",
+   "outcome": "LOGIC.INVARIANT.02",
+   "outcome_title": "Find a quantity that never changes under the allowed moves and use it to prove a target is impossible",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "invariants",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "A robot starts at the point (0, 0). Each move takes it from (x, y) to (x + 1, y + 2) or to (x + 2, y + 1). Which point can it reach?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "(5, 5)"
+    },
+    {
+     "letter": "B",
+     "text": "(2, 3)"
+    },
+    {
+     "letter": "C",
+     "text": "(4, 5)"
+    },
+    {
+     "letter": "D",
+     "text": "(7, 0)"
+    }
+   ],
+   "correct_letter": "C",
+   "correct_answer": "C. (4, 5)",
+   "accepted_alternatives": [],
+   "solution": "x + y is always a multiple of 3. (4, 5): two moves of (1, 2) and one of (2, 1).",
+   "wrong_choices": [
+    {
+     "text": "(5, 5)",
+     "why_wrong": "each move adds 3 to x + y, but 5 + 5 = 10 is not a multiple of 3"
+    },
+    {
+     "text": "(2, 3)",
+     "why_wrong": "2 + 3 = 5 is not a multiple of 3"
+    },
+    {
+     "text": "(7, 0)",
+     "why_wrong": "7 + 0 = 7 is not a multiple of 3, and y can never stay 0"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.INVARIANT.02",
+    "correct_letter": "C",
+    "correct_answer": "(4, 5)"
+   }
+  },
+  {
+   "uid": "LOGIC:S44-B1-Q1",
+   "id": "S44-B1-Q1",
+   "set": 44,
+   "set_title": "Invariants and impossibility",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "guided_strategy",
+   "section_skill": "Strategy: look for something that never changes",
+   "number": 1,
+   "type": "mc",
+   "outcome": "LOGIC.INVARIANT.02",
+   "outcome_title": "Find a quantity that never changes under the allowed moves and use it to prove a target is impossible",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "invariants",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "A counter shows 12. A move adds 4 or subtracts 6. Can it ever show 15?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "No: 15 is not a multiple of 4."
+    },
+    {
+     "letter": "B",
+     "text": "Yes: after enough moves."
+    },
+    {
+     "letter": "C",
+     "text": "Yes: add 4, then subtract 1."
+    },
+    {
+     "letter": "D",
+     "text": "No: every move keeps the number even, and 15 is odd."
+    }
+   ],
+   "correct_letter": "D",
+   "correct_answer": "D. No: every move keeps the number even, and 15 is odd.",
+   "accepted_alternatives": [],
+   "solution": "Adding 4 or subtracting 6 keeps an even number even.",
+   "wrong_choices": [
+    {
+     "text": "Yes: add 4, then subtract 1.",
+     "why_wrong": "subtracting 1 is not an allowed move"
+    },
+    {
+     "text": "Yes: after enough moves.",
+     "why_wrong": "no number of moves can change even to odd"
+    },
+    {
+     "text": "No: 15 is not a multiple of 4.",
+     "why_wrong": "12 + 4 + 4 - 6 = 14 is reachable and is not a multiple of 4 either; the true reason is parity"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.INVARIANT.02",
+    "correct_letter": "D",
+    "correct_answer": "No: every move keeps the number even, and 15 is odd."
+   }
+  },
+  {
+   "uid": "LOGIC:S44-B1-Q2",
+   "id": "S44-B1-Q2",
+   "set": 44,
+   "set_title": "Invariants and impossibility",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "guided_strategy",
+   "section_skill": "Strategy: look for something that never changes",
+   "number": 2,
+   "type": "tf",
+   "outcome": "LOGIC.INVARIANT.02",
+   "outcome_title": "Find a quantity that never changes under the allowed moves and use it to prove a target is impossible",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "invariants",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "Three numbers on a board are 2, 4 and 9. A move adds 2 to any one of them. The total of the three numbers always stays odd.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "True",
+   "accepted_alternatives": [],
+   "solution": "The total starts at 15 (odd), and each move adds 2, which keeps it odd.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.INVARIANT.02",
+    "correct_letter": "A",
+    "correct_answer": "True",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S44-B1-Q3",
+   "id": "S44-B1-Q3",
+   "set": 44,
+   "set_title": "Invariants and impossibility",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "guided_strategy",
+   "section_skill": "Strategy: look for something that never changes",
+   "number": 3,
+   "type": "sa",
+   "outcome": "LOGIC.INVARIANT.02",
+   "outcome_title": "Find a quantity that never changes under the allowed moves and use it to prove a target is impossible",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "invariants",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "A move erases two numbers a and b on a board and writes a + b. The board starts with 3, 5, 6 and 8. What number is left after 3 moves?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "22",
+   "accepted_alternatives": [],
+   "solution": "The total never changes: 3 + 5 + 6 + 8 = 22.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.INVARIANT.02",
+    "answer_lines": [
+     "Number:"
+    ],
+    "correct_answer": "22"
+   }
+  },
+  {
+   "uid": "LOGIC:S44-B1-Q4",
+   "id": "S44-B1-Q4",
+   "set": 44,
+   "set_title": "Invariants and impossibility",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "guided_strategy",
+   "section_skill": "Strategy: look for something that never changes",
+   "number": 4,
+   "type": "tf",
+   "outcome": "LOGIC.INVARIANT.02",
+   "outcome_title": "Find a quantity that never changes under the allowed moves and use it to prove a target is impossible",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "invariants",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "If a quantity is the same after every allowed move, it can never change, however many moves are made.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "True",
+   "accepted_alternatives": [],
+   "solution": "Each move leaves it unchanged, so a chain of moves does too.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.INVARIANT.02",
+    "correct_letter": "A",
+    "correct_answer": "True",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S44-B1-Q5",
+   "id": "S44-B1-Q5",
+   "set": 44,
+   "set_title": "Invariants and impossibility",
+   "section": "B1",
+   "relation": "backward",
+   "branch_mode": "guided_strategy",
+   "section_skill": "Strategy: look for something that never changes",
+   "number": 5,
+   "type": "mc",
+   "outcome": "LOGIC.INVARIANT.02",
+   "outcome_title": "Find a quantity that never changes under the allowed moves and use it to prove a target is impossible",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "invariants",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "A robot starts at (0, 0). Each move goes from (x, y) to (x + 2, y) or to (x, y + 2). Which point can it NEVER reach?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "(0, 6)"
+    },
+    {
+     "letter": "B",
+     "text": "(3, 4)"
+    },
+    {
+     "letter": "C",
+     "text": "(2, 4)"
+    },
+    {
+     "letter": "D",
+     "text": "(4, 0)"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "B. (3, 4)",
+   "accepted_alternatives": [],
+   "solution": "Both coordinates always stay even, and 3 is odd.",
+   "wrong_choices": [
+    {
+     "text": "(2, 4)",
+     "why_wrong": "reached by (2, 0), then (2, 2), then (2, 4)"
+    },
+    {
+     "text": "(0, 6)",
+     "why_wrong": "three moves of (0, 2)"
+    },
+    {
+     "text": "(4, 0)",
+     "why_wrong": "two moves of (2, 0)"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.INVARIANT.02",
+    "correct_letter": "B",
+    "correct_answer": "(3, 4)"
+   }
+  },
+  {
+   "uid": "LOGIC:S44-F1-Q1",
+   "id": "S44-F1-Q1",
+   "set": 44,
+   "set_title": "Invariants and impossibility",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Invariants with remainders",
+   "number": 1,
+   "type": "sa",
+   "outcome": "LOGIC.INVARIANT.02",
+   "outcome_title": "Find a quantity that never changes under the allowed moves and use it to prove a target is impossible",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "invariants",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "The numbers 1, 2, ..., 10 are on a board. A move erases two numbers a and b and writes a + b + 1. After 9 moves one number is left. What is it?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "64",
+   "accepted_alternatives": [],
+   "solution": "Each move raises the total by exactly 1. The total starts at 55, and 9 moves add 9: 64.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.INVARIANT.02",
+    "answer_lines": [
+     "Number:"
+    ],
+    "correct_answer": "64"
+   }
+  },
+  {
+   "uid": "LOGIC:S44-F1-Q2",
+   "id": "S44-F1-Q2",
+   "set": 44,
+   "set_title": "Invariants and impossibility",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Invariants with remainders",
+   "number": 2,
+   "type": "tf",
+   "outcome": "LOGIC.INVARIANT.02",
+   "outcome_title": "Find a quantity that never changes under the allowed moves and use it to prove a target is impossible",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "invariants",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "A robot starts at (0, 0). Each move goes from (x, y) to (x + 1, y + 2) or to (x + 2, y + 1). It can reach (10, 10).",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "False",
+   "accepted_alternatives": [],
+   "solution": "x + y must be a multiple of 3, and 20 is not.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the statement was evaluated by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.INVARIANT.02",
+    "correct_letter": "B",
+    "correct_answer": "False",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S44-F1-Q3",
+   "id": "S44-F1-Q3",
+   "set": 44,
+   "set_title": "Invariants and impossibility",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Invariants with remainders",
+   "number": 3,
+   "type": "mc",
+   "outcome": "LOGIC.INVARIANT.02",
+   "outcome_title": "Find a quantity that never changes under the allowed moves and use it to prove a target is impossible",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "invariants",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "Three numbers are on a board: 1, 2, 3. A move picks two of them, adds 1 to one and subtracts 1 from the other. Which quantity never changes?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "The product of the three numbers"
+    },
+    {
+     "letter": "B",
+     "text": "The number of odd numbers"
+    },
+    {
+     "letter": "C",
+     "text": "The total of the three numbers"
+    },
+    {
+     "letter": "D",
+     "text": "The largest number"
+    }
+   ],
+   "correct_letter": "C",
+   "correct_answer": "C. The total of the three numbers",
+   "accepted_alternatives": [],
+   "solution": "The move adds 1 and subtracts 1, so the total is always 6.",
+   "wrong_choices": [
+    {
+     "text": "The largest number",
+     "why_wrong": "adding 1 to the largest number changes it"
+    },
+    {
+     "text": "The product of the three numbers",
+     "why_wrong": "1, 2, 3 can become 0, 3, 3, whose product is 0"
+    },
+    {
+     "text": "The number of odd numbers",
+     "why_wrong": "1, 2, 3 can become 2, 2, 2, which has no odd numbers"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.INVARIANT.02",
+    "correct_letter": "C",
+    "correct_answer": "The total of the three numbers"
+   }
+  },
+  {
+   "uid": "LOGIC:S44-F1-Q4",
+   "id": "S44-F1-Q4",
+   "set": 44,
+   "set_title": "Invariants and impossibility",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Invariants with remainders",
+   "number": 4,
+   "type": "values",
+   "outcome": "LOGIC.INVARIANT.02",
+   "outcome_title": "Find a quantity that never changes under the allowed moves and use it to prove a target is impossible",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "invariants",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "Ten coins all show heads. A move turns over any four coins (they need not be next to each other). Give a number of heads from 0 to 10 that can NEVER be showing.",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "any values that satisfy: isInteger(h) and h >= 0 and h <= 10 and isOdd(h) (example: h = 7)",
+   "accepted_alternatives": [],
+   "solution": "If k of the four turned coins were heads, the heads count changes by (4 - k) - k = 4 - 2k, an even number. It starts at 10, so it stays even: 1, 3, 5, 7 and 9 are impossible.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [
+    {
+     "h": 0
+    },
+    {
+     "h": 6
+    },
+    {
+     "h": 10
+    }
+   ],
+   "validation": "Search of all reachable head counts: [0, 2, 4, 6, 8, 10]. Automatic: the example passes the rule and 3 listed mistakes fail it.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "values",
+    "outcome": "LOGIC.INVARIANT.02",
+    "fields": [
+     {
+      "name": "h",
+      "label": "Heads ="
+     }
+    ],
+    "rule": "isInteger(h) and h >= 0 and h <= 10 and isOdd(h)",
+    "example_answer": {
+     "h": 7
+    },
+    "correct_answer": "any values that satisfy: isInteger(h) and h >= 0 and h <= 10 and isOdd(h) (example: h = 7)"
+   }
+  },
+  {
+   "uid": "LOGIC:S44-F1-Q5",
+   "id": "S44-F1-Q5",
+   "set": 44,
+   "set_title": "Invariants and impossibility",
+   "section": "F1",
+   "relation": "forward1",
+   "branch_mode": "",
+   "section_skill": "Invariants with remainders",
+   "number": 5,
+   "type": "sa",
+   "outcome": "LOGIC.INVARIANT.02",
+   "outcome_title": "Find a quantity that never changes under the allowed moves and use it to prove a target is impossible",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "invariants",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "A counter shows 100. A move subtracts 7 or adds 3. What is the smallest number of moves that makes it show 0?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "20",
+   "accepted_alternatives": [],
+   "solution": "If a moves subtract 7 and b moves add 3, then 7a - 3b = 100. So 7a is at least 100 and 7a - 100 is a multiple of 3: a = 16 gives 112 - 100 = 12, so b = 4. Total 16 + 4 = 20, and any other solution has larger a and b.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.INVARIANT.02",
+    "answer_lines": [
+     "Moves:"
+    ],
+    "correct_answer": "20"
+   }
+  },
+  {
+   "uid": "LOGIC:S44-F2-Q1",
+   "id": "S44-F2-Q1",
+   "set": 44,
+   "set_title": "Invariants and impossibility",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Prove targets impossible",
+   "number": 1,
+   "type": "sa",
+   "outcome": "LOGIC.INVARIANT.02",
+   "outcome_title": "Find a quantity that never changes under the allowed moves and use it to prove a target is impossible",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "invariants",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "The numbers 1, 2, 3, 4 and 5 are on a board. A move erases two numbers a and b and writes a x b + a + b. After 4 moves one number is left. What is it?",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "719",
+   "accepted_alternatives": [],
+   "solution": "a x b + a + b = (a + 1)(b + 1) - 1. So the product of (each number + 1) never changes: 2 x 3 x 4 x 5 x 6 = 720. The last number n has n + 1 = 720, so n = 719.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the key was recomputed by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "sa",
+    "outcome": "LOGIC.INVARIANT.02",
+    "answer_lines": [
+     "Number:"
+    ],
+    "correct_answer": "719"
+   }
+  },
+  {
+   "uid": "LOGIC:S44-F2-Q2",
+   "id": "S44-F2-Q2",
+   "set": 44,
+   "set_title": "Invariants and impossibility",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Prove targets impossible",
+   "number": 2,
+   "type": "tf",
+   "outcome": "LOGIC.INVARIANT.02",
+   "outcome_title": "Find a quantity that never changes under the allowed moves and use it to prove a target is impossible",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "invariants",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "A 4 by 4 grid of lights starts all off. A move switches every light in one whole row, or every light in one whole column. Some sequence of moves leaves exactly one light on.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "B",
+   "correct_answer": "False",
+   "accepted_alternatives": [],
+   "solution": "Look at any 2 by 2 block of lights. A row or column move switches either none or exactly 2 of its 4 lights, so the number of lit lights in the block stays even. With exactly one light on, a block containing it would have 1 lit light, which is odd.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the statement was evaluated by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.INVARIANT.02",
+    "correct_letter": "B",
+    "correct_answer": "False",
+    "no_shuffle": true
+   }
+  },
+  {
+   "uid": "LOGIC:S44-F2-Q3",
+   "id": "S44-F2-Q3",
+   "set": 44,
+   "set_title": "Invariants and impossibility",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Prove targets impossible",
+   "number": 3,
+   "type": "mc",
+   "outcome": "LOGIC.INVARIANT.02",
+   "outcome_title": "Find a quantity that never changes under the allowed moves and use it to prove a target is impossible",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "invariants",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "A robot starts at (0, 0). Each move goes from (x, y) to (x + 3, y), to (x, y + 3), or to (x + 1, y + 1). Which point can it reach?",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "(2, 3)"
+    },
+    {
+     "letter": "B",
+     "text": "(4, 0)"
+    },
+    {
+     "letter": "C",
+     "text": "(1, 5)"
+    },
+    {
+     "letter": "D",
+     "text": "(5, 2)"
+    }
+   ],
+   "correct_letter": "D",
+   "correct_answer": "D. (5, 2)",
+   "accepted_alternatives": [],
+   "solution": "x - y is always a multiple of 3. (5, 2): two moves of (1, 1) and one of (3, 0).",
+   "wrong_choices": [
+    {
+     "text": "(4, 0)",
+     "why_wrong": "x - y changes only by 3, -3 or 0, so it stays a multiple of 3; here x - y = 4"
+    },
+    {
+     "text": "(2, 3)",
+     "why_wrong": "here x - y = -1, not a multiple of 3"
+    },
+    {
+     "text": "(1, 5)",
+     "why_wrong": "here x - y = -4, not a multiple of 3"
+    }
+   ],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author; each wrong choice checked against its reason Automatic: the check function accepts only the keyed choice.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "mc",
+    "outcome": "LOGIC.INVARIANT.02",
+    "correct_letter": "D",
+    "correct_answer": "(5, 2)"
+   }
+  },
+  {
+   "uid": "LOGIC:S44-F2-Q4",
+   "id": "S44-F2-Q4",
+   "set": 44,
+   "set_title": "Invariants and impossibility",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Prove targets impossible",
+   "number": 4,
+   "type": "values",
+   "outcome": "LOGIC.INVARIANT.02",
+   "outcome_title": "Find a quantity that never changes under the allowed moves and use it to prove a target is impossible",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "invariants",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "A 4 by 4 grid of lights starts all off. A move switches every light in one whole row, or every light in one whole column. Give a number of lit lights from 1 to 15 that some sequence of moves can leave.",
+   "choices": [],
+   "correct_letter": "",
+   "correct_answer": "any values that satisfy: h == 4 or h == 6 or h == 8 or h == 10 or h == 12 (example: h = 6)",
+   "accepted_alternatives": [],
+   "solution": "Only the rows and columns switched an odd number of times matter. With r such rows and c such columns, the lit count is 4r + 4c - 2rc. For r and c from 0 to 4 this gives 0, 4, 6, 8, 10, 12 or 16.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [
+    {
+     "h": 1
+    },
+    {
+     "h": 2
+    },
+    {
+     "h": 5
+    },
+    {
+     "h": 14
+    }
+   ],
+   "validation": "Breadth-first search of all reachable patterns: lit counts [0, 4, 6, 8, 10, 12, 16]. Automatic: the example passes the rule and 4 listed mistakes fail it.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "values",
+    "outcome": "LOGIC.INVARIANT.02",
+    "fields": [
+     {
+      "name": "h",
+      "label": "Lit lights ="
+     }
+    ],
+    "rule": "h == 4 or h == 6 or h == 8 or h == 10 or h == 12",
+    "example_answer": {
+     "h": 6
+    },
+    "correct_answer": "any values that satisfy: h == 4 or h == 6 or h == 8 or h == 10 or h == 12 (example: h = 6)"
+   }
+  },
+  {
+   "uid": "LOGIC:S44-F2-Q5",
+   "id": "S44-F2-Q5",
+   "set": 44,
+   "set_title": "Invariants and impossibility",
+   "section": "F2",
+   "relation": "forward2",
+   "branch_mode": "",
+   "section_skill": "Prove targets impossible",
+   "number": 5,
+   "type": "tf",
+   "outcome": "LOGIC.INVARIANT.02",
+   "outcome_title": "Find a quantity that never changes under the allowed moves and use it to prove a target is impossible",
+   "alignment_type": "local",
+   "practices": [
+    "MP7",
+    "MP3"
+   ],
+   "content_standard": "",
+   "kind": "puzzle",
+   "genre": "invariants",
+   "family": "constraint",
+   "question_page": 0,
+   "prompt": "The numbers 1, 2, 3, ..., 10 are on a board. A move erases two numbers a and b and writes a + b + 1. The last number left does not depend on which moves are made.",
+   "choices": [
+    {
+     "letter": "A",
+     "text": "True"
+    },
+    {
+     "letter": "B",
+     "text": "False"
+    }
+   ],
+   "correct_letter": "A",
+   "correct_answer": "True",
+   "accepted_alternatives": [],
+   "solution": "Each move raises the total by exactly 1, and there are always exactly 9 moves, so the last number is 55 + 9 = 64.",
+   "wrong_choices": [],
+   "wrong_values_rejected": [],
+   "validation": "solved by the author Automatic: the statement was evaluated by code.",
+   "figure": "",
+   "figure_description": "",
+   "package_fields": {
+    "type": "tf",
+    "outcome": "LOGIC.INVARIANT.02",
+    "correct_letter": "A",
+    "correct_answer": "True",
+    "no_shuffle": true
+   }
   }
  ]
 }
