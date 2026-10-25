@@ -271,8 +271,9 @@ def s42():
                      ])],
              f1=FW('Counterexamples to algebra rules', 'Harder: counterexamples to tempting rules.', [
                  values(CE + ' Claim: (a + b) squared = a squared + b squared for all numbers a and b. Give whole numbers a '
-                             'and b that disprove it.', [('a', 'a ='), ('b', 'b =')], '(a + b)^2 != a^2 + b^2', {'a': 1, 'b': 1},
-                        'For a = 1, b = 1: 4 is not 2. The claim fails whenever a and b are both nonzero.',
+                             'and b that disprove it.', [('a', 'a ='), ('b', 'b =')], 'a != 0 and b != 0', {'a': 1, 'b': 1},
+                        '(a + b) squared - (a squared + b squared) = 2ab, so the claim fails exactly when a and b are both '
+                        'nonzero. For example a = 1, b = 1: 4 is not 2.',
                         wrong=[{'a': 0, 'b': 5}, {'a': 3, 'b': 0}]),
                  mc(CE + ' Claim: the square root of (a + b) equals the square root of a plus the square root of b, for all '
                          'numbers a and b that are 0 or more. Which pair is a counterexample?', 'a = 9, b = 16',
@@ -322,10 +323,11 @@ def s42():
                                             if not any(a * a + b * b == n for a in range(6) for b in range(6))))),
                  mc(CE + ' Claim: for every positive whole number n, 2 to the power n is greater than n. Why is n = -1 NOT a '
                          'valid counterexample?', 'The claim is only about positive whole numbers, and -1 is not one.',
-                    [('Because 2 to the power -1 is greater than -1.', 'that is true, but it is not why -1 cannot count'),
+                    [('Because 2 to the power -1 is undefined.', '2 to the power -1 is defined: it equals 1/2'),
                      ('Because a counterexample must be a large number.', 'any case covered by the claim may serve'),
                      ('Because counterexamples cannot be negative.', 'they can be, when the claim covers negative numbers')],
-                    'A counterexample must be a case the claim is about.'),
+                    'A counterexample must be a case the claim is about. (Also, 2 to the power -1 = 1/2 is greater than -1, so -1 '
+                    'would not break the inequality anyway; the assessed reason is the domain.)'),
              ]))
 
 
@@ -385,14 +387,14 @@ def s43():
                         'Angle 1 = angle 5 (corresponding), and angle 5 + angle 6 = 180 degrees (linear pair), so angle 6 = '
                         '65 degrees.', wrong=[{'x': 115}, {'x': 75}, {'x': 245}], fig=F),
                  order(LINES + ' Put the steps of the proof that angle 3 = angle 6 when p is parallel to q in a correct '
-                               'order. (Two orders are correct.)',
+                               'order. Each step may use only lines placed before it. (More than one order is correct.)',
                        [('A', 'p is parallel to q, cut by transversal t (given)'),
                         ('B', 'angle 2 = angle 6 (corresponding angles, p parallel to q)'),
                         ('C', 'angle 2 = angle 3 (vertical angles)'),
                         ('D', 'angle 3 = angle 6 (both equal angle 2)')],
-                       lambda p: p[0] == 'A' and p[-1] == 'D',
-                       'Start with the given. The corresponding-angles step and the vertical-angles step can come in either '
-                       'order; the conclusion comes last.', expect=list('ABCD'), fig=F),
+                       lambda p: p[-1] == 'D' and p.index('A') < p.index('B'),
+                       'B uses the given A (parallel lines), so A comes before B. The vertical-angles step C needs no given, '
+                       'so it can come anywhere before the conclusion D. Three orders are accepted.', expect=list('ABCD'), fig=F),
              ],
              back=[B('Name the angle pairs', 'prerequisite',
                      'A proof step cites an angle relationship by name. Students who cannot identify linear pairs, vertical '

@@ -40,7 +40,7 @@ def s2():
                     'in dollars?', 'Dollars:', '38',
                     '12 sneakers need 12 laces = 6 packs, costing 6 x $3 = $18. Whistles cost 4 x $5 = $20. Total $38. A '
                     'common slip is to pay $3 per lace (12 x 3 = $36, total $56).', compute=lambda: str(12 // 2 * 3 + 4 * 5)),
-                 sa('In the Ortiz family, each son has exactly one brother, and each daughter has exactly two brothers and '
+                 sa('The Ortiz family has at least one son and at least one daughter. Each son has exactly one brother, and each daughter has exactly two brothers and '
                     'three sisters. How many children are in the family?', 'Children:', '6',
                     'A son\'s brothers are the other sons, so one brother means 2 sons. A daughter\'s sisters are the other '
                     'daughters, so three sisters means 4 daughters, and each daughter\'s two brothers are the 2 sons. 2 + 4 = 6.',
@@ -105,7 +105,7 @@ def s2():
                  sa('Eggs are sold in half-dozen boxes (6 eggs) for $2 a box. A recipe uses 4 eggs per cake, and a baker makes '
                     '9 cakes. What is the least she can spend on eggs, in dollars?', 'Dollars:', '12',
                     '9 cakes x 4 eggs = 36 eggs = 6 boxes. 6 x $2 = $12.', compute=lambda: str(-(-9 * 4 // 6) * 2)),
-                 sa('In the Novak family, each son has exactly 3 sisters and 2 brothers. Each daughter has exactly 2 sisters. '
+                 sa('The Novak family has at least one son and at least one daughter. Each son has exactly 3 sisters and 2 brothers. Each daughter has exactly 2 sisters. '
                     'How many children are in the family?', 'Children:', '6',
                     'A son has 2 brothers, so there are 3 sons. A son has 3 sisters, so there are 3 daughters; then each '
                     'daughter has 2 sisters, as stated. 3 + 3 = 6.',
@@ -268,18 +268,19 @@ def s3():
                      ('Kim is on the team.', 'Kim might be on the team but not a sprinter')],
                     'The general premise is about sprinters on the team; Kim must be one of them.'),
                  mc('"Every number divisible by 6 is even. So 84 is even." Which added premise makes this valid?',
-                    '84 is divisible by 6.', [('84 is divisible by 4.', 'true, but the premise is about divisibility by 6'),
+                    '84 is divisible by 6.', [('84 is divisible by 7.', 'true, but divisibility by 7 says nothing about being even'),
                                              ('84 is greater than 6.', 'size does not matter'),
                                              ('Some even numbers are divisible by 6.', 'still says nothing about 84')],
                     'The rule applies to numbers divisible by 6, so we need 84 to be one: 84 = 6 x 14.'),
                  tf('In a valid argument, adding an extra true premise can make the conclusion no longer follow.', False,
                     'If the conclusion follows from some premises, it still follows when more premises are added.'),
-                 order('Arrange these sentences into an argument that ends with its conclusion: chain the two rules.',
+                 order('Arrange these sentences into an argument. Put the dam-to-river rule before the river-to-ferry rule, and put '
+                       'the conclusion last.',
                        [('A', 'If the dam opens, the river rises.'), ('B', 'If the river rises, the ferry stops.'),
                         ('C', 'The dam opens.'), ('D', 'So the ferry stops.')],
-                       lambda p: list(p) in (['A', 'C', 'B', 'D'], ['C', 'A', 'B', 'D'], ['A', 'B', 'C', 'D']),
-                       'State the first rule and the fact, then the second rule, then the conclusion. Orders that state both '
-                       'rules first are also accepted.', expect=['C', 'A', 'B', 'D']),
+                       lambda p: p[-1] == 'D' and p.index('A') < p.index('B'),
+                       'The rules must appear in the stated order and the conclusion last; the fact "The dam opens" may '
+                       'come anywhere before the conclusion, so three orders are accepted.', expect=['C', 'A', 'B', 'D']),
                  mc('"Our new ads worked: sales rose this month." Which assumption is the argument making?',
                     'Nothing other than the ads caused most of the rise in sales.',
                     [('Sales rose this month.', 'that is the stated premise, not an assumption'),

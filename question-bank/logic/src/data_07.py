@@ -206,7 +206,7 @@ def s20():
                     check=lambda t: t.replace(' and ', ', ').split(', ') == discs_visible([('W', 5), ('X', 3), ('Y', 4), ('Z', 1)])),
                  stack_q('Put the sheets in order from the BOTTOM sheet to the TOP sheet.', L6,
                          'Overlaps: C is under D and A; D is under A; A is under B. From bottom to top: C, D, A, B.'),
-                 sa('Square cards are placed one at a time on an 8 by 8 grid, each covering a block of cells (rows and columns '
+                 sa('Rectangular cards are placed one at a time on an 8 by 8 grid, each covering a block of cells (rows and columns '
                     'numbered 1 to 8; "rows 1-4, columns 1-4" means a 4 by 4 block). In order: A covers rows 1-4, columns 1-4; '
                     'B covers rows 3-6, columns 3-6; C covers rows 2-5, columns 2-5; D covers rows 1-3, columns 4-7; E covers '
                     'rows 5-7, columns 1-3. Seen from above, how many of the five cards can be seen at least partly?',

@@ -487,7 +487,7 @@ def s8():
                     [('P exclusive-or Q', lambda p, q: p != q), ('P or Q', lambda p, q: p or q)],
                     'They differ only in the first row, where both parts are true.'),
                  mc('Statement S: "P or Q" (inclusive). S is false. What can be concluded?', 'P is false and Q is false.',
-                    [('P is false or Q is false.', 'true, but it does not say enough: both must be false'),
+                    [('P is true or Q is true.', 'that says S itself is true, but S is false'),
                      ('Exactly one of P and Q is false.', 'both are false'),
                      ('P is true and Q is false.', 'then S would be true')],
                     'An inclusive "or" is false only when both parts are false.'),

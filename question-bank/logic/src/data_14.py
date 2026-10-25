@@ -445,7 +445,7 @@ def s40():
                                              'integers a and b. Then a + b must equal what number?', [('x', 'a + b =')],
                         'x == 7.5', {'x': 7.5},
                         '2(a + b) = 15 gives a + b = 7.5. But a + b is an integer, so the assumption is impossible.',
-                        wrong=[{'x': 7}, {'x': 8}, {'x': 15}]),
+                        wrong=[{'x': 7}, {'x': 8}, {'x': 15}], domain='any'),
              ],
              back=[B('Strategy: assume the opposite and look for the impossible', 'guided_strategy',
                      'Students start a contradiction proof by assuming the wrong thing. Writing the exact opposite first, '

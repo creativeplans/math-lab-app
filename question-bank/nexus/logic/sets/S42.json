@@ -262,11 +262,11 @@
        "label": "n ="
       }
      ],
-     "rule": "isInteger(n) and n >= 1 and n <= 30 and mod(n, 3) == 0 and mod(n, 6) != 0",
+     "rule": "(isInteger(n) and n >= 1 and n <= 30 and mod(n, 3) == 0 and mod(n, 6) != 0) and isInteger(n) and n >= 0",
      "example_answer": {
       "n": 9
      },
-     "correct_answer": "any values that satisfy: isInteger(n) and n >= 1 and n <= 30 and mod(n, 3) == 0 and mod(n, 6) != 0 (example: n = 9)"
+     "correct_answer": "any values that satisfy: (isInteger(n) and n >= 1 and n <= 30 and mod(n, 3) == 0 and mod(n, 6) != 0) and isInteger(n) and n >= 0 (example: n = 9)"
     }
    ]
   },
@@ -298,12 +298,12 @@
        "label": "b ="
       }
      ],
-     "rule": "(a + b)^2 != a^2 + b^2",
+     "rule": "(a != 0 and b != 0) and isInteger(a) and a >= 0 and isInteger(b) and b >= 0",
      "example_answer": {
       "a": 1,
       "b": 1
      },
-     "correct_answer": "any values that satisfy: (a + b)^2 != a^2 + b^2 (example: a = 1, b = 1)"
+     "correct_answer": "any values that satisfy: (a != 0 and b != 0) and isInteger(a) and a >= 0 and isInteger(b) and b >= 0 (example: a = 1, b = 1)"
     },
     {
      "id": "S42-F1-Q2",
@@ -432,13 +432,13 @@
        "label": "c ="
       }
      ],
-     "rule": "isInteger(a) and isInteger(b) and isInteger(c) and a >= 2 and a <= 12 and b >= 2 and b <= 12 and c >= 2 and c <= 12 and mod(b * c, a) == 0 and mod(b, a) != 0 and mod(c, a) != 0",
+     "rule": "(isInteger(a) and isInteger(b) and isInteger(c) and a >= 2 and a <= 12 and b >= 2 and b <= 12 and c >= 2 and c <= 12 and mod(b * c, a) == 0 and mod(b, a) != 0 and mod(c, a) != 0) and isInteger(a) and a >= 0 and isInteger(b) and b >= 0 and isInteger(c) and c >= 0",
      "example_answer": {
       "a": 4,
       "b": 2,
       "c": 6
      },
-     "correct_answer": "any values that satisfy: isInteger(a) and isInteger(b) and isInteger(c) and a >= 2 and a <= 12 and b >= 2 and b <= 12 and c >= 2 and c <= 12 and mod(b * c, a) == 0 and mod(b, a) != 0 and mod(c, a) != 0 (example: a = 4, b = 2, c = 6)"
+     "correct_answer": "any values that satisfy: (isInteger(a) and isInteger(b) and isInteger(c) and a >= 2 and a <= 12 and b >= 2 and b <= 12 and c >= 2 and c <= 12 and mod(b * c, a) == 0 and mod(b, a) != 0 and mod(c, a) != 0) and isInteger(a) and a >= 0 and isInteger(b) and b >= 0 and isInteger(c) and c >= 0 (example: a = 4, b = 2, c = 6)"
     },
     {
      "id": "S42-F2-Q2",
@@ -515,11 +515,11 @@
      "choices": [
       {
        "letter": "A",
-       "text": "The claim is only about positive whole numbers, and -1 is not one."
+       "text": "Because a counterexample must be a large number."
       },
       {
        "letter": "B",
-       "text": "Because a counterexample must be a large number."
+       "text": "The claim is only about positive whole numbers, and -1 is not one."
       },
       {
        "letter": "C",
@@ -527,10 +527,10 @@
       },
       {
        "letter": "D",
-       "text": "Because 2 to the power -1 is greater than -1."
+       "text": "Because 2 to the power -1 is undefined."
       }
      ],
-     "correct_letter": "A",
+     "correct_letter": "B",
      "correct_answer": "The claim is only about positive whole numbers, and -1 is not one."
     }
    ]

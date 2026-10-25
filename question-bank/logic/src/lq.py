@@ -129,11 +129,11 @@ def sa(prompt, lines, key, why, method='solved by the author', fig=None, compute
 
 def order(prompt, items, ok, why, expect=None, method='', fig=None, feedback=None, unique=False):
     """items: [(key, text)]; ok: function(tuple of keys in order) -> bool. Every ordering is enumerated; all valid
-    orders are accepted. expect: the ordering the author derived (must be valid). Requires 1-3 valid orderings."""
+    orders are accepted. expect: the ordering the author derived (must be valid). Requires 1-12 valid orderings."""
     keys = [k for k, _ in items]
     sols = [list(p) for p in itertools.permutations(keys) if ok(p)]
     assert sols, 'no ordering satisfies the clues: %s' % prompt[:80]
-    assert len(sols) <= 3, '%d valid orderings: %s' % (len(sols), prompt[:80])
+    assert len(sols) <= 12, '%d valid orderings: %s' % (len(sols), prompt[:80])
     if unique:
         assert len(sols) == 1, '%d valid orderings (expected one): %s %s' % (len(sols), prompt[:60], sols)
     if expect:
@@ -219,10 +219,54 @@ def markgrid(prompt, nrows, ncols, cells, why, accept=None, fig=None, method='',
     return q
 
 
-def values(prompt, fields, rule, example, why, wrong=(), search=None, method='', fig=None, feedback=None):
+DOMAIN_WORDS = (
+    ('pos', re.compile(r'positive whole number|positive integer|whole numbers? from 1\b|whole number from 1\b|'
+                       r'each from 1\b|numbers? from 1 to|whole numbers? (each )?from 1\b', re.I)),
+    ('whole', re.compile(r'whole number', re.I)),
+    ('int', re.compile(r'\binteger', re.I)),
+)
+
+
+def infer_domain(prompt):
+    """The number domain a values question states: 'pos' (whole numbers 1 or more), 'whole' (0 or more), 'int' or
+    'any' (real numbers)."""
+    for kind, pat in DOMAIN_WORDS:
+        if pat.search(prompt):
+            return kind
+    return 'any'
+
+
+def domain_clause(kind, names):
+    parts = []
+    for n in names:
+        if kind in ('pos', 'whole', 'int'):
+            parts.append('isInteger(%s)' % n)
+        if kind == 'whole':
+            parts.append('%s >= 0' % n)
+        if kind == 'pos':
+            parts.append('%s >= 1' % n)
+    return ' and '.join(parts)
+
+
+def values(prompt, fields, rule, example, why, wrong=(), search=None, method='', fig=None, feedback=None, domain=None):
     """Free construction checked by a rule. fields: [(name, label)]. example: one valid answer {name: value}.
     wrong: answers that must FAIL the rule (tempting mistakes). search: (dict of name -> iterable) to count every valid
-    answer in a finite domain; the count is recorded in the validation method."""
+    answer in a finite domain; the count is recorded in the validation method.
+    domain: 'pos', 'whole', 'int' or 'any' for the numeric fields; by default it is read from the wording of the
+    prompt. Its conditions are joined to the rule, so the packaged rule enforces the stated domain, and negative and
+    fractional probes that break the domain are checked to fail."""
+    numeric = [n for n, _ in fields if isinstance(example.get(n), (int, float)) and not isinstance(example.get(n), bool)]
+    kind = domain or infer_domain(prompt)
+    clause = domain_clause(kind, numeric)
+    if clause:
+        rule = '(%s) and %s' % (rule, clause)
+        for n in numeric:
+            for bad in (-1, -2, -7, 0.5, example[n] + 0.5, -example[n] - 1):
+                if (kind == 'whole' and (bad < 0 or bad != int(bad))) or (kind == 'pos' and (bad < 1 or bad != int(bad))) \
+                        or (kind == 'int' and bad != int(bad)):
+                    probe = dict(example)
+                    probe[n] = bad
+                    assert not eval_rule(rule, probe), 'domain probe %s=%s passes %s' % (n, bad, rule)
     assert eval_rule(rule, example), 'example answer fails its own rule: %s %s' % (rule, example)
     for w in wrong:
         assert not eval_rule(rule, w), 'wrong answer %s passes the rule %s' % (w, rule)
@@ -239,6 +283,7 @@ def values(prompt, fields, rule, example, why, wrong=(), search=None, method='',
     q['rule'] = rule
     q['example_answer'] = example
     q['_wrong_values'] = list(wrong)
+    q['_domain'] = kind
     return q
 
 

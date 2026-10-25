@@ -12,10 +12,10 @@ Note: the answer key holds several answers per page, so its part boundaries can 
 | Logic - Part 2 of questions.pdf | 424-846 | S19-M-Q1 | S36-F2-Q5 | 405 |
 | Logic - Part 3 of questions.pdf | 847-1224 | S37-M-Q1 | S54-F2-Q5 | 360 |
 
-## Answer key (516 pages)
+## Answer key (518 pages)
 
 | File | Answer-key pages | First question | Last question | Questions |
 |---|---|---|---|---:|
 | Logic - Part 1 of answers.pdf | 1-174 | S1-M-Q1 | S18-F2-Q5 | 405 |
-| Logic - Part 2 of answers.pdf | 175-345 | S19-M-Q1 | S36-F2-Q5 | 405 |
-| Logic - Part 3 of answers.pdf | 346-516 | S37-M-Q1 | S54-F2-Q5 | 360 |
+| Logic - Part 2 of answers.pdf | 175-346 | S19-M-Q1 | S36-F2-Q5 | 405 |
+| Logic - Part 3 of answers.pdf | 347-518 | S37-M-Q1 | S54-F2-Q5 | 360 |

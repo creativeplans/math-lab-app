@@ -23,7 +23,7 @@
      "standard": "",
      "domain": "formal logic",
      "type": "mc",
-     "prompt": "Which argument is DEDUCTIVE (the conclusion must be true if the premises are true)?",
+     "prompt": "Which argument is a valid DEDUCTIVE argument (its conclusion must be true whenever its premises are true)?",
      "outcome": "LOGIC.ARGUMENT.02",
      "choices": [
       {
@@ -307,8 +307,8 @@
    "skill": "Certain or only likely?",
    "outcome": "LOGIC.ARGUMENT.02",
    "branch_mode": "prerequisite",
-   "relationship": "The difference between deduction and induction is whether the conclusion is certain. Students need to judge certainty first.",
-   "author_note": "The difference between deduction and induction is whether the conclusion is certain. Students need to judge certainty first.",
+   "relationship": "Deduction aims to make the conclusion certain; induction only makes it likely. Students need to judge certainty first.",
+   "author_note": "Deduction aims to make the conclusion certain; induction only makes it likely. Students need to judge certainty first.",
    "questions": [
     {
      "id": "S10-B2-Q1",
@@ -316,7 +316,7 @@
      "standard": "",
      "domain": "formal logic",
      "type": "tf",
-     "prompt": "\"Most tickets in the box are red, and I drew a ticket from the box\" makes \"my ticket is red\" certain.",
+     "prompt": "\"The sun has risen every morning on record, so it will rise tomorrow\" has a conclusion that is certain, not just likely.",
      "outcome": "LOGIC.ARGUMENT.02",
      "choices": [
       {
@@ -460,11 +460,11 @@
        "label": "n ="
       }
      ],
-     "rule": "not isPrime(n*n - n + 17) and n >= 1 and isInteger(n)",
+     "rule": "(not isPrime(n*n - n + 17) and n >= 1 and isInteger(n)) and isInteger(n) and n >= 0",
      "example_answer": {
       "n": 17
      },
-     "correct_answer": "any values that satisfy: not isPrime(n*n - n + 17) and n >= 1 and isInteger(n) (example: n = 17)"
+     "correct_answer": "any values that satisfy: (not isPrime(n*n - n + 17) and n >= 1 and isInteger(n)) and isInteger(n) and n >= 0 (example: n = 17)"
     },
     {
      "id": "S10-F1-Q2",
@@ -501,7 +501,7 @@
      "standard": "",
      "domain": "formal logic",
      "type": "tf",
-     "prompt": "A deductive argument with true premises can have a false conclusion.",
+     "prompt": "A valid deductive argument with true premises can have a false conclusion.",
      "outcome": "LOGIC.ARGUMENT.02",
      "choices": [
       {
@@ -665,11 +665,11 @@
        "label": "n ="
       }
      ],
-     "rule": "isPrime(n) and not isPrime(2^n - 1) and n <= 20",
+     "rule": "(isPrime(n) and not isPrime(2^n - 1) and n <= 20) and isInteger(n) and n >= 0",
      "example_answer": {
       "n": 11
      },
-     "correct_answer": "any values that satisfy: isPrime(n) and not isPrime(2^n - 1) and n <= 20 (example: n = 11)"
+     "correct_answer": "any values that satisfy: (isPrime(n) and not isPrime(2^n - 1) and n <= 20) and isInteger(n) and n >= 0 (example: n = 11)"
     },
     {
      "id": "S10-F2-Q5",

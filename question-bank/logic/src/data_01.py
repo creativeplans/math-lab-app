@@ -43,7 +43,8 @@ def q_s1_vertical():
     assert len({normalize(v) for v in cand.values()}) == 4
     items = [shape_panel(S1A, 4, 3, mirror='right')] + [figs.cells_canvas(set(normalize(cand[L])), 4, 4) for L in 'ABCD']
     svg = choice_figure(items, ['Shape', 'A', 'B', 'C', 'D'])
-    return figmc('The shaded shape is reflected in the dashed mirror line on its right. Which figure shows its mirror image? '
+    return figmc('The shaded shape (in the box labeled Shape) is reflected left to right in a vertical mirror line. Which figure '
+                 'shows its mirror image? '
                  '(Only the shape matters, not where it sits in its box.)', 4, 'C',
                  {'A': 'a half-turn of the shape, not a reflection', 'B': 'the reflection in a horizontal line (top and bottom swapped)',
                   'D': 'a quarter-turn of the shape'},
@@ -256,8 +257,8 @@ def q_s1_both_axes():
     g.line(0, 4 + 3 * 22, g.w, 4 + 3 * 22, dash='5 4', sw=2.4)
     return markgrid('A 6 by 6 grid has two dashed mirror lines: a vertical one between columns 3 and 4 and a horizontal one '
                     'between rows 3 and 4. The figure must look the same in BOTH mirrors. Four cells are already shaded in the '
-                    'top-left quarter: (1,1), (1,2), (2,2) and (3,3). Mark every shaded cell of the completed figure, including '
-                    'the four given cells.', 6, 6, sorted(full),
+                    'top-left quarter: (1,1), (1,2), (2,2) and (3,3). Add as few shaded cells as possible. Mark every shaded '
+                    'cell of that smallest completed figure, including the four given cells.', 6, 6, sorted(full),
                     'Each given cell (r, c) also needs its images (r, 7 - c), (7 - r, c) and (7 - r, 7 - c). That gives 4 x 4 = 16 '
                     'cells, one copy of the pattern in each quarter.', fig=(g.svg(), 'A 6 by 6 grid with four shaded cells in '
                                                                                'the top-left quarter and two dashed mirror lines.'),

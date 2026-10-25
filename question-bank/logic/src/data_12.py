@@ -20,9 +20,10 @@ def s29():
                     [('11', '11 is prime, so it agrees with the claim'), ('31', '31 is prime'), ('12', 'does not end in 1')],
                     '21 ends in 1 and 21 = 3 x 7.',
                     check=lambda t: int(t) % 10 == 1 and any(int(t) % d == 0 for d in range(2, int(t)))),
-                 values('Give real numbers a and b that are a counterexample to "For all real numbers a and b, (a + b) squared '
-                        '= a squared + b squared."', [('a', 'a ='), ('b', 'b =')], '(a + b)^2 != a^2 + b^2', {'a': 1, 'b': 1},
-                        '(1 + 1) squared = 4 but 1 + 1 = 2. Any a and b with a x b not 0 works.',
+                 values('Give integers a and b (integers are real numbers) that are a counterexample to "For all real numbers a and b, (a + b) squared '
+                        '= a squared + b squared."', [('a', 'a ='), ('b', 'b =')], 'a != 0 and b != 0', {'a': 1, 'b': 1},
+                        '(a + b) squared - (a squared + b squared) = 2ab, so the claim fails exactly when a and b are both nonzero. '
+                        'For example a = 1, b = 1: 4 is not 2.',
                         wrong=[{'a': 0, 'b': 5}, {'a': 3, 'b': 0}]),
                  tf('One example where a statement is true proves "Every number has this property."', False,
                     'An example (a witness) proves only a "some" statement. An "every" statement needs an argument for all cases; '
@@ -88,7 +89,8 @@ def s29():
                     '4, 1.', check=lambda t: t.startswith('No: squares') and not any(n * n % 10 == 2 for n in range(1, 101))),
                  values('Give whole numbers a, b and c (each from 1 to 20) with a squared + b squared = c squared and a < b.',
                         [('a', 'a ='), ('b', 'b ='), ('c', 'c =')],
-                        'a^2 + b^2 == c^2 and a < b and a >= 1 and c <= 20 and isInteger(a) and isInteger(b) and isInteger(c)',
+                        'a^2 + b^2 == c^2 and a < b and a >= 1 and a <= 20 and b >= 1 and b <= 20 and c >= 1 and c <= 20 and isInteger(a) and '
+                        'isInteger(b) and isInteger(c)',
                         {'a': 3, 'b': 4, 'c': 5}, 'For example 3, 4, 5; 5, 12, 13; 6, 8, 10; 8, 15, 17; 9, 12, 15; 12, 16, 20.',
                         wrong=[{'a': 2, 'b': 3, 'c': 4}, {'a': 4, 'b': 3, 'c': 5}]),
                  sa('How many counterexamples to "Every odd number from 1 to 30 is prime" are there in that range?',

@@ -57,11 +57,11 @@
        "label": "Number ="
       }
      ],
-     "rule": "isInteger(n) and n >= 10 and n <= 99 and n == 3 * (floor(n / 10) + mod(n, 10))",
+     "rule": "(isInteger(n) and n >= 10 and n <= 99 and n == 3 * (floor(n / 10) + mod(n, 10))) and isInteger(n) and n >= 0",
      "example_answer": {
       "n": 27
      },
-     "correct_answer": "any values that satisfy: isInteger(n) and n >= 10 and n <= 99 and n == 3 * (floor(n / 10) + mod(n, 10)) (example: n = 27)"
+     "correct_answer": "any values that satisfy: (isInteger(n) and n >= 10 and n <= 99 and n == 3 * (floor(n / 10) + mod(n, 10))) and isInteger(n) and n >= 0 (example: n = 27)"
     },
     {
      "id": "S36-M-Q4",
@@ -423,11 +423,11 @@
        "label": "Amount ="
       }
      ],
-     "rule": "n == 1 or n == 2 or n == 4 or n == 7",
+     "rule": "(n == 1 or n == 2 or n == 4 or n == 7) and isInteger(n) and n >= 0",
      "example_answer": {
       "n": 7
      },
-     "correct_answer": "any values that satisfy: n == 1 or n == 2 or n == 4 or n == 7 (example: n = 7)"
+     "correct_answer": "any values that satisfy: (n == 1 or n == 2 or n == 4 or n == 7) and isInteger(n) and n >= 0 (example: n = 7)"
     }
    ]
   }

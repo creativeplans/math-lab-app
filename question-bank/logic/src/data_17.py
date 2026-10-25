@@ -160,6 +160,10 @@ def pct(a, b):
     return Fraction(100 * a, b)
 
 
+CLINICS = ('Two clinics treat a condition. Clinic A: 100 mild cases (90 recover) and 20 severe cases (8 recover). '
+           'Clinic B: 20 mild cases (19 recover) and 100 severe cases (50 recover).')
+
+
 def s50():
     return S(50, 'Judge whether evidence supports a claim: samples, comparisons and correlation',
              main=[
@@ -244,7 +248,7 @@ def s50():
                     'all Clinic A patients recover, to the nearest whole percent?', 'Percent:', str(round(98 / 120 * 100)),
                     '(90 + 8) / 120 = 98 / 120, about 81.7%, which rounds to 82%.',
                     compute=lambda: str(round(98 / 120 * 100))),
-                 mc('In the clinics above, Clinic A has the higher overall recovery rate (about 82% to 58%). Which statement '
+                 mc(CLINICS + ' Overall, Clinic A has the higher recovery rate (about 82% to 58%). Which statement '
                     'is true?', 'Clinic B has the higher recovery rate for mild cases AND for severe cases.',
                     [('Clinic A is better for both mild and severe cases.', 'B: 95% mild, 50% severe; A: 90% mild, 40% '
                                                                             'severe'),
@@ -253,14 +257,14 @@ def s50():
                     'A treats mostly mild cases, which recover more often, so its combined rate is higher even though B '
                     'does better within each group.',
                     check=lambda t: t.startswith('Clinic B') and pct(19, 20) > pct(90, 100) and pct(50, 100) > pct(8, 20)),
-                 tf('In the clinics above, comparing only the overall recovery rates gives a fair comparison of the clinics.',
+                 tf(CLINICS + ' Comparing only the overall recovery rates gives a fair comparison of the clinics.',
                     False, 'The clinics treat very different mixes of cases. Comparing within each group is fairer.'),
                  sa('A test for a rare condition is positive for 95 of every 100 people who have it and for 5 of every 100 '
                     'people who do not. In a town of 10,000 people, 100 have the condition. About how many people in the '
                     'town test positive in all?', 'People:', str(95 + 5 * 99),
                     'Have it: 95 of 100 test positive. Do not have it: 5% of 9,900 = 495. Total 590.',
                     compute=lambda: str(95 + 9900 * 5 // 100)),
-                 mc('In the town above, 590 people test positive and 95 of them have the condition. What fraction of the '
+                 mc('Of 590 people who test positive for a condition, 95 actually have it. What fraction of the '
                     'positive tests are correct?', 'About 16%', [('About 95%', '95% is the rate among people who have the '
                                                                              'condition, not among positive tests'),
                                                                 ('About 5%', '5% is the false-positive rate among people '

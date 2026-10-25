@@ -566,11 +566,11 @@
        "label": "n ="
       }
      ],
-     "rule": "(n % 3 == 0) != isOdd(n) and isInteger(n)",
+     "rule": "((n % 3 == 0) != isOdd(n) and isInteger(n)) and isInteger(n) and n >= 0",
      "example_answer": {
       "n": 6
      },
-     "correct_answer": "any values that satisfy: (n % 3 == 0) != isOdd(n) and isInteger(n) (example: n = 6)"
+     "correct_answer": "any values that satisfy: ((n % 3 == 0) != isOdd(n) and isInteger(n)) and isInteger(n) and n >= 0 (example: n = 6)"
     }
    ]
   },
@@ -666,12 +666,12 @@
        "label": "b ="
       }
      ],
-     "rule": "(isEven(a + b) == isEven(a)) and a != b and a >= 1 and a <= 9 and b >= 1 and b <= 9",
+     "rule": "((isEven(a + b) == isEven(a)) and a != b and a >= 1 and a <= 9 and b >= 1 and b <= 9) and isInteger(a) and a >= 1 and isInteger(b) and b >= 1",
      "example_answer": {
       "a": 2,
       "b": 4
      },
-     "correct_answer": "any values that satisfy: (isEven(a + b) == isEven(a)) and a != b and a >= 1 and a <= 9 and b >= 1 and b <= 9 (example: a = 2, b = 4)"
+     "correct_answer": "any values that satisfy: ((isEven(a + b) == isEven(a)) and a != b and a >= 1 and a <= 9 and b >= 1 and b <= 9) and isInteger(a) and a >= 1 and isInteger(b) and b >= 1 (example: a = 2, b = 4)"
     },
     {
      "id": "S16-F2-Q5",

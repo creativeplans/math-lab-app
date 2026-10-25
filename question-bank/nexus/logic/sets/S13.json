@@ -316,7 +316,7 @@
      "standard": "",
      "domain": "formal logic",
      "type": "tf",
-     "prompt": "Having fuel is the only thing a gas car needs in order to run.",
+     "prompt": "A concert lets in only people who hold a ticket. Holding a ticket is NECESSARY for getting in.",
      "outcome": "LOGIC.CONDITIONAL.02",
      "choices": [
       {
@@ -328,8 +328,8 @@
        "text": "False"
       }
      ],
-     "correct_letter": "B",
-     "correct_answer": "False",
+     "correct_letter": "A",
+     "correct_answer": "True",
      "no_shuffle": true
     },
     {
@@ -460,11 +460,11 @@
        "label": "n ="
       }
      ],
-     "rule": "isEven(n) and n % 6 != 0 and isInteger(n)",
+     "rule": "(isEven(n) and n % 6 != 0 and isInteger(n)) and isInteger(n) and n >= 0",
      "example_answer": {
       "n": 4
      },
-     "correct_answer": "any values that satisfy: isEven(n) and n % 6 != 0 and isInteger(n) (example: n = 4)"
+     "correct_answer": "any values that satisfy: (isEven(n) and n % 6 != 0 and isInteger(n)) and isInteger(n) and n >= 0 (example: n = 4)"
     },
     {
      "id": "S13-F1-Q2",
@@ -694,11 +694,11 @@
        "label": "n ="
       }
      ],
-     "rule": "n % 3 == 0 and n % 9 != 0 and isInteger(n)",
+     "rule": "(n % 3 == 0 and n % 9 != 0 and isInteger(n)) and isInteger(n) and n >= 0",
      "example_answer": {
       "n": 6
      },
-     "correct_answer": "any values that satisfy: n % 3 == 0 and n % 9 != 0 and isInteger(n) (example: n = 6)"
+     "correct_answer": "any values that satisfy: (n % 3 == 0 and n % 9 != 0 and isInteger(n)) and isInteger(n) and n >= 0 (example: n = 6)"
     }
    ]
   }

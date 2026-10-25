@@ -43,11 +43,9 @@ def s21():
                        'last.', [('A', 'If the trail is icy, the park closes.'), ('B', 'If the park closes, the race is '
                                                                                       'cancelled.'),
                                  ('C', 'The trail is icy.'), ('D', 'So the park closes.'), ('E', 'So the race is cancelled.')],
-                       lambda p: p[-1] == 'E' and p.index('D') > max(p.index('A'), p.index('C'))
-                       and p.index('E') > max(p.index('B'), p.index('D')) and p.index('D') < p.index('E')
-                       and list(p) in (['A', 'C', 'D', 'B', 'E'], ['C', 'A', 'D', 'B', 'E'], ['A', 'B', 'C', 'D', 'E']),
-                       'Use the first rule with the fact to get "the park closes", then the second rule to get the conclusion. '
-                       'The two rules may also be stated first.', expect=['A', 'C', 'D', 'B', 'E']),
+                       lambda p: p[-1] == 'E' and p.index('D') > max(p.index('A'), p.index('C')),
+                       'D needs A and C before it; E needs B and D before it and comes last. The premises A, B and C may be '
+                       'stated in any order that respects this, so all 8 such orders are accepted.', expect=['A', 'C', 'D', 'B', 'E']),
                  mc('Premises: "The key is in the drawer or in the coat." "The key is not in the drawer." What follows?',
                     'The key is in the coat.', [('The key is in the drawer.', 'contradicts a premise'),
                                                 ('The key is in neither place.', 'contradicts the first premise'),
@@ -77,7 +75,7 @@ def s21():
                    ]),
                  B('Using "or" and "not"', 'prerequisite', 'Disjunctive syllogism needs inclusive "or" and negation.',
                    outcome='LOGIC.CONNECTIVE.02', qs=[
-                       tf('"P or Q" is true and P is true. Then Q must be false.', False, 'Inclusive "or" allows both parts to be true, so Q could be true or false.'),
+                       tf('"P or Q" is true and Q is false. Then P is true.', True, 'At least one part is true, and it is not Q, so P is true.'),
                        tf('"P or Q" is true and P is true. Then Q is false.', False, 'Inclusive or allows both.'),
                        mc('"The meeting is on Monday or Tuesday." It is not on Monday. When is it?', 'Tuesday',
                           [('Monday', 'ruled out'), ('neither day', 'the premise says one of them'),
@@ -89,15 +87,17 @@ def s21():
                    ]),
              ],
              f1=FW('Longer chains of valid steps', 'Harder: combine several forms in one argument.', [
-                 mc('Premises: "If it is a holiday, the bank is closed." "If the bank is closed, Mara cannot deposit." "Mara '
-                    'deposited." What follows?', 'It is not a holiday.', [('It is a holiday.', 'contradicts the premises'),
-                                                                          ('The bank is closed.', 'contradicts the premises'),
+                 mc('All three premises are about the same day. Premises: "If today is a holiday, the bank is closed today." "If the '
+                    'bank is closed today, Mara cannot make a deposit there today." "Mara made a deposit there today." What '
+                    'follows?', 'Today is not a holiday.', [('Today is a holiday.', 'contradicts the premises'),
+                                                                          ('The bank is closed today.', 'contradicts the premises'),
                                                                           ('Nothing follows.', 'two steps of modus tollens '
                                                                                                'give a conclusion')],
-                    'Mara deposited, so the bank was not closed (modus tollens); so it is not a holiday (modus tollens again).',
+                    'Mara made a deposit there today, so the bank was not closed today (modus tollens); so today is not a holiday '
+                    '(modus tollens again).',
                     check=lambda t: valid([lambda h, c, d: imp(h, c), lambda h, c, d: imp(c, not d), lambda h, c, d: d],
-                                          {'It is not a holiday.': lambda h, c, d: not h, 'It is a holiday.': lambda h, c, d: h,
-                                           'The bank is closed.': lambda h, c, d: c,
+                                          {'Today is not a holiday.': lambda h, c, d: not h, 'Today is a holiday.': lambda h, c, d: h,
+                                           'The bank is closed today.': lambda h, c, d: c,
                                            'Nothing follows.': lambda h, c, d: False}[t], 3)),
                  tf('Valid: "P or Q. If P then R. If Q then R. So R."', True, 'Either way R follows (proof by cases).',
                     check=lambda: valid([lambda p, q, r: p or q, lambda p, q, r: imp(p, r), lambda p, q, r: imp(q, r)],

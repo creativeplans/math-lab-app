@@ -103,11 +103,11 @@
        "label": "n ="
       }
      ],
-     "rule": "(isEven(n) or n > 20) and not (isEven(n) and n > 20) and isInteger(n)",
+     "rule": "((isEven(n) or n > 20) and not (isEven(n) and n > 20) and isInteger(n)) and isInteger(n) and n >= 0",
      "example_answer": {
       "n": 4
      },
-     "correct_answer": "any values that satisfy: (isEven(n) or n > 20) and not (isEven(n) and n > 20) and isInteger(n) (example: n = 4)"
+     "correct_answer": "any values that satisfy: ((isEven(n) or n > 20) and not (isEven(n) and n > 20) and isInteger(n)) and isInteger(n) and n >= 0 (example: n = 4)"
     },
     {
      "id": "S8-M-Q5",
@@ -545,7 +545,7 @@
       },
       {
        "letter": "C",
-       "text": "P is false or Q is false."
+       "text": "P is true or Q is true."
       },
       {
        "letter": "D",
@@ -598,12 +598,12 @@
        "label": "b ="
       }
      ],
-     "rule": "((a > b) != isEven(a + b)) and a >= 1 and a <= 9 and b >= 1 and b <= 9 and isInteger(a) and isInteger(b)",
+     "rule": "(((a > b) != isEven(a + b)) and a >= 1 and a <= 9 and b >= 1 and b <= 9 and isInteger(a) and isInteger(b)) and isInteger(a) and a >= 0 and isInteger(b) and b >= 0",
      "example_answer": {
       "a": 5,
       "b": 2
      },
-     "correct_answer": "any values that satisfy: ((a > b) != isEven(a + b)) and a >= 1 and a <= 9 and b >= 1 and b <= 9 and isInteger(a) and isInteger(b) (example: a = 5, b = 2)"
+     "correct_answer": "any values that satisfy: (((a > b) != isEven(a + b)) and a >= 1 and a <= 9 and b >= 1 and b <= 9 and isInteger(a) and isInteger(b)) and isInteger(a) and a >= 0 and isInteger(b) and b >= 0 (example: a = 5, b = 2)"
     },
     {
      "id": "S8-F2-Q3",

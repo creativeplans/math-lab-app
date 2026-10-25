@@ -91,7 +91,8 @@ def s13():
                  B('Necessary means required; sufficient means enough', 'prerequisite',
                    'Students who mix up "required" and "enough" reverse every translation. Everyday examples fix the meaning.',
                    qs=[
-                       tf('Having fuel is the only thing a gas car needs in order to run.', False, 'A car with fuel can still fail to run, for example with a dead battery. Fuel is necessary, not sufficient.'),
+                       tf('A concert lets in only people who hold a ticket. Holding a ticket is NECESSARY for getting in.', True, 'Without a '
+                          'ticket no one gets in, so a ticket is required. (It may not be sufficient: the doors could be closed.)'),
                        tf('Having fuel is sufficient for a gas car to run.', False, 'A car with fuel may still not run (for '
                                                                                    'example, a dead battery).'),
                        mc('Which is SUFFICIENT for a whole number to be even?', 'It is a multiple of 10.',

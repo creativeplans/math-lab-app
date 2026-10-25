@@ -3,9 +3,9 @@ import itertools
 from functools import lru_cache
 from lq import S, B, FW, mc, tf, sa, values, lesson
 
-FAMILY = ('Rule family: every sequence here follows exactly one of these rules. (1) Add the same number each time. '
-          '(2) Multiply by the same number each time. (3) Add amounts that grow by the same number each time (for example '
-          '+1, +2, +3, ...).')
+FAMILY = ('Rule family: the complete sequence is made by one of these rule types, though the terms shown may fit more '
+          'than one. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that '
+          'grow by the same nonzero number each time (for example +1, +2, +3, ...).')
 LETTERS = 'Letters are numbered by their place in the alphabet: A = 1, B = 2, ..., Z = 26.'
 
 
@@ -351,10 +351,10 @@ def s54():
                             'the one heavier coin?', 'Coins:', str(max(n for n in range(1, 200) if need(n) <= 4)),
                     '4 weighings have 3 x 3 x 3 x 3 = 81 outcome patterns, and splitting into thirds each time handles 81 '
                     'coins.', compute=lambda: str(max(n for n in range(1, 200) if need(n) <= 4))),
-                 mc(SCALE + ' There are 6 coins and one is heavier. You weigh 2 against 2 and the left side goes down. What '
-                            'should the next weighing be?', 'One left-side coin against the other left-side coin',
-                    [('One left-side coin against a right-side coin', 'the right-side coins are already known to be genuine, '
-                                                                     'so this tests only one suspect'),
+                 mc(SCALE + ' There are 6 coins and one is heavier. You weigh 2 against 2 and the left side goes down. Which next '
+                            'weighing is sure to identify the heavy coin?', 'One left-side coin against the other left-side coin',
+                    [('One right-side coin against one coin that was left off the scale', 'both of those coins are genuine, so '
+                                                                                   'they balance and nothing is learned'),
                      ('The two coins left off against each other', 'those coins are genuine; the heavy coin was on the left'),
                      ('All six coins again, 3 against 3', 'that repeats work and may not finish')],
                     'Only the 2 left-side coins are suspects. Weigh them against each other: the one that goes down is '

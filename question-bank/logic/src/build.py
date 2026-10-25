@@ -28,7 +28,7 @@ import plan  # noqa: E402
 ROOT = os.path.dirname(HERE)                       # question-bank/logic
 QB = os.path.dirname(ROOT)                         # question-bank
 PKG = os.path.join(QB, 'nexus', 'logic')
-VERSION = '1.0.0'
+VERSION = '1.1.0'
 DATE = '2026-10-25'
 TITLE = 'Logic: High School Logic and Reasoning Puzzles'
 SECTION_NAME = {'M': 'MAIN', 'F1': 'FORWARD 1: ADVANCED APPLICATION', 'F2': 'FORWARD 2: EXPERT CHALLENGE'}

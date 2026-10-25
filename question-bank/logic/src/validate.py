@@ -20,8 +20,8 @@ ROOT = build.ROOT
 PKG = build.PKG
 
 PLACEHOLDER = re.compile(r'placeholder|TODO|TBD|\bcheck the key\b|see the key|\?\?|\.\.\. check|check\)$', re.I)
-STANDALONE = re.compile(r'\b(the (puzzle|question|figure|grid|table) above|previous question|question above|'
-                        r'as before|from the last question)\b', re.I)
+STANDALONE = re.compile(r'\b(the \w+ above|above,|previous question|question above|as before|from the last question|'
+                        r'earlier question)\b', re.I)
 
 
 def main():
@@ -156,6 +156,41 @@ def main():
     check('Every question has a written solution', not no_sol, no_sol or 'all present')
     no_why = [r['id'] for r in mcs if any(len((w['why_wrong'] or '').strip()) < 6 for w in r['wrong_choices'])]
     check('Every wrong multiple-choice option has a reason it is wrong', not no_why, no_why or 'all present')
+
+    # ---------------------------------------------------------- rule-graded answers: stated domain enforced
+    sys.path.insert(0, HERE)
+    from lq import eval_rule, infer_domain
+    leaks, n_vals = [], 0
+    for r in recs:
+        if r['type'] != 'values':
+            continue
+        n_vals += 1
+        pf = r['package_fields']
+        ex = pf['example_answer']
+        kind = infer_domain(r['prompt'])
+        if not eval_rule(pf['rule'], ex):
+            leaks.append((r['id'], 'example fails'))
+        if kind == 'any':
+            continue
+        for k, v in ex.items():
+            if not isinstance(v, (int, float)) or isinstance(v, bool):
+                continue
+            probes = [v + 0.5, 0.5, -1, -2, -v - 1, -9]
+            for b in probes:
+                bad = b != int(b) or (kind == 'whole' and b < 0) or (kind == 'pos' and b < 1)
+                if bad and eval_rule(pf['rule'], dict(ex, **{k: b})):
+                    leaks.append((r['id'], k, b))
+    check('Every rule-graded (values) answer rejects negative and fractional inputs whenever the question asks for whole '
+          'numbers or integers (packaged rule tested)', not leaks, '%d values questions; problems: %s' % (n_vals, leaks or 'none'))
+    bad_orders = []
+    for r in recs:
+        if r['type'] == 'order':
+            pf = r['package_fields']
+            accepted = [pf['correct_order']] + (pf.get('accept_orders') or [])
+            if len({tuple(a) for a in accepted}) != len(accepted):
+                bad_orders.append(r['id'])
+    check('Every ordering question lists each accepted order once (all orders allowed by its dependency rule were '
+          'enumerated at build time)', not bad_orders, bad_orders or 'none')
 
     # ---------------------------------------------------------- package and figures
     set_files = sorted(os.listdir(os.path.join(PKG, 'sets')))

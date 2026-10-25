@@ -215,6 +215,7 @@ Regenerate there rather than editing these files by hand.
 | `COVERAGE.md` | Every set with kind, genre, outcome, practices, standard and branches; the structure rules; question types |
 | `SOURCE_MAP.md` | Each deck puzzle genre and the sets that teach it (all questions are original) |
 | `VALIDATION.md` | Every validation check and its result |
+| `CHANGELOG.md` | What changed in this version, by question ID |
 | `pdf/` | The question collection and the answer key in {nparts} parts each, with `PART_INDEX.md` (page mapping) |
 | `MANIFEST.json` | Every file with its size and SHA-256 |
 
@@ -285,6 +286,7 @@ def main():
     assert all(r['question_page'] for r in recs), 'run build.py with PDFs first'
     coverage(recs)
     source_map()
+    write_both('CHANGELOG.md', open(os.path.join(HERE, 'CHANGELOG.md'), encoding='utf-8').read())
     rows, qp, kp = split_pdfs(recs)
     readme(recs, len(rows), qp, kp, checks)
     nfiles = manifest()

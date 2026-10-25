@@ -1,6 +1,6 @@
 # Logic collection: validation report
 
-Collection LOGIC version 1.0.0 (2026-10-25). 54 sets, 1170 questions, 108 figures.
+Collection LOGIC version 1.1.0 (2026-10-25). 54 sets, 1170 questions, 108 figures.
 
 Question types: grid 25, mark 22, mc 397, order 39, sa 234, tf 335, truth_table 23, values 95.
 
@@ -22,14 +22,16 @@ Questions whose key was confirmed by code during the build (enumeration, search,
 | Supporting practices are only MP1, MP2, MP3, MP6, MP7, MP8 | PASS | all valid |
 | Every multiple-choice question has 4 different choices | PASS | 397 checked; problems: none |
 | Every multiple-choice key letter is one of its choices | PASS | all valid |
-| Multiple-choice key letters are balanced (largest minus smallest count at most 4% of MC items) | PASS | {'A': 100, 'B': 99, 'C': 99, 'D': 99} |
-| True/false answers are balanced (within 10%) | PASS | True 180, False 155 |
+| Multiple-choice key letters are balanced (largest minus smallest count at most 4% of MC items) | PASS | {'A': 99, 'B': 100, 'C': 99, 'D': 99} |
+| True/false answers are balanced (within 10%) | PASS | True 182, False 153 |
 | No placeholder or unfinished text in prompts, choices, solutions or wrong-choice reasons | PASS | none |
 | Every question stands alone (no reference to another question or "the puzzle above") | PASS | none |
 | No two questions have the same prompt | PASS | none |
 | Lesson worked examples are different from every scored question | PASS | none |
 | Every question has a written solution | PASS | all present |
 | Every wrong multiple-choice option has a reason it is wrong | PASS | all present |
+| Every rule-graded (values) answer rejects negative and fractional inputs whenever the question asks for whole numbers or integers (packaged rule tested) | PASS | 95 values questions; problems: none |
+| Every ordering question lists each accepted order once (all orders allowed by its dependency rule were enumerated at build time) | PASS | none |
 | The import package has one set file per set | PASS | 54 files |
 | Every figure file exists and has a text description | PASS | 108 figures; problems: none |
 | All figures are grayscale | PASS | all grayscale |
@@ -40,7 +42,7 @@ Questions whose key was confirmed by code during the build (enumeration, search,
 |---|---|---|
 | No run of 4 or more identical key letters in collection order | PASS | 0 runs |
 | No section has 3 identical key letters in a row | PASS | none |
-| Length cue: the key is the unique longest choice in at most 40% of text multiple-choice items | PASS | 126 of 388 (32%; 25% would be chance) |
+| Length cue: the key is the unique longest choice in at most 40% of text multiple-choice items | PASS | 124 of 388 (32%; 25% would be chance) |
 
 ## What the build itself verified
 

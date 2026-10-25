@@ -154,7 +154,7 @@ def s25():
                                      'Move E from the right end to the left end.': 'E' + 'ROP'}[t] == 'OPER'),
                  sa(TILE + ' One move swaps two tiles that are next to each other. What is the least number of moves that turn '
                            'C, A, B, E, D into A, B, C, D, E?', 'Moves:', '3',
-                    'Pairs out of order: (C, A), (C, B), (E, D): 3. Each swap fixes one pair, so 3 moves are needed and '
+                    'Pairs out of order: (C, A), (C, B), (E, D): 3. Each swap changes that count by one, so 3 moves are needed and '
                     'enough: swap C and A, swap C and B, swap E and D.', compute=lambda: str(bfs('CABED', 'ABCDE', ADJ))),
                  tf(TILE + ' Reversing the whole row twice puts every tile back where it started.', True,
                     'The second reversal undoes the first.', check=lambda: 'WORD'[::-1][::-1] == 'WORD'),
@@ -165,8 +165,9 @@ def s25():
                      lesson=lesson('Number the positions',
                                    ['Write the row, and under it the position numbers 1, 2, 3, ... from the left.',
                                     'Do one move at a time and rewrite the whole row after each move.',
-                                    'To find the fewest swaps of neighbors, count the pairs that are in the wrong order: each '
-                                    'swap of neighbors fixes exactly one such pair.'],
+                                    'To find the fewest swaps of neighbors, count the pairs that are in the wrong order. Each '
+                                    'swap of neighbors changes that count by exactly one, and swapping a neighboring pair '
+                                    'that is out of order lowers it by one.'],
                                    'Worked example (a different row)',
                                    ['Row: B, A, D, C. Fewest swaps of neighbors to reach A, B, C, D?'],
                                    ['Pairs in the wrong order: (B, A) and (D, C). That is 2.',

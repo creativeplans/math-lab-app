@@ -222,7 +222,7 @@ def q9_f2_chiral():
 def s10():
     return S(10, 'Tell deductive conclusions from inductive ones',
              main=[
-                 mc('Which argument is DEDUCTIVE (the conclusion must be true if the premises are true)?',
+                 mc('Which argument is a valid DEDUCTIVE argument (its conclusion must be true whenever its premises are true)?',
                     'Every prime number greater than 2 is odd. 31 is a prime number greater than 2. So 31 is odd.',
                     [('The last 20 buses were on time. So the next bus will be on time.', 'past cases make the conclusion '
                                                                                          'likely, not certain'),
@@ -265,11 +265,12 @@ def s10():
                         [('12 is even', 'the reason after "since"'), ('12 is odd', 'false and not stated'),
                          ('2 is even', 'not stated')], 'The claim supported by the reason.'),
                  ]),
-                 B('Certain or only likely?', 'prerequisite', 'The difference between deduction and induction is whether the '
-                                                             'conclusion is certain. Students need to judge certainty first.',
+                 B('Certain or only likely?', 'prerequisite', 'Deduction aims to make the conclusion '
+                                                             'certain; induction only makes it likely. Students need to judge certainty first.',
                    qs=[
-                       tf('"Most tickets in the box are red, and I drew a ticket from the box" makes "my ticket is red" certain.',
-                          False, 'If only most tickets are red, the drawn ticket could be one of the others, so "my ticket is red" is likely but not certain.'),
+                       tf('"The sun has risen every morning on record, so it will rise tomorrow" has a conclusion that is certain, '
+                          'not just likely.', False, 'A past pattern makes the conclusion very likely, but the premises do not '
+                          'guarantee it. That is an inductive argument.'),
                        tf('"Most tickets in the box are red, and I drew a ticket" makes "my ticket is red" certain.', False,
                           'It is likely, not certain.'),
                        mc('Which word signals that a conclusion is only likely?', 'probably',
@@ -296,7 +297,7 @@ def s10():
                                                                  ('30', 'one too few'), ('36', 'not the count')],
                     'The region count is 1 + C(n, 2) + C(n, 4): for n = 6, 1 + 15 + 15 = 31. The early pattern of doubling '
                     'was only inductive evidence.', check=lambda t: int(t) == 1 + 15 + 15),
-                 tf('A deductive argument with true premises can have a false conclusion.', False,
+                 tf('A valid deductive argument with true premises can have a false conclusion.', False,
                     'In a valid deductive argument, true premises guarantee a true conclusion.'),
                  mc('Which statement is the strongest inductive argument?',
                     'All 500 randomly chosen bolts from the batch passed, so nearly all bolts in the batch pass.',

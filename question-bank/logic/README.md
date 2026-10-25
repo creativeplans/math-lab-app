@@ -1,6 +1,6 @@
 # Logic: High School Logic and Reasoning Puzzles
 
-Untangle The Nexus question collection `LOGIC`, version 1.0.0 (2026-10-25). 54 sets, 1170 questions, 108 figure
+Untangle The Nexus question collection `LOGIC`, version 1.1.0 (2026-10-25). 54 sets, 1170 questions, 108 figure
 files. Generated from `question-bank/logic/src` (plan.py and data_*.py) by build.py, validate.py and report.py.
 Regenerate there rather than editing these files by hand.
 
@@ -26,6 +26,7 @@ Regenerate there rather than editing these files by hand.
 | `COVERAGE.md` | Every set with kind, genre, outcome, practices, standard and branches; the structure rules; question types |
 | `SOURCE_MAP.md` | Each deck puzzle genre and the sets that teach it (all questions are original) |
 | `VALIDATION.md` | Every validation check and its result |
+| `CHANGELOG.md` | What changed in this version, by question ID |
 | `pdf/` | The question collection and the answer key in 3 parts each, with `PART_INDEX.md` (page mapping) |
 | `MANIFEST.json` | Every file with its size and SHA-256 |
 
@@ -49,10 +50,12 @@ against `correct_answer`.
 
 ## Checks run for this version
 
-- Validator (src/validate.py): 23 required checks, all PASS; 3 balance and style checks, all PASS. Details in VALIDATION.md.
-- Game importer, check-only mode (tools/import-collection/import.ts --check): 54 sets, 1170 questions, 0 invalid, 0 warnings: "the bank is valid".
-- Game response checks (src/tools/game_checks.ts, using the game's own response checkers): 204 interactive questions (order, grid, truth table, mark, values), 617 keyed and wrong responses, 0 problems.
-- Build-time solvers: every ordering and grid enumerated, every truth table and Venn region computed, every rule-checked answer tested with its example and listed mistakes, and every check or compute function re-run on each build.
+- Validator (src/validate.py), run by the author on this build: 25 required checks, all PASS (including the new ones: every values rule rejects negative and fractional inputs when the question asks for whole numbers or integers; every ordering question's accepted orders are distinct); 3 balance and style checks, all PASS. Details in VALIDATION.md.
+- Game importer, check-only mode (tools/import-collection/import.ts --check), run by the author: 54 sets, 1170 questions, 0 invalid, 0 warnings.
+- Game response checks (src/tools/game_checks.ts, the game's own response checkers), run by the author: 204 interactive questions, 623 keyed and wrong responses, 0 problems.
+- Evaluator domain probe (src/tools/domain_probe.ts, the game's own checkValues), run by the author: the reviewer's 12 invalid inputs and 5 valid controls, 17 cases, 0 mismatches.
+- Build-time solvers: every ordering and grid enumerated, every truth table and Venn region computed, every rule-checked answer tested with its example, listed mistakes and domain probes, and every check or compute function re-run.
+- Not independently verified: questions about arguments, fallacies, assumptions and evidence were solved by the author; a reviewer found 4 multiple-choice items with a second defensible answer in version 1.0.0, so other such items may remain.
 
 ## Limits (stated honestly)
 

@@ -185,25 +185,28 @@ PARTIAL = {'Row 1 starts A B, and row 2 ends in C': {(0, 0): 'A', (0, 1): 'B', (
 
 
 # ------------------------------------------------------------------ Set 46: explanations and missing assumptions
-ASM = 'An assumption is an unstated statement that an argument needs in order for its conclusion to follow.'
+ASM = ('An assumption is an unstated statement an argument relies on. A bridging assumption is one that, if added, makes the '
+       'conclusion follow with certainty; a supporting assumption makes a prediction or explanation more likely.')
 
 
 def s46():
     return S(46, 'Identify the unstated assumption an argument needs and evaluate competing explanations',
              main=[
                  mc(ASM + ' "The school\'s robot passed every test in the lab, so it will work at the competition." Which '
-                          'assumption does this argument need?', 'Conditions at the competition are like those in the lab.',
+                          'assumption most supports this prediction?', 'Conditions at the competition are like those in the lab.',
                     [('The robot was built by students.', 'who built it does not connect the lab results to the competition'),
                      ('The robot failed some tests last year.', 'that is about the past and weakens nothing here'),
                      ('Other teams also tested their robots.', 'other teams\' testing is irrelevant to this robot')],
-                    'Lab success supports competition success only if the two settings are alike.'),
+                    'The prediction carries lab results over to the competition, so it relies on the lab representing the competition. '
+                    'The other choices do not connect the two settings.'),
                  mc(ASM + ' "Mia\'s plant grew faster after she moved it to the window, so sunlight made it grow faster." '
-                          'Which assumption does this argument need?', 'Nothing else that affects growth changed when the '
-                                                                       'plant was moved.',
+                          'Which assumption would most strengthen this explanation?',
+                    'The plant was watered and kept as warm as before the move.',
                     [('Plants need water to grow.', 'true, but it does not link the move to the faster growth'),
                      ('The window faces south.', 'the direction is not needed for the conclusion'),
                      ('Mia has other plants indoors.', 'other plants are not part of the argument')],
-                    'If the temperature or watering also changed, those could explain the faster growth instead.'),
+                    'Ruling out changes in water and warmth removes the main other explanations, so sunlight becomes the most likely '
+                    'cause. (Other causes could still add to it; the assumption only strengthens the explanation.)'),
                  tf(ASM + ' "Every member of the chess club is in grade 10. Jo is in grade 10. So Jo is in the chess club." '
                           'This argument would become valid if we add the assumption "Everyone in grade 10 is in the chess '
                           'club."', True,
@@ -217,10 +220,10 @@ def s46():
                      ('Fewer students attend the school this year.', 'the comparison is week to week, and enrollment was '
                                                                      'not mentioned')],
                     'The given fact directly explains fewer sales without any other change.'),
-                 tf(ASM + ' "This bridge is safe because it has stood for 80 years." The argument needs the assumption '
-                          'that the bridge will be used the same way as it has been.', True,
-                    'If much heavier loads start crossing, 80 years of standing would say little about safety under the '
-                    'new loads.'),
+                 tf(ASM + ' "This bridge is safe because it has stood for 80 years." A major change in how the bridge is '
+                          'used could weaken this argument.', True,
+                    'The 80 years of evidence are about the old loads. If, for example, much heavier trucks start crossing, '
+                    'that record says less about safety under the new use.'),
              ],
              back=[B('Find the gap between premise and conclusion', 'guided_strategy',
                      'Students choose statements that are true or related instead of ones the argument needs. Looking for '
@@ -229,13 +232,16 @@ def s46():
                                    ['Write the premise and the conclusion side by side.',
                                     'Find a word or idea in the conclusion that the premise never mentions, or a jump from '
                                     '"some" to "all" or from "then" to "now".',
-                                    'The assumption is the statement that bridges that gap. Test it: if the assumption were '
-                                    'false, the conclusion should no longer follow.'],
+                                    'A bridging assumption closes the gap completely: with it added, the conclusion follows '
+                                    'with certainty. A supporting assumption only makes the conclusion more likely. A '
+                                    'necessary assumption is one the argument cannot do without: if it were false, the '
+                                    'argument would fall apart.'],
                                    'Worked example (a different argument)',
                                    ['"Leo practiced piano every day this month, so he will win the recital prize."'],
                                    ['Gap: daily practice to winning the prize.',
-                                    'Needed assumption: practicing every day is enough to play better than the other '
-                                    'players. If it were false, the conclusion would not follow.']),
+                                    'A supporting assumption: daily practice makes Leo play better than the other players. '
+                                    'It makes the prediction more likely but does not make it certain, and Leo could also '
+                                    'win for other reasons, so it is not strictly necessary.']),
                      qs=[
                          mc(ASM + ' "Sam is taller than Ana, so Sam is taller than Raj." Which assumption fills the gap?',
                             'Ana is at least as tall as Raj.',
@@ -276,12 +282,13 @@ def s46():
                           'an unstated assumption to be valid.', False,
                     'It is already valid: if it were a reptile, it would have no fur, but it has fur.'),
                  mc(ASM + ' "Our team lost every game we played in the rain. It will rain on Friday. So we will lose '
-                          'Friday\'s game." Which assumption does the argument need?',
-                    'The rain caused the losses, rather than something else about those games.',
+                          'Friday\'s game." Which assumption most supports carrying the past pattern forward to Friday?',
+                    'Friday\'s game will be like those rainy games in the ways that mattered.',
                     [('Our team has played in the rain before.', 'that is already stated in the premise'),
                      ('Friday\'s game is at home.', 'location is not part of the argument'),
                      ('It rains more in the spring.', 'that does not connect rain to losing')],
-                    'The past pattern predicts Friday only if rain is the reason for the losses.'),
+                    'A past pattern supports a prediction when the new case is like the old ones in the ways that mattered (the field, '
+                    'the opponents, the team). It does not require proof that rain caused the losses.'),
                  tf('Two explanations both fit the facts. Then no new fact can help decide between them.', False,
                     'A new fact that one explanation predicts and the other does not supports the first over the second.'),
              ]),
@@ -292,12 +299,13 @@ def s46():
                      ('Sunburns make people buy ice cream.', 'the timing fits weather better than this'),
                      ('The two numbers match by chance every year.', 'a yearly pattern is unlikely to be chance alone')],
                     'A common cause (weather) explains why the two move together.'),
-                 mc(ASM + ' "Ming read the book, so Ming knows how it ends." Which assumption is needed?',
-                    'Ming read the book all the way to the end.',
+                 mc(ASM + ' "Ming read the book, so Ming knows how it ends." Which assumption best supports this inference '
+                          'from Ming\'s reading?', 'Ming read the book all the way to the end.',
                     [('The book has a surprise ending.', 'the type of ending does not matter'),
                      ('Ming liked the book.', 'liking it is not needed to know the ending'),
                      ('The book is long.', 'length is not needed for the conclusion')],
-                    'Reading part of the book would not reveal the ending.'),
+                    'The inference is based on Ming\'s reading, and reading the whole book is what puts the ending in front of Ming. (Ming '
+                    'could also learn the ending another way, so this supports the inference rather than being strictly necessary.)'),
                  tf(ASM + ' "Every prize winner practiced daily. Kai practiced daily. So Kai won a prize." Adding "Only prize '
                           'winners practiced daily" makes the argument valid.', True,
                     'Then anyone who practiced daily is a prize winner, and Kai practiced daily.'),
@@ -537,11 +545,13 @@ def s48():
                  tf(DISPLAY + ' The display showing 1001 still shows a number after it is turned upside down.', False,
                     'The 1 lights the two right-hand segments; turned, they become the two left-hand segments, which is '
                     'not a digit in the reference.', check=lambda: turned_number('1001') is not None, fig=REF),
-                 sa(DISPLAY + ' How many two-digit numbers (10 to 99) still show a number after the display is turned upside '
-                              'down?', 'Numbers:',
-                    str(sum(1 for n in range(10, 100) if turned_number(str(n)))),
-                    'Both digits must be from 0, 2, 5, 6, 8, 9; the first cannot be 0: 5 x 6 = 30.',
-                    compute=lambda: str(sum(1 for n in range(10, 100) if turned_number(str(n)))), fig=REF),
+                 sa(DISPLAY + ' How many two-digit numbers (10 to 99) still show a two-digit number after the display is turned '
+                              'upside down? The turned display must not start with 0.', 'Numbers:',
+                    str(turned_two_digit()),
+                    'Both digits must be from 0, 2, 5, 6, 8, 9 (each turns into a digit). The first digit cannot be 0, and the '
+                    'last digit becomes the first digit of the turned display, so it cannot be 0 either. That leaves 2, 5, '
+                    '6, 8, 9 for each digit: 5 x 5 = 25.',
+                    compute=lambda: str(turned_two_digit()), fig=REF),
                  values(DISPLAY + ' Give a digit d such that adding exactly one lit segment to d (moving nothing) makes '
                                   'the digit 8.', [('d', 'd =')], 'd == 0 or d == 6 or d == 9', {'d': 0},
                         '0, 6 and 9 each light 6 segments, and each is 8 with one segment missing.',
@@ -575,6 +585,10 @@ def s48():
                     str(sum(1 for v in SEG.values() if len(v) > 5)), '0, 6, 9 light 6 and 8 lights 7: four digits.',
                     compute=lambda: str(sum(1 for v in SEG.values() if len(v) > 5)), fig=REF),
              ]))
+
+
+def turned_two_digit():
+    return sum(1 for n in range(10, 100) if turned_number(str(n)) and turned_number(str(n))[0] != '0')
 
 
 def best_number(budget):

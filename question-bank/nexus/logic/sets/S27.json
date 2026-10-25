@@ -118,11 +118,11 @@
        "label": "n ="
       }
      ],
-     "rule": "n > 1 and isOdd(n*n) and isInteger(n)",
+     "rule": "(n > 1 and isOdd(n*n) and isInteger(n)) and isInteger(n) and n >= 0",
      "example_answer": {
       "n": 3
      },
-     "correct_answer": "any values that satisfy: n > 1 and isOdd(n*n) and isInteger(n) (example: n = 3)"
+     "correct_answer": "any values that satisfy: (n > 1 and isOdd(n*n) and isInteger(n)) and isInteger(n) and n >= 0 (example: n = 3)"
     },
     {
      "id": "S27-M-Q5",
@@ -344,28 +344,28 @@
      "standard": "",
      "domain": "formal logic",
      "type": "mc",
-     "prompt": "What is the negation of \"the number is even and positive\"?",
+     "prompt": "n is an integer. What is the negation of \"n is even and positive\"?",
      "outcome": "LOGIC.CONNECTIVE.01",
      "choices": [
       {
        "letter": "A",
-       "text": "the number is zero"
+       "text": "n is odd or n is not positive"
       },
       {
        "letter": "B",
-       "text": "the number is odd and negative"
+       "text": "n is odd and negative"
       },
       {
        "letter": "C",
-       "text": "the number is odd or not positive"
+       "text": "n is zero"
       },
       {
        "letter": "D",
-       "text": "the number is even or positive"
+       "text": "n is even or positive"
       }
      ],
-     "correct_letter": "C",
-     "correct_answer": "the number is odd or not positive"
+     "correct_letter": "A",
+     "correct_answer": "n is odd or n is not positive"
     },
     {
      "id": "S27-B2-Q4",
@@ -524,11 +524,11 @@
        "label": "n ="
       }
      ],
-     "rule": "n % 10 == 9 and n >= 1 and n <= 30 and not isPrime(n)",
+     "rule": "(n % 10 == 9 and n >= 1 and n <= 30 and not isPrime(n)) and isInteger(n) and n >= 1",
      "example_answer": {
       "n": 9
      },
-     "correct_answer": "any values that satisfy: n % 10 == 9 and n >= 1 and n <= 30 and not isPrime(n) (example: n = 9)"
+     "correct_answer": "any values that satisfy: (n % 10 == 9 and n >= 1 and n <= 30 and not isPrime(n)) and isInteger(n) and n >= 1 (example: n = 9)"
     },
     {
      "id": "S27-F1-Q5",
@@ -658,11 +658,11 @@
        "label": "x ="
       }
      ],
-     "rule": "x >= 6 and x <= 10 and isInteger(x)",
+     "rule": "(x >= 6 and x <= 10 and isInteger(x)) and isInteger(x) and x >= 0",
      "example_answer": {
       "x": 6
      },
-     "correct_answer": "any values that satisfy: x >= 6 and x <= 10 and isInteger(x) (example: x = 6)"
+     "correct_answer": "any values that satisfy: (x >= 6 and x <= 10 and isInteger(x)) and isInteger(x) and x >= 0 (example: x = 6)"
     },
     {
      "id": "S27-F2-Q5",

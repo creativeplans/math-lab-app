@@ -109,11 +109,11 @@
        "label": "n ="
       }
      ],
-     "rule": "isOdd(n) and not isPrime(n) and n >= 1",
+     "rule": "(isOdd(n) and not isPrime(n) and n >= 1) and isInteger(n) and n >= 0",
      "example_answer": {
       "n": 9
      },
-     "correct_answer": "any values that satisfy: isOdd(n) and not isPrime(n) and n >= 1 (example: n = 9)"
+     "correct_answer": "any values that satisfy: (isOdd(n) and not isPrime(n) and n >= 1) and isInteger(n) and n >= 0 (example: n = 9)"
     },
     {
      "id": "S12-M-Q4",
@@ -752,12 +752,12 @@
        "label": "b ="
       }
      ],
-     "rule": "isEven(a + b) and not (isEven(a) and isEven(b)) and isInteger(a) and isInteger(b)",
+     "rule": "(isEven(a + b) and not (isEven(a) and isEven(b)) and isInteger(a) and isInteger(b)) and isInteger(a) and a >= 0 and isInteger(b) and b >= 0",
      "example_answer": {
       "a": 3,
       "b": 5
      },
-     "correct_answer": "any values that satisfy: isEven(a + b) and not (isEven(a) and isEven(b)) and isInteger(a) and isInteger(b) (example: a = 3, b = 5)"
+     "correct_answer": "any values that satisfy: (isEven(a + b) and not (isEven(a) and isEven(b)) and isInteger(a) and isInteger(b)) and isInteger(a) and a >= 0 and isInteger(b) and b >= 0 (example: a = 3, b = 5)"
     }
    ]
   }

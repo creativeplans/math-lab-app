@@ -3,7 +3,7 @@
   "id": "LOGIC",
   "course": "logic",
   "title": "Logic: High School Logic and Reasoning Puzzles",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "date": "2026-10-25"
  },
  "questions": [
@@ -30,7 +30,7 @@
    "genre": "reflection and symmetry",
    "family": "visual",
    "question_page": 2,
-   "prompt": "The shaded shape is reflected in the dashed mirror line on its right. Which figure shows its mirror image? (Only the shape matters, not where it sits in its box.)",
+   "prompt": "The shaded shape (in the box labeled Shape) is reflected left to right in a vertical mirror line. Which figure shows its mirror image? (Only the shape matters, not where it sits in its box.)",
    "choices": [
     {
      "letter": "A",
@@ -834,7 +834,7 @@
    "genre": "reflection and symmetry",
    "family": "visual",
    "question_page": 15,
-   "prompt": "A 6 by 6 grid has two dashed mirror lines: a vertical one between columns 3 and 4 and a horizontal one between rows 3 and 4. The figure must look the same in BOTH mirrors. Four cells are already shaded in the top-left quarter: (1,1), (1,2), (2,2) and (3,3). Mark every shaded cell of the completed figure, including the four given cells.",
+   "prompt": "A 6 by 6 grid has two dashed mirror lines: a vertical one between columns 3 and 4 and a horizontal one between rows 3 and 4. The figure must look the same in BOTH mirrors. Four cells are already shaded in the top-left quarter: (1,1), (1,2), (2,2) and (3,3). Add as few shaded cells as possible. Mark every shaded cell of that smallest completed figure, including the four given cells.",
    "choices": [],
    "correct_letter": "",
    "correct_answer": "1,1, 1,2, 1,5, 1,6, 2,2, 2,5, 3,3, 3,4, 4,3, 4,4, 5,2, 5,5, 6,1, 6,2, 6,5, 6,6",
@@ -1357,7 +1357,7 @@
    "genre": "precise reading",
    "family": "verbal",
    "question_page": 25,
-   "prompt": "In the Ortiz family, each son has exactly one brother, and each daughter has exactly two brothers and three sisters. How many children are in the family?",
+   "prompt": "The Ortiz family has at least one son and at least one daughter. Each son has exactly one brother, and each daughter has exactly two brothers and three sisters. How many children are in the family?",
    "choices": [],
    "correct_letter": "",
    "correct_answer": "6",
@@ -1923,7 +1923,7 @@
    "genre": "precise reading",
    "family": "verbal",
    "question_page": 35,
-   "prompt": "In the Novak family, each son has exactly 3 sisters and 2 brothers. Each daughter has exactly 2 sisters. How many children are in the family?",
+   "prompt": "The Novak family has at least one son and at least one daughter. Each son has exactly 3 sisters and 2 brothers. Each daughter has exactly 2 sisters. How many children are in the family?",
    "choices": [],
    "correct_letter": "",
    "correct_answer": "6",
@@ -3742,7 +3742,7 @@
     },
     {
      "letter": "B",
-     "text": "84 is divisible by 4."
+     "text": "84 is divisible by 7."
     },
     {
      "letter": "C",
@@ -3759,8 +3759,8 @@
    "solution": "The rule applies to numbers divisible by 6, so we need 84 to be one: 84 = 6 x 14.",
    "wrong_choices": [
     {
-     "text": "84 is divisible by 4.",
-     "why_wrong": "true, but the premise is about divisibility by 6"
+     "text": "84 is divisible by 7.",
+     "why_wrong": "true, but divisibility by 7 says nothing about being even"
     },
     {
      "text": "84 is greater than 6.",
@@ -3854,7 +3854,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 67,
-   "prompt": "Arrange these sentences into an argument that ends with its conclusion: chain the two rules.",
+   "prompt": "Arrange these sentences into an argument. Put the dam-to-river rule before the river-to-ferry rule, and put the conclusion last.",
    "choices": [],
    "correct_letter": "",
    "correct_answer": "The dam opens. → If the dam opens, the river rises. → If the river rises, the ferry stops. → So the ferry stops.",
@@ -3862,7 +3862,7 @@
     "If the dam opens, the river rises. → If the river rises, the ferry stops. → The dam opens. → So the ferry stops.",
     "If the dam opens, the river rises. → The dam opens. → If the river rises, the ferry stops. → So the ferry stops."
    ],
-   "solution": "State the first rule and the fact, then the second rule, then the conclusion. Orders that state both rules first are also accepted.",
+   "solution": "The rules must appear in the stated order and the conclusion last; the fact \"The dam opens\" may come anywhere before the conclusion, so three orders are accepted.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "Automatic: all 24 orderings of 4 items enumerated; 3 valid.",
@@ -5059,7 +5059,7 @@
    "prompt": "Candidates are the whole numbers 1 to 20. Write a number n that survives BOTH clues: n is prime, and n leaves remainder 1 when divided by 4.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: isPrime(n) and n % 4 == 1 and n >= 1 and n <= 20 (example: n = 5)",
+   "correct_answer": "any values that satisfy: (isPrime(n) and n % 4 == 1 and n >= 1 and n <= 20) and isInteger(n) and n >= 0 (example: n = 5)",
    "accepted_alternatives": [],
    "solution": "Primes up to 20 leaving remainder 1 mod 4: 5, 13, 17. Any one is correct.",
    "wrong_choices": [],
@@ -5086,11 +5086,11 @@
       "label": "n ="
      }
     ],
-    "rule": "isPrime(n) and n % 4 == 1 and n >= 1 and n <= 20",
+    "rule": "(isPrime(n) and n % 4 == 1 and n >= 1 and n <= 20) and isInteger(n) and n >= 0",
     "example_answer": {
      "n": 5
     },
-    "correct_answer": "any values that satisfy: isPrime(n) and n % 4 == 1 and n >= 1 and n <= 20 (example: n = 5)"
+    "correct_answer": "any values that satisfy: (isPrime(n) and n % 4 == 1 and n >= 1 and n <= 20) and isInteger(n) and n >= 0 (example: n = 5)"
    }
   },
   {
@@ -7588,7 +7588,7 @@
    "prompt": "Each symbol stands for a whole number from 1 to 9. Square + Square = Circle, and Circle + Square = 12. Find Square s and Circle c.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: s + s == c and c + s == 12 and isInteger(s) and isInteger(c) (example: s = 4, c = 8)",
+   "correct_answer": "any values that satisfy: (s + s == c and c + s == 12 and isInteger(s) and isInteger(c)) and isInteger(s) and s >= 1 and isInteger(c) and c >= 1 (example: s = 4, c = 8)",
    "accepted_alternatives": [],
    "solution": "3 x Square = 12, so Square = 4 and Circle = 8. This is the only solution.",
    "wrong_choices": [],
@@ -7618,12 +7618,12 @@
       "label": "Circle c ="
      }
     ],
-    "rule": "s + s == c and c + s == 12 and isInteger(s) and isInteger(c)",
+    "rule": "(s + s == c and c + s == 12 and isInteger(s) and isInteger(c)) and isInteger(s) and s >= 1 and isInteger(c) and c >= 1",
     "example_answer": {
      "s": 4,
      "c": 8
     },
-    "correct_answer": "any values that satisfy: s + s == c and c + s == 12 and isInteger(s) and isInteger(c) (example: s = 4, c = 8)"
+    "correct_answer": "any values that satisfy: (s + s == c and c + s == 12 and isInteger(s) and isInteger(c)) and isInteger(s) and s >= 1 and isInteger(c) and c >= 1 (example: s = 4, c = 8)"
    }
   },
   {
@@ -9134,7 +9134,7 @@
    "prompt": "Give a whole number n that makes \"n is even or n is greater than 20\" true but \"n is even and n is greater than 20\" false.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: (isEven(n) or n > 20) and not (isEven(n) and n > 20) and isInteger(n) (example: n = 4)",
+   "correct_answer": "any values that satisfy: ((isEven(n) or n > 20) and not (isEven(n) and n > 20) and isInteger(n)) and isInteger(n) and n >= 0 (example: n = 4)",
    "accepted_alternatives": [],
    "solution": "Exactly one part must be true: an even number up to 20 (like 4) or an odd number greater than 20 (like 25).",
    "wrong_choices": [],
@@ -9161,11 +9161,11 @@
       "label": "n ="
      }
     ],
-    "rule": "(isEven(n) or n > 20) and not (isEven(n) and n > 20) and isInteger(n)",
+    "rule": "((isEven(n) or n > 20) and not (isEven(n) and n > 20) and isInteger(n)) and isInteger(n) and n >= 0",
     "example_answer": {
      "n": 4
     },
-    "correct_answer": "any values that satisfy: (isEven(n) or n > 20) and not (isEven(n) and n > 20) and isInteger(n) (example: n = 4)"
+    "correct_answer": "any values that satisfy: ((isEven(n) or n > 20) and not (isEven(n) and n > 20) and isInteger(n)) and isInteger(n) and n >= 0 (example: n = 4)"
    }
   },
   {
@@ -10057,7 +10057,7 @@
     },
     {
      "letter": "C",
-     "text": "P is false or Q is false."
+     "text": "P is true or Q is true."
     },
     {
      "letter": "D",
@@ -10070,8 +10070,8 @@
    "solution": "An inclusive \"or\" is false only when both parts are false.",
    "wrong_choices": [
     {
-     "text": "P is false or Q is false.",
-     "why_wrong": "true, but it does not say enough: both must be false"
+     "text": "P is true or Q is true.",
+     "why_wrong": "that says S itself is true, but S is false"
     },
     {
      "text": "Exactly one of P and Q is false.",
@@ -10160,7 +10160,7 @@
    "prompt": "Give whole numbers a and b with \"a > b exclusive-or a + b is even\" true and both numbers between 1 and 9.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: ((a > b) != isEven(a + b)) and a >= 1 and a <= 9 and b >= 1 and b <= 9 and isInteger(a) and isInteger(b) (example: a = 5, b = 2)",
+   "correct_answer": "any values that satisfy: (((a > b) != isEven(a + b)) and a >= 1 and a <= 9 and b >= 1 and b <= 9 and isInteger(a) and isInteger(b)) and isInteger(a) and a >= 0 and isInteger(b) and b >= 0 (example: a = 5, b = 2)",
    "accepted_alternatives": [],
    "solution": "Exactly one of \"a > b\" and \"a + b is even\" must hold, for example a = 5, b = 2 (a > b, sum 7 odd) or a = 2, b = 4 (a < b, sum even).",
    "wrong_choices": [],
@@ -10190,12 +10190,12 @@
       "label": "b ="
      }
     ],
-    "rule": "((a > b) != isEven(a + b)) and a >= 1 and a <= 9 and b >= 1 and b <= 9 and isInteger(a) and isInteger(b)",
+    "rule": "(((a > b) != isEven(a + b)) and a >= 1 and a <= 9 and b >= 1 and b <= 9 and isInteger(a) and isInteger(b)) and isInteger(a) and a >= 0 and isInteger(b) and b >= 0",
     "example_answer": {
      "a": 5,
      "b": 2
     },
-    "correct_answer": "any values that satisfy: ((a > b) != isEven(a + b)) and a >= 1 and a <= 9 and b >= 1 and b <= 9 and isInteger(a) and isInteger(b) (example: a = 5, b = 2)"
+    "correct_answer": "any values that satisfy: (((a > b) != isEven(a + b)) and a >= 1 and a <= 9 and b >= 1 and b <= 9 and isInteger(a) and isInteger(b)) and isInteger(a) and a >= 0 and isInteger(b) and b >= 0 (example: a = 5, b = 2)"
    }
   },
   {
@@ -11550,7 +11550,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 206,
-   "prompt": "Which argument is DEDUCTIVE (the conclusion must be true if the premises are true)?",
+   "prompt": "Which argument is a valid DEDUCTIVE argument (its conclusion must be true whenever its premises are true)?",
    "choices": [
     {
      "letter": "A",
@@ -12200,7 +12200,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 216,
-   "prompt": "\"Most tickets in the box are red, and I drew a ticket from the box\" makes \"my ticket is red\" certain.",
+   "prompt": "\"The sun has risen every morning on record, so it will rise tomorrow\" has a conclusion that is certain, not just likely.",
    "choices": [
     {
      "letter": "A",
@@ -12214,7 +12214,7 @@
    "correct_letter": "B",
    "correct_answer": "False",
    "accepted_alternatives": [],
-   "solution": "If only most tickets are red, the drawn ticket could be one of the others, so \"my ticket is red\" is likely but not certain.",
+   "solution": "A past pattern makes the conclusion very likely, but the premises do not guarantee it. That is an inductive argument.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -12498,7 +12498,7 @@
    "prompt": "The claim \"n x n - n + 17 is prime for every whole number n\" holds for n = 1 to 16. Find a whole number n that makes n x n - n + 17 NOT prime.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: not isPrime(n*n - n + 17) and n >= 1 and isInteger(n) (example: n = 17)",
+   "correct_answer": "any values that satisfy: (not isPrime(n*n - n + 17) and n >= 1 and isInteger(n)) and isInteger(n) and n >= 0 (example: n = 17)",
    "accepted_alternatives": [],
    "solution": "For n = 17: 17 x 17 - 17 + 17 = 289 = 17 x 17. Other values also work (for example 18: 323 = 17 x 19).",
    "wrong_choices": [],
@@ -12525,11 +12525,11 @@
       "label": "n ="
      }
     ],
-    "rule": "not isPrime(n*n - n + 17) and n >= 1 and isInteger(n)",
+    "rule": "(not isPrime(n*n - n + 17) and n >= 1 and isInteger(n)) and isInteger(n) and n >= 0",
     "example_answer": {
      "n": 17
     },
-    "correct_answer": "any values that satisfy: not isPrime(n*n - n + 17) and n >= 1 and isInteger(n) (example: n = 17)"
+    "correct_answer": "any values that satisfy: (not isPrime(n*n - n + 17) and n >= 1 and isInteger(n)) and isInteger(n) and n >= 0 (example: n = 17)"
    }
   },
   {
@@ -12626,7 +12626,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 223,
-   "prompt": "A deductive argument with true premises can have a false conclusion.",
+   "prompt": "A valid deductive argument with true premises can have a false conclusion.",
    "choices": [
     {
      "letter": "A",
@@ -12987,7 +12987,7 @@
    "prompt": "Give a whole number n from 1 to 20 for which \"2 to the power n, minus 1, is prime\" is FALSE, even though n is prime. (2 to the power n is 2 multiplied by itself n times.)",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: isPrime(n) and not isPrime(2^n - 1) and n <= 20 (example: n = 11)",
+   "correct_answer": "any values that satisfy: (isPrime(n) and not isPrime(2^n - 1) and n <= 20) and isInteger(n) and n >= 0 (example: n = 11)",
    "accepted_alternatives": [],
    "solution": "2 to the 11th minus 1 = 2047 = 23 x 89. The pattern \"n prime gives 2^n - 1 prime\" holds for 2, 3, 5, 7 but fails at 11, the only such n up to 20.",
    "wrong_choices": [],
@@ -13014,11 +13014,11 @@
       "label": "n ="
      }
     ],
-    "rule": "isPrime(n) and not isPrime(2^n - 1) and n <= 20",
+    "rule": "(isPrime(n) and not isPrime(2^n - 1) and n <= 20) and isInteger(n) and n >= 0",
     "example_answer": {
      "n": 11
     },
-    "correct_answer": "any values that satisfy: isPrime(n) and not isPrime(2^n - 1) and n <= 20 (example: n = 11)"
+    "correct_answer": "any values that satisfy: (isPrime(n) and not isPrime(2^n - 1) and n <= 20) and isInteger(n) and n >= 0 (example: n = 11)"
    }
   },
   {
@@ -14396,7 +14396,7 @@
    "prompt": "Find a whole number n that is a counterexample to \"If n is odd, then n is prime.\" (A counterexample makes the \"if\" part true and the \"then\" part false.)",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: isOdd(n) and not isPrime(n) and n >= 1 (example: n = 9)",
+   "correct_answer": "any values that satisfy: (isOdd(n) and not isPrime(n) and n >= 1) and isInteger(n) and n >= 0 (example: n = 9)",
    "accepted_alternatives": [],
    "solution": "Any odd number that is not prime works: 1, 9, 15, 21, 25, ...",
    "wrong_choices": [],
@@ -14423,11 +14423,11 @@
       "label": "n ="
      }
     ],
-    "rule": "isOdd(n) and not isPrime(n) and n >= 1",
+    "rule": "(isOdd(n) and not isPrime(n) and n >= 1) and isInteger(n) and n >= 0",
     "example_answer": {
      "n": 9
     },
-    "correct_answer": "any values that satisfy: isOdd(n) and not isPrime(n) and n >= 1 (example: n = 9)"
+    "correct_answer": "any values that satisfy: (isOdd(n) and not isPrime(n) and n >= 1) and isInteger(n) and n >= 0 (example: n = 9)"
    }
   },
   {
@@ -15754,7 +15754,7 @@
    "prompt": "Find whole numbers a and b that make the statement \"If a + b is even, then a and b are both even\" FALSE.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: isEven(a + b) and not (isEven(a) and isEven(b)) and isInteger(a) and isInteger(b) (example: a = 3, b = 5)",
+   "correct_answer": "any values that satisfy: (isEven(a + b) and not (isEven(a) and isEven(b)) and isInteger(a) and isInteger(b)) and isInteger(a) and a >= 0 and isInteger(b) and b >= 0 (example: a = 3, b = 5)",
    "accepted_alternatives": [],
    "solution": "Two odd numbers have an even sum: for example 3 + 5 = 8.",
    "wrong_choices": [],
@@ -15784,12 +15784,12 @@
       "label": "b ="
      }
     ],
-    "rule": "isEven(a + b) and not (isEven(a) and isEven(b)) and isInteger(a) and isInteger(b)",
+    "rule": "(isEven(a + b) and not (isEven(a) and isEven(b)) and isInteger(a) and isInteger(b)) and isInteger(a) and a >= 0 and isInteger(b) and b >= 0",
     "example_answer": {
      "a": 3,
      "b": 5
     },
-    "correct_answer": "any values that satisfy: isEven(a + b) and not (isEven(a) and isEven(b)) and isInteger(a) and isInteger(b) (example: a = 3, b = 5)"
+    "correct_answer": "any values that satisfy: (isEven(a + b) and not (isEven(a) and isEven(b)) and isInteger(a) and isInteger(b)) and isInteger(a) and a >= 0 and isInteger(b) and b >= 0 (example: a = 3, b = 5)"
    }
   },
   {
@@ -16465,7 +16465,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 289,
-   "prompt": "Having fuel is the only thing a gas car needs in order to run.",
+   "prompt": "A concert lets in only people who hold a ticket. Holding a ticket is NECESSARY for getting in.",
    "choices": [
     {
      "letter": "A",
@@ -16476,10 +16476,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "B",
-   "correct_answer": "False",
+   "correct_letter": "A",
+   "correct_answer": "True",
    "accepted_alternatives": [],
-   "solution": "A car with fuel can still fail to run, for example with a dead battery. Fuel is necessary, not sufficient.",
+   "solution": "Without a ticket no one gets in, so a ticket is required. (It may not be sufficient: the doors could be closed.)",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -16488,8 +16488,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.CONDITIONAL.02",
-    "correct_letter": "B",
-    "correct_answer": "False",
+    "correct_letter": "A",
+    "correct_answer": "True",
     "no_shuffle": true
    }
   },
@@ -16763,7 +16763,7 @@
    "prompt": "\"n is even\" is necessary for \"n is divisible by 6\". Give a whole number n that shows it is NOT sufficient: n is even but not divisible by 6.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: isEven(n) and n % 6 != 0 and isInteger(n) (example: n = 4)",
+   "correct_answer": "any values that satisfy: (isEven(n) and n % 6 != 0 and isInteger(n)) and isInteger(n) and n >= 0 (example: n = 4)",
    "accepted_alternatives": [],
    "solution": "Any even number that is not a multiple of 6: 2, 4, 8, 10, ...",
    "wrong_choices": [],
@@ -16790,11 +16790,11 @@
       "label": "n ="
      }
     ],
-    "rule": "isEven(n) and n % 6 != 0 and isInteger(n)",
+    "rule": "(isEven(n) and n % 6 != 0 and isInteger(n)) and isInteger(n) and n >= 0",
     "example_answer": {
      "n": 4
     },
-    "correct_answer": "any values that satisfy: isEven(n) and n % 6 != 0 and isInteger(n) (example: n = 4)"
+    "correct_answer": "any values that satisfy: (isEven(n) and n % 6 != 0 and isInteger(n)) and isInteger(n) and n >= 0 (example: n = 4)"
    }
   },
   {
@@ -17323,7 +17323,7 @@
    "prompt": "Give a whole number n for which \"n is a multiple of 3\" holds but \"n is a multiple of 9\" fails, showing that being a multiple of 3 is not sufficient for being a multiple of 9.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: n % 3 == 0 and n % 9 != 0 and isInteger(n) (example: n = 6)",
+   "correct_answer": "any values that satisfy: (n % 3 == 0 and n % 9 != 0 and isInteger(n)) and isInteger(n) and n >= 0 (example: n = 6)",
    "accepted_alternatives": [],
    "solution": "Any multiple of 3 that is not a multiple of 9: 3, 6, 12, 15, ...",
    "wrong_choices": [],
@@ -17350,11 +17350,11 @@
       "label": "n ="
      }
     ],
-    "rule": "n % 3 == 0 and n % 9 != 0 and isInteger(n)",
+    "rule": "(n % 3 == 0 and n % 9 != 0 and isInteger(n)) and isInteger(n) and n >= 0",
     "example_answer": {
      "n": 6
     },
-    "correct_answer": "any values that satisfy: n % 3 == 0 and n % 9 != 0 and isInteger(n) (example: n = 6)"
+    "correct_answer": "any values that satisfy: (n % 3 == 0 and n % 9 != 0 and isInteger(n)) and isInteger(n) and n >= 0 (example: n = 6)"
    }
   },
   {
@@ -19886,7 +19886,7 @@
    "prompt": "The statement \"If n is prime and greater than 2, then n is odd\" is true. Its converse is \"If n is odd, then n is prime and greater than 2\". Give a whole number n that shows the converse is false.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: isOdd(n) and not (isPrime(n) and n > 2) (example: n = 9)",
+   "correct_answer": "any values that satisfy: (isOdd(n) and not (isPrime(n) and n > 2)) and isInteger(n) and n >= 0 (example: n = 9)",
    "accepted_alternatives": [],
    "solution": "Any odd number that is not a prime greater than 2: 1, 9, 15, 21, ...",
    "wrong_choices": [],
@@ -19913,11 +19913,11 @@
       "label": "n ="
      }
     ],
-    "rule": "isOdd(n) and not (isPrime(n) and n > 2)",
+    "rule": "(isOdd(n) and not (isPrime(n) and n > 2)) and isInteger(n) and n >= 0",
     "example_answer": {
      "n": 9
     },
-    "correct_answer": "any values that satisfy: isOdd(n) and not (isPrime(n) and n > 2) (example: n = 9)"
+    "correct_answer": "any values that satisfy: (isOdd(n) and not (isPrime(n) and n > 2)) and isInteger(n) and n >= 0 (example: n = 9)"
    }
   },
   {
@@ -21274,7 +21274,7 @@
    "prompt": "Find a whole number n that makes \"n is divisible by 3 if and only if n is odd\" FALSE.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: (n % 3 == 0) != isOdd(n) and isInteger(n) (example: n = 6)",
+   "correct_answer": "any values that satisfy: ((n % 3 == 0) != isOdd(n) and isInteger(n)) and isInteger(n) and n >= 0 (example: n = 6)",
    "accepted_alternatives": [],
    "solution": "The parts must differ: divisible by 3 but even (6, 12, ...) or odd but not divisible by 3 (1, 5, ...).",
    "wrong_choices": [],
@@ -21301,11 +21301,11 @@
       "label": "n ="
      }
     ],
-    "rule": "(n % 3 == 0) != isOdd(n) and isInteger(n)",
+    "rule": "((n % 3 == 0) != isOdd(n) and isInteger(n)) and isInteger(n) and n >= 0",
     "example_answer": {
      "n": 6
     },
-    "correct_answer": "any values that satisfy: (n % 3 == 0) != isOdd(n) and isInteger(n) (example: n = 6)"
+    "correct_answer": "any values that satisfy: ((n % 3 == 0) != isOdd(n) and isInteger(n)) and isInteger(n) and n >= 0 (example: n = 6)"
    }
   },
   {
@@ -21499,7 +21499,7 @@
    "prompt": "Find whole numbers a and b, each from 1 to 9, that make \"a + b is even if and only if a is even\" TRUE and a different from b.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: (isEven(a + b) == isEven(a)) and a != b and a >= 1 and a <= 9 and b >= 1 and b <= 9 (example: a = 2, b = 4)",
+   "correct_answer": "any values that satisfy: ((isEven(a + b) == isEven(a)) and a != b and a >= 1 and a <= 9 and b >= 1 and b <= 9) and isInteger(a) and a >= 1 and isInteger(b) and b >= 1 (example: a = 2, b = 4)",
    "accepted_alternatives": [],
    "solution": "The biconditional is true exactly when b is even (then a + b and a have the same parity). Any a, b with b even and a different from b works, such as 2 and 4 or 3 and 8.",
    "wrong_choices": [],
@@ -21529,12 +21529,12 @@
       "label": "b ="
      }
     ],
-    "rule": "(isEven(a + b) == isEven(a)) and a != b and a >= 1 and a <= 9 and b >= 1 and b <= 9",
+    "rule": "((isEven(a + b) == isEven(a)) and a != b and a >= 1 and a <= 9 and b >= 1 and b <= 9) and isInteger(a) and a >= 1 and isInteger(b) and b >= 1",
     "example_answer": {
      "a": 2,
      "b": 4
     },
-    "correct_answer": "any values that satisfy: (isEven(a + b) == isEven(a)) and a != b and a >= 1 and a <= 9 and b >= 1 and b <= 9 (example: a = 2, b = 4)"
+    "correct_answer": "any values that satisfy: ((isEven(a + b) == isEven(a)) and a != b and a >= 1 and a <= 9 and b >= 1 and b <= 9) and isInteger(a) and a >= 1 and isInteger(b) and b >= 1 (example: a = 2, b = 4)"
    }
   },
   {
@@ -26372,7 +26372,7 @@
    "genre": "occlusion and stacking",
    "family": "visual",
    "question_page": 455,
-   "prompt": "Square cards are placed one at a time on an 8 by 8 grid, each covering a block of cells (rows and columns numbered 1 to 8; \"rows 1-4, columns 1-4\" means a 4 by 4 block). In order: A covers rows 1-4, columns 1-4; B covers rows 3-6, columns 3-6; C covers rows 2-5, columns 2-5; D covers rows 1-3, columns 4-7; E covers rows 5-7, columns 1-3. Seen from above, how many of the five cards can be seen at least partly?",
+   "prompt": "Rectangular cards are placed one at a time on an 8 by 8 grid, each covering a block of cells (rows and columns numbered 1 to 8; \"rows 1-4, columns 1-4\" means a 4 by 4 block). In order: A covers rows 1-4, columns 1-4; B covers rows 3-6, columns 3-6; C covers rows 2-5, columns 2-5; D covers rows 1-3, columns 4-7; E covers rows 5-7, columns 1-3. Seen from above, how many of the five cards can be seen at least partly?",
    "choices": [],
    "correct_letter": "",
    "correct_answer": "5",
@@ -27437,12 +27437,17 @@
    "correct_answer": "If the trail is icy, the park closes. → The trail is icy. → So the park closes. → If the park closes, the race is cancelled. → So the race is cancelled.",
    "accepted_alternatives": [
     "If the trail is icy, the park closes. → If the park closes, the race is cancelled. → The trail is icy. → So the park closes. → So the race is cancelled.",
-    "The trail is icy. → If the trail is icy, the park closes. → So the park closes. → If the park closes, the race is cancelled. → So the race is cancelled."
+    "If the trail is icy, the park closes. → The trail is icy. → If the park closes, the race is cancelled. → So the park closes. → So the race is cancelled.",
+    "If the park closes, the race is cancelled. → If the trail is icy, the park closes. → The trail is icy. → So the park closes. → So the race is cancelled.",
+    "If the park closes, the race is cancelled. → The trail is icy. → If the trail is icy, the park closes. → So the park closes. → So the race is cancelled.",
+    "The trail is icy. → If the trail is icy, the park closes. → If the park closes, the race is cancelled. → So the park closes. → So the race is cancelled.",
+    "The trail is icy. → If the trail is icy, the park closes. → So the park closes. → If the park closes, the race is cancelled. → So the race is cancelled.",
+    "The trail is icy. → If the park closes, the race is cancelled. → If the trail is icy, the park closes. → So the park closes. → So the race is cancelled."
    ],
-   "solution": "Use the first rule with the fact to get \"the park closes\", then the second rule to get the conclusion. The two rules may also be stated first.",
+   "solution": "D needs A and C before it; E needs B and D before it and comes last. The premises A, B and C may be stated in any order that respects this, so all 8 such orders are accepted.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
-   "validation": "Automatic: all 120 orderings of 5 items enumerated; 3 valid.",
+   "validation": "Automatic: all 120 orderings of 5 items enumerated; 8 valid.",
    "figure": "",
    "figure_description": "",
    "package_fields": {
@@ -27486,10 +27491,45 @@
       "E"
      ],
      [
+      "A",
+      "C",
+      "B",
+      "D",
+      "E"
+     ],
+     [
+      "B",
+      "A",
+      "C",
+      "D",
+      "E"
+     ],
+     [
+      "B",
+      "C",
+      "A",
+      "D",
+      "E"
+     ],
+     [
+      "C",
+      "A",
+      "B",
+      "D",
+      "E"
+     ],
+     [
       "C",
       "A",
       "D",
       "B",
+      "E"
+     ],
+     [
+      "C",
+      "B",
+      "A",
+      "D",
       "E"
      ]
     ],
@@ -27928,7 +27968,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 482,
-   "prompt": "\"P or Q\" is true and P is true. Then Q must be false.",
+   "prompt": "\"P or Q\" is true and Q is false. Then P is true.",
    "choices": [
     {
      "letter": "A",
@@ -27939,10 +27979,10 @@
      "text": "False"
     }
    ],
-   "correct_letter": "B",
-   "correct_answer": "False",
+   "correct_letter": "A",
+   "correct_answer": "True",
    "accepted_alternatives": [],
-   "solution": "Inclusive \"or\" allows both parts to be true, so Q could be true or false.",
+   "solution": "At least one part is true, and it is not Q, so P is true.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -27951,8 +27991,8 @@
    "package_fields": {
     "type": "tf",
     "outcome": "LOGIC.CONNECTIVE.02",
-    "correct_letter": "B",
-    "correct_answer": "False",
+    "correct_letter": "A",
+    "correct_answer": "True",
     "no_shuffle": true
    }
   },
@@ -28218,36 +28258,36 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 487,
-   "prompt": "Premises: \"If it is a holiday, the bank is closed.\" \"If the bank is closed, Mara cannot deposit.\" \"Mara deposited.\" What follows?",
+   "prompt": "All three premises are about the same day. Premises: \"If today is a holiday, the bank is closed today.\" \"If the bank is closed today, Mara cannot make a deposit there today.\" \"Mara made a deposit there today.\" What follows?",
    "choices": [
     {
      "letter": "A",
-     "text": "It is a holiday."
+     "text": "Nothing follows."
     },
     {
      "letter": "B",
-     "text": "It is not a holiday."
+     "text": "Today is not a holiday."
     },
     {
      "letter": "C",
-     "text": "The bank is closed."
+     "text": "The bank is closed today."
     },
     {
      "letter": "D",
-     "text": "Nothing follows."
+     "text": "Today is a holiday."
     }
    ],
    "correct_letter": "B",
-   "correct_answer": "B. It is not a holiday.",
+   "correct_answer": "B. Today is not a holiday.",
    "accepted_alternatives": [],
-   "solution": "Mara deposited, so the bank was not closed (modus tollens); so it is not a holiday (modus tollens again).",
+   "solution": "Mara made a deposit there today, so the bank was not closed today (modus tollens); so today is not a holiday (modus tollens again).",
    "wrong_choices": [
     {
-     "text": "It is a holiday.",
+     "text": "Today is a holiday.",
      "why_wrong": "contradicts the premises"
     },
     {
-     "text": "The bank is closed.",
+     "text": "The bank is closed today.",
      "why_wrong": "contradicts the premises"
     },
     {
@@ -28263,7 +28303,7 @@
     "type": "mc",
     "outcome": "LOGIC.INFERENCE.01",
     "correct_letter": "B",
-    "correct_answer": "It is not a holiday."
+    "correct_answer": "Today is not a holiday."
    }
   },
   {
@@ -28984,7 +29024,7 @@
    "prompt": "Use whole numbers to show that \"If n is a multiple of 6, then n is even. n is even. So n is a multiple of 6.\" is invalid: give a value of n that makes both premises true and the conclusion false.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: isEven(n) and n % 6 != 0 (example: n = 4)",
+   "correct_answer": "any values that satisfy: (isEven(n) and n % 6 != 0) and isInteger(n) and n >= 0 (example: n = 4)",
    "accepted_alternatives": [],
    "solution": "Any even number that is not a multiple of 6 (2, 4, 8, 10, ...): the conditional is always true, n is even, and n is not a multiple of 6.",
    "wrong_choices": [],
@@ -29011,11 +29051,11 @@
       "label": "n ="
      }
     ],
-    "rule": "isEven(n) and n % 6 != 0",
+    "rule": "(isEven(n) and n % 6 != 0) and isInteger(n) and n >= 0",
     "example_answer": {
      "n": 4
     },
-    "correct_answer": "any values that satisfy: isEven(n) and n % 6 != 0 (example: n = 4)"
+    "correct_answer": "any values that satisfy: (isEven(n) and n % 6 != 0) and isInteger(n) and n >= 0 (example: n = 4)"
    }
   },
   {
@@ -33077,7 +33117,7 @@
    "correct_letter": "",
    "correct_answer": "3",
    "accepted_alternatives": [],
-   "solution": "Pairs out of order: (C, A), (C, B), (E, D): 3. Each swap fixes one pair, so 3 moves are needed and enough: swap C and A, swap C and B, swap E and D.",
+   "solution": "Pairs out of order: (C, A), (C, B), (E, D): 3. Each swap changes that count by one, so 3 moves are needed and enough: swap C and A, swap C and B, swap E and D.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author Automatic: the key was recomputed by code.",
@@ -35273,7 +35313,7 @@
    "prompt": "The domain is the whole numbers 1 to 9. Give a number x that makes \"for every y in the domain, x + y > 5\" true.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: x >= 5 and x <= 9 and isInteger(x) (example: x = 6)",
+   "correct_answer": "any values that satisfy: (x >= 5 and x <= 9 and isInteger(x)) and isInteger(x) and x >= 0 (example: x = 6)",
    "accepted_alternatives": [],
    "solution": "The smallest y is 1, so x + 1 > 5, x > 4: any x from 5 to 9.",
    "wrong_choices": [],
@@ -35300,11 +35340,11 @@
       "label": "x ="
      }
     ],
-    "rule": "x >= 5 and x <= 9 and isInteger(x)",
+    "rule": "(x >= 5 and x <= 9 and isInteger(x)) and isInteger(x) and x >= 0",
     "example_answer": {
      "x": 6
     },
-    "correct_answer": "any values that satisfy: x >= 5 and x <= 9 and isInteger(x) (example: x = 6)"
+    "correct_answer": "any values that satisfy: (x >= 5 and x <= 9 and isInteger(x)) and isInteger(x) and x >= 0 (example: x = 6)"
    }
   },
   {
@@ -35546,7 +35586,7 @@
    "prompt": "The domain is the whole numbers. The statement \"Every whole number greater than 1 has an even square\" is false. Give a number n that makes its negation true: a whole number greater than 1 whose square is odd.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: n > 1 and isOdd(n*n) and isInteger(n) (example: n = 3)",
+   "correct_answer": "any values that satisfy: (n > 1 and isOdd(n*n) and isInteger(n)) and isInteger(n) and n >= 0 (example: n = 3)",
    "accepted_alternatives": [],
    "solution": "The negation is \"Some whole number greater than 1 has an odd square\": any odd n > 1.",
    "wrong_choices": [],
@@ -35573,11 +35613,11 @@
       "label": "n ="
      }
     ],
-    "rule": "n > 1 and isOdd(n*n) and isInteger(n)",
+    "rule": "(n > 1 and isOdd(n*n) and isInteger(n)) and isInteger(n) and n >= 0",
     "example_answer": {
      "n": 3
     },
-    "correct_answer": "any values that satisfy: n > 1 and isOdd(n*n) and isInteger(n) (example: n = 3)"
+    "correct_answer": "any values that satisfy: (n > 1 and isOdd(n*n) and isInteger(n)) and isInteger(n) and n >= 0 (example: n = 3)"
    }
   },
   {
@@ -36051,41 +36091,41 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 630,
-   "prompt": "What is the negation of \"the number is even and positive\"?",
+   "prompt": "n is an integer. What is the negation of \"n is even and positive\"?",
    "choices": [
     {
      "letter": "A",
-     "text": "the number is zero"
+     "text": "n is odd or n is not positive"
     },
     {
      "letter": "B",
-     "text": "the number is odd and negative"
+     "text": "n is odd and negative"
     },
     {
      "letter": "C",
-     "text": "the number is odd or not positive"
+     "text": "n is zero"
     },
     {
      "letter": "D",
-     "text": "the number is even or positive"
+     "text": "n is even or positive"
     }
    ],
-   "correct_letter": "C",
-   "correct_answer": "C. the number is odd or not positive",
+   "correct_letter": "A",
+   "correct_answer": "A. n is odd or n is not positive",
    "accepted_alternatives": [],
-   "solution": "Not (A and B) = not A or not B.",
+   "solution": "Not (A and B) = not A or not B. For an integer, \"not even\" means odd.",
    "wrong_choices": [
     {
-     "text": "the number is odd and negative",
-     "why_wrong": "too strong"
+     "text": "n is odd and negative",
+     "why_wrong": "too strong: n = 3 makes the original false but this false too"
     },
     {
-     "text": "the number is even or positive",
-     "why_wrong": "not a negation"
+     "text": "n is even or positive",
+     "why_wrong": "not a negation: n = 4 makes both true"
     },
     {
-     "text": "the number is zero",
-     "why_wrong": "too narrow"
+     "text": "n is zero",
+     "why_wrong": "too narrow: n = 3 also makes the original false"
     }
    ],
    "wrong_values_rejected": [],
@@ -36095,8 +36135,8 @@
    "package_fields": {
     "type": "mc",
     "outcome": "LOGIC.CONNECTIVE.01",
-    "correct_letter": "C",
-    "correct_answer": "the number is odd or not positive"
+    "correct_letter": "A",
+    "correct_answer": "n is odd or n is not positive"
    }
   },
   {
@@ -36440,7 +36480,7 @@
    "prompt": "The statement \"Every whole number from 1 to 30 that ends in 9 is prime\" is false. Give a number that shows it (a witness for its negation).",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: n % 10 == 9 and n >= 1 and n <= 30 and not isPrime(n) (example: n = 9)",
+   "correct_answer": "any values that satisfy: (n % 10 == 9 and n >= 1 and n <= 30 and not isPrime(n)) and isInteger(n) and n >= 1 (example: n = 9)",
    "accepted_alternatives": [],
    "solution": "The numbers ending in 9 are 9, 19 and 29; 19 and 29 are prime, but 9 = 3 x 3 is not. So n = 9.",
    "wrong_choices": [],
@@ -36467,11 +36507,11 @@
       "label": "n ="
      }
     ],
-    "rule": "n % 10 == 9 and n >= 1 and n <= 30 and not isPrime(n)",
+    "rule": "(n % 10 == 9 and n >= 1 and n <= 30 and not isPrime(n)) and isInteger(n) and n >= 1",
     "example_answer": {
      "n": 9
     },
-    "correct_answer": "any values that satisfy: n % 10 == 9 and n >= 1 and n <= 30 and not isPrime(n) (example: n = 9)"
+    "correct_answer": "any values that satisfy: (n % 10 == 9 and n >= 1 and n <= 30 and not isPrime(n)) and isInteger(n) and n >= 1 (example: n = 9)"
    }
   },
   {
@@ -36744,7 +36784,7 @@
    "prompt": "The domain is the whole numbers 1 to 10. The statement \"For every x there is a y with y = 2x\" is false in this domain. Give an x that shows it.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: x >= 6 and x <= 10 and isInteger(x) (example: x = 6)",
+   "correct_answer": "any values that satisfy: (x >= 6 and x <= 10 and isInteger(x)) and isInteger(x) and x >= 0 (example: x = 6)",
    "accepted_alternatives": [],
    "solution": "For x from 6 to 10, 2x is at least 12, outside the domain. Any of 6 to 10 works.",
    "wrong_choices": [],
@@ -36771,11 +36811,11 @@
       "label": "x ="
      }
     ],
-    "rule": "x >= 6 and x <= 10 and isInteger(x)",
+    "rule": "(x >= 6 and x <= 10 and isInteger(x)) and isInteger(x) and x >= 0",
     "example_answer": {
      "x": 6
     },
-    "correct_answer": "any values that satisfy: x >= 6 and x <= 10 and isInteger(x) (example: x = 6)"
+    "correct_answer": "any values that satisfy: (x >= 6 and x <= 10 and isInteger(x)) and isInteger(x) and x >= 0 (example: x = 6)"
    }
   },
   {
@@ -37852,7 +37892,7 @@
    "prompt": "A network has towns with these numbers of roads: 3, 3, 2, 2 and k. For a walk that uses every road exactly once to be possible in a connected network, at most two towns may have an odd number of roads. Give a whole number k from 1 to 6 that keeps this possible.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: isEven(k) and k >= 1 and k <= 6 (example: k = 2)",
+   "correct_answer": "any values that satisfy: (isEven(k) and k >= 1 and k <= 6) and isInteger(k) and k >= 0 (example: k = 2)",
    "accepted_alternatives": [],
    "solution": "There are already two odd towns (the two 3s), so k must be even: 2, 4 or 6.",
    "wrong_choices": [],
@@ -37879,11 +37919,11 @@
       "label": "k ="
      }
     ],
-    "rule": "isEven(k) and k >= 1 and k <= 6",
+    "rule": "(isEven(k) and k >= 1 and k <= 6) and isInteger(k) and k >= 0",
     "example_answer": {
      "k": 2
     },
-    "correct_answer": "any values that satisfy: isEven(k) and k >= 1 and k <= 6 (example: k = 2)"
+    "correct_answer": "any values that satisfy: (isEven(k) and k >= 1 and k <= 6) and isInteger(k) and k >= 0 (example: k = 2)"
    }
   },
   {
@@ -37911,7 +37951,7 @@
    "prompt": "Give a witness for the true statement \"Some whole number between 20 and 30 is prime.\"",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: isPrime(n) and n > 20 and n < 30 (example: n = 23)",
+   "correct_answer": "any values that satisfy: (isPrime(n) and n > 20 and n < 30) and isInteger(n) and n >= 0 (example: n = 23)",
    "accepted_alternatives": [],
    "solution": "The primes between 20 and 30 are 23 and 29.",
    "wrong_choices": [],
@@ -37938,11 +37978,11 @@
       "label": "n ="
      }
     ],
-    "rule": "isPrime(n) and n > 20 and n < 30",
+    "rule": "(isPrime(n) and n > 20 and n < 30) and isInteger(n) and n >= 0",
     "example_answer": {
      "n": 23
     },
-    "correct_answer": "any values that satisfy: isPrime(n) and n > 20 and n < 30 (example: n = 23)"
+    "correct_answer": "any values that satisfy: (isPrime(n) and n > 20 and n < 30) and isInteger(n) and n >= 0 (example: n = 23)"
    }
   },
   {
@@ -37970,7 +38010,7 @@
    "prompt": "Give a counterexample to \"Every whole number that is divisible by 3 is odd.\"",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: n % 3 == 0 and isEven(n) and isInteger(n) (example: n = 6)",
+   "correct_answer": "any values that satisfy: (n % 3 == 0 and isEven(n) and isInteger(n)) and isInteger(n) and n >= 0 (example: n = 6)",
    "accepted_alternatives": [],
    "solution": "A counterexample is a multiple of 3 that is even: 6, 12, 18, ...",
    "wrong_choices": [],
@@ -37997,11 +38037,11 @@
       "label": "n ="
      }
     ],
-    "rule": "n % 3 == 0 and isEven(n) and isInteger(n)",
+    "rule": "(n % 3 == 0 and isEven(n) and isInteger(n)) and isInteger(n) and n >= 0",
     "example_answer": {
      "n": 6
     },
-    "correct_answer": "any values that satisfy: n % 3 == 0 and isEven(n) and isInteger(n) (example: n = 6)"
+    "correct_answer": "any values that satisfy: (n % 3 == 0 and isEven(n) and isInteger(n)) and isInteger(n) and n >= 0 (example: n = 6)"
    }
   },
   {
@@ -38096,12 +38136,12 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 668,
-   "prompt": "Give real numbers a and b that are a counterexample to \"For all real numbers a and b, (a + b) squared = a squared + b squared.\"",
+   "prompt": "Give integers a and b (integers are real numbers) that are a counterexample to \"For all real numbers a and b, (a + b) squared = a squared + b squared.\"",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: (a + b)^2 != a^2 + b^2 (example: a = 1, b = 1)",
+   "correct_answer": "any values that satisfy: (a != 0 and b != 0) and isInteger(a) and isInteger(b) (example: a = 1, b = 1)",
    "accepted_alternatives": [],
-   "solution": "(1 + 1) squared = 4 but 1 + 1 = 2. Any a and b with a x b not 0 works.",
+   "solution": "(a + b) squared - (a squared + b squared) = 2ab, so the claim fails exactly when a and b are both nonzero. For example a = 1, b = 1: 4 is not 2.",
    "wrong_choices": [],
    "wrong_values_rejected": [
     {
@@ -38129,12 +38169,12 @@
       "label": "b ="
      }
     ],
-    "rule": "(a + b)^2 != a^2 + b^2",
+    "rule": "(a != 0 and b != 0) and isInteger(a) and isInteger(b)",
     "example_answer": {
      "a": 1,
      "b": 1
     },
-    "correct_answer": "any values that satisfy: (a + b)^2 != a^2 + b^2 (example: a = 1, b = 1)"
+    "correct_answer": "any values that satisfy: (a != 0 and b != 0) and isInteger(a) and isInteger(b) (example: a = 1, b = 1)"
    }
   },
   {
@@ -38823,7 +38863,7 @@
    "prompt": "Give positive whole numbers a and b that are a counterexample to \"If a divides b x c, then a divides b or a divides c\", using c = 2.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: divides(a, b * 2) and not divides(a, b) and not divides(a, 2) and a > 0 and b > 0 and isInteger(a) and isInteger(b) (example: a = 4, b = 2)",
+   "correct_answer": "any values that satisfy: (divides(a, b * 2) and not divides(a, b) and not divides(a, 2) and a > 0 and b > 0 and isInteger(a) and isInteger(b)) and isInteger(a) and a >= 1 and isInteger(b) and b >= 1 (example: a = 4, b = 2)",
    "accepted_alternatives": [],
    "solution": "a = 4, b = 2: 4 divides 2 x 2 = 4, but 4 divides neither 2 nor 2. (a = 6, b = 3 also works.)",
    "wrong_choices": [],
@@ -38853,12 +38893,12 @@
       "label": "b ="
      }
     ],
-    "rule": "divides(a, b * 2) and not divides(a, b) and not divides(a, 2) and a > 0 and b > 0 and isInteger(a) and isInteger(b)",
+    "rule": "(divides(a, b * 2) and not divides(a, b) and not divides(a, 2) and a > 0 and b > 0 and isInteger(a) and isInteger(b)) and isInteger(a) and a >= 1 and isInteger(b) and b >= 1",
     "example_answer": {
      "a": 4,
      "b": 2
     },
-    "correct_answer": "any values that satisfy: divides(a, b * 2) and not divides(a, b) and not divides(a, 2) and a > 0 and b > 0 and isInteger(a) and isInteger(b) (example: a = 4, b = 2)"
+    "correct_answer": "any values that satisfy: (divides(a, b * 2) and not divides(a, b) and not divides(a, 2) and a > 0 and b > 0 and isInteger(a) and isInteger(b)) and isInteger(a) and a >= 1 and isInteger(b) and b >= 1 (example: a = 4, b = 2)"
    }
   },
   {
@@ -39006,7 +39046,7 @@
    "prompt": "Give whole numbers a and b, each from 1 to 9, that show \"a - b = b - a\" can be false.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: a - b != b - a and a >= 1 and a <= 9 and b >= 1 and b <= 9 (example: a = 5, b = 2)",
+   "correct_answer": "any values that satisfy: (a - b != b - a and a >= 1 and a <= 9 and b >= 1 and b <= 9) and isInteger(a) and a >= 1 and isInteger(b) and b >= 1 (example: a = 5, b = 2)",
    "accepted_alternatives": [],
    "solution": "Any a different from b.",
    "wrong_choices": [],
@@ -39032,12 +39072,12 @@
       "label": "b ="
      }
     ],
-    "rule": "a - b != b - a and a >= 1 and a <= 9 and b >= 1 and b <= 9",
+    "rule": "(a - b != b - a and a >= 1 and a <= 9 and b >= 1 and b <= 9) and isInteger(a) and a >= 1 and isInteger(b) and b >= 1",
     "example_answer": {
      "a": 5,
      "b": 2
     },
-    "correct_answer": "any values that satisfy: a - b != b - a and a >= 1 and a <= 9 and b >= 1 and b <= 9 (example: a = 5, b = 2)"
+    "correct_answer": "any values that satisfy: (a - b != b - a and a >= 1 and a <= 9 and b >= 1 and b <= 9) and isInteger(a) and a >= 1 and isInteger(b) and b >= 1 (example: a = 5, b = 2)"
    }
   },
   {
@@ -39065,7 +39105,7 @@
    "prompt": "Give a witness for \"Some whole number from 1 to 100 leaves remainder 2 when divided by 3, remainder 3 when divided by 4, and remainder 4 when divided by 5.\"",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: n % 3 == 2 and n % 4 == 3 and n % 5 == 4 and n >= 1 and n <= 100 (example: n = 59)",
+   "correct_answer": "any values that satisfy: (n % 3 == 2 and n % 4 == 3 and n % 5 == 4 and n >= 1 and n <= 100) and isInteger(n) and n >= 1 (example: n = 59)",
    "accepted_alternatives": [],
    "solution": "Each remainder is one less than the divisor, so n + 1 is divisible by 3, 4 and 5, that is by 60. n + 1 = 60 gives n = 59, the only such number up to 100.",
    "wrong_choices": [],
@@ -39092,11 +39132,11 @@
       "label": "n ="
      }
     ],
-    "rule": "n % 3 == 2 and n % 4 == 3 and n % 5 == 4 and n >= 1 and n <= 100",
+    "rule": "(n % 3 == 2 and n % 4 == 3 and n % 5 == 4 and n >= 1 and n <= 100) and isInteger(n) and n >= 1",
     "example_answer": {
      "n": 59
     },
-    "correct_answer": "any values that satisfy: n % 3 == 2 and n % 4 == 3 and n % 5 == 4 and n >= 1 and n <= 100 (example: n = 59)"
+    "correct_answer": "any values that satisfy: (n % 3 == 2 and n % 4 == 3 and n % 5 == 4 and n >= 1 and n <= 100) and isInteger(n) and n >= 1 (example: n = 59)"
    }
   },
   {
@@ -39194,7 +39234,7 @@
    "prompt": "Give whole numbers a, b and c (each from 1 to 20) with a squared + b squared = c squared and a < b.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: a^2 + b^2 == c^2 and a < b and a >= 1 and c <= 20 and isInteger(a) and isInteger(b) and isInteger(c) (example: a = 3, b = 4, c = 5)",
+   "correct_answer": "any values that satisfy: (a^2 + b^2 == c^2 and a < b and a >= 1 and a <= 20 and b >= 1 and b <= 20 and c >= 1 and c <= 20 and isInteger(a) and isInteger(b) and isInteger(c)) and isInteger(a) and a >= 1 and isInteger(b) and b >= 1 and isInteger(c) and c >= 1 (example: a = 3, b = 4, c = 5)",
    "accepted_alternatives": [],
    "solution": "For example 3, 4, 5; 5, 12, 13; 6, 8, 10; 8, 15, 17; 9, 12, 15; 12, 16, 20.",
    "wrong_choices": [],
@@ -39230,13 +39270,13 @@
       "label": "c ="
      }
     ],
-    "rule": "a^2 + b^2 == c^2 and a < b and a >= 1 and c <= 20 and isInteger(a) and isInteger(b) and isInteger(c)",
+    "rule": "(a^2 + b^2 == c^2 and a < b and a >= 1 and a <= 20 and b >= 1 and b <= 20 and c >= 1 and c <= 20 and isInteger(a) and isInteger(b) and isInteger(c)) and isInteger(a) and a >= 1 and isInteger(b) and b >= 1 and isInteger(c) and c >= 1",
     "example_answer": {
      "a": 3,
      "b": 4,
      "c": 5
     },
-    "correct_answer": "any values that satisfy: a^2 + b^2 == c^2 and a < b and a >= 1 and c <= 20 and isInteger(a) and isInteger(b) and isInteger(c) (example: a = 3, b = 4, c = 5)"
+    "correct_answer": "any values that satisfy: (a^2 + b^2 == c^2 and a < b and a >= 1 and a <= 20 and b >= 1 and b <= 20 and c >= 1 and c <= 20 and isInteger(a) and isInteger(b) and isInteger(c)) and isInteger(a) and a >= 1 and isInteger(b) and b >= 1 and isInteger(c) and c >= 1 (example: a = 3, b = 4, c = 5)"
    }
   },
   {
@@ -46554,7 +46594,7 @@
    "prompt": "Find the two-digit whole number that equals 3 times the sum of its digits.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: isInteger(n) and n >= 10 and n <= 99 and n == 3 * (floor(n / 10) + mod(n, 10)) (example: n = 27)",
+   "correct_answer": "any values that satisfy: (isInteger(n) and n >= 10 and n <= 99 and n == 3 * (floor(n / 10) + mod(n, 10))) and isInteger(n) and n >= 0 (example: n = 27)",
    "accepted_alternatives": [],
    "solution": "27 = 3 x (2 + 7). Writing n = 10a + b, the condition 10a + b = 3a + 3b gives 7a = 2b, so a = 2, b = 7 is the only digit solution.",
    "wrong_choices": [],
@@ -46581,11 +46621,11 @@
       "label": "Number ="
      }
     ],
-    "rule": "isInteger(n) and n >= 10 and n <= 99 and n == 3 * (floor(n / 10) + mod(n, 10))",
+    "rule": "(isInteger(n) and n >= 10 and n <= 99 and n == 3 * (floor(n / 10) + mod(n, 10))) and isInteger(n) and n >= 0",
     "example_answer": {
      "n": 27
     },
-    "correct_answer": "any values that satisfy: isInteger(n) and n >= 10 and n <= 99 and n == 3 * (floor(n / 10) + mod(n, 10)) (example: n = 27)"
+    "correct_answer": "any values that satisfy: (isInteger(n) and n >= 10 and n <= 99 and n == 3 * (floor(n / 10) + mod(n, 10))) and isInteger(n) and n >= 0 (example: n = 27)"
    }
   },
   {
@@ -47415,7 +47455,7 @@
    "prompt": "Give a whole number of cents from 1 to 10 that CANNOT be paid exactly using only 3-cent and 5-cent stamps.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: n == 1 or n == 2 or n == 4 or n == 7 (example: n = 7)",
+   "correct_answer": "any values that satisfy: (n == 1 or n == 2 or n == 4 or n == 7) and isInteger(n) and n >= 0 (example: n = 7)",
    "accepted_alternatives": [],
    "solution": "Checking 1 to 10: 3, 5, 6, 8, 9 and 10 can be made; 1, 2, 4 and 7 cannot.",
    "wrong_choices": [],
@@ -47445,11 +47485,11 @@
       "label": "Amount ="
      }
     ],
-    "rule": "n == 1 or n == 2 or n == 4 or n == 7",
+    "rule": "(n == 1 or n == 2 or n == 4 or n == 7) and isInteger(n) and n >= 0",
     "example_answer": {
      "n": 7
     },
-    "correct_answer": "any values that satisfy: n == 1 or n == 2 or n == 4 or n == 7 (example: n = 7)"
+    "correct_answer": "any values that satisfy: (n == 1 or n == 2 or n == 4 or n == 7) and isInteger(n) and n >= 0 (example: n = 7)"
    }
   },
   {
@@ -47735,7 +47775,7 @@
    "prompt": "Definitions: an integer n is even if n = 2k for some integer k, and odd if n = 2k + 1 for some integer k. An integer n is a multiple of m if n = mk for some integer k. To show that 6n + 4 is even for every integer n, write 6n + 4 = 2(pn + q). Give the numbers p and q.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: p == 3 and q == 2 (example: p = 3, q = 2)",
+   "correct_answer": "any values that satisfy: (p == 3 and q == 2) and isInteger(p) and isInteger(q) (example: p = 3, q = 2)",
    "accepted_alternatives": [],
    "solution": "6n + 4 = 2(3n + 2), and 3n + 2 is an integer, so 6n + 4 is even.",
    "wrong_choices": [],
@@ -47769,12 +47809,12 @@
       "label": "q ="
      }
     ],
-    "rule": "p == 3 and q == 2",
+    "rule": "(p == 3 and q == 2) and isInteger(p) and isInteger(q)",
     "example_answer": {
      "p": 3,
      "q": 2
     },
-    "correct_answer": "any values that satisfy: p == 3 and q == 2 (example: p = 3, q = 2)"
+    "correct_answer": "any values that satisfy: (p == 3 and q == 2) and isInteger(p) and isInteger(q) (example: p = 3, q = 2)"
    }
   },
   {
@@ -48286,7 +48326,7 @@
    "prompt": "Definitions: an integer n is even if n = 2k for some integer k, and odd if n = 2k + 1 for some integer k. An integer n is a multiple of m if n = mk for some integer k. (2a + 1)(2b + 1) = 2(2ab + a + b) + 1. For a = 3 and b = 4, what number is 2ab + a + b?",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: x == 31 (example: x = 31)",
+   "correct_answer": "any values that satisfy: (x == 31) and isInteger(x) (example: x = 31)",
    "accepted_alternatives": [],
    "solution": "2(3)(4) + 3 + 4 = 31. Check: 7 x 9 = 63 = 2(31) + 1.",
    "wrong_choices": [],
@@ -48313,11 +48353,11 @@
       "label": "Number ="
      }
     ],
-    "rule": "x == 31",
+    "rule": "(x == 31) and isInteger(x)",
     "example_answer": {
      "x": 31
     },
-    "correct_answer": "any values that satisfy: x == 31 (example: x = 31)"
+    "correct_answer": "any values that satisfy: (x == 31) and isInteger(x) (example: x = 31)"
    }
   },
   {
@@ -48646,7 +48686,7 @@
    "prompt": "Definitions: an integer n is even if n = 2k for some integer k, and odd if n = 2k + 1 for some integer k. An integer n is a multiple of m if n = mk for some integer k. Give an integer n from 1 to 20 for which n squared + n + 1 is even. If no such n exists, enter 0.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: n == 0 (example: n = 0)",
+   "correct_answer": "any values that satisfy: (n == 0) and isInteger(n) (example: n = 0)",
    "accepted_alternatives": [],
    "solution": "n squared + n = n(n + 1) is always even, so n squared + n + 1 is always odd. No such n exists.",
    "wrong_choices": [],
@@ -48673,11 +48713,11 @@
       "label": "n ="
      }
     ],
-    "rule": "n == 0",
+    "rule": "(n == 0) and isInteger(n)",
     "example_answer": {
      "n": 0
     },
-    "correct_answer": "any values that satisfy: n == 0 (example: n = 0)"
+    "correct_answer": "any values that satisfy: (n == 0) and isInteger(n) (example: n = 0)"
    }
   },
   {
@@ -51849,7 +51889,7 @@
    "prompt": "Give an integer n from 1 to 50 for which n squared + 1 is a multiple of 3. If no such n exists, enter 0.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: n == 0 (example: n = 0)",
+   "correct_answer": "any values that satisfy: (n == 0) and isInteger(n) (example: n = 0)",
    "accepted_alternatives": [],
    "solution": "Assume some n works. n leaves remainder 0, 1 or 2 when divided by 3, so n squared leaves 0, 1 or 1; then n squared + 1 leaves 1 or 2, never 0. Contradiction, so none exists.",
    "wrong_choices": [],
@@ -51876,11 +51916,11 @@
       "label": "n ="
      }
     ],
-    "rule": "n == 0",
+    "rule": "(n == 0) and isInteger(n)",
     "example_answer": {
      "n": 0
     },
-    "correct_answer": "any values that satisfy: n == 0 (example: n = 0)"
+    "correct_answer": "any values that satisfy: (n == 0) and isInteger(n) (example: n = 0)"
    }
   },
   {
@@ -53833,7 +53873,7 @@
    "prompt": "A counterexample to a claim about every case is one case where the claim is false. Claim: every whole number divisible by 3 is divisible by 6. Give a counterexample from 1 to 30.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: isInteger(n) and n >= 1 and n <= 30 and mod(n, 3) == 0 and mod(n, 6) != 0 (example: n = 9)",
+   "correct_answer": "any values that satisfy: (isInteger(n) and n >= 1 and n <= 30 and mod(n, 3) == 0 and mod(n, 6) != 0) and isInteger(n) and n >= 0 (example: n = 9)",
    "accepted_alternatives": [],
    "solution": "Any odd multiple of 3 works: 3, 9, 15, 21, 27.",
    "wrong_choices": [],
@@ -53860,11 +53900,11 @@
       "label": "n ="
      }
     ],
-    "rule": "isInteger(n) and n >= 1 and n <= 30 and mod(n, 3) == 0 and mod(n, 6) != 0",
+    "rule": "(isInteger(n) and n >= 1 and n <= 30 and mod(n, 3) == 0 and mod(n, 6) != 0) and isInteger(n) and n >= 0",
     "example_answer": {
      "n": 9
     },
-    "correct_answer": "any values that satisfy: isInteger(n) and n >= 1 and n <= 30 and mod(n, 3) == 0 and mod(n, 6) != 0 (example: n = 9)"
+    "correct_answer": "any values that satisfy: (isInteger(n) and n >= 1 and n <= 30 and mod(n, 3) == 0 and mod(n, 6) != 0) and isInteger(n) and n >= 0 (example: n = 9)"
    }
   },
   {
@@ -53892,9 +53932,9 @@
    "prompt": "A counterexample to a claim about every case is one case where the claim is false. Claim: (a + b) squared = a squared + b squared for all numbers a and b. Give whole numbers a and b that disprove it.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: (a + b)^2 != a^2 + b^2 (example: a = 1, b = 1)",
+   "correct_answer": "any values that satisfy: (a != 0 and b != 0) and isInteger(a) and a >= 0 and isInteger(b) and b >= 0 (example: a = 1, b = 1)",
    "accepted_alternatives": [],
-   "solution": "For a = 1, b = 1: 4 is not 2. The claim fails whenever a and b are both nonzero.",
+   "solution": "(a + b) squared - (a squared + b squared) = 2ab, so the claim fails exactly when a and b are both nonzero. For example a = 1, b = 1: 4 is not 2.",
    "wrong_choices": [],
    "wrong_values_rejected": [
     {
@@ -53922,12 +53962,12 @@
       "label": "b ="
      }
     ],
-    "rule": "(a + b)^2 != a^2 + b^2",
+    "rule": "(a != 0 and b != 0) and isInteger(a) and a >= 0 and isInteger(b) and b >= 0",
     "example_answer": {
      "a": 1,
      "b": 1
     },
-    "correct_answer": "any values that satisfy: (a + b)^2 != a^2 + b^2 (example: a = 1, b = 1)"
+    "correct_answer": "any values that satisfy: (a != 0 and b != 0) and isInteger(a) and a >= 0 and isInteger(b) and b >= 0 (example: a = 1, b = 1)"
    }
   },
   {
@@ -54187,7 +54227,7 @@
    "prompt": "A counterexample to a claim about every case is one case where the claim is false. Claim: for whole numbers a, b and c, if a divides b x c, then a divides b or a divides c. Give a counterexample with a, b and c each from 2 to 12.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: isInteger(a) and isInteger(b) and isInteger(c) and a >= 2 and a <= 12 and b >= 2 and b <= 12 and c >= 2 and c <= 12 and mod(b * c, a) == 0 and mod(b, a) != 0 and mod(c, a) != 0 (example: a = 4, b = 2, c = 6)",
+   "correct_answer": "any values that satisfy: (isInteger(a) and isInteger(b) and isInteger(c) and a >= 2 and a <= 12 and b >= 2 and b <= 12 and c >= 2 and c <= 12 and mod(b * c, a) == 0 and mod(b, a) != 0 and mod(c, a) != 0) and isInteger(a) and a >= 0 and isInteger(b) and b >= 0 and isInteger(c) and c >= 0 (example: a = 4, b = 2, c = 6)",
    "accepted_alternatives": [],
    "solution": "For example a = 4, b = 2, c = 6: 4 divides 12, but 4 divides neither 2 nor 6. (The claim is true when a is prime.)",
    "wrong_choices": [],
@@ -54223,13 +54263,13 @@
       "label": "c ="
      }
     ],
-    "rule": "isInteger(a) and isInteger(b) and isInteger(c) and a >= 2 and a <= 12 and b >= 2 and b <= 12 and c >= 2 and c <= 12 and mod(b * c, a) == 0 and mod(b, a) != 0 and mod(c, a) != 0",
+    "rule": "(isInteger(a) and isInteger(b) and isInteger(c) and a >= 2 and a <= 12 and b >= 2 and b <= 12 and c >= 2 and c <= 12 and mod(b * c, a) == 0 and mod(b, a) != 0 and mod(c, a) != 0) and isInteger(a) and a >= 0 and isInteger(b) and b >= 0 and isInteger(c) and c >= 0",
     "example_answer": {
      "a": 4,
      "b": 2,
      "c": 6
     },
-    "correct_answer": "any values that satisfy: isInteger(a) and isInteger(b) and isInteger(c) and a >= 2 and a <= 12 and b >= 2 and b <= 12 and c >= 2 and c <= 12 and mod(b * c, a) == 0 and mod(b, a) != 0 and mod(c, a) != 0 (example: a = 4, b = 2, c = 6)"
+    "correct_answer": "any values that satisfy: (isInteger(a) and isInteger(b) and isInteger(c) and a >= 2 and a <= 12 and b >= 2 and b <= 12 and c >= 2 and c <= 12 and mod(b * c, a) == 0 and mod(b, a) != 0 and mod(c, a) != 0) and isInteger(a) and a >= 0 and isInteger(b) and b >= 0 and isInteger(c) and c >= 0 (example: a = 4, b = 2, c = 6)"
    }
   },
   {
@@ -54420,11 +54460,11 @@
    "choices": [
     {
      "letter": "A",
-     "text": "The claim is only about positive whole numbers, and -1 is not one."
+     "text": "Because a counterexample must be a large number."
     },
     {
      "letter": "B",
-     "text": "Because a counterexample must be a large number."
+     "text": "The claim is only about positive whole numbers, and -1 is not one."
     },
     {
      "letter": "C",
@@ -54432,17 +54472,17 @@
     },
     {
      "letter": "D",
-     "text": "Because 2 to the power -1 is greater than -1."
+     "text": "Because 2 to the power -1 is undefined."
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "A. The claim is only about positive whole numbers, and -1 is not one.",
+   "correct_letter": "B",
+   "correct_answer": "B. The claim is only about positive whole numbers, and -1 is not one.",
    "accepted_alternatives": [],
-   "solution": "A counterexample must be a case the claim is about.",
+   "solution": "A counterexample must be a case the claim is about. (Also, 2 to the power -1 = 1/2 is greater than -1, so -1 would not break the inequality anyway; the assessed reason is the domain.)",
    "wrong_choices": [
     {
-     "text": "Because 2 to the power -1 is greater than -1.",
-     "why_wrong": "that is true, but it is not why -1 cannot count"
+     "text": "Because 2 to the power -1 is undefined.",
+     "why_wrong": "2 to the power -1 is defined: it equals 1/2"
     },
     {
      "text": "Because a counterexample must be a large number.",
@@ -54460,7 +54500,7 @@
    "package_fields": {
     "type": "mc",
     "outcome": "LOGIC.PROOF.04",
-    "correct_letter": "A",
+    "correct_letter": "B",
     "correct_answer": "The claim is only about positive whole numbers, and -1 is not one."
    }
   },
@@ -54738,17 +54778,18 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 978,
-   "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Put the steps of the proof that angle 3 = angle 6 when p is parallel to q in a correct order. (Two orders are correct.)",
+   "prompt": "In the figure, lines p and q are cut by the transversal t. Angles 1 to 4 are at line p and angles 5 to 8 at line q, in the same positions: 1 upper left, 2 upper right, 3 lower left, 4 lower right (and 5, 6, 7, 8 likewise). Put the steps of the proof that angle 3 = angle 6 when p is parallel to q in a correct order. Each step may use only lines placed before it. (More than one order is correct.)",
    "choices": [],
    "correct_letter": "",
    "correct_answer": "p is parallel to q, cut by transversal t (given) → angle 2 = angle 6 (corresponding angles, p parallel to q) → angle 2 = angle 3 (vertical angles) → angle 3 = angle 6 (both equal angle 2)",
    "accepted_alternatives": [
-    "p is parallel to q, cut by transversal t (given) → angle 2 = angle 3 (vertical angles) → angle 2 = angle 6 (corresponding angles, p parallel to q) → angle 3 = angle 6 (both equal angle 2)"
+    "p is parallel to q, cut by transversal t (given) → angle 2 = angle 3 (vertical angles) → angle 2 = angle 6 (corresponding angles, p parallel to q) → angle 3 = angle 6 (both equal angle 2)",
+    "angle 2 = angle 3 (vertical angles) → p is parallel to q, cut by transversal t (given) → angle 2 = angle 6 (corresponding angles, p parallel to q) → angle 3 = angle 6 (both equal angle 2)"
    ],
-   "solution": "Start with the given. The corresponding-angles step and the vertical-angles step can come in either order; the conclusion comes last.",
+   "solution": "B uses the given A (parallel lines), so A comes before B. The vertical-angles step C needs no given, so it can come anywhere before the conclusion D. Three orders are accepted.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
-   "validation": "Automatic: all 24 orderings of 4 items enumerated; 2 valid.",
+   "validation": "Automatic: all 24 orderings of 4 items enumerated; 3 valid.",
    "figure": "assets/S43-M-Q5.svg",
    "figure_description": "Two horizontal lines p (top) and q (bottom) cut by a slanted transversal t. At each crossing the four angles are numbered: at p, 1 upper left, 2 upper right, 3 lower left, 4 lower right; at q, 5, 6, 7, 8 in the same positions. A note says p is parallel to q.",
    "package_fields": {
@@ -54782,6 +54823,12 @@
      [
       "A",
       "C",
+      "B",
+      "D"
+     ],
+     [
+      "C",
+      "A",
       "B",
       "D"
      ]
@@ -57888,7 +57935,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 1037,
-   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. \"The school's robot passed every test in the lab, so it will work at the competition.\" Which assumption does this argument need?",
+   "prompt": "An assumption is an unstated statement an argument relies on. A bridging assumption is one that, if added, makes the conclusion follow with certainty; a supporting assumption makes a prediction or explanation more likely. \"The school's robot passed every test in the lab, so it will work at the competition.\" Which assumption most supports this prediction?",
    "choices": [
     {
      "letter": "A",
@@ -57910,7 +57957,7 @@
    "correct_letter": "C",
    "correct_answer": "C. Conditions at the competition are like those in the lab.",
    "accepted_alternatives": [],
-   "solution": "Lab success supports competition success only if the two settings are alike.",
+   "solution": "The prediction carries lab results over to the competition, so it relies on the lab representing the competition. The other choices do not connect the two settings.",
    "wrong_choices": [
     {
      "text": "The robot was built by students.",
@@ -57958,29 +58005,29 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 1038,
-   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. \"Mia's plant grew faster after she moved it to the window, so sunlight made it grow faster.\" Which assumption does this argument need?",
+   "prompt": "An assumption is an unstated statement an argument relies on. A bridging assumption is one that, if added, makes the conclusion follow with certainty; a supporting assumption makes a prediction or explanation more likely. \"Mia's plant grew faster after she moved it to the window, so sunlight made it grow faster.\" Which assumption would most strengthen this explanation?",
    "choices": [
     {
      "letter": "A",
-     "text": "Nothing else that affects growth changed when the plant was moved."
-    },
-    {
-     "letter": "B",
      "text": "The window faces south."
     },
     {
-     "letter": "C",
+     "letter": "B",
      "text": "Mia has other plants indoors."
+    },
+    {
+     "letter": "C",
+     "text": "The plant was watered and kept as warm as before the move."
     },
     {
      "letter": "D",
      "text": "Plants need water to grow."
     }
    ],
-   "correct_letter": "A",
-   "correct_answer": "A. Nothing else that affects growth changed when the plant was moved.",
+   "correct_letter": "C",
+   "correct_answer": "C. The plant was watered and kept as warm as before the move.",
    "accepted_alternatives": [],
-   "solution": "If the temperature or watering also changed, those could explain the faster growth instead.",
+   "solution": "Ruling out changes in water and warmth removes the main other explanations, so sunlight becomes the most likely cause. (Other causes could still add to it; the assumption only strengthens the explanation.)",
    "wrong_choices": [
     {
      "text": "Plants need water to grow.",
@@ -58002,8 +58049,8 @@
    "package_fields": {
     "type": "mc",
     "outcome": "LOGIC.EVIDENCE.01",
-    "correct_letter": "A",
-    "correct_answer": "Nothing else that affects growth changed when the plant was moved."
+    "correct_letter": "C",
+    "correct_answer": "The plant was watered and kept as warm as before the move."
    }
   },
   {
@@ -58028,7 +58075,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 1039,
-   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. \"Every member of the chess club is in grade 10. Jo is in grade 10. So Jo is in the chess club.\" This argument would become valid if we add the assumption \"Everyone in grade 10 is in the chess club.\"",
+   "prompt": "An assumption is an unstated statement an argument relies on. A bridging assumption is one that, if added, makes the conclusion follow with certainty; a supporting assumption makes a prediction or explanation more likely. \"Every member of the chess club is in grade 10. Jo is in grade 10. So Jo is in the chess club.\" This argument would become valid if we add the assumption \"Everyone in grade 10 is in the chess club.\"",
    "choices": [
     {
      "letter": "A",
@@ -58148,7 +58195,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 1041,
-   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. \"This bridge is safe because it has stood for 80 years.\" The argument needs the assumption that the bridge will be used the same way as it has been.",
+   "prompt": "An assumption is an unstated statement an argument relies on. A bridging assumption is one that, if added, makes the conclusion follow with certainty; a supporting assumption makes a prediction or explanation more likely. \"This bridge is safe because it has stood for 80 years.\" A major change in how the bridge is used could weaken this argument.",
    "choices": [
     {
      "letter": "A",
@@ -58162,7 +58209,7 @@
    "correct_letter": "A",
    "correct_answer": "True",
    "accepted_alternatives": [],
-   "solution": "If much heavier loads start crossing, 80 years of standing would say little about safety under the new loads.",
+   "solution": "The 80 years of evidence are about the old loads. If, for example, much heavier trucks start crossing, that record says less about safety under the new use.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author",
@@ -58198,7 +58245,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 1042,
-   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. \"Sam is taller than Ana, so Sam is taller than Raj.\" Which assumption fills the gap?",
+   "prompt": "An assumption is an unstated statement an argument relies on. A bridging assumption is one that, if added, makes the conclusion follow with certainty; a supporting assumption makes a prediction or explanation more likely. \"Sam is taller than Ana, so Sam is taller than Raj.\" Which assumption fills the gap?",
    "choices": [
     {
      "letter": "A",
@@ -58268,7 +58315,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 1043,
-   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. Every true statement about the topic of an argument is an assumption that the argument needs.",
+   "prompt": "An assumption is an unstated statement an argument relies on. A bridging assumption is one that, if added, makes the conclusion follow with certainty; a supporting assumption makes a prediction or explanation more likely. Every true statement about the topic of an argument is an assumption that the argument needs.",
    "choices": [
     {
      "letter": "A",
@@ -58318,7 +58365,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 1044,
-   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. \"The park was crowded on Saturday, so it will be crowded this Saturday.\" What is the gap?",
+   "prompt": "An assumption is an unstated statement an argument relies on. A bridging assumption is one that, if added, makes the conclusion follow with certainty; a supporting assumption makes a prediction or explanation more likely. \"The park was crowded on Saturday, so it will be crowded this Saturday.\" What is the gap?",
    "choices": [
     {
      "letter": "A",
@@ -58388,7 +58435,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 1045,
-   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. If an assumption an argument needs turns out to be false, the conclusion no longer follows from the premises.",
+   "prompt": "An assumption is an unstated statement an argument relies on. A bridging assumption is one that, if added, makes the conclusion follow with certainty; a supporting assumption makes a prediction or explanation more likely. If an assumption an argument needs turns out to be false, the conclusion no longer follows from the premises.",
    "choices": [
     {
      "letter": "A",
@@ -58438,7 +58485,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 1046,
-   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. \"All squares are rectangles, so all rectangles are squares\" needs no assumption to be valid.",
+   "prompt": "An assumption is an unstated statement an argument relies on. A bridging assumption is one that, if added, makes the conclusion follow with certainty; a supporting assumption makes a prediction or explanation more likely. \"All squares are rectangles, so all rectangles are squares\" needs no assumption to be valid.",
    "choices": [
     {
      "letter": "A",
@@ -58628,7 +58675,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 1049,
-   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. \"No reptiles have fur. This animal has fur. So this animal is not a reptile.\" This argument needs an unstated assumption to be valid.",
+   "prompt": "An assumption is an unstated statement an argument relies on. A bridging assumption is one that, if added, makes the conclusion follow with certainty; a supporting assumption makes a prediction or explanation more likely. \"No reptiles have fur. This animal has fur. So this animal is not a reptile.\" This argument needs an unstated assumption to be valid.",
    "choices": [
     {
      "letter": "A",
@@ -58678,7 +58725,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 1050,
-   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. \"Our team lost every game we played in the rain. It will rain on Friday. So we will lose Friday's game.\" Which assumption does the argument need?",
+   "prompt": "An assumption is an unstated statement an argument relies on. A bridging assumption is one that, if added, makes the conclusion follow with certainty; a supporting assumption makes a prediction or explanation more likely. \"Our team lost every game we played in the rain. It will rain on Friday. So we will lose Friday's game.\" Which assumption most supports carrying the past pattern forward to Friday?",
    "choices": [
     {
      "letter": "A",
@@ -58686,21 +58733,21 @@
     },
     {
      "letter": "B",
-     "text": "The rain caused the losses, rather than something else about those games."
-    },
-    {
-     "letter": "C",
      "text": "Friday's game is at home."
     },
     {
-     "letter": "D",
+     "letter": "C",
      "text": "Our team has played in the rain before."
+    },
+    {
+     "letter": "D",
+     "text": "Friday's game will be like those rainy games in the ways that mattered."
     }
    ],
-   "correct_letter": "B",
-   "correct_answer": "B. The rain caused the losses, rather than something else about those games.",
+   "correct_letter": "D",
+   "correct_answer": "D. Friday's game will be like those rainy games in the ways that mattered.",
    "accepted_alternatives": [],
-   "solution": "The past pattern predicts Friday only if rain is the reason for the losses.",
+   "solution": "A past pattern supports a prediction when the new case is like the old ones in the ways that mattered (the field, the opponents, the team). It does not require proof that rain caused the losses.",
    "wrong_choices": [
     {
      "text": "Our team has played in the rain before.",
@@ -58722,8 +58769,8 @@
    "package_fields": {
     "type": "mc",
     "outcome": "LOGIC.EVIDENCE.01",
-    "correct_letter": "B",
-    "correct_answer": "The rain caused the losses, rather than something else about those games."
+    "correct_letter": "D",
+    "correct_answer": "Friday's game will be like those rainy games in the ways that mattered."
    }
   },
   {
@@ -58868,7 +58915,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 1053,
-   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. \"Ming read the book, so Ming knows how it ends.\" Which assumption is needed?",
+   "prompt": "An assumption is an unstated statement an argument relies on. A bridging assumption is one that, if added, makes the conclusion follow with certainty; a supporting assumption makes a prediction or explanation more likely. \"Ming read the book, so Ming knows how it ends.\" Which assumption best supports this inference from Ming's reading?",
    "choices": [
     {
      "letter": "A",
@@ -58890,7 +58937,7 @@
    "correct_letter": "B",
    "correct_answer": "B. Ming read the book all the way to the end.",
    "accepted_alternatives": [],
-   "solution": "Reading part of the book would not reveal the ending.",
+   "solution": "The inference is based on Ming's reading, and reading the whole book is what puts the ending in front of Ming. (Ming could also learn the ending another way, so this supports the inference rather than being strictly necessary.)",
    "wrong_choices": [
     {
      "text": "The book has a surprise ending.",
@@ -58938,7 +58985,7 @@
    "genre": "formal logic",
    "family": "formal",
    "question_page": 1054,
-   "prompt": "An assumption is an unstated statement that an argument needs in order for its conclusion to follow. \"Every prize winner practiced daily. Kai practiced daily. So Kai won a prize.\" Adding \"Only prize winners practiced daily\" makes the argument valid.",
+   "prompt": "An assumption is an unstated statement an argument relies on. A bridging assumption is one that, if added, makes the conclusion follow with certainty; a supporting assumption makes a prediction or explanation more likely. \"Every prize winner practiced daily. Kai practiced daily. So Kai won a prize.\" Adding \"Only prize winners practiced daily\" makes the argument valid.",
    "choices": [
     {
      "letter": "A",
@@ -59942,7 +59989,7 @@
    "prompt": "x is a whole number from 1 to 20 and x is a multiple of 3. Give one extra clue as a single number: a value m from 2 to 10 such that knowing \"x is also a multiple of m\" leaves exactly one possible x.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: m == 4 or m == 5 (example: m = 4)",
+   "correct_answer": "any values that satisfy: (m == 4 or m == 5) and isInteger(m) and m >= 1 (example: m = 4)",
    "accepted_alternatives": [],
    "solution": "The multiples of 3 up to 20 are 3, 6, 9, 12, 15, 18. \"Also a multiple of 4\" leaves only 12, and \"also a multiple of 5\" leaves only 15. Other values of m leave none or several.",
    "wrong_choices": [],
@@ -59972,11 +60019,11 @@
       "label": "m ="
      }
     ],
-    "rule": "m == 4 or m == 5",
+    "rule": "(m == 4 or m == 5) and isInteger(m) and m >= 1",
     "example_answer": {
      "m": 4
     },
-    "correct_answer": "any values that satisfy: m == 4 or m == 5 (example: m = 4)"
+    "correct_answer": "any values that satisfy: (m == 4 or m == 5) and isInteger(m) and m >= 1 (example: m = 4)"
    }
   },
   {
@@ -60147,7 +60194,7 @@
    "prompt": "Two whole numbers from 1 to 9 multiply to 12. Give a sum s such that also knowing \"the two numbers add to s\" tells you exactly which two numbers they are.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: s == 7 or s == 8 (example: s = 7)",
+   "correct_answer": "any values that satisfy: (s == 7 or s == 8) and isInteger(s) and s >= 1 (example: s = 7)",
    "accepted_alternatives": [],
    "solution": "The pairs with product 12 are 2 and 6 (sum 8) and 3 and 4 (sum 7). Either sum picks out one pair.",
    "wrong_choices": [],
@@ -60174,11 +60221,11 @@
       "label": "s ="
      }
     ],
-    "rule": "s == 7 or s == 8",
+    "rule": "(s == 7 or s == 8) and isInteger(s) and s >= 1",
     "example_answer": {
      "s": 7
     },
-    "correct_answer": "any values that satisfy: s == 7 or s == 8 (example: s = 7)"
+    "correct_answer": "any values that satisfy: (s == 7 or s == 8) and isInteger(s) and s >= 1 (example: s = 7)"
    }
   },
   {
@@ -61029,12 +61076,12 @@
    "genre": "seven-segment displays",
    "family": "visual",
    "question_page": 1092,
-   "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. How many two-digit numbers (10 to 99) still show a number after the display is turned upside down?",
+   "prompt": "Digits are shown on a seven-segment display exactly as in the reference figure (0 to 9). Turning the display upside down means a half turn; a turned digit counts as a digit only if its lit segments are exactly those of a digit in the reference figure. How many two-digit numbers (10 to 99) still show a two-digit number after the display is turned upside down? The turned display must not start with 0.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "30",
+   "correct_answer": "25",
    "accepted_alternatives": [],
-   "solution": "Both digits must be from 0, 2, 5, 6, 8, 9; the first cannot be 0: 5 x 6 = 30.",
+   "solution": "Both digits must be from 0, 2, 5, 6, 8, 9 (each turns into a digit). The first digit cannot be 0, and the last digit becomes the first digit of the turned display, so it cannot be 0 either. That leaves 2, 5, 6, 8, 9 for each digit: 5 x 5 = 25.",
    "wrong_choices": [],
    "wrong_values_rejected": [],
    "validation": "solved by the author Automatic: the key was recomputed by code.",
@@ -61046,7 +61093,7 @@
     "answer_lines": [
      "Numbers:"
     ],
-    "correct_answer": "30"
+    "correct_answer": "25"
    }
   },
   {
@@ -63554,7 +63601,7 @@
    "genre": "informal logic",
    "family": "formal",
    "question_page": 1137,
-   "prompt": "In the clinics above, Clinic A has the higher overall recovery rate (about 82% to 58%). Which statement is true?",
+   "prompt": "Two clinics treat a condition. Clinic A: 100 mild cases (90 recover) and 20 severe cases (8 recover). Clinic B: 20 mild cases (19 recover) and 100 severe cases (50 recover). Overall, Clinic A has the higher recovery rate (about 82% to 58%). Which statement is true?",
    "choices": [
     {
      "letter": "A",
@@ -63625,7 +63672,7 @@
    "genre": "informal logic",
    "family": "formal",
    "question_page": 1138,
-   "prompt": "In the clinics above, comparing only the overall recovery rates gives a fair comparison of the clinics.",
+   "prompt": "Two clinics treat a condition. Clinic A: 100 mild cases (90 recover) and 20 severe cases (8 recover). Clinic B: 20 mild cases (19 recover) and 100 severe cases (50 recover). Comparing only the overall recovery rates gives a fair comparison of the clinics.",
    "choices": [
     {
      "letter": "A",
@@ -63719,7 +63766,7 @@
    "genre": "informal logic",
    "family": "formal",
    "question_page": 1140,
-   "prompt": "In the town above, 590 people test positive and 95 of them have the condition. What fraction of the positive tests are correct?",
+   "prompt": "Of 590 people who test positive for a condition, 95 actually have it. What fraction of the positive tests are correct?",
    "choices": [
     {
      "letter": "A",
@@ -64001,7 +64048,7 @@
    "prompt": "Whole numbers x and y are each 0 or more, with x + 2y at most 10 and x at most 6. Make x + 3y as large as possible. Give x and y.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: x == 0 and y == 5 (example: x = 0, y = 5)",
+   "correct_answer": "any values that satisfy: (x == 0 and y == 5) and isInteger(x) and x >= 0 and isInteger(y) and y >= 0 (example: x = 0, y = 5)",
    "accepted_alternatives": [],
    "solution": "x + 3y = (x + 2y) + y is at most 10 + y, and y is at most 5, so x + 3y is at most 15. Only x = 0, y = 5 reaches 15.",
    "wrong_choices": [],
@@ -64035,12 +64082,12 @@
       "label": "y ="
      }
     ],
-    "rule": "x == 0 and y == 5",
+    "rule": "(x == 0 and y == 5) and isInteger(x) and x >= 0 and isInteger(y) and y >= 0",
     "example_answer": {
      "x": 0,
      "y": 5
     },
-    "correct_answer": "any values that satisfy: x == 0 and y == 5 (example: x = 0, y = 5)"
+    "correct_answer": "any values that satisfy: (x == 0 and y == 5) and isInteger(x) and x >= 0 and isInteger(y) and y >= 0 (example: x = 0, y = 5)"
    }
   },
   {
@@ -64536,7 +64583,7 @@
    "prompt": "Two whole numbers are each at least 1 and their product is 36. Make their sum as small as possible. Give the two numbers.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: a == 6 and b == 6 (example: a = 6, b = 6)",
+   "correct_answer": "any values that satisfy: (a == 6 and b == 6) and isInteger(a) and a >= 0 and isInteger(b) and b >= 0 (example: a = 6, b = 6)",
    "accepted_alternatives": [],
    "solution": "The pairs are 1 x 36, 2 x 18, 3 x 12, 4 x 9, 6 x 6 with sums 37, 20, 15, 13, 12. 6 and 6 is best.",
    "wrong_choices": [],
@@ -64570,12 +64617,12 @@
       "label": "b ="
      }
     ],
-    "rule": "a == 6 and b == 6",
+    "rule": "(a == 6 and b == 6) and isInteger(a) and a >= 0 and isInteger(b) and b >= 0",
     "example_answer": {
      "a": 6,
      "b": 6
     },
-    "correct_answer": "any values that satisfy: a == 6 and b == 6 (example: a = 6, b = 6)"
+    "correct_answer": "any values that satisfy: (a == 6 and b == 6) and isInteger(a) and a >= 0 and isInteger(b) and b >= 0 (example: a = 6, b = 6)"
    }
   },
   {
@@ -64741,7 +64788,7 @@
    "prompt": "Whole numbers a, b and c are each at least 1 and add up to 12. Make the product a x b x c as large as possible. Give a, b and c.",
    "choices": [],
    "correct_letter": "",
-   "correct_answer": "any values that satisfy: a == 4 and b == 4 and c == 4 (example: a = 4, b = 4, c = 4)",
+   "correct_answer": "any values that satisfy: (a == 4 and b == 4 and c == 4) and isInteger(a) and a >= 0 and isInteger(b) and b >= 0 and isInteger(c) and c >= 0 (example: a = 4, b = 4, c = 4)",
    "accepted_alternatives": [],
    "solution": "If two of the numbers differ by 2 or more, moving 1 from the larger to the smaller raises the product. So all three are equal: 4, 4, 4, product 64.",
    "wrong_choices": [],
@@ -64782,13 +64829,13 @@
       "label": "c ="
      }
     ],
-    "rule": "a == 4 and b == 4 and c == 4",
+    "rule": "(a == 4 and b == 4 and c == 4) and isInteger(a) and a >= 0 and isInteger(b) and b >= 0 and isInteger(c) and c >= 0",
     "example_answer": {
      "a": 4,
      "b": 4,
      "c": 4
     },
-    "correct_answer": "any values that satisfy: a == 4 and b == 4 and c == 4 (example: a = 4, b = 4, c = 4)"
+    "correct_answer": "any values that satisfy: (a == 4 and b == 4 and c == 4) and isInteger(a) and a >= 0 and isInteger(b) and b >= 0 and isInteger(c) and c >= 0 (example: a = 4, b = 4, c = 4)"
    }
   },
   {
@@ -64885,7 +64932,7 @@
    "genre": "sequences",
    "family": "symbolic",
    "question_page": 1163,
-   "prompt": "Rule family: every sequence here follows exactly one of these rules. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same number each time (for example +1, +2, +3, ...). What is the next term of 3, 7, 11, 15, ...?",
+   "prompt": "Rule family: the complete sequence is made by one of these rule types, though the terms shown may fit more than one. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same nonzero number each time (for example +1, +2, +3, ...). What is the next term of 3, 7, 11, 15, ...?",
    "choices": [],
    "correct_letter": "",
    "correct_answer": "19",
@@ -64928,7 +64975,7 @@
    "genre": "sequences",
    "family": "symbolic",
    "question_page": 1164,
-   "prompt": "Rule family: every sequence here follows exactly one of these rules. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same number each time (for example +1, +2, +3, ...). Which rule fits 2, 6, 18, 54, ...?",
+   "prompt": "Rule family: the complete sequence is made by one of these rule types, though the terms shown may fit more than one. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same nonzero number each time (for example +1, +2, +3, ...). Which rule fits 2, 6, 18, 54, ...?",
    "choices": [
     {
      "letter": "A",
@@ -64999,7 +65046,7 @@
    "genre": "sequences",
    "family": "symbolic",
    "question_page": 1165,
-   "prompt": "Rule family: every sequence here follows exactly one of these rules. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same number each time (for example +1, +2, +3, ...). What is the next term of 1, 2, 4, 7, 11, ...?",
+   "prompt": "Rule family: the complete sequence is made by one of these rule types, though the terms shown may fit more than one. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same nonzero number each time (for example +1, +2, +3, ...). What is the next term of 1, 2, 4, 7, 11, ...?",
    "choices": [],
    "correct_letter": "",
    "correct_answer": "16",
@@ -65042,7 +65089,7 @@
    "genre": "sequences",
    "family": "symbolic",
    "question_page": 1166,
-   "prompt": "Rule family: every sequence here follows exactly one of these rules. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same number each time (for example +1, +2, +3, ...). The sequence 5, 10, 20, 35, ... follows rule (3).",
+   "prompt": "Rule family: the complete sequence is made by one of these rule types, though the terms shown may fit more than one. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same nonzero number each time (for example +1, +2, +3, ...). The sequence 5, 10, 20, 35, ... follows rule (3).",
    "choices": [
     {
      "letter": "A",
@@ -65093,7 +65140,7 @@
    "genre": "sequences",
    "family": "symbolic",
    "question_page": 1167,
-   "prompt": "Rule family: every sequence here follows exactly one of these rules. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same number each time (for example +1, +2, +3, ...). Letters are numbered by their place in the alphabet: A = 1, B = 2, ..., Z = 26. The letters C, F, I, L follow rule (1) by their numbers. Give the next letter.",
+   "prompt": "Rule family: the complete sequence is made by one of these rule types, though the terms shown may fit more than one. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same nonzero number each time (for example +1, +2, +3, ...). Letters are numbered by their place in the alphabet: A = 1, B = 2, ..., Z = 26. The letters C, F, I, L follow rule (1) by their numbers. Give the next letter.",
    "choices": [],
    "correct_letter": "",
    "correct_answer": "any values that satisfy: x == 'o' (example: x = O)",
@@ -65196,7 +65243,7 @@
    "genre": "sequences",
    "family": "symbolic",
    "question_page": 1169,
-   "prompt": "Rule family: every sequence here follows exactly one of these rules. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same number each time (for example +1, +2, +3, ...). The sequence 10, 7, 4, 1, ... follows rule (1).",
+   "prompt": "Rule family: the complete sequence is made by one of these rule types, though the terms shown may fit more than one. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same nonzero number each time (for example +1, +2, +3, ...). The sequence 10, 7, 4, 1, ... follows rule (1).",
    "choices": [
     {
      "letter": "A",
@@ -65247,7 +65294,7 @@
    "genre": "sequences",
    "family": "symbolic",
    "question_page": 1170,
-   "prompt": "Rule family: every sequence here follows exactly one of these rules. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same number each time (for example +1, +2, +3, ...). Which rule fits 1, 4, 16, 64, ...?",
+   "prompt": "Rule family: the complete sequence is made by one of these rule types, though the terms shown may fit more than one. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same nonzero number each time (for example +1, +2, +3, ...). Which rule fits 1, 4, 16, 64, ...?",
    "choices": [
     {
      "letter": "A",
@@ -65318,7 +65365,7 @@
    "genre": "sequences",
    "family": "symbolic",
    "question_page": 1171,
-   "prompt": "Rule family: every sequence here follows exactly one of these rules. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same number each time (for example +1, +2, +3, ...). What is the next term of 50, 45, 40, 35, ...?",
+   "prompt": "Rule family: the complete sequence is made by one of these rule types, though the terms shown may fit more than one. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same nonzero number each time (for example +1, +2, +3, ...). What is the next term of 50, 45, 40, 35, ...?",
    "choices": [],
    "correct_letter": "",
    "correct_answer": "30",
@@ -65361,7 +65408,7 @@
    "genre": "sequences",
    "family": "symbolic",
    "question_page": 1172,
-   "prompt": "Rule family: every sequence here follows exactly one of these rules. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same number each time (for example +1, +2, +3, ...). The sequence 3, 6, 12, 24, ... follows rule (1).",
+   "prompt": "Rule family: the complete sequence is made by one of these rule types, though the terms shown may fit more than one. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same nonzero number each time (for example +1, +2, +3, ...). The sequence 3, 6, 12, 24, ... follows rule (1).",
    "choices": [
     {
      "letter": "A",
@@ -65412,7 +65459,7 @@
    "genre": "sequences",
    "family": "symbolic",
    "question_page": 1173,
-   "prompt": "Rule family: every sequence here follows exactly one of these rules. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same number each time (for example +1, +2, +3, ...). Letters are numbered by their place in the alphabet: A = 1, B = 2, ..., Z = 26. The letters B, D, G, K follow rule (3) by their numbers. Give the next letter.",
+   "prompt": "Rule family: the complete sequence is made by one of these rule types, though the terms shown may fit more than one. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same nonzero number each time (for example +1, +2, +3, ...). Letters are numbered by their place in the alphabet: A = 1, B = 2, ..., Z = 26. The letters B, D, G, K follow rule (3) by their numbers. Give the next letter.",
    "choices": [],
    "correct_letter": "",
    "correct_answer": "any values that satisfy: x == 'p' (example: x = P)",
@@ -65472,7 +65519,7 @@
    "genre": "sequences",
    "family": "symbolic",
    "question_page": 1174,
-   "prompt": "Rule family: every sequence here follows exactly one of these rules. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same number each time (for example +1, +2, +3, ...). What is the 10th term of 4, 7, 10, 13, ...?",
+   "prompt": "Rule family: the complete sequence is made by one of these rule types, though the terms shown may fit more than one. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same nonzero number each time (for example +1, +2, +3, ...). What is the 10th term of 4, 7, 10, 13, ...?",
    "choices": [],
    "correct_letter": "",
    "correct_answer": "31",
@@ -65515,7 +65562,7 @@
    "genre": "sequences",
    "family": "symbolic",
    "question_page": 1175,
-   "prompt": "Rule family: every sequence here follows exactly one of these rules. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same number each time (for example +1, +2, +3, ...). Knowing only the first two terms, 3 and 6, is enough to know the third term.",
+   "prompt": "Rule family: the complete sequence is made by one of these rule types, though the terms shown may fit more than one. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same nonzero number each time (for example +1, +2, +3, ...). Knowing only the first two terms, 3 and 6, is enough to know the third term.",
    "choices": [
     {
      "letter": "A",
@@ -65566,7 +65613,7 @@
    "genre": "sequences",
    "family": "symbolic",
    "question_page": 1176,
-   "prompt": "Rule family: every sequence here follows exactly one of these rules. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same number each time (for example +1, +2, +3, ...). The first three terms are 1, 2, 4. Which statement is true?",
+   "prompt": "Rule family: the complete sequence is made by one of these rule types, though the terms shown may fit more than one. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same nonzero number each time (for example +1, +2, +3, ...). The first three terms are 1, 2, 4. Which statement is true?",
    "choices": [
     {
      "letter": "A",
@@ -65637,7 +65684,7 @@
    "genre": "sequences",
    "family": "symbolic",
    "question_page": 1177,
-   "prompt": "Rule family: every sequence here follows exactly one of these rules. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same number each time (for example +1, +2, +3, ...). What is the 8th term of 2, 6, 18, 54, ...?",
+   "prompt": "Rule family: the complete sequence is made by one of these rule types, though the terms shown may fit more than one. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same nonzero number each time (for example +1, +2, +3, ...). What is the 8th term of 2, 6, 18, 54, ...?",
    "choices": [],
    "correct_letter": "",
    "correct_answer": "4374",
@@ -65680,7 +65727,7 @@
    "genre": "sequences",
    "family": "symbolic",
    "question_page": 1178,
-   "prompt": "Rule family: every sequence here follows exactly one of these rules. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same number each time (for example +1, +2, +3, ...). The sequence is 5, 9, 13, 17, .... Give the 25th term.",
+   "prompt": "Rule family: the complete sequence is made by one of these rule types, though the terms shown may fit more than one. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same nonzero number each time (for example +1, +2, +3, ...). The sequence is 5, 9, 13, 17, .... Give the 25th term.",
    "choices": [],
    "correct_letter": "",
    "correct_answer": "any values that satisfy: t == 101 (example: t = 101)",
@@ -65740,7 +65787,7 @@
    "genre": "sequences",
    "family": "symbolic",
    "question_page": 1179,
-   "prompt": "Rule family: every sequence here follows exactly one of these rules. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same number each time (for example +1, +2, +3, ...). In the sequence 3, 6, 12, 24, ..., which term is the first one greater than 1000? Give its position (1 for the first term).",
+   "prompt": "Rule family: the complete sequence is made by one of these rule types, though the terms shown may fit more than one. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same nonzero number each time (for example +1, +2, +3, ...). In the sequence 3, 6, 12, 24, ..., which term is the first one greater than 1000? Give its position (1 for the first term).",
    "choices": [],
    "correct_letter": "",
    "correct_answer": "10",
@@ -65783,7 +65830,7 @@
    "genre": "sequences",
    "family": "symbolic",
    "question_page": 1180,
-   "prompt": "Rule family: every sequence here follows exactly one of these rules. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same number each time (for example +1, +2, +3, ...). What is the 10th term of 1, 3, 6, 10, ...?",
+   "prompt": "Rule family: the complete sequence is made by one of these rule types, though the terms shown may fit more than one. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same nonzero number each time (for example +1, +2, +3, ...). What is the 10th term of 1, 3, 6, 10, ...?",
    "choices": [],
    "correct_letter": "",
    "correct_answer": "55",
@@ -65826,7 +65873,7 @@
    "genre": "sequences",
    "family": "symbolic",
    "question_page": 1181,
-   "prompt": "Rule family: every sequence here follows exactly one of these rules. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same number each time (for example +1, +2, +3, ...). A sequence that follows rule (1) with a positive amount added will eventually pass every number.",
+   "prompt": "Rule family: the complete sequence is made by one of these rule types, though the terms shown may fit more than one. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same nonzero number each time (for example +1, +2, +3, ...). A sequence that follows rule (1) with a positive amount added will eventually pass every number.",
    "choices": [
     {
      "letter": "A",
@@ -65877,7 +65924,7 @@
    "genre": "sequences",
    "family": "symbolic",
    "question_page": 1182,
-   "prompt": "Rule family: every sequence here follows exactly one of these rules. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same number each time (for example +1, +2, +3, ...). Letters are numbered by their place in the alphabet: A = 1, B = 2, ..., Z = 26. Which letter sequence follows rule (2) by the letters' numbers?",
+   "prompt": "Rule family: the complete sequence is made by one of these rule types, though the terms shown may fit more than one. (1) Add the same number each time. (2) Multiply by the same number each time. (3) Add amounts that grow by the same nonzero number each time (for example +1, +2, +3, ...). Letters are numbered by their place in the alphabet: A = 1, B = 2, ..., Z = 26. Which letter sequence follows rule (2) by the letters' numbers?",
    "choices": [
     {
      "letter": "A",
@@ -67620,7 +67667,7 @@
    "genre": "balance puzzles",
    "family": "constraint",
    "question_page": 1216,
-   "prompt": "A balance scale compares two groups of coins: one side goes down, or the two sides balance. All coins look the same. All genuine coins weigh the same; the one odd coin is heavier unless the question says otherwise. There are 6 coins and one is heavier. You weigh 2 against 2 and the left side goes down. What should the next weighing be?",
+   "prompt": "A balance scale compares two groups of coins: one side goes down, or the two sides balance. All coins look the same. All genuine coins weigh the same; the one odd coin is heavier unless the question says otherwise. There are 6 coins and one is heavier. You weigh 2 against 2 and the left side goes down. Which next weighing is sure to identify the heavy coin?",
    "choices": [
     {
      "letter": "A",
@@ -67628,25 +67675,25 @@
     },
     {
      "letter": "B",
-     "text": "All six coins again, 3 against 3"
+     "text": "One left-side coin against the other left-side coin"
     },
     {
      "letter": "C",
-     "text": "One left-side coin against a right-side coin"
+     "text": "All six coins again, 3 against 3"
     },
     {
      "letter": "D",
-     "text": "One left-side coin against the other left-side coin"
+     "text": "One right-side coin against one coin that was left off the scale"
     }
    ],
-   "correct_letter": "D",
-   "correct_answer": "D. One left-side coin against the other left-side coin",
+   "correct_letter": "B",
+   "correct_answer": "B. One left-side coin against the other left-side coin",
    "accepted_alternatives": [],
    "solution": "Only the 2 left-side coins are suspects. Weigh them against each other: the one that goes down is heavy.",
    "wrong_choices": [
     {
-     "text": "One left-side coin against a right-side coin",
-     "why_wrong": "the right-side coins are already known to be genuine, so this tests only one suspect"
+     "text": "One right-side coin against one coin that was left off the scale",
+     "why_wrong": "both of those coins are genuine, so they balance and nothing is learned"
     },
     {
      "text": "The two coins left off against each other",
@@ -67664,7 +67711,7 @@
    "package_fields": {
     "type": "mc",
     "outcome": "LOGIC.SEARCH.02",
-    "correct_letter": "D",
+    "correct_letter": "B",
     "correct_answer": "One left-side coin against the other left-side coin"
    }
   },

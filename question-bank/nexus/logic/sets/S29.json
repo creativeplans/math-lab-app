@@ -30,11 +30,11 @@
        "label": "n ="
       }
      ],
-     "rule": "isPrime(n) and n > 20 and n < 30",
+     "rule": "(isPrime(n) and n > 20 and n < 30) and isInteger(n) and n >= 0",
      "example_answer": {
       "n": 23
      },
-     "correct_answer": "any values that satisfy: isPrime(n) and n > 20 and n < 30 (example: n = 23)"
+     "correct_answer": "any values that satisfy: (isPrime(n) and n > 20 and n < 30) and isInteger(n) and n >= 0 (example: n = 23)"
     },
     {
      "id": "S29-M-Q2",
@@ -50,11 +50,11 @@
        "label": "n ="
       }
      ],
-     "rule": "n % 3 == 0 and isEven(n) and isInteger(n)",
+     "rule": "(n % 3 == 0 and isEven(n) and isInteger(n)) and isInteger(n) and n >= 0",
      "example_answer": {
       "n": 6
      },
-     "correct_answer": "any values that satisfy: n % 3 == 0 and isEven(n) and isInteger(n) (example: n = 6)"
+     "correct_answer": "any values that satisfy: (n % 3 == 0 and isEven(n) and isInteger(n)) and isInteger(n) and n >= 0 (example: n = 6)"
     },
     {
      "id": "S29-M-Q3",
@@ -91,7 +91,7 @@
      "standard": "",
      "domain": "formal logic",
      "type": "values",
-     "prompt": "Give real numbers a and b that are a counterexample to \"For all real numbers a and b, (a + b) squared = a squared + b squared.\"",
+     "prompt": "Give integers a and b (integers are real numbers) that are a counterexample to \"For all real numbers a and b, (a + b) squared = a squared + b squared.\"",
      "outcome": "LOGIC.QUANT.03",
      "fields": [
       {
@@ -103,12 +103,12 @@
        "label": "b ="
       }
      ],
-     "rule": "(a + b)^2 != a^2 + b^2",
+     "rule": "(a != 0 and b != 0) and isInteger(a) and isInteger(b)",
      "example_answer": {
       "a": 1,
       "b": 1
      },
-     "correct_answer": "any values that satisfy: (a + b)^2 != a^2 + b^2 (example: a = 1, b = 1)"
+     "correct_answer": "any values that satisfy: (a != 0 and b != 0) and isInteger(a) and isInteger(b) (example: a = 1, b = 1)"
     },
     {
      "id": "S29-M-Q5",
@@ -438,12 +438,12 @@
        "label": "b ="
       }
      ],
-     "rule": "divides(a, b * 2) and not divides(a, b) and not divides(a, 2) and a > 0 and b > 0 and isInteger(a) and isInteger(b)",
+     "rule": "(divides(a, b * 2) and not divides(a, b) and not divides(a, 2) and a > 0 and b > 0 and isInteger(a) and isInteger(b)) and isInteger(a) and a >= 1 and isInteger(b) and b >= 1",
      "example_answer": {
       "a": 4,
       "b": 2
      },
-     "correct_answer": "any values that satisfy: divides(a, b * 2) and not divides(a, b) and not divides(a, 2) and a > 0 and b > 0 and isInteger(a) and isInteger(b) (example: a = 4, b = 2)"
+     "correct_answer": "any values that satisfy: (divides(a, b * 2) and not divides(a, b) and not divides(a, 2) and a > 0 and b > 0 and isInteger(a) and isInteger(b)) and isInteger(a) and a >= 1 and isInteger(b) and b >= 1 (example: a = 4, b = 2)"
     },
     {
      "id": "S29-F1-Q3",
@@ -514,12 +514,12 @@
        "label": "b ="
       }
      ],
-     "rule": "a - b != b - a and a >= 1 and a <= 9 and b >= 1 and b <= 9",
+     "rule": "(a - b != b - a and a >= 1 and a <= 9 and b >= 1 and b <= 9) and isInteger(a) and a >= 1 and isInteger(b) and b >= 1",
      "example_answer": {
       "a": 5,
       "b": 2
      },
-     "correct_answer": "any values that satisfy: a - b != b - a and a >= 1 and a <= 9 and b >= 1 and b <= 9 (example: a = 5, b = 2)"
+     "correct_answer": "any values that satisfy: (a - b != b - a and a >= 1 and a <= 9 and b >= 1 and b <= 9) and isInteger(a) and a >= 1 and isInteger(b) and b >= 1 (example: a = 5, b = 2)"
     }
    ]
   },
@@ -547,11 +547,11 @@
        "label": "n ="
       }
      ],
-     "rule": "n % 3 == 2 and n % 4 == 3 and n % 5 == 4 and n >= 1 and n <= 100",
+     "rule": "(n % 3 == 2 and n % 4 == 3 and n % 5 == 4 and n >= 1 and n <= 100) and isInteger(n) and n >= 1",
      "example_answer": {
       "n": 59
      },
-     "correct_answer": "any values that satisfy: n % 3 == 2 and n % 4 == 3 and n % 5 == 4 and n >= 1 and n <= 100 (example: n = 59)"
+     "correct_answer": "any values that satisfy: (n % 3 == 2 and n % 4 == 3 and n % 5 == 4 and n >= 1 and n <= 100) and isInteger(n) and n >= 1 (example: n = 59)"
     },
     {
      "id": "S29-F2-Q2",
@@ -604,13 +604,13 @@
        "label": "c ="
       }
      ],
-     "rule": "a^2 + b^2 == c^2 and a < b and a >= 1 and c <= 20 and isInteger(a) and isInteger(b) and isInteger(c)",
+     "rule": "(a^2 + b^2 == c^2 and a < b and a >= 1 and a <= 20 and b >= 1 and b <= 20 and c >= 1 and c <= 20 and isInteger(a) and isInteger(b) and isInteger(c)) and isInteger(a) and a >= 1 and isInteger(b) and b >= 1 and isInteger(c) and c >= 1",
      "example_answer": {
       "a": 3,
       "b": 4,
       "c": 5
      },
-     "correct_answer": "any values that satisfy: a^2 + b^2 == c^2 and a < b and a >= 1 and c <= 20 and isInteger(a) and isInteger(b) and isInteger(c) (example: a = 3, b = 4, c = 5)"
+     "correct_answer": "any values that satisfy: (a^2 + b^2 == c^2 and a < b and a >= 1 and a <= 20 and b >= 1 and b <= 20 and c >= 1 and c <= 20 and isInteger(a) and isInteger(b) and isInteger(c)) and isInteger(a) and a >= 1 and isInteger(b) and b >= 1 and isInteger(c) and c >= 1 (example: a = 3, b = 4, c = 5)"
     },
     {
      "id": "S29-F2-Q4",
