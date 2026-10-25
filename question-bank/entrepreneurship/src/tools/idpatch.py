@@ -24,8 +24,13 @@ def main(path):
                 break
             hits = []
         if len(hits) != 1:
-            bad.append((qid, 'prompt not unique'))
-            continue
+            # fall back to the old texts themselves when each occurs once in all data files
+            olds = list(reps)
+            found = [[(f, s.find(q)) for f, s in files.items() for q in quoted(o) if s.count(q) == 1] for o in olds]
+            if not all(len(x) == 1 for x in found) or len({x[0][0] for x in found}) != 1:
+                bad.append((qid, 'prompt not unique'))
+                continue
+            hits = [(found[0][0][0], min(x[0][1] for x in found))]
         f, at = hits[0]
         for old, new in reps.items():
             s = files[f]
