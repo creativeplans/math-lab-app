@@ -525,7 +525,7 @@ s4 = SET('ENT.CASE.01',
         Q('A town already has five ice cream shops. A new owner wants to copy the case exactly. What should be checked '
           'first?', 'Whether there is enough demand for another shop and how it would differ',
           ('Whether the founders liked vanilla', 'not relevant'), ('Which year the founders met', 'trivia'),
-          ('How big the founders\' first sign over the shop door was', 'not relevant'),
+          ('How big the founders\' very first sign over the shop door was at the opening', 'not relevant'),
           'Market conditions differ; demand and differences must be checked.'),
         Q('Which statement correctly separates history from the course\'s interpretation?',
           'The shop location is documented; "start small" is a lesson drawn from it.',

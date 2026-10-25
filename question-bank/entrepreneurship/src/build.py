@@ -305,8 +305,15 @@ def main(pdf=True):
             shrink_pdf(f)
     write_key(recs)
     longest = [r['id'] for r in recs if len(r['correct_answer']) > max(len(w['text']) for w in r['wrong_choices'])]
-    print('Entrepreneurship: %d of %d planned sets, %d questions; key is the unique longest choice in %d (%.0f%%)'
-          % (len(all_sets), len(plan.SETS), len(recs), len(longest), 100.0 * len(longest) / max(1, len(recs))))
+    consp = [r['id'] for r in recs if len(r['correct_answer']) > 1.2 * max(len(w['text']) for w in r['wrong_choices'])]
+    print('Entrepreneurship: %d of %d planned sets, %d questions; key is the unique longest choice in %d (%.0f%%); '
+          'conspicuously longest (>20%% longer than every other choice) in %d'
+          % (len(all_sets), len(plan.SETS), len(recs), len(longest), 100.0 * len(longest) / max(1, len(recs)), len(consp)))
+    if '--consp' in sys.argv:
+        for r in recs:
+            if r['id'] in consp:
+                print('  %s | %d | %s' % (r['id'], len(r['correct_answer']),
+                                          max((w['text'] for w in r['wrong_choices']), key=len)))
     return all_sets, recs
 
 
