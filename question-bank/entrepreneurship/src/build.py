@@ -167,6 +167,8 @@ def write_package(sets_pkg):
         m = {'id': mid, 'title': title, 'kind': kind, 'description': desc, 'sets': ms}
         if paths:
             m['paths'] = paths
+        if kind == 'specialty':
+            m['optional'] = True
         modules.append(m)
     index = {'format_version': 1, 'course': 'entrepreneurship', 'bank_version': VERSION, 'title': TITLE,
              'category': 'Adults & HS Students', 'scope_note': SCOPE_NOTE,
