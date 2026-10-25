@@ -1,0 +1,657 @@
+{
+ "set": 16,
+ "title": "Continue, change or stop",
+ "outcome": "ENT.TEST.07",
+ "content_status": "stable",
+ "requires": [
+  14
+ ],
+ "module": "testing",
+ "path_refs": [
+  "services",
+  "products",
+  "digital",
+  "content"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Decide from results whether to continue, change or stop",
+   "questions": [
+    {
+     "id": "S16-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 3: Testing demand",
+     "type": "mc",
+     "prompt": "Target: 20 paid bookings in a month. Result: 26 bookings. What is the sensible decision?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Continue"
+      },
+      {
+       "letter": "B",
+       "text": "Stop"
+      },
+      {
+       "letter": "C",
+       "text": "Ignore the result"
+      },
+      {
+       "letter": "D",
+       "text": "Change the target to 40 and call it a failure"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Continue",
+     "intro": "After a test, decide: continue, change, or stop. CONTINUE when the results meet the target you set in advance. CHANGE (sometimes called a pivot) when part of the idea works but something important does not: a different customer, price, or offer might fit better. STOP when the results are far below the target and nothing points to a better version, or when the cost of continuing is too high. Stopping is not failing; it protects time and money for a better idea.",
+     "feedback": "Results above the target support continuing."
+    },
+    {
+     "id": "S16-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 3: Testing demand",
+     "type": "mc",
+     "prompt": "Target: 20 bookings. Result: 3 bookings, and customers said the price was fine but the hours did not suit them. What fits best?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Stop, since all ideas with 3 bookings fail"
+      },
+      {
+       "letter": "B",
+       "text": "Continue exactly as before"
+      },
+      {
+       "letter": "C",
+       "text": "Raise the price immediately"
+      },
+      {
+       "letter": "D",
+       "text": "Change the hours and test again"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Change the hours and test again",
+     "intro": "After a test, decide: continue, change, or stop. CONTINUE when the results meet the target you set in advance. CHANGE (sometimes called a pivot) when part of the idea works but something important does not: a different customer, price, or offer might fit better. STOP when the results are far below the target and nothing points to a better version, or when the cost of continuing is too high. Stopping is not failing; it protects time and money for a better idea.",
+     "feedback": "Part works (price) and part does not (hours); a change is worth testing."
+    },
+    {
+     "id": "S16-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 3: Testing demand",
+     "type": "mc",
+     "prompt": "Target: 30 sales. Result: 1 sale. No feedback suggests a better version, and costs keep rising. What fits best?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Call it a success because one person bought"
+      },
+      {
+       "letter": "B",
+       "text": "Stop and move to a better idea"
+      },
+      {
+       "letter": "C",
+       "text": "Continue with more money"
+      },
+      {
+       "letter": "D",
+       "text": "Change only the logo"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Stop and move to a better idea",
+     "intro": "After a test, decide: continue, change, or stop. CONTINUE when the results meet the target you set in advance. CHANGE (sometimes called a pivot) when part of the idea works but something important does not: a different customer, price, or offer might fit better. STOP when the results are far below the target and nothing points to a better version, or when the cost of continuing is too high. Stopping is not failing; it protects time and money for a better idea.",
+     "feedback": "Far below target with no promising signal supports stopping."
+    },
+    {
+     "id": "S16-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 3: Testing demand",
+     "type": "mc",
+     "prompt": "What does \"pivot\" mean here?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Closing the business for good"
+      },
+      {
+       "letter": "B",
+       "text": "Repeating the same test again with nothing changed at all"
+      },
+      {
+       "letter": "C",
+       "text": "Changing an important part of the idea based on what you learned"
+      },
+      {
+       "letter": "D",
+       "text": "Hiring a large team at once"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Changing an important part of the idea based on what you learned",
+     "intro": "After a test, decide: continue, change, or stop. CONTINUE when the results meet the target you set in advance. CHANGE (sometimes called a pivot) when part of the idea works but something important does not: a different customer, price, or offer might fit better. STOP when the results are far below the target and nothing points to a better version, or when the cost of continuing is too high. Stopping is not failing; it protects time and money for a better idea.",
+     "feedback": "A pivot keeps what works and changes what does not."
+    },
+    {
+     "id": "S16-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 3: Testing demand",
+     "type": "mc",
+     "prompt": "Why is stopping sometimes the right decision?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It always earns money back."
+      },
+      {
+       "letter": "B",
+       "text": "It proves the founder made no mistakes."
+      },
+      {
+       "letter": "C",
+       "text": "It is required after any first test."
+      },
+      {
+       "letter": "D",
+       "text": "It saves time and money for a better idea."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "It saves time and money for a better idea.",
+     "intro": "After a test, decide: continue, change, or stop. CONTINUE when the results meet the target you set in advance. CHANGE (sometimes called a pivot) when part of the idea works but something important does not: a different customer, price, or offer might fit better. STOP when the results are far below the target and nothing points to a better version, or when the cost of continuing is too high. Stopping is not failing; it protects time and money for a better idea.",
+     "feedback": "Stopping protects resources."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Three choices after a test",
+   "questions": [
+    {
+     "id": "S16-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 3: Testing demand",
+     "type": "mc",
+     "prompt": "Most cookies sold. What is the choice?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ignore"
+      },
+      {
+       "letter": "B",
+       "text": "Continue"
+      },
+      {
+       "letter": "C",
+       "text": "Change"
+      },
+      {
+       "letter": "D",
+       "text": "Stop"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Continue",
+     "intro": "Think of baking a new cookie for a school sale. If most cookies sell, keep making them (continue). If people love the taste but say the cookies are too big for the price, make them smaller (change). If almost no one buys and no one says why, try a different treat (stop). The decision follows the results and what people told you, not how much you hoped it would work.",
+     "feedback": "Good results mean continue."
+    },
+    {
+     "id": "S16-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 3: Testing demand",
+     "type": "mc",
+     "prompt": "People loved the taste but said cookies were too big for the price. What is the choice?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Stop selling cookies"
+      },
+      {
+       "letter": "B",
+       "text": "Continue unchanged"
+      },
+      {
+       "letter": "C",
+       "text": "Change the size"
+      },
+      {
+       "letter": "D",
+       "text": "Double the price"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Change the size",
+     "intro": "Think of baking a new cookie for a school sale. If most cookies sell, keep making them (continue). If people love the taste but say the cookies are too big for the price, make them smaller (change). If almost no one buys and no one says why, try a different treat (stop). The decision follows the results and what people told you, not how much you hoped it would work.",
+     "feedback": "Part works; adjust the part that does not."
+    },
+    {
+     "id": "S16-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 3: Testing demand",
+     "type": "mc",
+     "prompt": "Almost no one bought, and no one said why. What is the choice?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Try a different treat"
+      },
+      {
+       "letter": "B",
+       "text": "Keep going exactly the same"
+      },
+      {
+       "letter": "C",
+       "text": "Raise the price"
+      },
+      {
+       "letter": "D",
+       "text": "Make twice as many cookies"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Try a different treat",
+     "intro": "Think of baking a new cookie for a school sale. If most cookies sell, keep making them (continue). If people love the taste but say the cookies are too big for the price, make them smaller (change). If almost no one buys and no one says why, try a different treat (stop). The decision follows the results and what people told you, not how much you hoped it would work.",
+     "feedback": "Weak results with no clue suggest stopping."
+    },
+    {
+     "id": "S16-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 3: Testing demand",
+     "type": "mc",
+     "prompt": "What should guide the choice?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "What your friends prefer"
+      },
+      {
+       "letter": "B",
+       "text": "The results and what people said"
+      },
+      {
+       "letter": "C",
+       "text": "The color of the packaging"
+      },
+      {
+       "letter": "D",
+       "text": "How much you hoped it would work"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The results and what people said",
+     "intro": "Think of baking a new cookie for a school sale. If most cookies sell, keep making them (continue). If people love the taste but say the cookies are too big for the price, make them smaller (change). If almost no one buys and no one says why, try a different treat (stop). The decision follows the results and what people told you, not how much you hoped it would work.",
+     "feedback": "Evidence guides the decision."
+    },
+    {
+     "id": "S16-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 3: Testing demand",
+     "type": "mc",
+     "prompt": "\"Change\" means what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Keep what works and adjust what does not"
+      },
+      {
+       "letter": "B",
+       "text": "Start everything from zero with a brand-new idea"
+      },
+      {
+       "letter": "C",
+       "text": "Close forever"
+      },
+      {
+       "letter": "D",
+       "text": "Do nothing new"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Keep what works and adjust what does not",
+     "intro": "Think of baking a new cookie for a school sale. If most cookies sell, keep making them (continue). If people love the taste but say the cookies are too big for the price, make them smaller (change). If almost no one buys and no one says why, try a different treat (stop). The decision follows the results and what people told you, not how much you hoped it would work.",
+     "feedback": "Change is a targeted adjustment."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who misses MAIN may not see how results map to a decision; a simple bake-sale example connects each outcome to a choice."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Apply it: decide with stated targets and feedback",
+   "questions": [
+    {
+     "id": "S16-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 3: Testing demand",
+     "type": "mc",
+     "prompt": "A tutoring test set a target of 8 students. It got 9 students, but each needs 2 hours of travel. The tutor's goal is to earn at least 25 dollars per hour of total time. Each session pays 40 dollars for 1 hour of teaching. What should the tutor conclude?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Raise the target to 20 students"
+      },
+      {
+       "letter": "B",
+       "text": "Stop, because tutoring never works"
+      },
+      {
+       "letter": "C",
+       "text": "Continue unchanged, because the target of 8 students was met and passed"
+      },
+      {
+       "letter": "D",
+       "text": "Demand is there, but travel time makes the pay too low; change the setup"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Demand is there, but travel time makes the pay too low; change the setup",
+     "intro": "After a test, decide: continue, change, or stop. CONTINUE when the results meet the target you set in advance. CHANGE (sometimes called a pivot) when part of the idea works but something important does not: a different customer, price, or offer might fit better. STOP when the results are far below the target and nothing points to a better version, or when the cost of continuing is too high. Stopping is not failing; it protects time and money for a better idea.",
+     "feedback": "40 dollars / 3 hours is about 13 dollars an hour, below 25; a change such as online sessions is needed."
+    },
+    {
+     "id": "S16-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 3: Testing demand",
+     "type": "mc",
+     "prompt": "A juice stand sold 70 cups against a target of 50, but lost money because cups cost too much. Best next step?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ignore the loss because sales were high"
+      },
+      {
+       "letter": "B",
+       "text": "Stop immediately, since it lost money"
+      },
+      {
+       "letter": "C",
+       "text": "Continue selling but change the cost or price"
+      },
+      {
+       "letter": "D",
+       "text": "Lower the price to sell even more"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Continue selling but change the cost or price",
+     "intro": "After a test, decide: continue, change, or stop. CONTINUE when the results meet the target you set in advance. CHANGE (sometimes called a pivot) when part of the idea works but something important does not: a different customer, price, or offer might fit better. STOP when the results are far below the target and nothing points to a better version, or when the cost of continuing is too high. Stopping is not failing; it protects time and money for a better idea.",
+     "feedback": "Strong demand plus a cost problem calls for a change, not stopping."
+    },
+    {
+     "id": "S16-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 3: Testing demand",
+     "type": "mc",
+     "prompt": "An app test: target 100 sign-ups, result 95, and users who signed up used it every day. What fits best?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Delete the app and start over"
+      },
+      {
+       "letter": "B",
+       "text": "Change everything about the app, from the name to the features"
+      },
+      {
+       "letter": "C",
+       "text": "Continue; it is close to target and usage is strong"
+      },
+      {
+       "letter": "D",
+       "text": "Stop, because 95 is below 100"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Continue; it is close to target and usage is strong",
+     "intro": "After a test, decide: continue, change, or stop. CONTINUE when the results meet the target you set in advance. CHANGE (sometimes called a pivot) when part of the idea works but something important does not: a different customer, price, or offer might fit better. STOP when the results are far below the target and nothing points to a better version, or when the cost of continuing is too high. Stopping is not failing; it protects time and money for a better idea.",
+     "feedback": "A near-target result with strong usage supports continuing."
+    },
+    {
+     "id": "S16-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 3: Testing demand",
+     "type": "mc",
+     "prompt": "A dog-walking test got many requests, but almost all were for cat sitting. What change is most sensible?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Keep offering only dog walking"
+      },
+      {
+       "letter": "B",
+       "text": "Test a cat-sitting offer"
+      },
+      {
+       "letter": "C",
+       "text": "Stop all pet services"
+      },
+      {
+       "letter": "D",
+       "text": "Raise dog-walking prices"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Test a cat-sitting offer",
+     "intro": "After a test, decide: continue, change, or stop. CONTINUE when the results meet the target you set in advance. CHANGE (sometimes called a pivot) when part of the idea works but something important does not: a different customer, price, or offer might fit better. STOP when the results are far below the target and nothing points to a better version, or when the cost of continuing is too high. Stopping is not failing; it protects time and money for a better idea.",
+     "feedback": "Customer requests point toward a better offer."
+    },
+    {
+     "id": "S16-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 3: Testing demand",
+     "type": "mc",
+     "prompt": "A test cost 300 dollars and earned 120 dollars, far below the 400-dollar target, with no useful feedback. What is the most reasonable choice?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Spend 3,000 dollars more on the same plan"
+      },
+      {
+       "letter": "B",
+       "text": "Change only the font on the flyer"
+      },
+      {
+       "letter": "C",
+       "text": "Stop or test a clearly different idea"
+      },
+      {
+       "letter": "D",
+       "text": "Call it a success"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Stop or test a clearly different idea",
+     "intro": "After a test, decide: continue, change, or stop. CONTINUE when the results meet the target you set in advance. CHANGE (sometimes called a pivot) when part of the idea works but something important does not: a different customer, price, or offer might fit better. STOP when the results are far below the target and nothing points to a better version, or when the cost of continuing is too high. Stopping is not failing; it protects time and money for a better idea.",
+     "feedback": "Far below target with no signal supports stopping."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Handle the complications: mixed and unclear results",
+   "questions": [
+    {
+     "id": "S16-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 3: Testing demand",
+     "type": "mc",
+     "prompt": "Results are mixed: half the customers loved it, half asked for refunds. What should the founder check before deciding?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "What the happy and unhappy customers have in common"
+      },
+      {
+       "letter": "B",
+       "text": "Whether to raise prices for every customer right away"
+      },
+      {
+       "letter": "C",
+       "text": "Whether the logo is popular"
+      },
+      {
+       "letter": "D",
+       "text": "Which group is louder online"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "What the happy and unhappy customers have in common",
+     "intro": "After a test, decide: continue, change, or stop. CONTINUE when the results meet the target you set in advance. CHANGE (sometimes called a pivot) when part of the idea works but something important does not: a different customer, price, or offer might fit better. STOP when the results are far below the target and nothing points to a better version, or when the cost of continuing is too high. Stopping is not failing; it protects time and money for a better idea.",
+     "feedback": "Finding what separates the two groups points to the right customer or change."
+    },
+    {
+     "id": "S16-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 3: Testing demand",
+     "type": "mc",
+     "prompt": "A founder keeps lowering the success target after each weak test so she can \"continue.\" What is the problem?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Targets should never be set at all."
+      },
+      {
+       "letter": "B",
+       "text": "Lower targets always lead to success in the end."
+      },
+      {
+       "letter": "C",
+       "text": "There is no problem with this."
+      },
+      {
+       "letter": "D",
+       "text": "Moving targets hides weak results and wastes time."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Moving targets hides weak results and wastes time.",
+     "intro": "After a test, decide: continue, change, or stop. CONTINUE when the results meet the target you set in advance. CHANGE (sometimes called a pivot) when part of the idea works but something important does not: a different customer, price, or offer might fit better. STOP when the results are far below the target and nothing points to a better version, or when the cost of continuing is too high. Stopping is not failing; it protects time and money for a better idea.",
+     "feedback": "Targets set in advance keep decisions honest."
+    },
+    {
+     "id": "S16-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 3: Testing demand",
+     "type": "mc",
+     "prompt": "A test met its target, but the founder has no time left because of a new job. What is a sensible option?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Grow quickly anyway"
+      },
+      {
+       "letter": "B",
+       "text": "Pretend the test failed so there is no pressure to grow"
+      },
+      {
+       "letter": "C",
+       "text": "Pause, or find help, before committing to growth"
+      },
+      {
+       "letter": "D",
+       "text": "Double the target"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Pause, or find help, before committing to growth",
+     "intro": "After a test, decide: continue, change, or stop. CONTINUE when the results meet the target you set in advance. CHANGE (sometimes called a pivot) when part of the idea works but something important does not: a different customer, price, or offer might fit better. STOP when the results are far below the target and nothing points to a better version, or when the cost of continuing is too high. Stopping is not failing; it protects time and money for a better idea.",
+     "feedback": "Good results still require the capacity to deliver."
+    },
+    {
+     "id": "S16-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 3: Testing demand",
+     "type": "mc",
+     "prompt": "A test missed its target, but the founder discovers the payment link was broken for most of the test. What should she do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Fix the link and run the test again"
+      },
+      {
+       "letter": "B",
+       "text": "Stop the idea based on this result"
+      },
+      {
+       "letter": "C",
+       "text": "Count the result as a success"
+      },
+      {
+       "letter": "D",
+       "text": "Ignore the broken link"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Fix the link and run the test again",
+     "intro": "After a test, decide: continue, change, or stop. CONTINUE when the results meet the target you set in advance. CHANGE (sometimes called a pivot) when part of the idea works but something important does not: a different customer, price, or offer might fit better. STOP when the results are far below the target and nothing points to a better version, or when the cost of continuing is too high. Stopping is not failing; it protects time and money for a better idea.",
+     "feedback": "A flawed test does not give a fair answer; fix and retest."
+    },
+    {
+     "id": "S16-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 3: Testing demand",
+     "type": "mc",
+     "prompt": "Target: at least 25 percent of visitors book. Result: 18 of 60 visitors booked. Should the founder continue by that target?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No, only 18 percent booked"
+      },
+      {
+       "letter": "B",
+       "text": "It cannot be judged from these numbers"
+      },
+      {
+       "letter": "C",
+       "text": "Yes, 30 percent booked, above the target"
+      },
+      {
+       "letter": "D",
+       "text": "No, 18 is below 25"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Yes, 30 percent booked, above the target",
+     "intro": "After a test, decide: continue, change, or stop. CONTINUE when the results meet the target you set in advance. CHANGE (sometimes called a pivot) when part of the idea works but something important does not: a different customer, price, or offer might fit better. STOP when the results are far below the target and nothing points to a better version, or when the cost of continuing is too high. Stopping is not failing; it protects time and money for a better idea.",
+     "feedback": "18 / 60 = 0.30, which is 30 percent."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}
