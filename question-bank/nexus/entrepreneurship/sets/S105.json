@@ -1,0 +1,654 @@
+{
+ "set": 105,
+ "title": "Inventory and reorder points",
+ "outcome": "ENT.OPS.02",
+ "content_status": "stable",
+ "requires": [
+  104
+ ],
+ "module": "ops",
+ "path_refs": [
+  "products"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Calculate a reorder point and balance stock against cash",
+   "questions": [
+    {
+     "id": "S105-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "What is safety stock?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Inventory locked in a safe for security reasons only"
+      },
+      {
+       "letter": "B",
+       "text": "Items set aside to be thrown away later"
+      },
+      {
+       "letter": "C",
+       "text": "A small extra cushion of inventory"
+      },
+      {
+       "letter": "D",
+       "text": "Stock the owner keeps for personal use at home"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A small extra cushion of inventory",
+     "intro": "INVENTORY is the stock of goods or materials you hold to sell. Too little and you run out; too much ties up cash and risks damage or items going out of style. A REORDER POINT tells you when to order more: reorder point = average daily use x lead time (days to arrive) + SAFETY STOCK (a small extra cushion). Example: you sell 4 mugs a day, delivery takes 10 days, safety stock is 10: reorder point = 4 x 10 + 10 = 50 mugs. Count stock regularly so records match the shelf.",
+     "feedback": "A buffer against surprises."
+    },
+    {
+     "id": "S105-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "Daily use 5, lead time 8 days, safety stock 12. What is the reorder point?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "25"
+      },
+      {
+       "letter": "B",
+       "text": "100"
+      },
+      {
+       "letter": "C",
+       "text": "40"
+      },
+      {
+       "letter": "D",
+       "text": "52"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "52",
+     "intro": "INVENTORY is the stock of goods or materials you hold to sell. Too little and you run out; too much ties up cash and risks damage or items going out of style. A REORDER POINT tells you when to order more: reorder point = average daily use x lead time (days to arrive) + SAFETY STOCK (a small extra cushion). Example: you sell 4 mugs a day, delivery takes 10 days, safety stock is 10: reorder point = 4 x 10 + 10 = 50 mugs. Count stock regularly so records match the shelf.",
+     "feedback": "5 x 8 + 12 = 52."
+    },
+    {
+     "id": "S105-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "What is a risk of too much inventory?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Prices automatically double"
+      },
+      {
+       "letter": "B",
+       "text": "Customers can never find anything at all to buy"
+      },
+      {
+       "letter": "C",
+       "text": "Cash is tied up and items may spoil or go out of style"
+      },
+      {
+       "letter": "D",
+       "text": "The business pays no rent at all"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Cash is tied up and items may spoil or go out of style",
+     "intro": "INVENTORY is the stock of goods or materials you hold to sell. Too little and you run out; too much ties up cash and risks damage or items going out of style. A REORDER POINT tells you when to order more: reorder point = average daily use x lead time (days to arrive) + SAFETY STOCK (a small extra cushion). Example: you sell 4 mugs a day, delivery takes 10 days, safety stock is 10: reorder point = 4 x 10 + 10 = 50 mugs. Count stock regularly so records match the shelf.",
+     "feedback": "Overstock costs money."
+    },
+    {
+     "id": "S105-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "What is lead time?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Days a customer waits to pay"
+      },
+      {
+       "letter": "B",
+       "text": "Time spent on marketing"
+      },
+      {
+       "letter": "C",
+       "text": "Days for an order to arrive"
+      },
+      {
+       "letter": "D",
+       "text": "Hours a store is open each day"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Days for an order to arrive",
+     "intro": "INVENTORY is the stock of goods or materials you hold to sell. Too little and you run out; too much ties up cash and risks damage or items going out of style. A REORDER POINT tells you when to order more: reorder point = average daily use x lead time (days to arrive) + SAFETY STOCK (a small extra cushion). Example: you sell 4 mugs a day, delivery takes 10 days, safety stock is 10: reorder point = 4 x 10 + 10 = 50 mugs. Count stock regularly so records match the shelf.",
+     "feedback": "Delivery delay."
+    },
+    {
+     "id": "S105-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "Why count stock regularly?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because records are always perfect anyway"
+      },
+      {
+       "letter": "B",
+       "text": "So records match what is really on the shelf"
+      },
+      {
+       "letter": "C",
+       "text": "Because counting raises prices"
+      },
+      {
+       "letter": "D",
+       "text": "So suppliers can visit"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "So records match what is really on the shelf",
+     "intro": "INVENTORY is the stock of goods or materials you hold to sell. Too little and you run out; too much ties up cash and risks damage or items going out of style. A REORDER POINT tells you when to order more: reorder point = average daily use x lead time (days to arrive) + SAFETY STOCK (a small extra cushion). Example: you sell 4 mugs a day, delivery takes 10 days, safety stock is 10: reorder point = 4 x 10 + 10 = 50 mugs. Count stock regularly so records match the shelf.",
+     "feedback": "Catch differences."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Multiply, then add",
+   "questions": [
+    {
+     "id": "S105-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "What is 3 x 9 + 5?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "42"
+      },
+      {
+       "letter": "B",
+       "text": "27"
+      },
+      {
+       "letter": "C",
+       "text": "17"
+      },
+      {
+       "letter": "D",
+       "text": "32"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "32",
+     "intro": "Reorder point uses the order of operations: multiply first, then add. Daily use x lead time tells how many items sell while you wait for delivery. Then add safety stock. Example: 6 a day x 7 days = 42, plus 8 safety = 50. A common mistake is adding first: (6 + 7) x 8 = 104, which is wrong. Check by asking whether the answer is about one delivery-wait of sales plus a little extra.",
+     "feedback": "27 + 5 = 32."
+    },
+    {
+     "id": "S105-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "Which step comes first in \"use x lead time + safety\"?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Multiply use by lead time"
+      },
+      {
+       "letter": "B",
+       "text": "Add lead time and safety"
+      },
+      {
+       "letter": "C",
+       "text": "Divide by safety stock"
+      },
+      {
+       "letter": "D",
+       "text": "Subtract use"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Multiply use by lead time",
+     "intro": "Reorder point uses the order of operations: multiply first, then add. Daily use x lead time tells how many items sell while you wait for delivery. Then add safety stock. Example: 6 a day x 7 days = 42, plus 8 safety = 50. A common mistake is adding first: (6 + 7) x 8 = 104, which is wrong. Check by asking whether the answer is about one delivery-wait of sales plus a little extra.",
+     "feedback": "Multiply first."
+    },
+    {
+     "id": "S105-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "What is 6 x 7 + 8?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "42"
+      },
+      {
+       "letter": "B",
+       "text": "21"
+      },
+      {
+       "letter": "C",
+       "text": "104"
+      },
+      {
+       "letter": "D",
+       "text": "50"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "50",
+     "intro": "Reorder point uses the order of operations: multiply first, then add. Daily use x lead time tells how many items sell while you wait for delivery. Then add safety stock. Example: 6 a day x 7 days = 42, plus 8 safety = 50. A common mistake is adding first: (6 + 7) x 8 = 104, which is wrong. Check by asking whether the answer is about one delivery-wait of sales plus a little extra.",
+     "feedback": "42 + 8 = 50."
+    },
+    {
+     "id": "S105-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "What is 10 x 4 + 15?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "29"
+      },
+      {
+       "letter": "B",
+       "text": "55"
+      },
+      {
+       "letter": "C",
+       "text": "40"
+      },
+      {
+       "letter": "D",
+       "text": "100"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "55",
+     "intro": "Reorder point uses the order of operations: multiply first, then add. Daily use x lead time tells how many items sell while you wait for delivery. Then add safety stock. Example: 6 a day x 7 days = 42, plus 8 safety = 50. A common mistake is adding first: (6 + 7) x 8 = 104, which is wrong. Check by asking whether the answer is about one delivery-wait of sales plus a little extra.",
+     "feedback": "40 + 15 = 55."
+    },
+    {
+     "id": "S105-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "What does \"use x lead time\" represent?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The safety stock"
+      },
+      {
+       "letter": "B",
+       "text": "Total yearly sales of the whole shop"
+      },
+      {
+       "letter": "C",
+       "text": "The price per item"
+      },
+      {
+       "letter": "D",
+       "text": "Items sold while waiting for delivery"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Items sold while waiting for delivery",
+     "intro": "Reorder point uses the order of operations: multiply first, then add. Daily use x lead time tells how many items sell while you wait for delivery. Then add safety stock. Example: 6 a day x 7 days = 42, plus 8 safety = 50. A common mistake is adding first: (6 + 7) x 8 = 104, which is wrong. Check by asking whether the answer is about one delivery-wait of sales plus a little extra.",
+     "feedback": "Sales during the wait."
+    }
+   ],
+   "branch_mode": "math_prerequisite",
+   "relationship": "A learner who misses MAIN may compute in the wrong order; this practices multiply-then-add."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Apply it: set reorder points for products",
+   "questions": [
+    {
+     "id": "S105-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "A tea shop sells 3 tins a day. The supplier takes 14 days. Safety stock is 9. What is the reorder point?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "26 tins"
+      },
+      {
+       "letter": "B",
+       "text": "42 tins"
+      },
+      {
+       "letter": "C",
+       "text": "51 tins"
+      },
+      {
+       "letter": "D",
+       "text": "378 tins"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "51 tins",
+     "intro": "INVENTORY is the stock of goods or materials you hold to sell. Too little and you run out; too much ties up cash and risks damage or items going out of style. A REORDER POINT tells you when to order more: reorder point = average daily use x lead time (days to arrive) + SAFETY STOCK (a small extra cushion). Example: you sell 4 mugs a day, delivery takes 10 days, safety stock is 10: reorder point = 4 x 10 + 10 = 50 mugs. Count stock regularly so records match the shelf.",
+     "feedback": "3 x 14 + 9 = 51."
+    },
+    {
+     "id": "S105-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "The shop has 60 tins and sells 3 a day. In how many days will it reach the 51-tin reorder point?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "3 days"
+      },
+      {
+       "letter": "B",
+       "text": "17 days"
+      },
+      {
+       "letter": "C",
+       "text": "9 days"
+      },
+      {
+       "letter": "D",
+       "text": "20 days"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "3 days",
+     "intro": "INVENTORY is the stock of goods or materials you hold to sell. Too little and you run out; too much ties up cash and risks damage or items going out of style. A REORDER POINT tells you when to order more: reorder point = average daily use x lead time (days to arrive) + SAFETY STOCK (a small extra cushion). Example: you sell 4 mugs a day, delivery takes 10 days, safety stock is 10: reorder point = 4 x 10 + 10 = 50 mugs. Count stock regularly so records match the shelf.",
+     "feedback": "(60 - 51) / 3 = 3."
+    },
+    {
+     "id": "S105-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "Records show 80 candles; a count finds 72. What is the difference?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "80 candles"
+      },
+      {
+       "letter": "B",
+       "text": "72 candles"
+      },
+      {
+       "letter": "C",
+       "text": "8 candles"
+      },
+      {
+       "letter": "D",
+       "text": "152 candles"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "8 candles",
+     "intro": "INVENTORY is the stock of goods or materials you hold to sell. Too little and you run out; too much ties up cash and risks damage or items going out of style. A REORDER POINT tells you when to order more: reorder point = average daily use x lead time (days to arrive) + SAFETY STOCK (a small extra cushion). Example: you sell 4 mugs a day, delivery takes 10 days, safety stock is 10: reorder point = 4 x 10 + 10 = 50 mugs. Count stock regularly so records match the shelf.",
+     "feedback": "80 - 72 = 8."
+    },
+    {
+     "id": "S105-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "What should the owner do about that difference?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Keep the old number so the records look better"
+      },
+      {
+       "letter": "B",
+       "text": "Ignore it since it is small"
+      },
+      {
+       "letter": "C",
+       "text": "Order 8 extra without checking"
+      },
+      {
+       "letter": "D",
+       "text": "Update the records and look for the cause"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Update the records and look for the cause",
+     "intro": "INVENTORY is the stock of goods or materials you hold to sell. Too little and you run out; too much ties up cash and risks damage or items going out of style. A REORDER POINT tells you when to order more: reorder point = average daily use x lead time (days to arrive) + SAFETY STOCK (a small extra cushion). Example: you sell 4 mugs a day, delivery takes 10 days, safety stock is 10: reorder point = 4 x 10 + 10 = 50 mugs. Count stock regularly so records match the shelf.",
+     "feedback": "Investigate and correct."
+    },
+    {
+     "id": "S105-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "A seasonal holiday item sells only in December. What is the risk of a large order in January?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It will sell out immediately in January anyway"
+      },
+      {
+       "letter": "B",
+       "text": "Cash tied up in stock that will not sell for months"
+      },
+      {
+       "letter": "C",
+       "text": "There is no risk at all"
+      },
+      {
+       "letter": "D",
+       "text": "The supplier will refuse to deliver"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Cash tied up in stock that will not sell for months",
+     "intro": "INVENTORY is the stock of goods or materials you hold to sell. Too little and you run out; too much ties up cash and risks damage or items going out of style. A REORDER POINT tells you when to order more: reorder point = average daily use x lead time (days to arrive) + SAFETY STOCK (a small extra cushion). Example: you sell 4 mugs a day, delivery takes 10 days, safety stock is 10: reorder point = 4 x 10 + 10 = 50 mugs. Count stock regularly so records match the shelf.",
+     "feedback": "Timing matters."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Handle the complications: delays and changing demand",
+   "questions": [
+    {
+     "id": "S105-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "The supplier's lead time grows from 10 to 20 days. Daily use is 4 and safety stock 10. What is the new reorder point?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "800"
+      },
+      {
+       "letter": "B",
+       "text": "90"
+      },
+      {
+       "letter": "C",
+       "text": "34"
+      },
+      {
+       "letter": "D",
+       "text": "50"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "90",
+     "intro": "INVENTORY is the stock of goods or materials you hold to sell. Too little and you run out; too much ties up cash and risks damage or items going out of style. A REORDER POINT tells you when to order more: reorder point = average daily use x lead time (days to arrive) + SAFETY STOCK (a small extra cushion). Example: you sell 4 mugs a day, delivery takes 10 days, safety stock is 10: reorder point = 4 x 10 + 10 = 50 mugs. Count stock regularly so records match the shelf.",
+     "feedback": "4 x 20 + 10 = 90."
+    },
+    {
+     "id": "S105-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "Sales jump after a viral post. What should happen to the reorder point?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Recalculate it with the new daily use"
+      },
+      {
+       "letter": "B",
+       "text": "Set it to zero"
+      },
+      {
+       "letter": "C",
+       "text": "Keep the old one forever, unchanged"
+      },
+      {
+       "letter": "D",
+       "text": "Double the price instead"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Recalculate it with the new daily use",
+     "intro": "INVENTORY is the stock of goods or materials you hold to sell. Too little and you run out; too much ties up cash and risks damage or items going out of style. A REORDER POINT tells you when to order more: reorder point = average daily use x lead time (days to arrive) + SAFETY STOCK (a small extra cushion). Example: you sell 4 mugs a day, delivery takes 10 days, safety stock is 10: reorder point = 4 x 10 + 10 = 50 mugs. Count stock regularly so records match the shelf.",
+     "feedback": "Inputs changed."
+    },
+    {
+     "id": "S105-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "An owner orders far more than needed to get a bulk discount, then cannot pay rent. What lesson applies?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Rent can always wait"
+      },
+      {
+       "letter": "B",
+       "text": "Inventory equals cash"
+      },
+      {
+       "letter": "C",
+       "text": "Bulk discounts are always worth any cash they use"
+      },
+      {
+       "letter": "D",
+       "text": "A discount is not worth it if it drains needed cash"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "A discount is not worth it if it drains needed cash",
+     "intro": "INVENTORY is the stock of goods or materials you hold to sell. Too little and you run out; too much ties up cash and risks damage or items going out of style. A REORDER POINT tells you when to order more: reorder point = average daily use x lead time (days to arrive) + SAFETY STOCK (a small extra cushion). Example: you sell 4 mugs a day, delivery takes 10 days, safety stock is 10: reorder point = 4 x 10 + 10 = 50 mugs. Count stock regularly so records match the shelf.",
+     "feedback": "Weigh cash needs."
+    },
+    {
+     "id": "S105-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "Daily use 2.5, lead time 9 days, safety 6. What is the reorder point, rounded up to whole items?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "22.5"
+      },
+      {
+       "letter": "B",
+       "text": "18"
+      },
+      {
+       "letter": "C",
+       "text": "29"
+      },
+      {
+       "letter": "D",
+       "text": "28"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "29",
+     "intro": "INVENTORY is the stock of goods or materials you hold to sell. Too little and you run out; too much ties up cash and risks damage or items going out of style. A REORDER POINT tells you when to order more: reorder point = average daily use x lead time (days to arrive) + SAFETY STOCK (a small extra cushion). Example: you sell 4 mugs a day, delivery takes 10 days, safety stock is 10: reorder point = 4 x 10 + 10 = 50 mugs. Count stock regularly so records match the shelf.",
+     "feedback": "2.5 x 9 + 6 = 28.5, up to 29."
+    },
+    {
+     "id": "S105-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "Which statement is accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "More inventory is always safer."
+      },
+      {
+       "letter": "B",
+       "text": "Counting stock by hand is unnecessary once software is used."
+      },
+      {
+       "letter": "C",
+       "text": "Reorder points should be updated when sales or lead times change."
+      },
+      {
+       "letter": "D",
+       "text": "Reorder points never change."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Reorder points should be updated when sales or lead times change.",
+     "intro": "INVENTORY is the stock of goods or materials you hold to sell. Too little and you run out; too much ties up cash and risks damage or items going out of style. A REORDER POINT tells you when to order more: reorder point = average daily use x lead time (days to arrive) + SAFETY STOCK (a small extra cushion). Example: you sell 4 mugs a day, delivery takes 10 days, safety stock is 10: reorder point = 4 x 10 + 10 = 50 mugs. Count stock regularly so records match the shelf.",
+     "feedback": "Keep inputs current."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

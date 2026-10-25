@@ -1,0 +1,657 @@
+{
+ "set": 108,
+ "title": "Access for owners and helpers",
+ "outcome": "ENT.OPS.05",
+ "content_status": "stable",
+ "requires": [
+  107
+ ],
+ "module": "ops",
+ "path_refs": [
+  "services",
+  "products",
+  "digital",
+  "content"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Give each person their own login and only the access they need",
+   "questions": [
+    {
+     "id": "S108-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "What does least privilege mean?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Giving only the access a person needs for their job"
+      },
+      {
+       "letter": "B",
+       "text": "Never giving anyone any access"
+      },
+      {
+       "letter": "C",
+       "text": "Giving the owner the least access"
+      },
+      {
+       "letter": "D",
+       "text": "Giving everyone full access to everything in the business"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Giving only the access a person needs for their job",
+     "intro": "Give each person their OWN login rather than sharing one password, and give only the ACCESS they need for their job (called least privilege): a helper who packs orders may need the order list, not the bank account. Keep a list of who has access to what. The owner should hold the main (administrator) account for key services. When someone leaves or changes roles, remove or change their access the same day.",
+     "feedback": "Minimum needed."
+    },
+    {
+     "id": "S108-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "Why give each person their own login?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It makes passwords easier to share"
+      },
+      {
+       "letter": "B",
+       "text": "It is required for free accounts only, not paid"
+      },
+      {
+       "letter": "C",
+       "text": "Access can be tracked and removed individually"
+      },
+      {
+       "letter": "D",
+       "text": "It hides who did what"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Access can be tracked and removed individually",
+     "intro": "Give each person their OWN login rather than sharing one password, and give only the ACCESS they need for their job (called least privilege): a helper who packs orders may need the order list, not the bank account. Keep a list of who has access to what. The owner should hold the main (administrator) account for key services. When someone leaves or changes roles, remove or change their access the same day.",
+     "feedback": "Accountability."
+    },
+    {
+     "id": "S108-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "Who should hold the main administrator account?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A customer"
+      },
+      {
+       "letter": "B",
+       "text": "Whoever set up the site"
+      },
+      {
+       "letter": "C",
+       "text": "A temporary helper"
+      },
+      {
+       "letter": "D",
+       "text": "The owner"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The owner",
+     "intro": "Give each person their OWN login rather than sharing one password, and give only the ACCESS they need for their job (called least privilege): a helper who packs orders may need the order list, not the bank account. Keep a list of who has access to what. The owner should hold the main (administrator) account for key services. When someone leaves or changes roles, remove or change their access the same day.",
+     "feedback": "The owner controls key accounts."
+    },
+    {
+     "id": "S108-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "When should a departing helper's access be removed?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only if they ask"
+      },
+      {
+       "letter": "B",
+       "text": "Never"
+      },
+      {
+       "letter": "C",
+       "text": "A few months later, when convenient"
+      },
+      {
+       "letter": "D",
+       "text": "The same day they leave"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The same day they leave",
+     "intro": "Give each person their OWN login rather than sharing one password, and give only the ACCESS they need for their job (called least privilege): a helper who packs orders may need the order list, not the bank account. Keep a list of who has access to what. The owner should hold the main (administrator) account for key services. When someone leaves or changes roles, remove or change their access the same day.",
+     "feedback": "Immediately."
+    },
+    {
+     "id": "S108-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "A packing helper needs which access?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The domain registrar"
+      },
+      {
+       "letter": "B",
+       "text": "The tax account"
+      },
+      {
+       "letter": "C",
+       "text": "The order list"
+      },
+      {
+       "letter": "D",
+       "text": "The bank account"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The order list",
+     "intro": "Give each person their OWN login rather than sharing one password, and give only the ACCESS they need for their job (called least privilege): a helper who packs orders may need the order list, not the bank account. Keep a list of who has access to what. The owner should hold the main (administrator) account for key services. When someone leaves or changes roles, remove or change their access the same day.",
+     "feedback": "Job-related access only."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Keys to different rooms",
+   "questions": [
+    {
+     "id": "S108-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "The cleaner's keys are like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No access"
+      },
+      {
+       "letter": "B",
+       "text": "Access only to what the job needs"
+      },
+      {
+       "letter": "C",
+       "text": "A master key to every single room"
+      },
+      {
+       "letter": "D",
+       "text": "Full access"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Access only to what the job needs",
+     "intro": "In an office building, a cleaner may have keys to the hallways and the kitchen but not the safe. The manager has the master key. Each person signs for their own keys, and when someone leaves, their keys are returned the same day. Business accounts work the same way: separate keys, only the rooms each person needs, and a master key the owner keeps.",
+     "feedback": "Least privilege."
+    },
+    {
+     "id": "S108-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "The master key is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The administrator account the owner keeps"
+      },
+      {
+       "letter": "B",
+       "text": "A guest pass"
+      },
+      {
+       "letter": "C",
+       "text": "A helper's login"
+      },
+      {
+       "letter": "D",
+       "text": "A customer's password for the online shop"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The administrator account the owner keeps",
+     "intro": "In an office building, a cleaner may have keys to the hallways and the kitchen but not the safe. The manager has the master key. Each person signs for their own keys, and when someone leaves, their keys are returned the same day. Business accounts work the same way: separate keys, only the rooms each person needs, and a master key the owner keeps.",
+     "feedback": "Full control."
+    },
+    {
+     "id": "S108-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "Why does each person sign for their own keys?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "So it is clear who has which key"
+      },
+      {
+       "letter": "B",
+       "text": "To lose keys"
+      },
+      {
+       "letter": "C",
+       "text": "To slow everyone down on purpose"
+      },
+      {
+       "letter": "D",
+       "text": "To share keys freely"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "So it is clear who has which key",
+     "intro": "In an office building, a cleaner may have keys to the hallways and the kitchen but not the safe. The manager has the master key. Each person signs for their own keys, and when someone leaves, their keys are returned the same day. Business accounts work the same way: separate keys, only the rooms each person needs, and a master key the owner keeps.",
+     "feedback": "Tracking."
+    },
+    {
+     "id": "S108-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "When are keys returned?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Next year"
+      },
+      {
+       "letter": "B",
+       "text": "The same day someone leaves"
+      },
+      {
+       "letter": "C",
+       "text": "Whenever it is convenient"
+      },
+      {
+       "letter": "D",
+       "text": "Never"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The same day someone leaves",
+     "intro": "In an office building, a cleaner may have keys to the hallways and the kitchen but not the safe. The manager has the master key. Each person signs for their own keys, and when someone leaves, their keys are returned the same day. Business accounts work the same way: separate keys, only the rooms each person needs, and a master key the owner keeps.",
+     "feedback": "Promptly."
+    },
+    {
+     "id": "S108-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "Does the cleaner need the safe key?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes, always"
+      },
+      {
+       "letter": "B",
+       "text": "Only if asked"
+      },
+      {
+       "letter": "C",
+       "text": "No"
+      },
+      {
+       "letter": "D",
+       "text": "Only on Fridays"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "No",
+     "intro": "In an office building, a cleaner may have keys to the hallways and the kitchen but not the safe. The manager has the master key. Each person signs for their own keys, and when someone leaves, their keys are returned the same day. Business accounts work the same way: separate keys, only the rooms each person needs, and a master key the owner keeps.",
+     "feedback": "Not needed for the job."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who misses MAIN may share logins freely; keys to different rooms show why access is split."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Apply it: set up access for a team",
+   "questions": [
+    {
+     "id": "S108-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "A shop has 3 helpers sharing the owner's login to the store platform. What is the best fix?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Remove all helpers' access to orders"
+      },
+      {
+       "letter": "B",
+       "text": "Keep sharing, but change the password monthly"
+      },
+      {
+       "letter": "C",
+       "text": "Give helpers the bank password too"
+      },
+      {
+       "letter": "D",
+       "text": "Give each helper a separate, limited login"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Give each helper a separate, limited login",
+     "intro": "Give each person their OWN login rather than sharing one password, and give only the ACCESS they need for their job (called least privilege): a helper who packs orders may need the order list, not the bank account. Keep a list of who has access to what. The owner should hold the main (administrator) account for key services. When someone leaves or changes roles, remove or change their access the same day.",
+     "feedback": "Individual, limited access."
+    },
+    {
+     "id": "S108-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "An access list has 5 people with full admin rights, but only the owner needs them. How many should be reduced?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "4"
+      },
+      {
+       "letter": "B",
+       "text": "0"
+      },
+      {
+       "letter": "C",
+       "text": "1"
+      },
+      {
+       "letter": "D",
+       "text": "5"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "4",
+     "intro": "Give each person their OWN login rather than sharing one password, and give only the ACCESS they need for their job (called least privilege): a helper who packs orders may need the order list, not the bank account. Keep a list of who has access to what. The owner should hold the main (administrator) account for key services. When someone leaves or changes roles, remove or change their access the same day.",
+     "feedback": "5 - 1 = 4."
+    },
+    {
+     "id": "S108-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "A bookkeeper needs to see bank transactions but not move money. What access fits?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The owner's personal login"
+      },
+      {
+       "letter": "B",
+       "text": "View-only access"
+      },
+      {
+       "letter": "C",
+       "text": "No access at all"
+      },
+      {
+       "letter": "D",
+       "text": "Full access to transfer funds"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "View-only access",
+     "intro": "Give each person their OWN login rather than sharing one password, and give only the ACCESS they need for their job (called least privilege): a helper who packs orders may need the order list, not the bank account. Keep a list of who has access to what. The owner should hold the main (administrator) account for key services. When someone leaves or changes roles, remove or change their access the same day.",
+     "feedback": "Match access to need."
+    },
+    {
+     "id": "S108-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "A helper leaves on Friday. Which checklist item matters most that day?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Remove their logins and change any shared codes"
+      },
+      {
+       "letter": "B",
+       "text": "Update the logo"
+      },
+      {
+       "letter": "C",
+       "text": "Send a thank-you card to them next month"
+      },
+      {
+       "letter": "D",
+       "text": "Order new supplies"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Remove their logins and change any shared codes",
+     "intro": "Give each person their OWN login rather than sharing one password, and give only the ACCESS they need for their job (called least privilege): a helper who packs orders may need the order list, not the bank account. Keep a list of who has access to what. The owner should hold the main (administrator) account for key services. When someone leaves or changes roles, remove or change their access the same day.",
+     "feedback": "Close access promptly."
+    },
+    {
+     "id": "S108-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "What should the access list record?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only everyone's passwords written in plain text"
+      },
+      {
+       "letter": "B",
+       "text": "Only first names"
+      },
+      {
+       "letter": "C",
+       "text": "Each person, each service and their access level"
+      },
+      {
+       "letter": "D",
+       "text": "Only the owner"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Each person, each service and their access level",
+     "intro": "Give each person their OWN login rather than sharing one password, and give only the ACCESS they need for their job (called least privilege): a helper who packs orders may need the order list, not the bank account. Keep a list of who has access to what. The owner should hold the main (administrator) account for key services. When someone leaves or changes roles, remove or change their access the same day.",
+     "feedback": "Who has what."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Handle the complications: lockouts and role changes",
+   "questions": [
+    {
+     "id": "S108-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "A designer set up the store under her own admin account and stopped replying. What could the owner have done?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Avoided having a store"
+      },
+      {
+       "letter": "B",
+       "text": "Given the designer even more access to everything"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing could prevent it"
+      },
+      {
+       "letter": "D",
+       "text": "Kept the admin account in her own name from the start"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Kept the admin account in her own name from the start",
+     "intro": "Give each person their OWN login rather than sharing one password, and give only the ACCESS they need for their job (called least privilege): a helper who packs orders may need the order list, not the bank account. Keep a list of who has access to what. The owner should hold the main (administrator) account for key services. When someone leaves or changes roles, remove or change their access the same day.",
+     "feedback": "Own the master account."
+    },
+    {
+     "id": "S108-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "A helper moves from packing to marketing. What should happen to access?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Share the owner's login"
+      },
+      {
+       "letter": "B",
+       "text": "Add marketing access and remove unneeded packing access"
+      },
+      {
+       "letter": "C",
+       "text": "Keep all the old access and add the new access"
+      },
+      {
+       "letter": "D",
+       "text": "Remove all access"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Add marketing access and remove unneeded packing access",
+     "intro": "Give each person their OWN login rather than sharing one password, and give only the ACCESS they need for their job (called least privilege): a helper who packs orders may need the order list, not the bank account. Keep a list of who has access to what. The owner should hold the main (administrator) account for key services. When someone leaves or changes roles, remove or change their access the same day.",
+     "feedback": "Update with role changes."
+    },
+    {
+     "id": "S108-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "A review finds an ex-helper still has access 6 months after leaving. What should the owner do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ask them to stop logging in"
+      },
+      {
+       "letter": "B",
+       "text": "Give them more access"
+      },
+      {
+       "letter": "C",
+       "text": "Leave it alone, since nothing bad has happened"
+      },
+      {
+       "letter": "D",
+       "text": "Remove it now and check activity on that account"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Remove it now and check activity on that account",
+     "intro": "Give each person their OWN login rather than sharing one password, and give only the ACCESS they need for their job (called least privilege): a helper who packs orders may need the order list, not the bank account. Keep a list of who has access to what. The owner should hold the main (administrator) account for key services. When someone leaves or changes roles, remove or change their access the same day.",
+     "feedback": "Close and check."
+    },
+    {
+     "id": "S108-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "Reviewing access takes 15 minutes each quarter. How many minutes per year?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "15 minutes"
+      },
+      {
+       "letter": "B",
+       "text": "60 minutes"
+      },
+      {
+       "letter": "C",
+       "text": "180 minutes"
+      },
+      {
+       "letter": "D",
+       "text": "45 minutes"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "60 minutes",
+     "intro": "Give each person their OWN login rather than sharing one password, and give only the ACCESS they need for their job (called least privilege): a helper who packs orders may need the order list, not the bank account. Keep a list of who has access to what. The owner should hold the main (administrator) account for key services. When someone leaves or changes roles, remove or change their access the same day.",
+     "feedback": "15 x 4 = 60."
+    },
+    {
+     "id": "S108-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 13: Operations and overlooked admin",
+     "type": "mc",
+     "prompt": "Which statement is accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Sharing one login is safer."
+      },
+      {
+       "letter": "B",
+       "text": "Access never needs review."
+      },
+      {
+       "letter": "C",
+       "text": "Separate, limited logins make access easier to control."
+      },
+      {
+       "letter": "D",
+       "text": "Everyone on the team should be an administrator."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Separate, limited logins make access easier to control.",
+     "intro": "Give each person their OWN login rather than sharing one password, and give only the ACCESS they need for their job (called least privilege): a helper who packs orders may need the order list, not the bank account. Keep a list of who has access to what. The owner should hold the main (administrator) account for key services. When someone leaves or changes roles, remove or change their access the same day.",
+     "feedback": "Control access."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}
