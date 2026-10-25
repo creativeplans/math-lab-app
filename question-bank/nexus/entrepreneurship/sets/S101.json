@@ -1,0 +1,657 @@
+{
+ "set": 101,
+ "title": "Human approval before it matters",
+ "outcome": "ENT.AI.05",
+ "content_status": "stable",
+ "requires": [
+  99
+ ],
+ "module": "ai",
+ "path_refs": [
+  "services",
+  "products",
+  "digital",
+  "content"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Decide which AI-assisted actions need a person's approval first",
+   "questions": [
+    {
+     "id": "S101-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 12: AI as a practical helper",
+     "type": "mc",
+     "prompt": "Which action needs human approval first?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Sorting notes into a list for yourself"
+      },
+      {
+       "letter": "B",
+       "text": "Brainstorming ten slogan ideas"
+      },
+      {
+       "letter": "C",
+       "text": "Sending a refund to a customer"
+      },
+      {
+       "letter": "D",
+       "text": "Drafting a private to-do list"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Sending a refund to a customer",
+     "intro": "Some actions should never happen without a person checking first. Require HUMAN APPROVAL before AI-assisted work reaches customers or creates obligations: sending emails or posts, changing prices, issuing refunds, signing or sending contracts, making hiring decisions, or giving advice about health, money or law. The higher the stakes, the more careful the review. A simple rule is: \"Draft by tool, decision by person,\" with the reviewer named for each type of task.",
+     "feedback": "Refunds create obligations."
+    },
+    {
+     "id": "S101-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 12: AI as a practical helper",
+     "type": "mc",
+     "prompt": "What is the simple rule from the passage?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Never use tools for drafts\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Draft by tool, decision by person\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Let customers decide everything\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Decide by tool, never review\""
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "\"Draft by tool, decision by person\"",
+     "intro": "Some actions should never happen without a person checking first. Require HUMAN APPROVAL before AI-assisted work reaches customers or creates obligations: sending emails or posts, changing prices, issuing refunds, signing or sending contracts, making hiring decisions, or giving advice about health, money or law. The higher the stakes, the more careful the review. A simple rule is: \"Draft by tool, decision by person,\" with the reviewer named for each type of task.",
+     "feedback": "Humans decide."
+    },
+    {
+     "id": "S101-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 12: AI as a practical helper",
+     "type": "mc",
+     "prompt": "How should review change as stakes rise?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It should become random"
+      },
+      {
+       "letter": "B",
+       "text": "It should stop entirely"
+      },
+      {
+       "letter": "C",
+       "text": "It should be done by the tool"
+      },
+      {
+       "letter": "D",
+       "text": "It should become more careful"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "It should become more careful",
+     "intro": "Some actions should never happen without a person checking first. Require HUMAN APPROVAL before AI-assisted work reaches customers or creates obligations: sending emails or posts, changing prices, issuing refunds, signing or sending contracts, making hiring decisions, or giving advice about health, money or law. The higher the stakes, the more careful the review. A simple rule is: \"Draft by tool, decision by person,\" with the reviewer named for each type of task.",
+     "feedback": "Higher stakes, more care."
+    },
+    {
+     "id": "S101-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 12: AI as a practical helper",
+     "type": "mc",
+     "prompt": "Which is a high-stakes area?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Choosing an emoji for a post"
+      },
+      {
+       "letter": "B",
+       "text": "Advice about health, money or law"
+      },
+      {
+       "letter": "C",
+       "text": "Picking a background color"
+      },
+      {
+       "letter": "D",
+       "text": "Naming a playlist"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Advice about health, money or law",
+     "intro": "Some actions should never happen without a person checking first. Require HUMAN APPROVAL before AI-assisted work reaches customers or creates obligations: sending emails or posts, changing prices, issuing refunds, signing or sending contracts, making hiring decisions, or giving advice about health, money or law. The higher the stakes, the more careful the review. A simple rule is: \"Draft by tool, decision by person,\" with the reviewer named for each type of task.",
+     "feedback": "Mistakes can cause harm."
+    },
+    {
+     "id": "S101-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 12: AI as a practical helper",
+     "type": "mc",
+     "prompt": "Why name a reviewer for each task type?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "So the tool can sign"
+      },
+      {
+       "letter": "B",
+       "text": "So reviews never happen"
+      },
+      {
+       "letter": "C",
+       "text": "So it is clear who must approve"
+      },
+      {
+       "letter": "D",
+       "text": "So nobody has to be responsible"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "So it is clear who must approve",
+     "intro": "Some actions should never happen without a person checking first. Require HUMAN APPROVAL before AI-assisted work reaches customers or creates obligations: sending emails or posts, changing prices, issuing refunds, signing or sending contracts, making hiring decisions, or giving advice about health, money or law. The higher the stakes, the more careful the review. A simple rule is: \"Draft by tool, decision by person,\" with the reviewer named for each type of task.",
+     "feedback": "Clear accountability."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "A teacher grading a draft",
+   "questions": [
+    {
+     "id": "S101-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 12: AI as a practical helper",
+     "type": "mc",
+     "prompt": "Who reads the draft before it counts?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The teacher"
+      },
+      {
+       "letter": "B",
+       "text": "The draft itself"
+      },
+      {
+       "letter": "C",
+       "text": "Nobody"
+      },
+      {
+       "letter": "D",
+       "text": "A random stranger"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The teacher",
+     "intro": "A student can write a draft quickly, but the teacher reads it before it counts. In a business, AI can write a draft quickly, but a person reads it before it reaches a customer. The bigger the consequence, like a final exam versus a practice quiz, the more carefully the teacher checks. The student still learns from the feedback.",
+     "feedback": "A responsible reviewer."
+    },
+    {
+     "id": "S101-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 12: AI as a practical helper",
+     "type": "mc",
+     "prompt": "In business, who is like the teacher?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The customer who will receive the message later"
+      },
+      {
+       "letter": "B",
+       "text": "A person who approves before it reaches customers"
+      },
+      {
+       "letter": "C",
+       "text": "The AI tool"
+      },
+      {
+       "letter": "D",
+       "text": "A competitor"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A person who approves before it reaches customers",
+     "intro": "A student can write a draft quickly, but the teacher reads it before it counts. In a business, AI can write a draft quickly, but a person reads it before it reaches a customer. The bigger the consequence, like a final exam versus a practice quiz, the more carefully the teacher checks. The student still learns from the feedback.",
+     "feedback": "Human approval."
+    },
+    {
+     "id": "S101-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 12: AI as a practical helper",
+     "type": "mc",
+     "prompt": "A final exam versus a practice quiz is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "High stakes versus low stakes"
+      },
+      {
+       "letter": "B",
+       "text": "Two kinds of pens for writing"
+      },
+      {
+       "letter": "C",
+       "text": "Two equal tasks"
+      },
+      {
+       "letter": "D",
+       "text": "Two lunch options"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "High stakes versus low stakes",
+     "intro": "A student can write a draft quickly, but the teacher reads it before it counts. In a business, AI can write a draft quickly, but a person reads it before it reaches a customer. The bigger the consequence, like a final exam versus a practice quiz, the more carefully the teacher checks. The student still learns from the feedback.",
+     "feedback": "Stakes differ."
+    },
+    {
+     "id": "S101-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 12: AI as a practical helper",
+     "type": "mc",
+     "prompt": "When does the teacher check most carefully?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only on Friday afternoons"
+      },
+      {
+       "letter": "B",
+       "text": "Never"
+      },
+      {
+       "letter": "C",
+       "text": "When bored"
+      },
+      {
+       "letter": "D",
+       "text": "When the consequence is bigger"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "When the consequence is bigger",
+     "intro": "A student can write a draft quickly, but the teacher reads it before it counts. In a business, AI can write a draft quickly, but a person reads it before it reaches a customer. The bigger the consequence, like a final exam versus a practice quiz, the more carefully the teacher checks. The student still learns from the feedback.",
+     "feedback": "More care for higher stakes."
+    },
+    {
+     "id": "S101-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 12: AI as a practical helper",
+     "type": "mc",
+     "prompt": "The AI tool is like whom in the picture?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The principal of the whole school"
+      },
+      {
+       "letter": "B",
+       "text": "The parent"
+      },
+      {
+       "letter": "C",
+       "text": "The student writing a quick draft"
+      },
+      {
+       "letter": "D",
+       "text": "The teacher"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The student writing a quick draft",
+     "intro": "A student can write a draft quickly, but the teacher reads it before it counts. In a business, AI can write a draft quickly, but a person reads it before it reaches a customer. The bigger the consequence, like a final exam versus a practice quiz, the more carefully the teacher checks. The student still learns from the feedback.",
+     "feedback": "It drafts."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who misses MAIN may skip review; a teacher grading a draft shows who decides."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Apply it: set approval rules",
+   "questions": [
+    {
+     "id": "S101-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 12: AI as a practical helper",
+     "type": "mc",
+     "prompt": "A shop uses AI to draft replies to reviews. Which rule fits?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The owner approves each reply before posting"
+      },
+      {
+       "letter": "B",
+       "text": "Customers approve the replies"
+      },
+      {
+       "letter": "C",
+       "text": "Replies post automatically with no review"
+      },
+      {
+       "letter": "D",
+       "text": "Replies are never posted"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The owner approves each reply before posting",
+     "intro": "Some actions should never happen without a person checking first. Require HUMAN APPROVAL before AI-assisted work reaches customers or creates obligations: sending emails or posts, changing prices, issuing refunds, signing or sending contracts, making hiring decisions, or giving advice about health, money or law. The higher the stakes, the more careful the review. A simple rule is: \"Draft by tool, decision by person,\" with the reviewer named for each type of task.",
+     "feedback": "Approve public replies."
+    },
+    {
+     "id": "S101-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 12: AI as a practical helper",
+     "type": "mc",
+     "prompt": "An AI tool suggests raising all prices 25 percent. What should happen?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Customers vote on it"
+      },
+      {
+       "letter": "B",
+       "text": "The owner reviews the reasoning and decides"
+      },
+      {
+       "letter": "C",
+       "text": "The suggestion is ignored without reading"
+      },
+      {
+       "letter": "D",
+       "text": "Prices change automatically"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The owner reviews the reasoning and decides",
+     "intro": "Some actions should never happen without a person checking first. Require HUMAN APPROVAL before AI-assisted work reaches customers or creates obligations: sending emails or posts, changing prices, issuing refunds, signing or sending contracts, making hiring decisions, or giving advice about health, money or law. The higher the stakes, the more careful the review. A simple rule is: \"Draft by tool, decision by person,\" with the reviewer named for each type of task.",
+     "feedback": "Pricing is a business decision."
+    },
+    {
+     "id": "S101-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 12: AI as a practical helper",
+     "type": "mc",
+     "prompt": "A refund rule: tool drafts, owner approves. The owner approves 18 of 20 drafts. How many needed changes?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "2"
+      },
+      {
+       "letter": "B",
+       "text": "20"
+      },
+      {
+       "letter": "C",
+       "text": "38"
+      },
+      {
+       "letter": "D",
+       "text": "18"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "2",
+     "intro": "Some actions should never happen without a person checking first. Require HUMAN APPROVAL before AI-assisted work reaches customers or creates obligations: sending emails or posts, changing prices, issuing refunds, signing or sending contracts, making hiring decisions, or giving advice about health, money or law. The higher the stakes, the more careful the review. A simple rule is: \"Draft by tool, decision by person,\" with the reviewer named for each type of task.",
+     "feedback": "20 - 18 = 2."
+    },
+    {
+     "id": "S101-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 12: AI as a practical helper",
+     "type": "mc",
+     "prompt": "Which task can usually run with lighter review?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Issuing refunds"
+      },
+      {
+       "letter": "B",
+       "text": "Giving tax advice to a customer"
+      },
+      {
+       "letter": "C",
+       "text": "Sorting the owner's own notes"
+      },
+      {
+       "letter": "D",
+       "text": "Sending a contract to a client"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Sorting the owner's own notes",
+     "intro": "Some actions should never happen without a person checking first. Require HUMAN APPROVAL before AI-assisted work reaches customers or creates obligations: sending emails or posts, changing prices, issuing refunds, signing or sending contracts, making hiring decisions, or giving advice about health, money or law. The higher the stakes, the more careful the review. A simple rule is: \"Draft by tool, decision by person,\" with the reviewer named for each type of task.",
+     "feedback": "Internal, low stakes."
+    },
+    {
+     "id": "S101-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 12: AI as a practical helper",
+     "type": "mc",
+     "prompt": "An AI tool screens job applications and ranks them. What should the owner do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Hire the top-ranked person without reading"
+      },
+      {
+       "letter": "B",
+       "text": "Let the tool send rejection letters unreviewed"
+      },
+      {
+       "letter": "C",
+       "text": "Reject everyone the tool ranked low without review"
+      },
+      {
+       "letter": "D",
+       "text": "Review the applications herself before deciding"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Review the applications herself before deciding",
+     "intro": "Some actions should never happen without a person checking first. Require HUMAN APPROVAL before AI-assisted work reaches customers or creates obligations: sending emails or posts, changing prices, issuing refunds, signing or sending contracts, making hiring decisions, or giving advice about health, money or law. The higher the stakes, the more careful the review. A simple rule is: \"Draft by tool, decision by person,\" with the reviewer named for each type of task.",
+     "feedback": "Hiring decisions need people."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Handle the complications: speed pressure and automation creep",
+   "questions": [
+    {
+     "id": "S101-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 12: AI as a practical helper",
+     "type": "mc",
+     "prompt": "A busy owner wants to skip review \"just this week.\" What is the risk?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "An error could reach customers when no one is checking"
+      },
+      {
+       "letter": "B",
+       "text": "No risk, because tools never make errors during busy weeks"
+      },
+      {
+       "letter": "C",
+       "text": "Sales double"
+      },
+      {
+       "letter": "D",
+       "text": "Taxes vanish"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "An error could reach customers when no one is checking",
+     "intro": "Some actions should never happen without a person checking first. Require HUMAN APPROVAL before AI-assisted work reaches customers or creates obligations: sending emails or posts, changing prices, issuing refunds, signing or sending contracts, making hiring decisions, or giving advice about health, money or law. The higher the stakes, the more careful the review. A simple rule is: \"Draft by tool, decision by person,\" with the reviewer named for each type of task.",
+     "feedback": "Review matters most under pressure."
+    },
+    {
+     "id": "S101-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 12: AI as a practical helper",
+     "type": "mc",
+     "prompt": "An automation sends AI-written emails to all customers when stock arrives. What safeguard fits?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Hide it from staff"
+      },
+      {
+       "letter": "B",
+       "text": "Approve the template and test it before it goes live"
+      },
+      {
+       "letter": "C",
+       "text": "Let it send anything it writes without review"
+      },
+      {
+       "letter": "D",
+       "text": "Turn off all emails forever"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Approve the template and test it before it goes live",
+     "intro": "Some actions should never happen without a person checking first. Require HUMAN APPROVAL before AI-assisted work reaches customers or creates obligations: sending emails or posts, changing prices, issuing refunds, signing or sending contracts, making hiring decisions, or giving advice about health, money or law. The higher the stakes, the more careful the review. A simple rule is: \"Draft by tool, decision by person,\" with the reviewer named for each type of task.",
+     "feedback": "Approve what is automated."
+    },
+    {
+     "id": "S101-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 12: AI as a practical helper",
+     "type": "mc",
+     "prompt": "An AI reply promised a customer a refund the policy does not allow. What should the owner do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Blame the tool and refuse to discuss it with the customer"
+      },
+      {
+       "letter": "B",
+       "text": "Ignore the customer"
+      },
+      {
+       "letter": "C",
+       "text": "Promise even more"
+      },
+      {
+       "letter": "D",
+       "text": "Decide fairly, honor or explain, and fix the approval step"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Decide fairly, honor or explain, and fix the approval step",
+     "intro": "Some actions should never happen without a person checking first. Require HUMAN APPROVAL before AI-assisted work reaches customers or creates obligations: sending emails or posts, changing prices, issuing refunds, signing or sending contracts, making hiring decisions, or giving advice about health, money or law. The higher the stakes, the more careful the review. A simple rule is: \"Draft by tool, decision by person,\" with the reviewer named for each type of task.",
+     "feedback": "Own the outcome and fix the process."
+    },
+    {
+     "id": "S101-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 12: AI as a practical helper",
+     "type": "mc",
+     "prompt": "Reviewing each reply takes 2 minutes and there are 30 replies a week. How long is review each week?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "30 minutes"
+      },
+      {
+       "letter": "B",
+       "text": "32 minutes"
+      },
+      {
+       "letter": "C",
+       "text": "60 minutes"
+      },
+      {
+       "letter": "D",
+       "text": "15 minutes"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "60 minutes",
+     "intro": "Some actions should never happen without a person checking first. Require HUMAN APPROVAL before AI-assisted work reaches customers or creates obligations: sending emails or posts, changing prices, issuing refunds, signing or sending contracts, making hiring decisions, or giving advice about health, money or law. The higher the stakes, the more careful the review. A simple rule is: \"Draft by tool, decision by person,\" with the reviewer named for each type of task.",
+     "feedback": "30 x 2 = 60."
+    },
+    {
+     "id": "S101-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 12: AI as a practical helper",
+     "type": "mc",
+     "prompt": "Which statement is accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Customer-facing or binding actions need a person's approval."
+      },
+      {
+       "letter": "B",
+       "text": "High stakes need less review."
+      },
+      {
+       "letter": "C",
+       "text": "Human review is only needed for large businesses with staff."
+      },
+      {
+       "letter": "D",
+       "text": "Tools may sign contracts alone."
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Customer-facing or binding actions need a person's approval.",
+     "intro": "Some actions should never happen without a person checking first. Require HUMAN APPROVAL before AI-assisted work reaches customers or creates obligations: sending emails or posts, changing prices, issuing refunds, signing or sending contracts, making hiring decisions, or giving advice about health, money or law. The higher the stakes, the more careful the review. A simple rule is: \"Draft by tool, decision by person,\" with the reviewer named for each type of task.",
+     "feedback": "People decide what matters."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}
