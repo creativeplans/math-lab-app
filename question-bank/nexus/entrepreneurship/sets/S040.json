@@ -1,0 +1,671 @@
+{
+ "set": 40,
+ "title": "Which address each organization accepts",
+ "outcome": "ENT.MAIL.03",
+ "content_status": "time_sensitive",
+ "requires": [
+  39
+ ],
+ "module": "mail",
+ "path_refs": [
+  "services",
+  "products",
+  "digital",
+  "content"
+ ],
+ "suggested": [],
+ "sources": [
+  {
+   "url": "https://postalpro.usps.com/mailing/competitivepoboxes",
+   "claim": "At participating Post Offices, the PO Box \"Street Addressing\" option lets a box holder use the Post Office street address with the box number, so private carriers that need a street address can deliver; availability varies by location and the customer signs an agreement.",
+   "checked": "2026-10-25"
+  },
+  {
+   "url": "https://sos.wa.gov/corporations-charities/frequently-asked-questions-faqs/what-addresses-use-when-filing",
+   "claim": "Example of a state rule (Washington): the registered agent address must be a physical street address in the state where the agent can accept service; PO Boxes and private or virtual mailboxes may not be used for it, though a PO Box may be listed as a separate mailing address. Other states have their own rules.",
+   "checked": "2026-10-25"
+  }
+ ],
+ "review_interval_days": 365,
+ "jurisdiction": "US (USPS); Washington State (example only)",
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Match each organization to the kind of address it accepts",
+   "questions": [
+    {
+     "id": "S40-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 6: Addresses and contact details",
+     "type": "mc",
+     "prompt": "In Washington, what can be listed separately as a mailing address?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A made-up address that sounds official"
+      },
+      {
+       "letter": "B",
+       "text": "A PO Box"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing other than the agent's address"
+      },
+      {
+       "letter": "D",
+       "text": "The address of another state's office"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A PO Box",
+     "intro": "Different organizations accept different addresses. The STATE often requires a physical in-state street address for the registered agent; Washington, for example, does not accept PO Boxes or private mailboxes there, though a PO Box may be listed as a separate mailing address. Some PACKAGE CARRIERS cannot deliver to a plain PO Box; Street Addressing at participating Post Offices can help. BANKS and some licensing offices may ask for a physical address. Before filing any form, read what kind of address it asks for.",
+     "feedback": "A PO Box can be the mailing address."
+    },
+    {
+     "id": "S40-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 6: Addresses and contact details",
+     "type": "mc",
+     "prompt": "Why might a package carrier fail to deliver to a plain PO Box?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Some carriers need a street address"
+      },
+      {
+       "letter": "B",
+       "text": "Package carriers deliver only to banks"
+      },
+      {
+       "letter": "C",
+       "text": "PO Boxes are only for postcards and nothing else"
+      },
+      {
+       "letter": "D",
+       "text": "Packages are not allowed for businesses"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Some carriers need a street address",
+     "intro": "Different organizations accept different addresses. The STATE often requires a physical in-state street address for the registered agent; Washington, for example, does not accept PO Boxes or private mailboxes there, though a PO Box may be listed as a separate mailing address. Some PACKAGE CARRIERS cannot deliver to a plain PO Box; Street Addressing at participating Post Offices can help. BANKS and some licensing offices may ask for a physical address. Before filing any form, read what kind of address it asks for.",
+     "feedback": "Street addresses are needed by some carriers."
+    },
+    {
+     "id": "S40-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 6: Addresses and contact details",
+     "type": "mc",
+     "prompt": "What should an owner do before filling in an address on a form?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Copy an address from a competitor's form"
+      },
+      {
+       "letter": "B",
+       "text": "Use whichever address is shortest to write"
+      },
+      {
+       "letter": "C",
+       "text": "Read what kind of address the form asks for"
+      },
+      {
+       "letter": "D",
+       "text": "Leave the address line blank to stay private"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Read what kind of address the form asks for",
+     "intro": "Different organizations accept different addresses. The STATE often requires a physical in-state street address for the registered agent; Washington, for example, does not accept PO Boxes or private mailboxes there, though a PO Box may be listed as a separate mailing address. Some PACKAGE CARRIERS cannot deliver to a plain PO Box; Street Addressing at participating Post Offices can help. BANKS and some licensing offices may ask for a physical address. Before filing any form, read what kind of address it asks for.",
+     "feedback": "Each form may require a specific type."
+    },
+    {
+     "id": "S40-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 6: Addresses and contact details",
+     "type": "mc",
+     "prompt": "Which organization may require a physical address when opening an account?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A supplier of packing tape"
+      },
+      {
+       "letter": "B",
+       "text": "A social media follower"
+      },
+      {
+       "letter": "C",
+       "text": "A customer buying one product online"
+      },
+      {
+       "letter": "D",
+       "text": "A bank"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "A bank",
+     "intro": "Different organizations accept different addresses. The STATE often requires a physical in-state street address for the registered agent; Washington, for example, does not accept PO Boxes or private mailboxes there, though a PO Box may be listed as a separate mailing address. Some PACKAGE CARRIERS cannot deliver to a plain PO Box; Street Addressing at participating Post Offices can help. BANKS and some licensing offices may ask for a physical address. Before filing any form, read what kind of address it asks for.",
+     "feedback": "Banks may ask for a physical address."
+    },
+    {
+     "id": "S40-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 6: Addresses and contact details",
+     "type": "mc",
+     "prompt": "Which address does a state usually require for the registered agent?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A PO Box in any state"
+      },
+      {
+       "letter": "B",
+       "text": "A physical in-state street address"
+      },
+      {
+       "letter": "C",
+       "text": "A phone number with voicemail"
+      },
+      {
+       "letter": "D",
+       "text": "Any email address the owner checks"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A physical in-state street address",
+     "intro": "Different organizations accept different addresses. The STATE often requires a physical in-state street address for the registered agent; Washington, for example, does not accept PO Boxes or private mailboxes there, though a PO Box may be listed as a separate mailing address. Some PACKAGE CARRIERS cannot deliver to a plain PO Box; Street Addressing at participating Post Offices can help. BANKS and some licensing offices may ask for a physical address. Before filing any form, read what kind of address it asks for.",
+     "feedback": "Agents need a physical location."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Different doors accept different deliveries",
+   "questions": [
+    {
+     "id": "S40-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 6: Addresses and contact details",
+     "type": "mc",
+     "prompt": "Where do big deliveries go at the school?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The classroom"
+      },
+      {
+       "letter": "B",
+       "text": "The parking lot"
+      },
+      {
+       "letter": "C",
+       "text": "The office mail tray"
+      },
+      {
+       "letter": "D",
+       "text": "The loading dock"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The loading dock",
+     "intro": "Imagine a school. The office accepts official letters, the loading dock accepts big deliveries, and the classroom accepts homework. Sending a truck to the classroom does not work. Organizations are similar: the state wants a real street address for legal papers, some carriers need a street address for packages, and ordinary letters can go to a PO Box.",
+     "feedback": "Each door has its own job."
+    },
+    {
+     "id": "S40-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 6: Addresses and contact details",
+     "type": "mc",
+     "prompt": "Ordinary letters for a business can often go where?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A loading dock only"
+      },
+      {
+       "letter": "B",
+       "text": "Nowhere"
+      },
+      {
+       "letter": "C",
+       "text": "A PO Box"
+      },
+      {
+       "letter": "D",
+       "text": "Only a registered agent"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A PO Box",
+     "intro": "Imagine a school. The office accepts official letters, the loading dock accepts big deliveries, and the classroom accepts homework. Sending a truck to the classroom does not work. Organizations are similar: the state wants a real street address for legal papers, some carriers need a street address for packages, and ordinary letters can go to a PO Box.",
+     "feedback": "Letters often go to a box."
+    },
+    {
+     "id": "S40-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 6: Addresses and contact details",
+     "type": "mc",
+     "prompt": "Legal papers usually need what kind of address?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A real street address"
+      },
+      {
+       "letter": "B",
+       "text": "An email only"
+      },
+      {
+       "letter": "C",
+       "text": "A phone number with voicemail"
+      },
+      {
+       "letter": "D",
+       "text": "Any PO Box"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "A real street address",
+     "intro": "Imagine a school. The office accepts official letters, the loading dock accepts big deliveries, and the classroom accepts homework. Sending a truck to the classroom does not work. Organizations are similar: the state wants a real street address for legal papers, some carriers need a street address for packages, and ordinary letters can go to a PO Box.",
+     "feedback": "Papers need a physical place."
+    },
+    {
+     "id": "S40-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 6: Addresses and contact details",
+     "type": "mc",
+     "prompt": "Some packages need what kind of address?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A PO Box only"
+      },
+      {
+       "letter": "B",
+       "text": "A street address"
+      },
+      {
+       "letter": "C",
+       "text": "A website"
+      },
+      {
+       "letter": "D",
+       "text": "A phone number"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A street address",
+     "intro": "Imagine a school. The office accepts official letters, the loading dock accepts big deliveries, and the classroom accepts homework. Sending a truck to the classroom does not work. Organizations are similar: the state wants a real street address for legal papers, some carriers need a street address for packages, and ordinary letters can go to a PO Box.",
+     "feedback": "Some carriers need a street address."
+    },
+    {
+     "id": "S40-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 6: Addresses and contact details",
+     "type": "mc",
+     "prompt": "Sending a truck to a classroom is like what mistake?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Using a pen"
+      },
+      {
+       "letter": "B",
+       "text": "Paying a bill"
+      },
+      {
+       "letter": "C",
+       "text": "Writing a short letter to a friend"
+      },
+      {
+       "letter": "D",
+       "text": "Using the wrong address type"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Using the wrong address type",
+     "intro": "Imagine a school. The office accepts official letters, the loading dock accepts big deliveries, and the classroom accepts homework. Sending a truck to the classroom does not work. Organizations are similar: the state wants a real street address for legal papers, some carriers need a street address for packages, and ordinary letters can go to a PO Box.",
+     "feedback": "Match the address to the job."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who misses MAIN may not see why one address does not fit all; a school's doors show the idea."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Apply it: fill in the right address",
+   "questions": [
+    {
+     "id": "S40-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 6: Addresses and contact details",
+     "type": "mc",
+     "prompt": "Tom's Washington LLC form asks for the registered agent address and a mailing address. He has a PO Box and an agent service. What fits?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Agent service for mailing and PO Box for the agent"
+      },
+      {
+       "letter": "B",
+       "text": "Leave both lines blank"
+      },
+      {
+       "letter": "C",
+       "text": "Agent service address for the agent; PO Box for mailing"
+      },
+      {
+       "letter": "D",
+       "text": "PO Box for both lines"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Agent service address for the agent; PO Box for mailing",
+     "intro": "Different organizations accept different addresses. The STATE often requires a physical in-state street address for the registered agent; Washington, for example, does not accept PO Boxes or private mailboxes there, though a PO Box may be listed as a separate mailing address. Some PACKAGE CARRIERS cannot deliver to a plain PO Box; Street Addressing at participating Post Offices can help. BANKS and some licensing offices may ask for a physical address. Before filing any form, read what kind of address it asks for.",
+     "feedback": "Match each line to the allowed type."
+    },
+    {
+     "id": "S40-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 6: Addresses and contact details",
+     "type": "mc",
+     "prompt": "A supplier ships by a private carrier that cannot deliver to plain PO Boxes. The owner's Post Office offers Street Addressing. What should she give the supplier?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The Post Office street address with her box number"
+      },
+      {
+       "letter": "B",
+       "text": "A neighbor's street address, without asking first"
+      },
+      {
+       "letter": "C",
+       "text": "Her plain PO Box number only"
+      },
+      {
+       "letter": "D",
+       "text": "The registered agent's address"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The Post Office street address with her box number",
+     "intro": "Different organizations accept different addresses. The STATE often requires a physical in-state street address for the registered agent; Washington, for example, does not accept PO Boxes or private mailboxes there, though a PO Box may be listed as a separate mailing address. Some PACKAGE CARRIERS cannot deliver to a plain PO Box; Street Addressing at participating Post Offices can help. BANKS and some licensing offices may ask for a physical address. Before filing any form, read what kind of address it asks for.",
+     "feedback": "Street Addressing helps here."
+    },
+    {
+     "id": "S40-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 6: Addresses and contact details",
+     "type": "mc",
+     "prompt": "Of 5 forms, 2 require a physical street address and the rest accept a PO Box. How many accept a PO Box?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "7, the two numbers added"
+      },
+      {
+       "letter": "B",
+       "text": "2, the forms needing a street address"
+      },
+      {
+       "letter": "C",
+       "text": "5, every one of the forms"
+      },
+      {
+       "letter": "D",
+       "text": "3"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "3",
+     "intro": "Different organizations accept different addresses. The STATE often requires a physical in-state street address for the registered agent; Washington, for example, does not accept PO Boxes or private mailboxes there, though a PO Box may be listed as a separate mailing address. Some PACKAGE CARRIERS cannot deliver to a plain PO Box; Street Addressing at participating Post Offices can help. BANKS and some licensing offices may ask for a physical address. Before filing any form, read what kind of address it asks for.",
+     "feedback": "5 - 2 = 3 forms."
+    },
+    {
+     "id": "S40-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 6: Addresses and contact details",
+     "type": "mc",
+     "prompt": "A bank form asks for the business's physical address. The owner works from home. What should she write?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The bank's own address"
+      },
+      {
+       "letter": "B",
+       "text": "Her PO Box number, labeled on the form as her physical address"
+      },
+      {
+       "letter": "C",
+       "text": "A fake address for privacy"
+      },
+      {
+       "letter": "D",
+       "text": "Her actual home address, if that is where the business operates"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Her actual home address, if that is where the business operates",
+     "intro": "Different organizations accept different addresses. The STATE often requires a physical in-state street address for the registered agent; Washington, for example, does not accept PO Boxes or private mailboxes there, though a PO Box may be listed as a separate mailing address. Some PACKAGE CARRIERS cannot deliver to a plain PO Box; Street Addressing at participating Post Offices can help. BANKS and some licensing offices may ask for a physical address. Before filing any form, read what kind of address it asks for.",
+     "feedback": "Give truthful information of the requested type."
+    },
+    {
+     "id": "S40-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 6: Addresses and contact details",
+     "type": "mc",
+     "prompt": "Which address type is most often accepted for ordinary bills and letters?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only the registered agent address"
+      },
+      {
+       "letter": "B",
+       "text": "Only a storefront address"
+      },
+      {
+       "letter": "C",
+       "text": "A mailing address such as a PO Box"
+      },
+      {
+       "letter": "D",
+       "text": "Only an overseas address"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A mailing address such as a PO Box",
+     "intro": "Different organizations accept different addresses. The STATE often requires a physical in-state street address for the registered agent; Washington, for example, does not accept PO Boxes or private mailboxes there, though a PO Box may be listed as a separate mailing address. Some PACKAGE CARRIERS cannot deliver to a plain PO Box; Street Addressing at participating Post Offices can help. BANKS and some licensing offices may ask for a physical address. Before filing any form, read what kind of address it asks for.",
+     "feedback": "Mailing addresses handle ordinary mail."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Handle the complications: rejected forms and mixed rules",
+   "questions": [
+    {
+     "id": "S40-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 6: Addresses and contact details",
+     "type": "mc",
+     "prompt": "A state rejected a filing because the agent address was a private mailbox. What should the owner do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Use a PO Box instead of the private mailbox and refile"
+      },
+      {
+       "letter": "B",
+       "text": "Name an agent with a physical in-state address and refile"
+      },
+      {
+       "letter": "C",
+       "text": "Give up on forming the LLC"
+      },
+      {
+       "letter": "D",
+       "text": "File the same form again unchanged"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Name an agent with a physical in-state address and refile",
+     "intro": "Different organizations accept different addresses. The STATE often requires a physical in-state street address for the registered agent; Washington, for example, does not accept PO Boxes or private mailboxes there, though a PO Box may be listed as a separate mailing address. Some PACKAGE CARRIERS cannot deliver to a plain PO Box; Street Addressing at participating Post Offices can help. BANKS and some licensing offices may ask for a physical address. Before filing any form, read what kind of address it asks for.",
+     "feedback": "Fix the address type."
+    },
+    {
+     "id": "S40-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 6: Addresses and contact details",
+     "type": "mc",
+     "prompt": "A licensing office asks for a physical address but the owner has only a PO Box. What should she do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Write the PO Box anyway and call it her physical address"
+      },
+      {
+       "letter": "B",
+       "text": "Use a random street address"
+      },
+      {
+       "letter": "C",
+       "text": "Ask the office what address it accepts for her situation"
+      },
+      {
+       "letter": "D",
+       "text": "Skip the license"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Ask the office what address it accepts for her situation",
+     "intro": "Different organizations accept different addresses. The STATE often requires a physical in-state street address for the registered agent; Washington, for example, does not accept PO Boxes or private mailboxes there, though a PO Box may be listed as a separate mailing address. Some PACKAGE CARRIERS cannot deliver to a plain PO Box; Street Addressing at participating Post Offices can help. BANKS and some licensing offices may ask for a physical address. Before filing any form, read what kind of address it asks for.",
+     "feedback": "Ask the issuer when unsure."
+    },
+    {
+     "id": "S40-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 6: Addresses and contact details",
+     "type": "mc",
+     "prompt": "Which mistake is most likely to cause missed legal papers?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Using a business email for customers"
+      },
+      {
+       "letter": "B",
+       "text": "Listing a PO Box as the ordinary mailing address"
+      },
+      {
+       "letter": "C",
+       "text": "Listing an address where no one receives documents"
+      },
+      {
+       "letter": "D",
+       "text": "Printing the address on invoices"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Listing an address where no one receives documents",
+     "intro": "Different organizations accept different addresses. The STATE often requires a physical in-state street address for the registered agent; Washington, for example, does not accept PO Boxes or private mailboxes there, though a PO Box may be listed as a separate mailing address. Some PACKAGE CARRIERS cannot deliver to a plain PO Box; Street Addressing at participating Post Offices can help. BANKS and some licensing offices may ask for a physical address. Before filing any form, read what kind of address it asks for.",
+     "feedback": "The agent address must be monitored."
+    },
+    {
+     "id": "S40-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 6: Addresses and contact details",
+     "type": "mc",
+     "prompt": "An owner used three different addresses on her forms. Is that wrong?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes, it is always illegal"
+      },
+      {
+       "letter": "B",
+       "text": "Yes, the bank will close her account"
+      },
+      {
+       "letter": "C",
+       "text": "Yes, businesses may only have one address"
+      },
+      {
+       "letter": "D",
+       "text": "Not necessarily, if each fits the form's request"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Not necessarily, if each fits the form's request",
+     "intro": "Different organizations accept different addresses. The STATE often requires a physical in-state street address for the registered agent; Washington, for example, does not accept PO Boxes or private mailboxes there, though a PO Box may be listed as a separate mailing address. Some PACKAGE CARRIERS cannot deliver to a plain PO Box; Street Addressing at participating Post Offices can help. BANKS and some licensing offices may ask for a physical address. Before filing any form, read what kind of address it asks for.",
+     "feedback": "Different forms can need different types."
+    },
+    {
+     "id": "S40-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 6: Addresses and contact details",
+     "type": "mc",
+     "prompt": "Which statement is accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only email addresses matter today."
+      },
+      {
+       "letter": "B",
+       "text": "Address rules depend on the organization and state, so read each form."
+      },
+      {
+       "letter": "C",
+       "text": "Every organization accepts a PO Box for every kind of address."
+      },
+      {
+       "letter": "D",
+       "text": "No organization accepts PO Boxes."
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Address rules depend on the organization and state, so read each form.",
+     "intro": "Different organizations accept different addresses. The STATE often requires a physical in-state street address for the registered agent; Washington, for example, does not accept PO Boxes or private mailboxes there, though a PO Box may be listed as a separate mailing address. Some PACKAGE CARRIERS cannot deliver to a plain PO Box; Street Addressing at participating Post Offices can help. BANKS and some licensing offices may ask for a physical address. Before filing any form, read what kind of address it asks for.",
+     "feedback": "Check each requirement."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

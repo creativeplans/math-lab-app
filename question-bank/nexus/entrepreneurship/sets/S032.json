@@ -1,0 +1,672 @@
+{
+ "set": 32,
+ "title": "EIN, state tax ID and registration",
+ "outcome": "ENT.ID.03",
+ "content_status": "time_sensitive",
+ "requires": [
+  30,
+  24
+ ],
+ "module": "ids",
+ "path_refs": [
+  "services",
+  "products",
+  "digital",
+  "content"
+ ],
+ "suggested": [],
+ "sources": [
+  {
+   "url": "https://www.irs.gov/businesses/small-businesses-self-employed/get-an-employer-identification-number",
+   "claim": "An EIN can be obtained directly from the IRS for free (\"you never have to pay a fee for an EIN\"); if forming an LLC, partnership or corporation, form the entity with the state first or the EIN application may be delayed.",
+   "checked": "2026-10-25"
+  },
+  {
+   "url": "https://www.sba.gov/business-guide/launch-your-business",
+   "claim": "The SBA lists the launch steps (choose a structure, register, get federal and state tax IDs, apply for licenses and permits, open a business bank account, get insurance) as a general guide.",
+   "checked": "2026-10-25"
+  }
+ ],
+ "review_interval_days": 365,
+ "jurisdiction": "US; US federal",
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Tell the EIN apart from state tax IDs, registration and licenses",
+   "questions": [
+    {
+     "id": "S32-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "Which ID is the federal tax ID?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The state sales tax permit"
+      },
+      {
+       "letter": "B",
+       "text": "The EIN"
+      },
+      {
+       "letter": "C",
+       "text": "The DBA certificate number"
+      },
+      {
+       "letter": "D",
+       "text": "The city business license number"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The EIN",
+     "intro": "Different numbers and filings do different jobs. The EIN is the FEDERAL tax ID from the IRS. A STATE tax ID or account may be needed for state taxes, such as collecting sales tax or paying state payroll taxes; it comes from the state's tax agency. BUSINESS REGISTRATION (forming an LLC, or filing a DBA) records the business or its name with the state or local government. A LICENSE gives permission to operate. Having one does not replace the others. The SBA lists getting federal and state tax IDs as separate launch steps.",
+     "feedback": "The EIN comes from the IRS."
+    },
+    {
+     "id": "S32-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "A shop will collect sales tax. Which ID is it most likely to need from the state?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only a trademark registration"
+      },
+      {
+       "letter": "B",
+       "text": "Only a domain name registration for the site"
+      },
+      {
+       "letter": "C",
+       "text": "Only an EIN from the IRS"
+      },
+      {
+       "letter": "D",
+       "text": "A state tax account or sales tax permit"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "A state tax account or sales tax permit",
+     "intro": "Different numbers and filings do different jobs. The EIN is the FEDERAL tax ID from the IRS. A STATE tax ID or account may be needed for state taxes, such as collecting sales tax or paying state payroll taxes; it comes from the state's tax agency. BUSINESS REGISTRATION (forming an LLC, or filing a DBA) records the business or its name with the state or local government. A LICENSE gives permission to operate. Having one does not replace the others. The SBA lists getting federal and state tax IDs as separate launch steps.",
+     "feedback": "Sales tax is usually a state matter."
+    },
+    {
+     "id": "S32-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "What does business registration (like forming an LLC) do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Replaces all business licenses"
+      },
+      {
+       "letter": "B",
+       "text": "Collects sales tax for the state"
+      },
+      {
+       "letter": "C",
+       "text": "Records the business with the state"
+      },
+      {
+       "letter": "D",
+       "text": "Gives a federal tax ID number"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Records the business with the state",
+     "intro": "Different numbers and filings do different jobs. The EIN is the FEDERAL tax ID from the IRS. A STATE tax ID or account may be needed for state taxes, such as collecting sales tax or paying state payroll taxes; it comes from the state's tax agency. BUSINESS REGISTRATION (forming an LLC, or filing a DBA) records the business or its name with the state or local government. A LICENSE gives permission to operate. Having one does not replace the others. The SBA lists getting federal and state tax IDs as separate launch steps.",
+     "feedback": "Registration records the business or name."
+    },
+    {
+     "id": "S32-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "Does an EIN replace a city business license?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No, they do different jobs"
+      },
+      {
+       "letter": "B",
+       "text": "Yes, if the business has an LLC"
+      },
+      {
+       "letter": "C",
+       "text": "Yes, but only for food businesses"
+      },
+      {
+       "letter": "D",
+       "text": "Yes, an EIN covers every permission"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "No, they do different jobs",
+     "intro": "Different numbers and filings do different jobs. The EIN is the FEDERAL tax ID from the IRS. A STATE tax ID or account may be needed for state taxes, such as collecting sales tax or paying state payroll taxes; it comes from the state's tax agency. BUSINESS REGISTRATION (forming an LLC, or filing a DBA) records the business or its name with the state or local government. A LICENSE gives permission to operate. Having one does not replace the others. The SBA lists getting federal and state tax IDs as separate launch steps.",
+     "feedback": "An EIN is a tax ID, not permission to operate."
+    },
+    {
+     "id": "S32-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "According to the SBA launch steps, how are federal and state tax IDs treated?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "As the same as a trademark"
+      },
+      {
+       "letter": "B",
+       "text": "As separate steps"
+      },
+      {
+       "letter": "C",
+       "text": "As one single combined number"
+      },
+      {
+       "letter": "D",
+       "text": "As optional for all businesses"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "As separate steps",
+     "intro": "Different numbers and filings do different jobs. The EIN is the FEDERAL tax ID from the IRS. A STATE tax ID or account may be needed for state taxes, such as collecting sales tax or paying state payroll taxes; it comes from the state's tax agency. BUSINESS REGISTRATION (forming an LLC, or filing a DBA) records the business or its name with the state or local government. A LICENSE gives permission to operate. Having one does not replace the others. The SBA lists getting federal and state tax IDs as separate launch steps.",
+     "feedback": "They are listed separately."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Different cards in a wallet",
+   "questions": [
+    {
+     "id": "S32-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "Why can't a gym card be used at the library?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Gym cards are illegal"
+      },
+      {
+       "letter": "B",
+       "text": "Each card is for a different place"
+      },
+      {
+       "letter": "C",
+       "text": "Gym cards are too big to fit in slots"
+      },
+      {
+       "letter": "D",
+       "text": "Libraries are closed"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Each card is for a different place",
+     "intro": "Picture a wallet with a library card, a driver's license and a gym card. Each card is for a different place; the library will not accept your gym card. A business also carries several IDs and papers: a federal tax ID (EIN) for the IRS, a state tax account for state taxes, a registration showing it exists, and licenses giving permission to operate. Each is for a different office.",
+     "feedback": "Each card has its own purpose."
+    },
+    {
+     "id": "S32-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "The EIN is the card for which office?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The city"
+      },
+      {
+       "letter": "B",
+       "text": "The post office"
+      },
+      {
+       "letter": "C",
+       "text": "The state tax agency"
+      },
+      {
+       "letter": "D",
+       "text": "The IRS"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The IRS",
+     "intro": "Picture a wallet with a library card, a driver's license and a gym card. Each card is for a different place; the library will not accept your gym card. A business also carries several IDs and papers: a federal tax ID (EIN) for the IRS, a state tax account for state taxes, a registration showing it exists, and licenses giving permission to operate. Each is for a different office.",
+     "feedback": "The EIN is federal."
+    },
+    {
+     "id": "S32-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "A state tax account is the card for which office?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The IRS"
+      },
+      {
+       "letter": "B",
+       "text": "The bank"
+      },
+      {
+       "letter": "C",
+       "text": "The state tax agency"
+      },
+      {
+       "letter": "D",
+       "text": "The trademark office"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The state tax agency",
+     "intro": "Picture a wallet with a library card, a driver's license and a gym card. Each card is for a different place; the library will not accept your gym card. A business also carries several IDs and papers: a federal tax ID (EIN) for the IRS, a state tax account for state taxes, a registration showing it exists, and licenses giving permission to operate. Each is for a different office.",
+     "feedback": "It is for state taxes."
+    },
+    {
+     "id": "S32-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "A license is like which wallet card?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A coupon"
+      },
+      {
+       "letter": "B",
+       "text": "A photo"
+      },
+      {
+       "letter": "C",
+       "text": "A pass letting you do something"
+      },
+      {
+       "letter": "D",
+       "text": "A store receipt from shopping"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A pass letting you do something",
+     "intro": "Picture a wallet with a library card, a driver's license and a gym card. Each card is for a different place; the library will not accept your gym card. A business also carries several IDs and papers: a federal tax ID (EIN) for the IRS, a state tax account for state taxes, a registration showing it exists, and licenses giving permission to operate. Each is for a different office.",
+     "feedback": "A license grants permission."
+    },
+    {
+     "id": "S32-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "Can one business ID replace all the others?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes, the DBA"
+      },
+      {
+       "letter": "B",
+       "text": "Yes, the EIN"
+      },
+      {
+       "letter": "C",
+       "text": "No"
+      },
+      {
+       "letter": "D",
+       "text": "Yes, any card"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "No",
+     "intro": "Picture a wallet with a library card, a driver's license and a gym card. Each card is for a different place; the library will not accept your gym card. A business also carries several IDs and papers: a federal tax ID (EIN) for the IRS, a state tax account for state taxes, a registration showing it exists, and licenses giving permission to operate. Each is for a different office.",
+     "feedback": "Each serves its own office."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who misses MAIN may lump IDs together; a wallet of different cards separates them."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Apply it: build an ID and registration checklist",
+   "questions": [
+    {
+     "id": "S32-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "Mara is opening a retail gift shop LLC with one employee. Which list is most complete?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "EIN only"
+      },
+      {
+       "letter": "B",
+       "text": "LLC registration, EIN, state tax account, local license"
+      },
+      {
+       "letter": "C",
+       "text": "DBA and logo only"
+      },
+      {
+       "letter": "D",
+       "text": "A local license only, with no tax IDs or LLC filing"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "LLC registration, EIN, state tax account, local license",
+     "intro": "Different numbers and filings do different jobs. The EIN is the FEDERAL tax ID from the IRS. A STATE tax ID or account may be needed for state taxes, such as collecting sales tax or paying state payroll taxes; it comes from the state's tax agency. BUSINESS REGISTRATION (forming an LLC, or filing a DBA) records the business or its name with the state or local government. A LICENSE gives permission to operate. Having one does not replace the others. The SBA lists getting federal and state tax IDs as separate launch steps.",
+     "feedback": "A retail employer needs several IDs and permissions."
+    },
+    {
+     "id": "S32-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "Theo got an EIN and thinks he is ready to collect sales tax. What is missing?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A state sales tax permit or account"
+      },
+      {
+       "letter": "B",
+       "text": "A new domain name"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing, the EIN covers sales tax"
+      },
+      {
+       "letter": "D",
+       "text": "A trademark search"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "A state sales tax permit or account",
+     "intro": "Different numbers and filings do different jobs. The EIN is the FEDERAL tax ID from the IRS. A STATE tax ID or account may be needed for state taxes, such as collecting sales tax or paying state payroll taxes; it comes from the state's tax agency. BUSINESS REGISTRATION (forming an LLC, or filing a DBA) records the business or its name with the state or local government. A LICENSE gives permission to operate. Having one does not replace the others. The SBA lists getting federal and state tax IDs as separate launch steps.",
+     "feedback": "Sales tax is usually registered with the state."
+    },
+    {
+     "id": "S32-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "Which item gives permission to operate in the city?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The EIN"
+      },
+      {
+       "letter": "B",
+       "text": "The DBA filing"
+      },
+      {
+       "letter": "C",
+       "text": "A city business license"
+      },
+      {
+       "letter": "D",
+       "text": "The state tax account"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A city business license",
+     "intro": "Different numbers and filings do different jobs. The EIN is the FEDERAL tax ID from the IRS. A STATE tax ID or account may be needed for state taxes, such as collecting sales tax or paying state payroll taxes; it comes from the state's tax agency. BUSINESS REGISTRATION (forming an LLC, or filing a DBA) records the business or its name with the state or local government. A LICENSE gives permission to operate. Having one does not replace the others. The SBA lists getting federal and state tax IDs as separate launch steps.",
+     "feedback": "Licenses give permission."
+    },
+    {
+     "id": "S32-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "A business owner counts 4 required items and has finished 3. What fraction is done?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "3/4"
+      },
+      {
+       "letter": "B",
+       "text": "1/4"
+      },
+      {
+       "letter": "C",
+       "text": "4/3"
+      },
+      {
+       "letter": "D",
+       "text": "3/7"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "3/4",
+     "intro": "Different numbers and filings do different jobs. The EIN is the FEDERAL tax ID from the IRS. A STATE tax ID or account may be needed for state taxes, such as collecting sales tax or paying state payroll taxes; it comes from the state's tax agency. BUSINESS REGISTRATION (forming an LLC, or filing a DBA) records the business or its name with the state or local government. A LICENSE gives permission to operate. Having one does not replace the others. The SBA lists getting federal and state tax IDs as separate launch steps.",
+     "feedback": "3 done out of 4 required = 3/4."
+    },
+    {
+     "id": "S32-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "Which source lists federal and state tax IDs as launch steps?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A competitor's social media page"
+      },
+      {
+       "letter": "B",
+       "text": "An old print advertisement"
+      },
+      {
+       "letter": "C",
+       "text": "A random online forum"
+      },
+      {
+       "letter": "D",
+       "text": "The SBA's launch guide"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The SBA's launch guide",
+     "intro": "Different numbers and filings do different jobs. The EIN is the FEDERAL tax ID from the IRS. A STATE tax ID or account may be needed for state taxes, such as collecting sales tax or paying state payroll taxes; it comes from the state's tax agency. BUSINESS REGISTRATION (forming an LLC, or filing a DBA) records the business or its name with the state or local government. A LICENSE gives permission to operate. Having one does not replace the others. The SBA lists getting federal and state tax IDs as separate launch steps.",
+     "feedback": "The SBA provides an official overview."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Handle the complications: mixing up IDs",
+   "questions": [
+    {
+     "id": "S32-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "An owner gives a state tax form her EIN in the box for her state account number. What is the problem?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The EIN and state account number are different IDs"
+      },
+      {
+       "letter": "B",
+       "text": "The state only needs her logo"
+      },
+      {
+       "letter": "C",
+       "text": "No problem; the federal and state numbers are always identical"
+      },
+      {
+       "letter": "D",
+       "text": "The state form needs a trademark"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The EIN and state account number are different IDs",
+     "intro": "Different numbers and filings do different jobs. The EIN is the FEDERAL tax ID from the IRS. A STATE tax ID or account may be needed for state taxes, such as collecting sales tax or paying state payroll taxes; it comes from the state's tax agency. BUSINESS REGISTRATION (forming an LLC, or filing a DBA) records the business or its name with the state or local government. A LICENSE gives permission to operate. Having one does not replace the others. The SBA lists getting federal and state tax IDs as separate launch steps.",
+     "feedback": "Each form asks for a specific number."
+    },
+    {
+     "id": "S32-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "A seller thinks a DBA filing gives her a state tax account. What is the error?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "DBAs are federal IDs"
+      },
+      {
+       "letter": "B",
+       "text": "No error; a DBA filing also opens a state tax account"
+      },
+      {
+       "letter": "C",
+       "text": "A DBA registers a name, not a tax account"
+      },
+      {
+       "letter": "D",
+       "text": "DBAs replace the EIN"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A DBA registers a name, not a tax account",
+     "intro": "Different numbers and filings do different jobs. The EIN is the FEDERAL tax ID from the IRS. A STATE tax ID or account may be needed for state taxes, such as collecting sales tax or paying state payroll taxes; it comes from the state's tax agency. BUSINESS REGISTRATION (forming an LLC, or filing a DBA) records the business or its name with the state or local government. A LICENSE gives permission to operate. Having one does not replace the others. The SBA lists getting federal and state tax IDs as separate launch steps.",
+     "feedback": "Tax accounts are separate."
+    },
+    {
+     "id": "S32-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "A business moves to a new state. Which items should it check?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only its logo colors"
+      },
+      {
+       "letter": "B",
+       "text": "Only the EIN, which must be replaced"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing; every state registration and license transfers automatically"
+      },
+      {
+       "letter": "D",
+       "text": "State registration, state tax accounts and local licenses there"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "State registration, state tax accounts and local licenses there",
+     "intro": "Different numbers and filings do different jobs. The EIN is the FEDERAL tax ID from the IRS. A STATE tax ID or account may be needed for state taxes, such as collecting sales tax or paying state payroll taxes; it comes from the state's tax agency. BUSINESS REGISTRATION (forming an LLC, or filing a DBA) records the business or its name with the state or local government. A LICENSE gives permission to operate. Having one does not replace the others. The SBA lists getting federal and state tax IDs as separate launch steps.",
+     "feedback": "State and local items depend on the location."
+    },
+    {
+     "id": "S32-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "Which statement is accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No business needs a state ID."
+      },
+      {
+       "letter": "B",
+       "text": "Requirements depend on the state, the activity and whether there are employees."
+      },
+      {
+       "letter": "C",
+       "text": "Every business in every state needs exactly the same IDs and filings."
+      },
+      {
+       "letter": "D",
+       "text": "Only big companies need IDs."
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Requirements depend on the state, the activity and whether there are employees.",
+     "intro": "Different numbers and filings do different jobs. The EIN is the FEDERAL tax ID from the IRS. A STATE tax ID or account may be needed for state taxes, such as collecting sales tax or paying state payroll taxes; it comes from the state's tax agency. BUSINESS REGISTRATION (forming an LLC, or filing a DBA) records the business or its name with the state or local government. A LICENSE gives permission to operate. Having one does not replace the others. The SBA lists getting federal and state tax IDs as separate launch steps.",
+     "feedback": "Check the specific situation."
+    },
+    {
+     "id": "S32-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "Where should a founder check state tax ID needs?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The IRS only"
+      },
+      {
+       "letter": "B",
+       "text": "A neighbor's guess"
+      },
+      {
+       "letter": "C",
+       "text": "The comment section under a business video"
+      },
+      {
+       "letter": "D",
+       "text": "The state tax agency's official website"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The state tax agency's official website",
+     "intro": "Different numbers and filings do different jobs. The EIN is the FEDERAL tax ID from the IRS. A STATE tax ID or account may be needed for state taxes, such as collecting sales tax or paying state payroll taxes; it comes from the state's tax agency. BUSINESS REGISTRATION (forming an LLC, or filing a DBA) records the business or its name with the state or local government. A LICENSE gives permission to operate. Having one does not replace the others. The SBA lists getting federal and state tax IDs as separate launch steps.",
+     "feedback": "State agencies handle state taxes."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

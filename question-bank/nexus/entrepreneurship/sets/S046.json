@@ -1,0 +1,657 @@
+{
+ "set": 46,
+ "title": "Price and cost per item",
+ "outcome": "ENT.PRICE.01",
+ "content_status": "stable",
+ "requires": [
+  44
+ ],
+ "module": "money",
+ "path_refs": [
+  "services",
+  "products",
+  "digital",
+  "content"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Compute cost per item and compare it with price",
+   "questions": [
+    {
+     "id": "S46-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "A batch of 50 bracelets uses 75 dollars of beads and string. What is the cost per bracelet?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "3.75 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "75.00 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "1.50 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "0.67 dollars"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "1.50 dollars",
+     "intro": "COST PER ITEM (unit cost) is what it costs you to make or buy one item. If a batch of 40 cookies uses 20 dollars of ingredients and 4 dollars of bags, the cost per cookie is (20 + 4) / 40 = 0.60 dollars. PRICE is what the customer pays. The difference, price minus cost per item, is what each sale contributes toward fixed costs and profit. A price below the cost per item loses money on every sale. Include everything the item uses, such as packaging and labels, not just the main material.",
+     "feedback": "75 / 50 = 1.50 dollars."
+    },
+    {
+     "id": "S46-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "The cookie cost per item is 0.60 dollars. The price is 1.50 dollars. What does each sale contribute?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "0.60 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "1.50 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "2.10 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "0.90 dollars"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "0.90 dollars",
+     "intro": "COST PER ITEM (unit cost) is what it costs you to make or buy one item. If a batch of 40 cookies uses 20 dollars of ingredients and 4 dollars of bags, the cost per cookie is (20 + 4) / 40 = 0.60 dollars. PRICE is what the customer pays. The difference, price minus cost per item, is what each sale contributes toward fixed costs and profit. A price below the cost per item loses money on every sale. Include everything the item uses, such as packaging and labels, not just the main material.",
+     "feedback": "1.50 - 0.60 = 0.90 dollars."
+    },
+    {
+     "id": "S46-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "What happens if the price is below the cost per item?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Fixed costs disappear"
+      },
+      {
+       "letter": "B",
+       "text": "Each sale loses money"
+      },
+      {
+       "letter": "C",
+       "text": "Each sale makes more profit than before"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing changes at all"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Each sale loses money",
+     "intro": "COST PER ITEM (unit cost) is what it costs you to make or buy one item. If a batch of 40 cookies uses 20 dollars of ingredients and 4 dollars of bags, the cost per cookie is (20 + 4) / 40 = 0.60 dollars. PRICE is what the customer pays. The difference, price minus cost per item, is what each sale contributes toward fixed costs and profit. A price below the cost per item loses money on every sale. Include everything the item uses, such as packaging and labels, not just the main material.",
+     "feedback": "Price must exceed unit cost."
+    },
+    {
+     "id": "S46-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "Which should be included in cost per item for a candle?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Wax, wick, jar and label"
+      },
+      {
+       "letter": "B",
+       "text": "The owner's personal groceries"
+      },
+      {
+       "letter": "C",
+       "text": "Only the label, since customers see it"
+      },
+      {
+       "letter": "D",
+       "text": "Only the wax, since it is the main material"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Wax, wick, jar and label",
+     "intro": "COST PER ITEM (unit cost) is what it costs you to make or buy one item. If a batch of 40 cookies uses 20 dollars of ingredients and 4 dollars of bags, the cost per cookie is (20 + 4) / 40 = 0.60 dollars. PRICE is what the customer pays. The difference, price minus cost per item, is what each sale contributes toward fixed costs and profit. A price below the cost per item loses money on every sale. Include everything the item uses, such as packaging and labels, not just the main material.",
+     "feedback": "Include everything the item uses."
+    },
+    {
+     "id": "S46-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "A batch of 20 cards costs 8 dollars of paper and 2 dollars of envelopes. What is the cost per card?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "10.00 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "0.50 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "0.40 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "0.10 dollars"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "0.50 dollars",
+     "intro": "COST PER ITEM (unit cost) is what it costs you to make or buy one item. If a batch of 40 cookies uses 20 dollars of ingredients and 4 dollars of bags, the cost per cookie is (20 + 4) / 40 = 0.60 dollars. PRICE is what the customer pays. The difference, price minus cost per item, is what each sale contributes toward fixed costs and profit. A price below the cost per item loses money on every sale. Include everything the item uses, such as packaging and labels, not just the main material.",
+     "feedback": "(8 + 2) / 20 = 0.50 dollars."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Dividing a total among items",
+   "questions": [
+    {
+     "id": "S46-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "24 dollars for 8 items. What is the cost per item?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "0.33 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "16 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "3 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "192 dollars"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "3 dollars",
+     "intro": "To find the cost of one item from a batch, add up everything the batch cost, then divide by the number of items. Example: 30 dollars for 12 items: 30 / 12 = 2.50 dollars each. Check by multiplying back: 2.50 x 12 = 30. If the answer is bigger than the total, you probably divided the wrong way.",
+     "feedback": "24 / 8 = 3."
+    },
+    {
+     "id": "S46-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "How do you check 2.50 dollars per item for 12 items?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Subtract 12 from 30 and compare"
+      },
+      {
+       "letter": "B",
+       "text": "Divide 12 by 2.50"
+      },
+      {
+       "letter": "C",
+       "text": "Multiply 2.50 by 12 to get 30"
+      },
+      {
+       "letter": "D",
+       "text": "Add 2.50 and 12"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Multiply 2.50 by 12 to get 30",
+     "intro": "To find the cost of one item from a batch, add up everything the batch cost, then divide by the number of items. Example: 30 dollars for 12 items: 30 / 12 = 2.50 dollars each. Check by multiplying back: 2.50 x 12 = 30. If the answer is bigger than the total, you probably divided the wrong way.",
+     "feedback": "Multiplying back checks the division."
+    },
+    {
+     "id": "S46-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "45 dollars for 10 items. What is the cost per item?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "4.50 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "0.22 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "35 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "450 dollars"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "4.50 dollars",
+     "intro": "To find the cost of one item from a batch, add up everything the batch cost, then divide by the number of items. Example: 30 dollars for 12 items: 30 / 12 = 2.50 dollars each. Check by multiplying back: 2.50 x 12 = 30. If the answer is bigger than the total, you probably divided the wrong way.",
+     "feedback": "45 / 10 = 4.50."
+    },
+    {
+     "id": "S46-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "12 dollars of ingredients plus 3 dollars of boxes for 30 items. What is the cost per item?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "0.40 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "0.50 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "0.10 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "15 dollars"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "0.50 dollars",
+     "intro": "To find the cost of one item from a batch, add up everything the batch cost, then divide by the number of items. Example: 30 dollars for 12 items: 30 / 12 = 2.50 dollars each. Check by multiplying back: 2.50 x 12 = 30. If the answer is bigger than the total, you probably divided the wrong way.",
+     "feedback": "(12 + 3) / 30 = 0.50."
+    },
+    {
+     "id": "S46-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "A result of 240 dollars per item from a 60-dollar batch of 4 is a sign of what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A missing item"
+      },
+      {
+       "letter": "B",
+       "text": "Multiplying instead of dividing"
+      },
+      {
+       "letter": "C",
+       "text": "A correct answer for the batch"
+      },
+      {
+       "letter": "D",
+       "text": "A cheap batch"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Multiplying instead of dividing",
+     "intro": "To find the cost of one item from a batch, add up everything the batch cost, then divide by the number of items. Example: 30 dollars for 12 items: 30 / 12 = 2.50 dollars each. Check by multiplying back: 2.50 x 12 = 30. If the answer is bigger than the total, you probably divided the wrong way.",
+     "feedback": "60 x 4 = 240 is the mistake."
+    }
+   ],
+   "branch_mode": "math_prerequisite",
+   "relationship": "A learner who misses MAIN may not divide the batch cost correctly; this practices division and checking."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Apply it: set a price that covers cost",
+   "questions": [
+    {
+     "id": "S46-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "A tote bag costs 6 dollars to make. Which price at least covers the cost per item?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "4 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "5.50 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "5 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "9 dollars"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "9 dollars",
+     "intro": "COST PER ITEM (unit cost) is what it costs you to make or buy one item. If a batch of 40 cookies uses 20 dollars of ingredients and 4 dollars of bags, the cost per cookie is (20 + 4) / 40 = 0.60 dollars. PRICE is what the customer pays. The difference, price minus cost per item, is what each sale contributes toward fixed costs and profit. A price below the cost per item loses money on every sale. Include everything the item uses, such as packaging and labels, not just the main material.",
+     "feedback": "9 > 6."
+    },
+    {
+     "id": "S46-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "A baker makes 24 muffins with 18 dollars of ingredients and 6 dollars of liners and boxes. She prices muffins at 2 dollars. What does each muffin contribute?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "1.00 dollar"
+      },
+      {
+       "letter": "B",
+       "text": "1.25 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "2.00 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "0.75 dollars"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "1.00 dollar",
+     "intro": "COST PER ITEM (unit cost) is what it costs you to make or buy one item. If a batch of 40 cookies uses 20 dollars of ingredients and 4 dollars of bags, the cost per cookie is (20 + 4) / 40 = 0.60 dollars. PRICE is what the customer pays. The difference, price minus cost per item, is what each sale contributes toward fixed costs and profit. A price below the cost per item loses money on every sale. Include everything the item uses, such as packaging and labels, not just the main material.",
+     "feedback": "Cost = 24 / 24 = 1.00; 2.00 - 1.00 = 1.00."
+    },
+    {
+     "id": "S46-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "A printer charges 0.80 dollars per sticker plus 10 dollars per order. An order of 100 stickers costs how much per sticker?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "0.10 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "0.90 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "90 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "0.80 dollars"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "0.90 dollars",
+     "intro": "COST PER ITEM (unit cost) is what it costs you to make or buy one item. If a batch of 40 cookies uses 20 dollars of ingredients and 4 dollars of bags, the cost per cookie is (20 + 4) / 40 = 0.60 dollars. PRICE is what the customer pays. The difference, price minus cost per item, is what each sale contributes toward fixed costs and profit. A price below the cost per item loses money on every sale. Include everything the item uses, such as packaging and labels, not just the main material.",
+     "feedback": "(0.80 x 100 + 10) / 100 = 0.90 dollars."
+    },
+    {
+     "id": "S46-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "A seller forgot the 0.30-dollar label on each 2-dollar item. What is the true cost per item?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "1.70 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "2.00 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "2.30 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "0.30 dollars"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "2.30 dollars",
+     "intro": "COST PER ITEM (unit cost) is what it costs you to make or buy one item. If a batch of 40 cookies uses 20 dollars of ingredients and 4 dollars of bags, the cost per cookie is (20 + 4) / 40 = 0.60 dollars. PRICE is what the customer pays. The difference, price minus cost per item, is what each sale contributes toward fixed costs and profit. A price below the cost per item loses money on every sale. Include everything the item uses, such as packaging and labels, not just the main material.",
+     "feedback": "2.00 + 0.30 = 2.30 dollars."
+    },
+    {
+     "id": "S46-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "Two suppliers: A sells 100 jars for 120 dollars; B sells 60 jars for 66 dollars. Which is cheaper per jar?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "B, at 1.10 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "They cost the same"
+      },
+      {
+       "letter": "C",
+       "text": "A, at 1.10 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "A, at 1.20 dollars"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "B, at 1.10 dollars",
+     "intro": "COST PER ITEM (unit cost) is what it costs you to make or buy one item. If a batch of 40 cookies uses 20 dollars of ingredients and 4 dollars of bags, the cost per cookie is (20 + 4) / 40 = 0.60 dollars. PRICE is what the customer pays. The difference, price minus cost per item, is what each sale contributes toward fixed costs and profit. A price below the cost per item loses money on every sale. Include everything the item uses, such as packaging and labels, not just the main material.",
+     "feedback": "A: 1.20; B: 66 / 60 = 1.10."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Handle the complications: waste, minimums and changing costs",
+   "questions": [
+    {
+     "id": "S46-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "A baker makes 40 cookies but 4 break and cannot be sold. Ingredients cost 20 dollars. What is the cost per SOLD cookie, to the nearest cent?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "0.56 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "5.00 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "0.50 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "0.45 dollars"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "0.56 dollars",
+     "intro": "COST PER ITEM (unit cost) is what it costs you to make or buy one item. If a batch of 40 cookies uses 20 dollars of ingredients and 4 dollars of bags, the cost per cookie is (20 + 4) / 40 = 0.60 dollars. PRICE is what the customer pays. The difference, price minus cost per item, is what each sale contributes toward fixed costs and profit. A price below the cost per item loses money on every sale. Include everything the item uses, such as packaging and labels, not just the main material.",
+     "feedback": "20 / 36 = 0.555... about 0.56."
+    },
+    {
+     "id": "S46-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "A supplier requires a minimum order of 500 labels for 50 dollars, but the owner needs only 100 this month. What is the true cost per label used this month?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "50 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "0.50 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "5.00 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "0.10 dollars"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "0.50 dollars",
+     "intro": "COST PER ITEM (unit cost) is what it costs you to make or buy one item. If a batch of 40 cookies uses 20 dollars of ingredients and 4 dollars of bags, the cost per cookie is (20 + 4) / 40 = 0.60 dollars. PRICE is what the customer pays. The difference, price minus cost per item, is what each sale contributes toward fixed costs and profit. A price below the cost per item loses money on every sale. Include everything the item uses, such as packaging and labels, not just the main material.",
+     "feedback": "50 / 100 = 0.50 if the rest go unused."
+    },
+    {
+     "id": "S46-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "Ingredient prices rose 10 percent, raising cost per item from 2.00 to 2.20 dollars. Price stays 3.00 dollars. What is the new contribution per item?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "0.20 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "2.20 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "1.00 dollar"
+      },
+      {
+       "letter": "D",
+       "text": "0.80 dollars"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "0.80 dollars",
+     "intro": "COST PER ITEM (unit cost) is what it costs you to make or buy one item. If a batch of 40 cookies uses 20 dollars of ingredients and 4 dollars of bags, the cost per cookie is (20 + 4) / 40 = 0.60 dollars. PRICE is what the customer pays. The difference, price minus cost per item, is what each sale contributes toward fixed costs and profit. A price below the cost per item loses money on every sale. Include everything the item uses, such as packaging and labels, not just the main material.",
+     "feedback": "3.00 - 2.20 = 0.80 dollars."
+    },
+    {
+     "id": "S46-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "A seller computes cost per item but forgets shipping supplies used on every order. What happens?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Costs are overestimated by the seller"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing changes"
+      },
+      {
+       "letter": "C",
+       "text": "Taxes disappear"
+      },
+      {
+       "letter": "D",
+       "text": "The price may look profitable when it is not"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The price may look profitable when it is not",
+     "intro": "COST PER ITEM (unit cost) is what it costs you to make or buy one item. If a batch of 40 cookies uses 20 dollars of ingredients and 4 dollars of bags, the cost per cookie is (20 + 4) / 40 = 0.60 dollars. PRICE is what the customer pays. The difference, price minus cost per item, is what each sale contributes toward fixed costs and profit. A price below the cost per item loses money on every sale. Include everything the item uses, such as packaging and labels, not just the main material.",
+     "feedback": "Missing costs inflate apparent margin."
+    },
+    {
+     "id": "S46-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "Which statement is accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Cost per item is calculated once at the start and never changes after that."
+      },
+      {
+       "letter": "B",
+       "text": "Cost per item should be rechecked when supplier prices or waste change."
+      },
+      {
+       "letter": "C",
+       "text": "Waste never affects cost."
+      },
+      {
+       "letter": "D",
+       "text": "Only fixed costs matter for price."
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Cost per item should be rechecked when supplier prices or waste change.",
+     "intro": "COST PER ITEM (unit cost) is what it costs you to make or buy one item. If a batch of 40 cookies uses 20 dollars of ingredients and 4 dollars of bags, the cost per cookie is (20 + 4) / 40 = 0.60 dollars. PRICE is what the customer pays. The difference, price minus cost per item, is what each sale contributes toward fixed costs and profit. A price below the cost per item loses money on every sale. Include everything the item uses, such as packaging and labels, not just the main material.",
+     "feedback": "Recalculate when inputs change."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

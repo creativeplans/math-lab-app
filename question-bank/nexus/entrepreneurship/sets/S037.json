@@ -1,0 +1,657 @@
+{
+ "set": 37,
+ "title": "Reconciling transactions",
+ "outcome": "ENT.BANK.05",
+ "content_status": "stable",
+ "requires": [
+  33
+ ],
+ "module": "ids",
+ "path_refs": [
+  "services",
+  "products",
+  "digital",
+  "content"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Reconcile records with the bank statement and explain differences",
+   "questions": [
+    {
+     "id": "S37-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "What does reconciling mean?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Opening a second account at another bank"
+      },
+      {
+       "letter": "B",
+       "text": "Comparing your records with the bank statement"
+      },
+      {
+       "letter": "C",
+       "text": "Paying all bills on the same day"
+      },
+      {
+       "letter": "D",
+       "text": "Asking the bank for a loan"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Comparing your records with the bank statement",
+     "intro": "RECONCILING means comparing your own records with the bank statement to make sure they match. Each month, check every deposit and withdrawal. Differences usually come from: transactions the bank has not processed yet (such as a check that has not cleared), bank fees you did not record, mistakes in your records, or charges you do not recognize. Unknown charges may be errors or fraud and should be reported to the bank quickly. Reconciling catches problems while they are still small.",
+     "feedback": "It checks that records match."
+    },
+    {
+     "id": "S37-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "Which is a common reason records and the bank differ?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A customer posted a review"
+      },
+      {
+       "letter": "B",
+       "text": "The owner changed the logo colors"
+      },
+      {
+       "letter": "C",
+       "text": "A bank fee that was not recorded"
+      },
+      {
+       "letter": "D",
+       "text": "The website was redesigned"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A bank fee that was not recorded",
+     "intro": "RECONCILING means comparing your own records with the bank statement to make sure they match. Each month, check every deposit and withdrawal. Differences usually come from: transactions the bank has not processed yet (such as a check that has not cleared), bank fees you did not record, mistakes in your records, or charges you do not recognize. Unknown charges may be errors or fraud and should be reported to the bank quickly. Reconciling catches problems while they are still small.",
+     "feedback": "Unrecorded fees cause differences."
+    },
+    {
+     "id": "S37-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "A check was written but has not cleared. What does that mean?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The bank closed the account"
+      },
+      {
+       "letter": "B",
+       "text": "The check was never written at all"
+      },
+      {
+       "letter": "C",
+       "text": "The money was refunded twice"
+      },
+      {
+       "letter": "D",
+       "text": "The bank has not processed it yet"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The bank has not processed it yet",
+     "intro": "RECONCILING means comparing your own records with the bank statement to make sure they match. Each month, check every deposit and withdrawal. Differences usually come from: transactions the bank has not processed yet (such as a check that has not cleared), bank fees you did not record, mistakes in your records, or charges you do not recognize. Unknown charges may be errors or fraud and should be reported to the bank quickly. Reconciling catches problems while they are still small.",
+     "feedback": "Uncleared checks cause timing differences."
+    },
+    {
+     "id": "S37-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "An unknown 89-dollar charge appears. What should the owner do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Report it to the bank quickly"
+      },
+      {
+       "letter": "B",
+       "text": "Record it as sales"
+      },
+      {
+       "letter": "C",
+       "text": "Delete it from the records"
+      },
+      {
+       "letter": "D",
+       "text": "Ignore it, since small charges never matter"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Report it to the bank quickly",
+     "intro": "RECONCILING means comparing your own records with the bank statement to make sure they match. Each month, check every deposit and withdrawal. Differences usually come from: transactions the bank has not processed yet (such as a check that has not cleared), bank fees you did not record, mistakes in your records, or charges you do not recognize. Unknown charges may be errors or fraud and should be reported to the bank quickly. Reconciling catches problems while they are still small.",
+     "feedback": "Unknown charges should be checked quickly."
+    },
+    {
+     "id": "S37-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "How often is reconciling commonly done?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Never"
+      },
+      {
+       "letter": "B",
+       "text": "Monthly"
+      },
+      {
+       "letter": "C",
+       "text": "Only when closing the business"
+      },
+      {
+       "letter": "D",
+       "text": "Once every ten years"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Monthly",
+     "intro": "RECONCILING means comparing your own records with the bank statement to make sure they match. Each month, check every deposit and withdrawal. Differences usually come from: transactions the bank has not processed yet (such as a check that has not cleared), bank fees you did not record, mistakes in your records, or charges you do not recognize. Unknown charges may be errors or fraud and should be reported to the bank quickly. Reconciling catches problems while they are still small.",
+     "feedback": "Monthly reconciling catches problems early."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Checking a receipt against the bag",
+   "questions": [
+    {
+     "id": "S37-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "In the shopping example, what is compared?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The receipt and the bag"
+      },
+      {
+       "letter": "B",
+       "text": "Two stores"
+      },
+      {
+       "letter": "C",
+       "text": "Coupons and ads"
+      },
+      {
+       "letter": "D",
+       "text": "Prices and the weather"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The receipt and the bag",
+     "intro": "After shopping, you might compare the receipt with what is in the bag. If the receipt shows two milks but you have one, something is wrong. Reconciling is the same check for a business: your records are one list, the bank statement is the other, and you look for any item that appears on only one of them. Then you find out why.",
+     "feedback": "Two lists are compared."
+    },
+    {
+     "id": "S37-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "For a business, which two lists are compared?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ads and reviews"
+      },
+      {
+       "letter": "B",
+       "text": "Records and bank statement"
+      },
+      {
+       "letter": "C",
+       "text": "Logo and website"
+      },
+      {
+       "letter": "D",
+       "text": "Products and their colors"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Records and bank statement",
+     "intro": "After shopping, you might compare the receipt with what is in the bag. If the receipt shows two milks but you have one, something is wrong. Reconciling is the same check for a business: your records are one list, the bank statement is the other, and you look for any item that appears on only one of them. Then you find out why.",
+     "feedback": "Records versus the bank."
+    },
+    {
+     "id": "S37-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "Two milks on the receipt but one in the bag means what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Milk is free"
+      },
+      {
+       "letter": "B",
+       "text": "The store closed"
+      },
+      {
+       "letter": "C",
+       "text": "Everything is fine as it is"
+      },
+      {
+       "letter": "D",
+       "text": "Something does not match"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Something does not match",
+     "intro": "After shopping, you might compare the receipt with what is in the bag. If the receipt shows two milks but you have one, something is wrong. Reconciling is the same check for a business: your records are one list, the bank statement is the other, and you look for any item that appears on only one of them. Then you find out why.",
+     "feedback": "A mismatch needs checking."
+    },
+    {
+     "id": "S37-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "After finding a mismatch, what do you do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Buy more milk"
+      },
+      {
+       "letter": "B",
+       "text": "Find out why"
+      },
+      {
+       "letter": "C",
+       "text": "Ignore it"
+      },
+      {
+       "letter": "D",
+       "text": "Throw away the receipt"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Find out why",
+     "intro": "After shopping, you might compare the receipt with what is in the bag. If the receipt shows two milks but you have one, something is wrong. Reconciling is the same check for a business: your records are one list, the bank statement is the other, and you look for any item that appears on only one of them. Then you find out why.",
+     "feedback": "Investigate differences."
+    },
+    {
+     "id": "S37-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "An item only on the bank statement could be what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A fee you did not record"
+      },
+      {
+       "letter": "B",
+       "text": "A paper coupon"
+      },
+      {
+       "letter": "C",
+       "text": "A logo"
+      },
+      {
+       "letter": "D",
+       "text": "A review a customer posted"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "A fee you did not record",
+     "intro": "After shopping, you might compare the receipt with what is in the bag. If the receipt shows two milks but you have one, something is wrong. Reconciling is the same check for a business: your records are one list, the bank statement is the other, and you look for any item that appears on only one of them. Then you find out why.",
+     "feedback": "Fees are common unrecorded items."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who misses MAIN may not picture reconciling; checking a receipt against the bag is familiar."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Apply it: find the difference",
+   "questions": [
+    {
+     "id": "S37-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "Records show 2,450 dollars. The bank shows 2,435 dollars. The statement lists a 15-dollar monthly fee not in the records. What explains the difference?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nothing; they match"
+      },
+      {
+       "letter": "B",
+       "text": "A 150-dollar deposit error"
+      },
+      {
+       "letter": "C",
+       "text": "A missing 2,435-dollar sale"
+      },
+      {
+       "letter": "D",
+       "text": "The unrecorded 15-dollar fee"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The unrecorded 15-dollar fee",
+     "intro": "RECONCILING means comparing your own records with the bank statement to make sure they match. Each month, check every deposit and withdrawal. Differences usually come from: transactions the bank has not processed yet (such as a check that has not cleared), bank fees you did not record, mistakes in your records, or charges you do not recognize. Unknown charges may be errors or fraud and should be reported to the bank quickly. Reconciling catches problems while they are still small.",
+     "feedback": "2,450 - 2,435 = 15 dollars."
+    },
+    {
+     "id": "S37-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "Records show 1,800 dollars. A 200-dollar check to a supplier has not cleared. What will the bank likely show?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "2,000 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "200 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "1,600 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "1,800 dollars"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "2,000 dollars",
+     "intro": "RECONCILING means comparing your own records with the bank statement to make sure they match. Each month, check every deposit and withdrawal. Differences usually come from: transactions the bank has not processed yet (such as a check that has not cleared), bank fees you did not record, mistakes in your records, or charges you do not recognize. Unknown charges may be errors or fraud and should be reported to the bank quickly. Reconciling catches problems while they are still small.",
+     "feedback": "The bank has not subtracted the 200 yet: 1,800 + 200 = 2,000."
+    },
+    {
+     "id": "S37-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "A deposit of 350 dollars was recorded as 530 dollars. What is the difference?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "530 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "180 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "880 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "350 dollars"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "180 dollars",
+     "intro": "RECONCILING means comparing your own records with the bank statement to make sure they match. Each month, check every deposit and withdrawal. Differences usually come from: transactions the bank has not processed yet (such as a check that has not cleared), bank fees you did not record, mistakes in your records, or charges you do not recognize. Unknown charges may be errors or fraud and should be reported to the bank quickly. Reconciling catches problems while they are still small.",
+     "feedback": "530 - 350 = 180 dollars."
+    },
+    {
+     "id": "S37-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "The statement shows two identical 45-dollar charges from one supplier on the same day. The owner made one purchase. What should she do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Contact the supplier or bank about a possible duplicate"
+      },
+      {
+       "letter": "B",
+       "text": "Record both as normal"
+      },
+      {
+       "letter": "C",
+       "text": "Close the business"
+      },
+      {
+       "letter": "D",
+       "text": "Delete both charges from her records and move on"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Contact the supplier or bank about a possible duplicate",
+     "intro": "RECONCILING means comparing your own records with the bank statement to make sure they match. Each month, check every deposit and withdrawal. Differences usually come from: transactions the bank has not processed yet (such as a check that has not cleared), bank fees you did not record, mistakes in your records, or charges you do not recognize. Unknown charges may be errors or fraud and should be reported to the bank quickly. Reconciling catches problems while they are still small.",
+     "feedback": "Check duplicates promptly."
+    },
+    {
+     "id": "S37-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "Which habit makes reconciling easier?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Keeping no receipts"
+      },
+      {
+       "letter": "B",
+       "text": "Mixing in personal purchases now and then"
+      },
+      {
+       "letter": "C",
+       "text": "Recording only at year end"
+      },
+      {
+       "letter": "D",
+       "text": "Recording transactions as they happen"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Recording transactions as they happen",
+     "intro": "RECONCILING means comparing your own records with the bank statement to make sure they match. Each month, check every deposit and withdrawal. Differences usually come from: transactions the bank has not processed yet (such as a check that has not cleared), bank fees you did not record, mistakes in your records, or charges you do not recognize. Unknown charges may be errors or fraud and should be reported to the bank quickly. Reconciling catches problems while they are still small.",
+     "feedback": "Timely records simplify matching."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Handle the complications: fraud, timing and delays",
+   "questions": [
+    {
+     "id": "S37-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "An owner has not reconciled for 8 months and finds an unknown charge from 7 months ago. What is the problem?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Waiting long can make disputes and recovery harder"
+      },
+      {
+       "letter": "B",
+       "text": "The bank fixes any old charge automatically"
+      },
+      {
+       "letter": "C",
+       "text": "No problem; any timing is fine"
+      },
+      {
+       "letter": "D",
+       "text": "Old charges always disappear"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Waiting long can make disputes and recovery harder",
+     "intro": "RECONCILING means comparing your own records with the bank statement to make sure they match. Each month, check every deposit and withdrawal. Differences usually come from: transactions the bank has not processed yet (such as a check that has not cleared), bank fees you did not record, mistakes in your records, or charges you do not recognize. Unknown charges may be errors or fraud and should be reported to the bank quickly. Reconciling catches problems while they are still small.",
+     "feedback": "Banks may set time limits for reporting problems."
+    },
+    {
+     "id": "S37-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "A small recurring 9.99-dollar charge appears for software the owner cancelled. What should she do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Record it as revenue"
+      },
+      {
+       "letter": "B",
+       "text": "Ignore it; it is small"
+      },
+      {
+       "letter": "C",
+       "text": "Hide it from her accountant to keep the books simple"
+      },
+      {
+       "letter": "D",
+       "text": "Cancel properly and dispute charges after cancellation"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Cancel properly and dispute charges after cancellation",
+     "intro": "RECONCILING means comparing your own records with the bank statement to make sure they match. Each month, check every deposit and withdrawal. Differences usually come from: transactions the bank has not processed yet (such as a check that has not cleared), bank fees you did not record, mistakes in your records, or charges you do not recognize. Unknown charges may be errors or fraud and should be reported to the bank quickly. Reconciling catches problems while they are still small.",
+     "feedback": "Small recurring charges add up."
+    },
+    {
+     "id": "S37-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "The 9.99-dollar charge has continued for 12 months. How much has it cost?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "99.90 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "119.88 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "129.87 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "9.99 dollars"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "119.88 dollars",
+     "intro": "RECONCILING means comparing your own records with the bank statement to make sure they match. Each month, check every deposit and withdrawal. Differences usually come from: transactions the bank has not processed yet (such as a check that has not cleared), bank fees you did not record, mistakes in your records, or charges you do not recognize. Unknown charges may be errors or fraud and should be reported to the bank quickly. Reconciling catches problems while they are still small.",
+     "feedback": "9.99 x 12 = 119.88 dollars."
+    },
+    {
+     "id": "S37-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "Records and bank match exactly, but the owner forgot to record a customer refund paid in cash. What is true?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Cash never needs recording"
+      },
+      {
+       "letter": "B",
+       "text": "All money is always perfect"
+      },
+      {
+       "letter": "C",
+       "text": "Matching the bank does not catch cash moves outside the account"
+      },
+      {
+       "letter": "D",
+       "text": "The bank automatically records the cash kept in her drawer"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Matching the bank does not catch cash moves outside the account",
+     "intro": "RECONCILING means comparing your own records with the bank statement to make sure they match. Each month, check every deposit and withdrawal. Differences usually come from: transactions the bank has not processed yet (such as a check that has not cleared), bank fees you did not record, mistakes in your records, or charges you do not recognize. Unknown charges may be errors or fraud and should be reported to the bank quickly. Reconciling catches problems while they are still small.",
+     "feedback": "Cash outside the bank needs its own records."
+    },
+    {
+     "id": "S37-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 5: EIN and business banking",
+     "type": "mc",
+     "prompt": "Which statement is accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Reconciling is only needed by large companies with many staff."
+      },
+      {
+       "letter": "B",
+       "text": "Reconciling regularly catches errors and fraud sooner."
+      },
+      {
+       "letter": "C",
+       "text": "Reconciling replaces keeping receipts."
+      },
+      {
+       "letter": "D",
+       "text": "Banks never make mistakes."
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Reconciling regularly catches errors and fraud sooner.",
+     "intro": "RECONCILING means comparing your own records with the bank statement to make sure they match. Each month, check every deposit and withdrawal. Differences usually come from: transactions the bank has not processed yet (such as a check that has not cleared), bank fees you did not record, mistakes in your records, or charges you do not recognize. Unknown charges may be errors or fraud and should be reported to the bank quickly. Reconciling catches problems while they are still small.",
+     "feedback": "Regular checks help."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

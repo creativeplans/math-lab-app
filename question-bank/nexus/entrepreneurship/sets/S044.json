@@ -1,0 +1,657 @@
+{
+ "set": 44,
+ "title": "Fixed and variable costs",
+ "outcome": "ENT.COST.02",
+ "content_status": "stable",
+ "requires": [
+  43
+ ],
+ "module": "money",
+ "path_refs": [
+  "services",
+  "products",
+  "digital",
+  "content"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Classify fixed and variable costs and compute total cost",
+   "questions": [
+    {
+     "id": "S44-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "Which is a variable cost for a bakery?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The monthly accounting software plan"
+      },
+      {
+       "letter": "B",
+       "text": "Flour used for each batch of bread"
+      },
+      {
+       "letter": "C",
+       "text": "Monthly rent for the bakery building"
+      },
+      {
+       "letter": "D",
+       "text": "Yearly insurance for the shop"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Flour used for each batch of bread",
+     "intro": "A FIXED cost stays about the same no matter how much you sell in a period: rent, insurance, a software plan. A VARIABLE cost goes up as you sell more: ingredients, packaging, shipping, or payment fees on each sale. Example: a candle maker pays 500 dollars of rent a month (fixed) and 4 dollars of wax and jar for each candle (variable). Making 100 candles costs 500 + 4 x 100 = 900 dollars. Knowing which is which helps you plan prices and see what happens when sales change.",
+     "feedback": "Ingredients rise with sales."
+    },
+    {
+     "id": "S44-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "Which is a fixed cost for an online T-shirt shop?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Payment fees taken from each sale"
+      },
+      {
+       "letter": "B",
+       "text": "Blank shirts bought for each order"
+      },
+      {
+       "letter": "C",
+       "text": "Shipping paid on each package"
+      },
+      {
+       "letter": "D",
+       "text": "A monthly website plan"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "A monthly website plan",
+     "intro": "A FIXED cost stays about the same no matter how much you sell in a period: rent, insurance, a software plan. A VARIABLE cost goes up as you sell more: ingredients, packaging, shipping, or payment fees on each sale. Example: a candle maker pays 500 dollars of rent a month (fixed) and 4 dollars of wax and jar for each candle (variable). Making 100 candles costs 500 + 4 x 100 = 900 dollars. Knowing which is which helps you plan prices and see what happens when sales change.",
+     "feedback": "The plan stays the same each month."
+    },
+    {
+     "id": "S44-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "Using the candle example, what does it cost to make 50 candles in a month?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "700 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "900 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "500 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "200 dollars"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "700 dollars",
+     "intro": "A FIXED cost stays about the same no matter how much you sell in a period: rent, insurance, a software plan. A VARIABLE cost goes up as you sell more: ingredients, packaging, shipping, or payment fees on each sale. Example: a candle maker pays 500 dollars of rent a month (fixed) and 4 dollars of wax and jar for each candle (variable). Making 100 candles costs 500 + 4 x 100 = 900 dollars. Knowing which is which helps you plan prices and see what happens when sales change.",
+     "feedback": "500 + 4 x 50 = 700 dollars."
+    },
+    {
+     "id": "S44-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "If the candle maker sells nothing in a month, what is the total cost?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "0 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "504 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "500 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "4 dollars"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "500 dollars",
+     "intro": "A FIXED cost stays about the same no matter how much you sell in a period: rent, insurance, a software plan. A VARIABLE cost goes up as you sell more: ingredients, packaging, shipping, or payment fees on each sale. Example: a candle maker pays 500 dollars of rent a month (fixed) and 4 dollars of wax and jar for each candle (variable). Making 100 candles costs 500 + 4 x 100 = 900 dollars. Knowing which is which helps you plan prices and see what happens when sales change.",
+     "feedback": "Fixed costs remain even with no sales."
+    },
+    {
+     "id": "S44-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "What happens to variable costs when sales double?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "They fall to zero"
+      },
+      {
+       "letter": "B",
+       "text": "They stay exactly the same"
+      },
+      {
+       "letter": "C",
+       "text": "They are cut in half"
+      },
+      {
+       "letter": "D",
+       "text": "They roughly double"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "They roughly double",
+     "intro": "A FIXED cost stays about the same no matter how much you sell in a period: rent, insurance, a software plan. A VARIABLE cost goes up as you sell more: ingredients, packaging, shipping, or payment fees on each sale. Example: a candle maker pays 500 dollars of rent a month (fixed) and 4 dollars of wax and jar for each candle (variable). Making 100 candles costs 500 + 4 x 100 = 900 dollars. Knowing which is which helps you plan prices and see what happens when sales change.",
+     "feedback": "Variable costs follow volume."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Evaluating \"fixed + rate x quantity\"",
+   "questions": [
+    {
+     "id": "S44-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "Fixed 100, cost per item 2, items 30. What is the total?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "60"
+      },
+      {
+       "letter": "B",
+       "text": "3,060"
+      },
+      {
+       "letter": "C",
+       "text": "160"
+      },
+      {
+       "letter": "D",
+       "text": "132"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "160",
+     "intro": "Total cost often follows one pattern: total = fixed + (cost per item x number of items). Do the multiplication first, then add. Example: fixed 200, cost per item 3, items 40: 3 x 40 = 120, then 200 + 120 = 320. A common mistake is adding first: (200 + 3) x 40 is wrong. Check that the total is never less than the fixed cost.",
+     "feedback": "100 + 2 x 30 = 160."
+    },
+    {
+     "id": "S44-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "Which step comes first in \"fixed + rate x quantity\"?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Subtract quantity"
+      },
+      {
+       "letter": "B",
+       "text": "Multiply rate by quantity"
+      },
+      {
+       "letter": "C",
+       "text": "Divide by fixed"
+      },
+      {
+       "letter": "D",
+       "text": "Add the fixed cost and the rate"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Multiply rate by quantity",
+     "intro": "Total cost often follows one pattern: total = fixed + (cost per item x number of items). Do the multiplication first, then add. Example: fixed 200, cost per item 3, items 40: 3 x 40 = 120, then 200 + 120 = 320. A common mistake is adding first: (200 + 3) x 40 is wrong. Check that the total is never less than the fixed cost.",
+     "feedback": "Multiplication before addition."
+    },
+    {
+     "id": "S44-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "Fixed 300, cost per item 5, items 20. What is the total?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "400"
+      },
+      {
+       "letter": "B",
+       "text": "325"
+      },
+      {
+       "letter": "C",
+       "text": "6,100"
+      },
+      {
+       "letter": "D",
+       "text": "100"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "400",
+     "intro": "Total cost often follows one pattern: total = fixed + (cost per item x number of items). Do the multiplication first, then add. Example: fixed 200, cost per item 3, items 40: 3 x 40 = 120, then 200 + 120 = 320. A common mistake is adding first: (200 + 3) x 40 is wrong. Check that the total is never less than the fixed cost.",
+     "feedback": "300 + 5 x 20 = 400."
+    },
+    {
+     "id": "S44-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "Fixed 50, cost per item 10, items 0. What is the total?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "0"
+      },
+      {
+       "letter": "B",
+       "text": "50"
+      },
+      {
+       "letter": "C",
+       "text": "500"
+      },
+      {
+       "letter": "D",
+       "text": "60"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "50",
+     "intro": "Total cost often follows one pattern: total = fixed + (cost per item x number of items). Do the multiplication first, then add. Example: fixed 200, cost per item 3, items 40: 3 x 40 = 120, then 200 + 120 = 320. A common mistake is adding first: (200 + 3) x 40 is wrong. Check that the total is never less than the fixed cost.",
+     "feedback": "50 + 10 x 0 = 50."
+    },
+    {
+     "id": "S44-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "Fixed 250, cost per item 1.50, items 100. What is the total?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "400"
+      },
+      {
+       "letter": "B",
+       "text": "150"
+      },
+      {
+       "letter": "C",
+       "text": "25,150"
+      },
+      {
+       "letter": "D",
+       "text": "351.50"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "400",
+     "intro": "Total cost often follows one pattern: total = fixed + (cost per item x number of items). Do the multiplication first, then add. Example: fixed 200, cost per item 3, items 40: 3 x 40 = 120, then 200 + 120 = 320. A common mistake is adding first: (200 + 3) x 40 is wrong. Check that the total is never less than the fixed cost.",
+     "feedback": "250 + 1.50 x 100 = 400."
+    }
+   ],
+   "branch_mode": "math_prerequisite",
+   "relationship": "A learner who misses MAIN may compute total cost in the wrong order; this practices fixed plus rate times quantity."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Apply it: estimate monthly cost at different sales levels",
+   "questions": [
+    {
+     "id": "S44-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "A soap maker pays 300 dollars a month for a studio and 2 dollars of supplies per bar. What is the cost for 200 bars?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "302 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "500 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "700 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "400 dollars"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "700 dollars",
+     "intro": "A FIXED cost stays about the same no matter how much you sell in a period: rent, insurance, a software plan. A VARIABLE cost goes up as you sell more: ingredients, packaging, shipping, or payment fees on each sale. Example: a candle maker pays 500 dollars of rent a month (fixed) and 4 dollars of wax and jar for each candle (variable). Making 100 candles costs 500 + 4 x 100 = 900 dollars. Knowing which is which helps you plan prices and see what happens when sales change.",
+     "feedback": "300 + 2 x 200 = 700 dollars."
+    },
+    {
+     "id": "S44-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "Same soap maker. How much more does it cost to make 300 bars than 200 bars?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "900 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "100 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "300 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "200 dollars"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "200 dollars",
+     "intro": "A FIXED cost stays about the same no matter how much you sell in a period: rent, insurance, a software plan. A VARIABLE cost goes up as you sell more: ingredients, packaging, shipping, or payment fees on each sale. Example: a candle maker pays 500 dollars of rent a month (fixed) and 4 dollars of wax and jar for each candle (variable). Making 100 candles costs 500 + 4 x 100 = 900 dollars. Knowing which is which helps you plan prices and see what happens when sales change.",
+     "feedback": "Only variable cost changes: 2 x 100 = 200 dollars."
+    },
+    {
+     "id": "S44-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "Which cost is variable for a mobile car wash?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yearly business license"
+      },
+      {
+       "letter": "B",
+       "text": "Soap and water used per car"
+      },
+      {
+       "letter": "C",
+       "text": "The van loan payment"
+      },
+      {
+       "letter": "D",
+       "text": "Monthly phone plan"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Soap and water used per car",
+     "intro": "A FIXED cost stays about the same no matter how much you sell in a period: rent, insurance, a software plan. A VARIABLE cost goes up as you sell more: ingredients, packaging, shipping, or payment fees on each sale. Example: a candle maker pays 500 dollars of rent a month (fixed) and 4 dollars of wax and jar for each candle (variable). Making 100 candles costs 500 + 4 x 100 = 900 dollars. Knowing which is which helps you plan prices and see what happens when sales change.",
+     "feedback": "Supplies rise with each wash."
+    },
+    {
+     "id": "S44-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "A dog walker has 60 dollars a month of fixed costs and 1 dollar of variable cost per walk. In a month with 80 walks, what is the average cost per walk?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "1.75 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "140 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "1.00 dollar"
+      },
+      {
+       "letter": "D",
+       "text": "0.75 dollars"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "1.75 dollars",
+     "intro": "A FIXED cost stays about the same no matter how much you sell in a period: rent, insurance, a software plan. A VARIABLE cost goes up as you sell more: ingredients, packaging, shipping, or payment fees on each sale. Example: a candle maker pays 500 dollars of rent a month (fixed) and 4 dollars of wax and jar for each candle (variable). Making 100 candles costs 500 + 4 x 100 = 900 dollars. Knowing which is which helps you plan prices and see what happens when sales change.",
+     "feedback": "(60 + 80) / 80 = 1.75 dollars."
+    },
+    {
+     "id": "S44-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "When sales rise, what happens to the fixed cost per item?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It becomes variable"
+      },
+      {
+       "letter": "B",
+       "text": "It goes up"
+      },
+      {
+       "letter": "C",
+       "text": "It goes down"
+      },
+      {
+       "letter": "D",
+       "text": "It stays exactly the same"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "It goes down",
+     "intro": "A FIXED cost stays about the same no matter how much you sell in a period: rent, insurance, a software plan. A VARIABLE cost goes up as you sell more: ingredients, packaging, shipping, or payment fees on each sale. Example: a candle maker pays 500 dollars of rent a month (fixed) and 4 dollars of wax and jar for each candle (variable). Making 100 candles costs 500 + 4 x 100 = 900 dollars. Knowing which is which helps you plan prices and see what happens when sales change.",
+     "feedback": "The same fixed cost is shared by more items."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Handle the complications: costs that do not fit neatly",
+   "questions": [
+    {
+     "id": "S44-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "A baker's rent is fixed, but if sales triple she must rent a second oven. What does this show?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ovens are variable costs that rise with each loaf"
+      },
+      {
+       "letter": "B",
+       "text": "Fixed costs never change at all"
+      },
+      {
+       "letter": "C",
+       "text": "Rent is a variable cost"
+      },
+      {
+       "letter": "D",
+       "text": "Fixed costs can step up at higher volumes"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Fixed costs can step up at higher volumes",
+     "intro": "A FIXED cost stays about the same no matter how much you sell in a period: rent, insurance, a software plan. A VARIABLE cost goes up as you sell more: ingredients, packaging, shipping, or payment fees on each sale. Example: a candle maker pays 500 dollars of rent a month (fixed) and 4 dollars of wax and jar for each candle (variable). Making 100 candles costs 500 + 4 x 100 = 900 dollars. Knowing which is which helps you plan prices and see what happens when sales change.",
+     "feedback": "Capacity limits create steps."
+    },
+    {
+     "id": "S44-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "A shipping service charges 5 dollars per package up to 100 packages, then 4 dollars per package after that. What is the cost for 150 packages?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "200 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "750 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "700 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "600 dollars"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "700 dollars",
+     "intro": "A FIXED cost stays about the same no matter how much you sell in a period: rent, insurance, a software plan. A VARIABLE cost goes up as you sell more: ingredients, packaging, shipping, or payment fees on each sale. Example: a candle maker pays 500 dollars of rent a month (fixed) and 4 dollars of wax and jar for each candle (variable). Making 100 candles costs 500 + 4 x 100 = 900 dollars. Knowing which is which helps you plan prices and see what happens when sales change.",
+     "feedback": "100 x 5 + 50 x 4 = 700 dollars."
+    },
+    {
+     "id": "S44-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "An owner counts her own hours as free. What cost is missing?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Supplies used for each item"
+      },
+      {
+       "letter": "B",
+       "text": "Rent"
+      },
+      {
+       "letter": "C",
+       "text": "The value of her time"
+      },
+      {
+       "letter": "D",
+       "text": "Shipping"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The value of her time",
+     "intro": "A FIXED cost stays about the same no matter how much you sell in a period: rent, insurance, a software plan. A VARIABLE cost goes up as you sell more: ingredients, packaging, shipping, or payment fees on each sale. Example: a candle maker pays 500 dollars of rent a month (fixed) and 4 dollars of wax and jar for each candle (variable). Making 100 candles costs 500 + 4 x 100 = 900 dollars. Knowing which is which helps you plan prices and see what happens when sales change.",
+     "feedback": "Owner time has value even if unpaid."
+    },
+    {
+     "id": "S44-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "A phone bill is 40 dollars a month plus overage charges in busy months. How should it be planned?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "As a one-time cost"
+      },
+      {
+       "letter": "B",
+       "text": "As mostly fixed with a variable part"
+      },
+      {
+       "letter": "C",
+       "text": "As a fully variable cost for each sale"
+      },
+      {
+       "letter": "D",
+       "text": "As free"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "As mostly fixed with a variable part",
+     "intro": "A FIXED cost stays about the same no matter how much you sell in a period: rent, insurance, a software plan. A VARIABLE cost goes up as you sell more: ingredients, packaging, shipping, or payment fees on each sale. Example: a candle maker pays 500 dollars of rent a month (fixed) and 4 dollars of wax and jar for each candle (variable). Making 100 candles costs 500 + 4 x 100 = 900 dollars. Knowing which is which helps you plan prices and see what happens when sales change.",
+     "feedback": "Some costs are mixed."
+    },
+    {
+     "id": "S44-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 7: Costs, pricing and cash",
+     "type": "mc",
+     "prompt": "Which statement is accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Fixed costs are always larger than variable costs."
+      },
+      {
+       "letter": "B",
+       "text": "Every single cost is either perfectly fixed or perfectly variable, always."
+      },
+      {
+       "letter": "C",
+       "text": "Classifying costs is an estimate that helps planning, not an exact law."
+      },
+      {
+       "letter": "D",
+       "text": "Variable costs never matter for small sellers."
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Classifying costs is an estimate that helps planning, not an exact law.",
+     "intro": "A FIXED cost stays about the same no matter how much you sell in a period: rent, insurance, a software plan. A VARIABLE cost goes up as you sell more: ingredients, packaging, shipping, or payment fees on each sale. Example: a candle maker pays 500 dollars of rent a month (fixed) and 4 dollars of wax and jar for each candle (variable). Making 100 candles costs 500 + 4 x 100 = 900 dollars. Knowing which is which helps you plan prices and see what happens when sales change.",
+     "feedback": "Use classification as a tool."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}
