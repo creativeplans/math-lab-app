@@ -22,6 +22,30 @@ from eq import words  # noqa: E402
 ROOT, PKG = build.ROOT, build.PKG
 ID_RE = re.compile(r'^S(\d+)-(M|B\d|F1|F2)-Q([1-5])$')
 PLACEHOLDER = re.compile(r'\bTODO\b|\bTBD\b|lorem ipsum|\?\?|\bxxx\b|\[insert', re.I)
+# Phrases that often lean on numbers from another question. Every prompt that matches must be listed in
+# LOCAL_REVIEWED with the reason it is answerable from its own displayed content (prompt, choices, teaching passage).
+LOCAL = re.compile(r"\b(?:[Ss]ame (?:\w+ )?(?:week|month|policy|policies|rate|numbers|campaigns|budget|consultant|soap "
+                   r"maker|photographer|truck|groomer|situation|example|item|business|owner|shop|fee|sign)|[Ss]ame\b(?=[.,:]"
+                   r"| as)|[Uu]sing (?:that|those|the same|these)|that (?:deal|total|rate|trial|cake|shortfall|overrun|"
+                   r"amount|price|month|plan|loan|job)\b|those (?:hours|numbers|orders|sales)|\b(?:previous|above|earlier) "
+                   r"(?:question|example|numbers)|[Ii]n the same|[Aa]fter (?:that|commission)|[Bb]y how much does|[Ww]ith "
+                   r"(?:those|these|that)\b|[Ii]f she|[Ii]f he|[Ii]f the (?:owner|truck)|[Gg]iven that)")
+LOCAL_REVIEWED = {
+    'S1-F1-Q2': 'all facts in the prompt', 'S2-F2-Q1': '"same field" refers to his own job, stated in the prompt',
+    'S3-F1-Q5': 'conceptual', 'S7-F2-Q4': 'both offers stated in the prompt',
+    'S19-M-Q2': 'the example is in the teaching passage shown with the question',
+    'S26-F1-Q4': 'all facts in the prompt', 'S27-F1-Q1': 'all facts in the prompt',
+    'S31-F1-Q5': 'all facts in the prompt', 'S39-F1-Q3': 'all facts in the prompt',
+    'S44-F2-Q2': 'all facts in the prompt', 'S49-M-Q5': 'conceptual',
+    'S50-M-Q2': 'the fee is stated in the teaching passage shown with the question',
+    'S50-F1-Q2': 'the fee is stated in the teaching passage shown with the question',
+    'S50-F1-Q4': 'the fee is stated in the teaching passage shown with the question',
+    'S51-M-Q2': 'the item is the worked example in the teaching passage shown with the question',
+    'S83-F2-Q1': 'all facts in the prompt', 'S96-F1-Q3': 'all facts in the prompt',
+    'S106-M-Q4': 'all facts in the prompt', 'S106-F1-Q3': 'all facts in the prompt',
+    'S119-F1-Q2': 'all facts in the prompt', 'S121-F2-Q3': 'all facts in the prompt',
+    'S130-F1-Q3': 'all facts in the prompt', 'S145-F1-Q3': 'all facts in the prompt',
+}
 STANDALONE = re.compile(r'\b(previous question|question above|as before|from the last question|earlier question)\b', re.I)
 # real-looking identifiers that must not appear in questions
 IDENT = [('Social Security number pattern', re.compile(r'\b\d{3}-\d{2}-\d{4}\b')),
@@ -102,6 +126,13 @@ def main():
     check('No placeholder text', not ph, ph or 'none found')
     sa = [r['id'] for r in recs if STANDALONE.search(r['prompt'])]
     check('Questions stand alone (no references to other questions)', not sa, sa or 'none found')
+    loc = [r['id'] for r in recs if LOCAL.search(r['prompt'])]
+    check('Questions that use referring phrases ("same", "that total", "after commission"...) are answerable from '
+          'their own displayed content (each one reviewed and listed in LOCAL_REVIEWED)',
+          not [i for i in loc if i not in LOCAL_REVIEWED] and not [i for i in LOCAL_REVIEWED if i not in loc],
+          '%d matched and reviewed; unreviewed: %s; stale entries: %s'
+          % (len([i for i in loc if i in LOCAL_REVIEWED]), [i for i in loc if i not in LOCAL_REVIEWED] or 'none',
+             [i for i in LOCAL_REVIEWED if i not in loc] or 'none'))
     ident = []
     for r in recs:
         blob = ' '.join([r['intro'], r['prompt'], r['feedback']] + [c['text'] for c in r['choices']])
@@ -174,8 +205,8 @@ def main():
     check('Stable sets carry no time-sensitive source list', not stable_src, stable_src or 'none')
     unconf = sorted(sources.UNCONFIRMED)
     used = sorted({k for p in plan.SETS.values() for k in p['sources']})
-    check('Sources whose official page was not returned by search (claims confirmed by secondary sources; flagged in '
-          'SOURCES.md for review)', True, '%d of %d sources: %s' % (len([u for u in unconf if u in used]), len(used),
+    check('Sources not confirmed from the official page itself (secondary sources, search excerpts or a statute '
+          'citation; flagged in SOURCES.md for review)', True, '%d of %d sources: %s' % (len([u for u in unconf if u in used]), len(used),
                                                                 ', '.join(u for u in unconf if u in used)), is_hard=False)
 
     # ---------------------------------------------------------- founder cases

@@ -2,7 +2,7 @@
  "set": 81,
  "title": "HTTPS, testing and backups",
  "outcome": "ENT.WEB.05",
- "content_status": "stable",
+ "content_status": "time_sensitive",
  "requires": [
   80
  ],
@@ -14,6 +14,15 @@
   "content"
  ],
  "suggested": [],
+ "sources": [
+  {
+   "url": "https://blog.chromium.org/2023/05/",
+   "claim": "Chrome replaced the padlock in the address bar with a neutral \"tune\" (settings) icon starting with Chrome 117 (2023), because many users misread the lock as a sign that a site is trustworthy; Chrome still warns about sites that do not use HTTPS.",
+   "checked": "2026-10-25"
+  }
+ ],
+ "review_interval_days": 365,
+ "jurisdiction": "Browser behavior (Chrome)",
  "sections": [
   {
    "section": "M",
@@ -48,7 +57,7 @@
      ],
      "correct_letter": "C",
      "correct_answer": "Encrypts the connection with visitors",
-     "intro": "HTTPS (shown by a lock icon and \"https://\" in the address bar) encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
+     "intro": "HTTPS encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. Browsers show it differently, and Chrome replaced its padlock with a settings icon, so check that the address starts with \"https://\" or open the browser's site information to see that the connection is secure. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
      "feedback": "It protects data in transit."
     },
     {
@@ -78,7 +87,7 @@
      ],
      "correct_letter": "D",
      "correct_answer": "Placing a test order",
-     "intro": "HTTPS (shown by a lock icon and \"https://\" in the address bar) encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
+     "intro": "HTTPS encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. Browsers show it differently, and Chrome replaced its padlock with a settings icon, so check that the address starts with \"https://\" or open the browser's site information to see that the connection is secure. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
      "feedback": "Test the key paths."
     },
     {
@@ -108,7 +117,7 @@
      ],
      "correct_letter": "C",
      "correct_answer": "A copy of the site and its data",
-     "intro": "HTTPS (shown by a lock icon and \"https://\" in the address bar) encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
+     "intro": "HTTPS encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. Browsers show it differently, and Chrome replaced its padlock with a settings icon, so check that the address starts with \"https://\" or open the browser's site information to see that the connection is secure. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
      "feedback": "Copies allow recovery."
     },
     {
@@ -138,7 +147,7 @@
      ],
      "correct_letter": "D",
      "correct_answer": "An untested backup may not work",
-     "intro": "HTTPS (shown by a lock icon and \"https://\" in the address bar) encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
+     "intro": "HTTPS encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. Browsers show it differently, and Chrome replaced its padlock with a settings icon, so check that the address starts with \"https://\" or open the browser's site information to see that the connection is secure. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
      "feedback": "Confirm it works."
     },
     {
@@ -147,29 +156,29 @@
      "standard": "",
      "domain": "Foundation 10: Website essentials",
      "type": "mc",
-     "prompt": "How can a visitor tell HTTPS is on?",
+     "prompt": "How can a visitor check that HTTPS is on?",
      "choices": [
       {
        "letter": "A",
-       "text": "A lock icon and \"https://\" in the address bar"
+       "text": "Check for \"https://\" or the browser's connection info"
       },
       {
        "letter": "B",
-       "text": "A big red banner across the top of the page"
+       "text": "The site shows many large pictures on each page"
       },
       {
        "letter": "C",
-       "text": "The page has a long footer"
+       "text": "A big red banner runs across the top of the page"
       },
       {
        "letter": "D",
-       "text": "The site has many pictures"
+       "text": "The page has a long footer full of links"
       }
      ],
      "correct_letter": "A",
-     "correct_answer": "A lock icon and \"https://\" in the address bar",
-     "intro": "HTTPS (shown by a lock icon and \"https://\" in the address bar) encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
-     "feedback": "Browser signs show it."
+     "correct_answer": "Check for \"https://\" or the browser's connection info",
+     "intro": "HTTPS encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. Browsers show it differently, and Chrome replaced its padlock with a settings icon, so check that the address starts with \"https://\" or open the browser's site information to see that the connection is secure. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
+     "feedback": "Look for \"https://\" in the address or open the browser's site information; icons differ by browser, and Chrome no longer shows a padlock."
     }
    ]
   },
@@ -366,7 +375,7 @@
      ],
      "correct_letter": "C",
      "correct_answer": "Turn on HTTPS through her host or builder",
-     "intro": "HTTPS (shown by a lock icon and \"https://\" in the address bar) encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
+     "intro": "HTTPS encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. Browsers show it differently, and Chrome replaced its padlock with a settings icon, so check that the address starts with \"https://\" or open the browser's site information to see that the connection is secure. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
      "feedback": "Fix the security setting."
     },
     {
@@ -396,7 +405,7 @@
      ],
      "correct_letter": "B",
      "correct_answer": "80 percent",
-     "intro": "HTTPS (shown by a lock icon and \"https://\" in the address bar) encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
+     "intro": "HTTPS encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. Browsers show it differently, and Chrome replaced its padlock with a settings icon, so check that the address starts with \"https://\" or open the browser's site information to see that the connection is secure. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
      "feedback": "16 / 20 = 0.80."
     },
     {
@@ -426,7 +435,7 @@
      ],
      "correct_letter": "D",
      "correct_answer": "Placing a test order again",
-     "intro": "HTTPS (shown by a lock icon and \"https://\" in the address bar) encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
+     "intro": "HTTPS encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. Browsers show it differently, and Chrome replaced its padlock with a settings icon, so check that the address starts with \"https://\" or open the browser's site information to see that the connection is secure. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
      "feedback": "Retest key paths after changes."
     },
     {
@@ -456,7 +465,7 @@
      ],
      "correct_letter": "C",
      "correct_answer": "4 days",
-     "intro": "HTTPS (shown by a lock icon and \"https://\" in the address bar) encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
+     "intro": "HTTPS encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. Browsers show it differently, and Chrome replaced its padlock with a settings icon, so check that the address starts with \"https://\" or open the browser's site information to see that the connection is secure. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
      "feedback": "Monday to Friday = 4 days."
     },
     {
@@ -486,7 +495,7 @@
      ],
      "correct_letter": "A",
      "correct_answer": "Regular backups stored separately and tested",
-     "intro": "HTTPS (shown by a lock icon and \"https://\" in the address bar) encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
+     "intro": "HTTPS encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. Browsers show it differently, and Chrome replaced its padlock with a settings icon, so check that the address starts with \"https://\" or open the browser's site information to see that the connection is secure. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
      "feedback": "Regular, separate, tested."
     }
    ],
@@ -526,7 +535,7 @@
      ],
      "correct_letter": "B",
      "correct_answer": "Restoring a recent tested backup",
-     "intro": "HTTPS (shown by a lock icon and \"https://\" in the address bar) encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
+     "intro": "HTTPS encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. Browsers show it differently, and Chrome replaced its padlock with a settings icon, so check that the address starts with \"https://\" or open the browser's site information to see that the connection is secure. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
      "feedback": "Backups enable quick recovery."
     },
     {
@@ -556,7 +565,7 @@
      ],
      "correct_letter": "C",
      "correct_answer": "36",
-     "intro": "HTTPS (shown by a lock icon and \"https://\" in the address bar) encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
+     "intro": "HTTPS encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. Browsers show it differently, and Chrome replaced its padlock with a settings icon, so check that the address starts with \"https://\" or open the browser's site information to see that the connection is secure. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
      "feedback": "12 x 3 = 36."
     },
     {
@@ -586,7 +595,7 @@
      ],
      "correct_letter": "B",
      "correct_answer": "Testing checkout after every update",
-     "intro": "HTTPS (shown by a lock icon and \"https://\" in the address bar) encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
+     "intro": "HTTPS encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. Browsers show it differently, and Chrome replaced its padlock with a settings icon, so check that the address starts with \"https://\" or open the browser's site information to see that the connection is secure. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
      "feedback": "Test after changes."
     },
     {
@@ -616,7 +625,7 @@
      ],
      "correct_letter": "D",
      "correct_answer": "Store backups separately",
-     "intro": "HTTPS (shown by a lock icon and \"https://\" in the address bar) encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
+     "intro": "HTTPS encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. Browsers show it differently, and Chrome replaced its padlock with a settings icon, so check that the address starts with \"https://\" or open the browser's site information to see that the connection is secure. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
      "feedback": "Separate storage protects backups."
     },
     {
@@ -646,7 +655,7 @@
      ],
      "correct_letter": "D",
      "correct_answer": "HTTPS, testing and tested backups reduce the damage from problems.",
-     "intro": "HTTPS (shown by a lock icon and \"https://\" in the address bar) encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
+     "intro": "HTTPS encrypts the connection between the visitor and the site; most builders and hosts provide it, often free. Browsers show it differently, and Chrome replaced its padlock with a settings icon, so check that the address starts with \"https://\" or open the browser's site information to see that the connection is secure. TEST before launch and after changes: click every link, submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A backup you have never tested may not work when you need it.",
      "feedback": "Layered habits."
     }
    ],

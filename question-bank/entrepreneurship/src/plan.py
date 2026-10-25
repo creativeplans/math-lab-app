@@ -86,7 +86,7 @@ ROWS = [
     ('ENT.TEST.07', 'Continue, change or stop', 'Decide from stated test results whether to continue, change or stop '
      'an idea', 'testing', A, ['ENT.TEST.05'], []),
     ('ENT.CASE.03', 'Founder case: Zappos tests before buying stock', 'Apply a documented test (selling before holding '
-     'inventory) to a new product idea, and see its limits', 'testing', ['products'], ['ENT.TEST.04'], ['case_zappos']),
+     'inventory) to a new product idea, and see its limits', 'testing', ['products'], ['ENT.TEST.04'], ['case_zappos', 'copyright_fairuse', 'usc_109']),
     ('ENT.CASE.04', 'Founder case: Dropbox shows a demo first', 'Apply a documented test (a demo with a sign-up list) '
      'and tell sign-ups from paying customers', 'testing', ['digital'], ['ENT.TEST.04'], ['case_dropbox']),
     # ---------------------------------------------------------------- Foundation 4: Names and legal structure
@@ -185,7 +185,7 @@ ROWS = [
     ('ENT.BOOK.06', 'Profit and loss, balance sheet, cash flow', 'Tell what a profit-and-loss statement, balance sheet '
      'and cash-flow summary each show', 'books', A, ['ENT.BOOK.02'], []),
     ('ENT.TAX.01', 'Deductions versus credits', 'Tell a tax deduction from a tax credit, and explain that a deduction '
-     'does not make a purchase free', 'books', A, ['ENT.BOOK.02'], []),
+     'does not make a purchase free', 'books', A, ['ENT.BOOK.02'], ['irs_credits']),
     ('ENT.TAX.02', 'Business use versus personal use', 'Separate business and personal use of an item or account',
      'books', A, ['ENT.TAX.01'], []),
     ('ENT.TAX.03', 'Sales tax versus income tax', 'Tell sales tax (collected from customers where required) from income '
@@ -209,9 +209,9 @@ ROWS = [
     ('ENT.PAY.05', 'Subscriptions and recurring billing', 'Explain recurring billing terms customers need to see and how '
      'cancellations work', 'paid', A, ['ENT.PAY.02'], []),
     ('ENT.PAY.06', 'Chargebacks and payment disputes', 'Explain a chargeback and gather evidence to respond',
-     'paid', A, ['ENT.BANK.03'], ['chargeback']),
+     'paid', A, ['ENT.BANK.03'], ['chargeback', 'stripe_disputes']),
     ('ENT.PAY.07', 'Invoice and payment scams', 'Spot fraud signals in invoices, overpayments and changed payment '
-     'details', 'paid', A, ['ENT.PAY.02'], []),
+     'details', 'paid', A, ['ENT.PAY.02'], ['ftc_fakecheck']),
     ('ENT.PAY.08', 'Supplier terms and communicating delays', 'Read supplier terms and tell customers about delays early '
      'and honestly', 'paid', A, ['ENT.PAY.02'], []),
     # ---------------------------------------------------------------- Foundation 10: Website essentials
@@ -224,7 +224,7 @@ ROWS = [
     ('ENT.WEB.04', 'Domain, hosting and builders: who owns what', 'Tell a domain, hosting and a website builder apart, '
      'and keep ownership, renewals and recovery access', 'web', A, ['ENT.WEB.01'], []),
     ('ENT.WEB.05', 'HTTPS, testing and backups', 'Check HTTPS, test links, forms and checkout, and keep backups', 'web',
-     A, ['ENT.WEB.04'], []),
+     A, ['ENT.WEB.04'], ['chromium_lock']),
     ('ENT.WEB.06', 'Search visibility basics', 'Improve how search engines and people understand a page, without '
      'promised rankings', 'web', A, ['ENT.WEB.01'], []),
     ('ENT.WEB.07', 'Measuring useful actions', 'Choose measures that match a site\'s goal, such as inquiries or sales',
@@ -303,7 +303,7 @@ ROWS = [
     ('ENT.RISK.04', 'Signed documents and customer information', 'Keep signed documents and protect customer '
      'information', 'risk', A, ['ENT.RISK.03'], []),
     ('ENT.RISK.05', 'Permission to use images, music, code and names', 'Recognize copyright and trademark issues and get '
-     'permission or use licensed material', 'risk', A, ['ENT.LEGAL.02'], ['uspto_name']),
+     'permission or use licensed material', 'risk', A, ['ENT.LEGAL.02'], ['uspto_name', 'copyright_fairuse']),
     ('ENT.RISK.06', 'Truthful advertising and handling complaints', 'Keep claims supportable and handle complaints '
      'promptly and fairly', 'risk', A, ['ENT.MKT.02'], ['ftc_reviews']),
     # ---------------------------------------------------------------- Foundation 15: Help and partners
@@ -379,7 +379,7 @@ ROWS = [
      ['ENT.CUST.04'], ['case_microsoft']),
     # ---------------------------------------------------------------- Path: content
     ('ENT.CONT.01', 'Original content and rights', 'Use original or licensed material and respect others\' rights',
-     'content', CT, ['ENT.RISK.05'], []),
+     'content', CT, ['ENT.RISK.05'], ['copyright_fairuse']),
     ('ENT.CONT.02', 'Sponsorships and affiliate relationships', 'Evaluate a sponsor or affiliate deal for fit, terms and '
      'disclosure', 'content', CT, ['ENT.MKT.06'], ['ftc_endorse']),
     ('ENT.CONT.03', 'Being seen versus being eligible to earn', 'Tell platform visibility from monetization eligibility '

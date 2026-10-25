@@ -96,11 +96,11 @@ s30 = SET('ENT.ID.01',
     ]))
 
 # ------------------------------------------------------------------ Set 31: applying from the official source
-APPLY = ('The IRS lets businesses apply for an EIN directly, including online, at no charge. The online application '
-         'asks for a "responsible party": an individual who controls the business, with a Social Security number (SSN) '
-         'or ITIN. It is for businesses located in the US or its territories, and it must be completed in one session. '
-         'The IRS advises forming an LLC, partnership or corporation with the state first; applying before the entity '
-         'exists may delay things. Be careful with look-alike websites that charge fees.')
+APPLY = (('The IRS lets businesses apply for an EIN directly, including online, at no charge. The online application '
+         'asks for a "responsible party": an individual who controls the business, with a Social Security number (SSN)'
+         ' or ITIN. It is for businesses located in the US or its territories, and it must be completed in one '
+         'session. If the business will be an LLC or corporation, the IRS advises forming it with the state first; '
+         'applying before the entity exists may delay things. Be careful with look-alike websites that charge fees.'))
 
 s31 = SET('ENT.ID.02',
     M=sec('Apply for an EIN through the official IRS source in the right order', APPLY, [
@@ -479,9 +479,12 @@ s35 = SET('ENT.BANK.03',
         Q('A processor charges 2.9 percent plus 0.30 dollars per sale. A sale is 50 dollars. What is the fee?', '1.75 dollars',
           ('1.45 dollars', 'forgot the 0.30 dollars'), ('0.30 dollars', 'only the fixed part'), ('3.20 dollars', 'added 2.9 as dollars'),
           '0.029 x 50 + 0.30 = 1.45 + 0.30 = 1.75 dollars (example rate).', calc=lambda: round(0.029 * 50 + 0.30, 2) == 1.75),
-        Q('Using the same fee, how much is deposited for the 50-dollar sale?', '48.25 dollars', ('50.00 dollars', 'ignores the fee'),
-          ('48.55 dollars', 'forgot the 0.30 dollars'), ('46.80 dollars', 'added 2.9 as dollars'),
-          '50 - 1.75 = 48.25 dollars.', calc=lambda: round(50 - 1.75, 2) == 48.25),
+        Q('A processor charges 2.9 percent plus 0.30 dollars per sale. How much is deposited for a 50-dollar sale?',
+          '48.25 dollars',
+          ('50.00 dollars', 'ignores the fee'), ('48.55 dollars', 'forgot the 0.30 dollars'),
+          ('46.80 dollars', 'added 2.9 as dollars'),
+          '50 - 1.75 = 48.25 dollars.',
+          calc=lambda: round(50 - 1.75, 2) == 48.25),
         Q('Lou buys 300 dollars of supplies with a business credit card and pays the whole bill on time. What interest '
           'does he pay, assuming the card charges none when paid in full?', '0 dollars', ('300 dollars', 'that is the purchase'),
           ('30 dollars', 'guessed a rate'), ('3 dollars', 'guessed a rate'), 'Paying in full on time avoids interest on many cards.'),
@@ -515,20 +518,24 @@ s35 = SET('ENT.BANK.03',
     ]))
 
 # ------------------------------------------------------------------ Set 36: owner and business money
-DRAW = ('Owners move money in and out of a business in a few ways. An OWNER CONTRIBUTION is money the owner puts in. An '
-        'OWNER\'S DRAW (also called a distribution) is money the owner takes out from profits; for sole proprietors and '
-        'most LLCs, a draw is not a wage and is not a business expense. A LOAN from the owner to the business should '
-        'be written down with how it will be repaid. In every case, move the money by transfer and record what it is, '
-        'so the books show the truth.')
+DRAW = (('Owners move money in and out of a business in a few ways. An OWNER CONTRIBUTION is money the owner puts in. '
+        "An OWNER'S DRAW (also called a distribution) is an owner withdrawal for personal use; for sole proprietors "
+        "and most LLCs, a draw is not a wage and is not a business expense, so it lowers the business's cash but does"
+        ' not reduce its profit. A LOAN from the owner to the business should be written down with how it will be '
+        'repaid. In every case, move the money by transfer and record what it is, so the books show the truth.'))
 
 s36 = SET('ENT.BANK.04',
     M=sec('Record contributions, draws and owner loans correctly', DRAW, [
-        Q('Money an owner puts into the business is called what?', 'An owner contribution',
-          ('An owner\'s draw from profits', 'that is money out'),
-          ('A customer payment for a product', 'that is revenue'),
-          ('A refund to a customer', 'that is money out'), 'A contribution is money in from the owner.'),
-        Q('Money an owner takes out from profits is called what?', 'An owner\'s draw', ('A business expense for supplies', 'not a draw'),
-          ('A loan from a bank', 'not a draw'), ('A sales tax payment', 'not a draw'), 'A draw is money taken by the owner.'),
+        Q('Money an owner puts into the business is called what?',
+          'An owner contribution',
+          ("An owner's draw for personal use", 'that is money out'), ('A customer payment for a product', 'that is revenue'),
+          ('A refund to a customer', 'that is money out'),
+          'A contribution is money in from the owner.'),
+        Q('Money an owner withdraws from the business for personal use is called what?',
+          "An owner's draw",
+          ('A business expense for supplies', 'not a draw'), ('A loan from a bank', 'not a draw'),
+          ('A sales tax payment', 'not a draw'),
+          'A draw is an owner withdrawal for personal use.'),
         Q('For a sole proprietor, is a draw a business expense?', 'No', ('Yes, always', 'it is not an expense'),
           ('Only in December', 'no'), ('Only if over 1,000 dollars', 'no'), 'Draws are not business expenses.'),
         Q('An owner lends the business 2,000 dollars. What should be done?', 'Write it down with how it will be repaid',
@@ -558,9 +565,12 @@ s36 = SET('ENT.BANK.04',
           'As an owner contribution', ('As sales revenue from customers', 'not revenue'),
           ('As an owner\'s draw', 'that is money out'), ('As a supply expense', 'the purchase is later'),
           'Money put in by the owner is a contribution.'),
-        Q('A sole proprietor has 5,000 dollars of profit and takes a 1,500-dollar draw. How much profit remains in the '
-          'business?', '3,500 dollars', ('5,000 dollars', 'ignores the draw'), ('6,500 dollars', 'added the draw'),
-          ('1,500 dollars', 'that is the draw'), '5,000 - 1,500 = 3,500 dollars.', calc=lambda: 5000 - 1500 == 3500),
+        Q("A sole proprietor's business has 5,000 dollars of cash available. The owner withdraws 1,500 dollars as a draw for personal use. With no other transactions, how much cash remains in the business?",
+          '3,500 dollars',
+          ('5,000 dollars', 'ignores the draw'), ('6,500 dollars', 'added the draw'),
+          ('1,500 dollars', 'that is the draw'),
+          '5,000 - 1,500 = 3,500 dollars of cash. The draw lowers cash, but it is not an expense, so it does not reduce profit.',
+          calc=lambda: 5000 - 1500 == 3500),
         Q('Omar lends his business 3,000 dollars to be repaid 250 dollars a month. How many months to repay it?', '12 months',
           ('10 months', 'miscounted'), ('25 months', 'used the wrong numbers'), ('3 months', 'used thousands'),
           '3,000 / 250 = 12 months.', calc=lambda: 3000 / 250 == 12),
@@ -583,10 +593,11 @@ s36 = SET('ENT.BANK.04',
           'proprietor\'s draw?', 'Business structure affects how owners are paid', ('All owners are paid identically', 'not true'),
           ('Corporations cannot pay owners', 'false'), ('Sole proprietors must always pay themselves through payroll', 'not usually'),
           'Rules depend on structure; a tax professional can help.'),
-        Q('An owner put 2,000 dollars in but did not say if it was a loan or contribution. Why does it matter?',
-          'A loan is repaid; a contribution is not', ('It does not matter at all how it is labeled', 'it changes repayment'),
-          ('Both are customer sales', 'neither is sales'), ('Both are taxes', 'neither is a tax'),
-          'Labeling decides whether repayment is owed.'),
+        Q('An owner put 2,000 dollars into the business but did not record whether it was a loan or a contribution. Why does the label matter?',
+          'A loan is a debt to repay; a contribution adds to owner equity',
+          ('The label has no effect on the books or on repayment', 'the label decides how the books show it and whether repayment is owed'), ('Both labels mean the money counts as customer sales', 'neither is sales'),
+          ('Both labels mean the money is tax the business owes', 'neither is a tax'),
+          'A loan is recorded as a debt repaid on agreed terms. A contribution increases owner equity and has no repayment schedule, though owners may later take money out, for example as draws.'),
         Q('Which statement is accurate?', 'Owner pay rules vary by structure, so check with a tax professional.',
           ('Every business owner must take a weekly salary through payroll.', 'not true'), ('Draws are always business expenses.', 'not true'),
           ('Owners may never take money out.', 'not true'), 'Structure and tax treatment matter.'),

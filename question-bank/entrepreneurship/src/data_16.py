@@ -111,8 +111,11 @@ s92 = SET('ENT.MKT.08',
         Q('Campaign A: 5,000 reached, 50 leads, 25 sales. Campaign B: 1,000 reached, 100 leads, 10 sales. Which has the better lead '
           'rate?', 'B, at 10 percent', ('A, at 1 percent', 'A is lower'), ('A, at 50 percent', 'sales rate'), ('They are equal', 'differ'),
           'A: 50/5,000 = 1 percent; B: 100/1,000 = 10 percent.', calc=lambda: 50 / 5000 == 0.01 and 100 / 1000 == 0.1),
-        Q('Same campaigns. Which has the better sales rate from leads?', 'A, at 50 percent', ('B, at 10 percent', 'B is lower'),
-          ('B, at 100 percent', 'miscalculated'), ('They are equal', 'differ'), 'A: 25/50; B: 10/100.',
+        Q('Campaign A: 50 leads, 25 sales. Campaign B: 100 leads, 10 sales. Which has the better sales rate from leads?',
+          'A, at 50 percent',
+          ('B, at 10 percent', 'B is lower'), ('B, at 100 percent', 'miscalculated'),
+          ('They are equal', 'differ'),
+          'A: 25/50; B: 10/100.',
           calc=lambda: 25 / 50 == 0.5 and 10 / 100 == 0.1),
         Q('Campaign B gets many leads but few buy. Which step should it improve?', 'The follow-up or offer after someone shows interest',
           ('Reach, by showing the same ads to many more people', 'leads are not the problem'), ('Nothing; it is perfect', 'low sales rate'),
@@ -274,11 +277,13 @@ s94 = SET('ENT.MKT.10',
     ]))
 
 # ------------------------------------------------------------------ Set 95: Blue Ribbon Sports case
-BRS = ('Documented history (Britannica): Phil Knight and his former coach Bill Bowerman formed Blue Ribbon Sports in 1964 '
-       'to distribute Onitsuka Tiger running shoes from Japan. Knight sold shoes from his car at regional track meets while '
-       'working other jobs. The company became Nike after splitting from Onitsuka in 1971. Lesson drawn by this course (an '
-       'interpretation): go in person to the places where your most interested customers already gather, and start part '
-       'time if you need income. One success story does not guarantee the same result for another business.')
+BRS = (('Documented history (Britannica): Phil Knight and his former coach Bill Bowerman formed Blue Ribbon Sports in'
+       ' 1964 to distribute Onitsuka Tiger running shoes from Japan. Knight sold shoes from his car at regional '
+       'track meets while working other jobs. The Nike brand and its Swoosh logo appeared in 1971, and the company '
+       'later took the Nike name; accounts of the break with Onitsuka differ in their details. Lesson drawn by this '
+       'course (an interpretation): go in person to the places where your most interested customers already gather, '
+       'and start part time if you need income. One success story does not guarantee the same result for another '
+       'business.'))
 
 s95 = SET('ENT.CASE.07',
     M=sec('Apply a documented early decision: sell in person where customers gather', BRS, [
@@ -316,9 +321,12 @@ s95 = SET('ENT.CASE.07',
           ('Wait for climbers to email her', 'passive'), 'Go where climbers gather, part time.'),
         Q('At one event Ana sells 18 grips at 15 dollars each. What is her revenue?', '270 dollars', ('33 dollars', 'added'),
           ('180 dollars', 'used 10'), ('150 dollars', 'used 10 grips'), '18 x 15 = 270.', calc=lambda: 18 * 15 == 270),
-        Q('The event booth costs 40 dollars and each grip costs 6 dollars to make. What is her profit from the event?', '122 dollars',
-          ('270 dollars', 'revenue'), ('162 dollars', 'ignored booth'), ('230 dollars', 'ignored product cost'),
-          '270 - 18 x 6 - 40 = 122.', calc=lambda: 270 - 18 * 6 - 40 == 122),
+        Q('At an event Ana sells 18 grips at 15 dollars each. The booth costs 40 dollars and each grip costs 6 dollars to make. What is her profit from the event?',
+          '122 dollars',
+          ('270 dollars', 'revenue'), ('162 dollars', 'ignored booth'),
+          ('230 dollars', 'ignored product cost'),
+          '270 - 18 x 6 - 40 = 122.',
+          calc=lambda: 270 - 18 * 6 - 40 == 122),
         Q('Which detail from the case is a surface detail, not the lesson?', 'Selling from a car', ('Going where customers gather', 'lesson'),
           ('Starting part time', 'lesson'), ('Meeting interested buyers in person', 'lesson'), 'The car is incidental.'),
         Q('A baker\'s customers are mostly busy commuters. Applying the lesson, where might she sell?', 'Near a busy train station in the morning',
@@ -387,8 +395,12 @@ s96 = SET('ENT.CASE.08',
         Q('Lena pays a trained helper 20 percent commission on 500 dollars of weekend sales. What is the commission?', '100 dollars',
           ('20 dollars', 'percent as dollars'), ('400 dollars', 'remainder'), ('50 dollars', 'ten percent'), '0.20 x 500 = 100.',
           calc=lambda: 0.2 * 500 == 100),
-        Q('After commission, how much of the 500 dollars remains for Lena\'s costs and profit?', '400 dollars', ('500 dollars', 'ignored commission'),
-          ('100 dollars', 'commission'), ('480 dollars', 'subtracted 20'), '500 - 100 = 400.', calc=lambda: 500 - 100 == 400),
+        Q('Lena pays a helper 20 percent commission on 500 dollars of weekend sales. After commission, how much of the 500 dollars remains for her costs and profit?',
+          '400 dollars',
+          ('500 dollars', 'ignored commission'), ('100 dollars', 'commission'),
+          ('480 dollars', 'subtracted 20'),
+          '500 - 100 = 400.',
+          calc=lambda: 500 - 100 == 400),
         Q('Which channel mix reflects the case?', 'Markets, a community newsletter ad and mail orders', ('One market stall only', 'single channel'),
           ('Billboards in a different country', 'wrong audience'), ('No channels at all; just wait for word of mouth', 'passive'),
           'Several direct channels.'),

@@ -3,11 +3,12 @@ Insurance prices and pay rates are practice assumptions. Names are fictional."""
 from eq import Q, sec, cs, mathb, SET
 
 # ------------------------------------------------------------------ Set 113: insurance categories and exclusions
-INS = ('Insurance moves some financial risk to an insurer in exchange for a PREMIUM (the price of the policy). Common '
-       'business categories include GENERAL LIABILITY (injuries or property damage to others, such as a customer '
-       'slipping), PROFESSIONAL LIABILITY (mistakes in advice or services), PROPERTY (your equipment and inventory), and '
-       'COMMERCIAL AUTO. Every policy has LIMITS (the most it pays), a DEDUCTIBLE (what you pay first), and EXCLUSIONS '
-       '(what it does not cover). Read the exclusions and ask a licensed agent which coverage fits your activities.')
+INS = (('Insurance moves some financial risk to an insurer in exchange for a PREMIUM (the price of the policy). '
+       'Common business categories include GENERAL LIABILITY (injuries or property damage to others, such as a '
+       'customer slipping), PROFESSIONAL LIABILITY (mistakes in advice or services), PROPERTY (your equipment and '
+       'inventory), and COMMERCIAL AUTO. Policy terms can include LIMITS (the most it pays), a DEDUCTIBLE (what you '
+       'pay first on a covered claim), and EXCLUSIONS (what it does not cover). Read the exclusions and ask a '
+       'licensed agent which coverage fits your activities.'))
 
 s113 = SET('ENT.RISK.01',
     M=sec('Match common insurance categories to risks and read limits and exclusions', INS, [
@@ -49,12 +50,18 @@ s113 = SET('ENT.RISK.01',
           '4,000 dollars', ('500 dollars', 'deductible only'), ('4,500 dollars', 'added the deductible on top'), ('14,000 dollars', 'all'),
           'After the 500 deductible the insurer would owe 13,500 but pays at most 10,000; the owner pays 14,000 - 10,000 = 4,000.',
           calc=lambda: 14000 - min(14000 - 500, 10000) == 4000),
-        Q('Policy A: 600 dollars a year, 2,000-dollar deductible. Policy B: 900 dollars a year, 500-dollar deductible. If one claim '
-          'happens, which has lower total cost to the owner that year?', 'B, at 1,400 dollars', ('A, at 2,600 dollars', 'A is higher'),
-          ('They are equal', 'they differ'), ('A, at 600 dollars', 'ignores deductible'), 'A: 2,600; B: 1,400.',
+        Q('Policy A: 600 dollars a year, 2,000-dollar deductible. Policy B: 900 dollars a year, 500-dollar deductible. Suppose one covered loss of 5,000 dollars happens this year, both limits are adequate, and there are no other costs. Which has the lower total cost to the owner that year?',
+          'B, at 1,400 dollars',
+          ('A, at 2,600 dollars', 'A is higher'), ('They are equal', 'they differ'),
+          ('A, at 600 dollars', 'ignores deductible'),
+          'A: 2,600; B: 1,400.',
           calc=lambda: 600 + 2000 == 2600 and 900 + 500 == 1400),
-        Q('With no claim that year, which policy costs less?', 'A, at 600 dollars', ('B, at 900 dollars', 'B is higher'),
-          ('They are equal', 'differ'), ('B, at 500 dollars', 'deductible not paid'), 'Only premiums are paid.', calc=lambda: 600 < 900),
+        Q('Policy A costs 600 dollars a year and Policy B costs 900 dollars a year. With no claim that year, which policy costs less?',
+          'A, at 600 dollars',
+          ('B, at 900 dollars', 'B is higher'), ('They are equal', 'differ'),
+          ('B, at 500 dollars', 'deductible not paid'),
+          'Only premiums are paid.',
+          calc=lambda: 600 < 900),
         Q('A baker\'s policy excludes food poisoning claims. What should she do?', 'Ask an agent about coverage for that risk',
           ('Assume it is covered anyway because she has a policy', 'excluded'), ('Stop reading exclusions', 'risky'), ('Hide the exclusion from customers', 'irrelevant'),
           'Fill the gap.'),
@@ -282,11 +289,13 @@ s116 = SET('ENT.RISK.04',
     ]))
 
 # ------------------------------------------------------------------ Set 117: permission for images, music, code, names
-RIGHTS = ('Things you find online are usually owned by someone. Using another person\'s PHOTO, MUSIC, ARTWORK, written text '
-          'or software CODE in your business generally needs PERMISSION, a LICENSE (written terms of use), or a source that '
-          'clearly allows your kind of use. "I found it on Google" is not permission. Read license terms: some allow only '
-          'personal use, or require credit. Using another business\'s NAME or LOGO in a way that confuses customers can '
-          'infringe trademark rights. Registering a business name, DBA or domain is not the same as trademark rights.')
+RIGHTS = (("Things you find online are usually owned by someone. Using another person's PHOTO, MUSIC, ARTWORK, written "
+          'text or software CODE in your business generally needs PERMISSION, a LICENSE (written terms of use), or a '
+          'source that clearly allows your kind of use. Public-domain works are free to use, and fair use is a narrow '
+          'legal exception decided case by case; credit alone is not permission. "I found it on Google" is not '
+          "permission. Read license terms: some allow only personal use, or require credit. Using another business's "
+          'NAME or LOGO in a way that confuses customers can infringe trademark rights. Registering a business name, '
+          'DBA or domain is not the same as trademark rights.'))
 
 s117 = SET('ENT.RISK.05',
     M=sec('Get permission or a license for images, music, code and names', RIGHTS, [
@@ -345,9 +354,11 @@ s117 = SET('ENT.RISK.05',
         Q('An AI tool generates an image very similar to a famous character. What is the concern?', 'It may still infringe someone\'s rights',
           ('AI images are always free of rights issues', 'not guaranteed'), ('Characters cannot be owned', 'they can'),
           ('Similar is always fine', 'not always'), 'Check similarity risks.'),
-        Q('Which statement is accurate?', 'Use material only with permission or a license.',
-          ('Anything visible online is free.', 'not true'), ('Giving credit always replaces asking permission.', 'not true'),
-          ('A DBA gives trademark rights.', 'not true'), 'Respect rights.'),
+        Q('Which statement is accurate?',
+          "Use others' work only with a valid legal basis, such as a license.",
+          ('Anything visible online is free for any business to use.', 'not true'), ('Giving credit always replaces asking for permission.', 'not true'),
+          ('A DBA filing gives the business trademark rights.', 'not true'),
+          'A valid basis is your own work, permission or a license, the public domain, or a legal exception such as fair use, decided case by case. Credit alone is not one.'),
     ]))
 
 # ------------------------------------------------------------------ Set 118: truthful advertising and complaints
@@ -458,10 +469,18 @@ s119 = SET('ENT.HELP.01',
         Q('A photographer spends 8 hours a month on bookkeeping and earns 60 dollars an hour shooting. A bookkeeper does it in 3 hours '
           'at 40 dollars. What does the bookkeeper cost?', '120 dollars', ('320 dollars', 'used 8 hours'), ('480 dollars', 'owner value'),
           ('43 dollars', 'added'), '3 x 40 = 120.', calc=lambda: 3 * 40 == 120),
-        Q('If she fills the freed 8 hours with shoots at 60 dollars, what does she earn in that time?', '480 dollars', ('120 dollars', 'cost'),
-          ('360 dollars', '6 hours'), ('68 dollars', 'added'), '8 x 60 = 480.', calc=lambda: 8 * 60 == 480),
-        Q('What is her net gain from handing off bookkeeping?', '360 dollars', ('480 dollars', 'ignores cost'), ('120 dollars', 'cost'),
-          ('600 dollars', 'added'), '480 - 120 = 360.', calc=lambda: 480 - 120 == 360),
+        Q('A photographer who earns 60 dollars an hour shooting frees 8 hours a month by handing off bookkeeping. If she fills those hours with shoots, what does she earn in that time?',
+          '480 dollars',
+          ('120 dollars', 'cost'), ('360 dollars', '6 hours'),
+          ('68 dollars', 'added'),
+          '8 x 60 = 480.',
+          calc=lambda: 8 * 60 == 480),
+        Q('A bookkeeper takes over 8 hours a month of bookkeeping for 120 dollars (3 hours at 40 dollars). The photographer fills the freed 8 hours with shoots at 60 dollars an hour. What is her net gain from handing off bookkeeping?',
+          '360 dollars',
+          ('480 dollars', 'ignores cost'), ('120 dollars', 'cost'),
+          ('600 dollars', 'added'),
+          '480 - 120 = 360.',
+          calc=lambda: 480 - 120 == 360),
         Q('Which task should the photographer most likely keep?', 'Taking the photos clients hire her for', ('Bookkeeping she does slowly', 'hand off'),
           ('Filing simple paperwork she dislikes', 'could hand off'), ('Editing tax forms she finds confusing', 'hand off'),
           'Keep core skills.'),
@@ -611,8 +630,12 @@ s121 = SET('ENT.HELP.03',
           'Act promptly.'),
         Q('An employee works 45 hours in a week where overtime applies after 40. How many overtime hours?', '5', ('45', 'total'),
           ('40', 'regular'), ('85', 'added'), '45 - 40 = 5.', calc=lambda: 45 - 40 == 5),
-        Q('If overtime pays 1.5 times a 20-dollar rate, what is the overtime pay for those hours?', '150 dollars', ('100 dollars', 'regular rate'),
-          ('30 dollars', 'one hour'), ('900 dollars', 'all hours'), '5 x 30 = 150.', calc=lambda: 5 * 20 * 1.5 == 150),
+        Q('An employee works 5 overtime hours, and overtime pays 1.5 times a 20-dollar rate. What is the overtime pay for those hours?',
+          '150 dollars',
+          ('100 dollars', 'regular rate'), ('30 dollars', 'one hour'),
+          ('900 dollars', 'all hours'),
+          '5 x 30 = 150.',
+          calc=lambda: 5 * 20 * 1.5 == 150),
         Q('An owner thinks payroll is too complex to handle alone. What is reasonable?', 'Use a payroll service or accountant',
           ('Avoid payroll by paying cash secretly', 'non-compliant'), ('Guess each period', 'risky'), ('Stop paying the employee', 'unlawful'),
           'Get help.'),
@@ -745,19 +768,24 @@ s123 = SET('ENT.HELP.05',
         Q('Partners never wrote an agreement and now disagree about profit shares. What is likely?', 'A difficult dispute with no agreed rule',
           ('An easy, quick resolution', 'unlikely'), ('Automatic equal shares everywhere, always', 'uncertain'),
           ('The business pays no taxes', 'irrelevant'), 'Missing rules cause disputes.'),
-        Q('A mediator costs 150 dollars an hour for 4 hours, split equally. What does each partner pay?', '300 dollars', ('600 dollars', 'total'),
-          ('150 dollars', 'one hour'), ('75 dollars', 'half hour'), '150 x 4 / 2 = 300.', calc=lambda: 150 * 4 / 2 == 300),
+        Q('A mediator costs 150 dollars an hour for 4 hours, and the two partners split the cost equally. What does each partner pay?',
+          '300 dollars',
+          ('600 dollars', 'total'), ('150 dollars', 'one hour'),
+          ('75 dollars', 'half hour'),
+          '150 x 4 / 2 = 300.',
+          calc=lambda: 150 * 4 / 2 == 300),
         Q('Which statement is accurate?', 'Written agreements help partnerships survive disagreements.',
           ('Good friends never need written partnership agreements.', 'not true'), ('Partnerships never fail.', 'they can'),
           ('Ownership always equals hours worked.', 'not necessarily'), 'Plan ahead.'),
     ]))
 
 # ------------------------------------------------------------------ Set 124: mentors, accountants, attorneys, free help
-FREE = ('Help comes in different forms. MENTORS share experience and can spot blind spots. SCORE, an SBA resource partner, '
-        'offers free volunteer mentoring (some workshops charge fees). SMALL BUSINESS DEVELOPMENT CENTERS (SBDCs) offer free or '
-        'low-cost consulting through host institutions. Libraries and local chambers of commerce may run workshops. For '
-        'specific legal or tax decisions, a licensed ATTORNEY or ACCOUNTANT gives advice for your situation. Free help is '
-        'valuable, but check the person\'s experience and whether they are qualified for your question.')
+FREE = (('Help comes in different forms. MENTORS share experience and can spot blind spots. SCORE, an SBA resource '
+        'partner, offers free volunteer mentoring (some workshops charge fees). SMALL BUSINESS DEVELOPMENT CENTERS '
+        '(SBDCs) offer free or low-cost consulting through host institutions. Libraries and local chambers of '
+        'commerce may run workshops. For specific legal decisions, a licensed ATTORNEY gives advice for your '
+        'situation; for tax decisions, a CPA, an ENROLLED AGENT or another qualified tax professional. Free help is '
+        "valuable, but check the person's experience and whether they are qualified for your question."))
 
 s124 = SET('ENT.HELP.06',
     M=sec('Match questions to mentors, free programs and licensed professionals', FREE, [
@@ -765,8 +793,11 @@ s124 = SET('ENT.HELP.06',
           ('Free business loans for every owner', 'not stated'), ('Free tax filing for all businesses', 'not stated'), 'Mentoring.'),
         Q('What do SBDCs offer?', 'Free or low-cost consulting', ('Trademark registrations for free', 'not stated'),
           ('Guaranteed grants', 'not stated'), ('Payroll processing', 'not stated'), 'Consulting.'),
-        Q('Who should answer a specific tax decision?', 'A licensed accountant or tax professional', ('A friendly mentor in another field', 'not qualified'),
-          ('A social media follower with tax tips', 'not qualified'), ('A competitor', 'not independent'), 'Licensed advice.'),
+        Q('Who should answer a specific tax decision?',
+          'A CPA, enrolled agent or other qualified tax pro',
+          ('A social media follower who posts tax tips', 'not qualified'), ('A competitor who runs a similar small business', 'not qualified, and conflicted'),
+          ('A friendly mentor who works in another field', 'outside their field'),
+          'Licensed advice.'),
         Q('What should an owner check about free help?', 'Their experience and qualifications for the question',
           ('Nothing, because free help is always right for any question', 'not always'), ('Only their website colors', 'irrelevant'),
           ('Only how fast they reply', 'not enough'), 'Fit and qualifications.'),

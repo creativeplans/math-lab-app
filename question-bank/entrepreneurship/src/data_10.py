@@ -161,11 +161,12 @@ s51 = SET('ENT.PRICE.05',
     ]))
 
 # ------------------------------------------------------------------ Set 52: owner time and capacity
-CAP = ('An owner\'s time is limited, so it has a cost. CAPACITY is the most work the business can do in a period. If an '
-       'owner can work 30 hours a week on paid tasks, that is her capacity. To find an effective HOURLY RATE, divide '
-       'profit from a job by the total hours it takes, including travel, emails, invoices and setup, not just the '
-       'visible work. A price that looks high can become a low hourly rate. When capacity is full, more customers '
-       'cannot be served without raising prices, getting help, or working more.')
+CAP = (("An owner's time is limited, so it has a cost. CAPACITY is the most work the business can do in a period. If "
+       'an owner can work 30 hours a week on paid tasks, that is her capacity. To find an effective HOURLY RATE, '
+       'divide profit from a job by the total hours it takes, including travel, emails, invoices and setup, not just'
+       ' the visible work. A price that looks high can become a low hourly rate. When capacity is full, serving more'
+       ' customers safely takes qualified help or a better process. Raising prices is a separate choice: it manages '
+       'demand and earns more per job, but it does not add capacity.'))
 
 s52 = SET('ENT.PRICE.06',
     M=sec('Compute effective hourly rates and recognize capacity limits', CAP, [
@@ -181,14 +182,17 @@ s52 = SET('ENT.PRICE.06',
         Q('A job pays 200 dollars of profit for 5 hours of work plus 3 hours of travel and email. What is the true hourly rate?',
           '25 dollars an hour', ('40 dollars an hour', 'ignored hidden time'), ('66.67 dollars an hour', 'used only hidden time'),
           ('1,600 dollars an hour', 'multiplied'), '200 / 8 = 25.', calc=lambda: 200 / (5 + 3) == 25),
-        Q('Capacity is full. Which option allows more customers?', 'Get help or raise prices to manage demand',
-          ('Take every new job and skip quality checks', 'hurts quality'), ('Ignore all new requests silently', 'loses goodwill'),
-          ('Work 20 hours a day indefinitely', 'unsustainable'), 'Options include help, prices or more hours.'),
+        Q('Capacity is full. Which option lets the business complete more work safely?',
+          'Get qualified help or improve the process',
+          ('Take every new job and skip quality checks', 'hurts quality and safety'), ('Ignore all new requests without replying', 'loses goodwill and adds no capacity'),
+          ('Work 20 hours a day indefinitely', 'unsustainable and unsafe'),
+          'Qualified help or a better process adds capacity safely. Raising prices is a separate choice: it manages demand but does not add capacity.'),
     ]),
-    B=[cs('Seats on a bus', 'A bus has a fixed number of seats. Once they are full, no more people can ride that trip, no '
-          'matter how many wait. An owner\'s week is like the bus: it has a fixed number of working hours. Each job takes '
-          'some seats, including the "hidden" seats for travel and paperwork. When the hours are full, the choices are a '
-          'bigger bus (help), a pricier ticket (higher prices), or more trips (more hours).', [
+    B=[cs('Seats on a bus', ('A bus has a fixed number of seats. Once they are full, no more people can ride that trip, no matter how many'
+                            " wait. An owner's week is like the bus: it has a fixed number of working hours. Each job takes some seats, "
+                            'including the "hidden" seats for travel and paperwork. When the hours are full, a bigger bus (help) or more '
+                            'trips (more hours) carry more riders. A pricier ticket (higher prices) adds no seats, but it changes who '
+                            'rides and earns more per seat.'), [
         Q('A full bus is like what?', 'A full work week', ('A big savings account', 'no'), ('An empty calendar', 'opposite'),
           ('A new logo', 'no'), 'Capacity is limited.'),
         Q('The "hidden seats" are like what?', 'Travel and paperwork time', ('Extra profit', 'no'), ('Customer reviews online', 'no'),
@@ -210,8 +214,12 @@ s52 = SET('ENT.PRICE.06',
         Q('A baker charges 60 dollars for a custom cake with 20 dollars of ingredients. It takes 5 hours. What is the hourly '
           'rate on profit?', '8 dollars an hour', ('12 dollars an hour', 'ignored ingredients'), ('40 dollars an hour', 'not per hour'),
           ('4 dollars an hour', 'used 10 hours'), '(60 - 20) / 5 = 8.', calc=lambda: (60 - 20) / 5 == 8),
-        Q('The baker wants at least 20 dollars an hour on that cake. What price is needed?', '120 dollars', ('100 dollars', 'left out ingredients'),
-          ('80 dollars', 'too low'), ('25 dollars', 'per hour plus 5'), '20 x 5 + 20 = 120.', calc=lambda: 20 * 5 + 20 == 120),
+        Q('A custom cake takes 5 hours and uses 20 dollars of ingredients. The baker wants at least 20 dollars an hour of profit on it. What price is needed?',
+          '120 dollars',
+          ('100 dollars', 'left out ingredients'), ('80 dollars', 'too low'),
+          ('25 dollars', 'per hour plus 5'),
+          '20 x 5 + 20 = 120.',
+          calc=lambda: 20 * 5 + 20 == 120),
         Q('A photographer is fully booked for 2 months. What does this suggest?', 'Prices may be too low for the demand',
           ('She should lower prices further', 'demand already exceeds capacity'), ('She should stop marketing forever', 'too extreme'),
           ('Nothing; bookings never matter', 'they signal demand'), 'Full capacity can support a price increase.'),
@@ -280,9 +288,12 @@ s53 = SET('ENT.PRICE.07',
           'clients leave. What is the new total contribution?', '1,485 dollars', ('1,250 dollars', 'old total'),
           ('1,650 dollars', 'no clients lost'), ('2,160 dollars', 'used price not contribution'),
           'Old: 50 x 25 = 1,250. New: 45 x 33 = 1,485.', calc=lambda: 45 * (48 - 15) == 1485 and 50 * 25 == 1250),
-        Q('Using the groomer numbers, did the raise help?', 'Yes, contribution rose by 235 dollars', ('No, because she lost 5 of her clients', 'but earns more'),
-          ('No, contribution fell', 'it rose'), ('It made no difference', 'it changed'), '1,485 - 1,250 = 235.',
-          calc=lambda: 1485 - 1250 == 235),
+        Q('A dog groomer had 50 clients at 40 dollars with a 15-dollar cost each. After she raised the price to 48 dollars, 45 clients stayed. Did the raise help?',
+          'Yes, contribution rose by 235 dollars',
+          ('No, because she lost 5 of her clients', 'but earns more'), ('No, contribution fell', 'it rose'),
+          ('It made no difference', 'it changed'),
+          'Before: 50 x 25 = 1,250. After: 45 x 33 = 1,485. Contribution rose by 235 dollars.',
+          calc=lambda: 50 * (40 - 15) == 1250 and 45 * (48 - 15) == 1485 and 1485 - 1250 == 235),
         Q('Which notice is best?', '"From March 1, prices rise to 48 dollars due to higher supply costs."',
           ('"Prices are higher now. Deal with it."', 'disrespectful'), ('No notice at all; she should just charge more at checkout from now on', 'surprises'),
           ('"Prices might change sometime, maybe."', 'unclear'), 'Date, amount and reason.'),
@@ -386,11 +397,11 @@ s54 = SET('ENT.CASH.02',
     ]))
 
 # ------------------------------------------------------------------ Set 55: cash reserve
-RES = ('A CASH RESERVE (emergency fund) is money the business keeps aside for slow months, repairs or late payments. A '
-       'common planning approach is to save enough to cover a set number of months of essential expenses, such as 2 to '
-       '3 months; this is a planning assumption, not a rule. Build it gradually, for example by moving a percentage of '
-       'each sale into a separate savings account. Use it only for real emergencies, then refill it. Without a reserve, '
-       'one surprise can force expensive borrowing.')
+RES = (('A CASH RESERVE (emergency fund) is money the business keeps aside for slow months, repairs or late payments.'
+       ' A common planning approach is to save enough to cover a set number of months of essential expenses, such as'
+       ' 2 to 3 months; this is a planning assumption, not a rule. Build it gradually, for example by moving a '
+       'percentage of each sale into a separate savings account. Use it for planned shortfalls such as slow months '
+       'and for unexpected needs, then refill it. Without a reserve, one surprise can force expensive borrowing.'))
 
 s55 = SET('ENT.CASH.03',
     M=sec('Size and build a business cash reserve', RES, [
@@ -403,9 +414,11 @@ s55 = SET('ENT.CASH.03',
         Q('How can a reserve be built gradually?', 'Move a percentage of each sale into savings',
           ('Wait until a big emergency happens, then start saving', 'too late'), ('Borrow the full amount at once', 'adds debt'),
           ('Spend everything and hope', 'no reserve'), 'Small regular amounts add up.'),
-        Q('When should the reserve be used?', 'For real emergencies, then refilled', ('For any purchase the owner wants', 'not emergencies'),
-          ('Never, even in emergencies', 'defeats the purpose'), ('Only to pay owner bonuses', 'not emergencies'),
-          'Use it for its purpose and rebuild it.'),
+        Q('When should the reserve be used?',
+          'For slow months and surprises, then refilled',
+          ('Only to pay the owner a yearly bonus', 'not its purpose'), ('For any purchase the owner happens to want', 'not its purpose'),
+          ('Never, not even in a real emergency', 'it exists to be used'),
+          'A reserve covers planned shortfalls and unexpected needs, and is refilled after.'),
         Q('What can happen without a reserve?', 'A surprise may force expensive borrowing', ('Profits always double', 'no'),
           ('Taxes disappear', 'no'), ('Nothing ever goes wrong for the business', 'not realistic'), 'Reserves reduce risk.'),
     ]),
@@ -431,9 +444,12 @@ s55 = SET('ENT.CASH.03',
           calc=lambda: (2000 * 2) / (0.08 * 5000) == 10),
         Q('Which account fits a reserve best?', 'A separate business savings account', ('The owner\'s personal checking account', 'mixed'),
           ('A shoebox under the counter', 'unsafe'), ('A friend\'s account', 'not controlled'), 'Separate and safe.'),
-        Q('The reserve is 3,000 dollars. An oven repair costs 1,200 dollars. What remains to refill?', '1,200 dollars',
-          ('1,800 dollars', 'what remains, not refill'), ('3,000 dollars', 'full amount'), ('4,200 dollars', 'added'),
-          '1,800 remains; refill the 1,200 used.', calc=lambda: 3000 - (3000 - 1200) == 1200),
+        Q('The reserve target is 3,000 dollars. An oven repair uses 1,200 dollars of it. How much must be added to bring the reserve back to its target?',
+          '1,200 dollars',
+          ('1,800 dollars', 'what remains, not refill'), ('3,000 dollars', 'full amount'),
+          ('4,200 dollars', 'added'),
+          '1,800 remains; refill the 1,200 used.',
+          calc=lambda: 3000 - (3000 - 1200) == 1200),
         Q('A seasonal ice cream stand earns most money in summer. What does that suggest for its reserve?', 'Save more in summer to cover winter',
           ('Spend all summer income right away', 'risky'), ('Ignore winter costs', 'they continue'),
           ('Borrow every winter as a plan', 'costly'), 'Seasonal businesses need bigger buffers.'),
@@ -511,8 +527,10 @@ s56 = SET('ENT.CASE.05',
         Q('A customer asks for changes that would cost 2,000 dollars, and offers an order worth 1,500 dollars of contribution. '
           'What does the math suggest?', 'The order alone does not cover the change', ('It is clearly profitable', 'costs more'),
           ('Costs do not matter', 'they do'), ('Accept the order and ignore the cost of changes', 'loses money'), '1,500 < 2,000.', calc=lambda: 1500 < 2000),
-        Q('In the same situation, what could make the change worthwhile?', 'Other customers also wanting the improved version',
-          ('A nicer logo', 'irrelevant'), ('Never telling anyone', 'irrelevant'), ('Lowering the price of the studio\'s order further', 'worse'),
+        Q("A customer's requested changes would cost 2,000 dollars, and that customer's order brings 1,500 dollars of contribution. What could make the change worthwhile?",
+          'Other customers also wanting the improved version',
+          ('A nicer logo', 'irrelevant'), ('Never telling anyone', 'irrelevant'),
+          ("Lowering the price of the studio's order further", 'worse'),
           'Wider demand can spread the cost.'),
         Q('Which detail is documented in the HP case and which is the course\'s lesson?', 'Eight units ordered is documented; "adapt for a key customer" is the lesson',
           ('Both are documented quotes from the founders', 'the lesson is an interpretation'),

@@ -138,9 +138,10 @@ def source_ledger():
            'Every time-sensitive set lists its sources in its set file (URL, claim, date checked), a review interval '
            'and a jurisdiction. This ledger lists each source once with the sets that rely on it and its next review '
            'date (date checked + review interval).', '',
-           '**How the sources were checked.** %s. The checking date for every source is %s. For %d sources the official '
-           'page did not come back in search; their claims were confirmed through secondary sources (named in the note) '
-           'and the course teaches only the general principle, not current rates, thresholds or penalties. These are '
+           '**How the sources were checked.** %s. The checking date for every source is %s. For %d sources the claim '
+           'could not be confirmed from the official page itself (the note on each says what was used instead: '
+           'secondary sources, a search excerpt or a statute citation); the course teaches only the general '
+           'principle, not current rates, thresholds or penalties. These are '
            'marked "needs direct check" below and should be opened directly at the first review.'
            % (sources.METHOD[0].upper() + sources.METHOD[1:], sources.CHECKED,
               len([k for k in sources.UNCONFIRMED if k in uses])), '',
@@ -316,8 +317,8 @@ Result of the check-only import run for this version: {importer}
   reuses the least-recently-seen question when a learner has seen the whole pool, so a learner who repeats a section
   sees the same questions.
 - Sources were checked through web-search results for the official pages on {checked} (pages were not opened
-  directly). Nine claims were confirmed only through secondary sources; they are marked in `SOURCES.md` for a direct
-  check at the first review. The course teaches principles and what to check, not current rates, thresholds or
+  directly). {n_unconf} sources could not be confirmed from the official page itself (secondary sources,
+  a search excerpt, or a statute citation); they are marked in `SOURCES.md` for a direct check at the first review. The course teaches principles and what to check, not current rates, thresholds or
   penalties.
 - Laws and fees vary by state and city; examples that name a state (for example Washington's registered-agent rule)
   are labeled as examples.
@@ -329,7 +330,7 @@ Result of the check-only import run for this version: {importer}
   {longest}% of questions (25% would be chance). This is reported in `VALIDATION.md` for review.
 '''.format(ver=build.VERSION, date=build.DATE, nsets=len(ps), nq=len(recs), scope=build.SCOPE_NOTE, cases=cases, nb=nb,
            ts=ts, nvol=nvol, qp=qpages, kp=kpages, importer=importer, checks='\n'.join('- ' + c for c in checks),
-           checked=sources.CHECKED, arith=sum(1 for r in recs if r['arithmetic_checked']),
+           checked=sources.CHECKED, n_unconf=len([k for k in sources.UNCONFIRMED if k in sources.SRC]), arith=sum(1 for r in recs if r['arithmetic_checked']),
            longest=round(100.0 * sum(1 for r in recs if len(r['correct_answer']) >
                                      max(len(w['text']) for w in r['wrong_choices'])) / len(recs)))
     write_both('README.md', text)

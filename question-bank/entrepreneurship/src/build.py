@@ -26,7 +26,7 @@ import sources  # noqa: E402
 ROOT = os.path.dirname(HERE)                       # question-bank/entrepreneurship
 QB = os.path.dirname(ROOT)                         # question-bank
 PKG = os.path.join(QB, 'nexus', 'entrepreneurship')
-VERSION = '1.0.0'
+VERSION = '1.0.1'
 DATE = '2026-10-25'
 TITLE = 'Entrepreneurship: Starting and Running a Small Business'
 SCOPE_NOTE = ('Course scope: general education for US learners, not legal, tax or financial advice. Rules, fees and '
@@ -71,6 +71,13 @@ def assign_letters(all_sets):
                 if qid in frozen and sorted(frozen[qid]) == sorted(texts):
                     out[qid] = frozen[qid]
                     counts['ABCD'[out[qid].index(q['correct'])]] += 1
+                elif qid in frozen and q['correct'] in frozen[qid]:
+                    # a corrected question keeps its correct answer on the same letter
+                    k = frozen[qid].index(q['correct'])
+                    others = [t for t in frozen[qid] if t in texts[1:] and t != q['correct']]
+                    others += [t for t in texts[1:] if t not in others]
+                    out[qid] = others[:k] + [q['correct']] + others[k:]
+                    counts['ABCD'[k]] += 1
                 else:
                     pending.append((qid, q, texts))
     last = {}

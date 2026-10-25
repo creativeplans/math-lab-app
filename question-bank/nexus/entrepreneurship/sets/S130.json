@@ -206,7 +206,7 @@
      ],
      "correct_letter": "C",
      "correct_answer": "Customer acquisition cost",
-     "intro": "Imagine a lemonade stand earning 50 cents of profit per cup but paying a friend 1 dollar for every new customer he brings. If each customer buys only one cup, the stand loses 50 cents per customer, and the busier it gets, the more it loses. If customers come back for 3 cups, the stand earns 1.50 per customer and the deal works.",
+     "intro": "Imagine a lemonade stand earning 50 cents of profit per cup but paying a friend 1 dollar for every new customer he brings. If each customer buys only one cup, the stand loses 50 cents per customer, and the busier it gets, the more it loses. If customers come back for 3 cups, the stand earns 3 x 0.50 = 1.50 per customer before the referral cost, so 1.50 - 1 = 0.50 is left after paying the friend, and the deal works.",
      "feedback": "Cost to gain a customer."
     },
     {
@@ -236,7 +236,7 @@
      ],
      "correct_letter": "D",
      "correct_answer": "The stand loses 50 cents per customer",
-     "intro": "Imagine a lemonade stand earning 50 cents of profit per cup but paying a friend 1 dollar for every new customer he brings. If each customer buys only one cup, the stand loses 50 cents per customer, and the busier it gets, the more it loses. If customers come back for 3 cups, the stand earns 1.50 per customer and the deal works.",
+     "intro": "Imagine a lemonade stand earning 50 cents of profit per cup but paying a friend 1 dollar for every new customer he brings. If each customer buys only one cup, the stand loses 50 cents per customer, and the busier it gets, the more it loses. If customers come back for 3 cups, the stand earns 3 x 0.50 = 1.50 per customer before the referral cost, so 1.50 - 1 = 0.50 is left after paying the friend, and the deal works.",
      "feedback": "0.50 - 1.00 = -0.50."
     },
     {
@@ -245,7 +245,7 @@
      "standard": "",
      "domain": "Funding, growth and limits",
      "type": "mc",
-     "prompt": "With three cups per customer, what is earned per customer?",
+     "prompt": "With three cups per customer, how much is left per customer after paying the 1-dollar referral cost?",
      "choices": [
       {
        "letter": "A",
@@ -257,17 +257,17 @@
       },
       {
        "letter": "C",
-       "text": "1.50 dollars"
+       "text": "0.50 dollars"
       },
       {
        "letter": "D",
-       "text": "0.50 dollars"
+       "text": "1.50 dollars"
       }
      ],
      "correct_letter": "C",
-     "correct_answer": "1.50 dollars",
-     "intro": "Imagine a lemonade stand earning 50 cents of profit per cup but paying a friend 1 dollar for every new customer he brings. If each customer buys only one cup, the stand loses 50 cents per customer, and the busier it gets, the more it loses. If customers come back for 3 cups, the stand earns 1.50 per customer and the deal works.",
-     "feedback": "3 x 0.50 = 1.50."
+     "correct_answer": "0.50 dollars",
+     "intro": "Imagine a lemonade stand earning 50 cents of profit per cup but paying a friend 1 dollar for every new customer he brings. If each customer buys only one cup, the stand loses 50 cents per customer, and the busier it gets, the more it loses. If customers come back for 3 cups, the stand earns 3 x 0.50 = 1.50 per customer before the referral cost, so 1.50 - 1 = 0.50 is left after paying the friend, and the deal works.",
+     "feedback": "3 x 0.50 = 1.50 before the referral cost; 1.50 - 1 = 0.50 left."
     },
     {
      "id": "S130-B1-Q4",
@@ -296,7 +296,7 @@
      ],
      "correct_letter": "A",
      "correct_answer": "It loses more",
-     "intro": "Imagine a lemonade stand earning 50 cents of profit per cup but paying a friend 1 dollar for every new customer he brings. If each customer buys only one cup, the stand loses 50 cents per customer, and the busier it gets, the more it loses. If customers come back for 3 cups, the stand earns 1.50 per customer and the deal works.",
+     "intro": "Imagine a lemonade stand earning 50 cents of profit per cup but paying a friend 1 dollar for every new customer he brings. If each customer buys only one cup, the stand loses 50 cents per customer, and the busier it gets, the more it loses. If customers come back for 3 cups, the stand earns 3 x 0.50 = 1.50 per customer before the referral cost, so 1.50 - 1 = 0.50 is left after paying the friend, and the deal works.",
      "feedback": "Losses scale."
     },
     {
@@ -326,7 +326,7 @@
      ],
      "correct_letter": "A",
      "correct_answer": "Customers coming back for more",
-     "intro": "Imagine a lemonade stand earning 50 cents of profit per cup but paying a friend 1 dollar for every new customer he brings. If each customer buys only one cup, the stand loses 50 cents per customer, and the busier it gets, the more it loses. If customers come back for 3 cups, the stand earns 1.50 per customer and the deal works.",
+     "intro": "Imagine a lemonade stand earning 50 cents of profit per cup but paying a friend 1 dollar for every new customer he brings. If each customer buys only one cup, the stand loses 50 cents per customer, and the busier it gets, the more it loses. If customers come back for 3 cups, the stand earns 3 x 0.50 = 1.50 per customer before the referral cost, so 1.50 - 1 = 0.50 is left after paying the friend, and the deal works.",
      "feedback": "Repeat purchases."
     }
    ],
@@ -375,29 +375,29 @@
      "standard": "",
      "domain": "Funding, growth and limits",
      "type": "mc",
-     "prompt": "CAC is 40 dollars. Is each customer worth acquiring?",
+     "prompt": "Expected contribution is 9 dollars a month for an average stay of 6 months, so 9 x 6 = 54 dollars per customer. CAC is 40 dollars. On average, is a customer worth acquiring?",
      "choices": [
       {
        "letter": "A",
-       "text": "Cannot tell"
+       "text": "Neither, because the two amounts are equal"
       },
       {
        "letter": "B",
-       "text": "No, 40 is more than 54"
+       "text": "No, because 40 is more than 54"
       },
       {
        "letter": "C",
-       "text": "Yes, 54 is more than 40"
+       "text": "Yes, on average, because 54 is more than 40"
       },
       {
        "letter": "D",
-       "text": "They are equal"
+       "text": "It cannot be told from these numbers"
       }
      ],
      "correct_letter": "C",
-     "correct_answer": "Yes, 54 is more than 40",
+     "correct_answer": "Yes, on average, because 54 is more than 40",
      "intro": "UNIT ECONOMICS looks at whether one sale (or one customer) makes money. For one order: price minus all costs that come with that order (product, packaging, shipping, payment fees, and any discount) gives the CONTRIBUTION per order. If you pay to get customers, compare CUSTOMER ACQUISITION COST (CAC: marketing spend / new customers) with how much contribution a customer brings over time. Growing a business with negative unit economics grows the losses.",
-     "feedback": "54 > 40."
+     "feedback": "54 > 40 on average; individual customers will vary."
     },
     {
      "id": "S130-F1-Q3",
@@ -405,7 +405,7 @@
      "standard": "",
      "domain": "Funding, growth and limits",
      "type": "mc",
-     "prompt": "By how much does contribution exceed CAC per customer?",
+     "prompt": "Expected contribution per customer is 54 dollars and CAC is 40 dollars. By how much does contribution exceed CAC per customer?",
      "choices": [
       {
        "letter": "A",
@@ -435,7 +435,7 @@
      "standard": "",
      "domain": "Funding, growth and limits",
      "type": "mc",
-     "prompt": "Shipping rises by 3 dollars per box. What is the new monthly contribution?",
+     "prompt": "A subscription box brings 9 dollars of contribution a month. Shipping rises by 3 dollars per box. What is the new monthly contribution?",
      "choices": [
       {
        "letter": "A",
@@ -629,25 +629,25 @@
      "choices": [
       {
        "letter": "A",
-       "text": "Growth always fixes losses."
+       "text": "Shipping and payment fees can safely be left out of unit economics."
       },
       {
        "letter": "B",
-       "text": "CAC never matters for small shops."
+       "text": "CAC never matters for small shops that sell online."
       },
       {
        "letter": "C",
-       "text": "Shipping and payment fees can safely be ignored."
+       "text": "Growth always fixes losses, whatever each sale earns."
       },
       {
        "letter": "D",
-       "text": "Growth helps only when each sale makes money after costs."
+       "text": "Growth is more likely to help when contribution per customer exceeds CAC."
       }
      ],
      "correct_letter": "D",
-     "correct_answer": "Growth helps only when each sale makes money after costs.",
+     "correct_answer": "Growth is more likely to help when contribution per customer exceeds CAC.",
      "intro": "UNIT ECONOMICS looks at whether one sale (or one customer) makes money. For one order: price minus all costs that come with that order (product, packaging, shipping, payment fees, and any discount) gives the CONTRIBUTION per order. If you pay to get customers, compare CUSTOMER ACQUISITION COST (CAC: marketing spend / new customers) with how much contribution a customer brings over time. Growing a business with negative unit economics grows the losses.",
-     "feedback": "Unit economics first."
+     "feedback": "Growth multiplies whatever each customer brings after costs and acquisition, so check unit economics first."
     }
    ],
    "difficulty": "expert",

@@ -55,8 +55,12 @@ s77 = SET('ENT.WEB.01',
           'One main action stands out.'),
         Q('A page gets 500 visitors and 10 click "Book now." What percent clicked?', '2 percent', ('10 percent', 'count'),
           ('5 percent', 'misdivided'), ('50 percent', 'reversed'), '10 / 500 = 0.02.', calc=lambda: 10 / 500 == 0.02),
-        Q('After rewriting the headline, 25 of 500 visitors click. How many more clicks than before?', '15', ('25', 'new total'),
-          ('10', 'old total'), ('35', 'added'), '25 - 10 = 15.', calc=lambda: 25 - 10 == 15),
+        Q('Before a headline rewrite, 10 of 500 visitors clicked "Book now." After it, 25 of 500 visitors click. How many more clicks than before?',
+          '15',
+          ('25', 'new total'), ('10', 'old total'),
+          ('35', 'added'),
+          '25 - 10 = 15.',
+          calc=lambda: 25 - 10 == 15),
         Q('Which detail best shows WHO the offer is for?', '"for busy owners in Eastfield"', ('"since last spring"', 'time'),
           ('"with lots of passion and care"', 'feeling'), ('"and so much more"', 'vague'), 'Names the audience.'),
     ]),
@@ -296,10 +300,12 @@ s80 = SET('ENT.WEB.04',
     ]))
 
 # ------------------------------------------------------------------ Set 81: HTTPS, testing, backups
-SAFE = ('HTTPS (shown by a lock icon and "https://" in the address bar) encrypts the connection between the visitor and '
-        'the site; most builders and hosts provide it, often free. TEST before launch and after changes: click every link, '
-        'submit every form, place a test order, and check on a phone. BACKUPS are copies of the site and its data; keep '
-        'them regularly and know how to restore one. A backup you have never tested may not work when you need it.')
+SAFE = (('HTTPS encrypts the connection between the visitor and the site; most builders and hosts provide it, often '
+        'free. Browsers show it differently, and Chrome replaced its padlock with a settings icon, so check that the '
+        'address starts with "https://" or open the browser\'s site information to see that the connection is secure. '
+        'TEST before launch and after changes: click every link, submit every form, place a test order, and check on '
+        'a phone. BACKUPS are copies of the site and its data; keep them regularly and know how to restore one. A '
+        'backup you have never tested may not work when you need it.'))
 
 s81 = SET('ENT.WEB.05',
     M=sec('Use HTTPS, test key paths and keep tested backups', SAFE, [
@@ -312,8 +318,11 @@ s81 = SET('ENT.WEB.05',
           ('An extra employee', 'not a backup'), ('A spare logo file', 'too narrow'), 'Copies allow recovery.'),
         Q('Why test restoring a backup?', 'An untested backup may not work', ('Restoring always deletes the site', 'not true'),
           ('Testing makes backups expire', 'not true'), ('It is required daily by law', 'not a rule'), 'Confirm it works.'),
-        Q('How can a visitor tell HTTPS is on?', 'A lock icon and "https://" in the address bar', ('A big red banner across the top of the page', 'no'),
-          ('The site has many pictures', 'no'), ('The page has a long footer', 'no'), 'Browser signs show it.'),
+        Q('How can a visitor check that HTTPS is on?',
+          'Check for "https://" or the browser\'s connection info',
+          ('A big red banner runs across the top of the page', 'not a security sign'), ('The page has a long footer full of links', 'not a security sign'),
+          ('The site shows many large pictures on each page', 'not a security sign'),
+          'Look for "https://" in the address or open the browser\'s site information; icons differ by browser, and Chrome no longer shows a padlock.'),
     ]),
     B=[cs('A sealed envelope and a spare key', 'Sending a postcard lets anyone read it; a sealed envelope keeps it private. HTTPS '
           'is the sealed envelope for information sent to your site. A backup is like a spare house key kept with a trusted '
@@ -432,43 +441,72 @@ s82 = SET('ENT.WEB.06',
     ]))
 
 # ------------------------------------------------------------------ Set 83: measuring useful actions
-MEASURE = ('Count what matters. VISITS show how many people came, but USEFUL ACTIONS show whether the site works: bookings, '
-           'orders, sign-ups, calls. CONVERSION RATE = useful actions / visits. Example: 20 orders from 800 visits is '
-           '20 / 800 = 2.5 percent. Track where visitors came from, and change one thing at a time so you know what made the '
-           'difference. A big number of visits with no actions means the page is not doing its job.')
+MEASURE = (('Count what matters. VISITS show how many people came, but USEFUL ACTIONS show whether the site works: '
+           'bookings, orders, sign-ups, calls. CONVERSION RATE = visits that included at least one useful action / total'
+           ' visits. Example: 20 of 800 visits included an order, so 20 / 800 = 2.5 percent. Track where visitors came '
+           'from, and change one thing at a time so you know what made the difference. A big number of visits with no '
+           'actions means the page is not doing its job.'))
 
 s83 = SET('ENT.WEB.07',
     M=sec('Measure useful actions and conversion rate', MEASURE, [
         Q('What is a useful action?', 'A booking, order, sign-up or call', ('A visit that lasts one second', 'not an action'),
           ('A like on a stock photo', 'not useful'), ('A page loading', 'not an action'), 'Actions that move business forward.'),
-        Q('What is conversion rate?', 'Useful actions divided by visits', ('Visits divided by useful actions', 'reversed'),
-          ('Visits minus useful actions', 'not a rate'), ('Useful actions times visits', 'not a rate'), 'Actions per visit.'),
-        Q('30 orders from 1,200 visits. What is the conversion rate?', '2.5 percent', ('30 percent', 'count'), ('40 percent', 'reversed'),
-          ('0.25 percent', 'moved decimal'), '30 / 1,200 = 0.025.', calc=lambda: 30 / 1200 == 0.025),
+        Q('What is conversion rate?',
+          'Converting visits divided by all visits',
+          ('Useful actions times total visits', 'not a rate'), ('All visits minus converting visits', 'a difference, not a rate'),
+          ('All visits divided by useful actions', 'upside down'),
+          'Conversion rate = visits that included a useful action / total visits.'),
+        Q('30 of 1,200 visits included an order. What is the conversion rate?',
+          '2.5 percent',
+          ('30 percent', 'count'), ('40 percent', 'reversed'),
+          ('0.25 percent', 'moved decimal'),
+          '30 / 1,200 = 0.025.',
+          calc=lambda: 30 / 1200 == 0.025),
         Q('Why change one thing at a time?', 'To know which change made the difference', ('Because many changes are illegal', 'not true'),
           ('Because one change always doubles sales', 'not true'), ('To avoid tracking anything', 'opposite'), 'Isolate the effect.'),
         Q('Many visits but no actions suggests what?', 'The page is not doing its job', ('The page is perfect', 'no'),
           ('Visits are always bad', 'no'), ('Tracking actions is unnecessary', 'no'), 'Look at actions, not just visits.'),
     ]),
-    B=[mathb('Rates as percents', 'A rate compares a part to a whole. Conversion rate = actions / visits, then times 100 for a '
-             'percent. Example: 15 bookings from 500 visits: 15 / 500 = 0.03 = 3 percent. To predict actions, multiply visits '
-             'by the rate: 1,000 visits at 3 percent = 0.03 x 1,000 = 30. Check that the percent is reasonable: actions '
-             'cannot exceed visits.', [
-        Q('12 actions from 400 visits is what percent?', '3 percent', ('12 percent', 'count'), ('33 percent', 'reversed'),
-          ('0.3 percent', 'moved decimal'), '12 / 400 = 0.03.', calc=lambda: 12 / 400 == 0.03),
-        Q('2,000 visits at 2 percent gives how many actions?', '40', ('20', 'moved decimal'), ('400', 'moved decimal'),
-          ('2,002', 'added'), '0.02 x 2,000 = 40.', calc=lambda: 0.02 * 2000 == 40),
-        Q('50 actions from 1,000 visits is what percent?', '5 percent', ('50 percent', 'count'), ('20 percent', 'reversed'),
-          ('0.5 percent', 'moved decimal'), '50 / 1,000 = 0.05.', calc=lambda: 50 / 1000 == 0.05),
-        Q('A rate of 120 percent means what?', 'A mistake, since actions cannot exceed visits here', ('A great result', 'impossible'),
-          ('A normal result for most small business websites', 'impossible'), ('A tax', 'no'), 'Check reasonableness.'),
-        Q('Which is the formula for conversion rate?', 'Actions / visits', ('Visits / actions', 'reversed'), ('Actions - visits', 'no'),
-          ('Actions + visits', 'no'), 'Part over whole.'),
+    B=[mathb('Rates as percents', ('A rate compares a part to a whole. Conversion rate = visits with an action / total visits, then times 100 '
+                                  'for a percent. Example: 15 of 500 visits included a booking: 15 / 500 = 0.03 = 3 percent. To predict '
+                                  'actions, multiply visits by the rate: 1,000 visits at 3 percent = 0.03 x 1,000 = 30. Check that the percent '
+                                  'is reasonable: visits with an action cannot exceed total visits, so this rate cannot pass 100 percent.'), [
+        Q('12 of 400 visits included an action. What percent is that?',
+          '3 percent',
+          ('12 percent', 'count'), ('33 percent', 'reversed'),
+          ('0.3 percent', 'moved decimal'),
+          '12 / 400 = 0.03.',
+          calc=lambda: 12 / 400 == 0.03),
+        Q('2,000 visits convert at 2 percent. How many visits include an action?',
+          '40',
+          ('20', 'moved decimal'), ('400', 'moved decimal'),
+          ('2,002', 'added'),
+          '0.02 x 2,000 = 40.',
+          calc=lambda: 0.02 * 2000 == 40),
+        Q('50 of 1,000 visits included an action. What percent is that?',
+          '5 percent',
+          ('50 percent', 'count'), ('20 percent', 'reversed'),
+          ('0.5 percent', 'moved decimal'),
+          '50 / 1,000 = 0.05.',
+          calc=lambda: 50 / 1000 == 0.05),
+        Q('Using visits with an action / total visits, a rate of 120 percent means what?',
+          'A mistake, since this rate cannot exceed 100 percent',
+          ('A great result', 'impossible'), ('A normal result for most small business websites', 'impossible'),
+          ('A tax', 'no'),
+          'Visits with an action cannot exceed total visits, so this rate stays at or below 100 percent.'),
+        Q('Which is the formula for conversion rate?',
+          'Visits with an action / total visits',
+          ('Total visits / visits with an action', 'upside down'), ('Visits with an action - total visits', 'a difference'),
+          ('Visits with an action + total visits', 'a sum'),
+          'Part over whole.'),
     ], why='A learner who misses MAIN may not compute a rate; this practices part over whole as a percent.')],
     F1=sec('Apply it: compare pages and sources', MEASURE, [
-        Q('Page A: 900 visits, 18 orders. Page B: 400 visits, 16 orders. Which converts better?', 'B, at 4 percent', ('A, at 2 percent', 'A is lower'),
-          ('A, because it has more visits', 'visits are not conversion'), ('They are equal', 'they differ'),
-          'A: 2 percent; B: 4 percent.', calc=lambda: 18 / 900 == 0.02 and 16 / 400 == 0.04),
+        Q('Page A: 18 of 900 visits included an order. Page B: 16 of 400 visits included an order. Which converts better?',
+          'B, at 4 percent',
+          ('A, at 2 percent', 'A is lower'), ('A, because it has more visits', 'visits are not conversion'),
+          ('They are equal', 'they differ'),
+          'A: 2 percent; B: 4 percent.',
+          calc=lambda: 18 / 900 == 0.02 and 16 / 400 == 0.04),
         Q('Visitors from local listings convert at 6 percent; from social media at 1 percent. With 300 visits from each, how '
           'many more actions come from listings?', '15', ('18', 'listing total'), ('3', 'social total'), ('5', 'percent difference'),
           '18 - 3 = 15.', calc=lambda: round(0.06 * 300) - round(0.01 * 300) == 15),

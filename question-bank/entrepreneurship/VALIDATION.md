@@ -1,6 +1,6 @@
 # Entrepreneurship collection: validation
 
-Version 1.0.0, run on 2026-10-25 by `src/validate.py` against the built answer key and import package.
+Version 1.0.1, run on 2026-10-25 by `src/validate.py` against the built answer key and import package.
 
 ## Hard checks (a failure stops the release)
 
@@ -15,9 +15,10 @@ Version 1.0.0, run on 2026-10-25 by `src/validate.py` against the built answer k
 | Question IDs are unique and follow S<set>-<section>-Q<n> (stored as ENT:<id>) | PASS | 3125 IDs; duplicates none; malformed none |
 | Every question is multiple choice with 4 distinct choices A-D, one correct letter matching the key, a teaching passage and feedback | PASS | 3125 questions; problems: none |
 | Every wrong choice has a written reason in the private key | PASS | 3125 x 3 reasons |
-| Every teaching passage is 55-125 words | PASS | min 55, max 101, mean 78 words |
+| Every teaching passage is 55-125 words | PASS | min 55, max 114, mean 79 words |
 | No placeholder text | PASS | none found |
 | Questions stand alone (no references to other questions) | PASS | none found |
+| Questions that use referring phrases ("same", "that total", "after commission"...) are answerable from their own displayed content (each one reviewed and listed in LOCAL_REVIEWED) | PASS | 23 matched and reviewed; unreviewed: none; stale entries: none |
 | No real-looking identifiers (SSN, EIN, phone numbers, real email addresses, web addresses) in questions | PASS | none found |
 | No question repeated word for word (same prompt and same key) | PASS | none |
 | No prompt repeated inside a section | PASS | none |
@@ -29,7 +30,7 @@ Version 1.0.0, run on 2026-10-25 by `src/validate.py` against the built answer k
 | Module kinds are foundation, path or specialty; path modules name a path; specialty modules are optional | PASS | {'foundation': 15, 'specialty': 1, 'path': 4}; problems: none |
 | Prerequisites ("requires") point only to earlier sets, so there are no loops | PASS | 160 prerequisite links; problems: none |
 | Suggested reading is kept separate from prerequisites | PASS | 5 sets have suggested reading; overlaps: none |
-| Every time-sensitive set lists sources (https URL, claim, date checked), a review interval and a jurisdiction | PASS | 48 time-sensitive sets, 108 stable; problems: none |
+| Every time-sensitive set lists sources (https URL, claim, date checked), a review interval and a jurisdiction | PASS | 52 time-sensitive sets, 104 stable; problems: none |
 | Stable sets carry no time-sensitive source list | PASS | none |
 | At least 12 founder cases, each sourced, separating documented history from the course's interpretation, spread through the course | PASS | 12 cases at sets [4, 9, 17, 18, 56, 84, 95, 96, 135, 140, 150, 156] across 10 modules (largest gap 39 sets); problems: none |
 
@@ -37,7 +38,7 @@ Version 1.0.0, run on 2026-10-25 by `src/validate.py` against the built answer k
 
 | Item | Detail |
 |---|---|
-| Teaching passages within the contract's "about 60-120 words" | 300 of 3125 questions use a passage of 55-59 words (none exceed 120) |
-| Share of questions where the correct answer is the single longest choice | 991 of 3125 (31.7%; 25% would be chance). Reported for review; none is conspicuously longest. |
-| Every question with arithmetic in the key has a code check that passed at build time | 612 questions carry a code check (build.py stops if any check fails) |
-| Sources whose official page was not returned by search (claims confirmed by secondary sources; flagged in SOURCES.md for review) | 9 of 31 sources: chargeback, dol_contractor, ftc_endorse, ftc_reviews, irs_estimated, irs_se, sba_counsel, usps_1583, uspto_name |
+| Teaching passages within the contract's "about 60-120 words" | 285 of 3125 questions use a passage of 55-59 words (none exceed 120) |
+| Share of questions where the correct answer is the single longest choice | 988 of 3125 (31.6%; 25% would be chance). Reported for review; none is conspicuously longest. |
+| Every question with arithmetic in the key has a code check that passed at build time | 613 questions carry a code check (build.py stops if any check fails) |
+| Sources not confirmed from the official page itself (secondary sources, search excerpts or a statute citation; flagged in SOURCES.md for review) | 11 of 37 sources: chargeback, chromium_lock, dol_contractor, ftc_endorse, ftc_fakecheck, ftc_reviews, irs_estimated, irs_se, usc_109, usps_1583, uspto_name |

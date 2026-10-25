@@ -1,7 +1,7 @@
 # Entrepreneurship: Starting and Running a Small Business
 
 Untangle The Nexus question collection `ENT` (course `entrepreneurship`, category Adults & HS Students), version
-1.0.0 (2026-10-25). 156 focused sets, 3125 multiple-choice questions. Generated from
+1.0.1 (2026-10-25). 156 focused sets, 3125 multiple-choice questions. Generated from
 `question-bank/entrepreneurship/src` (plan.py, sources.py and data_*.py) by build.py, validate.py and report.py.
 Regenerate there rather than editing these files by hand.
 
@@ -20,7 +20,7 @@ Course scope: general education for US learners, not legal, tax or financial adv
   with its diagnostic reason), F1 "Apply it" (5) and F2 "Handle the complications" (5).
 - Every question has its own teaching passage (55-125 words), a scenario question, 4 choices with one best answer,
   feedback, and (in the private key) a reason for every wrong choice.
-- 48 time-sensitive sets carry sources, a review interval and a jurisdiction; the rest are stable.
+- 52 time-sensitive sets carry sources, a review interval and a jurisdiction; the rest are stable.
 
 ## Files
 
@@ -35,7 +35,7 @@ Course scope: general education for US learners, not legal, tax or financial adv
 | `pdf/` | The question collection and the answer key in 7 volumes each, with `PART_INDEX.md` (page mapping) |
 | `MANIFEST.json` | Every file with its size and SHA-256 |
 
-The full PDFs (`Entrepreneurship_Question_Collection.pdf`, 3281 pages; `Entrepreneurship_Answer_Key.pdf`, 1206 pages)
+The full PDFs (`Entrepreneurship_Question_Collection.pdf`, 3281 pages; `Entrepreneurship_Answer_Key.pdf`, 1209 pages)
 and the answer key as JSON and CSV are in `question-bank/entrepreneurship/`.
 
 ## How it is graded
@@ -51,13 +51,13 @@ set. A course prompt that says "three or fewer correct" is read as this rule.
 
 ## Installing (the owner uploads the ZIP; Claude runs the commands)
 
-1. Put `Entrepreneurship_Nexus_Import_v1.0.0.zip` on the work branch under `content-src/entrepreneurship/`.
-2. Check only: `npx tsx tools/import-collection/import.ts --check content-src/entrepreneurship/Entrepreneurship_Nexus_Import_v1.0.0.zip`
-3. Install: `npx tsx tools/import-collection/import.ts content-src/entrepreneurship/Entrepreneurship_Nexus_Import_v1.0.0.zip`
+1. Put `Entrepreneurship_Nexus_Import_v1.0.1.zip` on the work branch under `content-src/entrepreneurship/`.
+2. Check only: `npx tsx tools/import-collection/import.ts --check content-src/entrepreneurship/Entrepreneurship_Nexus_Import_v1.0.1.zip`
+3. Install: `npx tsx tools/import-collection/import.ts content-src/entrepreneurship/Entrepreneurship_Nexus_Import_v1.0.1.zip`
 4. Roll back if needed: `npx tsx tools/import-collection/import.ts --rollback <course dir>`.
 5. Release (`release: 'available'` in `packages/curriculum/src/courses.ts`) only after the owner approves.
 
-Result of the check-only import run for this version: CHECK ONLY: the bank is valid. 156 sets, 3125 questions (all mc), 0 invalid, 0 warnings; 48 time-sensitive sets on the review list. (Untangle The Nexus tools/import-collection/import.ts --check, run on the package folder for version 1.0.0.)
+Result of the check-only import run for this version: CHECK ONLY: the bank is valid. 156 sets, 3125 questions (all mc), 0 invalid, 0 warnings; 52 time-sensitive sets on the review list. (Untangle The Nexus tools/import-collection/import.ts --check, run on the package folder for version 1.0.1.)
 
 ## Checks run for this version
 
@@ -73,6 +73,7 @@ Result of the check-only import run for this version: CHECK ONLY: the bank is va
 - Every teaching passage is 55-125 words: pass
 - No placeholder text: pass
 - Questions stand alone (no references to other questions): pass
+- Questions that use referring phrases ("same", "that total", "after commission"...) are answerable from their own displayed content (each one reviewed and listed in LOCAL_REVIEWED): pass
 - No real-looking identifiers (SSN, EIN, phone numbers, real email addresses, web addresses) in questions: pass
 - No question repeated word for word (same prompt and same key): pass
 - No prompt repeated inside a section: pass
@@ -94,14 +95,14 @@ Result of the check-only import run for this version: CHECK ONLY: the bank is va
   reuses the least-recently-seen question when a learner has seen the whole pool, so a learner who repeats a section
   sees the same questions.
 - Sources were checked through web-search results for the official pages on 2026-10-25 (pages were not opened
-  directly). Nine claims were confirmed only through secondary sources; they are marked in `SOURCES.md` for a direct
-  check at the first review. The course teaches principles and what to check, not current rates, thresholds or
+  directly). 11 sources could not be confirmed from the official page itself (secondary sources,
+  a search excerpt, or a statute citation); they are marked in `SOURCES.md` for a direct check at the first review. The course teaches principles and what to check, not current rates, thresholds or
   penalties.
 - Laws and fees vary by state and city; examples that name a state (for example Washington's registered-agent rule)
   are labeled as examples.
 - All prices, fees, rates and wages in questions are practice assumptions. All people and businesses in scenarios are
   fictional; email addresses use the reserved `.example` domain.
-- Explanations, wrong-choice reasons and answer keys were written by the author; arithmetic in 612 answers is
+- Explanations, wrong-choice reasons and answer keys were written by the author; arithmetic in 613 answers is
   checked by code, and the rest was reviewed by the author without a computer check.
 - The correct answer is never conspicuously the longest choice, but it is the single longest choice in about
   32% of questions (25% would be chance). This is reported in `VALIDATION.md` for review.

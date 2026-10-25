@@ -204,8 +204,11 @@ s71 = SET('ENT.PAY.03',
         Q('Policy: full refund 7+ days before; 50 percent within 7 days; none within 24 hours. A 300-dollar session is cancelled '
           '12 hours before. What is refunded?', '0 dollars', ('150 dollars', '50 percent window'), ('300 dollars', 'full window'),
           ('75 dollars', 'quarter'), 'Within 24 hours: no refund.', calc=lambda: 300 * 0 == 0),
-        Q('Same policy. Cancelled 10 days before. What is refunded?', '300 dollars', ('150 dollars', '50 percent window'),
-          ('0 dollars', 'too late window'), ('30 dollars', 'misread'), '7+ days: full refund.'),
+        Q('Policy: full refund 7+ days before; 50 percent within 7 days; none within 24 hours. A 300-dollar booking is cancelled 10 days before. What is refunded?',
+          '300 dollars',
+          ('150 dollars', '50 percent window'), ('0 dollars', 'too late window'),
+          ('30 dollars', 'misread'),
+          '7+ days: full refund.'),
         Q('A photographer loses 4 late-cancelled sessions a month at 150 dollars each. How much income is at risk without a '
           'policy?', '600 dollars', ('150 dollars', 'one session'), ('154 dollars', 'added'), ('37.50 dollars', 'divided'),
           '4 x 150 = 600.', calc=lambda: 4 * 150 == 600),
@@ -465,11 +468,13 @@ s74 = SET('ENT.PAY.06',
     ]))
 
 # ------------------------------------------------------------------ Set 75: invoice and payment scams
-SCAM = ('Small businesses are common targets for payment scams. FAKE INVOICES bill for things you never ordered, such as '
-        'directory listings. CHANGED BANK DETAILS scams send an email that looks like a real supplier asking you to pay a '
-        'new account. OVERPAYMENT scams send too much money (often by a check that later bounces) and ask you to send '
-        'back the difference. Protection: match invoices to orders, confirm any bank-detail change by calling a known '
-        'number (not one in the email), and wait for funds to clear before refunding.')
+SCAM = (('Small businesses are common targets for payment scams. FAKE INVOICES bill for things you never ordered, such'
+        ' as directory listings. CHANGED BANK DETAILS scams send an email that looks like a real supplier asking you '
+        'to pay a new account. OVERPAYMENT scams send too much money (often by a check that later bounces) and ask '
+        'you to send back the difference. Protection: match invoices to orders, confirm any bank-detail change by '
+        'calling a known number (not one in the email), and never send back an "overpayment." A bank may make check '
+        'funds available within days, yet the check can still be returned as fake weeks later, and the depositor owes'
+        ' the money.'))
 
 s75 = SET('ENT.PAY.07',
     M=sec('Recognize payment scams and verify before paying', SCAM, [
@@ -484,10 +489,11 @@ s75 = SET('ENT.PAY.07',
         Q('How can a business catch fake invoices?', 'Match each invoice to a real order', ('Pay every invoice that looks official', 'risky'),
           ('Pay invoices under 100 dollars without checking', 'still risky'), ('Ignore all invoices', 'misses real bills'),
           'Matching reveals fakes.'),
-        Q('A customer\'s check for 1,500 dollars arrives for a 500-dollar order with a request to send back 1,000. What should '
-          'the owner do?', 'Wait until the funds fully clear, and be suspicious', ('Send the 1,000 dollars back today', 'classic scam'),
-          ('Deposit the check and spend all 1,500 dollars', 'check may bounce'), ('Give the customer her bank login', 'never'),
-          'Overpayments are a common scam.'),
+        Q("A customer's check for 1,500 dollars arrives for a 500-dollar order with a request to send back 1,000. What should the owner do?",
+          'Do not send the 1,000; check with your bank at a trusted number',
+          ('Send the 1,000 dollars back today, as the customer asks', 'classic overpayment scam'), ('Deposit the check and spend all 1,500 dollars right away', 'the check may be fake'),
+          ('Give the customer the business bank login to sort it out', 'never share logins'),
+          'Overpayment requests are a common scam: the check can be returned as fake after the funds appear, and the owner would owe the money. Send nothing back; contact the bank at a number you already trust.'),
         Q('Why not use the phone number in a suspicious email?', 'It may lead to the scammer', ('Phones never work for business', 'no'),
           ('It is always the correct number', 'not always'), ('Calling is illegal', 'no'), 'Use known contact details.'),
     ]),
@@ -533,9 +539,11 @@ s75 = SET('ENT.PAY.07',
         Q('A real supplier truly changed banks. How should the change be confirmed?', 'By calling a known contact before updating records',
           ('By trusting the email because it is real this time', 'cannot tell'), ('By paying a test amount to the new account', 'still risky'),
           ('By asking a customer', 'unrelated'), 'Same verification every time.'),
-        Q('A check cleared in 2 days, but the bank later says it bounced. What lesson does this teach?', 'Funds can appear available before a check is truly good',
-          ('Banks never reverse deposits', 'they can'), ('Checks always clear permanently in exactly 2 days', 'not always'),
-          ('Deposits are guaranteed', 'not guaranteed'), 'Wait and verify.'),
+        Q('The bank made the funds from a check available in 2 days, but later says the check was fake and reverses the deposit. What lesson does this teach?',
+          'Funds can be made available before a check is proven good',
+          ('Banks never reverse a deposit after the funds are available', 'they can'), ('Checks always clear for good in exactly 2 days', 'not always'),
+          ('Deposits are guaranteed once they show in the account', 'not guaranteed'),
+          'Available funds do not prove a check is good; the depositor owes the money if it is fake.'),
         Q('Which statement is accurate?', 'Urgency, new bank details and overpayments are common scam signs.',
           ('Scammers only target large companies.', 'small too'), ('Official-looking invoices are always real.', 'not always'),
           ('Gift card payments are a normal way to pay supplier invoices.', 'red flag'), 'Know the patterns.'),
@@ -592,9 +600,11 @@ s76 = SET('ENT.PAY.08',
         Q('A supplier misses a delivery. The owner promised customers Friday. What is the first step?', 'Tell affected customers right away with a new estimate',
           ('Wait until Friday and say nothing to the customers', 'too late'), ('Ship empty boxes on time', 'dishonest'),
           ('Cancel all orders without asking', 'overreaction'), 'Early notice.'),
-        Q('Supplier terms are Net 30 and customers pay on delivery. Why does this help cash flow?', 'Customer money arrives before the supplier bill is due',
+        Q('Supplier terms are Net 30, and customers pay on delivery, which happens before day 30. Why does this help cash flow?',
+          'Customer money arrives before the supplier bill is due',
           ('It means the supplier never needs to be paid for the goods', 'still owed'), ('It doubles sales', 'no'),
-          ('It removes all costs', 'no'), 'Timing favors the business.'),
+          ('It removes all costs', 'no'),
+          'Timing favors the business.'),
     ]),
     F2=sec('Handle the complications: repeat delays and backup plans', SUPP, [
         Q('A key supplier has been late 4 times in 6 months. What should the owner consider?', 'Finding a backup supplier',

@@ -4,11 +4,12 @@ setting money aside is labeled as a practice assumption, not tax advice."""
 from eq import Q, sec, cs, mathb, SET
 
 # ------------------------------------------------------------------ Set 63: deductions versus credits
-DED = ('Two tax words are often confused. A DEDUCTION lowers the income that tax is calculated on (taxable income). A '
-       'CREDIT lowers the tax itself, dollar for dollar. Example with a made-up 20 percent rate: a 1,000-dollar deduction '
-       'lowers taxable income by 1,000 and saves about 0.20 x 1,000 = 200 dollars of tax; a 1,000-dollar credit cuts '
-       'the tax by 1,000 dollars. Business expenses that are ordinary and necessary for the business are commonly '
-       'deductible; which credits apply depends on current law, so check with a tax professional.')
+DED = (('Two tax words are often confused. A DEDUCTION lowers the income that tax is calculated on (taxable income). '
+       'A CREDIT lowers the tax itself, dollar for dollar. Example with a made-up 20 percent rate: a 1,000-dollar '
+       'deduction lowers taxable income by 1,000 and saves about 0.20 x 1,000 = 200 dollars of tax; a 1,000-dollar '
+       'credit cuts the tax by 1,000 dollars. A credit applies only if the business is eligible, and some credits '
+       'cannot reduce the tax below zero. Business expenses that are ordinary and necessary for the business are '
+       'commonly deductible; which credits apply depends on current law, so check with a tax professional.'))
 
 s63 = SET('ENT.TAX.01',
     M=sec('Explain how deductions and credits differ', DED, [
@@ -23,8 +24,11 @@ s63 = SET('ENT.TAX.01',
         Q('With a made-up 20 percent rate, how much tax does a 500-dollar deduction save?', '100 dollars',
           ('500 dollars', 'treated as credit'), ('20 dollars', 'used rate as dollars'), ('400 dollars', 'subtracted'),
           '0.20 x 500 = 100.', calc=lambda: round(0.20 * 500, 2) == 100),
-        Q('With the same rate, how much tax does a 500-dollar credit save?', '500 dollars', ('100 dollars', 'treated as deduction'),
-          ('20 dollars', 'used rate'), ('2,500 dollars', 'divided by rate'), 'A credit saves its full amount.'),
+        Q('With a made-up 20 percent rate, assume a 500-dollar credit is fully eligible and usable. How much tax does it save?',
+          '500 dollars',
+          ('100 dollars', 'treated as deduction'), ('20 dollars', 'used rate'),
+          ('2,500 dollars', 'divided by rate'),
+          'A credit saves its full amount.'),
         Q('Which expenses are commonly deductible for a business?', 'Ordinary and necessary business expenses',
           ('Any personal purchase the owner makes during the year', 'personal is not business'),
           ('Only expenses paid in cash with no receipt', 'records matter'),
@@ -49,10 +53,11 @@ s63 = SET('ENT.TAX.01',
         Q('Assume a 25 percent rate (an assumption for practice). A 2,000-dollar business expense is deductible. About how '
           'much tax does it save?', '500 dollars', ('2,000 dollars', 'treated as credit'), ('25 dollars', 'used rate as dollars'),
           ('1,500 dollars', 'subtracted'), '0.25 x 2,000 = 500.', calc=lambda: 0.25 * 2000 == 500),
-        Q('Using that rate, which saves more: a 1,000-dollar deduction or a 400-dollar credit?', 'The 400-dollar credit',
-          ('The 1,000-dollar deduction, since it is a bigger number', 'saves only 250'),
-          ('They save exactly the same amount of tax', 'they differ'),
-          ('Neither one changes the tax owed', 'both do'), 'Deduction saves 250; credit saves 400.',
+        Q('Assume a flat made-up 25 percent rate and that the credit is fully eligible and usable. Which saves more: a 1,000-dollar deduction or a 400-dollar credit?',
+          'The 400-dollar credit',
+          ('The 1,000-dollar deduction, since it is a bigger number', 'saves only 250'), ('They save exactly the same amount of tax', 'they differ'),
+          ('Neither one changes the tax owed', 'both do'),
+          'Deduction: 0.25 x 1,000 = 250 dollars. Credit: 400 dollars.',
           calc=lambda: 0.25 * 1000 == 250 and 400 > 250),
         Q('An owner says, "Buying anything is free because it\'s a deduction." What is wrong?', 'A deduction saves only part of the cost',
           ('Nothing; deductions refund the whole price', 'not true'), ('Deductions are always illegal', 'not true'),
@@ -73,10 +78,11 @@ s63 = SET('ENT.TAX.01',
         Q('An owner deducts a family vacation as a business trip. What is the problem?', 'Personal expenses are not business deductions',
           ('No problem as long as she brings a laptop', 'not enough'), ('Vacations are always deductible', 'not true'),
           ('Deductions do not need a business purpose', 'they do'), 'Deductions require genuine business purpose.'),
-        Q('The tax rate is unknown to the owner. Can she still compare a deduction and a credit of the same size?',
-          'Yes; the credit saves at least as much for any rate up to 100 percent', ('No, never without the exact rate', 'logic works'),
-          ('Yes; the deduction always saves more than a credit of the same size', 'not true'), ('Only if the rate is zero', 'not needed'),
-          'A deduction saves rate x amount; a credit saves the amount.'),
+        Q('The owner does not know her flat marginal rate, only that it is below 100 percent. Both items are fully eligible and the credit is fully usable. Can she still compare a deduction and a credit of the same size?',
+          'Yes; under these assumptions the credit saves at least as much',
+          ('No, never without the exact rate', 'logic works'), ('Yes; the deduction always saves more than a credit of the same size', 'not true'),
+          ('Only if the rate is zero', 'not needed'),
+          'A deduction saves rate x amount, which is less than the amount when the rate is below 100 percent; a fully usable credit saves the whole amount.'),
         Q('Credits and deductions available last year may have changed. What should the owner do?', 'Check current rules each year',
           ('Assume tax law never changes', 'it changes'), ('Copy last year\'s return exactly', 'risky'),
           ('Skip deductions to be safe', 'may overpay'), 'Rules change.'),
@@ -355,8 +361,12 @@ s67 = SET('ENT.TAX.05',
         Q('A freelancer receives 1,500, 900 and 2,100 dollars in a month. With a 25 percent assumption, how much goes to tax '
           'savings?', '1,125 dollars', ('4,500 dollars', 'total income'), ('375 dollars', 'only one payment'), ('3,375 dollars', 'kept'),
           '(1,500 + 900 + 2,100) x 0.25 = 1,125.', calc=lambda: (1500 + 900 + 2100) * 0.25 == 1125),
-        Q('Same month. How much is left for business and personal use?', '3,375 dollars', ('1,125 dollars', 'set aside'),
-          ('4,500 dollars', 'total'), ('2,250 dollars', 'half'), '4,500 - 1,125 = 3,375.', calc=lambda: 4500 - 1125 == 3375),
+        Q('A freelancer receives 1,500, 900 and 2,100 dollars in a month and sets aside 25 percent for taxes. How much is left for business and personal use?',
+          '3,375 dollars',
+          ('1,125 dollars', 'set aside'), ('4,500 dollars', 'total'),
+          ('2,250 dollars', 'half'),
+          '4,500 - 1,125 = 3,375.',
+          calc=lambda: 4500 - 1125 == 3375),
         Q('Which habit is most reliable?', 'Move the tax share as soon as each payment arrives',
           ('Move whatever is left at the end of the year', 'often nothing left'),
           ('Wait until the tax bill arrives to look for money', 'risky'),

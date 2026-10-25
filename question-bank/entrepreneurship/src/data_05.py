@@ -2,11 +2,12 @@
 from eq import Q, sec, cs, SET
 
 # ------------------------------------------------------------------ Set 19: name, entity, brand
-NAME = ('Three different things are easy to mix up. The LEGAL ENTITY is the business as the law sees it, such as a '
-        'sole proprietorship or an LLC (limited liability company), with its official name on state records if it was '
-        'registered. The BUSINESS NAME customers see may be different, such as a trade name. The BRAND is how customers '
-        'recognize and feel about the business: its logo, colors, voice and reputation. Example: "Rivera Services LLC" '
-        '(entity) might operate as "Sparkle Clean" (name customers see) with a blue bubble logo (brand).')
+NAME = (('Three different things are easy to mix up. The LEGAL IDENTITY is the business as the law sees it, with its '
+        'legal name. A sole proprietorship is not separate from its owner; an LLC (limited liability company) is a '
+        'separate LEGAL ENTITY, with its official name on state records. The BUSINESS NAME customers see may be '
+        'different, such as a trade name. The BRAND is how customers recognize and feel about the business: its logo,'
+        ' colors, voice and reputation. Example: "Rivera Services LLC" (entity) might operate as "Sparkle Clean" '
+        '(name customers see) with a blue bubble logo (brand).'))
 
 s19 = SET('ENT.LEGAL.01',
     M=sec('Tell a business name, a legal entity and a brand apart', NAME, [
@@ -35,10 +36,11 @@ s19 = SET('ENT.LEGAL.01',
           ('The registered agent\'s office address in the state', 'not customer-facing'),
           'Feelings and reputation are part of the brand.'),
     ]),
-    B=[cs('Person, nickname, reputation', 'Think about a person. Their legal name is on official papers: "Robert James '
-          'Lee." Friends call him "Bobby": a nickname. People who know him say he is reliable and funny: his reputation. '
-          'A business works the same way. The legal entity is the name on official papers. The business name customers '
-          'see is like a nickname. The brand is like a reputation and style that customers recognize.', [
+    B=[cs('Person, nickname, reputation', ('Think about a person. Their legal name is on official papers: "Robert James Lee." Friends call him "Bobby": '
+                                          'a nickname. People who know him say he is reliable and funny: his reputation. A business works the same way.'
+                                          ' The legal name is the one on official papers (for an LLC, the name of the separate legal entity). The '
+                                          'business name customers see is like a nickname. The brand is like a reputation and style that customers '
+                                          'recognize.'), [
         Q('"Robert James Lee" on official papers is like a business\'s what?', 'Legal entity name',
           ('Brand and reputation with customers', 'that is reputation'),
           ('Nickname used by friends and customers', 'that is "Bobby"'), ('Logo', 'not a name'), 'Official papers show the legal name.'),
