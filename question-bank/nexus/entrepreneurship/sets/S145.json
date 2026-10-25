@@ -1,0 +1,655 @@
+{
+ "set": 145,
+ "title": "Shipping costs and return addresses",
+ "outcome": "ENT.PROD.05",
+ "content_status": "stable",
+ "requires": [
+  142,
+  40
+ ],
+ "module": "products",
+ "path_refs": [
+  "products"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Estimate shipping costs, choose a pricing approach and set a return address",
+   "questions": [
+    {
+     "id": "S145-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Path: physical products & e-commerce",
+     "type": "mc",
+     "prompt": "What can make a large, light box cost more to ship?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Having a logo on the box"
+      },
+      {
+       "letter": "B",
+       "text": "Dimensional weight pricing"
+      },
+      {
+       "letter": "C",
+       "text": "Shipping on a Monday"
+      },
+      {
+       "letter": "D",
+       "text": "Using a darker color tape"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Dimensional weight pricing",
+     "intro": "Shipping cost depends on weight, package size (carriers may charge by DIMENSIONAL WEIGHT for large, light boxes), distance and speed. Weigh and measure packed items, compare carriers and services, and decide how to charge: customer pays actual shipping, a flat rate, free shipping built into prices, or free over a minimum order. Use a reliable RETURN ADDRESS on labels; a PO Box can work as a return address, while some carriers that need a street address may use a PO Box Street Addressing option where available.",
+     "feedback": "Size-based pricing."
+    },
+    {
+     "id": "S145-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Path: physical products & e-commerce",
+     "type": "mc",
+     "prompt": "What is \"free shipping built into prices\"?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Raising product prices to cover shipping"
+      },
+      {
+       "letter": "B",
+       "text": "The carrier ships for free"
+      },
+      {
+       "letter": "C",
+       "text": "Shipping is removed from the business's costs"
+      },
+      {
+       "letter": "D",
+       "text": "Customers pay twice"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Raising product prices to cover shipping",
+     "intro": "Shipping cost depends on weight, package size (carriers may charge by DIMENSIONAL WEIGHT for large, light boxes), distance and speed. Weigh and measure packed items, compare carriers and services, and decide how to charge: customer pays actual shipping, a flat rate, free shipping built into prices, or free over a minimum order. Use a reliable RETURN ADDRESS on labels; a PO Box can work as a return address, while some carriers that need a street address may use a PO Box Street Addressing option where available.",
+     "feedback": "Cost is still paid."
+    },
+    {
+     "id": "S145-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Path: physical products & e-commerce",
+     "type": "mc",
+     "prompt": "Free shipping over 50 dollars. An order is 42 dollars. How much more to qualify?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "92 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "50 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "42 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "8 dollars"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "8 dollars",
+     "intro": "Shipping cost depends on weight, package size (carriers may charge by DIMENSIONAL WEIGHT for large, light boxes), distance and speed. Weigh and measure packed items, compare carriers and services, and decide how to charge: customer pays actual shipping, a flat rate, free shipping built into prices, or free over a minimum order. Use a reliable RETURN ADDRESS on labels; a PO Box can work as a return address, while some carriers that need a street address may use a PO Box Street Addressing option where available.",
+     "feedback": "50 - 42 = 8."
+    },
+    {
+     "id": "S145-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Path: physical products & e-commerce",
+     "type": "mc",
+     "prompt": "Can a PO Box be used as a return address?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only for international mail"
+      },
+      {
+       "letter": "B",
+       "text": "No, never, under any carrier's rules"
+      },
+      {
+       "letter": "C",
+       "text": "Only for large boxes"
+      },
+      {
+       "letter": "D",
+       "text": "Yes, it can work as a return address"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Yes, it can work as a return address",
+     "intro": "Shipping cost depends on weight, package size (carriers may charge by DIMENSIONAL WEIGHT for large, light boxes), distance and speed. Weigh and measure packed items, compare carriers and services, and decide how to charge: customer pays actual shipping, a flat rate, free shipping built into prices, or free over a minimum order. Use a reliable RETURN ADDRESS on labels; a PO Box can work as a return address, while some carriers that need a street address may use a PO Box Street Addressing option where available.",
+     "feedback": "Return addresses can be boxes."
+    },
+    {
+     "id": "S145-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Path: physical products & e-commerce",
+     "type": "mc",
+     "prompt": "Why weigh and measure packed items?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "To decorate the box"
+      },
+      {
+       "letter": "B",
+       "text": "Because carriers require photos"
+      },
+      {
+       "letter": "C",
+       "text": "To estimate shipping cost accurately"
+      },
+      {
+       "letter": "D",
+       "text": "To avoid any packaging"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "To estimate shipping cost accurately",
+     "intro": "Shipping cost depends on weight, package size (carriers may charge by DIMENSIONAL WEIGHT for large, light boxes), distance and speed. Weigh and measure packed items, compare carriers and services, and decide how to charge: customer pays actual shipping, a flat rate, free shipping built into prices, or free over a minimum order. Use a reliable RETURN ADDRESS on labels; a PO Box can work as a return address, while some carriers that need a street address may use a PO Box Street Addressing option where available.",
+     "feedback": "Accurate costs."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Mailing a pillow versus a book",
+   "questions": [
+    {
+     "id": "S145-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Path: physical products & e-commerce",
+     "type": "mc",
+     "prompt": "Why can the pillow box cost a lot?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Pillows are heavy"
+      },
+      {
+       "letter": "B",
+       "text": "It is big even though it is light"
+      },
+      {
+       "letter": "C",
+       "text": "It has no address"
+      },
+      {
+       "letter": "D",
+       "text": "Pillows are illegal to mail in boxes"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "It is big even though it is light",
+     "intro": "A pillow is light but big; a book is small but heavy. Carriers care about both, so a big pillow box can cost more than you expect. Choosing the smallest box that protects the item can lower cost. And the return address is like the \"return to sender\" note: it should go somewhere you reliably check.",
+     "feedback": "Size matters."
+    },
+    {
+     "id": "S145-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Path: physical products & e-commerce",
+     "type": "mc",
+     "prompt": "What can lower shipping cost?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Extra empty space"
+      },
+      {
+       "letter": "B",
+       "text": "The biggest box possible, for extra room"
+      },
+      {
+       "letter": "C",
+       "text": "No box at all"
+      },
+      {
+       "letter": "D",
+       "text": "The smallest box that still protects the item"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The smallest box that still protects the item",
+     "intro": "A pillow is light but big; a book is small but heavy. Carriers care about both, so a big pillow box can cost more than you expect. Choosing the smallest box that protects the item can lower cost. And the return address is like the \"return to sender\" note: it should go somewhere you reliably check.",
+     "feedback": "Right-size."
+    },
+    {
+     "id": "S145-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Path: physical products & e-commerce",
+     "type": "mc",
+     "prompt": "The book is small but what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Huge"
+      },
+      {
+       "letter": "B",
+       "text": "Free"
+      },
+      {
+       "letter": "C",
+       "text": "Heavy"
+      },
+      {
+       "letter": "D",
+       "text": "Light"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Heavy",
+     "intro": "A pillow is light but big; a book is small but heavy. Carriers care about both, so a big pillow box can cost more than you expect. Choosing the smallest box that protects the item can lower cost. And the return address is like the \"return to sender\" note: it should go somewhere you reliably check.",
+     "feedback": "Weight matters."
+    },
+    {
+     "id": "S145-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Path: physical products & e-commerce",
+     "type": "mc",
+     "prompt": "The return address should go where?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A random address you never visit"
+      },
+      {
+       "letter": "B",
+       "text": "A competitor's shop"
+      },
+      {
+       "letter": "C",
+       "text": "Somewhere you reliably check"
+      },
+      {
+       "letter": "D",
+       "text": "Nowhere"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Somewhere you reliably check",
+     "intro": "A pillow is light but big; a book is small but heavy. Carriers care about both, so a big pillow box can cost more than you expect. Choosing the smallest box that protects the item can lower cost. And the return address is like the \"return to sender\" note: it should go somewhere you reliably check.",
+     "feedback": "Reliable returns."
+    },
+    {
+     "id": "S145-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Path: physical products & e-commerce",
+     "type": "mc",
+     "prompt": "Carriers price by what two things here?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Size and weight"
+      },
+      {
+       "letter": "B",
+       "text": "Color and font"
+      },
+      {
+       "letter": "C",
+       "text": "Day and mood"
+      },
+      {
+       "letter": "D",
+       "text": "Logo and price"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Size and weight",
+     "intro": "A pillow is light but big; a book is small but heavy. Carriers care about both, so a big pillow box can cost more than you expect. Choosing the smallest box that protects the item can lower cost. And the return address is like the \"return to sender\" note: it should go somewhere you reliably check.",
+     "feedback": "Physical factors."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who misses MAIN may not see why size matters; mailing a pillow versus a book makes it concrete."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Apply it: set shipping prices",
+   "questions": [
+    {
+     "id": "S145-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Path: physical products & e-commerce",
+     "type": "mc",
+     "prompt": "Average shipping costs 7 dollars per order. Product price is 28. With free shipping built in, what price covers it?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "28 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "35 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "21 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "7 dollars"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "35 dollars",
+     "intro": "Shipping cost depends on weight, package size (carriers may charge by DIMENSIONAL WEIGHT for large, light boxes), distance and speed. Weigh and measure packed items, compare carriers and services, and decide how to charge: customer pays actual shipping, a flat rate, free shipping built into prices, or free over a minimum order. Use a reliable RETURN ADDRESS on labels; a PO Box can work as a return address, while some carriers that need a street address may use a PO Box Street Addressing option where available.",
+     "feedback": "28 + 7 = 35."
+    },
+    {
+     "id": "S145-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Path: physical products & e-commerce",
+     "type": "mc",
+     "prompt": "A flat rate of 6 dollars is charged but average cost is 8.50. How much is lost per order?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "2.50 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "6.00 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "8.50 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "14.50 dollars"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "2.50 dollars",
+     "intro": "Shipping cost depends on weight, package size (carriers may charge by DIMENSIONAL WEIGHT for large, light boxes), distance and speed. Weigh and measure packed items, compare carriers and services, and decide how to charge: customer pays actual shipping, a flat rate, free shipping built into prices, or free over a minimum order. Use a reliable RETURN ADDRESS on labels; a PO Box can work as a return address, while some carriers that need a street address may use a PO Box Street Addressing option where available.",
+     "feedback": "8.50 - 6 = 2.50."
+    },
+    {
+     "id": "S145-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Path: physical products & e-commerce",
+     "type": "mc",
+     "prompt": "Over 300 orders, what does that shortfall cost?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "2.50 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "120 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "750 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "302.50 dollars"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "750 dollars",
+     "intro": "Shipping cost depends on weight, package size (carriers may charge by DIMENSIONAL WEIGHT for large, light boxes), distance and speed. Weigh and measure packed items, compare carriers and services, and decide how to charge: customer pays actual shipping, a flat rate, free shipping built into prices, or free over a minimum order. Use a reliable RETURN ADDRESS on labels; a PO Box can work as a return address, while some carriers that need a street address may use a PO Box Street Addressing option where available.",
+     "feedback": "300 x 2.50 = 750."
+    },
+    {
+     "id": "S145-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Path: physical products & e-commerce",
+     "type": "mc",
+     "prompt": "A box measures large but the item is light. What could cut costs?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A smaller box that still protects it"
+      },
+      {
+       "letter": "B",
+       "text": "A larger box with more space for safety"
+      },
+      {
+       "letter": "C",
+       "text": "Removing the label"
+      },
+      {
+       "letter": "D",
+       "text": "Adding weight"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "A smaller box that still protects it",
+     "intro": "Shipping cost depends on weight, package size (carriers may charge by DIMENSIONAL WEIGHT for large, light boxes), distance and speed. Weigh and measure packed items, compare carriers and services, and decide how to charge: customer pays actual shipping, a flat rate, free shipping built into prices, or free over a minimum order. Use a reliable RETURN ADDRESS on labels; a PO Box can work as a return address, while some carriers that need a street address may use a PO Box Street Addressing option where available.",
+     "feedback": "Right-size."
+    },
+    {
+     "id": "S145-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Path: physical products & e-commerce",
+     "type": "mc",
+     "prompt": "A carrier needs a street address for returns, but the owner uses a PO Box. What might help where available?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Using a neighbor's address without asking"
+      },
+      {
+       "letter": "B",
+       "text": "PO Box Street Addressing"
+      },
+      {
+       "letter": "C",
+       "text": "No return address at all"
+      },
+      {
+       "letter": "D",
+       "text": "Using a fake street address"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "PO Box Street Addressing",
+     "intro": "Shipping cost depends on weight, package size (carriers may charge by DIMENSIONAL WEIGHT for large, light boxes), distance and speed. Weigh and measure packed items, compare carriers and services, and decide how to charge: customer pays actual shipping, a flat rate, free shipping built into prices, or free over a minimum order. Use a reliable RETURN ADDRESS on labels; a PO Box can work as a return address, while some carriers that need a street address may use a PO Box Street Addressing option where available.",
+     "feedback": "Official option."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Handle the complications: zones and rate changes",
+   "questions": [
+    {
+     "id": "S145-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Path: physical products & e-commerce",
+     "type": "mc",
+     "prompt": "Shipping to far zones costs much more than nearby ones. What pricing approach handles this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Refuse all far orders"
+      },
+      {
+       "letter": "B",
+       "text": "Charge actual shipping or zone-based rates"
+      },
+      {
+       "letter": "C",
+       "text": "Free shipping everywhere with no price change"
+      },
+      {
+       "letter": "D",
+       "text": "One tiny flat rate for every distance"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Charge actual shipping or zone-based rates",
+     "intro": "Shipping cost depends on weight, package size (carriers may charge by DIMENSIONAL WEIGHT for large, light boxes), distance and speed. Weigh and measure packed items, compare carriers and services, and decide how to charge: customer pays actual shipping, a flat rate, free shipping built into prices, or free over a minimum order. Use a reliable RETURN ADDRESS on labels; a PO Box can work as a return address, while some carriers that need a street address may use a PO Box Street Addressing option where available.",
+     "feedback": "Match cost."
+    },
+    {
+     "id": "S145-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Path: physical products & e-commerce",
+     "type": "mc",
+     "prompt": "Carrier rates rise 8 percent on an average 9-dollar label. What is the new average?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "0.72 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "17 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "9.72 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "9.08 dollars"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "9.72 dollars",
+     "intro": "Shipping cost depends on weight, package size (carriers may charge by DIMENSIONAL WEIGHT for large, light boxes), distance and speed. Weigh and measure packed items, compare carriers and services, and decide how to charge: customer pays actual shipping, a flat rate, free shipping built into prices, or free over a minimum order. Use a reliable RETURN ADDRESS on labels; a PO Box can work as a return address, while some carriers that need a street address may use a PO Box Street Addressing option where available.",
+     "feedback": "9 x 1.08 = 9.72."
+    },
+    {
+     "id": "S145-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Path: physical products & e-commerce",
+     "type": "mc",
+     "prompt": "Free-over-50 raised average order size from 38 to 52 dollars. Shipping costs 8. What changed in revenue per order before shipping?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "8 dollars more"
+      },
+      {
+       "letter": "B",
+       "text": "No change"
+      },
+      {
+       "letter": "C",
+       "text": "52 dollars more"
+      },
+      {
+       "letter": "D",
+       "text": "14 dollars more"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "14 dollars more",
+     "intro": "Shipping cost depends on weight, package size (carriers may charge by DIMENSIONAL WEIGHT for large, light boxes), distance and speed. Weigh and measure packed items, compare carriers and services, and decide how to charge: customer pays actual shipping, a flat rate, free shipping built into prices, or free over a minimum order. Use a reliable RETURN ADDRESS on labels; a PO Box can work as a return address, while some carriers that need a street address may use a PO Box Street Addressing option where available.",
+     "feedback": "52 - 38 = 14."
+    },
+    {
+     "id": "S145-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Path: physical products & e-commerce",
+     "type": "mc",
+     "prompt": "Returns arrive at an old address the owner no longer checks. What should she do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ignore lost returns"
+      },
+      {
+       "letter": "B",
+       "text": "Update the return address on labels and accounts"
+      },
+      {
+       "letter": "C",
+       "text": "Stop accepting any returns from customers"
+      },
+      {
+       "letter": "D",
+       "text": "Use a fake address"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Update the return address on labels and accounts",
+     "intro": "Shipping cost depends on weight, package size (carriers may charge by DIMENSIONAL WEIGHT for large, light boxes), distance and speed. Weigh and measure packed items, compare carriers and services, and decide how to charge: customer pays actual shipping, a flat rate, free shipping built into prices, or free over a minimum order. Use a reliable RETURN ADDRESS on labels; a PO Box can work as a return address, while some carriers that need a street address may use a PO Box Street Addressing option where available.",
+     "feedback": "Keep it current."
+    },
+    {
+     "id": "S145-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Path: physical products & e-commerce",
+     "type": "mc",
+     "prompt": "Which statement is accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Size, weight, distance and speed set shipping costs."
+      },
+      {
+       "letter": "B",
+       "text": "Return addresses do not matter."
+      },
+      {
+       "letter": "C",
+       "text": "Box size never affects the shipping cost at all."
+      },
+      {
+       "letter": "D",
+       "text": "Shipping is always free for sellers."
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Size, weight, distance and speed set shipping costs.",
+     "intro": "Shipping cost depends on weight, package size (carriers may charge by DIMENSIONAL WEIGHT for large, light boxes), distance and speed. Weigh and measure packed items, compare carriers and services, and decide how to charge: customer pays actual shipping, a flat rate, free shipping built into prices, or free over a minimum order. Use a reliable RETURN ADDRESS on labels; a PO Box can work as a return address, while some carriers that need a street address may use a PO Box Street Addressing option where available.",
+     "feedback": "Plan shipping."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

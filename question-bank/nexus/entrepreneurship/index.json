@@ -119,6 +119,10 @@
    "title": "Apply a documented change of offer (switching to the item customers preferred) to a new business",
    "alignment": "local"
   },
+  "ENT.CASE.10": {
+   "title": "Apply a documented early test (serving a few real guests during a known demand spike) to a new service",
+   "alignment": "local"
+  },
   "ENT.CASH.01": {
    "title": "Tell revenue, profit and cash available apart in a small example",
    "alignment": "local"
@@ -435,6 +439,26 @@
    "title": "Decide when a price needs review from stated costs, demand and capacity, and communicate a change",
    "alignment": "local"
   },
+  "ENT.PROD.01": {
+   "title": "Compare suppliers by samples, terms and reliability, not price alone",
+   "alignment": "local"
+  },
+  "ENT.PROD.02": {
+   "title": "Choose packaging that protects items, and price in damage",
+   "alignment": "local"
+  },
+  "ENT.PROD.03": {
+   "title": "Plan returns, restocking and order fulfillment",
+   "alignment": "local"
+  },
+  "ENT.PROD.04": {
+   "title": "Compare selling channels by fees, control and customers reached",
+   "alignment": "local"
+  },
+  "ENT.PROD.05": {
+   "title": "Include shipping costs and a reliable return address in an online product plan",
+   "alignment": "local"
+  },
   "ENT.RISK.01": {
    "title": "Match common business risks to insurance categories and check exclusions",
    "alignment": "local"
@@ -469,6 +493,22 @@
   },
   "ENT.START.03": {
    "title": "Classify a business idea as a service, physical product, digital product or content business, and name what each needs",
+   "alignment": "local"
+  },
+  "ENT.SVC.01": {
+   "title": "Estimate a job from stated hours, rate, materials and travel",
+   "alignment": "local"
+  },
+  "ENT.SVC.02": {
+   "title": "Compute how many appointments fit with travel and setup",
+   "alignment": "local"
+  },
+  "ENT.SVC.03": {
+   "title": "Write service scope and deposit terms that prevent disputes",
+   "alignment": "local"
+  },
+  "ENT.SVC.04": {
+   "title": "Plan for repeat clients and recurring appointments",
    "alignment": "local"
   },
   "ENT.TAX.01": {
@@ -843,7 +883,13 @@
    "title": "Path: services, freelancing & local businesses",
    "kind": "path",
    "description": "Estimating, scheduling, scope.",
-   "sets": [],
+   "sets": [
+    136,
+    137,
+    138,
+    139,
+    140
+   ],
    "paths": [
     "services"
    ]
@@ -853,7 +899,13 @@
    "title": "Path: physical products & e-commerce",
    "kind": "path",
    "description": "Suppliers, packaging, returns.",
-   "sets": [],
+   "sets": [
+    141,
+    142,
+    143,
+    144,
+    145
+   ],
    "paths": [
     "products"
    ]
@@ -1824,6 +1876,76 @@
    "title": "Founder case: Wrigley follows what customers wanted",
    "outcome": "ENT.CASE.09",
    "module": "growth"
+  },
+  {
+   "set": 136,
+   "file": "sets/S136.json",
+   "title": "Estimating a service job",
+   "outcome": "ENT.SVC.01",
+   "module": "services"
+  },
+  {
+   "set": 137,
+   "file": "sets/S137.json",
+   "title": "Appointment capacity and travel time",
+   "outcome": "ENT.SVC.02",
+   "module": "services"
+  },
+  {
+   "set": 138,
+   "file": "sets/S138.json",
+   "title": "Service scope and deposits",
+   "outcome": "ENT.SVC.03",
+   "module": "services"
+  },
+  {
+   "set": 139,
+   "file": "sets/S139.json",
+   "title": "Repeat clients and scheduling them",
+   "outcome": "ENT.SVC.04",
+   "module": "services"
+  },
+  {
+   "set": 140,
+   "file": "sets/S140.json",
+   "title": "Founder case: Airbnb starts with its founders' own apartment",
+   "outcome": "ENT.CASE.10",
+   "module": "services"
+  },
+  {
+   "set": 141,
+   "file": "sets/S141.json",
+   "title": "Suppliers, samples and reliability",
+   "outcome": "ENT.PROD.01",
+   "module": "products"
+  },
+  {
+   "set": 142,
+   "file": "sets/S142.json",
+   "title": "Packaging and damage",
+   "outcome": "ENT.PROD.02",
+   "module": "products"
+  },
+  {
+   "set": 143,
+   "file": "sets/S143.json",
+   "title": "Returns and fulfillment",
+   "outcome": "ENT.PROD.03",
+   "module": "products"
+  },
+  {
+   "set": 144,
+   "file": "sets/S144.json",
+   "title": "Choosing selling channels",
+   "outcome": "ENT.PROD.04",
+   "module": "products"
+  },
+  {
+   "set": 145,
+   "file": "sets/S145.json",
+   "title": "Shipping costs and return addresses",
+   "outcome": "ENT.PROD.05",
+   "module": "products"
   }
  ]
 }

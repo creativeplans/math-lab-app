@@ -1,0 +1,654 @@
+{
+ "set": 137,
+ "title": "Appointment capacity and travel time",
+ "outcome": "ENT.SVC.02",
+ "content_status": "stable",
+ "requires": [
+  136
+ ],
+ "module": "services",
+ "path_refs": [
+  "services"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Calculate daily appointment capacity including travel",
+   "questions": [
+    {
+     "id": "S137-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Path: services, freelancing & local businesses",
+     "type": "mc",
+     "prompt": "A day has 8 hours. Each appointment is 1 hour plus 30 minutes of travel. How many full appointments fit?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "5"
+      },
+      {
+       "letter": "B",
+       "text": "6"
+      },
+      {
+       "letter": "C",
+       "text": "8"
+      },
+      {
+       "letter": "D",
+       "text": "4"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "5",
+     "intro": "A service business sells time, so CAPACITY depends on how many appointments fit in a day. Count appointment length, TRAVEL between appointments, and a small BUFFER for delays. Example: a 9-hour day with 1.5-hour appointments plus 30 minutes of travel each fits 9 / 2 = 4.5, so 4 appointments. Grouping clients by area (ROUTING) reduces travel and increases capacity. Track no-shows and late cancellations, which waste capacity.",
+     "feedback": "8 / 1.5 = 5.33, so 5."
+    },
+    {
+     "id": "S137-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Path: services, freelancing & local businesses",
+     "type": "mc",
+     "prompt": "What is routing?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A computer network for the office"
+      },
+      {
+       "letter": "B",
+       "text": "Grouping clients by area to reduce travel"
+      },
+      {
+       "letter": "C",
+       "text": "Cancelling clients who live far away"
+      },
+      {
+       "letter": "D",
+       "text": "Charging more for far-away clients only"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Grouping clients by area to reduce travel",
+     "intro": "A service business sells time, so CAPACITY depends on how many appointments fit in a day. Count appointment length, TRAVEL between appointments, and a small BUFFER for delays. Example: a 9-hour day with 1.5-hour appointments plus 30 minutes of travel each fits 9 / 2 = 4.5, so 4 appointments. Grouping clients by area (ROUTING) reduces travel and increases capacity. Track no-shows and late cancellations, which waste capacity.",
+     "feedback": "Efficient travel."
+    },
+    {
+     "id": "S137-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Path: services, freelancing & local businesses",
+     "type": "mc",
+     "prompt": "Why include a buffer?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "To take more appointments"
+      },
+      {
+       "letter": "B",
+       "text": "Because buffers are required by law for services"
+      },
+      {
+       "letter": "C",
+       "text": "To charge for unused time"
+      },
+      {
+       "letter": "D",
+       "text": "To handle delays without making later clients wait"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "To handle delays without making later clients wait",
+     "intro": "A service business sells time, so CAPACITY depends on how many appointments fit in a day. Count appointment length, TRAVEL between appointments, and a small BUFFER for delays. Example: a 9-hour day with 1.5-hour appointments plus 30 minutes of travel each fits 9 / 2 = 4.5, so 4 appointments. Grouping clients by area (ROUTING) reduces travel and increases capacity. Track no-shows and late cancellations, which waste capacity.",
+     "feedback": "Absorb delays."
+    },
+    {
+     "id": "S137-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Path: services, freelancing & local businesses",
+     "type": "mc",
+     "prompt": "What wastes capacity?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Accurate scheduling"
+      },
+      {
+       "letter": "B",
+       "text": "No-shows and late cancellations"
+      },
+      {
+       "letter": "C",
+       "text": "Clients who arrive on time"
+      },
+      {
+       "letter": "D",
+       "text": "Grouping by area"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "No-shows and late cancellations",
+     "intro": "A service business sells time, so CAPACITY depends on how many appointments fit in a day. Count appointment length, TRAVEL between appointments, and a small BUFFER for delays. Example: a 9-hour day with 1.5-hour appointments plus 30 minutes of travel each fits 9 / 2 = 4.5, so 4 appointments. Grouping clients by area (ROUTING) reduces travel and increases capacity. Track no-shows and late cancellations, which waste capacity.",
+     "feedback": "Lost slots."
+    },
+    {
+     "id": "S137-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Path: services, freelancing & local businesses",
+     "type": "mc",
+     "prompt": "Cutting travel from 30 to 15 minutes per appointment in an 8-hour day with 1-hour appointments allows how many?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "6"
+      },
+      {
+       "letter": "B",
+       "text": "7"
+      },
+      {
+       "letter": "C",
+       "text": "8"
+      },
+      {
+       "letter": "D",
+       "text": "5"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "6",
+     "intro": "A service business sells time, so CAPACITY depends on how many appointments fit in a day. Count appointment length, TRAVEL between appointments, and a small BUFFER for delays. Example: a 9-hour day with 1.5-hour appointments plus 30 minutes of travel each fits 9 / 2 = 4.5, so 4 appointments. Grouping clients by area (ROUTING) reduces travel and increases capacity. Track no-shows and late cancellations, which waste capacity.",
+     "feedback": "8 / 1.25 = 6.4, so 6."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Dividing the day into slots",
+   "questions": [
+    {
+     "id": "S137-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Path: services, freelancing & local businesses",
+     "type": "mc",
+     "prompt": "45 minutes is how many hours?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "1.5"
+      },
+      {
+       "letter": "B",
+       "text": "0.45"
+      },
+      {
+       "letter": "C",
+       "text": "0.25"
+      },
+      {
+       "letter": "D",
+       "text": "0.75"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "0.75",
+     "intro": "To find how many appointments fit, divide the available hours by the time each one takes, including travel. Then round DOWN, because a partial appointment cannot be sold. Example: 7 hours / 1.25 hours = 5.6, so 5 appointments. Convert minutes to hours first: 45 minutes = 0.75 hours, 30 minutes = 0.5 hours, 15 minutes = 0.25 hours. Then add the parts before dividing.",
+     "feedback": "45 / 60 = 0.75."
+    },
+    {
+     "id": "S137-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Path: services, freelancing & local businesses",
+     "type": "mc",
+     "prompt": "6 hours / 1.5 hours per slot. How many slots?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "9"
+      },
+      {
+       "letter": "B",
+       "text": "7.5"
+      },
+      {
+       "letter": "C",
+       "text": "4"
+      },
+      {
+       "letter": "D",
+       "text": "4.5"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "4",
+     "intro": "To find how many appointments fit, divide the available hours by the time each one takes, including travel. Then round DOWN, because a partial appointment cannot be sold. Example: 7 hours / 1.25 hours = 5.6, so 5 appointments. Convert minutes to hours first: 45 minutes = 0.75 hours, 30 minutes = 0.5 hours, 15 minutes = 0.25 hours. Then add the parts before dividing.",
+     "feedback": "6 / 1.5 = 4."
+    },
+    {
+     "id": "S137-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Path: services, freelancing & local businesses",
+     "type": "mc",
+     "prompt": "7 hours / 1.25 hours, rounded down?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "8.75"
+      },
+      {
+       "letter": "B",
+       "text": "5"
+      },
+      {
+       "letter": "C",
+       "text": "5.6"
+      },
+      {
+       "letter": "D",
+       "text": "6"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "5",
+     "intro": "To find how many appointments fit, divide the available hours by the time each one takes, including travel. Then round DOWN, because a partial appointment cannot be sold. Example: 7 hours / 1.25 hours = 5.6, so 5 appointments. Convert minutes to hours first: 45 minutes = 0.75 hours, 30 minutes = 0.5 hours, 15 minutes = 0.25 hours. Then add the parts before dividing.",
+     "feedback": "7 / 1.25 = 5.6, so 5."
+    },
+    {
+     "id": "S137-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Path: services, freelancing & local businesses",
+     "type": "mc",
+     "prompt": "Why round down?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Hours are fake"
+      },
+      {
+       "letter": "B",
+       "text": "A partial appointment cannot be sold"
+      },
+      {
+       "letter": "C",
+       "text": "It does not matter"
+      },
+      {
+       "letter": "D",
+       "text": "Rounding up is always better for the owner"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A partial appointment cannot be sold",
+     "intro": "To find how many appointments fit, divide the available hours by the time each one takes, including travel. Then round DOWN, because a partial appointment cannot be sold. Example: 7 hours / 1.25 hours = 5.6, so 5 appointments. Convert minutes to hours first: 45 minutes = 0.75 hours, 30 minutes = 0.5 hours, 15 minutes = 0.25 hours. Then add the parts before dividing.",
+     "feedback": "Whole slots only."
+    },
+    {
+     "id": "S137-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Path: services, freelancing & local businesses",
+     "type": "mc",
+     "prompt": "1 hour plus 15 minutes travel is how many hours?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "0.75"
+      },
+      {
+       "letter": "B",
+       "text": "1.15"
+      },
+      {
+       "letter": "C",
+       "text": "1.25"
+      },
+      {
+       "letter": "D",
+       "text": "16"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "1.25",
+     "intro": "To find how many appointments fit, divide the available hours by the time each one takes, including travel. Then round DOWN, because a partial appointment cannot be sold. Example: 7 hours / 1.25 hours = 5.6, so 5 appointments. Convert minutes to hours first: 45 minutes = 0.75 hours, 30 minutes = 0.5 hours, 15 minutes = 0.25 hours. Then add the parts before dividing.",
+     "feedback": "1 + 0.25 = 1.25."
+    }
+   ],
+   "branch_mode": "math_prerequisite",
+   "relationship": "A learner who misses MAIN may mishandle minutes and rounding; this practices slot math."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Apply it: plan a mobile service day",
+   "questions": [
+    {
+     "id": "S137-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Path: services, freelancing & local businesses",
+     "type": "mc",
+     "prompt": "A mobile groomer works 9 hours. Each groom is 1.5 hours with 30 minutes of driving. How many grooms fit?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "4"
+      },
+      {
+       "letter": "B",
+       "text": "5"
+      },
+      {
+       "letter": "C",
+       "text": "6"
+      },
+      {
+       "letter": "D",
+       "text": "3"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "4",
+     "intro": "A service business sells time, so CAPACITY depends on how many appointments fit in a day. Count appointment length, TRAVEL between appointments, and a small BUFFER for delays. Example: a 9-hour day with 1.5-hour appointments plus 30 minutes of travel each fits 9 / 2 = 4.5, so 4 appointments. Grouping clients by area (ROUTING) reduces travel and increases capacity. Track no-shows and late cancellations, which waste capacity.",
+     "feedback": "9 / 2 = 4.5, so 4."
+    },
+    {
+     "id": "S137-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Path: services, freelancing & local businesses",
+     "type": "mc",
+     "prompt": "Routing cuts driving to 15 minutes each. How many grooms fit now?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "4"
+      },
+      {
+       "letter": "B",
+       "text": "5"
+      },
+      {
+       "letter": "C",
+       "text": "6"
+      },
+      {
+       "letter": "D",
+       "text": "7"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "5",
+     "intro": "A service business sells time, so CAPACITY depends on how many appointments fit in a day. Count appointment length, TRAVEL between appointments, and a small BUFFER for delays. Example: a 9-hour day with 1.5-hour appointments plus 30 minutes of travel each fits 9 / 2 = 4.5, so 4 appointments. Grouping clients by area (ROUTING) reduces travel and increases capacity. Track no-shows and late cancellations, which waste capacity.",
+     "feedback": "9 / 1.75 = 5.14, so 5."
+    },
+    {
+     "id": "S137-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Path: services, freelancing & local businesses",
+     "type": "mc",
+     "prompt": "Each groom earns 70 dollars. How much more per day does routing allow?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "350 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "280 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "140 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "70 dollars"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "70 dollars",
+     "intro": "A service business sells time, so CAPACITY depends on how many appointments fit in a day. Count appointment length, TRAVEL between appointments, and a small BUFFER for delays. Example: a 9-hour day with 1.5-hour appointments plus 30 minutes of travel each fits 9 / 2 = 4.5, so 4 appointments. Grouping clients by area (ROUTING) reduces travel and increases capacity. Track no-shows and late cancellations, which waste capacity.",
+     "feedback": "5 x 70 - 4 x 70 = 70."
+    },
+    {
+     "id": "S137-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Path: services, freelancing & local businesses",
+     "type": "mc",
+     "prompt": "Two no-shows a week at 70 dollars each cost how much over 4 weeks?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "140 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "280 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "560 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "70 dollars"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "560 dollars",
+     "intro": "A service business sells time, so CAPACITY depends on how many appointments fit in a day. Count appointment length, TRAVEL between appointments, and a small BUFFER for delays. Example: a 9-hour day with 1.5-hour appointments plus 30 minutes of travel each fits 9 / 2 = 4.5, so 4 appointments. Grouping clients by area (ROUTING) reduces travel and increases capacity. Track no-shows and late cancellations, which waste capacity.",
+     "feedback": "2 x 70 x 4 = 560."
+    },
+    {
+     "id": "S137-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Path: services, freelancing & local businesses",
+     "type": "mc",
+     "prompt": "Which policy helps reduce no-shows?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Reminder messages and a deposit for bookings"
+      },
+      {
+       "letter": "B",
+       "text": "Booking clients across the whole state each day"
+      },
+      {
+       "letter": "C",
+       "text": "Removing the cancellation policy"
+      },
+      {
+       "letter": "D",
+       "text": "No reminders at all"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Reminder messages and a deposit for bookings",
+     "intro": "A service business sells time, so CAPACITY depends on how many appointments fit in a day. Count appointment length, TRAVEL between appointments, and a small BUFFER for delays. Example: a 9-hour day with 1.5-hour appointments plus 30 minutes of travel each fits 9 / 2 = 4.5, so 4 appointments. Grouping clients by area (ROUTING) reduces travel and increases capacity. Track no-shows and late cancellations, which waste capacity.",
+     "feedback": "Reduce waste."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Handle the complications: overbooking and long days",
+   "questions": [
+    {
+     "id": "S137-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Path: services, freelancing & local businesses",
+     "type": "mc",
+     "prompt": "An owner books 6 appointments in a day that fits 4 with travel. What is the likely result?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Everything goes perfectly on time"
+      },
+      {
+       "letter": "B",
+       "text": "More free time"
+      },
+      {
+       "letter": "C",
+       "text": "Late arrivals and rushed work"
+      },
+      {
+       "letter": "D",
+       "text": "Lower costs"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Late arrivals and rushed work",
+     "intro": "A service business sells time, so CAPACITY depends on how many appointments fit in a day. Count appointment length, TRAVEL between appointments, and a small BUFFER for delays. Example: a 9-hour day with 1.5-hour appointments plus 30 minutes of travel each fits 9 / 2 = 4.5, so 4 appointments. Grouping clients by area (ROUTING) reduces travel and increases capacity. Track no-shows and late cancellations, which waste capacity.",
+     "feedback": "Overbooking hurts."
+    },
+    {
+     "id": "S137-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Path: services, freelancing & local businesses",
+     "type": "mc",
+     "prompt": "Clients across town request the same day. What helps?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Refuse all far clients forever"
+      },
+      {
+       "letter": "B",
+       "text": "Drive back and forth across town all day"
+      },
+      {
+       "letter": "C",
+       "text": "Assign days to areas so routes stay short"
+      },
+      {
+       "letter": "D",
+       "text": "Charge nothing for travel"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Assign days to areas so routes stay short",
+     "intro": "A service business sells time, so CAPACITY depends on how many appointments fit in a day. Count appointment length, TRAVEL between appointments, and a small BUFFER for delays. Example: a 9-hour day with 1.5-hour appointments plus 30 minutes of travel each fits 9 / 2 = 4.5, so 4 appointments. Grouping clients by area (ROUTING) reduces travel and increases capacity. Track no-shows and late cancellations, which waste capacity.",
+     "feedback": "Area days."
+    },
+    {
+     "id": "S137-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Path: services, freelancing & local businesses",
+     "type": "mc",
+     "prompt": "A 10-hour day fits 5 appointments at 2 hours each with no buffer. Adding a 20-minute buffer to each, how many fit?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "4"
+      },
+      {
+       "letter": "B",
+       "text": "5"
+      },
+      {
+       "letter": "C",
+       "text": "6"
+      },
+      {
+       "letter": "D",
+       "text": "3"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "4",
+     "intro": "A service business sells time, so CAPACITY depends on how many appointments fit in a day. Count appointment length, TRAVEL between appointments, and a small BUFFER for delays. Example: a 9-hour day with 1.5-hour appointments plus 30 minutes of travel each fits 9 / 2 = 4.5, so 4 appointments. Grouping clients by area (ROUTING) reduces travel and increases capacity. Track no-shows and late cancellations, which waste capacity.",
+     "feedback": "10 / 2.33 = 4.29, so 4."
+    },
+    {
+     "id": "S137-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Path: services, freelancing & local businesses",
+     "type": "mc",
+     "prompt": "Fewer appointments with buffers earn less per day. What can offset that?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nothing, because buffers are always wasted time"
+      },
+      {
+       "letter": "B",
+       "text": "Fewer delays, happier clients and fewer cancellations"
+      },
+      {
+       "letter": "C",
+       "text": "Lower prices"
+      },
+      {
+       "letter": "D",
+       "text": "Skipping lunch daily"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Fewer delays, happier clients and fewer cancellations",
+     "intro": "A service business sells time, so CAPACITY depends on how many appointments fit in a day. Count appointment length, TRAVEL between appointments, and a small BUFFER for delays. Example: a 9-hour day with 1.5-hour appointments plus 30 minutes of travel each fits 9 / 2 = 4.5, so 4 appointments. Grouping clients by area (ROUTING) reduces travel and increases capacity. Track no-shows and late cancellations, which waste capacity.",
+     "feedback": "Reliability has value."
+    },
+    {
+     "id": "S137-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Path: services, freelancing & local businesses",
+     "type": "mc",
+     "prompt": "Which statement is accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "More bookings always mean more income, even if overbooked."
+      },
+      {
+       "letter": "B",
+       "text": "Buffers are never useful."
+      },
+      {
+       "letter": "C",
+       "text": "Travel time does not affect capacity."
+      },
+      {
+       "letter": "D",
+       "text": "Capacity depends on length, travel and buffers."
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Capacity depends on length, travel and buffers.",
+     "intro": "A service business sells time, so CAPACITY depends on how many appointments fit in a day. Count appointment length, TRAVEL between appointments, and a small BUFFER for delays. Example: a 9-hour day with 1.5-hour appointments plus 30 minutes of travel each fits 9 / 2 = 4.5, so 4 appointments. Grouping clients by area (ROUTING) reduces travel and increases capacity. Track no-shows and late cancellations, which waste capacity.",
+     "feedback": "Plan the day."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}
