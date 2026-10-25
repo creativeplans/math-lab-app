@@ -13,12 +13,16 @@ def quoted(t):
 
 def main(path):
     patch = json.load(open(path, encoding='utf-8'))
-    prompts = {q['id']: q['prompt'] for q in json.load(open(KEY, encoding='utf-8'))['questions']}
+    qs = {q['id']: q for q in json.load(open(KEY, encoding='utf-8'))['questions']}
     files = {f: open(f, encoding='utf-8').read() for f in sorted(glob.glob(os.path.join(HERE, 'data_*.py')))}
     bad = []
     for qid, reps in patch.items():
-        head = prompts[qid][:30].replace("'", "\\'")
-        hits = [(f, s.find(head)) for f, s in files.items() if s.count(head) == 1]
+        hits = []
+        for head in [qs[qid]['prompt'][:30].replace("'", "\\'")] + quoted(qs[qid]['correct_answer']):
+            hits = [(f, s.find(head)) for f, s in files.items() if s.count(head) == 1]
+            if len(hits) == 1 and sum(s.count(head) for s in files.values()) == 1:
+                break
+            hits = []
         if len(hits) != 1:
             bad.append((qid, 'prompt not unique'))
             continue
