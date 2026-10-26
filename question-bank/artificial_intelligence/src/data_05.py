@@ -83,9 +83,9 @@ S_CHECK01 = SET(
           ('The author secretly wrote three more books', 'unsupported'),
           ('Libraries never have complete lists', 'too broad'),
           'Obscure topics invite invented details.'),
-        Q('Which part of an answer about a historical battle deserves the closest check?', 'The exact casualty numbers',
-          ('The general idea that a battle happened', 'well-documented'),
-          ('The friendly summary sentence', 'not a factual detail'),
+        Q('Which part of an answer about a historical battle deserves the closest check?',
+          'The exact casualty numbers',
+          ('The general idea', 'well-documented'), ('The friendly summary sentence', 'not a factual detail'),
           ('The paragraph breaks', 'formatting'),
           'Specific numbers are a common hallucination spot.'),
         Q('A student asks about an event from last week and gets a detailed answer. What should she suspect?',
@@ -409,8 +409,9 @@ OLD_F2 = ('Dates on sources need care too. A web page may show "last updated" fo
 S_CHECK04 = SET(
     'AI.CHECK.04',
     M=sec('Spot information that may be out of date', OLD, [
-        Q('Which fact is most likely to change over time?', 'A museum\'s ticket price',
-          ('The number of days in a week', 'stable'), ('The boiling point of water at sea level', 'stable'),
+        Q('Which fact is most likely to change over time?',
+          "A museum's ticket price",
+          ('The number of days in a week', 'stable'), ('The boiling point of water', 'stable'),
           ('The spelling of "elephant"', 'stable'),
           'Prices change often.'),
         Q('An answer says "the current mayor is ..." with no date. What should you do?',
@@ -993,7 +994,7 @@ S_CHECK08 = SET(
         Q('A tool recommends a college "because it fits your goals." You never stated your goals. What is missing?',
           'Your goals, which it depends on',
           ("The college's mascot", 'irrelevant'), ("The tool's confidence", 'not information'),
-          ("The college's founding year and history", 'irrelevant'),
+          ("The college's founding year", 'irrelevant'),
           'The conclusion rests on unknown information.'),
         Q('An answer says a museum is "free on Sundays" and later "tickets cost 10 dollars daily." What is the best '
           'step?',

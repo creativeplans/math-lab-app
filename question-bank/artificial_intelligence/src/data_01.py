@@ -914,7 +914,7 @@ S_BASICS07 = SET(
           'Calculators excel at arithmetic.'),
               Q('What can the toddler do that the calculator cannot?',
           'Tell a cat from a dog',
-          ('Multiply 27 by 43 in its head', 'the toddler cannot'), ('Add huge numbers', 'the calculator does that'),
+          ('Multiply 27 by 43', 'the toddler cannot'), ('Add huge numbers', 'the calculator does that'),
           ('Run on batteries', 'not the point'),
           'The toddler recognizes animals.'),
               Q('Which question does the passage recommend?', '"How good is it at this task?"',
