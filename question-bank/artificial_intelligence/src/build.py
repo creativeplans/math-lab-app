@@ -330,6 +330,13 @@ def write_key(recs):
             w.writerow(row)
 
 
+def conspicuous(correct, wrongs):
+    """The correct choice gives itself away by length: more than 20 percent AND at least 7 characters longer than
+    every wrong choice (a few characters' difference between short choices is not noticeable)."""
+    longest = max(len(w) for w in wrongs)
+    return len(correct) > 1.2 * longest and len(correct) - longest >= 7
+
+
 def main(pdf=True):
     import eq
     all_sets = load_sets()
@@ -337,7 +344,7 @@ def main(pdf=True):
         for code, rel, sec in sections(s):
             for i, q in enumerate(sec['qs'], 1):
                 longest = max(len(w[0]) for w in q['wrong'])
-                if len(q['correct']) > 1.2 * longest:
+                if conspicuous(q['correct'], [w[0] for w in q['wrong']]):
                     eq.ISSUES.append('LONG S%d-%s-Q%d %d>%d | %s || %s' % (n, code, i, len(q['correct']),
                                      int(1.2 * longest), q['correct'], max((w[0] for w in q['wrong']), key=len)))
     if eq.ISSUES:
@@ -357,9 +364,9 @@ def main(pdf=True):
             shrink_pdf(f)
     write_key(recs)
     longest = [r['id'] for r in recs if len(r['correct_answer']) > max(len(w['text']) for w in r['wrong_choices'])]
-    consp = [r['id'] for r in recs if len(r['correct_answer']) > 1.2 * max(len(w['text']) for w in r['wrong_choices'])]
+    consp = [r['id'] for r in recs if conspicuous(r['correct_answer'], [w['text'] for w in r['wrong_choices']])]
     print('Artificial Intelligence: %d of %d planned sets, %d questions; key is the unique longest choice in %d (%.0f%%); '
-          'conspicuously longest (>20%% longer than every other choice) in %d'
+          'conspicuously longest (>20%% and 7+ characters longer than every other choice) in %d'
           % (len(all_sets), len(plan.SETS), len(recs), len(longest), 100.0 * len(longest) / max(1, len(recs)), len(consp)))
     if '--consp' in sys.argv:
         for r in recs:
