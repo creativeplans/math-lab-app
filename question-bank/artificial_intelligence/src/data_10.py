@@ -8,11 +8,11 @@ DESC = ('An IMAGE GENERATOR turns a text description into a picture. A vague req
         'like"). COMPOSITION: how it is framed ("close-up," "wide view," "puppy on the left, empty space on the right '
         'for a title"). Add the PURPOSE and shape ("square poster for a school bake sale") so the result fits where it '
         'will be used. Leave out details that do not matter.')
-DESC_F2 = ('Image requests have their own traps. Too many details can conflict ("minimalist" plus "packed with '
-           'decorations"). Words with two meanings confuse tools ("a bat" could be an animal or sports gear). Asking '
-           'for a living artist\'s name as a style raises fairness and rights questions, so describe the qualities you '
-           'want instead ("bold outlines, bright flat colors"). And never ask for realistic images of real people doing '
-           'things they did not do.')
+DESC_F2 = (('Image requests have their own traps. Too many details can conflict ("minimalist" plus "packed with '
+           'decorations"). Words with two meanings confuse tools ("a bat" could be an animal or sports gear). Asking for'
+           " a living artist's name as a style raises fairness and rights questions, so describe the qualities you want "
+           'instead ("bold outlines, bright flat colors"). And never make realistic images of real people doing things '
+           'they did not do without their consent, or pass them off as real.'))
 
 S_IMG01 = SET(
     'AI.IMAGE.01',
@@ -109,11 +109,11 @@ S_IMG01 = SET(
           ('Upload the artist\'s work and ask for a copy', 'worse'),
           ('Leave out style entirely', 'loses control'),
           'Describe the look in your own words.'),
-        Q('Which request should never be made?', 'A realistic image of a real person doing something they did not do',
-          ('A cartoon of an invented robot character waving hello on a bright and sunny school playground', 'fine'),
-          ('A watercolor of a lake', 'fine'),
+        Q('Which request should never be made?',
+          'A realistic fake photo of a classmate stealing, shared as real',
+          ('A cartoon of an invented robot character waving hello on a bright and sunny school playground', 'fine'), ('A watercolor of a lake', 'fine'),
           ('A diagram of a plant cell', 'fine'),
-          'This misleads and can harm.'),
+          'It deceives viewers and harms a real person who did not consent.'),
         Q('Which revision fixes "a bright, dark, cheerful, gloomy forest"?',
           '"A bright, cheerful forest in the morning"',
           ('"A bright, dark, cheerful, gloomy, spooky"', 'more conflict'), ('"A forest"', 'too vague'),
@@ -660,11 +660,11 @@ ACCESS = ('ACCESSIBLE visuals work for more people, including people who are bli
           'from March to June"), not "image.jpg." CONTRAST means text stands out clearly from its background, such as '
           'dark text on a light background. CLEAR LABELS put words on chart lines and parts instead of relying on '
           'color alone. AI can draft alt text, but you check it.')
-ACCESS_F2 = ('Generated alt text can be wrong or miss the point: it might describe a chart as "colorful shapes" without '
-             'the data, or guess at things that are not there. Alt text should match the image\'s purpose; a decorative '
-             'border may need none, while an important chart needs its key finding. Color-only signals, such as "red '
-             'means late," fail for many viewers, so add words or symbols. And text inside images cannot be read by '
-             'screen readers unless it is also provided as real text.')
+ACCESS_F2 = (('Generated alt text can be wrong or miss the point: it might describe a chart as "colorful shapes" without '
+             "the data, or guess at things that are not there. Alt text should match the image's purpose; a decorative "
+             'border may need none, while an important chart needs its key finding. Color-only signals, such as "red means'
+             ' late," fail for many viewers, so add words or symbols. Some screen readers can recognize text inside '
+             'images, but not reliably, so give important text as real text or alt text.'))
 
 S_IMG06 = SET(
     'AI.IMAGE.06',
@@ -768,11 +768,11 @@ S_IMG06 = SET(
           ('The dog must be hidden somewhere', 'not true'), ('The image changed', 'unlikely'),
           ('Alt text always includes animals', 'no'),
           'Check drafts against the image.'),
-        Q('Can screen readers read words that are only part of an image?',
-          'No, unless also given as real text',
-          ('Yes', 'not reliable'), ('Only if the words are in color', 'no'),
-          ('Only on weekends', 'no'),
-          'Provide real text.'),
+        Q('Should a publisher rely on screen-reader text recognition to make important text inside an image accessible?',
+          'No; provide real text or alt text',
+          ('Yes; screen readers read all text in every picture', 'some can recognize image text, but not reliably or everywhere'), ('Yes, if the words are in color', 'color does not make recognition reliable'),
+          ('Yes, if the image is large', 'size does not guarantee recognition'),
+          'Some screen readers can recognize text in images, but it may be unavailable or wrong, so give important text as real text or alt text.'),
         Q('What should alt text match?',
           "The image's purpose",
           ('The length of the page', 'not the rule'), ('The file name', 'no'),

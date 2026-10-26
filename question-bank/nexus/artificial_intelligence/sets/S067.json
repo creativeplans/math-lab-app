@@ -61,19 +61,19 @@
      "standard": "",
      "domain": "Everyday: practical pitfalls",
      "type": "mc",
-     "prompt": "In the same example, how many promised steps are missing?",
+     "prompt": "In the same example, how many promised steps never appear at all?",
      "choices": [
       {
        "letter": "A",
-       "text": "10"
+       "text": "4"
       },
       {
        "letter": "B",
-       "text": "7"
+       "text": "10"
       },
       {
        "letter": "C",
-       "text": "3 (or more, counting step 7)"
+       "text": "3 (steps 8 to 10)"
       },
       {
        "letter": "D",
@@ -81,9 +81,9 @@
       }
      ],
      "correct_letter": "C",
-     "correct_answer": "3 (or more, counting step 7)",
+     "correct_answer": "3 (steps 8 to 10)",
      "intro": "Two output problems are easy to miss. TRUNCATION: the answer stops partway because it hit a length limit, so a list ends at item 7 of 10, a table loses its last rows, or code stops mid-line. Signs include a sentence that ends abruptly, a list that skips its promised count, or a missing conclusion. FORMATTING ERRORS: broken tables, numbering that restarts, merged columns, or symbols that display wrongly after copying. Before using output, check that it is COMPLETE (does it reach the end?) and that its format survived the trip to where you will use it.",
-     "feedback": "10 promised, 7 started.",
+     "feedback": "Steps 8, 9 and 10 are absent; step 7 is started but unfinished.",
      "example": {
       "kind": "prompt_response",
       "label": "Fictional example (prepared in advance; not a real AI output)",

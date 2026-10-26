@@ -1,6 +1,6 @@
 # Artificial Intelligence collection: validation
 
-Version 1.0.0, run on 2026-10-26 by `src/validate.py` against the built answer key and import package.
+Version 1.0.1, run on 2026-10-26 by `src/validate.py` against the built answer key and import package.
 
 ## Hard checks (a failure stops the release)
 
@@ -15,7 +15,7 @@ Version 1.0.0, run on 2026-10-26 by `src/validate.py` against the built answer k
 | Question IDs are unique and follow S<set>-<section>-Q<n> (stored as AI:<id>) | PASS | 3060 IDs; duplicates none; malformed none |
 | Every question is multiple choice with 4 distinct choices A-D, one correct letter matching the key, a teaching passage and feedback | PASS | 3060 questions; problems: none |
 | Every wrong choice has a written reason in the private key | PASS | 3060 x 3 reasons |
-| Every teaching passage is 55-125 words | PASS | min 56, max 111, mean 86 words |
+| Every teaching passage is 55-125 words | PASS | min 56, max 118, mean 87 words |
 | No placeholder text | PASS | none found |
 | Questions stand alone (no references to other questions) | PASS | none found |
 | Every prompt that points at a prepared example ("this example", "this table"...) carries that example | PASS | 97 questions carry an example; missing: none |
@@ -45,8 +45,8 @@ Version 1.0.0, run on 2026-10-26 by `src/validate.py` against the built answer k
 | Item | Detail |
 |---|---|
 | Teaching passages within the contract's "about 60-120 words" | 35 of 3060 questions use a passage of 55-59 words (none exceed 120) |
-| Share of questions where the correct answer is the single longest choice | 855 of 3060 (27.9%; 25% would be chance). Reported for review; none is conspicuously longest. |
-| Known limitation: a wrong choice is conspicuously longest | 1040 of 3060 questions (34%). These are padded misconceptions; the length pattern points AWAY from the key and is listed for the round-2 balancing edit. |
+| Share of questions where the correct answer is the single longest choice | 857 of 3060 (28.0%; 25% would be chance). Reported for review; none is conspicuously longest. |
+| Known limitation: a wrong choice is conspicuously longest | 1042 of 3060 questions (34%). These are padded misconceptions; the length pattern points AWAY from the key and is listed for the round-2 balancing edit. |
 | Known limitation: absolute words (always, never, every, only...) in choices | correct answers 5%, wrong choices 28%; listed for the round-2 balancing edit |
-| Every question with arithmetic in the key has a code check that passed at build time | 106 questions carry a code check (build.py stops if any check fails) |
-| Sources not confirmed from the official page itself (secondary sources, search excerpts or a statute citation; flagged in SOURCES.md for review) | 22 of 42 sources: case_mata, energy_iea, hist_alexnet, hist_chatgpt, hist_eliza, law_bartz_kadrey, law_colorado, law_elvis, law_eo14365, law_euaiact, law_fcc_voice, law_ftc_aicomply, law_gdpr22, law_illinois, law_moffatt, law_thaler, law_usco_guidance, law_usco_part2, law_usco_part3, media_c2pa, sec_owasp, tech_osaid |
+| Every question with arithmetic in the key has a code check that passed at build time | 107 questions carry a code check (build.py stops if any check fails) |
+| Sources not confirmed from the official page itself (secondary sources, search excerpts or a statute citation; flagged in SOURCES.md for review) | 8 of 42 sources: hist_chatgpt, hist_eliza, law_bartz_kadrey, law_elvis, law_fcc_voice, law_gdpr22, law_illinois, law_moffatt |

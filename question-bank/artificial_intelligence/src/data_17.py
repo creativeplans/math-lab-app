@@ -379,11 +379,11 @@ S_FAIR03 = SET(
           ('Only once', 'ongoing'),
           ('Only for large companies', 'not only'),
           'Test outcomes.'),
-        Q('Which is the best way to find hidden proxies?',
+        Q('Even after protected-trait columns are removed, which is a useful first check for possible unequal outcomes?',
           'Compare outcomes across groups',
           ('Read the input names quickly', 'misses them'), ('Ask the model', 'not reliable'),
           ('Remove all inputs', 'not practical'),
-          'Outcome testing.'),
+          'Comparing outcomes shows gaps worth investigating; it does not by itself prove which input causes them.'),
         Q('Who should decide what to do about a useful proxy?',
           'People who can explain and answer for the choice',
           ('The model, which should decide by itself', 'not accountable'), ('Nobody', 'someone must'),
@@ -393,12 +393,12 @@ S_FAIR03 = SET(
 )
 
 # ---------------------------------------------------------------------------------------------- AI.FAIR.04
-GOALS = (('"Fair" can mean different things, and the meanings can CONFLICT. One goal: EQUAL ERROR RATES, so each group '
-         'faces the same chance of being wrongly flagged. Another: EQUAL SELECTION RATES, so each group is approved at'
-         ' the same rate. Another: CALIBRATION, where a score of "70% likely" means the same thing for every group. '
-         'Researchers have shown that, when groups differ in underlying rates, these goals usually cannot all be met '
-         'at once. So choosing a fairness goal is a DECISION about values that people must make and explain, not a '
-         'purely technical setting, and which goal fits best is debated.'))
+GOALS = ((('"Fair" can mean different things, and the meanings can CONFLICT. One goal: EQUAL ERROR RATES, for example '
+         'equal FALSE-POSITIVE rates, so each group faces the same chance of being wrongly flagged. Another: EQUAL '
+         'SELECTION RATES, so each group is approved at the same rate. Another: CALIBRATION, where a score of "70% '
+         'likely" means the same thing for every group. Researchers have shown that, when groups differ in underlying '
+         'rates, these goals usually cannot all be met at once. So choosing a fairness goal is a DECISION about values'
+         ' that people must make and explain, not a purely technical setting, and which goal fits best is debated.')))
 GOALS_F2 = ('Reasonable people disagree about which goal matters most in a given setting, and this course does not '
             'settle that. What can be expected is transparency: say which goal was chosen, why, who was consulted, '
             'and what trade-offs it creates. Laws may also set requirements in some areas, such as hiring and lending. '
@@ -407,11 +407,11 @@ GOALS_F2 = ('Reasonable people disagree about which goal matters most in a given
 S_FAIR04 = SET(
     'AI.FAIR.04',
     M=sec('Explain that fairness goals can conflict and require a decision', GOALS, [
-        Q('What does "equal error rates" aim for?',
+        Q('One kind of "equal error rates" is equal false-positive rates. What does it aim for?',
           'The same chance of being wrongly flagged in each group',
           ('Exactly the same number of people approved in each group', 'that is selection'), ('No errors at all', 'not the goal'),
           ('Faster answers', 'no'),
-          'Equal mistakes.'),
+          'The same chance of a wrong flag in each group.'),
         Q('What does "equal selection rates" aim for?', 'Each group approved at the same rate',
           ('The same chance of being wrongly flagged by the system in each of the groups', 'that is error rates'),
           ('A score that means the same in each group', 'calibration'),
@@ -469,7 +469,7 @@ S_FAIR04 = SET(
           ('No goal', 'it has one'),
           'Same approval rate.'),
         Q('A fraud tool is tuned so innocent people in each group are wrongly flagged equally often. Which goal?',
-          'Equal error rates',
+          'Equal false-positive rates',
           ('Equal selection rates', 'not stated'), ('Calibration', 'not stated'),
           ('None', 'it has one'),
           'Equal false flags.'),

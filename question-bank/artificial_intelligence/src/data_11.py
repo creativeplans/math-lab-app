@@ -272,13 +272,13 @@ S_MED02 = SET(
 )
 
 # ---------------------------------------------------------------------------------------------- AI.MEDIA.03
-VOICE = ('VOICE CLONING uses recordings of a real person to make a synthetic voice that sounds like them saying new '
+VOICE = (('VOICE CLONING uses recordings of a real person to make a synthetic voice that sounds like them saying new '
          'words. It has real uses, such as helping people who are losing their voice, but it can also fool listeners: '
-         'scam calls, fake endorsements, or false statements. CONSENT (the person agrees) and DISCLOSURE (listeners are '
-         'told the voice is synthetic) matter. Some laws now address this. Tennessee\'s ELVIS Act (effective July 1, '
-         '2024) added a person\'s voice, including a simulated one, to that state\'s publicity rights. In February '
-         '2024, the US Federal Communications Commission (FCC) ruled that AI-generated voices in calls count as '
-         '"artificial" voices that need prior consent.')
+         'scam calls, fake endorsements, or false statements. CONSENT (the person agrees) and DISCLOSURE (listeners '
+         "are told the voice is synthetic) matter. Some laws now address this. Tennessee's ELVIS Act (effective July "
+         "1, 2024) added a person's voice, including a simulated one, to that state's publicity rights. In February "
+         '2024, the US Federal Communications Commission (FCC) ruled that AI-generated voices count as "artificial" '
+         'voices, so covered calls follow the same consent rules, and exceptions, as other robocalls.'))
 VOICE_F2 = ('Laws on voices differ by place and are still developing, so a use allowed in one state or country may not '
             'be allowed in another, and courts are still deciding many questions. Practical rules hold everywhere: get '
             'clear written permission before cloning someone\'s voice, say when audio is synthetic, never imitate a '
@@ -309,10 +309,10 @@ S_MED03 = SET(
           ('Made voice cloning legal everywhere', 'not what it did'),
           'A state law on voice rights.'),
         Q('What did the FCC rule in February 2024?',
-          'AI-generated voices in calls need prior consent',
+          'AI voices in calls count as "artificial" voices',
           ('AI voices may be used in any phone call to anyone', 'opposite'), ('Phone calls must be recorded', 'not the ruling'),
           ('Voice cloning is a crime everywhere', 'not the ruling'),
-          'Treated as "artificial" voices.'),
+          'Existing artificial-voice rules, including their exceptions, apply to AI voices.'),
     ]),
     B=[cs('Compare voice cloning with borrowing someone\'s signature',
           'Your SIGNATURE stands for you: when people see it, they believe you agreed. Copying someone\'s signature '
@@ -368,12 +368,11 @@ S_MED03 = SET(
           ('Give his bank details', 'unsafe'),
           ('Call back the number that called', 'may be the scammer'),
           'Verify through a known channel.'),
-        Q('A company sends robocalls with an AI voice and no prior consent. Under the FCC\'s 2024 ruling, what applies?',
+        Q("A company makes non-emergency telemarketing robocalls to cellphones with an AI voice and no prior consent. Under the FCC's 2024 ruling, what applies?",
           'The same consent rules as other artificial-voice calls',
-          ('No rules, because AI voices were left out of phone-call rules entirely by the ruling', 'opposite'),
-          ('Only a fee', 'not stated'),
+          ('No rules, because AI voices were left out of phone-call rules entirely by the ruling', 'opposite'), ('Only a fee', 'not stated'),
           ('A ban on all phone calls', 'too broad'),
-          'Consent needed.'),
+          'Covered AI-voice calls follow the same consent rules as other artificial-voice calls.'),
     ]),
     F2=sec('Navigate differing laws and protect against voice scams', VOICE_F2, [
         Q('A voice use is allowed in one state. Is it allowed everywhere?', 'Not necessarily; laws differ by place',
@@ -540,11 +539,11 @@ VIDEO = ('Generated and AI-edited VIDEO can show people, places and events that 
          'words? Does movement obey ordinary physics, such as objects not passing through each other? When a video '
          'uses a SYNTHETIC PRESENTER, an AI-generated person or avatar, tell viewers clearly, for example with an '
          'on-screen label or a note in the description.')
-VIDEO_F2 = ('Some edits are subtle: a real video with one changed word, a background replaced, or a crowd made larger. '
+VIDEO_F2 = (('Some edits are subtle: a real video with one changed word, a background replaced, or a crowd made larger. '
             'Even honest edits can mislead if context is removed, such as a clip cut so a person seems to say the '
             'opposite. When you publish edited or generated video, disclose the changes that matter, keep the original '
-            'footage, and never put words in a real person\'s mouth. If a synthetic presenter looks like a real person, '
-            'you need that person\'s consent.')
+            'footage, and never make a real person appear to say or endorse something without approval, or present it as '
+            "genuine. If a synthetic presenter looks like a real person, you need that person's consent."))
 
 S_MED05 = SET(
     'AI.MEDIA.05',
@@ -653,11 +652,11 @@ S_MED05 = SET(
           ('Nothing', 'consent needed'), ('A different background', 'irrelevant'),
           ('A longer video', 'irrelevant'),
           'Likeness needs consent.'),
-        Q('Which use should never happen?', 'Putting words in a real person\'s mouth',
-          ('Replacing a plain background with a nicer one and noting the change in the video description', 'acceptable'),
-          ('Adding captions', 'acceptable'),
+        Q('Which use should never happen?',
+          'Making a real person seem to endorse a product without approval',
+          ('Replacing a plain background with a nicer one and noting the change in the video description', 'acceptable'), ('Adding captions', 'acceptable'),
           ('Trimming silence', 'acceptable'),
-          'Fake statements by real people.'),
+          'An unapproved endorsement presented as genuine deceives viewers and misuses a real identity.'),
     ]),
 )
 
@@ -793,12 +792,12 @@ S_MED06 = SET(
 )
 
 # ---------------------------------------------------------------------------------------------- AI.MEDIA.07
-PROV = ('PROVENANCE means a record of where content came from and how it was changed. CONTENT CREDENTIALS, based on '
+PROV = (('PROVENANCE means a record of where content came from and how it was changed. CONTENT CREDENTIALS, based on '
         'the C2PA standard (Coalition for Content Provenance and Authenticity), attach signed information to a file, '
-        'such as which camera or tool made it and what edits were applied. WATERMARKS are hidden or visible marks some '
-        'generators add to their output. These help, but they have LIMITS. Records can be stripped by screenshots or '
-        're-uploading. A MISSING label does not prove content is real or fake. DETECTOR tools give probabilities and '
-        'make errors both ways.')
+        'such as which camera or tool made it and what edits were applied. WATERMARKS are hidden or visible marks '
+        'some generators add to their output. These help, but they have LIMITS. Records can be stripped by '
+        'screenshots or re-uploading. A MISSING label does not prove content is real or fake. DETECTOR tools give '
+        'scores, often shown as percentages, and make errors both ways.'))
 PROV_F2 = ('Detector scores are especially easy to misuse. A detector that says "85% likely AI" is not proof; it can '
            'wrongly flag real photos (FALSE POSITIVES) and miss fakes (FALSE NEGATIVES). Using a score alone to accuse '
            'someone, such as a student of cheating or a journalist of faking, can cause real harm. Treat provenance and '
@@ -828,10 +827,10 @@ S_MED07 = SET(
           ('That it is old', 'not proven'),
           'Missing labels are not proof.'),
         Q('What do detector tools give?',
-          'Probabilities that can be wrong both ways',
+          'Scores that can be wrong both ways',
           ('Certain answers that prove beyond doubt', 'not certain'), ("The creator's name", 'no'),
           ('A copyright license', 'no'),
-          'Probabilistic and fallible.'),
+          'Detector scores are estimates, often shown as percentages that are not true probabilities, and they make errors both ways.'),
     ]),
     B=[cs('Compare provenance with a package tracking history',
           'A package TRACKING HISTORY shows where a parcel has been: shipped from the warehouse, scanned in your city, '
@@ -891,12 +890,12 @@ S_MED07 = SET(
           'Several clues together.'),
     ]),
     F2=sec('Avoid misusing detector scores', PROV_F2, [
-        Q('What is a false positive for a detector?',
+        Q('A detector answers YES when it judges an image AI-made. What is a false positive?',
           'Flagging a real photo as AI',
           ('Missing an AI image', 'false negative'), ('Correctly flagging an AI image', 'true positive'),
           ('Correctly passing a real photo', 'true negative'),
           'Wrongly flagged.'),
-        Q('What is a false negative?',
+        Q('For the same kind of detector (YES means "AI-made"), what is a false negative?',
           'Missing an AI image',
           ('Flagging a real photo as AI', 'false positive'), ('Correctly finding an AI image', 'true positive'),
           ('Correctly passing a real photo', 'true negative'),

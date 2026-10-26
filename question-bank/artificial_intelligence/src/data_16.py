@@ -214,11 +214,11 @@ S_EVAL02 = SET(
                 '30 + 6 = 36.', calc=lambda: 30 + 6 == 36),
           ], why='A learner confused by results tables practices the underlying skill of reading the four boxes.')],
     F1=sec('Decide which error matters more in practice', FPFN, [
-        Q('A tool screens job applications and wrongly rejects qualified people. Which error is this?',
+        Q('A screening tool outputs YES for applicants it judges qualified to advance and NO otherwise. It outputs NO for a qualified applicant. Which error is this?',
           'A false negative',
-          ('A false positive', 'it said no'), ('A true positive', 'not correct'),
+          ('A false positive', 'the wrong output was NO, not YES'), ('A true positive', 'not correct'),
           ('A true negative', 'not correct'),
-          'Qualified people missed.'),
+          'YES means "qualified"; a wrong NO for a qualified person is a false negative.'),
         Q('A medical screening tool flags patients for a follow-up test. Which error is usually worse?',
           'Missing someone who is sick',
           ('Flagging a healthy person', 'usually reversed'), ('Neither', 'both matter'),
@@ -241,7 +241,7 @@ S_EVAL02 = SET(
           'Low-stakes error.'),
     ]),
     F2=sec('Choose and explain the error balance', FPFN_F2, [
-        Q('A reading-help screener accepts more false positives. Why might that be reasonable?',
+        Q('A reading-help screener says YES for students it thinks need extra help. It is set to accept more false positives. Why might that be reasonable?',
           'Missing a student who needs help is worse',
           ('Because false positives never have any cost', 'they cost a little'), ('Because screeners must be wrong', 'no'),
           ('Because it saves money always', 'not necessarily'),
@@ -471,12 +471,12 @@ S_EVAL04 = SET(
                 'Trade-offs.'),
           ], why='A learner who wants the best of everything can compare tool trade-offs with delivery options.')],
     F1=sec('Make accuracy, speed and cost decisions in practice', TRADE, [
-        Q('Using the earlier example, a team needs answers in under 3 seconds and at least 90% correct. Which option fits?',
+        Q('Using this table, a team needs answers in under 3 seconds and at least 90% correct. Which option fits?',
           'Q',
-          ('P, because it is the most accurate, and accuracy matters more than any time limit', '6 seconds'),
-          ('R', 'below 90%'),
+          ('P, because it is the most accurate, and accuracy matters more than any time limit', '6 seconds'), ('R', 'below 90%'),
           ('None', 'Q fits'),
-          'Q: 95%, 2 seconds.', ex=TRADE_EX),
+          'Q: 95%, 2 seconds.',
+          ex=TRADE_EX),
         Q('A school sorts 10,000 old forms overnight; errors are easy to fix. Which factor matters most?', 'Low cost',
           ('Speed, because the forms must be sorted within one second each, even though it runs overnight', 'overnight'),
           ('Perfect accuracy at any price', 'errors are easy to fix'),
@@ -506,11 +506,11 @@ S_EVAL04 = SET(
           ('1,500 minutes', 'that is R total'),
           '(150 - 50) x 10 = 1,000.',
           calc=lambda: (150 - 50) * 10 == 1000),
-        Q('What does the previous answer show?',
-          'A cheaper tool can cost more overall',
+        Q('A tool costs less per task but makes many more errors that people must fix. What can follow?',
+          'It can cost more overall',
           ('That fixing errors is always free', "people's time costs"), ('That errors do not matter', 'they do'),
-          ('That Q is slower', 'not shown'),
-          'Hidden costs.'),
+          ('It is always the better choice', 'fixing time also costs'),
+          'Correction time can outweigh a lower price.'),
         Q('A slow but accurate tool is used for overnight reports. Is slowness a problem?',
           'Probably not, since no one is waiting',
           ('Yes', 'depends'), ('Yes, because reports must be instant', 'not overnight'),
@@ -669,10 +669,11 @@ RUBRIC = ('Some outputs, such as summaries, letters or explanations, cannot be s
           'key points), CLEAR (easy to follow) and APPROPRIATE (right tone and length), each scored 0 to 2. Reviewers '
           'apply the same rubric to every output. And be wary of DEMONSTRATIONS: a demo shows chosen examples that '
           'work. Good evaluation looks for FAILURES on purpose, using hard and unusual cases.')
-RUBRIC_F2 = ('Rubrics work better when criteria are specific ("names the deadline and the fee") rather than vague '
-             '("good quality"). Two reviewers scoring the same outputs and comparing results reveals unclear criteria; '
-             'if they disagree often, refine the rubric. Reviewers get tired and start scoring leniently, so keep '
-             'review sessions short. Record examples of each score level so new reviewers can calibrate.')
+RUBRIC_F2 = (('Rubrics work better when criteria are specific ("names the deadline and the fee") rather than vague ("good '
+             'quality"). Two reviewers scoring the same outputs and comparing results reveals unclear criteria; if they '
+             'disagree often, refine the rubric. Tired reviewers become less careful and less consistent, sometimes more '
+             'lenient and sometimes harsher, so keep review sessions short. Record examples of each score level so new '
+             'reviewers can calibrate.'))
 
 RUB_EX = TABLE([['Criterion', 'Score (0-2)', 'Reviewer note'],
                 ['Accurate', '1', 'One date is wrong'],
@@ -790,10 +791,10 @@ S_EVAL06 = SET(
           ('Stop reviewing', 'no'),
           'Clarify criteria.'),
         Q('Why does reviewer fatigue matter?',
-          'Tired reviewers score more leniently',
-          ('Tired reviewers always score more harshly', 'often lenient'), ('It does not matter', 'it does'),
+          'It can make judgments less careful and less consistent',
+          ('Tired reviewers always score more harshly than others', 'the direction varies'), ('It does not matter', 'it does'),
           ('It only affects speed', 'also accuracy'),
-          'Consistency drops.'),
+          'Fatigue lowers care and consistency; leniency is one possible pattern, not a rule.'),
     ]),
 )
 

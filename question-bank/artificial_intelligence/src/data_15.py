@@ -95,7 +95,7 @@ S_COST01 = SET(
           ('Neither can be compared', 'they can'),
           '300 x 0.10 = 30 dollars, more than 15.',
           calc=lambda: round(300 * 0.10, 2) == 30 and 30 > 15),
-        Q('Same prices, but Ana makes 50 requests a month. Which is cheaper?',
+        Q('Hypothetical: a subscription costs 15 dollars a month; pay-per-use costs 0.10 dollars a request. Ana makes 50 requests a month. Which is cheaper?',
           'Pay-per-use',
           ('The subscription', 'costs more here'), ('They cost the same', '5 vs 15'),
           ('Neither', 'one is cheaper'),
@@ -150,10 +150,11 @@ TOKENS = ('Metered AI pricing is often based on TOKENS: chunks of text that mode
           'depend on the model. Many services charge separately for INPUT tokens (what you send) and OUTPUT tokens '
           '(what the model writes), often at different rates, quoted per million tokens. To estimate a cost: '
           'divide each token count by 1,000,000, multiply by its rate, and add the two results.')
-TOKENS_F2 = ('Estimates go wrong in predictable ways. Long conversations resend earlier messages as input each turn, '
-             'so input tokens grow. Attached documents count as input. Output is often priced higher than input, so '
-             'very long answers cost more. Some languages use more tokens for the same meaning. Before running a big '
-             'job, test a small sample, measure the actual tokens used, and then multiply.')
+TOKENS_F2 = (('Estimates go wrong in predictable ways. In many metered products a long conversation resends earlier '
+             'messages as input, so processed input grows, though some products trim, summarize or discount repeated text.'
+             ' Attached documents add the text actually processed. Output is often priced higher, so for the same input, '
+             'longer answers cost more. Some languages use more tokens for the same meaning. Before running a big job, '
+             'test a small sample, measure the actual tokens used, and then multiply.'))
 
 TOKEN_EX = TABLE([['Item', 'Hypothetical rate'],
                   ['Input tokens', '2 dollars per million'],
@@ -258,20 +259,21 @@ S_COST02 = SET(
     ]),
     F2=sec('Avoid common estimation mistakes', TOKENS_F2, [
         Q('Why do long conversations cost more per message over time?',
-          'Earlier messages are resent as input',
+          'Earlier messages are often resent',
           ('Because providers charge a fee', 'not the reason'), ('Because answers get shorter', 'not the reason'),
           ('Because tokens get bigger', 'no'),
           'Input grows each turn.'),
-        Q('Do attached documents count toward input tokens?', 'Yes',
-          ('No, because attachments are always processed for free by every provider of every tool', 'they count'),
-          ('Only images', 'documents count too'),
+        Q('Do attached documents count toward input tokens?',
+          'Yes, for the text that is processed',
+          ('No, because attachments are always processed for free by every provider of every tool', 'they count'), ('Only if the file is very large', 'size alone is not the rule'),
           ('Only on weekends', 'no'),
-          'Attachments are input.'),
-        Q('Output costs 4 times input per token. Which request is likely most expensive?',
-          'A short question asking for a very long report',
-          ('A long question asking for a one-word answer', 'output dominates'), ('A short question with a short answer', 'cheap'),
-          ('No request', 'free'),
-          'Long output at a higher rate.'),
+          'The document text the tool actually processes counts as input; file size alone is not the bill.'),
+        Q('Hypothetical rates: input 2 dollars and output 8 dollars per million tokens. Request X uses 1,000 input and 50,000 output tokens; request Y uses 1,000 input and 500 output tokens. Which costs more?',
+          'Request X',
+          ('Request Y', 'same input, much shorter output'), ('They cost the same', 'outputs differ'),
+          ('It cannot be worked out', 'the counts and rates are given'),
+          'Same input; X costs about 0.402 dollars and Y about 0.006 dollars, because X writes far more output.',
+          calc=lambda: round(1000 / 1e6 * 2 + 50000 / 1e6 * 8, 3) == 0.402 and round(1000 / 1e6 * 2 + 500 / 1e6 * 8, 3) == 0.006),
         Q('Before a big job, what is the best way to estimate cost?', 'Test a small sample and measure tokens',
           ('Guess the total from the length of the instructions without running any test at all', 'unreliable'),
           ('Ask a friend', 'unreliable'),

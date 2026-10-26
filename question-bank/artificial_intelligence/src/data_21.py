@@ -667,11 +667,11 @@ ENERGY = ('AI uses ENERGY and other RESOURCES: electricity to train and run mode
           'percent of global use, and projected around 945 TWh by 2030 in its base case, stressing large uncertainty. '
           'Data centres serve much more than AI. Per-question energy figures vary widely and should not be treated as '
           'one universal number.')
-ENERGY_F2 = ('Estimates differ because they depend on the model size, hardware, how busy data centres are, the '
-             'electricity source, and what is counted, such as training versus everyday use. Newer hardware can use '
-             'less energy per task, while growing use can raise the total. Claims like "each question uses a bottle of '
-             'water" may be based on particular assumptions. Look for the source, date, what was measured and the range '
-             'of uncertainty.')
+ENERGY_F2 = (('Estimates differ because they depend on the model size, hardware, how busy data centres are, and what is '
+             'counted, such as training versus everyday use. The electricity source does not change how much electricity '
+             'is used, but it strongly affects the related emissions. Newer hardware can use less energy per task, while '
+             'growing use can raise the total. Claims like "each question uses a bottle of water" may be based on '
+             'particular assumptions. Look for the source, date, what was measured and the range of uncertainty.'))
 
 S_HIST06 = SET(
     'AI.HISTORY.06',
@@ -759,11 +759,11 @@ S_HIST06 = SET(
           'Cooling water.'),
     ]),
     F2=sec('Understand why energy estimates differ', ENERGY_F2, [
-        Q('Which factor affects AI energy estimates?',
+        Q('For the same amount of electricity used, which factor changes the carbon emissions?',
           'The electricity source',
-          ('The number of letters', 'no'), ("The user's age", 'no'),
-          ('The day of the week only', 'not mainly'),
-          'Assumptions matter.'),
+          ('The length of the question', 'the electricity used is the same'), ('The language of the question', 'the electricity used is the same'),
+          ("The user's time zone", 'not a factor by itself'),
+          'The electricity source changes emissions, not how much electricity the computing needs.'),
         Q('How can newer hardware affect energy?', 'It can use less energy per task',
           ('It always uses far more energy per task, since newer computers are always less efficient', 'often less'),
           ('It uses no energy', 'no'),

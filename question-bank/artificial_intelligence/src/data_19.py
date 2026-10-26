@@ -3,12 +3,12 @@ settles a disputed legal question, and none is legal advice."""
 from eq import Q, SET, sec, cs, sk, PR, CODE, TABLE, TEXT  # noqa: F401
 
 # ---------------------------------------------------------------------------------------------- AI.LAW.07
-DISC = ('Using AI does not switch off ANTI-DISCRIMINATION and NOTICE rules. Dated examples. New York City Local Law 144 '
-        '(enforced from July 5, 2023) lets employers use an automated employment decision tool only after an '
-        'independent BIAS AUDIT within the past year, with a public summary and advance notice to candidates. Illinois '
-        'amended its Human Rights Act, effective January 1, 2026, to bar discriminatory AI use in employment and require '
-        'notice. For credit, the US Consumer Financial Protection Bureau (CFPB) said in Circular 2023-03 that lenders '
-        'must give SPECIFIC reasons for denials even when they use complex algorithms.')
+DISC = (('Using AI does not switch off ANTI-DISCRIMINATION and NOTICE rules. Dated examples. New York City Local Law '
+        '144 (enforced from July 5, 2023) lets employers use an automated employment decision tool only after an '
+        'independent BIAS AUDIT within the past year, with a public summary and advance notice to candidates. '
+        'Illinois amended its Human Rights Act, effective January 1, 2026, to bar discriminatory AI use in employment'
+        ' and require notice. For credit, the federal rule Regulation B (12 CFR 1002.9) requires a lender that denies'
+        ' credit to give, or tell applicants how to get, the SPECIFIC principal reasons, whatever method decided.'))
 DISC_F2 = ('These rules share themes: test for bias, tell people when automated tools are used, and be able to explain '
            'decisions. Details and coverage differ by place and sector, and agency guidance can be revised or '
            'withdrawn, so check the current status. "The algorithm decided" is not a defense that removes '
@@ -38,11 +38,11 @@ S_LAW07 = SET(
           ('Every use of computers by employers', 'too broad'), ('All hiring', 'no'),
           ('All AI everywhere', 'no'),
           'Employment discrimination.'),
-        Q('Per CFPB Circular 2023-03, what must lenders give when denying credit?', 'Specific reasons',
-          ('No reasons at all, because complex algorithms cannot explain their decisions to anyone', 'specific required'),
-          ('A generic reason only', 'not enough'),
+        Q('Under Regulation B, what must a lender that denies credit give, or tell applicants how to request?',
+          'The specific principal reasons',
+          ('No reasons, because complex algorithms cannot explain decisions', 'the rule still applies'), ('A generic reason only', 'not enough'),
           ('A discount', 'no'),
-          'Specific principal reasons.'),
+          'Regulation B (12 CFR 1002.9) requires specific principal reasons, whatever method was used.'),
     ]),
     B=[cs('Compare AI decision rules with a referee using instant replay',
           'In some sports, referees use INSTANT REPLAY technology. The technology helps, but the rules of the game '
@@ -79,11 +79,11 @@ S_LAW07 = SET(
           ('Nothing', 'audit first'), ('It violates COPPA', 'wrong rule'),
           ('It violates the ELVIS Act', 'wrong rule'),
           'Audit required before use.'),
-        Q('A lender denies a loan and says only "algorithm decision." Per CFPB guidance, what is wrong?',
-          'It must give specific reasons',
+        Q('A lender denies a loan and its notice says only "algorithm decision." Under Regulation B, what is wrong?',
+          'Specific reasons are required',
           ('Nothing', 'not enough'), ('It must give a discount', 'no'),
           ('It must hire more staff', 'not stated'),
-          'Specific reasons required.'),
+          'A vague label is not a statement of the specific reasons.'),
         Q('An Illinois employer uses an AI tool for promotions in 2026 without telling staff. What may be required?', 'Notice of the AI use',
           ('Nothing, because promotion decisions are never covered by any rule in the state of Illinois', 'covered'),
           ('A new office', 'no'),
@@ -106,11 +106,11 @@ S_LAW07 = SET(
           ('Lower prices', 'no'),
           ('Faster hiring', 'no'),
           'Common themes.'),
-        Q('Can agency guidance like a CFPB circular change?', 'Yes; it can be revised or withdrawn',
-          ('No, agency guidance is permanent and can never be changed once it has been published', 'it can change'),
-          ('Only by courts', 'agencies can too'),
-          ('Only in Illinois', 'no'),
-          'Check current status.'),
+        Q("CFPB Circular 2023-03, which stressed this rule, was withdrawn on May 12, 2025. Did that remove Regulation B's reasons requirement?",
+          'No; the regulation itself still applies',
+          ('Yes; withdrawing guidance cancels the regulation', 'guidance is not the regulation'), ('Yes, but only in Illinois', 'not a state matter'),
+          ('Only for small loans', 'not stated'),
+          'Withdrawing a guidance document does not repeal the regulation it explained.'),
         Q('Do these rules apply everywhere in the same way?',
           'No; details differ by place and sector',
           ('Yes', 'local'), ('Yes, the Illinois law covers every state', 'one state'),
@@ -130,12 +130,12 @@ S_LAW07 = SET(
 )
 
 # ---------------------------------------------------------------------------------------------- AI.LAW.08
-DECEPT = ('Consumer-protection laws forbid DECEPTIVE claims, and they apply to AI products too. In September 2024, the '
-          'US Federal Trade Commission (FTC) announced "Operation AI Comply": five actions under EXISTING law, including '
-          'against a company marketing a "robot lawyer" whose claims were alleged to be untested, a tool alleged to '
-          'help generate FAKE REVIEWS, and schemes promising quick earnings from AI-powered online stores. Two lessons: '
-          'claims about what AI can do must be truthful and supported, and AI-written fake reviews are deceptive like '
-          'any fake review.')
+DECEPT = ((('Consumer-protection laws forbid DECEPTIVE claims, and they apply to AI products too. In September 2024, the '
+          'US Federal Trade Commission (FTC) announced "Operation AI Comply": five actions under EXISTING law, '
+          'including against a company marketing a "robot lawyer" whose claims were alleged to be untested, a tool '
+          'alleged to help generate FAKE REVIEWS (that order was set aside in December 2025), and schemes promising '
+          'quick earnings from AI-powered online stores. Two lessons: claims about what AI can do must be truthful and '
+          'supported, and publishing fake reviews is deceptive whether a person or a tool wrote them.')))
 DECEPT_F2 = ('Look for unsupported claims ("our AI is 100% accurate," "replaces your doctor"), hidden limits, and '
              'reviews that seem generated or paid without disclosure. The same rules apply whether a person or a tool '
              'wrote the claim. Businesses using AI to write marketing remain responsible for checking it. Consumers can '
@@ -327,11 +327,12 @@ S_LAW09 = SET(
                 'Policy and transparency.'),
           ], why='A learner unsure how AI policies work can compare them with calculator rules in math class.')],
     F1=sec('Follow AI policies in practice', POLICY, [
-        Q('Under the fictional policy, Maya uses AI to check grammar and adds a note. Did she follow it?', 'Yes',
-          ('No, because grammar checks with AI are never allowed under any policy in any class', 'allowed'),
-          ('No, she needed no note', 'note required'),
+        Q('Under the fictional policy, Maya uses an approved AI tool to check grammar and adds a note. Did she follow it?',
+          'Yes',
+          ('No, because grammar checks with AI are never allowed under any policy in any class', 'allowed'), ('No, she needed no note', 'note required'),
           ('Only if the note is long', 'one line'),
-          'Allowed use, disclosed.', ex=POL_EX),
+          'Allowed use, disclosed.',
+          ex=POL_EX),
         Q('Under the same policy, Leo pastes an AI-written paragraph into his essay without a note. What did he do?',
           'Broke the policy',
           ('Followed the policy', 'not allowed'), ('Nothing wrong', 'not allowed'),

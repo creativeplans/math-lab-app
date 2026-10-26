@@ -48,7 +48,7 @@
      ],
      "correct_letter": "B",
      "correct_answer": "It is placed in the context for that request",
-     "intro": "Uploading a document or pasting text gives a model something to READ during your request; it does NOT RETRAIN the underlying model. The text goes into the context for that conversation, so the model can answer questions about it. Other users do not gain that knowledge, and a new conversation usually will not have it unless the product saves it or you supply it again. Changing the model itself requires training or fine-tuning, which is a separate process. Whether a provider may later use your uploads to train future models depends on its policy and your settings.",
+     "intro": "Uploading a document or pasting text gives a model something to READ during your request; it does NOT RETRAIN the underlying model. The text goes into the context for that conversation, so the model can answer questions about it. Other users do not gain that knowledge through the model (though a shared project may let others see stored files), and a new conversation usually will not have it unless the product saves it or you supply it again. Changing the model itself requires training or fine-tuning, which is a separate process. Whether a provider may later use your uploads to train future models depends on its policy and your settings.",
      "feedback": "Context, not training."
     },
     {
@@ -57,7 +57,7 @@
      "standard": "",
      "domain": "Everyday: searching and working with documents",
      "type": "mc",
-     "prompt": "Does another user gain knowledge of your uploaded file?",
+     "prompt": "In a private chat with no shared project or workspace, does another user gain knowledge of your uploaded file?",
      "choices": [
       {
        "letter": "A",
@@ -65,7 +65,7 @@
       },
       {
        "letter": "B",
-       "text": "Yes, but only on weekends"
+       "text": "Yes; every upload is added to the model"
       },
       {
        "letter": "C",
@@ -73,12 +73,12 @@
       },
       {
        "letter": "D",
-       "text": "Yes; every upload is added to the model"
+       "text": "Yes, if they use the same tool"
       }
      ],
      "correct_letter": "C",
      "correct_answer": "No; it was in your request's context",
-     "intro": "Uploading a document or pasting text gives a model something to READ during your request; it does NOT RETRAIN the underlying model. The text goes into the context for that conversation, so the model can answer questions about it. Other users do not gain that knowledge, and a new conversation usually will not have it unless the product saves it or you supply it again. Changing the model itself requires training or fine-tuning, which is a separate process. Whether a provider may later use your uploads to train future models depends on its policy and your settings.",
+     "intro": "Uploading a document or pasting text gives a model something to READ during your request; it does NOT RETRAIN the underlying model. The text goes into the context for that conversation, so the model can answer questions about it. Other users do not gain that knowledge through the model (though a shared project may let others see stored files), and a new conversation usually will not have it unless the product saves it or you supply it again. Changing the model itself requires training or fine-tuning, which is a separate process. Whether a provider may later use your uploads to train future models depends on its policy and your settings.",
      "feedback": "Your context is yours."
     },
     {
@@ -108,7 +108,7 @@
      ],
      "correct_letter": "A",
      "correct_answer": "Usually not, unless saved or supplied again",
-     "intro": "Uploading a document or pasting text gives a model something to READ during your request; it does NOT RETRAIN the underlying model. The text goes into the context for that conversation, so the model can answer questions about it. Other users do not gain that knowledge, and a new conversation usually will not have it unless the product saves it or you supply it again. Changing the model itself requires training or fine-tuning, which is a separate process. Whether a provider may later use your uploads to train future models depends on its policy and your settings.",
+     "intro": "Uploading a document or pasting text gives a model something to READ during your request; it does NOT RETRAIN the underlying model. The text goes into the context for that conversation, so the model can answer questions about it. Other users do not gain that knowledge through the model (though a shared project may let others see stored files), and a new conversation usually will not have it unless the product saves it or you supply it again. Changing the model itself requires training or fine-tuning, which is a separate process. Whether a provider may later use your uploads to train future models depends on its policy and your settings.",
      "feedback": "New chats start fresh unless a feature saves it."
     },
     {
@@ -138,7 +138,7 @@
      ],
      "correct_letter": "D",
      "correct_answer": "Training or fine-tuning",
-     "intro": "Uploading a document or pasting text gives a model something to READ during your request; it does NOT RETRAIN the underlying model. The text goes into the context for that conversation, so the model can answer questions about it. Other users do not gain that knowledge, and a new conversation usually will not have it unless the product saves it or you supply it again. Changing the model itself requires training or fine-tuning, which is a separate process. Whether a provider may later use your uploads to train future models depends on its policy and your settings.",
+     "intro": "Uploading a document or pasting text gives a model something to READ during your request; it does NOT RETRAIN the underlying model. The text goes into the context for that conversation, so the model can answer questions about it. Other users do not gain that knowledge through the model (though a shared project may let others see stored files), and a new conversation usually will not have it unless the product saves it or you supply it again. Changing the model itself requires training or fine-tuning, which is a separate process. Whether a provider may later use your uploads to train future models depends on its policy and your settings.",
      "feedback": "A separate process."
     },
     {
@@ -168,7 +168,7 @@
      ],
      "correct_letter": "A",
      "correct_answer": "Its policy and your settings",
-     "intro": "Uploading a document or pasting text gives a model something to READ during your request; it does NOT RETRAIN the underlying model. The text goes into the context for that conversation, so the model can answer questions about it. Other users do not gain that knowledge, and a new conversation usually will not have it unless the product saves it or you supply it again. Changing the model itself requires training or fine-tuning, which is a separate process. Whether a provider may later use your uploads to train future models depends on its policy and your settings.",
+     "intro": "Uploading a document or pasting text gives a model something to READ during your request; it does NOT RETRAIN the underlying model. The text goes into the context for that conversation, so the model can answer questions about it. Other users do not gain that knowledge through the model (though a shared project may let others see stored files), and a new conversation usually will not have it unless the product saves it or you supply it again. Changing the model itself requires training or fine-tuning, which is a separate process. Whether a provider may later use your uploads to train future models depends on its policy and your settings.",
      "feedback": "Policy and settings decide."
     }
    ]
@@ -345,7 +345,7 @@
      "standard": "",
      "domain": "Everyday: searching and working with documents",
      "type": "mc",
-     "prompt": "Tia uploads her club's rules and asks questions. Tomorrow a friend asks the same tool about the club. Will it know Tia's rules?",
+     "prompt": "Tia uploads her club's rules in a private chat with no shared workspace. Tomorrow a friend asks the same tool about the club. Will it know Tia's rules?",
      "choices": [
       {
        "letter": "A",
@@ -366,7 +366,7 @@
      ],
      "correct_letter": "B",
      "correct_answer": "No; the rules were only in Tia's request",
-     "intro": "Uploading a document or pasting text gives a model something to READ during your request; it does NOT RETRAIN the underlying model. The text goes into the context for that conversation, so the model can answer questions about it. Other users do not gain that knowledge, and a new conversation usually will not have it unless the product saves it or you supply it again. Changing the model itself requires training or fine-tuning, which is a separate process. Whether a provider may later use your uploads to train future models depends on its policy and your settings.",
+     "intro": "Uploading a document or pasting text gives a model something to READ during your request; it does NOT RETRAIN the underlying model. The text goes into the context for that conversation, so the model can answer questions about it. Other users do not gain that knowledge through the model (though a shared project may let others see stored files), and a new conversation usually will not have it unless the product saves it or you supply it again. Changing the model itself requires training or fine-tuning, which is a separate process. Whether a provider may later use your uploads to train future models depends on its policy and your settings.",
      "feedback": "Context belongs to that request."
     },
     {
@@ -396,7 +396,7 @@
      ],
      "correct_letter": "C",
      "correct_answer": "It is used in that context; saving depends on product features",
-     "intro": "Uploading a document or pasting text gives a model something to READ during your request; it does NOT RETRAIN the underlying model. The text goes into the context for that conversation, so the model can answer questions about it. Other users do not gain that knowledge, and a new conversation usually will not have it unless the product saves it or you supply it again. Changing the model itself requires training or fine-tuning, which is a separate process. Whether a provider may later use your uploads to train future models depends on its policy and your settings.",
+     "intro": "Uploading a document or pasting text gives a model something to READ during your request; it does NOT RETRAIN the underlying model. The text goes into the context for that conversation, so the model can answer questions about it. Other users do not gain that knowledge through the model (though a shared project may let others see stored files), and a new conversation usually will not have it unless the product saves it or you supply it again. Changing the model itself requires training or fine-tuning, which is a separate process. Whether a provider may later use your uploads to train future models depends on its policy and your settings.",
      "feedback": "Context, plus product-specific saving."
     },
     {
@@ -426,7 +426,7 @@
      ],
      "correct_letter": "A",
      "correct_answer": "Fine-tuning or training",
-     "intro": "Uploading a document or pasting text gives a model something to READ during your request; it does NOT RETRAIN the underlying model. The text goes into the context for that conversation, so the model can answer questions about it. Other users do not gain that knowledge, and a new conversation usually will not have it unless the product saves it or you supply it again. Changing the model itself requires training or fine-tuning, which is a separate process. Whether a provider may later use your uploads to train future models depends on its policy and your settings.",
+     "intro": "Uploading a document or pasting text gives a model something to READ during your request; it does NOT RETRAIN the underlying model. The text goes into the context for that conversation, so the model can answer questions about it. Other users do not gain that knowledge through the model (though a shared project may let others see stored files), and a new conversation usually will not have it unless the product saves it or you supply it again. Changing the model itself requires training or fine-tuning, which is a separate process. Whether a provider may later use your uploads to train future models depends on its policy and your settings.",
      "feedback": "A separate process."
     },
     {
@@ -456,7 +456,7 @@
      ],
      "correct_letter": "D",
      "correct_answer": "The new chat does not have the earlier context",
-     "intro": "Uploading a document or pasting text gives a model something to READ during your request; it does NOT RETRAIN the underlying model. The text goes into the context for that conversation, so the model can answer questions about it. Other users do not gain that knowledge, and a new conversation usually will not have it unless the product saves it or you supply it again. Changing the model itself requires training or fine-tuning, which is a separate process. Whether a provider may later use your uploads to train future models depends on its policy and your settings.",
+     "intro": "Uploading a document or pasting text gives a model something to READ during your request; it does NOT RETRAIN the underlying model. The text goes into the context for that conversation, so the model can answer questions about it. Other users do not gain that knowledge through the model (though a shared project may let others see stored files), and a new conversation usually will not have it unless the product saves it or you supply it again. Changing the model itself requires training or fine-tuning, which is a separate process. Whether a provider may later use your uploads to train future models depends on its policy and your settings.",
      "feedback": "Context does not carry over automatically."
     },
     {
@@ -486,7 +486,7 @@
      ],
      "correct_letter": "C",
      "correct_answer": "Uploads affect the conversation, not the model's training",
-     "intro": "Uploading a document or pasting text gives a model something to READ during your request; it does NOT RETRAIN the underlying model. The text goes into the context for that conversation, so the model can answer questions about it. Other users do not gain that knowledge, and a new conversation usually will not have it unless the product saves it or you supply it again. Changing the model itself requires training or fine-tuning, which is a separate process. Whether a provider may later use your uploads to train future models depends on its policy and your settings.",
+     "intro": "Uploading a document or pasting text gives a model something to READ during your request; it does NOT RETRAIN the underlying model. The text goes into the context for that conversation, so the model can answer questions about it. Other users do not gain that knowledge through the model (though a shared project may let others see stored files), and a new conversation usually will not have it unless the product saves it or you supply it again. Changing the model itself requires training or fine-tuning, which is a separate process. Whether a provider may later use your uploads to train future models depends on its policy and your settings.",
      "feedback": "Context, not retraining."
     }
    ],

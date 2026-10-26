@@ -1,7 +1,7 @@
 # Artificial Intelligence: Understanding and Using AI Wisely
 
 Untangle The Nexus question collection `AI` (course `artificial_intelligence`, category Adults & HS Students),
-version 1.0.0 (2026-10-26). 153 focused sets (153 MAIN sets, 153 backward branches, 153 F1 and 153 F2
+version 1.0.1 (2026-10-26). 153 focused sets (153 MAIN sets, 153 backward branches, 153 F1 and 153 F2
 sections), 3060 multiple-choice questions. Generated from `question-bank/artificial_intelligence/src` (plan.py,
 sources.py and data_*.py) by build.py, validate.py and report.py. Regenerate there rather than editing these files
 by hand.
@@ -42,7 +42,7 @@ this course and labeled as such; nothing is generated or executed by the learner
 | `pdf/` | The question collection and the answer key in 7 volumes each, with `PART_INDEX.md` (page mapping) |
 | `MANIFEST.json` | Every file with its size and SHA-256 |
 
-The full PDFs (`AI_Question_Collection.pdf`, 3213 pages, one question per page; `AI_Answer_Key.pdf`, 1280 pages) and
+The full PDFs (`AI_Question_Collection.pdf`, 3213 pages, one question per page; `AI_Answer_Key.pdf`, 1616 pages) and
 the answer key as JSON and CSV (`AI_Answer_Key.json`, `AI_Answer_Key.csv`, with `question_page` for every ID) are in
 `question-bank/artificial_intelligence/`.
 
@@ -65,13 +65,13 @@ Every question is multiple choice (`"type": "mc"`); the game's grader compares t
 
 ## Installing (the owner uploads the ZIP; Claude runs the commands)
 
-1. Put `Artificial_Intelligence_Nexus_Import_v1.0.0.zip` on the work branch under `content-src/artificial_intelligence/`.
-2. Check only: `npx tsx tools/import-collection/import.ts --check content-src/artificial_intelligence/Artificial_Intelligence_Nexus_Import_v1.0.0.zip`
-3. Install: `npx tsx tools/import-collection/import.ts content-src/artificial_intelligence/Artificial_Intelligence_Nexus_Import_v1.0.0.zip`
+1. Put `Artificial_Intelligence_Nexus_Import_v1.0.1.zip` on the work branch under `content-src/artificial_intelligence/`.
+2. Check only: `npx tsx tools/import-collection/import.ts --check content-src/artificial_intelligence/Artificial_Intelligence_Nexus_Import_v1.0.1.zip`
+3. Install: `npx tsx tools/import-collection/import.ts content-src/artificial_intelligence/Artificial_Intelligence_Nexus_Import_v1.0.1.zip`
 4. Roll back if needed: `npx tsx tools/import-collection/import.ts --rollback <course dir>`.
 5. Release (`release: 'available'` in `packages/curriculum/src/courses.ts`) only after the owner approves.
 
-Result of the check-only import run for this version: PASS on 2026-10-26: `import.ts --check` (importer v2 from creativeplans/untangle-the-nexus, branch claude/compassionate-hypatia-qh29lj) read 153 sets and 3,060 questions (all multiple choice), 0 invalid, 0 warnings, 38 time-sensitive sets in the review list: "CHECK ONLY: the bank is valid. Nothing was changed." The same check was run on the ZIP.
+Result of the check-only import run for this version: PASS on 2026-10-26 (v1.0.1): `import.ts --check` (importer v2 from creativeplans/untangle-the-nexus, branch claude/compassionate-hypatia-qh29lj) read 153 sets and 3,060 questions (all multiple choice), 0 invalid, 0 warnings, 38 time-sensitive sets in the review list: "CHECK ONLY: the bank is valid. Nothing was changed." The same check was run on the ZIP.
 
 ## Checks run for this version
 
@@ -113,12 +113,12 @@ Result of the check-only import run for this version: PASS on 2026-10-26: `impor
 
 - Each section is a fixed pool of exactly 5 questions (see "Reserve pools" above).
 - Sources were checked through web-search results for the pages on 2026-10-26; pages were not opened directly.
-  22 sources could not be confirmed from the primary page itself and are marked in `SOURCES.md` for a direct
+  8 sources could not be confirmed from the primary page itself and are marked in `SOURCES.md` for a direct
   check at the first review. Law sets teach dated facts and what to check; they are general information, not legal
   advice.
 - All prices and rates are hypothetical. All people, companies, prompts and AI responses are fictional; email
   addresses use reserved example domains.
-- Explanations, wrong-choice reasons and keys were written and reviewed by the author; arithmetic in 106 answers
+- Explanations, wrong-choice reasons and keys were written and reviewed by the author; arithmetic in 107 answers
   and every complete code example are checked by code.
 - Answer-length balance: the correct answer is never conspicuously the longest choice and is the single longest in
   about 28% of questions (25% would be chance). Many wrong choices are padded misconceptions: in 34% of

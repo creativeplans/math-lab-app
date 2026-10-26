@@ -125,7 +125,9 @@ def source_ledger():
            'Every time-sensitive set lists its sources in its set file (URL, claim, date checked), a review interval '
            'and a jurisdiction. This ledger lists each source once with the sets that rely on it and its next review '
            'date (date checked + review interval).', '',
-           '**How the sources were checked.** %s. The checking date for every source is %s. For %d sources the claim '
+           '**How the sources were checked.** %s. The checking date for every source is %s. An independent reviewer '
+           'later opened many primary records (marked "primary record opened by the independent reviewer"); the '
+           'authoring environment had no direct web access. For %d sources the claim '
            'could not be confirmed from the official page itself (the note on each says what was used instead: '
            'secondary sources, a search excerpt or a statute citation); the course teaches only the general '
            'principle and dated facts, never a settled answer to an open legal question. These are '
@@ -138,6 +140,10 @@ def source_ledger():
         e = sources.entry(k)
         nxt = (datetime.date.fromisoformat(e['checked']) + datetime.timedelta(days=e['review_days'])).isoformat()
         status = 'confirmed by search' if e['confirmed_by_search'] else 'needs direct check: ' + e['note']
+        if e.get('reviewer'):
+            status = 'primary record opened by the independent reviewer: ' + e['reviewer']
+        links = ''.join(' [%s](%s)' % (n, e[n]) for n in ('primary', 'historical', 'corroboration') if e.get(n))
+        status += ('; links:' + links) if links else ''
         out.append('| [%s](%s) | %s | %s | %s | %d days | %s | %s | %s |' % (
             k, e['url'], e['claim'].replace('|', '/'), e['jurisdiction'], e['checked'], e['review_days'], nxt,
             status.replace('|', '/'), ', '.join(map(str, sorted(uses[k])))))

@@ -60,7 +60,7 @@
      ],
      "correct_letter": "B",
      "correct_answer": "Attention: weighing how relevant other words are",
-     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant every other word in the context is. In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
+     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant each earlier word in the context is (when writing, later words do not exist yet). In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
      "feedback": "Attention links words to relevant context."
     },
     {
@@ -90,7 +90,7 @@
      ],
      "correct_letter": "D",
      "correct_answer": "The trophy",
-     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant every other word in the context is. In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
+     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant each earlier word in the context is (when writing, later words do not exist yet). In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
      "feedback": "Attention helps resolve references."
     },
     {
@@ -120,7 +120,7 @@
      ],
      "correct_letter": "C",
      "correct_answer": "trophy",
-     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant every other word in the context is. In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
+     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant each earlier word in the context is (when writing, later words do not exist yet). In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
      "feedback": "trophy has the highest weight (0.71).",
      "example": {
       "kind": "table",
@@ -176,7 +176,7 @@
      ],
      "correct_letter": "A",
      "correct_answer": "In a 2017 research paper",
-     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant every other word in the context is. In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
+     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant each earlier word in the context is (when writing, later words do not exist yet). In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
      "feedback": "2017."
     },
     {
@@ -206,7 +206,7 @@
      ],
      "correct_letter": "C",
      "correct_answer": "It is a mathematical weighting, not a mind",
-     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant every other word in the context is. In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
+     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant each earlier word in the context is (when writing, later words do not exist yet). In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
      "feedback": "Attention is math."
     }
    ]
@@ -287,11 +287,11 @@
      "choices": [
       {
        "letter": "A",
-       "text": "A dictionary lookup"
+       "text": "Computed number weights"
       },
       {
        "letter": "B",
-       "text": "Numbers computed for every word"
+       "text": "A dictionary lookup"
       },
       {
        "letter": "C",
@@ -302,8 +302,8 @@
        "text": "A human reader"
       }
      ],
-     "correct_letter": "B",
-     "correct_answer": "Numbers computed for every word",
+     "correct_letter": "A",
+     "correct_answer": "Computed number weights",
      "intro": "When you read \"Maria gave Sam her umbrella because she was leaving early,\" you might mentally connect \"she\" to \"Maria.\" Imagine marking how strongly each other word helps you understand \"she\": a heavy highlight on \"Maria,\" a lighter one on \"leaving,\" almost none on \"umbrella.\" A transformer does something like this with numbers for every word: it computes weights showing how much each other word should influence the current one. The highlights are a teaching picture; the real thing is arithmetic done many times.",
      "feedback": "Weights are numbers."
     },
@@ -404,7 +404,7 @@
      ],
      "correct_letter": "B",
      "correct_answer": "dog",
-     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant every other word in the context is. In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
+     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant each earlier word in the context is (when writing, later words do not exist yet). In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
      "feedback": "Dogs get tired; balls do not."
     },
     {
@@ -434,7 +434,7 @@
      ],
      "correct_letter": "D",
      "correct_answer": "ball",
-     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant every other word in the context is. In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
+     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant each earlier word in the context is (when writing, later words do not exist yet). In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
      "feedback": "Balls roll under couches."
     },
     {
@@ -464,7 +464,7 @@
      ],
      "correct_letter": "B",
      "correct_answer": "It can relate words that are far apart",
-     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant every other word in the context is. In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
+     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant each earlier word in the context is (when writing, later words do not exist yet). In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
      "feedback": "Relationships across distance can be tracked."
     },
     {
@@ -494,7 +494,7 @@
      ],
      "correct_letter": "A",
      "correct_answer": "Attention is weighting of words, not interest",
-     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant every other word in the context is. In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
+     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant each earlier word in the context is (when writing, later words do not exist yet). In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
      "feedback": "The term is technical, not emotional."
     },
     {
@@ -524,7 +524,7 @@
      ],
      "correct_letter": "D",
      "correct_answer": "Attention is computed many times across many layers",
-     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant every other word in the context is. In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
+     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant each earlier word in the context is (when writing, later words do not exist yet). In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
      "feedback": "Repeated, layered computation."
     }
    ],

@@ -129,12 +129,13 @@ S_RET01 = SET(
 )
 
 # ---------------------------------------------------------------------------------------------- AI.RETRIEVAL.02
-GROUND = ('A SOURCE-GROUNDED answer should stay within what its sources say. Checking means three questions. Does each '
+GROUND = (('A SOURCE-GROUNDED answer should stay within what its sources say. Checking means three questions. Does each '
           'claim have a source? Does the source actually say that, in that strength? Does the answer leave out '
           'important limits or exceptions the source includes? Grounding fails in familiar ways: an answer cites the '
-          'right document but the wrong page; it combines two sources into a conclusion neither makes; or it adds '
+          'right document but the wrong page; it draws a conclusion the sources do not support even taken together (a '
+          'valid inference, such as applying a stated discount to a stated price, is fine if labeled); or it adds '
           'background "knowledge" with no source at all. A helpful request: "Answer only from these documents; quote '
-          'the sentence for each claim; say \'not found\' if they do not cover it."')
+          'the sentence for each claim; say \'not found\' if they do not cover it."'))
 GROUND_F2 = ('Even "not found" deserves thought. If the tool says the documents do not cover something, it might be '
              'right, or it might have missed it in a long or poorly scanned file; a quick search of the document '
              'yourself can confirm. When two sources disagree, a grounded answer should report the disagreement '
@@ -160,11 +161,11 @@ S_RET02 = SET(
           ('Repairs are free', 'covered repairs at no charge'),
           ('All three are supported', 'one contradicts its source'),
           'The source says water damage is not covered.', ex=GROUND_EX),
-        Q('Which is a grounding failure?', 'Combining two sources into a conclusion neither makes',
-          ('Quoting the exact sentence that supports each claim', 'good practice'),
-          ('Saying "not found" when sources are silent', 'good practice'),
+        Q('Which is a grounding failure?',
+          'A conclusion the sources do not support, even together',
+          ('Quoting the exact sentence that supports each claim', 'good practice'), ('Saying "not found" when sources are silent', 'good practice'),
           ('Reporting a disagreement between sources', 'good practice'),
-          'Unsupported synthesis.'),
+          'A valid inference from several sources is fine if it is labeled as one; an unsupported conclusion is not.'),
         Q('Which request best encourages grounded answers?', '"Answer only from these documents; quote each source."',
           ('"Answer using these documents plus anything else you happen to know about the topic."', 'invites ungrounded claims'),
           ('"Answer as confidently as possible."', 'not grounding'),
@@ -517,12 +518,13 @@ S_RET04 = SET(
 )
 
 # ---------------------------------------------------------------------------------------------- AI.RETRIEVAL.05
-NORETRAIN = ('Uploading a document or pasting text gives a model something to READ during your request; it does NOT '
-             'RETRAIN the underlying model. The text goes into the context for that conversation, so the model can '
-             'answer questions about it. Other users do not gain that knowledge, and a new conversation usually will '
-             'not have it unless the product saves it or you supply it again. Changing the model itself requires '
-             'training or fine-tuning, which is a separate process. Whether a provider may later use your uploads to '
-             'train future models depends on its policy and your settings.')
+NORETRAIN = (('Uploading a document or pasting text gives a model something to READ during your request; it does NOT '
+             'RETRAIN the underlying model. The text goes into the context for that conversation, so the model can answer '
+             'questions about it. Other users do not gain that knowledge through the model (though a shared project may '
+             'let others see stored files), and a new conversation usually will not have it unless the product saves it or'
+             ' you supply it again. Changing the model itself requires training or fine-tuning, which is a separate '
+             'process. Whether a provider may later use your uploads to train future models depends on its policy and your'
+             ' settings.'))
 NORETRAIN_F2 = ('People mix these ideas up in both directions. Some worry that uploading a file "teaches the AI" '
                 'instantly for everyone; others assume that because uploads do not retrain the model in the moment, '
                 'they are never stored or used. The accurate picture: uploads are used in your request\'s context; '
@@ -538,9 +540,9 @@ S_RET05 = SET(
           ('The underlying model is retrained on it right away', 'no retraining'), ('Every user immediately learns its contents', 'not shared'),
           ('The document is published online', 'not what uploading does'),
           'Context, not training.'),
-        Q('Does another user gain knowledge of your uploaded file?',
+        Q('In a private chat with no shared project or workspace, does another user gain knowledge of your uploaded file?',
           "No; it was in your request's context",
-          ('Yes; every upload is added to the model', 'no'), ('Yes, but only on weekends', 'nonsense'),
+          ('Yes; every upload is added to the model', 'no'), ('Yes, if they use the same tool', "a private chat's context is not shared"),
           ('Only if the file is long', 'no'),
           'Your context is yours.'),
         Q('In a new conversation, will the model know your earlier file?', 'Usually not, unless saved or supplied again',
@@ -587,7 +589,7 @@ S_RET05 = SET(
                 'Saved features carry it over.'),
           ], why='A learner who believes uploads retrain the model can use the familiar act of showing a friend a photo.')],
     F1=sec('Apply the context-versus-retraining idea', NORETRAIN, [
-        Q("Tia uploads her club's rules and asks questions. Tomorrow a friend asks the same tool about the club. Will it know Tia's rules?",
+        Q("Tia uploads her club's rules in a private chat with no shared workspace. Tomorrow a friend asks the same tool about the club. Will it know Tia's rules?",
           "No; the rules were only in Tia's request",
           ('Yes; uploading the rules retrained the model', 'no'), ('Yes, if the friend is in the same club', 'no'),
           ('Only if the club is famous', 'no'),
@@ -798,10 +800,13 @@ S_PIT02 = SET(
           ('It refused the request', 'it answered'),
           'It stops mid-sentence at step 7.',
           ex=TRUNC_EX),
-        Q('In the same example, how many promised steps are missing?', '3 (or more, counting step 7)',
-          ('None, since the list already covers the most important parts of planning a fundraiser', 'it promised 10'),
-          ('7', 'it gave 7 partial steps'), ('10', 'it gave some'),
-          '10 promised, 7 started.', calc=lambda: 10 - 7 == 3, ex=TRUNC_EX),
+        Q('In the same example, how many promised steps never appear at all?',
+          '3 (steps 8 to 10)',
+          ('None, since the list already covers the most important parts of planning a fundraiser', 'it promised 10'), ('4', 'step 7 started; it is unfinished, not absent'),
+          ('10', 'it gave some'),
+          'Steps 8, 9 and 10 are absent; step 7 is started but unfinished.',
+          calc=lambda: 10 - 7 == 3,
+          ex=TRUNC_EX),
         Q('What is a sign of truncation?',
           'A sentence that ends abruptly',
           ('A conclusion paragraph that wraps up the answer neatly', 'a sign of completion'), ('A polite greeting', 'not a sign'),
@@ -1039,10 +1044,10 @@ VERS = ('When you edit with AI help, KEEP YOUR ORIGINAL. A tool may rewrite more
         '"essay_v1_mine," "essay_v2_ai_edit," "essay_v3_final," or use your app\'s version history. Before accepting a '
         'big change, compare it with the previous version. Versioning also helps with honesty and grading: you can '
         'show how your work developed. A good rule is "never overwrite your only copy."')
-VERS_F2 = ('Versioning only helps if names and dates are clear. "final," "final2" and "really_final" become confusing; '
+VERS_F2 = (('Versioning only helps if names and dates are clear. "final," "final2" and "really_final" become confusing; '
            'dates and short descriptions work better ("2026-03-14_after_peer_review"). Keep track of which version you '
            'actually submitted or sent. When several people edit, agree on one master copy so changes do not get lost. '
-           'And remember that copying text into a chat does not save a version for you; save your own file.')
+           'And remember that a chat history is not a reliable versioned backup; save your own file.'))
 
 S_PIT04 = SET(
     'AI.PITFALL.04',
@@ -1145,11 +1150,11 @@ S_PIT04 = SET(
           ('Deleting everyone else\'s edits', 'loses work'),
           ('Emailing random versions', 'confusing'),
           'One master copy.'),
-        Q('Does pasting your text into a chat save a version for you?',
-          'No; save your own file',
-          ('Yes', 'not reliable'), ('Yes, but only for essays', 'no'),
-          ('Only if the chat is long', 'no'),
-          'Chats are not your backup.'),
+        Q('Is pasting your text into a chat a reliable versioned backup?',
+          'No; save or export your own copy',
+          ('Yes; chat history always keeps every version', 'history may be lost, changed or hard to use'), ('Yes, if the chat is pinned', 'pinning is not a versioned backup'),
+          ('Only if the chat is long', 'length does not make it a backup'),
+          'A chat may keep history, but it is not a dependable versioned backup.'),
         Q('Why track which version you submitted?',
           'So you know exactly what was graded or sent',
           ('So that you can change the submitted version later', 'not honest'), ('So the file gets bigger', 'irrelevant'),

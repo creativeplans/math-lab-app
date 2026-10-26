@@ -140,17 +140,18 @@ S_WORK01 = SET(
 )
 
 # ---------------------------------------------------------------------------------------------- AI.WORK.02
-FORE = ('An employment FORECAST or PROJECTION estimates future jobs based on ASSUMPTIONS: about the economy, '
-        'technology, population and how employers behave. It is not a promise. Read forecasts by asking: Who made it, '
-        'and how (a survey of employers, a statistical model)? What period and place does it cover? What does it count? '
-        'Example: the World Economic Forum\'s Future of Jobs Report 2025, based on a survey of more than 1,000 '
-        'employers, projected 170 million roles created and 92 million displaced worldwide by 2030, a net 78 million. '
-        'Different forecasts often disagree.')
-FORE_F2 = ('Large numbers can hide important details. A global "net gain" can include big losses for particular '
-           'workers, places or roles. Percent growth from a small base can sound huge while adding few jobs. A '
-           'government projection, such as the US Bureau of Labor Statistics (BLS) estimate that data scientist '
-           'employment will grow 34 percent from 2024 to 2034, uses its own method and period. Compare like with like, '
-           'and treat every forecast as one input to your decisions, not a guarantee.')
+FORE = (('An employment FORECAST or PROJECTION estimates future jobs based on ASSUMPTIONS: about the economy, '
+        'technology, population and how employers behave. It is not a promise. Read forecasts by asking: Who made it,'
+        ' and how (a survey of employers, a statistical model)? What period and place does it cover? What does it '
+        "count? Example: the World Economic Forum's Future of Jobs Report 2025, based on a survey of more than 1,000 "
+        'employers, projected 170 million roles created and 92 million displaced worldwide by 2030, a net 78 million,'
+        ' from several trends together (technology, the economy, demographics, the green transition), not AI alone. '
+        'Different forecasts often disagree.'))
+FORE_F2 = (('Large numbers can hide important details. A global "net gain" can include big losses for particular workers,'
+           ' places or roles. Percent growth from a small base can sound huge while adding few jobs. A government '
+           'projection, such as the US Bureau of Labor Statistics (BLS) estimate that data scientist employment will '
+           'grow about 35 percent from 2025 to 2035, uses its own method and period. Compare like with like, and treat '
+           'every forecast as one input to your decisions, not a guarantee.'))
 
 S_WORK02 = SET(
     'AI.WORK.02',
@@ -213,11 +214,11 @@ S_WORK02 = SET(
           'Useful but uncertain.'),
           ], why='A learner who reads forecasts as promises can compare them with weather forecasts.')],
     F1=sec('Read job forecasts in practice', FORE, [
-        Q('A headline says "AI will create 170 million jobs!" What is missing?', 'The roles displaced and the net change',
-          ('Nothing, since the number of jobs created is the only number that matters in any forecast', 'losses matter'),
-          ('The report\'s font', 'irrelevant'),
-          ('The author\'s photo', 'irrelevant'),
-          'Created minus displaced.'),
+        Q('A headline says "AI will create 170 million jobs!" What is missing?',
+          'The totals cover several trends, and roles are also displaced',
+          ('Nothing, since jobs created are the only number that matters', 'losses and causes matter'), ("The report's font", 'irrelevant'),
+          ("The author's photo", 'irrelevant'),
+          'The 170 million comes from several trends (technology, the economy, demographics, the green transition), not AI alone, and 92 million roles are projected to be displaced (net 78 million).'),
         Q('A friend says the WEF report "proves" there will be 78 million more jobs. What is more accurate?',
           'It projects that, based on an employer survey',
           ('It proves it, because reports from large organizations are always exactly correct about the future', 'projection'),
@@ -252,9 +253,9 @@ S_WORK02 = SET(
           ('5', 'that is the start'),
           '15 - 5 = 10.',
           calc=lambda: 15 - 5 == 10 and (15 - 5) / 5 == 2),
-        Q('BLS projects data scientist jobs to grow 34% from 2024 to 2034. What is this?', 'A US projection with its own method',
-          ('A guarantee that every person who studies data science will get a job by 2034', 'not a guarantee'),
-          ('A worldwide count', 'US only'),
+        Q('BLS projects data scientist jobs to grow about 35% from 2025 to 2035. What is this?',
+          'A US projection with its own method',
+          ('A guarantee that everyone who studies data science gets a job by 2035', 'a projection, not a guarantee'), ('A worldwide count', 'US only'),
           ('A salary promise', 'no'),
           'Government projection.'),
         Q('Why compare like with like?', 'Forecasts differ in place, period and what they count',
@@ -277,11 +278,11 @@ ROLES = ('Several technical roles work with AI; titles vary by employer. A DATA 
          'applications on top of existing models, connecting them to data and tools and testing how they behave. All '
          'three usually need programming, careful testing and clear communication. Pay and credential requirements '
          'vary widely by employer and place, so this course does not state them.')
-ROLES_F2 = ('Job titles overlap and change. One company\'s "data scientist" may do what another calls "analyst" or '
-            '"ML engineer." Read the TASKS in a job posting rather than the title. Many postings list more skills than '
-            'any one person has; they describe an ideal, not a minimum. Government sources such as the BLS '
-            'Occupational Outlook Handbook describe typical duties for US occupations, which helps you compare roles '
-            'more consistently.')
+ROLES_F2 = (('Job titles overlap and change. One company\'s "data scientist" may do what another calls "analyst" or "ML '
+            'engineer." Read the TASKS in a job posting rather than the title. Many postings list many skills; check '
+            'which are marked required and which preferred rather than assuming all or none are essential. Government '
+            'sources such as the BLS Occupational Outlook Handbook describe typical duties for US occupations, which '
+            'helps you compare roles more consistently.'))
 
 S_WORK03 = SET(
     'AI.WORK.03',
@@ -376,10 +377,10 @@ S_WORK03 = SET(
           ('Because titles are secret', 'no'),
           'Tasks are clearer.'),
         Q('A posting lists 25 skills. What is a reasonable reading?',
-          'It describes an ideal, not a minimum',
-          ('Every applicant must have all 25 skills', 'usually not'), ('The job is fake', 'not implied'),
+          'Check which skills are required and which are preferred',
+          ('Every applicant must have all 25 skills', 'some may be preferred, not required'), ('None of the 25 skills really matter for applicants', 'some may be required'),
           ('The job needs no skills', 'no'),
-          'Wish lists are common.'),
+          'Postings often mix required and preferred skills; read which is which.'),
         Q('Which source describes typical duties of US occupations consistently?',
           'The BLS Occupational Outlook Handbook',
           ('A single social media post from someone', 'not consistent'), ('A random job posting', 'one employer'),
@@ -852,10 +853,10 @@ S_WORK07 = SET(
           ], why='A learner unsure why workplace AI rules matter can compare them with badge access to doors.')],
     F1=sec('Use AI responsibly at work in practice', WORKUSE, [
         Q("Sara wants to paste a customer complaint, including the customer's address, into an unapproved chatbot. What should she do?",
-          'Use an approved tool or remove the personal details',
-          ('Paste it, since customer addresses are not really private', 'confidential'), ('Post it on social media', 'worse'),
+          'Use a tool approved for that data, sharing only what is needed',
+          ('Paste it, since customer addresses are not really private', 'confidential'), ('Remove the address, then use the unapproved chatbot', 'removing details does not make the tool approved'),
           ('Email it to friends', 'worse'),
-          'Protect personal data.'),
+          'Approval comes first; if it is unclear which tool is approved, ask the responsible person.'),
         Q('An AI draft to a client promises a discount the company does not offer. What should happen?',
           'Remove it before sending',
           ('Send it', 'misleading'), ('Add more discounts', 'worse'),

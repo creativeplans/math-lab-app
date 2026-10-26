@@ -14,6 +14,7 @@ import hashlib
 import html
 import importlib
 import json
+import re
 import os
 import shutil
 import sys
@@ -26,7 +27,7 @@ import sources  # noqa: E402
 ROOT = os.path.dirname(HERE)                       # question-bank/artificial_intelligence
 QB = os.path.dirname(ROOT)                         # question-bank
 PKG = os.path.join(QB, 'nexus', 'artificial_intelligence')
-VERSION = '1.0.0'
+VERSION = '1.0.1'
 DATE = '2026-10-26'
 TITLE = 'Artificial Intelligence: Understanding and Using AI Wisely'
 NAME = 'Artificial Intelligence'
@@ -255,11 +256,14 @@ def make_question_pdf(recs, path):
         body = ('<div class="teach"><b>Learn</b><br>%s</div>%s<p>%s</p>' % (esc(r['intro']), ex_html(r['example']),
                                                                          esc(r['prompt'])) +
                 ''.join('<p class="ch"><b>%s.</b> %s</p>' % (c['letter'], esc(c['text'])) for c in r['choices']))
-        pg.insert_htmlbox(pymupdf.Rect(45, 40, W - 45, H - 110), body, css=CSS, scale_low=0.5)
+        spare = pg.insert_htmlbox(pymupdf.Rect(45, 40, W - 45, H - 110), body, css=CSS, scale_low=0.5)
+        spare = spare[0] if isinstance(spare, tuple) else spare
+        assert spare >= 0, 'question %s does not fit on its page' % r['id']
         pg.insert_htmlbox(pymupdf.Rect(45, H - 100, W - 45, H - 30), ref_box(r), css=CSS)
         pg.insert_text((W - 60, H - 14), str(len(doc)), fontsize=9)
         page_of[r['id']] = len(doc)
     doc.save(path, garbage=3, deflate=True)
+    check_pdf_text(path, recs, 'question')
     return page_of
 
 
@@ -280,15 +284,52 @@ def make_key_pdf(recs, path):
                         ex_html(r['example']), r['correct_letter'], esc(r['correct_answer']), esc(r['feedback']), wr,
                         'yes' if r['arithmetic_checked'] else 'not applicable',
                         'yes' if r['code_checked'] else 'not applicable', esc(r['sources'] or 'none (stable)')))
-    story = pymupdf.Story('<html><body>%s</body></html>' % ''.join(parts), user_css=CSS)
+    # Each entry is laid out on its own: it is measured first, and an entry that does not fit in the space left starts
+    # a new page. (Placing the whole key as one flow let an example box at a page break drop text silently.)
+    TOP, BOTTOM, LEFT, RIGHT = 45, 747, 45, 567
     writer = pymupdf.DocumentWriter(path)
-    more = 1
-    while more:
-        dev = writer.begin_page(pymupdf.Rect(0, 0, 612, 792))
-        more, _ = story.place(pymupdf.Rect(45, 45, 567, 747))
-        story.draw(dev)
-        writer.end_page()
+    dev = writer.begin_page(pymupdf.Rect(0, 0, 612, 792))
+    y = TOP
+
+    def height(html):
+        st = pymupdf.Story('<html><body>%s</body></html>' % html, user_css=CSS)
+        more, filled = st.place(pymupdf.Rect(LEFT, 0, RIGHT, 100000))
+        return pymupdf.Rect(filled).y1
+
+    for html in parts:
+        h = height(html)
+        if y > TOP and y + h > BOTTOM:
+            writer.end_page()
+            dev = writer.begin_page(pymupdf.Rect(0, 0, 612, 792))
+            y = TOP
+        st = pymupdf.Story('<html><body>%s</body></html>' % html, user_css=CSS)
+        while True:
+            more, filled = st.place(pymupdf.Rect(LEFT, y, RIGHT, BOTTOM))
+            st.draw(dev)
+            if not more:
+                y = pymupdf.Rect(filled).y1 + 4
+                break
+            writer.end_page()
+            dev = writer.begin_page(pymupdf.Rect(0, 0, 612, 792))
+            y = TOP
+    writer.end_page()
     writer.close()
+    check_pdf_text(path, recs, 'answer key')
+
+
+def _norm(t):
+    t = t.replace('\ufb01', 'fi').replace('\ufb02', 'fl').replace('\ufb00', 'ff').replace('\ufb03', 'ffi').replace('\ufb04', 'ffl')
+    return re.sub(r'\s+', ' ', t)
+
+
+def check_pdf_text(path, recs, label):
+    """Every question ID, prompt and correct answer must appear in the PDF's text (guards against dropped layout)."""
+    import pymupdf
+    doc = pymupdf.open(path)
+    text = _norm(' '.join(pg.get_text() for pg in doc))
+    missing = [r['id'] for r in recs if r['id'] not in text or _norm(r['prompt'])[:60] not in text
+               or _norm(r['correct_answer'])[:40] not in text]
+    assert not missing, '%s PDF is missing text for %d questions, e.g. %s' % (label, len(missing), missing[:5])
 
 
 def shrink_pdf(path):

@@ -85,11 +85,11 @@ S_AGT01 = SET(
           ('An agent', 'steps are fixed'), ('A chatbot', 'no conversation'),
           ('A calculator', 'no'),
           'Same steps each time.'),
-        Q('A system told "book the cheapest flight to Denver next week" searches, compares and books. What is it?',
+        Q('Told "book the cheapest flight to Denver next week," a system decides which searches to run, changes its plan when a flight is sold out, and then books. What is it?',
           'An agent',
           ('A chatbot', 'it acts'), ('A fixed workflow', 'it chooses steps'),
           ('A search engine', 'it also books'),
-          'Goal, tools, chosen steps.'),
+          'It is given a goal and chooses and adjusts its own steps.'),
         Q('Which system can affect the world most directly?', 'An agent that can send and buy',
           ('A chatbot that only shows text answers on a screen for the person to read and decide', 'text only'),
           ('A calculator', 'no'),
@@ -114,10 +114,10 @@ S_AGT01 = SET(
           ('"Is it popular?"', 'not the risk'),
           'Unapproved actions matter.'),
         Q('A chatbot quietly searches the web before answering. Does that make it an agent?',
-          'Not necessarily; it may still only show text',
-          ('Yes, because any system that uses a tool', 'not necessarily'), ('Yes, if it is fast', 'no'),
+          'Not necessarily; it depends on who chooses the next steps',
+          ('Yes, because any system that uses a tool is an agent', 'using a tool does not decide it'), ('Yes, if it is fast', 'no'),
           ('No, chatbots cannot use tools', 'they can'),
-          'Ask what it can do.'),
+          'An agent chooses its own steps toward a goal; that can be true even when it only returns text.'),
         Q('Which ability needs the most limits?',
           'Deleting files',
           ('Showing a short text summary', 'low risk'), ('Suggesting a title', 'low risk'),
@@ -389,11 +389,11 @@ LEAST = ('The principle of LEAST ACCESS (also called least privilege) says: give
          '(read, not write), and how long access lasts. If something goes wrong, such as a bug or a malicious '
          'instruction hidden in a document, least access limits the damage. Review and remove access that is no '
          'longer needed.')
-LEAST_F2 = ('Convenience pushes toward too much access: clicking "allow all" is faster than choosing. Watch for '
-            'requests broader than the task, such as a meeting summarizer asking to send email as you. Use separate, '
-            'limited accounts for automation where possible, never share your main password with a tool, and prefer '
-            'access that can be revoked (taken back) easily. Prompt injection, instructions hidden in content the agent '
-            'reads, is much less dangerous when the agent cannot take harmful actions.')
+LEAST_F2 = (('Convenience pushes toward too much access: clicking "allow all" is faster than choosing. Watch for requests '
+            'broader than the task, such as a meeting summarizer asking to send email as you. Use separate, limited '
+            'accounts for automation where possible, never share your main password with a tool, and prefer access that '
+            'can be revoked (taken back) easily. Prompt injection, instructions placed in content the agent reads, is '
+            'much less dangerous when the agent cannot take harmful actions.'))
 
 S_AGT04 = SET(
     'AI.AGENT.04',
@@ -494,9 +494,9 @@ S_AGT04 = SET(
           ('It is shared with everyone', 'no'),
           ('It is free', 'no'),
           'Easy to withdraw.'),
-        Q('Why use a separate, limited account for automation?', 'So a problem cannot reach your main account',
-          ('Because separate accounts make the automation run twice as fast as it would otherwise', 'not the reason'),
-          ('To get more storage', 'not the reason'),
+        Q('Why use a separate, limited account for automation?',
+          'So a problem is less likely to reach your main account',
+          ('Because separate accounts make the automation run twice as fast as it would otherwise', 'not the reason'), ('To get more storage', 'not the reason'),
           ('To hide the automation', 'no'),
           'Isolation.'),
         Q('Which request is broader than its task?',
@@ -514,11 +514,11 @@ APPROVE = ('Some actions are CONSEQUENTIAL: hard or impossible to undo, or affec
            'text). This is called HUMAN-IN-THE-LOOP review. Low-stakes, reversible steps, such as drafting or '
            'sorting, can run without approval. The person approving should actually read the details, not click '
            '"yes" by habit.')
-APPROVE_F2 = ('Approval can fail quietly. If every small step asks for approval, people stop reading and click yes '
-              'automatically, called APPROVAL FATIGUE. Ask only for consequential steps, and show clear details: who, '
-              'what, how much. Watch for actions split into many small ones that each look harmless, such as 50 '
-              'separate one-dollar payments. And approval must happen BEFORE the action; reviewing a log afterward '
-              'cannot unsend an email.')
+APPROVE_F2 = (('Approval can fail quietly. If every small step asks for approval, people stop reading and click yes '
+              'automatically, called APPROVAL FATIGUE. Ask only for consequential steps, and show clear details: who, what,'
+              ' how much. Watch for actions split into many small ones that each look harmless, such as 50 separate one-'
+              'dollar payments. And approval must happen BEFORE the action; reviewing a log afterward cannot reliably '
+              'recall an email that was already read.'))
 
 APPROVE_EX = TEXT('APPROVAL NEEDED\nAction: Send email\nTo: 120 parents (Grade 7 list)\nSubject: Field trip moved to '
                   'Friday\nBody: "The museum trip is now on Friday, May 9. Buses leave at 8:15."\n[Approve] [Edit] '
@@ -627,11 +627,11 @@ S_AGT05 = SET(
           ('The payments are too slow', 'not the concern'),
           ('The payments are too large', 'each is small'),
           '50 dollars in total.', calc=lambda: 50 * 1 == 50),
-        Q('Why must approval happen before an email is sent?', 'A sent email cannot be unsent',
-          ('Because email systems refuse to send any message that has not been approved by a person', 'not how it works'),
-          ('Because logs are not allowed', 'they help'),
+        Q('Why must approval happen before an email is sent?',
+          'A sent email usually cannot be recalled once read',
+          ('Because email systems refuse to send any message that has not been approved by a person', 'not how it works'), ('Because logs are not allowed', 'they help'),
           ('Because emails are short', 'irrelevant'),
-          'Before, not after.'),
+          'Recall features are limited, and copies already read cannot be undone.'),
         Q('What should an approval screen show?',
           'Who, what and how much',
           ('Only a short code number', 'not enough'), ('Only the time', 'not enough'),

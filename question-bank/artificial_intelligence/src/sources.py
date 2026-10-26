@@ -141,15 +141,17 @@ SRC = {
     # ---------------------------------------------------------------- careers and work
     'work_bls_ds': dict(
         url='https://www.bls.gov/ooh/math/data-scientists.htm',
-        claim='BLS Occupational Outlook Handbook, data scientists: employment is projected to grow 34 percent from 2024 '
-              'to 2034, much faster than the 3 percent average for all occupations. A projection, not a guarantee. '
+        claim='BLS Occupational Outlook Handbook, data scientists (2025-2035 edition, page modified August 27, 2026): '
+              'employment is projected to grow about 35 percent from 2025 to 2035 (34.6 percent in a secondary summary). '
+              'The earlier 2024-2034 edition said 34 percent. A projection, not a guarantee. '
               'The course quotes no pay figures and no credential requirements.',
-        jurisdiction='US', review_days=365, effective_year='2024-2034 projection'),
+        jurisdiction='US', review_days=365, effective_year='2025-2035 projection'),
     'work_wef': dict(
         url='https://www.weforum.org/media/future-of-jobs-report-2025-78-million-new-job-opportunities-by-2030-but-urgent-upskilling-needed-to-prepare-workforces/',
         claim='World Economic Forum, Future of Jobs Report 2025 (January 2025): based on a survey of more than 1,000 '
               'employers, it projects 170 million roles created and 92 million displaced worldwide by 2030 (a net '
-              '78 million). These are survey-based projections.',
+              '78 million). The totals reflect several trends together (technology, economic and geopolitical change, '
+              'demographics, the green transition), not AI alone. These are survey-based projections.',
         jurisdiction='International (projection)', review_days=365, effective_year='2025'),
 
     # ---------------------------------------------------------------- law and policy (US unless marked)
@@ -208,8 +210,8 @@ SRC = {
     'law_fcc_voice': dict(
         url='https://www.akingump.com/en/insights/ai-law-and-regulation-tracker/fcc-issues-declaratory-ruling-on-ai-generated-voice-robocalls',
         claim='FCC Declaratory Ruling (February 8, 2024): AI-generated voices in calls count as "artificial" voices '
-              'under the Telephone Consumer Protection Act, so such calls need the same prior consent and disclosures '
-              'as other prerecorded calls.',
+              'under the Telephone Consumer Protection Act, so covered calls need the same prior consent and disclosures '
+              'as other prerecorded calls; existing exceptions, such as calls for emergency purposes, still apply.',
         jurisdiction='US federal', review_days=365, effective_year='2024'),
     'law_takeitdown': dict(
         url='https://search.ftc.gov/news-events/news/press-releases/2026/05/ftc-begins-enforcing-take-it-down-act',
@@ -244,16 +246,22 @@ SRC = {
         corroboration='https://www.ebglaw.com/workforce-bulletin/illinois-prohibits-discriminatory-artificial-intelligence-in-employment-decisions',
         jurisdiction='US (Illinois)', review_days=365, effective_year='2026'),
     'law_cfpb': dict(
-        url='https://consumerfinance.gov/compliance/circulars/circular-2023-03-adverse-action-notification-requirements-and-the-proper-use-of-the-cfpbs-sample-forms-provided-in-regulation-b',
-        claim='CFPB Circular 2023-03 (September 2023): a lender that denies credit must give the specific principal '
-              'reasons, even when it uses complex algorithms; checking a generic reason on a sample form is not '
-              'enough if it does not match the actual reasons. Agency guidance can be withdrawn or revised.',
-        jurisdiction='US federal', review_days=365, effective_year='2023'),
+        url='https://www.ecfr.gov/current/title-12/chapter-X/part-1002/section-1002.9',
+        historical='https://consumerfinance.gov/compliance/circulars/circular-2023-03-adverse-action-notification-requirements-and-the-proper-use-of-the-cfpbs-sample-forms-provided-in-regulation-b',
+        claim='Regulation B, 12 CFR 1002.9: a creditor taking adverse action must give a statement of the specific '
+              'principal reasons, or tell the applicant how to request them. CFPB Circular 2023-03 (September 2023), '
+              'which applied this to complex algorithms, was withdrawn on May 12, 2025 in a batch of 67 guidance '
+              'documents; withdrawing guidance does not repeal the regulation.',
+        corroboration='https://www.hklaw.com/en/insights/publications/2025/05/cfpb-rescinds-67-guidance-documents',
+        jurisdiction='US federal', review_days=365, effective_year='Regulation B in force; circular 2023, withdrawn 2025'),
     'law_ftc_aicomply': dict(
         url='https://www.mofo.com/pdf/resources/insights/241008-ftc-first-ai-related-enforcement-actions',
         claim='FTC "Operation AI Comply" (September 25, 2024): five actions under existing consumer-protection law, '
               'including a company sold as a "robot lawyer" whose claims were alleged to be untested, a tool alleged to '
-              'generate fake reviews, and schemes promising quick earnings from AI-powered online stores.',
+              'generate fake reviews, and schemes promising quick earnings from AI-powered online stores. On December '
+              '22, 2025 the FTC reopened and set aside the Rytr (review-tool) order; publishing fake reviews remains '
+              'deceptive.',
+        primary='https://www.parkerpoe.com/news/2025/12/ftc-reopens-and-vacates-prior-order-against-ai',
         corroboration='https://www.davispolk.com/insights/client-update/ftc-announces-new-enforcement-initiative-targeting-deceptive-ai-practices',
         jurisdiction='US federal', review_days=365, effective_year='2024'),
     'law_ed_ai': dict(
@@ -267,7 +275,8 @@ SRC = {
         url='https://www.morganlewis.com/pubs/2026/06/eu-approves-delays-and-other-amendments-to-certain-eu-ai-act-obligations-what-businesses-should-know',
         claim='EU AI Act (Regulation (EU) 2024/1689, in force August 1, 2024) uses risk tiers: some practices are '
               'prohibited (from February 2, 2025), high-risk systems face requirements, and some systems face '
-              'transparency duties. A 2026 amendment ("digital omnibus", in force July 27, 2026) moved most Annex III '
+              'transparency duties. A 2026 amendment ("digital omnibus", Regulation (EU) 2026/1744 per the Commission '
+              'record, in force July 27, 2026) moved most Annex III '
               'high-risk obligations to December 2, 2027.',
         corroboration='https://www.orrick.com/en/Insights/2026/07/EU-AI-Act-Update-Digital-Omnibus-Finalizes-8-Compliance-Changes',
         jurisdiction='European Union', review_days=180, effective_year='2024; amended 2026'),
@@ -292,6 +301,41 @@ SRC = {
               'repeal state laws.',
         corroboration='https://www.ropesgray.com/en/insights/alerts/2026/03/the-white-house-legislative-recommendations-national-policy-framework-for-artificial-intelligence-an',
         jurisdiction='US federal', review_days=180, effective_year='2025'),
+}
+
+# Primary records opened by the independent reviewer (review of v1.0.0, 2026-10-26). The authoring environment has no
+# direct web access, so these are recorded as the reviewer's verification, not the author's.
+REVIEWER = {
+    'work_bls_ds': 'live BLS page (modified 2026-08-27) shows 35 percent for 2025-2035; course updated to match',
+    'work_wef': 'WEF announcement; totals reflect several trends, not AI alone; course updated',
+    'law_cfpb': 'CFPB withdrawn-guidance list (Circular 2023-03 withdrawn 2025-05-12) and Regulation B 1002.9',
+    'law_ftc_aicomply': 'FTC set aside the Rytr order on 2025-12-22 (author also confirmed through news and law-firm sources)',
+    'law_colorado': 'Colorado SB26-189 act record: signed 2026-05-14, requirements from 2027-01-01',
+    'law_eo14365': 'Federal Register text of EO 14365 (2025-12-11)',
+    'law_euaiact': 'Council announcement of 2026-06-29 and adopted text (Annex III to 2027-12-02); Commission record gives '
+                   'entry into force 2026-07-27 and Regulation (EU) 2026/1744; the EUR-Lex PDF itself was not reachable',
+    'law_usco_part2': 'Copyright Office Part 2 report',
+    'law_usco_guidance': 'March 2023 registration guidance',
+    'law_zarya': 'Copyright Office Zarya of the Dawn letter',
+    'law_usco_part3': 'Part 3 pre-publication report (May 2025)',
+    'law_thaler': 'Supreme Court docket 25-449: review denied 2026-03-02 (a denial, not a merits ruling)',
+    'law_takeitdown': 'FTC enforcement announcement (2026-05-19 deadline; 48 hours after a valid request)',
+    'law_coppa': 'final rule (effective 2025-06-23; most compliance by 2026-04-22)',
+    'sec_owasp': 'OWASP LLM01:2025 page (direct and indirect injection)',
+    'tech_osaid': 'OSI Open Source AI Definition 1.0',
+    'media_c2pa': 'C2PA FAQ (signed provenance); the full specification was not reviewed',
+    'energy_iea': 'IEA Energy and AI executive summary (415 TWh, 1.5 percent, about 945 TWh by 2030; all data centres)',
+    'hist_alexnet': '2012 paper: 15.3 versus 26.2 percent top-5 error in ILSVRC-2012',
+    'tech_rlhf': 'paper (pipeline starts with supervised demonstrations, then a reward model, then RL)',
+    'tech_transformer': 'paper', 'fair_gendershades': 'paper', 'eval_contamination': 'paper', 'code_slopsquat': 'paper',
+    'case_mata': 'sanctions opinion of 2023-06-22 as reproduced by Justia ($5,000 joint penalty)',
+    'law_fcc_voice': 'indexed text of Declaratory Ruling FCC 24-17, which keeps existing exceptions; the full PDF did not '
+                     'load for the reviewer',
+}
+PRIMARY = {
+    'law_usco_part2': 'https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf',
+    'law_eo14365': 'https://www.presidency.ucsb.edu/documents/executive-order-14365-ensuring-national-policy-framework-for-artificial-intelligence',
+    'law_colorado': 'https://www.hklaw.com/en/insights/publications/2026/05/colorado-governor-signs-sb-189',
 }
 
 UNCONFIRMED = {
@@ -321,6 +365,12 @@ UNCONFIRMED = {
 }
 
 
+# Sources whose primary record the reviewer opened are no longer listed as unconfirmed (see REVIEWER).
+for _k in ('sec_owasp', 'energy_iea', 'hist_alexnet', 'case_mata', 'tech_osaid', 'media_c2pa', 'law_thaler',
+           'law_usco_part2', 'law_usco_part3', 'law_usco_guidance', 'law_colorado', 'law_eo14365', 'law_euaiact',
+           'law_ftc_aicomply'):
+    UNCONFIRMED.pop(_k, None)
+
 def entry(key):
     e = dict(SRC[key])
     e.setdefault('checked', CHECKED)
@@ -329,4 +379,8 @@ def entry(key):
     e['confirmed_by_search'] = key not in UNCONFIRMED
     if key in UNCONFIRMED:
         e['note'] = UNCONFIRMED[key]
+    if key in REVIEWER:
+        e['reviewer'] = REVIEWER[key]
+    if key in PRIMARY:
+        e.setdefault('primary', PRIMARY[key])
     return e

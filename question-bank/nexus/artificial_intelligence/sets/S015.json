@@ -67,29 +67,29 @@
      "standard": "",
      "domain": "Foundation 3: Large language models",
      "type": "mc",
-     "prompt": "Which word is (a very common short word) most likely split into several tokens?",
+     "prompt": "Which word is most likely to be split into several tokens?",
      "choices": [
       {
        "letter": "A",
-       "text": "the (a very common short word)"
+       "text": "unbelievably"
       },
       {
        "letter": "B",
-       "text": "and (a very common short word)"
+       "text": "yesterday"
       },
       {
        "letter": "C",
-       "text": "unbelievably (a long, rarer word)"
+       "text": "together"
       },
       {
        "letter": "D",
-       "text": "is (a very common short word)"
+       "text": "something"
       }
      ],
-     "correct_letter": "C",
-     "correct_answer": "unbelievably (a long, rarer word)",
+     "correct_letter": "A",
+     "correct_answer": "unbelievably",
      "intro": "Language models do not read words the way people do. They read and write TOKENS: chunks of text that may be a whole word, part of a word, a punctuation mark or a space. A common word like \"the\" is often one token, while a long or rare word like \"unbelievably\" may be split into several. For English, one provider's rule of thumb is about 4 characters, or about three quarters of a word, per token, but the exact count depends on the model. Token counts matter because limits on how much text a model can handle, and many usage prices, are measured in tokens, not words.",
-     "feedback": "Long or rare words are often split."
+     "feedback": "Long or rare words are often split, while common words are often one token; exact splits depend on the model."
     },
     {
      "id": "S15-M-Q3",

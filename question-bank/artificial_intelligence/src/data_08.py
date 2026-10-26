@@ -1058,12 +1058,12 @@ S_EVERY08 = SET(
 )
 
 # ---------------------------------------------------------------------------------------------- AI.EVERYDAY.09
-SIMPLE = ('A generative AI tool is not always the best tool. A CALCULATOR or SPREADSHEET is better for arithmetic '
-          'and totals, because it computes exactly every time. A SEARCH ENGINE or OFFICIAL WEBSITE is better for '
-          'current facts like hours, prices and rules, because it points to the source. A DICTIONARY or THESAURUS is '
-          'quick for word meanings. A CALENDAR with reminders is better for deadlines. Generative tools shine at '
-          'drafting, rephrasing, brainstorming and explaining. Choosing the simpler tool when it fits saves time and '
-          'avoids errors.')
+SIMPLE = (('A generative AI tool is not always the best tool. A CALCULATOR or SPREADSHEET is better for arithmetic and '
+          'totals, because it follows a defined calculation, as long as you enter the right numbers and formula and '
+          'check rounding. A SEARCH ENGINE or OFFICIAL WEBSITE is better for current facts like hours, prices and '
+          'rules, because it points to the source. A DICTIONARY or THESAURUS is quick for word meanings. A CALENDAR '
+          'with reminders is better for deadlines. Generative tools shine at drafting, rephrasing, brainstorming and '
+          'explaining. Choosing the simpler tool when it fits saves time and avoids errors.'))
 SIMPLE_F2 = ('Sometimes the best answer is a combination: draft an email with a generative tool, but compute the '
              'figures in it with a spreadsheet and copy dates from the official calendar. Watch for tasks that look like '
              'writing but are really lookups ("What is the return deadline?") or calculations ("How much do I owe?"). '
@@ -1088,11 +1088,11 @@ S_EVERY09 = SET(
           ('Calculating exact loan payments', 'use a calculator'), ("Finding today's bus times", 'use the official source'),
           ('Setting a reminder for a deadline', 'use a calendar'),
           'Rewording is a strength.'),
-        Q('Why might a calculator beat a chatbot for math?', 'It computes exactly every time',
-          ('Because calculators can also explain the meaning of every number in clear sentences', 'not the reason'),
-          ('Because chatbots cannot display numbers', 'not true'),
+        Q('Why might a calculator beat a chatbot for math?',
+          'It follows a set calculation instead of guessing',
+          ('Because calculators can also explain the meaning of every number in clear sentences', 'not the reason'), ('Because chatbots cannot display numbers', 'not true'),
           ('Because calculators are newer', 'not true'),
-          'Exactness.'),
+          'A calculator follows a defined calculation; you still check the numbers you enter, the formula and the rounding.'),
         Q('A student needs the meaning of one word. Which is quickest and reliable?',
           'A dictionary',
           ('A long conversation', 'more than needed'), ('A spreadsheet', 'not for meanings'),

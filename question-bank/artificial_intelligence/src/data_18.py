@@ -215,11 +215,11 @@ S_LAW02 = SET(
           ('The original AI parts', 'not protected'),
           ('The tool\'s code', 'not the question'),
           'Human modification.'),
-        Q('Per Zarya of the Dawn, which parts of the comic were registrable?', 'The text and human selection and arrangement',
-          ('The individual AI-generated images, which were the most important part of the whole comic', 'not registrable'),
-          ('Nothing', 'some parts were'),
+        Q('A comic combines human-written text with AI-generated images that a person selected and arranged. Per the January 2025 report, which parts can be protected?',
+          'The text and the human selection and arrangement',
+          ('The individual AI-generated images, since a person chose them', 'choosing outputs does not make the images human-authored'), ('Nothing', 'some parts were'),
           ('Only the cover', 'not the finding'),
-          'Human parts.'),
+          'Human-written text and human selection and arrangement can be protected; the generated images alone cannot. The Copyright Office decided Zarya of the Dawn (2023) the same way.'),
         Q("Which statement fits this course's approach?",
           'The minimum human contribution is still unsettled',
           ('Every AI-assisted work is now fully protected by copyright', 'not settled'), ('No AI-assisted work can ever be protected', 'not true'),
@@ -520,12 +520,13 @@ S_LAW04 = SET(
 )
 
 # ---------------------------------------------------------------------------------------------- AI.LAW.05
-LIKE = ('Your LIKENESS (face, image) and VOICE identify you, and some laws protect them, often through a RIGHT OF '
-        'PUBLICITY that limits commercial use without consent. Examples, each dated: Tennessee\'s ELVIS Act (effective '
-        'July 1, 2024) added voice, including simulated voice, to that state\'s publicity rights. The US Federal '
-        'Communications Commission ruled in February 2024 that AI-generated voices in calls need the same prior consent '
-        'as other artificial voices. The federal TAKE IT DOWN Act (2025) requires covered platforms, from May 19, 2026, '
-        'to remove nonconsensual intimate images, including AI-generated ones, within 48 hours of a valid request.')
+LIKE = (('Your LIKENESS (face, image) and VOICE identify you, and some laws protect them, often through a RIGHT OF '
+        "PUBLICITY that limits commercial use without consent. Examples, each dated: Tennessee's ELVIS Act (effective"
+        " July 1, 2024) added voice, including simulated voice, to that state's publicity rights. The US Federal "
+        'Communications Commission ruled in February 2024 that AI-generated voices count as "artificial" voices, so '
+        'covered calls follow the existing consent rules and their exceptions. The federal TAKE IT DOWN Act (2025) '
+        'requires covered platforms, from May 19, 2026, to remove nonconsensual intimate images, including AI-'
+        'generated ones, within 48 hours of a valid request.'))
 LIKE_F2 = ('Coverage varies. Publicity rights differ by state; some protect only commercial uses, some extend after '
            'death, some cover voice explicitly. Parody, news and commentary may be treated differently, and courts are '
            'still applying older laws to new technology. The safe practice does not depend on the exact rule: get '
@@ -545,11 +546,11 @@ S_LAW05 = SET(
           ('A ban on every kind of music made with any computer anywhere', 'not what it did'), ('A new tax on singers', 'no'),
           ('A federal law for all states', 'one state'),
           'State law, dated.'),
-        Q('What did the FCC rule in February 2024?', 'AI voices in calls need the same prior consent as artificial voices',
-          ('AI voices may be used in any robocall to anyone at any time without asking first', 'opposite'),
-          ('All calls must use AI', 'no'),
+        Q('What did the FCC rule in February 2024?',
+          'AI voices count as "artificial" voices under robocall rules',
+          ('AI voices may be used in any robocall to anyone at any time without asking first', 'opposite'), ('All calls must use AI', 'no'),
           ('Phones are banned', 'no'),
-          'Consent for AI-voice calls.'),
+          'The ruling applies existing artificial-voice rules, with their exceptions, to AI voices.'),
         Q('From May 19, 2026, what must covered US platforms do under the TAKE IT DOWN Act?',
           'Remove nonconsensual intimate images within 48 hours of a valid request',
           ('Remove every image that shows any person, including photos that people posted of themselves', 'too broad'),
@@ -598,10 +599,9 @@ S_LAW05 = SET(
           ('A federal tax law', 'no'),
           ('A traffic law', 'no'),
           'State voice protection.'),
-        Q('A political campaign uses an AI-cloned voice in robocalls without consent. Under the FCC\'s 2024 ruling, what applies?',
+        Q("A campaign sends non-emergency robocalls to cellphones using an AI-cloned voice, without prior consent. Under the FCC's 2024 ruling, what applies?",
           'Prior-consent rules for artificial-voice calls',
-          ('Nothing, since political calls are always exempt from every rule about voices and consent', 'not stated'),
-          ('Only a fee', 'not stated'),
+          ('Nothing, since political calls are always exempt from every rule about voices and consent', 'not stated'), ('Only a fee', 'not stated'),
           ('A ban on campaigns', 'no'),
           'Consent rules.'),
         Q('Someone posts an AI-generated intimate image of a classmate. What can the classmate do on covered platforms after May 19, 2026?',

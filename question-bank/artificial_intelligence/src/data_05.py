@@ -906,12 +906,12 @@ S_CHECK07 = SET(
 )
 
 # ---------------------------------------------------------------------------------------------- AI.CHECK.08
-GAP = ('Before trusting a conclusion, look for two warning signs. A CONTRADICTION is when two statements cannot both '
-       'be true: an answer says a store opens at 9 in one paragraph and 10 in another, or a total does not match its '
-       'parts. MISSING INFORMATION is what the conclusion needs but the answer never establishes: a recommendation to '
-       'buy a laptop "for school" without knowing the budget, or a claim that a plan is "cheaper" without the prices '
-       'of the alternatives. When you spot either, do not just pick the version you prefer; resolve the contradiction '
-       'with a source and supply or find the missing facts.')
+GAP = (('Before trusting a conclusion, look for two warning signs. A CONTRADICTION is when two statements cannot both'
+       ' be true: an answer says a store opens at 9 on Mondays in one paragraph and 10 on Mondays in another, or a '
+       'total does not match its parts. MISSING INFORMATION is what the conclusion needs but the answer never '
+       'establishes: a recommendation to buy a laptop "for school" without knowing the budget, or a claim that a '
+       'plan is "cheaper" without the prices of the alternatives. When you spot either, do not just pick the version'
+       ' you prefer; resolve the contradiction with a source and supply or find the missing facts.'))
 GAP_F2 = ('Some missing information hides inside assumptions that sound reasonable: "Since you live near the city..." '
           'or "Assuming you work full time..." If the assumption is wrong for you, the conclusion may be wrong too. '
           'Another hidden gap is comparison: "Plan A saves money" needs Plan B\'s cost and the same time period for '
@@ -919,17 +919,19 @@ GAP_F2 = ('Some missing information hides inside assumptions that sound reasonab
           'conditions one by one.')
 
 GAP_EX = PR('Is the Riverside Gym or the Oak Street Gym the better deal for me?',
-            'Riverside Gym is the better deal. It costs 30 dollars a month and is open from 6 a.m. Note that Riverside '
+            'Riverside Gym is the better deal. It costs 30 dollars a month and opens at 6 a.m. on weekdays. Note that '
+            'Riverside '
             'opens at 7 a.m. on weekdays, so it suits most schedules.')
 
 S_CHECK08 = SET(
     'AI.CHECK.08',
     M=sec('Spot contradictions and missing information', GAP, [
-        Q('In this fictional example, what is contradictory?', 'It says Riverside opens at 6 and also at 7 a.m.',
-          ('It says the gym costs 30 dollars a month', 'stated once'),
-          ('It names two different gyms', 'that was the question'),
+        Q('In this fictional example, what is contradictory?',
+          'It gives two different weekday opening times',
+          ('It says the gym costs 30 dollars a month', 'stated once'), ('It names two different gyms', 'that was the question'),
           ('It says the gym suits most schedules', 'not a contradiction'),
-          'Two opening times cannot both be true.', ex=GAP_EX),
+          'The answer says Riverside opens at 6 a.m. on weekdays and also at 7 a.m. on weekdays; both cannot be true.',
+          ex=GAP_EX),
         Q('In the same example, what key information is missing for its conclusion?', 'Oak Street Gym\'s price',
           ('Riverside Gym\'s monthly price', 'given as 30 dollars'),
           ('The name of the second gym', 'given'),

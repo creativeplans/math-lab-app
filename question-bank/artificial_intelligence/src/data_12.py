@@ -557,12 +557,13 @@ S_CODE04 = SET(
 )
 
 # ---------------------------------------------------------------------------------------------- AI.CODE.05
-ERR = ('When Python hits a problem, it stops and shows an ERROR MESSAGE, often called a TRACEBACK. Read it from the '
-       'BOTTOM: the last line names the error type and a short explanation, and the line above names the FILE and LINE '
-       'NUMBER where it happened. Common types: NameError (a name that was never defined, often a typo), TypeError '
-       '(mixing types, such as adding text to a number), IndexError (asking for a position that does not exist) and '
-       'ValueError (a value of the right type but wrong content). Use the message to find the problem before asking '
-       'a tool to fix it, and include the full message when you ask.')
+ERR = (('When Python hits a problem, it stops and shows an ERROR MESSAGE, often called a TRACEBACK. Read it from the '
+       'BOTTOM: the last line names the error type and a short explanation, and the line above names the FILE and '
+       'LINE NUMBER where it happened. Common types: NameError (a name that was never defined, often a typo), '
+       'TypeError (mixing types, such as adding text to a number), IndexError (asking for a position that does not '
+       'exist) and ValueError (a value of the right type but wrong content). Use the message to find the problem '
+       'before asking a tool to fix it, and include the relevant message, with any keys or personal details removed,'
+       ' when you ask.'))
 ERR_F2 = ('The line named in a traceback is where Python noticed the problem, not always where it started. A wrong '
           'value created earlier may only cause an error later. Fixes suggested by tools can hide errors instead of '
           'solving them, for example wrapping code so the error is silently ignored. Prefer fixes that address the '
@@ -605,11 +606,11 @@ S_CODE05 = SET(
           ('The file name is wrong', 'no'),
           'A name never defined.',
           ex=NAME_EX),
-        Q('When asking a tool to fix an error, what should you include?', 'The full error message',
-          ('Only the words "it is broken," since the tool can work out the rest by itself', 'too little'),
-          ('Nothing', 'too little'),
+        Q('When asking a tool to fix an error, what should you include?',
+          'The relevant error message, with secrets removed',
+          ('Only the words "it is broken," since the tool can work out the rest by itself', 'too little'), ('Nothing', 'too little'),
           ('Only the file name', 'too little'),
-          'Full message, plus the code.'),
+          'Give the relevant message and code, after removing keys or personal details.'),
     ]),
     B=[sk('Read the last two lines of a traceback',
           'Most of what you need is in the last two lines of a traceback. The LAST line has the error TYPE and a short '
@@ -829,11 +830,12 @@ S_CODE06 = SET(
 )
 
 # ---------------------------------------------------------------------------------------------- AI.CODE.07
-GIT = ('VERSION CONTROL keeps a history of code changes. A popular tool for it is called Git. A COMMIT is a saved '
-       'snapshot with a short message ("Fix average for empty list"). A DIFF (difference) shows what changed '
-       'between versions: lines starting with "-" were removed and lines with "+" were added. REVERTING undoes a '
-       'commit by applying the opposite change. A good habit with AI help: COMMIT BEFORE accepting generated changes, '
-       'so you can see exactly what the tool changed in the diff and undo it if it breaks something.')
+GIT = (('VERSION CONTROL keeps a history of code changes. A popular tool for it is called Git. A COMMIT is a saved '
+       'snapshot with a short message ("Fix average for empty list"). A DIFF (difference) shows what changed between'
+       ' versions: lines starting with "-" were removed and lines with "+" were added. REVERTING undoes a commit by '
+       'adding a new commit with the opposite change; RESTORING returns files to how they were in a saved version. A'
+       ' good habit with AI help: COMMIT BEFORE accepting generated changes, so you can see exactly what the tool '
+       'changed in the diff and undo it if it breaks something.'))
 GIT_F2 = ('Commit messages should say what changed and why, so others (and future you) can understand the history. '
           'Small commits that each do one thing are easier to review and undo than one huge commit. Generated changes '
           'sometimes touch files you did not expect, such as settings or unrelated code; the diff reveals this. Never '
@@ -876,7 +878,7 @@ S_CODE07 = SET(
     B=[cs('Compare version control with save points in a video game',
           'In many video games you can SAVE before a hard level. If things go badly, you LOAD the save and try again. '
           'Each save is like a commit: a snapshot you can return to. Comparing two saves to see what changed, such as '
-          'items gained or lost, is like a diff. Going back to an earlier save is like reverting. Saving before '
+          'items gained or lost, is like a diff. Loading an earlier save is like restoring files from a commit. Saving before '
           'letting someone else play your game is like committing before accepting AI changes.', [
               Q('A game save is like what?',
           'A commit',
@@ -888,10 +890,11 @@ S_CODE07 = SET(
           ('A commit message', 'no'), ('A revert', 'no'),
           ('A new game', 'no'),
           'What changed.'),
-              Q('Loading an earlier save is like what?', 'Reverting',
-                ('Committing a brand-new change that adds a new level to the game for every player', 'no'),
-                ('Deleting the game', 'no'), ('Buying a game', 'no'),
-                'Going back.'),
+              Q('Loading an earlier save is like what?',
+          'Restoring files from an earlier commit',
+          ('Committing a brand-new change that adds a new level to the game for every player', 'no'), ('Deleting the game', 'no'),
+          ('Buying a game', 'no'),
+          'Loading a save puts things back the way they were saved, like restoring files from a commit.'),
               Q('Saving before a friend plays is like what?', 'Committing before accepting AI changes',
                 ('Deleting every save file so that your friend can start the whole game from the beginning', 'opposite'),
                 ('Turning off the game', 'no'), ('Changing the controls', 'no'),
@@ -900,14 +903,13 @@ S_CODE07 = SET(
                 ('Because saving makes the next level easier to beat on the very first try', 'no'),
                 ('To end the game', 'no'), ('To change the music', 'no'),
                 'Safety net.'),
-          ], why='A learner new to version control can relate commits, diffs and reverts to game save points.')],
+          ], why='A learner new to version control can relate commits, diffs and restoring to game save points.')],
     F1=sec('Use commits and diffs with AI changes', GIT, [
-        Q('Ravi lets a tool edit his project and now tests fail. He committed before the edit. What can he do?',
-          'Revert to the earlier commit',
-          ('Nothing, because changes made by a tool can never be undone once they have been accepted', 'he can revert'),
-          ('Delete the project', 'unnecessary'),
+        Q('Ravi committed his working project, then let a tool edit it. Tests now fail, and he has not committed the edit. What can he do?',
+          'Restore the files from his last commit',
+          ("Nothing, because a tool's edits can never be undone", 'the commit lets him restore'), ('Delete the project', 'unnecessary'),
           ('Ignore the tests', 'risky'),
-          'The commit is a restore point.'),
+          'His last commit is a saved good version; restoring returns the files to it.'),
         Q('A diff shows "- if age >= 18:" and "+ if age > 18:". What changed?',
           'The rule now excludes exactly 18',
           ('The rule now includes more ages', 'it excludes 18'), ('Nothing important', 'it matters'),

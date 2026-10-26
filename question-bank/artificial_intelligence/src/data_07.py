@@ -143,12 +143,13 @@ S_LEARN06 = SET(
 )
 
 # ---------------------------------------------------------------------------------------------- AI.LEARN.07
-RL = ('REINFORCEMENT LEARNING (RL) teaches a system by REWARDS instead of answer keys. The system tries actions, gets a '
-      'reward or penalty, and gradually favors actions that earn more reward, like training a dog with treats. It has '
-      'been used for game-playing programs and robot control. Language models are often refined with REINFORCEMENT '
-      'LEARNING FROM HUMAN FEEDBACK (RLHF): people rank or rate sample answers, a separate "reward model" learns to '
-      'predict those ratings, and the language model is then adjusted to produce answers that score well. Research '
-      'in 2022 showed this made models better at following instructions.')
+RL = (('REINFORCEMENT LEARNING (RL) teaches a system by REWARDS instead of answer keys. The system tries actions, '
+      'gets a reward or penalty, and gradually favors actions that earn more reward, like training a dog with '
+      'treats. It has been used for game-playing programs and robot control. After training on human-written '
+      'example answers, language models are often refined with REINFORCEMENT LEARNING FROM HUMAN FEEDBACK (RLHF): '
+      'people rank or rate sample answers, a separate "reward model" learns to predict those ratings, and the '
+      'language model is then adjusted to produce answers that score well. Research in 2022 showed this made models'
+      ' better at following instructions.'))
 RL_F2 = ('Rewards shape behavior in ways that can surprise designers. If a reward measures the wrong thing, a system '
          'may find a shortcut that earns reward without doing what people intended, sometimes called "reward hacking." '
          'With human feedback, raters may prefer answers that sound confident or flattering, so a model can learn to '
@@ -272,12 +273,12 @@ S_LEARN07 = SET(
 )
 
 # ---------------------------------------------------------------------------------------------- AI.LLM.08
-ATT = ('Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key '
-       'idea is ATTENTION: when the model processes one word (token), it can weigh how relevant every other word in '
-       'the context is. In "The trophy did not fit in the suitcase because it was too big," attention helps link "it" '
-       'with "trophy." The model computes these weights with math, many times over, in many layers, which lets it '
-       'track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying '
-       'attention the way a person does.')
+ATT = (('Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its '
+       'key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant each earlier '
+       'word in the context is (when writing, later words do not exist yet). In "The trophy did not fit in the '
+       'suitcase because it was too big," attention helps link "it" with "trophy." The model computes these weights '
+       'with math, many times over, in many layers, which lets it track relationships across long passages. '
+       'Attention is a mathematical weighting of text, not a mind paying attention the way a person does.'))
 ATT_F2 = ('The word "attention" invites human comparisons, so be careful. A model\'s attention weights are numbers '
           'computed from patterns; they are not feelings, intentions or awareness. Attention also does not guarantee '
           'correct understanding: a model can weigh the wrong words and link "it" to the wrong noun, especially in '
@@ -328,9 +329,11 @@ S_LLM08 = SET(
           ('How long each word is', 'not the meaning'), ('How rare each word is', 'not the meaning'),
           ('How loudly each word is read aloud by people', 'not the meaning'),
           'Influence weights.'),
-              Q('What does a transformer use instead of highlighter ink?', 'Numbers computed for every word',
-                ('Real colored ink on paper', 'no'), ('A human reader', 'no'), ('A dictionary lookup', 'no'),
-                'Weights are numbers.'),
+              Q('What does a transformer use instead of highlighter ink?',
+          'Computed number weights',
+          ('Real colored ink on paper', 'no'), ('A human reader', 'no'),
+          ('A dictionary lookup', 'no'),
+          'Weights are numbers.'),
               Q('Is the highlighter picture the literal mechanism?', 'No, it is a teaching picture',
                 ('Yes, models use highlighters', 'no'), ('Yes, models see colors', 'no'),
                 ('No, models ignore context', 'they use context'), 'An analogy only.'),

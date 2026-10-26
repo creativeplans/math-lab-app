@@ -8,11 +8,11 @@ TCAP = ('A useful request (often called a PROMPT) usually covers four things. Th
         'ten-year-old, a manager or yourself. The PURPOSE: why you need it, such as to persuade, to decide or to study. '
         'A vague request like "write about recycling" leaves the tool to guess all four, so the result may be '
         'generic. Adding the missing pieces gives it a fair chance.')
-TCAP_F2 = ('Sometimes a request seems complete but the pieces pull against each other, or one key detail is assumed '
-           'rather than stated. "Explain this contract simply for my grandmother, in full legal detail" asks for two '
-           'different audiences at once. "Fix the schedule" assumes the tool knows which schedule and what is wrong '
-           'with it. Before sending an important request, reread it as a stranger would: could someone with no '
-           'background do exactly what you want? If not, add or fix the missing piece first.')
+TCAP_F2 = (('Sometimes a request seems complete but the pieces pull against each other, or one key detail is assumed '
+           'rather than stated. "Write exactly 200 words, and keep the whole answer under 100 words" asks for two '
+           'lengths that cannot both be true. "Fix the schedule" assumes the tool knows which schedule and what is wrong'
+           ' with it. Before sending an important request, reread it as a stranger would: could someone with no '
+           'background do exactly what you want? If not, add or fix the missing piece first.'))
 
 S_PROMPT01 = SET(
     'AI.PROMPT.01',
@@ -108,12 +108,11 @@ S_PROMPT01 = SET(
           'Having no oven is key context.'),
     ]),
     F2=sec('Find the missing or conflicting piece before sending', TCAP_F2, [
-        Q('"Explain this contract simply for my grandmother, in full legal detail." What is the problem?',
-          'It asks for two different audiences at once',
-          ('It does not say what the contract is about', 'the main issue is the conflict'),
-          ('It is too short to be understood at all', 'length is not the issue'),
-          ('Grandmothers cannot read contracts', 'not true'),
-          'Simple-for-a-grandmother and full legal detail conflict.'),
+        Q('"Write exactly 200 words, and keep the whole answer under 100 words." What is the problem?',
+          'The two length rules cannot both be met',
+          ('It does not say what the topic is', 'a missing topic is not the main problem here'), ('200 words is too long for any reader', 'length alone is not the problem'),
+          ('It does not say "please"', 'politeness is not the problem'),
+          'No answer can be exactly 200 words and also under 100 words; ask which rule matters.'),
         Q('"Fix the schedule." What does this request assume?',
           'That the tool knows which schedule and what is wrong',
           ('That the tool can see every calendar in the world', 'too extreme a reading'),
