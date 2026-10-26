@@ -423,7 +423,7 @@ ROWS = [
 SUGGESTED = {
     # optional reading that helps but is not required (shown as "you may also like")
     'AI.CHECK.02': ['AI.RETRIEVAL.02'], 'AI.SECURITY.03': ['AI.AGENT.04'], 'AI.LEARN.08': ['AI.RETRIEVAL.05'],
-    'AI.MEDIA.03': ['AI.LAW.05'], 'AI.EVERYDAY.06': ['AI.LAW.09'], 'AI.CODE.09': ['AI.SECURITY.01'],
+    'AI.MEDIA.03': ['AI.LAW.05'], 'AI.EVERYDAY.06': ['AI.LAW.09'],
     'AI.FAIR.03': ['AI.LAW.07'], 'AI.PHIL.02': ['AI.HISTORY.01'], 'AI.EVAL.03': ['AI.HISTORY.05'],
     'AI.LLM.08': ['AI.HISTORY.03'], 'AI.COST.05': ['AI.LAW.04'], 'AI.WORK.07': ['AI.LAW.09'],
 }

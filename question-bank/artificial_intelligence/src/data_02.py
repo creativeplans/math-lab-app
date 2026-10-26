@@ -661,10 +661,9 @@ S_LEARN05 = SET(
           ('Delete every review that is hard to label', 'loses real cases'),
           ('Label every review "positive" to be safe', 'creates wrong labels'),
           'Clear instructions and checks make labels consistent.'),
-        Q('A team adds 50,000 more photos, but all from the same city as before. Why might this not help?',
+        Q('A team adds 50,000 more photos, but all from the one city already in the data. Why might this not help?',
           'The new data has the same gaps as the old data',
-          ('More data always fixes every problem', 'not if gaps repeat'),
-          ('Photos from one city cannot be used at all', 'they can, but coverage stays narrow'),
+          ('More data always fixes every problem', 'not if gaps repeat'), ('Photos from one city cannot be used at all', 'they can, but coverage stays narrow'),
           ('The model will forget the old photos', 'not the issue'),
           'More of the same does not fill gaps.'),
         Q('A loan model has no "age" column, but it uses "years since first credit card." Why might age still affect '

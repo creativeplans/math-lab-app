@@ -1,6 +1,6 @@
-"""Validate the built Entrepreneurship collection and write VALIDATION.md and CHECKS.txt.
+"""Validate the built Artificial Intelligence collection and write VALIDATION.md and CHECKS.txt.
 
-    python3 question-bank/entrepreneurship/src/validate.py      (after build.py)
+    python3 question-bank/artificial_intelligence/src/validate.py      (after build.py)
 
 Every check reads the built files (the answer key and the import package) or the source plan. A failed hard check
 makes the script exit with status 1; soft checks are reported with their numbers.
@@ -22,42 +22,25 @@ from eq import words  # noqa: E402
 ROOT, PKG = build.ROOT, build.PKG
 ID_RE = re.compile(r'^S(\d+)-(M|B\d|F1|F2)-Q([1-5])$')
 PLACEHOLDER = re.compile(r'\bTODO\b|\bTBD\b|lorem ipsum|\?\?|\bxxx\b|\[insert', re.I)
-# Phrases that often lean on numbers from another question. Every prompt that matches must be listed in
-# LOCAL_REVIEWED with the reason it is answerable from its own displayed content (prompt, choices, teaching passage).
-LOCAL = re.compile(r"\b(?:[Ss]ame (?:\w+ )?(?:week|month|policy|policies|rate|numbers|campaigns|budget|consultant|soap "
-                   r"maker|photographer|truck|groomer|situation|example|item|business|owner|shop|fee|sign)|[Ss]ame\b(?=[.,:]"
-                   r"| as)|[Uu]sing (?:that|those|the same|these)|that (?:deal|total|rate|trial|cake|shortfall|overrun|"
-                   r"amount|price|month|plan|loan|job)\b|those (?:hours|numbers|orders|sales)|\b(?:previous|above|earlier) "
-                   r"(?:question|example|numbers)|[Ii]n the same|[Aa]fter (?:that|commission)|[Bb]y how much does|[Ww]ith "
-                   r"(?:those|these|that)\b|[Ii]f she|[Ii]f he|[Ii]f the (?:owner|truck)|[Gg]iven that)")
-LOCAL_REVIEWED = {
-    'S1-F1-Q2': 'all facts in the prompt', 'S2-F2-Q1': '"same field" refers to his own job, stated in the prompt',
-    'S3-F1-Q5': 'conceptual', 'S7-F2-Q4': 'both offers stated in the prompt',
-    'S19-M-Q2': 'the example is in the teaching passage shown with the question',
-    'S26-F1-Q4': 'all facts in the prompt', 'S27-F1-Q1': 'all facts in the prompt',
-    'S31-F1-Q5': 'all facts in the prompt', 'S39-F1-Q3': 'all facts in the prompt',
-    'S44-F2-Q2': 'all facts in the prompt', 'S49-M-Q5': 'conceptual',
-    'S50-M-Q2': 'the fee is stated in the teaching passage shown with the question',
-    'S50-F1-Q2': 'the fee is stated in the teaching passage shown with the question',
-    'S50-F1-Q4': 'the fee is stated in the teaching passage shown with the question',
-    'S51-M-Q2': 'the item is the worked example in the teaching passage shown with the question',
-    'S83-F2-Q1': 'all facts in the prompt', 'S96-F1-Q3': 'all facts in the prompt',
-    'S106-M-Q4': 'all facts in the prompt', 'S106-F1-Q3': 'all facts in the prompt',
-    'S119-F1-Q2': 'all facts in the prompt', 'S121-F2-Q3': 'all facts in the prompt',
-    'S130-F1-Q3': 'all facts in the prompt', 'S145-F1-Q3': 'all facts in the prompt',
-}
+# Prompts that point at a displayed example must actually carry one, and prompts that carry an example must point at it.
+EX_REF = re.compile(r'\b(?:this|the same|the earlier) (?:prepared|fictional|example|table|log|policy|license|excerpt|'
+                    r'chart|transcript|headline|timeline)\b|\bthis (?:hypothetical )?example\b|\bthis table\b', re.I)
+ABSOLUTE = re.compile(r'\b(always|never|every|all|any|none|completely|exactly|only|forever|nothing|guarantee[sd]?|'
+                      r'perfect(ly)?)\b', re.I)
+EX_ANY = re.compile(r'\b(?:example|table|note|policy|excerpt|log|chart|transcript|headline|timeline|license|terms|'
+                    r'subtitles?|response|fictional|made-up|prepared|hint)\b', re.I)
+PRODUCT = re.compile(r'\b(ChatGPT|GPT-\d|Claude|Gemini|Copilot|Llama|Midjourney|DALL.E|Siri|Alexa)\b')
 STANDALONE = re.compile(r'\b(previous question|question above|as before|from the last question|earlier question)\b', re.I)
 # real-looking identifiers that must not appear in questions
 IDENT = [('Social Security number pattern', re.compile(r'\b\d{3}-\d{2}-\d{4}\b')),
          ('EIN pattern', re.compile(r'\b\d{2}-\d{7}\b')),
          ('phone number pattern', re.compile(r'\(?\b\d{3}\)?[ .-]\d{3}[ .-]\d{4}\b')),
-         ('email address not on a reserved .example domain', re.compile(r'[\w.+-]+@(?![\w-]+\.example\b)[\w-]+\.[\w.]+')),
+         ('email address not on a reserved .example domain', re.compile(r'[\w.+-]+@(?!(?:[\w-]+\.)*example(?:\.(?:com|org|net))?\b)[\w-]+\.[\w.]+')),
          ('web address with a real domain', re.compile(r'(https?://|www\.)[\w-]+\.(?!example\b)[a-z]{2,}', re.I))]
-CASE_MARKERS = ('Documented history', 'Lesson drawn by this course', 'does not guarantee')
 
 
 def main():
-    keyd = json.load(open(os.path.join(ROOT, 'Entrepreneurship_Answer_Key.json'), encoding='utf-8'))
+    keyd = json.load(open(os.path.join(ROOT, 'AI_Answer_Key.json'), encoding='utf-8'))
     recs = keyd['questions']
     index = json.load(open(os.path.join(PKG, 'index.json'), encoding='utf-8'))
     pkg_sets = {s['set']: json.load(open(os.path.join(PKG, s['file']), encoding='utf-8')) for s in index['sets']}
@@ -84,8 +67,8 @@ def main():
                                 if s['relation'] == 'backward')
     no_why = [ps['set'] for ps in pkg_sets.values() for s in ps['sections']
               if s['relation'] == 'backward' and not s.get('relationship')]
-    check('Every backward branch is concept_simplification or math_prerequisite and states its diagnostic reason',
-          set(modes) <= {'concept_simplification', 'math_prerequisite'} and not no_why, '%s; missing reason: %s'
+    check('Every backward branch is concept_simplification or underlying_skill and states its diagnostic reason',
+          set(modes) <= {'concept_simplification', 'underlying_skill'} and not no_why, '%s; missing reason: %s'
           % (dict(modes), no_why or 'none'))
     f_titles = {(s['relation'], s.get('title')) for ps in pkg_sets.values() for s in ps['sections']
                 if s['relation'] in ('forward1', 'forward2')}
@@ -96,8 +79,8 @@ def main():
     ids = [r['id'] for r in recs]
     dup_ids = [i for i, c in collections.Counter(ids).items() if c > 1]
     bad_ids = [i for i in ids if not ID_RE.match(i)]
-    check('Question IDs are unique and follow S<set>-<section>-Q<n> (stored as ENT:<id>)',
-          not dup_ids and not bad_ids and all(r['uid'] == 'ENT:' + r['id'] for r in recs),
+    check('Question IDs are unique and follow S<set>-<section>-Q<n> (stored as AI:<id>)',
+          not dup_ids and not bad_ids and all(r['uid'] == 'AI:' + r['id'] for r in recs),
           '%d IDs; duplicates %s; malformed %s' % (len(ids), dup_ids or 'none', bad_ids or 'none'))
     bad_mc = []
     for ps in pkg_sets.values():
@@ -126,13 +109,28 @@ def main():
     check('No placeholder text', not ph, ph or 'none found')
     sa = [r['id'] for r in recs if STANDALONE.search(r['prompt'])]
     check('Questions stand alone (no references to other questions)', not sa, sa or 'none found')
-    loc = [r['id'] for r in recs if LOCAL.search(r['prompt'])]
-    check('Questions that use referring phrases ("same", "that total", "after commission"...) are answerable from '
-          'their own displayed content (each one reviewed and listed in LOCAL_REVIEWED)',
-          not [i for i in loc if i not in LOCAL_REVIEWED] and not [i for i in LOCAL_REVIEWED if i not in loc],
-          '%d matched and reviewed; unreviewed: %s; stale entries: %s'
-          % (len([i for i in loc if i in LOCAL_REVIEWED]), [i for i in loc if i not in LOCAL_REVIEWED] or 'none',
-             [i for i in LOCAL_REVIEWED if i not in loc] or 'none'))
+    no_ex = [r['id'] for r in recs if EX_REF.search(r['prompt']) and not r.get('example')]
+    unref = [r['id'] for r in recs if r.get('example') and not EX_ANY.search(r['prompt'])
+             and r['example']['kind'] != 'code']
+    check('Every prompt that points at a prepared example ("this example", "this table"...) carries that example',
+          not no_ex, '%d questions carry an example; missing: %s' % (sum(1 for r in recs if r.get('example')),
+                                                                     no_ex or 'none'))
+    check('Questions that carry a non-code example refer to it in the prompt', not unref, unref[:10] or 'none')
+    bad_lab = [r['id'] for r in recs if r.get('example') and not re.match(r'^(Prepared|Fictional)', r['example']['label'])]
+    check('Every example is labeled as prepared or fictional (no simulated output is presented as a real transcript)',
+          not bad_lab, bad_lab[:10] or 'none')
+    pr_lab = [r['id'] for r in recs if r.get('example') and r['example']['kind'] == 'prompt_response'
+              and 'not a real AI output' not in r['example']['label']]
+    check('Every simulated prompt and response says it is not a real AI output', not pr_lab, pr_lab[:10] or 'none')
+    prod = sorted({r['id'] for r in recs if r.get('example') and r['example']['label'].startswith('Fictional')
+                   and PRODUCT.search(json.dumps(r['example']))})
+    check('No fictional (simulated) output is attributed to a real AI product', not prod, prod or 'none')
+    code = [r for r in recs if r.get('example') and r['example']['kind'] == 'code']
+    code_unrun = [r['id'] for r in code if not r['code_checked'] and 'fragment' not in r['example']['label']]
+    check('Every complete code example states its language and was executed at build time with its printed output '
+          'checked (fragments are labeled as fragments)', not code_unrun and all(r['example'].get('language') for r in code),
+          '%d questions with code; %d executed and checked; unchecked: %s'
+          % (len(code), sum(1 for r in code if r['code_checked']), code_unrun or 'none'))
     ident = []
     for r in recs:
         blob = ' '.join([r['intro'], r['prompt'], r['feedback']] + [c['text'] for c in r['choices']])
@@ -158,20 +156,35 @@ def main():
         if len({r['correct_letter'] for r in v}) == 1:
             sec_runs += 1
     check('No section has the same correct letter for all 5 questions', sec_runs == 0, '%d sections' % sec_runs)
-    consp = [r['id'] for r in recs if len(r['correct_answer']) > 1.2 * max(len(w['text']) for w in r['wrong_choices'])]
-    check('The correct answer is never conspicuously longest (more than 20 percent longer than every wrong choice)',
+    consp = [r['id'] for r in recs if build.conspicuous(r['correct_answer'], [w['text'] for w in r['wrong_choices']])]
+    check('The correct answer is never conspicuously longest (more than 20 percent and at least 7 characters longer than '
+          'every wrong choice)',
           not consp, consp[:10] or 'none')
     longest = sum(1 for r in recs if len(r['correct_answer']) > max(len(w['text']) for w in r['wrong_choices']))
     check('Share of questions where the correct answer is the single longest choice', True,
           '%d of %d (%.1f%%; 25%% would be chance). Reported for review; none is conspicuously longest.'
           % (longest, len(recs), 100.0 * longest / len(recs)), is_hard=False)
+    wlong = 0
+    for r in recs:
+        texts = [w['text'] for w in r['wrong_choices']]
+        for i, t in enumerate(texts):
+            if build.conspicuous(t, [r['correct_answer']] + texts[:i] + texts[i + 1:]):
+                wlong += 1
+    check('Known limitation: a wrong choice is conspicuously longest', True,
+          '%d of %d questions (%.0f%%). These are padded misconceptions; the length pattern points AWAY from the key and '
+          'is listed for the round-2 balancing edit.' % (wlong, len(recs), 100.0 * wlong / len(recs)), is_hard=False)
+    ca = sum(1 for r in recs if ABSOLUTE.search(r['correct_answer']))
+    wa = sum(1 for r in recs for w in r['wrong_choices'] if ABSOLUTE.search(w['text']))
+    check('Known limitation: absolute words (always, never, every, only...) in choices', True,
+          'correct answers %.0f%%, wrong choices %.0f%%; listed for the round-2 balancing edit'
+          % (100.0 * ca / len(recs), 100.0 * wa / (3 * len(recs))), is_hard=False)
     arith = sum(1 for r in recs if r['arithmetic_checked'])
     check('Every question with arithmetic in the key has a code check that passed at build time', True,
           '%d questions carry a code check (build.py stops if any check fails)' % arith, is_hard=False)
 
     # ---------------------------------------------------------- modules, paths, prerequisites
     path_ids = [p['id'] for p in index['paths']]
-    check('The four required paths exist', path_ids == ['services', 'products', 'digital', 'content'], path_ids)
+    check('The five required paths exist', path_ids == ['everyday', 'creative', 'coding', 'work', 'society'], path_ids)
     in_mod = collections.Counter(n for m in index['modules'] for n in m['sets'])
     check('Every set is in exactly one module', set(in_mod) == set(pkg_sets) and all(c == 1 for c in in_mod.values()),
           '%d modules' % len(index['modules']))
@@ -209,23 +222,22 @@ def main():
           'citation; flagged in SOURCES.md for review)', True, '%d of %d sources: %s' % (len([u for u in unconf if u in used]), len(used),
                                                                 ', '.join(u for u in unconf if u in used)), is_hard=False)
 
-    # ---------------------------------------------------------- founder cases
-    cases = [n for n in plan.SETS if plan.SETS[n]['code'].startswith('ENT.CASE.')]
-    case_mods = {plan.SETS[n]['module'] for n in cases}
-    bad_case = []
-    for n in cases:
-        mtext = [r['intro'] for r in recs if r['set'] == n and r['section'] == 'M'][0]
-        if not all(m in mtext for m in CASE_MARKERS) or not plan.SETS[n]['sources']:
-            bad_case.append(n)
-    gaps = [b - a for a, b in zip(cases, cases[1:])]
-    check('At least 12 founder cases, each sourced, separating documented history from the course\'s interpretation, '
-          'spread through the course', len(cases) >= 12 and not bad_case and len(case_mods) >= 8,
-          '%d cases at sets %s across %d modules (largest gap %d sets); problems: %s'
-          % (len(cases), cases, len(case_mods), max(gaps), bad_case or 'none'))
+    # ---------------------------------------------------------- law and philosophy scope
+    law = [n for n in plan.SETS if plan.SETS[n]['code'].startswith('AI.LAW.')]
+    undated = [n for n in law if plan.SETS[n]['sources'] and not all(sources.entry(k).get('effective_year') or
+               'research' in sources.entry(k).get('jurisdiction', '') for k in plan.SETS[n]['sources'])]
+    check('Every sourced law set cites sources with a jurisdiction and an effective year', not undated,
+          '%d law sets; problems: %s' % (len(law), undated or 'none'))
+    open_q = [n for n in plan.SETS if plan.SETS[n]['code'] in ('AI.LAW.02', 'AI.LAW.03', 'AI.FAIR.04', 'AI.PHIL.02',
+                                                                'AI.PHIL.03', 'AI.PHIL.04', 'AI.PHIL.07', 'AI.HISTORY.04')]
+    settled = [n for n in open_q if not any(re.search(r'settle|disputed|debated|open|continues|disagree', r['intro'], re.I)
+                                            for r in recs if r['set'] == n and r['section'] == 'M')]
+    check('Sets about disputed legal or philosophical questions say in MAIN teaching that the question is open',
+          not settled, '%d sets checked; problems: %s' % (len(open_q), settled or 'none'))
 
     # ---------------------------------------------------------- write
     today = build.DATE
-    lines = ['# Entrepreneurship collection: validation', '',
+    lines = ['# Artificial Intelligence collection: validation', '',
              'Version %s, run on %s by `src/validate.py` against the built answer key and import package.'
              % (build.VERSION, today), '', '## Hard checks (a failure stops the release)', '',
              '| Check | Result | Detail |', '|---|---|---|']

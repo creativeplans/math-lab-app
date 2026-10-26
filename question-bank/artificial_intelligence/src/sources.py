@@ -136,7 +136,7 @@ SRC = {
               'not exist, generated with a chatbot and not verified, were sanctioned ($5,000); courts expect lawyers '
               'to verify every authority they cite.',
         corroboration='https://www.americanbar.org/groups/judicial/resources/appellate-issues/2026-fall/limits-appellate-scrutiny-age-ai',
-        jurisdiction='US (federal court, New York)', review_days=1095),
+        jurisdiction='US (federal court, New York)', review_days=1095, effective_year='2023'),
 
     # ---------------------------------------------------------------- careers and work
     'work_bls_ds': dict(

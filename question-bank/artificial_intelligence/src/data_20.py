@@ -27,9 +27,9 @@ S_PHIL01 = SET(
           ('Instant answers help learning', 'a premise'),
           ('The answers are accurate', 'an assumption'),
           'The claim argued for.'),
-        Q('In the same example, which is a premise?', 'Instant answers help students learn',
-          ('Schools should use AI tutors, which is what the whole argument is trying to show to readers', 'conclusion'),
-          ('The answers are accurate', 'assumption'),
+        Q("In the passage's example, which is a premise?",
+          'Instant answers help students learn',
+          ('Schools should use AI tutors, which is what the whole argument is trying to show to readers', 'conclusion'), ('The answers are accurate', 'assumption'),
           ('Students like computers', 'not stated'),
           'A stated reason.'),
         Q('What is an assumption?',
@@ -763,11 +763,12 @@ S_PHIL06 = SET(
 )
 
 # ---------------------------------------------------------------------------------------------- AI.PHIL.07
-ALIGN = ('ALIGNMENT means getting an AI system to pursue what people actually INTEND, not just what they literally '
-         'said. There is often a GAP between a STATED GOAL and the INTENDED GOAL. A cleaning robot told "minimize visible '
-         'mess" might hide mess under the rug. A model rewarded for answers people rate highly might learn to flatter '
-         'instead of being accurate. These are simple examples of a broader challenge: specifying goals completely is '
-         'hard, and systems may find shortcuts that satisfy the letter of a goal but miss its spirit.')
+ALIGN = (('ALIGNMENT means getting an AI system to pursue what people actually INTEND, not just what they literally '
+         'said. There is often a GAP between a STATED GOAL and the INTENDED GOAL. A cleaning robot told "minimize '
+         'visible mess" might hide mess under the rug. A model rewarded for answers people rate highly might learn to '
+         'flatter instead of being accurate. These are simple examples of a broader challenge: specifying goals '
+         'completely is hard, and systems may find shortcuts that satisfy the letter of a goal but miss its spirit. '
+         'How hard this will be for future systems is debated.'))
 ALIGN_F2 = ('People disagree about how hard alignment will be for more capable systems and how much to worry, and '
             'this course does not settle that. Practical habits help with today\'s tools: state goals with limits and '
             'priorities, test for shortcuts, measure what you actually want, and keep humans reviewing important '

@@ -393,12 +393,12 @@ S_FAIR03 = SET(
 )
 
 # ---------------------------------------------------------------------------------------------- AI.FAIR.04
-GOALS = ('"Fair" can mean different things, and the meanings can CONFLICT. One goal: EQUAL ERROR RATES, so each group '
-         'faces the same chance of being wrongly flagged. Another: EQUAL SELECTION RATES, so each group is approved at '
-         'the same rate. Another: CALIBRATION, where a score of "70% likely" means the same thing for every group. '
+GOALS = (('"Fair" can mean different things, and the meanings can CONFLICT. One goal: EQUAL ERROR RATES, so each group '
+         'faces the same chance of being wrongly flagged. Another: EQUAL SELECTION RATES, so each group is approved at'
+         ' the same rate. Another: CALIBRATION, where a score of "70% likely" means the same thing for every group. '
          'Researchers have shown that, when groups differ in underlying rates, these goals usually cannot all be met '
          'at once. So choosing a fairness goal is a DECISION about values that people must make and explain, not a '
-         'purely technical setting.')
+         'purely technical setting, and which goal fits best is debated.'))
 GOALS_F2 = ('Reasonable people disagree about which goal matters most in a given setting, and this course does not '
             'settle that. What can be expected is transparency: say which goal was chosen, why, who was consulted, '
             'and what trade-offs it creates. Laws may also set requirements in some areas, such as hiring and lending. '
