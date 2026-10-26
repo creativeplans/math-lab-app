@@ -1,10 +1,10 @@
-"""Write the Entrepreneurship reports and the import ZIP (run after build.py and validate.py).
+"""Write the Artificial Intelligence reports and the import ZIP (run after build.py and validate.py).
 
-    python3 question-bank/entrepreneurship/src/report.py
+    python3 question-bank/artificial_intelligence/src/report.py
 
 Writes COVERAGE.md, SOURCES.md, README.md and CHANGELOG.md next to the answer key and in the package; splits the two
 PDFs into volumes at set boundaries (pdf/ with PART_INDEX.md); writes MANIFEST.json; zips the package as
-question-bank/nexus/Entrepreneurship_Nexus_Import_v<version>.zip.
+question-bank/nexus/Artificial_Intelligence_Nexus_Import_v<version>.zip.
 """
 import collections
 import datetime
@@ -26,44 +26,38 @@ PART_PAGES = 500          # target pages per question volume; volumes break at t
 MOD_TITLE = {m[0]: m[1] for m in plan.MODULES}
 NUM = plan.SET_NUM
 
-# What a first-time owner most often forgets, and where the course teaches it (set codes).
-CHECKLIST = [
-    ('Choosing a business name that is free to use, and knowing a DBA or state filing is not a trademark',
-     ['ENT.LEGAL.01', 'ENT.LEGAL.02', 'ENT.LEGAL.08']),
-    ('Sole proprietorship versus LLC or corporation, and that legal form and tax treatment are different choices',
-     ['ENT.LEGAL.03', 'ENT.LEGAL.04', 'ENT.LEGAL.05']),
-    ('Registered agent, operating agreement and personal guarantees', ['ENT.LEGAL.06', 'ENT.LEGAL.07', 'ENT.LEGAL.09']),
-    ('Licenses, permits, zoning and home-business limits', ['ENT.LEGAL.10']),
-    ('Getting an EIN free from the IRS, and state tax accounts', ['ENT.ID.01', 'ENT.ID.02', 'ENT.ID.03']),
-    ('A separate business bank account, owner draws and reconciling', ['ENT.BANK.01', 'ENT.BANK.04', 'ENT.BANK.05']),
-    ('Which address goes where: registered agent, mailing (PO Box, private mailbox, Form 1583), return address',
-     ['ENT.MAIL.01', 'ENT.MAIL.02', 'ENT.MAIL.03', 'ENT.PROD.05']),
-    ('Pricing from real costs, including fees, refunds and the owner\'s time', ['ENT.PRICE.01', 'ENT.PRICE.04',
-                                                                             'ENT.PRICE.05', 'ENT.PRICE.06']),
-    ('Profit is not cash; unpaid invoices, deposits and a cash reserve', ['ENT.CASH.01', 'ENT.CASH.02', 'ENT.CASH.03']),
-    ('Keeping receipts and records, and how long to keep them', ['ENT.BOOK.01', 'ENT.TAX.06']),
-    ('Sales tax versus income tax, self-employment tax, estimated payments and setting money aside',
-     ['ENT.TAX.03', 'ENT.TAX.04', 'ENT.TAX.05']),
-    ('Written quotes, payment terms, cancellation policies and scope changes', ['ENT.PAY.01', 'ENT.PAY.02', 'ENT.PAY.03',
-                                                                             'ENT.PAY.04']),
-    ('Chargebacks and payment or invoice scams', ['ENT.PAY.06', 'ENT.PAY.07', 'ENT.OPS.08']),
-    ('Owning your domain and website accounts; HTTPS and backups', ['ENT.WEB.04', 'ENT.WEB.05']),
-    ('Email permission and opt-outs; honest reviews; disclosing paid endorsements', ['ENT.MKT.03', 'ENT.MKT.05',
-                                                                                    'ENT.MKT.06']),
-    ('Checking AI output, protecting confidential data, and never inventing testimonials', ['ENT.AI.03', 'ENT.AI.04',
-                                                                                           'ENT.AI.07']),
-    ('Passwords, two-step login, access for helpers, and a lost-phone plan', ['ENT.OPS.04', 'ENT.OPS.05', 'ENT.OPS.09']),
-    ('A deadline calendar for filings and renewals; forgotten subscriptions', ['ENT.OPS.07', 'ENT.OPS.03']),
-    ('Insurance gaps in personal and home policies', ['ENT.RISK.01', 'ENT.RISK.02']),
-    ('Permission for images, music, code and names; truthful advertising', ['ENT.RISK.05', 'ENT.RISK.06']),
-    ('Contractor versus employee is not a label; payroll duties', ['ENT.HELP.02', 'ENT.HELP.03']),
-    ('Loans, guarantees and money raised are not profit', ['ENT.FUND.02', 'ENT.FUND.05']),
-    ('Burnout and closing a business honestly', ['ENT.GROW.04', 'ENT.GROW.05']),
+# The topic domains A-T of the course request, and the set-code families that teach them.
+DOMAINS = [
+    ('A', 'What AI is and where it appears', ['AI.BASICS.']),
+    ('B', 'Learning and using a model', ['AI.LEARN.']),
+    ('C', 'LLMs and language generation', ['AI.LLM.']),
+    ('D', 'Prompt engineering and task design', ['AI.PROMPT.']),
+    ('E', 'Checking results and handling uncertainty', ['AI.CHECK.']),
+    ('F', 'Research, writing, learning and everyday use', ['AI.EVERYDAY.']),
+    ('G', 'Retrieval, files and supplied information', ['AI.RETRIEVAL.', 'AI.SECURITY.03']),
+    ('H', 'Images, design and presentations', ['AI.IMAGE.']),
+    ('I', 'Audio, music, video and synthetic media', ['AI.MEDIA.']),
+    ('J', 'Code assistance and software development', ['AI.CODE.']),
+    ('K', 'Agents, automation and human approval', ['AI.AGENT.']),
+    ('L', 'Privacy, security and misuse', ['AI.PRIVACY.', 'AI.SECURITY.']),
+    ('M', 'Bias, fairness and accessibility', ['AI.FAIR.', 'AI.EVERYDAY.08', 'AI.IMAGE.06']),
+    ('N', 'Law, policy, copyright and responsibility', ['AI.LAW.', 'AI.MEDIA.03', 'AI.MEDIA.04']),
+    ('O', 'Philosophy and social questions', ['AI.PHIL.']),
+    ('P', 'Work, jobs and careers', ['AI.WORK.']),
+    ('Q', 'Costs, tools and practical selection', ['AI.COST.']),
+    ('R', 'Evaluation and measurement', ['AI.EVAL.']),
+    ('S', 'Practical constraints and overlooked pitfalls', ['AI.PITFALL.']),
+    ('T', 'History, present systems and future claims', ['AI.HISTORY.']),
 ]
 
 
+def domain_sets(prefixes):
+    return [n for n, p in plan.SETS.items() if any(p['code'] == x or (x.endswith('.') and p['code'].startswith(x))
+                                                   for x in prefixes)]
+
+
 def load():
-    return json.load(open(os.path.join(ROOT, 'Entrepreneurship_Answer_Key.json'), encoding='utf-8'))['questions']
+    return json.load(open(os.path.join(ROOT, 'AI_Answer_Key.json'), encoding='utf-8'))['questions']
 
 
 def write_both(name, text):
@@ -80,7 +74,7 @@ def sets_pkg():
 def coverage(recs):
     index, ps = sets_pkg()
     by_set = collections.Counter(r['set'] for r in recs)
-    out = ['# Entrepreneurship collection: coverage', '',
+    out = ['# Artificial Intelligence collection: coverage', '',
            '%d focused sets, %d questions. Every set has MAIN (5), at least one backward branch (5 each), F1 "Apply it" '
            '(5) and F2 "Handle the complications" (5). Shared skills are taught once in the foundation; path sets refer '
            'back to them through `requires`.' % (len(ps), len(recs)), '',
@@ -93,19 +87,12 @@ def coverage(recs):
         own = [n for n, s in ps.items() if s['path_refs'] == [p['id']]]
         out.append('- **%s** (`%s`): %s Path sets: %s. Learners on this path also take every foundation set.'
                    % (p['title'], p['id'], p['description'], ', '.join(map(str, own))))
-    out += ['', '## What a first-time owner most often forgets, and where it is taught', '',
-            '| Topic | Sets |', '|---|---|']
-    for topic, codes in CHECKLIST:
-        out.append('| %s | %s |' % (topic, ', '.join('%d (%s)' % (NUM[c], plan.SETS[NUM[c]]['title']) for c in codes)))
-    out += ['', '## Founder cases', '',
-            'Each case passage begins with "Documented history" (what the cited source records) and then gives the '
-            '"Lesson drawn by this course (an interpretation)", followed by "One success story does not guarantee the '
-            'same result for another business." The backward branch of each case practices telling the two apart.', '',
-            '| Set | Case | Module | Source |', '|---:|---|---|---|']
-    for n in sorted(ps):
-        if plan.SETS[n]['code'].startswith('ENT.CASE.'):
-            e = sources.entry(plan.SETS[n]['sources'][0])
-            out.append('| %d | %s | %s | %s |' % (n, plan.SETS[n]['title'], MOD_TITLE[plan.SETS[n]['module']], e['url']))
+    out += ['', '## Required topic domains (A-T) and the sets that teach them', '',
+            '| Domain | Topic | Sets |', '|---|---|---|']
+    for d, title, pre in DOMAINS:
+        ns = sorted(domain_sets(pre))
+        assert ns, d
+        out.append('| %s | %s | %s |' % (d, title, ', '.join('%d %s' % (n, plan.SETS[n]['title']) for n in ns)))
     out += ['', '## Every set', '',
             '| Set | Code | Title | Module | Requires | Backward branches (mode: diagnostic reason) | Status | Questions |',
             '|---:|---|---|---|---|---|---|---:|']
@@ -118,12 +105,12 @@ def coverage(recs):
             br.replace('|', '/'), s['content_status'].replace('_', '-'), by_set[n]))
     modes = collections.Counter(r['branch_mode'] for r in recs if r['section'].startswith('B') and r['number'] == 1)
     out += ['', '## Backward branches', '',
-            '- Concept simplification (the same idea explained through an everyday comparison): %d branches.'
+            '- Concept simplification (the same idea explained through a different, everyday comparison): %d branches.'
             % modes['concept_simplification'],
-            '- Math prerequisite (the arithmetic the set relies on, such as percents, rates, rounding or totals): %d '
-            'branches.' % modes['math_prerequisite'],
-            '- Number-heavy sets (pricing, cash, fees, break-even, loans, runway) use a math branch; set 48 (markup and margin) uses '
-            'both kinds. Every branch states the reason it helps a learner who missed MAIN (listed in the table above).', '']
+            '- Underlying skill (a supporting skill such as reading a table, matching a claim to a source, counting, '
+            'tracing code or simple arithmetic): %d branches.' % modes['underlying_skill'],
+            '- Every branch states the reason it helps a learner who missed MAIN (listed in the table above). No branch '
+            'is nested and no branch reveals a MAIN answer.', '']
     write_both('COVERAGE.md', '\n'.join(out))
 
 
@@ -134,14 +121,14 @@ def source_ledger():
     for n, p in plan.SETS.items():
         for k in p['sources']:
             uses[k].append(n)
-    out = ['# Entrepreneurship collection: sources and review schedule', '',
+    out = ['# Artificial Intelligence collection: sources and review schedule', '',
            'Every time-sensitive set lists its sources in its set file (URL, claim, date checked), a review interval '
            'and a jurisdiction. This ledger lists each source once with the sets that rely on it and its next review '
            'date (date checked + review interval).', '',
            '**How the sources were checked.** %s. The checking date for every source is %s. For %d sources the claim '
            'could not be confirmed from the official page itself (the note on each says what was used instead: '
            'secondary sources, a search excerpt or a statute citation); the course teaches only the general '
-           'principle, not current rates, thresholds or penalties. These are '
+           'principle and dated facts, never a settled answer to an open legal question. These are '
            'marked "needs direct check" below and should be opened directly at the first review.'
            % (sources.METHOD[0].upper() + sources.METHOD[1:], sources.CHECKED,
               len([k for k in sources.UNCONFIRMED if k in uses])), '',
@@ -164,8 +151,9 @@ def source_ledger():
         by_date[d.isoformat()].append(n)
     for d in sorted(by_date):
         out.append('| %s | %s |' % (d, ', '.join(map(str, by_date[d]))))
-    out += ['', 'Numbers in questions (prices, fees, rates, wages, percentages) are practice assumptions stated as such '
-            'in the passages; they are not market data, quotes from a provider, or current tax rates.', '']
+    out += ['', 'Prices and rates in questions (plans, tokens, costs per task) are hypothetical and labeled as such; they '
+            'are not any provider\'s current prices. People, companies, prompts and AI responses in scenarios are '
+            'fictional and labeled; no simulated output is attributed to a real product.', '']
     write_both('SOURCES.md', '\n'.join(out))
 
 
@@ -176,8 +164,8 @@ def split_pdfs(recs):
     os.makedirs(pdfdir, exist_ok=True)
     for f in os.listdir(pdfdir):
         os.remove(os.path.join(pdfdir, f))
-    qdoc = pymupdf.open(os.path.join(ROOT, 'Entrepreneurship_Question_Collection.pdf'))
-    kdoc = pymupdf.open(os.path.join(ROOT, 'Entrepreneurship_Answer_Key.pdf'))
+    qdoc = pymupdf.open(os.path.join(ROOT, 'AI_Question_Collection.pdf'))
+    kdoc = pymupdf.open(os.path.join(ROOT, 'AI_Answer_Key.pdf'))
     first_page = {}
     for r in recs:
         first_page.setdefault(r['set'], r['question_page'])
@@ -198,7 +186,7 @@ def split_pdfs(recs):
     for idx, (a, b) in enumerate(bounds, 1):
         qs = [r for r in recs if a <= r['question_page'] <= b]
         sets = sorted({r['set'] for r in qs})
-        name = 'Entrepreneurship - Volume %d - questions.pdf' % idx
+        name = 'AI - Volume %d - questions.pdf' % idx
         part = pymupdf.open()
         part.insert_pdf(qdoc, from_page=a - 1, to_page=b - 1)
         part.save(os.path.join(pdfdir, name), garbage=4, deflate=True)
@@ -207,7 +195,7 @@ def split_pdfs(recs):
         ka = key_page[qs[0]['id']]
         kb = (key_page[recs[recs.index(qs[-1]) + 1]['id']] - 1) if qs[-1] is not recs[-1] else kdoc.page_count
         kb = max(kb, ka)
-        kname = 'Entrepreneurship - Volume %d - answer key.pdf' % idx
+        kname = 'AI - Volume %d - answer key.pdf' % idx
         part = pymupdf.open()
         part.insert_pdf(kdoc, from_page=ka - 1, to_page=kb - 1)
         part.save(os.path.join(pdfdir, kname), garbage=4, deflate=True)
@@ -222,7 +210,7 @@ def split_pdfs(recs):
     out = ['# PDF volumes: page and question ranges', '',
            'The question collection (one question per page, with its teaching passage above the question and a '
            'reference label at the bottom) is split at the start of a set, about %d pages per volume. Page numbers are '
-           'pages of the full PDF (`Entrepreneurship_Question_Collection.pdf`; the `question_page` field of the answer '
+           'pages of the full PDF (`AI_Question_Collection.pdf`; the `question_page` field of the answer '
            'key). Every page of every volume was compared with the same page of the full PDF when this index was '
            'written; all match.' % PART_PAGES, '',
            'The answer key holds several answers per page, so a volume boundary can share a page with the next volume; '
@@ -244,64 +232,80 @@ def split_pdfs(recs):
 def readme(recs, nvol, qpages, kpages, checks, importer):
     index, ps = sets_pkg()
     ts = sum(1 for s in ps.values() if s['content_status'] == 'time_sensitive')
-    cases = sum(1 for n in ps if plan.SETS[n]['code'].startswith('ENT.CASE.'))
     nb = sum(1 for s in ps.values() for x in s['sections'] if x['relation'] == 'backward')
-    text = '''# Entrepreneurship: Starting and Running a Small Business
+    nex = sum(1 for r in recs if r.get('example'))
+    ncode = sum(1 for r in recs if r.get('example') and r['example']['kind'] == 'code')
+    found = [m for m in index['modules'] if m['kind'] == 'foundation']
+    text = '''# Artificial Intelligence: Understanding and Using AI Wisely
 
-Untangle The Nexus question collection `ENT` (course `entrepreneurship`, category Adults & HS Students), version
-{ver} ({date}). {nsets} focused sets, {nq} multiple-choice questions. Generated from
-`question-bank/entrepreneurship/src` (plan.py, sources.py and data_*.py) by build.py, validate.py and report.py.
-Regenerate there rather than editing these files by hand.
+Untangle The Nexus question collection `AI` (course `artificial_intelligence`, category Adults & HS Students),
+version {ver} ({date}). {nsets} focused sets ({nsets} MAIN sets, {nb} backward branches, {nsets} F1 and {nsets} F2
+sections), {nq} multiple-choice questions. Generated from `question-bank/artificial_intelligence/src` (plan.py,
+sources.py and data_*.py) by build.py, validate.py and report.py. Regenerate there rather than editing these files
+by hand.
 
 {scope}
 
+**No live AI lab, no external account, no paid service and no creation task.** Learners read a teaching passage and
+answer a four-choice question. Every prompt, response, code snippet, table and log is a prepared example written for
+this course and labeled as such; nothing is generated or executed by the learner.
+
 ## What is in this collection
 
-- A foundation of 15 modules every learner takes (start here, customers, testing demand, names and legal structure,
-  EIN and banking, addresses and contact details, costs and pricing, bookkeeping and taxes, getting paid, website,
-  marketing, AI as a helper, operations, risk, getting help), an optional specialty module (funding, growth and
-  closing), and four paths: services; physical products; digital products; content creation. Shared skills are taught
-  once and referenced by `requires`.
-- {cases} founder cases spread through the course. Each separates the documented history (with its source) from the
-  lesson this course draws, and says that one story does not guarantee the same result.
-- Every set: MAIN (5 questions), backward branches ({nb} in total; concept simplification or math prerequisite, each
-  with its diagnostic reason), F1 "Apply it" (5) and F2 "Handle the complications" (5).
-- Every question has its own teaching passage (55-125 words), a scenario question, 4 choices with one best answer,
-  feedback, and (in the private key) a reason for every wrong choice.
-- {ts} time-sensitive sets carry sources, a review interval and a jurisdiction; the rest are stable.
+- A shared foundation of {nfound} modules (what AI is; how a model learns; large language models; asking for what you
+  need; checking results; privacy and security basics), an optional specialty module (kinds of learning,
+  reinforcement learning, transformers), and five selectable paths: Everyday use; Creative work; Coding & automation;
+  Work & careers; Society, law & philosophy. Shared skills are taught once and referenced by `requires`; optional
+  connections are listed separately as `suggested`.
+- Every set: MAIN (5 questions), at least one backward branch ({nb} in total; concept simplification or underlying
+  skill, each with its diagnostic reason), F1 "Apply it" (5) and F2 "Handle the complications" (5).
+- Every question has its own teaching passage (55-125 words), a scenario question, 4 choices with one correct answer,
+  feedback, and (in the private key) a reason for every wrong choice. {nex} questions show a prepared example
+  ({ncode} with Python 3 code; every complete program was executed at build time and its printed output checked).
+- {ts} time-sensitive sets (law, policy, provider facts, careers, history, energy) carry sources with a jurisdiction,
+  effective year, date checked and review interval; the rest are stable concepts.
+- Disputed questions (who owns AI output, training-data copyright, fairness goals, the Turing test, the Chinese Room,
+  machine consciousness, alignment, general intelligence) are taught as open; no key settles them.
 
 ## Files
 
 | Path | Contents |
 |---|---|
-| `index.json` | Course, bank version, category, scope note, outcomes, the four paths, the modules and every set with its file |
+| `index.json` | Course, bank version, category, scope note, outcomes, the five paths, the modules and every set with its file |
 | `sets/Sxxx.json` | One file per set: prerequisites, suggested reading, sources, and sections M, B1..., F1, F2 with 5 questions each |
-| `COVERAGE.md` | Modules and paths, a checklist of what first-time owners forget mapped to sets, the founder cases, and every set with its branches |
+| `COVERAGE.md` | Domains A-T mapped to sets, modules and paths, and every set with its branches and diagnostic reasons |
 | `SOURCES.md` | Every source with its claim, jurisdiction, date checked, review interval and next review date |
-| `VALIDATION.md` | Every validation check and its result |
+| `VALIDATION.md` | Every validation check, its result, and the known limitations |
 | `CHANGELOG.md` | Version policy and what changed |
 | `pdf/` | The question collection and the answer key in {nvol} volumes each, with `PART_INDEX.md` (page mapping) |
 | `MANIFEST.json` | Every file with its size and SHA-256 |
 
-The full PDFs (`Entrepreneurship_Question_Collection.pdf`, {qp} pages; `Entrepreneurship_Answer_Key.pdf`, {kp} pages)
-and the answer key as JSON and CSV are in `question-bank/entrepreneurship/`.
+The full PDFs (`AI_Question_Collection.pdf`, {qp} pages, one question per page; `AI_Answer_Key.pdf`, {kp} pages) and
+the answer key as JSON and CSV (`AI_Answer_Key.json`, `AI_Answer_Key.csv`, with `question_page` for every ID) are in
+`question-bank/artificial_intelligence/`.
+
+## Decisions where the contract overrides the request
+
+- **Question IDs.** The request suggested `AI-S001-M-Q01`. The importer contract (COURSE-BANKS.md) requires
+  `S<set>-<section>-Q<n>`, stored by the game as `AI:S1-M-Q1`. The bank uses the contract format; the mapping is
+  one-to-one (`AI-S001-M-Q01` = `AI:S1-M-Q1`).
+- **Routing.** The request said 5/5 mastered, 4/5 fresh MAIN, 0-3/5 backward. The owner's rule for every course
+  (COURSE-BANKS.md, decision of 2026-10-22) is 5/5 mastered; 3-4/5 a fresh MAIN set; 0-2/5 all backward branches,
+  then a fresh MAIN set. The game applies the owner's rule.
+- **Reserve pools.** The importer (`tools/import-collection/v2.ts`) accepts exactly 5 questions per section, so no
+  reserve or variant questions can be imported. When a learner has seen a whole pool, the game reuses the
+  least-recently-seen question (exhaustion behavior). No template generation is used.
 
 ## How it is graded
 
-Every question is multiple choice (`"type": "mc"`), so the game's automatic grader compares the chosen letter with
+Every question is multiple choice (`"type": "mc"`); the game's grader compares the chosen letter with
 `correct_letter`. No free-text or AI grading is needed.
-
-## How the game routes a learner
-
-Under the owner's rule for every course (COURSE-BANKS.md, decision of 2026-10-22): 5/5 on MAIN = mastered and the
-F1/F2 challenges unlock; 3-4/5 = a fresh MAIN set of the same skill; 0-2/5 = all backward branches, then a fresh MAIN
-set. A course prompt that says "three or fewer correct" is read as this rule.
 
 ## Installing (the owner uploads the ZIP; Claude runs the commands)
 
-1. Put `Entrepreneurship_Nexus_Import_v{ver}.zip` on the work branch under `content-src/entrepreneurship/`.
-2. Check only: `npx tsx tools/import-collection/import.ts --check content-src/entrepreneurship/Entrepreneurship_Nexus_Import_v{ver}.zip`
-3. Install: `npx tsx tools/import-collection/import.ts content-src/entrepreneurship/Entrepreneurship_Nexus_Import_v{ver}.zip`
+1. Put `Artificial_Intelligence_Nexus_Import_v{ver}.zip` on the work branch under `content-src/artificial_intelligence/`.
+2. Check only: `npx tsx tools/import-collection/import.ts --check content-src/artificial_intelligence/Artificial_Intelligence_Nexus_Import_v{ver}.zip`
+3. Install: `npx tsx tools/import-collection/import.ts content-src/artificial_intelligence/Artificial_Intelligence_Nexus_Import_v{ver}.zip`
 4. Roll back if needed: `npx tsx tools/import-collection/import.ts --rollback <course dir>`.
 5. Release (`release: 'available'` in `packages/curriculum/src/courses.ts`) only after the owner approves.
 
@@ -313,26 +317,29 @@ Result of the check-only import run for this version: {importer}
 
 ## Limits (stated honestly)
 
-- Each section is a fixed pool of exactly 5 written questions; no extra variant questions are provided. The game
-  reuses the least-recently-seen question when a learner has seen the whole pool, so a learner who repeats a section
-  sees the same questions.
-- Sources were checked through web-search results for the official pages on {checked} (pages were not opened
-  directly). {n_unconf} sources could not be confirmed from the official page itself (secondary sources,
-  a search excerpt, or a statute citation); they are marked in `SOURCES.md` for a direct check at the first review. The course teaches principles and what to check, not current rates, thresholds or
-  penalties.
-- Laws and fees vary by state and city; examples that name a state (for example Washington's registered-agent rule)
-  are labeled as examples.
-- All prices, fees, rates and wages in questions are practice assumptions. All people and businesses in scenarios are
-  fictional; email addresses use the reserved `.example` domain.
-- Explanations, wrong-choice reasons and answer keys were written by the author; arithmetic in {arith} answers is
-  checked by code, and the rest was reviewed by the author without a computer check.
-- The correct answer is never conspicuously the longest choice, but it is the single longest choice in about
-  {longest}% of questions (25% would be chance). This is reported in `VALIDATION.md` for review.
-'''.format(ver=build.VERSION, date=build.DATE, nsets=len(ps), nq=len(recs), scope=build.SCOPE_NOTE, cases=cases, nb=nb,
-           ts=ts, nvol=nvol, qp=qpages, kp=kpages, importer=importer, checks='\n'.join('- ' + c for c in checks),
-           checked=sources.CHECKED, n_unconf=len([k for k in sources.UNCONFIRMED if k in sources.SRC]), arith=sum(1 for r in recs if r['arithmetic_checked']),
+- Each section is a fixed pool of exactly 5 questions (see "Reserve pools" above).
+- Sources were checked through web-search results for the pages on {checked}; pages were not opened directly.
+  {n_unconf} sources could not be confirmed from the primary page itself and are marked in `SOURCES.md` for a direct
+  check at the first review. Law sets teach dated facts and what to check; they are general information, not legal
+  advice.
+- All prices and rates are hypothetical. All people, companies, prompts and AI responses are fictional; email
+  addresses use reserved example domains.
+- Explanations, wrong-choice reasons and keys were written and reviewed by the author; arithmetic in {arith} answers
+  and every complete code example are checked by code.
+- Answer-length balance: the correct answer is never conspicuously the longest choice and is the single longest in
+  about {longest}% of questions (25% would be chance). Many wrong choices are padded misconceptions: in {wlong}% of
+  questions one wrong choice is noticeably longer than the rest, and absolute words (always, never, every...) appear
+  far more often in wrong choices than in correct ones. Both patterns point away from the key; they are listed in
+  `VALIDATION.md` for the round-2 balancing edit.
+'''.format(ver=build.VERSION, date=build.DATE, nsets=len(ps), nq=len(recs), scope=build.SCOPE_NOTE, nb=nb, ts=ts,
+           nvol=nvol, qp=qpages, kp=kpages, importer=importer, checks='\n'.join('- ' + c for c in checks),
+           checked=sources.CHECKED, n_unconf=len([k for k in sources.UNCONFIRMED if k in sources.SRC]),
+           arith=sum(1 for r in recs if r['arithmetic_checked']), nex=nex, ncode=ncode, nfound=len(found),
            longest=round(100.0 * sum(1 for r in recs if len(r['correct_answer']) >
-                                     max(len(w['text']) for w in r['wrong_choices'])) / len(recs)))
+                                     max(len(w['text']) for w in r['wrong_choices'])) / len(recs)),
+           wlong=round(100.0 * sum(1 for r in recs if any(build.conspicuous(
+               w['text'], [r['correct_answer']] + [x['text'] for x in r['wrong_choices'] if x is not w])
+               for w in r['wrong_choices'])) / len(recs)))
     write_both('README.md', text)
 
 
@@ -346,21 +353,21 @@ def manifest():
             files.append({'path': os.path.relpath(p, PKG).replace(os.sep, '/'), 'bytes': os.path.getsize(p),
                           'sha256': hashlib.sha256(open(p, 'rb').read()).hexdigest()})
     files.sort(key=lambda x: x['path'])
-    m = {'collection': {'id': 'ENT', 'course': 'entrepreneurship', 'title': build.TITLE, 'version': build.VERSION,
+    m = {'collection': {'id': 'AI', 'course': 'artificial_intelligence', 'title': build.TITLE, 'version': build.VERSION,
                         'date': build.DATE}, 'file_count': len(files), 'files': files}
     json.dump(m, open(os.path.join(PKG, 'MANIFEST.json'), 'w', encoding='utf-8'), indent=1)
     return len(files)
 
 
 def make_zip():
-    path = os.path.join(QB, 'nexus', 'Entrepreneurship_Nexus_Import_v%s.zip' % build.VERSION)
+    path = os.path.join(QB, 'nexus', 'Artificial_Intelligence_Nexus_Import_v%s.zip' % build.VERSION)
     if os.path.exists(path):
         os.remove(path)
     with zipfile.ZipFile(path, 'w', zipfile.ZIP_DEFLATED) as z:
         for dp, _, fs in os.walk(PKG):
             for f in sorted(fs):
                 p = os.path.join(dp, f)
-                z.write(p, os.path.join('entrepreneurship', os.path.relpath(p, PKG)))
+                z.write(p, os.path.join('artificial_intelligence', os.path.relpath(p, PKG)))
     with zipfile.ZipFile(path) as z:
         assert z.testzip() is None
         n = len(z.namelist())
