@@ -1,0 +1,656 @@
+{
+ "set": 61,
+ "title": "Searching, generating and retrieval",
+ "outcome": "AI.RETRIEVAL.01",
+ "content_status": "stable",
+ "requires": [
+  19
+ ],
+ "module": "files",
+ "path_refs": [
+  "everyday",
+  "coding",
+  "work"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Tell searching from generating, and explain retrieval-augmented generation",
+   "questions": [
+    {
+     "id": "S61-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "What does searching do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Finds existing sources and shows them"
+      },
+      {
+       "letter": "B",
+       "text": "Retrains the model on the web"
+      },
+      {
+       "letter": "C",
+       "text": "Writes brand-new text from patterns"
+      },
+      {
+       "letter": "D",
+       "text": "Guarantees every result is true"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Finds existing sources and shows them",
+     "intro": "SEARCHING finds existing sources, such as web pages, articles or documents, and shows them to you. GENERATING writes new text from learned patterns. Many tools now combine the two in RETRIEVAL-AUGMENTED GENERATION (RAG): the tool first RETRIEVES relevant passages (from the web, a company's files or your uploads), adds them to the context, and then GENERATES an answer based on them, often with citations. Retrieval can make answers more current and specific, but the answer is still generated, so it can misread or go beyond the retrieved text, and the retrieved sources themselves can be poor.",
+     "feedback": "Search finds; it does not write."
+    },
+    {
+     "id": "S61-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "What does RAG stand for?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Random answer generator"
+      },
+      {
+       "letter": "B",
+       "text": "Reviewed and approved generation, a system where every answer is checked by a person first"
+      },
+      {
+       "letter": "C",
+       "text": "Rapid AI grammar"
+      },
+      {
+       "letter": "D",
+       "text": "Retrieval-augmented generation"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Retrieval-augmented generation",
+     "intro": "SEARCHING finds existing sources, such as web pages, articles or documents, and shows them to you. GENERATING writes new text from learned patterns. Many tools now combine the two in RETRIEVAL-AUGMENTED GENERATION (RAG): the tool first RETRIEVES relevant passages (from the web, a company's files or your uploads), adds them to the context, and then GENERATES an answer based on them, often with citations. Retrieval can make answers more current and specific, but the answer is still generated, so it can misread or go beyond the retrieved text, and the retrieved sources themselves can be poor.",
+     "feedback": "Retrieval-augmented generation."
+    },
+    {
+     "id": "S61-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "In RAG, what happens first?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The model is retrained on the passages"
+      },
+      {
+       "letter": "B",
+       "text": "Relevant passages are retrieved and added to the context"
+      },
+      {
+       "letter": "C",
+       "text": "The user approves each source by hand, one at a time, before the tool may read it"
+      },
+      {
+       "letter": "D",
+       "text": "The answer is written before anything is looked up"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Relevant passages are retrieved and added to the context",
+     "intro": "SEARCHING finds existing sources, such as web pages, articles or documents, and shows them to you. GENERATING writes new text from learned patterns. Many tools now combine the two in RETRIEVAL-AUGMENTED GENERATION (RAG): the tool first RETRIEVES relevant passages (from the web, a company's files or your uploads), adds them to the context, and then GENERATES an answer based on them, often with citations. Retrieval can make answers more current and specific, but the answer is still generated, so it can misread or go beyond the retrieved text, and the retrieved sources themselves can be poor.",
+     "feedback": "Retrieve, then generate."
+    },
+    {
+     "id": "S61-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "Why can a RAG answer still be wrong?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Citations prevent any error"
+      },
+      {
+       "letter": "B",
+       "text": "RAG answers are copied word for word from one source"
+      },
+      {
+       "letter": "C",
+       "text": "It is generated and can misread the sources"
+      },
+      {
+       "letter": "D",
+       "text": "Retrieval always finds perfect sources"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "It is generated and can misread the sources",
+     "intro": "SEARCHING finds existing sources, such as web pages, articles or documents, and shows them to you. GENERATING writes new text from learned patterns. Many tools now combine the two in RETRIEVAL-AUGMENTED GENERATION (RAG): the tool first RETRIEVES relevant passages (from the web, a company's files or your uploads), adds them to the context, and then GENERATES an answer based on them, often with citations. Retrieval can make answers more current and specific, but the answer is still generated, so it can misread or go beyond the retrieved text, and the retrieved sources themselves can be poor.",
+     "feedback": "Generation can drift from sources."
+    },
+    {
+     "id": "S61-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "What is a benefit of retrieval?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The model learns permanently from each search"
+      },
+      {
+       "letter": "B",
+       "text": "Answers become shorter"
+      },
+      {
+       "letter": "C",
+       "text": "Answers never need checking again"
+      },
+      {
+       "letter": "D",
+       "text": "Answers can be more current and specific"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Answers can be more current and specific",
+     "intro": "SEARCHING finds existing sources, such as web pages, articles or documents, and shows them to you. GENERATING writes new text from learned patterns. Many tools now combine the two in RETRIEVAL-AUGMENTED GENERATION (RAG): the tool first RETRIEVES relevant passages (from the web, a company's files or your uploads), adds them to the context, and then GENERATES an answer based on them, often with citations. Retrieval can make answers more current and specific, but the answer is still generated, so it can misread or go beyond the retrieved text, and the retrieved sources themselves can be poor.",
+     "feedback": "Fresh, specific material."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare a librarian with a storyteller",
+   "questions": [
+    {
+     "id": "S61-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "The librarian who hands you books is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Searching"
+      },
+      {
+       "letter": "B",
+       "text": "Training a model"
+      },
+      {
+       "letter": "C",
+       "text": "Translating"
+      },
+      {
+       "letter": "D",
+       "text": "Generating"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Searching",
+     "intro": "A LIBRARIAN finds books and articles for you: you get the real sources and read them yourself. A STORYTELLER tells you a story from memory: engaging, but nothing to look up. Now imagine a librarian who first pulls three books, reads them quickly, and then tells you a summary in her own words with page numbers. That is like retrieval-augmented generation: helpful, but her summary could still mix things up, so you can check the pages she named.",
+     "feedback": "Finding existing sources."
+    },
+    {
+     "id": "S61-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "The storyteller from memory is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "An official record"
+      },
+      {
+       "letter": "B",
+       "text": "Retrieval"
+      },
+      {
+       "letter": "C",
+       "text": "Generating"
+      },
+      {
+       "letter": "D",
+       "text": "Searching"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Generating",
+     "intro": "A LIBRARIAN finds books and articles for you: you get the real sources and read them yourself. A STORYTELLER tells you a story from memory: engaging, but nothing to look up. Now imagine a librarian who first pulls three books, reads them quickly, and then tells you a summary in her own words with page numbers. That is like retrieval-augmented generation: helpful, but her summary could still mix things up, so you can check the pages she named.",
+     "feedback": "New text from memory."
+    },
+    {
+     "id": "S61-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "The librarian who reads three books and summarizes is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Retraining a model"
+      },
+      {
+       "letter": "B",
+       "text": "Retrieval-augmented generation"
+      },
+      {
+       "letter": "C",
+       "text": "Pure searching with no summary"
+      },
+      {
+       "letter": "D",
+       "text": "Pure storytelling with no books"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Retrieval-augmented generation",
+     "intro": "A LIBRARIAN finds books and articles for you: you get the real sources and read them yourself. A STORYTELLER tells you a story from memory: engaging, but nothing to look up. Now imagine a librarian who first pulls three books, reads them quickly, and then tells you a summary in her own words with page numbers. That is like retrieval-augmented generation: helpful, but her summary could still mix things up, so you can check the pages she named.",
+     "feedback": "Retrieve, then generate."
+    },
+    {
+     "id": "S61-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "Why might her summary still be wrong?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "She could mix things up while summarizing"
+      },
+      {
+       "letter": "B",
+       "text": "Summaries cannot be wrong"
+      },
+      {
+       "letter": "C",
+       "text": "Because she never read the books"
+      },
+      {
+       "letter": "D",
+       "text": "Because books always contain errors that no reader could ever notice"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "She could mix things up while summarizing",
+     "intro": "A LIBRARIAN finds books and articles for you: you get the real sources and read them yourself. A STORYTELLER tells you a story from memory: engaging, but nothing to look up. Now imagine a librarian who first pulls three books, reads them quickly, and then tells you a summary in her own words with page numbers. That is like retrieval-augmented generation: helpful, but her summary could still mix things up, so you can check the pages she named.",
+     "feedback": "Generation can err."
+    },
+    {
+     "id": "S61-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "What can you check?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Her favorite color, to see whether she can be trusted with books"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing"
+      },
+      {
+       "letter": "C",
+       "text": "The pages she named"
+      },
+      {
+       "letter": "D",
+       "text": "The library's address"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The pages she named",
+     "intro": "A LIBRARIAN finds books and articles for you: you get the real sources and read them yourself. A STORYTELLER tells you a story from memory: engaging, but nothing to look up. Now imagine a librarian who first pulls three books, reads them quickly, and then tells you a summary in her own words with page numbers. That is like retrieval-augmented generation: helpful, but her summary could still mix things up, so you can check the pages she named.",
+     "feedback": "Citations let you verify."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who confuses search with generation can compare a librarian, a storyteller and a librarian who summarizes."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Choose between search, generation and RAG",
+   "questions": [
+    {
+     "id": "S61-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "Ana needs the official text of her city's noise ordinance. Which approach fits best?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ask a generative tool to write out the ordinance from what it remembers"
+      },
+      {
+       "letter": "B",
+       "text": "Guess from a neighbor's summary"
+      },
+      {
+       "letter": "C",
+       "text": "Ask for a poem about noise"
+      },
+      {
+       "letter": "D",
+       "text": "Search for the city's official ordinance page"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Search for the city's official ordinance page",
+     "intro": "SEARCHING finds existing sources, such as web pages, articles or documents, and shows them to you. GENERATING writes new text from learned patterns. Many tools now combine the two in RETRIEVAL-AUGMENTED GENERATION (RAG): the tool first RETRIEVES relevant passages (from the web, a company's files or your uploads), adds them to the context, and then GENERATES an answer based on them, often with citations. Retrieval can make answers more current and specific, but the answer is still generated, so it can misread or go beyond the retrieved text, and the retrieved sources themselves can be poor.",
+     "feedback": "Official text comes from a source."
+    },
+    {
+     "id": "S61-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "A tool answers a question about this week's news with links to articles. What is it most likely doing?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Copying one article exactly"
+      },
+      {
+       "letter": "B",
+       "text": "Retrieving articles and generating an answer from them"
+      },
+      {
+       "letter": "C",
+       "text": "Answering only from training data that ended years ago"
+      },
+      {
+       "letter": "D",
+       "text": "Retraining itself every morning"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Retrieving articles and generating an answer from them",
+     "intro": "SEARCHING finds existing sources, such as web pages, articles or documents, and shows them to you. GENERATING writes new text from learned patterns. Many tools now combine the two in RETRIEVAL-AUGMENTED GENERATION (RAG): the tool first RETRIEVES relevant passages (from the web, a company's files or your uploads), adds them to the context, and then GENERATES an answer based on them, often with citations. Retrieval can make answers more current and specific, but the answer is still generated, so it can misread or go beyond the retrieved text, and the retrieved sources themselves can be poor.",
+     "feedback": "Links signal retrieval."
+    },
+    {
+     "id": "S61-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "Which task suits pure generation without retrieval?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Listing current store prices"
+      },
+      {
+       "letter": "B",
+       "text": "Finding today's flight status"
+      },
+      {
+       "letter": "C",
+       "text": "Quoting a new law exactly"
+      },
+      {
+       "letter": "D",
+       "text": "Writing a birthday poem"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Writing a birthday poem",
+     "intro": "SEARCHING finds existing sources, such as web pages, articles or documents, and shows them to you. GENERATING writes new text from learned patterns. Many tools now combine the two in RETRIEVAL-AUGMENTED GENERATION (RAG): the tool first RETRIEVES relevant passages (from the web, a company's files or your uploads), adds them to the context, and then GENERATES an answer based on them, often with citations. Retrieval can make answers more current and specific, but the answer is still generated, so it can misread or go beyond the retrieved text, and the retrieved sources themselves can be poor.",
+     "feedback": "Creative tasks need no sources."
+    },
+    {
+     "id": "S61-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "A RAG answer cites a document. What should you do if the claim matters?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ask for more citations without reading any"
+      },
+      {
+       "letter": "B",
+       "text": "Open the cited passage and check it"
+      },
+      {
+       "letter": "C",
+       "text": "Delete the citation"
+      },
+      {
+       "letter": "D",
+       "text": "Trust it"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Open the cited passage and check it",
+     "intro": "SEARCHING finds existing sources, such as web pages, articles or documents, and shows them to you. GENERATING writes new text from learned patterns. Many tools now combine the two in RETRIEVAL-AUGMENTED GENERATION (RAG): the tool first RETRIEVES relevant passages (from the web, a company's files or your uploads), adds them to the context, and then GENERATES an answer based on them, often with citations. Retrieval can make answers more current and specific, but the answer is still generated, so it can misread or go beyond the retrieved text, and the retrieved sources themselves can be poor.",
+     "feedback": "Verify cited passages."
+    },
+    {
+     "id": "S61-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "Why might a company use RAG for its help desk?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "To ground answers in its current help articles"
+      },
+      {
+       "letter": "B",
+       "text": "To make answers random"
+      },
+      {
+       "letter": "C",
+       "text": "To permanently retrain its model every time a customer asks a new question"
+      },
+      {
+       "letter": "D",
+       "text": "To avoid having any help articles"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "To ground answers in its current help articles",
+     "intro": "SEARCHING finds existing sources, such as web pages, articles or documents, and shows them to you. GENERATING writes new text from learned patterns. Many tools now combine the two in RETRIEVAL-AUGMENTED GENERATION (RAG): the tool first RETRIEVES relevant passages (from the web, a company's files or your uploads), adds them to the context, and then GENERATES an answer based on them, often with citations. Retrieval can make answers more current and specific, but the answer is still generated, so it can misread or go beyond the retrieved text, and the retrieved sources themselves can be poor.",
+     "feedback": "Grounding in current material."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Find where retrieval can go wrong",
+   "questions": [
+    {
+     "id": "S61-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "A RAG tool retrieved last year's policy instead of this year's. What went wrong?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nothing; last year's policy is always the same"
+      },
+      {
+       "letter": "B",
+       "text": "The generation step invented a policy from nothing"
+      },
+      {
+       "letter": "C",
+       "text": "The search step found an outdated version"
+      },
+      {
+       "letter": "D",
+       "text": "The user typed too fast"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The search step found an outdated version",
+     "intro": "Retrieval adds new places for things to go wrong. The search step may find the wrong documents, an outdated version, or only part of what is needed. The generation step may blend retrieved facts with its own patterns or cite a source for a claim the source does not make. A search result page lets you judge sources directly; a RAG answer packages them for you, which is convenient but hides choices. When it matters, open the cited passages and confirm they say what the answer claims.",
+     "feedback": "Retrieval can pick the wrong version."
+    },
+    {
+     "id": "S61-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "An answer cites Article A for a claim that Article A never makes. Which step failed?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Neither; citations are always accurate"
+      },
+      {
+       "letter": "B",
+       "text": "Generation went beyond the source"
+      },
+      {
+       "letter": "C",
+       "text": "Retrieval, because Article A does not exist"
+      },
+      {
+       "letter": "D",
+       "text": "The user, for reading Article A"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Generation went beyond the source",
+     "intro": "Retrieval adds new places for things to go wrong. The search step may find the wrong documents, an outdated version, or only part of what is needed. The generation step may blend retrieved facts with its own patterns or cite a source for a claim the source does not make. A search result page lets you judge sources directly; a RAG answer packages them for you, which is convenient but hides choices. When it matters, open the cited passages and confirm they say what the answer claims.",
+     "feedback": "The claim was not in the source."
+    },
+    {
+     "id": "S61-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "How does a search results page differ from a RAG answer?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Search shows sources for you to judge directly"
+      },
+      {
+       "letter": "B",
+       "text": "Search results are always written by AI and need no judgment from you at all"
+      },
+      {
+       "letter": "C",
+       "text": "They are identical"
+      },
+      {
+       "letter": "D",
+       "text": "RAG answers never use sources"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Search shows sources for you to judge directly",
+     "intro": "Retrieval adds new places for things to go wrong. The search step may find the wrong documents, an outdated version, or only part of what is needed. The generation step may blend retrieved facts with its own patterns or cite a source for a claim the source does not make. A search result page lets you judge sources directly; a RAG answer packages them for you, which is convenient but hides choices. When it matters, open the cited passages and confirm they say what the answer claims.",
+     "feedback": "RAG packages sources; search shows them."
+    },
+    {
+     "id": "S61-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "A RAG answer is missing part of the information you needed. What might explain this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The documents were in bold"
+      },
+      {
+       "letter": "B",
+       "text": "The answer was too polite"
+      },
+      {
+       "letter": "C",
+       "text": "RAG always retrieves every relevant document that exists anywhere"
+      },
+      {
+       "letter": "D",
+       "text": "Retrieval found only some of the relevant documents"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Retrieval found only some of the relevant documents",
+     "intro": "Retrieval adds new places for things to go wrong. The search step may find the wrong documents, an outdated version, or only part of what is needed. The generation step may blend retrieved facts with its own patterns or cite a source for a claim the source does not make. A search result page lets you judge sources directly; a RAG answer packages them for you, which is convenient but hides choices. When it matters, open the cited passages and confirm they say what the answer claims.",
+     "feedback": "Incomplete retrieval leads to gaps."
+    },
+    {
+     "id": "S61-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "What is the best habit when a RAG answer will guide a decision?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ask the tool to sound surer"
+      },
+      {
+       "letter": "B",
+       "text": "Ignore the citations"
+      },
+      {
+       "letter": "C",
+       "text": "Confirm key claims in the cited sources"
+      },
+      {
+       "letter": "D",
+       "text": "Accept it, since retrieval makes generated answers fully reliable for decisions"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Confirm key claims in the cited sources",
+     "intro": "Retrieval adds new places for things to go wrong. The search step may find the wrong documents, an outdated version, or only part of what is needed. The generation step may blend retrieved facts with its own patterns or cite a source for a claim the source does not make. A search result page lets you judge sources directly; a RAG answer packages them for you, which is convenient but hides choices. When it matters, open the cited passages and confirm they say what the answer claims.",
+     "feedback": "Open and confirm."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

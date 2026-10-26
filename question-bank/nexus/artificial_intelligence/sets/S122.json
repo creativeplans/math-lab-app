@@ -1,0 +1,717 @@
+{
+ "set": 122,
+ "title": "Uneven error rates",
+ "outcome": "AI.FAIR.02",
+ "content_status": "time_sensitive",
+ "requires": [
+  121
+ ],
+ "module": "fairness",
+ "path_refs": [
+  "society",
+  "work"
+ ],
+ "suggested": [],
+ "sources": [
+  {
+   "url": "https://proceedings.mlr.press/v81/buolamwini18a.html",
+   "claim": "Buolamwini and Gebru (2018), \"Gender Shades\": three commercial gender-classification systems tested in 2017-2018 had error rates up to 34.7 percent for darker-skinned women versus at most 0.8 percent for lighter-skinned men. The finding is about those systems at that time.",
+   "checked": "2026-10-26"
+  },
+  {
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7149386",
+   "claim": "Koenecke et al. (PNAS, 2020), \"Racial disparities in automated speech recognition\": five commercial speech-recognition systems had an average word error rate of 0.35 for Black speakers versus 0.19 for white speakers in the studied interviews. The finding is about those systems and speakers.",
+   "checked": "2026-10-26"
+  }
+ ],
+ "review_interval_days": 1095,
+ "jurisdiction": "research",
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Compare error rates across groups and describe a disparity accurately",
+   "questions": [
+    {
+     "id": "S122-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "What is an error rate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The price of errors"
+      },
+      {
+       "letter": "B",
+       "text": "The speed of a system"
+      },
+      {
+       "letter": "C",
+       "text": "The share of cases a system gets wrong"
+      },
+      {
+       "letter": "D",
+       "text": "The total number of people who used the system on a single day"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The share of cases a system gets wrong",
+     "intro": "An ERROR RATE is the share of cases a system gets wrong. A system can have a good average error rate but very different rates for different groups, called a DISPARITY. Studies have measured this. \"Gender Shades\" (Buolamwini and Gebru, 2018) found three commercial gender-classification systems had error rates up to 34.7 percent for darker-skinned women versus at most 0.8 percent for lighter-skinned men. A 2020 study of five speech-recognition systems found an average word error rate of 0.35 for Black speakers versus 0.19 for white speakers. Findings describe those systems at that time.",
+     "feedback": "Wrong out of total."
+    },
+    {
+     "id": "S122-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "In this prepared example, how many times higher is Group B's error rate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "4 times"
+      },
+      {
+       "letter": "B",
+       "text": "15 times"
+      },
+      {
+       "letter": "C",
+       "text": "20 times"
+      },
+      {
+       "letter": "D",
+       "text": "2 times"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "4 times",
+     "intro": "An ERROR RATE is the share of cases a system gets wrong. A system can have a good average error rate but very different rates for different groups, called a DISPARITY. Studies have measured this. \"Gender Shades\" (Buolamwini and Gebru, 2018) found three commercial gender-classification systems had error rates up to 34.7 percent for darker-skinned women versus at most 0.8 percent for lighter-skinned men. A 2020 study of five speech-recognition systems found an average word error rate of 0.35 for Black speakers versus 0.19 for white speakers. Findings describe those systems at that time.",
+     "feedback": "20% / 5% = 4.",
+     "example": {
+      "kind": "table",
+      "label": "Prepared example (fictional results for one system)",
+      "table": [
+       [
+        "Group",
+        "Tests",
+        "Errors",
+        "Error rate"
+       ],
+       [
+        "Group A",
+        "200",
+        "10",
+        "5%"
+       ],
+       [
+        "Group B",
+        "200",
+        "40",
+        "20%"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "S122-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "In the same example, what is the gap in percentage points?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "4, since Group B has four times the error rate of Group A in this example"
+      },
+      {
+       "letter": "B",
+       "text": "30"
+      },
+      {
+       "letter": "C",
+       "text": "25"
+      },
+      {
+       "letter": "D",
+       "text": "15"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "15",
+     "intro": "An ERROR RATE is the share of cases a system gets wrong. A system can have a good average error rate but very different rates for different groups, called a DISPARITY. Studies have measured this. \"Gender Shades\" (Buolamwini and Gebru, 2018) found three commercial gender-classification systems had error rates up to 34.7 percent for darker-skinned women versus at most 0.8 percent for lighter-skinned men. A 2020 study of five speech-recognition systems found an average word error rate of 0.35 for Black speakers versus 0.19 for white speakers. Findings describe those systems at that time.",
+     "feedback": "20 - 5 = 15.",
+     "example": {
+      "kind": "table",
+      "label": "Prepared example (fictional results for one system)",
+      "table": [
+       [
+        "Group",
+        "Tests",
+        "Errors",
+        "Error rate"
+       ],
+       [
+        "Group A",
+        "200",
+        "10",
+        "5%"
+       ],
+       [
+        "Group B",
+        "200",
+        "40",
+        "20%"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "S122-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "What did \"Gender Shades\" (2018) find?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Equal error rates for every group, which showed the systems were already perfectly fair"
+      },
+      {
+       "letter": "B",
+       "text": "Much higher error rates for darker-skinned women"
+      },
+      {
+       "letter": "C",
+       "text": "Errors only for men"
+      },
+      {
+       "letter": "D",
+       "text": "No errors at all"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Much higher error rates for darker-skinned women",
+     "intro": "An ERROR RATE is the share of cases a system gets wrong. A system can have a good average error rate but very different rates for different groups, called a DISPARITY. Studies have measured this. \"Gender Shades\" (Buolamwini and Gebru, 2018) found three commercial gender-classification systems had error rates up to 34.7 percent for darker-skinned women versus at most 0.8 percent for lighter-skinned men. A 2020 study of five speech-recognition systems found an average word error rate of 0.35 for Black speakers versus 0.19 for white speakers. Findings describe those systems at that time.",
+     "feedback": "Up to 34.7% versus at most 0.8%."
+    },
+    {
+     "id": "S122-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "What do such findings describe?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only future systems"
+      },
+      {
+       "letter": "B",
+       "text": "Every AI system that will ever be built, now and in the future, in every country"
+      },
+      {
+       "letter": "C",
+       "text": "Those systems at that time"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing measurable"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Those systems at that time",
+     "intro": "An ERROR RATE is the share of cases a system gets wrong. A system can have a good average error rate but very different rates for different groups, called a DISPARITY. Studies have measured this. \"Gender Shades\" (Buolamwini and Gebru, 2018) found three commercial gender-classification systems had error rates up to 34.7 percent for darker-skinned women versus at most 0.8 percent for lighter-skinned men. A 2020 study of five speech-recognition systems found an average word error rate of 0.35 for Black speakers versus 0.19 for white speakers. Findings describe those systems at that time.",
+     "feedback": "Dated, specific findings."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compute and compare error rates",
+   "questions": [
+    {
+     "id": "S122-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "What is Group X's error rate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "94%, since that is the share of words that the app read correctly for Group X"
+      },
+      {
+       "letter": "B",
+       "text": "6%"
+      },
+      {
+       "letter": "C",
+       "text": "18%"
+      },
+      {
+       "letter": "D",
+       "text": "12%"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "6%",
+     "intro": "Error rate = errors / total cases. Compare groups two ways: the DIFFERENCE in percentage points (subtract) and the RATIO (divide). Example: a reader app misreads 6 of 100 words for Group X (6%) and 18 of 100 for Group Y (18%). Difference: 18 - 6 = 12 percentage points. Ratio: 18 / 6 = 3 times. Both are true; report the numbers so readers can judge.",
+     "feedback": "6 / 100."
+    },
+    {
+     "id": "S122-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "What is the difference in percentage points?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "6"
+      },
+      {
+       "letter": "B",
+       "text": "3, because Group Y has three times as many errors as Group X on the same words"
+      },
+      {
+       "letter": "C",
+       "text": "24"
+      },
+      {
+       "letter": "D",
+       "text": "12"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "12",
+     "intro": "Error rate = errors / total cases. Compare groups two ways: the DIFFERENCE in percentage points (subtract) and the RATIO (divide). Example: a reader app misreads 6 of 100 words for Group X (6%) and 18 of 100 for Group Y (18%). Difference: 18 - 6 = 12 percentage points. Ratio: 18 / 6 = 3 times. Both are true; report the numbers so readers can judge.",
+     "feedback": "18 - 6 = 12."
+    },
+    {
+     "id": "S122-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "What is the ratio?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "3 times"
+      },
+      {
+       "letter": "B",
+       "text": "6 times"
+      },
+      {
+       "letter": "C",
+       "text": "2 times"
+      },
+      {
+       "letter": "D",
+       "text": "12 times"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "3 times",
+     "intro": "Error rate = errors / total cases. Compare groups two ways: the DIFFERENCE in percentage points (subtract) and the RATIO (divide). Example: a reader app misreads 6 of 100 words for Group X (6%) and 18 of 100 for Group Y (18%). Difference: 18 - 6 = 12 percentage points. Ratio: 18 / 6 = 3 times. Both are true; report the numbers so readers can judge.",
+     "feedback": "18 / 6 = 3."
+    },
+    {
+     "id": "S122-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Which description is accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Y always fails, while X never has any problems with the app at all.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"There is no difference.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"X is 3 times worse.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Y's error rate is 12 points higher (18% vs 6%).\""
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "\"Y's error rate is 12 points higher (18% vs 6%).\"",
+     "intro": "Error rate = errors / total cases. Compare groups two ways: the DIFFERENCE in percentage points (subtract) and the RATIO (divide). Example: a reader app misreads 6 of 100 words for Group X (6%) and 18 of 100 for Group Y (18%). Difference: 18 - 6 = 12 percentage points. Ratio: 18 / 6 = 3 times. Both are true; report the numbers so readers can judge.",
+     "feedback": "Numbers given."
+    },
+    {
+     "id": "S122-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Why report the numbers too?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because words are not allowed"
+      },
+      {
+       "letter": "B",
+       "text": "To hide the gap"
+      },
+      {
+       "letter": "C",
+       "text": "So readers can judge the gap"
+      },
+      {
+       "letter": "D",
+       "text": "Because numbers make the report longer, which shows that more work went into it"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "So readers can judge the gap",
+     "intro": "Error rate = errors / total cases. Compare groups two ways: the DIFFERENCE in percentage points (subtract) and the RATIO (divide). Example: a reader app misreads 6 of 100 words for Group X (6%) and 18 of 100 for Group Y (18%). Difference: 18 - 6 = 12 percentage points. Ratio: 18 / 6 = 3 times. Both are true; report the numbers so readers can judge.",
+     "feedback": "Transparency."
+    }
+   ],
+   "branch_mode": "underlying_skill",
+   "relationship": "A learner unsure how to compare groups practices the underlying skill of computing differences and ratios."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Describe measured disparities in practice",
+   "questions": [
+    {
+     "id": "S122-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "The 2020 speech study found average word error rates of 0.35 and 0.19. What is the difference?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "0.16"
+      },
+      {
+       "letter": "B",
+       "text": "0.54, because you add the two word error rates to find the size of the gap between groups"
+      },
+      {
+       "letter": "C",
+       "text": "0.19"
+      },
+      {
+       "letter": "D",
+       "text": "1.84"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "0.16",
+     "intro": "An ERROR RATE is the share of cases a system gets wrong. A system can have a good average error rate but very different rates for different groups, called a DISPARITY. Studies have measured this. \"Gender Shades\" (Buolamwini and Gebru, 2018) found three commercial gender-classification systems had error rates up to 34.7 percent for darker-skinned women versus at most 0.8 percent for lighter-skinned men. A 2020 study of five speech-recognition systems found an average word error rate of 0.35 for Black speakers versus 0.19 for white speakers. Findings describe those systems at that time.",
+     "feedback": "0.35 - 0.19 = 0.16."
+    },
+    {
+     "id": "S122-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Which statement about that study is accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The systems had no errors"
+      },
+      {
+       "letter": "B",
+       "text": "The five tested systems erred more for Black speakers"
+      },
+      {
+       "letter": "C",
+       "text": "The study tested one system"
+      },
+      {
+       "letter": "D",
+       "text": "Every speech system in the world makes more errors for Black speakers, now and forever"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The five tested systems erred more for Black speakers",
+     "intro": "An ERROR RATE is the share of cases a system gets wrong. A system can have a good average error rate but very different rates for different groups, called a DISPARITY. Studies have measured this. \"Gender Shades\" (Buolamwini and Gebru, 2018) found three commercial gender-classification systems had error rates up to 34.7 percent for darker-skinned women versus at most 0.8 percent for lighter-skinned men. A 2020 study of five speech-recognition systems found an average word error rate of 0.35 for Black speakers versus 0.19 for white speakers. Findings describe those systems at that time.",
+     "feedback": "Specific, dated."
+    },
+    {
+     "id": "S122-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "A company says, \"Our average error rate is only 3%.\" What should you ask?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"How many staff do you have?\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Is three percent a round number that customers will remember easily when they hear it?\""
+      },
+      {
+       "letter": "C",
+       "text": "\"What color is the app?\""
+      },
+      {
+       "letter": "D",
+       "text": "\"What is the rate for each group?\""
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "\"What is the rate for each group?\"",
+     "intro": "An ERROR RATE is the share of cases a system gets wrong. A system can have a good average error rate but very different rates for different groups, called a DISPARITY. Studies have measured this. \"Gender Shades\" (Buolamwini and Gebru, 2018) found three commercial gender-classification systems had error rates up to 34.7 percent for darker-skinned women versus at most 0.8 percent for lighter-skinned men. A 2020 study of five speech-recognition systems found an average word error rate of 0.35 for Black speakers versus 0.19 for white speakers. Findings describe those systems at that time.",
+     "feedback": "Averages can hide gaps."
+    },
+    {
+     "id": "S122-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "A tool errs on 2 of 50 cases for Group A and 10 of 50 for Group B. What are the rates?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "4% and 20%"
+      },
+      {
+       "letter": "B",
+       "text": "8% and 12%"
+      },
+      {
+       "letter": "C",
+       "text": "20% and 4%"
+      },
+      {
+       "letter": "D",
+       "text": "2% and 10%"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "4% and 20%",
+     "intro": "An ERROR RATE is the share of cases a system gets wrong. A system can have a good average error rate but very different rates for different groups, called a DISPARITY. Studies have measured this. \"Gender Shades\" (Buolamwini and Gebru, 2018) found three commercial gender-classification systems had error rates up to 34.7 percent for darker-skinned women versus at most 0.8 percent for lighter-skinned men. A 2020 study of five speech-recognition systems found an average word error rate of 0.35 for Black speakers versus 0.19 for white speakers. Findings describe those systems at that time.",
+     "feedback": "2/50 and 10/50."
+    },
+    {
+     "id": "S122-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "A 2018 finding is cited about a system updated in 2025. What is the careful approach?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Assume the problem is fixed"
+      },
+      {
+       "letter": "B",
+       "text": "Look for newer tests"
+      },
+      {
+       "letter": "C",
+       "text": "Assume the 2018 finding still applies exactly, since systems never change after release"
+      },
+      {
+       "letter": "D",
+       "text": "Ignore both"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Look for newer tests",
+     "intro": "An ERROR RATE is the share of cases a system gets wrong. A system can have a good average error rate but very different rates for different groups, called a DISPARITY. Studies have measured this. \"Gender Shades\" (Buolamwini and Gebru, 2018) found three commercial gender-classification systems had error rates up to 34.7 percent for darker-skinned women versus at most 0.8 percent for lighter-skinned men. A 2020 study of five speech-recognition systems found an average word error rate of 0.35 for Black speakers versus 0.19 for white speakers. Findings describe those systems at that time.",
+     "feedback": "Evidence is dated."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Avoid overstating or dismissing disparities",
+   "questions": [
+    {
+     "id": "S122-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Which statement overstates a finding?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"In this 2020 study, five systems had higher error rates for one group of speakers.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Newer tests may differ.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"All AI is biased against this group.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"The tested system erred more for Group B.\""
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "\"All AI is biased against this group.\"",
+     "intro": "Describe disparities accurately. Say WHICH systems, WHEN, and WHAT was measured. \"Twice the error rate\" and \"16 percentage points higher\" can describe the same gap in different ways; choose the clearer one and give the numbers. Avoid overstating (\"all AI is biased against X\") or dismissing (\"it is fixed now\") without new evidence. Systems change, so newer tests may show smaller or larger gaps.",
+     "feedback": "Too broad."
+    },
+    {
+     "id": "S122-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Which statement dismisses a finding without evidence?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"The study was about those systems.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"We should retest.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"A 2024 retest of the same systems found the gap had narrowed to 3 points.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"That was years ago; it's fixed now.\""
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "\"That was years ago; it's fixed now.\"",
+     "intro": "Describe disparities accurately. Say WHICH systems, WHEN, and WHAT was measured. \"Twice the error rate\" and \"16 percentage points higher\" can describe the same gap in different ways; choose the clearer one and give the numbers. Avoid overstating (\"all AI is biased against X\") or dismissing (\"it is fixed now\") without new evidence. Systems change, so newer tests may show smaller or larger gaps.",
+     "feedback": "Claim without evidence."
+    },
+    {
+     "id": "S122-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "\"Twice the error rate\" and \"10 points higher\" can describe the same gap when rates are...",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "1% and 2%"
+      },
+      {
+       "letter": "B",
+       "text": "20% and 40%"
+      },
+      {
+       "letter": "C",
+       "text": "10% and 20%"
+      },
+      {
+       "letter": "D",
+       "text": "5% and 10%"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "10% and 20%",
+     "intro": "Describe disparities accurately. Say WHICH systems, WHEN, and WHAT was measured. \"Twice the error rate\" and \"16 percentage points higher\" can describe the same gap in different ways; choose the clearer one and give the numbers. Avoid overstating (\"all AI is biased against X\") or dismissing (\"it is fixed now\") without new evidence. Systems change, so newer tests may show smaller or larger gaps.",
+     "feedback": "20/10 = 2 and 20 - 10 = 10."
+    },
+    {
+     "id": "S122-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "What three things should a disparity description name?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Which systems, when, and what was measured"
+      },
+      {
+       "letter": "B",
+       "text": "Only the year"
+      },
+      {
+       "letter": "C",
+       "text": "Only the company's name, since that is enough for readers to judge any disparity"
+      },
+      {
+       "letter": "D",
+       "text": "Only the biggest number"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Which systems, when, and what was measured",
+     "intro": "Describe disparities accurately. Say WHICH systems, WHEN, and WHAT was measured. \"Twice the error rate\" and \"16 percentage points higher\" can describe the same gap in different ways; choose the clearer one and give the numbers. Avoid overstating (\"all AI is biased against X\") or dismissing (\"it is fixed now\") without new evidence. Systems change, so newer tests may show smaller or larger gaps.",
+     "feedback": "Specific and dated."
+    },
+    {
+     "id": "S122-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Why might newer tests show different gaps?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because groups change"
+      },
+      {
+       "letter": "B",
+       "text": "Systems change over time"
+      },
+      {
+       "letter": "C",
+       "text": "Because numbers expire"
+      },
+      {
+       "letter": "D",
+       "text": "Because older tests are always wrong and should never be cited again by anyone"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Systems change over time",
+     "intro": "Describe disparities accurately. Say WHICH systems, WHEN, and WHAT was measured. \"Twice the error rate\" and \"16 percentage points higher\" can describe the same gap in different ways; choose the clearer one and give the numbers. Avoid overstating (\"all AI is biased against X\") or dismissing (\"it is fixed now\") without new evidence. Systems change, so newer tests may show smaller or larger gaps.",
+     "feedback": "Systems are updated."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

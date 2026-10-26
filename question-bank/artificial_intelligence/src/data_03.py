@@ -78,11 +78,9 @@ S_LLM01 = SET(
           ], why='A learner who pictures an LLM as a fact database can start from the familiar next-word suggestions on '
                  'a phone.')],
     F1=sec('Apply what an LLM is to everyday uses', LLM, [
-        Q('Rosa asks an LLM-based chatbot for the population of her town and gets a precise number. What should she '
-          'do before using it in a report?',
+        Q('Rosa asks an LLM-based chatbot for the population of her town and gets a precise number. What should she do before using it in a report?',
           'Check the number in an official source',
-          ('Use it, because precise numbers are always correct', 'precision is not accuracy'),
-          ('Ask the chatbot to repeat the same number', 'repetition is not a check'),
+          ('Use it', 'precision is not accuracy'), ('Ask the chatbot to repeat the same number', 'repetition is not a check'),
           ('Round it up so it looks more official', 'does not check it'),
           'A plausible number still needs a source.'),
         Q('A student wants help turning bullet notes into a clear paragraph. Is an LLM a reasonable tool to try?',

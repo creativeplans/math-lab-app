@@ -1,0 +1,658 @@
+{
+ "set": 22,
+ "title": "Task, context, audience and purpose",
+ "outcome": "AI.PROMPT.01",
+ "content_status": "stable",
+ "requires": [
+  14
+ ],
+ "module": "prompting",
+ "path_refs": [
+  "everyday",
+  "creative",
+  "coding",
+  "work",
+  "society"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Identify the task, context, audience and purpose a request needs",
+   "questions": [
+    {
+     "id": "S22-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "In \"Explain (the action word) photosynthesis (the process) to a group of eight-year-olds,\" which part names the audience?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "to"
+      },
+      {
+       "letter": "B",
+       "text": "photosynthesis (the process)"
+      },
+      {
+       "letter": "C",
+       "text": "Explain (the action word)"
+      },
+      {
+       "letter": "D",
+       "text": "a group of eight-year-olds"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "a group of eight-year-olds",
+     "intro": "A useful request (often called a PROMPT) usually covers four things. The TASK: what you want done (\"write,\" \"compare,\" \"list,\" \"explain\"). The CONTEXT: background the tool cannot know, such as your situation, the facts involved or what you already tried. The AUDIENCE: who will read or use the result, such as a ten-year-old, a manager or yourself. The PURPOSE: why you need it, such as to persuade, to decide or to study. A vague request like \"write about recycling\" leaves the tool to guess all four, so the result may be generic. Adding the missing pieces gives it a fair chance.",
+     "feedback": "The audience is who will read or use it."
+    },
+    {
+     "id": "S22-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "\"Write about recycling.\" Which pieces are missing?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only the task, which is not stated at all"
+      },
+      {
+       "letter": "B",
+       "text": "Context, audience and purpose"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing is missing; the request is complete"
+      },
+      {
+       "letter": "D",
+       "text": "Only the topic of the writing"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Context, audience and purpose",
+     "intro": "A useful request (often called a PROMPT) usually covers four things. The TASK: what you want done (\"write,\" \"compare,\" \"list,\" \"explain\"). The CONTEXT: background the tool cannot know, such as your situation, the facts involved or what you already tried. The AUDIENCE: who will read or use the result, such as a ten-year-old, a manager or yourself. The PURPOSE: why you need it, such as to persuade, to decide or to study. A vague request like \"write about recycling\" leaves the tool to guess all four, so the result may be generic. Adding the missing pieces gives it a fair chance.",
+     "feedback": "The task is there; context, audience and purpose are not."
+    },
+    {
+     "id": "S22-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Which detail is CONTEXT the tool could not know on its own?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Our school recycles paper, not plastic.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Please answer in English.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Make it sound friendly and clear.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Use short sentences in the reply.\""
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "\"Our school recycles paper, not plastic.\"",
+     "intro": "A useful request (often called a PROMPT) usually covers four things. The TASK: what you want done (\"write,\" \"compare,\" \"list,\" \"explain\"). The CONTEXT: background the tool cannot know, such as your situation, the facts involved or what you already tried. The AUDIENCE: who will read or use the result, such as a ten-year-old, a manager or yourself. The PURPOSE: why you need it, such as to persuade, to decide or to study. A vague request like \"write about recycling\" leaves the tool to guess all four, so the result may be generic. Adding the missing pieces gives it a fair chance.",
+     "feedback": "Facts about your situation are context."
+    },
+    {
+     "id": "S22-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Which phrase states a PURPOSE?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"about 200 words long\""
+      },
+      {
+       "letter": "B",
+       "text": "\"for the class newsletter next week\""
+      },
+      {
+       "letter": "C",
+       "text": "\"so the class votes for a compost bin\""
+      },
+      {
+       "letter": "D",
+       "text": "\"write a short article\""
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "\"so the class votes for a compost bin\"",
+     "intro": "A useful request (often called a PROMPT) usually covers four things. The TASK: what you want done (\"write,\" \"compare,\" \"list,\" \"explain\"). The CONTEXT: background the tool cannot know, such as your situation, the facts involved or what you already tried. The AUDIENCE: who will read or use the result, such as a ten-year-old, a manager or yourself. The PURPOSE: why you need it, such as to persuade, to decide or to study. A vague request like \"write about recycling\" leaves the tool to guess all four, so the result may be generic. Adding the missing pieces gives it a fair chance.",
+     "feedback": "Purpose says why the result is needed."
+    },
+    {
+     "id": "S22-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Why does a vague request often get a generic answer?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Short requests use too many tokens"
+      },
+      {
+       "letter": "B",
+       "text": "Vague requests are always rejected by filters"
+      },
+      {
+       "letter": "C",
+       "text": "Tools refuse to answer short requests"
+      },
+      {
+       "letter": "D",
+       "text": "The tool has to guess the missing pieces"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The tool has to guess the missing pieces",
+     "intro": "A useful request (often called a PROMPT) usually covers four things. The TASK: what you want done (\"write,\" \"compare,\" \"list,\" \"explain\"). The CONTEXT: background the tool cannot know, such as your situation, the facts involved or what you already tried. The AUDIENCE: who will read or use the result, such as a ten-year-old, a manager or yourself. The PURPOSE: why you need it, such as to persuade, to decide or to study. A vague request like \"write about recycling\" leaves the tool to guess all four, so the result may be generic. Adding the missing pieces gives it a fair chance.",
+     "feedback": "Missing details lead to guesses."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Separate a request from the background it needs",
+   "questions": [
+    {
+     "id": "S22-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "In \"make dinner,\" what is missing?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The background, such as allergies"
+      },
+      {
+       "letter": "B",
+       "text": "The house address"
+      },
+      {
+       "letter": "C",
+       "text": "The request itself"
+      },
+      {
+       "letter": "D",
+       "text": "The babysitter's full name and age"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The background, such as allergies",
+     "intro": "Imagine asking a new babysitter to \"make dinner.\" That is a REQUEST, but the babysitter does not know the BACKGROUND: one child is allergic to nuts, dinner is at 6, and the kids love pasta. Without that background, the babysitter might make something unsafe or unwanted. An AI tool is similar. The request says what to do; the background, or context, says what the tool cannot see for itself. Good results need both, but a request alone often feels complete to the person asking, because they already know the background.",
+     "feedback": "The background is missing."
+    },
+    {
+     "id": "S22-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "\"One child is allergic to nuts\" is which part?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A greeting"
+      },
+      {
+       "letter": "B",
+       "text": "The request"
+      },
+      {
+       "letter": "C",
+       "text": "Background (context)"
+      },
+      {
+       "letter": "D",
+       "text": "The audience for dinner"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Background (context)",
+     "intro": "Imagine asking a new babysitter to \"make dinner.\" That is a REQUEST, but the babysitter does not know the BACKGROUND: one child is allergic to nuts, dinner is at 6, and the kids love pasta. Without that background, the babysitter might make something unsafe or unwanted. An AI tool is similar. The request says what to do; the background, or context, says what the tool cannot see for itself. Good results need both, but a request alone often feels complete to the person asking, because they already know the background.",
+     "feedback": "It is information the babysitter cannot see."
+    },
+    {
+     "id": "S22-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Why might the request feel complete to the parent?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Babysitters can read minds"
+      },
+      {
+       "letter": "B",
+       "text": "The parent already knows the background"
+      },
+      {
+       "letter": "C",
+       "text": "Requests never need details"
+      },
+      {
+       "letter": "D",
+       "text": "The kids will explain everything to the babysitter"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The parent already knows the background",
+     "intro": "Imagine asking a new babysitter to \"make dinner.\" That is a REQUEST, but the babysitter does not know the BACKGROUND: one child is allergic to nuts, dinner is at 6, and the kids love pasta. Without that background, the babysitter might make something unsafe or unwanted. An AI tool is similar. The request says what to do; the background, or context, says what the tool cannot see for itself. Good results need both, but a request alone often feels complete to the person asking, because they already know the background.",
+     "feedback": "Known background is easy to forget to say."
+    },
+    {
+     "id": "S22-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "What could happen without the background?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "An unsafe or unwanted dinner"
+      },
+      {
+       "letter": "B",
+       "text": "The kids cooking instead"
+      },
+      {
+       "letter": "C",
+       "text": "A perfect dinner every time"
+      },
+      {
+       "letter": "D",
+       "text": "No dinner at all, ever"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "An unsafe or unwanted dinner",
+     "intro": "Imagine asking a new babysitter to \"make dinner.\" That is a REQUEST, but the babysitter does not know the BACKGROUND: one child is allergic to nuts, dinner is at 6, and the kids love pasta. Without that background, the babysitter might make something unsafe or unwanted. An AI tool is similar. The request says what to do; the background, or context, says what the tool cannot see for itself. Good results need both, but a request alone often feels complete to the person asking, because they already know the background.",
+     "feedback": "Missing context leads to bad guesses."
+    },
+    {
+     "id": "S22-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "In an AI request, what does context provide?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The tool's price"
+      },
+      {
+       "letter": "B",
+       "text": "Facts the tool cannot see for itself"
+      },
+      {
+       "letter": "C",
+       "text": "The tool's training data"
+      },
+      {
+       "letter": "D",
+       "text": "A list of the tool's display settings"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Facts the tool cannot see for itself",
+     "intro": "Imagine asking a new babysitter to \"make dinner.\" That is a REQUEST, but the babysitter does not know the BACKGROUND: one child is allergic to nuts, dinner is at 6, and the kids love pasta. Without that background, the babysitter might make something unsafe or unwanted. An AI tool is similar. The request says what to do; the background, or context, says what the tool cannot see for itself. Good results need both, but a request alone often feels complete to the person asking, because they already know the background.",
+     "feedback": "Context fills in your situation."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who misses MAIN often confuses the request with the background it needs; an everyday babysitter example separates them."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Choose an improved request for a stated need",
+   "questions": [
+    {
+     "id": "S22-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Pat needs a short email asking her landlord to fix a leaking sink before Friday. Which request is best?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Explain how sinks leak and how plumbers fix them.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Write something about landlords in general.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Draft a polite email asking my landlord to fix the sink by Friday.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Write an email to my landlord about things in my apartment.\""
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "\"Draft a polite email asking my landlord to fix the sink by Friday.\"",
+     "intro": "A useful request (often called a PROMPT) usually covers four things. The TASK: what you want done (\"write,\" \"compare,\" \"list,\" \"explain\"). The CONTEXT: background the tool cannot know, such as your situation, the facts involved or what you already tried. The AUDIENCE: who will read or use the result, such as a ten-year-old, a manager or yourself. The PURPOSE: why you need it, such as to persuade, to decide or to study. A vague request like \"write about recycling\" leaves the tool to guess all four, so the result may be generic. Adding the missing pieces gives it a fair chance.",
+     "feedback": "It states task, audience and purpose."
+    },
+    {
+     "id": "S22-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "A student wants a study guide for a biology test on cells. What is the most useful detail to add to \"Make a study guide\"?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The color of the student's notebook"
+      },
+      {
+       "letter": "B",
+       "text": "A request to make the guide sound impressive"
+      },
+      {
+       "letter": "C",
+       "text": "The name of the student's best friend"
+      },
+      {
+       "letter": "D",
+       "text": "The topic, the course level and the test format"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The topic, the course level and the test format",
+     "intro": "A useful request (often called a PROMPT) usually covers four things. The TASK: what you want done (\"write,\" \"compare,\" \"list,\" \"explain\"). The CONTEXT: background the tool cannot know, such as your situation, the facts involved or what you already tried. The AUDIENCE: who will read or use the result, such as a ten-year-old, a manager or yourself. The PURPOSE: why you need it, such as to persuade, to decide or to study. A vague request like \"write about recycling\" leaves the tool to guess all four, so the result may be generic. Adding the missing pieces gives it a fair chance.",
+     "feedback": "Topic, level and format are key context."
+    },
+    {
+     "id": "S22-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Which request names a clear audience?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Explain credit scores in some detail for me.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Explain credit scores very well, please.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Explain credit scores for a high-school senior.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Explain credit scores, and make it good.\""
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "\"Explain credit scores for a high-school senior.\"",
+     "intro": "A useful request (often called a PROMPT) usually covers four things. The TASK: what you want done (\"write,\" \"compare,\" \"list,\" \"explain\"). The CONTEXT: background the tool cannot know, such as your situation, the facts involved or what you already tried. The AUDIENCE: who will read or use the result, such as a ten-year-old, a manager or yourself. The PURPOSE: why you need it, such as to persuade, to decide or to study. A vague request like \"write about recycling\" leaves the tool to guess all four, so the result may be generic. Adding the missing pieces gives it a fair chance.",
+     "feedback": "A specific reader shapes the explanation."
+    },
+    {
+     "id": "S22-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Marco asks, \"Give me ideas.\" What should he add first?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A request for the ideas to be numbered in bold"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing; short requests always work best"
+      },
+      {
+       "letter": "C",
+       "text": "The word \"please\" at the start of the sentence"
+      },
+      {
+       "letter": "D",
+       "text": "What the ideas are for and any limits"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "What the ideas are for and any limits",
+     "intro": "A useful request (often called a PROMPT) usually covers four things. The TASK: what you want done (\"write,\" \"compare,\" \"list,\" \"explain\"). The CONTEXT: background the tool cannot know, such as your situation, the facts involved or what you already tried. The AUDIENCE: who will read or use the result, such as a ten-year-old, a manager or yourself. The PURPOSE: why you need it, such as to persuade, to decide or to study. A vague request like \"write about recycling\" leaves the tool to guess all four, so the result may be generic. Adding the missing pieces gives it a fair chance.",
+     "feedback": "Purpose and limits make ideas useful."
+    },
+    {
+     "id": "S22-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Which request includes context the tool could not guess?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Plan meals for a week; we have no oven, only a stove.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Plan a week of meals as fast as you can.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Plan a week of meals, please and thank you.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Plan meals for a week that taste really good.\""
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "\"Plan meals for a week; we have no oven, only a stove.\"",
+     "intro": "A useful request (often called a PROMPT) usually covers four things. The TASK: what you want done (\"write,\" \"compare,\" \"list,\" \"explain\"). The CONTEXT: background the tool cannot know, such as your situation, the facts involved or what you already tried. The AUDIENCE: who will read or use the result, such as a ten-year-old, a manager or yourself. The PURPOSE: why you need it, such as to persuade, to decide or to study. A vague request like \"write about recycling\" leaves the tool to guess all four, so the result may be generic. Adding the missing pieces gives it a fair chance.",
+     "feedback": "Having no oven is key context."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Find the missing or conflicting piece before sending",
+   "questions": [
+    {
+     "id": "S22-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "\"Explain this contract simply for my grandmother, in full legal detail.\" What is the problem?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Grandmothers cannot read contracts"
+      },
+      {
+       "letter": "B",
+       "text": "It asks for two different audiences at once"
+      },
+      {
+       "letter": "C",
+       "text": "It is too short to be understood at all"
+      },
+      {
+       "letter": "D",
+       "text": "It does not say what the contract is about"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "It asks for two different audiences at once",
+     "intro": "Sometimes a request seems complete but the pieces pull against each other, or one key detail is assumed rather than stated. \"Explain this contract simply for my grandmother, in full legal detail\" asks for two different audiences at once. \"Fix the schedule\" assumes the tool knows which schedule and what is wrong with it. Before sending an important request, reread it as a stranger would: could someone with no background do exactly what you want? If not, add or fix the missing piece first.",
+     "feedback": "Simple-for-a-grandmother and full legal detail conflict."
+    },
+    {
+     "id": "S22-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "\"Fix the schedule.\" What does this request assume?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "That the tool knows which schedule and what is wrong"
+      },
+      {
+       "letter": "B",
+       "text": "That the tool can see every calendar in the world"
+      },
+      {
+       "letter": "C",
+       "text": "That schedules never need fixing at all"
+      },
+      {
+       "letter": "D",
+       "text": "That the user wants a poem"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "That the tool knows which schedule and what is wrong",
+     "intro": "Sometimes a request seems complete but the pieces pull against each other, or one key detail is assumed rather than stated. \"Explain this contract simply for my grandmother, in full legal detail\" asks for two different audiences at once. \"Fix the schedule\" assumes the tool knows which schedule and what is wrong with it. Before sending an important request, reread it as a stranger would: could someone with no background do exactly what you want? If not, add or fix the missing piece first.",
+     "feedback": "Key details are assumed, not stated."
+    },
+    {
+     "id": "S22-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "What is a good test before sending an important request?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Count the words and make sure it is very short"
+      },
+      {
+       "letter": "B",
+       "text": "Reread it as a stranger with no background would"
+      },
+      {
+       "letter": "C",
+       "text": "Send it and hope for the best"
+      },
+      {
+       "letter": "D",
+       "text": "Add the word \"urgent\" to the start"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Reread it as a stranger with no background would",
+     "intro": "Sometimes a request seems complete but the pieces pull against each other, or one key detail is assumed rather than stated. \"Explain this contract simply for my grandmother, in full legal detail\" asks for two different audiences at once. \"Fix the schedule\" assumes the tool knows which schedule and what is wrong with it. Before sending an important request, reread it as a stranger would: could someone with no background do exactly what you want? If not, add or fix the missing piece first.",
+     "feedback": "Strangers reveal missing pieces."
+    },
+    {
+     "id": "S22-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "\"Summarize the report for the board so they can decide on the budget.\" Which piece is still missing?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The purpose, which is not mentioned anywhere"
+      },
+      {
+       "letter": "B",
+       "text": "The task, which is not mentioned anywhere"
+      },
+      {
+       "letter": "C",
+       "text": "Which report (it must be supplied)"
+      },
+      {
+       "letter": "D",
+       "text": "The audience, which is not mentioned anywhere"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Which report (it must be supplied)",
+     "intro": "Sometimes a request seems complete but the pieces pull against each other, or one key detail is assumed rather than stated. \"Explain this contract simply for my grandmother, in full legal detail\" asks for two different audiences at once. \"Fix the schedule\" assumes the tool knows which schedule and what is wrong with it. Before sending an important request, reread it as a stranger would: could someone with no background do exactly what you want? If not, add or fix the missing piece first.",
+     "feedback": "The report itself is missing context."
+    },
+    {
+     "id": "S22-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "A request asks for \"a fun, serious speech.\" What should the writer do first?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Send it as written; tools resolve conflicts well"
+      },
+      {
+       "letter": "B",
+       "text": "Ask for ten speeches at once"
+      },
+      {
+       "letter": "C",
+       "text": "Remove the word \"speech\" from the request"
+      },
+      {
+       "letter": "D",
+       "text": "Decide which tone matters more, or how to balance them"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Decide which tone matters more, or how to balance them",
+     "intro": "Sometimes a request seems complete but the pieces pull against each other, or one key detail is assumed rather than stated. \"Explain this contract simply for my grandmother, in full legal detail\" asks for two different audiences at once. \"Fix the schedule\" assumes the tool knows which schedule and what is wrong with it. Before sending an important request, reread it as a stranger would: could someone with no background do exactly what you want? If not, add or fix the missing piece first.",
+     "feedback": "Resolve conflicting requirements first."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

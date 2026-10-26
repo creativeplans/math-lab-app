@@ -1,0 +1,667 @@
+{
+ "set": 123,
+ "title": "Proxy variables",
+ "outcome": "AI.FAIR.03",
+ "content_status": "time_sensitive",
+ "requires": [
+  121
+ ],
+ "module": "fairness",
+ "path_refs": [
+  "society",
+  "work"
+ ],
+ "suggested": [
+  134
+ ],
+ "sources": [
+  {
+   "url": "https://www.isba.org/node/97164",
+   "claim": "Illinois HB 3773 amended the Illinois Human Rights Act, effective January 1, 2026: employers may not use AI in a way that discriminates against protected classes, may not use ZIP codes as a proxy for protected classes, and must give notice when AI is used for covered employment decisions.",
+   "checked": "2026-10-26"
+  }
+ ],
+ "review_interval_days": 365,
+ "jurisdiction": "US (Illinois)",
+ "effective_year": "2026",
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Recognize a proxy for a protected trait",
+   "questions": [
+    {
+     "id": "S123-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "What is a proxy in this context?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A person who votes for someone else in an election when they cannot attend in person"
+      },
+      {
+       "letter": "B",
+       "text": "A password"
+      },
+      {
+       "letter": "C",
+       "text": "An input that stands in for something else"
+      },
+      {
+       "letter": "D",
+       "text": "A computer server"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "An input that stands in for something else",
+     "intro": "A PROXY is an input that stands in for something else. In fairness, the concern is a proxy for a PROTECTED TRAIT, such as race, sex, age or disability, that anti-discrimination rules protect. Removing the trait itself does not prevent bias if a proxy remains. ZIP code can stand in for race in places where neighborhoods are segregated; a gap in employment history can stand in for caregiving and therefore sex. One example in law: Illinois amended its Human Rights Act, effective January 1, 2026, so employers may not use ZIP codes as a proxy for protected classes in AI-assisted employment decisions.",
+     "feedback": "Stand-in input."
+    },
+    {
+     "id": "S123-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Which is a protected trait?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Shoe size"
+      },
+      {
+       "letter": "B",
+       "text": "Favorite food"
+      },
+      {
+       "letter": "C",
+       "text": "Favorite color"
+      },
+      {
+       "letter": "D",
+       "text": "Age"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Age",
+     "intro": "A PROXY is an input that stands in for something else. In fairness, the concern is a proxy for a PROTECTED TRAIT, such as race, sex, age or disability, that anti-discrimination rules protect. Removing the trait itself does not prevent bias if a proxy remains. ZIP code can stand in for race in places where neighborhoods are segregated; a gap in employment history can stand in for caregiving and therefore sex. One example in law: Illinois amended its Human Rights Act, effective January 1, 2026, so employers may not use ZIP codes as a proxy for protected classes in AI-assisted employment decisions.",
+     "feedback": "Covered by anti-discrimination rules."
+    },
+    {
+     "id": "S123-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Why does removing the protected trait not always prevent bias?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because traits are not real"
+      },
+      {
+       "letter": "B",
+       "text": "A proxy may remain"
+      },
+      {
+       "letter": "C",
+       "text": "Because removal is impossible"
+      },
+      {
+       "letter": "D",
+       "text": "Because computers can see protected traits directly in every piece of data they are given"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A proxy may remain",
+     "intro": "A PROXY is an input that stands in for something else. In fairness, the concern is a proxy for a PROTECTED TRAIT, such as race, sex, age or disability, that anti-discrimination rules protect. Removing the trait itself does not prevent bias if a proxy remains. ZIP code can stand in for race in places where neighborhoods are segregated; a gap in employment history can stand in for caregiving and therefore sex. One example in law: Illinois amended its Human Rights Act, effective January 1, 2026, so employers may not use ZIP codes as a proxy for protected classes in AI-assisted employment decisions.",
+     "feedback": "Stand-ins carry the pattern."
+    },
+    {
+     "id": "S123-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "How can ZIP code act as a proxy?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Neighborhoods can be segregated by race"
+      },
+      {
+       "letter": "B",
+       "text": "ZIP codes contain each person's race written directly into the numbers"
+      },
+      {
+       "letter": "C",
+       "text": "ZIP codes are random"
+      },
+      {
+       "letter": "D",
+       "text": "ZIP codes show income exactly"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Neighborhoods can be segregated by race",
+     "intro": "A PROXY is an input that stands in for something else. In fairness, the concern is a proxy for a PROTECTED TRAIT, such as race, sex, age or disability, that anti-discrimination rules protect. Removing the trait itself does not prevent bias if a proxy remains. ZIP code can stand in for race in places where neighborhoods are segregated; a gap in employment history can stand in for caregiving and therefore sex. One example in law: Illinois amended its Human Rights Act, effective January 1, 2026, so employers may not use ZIP codes as a proxy for protected classes in AI-assisted employment decisions.",
+     "feedback": "Location reflects demographics."
+    },
+    {
+     "id": "S123-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "What did the Illinois amendment (effective January 1, 2026) bar?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Using any kind of computer in the workplace for any purpose at all, starting in 2026"
+      },
+      {
+       "letter": "B",
+       "text": "Mailing letters"
+      },
+      {
+       "letter": "C",
+       "text": "Using ZIP codes as a proxy in AI hiring decisions"
+      },
+      {
+       "letter": "D",
+       "text": "All hiring"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Using ZIP codes as a proxy in AI hiring decisions",
+     "intro": "A PROXY is an input that stands in for something else. In fairness, the concern is a proxy for a PROTECTED TRAIT, such as race, sex, age or disability, that anti-discrimination rules protect. Removing the trait itself does not prevent bias if a proxy remains. ZIP code can stand in for race in places where neighborhoods are segregated; a gap in employment history can stand in for caregiving and therefore sex. One example in law: Illinois amended its Human Rights Act, effective January 1, 2026, so employers may not use ZIP codes as a proxy for protected classes in AI-assisted employment decisions.",
+     "feedback": "A specific rule."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare a proxy with guessing someone's age from their music",
+   "questions": [
+    {
+     "id": "S123-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "In the example, what is the proxy?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Favorite radio station"
+      },
+      {
+       "letter": "B",
+       "text": "Age, which is the trait that was written on the form in the very first place"
+      },
+      {
+       "letter": "C",
+       "text": "The form"
+      },
+      {
+       "letter": "D",
+       "text": "The music"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Favorite radio station",
+     "intro": "If you removed \"age\" from a form but kept \"favorite radio station,\" you might still guess age pretty well: some stations mostly attract older listeners, others younger. The radio station is a PROXY for age. A model can do the same thing: even without the protected trait, it may find inputs that point to it and repeat unfair patterns.",
+     "feedback": "Stands in for age."
+    },
+    {
+     "id": "S123-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "What trait does the proxy point to?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Eye color"
+      },
+      {
+       "letter": "B",
+       "text": "Favorite food"
+      },
+      {
+       "letter": "C",
+       "text": "Height, since people who listen to the radio are usually taller than average"
+      },
+      {
+       "letter": "D",
+       "text": "Age"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Age",
+     "intro": "If you removed \"age\" from a form but kept \"favorite radio station,\" you might still guess age pretty well: some stations mostly attract older listeners, others younger. The radio station is a PROXY for age. A model can do the same thing: even without the protected trait, it may find inputs that point to it and repeat unfair patterns.",
+     "feedback": "The hidden trait."
+    },
+    {
+     "id": "S123-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Removing \"age\" from the form did what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Made it impossible to guess anyone's age from any other answer on the form"
+      },
+      {
+       "letter": "B",
+       "text": "Did not fully hide age"
+      },
+      {
+       "letter": "C",
+       "text": "Removed the radio"
+      },
+      {
+       "letter": "D",
+       "text": "Changed everyone's age"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Did not fully hide age",
+     "intro": "If you removed \"age\" from a form but kept \"favorite radio station,\" you might still guess age pretty well: some stations mostly attract older listeners, others younger. The radio station is a PROXY for age. A model can do the same thing: even without the protected trait, it may find inputs that point to it and repeat unfair patterns.",
+     "feedback": "Proxy remains."
+    },
+    {
+     "id": "S123-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "What might a model do with a proxy?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Repeat unfair patterns"
+      },
+      {
+       "letter": "B",
+       "text": "Become perfectly fair automatically, since the protected trait itself was removed"
+      },
+      {
+       "letter": "C",
+       "text": "Ignore the proxy"
+      },
+      {
+       "letter": "D",
+       "text": "Delete itself"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Repeat unfair patterns",
+     "intro": "If you removed \"age\" from a form but kept \"favorite radio station,\" you might still guess age pretty well: some stations mostly attract older listeners, others younger. The radio station is a PROXY for age. A model can do the same thing: even without the protected trait, it may find inputs that point to it and repeat unfair patterns.",
+     "feedback": "Hidden bias."
+    },
+    {
+     "id": "S123-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "What is the lesson?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Forms are always biased"
+      },
+      {
+       "letter": "B",
+       "text": "Never collect radio station preferences, since radio is the main source of bias"
+      },
+      {
+       "letter": "C",
+       "text": "Age does not matter"
+      },
+      {
+       "letter": "D",
+       "text": "Removing a trait is not enough if proxies remain"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Removing a trait is not enough if proxies remain",
+     "intro": "If you removed \"age\" from a form but kept \"favorite radio station,\" you might still guess age pretty well: some stations mostly attract older listeners, others younger. The radio station is a PROXY for age. A model can do the same thing: even without the protected trait, it may find inputs that point to it and repeat unfair patterns.",
+     "feedback": "Look for proxies."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who thinks deleting a trait ends bias can compare proxies with guessing age from music."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Spot proxies in practice",
+   "questions": [
+    {
+     "id": "S123-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "A loan model excludes race but uses the applicant's neighborhood. What should reviewers check?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only the interest rate"
+      },
+      {
+       "letter": "B",
+       "text": "Only the loan size"
+      },
+      {
+       "letter": "C",
+       "text": "Whether neighborhood acts as a proxy for race"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing, because excluding race from the inputs proves the model is fair to everyone"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Whether neighborhood acts as a proxy for race",
+     "intro": "A PROXY is an input that stands in for something else. In fairness, the concern is a proxy for a PROTECTED TRAIT, such as race, sex, age or disability, that anti-discrimination rules protect. Removing the trait itself does not prevent bias if a proxy remains. ZIP code can stand in for race in places where neighborhoods are segregated; a gap in employment history can stand in for caregiving and therefore sex. One example in law: Illinois amended its Human Rights Act, effective January 1, 2026, so employers may not use ZIP codes as a proxy for protected classes in AI-assisted employment decisions.",
+     "feedback": "Possible proxy."
+    },
+    {
+     "id": "S123-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "A hiring model penalizes résumé gaps. Which protected trait might this act as a proxy for?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Typing speed"
+      },
+      {
+       "letter": "B",
+       "text": "Sex, through caregiving"
+      },
+      {
+       "letter": "C",
+       "text": "Height"
+      },
+      {
+       "letter": "D",
+       "text": "Favorite sports team"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Sex, through caregiving",
+     "intro": "A PROXY is an input that stands in for something else. In fairness, the concern is a proxy for a PROTECTED TRAIT, such as race, sex, age or disability, that anti-discrimination rules protect. Removing the trait itself does not prevent bias if a proxy remains. ZIP code can stand in for race in places where neighborhoods are segregated; a gap in employment history can stand in for caregiving and therefore sex. One example in law: Illinois amended its Human Rights Act, effective January 1, 2026, so employers may not use ZIP codes as a proxy for protected classes in AI-assisted employment decisions.",
+     "feedback": "Caregiving gaps."
+    },
+    {
+     "id": "S123-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Which input is most likely a proxy for age?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Year of high school graduation"
+      },
+      {
+       "letter": "B",
+       "text": "Favorite color"
+      },
+      {
+       "letter": "C",
+       "text": "Number of words typed per minute on a keyboard test taken during the interview process"
+      },
+      {
+       "letter": "D",
+       "text": "Shoe brand"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Year of high school graduation",
+     "intro": "A PROXY is an input that stands in for something else. In fairness, the concern is a proxy for a PROTECTED TRAIT, such as race, sex, age or disability, that anti-discrimination rules protect. Removing the trait itself does not prevent bias if a proxy remains. ZIP code can stand in for race in places where neighborhoods are segregated; a gap in employment history can stand in for caregiving and therefore sex. One example in law: Illinois amended its Human Rights Act, effective January 1, 2026, so employers may not use ZIP codes as a proxy for protected classes in AI-assisted employment decisions.",
+     "feedback": "Closely tied to age."
+    },
+    {
+     "id": "S123-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "An Illinois employer uses ZIP codes as a proxy for race in an AI hiring tool in 2026. What applies?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only a federal tax rule"
+      },
+      {
+       "letter": "B",
+       "text": "The amended Illinois Human Rights Act bars it"
+      },
+      {
+       "letter": "C",
+       "text": "A traffic law"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing, since ZIP codes are just numbers"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The amended Illinois Human Rights Act bars it",
+     "intro": "A PROXY is an input that stands in for something else. In fairness, the concern is a proxy for a PROTECTED TRAIT, such as race, sex, age or disability, that anti-discrimination rules protect. Removing the trait itself does not prevent bias if a proxy remains. ZIP code can stand in for race in places where neighborhoods are segregated; a gap in employment history can stand in for caregiving and therefore sex. One example in law: Illinois amended its Human Rights Act, effective January 1, 2026, so employers may not use ZIP codes as a proxy for protected classes in AI-assisted employment decisions.",
+     "feedback": "Dated state rule."
+    },
+    {
+     "id": "S123-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "What should a team be ready to explain about each input?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Its font"
+      },
+      {
+       "letter": "B",
+       "text": "Its file size"
+      },
+      {
+       "letter": "C",
+       "text": "Why it is needed for the task"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing, since inputs to models are private and teams never need to explain them"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Why it is needed for the task",
+     "intro": "A PROXY is an input that stands in for something else. In fairness, the concern is a proxy for a PROTECTED TRAIT, such as race, sex, age or disability, that anti-discrimination rules protect. Removing the trait itself does not prevent bias if a proxy remains. ZIP code can stand in for race in places where neighborhoods are segregated; a gap in employment history can stand in for caregiving and therefore sex. One example in law: Illinois amended its Human Rights Act, effective January 1, 2026, so employers may not use ZIP codes as a proxy for protected classes in AI-assisted employment decisions.",
+     "feedback": "Justify inputs."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Handle hidden and mixed proxies",
+   "questions": [
+    {
+     "id": "S123-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Shopping habits, first names and commute times together reveal a protected trait. What does this show?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "That each input is a proxy on its own, so each one must always be removed separately"
+      },
+      {
+       "letter": "B",
+       "text": "That proxies do not exist"
+      },
+      {
+       "letter": "C",
+       "text": "That shopping is protected"
+      },
+      {
+       "letter": "D",
+       "text": "Combinations can act as proxies"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Combinations can act as proxies",
+     "intro": "Proxies are not always obvious. A combination of harmless-looking inputs, such as shopping habits, first names and commute times, can together reveal a protected trait. Some proxies also carry real information for the task, which makes the choice harder. Teams should test outcomes across groups even when protected traits are not used as inputs, and be ready to explain why each input is needed.",
+     "feedback": "Combined proxies."
+    },
+    {
+     "id": "S123-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "An input carries real task information and is also a proxy. What makes this hard?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It is illegal to discuss"
+      },
+      {
+       "letter": "B",
+       "text": "It has no effect"
+      },
+      {
+       "letter": "C",
+       "text": "Removing it may lose useful information"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing, because useful inputs can never also act as proxies for a protected trait"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Removing it may lose useful information",
+     "intro": "Proxies are not always obvious. A combination of harmless-looking inputs, such as shopping habits, first names and commute times, can together reveal a protected trait. Some proxies also carry real information for the task, which makes the choice harder. Teams should test outcomes across groups even when protected traits are not used as inputs, and be ready to explain why each input is needed.",
+     "feedback": "A real trade-off."
+    },
+    {
+     "id": "S123-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Protected traits are not used as inputs. Should outcomes still be tested across groups?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only for large companies"
+      },
+      {
+       "letter": "B",
+       "text": "No, because a model without protected traits as inputs is always fair to every group"
+      },
+      {
+       "letter": "C",
+       "text": "Only once"
+      },
+      {
+       "letter": "D",
+       "text": "Yes"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Yes",
+     "intro": "Proxies are not always obvious. A combination of harmless-looking inputs, such as shopping habits, first names and commute times, can together reveal a protected trait. Some proxies also carry real information for the task, which makes the choice harder. Teams should test outcomes across groups even when protected traits are not used as inputs, and be ready to explain why each input is needed.",
+     "feedback": "Test outcomes."
+    },
+    {
+     "id": "S123-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Which is the best way to find hidden proxies?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Remove all inputs"
+      },
+      {
+       "letter": "B",
+       "text": "Compare outcomes across groups"
+      },
+      {
+       "letter": "C",
+       "text": "Ask the model"
+      },
+      {
+       "letter": "D",
+       "text": "Read the input names quickly and assume none of them could be connected to any trait"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Compare outcomes across groups",
+     "intro": "Proxies are not always obvious. A combination of harmless-looking inputs, such as shopping habits, first names and commute times, can together reveal a protected trait. Some proxies also carry real information for the task, which makes the choice harder. Teams should test outcomes across groups even when protected traits are not used as inputs, and be ready to explain why each input is needed.",
+     "feedback": "Outcome testing."
+    },
+    {
+     "id": "S123-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Who should decide what to do about a useful proxy?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "People who can explain and answer for the choice"
+      },
+      {
+       "letter": "B",
+       "text": "A random vote"
+      },
+      {
+       "letter": "C",
+       "text": "Nobody"
+      },
+      {
+       "letter": "D",
+       "text": "The model, which should decide by itself"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "People who can explain and answer for the choice",
+     "intro": "Proxies are not always obvious. A combination of harmless-looking inputs, such as shopping habits, first names and commute times, can together reveal a protected trait. Some proxies also carry real information for the task, which makes the choice harder. Teams should test outcomes across groups even when protected traits are not used as inputs, and be ready to explain why each input is needed.",
+     "feedback": "Accountable humans."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

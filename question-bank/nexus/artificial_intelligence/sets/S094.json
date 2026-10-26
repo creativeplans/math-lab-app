@@ -1,0 +1,667 @@
+{
+ "set": 94,
+ "title": "Maintaining code you did not write",
+ "outcome": "AI.CODE.10",
+ "content_status": "stable",
+ "requires": [
+  90
+ ],
+ "module": "code",
+ "path_refs": [
+  "coding",
+  "work"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Keep generated code understandable, documented and owned",
+   "questions": [
+    {
+     "id": "S94-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Is code read or written more often?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Read and changed more often"
+      },
+      {
+       "letter": "B",
+       "text": "Neither"
+      },
+      {
+       "letter": "C",
+       "text": "Written more often, because each line of code is written many times and read only once"
+      },
+      {
+       "letter": "D",
+       "text": "Only written"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Read and changed more often",
+     "intro": "Code is usually read and changed far more often than it is written. Generated code you cannot explain becomes a problem when it breaks or needs a change. Keep code MAINTAINABLE: clear NAMES (total_price, not x2), short FUNCTIONS that each do one thing, COMMENTS that explain why, and a README (a document explaining what the project does and how to run it). Every piece of code in use should have an OWNER: a person who understands it and is responsible for fixing it. If no one can explain how it works, it is not ready to rely on.",
+     "feedback": "Maintenance dominates."
+    },
+    {
+     "id": "S94-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "In this example, which function is easier to maintain?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Neither"
+      },
+      {
+       "letter": "B",
+       "text": "price_with_tax"
+      },
+      {
+       "letter": "C",
+       "text": "f, because short names like f, a and b are faster to type and always easier to understand"
+      },
+      {
+       "letter": "D",
+       "text": "Both equally"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "price_with_tax",
+     "intro": "Code is usually read and changed far more often than it is written. Generated code you cannot explain becomes a problem when it breaks or needs a change. Keep code MAINTAINABLE: clear NAMES (total_price, not x2), short FUNCTIONS that each do one thing, COMMENTS that explain why, and a README (a document explaining what the project does and how to run it). Every piece of code in use should have an OWNER: a person who understands it and is responsible for fixing it. If no one can explain how it works, it is not ready to rely on.",
+     "feedback": "Clear names and an explained rate.",
+     "example": {
+      "kind": "code",
+      "label": "Prepared code example (Python 3). Shown only; nothing runs.",
+      "code": "def f(a, b):\n    return a * b * 1.0825\n\ndef price_with_tax(subtotal, quantity):\n    TAX_RATE = 0.0825  # local sales tax\n    return subtotal * quantity * (1 + TAX_RATE)\n\nprint(round(f(10, 2), 2), round(price_with_tax(10, 2), 2))",
+      "language": "Python 3"
+     }
+    },
+    {
+     "id": "S94-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "In the same example, do both functions give the same result?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No; f gives 20"
+      },
+      {
+       "letter": "B",
+       "text": "No; one crashes"
+      },
+      {
+       "letter": "C",
+       "text": "No, because functions with different names always calculate different results"
+      },
+      {
+       "letter": "D",
+       "text": "Yes, 21.65"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Yes, 21.65",
+     "intro": "Code is usually read and changed far more often than it is written. Generated code you cannot explain becomes a problem when it breaks or needs a change. Keep code MAINTAINABLE: clear NAMES (total_price, not x2), short FUNCTIONS that each do one thing, COMMENTS that explain why, and a README (a document explaining what the project does and how to run it). Every piece of code in use should have an OWNER: a person who understands it and is responsible for fixing it. If no one can explain how it works, it is not ready to rely on.",
+     "feedback": "Same math, different clarity.",
+     "example": {
+      "kind": "code",
+      "label": "Prepared code example (Python 3). Shown only; nothing runs.",
+      "code": "def f(a, b):\n    return a * b * 1.0825\n\ndef price_with_tax(subtotal, quantity):\n    TAX_RATE = 0.0825  # local sales tax\n    return subtotal * quantity * (1 + TAX_RATE)\n\nprint(round(f(10, 2), 2), round(price_with_tax(10, 2), 2))",
+      "language": "Python 3"
+     }
+    },
+    {
+     "id": "S94-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What is a README?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A password file"
+      },
+      {
+       "letter": "B",
+       "text": "A file that the computer reads before every program to make the program run faster"
+      },
+      {
+       "letter": "C",
+       "text": "A document explaining what a project does and how to run it"
+      },
+      {
+       "letter": "D",
+       "text": "An error log"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A document explaining what a project does and how to run it",
+     "intro": "Code is usually read and changed far more often than it is written. Generated code you cannot explain becomes a problem when it breaks or needs a change. Keep code MAINTAINABLE: clear NAMES (total_price, not x2), short FUNCTIONS that each do one thing, COMMENTS that explain why, and a README (a document explaining what the project does and how to run it). Every piece of code in use should have an OWNER: a person who understands it and is responsible for fixing it. If no one can explain how it works, it is not ready to rely on.",
+     "feedback": "Project documentation."
+    },
+    {
+     "id": "S94-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Who should own a piece of code in use?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nobody"
+      },
+      {
+       "letter": "B",
+       "text": "The AI tool that wrote it, which will maintain and fix it forever without any help"
+      },
+      {
+       "letter": "C",
+       "text": "Whoever used it last"
+      },
+      {
+       "letter": "D",
+       "text": "A person who understands it and fixes it"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "A person who understands it and fixes it",
+     "intro": "Code is usually read and changed far more often than it is written. Generated code you cannot explain becomes a problem when it breaks or needs a change. Keep code MAINTAINABLE: clear NAMES (total_price, not x2), short FUNCTIONS that each do one thing, COMMENTS that explain why, and a README (a document explaining what the project does and how to run it). Every piece of code in use should have an OWNER: a person who understands it and is responsible for fixing it. If no one can explain how it works, it is not ready to rely on.",
+     "feedback": "Clear responsibility."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare maintainable code with a well-labeled kitchen",
+   "questions": [
+    {
+     "id": "S94-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Labeled jars are like what in code?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Clear names and comments"
+      },
+      {
+       "letter": "B",
+       "text": "Error messages"
+      },
+      {
+       "letter": "C",
+       "text": "Passwords"
+      },
+      {
+       "letter": "D",
+       "text": "Very short names like x and y"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Clear names and comments",
+     "intro": "In a shared kitchen with LABELED jars (\"sugar,\" \"salt\"), anyone can cook. In a kitchen of unlabeled jars, only the person who filled them knows which is which, and when they are away, someone puts salt in the cake. Code works the same way: clear names and comments are labels. A README is the note on the fridge explaining how things work. The OWNER is the person who restocks and keeps it organized.",
+     "feedback": "Labels help others."
+    },
+    {
+     "id": "S94-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Unlabeled jars cause what problem?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Food is cheaper"
+      },
+      {
+       "letter": "B",
+       "text": "Only one person knows what is what"
+      },
+      {
+       "letter": "C",
+       "text": "Everyone in the kitchen always knows exactly what is in every jar without looking"
+      },
+      {
+       "letter": "D",
+       "text": "Jars break"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Only one person knows what is what",
+     "intro": "In a shared kitchen with LABELED jars (\"sugar,\" \"salt\"), anyone can cook. In a kitchen of unlabeled jars, only the person who filled them knows which is which, and when they are away, someone puts salt in the cake. Code works the same way: clear names and comments are labels. A README is the note on the fridge explaining how things work. The OWNER is the person who restocks and keeps it organized.",
+     "feedback": "Hidden knowledge."
+    },
+    {
+     "id": "S94-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "The note on the fridge is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A commit message that explains a single change made to one line of the code"
+      },
+      {
+       "letter": "B",
+       "text": "A bug"
+      },
+      {
+       "letter": "C",
+       "text": "A README"
+      },
+      {
+       "letter": "D",
+       "text": "A test"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A README",
+     "intro": "In a shared kitchen with LABELED jars (\"sugar,\" \"salt\"), anyone can cook. In a kitchen of unlabeled jars, only the person who filled them knows which is which, and when they are away, someone puts salt in the cake. Code works the same way: clear names and comments are labels. A README is the note on the fridge explaining how things work. The OWNER is the person who restocks and keeps it organized.",
+     "feedback": "How things work."
+    },
+    {
+     "id": "S94-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "The person who keeps the kitchen organized is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The AI tool that generated the recipe ideas for the meals cooked in the kitchen"
+      },
+      {
+       "letter": "B",
+       "text": "The code's owner"
+      },
+      {
+       "letter": "C",
+       "text": "The fridge"
+      },
+      {
+       "letter": "D",
+       "text": "A guest"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The code's owner",
+     "intro": "In a shared kitchen with LABELED jars (\"sugar,\" \"salt\"), anyone can cook. In a kitchen of unlabeled jars, only the person who filled them knows which is which, and when they are away, someone puts salt in the cake. Code works the same way: clear names and comments are labels. A README is the note on the fridge explaining how things work. The OWNER is the person who restocks and keeps it organized.",
+     "feedback": "Responsibility."
+    },
+    {
+     "id": "S94-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Salt in the cake is like what in code?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A successful new feature that customers asked for and that works exactly as planned"
+      },
+      {
+       "letter": "B",
+       "text": "A faster program"
+      },
+      {
+       "letter": "C",
+       "text": "A mistake caused by unclear code"
+      },
+      {
+       "letter": "D",
+       "text": "A new commit"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A mistake caused by unclear code",
+     "intro": "In a shared kitchen with LABELED jars (\"sugar,\" \"salt\"), anyone can cook. In a kitchen of unlabeled jars, only the person who filled them knows which is which, and when they are away, someone puts salt in the cake. Code works the same way: clear names and comments are labels. A README is the note on the fridge explaining how things work. The OWNER is the person who restocks and keeps it organized.",
+     "feedback": "Confusion leads to errors."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who sees no value in clear code can compare it with a labeled shared kitchen."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Keep generated code maintainable in practice",
+   "questions": [
+    {
+     "id": "S94-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A club uses a generated script to track dues, but nobody can explain how it works. What is the risk?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No one can fix it when it breaks"
+      },
+      {
+       "letter": "B",
+       "text": "It uses too little memory"
+      },
+      {
+       "letter": "C",
+       "text": "No risk, because generated scripts never break and never need to be changed by anyone"
+      },
+      {
+       "letter": "D",
+       "text": "It will run too fast"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "No one can fix it when it breaks",
+     "intro": "Code is usually read and changed far more often than it is written. Generated code you cannot explain becomes a problem when it breaks or needs a change. Keep code MAINTAINABLE: clear NAMES (total_price, not x2), short FUNCTIONS that each do one thing, COMMENTS that explain why, and a README (a document explaining what the project does and how to run it). Every piece of code in use should have an OWNER: a person who understands it and is responsible for fixing it. If no one can explain how it works, it is not ready to rely on.",
+     "feedback": "Unowned code is fragile."
+    },
+    {
+     "id": "S94-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Which variable name is clearest?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "thing"
+      },
+      {
+       "letter": "B",
+       "text": "tp"
+      },
+      {
+       "letter": "C",
+       "text": "x2, because short names save typing time and every programmer knows what x2 means"
+      },
+      {
+       "letter": "D",
+       "text": "total_price"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "total_price",
+     "intro": "Code is usually read and changed far more often than it is written. Generated code you cannot explain becomes a problem when it breaks or needs a change. Keep code MAINTAINABLE: clear NAMES (total_price, not x2), short FUNCTIONS that each do one thing, COMMENTS that explain why, and a README (a document explaining what the project does and how to run it). Every piece of code in use should have an OWNER: a person who understands it and is responsible for fixing it. If no one can explain how it works, it is not ready to rely on.",
+     "feedback": "Says what it holds."
+    },
+    {
+     "id": "S94-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A generated function does five different jobs. What improves it?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Renaming it to \"do_all\""
+      },
+      {
+       "letter": "B",
+       "text": "Removing all comments"
+      },
+      {
+       "letter": "C",
+       "text": "Splitting it into smaller functions"
+      },
+      {
+       "letter": "D",
+       "text": "Adding a sixth job to the same function"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Splitting it into smaller functions",
+     "intro": "Code is usually read and changed far more often than it is written. Generated code you cannot explain becomes a problem when it breaks or needs a change. Keep code MAINTAINABLE: clear NAMES (total_price, not x2), short FUNCTIONS that each do one thing, COMMENTS that explain why, and a README (a document explaining what the project does and how to run it). Every piece of code in use should have an OWNER: a person who understands it and is responsible for fixing it. If no one can explain how it works, it is not ready to rely on.",
+     "feedback": "One job per function."
+    },
+    {
+     "id": "S94-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Which comment is most useful?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"# This line of code does something,\" which reminds readers that the line is important"
+      },
+      {
+       "letter": "B",
+       "text": "\"# code\""
+      },
+      {
+       "letter": "C",
+       "text": "\"# hi\""
+      },
+      {
+       "letter": "D",
+       "text": "\"# Round down because the store never charges partial cents\""
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "\"# Round down because the store never charges partial cents\"",
+     "intro": "Code is usually read and changed far more often than it is written. Generated code you cannot explain becomes a problem when it breaks or needs a change. Keep code MAINTAINABLE: clear NAMES (total_price, not x2), short FUNCTIONS that each do one thing, COMMENTS that explain why, and a README (a document explaining what the project does and how to run it). Every piece of code in use should have an OWNER: a person who understands it and is responsible for fixing it. If no one can explain how it works, it is not ready to rely on.",
+     "feedback": "Explains why."
+    },
+    {
+     "id": "S94-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Before relying on generated code at work, what should be true?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It should have no comments"
+      },
+      {
+       "letter": "B",
+       "text": "Someone can explain how it works"
+      },
+      {
+       "letter": "C",
+       "text": "It should be secret"
+      },
+      {
+       "letter": "D",
+       "text": "It should be long"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Someone can explain how it works",
+     "intro": "Code is usually read and changed far more often than it is written. Generated code you cannot explain becomes a problem when it breaks or needs a change. Keep code MAINTAINABLE: clear NAMES (total_price, not x2), short FUNCTIONS that each do one thing, COMMENTS that explain why, and a README (a document explaining what the project does and how to run it). Every piece of code in use should have an OWNER: a person who understands it and is responsible for fixing it. If no one can explain how it works, it is not ready to rely on.",
+     "feedback": "Understanding first."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Prevent quiet maintenance problems",
+   "questions": [
+    {
+     "id": "S94-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Code contains 0.0825 with no explanation. What is this called?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A magic number"
+      },
+      {
+       "letter": "B",
+       "text": "A test"
+      },
+      {
+       "letter": "C",
+       "text": "A comment"
+      },
+      {
+       "letter": "D",
+       "text": "A secret key"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "A magic number",
+     "intro": "Maintenance problems build up quietly. \"Magic numbers\" such as 0.0825 with no explanation leave the next person guessing (is it a tax rate?). Duplicated code means a fix in one place is missed in another. When a tool generates a large solution, ask for a simpler version, add tests that describe how it should behave, and write down any decisions. When the owner leaves a team or class, hand over the knowledge, not just the files.",
+     "feedback": "Unexplained value."
+    },
+    {
+     "id": "S94-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "The same calculation is copied in three places. What problem follows?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It is easier to read"
+      },
+      {
+       "letter": "B",
+       "text": "A fix in one place may be missed in others"
+      },
+      {
+       "letter": "C",
+       "text": "The program runs faster"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing, because copied code always gets updated in every place at the same time"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A fix in one place may be missed in others",
+     "intro": "Maintenance problems build up quietly. \"Magic numbers\" such as 0.0825 with no explanation leave the next person guessing (is it a tax rate?). Duplicated code means a fix in one place is missed in another. When a tool generates a large solution, ask for a simpler version, add tests that describe how it should behave, and write down any decisions. When the owner leaves a team or class, hand over the knowledge, not just the files.",
+     "feedback": "Duplication risk."
+    },
+    {
+     "id": "S94-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A tool generates a 300-line solution for a simple task. What should you ask for?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A simpler version"
+      },
+      {
+       "letter": "B",
+       "text": "An even longer version with more features, so it is ready for any future need"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing; use it"
+      },
+      {
+       "letter": "D",
+       "text": "A version without tests"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "A simpler version",
+     "intro": "Maintenance problems build up quietly. \"Magic numbers\" such as 0.0825 with no explanation leave the next person guessing (is it a tax rate?). Duplicated code means a fix in one place is missed in another. When a tool generates a large solution, ask for a simpler version, add tests that describe how it should behave, and write down any decisions. When the owner leaves a team or class, hand over the knowledge, not just the files.",
+     "feedback": "Simpler is easier to own."
+    },
+    {
+     "id": "S94-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "The student who built the class website is graduating. What should happen?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nothing, since the files contain everything anyone will ever need to maintain the website"
+      },
+      {
+       "letter": "B",
+       "text": "Change the password and tell no one"
+      },
+      {
+       "letter": "C",
+       "text": "Hand over knowledge, not just files"
+      },
+      {
+       "letter": "D",
+       "text": "Delete the website"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Hand over knowledge, not just files",
+     "intro": "Maintenance problems build up quietly. \"Magic numbers\" such as 0.0825 with no explanation leave the next person guessing (is it a tax rate?). Duplicated code means a fix in one place is missed in another. When a tool generates a large solution, ask for a simpler version, add tests that describe how it should behave, and write down any decisions. When the owner leaves a team or class, hand over the knowledge, not just the files.",
+     "feedback": "Transfer understanding."
+    },
+    {
+     "id": "S94-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Why add tests to generated code you will keep?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "To slow it down"
+      },
+      {
+       "letter": "B",
+       "text": "To hide bugs"
+      },
+      {
+       "letter": "C",
+       "text": "Because tests make the code shorter and remove the need for any comments or README"
+      },
+      {
+       "letter": "D",
+       "text": "They describe and protect how it should behave"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "They describe and protect how it should behave",
+     "intro": "Maintenance problems build up quietly. \"Magic numbers\" such as 0.0825 with no explanation leave the next person guessing (is it a tax rate?). Duplicated code means a fix in one place is missed in another. When a tool generates a large solution, ask for a simpler version, add tests that describe how it should behave, and write down any decisions. When the owner leaves a team or class, hand over the knowledge, not just the files.",
+     "feedback": "Tests document behavior."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

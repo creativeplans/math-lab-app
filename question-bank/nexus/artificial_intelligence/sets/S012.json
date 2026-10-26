@@ -1,0 +1,658 @@
+{
+ "set": 12,
+ "title": "Data quality and labels",
+ "outcome": "AI.LEARN.05",
+ "content_status": "stable",
+ "requires": [
+  8
+ ],
+ "module": "learning",
+ "path_refs": [
+  "everyday",
+  "creative",
+  "coding",
+  "work",
+  "society"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Explain how data quality and labels shape a model",
+   "questions": [
+    {
+     "id": "S12-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A model was trained on product prices from five years ago. Which data problem is this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Wrong labels"
+      },
+      {
+       "letter": "B",
+       "text": "Outdated data"
+      },
+      {
+       "letter": "C",
+       "text": "Missing data"
+      },
+      {
+       "letter": "D",
+       "text": "Too many parameters"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Outdated data",
+     "intro": "A model can only learn what its data shows it, so DATA QUALITY matters as much as the model itself. Common problems: MISSING data (some cases never appear), WRONG LABELS (a cat photo labeled \"dog\"), OUTDATED data (prices from five years ago), and UNREPRESENTATIVE data (photos only from one country, voices only from adults). A LABEL is the correct answer attached to a training example, often added by people, and people make mistakes or disagree. Problems in the data become problems in the model, which is often summed up as \"garbage in, garbage out.\"",
+     "feedback": "Old prices are outdated data."
+    },
+    {
+     "id": "S12-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Many cat photos in a training set are labeled \"dog.\" What will most likely happen?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The model will recognize cats perfectly anyway"
+      },
+      {
+       "letter": "B",
+       "text": "The model will refuse to train at all"
+      },
+      {
+       "letter": "C",
+       "text": "The model may confuse cats and dogs"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing; labels have no effect on learning"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The model may confuse cats and dogs",
+     "intro": "A model can only learn what its data shows it, so DATA QUALITY matters as much as the model itself. Common problems: MISSING data (some cases never appear), WRONG LABELS (a cat photo labeled \"dog\"), OUTDATED data (prices from five years ago), and UNREPRESENTATIVE data (photos only from one country, voices only from adults). A LABEL is the correct answer attached to a training example, often added by people, and people make mistakes or disagree. Problems in the data become problems in the model, which is often summed up as \"garbage in, garbage out.\"",
+     "feedback": "Wrong labels teach wrong answers."
+    },
+    {
+     "id": "S12-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A voice assistant was trained only on adult voices. What problem may appear?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It may understand children poorly"
+      },
+      {
+       "letter": "B",
+       "text": "It will refuse to hear adult voices"
+      },
+      {
+       "letter": "C",
+       "text": "It will have no problems at all"
+      },
+      {
+       "letter": "D",
+       "text": "It will understand children better than adults"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "It may understand children poorly",
+     "intro": "A model can only learn what its data shows it, so DATA QUALITY matters as much as the model itself. Common problems: MISSING data (some cases never appear), WRONG LABELS (a cat photo labeled \"dog\"), OUTDATED data (prices from five years ago), and UNREPRESENTATIVE data (photos only from one country, voices only from adults). A LABEL is the correct answer attached to a training example, often added by people, and people make mistakes or disagree. Problems in the data become problems in the model, which is often summed up as \"garbage in, garbage out.\"",
+     "feedback": "Unrepresentative data leads to weak performance on missing groups."
+    },
+    {
+     "id": "S12-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "What is a label in training data?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A sticker on the user's phone"
+      },
+      {
+       "letter": "B",
+       "text": "The title of the finished app"
+      },
+      {
+       "letter": "C",
+       "text": "The brand name printed on the computer"
+      },
+      {
+       "letter": "D",
+       "text": "The correct answer attached to an example"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The correct answer attached to an example",
+     "intro": "A model can only learn what its data shows it, so DATA QUALITY matters as much as the model itself. Common problems: MISSING data (some cases never appear), WRONG LABELS (a cat photo labeled \"dog\"), OUTDATED data (prices from five years ago), and UNREPRESENTATIVE data (photos only from one country, voices only from adults). A LABEL is the correct answer attached to a training example, often added by people, and people make mistakes or disagree. Problems in the data become problems in the model, which is often summed up as \"garbage in, garbage out.\"",
+     "feedback": "Labels tell the model the answer it should learn."
+    },
+    {
+     "id": "S12-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "What does \"garbage in, garbage out\" mean for AI?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Models clean up any bad data automatically"
+      },
+      {
+       "letter": "B",
+       "text": "Problems in the data become problems in the model"
+      },
+      {
+       "letter": "C",
+       "text": "Bad data always makes a model refuse to work"
+      },
+      {
+       "letter": "D",
+       "text": "Only the model's size affects its quality"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Problems in the data become problems in the model",
+     "intro": "A model can only learn what its data shows it, so DATA QUALITY matters as much as the model itself. Common problems: MISSING data (some cases never appear), WRONG LABELS (a cat photo labeled \"dog\"), OUTDATED data (prices from five years ago), and UNREPRESENTATIVE data (photos only from one country, voices only from adults). A LABEL is the correct answer attached to a training example, often added by people, and people make mistakes or disagree. Problems in the data become problems in the model, which is often summed up as \"garbage in, garbage out.\"",
+     "feedback": "A model inherits its data's flaws."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare learning from a flawed map",
+   "questions": [
+    {
+     "id": "S12-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A map missing a neighborhood is like which data problem?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Unrepresentative data"
+      },
+      {
+       "letter": "B",
+       "text": "Wrong labels"
+      },
+      {
+       "letter": "C",
+       "text": "Missing data"
+      },
+      {
+       "letter": "D",
+       "text": "Outdated data"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Missing data",
+     "intro": "Imagine learning a city from a MAP. If the map is missing a neighborhood, you will never know it exists. If a street is labeled with the wrong name, you will confidently give wrong directions. If the map is twenty years old, you may send people to a store that closed long ago. If the map shows only the downtown, you will be lost in the suburbs. A model learns from its data the way you learn from the map: whatever is missing, wrong, old or one-sided in the data shows up in the model.",
+     "feedback": "Absent areas are missing data."
+    },
+    {
+     "id": "S12-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A street with the wrong name is like which data problem?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Wrong labels"
+      },
+      {
+       "letter": "B",
+       "text": "Unrepresentative data"
+      },
+      {
+       "letter": "C",
+       "text": "Missing data"
+      },
+      {
+       "letter": "D",
+       "text": "Outdated data"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Wrong labels",
+     "intro": "Imagine learning a city from a MAP. If the map is missing a neighborhood, you will never know it exists. If a street is labeled with the wrong name, you will confidently give wrong directions. If the map is twenty years old, you may send people to a store that closed long ago. If the map shows only the downtown, you will be lost in the suburbs. A model learns from its data the way you learn from the map: whatever is missing, wrong, old or one-sided in the data shows up in the model.",
+     "feedback": "A wrong name is a wrong label."
+    },
+    {
+     "id": "S12-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A twenty-year-old map is like which data problem?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Too many streets"
+      },
+      {
+       "letter": "B",
+       "text": "Missing data"
+      },
+      {
+       "letter": "C",
+       "text": "Wrong labels"
+      },
+      {
+       "letter": "D",
+       "text": "Outdated data"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Outdated data",
+     "intro": "Imagine learning a city from a MAP. If the map is missing a neighborhood, you will never know it exists. If a street is labeled with the wrong name, you will confidently give wrong directions. If the map is twenty years old, you may send people to a store that closed long ago. If the map shows only the downtown, you will be lost in the suburbs. A model learns from its data the way you learn from the map: whatever is missing, wrong, old or one-sided in the data shows up in the model.",
+     "feedback": "Old information is outdated data."
+    },
+    {
+     "id": "S12-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A map showing only downtown is like which data problem?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Unrepresentative data"
+      },
+      {
+       "letter": "B",
+       "text": "Wrong labels"
+      },
+      {
+       "letter": "C",
+       "text": "Outdated data from long ago"
+      },
+      {
+       "letter": "D",
+       "text": "Perfect data"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Unrepresentative data",
+     "intro": "Imagine learning a city from a MAP. If the map is missing a neighborhood, you will never know it exists. If a street is labeled with the wrong name, you will confidently give wrong directions. If the map is twenty years old, you may send people to a store that closed long ago. If the map shows only the downtown, you will be lost in the suburbs. A model learns from its data the way you learn from the map: whatever is missing, wrong, old or one-sided in the data shows up in the model.",
+     "feedback": "Covering only one part is unrepresentative."
+    },
+    {
+     "id": "S12-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Why would you give wrong directions confidently with a flawed map?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "You never look at the map"
+      },
+      {
+       "letter": "B",
+       "text": "You trust what the map shows you"
+      },
+      {
+       "letter": "C",
+       "text": "Directions cannot be wrong"
+      },
+      {
+       "letter": "D",
+       "text": "Maps always tell you when they are wrong"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "You trust what the map shows you",
+     "intro": "Imagine learning a city from a MAP. If the map is missing a neighborhood, you will never know it exists. If a street is labeled with the wrong name, you will confidently give wrong directions. If the map is twenty years old, you may send people to a store that closed long ago. If the map shows only the downtown, you will be lost in the suburbs. A model learns from its data the way you learn from the map: whatever is missing, wrong, old or one-sided in the data shows up in the model.",
+     "feedback": "Learned flaws feel like facts."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who cannot name data problems can sort them using a familiar flawed-map example."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Identify data problems in real projects",
+   "questions": [
+    {
+     "id": "S12-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A skin-condition app was trained mostly on photos of light skin. What risk should its makers check?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Too many correct answers on light skin"
+      },
+      {
+       "letter": "B",
+       "text": "The app running too fast on phones"
+      },
+      {
+       "letter": "C",
+       "text": "Weaker accuracy on darker skin"
+      },
+      {
+       "letter": "D",
+       "text": "Users taking photos in good lighting"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Weaker accuracy on darker skin",
+     "intro": "A model can only learn what its data shows it, so DATA QUALITY matters as much as the model itself. Common problems: MISSING data (some cases never appear), WRONG LABELS (a cat photo labeled \"dog\"), OUTDATED data (prices from five years ago), and UNREPRESENTATIVE data (photos only from one country, voices only from adults). A LABEL is the correct answer attached to a training example, often added by people, and people make mistakes or disagree. Problems in the data become problems in the model, which is often summed up as \"garbage in, garbage out.\"",
+     "feedback": "Unrepresentative data can cause uneven accuracy."
+    },
+    {
+     "id": "S12-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Volunteers labeled 10,000 tweets as \"angry\" or \"calm\" in a rush and made many mistakes. What is the effect?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The model ignores labels and learns correctly"
+      },
+      {
+       "letter": "B",
+       "text": "The model will be perfect because 10,000 is many"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing; rushed labels are always fine"
+      },
+      {
+       "letter": "D",
+       "text": "The model learns some wrong associations"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The model learns some wrong associations",
+     "intro": "A model can only learn what its data shows it, so DATA QUALITY matters as much as the model itself. Common problems: MISSING data (some cases never appear), WRONG LABELS (a cat photo labeled \"dog\"), OUTDATED data (prices from five years ago), and UNREPRESENTATIVE data (photos only from one country, voices only from adults). A LABEL is the correct answer attached to a training example, often added by people, and people make mistakes or disagree. Problems in the data become problems in the model, which is often summed up as \"garbage in, garbage out.\"",
+     "feedback": "Label errors become model errors."
+    },
+    {
+     "id": "S12-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A rent-prediction model uses listings from 2019 to predict rents today. Which problem is most likely?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Outdated data that misses recent price changes"
+      },
+      {
+       "letter": "B",
+       "text": "Too much data from today"
+      },
+      {
+       "letter": "C",
+       "text": "Wrong labels on every listing"
+      },
+      {
+       "letter": "D",
+       "text": "Perfect predictions because the data is old"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Outdated data that misses recent price changes",
+     "intro": "A model can only learn what its data shows it, so DATA QUALITY matters as much as the model itself. Common problems: MISSING data (some cases never appear), WRONG LABELS (a cat photo labeled \"dog\"), OUTDATED data (prices from five years ago), and UNREPRESENTATIVE data (photos only from one country, voices only from adults). A LABEL is the correct answer attached to a training example, often added by people, and people make mistakes or disagree. Problems in the data become problems in the model, which is often summed up as \"garbage in, garbage out.\"",
+     "feedback": "Old data can miss changes."
+    },
+    {
+     "id": "S12-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A traffic model never saw data from snowy days. What could happen on the first snowy day?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It will forecast snow by itself"
+      },
+      {
+       "letter": "B",
+       "text": "Its predictions will be most accurate in snow"
+      },
+      {
+       "letter": "C",
+       "text": "Its predictions may be badly wrong"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing will change at all"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Its predictions may be badly wrong",
+     "intro": "A model can only learn what its data shows it, so DATA QUALITY matters as much as the model itself. Common problems: MISSING data (some cases never appear), WRONG LABELS (a cat photo labeled \"dog\"), OUTDATED data (prices from five years ago), and UNREPRESENTATIVE data (photos only from one country, voices only from adults). A LABEL is the correct answer attached to a training example, often added by people, and people make mistakes or disagree. Problems in the data become problems in the model, which is often summed up as \"garbage in, garbage out.\"",
+     "feedback": "Missing data leaves the model unprepared."
+    },
+    {
+     "id": "S12-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Which step best improves the quality of a training set?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Using only the newest computer"
+      },
+      {
+       "letter": "B",
+       "text": "Checking a sample of labels for mistakes"
+      },
+      {
+       "letter": "C",
+       "text": "Hiding where all of the data came from"
+      },
+      {
+       "letter": "D",
+       "text": "Making the file names shorter"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Checking a sample of labels for mistakes",
+     "intro": "A model can only learn what its data shows it, so DATA QUALITY matters as much as the model itself. Common problems: MISSING data (some cases never appear), WRONG LABELS (a cat photo labeled \"dog\"), OUTDATED data (prices from five years ago), and UNREPRESENTATIVE data (photos only from one country, voices only from adults). A LABEL is the correct answer attached to a training example, often added by people, and people make mistakes or disagree. Problems in the data become problems in the model, which is often summed up as \"garbage in, garbage out.\"",
+     "feedback": "Checking labels catches errors."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Handle hard data and labeling decisions",
+   "questions": [
+    {
+     "id": "S12-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Labelers disagree whether \"not bad\" is positive or neutral. What is the best step?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Delete every review that is hard to label"
+      },
+      {
+       "letter": "B",
+       "text": "Label every review \"positive\" to be safe"
+      },
+      {
+       "letter": "C",
+       "text": "Let each labeler decide freely with no guidance"
+      },
+      {
+       "letter": "D",
+       "text": "Write clear labeling instructions and check a sample"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Write clear labeling instructions and check a sample",
+     "intro": "Fixing data problems takes judgment. Some labels are hard because people genuinely disagree: is a review that says \"not bad\" positive or neutral? Writing clear labeling instructions and checking a sample of labels helps. Collecting more data does not help if the new data has the same gaps. And removing a column such as age does not always remove its influence, because other data can stand in for it. Good teams document where their data came from, what it leaves out and how labels were checked.",
+     "feedback": "Clear instructions and checks make labels consistent."
+    },
+    {
+     "id": "S12-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A team adds 50,000 more photos, but all from the same city as before. Why might this not help?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Photos from one city cannot be used at all"
+      },
+      {
+       "letter": "B",
+       "text": "More data always fixes every problem"
+      },
+      {
+       "letter": "C",
+       "text": "The new data has the same gaps as the old data"
+      },
+      {
+       "letter": "D",
+       "text": "The model will forget the old photos"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The new data has the same gaps as the old data",
+     "intro": "Fixing data problems takes judgment. Some labels are hard because people genuinely disagree: is a review that says \"not bad\" positive or neutral? Writing clear labeling instructions and checking a sample of labels helps. Collecting more data does not help if the new data has the same gaps. And removing a column such as age does not always remove its influence, because other data can stand in for it. Good teams document where their data came from, what it leaves out and how labels were checked.",
+     "feedback": "More of the same does not fill gaps."
+    },
+    {
+     "id": "S12-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A loan model has no \"age\" column, but it uses \"years since first credit card.\" Why might age still affect it?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Other data can stand in for the removed column"
+      },
+      {
+       "letter": "B",
+       "text": "Credit cards have nothing to do with age"
+      },
+      {
+       "letter": "C",
+       "text": "Models cannot use numbers about time"
+      },
+      {
+       "letter": "D",
+       "text": "Removing a column always removes its influence"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Other data can stand in for the removed column",
+     "intro": "Fixing data problems takes judgment. Some labels are hard because people genuinely disagree: is a review that says \"not bad\" positive or neutral? Writing clear labeling instructions and checking a sample of labels helps. Collecting more data does not help if the new data has the same gaps. And removing a column such as age does not always remove its influence, because other data can stand in for it. Good teams document where their data came from, what it leaves out and how labels were checked.",
+     "feedback": "A related column can act as a stand-in."
+    },
+    {
+     "id": "S12-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Why should a team document where its data came from and what it leaves out?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "So the model trains faster"
+      },
+      {
+       "letter": "B",
+       "text": "So that no one asks any questions about it"
+      },
+      {
+       "letter": "C",
+       "text": "So the data file looks longer"
+      },
+      {
+       "letter": "D",
+       "text": "So others can judge where the model may fail"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "So others can judge where the model may fail",
+     "intro": "Fixing data problems takes judgment. Some labels are hard because people genuinely disagree: is a review that says \"not bad\" positive or neutral? Writing clear labeling instructions and checking a sample of labels helps. Collecting more data does not help if the new data has the same gaps. And removing a column such as age does not always remove its influence, because other data can stand in for it. Good teams document where their data came from, what it leaves out and how labels were checked.",
+     "feedback": "Documentation reveals limits."
+    },
+    {
+     "id": "S12-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A new labeling team is much faster but less careful. What should the project do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Hide their labels from the model"
+      },
+      {
+       "letter": "B",
+       "text": "Check a sample of their labels before trusting them"
+      },
+      {
+       "letter": "C",
+       "text": "Trust them, because working fast shows real skill"
+      },
+      {
+       "letter": "D",
+       "text": "Stop labeling data forever"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Check a sample of their labels before trusting them",
+     "intro": "Fixing data problems takes judgment. Some labels are hard because people genuinely disagree: is a review that says \"not bad\" positive or neutral? Writing clear labeling instructions and checking a sample of labels helps. Collecting more data does not help if the new data has the same gaps. And removing a column such as age does not always remove its influence, because other data can stand in for it. Good teams document where their data came from, what it leaves out and how labels were checked.",
+     "feedback": "Spot checks reveal label quality."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

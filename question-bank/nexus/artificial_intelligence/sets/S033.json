@@ -1,0 +1,670 @@
+{
+ "set": 33,
+ "title": "Checking numbers",
+ "outcome": "AI.CHECK.03",
+ "content_status": "stable",
+ "requires": [
+  31
+ ],
+ "module": "checking",
+ "path_refs": [
+  "everyday",
+  "creative",
+  "coding",
+  "work",
+  "society"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Recalculate or estimate numbers before relying on them",
+   "questions": [
+    {
+     "id": "S33-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "In this fictional example, what is the correct total?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "13.50 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "17.00 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "16.00 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "15.50 dollars"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "16.00 dollars",
+     "intro": "Language models can make arithmetic and counting mistakes, sometimes inside an otherwise good answer. A total may not match its parts, a percentage may be calculated from the wrong base, units may be mixed (minutes and hours), or a rounded number may be treated as exact. When a number matters, CHECK IT: redo simple arithmetic yourself or with a calculator, ESTIMATE whether the size makes sense (\"a month of groceries for 1,000 dollars is plausible; 100,000 is not\"), and confirm that units match. Some products can run a calculation tool, but you should still check results that matter.",
+     "feedback": "13.50 + 2.50 = 16.00.",
+     "example": {
+      "kind": "prompt_response",
+      "label": "Fictional example (prepared in advance; not a real AI output)",
+      "prompt": "I bought 3 notebooks at 4.50 dollars each and 2 pens at 1.25 dollars each. What is the total?",
+      "response": "Notebooks: 3 x 4.50 = 13.50 dollars. Pens: 2 x 1.25 = 2.50 dollars. Total: 13.50 + 2.50 = 17.00 dollars."
+     }
+    },
+    {
+     "id": "S33-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "In the same example, which step was wrong?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Multiplying 3 by 4.50"
+      },
+      {
+       "letter": "B",
+       "text": "Adding 13.50 and 2.50"
+      },
+      {
+       "letter": "C",
+       "text": "Listing the items bought"
+      },
+      {
+       "letter": "D",
+       "text": "Multiplying 2 by 1.25"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Adding 13.50 and 2.50",
+     "intro": "Language models can make arithmetic and counting mistakes, sometimes inside an otherwise good answer. A total may not match its parts, a percentage may be calculated from the wrong base, units may be mixed (minutes and hours), or a rounded number may be treated as exact. When a number matters, CHECK IT: redo simple arithmetic yourself or with a calculator, ESTIMATE whether the size makes sense (\"a month of groceries for 1,000 dollars is plausible; 100,000 is not\"), and confirm that units match. Some products can run a calculation tool, but you should still check results that matter.",
+     "feedback": "Each product was right; the sum was wrong.",
+     "example": {
+      "kind": "prompt_response",
+      "label": "Fictional example (prepared in advance; not a real AI output)",
+      "prompt": "I bought 3 notebooks at 4.50 dollars each and 2 pens at 1.25 dollars each. What is the total?",
+      "response": "Notebooks: 3 x 4.50 = 13.50 dollars. Pens: 2 x 1.25 = 2.50 dollars. Total: 13.50 + 2.50 = 17.00 dollars."
+     }
+    },
+    {
+     "id": "S33-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "A tool says a family's groceries for one month cost 95,000 dollars. What does estimation suggest?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The number is implausibly large; recheck it"
+      },
+      {
+       "letter": "B",
+       "text": "All grocery estimates are accurate"
+      },
+      {
+       "letter": "C",
+       "text": "The number is fine since it is precise"
+      },
+      {
+       "letter": "D",
+       "text": "Large numbers are always correct"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The number is implausibly large; recheck it",
+     "intro": "Language models can make arithmetic and counting mistakes, sometimes inside an otherwise good answer. A total may not match its parts, a percentage may be calculated from the wrong base, units may be mixed (minutes and hours), or a rounded number may be treated as exact. When a number matters, CHECK IT: redo simple arithmetic yourself or with a calculator, ESTIMATE whether the size makes sense (\"a month of groceries for 1,000 dollars is plausible; 100,000 is not\"), and confirm that units match. Some products can run a calculation tool, but you should still check results that matter.",
+     "feedback": "A sanity check catches it."
+    },
+    {
+     "id": "S33-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "An answer adds 90 minutes and 2 hours and says \"92 hours.\" What is the error?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nothing; 90 + 2 is 92"
+      },
+      {
+       "letter": "B",
+       "text": "It rounded too early"
+      },
+      {
+       "letter": "C",
+       "text": "It used too few decimal places"
+      },
+      {
+       "letter": "D",
+       "text": "It mixed units"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "It mixed units",
+     "intro": "Language models can make arithmetic and counting mistakes, sometimes inside an otherwise good answer. A total may not match its parts, a percentage may be calculated from the wrong base, units may be mixed (minutes and hours), or a rounded number may be treated as exact. When a number matters, CHECK IT: redo simple arithmetic yourself or with a calculator, ESTIMATE whether the size makes sense (\"a month of groceries for 1,000 dollars is plausible; 100,000 is not\"), and confirm that units match. Some products can run a calculation tool, but you should still check results that matter.",
+     "feedback": "90 minutes + 2 hours = 3.5 hours."
+    },
+    {
+     "id": "S33-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "Which is the best way to check a simple sum in an answer?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ask the tool whether it is sure"
+      },
+      {
+       "letter": "B",
+       "text": "Round it to the nearest hundred"
+      },
+      {
+       "letter": "C",
+       "text": "Redo it yourself or with a calculator"
+      },
+      {
+       "letter": "D",
+       "text": "Trust it because the steps are shown"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Redo it yourself or with a calculator",
+     "intro": "Language models can make arithmetic and counting mistakes, sometimes inside an otherwise good answer. A total may not match its parts, a percentage may be calculated from the wrong base, units may be mixed (minutes and hours), or a rounded number may be treated as exact. When a number matters, CHECK IT: redo simple arithmetic yourself or with a calculator, ESTIMATE whether the size makes sense (\"a month of groceries for 1,000 dollars is plausible; 100,000 is not\"), and confirm that units match. Some products can run a calculation tool, but you should still check results that matter.",
+     "feedback": "Independent recalculation."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Recalculate and estimate",
+   "questions": [
+    {
+     "id": "S33-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "What is 4 x 7.50?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "11.50"
+      },
+      {
+       "letter": "B",
+       "text": "30.00"
+      },
+      {
+       "letter": "C",
+       "text": "34.00"
+      },
+      {
+       "letter": "D",
+       "text": "28.00"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "30.00",
+     "intro": "Two quick skills check most numbers. RECALCULATE: redo the arithmetic yourself, one step at a time. Example: 4 tickets at 7.50 dollars: 4 x 7.50 = 30.00 dollars. ESTIMATE: round the numbers and see if the answer is in the right range. Example: 19 x 21 is about 20 x 20 = 400, so an answer of 3,990 is clearly wrong. Also check UNITS: 30 minutes is 0.5 hours, not 30 hours. A wrong unit can make a number look reasonable when it is not.",
+     "feedback": "4 x 7.50 = 30.00."
+    },
+    {
+     "id": "S33-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "About how much is 19 x 21?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "About 40,000"
+      },
+      {
+       "letter": "B",
+       "text": "About 4,000"
+      },
+      {
+       "letter": "C",
+       "text": "About 40"
+      },
+      {
+       "letter": "D",
+       "text": "About 400"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "About 400",
+     "intro": "Two quick skills check most numbers. RECALCULATE: redo the arithmetic yourself, one step at a time. Example: 4 tickets at 7.50 dollars: 4 x 7.50 = 30.00 dollars. ESTIMATE: round the numbers and see if the answer is in the right range. Example: 19 x 21 is about 20 x 20 = 400, so an answer of 3,990 is clearly wrong. Also check UNITS: 30 minutes is 0.5 hours, not 30 hours. A wrong unit can make a number look reasonable when it is not.",
+     "feedback": "20 x 20 = 400."
+    },
+    {
+     "id": "S33-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "How many hours is 45 minutes?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "0.75 hours"
+      },
+      {
+       "letter": "B",
+       "text": "0.45 hours"
+      },
+      {
+       "letter": "C",
+       "text": "45 hours"
+      },
+      {
+       "letter": "D",
+       "text": "4.5 hours"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "0.75 hours",
+     "intro": "Two quick skills check most numbers. RECALCULATE: redo the arithmetic yourself, one step at a time. Example: 4 tickets at 7.50 dollars: 4 x 7.50 = 30.00 dollars. ESTIMATE: round the numbers and see if the answer is in the right range. Example: 19 x 21 is about 20 x 20 = 400, so an answer of 3,990 is clearly wrong. Also check UNITS: 30 minutes is 0.5 hours, not 30 hours. A wrong unit can make a number look reasonable when it is not.",
+     "feedback": "45 / 60 = 0.75."
+    },
+    {
+     "id": "S33-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "An answer says 52 x 10 = 5,200. What does a quick estimate show?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It is correct"
+      },
+      {
+       "letter": "B",
+       "text": "It should be about 500"
+      },
+      {
+       "letter": "C",
+       "text": "It should be about 50,000"
+      },
+      {
+       "letter": "D",
+       "text": "It should be about 50"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "It should be about 500",
+     "intro": "Two quick skills check most numbers. RECALCULATE: redo the arithmetic yourself, one step at a time. Example: 4 tickets at 7.50 dollars: 4 x 7.50 = 30.00 dollars. ESTIMATE: round the numbers and see if the answer is in the right range. Example: 19 x 21 is about 20 x 20 = 400, so an answer of 3,990 is clearly wrong. Also check UNITS: 30 minutes is 0.5 hours, not 30 hours. A wrong unit can make a number look reasonable when it is not.",
+     "feedback": "52 x 10 = 520."
+    },
+    {
+     "id": "S33-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "What is 3 x 2.25 + 1.50?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "6.75"
+      },
+      {
+       "letter": "B",
+       "text": "9.00"
+      },
+      {
+       "letter": "C",
+       "text": "8.25"
+      },
+      {
+       "letter": "D",
+       "text": "7.75"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "8.25",
+     "intro": "Two quick skills check most numbers. RECALCULATE: redo the arithmetic yourself, one step at a time. Example: 4 tickets at 7.50 dollars: 4 x 7.50 = 30.00 dollars. ESTIMATE: round the numbers and see if the answer is in the right range. Example: 19 x 21 is about 20 x 20 = 400, so an answer of 3,990 is clearly wrong. Also check UNITS: 30 minutes is 0.5 hours, not 30 hours. A wrong unit can make a number look reasonable when it is not.",
+     "feedback": "6.75 + 1.50 = 8.25."
+    }
+   ],
+   "branch_mode": "underlying_skill",
+   "relationship": "A learner who misses MAIN may not yet recalculate or estimate confidently; this branch practices the arithmetic directly."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Check numbers in practical answers",
+   "questions": [
+    {
+     "id": "S33-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "A tool says a 25 percent discount on a 80-dollar jacket brings the price to 55 dollars. What is correct?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "60 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "55 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "64 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "20 dollars"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "60 dollars",
+     "intro": "Language models can make arithmetic and counting mistakes, sometimes inside an otherwise good answer. A total may not match its parts, a percentage may be calculated from the wrong base, units may be mixed (minutes and hours), or a rounded number may be treated as exact. When a number matters, CHECK IT: redo simple arithmetic yourself or with a calculator, ESTIMATE whether the size makes sense (\"a month of groceries for 1,000 dollars is plausible; 100,000 is not\"), and confirm that units match. Some products can run a calculation tool, but you should still check results that matter.",
+     "feedback": "80 - 0.25 x 80 = 60."
+    },
+    {
+     "id": "S33-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "A trip plan says driving 300 miles at about 60 miles per hour takes \"about 3 hours.\" What is correct?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "About 18 hours"
+      },
+      {
+       "letter": "B",
+       "text": "About 6 hours"
+      },
+      {
+       "letter": "C",
+       "text": "About 3 hours"
+      },
+      {
+       "letter": "D",
+       "text": "About 5 hours"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "About 5 hours",
+     "intro": "Language models can make arithmetic and counting mistakes, sometimes inside an otherwise good answer. A total may not match its parts, a percentage may be calculated from the wrong base, units may be mixed (minutes and hours), or a rounded number may be treated as exact. When a number matters, CHECK IT: redo simple arithmetic yourself or with a calculator, ESTIMATE whether the size makes sense (\"a month of groceries for 1,000 dollars is plausible; 100,000 is not\"), and confirm that units match. Some products can run a calculation tool, but you should still check results that matter.",
+     "feedback": "300 / 60 = 5 hours."
+    },
+    {
+     "id": "S33-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "A budget lists rent 900, food 400, transport 150, and says the total is 1,350. What should you do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Accept 1,350, since it is close"
+      },
+      {
+       "letter": "B",
+       "text": "Ignore the transport line"
+      },
+      {
+       "letter": "C",
+       "text": "Recalculate: the total is 1,450"
+      },
+      {
+       "letter": "D",
+       "text": "Change rent to 800 to match"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Recalculate: the total is 1,450",
+     "intro": "Language models can make arithmetic and counting mistakes, sometimes inside an otherwise good answer. A total may not match its parts, a percentage may be calculated from the wrong base, units may be mixed (minutes and hours), or a rounded number may be treated as exact. When a number matters, CHECK IT: redo simple arithmetic yourself or with a calculator, ESTIMATE whether the size makes sense (\"a month of groceries for 1,000 dollars is plausible; 100,000 is not\"), and confirm that units match. Some products can run a calculation tool, but you should still check results that matter.",
+     "feedback": "900 + 400 + 150 = 1,450."
+    },
+    {
+     "id": "S33-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "A recipe scaled for 8 people says to use 3 eggs, while the original for 4 people uses 2 eggs. What should it say?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "6 eggs"
+      },
+      {
+       "letter": "B",
+       "text": "4 eggs"
+      },
+      {
+       "letter": "C",
+       "text": "8 eggs"
+      },
+      {
+       "letter": "D",
+       "text": "3 eggs"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "4 eggs",
+     "intro": "Language models can make arithmetic and counting mistakes, sometimes inside an otherwise good answer. A total may not match its parts, a percentage may be calculated from the wrong base, units may be mixed (minutes and hours), or a rounded number may be treated as exact. When a number matters, CHECK IT: redo simple arithmetic yourself or with a calculator, ESTIMATE whether the size makes sense (\"a month of groceries for 1,000 dollars is plausible; 100,000 is not\"), and confirm that units match. Some products can run a calculation tool, but you should still check results that matter.",
+     "feedback": "Doubling 2 eggs gives 4."
+    },
+    {
+     "id": "S33-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "An answer says a phone plan of 35 dollars a month costs \"about 42 dollars a year.\" What does estimation show?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It should be about 420 dollars a year"
+      },
+      {
+       "letter": "B",
+       "text": "It should be about 4,200 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "It is correct as written"
+      },
+      {
+       "letter": "D",
+       "text": "It should be about 35 dollars"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "It should be about 420 dollars a year",
+     "intro": "Language models can make arithmetic and counting mistakes, sometimes inside an otherwise good answer. A total may not match its parts, a percentage may be calculated from the wrong base, units may be mixed (minutes and hours), or a rounded number may be treated as exact. When a number matters, CHECK IT: redo simple arithmetic yourself or with a calculator, ESTIMATE whether the size makes sense (\"a month of groceries for 1,000 dollars is plausible; 100,000 is not\"), and confirm that units match. Some products can run a calculation tool, but you should still check results that matter.",
+     "feedback": "35 x 12 = 420."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Find errors in multi-step and percentage answers",
+   "questions": [
+    {
+     "id": "S33-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "A tool computed a project cost in four tidy steps, but used 12 workers instead of your 21. What should you check first?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Whether the final number is rounded"
+      },
+      {
+       "letter": "B",
+       "text": "Whether the steps are neatly formatted"
+      },
+      {
+       "letter": "C",
+       "text": "Whether the answer is long enough"
+      },
+      {
+       "letter": "D",
+       "text": "Whether it used your actual input figures"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Whether it used your actual input figures",
+     "intro": "Number errors often hide in multi-step answers: one wrong step early on makes every later number wrong while the reasoning still looks tidy. Check the inputs first (did it use your actual figures?), then each step, then the final number. Watch percentage traps: a 50 percent rise followed by a 50 percent fall does not return to the start. And be careful with very precise-looking results from uncertain inputs: \"12.37 percent\" built on a guessed number is still a guess.",
+     "feedback": "Wrong inputs make every later step wrong."
+    },
+    {
+     "id": "S33-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "A price rises 50 percent, then falls 50 percent. A tool says it is \"back to the original price.\" Starting at 100 dollars, what is the final price?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "125 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "50 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "75 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "100 dollars"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "75 dollars",
+     "intro": "Number errors often hide in multi-step answers: one wrong step early on makes every later number wrong while the reasoning still looks tidy. Check the inputs first (did it use your actual figures?), then each step, then the final number. Watch percentage traps: a 50 percent rise followed by a 50 percent fall does not return to the start. And be careful with very precise-looking results from uncertain inputs: \"12.37 percent\" built on a guessed number is still a guess.",
+     "feedback": "100 x 1.5 = 150; 150 x 0.5 = 75."
+    },
+    {
+     "id": "S33-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "A tool reports \"12.37 percent growth\" based on a guessed starting number. How should you treat it?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "As verified, since it is a percentage"
+      },
+      {
+       "letter": "B",
+       "text": "As official, since a tool produced it"
+      },
+      {
+       "letter": "C",
+       "text": "As exact, since it has two decimals"
+      },
+      {
+       "letter": "D",
+       "text": "As a guess, despite the precise look"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "As a guess, despite the precise look",
+     "intro": "Number errors often hide in multi-step answers: one wrong step early on makes every later number wrong while the reasoning still looks tidy. Check the inputs first (did it use your actual figures?), then each step, then the final number. Watch percentage traps: a 50 percent rise followed by a 50 percent fall does not return to the start. And be careful with very precise-looking results from uncertain inputs: \"12.37 percent\" built on a guessed number is still a guess.",
+     "feedback": "Precision on guessed inputs is still a guess."
+    },
+    {
+     "id": "S33-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "In a multi-step answer, step 2 has an error. What happens to steps 3 and 4?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "They are likely wrong too"
+      },
+      {
+       "letter": "B",
+       "text": "They fix the error automatically"
+      },
+      {
+       "letter": "C",
+       "text": "They become more accurate"
+      },
+      {
+       "letter": "D",
+       "text": "They are unaffected"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "They are likely wrong too",
+     "intro": "Number errors often hide in multi-step answers: one wrong step early on makes every later number wrong while the reasoning still looks tidy. Check the inputs first (did it use your actual figures?), then each step, then the final number. Watch percentage traps: a 50 percent rise followed by a 50 percent fall does not return to the start. And be careful with very precise-looking results from uncertain inputs: \"12.37 percent\" built on a guessed number is still a guess.",
+     "feedback": "Errors carry forward."
+    },
+    {
+     "id": "S33-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "A tool says, \"Sales went from 200 to 250, a 25 percent increase.\" Is this right?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No, it is a 50 percent increase"
+      },
+      {
+       "letter": "B",
+       "text": "Yes, 50 is 25 percent of 200"
+      },
+      {
+       "letter": "C",
+       "text": "No, it is a 20 percent increase"
+      },
+      {
+       "letter": "D",
+       "text": "No, it is a 250 percent increase"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Yes, 50 is 25 percent of 200",
+     "intro": "Number errors often hide in multi-step answers: one wrong step early on makes every later number wrong while the reasoning still looks tidy. Check the inputs first (did it use your actual figures?), then each step, then the final number. Watch percentage traps: a 50 percent rise followed by a 50 percent fall does not return to the start. And be careful with very precise-looking results from uncertain inputs: \"12.37 percent\" built on a guessed number is still a guess.",
+     "feedback": "50 / 200 = 0.25."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

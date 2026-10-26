@@ -17,9 +17,16 @@ sys.path.insert(0, HERE)
 import plan  # noqa: E402
 
 
+class _Offsets(list):
+    """Line start offsets that also convert the parser's UTF-8 byte columns to character columns."""
+    def at(self, ln, col):
+        return self[ln - 1] + len(self.lines[ln - 1].encode('utf-8')[:col].decode('utf-8'))
+
+
 def _offsets(text):
-    starts, pos = [0], 0
-    for line in text.splitlines(keepends=True):
+    starts, pos = _Offsets([0]), 0
+    starts.lines = text.splitlines(keepends=True)
+    for line in starts.lines:
         pos += len(line)
         starts.append(pos)
     return starts
@@ -31,7 +38,7 @@ def index():
     for f in sorted(glob.glob(os.path.join(HERE, 'data_*.py'))):
         text = open(f, encoding='utf-8').read()
         offs = _offsets(text)
-        pos = lambda n, ln, col: offs[ln - 1] + col  # noqa: E731
+        pos = lambda n, ln, col: offs.at(ln, col)  # noqa: E731
         for node in ast.walk(ast.parse(text)):
             if not (isinstance(node, ast.Call) and getattr(node.func, 'id', None) == 'SET'):
                 continue
@@ -94,7 +101,7 @@ def intros(sets):
             for sc, call in secs:
                 a = call.args[1]
                 print('# S%d-%s intro (%s line %d)' % (n, sc, os.path.basename(f), a.lineno))
-                print(text[offs[a.lineno - 1] + a.col_offset:offs[a.end_lineno - 1] + a.end_col_offset])
+                print(text[offs.at(a.lineno, a.col_offset):offs.at(a.end_lineno, a.end_col_offset)])
 
 
 def _fields(src):
@@ -169,7 +176,7 @@ def text_edits(consts, intros):
         for node in ast.parse(text).body:
             if isinstance(node, ast.Assign) and getattr(node.targets[0], 'id', None) == name:
                 v = node.value
-                a, b = offs[v.lineno - 1] + v.col_offset, offs[v.end_lineno - 1] + v.end_col_offset
+                a, b = offs.at(v.lineno, v.col_offset), offs.at(v.end_lineno, v.end_col_offset)
                 new = _apply_subs(ast.literal_eval(v), subs, name)
                 text = text[:a] + _wrap(new, len(name) + 4) + text[b:]
                 break
@@ -192,7 +199,7 @@ def text_edits(consts, intros):
                 secs = dict([('M', kw['M'])] + [('B%d' % i, b) for i, b in enumerate(kw['B'].elts, 1)] +
                             [('F1', kw['F1']), ('F2', kw['F2'])])
                 v = secs[sc].args[1]
-                a, b = offs[v.lineno - 1] + v.col_offset, offs[v.end_lineno - 1] + v.end_col_offset
+                a, b = offs.at(v.lineno, v.col_offset), offs.at(v.end_lineno, v.end_col_offset)
                 new = _apply_subs(ast.literal_eval(v), subs, key)
                 text = text[:a] + _wrap(new, v.col_offset) + text[b:]
                 compile(text, f, 'exec')

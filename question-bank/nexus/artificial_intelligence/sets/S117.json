@@ -1,0 +1,745 @@
+{
+ "set": 117,
+ "title": "Accuracy, speed and cost",
+ "outcome": "AI.EVAL.04",
+ "content_status": "stable",
+ "requires": [
+  114
+ ],
+ "module": "evaluation",
+ "path_refs": [
+  "work",
+  "coding"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Weigh accuracy against speed and cost for a stated need",
+   "questions": [
+    {
+     "id": "S117-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What does accuracy measure here?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "How quickly the answer appears on the screen after you press the send button"
+      },
+      {
+       "letter": "B",
+       "text": "How often the tool is right"
+      },
+      {
+       "letter": "C",
+       "text": "How long answers are"
+      },
+      {
+       "letter": "D",
+       "text": "How much it costs"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "How often the tool is right",
+     "intro": "Tools differ in ACCURACY (how often they are right), SPEED (how long you wait) and COST (money per task or month). Usually you cannot have the best of all three: the most accurate option may be slower and pricier. Decide what the task NEEDS. A live help chat needs speed. Checking medicine instructions needs accuracy above all. A big batch of simple sorting may need low cost. Set a minimum for what matters most (\"at least 95% correct on my test set\"), then choose the cheapest or fastest option that meets it.",
+     "feedback": "Correctness rate."
+    },
+    {
+     "id": "S117-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Which task needs accuracy above all?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Suggesting fun names for a new class pet, where any reasonable idea will be fine"
+      },
+      {
+       "letter": "B",
+       "text": "Brainstorming party themes"
+      },
+      {
+       "letter": "C",
+       "text": "Checking medicine instructions"
+      },
+      {
+       "letter": "D",
+       "text": "Sorting old photos"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Checking medicine instructions",
+     "intro": "Tools differ in ACCURACY (how often they are right), SPEED (how long you wait) and COST (money per task or month). Usually you cannot have the best of all three: the most accurate option may be slower and pricier. Decide what the task NEEDS. A live help chat needs speed. Checking medicine instructions needs accuracy above all. A big batch of simple sorting may need low cost. Set a minimum for what matters most (\"at least 95% correct on my test set\"), then choose the cheapest or fastest option that meets it.",
+     "feedback": "High stakes."
+    },
+    {
+     "id": "S117-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "In this example, which option meets \"at least 95% correct\" at the lowest cost?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Q"
+      },
+      {
+       "letter": "B",
+       "text": "P, because the most accurate option is always the cheapest choice that meets any minimum"
+      },
+      {
+       "letter": "C",
+       "text": "R"
+      },
+      {
+       "letter": "D",
+       "text": "None"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Q",
+     "intro": "Tools differ in ACCURACY (how often they are right), SPEED (how long you wait) and COST (money per task or month). Usually you cannot have the best of all three: the most accurate option may be slower and pricier. Decide what the task NEEDS. A live help chat needs speed. Checking medicine instructions needs accuracy above all. A big batch of simple sorting may need low cost. Set a minimum for what matters most (\"at least 95% correct on my test set\"), then choose the cheapest or fastest option that meets it.",
+     "feedback": "Q is 95% at 5 dollars.",
+     "example": {
+      "kind": "table",
+      "label": "Prepared example (fictional measurements and hypothetical prices)",
+      "table": [
+       [
+        "Option",
+        "Correct on test set",
+        "Seconds per answer",
+        "Cost per 1,000 tasks (hypothetical)"
+       ],
+       [
+        "P",
+        "98%",
+        "6",
+        "20 dollars"
+       ],
+       [
+        "Q",
+        "95%",
+        "2",
+        "5 dollars"
+       ],
+       [
+        "R",
+        "85%",
+        "1",
+        "1 dollar"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "S117-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "In the same example, which option is fastest?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "They are equal"
+      },
+      {
+       "letter": "B",
+       "text": "Q"
+      },
+      {
+       "letter": "C",
+       "text": "P, since the most accurate option always gives its answers in the shortest time"
+      },
+      {
+       "letter": "D",
+       "text": "R"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "R",
+     "intro": "Tools differ in ACCURACY (how often they are right), SPEED (how long you wait) and COST (money per task or month). Usually you cannot have the best of all three: the most accurate option may be slower and pricier. Decide what the task NEEDS. A live help chat needs speed. Checking medicine instructions needs accuracy above all. A big batch of simple sorting may need low cost. Set a minimum for what matters most (\"at least 95% correct on my test set\"), then choose the cheapest or fastest option that meets it.",
+     "feedback": "1 second per answer.",
+     "example": {
+      "kind": "table",
+      "label": "Prepared example (fictional measurements and hypothetical prices)",
+      "table": [
+       [
+        "Option",
+        "Correct on test set",
+        "Seconds per answer",
+        "Cost per 1,000 tasks (hypothetical)"
+       ],
+       [
+        "P",
+        "98%",
+        "6",
+        "20 dollars"
+       ],
+       [
+        "Q",
+        "95%",
+        "2",
+        "5 dollars"
+       ],
+       [
+        "R",
+        "85%",
+        "1",
+        "1 dollar"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "S117-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What is the suggested method?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Choose the fastest no matter what"
+      },
+      {
+       "letter": "B",
+       "text": "Choose at random"
+      },
+      {
+       "letter": "C",
+       "text": "Set a minimum for what matters most, then pick the cheapest that meets it"
+      },
+      {
+       "letter": "D",
+       "text": "Always choose the most expensive option, since price is the best measure of overall quality"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Set a minimum for what matters most, then pick the cheapest that meets it",
+     "intro": "Tools differ in ACCURACY (how often they are right), SPEED (how long you wait) and COST (money per task or month). Usually you cannot have the best of all three: the most accurate option may be slower and pricier. Decide what the task NEEDS. A live help chat needs speed. Checking medicine instructions needs accuracy above all. A big batch of simple sorting may need low cost. Set a minimum for what matters most (\"at least 95% correct on my test set\"), then choose the cheapest or fastest option that meets it.",
+     "feedback": "Minimum, then optimize."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare the trade-off with choosing a delivery service",
+   "questions": [
+    {
+     "id": "S117-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Overnight delivery is like what in AI tools?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A benchmark"
+      },
+      {
+       "letter": "B",
+       "text": "A fast but expensive option"
+      },
+      {
+       "letter": "C",
+       "text": "A slow and very cheap option that is best for packages with no deadline at all"
+      },
+      {
+       "letter": "D",
+       "text": "A free plan"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A fast but expensive option",
+     "intro": "Sending a package, you can choose OVERNIGHT (fast, expensive), STANDARD (a few days, cheaper) or ECONOMY (slow, cheapest). For a birthday gift due tomorrow, speed matters most. For a box of old books, cheap is fine. For a passport application, reliability matters most. You pick based on what the package NEEDS. AI tools are similar: accuracy, speed and cost trade off, and the task decides.",
+     "feedback": "Speed costs more."
+    },
+    {
+     "id": "S117-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "For a box of old books, what matters most?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Tracking every minute"
+      },
+      {
+       "letter": "B",
+       "text": "Gift wrap"
+      },
+      {
+       "letter": "C",
+       "text": "Overnight speed"
+      },
+      {
+       "letter": "D",
+       "text": "Low cost"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Low cost",
+     "intro": "Sending a package, you can choose OVERNIGHT (fast, expensive), STANDARD (a few days, cheaper) or ECONOMY (slow, cheapest). For a birthday gift due tomorrow, speed matters most. For a box of old books, cheap is fine. For a passport application, reliability matters most. You pick based on what the package NEEDS. AI tools are similar: accuracy, speed and cost trade off, and the task decides.",
+     "feedback": "Cheap is fine."
+    },
+    {
+     "id": "S117-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "For a passport application, what matters most?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Reliability"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing"
+      },
+      {
+       "letter": "C",
+       "text": "The color of the envelope"
+      },
+      {
+       "letter": "D",
+       "text": "The cheapest possible price"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Reliability",
+     "intro": "Sending a package, you can choose OVERNIGHT (fast, expensive), STANDARD (a few days, cheaper) or ECONOMY (slow, cheapest). For a birthday gift due tomorrow, speed matters most. For a box of old books, cheap is fine. For a passport application, reliability matters most. You pick based on what the package NEEDS. AI tools are similar: accuracy, speed and cost trade off, and the task decides.",
+     "feedback": "Like accuracy."
+    },
+    {
+     "id": "S117-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What decides the choice?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Whichever option is advertised most often on television and online that week"
+      },
+      {
+       "letter": "B",
+       "text": "The sender's mood"
+      },
+      {
+       "letter": "C",
+       "text": "The weather"
+      },
+      {
+       "letter": "D",
+       "text": "What the package needs"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "What the package needs",
+     "intro": "Sending a package, you can choose OVERNIGHT (fast, expensive), STANDARD (a few days, cheaper) or ECONOMY (slow, cheapest). For a birthday gift due tomorrow, speed matters most. For a box of old books, cheap is fine. For a passport application, reliability matters most. You pick based on what the package NEEDS. AI tools are similar: accuracy, speed and cost trade off, and the task decides.",
+     "feedback": "Task needs."
+    },
+    {
+     "id": "S117-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What is the lesson for AI tools?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Never use tools"
+      },
+      {
+       "letter": "B",
+       "text": "Let the task decide among accuracy, speed and cost"
+      },
+      {
+       "letter": "C",
+       "text": "Always pick the cheapest"
+      },
+      {
+       "letter": "D",
+       "text": "Always pick the fastest tool, because speed matters more than anything else for every task"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Let the task decide among accuracy, speed and cost",
+     "intro": "Sending a package, you can choose OVERNIGHT (fast, expensive), STANDARD (a few days, cheaper) or ECONOMY (slow, cheapest). For a birthday gift due tomorrow, speed matters most. For a box of old books, cheap is fine. For a passport application, reliability matters most. You pick based on what the package NEEDS. AI tools are similar: accuracy, speed and cost trade off, and the task decides.",
+     "feedback": "Trade-offs."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who wants the best of everything can compare tool trade-offs with delivery options."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Make accuracy, speed and cost decisions in practice",
+   "questions": [
+    {
+     "id": "S117-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Using the earlier example, a team needs answers in under 3 seconds and at least 90% correct. Which option fits?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Q"
+      },
+      {
+       "letter": "B",
+       "text": "P, because it is the most accurate, and accuracy matters more than any time limit"
+      },
+      {
+       "letter": "C",
+       "text": "None"
+      },
+      {
+       "letter": "D",
+       "text": "R"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Q",
+     "intro": "Tools differ in ACCURACY (how often they are right), SPEED (how long you wait) and COST (money per task or month). Usually you cannot have the best of all three: the most accurate option may be slower and pricier. Decide what the task NEEDS. A live help chat needs speed. Checking medicine instructions needs accuracy above all. A big batch of simple sorting may need low cost. Set a minimum for what matters most (\"at least 95% correct on my test set\"), then choose the cheapest or fastest option that meets it.",
+     "feedback": "Q: 95%, 2 seconds.",
+     "example": {
+      "kind": "table",
+      "label": "Prepared example (fictional measurements and hypothetical prices)",
+      "table": [
+       [
+        "Option",
+        "Correct on test set",
+        "Seconds per answer",
+        "Cost per 1,000 tasks (hypothetical)"
+       ],
+       [
+        "P",
+        "98%",
+        "6",
+        "20 dollars"
+       ],
+       [
+        "Q",
+        "95%",
+        "2",
+        "5 dollars"
+       ],
+       [
+        "R",
+        "85%",
+        "1",
+        "1 dollar"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "S117-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "A school sorts 10,000 old forms overnight; errors are easy to fix. Which factor matters most?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Speed, because the forms must be sorted within one second each, even though it runs overnight"
+      },
+      {
+       "letter": "B",
+       "text": "Perfect accuracy at any price"
+      },
+      {
+       "letter": "C",
+       "text": "Low cost"
+      },
+      {
+       "letter": "D",
+       "text": "None"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Low cost",
+     "intro": "Tools differ in ACCURACY (how often they are right), SPEED (how long you wait) and COST (money per task or month). Usually you cannot have the best of all three: the most accurate option may be slower and pricier. Decide what the task NEEDS. A live help chat needs speed. Checking medicine instructions needs accuracy above all. A big batch of simple sorting may need low cost. Set a minimum for what matters most (\"at least 95% correct on my test set\"), then choose the cheapest or fastest option that meets it.",
+     "feedback": "Batch, low stakes."
+    },
+    {
+     "id": "S117-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "A pharmacy helper answers dosage questions. Which factor matters most?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Accuracy"
+      },
+      {
+       "letter": "B",
+       "text": "Speed above all"
+      },
+      {
+       "letter": "C",
+       "text": "Answer length"
+      },
+      {
+       "letter": "D",
+       "text": "Low cost"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Accuracy",
+     "intro": "Tools differ in ACCURACY (how often they are right), SPEED (how long you wait) and COST (money per task or month). Usually you cannot have the best of all three: the most accurate option may be slower and pricier. Decide what the task NEEDS. A live help chat needs speed. Checking medicine instructions needs accuracy above all. A big batch of simple sorting may need low cost. Set a minimum for what matters most (\"at least 95% correct on my test set\"), then choose the cheapest or fastest option that meets it.",
+     "feedback": "High stakes."
+    },
+    {
+     "id": "S117-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Hypothetical: option R costs 1 dollar per 1,000 tasks and Q costs 5. For 20,000 tasks, how much more is Q?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "100 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "20 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "80 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "4 dollars"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "80 dollars",
+     "intro": "Tools differ in ACCURACY (how often they are right), SPEED (how long you wait) and COST (money per task or month). Usually you cannot have the best of all three: the most accurate option may be slower and pricier. Decide what the task NEEDS. A live help chat needs speed. Checking medicine instructions needs accuracy above all. A big batch of simple sorting may need low cost. Set a minimum for what matters most (\"at least 95% correct on my test set\"), then choose the cheapest or fastest option that meets it.",
+     "feedback": "20 x 5 - 20 x 1 = 80."
+    },
+    {
+     "id": "S117-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Which is the right first step?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Pick the tool with the most impressive marketing, then decide what the task needs later"
+      },
+      {
+       "letter": "B",
+       "text": "Pick the cheapest tool"
+      },
+      {
+       "letter": "C",
+       "text": "Pick the newest tool"
+      },
+      {
+       "letter": "D",
+       "text": "Decide what the task needs"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Decide what the task needs",
+     "intro": "Tools differ in ACCURACY (how often they are right), SPEED (how long you wait) and COST (money per task or month). Usually you cannot have the best of all three: the most accurate option may be slower and pricier. Decide what the task NEEDS. A live help chat needs speed. Checking medicine instructions needs accuracy above all. A big batch of simple sorting may need low cost. Set a minimum for what matters most (\"at least 95% correct on my test set\"), then choose the cheapest or fastest option that meets it.",
+     "feedback": "Needs first."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Include hidden costs in the comparison",
+   "questions": [
+    {
+     "id": "S117-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Option R makes 150 errors per 1,000 tasks and Q makes 50. Each error takes 10 minutes to fix. How much more fixing time does R need per 1,000 tasks?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "1,500 minutes"
+      },
+      {
+       "letter": "B",
+       "text": "1,000 minutes"
+      },
+      {
+       "letter": "C",
+       "text": "500 minutes"
+      },
+      {
+       "letter": "D",
+       "text": "100 minutes"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "1,000 minutes",
+     "intro": "Hidden costs change the math. A cheaper, less accurate tool may cost more overall if people must fix its mistakes: if each error takes 10 minutes to correct, a few extra errors add up. A slower tool may be fine for overnight batches but not for customers waiting. Measure on your own test set, include the time people spend checking and fixing, and revisit the choice when prices or tools change.",
+     "feedback": "(150 - 50) x 10 = 1,000."
+    },
+    {
+     "id": "S117-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What does the previous answer show?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "That Q is slower"
+      },
+      {
+       "letter": "B",
+       "text": "That errors do not matter"
+      },
+      {
+       "letter": "C",
+       "text": "A cheaper tool can cost more overall"
+      },
+      {
+       "letter": "D",
+       "text": "That fixing errors is always free"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A cheaper tool can cost more overall",
+     "intro": "Hidden costs change the math. A cheaper, less accurate tool may cost more overall if people must fix its mistakes: if each error takes 10 minutes to correct, a few extra errors add up. A slower tool may be fine for overnight batches but not for customers waiting. Measure on your own test set, include the time people spend checking and fixing, and revisit the choice when prices or tools change.",
+     "feedback": "Hidden costs."
+    },
+    {
+     "id": "S117-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "A slow but accurate tool is used for overnight reports. Is slowness a problem?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Probably not, since no one is waiting"
+      },
+      {
+       "letter": "B",
+       "text": "Yes, because reports must be instant"
+      },
+      {
+       "letter": "C",
+       "text": "Yes, always, because slow tools are never acceptable for any kind of task at all"
+      },
+      {
+       "letter": "D",
+       "text": "It cannot be judged"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Probably not, since no one is waiting",
+     "intro": "Hidden costs change the math. A cheaper, less accurate tool may cost more overall if people must fix its mistakes: if each error takes 10 minutes to correct, a few extra errors add up. A slower tool may be fine for overnight batches but not for customers waiting. Measure on your own test set, include the time people spend checking and fixing, and revisit the choice when prices or tools change.",
+     "feedback": "Context matters."
+    },
+    {
+     "id": "S117-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What should a fair comparison include besides the tool's price?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The tool's logo"
+      },
+      {
+       "letter": "B",
+       "text": "The tool's age"
+      },
+      {
+       "letter": "C",
+       "text": "Only the price of the tool, since people's time is never counted as a cost in practice"
+      },
+      {
+       "letter": "D",
+       "text": "Time people spend checking and fixing"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Time people spend checking and fixing",
+     "intro": "Hidden costs change the math. A cheaper, less accurate tool may cost more overall if people must fix its mistakes: if each error takes 10 minutes to correct, a few extra errors add up. A slower tool may be fine for overnight batches but not for customers waiting. Measure on your own test set, include the time people spend checking and fixing, and revisit the choice when prices or tools change.",
+     "feedback": "Full cost."
+    },
+    {
+     "id": "S117-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Prices drop and a new option appears. What should you do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ignore the news"
+      },
+      {
+       "letter": "B",
+       "text": "Revisit the choice with your test set"
+      },
+      {
+       "letter": "C",
+       "text": "Switch immediately without testing"
+      },
+      {
+       "letter": "D",
+       "text": "Keep the old choice forever"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Revisit the choice with your test set",
+     "intro": "Hidden costs change the math. A cheaper, less accurate tool may cost more overall if people must fix its mistakes: if each error takes 10 minutes to correct, a few extra errors add up. A slower tool may be fine for overnight batches but not for customers waiting. Measure on your own test set, include the time people spend checking and fixing, and revisit the choice when prices or tools change.",
+     "feedback": "Re-evaluate."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

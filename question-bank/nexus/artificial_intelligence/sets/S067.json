@@ -1,0 +1,667 @@
+{
+ "set": 67,
+ "title": "Cut-off output and formatting errors",
+ "outcome": "AI.PITFALL.02",
+ "content_status": "stable",
+ "requires": [
+  18
+ ],
+ "module": "pitfalls",
+ "path_refs": [
+  "everyday",
+  "work"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Spot truncated output and formatting errors",
+   "questions": [
+    {
+     "id": "S67-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Everyday: practical pitfalls",
+     "type": "mc",
+     "prompt": "In this fictional example, what problem does the response show?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It refused the request"
+      },
+      {
+       "letter": "B",
+       "text": "It was cut off before finishing"
+      },
+      {
+       "letter": "C",
+       "text": "It used too many steps"
+      },
+      {
+       "letter": "D",
+       "text": "It was formatted as a numbered list"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "It was cut off before finishing",
+     "intro": "Two output problems are easy to miss. TRUNCATION: the answer stops partway because it hit a length limit, so a list ends at item 7 of 10, a table loses its last rows, or code stops mid-line. Signs include a sentence that ends abruptly, a list that skips its promised count, or a missing conclusion. FORMATTING ERRORS: broken tables, numbering that restarts, merged columns, or symbols that display wrongly after copying. Before using output, check that it is COMPLETE (does it reach the end?) and that its format survived the trip to where you will use it.",
+     "feedback": "It stops mid-sentence at step 7.",
+     "example": {
+      "kind": "prompt_response",
+      "label": "Fictional example (prepared in advance; not a real AI output)",
+      "prompt": "List the 10 steps for setting up the class fundraiser.",
+      "response": "1. Choose a date.\n2. Get approval from the principal.\n3. Set a goal amount.\n4. Pick a theme.\n5. Make a sign-up sheet.\n6. Order supplies.\n7. Create flyers and post them in the"
+     }
+    },
+    {
+     "id": "S67-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Everyday: practical pitfalls",
+     "type": "mc",
+     "prompt": "In the same example, how many promised steps are missing?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "10"
+      },
+      {
+       "letter": "B",
+       "text": "7"
+      },
+      {
+       "letter": "C",
+       "text": "3 (or more, counting step 7)"
+      },
+      {
+       "letter": "D",
+       "text": "None, since the list already covers the most important parts of planning a fundraiser"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "3 (or more, counting step 7)",
+     "intro": "Two output problems are easy to miss. TRUNCATION: the answer stops partway because it hit a length limit, so a list ends at item 7 of 10, a table loses its last rows, or code stops mid-line. Signs include a sentence that ends abruptly, a list that skips its promised count, or a missing conclusion. FORMATTING ERRORS: broken tables, numbering that restarts, merged columns, or symbols that display wrongly after copying. Before using output, check that it is COMPLETE (does it reach the end?) and that its format survived the trip to where you will use it.",
+     "feedback": "10 promised, 7 started.",
+     "example": {
+      "kind": "prompt_response",
+      "label": "Fictional example (prepared in advance; not a real AI output)",
+      "prompt": "List the 10 steps for setting up the class fundraiser.",
+      "response": "1. Choose a date.\n2. Get approval from the principal.\n3. Set a goal amount.\n4. Pick a theme.\n5. Make a sign-up sheet.\n6. Order supplies.\n7. Create flyers and post them in the"
+     }
+    },
+    {
+     "id": "S67-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Everyday: practical pitfalls",
+     "type": "mc",
+     "prompt": "What is a sign of truncation?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A numbered list that reaches its stated count"
+      },
+      {
+       "letter": "B",
+       "text": "A polite greeting"
+      },
+      {
+       "letter": "C",
+       "text": "A conclusion paragraph that wraps up the answer neatly at the end"
+      },
+      {
+       "letter": "D",
+       "text": "A sentence that ends abruptly"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "A sentence that ends abruptly",
+     "intro": "Two output problems are easy to miss. TRUNCATION: the answer stops partway because it hit a length limit, so a list ends at item 7 of 10, a table loses its last rows, or code stops mid-line. Signs include a sentence that ends abruptly, a list that skips its promised count, or a missing conclusion. FORMATTING ERRORS: broken tables, numbering that restarts, merged columns, or symbols that display wrongly after copying. Before using output, check that it is COMPLETE (does it reach the end?) and that its format survived the trip to where you will use it.",
+     "feedback": "Abrupt endings."
+    },
+    {
+     "id": "S67-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Everyday: practical pitfalls",
+     "type": "mc",
+     "prompt": "Which is a formatting error?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Numbering that restarts at 1 halfway through"
+      },
+      {
+       "letter": "B",
+       "text": "A table with labeled columns"
+      },
+      {
+       "letter": "C",
+       "text": "Consistent bullet points"
+      },
+      {
+       "letter": "D",
+       "text": "A clear heading at the top of the answer that names the topic of the list below"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Numbering that restarts at 1 halfway through",
+     "intro": "Two output problems are easy to miss. TRUNCATION: the answer stops partway because it hit a length limit, so a list ends at item 7 of 10, a table loses its last rows, or code stops mid-line. Signs include a sentence that ends abruptly, a list that skips its promised count, or a missing conclusion. FORMATTING ERRORS: broken tables, numbering that restarts, merged columns, or symbols that display wrongly after copying. Before using output, check that it is COMPLETE (does it reach the end?) and that its format survived the trip to where you will use it.",
+     "feedback": "Broken numbering."
+    },
+    {
+     "id": "S67-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Everyday: practical pitfalls",
+     "type": "mc",
+     "prompt": "Before using output, what two things should you check?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "That it is colorful and short"
+      },
+      {
+       "letter": "B",
+       "text": "That it is long and that it sounds confident about every point it makes"
+      },
+      {
+       "letter": "C",
+       "text": "That it is complete and its format survived"
+      },
+      {
+       "letter": "D",
+       "text": "That it has emojis and links"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "That it is complete and its format survived",
+     "intro": "Two output problems are easy to miss. TRUNCATION: the answer stops partway because it hit a length limit, so a list ends at item 7 of 10, a table loses its last rows, or code stops mid-line. Signs include a sentence that ends abruptly, a list that skips its promised count, or a missing conclusion. FORMATTING ERRORS: broken tables, numbering that restarts, merged columns, or symbols that display wrongly after copying. Before using output, check that it is COMPLETE (does it reach the end?) and that its format survived the trip to where you will use it.",
+     "feedback": "Completeness and format."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Count what was promised versus what arrived",
+   "questions": [
+    {
+     "id": "S67-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Everyday: practical pitfalls",
+     "type": "mc",
+     "prompt": "You asked for 12 monthly rows and see 9. What is wrong?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "9 rows are extra"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing, because 9 rows is close enough to a full year for most purposes"
+      },
+      {
+       "letter": "C",
+       "text": "The months are in the wrong order"
+      },
+      {
+       "letter": "D",
+       "text": "3 rows are missing"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "3 rows are missing",
+     "intro": "A simple check catches most truncation: COUNT. If you asked for 10 items, count the items. If a table should have one row per month, count 12 rows. If an outline promised 5 sections, find all 5. Also read the LAST line: it should be a complete sentence or a clear ending. Example: you asked for 8 tips and see tips 1-6, with tip 6 ending \"and then you can\" with no ending. Count fails (6 of 8) and the last line is cut off.",
+     "feedback": "12 - 9 = 3."
+    },
+    {
+     "id": "S67-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Everyday: practical pitfalls",
+     "type": "mc",
+     "prompt": "Which last line suggests truncation?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Good luck with your project!\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Then, after you finish the\""
+      },
+      {
+       "letter": "C",
+       "text": "\"That completes the list of steps for the project.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Step 10: Celebrate.\""
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "\"Then, after you finish the\"",
+     "intro": "A simple check catches most truncation: COUNT. If you asked for 10 items, count the items. If a table should have one row per month, count 12 rows. If an outline promised 5 sections, find all 5. Also read the LAST line: it should be a complete sentence or a clear ending. Example: you asked for 8 tips and see tips 1-6, with tip 6 ending \"and then you can\" with no ending. Count fails (6 of 8) and the last line is cut off.",
+     "feedback": "An unfinished sentence."
+    },
+    {
+     "id": "S67-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Everyday: practical pitfalls",
+     "type": "mc",
+     "prompt": "An outline promised 5 sections; you find 5 with a final summary. What does the count show?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It appears complete"
+      },
+      {
+       "letter": "B",
+       "text": "It cannot be checked"
+      },
+      {
+       "letter": "C",
+       "text": "It is missing 2 sections"
+      },
+      {
+       "letter": "D",
+       "text": "It is truncated"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "It appears complete",
+     "intro": "A simple check catches most truncation: COUNT. If you asked for 10 items, count the items. If a table should have one row per month, count 12 rows. If an outline promised 5 sections, find all 5. Also read the LAST line: it should be a complete sentence or a clear ending. Example: you asked for 8 tips and see tips 1-6, with tip 6 ending \"and then you can\" with no ending. Count fails (6 of 8) and the last line is cut off.",
+     "feedback": "Count and ending both pass."
+    },
+    {
+     "id": "S67-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Everyday: practical pitfalls",
+     "type": "mc",
+     "prompt": "You asked for 8 tips and got 6, ending mid-sentence. How many checks fail?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only the last line"
+      },
+      {
+       "letter": "B",
+       "text": "Both: count and last line"
+      },
+      {
+       "letter": "C",
+       "text": "Only the count"
+      },
+      {
+       "letter": "D",
+       "text": "Neither, because six tips is enough for most readers to get the main ideas"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Both: count and last line",
+     "intro": "A simple check catches most truncation: COUNT. If you asked for 10 items, count the items. If a table should have one row per month, count 12 rows. If an outline promised 5 sections, find all 5. Also read the LAST line: it should be a complete sentence or a clear ending. Example: you asked for 8 tips and see tips 1-6, with tip 6 ending \"and then you can\" with no ending. Count fails (6 of 8) and the last line is cut off.",
+     "feedback": "6 of 8, and the ending is cut off."
+    },
+    {
+     "id": "S67-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Everyday: practical pitfalls",
+     "type": "mc",
+     "prompt": "What is the first step of the check?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Count the items you asked for"
+      },
+      {
+       "letter": "B",
+       "text": "Read the answer out loud to see whether it sounds finished and confident"
+      },
+      {
+       "letter": "C",
+       "text": "Change the font"
+      },
+      {
+       "letter": "D",
+       "text": "Copy it elsewhere"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Count the items you asked for",
+     "intro": "A simple check catches most truncation: COUNT. If you asked for 10 items, count the items. If a table should have one row per month, count 12 rows. If an outline promised 5 sections, find all 5. Also read the LAST line: it should be a complete sentence or a clear ending. Example: you asked for 8 tips and see tips 1-6, with tip 6 ending \"and then you can\" with no ending. Count fails (6 of 8) and the last line is cut off.",
+     "feedback": "Count first."
+    }
+   ],
+   "branch_mode": "underlying_skill",
+   "relationship": "A learner who misses cut-off output practices the underlying skill of counting promised items and reading the last line."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Catch truncation and formatting problems in practice",
+   "questions": [
+    {
+     "id": "S67-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Everyday: practical pitfalls",
+     "type": "mc",
+     "prompt": "Ana asked for a 7-day meal plan and the table ends at Friday. What should she do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Start a new topic"
+      },
+      {
+       "letter": "B",
+       "text": "Use the plan as is"
+      },
+      {
+       "letter": "C",
+       "text": "Assume weekend meals are not needed"
+      },
+      {
+       "letter": "D",
+       "text": "Ask for Saturday and Sunday separately"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Ask for Saturday and Sunday separately",
+     "intro": "Two output problems are easy to miss. TRUNCATION: the answer stops partway because it hit a length limit, so a list ends at item 7 of 10, a table loses its last rows, or code stops mid-line. Signs include a sentence that ends abruptly, a list that skips its promised count, or a missing conclusion. FORMATTING ERRORS: broken tables, numbering that restarts, merged columns, or symbols that display wrongly after copying. Before using output, check that it is COMPLETE (does it reach the end?) and that its format survived the trip to where you will use it.",
+     "feedback": "Request the missing part."
+    },
+    {
+     "id": "S67-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Everyday: practical pitfalls",
+     "type": "mc",
+     "prompt": "A pasted table became one long line in a word processor. What happened?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The tool refused to make a table"
+      },
+      {
+       "letter": "B",
+       "text": "Tables cannot be pasted"
+      },
+      {
+       "letter": "C",
+       "text": "The format broke when pasting"
+      },
+      {
+       "letter": "D",
+       "text": "The table's contents changed into a completely different set of numbers and words"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The format broke when pasting",
+     "intro": "Two output problems are easy to miss. TRUNCATION: the answer stops partway because it hit a length limit, so a list ends at item 7 of 10, a table loses its last rows, or code stops mid-line. Signs include a sentence that ends abruptly, a list that skips its promised count, or a missing conclusion. FORMATTING ERRORS: broken tables, numbering that restarts, merged columns, or symbols that display wrongly after copying. Before using output, check that it is COMPLETE (does it reach the end?) and that its format survived the trip to where you will use it.",
+     "feedback": "Pasting can break formatting."
+    },
+    {
+     "id": "S67-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Everyday: practical pitfalls",
+     "type": "mc",
+     "prompt": "A code answer ends in the middle of a line. What should you do before using it?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Add random characters"
+      },
+      {
+       "letter": "B",
+       "text": "Delete the last line"
+      },
+      {
+       "letter": "C",
+       "text": "Run it anyway"
+      },
+      {
+       "letter": "D",
+       "text": "Get the complete code"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Get the complete code",
+     "intro": "Two output problems are easy to miss. TRUNCATION: the answer stops partway because it hit a length limit, so a list ends at item 7 of 10, a table loses its last rows, or code stops mid-line. Signs include a sentence that ends abruptly, a list that skips its promised count, or a missing conclusion. FORMATTING ERRORS: broken tables, numbering that restarts, merged columns, or symbols that display wrongly after copying. Before using output, check that it is COMPLETE (does it reach the end?) and that its format survived the trip to where you will use it.",
+     "feedback": "Incomplete code is unreliable."
+    },
+    {
+     "id": "S67-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Everyday: practical pitfalls",
+     "type": "mc",
+     "prompt": "A numbered list goes 1, 2, 3, 1, 2. What kind of problem is this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A formatting error"
+      },
+      {
+       "letter": "B",
+       "text": "Truncation, because the list is shorter than the number of items that was promised"
+      },
+      {
+       "letter": "C",
+       "text": "A grounding error"
+      },
+      {
+       "letter": "D",
+       "text": "A spelling error"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "A formatting error",
+     "intro": "Two output problems are easy to miss. TRUNCATION: the answer stops partway because it hit a length limit, so a list ends at item 7 of 10, a table loses its last rows, or code stops mid-line. Signs include a sentence that ends abruptly, a list that skips its promised count, or a missing conclusion. FORMATTING ERRORS: broken tables, numbering that restarts, merged columns, or symbols that display wrongly after copying. Before using output, check that it is COMPLETE (does it reach the end?) and that its format survived the trip to where you will use it.",
+     "feedback": "Numbering restarted."
+    },
+    {
+     "id": "S67-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Everyday: practical pitfalls",
+     "type": "mc",
+     "prompt": "Which request reduces truncation risk for a long report?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Use small words.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Write sections 1-3 now; I will ask for 4-6 next.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Make it as long as possible.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Write the entire 40-page report in one single response without stopping at all.\""
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "\"Write sections 1-3 now; I will ask for 4-6 next.\"",
+     "intro": "Two output problems are easy to miss. TRUNCATION: the answer stops partway because it hit a length limit, so a list ends at item 7 of 10, a table loses its last rows, or code stops mid-line. Signs include a sentence that ends abruptly, a list that skips its promised count, or a missing conclusion. FORMATTING ERRORS: broken tables, numbering that restarts, merged columns, or symbols that display wrongly after copying. Before using output, check that it is COMPLETE (does it reach the end?) and that its format survived the trip to where you will use it.",
+     "feedback": "Ask in parts."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Handle quiet truncation and broken formats",
+   "questions": [
+    {
+     "id": "S67-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Everyday: practical pitfalls",
+     "type": "mc",
+     "prompt": "A summary of a 6-section report ends after section 5 but sounds finished. What is the risk?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Section 6 is never important"
+      },
+      {
+       "letter": "B",
+       "text": "The report has only 5 sections"
+      },
+      {
+       "letter": "C",
+       "text": "Quiet truncation that looks complete"
+      },
+      {
+       "letter": "D",
+       "text": "No risk"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Quiet truncation that looks complete",
+     "intro": "Truncation is especially risky when it is quiet: a summary that stops before the last section may look complete, and a cut-off code file may still run but skip the final steps. Ask for long output in parts (\"items 1 to 5, then 6 to 10\"), and count what you asked for. Formatting can break when you paste between apps: a table may become one long line, or bullet symbols may turn into odd characters. Check the final destination, not just the chat window.",
+     "feedback": "Check coverage, not tone."
+    },
+    {
+     "id": "S67-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Everyday: practical pitfalls",
+     "type": "mc",
+     "prompt": "Cut-off code still runs without an error. Why might it be a problem?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because code that runs without an error is always completely correct and complete"
+      },
+      {
+       "letter": "B",
+       "text": "It cannot be read"
+      },
+      {
+       "letter": "C",
+       "text": "It runs too fast"
+      },
+      {
+       "letter": "D",
+       "text": "It may skip the final steps"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "It may skip the final steps",
+     "intro": "Truncation is especially risky when it is quiet: a summary that stops before the last section may look complete, and a cut-off code file may still run but skip the final steps. Ask for long output in parts (\"items 1 to 5, then 6 to 10\"), and count what you asked for. Formatting can break when you paste between apps: a table may become one long line, or bullet symbols may turn into odd characters. Check the final destination, not just the chat window.",
+     "feedback": "Running is not finishing."
+    },
+    {
+     "id": "S67-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Everyday: practical pitfalls",
+     "type": "mc",
+     "prompt": "Bullet symbols turned into odd characters after pasting into an email. Where should you check formatting?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nowhere; formatting never matters"
+      },
+      {
+       "letter": "B",
+       "text": "Only on a printed copy"
+      },
+      {
+       "letter": "C",
+       "text": "In the final destination before sending"
+      },
+      {
+       "letter": "D",
+       "text": "Only in the chat window"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "In the final destination before sending",
+     "intro": "Truncation is especially risky when it is quiet: a summary that stops before the last section may look complete, and a cut-off code file may still run but skip the final steps. Ask for long output in parts (\"items 1 to 5, then 6 to 10\"), and count what you asked for. Formatting can break when you paste between apps: a table may become one long line, or bullet symbols may turn into odd characters. Check the final destination, not just the chat window.",
+     "feedback": "Check where it will be used."
+    },
+    {
+     "id": "S67-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Everyday: practical pitfalls",
+     "type": "mc",
+     "prompt": "You asked for 20 interview questions in parts of 5. What should you do after each part?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Trust that each part was complete, since asking in parts already prevents every problem"
+      },
+      {
+       "letter": "B",
+       "text": "Count to confirm 5 arrived"
+      },
+      {
+       "letter": "C",
+       "text": "Skip counting"
+      },
+      {
+       "letter": "D",
+       "text": "Ask for all 20 again"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Count to confirm 5 arrived",
+     "intro": "Truncation is especially risky when it is quiet: a summary that stops before the last section may look complete, and a cut-off code file may still run but skip the final steps. Ask for long output in parts (\"items 1 to 5, then 6 to 10\"), and count what you asked for. Formatting can break when you paste between apps: a table may become one long line, or bullet symbols may turn into odd characters. Check the final destination, not just the chat window.",
+     "feedback": "Count each part."
+    },
+    {
+     "id": "S67-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Everyday: practical pitfalls",
+     "type": "mc",
+     "prompt": "A schedule table lost its last column when copied into a spreadsheet. What should you do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Fix or re-export the table and recheck all columns"
+      },
+      {
+       "letter": "B",
+       "text": "Ignore the missing column, since the last column in a schedule is usually the least important"
+      },
+      {
+       "letter": "C",
+       "text": "Delete the whole schedule"
+      },
+      {
+       "letter": "D",
+       "text": "Rename the file"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Fix or re-export the table and recheck all columns",
+     "intro": "Truncation is especially risky when it is quiet: a summary that stops before the last section may look complete, and a cut-off code file may still run but skip the final steps. Ask for long output in parts (\"items 1 to 5, then 6 to 10\"), and count what you asked for. Formatting can break when you paste between apps: a table may become one long line, or bullet symbols may turn into odd characters. Check the final destination, not just the chat window.",
+     "feedback": "Recheck structure after moving data."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

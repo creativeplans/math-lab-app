@@ -1,0 +1,715 @@
+{
+ "set": 100,
+ "title": "Logs, retries and duplicate actions",
+ "outcome": "AI.AGENT.06",
+ "content_status": "stable",
+ "requires": [
+  99
+ ],
+ "module": "agents",
+ "path_refs": [
+  "coding",
+  "work"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Use logs to check automations and prevent duplicate actions",
+   "questions": [
+    {
+     "id": "S100-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "What is a log?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A record of what an automation did and when"
+      },
+      {
+       "letter": "B",
+       "text": "A password file"
+      },
+      {
+       "letter": "C",
+       "text": "A list of goals that the automation hopes to achieve some time in the future"
+      },
+      {
+       "letter": "D",
+       "text": "A type of agent"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "A record of what an automation did and when",
+     "intro": "A LOG is a record of what an automation did and when: \"9:02 sent reminder to Sam; 9:03 sent reminder to Ana.\" Logs let you check that it did what you expected, find errors, and explain what happened. When a step fails, automations often RETRY it. Retries are useful but risky: if the first attempt actually succeeded but the confirmation was lost, a retry can do the action TWICE, such as double-charging a card or sending a message twice. Safe designs check the log or a unique ID before repeating, so each action happens only once.",
+     "feedback": "A record of actions."
+    },
+    {
+     "id": "S100-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Why do automations retry steps?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "To use more memory"
+      },
+      {
+       "letter": "B",
+       "text": "To slow down"
+      },
+      {
+       "letter": "C",
+       "text": "Because a step may have failed"
+      },
+      {
+       "letter": "D",
+       "text": "Because every step must be done exactly twice to make sure that it worked correctly"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Because a step may have failed",
+     "intro": "A LOG is a record of what an automation did and when: \"9:02 sent reminder to Sam; 9:03 sent reminder to Ana.\" Logs let you check that it did what you expected, find errors, and explain what happened. When a step fails, automations often RETRY it. Retries are useful but risky: if the first attempt actually succeeded but the confirmation was lost, a retry can do the action TWICE, such as double-charging a card or sending a message twice. Safe designs check the log or a unique ID before repeating, so each action happens only once.",
+     "feedback": "Recover from failures."
+    },
+    {
+     "id": "S100-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "In this prepared example, what went wrong?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The order ID changed"
+      },
+      {
+       "letter": "B",
+       "text": "The customer was never charged at all, because the first attempt timed out completely"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing went wrong"
+      },
+      {
+       "letter": "D",
+       "text": "The customer was charged twice"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The customer was charged twice",
+     "intro": "A LOG is a record of what an automation did and when: \"9:02 sent reminder to Sam; 9:03 sent reminder to Ana.\" Logs let you check that it did what you expected, find errors, and explain what happened. When a step fails, automations often RETRY it. Retries are useful but risky: if the first attempt actually succeeded but the confirmation was lost, a retry can do the action TWICE, such as double-charging a card or sending a message twice. Safe designs check the log or a unique ID before repeating, so each action happens only once.",
+     "feedback": "The timed-out charge actually went through.",
+     "example": {
+      "kind": "table",
+      "label": "Prepared example (a fictional automation log)",
+      "table": [
+       [
+        "Time",
+        "Action",
+        "Order ID",
+        "Result"
+       ],
+       [
+        "10:00:01",
+        "Charge 25 dollars",
+        "A-118",
+        "Timed out"
+       ],
+       [
+        "10:00:31",
+        "Charge 25 dollars (retry)",
+        "A-118",
+        "Success"
+       ],
+       [
+        "10:05:00",
+        "Bank statement check",
+        "A-118",
+        "2 charges found"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "S100-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "In the same example, how much was charged in total?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "75 dollars"
+      },
+      {
+       "letter": "B",
+       "text": "50 dollars"
+      },
+      {
+       "letter": "C",
+       "text": "0 dollars"
+      },
+      {
+       "letter": "D",
+       "text": "25 dollars"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "50 dollars",
+     "intro": "A LOG is a record of what an automation did and when: \"9:02 sent reminder to Sam; 9:03 sent reminder to Ana.\" Logs let you check that it did what you expected, find errors, and explain what happened. When a step fails, automations often RETRY it. Retries are useful but risky: if the first attempt actually succeeded but the confirmation was lost, a retry can do the action TWICE, such as double-charging a card or sending a message twice. Safe designs check the log or a unique ID before repeating, so each action happens only once.",
+     "feedback": "25 + 25 = 50.",
+     "example": {
+      "kind": "table",
+      "label": "Prepared example (a fictional automation log)",
+      "table": [
+       [
+        "Time",
+        "Action",
+        "Order ID",
+        "Result"
+       ],
+       [
+        "10:00:01",
+        "Charge 25 dollars",
+        "A-118",
+        "Timed out"
+       ],
+       [
+        "10:00:31",
+        "Charge 25 dollars (retry)",
+        "A-118",
+        "Success"
+       ],
+       [
+        "10:05:00",
+        "Bank statement check",
+        "A-118",
+        "2 charges found"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "S100-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "How can a safe design prevent duplicates?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Never retry anything"
+      },
+      {
+       "letter": "B",
+       "text": "Retry every step as many times as possible, so that at least one attempt is sure to work"
+      },
+      {
+       "letter": "C",
+       "text": "Delete the log"
+      },
+      {
+       "letter": "D",
+       "text": "Check a unique ID before repeating"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Check a unique ID before repeating",
+     "intro": "A LOG is a record of what an automation did and when: \"9:02 sent reminder to Sam; 9:03 sent reminder to Ana.\" Logs let you check that it did what you expected, find errors, and explain what happened. When a step fails, automations often RETRY it. Retries are useful but risky: if the first attempt actually succeeded but the confirmation was lost, a retry can do the action TWICE, such as double-charging a card or sending a message twice. Safe designs check the log or a unique ID before repeating, so each action happens only once.",
+     "feedback": "Each action once."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare retries with pressing an elevator button twice",
+   "questions": [
+    {
+     "id": "S100-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Why is pressing the elevator button twice harmless?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The elevator still comes once"
+      },
+      {
+       "letter": "B",
+       "text": "Because buttons break"
+      },
+      {
+       "letter": "C",
+       "text": "Because elevators are slow"
+      },
+      {
+       "letter": "D",
+       "text": "Because pressing a button twice always cancels the first press, so nothing happens"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The elevator still comes once",
+     "intro": "Pressing an ELEVATOR button twice is harmless: the elevator still comes once. Pressing \"BUY\" twice on a slow website might buy two items. The difference is whether repeating changes the result. Automations retry when they are unsure a step worked. For \"elevator-like\" steps, that is fine. For \"buy-like\" steps, they must first check whether the first attempt already worked, using a record such as an order number.",
+     "feedback": "Repeating does not change the result."
+    },
+    {
+     "id": "S100-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Why can pressing \"BUY\" twice be a problem?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because buttons are red"
+      },
+      {
+       "letter": "B",
+       "text": "Because pressing buy twice always cancels the order completely and refunds your money"
+      },
+      {
+       "letter": "C",
+       "text": "It might buy two items"
+      },
+      {
+       "letter": "D",
+       "text": "Because the page gets brighter"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "It might buy two items",
+     "intro": "Pressing an ELEVATOR button twice is harmless: the elevator still comes once. Pressing \"BUY\" twice on a slow website might buy two items. The difference is whether repeating changes the result. Automations retry when they are unsure a step worked. For \"elevator-like\" steps, that is fine. For \"buy-like\" steps, they must first check whether the first attempt already worked, using a record such as an order number.",
+     "feedback": "Repeating changes the result."
+    },
+    {
+     "id": "S100-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "A retried \"send payment\" step is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Pressing the elevator button twice, which is always harmless for everyone involved"
+      },
+      {
+       "letter": "B",
+       "text": "Pressing \"BUY\" twice"
+      },
+      {
+       "letter": "C",
+       "text": "Reading a menu"
+      },
+      {
+       "letter": "D",
+       "text": "Closing a door"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Pressing \"BUY\" twice",
+     "intro": "Pressing an ELEVATOR button twice is harmless: the elevator still comes once. Pressing \"BUY\" twice on a slow website might buy two items. The difference is whether repeating changes the result. Automations retry when they are unsure a step worked. For \"elevator-like\" steps, that is fine. For \"buy-like\" steps, they must first check whether the first attempt already worked, using a record such as an order number.",
+     "feedback": "Risk of duplicates."
+    },
+    {
+     "id": "S100-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "What should the automation check before retrying a buy-like step?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Whether the first attempt worked"
+      },
+      {
+       "letter": "B",
+       "text": "The weather"
+      },
+      {
+       "letter": "C",
+       "text": "The screen color"
+      },
+      {
+       "letter": "D",
+       "text": "Whether the internet is fast enough to send the second attempt more quickly"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Whether the first attempt worked",
+     "intro": "Pressing an ELEVATOR button twice is harmless: the elevator still comes once. Pressing \"BUY\" twice on a slow website might buy two items. The difference is whether repeating changes the result. Automations retry when they are unsure a step worked. For \"elevator-like\" steps, that is fine. For \"buy-like\" steps, they must first check whether the first attempt already worked, using a record such as an order number.",
+     "feedback": "Use a record."
+    },
+    {
+     "id": "S100-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "What record can show if the purchase happened?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The time of day"
+      },
+      {
+       "letter": "B",
+       "text": "An order number"
+      },
+      {
+       "letter": "C",
+       "text": "The browser name"
+      },
+      {
+       "letter": "D",
+       "text": "The color of the \"BUY\" button on the website, which changes after a purchase"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "An order number",
+     "intro": "Pressing an ELEVATOR button twice is harmless: the elevator still comes once. Pressing \"BUY\" twice on a slow website might buy two items. The difference is whether repeating changes the result. Automations retry when they are unsure a step worked. For \"elevator-like\" steps, that is fine. For \"buy-like\" steps, they must first check whether the first attempt already worked, using a record such as an order number.",
+     "feedback": "A unique ID."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner unsure why retries can be risky can compare an elevator button with a \"BUY\" button."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Use logs and safe retries in practice",
+   "questions": [
+    {
+     "id": "S100-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "A parent says they got the same reminder text three times. Where should you look first?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The parent's phone settings, since repeated texts are always caused by phones"
+      },
+      {
+       "letter": "B",
+       "text": "The school website"
+      },
+      {
+       "letter": "C",
+       "text": "The automation's log"
+      },
+      {
+       "letter": "D",
+       "text": "Nowhere"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The automation's log",
+     "intro": "A LOG is a record of what an automation did and when: \"9:02 sent reminder to Sam; 9:03 sent reminder to Ana.\" Logs let you check that it did what you expected, find errors, and explain what happened. When a step fails, automations often RETRY it. Retries are useful but risky: if the first attempt actually succeeded but the confirmation was lost, a retry can do the action TWICE, such as double-charging a card or sending a message twice. Safe designs check the log or a unique ID before repeating, so each action happens only once.",
+     "feedback": "Logs show what happened."
+    },
+    {
+     "id": "S100-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "A log shows \"send reminder\" retried after a timeout, and both attempts succeeded. What happened?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No message was sent"
+      },
+      {
+       "letter": "B",
+       "text": "The log is wrong"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing unusual, since the second attempt cancels the first message automatically"
+      },
+      {
+       "letter": "D",
+       "text": "A duplicate message was sent"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "A duplicate message was sent",
+     "intro": "A LOG is a record of what an automation did and when: \"9:02 sent reminder to Sam; 9:03 sent reminder to Ana.\" Logs let you check that it did what you expected, find errors, and explain what happened. When a step fails, automations often RETRY it. Retries are useful but risky: if the first attempt actually succeeded but the confirmation was lost, a retry can do the action TWICE, such as double-charging a card or sending a message twice. Safe designs check the log or a unique ID before repeating, so each action happens only once.",
+     "feedback": "Retries can duplicate."
+    },
+    {
+     "id": "S100-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Which detail makes a retry safe for payments?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A new card each time"
+      },
+      {
+       "letter": "B",
+       "text": "A bigger payment"
+      },
+      {
+       "letter": "C",
+       "text": "A unique payment ID checked before charging"
+      },
+      {
+       "letter": "D",
+       "text": "A shorter waiting time between attempts"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A unique payment ID checked before charging",
+     "intro": "A LOG is a record of what an automation did and when: \"9:02 sent reminder to Sam; 9:03 sent reminder to Ana.\" Logs let you check that it did what you expected, find errors, and explain what happened. When a step fails, automations often RETRY it. Retries are useful but risky: if the first attempt actually succeeded but the confirmation was lost, a retry can do the action TWICE, such as double-charging a card or sending a message twice. Safe designs check the log or a unique ID before repeating, so each action happens only once.",
+     "feedback": "Detect duplicates."
+    },
+    {
+     "id": "S100-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Which log entry is most useful?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"9:02 sent reminder to Sam - success\""
+      },
+      {
+       "letter": "B",
+       "text": "\"OK\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Something happened at some point today,\" which shows that the system is working"
+      },
+      {
+       "letter": "D",
+       "text": "\"Done\""
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "\"9:02 sent reminder to Sam - success\"",
+     "intro": "A LOG is a record of what an automation did and when: \"9:02 sent reminder to Sam; 9:03 sent reminder to Ana.\" Logs let you check that it did what you expected, find errors, and explain what happened. When a step fails, automations often RETRY it. Retries are useful but risky: if the first attempt actually succeeded but the confirmation was lost, a retry can do the action TWICE, such as double-charging a card or sending a message twice. Safe designs check the log or a unique ID before repeating, so each action happens only once.",
+     "feedback": "What, when, who, result."
+    },
+    {
+     "id": "S100-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "An automation never retries failed steps. What is the downside?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It runs too fast"
+      },
+      {
+       "letter": "B",
+       "text": "It sends duplicates"
+      },
+      {
+       "letter": "C",
+       "text": "There is no downside"
+      },
+      {
+       "letter": "D",
+       "text": "Real failures stay unfixed"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Real failures stay unfixed",
+     "intro": "A LOG is a record of what an automation did and when: \"9:02 sent reminder to Sam; 9:03 sent reminder to Ana.\" Logs let you check that it did what you expected, find errors, and explain what happened. When a step fails, automations often RETRY it. Retries are useful but risky: if the first attempt actually succeeded but the confirmation was lost, a retry can do the action TWICE, such as double-charging a card or sending a message twice. Safe designs check the log or a unique ID before repeating, so each action happens only once.",
+     "feedback": "Retries have value."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Design idempotent steps and useful logs",
+   "questions": [
+    {
+     "id": "S100-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Which step is idempotent?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Add 10 dollars to the balance,\" since adding money twice is the same as adding it once"
+      },
+      {
+       "letter": "B",
+       "text": "\"Set status to paid\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Charge the card\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Send a message\""
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "\"Set status to paid\"",
+     "intro": "A design where repeating a step has the same effect as doing it once is called IDEMPOTENT. \"Set the status to paid\" is idempotent: doing it twice leaves it paid. \"Add 10 dollars\" is not: doing it twice adds 20. Logs should include enough detail (what, when, who, result) to rebuild what happened, without storing secrets such as passwords. Review logs after something goes wrong, and also spot-check them when things seem fine.",
+     "feedback": "Repeating has the same effect."
+    },
+    {
+     "id": "S100-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "\"Add 10 dollars\" runs twice. What is the result?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "20 dollars added"
+      },
+      {
+       "letter": "B",
+       "text": "0 dollars added"
+      },
+      {
+       "letter": "C",
+       "text": "30 dollars added"
+      },
+      {
+       "letter": "D",
+       "text": "10 dollars added"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "20 dollars added",
+     "intro": "A design where repeating a step has the same effect as doing it once is called IDEMPOTENT. \"Set the status to paid\" is idempotent: doing it twice leaves it paid. \"Add 10 dollars\" is not: doing it twice adds 20. Logs should include enough detail (what, when, who, result) to rebuild what happened, without storing secrets such as passwords. Review logs after something goes wrong, and also spot-check them when things seem fine.",
+     "feedback": "10 + 10 = 20."
+    },
+    {
+     "id": "S100-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "What should logs avoid storing?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The result of each action"
+      },
+      {
+       "letter": "B",
+       "text": "Which action ran"
+      },
+      {
+       "letter": "C",
+       "text": "Secrets such as passwords"
+      },
+      {
+       "letter": "D",
+       "text": "The time of each action"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Secrets such as passwords",
+     "intro": "A design where repeating a step has the same effect as doing it once is called IDEMPOTENT. \"Set the status to paid\" is idempotent: doing it twice leaves it paid. \"Add 10 dollars\" is not: doing it twice adds 20. Logs should include enough detail (what, when, who, result) to rebuild what happened, without storing secrets such as passwords. Review logs after something goes wrong, and also spot-check them when things seem fine.",
+     "feedback": "Keep secrets out of logs."
+    },
+    {
+     "id": "S100-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Why spot-check logs even when things seem fine?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because logs are deleted automatically if nobody reads them for more than one day"
+      },
+      {
+       "letter": "B",
+       "text": "To catch quiet problems early"
+      },
+      {
+       "letter": "C",
+       "text": "Because logs are always wrong"
+      },
+      {
+       "letter": "D",
+       "text": "To make the logs longer"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "To catch quiet problems early",
+     "intro": "A design where repeating a step has the same effect as doing it once is called IDEMPOTENT. \"Set the status to paid\" is idempotent: doing it twice leaves it paid. \"Add 10 dollars\" is not: doing it twice adds 20. Logs should include enough detail (what, when, who, result) to rebuild what happened, without storing secrets such as passwords. Review logs after something goes wrong, and also spot-check them when things seem fine.",
+     "feedback": "Problems can be silent."
+    },
+    {
+     "id": "S100-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "What should a useful log entry include?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only the date"
+      },
+      {
+       "letter": "B",
+       "text": "Only a smiley face to show that the step finished, which is easy to read quickly"
+      },
+      {
+       "letter": "C",
+       "text": "Only the password used"
+      },
+      {
+       "letter": "D",
+       "text": "What, when, who and the result"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "What, when, who and the result",
+     "intro": "A design where repeating a step has the same effect as doing it once is called IDEMPOTENT. \"Set the status to paid\" is idempotent: doing it twice leaves it paid. \"Add 10 dollars\" is not: doing it twice adds 20. Logs should include enough detail (what, when, who, result) to rebuild what happened, without storing secrets such as passwords. Review logs after something goes wrong, and also spot-check them when things seem fine.",
+     "feedback": "Enough to rebuild events."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

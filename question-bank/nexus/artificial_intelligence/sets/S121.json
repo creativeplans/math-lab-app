@@ -1,0 +1,655 @@
+{
+ "set": 121,
+ "title": "How data can build in bias",
+ "outcome": "AI.FAIR.01",
+ "content_status": "stable",
+ "requires": [
+  12
+ ],
+ "module": "fairness",
+ "path_refs": [
+  "society",
+  "work"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Explain how data can build in bias",
+   "questions": [
+    {
+     "id": "S121-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Why can problems in training data become problems in a model?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Models ignore their training data and make choices based on their own opinions"
+      },
+      {
+       "letter": "B",
+       "text": "Models learn patterns from the data"
+      },
+      {
+       "letter": "C",
+       "text": "Models only use the internet"
+      },
+      {
+       "letter": "D",
+       "text": "Data is deleted after training"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Models learn patterns from the data",
+     "intro": "Models learn patterns from their TRAINING DATA, so problems in the data can become problems in the model. UNREPRESENTATIVE data leaves some groups out or underrepresents them: a skin-condition tool trained mostly on photos of light skin may work worse on dark skin. HISTORICAL data can carry past unfairness: if a company mostly promoted one group in the past, a model trained on its promotion records may learn to favor that group. The model is not \"deciding\" to be unfair; it repeats patterns. That is why data choices need careful checking.",
+     "feedback": "Patterns in, patterns out."
+    },
+    {
+     "id": "S121-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "What is unrepresentative data?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Data that has been checked carefully and includes every group in fair proportions"
+      },
+      {
+       "letter": "B",
+       "text": "Data with numbers"
+      },
+      {
+       "letter": "C",
+       "text": "Data that leaves out or underrepresents some groups"
+      },
+      {
+       "letter": "D",
+       "text": "Data stored in the cloud"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Data that leaves out or underrepresents some groups",
+     "intro": "Models learn patterns from their TRAINING DATA, so problems in the data can become problems in the model. UNREPRESENTATIVE data leaves some groups out or underrepresents them: a skin-condition tool trained mostly on photos of light skin may work worse on dark skin. HISTORICAL data can carry past unfairness: if a company mostly promoted one group in the past, a model trained on its promotion records may learn to favor that group. The model is not \"deciding\" to be unfair; it repeats patterns. That is why data choices need careful checking.",
+     "feedback": "Missing groups."
+    },
+    {
+     "id": "S121-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "A skin tool trained mostly on light skin works worse on dark skin. What kind of problem is this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A formatting error"
+      },
+      {
+       "letter": "B",
+       "text": "A slow computer"
+      },
+      {
+       "letter": "C",
+       "text": "Historical data that recorded past unfair decisions about which patients received treatment"
+      },
+      {
+       "letter": "D",
+       "text": "Unrepresentative data"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Unrepresentative data",
+     "intro": "Models learn patterns from their TRAINING DATA, so problems in the data can become problems in the model. UNREPRESENTATIVE data leaves some groups out or underrepresents them: a skin-condition tool trained mostly on photos of light skin may work worse on dark skin. HISTORICAL data can carry past unfairness: if a company mostly promoted one group in the past, a model trained on its promotion records may learn to favor that group. The model is not \"deciding\" to be unfair; it repeats patterns. That is why data choices need careful checking.",
+     "feedback": "Underrepresented group."
+    },
+    {
+     "id": "S121-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "A model trained on past promotions favors the group promoted most before. What kind of problem is this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Historical bias in the data"
+      },
+      {
+       "letter": "B",
+       "text": "A fair result"
+      },
+      {
+       "letter": "C",
+       "text": "A software bug"
+      },
+      {
+       "letter": "D",
+       "text": "Unrepresentative data"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Historical bias in the data",
+     "intro": "Models learn patterns from their TRAINING DATA, so problems in the data can become problems in the model. UNREPRESENTATIVE data leaves some groups out or underrepresents them: a skin-condition tool trained mostly on photos of light skin may work worse on dark skin. HISTORICAL data can carry past unfairness: if a company mostly promoted one group in the past, a model trained on its promotion records may learn to favor that group. The model is not \"deciding\" to be unfair; it repeats patterns. That is why data choices need careful checking.",
+     "feedback": "Past patterns repeated."
+    },
+    {
+     "id": "S121-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Is the model \"deciding\" to be unfair?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes, but only sometimes"
+      },
+      {
+       "letter": "B",
+       "text": "No; it repeats patterns in the data"
+      },
+      {
+       "letter": "C",
+       "text": "Only on weekends"
+      },
+      {
+       "letter": "D",
+       "text": "Yes; models choose to be unfair on purpose"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "No; it repeats patterns in the data",
+     "intro": "Models learn patterns from their TRAINING DATA, so problems in the data can become problems in the model. UNREPRESENTATIVE data leaves some groups out or underrepresents them: a skin-condition tool trained mostly on photos of light skin may work worse on dark skin. HISTORICAL data can carry past unfairness: if a company mostly promoted one group in the past, a model trained on its promotion records may learn to favor that group. The model is not \"deciding\" to be unfair; it repeats patterns. That is why data choices need careful checking.",
+     "feedback": "Patterns, not intent."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare biased data with learning a language from one town",
+   "questions": [
+    {
+     "id": "S121-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "What would you pick up from one town?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Every accent and every way of speaking English in the whole world, equally well"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing"
+      },
+      {
+       "letter": "C",
+       "text": "Only grammar rules"
+      },
+      {
+       "letter": "D",
+       "text": "Its accent and local habits"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Its accent and local habits",
+     "intro": "Imagine learning English only from people in one small town. You would pick up their accent, local slang and habits, and you might struggle to understand people from elsewhere. That is not because other English is wrong; you just never heard it. A model trained on limited or skewed data is similar: it learns what it saw, and does worse on what it rarely saw.",
+     "feedback": "What you hear."
+    },
+    {
+     "id": "S121-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Why might you struggle with people from elsewhere?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because they talk fast"
+      },
+      {
+       "letter": "B",
+       "text": "Because people from other places always speak incorrectly and cannot be understood"
+      },
+      {
+       "letter": "C",
+       "text": "You rarely heard their way of speaking"
+      },
+      {
+       "letter": "D",
+       "text": "Because English is hard"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "You rarely heard their way of speaking",
+     "intro": "Imagine learning English only from people in one small town. You would pick up their accent, local slang and habits, and you might struggle to understand people from elsewhere. That is not because other English is wrong; you just never heard it. A model trained on limited or skewed data is similar: it learns what it saw, and does worse on what it rarely saw.",
+     "feedback": "Limited exposure."
+    },
+    {
+     "id": "S121-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "A model trained on limited data is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Learning from one town"
+      },
+      {
+       "letter": "B",
+       "text": "Learning from people in every country, with every accent heard equally often"
+      },
+      {
+       "letter": "C",
+       "text": "Taking a test"
+      },
+      {
+       "letter": "D",
+       "text": "Reading a dictionary"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Learning from one town",
+     "intro": "Imagine learning English only from people in one small town. You would pick up their accent, local slang and habits, and you might struggle to understand people from elsewhere. That is not because other English is wrong; you just never heard it. A model trained on limited or skewed data is similar: it learns what it saw, and does worse on what it rarely saw.",
+     "feedback": "Skewed exposure."
+    },
+    {
+     "id": "S121-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Is other English \"wrong\" in the comparison?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes, partly"
+      },
+      {
+       "letter": "B",
+       "text": "No"
+      },
+      {
+       "letter": "C",
+       "text": "It depends on the weather"
+      },
+      {
+       "letter": "D",
+       "text": "Yes, because the town's English is the only correct kind of English that exists"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "No",
+     "intro": "Imagine learning English only from people in one small town. You would pick up their accent, local slang and habits, and you might struggle to understand people from elsewhere. That is not because other English is wrong; you just never heard it. A model trained on limited or skewed data is similar: it learns what it saw, and does worse on what it rarely saw.",
+     "feedback": "Different, not wrong."
+    },
+    {
+     "id": "S121-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "What is the lesson for models?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "They never learn"
+      },
+      {
+       "letter": "B",
+       "text": "They only learn accents"
+      },
+      {
+       "letter": "C",
+       "text": "They do worse on what they rarely saw"
+      },
+      {
+       "letter": "D",
+       "text": "They do equally well on everything"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "They do worse on what they rarely saw",
+     "intro": "Imagine learning English only from people in one small town. You would pick up their accent, local slang and habits, and you might struggle to understand people from elsewhere. That is not because other English is wrong; you just never heard it. A model trained on limited or skewed data is similar: it learns what it saw, and does worse on what it rarely saw.",
+     "feedback": "Exposure shapes performance."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who sees bias as intentional can compare a model with someone who learned a language in one town."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Spot data-driven bias in practice",
+   "questions": [
+    {
+     "id": "S121-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "A voice assistant was trained mostly on adult voices. Who might it work worse for?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No one"
+      },
+      {
+       "letter": "B",
+       "text": "Everyone equally"
+      },
+      {
+       "letter": "C",
+       "text": "Adults with deep voices, since the training included far too many deep adult voices"
+      },
+      {
+       "letter": "D",
+       "text": "Children"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Children",
+     "intro": "Models learn patterns from their TRAINING DATA, so problems in the data can become problems in the model. UNREPRESENTATIVE data leaves some groups out or underrepresents them: a skin-condition tool trained mostly on photos of light skin may work worse on dark skin. HISTORICAL data can carry past unfairness: if a company mostly promoted one group in the past, a model trained on its promotion records may learn to favor that group. The model is not \"deciding\" to be unfair; it repeats patterns. That is why data choices need careful checking.",
+     "feedback": "Underrepresented voices."
+    },
+    {
+     "id": "S121-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "A hiring model is trained on 10 years of hires from a company that rarely hired women. What risk follows?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It may learn to favor men"
+      },
+      {
+       "letter": "B",
+       "text": "It will stop working"
+      },
+      {
+       "letter": "C",
+       "text": "It will hire only women"
+      },
+      {
+       "letter": "D",
+       "text": "No risk"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "It may learn to favor men",
+     "intro": "Models learn patterns from their TRAINING DATA, so problems in the data can become problems in the model. UNREPRESENTATIVE data leaves some groups out or underrepresents them: a skin-condition tool trained mostly on photos of light skin may work worse on dark skin. HISTORICAL data can carry past unfairness: if a company mostly promoted one group in the past, a model trained on its promotion records may learn to favor that group. The model is not \"deciding\" to be unfair; it repeats patterns. That is why data choices need careful checking.",
+     "feedback": "Historical patterns."
+    },
+    {
+     "id": "S121-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "A photo tool trained mostly on pictures from one country misreads street signs from another. Why?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because photos are blurry"
+      },
+      {
+       "letter": "B",
+       "text": "Its data underrepresented other places"
+      },
+      {
+       "letter": "C",
+       "text": "Because signs change daily"
+      },
+      {
+       "letter": "D",
+       "text": "Because street signs in other countries are always written incorrectly by local governments"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Its data underrepresented other places",
+     "intro": "Models learn patterns from their TRAINING DATA, so problems in the data can become problems in the model. UNREPRESENTATIVE data leaves some groups out or underrepresents them: a skin-condition tool trained mostly on photos of light skin may work worse on dark skin. HISTORICAL data can carry past unfairness: if a company mostly promoted one group in the past, a model trained on its promotion records may learn to favor that group. The model is not \"deciding\" to be unfair; it repeats patterns. That is why data choices need careful checking.",
+     "feedback": "Limited data."
+    },
+    {
+     "id": "S121-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "What is a first step to reduce data-driven bias?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Check who is and is not represented in the data"
+      },
+      {
+       "letter": "B",
+       "text": "Delete the model's name"
+      },
+      {
+       "letter": "C",
+       "text": "Make the model faster"
+      },
+      {
+       "letter": "D",
+       "text": "Train the model on even more data from the same narrow source it was trained on before"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Check who is and is not represented in the data",
+     "intro": "Models learn patterns from their TRAINING DATA, so problems in the data can become problems in the model. UNREPRESENTATIVE data leaves some groups out or underrepresents them: a skin-condition tool trained mostly on photos of light skin may work worse on dark skin. HISTORICAL data can carry past unfairness: if a company mostly promoted one group in the past, a model trained on its promotion records may learn to favor that group. The model is not \"deciding\" to be unfair; it repeats patterns. That is why data choices need careful checking.",
+     "feedback": "Examine the data."
+    },
+    {
+     "id": "S121-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "A model repeats a past unfair pattern. Who is responsible for checking this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The data itself"
+      },
+      {
+       "letter": "B",
+       "text": "Nobody, since a model that repeats patterns cannot be anyone's responsibility at all"
+      },
+      {
+       "letter": "C",
+       "text": "The people who build and use it"
+      },
+      {
+       "letter": "D",
+       "text": "The computer"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The people who build and use it",
+     "intro": "Models learn patterns from their TRAINING DATA, so problems in the data can become problems in the model. UNREPRESENTATIVE data leaves some groups out or underrepresents them: a skin-condition tool trained mostly on photos of light skin may work worse on dark skin. HISTORICAL data can carry past unfairness: if a company mostly promoted one group in the past, a model trained on its promotion records may learn to favor that group. The model is not \"deciding\" to be unfair; it repeats patterns. That is why data choices need careful checking.",
+     "feedback": "Human responsibility."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Trace bias beyond data collection",
+   "questions": [
+    {
+     "id": "S121-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Labelers assume all nurses are women and label photos that way. Where did bias enter?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nowhere"
+      },
+      {
+       "letter": "B",
+       "text": "In the font"
+      },
+      {
+       "letter": "C",
+       "text": "In the computer hardware, which adds its own assumptions to every photo label"
+      },
+      {
+       "letter": "D",
+       "text": "In the labels"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "In the labels",
+     "intro": "Bias can enter at every step, not only in data collection. LABELS can reflect labelers' assumptions. The question a model is asked to predict can be a poor stand-in for what matters: predicting \"past arrests\" is not the same as predicting \"crimes committed,\" because arrests also reflect where police patrol. Fixing bias is rarely as simple as deleting one column; it usually takes better data, careful goals, testing across groups and ongoing monitoring.",
+     "feedback": "Labeler assumptions."
+    },
+    {
+     "id": "S121-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Why is \"past arrests\" a poor stand-in for \"crimes committed\"?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because arrests and crimes are exactly the same thing, so using either one is equally fine"
+      },
+      {
+       "letter": "B",
+       "text": "Because crimes are not recorded"
+      },
+      {
+       "letter": "C",
+       "text": "Arrests also reflect where police patrol"
+      },
+      {
+       "letter": "D",
+       "text": "Because arrests are rare"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Arrests also reflect where police patrol",
+     "intro": "Bias can enter at every step, not only in data collection. LABELS can reflect labelers' assumptions. The question a model is asked to predict can be a poor stand-in for what matters: predicting \"past arrests\" is not the same as predicting \"crimes committed,\" because arrests also reflect where police patrol. Fixing bias is rarely as simple as deleting one column; it usually takes better data, careful goals, testing across groups and ongoing monitoring.",
+     "feedback": "Proxy target."
+    },
+    {
+     "id": "S121-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Is deleting one column usually enough to fix bias?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes, removing one column always removes every kind of bias from any model completely"
+      },
+      {
+       "letter": "B",
+       "text": "Yes, if it is the first column"
+      },
+      {
+       "letter": "C",
+       "text": "Only for small models"
+      },
+      {
+       "letter": "D",
+       "text": "No; it usually takes more"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "No; it usually takes more",
+     "intro": "Bias can enter at every step, not only in data collection. LABELS can reflect labelers' assumptions. The question a model is asked to predict can be a poor stand-in for what matters: predicting \"past arrests\" is not the same as predicting \"crimes committed,\" because arrests also reflect where police patrol. Fixing bias is rarely as simple as deleting one column; it usually takes better data, careful goals, testing across groups and ongoing monitoring.",
+     "feedback": "Not a quick fix."
+    },
+    {
+     "id": "S121-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "What helps reduce bias over time?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Testing across groups and ongoing monitoring"
+      },
+      {
+       "letter": "B",
+       "text": "Hiding results"
+      },
+      {
+       "letter": "C",
+       "text": "Using one test example"
+      },
+      {
+       "letter": "D",
+       "text": "Checking once on launch day and never looking again"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Testing across groups and ongoing monitoring",
+     "intro": "Bias can enter at every step, not only in data collection. LABELS can reflect labelers' assumptions. The question a model is asked to predict can be a poor stand-in for what matters: predicting \"past arrests\" is not the same as predicting \"crimes committed,\" because arrests also reflect where police patrol. Fixing bias is rarely as simple as deleting one column; it usually takes better data, careful goals, testing across groups and ongoing monitoring.",
+     "feedback": "Continuous checks."
+    },
+    {
+     "id": "S121-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "At which steps can bias enter?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only in the final report"
+      },
+      {
+       "letter": "B",
+       "text": "Data, labels, goals and use"
+      },
+      {
+       "letter": "C",
+       "text": "Nowhere"
+      },
+      {
+       "letter": "D",
+       "text": "Only during data collection"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Data, labels, goals and use",
+     "intro": "Bias can enter at every step, not only in data collection. LABELS can reflect labelers' assumptions. The question a model is asked to predict can be a poor stand-in for what matters: predicting \"past arrests\" is not the same as predicting \"crimes committed,\" because arrests also reflect where police patrol. Fixing bias is rarely as simple as deleting one column; it usually takes better data, careful goals, testing across groups and ongoing monitoring.",
+     "feedback": "Many steps."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

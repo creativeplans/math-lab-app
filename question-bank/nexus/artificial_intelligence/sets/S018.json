@@ -1,0 +1,658 @@
+{
+ "set": 18,
+ "title": "Context windows",
+ "outcome": "AI.LLM.05",
+ "content_status": "stable",
+ "requires": [
+  15
+ ],
+ "module": "llm",
+ "path_refs": [
+  "everyday",
+  "creative",
+  "coding",
+  "work",
+  "society"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Explain the context window and what happens when it is exceeded",
+   "questions": [
+    {
+     "id": "S18-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "What is a context window?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The time of day when the model is available"
+      },
+      {
+       "letter": "B",
+       "text": "The limited amount of text a model can use at once"
+      },
+      {
+       "letter": "C",
+       "text": "The window on screen where the app is shown"
+      },
+      {
+       "letter": "D",
+       "text": "The list of every fact the model learned"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The limited amount of text a model can use at once",
+     "intro": "A model can only consider a limited amount of text at once, called its CONTEXT WINDOW, measured in tokens. The context usually includes instructions the product adds, the conversation so far, any files or pasted text, and the reply being written. When a long conversation or document exceeds the window, something has to give: depending on the product, older messages may be dropped or shortened, part of a file may be left out, or the request may be refused. The model cannot use text that is no longer in its context, so it may \"forget\" early details or miss the end of a long document.",
+     "feedback": "Context is the text the model can use right now."
+    },
+    {
+     "id": "S18-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Which of these is usually part of the context?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The model's entire training data"
+      },
+      {
+       "letter": "B",
+       "text": "Every conversation all users have ever had"
+      },
+      {
+       "letter": "C",
+       "text": "The conversation so far and any pasted text"
+      },
+      {
+       "letter": "D",
+       "text": "The user's whole computer hard drive"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The conversation so far and any pasted text",
+     "intro": "A model can only consider a limited amount of text at once, called its CONTEXT WINDOW, measured in tokens. The context usually includes instructions the product adds, the conversation so far, any files or pasted text, and the reply being written. When a long conversation or document exceeds the window, something has to give: depending on the product, older messages may be dropped or shortened, part of a file may be left out, or the request may be refused. The model cannot use text that is no longer in its context, so it may \"forget\" early details or miss the end of a long document.",
+     "feedback": "Context holds the current conversation and supplied material."
+    },
+    {
+     "id": "S18-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "A very long conversation exceeds the window. What might happen, depending on the product?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Older messages may be dropped or shortened"
+      },
+      {
+       "letter": "B",
+       "text": "The model becomes permanently smarter"
+      },
+      {
+       "letter": "C",
+       "text": "The model rewrites its training data"
+      },
+      {
+       "letter": "D",
+       "text": "All messages are kept forever with no limit"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Older messages may be dropped or shortened",
+     "intro": "A model can only consider a limited amount of text at once, called its CONTEXT WINDOW, measured in tokens. The context usually includes instructions the product adds, the conversation so far, any files or pasted text, and the reply being written. When a long conversation or document exceeds the window, something has to give: depending on the product, older messages may be dropped or shortened, part of a file may be left out, or the request may be refused. The model cannot use text that is no longer in its context, so it may \"forget\" early details or miss the end of a long document.",
+     "feedback": "Something must give when the limit is passed."
+    },
+    {
+     "id": "S18-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Why might a model \"forget\" a detail from the start of a very long chat?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It chose to ignore the user on purpose"
+      },
+      {
+       "letter": "B",
+       "text": "Models cannot read the first message ever"
+      },
+      {
+       "letter": "C",
+       "text": "Details from chats are erased from the internet"
+      },
+      {
+       "letter": "D",
+       "text": "That detail may no longer be in its context"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "That detail may no longer be in its context",
+     "intro": "A model can only consider a limited amount of text at once, called its CONTEXT WINDOW, measured in tokens. The context usually includes instructions the product adds, the conversation so far, any files or pasted text, and the reply being written. When a long conversation or document exceeds the window, something has to give: depending on the product, older messages may be dropped or shortened, part of a file may be left out, or the request may be refused. The model cannot use text that is no longer in its context, so it may \"forget\" early details or miss the end of a long document.",
+     "feedback": "Text outside the context cannot be used."
+    },
+    {
+     "id": "S18-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "In what unit is a context window usually measured?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Megapixels"
+      },
+      {
+       "letter": "B",
+       "text": "Tokens"
+      },
+      {
+       "letter": "C",
+       "text": "Minutes"
+      },
+      {
+       "letter": "D",
+       "text": "Pages"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Tokens",
+     "intro": "A model can only consider a limited amount of text at once, called its CONTEXT WINDOW, measured in tokens. The context usually includes instructions the product adds, the conversation so far, any files or pasted text, and the reply being written. When a long conversation or document exceeds the window, something has to give: depending on the product, older messages may be dropped or shortened, part of a file may be left out, or the request may be refused. The model cannot use text that is no longer in its context, so it may \"forget\" early details or miss the end of a long document.",
+     "feedback": "Context limits are counted in tokens."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare the context window with a whiteboard",
+   "questions": [
+    {
+     "id": "S18-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "In the comparison, what is the whiteboard like?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The model's training data"
+      },
+      {
+       "letter": "B",
+       "text": "The user's keyboard"
+      },
+      {
+       "letter": "C",
+       "text": "The company office"
+      },
+      {
+       "letter": "D",
+       "text": "The context window"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The context window",
+     "intro": "Imagine a WHITEBOARD in a meeting room. Everything the group is discussing must be written on it to be used. The board is big but not endless. When it fills up, someone erases the oldest notes to make room, and from then on the group cannot look at what was erased. A model's context window works like the board: instructions, the conversation and any pasted text are \"written\" there. When it fills, older material may be removed, and the model can no longer use it.",
+     "feedback": "The board holds what is in use now."
+    },
+    {
+     "id": "S18-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "What happens when the board fills up?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "All notes are kept"
+      },
+      {
+       "letter": "B",
+       "text": "The board grows forever"
+      },
+      {
+       "letter": "C",
+       "text": "The oldest notes are erased"
+      },
+      {
+       "letter": "D",
+       "text": "The meeting ends at once for everyone"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The oldest notes are erased",
+     "intro": "Imagine a WHITEBOARD in a meeting room. Everything the group is discussing must be written on it to be used. The board is big but not endless. When it fills up, someone erases the oldest notes to make room, and from then on the group cannot look at what was erased. A model's context window works like the board: instructions, the conversation and any pasted text are \"written\" there. When it fills, older material may be removed, and the model can no longer use it.",
+     "feedback": "Old material is removed."
+    },
+    {
+     "id": "S18-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Can the group use notes that were erased?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No, they are gone from the board"
+      },
+      {
+       "letter": "B",
+       "text": "Yes, if they shout"
+      },
+      {
+       "letter": "C",
+       "text": "Only on Fridays"
+      },
+      {
+       "letter": "D",
+       "text": "Yes, the board remembers them"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "No, they are gone from the board",
+     "intro": "Imagine a WHITEBOARD in a meeting room. Everything the group is discussing must be written on it to be used. The board is big but not endless. When it fills up, someone erases the oldest notes to make room, and from then on the group cannot look at what was erased. A model's context window works like the board: instructions, the conversation and any pasted text are \"written\" there. When it fills, older material may be removed, and the model can no longer use it.",
+     "feedback": "Erased text cannot be used."
+    },
+    {
+     "id": "S18-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "What is written on the board?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only the newest single word"
+      },
+      {
+       "letter": "B",
+       "text": "Instructions, the chat and pasted text"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing at all"
+      },
+      {
+       "letter": "D",
+       "text": "Everything ever said anywhere in the building"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Instructions, the chat and pasted text",
+     "intro": "Imagine a WHITEBOARD in a meeting room. Everything the group is discussing must be written on it to be used. The board is big but not endless. When it fills up, someone erases the oldest notes to make room, and from then on the group cannot look at what was erased. A model's context window works like the board: instructions, the conversation and any pasted text are \"written\" there. When it fills, older material may be removed, and the model can no longer use it.",
+     "feedback": "The context holds current material."
+    },
+    {
+     "id": "S18-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Why might the group forget a point made at the start?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It may have been erased to make room"
+      },
+      {
+       "letter": "B",
+       "text": "Points made first are always wrong"
+      },
+      {
+       "letter": "C",
+       "text": "It was never said"
+      },
+      {
+       "letter": "D",
+       "text": "The board was too small to write on at all"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "It may have been erased to make room",
+     "intro": "Imagine a WHITEBOARD in a meeting room. Everything the group is discussing must be written on it to be used. The board is big but not endless. When it fills up, someone erases the oldest notes to make room, and from then on the group cannot look at what was erased. A model's context window works like the board: instructions, the conversation and any pasted text are \"written\" there. When it fills, older material may be removed, and the model can no longer use it.",
+     "feedback": "Early material can be removed."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who does not see why models \"forget\" can picture a whiteboard that must be erased when full."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Work within a context window",
+   "questions": [
+    {
+     "id": "S18-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "After two hours of chat, a model ignores a formatting rule Kim gave at the start. What should she try?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Assume the model is broken forever"
+      },
+      {
+       "letter": "B",
+       "text": "Delete her account"
+      },
+      {
+       "letter": "C",
+       "text": "Restate the rule in a new message"
+      },
+      {
+       "letter": "D",
+       "text": "Wait until tomorrow and hope it remembers"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Restate the rule in a new message",
+     "intro": "A model can only consider a limited amount of text at once, called its CONTEXT WINDOW, measured in tokens. The context usually includes instructions the product adds, the conversation so far, any files or pasted text, and the reply being written. When a long conversation or document exceeds the window, something has to give: depending on the product, older messages may be dropped or shortened, part of a file may be left out, or the request may be refused. The model cannot use text that is no longer in its context, so it may \"forget\" early details or miss the end of a long document.",
+     "feedback": "Restating puts the rule back into context."
+    },
+    {
+     "id": "S18-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Omar pastes a 400-page manual, and the answer seems to miss the last chapters. What is a likely reason?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The last chapters were written in code"
+      },
+      {
+       "letter": "B",
+       "text": "The model already knew those chapters"
+      },
+      {
+       "letter": "C",
+       "text": "Models refuse to read past page 100 by law"
+      },
+      {
+       "letter": "D",
+       "text": "Part of the manual may not fit in the context"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Part of the manual may not fit in the context",
+     "intro": "A model can only consider a limited amount of text at once, called its CONTEXT WINDOW, measured in tokens. The context usually includes instructions the product adds, the conversation so far, any files or pasted text, and the reply being written. When a long conversation or document exceeds the window, something has to give: depending on the product, older messages may be dropped or shortened, part of a file may be left out, or the request may be refused. The model cannot use text that is no longer in its context, so it may \"forget\" early details or miss the end of a long document.",
+     "feedback": "Long inputs can exceed the context window."
+    },
+    {
+     "id": "S18-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Which approach helps with a very long document?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Paste the whole manual three times to be safe"
+      },
+      {
+       "letter": "B",
+       "text": "Split it into sections and do one at a time"
+      },
+      {
+       "letter": "C",
+       "text": "Remove all headings first"
+      },
+      {
+       "letter": "D",
+       "text": "Send it with no question at all"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Split it into sections and do one at a time",
+     "intro": "A model can only consider a limited amount of text at once, called its CONTEXT WINDOW, measured in tokens. The context usually includes instructions the product adds, the conversation so far, any files or pasted text, and the reply being written. When a long conversation or document exceeds the window, something has to give: depending on the product, older messages may be dropped or shortened, part of a file may be left out, or the request may be refused. The model cannot use text that is no longer in its context, so it may \"forget\" early details or miss the end of a long document.",
+     "feedback": "Sections keep each request within limits."
+    },
+    {
+     "id": "S18-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "A product says its context window is 8,000 tokens. Using about three quarters of a word per token, about how many words of total conversation can it consider?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "About 6,000 words"
+      },
+      {
+       "letter": "B",
+       "text": "About 2,000 words"
+      },
+      {
+       "letter": "C",
+       "text": "About 10,667 words"
+      },
+      {
+       "letter": "D",
+       "text": "Exactly 8,000 words"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "About 6,000 words",
+     "intro": "A model can only consider a limited amount of text at once, called its CONTEXT WINDOW, measured in tokens. The context usually includes instructions the product adds, the conversation so far, any files or pasted text, and the reply being written. When a long conversation or document exceeds the window, something has to give: depending on the product, older messages may be dropped or shortened, part of a file may be left out, or the request may be refused. The model cannot use text that is no longer in its context, so it may \"forget\" early details or miss the end of a long document.",
+     "feedback": "8,000 x 0.75 = 6,000 words (an estimate)."
+    },
+    {
+     "id": "S18-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Why does starting a fresh conversation sometimes fix confused answers?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It deletes the model's parameters"
+      },
+      {
+       "letter": "B",
+       "text": "It switches the user to a paid account"
+      },
+      {
+       "letter": "C",
+       "text": "It retrains the model from scratch"
+      },
+      {
+       "letter": "D",
+       "text": "It clears old text that crowded the context"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "It clears old text that crowded the context",
+     "intro": "A model can only consider a limited amount of text at once, called its CONTEXT WINDOW, measured in tokens. The context usually includes instructions the product adds, the conversation so far, any files or pasted text, and the reply being written. When a long conversation or document exceeds the window, something has to give: depending on the product, older messages may be dropped or shortened, part of a file may be left out, or the request may be refused. The model cannot use text that is no longer in its context, so it may \"forget\" early details or miss the end of a long document.",
+     "feedback": "A new chat starts with a clean context."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Help a model use long input well",
+   "questions": [
+    {
+     "id": "S18-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "A long report fits in the context, but the answer misses a key figure in the middle. What does this show?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Models never read the middle of documents"
+      },
+      {
+       "letter": "B",
+       "text": "The figure must not exist in the report"
+      },
+      {
+       "letter": "C",
+       "text": "Fitting in the window does not ensure careful use"
+      },
+      {
+       "letter": "D",
+       "text": "Context windows are always unlimited"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Fitting in the window does not ensure careful use",
+     "intro": "Even text that fits in the context window is not always used equally well. Models can overlook details buried in the middle of a very long input, especially when many similar details compete. Practical habits help: put the most important instructions and facts where they are easy to find, restate key requirements when a conversation gets long, split very long documents into sections, and check that answers cover the parts you care about. A bigger context window raises the limit; it does not guarantee careful reading.",
+     "feedback": "Details in the middle can be overlooked."
+    },
+    {
+     "id": "S18-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Where should you put the most important instructions in a long request?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only in the file name"
+      },
+      {
+       "letter": "B",
+       "text": "Somewhere easy to find, then restate them"
+      },
+      {
+       "letter": "C",
+       "text": "Hidden in the middle among many other details"
+      },
+      {
+       "letter": "D",
+       "text": "Nowhere; models guess instructions"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Somewhere easy to find, then restate them",
+     "intro": "Even text that fits in the context window is not always used equally well. Models can overlook details buried in the middle of a very long input, especially when many similar details compete. Practical habits help: put the most important instructions and facts where they are easy to find, restate key requirements when a conversation gets long, split very long documents into sections, and check that answers cover the parts you care about. A bigger context window raises the limit; it does not guarantee careful reading.",
+     "feedback": "Prominent, repeated instructions help."
+    },
+    {
+     "id": "S18-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "A tool advertises a much bigger context window. What can you conclude?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It must use a completely different kind of model"
+      },
+      {
+       "letter": "B",
+       "text": "It now reads every detail perfectly"
+      },
+      {
+       "letter": "C",
+       "text": "It no longer makes any errors"
+      },
+      {
+       "letter": "D",
+       "text": "It takes more text; answers still need checking"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "It takes more text; answers still need checking",
+     "intro": "Even text that fits in the context window is not always used equally well. Models can overlook details buried in the middle of a very long input, especially when many similar details compete. Practical habits help: put the most important instructions and facts where they are easy to find, restate key requirements when a conversation gets long, split very long documents into sections, and check that answers cover the parts you care about. A bigger context window raises the limit; it does not guarantee careful reading.",
+     "feedback": "A bigger limit is not a guarantee."
+    },
+    {
+     "id": "S18-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "You need answers about sections 2 and 7 of a long contract. What is a sensible way to check the answer?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Confirm it covers both sections, using the text"
+      },
+      {
+       "letter": "B",
+       "text": "Check only section 2"
+      },
+      {
+       "letter": "C",
+       "text": "Accept it as long as the answer is long and detailed"
+      },
+      {
+       "letter": "D",
+       "text": "Assume both were read"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Confirm it covers both sections, using the text",
+     "intro": "Even text that fits in the context window is not always used equally well. Models can overlook details buried in the middle of a very long input, especially when many similar details compete. Practical habits help: put the most important instructions and facts where they are easy to find, restate key requirements when a conversation gets long, split very long documents into sections, and check that answers cover the parts you care about. A bigger context window raises the limit; it does not guarantee careful reading.",
+     "feedback": "Check coverage of the parts you care about."
+    },
+    {
+     "id": "S18-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "A conversation has many similar product codes. The model mixes two up. What would help?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Change the font of the codes"
+      },
+      {
+       "letter": "B",
+       "text": "Add even more similar codes"
+      },
+      {
+       "letter": "C",
+       "text": "Restate the key codes clearly in this message"
+      },
+      {
+       "letter": "D",
+       "text": "Ask the model to sound more confident about them"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Restate the key codes clearly in this message",
+     "intro": "Even text that fits in the context window is not always used equally well. Models can overlook details buried in the middle of a very long input, especially when many similar details compete. Practical habits help: put the most important instructions and facts where they are easy to find, restate key requirements when a conversation gets long, split very long documents into sections, and check that answers cover the parts you care about. A bigger context window raises the limit; it does not guarantee careful reading.",
+     "feedback": "Clear, current restatement reduces mix-ups."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

@@ -1,0 +1,679 @@
+{
+ "set": 89,
+ "title": "Reading error messages",
+ "outcome": "AI.CODE.05",
+ "content_status": "stable",
+ "requires": [
+  85
+ ],
+ "module": "code",
+ "path_refs": [
+  "coding"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Use an error message to locate a problem",
+   "questions": [
+    {
+     "id": "S89-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Where should you start reading a traceback?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "At the bottom"
+      },
+      {
+       "letter": "B",
+       "text": "In the middle"
+      },
+      {
+       "letter": "C",
+       "text": "Nowhere; ignore it"
+      },
+      {
+       "letter": "D",
+       "text": "At the very top"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "At the bottom",
+     "intro": "When Python hits a problem, it stops and shows an ERROR MESSAGE, often called a TRACEBACK. Read it from the BOTTOM: the last line names the error type and a short explanation, and the line above names the FILE and LINE NUMBER where it happened. Common types: NameError (a name that was never defined, often a typo), TypeError (mixing types, such as adding text to a number), IndexError (asking for a position that does not exist) and ValueError (a value of the right type but wrong content). Use the message to find the problem before asking a tool to fix it, and include the full message when you ask.",
+     "feedback": "The last line names the error."
+    },
+    {
+     "id": "S89-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "In this example, what type of error is shown?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "TypeError"
+      },
+      {
+       "letter": "B",
+       "text": "IndexError"
+      },
+      {
+       "letter": "C",
+       "text": "NameError, because the list called scores was never defined anywhere in the program"
+      },
+      {
+       "letter": "D",
+       "text": "ValueError"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "IndexError",
+     "intro": "When Python hits a problem, it stops and shows an ERROR MESSAGE, often called a TRACEBACK. Read it from the BOTTOM: the last line names the error type and a short explanation, and the line above names the FILE and LINE NUMBER where it happened. Common types: NameError (a name that was never defined, often a typo), TypeError (mixing types, such as adding text to a number), IndexError (asking for a position that does not exist) and ValueError (a value of the right type but wrong content). Use the message to find the problem before asking a tool to fix it, and include the full message when you ask.",
+     "feedback": "Position 3 does not exist.",
+     "example": {
+      "kind": "text",
+      "label": "Prepared code example (Python 3) and its error message, simplified. Shown only; nothing runs.",
+      "text": "scores = [90, 85, 77]\nprint(scores[3])\n\nTraceback (most recent call last):\n  File \"grades.py\", line 2, in <module>\n    print(scores[3])\nIndexError: list index out of range"
+     }
+    },
+    {
+     "id": "S89-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "In the same example, why is position 3 out of range?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because 77 is too large"
+      },
+      {
+       "letter": "B",
+       "text": "Because lists in Python can only hold two items at most, so the third item is ignored"
+      },
+      {
+       "letter": "C",
+       "text": "Python counts positions from 0, so they are 0 to 2"
+      },
+      {
+       "letter": "D",
+       "text": "Because print cannot show lists"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Python counts positions from 0, so they are 0 to 2",
+     "intro": "When Python hits a problem, it stops and shows an ERROR MESSAGE, often called a TRACEBACK. Read it from the BOTTOM: the last line names the error type and a short explanation, and the line above names the FILE and LINE NUMBER where it happened. Common types: NameError (a name that was never defined, often a typo), TypeError (mixing types, such as adding text to a number), IndexError (asking for a position that does not exist) and ValueError (a value of the right type but wrong content). Use the message to find the problem before asking a tool to fix it, and include the full message when you ask.",
+     "feedback": "Three items: positions 0, 1, 2.",
+     "example": {
+      "kind": "text",
+      "label": "Prepared code example (Python 3) and its error message, simplified. Shown only; nothing runs.",
+      "text": "scores = [90, 85, 77]\nprint(scores[3])\n\nTraceback (most recent call last):\n  File \"grades.py\", line 2, in <module>\n    print(scores[3])\nIndexError: list index out of range"
+     }
+    },
+    {
+     "id": "S89-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "In this example, what caused the NameError?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The number 50 is too large for Python to store under any variable name"
+      },
+      {
+       "letter": "B",
+       "text": "print is misspelled"
+      },
+      {
+       "letter": "C",
+       "text": "The file name is wrong"
+      },
+      {
+       "letter": "D",
+       "text": "A typo: totl instead of total"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "A typo: totl instead of total",
+     "intro": "When Python hits a problem, it stops and shows an ERROR MESSAGE, often called a TRACEBACK. Read it from the BOTTOM: the last line names the error type and a short explanation, and the line above names the FILE and LINE NUMBER where it happened. Common types: NameError (a name that was never defined, often a typo), TypeError (mixing types, such as adding text to a number), IndexError (asking for a position that does not exist) and ValueError (a value of the right type but wrong content). Use the message to find the problem before asking a tool to fix it, and include the full message when you ask.",
+     "feedback": "A name never defined.",
+     "example": {
+      "kind": "text",
+      "label": "Prepared code example (Python 3) and its error message, simplified. Shown only; nothing runs.",
+      "text": "total = 50\nprint(totl)\n\nTraceback (most recent call last):\n  File \"shop.py\", line 2, in <module>\n    print(totl)\nNameError: name 'totl' is not defined"
+     }
+    },
+    {
+     "id": "S89-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "When asking a tool to fix an error, what should you include?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only the words \"it is broken,\" since the tool can work out the rest by itself"
+      },
+      {
+       "letter": "B",
+       "text": "The full error message"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing"
+      },
+      {
+       "letter": "D",
+       "text": "Only the file name"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The full error message",
+     "intro": "When Python hits a problem, it stops and shows an ERROR MESSAGE, often called a TRACEBACK. Read it from the BOTTOM: the last line names the error type and a short explanation, and the line above names the FILE and LINE NUMBER where it happened. Common types: NameError (a name that was never defined, often a typo), TypeError (mixing types, such as adding text to a number), IndexError (asking for a position that does not exist) and ValueError (a value of the right type but wrong content). Use the message to find the problem before asking a tool to fix it, and include the full message when you ask.",
+     "feedback": "Full message, plus the code."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Read the last two lines of a traceback",
+   "questions": [
+    {
+     "id": "S89-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "In the example, which file has the error?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "line 7"
+      },
+      {
+       "letter": "B",
+       "text": "ZeroDivisionError, which is the name of the file where the problem happened"
+      },
+      {
+       "letter": "C",
+       "text": "pay.py"
+      },
+      {
+       "letter": "D",
+       "text": "rate"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "pay.py",
+     "intro": "Most of what you need is in the last two lines of a traceback. The LAST line has the error TYPE and a short explanation. The line just above it (usually) shows the code that failed, and the line above that names the FILE and LINE NUMBER. Example ending: 'File \"pay.py\", line 7' then 'rate = hours / 0' then 'ZeroDivisionError: division by zero.' That tells you: file pay.py, line 7, dividing by zero.",
+     "feedback": "Named in the File line."
+    },
+    {
+     "id": "S89-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Which line number?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "7"
+      },
+      {
+       "letter": "B",
+       "text": "0, because the error message mentions division by zero in the last line"
+      },
+      {
+       "letter": "C",
+       "text": "1"
+      },
+      {
+       "letter": "D",
+       "text": "2"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "7",
+     "intro": "Most of what you need is in the last two lines of a traceback. The LAST line has the error TYPE and a short explanation. The line just above it (usually) shows the code that failed, and the line above that names the FILE and LINE NUMBER. Example ending: 'File \"pay.py\", line 7' then 'rate = hours / 0' then 'ZeroDivisionError: division by zero.' That tells you: file pay.py, line 7, dividing by zero.",
+     "feedback": "From the File line."
+    },
+    {
+     "id": "S89-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What is the error type?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "hours"
+      },
+      {
+       "letter": "B",
+       "text": "line 7"
+      },
+      {
+       "letter": "C",
+       "text": "pay.py, which is listed just above the line of code that caused the problem"
+      },
+      {
+       "letter": "D",
+       "text": "ZeroDivisionError"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "ZeroDivisionError",
+     "intro": "Most of what you need is in the last two lines of a traceback. The LAST line has the error TYPE and a short explanation. The line just above it (usually) shows the code that failed, and the line above that names the FILE and LINE NUMBER. Example ending: 'File \"pay.py\", line 7' then 'rate = hours / 0' then 'ZeroDivisionError: division by zero.' That tells you: file pay.py, line 7, dividing by zero.",
+     "feedback": "The last line."
+    },
+    {
+     "id": "S89-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What is the problem?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Adding text to numbers"
+      },
+      {
+       "letter": "B",
+       "text": "Dividing by zero"
+      },
+      {
+       "letter": "C",
+       "text": "A missing file"
+      },
+      {
+       "letter": "D",
+       "text": "A misspelled variable name"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Dividing by zero",
+     "intro": "Most of what you need is in the last two lines of a traceback. The LAST line has the error TYPE and a short explanation. The line just above it (usually) shows the code that failed, and the line above that names the FILE and LINE NUMBER. Example ending: 'File \"pay.py\", line 7' then 'rate = hours / 0' then 'ZeroDivisionError: division by zero.' That tells you: file pay.py, line 7, dividing by zero.",
+     "feedback": "Division by zero."
+    },
+    {
+     "id": "S89-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Which two lines hold most of the information?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The last two"
+      },
+      {
+       "letter": "B",
+       "text": "None"
+      },
+      {
+       "letter": "C",
+       "text": "The middle two"
+      },
+      {
+       "letter": "D",
+       "text": "The first two"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The last two",
+     "intro": "Most of what you need is in the last two lines of a traceback. The LAST line has the error TYPE and a short explanation. The line just above it (usually) shows the code that failed, and the line above that names the FILE and LINE NUMBER. Example ending: 'File \"pay.py\", line 7' then 'rate = hours / 0' then 'ZeroDivisionError: division by zero.' That tells you: file pay.py, line 7, dividing by zero.",
+     "feedback": "Read from the bottom."
+    }
+   ],
+   "branch_mode": "underlying_skill",
+   "relationship": "A learner overwhelmed by tracebacks practices the underlying skill of reading only the last lines."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Locate problems from error messages",
+   "questions": [
+    {
+     "id": "S89-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "In this example, what is the problem?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The variable name \"age\" is not allowed in Python, so the program cannot run at all"
+      },
+      {
+       "letter": "B",
+       "text": "A missing file"
+      },
+      {
+       "letter": "C",
+       "text": "The number 15 is too large"
+      },
+      {
+       "letter": "D",
+       "text": "Adding text to a number"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Adding text to a number",
+     "intro": "When Python hits a problem, it stops and shows an ERROR MESSAGE, often called a TRACEBACK. Read it from the BOTTOM: the last line names the error type and a short explanation, and the line above names the FILE and LINE NUMBER where it happened. Common types: NameError (a name that was never defined, often a typo), TypeError (mixing types, such as adding text to a number), IndexError (asking for a position that does not exist) and ValueError (a value of the right type but wrong content). Use the message to find the problem before asking a tool to fix it, and include the full message when you ask.",
+     "feedback": "TypeError: str plus int.",
+     "example": {
+      "kind": "text",
+      "label": "Prepared code example (Python 3) and its error message, simplified. Shown only; nothing runs.",
+      "text": "age = 15\nprint(\"Age: \" + age)\n\nTraceback (most recent call last):\n  File \"card.py\", line 2, in <module>\n    print(\"Age: \" + age)\nTypeError: can only concatenate str (not \"int\") to str"
+     }
+    },
+    {
+     "id": "S89-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "In the same example, which line has the problem?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Line 3"
+      },
+      {
+       "letter": "B",
+       "text": "Line 15"
+      },
+      {
+       "letter": "C",
+       "text": "Line 2"
+      },
+      {
+       "letter": "D",
+       "text": "Line 1"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Line 2",
+     "intro": "When Python hits a problem, it stops and shows an ERROR MESSAGE, often called a TRACEBACK. Read it from the BOTTOM: the last line names the error type and a short explanation, and the line above names the FILE and LINE NUMBER where it happened. Common types: NameError (a name that was never defined, often a typo), TypeError (mixing types, such as adding text to a number), IndexError (asking for a position that does not exist) and ValueError (a value of the right type but wrong content). Use the message to find the problem before asking a tool to fix it, and include the full message when you ask.",
+     "feedback": "Named in the traceback.",
+     "example": {
+      "kind": "text",
+      "label": "Prepared code example (Python 3) and its error message, simplified. Shown only; nothing runs.",
+      "text": "age = 15\nprint(\"Age: \" + age)\n\nTraceback (most recent call last):\n  File \"card.py\", line 2, in <module>\n    print(\"Age: \" + age)\nTypeError: can only concatenate str (not \"int\") to str"
+     }
+    },
+    {
+     "id": "S89-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "int(\"ten\") gives \"ValueError: invalid literal for int().\" What does it mean?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The list is too short"
+      },
+      {
+       "letter": "B",
+       "text": "The file is missing"
+      },
+      {
+       "letter": "C",
+       "text": "The program forgot to define a variable called \"ten\" before using it on this line"
+      },
+      {
+       "letter": "D",
+       "text": "The text is not a number Python can convert"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The text is not a number Python can convert",
+     "intro": "When Python hits a problem, it stops and shows an ERROR MESSAGE, often called a TRACEBACK. Read it from the BOTTOM: the last line names the error type and a short explanation, and the line above names the FILE and LINE NUMBER where it happened. Common types: NameError (a name that was never defined, often a typo), TypeError (mixing types, such as adding text to a number), IndexError (asking for a position that does not exist) and ValueError (a value of the right type but wrong content). Use the message to find the problem before asking a tool to fix it, and include the full message when you ask.",
+     "feedback": "Right type, wrong content."
+    },
+    {
+     "id": "S89-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A NameError names \"prnt.\" What is the likely cause?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Text plus a number"
+      },
+      {
+       "letter": "B",
+       "text": "Dividing by zero"
+      },
+      {
+       "letter": "C",
+       "text": "A typo for print"
+      },
+      {
+       "letter": "D",
+       "text": "A missing list item"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A typo for print",
+     "intro": "When Python hits a problem, it stops and shows an ERROR MESSAGE, often called a TRACEBACK. Read it from the BOTTOM: the last line names the error type and a short explanation, and the line above names the FILE and LINE NUMBER where it happened. Common types: NameError (a name that was never defined, often a typo), TypeError (mixing types, such as adding text to a number), IndexError (asking for a position that does not exist) and ValueError (a value of the right type but wrong content). Use the message to find the problem before asking a tool to fix it, and include the full message when you ask.",
+     "feedback": "Misspelled name."
+    },
+    {
+     "id": "S89-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Before asking a tool for a fix, what is a good first step?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Find the line and error type yourself"
+      },
+      {
+       "letter": "B",
+       "text": "Restart the computer"
+      },
+      {
+       "letter": "C",
+       "text": "Ignore the message"
+      },
+      {
+       "letter": "D",
+       "text": "Delete the whole program and start again"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Find the line and error type yourself",
+     "intro": "When Python hits a problem, it stops and shows an ERROR MESSAGE, often called a TRACEBACK. Read it from the BOTTOM: the last line names the error type and a short explanation, and the line above names the FILE and LINE NUMBER where it happened. Common types: NameError (a name that was never defined, often a typo), TypeError (mixing types, such as adding text to a number), IndexError (asking for a position that does not exist) and ValueError (a value of the right type but wrong content). Use the message to find the problem before asking a tool to fix it, and include the full message when you ask.",
+     "feedback": "Locate the problem."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Trace errors to their cause and confirm fixes",
+   "questions": [
+    {
+     "id": "S89-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "An error appears on line 20, but the wrong value was created on line 5. Where is the cause?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nowhere"
+      },
+      {
+       "letter": "B",
+       "text": "Line 5"
+      },
+      {
+       "letter": "C",
+       "text": "Line 1"
+      },
+      {
+       "letter": "D",
+       "text": "Line 20"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Line 5",
+     "intro": "The line named in a traceback is where Python noticed the problem, not always where it started. A wrong value created earlier may only cause an error later. Fixes suggested by tools can hide errors instead of solving them, for example wrapping code so the error is silently ignored. Prefer fixes that address the cause, and after any fix, run the original failing case again to confirm the error is gone and the result is right.",
+     "feedback": "Errors can surface later."
+    },
+    {
+     "id": "S89-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A tool \"fixes\" an error by making the program ignore all errors silently. What is wrong?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It uses Python"
+      },
+      {
+       "letter": "B",
+       "text": "It is too short"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing, because a program that shows no errors on screen is always working correctly"
+      },
+      {
+       "letter": "D",
+       "text": "It hides the problem"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "It hides the problem",
+     "intro": "The line named in a traceback is where Python noticed the problem, not always where it started. A wrong value created earlier may only cause an error later. Fixes suggested by tools can hide errors instead of solving them, for example wrapping code so the error is silently ignored. Prefer fixes that address the cause, and after any fix, run the original failing case again to confirm the error is gone and the result is right.",
+     "feedback": "Address the cause."
+    },
+    {
+     "id": "S89-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "After applying a fix, what should you do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Rerun the original failing case"
+      },
+      {
+       "letter": "B",
+       "text": "Delete the test"
+      },
+      {
+       "letter": "C",
+       "text": "Ask for another fix"
+      },
+      {
+       "letter": "D",
+       "text": "Move on without testing, since the tool already confirmed the fix would definitely work"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Rerun the original failing case",
+     "intro": "The line named in a traceback is where Python noticed the problem, not always where it started. A wrong value created earlier may only cause an error later. Fixes suggested by tools can hide errors instead of solving them, for example wrapping code so the error is silently ignored. Prefer fixes that address the cause, and after any fix, run the original failing case again to confirm the error is gone and the result is right.",
+     "feedback": "Confirm the fix."
+    },
+    {
+     "id": "S89-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "The error is gone, but the output is now wrong. Is it fixed?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes, if it is fast"
+      },
+      {
+       "letter": "B",
+       "text": "Yes, because removing an error message is the same thing as fixing the problem"
+      },
+      {
+       "letter": "C",
+       "text": "No; the result must also be right"
+      },
+      {
+       "letter": "D",
+       "text": "It cannot be known"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "No; the result must also be right",
+     "intro": "The line named in a traceback is where Python noticed the problem, not always where it started. A wrong value created earlier may only cause an error later. Fixes suggested by tools can hide errors instead of solving them, for example wrapping code so the error is silently ignored. Prefer fixes that address the cause, and after any fix, run the original failing case again to confirm the error is gone and the result is right.",
+     "feedback": "No error is not the same as correct."
+    },
+    {
+     "id": "S89-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Which fix addresses the cause of IndexError from scores[3] on a 3-item list?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Hide the error message so that the program keeps running and prints nothing at all"
+      },
+      {
+       "letter": "B",
+       "text": "Use a valid position, such as scores[2]"
+      },
+      {
+       "letter": "C",
+       "text": "Rename the list"
+      },
+      {
+       "letter": "D",
+       "text": "Add more print lines"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Use a valid position, such as scores[2]",
+     "intro": "The line named in a traceback is where Python noticed the problem, not always where it started. A wrong value created earlier may only cause an error later. Fixes suggested by tools can hide errors instead of solving them, for example wrapping code so the error is silently ignored. Prefer fixes that address the cause, and after any fix, run the original failing case again to confirm the error is gone and the result is right.",
+     "feedback": "Fix the position."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

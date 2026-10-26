@@ -1,0 +1,715 @@
+{
+ "set": 125,
+ "title": "One accuracy score can hide problems",
+ "outcome": "AI.FAIR.05",
+ "content_status": "stable",
+ "requires": [
+  122
+ ],
+ "module": "fairness",
+ "path_refs": [
+  "society",
+  "work"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Explain why one accuracy score can hide problems and plan inclusive testing",
+   "questions": [
+    {
+     "id": "S125-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "In this prepared example, what is the overall accuracy?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "70%"
+      },
+      {
+       "letter": "B",
+       "text": "84%, which is the average of 98% and 70% without counting how many tests each had"
+      },
+      {
+       "letter": "C",
+       "text": "95.2%"
+      },
+      {
+       "letter": "D",
+       "text": "98%"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "95.2%",
+     "intro": "One overall ACCURACY score can hide serious problems. If a tool is 95% accurate overall, it might be 98% accurate for a large group and only 70% for a small one, because the large group dominates the average. It can also hide poor results on rare but important CASES, such as unusual accents or uncommon medical conditions. INCLUSIVE TESTING breaks results down: by group, by situation and by type of case. It includes enough examples from smaller groups to measure them reliably, and checks the cases where errors would cause the most harm.",
+     "feedback": "952 / 1,000.",
+     "example": {
+      "kind": "table",
+      "label": "Prepared example (fictional results)",
+      "table": [
+       [
+        "Group",
+        "Tests",
+        "Correct",
+        "Accuracy"
+       ],
+       [
+        "Large group",
+        "900",
+        "882",
+        "98%"
+       ],
+       [
+        "Small group",
+        "100",
+        "70",
+        "70%"
+       ],
+       [
+        "All",
+        "1,000",
+        "952",
+        "95.2%"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "S125-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "In the same example, why is the overall score close to 98%?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because accuracy is always high"
+      },
+      {
+       "letter": "B",
+       "text": "The large group dominates the average"
+      },
+      {
+       "letter": "C",
+       "text": "Because the small group's results are not included anywhere in the overall total"
+      },
+      {
+       "letter": "D",
+       "text": "Because 70% rounds up"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The large group dominates the average",
+     "intro": "One overall ACCURACY score can hide serious problems. If a tool is 95% accurate overall, it might be 98% accurate for a large group and only 70% for a small one, because the large group dominates the average. It can also hide poor results on rare but important CASES, such as unusual accents or uncommon medical conditions. INCLUSIVE TESTING breaks results down: by group, by situation and by type of case. It includes enough examples from smaller groups to measure them reliably, and checks the cases where errors would cause the most harm.",
+     "feedback": "Weighted by size.",
+     "example": {
+      "kind": "table",
+      "label": "Prepared example (fictional results)",
+      "table": [
+       [
+        "Group",
+        "Tests",
+        "Correct",
+        "Accuracy"
+       ],
+       [
+        "Large group",
+        "900",
+        "882",
+        "98%"
+       ],
+       [
+        "Small group",
+        "100",
+        "70",
+        "70%"
+       ],
+       [
+        "All",
+        "1,000",
+        "952",
+        "95.2%"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "S125-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "What can a single overall score hide?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nothing at all, since one number always tells you everything about how a tool performs"
+      },
+      {
+       "letter": "B",
+       "text": "Only the tool's price"
+      },
+      {
+       "letter": "C",
+       "text": "Only its speed"
+      },
+      {
+       "letter": "D",
+       "text": "Poor results for some groups or cases"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Poor results for some groups or cases",
+     "intro": "One overall ACCURACY score can hide serious problems. If a tool is 95% accurate overall, it might be 98% accurate for a large group and only 70% for a small one, because the large group dominates the average. It can also hide poor results on rare but important CASES, such as unusual accents or uncommon medical conditions. INCLUSIVE TESTING breaks results down: by group, by situation and by type of case. It includes enough examples from smaller groups to measure them reliably, and checks the cases where errors would cause the most harm.",
+     "feedback": "Averages hide gaps."
+    },
+    {
+     "id": "S125-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "What does inclusive testing do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Breaks results down by group, situation and case"
+      },
+      {
+       "letter": "B",
+       "text": "Tests only the largest group"
+      },
+      {
+       "letter": "C",
+       "text": "Skips rare cases"
+      },
+      {
+       "letter": "D",
+       "text": "Combines all results into one single number"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Breaks results down by group, situation and case",
+     "intro": "One overall ACCURACY score can hide serious problems. If a tool is 95% accurate overall, it might be 98% accurate for a large group and only 70% for a small one, because the large group dominates the average. It can also hide poor results on rare but important CASES, such as unusual accents or uncommon medical conditions. INCLUSIVE TESTING breaks results down: by group, by situation and by type of case. It includes enough examples from smaller groups to measure them reliably, and checks the cases where errors would cause the most harm.",
+     "feedback": "Disaggregated results."
+    },
+    {
+     "id": "S125-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Which cases deserve special checking?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only the most common ones"
+      },
+      {
+       "letter": "B",
+       "text": "Those where errors cause the most harm"
+      },
+      {
+       "letter": "C",
+       "text": "None"
+      },
+      {
+       "letter": "D",
+       "text": "Those that are easiest for the tool"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Those where errors cause the most harm",
+     "intro": "One overall ACCURACY score can hide serious problems. If a tool is 95% accurate overall, it might be 98% accurate for a large group and only 70% for a small one, because the large group dominates the average. It can also hide poor results on rare but important CASES, such as unusual accents or uncommon medical conditions. INCLUSIVE TESTING breaks results down: by group, by situation and by type of case. It includes enough examples from smaller groups to measure them reliably, and checks the cases where errors would cause the most harm.",
+     "feedback": "High-harm cases."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare an overall score with a class average",
+   "questions": [
+    {
+     "id": "S125-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "What does the 85% average hide?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The test date"
+      },
+      {
+       "letter": "B",
+       "text": "That every student in the class scored exactly eighty-five percent on the test"
+      },
+      {
+       "letter": "C",
+       "text": "The teacher's name"
+      },
+      {
+       "letter": "D",
+       "text": "Three students who are struggling"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Three students who are struggling",
+     "intro": "A class average of 85% on a test sounds good. But if 25 students scored about 90% and 3 students scored about 40%, the average hides that those 3 students are struggling. A teacher who only looks at the average would miss them. Tool accuracy works the same way: the overall number can look fine while one group or type of case is failing.",
+     "feedback": "Hidden low scores."
+    },
+    {
+     "id": "S125-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Why does the average still look good?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because 40 is close to 85"
+      },
+      {
+       "letter": "B",
+       "text": "Because the low scores were not counted, since only high scores go into an average"
+      },
+      {
+       "letter": "C",
+       "text": "Most students scored high"
+      },
+      {
+       "letter": "D",
+       "text": "Because the test was easy"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Most students scored high",
+     "intro": "A class average of 85% on a test sounds good. But if 25 students scored about 90% and 3 students scored about 40%, the average hides that those 3 students are struggling. A teacher who only looks at the average would miss them. Tool accuracy works the same way: the overall number can look fine while one group or type of case is failing.",
+     "feedback": "Majority dominates."
+    },
+    {
+     "id": "S125-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Who would the teacher miss by looking only at the average?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The struggling students"
+      },
+      {
+       "letter": "B",
+       "text": "The principal"
+      },
+      {
+       "letter": "C",
+       "text": "The students who scored about ninety percent, since they are hidden by the average"
+      },
+      {
+       "letter": "D",
+       "text": "Nobody"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The struggling students",
+     "intro": "A class average of 85% on a test sounds good. But if 25 students scored about 90% and 3 students scored about 40%, the average hides that those 3 students are struggling. A teacher who only looks at the average would miss them. Tool accuracy works the same way: the overall number can look fine while one group or type of case is failing.",
+     "feedback": "The minority."
+    },
+    {
+     "id": "S125-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "In AI terms, the 3 students are like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The tool's price"
+      },
+      {
+       "letter": "B",
+       "text": "A group the tool works poorly for"
+      },
+      {
+       "letter": "C",
+       "text": "The tool's strongest group, where its results are better than for anyone else"
+      },
+      {
+       "letter": "D",
+       "text": "A benchmark"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A group the tool works poorly for",
+     "intro": "A class average of 85% on a test sounds good. But if 25 students scored about 90% and 3 students scored about 40%, the average hides that those 3 students are struggling. A teacher who only looks at the average would miss them. Tool accuracy works the same way: the overall number can look fine while one group or type of case is failing.",
+     "feedback": "Hidden failure."
+    },
+    {
+     "id": "S125-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "What should the teacher do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Report only the average, since breaking scores down takes too much time to be useful"
+      },
+      {
+       "letter": "B",
+       "text": "Raise the average"
+      },
+      {
+       "letter": "C",
+       "text": "Ignore low scores"
+      },
+      {
+       "letter": "D",
+       "text": "Look at individual or group scores"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Look at individual or group scores",
+     "intro": "A class average of 85% on a test sounds good. But if 25 students scored about 90% and 3 students scored about 40%, the average hides that those 3 students are struggling. A teacher who only looks at the average would miss them. Tool accuracy works the same way: the overall number can look fine while one group or type of case is failing.",
+     "feedback": "Break results down."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who trusts one accuracy number can compare it with a class average that hides struggling students."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Plan inclusive testing in practice",
+   "questions": [
+    {
+     "id": "S125-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "A voice assistant reports 96% accuracy. Which follow-up question matters most?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"When was it released?\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Is ninety-six percent the highest accuracy number that any voice assistant has ever reached?\""
+      },
+      {
+       "letter": "C",
+       "text": "\"How accurate is it for different accents?\""
+      },
+      {
+       "letter": "D",
+       "text": "\"How many colors does the app use?\""
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "\"How accurate is it for different accents?\"",
+     "intro": "One overall ACCURACY score can hide serious problems. If a tool is 95% accurate overall, it might be 98% accurate for a large group and only 70% for a small one, because the large group dominates the average. It can also hide poor results on rare but important CASES, such as unusual accents or uncommon medical conditions. INCLUSIVE TESTING breaks results down: by group, by situation and by type of case. It includes enough examples from smaller groups to measure them reliably, and checks the cases where errors would cause the most harm.",
+     "feedback": "Break down results."
+    },
+    {
+     "id": "S125-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "A medical tool works well for common conditions but poorly for a rare, dangerous one. What does overall accuracy hide?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Poor results on a rare but important case"
+      },
+      {
+       "letter": "B",
+       "text": "The tool's speed"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing, because rare conditions are so uncommon that they never affect any real patients"
+      },
+      {
+       "letter": "D",
+       "text": "The hospital's name"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Poor results on a rare but important case",
+     "intro": "One overall ACCURACY score can hide serious problems. If a tool is 95% accurate overall, it might be 98% accurate for a large group and only 70% for a small one, because the large group dominates the average. It can also hide poor results on rare but important CASES, such as unusual accents or uncommon medical conditions. INCLUSIVE TESTING breaks results down: by group, by situation and by type of case. It includes enough examples from smaller groups to measure them reliably, and checks the cases where errors would cause the most harm.",
+     "feedback": "Rare, high-harm cases."
+    },
+    {
+     "id": "S125-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "A test set has 500 examples from one group and 5 from another. What problem follows?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No problem, since five examples are always enough to measure how a tool works for any group"
+      },
+      {
+       "letter": "B",
+       "text": "Too few examples to measure the small group"
+      },
+      {
+       "letter": "C",
+       "text": "The large group is unmeasurable"
+      },
+      {
+       "letter": "D",
+       "text": "The test is too long"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Too few examples to measure the small group",
+     "intro": "One overall ACCURACY score can hide serious problems. If a tool is 95% accurate overall, it might be 98% accurate for a large group and only 70% for a small one, because the large group dominates the average. It can also hide poor results on rare but important CASES, such as unusual accents or uncommon medical conditions. INCLUSIVE TESTING breaks results down: by group, by situation and by type of case. It includes enough examples from smaller groups to measure them reliably, and checks the cases where errors would cause the most harm.",
+     "feedback": "Collect more."
+    },
+    {
+     "id": "S125-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Which plan is most inclusive for a reading app?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Test with one reader"
+      },
+      {
+       "letter": "B",
+       "text": "Skip testing"
+      },
+      {
+       "letter": "C",
+       "text": "Test only with the developers themselves, since they understand the app better than anyone"
+      },
+      {
+       "letter": "D",
+       "text": "Test with readers of different ages, languages and abilities"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Test with readers of different ages, languages and abilities",
+     "intro": "One overall ACCURACY score can hide serious problems. If a tool is 95% accurate overall, it might be 98% accurate for a large group and only 70% for a small one, because the large group dominates the average. It can also hide poor results on rare but important CASES, such as unusual accents or uncommon medical conditions. INCLUSIVE TESTING breaks results down: by group, by situation and by type of case. It includes enough examples from smaller groups to measure them reliably, and checks the cases where errors would cause the most harm.",
+     "feedback": "Diverse testing."
+    },
+    {
+     "id": "S125-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Results by group show 97% and 72%. What should a report include?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only the overall average, since group numbers might confuse readers of the report"
+      },
+      {
+       "letter": "B",
+       "text": "Neither"
+      },
+      {
+       "letter": "C",
+       "text": "Both numbers, not just the average"
+      },
+      {
+       "letter": "D",
+       "text": "Only 97%"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Both numbers, not just the average",
+     "intro": "One overall ACCURACY score can hide serious problems. If a tool is 95% accurate overall, it might be 98% accurate for a large group and only 70% for a small one, because the large group dominates the average. It can also hide poor results on rare but important CASES, such as unusual accents or uncommon medical conditions. INCLUSIVE TESTING breaks results down: by group, by situation and by type of case. It includes enough examples from smaller groups to measure them reliably, and checks the cases where errors would cause the most harm.",
+     "feedback": "Show the breakdown."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Handle the practical side of inclusive testing",
+   "questions": [
+    {
+     "id": "S125-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "With 10 examples in a group, how much does one error move the rate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "10 percentage points"
+      },
+      {
+       "letter": "B",
+       "text": "50 percentage points"
+      },
+      {
+       "letter": "C",
+       "text": "100 percentage points"
+      },
+      {
+       "letter": "D",
+       "text": "1 percentage point"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "10 percentage points",
+     "intro": "Breaking results down raises practical questions. Small groups give noisy numbers: with 10 examples, one error moves the rate by 10 points, so collect more where possible. Some group information is sensitive and must be gathered with consent and care. And deciding which groups and cases to test is itself a choice; involving the people affected helps reveal cases a team would not think of.",
+     "feedback": "1 / 10 = 10%."
+    },
+    {
+     "id": "S125-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Collecting group information like disability status requires what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Publishing it online"
+      },
+      {
+       "letter": "B",
+       "text": "Consent and care"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing, since any information about people can be collected freely for testing purposes"
+      },
+      {
+       "letter": "D",
+       "text": "A faster computer"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Consent and care",
+     "intro": "Breaking results down raises practical questions. Small groups give noisy numbers: with 10 examples, one error moves the rate by 10 points, so collect more where possible. Some group information is sensitive and must be gathered with consent and care. And deciding which groups and cases to test is itself a choice; involving the people affected helps reveal cases a team would not think of.",
+     "feedback": "Sensitive data."
+    },
+    {
+     "id": "S125-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Who can help reveal cases a team would not think of?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The people affected"
+      },
+      {
+       "letter": "B",
+       "text": "The tool itself"
+      },
+      {
+       "letter": "C",
+       "text": "Only the team's own engineers, who always know every case that could possibly matter"
+      },
+      {
+       "letter": "D",
+       "text": "No one"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The people affected",
+     "intro": "Breaking results down raises practical questions. Small groups give noisy numbers: with 10 examples, one error moves the rate by 10 points, so collect more where possible. Some group information is sensitive and must be gathered with consent and care. And deciding which groups and cases to test is itself a choice; involving the people affected helps reveal cases a team would not think of.",
+     "feedback": "Involve affected people."
+    },
+    {
+     "id": "S125-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Is choosing which groups to test a neutral technical step?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes, because every tool must always be tested on exactly the same list of groups everywhere"
+      },
+      {
+       "letter": "B",
+       "text": "Yes, always"
+      },
+      {
+       "letter": "C",
+       "text": "No; it is a choice"
+      },
+      {
+       "letter": "D",
+       "text": "It does not matter"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "No; it is a choice",
+     "intro": "Breaking results down raises practical questions. Small groups give noisy numbers: with 10 examples, one error moves the rate by 10 points, so collect more where possible. Some group information is sensitive and must be gathered with consent and care. And deciding which groups and cases to test is itself a choice; involving the people affected helps reveal cases a team would not think of.",
+     "feedback": "Judgment involved."
+    },
+    {
+     "id": "S125-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "A small group has noisy results. What helps?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ignoring the noise"
+      },
+      {
+       "letter": "B",
+       "text": "Reporting only the average"
+      },
+      {
+       "letter": "C",
+       "text": "Removing that group from the test set entirely, so that the noisy numbers do not appear"
+      },
+      {
+       "letter": "D",
+       "text": "Collecting more examples"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Collecting more examples",
+     "intro": "Breaking results down raises practical questions. Small groups give noisy numbers: with 10 examples, one error moves the rate by 10 points, so collect more where possible. Some group information is sensitive and must be gathered with consent and care. And deciding which groups and cases to test is itself a choice; involving the people affected helps reveal cases a team would not think of.",
+     "feedback": "More data, better estimates."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

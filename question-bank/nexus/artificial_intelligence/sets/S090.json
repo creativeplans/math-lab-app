@@ -1,0 +1,666 @@
+{
+ "set": 90,
+ "title": "Explaining and reviewing code",
+ "outcome": "AI.CODE.06",
+ "content_status": "stable",
+ "requires": [
+  86
+ ],
+ "module": "code",
+ "path_refs": [
+  "coding"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Use explanations as a starting point and review code against requirements",
+   "questions": [
+    {
+     "id": "S90-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "How should you treat a tool's explanation of code?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "As useless"
+      },
+      {
+       "letter": "B",
+       "text": "As a replacement for running it"
+      },
+      {
+       "letter": "C",
+       "text": "As a starting point to check"
+      },
+      {
+       "letter": "D",
+       "text": "As proof of what the code does"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "As a starting point to check",
+     "intro": "Tools can EXPLAIN code in plain words, which is helpful for learning. Treat an explanation as a STARTING POINT: it may describe what code was meant to do rather than what it does. A CODE REVIEW checks code LINE BY LINE against its REQUIREMENTS. For each line ask: What does it do? Is it needed? Does it match the requirement? Is anything missing? Comments, names and explanations can all be wrong, so check the actual statements. Example: a comment says \"return the largest number,\" but the code uses min(), which returns the smallest.",
+     "feedback": "Helpful, but verify."
+    },
+    {
+     "id": "S90-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "In this example, what does the program print?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "2"
+      },
+      {
+       "letter": "B",
+       "text": "4"
+      },
+      {
+       "letter": "C",
+       "text": "9, because the comment says the function returns the largest number in the list"
+      },
+      {
+       "letter": "D",
+       "text": "15"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "2",
+     "intro": "Tools can EXPLAIN code in plain words, which is helpful for learning. Treat an explanation as a STARTING POINT: it may describe what code was meant to do rather than what it does. A CODE REVIEW checks code LINE BY LINE against its REQUIREMENTS. For each line ask: What does it do? Is it needed? Does it match the requirement? Is anything missing? Comments, names and explanations can all be wrong, so check the actual statements. Example: a comment says \"return the largest number,\" but the code uses min(), which returns the smallest.",
+     "feedback": "min() returns the smallest.",
+     "example": {
+      "kind": "code",
+      "label": "Prepared code example (Python 3). Shown only; nothing runs.",
+      "code": "# Return the largest number in the list\ndef biggest(nums):\n    return min(nums)\n\nprint(biggest([4, 9, 2]))",
+      "language": "Python 3"
+     }
+    },
+    {
+     "id": "S90-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "In the same example, what is wrong?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The comment uses the word \"largest,\" which is not allowed in Python comments"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing"
+      },
+      {
+       "letter": "C",
+       "text": "The list is too short"
+      },
+      {
+       "letter": "D",
+       "text": "The code uses min() but the requirement is the largest"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The code uses min() but the requirement is the largest",
+     "intro": "Tools can EXPLAIN code in plain words, which is helpful for learning. Treat an explanation as a STARTING POINT: it may describe what code was meant to do rather than what it does. A CODE REVIEW checks code LINE BY LINE against its REQUIREMENTS. For each line ask: What does it do? Is it needed? Does it match the requirement? Is anything missing? Comments, names and explanations can all be wrong, so check the actual statements. Example: a comment says \"return the largest number,\" but the code uses min(), which returns the smallest.",
+     "feedback": "Code does not match the requirement.",
+     "example": {
+      "kind": "code",
+      "label": "Prepared code example (Python 3). Shown only; nothing runs.",
+      "code": "# Return the largest number in the list\ndef biggest(nums):\n    return min(nums)\n\nprint(biggest([4, 9, 2]))",
+      "language": "Python 3"
+     }
+    },
+    {
+     "id": "S90-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What does a code review check?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only that the code has comments and that the variable names are long and descriptive"
+      },
+      {
+       "letter": "B",
+       "text": "Each line against the requirements"
+      },
+      {
+       "letter": "C",
+       "text": "Only the file name"
+      },
+      {
+       "letter": "D",
+       "text": "Only the indentation"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Each line against the requirements",
+     "intro": "Tools can EXPLAIN code in plain words, which is helpful for learning. Treat an explanation as a STARTING POINT: it may describe what code was meant to do rather than what it does. A CODE REVIEW checks code LINE BY LINE against its REQUIREMENTS. For each line ask: What does it do? Is it needed? Does it match the requirement? Is anything missing? Comments, names and explanations can all be wrong, so check the actual statements. Example: a comment says \"return the largest number,\" but the code uses min(), which returns the smallest.",
+     "feedback": "Line by line, against requirements."
+    },
+    {
+     "id": "S90-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What can be wrong in code besides the statements?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Comments, names and explanations"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing; only the statements in a program can ever contain any mistakes at all"
+      },
+      {
+       "letter": "C",
+       "text": "Only the spaces"
+      },
+      {
+       "letter": "D",
+       "text": "Only the colors"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Comments, names and explanations",
+     "intro": "Tools can EXPLAIN code in plain words, which is helpful for learning. Treat an explanation as a STARTING POINT: it may describe what code was meant to do rather than what it does. A CODE REVIEW checks code LINE BY LINE against its REQUIREMENTS. For each line ask: What does it do? Is it needed? Does it match the requirement? Is anything missing? Comments, names and explanations can all be wrong, so check the actual statements. Example: a comment says \"return the largest number,\" but the code uses min(), which returns the smallest.",
+     "feedback": "All can mislead."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare reviewing code with proofreading a recipe",
+   "questions": [
+    {
+     "id": "S90-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Why not stop at the recipe title?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because cakes have no titles"
+      },
+      {
+       "letter": "B",
+       "text": "It says what it should be, not what the lines do"
+      },
+      {
+       "letter": "C",
+       "text": "Because titles are too short"
+      },
+      {
+       "letter": "D",
+       "text": "Because titles of recipes are always wrong"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "It says what it should be, not what the lines do",
+     "intro": "When you proofread a recipe for a friend, you do not just read the title (\"Easy Chocolate Cake\") and say \"looks good.\" You check each line: is it \"1 cup sugar\" or \"1 tablespoon\"? Is the oven temperature there? Did they forget the eggs? The title is like a code comment: it tells you what it is supposed to be. The lines tell you what will actually happen. Code review is proofreading each line against what the code should do.",
+     "feedback": "Check the lines."
+    },
+    {
+     "id": "S90-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "The recipe title is like what in code?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "An error message"
+      },
+      {
+       "letter": "B",
+       "text": "A variable"
+      },
+      {
+       "letter": "C",
+       "text": "A comment"
+      },
+      {
+       "letter": "D",
+       "text": "A test that runs the code on several inputs and compares the results with answers"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A comment",
+     "intro": "When you proofread a recipe for a friend, you do not just read the title (\"Easy Chocolate Cake\") and say \"looks good.\" You check each line: is it \"1 cup sugar\" or \"1 tablespoon\"? Is the oven temperature there? Did they forget the eggs? The title is like a code comment: it tells you what it is supposed to be. The lines tell you what will actually happen. Code review is proofreading each line against what the code should do.",
+     "feedback": "Intent, not behavior."
+    },
+    {
+     "id": "S90-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Checking \"cup\" versus \"tablespoon\" is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Reading the title of the recipe twice to make sure that the cake is called the right thing"
+      },
+      {
+       "letter": "B",
+       "text": "Choosing a font"
+      },
+      {
+       "letter": "C",
+       "text": "Counting pages"
+      },
+      {
+       "letter": "D",
+       "text": "Checking each line's details"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Checking each line's details",
+     "intro": "When you proofread a recipe for a friend, you do not just read the title (\"Easy Chocolate Cake\") and say \"looks good.\" You check each line: is it \"1 cup sugar\" or \"1 tablespoon\"? Is the oven temperature there? Did they forget the eggs? The title is like a code comment: it tells you what it is supposed to be. The lines tell you what will actually happen. Code review is proofreading each line against what the code should do.",
+     "feedback": "Line-by-line review."
+    },
+    {
+     "id": "S90-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Noticing missing eggs is like what in a code review?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Finding something missing"
+      },
+      {
+       "letter": "B",
+       "text": "Finding a misspelled comment that does not change what the program actually does"
+      },
+      {
+       "letter": "C",
+       "text": "Renaming a variable"
+      },
+      {
+       "letter": "D",
+       "text": "Running the code"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Finding something missing",
+     "intro": "When you proofread a recipe for a friend, you do not just read the title (\"Easy Chocolate Cake\") and say \"looks good.\" You check each line: is it \"1 cup sugar\" or \"1 tablespoon\"? Is the oven temperature there? Did they forget the eggs? The title is like a code comment: it tells you what it is supposed to be. The lines tell you what will actually happen. Code review is proofreading each line against what the code should do.",
+     "feedback": "Look for what is not there."
+    },
+    {
+     "id": "S90-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What decides whether the cake will work?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The title of the recipe, which tells the baker exactly how the cake will turn out"
+      },
+      {
+       "letter": "B",
+       "text": "The photo"
+      },
+      {
+       "letter": "C",
+       "text": "The page color"
+      },
+      {
+       "letter": "D",
+       "text": "The actual lines"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The actual lines",
+     "intro": "When you proofread a recipe for a friend, you do not just read the title (\"Easy Chocolate Cake\") and say \"looks good.\" You check each line: is it \"1 cup sugar\" or \"1 tablespoon\"? Is the oven temperature there? Did they forget the eggs? The title is like a code comment: it tells you what it is supposed to be. The lines tell you what will actually happen. Code review is proofreading each line against what the code should do.",
+     "feedback": "Behavior comes from statements."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who reviews only comments and titles can compare code review with proofreading a recipe."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Review code against requirements in practice",
+   "questions": [
+    {
+     "id": "S90-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Requirement: \"Return the number of students who passed (score 60 or more).\" The code counts scores above 60. What is the issue?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It uses numbers"
+      },
+      {
+       "letter": "B",
+       "text": "It counts too many"
+      },
+      {
+       "letter": "C",
+       "text": "It misses students who scored exactly 60"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing, since a score of exactly 60 is so rare that it can be safely ignored in practice"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "It misses students who scored exactly 60",
+     "intro": "Tools can EXPLAIN code in plain words, which is helpful for learning. Treat an explanation as a STARTING POINT: it may describe what code was meant to do rather than what it does. A CODE REVIEW checks code LINE BY LINE against its REQUIREMENTS. For each line ask: What does it do? Is it needed? Does it match the requirement? Is anything missing? Comments, names and explanations can all be wrong, so check the actual statements. Example: a comment says \"return the largest number,\" but the code uses min(), which returns the smallest.",
+     "feedback": "Above 60 excludes 60."
+    },
+    {
+     "id": "S90-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A tool explains code as \"sorts names alphabetically,\" but output shows them by length. What should you trust?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Neither"
+      },
+      {
+       "letter": "B",
+       "text": "The output"
+      },
+      {
+       "letter": "C",
+       "text": "The comment"
+      },
+      {
+       "letter": "D",
+       "text": "The explanation"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The output",
+     "intro": "Tools can EXPLAIN code in plain words, which is helpful for learning. Treat an explanation as a STARTING POINT: it may describe what code was meant to do rather than what it does. A CODE REVIEW checks code LINE BY LINE against its REQUIREMENTS. For each line ask: What does it do? Is it needed? Does it match the requirement? Is anything missing? Comments, names and explanations can all be wrong, so check the actual statements. Example: a comment says \"return the largest number,\" but the code uses min(), which returns the smallest.",
+     "feedback": "Behavior is evidence."
+    },
+    {
+     "id": "S90-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "During review, you find a line whose purpose you cannot tell. What should you do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ask about it and test it before approving"
+      },
+      {
+       "letter": "B",
+       "text": "Approve it anyway, since lines you do not understand are usually the most clever parts of code"
+      },
+      {
+       "letter": "C",
+       "text": "Delete it without checking"
+      },
+      {
+       "letter": "D",
+       "text": "Ignore it"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Ask about it and test it before approving",
+     "intro": "Tools can EXPLAIN code in plain words, which is helpful for learning. Treat an explanation as a STARTING POINT: it may describe what code was meant to do rather than what it does. A CODE REVIEW checks code LINE BY LINE against its REQUIREMENTS. For each line ask: What does it do? Is it needed? Does it match the requirement? Is anything missing? Comments, names and explanations can all be wrong, so check the actual statements. Example: a comment says \"return the largest number,\" but the code uses min(), which returns the smallest.",
+     "feedback": "Unclear code is a finding."
+    },
+    {
+     "id": "S90-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Which review question asks about missing parts?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Is the font readable?\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Is it short?\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Is the variable name long enough to describe exactly what the variable is used for?\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Is anything the requirement needs not here?\""
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "\"Is anything the requirement needs not here?\"",
+     "intro": "Tools can EXPLAIN code in plain words, which is helpful for learning. Treat an explanation as a STARTING POINT: it may describe what code was meant to do rather than what it does. A CODE REVIEW checks code LINE BY LINE against its REQUIREMENTS. For each line ask: What does it do? Is it needed? Does it match the requirement? Is anything missing? Comments, names and explanations can all be wrong, so check the actual statements. Example: a comment says \"return the largest number,\" but the code uses min(), which returns the smallest.",
+     "feedback": "Look for omissions."
+    },
+    {
+     "id": "S90-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Which is the best use of a code explanation?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "To decide the requirement"
+      },
+      {
+       "letter": "B",
+       "text": "To skip reading the code"
+      },
+      {
+       "letter": "C",
+       "text": "To learn what to check, then verify by running"
+      },
+      {
+       "letter": "D",
+       "text": "To replace testing entirely, since a clear explanation proves that the code is correct"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "To learn what to check, then verify by running",
+     "intro": "Tools can EXPLAIN code in plain words, which is helpful for learning. Treat an explanation as a STARTING POINT: it may describe what code was meant to do rather than what it does. A CODE REVIEW checks code LINE BY LINE against its REQUIREMENTS. For each line ask: What does it do? Is it needed? Does it match the requirement? Is anything missing? Comments, names and explanations can all be wrong, so check the actual statements. Example: a comment says \"return the largest number,\" but the code uses min(), which returns the smallest.",
+     "feedback": "Starting point."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Review for what is missing and keep changes reviewable",
+   "questions": [
+    {
+     "id": "S90-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Code divides by the number of items but never checks for zero items. What kind of finding is this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A comment problem"
+      },
+      {
+       "letter": "B",
+       "text": "A missing check"
+      },
+      {
+       "letter": "C",
+       "text": "No problem"
+      },
+      {
+       "letter": "D",
+       "text": "A naming problem"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A missing check",
+     "intro": "A good review also looks for what is NOT there: a missing check for empty input, a requirement that was skipped, or an unhandled error. Large changes are hard to review well; ask for small changes you can read in full. If you cannot understand a part of the code, that is a finding: ask for a simpler version or an explanation you can verify by running small examples, rather than approving it.",
+     "feedback": "Something absent."
+    },
+    {
+     "id": "S90-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A tool proposes changing 400 lines at once. What helps review?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Asking for smaller changes"
+      },
+      {
+       "letter": "B",
+       "text": "Reading only the first line"
+      },
+      {
+       "letter": "C",
+       "text": "Skipping review"
+      },
+      {
+       "letter": "D",
+       "text": "Approving all 400 lines quickly"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Asking for smaller changes",
+     "intro": "A good review also looks for what is NOT there: a missing check for empty input, a requirement that was skipped, or an unhandled error. Large changes are hard to review well; ask for small changes you can read in full. If you cannot understand a part of the code, that is a finding: ask for a simpler version or an explanation you can verify by running small examples, rather than approving it.",
+     "feedback": "Small changes are reviewable."
+    },
+    {
+     "id": "S90-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "You cannot understand part of a generated function. What is the right response?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Pretend you understand"
+      },
+      {
+       "letter": "B",
+       "text": "Remove the whole program"
+      },
+      {
+       "letter": "C",
+       "text": "Ask for a simpler version or verify with small examples"
+      },
+      {
+       "letter": "D",
+       "text": "Approve it, because code that is hard to understand is usually more efficient and better"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Ask for a simpler version or verify with small examples",
+     "intro": "A good review also looks for what is NOT there: a missing check for empty input, a requirement that was skipped, or an unhandled error. Large changes are hard to review well; ask for small changes you can read in full. If you cannot understand a part of the code, that is a finding: ask for a simpler version or an explanation you can verify by running small examples, rather than approving it.",
+     "feedback": "Understanding is part of review."
+    },
+    {
+     "id": "S90-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A requirement says \"log every failed login,\" but the code logs only some. What is this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A style choice that the programmer is free to make without checking the requirements"
+      },
+      {
+       "letter": "B",
+       "text": "A skipped requirement"
+      },
+      {
+       "letter": "C",
+       "text": "A faster design"
+      },
+      {
+       "letter": "D",
+       "text": "A typo"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A skipped requirement",
+     "intro": "A good review also looks for what is NOT there: a missing check for empty input, a requirement that was skipped, or an unhandled error. Large changes are hard to review well; ask for small changes you can read in full. If you cannot understand a part of the code, that is a finding: ask for a simpler version or an explanation you can verify by running small examples, rather than approving it.",
+     "feedback": "Missing behavior."
+    },
+    {
+     "id": "S90-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Which review finding is most serious?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A blank line"
+      },
+      {
+       "letter": "B",
+       "text": "A long variable name"
+      },
+      {
+       "letter": "C",
+       "text": "A comment that uses slightly informal language, such as \"grab the list\" instead of \"get\""
+      },
+      {
+       "letter": "D",
+       "text": "An unhandled error that can crash the program"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "An unhandled error that can crash the program",
+     "intro": "A good review also looks for what is NOT there: a missing check for empty input, a requirement that was skipped, or an unhandled error. Large changes are hard to review well; ask for small changes you can read in full. If you cannot understand a part of the code, that is a finding: ask for a simpler version or an explanation you can verify by running small examples, rather than approving it.",
+     "feedback": "Crashes matter."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

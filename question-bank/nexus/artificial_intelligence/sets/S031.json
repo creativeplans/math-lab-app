@@ -1,0 +1,664 @@
+{
+ "set": 31,
+ "title": "Hallucination in plain language",
+ "outcome": "AI.CHECK.01",
+ "content_status": "stable",
+ "requires": [
+  17
+ ],
+ "module": "checking",
+ "path_refs": [
+  "everyday",
+  "creative",
+  "coding",
+  "work",
+  "society"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Recognize a hallucination and why it happens",
+   "questions": [
+    {
+     "id": "S31-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "What is a hallucination in AI output?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A deliberate lie the tool chose to tell"
+      },
+      {
+       "letter": "B",
+       "text": "An answer that is slow to arrive"
+      },
+      {
+       "letter": "C",
+       "text": "False or unsupported output stated as true"
+      },
+      {
+       "letter": "D",
+       "text": "A blurry image shown on a screen"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "False or unsupported output stated as true",
+     "intro": "A HALLUCINATION is AI output that is false or unsupported but presented as if it were true: a made-up quote, a statistic with no source, a nonexistent book, a wrong date stated confidently. It happens because a language model generates likely-sounding text rather than looking facts up, so when it lacks the right information it can still produce something that fits the pattern of an answer. Hallucinations are more likely with obscure topics, very specific details (exact numbers, names, dates, page numbers) and questions about recent events. They are not lies in the human sense; they are errors.",
+     "feedback": "Confident but false or unsupported output."
+    },
+    {
+     "id": "S31-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "Why do language models hallucinate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "They generate likely text instead of looking it up"
+      },
+      {
+       "letter": "B",
+       "text": "They copy only from websites full of false facts"
+      },
+      {
+       "letter": "C",
+       "text": "They never learned any language"
+      },
+      {
+       "letter": "D",
+       "text": "They are told to deceive users"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "They generate likely text instead of looking it up",
+     "intro": "A HALLUCINATION is AI output that is false or unsupported but presented as if it were true: a made-up quote, a statistic with no source, a nonexistent book, a wrong date stated confidently. It happens because a language model generates likely-sounding text rather than looking facts up, so when it lacks the right information it can still produce something that fits the pattern of an answer. Hallucinations are more likely with obscure topics, very specific details (exact numbers, names, dates, page numbers) and questions about recent events. They are not lies in the human sense; they are errors.",
+     "feedback": "Pattern-fitting text can be false."
+    },
+    {
+     "id": "S31-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "Which request is most likely to produce a hallucination?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A list of synonyms for \"happy\""
+      },
+      {
+       "letter": "B",
+       "text": "The exact page number of an obscure quote"
+      },
+      {
+       "letter": "C",
+       "text": "A rhyming poem about the ocean"
+      },
+      {
+       "letter": "D",
+       "text": "A friendlier rewording of your note"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The exact page number of an obscure quote",
+     "intro": "A HALLUCINATION is AI output that is false or unsupported but presented as if it were true: a made-up quote, a statistic with no source, a nonexistent book, a wrong date stated confidently. It happens because a language model generates likely-sounding text rather than looking facts up, so when it lacks the right information it can still produce something that fits the pattern of an answer. Hallucinations are more likely with obscure topics, very specific details (exact numbers, names, dates, page numbers) and questions about recent events. They are not lies in the human sense; they are errors.",
+     "feedback": "Specific details on obscure topics are risky."
+    },
+    {
+     "id": "S31-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "In this fictional example (the scientist and speech are invented for this question), what should a reader do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Quote it, since it includes a city and year"
+      },
+      {
+       "letter": "B",
+       "text": "Assume the quote is real since it is specific"
+      },
+      {
+       "letter": "C",
+       "text": "Ask the same tool if the quote is real"
+      },
+      {
+       "letter": "D",
+       "text": "Find a real record of the speech before using it"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Find a real record of the speech before using it",
+     "intro": "A HALLUCINATION is AI output that is false or unsupported but presented as if it were true: a made-up quote, a statistic with no source, a nonexistent book, a wrong date stated confidently. It happens because a language model generates likely-sounding text rather than looking facts up, so when it lacks the right information it can still produce something that fits the pattern of an answer. Hallucinations are more likely with obscure topics, very specific details (exact numbers, names, dates, page numbers) and questions about recent events. They are not lies in the human sense; they are errors.",
+     "feedback": "Verify quotes in a reliable record.",
+     "example": {
+      "kind": "prompt_response",
+      "label": "Fictional example (prepared in advance; not a real AI output)",
+      "prompt": "What did the scientist Dr. Lena Varga say about bees in her 2019 speech?",
+      "response": "In her 2019 speech in Vienna, Dr. Lena Varga said, \"Every third bite of food we eat depends on a bee,\" and called for a ban on certain pesticides."
+     }
+    },
+    {
+     "id": "S31-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "Are hallucinations lies?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No; they are errors, not deliberate deception"
+      },
+      {
+       "letter": "B",
+       "text": "Yes; they are always made on purpose"
+      },
+      {
+       "letter": "C",
+       "text": "Yes; the tool knows the truth and hides it"
+      },
+      {
+       "letter": "D",
+       "text": "No; they are always correct"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "No; they are errors, not deliberate deception",
+     "intro": "A HALLUCINATION is AI output that is false or unsupported but presented as if it were true: a made-up quote, a statistic with no source, a nonexistent book, a wrong date stated confidently. It happens because a language model generates likely-sounding text rather than looking facts up, so when it lacks the right information it can still produce something that fits the pattern of an answer. Hallucinations are more likely with obscure topics, very specific details (exact numbers, names, dates, page numbers) and questions about recent events. They are not lies in the human sense; they are errors.",
+     "feedback": "They are errors from how text is generated."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare hallucination with a confident guesser at trivia night",
+   "questions": [
+    {
+     "id": "S31-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "What does the teammate never say?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Good question\""
+      },
+      {
+       "letter": "B",
+       "text": "\"I don't know\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Let's check\""
+      },
+      {
+       "letter": "D",
+       "text": "\"1847\""
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "\"I don't know\"",
+     "intro": "At a trivia night, one teammate never says \"I don't know.\" Asked the year a small town was founded, he says \"1847\" with total confidence. He is not lying on purpose; he just produces an answer that sounds right. Sometimes he is correct, sometimes not, and his tone is the same either way. A language model can act like this teammate. When it lacks the right information, it may still produce a confident, specific answer. That confident wrong answer is what people call a hallucination.",
+     "feedback": "He always gives an answer."
+    },
+    {
+     "id": "S31-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "Is the teammate lying on purpose?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No, he is always correct"
+      },
+      {
+       "letter": "B",
+       "text": "Yes, he knows the truth"
+      },
+      {
+       "letter": "C",
+       "text": "Yes, he wants to trick the team"
+      },
+      {
+       "letter": "D",
+       "text": "No, he gives answers that sound right"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "No, he gives answers that sound right",
+     "intro": "At a trivia night, one teammate never says \"I don't know.\" Asked the year a small town was founded, he says \"1847\" with total confidence. He is not lying on purpose; he just produces an answer that sounds right. Sometimes he is correct, sometimes not, and his tone is the same either way. A language model can act like this teammate. When it lacks the right information, it may still produce a confident, specific answer. That confident wrong answer is what people call a hallucination.",
+     "feedback": "Confident guessing, not lying."
+    },
+    {
+     "id": "S31-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "How does his tone differ when he is wrong?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "He whispers"
+      },
+      {
+       "letter": "B",
+       "text": "He sounds nervous"
+      },
+      {
+       "letter": "C",
+       "text": "It does not; he sounds the same"
+      },
+      {
+       "letter": "D",
+       "text": "He apologizes before every wrong answer"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "It does not; he sounds the same",
+     "intro": "At a trivia night, one teammate never says \"I don't know.\" Asked the year a small town was founded, he says \"1847\" with total confidence. He is not lying on purpose; he just produces an answer that sounds right. Sometimes he is correct, sometimes not, and his tone is the same either way. A language model can act like this teammate. When it lacks the right information, it may still produce a confident, specific answer. That confident wrong answer is what people call a hallucination.",
+     "feedback": "Tone gives no clue."
+    },
+    {
+     "id": "S31-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "A confident, specific, wrong AI answer is called what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A token"
+      },
+      {
+       "letter": "B",
+       "text": "A hallucination"
+      },
+      {
+       "letter": "C",
+       "text": "A prompt"
+      },
+      {
+       "letter": "D",
+       "text": "A citation"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A hallucination",
+     "intro": "At a trivia night, one teammate never says \"I don't know.\" Asked the year a small town was founded, he says \"1847\" with total confidence. He is not lying on purpose; he just produces an answer that sounds right. Sometimes he is correct, sometimes not, and his tone is the same either way. A language model can act like this teammate. When it lacks the right information, it may still produce a confident, specific answer. That confident wrong answer is what people call a hallucination.",
+     "feedback": "That is the term."
+    },
+    {
+     "id": "S31-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "What would make the teammate's answer trustworthy?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Saying it faster"
+      },
+      {
+       "letter": "B",
+       "text": "Saying it louder"
+      },
+      {
+       "letter": "C",
+       "text": "Adding more digits to the year he says"
+      },
+      {
+       "letter": "D",
+       "text": "Checking it in a reliable source"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Checking it in a reliable source",
+     "intro": "At a trivia night, one teammate never says \"I don't know.\" Asked the year a small town was founded, he says \"1847\" with total confidence. He is not lying on purpose; he just produces an answer that sounds right. Sometimes he is correct, sometimes not, and his tone is the same either way. A language model can act like this teammate. When it lacks the right information, it may still produce a confident, specific answer. That confident wrong answer is what people call a hallucination.",
+     "feedback": "Verification makes it trustworthy."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who thinks confident answers must be correct can see a hallucination through a familiar confident guesser."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Spot likely hallucinations in practical answers",
+   "questions": [
+    {
+     "id": "S31-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "A model lists five books by a little-known local author, but the library has only two of them. What is the most likely explanation?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Some of the titles may be hallucinated"
+      },
+      {
+       "letter": "B",
+       "text": "The author secretly wrote three more books"
+      },
+      {
+       "letter": "C",
+       "text": "Libraries never have complete lists"
+      },
+      {
+       "letter": "D",
+       "text": "The library must be hiding three books"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Some of the titles may be hallucinated",
+     "intro": "A HALLUCINATION is AI output that is false or unsupported but presented as if it were true: a made-up quote, a statistic with no source, a nonexistent book, a wrong date stated confidently. It happens because a language model generates likely-sounding text rather than looking facts up, so when it lacks the right information it can still produce something that fits the pattern of an answer. Hallucinations are more likely with obscure topics, very specific details (exact numbers, names, dates, page numbers) and questions about recent events. They are not lies in the human sense; they are errors.",
+     "feedback": "Obscure topics invite invented details."
+    },
+    {
+     "id": "S31-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "Which part of an answer about a historical battle deserves the closest check?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The general idea that a battle happened"
+      },
+      {
+       "letter": "B",
+       "text": "The friendly summary sentence"
+      },
+      {
+       "letter": "C",
+       "text": "The exact casualty numbers"
+      },
+      {
+       "letter": "D",
+       "text": "The paragraph breaks"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The exact casualty numbers",
+     "intro": "A HALLUCINATION is AI output that is false or unsupported but presented as if it were true: a made-up quote, a statistic with no source, a nonexistent book, a wrong date stated confidently. It happens because a language model generates likely-sounding text rather than looking facts up, so when it lacks the right information it can still produce something that fits the pattern of an answer. Hallucinations are more likely with obscure topics, very specific details (exact numbers, names, dates, page numbers) and questions about recent events. They are not lies in the human sense; they are errors.",
+     "feedback": "Specific numbers are a common hallucination spot."
+    },
+    {
+     "id": "S31-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "A student asks about an event from last week and gets a detailed answer. What should she suspect?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The tool watched the event live"
+      },
+      {
+       "letter": "B",
+       "text": "Details may be invented if it lacked current information"
+      },
+      {
+       "letter": "C",
+       "text": "The answer must be verified already"
+      },
+      {
+       "letter": "D",
+       "text": "Recent events are always answered correctly by tools"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Details may be invented if it lacked current information",
+     "intro": "A HALLUCINATION is AI output that is false or unsupported but presented as if it were true: a made-up quote, a statistic with no source, a nonexistent book, a wrong date stated confidently. It happens because a language model generates likely-sounding text rather than looking facts up, so when it lacks the right information it can still produce something that fits the pattern of an answer. Hallucinations are more likely with obscure topics, very specific details (exact numbers, names, dates, page numbers) and questions about recent events. They are not lies in the human sense; they are errors.",
+     "feedback": "Recent events raise hallucination risk."
+    },
+    {
+     "id": "S31-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "A model gives a quote \"from\" a famous speech. What is the best check?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Find the speech transcript"
+      },
+      {
+       "letter": "B",
+       "text": "Search for the quote on a meme page"
+      },
+      {
+       "letter": "C",
+       "text": "Trust it because it sounds like the speaker"
+      },
+      {
+       "letter": "D",
+       "text": "Ask the model to add quotation marks"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Find the speech transcript",
+     "intro": "A HALLUCINATION is AI output that is false or unsupported but presented as if it were true: a made-up quote, a statistic with no source, a nonexistent book, a wrong date stated confidently. It happens because a language model generates likely-sounding text rather than looking facts up, so when it lacks the right information it can still produce something that fits the pattern of an answer. Hallucinations are more likely with obscure topics, very specific details (exact numbers, names, dates, page numbers) and questions about recent events. They are not lies in the human sense; they are errors.",
+     "feedback": "Primary records confirm quotes."
+    },
+    {
+     "id": "S31-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "Which request is LEAST likely to be harmed by a hallucination?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The dosage on a medicine label"
+      },
+      {
+       "letter": "B",
+       "text": "A company's exact refund policy"
+      },
+      {
+       "letter": "C",
+       "text": "A court case citation for a report"
+      },
+      {
+       "letter": "D",
+       "text": "Ideas for a fantasy story plot"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Ideas for a fantasy story plot",
+     "intro": "A HALLUCINATION is AI output that is false or unsupported but presented as if it were true: a made-up quote, a statistic with no source, a nonexistent book, a wrong date stated confidently. It happens because a language model generates likely-sounding text rather than looking facts up, so when it lacks the right information it can still produce something that fits the pattern of an answer. Hallucinations are more likely with obscure topics, very specific details (exact numbers, names, dates, page numbers) and questions about recent events. They are not lies in the human sense; they are errors.",
+     "feedback": "Invented content is fine in fiction."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Reduce and catch hallucinations",
+   "questions": [
+    {
+     "id": "S31-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "Why can careful reading alone not catch every hallucination?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Hallucinations are always in red text"
+      },
+      {
+       "letter": "B",
+       "text": "Hallucinations only appear in images"
+      },
+      {
+       "letter": "C",
+       "text": "Invented details can look like real ones"
+      },
+      {
+       "letter": "D",
+       "text": "Reading carefully makes errors appear"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Invented details can look like real ones",
+     "intro": "You cannot spot every hallucination by reading carefully, because invented details often look exactly like real ones. Some practical defenses: give the tool reliable source material to work from, ask it to say \"I don't know\" when the material does not contain an answer, and check specific details that matter in an independent source. Tools that search the web or cite documents reduce some hallucinations but can still misread or misquote sources. The habit that always helps is the same: verify the claims you will rely on.",
+     "feedback": "Checking needs outside evidence."
+    },
+    {
+     "id": "S31-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "Which instruction helps reduce hallucinations when using supplied material?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"If the text does not say, answer 'I don't know.'\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Always give a complete answer, no matter what.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Add extra details to be helpful.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Sound as certain as possible.\""
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "\"If the text does not say, answer 'I don't know.'\"",
+     "intro": "You cannot spot every hallucination by reading carefully, because invented details often look exactly like real ones. Some practical defenses: give the tool reliable source material to work from, ask it to say \"I don't know\" when the material does not contain an answer, and check specific details that matter in an independent source. Tools that search the web or cite documents reduce some hallucinations but can still misread or misquote sources. The habit that always helps is the same: verify the claims you will rely on.",
+     "feedback": "Allowing \"I don't know\" reduces invented answers."
+    },
+    {
+     "id": "S31-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "A tool that searches the web cites a page but misstates what it says. What does this show?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The web page must be wrong"
+      },
+      {
+       "letter": "B",
+       "text": "Citations always prove accuracy"
+      },
+      {
+       "letter": "C",
+       "text": "Search-based tools can still misread sources"
+      },
+      {
+       "letter": "D",
+       "text": "Search-based tools never make any errors at all"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Search-based tools can still misread sources",
+     "intro": "You cannot spot every hallucination by reading carefully, because invented details often look exactly like real ones. Some practical defenses: give the tool reliable source material to work from, ask it to say \"I don't know\" when the material does not contain an answer, and check specific details that matter in an independent source. Tools that search the web or cite documents reduce some hallucinations but can still misread or misquote sources. The habit that always helps is the same: verify the claims you will rely on.",
+     "feedback": "Retrieval reduces but does not remove errors."
+    },
+    {
+     "id": "S31-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "What habit always helps against hallucinations?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Trust answers that include dates"
+      },
+      {
+       "letter": "B",
+       "text": "Ask for longer answers"
+      },
+      {
+       "letter": "C",
+       "text": "Use a friendlier tone in requests"
+      },
+      {
+       "letter": "D",
+       "text": "Verify claims you will rely on"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Verify claims you will rely on",
+     "intro": "You cannot spot every hallucination by reading carefully, because invented details often look exactly like real ones. Some practical defenses: give the tool reliable source material to work from, ask it to say \"I don't know\" when the material does not contain an answer, and check specific details that matter in an independent source. Tools that search the web or cite documents reduce some hallucinations but can still misread or misquote sources. The habit that always helps is the same: verify the claims you will rely on.",
+     "feedback": "Verification is the reliable defense."
+    },
+    {
+     "id": "S31-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 5: Checking results",
+     "type": "mc",
+     "prompt": "A report draft from a tool has ten facts. You have time to check only three. Which three?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The three you already believe"
+      },
+      {
+       "letter": "B",
+       "text": "The ones the report's conclusions depend on"
+      },
+      {
+       "letter": "C",
+       "text": "The first three facts that appear in the report"
+      },
+      {
+       "letter": "D",
+       "text": "The three shortest sentences"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The ones the report's conclusions depend on",
+     "intro": "You cannot spot every hallucination by reading carefully, because invented details often look exactly like real ones. Some practical defenses: give the tool reliable source material to work from, ask it to say \"I don't know\" when the material does not contain an answer, and check specific details that matter in an independent source. Tools that search the web or cite documents reduce some hallucinations but can still misread or misquote sources. The habit that always helps is the same: verify the claims you will rely on.",
+     "feedback": "Check the claims that matter most."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

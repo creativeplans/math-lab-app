@@ -1,0 +1,727 @@
+{
+ "set": 114,
+ "title": "A small test set with expected answers",
+ "outcome": "AI.EVAL.01",
+ "content_status": "stable",
+ "requires": [
+  40
+ ],
+ "module": "evaluation",
+ "path_refs": [
+  "work",
+  "coding"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Build a small test set with expected answers",
+   "questions": [
+    {
+     "id": "S114-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What is a test set?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A list of tool features"
+      },
+      {
+       "letter": "B",
+       "text": "Real examples with expected answers"
+      },
+      {
+       "letter": "C",
+       "text": "A collection of the tool's own past answers, saved so they can be shown to new users"
+      },
+      {
+       "letter": "D",
+       "text": "A price list"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Real examples with expected answers",
+     "intro": "Before trusting a tool for a recurring task, build a small TEST SET: 10 to 20 REAL examples of the task, each with an EXPECTED ANSWER you worked out or confirmed yourself. Include ordinary cases and a few hard or unusual ones. Run the tool on every example, compare with the expected answers, and count how many it gets right. Write down which ones it got wrong and how. Example: to judge a tool that sorts customer emails, collect 20 past emails whose correct category you know, then check its sorting against yours.",
+     "feedback": "Examples plus correct answers."
+    },
+    {
+     "id": "S114-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Who should determine the expected answers?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "You, by working them out or confirming them"
+      },
+      {
+       "letter": "B",
+       "text": "A random guess"
+      },
+      {
+       "letter": "C",
+       "text": "Nobody"
+      },
+      {
+       "letter": "D",
+       "text": "The tool being tested, since it knows the correct answers better than any person could"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "You, by working them out or confirming them",
+     "intro": "Before trusting a tool for a recurring task, build a small TEST SET: 10 to 20 REAL examples of the task, each with an EXPECTED ANSWER you worked out or confirmed yourself. Include ordinary cases and a few hard or unusual ones. Run the tool on every example, compare with the expected answers, and count how many it gets right. Write down which ones it got wrong and how. Example: to judge a tool that sorts customer emails, collect 20 past emails whose correct category you know, then check its sorting against yours.",
+     "feedback": "Independent answers."
+    },
+    {
+     "id": "S114-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "In this prepared example, how many did the tool get right?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "2 of 5"
+      },
+      {
+       "letter": "B",
+       "text": "3 of 5"
+      },
+      {
+       "letter": "C",
+       "text": "4 of 5"
+      },
+      {
+       "letter": "D",
+       "text": "5 of 5"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "4 of 5",
+     "intro": "Before trusting a tool for a recurring task, build a small TEST SET: 10 to 20 REAL examples of the task, each with an EXPECTED ANSWER you worked out or confirmed yourself. Include ordinary cases and a few hard or unusual ones. Run the tool on every example, compare with the expected answers, and count how many it gets right. Write down which ones it got wrong and how. Example: to judge a tool that sorts customer emails, collect 20 past emails whose correct category you know, then check its sorting against yours.",
+     "feedback": "Only email 3 is wrong.",
+     "example": {
+      "kind": "table",
+      "label": "Prepared example (a fictional five-item slice of a test set)",
+      "table": [
+       [
+        "Email",
+        "Expected category",
+        "Tool's category"
+       ],
+       [
+        "1",
+        "Billing",
+        "Billing"
+       ],
+       [
+        "2",
+        "Shipping",
+        "Shipping"
+       ],
+       [
+        "3",
+        "Billing",
+        "Refund"
+       ],
+       [
+        "4",
+        "Refund",
+        "Refund"
+       ],
+       [
+        "5",
+        "Shipping",
+        "Shipping"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "S114-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "In the same example, what percent is correct?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "4%"
+      },
+      {
+       "letter": "B",
+       "text": "100%, since one mistake out of five is too small to change the result in any way"
+      },
+      {
+       "letter": "C",
+       "text": "40%"
+      },
+      {
+       "letter": "D",
+       "text": "80%"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "80%",
+     "intro": "Before trusting a tool for a recurring task, build a small TEST SET: 10 to 20 REAL examples of the task, each with an EXPECTED ANSWER you worked out or confirmed yourself. Include ordinary cases and a few hard or unusual ones. Run the tool on every example, compare with the expected answers, and count how many it gets right. Write down which ones it got wrong and how. Example: to judge a tool that sorts customer emails, collect 20 past emails whose correct category you know, then check its sorting against yours.",
+     "feedback": "4 / 5 = 80%.",
+     "example": {
+      "kind": "table",
+      "label": "Prepared example (a fictional five-item slice of a test set)",
+      "table": [
+       [
+        "Email",
+        "Expected category",
+        "Tool's category"
+       ],
+       [
+        "1",
+        "Billing",
+        "Billing"
+       ],
+       [
+        "2",
+        "Shipping",
+        "Shipping"
+       ],
+       [
+        "3",
+        "Billing",
+        "Refund"
+       ],
+       [
+        "4",
+        "Refund",
+        "Refund"
+       ],
+       [
+        "5",
+        "Shipping",
+        "Shipping"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "S114-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Which examples should a test set include?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only made-up examples"
+      },
+      {
+       "letter": "B",
+       "text": "Ordinary cases and a few hard ones"
+      },
+      {
+       "letter": "C",
+       "text": "Only one example"
+      },
+      {
+       "letter": "D",
+       "text": "Only the easiest examples you can find"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Ordinary cases and a few hard ones",
+     "intro": "Before trusting a tool for a recurring task, build a small TEST SET: 10 to 20 REAL examples of the task, each with an EXPECTED ANSWER you worked out or confirmed yourself. Include ordinary cases and a few hard or unusual ones. Run the tool on every example, compare with the expected answers, and count how many it gets right. Write down which ones it got wrong and how. Example: to judge a tool that sorts customer emails, collect 20 past emails whose correct category you know, then check its sorting against yours.",
+     "feedback": "Realistic mix."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare a test set with a practice exam with an answer key",
+   "questions": [
+    {
+     "id": "S114-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What does the answer key do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Shortens the exam"
+      },
+      {
+       "letter": "B",
+       "text": "Grades students"
+      },
+      {
+       "letter": "C",
+       "text": "Makes the textbook's answers correct"
+      },
+      {
+       "letter": "D",
+       "text": "Lets you tell right from wrong"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Lets you tell right from wrong",
+     "intro": "A teacher deciding whether a new textbook's practice problems are accurate might work 15 problems herself, writing an ANSWER KEY, and then compare the textbook's answers with hers. A tool test set is the same: real tasks plus an answer key you trust. Without the key, you cannot tell right from wrong; with only easy problems, you learn little.",
+     "feedback": "A trusted reference."
+    },
+    {
+     "id": "S114-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Who writes the key in the example?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The teacher"
+      },
+      {
+       "letter": "B",
+       "text": "A student"
+      },
+      {
+       "letter": "C",
+       "text": "Nobody"
+      },
+      {
+       "letter": "D",
+       "text": "The textbook"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The teacher",
+     "intro": "A teacher deciding whether a new textbook's practice problems are accurate might work 15 problems herself, writing an ANSWER KEY, and then compare the textbook's answers with hers. A tool test set is the same: real tasks plus an answer key you trust. Without the key, you cannot tell right from wrong; with only easy problems, you learn little.",
+     "feedback": "Independent answers."
+    },
+    {
+     "id": "S114-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Why not use only easy problems?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because easy problems always have wrong answers in every textbook that has been printed"
+      },
+      {
+       "letter": "B",
+       "text": "Because keys cannot be written for them"
+      },
+      {
+       "letter": "C",
+       "text": "You would learn little about hard cases"
+      },
+      {
+       "letter": "D",
+       "text": "Because they take too long"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "You would learn little about hard cases",
+     "intro": "A teacher deciding whether a new textbook's practice problems are accurate might work 15 problems herself, writing an ANSWER KEY, and then compare the textbook's answers with hers. A tool test set is the same: real tasks plus an answer key you trust. Without the key, you cannot tell right from wrong; with only easy problems, you learn little.",
+     "feedback": "Include hard cases."
+    },
+    {
+     "id": "S114-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "In AI terms, the 15 problems are like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A test set"
+      },
+      {
+       "letter": "B",
+       "text": "The tool's price"
+      },
+      {
+       "letter": "C",
+       "text": "A single question"
+      },
+      {
+       "letter": "D",
+       "text": "The tool's marketing materials, which show only examples that the tool handles well"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "A test set",
+     "intro": "A teacher deciding whether a new textbook's practice problems are accurate might work 15 problems herself, writing an ANSWER KEY, and then compare the textbook's answers with hers. A tool test set is the same: real tasks plus an answer key you trust. Without the key, you cannot tell right from wrong; with only easy problems, you learn little.",
+     "feedback": "Examples to test with."
+    },
+    {
+     "id": "S114-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What can you not do without a key?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Turn the pages"
+      },
+      {
+       "letter": "B",
+       "text": "Buy the book"
+      },
+      {
+       "letter": "C",
+       "text": "Tell right answers from wrong ones"
+      },
+      {
+       "letter": "D",
+       "text": "Read the textbook's problems"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Tell right answers from wrong ones",
+     "intro": "A teacher deciding whether a new textbook's practice problems are accurate might work 15 problems herself, writing an ANSWER KEY, and then compare the textbook's answers with hers. A tool test set is the same: real tasks plus an answer key you trust. Without the key, you cannot tell right from wrong; with only easy problems, you learn little.",
+     "feedback": "No reference, no judgment."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner unsure what a test set is can compare it with checking a textbook against an answer key."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Build and use test sets in practice",
+   "questions": [
+    {
+     "id": "S114-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "A clinic wants to test a tool that drafts appointment reminders. What should its test set contain?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "One appointment"
+      },
+      {
+       "letter": "B",
+       "text": "Real past appointments with the correct reminder details"
+      },
+      {
+       "letter": "C",
+       "text": "Ten examples invented by the tool itself, along with the tool's own idea of the correct reminder"
+      },
+      {
+       "letter": "D",
+       "text": "Only the clinic's logo"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Real past appointments with the correct reminder details",
+     "intro": "Before trusting a tool for a recurring task, build a small TEST SET: 10 to 20 REAL examples of the task, each with an EXPECTED ANSWER you worked out or confirmed yourself. Include ordinary cases and a few hard or unusual ones. Run the tool on every example, compare with the expected answers, and count how many it gets right. Write down which ones it got wrong and how. Example: to judge a tool that sorts customer emails, collect 20 past emails whose correct category you know, then check its sorting against yours.",
+     "feedback": "Real examples, known answers."
+    },
+    {
+     "id": "S114-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "A tool gets 18 of 20 test emails right. What percent is that?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "18%, because each correct answer counts as exactly one percent of the total score"
+      },
+      {
+       "letter": "B",
+       "text": "95%"
+      },
+      {
+       "letter": "C",
+       "text": "80%"
+      },
+      {
+       "letter": "D",
+       "text": "90%"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "90%",
+     "intro": "Before trusting a tool for a recurring task, build a small TEST SET: 10 to 20 REAL examples of the task, each with an EXPECTED ANSWER you worked out or confirmed yourself. Include ordinary cases and a few hard or unusual ones. Run the tool on every example, compare with the expected answers, and count how many it gets right. Write down which ones it got wrong and how. Example: to judge a tool that sorts customer emails, collect 20 past emails whose correct category you know, then check its sorting against yours.",
+     "feedback": "18 / 20 = 90%."
+    },
+    {
+     "id": "S114-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "After the test, what should you write down?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only the tool's name"
+      },
+      {
+       "letter": "B",
+       "text": "Only the final percent, since the details of each failure are not useful for decisions"
+      },
+      {
+       "letter": "C",
+       "text": "Which examples failed and how"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Which examples failed and how",
+     "intro": "Before trusting a tool for a recurring task, build a small TEST SET: 10 to 20 REAL examples of the task, each with an EXPECTED ANSWER you worked out or confirmed yourself. Include ordinary cases and a few hard or unusual ones. Run the tool on every example, compare with the expected answers, and count how many it gets right. Write down which ones it got wrong and how. Example: to judge a tool that sorts customer emails, collect 20 past emails whose correct category you know, then check its sorting against yours.",
+     "feedback": "Failures teach most."
+    },
+    {
+     "id": "S114-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Which example adds a useful hard case for a receipt reader?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A crumpled receipt with a faded total"
+      },
+      {
+       "letter": "B",
+       "text": "A blank page"
+      },
+      {
+       "letter": "C",
+       "text": "A photo of a cat"
+      },
+      {
+       "letter": "D",
+       "text": "A clean, printed receipt with large numbers"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "A crumpled receipt with a faded total",
+     "intro": "Before trusting a tool for a recurring task, build a small TEST SET: 10 to 20 REAL examples of the task, each with an EXPECTED ANSWER you worked out or confirmed yourself. Include ordinary cases and a few hard or unusual ones. Run the tool on every example, compare with the expected answers, and count how many it gets right. Write down which ones it got wrong and how. Example: to judge a tool that sorts customer emails, collect 20 past emails whose correct category you know, then check its sorting against yours.",
+     "feedback": "Realistic difficulty."
+    },
+    {
+     "id": "S114-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Why use real examples rather than invented ones?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because real examples are shorter"
+      },
+      {
+       "letter": "B",
+       "text": "They reflect the task the tool will actually face"
+      },
+      {
+       "letter": "C",
+       "text": "Because invented examples are always too difficult for any tool to answer correctly"
+      },
+      {
+       "letter": "D",
+       "text": "Because invented ones are illegal"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "They reflect the task the tool will actually face",
+     "intro": "Before trusting a tool for a recurring task, build a small TEST SET: 10 to 20 REAL examples of the task, each with an EXPECTED ANSWER you worked out or confirmed yourself. Include ordinary cases and a few hard or unusual ones. Run the tool on every example, compare with the expected answers, and count how many it gets right. Write down which ones it got wrong and how. Example: to judge a tool that sorts customer emails, collect 20 past emails whose correct category you know, then check its sorting against yours.",
+     "feedback": "Realism."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Avoid test-set mistakes",
+   "questions": [
+    {
+     "id": "S114-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "A test set contains only easy examples. What happens?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The test cannot run"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing changes"
+      },
+      {
+       "letter": "C",
+       "text": "The tool looks worse than it really is, since easy examples confuse most AI tools"
+      },
+      {
+       "letter": "D",
+       "text": "The tool looks better than it is"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The tool looks better than it is",
+     "intro": "Test sets go wrong in quiet ways. If you choose only easy examples, the tool looks better than it is. If your expected answers are wrong, you will blame the tool for your error. If you keep tweaking your request until it passes these 20 examples, it may fail on new ones, so keep a few examples aside for a final check. Rerun the same test set when the tool or your instructions change, and add new examples whenever a real failure surprises you.",
+     "feedback": "Biased difficulty."
+    },
+    {
+     "id": "S114-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Your expected answer for one example is wrong. What might you conclude incorrectly?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "That the tool is faster"
+      },
+      {
+       "letter": "B",
+       "text": "That the tool made a mistake"
+      },
+      {
+       "letter": "C",
+       "text": "That the example is real"
+      },
+      {
+       "letter": "D",
+       "text": "That the test set is perfect"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "That the tool made a mistake",
+     "intro": "Test sets go wrong in quiet ways. If you choose only easy examples, the tool looks better than it is. If your expected answers are wrong, you will blame the tool for your error. If you keep tweaking your request until it passes these 20 examples, it may fail on new ones, so keep a few examples aside for a final check. Rerun the same test set when the tool or your instructions change, and add new examples whenever a real failure surprises you.",
+     "feedback": "Check your key."
+    },
+    {
+     "id": "S114-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "You keep changing your request until all 20 examples pass. What is the risk?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It may fail on new examples"
+      },
+      {
+       "letter": "B",
+       "text": "The request becomes shorter"
+      },
+      {
+       "letter": "C",
+       "text": "The tool gets slower"
+      },
+      {
+       "letter": "D",
+       "text": "No risk"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "It may fail on new examples",
+     "intro": "Test sets go wrong in quiet ways. If you choose only easy examples, the tool looks better than it is. If your expected answers are wrong, you will blame the tool for your error. If you keep tweaking your request until it passes these 20 examples, it may fail on new ones, so keep a few examples aside for a final check. Rerun the same test set when the tool or your instructions change, and add new examples whenever a real failure surprises you.",
+     "feedback": "Keep some examples aside."
+    },
+    {
+     "id": "S114-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "When should you rerun the test set?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only on holidays"
+      },
+      {
+       "letter": "B",
+       "text": "Never, since a test set only needs to be run one time when you first choose the tool"
+      },
+      {
+       "letter": "C",
+       "text": "When the tool or your instructions change"
+      },
+      {
+       "letter": "D",
+       "text": "Every minute"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "When the tool or your instructions change",
+     "intro": "Test sets go wrong in quiet ways. If you choose only easy examples, the tool looks better than it is. If your expected answers are wrong, you will blame the tool for your error. If you keep tweaking your request until it passes these 20 examples, it may fail on new ones, so keep a few examples aside for a final check. Rerun the same test set when the tool or your instructions change, and add new examples whenever a real failure surprises you.",
+     "feedback": "Retest after changes."
+    },
+    {
+     "id": "S114-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "A real failure surprises you. What should you do with it?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Delete the test set"
+      },
+      {
+       "letter": "B",
+       "text": "Hide it"
+      },
+      {
+       "letter": "C",
+       "text": "Ignore it"
+      },
+      {
+       "letter": "D",
+       "text": "Add it to the test set"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Add it to the test set",
+     "intro": "Test sets go wrong in quiet ways. If you choose only easy examples, the tool looks better than it is. If your expected answers are wrong, you will blame the tool for your error. If you keep tweaking your request until it passes these 20 examples, it may fail on new ones, so keep a few examples aside for a final check. Rerun the same test set when the tool or your instructions change, and add new examples whenever a real failure surprises you.",
+     "feedback": "Grow the test set."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

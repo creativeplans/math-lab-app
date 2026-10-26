@@ -1,0 +1,655 @@
+{
+ "set": 64,
+ "title": "Poor-quality and incomplete documents",
+ "outcome": "AI.RETRIEVAL.04",
+ "content_status": "stable",
+ "requires": [
+  63
+ ],
+ "module": "files",
+ "path_refs": [
+  "everyday",
+  "work"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Recognize when a document may be misread or incomplete",
+   "questions": [
+    {
+     "id": "S64-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "Which document is most likely to be misread by a tool?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A clean typed page with plain, simple text"
+      },
+      {
+       "letter": "B",
+       "text": "A short typed note"
+      },
+      {
+       "letter": "C",
+       "text": "A typed list of names"
+      },
+      {
+       "letter": "D",
+       "text": "A blurry, tilted phone photo of a receipt"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "A blurry, tilted phone photo of a receipt",
+     "intro": "Tools read documents less reliably when the documents are POOR QUALITY: blurry or tilted scans, handwriting, faint photocopies, complex tables, charts, or files where text is actually an image. They also struggle when documents are INCOMPLETE: missing pages, a cut-off photo, or a file that did not fully upload. The answer may still sound confident. Warning signs: numbers that do not add up, garbled words, answers that ignore a section you know exists. Fixes: upload a clearer copy, split complex tables, type key numbers yourself, and check that every page is present.",
+     "feedback": "Poor quality causes misreading."
+    },
+    {
+     "id": "S64-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "What is a warning sign that a document was misread?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "An answer that is polite and uses complete sentences throughout"
+      },
+      {
+       "letter": "B",
+       "text": "Numbers that do not add up"
+      },
+      {
+       "letter": "C",
+       "text": "An answer with headings"
+      },
+      {
+       "letter": "D",
+       "text": "An answer in English"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Numbers that do not add up",
+     "intro": "Tools read documents less reliably when the documents are POOR QUALITY: blurry or tilted scans, handwriting, faint photocopies, complex tables, charts, or files where text is actually an image. They also struggle when documents are INCOMPLETE: missing pages, a cut-off photo, or a file that did not fully upload. The answer may still sound confident. Warning signs: numbers that do not add up, garbled words, answers that ignore a section you know exists. Fixes: upload a clearer copy, split complex tables, type key numbers yourself, and check that every page is present.",
+     "feedback": "Inconsistencies signal misreading."
+    },
+    {
+     "id": "S64-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "An answer ignores a section you know is in the document. What might have happened?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Part of the document was not read"
+      },
+      {
+       "letter": "B",
+       "text": "The tool chose to hide it on purpose"
+      },
+      {
+       "letter": "C",
+       "text": "Sections are never read by tools"
+      },
+      {
+       "letter": "D",
+       "text": "The section must not really exist"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Part of the document was not read",
+     "intro": "Tools read documents less reliably when the documents are POOR QUALITY: blurry or tilted scans, handwriting, faint photocopies, complex tables, charts, or files where text is actually an image. They also struggle when documents are INCOMPLETE: missing pages, a cut-off photo, or a file that did not fully upload. The answer may still sound confident. Warning signs: numbers that do not add up, garbled words, answers that ignore a section you know exists. Fixes: upload a clearer copy, split complex tables, type key numbers yourself, and check that every page is present.",
+     "feedback": "Incomplete reading."
+    },
+    {
+     "id": "S64-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "Which fix helps with a complex table?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Add more columns"
+      },
+      {
+       "letter": "B",
+       "text": "Upload it at a lower quality so the file is smaller and easier for the tool to handle"
+      },
+      {
+       "letter": "C",
+       "text": "Split it or type the key numbers yourself"
+      },
+      {
+       "letter": "D",
+       "text": "Remove the headings"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Split it or type the key numbers yourself",
+     "intro": "Tools read documents less reliably when the documents are POOR QUALITY: blurry or tilted scans, handwriting, faint photocopies, complex tables, charts, or files where text is actually an image. They also struggle when documents are INCOMPLETE: missing pages, a cut-off photo, or a file that did not fully upload. The answer may still sound confident. Warning signs: numbers that do not add up, garbled words, answers that ignore a section you know exists. Fixes: upload a clearer copy, split complex tables, type key numbers yourself, and check that every page is present.",
+     "feedback": "Simplify the input."
+    },
+    {
+     "id": "S64-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "Does a confident answer mean the document was read correctly?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No; confidence does not show accuracy"
+      },
+      {
+       "letter": "B",
+       "text": "Yes, if the answer is long"
+      },
+      {
+       "letter": "C",
+       "text": "Only for scanned files"
+      },
+      {
+       "letter": "D",
+       "text": "Yes; tools only sound confident when they have read every page perfectly"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "No; confidence does not show accuracy",
+     "intro": "Tools read documents less reliably when the documents are POOR QUALITY: blurry or tilted scans, handwriting, faint photocopies, complex tables, charts, or files where text is actually an image. They also struggle when documents are INCOMPLETE: missing pages, a cut-off photo, or a file that did not fully upload. The answer may still sound confident. Warning signs: numbers that do not add up, garbled words, answers that ignore a section you know exists. Fixes: upload a clearer copy, split complex tables, type key numbers yourself, and check that every page is present.",
+     "feedback": "Confidence is not evidence."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Spot signs of a misread document",
+   "questions": [
+    {
+     "id": "S64-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "Items 12 + 8 + 5, stated total 30. Which sign appears?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Mixed-up order"
+      },
+      {
+       "letter": "B",
+       "text": "Garbled words in the item names that were read from the page"
+      },
+      {
+       "letter": "C",
+       "text": "Math that does not add up"
+      },
+      {
+       "letter": "D",
+       "text": "Missing parts"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Math that does not add up",
+     "intro": "Look for four warning signs in an answer about a document. (1) MATH THAT DOES NOT ADD UP: items that do not sum to the stated total. (2) GARBLED WORDS: \"Tota1 Arnount\" instead of \"Total Amount.\" (3) MISSING PARTS: no mention of a section you can see. (4) MIXED-UP ORDER: sentences from two columns stitched together. Any one sign means you should check the original. Example: items 12 + 8 + 5 with a stated total of 30 fail sign 1, because 12 + 8 + 5 = 25.",
+     "feedback": "12 + 8 + 5 = 25, not 30."
+    },
+    {
+     "id": "S64-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "\"Tota1 Arnount\" is which sign?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Math that does not add up because the total is listed incorrectly"
+      },
+      {
+       "letter": "B",
+       "text": "Garbled words"
+      },
+      {
+       "letter": "C",
+       "text": "Mixed-up order"
+      },
+      {
+       "letter": "D",
+       "text": "Missing parts"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Garbled words",
+     "intro": "Look for four warning signs in an answer about a document. (1) MATH THAT DOES NOT ADD UP: items that do not sum to the stated total. (2) GARBLED WORDS: \"Tota1 Arnount\" instead of \"Total Amount.\" (3) MISSING PARTS: no mention of a section you can see. (4) MIXED-UP ORDER: sentences from two columns stitched together. Any one sign means you should check the original. Example: items 12 + 8 + 5 with a stated total of 30 fail sign 1, because 12 + 8 + 5 = 25.",
+     "feedback": "Misread characters."
+    },
+    {
+     "id": "S64-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "An answer never mentions the \"Fees\" section you can see. Which sign?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Mixed-up order"
+      },
+      {
+       "letter": "B",
+       "text": "Garbled words that appear in the name of the fees section of the document"
+      },
+      {
+       "letter": "C",
+       "text": "Math that does not add up"
+      },
+      {
+       "letter": "D",
+       "text": "Missing parts"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Missing parts",
+     "intro": "Look for four warning signs in an answer about a document. (1) MATH THAT DOES NOT ADD UP: items that do not sum to the stated total. (2) GARBLED WORDS: \"Tota1 Arnount\" instead of \"Total Amount.\" (3) MISSING PARTS: no mention of a section you can see. (4) MIXED-UP ORDER: sentences from two columns stitched together. Any one sign means you should check the original. Example: items 12 + 8 + 5 with a stated total of 30 fail sign 1, because 12 + 8 + 5 = 25.",
+     "feedback": "A section was skipped."
+    },
+    {
+     "id": "S64-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "Sentences from two newspaper columns are stitched together. Which sign?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Missing parts, because some sentences were left out of the answer entirely"
+      },
+      {
+       "letter": "B",
+       "text": "Garbled words"
+      },
+      {
+       "letter": "C",
+       "text": "Mixed-up order"
+      },
+      {
+       "letter": "D",
+       "text": "Math that does not add up"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Mixed-up order",
+     "intro": "Look for four warning signs in an answer about a document. (1) MATH THAT DOES NOT ADD UP: items that do not sum to the stated total. (2) GARBLED WORDS: \"Tota1 Arnount\" instead of \"Total Amount.\" (3) MISSING PARTS: no mention of a section you can see. (4) MIXED-UP ORDER: sentences from two columns stitched together. Any one sign means you should check the original. Example: items 12 + 8 + 5 with a stated total of 30 fail sign 1, because 12 + 8 + 5 = 25.",
+     "feedback": "Columns merged."
+    },
+    {
+     "id": "S64-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "What should you do if any sign appears?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Delete the document"
+      },
+      {
+       "letter": "B",
+       "text": "Check the original document"
+      },
+      {
+       "letter": "C",
+       "text": "Ask for a longer answer"
+      },
+      {
+       "letter": "D",
+       "text": "Trust the answer anyway"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Check the original document",
+     "intro": "Look for four warning signs in an answer about a document. (1) MATH THAT DOES NOT ADD UP: items that do not sum to the stated total. (2) GARBLED WORDS: \"Tota1 Arnount\" instead of \"Total Amount.\" (3) MISSING PARTS: no mention of a section you can see. (4) MIXED-UP ORDER: sentences from two columns stitched together. Any one sign means you should check the original. Example: items 12 + 8 + 5 with a stated total of 30 fail sign 1, because 12 + 8 + 5 = 25.",
+     "feedback": "Go back to the source."
+    }
+   ],
+   "branch_mode": "underlying_skill",
+   "relationship": "A learner who cannot tell when a document was misread practices spotting four concrete warning signs."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Handle poor and incomplete documents in practice",
+   "questions": [
+    {
+     "id": "S64-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "Eva photographs a faded receipt and the tool reads the total as 81.00 instead of 31.00. What should she do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Upload a clearer photo or type the total herself"
+      },
+      {
+       "letter": "B",
+       "text": "Use 81.00, since the tool read the receipt and tools read numbers more carefully than people"
+      },
+      {
+       "letter": "C",
+       "text": "Ask the tool to round it"
+      },
+      {
+       "letter": "D",
+       "text": "Throw the receipt away"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Upload a clearer photo or type the total herself",
+     "intro": "Tools read documents less reliably when the documents are POOR QUALITY: blurry or tilted scans, handwriting, faint photocopies, complex tables, charts, or files where text is actually an image. They also struggle when documents are INCOMPLETE: missing pages, a cut-off photo, or a file that did not fully upload. The answer may still sound confident. Warning signs: numbers that do not add up, garbled words, answers that ignore a section you know exists. Fixes: upload a clearer copy, split complex tables, type key numbers yourself, and check that every page is present.",
+     "feedback": "Better input or manual entry."
+    },
+    {
+     "id": "S64-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "A 10-page PDF upload produces an answer about only the first 3 pages. What should you check?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Whether the tool prefers short documents and should only ever be given three pages"
+      },
+      {
+       "letter": "B",
+       "text": "Whether the PDF is colorful"
+      },
+      {
+       "letter": "C",
+       "text": "Whether page 1 has a title"
+      },
+      {
+       "letter": "D",
+       "text": "Whether all pages uploaded and were read"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Whether all pages uploaded and were read",
+     "intro": "Tools read documents less reliably when the documents are POOR QUALITY: blurry or tilted scans, handwriting, faint photocopies, complex tables, charts, or files where text is actually an image. They also struggle when documents are INCOMPLETE: missing pages, a cut-off photo, or a file that did not fully upload. The answer may still sound confident. Warning signs: numbers that do not add up, garbled words, answers that ignore a section you know exists. Fixes: upload a clearer copy, split complex tables, type key numbers yourself, and check that every page is present.",
+     "feedback": "Confirm completeness."
+    },
+    {
+     "id": "S64-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "A handwritten form is read with several wrong names. What is the best approach?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Type the key information yourself"
+      },
+      {
+       "letter": "B",
+       "text": "Accept the wrong names"
+      },
+      {
+       "letter": "C",
+       "text": "Upload the same handwritten form again and again until the names come out right"
+      },
+      {
+       "letter": "D",
+       "text": "Ask for a poem about the form"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Type the key information yourself",
+     "intro": "Tools read documents less reliably when the documents are POOR QUALITY: blurry or tilted scans, handwriting, faint photocopies, complex tables, charts, or files where text is actually an image. They also struggle when documents are INCOMPLETE: missing pages, a cut-off photo, or a file that did not fully upload. The answer may still sound confident. Warning signs: numbers that do not add up, garbled words, answers that ignore a section you know exists. Fixes: upload a clearer copy, split complex tables, type key numbers yourself, and check that every page is present.",
+     "feedback": "Manual entry for key details."
+    },
+    {
+     "id": "S64-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "A spreadsheet image with many columns comes back with values in the wrong columns. What helps?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Remove the column headings"
+      },
+      {
+       "letter": "B",
+       "text": "Add more colors"
+      },
+      {
+       "letter": "C",
+       "text": "Share the data as a real spreadsheet file or smaller tables"
+      },
+      {
+       "letter": "D",
+       "text": "Take an even smaller screenshot of the spreadsheet so there is less to read"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Share the data as a real spreadsheet file or smaller tables",
+     "intro": "Tools read documents less reliably when the documents are POOR QUALITY: blurry or tilted scans, handwriting, faint photocopies, complex tables, charts, or files where text is actually an image. They also struggle when documents are INCOMPLETE: missing pages, a cut-off photo, or a file that did not fully upload. The answer may still sound confident. Warning signs: numbers that do not add up, garbled words, answers that ignore a section you know exists. Fixes: upload a clearer copy, split complex tables, type key numbers yourself, and check that every page is present.",
+     "feedback": "Structured data reads better than images."
+    },
+    {
+     "id": "S64-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "A photo of a contract cuts off the bottom lines of page 2. What is the risk?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The contract becomes invalid"
+      },
+      {
+       "letter": "B",
+       "text": "The tool will guess correctly"
+      },
+      {
+       "letter": "C",
+       "text": "No risk"
+      },
+      {
+       "letter": "D",
+       "text": "Missing terms in the answer"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Missing terms in the answer",
+     "intro": "Tools read documents less reliably when the documents are POOR QUALITY: blurry or tilted scans, handwriting, faint photocopies, complex tables, charts, or files where text is actually an image. They also struggle when documents are INCOMPLETE: missing pages, a cut-off photo, or a file that did not fully upload. The answer may still sound confident. Warning signs: numbers that do not add up, garbled words, answers that ignore a section you know exists. Fixes: upload a clearer copy, split complex tables, type key numbers yourself, and check that every page is present.",
+     "feedback": "Incomplete input, incomplete answer."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Detect silent reading failures",
+   "questions": [
+    {
+     "id": "S64-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "What question helps reveal how much of a file a tool read?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Can you make it shorter?\""
+      },
+      {
+       "letter": "B",
+       "text": "\"How many pages did you read?\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Are you confident that your answer about the whole file is correct and complete?\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Is this file important?\""
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "\"How many pages did you read?\"",
+     "intro": "Some failures are silent. A tool might read only the first part of a long file, skip pages that are images, or treat a two-column layout as one jumbled column, mixing sentences together. Ask the tool what it can see, for example \"How many pages did you read?\" or \"List the section headings you found,\" and compare with the document. For anything that matters, confirm important values against the original rather than the tool's reading of it.",
+     "feedback": "Ask what it can see."
+    },
+    {
+     "id": "S64-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "A two-column newsletter is read as one column, mixing sentences. What can result?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Jumbled, incorrect content"
+      },
+      {
+       "letter": "B",
+       "text": "A perfect summary that is even easier to read than the original two-column layout"
+      },
+      {
+       "letter": "C",
+       "text": "A shorter file size"
+      },
+      {
+       "letter": "D",
+       "text": "A translated newsletter"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Jumbled, incorrect content",
+     "intro": "Some failures are silent. A tool might read only the first part of a long file, skip pages that are images, or treat a two-column layout as one jumbled column, mixing sentences together. Ask the tool what it can see, for example \"How many pages did you read?\" or \"List the section headings you found,\" and compare with the document. For anything that matters, confirm important values against the original rather than the tool's reading of it.",
+     "feedback": "Layout can scramble meaning."
+    },
+    {
+     "id": "S64-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "Some pages in a file are scanned images, not text. What might the tool do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Delete the file"
+      },
+      {
+       "letter": "B",
+       "text": "Refuse to answer anything"
+      },
+      {
+       "letter": "C",
+       "text": "Always read image pages perfectly and say clearly that they were images"
+      },
+      {
+       "letter": "D",
+       "text": "Skip those pages without saying so"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Skip those pages without saying so",
+     "intro": "Some failures are silent. A tool might read only the first part of a long file, skip pages that are images, or treat a two-column layout as one jumbled column, mixing sentences together. Ask the tool what it can see, for example \"How many pages did you read?\" or \"List the section headings you found,\" and compare with the document. For anything that matters, confirm important values against the original rather than the tool's reading of it.",
+     "feedback": "Silent skips can happen."
+    },
+    {
+     "id": "S64-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "How can you compare what the tool saw with the document?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ask it to describe the document's font, color and paper size in great detail"
+      },
+      {
+       "letter": "B",
+       "text": "Ask it to list the section headings it found"
+      },
+      {
+       "letter": "C",
+       "text": "Ask it for a longer answer"
+      },
+      {
+       "letter": "D",
+       "text": "Ask it to guess the author"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Ask it to list the section headings it found",
+     "intro": "Some failures are silent. A tool might read only the first part of a long file, skip pages that are images, or treat a two-column layout as one jumbled column, mixing sentences together. Ask the tool what it can see, for example \"How many pages did you read?\" or \"List the section headings you found,\" and compare with the document. For anything that matters, confirm important values against the original rather than the tool's reading of it.",
+     "feedback": "Headings reveal coverage."
+    },
+    {
+     "id": "S64-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "For an important value from a long document, what should you rely on?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The file name"
+      },
+      {
+       "letter": "B",
+       "text": "A guess"
+      },
+      {
+       "letter": "C",
+       "text": "The original document"
+      },
+      {
+       "letter": "D",
+       "text": "The tool's reading of it"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The original document",
+     "intro": "Some failures are silent. A tool might read only the first part of a long file, skip pages that are images, or treat a two-column layout as one jumbled column, mixing sentences together. Ask the tool what it can see, for example \"How many pages did you read?\" or \"List the section headings you found,\" and compare with the document. For anything that matters, confirm important values against the original rather than the tool's reading of it.",
+     "feedback": "Confirm key values in the source."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

@@ -1,0 +1,660 @@
+{
+ "set": 13,
+ "title": "Fine-tuning versus giving information in a request",
+ "outcome": "AI.LEARN.08",
+ "content_status": "stable",
+ "requires": [
+  8
+ ],
+ "module": "learning",
+ "path_refs": [
+  "everyday",
+  "creative",
+  "coding",
+  "work",
+  "society"
+ ],
+ "suggested": [
+  65
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Tell fine-tuning from supplying information in a request",
+   "questions": [
+    {
+     "id": "S13-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A company trains an existing model further on 20,000 of its own support chats. What is this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Deleting the model's parameters"
+      },
+      {
+       "letter": "B",
+       "text": "Inference on 20,000 new questions"
+      },
+      {
+       "letter": "C",
+       "text": "Fine-tuning, which changes the model"
+      },
+      {
+       "letter": "D",
+       "text": "Supplying information in a request"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Fine-tuning, which changes the model",
+     "intro": "There are two very different ways to make a model handle your needs. FINE-TUNING is more training: a model that already exists is trained further on new examples, which changes its parameters. It takes data, time and skill, and the change lasts for every later use of that tuned version. SUPPLYING INFORMATION IN THE REQUEST means putting what the model needs, such as a policy document, a list of rules or a few examples, into your message or an attached file. That does not change the model; it only affects that request (and that conversation, while the text stays in context).",
+     "feedback": "Training further on new examples is fine-tuning."
+    },
+    {
+     "id": "S13-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Leo pastes his school's rules into his message and asks a question about them. What happens to the model?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It permanently forgets other schools' rules"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing changes; the rules affect only this request"
+      },
+      {
+       "letter": "C",
+       "text": "It shares the rules with every other user"
+      },
+      {
+       "letter": "D",
+       "text": "It is fine-tuned on the school rules forever"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Nothing changes; the rules affect only this request",
+     "intro": "There are two very different ways to make a model handle your needs. FINE-TUNING is more training: a model that already exists is trained further on new examples, which changes its parameters. It takes data, time and skill, and the change lasts for every later use of that tuned version. SUPPLYING INFORMATION IN THE REQUEST means putting what the model needs, such as a policy document, a list of rules or a few examples, into your message or an attached file. That does not change the model; it only affects that request (and that conversation, while the text stays in context).",
+     "feedback": "Supplied information affects the request, not the model."
+    },
+    {
+     "id": "S13-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Which approach changes the model's parameters?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Typing a longer, clearer question"
+      },
+      {
+       "letter": "B",
+       "text": "Attaching a file to one message"
+      },
+      {
+       "letter": "C",
+       "text": "Adding three examples to a request"
+      },
+      {
+       "letter": "D",
+       "text": "Fine-tuning"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Fine-tuning",
+     "intro": "There are two very different ways to make a model handle your needs. FINE-TUNING is more training: a model that already exists is trained further on new examples, which changes its parameters. It takes data, time and skill, and the change lasts for every later use of that tuned version. SUPPLYING INFORMATION IN THE REQUEST means putting what the model needs, such as a policy document, a list of rules or a few examples, into your message or an attached file. That does not change the model; it only affects that request (and that conversation, while the text stays in context).",
+     "feedback": "Only further training changes parameters."
+    },
+    {
+     "id": "S13-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "What does fine-tuning usually require?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Example data, time and some skill"
+      },
+      {
+       "letter": "B",
+       "text": "Only one sentence typed into a chat"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing; it happens automatically when you chat"
+      },
+      {
+       "letter": "D",
+       "text": "Deleting the original model first"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Example data, time and some skill",
+     "intro": "There are two very different ways to make a model handle your needs. FINE-TUNING is more training: a model that already exists is trained further on new examples, which changes its parameters. It takes data, time and skill, and the change lasts for every later use of that tuned version. SUPPLYING INFORMATION IN THE REQUEST means putting what the model needs, such as a policy document, a list of rules or a few examples, into your message or an attached file. That does not change the model; it only affects that request (and that conversation, while the text stays in context).",
+     "feedback": "Fine-tuning is a training project."
+    },
+    {
+     "id": "S13-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "How long does information supplied in a request affect the model's answers?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Exactly one week, then it expires"
+      },
+      {
+       "letter": "B",
+       "text": "Only while it is in that request or conversation"
+      },
+      {
+       "letter": "C",
+       "text": "Until the company retrains the model"
+      },
+      {
+       "letter": "D",
+       "text": "Forever, for every user of the model everywhere"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Only while it is in that request or conversation",
+     "intro": "There are two very different ways to make a model handle your needs. FINE-TUNING is more training: a model that already exists is trained further on new examples, which changes its parameters. It takes data, time and skill, and the change lasts for every later use of that tuned version. SUPPLYING INFORMATION IN THE REQUEST means putting what the model needs, such as a policy document, a list of rules or a few examples, into your message or an attached file. That does not change the model; it only affects that request (and that conversation, while the text stays in context).",
+     "feedback": "Supplied text acts through the context, not training."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare a training course with a note on the desk",
+   "questions": [
+    {
+     "id": "S13-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Fine-tuning is like which option?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Both options"
+      },
+      {
+       "letter": "B",
+       "text": "The note left on the desk"
+      },
+      {
+       "letter": "C",
+       "text": "The weeks-long training course"
+      },
+      {
+       "letter": "D",
+       "text": "Neither option"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The weeks-long training course",
+     "intro": "A new employee can learn about a company in two ways. She can attend a TRAINING COURSE for weeks, and what she learns stays with her afterward. Or her manager can leave a NOTE on her desk: \"Today the store closes at 6.\" The note helps today, but it does not change her training, and tomorrow there may be a different note. Fine-tuning is like the training course: it changes the model. Putting information in a request is like the note: it helps with that task and changes nothing permanent.",
+     "feedback": "Further training changes the learner."
+    },
+    {
+     "id": "S13-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Pasting information into a request is like which option?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The note on the desk"
+      },
+      {
+       "letter": "B",
+       "text": "Hiring a new employee"
+      },
+      {
+       "letter": "C",
+       "text": "The training course"
+      },
+      {
+       "letter": "D",
+       "text": "Closing the store"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The note on the desk",
+     "intro": "A new employee can learn about a company in two ways. She can attend a TRAINING COURSE for weeks, and what she learns stays with her afterward. Or her manager can leave a NOTE on her desk: \"Today the store closes at 6.\" The note helps today, but it does not change her training, and tomorrow there may be a different note. Fine-tuning is like the training course: it changes the model. Putting information in a request is like the note: it helps with that task and changes nothing permanent.",
+     "feedback": "A note helps the current task."
+    },
+    {
+     "id": "S13-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Does the note change what the employee learned in training?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No, because she cannot read"
+      },
+      {
+       "letter": "B",
+       "text": "Yes, it replaces the course"
+      },
+      {
+       "letter": "C",
+       "text": "Yes, it rewrites her whole training"
+      },
+      {
+       "letter": "D",
+       "text": "No, it only helps today"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "No, it only helps today",
+     "intro": "A new employee can learn about a company in two ways. She can attend a TRAINING COURSE for weeks, and what she learns stays with her afterward. Or her manager can leave a NOTE on her desk: \"Today the store closes at 6.\" The note helps today, but it does not change her training, and tomorrow there may be a different note. Fine-tuning is like the training course: it changes the model. Putting information in a request is like the note: it helps with that task and changes nothing permanent.",
+     "feedback": "Notes do not change training."
+    },
+    {
+     "id": "S13-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Which lasts after the task is done?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "What she learned in the course"
+      },
+      {
+       "letter": "B",
+       "text": "Neither"
+      },
+      {
+       "letter": "C",
+       "text": "The note's message"
+      },
+      {
+       "letter": "D",
+       "text": "Only the store hours in the note"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "What she learned in the course",
+     "intro": "A new employee can learn about a company in two ways. She can attend a TRAINING COURSE for weeks, and what she learns stays with her afterward. Or her manager can leave a NOTE on her desk: \"Today the store closes at 6.\" The note helps today, but it does not change her training, and tomorrow there may be a different note. Fine-tuning is like the training course: it changes the model. Putting information in a request is like the note: it helps with that task and changes nothing permanent.",
+     "feedback": "Training lasts; notes are temporary."
+    },
+    {
+     "id": "S13-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Tomorrow the store closes at 8. What is the easiest way to tell her?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Tell no one"
+      },
+      {
+       "letter": "B",
+       "text": "Hire a different employee"
+      },
+      {
+       "letter": "C",
+       "text": "Leave a new note"
+      },
+      {
+       "letter": "D",
+       "text": "Send her back to a weeks-long course"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Leave a new note",
+     "intro": "A new employee can learn about a company in two ways. She can attend a TRAINING COURSE for weeks, and what she learns stays with her afterward. Or her manager can leave a NOTE on her desk: \"Today the store closes at 6.\" The note helps today, but it does not change her training, and tomorrow there may be a different note. Fine-tuning is like the training course: it changes the model. Putting information in a request is like the note: it helps with that task and changes nothing permanent.",
+     "feedback": "Changing facts are easiest to supply as notes."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who thinks attaching a document retrains a model can separate the two with a training-course-versus-note example."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Choose between fine-tuning and supplying information",
+   "questions": [
+    {
+     "id": "S13-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A small shop wants answers about its return policy, which it updates often. Which approach is simplest to keep current?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Hope the model already knows the shop's policy"
+      },
+      {
+       "letter": "B",
+       "text": "Supply the current policy in each request"
+      },
+      {
+       "letter": "C",
+       "text": "Fine-tune a model every time the policy changes"
+      },
+      {
+       "letter": "D",
+       "text": "Fine-tune once and never update it"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Supply the current policy in each request",
+     "intro": "There are two very different ways to make a model handle your needs. FINE-TUNING is more training: a model that already exists is trained further on new examples, which changes its parameters. It takes data, time and skill, and the change lasts for every later use of that tuned version. SUPPLYING INFORMATION IN THE REQUEST means putting what the model needs, such as a policy document, a list of rules or a few examples, into your message or an attached file. That does not change the model; it only affects that request (and that conversation, while the text stays in context).",
+     "feedback": "Supplying current text is easy to update."
+    },
+    {
+     "id": "S13-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Tia attached a recipe file and asked for a shopping list. Did the model learn her recipe permanently?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes; attaching a file fine-tunes the model"
+      },
+      {
+       "letter": "B",
+       "text": "Yes; all users can now see her recipe"
+      },
+      {
+       "letter": "C",
+       "text": "No; models cannot read attached files"
+      },
+      {
+       "letter": "D",
+       "text": "No; the file was used only for that request"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "No; the file was used only for that request",
+     "intro": "There are two very different ways to make a model handle your needs. FINE-TUNING is more training: a model that already exists is trained further on new examples, which changes its parameters. It takes data, time and skill, and the change lasts for every later use of that tuned version. SUPPLYING INFORMATION IN THE REQUEST means putting what the model needs, such as a policy document, a list of rules or a few examples, into your message or an attached file. That does not change the model; it only affects that request (and that conversation, while the text stays in context).",
+     "feedback": "An attachment adds context, not training."
+    },
+    {
+     "id": "S13-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A law firm wants a model to always write in its strict house format across thousands of documents. Which approach might suit it?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Never giving any examples"
+      },
+      {
+       "letter": "B",
+       "text": "Typing \"use our format\" once and assuming it lasts forever"
+      },
+      {
+       "letter": "C",
+       "text": "Fine-tuning on many examples of that format"
+      },
+      {
+       "letter": "D",
+       "text": "Asking a different model each time"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Fine-tuning on many examples of that format",
+     "intro": "There are two very different ways to make a model handle your needs. FINE-TUNING is more training: a model that already exists is trained further on new examples, which changes its parameters. It takes data, time and skill, and the change lasts for every later use of that tuned version. SUPPLYING INFORMATION IN THE REQUEST means putting what the model needs, such as a policy document, a list of rules or a few examples, into your message or an attached file. That does not change the model; it only affects that request (and that conversation, while the text stays in context).",
+     "feedback": "A lasting style across many uses can suit fine-tuning, with testing."
+    },
+    {
+     "id": "S13-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Which statement about fine-tuning is accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It changes the model for later uses of that version"
+      },
+      {
+       "letter": "B",
+       "text": "It needs no data at all"
+      },
+      {
+       "letter": "C",
+       "text": "It happens whenever a user says \"learn this\""
+      },
+      {
+       "letter": "D",
+       "text": "It changes only the current message"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "It changes the model for later uses of that version",
+     "intro": "There are two very different ways to make a model handle your needs. FINE-TUNING is more training: a model that already exists is trained further on new examples, which changes its parameters. It takes data, time and skill, and the change lasts for every later use of that tuned version. SUPPLYING INFORMATION IN THE REQUEST means putting what the model needs, such as a policy document, a list of rules or a few examples, into your message or an attached file. That does not change the model; it only affects that request (and that conversation, while the text stays in context).",
+     "feedback": "Fine-tuning creates a changed version."
+    },
+    {
+     "id": "S13-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A teacher wants a model to answer questions about this week's homework sheet. What is the easiest approach?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ask the model to guess the sheet"
+      },
+      {
+       "letter": "B",
+       "text": "Expect the model to know the sheet already"
+      },
+      {
+       "letter": "C",
+       "text": "Fine-tune a model on the sheet"
+      },
+      {
+       "letter": "D",
+       "text": "Include the homework sheet in the request"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Include the homework sheet in the request",
+     "intro": "There are two very different ways to make a model handle your needs. FINE-TUNING is more training: a model that already exists is trained further on new examples, which changes its parameters. It takes data, time and skill, and the change lasts for every later use of that tuned version. SUPPLYING INFORMATION IN THE REQUEST means putting what the model needs, such as a policy document, a list of rules or a few examples, into your message or an attached file. That does not change the model; it only affects that request (and that conversation, while the text stays in context).",
+     "feedback": "Supply the sheet directly."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Decide when fine-tuning is the wrong tool",
+   "questions": [
+    {
+     "id": "S13-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A store wants a model to know its 2,000 prices, which change weekly. Why is fine-tuning a poor fit?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Prices are illegal to share with any AI model"
+      },
+      {
+       "letter": "B",
+       "text": "Prices change weekly; fine-tuning suits that poorly"
+      },
+      {
+       "letter": "C",
+       "text": "Fine-tuning works only for images"
+      },
+      {
+       "letter": "D",
+       "text": "Fine-tuning cannot use numbers at all"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Prices change weekly; fine-tuning suits that poorly",
+     "intro": "Choosing between the two depends on the job. For facts that change often, like this week's prices or a policy updated monthly, supplying current information in the request is usually easier to keep up to date. Fine-tuning suits teaching a lasting style or format across many uses, or a specialized task with lots of examples. Fine-tuning is NOT a reliable way to make a model \"know\" a long list of changing facts, and it can introduce new mistakes. Either way, results need testing, and private data used for fine-tuning needs the same care as any other data sharing.",
+     "feedback": "Changing facts are better supplied from a current source."
+    },
+    {
+     "id": "S13-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "After fine-tuning, a model starts making errors it did not make before. What does this show?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Fine-tuning can add new mistakes, so test the result"
+      },
+      {
+       "letter": "B",
+       "text": "The original model was deleted by accident"
+      },
+      {
+       "letter": "C",
+       "text": "Fine-tuning always makes every answer better"
+      },
+      {
+       "letter": "D",
+       "text": "Errors cannot happen after fine-tuning"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Fine-tuning can add new mistakes, so test the result",
+     "intro": "Choosing between the two depends on the job. For facts that change often, like this week's prices or a policy updated monthly, supplying current information in the request is usually easier to keep up to date. Fine-tuning suits teaching a lasting style or format across many uses, or a specialized task with lots of examples. Fine-tuning is NOT a reliable way to make a model \"know\" a long list of changing facts, and it can introduce new mistakes. Either way, results need testing, and private data used for fine-tuning needs the same care as any other data sharing.",
+     "feedback": "Any changed version needs testing."
+    },
+    {
+     "id": "S13-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A team wants to fine-tune on customer emails that include home addresses. What should they consider first?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nothing; private data is fine to use for any kind of training"
+      },
+      {
+       "letter": "B",
+       "text": "Whether they may use that private data, and how to protect it"
+      },
+      {
+       "letter": "C",
+       "text": "Only how fast the training will finish"
+      },
+      {
+       "letter": "D",
+       "text": "Whether the emails are long enough"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Whether they may use that private data, and how to protect it",
+     "intro": "Choosing between the two depends on the job. For facts that change often, like this week's prices or a policy updated monthly, supplying current information in the request is usually easier to keep up to date. Fine-tuning suits teaching a lasting style or format across many uses, or a specialized task with lots of examples. Fine-tuning is NOT a reliable way to make a model \"know\" a long list of changing facts, and it can introduce new mistakes. Either way, results need testing, and private data used for fine-tuning needs the same care as any other data sharing.",
+     "feedback": "Fine-tuning data needs the same care as any data sharing."
+    },
+    {
+     "id": "S13-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Which task is the best fit for supplying information in the request rather than fine-tuning?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Creating a new version for long-term use"
+      },
+      {
+       "letter": "B",
+       "text": "Training a model on a large specialized task"
+      },
+      {
+       "letter": "C",
+       "text": "Answering questions about this month's updated policy"
+      },
+      {
+       "letter": "D",
+       "text": "Teaching a lasting writing style used across all documents"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Answering questions about this month's updated policy",
+     "intro": "Choosing between the two depends on the job. For facts that change often, like this week's prices or a policy updated monthly, supplying current information in the request is usually easier to keep up to date. Fine-tuning suits teaching a lasting style or format across many uses, or a specialized task with lots of examples. Fine-tuning is NOT a reliable way to make a model \"know\" a long list of changing facts, and it can introduce new mistakes. Either way, results need testing, and private data used for fine-tuning needs the same care as any other data sharing.",
+     "feedback": "Current, changing information is easiest to supply."
+    },
+    {
+     "id": "S13-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A manager says, \"We fine-tuned it, so we no longer need to check its answers.\" What is wrong?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Fine-tuning deletes the ability to check"
+      },
+      {
+       "letter": "B",
+       "text": "Checking is only for models that were never tuned"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing; fine-tuned models are always correct"
+      },
+      {
+       "letter": "D",
+       "text": "Tuned models still make mistakes and need testing"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Tuned models still make mistakes and need testing",
+     "intro": "Choosing between the two depends on the job. For facts that change often, like this week's prices or a policy updated monthly, supplying current information in the request is usually easier to keep up to date. Fine-tuning suits teaching a lasting style or format across many uses, or a specialized task with lots of examples. Fine-tuning is NOT a reliable way to make a model \"know\" a long list of changing facts, and it can introduce new mistakes. Either way, results need testing, and private data used for fine-tuning needs the same care as any other data sharing.",
+     "feedback": "Testing is needed either way."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

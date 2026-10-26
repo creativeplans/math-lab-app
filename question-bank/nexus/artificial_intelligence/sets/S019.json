@@ -1,0 +1,658 @@
+{
+ "set": 19,
+ "title": "What a model learned versus what you supply",
+ "outcome": "AI.LLM.06",
+ "content_status": "stable",
+ "requires": [
+  14
+ ],
+ "module": "llm",
+ "path_refs": [
+  "everyday",
+  "creative",
+  "coding",
+  "work",
+  "society"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Tell built-in knowledge from supplied or retrieved information",
+   "questions": [
+    {
+     "id": "S19-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "What is a training cutoff?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The date after which the training data has no information"
+      },
+      {
+       "letter": "B",
+       "text": "The time limit for typing a question"
+      },
+      {
+       "letter": "C",
+       "text": "The point where a model stops answering for the day"
+      },
+      {
+       "letter": "D",
+       "text": "The maximum number of users at once"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The date after which the training data has no information",
+     "intro": "A model's built-in knowledge comes from its training data, which stops at a TRAINING CUTOFF date. It does not know about events after that date unless the information is SUPPLIED or RETRIEVED during your request: you paste a document, or the product runs a web search and adds the results to the context. These are different: built-in knowledge is patterns frozen at training time and may be incomplete or wrong, while supplied or retrieved text is current material the model reads now, which is only as good as its source. When an answer depends on recent facts, know which kind you are getting.",
+     "feedback": "Built-in knowledge stops at the cutoff."
+    },
+    {
+     "id": "S19-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "A model's training cutoff was before a recent election. How could it still describe the result correctly?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "By training itself during the conversation"
+      },
+      {
+       "letter": "B",
+       "text": "If the result is supplied or retrieved for it"
+      },
+      {
+       "letter": "C",
+       "text": "It cannot ever do so in any situation"
+      },
+      {
+       "letter": "D",
+       "text": "By guessing based on old patterns"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "If the result is supplied or retrieved for it",
+     "intro": "A model's built-in knowledge comes from its training data, which stops at a TRAINING CUTOFF date. It does not know about events after that date unless the information is SUPPLIED or RETRIEVED during your request: you paste a document, or the product runs a web search and adds the results to the context. These are different: built-in knowledge is patterns frozen at training time and may be incomplete or wrong, while supplied or retrieved text is current material the model reads now, which is only as good as its source. When an answer depends on recent facts, know which kind you are getting.",
+     "feedback": "Current information must be supplied or retrieved."
+    },
+    {
+     "id": "S19-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "A product runs a web search and adds the results to the request. Which kind of information is that?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Information that has no source at all"
+      },
+      {
+       "letter": "B",
+       "text": "Built-in knowledge from training"
+      },
+      {
+       "letter": "C",
+       "text": "A permanent change to the model"
+      },
+      {
+       "letter": "D",
+       "text": "Retrieved information read now"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Retrieved information read now",
+     "intro": "A model's built-in knowledge comes from its training data, which stops at a TRAINING CUTOFF date. It does not know about events after that date unless the information is SUPPLIED or RETRIEVED during your request: you paste a document, or the product runs a web search and adds the results to the context. These are different: built-in knowledge is patterns frozen at training time and may be incomplete or wrong, while supplied or retrieved text is current material the model reads now, which is only as good as its source. When an answer depends on recent facts, know which kind you are getting.",
+     "feedback": "Search results are retrieved into the context."
+    },
+    {
+     "id": "S19-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Which statement about retrieved information is accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It is the same as training data"
+      },
+      {
+       "letter": "B",
+       "text": "It permanently updates the model's knowledge"
+      },
+      {
+       "letter": "C",
+       "text": "It is only as good as the source it came from"
+      },
+      {
+       "letter": "D",
+       "text": "It is always correct because it is recent"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "It is only as good as the source it came from",
+     "intro": "A model's built-in knowledge comes from its training data, which stops at a TRAINING CUTOFF date. It does not know about events after that date unless the information is SUPPLIED or RETRIEVED during your request: you paste a document, or the product runs a web search and adds the results to the context. These are different: built-in knowledge is patterns frozen at training time and may be incomplete or wrong, while supplied or retrieved text is current material the model reads now, which is only as good as its source. When an answer depends on recent facts, know which kind you are getting.",
+     "feedback": "Retrieved text inherits its source's quality."
+    },
+    {
+     "id": "S19-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Which question most needs supplied or retrieved information rather than built-in knowledge?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "What is a triangle?"
+      },
+      {
+       "letter": "B",
+       "text": "What is the boiling point of water at sea level?"
+      },
+      {
+       "letter": "C",
+       "text": "What is a noun in English grammar?"
+      },
+      {
+       "letter": "D",
+       "text": "What are this week's opening hours for the city pool?"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "What are this week's opening hours for the city pool?",
+     "intro": "A model's built-in knowledge comes from its training data, which stops at a TRAINING CUTOFF date. It does not know about events after that date unless the information is SUPPLIED or RETRIEVED during your request: you paste a document, or the product runs a web search and adds the results to the context. These are different: built-in knowledge is patterns frozen at training time and may be incomplete or wrong, while supplied or retrieved text is current material the model reads now, which is only as good as its source. When an answer depends on recent facts, know which kind you are getting.",
+     "feedback": "Recent, changing facts need current sources."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare an encyclopedia on the shelf with today's newspaper",
+   "questions": [
+    {
+     "id": "S19-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "The encyclopedia is like which kind of information?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Retrieved information"
+      },
+      {
+       "letter": "B",
+       "text": "Built-in knowledge"
+      },
+      {
+       "letter": "C",
+       "text": "A web search"
+      },
+      {
+       "letter": "D",
+       "text": "Neither kind"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Built-in knowledge",
+     "intro": "A printed ENCYCLOPEDIA on a shelf holds a lot of knowledge, but only up to the year it was printed. It cannot tell you yesterday's news. If you also hand someone TODAY'S NEWSPAPER, they can read current events, but the newspaper might contain mistakes, and it does not change the encyclopedia. A model's built-in knowledge is like the encyclopedia: fixed at its training cutoff. Supplied or retrieved text is like the newspaper: current material read right now.",
+     "feedback": "Fixed at printing, like training."
+    },
+    {
+     "id": "S19-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Today's newspaper is like which kind of information?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Supplied or retrieved text"
+      },
+      {
+       "letter": "B",
+       "text": "The model's trained parameters"
+      },
+      {
+       "letter": "C",
+       "text": "Training data"
+      },
+      {
+       "letter": "D",
+       "text": "Built-in knowledge"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Supplied or retrieved text",
+     "intro": "A printed ENCYCLOPEDIA on a shelf holds a lot of knowledge, but only up to the year it was printed. It cannot tell you yesterday's news. If you also hand someone TODAY'S NEWSPAPER, they can read current events, but the newspaper might contain mistakes, and it does not change the encyclopedia. A model's built-in knowledge is like the encyclopedia: fixed at its training cutoff. Supplied or retrieved text is like the newspaper: current material read right now.",
+     "feedback": "Current material read now."
+    },
+    {
+     "id": "S19-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Can the encyclopedia tell you yesterday's news?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only on weekends"
+      },
+      {
+       "letter": "B",
+       "text": "Yes, if you read it slowly"
+      },
+      {
+       "letter": "C",
+       "text": "No, it stops at its printing date"
+      },
+      {
+       "letter": "D",
+       "text": "Yes, encyclopedias update themselves"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "No, it stops at its printing date",
+     "intro": "A printed ENCYCLOPEDIA on a shelf holds a lot of knowledge, but only up to the year it was printed. It cannot tell you yesterday's news. If you also hand someone TODAY'S NEWSPAPER, they can read current events, but the newspaper might contain mistakes, and it does not change the encyclopedia. A model's built-in knowledge is like the encyclopedia: fixed at its training cutoff. Supplied or retrieved text is like the newspaper: current material read right now.",
+     "feedback": "Built-in knowledge has a cutoff."
+    },
+    {
+     "id": "S19-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Does reading the newspaper change the encyclopedia?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes, it rewrites the pages"
+      },
+      {
+       "letter": "B",
+       "text": "No, it stays the same"
+      },
+      {
+       "letter": "C",
+       "text": "Yes, it adds a new volume"
+      },
+      {
+       "letter": "D",
+       "text": "Only if the news is big"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "No, it stays the same",
+     "intro": "A printed ENCYCLOPEDIA on a shelf holds a lot of knowledge, but only up to the year it was printed. It cannot tell you yesterday's news. If you also hand someone TODAY'S NEWSPAPER, they can read current events, but the newspaper might contain mistakes, and it does not change the encyclopedia. A model's built-in knowledge is like the encyclopedia: fixed at its training cutoff. Supplied or retrieved text is like the newspaper: current material read right now.",
+     "feedback": "Supplied text does not retrain the model."
+    },
+    {
+     "id": "S19-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Is the newspaper guaranteed to be correct?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes, because it is new"
+      },
+      {
+       "letter": "B",
+       "text": "Yes, all news is correct"
+      },
+      {
+       "letter": "C",
+       "text": "Only if it is long"
+      },
+      {
+       "letter": "D",
+       "text": "No, it can contain mistakes"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "No, it can contain mistakes",
+     "intro": "A printed ENCYCLOPEDIA on a shelf holds a lot of knowledge, but only up to the year it was printed. It cannot tell you yesterday's news. If you also hand someone TODAY'S NEWSPAPER, they can read current events, but the newspaper might contain mistakes, and it does not change the encyclopedia. A model's built-in knowledge is like the encyclopedia: fixed at its training cutoff. Supplied or retrieved text is like the newspaper: current material read right now.",
+     "feedback": "Retrieved sources can be wrong."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who blends training knowledge with current information can separate them with the encyclopedia-and-newspaper picture."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Decide which kind of information an answer needs",
+   "questions": [
+    {
+     "id": "S19-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Ben asks which phone model is newest. The tool does not search the web. What should he expect?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It will always name the newest model released today"
+      },
+      {
+       "letter": "B",
+       "text": "It will refuse to mention any phones"
+      },
+      {
+       "letter": "C",
+       "text": "The answer may be out of date, reflecting its training cutoff"
+      },
+      {
+       "letter": "D",
+       "text": "It will search stores secretly"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The answer may be out of date, reflecting its training cutoff",
+     "intro": "A model's built-in knowledge comes from its training data, which stops at a TRAINING CUTOFF date. It does not know about events after that date unless the information is SUPPLIED or RETRIEVED during your request: you paste a document, or the product runs a web search and adds the results to the context. These are different: built-in knowledge is patterns frozen at training time and may be incomplete or wrong, while supplied or retrieved text is current material the model reads now, which is only as good as its source. When an answer depends on recent facts, know which kind you are getting.",
+     "feedback": "Without retrieval, answers reflect training-time knowledge."
+    },
+    {
+     "id": "S19-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "A student pastes this year's club rules and asks about meeting times. What is the model using?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The supplied rules in the current request"
+      },
+      {
+       "letter": "B",
+       "text": "A web search of the school's site"
+      },
+      {
+       "letter": "C",
+       "text": "Its memory of every club in the world"
+      },
+      {
+       "letter": "D",
+       "text": "A retrained version of itself"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The supplied rules in the current request",
+     "intro": "A model's built-in knowledge comes from its training data, which stops at a TRAINING CUTOFF date. It does not know about events after that date unless the information is SUPPLIED or RETRIEVED during your request: you paste a document, or the product runs a web search and adds the results to the context. These are different: built-in knowledge is patterns frozen at training time and may be incomplete or wrong, while supplied or retrieved text is current material the model reads now, which is only as good as its source. When an answer depends on recent facts, know which kind you are getting.",
+     "feedback": "Pasted text is supplied information."
+    },
+    {
+     "id": "S19-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Which situation shows retrieval?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The user types a short question with no files"
+      },
+      {
+       "letter": "B",
+       "text": "The product searches news sites and quotes them"
+      },
+      {
+       "letter": "C",
+       "text": "The model answers from what it learned in training"
+      },
+      {
+       "letter": "D",
+       "text": "The model writes a poem from imagination"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The product searches news sites and quotes them",
+     "intro": "A model's built-in knowledge comes from its training data, which stops at a TRAINING CUTOFF date. It does not know about events after that date unless the information is SUPPLIED or RETRIEVED during your request: you paste a document, or the product runs a web search and adds the results to the context. These are different: built-in knowledge is patterns frozen at training time and may be incomplete or wrong, while supplied or retrieved text is current material the model reads now, which is only as good as its source. When an answer depends on recent facts, know which kind you are getting.",
+     "feedback": "Fetching and quoting sources is retrieval."
+    },
+    {
+     "id": "S19-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "A retrieved web page is three years old. What should you do before relying on it?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ask the model to make it newer"
+      },
+      {
+       "letter": "B",
+       "text": "Trust it, because it was retrieved by the product"
+      },
+      {
+       "letter": "C",
+       "text": "Assume nothing has changed"
+      },
+      {
+       "letter": "D",
+       "text": "Check a current source for time-sensitive facts"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Check a current source for time-sensitive facts",
+     "intro": "A model's built-in knowledge comes from its training data, which stops at a TRAINING CUTOFF date. It does not know about events after that date unless the information is SUPPLIED or RETRIEVED during your request: you paste a document, or the product runs a web search and adds the results to the context. These are different: built-in knowledge is patterns frozen at training time and may be incomplete or wrong, while supplied or retrieved text is current material the model reads now, which is only as good as its source. When an answer depends on recent facts, know which kind you are getting.",
+     "feedback": "Retrieved information can be outdated."
+    },
+    {
+     "id": "S19-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Which question can a model usually answer from built-in knowledge without current sources?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Is the corner store open this holiday weekend?"
+      },
+      {
+       "letter": "B",
+       "text": "Who won last night's game?"
+      },
+      {
+       "letter": "C",
+       "text": "What does the word \"photosynthesis\" mean?"
+      },
+      {
+       "letter": "D",
+       "text": "What is today's exchange rate?"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "What does the word \"photosynthesis\" mean?",
+     "intro": "A model's built-in knowledge comes from its training data, which stops at a TRAINING CUTOFF date. It does not know about events after that date unless the information is SUPPLIED or RETRIEVED during your request: you paste a document, or the product runs a web search and adds the results to the context. These are different: built-in knowledge is patterns frozen at training time and may be incomplete or wrong, while supplied or retrieved text is current material the model reads now, which is only as good as its source. When an answer depends on recent facts, know which kind you are getting.",
+     "feedback": "Stable concepts suit built-in knowledge."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Untangle blended answers about recent facts",
+   "questions": [
+    {
+     "id": "S19-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "An answer quotes a supplied article correctly but adds a detail the article does not contain. Where might that detail have come from?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Older built-in knowledge or an invented guess"
+      },
+      {
+       "letter": "B",
+       "text": "The supplied article, which must contain it"
+      },
+      {
+       "letter": "C",
+       "text": "A law that requires extra details"
+      },
+      {
+       "letter": "D",
+       "text": "A permanent update to the model"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Older built-in knowledge or an invented guess",
+     "intro": "Answers often blend both kinds of information, and it is not always obvious which part came from where. A model might quote a supplied article correctly but fill a gap with older built-in knowledge, or describe a \"latest\" product that has since been replaced. Retrieved sources can also be outdated, unreliable or off-topic. Useful habits: ask the answer to say which statements come from the supplied material, check the dates of any sources, and confirm time-sensitive facts such as prices, laws, schedules and officials directly.",
+     "feedback": "Blended answers can mix sources."
+    },
+    {
+     "id": "S19-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "You want to know which parts of an answer came from your uploaded document. What is a useful request?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ask it to sound more confident about everything"
+      },
+      {
+       "letter": "B",
+       "text": "Ask it to stop using the document"
+      },
+      {
+       "letter": "C",
+       "text": "Ask it to mark statements taken from the document"
+      },
+      {
+       "letter": "D",
+       "text": "Ask for a longer answer"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Ask it to mark statements taken from the document",
+     "intro": "Answers often blend both kinds of information, and it is not always obvious which part came from where. A model might quote a supplied article correctly but fill a gap with older built-in knowledge, or describe a \"latest\" product that has since been replaced. Retrieved sources can also be outdated, unreliable or off-topic. Useful habits: ask the answer to say which statements come from the supplied material, check the dates of any sources, and confirm time-sensitive facts such as prices, laws, schedules and officials directly.",
+     "feedback": "Labeled sources make checking easier."
+    },
+    {
+     "id": "S19-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "A model describes \"the latest version\" of a product. How should you treat that phrase?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Check, since \"latest\" may reflect an old cutoff"
+      },
+      {
+       "letter": "B",
+       "text": "Trust it, since models always know the latest"
+      },
+      {
+       "letter": "C",
+       "text": "Assume no newer version can exist"
+      },
+      {
+       "letter": "D",
+       "text": "Assume it is always wrong"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Check, since \"latest\" may reflect an old cutoff",
+     "intro": "Answers often blend both kinds of information, and it is not always obvious which part came from where. A model might quote a supplied article correctly but fill a gap with older built-in knowledge, or describe a \"latest\" product that has since been replaced. Retrieved sources can also be outdated, unreliable or off-topic. Useful habits: ask the answer to say which statements come from the supplied material, check the dates of any sources, and confirm time-sensitive facts such as prices, laws, schedules and officials directly.",
+     "feedback": "\"Latest\" is time-sensitive."
+    },
+    {
+     "id": "S19-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "A retrieved source is an unknown blog with no author or date. What is the best step?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Trust it, since the product chose to retrieve it"
+      },
+      {
+       "letter": "B",
+       "text": "Use it but remove the link"
+      },
+      {
+       "letter": "C",
+       "text": "Assume blogs are always wrong"
+      },
+      {
+       "letter": "D",
+       "text": "Confirm it with a more reliable, dated source"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Confirm it with a more reliable, dated source",
+     "intro": "Answers often blend both kinds of information, and it is not always obvious which part came from where. A model might quote a supplied article correctly but fill a gap with older built-in knowledge, or describe a \"latest\" product that has since been replaced. Retrieved sources can also be outdated, unreliable or off-topic. Useful habits: ask the answer to say which statements come from the supplied material, check the dates of any sources, and confirm time-sensitive facts such as prices, laws, schedules and officials directly.",
+     "feedback": "Retrieved sources vary in quality."
+    },
+    {
+     "id": "S19-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Which facts most need direct confirmation even after retrieval?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The meaning of common words"
+      },
+      {
+       "letter": "B",
+       "text": "Prices, laws, schedules and officeholders"
+      },
+      {
+       "letter": "C",
+       "text": "The plot of a famous novel from long ago"
+      },
+      {
+       "letter": "D",
+       "text": "Basic arithmetic facts"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Prices, laws, schedules and officeholders",
+     "intro": "Answers often blend both kinds of information, and it is not always obvious which part came from where. A model might quote a supplied article correctly but fill a gap with older built-in knowledge, or describe a \"latest\" product that has since been replaced. Retrieved sources can also be outdated, unreliable or off-topic. Useful habits: ask the answer to say which statements come from the supplied material, check the dates of any sources, and confirm time-sensitive facts such as prices, laws, schedules and officials directly.",
+     "feedback": "Time-sensitive facts change often."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

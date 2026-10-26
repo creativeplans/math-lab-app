@@ -1,0 +1,655 @@
+{
+ "set": 120,
+ "title": "Choosing a measure that fits",
+ "outcome": "AI.EVAL.07",
+ "content_status": "stable",
+ "requires": [
+  115
+ ],
+ "module": "evaluation",
+ "path_refs": [
+  "work",
+  "coding"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Choose a measure that matches the goal of a task",
+   "questions": [
+    {
+     "id": "S120-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What should a measure match?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Whatever number is easiest to calculate quickly, even if it has little to do with the goal"
+      },
+      {
+       "letter": "B",
+       "text": "The goal of the task"
+      },
+      {
+       "letter": "C",
+       "text": "The tool's price"
+      },
+      {
+       "letter": "D",
+       "text": "The tool's name"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The goal of the task",
+     "intro": "A MEASURE should match the GOAL of the task. If a tool flags rare problems, \"percent correct\" can mislead: if only 2 of 100 parcels are damaged, a tool that always says \"fine\" is 98% correct and catches nothing. Better measures look at what matters: how many damaged parcels were CAUGHT (out of all damaged ones), and how many flags were RIGHT (out of all flags). For a writing tool, the goal might be \"fewer edits needed\" or \"readers understand it,\" not word count. Ask: \"If this number improves, is the real goal closer?\"",
+     "feedback": "Goal-aligned."
+    },
+    {
+     "id": "S120-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Only 2 of 100 parcels are damaged. A tool always says \"fine.\" What percent is it correct?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "2%"
+      },
+      {
+       "letter": "B",
+       "text": "100%"
+      },
+      {
+       "letter": "C",
+       "text": "0%, because the tool never catches any damaged parcels in the whole set of one hundred"
+      },
+      {
+       "letter": "D",
+       "text": "98%"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "98%",
+     "intro": "A MEASURE should match the GOAL of the task. If a tool flags rare problems, \"percent correct\" can mislead: if only 2 of 100 parcels are damaged, a tool that always says \"fine\" is 98% correct and catches nothing. Better measures look at what matters: how many damaged parcels were CAUGHT (out of all damaged ones), and how many flags were RIGHT (out of all flags). For a writing tool, the goal might be \"fewer edits needed\" or \"readers understand it,\" not word count. Ask: \"If this number improves, is the real goal closer?\"",
+     "feedback": "98 of 100 are fine."
+    },
+    {
+     "id": "S120-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "How many damaged parcels does that tool catch?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "100"
+      },
+      {
+       "letter": "B",
+       "text": "2"
+      },
+      {
+       "letter": "C",
+       "text": "0"
+      },
+      {
+       "letter": "D",
+       "text": "98, since that is the percent of parcels that the tool correctly described as fine"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "0",
+     "intro": "A MEASURE should match the GOAL of the task. If a tool flags rare problems, \"percent correct\" can mislead: if only 2 of 100 parcels are damaged, a tool that always says \"fine\" is 98% correct and catches nothing. Better measures look at what matters: how many damaged parcels were CAUGHT (out of all damaged ones), and how many flags were RIGHT (out of all flags). For a writing tool, the goal might be \"fewer edits needed\" or \"readers understand it,\" not word count. Ask: \"If this number improves, is the real goal closer?\"",
+     "feedback": "It never flags anything."
+    },
+    {
+     "id": "S120-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Which measure fits \"catch damaged parcels\"?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Damaged parcels caught out of all damaged"
+      },
+      {
+       "letter": "B",
+       "text": "Number of parcels shipped"
+      },
+      {
+       "letter": "C",
+       "text": "Speed of the tool"
+      },
+      {
+       "letter": "D",
+       "text": "Overall percent correct across every parcel"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Damaged parcels caught out of all damaged",
+     "intro": "A MEASURE should match the GOAL of the task. If a tool flags rare problems, \"percent correct\" can mislead: if only 2 of 100 parcels are damaged, a tool that always says \"fine\" is 98% correct and catches nothing. Better measures look at what matters: how many damaged parcels were CAUGHT (out of all damaged ones), and how many flags were RIGHT (out of all flags). For a writing tool, the goal might be \"fewer edits needed\" or \"readers understand it,\" not word count. Ask: \"If this number improves, is the real goal closer?\"",
+     "feedback": "Catch rate."
+    },
+    {
+     "id": "S120-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Which question checks a measure?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Is it easy to compute?\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Is this number large enough to look impressive when shown in a presentation to managers?\""
+      },
+      {
+       "letter": "C",
+       "text": "\"If this number improves, is the real goal closer?\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Is the number round?\""
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "\"If this number improves, is the real goal closer?\"",
+     "intro": "A MEASURE should match the GOAL of the task. If a tool flags rare problems, \"percent correct\" can mislead: if only 2 of 100 parcels are damaged, a tool that always says \"fine\" is 98% correct and catches nothing. Better measures look at what matters: how many damaged parcels were CAUGHT (out of all damaged ones), and how many flags were RIGHT (out of all flags). For a writing tool, the goal might be \"fewer edits needed\" or \"readers understand it,\" not word count. Ask: \"If this number improves, is the real goal closer?\"",
+     "feedback": "Alignment check."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare measures with judging a basketball player",
+   "questions": [
+    {
+     "id": "S120-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What does judging only by points miss?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The player's height"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing, because points scored is the only thing that matters in every basketball game"
+      },
+      {
+       "letter": "C",
+       "text": "The jersey number"
+      },
+      {
+       "letter": "D",
+       "text": "Defense and passing"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Defense and passing",
+     "intro": "Judging a basketball player only by POINTS SCORED misses a lot: a defender who blocks shots and passes well helps the team win but may score little. And a player who takes 40 shots to score 20 points is not as helpful as the number suggests. The real goal is helping the team win, so coaches use several measures that connect to that goal. Measures for AI tools should connect to the real goal in the same way.",
+     "feedback": "Other contributions."
+    },
+    {
+     "id": "S120-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "A player who takes 40 shots to score 20 points shows what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A number can look better than the reality"
+      },
+      {
+       "letter": "B",
+       "text": "That shots do not matter"
+      },
+      {
+       "letter": "C",
+       "text": "That defense is bad"
+      },
+      {
+       "letter": "D",
+       "text": "That the player is the best on the team"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "A number can look better than the reality",
+     "intro": "Judging a basketball player only by POINTS SCORED misses a lot: a defender who blocks shots and passes well helps the team win but may score little. And a player who takes 40 shots to score 20 points is not as helpful as the number suggests. The real goal is helping the team win, so coaches use several measures that connect to that goal. Measures for AI tools should connect to the real goal in the same way.",
+     "feedback": "Context behind numbers."
+    },
+    {
+     "id": "S120-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What is the real goal in basketball?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Being tallest"
+      },
+      {
+       "letter": "B",
+       "text": "Helping the team win"
+      },
+      {
+       "letter": "C",
+       "text": "Scoring as many points as possible as an individual, whatever happens to the team"
+      },
+      {
+       "letter": "D",
+       "text": "Taking the most shots"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Helping the team win",
+     "intro": "Judging a basketball player only by POINTS SCORED misses a lot: a defender who blocks shots and passes well helps the team win but may score little. And a player who takes 40 shots to score 20 points is not as helpful as the number suggests. The real goal is helping the team win, so coaches use several measures that connect to that goal. Measures for AI tools should connect to the real goal in the same way.",
+     "feedback": "True objective."
+    },
+    {
+     "id": "S120-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Why do coaches use several measures?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "One number misses parts of the goal"
+      },
+      {
+       "letter": "B",
+       "text": "To confuse players"
+      },
+      {
+       "letter": "C",
+       "text": "Because one is illegal"
+      },
+      {
+       "letter": "D",
+       "text": "Because coaches enjoy doing extra math and want to keep the players busy with numbers"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "One number misses parts of the goal",
+     "intro": "Judging a basketball player only by POINTS SCORED misses a lot: a defender who blocks shots and passes well helps the team win but may score little. And a player who takes 40 shots to score 20 points is not as helpful as the number suggests. The real goal is helping the team win, so coaches use several measures that connect to that goal. Measures for AI tools should connect to the real goal in the same way.",
+     "feedback": "Fuller picture."
+    },
+    {
+     "id": "S120-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What is the lesson for AI measures?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Use whichever single number is the largest, because larger numbers show better results"
+      },
+      {
+       "letter": "B",
+       "text": "Never measure"
+      },
+      {
+       "letter": "C",
+       "text": "Measure only speed"
+      },
+      {
+       "letter": "D",
+       "text": "Connect measures to the real goal"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Connect measures to the real goal",
+     "intro": "Judging a basketball player only by POINTS SCORED misses a lot: a defender who blocks shots and passes well helps the team win but may score little. And a player who takes 40 shots to score 20 points is not as helpful as the number suggests. The real goal is helping the team win, so coaches use several measures that connect to that goal. Measures for AI tools should connect to the real goal in the same way.",
+     "feedback": "Goal alignment."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who trusts any single number can compare AI measures with judging a basketball player."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Choose fitting measures in practice",
+   "questions": [
+    {
+     "id": "S120-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "A tool flags fraudulent transactions, which are rare. Which measure is most useful?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Number of transactions processed"
+      },
+      {
+       "letter": "B",
+       "text": "Average transaction size"
+      },
+      {
+       "letter": "C",
+       "text": "Fraud cases caught and how many flags were right"
+      },
+      {
+       "letter": "D",
+       "text": "Overall percent correct across all transactions"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Fraud cases caught and how many flags were right",
+     "intro": "A MEASURE should match the GOAL of the task. If a tool flags rare problems, \"percent correct\" can mislead: if only 2 of 100 parcels are damaged, a tool that always says \"fine\" is 98% correct and catches nothing. Better measures look at what matters: how many damaged parcels were CAUGHT (out of all damaged ones), and how many flags were RIGHT (out of all flags). For a writing tool, the goal might be \"fewer edits needed\" or \"readers understand it,\" not word count. Ask: \"If this number improves, is the real goal closer?\"",
+     "feedback": "Rare-event measures."
+    },
+    {
+     "id": "S120-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "A writing helper aims to save staff time. Which measure fits best?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Number of fonts used"
+      },
+      {
+       "letter": "B",
+       "text": "Minutes spent editing its drafts"
+      },
+      {
+       "letter": "C",
+       "text": "Number of emojis"
+      },
+      {
+       "letter": "D",
+       "text": "Number of words in each draft"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Minutes spent editing its drafts",
+     "intro": "A MEASURE should match the GOAL of the task. If a tool flags rare problems, \"percent correct\" can mislead: if only 2 of 100 parcels are damaged, a tool that always says \"fine\" is 98% correct and catches nothing. Better measures look at what matters: how many damaged parcels were CAUGHT (out of all damaged ones), and how many flags were RIGHT (out of all flags). For a writing tool, the goal might be \"fewer edits needed\" or \"readers understand it,\" not word count. Ask: \"If this number improves, is the real goal closer?\"",
+     "feedback": "Time saved."
+    },
+    {
+     "id": "S120-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "A tool flags 10 parcels as damaged; 8 really are. What fraction of flags were right?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "8 out of 10"
+      },
+      {
+       "letter": "B",
+       "text": "10 out of 8"
+      },
+      {
+       "letter": "C",
+       "text": "8 out of 100"
+      },
+      {
+       "letter": "D",
+       "text": "2 out of 10"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "8 out of 10",
+     "intro": "A MEASURE should match the GOAL of the task. If a tool flags rare problems, \"percent correct\" can mislead: if only 2 of 100 parcels are damaged, a tool that always says \"fine\" is 98% correct and catches nothing. Better measures look at what matters: how many damaged parcels were CAUGHT (out of all damaged ones), and how many flags were RIGHT (out of all flags). For a writing tool, the goal might be \"fewer edits needed\" or \"readers understand it,\" not word count. Ask: \"If this number improves, is the real goal closer?\"",
+     "feedback": "8 / 10 = 80%."
+    },
+    {
+     "id": "S120-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "There were 16 damaged parcels in total, and the tool caught 8. What fraction did it catch?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A quarter"
+      },
+      {
+       "letter": "B",
+       "text": "Half"
+      },
+      {
+       "letter": "C",
+       "text": "None"
+      },
+      {
+       "letter": "D",
+       "text": "All of them"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Half",
+     "intro": "A MEASURE should match the GOAL of the task. If a tool flags rare problems, \"percent correct\" can mislead: if only 2 of 100 parcels are damaged, a tool that always says \"fine\" is 98% correct and catches nothing. Better measures look at what matters: how many damaged parcels were CAUGHT (out of all damaged ones), and how many flags were RIGHT (out of all flags). For a writing tool, the goal might be \"fewer edits needed\" or \"readers understand it,\" not word count. Ask: \"If this number improves, is the real goal closer?\"",
+     "feedback": "8 / 16 = 1/2."
+    },
+    {
+     "id": "S120-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "A translation tool is measured by speed only. What important goal is missing?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The tool's color"
+      },
+      {
+       "letter": "B",
+       "text": "The number of languages listed"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing is missing"
+      },
+      {
+       "letter": "D",
+       "text": "Whether translations are accurate"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Whether translations are accurate",
+     "intro": "A MEASURE should match the GOAL of the task. If a tool flags rare problems, \"percent correct\" can mislead: if only 2 of 100 parcels are damaged, a tool that always says \"fine\" is 98% correct and catches nothing. Better measures look at what matters: how many damaged parcels were CAUGHT (out of all damaged ones), and how many flags were RIGHT (out of all flags). For a writing tool, the goal might be \"fewer edits needed\" or \"readers understand it,\" not word count. Ask: \"If this number improves, is the real goal closer?\"",
+     "feedback": "Accuracy matters."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Prevent gaming of measures",
+   "questions": [
+    {
+     "id": "S120-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "A help desk is measured on \"tickets closed,\" and staff close tickets without solving problems. What happened?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The goal improved a lot, because closing more tickets always means more problems are solved"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing unusual"
+      },
+      {
+       "letter": "C",
+       "text": "The number improved without the goal improving"
+      },
+      {
+       "letter": "D",
+       "text": "The measure is perfect"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The number improved without the goal improving",
+     "intro": "When a measure becomes a target, people and systems can improve the number without improving the goal: a help desk measured on \"tickets closed\" may close tickets without solving problems. Use more than one measure, include one that reflects real outcomes (such as customers who did not need to contact you again), and look at examples behind the numbers.",
+     "feedback": "Measure became the target."
+    },
+    {
+     "id": "S120-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Which measure better reflects real outcomes for a help desk?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Number of tickets opened, since more tickets always mean that the help desk is doing better"
+      },
+      {
+       "letter": "B",
+       "text": "Average ticket length"
+      },
+      {
+       "letter": "C",
+       "text": "Number of staff"
+      },
+      {
+       "letter": "D",
+       "text": "Customers who did not need to contact again"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Customers who did not need to contact again",
+     "intro": "When a measure becomes a target, people and systems can improve the number without improving the goal: a help desk measured on \"tickets closed\" may close tickets without solving problems. Use more than one measure, include one that reflects real outcomes (such as customers who did not need to contact you again), and look at examples behind the numbers.",
+     "feedback": "Real resolution."
+    },
+    {
+     "id": "S120-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Why use more than one measure?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "One number can be gamed or miss parts of the goal"
+      },
+      {
+       "letter": "B",
+       "text": "To confuse people"
+      },
+      {
+       "letter": "C",
+       "text": "Because using one measure is not allowed and every organization must track exactly ten"
+      },
+      {
+       "letter": "D",
+       "text": "To make reports longer"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "One number can be gamed or miss parts of the goal",
+     "intro": "When a measure becomes a target, people and systems can improve the number without improving the goal: a help desk measured on \"tickets closed\" may close tickets without solving problems. Use more than one measure, include one that reflects real outcomes (such as customers who did not need to contact you again), and look at examples behind the numbers.",
+     "feedback": "Balanced view."
+    },
+    {
+     "id": "S120-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Besides numbers, what should you look at?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only the logo"
+      },
+      {
+       "letter": "B",
+       "text": "Examples behind the numbers"
+      },
+      {
+       "letter": "C",
+       "text": "Only the price"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing else, since numbers always tell the full story about how a tool is performing"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Examples behind the numbers",
+     "intro": "When a measure becomes a target, people and systems can improve the number without improving the goal: a help desk measured on \"tickets closed\" may close tickets without solving problems. Use more than one measure, include one that reflects real outcomes (such as customers who did not need to contact you again), and look at examples behind the numbers.",
+     "feedback": "Read real cases."
+    },
+    {
+     "id": "S120-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "A summarizer is rewarded for shorter summaries and starts dropping key facts. What should change?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ignore the dropped facts"
+      },
+      {
+       "letter": "B",
+       "text": "Reward even shorter summaries, since shortness is the main goal of every summary"
+      },
+      {
+       "letter": "C",
+       "text": "Add a measure for including key facts"
+      },
+      {
+       "letter": "D",
+       "text": "Remove all measures"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Add a measure for including key facts",
+     "intro": "When a measure becomes a target, people and systems can improve the number without improving the goal: a help desk measured on \"tickets closed\" may close tickets without solving problems. Use more than one measure, include one that reflects real outcomes (such as customers who did not need to contact you again), and look at examples behind the numbers.",
+     "feedback": "Balance measures."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

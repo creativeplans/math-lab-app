@@ -1,0 +1,655 @@
+{
+ "set": 98,
+ "title": "Least access: limiting permissions",
+ "outcome": "AI.AGENT.04",
+ "content_status": "stable",
+ "requires": [
+  96
+ ],
+ "module": "agents",
+ "path_refs": [
+  "coding",
+  "work"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Give an automated workflow only the access its task needs",
+   "questions": [
+    {
+     "id": "S98-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "What does least access mean?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No access at all"
+      },
+      {
+       "letter": "B",
+       "text": "Access only at night"
+      },
+      {
+       "letter": "C",
+       "text": "Full access to everything"
+      },
+      {
+       "letter": "D",
+       "text": "Only the access a task needs"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Only the access a task needs",
+     "intro": "The principle of LEAST ACCESS (also called least privilege) says: give an automated workflow or agent only the access its task needs, and no more. An agent that summarizes your calendar needs to READ the calendar, not delete events or send email. Limit what it can see (one folder, not your whole drive), what it can do (read, not write), and how long access lasts. If something goes wrong, such as a bug or a malicious instruction hidden in a document, least access limits the damage. Review and remove access that is no longer needed.",
+     "feedback": "Minimum needed."
+    },
+    {
+     "id": "S98-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "A calendar-summary agent needs which access?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Read the calendar"
+      },
+      {
+       "letter": "B",
+       "text": "Send email as you"
+      },
+      {
+       "letter": "C",
+       "text": "Delete events"
+      },
+      {
+       "letter": "D",
+       "text": "Read, delete and send email, so that it can also clean up the calendar and notify people"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Read the calendar",
+     "intro": "The principle of LEAST ACCESS (also called least privilege) says: give an automated workflow or agent only the access its task needs, and no more. An agent that summarizes your calendar needs to READ the calendar, not delete events or send email. Limit what it can see (one folder, not your whole drive), what it can do (read, not write), and how long access lasts. If something goes wrong, such as a bug or a malicious instruction hidden in a document, least access limits the damage. Review and remove access that is no longer needed.",
+     "feedback": "Read only."
+    },
+    {
+     "id": "S98-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Which limit restricts what an agent can see?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A longer password"
+      },
+      {
+       "letter": "B",
+       "text": "One folder instead of the whole drive"
+      },
+      {
+       "letter": "C",
+       "text": "A faster computer"
+      },
+      {
+       "letter": "D",
+       "text": "Allowing the agent to write and delete in the folder as well as read the files in it"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "One folder instead of the whole drive",
+     "intro": "The principle of LEAST ACCESS (also called least privilege) says: give an automated workflow or agent only the access its task needs, and no more. An agent that summarizes your calendar needs to READ the calendar, not delete events or send email. Limit what it can see (one folder, not your whole drive), what it can do (read, not write), and how long access lasts. If something goes wrong, such as a bug or a malicious instruction hidden in a document, least access limits the damage. Review and remove access that is no longer needed.",
+     "feedback": "Scope of visibility."
+    },
+    {
+     "id": "S98-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Why does least access help if something goes wrong?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It prevents anything from ever going wrong, so no further checks are needed at all"
+      },
+      {
+       "letter": "B",
+       "text": "It hides the problem"
+      },
+      {
+       "letter": "C",
+       "text": "It limits the damage"
+      },
+      {
+       "letter": "D",
+       "text": "It speeds up recovery"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "It limits the damage",
+     "intro": "The principle of LEAST ACCESS (also called least privilege) says: give an automated workflow or agent only the access its task needs, and no more. An agent that summarizes your calendar needs to READ the calendar, not delete events or send email. Limit what it can see (one folder, not your whole drive), what it can do (read, not write), and how long access lasts. If something goes wrong, such as a bug or a malicious instruction hidden in a document, least access limits the damage. Review and remove access that is no longer needed.",
+     "feedback": "Smaller blast radius."
+    },
+    {
+     "id": "S98-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "What should you do with access that is no longer needed?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Share it with others"
+      },
+      {
+       "letter": "B",
+       "text": "Remove it"
+      },
+      {
+       "letter": "C",
+       "text": "Double it"
+      },
+      {
+       "letter": "D",
+       "text": "Keep it forever"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Remove it",
+     "intro": "The principle of LEAST ACCESS (also called least privilege) says: give an automated workflow or agent only the access its task needs, and no more. An agent that summarizes your calendar needs to READ the calendar, not delete events or send email. Limit what it can see (one folder, not your whole drive), what it can do (read, not write), and how long access lasts. If something goes wrong, such as a bug or a malicious instruction hidden in a document, least access limits the damage. Review and remove access that is no longer needed.",
+     "feedback": "Review and revoke."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare least access with giving a house sitter keys",
+   "questions": [
+    {
+     "id": "S98-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Which key does a plant-watering house sitter need?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The front door key"
+      },
+      {
+       "letter": "B",
+       "text": "Every key you own, so the house sitter never gets locked out of any room or vehicle"
+      },
+      {
+       "letter": "C",
+       "text": "The car key"
+      },
+      {
+       "letter": "D",
+       "text": "The safe key"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The front door key",
+     "intro": "A house sitter who waters your plants needs the FRONT DOOR key. They do not need the key to your safe, your car or your office. If the front door key is lost, the damage is limited. Giving them every key \"just in case\" means one mistake could expose everything. Least access for software works the same way: give each automation only the keys its job needs, and take them back when the job is done.",
+     "feedback": "Only what the job needs."
+    },
+    {
+     "id": "S98-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Why not give the safe key too?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because safes cannot be opened by house sitters under any circumstances at all"
+      },
+      {
+       "letter": "B",
+       "text": "Because keys are heavy"
+      },
+      {
+       "letter": "C",
+       "text": "Because plants need it"
+      },
+      {
+       "letter": "D",
+       "text": "One mistake could expose more"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "One mistake could expose more",
+     "intro": "A house sitter who waters your plants needs the FRONT DOOR key. They do not need the key to your safe, your car or your office. If the front door key is lost, the damage is limited. Giving them every key \"just in case\" means one mistake could expose everything. Least access for software works the same way: give each automation only the keys its job needs, and take them back when the job is done.",
+     "feedback": "More access, more risk."
+    },
+    {
+     "id": "S98-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "If only the front door key is lost, what follows?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The plants die"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing at all can go wrong"
+      },
+      {
+       "letter": "C",
+       "text": "The damage is limited"
+      },
+      {
+       "letter": "D",
+       "text": "Everything in the house, the car and the office is exposed to whoever finds the key"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The damage is limited",
+     "intro": "A house sitter who waters your plants needs the FRONT DOOR key. They do not need the key to your safe, your car or your office. If the front door key is lost, the damage is limited. Giving them every key \"just in case\" means one mistake could expose everything. Least access for software works the same way: give each automation only the keys its job needs, and take them back when the job is done.",
+     "feedback": "Limited exposure."
+    },
+    {
+     "id": "S98-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "What should happen when the job is done?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Make copies"
+      },
+      {
+       "letter": "B",
+       "text": "Let the house sitter keep the key forever, in case they need to water plants next year"
+      },
+      {
+       "letter": "C",
+       "text": "Hide it under the mat"
+      },
+      {
+       "letter": "D",
+       "text": "Take the key back"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Take the key back",
+     "intro": "A house sitter who waters your plants needs the FRONT DOOR key. They do not need the key to your safe, your car or your office. If the front door key is lost, the damage is limited. Giving them every key \"just in case\" means one mistake could expose everything. Least access for software works the same way: give each automation only the keys its job needs, and take them back when the job is done.",
+     "feedback": "Revoke access."
+    },
+    {
+     "id": "S98-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "In software, the keys are like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Files"
+      },
+      {
+       "letter": "B",
+       "text": "Passwords written in the code, which is the safest place to keep any kind of key"
+      },
+      {
+       "letter": "C",
+       "text": "Permissions"
+      },
+      {
+       "letter": "D",
+       "text": "Comments"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Permissions",
+     "intro": "A house sitter who waters your plants needs the FRONT DOOR key. They do not need the key to your safe, your car or your office. If the front door key is lost, the damage is limited. Giving them every key \"just in case\" means one mistake could expose everything. Least access for software works the same way: give each automation only the keys its job needs, and take them back when the job is done.",
+     "feedback": "Access rights."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who grants access freely can compare it with handing keys to a house sitter."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Limit access in practice",
+   "questions": [
+    {
+     "id": "S98-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "A meeting-notes tool asks for permission to send email as you. What should you do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Decline; it only needs to read meetings"
+      },
+      {
+       "letter": "B",
+       "text": "Allow it, since tools only ask for permissions that are completely necessary for their task"
+      },
+      {
+       "letter": "C",
+       "text": "Allow everything to save time"
+      },
+      {
+       "letter": "D",
+       "text": "Share your password instead"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Decline; it only needs to read meetings",
+     "intro": "The principle of LEAST ACCESS (also called least privilege) says: give an automated workflow or agent only the access its task needs, and no more. An agent that summarizes your calendar needs to READ the calendar, not delete events or send email. Limit what it can see (one folder, not your whole drive), what it can do (read, not write), and how long access lasts. If something goes wrong, such as a bug or a malicious instruction hidden in a document, least access limits the damage. Review and remove access that is no longer needed.",
+     "feedback": "Broader than the task."
+    },
+    {
+     "id": "S98-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "An agent sorts receipts in one folder. Which access fits?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Full access to your whole drive, email and calendar, in case receipts are stored elsewhere"
+      },
+      {
+       "letter": "B",
+       "text": "Read and write to that folder only"
+      },
+      {
+       "letter": "C",
+       "text": "No access"
+      },
+      {
+       "letter": "D",
+       "text": "Access to your bank account"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Read and write to that folder only",
+     "intro": "The principle of LEAST ACCESS (also called least privilege) says: give an automated workflow or agent only the access its task needs, and no more. An agent that summarizes your calendar needs to READ the calendar, not delete events or send email. Limit what it can see (one folder, not your whole drive), what it can do (read, not write), and how long access lasts. If something goes wrong, such as a bug or a malicious instruction hidden in a document, least access limits the damage. Review and remove access that is no longer needed.",
+     "feedback": "Scoped to the task."
+    },
+    {
+     "id": "S98-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "A temporary project needs an automation for two weeks. What should the access do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Last forever, since removing access later is complicated and might break other things"
+      },
+      {
+       "letter": "B",
+       "text": "Be doubled"
+      },
+      {
+       "letter": "C",
+       "text": "Expire or be removed after two weeks"
+      },
+      {
+       "letter": "D",
+       "text": "Be shared widely"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Expire or be removed after two weeks",
+     "intro": "The principle of LEAST ACCESS (also called least privilege) says: give an automated workflow or agent only the access its task needs, and no more. An agent that summarizes your calendar needs to READ the calendar, not delete events or send email. Limit what it can see (one folder, not your whole drive), what it can do (read, not write), and how long access lasts. If something goes wrong, such as a bug or a malicious instruction hidden in a document, least access limits the damage. Review and remove access that is no longer needed.",
+     "feedback": "Time-limited access."
+    },
+    {
+     "id": "S98-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Which choice follows least access?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Admin rights for a calendar viewer"
+      },
+      {
+       "letter": "B",
+       "text": "Payment rights for a note taker"
+      },
+      {
+       "letter": "C",
+       "text": "Full delete access for a summarizer"
+      },
+      {
+       "letter": "D",
+       "text": "Read-only access for a summarizer"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Read-only access for a summarizer",
+     "intro": "The principle of LEAST ACCESS (also called least privilege) says: give an automated workflow or agent only the access its task needs, and no more. An agent that summarizes your calendar needs to READ the calendar, not delete events or send email. Limit what it can see (one folder, not your whole drive), what it can do (read, not write), and how long access lasts. If something goes wrong, such as a bug or a malicious instruction hidden in a document, least access limits the damage. Review and remove access that is no longer needed.",
+     "feedback": "Minimum needed."
+    },
+    {
+     "id": "S98-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "A tool asks for your main account password. What is the better option?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Use a limited account or revocable access"
+      },
+      {
+       "letter": "B",
+       "text": "Write the password in the tool's chat"
+      },
+      {
+       "letter": "C",
+       "text": "Use the same password everywhere"
+      },
+      {
+       "letter": "D",
+       "text": "Give the password"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Use a limited account or revocable access",
+     "intro": "The principle of LEAST ACCESS (also called least privilege) says: give an automated workflow or agent only the access its task needs, and no more. An agent that summarizes your calendar needs to READ the calendar, not delete events or send email. Limit what it can see (one folder, not your whole drive), what it can do (read, not write), and how long access lasts. If something goes wrong, such as a bug or a malicious instruction hidden in a document, least access limits the damage. Review and remove access that is no longer needed.",
+     "feedback": "Never share the main password."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Resist convenience and reduce injection damage",
+   "questions": [
+    {
+     "id": "S98-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Why do people often grant too much access?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because tools cannot work at all unless they have access to everything on the account"
+      },
+      {
+       "letter": "B",
+       "text": "\"Allow all\" is faster than choosing"
+      },
+      {
+       "letter": "C",
+       "text": "Because limited access costs money"
+      },
+      {
+       "letter": "D",
+       "text": "Because it is required by law"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "\"Allow all\" is faster than choosing",
+     "intro": "Convenience pushes toward too much access: clicking \"allow all\" is faster than choosing. Watch for requests broader than the task, such as a meeting summarizer asking to send email as you. Use separate, limited accounts for automation where possible, never share your main password with a tool, and prefer access that can be revoked (taken back) easily. Prompt injection, instructions hidden in content the agent reads, is much less dangerous when the agent cannot take harmful actions.",
+     "feedback": "Convenience."
+    },
+    {
+     "id": "S98-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "A document an agent reads contains \"delete all files.\" Why does least access help?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because files cannot be deleted"
+      },
+      {
+       "letter": "B",
+       "text": "Because agents always ignore instructions found inside documents, so it never matters"
+      },
+      {
+       "letter": "C",
+       "text": "The agent cannot delete if it lacks permission"
+      },
+      {
+       "letter": "D",
+       "text": "Because the document becomes read-only"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The agent cannot delete if it lacks permission",
+     "intro": "Convenience pushes toward too much access: clicking \"allow all\" is faster than choosing. Watch for requests broader than the task, such as a meeting summarizer asking to send email as you. Use separate, limited accounts for automation where possible, never share your main password with a tool, and prefer access that can be revoked (taken back) easily. Prompt injection, instructions hidden in content the agent reads, is much less dangerous when the agent cannot take harmful actions.",
+     "feedback": "Limits injection damage."
+    },
+    {
+     "id": "S98-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "What does \"revocable\" access mean?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It can never be removed once it has been given to the tool by the account owner"
+      },
+      {
+       "letter": "B",
+       "text": "It is shared with everyone"
+      },
+      {
+       "letter": "C",
+       "text": "It is free"
+      },
+      {
+       "letter": "D",
+       "text": "It can be taken back easily"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "It can be taken back easily",
+     "intro": "Convenience pushes toward too much access: clicking \"allow all\" is faster than choosing. Watch for requests broader than the task, such as a meeting summarizer asking to send email as you. Use separate, limited accounts for automation where possible, never share your main password with a tool, and prefer access that can be revoked (taken back) easily. Prompt injection, instructions hidden in content the agent reads, is much less dangerous when the agent cannot take harmful actions.",
+     "feedback": "Easy to withdraw."
+    },
+    {
+     "id": "S98-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Why use a separate, limited account for automation?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because separate accounts make the automation run twice as fast as it would otherwise"
+      },
+      {
+       "letter": "B",
+       "text": "So a problem cannot reach your main account"
+      },
+      {
+       "letter": "C",
+       "text": "To hide the automation"
+      },
+      {
+       "letter": "D",
+       "text": "To get more storage"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "So a problem cannot reach your main account",
+     "intro": "Convenience pushes toward too much access: clicking \"allow all\" is faster than choosing. Watch for requests broader than the task, such as a meeting summarizer asking to send email as you. Use separate, limited accounts for automation where possible, never share your main password with a tool, and prefer access that can be revoked (taken back) easily. Prompt injection, instructions hidden in content the agent reads, is much less dangerous when the agent cannot take harmful actions.",
+     "feedback": "Isolation."
+    },
+    {
+     "id": "S98-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Which request is broader than its task?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A spell checker asking to read your contacts"
+      },
+      {
+       "letter": "B",
+       "text": "A photo resizer asking to open a photo"
+      },
+      {
+       "letter": "C",
+       "text": "A spell checker asking to read the text of the document that you want it to check"
+      },
+      {
+       "letter": "D",
+       "text": "A calendar viewer asking to read the calendar"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "A spell checker asking to read your contacts",
+     "intro": "Convenience pushes toward too much access: clicking \"allow all\" is faster than choosing. Watch for requests broader than the task, such as a meeting summarizer asking to send email as you. Use separate, limited accounts for automation where possible, never share your main password with a tool, and prefer access that can be revoked (taken back) easily. Prompt injection, instructions hidden in content the agent reads, is much less dangerous when the agent cannot take harmful actions.",
+     "feedback": "Unneeded permission."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

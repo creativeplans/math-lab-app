@@ -1,0 +1,679 @@
+{
+ "set": 62,
+ "title": "Answers grounded in sources",
+ "outcome": "AI.RETRIEVAL.02",
+ "content_status": "stable",
+ "requires": [
+  61,
+  32
+ ],
+ "module": "files",
+ "path_refs": [
+  "everyday",
+  "coding",
+  "work"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Check that a source-grounded answer stays within its sources",
+   "questions": [
+    {
+     "id": "S62-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "What should a source-grounded answer do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Use as many sources as possible"
+      },
+      {
+       "letter": "B",
+       "text": "Ignore its sources when it disagrees"
+      },
+      {
+       "letter": "C",
+       "text": "Stay within what its sources say"
+      },
+      {
+       "letter": "D",
+       "text": "Add any background facts the tool believes are probably true, even without a source"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Stay within what its sources say",
+     "intro": "A SOURCE-GROUNDED answer should stay within what its sources say. Checking means three questions. Does each claim have a source? Does the source actually say that, in that strength? Does the answer leave out important limits or exceptions the source includes? Grounding fails in familiar ways: an answer cites the right document but the wrong page; it combines two sources into a conclusion neither makes; or it adds background \"knowledge\" with no source at all. A helpful request: \"Answer only from these documents; quote the sentence for each claim; say 'not found' if they do not cover it.\"",
+     "feedback": "Grounded means supported by the sources."
+    },
+    {
+     "id": "S62-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "In this prepared example, which claim is NOT supported by its quoted sentence?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Repairs are free"
+      },
+      {
+       "letter": "B",
+       "text": "All three are supported"
+      },
+      {
+       "letter": "C",
+       "text": "The warranty lasts 2 years"
+      },
+      {
+       "letter": "D",
+       "text": "Water damage is covered"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Water damage is covered",
+     "intro": "A SOURCE-GROUNDED answer should stay within what its sources say. Checking means three questions. Does each claim have a source? Does the source actually say that, in that strength? Does the answer leave out important limits or exceptions the source includes? Grounding fails in familiar ways: an answer cites the right document but the wrong page; it combines two sources into a conclusion neither makes; or it adds background \"knowledge\" with no source at all. A helpful request: \"Answer only from these documents; quote the sentence for each claim; say 'not found' if they do not cover it.\"",
+     "feedback": "The source says water damage is not covered.",
+     "example": {
+      "kind": "table",
+      "label": "Prepared example (a fictional answer checked against a warranty document)",
+      "table": [
+       [
+        "Answer claim",
+        "Quoted source sentence"
+       ],
+       [
+        "The warranty lasts 2 years.",
+        "\"This product is covered for 24 months from purchase.\""
+       ],
+       [
+        "Water damage is covered.",
+        "\"The warranty does not cover water or fire damage.\""
+       ],
+       [
+        "Repairs are free.",
+        "\"Covered repairs are made at no charge.\""
+       ]
+      ]
+     }
+    },
+    {
+     "id": "S62-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "Which is a grounding failure?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Combining two sources into a conclusion neither makes"
+      },
+      {
+       "letter": "B",
+       "text": "Reporting a disagreement between sources"
+      },
+      {
+       "letter": "C",
+       "text": "Quoting the exact sentence that supports each claim"
+      },
+      {
+       "letter": "D",
+       "text": "Saying \"not found\" when sources are silent"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Combining two sources into a conclusion neither makes",
+     "intro": "A SOURCE-GROUNDED answer should stay within what its sources say. Checking means three questions. Does each claim have a source? Does the source actually say that, in that strength? Does the answer leave out important limits or exceptions the source includes? Grounding fails in familiar ways: an answer cites the right document but the wrong page; it combines two sources into a conclusion neither makes; or it adds background \"knowledge\" with no source at all. A helpful request: \"Answer only from these documents; quote the sentence for each claim; say 'not found' if they do not cover it.\"",
+     "feedback": "Unsupported synthesis."
+    },
+    {
+     "id": "S62-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "Which request best encourages grounded answers?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Answer using these documents plus anything else you happen to know about the topic.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Answer only from these documents; quote each source.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Keep it short.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Answer as confidently as possible.\""
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "\"Answer only from these documents; quote each source.\"",
+     "intro": "A SOURCE-GROUNDED answer should stay within what its sources say. Checking means three questions. Does each claim have a source? Does the source actually say that, in that strength? Does the answer leave out important limits or exceptions the source includes? Grounding fails in familiar ways: an answer cites the right document but the wrong page; it combines two sources into a conclusion neither makes; or it adds background \"knowledge\" with no source at all. A helpful request: \"Answer only from these documents; quote the sentence for each claim; say 'not found' if they do not cover it.\"",
+     "feedback": "Restrict and require quotes."
+    },
+    {
+     "id": "S62-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "A claim is in the source but stated more strongly in the answer. Which check catches this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Does the source say it in that strength?"
+      },
+      {
+       "letter": "B",
+       "text": "Is the answer longer than the source?"
+      },
+      {
+       "letter": "C",
+       "text": "Does the answer have a title?"
+      },
+      {
+       "letter": "D",
+       "text": "Is the answer formatted with bullet points?"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Does the source say it in that strength?",
+     "intro": "A SOURCE-GROUNDED answer should stay within what its sources say. Checking means three questions. Does each claim have a source? Does the source actually say that, in that strength? Does the answer leave out important limits or exceptions the source includes? Grounding fails in familiar ways: an answer cites the right document but the wrong page; it combines two sources into a conclusion neither makes; or it adds background \"knowledge\" with no source at all. A helpful request: \"Answer only from these documents; quote the sentence for each claim; say 'not found' if they do not cover it.\"",
+     "feedback": "Compare strength as well as content."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Match each claim to a quoted sentence",
+   "questions": [
+    {
+     "id": "S62-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "\"Doors open at 6\" is...",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Both supported and contradicted"
+      },
+      {
+       "letter": "B",
+       "text": "Contradicted"
+      },
+      {
+       "letter": "C",
+       "text": "Not found"
+      },
+      {
+       "letter": "D",
+       "text": "Supported"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Supported",
+     "intro": "To check grounding, make two columns: CLAIM and SOURCE SENTENCE. For each claim, find the sentence that supports it. Then compare: SUPPORTED (same meaning), CONTRADICTED (the sentence says the opposite), or NOT FOUND (no sentence covers it). Example source: \"Doors open at 6 p.m. Seating is first come, first served.\" Claim \"Doors open at 6\": supported. Claim \"Seats are reserved\": contradicted. Claim \"Parking is free\": not found.",
+     "feedback": "Same meaning."
+    },
+    {
+     "id": "S62-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "\"Seats are reserved\" is...",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Not found"
+      },
+      {
+       "letter": "B",
+       "text": "Contradicted"
+      },
+      {
+       "letter": "C",
+       "text": "Supported"
+      },
+      {
+       "letter": "D",
+       "text": "Neither"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Contradicted",
+     "intro": "To check grounding, make two columns: CLAIM and SOURCE SENTENCE. For each claim, find the sentence that supports it. Then compare: SUPPORTED (same meaning), CONTRADICTED (the sentence says the opposite), or NOT FOUND (no sentence covers it). Example source: \"Doors open at 6 p.m. Seating is first come, first served.\" Claim \"Doors open at 6\": supported. Claim \"Seats are reserved\": contradicted. Claim \"Parking is free\": not found.",
+     "feedback": "The source says the opposite."
+    },
+    {
+     "id": "S62-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "\"Parking is free\" is...",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Supported"
+      },
+      {
+       "letter": "B",
+       "text": "Proven"
+      },
+      {
+       "letter": "C",
+       "text": "Not found"
+      },
+      {
+       "letter": "D",
+       "text": "Contradicted"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Not found",
+     "intro": "To check grounding, make two columns: CLAIM and SOURCE SENTENCE. For each claim, find the sentence that supports it. Then compare: SUPPORTED (same meaning), CONTRADICTED (the sentence says the opposite), or NOT FOUND (no sentence covers it). Example source: \"Doors open at 6 p.m. Seating is first come, first served.\" Claim \"Doors open at 6\": supported. Claim \"Seats are reserved\": contradicted. Claim \"Parking is free\": not found.",
+     "feedback": "No sentence covers it."
+    },
+    {
+     "id": "S62-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "What are the two columns?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Font and size"
+      },
+      {
+       "letter": "B",
+       "text": "Claim and source sentence"
+      },
+      {
+       "letter": "C",
+       "text": "Title and date"
+      },
+      {
+       "letter": "D",
+       "text": "Author name and page price"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Claim and source sentence",
+     "intro": "To check grounding, make two columns: CLAIM and SOURCE SENTENCE. For each claim, find the sentence that supports it. Then compare: SUPPORTED (same meaning), CONTRADICTED (the sentence says the opposite), or NOT FOUND (no sentence covers it). Example source: \"Doors open at 6 p.m. Seating is first come, first served.\" Claim \"Doors open at 6\": supported. Claim \"Seats are reserved\": contradicted. Claim \"Parking is free\": not found.",
+     "feedback": "Claim matched to sentence."
+    },
+    {
+     "id": "S62-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "\"Doors open at 7 p.m.\" would be...",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Supported"
+      },
+      {
+       "letter": "B",
+       "text": "Not found"
+      },
+      {
+       "letter": "C",
+       "text": "Neither"
+      },
+      {
+       "letter": "D",
+       "text": "Contradicted"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Contradicted",
+     "intro": "To check grounding, make two columns: CLAIM and SOURCE SENTENCE. For each claim, find the sentence that supports it. Then compare: SUPPORTED (same meaning), CONTRADICTED (the sentence says the opposite), or NOT FOUND (no sentence covers it). Example source: \"Doors open at 6 p.m. Seating is first come, first served.\" Claim \"Doors open at 6\": supported. Claim \"Seats are reserved\": contradicted. Claim \"Parking is free\": not found.",
+     "feedback": "A different time conflicts."
+    }
+   ],
+   "branch_mode": "underlying_skill",
+   "relationship": "A learner who cannot check grounding practices the underlying skill of matching claims to quoted sentences."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Check grounded answers in practice",
+   "questions": [
+    {
+     "id": "S62-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "A tool summarizes a store's policy: \"Refunds within 60 days.\" The policy says 30 days. What is this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A claim not found in the source"
+      },
+      {
+       "letter": "B",
+       "text": "A correct rounding"
+      },
+      {
+       "letter": "C",
+       "text": "A claim contradicted by its source"
+      },
+      {
+       "letter": "D",
+       "text": "A supported claim"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A claim contradicted by its source",
+     "intro": "A SOURCE-GROUNDED answer should stay within what its sources say. Checking means three questions. Does each claim have a source? Does the source actually say that, in that strength? Does the answer leave out important limits or exceptions the source includes? Grounding fails in familiar ways: an answer cites the right document but the wrong page; it combines two sources into a conclusion neither makes; or it adds background \"knowledge\" with no source at all. A helpful request: \"Answer only from these documents; quote the sentence for each claim; say 'not found' if they do not cover it.\"",
+     "feedback": "Contradiction."
+    },
+    {
+     "id": "S62-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "An answer about a lease says \"pets allowed,\" citing page 3. Page 3 is about parking. What happened?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It cited the wrong page"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing; page numbers never matter"
+      },
+      {
+       "letter": "C",
+       "text": "Parking and pets are the same topic"
+      },
+      {
+       "letter": "D",
+       "text": "The lease must allow pets somewhere"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "It cited the wrong page",
+     "intro": "A SOURCE-GROUNDED answer should stay within what its sources say. Checking means three questions. Does each claim have a source? Does the source actually say that, in that strength? Does the answer leave out important limits or exceptions the source includes? Grounding fails in familiar ways: an answer cites the right document but the wrong page; it combines two sources into a conclusion neither makes; or it adds background \"knowledge\" with no source at all. A helpful request: \"Answer only from these documents; quote the sentence for each claim; say 'not found' if they do not cover it.\"",
+     "feedback": "Check the cited location."
+    },
+    {
+     "id": "S62-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "Which request asks for grounding?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Guess if unsure.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Tell me everything you know about workplace rules in general, and add the handbook too.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Be creative with the rules.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Use only the handbook; say 'not found' if it is not covered.\""
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "\"Use only the handbook; say 'not found' if it is not covered.\"",
+     "intro": "A SOURCE-GROUNDED answer should stay within what its sources say. Checking means three questions. Does each claim have a source? Does the source actually say that, in that strength? Does the answer leave out important limits or exceptions the source includes? Grounding fails in familiar ways: an answer cites the right document but the wrong page; it combines two sources into a conclusion neither makes; or it adds background \"knowledge\" with no source at all. A helpful request: \"Answer only from these documents; quote the sentence for each claim; say 'not found' if they do not cover it.\"",
+     "feedback": "Restrict and allow \"not found.\""
+    },
+    {
+     "id": "S62-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "An answer includes \"most companies do this,\" which no supplied document says. What is it?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A grounded claim, since it sounds like common knowledge that any document would support"
+      },
+      {
+       "letter": "B",
+       "text": "An ungrounded claim from outside the sources"
+      },
+      {
+       "letter": "C",
+       "text": "A formatting error"
+      },
+      {
+       "letter": "D",
+       "text": "A quote from the handbook"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "An ungrounded claim from outside the sources",
+     "intro": "A SOURCE-GROUNDED answer should stay within what its sources say. Checking means three questions. Does each claim have a source? Does the source actually say that, in that strength? Does the answer leave out important limits or exceptions the source includes? Grounding fails in familiar ways: an answer cites the right document but the wrong page; it combines two sources into a conclusion neither makes; or it adds background \"knowledge\" with no source at all. A helpful request: \"Answer only from these documents; quote the sentence for each claim; say 'not found' if they do not cover it.\"",
+     "feedback": "Unsupported background claims."
+    },
+    {
+     "id": "S62-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "Why ask the tool to quote the sentence for each claim?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "So you can quickly check support"
+      },
+      {
+       "letter": "B",
+       "text": "So you never read the document"
+      },
+      {
+       "letter": "C",
+       "text": "So the answer becomes longer and more impressive to the people who will read it"
+      },
+      {
+       "letter": "D",
+       "text": "So the tool learns permanently"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "So you can quickly check support",
+     "intro": "A SOURCE-GROUNDED answer should stay within what its sources say. Checking means three questions. Does each claim have a source? Does the source actually say that, in that strength? Does the answer leave out important limits or exceptions the source includes? Grounding fails in familiar ways: an answer cites the right document but the wrong page; it combines two sources into a conclusion neither makes; or it adds background \"knowledge\" with no source at all. A helpful request: \"Answer only from these documents; quote the sentence for each claim; say 'not found' if they do not cover it.\"",
+     "feedback": "Quotes make checking fast."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Handle \"not found,\" disagreements and weak sources",
+   "questions": [
+    {
+     "id": "S62-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "A tool says the manual does not mention battery life, but the manual is a blurry scan. What should you do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Accept \"not found\" as proof that the manual has nothing at all about battery life"
+      },
+      {
+       "letter": "B",
+       "text": "Assume battery life is unlimited"
+      },
+      {
+       "letter": "C",
+       "text": "Search the manual yourself to confirm"
+      },
+      {
+       "letter": "D",
+       "text": "Ask for a longer answer"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Search the manual yourself to confirm",
+     "intro": "Even \"not found\" deserves thought. If the tool says the documents do not cover something, it might be right, or it might have missed it in a long or poorly scanned file; a quick search of the document yourself can confirm. When two sources disagree, a grounded answer should report the disagreement rather than pick one silently. And when sources are themselves weak, grounding only moves the problem: a faithful summary of an unreliable page is still unreliable.",
+     "feedback": "Confirm \"not found\" in poor scans."
+    },
+    {
+     "id": "S62-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "Two supplied documents give different deadlines. What should a grounded answer do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Pick the earlier deadline silently, since that one is probably the correct one to use"
+      },
+      {
+       "letter": "B",
+       "text": "Ignore both deadlines"
+      },
+      {
+       "letter": "C",
+       "text": "Average the two dates"
+      },
+      {
+       "letter": "D",
+       "text": "Report the disagreement"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Report the disagreement",
+     "intro": "Even \"not found\" deserves thought. If the tool says the documents do not cover something, it might be right, or it might have missed it in a long or poorly scanned file; a quick search of the document yourself can confirm. When two sources disagree, a grounded answer should report the disagreement rather than pick one silently. And when sources are themselves weak, grounding only moves the problem: a faithful summary of an unreliable page is still unreliable.",
+     "feedback": "Show the conflict."
+    },
+    {
+     "id": "S62-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "A faithful summary of an unreliable website is...",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "More reliable than the website"
+      },
+      {
+       "letter": "B",
+       "text": "Still unreliable"
+      },
+      {
+       "letter": "C",
+       "text": "Fully reliable, because the summary matched the website perfectly in every detail"
+      },
+      {
+       "letter": "D",
+       "text": "Impossible to make"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Still unreliable",
+     "intro": "Even \"not found\" deserves thought. If the tool says the documents do not cover something, it might be right, or it might have missed it in a long or poorly scanned file; a quick search of the document yourself can confirm. When two sources disagree, a grounded answer should report the disagreement rather than pick one silently. And when sources are themselves weak, grounding only moves the problem: a faithful summary of an unreliable page is still unreliable.",
+     "feedback": "Grounding moves the problem."
+    },
+    {
+     "id": "S62-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "Why might a tool say \"not found\" incorrectly in a long document?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because the tool reads only titles"
+      },
+      {
+       "letter": "B",
+       "text": "Because long documents never contain any useful information at all for readers"
+      },
+      {
+       "letter": "C",
+       "text": "It may have missed the relevant passage"
+      },
+      {
+       "letter": "D",
+       "text": "Because \"not found\" is always correct"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "It may have missed the relevant passage",
+     "intro": "Even \"not found\" deserves thought. If the tool says the documents do not cover something, it might be right, or it might have missed it in a long or poorly scanned file; a quick search of the document yourself can confirm. When two sources disagree, a grounded answer should report the disagreement rather than pick one silently. And when sources are themselves weak, grounding only moves the problem: a faithful summary of an unreliable page is still unreliable.",
+     "feedback": "Long inputs can be missed."
+    },
+    {
+     "id": "S62-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Everyday: searching and working with documents",
+     "type": "mc",
+     "prompt": "What makes a grounded answer trustworthy?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Faithful use of reliable, relevant sources"
+      },
+      {
+       "letter": "B",
+       "text": "A long list of links"
+      },
+      {
+       "letter": "C",
+       "text": "Any citation at all, even to a page that does not discuss the topic of the claim"
+      },
+      {
+       "letter": "D",
+       "text": "A confident tone"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Faithful use of reliable, relevant sources",
+     "intro": "Even \"not found\" deserves thought. If the tool says the documents do not cover something, it might be right, or it might have missed it in a long or poorly scanned file; a quick search of the document yourself can confirm. When two sources disagree, a grounded answer should report the disagreement rather than pick one silently. And when sources are themselves weak, grounding only moves the problem: a faithful summary of an unreliable page is still unreliable.",
+     "feedback": "Faithful use plus reliable sources."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

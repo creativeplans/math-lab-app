@@ -1,0 +1,680 @@
+{
+ "set": 29,
+ "title": "Supplying source material and asking for structure",
+ "outcome": "AI.PROMPT.08",
+ "content_status": "stable",
+ "requires": [
+  23
+ ],
+ "module": "prompting",
+ "path_refs": [
+  "everyday",
+  "creative",
+  "coding",
+  "work",
+  "society"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Supply source material and request structured output",
+   "questions": [
+    {
+     "id": "S29-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Why paste the actual policy text and say \"use only the text below\"?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It retrains the model on the policy"
+      },
+      {
+       "letter": "B",
+       "text": "It makes the answer longer"
+      },
+      {
+       "letter": "C",
+       "text": "It steers the answer toward your material"
+      },
+      {
+       "letter": "D",
+       "text": "It guarantees the answer is perfect"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "It steers the answer toward your material",
+     "intro": "Two habits make results more grounded and easier to check. First, SUPPLY THE RELEVANT SOURCE MATERIAL: paste the actual policy, article, notes or data you want used, and say \"use only the text below.\" That steers the answer toward your material instead of the tool's general patterns. Second, ask for STRUCTURED OUTPUT, such as a table with named columns or a list with a fixed set of fields, that you can scan quickly. A table of \"Claim | Where in the text\" is much easier to verify than a long paragraph. Supply only what is relevant; unrelated material can distract.",
+     "feedback": "Supplied text grounds the answer."
+    },
+    {
+     "id": "S29-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Which output is easiest to verify?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A poem summarizing the text"
+      },
+      {
+       "letter": "B",
+       "text": "A table of each claim and where it appears"
+      },
+      {
+       "letter": "C",
+       "text": "A one-word answer with no context"
+      },
+      {
+       "letter": "D",
+       "text": "A long paragraph with no references at all"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A table of each claim and where it appears",
+     "intro": "Two habits make results more grounded and easier to check. First, SUPPLY THE RELEVANT SOURCE MATERIAL: paste the actual policy, article, notes or data you want used, and say \"use only the text below.\" That steers the answer toward your material instead of the tool's general patterns. Second, ask for STRUCTURED OUTPUT, such as a table with named columns or a list with a fixed set of fields, that you can scan quickly. A table of \"Claim | Where in the text\" is much easier to verify than a long paragraph. Supply only what is relevant; unrelated material can distract.",
+     "feedback": "Structure makes checking quick."
+    },
+    {
+     "id": "S29-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "In this prepared example, which claim needs attention?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Free return shipping on all orders\""
+      },
+      {
+       "letter": "B",
+       "text": "None; every claim was found"
+      },
+      {
+       "letter": "C",
+       "text": "\"Returns accepted within 30 days\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Store credit for opened items\""
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "\"Free return shipping on all orders\"",
+     "intro": "Two habits make results more grounded and easier to check. First, SUPPLY THE RELEVANT SOURCE MATERIAL: paste the actual policy, article, notes or data you want used, and say \"use only the text below.\" That steers the answer toward your material instead of the tool's general patterns. Second, ask for STRUCTURED OUTPUT, such as a table with named columns or a list with a fixed set of fields, that you can scan quickly. A table of \"Claim | Where in the text\" is much easier to verify than a long paragraph. Supply only what is relevant; unrelated material can distract.",
+     "feedback": "It was not found in the policy.",
+     "example": {
+      "kind": "table",
+      "label": "Prepared example (a structured summary of a fictional store policy)",
+      "table": [
+       [
+        "Claim from the summary",
+        "Where in the policy"
+       ],
+       [
+        "Returns accepted within 30 days",
+        "Section 2"
+       ],
+       [
+        "Store credit for opened items",
+        "Section 3"
+       ],
+       [
+        "Free return shipping on all orders",
+        "Not found"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "S29-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Why supply only relevant material?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "More text always improves accuracy"
+      },
+      {
+       "letter": "B",
+       "text": "Tools cannot read unrelated text"
+      },
+      {
+       "letter": "C",
+       "text": "Relevant material is always too long to paste"
+      },
+      {
+       "letter": "D",
+       "text": "Unrelated material can distract from the task"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Unrelated material can distract from the task",
+     "intro": "Two habits make results more grounded and easier to check. First, SUPPLY THE RELEVANT SOURCE MATERIAL: paste the actual policy, article, notes or data you want used, and say \"use only the text below.\" That steers the answer toward your material instead of the tool's general patterns. Second, ask for STRUCTURED OUTPUT, such as a table with named columns or a list with a fixed set of fields, that you can scan quickly. A table of \"Claim | Where in the text\" is much easier to verify than a long paragraph. Supply only what is relevant; unrelated material can distract.",
+     "feedback": "Focus helps the tool use the right material."
+    },
+    {
+     "id": "S29-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Which is an example of structured output?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A single sentence of advice"
+      },
+      {
+       "letter": "B",
+       "text": "A table with columns Name, Date and Cost"
+      },
+      {
+       "letter": "C",
+       "text": "A story about a shopping trip"
+      },
+      {
+       "letter": "D",
+       "text": "A friendly paragraph about the costs"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A table with columns Name, Date and Cost",
+     "intro": "Two habits make results more grounded and easier to check. First, SUPPLY THE RELEVANT SOURCE MATERIAL: paste the actual policy, article, notes or data you want used, and say \"use only the text below.\" That steers the answer toward your material instead of the tool's general patterns. Second, ask for STRUCTURED OUTPUT, such as a table with named columns or a list with a fixed set of fields, that you can scan quickly. A table of \"Claim | Where in the text\" is much easier to verify than a long paragraph. Supply only what is relevant; unrelated material can distract.",
+     "feedback": "Named columns are structure."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Match a claim to the sentence that supports it",
+   "questions": [
+    {
+     "id": "S29-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Which sentence supports \"It is closed Sundays\"?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "None of them"
+      },
+      {
+       "letter": "B",
+       "text": "Sentence 2"
+      },
+      {
+       "letter": "C",
+       "text": "Sentence 1"
+      },
+      {
+       "letter": "D",
+       "text": "Sentence 3"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Sentence 3",
+     "intro": "To check whether a summary used its source faithfully, take one CLAIM at a time and find the SENTENCE in the source that supports it. Source: \"The library opens at 9 a.m. on weekdays. On Saturdays it opens at 10. It is closed Sundays.\" Claim: \"It opens at 10 on Saturdays.\" Supported by sentence 2. Claim: \"It opens at 9 every day.\" Not supported: sentence 1 says weekdays only. If no sentence supports a claim, or a sentence contradicts it, mark the claim.",
+     "feedback": "Sentence 3 states it."
+    },
+    {
+     "id": "S29-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Is \"It opens at 9 every day\" supported?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No; sentence 1 says weekdays only"
+      },
+      {
+       "letter": "B",
+       "text": "Yes; sentence 3 says so"
+      },
+      {
+       "letter": "C",
+       "text": "Yes; sentence 1 says so"
+      },
+      {
+       "letter": "D",
+       "text": "Yes; all three sentences agree"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "No; sentence 1 says weekdays only",
+     "intro": "To check whether a summary used its source faithfully, take one CLAIM at a time and find the SENTENCE in the source that supports it. Source: \"The library opens at 9 a.m. on weekdays. On Saturdays it opens at 10. It is closed Sundays.\" Claim: \"It opens at 10 on Saturdays.\" Supported by sentence 2. Claim: \"It opens at 9 every day.\" Not supported: sentence 1 says weekdays only. If no sentence supports a claim, or a sentence contradicts it, mark the claim.",
+     "feedback": "The claim overstates the source."
+    },
+    {
+     "id": "S29-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Which sentence supports \"It opens at 10 on Saturdays\"?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No sentence"
+      },
+      {
+       "letter": "B",
+       "text": "Sentence 3"
+      },
+      {
+       "letter": "C",
+       "text": "Sentence 2"
+      },
+      {
+       "letter": "D",
+       "text": "Sentence 1"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Sentence 2",
+     "intro": "To check whether a summary used its source faithfully, take one CLAIM at a time and find the SENTENCE in the source that supports it. Source: \"The library opens at 9 a.m. on weekdays. On Saturdays it opens at 10. It is closed Sundays.\" Claim: \"It opens at 10 on Saturdays.\" Supported by sentence 2. Claim: \"It opens at 9 every day.\" Not supported: sentence 1 says weekdays only. If no sentence supports a claim, or a sentence contradicts it, mark the claim.",
+     "feedback": "Sentence 2 states it."
+    },
+    {
+     "id": "S29-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "A claim says \"It opens at 8 a.m. on Mondays.\" What should you mark?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Supported by sentence 1"
+      },
+      {
+       "letter": "B",
+       "text": "Not supported (contradicted)"
+      },
+      {
+       "letter": "C",
+       "text": "Supported by sentence 2"
+      },
+      {
+       "letter": "D",
+       "text": "Supported by sentence 3"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Not supported (contradicted)",
+     "intro": "To check whether a summary used its source faithfully, take one CLAIM at a time and find the SENTENCE in the source that supports it. Source: \"The library opens at 9 a.m. on weekdays. On Saturdays it opens at 10. It is closed Sundays.\" Claim: \"It opens at 10 on Saturdays.\" Supported by sentence 2. Claim: \"It opens at 9 every day.\" Not supported: sentence 1 says weekdays only. If no sentence supports a claim, or a sentence contradicts it, mark the claim.",
+     "feedback": "The source says 9 on weekdays."
+    },
+    {
+     "id": "S29-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "What is the first step in checking a summary?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Count the summary's words"
+      },
+      {
+       "letter": "B",
+       "text": "Read the summary twice to judge its tone"
+      },
+      {
+       "letter": "C",
+       "text": "Trust it if it is short"
+      },
+      {
+       "letter": "D",
+       "text": "Take one claim and find its support"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Take one claim and find its support",
+     "intro": "To check whether a summary used its source faithfully, take one CLAIM at a time and find the SENTENCE in the source that supports it. Source: \"The library opens at 9 a.m. on weekdays. On Saturdays it opens at 10. It is closed Sundays.\" Claim: \"It opens at 10 on Saturdays.\" Supported by sentence 2. Claim: \"It opens at 9 every day.\" Not supported: sentence 1 says weekdays only. If no sentence supports a claim, or a sentence contradicts it, mark the claim.",
+     "feedback": "Claim by claim."
+    }
+   ],
+   "branch_mode": "underlying_skill",
+   "relationship": "A learner unsure how to verify grounded output practices matching claims to supporting sentences."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Ground requests in real material",
+   "questions": [
+    {
+     "id": "S29-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Zoe wants answers about her lease, not leases in general. What should she do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Paste the lease; say \"answer only from this\""
+      },
+      {
+       "letter": "B",
+       "text": "Describe her lease from memory, without pasting it"
+      },
+      {
+       "letter": "C",
+       "text": "Ask \"what do leases usually say?\""
+      },
+      {
+       "letter": "D",
+       "text": "Ask for a longer answer"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Paste the lease; say \"answer only from this\"",
+     "intro": "Two habits make results more grounded and easier to check. First, SUPPLY THE RELEVANT SOURCE MATERIAL: paste the actual policy, article, notes or data you want used, and say \"use only the text below.\" That steers the answer toward your material instead of the tool's general patterns. Second, ask for STRUCTURED OUTPUT, such as a table with named columns or a list with a fixed set of fields, that you can scan quickly. A table of \"Claim | Where in the text\" is much easier to verify than a long paragraph. Supply only what is relevant; unrelated material can distract.",
+     "feedback": "Supply the actual document."
+    },
+    {
+     "id": "S29-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "A manager needs to compare three vendor quotes. Which output is easiest to check?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A paragraph describing each vendor"
+      },
+      {
+       "letter": "B",
+       "text": "A motivational note about choosing vendors well"
+      },
+      {
+       "letter": "C",
+       "text": "A table: Vendor, Price, Delivery date, Warranty"
+      },
+      {
+       "letter": "D",
+       "text": "A ranking with no details"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A table: Vendor, Price, Delivery date, Warranty",
+     "intro": "Two habits make results more grounded and easier to check. First, SUPPLY THE RELEVANT SOURCE MATERIAL: paste the actual policy, article, notes or data you want used, and say \"use only the text below.\" That steers the answer toward your material instead of the tool's general patterns. Second, ask for STRUCTURED OUTPUT, such as a table with named columns or a list with a fixed set of fields, that you can scan quickly. A table of \"Claim | Where in the text\" is much easier to verify than a long paragraph. Supply only what is relevant; unrelated material can distract.",
+     "feedback": "A comparison table is easy to verify."
+    },
+    {
+     "id": "S29-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Which instruction keeps an answer close to supplied notes?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Use only the notes below; say if something is missing.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Ignore the notes whenever you have better ideas.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Use the notes and anything else you know.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Make the notes sound more exciting.\""
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "\"Use only the notes below; say if something is missing.\"",
+     "intro": "Two habits make results more grounded and easier to check. First, SUPPLY THE RELEVANT SOURCE MATERIAL: paste the actual policy, article, notes or data you want used, and say \"use only the text below.\" That steers the answer toward your material instead of the tool's general patterns. Second, ask for STRUCTURED OUTPUT, such as a table with named columns or a list with a fixed set of fields, that you can scan quickly. A table of \"Claim | Where in the text\" is much easier to verify than a long paragraph. Supply only what is relevant; unrelated material can distract.",
+     "feedback": "Restrict to the notes and flag gaps."
+    },
+    {
+     "id": "S29-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Ben pastes a 50-page handbook to ask about one vacation rule. What would help?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Paste three handbooks for extra context"
+      },
+      {
+       "letter": "B",
+       "text": "Paste the handbook twice"
+      },
+      {
+       "letter": "C",
+       "text": "Paste nothing and ask generally"
+      },
+      {
+       "letter": "D",
+       "text": "Paste only the vacation section"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Paste only the vacation section",
+     "intro": "Two habits make results more grounded and easier to check. First, SUPPLY THE RELEVANT SOURCE MATERIAL: paste the actual policy, article, notes or data you want used, and say \"use only the text below.\" That steers the answer toward your material instead of the tool's general patterns. Second, ask for STRUCTURED OUTPUT, such as a table with named columns or a list with a fixed set of fields, that you can scan quickly. A table of \"Claim | Where in the text\" is much easier to verify than a long paragraph. Supply only what is relevant; unrelated material can distract.",
+     "feedback": "Relevant material only."
+    },
+    {
+     "id": "S29-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Which column helps you verify each claim in a summary table?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Number of letters\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Where in the text\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Font used\""
+      },
+      {
+       "letter": "D",
+       "text": "\"How exciting it sounds\""
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "\"Where in the text\"",
+     "intro": "Two habits make results more grounded and easier to check. First, SUPPLY THE RELEVANT SOURCE MATERIAL: paste the actual policy, article, notes or data you want used, and say \"use only the text below.\" That steers the answer toward your material instead of the tool's general patterns. Second, ask for STRUCTURED OUTPUT, such as a table with named columns or a list with a fixed set of fields, that you can scan quickly. A table of \"Claim | Where in the text\" is much easier to verify than a long paragraph. Supply only what is relevant; unrelated material can distract.",
+     "feedback": "A location lets you check the source."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Check that supplied material was used faithfully",
+   "questions": [
+    {
+     "id": "S29-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "An answer about a supplied policy includes a rule the policy never mentions. What happened?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The policy must secretly contain it"
+      },
+      {
+       "letter": "B",
+       "text": "The rule must be correct anyway"
+      },
+      {
+       "letter": "C",
+       "text": "The tool added outside information"
+      },
+      {
+       "letter": "D",
+       "text": "Supplied text always prevents outside facts"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The tool added outside information",
+     "intro": "Supplying material does not guarantee faithful use. A tool may still add outside facts, misread a table, or miss part of a long document. Asking it to quote or point to the exact sentence for each claim makes gaps visible. Structured output has limits too: a neat table can contain wrong values, and forcing information into fixed columns can drop important nuance, such as \"only on weekdays.\" Check a few entries against the source, and include a \"notes\" column when exceptions matter.",
+     "feedback": "Supplying material does not guarantee faithful use."
+    },
+    {
+     "id": "S29-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Which request makes gaps in grounding most visible?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"For each claim, quote the sentence it comes from.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Keep it to one paragraph.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Make the answer as confident as possible.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Use a friendly tone.\""
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "\"For each claim, quote the sentence it comes from.\"",
+     "intro": "Supplying material does not guarantee faithful use. A tool may still add outside facts, misread a table, or miss part of a long document. Asking it to quote or point to the exact sentence for each claim makes gaps visible. Structured output has limits too: a neat table can contain wrong values, and forcing information into fixed columns can drop important nuance, such as \"only on weekdays.\" Check a few entries against the source, and include a \"notes\" column when exceptions matter.",
+     "feedback": "Quotes show where each claim comes from."
+    },
+    {
+     "id": "S29-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "A neat table lists a store as \"Open 9-5,\" but the source says \"9-5 weekdays only.\" What was lost?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nothing; the table is complete as it is"
+      },
+      {
+       "letter": "B",
+       "text": "An important exception (weekdays only)"
+      },
+      {
+       "letter": "C",
+       "text": "The opening time"
+      },
+      {
+       "letter": "D",
+       "text": "The store's name"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "An important exception (weekdays only)",
+     "intro": "Supplying material does not guarantee faithful use. A tool may still add outside facts, misread a table, or miss part of a long document. Asking it to quote or point to the exact sentence for each claim makes gaps visible. Structured output has limits too: a neat table can contain wrong values, and forcing information into fixed columns can drop important nuance, such as \"only on weekdays.\" Check a few entries against the source, and include a \"notes\" column when exceptions matter.",
+     "feedback": "Fixed columns can drop nuance."
+    },
+    {
+     "id": "S29-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "How can a table keep exceptions like \"weekdays only\"?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Remove all columns but one"
+      },
+      {
+       "letter": "B",
+       "text": "Make the table smaller"
+      },
+      {
+       "letter": "C",
+       "text": "Add a Notes column"
+      },
+      {
+       "letter": "D",
+       "text": "Use bigger fonts"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Add a Notes column",
+     "intro": "Supplying material does not guarantee faithful use. A tool may still add outside facts, misread a table, or miss part of a long document. Asking it to quote or point to the exact sentence for each claim makes gaps visible. Structured output has limits too: a neat table can contain wrong values, and forcing information into fixed columns can drop important nuance, such as \"only on weekdays.\" Check a few entries against the source, and include a \"notes\" column when exceptions matter.",
+     "feedback": "A notes column keeps nuance."
+    },
+    {
+     "id": "S29-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "A tool summarized a long supplied report. What is a sensible check?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Check only the formatting"
+      },
+      {
+       "letter": "B",
+       "text": "Ask whether it is sure"
+      },
+      {
+       "letter": "C",
+       "text": "Assume it read every page of the report carefully"
+      },
+      {
+       "letter": "D",
+       "text": "Compare a few entries against the report itself"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Compare a few entries against the report itself",
+     "intro": "Supplying material does not guarantee faithful use. A tool may still add outside facts, misread a table, or miss part of a long document. Asking it to quote or point to the exact sentence for each claim makes gaps visible. Structured output has limits too: a neat table can contain wrong values, and forcing information into fixed columns can drop important nuance, such as \"only on weekdays.\" Check a few entries against the source, and include a \"notes\" column when exceptions matter.",
+     "feedback": "Spot-check against the source."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

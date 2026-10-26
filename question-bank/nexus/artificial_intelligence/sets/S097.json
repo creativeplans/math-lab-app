@@ -1,0 +1,655 @@
+{
+ "set": 97,
+ "title": "Scheduled automation versus model decisions",
+ "outcome": "AI.AGENT.03",
+ "content_status": "stable",
+ "requires": [
+  95
+ ],
+ "module": "agents",
+ "path_refs": [
+  "coding",
+  "work"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Tell scheduled automation from model decisions and choose where each fits",
+   "questions": [
+    {
+     "id": "S97-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "What is scheduled automation?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Fixed rules that run at set times"
+      },
+      {
+       "letter": "B",
+       "text": "A model that decides by itself what work to do each day, based on what seems important"
+      },
+      {
+       "letter": "C",
+       "text": "A person doing tasks"
+      },
+      {
+       "letter": "D",
+       "text": "A calendar app"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Fixed rules that run at set times",
+     "intro": "Not every automation needs a model to make choices. SCHEDULED AUTOMATION runs fixed rules at set times: \"every Monday at 8, send the attendance report.\" It is PREDICTABLE: the same input gives the same result, and it is easy to test. MODEL-DECISION steps let a model choose something, such as which emails are urgent or what to reply. They handle messy situations rules cannot, but they can be wrong in surprising ways. A safe design uses fixed rules where the rule is clear, and model decisions only where judgment is needed, with checks around them.",
+     "feedback": "Fixed, timed rules."
+    },
+    {
+     "id": "S97-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Why is scheduled automation predictable?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because it runs at night"
+      },
+      {
+       "letter": "B",
+       "text": "The same input gives the same result"
+      },
+      {
+       "letter": "C",
+       "text": "Because it is new"
+      },
+      {
+       "letter": "D",
+       "text": "Because it uses a model that has been trained to make very confident and careful choices"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The same input gives the same result",
+     "intro": "Not every automation needs a model to make choices. SCHEDULED AUTOMATION runs fixed rules at set times: \"every Monday at 8, send the attendance report.\" It is PREDICTABLE: the same input gives the same result, and it is easy to test. MODEL-DECISION steps let a model choose something, such as which emails are urgent or what to reply. They handle messy situations rules cannot, but they can be wrong in surprising ways. A safe design uses fixed rules where the rule is clear, and model decisions only where judgment is needed, with checks around them.",
+     "feedback": "Fixed rules."
+    },
+    {
+     "id": "S97-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Which step needs a model decision?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Sending the attendance report every Monday at 8 o'clock to the same list of teachers"
+      },
+      {
+       "letter": "B",
+       "text": "Adding today's date to a file name"
+      },
+      {
+       "letter": "C",
+       "text": "Backing up files at midnight"
+      },
+      {
+       "letter": "D",
+       "text": "Deciding which emails sound urgent"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Deciding which emails sound urgent",
+     "intro": "Not every automation needs a model to make choices. SCHEDULED AUTOMATION runs fixed rules at set times: \"every Monday at 8, send the attendance report.\" It is PREDICTABLE: the same input gives the same result, and it is easy to test. MODEL-DECISION steps let a model choose something, such as which emails are urgent or what to reply. They handle messy situations rules cannot, but they can be wrong in surprising ways. A safe design uses fixed rules where the rule is clear, and model decisions only where judgment is needed, with checks around them.",
+     "feedback": "Judgment is needed."
+    },
+    {
+     "id": "S97-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "What is a downside of model decisions?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "They are always slower"
+      },
+      {
+       "letter": "B",
+       "text": "They cannot be used with email"
+      },
+      {
+       "letter": "C",
+       "text": "They can be wrong in surprising ways"
+      },
+      {
+       "letter": "D",
+       "text": "They can never handle messy situations"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "They can be wrong in surprising ways",
+     "intro": "Not every automation needs a model to make choices. SCHEDULED AUTOMATION runs fixed rules at set times: \"every Monday at 8, send the attendance report.\" It is PREDICTABLE: the same input gives the same result, and it is easy to test. MODEL-DECISION steps let a model choose something, such as which emails are urgent or what to reply. They handle messy situations rules cannot, but they can be wrong in surprising ways. A safe design uses fixed rules where the rule is clear, and model decisions only where judgment is needed, with checks around them.",
+     "feedback": "Unpredictable errors."
+    },
+    {
+     "id": "S97-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "What does a safe design use where the rule is clear?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Fixed rules"
+      },
+      {
+       "letter": "B",
+       "text": "Random choices"
+      },
+      {
+       "letter": "C",
+       "text": "No automation at all"
+      },
+      {
+       "letter": "D",
+       "text": "A model decision"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Fixed rules",
+     "intro": "Not every automation needs a model to make choices. SCHEDULED AUTOMATION runs fixed rules at set times: \"every Monday at 8, send the attendance report.\" It is PREDICTABLE: the same input gives the same result, and it is easy to test. MODEL-DECISION steps let a model choose something, such as which emails are urgent or what to reply. They handle messy situations rules cannot, but they can be wrong in surprising ways. A safe design uses fixed rules where the rule is clear, and model decisions only where judgment is needed, with checks around them.",
+     "feedback": "Rules where rules work."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare fixed automation and model decisions with a sprinkler timer and a gardener",
+   "questions": [
+    {
+     "id": "S97-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "The sprinkler timer is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A chatbot"
+      },
+      {
+       "letter": "B",
+       "text": "Scheduled automation"
+      },
+      {
+       "letter": "C",
+       "text": "A person"
+      },
+      {
+       "letter": "D",
+       "text": "A model decision"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Scheduled automation",
+     "intro": "A SPRINKLER TIMER waters the garden at 6 a.m. every day: predictable, cheap, and it never forgets, but it waters even when it is raining. A GARDENER looks at the plants and the weather and decides: flexible and smart, but sometimes wrong, and you want to know what they decided. Scheduled automation is the timer; a model decision is the gardener. Many gardens use both.",
+     "feedback": "Fixed and timed."
+    },
+    {
+     "id": "S97-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "The gardener is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A calendar"
+      },
+      {
+       "letter": "B",
+       "text": "A rule book"
+      },
+      {
+       "letter": "C",
+       "text": "A model decision"
+      },
+      {
+       "letter": "D",
+       "text": "Scheduled automation"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A model decision",
+     "intro": "A SPRINKLER TIMER waters the garden at 6 a.m. every day: predictable, cheap, and it never forgets, but it waters even when it is raining. A GARDENER looks at the plants and the weather and decides: flexible and smart, but sometimes wrong, and you want to know what they decided. Scheduled automation is the timer; a model decision is the gardener. Many gardens use both.",
+     "feedback": "Judgment."
+    },
+    {
+     "id": "S97-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "What is a weakness of the timer?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It forgets to water the garden on some days because it gets distracted by other tasks"
+      },
+      {
+       "letter": "B",
+       "text": "It is expensive"
+      },
+      {
+       "letter": "C",
+       "text": "It is unpredictable"
+      },
+      {
+       "letter": "D",
+       "text": "It waters even when it rains"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "It waters even when it rains",
+     "intro": "A SPRINKLER TIMER waters the garden at 6 a.m. every day: predictable, cheap, and it never forgets, but it waters even when it is raining. A GARDENER looks at the plants and the weather and decides: flexible and smart, but sometimes wrong, and you want to know what they decided. Scheduled automation is the timer; a model decision is the gardener. Many gardens use both.",
+     "feedback": "No judgment."
+    },
+    {
+     "id": "S97-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "What is a weakness of the gardener?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "They can sometimes be wrong"
+      },
+      {
+       "letter": "B",
+       "text": "They cannot see plants"
+      },
+      {
+       "letter": "C",
+       "text": "They always water at exactly 6 a.m. no matter what the plants or the weather need"
+      },
+      {
+       "letter": "D",
+       "text": "They never decide"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "They can sometimes be wrong",
+     "intro": "A SPRINKLER TIMER waters the garden at 6 a.m. every day: predictable, cheap, and it never forgets, but it waters even when it is raining. A GARDENER looks at the plants and the weather and decides: flexible and smart, but sometimes wrong, and you want to know what they decided. Scheduled automation is the timer; a model decision is the gardener. Many gardens use both.",
+     "feedback": "Judgment can err."
+    },
+    {
+     "id": "S97-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Why do many gardens use both?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because timers are illegal"
+      },
+      {
+       "letter": "B",
+       "text": "Because using two methods always doubles the amount of water the plants receive"
+      },
+      {
+       "letter": "C",
+       "text": "Because gardeners need timers"
+      },
+      {
+       "letter": "D",
+       "text": "Each fits different needs"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Each fits different needs",
+     "intro": "A SPRINKLER TIMER waters the garden at 6 a.m. every day: predictable, cheap, and it never forgets, but it waters even when it is raining. A GARDENER looks at the plants and the weather and decides: flexible and smart, but sometimes wrong, and you want to know what they decided. Scheduled automation is the timer; a model decision is the gardener. Many gardens use both.",
+     "feedback": "Rules plus judgment."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who cannot tell rules from model choices can compare a sprinkler timer with a gardener."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Choose rules or model decisions in practice",
+   "questions": [
+    {
+     "id": "S97-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "A school wants to email the lunch menu every Friday. Which approach fits?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A model decision each Friday about whether families would like to see the menu this week"
+      },
+      {
+       "letter": "B",
+       "text": "No automation"
+      },
+      {
+       "letter": "C",
+       "text": "Scheduled automation"
+      },
+      {
+       "letter": "D",
+       "text": "An agent with full email access"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Scheduled automation",
+     "intro": "Not every automation needs a model to make choices. SCHEDULED AUTOMATION runs fixed rules at set times: \"every Monday at 8, send the attendance report.\" It is PREDICTABLE: the same input gives the same result, and it is easy to test. MODEL-DECISION steps let a model choose something, such as which emails are urgent or what to reply. They handle messy situations rules cannot, but they can be wrong in surprising ways. A safe design uses fixed rules where the rule is clear, and model decisions only where judgment is needed, with checks around them.",
+     "feedback": "A clear, fixed rule."
+    },
+    {
+     "id": "S97-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "A help desk gets messages in many styles and wants them sorted by topic. Which approach fits?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Random sorting"
+      },
+      {
+       "letter": "B",
+       "text": "A model decision with checks"
+      },
+      {
+       "letter": "C",
+       "text": "No sorting"
+      },
+      {
+       "letter": "D",
+       "text": "A fixed rule that sorts every message by its first word, since the first word shows the topic"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A model decision with checks",
+     "intro": "Not every automation needs a model to make choices. SCHEDULED AUTOMATION runs fixed rules at set times: \"every Monday at 8, send the attendance report.\" It is PREDICTABLE: the same input gives the same result, and it is easy to test. MODEL-DECISION steps let a model choose something, such as which emails are urgent or what to reply. They handle messy situations rules cannot, but they can be wrong in surprising ways. A safe design uses fixed rules where the rule is clear, and model decisions only where judgment is needed, with checks around them.",
+     "feedback": "Messy input needs judgment."
+    },
+    {
+     "id": "S97-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Backups every night at 2 a.m. Should a model decide whether to run them?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only on weekends"
+      },
+      {
+       "letter": "B",
+       "text": "Yes, since the model can decide on busy nights that backups are not really needed this time"
+      },
+      {
+       "letter": "C",
+       "text": "Yes, always"
+      },
+      {
+       "letter": "D",
+       "text": "No; a fixed schedule is safer"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "No; a fixed schedule is safer",
+     "intro": "Not every automation needs a model to make choices. SCHEDULED AUTOMATION runs fixed rules at set times: \"every Monday at 8, send the attendance report.\" It is PREDICTABLE: the same input gives the same result, and it is easy to test. MODEL-DECISION steps let a model choose something, such as which emails are urgent or what to reply. They handle messy situations rules cannot, but they can be wrong in surprising ways. A safe design uses fixed rules where the rule is clear, and model decisions only where judgment is needed, with checks around them.",
+     "feedback": "Clear rule, fixed schedule."
+    },
+    {
+     "id": "S97-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Which is a benefit of fixed rules?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "They never need updating"
+      },
+      {
+       "letter": "B",
+       "text": "They can handle any new situation that nobody predicted, much better than any model"
+      },
+      {
+       "letter": "C",
+       "text": "Easy to test"
+      },
+      {
+       "letter": "D",
+       "text": "They understand language"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Easy to test",
+     "intro": "Not every automation needs a model to make choices. SCHEDULED AUTOMATION runs fixed rules at set times: \"every Monday at 8, send the attendance report.\" It is PREDICTABLE: the same input gives the same result, and it is easy to test. MODEL-DECISION steps let a model choose something, such as which emails are urgent or what to reply. They handle messy situations rules cannot, but they can be wrong in surprising ways. A safe design uses fixed rules where the rule is clear, and model decisions only where judgment is needed, with checks around them.",
+     "feedback": "Predictable behavior."
+    },
+    {
+     "id": "S97-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Where should a model decision go in a workflow?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Where judgment is truly needed"
+      },
+      {
+       "letter": "B",
+       "text": "Nowhere"
+      },
+      {
+       "letter": "C",
+       "text": "Everywhere, so that every single step of the workflow can make its own choices"
+      },
+      {
+       "letter": "D",
+       "text": "Only in backups"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Where judgment is truly needed",
+     "intro": "Not every automation needs a model to make choices. SCHEDULED AUTOMATION runs fixed rules at set times: \"every Monday at 8, send the attendance report.\" It is PREDICTABLE: the same input gives the same result, and it is easy to test. MODEL-DECISION steps let a model choose something, such as which emails are urgent or what to reply. They handle messy situations rules cannot, but they can be wrong in surprising ways. A safe design uses fixed rules where the rule is clear, and model decisions only where judgment is needed, with checks around them.",
+     "feedback": "Use judgment where needed."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Combine rules and model decisions safely",
+   "questions": [
+    {
+     "id": "S97-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "A model chooses refunds and a fixed step pays automatically. What is the risk?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No risk, because a fixed payment step always checks the model's decision before paying"
+      },
+      {
+       "letter": "B",
+       "text": "A model error becomes a real payment"
+      },
+      {
+       "letter": "C",
+       "text": "Customers get emails"
+      },
+      {
+       "letter": "D",
+       "text": "Refunds become slower"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A model error becomes a real payment",
+     "intro": "Mixing the two needs care. If a model decides which customers get a refund and a fixed step pays automatically, a model error becomes a real payment. Put model decisions where mistakes are cheap and reversible, or add a person before consequential steps. Also, fixed rules are not automatically safe: a wrong rule repeats its mistake every time. Test both kinds, and keep a record of what each step decided.",
+     "feedback": "Errors flow into actions."
+    },
+    {
+     "id": "S97-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "How can that design be made safer?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Make payments faster"
+      },
+      {
+       "letter": "B",
+       "text": "Hide the decisions"
+      },
+      {
+       "letter": "C",
+       "text": "Add a person to approve before payment"
+      },
+      {
+       "letter": "D",
+       "text": "Remove the fixed payment step and let the model send the payments directly by itself"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Add a person to approve before payment",
+     "intro": "Mixing the two needs care. If a model decides which customers get a refund and a fixed step pays automatically, a model error becomes a real payment. Put model decisions where mistakes are cheap and reversible, or add a person before consequential steps. Also, fixed rules are not automatically safe: a wrong rule repeats its mistake every time. Test both kinds, and keep a record of what each step decided.",
+     "feedback": "Human approval for consequential steps."
+    },
+    {
+     "id": "S97-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "A fixed rule sends a reminder to the wrong list every week. What does this show?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "That the list is right"
+      },
+      {
+       "letter": "B",
+       "text": "Wrong rules repeat mistakes"
+      },
+      {
+       "letter": "C",
+       "text": "That reminders are useless"
+      },
+      {
+       "letter": "D",
+       "text": "That fixed rules can never be wrong, because they are not made by a model"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Wrong rules repeat mistakes",
+     "intro": "Mixing the two needs care. If a model decides which customers get a refund and a fixed step pays automatically, a model error becomes a real payment. Put model decisions where mistakes are cheap and reversible, or add a person before consequential steps. Also, fixed rules are not automatically safe: a wrong rule repeats its mistake every time. Test both kinds, and keep a record of what each step decided.",
+     "feedback": "Test rules too."
+    },
+    {
+     "id": "S97-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Where should model decisions be placed when possible?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Where mistakes are cheap and reversible"
+      },
+      {
+       "letter": "B",
+       "text": "Before every payment"
+      },
+      {
+       "letter": "C",
+       "text": "In deletion steps"
+      },
+      {
+       "letter": "D",
+       "text": "Where mistakes are the most expensive"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Where mistakes are cheap and reversible",
+     "intro": "Mixing the two needs care. If a model decides which customers get a refund and a fixed step pays automatically, a model error becomes a real payment. Put model decisions where mistakes are cheap and reversible, or add a person before consequential steps. Also, fixed rules are not automatically safe: a wrong rule repeats its mistake every time. Test both kinds, and keep a record of what each step decided.",
+     "feedback": "Limit the cost of errors."
+    },
+    {
+     "id": "S97-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Why keep a record of what each step decided?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It is never useful"
+      },
+      {
+       "letter": "B",
+       "text": "Because records make the automation run faster and use less electricity each day"
+      },
+      {
+       "letter": "C",
+       "text": "To hide mistakes"
+      },
+      {
+       "letter": "D",
+       "text": "To check and fix problems later"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "To check and fix problems later",
+     "intro": "Mixing the two needs care. If a model decides which customers get a refund and a fixed step pays automatically, a model error becomes a real payment. Put model decisions where mistakes are cheap and reversible, or add a person before consequential steps. Also, fixed rules are not automatically safe: a wrong rule repeats its mistake every time. Test both kinds, and keep a record of what each step decided.",
+     "feedback": "Traceability."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

@@ -1,0 +1,673 @@
+{
+ "set": 86,
+ "title": "Why generated code needs checking",
+ "outcome": "AI.CODE.02",
+ "content_status": "stable",
+ "requires": [
+  85,
+  17
+ ],
+ "module": "code",
+ "path_refs": [
+  "coding"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Explain why code that looks right can be wrong and how to check it",
+   "questions": [
+    {
+     "id": "S86-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Why can generated code be wrong even when it looks neat?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The model predicts likely code without proving it"
+      },
+      {
+       "letter": "B",
+       "text": "Because computers cannot run neat code"
+      },
+      {
+       "letter": "C",
+       "text": "Because comments stop code from running"
+      },
+      {
+       "letter": "D",
+       "text": "Because neat code is always wrong, and only messy code can actually work correctly"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The model predicts likely code without proving it",
+     "intro": "AI-generated code often LOOKS right: neat layout, sensible names, helpful comments. It can still be WRONG, because the model predicts likely code rather than proving it correct. Common problems: logic that works for one example but not others, misunderstood requirements, missing cases such as an empty list, and calls to functions or settings that do not exist. To check code: read it and trace it, RUN it on several inputs whose correct answers you already know, and compare results. Passing one test does not prove the code is right.",
+     "feedback": "Prediction, not proof."
+    },
+    {
+     "id": "S86-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "In this example, which result is wrong?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Both results"
+      },
+      {
+       "letter": "B",
+       "text": "Neither result"
+      },
+      {
+       "letter": "C",
+       "text": "5.0 for [4, 6]"
+      },
+      {
+       "letter": "D",
+       "text": "9.0 for [3, 6, 9]"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "9.0 for [3, 6, 9]",
+     "intro": "AI-generated code often LOOKS right: neat layout, sensible names, helpful comments. It can still be WRONG, because the model predicts likely code rather than proving it correct. Common problems: logic that works for one example but not others, misunderstood requirements, missing cases such as an empty list, and calls to functions or settings that do not exist. To check code: read it and trace it, RUN it on several inputs whose correct answers you already know, and compare results. Passing one test does not prove the code is right.",
+     "feedback": "The average of 3, 6, 9 is 6.",
+     "example": {
+      "kind": "code",
+      "label": "Prepared code example (Python 3). Shown only; nothing runs.",
+      "code": "def average(numbers):\n    return sum(numbers) / 2\n\nprint(average([4, 6]))\nprint(average([3, 6, 9]))",
+      "language": "Python 3"
+     }
+    },
+    {
+     "id": "S86-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What is the bug in the same example?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Its name is wrong"
+      },
+      {
+       "letter": "B",
+       "text": "It prints too much"
+      },
+      {
+       "letter": "C",
+       "text": "It always divides by 2"
+      },
+      {
+       "letter": "D",
+       "text": "It uses sum"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "It always divides by 2",
+     "intro": "AI-generated code often LOOKS right: neat layout, sensible names, helpful comments. It can still be WRONG, because the model predicts likely code rather than proving it correct. Common problems: logic that works for one example but not others, misunderstood requirements, missing cases such as an empty list, and calls to functions or settings that do not exist. To check code: read it and trace it, RUN it on several inputs whose correct answers you already know, and compare results. Passing one test does not prove the code is right.",
+     "feedback": "It should divide by len(numbers).",
+     "example": {
+      "kind": "code",
+      "label": "Prepared code example (Python 3). Shown only; nothing runs.",
+      "code": "def average(numbers):\n    return sum(numbers) / 2\n\nprint(average([4, 6]))\nprint(average([3, 6, 9]))",
+      "language": "Python 3"
+     }
+    },
+    {
+     "id": "S86-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What does the example show about testing?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Code never needs tests"
+      },
+      {
+       "letter": "B",
+       "text": "Passing one test does not prove code right"
+      },
+      {
+       "letter": "C",
+       "text": "Testing is a waste of time, because the first test already showed that the function works"
+      },
+      {
+       "letter": "D",
+       "text": "Two tests are always enough"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Passing one test does not prove code right",
+     "intro": "AI-generated code often LOOKS right: neat layout, sensible names, helpful comments. It can still be WRONG, because the model predicts likely code rather than proving it correct. Common problems: logic that works for one example but not others, misunderstood requirements, missing cases such as an empty list, and calls to functions or settings that do not exist. To check code: read it and trace it, RUN it on several inputs whose correct answers you already know, and compare results. Passing one test does not prove the code is right.",
+     "feedback": "Test several inputs.",
+     "example": {
+      "kind": "code",
+      "label": "Prepared code example (Python 3). Shown only; nothing runs.",
+      "code": "def average(numbers):\n    return sum(numbers) / 2\n\nprint(average([4, 6]))\nprint(average([3, 6, 9]))",
+      "language": "Python 3"
+     }
+    },
+    {
+     "id": "S86-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What is the best way to check code?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Count its lines"
+      },
+      {
+       "letter": "B",
+       "text": "Ask the tool that wrote it whether it is correct, and accept the answer that it gives"
+      },
+      {
+       "letter": "C",
+       "text": "Run it on inputs whose answers you know"
+      },
+      {
+       "letter": "D",
+       "text": "Check that it has comments"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Run it on inputs whose answers you know",
+     "intro": "AI-generated code often LOOKS right: neat layout, sensible names, helpful comments. It can still be WRONG, because the model predicts likely code rather than proving it correct. Common problems: logic that works for one example but not others, misunderstood requirements, missing cases such as an empty list, and calls to functions or settings that do not exist. To check code: read it and trace it, RUN it on several inputs whose correct answers you already know, and compare results. Passing one test does not prove the code is right.",
+     "feedback": "Known answers reveal errors."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare checking code with checking a calculator you built",
+   "questions": [
+    {
+     "id": "S86-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Why type 2 + 2 into a new calculator?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "To make it faster"
+      },
+      {
+       "letter": "B",
+       "text": "You already know the answer"
+      },
+      {
+       "letter": "C",
+       "text": "Because 2 + 2 is the only problem that any calculator can ever solve correctly"
+      },
+      {
+       "letter": "D",
+       "text": "To clean the buttons"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "You already know the answer",
+     "intro": "Imagine you built a calculator and want to know if it works. You would not just admire the buttons. You would type problems you already know the answer to: 2 + 2, 10 - 3, 5 * 5. If one gives a wrong result, you know something is broken, even if the others were right. Generated code is like a new calculator: neat appearance proves nothing; known-answer tests do.",
+     "feedback": "Known answers reveal errors."
+    },
+    {
+     "id": "S86-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "The calculator gets 2 + 2 right but 5 * 5 wrong. Does it work?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No; one wrong result shows a problem"
+      },
+      {
+       "letter": "B",
+       "text": "It cannot be known"
+      },
+      {
+       "letter": "C",
+       "text": "Yes, mostly"
+      },
+      {
+       "letter": "D",
+       "text": "Yes, because getting the first problem right proves that every other answer is right"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "No; one wrong result shows a problem",
+     "intro": "Imagine you built a calculator and want to know if it works. You would not just admire the buttons. You would type problems you already know the answer to: 2 + 2, 10 - 3, 5 * 5. If one gives a wrong result, you know something is broken, even if the others were right. Generated code is like a new calculator: neat appearance proves nothing; known-answer tests do.",
+     "feedback": "One failure matters."
+    },
+    {
+     "id": "S86-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Nice-looking buttons prove what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "That every answer the calculator gives will always be correct for any problem"
+      },
+      {
+       "letter": "B",
+       "text": "That it is cheap"
+      },
+      {
+       "letter": "C",
+       "text": "That it is fast"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing about correctness"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Nothing about correctness",
+     "intro": "Imagine you built a calculator and want to know if it works. You would not just admire the buttons. You would type problems you already know the answer to: 2 + 2, 10 - 3, 5 * 5. If one gives a wrong result, you know something is broken, even if the others were right. Generated code is like a new calculator: neat appearance proves nothing; known-answer tests do.",
+     "feedback": "Looks are not tests."
+    },
+    {
+     "id": "S86-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Generated code is like what in this comparison?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A broken calculator"
+      },
+      {
+       "letter": "B",
+       "text": "A new calculator to test"
+      },
+      {
+       "letter": "C",
+       "text": "A math book"
+      },
+      {
+       "letter": "D",
+       "text": "A calculator that has already been fully tested by thousands of people over many years"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A new calculator to test",
+     "intro": "Imagine you built a calculator and want to know if it works. You would not just admire the buttons. You would type problems you already know the answer to: 2 + 2, 10 - 3, 5 * 5. If one gives a wrong result, you know something is broken, even if the others were right. Generated code is like a new calculator: neat appearance proves nothing; known-answer tests do.",
+     "feedback": "Needs testing."
+    },
+    {
+     "id": "S86-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What should you test code with?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Inputs chosen at random whose correct answers nobody knows, so the test is fair"
+      },
+      {
+       "letter": "B",
+       "text": "Only one input"
+      },
+      {
+       "letter": "C",
+       "text": "No inputs"
+      },
+      {
+       "letter": "D",
+       "text": "Inputs whose correct answers you know"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Inputs whose correct answers you know",
+     "intro": "Imagine you built a calculator and want to know if it works. You would not just admire the buttons. You would type problems you already know the answer to: 2 + 2, 10 - 3, 5 * 5. If one gives a wrong result, you know something is broken, even if the others were right. Generated code is like a new calculator: neat appearance proves nothing; known-answer tests do.",
+     "feedback": "Known-answer tests."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who trusts neat-looking code can compare testing it with checking a calculator on known sums."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Check generated code in practice",
+   "questions": [
+    {
+     "id": "S86-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A tool writes a function to count vowels. Which test helps most?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Read the comment at the top that says \"counts vowels\" and accept that it does this correctly"
+      },
+      {
+       "letter": "B",
+       "text": "Check it has a good name"
+      },
+      {
+       "letter": "C",
+       "text": "Run it on \"banana\" and expect 3"
+      },
+      {
+       "letter": "D",
+       "text": "Count its lines"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Run it on \"banana\" and expect 3",
+     "intro": "AI-generated code often LOOKS right: neat layout, sensible names, helpful comments. It can still be WRONG, because the model predicts likely code rather than proving it correct. Common problems: logic that works for one example but not others, misunderstood requirements, missing cases such as an empty list, and calls to functions or settings that do not exist. To check code: read it and trace it, RUN it on several inputs whose correct answers you already know, and compare results. Passing one test does not prove the code is right.",
+     "feedback": "A known answer: a, a, a."
+    },
+    {
+     "id": "S86-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Generated code calls a function the tool named \"sort_smart,\" which does not exist. What will happen?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "An error when it runs"
+      },
+      {
+       "letter": "B",
+       "text": "The computer will create the missing function automatically, based on its name"
+      },
+      {
+       "letter": "C",
+       "text": "It will run normally"
+      },
+      {
+       "letter": "D",
+       "text": "It will print the name"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "An error when it runs",
+     "intro": "AI-generated code often LOOKS right: neat layout, sensible names, helpful comments. It can still be WRONG, because the model predicts likely code rather than proving it correct. Common problems: logic that works for one example but not others, misunderstood requirements, missing cases such as an empty list, and calls to functions or settings that do not exist. To check code: read it and trace it, RUN it on several inputs whose correct answers you already know, and compare results. Passing one test does not prove the code is right.",
+     "feedback": "Invented functions fail."
+    },
+    {
+     "id": "S86-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A function to find the largest number works on [3, 9, 2]. What else should you test?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The same list again"
+      },
+      {
+       "letter": "B",
+       "text": "An empty list and negative numbers"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing else, since working on one list of three numbers shows it will work on every list"
+      },
+      {
+       "letter": "D",
+       "text": "A list of colors"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "An empty list and negative numbers",
+     "intro": "AI-generated code often LOOKS right: neat layout, sensible names, helpful comments. It can still be WRONG, because the model predicts likely code rather than proving it correct. Common problems: logic that works for one example but not others, misunderstood requirements, missing cases such as an empty list, and calls to functions or settings that do not exist. To check code: read it and trace it, RUN it on several inputs whose correct answers you already know, and compare results. Passing one test does not prove the code is right.",
+     "feedback": "Test boundaries."
+    },
+    {
+     "id": "S86-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Code will calculate students' grades. What extra step is wise?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Have someone experienced review it"
+      },
+      {
+       "letter": "B",
+       "text": "Make it shorter"
+      },
+      {
+       "letter": "C",
+       "text": "Delete the tests"
+      },
+      {
+       "letter": "D",
+       "text": "Use it immediately for every student"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Have someone experienced review it",
+     "intro": "AI-generated code often LOOKS right: neat layout, sensible names, helpful comments. It can still be WRONG, because the model predicts likely code rather than proving it correct. Common problems: logic that works for one example but not others, misunderstood requirements, missing cases such as an empty list, and calls to functions or settings that do not exist. To check code: read it and trace it, RUN it on several inputs whose correct answers you already know, and compare results. Passing one test does not prove the code is right.",
+     "feedback": "Higher stakes, more review."
+    },
+    {
+     "id": "S86-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Which shows that code really works?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Neat indentation"
+      },
+      {
+       "letter": "B",
+       "text": "A long, confident explanation from the tool describing exactly what the code is doing"
+      },
+      {
+       "letter": "C",
+       "text": "Correct results on several known-answer tests"
+      },
+      {
+       "letter": "D",
+       "text": "Many comments"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Correct results on several known-answer tests",
+     "intro": "AI-generated code often LOOKS right: neat layout, sensible names, helpful comments. It can still be WRONG, because the model predicts likely code rather than proving it correct. Common problems: logic that works for one example but not others, misunderstood requirements, missing cases such as an empty list, and calls to functions or settings that do not exist. To check code: read it and trace it, RUN it on several inputs whose correct answers you already know, and compare results. Passing one test does not prove the code is right.",
+     "feedback": "Behavior is evidence."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Trust behavior over descriptions",
+   "questions": [
+    {
+     "id": "S86-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A tool explains its code \"removes duplicates,\" but running it leaves duplicates. Which should you trust?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Neither"
+      },
+      {
+       "letter": "B",
+       "text": "The explanation, since the tool knows its own code better than any test that you could run"
+      },
+      {
+       "letter": "C",
+       "text": "The comments"
+      },
+      {
+       "letter": "D",
+       "text": "What the code actually does when run"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "What the code actually does when run",
+     "intro": "Confident explanations make wrong code more convincing. A tool may describe what code \"does\" based on what it was supposed to do, not what it actually does. Comments can be wrong too. Trust behavior over descriptions: run it, and test the boundaries (the smallest, largest, empty and unusual inputs). When the code will affect money, safety, privacy or other people, have someone experienced review it before it is used.",
+     "feedback": "Run it."
+    },
+    {
+     "id": "S86-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A comment says \"# adds tax,\" but the line subtracts. What does this show?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Comments can be wrong"
+      },
+      {
+       "letter": "B",
+       "text": "That the subtraction must be correct, because comments are always checked before code runs"
+      },
+      {
+       "letter": "C",
+       "text": "That the code will not run"
+      },
+      {
+       "letter": "D",
+       "text": "That tax is negative"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Comments can be wrong",
+     "intro": "Confident explanations make wrong code more convincing. A tool may describe what code \"does\" based on what it was supposed to do, not what it actually does. Comments can be wrong too. Trust behavior over descriptions: run it, and test the boundaries (the smallest, largest, empty and unusual inputs). When the code will affect money, safety, privacy or other people, have someone experienced review it before it is used.",
+     "feedback": "Read the code itself."
+    },
+    {
+     "id": "S86-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Which inputs test the boundaries of a function that handles ages?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only 25"
+      },
+      {
+       "letter": "B",
+       "text": "Only names"
+      },
+      {
+       "letter": "C",
+       "text": "Three typical adult ages, such as 30, 35 and 40, which cover the most common situations"
+      },
+      {
+       "letter": "D",
+       "text": "0, a very large age, and a missing age"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "0, a very large age, and a missing age",
+     "intro": "Confident explanations make wrong code more convincing. A tool may describe what code \"does\" based on what it was supposed to do, not what it actually does. Comments can be wrong too. Trust behavior over descriptions: run it, and test the boundaries (the smallest, largest, empty and unusual inputs). When the code will affect money, safety, privacy or other people, have someone experienced review it before it is used.",
+     "feedback": "Smallest, largest, missing."
+    },
+    {
+     "id": "S86-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Why do confident explanations make wrong code more convincing?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because they contain numbers"
+      },
+      {
+       "letter": "B",
+       "text": "They make you less likely to test it"
+      },
+      {
+       "letter": "C",
+       "text": "Because confident explanations actually change the code so that it works correctly"
+      },
+      {
+       "letter": "D",
+       "text": "Because they are longer"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "They make you less likely to test it",
+     "intro": "Confident explanations make wrong code more convincing. A tool may describe what code \"does\" based on what it was supposed to do, not what it actually does. Comments can be wrong too. Trust behavior over descriptions: run it, and test the boundaries (the smallest, largest, empty and unusual inputs). When the code will affect money, safety, privacy or other people, have someone experienced review it before it is used.",
+     "feedback": "Tone discourages checking."
+    },
+    {
+     "id": "S86-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Code will handle customer payments. What should happen before use?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only a spell check"
+      },
+      {
+       "letter": "B",
+       "text": "Only a quick glance"
+      },
+      {
+       "letter": "C",
+       "text": "Experienced review and testing"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing, since payment code written by a tool is always reviewed by a bank automatically"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Experienced review and testing",
+     "intro": "Confident explanations make wrong code more convincing. A tool may describe what code \"does\" based on what it was supposed to do, not what it actually does. Comments can be wrong too. Trust behavior over descriptions: run it, and test the boundaries (the smallest, largest, empty and unusual inputs). When the code will affect money, safety, privacy or other people, have someone experienced review it before it is used.",
+     "feedback": "Money needs review."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

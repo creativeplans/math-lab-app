@@ -1,0 +1,660 @@
+{
+ "set": 99,
+ "title": "Human approval before consequential actions",
+ "outcome": "AI.AGENT.05",
+ "content_status": "stable",
+ "requires": [
+  96
+ ],
+ "module": "agents",
+ "path_refs": [
+  "coding",
+  "work"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Require approval before consequential actions",
+   "questions": [
+    {
+     "id": "S99-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Which action is consequential?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Sorting files into folders"
+      },
+      {
+       "letter": "B",
+       "text": "Drafting a reply that is saved privately and that nobody else will see until you send it"
+      },
+      {
+       "letter": "C",
+       "text": "Summarizing an article"
+      },
+      {
+       "letter": "D",
+       "text": "Making a payment"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Making a payment",
+     "intro": "Some actions are CONSEQUENTIAL: hard or impossible to undo, or affecting other people. Examples: SENDING messages, making PAYMENTS, DELETING data, and PUBLISHING content. A safe automation pauses before these and asks a person to APPROVE, showing exactly what will happen (\"Send this email to 120 parents?\" with the text). This is called HUMAN-IN-THE-LOOP review. Low-stakes, reversible steps, such as drafting or sorting, can run without approval. The person approving should actually read the details, not click \"yes\" by habit.",
+     "feedback": "Hard to undo."
+    },
+    {
+     "id": "S99-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "What does human-in-the-loop mean?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The automation repeats forever"
+      },
+      {
+       "letter": "B",
+       "text": "A person approves before key actions"
+      },
+      {
+       "letter": "C",
+       "text": "A person watches a video loop that shows exactly what the automation did yesterday"
+      },
+      {
+       "letter": "D",
+       "text": "No person is involved"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A person approves before key actions",
+     "intro": "Some actions are CONSEQUENTIAL: hard or impossible to undo, or affecting other people. Examples: SENDING messages, making PAYMENTS, DELETING data, and PUBLISHING content. A safe automation pauses before these and asks a person to APPROVE, showing exactly what will happen (\"Send this email to 120 parents?\" with the text). This is called HUMAN-IN-THE-LOOP review. Low-stakes, reversible steps, such as drafting or sorting, can run without approval. The person approving should actually read the details, not click \"yes\" by habit.",
+     "feedback": "Human approval."
+    },
+    {
+     "id": "S99-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "In this prepared example, what should the approver check before clicking Approve?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The time of day"
+      },
+      {
+       "letter": "B",
+       "text": "Only that the Approve button is green, because the color shows whether it is safe"
+      },
+      {
+       "letter": "C",
+       "text": "The recipients and the message"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The recipients and the message",
+     "intro": "Some actions are CONSEQUENTIAL: hard or impossible to undo, or affecting other people. Examples: SENDING messages, making PAYMENTS, DELETING data, and PUBLISHING content. A safe automation pauses before these and asks a person to APPROVE, showing exactly what will happen (\"Send this email to 120 parents?\" with the text). This is called HUMAN-IN-THE-LOOP review. Low-stakes, reversible steps, such as drafting or sorting, can run without approval. The person approving should actually read the details, not click \"yes\" by habit.",
+     "feedback": "Who and what.",
+     "example": {
+      "kind": "text",
+      "label": "Prepared example (a fictional approval screen)",
+      "text": "APPROVAL NEEDED\nAction: Send email\nTo: 120 parents (Grade 7 list)\nSubject: Field trip moved to Friday\nBody: \"The museum trip is now on Friday, May 9. Buses leave at 8:15.\"\n[Approve] [Edit] [Cancel]"
+     }
+    },
+    {
+     "id": "S99-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Which step can run without approval?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Drafting a reply for review"
+      },
+      {
+       "letter": "B",
+       "text": "Paying an invoice"
+      },
+      {
+       "letter": "C",
+       "text": "Deleting old student records"
+      },
+      {
+       "letter": "D",
+       "text": "Publishing a post to the school's public website for every visitor to read"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Drafting a reply for review",
+     "intro": "Some actions are CONSEQUENTIAL: hard or impossible to undo, or affecting other people. Examples: SENDING messages, making PAYMENTS, DELETING data, and PUBLISHING content. A safe automation pauses before these and asks a person to APPROVE, showing exactly what will happen (\"Send this email to 120 parents?\" with the text). This is called HUMAN-IN-THE-LOOP review. Low-stakes, reversible steps, such as drafting or sorting, can run without approval. The person approving should actually read the details, not click \"yes\" by habit.",
+     "feedback": "Low-stakes and reversible."
+    },
+    {
+     "id": "S99-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "What should an approver do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Approve without opening"
+      },
+      {
+       "letter": "B",
+       "text": "Let the agent approve itself"
+      },
+      {
+       "letter": "C",
+       "text": "Read the details before approving"
+      },
+      {
+       "letter": "D",
+       "text": "Click yes quickly every time"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Read the details before approving",
+     "intro": "Some actions are CONSEQUENTIAL: hard or impossible to undo, or affecting other people. Examples: SENDING messages, making PAYMENTS, DELETING data, and PUBLISHING content. A safe automation pauses before these and asks a person to APPROVE, showing exactly what will happen (\"Send this email to 120 parents?\" with the text). This is called HUMAN-IN-THE-LOOP review. Low-stakes, reversible steps, such as drafting or sorting, can run without approval. The person approving should actually read the details, not click \"yes\" by habit.",
+     "feedback": "Real review."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare approval with a parent signing a permission slip",
+   "questions": [
+    {
+     "id": "S99-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "When must the parent sign?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "During the trip"
+      },
+      {
+       "letter": "B",
+       "text": "Before the trip"
+      },
+      {
+       "letter": "C",
+       "text": "Never"
+      },
+      {
+       "letter": "D",
+       "text": "After the trip"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Before the trip",
+     "intro": "A school does not take students on a trip just because a teacher planned it. A PARENT reads the permission slip (where, when, cost) and SIGNS before the trip happens. A signature after the trip would be pointless. Small things, like what game to play at recess, need no slip. Human approval in automation works the same way: a person reads the details and approves BEFORE consequential actions, while small steps go ahead.",
+     "feedback": "Approval comes first."
+    },
+    {
+     "id": "S99-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "What should the parent read?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The teacher's age"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing"
+      },
+      {
+       "letter": "C",
+       "text": "Only the school's logo at the top of the page, which shows the slip is real"
+      },
+      {
+       "letter": "D",
+       "text": "Where, when and cost"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Where, when and cost",
+     "intro": "A school does not take students on a trip just because a teacher planned it. A PARENT reads the permission slip (where, when, cost) and SIGNS before the trip happens. A signature after the trip would be pointless. Small things, like what game to play at recess, need no slip. Human approval in automation works the same way: a person reads the details and approves BEFORE consequential actions, while small steps go ahead.",
+     "feedback": "The details."
+    },
+    {
+     "id": "S99-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "A recess game choice is like what in automation?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A small step that needs no approval"
+      },
+      {
+       "letter": "B",
+       "text": "A deletion"
+      },
+      {
+       "letter": "C",
+       "text": "A payment that must be approved by two separate people before it can go ahead"
+      },
+      {
+       "letter": "D",
+       "text": "A field trip"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "A small step that needs no approval",
+     "intro": "A school does not take students on a trip just because a teacher planned it. A PARENT reads the permission slip (where, when, cost) and SIGNS before the trip happens. A signature after the trip would be pointless. Small things, like what game to play at recess, need no slip. Human approval in automation works the same way: a person reads the details and approves BEFORE consequential actions, while small steps go ahead.",
+     "feedback": "Low stakes."
+    },
+    {
+     "id": "S99-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "The field trip is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A summary"
+      },
+      {
+       "letter": "B",
+       "text": "A sorted folder"
+      },
+      {
+       "letter": "C",
+       "text": "A consequential action"
+      },
+      {
+       "letter": "D",
+       "text": "A draft that nobody sees and that can be thrown away without any effect on anyone"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A consequential action",
+     "intro": "A school does not take students on a trip just because a teacher planned it. A PARENT reads the permission slip (where, when, cost) and SIGNS before the trip happens. A signature after the trip would be pointless. Small things, like what game to play at recess, need no slip. Human approval in automation works the same way: a person reads the details and approves BEFORE consequential actions, while small steps go ahead.",
+     "feedback": "Affects people."
+    },
+    {
+     "id": "S99-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "A signature after the trip is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Writing a draft"
+      },
+      {
+       "letter": "B",
+       "text": "Sorting files"
+      },
+      {
+       "letter": "C",
+       "text": "Approving an email before it is sent"
+      },
+      {
+       "letter": "D",
+       "text": "Reviewing a log after an email was sent"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Reviewing a log after an email was sent",
+     "intro": "A school does not take students on a trip just because a teacher planned it. A PARENT reads the permission slip (where, when, cost) and SIGNS before the trip happens. A signature after the trip would be pointless. Small things, like what game to play at recess, need no slip. Human approval in automation works the same way: a person reads the details and approves BEFORE consequential actions, while small steps go ahead.",
+     "feedback": "Too late to matter."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner unsure when approval is needed can compare it with a parent signing a permission slip."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Apply human approval in practice",
+   "questions": [
+    {
+     "id": "S99-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "An agent drafts and sends club newsletters automatically. What change adds safety?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Require approval before sending"
+      },
+      {
+       "letter": "B",
+       "text": "Send to more people"
+      },
+      {
+       "letter": "C",
+       "text": "Let it send faster, since newsletters are always correct when drafted by a tool"
+      },
+      {
+       "letter": "D",
+       "text": "Remove the draft step"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Require approval before sending",
+     "intro": "Some actions are CONSEQUENTIAL: hard or impossible to undo, or affecting other people. Examples: SENDING messages, making PAYMENTS, DELETING data, and PUBLISHING content. A safe automation pauses before these and asks a person to APPROVE, showing exactly what will happen (\"Send this email to 120 parents?\" with the text). This is called HUMAN-IN-THE-LOOP review. Low-stakes, reversible steps, such as drafting or sorting, can run without approval. The person approving should actually read the details, not click \"yes\" by habit.",
+     "feedback": "Approve before sending."
+    },
+    {
+     "id": "S99-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "An approval screen says only \"Approve action #4471?\" What is wrong?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It has a number"
+      },
+      {
+       "letter": "B",
+       "text": "It does not show what will happen"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing, since the action number is enough for any approver to know what is going on"
+      },
+      {
+       "letter": "D",
+       "text": "It is too long"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "It does not show what will happen",
+     "intro": "Some actions are CONSEQUENTIAL: hard or impossible to undo, or affecting other people. Examples: SENDING messages, making PAYMENTS, DELETING data, and PUBLISHING content. A safe automation pauses before these and asks a person to APPROVE, showing exactly what will happen (\"Send this email to 120 parents?\" with the text). This is called HUMAN-IN-THE-LOOP review. Low-stakes, reversible steps, such as drafting or sorting, can run without approval. The person approving should actually read the details, not click \"yes\" by habit.",
+     "feedback": "Show who, what, how much."
+    },
+    {
+     "id": "S99-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Which action should require approval?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Deleting a shared folder"
+      },
+      {
+       "letter": "B",
+       "text": "Making a summary"
+      },
+      {
+       "letter": "C",
+       "text": "Sorting emails into labels"
+      },
+      {
+       "letter": "D",
+       "text": "Renaming a draft file that only you can see and that can be renamed back at any time"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Deleting a shared folder",
+     "intro": "Some actions are CONSEQUENTIAL: hard or impossible to undo, or affecting other people. Examples: SENDING messages, making PAYMENTS, DELETING data, and PUBLISHING content. A safe automation pauses before these and asks a person to APPROVE, showing exactly what will happen (\"Send this email to 120 parents?\" with the text). This is called HUMAN-IN-THE-LOOP review. Low-stakes, reversible steps, such as drafting or sorting, can run without approval. The person approving should actually read the details, not click \"yes\" by habit.",
+     "feedback": "Irreversible, affects others."
+    },
+    {
+     "id": "S99-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "An agent wants to post a review on a public site. What should happen?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Post it twice"
+      },
+      {
+       "letter": "B",
+       "text": "Post it anonymously"
+      },
+      {
+       "letter": "C",
+       "text": "A person reads and approves it first"
+      },
+      {
+       "letter": "D",
+       "text": "Post it at once, since reviews posted online can always be taken back without any harm"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A person reads and approves it first",
+     "intro": "Some actions are CONSEQUENTIAL: hard or impossible to undo, or affecting other people. Examples: SENDING messages, making PAYMENTS, DELETING data, and PUBLISHING content. A safe automation pauses before these and asks a person to APPROVE, showing exactly what will happen (\"Send this email to 120 parents?\" with the text). This is called HUMAN-IN-THE-LOOP review. Low-stakes, reversible steps, such as drafting or sorting, can run without approval. The person approving should actually read the details, not click \"yes\" by habit.",
+     "feedback": "Publishing is consequential."
+    },
+    {
+     "id": "S99-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "A manager approves 40 requests in one minute without opening any. What is the problem?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The manager was too careful"
+      },
+      {
+       "letter": "B",
+       "text": "The approval is not real review"
+      },
+      {
+       "letter": "C",
+       "text": "The requests were too short"
+      },
+      {
+       "letter": "D",
+       "text": "No problem"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The approval is not real review",
+     "intro": "Some actions are CONSEQUENTIAL: hard or impossible to undo, or affecting other people. Examples: SENDING messages, making PAYMENTS, DELETING data, and PUBLISHING content. A safe automation pauses before these and asks a person to APPROVE, showing exactly what will happen (\"Send this email to 120 parents?\" with the text). This is called HUMAN-IN-THE-LOOP review. Low-stakes, reversible steps, such as drafting or sorting, can run without approval. The person approving should actually read the details, not click \"yes\" by habit.",
+     "feedback": "Read before approving."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Avoid approval fatigue and split actions",
+   "questions": [
+    {
+     "id": "S99-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "What is approval fatigue?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A slow computer"
+      },
+      {
+       "letter": "B",
+       "text": "Refusing every request"
+      },
+      {
+       "letter": "C",
+       "text": "Feeling tired after approving one very important request that took a long time to read"
+      },
+      {
+       "letter": "D",
+       "text": "Clicking yes by habit because there are too many requests"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Clicking yes by habit because there are too many requests",
+     "intro": "Approval can fail quietly. If every small step asks for approval, people stop reading and click yes automatically, called APPROVAL FATIGUE. Ask only for consequential steps, and show clear details: who, what, how much. Watch for actions split into many small ones that each look harmless, such as 50 separate one-dollar payments. And approval must happen BEFORE the action; reviewing a log afterward cannot unsend an email.",
+     "feedback": "Too many prompts."
+    },
+    {
+     "id": "S99-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "How can approval fatigue be reduced?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Hide the details"
+      },
+      {
+       "letter": "B",
+       "text": "Ask only for consequential steps"
+      },
+      {
+       "letter": "C",
+       "text": "Remove all approvals"
+      },
+      {
+       "letter": "D",
+       "text": "Ask for approval on every tiny step"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Ask only for consequential steps",
+     "intro": "Approval can fail quietly. If every small step asks for approval, people stop reading and click yes automatically, called APPROVAL FATIGUE. Ask only for consequential steps, and show clear details: who, what, how much. Watch for actions split into many small ones that each look harmless, such as 50 separate one-dollar payments. And approval must happen BEFORE the action; reviewing a log afterward cannot unsend an email.",
+     "feedback": "Fewer, meaningful requests."
+    },
+    {
+     "id": "S99-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "An agent makes 50 separate one-dollar payments, each under the approval limit. What is the concern?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The payments are too slow"
+      },
+      {
+       "letter": "B",
+       "text": "The payments are too large"
+      },
+      {
+       "letter": "C",
+       "text": "Small actions can add up to a large one"
+      },
+      {
+       "letter": "D",
+       "text": "No concern, because each payment is small and small payments can never cause problems"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Small actions can add up to a large one",
+     "intro": "Approval can fail quietly. If every small step asks for approval, people stop reading and click yes automatically, called APPROVAL FATIGUE. Ask only for consequential steps, and show clear details: who, what, how much. Watch for actions split into many small ones that each look harmless, such as 50 separate one-dollar payments. And approval must happen BEFORE the action; reviewing a log afterward cannot unsend an email.",
+     "feedback": "50 dollars in total."
+    },
+    {
+     "id": "S99-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Why must approval happen before an email is sent?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A sent email cannot be unsent"
+      },
+      {
+       "letter": "B",
+       "text": "Because logs are not allowed"
+      },
+      {
+       "letter": "C",
+       "text": "Because emails are short"
+      },
+      {
+       "letter": "D",
+       "text": "Because email systems refuse to send any message that has not been approved by a person"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "A sent email cannot be unsent",
+     "intro": "Approval can fail quietly. If every small step asks for approval, people stop reading and click yes automatically, called APPROVAL FATIGUE. Ask only for consequential steps, and show clear details: who, what, how much. Watch for actions split into many small ones that each look harmless, such as 50 separate one-dollar payments. And approval must happen BEFORE the action; reviewing a log afterward cannot unsend an email.",
+     "feedback": "Before, not after."
+    },
+    {
+     "id": "S99-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "What should an approval screen show?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only the time"
+      },
+      {
+       "letter": "B",
+       "text": "Only a short code number and a large green button that says \"Approve\" in bold letters"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing"
+      },
+      {
+       "letter": "D",
+       "text": "Who, what and how much"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Who, what and how much",
+     "intro": "Approval can fail quietly. If every small step asks for approval, people stop reading and click yes automatically, called APPROVAL FATIGUE. Ask only for consequential steps, and show clear details: who, what, how much. Watch for actions split into many small ones that each look harmless, such as 50 separate one-dollar payments. And approval must happen BEFORE the action; reviewing a log afterward cannot unsend an email.",
+     "feedback": "Clear details."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

@@ -1,0 +1,658 @@
+{
+ "set": 8,
+ "title": "Training versus using a model",
+ "outcome": "AI.LEARN.01",
+ "content_status": "stable",
+ "requires": [
+  2
+ ],
+ "module": "learning",
+ "path_refs": [
+  "everyday",
+  "creative",
+  "coding",
+  "work",
+  "society"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Tell training from inference (using the model)",
+   "questions": [
+    {
+     "id": "S8-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A company shows a model millions of labeled photos and adjusts it until it sorts them well. Which stage is this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Inference, because the model is being used on photos"
+      },
+      {
+       "letter": "B",
+       "text": "Inference, because the photos are labeled"
+      },
+      {
+       "letter": "C",
+       "text": "Neither, because sorting photos is not AI"
+      },
+      {
+       "letter": "D",
+       "text": "Training"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Training",
+     "intro": "An AI model has two very different stages. TRAINING is when the model learns: it is shown large amounts of example data and its internal settings are adjusted again and again until its outputs match the examples well. Training happens before you use the model and usually takes a lot of computing power. INFERENCE (or simply \"using the model\") is when the finished model takes NEW input, such as your question or photo, and produces an output. During ordinary use the model's learned settings do not change. Typing a question into an app is inference, not training.",
+     "feedback": "Adjusting the model to match examples is training."
+    },
+    {
+     "id": "S8-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "You type a question into a finished chatbot and get a reply. Which stage is this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Training: the model rewrites itself for your question"
+      },
+      {
+       "letter": "B",
+       "text": "Neither stage, because no model is involved"
+      },
+      {
+       "letter": "C",
+       "text": "Inference: the finished model handles new input"
+      },
+      {
+       "letter": "D",
+       "text": "Training: your question becomes part of its settings"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Inference: the finished model handles new input",
+     "intro": "An AI model has two very different stages. TRAINING is when the model learns: it is shown large amounts of example data and its internal settings are adjusted again and again until its outputs match the examples well. Training happens before you use the model and usually takes a lot of computing power. INFERENCE (or simply \"using the model\") is when the finished model takes NEW input, such as your question or photo, and produces an output. During ordinary use the model's learned settings do not change. Typing a question into an app is inference, not training.",
+     "feedback": "Using a finished model on new input is inference."
+    },
+    {
+     "id": "S8-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Which statement about training is accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It adjusts the model's settings using many examples"
+      },
+      {
+       "letter": "B",
+       "text": "It happens each time anyone opens the app on a phone"
+      },
+      {
+       "letter": "C",
+       "text": "It is the same as typing a question to the model"
+      },
+      {
+       "letter": "D",
+       "text": "It needs only one example to finish completely"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "It adjusts the model's settings using many examples",
+     "intro": "An AI model has two very different stages. TRAINING is when the model learns: it is shown large amounts of example data and its internal settings are adjusted again and again until its outputs match the examples well. Training happens before you use the model and usually takes a lot of computing power. INFERENCE (or simply \"using the model\") is when the finished model takes NEW input, such as your question or photo, and produces an output. During ordinary use the model's learned settings do not change. Typing a question into an app is inference, not training.",
+     "feedback": "Training means repeated adjustment using many examples."
+    },
+    {
+     "id": "S8-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "During ordinary use (inference), what happens to the model's learned settings?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "They reset to random values"
+      },
+      {
+       "letter": "B",
+       "text": "They stay the same"
+      },
+      {
+       "letter": "C",
+       "text": "They update after every message"
+      },
+      {
+       "letter": "D",
+       "text": "They copy the user's whole device"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "They stay the same",
+     "intro": "An AI model has two very different stages. TRAINING is when the model learns: it is shown large amounts of example data and its internal settings are adjusted again and again until its outputs match the examples well. Training happens before you use the model and usually takes a lot of computing power. INFERENCE (or simply \"using the model\") is when the finished model takes NEW input, such as your question or photo, and produces an output. During ordinary use the model's learned settings do not change. Typing a question into an app is inference, not training.",
+     "feedback": "Inference uses the settings; it does not change them."
+    },
+    {
+     "id": "S8-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Why does training usually cost much more computing power than a single use?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It must print out every training example on paper"
+      },
+      {
+       "letter": "B",
+       "text": "It only ever handles one short question at a time"
+      },
+      {
+       "letter": "C",
+       "text": "It repeats adjustments over huge amounts of data"
+      },
+      {
+       "letter": "D",
+       "text": "It happens on the user's phone after each reply"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "It repeats adjustments over huge amounts of data",
+     "intro": "An AI model has two very different stages. TRAINING is when the model learns: it is shown large amounts of example data and its internal settings are adjusted again and again until its outputs match the examples well. Training happens before you use the model and usually takes a lot of computing power. INFERENCE (or simply \"using the model\") is when the finished model takes NEW input, such as your question or photo, and produces an output. During ordinary use the model's learned settings do not change. Typing a question into an app is inference, not training.",
+     "feedback": "Training processes vast data many times."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare studying for a driving test with driving",
+   "questions": [
+    {
+     "id": "S8-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Practicing with a driving teacher is like which stage?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Inference"
+      },
+      {
+       "letter": "B",
+       "text": "Neither stage"
+      },
+      {
+       "letter": "C",
+       "text": "Both stages equally"
+      },
+      {
+       "letter": "D",
+       "text": "Training"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Training",
+     "intro": "Think about learning to drive. While you STUDY and PRACTICE with a teacher, you make mistakes, get corrected and slowly improve: that is like TRAINING. Once you have your license and drive to a store, you use what you learned on a new road. You are not taking lessons on that trip: that is like INFERENCE. An AI model is similar. It learns during training, which happens first and takes a long time. Later it uses what it learned on new input, quickly, without changing what it learned.",
+     "feedback": "Practice and correction are training."
+    },
+    {
+     "id": "S8-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Driving to the store with your license is like which stage?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Inference"
+      },
+      {
+       "letter": "B",
+       "text": "Neither stage"
+      },
+      {
+       "letter": "C",
+       "text": "Training"
+      },
+      {
+       "letter": "D",
+       "text": "A driving exam"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Inference",
+     "intro": "Think about learning to drive. While you STUDY and PRACTICE with a teacher, you make mistakes, get corrected and slowly improve: that is like TRAINING. Once you have your license and drive to a store, you use what you learned on a new road. You are not taking lessons on that trip: that is like INFERENCE. An AI model is similar. It learns during training, which happens first and takes a long time. Later it uses what it learned on new input, quickly, without changing what it learned.",
+     "feedback": "Using skills on a new road is inference."
+    },
+    {
+     "id": "S8-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Which stage usually happens first?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Neither happens"
+      },
+      {
+       "letter": "B",
+       "text": "Training"
+      },
+      {
+       "letter": "C",
+       "text": "They happen at once"
+      },
+      {
+       "letter": "D",
+       "text": "Inference"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Training",
+     "intro": "Think about learning to drive. While you STUDY and PRACTICE with a teacher, you make mistakes, get corrected and slowly improve: that is like TRAINING. Once you have your license and drive to a store, you use what you learned on a new road. You are not taking lessons on that trip: that is like INFERENCE. An AI model is similar. It learns during training, which happens first and takes a long time. Later it uses what it learned on new input, quickly, without changing what it learned.",
+     "feedback": "Learning comes before use."
+    },
+    {
+     "id": "S8-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "On the trip to the store, are you taking a lesson?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No, you are using what you learned"
+      },
+      {
+       "letter": "B",
+       "text": "Yes, every trip is a full lesson"
+      },
+      {
+       "letter": "C",
+       "text": "No, because you forgot how to drive"
+      },
+      {
+       "letter": "D",
+       "text": "Yes, the store teaches you to drive"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "No, you are using what you learned",
+     "intro": "Think about learning to drive. While you STUDY and PRACTICE with a teacher, you make mistakes, get corrected and slowly improve: that is like TRAINING. Once you have your license and drive to a store, you use what you learned on a new road. You are not taking lessons on that trip: that is like INFERENCE. An AI model is similar. It learns during training, which happens first and takes a long time. Later it uses what it learned on new input, quickly, without changing what it learned.",
+     "feedback": "Using a skill is different from learning it."
+    },
+    {
+     "id": "S8-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Which stage takes a long time and many corrections?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Driving to the store"
+      },
+      {
+       "letter": "B",
+       "text": "Inference"
+      },
+      {
+       "letter": "C",
+       "text": "Training"
+      },
+      {
+       "letter": "D",
+       "text": "Getting the license card"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Training",
+     "intro": "Think about learning to drive. While you STUDY and PRACTICE with a teacher, you make mistakes, get corrected and slowly improve: that is like TRAINING. Once you have your license and drive to a store, you use what you learned on a new road. You are not taking lessons on that trip: that is like INFERENCE. An AI model is similar. It learns during training, which happens first and takes a long time. Later it uses what it learned on new input, quickly, without changing what it learned.",
+     "feedback": "Learning takes time and correction."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who blends \"training\" and \"using\" can first separate them with a familiar learning-then-doing example."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Identify training and inference in real situations",
+   "questions": [
+    {
+     "id": "S8-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A hospital's team spends weeks adjusting a model with thousands of past X-rays. Later, a doctor uploads a new X-ray for a second opinion. Which part is inference?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Hiring the team that adjusted the model"
+      },
+      {
+       "letter": "B",
+       "text": "Collecting the thousands of past X-rays"
+      },
+      {
+       "letter": "C",
+       "text": "The weeks of adjusting the model with past X-rays"
+      },
+      {
+       "letter": "D",
+       "text": "The doctor uploading the new X-ray"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The doctor uploading the new X-ray",
+     "intro": "An AI model has two very different stages. TRAINING is when the model learns: it is shown large amounts of example data and its internal settings are adjusted again and again until its outputs match the examples well. Training happens before you use the model and usually takes a lot of computing power. INFERENCE (or simply \"using the model\") is when the finished model takes NEW input, such as your question or photo, and produces an output. During ordinary use the model's learned settings do not change. Typing a question into an app is inference, not training.",
+     "feedback": "Running the finished model on a new X-ray is inference."
+    },
+    {
+     "id": "S8-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Mia asks a translation app to translate a menu. Does her request train the app's model?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes; every request is a training example instantly"
+      },
+      {
+       "letter": "B",
+       "text": "No; translating her menu is inference"
+      },
+      {
+       "letter": "C",
+       "text": "No; translation apps never use any models"
+      },
+      {
+       "letter": "D",
+       "text": "Yes; the model rewrites its settings for menus"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "No; translating her menu is inference",
+     "intro": "An AI model has two very different stages. TRAINING is when the model learns: it is shown large amounts of example data and its internal settings are adjusted again and again until its outputs match the examples well. Training happens before you use the model and usually takes a lot of computing power. INFERENCE (or simply \"using the model\") is when the finished model takes NEW input, such as your question or photo, and produces an output. During ordinary use the model's learned settings do not change. Typing a question into an app is inference, not training.",
+     "feedback": "Using the app is inference."
+    },
+    {
+     "id": "S8-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A company says its new model \"finished training in June.\" What does that tell you?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It cannot answer any questions after June"
+      },
+      {
+       "letter": "B",
+       "text": "It was trained by answering users' questions in June"
+      },
+      {
+       "letter": "C",
+       "text": "It keeps training on every question users type"
+      },
+      {
+       "letter": "D",
+       "text": "Learning from its data ended then; later use is inference"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Learning from its data ended then; later use is inference",
+     "intro": "An AI model has two very different stages. TRAINING is when the model learns: it is shown large amounts of example data and its internal settings are adjusted again and again until its outputs match the examples well. Training happens before you use the model and usually takes a lot of computing power. INFERENCE (or simply \"using the model\") is when the finished model takes NEW input, such as your question or photo, and produces an output. During ordinary use the model's learned settings do not change. Typing a question into an app is inference, not training.",
+     "feedback": "Finishing training means the model's settings were fixed then."
+    },
+    {
+     "id": "S8-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Which activity is training?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Asking a finished model for a recipe idea"
+      },
+      {
+       "letter": "B",
+       "text": "Adjusting a model's settings with labeled examples"
+      },
+      {
+       "letter": "C",
+       "text": "Reading the reply a model already produced"
+      },
+      {
+       "letter": "D",
+       "text": "Uploading a photo to be tagged by an app"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Adjusting a model's settings with labeled examples",
+     "intro": "An AI model has two very different stages. TRAINING is when the model learns: it is shown large amounts of example data and its internal settings are adjusted again and again until its outputs match the examples well. Training happens before you use the model and usually takes a lot of computing power. INFERENCE (or simply \"using the model\") is when the finished model takes NEW input, such as your question or photo, and produces an output. During ordinary use the model's learned settings do not change. Typing a question into an app is inference, not training.",
+     "feedback": "Changing settings with examples is training."
+    },
+    {
+     "id": "S8-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Why is it useful to know that ordinary use does not change a model's settings?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Correcting it in one chat will not fix the model itself"
+      },
+      {
+       "letter": "B",
+       "text": "It means the model gets smarter with each question you ask"
+      },
+      {
+       "letter": "C",
+       "text": "It means the model can never be updated by its makers"
+      },
+      {
+       "letter": "D",
+       "text": "It means the model forgets everything after each reply"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Correcting it in one chat will not fix the model itself",
+     "intro": "An AI model has two very different stages. TRAINING is when the model learns: it is shown large amounts of example data and its internal settings are adjusted again and again until its outputs match the examples well. Training happens before you use the model and usually takes a lot of computing power. INFERENCE (or simply \"using the model\") is when the finished model takes NEW input, such as your question or photo, and produces an output. During ordinary use the model's learned settings do not change. Typing a question into an app is inference, not training.",
+     "feedback": "A correction in a chat affects that conversation, not the trained model."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Ask what actually changes when a product seems to \"learn\"",
+   "questions": [
+    {
+     "id": "S8-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "You click \"thumbs down\" on a wrong answer. What is the most accurate description?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It instantly retrains the model to fix that answer for everyone"
+      },
+      {
+       "letter": "B",
+       "text": "It deletes the model and replaces it with a better one at once"
+      },
+      {
+       "letter": "C",
+       "text": "It is feedback the company may use later, depending on its policy"
+      },
+      {
+       "letter": "D",
+       "text": "It has no possible use for anyone at all"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "It is feedback the company may use later, depending on its policy",
+     "intro": "Products can blur the line between training and use, so it helps to ask exactly what changes. Rating an answer \"thumbs up\" or \"thumbs down\" does not instantly retrain the model; a company MAY later use such feedback, along with other data, to train a new version, depending on its policies. Some products keep notes about you between conversations, which feels like learning but is stored information the product feeds back in, not a change to the model's settings. When you want to know whether your data could be used for training, read the provider's data policy and settings.",
+     "feedback": "Feedback may inform later training, depending on policy."
+    },
+    {
+     "id": "S8-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A chatbot remembers your name in a new conversation. What is the most likely explanation?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The model guessed your name from its training data"
+      },
+      {
+       "letter": "B",
+       "text": "The product stored your name and fed it back in"
+      },
+      {
+       "letter": "C",
+       "text": "Every model is born knowing every user's name"
+      },
+      {
+       "letter": "D",
+       "text": "The model retrained itself on your name overnight"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The product stored your name and fed it back in",
+     "intro": "Products can blur the line between training and use, so it helps to ask exactly what changes. Rating an answer \"thumbs up\" or \"thumbs down\" does not instantly retrain the model; a company MAY later use such feedback, along with other data, to train a new version, depending on its policies. Some products keep notes about you between conversations, which feels like learning but is stored information the product feeds back in, not a change to the model's settings. When you want to know whether your data could be used for training, read the provider's data policy and settings.",
+     "feedback": "Saved information is a product feature, not a change to the model."
+    },
+    {
+     "id": "S8-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Sam wants to know whether his uploaded files could be used to train future models. What should he check?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Whether the chatbot sounds friendly when he asks"
+      },
+      {
+       "letter": "B",
+       "text": "Whether the chatbot remembers his name"
+      },
+      {
+       "letter": "C",
+       "text": "The provider's data policy and his account settings"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing; uploaded files are never used by anyone"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The provider's data policy and his account settings",
+     "intro": "Products can blur the line between training and use, so it helps to ask exactly what changes. Rating an answer \"thumbs up\" or \"thumbs down\" does not instantly retrain the model; a company MAY later use such feedback, along with other data, to train a new version, depending on its policies. Some products keep notes about you between conversations, which feels like learning but is stored information the product feeds back in, not a change to the model's settings. When you want to know whether your data could be used for training, read the provider's data policy and settings.",
+     "feedback": "Data use for training is set by policy and settings."
+    },
+    {
+     "id": "S8-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A user corrects a chatbot's wrong date and it apologizes. Later, a different user asks the same question. What should we expect?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The model will now always give the correct date"
+      },
+      {
+       "letter": "B",
+       "text": "The model will refuse to answer that question again"
+      },
+      {
+       "letter": "C",
+       "text": "The other user will see the first user's correction"
+      },
+      {
+       "letter": "D",
+       "text": "The model may make the same mistake for the other user"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The model may make the same mistake for the other user",
+     "intro": "Products can blur the line between training and use, so it helps to ask exactly what changes. Rating an answer \"thumbs up\" or \"thumbs down\" does not instantly retrain the model; a company MAY later use such feedback, along with other data, to train a new version, depending on its policies. Some products keep notes about you between conversations, which feels like learning but is stored information the product feeds back in, not a change to the model's settings. When you want to know whether your data could be used for training, read the provider's data policy and settings.",
+     "feedback": "A correction in one conversation does not change the trained model."
+    },
+    {
+     "id": "S8-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Which change would actually alter the model's learned settings?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The company training a new version with new data"
+      },
+      {
+       "letter": "B",
+       "text": "A user rating one reply with a thumbs-up"
+      },
+      {
+       "letter": "C",
+       "text": "A user typing \"remember this\" in a chat"
+      },
+      {
+       "letter": "D",
+       "text": "A user starting a brand-new conversation"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The company training a new version with new data",
+     "intro": "Products can blur the line between training and use, so it helps to ask exactly what changes. Rating an answer \"thumbs up\" or \"thumbs down\" does not instantly retrain the model; a company MAY later use such feedback, along with other data, to train a new version, depending on its policies. Some products keep notes about you between conversations, which feels like learning but is stored information the product feeds back in, not a change to the model's settings. When you want to know whether your data could be used for training, read the provider's data policy and settings.",
+     "feedback": "Only training changes the model's settings."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

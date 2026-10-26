@@ -1,0 +1,663 @@
+{
+ "set": 92,
+ "title": "Dependencies and invented packages",
+ "outcome": "AI.CODE.08",
+ "content_status": "time_sensitive",
+ "requires": [
+  86
+ ],
+ "module": "code",
+ "path_refs": [
+  "coding"
+ ],
+ "suggested": [],
+ "sources": [
+  {
+   "url": "https://www.usenix.org/conference/usenixsecurity25/presentation/spracklen",
+   "claim": "Spracklen et al., \"We Have a Package for You! A Comprehensive Analysis of Package Hallucinations by Code Generating LLMs\" (USENIX Security 2025): code-generating models sometimes recommend software packages that do not exist, and attackers can register such names. The course uses no rates from the study.",
+   "checked": "2026-10-26"
+  }
+ ],
+ "review_interval_days": 730,
+ "jurisdiction": "research",
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Check that a suggested library exists and is trustworthy",
+   "questions": [
+    {
+     "id": "S92-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What is a package or dependency?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A box that a computer is shipped in, which contains the cables and the instructions"
+      },
+      {
+       "letter": "B",
+       "text": "Code written by others that your program installs and uses"
+      },
+      {
+       "letter": "C",
+       "text": "An error message"
+      },
+      {
+       "letter": "D",
+       "text": "A comment"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Code written by others that your program installs and uses",
+     "intro": "Programs often use LIBRARIES, also called PACKAGES or DEPENDENCIES: code written by others that you install from a public collection, such as PyPI for Python. AI tools sometimes suggest a package that DOES NOT EXIST, and attackers can register those invented names with harmful code. This is sometimes called \"slopsquatting.\" Researchers studying code-generating models (USENIX Security 2025) documented such invented package names. Before installing a suggested package, check that it exists, that it is the one you intended (not a look-alike name), and that it shows signs of trust: an active project, real documentation, and use by others.",
+     "feedback": "Reusable code from others."
+    },
+    {
+     "id": "S92-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What can go wrong when a tool suggests a package?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It may not exist, and attackers can register the name"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing, because tools only ever suggest packages that have been checked for safety"
+      },
+      {
+       "letter": "C",
+       "text": "It may have documentation"
+      },
+      {
+       "letter": "D",
+       "text": "It may be too popular"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "It may not exist, and attackers can register the name",
+     "intro": "Programs often use LIBRARIES, also called PACKAGES or DEPENDENCIES: code written by others that you install from a public collection, such as PyPI for Python. AI tools sometimes suggest a package that DOES NOT EXIST, and attackers can register those invented names with harmful code. This is sometimes called \"slopsquatting.\" Researchers studying code-generating models (USENIX Security 2025) documented such invented package names. Before installing a suggested package, check that it exists, that it is the one you intended (not a look-alike name), and that it shows signs of trust: an active project, real documentation, and use by others.",
+     "feedback": "Invented names can be exploited."
+    },
+    {
+     "id": "S92-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What is \"slopsquatting\"?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Writing very messy code on purpose so that other people find it hard to read and copy"
+      },
+      {
+       "letter": "B",
+       "text": "Sorting a list"
+      },
+      {
+       "letter": "C",
+       "text": "Deleting old packages"
+      },
+      {
+       "letter": "D",
+       "text": "Registering package names that AI tools invent"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Registering package names that AI tools invent",
+     "intro": "Programs often use LIBRARIES, also called PACKAGES or DEPENDENCIES: code written by others that you install from a public collection, such as PyPI for Python. AI tools sometimes suggest a package that DOES NOT EXIST, and attackers can register those invented names with harmful code. This is sometimes called \"slopsquatting.\" Researchers studying code-generating models (USENIX Security 2025) documented such invented package names. Before installing a suggested package, check that it exists, that it is the one you intended (not a look-alike name), and that it shows signs of trust: an active project, real documentation, and use by others.",
+     "feedback": "Exploiting hallucinated names."
+    },
+    {
+     "id": "S92-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Which is a sign of a trustworthy package?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A brand-new name that nobody has used, with no documentation and no project page at all"
+      },
+      {
+       "letter": "B",
+       "text": "A name that looks like a famous one"
+      },
+      {
+       "letter": "C",
+       "text": "An active project with real documentation and users"
+      },
+      {
+       "letter": "D",
+       "text": "No description"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "An active project with real documentation and users",
+     "intro": "Programs often use LIBRARIES, also called PACKAGES or DEPENDENCIES: code written by others that you install from a public collection, such as PyPI for Python. AI tools sometimes suggest a package that DOES NOT EXIST, and attackers can register those invented names with harmful code. This is sometimes called \"slopsquatting.\" Researchers studying code-generating models (USENIX Security 2025) documented such invented package names. Before installing a suggested package, check that it exists, that it is the one you intended (not a look-alike name), and that it shows signs of trust: an active project, real documentation, and use by others.",
+     "feedback": "Signs of trust."
+    },
+    {
+     "id": "S92-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Before installing a suggested package, what should you check first?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Its logo color"
+      },
+      {
+       "letter": "B",
+       "text": "That its name is short enough to type quickly without making spelling mistakes"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing"
+      },
+      {
+       "letter": "D",
+       "text": "That it exists and is the intended one"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "That it exists and is the intended one",
+     "intro": "Programs often use LIBRARIES, also called PACKAGES or DEPENDENCIES: code written by others that you install from a public collection, such as PyPI for Python. AI tools sometimes suggest a package that DOES NOT EXIST, and attackers can register those invented names with harmful code. This is sometimes called \"slopsquatting.\" Researchers studying code-generating models (USENIX Security 2025) documented such invented package names. Before installing a suggested package, check that it exists, that it is the one you intended (not a look-alike name), and that it shows signs of trust: an active project, real documentation, and use by others.",
+     "feedback": "Existence and identity."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare package checks with checking a contractor",
+   "questions": [
+    {
+     "id": "S92-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Why check that a contractor exists?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because contractors who exist always do perfect work, so existence is all that matters"
+      },
+      {
+       "letter": "B",
+       "text": "To learn their age"
+      },
+      {
+       "letter": "C",
+       "text": "Because you are letting them into your home"
+      },
+      {
+       "letter": "D",
+       "text": "To get a discount"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Because you are letting them into your home",
+     "intro": "Before letting a contractor into your home to fix wiring, you check they are real: a business that exists, reviews from other customers, a license. You would be wary of someone with a name almost like a famous company's but one letter off, or a company nobody has heard of that showed up uninvited. Installing a package lets someone else's code into your program, so it deserves the same check.",
+     "feedback": "Access requires trust."
+    },
+    {
+     "id": "S92-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A name one letter off from a famous company is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A look-alike package name"
+      },
+      {
+       "letter": "B",
+       "text": "A test"
+      },
+      {
+       "letter": "C",
+       "text": "A commit"
+      },
+      {
+       "letter": "D",
+       "text": "A well-known package used by thousands of programmers and checked carefully"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "A look-alike package name",
+     "intro": "Before letting a contractor into your home to fix wiring, you check they are real: a business that exists, reviews from other customers, a license. You would be wary of someone with a name almost like a famous company's but one letter off, or a company nobody has heard of that showed up uninvited. Installing a package lets someone else's code into your program, so it deserves the same check.",
+     "feedback": "Impersonation risk."
+    },
+    {
+     "id": "S92-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Reviews from other customers are like what for a package?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Its name length"
+      },
+      {
+       "letter": "B",
+       "text": "Signs it is used by others"
+      },
+      {
+       "letter": "C",
+       "text": "Its error messages"
+      },
+      {
+       "letter": "D",
+       "text": "The package's file size"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Signs it is used by others",
+     "intro": "Before letting a contractor into your home to fix wiring, you check they are real: a business that exists, reviews from other customers, a license. You would be wary of someone with a name almost like a famous company's but one letter off, or a company nobody has heard of that showed up uninvited. Installing a package lets someone else's code into your program, so it deserves the same check.",
+     "feedback": "Evidence of trust."
+    },
+    {
+     "id": "S92-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Installing a package is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Letting someone else's work into your project"
+      },
+      {
+       "letter": "B",
+       "text": "Deleting a file"
+      },
+      {
+       "letter": "C",
+       "text": "Running a test"
+      },
+      {
+       "letter": "D",
+       "text": "Writing every line of the program yourself without using anyone else's code"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Letting someone else's work into your project",
+     "intro": "Before letting a contractor into your home to fix wiring, you check they are real: a business that exists, reviews from other customers, a license. You would be wary of someone with a name almost like a famous company's but one letter off, or a company nobody has heard of that showed up uninvited. Installing a package lets someone else's code into your program, so it deserves the same check.",
+     "feedback": "Trusting others' code."
+    },
+    {
+     "id": "S92-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What is the lesson?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Install anything suggested"
+      },
+      {
+       "letter": "B",
+       "text": "Only use paid packages"
+      },
+      {
+       "letter": "C",
+       "text": "Never use code written by anyone else, under any circumstances, in any project"
+      },
+      {
+       "letter": "D",
+       "text": "Check a package before installing it"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Check a package before installing it",
+     "intro": "Before letting a contractor into your home to fix wiring, you check they are real: a business that exists, reviews from other customers, a license. You would be wary of someone with a name almost like a famous company's but one letter off, or a company nobody has heard of that showed up uninvited. Installing a package lets someone else's code into your program, so it deserves the same check.",
+     "feedback": "Verify first."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who installs packages without thinking can compare it with checking a contractor."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Check suggested packages in practice",
+   "questions": [
+    {
+     "id": "S92-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A tool suggests \"pip install easy-pdf-magic-tools.\" You find no project page. What should you do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Rename it and install"
+      },
+      {
+       "letter": "B",
+       "text": "Do not install it; look for a well-known alternative"
+      },
+      {
+       "letter": "C",
+       "text": "Install it twice"
+      },
+      {
+       "letter": "D",
+       "text": "Install it quickly, since a missing project page just means the package is very new"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Do not install it; look for a well-known alternative",
+     "intro": "Programs often use LIBRARIES, also called PACKAGES or DEPENDENCIES: code written by others that you install from a public collection, such as PyPI for Python. AI tools sometimes suggest a package that DOES NOT EXIST, and attackers can register those invented names with harmful code. This is sometimes called \"slopsquatting.\" Researchers studying code-generating models (USENIX Security 2025) documented such invented package names. Before installing a suggested package, check that it exists, that it is the one you intended (not a look-alike name), and that it shows signs of trust: an active project, real documentation, and use by others.",
+     "feedback": "No evidence it is real or safe."
+    },
+    {
+     "id": "S92-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A suggestion says \"reqeusts.\" What should you notice?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It is a newer version"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing, because small spelling differences in package names do not matter at all"
+      },
+      {
+       "letter": "C",
+       "text": "It is a look-alike of \"requests\""
+      },
+      {
+       "letter": "D",
+       "text": "It is a test file"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "It is a look-alike of \"requests\"",
+     "intro": "Programs often use LIBRARIES, also called PACKAGES or DEPENDENCIES: code written by others that you install from a public collection, such as PyPI for Python. AI tools sometimes suggest a package that DOES NOT EXIST, and attackers can register those invented names with harmful code. This is sometimes called \"slopsquatting.\" Researchers studying code-generating models (USENIX Security 2025) documented such invented package names. Before installing a suggested package, check that it exists, that it is the one you intended (not a look-alike name), and that it shows signs of trust: an active project, real documentation, and use by others.",
+     "feedback": "Misspelled look-alike."
+    },
+    {
+     "id": "S92-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Which package choice is safest for a class project?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A random new package"
+      },
+      {
+       "letter": "B",
+       "text": "A package that a tool invented a name for, since invented packages are designed for the task"
+      },
+      {
+       "letter": "C",
+       "text": "One with no documentation"
+      },
+      {
+       "letter": "D",
+       "text": "One the course already uses"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "One the course already uses",
+     "intro": "Programs often use LIBRARIES, also called PACKAGES or DEPENDENCIES: code written by others that you install from a public collection, such as PyPI for Python. AI tools sometimes suggest a package that DOES NOT EXIST, and attackers can register those invented names with harmful code. This is sometimes called \"slopsquatting.\" Researchers studying code-generating models (USENIX Security 2025) documented such invented package names. Before installing a suggested package, check that it exists, that it is the one you intended (not a look-alike name), and that it shows signs of trust: an active project, real documentation, and use by others.",
+     "feedback": "Known and trusted."
+    },
+    {
+     "id": "S92-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A tool suggests a package to add two numbers. What is the better choice?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Write the one line yourself"
+      },
+      {
+       "letter": "B",
+       "text": "Skip adding numbers"
+      },
+      {
+       "letter": "C",
+       "text": "Install three packages"
+      },
+      {
+       "letter": "D",
+       "text": "Install the package"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Write the one line yourself",
+     "intro": "Programs often use LIBRARIES, also called PACKAGES or DEPENDENCIES: code written by others that you install from a public collection, such as PyPI for Python. AI tools sometimes suggest a package that DOES NOT EXIST, and attackers can register those invented names with harmful code. This is sometimes called \"slopsquatting.\" Researchers studying code-generating models (USENIX Security 2025) documented such invented package names. Before installing a suggested package, check that it exists, that it is the one you intended (not a look-alike name), and that it shows signs of trust: an active project, real documentation, and use by others.",
+     "feedback": "Avoid unnecessary dependencies."
+    },
+    {
+     "id": "S92-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Where should you check that a Python package exists?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "In the tool's answer itself, since the tool would not suggest a package that did not exist"
+      },
+      {
+       "letter": "B",
+       "text": "Its page on the official package index (PyPI)"
+      },
+      {
+       "letter": "C",
+       "text": "Your memory"
+      },
+      {
+       "letter": "D",
+       "text": "A random forum"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Its page on the official package index (PyPI)",
+     "intro": "Programs often use LIBRARIES, also called PACKAGES or DEPENDENCIES: code written by others that you install from a public collection, such as PyPI for Python. AI tools sometimes suggest a package that DOES NOT EXIST, and attackers can register those invented names with harmful code. This is sometimes called \"slopsquatting.\" Researchers studying code-generating models (USENIX Security 2025) documented such invented package names. Before installing a suggested package, check that it exists, that it is the one you intended (not a look-alike name), and that it shows signs of trust: an active project, real documentation, and use by others.",
+     "feedback": "Check the official index."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Manage dependency risks over time",
+   "questions": [
+    {
+     "id": "S92-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A real, popular package has had no updates for years and has open security warnings. What is the concern?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It has too many users"
+      },
+      {
+       "letter": "B",
+       "text": "It is too popular"
+      },
+      {
+       "letter": "C",
+       "text": "It may be abandoned"
+      },
+      {
+       "letter": "D",
+       "text": "No concern"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "It may be abandoned",
+     "intro": "Look-alike names are a related risk: \"reqeusts\" instead of \"requests,\" or a package with an extra word. Even real packages can be abandoned or compromised. Prefer well-known packages your course, school or workplace already uses, record exact versions, and do not add a dependency for something a few lines of your own code can do. When unsure, ask someone experienced before installing.",
+     "feedback": "Old, unmaintained risk."
+    },
+    {
+     "id": "S92-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Why record exact package versions?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "To make files longer"
+      },
+      {
+       "letter": "B",
+       "text": "To hide which packages are used"
+      },
+      {
+       "letter": "C",
+       "text": "Because package managers refuse to install anything"
+      },
+      {
+       "letter": "D",
+       "text": "So builds are repeatable and changes are deliberate"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "So builds are repeatable and changes are deliberate",
+     "intro": "Look-alike names are a related risk: \"reqeusts\" instead of \"requests,\" or a package with an extra word. Even real packages can be abandoned or compromised. Prefer well-known packages your course, school or workplace already uses, record exact versions, and do not add a dependency for something a few lines of your own code can do. When unsure, ask someone experienced before installing.",
+     "feedback": "Predictable dependencies."
+    },
+    {
+     "id": "S92-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A student is unsure whether a package is trustworthy. What is the best step?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Install it and hope"
+      },
+      {
+       "letter": "B",
+       "text": "Ask someone experienced before installing"
+      },
+      {
+       "letter": "C",
+       "text": "Install it on the school's shared computer first to see whether anything bad happens"
+      },
+      {
+       "letter": "D",
+       "text": "Share it with classmates"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Ask someone experienced before installing",
+     "intro": "Look-alike names are a related risk: \"reqeusts\" instead of \"requests,\" or a package with an extra word. Even real packages can be abandoned or compromised. Prefer well-known packages your course, school or workplace already uses, record exact versions, and do not add a dependency for something a few lines of your own code can do. When unsure, ask someone experienced before installing.",
+     "feedback": "Ask first."
+    },
+    {
+     "id": "S92-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Which name is the most suspicious?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"numpy-official-secure-v2\""
+      },
+      {
+       "letter": "B",
+       "text": "\"requests\""
+      },
+      {
+       "letter": "C",
+       "text": "\"numpy,\" which is a widely used package for working with numbers in Python programs"
+      },
+      {
+       "letter": "D",
+       "text": "\"pandas\""
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "\"numpy-official-secure-v2\"",
+     "intro": "Look-alike names are a related risk: \"reqeusts\" instead of \"requests,\" or a package with an extra word. Even real packages can be abandoned or compromised. Prefer well-known packages your course, school or workplace already uses, record exact versions, and do not add a dependency for something a few lines of your own code can do. When unsure, ask someone experienced before installing.",
+     "feedback": "Extra words can mark look-alikes."
+    },
+    {
+     "id": "S92-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Do real packages ever become unsafe?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only if renamed"
+      },
+      {
+       "letter": "B",
+       "text": "No; once a package is real and popular, it can never become unsafe in any way at all"
+      },
+      {
+       "letter": "C",
+       "text": "Yes; they can be compromised"
+      },
+      {
+       "letter": "D",
+       "text": "Only on weekends"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Yes; they can be compromised",
+     "intro": "Look-alike names are a related risk: \"reqeusts\" instead of \"requests,\" or a package with an extra word. Even real packages can be abandoned or compromised. Prefer well-known packages your course, school or workplace already uses, record exact versions, and do not add a dependency for something a few lines of your own code can do. When unsure, ask someone experienced before installing.",
+     "feedback": "Ongoing vigilance."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

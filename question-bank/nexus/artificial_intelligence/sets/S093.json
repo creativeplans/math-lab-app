@@ -1,0 +1,669 @@
+{
+ "set": 93,
+ "title": "Secrets and security in code",
+ "outcome": "AI.CODE.09",
+ "content_status": "stable",
+ "requires": [
+  86,
+  45
+ ],
+ "module": "code",
+ "path_refs": [
+  "coding"
+ ],
+ "suggested": [
+  45
+ ],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Spot exposed secrets and unsafe handling of input",
+   "questions": [
+    {
+     "id": "S93-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What is an API key?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A keyboard key that programmers press to run their code faster than usual"
+      },
+      {
+       "letter": "B",
+       "text": "An error message"
+      },
+      {
+       "letter": "C",
+       "text": "A code that lets a program use a private or paid service"
+      },
+      {
+       "letter": "D",
+       "text": "A variable name"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A code that lets a program use a private or paid service",
+     "intro": "A SECRET is a password, API key (a code that lets a program use a paid or private service) or similar credential. Never write secrets directly in code that will be shared or committed; store them separately, for example in a settings file kept private or an ENVIRONMENT VARIABLE (a value set outside the code). Also never paste secrets into a chat with an AI tool. A second risk is UNSAFE INPUT: code that takes what a user types and builds a command from it can be tricked. SQL (Structured Query Language) for databases is a classic case: inserting typed text straight into a query lets attackers change the query.",
+     "feedback": "A credential."
+    },
+    {
+     "id": "S93-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "In this example, what is the security problem?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The variable is called API_KEY in capital letters, which Python does not allow"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing; keys belong in code"
+      },
+      {
+       "letter": "C",
+       "text": "The code prints a message"
+      },
+      {
+       "letter": "D",
+       "text": "The key is written directly in the code"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The key is written directly in the code",
+     "intro": "A SECRET is a password, API key (a code that lets a program use a paid or private service) or similar credential. Never write secrets directly in code that will be shared or committed; store them separately, for example in a settings file kept private or an ENVIRONMENT VARIABLE (a value set outside the code). Also never paste secrets into a chat with an AI tool. A second risk is UNSAFE INPUT: code that takes what a user types and builds a command from it can be tricked. SQL (Structured Query Language) for databases is a classic case: inserting typed text straight into a query lets attackers change the query.",
+     "feedback": "Secrets should be stored separately.",
+     "example": {
+      "kind": "code",
+      "label": "Prepared code example (Python 3) with a fake key. Shown only; nothing runs.",
+      "code": "API_KEY = \"sk-live-4f9a2c7e1b\"\nprint(\"Connecting with key\", API_KEY)",
+      "language": "Python 3"
+     }
+    },
+    {
+     "id": "S93-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Where should secrets be stored?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "In a comment at the top of the code, where every programmer can find them quickly"
+      },
+      {
+       "letter": "B",
+       "text": "Separately, such as in an environment variable"
+      },
+      {
+       "letter": "C",
+       "text": "In a chat with an AI tool"
+      },
+      {
+       "letter": "D",
+       "text": "In the file name"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Separately, such as in an environment variable",
+     "intro": "A SECRET is a password, API key (a code that lets a program use a paid or private service) or similar credential. Never write secrets directly in code that will be shared or committed; store them separately, for example in a settings file kept private or an ENVIRONMENT VARIABLE (a value set outside the code). Also never paste secrets into a chat with an AI tool. A second risk is UNSAFE INPUT: code that takes what a user types and builds a command from it can be tricked. SQL (Structured Query Language) for databases is a classic case: inserting typed text straight into a query lets attackers change the query.",
+     "feedback": "Outside shared code."
+    },
+    {
+     "id": "S93-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "In this example, why is the query unsafe?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Typed text goes straight into the query"
+      },
+      {
+       "letter": "B",
+       "text": "The table is called students"
+      },
+      {
+       "letter": "C",
+       "text": "It uses the input function"
+      },
+      {
+       "letter": "D",
+       "text": "The query is written in capital letters"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Typed text goes straight into the query",
+     "intro": "A SECRET is a password, API key (a code that lets a program use a paid or private service) or similar credential. Never write secrets directly in code that will be shared or committed; store them separately, for example in a settings file kept private or an ENVIRONMENT VARIABLE (a value set outside the code). Also never paste secrets into a chat with an AI tool. A second risk is UNSAFE INPUT: code that takes what a user types and builds a command from it can be tricked. SQL (Structured Query Language) for databases is a classic case: inserting typed text straight into a query lets attackers change the query.",
+     "feedback": "Attackers can change the query.",
+     "example": {
+      "kind": "code",
+      "label": "Prepared code fragment (Python 3). Shown only; nothing runs.",
+      "code": "name = input(\"Name: \")\nquery = \"SELECT * FROM students WHERE name = '\" + name + \"'\"",
+      "language": "Python 3"
+     }
+    },
+    {
+     "id": "S93-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Should you paste a real API key into an AI chat to get help?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes, if it is short"
+      },
+      {
+       "letter": "B",
+       "text": "Only on weekends"
+      },
+      {
+       "letter": "C",
+       "text": "Yes, because chats with AI tools are completely private and are never stored anywhere"
+      },
+      {
+       "letter": "D",
+       "text": "No; never paste secrets into a chat"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "No; never paste secrets into a chat",
+     "intro": "A SECRET is a password, API key (a code that lets a program use a paid or private service) or similar credential. Never write secrets directly in code that will be shared or committed; store them separately, for example in a settings file kept private or an ENVIRONMENT VARIABLE (a value set outside the code). Also never paste secrets into a chat with an AI tool. A second risk is UNSAFE INPUT: code that takes what a user types and builds a command from it can be tricked. SQL (Structured Query Language) for databases is a classic case: inserting typed text straight into a query lets attackers change the query.",
+     "feedback": "Keep secrets out."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare secrets in code with a house key under the doormat",
+   "questions": [
+    {
+     "id": "S93-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Why is a key under the doormat risky?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because keys are heavy"
+      },
+      {
+       "letter": "B",
+       "text": "Because doormats damage keys over time, making them stop working in the lock"
+      },
+      {
+       "letter": "C",
+       "text": "Anyone who looks can find it"
+      },
+      {
+       "letter": "D",
+       "text": "Because doors are locked"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Anyone who looks can find it",
+     "intro": "Leaving a house key under the doormat is convenient, but anyone who looks there can get in. Writing a password or API key directly in code is similar: anyone who sees the code, or a copy of it, can use the key. Keeping the key in your pocket, separate from the house, is like storing secrets outside the code. And if the key might have been copied, you change the lock rather than just moving the key.",
+     "feedback": "Easy to find."
+    },
+    {
+     "id": "S93-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A secret written in code is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A locked safe"
+      },
+      {
+       "letter": "B",
+       "text": "A key under the doormat"
+      },
+      {
+       "letter": "C",
+       "text": "A key kept safely in your pocket, separate from the house and away from strangers"
+      },
+      {
+       "letter": "D",
+       "text": "A doorbell"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A key under the doormat",
+     "intro": "Leaving a house key under the doormat is convenient, but anyone who looks there can get in. Writing a password or API key directly in code is similar: anyone who sees the code, or a copy of it, can use the key. Keeping the key in your pocket, separate from the house, is like storing secrets outside the code. And if the key might have been copied, you change the lock rather than just moving the key.",
+     "feedback": "Exposed to anyone who looks."
+    },
+    {
+     "id": "S93-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Keeping the key in your pocket is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Storing secrets outside the code"
+      },
+      {
+       "letter": "B",
+       "text": "Giving it away"
+      },
+      {
+       "letter": "C",
+       "text": "Posting it online"
+      },
+      {
+       "letter": "D",
+       "text": "Writing the secret into a comment"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Storing secrets outside the code",
+     "intro": "Leaving a house key under the doormat is convenient, but anyone who looks there can get in. Writing a password or API key directly in code is similar: anyone who sees the code, or a copy of it, can use the key. Keeping the key in your pocket, separate from the house, is like storing secrets outside the code. And if the key might have been copied, you change the lock rather than just moving the key.",
+     "feedback": "Separate storage."
+    },
+    {
+     "id": "S93-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "If the key may have been copied, what should you do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Move the key to a different doormat, since moving it is just as good as changing the lock"
+      },
+      {
+       "letter": "B",
+       "text": "Ignore it"
+      },
+      {
+       "letter": "C",
+       "text": "Change the lock"
+      },
+      {
+       "letter": "D",
+       "text": "Paint the door"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Change the lock",
+     "intro": "Leaving a house key under the doormat is convenient, but anyone who looks there can get in. Writing a password or API key directly in code is similar: anyone who sees the code, or a copy of it, can use the key. Keeping the key in your pocket, separate from the house, is like storing secrets outside the code. And if the key might have been copied, you change the lock rather than just moving the key.",
+     "feedback": "Like rotating a secret."
+    },
+    {
+     "id": "S93-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "In code, \"changing the lock\" means what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Replacing the exposed secret with a new one"
+      },
+      {
+       "letter": "B",
+       "text": "Adding a comment"
+      },
+      {
+       "letter": "C",
+       "text": "Renaming the variable"
+      },
+      {
+       "letter": "D",
+       "text": "Deleting the line with the secret from the newest version of the code only"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Replacing the exposed secret with a new one",
+     "intro": "Leaving a house key under the doormat is convenient, but anyone who looks there can get in. Writing a password or API key directly in code is similar: anyone who sees the code, or a copy of it, can use the key. Keeping the key in your pocket, separate from the house, is like storing secrets outside the code. And if the key might have been copied, you change the lock rather than just moving the key.",
+     "feedback": "Rotate the key."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who does not see why secrets in code are risky can compare them with a key under the doormat."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Handle secrets and input safely in practice",
+   "questions": [
+    {
+     "id": "S93-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Mia shares her project online and realizes her real API key is in the code. What should she do first?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ignore it"
+      },
+      {
+       "letter": "B",
+       "text": "Delete the key from the code and assume the problem is solved, since nobody saw it yet"
+      },
+      {
+       "letter": "C",
+       "text": "Make the repository bigger"
+      },
+      {
+       "letter": "D",
+       "text": "Change the key at the service right away"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Change the key at the service right away",
+     "intro": "A SECRET is a password, API key (a code that lets a program use a paid or private service) or similar credential. Never write secrets directly in code that will be shared or committed; store them separately, for example in a settings file kept private or an ENVIRONMENT VARIABLE (a value set outside the code). Also never paste secrets into a chat with an AI tool. A second risk is UNSAFE INPUT: code that takes what a user types and builds a command from it can be tricked. SQL (Structured Query Language) for databases is a classic case: inserting typed text straight into a query lets attackers change the query.",
+     "feedback": "Rotate exposed secrets."
+    },
+    {
+     "id": "S93-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A tool asks you to paste your password so it can \"test the login code.\" What should you do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Paste it, because tools need the real password to check whether the login code works"
+      },
+      {
+       "letter": "B",
+       "text": "Refuse; use a fake test password"
+      },
+      {
+       "letter": "C",
+       "text": "Paste half of it"
+      },
+      {
+       "letter": "D",
+       "text": "Email it instead"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Refuse; use a fake test password",
+     "intro": "A SECRET is a password, API key (a code that lets a program use a paid or private service) or similar credential. Never write secrets directly in code that will be shared or committed; store them separately, for example in a settings file kept private or an ENVIRONMENT VARIABLE (a value set outside the code). Also never paste secrets into a chat with an AI tool. A second risk is UNSAFE INPUT: code that takes what a user types and builds a command from it can be tricked. SQL (Structured Query Language) for databases is a classic case: inserting typed text straight into a query lets attackers change the query.",
+     "feedback": "Use fake test values."
+    },
+    {
+     "id": "S93-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Which line handles a secret more safely?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Writing the key in a comment next to the code that uses it, so it is easy to update"
+      },
+      {
+       "letter": "B",
+       "text": "Printing the key at startup"
+      },
+      {
+       "letter": "C",
+       "text": "Reading the key from an environment variable"
+      },
+      {
+       "letter": "D",
+       "text": "Saving the key in the file name"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Reading the key from an environment variable",
+     "intro": "A SECRET is a password, API key (a code that lets a program use a paid or private service) or similar credential. Never write secrets directly in code that will be shared or committed; store them separately, for example in a settings file kept private or an ENVIRONMENT VARIABLE (a value set outside the code). Also never paste secrets into a chat with an AI tool. A second risk is UNSAFE INPUT: code that takes what a user types and builds a command from it can be tricked. SQL (Structured Query Language) for databases is a classic case: inserting typed text straight into a query lets attackers change the query.",
+     "feedback": "Kept outside the code."
+    },
+    {
+     "id": "S93-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A form's code builds a database query by adding typed text. What is the risk?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nothing"
+      },
+      {
+       "letter": "B",
+       "text": "The text will be misspelled"
+      },
+      {
+       "letter": "C",
+       "text": "The query will run more slowly"
+      },
+      {
+       "letter": "D",
+       "text": "An attacker can change the query"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "An attacker can change the query",
+     "intro": "A SECRET is a password, API key (a code that lets a program use a paid or private service) or similar credential. Never write secrets directly in code that will be shared or committed; store them separately, for example in a settings file kept private or an ENVIRONMENT VARIABLE (a value set outside the code). Also never paste secrets into a chat with an AI tool. A second risk is UNSAFE INPUT: code that takes what a user types and builds a command from it can be tricked. SQL (Structured Query Language) for databases is a classic case: inserting typed text straight into a query lets attackers change the query.",
+     "feedback": "Unsafe input."
+    },
+    {
+     "id": "S93-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Generated code contains \"API_KEY = 'your-key-here'.\" What is the safe next step?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Load the real key from a private setting"
+      },
+      {
+       "letter": "B",
+       "text": "Delete the line"
+      },
+      {
+       "letter": "C",
+       "text": "Replace the placeholder text with your real key in the same spot and share the file"
+      },
+      {
+       "letter": "D",
+       "text": "Share the placeholder"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Load the real key from a private setting",
+     "intro": "A SECRET is a password, API key (a code that lets a program use a paid or private service) or similar credential. Never write secrets directly in code that will be shared or committed; store them separately, for example in a settings file kept private or an ENVIRONMENT VARIABLE (a value set outside the code). Also never paste secrets into a chat with an AI tool. A second risk is UNSAFE INPUT: code that takes what a user types and builds a command from it can be tricked. SQL (Structured Query Language) for databases is a classic case: inserting typed text straight into a query lets attackers change the query.",
+     "feedback": "Keep real keys out of code."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Respond to exposed secrets and untrusted input",
+   "questions": [
+    {
+     "id": "S93-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Why is deleting an exposed key from the code not enough?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because deleting lines of code in a file is impossible once the file has been shared"
+      },
+      {
+       "letter": "B",
+       "text": "It may already have been copied"
+      },
+      {
+       "letter": "C",
+       "text": "Because keys grow back"
+      },
+      {
+       "letter": "D",
+       "text": "Because code cannot be edited"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "It may already have been copied",
+     "intro": "Generated code often uses placeholder secrets (\"API_KEY = 'your-key-here'\"), and people replace them with real keys in the same spot, then share the file. If a secret is exposed, CHANGE IT (rotate it) at the service right away; deleting it from the code is not enough. For input, use the safe methods a language provides, such as PARAMETERIZED QUERIES that keep user text separate from the command, and treat everything a user types as untrusted.",
+     "feedback": "Rotate the key."
+    },
+    {
+     "id": "S93-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What does \"rotate a secret\" mean?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Write it backward"
+      },
+      {
+       "letter": "B",
+       "text": "Move the secret to a different line of the same code file so it is harder to find"
+      },
+      {
+       "letter": "C",
+       "text": "Encrypt the file name"
+      },
+      {
+       "letter": "D",
+       "text": "Replace it with a new one at the service"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Replace it with a new one at the service",
+     "intro": "Generated code often uses placeholder secrets (\"API_KEY = 'your-key-here'\"), and people replace them with real keys in the same spot, then share the file. If a secret is exposed, CHANGE IT (rotate it) at the service right away; deleting it from the code is not enough. For input, use the safe methods a language provides, such as PARAMETERIZED QUERIES that keep user text separate from the command, and treat everything a user types as untrusted.",
+     "feedback": "Issue a new secret."
+    },
+    {
+     "id": "S93-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What do parameterized queries do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Keep user text separate from the command"
+      },
+      {
+       "letter": "B",
+       "text": "Print the query"
+      },
+      {
+       "letter": "C",
+       "text": "Remove the database"
+      },
+      {
+       "letter": "D",
+       "text": "Make the database query run on a schedule every hour without any user input at all"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Keep user text separate from the command",
+     "intro": "Generated code often uses placeholder secrets (\"API_KEY = 'your-key-here'\"), and people replace them with real keys in the same spot, then share the file. If a secret is exposed, CHANGE IT (rotate it) at the service right away; deleting it from the code is not enough. For input, use the safe methods a language provides, such as PARAMETERIZED QUERIES that keep user text separate from the command, and treat everything a user types as untrusted.",
+     "feedback": "Safe input handling."
+    },
+    {
+     "id": "S93-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "How should code treat what a user types?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "As a secret"
+      },
+      {
+       "letter": "B",
+       "text": "As untrusted"
+      },
+      {
+       "letter": "C",
+       "text": "As a comment"
+      },
+      {
+       "letter": "D",
+       "text": "As fully trusted"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "As untrusted",
+     "intro": "Generated code often uses placeholder secrets (\"API_KEY = 'your-key-here'\"), and people replace them with real keys in the same spot, then share the file. If a secret is exposed, CHANGE IT (rotate it) at the service right away; deleting it from the code is not enough. For input, use the safe methods a language provides, such as PARAMETERIZED QUERIES that keep user text separate from the command, and treat everything a user types as untrusted.",
+     "feedback": "Untrusted input."
+    },
+    {
+     "id": "S93-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A tutorial's generated code prints the API key at startup \"for debugging.\" What is the risk?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The program runs slower"
+      },
+      {
+       "letter": "B",
+       "text": "No risk, since printed text disappears from the screen as soon as the program finishes"
+      },
+      {
+       "letter": "C",
+       "text": "The key can appear in logs or screenshots"
+      },
+      {
+       "letter": "D",
+       "text": "The key gets longer"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The key can appear in logs or screenshots",
+     "intro": "Generated code often uses placeholder secrets (\"API_KEY = 'your-key-here'\"), and people replace them with real keys in the same spot, then share the file. If a secret is exposed, CHANGE IT (rotate it) at the service right away; deleting it from the code is not enough. For input, use the safe methods a language provides, such as PARAMETERIZED QUERIES that keep user text separate from the command, and treat everything a user types as untrusted.",
+     "feedback": "Do not print secrets."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

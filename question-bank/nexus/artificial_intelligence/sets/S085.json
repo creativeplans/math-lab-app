@@ -1,0 +1,688 @@
+{
+ "set": 85,
+ "title": "Reading a tiny program",
+ "outcome": "AI.CODE.01",
+ "content_status": "stable",
+ "requires": [],
+ "module": "code",
+ "path_refs": [
+  "coding"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Read a few lines of Python and predict what they do",
+   "questions": [
+    {
+     "id": "S85-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "In this example, what does the program print?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "7, because the program adds the price and the count together before printing the total"
+      },
+      {
+       "letter": "B",
+       "text": "total"
+      },
+      {
+       "letter": "C",
+       "text": "12"
+      },
+      {
+       "letter": "D",
+       "text": "4"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "12",
+     "intro": "A PROGRAM is a list of instructions a computer follows in order, top to bottom. In the language PYTHON, a VARIABLE is a name that stores a value: \"price = 4\" stores 4 under the name price (the \"=\" means \"store,\" not \"is equal\"). \"*\" multiplies, \"+\" adds and \"/\" divides. print(...) shows a value on screen. To read code, go line by line and track each variable's value, like keeping score on paper. In the example, price is 4 and count is 3, so total is 4 * 3 = 12, and the last line prints 12.",
+     "feedback": "4 * 3 = 12.",
+     "example": {
+      "kind": "code",
+      "label": "Prepared code example (Python 3). Shown only; nothing runs.",
+      "code": "price = 4\ncount = 3\ntotal = price * count\nprint(total)",
+      "language": "Python 3"
+     }
+    },
+    {
+     "id": "S85-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What does \"price = 4\" do in Python?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Stores 4 under the name price"
+      },
+      {
+       "letter": "B",
+       "text": "Deletes price"
+      },
+      {
+       "letter": "C",
+       "text": "Checks whether price is already equal to 4 and prints True or False on the screen"
+      },
+      {
+       "letter": "D",
+       "text": "Prints 4"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Stores 4 under the name price",
+     "intro": "A PROGRAM is a list of instructions a computer follows in order, top to bottom. In the language PYTHON, a VARIABLE is a name that stores a value: \"price = 4\" stores 4 under the name price (the \"=\" means \"store,\" not \"is equal\"). \"*\" multiplies, \"+\" adds and \"/\" divides. print(...) shows a value on screen. To read code, go line by line and track each variable's value, like keeping score on paper. In the example, price is 4 and count is 3, so total is 4 * 3 = 12, and the last line prints 12.",
+     "feedback": "\"=\" stores a value."
+    },
+    {
+     "id": "S85-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "If the second line were \"count = 5,\" what would print?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "9, because changing the count to 5 adds 5 to the price of 4 instead of multiplying"
+      },
+      {
+       "letter": "B",
+       "text": "5"
+      },
+      {
+       "letter": "C",
+       "text": "12"
+      },
+      {
+       "letter": "D",
+       "text": "20"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "20",
+     "intro": "A PROGRAM is a list of instructions a computer follows in order, top to bottom. In the language PYTHON, a VARIABLE is a name that stores a value: \"price = 4\" stores 4 under the name price (the \"=\" means \"store,\" not \"is equal\"). \"*\" multiplies, \"+\" adds and \"/\" divides. print(...) shows a value on screen. To read code, go line by line and track each variable's value, like keeping score on paper. In the example, price is 4 and count is 3, so total is 4 * 3 = 12, and the last line prints 12.",
+     "feedback": "4 * 5 = 20.",
+     "example": {
+      "kind": "code",
+      "label": "Prepared code example (Python 3). Shown only; nothing runs.",
+      "code": "price = 4\ncount = 3\ntotal = price * count\nprint(total)",
+      "language": "Python 3"
+     }
+    },
+    {
+     "id": "S85-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "In what order does Python run these lines?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "In random order"
+      },
+      {
+       "letter": "B",
+       "text": "Top to bottom"
+      },
+      {
+       "letter": "C",
+       "text": "Only the last line"
+      },
+      {
+       "letter": "D",
+       "text": "Bottom to top"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Top to bottom",
+     "intro": "A PROGRAM is a list of instructions a computer follows in order, top to bottom. In the language PYTHON, a VARIABLE is a name that stores a value: \"price = 4\" stores 4 under the name price (the \"=\" means \"store,\" not \"is equal\"). \"*\" multiplies, \"+\" adds and \"/\" divides. print(...) shows a value on screen. To read code, go line by line and track each variable's value, like keeping score on paper. In the example, price is 4 and count is 3, so total is 4 * 3 = 12, and the last line prints 12.",
+     "feedback": "Instructions run in order."
+    },
+    {
+     "id": "S85-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What does print(...) do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Sends the program to a printer so a paper copy of the code is made for you"
+      },
+      {
+       "letter": "B",
+       "text": "Multiplies numbers"
+      },
+      {
+       "letter": "C",
+       "text": "Shows a value on screen"
+      },
+      {
+       "letter": "D",
+       "text": "Stores a value"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Shows a value on screen",
+     "intro": "A PROGRAM is a list of instructions a computer follows in order, top to bottom. In the language PYTHON, a VARIABLE is a name that stores a value: \"price = 4\" stores 4 under the name price (the \"=\" means \"store,\" not \"is equal\"). \"*\" multiplies, \"+\" adds and \"/\" divides. print(...) shows a value on screen. To read code, go line by line and track each variable's value, like keeping score on paper. In the example, price is 4 and count is 3, so total is 4 * 3 = 12, and the last line prints 12.",
+     "feedback": "Displays output."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Trace variables on paper",
+   "questions": [
+    {
+     "id": "S85-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "After line 2, what is b?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "5"
+      },
+      {
+       "letter": "B",
+       "text": "3"
+      },
+      {
+       "letter": "C",
+       "text": "10"
+      },
+      {
+       "letter": "D",
+       "text": "2, because b is given the same value as a, and the \"+ 3\" part is ignored by Python"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "5",
+     "intro": "TRACING means following a program line by line and writing down each variable's value as it changes, like a scoreboard. Example: line 1 \"a = 2\" (a is 2). Line 2 \"b = a + 3\" (b is 5). Line 3 \"a = 10\" (a is now 10; b stays 5, because b was already calculated). Line 4 \"print(a + b)\" shows 15. The key habit: when a variable changes, cross out its old value and write the new one, and do not change other variables unless a line says so.",
+     "feedback": "2 + 3 = 5."
+    },
+    {
+     "id": "S85-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "After line 3, what is a?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "12"
+      },
+      {
+       "letter": "B",
+       "text": "10"
+      },
+      {
+       "letter": "C",
+       "text": "2, because once a variable is given a value it can never be changed by a later line"
+      },
+      {
+       "letter": "D",
+       "text": "5"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "10",
+     "intro": "TRACING means following a program line by line and writing down each variable's value as it changes, like a scoreboard. Example: line 1 \"a = 2\" (a is 2). Line 2 \"b = a + 3\" (b is 5). Line 3 \"a = 10\" (a is now 10; b stays 5, because b was already calculated). Line 4 \"print(a + b)\" shows 15. The key habit: when a variable changes, cross out its old value and write the new one, and do not change other variables unless a line says so.",
+     "feedback": "a is replaced."
+    },
+    {
+     "id": "S85-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "After line 3, what is b?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "13, because b automatically updates whenever the value of a is changed by a later line"
+      },
+      {
+       "letter": "B",
+       "text": "10"
+      },
+      {
+       "letter": "C",
+       "text": "2"
+      },
+      {
+       "letter": "D",
+       "text": "5"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "5",
+     "intro": "TRACING means following a program line by line and writing down each variable's value as it changes, like a scoreboard. Example: line 1 \"a = 2\" (a is 2). Line 2 \"b = a + 3\" (b is 5). Line 3 \"a = 10\" (a is now 10; b stays 5, because b was already calculated). Line 4 \"print(a + b)\" shows 15. The key habit: when a variable changes, cross out its old value and write the new one, and do not change other variables unless a line says so.",
+     "feedback": "b was already calculated."
+    },
+    {
+     "id": "S85-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What does line 4 print?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "12"
+      },
+      {
+       "letter": "B",
+       "text": "7, which is the original value of a added to the original value of b from line 2"
+      },
+      {
+       "letter": "C",
+       "text": "15"
+      },
+      {
+       "letter": "D",
+       "text": "a + b"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "15",
+     "intro": "TRACING means following a program line by line and writing down each variable's value as it changes, like a scoreboard. Example: line 1 \"a = 2\" (a is 2). Line 2 \"b = a + 3\" (b is 5). Line 3 \"a = 10\" (a is now 10; b stays 5, because b was already calculated). Line 4 \"print(a + b)\" shows 15. The key habit: when a variable changes, cross out its old value and write the new one, and do not change other variables unless a line says so.",
+     "feedback": "10 + 5 = 15."
+    },
+    {
+     "id": "S85-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What is the key tracing habit?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Track only the last line"
+      },
+      {
+       "letter": "B",
+       "text": "Update every variable on every line, even when the line does not mention that variable"
+      },
+      {
+       "letter": "C",
+       "text": "Ignore numbers"
+      },
+      {
+       "letter": "D",
+       "text": "Update a variable only when a line changes it"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Update a variable only when a line changes it",
+     "intro": "TRACING means following a program line by line and writing down each variable's value as it changes, like a scoreboard. Example: line 1 \"a = 2\" (a is 2). Line 2 \"b = a + 3\" (b is 5). Line 3 \"a = 10\" (a is now 10; b stays 5, because b was already calculated). Line 4 \"print(a + b)\" shows 15. The key habit: when a variable changes, cross out its old value and write the new one, and do not change other variables unless a line says so.",
+     "feedback": "Cross out and rewrite."
+    }
+   ],
+   "branch_mode": "underlying_skill",
+   "relationship": "A learner who cannot follow code practices the underlying skill of tracing variable values line by line."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Predict the output of short programs",
+   "questions": [
+    {
+     "id": "S85-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What does this program print?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "15"
+      },
+      {
+       "letter": "B",
+       "text": "Too young"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing"
+      },
+      {
+       "letter": "D",
+       "text": "Can apply"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Too young",
+     "intro": "A PROGRAM is a list of instructions a computer follows in order, top to bottom. In the language PYTHON, a VARIABLE is a name that stores a value: \"price = 4\" stores 4 under the name price (the \"=\" means \"store,\" not \"is equal\"). \"*\" multiplies, \"+\" adds and \"/\" divides. print(...) shows a value on screen. To read code, go line by line and track each variable's value, like keeping score on paper. In the example, price is 4 and count is 3, so total is 4 * 3 = 12, and the last line prints 12.",
+     "feedback": "15 >= 16 is false, so else runs.",
+     "example": {
+      "kind": "code",
+      "label": "Prepared code example (Python 3). Shown only; nothing runs.",
+      "code": "age = 15\nif age >= 16:\n    print(\"Can apply\")\nelse:\n    print(\"Too young\")",
+      "language": "Python 3"
+     }
+    },
+    {
+     "id": "S85-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "If the first line were \"age = 16,\" what would print?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Can apply"
+      },
+      {
+       "letter": "B",
+       "text": "16"
+      },
+      {
+       "letter": "C",
+       "text": "Both lines"
+      },
+      {
+       "letter": "D",
+       "text": "Too young"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Can apply",
+     "intro": "A PROGRAM is a list of instructions a computer follows in order, top to bottom. In the language PYTHON, a VARIABLE is a name that stores a value: \"price = 4\" stores 4 under the name price (the \"=\" means \"store,\" not \"is equal\"). \"*\" multiplies, \"+\" adds and \"/\" divides. print(...) shows a value on screen. To read code, go line by line and track each variable's value, like keeping score on paper. In the example, price is 4 and count is 3, so total is 4 * 3 = 12, and the last line prints 12.",
+     "feedback": "16 >= 16 is true.",
+     "example": {
+      "kind": "code",
+      "label": "Prepared code example (Python 3). Shown only; nothing runs.",
+      "code": "age = 15\nif age >= 16:\n    print(\"Can apply\")\nelse:\n    print(\"Too young\")",
+      "language": "Python 3"
+     }
+    },
+    {
+     "id": "S85-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What does this loop print?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "12"
+      },
+      {
+       "letter": "B",
+       "text": "6 only"
+      },
+      {
+       "letter": "C",
+       "text": "1, 2 and 3 on separate lines"
+      },
+      {
+       "letter": "D",
+       "text": "2, 4 and 6 on separate lines"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "2, 4 and 6 on separate lines",
+     "intro": "A PROGRAM is a list of instructions a computer follows in order, top to bottom. In the language PYTHON, a VARIABLE is a name that stores a value: \"price = 4\" stores 4 under the name price (the \"=\" means \"store,\" not \"is equal\"). \"*\" multiplies, \"+\" adds and \"/\" divides. print(...) shows a value on screen. To read code, go line by line and track each variable's value, like keeping score on paper. In the example, price is 4 and count is 3, so total is 4 * 3 = 12, and the last line prints 12.",
+     "feedback": "Each n doubled.",
+     "example": {
+      "kind": "code",
+      "label": "Prepared code example (Python 3). Shown only; nothing runs.",
+      "code": "for n in [1, 2, 3]:\n    print(n * 2)",
+      "language": "Python 3"
+     }
+    },
+    {
+     "id": "S85-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "How many times does the loop body run?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "6, because the loop runs once for every number that it prints out on the screen"
+      },
+      {
+       "letter": "B",
+       "text": "3"
+      },
+      {
+       "letter": "C",
+       "text": "2"
+      },
+      {
+       "letter": "D",
+       "text": "1"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "3",
+     "intro": "A PROGRAM is a list of instructions a computer follows in order, top to bottom. In the language PYTHON, a VARIABLE is a name that stores a value: \"price = 4\" stores 4 under the name price (the \"=\" means \"store,\" not \"is equal\"). \"*\" multiplies, \"+\" adds and \"/\" divides. print(...) shows a value on screen. To read code, go line by line and track each variable's value, like keeping score on paper. In the example, price is 4 and count is 3, so total is 4 * 3 = 12, and the last line prints 12.",
+     "feedback": "Three items in the list.",
+     "example": {
+      "kind": "code",
+      "label": "Prepared code example (Python 3). Shown only; nothing runs.",
+      "code": "for n in [1, 2, 3]:\n    print(n * 2)",
+      "language": "Python 3"
+     }
+    },
+    {
+     "id": "S85-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "In \"x = 7\" then \"x = x + 1,\" what is x afterward?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "8"
+      },
+      {
+       "letter": "B",
+       "text": "7, because a variable cannot be used on both sides of the same \"=\" sign in Python"
+      },
+      {
+       "letter": "C",
+       "text": "71"
+      },
+      {
+       "letter": "D",
+       "text": "1"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "8",
+     "intro": "A PROGRAM is a list of instructions a computer follows in order, top to bottom. In the language PYTHON, a VARIABLE is a name that stores a value: \"price = 4\" stores 4 under the name price (the \"=\" means \"store,\" not \"is equal\"). \"*\" multiplies, \"+\" adds and \"/\" divides. print(...) shows a value on screen. To read code, go line by line and track each variable's value, like keeping score on paper. In the example, price is 4 and count is 3, so total is 4 * 3 = 12, and the last line prints 12.",
+     "feedback": "7 + 1 = 8."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Read if statements, loops and indentation",
+   "questions": [
+    {
+     "id": "S85-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What does \"if age >= 16:\" mean?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "If age is exactly 16 and no other number, so 17 and 18 would not count at all"
+      },
+      {
+       "letter": "B",
+       "text": "Set age to 16"
+      },
+      {
+       "letter": "C",
+       "text": "If age is at least 16"
+      },
+      {
+       "letter": "D",
+       "text": "If age is under 16"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "If age is at least 16",
+     "intro": "Two more patterns appear constantly. An IF statement runs lines only when a condition is true: \"if age >= 16:\" means \"if age is at least 16.\" Lines indented under it belong to it, and an ELSE part runs otherwise. A FOR LOOP repeats lines once for each item in a list: \"for n in [1, 2, 3]:\" runs its indented lines three times, with n being 1, then 2, then 3. Indentation (spaces at the start of a line) shows which lines belong together.",
+     "feedback": "Greater than or equal."
+    },
+    {
+     "id": "S85-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What does indentation show in Python?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Which lines belong together"
+      },
+      {
+       "letter": "B",
+       "text": "Comments"
+      },
+      {
+       "letter": "C",
+       "text": "How important each line is, with the most important lines indented the furthest"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing; it is decoration"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Which lines belong together",
+     "intro": "Two more patterns appear constantly. An IF statement runs lines only when a condition is true: \"if age >= 16:\" means \"if age is at least 16.\" Lines indented under it belong to it, and an ELSE part runs otherwise. A FOR LOOP repeats lines once for each item in a list: \"for n in [1, 2, 3]:\" runs its indented lines three times, with n being 1, then 2, then 3. Indentation (spaces at the start of a line) shows which lines belong together.",
+     "feedback": "Blocks of code."
+    },
+    {
+     "id": "S85-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "In \"for n in [5, 10]: print(n),\" what prints?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nothing"
+      },
+      {
+       "letter": "B",
+       "text": "15, because a for loop adds up every item in the list and prints the total once"
+      },
+      {
+       "letter": "C",
+       "text": "5 then 10"
+      },
+      {
+       "letter": "D",
+       "text": "n twice"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "5 then 10",
+     "intro": "Two more patterns appear constantly. An IF statement runs lines only when a condition is true: \"if age >= 16:\" means \"if age is at least 16.\" Lines indented under it belong to it, and an ELSE part runs otherwise. A FOR LOOP repeats lines once for each item in a list: \"for n in [1, 2, 3]:\" runs its indented lines three times, with n being 1, then 2, then 3. Indentation (spaces at the start of a line) shows which lines belong together.",
+     "feedback": "Each item in turn."
+    },
+    {
+     "id": "S85-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "When does an else part run?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Never"
+      },
+      {
+       "letter": "B",
+       "text": "Always, right after the if part has finished, whether the condition was true or false"
+      },
+      {
+       "letter": "C",
+       "text": "Before the if"
+      },
+      {
+       "letter": "D",
+       "text": "When the if condition is false"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "When the if condition is false",
+     "intro": "Two more patterns appear constantly. An IF statement runs lines only when a condition is true: \"if age >= 16:\" means \"if age is at least 16.\" Lines indented under it belong to it, and an ELSE part runs otherwise. A FOR LOOP repeats lines once for each item in a list: \"for n in [1, 2, 3]:\" runs its indented lines three times, with n being 1, then 2, then 3. Indentation (spaces at the start of a line) shows which lines belong together.",
+     "feedback": "The other branch."
+    },
+    {
+     "id": "S85-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A loop goes over a list of 4 names. How many times does its body run?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "8"
+      },
+      {
+       "letter": "B",
+       "text": "4"
+      },
+      {
+       "letter": "C",
+       "text": "0"
+      },
+      {
+       "letter": "D",
+       "text": "1, because a loop body runs only once no matter how many items are in the list"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "4",
+     "intro": "Two more patterns appear constantly. An IF statement runs lines only when a condition is true: \"if age >= 16:\" means \"if age is at least 16.\" Lines indented under it belong to it, and an ELSE part runs otherwise. A FOR LOOP repeats lines once for each item in a list: \"for n in [1, 2, 3]:\" runs its indented lines three times, with n being 1, then 2, then 3. Indentation (spaces at the start of a line) shows which lines belong together.",
+     "feedback": "Once per item."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

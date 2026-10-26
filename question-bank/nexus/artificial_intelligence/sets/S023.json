@@ -1,0 +1,664 @@
+{
+ "set": 23,
+ "title": "Output format and constraints",
+ "outcome": "AI.PROMPT.02",
+ "content_status": "stable",
+ "requires": [
+  22
+ ],
+ "module": "prompting",
+ "path_refs": [
+  "everyday",
+  "creative",
+  "coding",
+  "work",
+  "society"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "State the output format and constraints a result must meet",
+   "questions": [
+    {
+     "id": "S23-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Which part of a request describes the OUTPUT FORMAT?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"compare three caterers\""
+      },
+      {
+       "letter": "B",
+       "text": "\"as a table with Item and Price columns\""
+      },
+      {
+       "letter": "C",
+       "text": "\"for my coworkers\""
+      },
+      {
+       "letter": "D",
+       "text": "\"so we can choose a caterer by Friday\""
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "\"as a table with Item and Price columns\"",
+     "intro": "Besides saying what you want, say what the result should LOOK LIKE. The OUTPUT FORMAT is its shape: a bulleted list, a table with named columns, a three-paragraph letter, a numbered set of steps. CONSTRAINTS are limits it must respect: a length (\"under 150 words\"), a tone (\"friendly but professional\"), a reading level (\"for beginners\"), or things to avoid (\"no jargon,\" \"do not mention prices\"). Stating format and constraints up front saves rounds of revision and makes the result easy to check: you can see at once whether it has five bullets or is under 150 words.",
+     "feedback": "Format is the shape of the result."
+    },
+    {
+     "id": "S23-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Which is a CONSTRAINT?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"write a cover letter\""
+      },
+      {
+       "letter": "B",
+       "text": "\"for a hiring manager\""
+      },
+      {
+       "letter": "C",
+       "text": "\"to apply for a job\""
+      },
+      {
+       "letter": "D",
+       "text": "\"under 150 words\""
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "\"under 150 words\"",
+     "intro": "Besides saying what you want, say what the result should LOOK LIKE. The OUTPUT FORMAT is its shape: a bulleted list, a table with named columns, a three-paragraph letter, a numbered set of steps. CONSTRAINTS are limits it must respect: a length (\"under 150 words\"), a tone (\"friendly but professional\"), a reading level (\"for beginners\"), or things to avoid (\"no jargon,\" \"do not mention prices\"). Stating format and constraints up front saves rounds of revision and makes the result easy to check: you can see at once whether it has five bullets or is under 150 words.",
+     "feedback": "A length limit is a constraint."
+    },
+    {
+     "id": "S23-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "In this fictional example, which instruction did the response NOT follow?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Giving three tips"
+      },
+      {
+       "letter": "B",
+       "text": "Using a numbered list"
+      },
+      {
+       "letter": "C",
+       "text": "Keeping each tip under 15 words"
+      },
+      {
+       "letter": "D",
+       "text": "Keeping the topic on groceries"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Keeping each tip under 15 words",
+     "intro": "Besides saying what you want, say what the result should LOOK LIKE. The OUTPUT FORMAT is its shape: a bulleted list, a table with named columns, a three-paragraph letter, a numbered set of steps. CONSTRAINTS are limits it must respect: a length (\"under 150 words\"), a tone (\"friendly but professional\"), a reading level (\"for beginners\"), or things to avoid (\"no jargon,\" \"do not mention prices\"). Stating format and constraints up front saves rounds of revision and makes the result easy to check: you can see at once whether it has five bullets or is under 150 words.",
+     "feedback": "Tip 3 is far longer than 15 words.",
+     "example": {
+      "kind": "prompt_response",
+      "label": "Fictional example (prepared in advance; not a real AI output)",
+      "prompt": "List three tips for saving money on groceries. Use a numbered list. Keep each tip under 15 words.",
+      "response": "1. Plan your meals for the week before you go shopping.\n2. Compare unit prices instead of package prices on the shelf.\n3. Buy store brands, which are often cheaper than name brands, especially for basic items like flour, sugar, rice and canned vegetables."
+     }
+    },
+    {
+     "id": "S23-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Why does stating format up front help?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It saves revisions and makes checking easy"
+      },
+      {
+       "letter": "B",
+       "text": "It makes the tool respond more slowly"
+      },
+      {
+       "letter": "C",
+       "text": "It guarantees the facts are correct"
+      },
+      {
+       "letter": "D",
+       "text": "It lets you skip reading the result"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "It saves revisions and makes checking easy",
+     "intro": "Besides saying what you want, say what the result should LOOK LIKE. The OUTPUT FORMAT is its shape: a bulleted list, a table with named columns, a three-paragraph letter, a numbered set of steps. CONSTRAINTS are limits it must respect: a length (\"under 150 words\"), a tone (\"friendly but professional\"), a reading level (\"for beginners\"), or things to avoid (\"no jargon,\" \"do not mention prices\"). Stating format and constraints up front saves rounds of revision and makes the result easy to check: you can see at once whether it has five bullets or is under 150 words.",
+     "feedback": "A clear shape is quick to verify."
+    },
+    {
+     "id": "S23-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Which instruction is something to AVOID, a kind of constraint?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Explain the field trip.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Do not mention prices.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Write it for parents.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Make a checklist.\""
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "\"Do not mention prices.\"",
+     "intro": "Besides saying what you want, say what the result should LOOK LIKE. The OUTPUT FORMAT is its shape: a bulleted list, a table with named columns, a three-paragraph letter, a numbered set of steps. CONSTRAINTS are limits it must respect: a length (\"under 150 words\"), a tone (\"friendly but professional\"), a reading level (\"for beginners\"), or things to avoid (\"no jargon,\" \"do not mention prices\"). Stating format and constraints up front saves rounds of revision and makes the result easy to check: you can see at once whether it has five bullets or is under 150 words.",
+     "feedback": "An \"avoid\" rule is a constraint."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Turn a vague wish into a checkable instruction",
+   "questions": [
+    {
+     "id": "S23-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Which instruction is checkable?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Not too long\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Brief-ish\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Short\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Under 100 words\""
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "\"Under 100 words\"",
+     "intro": "A CHECKABLE instruction is one you can test by looking at the result. \"Short\" is vague: short to whom? \"Under 100 words\" is checkable: count and see. \"Nice looking\" is vague; \"a table with three columns\" is checkable. \"Friendly\" is partly vague, but \"no technical terms\" is easier to test. To turn a wish into a checkable instruction, ask: \"What would I look for to know it was done?\" Then write that down as the instruction.",
+     "feedback": "You can count to check it."
+    },
+    {
+     "id": "S23-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Which is the most checkable version of \"nice looking\"?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"A table with three columns\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Stylish\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Pretty and neat\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Very professional-looking\""
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "\"A table with three columns\"",
+     "intro": "A CHECKABLE instruction is one you can test by looking at the result. \"Short\" is vague: short to whom? \"Under 100 words\" is checkable: count and see. \"Nice looking\" is vague; \"a table with three columns\" is checkable. \"Friendly\" is partly vague, but \"no technical terms\" is easier to test. To turn a wish into a checkable instruction, ask: \"What would I look for to know it was done?\" Then write that down as the instruction.",
+     "feedback": "Columns can be counted."
+    },
+    {
+     "id": "S23-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "What question helps turn a wish into a checkable instruction?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"How do I sound polite?\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Which tool is cheapest this month?\""
+      },
+      {
+       "letter": "C",
+       "text": "\"How would I know it was done?\""
+      },
+      {
+       "letter": "D",
+       "text": "\"How fast can it answer?\""
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "\"How would I know it was done?\"",
+     "intro": "A CHECKABLE instruction is one you can test by looking at the result. \"Short\" is vague: short to whom? \"Under 100 words\" is checkable: count and see. \"Nice looking\" is vague; \"a table with three columns\" is checkable. \"Friendly\" is partly vague, but \"no technical terms\" is easier to test. To turn a wish into a checkable instruction, ask: \"What would I look for to know it was done?\" Then write that down as the instruction.",
+     "feedback": "Define what success looks like."
+    },
+    {
+     "id": "S23-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Which instruction is easier to test than \"friendly\"?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"No technical terms\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Happy-sounding\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Warm\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Kind and fun\""
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "\"No technical terms\"",
+     "intro": "A CHECKABLE instruction is one you can test by looking at the result. \"Short\" is vague: short to whom? \"Under 100 words\" is checkable: count and see. \"Nice looking\" is vague; \"a table with three columns\" is checkable. \"Friendly\" is partly vague, but \"no technical terms\" is easier to test. To turn a wish into a checkable instruction, ask: \"What would I look for to know it was done?\" Then write that down as the instruction.",
+     "feedback": "You can scan for technical terms."
+    },
+    {
+     "id": "S23-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Which result meets \"exactly five bullet points\"?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A paragraph with no bullets"
+      },
+      {
+       "letter": "B",
+       "text": "A list with four bullets"
+      },
+      {
+       "letter": "C",
+       "text": "A list with five bullets"
+      },
+      {
+       "letter": "D",
+       "text": "A list with seven bullets"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A list with five bullets",
+     "intro": "A CHECKABLE instruction is one you can test by looking at the result. \"Short\" is vague: short to whom? \"Under 100 words\" is checkable: count and see. \"Nice looking\" is vague; \"a table with three columns\" is checkable. \"Friendly\" is partly vague, but \"no technical terms\" is easier to test. To turn a wish into a checkable instruction, ask: \"What would I look for to know it was done?\" Then write that down as the instruction.",
+     "feedback": "Five bullets meets the instruction."
+    }
+   ],
+   "branch_mode": "underlying_skill",
+   "relationship": "A learner who misses MAIN often writes vague limits; practicing checkable instructions is the underlying skill."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Write format and constraints for real requests",
+   "questions": [
+    {
+     "id": "S23-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Lee needs a sign-up sheet for a car wash with columns for name, phone and time slot. Which instruction fits?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Make it look really nice and clean.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Make something people can sign up on, please.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Write a story about a car wash.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Make a table with columns Name, Phone and Time slot.\""
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "\"Make a table with columns Name, Phone and Time slot.\"",
+     "intro": "Besides saying what you want, say what the result should LOOK LIKE. The OUTPUT FORMAT is its shape: a bulleted list, a table with named columns, a three-paragraph letter, a numbered set of steps. CONSTRAINTS are limits it must respect: a length (\"under 150 words\"), a tone (\"friendly but professional\"), a reading level (\"for beginners\"), or things to avoid (\"no jargon,\" \"do not mention prices\"). Stating format and constraints up front saves rounds of revision and makes the result easy to check: you can see at once whether it has five bullets or is under 150 words.",
+     "feedback": "Named columns give a checkable format."
+    },
+    {
+     "id": "S23-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "A form allows only 280 characters. Which constraint should Ana state?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Use as many words as you need.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Under 280 characters, including spaces.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Keep it reasonably short and sweet.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Make it sound exciting.\""
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "\"Under 280 characters, including spaces.\"",
+     "intro": "Besides saying what you want, say what the result should LOOK LIKE. The OUTPUT FORMAT is its shape: a bulleted list, a table with named columns, a three-paragraph letter, a numbered set of steps. CONSTRAINTS are limits it must respect: a length (\"under 150 words\"), a tone (\"friendly but professional\"), a reading level (\"for beginners\"), or things to avoid (\"no jargon,\" \"do not mention prices\"). Stating format and constraints up front saves rounds of revision and makes the result easy to check: you can see at once whether it has five bullets or is under 150 words.",
+     "feedback": "State the exact limit."
+    },
+    {
+     "id": "S23-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "A coach wants practice drills a beginner can follow. Which constraint fits best?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Mention every famous athlete you know.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Any format is fine, whatever you like.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Numbered steps, no jargon, for beginners.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Make it as advanced as possible.\""
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "\"Numbered steps, no jargon, for beginners.\"",
+     "intro": "Besides saying what you want, say what the result should LOOK LIKE. The OUTPUT FORMAT is its shape: a bulleted list, a table with named columns, a three-paragraph letter, a numbered set of steps. CONSTRAINTS are limits it must respect: a length (\"under 150 words\"), a tone (\"friendly but professional\"), a reading level (\"for beginners\"), or things to avoid (\"no jargon,\" \"do not mention prices\"). Stating format and constraints up front saves rounds of revision and makes the result easy to check: you can see at once whether it has five bullets or is under 150 words.",
+     "feedback": "Format, vocabulary and level match the need."
+    },
+    {
+     "id": "S23-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Which request would produce a result that is easiest to check?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Some tips, please, as good as you can make them.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Give me some tips, not too many.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Write a lot of helpful tips.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"List exactly five tips, each under 20 words.\""
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "\"List exactly five tips, each under 20 words.\"",
+     "intro": "Besides saying what you want, say what the result should LOOK LIKE. The OUTPUT FORMAT is its shape: a bulleted list, a table with named columns, a three-paragraph letter, a numbered set of steps. CONSTRAINTS are limits it must respect: a length (\"under 150 words\"), a tone (\"friendly but professional\"), a reading level (\"for beginners\"), or things to avoid (\"no jargon,\" \"do not mention prices\"). Stating format and constraints up front saves rounds of revision and makes the result easy to check: you can see at once whether it has five bullets or is under 150 words.",
+     "feedback": "Exact counts and limits are easy to verify."
+    },
+    {
+     "id": "S23-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "A teacher wants a parent letter without mentioning grades. How should she say this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Do not mention grades.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Make it nice for parents.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Use good judgment on content.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Be careful about some topics.\""
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "\"Do not mention grades.\"",
+     "intro": "Besides saying what you want, say what the result should LOOK LIKE. The OUTPUT FORMAT is its shape: a bulleted list, a table with named columns, a three-paragraph letter, a numbered set of steps. CONSTRAINTS are limits it must respect: a length (\"under 150 words\"), a tone (\"friendly but professional\"), a reading level (\"for beginners\"), or things to avoid (\"no jargon,\" \"do not mention prices\"). Stating format and constraints up front saves rounds of revision and makes the result easy to check: you can see at once whether it has five bullets or is under 150 words.",
+     "feedback": "A clear \"avoid\" rule is easy to follow and check."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Check whether constraints were actually followed",
+   "questions": [
+    {
+     "id": "S23-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "A response says, \"Here is your summary in under 100 words,\" but it looks long. What should you do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Trust the claim, since it said it complied"
+      },
+      {
+       "letter": "B",
+       "text": "Count the words yourself"
+      },
+      {
+       "letter": "C",
+       "text": "Ask it to repeat the claim"
+      },
+      {
+       "letter": "D",
+       "text": "Assume all summaries are under 100 words"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Count the words yourself",
+     "intro": "Format and constraints work best when they are specific and checkable. \"Keep it short\" is vague; \"under 100 words\" can be checked. \"Make it look nice\" is vague; \"a table with columns Name, Date and Cost\" can be checked. Tools do not always follow every constraint, especially exact word counts or many rules at once, so check the result against each one. If a constraint really matters, such as a character limit for a form, verify it yourself rather than trusting the tool's claim that it complied.",
+     "feedback": "Verify constraints that matter."
+    },
+    {
+     "id": "S23-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "A request lists twelve formatting rules, and the result breaks two. What is a sensible next step?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Add twelve more rules"
+      },
+      {
+       "letter": "B",
+       "text": "Accept it without checking the rest"
+      },
+      {
+       "letter": "C",
+       "text": "Give up on using any formatting rules from now on"
+      },
+      {
+       "letter": "D",
+       "text": "Point out the two broken rules and ask for a fix"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Point out the two broken rules and ask for a fix",
+     "intro": "Format and constraints work best when they are specific and checkable. \"Keep it short\" is vague; \"under 100 words\" can be checked. \"Make it look nice\" is vague; \"a table with columns Name, Date and Cost\" can be checked. Tools do not always follow every constraint, especially exact word counts or many rules at once, so check the result against each one. If a constraint really matters, such as a character limit for a form, verify it yourself rather than trusting the tool's claim that it complied.",
+     "feedback": "Name specific failures and recheck."
+    },
+    {
+     "id": "S23-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Which version of \"keep it short\" can be checked?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Short and snappy, please\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Three sentences or fewer\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Brief, as usual\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Not wordy\""
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "\"Three sentences or fewer\"",
+     "intro": "Format and constraints work best when they are specific and checkable. \"Keep it short\" is vague; \"under 100 words\" can be checked. \"Make it look nice\" is vague; \"a table with columns Name, Date and Cost\" can be checked. Tools do not always follow every constraint, especially exact word counts or many rules at once, so check the result against each one. If a constraint really matters, such as a character limit for a form, verify it yourself rather than trusting the tool's claim that it complied.",
+     "feedback": "A sentence count can be checked."
+    },
+    {
+     "id": "S23-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "A grant form requires exactly 500 characters or fewer. The tool says its text is 480 characters. What is the safest action?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Check the character count before submitting"
+      },
+      {
+       "letter": "B",
+       "text": "Ask the tool if it is sure"
+      },
+      {
+       "letter": "C",
+       "text": "Make it longer to be safe"
+      },
+      {
+       "letter": "D",
+       "text": "Submit it, since the tool stated the count"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Check the character count before submitting",
+     "intro": "Format and constraints work best when they are specific and checkable. \"Keep it short\" is vague; \"under 100 words\" can be checked. \"Make it look nice\" is vague; \"a table with columns Name, Date and Cost\" can be checked. Tools do not always follow every constraint, especially exact word counts or many rules at once, so check the result against each one. If a constraint really matters, such as a character limit for a form, verify it yourself rather than trusting the tool's claim that it complied.",
+     "feedback": "Verify exact limits yourself."
+    },
+    {
+     "id": "S23-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Why might a tool miss an exact word count even when asked clearly?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Word counts are illegal to request"
+      },
+      {
+       "letter": "B",
+       "text": "Tools are designed to ignore every limit on purpose"
+      },
+      {
+       "letter": "C",
+       "text": "Exact counts are hard for it to track precisely"
+      },
+      {
+       "letter": "D",
+       "text": "Exact counts only work in other languages"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Exact counts are hard for it to track precisely",
+     "intro": "Format and constraints work best when they are specific and checkable. \"Keep it short\" is vague; \"under 100 words\" can be checked. \"Make it look nice\" is vague; \"a table with columns Name, Date and Cost\" can be checked. Tools do not always follow every constraint, especially exact word counts or many rules at once, so check the result against each one. If a constraint really matters, such as a character limit for a form, verify it yourself rather than trusting the tool's claim that it complied.",
+     "feedback": "Precise counting is a known weak spot; check it."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

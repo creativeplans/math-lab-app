@@ -1,0 +1,654 @@
+{
+ "set": 124,
+ "title": "Different fairness goals",
+ "outcome": "AI.FAIR.04",
+ "content_status": "stable",
+ "requires": [
+  122
+ ],
+ "module": "fairness",
+ "path_refs": [
+  "society"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Explain that fairness goals can conflict and require a decision",
+   "questions": [
+    {
+     "id": "S124-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "What does \"equal error rates\" aim for?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The same chance of being wrongly flagged in each group"
+      },
+      {
+       "letter": "B",
+       "text": "Faster answers"
+      },
+      {
+       "letter": "C",
+       "text": "No errors at all"
+      },
+      {
+       "letter": "D",
+       "text": "Exactly the same number of people approved in each group"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The same chance of being wrongly flagged in each group",
+     "intro": "\"Fair\" can mean different things, and the meanings can CONFLICT. One goal: EQUAL ERROR RATES, so each group faces the same chance of being wrongly flagged. Another: EQUAL SELECTION RATES, so each group is approved at the same rate. Another: CALIBRATION, where a score of \"70% likely\" means the same thing for every group. Researchers have shown that, when groups differ in underlying rates, these goals usually cannot all be met at once. So choosing a fairness goal is a DECISION about values that people must make and explain, not a purely technical setting.",
+     "feedback": "Equal mistakes."
+    },
+    {
+     "id": "S124-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "What does \"equal selection rates\" aim for?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A score that means the same in each group"
+      },
+      {
+       "letter": "B",
+       "text": "Each group approved at the same rate"
+      },
+      {
+       "letter": "C",
+       "text": "Fewer applications"
+      },
+      {
+       "letter": "D",
+       "text": "The same chance of being wrongly flagged by the system in each of the groups"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Each group approved at the same rate",
+     "intro": "\"Fair\" can mean different things, and the meanings can CONFLICT. One goal: EQUAL ERROR RATES, so each group faces the same chance of being wrongly flagged. Another: EQUAL SELECTION RATES, so each group is approved at the same rate. Another: CALIBRATION, where a score of \"70% likely\" means the same thing for every group. Researchers have shown that, when groups differ in underlying rates, these goals usually cannot all be met at once. So choosing a fairness goal is a DECISION about values that people must make and explain, not a purely technical setting.",
+     "feedback": "Equal approvals."
+    },
+    {
+     "id": "S124-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "What does calibration mean here?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A tool is fast"
+      },
+      {
+       "letter": "B",
+       "text": "Every group receives exactly the same score from the system, whatever the person's details"
+      },
+      {
+       "letter": "C",
+       "text": "A tool is cheap"
+      },
+      {
+       "letter": "D",
+       "text": "A score means the same thing for every group"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "A score means the same thing for every group",
+     "intro": "\"Fair\" can mean different things, and the meanings can CONFLICT. One goal: EQUAL ERROR RATES, so each group faces the same chance of being wrongly flagged. Another: EQUAL SELECTION RATES, so each group is approved at the same rate. Another: CALIBRATION, where a score of \"70% likely\" means the same thing for every group. Researchers have shown that, when groups differ in underlying rates, these goals usually cannot all be met at once. So choosing a fairness goal is a DECISION about values that people must make and explain, not a purely technical setting.",
+     "feedback": "Consistent meaning."
+    },
+    {
+     "id": "S124-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Can all these goals usually be met at once when groups differ?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes, always, as long as the engineers work hard enough on the system for long enough"
+      },
+      {
+       "letter": "B",
+       "text": "Only on weekends"
+      },
+      {
+       "letter": "C",
+       "text": "Usually not"
+      },
+      {
+       "letter": "D",
+       "text": "Yes, with more data"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Usually not",
+     "intro": "\"Fair\" can mean different things, and the meanings can CONFLICT. One goal: EQUAL ERROR RATES, so each group faces the same chance of being wrongly flagged. Another: EQUAL SELECTION RATES, so each group is approved at the same rate. Another: CALIBRATION, where a score of \"70% likely\" means the same thing for every group. Researchers have shown that, when groups differ in underlying rates, these goals usually cannot all be met at once. So choosing a fairness goal is a DECISION about values that people must make and explain, not a purely technical setting.",
+     "feedback": "They conflict."
+    },
+    {
+     "id": "S124-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "So what is choosing a fairness goal?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A purely technical setting that a computer chooses automatically with no human input"
+      },
+      {
+       "letter": "B",
+       "text": "A decision about values people must make"
+      },
+      {
+       "letter": "C",
+       "text": "Unimportant"
+      },
+      {
+       "letter": "D",
+       "text": "Impossible"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A decision about values people must make",
+     "intro": "\"Fair\" can mean different things, and the meanings can CONFLICT. One goal: EQUAL ERROR RATES, so each group faces the same chance of being wrongly flagged. Another: EQUAL SELECTION RATES, so each group is approved at the same rate. Another: CALIBRATION, where a score of \"70% likely\" means the same thing for every group. Researchers have shown that, when groups differ in underlying rates, these goals usually cannot all be met at once. So choosing a fairness goal is a DECISION about values that people must make and explain, not a purely technical setting.",
+     "feedback": "Human judgment."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare fairness goals with splitting a pizza",
+   "questions": [
+    {
+     "id": "S124-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "How many ideas of fair are in the example?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "One, because there is only ever one correct way to divide any pizza fairly"
+      },
+      {
+       "letter": "B",
+       "text": "Two"
+      },
+      {
+       "letter": "C",
+       "text": "None"
+      },
+      {
+       "letter": "D",
+       "text": "Three"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Three",
+     "intro": "Splitting a pizza \"fairly\" among friends can mean different things. EQUAL slices for everyone? Bigger slices for those who are hungrier? Slices based on who paid more? Each is a reasonable idea of fair, and you cannot do all three at once if people differ in hunger and payment. The group has to decide which idea to use, and explain it. AI fairness goals work the same way.",
+     "feedback": "Equal, need, payment."
+    },
+    {
+     "id": "S124-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Can all three ideas be met at once when people differ?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes, always"
+      },
+      {
+       "letter": "B",
+       "text": "Only for large pizzas"
+      },
+      {
+       "letter": "C",
+       "text": "No"
+      },
+      {
+       "letter": "D",
+       "text": "Yes, by cutting the pizza into a very large number of tiny slices for everyone"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "No",
+     "intro": "Splitting a pizza \"fairly\" among friends can mean different things. EQUAL slices for everyone? Bigger slices for those who are hungrier? Slices based on who paid more? Each is a reasonable idea of fair, and you cannot do all three at once if people differ in hunger and payment. The group has to decide which idea to use, and explain it. AI fairness goals work the same way.",
+     "feedback": "They conflict."
+    },
+    {
+     "id": "S124-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Who decides which idea to use?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The group"
+      },
+      {
+       "letter": "B",
+       "text": "The oven"
+      },
+      {
+       "letter": "C",
+       "text": "Nobody"
+      },
+      {
+       "letter": "D",
+       "text": "The pizza"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The group",
+     "intro": "Splitting a pizza \"fairly\" among friends can mean different things. EQUAL slices for everyone? Bigger slices for those who are hungrier? Slices based on who paid more? Each is a reasonable idea of fair, and you cannot do all three at once if people differ in hunger and payment. The group has to decide which idea to use, and explain it. AI fairness goals work the same way.",
+     "feedback": "People decide."
+    },
+    {
+     "id": "S124-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Is any of the three ideas unreasonable?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only equal slices is reasonable"
+      },
+      {
+       "letter": "B",
+       "text": "Only payment is reasonable"
+      },
+      {
+       "letter": "C",
+       "text": "No; each is reasonable"
+      },
+      {
+       "letter": "D",
+       "text": "Yes, all three are unreasonable"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "No; each is reasonable",
+     "intro": "Splitting a pizza \"fairly\" among friends can mean different things. EQUAL slices for everyone? Bigger slices for those who are hungrier? Slices based on who paid more? Each is a reasonable idea of fair, and you cannot do all three at once if people differ in hunger and payment. The group has to decide which idea to use, and explain it. AI fairness goals work the same way.",
+     "feedback": "Reasonable disagreement."
+    },
+    {
+     "id": "S124-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "What is the lesson for AI fairness?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "There is one correct fairness formula that every AI system should always use"
+      },
+      {
+       "letter": "B",
+       "text": "Pizza is unfair"
+      },
+      {
+       "letter": "C",
+       "text": "Fairness does not matter"
+      },
+      {
+       "letter": "D",
+       "text": "Different goals conflict; people must choose and explain"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Different goals conflict; people must choose and explain",
+     "intro": "Splitting a pizza \"fairly\" among friends can mean different things. EQUAL slices for everyone? Bigger slices for those who are hungrier? Slices based on who paid more? Each is a reasonable idea of fair, and you cannot do all three at once if people differ in hunger and payment. The group has to decide which idea to use, and explain it. AI fairness goals work the same way.",
+     "feedback": "A values decision."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who expects one correct fairness formula can compare fairness goals with splitting a pizza."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Reason about fairness goals in practice",
+   "questions": [
+    {
+     "id": "S124-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "A scholarship tool is tuned so each group is selected at the same rate. Which goal is this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No goal"
+      },
+      {
+       "letter": "B",
+       "text": "Equal selection rates"
+      },
+      {
+       "letter": "C",
+       "text": "Calibration, because the tool gives each student a score that means the same in every group"
+      },
+      {
+       "letter": "D",
+       "text": "Equal error rates"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Equal selection rates",
+     "intro": "\"Fair\" can mean different things, and the meanings can CONFLICT. One goal: EQUAL ERROR RATES, so each group faces the same chance of being wrongly flagged. Another: EQUAL SELECTION RATES, so each group is approved at the same rate. Another: CALIBRATION, where a score of \"70% likely\" means the same thing for every group. Researchers have shown that, when groups differ in underlying rates, these goals usually cannot all be met at once. So choosing a fairness goal is a DECISION about values that people must make and explain, not a purely technical setting.",
+     "feedback": "Same approval rate."
+    },
+    {
+     "id": "S124-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "A fraud tool is tuned so innocent people in each group are wrongly flagged equally often. Which goal?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Equal error rates"
+      },
+      {
+       "letter": "B",
+       "text": "Calibration"
+      },
+      {
+       "letter": "C",
+       "text": "None"
+      },
+      {
+       "letter": "D",
+       "text": "Equal selection rates"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Equal error rates",
+     "intro": "\"Fair\" can mean different things, and the meanings can CONFLICT. One goal: EQUAL ERROR RATES, so each group faces the same chance of being wrongly flagged. Another: EQUAL SELECTION RATES, so each group is approved at the same rate. Another: CALIBRATION, where a score of \"70% likely\" means the same thing for every group. Researchers have shown that, when groups differ in underlying rates, these goals usually cannot all be met at once. So choosing a fairness goal is a DECISION about values that people must make and explain, not a purely technical setting.",
+     "feedback": "Equal false flags."
+    },
+    {
+     "id": "S124-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "A team announces its tool is \"fair\" without saying which goal. What should you ask?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Who designed the logo?\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Does fair mean the tool is fast and cheap enough for every customer to use it daily?\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Fair by which definition?\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Is it new?\""
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "\"Fair by which definition?\"",
+     "intro": "\"Fair\" can mean different things, and the meanings can CONFLICT. One goal: EQUAL ERROR RATES, so each group faces the same chance of being wrongly flagged. Another: EQUAL SELECTION RATES, so each group is approved at the same rate. Another: CALIBRATION, where a score of \"70% likely\" means the same thing for every group. Researchers have shown that, when groups differ in underlying rates, these goals usually cannot all be met at once. So choosing a fairness goal is a DECISION about values that people must make and explain, not a purely technical setting.",
+     "feedback": "Definitions differ."
+    },
+    {
+     "id": "S124-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Improving equal selection rates makes error rates less equal. What is this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A trade-off between goals"
+      },
+      {
+       "letter": "B",
+       "text": "Proof fairness is impossible"
+      },
+      {
+       "letter": "C",
+       "text": "A sign the tool is broken"
+      },
+      {
+       "letter": "D",
+       "text": "A bug that will always be fixed by the next software update without any other changes"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "A trade-off between goals",
+     "intro": "\"Fair\" can mean different things, and the meanings can CONFLICT. One goal: EQUAL ERROR RATES, so each group faces the same chance of being wrongly flagged. Another: EQUAL SELECTION RATES, so each group is approved at the same rate. Another: CALIBRATION, where a score of \"70% likely\" means the same thing for every group. Researchers have shown that, when groups differ in underlying rates, these goals usually cannot all be met at once. So choosing a fairness goal is a DECISION about values that people must make and explain, not a purely technical setting.",
+     "feedback": "Goals conflict."
+    },
+    {
+     "id": "S124-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Which statement fits this course's approach?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Equal error rates is always right"
+      },
+      {
+       "letter": "B",
+       "text": "The choice of goal is open; explain whichever is chosen"
+      },
+      {
+       "letter": "C",
+       "text": "Fairness goals never matter"
+      },
+      {
+       "letter": "D",
+       "text": "Equal selection rates is the only correct fairness goal for every situation in every country"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The choice of goal is open; explain whichever is chosen",
+     "intro": "\"Fair\" can mean different things, and the meanings can CONFLICT. One goal: EQUAL ERROR RATES, so each group faces the same chance of being wrongly flagged. Another: EQUAL SELECTION RATES, so each group is approved at the same rate. Another: CALIBRATION, where a score of \"70% likely\" means the same thing for every group. Researchers have shown that, when groups differ in underlying rates, these goals usually cannot all be met at once. So choosing a fairness goal is a DECISION about values that people must make and explain, not a purely technical setting.",
+     "feedback": "Transparency, not a verdict."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Make fairness choices transparent",
+   "questions": [
+    {
+     "id": "S124-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "What should a team disclose about its fairness choice?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only the goal name"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing at all, because fairness choices are trade secrets that must never be shared"
+      },
+      {
+       "letter": "C",
+       "text": "Only the date"
+      },
+      {
+       "letter": "D",
+       "text": "Which goal, why, who was consulted and the trade-offs"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Which goal, why, who was consulted and the trade-offs",
+     "intro": "Reasonable people disagree about which goal matters most in a given setting, and this course does not settle that. What can be expected is transparency: say which goal was chosen, why, who was consulted, and what trade-offs it creates. Laws may also set requirements in some areas, such as hiring and lending. Revisit the choice as evidence and circumstances change.",
+     "feedback": "Full explanation."
+    },
+    {
+     "id": "S124-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Do reasonable people disagree about which fairness goal matters most?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only in movies"
+      },
+      {
+       "letter": "B",
+       "text": "Yes"
+      },
+      {
+       "letter": "C",
+       "text": "Only about pizza"
+      },
+      {
+       "letter": "D",
+       "text": "No, every expert in the world agrees on one single fairness goal for every situation"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Yes",
+     "intro": "Reasonable people disagree about which goal matters most in a given setting, and this course does not settle that. What can be expected is transparency: say which goal was chosen, why, who was consulted, and what trade-offs it creates. Laws may also set requirements in some areas, such as hiring and lending. Revisit the choice as evidence and circumstances change.",
+     "feedback": "Ongoing disagreement."
+    },
+    {
+     "id": "S124-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Can laws affect which fairness goals apply?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No, because laws never say anything at all about fairness in decisions made with AI tools"
+      },
+      {
+       "letter": "B",
+       "text": "Only outside the US"
+      },
+      {
+       "letter": "C",
+       "text": "Only for games"
+      },
+      {
+       "letter": "D",
+       "text": "Yes, in some areas such as hiring and lending"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Yes, in some areas such as hiring and lending",
+     "intro": "Reasonable people disagree about which goal matters most in a given setting, and this course does not settle that. What can be expected is transparency: say which goal was chosen, why, who was consulted, and what trade-offs it creates. Laws may also set requirements in some areas, such as hiring and lending. Revisit the choice as evidence and circumstances change.",
+     "feedback": "Legal requirements."
+    },
+    {
+     "id": "S124-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "When should a fairness choice be revisited?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "As evidence and circumstances change"
+      },
+      {
+       "letter": "B",
+       "text": "Only if sued"
+      },
+      {
+       "letter": "C",
+       "text": "Never, since a fairness choice made once is correct forever in every possible situation"
+      },
+      {
+       "letter": "D",
+       "text": "Every minute"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "As evidence and circumstances change",
+     "intro": "Reasonable people disagree about which goal matters most in a given setting, and this course does not settle that. What can be expected is transparency: say which goal was chosen, why, who was consulted, and what trade-offs it creates. Laws may also set requirements in some areas, such as hiring and lending. Revisit the choice as evidence and circumstances change.",
+     "feedback": "Ongoing review."
+    },
+    {
+     "id": "S124-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Society: bias, fairness and access",
+     "type": "mc",
+     "prompt": "Who should be consulted about a fairness choice?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only investors"
+      },
+      {
+       "letter": "B",
+       "text": "No one"
+      },
+      {
+       "letter": "C",
+       "text": "People affected by the decisions"
+      },
+      {
+       "letter": "D",
+       "text": "Only the engineers who built the system, since nobody else understands fairness"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "People affected by the decisions",
+     "intro": "Reasonable people disagree about which goal matters most in a given setting, and this course does not settle that. What can be expected is transparency: say which goal was chosen, why, who was consulted, and what trade-offs it creates. Laws may also set requirements in some areas, such as hiring and lending. Revisit the choice as evidence and circumstances change.",
+     "feedback": "Include affected people."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

@@ -1,0 +1,660 @@
+{
+ "set": 87,
+ "title": "Requirements and edge cases",
+ "outcome": "AI.CODE.03",
+ "content_status": "stable",
+ "requires": [
+  85
+ ],
+ "module": "code",
+ "path_refs": [
+  "coding"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "State requirements clearly, including edge cases",
+   "questions": [
+    {
+     "id": "S87-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What is a requirement?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A guess about what users want"
+      },
+      {
+       "letter": "B",
+       "text": "A list of the programming languages that the programmer would personally prefer to use"
+      },
+      {
+       "letter": "C",
+       "text": "A checkable statement of what code must do"
+      },
+      {
+       "letter": "D",
+       "text": "The program's file name"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A checkable statement of what code must do",
+     "intro": "A REQUIREMENT says what the code must do, stated clearly enough to check: \"Given a list of test scores from 0 to 100, return the average rounded to one decimal place.\" EDGE CASES are unusual inputs that often break code: an EMPTY input (no scores), ZERO, NEGATIVE numbers, very LARGE values, MISSING or WRONG-TYPE data (a score typed as \"ninety\"), and BOUNDARY values exactly at a limit (0 and 100). When you ask a tool for code, state the requirement and the edge cases, and say what should happen for each, such as \"if the list is empty, return 0 and do not crash.\"",
+     "feedback": "Clear, checkable."
+    },
+    {
+     "id": "S87-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Which is an edge case for a test-score average?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "An empty list of scores"
+      },
+      {
+       "letter": "B",
+       "text": "A list of ten scores"
+      },
+      {
+       "letter": "C",
+       "text": "Scores of 80 and 85"
+      },
+      {
+       "letter": "D",
+       "text": "A typical list of five scores between 70 and 90, like the ones most classes have"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "An empty list of scores",
+     "intro": "A REQUIREMENT says what the code must do, stated clearly enough to check: \"Given a list of test scores from 0 to 100, return the average rounded to one decimal place.\" EDGE CASES are unusual inputs that often break code: an EMPTY input (no scores), ZERO, NEGATIVE numbers, very LARGE values, MISSING or WRONG-TYPE data (a score typed as \"ninety\"), and BOUNDARY values exactly at a limit (0 and 100). When you ask a tool for code, state the requirement and the edge cases, and say what should happen for each, such as \"if the list is empty, return 0 and do not crash.\"",
+     "feedback": "Empty input often breaks code."
+    },
+    {
+     "id": "S87-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "In this example, which input would break the function?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Zoe\""
+      },
+      {
+       "letter": "B",
+       "text": "An empty name \"\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Al\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Maya,\" since names with four letters are too long for this function to handle correctly"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "An empty name \"\"",
+     "intro": "A REQUIREMENT says what the code must do, stated clearly enough to check: \"Given a list of test scores from 0 to 100, return the average rounded to one decimal place.\" EDGE CASES are unusual inputs that often break code: an EMPTY input (no scores), ZERO, NEGATIVE numbers, very LARGE values, MISSING or WRONG-TYPE data (a score typed as \"ninety\"), and BOUNDARY values exactly at a limit (0 and 100). When you ask a tool for code, state the requirement and the edge cases, and say what should happen for each, such as \"if the list is empty, return 0 and do not crash.\"",
+     "feedback": "name[0] fails when there is no first letter.",
+     "example": {
+      "kind": "code",
+      "label": "Prepared code example (Python 3). Shown only; nothing runs.",
+      "code": "def first_letter(name):\n    return name[0]\n\nprint(first_letter(\"Maya\"))",
+      "language": "Python 3"
+     }
+    },
+    {
+     "id": "S87-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Which is a boundary value for scores from 0 to 100?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "72"
+      },
+      {
+       "letter": "B",
+       "text": "57, because it is close to the middle of the allowed range of scores"
+      },
+      {
+       "letter": "C",
+       "text": "85"
+      },
+      {
+       "letter": "D",
+       "text": "100"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "100",
+     "intro": "A REQUIREMENT says what the code must do, stated clearly enough to check: \"Given a list of test scores from 0 to 100, return the average rounded to one decimal place.\" EDGE CASES are unusual inputs that often break code: an EMPTY input (no scores), ZERO, NEGATIVE numbers, very LARGE values, MISSING or WRONG-TYPE data (a score typed as \"ninety\"), and BOUNDARY values exactly at a limit (0 and 100). When you ask a tool for code, state the requirement and the edge cases, and say what should happen for each, such as \"if the list is empty, return 0 and do not crash.\"",
+     "feedback": "Exactly at the limit."
+    },
+    {
+     "id": "S87-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Which request includes an edge-case rule?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"If the list is empty, return 0 and do not crash.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Use good names.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Make it fast.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Write the code for the average quickly, and make it look clean and professional.\""
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "\"If the list is empty, return 0 and do not crash.\"",
+     "intro": "A REQUIREMENT says what the code must do, stated clearly enough to check: \"Given a list of test scores from 0 to 100, return the average rounded to one decimal place.\" EDGE CASES are unusual inputs that often break code: an EMPTY input (no scores), ZERO, NEGATIVE numbers, very LARGE values, MISSING or WRONG-TYPE data (a score typed as \"ninety\"), and BOUNDARY values exactly at a limit (0 and 100). When you ask a tool for code, state the requirement and the edge cases, and say what should happen for each, such as \"if the list is empty, return 0 and do not crash.\"",
+     "feedback": "Says what to do in an unusual case."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare edge cases with testing a door lock",
+   "questions": [
+    {
+     "id": "S87-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Why does a locksmith try the wrong key?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "To save time"
+      },
+      {
+       "letter": "B",
+       "text": "To see how the lock handles unusual situations"
+      },
+      {
+       "letter": "C",
+       "text": "To damage the lock"
+      },
+      {
+       "letter": "D",
+       "text": "Because the right key never works on any new lock"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "To see how the lock handles unusual situations",
+     "intro": "When a locksmith tests a new lock, they do not only try the right key once. They try the wrong key, no key, a key pushed in halfway, turning it very hard, and the lock in freezing weather. These UNUSUAL situations are where locks fail. Edge cases in code are the same idea: the unusual inputs, such as empty, zero, negative or wrong-type, where code is most likely to break.",
+     "feedback": "Test unusual cases."
+    },
+    {
+     "id": "S87-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "\"No key at all\" is like which code input?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A very large number"
+      },
+      {
+       "letter": "B",
+       "text": "A typical input that the code was mainly written to handle on a normal day"
+      },
+      {
+       "letter": "C",
+       "text": "An empty input"
+      },
+      {
+       "letter": "D",
+       "text": "A correct name"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "An empty input",
+     "intro": "When a locksmith tests a new lock, they do not only try the right key once. They try the wrong key, no key, a key pushed in halfway, turning it very hard, and the lock in freezing weather. These UNUSUAL situations are where locks fail. Edge cases in code are the same idea: the unusual inputs, such as empty, zero, negative or wrong-type, where code is most likely to break.",
+     "feedback": "Nothing provided."
+    },
+    {
+     "id": "S87-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Freezing weather is like what in code?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A comment"
+      },
+      {
+       "letter": "B",
+       "text": "A variable name"
+      },
+      {
+       "letter": "C",
+       "text": "Normal use"
+      },
+      {
+       "letter": "D",
+       "text": "Unusual conditions"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Unusual conditions",
+     "intro": "When a locksmith tests a new lock, they do not only try the right key once. They try the wrong key, no key, a key pushed in halfway, turning it very hard, and the lock in freezing weather. These UNUSUAL situations are where locks fail. Edge cases in code are the same idea: the unusual inputs, such as empty, zero, negative or wrong-type, where code is most likely to break.",
+     "feedback": "Stress conditions."
+    },
+    {
+     "id": "S87-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Where do locks and code most often fail?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "In unusual situations"
+      },
+      {
+       "letter": "B",
+       "text": "Never"
+      },
+      {
+       "letter": "C",
+       "text": "Only on weekends"
+      },
+      {
+       "letter": "D",
+       "text": "In the most common situation, the one that the designer tested most carefully"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "In unusual situations",
+     "intro": "When a locksmith tests a new lock, they do not only try the right key once. They try the wrong key, no key, a key pushed in halfway, turning it very hard, and the lock in freezing weather. These UNUSUAL situations are where locks fail. Edge cases in code are the same idea: the unusual inputs, such as empty, zero, negative or wrong-type, where code is most likely to break.",
+     "feedback": "Edge cases."
+    },
+    {
+     "id": "S87-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What is the lesson for code?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only test long inputs"
+      },
+      {
+       "letter": "B",
+       "text": "Never test code"
+      },
+      {
+       "letter": "C",
+       "text": "Test only the normal input once, because unusual inputs never happen in real life"
+      },
+      {
+       "letter": "D",
+       "text": "Test unusual inputs, not just the normal one"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Test unusual inputs, not just the normal one",
+     "intro": "When a locksmith tests a new lock, they do not only try the right key once. They try the wrong key, no key, a key pushed in halfway, turning it very hard, and the lock in freezing weather. These UNUSUAL situations are where locks fail. Edge cases in code are the same idea: the unusual inputs, such as empty, zero, negative or wrong-type, where code is most likely to break.",
+     "feedback": "Edge cases matter."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner unsure what edge cases are can compare them with testing a lock in unusual ways."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Write requirements with edge cases in practice",
+   "questions": [
+    {
+     "id": "S87-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Ben asks: \"Write code to split a bill.\" What key detail is missing?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The restaurant's address"
+      },
+      {
+       "letter": "B",
+       "text": "Which color to use for the numbers on the screen when the result is finally shown"
+      },
+      {
+       "letter": "C",
+       "text": "How many people and how to round"
+      },
+      {
+       "letter": "D",
+       "text": "The programmer's name"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "How many people and how to round",
+     "intro": "A REQUIREMENT says what the code must do, stated clearly enough to check: \"Given a list of test scores from 0 to 100, return the average rounded to one decimal place.\" EDGE CASES are unusual inputs that often break code: an EMPTY input (no scores), ZERO, NEGATIVE numbers, very LARGE values, MISSING or WRONG-TYPE data (a score typed as \"ninety\"), and BOUNDARY values exactly at a limit (0 and 100). When you ask a tool for code, state the requirement and the edge cases, and say what should happen for each, such as \"if the list is empty, return 0 and do not crash.\"",
+     "feedback": "Inputs and rounding rules."
+    },
+    {
+     "id": "S87-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A function divides a total by the number of people. Which edge case matters most?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Three people"
+      },
+      {
+       "letter": "B",
+       "text": "Zero people"
+      },
+      {
+       "letter": "C",
+       "text": "Two people"
+      },
+      {
+       "letter": "D",
+       "text": "Four people"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Zero people",
+     "intro": "A REQUIREMENT says what the code must do, stated clearly enough to check: \"Given a list of test scores from 0 to 100, return the average rounded to one decimal place.\" EDGE CASES are unusual inputs that often break code: an EMPTY input (no scores), ZERO, NEGATIVE numbers, very LARGE values, MISSING or WRONG-TYPE data (a score typed as \"ninety\"), and BOUNDARY values exactly at a limit (0 and 100). When you ask a tool for code, state the requirement and the edge cases, and say what should happen for each, such as \"if the list is empty, return 0 and do not crash.\"",
+     "feedback": "Dividing by zero crashes."
+    },
+    {
+     "id": "S87-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Which requirement is clearest?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Make the price thing work properly with tax and everything else that might be needed.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Do prices.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Handle tax.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Return the total price including 8% tax, rounded to cents.\""
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "\"Return the total price including 8% tax, rounded to cents.\"",
+     "intro": "A REQUIREMENT says what the code must do, stated clearly enough to check: \"Given a list of test scores from 0 to 100, return the average rounded to one decimal place.\" EDGE CASES are unusual inputs that often break code: an EMPTY input (no scores), ZERO, NEGATIVE numbers, very LARGE values, MISSING or WRONG-TYPE data (a score typed as \"ninety\"), and BOUNDARY values exactly at a limit (0 and 100). When you ask a tool for code, state the requirement and the edge cases, and say what should happen for each, such as \"if the list is empty, return 0 and do not crash.\"",
+     "feedback": "Specific and checkable."
+    },
+    {
+     "id": "S87-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A form asks for age. Which input is a wrong-type edge case?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "15"
+      },
+      {
+       "letter": "B",
+       "text": "\"twelve\" typed as a word"
+      },
+      {
+       "letter": "C",
+       "text": "30"
+      },
+      {
+       "letter": "D",
+       "text": "12, typed as a whole number in the box exactly the way the form designers expected"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "\"twelve\" typed as a word",
+     "intro": "A REQUIREMENT says what the code must do, stated clearly enough to check: \"Given a list of test scores from 0 to 100, return the average rounded to one decimal place.\" EDGE CASES are unusual inputs that often break code: an EMPTY input (no scores), ZERO, NEGATIVE numbers, very LARGE values, MISSING or WRONG-TYPE data (a score typed as \"ninety\"), and BOUNDARY values exactly at a limit (0 and 100). When you ask a tool for code, state the requirement and the edge cases, and say what should happen for each, such as \"if the list is empty, return 0 and do not crash.\"",
+     "feedback": "Text where a number is expected."
+    },
+    {
+     "id": "S87-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A score must be from 0 to 100. Which two inputs test the boundaries?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "60 and 61"
+      },
+      {
+       "letter": "B",
+       "text": "20 and 30"
+      },
+      {
+       "letter": "C",
+       "text": "0 and 100"
+      },
+      {
+       "letter": "D",
+       "text": "50 and 75"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "0 and 100",
+     "intro": "A REQUIREMENT says what the code must do, stated clearly enough to check: \"Given a list of test scores from 0 to 100, return the average rounded to one decimal place.\" EDGE CASES are unusual inputs that often break code: an EMPTY input (no scores), ZERO, NEGATIVE numbers, very LARGE values, MISSING or WRONG-TYPE data (a score typed as \"ninety\"), and BOUNDARY values exactly at a limit (0 and 100). When you ask a tool for code, state the requirement and the edge cases, and say what should happen for each, such as \"if the list is empty, return 0 and do not crash.\"",
+     "feedback": "Exactly at the limits."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Fill gaps in requirements before coding",
+   "questions": [
+    {
+     "id": "S87-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "\"Sort the names\" leaves which question open?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Alphabetical or by length?"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing, since every program in the world sorts names in exactly the same order"
+      },
+      {
+       "letter": "C",
+       "text": "Which font to show"
+      },
+      {
+       "letter": "D",
+       "text": "Which keyboard to use"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Alphabetical or by length?",
+     "intro": "Unstated requirements get filled in by guesses. \"Sort the names\" leaves open: alphabetical or by length? Uppercase before lowercase? What about \"Ana\" and \"ana\"? A tool will pick something, and it may not be what you need. Write down examples of inputs with the expected outputs; these EXAMPLES double as tests later. If you are not sure what should happen in a case, decide that first, because the code cannot be right about a rule nobody chose.",
+     "feedback": "Unstated rules get guessed."
+    },
+    {
+     "id": "S87-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Why write input examples with expected outputs?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because tools need exactly ten examples"
+      },
+      {
+       "letter": "B",
+       "text": "They clarify the requirement and become tests"
+      },
+      {
+       "letter": "C",
+       "text": "Because examples make the code run faster on every computer that it is installed on"
+      },
+      {
+       "letter": "D",
+       "text": "To make the request longer"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "They clarify the requirement and become tests",
+     "intro": "Unstated requirements get filled in by guesses. \"Sort the names\" leaves open: alphabetical or by length? Uppercase before lowercase? What about \"Ana\" and \"ana\"? A tool will pick something, and it may not be what you need. Write down examples of inputs with the expected outputs; these EXAMPLES double as tests later. If you are not sure what should happen in a case, decide that first, because the code cannot be right about a rule nobody chose.",
+     "feedback": "Examples double as tests."
+    },
+    {
+     "id": "S87-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "You are unsure whether \"Ana\" and \"ana\" count as the same name. What should you do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Delete one of the names"
+      },
+      {
+       "letter": "B",
+       "text": "Ignore the question"
+      },
+      {
+       "letter": "C",
+       "text": "Let the tool decide quietly"
+      },
+      {
+       "letter": "D",
+       "text": "Decide the rule before coding"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Decide the rule before coding",
+     "intro": "Unstated requirements get filled in by guesses. \"Sort the names\" leaves open: alphabetical or by length? Uppercase before lowercase? What about \"Ana\" and \"ana\"? A tool will pick something, and it may not be what you need. Write down examples of inputs with the expected outputs; these EXAMPLES double as tests later. If you are not sure what should happen in a case, decide that first, because the code cannot be right about a rule nobody chose.",
+     "feedback": "Choose the rule first."
+    },
+    {
+     "id": "S87-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What happens when a requirement is unstated?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The tool fills it with a guess"
+      },
+      {
+       "letter": "B",
+       "text": "The tool always asks you a question first and never guesses anything on its own"
+      },
+      {
+       "letter": "C",
+       "text": "The code refuses to run"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing at all"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The tool fills it with a guess",
+     "intro": "Unstated requirements get filled in by guesses. \"Sort the names\" leaves open: alphabetical or by length? Uppercase before lowercase? What about \"Ana\" and \"ana\"? A tool will pick something, and it may not be what you need. Write down examples of inputs with the expected outputs; these EXAMPLES double as tests later. If you are not sure what should happen in a case, decide that first, because the code cannot be right about a rule nobody chose.",
+     "feedback": "Guesses may not fit."
+    },
+    {
+     "id": "S87-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Which example helps clarify \"remove extra spaces\"?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Make the text look tidier and cleaner by fixing any problems with spacing in it\""
+      },
+      {
+       "letter": "B",
+       "text": "\"hello\" stays \"hello\""
+      },
+      {
+       "letter": "C",
+       "text": "\"  hi   there \" becomes \"hi there\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Spaces are bad\""
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "\"  hi   there \" becomes \"hi there\"",
+     "intro": "Unstated requirements get filled in by guesses. \"Sort the names\" leaves open: alphabetical or by length? Uppercase before lowercase? What about \"Ana\" and \"ana\"? A tool will pick something, and it may not be what you need. Write down examples of inputs with the expected outputs; these EXAMPLES double as tests later. If you are not sure what should happen in a case, decide that first, because the code cannot be right about a rule nobody chose.",
+     "feedback": "Concrete input and output."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

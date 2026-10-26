@@ -1,0 +1,655 @@
+{
+ "set": 96,
+ "title": "Goals, tools, plans and stopping",
+ "outcome": "AI.AGENT.02",
+ "content_status": "stable",
+ "requires": [
+  95
+ ],
+ "module": "agents",
+ "path_refs": [
+  "coding",
+  "work"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Describe an agent's goal, tools, plan, feedback and stopping condition",
+   "questions": [
+    {
+     "id": "S96-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "\"Find three venues under 500 dollars for 40 people\" is which part?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Tool, because finding venues is something that a search tool does for the agent"
+      },
+      {
+       "letter": "B",
+       "text": "Goal"
+      },
+      {
+       "letter": "C",
+       "text": "Feedback"
+      },
+      {
+       "letter": "D",
+       "text": "Stopping condition"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Goal",
+     "intro": "An agent can be described with five parts. GOAL: what it is trying to achieve (\"find three venues under 500 dollars for 40 people\"). TOOLS: what it can use (search, calendar, email). PLAN: the steps it chooses (search, compare, list). FEEDBACK: the results it checks to decide what next (a venue is full, so look again). STOPPING CONDITION: when it must stop (three venues found, 20 searches done, or a question it cannot answer). A vague goal or missing stopping condition can make an agent wander, repeat steps, or take actions nobody intended.",
+     "feedback": "What it is trying to achieve."
+    },
+    {
+     "id": "S96-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Search, calendar and email are which part?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Plan"
+      },
+      {
+       "letter": "B",
+       "text": "Feedback"
+      },
+      {
+       "letter": "C",
+       "text": "Goals, since the agent is trying to use search, calendar and email as its main aims"
+      },
+      {
+       "letter": "D",
+       "text": "Tools"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Tools",
+     "intro": "An agent can be described with five parts. GOAL: what it is trying to achieve (\"find three venues under 500 dollars for 40 people\"). TOOLS: what it can use (search, calendar, email). PLAN: the steps it chooses (search, compare, list). FEEDBACK: the results it checks to decide what next (a venue is full, so look again). STOPPING CONDITION: when it must stop (three venues found, 20 searches done, or a question it cannot answer). A vague goal or missing stopping condition can make an agent wander, repeat steps, or take actions nobody intended.",
+     "feedback": "What it can use."
+    },
+    {
+     "id": "S96-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "\"A venue is full, so look again\" is which part?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Goal, because looking again for another venue is the main thing the agent wants to do"
+      },
+      {
+       "letter": "B",
+       "text": "Tool"
+      },
+      {
+       "letter": "C",
+       "text": "Feedback"
+      },
+      {
+       "letter": "D",
+       "text": "Stopping condition"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Feedback",
+     "intro": "An agent can be described with five parts. GOAL: what it is trying to achieve (\"find three venues under 500 dollars for 40 people\"). TOOLS: what it can use (search, calendar, email). PLAN: the steps it chooses (search, compare, list). FEEDBACK: the results it checks to decide what next (a venue is full, so look again). STOPPING CONDITION: when it must stop (three venues found, 20 searches done, or a question it cannot answer). A vague goal or missing stopping condition can make an agent wander, repeat steps, or take actions nobody intended.",
+     "feedback": "Results guide next steps."
+    },
+    {
+     "id": "S96-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "\"Stop after 20 searches\" is which part?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Stopping condition"
+      },
+      {
+       "letter": "B",
+       "text": "Goal"
+      },
+      {
+       "letter": "C",
+       "text": "Tool"
+      },
+      {
+       "letter": "D",
+       "text": "Plan, because twenty searches is the list of steps the agent chooses to take in order"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Stopping condition",
+     "intro": "An agent can be described with five parts. GOAL: what it is trying to achieve (\"find three venues under 500 dollars for 40 people\"). TOOLS: what it can use (search, calendar, email). PLAN: the steps it chooses (search, compare, list). FEEDBACK: the results it checks to decide what next (a venue is full, so look again). STOPPING CONDITION: when it must stop (three venues found, 20 searches done, or a question it cannot answer). A vague goal or missing stopping condition can make an agent wander, repeat steps, or take actions nobody intended.",
+     "feedback": "When to stop."
+    },
+    {
+     "id": "S96-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "What can a missing stopping condition cause?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Fewer tools"
+      },
+      {
+       "letter": "B",
+       "text": "A shorter plan"
+      },
+      {
+       "letter": "C",
+       "text": "Wandering or repeating steps"
+      },
+      {
+       "letter": "D",
+       "text": "Faster and better results"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Wandering or repeating steps",
+     "intro": "An agent can be described with five parts. GOAL: what it is trying to achieve (\"find three venues under 500 dollars for 40 people\"). TOOLS: what it can use (search, calendar, email). PLAN: the steps it chooses (search, compare, list). FEEDBACK: the results it checks to decide what next (a venue is full, so look again). STOPPING CONDITION: when it must stop (three venues found, 20 searches done, or a question it cannot answer). A vague goal or missing stopping condition can make an agent wander, repeat steps, or take actions nobody intended.",
+     "feedback": "No clear end."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare an agent's parts with sending someone grocery shopping",
+   "questions": [
+    {
+     "id": "S96-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "\"Ingredients for tacos for 6\" is which part?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Feedback"
+      },
+      {
+       "letter": "B",
+       "text": "Goal"
+      },
+      {
+       "letter": "C",
+       "text": "Plan, since it lists the exact order of the stores the friend will visit"
+      },
+      {
+       "letter": "D",
+       "text": "Tool"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Goal",
+     "intro": "Sending a friend shopping has the same parts. GOAL: \"ingredients for tacos for 6.\" TOOLS: your list, money and a car. PLAN: which stores and aisles. FEEDBACK: \"they are out of tortillas, so try the bakery.\" STOPPING CONDITION: \"come back once you have everything or after spending 40 dollars.\" Without that last part, your friend might drive to five stores looking for one item.",
+     "feedback": "The aim."
+    },
+    {
+     "id": "S96-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Money and a car are which part?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Stopping condition"
+      },
+      {
+       "letter": "B",
+       "text": "Goals, because the friend is trying to get money and a car during the trip"
+      },
+      {
+       "letter": "C",
+       "text": "Feedback"
+      },
+      {
+       "letter": "D",
+       "text": "Tools"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Tools",
+     "intro": "Sending a friend shopping has the same parts. GOAL: \"ingredients for tacos for 6.\" TOOLS: your list, money and a car. PLAN: which stores and aisles. FEEDBACK: \"they are out of tortillas, so try the bakery.\" STOPPING CONDITION: \"come back once you have everything or after spending 40 dollars.\" Without that last part, your friend might drive to five stores looking for one item.",
+     "feedback": "What can be used."
+    },
+    {
+     "id": "S96-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "\"Out of tortillas, so try the bakery\" is which part?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Feedback"
+      },
+      {
+       "letter": "B",
+       "text": "Stopping condition, since running out of tortillas means the shopping is finished"
+      },
+      {
+       "letter": "C",
+       "text": "Goal"
+      },
+      {
+       "letter": "D",
+       "text": "Tool"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Feedback",
+     "intro": "Sending a friend shopping has the same parts. GOAL: \"ingredients for tacos for 6.\" TOOLS: your list, money and a car. PLAN: which stores and aisles. FEEDBACK: \"they are out of tortillas, so try the bakery.\" STOPPING CONDITION: \"come back once you have everything or after spending 40 dollars.\" Without that last part, your friend might drive to five stores looking for one item.",
+     "feedback": "Results change the plan."
+    },
+    {
+     "id": "S96-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "\"Come back after spending 40 dollars\" is which part?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Tool"
+      },
+      {
+       "letter": "B",
+       "text": "Feedback"
+      },
+      {
+       "letter": "C",
+       "text": "Stopping condition"
+      },
+      {
+       "letter": "D",
+       "text": "Goal, because spending forty dollars is the main reason for going shopping at all"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Stopping condition",
+     "intro": "Sending a friend shopping has the same parts. GOAL: \"ingredients for tacos for 6.\" TOOLS: your list, money and a car. PLAN: which stores and aisles. FEEDBACK: \"they are out of tortillas, so try the bakery.\" STOPPING CONDITION: \"come back once you have everything or after spending 40 dollars.\" Without that last part, your friend might drive to five stores looking for one item.",
+     "feedback": "A budget limit."
+    },
+    {
+     "id": "S96-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "What happens without a stopping condition?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Your friend may keep searching too long"
+      },
+      {
+       "letter": "B",
+       "text": "The tacos taste better"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing changes"
+      },
+      {
+       "letter": "D",
+       "text": "Your friend will always come back sooner"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Your friend may keep searching too long",
+     "intro": "Sending a friend shopping has the same parts. GOAL: \"ingredients for tacos for 6.\" TOOLS: your list, money and a car. PLAN: which stores and aisles. FEEDBACK: \"they are out of tortillas, so try the bakery.\" STOPPING CONDITION: \"come back once you have everything or after spending 40 dollars.\" Without that last part, your friend might drive to five stores looking for one item.",
+     "feedback": "No clear end."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner unsure of an agent's parts can map them onto sending a friend to the grocery store."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Describe and improve agent setups in practice",
+   "questions": [
+    {
+     "id": "S96-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "An agent is told \"organize my inbox\" with no other details. What is missing?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "More tools, because an agent with access to more tools always understands vague goals"
+      },
+      {
+       "letter": "B",
+       "text": "A clear goal and stopping condition"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing"
+      },
+      {
+       "letter": "D",
+       "text": "A shorter name"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A clear goal and stopping condition",
+     "intro": "An agent can be described with five parts. GOAL: what it is trying to achieve (\"find three venues under 500 dollars for 40 people\"). TOOLS: what it can use (search, calendar, email). PLAN: the steps it chooses (search, compare, list). FEEDBACK: the results it checks to decide what next (a venue is full, so look again). STOPPING CONDITION: when it must stop (three venues found, 20 searches done, or a question it cannot answer). A vague goal or missing stopping condition can make an agent wander, repeat steps, or take actions nobody intended.",
+     "feedback": "Vague goals wander."
+    },
+    {
+     "id": "S96-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Which stopping condition is clearest?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Stop whenever you feel that the inbox looks nice and organized enough to be useful.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Stop sometime.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Never stop.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Stop after sorting 200 emails or 10 minutes.\""
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "\"Stop after sorting 200 emails or 10 minutes.\"",
+     "intro": "An agent can be described with five parts. GOAL: what it is trying to achieve (\"find three venues under 500 dollars for 40 people\"). TOOLS: what it can use (search, calendar, email). PLAN: the steps it chooses (search, compare, list). FEEDBACK: the results it checks to decide what next (a venue is full, so look again). STOPPING CONDITION: when it must stop (three venues found, 20 searches done, or a question it cannot answer). A vague goal or missing stopping condition can make an agent wander, repeat steps, or take actions nobody intended.",
+     "feedback": "Measurable limits."
+    },
+    {
+     "id": "S96-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "An agent searching for flights finds one sold out and searches again. What part is at work?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Feedback"
+      },
+      {
+       "letter": "B",
+       "text": "Stopping condition"
+      },
+      {
+       "letter": "C",
+       "text": "Goal, because a sold-out flight is a new goal that the agent must achieve next"
+      },
+      {
+       "letter": "D",
+       "text": "Tool"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Feedback",
+     "intro": "An agent can be described with five parts. GOAL: what it is trying to achieve (\"find three venues under 500 dollars for 40 people\"). TOOLS: what it can use (search, calendar, email). PLAN: the steps it chooses (search, compare, list). FEEDBACK: the results it checks to decide what next (a venue is full, so look again). STOPPING CONDITION: when it must stop (three venues found, 20 searches done, or a question it cannot answer). A vague goal or missing stopping condition can make an agent wander, repeat steps, or take actions nobody intended.",
+     "feedback": "Results guide next steps."
+    },
+    {
+     "id": "S96-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "An agent can use a calendar but not email. Which part does this describe?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Goal"
+      },
+      {
+       "letter": "B",
+       "text": "Plan, because using the calendar is the first step that the agent will take"
+      },
+      {
+       "letter": "C",
+       "text": "Tools"
+      },
+      {
+       "letter": "D",
+       "text": "Feedback"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Tools",
+     "intro": "An agent can be described with five parts. GOAL: what it is trying to achieve (\"find three venues under 500 dollars for 40 people\"). TOOLS: what it can use (search, calendar, email). PLAN: the steps it chooses (search, compare, list). FEEDBACK: the results it checks to decide what next (a venue is full, so look again). STOPPING CONDITION: when it must stop (three venues found, 20 searches done, or a question it cannot answer). A vague goal or missing stopping condition can make an agent wander, repeat steps, or take actions nobody intended.",
+     "feedback": "What it can use."
+    },
+    {
+     "id": "S96-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Before a high-stakes task, what is a sensible request?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Act as fast as possible.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Show me your plan before acting.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Use every tool you can.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Go ahead with whatever plan you think is best, and tell me about it next week.\""
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "\"Show me your plan before acting.\"",
+     "intro": "An agent can be described with five parts. GOAL: what it is trying to achieve (\"find three venues under 500 dollars for 40 people\"). TOOLS: what it can use (search, calendar, email). PLAN: the steps it chooses (search, compare, list). FEEDBACK: the results it checks to decide what next (a venue is full, so look again). STOPPING CONDITION: when it must stop (three venues found, 20 searches done, or a question it cannot answer). A vague goal or missing stopping condition can make an agent wander, repeat steps, or take actions nobody intended.",
+     "feedback": "Review the plan first."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Prevent misread goals and runaway loops",
+   "questions": [
+    {
+     "id": "S96-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "An agent told \"get the most sign-ups\" sends ten emails to each person. What went wrong?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The sign-up form was wrong"
+      },
+      {
+       "letter": "B",
+       "text": "The emails were too short"
+      },
+      {
+       "letter": "C",
+       "text": "The agent was broken"
+      },
+      {
+       "letter": "D",
+       "text": "The goal had no limits"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The goal had no limits",
+     "intro": "Goals can be misread. \"Get the most sign-ups\" might lead an agent to send far too many emails, because nothing said not to. Good goals include LIMITS (\"no more than one email per person\") and say what to do when uncertain (\"ask me before contacting anyone new\"). A stopping condition should include a budget of time, steps or money, so a confused agent stops instead of looping. Ask the agent to report its plan before acting when the stakes are high.",
+     "feedback": "Add limits to goals."
+    },
+    {
+     "id": "S96-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Which goal includes a useful limit?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Invite as many people as you possibly can, using any method you think will work.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Do your best.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Invite club members, no more than one email each.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Invite people.\""
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "\"Invite club members, no more than one email each.\"",
+     "intro": "Goals can be misread. \"Get the most sign-ups\" might lead an agent to send far too many emails, because nothing said not to. Good goals include LIMITS (\"no more than one email per person\") and say what to do when uncertain (\"ask me before contacting anyone new\"). A stopping condition should include a budget of time, steps or money, so a confused agent stops instead of looping. Ask the agent to report its plan before acting when the stakes are high.",
+     "feedback": "Bounded goal."
+    },
+    {
+     "id": "S96-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "What should a stopping condition include?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A budget of time, steps or money"
+      },
+      {
+       "letter": "B",
+       "text": "Only a friendly message"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing specific, since agents always know by themselves when it is the right time to stop"
+      },
+      {
+       "letter": "D",
+       "text": "A longer goal"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "A budget of time, steps or money",
+     "intro": "Goals can be misread. \"Get the most sign-ups\" might lead an agent to send far too many emails, because nothing said not to. Good goals include LIMITS (\"no more than one email per person\") and say what to do when uncertain (\"ask me before contacting anyone new\"). A stopping condition should include a budget of time, steps or money, so a confused agent stops instead of looping. Ask the agent to report its plan before acting when the stakes are high.",
+     "feedback": "Hard limits."
+    },
+    {
+     "id": "S96-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "An agent keeps repeating the same search without progress. What would have prevented this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A faster computer"
+      },
+      {
+       "letter": "B",
+       "text": "A longer goal"
+      },
+      {
+       "letter": "C",
+       "text": "Giving the agent more tools to use"
+      },
+      {
+       "letter": "D",
+       "text": "A step limit in its stopping condition"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "A step limit in its stopping condition",
+     "intro": "Goals can be misread. \"Get the most sign-ups\" might lead an agent to send far too many emails, because nothing said not to. Good goals include LIMITS (\"no more than one email per person\") and say what to do when uncertain (\"ask me before contacting anyone new\"). A stopping condition should include a budget of time, steps or money, so a confused agent stops instead of looping. Ask the agent to report its plan before acting when the stakes are high.",
+     "feedback": "Stop instead of loop."
+    },
+    {
+     "id": "S96-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Which instruction tells an agent what to do when unsure?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Use your best judgment always.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Ask me before contacting anyone new.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Never ask questions.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Guess whenever you are unsure, and keep going until the whole task is finished.\""
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "\"Ask me before contacting anyone new.\"",
+     "intro": "Goals can be misread. \"Get the most sign-ups\" might lead an agent to send far too many emails, because nothing said not to. Good goals include LIMITS (\"no more than one email per person\") and say what to do when uncertain (\"ask me before contacting anyone new\"). A stopping condition should include a budget of time, steps or money, so a confused agent stops instead of looping. Ask the agent to report its plan before acting when the stakes are high.",
+     "feedback": "A checkpoint for uncertainty."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

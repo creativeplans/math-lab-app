@@ -1,0 +1,717 @@
+{
+ "set": 119,
+ "title": "Human review and rubrics",
+ "outcome": "AI.EVAL.06",
+ "content_status": "stable",
+ "requires": [
+  118
+ ],
+ "module": "evaluation",
+ "path_refs": [
+  "work",
+  "coding"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Use a rubric for human review and look for failures",
+   "questions": [
+    {
+     "id": "S119-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What is a rubric?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A type of model"
+      },
+      {
+       "letter": "B",
+       "text": "A single overall impression of whether an answer feels good or bad to the reviewer"
+      },
+      {
+       "letter": "C",
+       "text": "A list of criteria with levels for scoring"
+      },
+      {
+       "letter": "D",
+       "text": "A price chart"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A list of criteria with levels for scoring",
+     "intro": "Some outputs, such as summaries, letters or explanations, cannot be scored as simply right or wrong. Use a RUBRIC: a short list of criteria with levels, such as ACCURATE (no false claims), COMPLETE (covers the key points), CLEAR (easy to follow) and APPROPRIATE (right tone and length), each scored 0 to 2. Reviewers apply the same rubric to every output. And be wary of DEMONSTRATIONS: a demo shows chosen examples that work. Good evaluation looks for FAILURES on purpose, using hard and unusual cases.",
+     "feedback": "Structured criteria."
+    },
+    {
+     "id": "S119-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "In this prepared example, what is the total score out of 8?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "6"
+      },
+      {
+       "letter": "B",
+       "text": "4"
+      },
+      {
+       "letter": "C",
+       "text": "5"
+      },
+      {
+       "letter": "D",
+       "text": "8, because every criterion was at least partly met, which counts as a full score"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "6",
+     "intro": "Some outputs, such as summaries, letters or explanations, cannot be scored as simply right or wrong. Use a RUBRIC: a short list of criteria with levels, such as ACCURATE (no false claims), COMPLETE (covers the key points), CLEAR (easy to follow) and APPROPRIATE (right tone and length), each scored 0 to 2. Reviewers apply the same rubric to every output. And be wary of DEMONSTRATIONS: a demo shows chosen examples that work. Good evaluation looks for FAILURES on purpose, using hard and unusual cases.",
+     "feedback": "1 + 2 + 2 + 1 = 6.",
+     "example": {
+      "kind": "table",
+      "label": "Prepared example (a fictional rubric score for one AI-written reminder)",
+      "table": [
+       [
+        "Criterion",
+        "Score (0-2)",
+        "Reviewer note"
+       ],
+       [
+        "Accurate",
+        "1",
+        "One date is wrong"
+       ],
+       [
+        "Complete",
+        "2",
+        "All key points present"
+       ],
+       [
+        "Clear",
+        "2",
+        "Easy to follow"
+       ],
+       [
+        "Appropriate",
+        "1",
+        "Too long for a text message"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "S119-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "In the same example, which criterion found a factual problem?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Complete"
+      },
+      {
+       "letter": "B",
+       "text": "Accurate"
+      },
+      {
+       "letter": "C",
+       "text": "Appropriate, because a reminder that is too long for a text message is a factual error"
+      },
+      {
+       "letter": "D",
+       "text": "Clear"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Accurate",
+     "intro": "Some outputs, such as summaries, letters or explanations, cannot be scored as simply right or wrong. Use a RUBRIC: a short list of criteria with levels, such as ACCURATE (no false claims), COMPLETE (covers the key points), CLEAR (easy to follow) and APPROPRIATE (right tone and length), each scored 0 to 2. Reviewers apply the same rubric to every output. And be wary of DEMONSTRATIONS: a demo shows chosen examples that work. Good evaluation looks for FAILURES on purpose, using hard and unusual cases.",
+     "feedback": "A wrong date.",
+     "example": {
+      "kind": "table",
+      "label": "Prepared example (a fictional rubric score for one AI-written reminder)",
+      "table": [
+       [
+        "Criterion",
+        "Score (0-2)",
+        "Reviewer note"
+       ],
+       [
+        "Accurate",
+        "1",
+        "One date is wrong"
+       ],
+       [
+        "Complete",
+        "2",
+        "All key points present"
+       ],
+       [
+        "Clear",
+        "2",
+        "Easy to follow"
+       ],
+       [
+        "Appropriate",
+        "1",
+        "Too long for a text message"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "S119-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Why be wary of demonstrations?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because they are free"
+      },
+      {
+       "letter": "B",
+       "text": "Because demonstrations always use fake tools that do not exist in real life"
+      },
+      {
+       "letter": "C",
+       "text": "Because they are too long"
+      },
+      {
+       "letter": "D",
+       "text": "They show chosen examples that work"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "They show chosen examples that work",
+     "intro": "Some outputs, such as summaries, letters or explanations, cannot be scored as simply right or wrong. Use a RUBRIC: a short list of criteria with levels, such as ACCURATE (no false claims), COMPLETE (covers the key points), CLEAR (easy to follow) and APPROPRIATE (right tone and length), each scored 0 to 2. Reviewers apply the same rubric to every output. And be wary of DEMONSTRATIONS: a demo shows chosen examples that work. Good evaluation looks for FAILURES on purpose, using hard and unusual cases.",
+     "feedback": "Selected successes."
+    },
+    {
+     "id": "S119-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What does good evaluation look for on purpose?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only short answers"
+      },
+      {
+       "letter": "B",
+       "text": "Only the fastest answers"
+      },
+      {
+       "letter": "C",
+       "text": "Failures"
+      },
+      {
+       "letter": "D",
+       "text": "Only successes"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Failures",
+     "intro": "Some outputs, such as summaries, letters or explanations, cannot be scored as simply right or wrong. Use a RUBRIC: a short list of criteria with levels, such as ACCURATE (no false claims), COMPLETE (covers the key points), CLEAR (easy to follow) and APPROPRIATE (right tone and length), each scored 0 to 2. Reviewers apply the same rubric to every output. And be wary of DEMONSTRATIONS: a demo shows chosen examples that work. Good evaluation looks for FAILURES on purpose, using hard and unusual cases.",
+     "feedback": "Seek problems."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Score an output with a rubric",
+   "questions": [
+    {
+     "id": "S119-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "The note names the wrong gift. What is the Accurate score?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "1"
+      },
+      {
+       "letter": "B",
+       "text": "0"
+      },
+      {
+       "letter": "C",
+       "text": "2, since naming a gift at all shows that the note is generally accurate"
+      },
+      {
+       "letter": "D",
+       "text": "3"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "0",
+     "intro": "To score with a rubric: (1) read the output once fully. (2) For each criterion, decide the level, 0 (not met), 1 (partly met) or 2 (fully met), and write a short reason. (3) Add the scores. Example criteria for a thank-you note: Accurate (names the right gift), Warm (friendly tone), Brief (under 80 words). A note naming the wrong gift, friendly, 60 words: Accurate 0, Warm 2, Brief 2, total 4 of 6.",
+     "feedback": "Not met."
+    },
+    {
+     "id": "S119-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "The note is friendly. What is the Warm score?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "1"
+      },
+      {
+       "letter": "B",
+       "text": "0, because a friendly tone cannot make up for naming the wrong gift in the note"
+      },
+      {
+       "letter": "C",
+       "text": "3"
+      },
+      {
+       "letter": "D",
+       "text": "2"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "2",
+     "intro": "To score with a rubric: (1) read the output once fully. (2) For each criterion, decide the level, 0 (not met), 1 (partly met) or 2 (fully met), and write a short reason. (3) Add the scores. Example criteria for a thank-you note: Accurate (names the right gift), Warm (friendly tone), Brief (under 80 words). A note naming the wrong gift, friendly, 60 words: Accurate 0, Warm 2, Brief 2, total 4 of 6.",
+     "feedback": "Fully met."
+    },
+    {
+     "id": "S119-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "The note has 60 words. What is the Brief score?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "2"
+      },
+      {
+       "letter": "B",
+       "text": "3"
+      },
+      {
+       "letter": "C",
+       "text": "1, since sixty words is quite long for a thank-you note, even though it is under eighty"
+      },
+      {
+       "letter": "D",
+       "text": "0"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "2",
+     "intro": "To score with a rubric: (1) read the output once fully. (2) For each criterion, decide the level, 0 (not met), 1 (partly met) or 2 (fully met), and write a short reason. (3) Add the scores. Example criteria for a thank-you note: Accurate (names the right gift), Warm (friendly tone), Brief (under 80 words). A note naming the wrong gift, friendly, 60 words: Accurate 0, Warm 2, Brief 2, total 4 of 6.",
+     "feedback": "60 is under 80."
+    },
+    {
+     "id": "S119-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What is the total?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "5 of 6"
+      },
+      {
+       "letter": "B",
+       "text": "2 of 6"
+      },
+      {
+       "letter": "C",
+       "text": "4 of 6"
+      },
+      {
+       "letter": "D",
+       "text": "6 of 6"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "4 of 6",
+     "intro": "To score with a rubric: (1) read the output once fully. (2) For each criterion, decide the level, 0 (not met), 1 (partly met) or 2 (fully met), and write a short reason. (3) Add the scores. Example criteria for a thank-you note: Accurate (names the right gift), Warm (friendly tone), Brief (under 80 words). A note naming the wrong gift, friendly, 60 words: Accurate 0, Warm 2, Brief 2, total 4 of 6.",
+     "feedback": "0 + 2 + 2 = 4."
+    },
+    {
+     "id": "S119-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What should accompany each score?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A drawing"
+      },
+      {
+       "letter": "B",
+       "text": "A short reason"
+      },
+      {
+       "letter": "C",
+       "text": "A long essay about the reviewer's personal feelings toward thank-you notes in general"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A short reason",
+     "intro": "To score with a rubric: (1) read the output once fully. (2) For each criterion, decide the level, 0 (not met), 1 (partly met) or 2 (fully met), and write a short reason. (3) Add the scores. Example criteria for a thank-you note: Accurate (names the right gift), Warm (friendly tone), Brief (under 80 words). A note naming the wrong gift, friendly, 60 words: Accurate 0, Warm 2, Brief 2, total 4 of 6.",
+     "feedback": "Explain the score."
+    }
+   ],
+   "branch_mode": "underlying_skill",
+   "relationship": "A learner unsure how to apply a rubric practices the underlying skill of scoring each criterion with a reason."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Use rubrics and failure-seeking in practice",
+   "questions": [
+    {
+     "id": "S119-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "A vendor demo shows five perfect summaries. What should a buyer do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Test it on hard, real documents"
+      },
+      {
+       "letter": "B",
+       "text": "Ask for the same five again"
+      },
+      {
+       "letter": "C",
+       "text": "Trust the vendor"
+      },
+      {
+       "letter": "D",
+       "text": "Buy it immediately"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Test it on hard, real documents",
+     "intro": "Some outputs, such as summaries, letters or explanations, cannot be scored as simply right or wrong. Use a RUBRIC: a short list of criteria with levels, such as ACCURATE (no false claims), COMPLETE (covers the key points), CLEAR (easy to follow) and APPROPRIATE (right tone and length), each scored 0 to 2. Reviewers apply the same rubric to every output. And be wary of DEMONSTRATIONS: a demo shows chosen examples that work. Good evaluation looks for FAILURES on purpose, using hard and unusual cases.",
+     "feedback": "Seek failures."
+    },
+    {
+     "id": "S119-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Which rubric criterion is most specific?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Is nice\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Feels right\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Is good quality overall and generally pleasant to read for most people who see it\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Includes the deadline and the fee\""
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "\"Includes the deadline and the fee\"",
+     "intro": "Some outputs, such as summaries, letters or explanations, cannot be scored as simply right or wrong. Use a RUBRIC: a short list of criteria with levels, such as ACCURATE (no false claims), COMPLETE (covers the key points), CLEAR (easy to follow) and APPROPRIATE (right tone and length), each scored 0 to 2. Reviewers apply the same rubric to every output. And be wary of DEMONSTRATIONS: a demo shows chosen examples that work. Good evaluation looks for FAILURES on purpose, using hard and unusual cases.",
+     "feedback": "Specific and checkable."
+    },
+    {
+     "id": "S119-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Two reviewers score the same letter 2 and 0 on \"Clear.\" What does this suggest?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The criterion may be unclear"
+      },
+      {
+       "letter": "B",
+       "text": "That rubrics never work"
+      },
+      {
+       "letter": "C",
+       "text": "That the letter is perfect"
+      },
+      {
+       "letter": "D",
+       "text": "That one of the two reviewers is lying about the score that they gave to the letter"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The criterion may be unclear",
+     "intro": "Some outputs, such as summaries, letters or explanations, cannot be scored as simply right or wrong. Use a RUBRIC: a short list of criteria with levels, such as ACCURATE (no false claims), COMPLETE (covers the key points), CLEAR (easy to follow) and APPROPRIATE (right tone and length), each scored 0 to 2. Reviewers apply the same rubric to every output. And be wary of DEMONSTRATIONS: a demo shows chosen examples that work. Good evaluation looks for FAILURES on purpose, using hard and unusual cases.",
+     "feedback": "Refine the criterion."
+    },
+    {
+     "id": "S119-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Which test case seeks failure for a meeting summarizer?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A meeting about the weather"
+      },
+      {
+       "letter": "B",
+       "text": "A one-sentence meeting"
+      },
+      {
+       "letter": "C",
+       "text": "A short meeting where one person reads an agenda and everyone agrees on everything"
+      },
+      {
+       "letter": "D",
+       "text": "A meeting where people disagree and change plans"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "A meeting where people disagree and change plans",
+     "intro": "Some outputs, such as summaries, letters or explanations, cannot be scored as simply right or wrong. Use a RUBRIC: a short list of criteria with levels, such as ACCURATE (no false claims), COMPLETE (covers the key points), CLEAR (easy to follow) and APPROPRIATE (right tone and length), each scored 0 to 2. Reviewers apply the same rubric to every output. And be wary of DEMONSTRATIONS: a demo shows chosen examples that work. Good evaluation looks for FAILURES on purpose, using hard and unusual cases.",
+     "feedback": "Hard case."
+    },
+    {
+     "id": "S119-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "A reviewer scores 50 outputs in one sitting and later scores become generous. What helps?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Removing the rubric"
+      },
+      {
+       "letter": "B",
+       "text": "Shorter review sessions"
+      },
+      {
+       "letter": "C",
+       "text": "Scoring without reading"
+      },
+      {
+       "letter": "D",
+       "text": "Longer sessions"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Shorter review sessions",
+     "intro": "Some outputs, such as summaries, letters or explanations, cannot be scored as simply right or wrong. Use a RUBRIC: a short list of criteria with levels, such as ACCURATE (no false claims), COMPLETE (covers the key points), CLEAR (easy to follow) and APPROPRIATE (right tone and length), each scored 0 to 2. Reviewers apply the same rubric to every output. And be wary of DEMONSTRATIONS: a demo shows chosen examples that work. Good evaluation looks for FAILURES on purpose, using hard and unusual cases.",
+     "feedback": "Avoid fatigue."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Keep rubric review reliable",
+   "questions": [
+    {
+     "id": "S119-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Why have two reviewers score the same outputs?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "To avoid writing criteria"
+      },
+      {
+       "letter": "B",
+       "text": "To make the review take twice as long, which always improves the final results"
+      },
+      {
+       "letter": "C",
+       "text": "To reveal unclear criteria"
+      },
+      {
+       "letter": "D",
+       "text": "To hide disagreements"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "To reveal unclear criteria",
+     "intro": "Rubrics work better when criteria are specific (\"names the deadline and the fee\") rather than vague (\"good quality\"). Two reviewers scoring the same outputs and comparing results reveals unclear criteria; if they disagree often, refine the rubric. Reviewers get tired and start scoring leniently, so keep review sessions short. Record examples of each score level so new reviewers can calibrate.",
+     "feedback": "Check agreement."
+    },
+    {
+     "id": "S119-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What helps new reviewers score consistently?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only the final total"
+      },
+      {
+       "letter": "B",
+       "text": "Telling them to score however they feel, without any examples or written criteria"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing"
+      },
+      {
+       "letter": "D",
+       "text": "Examples of each score level"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Examples of each score level",
+     "intro": "Rubrics work better when criteria are specific (\"names the deadline and the fee\") rather than vague (\"good quality\"). Two reviewers scoring the same outputs and comparing results reveals unclear criteria; if they disagree often, refine the rubric. Reviewers get tired and start scoring leniently, so keep review sessions short. Record examples of each score level so new reviewers can calibrate.",
+     "feedback": "Calibration examples."
+    },
+    {
+     "id": "S119-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Why do vague criteria cause problems?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because they cannot be written"
+      },
+      {
+       "letter": "B",
+       "text": "Reviewers interpret them differently"
+      },
+      {
+       "letter": "C",
+       "text": "Because vague criteria are shorter and therefore take less time to read and apply"
+      },
+      {
+       "letter": "D",
+       "text": "Because they are always too strict"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Reviewers interpret them differently",
+     "intro": "Rubrics work better when criteria are specific (\"names the deadline and the fee\") rather than vague (\"good quality\"). Two reviewers scoring the same outputs and comparing results reveals unclear criteria; if they disagree often, refine the rubric. Reviewers get tired and start scoring leniently, so keep review sessions short. Record examples of each score level so new reviewers can calibrate.",
+     "feedback": "Inconsistent scoring."
+    },
+    {
+     "id": "S119-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Reviewers disagree often. What should you do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Average their scores and never look at the rubric again, since averages fix disagreement"
+      },
+      {
+       "letter": "B",
+       "text": "Fire a reviewer"
+      },
+      {
+       "letter": "C",
+       "text": "Refine the rubric"
+      },
+      {
+       "letter": "D",
+       "text": "Stop reviewing"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Refine the rubric",
+     "intro": "Rubrics work better when criteria are specific (\"names the deadline and the fee\") rather than vague (\"good quality\"). Two reviewers scoring the same outputs and comparing results reveals unclear criteria; if they disagree often, refine the rubric. Reviewers get tired and start scoring leniently, so keep review sessions short. Record examples of each score level so new reviewers can calibrate.",
+     "feedback": "Clarify criteria."
+    },
+    {
+     "id": "S119-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Why does reviewer fatigue matter?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Tired reviewers score more leniently"
+      },
+      {
+       "letter": "B",
+       "text": "It only affects speed"
+      },
+      {
+       "letter": "C",
+       "text": "It does not matter"
+      },
+      {
+       "letter": "D",
+       "text": "Tired reviewers always score more harshly"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Tired reviewers score more leniently",
+     "intro": "Rubrics work better when criteria are specific (\"names the deadline and the fee\") rather than vague (\"good quality\"). Two reviewers scoring the same outputs and comparing results reveals unclear criteria; if they disagree often, refine the rubric. Reviewers get tired and start scoring leniently, so keep review sessions short. Record examples of each score level so new reviewers can calibrate.",
+     "feedback": "Consistency drops."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

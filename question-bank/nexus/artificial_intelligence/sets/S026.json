@@ -1,0 +1,664 @@
+{
+ "set": 26,
+ "title": "Asking for clarification and assumptions",
+ "outcome": "AI.PROMPT.05",
+ "content_status": "stable",
+ "requires": [
+  22
+ ],
+ "module": "prompting",
+ "path_refs": [
+  "everyday",
+  "creative",
+  "coding",
+  "work",
+  "society"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Ask for clarifying questions or stated assumptions",
+   "questions": [
+    {
+     "id": "S26-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "In this fictional example, what did the response do with missing details?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It guessed the guest count, budget and place"
+      },
+      {
+       "letter": "B",
+       "text": "It listed its assumptions clearly at the top"
+      },
+      {
+       "letter": "C",
+       "text": "It asked clarifying questions first"
+      },
+      {
+       "letter": "D",
+       "text": "It refused to answer the request"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "It guessed the guest count, budget and place",
+     "intro": "When a request is missing information, a tool usually fills the gaps with GUESSES, and it may not tell you it guessed. You can change that. Ask it to ASK CLARIFYING QUESTIONS first (\"Before you answer, ask me up to three questions about anything unclear\"), or to STATE ITS ASSUMPTIONS (\"List any assumptions you made at the top\"). Both make hidden guesses visible so you can correct them. This is especially useful when details matter, such as dates, budgets, audiences or rules, and when you are not sure what information the tool needs.",
+     "feedback": "Gaps were filled with unstated guesses.",
+     "example": {
+      "kind": "prompt_response",
+      "label": "Fictional example (prepared in advance; not a real AI output)",
+      "prompt": "Plan a birthday party for my son.",
+      "response": "Here is a plan for a party with 25 guests, a 600-dollar budget, held at a bowling alley on Saturday afternoon. Start with bowling at 2 p.m., then pizza and cake at 4 p.m., and party favors at 5 p.m."
+     }
+    },
+    {
+     "id": "S26-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Which added sentence would make hidden guesses visible?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Use bullet points.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"List any assumptions you made at the top.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Make the plan sound exciting and fun.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Keep it under 100 words.\""
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "\"List any assumptions you made at the top.\"",
+     "intro": "When a request is missing information, a tool usually fills the gaps with GUESSES, and it may not tell you it guessed. You can change that. Ask it to ASK CLARIFYING QUESTIONS first (\"Before you answer, ask me up to three questions about anything unclear\"), or to STATE ITS ASSUMPTIONS (\"List any assumptions you made at the top\"). Both make hidden guesses visible so you can correct them. This is especially useful when details matter, such as dates, budgets, audiences or rules, and when you are not sure what information the tool needs.",
+     "feedback": "Asking for assumptions reveals guesses."
+    },
+    {
+     "id": "S26-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "What does \"Ask me up to three questions before you answer\" do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Forces the tool to stop answering forever"
+      },
+      {
+       "letter": "B",
+       "text": "Proves the answer will be correct"
+      },
+      {
+       "letter": "C",
+       "text": "Lets the tool collect missing details first"
+      },
+      {
+       "letter": "D",
+       "text": "Makes the answer three times longer"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Lets the tool collect missing details first",
+     "intro": "When a request is missing information, a tool usually fills the gaps with GUESSES, and it may not tell you it guessed. You can change that. Ask it to ASK CLARIFYING QUESTIONS first (\"Before you answer, ask me up to three questions about anything unclear\"), or to STATE ITS ASSUMPTIONS (\"List any assumptions you made at the top\"). Both make hidden guesses visible so you can correct them. This is especially useful when details matter, such as dates, budgets, audiences or rules, and when you are not sure what information the tool needs.",
+     "feedback": "Questions gather information before the answer."
+    },
+    {
+     "id": "S26-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "When is asking for assumptions especially useful?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "When you already supplied every detail"
+      },
+      {
+       "letter": "B",
+       "text": "When you want a random poem"
+      },
+      {
+       "letter": "C",
+       "text": "When you will not read the answer"
+      },
+      {
+       "letter": "D",
+       "text": "When details like dates or budgets matter"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "When details like dates or budgets matter",
+     "intro": "When a request is missing information, a tool usually fills the gaps with GUESSES, and it may not tell you it guessed. You can change that. Ask it to ASK CLARIFYING QUESTIONS first (\"Before you answer, ask me up to three questions about anything unclear\"), or to STATE ITS ASSUMPTIONS (\"List any assumptions you made at the top\"). Both make hidden guesses visible so you can correct them. This is especially useful when details matter, such as dates, budgets, audiences or rules, and when you are not sure what information the tool needs.",
+     "feedback": "Important details deserve visible assumptions."
+    },
+    {
+     "id": "S26-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Why can unstated guesses be a problem?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Tools never guess"
+      },
+      {
+       "letter": "B",
+       "text": "You may not notice them and act on them"
+      },
+      {
+       "letter": "C",
+       "text": "Guesses make answers shorter than needed"
+      },
+      {
+       "letter": "D",
+       "text": "Guesses are always correct"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "You may not notice them and act on them",
+     "intro": "When a request is missing information, a tool usually fills the gaps with GUESSES, and it may not tell you it guessed. You can change that. Ask it to ASK CLARIFYING QUESTIONS first (\"Before you answer, ask me up to three questions about anything unclear\"), or to STATE ITS ASSUMPTIONS (\"List any assumptions you made at the top\"). Both make hidden guesses visible so you can correct them. This is especially useful when details matter, such as dates, budgets, audiences or rules, and when you are not sure what information the tool needs.",
+     "feedback": "Hidden guesses can mislead."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Spot what information is missing from a request",
+   "questions": [
+    {
+     "id": "S26-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "\"Book a table for dinner.\" Which detail is missing?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "That it is a booking"
+      },
+      {
+       "letter": "B",
+       "text": "That a table is wanted"
+      },
+      {
+       "letter": "C",
+       "text": "That it is for dinner"
+      },
+      {
+       "letter": "D",
+       "text": "How many people and when"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "How many people and when",
+     "intro": "A quick way to find gaps is to ask the \"W\" questions about a request: WHO is it for or about? WHAT exactly is needed? WHEN is it due or happening? WHERE? HOW MUCH (budget, length, number)? Any important \"W\" with no answer is a gap the tool will fill by guessing. Example: \"Book a table for dinner\" is missing who (how many people), when (date and time) and where (which area or restaurant).",
+     "feedback": "Who and when are missing."
+    },
+    {
+     "id": "S26-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "\"Plan a trip to the coast.\" Which \"W\" is answered?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Where (the coast)"
+      },
+      {
+       "letter": "B",
+       "text": "When"
+      },
+      {
+       "letter": "C",
+       "text": "How much money"
+      },
+      {
+       "letter": "D",
+       "text": "Who is going"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Where (the coast)",
+     "intro": "A quick way to find gaps is to ask the \"W\" questions about a request: WHO is it for or about? WHAT exactly is needed? WHEN is it due or happening? WHERE? HOW MUCH (budget, length, number)? Any important \"W\" with no answer is a gap the tool will fill by guessing. Example: \"Book a table for dinner\" is missing who (how many people), when (date and time) and where (which area or restaurant).",
+     "feedback": "Only where is given."
+    },
+    {
+     "id": "S26-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "\"Write a 200-word bio for my website.\" Which detail is answered?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "When it is needed"
+      },
+      {
+       "letter": "B",
+       "text": "What tone to use"
+      },
+      {
+       "letter": "C",
+       "text": "How much (200 words)"
+      },
+      {
+       "letter": "D",
+       "text": "Who reads the website"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "How much (200 words)",
+     "intro": "A quick way to find gaps is to ask the \"W\" questions about a request: WHO is it for or about? WHAT exactly is needed? WHEN is it due or happening? WHERE? HOW MUCH (budget, length, number)? Any important \"W\" with no answer is a gap the tool will fill by guessing. Example: \"Book a table for dinner\" is missing who (how many people), when (date and time) and where (which area or restaurant).",
+     "feedback": "Length is given."
+    },
+    {
+     "id": "S26-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Which question finds a budget gap?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Who is it for, exactly?\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Where is it?\""
+      },
+      {
+       "letter": "C",
+       "text": "\"When is it?\""
+      },
+      {
+       "letter": "D",
+       "text": "\"How much can we spend?\""
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "\"How much can we spend?\"",
+     "intro": "A quick way to find gaps is to ask the \"W\" questions about a request: WHO is it for or about? WHAT exactly is needed? WHEN is it due or happening? WHERE? HOW MUCH (budget, length, number)? Any important \"W\" with no answer is a gap the tool will fill by guessing. Example: \"Book a table for dinner\" is missing who (how many people), when (date and time) and where (which area or restaurant).",
+     "feedback": "Budget is a \"how much\" question."
+    },
+    {
+     "id": "S26-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "A request has no answer for \"when.\" What will the tool likely do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Leave the answer blank always"
+      },
+      {
+       "letter": "B",
+       "text": "Guess a date or time"
+      },
+      {
+       "letter": "C",
+       "text": "Ask the internet for your calendar"
+      },
+      {
+       "letter": "D",
+       "text": "Refuse forever"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Guess a date or time",
+     "intro": "A quick way to find gaps is to ask the \"W\" questions about a request: WHO is it for or about? WHAT exactly is needed? WHEN is it due or happening? WHERE? HOW MUCH (budget, length, number)? Any important \"W\" with no answer is a gap the tool will fill by guessing. Example: \"Book a table for dinner\" is missing who (how many people), when (date and time) and where (which area or restaurant).",
+     "feedback": "Gaps get filled by guesses."
+    }
+   ],
+   "branch_mode": "underlying_skill",
+   "relationship": "A learner who cannot see what a request leaves out practices finding missing details with \"W\" questions."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Use clarification in practical requests",
+   "questions": [
+    {
+     "id": "S26-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Ray asks for a weekly workout plan but does not know what details matter. What should he add?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Make the plan really long.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Do not ask me anything.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Ask me what you need to know before planning.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Make it the best workout plan in the world.\""
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "\"Ask me what you need to know before planning.\"",
+     "intro": "When a request is missing information, a tool usually fills the gaps with GUESSES, and it may not tell you it guessed. You can change that. Ask it to ASK CLARIFYING QUESTIONS first (\"Before you answer, ask me up to three questions about anything unclear\"), or to STATE ITS ASSUMPTIONS (\"List any assumptions you made at the top\"). Both make hidden guesses visible so you can correct them. This is especially useful when details matter, such as dates, budgets, audiences or rules, and when you are not sure what information the tool needs.",
+     "feedback": "Inviting questions fills gaps he cannot foresee."
+    },
+    {
+     "id": "S26-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "A tool's answer begins: \"Assumptions: you have no car; your budget is 200 dollars.\" Why is this helpful?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "You can quickly correct any wrong assumption"
+      },
+      {
+       "letter": "B",
+       "text": "It means you need not read the rest of the plan"
+      },
+      {
+       "letter": "C",
+       "text": "It proves the plan is correct"
+      },
+      {
+       "letter": "D",
+       "text": "It makes the plan longer"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "You can quickly correct any wrong assumption",
+     "intro": "When a request is missing information, a tool usually fills the gaps with GUESSES, and it may not tell you it guessed. You can change that. Ask it to ASK CLARIFYING QUESTIONS first (\"Before you answer, ask me up to three questions about anything unclear\"), or to STATE ITS ASSUMPTIONS (\"List any assumptions you made at the top\"). Both make hidden guesses visible so you can correct them. This is especially useful when details matter, such as dates, budgets, audiences or rules, and when you are not sure what information the tool needs.",
+     "feedback": "Visible assumptions are easy to fix."
+    },
+    {
+     "id": "S26-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Which request best avoids silent guesses about a meeting summary?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Summarize these notes fast.\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Summarize these notes in bold text, please.\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Summarize these notes perfectly.\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Summarize these notes; list unclear points.\""
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "\"Summarize these notes; list unclear points.\"",
+     "intro": "When a request is missing information, a tool usually fills the gaps with GUESSES, and it may not tell you it guessed. You can change that. Ask it to ASK CLARIFYING QUESTIONS first (\"Before you answer, ask me up to three questions about anything unclear\"), or to STATE ITS ASSUMPTIONS (\"List any assumptions you made at the top\"). Both make hidden guesses visible so you can correct them. This is especially useful when details matter, such as dates, budgets, audiences or rules, and when you are not sure what information the tool needs.",
+     "feedback": "Asking for unclear points exposes gaps."
+    },
+    {
+     "id": "S26-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "A tool asks, \"Is the event indoors or outdoors?\" What should you do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Answer the question with the real detail"
+      },
+      {
+       "letter": "B",
+       "text": "Start a new conversation"
+      },
+      {
+       "letter": "C",
+       "text": "Ignore it and ask for the plan again"
+      },
+      {
+       "letter": "D",
+       "text": "Reply \"whatever you think\""
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Answer the question with the real detail",
+     "intro": "When a request is missing information, a tool usually fills the gaps with GUESSES, and it may not tell you it guessed. You can change that. Ask it to ASK CLARIFYING QUESTIONS first (\"Before you answer, ask me up to three questions about anything unclear\"), or to STATE ITS ASSUMPTIONS (\"List any assumptions you made at the top\"). Both make hidden guesses visible so you can correct them. This is especially useful when details matter, such as dates, budgets, audiences or rules, and when you are not sure what information the tool needs.",
+     "feedback": "Clarifying questions help only if answered."
+    },
+    {
+     "id": "S26-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Which situation most needs stated assumptions?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Choosing a fun font for a party flyer"
+      },
+      {
+       "letter": "B",
+       "text": "Estimating costs for a school trip budget"
+      },
+      {
+       "letter": "C",
+       "text": "Writing a silly limerick about a cat"
+      },
+      {
+       "letter": "D",
+       "text": "Suggesting a name for a houseplant"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Estimating costs for a school trip budget",
+     "intro": "When a request is missing information, a tool usually fills the gaps with GUESSES, and it may not tell you it guessed. You can change that. Ask it to ASK CLARIFYING QUESTIONS first (\"Before you answer, ask me up to three questions about anything unclear\"), or to STATE ITS ASSUMPTIONS (\"List any assumptions you made at the top\"). Both make hidden guesses visible so you can correct them. This is especially useful when details matter, such as dates, budgets, audiences or rules, and when you are not sure what information the tool needs.",
+     "feedback": "Money decisions depend on assumptions."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Close the gaps only you can fill",
+   "questions": [
+    {
+     "id": "S26-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "The tool asks three questions and the user replies, \"Whatever you think.\" What will happen?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The answers will be verified automatically"
+      },
+      {
+       "letter": "B",
+       "text": "The tool will refuse to continue"
+      },
+      {
+       "letter": "C",
+       "text": "The tool will still have to guess"
+      },
+      {
+       "letter": "D",
+       "text": "The tool will know the right answers"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The tool will still have to guess",
+     "intro": "Clarifying questions are only useful if you answer them. And stated assumptions are only useful if you read them: an assumption like \"I assumed the budget is 500 dollars\" may be the single most important line in the answer. Be careful with the opposite problem too: if you answer \"whatever you think,\" the tool will still guess. Some answers depend on facts only you know, such as your own deadline or a school's rules. When a gap involves such facts, supply them rather than letting the tool invent them.",
+     "feedback": "Unanswered questions remain gaps."
+    },
+    {
+     "id": "S26-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "An answer lists \"Assumed deadline: June 30.\" Your deadline is June 10. What should you do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Move your real deadline to June 30"
+      },
+      {
+       "letter": "B",
+       "text": "Correct it, since the plan may depend on it"
+      },
+      {
+       "letter": "C",
+       "text": "Ask for a longer answer"
+      },
+      {
+       "letter": "D",
+       "text": "Ignore it, since assumptions do not matter"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Correct it, since the plan may depend on it",
+     "intro": "Clarifying questions are only useful if you answer them. And stated assumptions are only useful if you read them: an assumption like \"I assumed the budget is 500 dollars\" may be the single most important line in the answer. Be careful with the opposite problem too: if you answer \"whatever you think,\" the tool will still guess. Some answers depend on facts only you know, such as your own deadline or a school's rules. When a gap involves such facts, supply them rather than letting the tool invent them.",
+     "feedback": "Read and correct key assumptions."
+    },
+    {
+     "id": "S26-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Which gap should you fill yourself rather than let the tool guess?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Synonyms for the word \"happy\""
+      },
+      {
+       "letter": "B",
+       "text": "Ideas for a story title"
+      },
+      {
+       "letter": "C",
+       "text": "Your school's rules for a project"
+      },
+      {
+       "letter": "D",
+       "text": "A list of colors that go well with blue"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Your school's rules for a project",
+     "intro": "Clarifying questions are only useful if you answer them. And stated assumptions are only useful if you read them: an assumption like \"I assumed the budget is 500 dollars\" may be the single most important line in the answer. Be careful with the opposite problem too: if you answer \"whatever you think,\" the tool will still guess. Some answers depend on facts only you know, such as your own deadline or a school's rules. When a gap involves such facts, supply them rather than letting the tool invent them.",
+     "feedback": "Facts only you know must come from you."
+    },
+    {
+     "id": "S26-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "A tool states several assumptions. Which one deserves the closest reading?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The shortest one in the list"
+      },
+      {
+       "letter": "B",
+       "text": "None; assumptions are just filler"
+      },
+      {
+       "letter": "C",
+       "text": "The one written in a friendly tone"
+      },
+      {
+       "letter": "D",
+       "text": "The one your decision depends on"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The one your decision depends on",
+     "intro": "Clarifying questions are only useful if you answer them. And stated assumptions are only useful if you read them: an assumption like \"I assumed the budget is 500 dollars\" may be the single most important line in the answer. Be careful with the opposite problem too: if you answer \"whatever you think,\" the tool will still guess. Some answers depend on facts only you know, such as your own deadline or a school's rules. When a gap involves such facts, supply them rather than letting the tool invent them.",
+     "feedback": "Check decision-critical assumptions first."
+    },
+    {
+     "id": "S26-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 4: Asking for what you need",
+     "type": "mc",
+     "prompt": "Why is \"I assumed the budget is 500 dollars\" possibly the most important line?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The whole plan may be built on that number"
+      },
+      {
+       "letter": "B",
+       "text": "Budgets never change plans"
+      },
+      {
+       "letter": "C",
+       "text": "It is the longest sentence"
+      },
+      {
+       "letter": "D",
+       "text": "It proves that the plan is affordable"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The whole plan may be built on that number",
+     "intro": "Clarifying questions are only useful if you answer them. And stated assumptions are only useful if you read them: an assumption like \"I assumed the budget is 500 dollars\" may be the single most important line in the answer. Be careful with the opposite problem too: if you answer \"whatever you think,\" the tool will still guess. Some answers depend on facts only you know, such as your own deadline or a school's rules. When a gap involves such facts, supply them rather than letting the tool invent them.",
+     "feedback": "A wrong budget changes everything."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

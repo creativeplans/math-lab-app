@@ -1,0 +1,658 @@
+{
+ "set": 9,
+ "title": "Data, patterns and parameters",
+ "outcome": "AI.LEARN.02",
+ "content_status": "stable",
+ "requires": [
+  8
+ ],
+ "module": "learning",
+ "path_refs": [
+  "everyday",
+  "creative",
+  "coding",
+  "work",
+  "society"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Describe parameters as learned settings that capture patterns",
+   "questions": [
+    {
+     "id": "S9-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "What are parameters in a model?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The questions users type into the finished app"
+      },
+      {
+       "letter": "B",
+       "text": "The list of every training example, kept word for word"
+      },
+      {
+       "letter": "C",
+       "text": "The rules a programmer wrote out line by line"
+      },
+      {
+       "letter": "D",
+       "text": "The adjustable numbers set during training"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The adjustable numbers set during training",
+     "intro": "During training, a model adjusts a huge set of numbers called PARAMETERS (sometimes called weights). You can picture them as millions or billions of tiny dials. Each time the model's output is wrong on a training example, the dials are nudged a little so that next time the output is closer. After enough nudges, the dial settings capture PATTERNS in the data, for example which pixel shapes usually mean \"cat.\" The model keeps the dial settings, not a neat copy of every example, although it can sometimes reproduce pieces of text or images it saw many times. More parameters can capture more patterns, but size alone does not guarantee better results.",
+     "feedback": "Parameters are numbers the training process adjusts."
+    },
+    {
+     "id": "S9-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "What happens to the parameters when the model gets a training example wrong?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "They are nudged so the next output is closer"
+      },
+      {
+       "letter": "B",
+       "text": "They are replaced with the example itself"
+      },
+      {
+       "letter": "C",
+       "text": "They are erased and started over from zero"
+      },
+      {
+       "letter": "D",
+       "text": "They stay exactly the same as before"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "They are nudged so the next output is closer",
+     "intro": "During training, a model adjusts a huge set of numbers called PARAMETERS (sometimes called weights). You can picture them as millions or billions of tiny dials. Each time the model's output is wrong on a training example, the dials are nudged a little so that next time the output is closer. After enough nudges, the dial settings capture PATTERNS in the data, for example which pixel shapes usually mean \"cat.\" The model keeps the dial settings, not a neat copy of every example, although it can sometimes reproduce pieces of text or images it saw many times. More parameters can capture more patterns, but size alone does not guarantee better results.",
+     "feedback": "Small adjustments add up over many examples."
+    },
+    {
+     "id": "S9-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "After training, what does a model mainly keep?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A tidy, searchable copy of every example it saw"
+      },
+      {
+       "letter": "B",
+       "text": "Dial settings that capture patterns in the data"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing at all; it relearns each time it is used"
+      },
+      {
+       "letter": "D",
+       "text": "Only the last example it saw during training"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Dial settings that capture patterns in the data",
+     "intro": "During training, a model adjusts a huge set of numbers called PARAMETERS (sometimes called weights). You can picture them as millions or billions of tiny dials. Each time the model's output is wrong on a training example, the dials are nudged a little so that next time the output is closer. After enough nudges, the dial settings capture PATTERNS in the data, for example which pixel shapes usually mean \"cat.\" The model keeps the dial settings, not a neat copy of every example, although it can sometimes reproduce pieces of text or images it saw many times. More parameters can capture more patterns, but size alone does not guarantee better results.",
+     "feedback": "Learned patterns live in the parameter settings."
+    },
+    {
+     "id": "S9-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A model has twice as many parameters as another. Which statement is accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It cannot be used by ordinary people at all"
+      },
+      {
+       "letter": "B",
+       "text": "It must have been trained on exactly half the data"
+      },
+      {
+       "letter": "C",
+       "text": "It can capture more patterns, but bigger is not always better"
+      },
+      {
+       "letter": "D",
+       "text": "It is guaranteed to be twice as accurate on every task"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "It can capture more patterns, but bigger is not always better",
+     "intro": "During training, a model adjusts a huge set of numbers called PARAMETERS (sometimes called weights). You can picture them as millions or billions of tiny dials. Each time the model's output is wrong on a training example, the dials are nudged a little so that next time the output is closer. After enough nudges, the dial settings capture PATTERNS in the data, for example which pixel shapes usually mean \"cat.\" The model keeps the dial settings, not a neat copy of every example, although it can sometimes reproduce pieces of text or images it saw many times. More parameters can capture more patterns, but size alone does not guarantee better results.",
+     "feedback": "More parameters add capacity, not a guarantee."
+    },
+    {
+     "id": "S9-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Can a model ever reproduce a piece of text it saw during training?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Always, because it stores every page exactly"
+      },
+      {
+       "letter": "B",
+       "text": "Sometimes, especially text it saw many times"
+      },
+      {
+       "letter": "C",
+       "text": "Only if the user types the password for it"
+      },
+      {
+       "letter": "D",
+       "text": "Never, because it keeps no trace of any text"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Sometimes, especially text it saw many times",
+     "intro": "During training, a model adjusts a huge set of numbers called PARAMETERS (sometimes called weights). You can picture them as millions or billions of tiny dials. Each time the model's output is wrong on a training example, the dials are nudged a little so that next time the output is closer. After enough nudges, the dial settings capture PATTERNS in the data, for example which pixel shapes usually mean \"cat.\" The model keeps the dial settings, not a neat copy of every example, although it can sometimes reproduce pieces of text or images it saw many times. More parameters can capture more patterns, but size alone does not guarantee better results.",
+     "feedback": "Frequently repeated text can be reproduced."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Picture tuning a guitar by ear",
+   "questions": [
+    {
+     "id": "S9-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "In the comparison, what are the guitar pegs like?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The model's parameters"
+      },
+      {
+       "letter": "B",
+       "text": "The app's screen"
+      },
+      {
+       "letter": "C",
+       "text": "The training examples"
+      },
+      {
+       "letter": "D",
+       "text": "The user's questions"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The model's parameters",
+     "intro": "Imagine tuning a guitar by ear. You pluck a string, hear that it is a little flat, and turn the peg slightly. You pluck again and turn again, until it sounds right. You do not write down every sound you heard; what you keep is the final peg position. A model's PARAMETERS are like millions of pegs. Training plucks, listens and turns: each wrong output nudges the pegs a little. What the model keeps afterward is the peg settings, which capture what \"sounding right\" means for its task.",
+     "feedback": "Pegs are adjustable settings, like parameters."
+    },
+    {
+     "id": "S9-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "What do you do when a string sounds flat?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Stop playing for good"
+      },
+      {
+       "letter": "B",
+       "text": "Throw the guitar away"
+      },
+      {
+       "letter": "C",
+       "text": "Write down the sound and keep it forever"
+      },
+      {
+       "letter": "D",
+       "text": "Turn the peg a little and try again"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Turn the peg a little and try again",
+     "intro": "Imagine tuning a guitar by ear. You pluck a string, hear that it is a little flat, and turn the peg slightly. You pluck again and turn again, until it sounds right. You do not write down every sound you heard; what you keep is the final peg position. A model's PARAMETERS are like millions of pegs. Training plucks, listens and turns: each wrong output nudges the pegs a little. What the model keeps afterward is the peg settings, which capture what \"sounding right\" means for its task.",
+     "feedback": "Small corrections, repeated, are how tuning works."
+    },
+    {
+     "id": "S9-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "After tuning, what do you keep?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The broken strings"
+      },
+      {
+       "letter": "B",
+       "text": "A recording of every note plucked"
+      },
+      {
+       "letter": "C",
+       "text": "The final peg positions"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing at all"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The final peg positions",
+     "intro": "Imagine tuning a guitar by ear. You pluck a string, hear that it is a little flat, and turn the peg slightly. You pluck again and turn again, until it sounds right. You do not write down every sound you heard; what you keep is the final peg position. A model's PARAMETERS are like millions of pegs. Training plucks, listens and turns: each wrong output nudges the pegs a little. What the model keeps afterward is the peg settings, which capture what \"sounding right\" means for its task.",
+     "feedback": "You keep settings, not every sound."
+    },
+    {
+     "id": "S9-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Which part of training is like plucking a string and hearing it is wrong?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Seeing that an output does not match an example"
+      },
+      {
+       "letter": "B",
+       "text": "Deleting the model to start over"
+      },
+      {
+       "letter": "C",
+       "text": "Buying a faster computer for the model"
+      },
+      {
+       "letter": "D",
+       "text": "Typing a new question into the finished app"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Seeing that an output does not match an example",
+     "intro": "Imagine tuning a guitar by ear. You pluck a string, hear that it is a little flat, and turn the peg slightly. You pluck again and turn again, until it sounds right. You do not write down every sound you heard; what you keep is the final peg position. A model's PARAMETERS are like millions of pegs. Training plucks, listens and turns: each wrong output nudges the pegs a little. What the model keeps afterward is the peg settings, which capture what \"sounding right\" means for its task.",
+     "feedback": "Checking output against examples drives adjustment."
+    },
+    {
+     "id": "S9-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Why are there \"millions of pegs\" in a model?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It has many users"
+      },
+      {
+       "letter": "B",
+       "text": "It has very many parameters"
+      },
+      {
+       "letter": "C",
+       "text": "It runs on many computers"
+      },
+      {
+       "letter": "D",
+       "text": "It plays very many songs"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "It has very many parameters",
+     "intro": "Imagine tuning a guitar by ear. You pluck a string, hear that it is a little flat, and turn the peg slightly. You pluck again and turn again, until it sounds right. You do not write down every sound you heard; what you keep is the final peg position. A model's PARAMETERS are like millions of pegs. Training plucks, listens and turns: each wrong output nudges the pegs a little. What the model keeps afterward is the peg settings, which capture what \"sounding right\" means for its task.",
+     "feedback": "Models have huge numbers of parameters."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner unsure what \"parameters\" are can grasp them as adjustable settings through a hands-on tuning example."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Apply the idea of parameters to claims about models",
+   "questions": [
+    {
+     "id": "S9-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A news article says a model \"contains every book it read.\" What is more accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Models never learn anything from books at all"
+      },
+      {
+       "letter": "B",
+       "text": "It is accurate; parameters are the books themselves"
+      },
+      {
+       "letter": "C",
+       "text": "It is accurate; models are libraries of full texts"
+      },
+      {
+       "letter": "D",
+       "text": "It holds learned settings, not a complete copy of every book"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "It holds learned settings, not a complete copy of every book",
+     "intro": "During training, a model adjusts a huge set of numbers called PARAMETERS (sometimes called weights). You can picture them as millions or billions of tiny dials. Each time the model's output is wrong on a training example, the dials are nudged a little so that next time the output is closer. After enough nudges, the dial settings capture PATTERNS in the data, for example which pixel shapes usually mean \"cat.\" The model keeps the dial settings, not a neat copy of every example, although it can sometimes reproduce pieces of text or images it saw many times. More parameters can capture more patterns, but size alone does not guarantee better results.",
+     "feedback": "Parameters capture patterns, not full copies, though fragments can be reproduced."
+    },
+    {
+     "id": "S9-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Two models: one has 1 billion parameters, the other 10 billion. Which conclusion is justified without testing?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Both must give identical answers"
+      },
+      {
+       "letter": "B",
+       "text": "The smaller one must be useless for every task"
+      },
+      {
+       "letter": "C",
+       "text": "The larger has more capacity; testing shows which works better"
+      },
+      {
+       "letter": "D",
+       "text": "The larger one is exactly ten times more accurate on every task"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The larger has more capacity; testing shows which works better",
+     "intro": "During training, a model adjusts a huge set of numbers called PARAMETERS (sometimes called weights). You can picture them as millions or billions of tiny dials. Each time the model's output is wrong on a training example, the dials are nudged a little so that next time the output is closer. After enough nudges, the dial settings capture PATTERNS in the data, for example which pixel shapes usually mean \"cat.\" The model keeps the dial settings, not a neat copy of every example, although it can sometimes reproduce pieces of text or images it saw many times. More parameters can capture more patterns, but size alone does not guarantee better results.",
+     "feedback": "Capacity is not the same as tested performance."
+    },
+    {
+     "id": "S9-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A model was trained to recognize cats. What did training adjust?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The photos themselves, so they look more like cats"
+      },
+      {
+       "letter": "B",
+       "text": "Its parameters, so pixel patterns map to \"cat\""
+      },
+      {
+       "letter": "C",
+       "text": "A written rule list describing every cat breed"
+      },
+      {
+       "letter": "D",
+       "text": "The user's camera settings"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Its parameters, so pixel patterns map to \"cat\"",
+     "intro": "During training, a model adjusts a huge set of numbers called PARAMETERS (sometimes called weights). You can picture them as millions or billions of tiny dials. Each time the model's output is wrong on a training example, the dials are nudged a little so that next time the output is closer. After enough nudges, the dial settings capture PATTERNS in the data, for example which pixel shapes usually mean \"cat.\" The model keeps the dial settings, not a neat copy of every example, although it can sometimes reproduce pieces of text or images it saw many times. More parameters can capture more patterns, but size alone does not guarantee better results.",
+     "feedback": "Training set the parameters to capture cat patterns."
+    },
+    {
+     "id": "S9-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Why might a model repeat a famous quotation word for word?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It looks the quotation up in a stored copy of the internet"
+      },
+      {
+       "letter": "B",
+       "text": "Models are designed to repeat everything word for word"
+      },
+      {
+       "letter": "C",
+       "text": "The quotation is one of its parameters"
+      },
+      {
+       "letter": "D",
+       "text": "Text seen many times in training can leave strong traces"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Text seen many times in training can leave strong traces",
+     "intro": "During training, a model adjusts a huge set of numbers called PARAMETERS (sometimes called weights). You can picture them as millions or billions of tiny dials. Each time the model's output is wrong on a training example, the dials are nudged a little so that next time the output is closer. After enough nudges, the dial settings capture PATTERNS in the data, for example which pixel shapes usually mean \"cat.\" The model keeps the dial settings, not a neat copy of every example, although it can sometimes reproduce pieces of text or images it saw many times. More parameters can capture more patterns, but size alone does not guarantee better results.",
+     "feedback": "Frequent repetition in training can cause memorization."
+    },
+    {
+     "id": "S9-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Which description of training is most accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "One big change made after all examples are seen"
+      },
+      {
+       "letter": "B",
+       "text": "Typing in facts one at a time into a database"
+      },
+      {
+       "letter": "C",
+       "text": "Many small adjustments to settings, based on errors"
+      },
+      {
+       "letter": "D",
+       "text": "Copying the examples into the model's memory"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Many small adjustments to settings, based on errors",
+     "intro": "During training, a model adjusts a huge set of numbers called PARAMETERS (sometimes called weights). You can picture them as millions or billions of tiny dials. Each time the model's output is wrong on a training example, the dials are nudged a little so that next time the output is closer. After enough nudges, the dial settings capture PATTERNS in the data, for example which pixel shapes usually mean \"cat.\" The model keeps the dial settings, not a neat copy of every example, although it can sometimes reproduce pieces of text or images it saw many times. More parameters can capture more patterns, but size alone does not guarantee better results.",
+     "feedback": "Training repeats small, error-driven nudges."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Avoid oversimplified claims about what a model stores",
+   "questions": [
+    {
+     "id": "S9-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A user asks a company to \"delete the fact about me from the model.\" Why is this hard?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Learned patterns are spread across settings, not stored as one fact"
+      },
+      {
+       "letter": "B",
+       "text": "Models store each fact in a labeled folder that is locked"
+      },
+      {
+       "letter": "C",
+       "text": "It is easy; any user can delete one parameter"
+      },
+      {
+       "letter": "D",
+       "text": "Models never learn anything about people"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Learned patterns are spread across settings, not stored as one fact",
+     "intro": "Because learned patterns are stored as dial settings rather than as a list of facts, you usually cannot open a model and look up \"the\" fact it learned or delete one example's influence by hand. This is one reason models can mix patterns in surprising ways: an answer may blend several sources into something no single source said. It also explains why models sometimes reproduce memorized passages: text repeated very often in training can leave strong traces. Claims such as \"the model just copies\" or \"the model never copies\" are both too simple.",
+     "feedback": "Influence is spread across many parameters."
+    },
+    {
+     "id": "S9-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A model's answer blends ideas so that no single source said exactly that. What explains this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It always copies one source exactly"
+      },
+      {
+       "letter": "B",
+       "text": "It searched one website and pasted it"
+      },
+      {
+       "letter": "C",
+       "text": "It has a written rule never to use any real sources"
+      },
+      {
+       "letter": "D",
+       "text": "It combines learned patterns from many examples"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "It combines learned patterns from many examples",
+     "intro": "Because learned patterns are stored as dial settings rather than as a list of facts, you usually cannot open a model and look up \"the\" fact it learned or delete one example's influence by hand. This is one reason models can mix patterns in surprising ways: an answer may blend several sources into something no single source said. It also explains why models sometimes reproduce memorized passages: text repeated very often in training can leave strong traces. Claims such as \"the model just copies\" or \"the model never copies\" are both too simple.",
+     "feedback": "Blending patterns can create statements no source made."
+    },
+    {
+     "id": "S9-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Someone says, \"Models never copy anything, so there is no copyright issue.\" What is wrong?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nothing; models are proven never to copy at all"
+      },
+      {
+       "letter": "B",
+       "text": "Models can sometimes reproduce passages they saw many times"
+      },
+      {
+       "letter": "C",
+       "text": "Models only copy images, never text"
+      },
+      {
+       "letter": "D",
+       "text": "Copying is impossible because parameters are numbers"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Models can sometimes reproduce passages they saw many times",
+     "intro": "Because learned patterns are stored as dial settings rather than as a list of facts, you usually cannot open a model and look up \"the\" fact it learned or delete one example's influence by hand. This is one reason models can mix patterns in surprising ways: an answer may blend several sources into something no single source said. It also explains why models sometimes reproduce memorized passages: text repeated very often in training can leave strong traces. Claims such as \"the model just copies\" or \"the model never copies\" are both too simple.",
+     "feedback": "\"Never copies\" is too simple."
+    },
+    {
+     "id": "S9-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Someone says, \"Models just copy and paste their training data.\" What is wrong?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Mostly they produce new combinations from patterns"
+      },
+      {
+       "letter": "B",
+       "text": "Models only copy text from the user"
+      },
+      {
+       "letter": "C",
+       "text": "Models cannot produce any text at all"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing; every output is an exact copy of a source"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Mostly they produce new combinations from patterns",
+     "intro": "Because learned patterns are stored as dial settings rather than as a list of facts, you usually cannot open a model and look up \"the\" fact it learned or delete one example's influence by hand. This is one reason models can mix patterns in surprising ways: an answer may blend several sources into something no single source said. It also explains why models sometimes reproduce memorized passages: text repeated very often in training can leave strong traces. Claims such as \"the model just copies\" or \"the model never copies\" are both too simple.",
+     "feedback": "\"Just copies\" is also too simple."
+    },
+    {
+     "id": "S9-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Why can't you open a model and read \"the fact\" it learned about the moon?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Models never learn about the moon"
+      },
+      {
+       "letter": "B",
+       "text": "The fact is locked away inside it with a secret password"
+      },
+      {
+       "letter": "C",
+       "text": "It is spread across many numbers, not stored as sentences"
+      },
+      {
+       "letter": "D",
+       "text": "Models refuse to discuss the moon"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "It is spread across many numbers, not stored as sentences",
+     "intro": "Because learned patterns are stored as dial settings rather than as a list of facts, you usually cannot open a model and look up \"the\" fact it learned or delete one example's influence by hand. This is one reason models can mix patterns in surprising ways: an answer may blend several sources into something no single source said. It also explains why models sometimes reproduce memorized passages: text repeated very often in training can leave strong traces. Claims such as \"the model just copies\" or \"the model never copies\" are both too simple.",
+     "feedback": "Parameters are numbers, not readable sentences."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

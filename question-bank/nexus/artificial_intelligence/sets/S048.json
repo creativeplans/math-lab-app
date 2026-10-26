@@ -1,0 +1,658 @@
+{
+ "set": 48,
+ "title": "Ways of learning: supervised, unsupervised, self-supervised",
+ "outcome": "AI.LEARN.06",
+ "content_status": "stable",
+ "requires": [
+  9
+ ],
+ "module": "deeper",
+ "path_refs": [
+  "everyday",
+  "creative",
+  "coding",
+  "work",
+  "society"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Tell supervised, unsupervised and self-supervised learning apart",
+   "questions": [
+    {
+     "id": "S48-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "Photos are each labeled \"cat\" or \"dog\" for training. Which kind of learning is this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Unsupervised, because the model sorts photos by itself"
+      },
+      {
+       "letter": "B",
+       "text": "Supervised"
+      },
+      {
+       "letter": "C",
+       "text": "Self-supervised, because photos contain their own answers"
+      },
+      {
+       "letter": "D",
+       "text": "No learning, because photos cannot teach a model anything"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Supervised",
+     "intro": "Models learn from different kinds of SIGNALS. In SUPERVISED learning, each training example comes with a label, the right answer: photos marked \"cat\" or \"dog,\" emails marked \"spam\" or \"not spam.\" In UNSUPERVISED learning, there are no labels; the model looks for structure on its own, such as grouping customers with similar shopping habits. In SELF-SUPERVISED learning, the data supplies its own answers: hide a word in a sentence and train the model to predict it. Large language models are mostly trained this way, because huge amounts of text need no hand-made labels.",
+     "feedback": "Labeled examples mean supervised learning."
+    },
+    {
+     "id": "S48-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "A store groups customers with similar shopping habits, with no labels given. Which kind is this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Unsupervised"
+      },
+      {
+       "letter": "B",
+       "text": "Supervised, because the store knows its customers well"
+      },
+      {
+       "letter": "C",
+       "text": "Self-supervised, because each purchase predicts the next word"
+      },
+      {
+       "letter": "D",
+       "text": "Reinforcement learning, because customers earn reward points"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Unsupervised",
+     "intro": "Models learn from different kinds of SIGNALS. In SUPERVISED learning, each training example comes with a label, the right answer: photos marked \"cat\" or \"dog,\" emails marked \"spam\" or \"not spam.\" In UNSUPERVISED learning, there are no labels; the model looks for structure on its own, such as grouping customers with similar shopping habits. In SELF-SUPERVISED learning, the data supplies its own answers: hide a word in a sentence and train the model to predict it. Large language models are mostly trained this way, because huge amounts of text need no hand-made labels.",
+     "feedback": "Finding structure without labels is unsupervised."
+    },
+    {
+     "id": "S48-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "A model hides a word in a sentence and learns to predict it. Which kind is this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Unsupervised, because no answer exists for the hidden word"
+      },
+      {
+       "letter": "B",
+       "text": "Supervised, because a person labels every hidden word by hand"
+      },
+      {
+       "letter": "C",
+       "text": "Self-supervised"
+      },
+      {
+       "letter": "D",
+       "text": "Rule-based, because grammar rules choose each hidden word"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Self-supervised",
+     "intro": "Models learn from different kinds of SIGNALS. In SUPERVISED learning, each training example comes with a label, the right answer: photos marked \"cat\" or \"dog,\" emails marked \"spam\" or \"not spam.\" In UNSUPERVISED learning, there are no labels; the model looks for structure on its own, such as grouping customers with similar shopping habits. In SELF-SUPERVISED learning, the data supplies its own answers: hide a word in a sentence and train the model to predict it. Large language models are mostly trained this way, because huge amounts of text need no hand-made labels.",
+     "feedback": "The data provides its own answers."
+    },
+    {
+     "id": "S48-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "Why are large language models mostly trained with self-supervision?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because self-supervision needs no computers or data"
+      },
+      {
+       "letter": "B",
+       "text": "Because people refused to read any text"
+      },
+      {
+       "letter": "C",
+       "text": "Because labeled text is illegal to use in any training at all"
+      },
+      {
+       "letter": "D",
+       "text": "Huge amounts of text need no hand-made labels"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Huge amounts of text need no hand-made labels",
+     "intro": "Models learn from different kinds of SIGNALS. In SUPERVISED learning, each training example comes with a label, the right answer: photos marked \"cat\" or \"dog,\" emails marked \"spam\" or \"not spam.\" In UNSUPERVISED learning, there are no labels; the model looks for structure on its own, such as grouping customers with similar shopping habits. In SELF-SUPERVISED learning, the data supplies its own answers: hide a word in a sentence and train the model to predict it. Large language models are mostly trained this way, because huge amounts of text need no hand-made labels.",
+     "feedback": "Text supplies its own training targets."
+    },
+    {
+     "id": "S48-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "What is a label in supervised learning?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The price of using the model each month"
+      },
+      {
+       "letter": "B",
+       "text": "A group the model invents with no answers given"
+      },
+      {
+       "letter": "C",
+       "text": "The right answer attached to an example"
+      },
+      {
+       "letter": "D",
+       "text": "A sticker showing which company built the model"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The right answer attached to an example",
+     "intro": "Models learn from different kinds of SIGNALS. In SUPERVISED learning, each training example comes with a label, the right answer: photos marked \"cat\" or \"dog,\" emails marked \"spam\" or \"not spam.\" In UNSUPERVISED learning, there are no labels; the model looks for structure on its own, such as grouping customers with similar shopping habits. In SELF-SUPERVISED learning, the data supplies its own answers: hide a word in a sentence and train the model to predict it. Large language models are mostly trained this way, because huge amounts of text need no hand-made labels.",
+     "feedback": "Labels are the answers to learn."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare three ways a student might learn",
+   "questions": [
+    {
+     "id": "S48-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "The student with the answer key is like which kind?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Unsupervised learning, since she sorts things alone"
+      },
+      {
+       "letter": "B",
+       "text": "Supervised learning"
+      },
+      {
+       "letter": "C",
+       "text": "Self-supervised learning, since the novel checks her"
+      },
+      {
+       "letter": "D",
+       "text": "No learning at all, since answer keys are cheating"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Supervised learning",
+     "intro": "Picture three students. The first works through a WORKBOOK with an answer key: she checks each answer and learns from corrections (like supervised learning). The second gets a box of mixed seashells with no instructions and sorts them into piles that look alike (like unsupervised learning). The third covers one word in each sentence of a novel and guesses it, then uncovers it to check (like self-supervised learning). All three learn, but from different kinds of signals.",
+     "feedback": "Checking against given answers is supervised."
+    },
+    {
+     "id": "S48-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "Sorting seashells with no instructions is like which kind?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Unsupervised learning"
+      },
+      {
+       "letter": "B",
+       "text": "Supervised learning, since shells come with labels"
+      },
+      {
+       "letter": "C",
+       "text": "Self-supervised learning, since shells hide words"
+      },
+      {
+       "letter": "D",
+       "text": "Reinforcement learning, since shells give rewards"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Unsupervised learning",
+     "intro": "Picture three students. The first works through a WORKBOOK with an answer key: she checks each answer and learns from corrections (like supervised learning). The second gets a box of mixed seashells with no instructions and sorts them into piles that look alike (like unsupervised learning). The third covers one word in each sentence of a novel and guesses it, then uncovers it to check (like self-supervised learning). All three learn, but from different kinds of signals.",
+     "feedback": "Grouping without answers is unsupervised."
+    },
+    {
+     "id": "S48-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "Covering a word and guessing it is like which kind?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Supervised learning, since a teacher labels each word"
+      },
+      {
+       "letter": "B",
+       "text": "Rule-based software, since grammar picks the word"
+      },
+      {
+       "letter": "C",
+       "text": "Unsupervised learning, since no answer is ever shown"
+      },
+      {
+       "letter": "D",
+       "text": "Self-supervised learning"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Self-supervised learning",
+     "intro": "Picture three students. The first works through a WORKBOOK with an answer key: she checks each answer and learns from corrections (like supervised learning). The second gets a box of mixed seashells with no instructions and sorts them into piles that look alike (like unsupervised learning). The third covers one word in each sentence of a novel and guesses it, then uncovers it to check (like self-supervised learning). All three learn, but from different kinds of signals.",
+     "feedback": "The data supplies the answer."
+    },
+    {
+     "id": "S48-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "Where does the third student get the correct answers?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "From nowhere; no answers exist"
+      },
+      {
+       "letter": "B",
+       "text": "From the novel itself"
+      },
+      {
+       "letter": "C",
+       "text": "From a separate answer key written by a teacher"
+      },
+      {
+       "letter": "D",
+       "text": "From the other two students"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "From the novel itself",
+     "intro": "Picture three students. The first works through a WORKBOOK with an answer key: she checks each answer and learns from corrections (like supervised learning). The second gets a box of mixed seashells with no instructions and sorts them into piles that look alike (like unsupervised learning). The third covers one word in each sentence of a novel and guesses it, then uncovers it to check (like self-supervised learning). All three learn, but from different kinds of signals.",
+     "feedback": "The text holds its own answers."
+    },
+    {
+     "id": "S48-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "Which student has no answers to check against?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The seashell sorter"
+      },
+      {
+       "letter": "B",
+       "text": "The workbook student with the answer key"
+      },
+      {
+       "letter": "C",
+       "text": "The novel reader who uncovers each word"
+      },
+      {
+       "letter": "D",
+       "text": "All three students equally"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The seashell sorter",
+     "intro": "Picture three students. The first works through a WORKBOOK with an answer key: she checks each answer and learns from corrections (like supervised learning). The second gets a box of mixed seashells with no instructions and sorts them into piles that look alike (like unsupervised learning). The third covers one word in each sentence of a novel and guesses it, then uncovers it to check (like self-supervised learning). All three learn, but from different kinds of signals.",
+     "feedback": "Unsupervised learning has no answers."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who mixes up the three kinds can map them onto three study habits."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Identify the learning signal in real projects",
+   "questions": [
+    {
+     "id": "S48-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "A hospital trains a model on scans that doctors marked \"fracture\" or \"no fracture.\" Which kind is this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Unsupervised learning, because scans have no meaning to models"
+      },
+      {
+       "letter": "B",
+       "text": "Self-supervised learning, because each scan predicts the next scan"
+      },
+      {
+       "letter": "C",
+       "text": "No learning, because scans are only pictures"
+      },
+      {
+       "letter": "D",
+       "text": "Supervised learning"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Supervised learning",
+     "intro": "Models learn from different kinds of SIGNALS. In SUPERVISED learning, each training example comes with a label, the right answer: photos marked \"cat\" or \"dog,\" emails marked \"spam\" or \"not spam.\" In UNSUPERVISED learning, there are no labels; the model looks for structure on its own, such as grouping customers with similar shopping habits. In SELF-SUPERVISED learning, the data supplies its own answers: hide a word in a sentence and train the model to predict it. Large language models are mostly trained this way, because huge amounts of text need no hand-made labels.",
+     "feedback": "Doctor labels make it supervised."
+    },
+    {
+     "id": "S48-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "A music service finds groups of songs that are often played together, with no genre labels. Which kind?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Supervised learning, because every song has a correct genre label"
+      },
+      {
+       "letter": "B",
+       "text": "Rule-based software, because a person sorted every song"
+      },
+      {
+       "letter": "C",
+       "text": "Unsupervised learning"
+      },
+      {
+       "letter": "D",
+       "text": "Self-supervised learning, because songs predict their own lyrics"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Unsupervised learning",
+     "intro": "Models learn from different kinds of SIGNALS. In SUPERVISED learning, each training example comes with a label, the right answer: photos marked \"cat\" or \"dog,\" emails marked \"spam\" or \"not spam.\" In UNSUPERVISED learning, there are no labels; the model looks for structure on its own, such as grouping customers with similar shopping habits. In SELF-SUPERVISED learning, the data supplies its own answers: hide a word in a sentence and train the model to predict it. Large language models are mostly trained this way, because huge amounts of text need no hand-made labels.",
+     "feedback": "Discovering groups is unsupervised."
+    },
+    {
+     "id": "S48-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "A model learns from millions of web pages by predicting the next word. Which kind?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Rule-based software, because grammar books were typed in"
+      },
+      {
+       "letter": "B",
+       "text": "Unsupervised learning, because no words are predicted at all"
+      },
+      {
+       "letter": "C",
+       "text": "Supervised learning, because each page was labeled by experts"
+      },
+      {
+       "letter": "D",
+       "text": "Self-supervised learning"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Self-supervised learning",
+     "intro": "Models learn from different kinds of SIGNALS. In SUPERVISED learning, each training example comes with a label, the right answer: photos marked \"cat\" or \"dog,\" emails marked \"spam\" or \"not spam.\" In UNSUPERVISED learning, there are no labels; the model looks for structure on its own, such as grouping customers with similar shopping habits. In SELF-SUPERVISED learning, the data supplies its own answers: hide a word in a sentence and train the model to predict it. Large language models are mostly trained this way, because huge amounts of text need no hand-made labels.",
+     "feedback": "Next-word prediction uses the text's own answers."
+    },
+    {
+     "id": "S48-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "Which project most needs people to create labels?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Finding unusual patterns in network traffic with no examples"
+      },
+      {
+       "letter": "B",
+       "text": "Training on raw text to predict the next word"
+      },
+      {
+       "letter": "C",
+       "text": "Teaching a model to spot damaged parts on a factory line"
+      },
+      {
+       "letter": "D",
+       "text": "Grouping shoppers by habits with no categories in mind"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Teaching a model to spot damaged parts on a factory line",
+     "intro": "Models learn from different kinds of SIGNALS. In SUPERVISED learning, each training example comes with a label, the right answer: photos marked \"cat\" or \"dog,\" emails marked \"spam\" or \"not spam.\" In UNSUPERVISED learning, there are no labels; the model looks for structure on its own, such as grouping customers with similar shopping habits. In SELF-SUPERVISED learning, the data supplies its own answers: hide a word in a sentence and train the model to predict it. Large language models are mostly trained this way, because huge amounts of text need no hand-made labels.",
+     "feedback": "Specific \"damaged or not\" answers need labels."
+    },
+    {
+     "id": "S48-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "A company says its model \"taught itself to read.\" What is a more precise description?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It learned from text by predicting hidden or next words"
+      },
+      {
+       "letter": "B",
+       "text": "It learned without any data or computing"
+      },
+      {
+       "letter": "C",
+       "text": "It read every book ever written and understood them all"
+      },
+      {
+       "letter": "D",
+       "text": "It was given a human teacher for every sentence"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "It learned from text by predicting hidden or next words",
+     "intro": "Models learn from different kinds of SIGNALS. In SUPERVISED learning, each training example comes with a label, the right answer: photos marked \"cat\" or \"dog,\" emails marked \"spam\" or \"not spam.\" In UNSUPERVISED learning, there are no labels; the model looks for structure on its own, such as grouping customers with similar shopping habits. In SELF-SUPERVISED learning, the data supplies its own answers: hide a word in a sentence and train the model to predict it. Large language models are mostly trained this way, because huge amounts of text need no hand-made labels.",
+     "feedback": "Name the actual learning signal."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Combine learning stages and question \"taught itself\" claims",
+   "questions": [
+    {
+     "id": "S48-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "A model learned from web text, then from labeled examples, then from human ratings. Which is accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It used only unsupervised learning from start to finish"
+      },
+      {
+       "letter": "B",
+       "text": "It combined several kinds of learning"
+      },
+      {
+       "letter": "C",
+       "text": "It used only rules written by programmers"
+      },
+      {
+       "letter": "D",
+       "text": "It used no training data at any stage"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "It combined several kinds of learning",
+     "intro": "Real systems often combine these. A language model might first learn by self-supervision on huge amounts of text, then be adjusted with a smaller set of labeled, human-written examples (supervised), then with human ratings. Each stage has its own risks: unlabeled text carries whatever patterns and biases the text contains, labels can be wrong, and groupings found without labels may not mean what people assume. When someone says a model \"taught itself,\" ask what signal it actually learned from.",
+     "feedback": "Real systems often combine stages."
+    },
+    {
+     "id": "S48-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "A model trained on unlabeled web text repeats stereotypes found online. Why?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Stereotypes are added only during labeling"
+      },
+      {
+       "letter": "B",
+       "text": "The model invented the stereotypes from nothing"
+      },
+      {
+       "letter": "C",
+       "text": "Self-supervised learning removes all biases automatically"
+      },
+      {
+       "letter": "D",
+       "text": "Unlabeled text carries the patterns, including biases, it contains"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Unlabeled text carries the patterns, including biases, it contains",
+     "intro": "Real systems often combine these. A language model might first learn by self-supervision on huge amounts of text, then be adjusted with a smaller set of labeled, human-written examples (supervised), then with human ratings. Each stage has its own risks: unlabeled text carries whatever patterns and biases the text contains, labels can be wrong, and groupings found without labels may not mean what people assume. When someone says a model \"taught itself,\" ask what signal it actually learned from.",
+     "feedback": "The data's patterns become the model's patterns."
+    },
+    {
+     "id": "S48-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "An unsupervised model sorts customers into \"Group 3.\" A manager says Group 3 means \"loyal customers.\" What should be checked?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Whether the group really matches that meaning"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing; unsupervised groups always have clear meanings"
+      },
+      {
+       "letter": "C",
+       "text": "Only the number of the group"
+      },
+      {
+       "letter": "D",
+       "text": "Whether the group is the largest one"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Whether the group really matches that meaning",
+     "intro": "Real systems often combine these. A language model might first learn by self-supervision on huge amounts of text, then be adjusted with a smaller set of labeled, human-written examples (supervised), then with human ratings. Each stage has its own risks: unlabeled text carries whatever patterns and biases the text contains, labels can be wrong, and groupings found without labels may not mean what people assume. When someone says a model \"taught itself,\" ask what signal it actually learned from.",
+     "feedback": "Groups found without labels need interpretation."
+    },
+    {
+     "id": "S48-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "Labels for a supervised model were made quickly and include mistakes. What risk follows?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The model refuses to train on mistakes"
+      },
+      {
+       "letter": "B",
+       "text": "The model learns some of the wrong answers"
+      },
+      {
+       "letter": "C",
+       "text": "The model becomes unsupervised instead"
+      },
+      {
+       "letter": "D",
+       "text": "None, since supervised learning ignores labels"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The model learns some of the wrong answers",
+     "intro": "Real systems often combine these. A language model might first learn by self-supervision on huge amounts of text, then be adjusted with a smaller set of labeled, human-written examples (supervised), then with human ratings. Each stage has its own risks: unlabeled text carries whatever patterns and biases the text contains, labels can be wrong, and groupings found without labels may not mean what people assume. When someone says a model \"taught itself,\" ask what signal it actually learned from.",
+     "feedback": "Wrong labels become wrong lessons."
+    },
+    {
+     "id": "S48-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "When someone says a model \"taught itself,\" what is the best follow-up question?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Is it smarter than its programmers?"
+      },
+      {
+       "letter": "B",
+       "text": "How many computers did it use in total?"
+      },
+      {
+       "letter": "C",
+       "text": "What signal did it actually learn from?"
+      },
+      {
+       "letter": "D",
+       "text": "Does it have a name and a logo?"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "What signal did it actually learn from?",
+     "intro": "Real systems often combine these. A language model might first learn by self-supervision on huge amounts of text, then be adjusted with a smaller set of labeled, human-written examples (supervised), then with human ratings. Each stage has its own risks: unlabeled text carries whatever patterns and biases the text contains, labels can be wrong, and groupings found without labels may not mean what people assume. When someone says a model \"taught itself,\" ask what signal it actually learned from.",
+     "feedback": "The learning signal explains what it learned."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

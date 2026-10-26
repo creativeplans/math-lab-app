@@ -1,0 +1,666 @@
+{
+ "set": 116,
+ "title": "Benchmarks and their limits",
+ "outcome": "AI.EVAL.03",
+ "content_status": "time_sensitive",
+ "requires": [
+  114
+ ],
+ "module": "evaluation",
+ "path_refs": [
+  "work",
+  "coding"
+ ],
+ "suggested": [
+  152
+ ],
+ "sources": [
+  {
+   "url": "https://aclanthology.org/2024.naacl-long.482/",
+   "claim": "Deng et al. (NAACL 2024), \"Investigating Data Contamination in Modern Benchmarks for Large Language Models\": test items can leak into training data, which can inflate benchmark scores; simple overlap checks can miss contaminated examples.",
+   "checked": "2026-10-26"
+  }
+ ],
+ "review_interval_days": 1095,
+ "jurisdiction": "research",
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Explain what a benchmark score shows and its limits",
+   "questions": [
+    {
+     "id": "S116-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What is a benchmark?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A standard test used to compare models"
+      },
+      {
+       "letter": "B",
+       "text": "A model's price"
+      },
+      {
+       "letter": "C",
+       "text": "A company's ranking of its own staff"
+      },
+      {
+       "letter": "D",
+       "text": "A long bench in a computer lab where programmers sit to test their code each day"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "A standard test used to compare models",
+     "intro": "A BENCHMARK is a standard test used to compare models, such as a set of math problems or reading questions with known answers. A high score shows the model did well on THAT test. It may not predict how well the model does YOUR task, which may use different topics, formats or languages. Benchmarks can also be affected by CONTAMINATION: test questions that leaked into the model's training data, so the model may have seen the answers. Researchers (Deng and others, 2024) found contamination can inflate scores and is hard to detect. Use benchmarks as a rough guide, then test on your own examples.",
+     "feedback": "Shared test."
+    },
+    {
+     "id": "S116-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What does a high benchmark score show?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "That it is cheap"
+      },
+      {
+       "letter": "B",
+       "text": "Good performance on every task that anyone could ever ask the model to do in any setting"
+      },
+      {
+       "letter": "C",
+       "text": "That the model is conscious"
+      },
+      {
+       "letter": "D",
+       "text": "Good performance on that test"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Good performance on that test",
+     "intro": "A BENCHMARK is a standard test used to compare models, such as a set of math problems or reading questions with known answers. A high score shows the model did well on THAT test. It may not predict how well the model does YOUR task, which may use different topics, formats or languages. Benchmarks can also be affected by CONTAMINATION: test questions that leaked into the model's training data, so the model may have seen the answers. Researchers (Deng and others, 2024) found contamination can inflate scores and is hard to detect. Use benchmarks as a rough guide, then test on your own examples.",
+     "feedback": "Specific to the test."
+    },
+    {
+     "id": "S116-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What is contamination?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A model refusing a test"
+      },
+      {
+       "letter": "B",
+       "text": "A virus that infects the computers used to train models, making them run more slowly"
+      },
+      {
+       "letter": "C",
+       "text": "Test questions leaking into training data"
+      },
+      {
+       "letter": "D",
+       "text": "Dust in a data center"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Test questions leaking into training data",
+     "intro": "A BENCHMARK is a standard test used to compare models, such as a set of math problems or reading questions with known answers. A high score shows the model did well on THAT test. It may not predict how well the model does YOUR task, which may use different topics, formats or languages. Benchmarks can also be affected by CONTAMINATION: test questions that leaked into the model's training data, so the model may have seen the answers. Researchers (Deng and others, 2024) found contamination can inflate scores and is hard to detect. Use benchmarks as a rough guide, then test on your own examples.",
+     "feedback": "Seen-before answers."
+    },
+    {
+     "id": "S116-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "How can contamination affect scores?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It has no effect at all"
+      },
+      {
+       "letter": "B",
+       "text": "It can inflate them"
+      },
+      {
+       "letter": "C",
+       "text": "It makes scores random"
+      },
+      {
+       "letter": "D",
+       "text": "It always lowers scores"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "It can inflate them",
+     "intro": "A BENCHMARK is a standard test used to compare models, such as a set of math problems or reading questions with known answers. A high score shows the model did well on THAT test. It may not predict how well the model does YOUR task, which may use different topics, formats or languages. Benchmarks can also be affected by CONTAMINATION: test questions that leaked into the model's training data, so the model may have seen the answers. Researchers (Deng and others, 2024) found contamination can inflate scores and is hard to detect. Use benchmarks as a rough guide, then test on your own examples.",
+     "feedback": "Memorized answers look like skill."
+    },
+    {
+     "id": "S116-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "After reading benchmark scores, what should you do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ask the vendor"
+      },
+      {
+       "letter": "B",
+       "text": "Ignore all scores"
+      },
+      {
+       "letter": "C",
+       "text": "Test on your own examples"
+      },
+      {
+       "letter": "D",
+       "text": "Choose the model with the highest score and use it without any further testing at all"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Test on your own examples",
+     "intro": "A BENCHMARK is a standard test used to compare models, such as a set of math problems or reading questions with known answers. A high score shows the model did well on THAT test. It may not predict how well the model does YOUR task, which may use different topics, formats or languages. Benchmarks can also be affected by CONTAMINATION: test questions that leaked into the model's training data, so the model may have seen the answers. Researchers (Deng and others, 2024) found contamination can inflate scores and is hard to detect. Use benchmarks as a rough guide, then test on your own examples.",
+     "feedback": "Your task decides."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare a benchmark with a driving test",
+   "questions": [
+    {
+     "id": "S116-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What does passing a driving test show?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "You can do the tested skills on that day"
+      },
+      {
+       "letter": "B",
+       "text": "That you are a mechanic"
+      },
+      {
+       "letter": "C",
+       "text": "That you own a car"
+      },
+      {
+       "letter": "D",
+       "text": "That you can drive perfectly in every condition anywhere in the world for the rest of your life"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "You can do the tested skills on that day",
+     "intro": "A DRIVING TEST checks set skills on a set route: parking, signaling, a few turns. Passing shows you can do those things on that day. It does not prove you can drive in a snowstorm or on a mountain road. And if someone memorized the exact route and every turn in advance, a pass would show even less. A benchmark is like a driving test: useful, but limited to what it tests, and less meaningful if the answers were known beforehand.",
+     "feedback": "Limited proof."
+    },
+    {
+     "id": "S116-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Driving in a snowstorm is like what for a model?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The exact benchmark questions that the model has already practiced many times before"
+      },
+      {
+       "letter": "B",
+       "text": "A task different from the benchmark"
+      },
+      {
+       "letter": "C",
+       "text": "A faster computer"
+      },
+      {
+       "letter": "D",
+       "text": "A price change"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A task different from the benchmark",
+     "intro": "A DRIVING TEST checks set skills on a set route: parking, signaling, a few turns. Passing shows you can do those things on that day. It does not prove you can drive in a snowstorm or on a mountain road. And if someone memorized the exact route and every turn in advance, a pass would show even less. A benchmark is like a driving test: useful, but limited to what it tests, and less meaningful if the answers were known beforehand.",
+     "feedback": "Untested conditions."
+    },
+    {
+     "id": "S116-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Memorizing the exact route is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A false negative"
+      },
+      {
+       "letter": "B",
+       "text": "A subscription"
+      },
+      {
+       "letter": "C",
+       "text": "A fair test"
+      },
+      {
+       "letter": "D",
+       "text": "Contamination"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Contamination",
+     "intro": "A DRIVING TEST checks set skills on a set route: parking, signaling, a few turns. Passing shows you can do those things on that day. It does not prove you can drive in a snowstorm or on a mountain road. And if someone memorized the exact route and every turn in advance, a pass would show even less. A benchmark is like a driving test: useful, but limited to what it tests, and less meaningful if the answers were known beforehand.",
+     "feedback": "Seen answers."
+    },
+    {
+     "id": "S116-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Why does memorizing the route weaken the test?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The pass shows less real skill"
+      },
+      {
+       "letter": "B",
+       "text": "Because memorizing routes makes cars drive more slowly during the test itself"
+      },
+      {
+       "letter": "C",
+       "text": "Because testers object"
+      },
+      {
+       "letter": "D",
+       "text": "Because routes change daily"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The pass shows less real skill",
+     "intro": "A DRIVING TEST checks set skills on a set route: parking, signaling, a few turns. Passing shows you can do those things on that day. It does not prove you can drive in a snowstorm or on a mountain road. And if someone memorized the exact route and every turn in advance, a pass would show even less. A benchmark is like a driving test: useful, but limited to what it tests, and less meaningful if the answers were known beforehand.",
+     "feedback": "Inflated result."
+    },
+    {
+     "id": "S116-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What is the lesson about benchmarks?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "They are about cars"
+      },
+      {
+       "letter": "B",
+       "text": "Useful but limited to what they test"
+      },
+      {
+       "letter": "C",
+       "text": "They are worthless and should never be looked at by anyone choosing a model"
+      },
+      {
+       "letter": "D",
+       "text": "They prove everything"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Useful but limited to what they test",
+     "intro": "A DRIVING TEST checks set skills on a set route: parking, signaling, a few turns. Passing shows you can do those things on that day. It does not prove you can drive in a snowstorm or on a mountain road. And if someone memorized the exact route and every turn in advance, a pass would show even less. A benchmark is like a driving test: useful, but limited to what it tests, and less meaningful if the answers were known beforehand.",
+     "feedback": "Rough guide."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who over-trusts benchmark scores can compare them with a driving test."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Interpret benchmark claims in practice",
+   "questions": [
+    {
+     "id": "S116-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "A model scores highly on an English reading benchmark. You need it for Vietnamese customer emails. What should you do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ignore the language"
+      },
+      {
+       "letter": "B",
+       "text": "Choose a model with a lower English score"
+      },
+      {
+       "letter": "C",
+       "text": "Test it on real Vietnamese emails"
+      },
+      {
+       "letter": "D",
+       "text": "Use it right away, since high English scores always mean equally strong results in every language"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Test it on real Vietnamese emails",
+     "intro": "A BENCHMARK is a standard test used to compare models, such as a set of math problems or reading questions with known answers. A high score shows the model did well on THAT test. It may not predict how well the model does YOUR task, which may use different topics, formats or languages. Benchmarks can also be affected by CONTAMINATION: test questions that leaked into the model's training data, so the model may have seen the answers. Researchers (Deng and others, 2024) found contamination can inflate scores and is hard to detect. Use benchmarks as a rough guide, then test on your own examples.",
+     "feedback": "Your task differs."
+    },
+    {
+     "id": "S116-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "A model's math score jumps suddenly, and the test questions were posted online years ago. What should you suspect?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "That the model must have become truly brilliant at mathematics overnight without any other explanation"
+      },
+      {
+       "letter": "B",
+       "text": "That the score is lower"
+      },
+      {
+       "letter": "C",
+       "text": "That math changed"
+      },
+      {
+       "letter": "D",
+       "text": "Possible contamination"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Possible contamination",
+     "intro": "A BENCHMARK is a standard test used to compare models, such as a set of math problems or reading questions with known answers. A high score shows the model did well on THAT test. It may not predict how well the model does YOUR task, which may use different topics, formats or languages. Benchmarks can also be affected by CONTAMINATION: test questions that leaked into the model's training data, so the model may have seen the answers. Researchers (Deng and others, 2024) found contamination can inflate scores and is hard to detect. Use benchmarks as a rough guide, then test on your own examples.",
+     "feedback": "Leaked questions inflate scores."
+    },
+    {
+     "id": "S116-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "An ad lists three benchmarks where its model wins. What question should you ask?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Who designed the logo?\""
+      },
+      {
+       "letter": "B",
+       "text": "\"What about other benchmarks?\""
+      },
+      {
+       "letter": "C",
+       "text": "\"How many colors are used in the chart that shows the three benchmark scores in the ad?\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Is the ad long?\""
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "\"What about other benchmarks?\"",
+     "intro": "A BENCHMARK is a standard test used to compare models, such as a set of math problems or reading questions with known answers. A high score shows the model did well on THAT test. It may not predict how well the model does YOUR task, which may use different topics, formats or languages. Benchmarks can also be affected by CONTAMINATION: test questions that leaked into the model's training data, so the model may have seen the answers. Researchers (Deng and others, 2024) found contamination can inflate scores and is hard to detect. Use benchmarks as a rough guide, then test on your own examples.",
+     "feedback": "Selective reporting."
+    },
+    {
+     "id": "S116-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Which benchmark is most relevant for a tool that summarizes legal contracts?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A benchmark of grade-school arithmetic word problems, since all tasks use the same skills"
+      },
+      {
+       "letter": "B",
+       "text": "A trivia quiz"
+      },
+      {
+       "letter": "C",
+       "text": "A poetry benchmark"
+      },
+      {
+       "letter": "D",
+       "text": "One using real contract summaries"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "One using real contract summaries",
+     "intro": "A BENCHMARK is a standard test used to compare models, such as a set of math problems or reading questions with known answers. A high score shows the model did well on THAT test. It may not predict how well the model does YOUR task, which may use different topics, formats or languages. Benchmarks can also be affected by CONTAMINATION: test questions that leaked into the model's training data, so the model may have seen the answers. Researchers (Deng and others, 2024) found contamination can inflate scores and is hard to detect. Use benchmarks as a rough guide, then test on your own examples.",
+     "feedback": "Match the task."
+    },
+    {
+     "id": "S116-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Two models score 91 and 92 on a benchmark. What is reasonable?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Neither works"
+      },
+      {
+       "letter": "B",
+       "text": "Model A is better"
+      },
+      {
+       "letter": "C",
+       "text": "The difference may be noise; test both"
+      },
+      {
+       "letter": "D",
+       "text": "Model B is clearly far better in every way"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The difference may be noise; test both",
+     "intro": "A BENCHMARK is a standard test used to compare models, such as a set of math problems or reading questions with known answers. A high score shows the model did well on THAT test. It may not predict how well the model does YOUR task, which may use different topics, formats or languages. Benchmarks can also be affected by CONTAMINATION: test questions that leaked into the model's training data, so the model may have seen the answers. Researchers (Deng and others, 2024) found contamination can inflate scores and is hard to detect. Use benchmarks as a rough guide, then test on your own examples.",
+     "feedback": "Small gaps may not matter."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Avoid over-reading benchmark scores",
+   "questions": [
+    {
+     "id": "S116-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "All top models score about 99 on a benchmark. What does this mean?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It no longer separates them well"
+      },
+      {
+       "letter": "B",
+       "text": "That every model is now perfect at every task, since they all scored nearly one hundred"
+      },
+      {
+       "letter": "C",
+       "text": "That scores went down"
+      },
+      {
+       "letter": "D",
+       "text": "That the benchmark is broken"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "It no longer separates them well",
+     "intro": "Scores invite over-reading. A difference of one or two points may be noise. A benchmark can become \"saturated\" when top models all score near 100, so it no longer separates them. Marketing may quote only the benchmarks a model does well on. Ask: What exactly does the test measure? Is it like my task? Who ran it, and how? Then check with a small test set of your own.",
+     "feedback": "Saturation."
+    },
+    {
+     "id": "S116-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Which question best checks a benchmark's relevance?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Is the model new?\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Is the score a round number?\""
+      },
+      {
+       "letter": "C",
+       "text": "\"How many people shared the benchmark results on social media during the first week?\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Is this test like my task?\""
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "\"Is this test like my task?\"",
+     "intro": "Scores invite over-reading. A difference of one or two points may be noise. A benchmark can become \"saturated\" when top models all score near 100, so it no longer separates them. Marketing may quote only the benchmarks a model does well on. Ask: What exactly does the test measure? Is it like my task? Who ran it, and how? Then check with a small test set of your own.",
+     "feedback": "Similarity to your use."
+    },
+    {
+     "id": "S116-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Who ran a benchmark matters because...",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It does not matter"
+      },
+      {
+       "letter": "B",
+       "text": "Methods and incentives can affect results"
+      },
+      {
+       "letter": "C",
+       "text": "Benchmarks run themselves"
+      },
+      {
+       "letter": "D",
+       "text": "Only famous people are allowed to run benchmarks"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Methods and incentives can affect results",
+     "intro": "Scores invite over-reading. A difference of one or two points may be noise. A benchmark can become \"saturated\" when top models all score near 100, so it no longer separates them. Marketing may quote only the benchmarks a model does well on. Ask: What exactly does the test measure? Is it like my task? Who ran it, and how? Then check with a small test set of your own.",
+     "feedback": "Source and method."
+    },
+    {
+     "id": "S116-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Why are simple overlap checks not enough to rule out contamination?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because overlap checks always find every single leaked question with no mistakes"
+      },
+      {
+       "letter": "B",
+       "text": "Because contamination does not exist"
+      },
+      {
+       "letter": "C",
+       "text": "They can miss contaminated examples"
+      },
+      {
+       "letter": "D",
+       "text": "Because they are too slow"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "They can miss contaminated examples",
+     "intro": "Scores invite over-reading. A difference of one or two points may be noise. A benchmark can become \"saturated\" when top models all score near 100, so it no longer separates them. Marketing may quote only the benchmarks a model does well on. Ask: What exactly does the test measure? Is it like my task? Who ran it, and how? Then check with a small test set of your own.",
+     "feedback": "Hard to detect."
+    },
+    {
+     "id": "S116-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What is the final step after reading benchmarks?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Check with your own small test set"
+      },
+      {
+       "letter": "B",
+       "text": "Buy the tool with the most benchmark wins and never test it on any of your own tasks"
+      },
+      {
+       "letter": "C",
+       "text": "Ask friends only"
+      },
+      {
+       "letter": "D",
+       "text": "Read more ads"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Check with your own small test set",
+     "intro": "Scores invite over-reading. A difference of one or two points may be noise. A benchmark can become \"saturated\" when top models all score near 100, so it no longer separates them. Marketing may quote only the benchmarks a model does well on. Ask: What exactly does the test measure? Is it like my task? Who ran it, and how? Then check with a small test set of your own.",
+     "feedback": "Your evidence."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

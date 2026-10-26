@@ -1,0 +1,658 @@
+{
+ "set": 20,
+ "title": "Conversation context versus saved memory",
+ "outcome": "AI.LLM.07",
+ "content_status": "stable",
+ "requires": [
+  18
+ ],
+ "module": "llm",
+ "path_refs": [
+  "everyday",
+  "creative",
+  "coding",
+  "work",
+  "society"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Tell conversation context from saved memory",
+   "questions": [
+    {
+     "id": "S20-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "In one chat, you mention your dog's name, and later in the same chat the model uses it. What makes this possible?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The earlier message is still in the chat context"
+      },
+      {
+       "letter": "B",
+       "text": "The model was retrained on your dog's name"
+      },
+      {
+       "letter": "C",
+       "text": "The model guessed the name from training data"
+      },
+      {
+       "letter": "D",
+       "text": "Every model knows every pet's name"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The earlier message is still in the chat context",
+     "intro": "Two different things can make a chatbot seem to \"remember.\" CONVERSATION CONTEXT is the text of the current chat that is sent back to the model with each message, so it can refer to what you said earlier in that chat. SAVED MEMORY (or history features) is something a PRODUCT may offer: it stores notes or past chats and adds them to future conversations. Saved memory is a product feature, it varies between products, and it can usually be viewed, turned off or deleted in settings. Neither one retrains the model. Check what a specific product saves rather than assuming.",
+     "feedback": "Earlier messages in the chat are part of the context."
+    },
+    {
+     "id": "S20-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "A product greets you by name in a brand-new chat. What is the most likely reason?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The model's parameters changed to include your name"
+      },
+      {
+       "letter": "B",
+       "text": "The model read your mind from your typing"
+      },
+      {
+       "letter": "C",
+       "text": "All chatbots know every user's name"
+      },
+      {
+       "letter": "D",
+       "text": "The product saved a note and added it to the new chat"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The product saved a note and added it to the new chat",
+     "intro": "Two different things can make a chatbot seem to \"remember.\" CONVERSATION CONTEXT is the text of the current chat that is sent back to the model with each message, so it can refer to what you said earlier in that chat. SAVED MEMORY (or history features) is something a PRODUCT may offer: it stores notes or past chats and adds them to future conversations. Saved memory is a product feature, it varies between products, and it can usually be viewed, turned off or deleted in settings. Neither one retrains the model. Check what a specific product saves rather than assuming.",
+     "feedback": "Saved memory is a product feature."
+    },
+    {
+     "id": "S20-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Which statement about saved memory is accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It is part of every language model's design"
+      },
+      {
+       "letter": "B",
+       "text": "It can never be viewed or deleted"
+      },
+      {
+       "letter": "C",
+       "text": "It is a product feature that varies and has settings"
+      },
+      {
+       "letter": "D",
+       "text": "It permanently retrains the model for every user"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "It is a product feature that varies and has settings",
+     "intro": "Two different things can make a chatbot seem to \"remember.\" CONVERSATION CONTEXT is the text of the current chat that is sent back to the model with each message, so it can refer to what you said earlier in that chat. SAVED MEMORY (or history features) is something a PRODUCT may offer: it stores notes or past chats and adds them to future conversations. Saved memory is a product feature, it varies between products, and it can usually be viewed, turned off or deleted in settings. Neither one retrains the model. Check what a specific product saves rather than assuming.",
+     "feedback": "Memory varies by product and is usually controllable."
+    },
+    {
+     "id": "S20-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Does conversation context retrain the model?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes; every chat retrains the model"
+      },
+      {
+       "letter": "B",
+       "text": "No; it is just text sent with each message"
+      },
+      {
+       "letter": "C",
+       "text": "Yes; but only on weekends"
+      },
+      {
+       "letter": "D",
+       "text": "No; because context is deleted instantly"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "No; it is just text sent with each message",
+     "intro": "Two different things can make a chatbot seem to \"remember.\" CONVERSATION CONTEXT is the text of the current chat that is sent back to the model with each message, so it can refer to what you said earlier in that chat. SAVED MEMORY (or history features) is something a PRODUCT may offer: it stores notes or past chats and adds them to future conversations. Saved memory is a product feature, it varies between products, and it can usually be viewed, turned off or deleted in settings. Neither one retrains the model. Check what a specific product saves rather than assuming.",
+     "feedback": "Context is supplied text, not training."
+    },
+    {
+     "id": "S20-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "A friend says, \"All chatbots remember everything forever.\" What is the best response?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "True; models store chats in their parameters"
+      },
+      {
+       "letter": "B",
+       "text": "False; no chatbot can ever save anything"
+      },
+      {
+       "letter": "C",
+       "text": "It depends on the product; check its memory settings"
+      },
+      {
+       "letter": "D",
+       "text": "True; every chatbot saves all chats forever"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "It depends on the product; check its memory settings",
+     "intro": "Two different things can make a chatbot seem to \"remember.\" CONVERSATION CONTEXT is the text of the current chat that is sent back to the model with each message, so it can refer to what you said earlier in that chat. SAVED MEMORY (or history features) is something a PRODUCT may offer: it stores notes or past chats and adds them to future conversations. Saved memory is a product feature, it varies between products, and it can usually be viewed, turned off or deleted in settings. Neither one retrains the model. Check what a specific product saves rather than assuming.",
+     "feedback": "Memory behavior is product-specific."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare a conversation with a notebook",
+   "questions": [
+    {
+     "id": "S20-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Saying \"the movie I mentioned\" during lunch is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A web search"
+      },
+      {
+       "letter": "B",
+       "text": "Conversation context"
+      },
+      {
+       "letter": "C",
+       "text": "Saved memory"
+      },
+      {
+       "letter": "D",
+       "text": "Training a new model"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Conversation context",
+     "intro": "Talking to a friend at lunch, you can say \"the movie I mentioned\" because it came up a few minutes ago: that is like CONVERSATION CONTEXT. If your friend also keeps a NOTEBOOK and writes \"likes horror movies,\" then next month they can bring it up again: that is like SAVED MEMORY. The notebook is something extra that your friend chose to keep, could show you, and could erase. Neither the lunch talk nor the notebook changes who your friend fundamentally is, just as neither one retrains a model.",
+     "feedback": "The current talk holds recent details."
+    },
+    {
+     "id": "S20-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "The friend's notebook is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Saved memory"
+      },
+      {
+       "letter": "B",
+       "text": "Conversation context"
+      },
+      {
+       "letter": "C",
+       "text": "The model's parameters"
+      },
+      {
+       "letter": "D",
+       "text": "A search engine"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Saved memory",
+     "intro": "Talking to a friend at lunch, you can say \"the movie I mentioned\" because it came up a few minutes ago: that is like CONVERSATION CONTEXT. If your friend also keeps a NOTEBOOK and writes \"likes horror movies,\" then next month they can bring it up again: that is like SAVED MEMORY. The notebook is something extra that your friend chose to keep, could show you, and could erase. Neither the lunch talk nor the notebook changes who your friend fundamentally is, just as neither one retrains a model.",
+     "feedback": "Kept notes carry over to later talks."
+    },
+    {
+     "id": "S20-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Can the friend show you or erase the notebook?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only if it is full"
+      },
+      {
+       "letter": "B",
+       "text": "No, it is secret forever"
+      },
+      {
+       "letter": "C",
+       "text": "No, notebooks like that can never be erased or shown"
+      },
+      {
+       "letter": "D",
+       "text": "Yes, it is kept separately and can be managed"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Yes, it is kept separately and can be managed",
+     "intro": "Talking to a friend at lunch, you can say \"the movie I mentioned\" because it came up a few minutes ago: that is like CONVERSATION CONTEXT. If your friend also keeps a NOTEBOOK and writes \"likes horror movies,\" then next month they can bring it up again: that is like SAVED MEMORY. The notebook is something extra that your friend chose to keep, could show you, and could erase. Neither the lunch talk nor the notebook changes who your friend fundamentally is, just as neither one retrains a model.",
+     "feedback": "Saved memory is often viewable and deletable."
+    },
+    {
+     "id": "S20-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Next month, how could the friend recall \"likes horror movies\"?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "By guessing"
+      },
+      {
+       "letter": "B",
+       "text": "By remembering every word of lunch"
+      },
+      {
+       "letter": "C",
+       "text": "By reading the notebook"
+      },
+      {
+       "letter": "D",
+       "text": "By asking a stranger"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "By reading the notebook",
+     "intro": "Talking to a friend at lunch, you can say \"the movie I mentioned\" because it came up a few minutes ago: that is like CONVERSATION CONTEXT. If your friend also keeps a NOTEBOOK and writes \"likes horror movies,\" then next month they can bring it up again: that is like SAVED MEMORY. The notebook is something extra that your friend chose to keep, could show you, and could erase. Neither the lunch talk nor the notebook changes who your friend fundamentally is, just as neither one retrains a model.",
+     "feedback": "Saved notes carry over."
+    },
+    {
+     "id": "S20-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Does keeping a notebook change who the friend is?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No, it is extra information they keep"
+      },
+      {
+       "letter": "B",
+       "text": "Only if the notebook is long"
+      },
+      {
+       "letter": "C",
+       "text": "Yes, they become a new person entirely"
+      },
+      {
+       "letter": "D",
+       "text": "Yes, it rewires their brain"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "No, it is extra information they keep",
+     "intro": "Talking to a friend at lunch, you can say \"the movie I mentioned\" because it came up a few minutes ago: that is like CONVERSATION CONTEXT. If your friend also keeps a NOTEBOOK and writes \"likes horror movies,\" then next month they can bring it up again: that is like SAVED MEMORY. The notebook is something extra that your friend chose to keep, could show you, and could erase. Neither the lunch talk nor the notebook changes who your friend fundamentally is, just as neither one retrains a model.",
+     "feedback": "Like memory, it does not retrain the model."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who confuses chat context with saved memory can separate them with a lunch-and-notebook picture."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Manage context and memory in practice",
+   "questions": [
+    {
+     "id": "S20-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Lia wants a product to stop bringing up her old projects in new chats. What should she check?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Whether the model needs retraining"
+      },
+      {
+       "letter": "B",
+       "text": "The product's memory or history settings"
+      },
+      {
+       "letter": "C",
+       "text": "Whether her internet is slow"
+      },
+      {
+       "letter": "D",
+       "text": "Whether her messages are too short"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The product's memory or history settings",
+     "intro": "Two different things can make a chatbot seem to \"remember.\" CONVERSATION CONTEXT is the text of the current chat that is sent back to the model with each message, so it can refer to what you said earlier in that chat. SAVED MEMORY (or history features) is something a PRODUCT may offer: it stores notes or past chats and adds them to future conversations. Saved memory is a product feature, it varies between products, and it can usually be viewed, turned off or deleted in settings. Neither one retrains the model. Check what a specific product saves rather than assuming.",
+     "feedback": "Memory settings control carried-over notes."
+    },
+    {
+     "id": "S20-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "In a long chat, a model correctly refers to a recipe from 20 minutes earlier. What does it rely on?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Every recipe ever written"
+      },
+      {
+       "letter": "B",
+       "text": "A permanent change to its parameters"
+      },
+      {
+       "letter": "C",
+       "text": "A separate saved note from last year"
+      },
+      {
+       "letter": "D",
+       "text": "The conversation context from this chat"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The conversation context from this chat",
+     "intro": "Two different things can make a chatbot seem to \"remember.\" CONVERSATION CONTEXT is the text of the current chat that is sent back to the model with each message, so it can refer to what you said earlier in that chat. SAVED MEMORY (or history features) is something a PRODUCT may offer: it stores notes or past chats and adds them to future conversations. Saved memory is a product feature, it varies between products, and it can usually be viewed, turned off or deleted in settings. Neither one retrains the model. Check what a specific product saves rather than assuming.",
+     "feedback": "Recent chat text is in context."
+    },
+    {
+     "id": "S20-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "A product has no memory feature. You start a new chat. Should you expect it to know your earlier chat?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No; and it will refuse to talk to you"
+      },
+      {
+       "letter": "B",
+       "text": "No; you would need to supply the details again"
+      },
+      {
+       "letter": "C",
+       "text": "Yes; every model remembers every past chat"
+      },
+      {
+       "letter": "D",
+       "text": "Yes; the earlier chat retrained it"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "No; you would need to supply the details again",
+     "intro": "Two different things can make a chatbot seem to \"remember.\" CONVERSATION CONTEXT is the text of the current chat that is sent back to the model with each message, so it can refer to what you said earlier in that chat. SAVED MEMORY (or history features) is something a PRODUCT may offer: it stores notes or past chats and adds them to future conversations. Saved memory is a product feature, it varies between products, and it can usually be viewed, turned off or deleted in settings. Neither one retrains the model. Check what a specific product saves rather than assuming.",
+     "feedback": "Without saved memory, new chats start fresh."
+    },
+    {
+     "id": "S20-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Which action is about saved memory rather than conversation context?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Viewing and deleting stored notes in settings"
+      },
+      {
+       "letter": "B",
+       "text": "Scrolling up to reread this chat"
+      },
+      {
+       "letter": "C",
+       "text": "Pasting a file into this message"
+      },
+      {
+       "letter": "D",
+       "text": "Restating a rule in the current chat window"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Viewing and deleting stored notes in settings",
+     "intro": "Two different things can make a chatbot seem to \"remember.\" CONVERSATION CONTEXT is the text of the current chat that is sent back to the model with each message, so it can refer to what you said earlier in that chat. SAVED MEMORY (or history features) is something a PRODUCT may offer: it stores notes or past chats and adds them to future conversations. Saved memory is a product feature, it varies between products, and it can usually be viewed, turned off or deleted in settings. Neither one retrains the model. Check what a specific product saves rather than assuming.",
+     "feedback": "Stored notes are product memory."
+    },
+    {
+     "id": "S20-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "A coworker says, \"I told it my preference once, so the model learned it forever.\" What is more accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Correct; all preferences are added to its training right away"
+      },
+      {
+       "letter": "B",
+       "text": "Wrong; products never save preferences"
+      },
+      {
+       "letter": "C",
+       "text": "A product may have saved a note; the model did not retrain"
+      },
+      {
+       "letter": "D",
+       "text": "Correct; models retrain after each preference"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A product may have saved a note; the model did not retrain",
+     "intro": "Two different things can make a chatbot seem to \"remember.\" CONVERSATION CONTEXT is the text of the current chat that is sent back to the model with each message, so it can refer to what you said earlier in that chat. SAVED MEMORY (or history features) is something a PRODUCT may offer: it stores notes or past chats and adds them to future conversations. Saved memory is a product feature, it varies between products, and it can usually be viewed, turned off or deleted in settings. Neither one retrains the model. Check what a specific product saves rather than assuming.",
+     "feedback": "Saved notes are separate from the model."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Handle memory features carefully",
+   "questions": [
+    {
+     "id": "S20-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "A family shares one account, and a new answer mentions a private detail one member shared. What is the issue?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The model hacked the family's computer"
+      },
+      {
+       "letter": "B",
+       "text": "Memory features never store private details"
+      },
+      {
+       "letter": "C",
+       "text": "This is impossible with any product"
+      },
+      {
+       "letter": "D",
+       "text": "Saved memory on a shared account can expose details"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Saved memory on a shared account can expose details",
+     "intro": "Memory features raise practical questions. Something you mentioned weeks ago could appear in a new answer, which may be helpful or unwelcome. Shared devices or shared accounts can expose saved notes to other people. Turning off memory may not delete chats already stored, and deleting a chat may not remove information a product saved separately; read what each setting actually does. For sensitive topics, the safest habit is not to share details you would not want stored, whatever the settings say.",
+     "feedback": "Shared accounts plus memory can leak details."
+    },
+    {
+     "id": "S20-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Jay turns memory off. Does that automatically delete chats already stored?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No, chats can never be deleted by anyone"
+      },
+      {
+       "letter": "B",
+       "text": "Not necessarily; read what the setting does"
+      },
+      {
+       "letter": "C",
+       "text": "Yes, always, in every product"
+      },
+      {
+       "letter": "D",
+       "text": "Yes, and it retrains the model"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Not necessarily; read what the setting does",
+     "intro": "Memory features raise practical questions. Something you mentioned weeks ago could appear in a new answer, which may be helpful or unwelcome. Shared devices or shared accounts can expose saved notes to other people. Turning off memory may not delete chats already stored, and deleting a chat may not remove information a product saved separately; read what each setting actually does. For sensitive topics, the safest habit is not to share details you would not want stored, whatever the settings say.",
+     "feedback": "Check what each setting actually does."
+    },
+    {
+     "id": "S20-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Which is the safest habit for very sensitive details, such as medical history?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Share them with a friendly greeting"
+      },
+      {
+       "letter": "B",
+       "text": "Share them, since settings always protect you"
+      },
+      {
+       "letter": "C",
+       "text": "Share them only in long conversations"
+      },
+      {
+       "letter": "D",
+       "text": "Do not share details you would not want stored"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Do not share details you would not want stored",
+     "intro": "Memory features raise practical questions. Something you mentioned weeks ago could appear in a new answer, which may be helpful or unwelcome. Shared devices or shared accounts can expose saved notes to other people. Turning off memory may not delete chats already stored, and deleting a chat may not remove information a product saved separately; read what each setting actually does. For sensitive topics, the safest habit is not to share details you would not want stored, whatever the settings say.",
+     "feedback": "Not sharing is the most reliable protection."
+    },
+    {
+     "id": "S20-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "A user deletes a chat but later sees a detail from it in a new answer. What is a possible explanation?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The new chat is the same chat"
+      },
+      {
+       "letter": "B",
+       "text": "The detail was in the model's original training"
+      },
+      {
+       "letter": "C",
+       "text": "The product saved that detail separately as a note"
+      },
+      {
+       "letter": "D",
+       "text": "Deleting chats retrains the model"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The product saved that detail separately as a note",
+     "intro": "Memory features raise practical questions. Something you mentioned weeks ago could appear in a new answer, which may be helpful or unwelcome. Shared devices or shared accounts can expose saved notes to other people. Turning off memory may not delete chats already stored, and deleting a chat may not remove information a product saved separately; read what each setting actually does. For sensitive topics, the safest habit is not to share details you would not want stored, whatever the settings say.",
+     "feedback": "Saved notes can be separate from chat history."
+    },
+    {
+     "id": "S20-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "What is the best source for how a specific product handles memory?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Its own settings and help pages"
+      },
+      {
+       "letter": "B",
+       "text": "The model's answer about itself, with no documentation"
+      },
+      {
+       "letter": "C",
+       "text": "A general article about all chatbots"
+      },
+      {
+       "letter": "D",
+       "text": "A friend's guess"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Its own settings and help pages",
+     "intro": "Memory features raise practical questions. Something you mentioned weeks ago could appear in a new answer, which may be helpful or unwelcome. Shared devices or shared accounts can expose saved notes to other people. Turning off memory may not delete chats already stored, and deleting a chat may not remove information a product saved separately; read what each setting actually does. For sensitive topics, the safest habit is not to share details you would not want stored, whatever the settings say.",
+     "feedback": "Product documentation is the best evidence."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

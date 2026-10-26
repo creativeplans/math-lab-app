@@ -1,0 +1,659 @@
+{
+ "set": 91,
+ "title": "Version control: commits, differences and undoing",
+ "outcome": "AI.CODE.07",
+ "content_status": "stable",
+ "requires": [
+  85
+ ],
+ "module": "code",
+ "path_refs": [
+  "coding"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Explain commits, diffs and reverting",
+   "questions": [
+    {
+     "id": "S91-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What is a commit?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A promise from the programmer to finish the project by a certain date in the future"
+      },
+      {
+       "letter": "B",
+       "text": "A saved snapshot of code with a message"
+      },
+      {
+       "letter": "C",
+       "text": "An error message"
+      },
+      {
+       "letter": "D",
+       "text": "A deleted file"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A saved snapshot of code with a message",
+     "intro": "VERSION CONTROL keeps a history of code changes. A popular tool for it is called Git. A COMMIT is a saved snapshot with a short message (\"Fix average for empty list\"). A DIFF (difference) shows what changed between versions: lines starting with \"-\" were removed and lines with \"+\" were added. REVERTING undoes a commit by applying the opposite change. A good habit with AI help: COMMIT BEFORE accepting generated changes, so you can see exactly what the tool changed in the diff and undo it if it breaks something.",
+     "feedback": "Snapshot plus message."
+    },
+    {
+     "id": "S91-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "In a diff, what does a line starting with \"+\" mean?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It was added"
+      },
+      {
+       "letter": "B",
+       "text": "It is a comment"
+      },
+      {
+       "letter": "C",
+       "text": "It has an error"
+      },
+      {
+       "letter": "D",
+       "text": "It was removed"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "It was added",
+     "intro": "VERSION CONTROL keeps a history of code changes. A popular tool for it is called Git. A COMMIT is a saved snapshot with a short message (\"Fix average for empty list\"). A DIFF (difference) shows what changed between versions: lines starting with \"-\" were removed and lines with \"+\" were added. REVERTING undoes a commit by applying the opposite change. A good habit with AI help: COMMIT BEFORE accepting generated changes, so you can see exactly what the tool changed in the diff and undo it if it breaks something.",
+     "feedback": "Plus means added."
+    },
+    {
+     "id": "S91-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "In this example, what changed?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The variable was renamed"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing changed"
+      },
+      {
+       "letter": "C",
+       "text": "Multiplication became addition"
+      },
+      {
+       "letter": "D",
+       "text": "Addition became multiplication"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Multiplication became addition",
+     "intro": "VERSION CONTROL keeps a history of code changes. A popular tool for it is called Git. A COMMIT is a saved snapshot with a short message (\"Fix average for empty list\"). A DIFF (difference) shows what changed between versions: lines starting with \"-\" were removed and lines with \"+\" were added. REVERTING undoes a commit by applying the opposite change. A good habit with AI help: COMMIT BEFORE accepting generated changes, so you can see exactly what the tool changed in the diff and undo it if it breaks something.",
+     "feedback": "\"*\" removed, \"+\" added.",
+     "example": {
+      "kind": "text",
+      "label": "Prepared example (a diff in a fictional project). Shown only; nothing runs.",
+      "text": "- total = price * count\n+ total = price + count"
+     }
+    },
+    {
+     "id": "S91-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What does reverting do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Copies the project"
+      },
+      {
+       "letter": "B",
+       "text": "Runs the tests"
+      },
+      {
+       "letter": "C",
+       "text": "Deletes the whole project and its history"
+      },
+      {
+       "letter": "D",
+       "text": "Undoes a commit with the opposite change"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Undoes a commit with the opposite change",
+     "intro": "VERSION CONTROL keeps a history of code changes. A popular tool for it is called Git. A COMMIT is a saved snapshot with a short message (\"Fix average for empty list\"). A DIFF (difference) shows what changed between versions: lines starting with \"-\" were removed and lines with \"+\" were added. REVERTING undoes a commit by applying the opposite change. A good habit with AI help: COMMIT BEFORE accepting generated changes, so you can see exactly what the tool changed in the diff and undo it if it breaks something.",
+     "feedback": "Undo a change."
+    },
+    {
+     "id": "S91-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Why commit before accepting generated changes?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "To hide changes"
+      },
+      {
+       "letter": "B",
+       "text": "To see what changed and undo it if needed"
+      },
+      {
+       "letter": "C",
+       "text": "To make the code run faster"
+      },
+      {
+       "letter": "D",
+       "text": "Because tools refuse to change code that has not been committed first in every project"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "To see what changed and undo it if needed",
+     "intro": "VERSION CONTROL keeps a history of code changes. A popular tool for it is called Git. A COMMIT is a saved snapshot with a short message (\"Fix average for empty list\"). A DIFF (difference) shows what changed between versions: lines starting with \"-\" were removed and lines with \"+\" were added. REVERTING undoes a commit by applying the opposite change. A good habit with AI help: COMMIT BEFORE accepting generated changes, so you can see exactly what the tool changed in the diff and undo it if it breaks something.",
+     "feedback": "A safe restore point."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare version control with save points in a video game",
+   "questions": [
+    {
+     "id": "S91-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A game save is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A test"
+      },
+      {
+       "letter": "B",
+       "text": "A bug"
+      },
+      {
+       "letter": "C",
+       "text": "A commit"
+      },
+      {
+       "letter": "D",
+       "text": "A diff"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A commit",
+     "intro": "In many video games you can SAVE before a hard level. If things go badly, you LOAD the save and try again. Each save is like a commit: a snapshot you can return to. Comparing two saves to see what changed, such as items gained or lost, is like a diff. Going back to an earlier save is like reverting. Saving before letting someone else play your game is like committing before accepting AI changes.",
+     "feedback": "A snapshot."
+    },
+    {
+     "id": "S91-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Comparing two saves to see what changed is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A diff"
+      },
+      {
+       "letter": "B",
+       "text": "A new game"
+      },
+      {
+       "letter": "C",
+       "text": "A revert"
+      },
+      {
+       "letter": "D",
+       "text": "A commit message"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "A diff",
+     "intro": "In many video games you can SAVE before a hard level. If things go badly, you LOAD the save and try again. Each save is like a commit: a snapshot you can return to. Comparing two saves to see what changed, such as items gained or lost, is like a diff. Going back to an earlier save is like reverting. Saving before letting someone else play your game is like committing before accepting AI changes.",
+     "feedback": "What changed."
+    },
+    {
+     "id": "S91-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Loading an earlier save is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Buying a game"
+      },
+      {
+       "letter": "B",
+       "text": "Committing a brand-new change that adds a new level to the game for every player"
+      },
+      {
+       "letter": "C",
+       "text": "Deleting the game"
+      },
+      {
+       "letter": "D",
+       "text": "Reverting"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Reverting",
+     "intro": "In many video games you can SAVE before a hard level. If things go badly, you LOAD the save and try again. Each save is like a commit: a snapshot you can return to. Comparing two saves to see what changed, such as items gained or lost, is like a diff. Going back to an earlier save is like reverting. Saving before letting someone else play your game is like committing before accepting AI changes.",
+     "feedback": "Going back."
+    },
+    {
+     "id": "S91-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Saving before a friend plays is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Committing before accepting AI changes"
+      },
+      {
+       "letter": "B",
+       "text": "Deleting every save file so that your friend can start the whole game from the beginning"
+      },
+      {
+       "letter": "C",
+       "text": "Changing the controls"
+      },
+      {
+       "letter": "D",
+       "text": "Turning off the game"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Committing before accepting AI changes",
+     "intro": "In many video games you can SAVE before a hard level. If things go badly, you LOAD the save and try again. Each save is like a commit: a snapshot you can return to. Comparing two saves to see what changed, such as items gained or lost, is like a diff. Going back to an earlier save is like reverting. Saving before letting someone else play your game is like committing before accepting AI changes.",
+     "feedback": "A restore point first."
+    },
+    {
+     "id": "S91-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Why save before a hard level?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because saving makes the next level easier to beat on the very first try"
+      },
+      {
+       "letter": "B",
+       "text": "To end the game"
+      },
+      {
+       "letter": "C",
+       "text": "To return if things go badly"
+      },
+      {
+       "letter": "D",
+       "text": "To change the music"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "To return if things go badly",
+     "intro": "In many video games you can SAVE before a hard level. If things go badly, you LOAD the save and try again. Each save is like a commit: a snapshot you can return to. Comparing two saves to see what changed, such as items gained or lost, is like a diff. Going back to an earlier save is like reverting. Saving before letting someone else play your game is like committing before accepting AI changes.",
+     "feedback": "Safety net."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner new to version control can relate commits, diffs and reverts to game save points."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Use commits and diffs with AI changes",
+   "questions": [
+    {
+     "id": "S91-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Ravi lets a tool edit his project and now tests fail. He committed before the edit. What can he do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Delete the project"
+      },
+      {
+       "letter": "B",
+       "text": "Ignore the tests"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing, because changes made by a tool can never be undone once they have been accepted"
+      },
+      {
+       "letter": "D",
+       "text": "Revert to the earlier commit"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Revert to the earlier commit",
+     "intro": "VERSION CONTROL keeps a history of code changes. A popular tool for it is called Git. A COMMIT is a saved snapshot with a short message (\"Fix average for empty list\"). A DIFF (difference) shows what changed between versions: lines starting with \"-\" were removed and lines with \"+\" were added. REVERTING undoes a commit by applying the opposite change. A good habit with AI help: COMMIT BEFORE accepting generated changes, so you can see exactly what the tool changed in the diff and undo it if it breaks something.",
+     "feedback": "The commit is a restore point."
+    },
+    {
+     "id": "S91-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A diff shows \"- if age >= 18:\" and \"+ if age > 18:\". What changed?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nothing important"
+      },
+      {
+       "letter": "B",
+       "text": "The rule now excludes exactly 18"
+      },
+      {
+       "letter": "C",
+       "text": "The variable name"
+      },
+      {
+       "letter": "D",
+       "text": "The rule now includes more ages than before, such as 17, because > is a larger sign"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The rule now excludes exactly 18",
+     "intro": "VERSION CONTROL keeps a history of code changes. A popular tool for it is called Git. A COMMIT is a saved snapshot with a short message (\"Fix average for empty list\"). A DIFF (difference) shows what changed between versions: lines starting with \"-\" were removed and lines with \"+\" were added. REVERTING undoes a commit by applying the opposite change. A good habit with AI help: COMMIT BEFORE accepting generated changes, so you can see exactly what the tool changed in the diff and undo it if it breaks something.",
+     "feedback": "Boundary changed."
+    },
+    {
+     "id": "S91-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Which commit message is most useful?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"asdf\""
+      },
+      {
+       "letter": "B",
+       "text": "\"stuff\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Fix average to handle an empty list\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Changes,\" which tells everyone that something in the project was changed at that time"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "\"Fix average to handle an empty list\"",
+     "intro": "VERSION CONTROL keeps a history of code changes. A popular tool for it is called Git. A COMMIT is a saved snapshot with a short message (\"Fix average for empty list\"). A DIFF (difference) shows what changed between versions: lines starting with \"-\" were removed and lines with \"+\" were added. REVERTING undoes a commit by applying the opposite change. A good habit with AI help: COMMIT BEFORE accepting generated changes, so you can see exactly what the tool changed in the diff and undo it if it breaks something.",
+     "feedback": "What and why."
+    },
+    {
+     "id": "S91-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Why read the diff after a tool edits code?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "To rename files"
+      },
+      {
+       "letter": "B",
+       "text": "To see exactly what it changed"
+      },
+      {
+       "letter": "C",
+       "text": "Because diffs fix every bug automatically when they are opened and read by a person"
+      },
+      {
+       "letter": "D",
+       "text": "To make the code longer"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "To see exactly what it changed",
+     "intro": "VERSION CONTROL keeps a history of code changes. A popular tool for it is called Git. A COMMIT is a saved snapshot with a short message (\"Fix average for empty list\"). A DIFF (difference) shows what changed between versions: lines starting with \"-\" were removed and lines with \"+\" were added. REVERTING undoes a commit by applying the opposite change. A good habit with AI help: COMMIT BEFORE accepting generated changes, so you can see exactly what the tool changed in the diff and undo it if it breaks something.",
+     "feedback": "Know what changed."
+    },
+    {
+     "id": "S91-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A diff shows only \"+\" lines and no \"-\" lines. What happened?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Lines were only added"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing changed"
+      },
+      {
+       "letter": "C",
+       "text": "Every line in the file was deleted and replaced with completely different lines"
+      },
+      {
+       "letter": "D",
+       "text": "Only comments were removed"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Lines were only added",
+     "intro": "VERSION CONTROL keeps a history of code changes. A popular tool for it is called Git. A COMMIT is a saved snapshot with a short message (\"Fix average for empty list\"). A DIFF (difference) shows what changed between versions: lines starting with \"-\" were removed and lines with \"+\" were added. REVERTING undoes a commit by applying the opposite change. A good habit with AI help: COMMIT BEFORE accepting generated changes, so you can see exactly what the tool changed in the diff and undo it if it breaks something.",
+     "feedback": "Additions only."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Keep history clear and safe",
+   "questions": [
+    {
+     "id": "S91-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A diff from a tool edit shows changes to a settings file you did not ask about. What should you do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ignore the diff"
+      },
+      {
+       "letter": "B",
+       "text": "Delete the settings file"
+      },
+      {
+       "letter": "C",
+       "text": "Accept everything, since tools only change files that were needed for the requested task"
+      },
+      {
+       "letter": "D",
+       "text": "Review those changes before accepting"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Review those changes before accepting",
+     "intro": "Commit messages should say what changed and why, so others (and future you) can understand the history. Small commits that each do one thing are easier to review and undo than one huge commit. Generated changes sometimes touch files you did not expect, such as settings or unrelated code; the diff reveals this. Never commit secrets like passwords, because version history keeps them even after you delete them from the latest version.",
+     "feedback": "Unexpected changes need review."
+    },
+    {
+     "id": "S91-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Why prefer small commits?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because large commits are not allowed by any version control tool that exists today"
+      },
+      {
+       "letter": "B",
+       "text": "Because they hide changes"
+      },
+      {
+       "letter": "C",
+       "text": "They are easier to review and undo"
+      },
+      {
+       "letter": "D",
+       "text": "Because small commits use more storage"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "They are easier to review and undo",
+     "intro": "Commit messages should say what changed and why, so others (and future you) can understand the history. Small commits that each do one thing are easier to review and undo than one huge commit. Generated changes sometimes touch files you did not expect, such as settings or unrelated code; the diff reveals this. Never commit secrets like passwords, because version history keeps them even after you delete them from the latest version.",
+     "feedback": "One thing per commit."
+    },
+    {
+     "id": "S91-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "A password was committed and then deleted in the next commit. Is it gone?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No; history still has it"
+      },
+      {
+       "letter": "B",
+       "text": "Yes, after one day"
+      },
+      {
+       "letter": "C",
+       "text": "Only if the file is small"
+      },
+      {
+       "letter": "D",
+       "text": "Yes, because deleting it in the latest version also removes it from every past version"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "No; history still has it",
+     "intro": "Commit messages should say what changed and why, so others (and future you) can understand the history. Small commits that each do one thing are easier to review and undo than one huge commit. Generated changes sometimes touch files you did not expect, such as settings or unrelated code; the diff reveals this. Never commit secrets like passwords, because version history keeps them even after you delete them from the latest version.",
+     "feedback": "Never commit secrets."
+    },
+    {
+     "id": "S91-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "What should a commit message say?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nothing"
+      },
+      {
+       "letter": "B",
+       "text": "What changed and why"
+      },
+      {
+       "letter": "C",
+       "text": "Only the programmer's name"
+      },
+      {
+       "letter": "D",
+       "text": "Only the date and time"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "What changed and why",
+     "intro": "Commit messages should say what changed and why, so others (and future you) can understand the history. Small commits that each do one thing are easier to review and undo than one huge commit. Generated changes sometimes touch files you did not expect, such as settings or unrelated code; the diff reveals this. Never commit secrets like passwords, because version history keeps them even after you delete them from the latest version.",
+     "feedback": "Clear history."
+    },
+    {
+     "id": "S91-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: code assistance",
+     "type": "mc",
+     "prompt": "Which history is easiest to understand later?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No commits"
+      },
+      {
+       "letter": "B",
+       "text": "One huge commit called \"update\" that contains every change made over three months"
+      },
+      {
+       "letter": "C",
+       "text": "Commits with random messages"
+      },
+      {
+       "letter": "D",
+       "text": "Small commits with clear messages"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Small commits with clear messages",
+     "intro": "Commit messages should say what changed and why, so others (and future you) can understand the history. Small commits that each do one thing are easier to review and undo than one huge commit. Generated changes sometimes touch files you did not expect, such as settings or unrelated code; the diff reveals this. Never commit secrets like passwords, because version history keeps them even after you delete them from the latest version.",
+     "feedback": "Clarity for future readers."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

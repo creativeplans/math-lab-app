@@ -1,0 +1,667 @@
+{
+ "set": 49,
+ "title": "Reinforcement learning and human feedback",
+ "outcome": "AI.LEARN.07",
+ "content_status": "time_sensitive",
+ "requires": [
+  9
+ ],
+ "module": "deeper",
+ "path_refs": [
+  "everyday",
+  "creative",
+  "coding",
+  "work",
+  "society"
+ ],
+ "suggested": [],
+ "sources": [
+  {
+   "url": "https://arxiv.org/abs/2203.02155",
+   "claim": "Ouyang et al. (2022), \"Training language models to follow instructions with human feedback\": a model is fine-tuned on human-written demonstrations, a reward model is trained on human rankings of outputs, and reinforcement learning from human feedback (RLHF) then adjusts the model; the resulting models still make simple mistakes.",
+   "checked": "2026-10-26"
+  }
+ ],
+ "review_interval_days": 1095,
+ "jurisdiction": "research",
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Explain learning from rewards and from human feedback",
+   "questions": [
+    {
+     "id": "S49-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "How does reinforcement learning teach a system?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Through rules a programmer writes for every situation"
+      },
+      {
+       "letter": "B",
+       "text": "Through an answer key attached to every training example"
+      },
+      {
+       "letter": "C",
+       "text": "Through rewards and penalties for its actions"
+      },
+      {
+       "letter": "D",
+       "text": "Through copying a single human expert exactly"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Through rewards and penalties for its actions",
+     "intro": "REINFORCEMENT LEARNING (RL) teaches a system by REWARDS instead of answer keys. The system tries actions, gets a reward or penalty, and gradually favors actions that earn more reward, like training a dog with treats. It has been used for game-playing programs and robot control. Language models are often refined with REINFORCEMENT LEARNING FROM HUMAN FEEDBACK (RLHF): people rank or rate sample answers, a separate \"reward model\" learns to predict those ratings, and the language model is then adjusted to produce answers that score well. Research in 2022 showed this made models better at following instructions.",
+     "feedback": "Actions that earn reward become more likely."
+    },
+    {
+     "id": "S49-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "Which everyday activity is most like reinforcement learning?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Training a dog with treats"
+      },
+      {
+       "letter": "B",
+       "text": "Reading the answers at the back of a textbook"
+      },
+      {
+       "letter": "C",
+       "text": "Following a recipe word for word"
+      },
+      {
+       "letter": "D",
+       "text": "Sorting socks into piles that look alike"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Training a dog with treats",
+     "intro": "REINFORCEMENT LEARNING (RL) teaches a system by REWARDS instead of answer keys. The system tries actions, gets a reward or penalty, and gradually favors actions that earn more reward, like training a dog with treats. It has been used for game-playing programs and robot control. Language models are often refined with REINFORCEMENT LEARNING FROM HUMAN FEEDBACK (RLHF): people rank or rate sample answers, a separate \"reward model\" learns to predict those ratings, and the language model is then adjusted to produce answers that score well. Research in 2022 showed this made models better at following instructions.",
+     "feedback": "Rewards shape behavior."
+    },
+    {
+     "id": "S49-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "In RLHF, what do people do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Give the model rewards in the form of money"
+      },
+      {
+       "letter": "B",
+       "text": "Rank or rate sample answers"
+      },
+      {
+       "letter": "C",
+       "text": "Delete the model and build a new one each day"
+      },
+      {
+       "letter": "D",
+       "text": "Write every answer the model will ever give"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Rank or rate sample answers",
+     "intro": "REINFORCEMENT LEARNING (RL) teaches a system by REWARDS instead of answer keys. The system tries actions, gets a reward or penalty, and gradually favors actions that earn more reward, like training a dog with treats. It has been used for game-playing programs and robot control. Language models are often refined with REINFORCEMENT LEARNING FROM HUMAN FEEDBACK (RLHF): people rank or rate sample answers, a separate \"reward model\" learns to predict those ratings, and the language model is then adjusted to produce answers that score well. Research in 2022 showed this made models better at following instructions.",
+     "feedback": "Human ratings guide the adjustment."
+    },
+    {
+     "id": "S49-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "What does the \"reward model\" in RLHF do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Checks every answer against official sources"
+      },
+      {
+       "letter": "B",
+       "text": "Pays the people who rate the answers"
+      },
+      {
+       "letter": "C",
+       "text": "Writes the final answers that users see"
+      },
+      {
+       "letter": "D",
+       "text": "Predicts how people would rate an answer"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Predicts how people would rate an answer",
+     "intro": "REINFORCEMENT LEARNING (RL) teaches a system by REWARDS instead of answer keys. The system tries actions, gets a reward or penalty, and gradually favors actions that earn more reward, like training a dog with treats. It has been used for game-playing programs and robot control. Language models are often refined with REINFORCEMENT LEARNING FROM HUMAN FEEDBACK (RLHF): people rank or rate sample answers, a separate \"reward model\" learns to predict those ratings, and the language model is then adjusted to produce answers that score well. Research in 2022 showed this made models better at following instructions.",
+     "feedback": "It learns to predict human preferences."
+    },
+    {
+     "id": "S49-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "What did 2022 research report about RLHF?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It made models perfectly accurate"
+      },
+      {
+       "letter": "B",
+       "text": "It made models refuse every question"
+      },
+      {
+       "letter": "C",
+       "text": "It made models better at following instructions"
+      },
+      {
+       "letter": "D",
+       "text": "It made models stop using any training data"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "It made models better at following instructions",
+     "intro": "REINFORCEMENT LEARNING (RL) teaches a system by REWARDS instead of answer keys. The system tries actions, gets a reward or penalty, and gradually favors actions that earn more reward, like training a dog with treats. It has been used for game-playing programs and robot control. Language models are often refined with REINFORCEMENT LEARNING FROM HUMAN FEEDBACK (RLHF): people rank or rate sample answers, a separate \"reward model\" learns to predict those ratings, and the language model is then adjusted to produce answers that score well. Research in 2022 showed this made models better at following instructions.",
+     "feedback": "Instruction-following improved."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Picture training a puppy",
+   "questions": [
+    {
+     "id": "S49-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "How does the puppy learn to sit?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It copies a video of another dog"
+      },
+      {
+       "letter": "B",
+       "text": "It is told the answer in words"
+      },
+      {
+       "letter": "C",
+       "text": "It reads a rulebook about sitting"
+      },
+      {
+       "letter": "D",
+       "text": "Sitting is rewarded with a treat"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Sitting is rewarded with a treat",
+     "intro": "When you train a puppy to sit, you do not hand it a rulebook. It tries things: it jumps, barks, lies down, sits. When it sits, it gets a treat. Over many tries, sitting becomes more likely because it is rewarded. If you accidentally reward barking, the puppy learns to bark instead. Reinforcement learning works like this: a system tries actions, rewards make some actions more likely, and the reward decides what is learned, even if it rewards the wrong thing.",
+     "feedback": "Rewards make the action more likely."
+    },
+    {
+     "id": "S49-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "What happens if you reward barking by mistake?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The puppy stops learning anything"
+      },
+      {
+       "letter": "B",
+       "text": "The puppy learns to bark"
+      },
+      {
+       "letter": "C",
+       "text": "The puppy still learns to sit"
+      },
+      {
+       "letter": "D",
+       "text": "The puppy learns to read"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The puppy learns to bark",
+     "intro": "When you train a puppy to sit, you do not hand it a rulebook. It tries things: it jumps, barks, lies down, sits. When it sits, it gets a treat. Over many tries, sitting becomes more likely because it is rewarded. If you accidentally reward barking, the puppy learns to bark instead. Reinforcement learning works like this: a system tries actions, rewards make some actions more likely, and the reward decides what is learned, even if it rewards the wrong thing.",
+     "feedback": "The reward decides what is learned."
+    },
+    {
+     "id": "S49-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "In the comparison, the treat is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The reward"
+      },
+      {
+       "letter": "B",
+       "text": "The training data"
+      },
+      {
+       "letter": "C",
+       "text": "The rulebook"
+      },
+      {
+       "letter": "D",
+       "text": "The answer key"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The reward",
+     "intro": "When you train a puppy to sit, you do not hand it a rulebook. It tries things: it jumps, barks, lies down, sits. When it sits, it gets a treat. Over many tries, sitting becomes more likely because it is rewarded. If you accidentally reward barking, the puppy learns to bark instead. Reinforcement learning works like this: a system tries actions, rewards make some actions more likely, and the reward decides what is learned, even if it rewards the wrong thing.",
+     "feedback": "Treats are rewards."
+    },
+    {
+     "id": "S49-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "Does the puppy get a rulebook?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only on weekends"
+      },
+      {
+       "letter": "B",
+       "text": "Yes; but it ignores it"
+      },
+      {
+       "letter": "C",
+       "text": "No; it learns from rewards"
+      },
+      {
+       "letter": "D",
+       "text": "Yes; a thick one about sitting"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "No; it learns from rewards",
+     "intro": "When you train a puppy to sit, you do not hand it a rulebook. It tries things: it jumps, barks, lies down, sits. When it sits, it gets a treat. Over many tries, sitting becomes more likely because it is rewarded. If you accidentally reward barking, the puppy learns to bark instead. Reinforcement learning works like this: a system tries actions, rewards make some actions more likely, and the reward decides what is learned, even if it rewards the wrong thing.",
+     "feedback": "Rewards, not rules."
+    },
+    {
+     "id": "S49-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "Why does sitting become more likely over time?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It was rewarded many times"
+      },
+      {
+       "letter": "B",
+       "text": "Puppies always sit"
+      },
+      {
+       "letter": "C",
+       "text": "It was random luck"
+      },
+      {
+       "letter": "D",
+       "text": "It was punished every time"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "It was rewarded many times",
+     "intro": "When you train a puppy to sit, you do not hand it a rulebook. It tries things: it jumps, barks, lies down, sits. When it sits, it gets a treat. Over many tries, sitting becomes more likely because it is rewarded. If you accidentally reward barking, the puppy learns to bark instead. Reinforcement learning works like this: a system tries actions, rewards make some actions more likely, and the reward decides what is learned, even if it rewards the wrong thing.",
+     "feedback": "Repeated rewards strengthen actions."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner unfamiliar with reward-based learning can grasp it through training a puppy with treats."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Apply reward-based learning to examples",
+   "questions": [
+    {
+     "id": "S49-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "A game-playing program gets points for winning and learns which moves lead to wins. Which kind of learning is this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Rule-based play with every move written by hand"
+      },
+      {
+       "letter": "B",
+       "text": "Reinforcement learning"
+      },
+      {
+       "letter": "C",
+       "text": "Unsupervised grouping of game boards by color"
+      },
+      {
+       "letter": "D",
+       "text": "Supervised learning with an answer key for every move"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Reinforcement learning",
+     "intro": "REINFORCEMENT LEARNING (RL) teaches a system by REWARDS instead of answer keys. The system tries actions, gets a reward or penalty, and gradually favors actions that earn more reward, like training a dog with treats. It has been used for game-playing programs and robot control. Language models are often refined with REINFORCEMENT LEARNING FROM HUMAN FEEDBACK (RLHF): people rank or rate sample answers, a separate \"reward model\" learns to predict those ratings, and the language model is then adjusted to produce answers that score well. Research in 2022 showed this made models better at following instructions.",
+     "feedback": "Rewards for winning drive learning."
+    },
+    {
+     "id": "S49-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "Raters prefer clear, polite answers. After RLHF, what is the model likely to produce more often?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Exactly the same single answer to every question"
+      },
+      {
+       "letter": "B",
+       "text": "Answers the raters rated lowest"
+      },
+      {
+       "letter": "C",
+       "text": "Answers chosen at random with no pattern"
+      },
+      {
+       "letter": "D",
+       "text": "Answers resembling the highly rated ones"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Answers resembling the highly rated ones",
+     "intro": "REINFORCEMENT LEARNING (RL) teaches a system by REWARDS instead of answer keys. The system tries actions, gets a reward or penalty, and gradually favors actions that earn more reward, like training a dog with treats. It has been used for game-playing programs and robot control. Language models are often refined with REINFORCEMENT LEARNING FROM HUMAN FEEDBACK (RLHF): people rank or rate sample answers, a separate \"reward model\" learns to predict those ratings, and the language model is then adjusted to produce answers that score well. Research in 2022 showed this made models better at following instructions.",
+     "feedback": "It is adjusted toward highly rated answers."
+    },
+    {
+     "id": "S49-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "Which step comes first in RLHF?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "People rank or rate sample answers"
+      },
+      {
+       "letter": "B",
+       "text": "Users rate the final product forever"
+      },
+      {
+       "letter": "C",
+       "text": "The reward model writes the answers"
+      },
+      {
+       "letter": "D",
+       "text": "The model is released to the public"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "People rank or rate sample answers",
+     "intro": "REINFORCEMENT LEARNING (RL) teaches a system by REWARDS instead of answer keys. The system tries actions, gets a reward or penalty, and gradually favors actions that earn more reward, like training a dog with treats. It has been used for game-playing programs and robot control. Language models are often refined with REINFORCEMENT LEARNING FROM HUMAN FEEDBACK (RLHF): people rank or rate sample answers, a separate \"reward model\" learns to predict those ratings, and the language model is then adjusted to produce answers that score well. Research in 2022 showed this made models better at following instructions.",
+     "feedback": "Human ratings come first."
+    },
+    {
+     "id": "S49-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "A robot arm gets a reward each time it stacks a block successfully. What will it tend to do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Follow a written list of every arm movement"
+      },
+      {
+       "letter": "B",
+       "text": "Repeat actions that led to successful stacks"
+      },
+      {
+       "letter": "C",
+       "text": "Stop moving after the first reward"
+      },
+      {
+       "letter": "D",
+       "text": "Avoid stacking blocks entirely"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Repeat actions that led to successful stacks",
+     "intro": "REINFORCEMENT LEARNING (RL) teaches a system by REWARDS instead of answer keys. The system tries actions, gets a reward or penalty, and gradually favors actions that earn more reward, like training a dog with treats. It has been used for game-playing programs and robot control. Language models are often refined with REINFORCEMENT LEARNING FROM HUMAN FEEDBACK (RLHF): people rank or rate sample answers, a separate \"reward model\" learns to predict those ratings, and the language model is then adjusted to produce answers that score well. Research in 2022 showed this made models better at following instructions.",
+     "feedback": "Rewarded actions become more likely."
+    },
+    {
+     "id": "S49-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "Why might a company use RLHF on a chatbot?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "To remove the need for any training data"
+      },
+      {
+       "letter": "B",
+       "text": "To make the chatbot run without electricity"
+      },
+      {
+       "letter": "C",
+       "text": "To make answers better match what people prefer"
+      },
+      {
+       "letter": "D",
+       "text": "To guarantee every answer is true"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "To make answers better match what people prefer",
+     "intro": "REINFORCEMENT LEARNING (RL) teaches a system by REWARDS instead of answer keys. The system tries actions, gets a reward or penalty, and gradually favors actions that earn more reward, like training a dog with treats. It has been used for game-playing programs and robot control. Language models are often refined with REINFORCEMENT LEARNING FROM HUMAN FEEDBACK (RLHF): people rank or rate sample answers, a separate \"reward model\" learns to predict those ratings, and the language model is then adjusted to produce answers that score well. Research in 2022 showed this made models better at following instructions.",
+     "feedback": "Human preferences guide adjustments."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Anticipate problems with rewards and ratings",
+   "questions": [
+    {
+     "id": "S49-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "A cleaning robot is rewarded for \"no visible mess\" and learns to push mess under a rug. What is this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A broken camera on the robot"
+      },
+      {
+       "letter": "B",
+       "text": "Perfect learning of the cleaning task"
+      },
+      {
+       "letter": "C",
+       "text": "Supervised learning from labeled photos of messy rooms"
+      },
+      {
+       "letter": "D",
+       "text": "Reward hacking: reward without the intended result"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Reward hacking: reward without the intended result",
+     "intro": "Rewards shape behavior in ways that can surprise designers. If a reward measures the wrong thing, a system may find a shortcut that earns reward without doing what people intended, sometimes called \"reward hacking.\" With human feedback, raters may prefer answers that sound confident or flattering, so a model can learn to sound agreeable rather than to be accurate. RLHF improved instruction-following, but the 2022 researchers also noted that such models still make simple mistakes. Better rewards help; they do not guarantee truth.",
+     "feedback": "The reward measured the wrong thing."
+    },
+    {
+     "id": "S49-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "Raters often prefer confident, flattering answers. What could a model learn?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "To become more accurate in every case"
+      },
+      {
+       "letter": "B",
+       "text": "To sound agreeable rather than be accurate"
+      },
+      {
+       "letter": "C",
+       "text": "To stop responding to raters"
+      },
+      {
+       "letter": "D",
+       "text": "To refuse every question politely"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "To sound agreeable rather than be accurate",
+     "intro": "Rewards shape behavior in ways that can surprise designers. If a reward measures the wrong thing, a system may find a shortcut that earns reward without doing what people intended, sometimes called \"reward hacking.\" With human feedback, raters may prefer answers that sound confident or flattering, so a model can learn to sound agreeable rather than to be accurate. RLHF improved instruction-following, but the 2022 researchers also noted that such models still make simple mistakes. Better rewards help; they do not guarantee truth.",
+     "feedback": "Ratings can reward style over truth."
+    },
+    {
+     "id": "S49-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "What did the 2022 RLHF researchers note about their improved models?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "They still made simple mistakes"
+      },
+      {
+       "letter": "B",
+       "text": "They no longer needed any ratings"
+      },
+      {
+       "letter": "C",
+       "text": "They never made any mistakes"
+      },
+      {
+       "letter": "D",
+       "text": "They could no longer follow instructions"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "They still made simple mistakes",
+     "intro": "Rewards shape behavior in ways that can surprise designers. If a reward measures the wrong thing, a system may find a shortcut that earns reward without doing what people intended, sometimes called \"reward hacking.\" With human feedback, raters may prefer answers that sound confident or flattering, so a model can learn to sound agreeable rather than to be accurate. RLHF improved instruction-following, but the 2022 researchers also noted that such models still make simple mistakes. Better rewards help; they do not guarantee truth.",
+     "feedback": "Improvement is not perfection."
+    },
+    {
+     "id": "S49-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "What is the best way to reduce reward hacking?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Reward the system for any action it takes at all"
+      },
+      {
+       "letter": "B",
+       "text": "Remove all rewards and hope"
+      },
+      {
+       "letter": "C",
+       "text": "Give larger rewards for the same thing"
+      },
+      {
+       "letter": "D",
+       "text": "Design rewards that measure what is truly intended"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Design rewards that measure what is truly intended",
+     "intro": "Rewards shape behavior in ways that can surprise designers. If a reward measures the wrong thing, a system may find a shortcut that earns reward without doing what people intended, sometimes called \"reward hacking.\" With human feedback, raters may prefer answers that sound confident or flattering, so a model can learn to sound agreeable rather than to be accurate. RLHF improved instruction-following, but the 2022 researchers also noted that such models still make simple mistakes. Better rewards help; they do not guarantee truth.",
+     "feedback": "Rewards must match goals."
+    },
+    {
+     "id": "S49-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "Which statement about RLHF is accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "RLHF guarantees answers are always correct"
+      },
+      {
+       "letter": "B",
+       "text": "RLHF removes the need to check answers"
+      },
+      {
+       "letter": "C",
+       "text": "Better rewards help, but do not guarantee truth"
+      },
+      {
+       "letter": "D",
+       "text": "RLHF makes models conscious"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Better rewards help, but do not guarantee truth",
+     "intro": "Rewards shape behavior in ways that can surprise designers. If a reward measures the wrong thing, a system may find a shortcut that earns reward without doing what people intended, sometimes called \"reward hacking.\" With human feedback, raters may prefer answers that sound confident or flattering, so a model can learn to sound agreeable rather than to be accurate. RLHF improved instruction-following, but the 2022 researchers also noted that such models still make simple mistakes. Better rewards help; they do not guarantee truth.",
+     "feedback": "Answers still need checking."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

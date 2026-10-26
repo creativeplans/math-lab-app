@@ -1,0 +1,718 @@
+{
+ "set": 16,
+ "title": "Probabilities and why answers vary",
+ "outcome": "AI.LLM.03",
+ "content_status": "stable",
+ "requires": [
+  14
+ ],
+ "module": "llm",
+ "path_refs": [
+  "everyday",
+  "creative",
+  "coding",
+  "work",
+  "society"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Explain probabilities and why answers vary",
+   "questions": [
+    {
+     "id": "S16-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "What does a language model assign to each possible next token?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A probability of how likely it is to come next"
+      },
+      {
+       "letter": "B",
+       "text": "A price for using that particular token"
+      },
+      {
+       "letter": "C",
+       "text": "A fixed rule saying which token is required"
+      },
+      {
+       "letter": "D",
+       "text": "A grade showing whether it is true or false"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "A probability of how likely it is to come next",
+     "intro": "At each step, a language model gives every possible next token a PROBABILITY: how likely it is to come next. After \"The sky is,\" the token \"blue\" might get a high probability and \"green\" a low one. The model then picks a token, often by SAMPLING, which means choosing at random but weighted by those probabilities. That is why the same request can produce different answers on different tries. Some products let users or developers adjust settings, sometimes called temperature, that make choices more predictable or more varied. Variation is useful for brainstorming but means you should not expect identical answers every time.",
+     "feedback": "Each candidate token gets a probability."
+    },
+    {
+     "id": "S16-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Using the table, which token is the most likely next choice?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "clear"
+      },
+      {
+       "letter": "B",
+       "text": "gray"
+      },
+      {
+       "letter": "C",
+       "text": "green"
+      },
+      {
+       "letter": "D",
+       "text": "blue"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "blue",
+     "intro": "At each step, a language model gives every possible next token a PROBABILITY: how likely it is to come next. After \"The sky is,\" the token \"blue\" might get a high probability and \"green\" a low one. The model then picks a token, often by SAMPLING, which means choosing at random but weighted by those probabilities. That is why the same request can produce different answers on different tries. Some products let users or developers adjust settings, sometimes called temperature, that make choices more predictable or more varied. Variation is useful for brainstorming but means you should not expect identical answers every time.",
+     "feedback": "blue has the highest probability (0.62).",
+     "example": {
+      "kind": "table",
+      "label": "Prepared example (made-up probabilities for teaching)",
+      "table": [
+       [
+        "Possible next token after \"The sky is\"",
+        "Probability (made-up numbers)"
+       ],
+       [
+        "blue",
+        "0.62"
+       ],
+       [
+        "clear",
+        "0.18"
+       ],
+       [
+        "gray",
+        "0.12"
+       ],
+       [
+        "green",
+        "0.01"
+       ],
+       [
+        "all other tokens",
+        "0.07"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "S16-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Using the table, what is the combined probability of \"clear\" or \"gray\"?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "0.80"
+      },
+      {
+       "letter": "B",
+       "text": "0.30"
+      },
+      {
+       "letter": "C",
+       "text": "0.18"
+      },
+      {
+       "letter": "D",
+       "text": "0.12"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "0.30",
+     "intro": "At each step, a language model gives every possible next token a PROBABILITY: how likely it is to come next. After \"The sky is,\" the token \"blue\" might get a high probability and \"green\" a low one. The model then picks a token, often by SAMPLING, which means choosing at random but weighted by those probabilities. That is why the same request can produce different answers on different tries. Some products let users or developers adjust settings, sometimes called temperature, that make choices more predictable or more varied. Variation is useful for brainstorming but means you should not expect identical answers every time.",
+     "feedback": "0.18 + 0.12 = 0.30.",
+     "example": {
+      "kind": "table",
+      "label": "Prepared example (made-up probabilities for teaching)",
+      "table": [
+       [
+        "Possible next token after \"The sky is\"",
+        "Probability (made-up numbers)"
+       ],
+       [
+        "blue",
+        "0.62"
+       ],
+       [
+        "clear",
+        "0.18"
+       ],
+       [
+        "gray",
+        "0.12"
+       ],
+       [
+        "green",
+        "0.01"
+       ],
+       [
+        "all other tokens",
+        "0.07"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "S16-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Why can the same request produce different answers on different tries?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Someone edits the answers by hand each time"
+      },
+      {
+       "letter": "B",
+       "text": "The internet changes the model every second"
+      },
+      {
+       "letter": "C",
+       "text": "The model often samples among likely tokens"
+      },
+      {
+       "letter": "D",
+       "text": "The model forgets its training each time"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The model often samples among likely tokens",
+     "intro": "At each step, a language model gives every possible next token a PROBABILITY: how likely it is to come next. After \"The sky is,\" the token \"blue\" might get a high probability and \"green\" a low one. The model then picks a token, often by SAMPLING, which means choosing at random but weighted by those probabilities. That is why the same request can produce different answers on different tries. Some products let users or developers adjust settings, sometimes called temperature, that make choices more predictable or more varied. Variation is useful for brainstorming but means you should not expect identical answers every time.",
+     "feedback": "Weighted random choices lead to variation."
+    },
+    {
+     "id": "S16-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Settings such as \"temperature\" usually change what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Whether the facts are true"
+      },
+      {
+       "letter": "B",
+       "text": "How warm the computer runs"
+      },
+      {
+       "letter": "C",
+       "text": "Which language the user speaks and reads"
+      },
+      {
+       "letter": "D",
+       "text": "How predictable or varied the choices are"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "How predictable or varied the choices are",
+     "intro": "At each step, a language model gives every possible next token a PROBABILITY: how likely it is to come next. After \"The sky is,\" the token \"blue\" might get a high probability and \"green\" a low one. The model then picks a token, often by SAMPLING, which means choosing at random but weighted by those probabilities. That is why the same request can produce different answers on different tries. Some products let users or developers adjust settings, sometimes called temperature, that make choices more predictable or more varied. Variation is useful for brainstorming but means you should not expect identical answers every time.",
+     "feedback": "These settings adjust variation."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Read and combine simple probabilities",
+   "questions": [
+    {
+     "id": "S16-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Which probability means \"certain\"?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "0.5"
+      },
+      {
+       "letter": "B",
+       "text": "1"
+      },
+      {
+       "letter": "C",
+       "text": "0.1"
+      },
+      {
+       "letter": "D",
+       "text": "0"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "1",
+     "intro": "A PROBABILITY is a number from 0 to 1 that says how likely something is: 0 means impossible, 1 means certain, 0.5 means as likely as not. Probabilities for all the options in one choice add up to 1. To find the chance of \"this OR that\" when they cannot both happen, ADD their probabilities: if the chance of rain is 0.3 and of snow is 0.1, the chance of rain or snow is 0.4. A higher number means more likely, but a likely option is not guaranteed to happen.",
+     "feedback": "1 means certain."
+    },
+    {
+     "id": "S16-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Rain 0.3, snow 0.1. What is the chance of rain or snow?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "0.2"
+      },
+      {
+       "letter": "B",
+       "text": "0.03"
+      },
+      {
+       "letter": "C",
+       "text": "0.4"
+      },
+      {
+       "letter": "D",
+       "text": "0.3"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "0.4",
+     "intro": "A PROBABILITY is a number from 0 to 1 that says how likely something is: 0 means impossible, 1 means certain, 0.5 means as likely as not. Probabilities for all the options in one choice add up to 1. To find the chance of \"this OR that\" when they cannot both happen, ADD their probabilities: if the chance of rain is 0.3 and of snow is 0.1, the chance of rain or snow is 0.4. A higher number means more likely, but a likely option is not guaranteed to happen.",
+     "feedback": "0.3 + 0.1 = 0.4."
+    },
+    {
+     "id": "S16-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Three options have probabilities 0.5, 0.3 and a missing value. What is the missing value?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "0.2"
+      },
+      {
+       "letter": "B",
+       "text": "1.0"
+      },
+      {
+       "letter": "C",
+       "text": "0.8"
+      },
+      {
+       "letter": "D",
+       "text": "0.5"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "0.2",
+     "intro": "A PROBABILITY is a number from 0 to 1 that says how likely something is: 0 means impossible, 1 means certain, 0.5 means as likely as not. Probabilities for all the options in one choice add up to 1. To find the chance of \"this OR that\" when they cannot both happen, ADD their probabilities: if the chance of rain is 0.3 and of snow is 0.1, the chance of rain or snow is 0.4. A higher number means more likely, but a likely option is not guaranteed to happen.",
+     "feedback": "1 - 0.5 - 0.3 = 0.2."
+    },
+    {
+     "id": "S16-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Which option is most likely: A 0.25, B 0.45, C 0.30?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A"
+      },
+      {
+       "letter": "B",
+       "text": "B"
+      },
+      {
+       "letter": "C",
+       "text": "All are equal"
+      },
+      {
+       "letter": "D",
+       "text": "C"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "B",
+     "intro": "A PROBABILITY is a number from 0 to 1 that says how likely something is: 0 means impossible, 1 means certain, 0.5 means as likely as not. Probabilities for all the options in one choice add up to 1. To find the chance of \"this OR that\" when they cannot both happen, ADD their probabilities: if the chance of rain is 0.3 and of snow is 0.1, the chance of rain or snow is 0.4. A higher number means more likely, but a likely option is not guaranteed to happen.",
+     "feedback": "B has the highest probability."
+    },
+    {
+     "id": "S16-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "An option has probability 0.9. Is it guaranteed to happen?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No, it is likely but not certain"
+      },
+      {
+       "letter": "B",
+       "text": "Yes, 0.9 equals 1"
+      },
+      {
+       "letter": "C",
+       "text": "No, it is impossible"
+      },
+      {
+       "letter": "D",
+       "text": "Yes, anything over 0.5 is certain"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "No, it is likely but not certain",
+     "intro": "A PROBABILITY is a number from 0 to 1 that says how likely something is: 0 means impossible, 1 means certain, 0.5 means as likely as not. Probabilities for all the options in one choice add up to 1. To find the chance of \"this OR that\" when they cannot both happen, ADD their probabilities: if the chance of rain is 0.3 and of snow is 0.1, the chance of rain or snow is 0.4. A higher number means more likely, but a likely option is not guaranteed to happen.",
+     "feedback": "Likely is not guaranteed."
+    }
+   ],
+   "branch_mode": "underlying_skill",
+   "relationship": "A learner who misreads the probability table or the idea of variation practices reading and adding simple probabilities."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Apply variation to everyday use",
+   "questions": [
+    {
+     "id": "S16-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Ali asks for a party theme twice and gets two different ideas. What does this most likely mean?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only one of the ideas could be a real party theme"
+      },
+      {
+       "letter": "B",
+       "text": "His first request was deleted by mistake"
+      },
+      {
+       "letter": "C",
+       "text": "The model is broken and should be reported"
+      },
+      {
+       "letter": "D",
+       "text": "The model sampled differently; both are normal"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The model sampled differently; both are normal",
+     "intro": "At each step, a language model gives every possible next token a PROBABILITY: how likely it is to come next. After \"The sky is,\" the token \"blue\" might get a high probability and \"green\" a low one. The model then picks a token, often by SAMPLING, which means choosing at random but weighted by those probabilities. That is why the same request can produce different answers on different tries. Some products let users or developers adjust settings, sometimes called temperature, that make choices more predictable or more varied. Variation is useful for brainstorming but means you should not expect identical answers every time.",
+     "feedback": "For ideas, variation is expected and useful."
+    },
+    {
+     "id": "S16-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "A teacher wants many different practice sentences. What does variation offer?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A guarantee that every sentence is correct"
+      },
+      {
+       "letter": "B",
+       "text": "The same sentence every single time"
+      },
+      {
+       "letter": "C",
+       "text": "Several different options from similar requests"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing useful for this task"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Several different options from similar requests",
+     "intro": "At each step, a language model gives every possible next token a PROBABILITY: how likely it is to come next. After \"The sky is,\" the token \"blue\" might get a high probability and \"green\" a low one. The model then picks a token, often by SAMPLING, which means choosing at random but weighted by those probabilities. That is why the same request can produce different answers on different tries. Some products let users or developers adjust settings, sometimes called temperature, that make choices more predictable or more varied. Variation is useful for brainstorming but means you should not expect identical answers every time.",
+     "feedback": "Variation is a feature for brainstorming."
+    },
+    {
+     "id": "S16-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "A tool offers a setting for \"more creative\" or \"more focused\" answers. Which choice fits writing a list of unusual story ideas?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "More creative (more varied)"
+      },
+      {
+       "letter": "B",
+       "text": "More focused (more predictable)"
+      },
+      {
+       "letter": "C",
+       "text": "It makes no difference at all"
+      },
+      {
+       "letter": "D",
+       "text": "Turn the tool off"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "More creative (more varied)",
+     "intro": "At each step, a language model gives every possible next token a PROBABILITY: how likely it is to come next. After \"The sky is,\" the token \"blue\" might get a high probability and \"green\" a low one. The model then picks a token, often by SAMPLING, which means choosing at random but weighted by those probabilities. That is why the same request can produce different answers on different tries. Some products let users or developers adjust settings, sometimes called temperature, that make choices more predictable or more varied. Variation is useful for brainstorming but means you should not expect identical answers every time.",
+     "feedback": "Varied output helps brainstorming."
+    },
+    {
+     "id": "S16-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Why is a likely next token not guaranteed to be correct?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Likely tokens are always true facts"
+      },
+      {
+       "letter": "B",
+       "text": "Likely means common in patterns, not checked as true"
+      },
+      {
+       "letter": "C",
+       "text": "Correct tokens always get a probability of exactly 1"
+      },
+      {
+       "letter": "D",
+       "text": "Probabilities are only used for pictures"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Likely means common in patterns, not checked as true",
+     "intro": "At each step, a language model gives every possible next token a PROBABILITY: how likely it is to come next. After \"The sky is,\" the token \"blue\" might get a high probability and \"green\" a low one. The model then picks a token, often by SAMPLING, which means choosing at random but weighted by those probabilities. That is why the same request can produce different answers on different tries. Some products let users or developers adjust settings, sometimes called temperature, that make choices more predictable or more varied. Variation is useful for brainstorming but means you should not expect identical answers every time.",
+     "feedback": "Probability reflects patterns, not truth."
+    },
+    {
+     "id": "S16-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "A user wants three different subject lines for an email. What is the best request?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ask for exactly one line and copy it three times"
+      },
+      {
+       "letter": "B",
+       "text": "Never use AI for subject lines"
+      },
+      {
+       "letter": "C",
+       "text": "Ask for three distinct options in one request"
+      },
+      {
+       "letter": "D",
+       "text": "Ask once and expect the same line every time"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Ask for three distinct options in one request",
+     "intro": "At each step, a language model gives every possible next token a PROBABILITY: how likely it is to come next. After \"The sky is,\" the token \"blue\" might get a high probability and \"green\" a low one. The model then picks a token, often by SAMPLING, which means choosing at random but weighted by those probabilities. That is why the same request can produce different answers on different tries. Some products let users or developers adjust settings, sometimes called temperature, that make choices more predictable or more varied. Variation is useful for brainstorming but means you should not expect identical answers every time.",
+     "feedback": "Asking for several options uses variation on purpose."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Respond sensibly when answers vary",
+   "questions": [
+    {
+     "id": "S16-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "You ask a model the height of a famous tower twice and get 324 meters and 330 meters. What should you do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Ask a third time and trust whichever number repeats"
+      },
+      {
+       "letter": "B",
+       "text": "Average them to 327 and report that"
+      },
+      {
+       "letter": "C",
+       "text": "Pick the number you like better"
+      },
+      {
+       "letter": "D",
+       "text": "Check a reliable source; at most one is right"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Check a reliable source; at most one is right",
+     "intro": "Variation has practical effects. If you ask the same factual question twice and get two different numbers, at most one can be right, and maybe neither, so the difference is a signal to check a source, not to pick the one you like. When you need consistency, such as the same format for 100 product descriptions, give clear instructions and a template, and check the results, because even predictable settings do not guarantee identical outputs in every product. When you want ideas, variation is a feature: ask for several options at once.",
+     "feedback": "Different answers to a factual question signal the need to check."
+    },
+    {
+     "id": "S16-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "A store needs 100 product descriptions in exactly the same format. What helps most?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Assuming outputs are always identical"
+      },
+      {
+       "letter": "B",
+       "text": "Clear instructions, a template, and checking the results"
+      },
+      {
+       "letter": "C",
+       "text": "Higher variation settings for more creativity"
+      },
+      {
+       "letter": "D",
+       "text": "Asking without any format and hoping it matches"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Clear instructions, a template, and checking the results",
+     "intro": "Variation has practical effects. If you ask the same factual question twice and get two different numbers, at most one can be right, and maybe neither, so the difference is a signal to check a source, not to pick the one you like. When you need consistency, such as the same format for 100 product descriptions, give clear instructions and a template, and check the results, because even predictable settings do not guarantee identical outputs in every product. When you want ideas, variation is a feature: ask for several options at once.",
+     "feedback": "Templates and checks support consistency."
+    },
+    {
+     "id": "S16-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Even with \"predictable\" settings, a product gives slightly different wording each time. What is the best conclusion?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The answers are therefore all false"
+      },
+      {
+       "letter": "B",
+       "text": "The settings must be ignored completely by every product"
+      },
+      {
+       "letter": "C",
+       "text": "The model is learning from each request"
+      },
+      {
+       "letter": "D",
+       "text": "Settings reduce variation but may not guarantee identical output"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Settings reduce variation but may not guarantee identical output",
+     "intro": "Variation has practical effects. If you ask the same factual question twice and get two different numbers, at most one can be right, and maybe neither, so the difference is a signal to check a source, not to pick the one you like. When you need consistency, such as the same format for 100 product descriptions, give clear instructions and a template, and check the results, because even predictable settings do not guarantee identical outputs in every product. When you want ideas, variation is a feature: ask for several options at once.",
+     "feedback": "Do not count on identical outputs."
+    },
+    {
+     "id": "S16-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "When is variation in answers most helpful?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "When you want many ideas to choose from"
+      },
+      {
+       "letter": "B",
+       "text": "When you need a precise measurement"
+      },
+      {
+       "letter": "C",
+       "text": "When you need one exact legal date"
+      },
+      {
+       "letter": "D",
+       "text": "When you must match a strict template"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "When you want many ideas to choose from",
+     "intro": "Variation has practical effects. If you ask the same factual question twice and get two different numbers, at most one can be right, and maybe neither, so the difference is a signal to check a source, not to pick the one you like. When you need consistency, such as the same format for 100 product descriptions, give clear instructions and a template, and check the results, because even predictable settings do not guarantee identical outputs in every product. When you want ideas, variation is a feature: ask for several options at once.",
+     "feedback": "Variety helps idea generation."
+    },
+    {
+     "id": "S16-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Two runs of the same request give different conclusions about whether a contract clause is risky. What should a careful user do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Run it ten times and take the most common answer"
+      },
+      {
+       "letter": "B",
+       "text": "Ignore the clause entirely"
+      },
+      {
+       "letter": "C",
+       "text": "Treat it as uncertain and get the clause reviewed"
+      },
+      {
+       "letter": "D",
+       "text": "Choose the more reassuring conclusion"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Treat it as uncertain and get the clause reviewed",
+     "intro": "Variation has practical effects. If you ask the same factual question twice and get two different numbers, at most one can be right, and maybe neither, so the difference is a signal to check a source, not to pick the one you like. When you need consistency, such as the same format for 100 product descriptions, give clear instructions and a template, and check the results, because even predictable settings do not guarantee identical outputs in every product. When you want ideas, variation is a feature: ask for several options at once.",
+     "feedback": "Conflicting answers signal uncertainty; get a reliable check."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

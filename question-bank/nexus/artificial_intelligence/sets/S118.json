@@ -1,0 +1,737 @@
+{
+ "set": 118,
+ "title": "Comparing versions fairly",
+ "outcome": "AI.EVAL.05",
+ "content_status": "stable",
+ "requires": [
+  114
+ ],
+ "module": "evaluation",
+ "path_refs": [
+  "work",
+  "coding"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Compare two versions with the same tests and written criteria",
+   "questions": [
+    {
+     "id": "S118-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What makes a comparison fair?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Judging by one memorable answer"
+      },
+      {
+       "letter": "B",
+       "text": "Different tests for each version, chosen so that each one can show its own strengths"
+      },
+      {
+       "letter": "C",
+       "text": "Same tests and criteria written beforehand"
+      },
+      {
+       "letter": "D",
+       "text": "Criteria written after seeing results"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Same tests and criteria written beforehand",
+     "intro": "To compare two versions fairly, such as two tools, two prompts or an old and a new model, use the SAME TESTS and WRITTEN CRITERIA decided BEFORE you look at results. Change ONE thing at a time, so you know what caused any difference. Run both on every example, record results side by side, and count. Watch for small samples: with 5 examples, one lucky answer changes the score a lot. If you can, hide which version produced which answer when judging quality, so your expectations do not tip the scales.",
+     "feedback": "Same tests, prior criteria."
+    },
+    {
+     "id": "S118-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Why change only one thing at a time?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "To know what caused any difference"
+      },
+      {
+       "letter": "B",
+       "text": "Because changing several things at once is not allowed by any of the AI providers"
+      },
+      {
+       "letter": "C",
+       "text": "To make tests longer"
+      },
+      {
+       "letter": "D",
+       "text": "To save money"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "To know what caused any difference",
+     "intro": "To compare two versions fairly, such as two tools, two prompts or an old and a new model, use the SAME TESTS and WRITTEN CRITERIA decided BEFORE you look at results. Change ONE thing at a time, so you know what caused any difference. Run both on every example, record results side by side, and count. Watch for small samples: with 5 examples, one lucky answer changes the score a lot. If you can, hide which version produced which answer when judging quality, so your expectations do not tip the scales.",
+     "feedback": "Isolate the cause."
+    },
+    {
+     "id": "S118-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "In this example, how many does Version B get right?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "3 of 6"
+      },
+      {
+       "letter": "B",
+       "text": "6 of 6"
+      },
+      {
+       "letter": "C",
+       "text": "4 of 6"
+      },
+      {
+       "letter": "D",
+       "text": "5 of 6"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "5 of 6",
+     "intro": "To compare two versions fairly, such as two tools, two prompts or an old and a new model, use the SAME TESTS and WRITTEN CRITERIA decided BEFORE you look at results. Change ONE thing at a time, so you know what caused any difference. Run both on every example, record results side by side, and count. Watch for small samples: with 5 examples, one lucky answer changes the score a lot. If you can, hide which version produced which answer when judging quality, so your expectations do not tip the scales.",
+     "feedback": "Only example 3 is wrong.",
+     "example": {
+      "kind": "table",
+      "label": "Prepared example (fictional side-by-side results on the same six tests)",
+      "table": [
+       [
+        "Example",
+        "Version A",
+        "Version B"
+       ],
+       [
+        "1",
+        "Correct",
+        "Correct"
+       ],
+       [
+        "2",
+        "Wrong",
+        "Correct"
+       ],
+       [
+        "3",
+        "Correct",
+        "Wrong"
+       ],
+       [
+        "4",
+        "Correct",
+        "Correct"
+       ],
+       [
+        "5",
+        "Wrong",
+        "Correct"
+       ],
+       [
+        "6",
+        "Correct",
+        "Correct"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "S118-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "In the same example, which test shows a regression for Version B?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Example 5"
+      },
+      {
+       "letter": "B",
+       "text": "Example 3"
+      },
+      {
+       "letter": "C",
+       "text": "Example 1"
+      },
+      {
+       "letter": "D",
+       "text": "Example 2"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Example 3",
+     "intro": "To compare two versions fairly, such as two tools, two prompts or an old and a new model, use the SAME TESTS and WRITTEN CRITERIA decided BEFORE you look at results. Change ONE thing at a time, so you know what caused any difference. Run both on every example, record results side by side, and count. Watch for small samples: with 5 examples, one lucky answer changes the score a lot. If you can, hide which version produced which answer when judging quality, so your expectations do not tip the scales.",
+     "feedback": "A worked, B broke it.",
+     "example": {
+      "kind": "table",
+      "label": "Prepared example (fictional side-by-side results on the same six tests)",
+      "table": [
+       [
+        "Example",
+        "Version A",
+        "Version B"
+       ],
+       [
+        "1",
+        "Correct",
+        "Correct"
+       ],
+       [
+        "2",
+        "Wrong",
+        "Correct"
+       ],
+       [
+        "3",
+        "Correct",
+        "Wrong"
+       ],
+       [
+        "4",
+        "Correct",
+        "Correct"
+       ],
+       [
+        "5",
+        "Wrong",
+        "Correct"
+       ],
+       [
+        "6",
+        "Correct",
+        "Correct"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "S118-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Why hide which version produced each answer when judging?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because answers have no labels"
+      },
+      {
+       "letter": "B",
+       "text": "To save time"
+      },
+      {
+       "letter": "C",
+       "text": "Because version names are secret information that the provider does not allow anyone to see"
+      },
+      {
+       "letter": "D",
+       "text": "So expectations do not bias the judgment"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "So expectations do not bias the judgment",
+     "intro": "To compare two versions fairly, such as two tools, two prompts or an old and a new model, use the SAME TESTS and WRITTEN CRITERIA decided BEFORE you look at results. Change ONE thing at a time, so you know what caused any difference. Run both on every example, record results side by side, and count. Watch for small samples: with 5 examples, one lucky answer changes the score a lot. If you can, hide which version produced which answer when judging quality, so your expectations do not tip the scales.",
+     "feedback": "Blind judging."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare version testing with a fair taste test",
+   "questions": [
+    {
+     "id": "S118-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Why use the same oven for both recipes?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "To save electricity"
+      },
+      {
+       "letter": "B",
+       "text": "So only the recipe differs"
+      },
+      {
+       "letter": "C",
+       "text": "Because ovens can only be used once each day and must be shared by both recipes"
+      },
+      {
+       "letter": "D",
+       "text": "Because ovens are expensive"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "So only the recipe differs",
+     "intro": "To find out which of two cookie recipes is better, you bake both with the SAME oven, the SAME temperature and the SAME tasters, and decide beforehand what \"better\" means: taste, texture, appearance. Tasters do not know which is which. If you changed the recipe AND the oven at once, you would not know which change mattered. Comparing AI versions works the same way.",
+     "feedback": "One change at a time."
+    },
+    {
+     "id": "S118-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Deciding \"taste, texture, appearance\" in advance is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Writing criteria beforehand"
+      },
+      {
+       "letter": "B",
+       "text": "Choosing what \"better\" means after tasting, so that your favorite recipe can win easily"
+      },
+      {
+       "letter": "C",
+       "text": "Buying flour"
+      },
+      {
+       "letter": "D",
+       "text": "Using the same tasters"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Writing criteria beforehand",
+     "intro": "To find out which of two cookie recipes is better, you bake both with the SAME oven, the SAME temperature and the SAME tasters, and decide beforehand what \"better\" means: taste, texture, appearance. Tasters do not know which is which. If you changed the recipe AND the oven at once, you would not know which change mattered. Comparing AI versions works the same way.",
+     "feedback": "Prior criteria."
+    },
+    {
+     "id": "S118-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Tasters not knowing which is which is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Baking twice"
+      },
+      {
+       "letter": "B",
+       "text": "Using one oven"
+      },
+      {
+       "letter": "C",
+       "text": "Blind judging"
+      },
+      {
+       "letter": "D",
+       "text": "Telling the tasters"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Blind judging",
+     "intro": "To find out which of two cookie recipes is better, you bake both with the SAME oven, the SAME temperature and the SAME tasters, and decide beforehand what \"better\" means: taste, texture, appearance. Tasters do not know which is which. If you changed the recipe AND the oven at once, you would not know which change mattered. Comparing AI versions works the same way.",
+     "feedback": "Hide the labels."
+    },
+    {
+     "id": "S118-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Changing recipe and oven at once causes what problem?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The cookies always burn, since two changes at once are too much for any oven"
+      },
+      {
+       "letter": "B",
+       "text": "No problem"
+      },
+      {
+       "letter": "C",
+       "text": "The cookies get bigger"
+      },
+      {
+       "letter": "D",
+       "text": "You cannot tell which change mattered"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "You cannot tell which change mattered",
+     "intro": "To find out which of two cookie recipes is better, you bake both with the SAME oven, the SAME temperature and the SAME tasters, and decide beforehand what \"better\" means: taste, texture, appearance. Tasters do not know which is which. If you changed the recipe AND the oven at once, you would not know which change mattered. Comparing AI versions works the same way.",
+     "feedback": "Confounded changes."
+    },
+    {
+     "id": "S118-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What is the lesson for AI versions?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Never compare"
+      },
+      {
+       "letter": "B",
+       "text": "Test each version on different examples so that both versions get a fair chance to shine"
+      },
+      {
+       "letter": "C",
+       "text": "Same tests, prior criteria, one change, blind judging"
+      },
+      {
+       "letter": "D",
+       "text": "Taste only the new version"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Same tests, prior criteria, one change, blind judging",
+     "intro": "To find out which of two cookie recipes is better, you bake both with the SAME oven, the SAME temperature and the SAME tasters, and decide beforehand what \"better\" means: taste, texture, appearance. Tasters do not know which is which. If you changed the recipe AND the oven at once, you would not know which change mattered. Comparing AI versions works the same way.",
+     "feedback": "Fair comparison."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner unsure how to compare versions can use a fair cookie taste test as a model."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Run fair version comparisons in practice",
+   "questions": [
+    {
+     "id": "S118-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Ana changes both her prompt and the model, and results improve. What can she conclude?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Not which change helped"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing improved"
+      },
+      {
+       "letter": "C",
+       "text": "That the new model caused all of the improvement, since models matter more than prompts"
+      },
+      {
+       "letter": "D",
+       "text": "That the prompt caused it"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Not which change helped",
+     "intro": "To compare two versions fairly, such as two tools, two prompts or an old and a new model, use the SAME TESTS and WRITTEN CRITERIA decided BEFORE you look at results. Change ONE thing at a time, so you know what caused any difference. Run both on every example, record results side by side, and count. Watch for small samples: with 5 examples, one lucky answer changes the score a lot. If you can, hide which version produced which answer when judging quality, so your expectations do not tip the scales.",
+     "feedback": "Two changes at once."
+    },
+    {
+     "id": "S118-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "A team tests the new version on 3 examples and the old on 20 different ones. What is wrong?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The old version needs more tests"
+      },
+      {
+       "letter": "B",
+       "text": "Different tests make the comparison unfair"
+      },
+      {
+       "letter": "C",
+       "text": "The new version needs fewer"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing, because a small number of examples is always enough for any new version of a tool"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Different tests make the comparison unfair",
+     "intro": "To compare two versions fairly, such as two tools, two prompts or an old and a new model, use the SAME TESTS and WRITTEN CRITERIA decided BEFORE you look at results. Change ONE thing at a time, so you know what caused any difference. Run both on every example, record results side by side, and count. Watch for small samples: with 5 examples, one lucky answer changes the score a lot. If you can, hide which version produced which answer when judging quality, so your expectations do not tip the scales.",
+     "feedback": "Same tests for both."
+    },
+    {
+     "id": "S118-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "After seeing results, Raj decides \"shorter answers are better,\" which favors his choice. What is the problem?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Shorter answers are always better"
+      },
+      {
+       "letter": "B",
+       "text": "Criteria do not matter"
+      },
+      {
+       "letter": "C",
+       "text": "No problem, since criteria should always be chosen after seeing which version is better"
+      },
+      {
+       "letter": "D",
+       "text": "Criteria chosen after results can be biased"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Criteria chosen after results can be biased",
+     "intro": "To compare two versions fairly, such as two tools, two prompts or an old and a new model, use the SAME TESTS and WRITTEN CRITERIA decided BEFORE you look at results. Change ONE thing at a time, so you know what caused any difference. Run both on every example, record results side by side, and count. Watch for small samples: with 5 examples, one lucky answer changes the score a lot. If you can, hide which version produced which answer when judging quality, so your expectations do not tip the scales.",
+     "feedback": "Write criteria first."
+    },
+    {
+     "id": "S118-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "With only 4 test examples, one changed answer moves the score by how much?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "50 percentage points"
+      },
+      {
+       "letter": "B",
+       "text": "25 percentage points"
+      },
+      {
+       "letter": "C",
+       "text": "4 percentage points"
+      },
+      {
+       "letter": "D",
+       "text": "1 percentage point"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "25 percentage points",
+     "intro": "To compare two versions fairly, such as two tools, two prompts or an old and a new model, use the SAME TESTS and WRITTEN CRITERIA decided BEFORE you look at results. Change ONE thing at a time, so you know what caused any difference. Run both on every example, record results side by side, and count. Watch for small samples: with 5 examples, one lucky answer changes the score a lot. If you can, hide which version produced which answer when judging quality, so your expectations do not tip the scales.",
+     "feedback": "1 / 4 = 25%."
+    },
+    {
+     "id": "S118-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Which practice reduces bias when judging writing quality?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Letting the developer judge alone"
+      },
+      {
+       "letter": "B",
+       "text": "Judging only the best answer"
+      },
+      {
+       "letter": "C",
+       "text": "Hiding which version wrote each answer"
+      },
+      {
+       "letter": "D",
+       "text": "Telling judges"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Hiding which version wrote each answer",
+     "intro": "To compare two versions fairly, such as two tools, two prompts or an old and a new model, use the SAME TESTS and WRITTEN CRITERIA decided BEFORE you look at results. Change ONE thing at a time, so you know what caused any difference. Run both on every example, record results side by side, and count. Watch for small samples: with 5 examples, one lucky answer changes the score a lot. If you can, hide which version produced which answer when judging quality, so your expectations do not tip the scales.",
+     "feedback": "Blind review."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Catch unfair comparisons and regressions",
+   "questions": [
+    {
+     "id": "S118-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What is a regression?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Something that used to work now fails"
+      },
+      {
+       "letter": "B",
+       "text": "A price increase"
+      },
+      {
+       "letter": "C",
+       "text": "A new feature that works better than the old version on every single example in the test set"
+      },
+      {
+       "letter": "D",
+       "text": "A slower computer"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Something that used to work now fails",
+     "intro": "Unfair comparisons are common. Testing the new version on easy examples and the old on hard ones, changing the prompt and the model at the same time, or judging by the one impressive answer you remember all mislead. Writing criteria after seeing results lets you pick the ones that favor your preference. Also check whether the new version fixed some problems but broke others that used to work, called a REGRESSION.",
+     "feedback": "Broken old behavior."
+    },
+    {
+     "id": "S118-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "A new version fixes 5 problems but breaks 4 that worked before. What should you report?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nothing"
+      },
+      {
+       "letter": "B",
+       "text": "Both the fixes and the regressions"
+      },
+      {
+       "letter": "C",
+       "text": "Only the regressions"
+      },
+      {
+       "letter": "D",
+       "text": "Only the five fixes, since regressions are normal and do not need to be mentioned to anyone"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Both the fixes and the regressions",
+     "intro": "Unfair comparisons are common. Testing the new version on easy examples and the old on hard ones, changing the prompt and the model at the same time, or judging by the one impressive answer you remember all mislead. Writing criteria after seeing results lets you pick the ones that favor your preference. Also check whether the new version fixed some problems but broke others that used to work, called a REGRESSION.",
+     "feedback": "Full picture."
+    },
+    {
+     "id": "S118-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Someone judges a new model by one impressive answer they remember. What is wrong?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "One answer is not a fair test"
+      },
+      {
+       "letter": "B",
+       "text": "Memories are always wrong"
+      },
+      {
+       "letter": "C",
+       "text": "The answer was too short"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing, since one excellent answer proves the model is better at every task in every case"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "One answer is not a fair test",
+     "intro": "Unfair comparisons are common. Testing the new version on easy examples and the old on hard ones, changing the prompt and the model at the same time, or judging by the one impressive answer you remember all mislead. Writing criteria after seeing results lets you pick the ones that favor your preference. Also check whether the new version fixed some problems but broke others that used to work, called a REGRESSION.",
+     "feedback": "Use the full test set."
+    },
+    {
+     "id": "S118-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "The new version was tested only on easy examples. What can result?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No result"
+      },
+      {
+       "letter": "B",
+       "text": "A perfectly fair comparison"
+      },
+      {
+       "letter": "C",
+       "text": "An overly positive comparison"
+      },
+      {
+       "letter": "D",
+       "text": "An overly negative comparison"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "An overly positive comparison",
+     "intro": "Unfair comparisons are common. Testing the new version on easy examples and the old on hard ones, changing the prompt and the model at the same time, or judging by the one impressive answer you remember all mislead. Writing criteria after seeing results lets you pick the ones that favor your preference. Also check whether the new version fixed some problems but broke others that used to work, called a REGRESSION.",
+     "feedback": "Biased examples."
+    },
+    {
+     "id": "S118-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What protects against picking criteria that favor your preference?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Using no criteria"
+      },
+      {
+       "letter": "B",
+       "text": "Changing criteria after each test"
+      },
+      {
+       "letter": "C",
+       "text": "Choosing criteria together with the developer of the version you hope will win"
+      },
+      {
+       "letter": "D",
+       "text": "Writing criteria before seeing results"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Writing criteria before seeing results",
+     "intro": "Unfair comparisons are common. Testing the new version on easy examples and the old on hard ones, changing the prompt and the model at the same time, or judging by the one impressive answer you remember all mislead. Writing criteria after seeing results lets you pick the ones that favor your preference. Also check whether the new version fixed some problems but broke others that used to work, called a REGRESSION.",
+     "feedback": "Commit in advance."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

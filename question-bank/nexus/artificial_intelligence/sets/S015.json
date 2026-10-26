@@ -1,0 +1,667 @@
+{
+ "set": 15,
+ "title": "Tokens",
+ "outcome": "AI.LLM.02",
+ "content_status": "time_sensitive",
+ "requires": [
+  14
+ ],
+ "module": "llm",
+ "path_refs": [
+  "everyday",
+  "creative",
+  "coding",
+  "work",
+  "society"
+ ],
+ "suggested": [],
+ "sources": [
+  {
+   "url": "https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them",
+   "claim": "Provider rule of thumb (OpenAI help article): for English text one token is about 4 characters or about three quarters of a word; exact counts depend on the model and its tokenizer. Token counts are not word counts.",
+   "checked": "2026-10-26"
+  }
+ ],
+ "review_interval_days": 365,
+ "jurisdiction": "Provider documentation (example)",
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Explain tokens and why counts differ from words",
+   "questions": [
+    {
+     "id": "S15-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "What is a token?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A chunk of text, such as a word or part of one"
+      },
+      {
+       "letter": "B",
+       "text": "A coin you pay with to use an AI website"
+      },
+      {
+       "letter": "C",
+       "text": "A password that unlocks a model"
+      },
+      {
+       "letter": "D",
+       "text": "A whole page of text read at once"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "A chunk of text, such as a word or part of one",
+     "intro": "Language models do not read words the way people do. They read and write TOKENS: chunks of text that may be a whole word, part of a word, a punctuation mark or a space. A common word like \"the\" is often one token, while a long or rare word like \"unbelievably\" may be split into several. For English, one provider's rule of thumb is about 4 characters, or about three quarters of a word, per token, but the exact count depends on the model. Token counts matter because limits on how much text a model can handle, and many usage prices, are measured in tokens, not words.",
+     "feedback": "Tokens are pieces of text."
+    },
+    {
+     "id": "S15-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Which word is (a very common short word) most likely split into several tokens?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "the (a very common short word)"
+      },
+      {
+       "letter": "B",
+       "text": "and (a very common short word)"
+      },
+      {
+       "letter": "C",
+       "text": "unbelievably (a long, rarer word)"
+      },
+      {
+       "letter": "D",
+       "text": "is (a very common short word)"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "unbelievably (a long, rarer word)",
+     "intro": "Language models do not read words the way people do. They read and write TOKENS: chunks of text that may be a whole word, part of a word, a punctuation mark or a space. A common word like \"the\" is often one token, while a long or rare word like \"unbelievably\" may be split into several. For English, one provider's rule of thumb is about 4 characters, or about three quarters of a word, per token, but the exact count depends on the model. Token counts matter because limits on how much text a model can handle, and many usage prices, are measured in tokens, not words.",
+     "feedback": "Long or rare words are often split."
+    },
+    {
+     "id": "S15-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Using the rule of thumb of about three quarters of a word per token, about how many tokens is a 300-word English text?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "About 225 tokens"
+      },
+      {
+       "letter": "B",
+       "text": "About 400 tokens"
+      },
+      {
+       "letter": "C",
+       "text": "About 1,200 tokens"
+      },
+      {
+       "letter": "D",
+       "text": "About 300 tokens"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "About 400 tokens",
+     "intro": "Language models do not read words the way people do. They read and write TOKENS: chunks of text that may be a whole word, part of a word, a punctuation mark or a space. A common word like \"the\" is often one token, while a long or rare word like \"unbelievably\" may be split into several. For English, one provider's rule of thumb is about 4 characters, or about three quarters of a word, per token, but the exact count depends on the model. Token counts matter because limits on how much text a model can handle, and many usage prices, are measured in tokens, not words.",
+     "feedback": "300 / 0.75 = 400 tokens (an estimate)."
+    },
+    {
+     "id": "S15-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Why do token counts matter to users?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Tokens decide whether the answer is true"
+      },
+      {
+       "letter": "B",
+       "text": "Tokens are only used for counting images"
+      },
+      {
+       "letter": "C",
+       "text": "Tokens decide the font the answer appears in"
+      },
+      {
+       "letter": "D",
+       "text": "Many limits and prices are measured in tokens"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Many limits and prices are measured in tokens",
+     "intro": "Language models do not read words the way people do. They read and write TOKENS: chunks of text that may be a whole word, part of a word, a punctuation mark or a space. A common word like \"the\" is often one token, while a long or rare word like \"unbelievably\" may be split into several. For English, one provider's rule of thumb is about 4 characters, or about three quarters of a word, per token, but the exact count depends on the model. Token counts matter because limits on how much text a model can handle, and many usage prices, are measured in tokens, not words.",
+     "feedback": "Limits and usage prices often use tokens."
+    },
+    {
+     "id": "S15-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Is the token rule of thumb exact for every model?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No; counts depend on how each model splits text"
+      },
+      {
+       "letter": "B",
+       "text": "No; tokens are always exactly one letter"
+      },
+      {
+       "letter": "C",
+       "text": "Yes; one token always equals one word"
+      },
+      {
+       "letter": "D",
+       "text": "Yes; every model splits text identically"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "No; counts depend on how each model splits text",
+     "intro": "Language models do not read words the way people do. They read and write TOKENS: chunks of text that may be a whole word, part of a word, a punctuation mark or a space. A common word like \"the\" is often one token, while a long or rare word like \"unbelievably\" may be split into several. For English, one provider's rule of thumb is about 4 characters, or about three quarters of a word, per token, but the exact count depends on the model. Token counts matter because limits on how much text a model can handle, and many usage prices, are measured in tokens, not words.",
+     "feedback": "Rules of thumb are estimates."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Estimate tokens from words",
+   "questions": [
+    {
+     "id": "S15-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "About how many tokens is 30 words?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "22.5"
+      },
+      {
+       "letter": "B",
+       "text": "40"
+      },
+      {
+       "letter": "C",
+       "text": "120"
+      },
+      {
+       "letter": "D",
+       "text": "30"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "40",
+     "intro": "A simple estimate turns words into tokens. One provider's rule of thumb for English is that a token is about three quarters of a word. To estimate tokens from words, DIVIDE the number of words by 0.75, which is the same as multiplying by 4 and then dividing by 3. Example: 60 words / 0.75 = 80 tokens. To estimate words from tokens, MULTIPLY tokens by 0.75. Example: 200 tokens x 0.75 = 150 words. These are rough estimates for ordinary English, not exact counts.",
+     "feedback": "30 / 0.75 = 40."
+    },
+    {
+     "id": "S15-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "About how many words is 400 tokens?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "400"
+      },
+      {
+       "letter": "B",
+       "text": "533"
+      },
+      {
+       "letter": "C",
+       "text": "300"
+      },
+      {
+       "letter": "D",
+       "text": "100"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "300",
+     "intro": "A simple estimate turns words into tokens. One provider's rule of thumb for English is that a token is about three quarters of a word. To estimate tokens from words, DIVIDE the number of words by 0.75, which is the same as multiplying by 4 and then dividing by 3. Example: 60 words / 0.75 = 80 tokens. To estimate words from tokens, MULTIPLY tokens by 0.75. Example: 200 tokens x 0.75 = 150 words. These are rough estimates for ordinary English, not exact counts.",
+     "feedback": "400 x 0.75 = 300."
+    },
+    {
+     "id": "S15-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "About how many tokens is 150 words?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "112.5"
+      },
+      {
+       "letter": "B",
+       "text": "150"
+      },
+      {
+       "letter": "C",
+       "text": "600"
+      },
+      {
+       "letter": "D",
+       "text": "200"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "200",
+     "intro": "A simple estimate turns words into tokens. One provider's rule of thumb for English is that a token is about three quarters of a word. To estimate tokens from words, DIVIDE the number of words by 0.75, which is the same as multiplying by 4 and then dividing by 3. Example: 60 words / 0.75 = 80 tokens. To estimate words from tokens, MULTIPLY tokens by 0.75. Example: 200 tokens x 0.75 = 150 words. These are rough estimates for ordinary English, not exact counts.",
+     "feedback": "150 / 0.75 = 200."
+    },
+    {
+     "id": "S15-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Dividing by 0.75 gives the same result as which steps?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Multiply by 4, then divide by 3"
+      },
+      {
+       "letter": "B",
+       "text": "Add 75 to the number"
+      },
+      {
+       "letter": "C",
+       "text": "Subtract a quarter"
+      },
+      {
+       "letter": "D",
+       "text": "Multiply by 3, then divide by 4"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Multiply by 4, then divide by 3",
+     "intro": "A simple estimate turns words into tokens. One provider's rule of thumb for English is that a token is about three quarters of a word. To estimate tokens from words, DIVIDE the number of words by 0.75, which is the same as multiplying by 4 and then dividing by 3. Example: 60 words / 0.75 = 80 tokens. To estimate words from tokens, MULTIPLY tokens by 0.75. Example: 200 tokens x 0.75 = 150 words. These are rough estimates for ordinary English, not exact counts.",
+     "feedback": "x / 0.75 = x x 4 / 3."
+    },
+    {
+     "id": "S15-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "About how many words is 1,000 tokens?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "250"
+      },
+      {
+       "letter": "B",
+       "text": "1,333"
+      },
+      {
+       "letter": "C",
+       "text": "1,000"
+      },
+      {
+       "letter": "D",
+       "text": "750"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "750",
+     "intro": "A simple estimate turns words into tokens. One provider's rule of thumb for English is that a token is about three quarters of a word. To estimate tokens from words, DIVIDE the number of words by 0.75, which is the same as multiplying by 4 and then dividing by 3. Example: 60 words / 0.75 = 80 tokens. To estimate words from tokens, MULTIPLY tokens by 0.75. Example: 200 tokens x 0.75 = 150 words. These are rough estimates for ordinary English, not exact counts.",
+     "feedback": "1,000 x 0.75 = 750."
+    }
+   ],
+   "branch_mode": "underlying_skill",
+   "relationship": "A learner who cannot convert words and tokens practices the one division and one multiplication the MAIN questions use."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Use token estimates in practical situations",
+   "questions": [
+    {
+     "id": "S15-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "A tool allows about 2,000 tokens per message. About how many words of English is that?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "About 2,667 words"
+      },
+      {
+       "letter": "B",
+       "text": "About 500 words"
+      },
+      {
+       "letter": "C",
+       "text": "About 1,500 words"
+      },
+      {
+       "letter": "D",
+       "text": "Exactly 2,000 words"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "About 1,500 words",
+     "intro": "Language models do not read words the way people do. They read and write TOKENS: chunks of text that may be a whole word, part of a word, a punctuation mark or a space. A common word like \"the\" is often one token, while a long or rare word like \"unbelievably\" may be split into several. For English, one provider's rule of thumb is about 4 characters, or about three quarters of a word, per token, but the exact count depends on the model. Token counts matter because limits on how much text a model can handle, and many usage prices, are measured in tokens, not words.",
+     "feedback": "2,000 x 0.75 = 1,500 words (an estimate)."
+    },
+    {
+     "id": "S15-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Jun's essay is 900 words. About how many tokens will it use?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Exactly 900 tokens"
+      },
+      {
+       "letter": "B",
+       "text": "About 1,200 tokens"
+      },
+      {
+       "letter": "C",
+       "text": "About 3,600 tokens"
+      },
+      {
+       "letter": "D",
+       "text": "About 675 tokens"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "About 1,200 tokens",
+     "intro": "Language models do not read words the way people do. They read and write TOKENS: chunks of text that may be a whole word, part of a word, a punctuation mark or a space. A common word like \"the\" is often one token, while a long or rare word like \"unbelievably\" may be split into several. For English, one provider's rule of thumb is about 4 characters, or about three quarters of a word, per token, but the exact count depends on the model. Token counts matter because limits on how much text a model can handle, and many usage prices, are measured in tokens, not words.",
+     "feedback": "900 / 0.75 = 1,200 tokens (an estimate)."
+    },
+    {
+     "id": "S15-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Why might a message hit a token limit even though it seems short in words?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Some words and symbols use several tokens each"
+      },
+      {
+       "letter": "B",
+       "text": "Token limits only count pictures"
+      },
+      {
+       "letter": "C",
+       "text": "Every word always uses exactly ten tokens"
+      },
+      {
+       "letter": "D",
+       "text": "Spaces are never counted at all"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Some words and symbols use several tokens each",
+     "intro": "Language models do not read words the way people do. They read and write TOKENS: chunks of text that may be a whole word, part of a word, a punctuation mark or a space. A common word like \"the\" is often one token, while a long or rare word like \"unbelievably\" may be split into several. For English, one provider's rule of thumb is about 4 characters, or about three quarters of a word, per token, but the exact count depends on the model. Token counts matter because limits on how much text a model can handle, and many usage prices, are measured in tokens, not words.",
+     "feedback": "Rare words, numbers and symbols can use more tokens."
+    },
+    {
+     "id": "S15-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "A pricing page charges by tokens. What does that mean for a long document?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Long documents are always free"
+      },
+      {
+       "letter": "B",
+       "text": "Cost depends on the font size used"
+      },
+      {
+       "letter": "C",
+       "text": "Longer text usually costs more tokens"
+      },
+      {
+       "letter": "D",
+       "text": "Cost depends only on the number of pages printed"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Longer text usually costs more tokens",
+     "intro": "Language models do not read words the way people do. They read and write TOKENS: chunks of text that may be a whole word, part of a word, a punctuation mark or a space. A common word like \"the\" is often one token, while a long or rare word like \"unbelievably\" may be split into several. For English, one provider's rule of thumb is about 4 characters, or about three quarters of a word, per token, but the exact count depends on the model. Token counts matter because limits on how much text a model can handle, and many usage prices, are measured in tokens, not words.",
+     "feedback": "More text means more tokens, usually more cost."
+    },
+    {
+     "id": "S15-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "Two tools report different token counts for the same paragraph. What is the likely reason?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "One tool must be broken"
+      },
+      {
+       "letter": "B",
+       "text": "Tokens are random numbers"
+      },
+      {
+       "letter": "C",
+       "text": "Paragraphs have no fixed text inside them"
+      },
+      {
+       "letter": "D",
+       "text": "They split text into tokens differently"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "They split text into tokens differently",
+     "intro": "Language models do not read words the way people do. They read and write TOKENS: chunks of text that may be a whole word, part of a word, a punctuation mark or a space. A common word like \"the\" is often one token, while a long or rare word like \"unbelievably\" may be split into several. For English, one provider's rule of thumb is about 4 characters, or about three quarters of a word, per token, but the exact count depends on the model. Token counts matter because limits on how much text a model can handle, and many usage prices, are measured in tokens, not words.",
+     "feedback": "Different tokenizers give different counts."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Handle surprising token counts",
+   "questions": [
+    {
+     "id": "S15-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "A message with a long table of numbers uses many more tokens than a story of the same word count. Why?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Tables are always converted into images first"
+      },
+      {
+       "letter": "B",
+       "text": "Numbers and table symbols often take more tokens"
+      },
+      {
+       "letter": "C",
+       "text": "Numbers always count as zero tokens"
+      },
+      {
+       "letter": "D",
+       "text": "Stories are never counted in tokens"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Numbers and table symbols often take more tokens",
+     "intro": "Token counts can surprise you. Text in some languages, unusual spellings, long numbers, code and tables often use more tokens per word than everyday English, so the same message length in words can cost more tokens. Because a model sees tokens rather than letters, tasks such as counting the letters in a word or reversing a word can trip it up even when it writes fluent sentences. And because different models split text differently, a count from one tool is only an estimate for another.",
+     "feedback": "Long numbers and symbols raise token counts."
+    },
+    {
+     "id": "S15-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "A fluent model miscounts how many times the letter r appears in \"strawberry.\" What helps explain this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It cannot read English at all"
+      },
+      {
+       "letter": "B",
+       "text": "Letter counting is always easy for every model"
+      },
+      {
+       "letter": "C",
+       "text": "It works with tokens, not individual letters"
+      },
+      {
+       "letter": "D",
+       "text": "The word is spelled differently for computers"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "It works with tokens, not individual letters",
+     "intro": "Token counts can surprise you. Text in some languages, unusual spellings, long numbers, code and tables often use more tokens per word than everyday English, so the same message length in words can cost more tokens. Because a model sees tokens rather than letters, tasks such as counting the letters in a word or reversing a word can trip it up even when it writes fluent sentences. And because different models split text differently, a count from one tool is only an estimate for another.",
+     "feedback": "Seeing chunks, not letters, can trip up letter tasks."
+    },
+    {
+     "id": "S15-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "You estimate a cost using one tool's token counter, but you will use a different model. What should you remember?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The count is only an estimate for the other model"
+      },
+      {
+       "letter": "B",
+       "text": "Token counts never affect cost"
+      },
+      {
+       "letter": "C",
+       "text": "You must count tokens by hand instead"
+      },
+      {
+       "letter": "D",
+       "text": "The count will match exactly for every model"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The count is only an estimate for the other model",
+     "intro": "Token counts can surprise you. Text in some languages, unusual spellings, long numbers, code and tables often use more tokens per word than everyday English, so the same message length in words can cost more tokens. Because a model sees tokens rather than letters, tasks such as counting the letters in a word or reversing a word can trip it up even when it writes fluent sentences. And because different models split text differently, a count from one tool is only an estimate for another.",
+     "feedback": "Different models tokenize differently."
+    },
+    {
+     "id": "S15-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "A message in a language other than English uses more tokens than its English translation. What is the best explanation?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Tokens count only English letters"
+      },
+      {
+       "letter": "B",
+       "text": "Languages other than English are not allowed to be tokenized"
+      },
+      {
+       "letter": "C",
+       "text": "The translation must have deleted words"
+      },
+      {
+       "letter": "D",
+       "text": "Some languages use more tokens per word for some models"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Some languages use more tokens per word for some models",
+     "intro": "Token counts can surprise you. Text in some languages, unusual spellings, long numbers, code and tables often use more tokens per word than everyday English, so the same message length in words can cost more tokens. Because a model sees tokens rather than letters, tasks such as counting the letters in a word or reversing a word can trip it up even when it writes fluent sentences. And because different models split text differently, a count from one tool is only an estimate for another.",
+     "feedback": "Token efficiency varies by language and model."
+    },
+    {
+     "id": "S15-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 3: Large language models",
+     "type": "mc",
+     "prompt": "A code snippet of 50 lines seems short but uses a lot of tokens. What is the likely reason?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Each line of code always counts as exactly one token"
+      },
+      {
+       "letter": "B",
+       "text": "Symbols, spaces and names in code split into many tokens"
+      },
+      {
+       "letter": "C",
+       "text": "Code is turned into pictures first"
+      },
+      {
+       "letter": "D",
+       "text": "Code is never counted in tokens"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Symbols, spaces and names in code split into many tokens",
+     "intro": "Token counts can surprise you. Text in some languages, unusual spellings, long numbers, code and tables often use more tokens per word than everyday English, so the same message length in words can cost more tokens. Because a model sees tokens rather than letters, tasks such as counting the letters in a word or reversing a word can trip it up even when it writes fluent sentences. And because different models split text differently, a count from one tool is only an estimate for another.",
+     "feedback": "Code can be token-heavy."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

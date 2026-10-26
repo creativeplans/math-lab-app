@@ -1,0 +1,661 @@
+{
+ "set": 45,
+ "title": "Passwords, keys and shared accounts",
+ "outcome": "AI.SECURITY.01",
+ "content_status": "stable",
+ "requires": [],
+ "module": "safety",
+ "path_refs": [
+  "everyday",
+  "creative",
+  "coding",
+  "work",
+  "society"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Keep passwords and keys out of prompts and avoid shared accounts",
+   "questions": [
+    {
+     "id": "S45-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 6: Privacy and security basics",
+     "type": "mc",
+     "prompt": "What is an access key (API key)?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A key that opens your front door"
+      },
+      {
+       "letter": "B",
+       "text": "A secret code that lets software use your account"
+      },
+      {
+       "letter": "C",
+       "text": "A public code anyone may share"
+      },
+      {
+       "letter": "D",
+       "text": "A list of the shortcut keys on a keyboard"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A secret code that lets software use your account",
+     "intro": "PASSWORDS, ACCESS KEYS (also called API keys: secret codes that let software use a paid service on your account) and recovery codes are SECRETS: anyone who has them can act as you. Never paste them into a chat or a prompt, even to \"help debug\" a problem; describe the problem and use a placeholder like [API_KEY] instead. Do not put secrets inside code you share or upload. Avoid SHARED ACCOUNTS: if several people use one login, you cannot tell who did what, saved history may be visible to everyone, and one person's mistake affects all. Use two-step verification where available.",
+     "feedback": "Keys let software act on your account."
+    },
+    {
+     "id": "S45-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 6: Privacy and security basics",
+     "type": "mc",
+     "prompt": "In this prepared help request, what is the main problem?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It mentions an error code"
+      },
+      {
+       "letter": "B",
+       "text": "It includes the word \"hello\" in the code"
+      },
+      {
+       "letter": "C",
+       "text": "It is too short to read"
+      },
+      {
+       "letter": "D",
+       "text": "It pastes a secret key into the request"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "It pastes a secret key into the request",
+     "intro": "PASSWORDS, ACCESS KEYS (also called API keys: secret codes that let software use a paid service on your account) and recovery codes are SECRETS: anyone who has them can act as you. Never paste them into a chat or a prompt, even to \"help debug\" a problem; describe the problem and use a placeholder like [API_KEY] instead. Do not put secrets inside code you share or upload. Avoid SHARED ACCOUNTS: if several people use one login, you cannot tell who did what, saved history may be visible to everyone, and one person's mistake affects all. Use two-step verification where available.",
+     "feedback": "The key should be replaced with a placeholder.",
+     "example": {
+      "kind": "text",
+      "label": "Prepared example (a fictional help request; the key shown is made up)",
+      "text": "My script fails with \"401 Unauthorized.\" Here is my code:\n  API_KEY = \"sk-live-7f3a9c...\"\n  response = call_service(API_KEY, \"hello\")"
+     }
+    },
+    {
+     "id": "S45-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 6: Privacy and security basics",
+     "type": "mc",
+     "prompt": "How should you share code that uses a key?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Share half of the key"
+      },
+      {
+       "letter": "B",
+       "text": "Write the key backward"
+      },
+      {
+       "letter": "C",
+       "text": "Replace the key with a placeholder like [API_KEY]"
+      },
+      {
+       "letter": "D",
+       "text": "Share the real key so the tool can test it"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Replace the key with a placeholder like [API_KEY]",
+     "intro": "PASSWORDS, ACCESS KEYS (also called API keys: secret codes that let software use a paid service on your account) and recovery codes are SECRETS: anyone who has them can act as you. Never paste them into a chat or a prompt, even to \"help debug\" a problem; describe the problem and use a placeholder like [API_KEY] instead. Do not put secrets inside code you share or upload. Avoid SHARED ACCOUNTS: if several people use one login, you cannot tell who did what, saved history may be visible to everyone, and one person's mistake affects all. Use two-step verification where available.",
+     "feedback": "Never share real secrets."
+    },
+    {
+     "id": "S45-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 6: Privacy and security basics",
+     "type": "mc",
+     "prompt": "Why avoid shared accounts?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "You cannot tell who did what; history is shared"
+      },
+      {
+       "letter": "B",
+       "text": "Shared accounts are always faster to log into"
+      },
+      {
+       "letter": "C",
+       "text": "Shared accounts cost nothing"
+      },
+      {
+       "letter": "D",
+       "text": "Shared accounts improve privacy"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "You cannot tell who did what; history is shared",
+     "intro": "PASSWORDS, ACCESS KEYS (also called API keys: secret codes that let software use a paid service on your account) and recovery codes are SECRETS: anyone who has them can act as you. Never paste them into a chat or a prompt, even to \"help debug\" a problem; describe the problem and use a placeholder like [API_KEY] instead. Do not put secrets inside code you share or upload. Avoid SHARED ACCOUNTS: if several people use one login, you cannot tell who did what, saved history may be visible to everyone, and one person's mistake affects all. Use two-step verification where available.",
+     "feedback": "Shared logins blur responsibility and privacy."
+    },
+    {
+     "id": "S45-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 6: Privacy and security basics",
+     "type": "mc",
+     "prompt": "What is two-step verification?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Typing your password twice"
+      },
+      {
+       "letter": "B",
+       "text": "A second check, like a code, besides your password"
+      },
+      {
+       "letter": "C",
+       "text": "Two people sharing one password"
+      },
+      {
+       "letter": "D",
+       "text": "Changing your password every two days by rule"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A second check, like a code, besides your password",
+     "intro": "PASSWORDS, ACCESS KEYS (also called API keys: secret codes that let software use a paid service on your account) and recovery codes are SECRETS: anyone who has them can act as you. Never paste them into a chat or a prompt, even to \"help debug\" a problem; describe the problem and use a placeholder like [API_KEY] instead. Do not put secrets inside code you share or upload. Avoid SHARED ACCOUNTS: if several people use one login, you cannot tell who did what, saved history may be visible to everyone, and one person's mistake affects all. Use two-step verification where available.",
+     "feedback": "A second factor protects the account."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare passwords and keys with house keys",
+   "questions": [
+    {
+     "id": "S45-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 6: Privacy and security basics",
+     "type": "mc",
+     "prompt": "Why not tape your house key to the door?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Doors do not have locks"
+      },
+      {
+       "letter": "B",
+       "text": "Keys are too heavy for tape"
+      },
+      {
+       "letter": "C",
+       "text": "Anyone could use it to get in"
+      },
+      {
+       "letter": "D",
+       "text": "Tape is illegal"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Anyone could use it to get in",
+     "intro": "A house key lets anyone who holds it walk in as if they live there. You would not hand it to a stranger, tape it to the front door, or post a photo of it online, because a photo can be used to copy it. Passwords and access keys are the same: whoever has them can act as you. Pasting a key into a chat or code you share is like posting a photo of your house key. If you think a copy got out, you change the lock.",
+     "feedback": "Exposed keys grant access."
+    },
+    {
+     "id": "S45-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 6: Privacy and security basics",
+     "type": "mc",
+     "prompt": "Why is a photo of a key risky?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It is not risky"
+      },
+      {
+       "letter": "B",
+       "text": "Photos are always blurry"
+      },
+      {
+       "letter": "C",
+       "text": "Keys look the same"
+      },
+      {
+       "letter": "D",
+       "text": "It can be used to make a copy"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "It can be used to make a copy",
+     "intro": "A house key lets anyone who holds it walk in as if they live there. You would not hand it to a stranger, tape it to the front door, or post a photo of it online, because a photo can be used to copy it. Passwords and access keys are the same: whoever has them can act as you. Pasting a key into a chat or code you share is like posting a photo of your house key. If you think a copy got out, you change the lock.",
+     "feedback": "A copy works like the original."
+    },
+    {
+     "id": "S45-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 6: Privacy and security basics",
+     "type": "mc",
+     "prompt": "In AI terms, pasting a key into a chat is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Posting a photo of your house key"
+      },
+      {
+       "letter": "B",
+       "text": "Changing your front door lock"
+      },
+      {
+       "letter": "C",
+       "text": "Buying a new house"
+      },
+      {
+       "letter": "D",
+       "text": "Locking the door"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Posting a photo of your house key",
+     "intro": "A house key lets anyone who holds it walk in as if they live there. You would not hand it to a stranger, tape it to the front door, or post a photo of it online, because a photo can be used to copy it. Passwords and access keys are the same: whoever has them can act as you. Pasting a key into a chat or code you share is like posting a photo of your house key. If you think a copy got out, you change the lock.",
+     "feedback": "It exposes the secret."
+    },
+    {
+     "id": "S45-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 6: Privacy and security basics",
+     "type": "mc",
+     "prompt": "If a copy of your key got out, what do you do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Make more copies"
+      },
+      {
+       "letter": "B",
+       "text": "Do nothing"
+      },
+      {
+       "letter": "C",
+       "text": "Hide the original key"
+      },
+      {
+       "letter": "D",
+       "text": "Change the lock"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Change the lock",
+     "intro": "A house key lets anyone who holds it walk in as if they live there. You would not hand it to a stranger, tape it to the front door, or post a photo of it online, because a photo can be used to copy it. Passwords and access keys are the same: whoever has them can act as you. Pasting a key into a chat or code you share is like posting a photo of your house key. If you think a copy got out, you change the lock.",
+     "feedback": "Revoke and replace."
+    },
+    {
+     "id": "S45-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 6: Privacy and security basics",
+     "type": "mc",
+     "prompt": "Who can act as you with your password?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Anyone who has it"
+      },
+      {
+       "letter": "B",
+       "text": "Only the bank"
+      },
+      {
+       "letter": "C",
+       "text": "Only you, always"
+      },
+      {
+       "letter": "D",
+       "text": "No one"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Anyone who has it",
+     "intro": "A house key lets anyone who holds it walk in as if they live there. You would not hand it to a stranger, tape it to the front door, or post a photo of it online, because a photo can be used to copy it. Passwords and access keys are the same: whoever has them can act as you. Pasting a key into a chat or code you share is like posting a photo of your house key. If you think a copy got out, you change the lock.",
+     "feedback": "Possession equals access."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who underestimates leaked secrets can see the risk through a familiar house-key example."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Handle secrets safely in practice",
+   "questions": [
+    {
+     "id": "S45-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 6: Privacy and security basics",
+     "type": "mc",
+     "prompt": "Ravi's code fails and he wants AI help. The code contains his database password. What should he share?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Only the password, to save time"
+      },
+      {
+       "letter": "B",
+       "text": "A screenshot showing the password"
+      },
+      {
+       "letter": "C",
+       "text": "The code with the password replaced by a placeholder"
+      },
+      {
+       "letter": "D",
+       "text": "The full code, so the tool can see everything in it"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The code with the password replaced by a placeholder",
+     "intro": "PASSWORDS, ACCESS KEYS (also called API keys: secret codes that let software use a paid service on your account) and recovery codes are SECRETS: anyone who has them can act as you. Never paste them into a chat or a prompt, even to \"help debug\" a problem; describe the problem and use a placeholder like [API_KEY] instead. Do not put secrets inside code you share or upload. Avoid SHARED ACCOUNTS: if several people use one login, you cannot tell who did what, saved history may be visible to everyone, and one person's mistake affects all. Use two-step verification where available.",
+     "feedback": "Share the problem, not the secret."
+    },
+    {
+     "id": "S45-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 6: Privacy and security basics",
+     "type": "mc",
+     "prompt": "A family shares one AI account. A teen's private questions show in history for everyone. What is the issue?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The tool chose to show it to the family on purpose"
+      },
+      {
+       "letter": "B",
+       "text": "Shared accounts expose each person's history"
+      },
+      {
+       "letter": "C",
+       "text": "Histories are always hidden"
+      },
+      {
+       "letter": "D",
+       "text": "Teens cannot use AI tools"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Shared accounts expose each person's history",
+     "intro": "PASSWORDS, ACCESS KEYS (also called API keys: secret codes that let software use a paid service on your account) and recovery codes are SECRETS: anyone who has them can act as you. Never paste them into a chat or a prompt, even to \"help debug\" a problem; describe the problem and use a placeholder like [API_KEY] instead. Do not put secrets inside code you share or upload. Avoid SHARED ACCOUNTS: if several people use one login, you cannot tell who did what, saved history may be visible to everyone, and one person's mistake affects all. Use two-step verification where available.",
+     "feedback": "Separate accounts protect privacy."
+    },
+    {
+     "id": "S45-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 6: Privacy and security basics",
+     "type": "mc",
+     "prompt": "Which is safe to include when asking for help with a login error?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Your two-step code"
+      },
+      {
+       "letter": "B",
+       "text": "Your password"
+      },
+      {
+       "letter": "C",
+       "text": "Your account recovery code"
+      },
+      {
+       "letter": "D",
+       "text": "The exact error message text"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The exact error message text",
+     "intro": "PASSWORDS, ACCESS KEYS (also called API keys: secret codes that let software use a paid service on your account) and recovery codes are SECRETS: anyone who has them can act as you. Never paste them into a chat or a prompt, even to \"help debug\" a problem; describe the problem and use a placeholder like [API_KEY] instead. Do not put secrets inside code you share or upload. Avoid SHARED ACCOUNTS: if several people use one login, you cannot tell who did what, saved history may be visible to everyone, and one person's mistake affects all. Use two-step verification where available.",
+     "feedback": "Error messages help; secrets do not."
+    },
+    {
+     "id": "S45-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 6: Privacy and security basics",
+     "type": "mc",
+     "prompt": "A coworker asks to \"borrow\" your work AI login. What is the best response?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Decline and suggest they get their own access"
+      },
+      {
+       "letter": "B",
+       "text": "Share it with your manager's permission only by text"
+      },
+      {
+       "letter": "C",
+       "text": "Share it but change it later"
+      },
+      {
+       "letter": "D",
+       "text": "Write it on a sticky note for them"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Decline and suggest they get their own access",
+     "intro": "PASSWORDS, ACCESS KEYS (also called API keys: secret codes that let software use a paid service on your account) and recovery codes are SECRETS: anyone who has them can act as you. Never paste them into a chat or a prompt, even to \"help debug\" a problem; describe the problem and use a placeholder like [API_KEY] instead. Do not put secrets inside code you share or upload. Avoid SHARED ACCOUNTS: if several people use one login, you cannot tell who did what, saved history may be visible to everyone, and one person's mistake affects all. Use two-step verification where available.",
+     "feedback": "Each person needs their own login."
+    },
+    {
+     "id": "S45-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 6: Privacy and security basics",
+     "type": "mc",
+     "prompt": "Where should an API key used by a program be kept?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "In a message to the whole team"
+      },
+      {
+       "letter": "B",
+       "text": "In a comment at the top of the code"
+      },
+      {
+       "letter": "C",
+       "text": "In a protected setting, not in shared code"
+      },
+      {
+       "letter": "D",
+       "text": "In the program's public help text"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "In a protected setting, not in shared code",
+     "intro": "PASSWORDS, ACCESS KEYS (also called API keys: secret codes that let software use a paid service on your account) and recovery codes are SECRETS: anyone who has them can act as you. Never paste them into a chat or a prompt, even to \"help debug\" a problem; describe the problem and use a placeholder like [API_KEY] instead. Do not put secrets inside code you share or upload. Avoid SHARED ACCOUNTS: if several people use one login, you cannot tell who did what, saved history may be visible to everyone, and one person's mistake affects all. Use two-step verification where available.",
+     "feedback": "Keep secrets out of shared files."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Respond to exposed secrets and protect recovery",
+   "questions": [
+    {
+     "id": "S45-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 6: Privacy and security basics",
+     "type": "mc",
+     "prompt": "Mia accidentally pasted an API key into a chat. What should she do first?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Wait to see if anything happens"
+      },
+      {
+       "letter": "B",
+       "text": "Revoke the key and create a new one"
+      },
+      {
+       "letter": "C",
+       "text": "Ask the tool to forget the key"
+      },
+      {
+       "letter": "D",
+       "text": "Delete the chat and do nothing else"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Revoke the key and create a new one",
+     "intro": "If a secret is exposed, act quickly: change the password or REVOKE (cancel) the key at its source and create a new one, then check the account for activity you did not do. Deleting the chat where you pasted it is not enough, because copies may exist. Also protect account RECOVERY: a recovery email or phone number someone else controls can let them take over your account. Unexpected messages asking for a code \"to verify your account\" are a common trick; real services do not ask you to read codes to them.",
+     "feedback": "Cancel the exposed secret at its source."
+    },
+    {
+     "id": "S45-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 6: Privacy and security basics",
+     "type": "mc",
+     "prompt": "After replacing an exposed password, what should you also do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Use the same password elsewhere"
+      },
+      {
+       "letter": "B",
+       "text": "Post the new password somewhere for safekeeping"
+      },
+      {
+       "letter": "C",
+       "text": "Turn off two-step verification"
+      },
+      {
+       "letter": "D",
+       "text": "Check the account for activity you did not do"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Check the account for activity you did not do",
+     "intro": "If a secret is exposed, act quickly: change the password or REVOKE (cancel) the key at its source and create a new one, then check the account for activity you did not do. Deleting the chat where you pasted it is not enough, because copies may exist. Also protect account RECOVERY: a recovery email or phone number someone else controls can let them take over your account. Unexpected messages asking for a code \"to verify your account\" are a common trick; real services do not ask you to read codes to them.",
+     "feedback": "Look for misuse."
+    },
+    {
+     "id": "S45-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 6: Privacy and security basics",
+     "type": "mc",
+     "prompt": "A text says, \"Read us the code we just sent to verify your account.\" What is this likely?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A normal step real services ask for"
+      },
+      {
+       "letter": "B",
+       "text": "A test from your phone company"
+      },
+      {
+       "letter": "C",
+       "text": "A trick to take over your account"
+      },
+      {
+       "letter": "D",
+       "text": "A free prize offer"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A trick to take over your account",
+     "intro": "If a secret is exposed, act quickly: change the password or REVOKE (cancel) the key at its source and create a new one, then check the account for activity you did not do. Deleting the chat where you pasted it is not enough, because copies may exist. Also protect account RECOVERY: a recovery email or phone number someone else controls can let them take over your account. Unexpected messages asking for a code \"to verify your account\" are a common trick; real services do not ask you to read codes to them.",
+     "feedback": "Never share verification codes."
+    },
+    {
+     "id": "S45-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 6: Privacy and security basics",
+     "type": "mc",
+     "prompt": "An old recovery email you no longer control is on your account. Why fix it?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It makes the account faster"
+      },
+      {
+       "letter": "B",
+       "text": "Whoever controls it may reset your password"
+      },
+      {
+       "letter": "C",
+       "text": "Recovery emails do nothing"
+      },
+      {
+       "letter": "D",
+       "text": "It is required by law to keep old emails"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Whoever controls it may reset your password",
+     "intro": "If a secret is exposed, act quickly: change the password or REVOKE (cancel) the key at its source and create a new one, then check the account for activity you did not do. Deleting the chat where you pasted it is not enough, because copies may exist. Also protect account RECOVERY: a recovery email or phone number someone else controls can let them take over your account. Unexpected messages asking for a code \"to verify your account\" are a common trick; real services do not ask you to read codes to them.",
+     "feedback": "Control your recovery options."
+    },
+    {
+     "id": "S45-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 6: Privacy and security basics",
+     "type": "mc",
+     "prompt": "Why is deleting the chat not enough after exposing a key?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Copies of the key may still exist"
+      },
+      {
+       "letter": "B",
+       "text": "Deleting makes the key public"
+      },
+      {
+       "letter": "C",
+       "text": "Keys expire when chats are deleted"
+      },
+      {
+       "letter": "D",
+       "text": "Deleting chats is impossible"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Copies of the key may still exist",
+     "intro": "If a secret is exposed, act quickly: change the password or REVOKE (cancel) the key at its source and create a new one, then check the account for activity you did not do. Deleting the chat where you pasted it is not enough, because copies may exist. Also protect account RECOVERY: a recovery email or phone number someone else controls can let them take over your account. Unexpected messages asking for a code \"to verify your account\" are a common trick; real services do not ask you to read codes to them.",
+     "feedback": "Revoke the key itself."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

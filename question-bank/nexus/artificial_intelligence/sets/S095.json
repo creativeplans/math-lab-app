@@ -1,0 +1,655 @@
+{
+ "set": 95,
+ "title": "Chatbot, tool-using workflow or agent",
+ "outcome": "AI.AGENT.01",
+ "content_status": "stable",
+ "requires": [
+  21
+ ],
+ "module": "agents",
+ "path_refs": [
+  "coding",
+  "work"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Tell a chatbot, a fixed workflow and an agent apart",
+   "questions": [
+    {
+     "id": "S95-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "What does a chatbot do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Prints documents"
+      },
+      {
+       "letter": "B",
+       "text": "Follows a fixed schedule"
+      },
+      {
+       "letter": "C",
+       "text": "Answers in a conversation while you decide what to do"
+      },
+      {
+       "letter": "D",
+       "text": "Takes actions in the world on its own, such as sending emails and buying things for you"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Answers in a conversation while you decide what to do",
+     "intro": "Three setups are often all called \"AI,\" but they differ in who decides the steps. A CHATBOT answers in a conversation; you read the reply and decide what to do. A TOOL-USING WORKFLOW follows FIXED steps that a person designed, using a model for some steps, for example \"when a form arrives, summarize it, then email the summary to the manager.\" An AGENT is given a GOAL and TOOLS (such as search, email or files) and CHOOSES its own next steps, checking results as it goes. More freedom to choose means more ways to go wrong, so agents need the most limits and oversight.",
+     "feedback": "You act on its replies."
+    },
+    {
+     "id": "S95-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "What makes a workflow \"fixed\"?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It never uses a model"
+      },
+      {
+       "letter": "B",
+       "text": "The model chooses each new step by itself, based on what happened in the step before"
+      },
+      {
+       "letter": "C",
+       "text": "It has no steps"
+      },
+      {
+       "letter": "D",
+       "text": "A person designed its steps in advance"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "A person designed its steps in advance",
+     "intro": "Three setups are often all called \"AI,\" but they differ in who decides the steps. A CHATBOT answers in a conversation; you read the reply and decide what to do. A TOOL-USING WORKFLOW follows FIXED steps that a person designed, using a model for some steps, for example \"when a form arrives, summarize it, then email the summary to the manager.\" An AGENT is given a GOAL and TOOLS (such as search, email or files) and CHOOSES its own next steps, checking results as it goes. More freedom to choose means more ways to go wrong, so agents need the most limits and oversight.",
+     "feedback": "Predetermined steps."
+    },
+    {
+     "id": "S95-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "What makes something an agent?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It answers one question at a time and waits for the person to decide what happens next"
+      },
+      {
+       "letter": "B",
+       "text": "It chooses its own next steps toward a goal"
+      },
+      {
+       "letter": "C",
+       "text": "It has a friendly name"
+      },
+      {
+       "letter": "D",
+       "text": "It runs on a timer"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "It chooses its own next steps toward a goal",
+     "intro": "Three setups are often all called \"AI,\" but they differ in who decides the steps. A CHATBOT answers in a conversation; you read the reply and decide what to do. A TOOL-USING WORKFLOW follows FIXED steps that a person designed, using a model for some steps, for example \"when a form arrives, summarize it, then email the summary to the manager.\" An AGENT is given a GOAL and TOOLS (such as search, email or files) and CHOOSES its own next steps, checking results as it goes. More freedom to choose means more ways to go wrong, so agents need the most limits and oversight.",
+     "feedback": "Goal plus self-chosen steps."
+    },
+    {
+     "id": "S95-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "\"When a form arrives, summarize it, then email the manager\" describes what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A tool-using workflow"
+      },
+      {
+       "letter": "B",
+       "text": "A chatbot"
+      },
+      {
+       "letter": "C",
+       "text": "A search engine"
+      },
+      {
+       "letter": "D",
+       "text": "An agent"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "A tool-using workflow",
+     "intro": "Three setups are often all called \"AI,\" but they differ in who decides the steps. A CHATBOT answers in a conversation; you read the reply and decide what to do. A TOOL-USING WORKFLOW follows FIXED steps that a person designed, using a model for some steps, for example \"when a form arrives, summarize it, then email the summary to the manager.\" An AGENT is given a GOAL and TOOLS (such as search, email or files) and CHOOSES its own next steps, checking results as it goes. More freedom to choose means more ways to go wrong, so agents need the most limits and oversight.",
+     "feedback": "Fixed steps with a model inside."
+    },
+    {
+     "id": "S95-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Which needs the most limits and oversight?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A calculator"
+      },
+      {
+       "letter": "B",
+       "text": "A fixed workflow"
+      },
+      {
+       "letter": "C",
+       "text": "A chatbot"
+      },
+      {
+       "letter": "D",
+       "text": "An agent"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "An agent",
+     "intro": "Three setups are often all called \"AI,\" but they differ in who decides the steps. A CHATBOT answers in a conversation; you read the reply and decide what to do. A TOOL-USING WORKFLOW follows FIXED steps that a person designed, using a model for some steps, for example \"when a form arrives, summarize it, then email the summary to the manager.\" An AGENT is given a GOAL and TOOLS (such as search, email or files) and CHOOSES its own next steps, checking results as it goes. More freedom to choose means more ways to go wrong, so agents need the most limits and oversight.",
+     "feedback": "More freedom, more risk."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare the three with a GPS, a delivery route and a personal assistant",
+   "questions": [
+    {
+     "id": "S95-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "A GPS you ask for directions is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A calendar"
+      },
+      {
+       "letter": "B",
+       "text": "A chatbot"
+      },
+      {
+       "letter": "C",
+       "text": "A workflow"
+      },
+      {
+       "letter": "D",
+       "text": "An agent"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A chatbot",
+     "intro": "A GPS that you ASK for directions is like a chatbot: it suggests, and you drive. A delivery company's FIXED ROUTE, same stops in the same order every day, is like a workflow: designed in advance. A PERSONAL ASSISTANT told \"get me to the airport by 6\" who chooses taxis, trains and timing is like an agent: given a goal, choosing steps. The assistant is most flexible, and also the one whose choices you most need to check.",
+     "feedback": "It suggests; you act."
+    },
+    {
+     "id": "S95-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "A fixed delivery route is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A map"
+      },
+      {
+       "letter": "B",
+       "text": "A chatbot"
+      },
+      {
+       "letter": "C",
+       "text": "A workflow"
+      },
+      {
+       "letter": "D",
+       "text": "An agent"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A workflow",
+     "intro": "A GPS that you ASK for directions is like a chatbot: it suggests, and you drive. A delivery company's FIXED ROUTE, same stops in the same order every day, is like a workflow: designed in advance. A PERSONAL ASSISTANT told \"get me to the airport by 6\" who chooses taxis, trains and timing is like an agent: given a goal, choosing steps. The assistant is most flexible, and also the one whose choices you most need to check.",
+     "feedback": "Designed in advance."
+    },
+    {
+     "id": "S95-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "An assistant choosing taxis and trains is like what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "An agent"
+      },
+      {
+       "letter": "B",
+       "text": "A timetable"
+      },
+      {
+       "letter": "C",
+       "text": "A fixed workflow"
+      },
+      {
+       "letter": "D",
+       "text": "A chatbot"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "An agent",
+     "intro": "A GPS that you ASK for directions is like a chatbot: it suggests, and you drive. A delivery company's FIXED ROUTE, same stops in the same order every day, is like a workflow: designed in advance. A PERSONAL ASSISTANT told \"get me to the airport by 6\" who chooses taxis, trains and timing is like an agent: given a goal, choosing steps. The assistant is most flexible, and also the one whose choices you most need to check.",
+     "feedback": "Goal plus chosen steps."
+    },
+    {
+     "id": "S95-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Which option is most flexible?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "All are equal"
+      },
+      {
+       "letter": "B",
+       "text": "The personal assistant"
+      },
+      {
+       "letter": "C",
+       "text": "The GPS"
+      },
+      {
+       "letter": "D",
+       "text": "The fixed delivery route"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The personal assistant",
+     "intro": "A GPS that you ASK for directions is like a chatbot: it suggests, and you drive. A delivery company's FIXED ROUTE, same stops in the same order every day, is like a workflow: designed in advance. A PERSONAL ASSISTANT told \"get me to the airport by 6\" who chooses taxis, trains and timing is like an agent: given a goal, choosing steps. The assistant is most flexible, and also the one whose choices you most need to check.",
+     "feedback": "Chooses its own steps."
+    },
+    {
+     "id": "S95-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Whose choices most need checking?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The assistant's"
+      },
+      {
+       "letter": "B",
+       "text": "The route's"
+      },
+      {
+       "letter": "C",
+       "text": "No one's"
+      },
+      {
+       "letter": "D",
+       "text": "The GPS's"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The assistant's",
+     "intro": "A GPS that you ASK for directions is like a chatbot: it suggests, and you drive. A delivery company's FIXED ROUTE, same stops in the same order every day, is like a workflow: designed in advance. A PERSONAL ASSISTANT told \"get me to the airport by 6\" who chooses taxis, trains and timing is like an agent: given a goal, choosing steps. The assistant is most flexible, and also the one whose choices you most need to check.",
+     "feedback": "Most freedom, most checking."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who lumps all AI systems together can compare a GPS, a fixed route and a personal assistant."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Classify AI setups in practice",
+   "questions": [
+    {
+     "id": "S95-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Lena types questions to a study helper and decides what to write. What is it?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A fixed workflow"
+      },
+      {
+       "letter": "B",
+       "text": "A spreadsheet"
+      },
+      {
+       "letter": "C",
+       "text": "A chatbot"
+      },
+      {
+       "letter": "D",
+       "text": "An agent"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A chatbot",
+     "intro": "Three setups are often all called \"AI,\" but they differ in who decides the steps. A CHATBOT answers in a conversation; you read the reply and decide what to do. A TOOL-USING WORKFLOW follows FIXED steps that a person designed, using a model for some steps, for example \"when a form arrives, summarize it, then email the summary to the manager.\" An AGENT is given a GOAL and TOOLS (such as search, email or files) and CHOOSES its own next steps, checking results as it goes. More freedom to choose means more ways to go wrong, so agents need the most limits and oversight.",
+     "feedback": "Conversation; she acts."
+    },
+    {
+     "id": "S95-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Every night, a system collects new orders, uses a model to tag them, and files them. What is it?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A chatbot"
+      },
+      {
+       "letter": "B",
+       "text": "A calculator"
+      },
+      {
+       "letter": "C",
+       "text": "An agent"
+      },
+      {
+       "letter": "D",
+       "text": "A fixed workflow"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "A fixed workflow",
+     "intro": "Three setups are often all called \"AI,\" but they differ in who decides the steps. A CHATBOT answers in a conversation; you read the reply and decide what to do. A TOOL-USING WORKFLOW follows FIXED steps that a person designed, using a model for some steps, for example \"when a form arrives, summarize it, then email the summary to the manager.\" An AGENT is given a GOAL and TOOLS (such as search, email or files) and CHOOSES its own next steps, checking results as it goes. More freedom to choose means more ways to go wrong, so agents need the most limits and oversight.",
+     "feedback": "Same steps each time."
+    },
+    {
+     "id": "S95-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "A system told \"book the cheapest flight to Denver next week\" searches, compares and books. What is it?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A search engine"
+      },
+      {
+       "letter": "B",
+       "text": "A fixed workflow"
+      },
+      {
+       "letter": "C",
+       "text": "An agent"
+      },
+      {
+       "letter": "D",
+       "text": "A chatbot"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "An agent",
+     "intro": "Three setups are often all called \"AI,\" but they differ in who decides the steps. A CHATBOT answers in a conversation; you read the reply and decide what to do. A TOOL-USING WORKFLOW follows FIXED steps that a person designed, using a model for some steps, for example \"when a form arrives, summarize it, then email the summary to the manager.\" An AGENT is given a GOAL and TOOLS (such as search, email or files) and CHOOSES its own next steps, checking results as it goes. More freedom to choose means more ways to go wrong, so agents need the most limits and oversight.",
+     "feedback": "Goal, tools, chosen steps."
+    },
+    {
+     "id": "S95-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Which system can affect the world most directly?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A printed manual"
+      },
+      {
+       "letter": "B",
+       "text": "A calculator"
+      },
+      {
+       "letter": "C",
+       "text": "A chatbot that only shows text answers on a screen for the person to read and decide"
+      },
+      {
+       "letter": "D",
+       "text": "An agent that can send and buy"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "An agent that can send and buy",
+     "intro": "Three setups are often all called \"AI,\" but they differ in who decides the steps. A CHATBOT answers in a conversation; you read the reply and decide what to do. A TOOL-USING WORKFLOW follows FIXED steps that a person designed, using a model for some steps, for example \"when a form arrives, summarize it, then email the summary to the manager.\" An AGENT is given a GOAL and TOOLS (such as search, email or files) and CHOOSES its own next steps, checking results as it goes. More freedom to choose means more ways to go wrong, so agents need the most limits and oversight.",
+     "feedback": "Actions in the world."
+    },
+    {
+     "id": "S95-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "A workflow uses a model only to summarize; a person designed every other step. What decides the order of steps?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The person's design"
+      },
+      {
+       "letter": "B",
+       "text": "Chance"
+      },
+      {
+       "letter": "C",
+       "text": "The customer"
+      },
+      {
+       "letter": "D",
+       "text": "The model, which rearranges the order of the steps every time the workflow is started"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The person's design",
+     "intro": "Three setups are often all called \"AI,\" but they differ in who decides the steps. A CHATBOT answers in a conversation; you read the reply and decide what to do. A TOOL-USING WORKFLOW follows FIXED steps that a person designed, using a model for some steps, for example \"when a form arrives, summarize it, then email the summary to the manager.\" An AGENT is given a GOAL and TOOLS (such as search, email or files) and CHOOSES its own next steps, checking results as it goes. More freedom to choose means more ways to go wrong, so agents need the most limits and oversight.",
+     "feedback": "Fixed design."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Look past labels to what a system can do",
+   "questions": [
+    {
+     "id": "S95-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "A product is marketed as an \"agent\" but always runs the same three steps. What is it really?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A database"
+      },
+      {
+       "letter": "B",
+       "text": "A fixed workflow"
+      },
+      {
+       "letter": "C",
+       "text": "A chatbot"
+      },
+      {
+       "letter": "D",
+       "text": "An agent"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A fixed workflow",
+     "intro": "Labels in product marketing are loose: something sold as an \"agent\" may be a fixed workflow, and a chatbot may quietly use tools such as search. Ask practical questions instead. Who decides the next step, a person, a fixed design or the model? What can it actually do in the world: only show text, or also send, buy, delete or post? Can it act without a person approving? The answers tell you how much checking and how many limits it needs.",
+     "feedback": "Look at behavior."
+    },
+    {
+     "id": "S95-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Which question best reveals the risk of a system?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "\"Is it new?\""
+      },
+      {
+       "letter": "B",
+       "text": "\"Does it have a friendly name and a nice logo that customers will remember easily?\""
+      },
+      {
+       "letter": "C",
+       "text": "\"Is it popular?\""
+      },
+      {
+       "letter": "D",
+       "text": "\"Can it act without a person approving?\""
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "\"Can it act without a person approving?\"",
+     "intro": "Labels in product marketing are loose: something sold as an \"agent\" may be a fixed workflow, and a chatbot may quietly use tools such as search. Ask practical questions instead. Who decides the next step, a person, a fixed design or the model? What can it actually do in the world: only show text, or also send, buy, delete or post? Can it act without a person approving? The answers tell you how much checking and how many limits it needs.",
+     "feedback": "Unapproved actions matter."
+    },
+    {
+     "id": "S95-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "A chatbot quietly searches the web before answering. Does that make it an agent?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Not necessarily; it may still only show text"
+      },
+      {
+       "letter": "B",
+       "text": "No, chatbots cannot use tools"
+      },
+      {
+       "letter": "C",
+       "text": "Yes, if it is fast"
+      },
+      {
+       "letter": "D",
+       "text": "Yes, because any system that uses a tool of any kind is automatically a full agent"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Not necessarily; it may still only show text",
+     "intro": "Labels in product marketing are loose: something sold as an \"agent\" may be a fixed workflow, and a chatbot may quietly use tools such as search. Ask practical questions instead. Who decides the next step, a person, a fixed design or the model? What can it actually do in the world: only show text, or also send, buy, delete or post? Can it act without a person approving? The answers tell you how much checking and how many limits it needs.",
+     "feedback": "Ask what it can do."
+    },
+    {
+     "id": "S95-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Which ability needs the most limits?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Answering a quiz question"
+      },
+      {
+       "letter": "B",
+       "text": "Deleting files"
+      },
+      {
+       "letter": "C",
+       "text": "Showing a short text summary of an article on the screen for the user to read"
+      },
+      {
+       "letter": "D",
+       "text": "Suggesting a title"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Deleting files",
+     "intro": "Labels in product marketing are loose: something sold as an \"agent\" may be a fixed workflow, and a chatbot may quietly use tools such as search. Ask practical questions instead. Who decides the next step, a person, a fixed design or the model? What can it actually do in the world: only show text, or also send, buy, delete or post? Can it act without a person approving? The answers tell you how much checking and how many limits it needs.",
+     "feedback": "Irreversible actions."
+    },
+    {
+     "id": "S95-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Coding: agents and automation",
+     "type": "mc",
+     "prompt": "Who decides the next step tells you what?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nothing important, since every AI system needs exactly the same amount of checking"
+      },
+      {
+       "letter": "B",
+       "text": "Its speed"
+      },
+      {
+       "letter": "C",
+       "text": "How much checking the system needs"
+      },
+      {
+       "letter": "D",
+       "text": "Its price"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "How much checking the system needs",
+     "intro": "Labels in product marketing are loose: something sold as an \"agent\" may be a fixed workflow, and a chatbot may quietly use tools such as search. Ask practical questions instead. Who decides the next step, a person, a fixed design or the model? What can it actually do in the world: only show text, or also send, buy, delete or post? Can it act without a person approving? The answers tell you how much checking and how many limits it needs.",
+     "feedback": "Decision-maker shapes oversight."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

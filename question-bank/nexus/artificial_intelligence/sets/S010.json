@@ -1,0 +1,658 @@
+{
+ "set": 10,
+ "title": "Training, validation and test data",
+ "outcome": "AI.LEARN.03",
+ "content_status": "stable",
+ "requires": [
+  8
+ ],
+ "module": "learning",
+ "path_refs": [
+  "everyday",
+  "creative",
+  "coding",
+  "work",
+  "society"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Explain training, validation and test data",
+   "questions": [
+    {
+     "id": "S10-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "What is the training set used for?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The final check on examples the model never saw"
+      },
+      {
+       "letter": "B",
+       "text": "Advertising the model to customers"
+      },
+      {
+       "letter": "C",
+       "text": "Comparing versions during development"
+      },
+      {
+       "letter": "D",
+       "text": "The examples the model learns from"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The examples the model learns from",
+     "intro": "Builders usually split their data into three parts. The TRAINING SET is what the model learns from. The VALIDATION SET is used during development to compare versions and settings, like practice quizzes. The TEST SET is kept aside and used only at the end to measure how well the finished model does on examples it has never seen. If test examples leak into training, the test score looks better than the model really is, because the model may have learned those exact answers. A trustworthy result comes from examples that stayed unseen.",
+     "feedback": "The model learns from the training set."
+    },
+    {
+     "id": "S10-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "What is the test set used for?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Tuning settings during development"
+      },
+      {
+       "letter": "B",
+       "text": "Teaching the model its main patterns"
+      },
+      {
+       "letter": "C",
+       "text": "Measuring the finished model on unseen examples"
+      },
+      {
+       "letter": "D",
+       "text": "Storing users' questions after the app launches"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Measuring the finished model on unseen examples",
+     "intro": "Builders usually split their data into three parts. The TRAINING SET is what the model learns from. The VALIDATION SET is used during development to compare versions and settings, like practice quizzes. The TEST SET is kept aside and used only at the end to measure how well the finished model does on examples it has never seen. If test examples leak into training, the test score looks better than the model really is, because the model may have learned those exact answers. A trustworthy result comes from examples that stayed unseen.",
+     "feedback": "The test set gives a final, honest measurement."
+    },
+    {
+     "id": "S10-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Which set is most like practice quizzes during development?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "None of the sets"
+      },
+      {
+       "letter": "B",
+       "text": "The validation set"
+      },
+      {
+       "letter": "C",
+       "text": "The test set"
+      },
+      {
+       "letter": "D",
+       "text": "The training set"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The validation set",
+     "intro": "Builders usually split their data into three parts. The TRAINING SET is what the model learns from. The VALIDATION SET is used during development to compare versions and settings, like practice quizzes. The TEST SET is kept aside and used only at the end to measure how well the finished model does on examples it has never seen. If test examples leak into training, the test score looks better than the model really is, because the model may have learned those exact answers. A trustworthy result comes from examples that stayed unseen.",
+     "feedback": "Validation helps choose versions and settings."
+    },
+    {
+     "id": "S10-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Why must test examples stay out of training?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Otherwise the test score can overstate real performance"
+      },
+      {
+       "letter": "B",
+       "text": "Otherwise the training will finish too quickly"
+      },
+      {
+       "letter": "C",
+       "text": "Otherwise the model will refuse to work on any input at all"
+      },
+      {
+       "letter": "D",
+       "text": "Otherwise the model gets too many parameters"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Otherwise the test score can overstate real performance",
+     "intro": "Builders usually split their data into three parts. The TRAINING SET is what the model learns from. The VALIDATION SET is used during development to compare versions and settings, like practice quizzes. The TEST SET is kept aside and used only at the end to measure how well the finished model does on examples it has never seen. If test examples leak into training, the test score looks better than the model really is, because the model may have learned those exact answers. A trustworthy result comes from examples that stayed unseen.",
+     "feedback": "Seen examples inflate scores."
+    },
+    {
+     "id": "S10-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A model scores 99 percent, but later it is found that test examples were also in training. What should you conclude?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Nothing; leaks never affect scores"
+      },
+      {
+       "letter": "B",
+       "text": "The 99 percent may overstate how it handles new examples"
+      },
+      {
+       "letter": "C",
+       "text": "The model must be useless for everything"
+      },
+      {
+       "letter": "D",
+       "text": "The 99 percent is now even more trustworthy than before"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The 99 percent may overstate how it handles new examples",
+     "intro": "Builders usually split their data into three parts. The TRAINING SET is what the model learns from. The VALIDATION SET is used during development to compare versions and settings, like practice quizzes. The TEST SET is kept aside and used only at the end to measure how well the finished model does on examples it has never seen. If test examples leak into training, the test score looks better than the model really is, because the model may have learned those exact answers. A trustworthy result comes from examples that stayed unseen.",
+     "feedback": "Leakage makes a score look better than real performance."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare studying, practice quizzes and a final exam",
+   "questions": [
+    {
+     "id": "S10-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "The textbook is like which data set?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The training set"
+      },
+      {
+       "letter": "B",
+       "text": "The validation set"
+      },
+      {
+       "letter": "C",
+       "text": "The test set"
+      },
+      {
+       "letter": "D",
+       "text": "No data set"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The training set",
+     "intro": "A student preparing for a final exam studies from a TEXTBOOK, takes PRACTICE QUIZZES to see what still needs work, and then takes the FINAL EXAM. The exam is useful only if its questions are new. If the student saw the exact exam questions in advance, a high score would show memory, not real understanding. Model data works the same way: the training set is the textbook, the validation set is the practice quizzes, and the test set is the final exam that must stay secret until the end.",
+     "feedback": "The model learns from the training set."
+    },
+    {
+     "id": "S10-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "The final exam is like which data set?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The training set"
+      },
+      {
+       "letter": "B",
+       "text": "All three sets"
+      },
+      {
+       "letter": "C",
+       "text": "The validation set"
+      },
+      {
+       "letter": "D",
+       "text": "The test set"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The test set",
+     "intro": "A student preparing for a final exam studies from a TEXTBOOK, takes PRACTICE QUIZZES to see what still needs work, and then takes the FINAL EXAM. The exam is useful only if its questions are new. If the student saw the exact exam questions in advance, a high score would show memory, not real understanding. Model data works the same way: the training set is the textbook, the validation set is the practice quizzes, and the test set is the final exam that must stay secret until the end.",
+     "feedback": "The test set is the final check."
+    },
+    {
+     "id": "S10-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Why must the final exam questions stay secret?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "So the textbook is not needed"
+      },
+      {
+       "letter": "B",
+       "text": "So the exam is harder to print"
+      },
+      {
+       "letter": "C",
+       "text": "So a high score shows understanding"
+      },
+      {
+       "letter": "D",
+       "text": "So the teacher can grade all the exams faster"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "So a high score shows understanding",
+     "intro": "A student preparing for a final exam studies from a TEXTBOOK, takes PRACTICE QUIZZES to see what still needs work, and then takes the FINAL EXAM. The exam is useful only if its questions are new. If the student saw the exact exam questions in advance, a high score would show memory, not real understanding. Model data works the same way: the training set is the textbook, the validation set is the practice quizzes, and the test set is the final exam that must stay secret until the end.",
+     "feedback": "Unseen questions give an honest measure."
+    },
+    {
+     "id": "S10-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "What do practice quizzes help the student do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Get the final grade early"
+      },
+      {
+       "letter": "B",
+       "text": "Skip the textbook"
+      },
+      {
+       "letter": "C",
+       "text": "Memorize the final exam questions early"
+      },
+      {
+       "letter": "D",
+       "text": "See what still needs work"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "See what still needs work",
+     "intro": "A student preparing for a final exam studies from a TEXTBOOK, takes PRACTICE QUIZZES to see what still needs work, and then takes the FINAL EXAM. The exam is useful only if its questions are new. If the student saw the exact exam questions in advance, a high score would show memory, not real understanding. Model data works the same way: the training set is the textbook, the validation set is the practice quizzes, and the test set is the final exam that must stay secret until the end.",
+     "feedback": "Quizzes guide preparation."
+    },
+    {
+     "id": "S10-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A student saw the exact exam in advance and scored 100. What does the score mostly show?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "That the exam was too easy"
+      },
+      {
+       "letter": "B",
+       "text": "Memory of those questions"
+      },
+      {
+       "letter": "C",
+       "text": "Deep understanding of everything"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing at all"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Memory of those questions",
+     "intro": "A student preparing for a final exam studies from a TEXTBOOK, takes PRACTICE QUIZZES to see what still needs work, and then takes the FINAL EXAM. The exam is useful only if its questions are new. If the student saw the exact exam questions in advance, a high score would show memory, not real understanding. Model data works the same way: the training set is the textbook, the validation set is the practice quizzes, and the test set is the final exam that must stay secret until the end.",
+     "feedback": "Seen questions measure memory."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who cannot keep the three data sets apart can map them onto a familiar study routine."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Apply data splits to real projects",
+   "questions": [
+    {
+     "id": "S10-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A team building a dog-breed recognizer has 10,000 labeled photos. Which plan follows good practice?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Train and test on the same 10,000 photos"
+      },
+      {
+       "letter": "B",
+       "text": "Test first, then add the test photos into training and report that score"
+      },
+      {
+       "letter": "C",
+       "text": "Train on most, use some for validation, keep a test portion unseen"
+      },
+      {
+       "letter": "D",
+       "text": "Skip testing because 10,000 is already enough"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Train on most, use some for validation, keep a test portion unseen",
+     "intro": "Builders usually split their data into three parts. The TRAINING SET is what the model learns from. The VALIDATION SET is used during development to compare versions and settings, like practice quizzes. The TEST SET is kept aside and used only at the end to measure how well the finished model does on examples it has never seen. If test examples leak into training, the test score looks better than the model really is, because the model may have learned those exact answers. A trustworthy result comes from examples that stayed unseen.",
+     "feedback": "Separate splits give an honest final measure."
+    },
+    {
+     "id": "S10-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "During development, a team compares three versions and picks the best. Which data should they use to compare?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The validation set"
+      },
+      {
+       "letter": "B",
+       "text": "The training set only"
+      },
+      {
+       "letter": "C",
+       "text": "No data; they should guess"
+      },
+      {
+       "letter": "D",
+       "text": "The test set, again and again"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The validation set",
+     "intro": "Builders usually split their data into three parts. The TRAINING SET is what the model learns from. The VALIDATION SET is used during development to compare versions and settings, like practice quizzes. The TEST SET is kept aside and used only at the end to measure how well the finished model does on examples it has never seen. If test examples leak into training, the test score looks better than the model really is, because the model may have learned those exact answers. A trustworthy result comes from examples that stayed unseen.",
+     "feedback": "Validation data is for comparing versions."
+    },
+    {
+     "id": "S10-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A student project reports \"100 percent accuracy,\" measured on the same examples it trained on. What is the problem?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "There is no problem; 100 percent is always trustworthy"
+      },
+      {
+       "letter": "B",
+       "text": "The score does not show how it handles new examples"
+      },
+      {
+       "letter": "C",
+       "text": "Training data cannot be used for anything at all"
+      },
+      {
+       "letter": "D",
+       "text": "Accuracy cannot be measured for student projects"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The score does not show how it handles new examples",
+     "intro": "Builders usually split their data into three parts. The TRAINING SET is what the model learns from. The VALIDATION SET is used during development to compare versions and settings, like practice quizzes. The TEST SET is kept aside and used only at the end to measure how well the finished model does on examples it has never seen. If test examples leak into training, the test score looks better than the model really is, because the model may have learned those exact answers. A trustworthy result comes from examples that stayed unseen.",
+     "feedback": "Only unseen examples show real performance."
+    },
+    {
+     "id": "S10-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "When should the test set be used?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "At the start, to teach the model"
+      },
+      {
+       "letter": "B",
+       "text": "Every day, to choose settings"
+      },
+      {
+       "letter": "C",
+       "text": "At the end, to measure the finished model"
+      },
+      {
+       "letter": "D",
+       "text": "Never, because final tests are always optional"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "At the end, to measure the finished model",
+     "intro": "Builders usually split their data into three parts. The TRAINING SET is what the model learns from. The VALIDATION SET is used during development to compare versions and settings, like practice quizzes. The TEST SET is kept aside and used only at the end to measure how well the finished model does on examples it has never seen. If test examples leak into training, the test score looks better than the model really is, because the model may have learned those exact answers. A trustworthy result comes from examples that stayed unseen.",
+     "feedback": "The test set is a final, one-time-style check."
+    },
+    {
+     "id": "S10-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A company says its spam filter is \"98 percent accurate on our test set.\" What question checks whether the number is trustworthy?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Were the test emails kept out of training?"
+      },
+      {
+       "letter": "B",
+       "text": "Is 98 a bigger number than last year's?"
+      },
+      {
+       "letter": "C",
+       "text": "Does the filter have a friendly name?"
+      },
+      {
+       "letter": "D",
+       "text": "Is the number written in a large font?"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Were the test emails kept out of training?",
+     "intro": "Builders usually split their data into three parts. The TRAINING SET is what the model learns from. The VALIDATION SET is used during development to compare versions and settings, like practice quizzes. The TEST SET is kept aside and used only at the end to measure how well the finished model does on examples it has never seen. If test examples leak into training, the test score looks better than the model really is, because the model may have learned those exact answers. A trustworthy result comes from examples that stayed unseen.",
+     "feedback": "An honest test score needs unseen test data."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Spot hidden problems with test data",
+   "questions": [
+    {
+     "id": "S10-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "The same news story appears on two websites. One copy is in training, the other in the test set. What is the risk?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The model will refuse to read news"
+      },
+      {
+       "letter": "B",
+       "text": "The test becomes harder than real use"
+      },
+      {
+       "letter": "C",
+       "text": "None, because the websites have different names"
+      },
+      {
+       "letter": "D",
+       "text": "The test includes something the model has already seen"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The test includes something the model has already seen",
+     "intro": "Keeping test data truly separate is harder than it sounds. Copies of the same item can appear twice, for example the same photo cropped slightly, or the same news story on two websites, so one copy lands in training and another in the test. Reusing the test set again and again to choose between versions also wears it out: the team slowly tunes the model to that particular test. And a test set that does not look like real use, such as clear studio photos when users will upload blurry phone pictures, gives a score that does not predict real performance.",
+     "feedback": "Near-duplicates can leak test content into training."
+    },
+    {
+     "id": "S10-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A team checks its test score after every small change for months. What problem can this cause?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The team slowly tunes the model to that one test"
+      },
+      {
+       "letter": "B",
+       "text": "The model forgets its training data"
+      },
+      {
+       "letter": "C",
+       "text": "Nothing; checking often always helps"
+      },
+      {
+       "letter": "D",
+       "text": "The test questions physically wear out from use"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The team slowly tunes the model to that one test",
+     "intro": "Keeping test data truly separate is harder than it sounds. Copies of the same item can appear twice, for example the same photo cropped slightly, or the same news story on two websites, so one copy lands in training and another in the test. Reusing the test set again and again to choose between versions also wears it out: the team slowly tunes the model to that particular test. And a test set that does not look like real use, such as clear studio photos when users will upload blurry phone pictures, gives a score that does not predict real performance.",
+     "feedback": "Overusing the test set makes it less honest."
+    },
+    {
+     "id": "S10-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A plant-identification app was tested on clear studio photos, but users upload blurry phone pictures. What should the team conclude?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The test score proves the app works for everyone"
+      },
+      {
+       "letter": "B",
+       "text": "Blurry photos cannot be identified by anyone"
+      },
+      {
+       "letter": "C",
+       "text": "The test score may not predict real-world performance"
+      },
+      {
+       "letter": "D",
+       "text": "The app will work even better on blurry photos"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The test score may not predict real-world performance",
+     "intro": "Keeping test data truly separate is harder than it sounds. Copies of the same item can appear twice, for example the same photo cropped slightly, or the same news story on two websites, so one copy lands in training and another in the test. Reusing the test set again and again to choose between versions also wears it out: the team slowly tunes the model to that particular test. And a test set that does not look like real use, such as clear studio photos when users will upload blurry phone pictures, gives a score that does not predict real performance.",
+     "feedback": "A test set should resemble real use."
+    },
+    {
+     "id": "S10-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Photos of the same dog, cropped slightly differently, end up in both training and test sets. What should the team do?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Keep them, because cropping makes them different"
+      },
+      {
+       "letter": "B",
+       "text": "Remove near-duplicates so test items are truly unseen"
+      },
+      {
+       "letter": "C",
+       "text": "Add more copies to make the test fairer"
+      },
+      {
+       "letter": "D",
+       "text": "Delete the whole test set and skip testing"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Remove near-duplicates so test items are truly unseen",
+     "intro": "Keeping test data truly separate is harder than it sounds. Copies of the same item can appear twice, for example the same photo cropped slightly, or the same news story on two websites, so one copy lands in training and another in the test. Reusing the test set again and again to choose between versions also wears it out: the team slowly tunes the model to that particular test. And a test set that does not look like real use, such as clear studio photos when users will upload blurry phone pictures, gives a score that does not predict real performance.",
+     "feedback": "Near-duplicates should be kept on one side only."
+    },
+    {
+     "id": "S10-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Which test plan best predicts real performance for a store's receipt scanner?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Receipts the scanner was trained on"
+      },
+      {
+       "letter": "B",
+       "text": "One receipt scanned 100 times"
+      },
+      {
+       "letter": "C",
+       "text": "Perfect, printed sample receipts from the factory only"
+      },
+      {
+       "letter": "D",
+       "text": "Unseen receipts like the ones customers really scan"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Unseen receipts like the ones customers really scan",
+     "intro": "Keeping test data truly separate is harder than it sounds. Copies of the same item can appear twice, for example the same photo cropped slightly, or the same news story on two websites, so one copy lands in training and another in the test. Reusing the test set again and again to choose between versions also wears it out: the team slowly tunes the model to that particular test. And a test set that does not look like real use, such as clear studio photos when users will upload blurry phone pictures, gives a score that does not predict real performance.",
+     "feedback": "Unseen, realistic test data gives a useful score."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

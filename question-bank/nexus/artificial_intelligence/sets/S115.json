@@ -1,0 +1,698 @@
+{
+ "set": 115,
+ "title": "False positives and false negatives",
+ "outcome": "AI.EVAL.02",
+ "content_status": "stable",
+ "requires": [
+  114
+ ],
+ "module": "evaluation",
+ "path_refs": [
+  "work",
+  "coding",
+  "society"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Read false positives and false negatives and decide which matters more",
+   "questions": [
+    {
+     "id": "S115-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What is a false positive?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A wrong \"yes\""
+      },
+      {
+       "letter": "B",
+       "text": "A correct \"no\""
+      },
+      {
+       "letter": "C",
+       "text": "A correct \"yes\""
+      },
+      {
+       "letter": "D",
+       "text": "A wrong \"no,\" where the tool missed something that it should have flagged as a yes"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "A wrong \"yes\"",
+     "intro": "When a tool says YES or NO, such as \"spam\" or \"not spam,\" it can be wrong in two ways. A FALSE POSITIVE is a wrong YES: a real email marked as spam. A FALSE NEGATIVE is a wrong NO: a spam email let through. A table of results shows both. Which mistake matters more DEPENDS ON THE SITUATION. For spam, a false positive may hide an important message. For a smoke detector, a false negative, missing a real fire, is far worse than a false alarm. Often reducing one kind of mistake increases the other.",
+     "feedback": "Flagged, but should not have been."
+    },
+    {
+     "id": "S115-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "In this prepared example, how many false positives are there?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "45"
+      },
+      {
+       "letter": "B",
+       "text": "5, which is the number of real spam emails that the tool failed to mark as spam"
+      },
+      {
+       "letter": "C",
+       "text": "140"
+      },
+      {
+       "letter": "D",
+       "text": "10"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "10",
+     "intro": "When a tool says YES or NO, such as \"spam\" or \"not spam,\" it can be wrong in two ways. A FALSE POSITIVE is a wrong YES: a real email marked as spam. A FALSE NEGATIVE is a wrong NO: a spam email let through. A table of results shows both. Which mistake matters more DEPENDS ON THE SITUATION. For spam, a false positive may hide an important message. For a smoke detector, a false negative, missing a real fire, is far worse than a false alarm. Often reducing one kind of mistake increases the other.",
+     "feedback": "Real emails marked spam.",
+     "example": {
+      "kind": "table",
+      "label": "Prepared example (fictional results for 200 emails)",
+      "table": [
+       [
+        "",
+        "Tool said spam",
+        "Tool said not spam"
+       ],
+       [
+        "Really spam",
+        "45",
+        "5"
+       ],
+       [
+        "Really not spam",
+        "10",
+        "140"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "S115-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "In the same example, how many false negatives are there?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "140"
+      },
+      {
+       "letter": "B",
+       "text": "5"
+      },
+      {
+       "letter": "C",
+       "text": "10, which is the number of real emails that the tool wrongly marked as spam emails"
+      },
+      {
+       "letter": "D",
+       "text": "45"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "5",
+     "intro": "When a tool says YES or NO, such as \"spam\" or \"not spam,\" it can be wrong in two ways. A FALSE POSITIVE is a wrong YES: a real email marked as spam. A FALSE NEGATIVE is a wrong NO: a spam email let through. A table of results shows both. Which mistake matters more DEPENDS ON THE SITUATION. For spam, a false positive may hide an important message. For a smoke detector, a false negative, missing a real fire, is far worse than a false alarm. Often reducing one kind of mistake increases the other.",
+     "feedback": "Spam let through.",
+     "example": {
+      "kind": "table",
+      "label": "Prepared example (fictional results for 200 emails)",
+      "table": [
+       [
+        "",
+        "Tool said spam",
+        "Tool said not spam"
+       ],
+       [
+        "Really spam",
+        "45",
+        "5"
+       ],
+       [
+        "Really not spam",
+        "10",
+        "140"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "S115-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "For a smoke detector, which mistake is worse?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Neither matters"
+      },
+      {
+       "letter": "B",
+       "text": "They are always equal"
+      },
+      {
+       "letter": "C",
+       "text": "A false negative"
+      },
+      {
+       "letter": "D",
+       "text": "A false positive"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A false negative",
+     "intro": "When a tool says YES or NO, such as \"spam\" or \"not spam,\" it can be wrong in two ways. A FALSE POSITIVE is a wrong YES: a real email marked as spam. A FALSE NEGATIVE is a wrong NO: a spam email let through. A table of results shows both. Which mistake matters more DEPENDS ON THE SITUATION. For spam, a false positive may hide an important message. For a smoke detector, a false negative, missing a real fire, is far worse than a false alarm. Often reducing one kind of mistake increases the other.",
+     "feedback": "Missing a real fire."
+    },
+    {
+     "id": "S115-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What often happens when you reduce one kind of mistake?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The tool stops working"
+      },
+      {
+       "letter": "B",
+       "text": "The other kind may increase"
+      },
+      {
+       "letter": "C",
+       "text": "Both kinds of mistake always disappear completely at the same time without any trade-off"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing changes"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The other kind may increase",
+     "intro": "When a tool says YES or NO, such as \"spam\" or \"not spam,\" it can be wrong in two ways. A FALSE POSITIVE is a wrong YES: a real email marked as spam. A FALSE NEGATIVE is a wrong NO: a spam email let through. A table of results shows both. Which mistake matters more DEPENDS ON THE SITUATION. For spam, a false positive may hide an important message. For a smoke detector, a false negative, missing a real fire, is far worse than a false alarm. Often reducing one kind of mistake increases the other.",
+     "feedback": "A trade-off."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Read a 2-by-2 results table",
+   "questions": [
+    {
+     "id": "S115-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "How many true positives?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "4"
+      },
+      {
+       "letter": "B",
+       "text": "6, since those parcels were really damaged and the tool said something about them"
+      },
+      {
+       "letter": "C",
+       "text": "160"
+      },
+      {
+       "letter": "D",
+       "text": "30"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "30",
+     "intro": "A results table has four boxes. Rows show what is REALLY true; columns show what the tool SAID. TRUE POSITIVE: really yes, said yes. FALSE NEGATIVE: really yes, said no. FALSE POSITIVE: really no, said yes. TRUE NEGATIVE: really no, said no. Example for a tool flagging damaged parcels: really damaged and flagged = 30; really damaged but not flagged = 6; not damaged but flagged = 4; not damaged and not flagged = 160.",
+     "feedback": "Damaged and flagged."
+    },
+    {
+     "id": "S115-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "How many false negatives?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "6"
+      },
+      {
+       "letter": "B",
+       "text": "30"
+      },
+      {
+       "letter": "C",
+       "text": "4, because those parcels were flagged by the tool even though they were not damaged"
+      },
+      {
+       "letter": "D",
+       "text": "160"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "6",
+     "intro": "A results table has four boxes. Rows show what is REALLY true; columns show what the tool SAID. TRUE POSITIVE: really yes, said yes. FALSE NEGATIVE: really yes, said no. FALSE POSITIVE: really no, said yes. TRUE NEGATIVE: really no, said no. Example for a tool flagging damaged parcels: really damaged and flagged = 30; really damaged but not flagged = 6; not damaged but flagged = 4; not damaged and not flagged = 160.",
+     "feedback": "Damaged but missed."
+    },
+    {
+     "id": "S115-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "How many false positives?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "30"
+      },
+      {
+       "letter": "B",
+       "text": "6, which counts the damaged parcels that the tool failed to flag before shipping"
+      },
+      {
+       "letter": "C",
+       "text": "4"
+      },
+      {
+       "letter": "D",
+       "text": "160"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "4",
+     "intro": "A results table has four boxes. Rows show what is REALLY true; columns show what the tool SAID. TRUE POSITIVE: really yes, said yes. FALSE NEGATIVE: really yes, said no. FALSE POSITIVE: really no, said yes. TRUE NEGATIVE: really no, said no. Example for a tool flagging damaged parcels: really damaged and flagged = 30; really damaged but not flagged = 6; not damaged but flagged = 4; not damaged and not flagged = 160.",
+     "feedback": "Flagged but fine."
+    },
+    {
+     "id": "S115-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "How many parcels in total?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "166"
+      },
+      {
+       "letter": "B",
+       "text": "190"
+      },
+      {
+       "letter": "C",
+       "text": "36, which is the number of parcels that were really damaged according to the table"
+      },
+      {
+       "letter": "D",
+       "text": "200"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "200",
+     "intro": "A results table has four boxes. Rows show what is REALLY true; columns show what the tool SAID. TRUE POSITIVE: really yes, said yes. FALSE NEGATIVE: really yes, said no. FALSE POSITIVE: really no, said yes. TRUE NEGATIVE: really no, said no. Example for a tool flagging damaged parcels: really damaged and flagged = 30; really damaged but not flagged = 6; not damaged but flagged = 4; not damaged and not flagged = 160.",
+     "feedback": "30 + 6 + 4 + 160 = 200."
+    },
+    {
+     "id": "S115-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "How many were really damaged?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "200"
+      },
+      {
+       "letter": "B",
+       "text": "36"
+      },
+      {
+       "letter": "C",
+       "text": "34, the number of parcels the tool flagged as damaged, whether or not they really were"
+      },
+      {
+       "letter": "D",
+       "text": "30"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "36",
+     "intro": "A results table has four boxes. Rows show what is REALLY true; columns show what the tool SAID. TRUE POSITIVE: really yes, said yes. FALSE NEGATIVE: really yes, said no. FALSE POSITIVE: really no, said yes. TRUE NEGATIVE: really no, said no. Example for a tool flagging damaged parcels: really damaged and flagged = 30; really damaged but not flagged = 6; not damaged but flagged = 4; not damaged and not flagged = 160.",
+     "feedback": "30 + 6 = 36."
+    }
+   ],
+   "branch_mode": "underlying_skill",
+   "relationship": "A learner confused by results tables practices the underlying skill of reading the four boxes."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Decide which error matters more in practice",
+   "questions": [
+    {
+     "id": "S115-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "A tool screens job applications and wrongly rejects qualified people. Which error is this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A false negative"
+      },
+      {
+       "letter": "B",
+       "text": "A true negative"
+      },
+      {
+       "letter": "C",
+       "text": "A true positive"
+      },
+      {
+       "letter": "D",
+       "text": "A false positive"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "A false negative",
+     "intro": "When a tool says YES or NO, such as \"spam\" or \"not spam,\" it can be wrong in two ways. A FALSE POSITIVE is a wrong YES: a real email marked as spam. A FALSE NEGATIVE is a wrong NO: a spam email let through. A table of results shows both. Which mistake matters more DEPENDS ON THE SITUATION. For spam, a false positive may hide an important message. For a smoke detector, a false negative, missing a real fire, is far worse than a false alarm. Often reducing one kind of mistake increases the other.",
+     "feedback": "Qualified people missed."
+    },
+    {
+     "id": "S115-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "A medical screening tool flags patients for a follow-up test. Which error is usually worse?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Flagging a healthy person for a follow-up test, since extra tests are always more harmful than illness"
+      },
+      {
+       "letter": "B",
+       "text": "Both are always equal"
+      },
+      {
+       "letter": "C",
+       "text": "Missing someone who is sick"
+      },
+      {
+       "letter": "D",
+       "text": "Neither"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Missing someone who is sick",
+     "intro": "When a tool says YES or NO, such as \"spam\" or \"not spam,\" it can be wrong in two ways. A FALSE POSITIVE is a wrong YES: a real email marked as spam. A FALSE NEGATIVE is a wrong NO: a spam email let through. A table of results shows both. Which mistake matters more DEPENDS ON THE SITUATION. For spam, a false positive may hide an important message. For a smoke detector, a false negative, missing a real fire, is far worse than a false alarm. Often reducing one kind of mistake increases the other.",
+     "feedback": "False negatives can be dangerous."
+    },
+    {
+     "id": "S115-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "A spam filter hides a job offer email. Which error is this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A false positive"
+      },
+      {
+       "letter": "B",
+       "text": "A true negative"
+      },
+      {
+       "letter": "C",
+       "text": "A true positive"
+      },
+      {
+       "letter": "D",
+       "text": "A false negative"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "A false positive",
+     "intro": "When a tool says YES or NO, such as \"spam\" or \"not spam,\" it can be wrong in two ways. A FALSE POSITIVE is a wrong YES: a real email marked as spam. A FALSE NEGATIVE is a wrong NO: a spam email let through. A table of results shows both. Which mistake matters more DEPENDS ON THE SITUATION. For spam, a false positive may hide an important message. For a smoke detector, a false negative, missing a real fire, is far worse than a false alarm. Often reducing one kind of mistake increases the other.",
+     "feedback": "A real email marked spam."
+    },
+    {
+     "id": "S115-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Results: 90 real fraud cases caught, 10 missed. How many false negatives?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "100"
+      },
+      {
+       "letter": "B",
+       "text": "10"
+      },
+      {
+       "letter": "C",
+       "text": "0"
+      },
+      {
+       "letter": "D",
+       "text": "90, which is the number of fraud cases the tool handled during the period being measured"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "10",
+     "intro": "When a tool says YES or NO, such as \"spam\" or \"not spam,\" it can be wrong in two ways. A FALSE POSITIVE is a wrong YES: a real email marked as spam. A FALSE NEGATIVE is a wrong NO: a spam email let through. A table of results shows both. Which mistake matters more DEPENDS ON THE SITUATION. For spam, a false positive may hide an important message. For a smoke detector, a false negative, missing a real fire, is far worse than a false alarm. Often reducing one kind of mistake increases the other.",
+     "feedback": "Missed cases."
+    },
+    {
+     "id": "S115-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "For a library's \"overdue book\" reminder, a false positive sends a reminder for a returned book. How serious is it?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Worse than any missed reminder"
+      },
+      {
+       "letter": "B",
+       "text": "Impossible"
+      },
+      {
+       "letter": "C",
+       "text": "Extremely dangerous"
+      },
+      {
+       "letter": "D",
+       "text": "Mildly annoying, usually"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Mildly annoying, usually",
+     "intro": "When a tool says YES or NO, such as \"spam\" or \"not spam,\" it can be wrong in two ways. A FALSE POSITIVE is a wrong YES: a real email marked as spam. A FALSE NEGATIVE is a wrong NO: a spam email let through. A table of results shows both. Which mistake matters more DEPENDS ON THE SITUATION. For spam, a false positive may hide an important message. For a smoke detector, a false negative, missing a real fire, is far worse than a false alarm. Often reducing one kind of mistake increases the other.",
+     "feedback": "Low-stakes error."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Choose and explain the error balance",
+   "questions": [
+    {
+     "id": "S115-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "A reading-help screener accepts more false positives. Why might that be reasonable?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because it saves money always"
+      },
+      {
+       "letter": "B",
+       "text": "Because screeners must be wrong"
+      },
+      {
+       "letter": "C",
+       "text": "Missing a student who needs help is worse"
+      },
+      {
+       "letter": "D",
+       "text": "Because false positives never have any cost at all for students, schools or teachers"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Missing a student who needs help is worse",
+     "intro": "Deciding the balance is a choice, not a technical fact. A school screening tool that flags students for extra reading help might accept more false positives (some students get help they did not need) to avoid false negatives (students who needed help and were missed). A tool that flags people for fraud investigations might need very few false positives, because a wrong flag harms an innocent person. Say which error you are trying to limit and why.",
+     "feedback": "Prioritize catching needs."
+    },
+    {
+     "id": "S115-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "A fraud flagger should have very few false positives. Why?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Because false negatives do not exist"
+      },
+      {
+       "letter": "B",
+       "text": "Because flags are expensive to print"
+      },
+      {
+       "letter": "C",
+       "text": "Because fraud is never real"
+      },
+      {
+       "letter": "D",
+       "text": "A wrong flag harms an innocent person"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "A wrong flag harms an innocent person",
+     "intro": "Deciding the balance is a choice, not a technical fact. A school screening tool that flags students for extra reading help might accept more false positives (some students get help they did not need) to avoid false negatives (students who needed help and were missed). A tool that flags people for fraud investigations might need very few false positives, because a wrong flag harms an innocent person. Say which error you are trying to limit and why.",
+     "feedback": "Protect the innocent."
+    },
+    {
+     "id": "S115-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "Is choosing the balance a technical fact or a decision?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A technical fact that is fixed by the model and that nobody can choose or change"
+      },
+      {
+       "letter": "B",
+       "text": "A decision people must make"
+      },
+      {
+       "letter": "C",
+       "text": "Neither"
+      },
+      {
+       "letter": "D",
+       "text": "A law of physics"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "A decision people must make",
+     "intro": "Deciding the balance is a choice, not a technical fact. A school screening tool that flags students for extra reading help might accept more false positives (some students get help they did not need) to avoid false negatives (students who needed help and were missed). A tool that flags people for fraud investigations might need very few false positives, because a wrong flag harms an innocent person. Say which error you are trying to limit and why.",
+     "feedback": "Values guide it."
+    },
+    {
+     "id": "S115-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "What should a team say when setting a tool's threshold?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Which error it is limiting and why"
+      },
+      {
+       "letter": "B",
+       "text": "Only the tool's name"
+      },
+      {
+       "letter": "C",
+       "text": "Only the date"
+      },
+      {
+       "letter": "D",
+       "text": "Nothing, since the threshold setting is a private technical detail that nobody needs to know"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Which error it is limiting and why",
+     "intro": "Deciding the balance is a choice, not a technical fact. A school screening tool that flags students for extra reading help might accept more false positives (some students get help they did not need) to avoid false negatives (students who needed help and were missed). A tool that flags people for fraud investigations might need very few false positives, because a wrong flag harms an innocent person. Say which error you are trying to limit and why.",
+     "feedback": "Transparency."
+    },
+    {
+     "id": "S115-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Work: measuring how well AI works",
+     "type": "mc",
+     "prompt": "A smoke detector maker lowers false alarms but now misses more fires. Is this a good trade?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes, because people find false alarms annoying, and annoyance is the most important factor"
+      },
+      {
+       "letter": "B",
+       "text": "It does not matter"
+      },
+      {
+       "letter": "C",
+       "text": "No; missed fires are far worse"
+      },
+      {
+       "letter": "D",
+       "text": "Yes, always"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "No; missed fires are far worse",
+     "intro": "Deciding the balance is a choice, not a technical fact. A school screening tool that flags students for extra reading help might accept more false positives (some students get help they did not need) to avoid false negatives (students who needed help and were missed). A tool that flags people for fraud investigations might need very few false positives, because a wrong flag harms an innocent person. Say which error you are trying to limit and why.",
+     "feedback": "Weigh the costs."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

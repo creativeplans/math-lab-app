@@ -1,0 +1,695 @@
+{
+ "set": 50,
+ "title": "Transformers and attention, in plain terms",
+ "outcome": "AI.LLM.08",
+ "content_status": "time_sensitive",
+ "requires": [
+  15
+ ],
+ "module": "deeper",
+ "path_refs": [
+  "everyday",
+  "creative",
+  "coding",
+  "work",
+  "society"
+ ],
+ "suggested": [
+  150
+ ],
+ "sources": [
+  {
+   "url": "https://arxiv.org/abs/1706.03762",
+   "claim": "Vaswani et al. (2017), \"Attention Is All You Need\", introduced the Transformer, a network built on attention without recurrence, first posted in June 2017; transformers became the basis of most later large language models.",
+   "checked": "2026-10-26"
+  }
+ ],
+ "review_interval_days": 1095,
+ "jurisdiction": "research",
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Explain attention in transformers at a conceptual level",
+   "questions": [
+    {
+     "id": "S50-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "What is the key idea of the transformer design?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Following grammar rules typed in by linguists"
+      },
+      {
+       "letter": "B",
+       "text": "Attention: weighing how relevant other words are"
+      },
+      {
+       "letter": "C",
+       "text": "Memorizing every sentence ever written word for word"
+      },
+      {
+       "letter": "D",
+       "text": "Reading only one word at a time with no context"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Attention: weighing how relevant other words are",
+     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant every other word in the context is. In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
+     "feedback": "Attention links words to relevant context."
+    },
+    {
+     "id": "S50-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "In the trophy sentence, what does attention help the model link \"it\" to?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The word \"because\""
+      },
+      {
+       "letter": "B",
+       "text": "The word \"did\""
+      },
+      {
+       "letter": "C",
+       "text": "The suitcase"
+      },
+      {
+       "letter": "D",
+       "text": "The trophy"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The trophy",
+     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant every other word in the context is. In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
+     "feedback": "Attention helps resolve references."
+    },
+    {
+     "id": "S50-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "Using the made-up weights in the table, which word is most strongly linked to \"it\"?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "other words"
+      },
+      {
+       "letter": "B",
+       "text": "fit"
+      },
+      {
+       "letter": "C",
+       "text": "trophy"
+      },
+      {
+       "letter": "D",
+       "text": "suitcase"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "trophy",
+     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant every other word in the context is. In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
+     "feedback": "trophy has the highest weight (0.71).",
+     "example": {
+      "kind": "table",
+      "label": "Prepared example (made-up attention weights, for teaching)",
+      "table": [
+       [
+        "Word",
+        "How strongly \"it\" is linked (made-up weights)"
+       ],
+       [
+        "trophy",
+        "0.71"
+       ],
+       [
+        "suitcase",
+        "0.18"
+       ],
+       [
+        "fit",
+        "0.06"
+       ],
+       [
+        "other words",
+        "0.05"
+       ]
+      ]
+     }
+    },
+    {
+     "id": "S50-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "When was the transformer introduced, according to the passage?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "In a 2017 research paper"
+      },
+      {
+       "letter": "B",
+       "text": "In 2022, when chatbots became popular"
+      },
+      {
+       "letter": "C",
+       "text": "It has existed since the first computers"
+      },
+      {
+       "letter": "D",
+       "text": "In a 1956 workshop at a university"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "In a 2017 research paper",
+     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant every other word in the context is. In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
+     "feedback": "2017."
+    },
+    {
+     "id": "S50-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "Which statement about attention is accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It means the model consciously focuses like a person"
+      },
+      {
+       "letter": "B",
+       "text": "It means the model has feelings about words"
+      },
+      {
+       "letter": "C",
+       "text": "It is a mathematical weighting, not a mind"
+      },
+      {
+       "letter": "D",
+       "text": "It means the model reads only the first word"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "It is a mathematical weighting, not a mind",
+     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant every other word in the context is. In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
+     "feedback": "Attention is math."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Picture highlighting a sentence",
+   "questions": [
+    {
+     "id": "S50-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "In the example, which word gets the heaviest highlight for \"she\"?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "early"
+      },
+      {
+       "letter": "B",
+       "text": "Sam"
+      },
+      {
+       "letter": "C",
+       "text": "umbrella"
+      },
+      {
+       "letter": "D",
+       "text": "Maria"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Maria",
+     "intro": "When you read \"Maria gave Sam her umbrella because she was leaving early,\" you might mentally connect \"she\" to \"Maria.\" Imagine marking how strongly each other word helps you understand \"she\": a heavy highlight on \"Maria,\" a lighter one on \"leaving,\" almost none on \"umbrella.\" A transformer does something like this with numbers for every word: it computes weights showing how much each other word should influence the current one. The highlights are a teaching picture; the real thing is arithmetic done many times.",
+     "feedback": "\"She\" refers to Maria."
+    },
+    {
+     "id": "S50-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "What do the highlights stand for?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "How much each word influences the current one"
+      },
+      {
+       "letter": "B",
+       "text": "How rare each word is"
+      },
+      {
+       "letter": "C",
+       "text": "How loudly each word is read aloud by people"
+      },
+      {
+       "letter": "D",
+       "text": "How long each word is"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "How much each word influences the current one",
+     "intro": "When you read \"Maria gave Sam her umbrella because she was leaving early,\" you might mentally connect \"she\" to \"Maria.\" Imagine marking how strongly each other word helps you understand \"she\": a heavy highlight on \"Maria,\" a lighter one on \"leaving,\" almost none on \"umbrella.\" A transformer does something like this with numbers for every word: it computes weights showing how much each other word should influence the current one. The highlights are a teaching picture; the real thing is arithmetic done many times.",
+     "feedback": "Influence weights."
+    },
+    {
+     "id": "S50-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "What does a transformer use instead of highlighter ink?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A dictionary lookup"
+      },
+      {
+       "letter": "B",
+       "text": "Numbers computed for every word"
+      },
+      {
+       "letter": "C",
+       "text": "Real colored ink on paper"
+      },
+      {
+       "letter": "D",
+       "text": "A human reader"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Numbers computed for every word",
+     "intro": "When you read \"Maria gave Sam her umbrella because she was leaving early,\" you might mentally connect \"she\" to \"Maria.\" Imagine marking how strongly each other word helps you understand \"she\": a heavy highlight on \"Maria,\" a lighter one on \"leaving,\" almost none on \"umbrella.\" A transformer does something like this with numbers for every word: it computes weights showing how much each other word should influence the current one. The highlights are a teaching picture; the real thing is arithmetic done many times.",
+     "feedback": "Weights are numbers."
+    },
+    {
+     "id": "S50-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "Is the highlighter picture the literal mechanism?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "No, it is a teaching picture"
+      },
+      {
+       "letter": "B",
+       "text": "Yes, models use highlighters"
+      },
+      {
+       "letter": "C",
+       "text": "Yes, models see colors"
+      },
+      {
+       "letter": "D",
+       "text": "No, models ignore context"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "No, it is a teaching picture",
+     "intro": "When you read \"Maria gave Sam her umbrella because she was leaving early,\" you might mentally connect \"she\" to \"Maria.\" Imagine marking how strongly each other word helps you understand \"she\": a heavy highlight on \"Maria,\" a lighter one on \"leaving,\" almost none on \"umbrella.\" A transformer does something like this with numbers for every word: it computes weights showing how much each other word should influence the current one. The highlights are a teaching picture; the real thing is arithmetic done many times.",
+     "feedback": "An analogy only."
+    },
+    {
+     "id": "S50-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "Why would \"umbrella\" get almost no highlight for \"she\"?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It is too long a word to weigh"
+      },
+      {
+       "letter": "B",
+       "text": "It is misspelled"
+      },
+      {
+       "letter": "C",
+       "text": "It does not help identify \"she\""
+      },
+      {
+       "letter": "D",
+       "text": "It comes after \"she\""
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "It does not help identify \"she\"",
+     "intro": "When you read \"Maria gave Sam her umbrella because she was leaving early,\" you might mentally connect \"she\" to \"Maria.\" Imagine marking how strongly each other word helps you understand \"she\": a heavy highlight on \"Maria,\" a lighter one on \"leaving,\" almost none on \"umbrella.\" A transformer does something like this with numbers for every word: it computes weights showing how much each other word should influence the current one. The highlights are a teaching picture; the real thing is arithmetic done many times.",
+     "feedback": "Relevance decides weight."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who finds \"attention\" abstract can picture it as highlighting relevant words, while remembering it is only an analogy."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Apply the attention idea to sentences",
+   "questions": [
+    {
+     "id": "S50-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "\"The dog chased the ball until it was tired.\" Which word should attention most link to \"it\"?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "until"
+      },
+      {
+       "letter": "B",
+       "text": "dog"
+      },
+      {
+       "letter": "C",
+       "text": "chased"
+      },
+      {
+       "letter": "D",
+       "text": "ball"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "dog",
+     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant every other word in the context is. In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
+     "feedback": "Dogs get tired; balls do not."
+    },
+    {
+     "id": "S50-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "\"The dog chased the ball until it rolled under the couch.\" Now which word should \"it\" link to?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "dog"
+      },
+      {
+       "letter": "B",
+       "text": "couch"
+      },
+      {
+       "letter": "C",
+       "text": "chased"
+      },
+      {
+       "letter": "D",
+       "text": "ball"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "ball",
+     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant every other word in the context is. In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
+     "feedback": "Balls roll under couches."
+    },
+    {
+     "id": "S50-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "Why does attention help with long passages?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It removes all earlier words"
+      },
+      {
+       "letter": "B",
+       "text": "It can relate words that are far apart"
+      },
+      {
+       "letter": "C",
+       "text": "It shortens every passage to one word"
+      },
+      {
+       "letter": "D",
+       "text": "It reads only the final sentence"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "It can relate words that are far apart",
+     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant every other word in the context is. In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
+     "feedback": "Relationships across distance can be tracked."
+    },
+    {
+     "id": "S50-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "A friend says, \"Attention means the AI is interested in my story.\" What is more accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Attention is weighting of words, not interest"
+      },
+      {
+       "letter": "B",
+       "text": "Wrong; models never use context at all"
+      },
+      {
+       "letter": "C",
+       "text": "Correct; the AI feels curious about stories"
+      },
+      {
+       "letter": "D",
+       "text": "Correct; attention means it likes the user"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Attention is weighting of words, not interest",
+     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant every other word in the context is. In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
+     "feedback": "The term is technical, not emotional."
+    },
+    {
+     "id": "S50-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "Which statement fits the passage?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Attention is typed in by programmers word by word"
+      },
+      {
+       "letter": "B",
+       "text": "Attention is computed once for a whole book"
+      },
+      {
+       "letter": "C",
+       "text": "Attention is the same as the training cutoff"
+      },
+      {
+       "letter": "D",
+       "text": "Attention is computed many times across many layers"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Attention is computed many times across many layers",
+     "intro": "Most modern language models use a design called the TRANSFORMER, introduced in a 2017 research paper. Its key idea is ATTENTION: when the model processes one word (token), it can weigh how relevant every other word in the context is. In \"The trophy did not fit in the suitcase because it was too big,\" attention helps link \"it\" with \"trophy.\" The model computes these weights with math, many times over, in many layers, which lets it track relationships across long passages. Attention is a mathematical weighting of text, not a mind paying attention the way a person does.",
+     "feedback": "Repeated, layered computation."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Avoid over-reading what attention shows",
+   "questions": [
+    {
+     "id": "S50-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "A model links \"it\" to the wrong noun in a tricky sentence. What does this show?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Attention always resolves references correctly"
+      },
+      {
+       "letter": "B",
+       "text": "The model was not using attention at all"
+      },
+      {
+       "letter": "C",
+       "text": "Attention can weigh the wrong words"
+      },
+      {
+       "letter": "D",
+       "text": "Tricky sentences cannot be processed"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Attention can weigh the wrong words",
+     "intro": "The word \"attention\" invites human comparisons, so be careful. A model's attention weights are numbers computed from patterns; they are not feelings, intentions or awareness. Attention also does not guarantee correct understanding: a model can weigh the wrong words and link \"it\" to the wrong noun, especially in tricky sentences. Researchers sometimes inspect attention weights to study models, but high attention on a word does not by itself prove the model \"understood\" that word or used it for the reason a person would.",
+     "feedback": "Weights can be wrong."
+    },
+    {
+     "id": "S50-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "A researcher sees high attention on a word. What can they safely conclude?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "That word got a high weight; that is not proof"
+      },
+      {
+       "letter": "B",
+       "text": "The model felt strongly about the word"
+      },
+      {
+       "letter": "C",
+       "text": "The model fully understood that word"
+      },
+      {
+       "letter": "D",
+       "text": "The word was the answer to every later question"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "That word got a high weight; that is not proof",
+     "intro": "The word \"attention\" invites human comparisons, so be careful. A model's attention weights are numbers computed from patterns; they are not feelings, intentions or awareness. Attention also does not guarantee correct understanding: a model can weigh the wrong words and link \"it\" to the wrong noun, especially in tricky sentences. Researchers sometimes inspect attention weights to study models, but high attention on a word does not by itself prove the model \"understood\" that word or used it for the reason a person would.",
+     "feedback": "Weights are not proof of understanding."
+    },
+    {
+     "id": "S50-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "Why can the word \"attention\" mislead beginners?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It suggests the model is slow"
+      },
+      {
+       "letter": "B",
+       "text": "It suggests the model is a database"
+      },
+      {
+       "letter": "C",
+       "text": "It suggests the model has no context"
+      },
+      {
+       "letter": "D",
+       "text": "It suggests a human mind focusing"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "It suggests a human mind focusing",
+     "intro": "The word \"attention\" invites human comparisons, so be careful. A model's attention weights are numbers computed from patterns; they are not feelings, intentions or awareness. Attention also does not guarantee correct understanding: a model can weigh the wrong words and link \"it\" to the wrong noun, especially in tricky sentences. Researchers sometimes inspect attention weights to study models, but high attention on a word does not by itself prove the model \"understood\" that word or used it for the reason a person would.",
+     "feedback": "Human words invite human comparisons."
+    },
+    {
+     "id": "S50-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "Which description of attention weights is most accurate?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Awareness of the reader's needs"
+      },
+      {
+       "letter": "B",
+       "text": "Numbers computed from patterns"
+      },
+      {
+       "letter": "C",
+       "text": "Intentions the model chooses freely"
+      },
+      {
+       "letter": "D",
+       "text": "Feelings about which words matter"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Numbers computed from patterns",
+     "intro": "The word \"attention\" invites human comparisons, so be careful. A model's attention weights are numbers computed from patterns; they are not feelings, intentions or awareness. Attention also does not guarantee correct understanding: a model can weigh the wrong words and link \"it\" to the wrong noun, especially in tricky sentences. Researchers sometimes inspect attention weights to study models, but high attention on a word does not by itself prove the model \"understood\" that word or used it for the reason a person would.",
+     "feedback": "Weights are computed numbers."
+    },
+    {
+     "id": "S50-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Specialty: a closer look inside",
+     "type": "mc",
+     "prompt": "Does a transformer design guarantee correct answers?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Yes; attention prevents all errors"
+      },
+      {
+       "letter": "B",
+       "text": "Yes; transformers check facts automatically"
+      },
+      {
+       "letter": "C",
+       "text": "No; it can still produce errors"
+      },
+      {
+       "letter": "D",
+       "text": "No; transformers cannot process text"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "No; it can still produce errors",
+     "intro": "The word \"attention\" invites human comparisons, so be careful. A model's attention weights are numbers computed from patterns; they are not feelings, intentions or awareness. Attention also does not guarantee correct understanding: a model can weigh the wrong words and link \"it\" to the wrong noun, especially in tricky sentences. Researchers sometimes inspect attention weights to study models, but high attention on a word does not by itself prove the model \"understood\" that word or used it for the reason a person would.",
+     "feedback": "Good design does not guarantee truth."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}

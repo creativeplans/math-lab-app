@@ -1,0 +1,658 @@
+{
+ "set": 11,
+ "title": "Overfitting and generalization",
+ "outcome": "AI.LEARN.04",
+ "content_status": "stable",
+ "requires": [
+  10
+ ],
+ "module": "learning",
+ "path_refs": [
+  "everyday",
+  "creative",
+  "coding",
+  "work",
+  "society"
+ ],
+ "suggested": [],
+ "sections": [
+  {
+   "section": "M",
+   "section_code": "M",
+   "relation": "main",
+   "skill": "Recognize overfitting and good generalization",
+   "questions": [
+    {
+     "id": "S11-M-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "What does it mean for a model to generalize well?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It memorizes every one of its training examples exactly"
+      },
+      {
+       "letter": "B",
+       "text": "It does well on new examples, not just training ones"
+      },
+      {
+       "letter": "C",
+       "text": "It works only on the examples it trained on"
+      },
+      {
+       "letter": "D",
+       "text": "It has as many parameters as possible"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "It does well on new examples, not just training ones",
+     "intro": "A model GENERALIZES when it does well on new examples, not just the ones it trained on. OVERFITTING is the opposite: the model fits its training examples so closely, including their accidents and noise, that it does worse on new ones. A sign of overfitting is a big gap: very high accuracy on training data but much lower accuracy on validation or test data. For example, a model that learned \"all photos of wolves have snow\" might label a husky in snow as a wolf. Remedies include more varied data, simpler models and stopping training before it memorizes.",
+     "feedback": "Generalizing means handling new examples well."
+    },
+    {
+     "id": "S11-M-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Which result is a warning sign of overfitting?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A model that has not been trained yet"
+      },
+      {
+       "letter": "B",
+       "text": "50 percent on training data and 50 percent on test data"
+      },
+      {
+       "letter": "C",
+       "text": "99 percent on training data but 70 percent on test data"
+      },
+      {
+       "letter": "D",
+       "text": "85 percent on training data and 84 percent on test data"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "99 percent on training data but 70 percent on test data",
+     "intro": "A model GENERALIZES when it does well on new examples, not just the ones it trained on. OVERFITTING is the opposite: the model fits its training examples so closely, including their accidents and noise, that it does worse on new ones. A sign of overfitting is a big gap: very high accuracy on training data but much lower accuracy on validation or test data. For example, a model that learned \"all photos of wolves have snow\" might label a husky in snow as a wolf. Remedies include more varied data, simpler models and stopping training before it memorizes.",
+     "feedback": "A large training-to-test gap suggests overfitting."
+    },
+    {
+     "id": "S11-M-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A model learned that wolf photos have snow and calls a husky in snow a wolf. What happened?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Huskies and wolves are the same animal"
+      },
+      {
+       "letter": "B",
+       "text": "It generalized perfectly from good data"
+      },
+      {
+       "letter": "C",
+       "text": "It was never trained on any photos of animals at all"
+      },
+      {
+       "letter": "D",
+       "text": "It overfit to an accidental pattern in its photos"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "It overfit to an accidental pattern in its photos",
+     "intro": "A model GENERALIZES when it does well on new examples, not just the ones it trained on. OVERFITTING is the opposite: the model fits its training examples so closely, including their accidents and noise, that it does worse on new ones. A sign of overfitting is a big gap: very high accuracy on training data but much lower accuracy on validation or test data. For example, a model that learned \"all photos of wolves have snow\" might label a husky in snow as a wolf. Remedies include more varied data, simpler models and stopping training before it memorizes.",
+     "feedback": "Learning an accident of the data (snow) is overfitting."
+    },
+    {
+     "id": "S11-M-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Which change could reduce overfitting?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Training with more varied examples"
+      },
+      {
+       "letter": "B",
+       "text": "Testing on the training data instead"
+      },
+      {
+       "letter": "C",
+       "text": "Removing the validation set"
+      },
+      {
+       "letter": "D",
+       "text": "Training much longer on the same few examples"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Training with more varied examples",
+     "intro": "A model GENERALIZES when it does well on new examples, not just the ones it trained on. OVERFITTING is the opposite: the model fits its training examples so closely, including their accidents and noise, that it does worse on new ones. A sign of overfitting is a big gap: very high accuracy on training data but much lower accuracy on validation or test data. For example, a model that learned \"all photos of wolves have snow\" might label a husky in snow as a wolf. Remedies include more varied data, simpler models and stopping training before it memorizes.",
+     "feedback": "Varied data helps a model learn the real pattern."
+    },
+    {
+     "id": "S11-M-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Why is overfitting a problem in practice?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The training data is deleted automatically"
+      },
+      {
+       "letter": "B",
+       "text": "The model refuses to accept any input"
+      },
+      {
+       "letter": "C",
+       "text": "The model becomes too fast to measure"
+      },
+      {
+       "letter": "D",
+       "text": "The model performs worse on new, real cases"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "The model performs worse on new, real cases",
+     "intro": "A model GENERALIZES when it does well on new examples, not just the ones it trained on. OVERFITTING is the opposite: the model fits its training examples so closely, including their accidents and noise, that it does worse on new ones. A sign of overfitting is a big gap: very high accuracy on training data but much lower accuracy on validation or test data. For example, a model that learned \"all photos of wolves have snow\" might label a husky in snow as a wolf. Remedies include more varied data, simpler models and stopping training before it memorizes.",
+     "feedback": "Real use means new examples."
+    }
+   ]
+  },
+  {
+   "section": "B1",
+   "section_code": "B1",
+   "relation": "backward",
+   "skill": "Compare memorizing answers with understanding the method",
+   "questions": [
+    {
+     "id": "S11-B1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Which student overfit?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "The one who memorized the practice answers"
+      },
+      {
+       "letter": "B",
+       "text": "Neither student"
+      },
+      {
+       "letter": "C",
+       "text": "Both students"
+      },
+      {
+       "letter": "D",
+       "text": "The one who learned the method for solving them"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "The one who memorized the practice answers",
+     "intro": "Two students prepare for a math test. One MEMORIZES the answers to the 20 practice problems: \"Problem 4 is 17.\" The other learns the METHOD for solving them. On the practice sheet, both score perfectly. On the real test, with new numbers, the memorizer is lost while the method-learner does fine. The memorizer has overfit to the practice sheet. The method-learner generalized. A model can do the same: perfect on the examples it trained on, poor on new ones.",
+     "feedback": "Memorizing specific answers is overfitting."
+    },
+    {
+     "id": "S11-B1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Why did both students score perfectly on the practice sheet?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Both learned the method"
+      },
+      {
+       "letter": "B",
+       "text": "Both could answer those exact problems"
+      },
+      {
+       "letter": "C",
+       "text": "The practice sheet had no problems"
+      },
+      {
+       "letter": "D",
+       "text": "The teacher gave everyone full marks"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Both could answer those exact problems",
+     "intro": "Two students prepare for a math test. One MEMORIZES the answers to the 20 practice problems: \"Problem 4 is 17.\" The other learns the METHOD for solving them. On the practice sheet, both score perfectly. On the real test, with new numbers, the memorizer is lost while the method-learner does fine. The memorizer has overfit to the practice sheet. The method-learner generalized. A model can do the same: perfect on the examples it trained on, poor on new ones.",
+     "feedback": "Familiar examples do not separate memorizing from understanding."
+    },
+    {
+     "id": "S11-B1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "What happened on the real test with new numbers?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Both failed"
+      },
+      {
+       "letter": "B",
+       "text": "The memorizer did better than the method-learner"
+      },
+      {
+       "letter": "C",
+       "text": "The memorizer struggled; the other did fine"
+      },
+      {
+       "letter": "D",
+       "text": "Both did equally well"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "The memorizer struggled; the other did fine",
+     "intro": "Two students prepare for a math test. One MEMORIZES the answers to the 20 practice problems: \"Problem 4 is 17.\" The other learns the METHOD for solving them. On the practice sheet, both score perfectly. On the real test, with new numbers, the memorizer is lost while the method-learner does fine. The memorizer has overfit to the practice sheet. The method-learner generalized. A model can do the same: perfect on the examples it trained on, poor on new ones.",
+     "feedback": "New examples reveal overfitting."
+    },
+    {
+     "id": "S11-B1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Which student is like a model that generalizes?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Neither"
+      },
+      {
+       "letter": "B",
+       "text": "The method-learner"
+      },
+      {
+       "letter": "C",
+       "text": "Both"
+      },
+      {
+       "letter": "D",
+       "text": "The memorizing student"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The method-learner",
+     "intro": "Two students prepare for a math test. One MEMORIZES the answers to the 20 practice problems: \"Problem 4 is 17.\" The other learns the METHOD for solving them. On the practice sheet, both score perfectly. On the real test, with new numbers, the memorizer is lost while the method-learner does fine. The memorizer has overfit to the practice sheet. The method-learner generalized. A model can do the same: perfect on the examples it trained on, poor on new ones.",
+     "feedback": "Generalizing means handling new problems."
+    },
+    {
+     "id": "S11-B1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "What kind of test reveals overfitting?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A test the student writes"
+      },
+      {
+       "letter": "B",
+       "text": "A test with no questions"
+      },
+      {
+       "letter": "C",
+       "text": "The same practice sheet again"
+      },
+      {
+       "letter": "D",
+       "text": "A test with new examples"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "A test with new examples",
+     "intro": "Two students prepare for a math test. One MEMORIZES the answers to the 20 practice problems: \"Problem 4 is 17.\" The other learns the METHOD for solving them. On the practice sheet, both score perfectly. On the real test, with new numbers, the memorizer is lost while the method-learner does fine. The memorizer has overfit to the practice sheet. The method-learner generalized. A model can do the same: perfect on the examples it trained on, poor on new ones.",
+     "feedback": "Only unseen examples show the difference."
+    }
+   ],
+   "branch_mode": "concept_simplification",
+   "relationship": "A learner who cannot see why perfect training scores can mislead is helped by the memorize-versus-method contrast."
+  },
+  {
+   "section": "F1",
+   "section_code": "F1",
+   "relation": "forward1",
+   "skill": "Diagnose overfitting from results",
+   "questions": [
+    {
+     "id": "S11-F1-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A model scores 98 percent on training data and 96 percent on validation data. What is the best reading?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It appears to generalize well"
+      },
+      {
+       "letter": "B",
+       "text": "It is badly overfit"
+      },
+      {
+       "letter": "C",
+       "text": "It has not learned anything"
+      },
+      {
+       "letter": "D",
+       "text": "The validation data must have leaked"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "It appears to generalize well",
+     "intro": "A model GENERALIZES when it does well on new examples, not just the ones it trained on. OVERFITTING is the opposite: the model fits its training examples so closely, including their accidents and noise, that it does worse on new ones. A sign of overfitting is a big gap: very high accuracy on training data but much lower accuracy on validation or test data. For example, a model that learned \"all photos of wolves have snow\" might label a husky in snow as a wolf. Remedies include more varied data, simpler models and stopping training before it memorizes.",
+     "feedback": "A small gap with high scores suggests good generalization."
+    },
+    {
+     "id": "S11-F1-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A team's model gets 100 percent in training but 60 percent in validation. What should they try?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Stop using any validation data"
+      },
+      {
+       "letter": "B",
+       "text": "Report the 100 percent as its accuracy"
+      },
+      {
+       "letter": "C",
+       "text": "More varied data or a simpler model"
+      },
+      {
+       "letter": "D",
+       "text": "Train longer on the same data"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "More varied data or a simpler model",
+     "intro": "A model GENERALIZES when it does well on new examples, not just the ones it trained on. OVERFITTING is the opposite: the model fits its training examples so closely, including their accidents and noise, that it does worse on new ones. A sign of overfitting is a big gap: very high accuracy on training data but much lower accuracy on validation or test data. For example, a model that learned \"all photos of wolves have snow\" might label a husky in snow as a wolf. Remedies include more varied data, simpler models and stopping training before it memorizes.",
+     "feedback": "Address the gap with variety or simplicity."
+    },
+    {
+     "id": "S11-F1-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A spam filter learned that every email containing \"meeting\" is safe, because all its safe training emails had that word. What could go wrong?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Safe emails will all be blocked"
+      },
+      {
+       "letter": "B",
+       "text": "Nothing; the word \"meeting\" proves safety"
+      },
+      {
+       "letter": "C",
+       "text": "The filter will stop reading emails"
+      },
+      {
+       "letter": "D",
+       "text": "Spam containing \"meeting\" will slip through"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Spam containing \"meeting\" will slip through",
+     "intro": "A model GENERALIZES when it does well on new examples, not just the ones it trained on. OVERFITTING is the opposite: the model fits its training examples so closely, including their accidents and noise, that it does worse on new ones. A sign of overfitting is a big gap: very high accuracy on training data but much lower accuracy on validation or test data. For example, a model that learned \"all photos of wolves have snow\" might label a husky in snow as a wolf. Remedies include more varied data, simpler models and stopping training before it memorizes.",
+     "feedback": "Overfitting to an accidental cue causes errors on new cases."
+    },
+    {
+     "id": "S11-F1-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Which report best shows a model generalizes?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "A very large number of parameters"
+      },
+      {
+       "letter": "B",
+       "text": "Strong results on new examples it never saw"
+      },
+      {
+       "letter": "C",
+       "text": "Perfect results on its own training examples"
+      },
+      {
+       "letter": "D",
+       "text": "A long training time"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "Strong results on new examples it never saw",
+     "intro": "A model GENERALIZES when it does well on new examples, not just the ones it trained on. OVERFITTING is the opposite: the model fits its training examples so closely, including their accidents and noise, that it does worse on new ones. A sign of overfitting is a big gap: very high accuracy on training data but much lower accuracy on validation or test data. For example, a model that learned \"all photos of wolves have snow\" might label a husky in snow as a wolf. Remedies include more varied data, simpler models and stopping training before it memorizes.",
+     "feedback": "Generalization is measured on unseen examples."
+    },
+    {
+     "id": "S11-F1-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A photo model always calls cows \"horses\" when they stand on sand, because training horses were on beaches. What is the fix?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Train with animals photographed in varied settings"
+      },
+      {
+       "letter": "B",
+       "text": "Increase the model's confidence scores for cows"
+      },
+      {
+       "letter": "C",
+       "text": "Remove all cow photos from the test"
+      },
+      {
+       "letter": "D",
+       "text": "Show only beach photos from now on"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "Train with animals photographed in varied settings",
+     "intro": "A model GENERALIZES when it does well on new examples, not just the ones it trained on. OVERFITTING is the opposite: the model fits its training examples so closely, including their accidents and noise, that it does worse on new ones. A sign of overfitting is a big gap: very high accuracy on training data but much lower accuracy on validation or test data. For example, a model that learned \"all photos of wolves have snow\" might label a husky in snow as a wolf. Remedies include more varied data, simpler models and stopping training before it memorizes.",
+     "feedback": "Varied backgrounds break the accidental pattern."
+    }
+   ],
+   "difficulty": "harder",
+   "title": "Apply it"
+  },
+  {
+   "section": "F2",
+   "section_code": "F2",
+   "relation": "forward2",
+   "skill": "Tell overfitting from underfitting and a changed world",
+   "questions": [
+    {
+     "id": "S11-F2-Q1",
+     "number": 1,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A model scores 55 percent on training data and 54 percent on validation data for a task where 90 percent is expected. What is the most likely issue?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "It is working perfectly"
+      },
+      {
+       "letter": "B",
+       "text": "The world changed after launch"
+      },
+      {
+       "letter": "C",
+       "text": "Underfitting: it has not learned the task well"
+      },
+      {
+       "letter": "D",
+       "text": "Overfitting: training is far higher than validation"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "Underfitting: it has not learned the task well",
+     "intro": "Overfitting is not the only way a model can disappoint. A model can also UNDERFIT: it is too simple or trained too little, so it does poorly even on its training data. And a model can generalize well to data like its training data but still fail when the situation changes, for example a new camera, a new slang word or a new kind of fraud. So compare training and validation results first: a big gap suggests overfitting; low scores on both suggest underfitting; good scores followed by a drop after launch suggest the world has changed.",
+     "feedback": "Low scores on both suggest underfitting."
+    },
+    {
+     "id": "S11-F2-Q2",
+     "number": 2,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A fraud model tested well, but months after launch it misses a new kind of scam. What best explains this?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Fraud can never be detected by models"
+      },
+      {
+       "letter": "B",
+       "text": "The situation changed in ways its training data did not cover"
+      },
+      {
+       "letter": "C",
+       "text": "It overfit, since training was far above validation"
+      },
+      {
+       "letter": "D",
+       "text": "It underfit, since it never learned anything"
+      }
+     ],
+     "correct_letter": "B",
+     "correct_answer": "The situation changed in ways its training data did not cover",
+     "intro": "Overfitting is not the only way a model can disappoint. A model can also UNDERFIT: it is too simple or trained too little, so it does poorly even on its training data. And a model can generalize well to data like its training data but still fail when the situation changes, for example a new camera, a new slang word or a new kind of fraud. So compare training and validation results first: a big gap suggests overfitting; low scores on both suggest underfitting; good scores followed by a drop after launch suggest the world has changed.",
+     "feedback": "A changed world can break a model that generalized well before."
+    },
+    {
+     "id": "S11-F2-Q3",
+     "number": 3,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "Which result pattern suggests overfitting?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "High training score, much lower validation score"
+      },
+      {
+       "letter": "B",
+       "text": "High scores on both, then a drop after launch"
+      },
+      {
+       "letter": "C",
+       "text": "Low training score, low validation score"
+      },
+      {
+       "letter": "D",
+       "text": "High scores on both with a small gap"
+      }
+     ],
+     "correct_letter": "A",
+     "correct_answer": "High training score, much lower validation score",
+     "intro": "Overfitting is not the only way a model can disappoint. A model can also UNDERFIT: it is too simple or trained too little, so it does poorly even on its training data. And a model can generalize well to data like its training data but still fail when the situation changes, for example a new camera, a new slang word or a new kind of fraud. So compare training and validation results first: a big gap suggests overfitting; low scores on both suggest underfitting; good scores followed by a drop after launch suggest the world has changed.",
+     "feedback": "A big gap is the overfitting signature."
+    },
+    {
+     "id": "S11-F2-Q4",
+     "number": 4,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A speech model trained on recordings from one microphone does poorly with a new phone model's microphone. What should the team check first?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Whether the old test score was rounded"
+      },
+      {
+       "letter": "B",
+       "text": "Whether the model has too few parameters to handle speech"
+      },
+      {
+       "letter": "C",
+       "text": "Whether users are speaking too politely"
+      },
+      {
+       "letter": "D",
+       "text": "Whether the new microphone's audio differs from training data"
+      }
+     ],
+     "correct_letter": "D",
+     "correct_answer": "Whether the new microphone's audio differs from training data",
+     "intro": "Overfitting is not the only way a model can disappoint. A model can also UNDERFIT: it is too simple or trained too little, so it does poorly even on its training data. And a model can generalize well to data like its training data but still fail when the situation changes, for example a new camera, a new slang word or a new kind of fraud. So compare training and validation results first: a big gap suggests overfitting; low scores on both suggest underfitting; good scores followed by a drop after launch suggest the world has changed.",
+     "feedback": "New conditions can differ from training conditions."
+    },
+    {
+     "id": "S11-F2-Q5",
+     "number": 5,
+     "standard": "",
+     "domain": "Foundation 2: How a model learns",
+     "type": "mc",
+     "prompt": "A team sees a big training-validation gap and wants to add many more parameters. What is the concern?",
+     "choices": [
+      {
+       "letter": "A",
+       "text": "Validation scores will no longer be measured at all"
+      },
+      {
+       "letter": "B",
+       "text": "More parameters always fix overfitting"
+      },
+      {
+       "letter": "C",
+       "text": "A bigger model might memorize more and overfit worse"
+      },
+      {
+       "letter": "D",
+       "text": "Parameters cannot be added to models"
+      }
+     ],
+     "correct_letter": "C",
+     "correct_answer": "A bigger model might memorize more and overfit worse",
+     "intro": "Overfitting is not the only way a model can disappoint. A model can also UNDERFIT: it is too simple or trained too little, so it does poorly even on its training data. And a model can generalize well to data like its training data but still fail when the situation changes, for example a new camera, a new slang word or a new kind of fraud. So compare training and validation results first: a big gap suggests overfitting; low scores on both suggest underfitting; good scores followed by a drop after launch suggest the world has changed.",
+     "feedback": "Added capacity can increase memorization."
+    }
+   ],
+   "difficulty": "expert",
+   "title": "Handle the complications"
+  }
+ ]
+}
